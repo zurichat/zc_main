@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+.container {
+  background-color: #ffffff;
+  width: 16.8125em;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.zuriLogo {
+  display: flex;
+  margin-left: 1.875em;
+  margin-top: 1.5625em;
+  margin-bottom: 0.639375em;
+}
+.zuriLogo p {
+  color: #393939;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1.4425em;
+  padding: 0;
+  margin: 0;
+  margin-left: 0.38em;
+}
+.orgInfo {
+  background-color: #00b87c;
+  height: 3.125em;
+  display: flex;
+  flex-direction: row;
+}
+.orgName {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1.875em;
+  align-items: center;
+  height: 3.125em;
+}
+.orgInfo .orgName p {
+  color: #ffffff;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1.125em;
+}
+
+.orgInfo .orgName img {
+  margin: 1em 0 1em 0.65625em;
+}
+
+.newMessage {
+  border-radius: 50%;
+  height: 2em;
+  width: 2em;
+  background-color: #ffffff;
+  align-self: center;
+  margin-left: 6.6875em;
+  margin-right: 1.25em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.channelsContainer {
+  margin-top: 0.5em;
+}
+
+.channelHeader {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1.875em;
+  align-items: center;
+  height: 2em;
+}
+
+.channelHeader p {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #999999;
+}
+
+.channelDropdownIcon {
+  margin: 1em 1em 1em 0;
+}
+
+.channelAddBtn {
+  margin-left: 6em;
+  margin-right: 1.25em;
+}
+
+.channelNames {
+  margin-left: 3.5em;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 18px;
+  color: #999999;
+}
+
+.channelNames p > span {
+  margin-right: 0.5em;
+}
+
+.messagesContainer {
+  margin-top: 0.5em;
+}
+
+.messageHeader {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1.875em;
+  align-items: center;
+  height: 2em;
+}
+
+.messageHeader p {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #999999;
+}
+
+.messageDropdownIcon {
+  margin: 1em 1em 1em 0;
+}
+
+.messageAddBtn {
+  margin-left: 6em;
+  margin-right: 1.25em;
+}
+
+.messageNames {
+  margin-left: 3.5em;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 18px;
+  color: #999999;
+}
+
+.messageNames p > span {
+  margin-right: 0.5em;
+}
+
+.messagesContainer {
+  margin-top: 0.5em;
+}
+
+.messageHeader {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1.875em;
+  align-items: center;
+  height: 2em;
+}
+
+.messageHeader p {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #999999;
+}
+
+.messageDropdownIcon {
+  margin: 1em 1em 1em 0;
+}
+
+.messageAddBtn {
+  margin-left: 6em;
+  margin-right: 1.25em;
+}
+
+.messageNames {
+  margin-left: 2.5em;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #999999;
+}
+
+.messageNames p {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.messageNames p > span {
+  margin-right: 0.5em;
+}
+
+.channelItem{
+  cursor: pointer;
+}
