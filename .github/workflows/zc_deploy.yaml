@@ -1,0 +1,33 @@
+name: Zuri chat deployment pipeline
+
+on: 
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+    branches:
+      - main
+      - master
+
+env:
+  NODE_VERSION: '10.x'                # set this to the node version to use
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout the source code
+        uses: actions/checkout@v2
+
+      - name: Build the nextJs app
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Create optimized production build
+        run: npm run build
+          
