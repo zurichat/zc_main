@@ -1,0 +1,15 @@
+---
+
+- hosts: zuri_main
+  remote_user: root
+
+  roles:
+    - common
+    - web
+
+- hosts: zuri_main
+  remote_user: zuri
+
+  roles:
+    - main-app
+    - staging-app
