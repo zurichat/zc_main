@@ -1,6 +1,6 @@
 import React from 'react';
 import useSWR from 'swr';
-import { URLContext } from '../pages'
+import { URLContext } from '../pages';
 
 import styles from '../styles/Sidebar.module.css';
 
@@ -14,7 +14,7 @@ export const Sidebar = ({ channels, messages }) => {
     initialData: messages
   });
 
-  const value = React.useContext(URLContext); 
+  const value = React.useContext(URLContext);
 
   return (
     <div className={styles.container}>
@@ -52,10 +52,13 @@ export const Sidebar = ({ channels, messages }) => {
           {channelsData &&
             channelsData.channels.map(channel => (
               <div key={channel.id}>
-                  <p className={styles.channelItem}  onClick={()=>value.setUrl( `/apps/${channel.name}` )}>
-                    <span>#</span>
-                    {channel.name}
-                  </p>
+                <p
+                  className={styles.channelItem}
+                  onClick={() => value.setUrl(`/apps/${channel.name}`)}
+                >
+                  <span>#</span>
+                  {channel.name}
+                </p>
               </div>
             ))}
         </div>
