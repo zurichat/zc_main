@@ -3,12 +3,7 @@ name: Zuri chat testing pipeline
 on: 
   push:
     branches:
-      - master
-      - main
-  pull_request:
-    branches:
-      - main
-      - master
+      - develop
 
 env:
   NODE_VERSION: '12.x'                # set this to the node version to use
