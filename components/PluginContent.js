@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
-import { URLContext } from '../pages'
+import { URLContext } from '../pages';
 
 import styles from '../styles/PluginContent.module.css';
 
@@ -10,8 +10,8 @@ import styles from '../styles/PluginContent.module.css';
 // the variable used to store the URL currently.
 export const PluginContent = () => {
   // const pluginUrl = '/apps/default';
-  const value = React.useContext(URLContext); 
-  
+  const value = React.useContext(URLContext);
+
   useEffect(() => {
     axios.get(value.url).then(response => {
       const parser = new DOMParser();
