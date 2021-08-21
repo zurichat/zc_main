@@ -21,7 +21,7 @@ jobs:
         with:
           host: ${{ secrets.ZURI_MAIN_HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
+          password: ${{ secrets.PASSWORD }}
           script: |
             cd staging.zuri.chat
             git pull
