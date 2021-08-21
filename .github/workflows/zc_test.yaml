@@ -1,0 +1,32 @@
+name: Zuri chat testing pipeline
+
+on: 
+  push:
+    branches:
+      - develop
+
+env:
+  NODE_VERSION: '12.x'                # set this to the node version to use
+
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout the source code
+        uses: actions/checkout@v2
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install dependencies
+        run: npm install
+      
+      # Not sure if i should add this 
+      - name: Check for linting errors
+        run: yarn lint
+
+      # - name: Create optimized production build
+      #   run: npm run build
+          
