@@ -1,6 +1,5 @@
 This is the Zuri Chat frontend built using [Next.js](https://nextjs.org/) and [React](https://reactjs.org/)
 
-
 ## Getting Started
 
 Make sure you have nodejs installed by running the following command:
