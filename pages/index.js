@@ -6,7 +6,7 @@ import { Topbar } from '../components/Topbar';
 import styles from '../styles/Home.module.css';
 import React, { useState } from 'react';
 
-export const URLContext = React.createContext(null);
+export const URLContext = React.createContext("https://api.zuri.chat");
 
 export default function Home() {
   const [url, setUrl] = useState(null);
