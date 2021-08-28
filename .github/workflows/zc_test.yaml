@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - develop
+      - main
+      - master
 
 env:
   NODE_VERSION: '12.x'                # set this to the node version to use
