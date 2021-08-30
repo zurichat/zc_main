@@ -1,26 +1,27 @@
 # zc_main_nodereact
 
 This is the Zuri Chat frontend built with [ExpressJS](http://expressjs.com/) (Backend) and [React](https://reactjs.org/) (Frontend)
- 
+
 ## Getting Started.
- 
+
 Make sure you have nodejs installed by running the following command:
- 
+
 ```bash
 node -v
 ```
- 
+
 If the output is not the version of your nodejs installation, install nodejs from [here](https://nodejs.org/en/download/)
- 
+
 After installing nodejs install [yarn](https://www.npmjs.com/package/yarn) if you don't have it then install the project's dependencies:
- 
+
 ```bash
 yarn install
 ```
- 
- ## Run the Server
+
+## Run the Server
+
 Run the development server from the root folder using either of the following commands:
- 
+
 ```bash
 npm run dev
 # or
@@ -28,37 +29,37 @@ yarn dev
 ```
 
 ## Run the application -- Frontend specific
+
 Open the frontend folder `zc_frontend` in your terminal and run the application from the folder using either of the following commands:
- 
+
 ```bash
 npm run dev
 # or
 yarn dev
 ```
- 
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
- 
+
 ## Editor setup
- 
+
 We're using eslint for linting and prettier for code formating, make sure you install eslint and prettier plugins in your editor so you can
 see linting errors as you code and have your code formatted on save by prettier. If formatOnSave doesn't work please google how to set up
 format on save for the eslint & prettier plugins in your editor 🙃
- 
+
 ## Project structure
- 
+
 - All components are in the components folder and styles for those components are in the styles folder.
 - Assets are in the assets folder, including images
- 
+
 ## Contributing
- 
+
 - Check if there are any linting errors by running `yarn lint` before commiting your code.
 - Please make sure your commit messages and pr titles give enough info about the changes you've made.
- 
- 
-# Pull Requests
- 
+
+# Pull Requests(Aristotle)
+
 - Take note of all instructions above
-- The main branch for development would be the **DEVELOP** branch
+- The main branch for development would be the develop branch
 - Do not make a pull request with changes to the main branch
 - Create a branch in the format...Feat/(Task) e.g Feat/ Button Component and implement your work only in such branch
 - Whatever task it is that you do must be responsive on all screens

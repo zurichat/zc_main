@@ -1,4 +1,4 @@
-import styles from '../styles/Topbar.module.css'
+import styles from '../styles/Topbar.module.css';
 
 export const Topbar = () => {
   return (
@@ -9,11 +9,11 @@ export const Topbar = () => {
           type="text"
           placeholder="Search here"
         />
-        <img src="/settings.svg" alt="settings" />
+        <img src="/assets/settings.svg" alt="settings" />
         <div className={styles.profile}>
-          <img src="/profilepic.png" alt="Profile" />
+          <img src="/assets/profilepic.png" alt="Profile" />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

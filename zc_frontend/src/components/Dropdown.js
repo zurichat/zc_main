@@ -13,10 +13,17 @@ const Dropdown = ({ children, title, opened }) => {
           className={styles.dropDownButton}
           onClick={() => setIsOpen(!isOpen)}
         >
-          <img src="/shapekeyboardarrowdown2.svg" alt="Dropdown button" />
+          <img
+            src="/assets/shapekeyboardarrowdown2.svg"
+            alt="Dropdown button"
+          />
         </button>
         <p>{title}</p>
-        <img className={styles.addButton} src="/addicon.svg" alt="Add button" />
+        <img
+          className={styles.addButton}
+          src="/assets/addicon.svg"
+          alt="Add button"
+        />
       </div>
       <ul className={styles.content}>
         {children &&
