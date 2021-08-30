@@ -11,7 +11,7 @@ const Login = () => {
       return { valid: false, msg: `password is too short`, short: `length` };
 
     /** Special Character regex */
-    const special_characters = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+    const special_characters = /[ `!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~]/;
     /** Check if password contains a special character */
     if (!special_characters.test(password))
       return {
