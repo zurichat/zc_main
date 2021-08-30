@@ -1,0 +1,49 @@
+.button{
+    padding: 0.8rem 8rem;
+    box-sizing: border-box;
+}
+
+.button_outline { 
+    padding: 0.8rem 8rem ; 
+    box-sizing: border-box;
+}
+
+.button_outline > img{ 
+width: 8%;
+padding-bottom: 2px;
+}
+
+.subtext{
+    color: #4F4F4F;
+    font-weight: 400;
+}
+
+.email_input{
+    color: #828282;
+}
+
+.email_subheading{
+    color: #828282;
+}
+
+.link{
+    color: #1E88E5;
+}
+
+@media only screen and (max-width: 768px) {
+    .button_outline > img{ 
+        width: 14%;
+        }
+}
+
+@media only screen and (max-width: 425px) {
+    .button_outline > img{ 
+        width: 10%;
+        }
+}
+
+@media only screen and (max-width: 320px) {
+    .button_outline > img{ 
+        width: 12%;
+        }
+}
