@@ -6,7 +6,7 @@ import styles from '../styles/ProfileModal.module.css'
 
 const ProfileModal = ({ title, children, isShow, setShow }) => {
     return (
-        <div className={styles.modalContainer} style={isShow ? { display: 'flex' } : ''}>
+        <div className={styles.modalContainer} style={isShow ? { display: 'flex' } : { display: 'none' }}>
             <div className={styles.modalContent}>
                 <div className={styles.modalHeader}>
                     {title}
