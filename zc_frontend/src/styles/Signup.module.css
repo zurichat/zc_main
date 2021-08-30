@@ -1,0 +1,68 @@
+.logo {
+  font-weight: 1000;
+  font-size: 34px;
+}
+.logolink:hover {
+  color: inherit;
+}
+.signin_text {
+  font-weight: 800;
+  font-size: 32px;
+}
+.subtext {
+  color: #585656;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.button {
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 10px;
+  border: 0.2rem solid;
+  padding: 0.8rem 8rem;
+  box-sizing: border-box;
+  /*width: 400px;*/
+}
+.button > img {
+  width: 10%;
+  padding-bottom: 2px;
+}
+.input {
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 0.2rem solid grey;
+  outline: none;
+  border-radius: 10px;
+}
+.email_subheading {
+  color: #828282;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.link {
+  color: #1e88e5;
+}
+.link:hover {
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+  .button > img {
+    width: 14%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .button > img {
+    width: 15%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .button > img {
+    width: 12%;
+  }
+}

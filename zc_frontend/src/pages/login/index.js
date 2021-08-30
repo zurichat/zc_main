@@ -1,5 +1,7 @@
 import styles from '../../styles/Login.module.css';
 import React, { useState } from 'react';
+import googleIcon from '../../assets/googleicon.svg';
+import facebookIcon from '../../assets/facebookicon.svg';
 
 const Login = () => {
 
@@ -12,10 +14,10 @@ const Login = () => {
         <h2 className={` pt-2`}>Sign in to Zuri Chat</h2>
         <p className={styles.subtext}>Enter your email to sign In</p>
         <div className={`my-3`}>
-          <button className={`${styles.button_outline} m-0 col-12 col-md-6 px-2 px-md-5 py-2 btn btn-outline-dark`}><img className={`text-align-center px-2`} src={`/googleicon.svg`} alt="google icon" />Sign in with Google</button>
+          <button className={`${styles.button_outline} m-0 col-12 col-md-6 px-2 px-md-5 py-2 btn btn-outline-dark`}><img className={`text-align-center px-2`} src={googleIcon} alt="google icon" />Sign in with Google</button>
         </div>
         <div className={`my-3`}>
-          <button className={`${styles.button_outline} m-0 col-12 col-md-6 btn px-2 px-md-5 py-2 btn-outline-primary`}><img className={`text-align-center px-2`} src={`/facebookicon.svg`} alt="google icon" />Sign in with Facebook</button>
+          <button className={`${styles.button_outline} m-0 col-12 col-md-6 btn px-2 px-md-5 py-2 btn-outline-primary`}><img className={`text-align-center px-2`} src={facebookIcon} alt="google icon" />Sign in with Facebook</button>
         </div>
         <div className={`d-flex`}>
           <div className={`col-12 col-md-6 m-auto mt-5`}>

@@ -14,14 +14,13 @@
   padding: 0.5rem 0;
 }
 
-.header span {
+.header p {
   font-family: Lato;
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
   line-height: 18px;
   color: #999999;
-  cursor: pointer;
 }
 
 .dropDownButton {

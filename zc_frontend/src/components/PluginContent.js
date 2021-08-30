@@ -1,83 +1,45 @@
 import axios from 'axios'
 import { useContext, useEffect } from 'react'
 import { URLContext } from '../contexts/Url'
-import cheerio from 'cheerio'
 
 import styles from '../styles/PluginContent.module.css'
-import Welcome from './Welcome'
 
 export const PluginContent = () => {
   // const pluginUrl = '/apps/default';
-  const { url } = useContext(URLContext)
+  const value = useContext(URLContext)
 
   useEffect(() => {
-    if (!url) return
+    axios.get(value.url).then((response) => {
+      const parser = new DOMParser()
+      const html = parser.parseFromString(response.data, 'text/html')
 
-    const elRoot = document.getElementById('zc-plugin-root')
-    const reProtocol = /^https?:\/\//
-    const oURL = new URL(reProtocol.test(url) ? url : 'http://' + url)
-    const prefixLink = (url, oURL, mimeType = 'text/html') => {
-      let ret = reProtocol.test(url) ? url : `${oURL.origin}${url}`
-      return `/proxy?url=${ret}&mimeType=${mimeType}`
-    }
-
-    axios
-      .get(prefixLink(oURL.toString()))
-      .then((res) => {
-        const $ = cheerio.load(res.data)
-
-        // append stylesheet
-        $(`link[rel="stylesheet"]`).each(function () {
+      Array.from(html.querySelectorAll('link[rel="stylesheet"]')).forEach(
+        (element) => {
           const link = document.createElement('link')
-          Object.keys(this.attribs).forEach((attr) =>
-            link.setAttribute(attr, this.attribs[attr])
-          )
-          link.setAttribute(
-            'href',
-            prefixLink(this.attribs.href, oURL, 'text/css')
-          )
-          link.setAttribute('data-plugin-res', true)
-          $(this).remove()
+          link.setAttribute('rel', 'stylesheet')
+          link.setAttribute('href', element.href)
           document.head.prepend(link)
-        })
+        }
+      )
 
-        // append scripts
-        $('script').each(function () {
-          const script = document.createElement('script')
-          Object.keys(this.attribs).forEach((attr) =>
-            script.setAttribute(attr, this.attribs[attr])
-          )
-          if (script.src) {
-            script.setAttribute(
-              'src',
-              prefixLink(this.attribs.src, oURL, 'application/javascript')
-            )
-          } else {
-            script.innerText = $(this).html()
-          }
-          $(this).remove()
-          script.setAttribute('data-plugin-res', true)
-          document.body.appendChild(script)
-        })
-        elRoot.innerHTML = $('body').html()
+      Array.from(html.scripts).forEach((script) => {
+        const newScript = document.createElement('script')
+        if (script.src) {
+          newScript.src = script.src
+        } else {
+          newScript.innerHTML = script.innerHTML
+        }
+        script.remove()
+        document.body.appendChild(newScript)
       })
-      .catch((e) => {
-        elRoot.innerHTML = `Failed to Load ${url} Plugin: ${e.message}`
-      })
-    return () => {
-      elRoot.innerHTML = ''
-      document
-        .querySelectorAll('[data-plugin-res]')
-        .forEach((node) => node.remove())
-    }
-  }, [url])
+    })
+  }, [value.url])
 
   return (
-    <>
-      <section className={styles.container}>
-        <div id="zc-plugin-root">Loading...</div>
-      </section>
-      {!url && <Welcome />}
-    </>
+    <section className={styles.container}>
+      <div id="zc-plugin-root" className={styles.content}>
+        Loading...
+      </div>
+    </section>
   )
 }
