@@ -1,6 +1,0 @@
----
-# tasks file for common
-- name: Update repository and Upgrade packages
-  apt:
-    upgrade: dist
-    update_cache: yes
