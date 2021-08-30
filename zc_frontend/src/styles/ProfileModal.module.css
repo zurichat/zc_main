@@ -38,6 +38,8 @@
     color: #fff;
     font-weight: 700;
     font-size: 1.5rem;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
 }
 
 .closeIcon {
