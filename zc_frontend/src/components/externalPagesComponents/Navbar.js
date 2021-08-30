@@ -14,9 +14,9 @@ const Navbar = () => {
 						alt='zuri-logo'
 						width='20'
 						height='20'
-						className='d-inline-block align-text-top image'
+						className={`d-inline-block align-text-top ${navStyles.image}`}
 					/>
-					<span className='zuriChat'>Zuri Chat</span>
+					<span className={`${navStyles.zuriChat}`}>Zuri Chat</span>
 				</Link>
 
 				<button
@@ -32,11 +32,11 @@ const Navbar = () => {
 				<div
 					className={`${navStyles.collapse} navbar-collapse`}
 					id='navbarNavDropdown'>
-					<ul className='navbar-nav'>
+					<ul className={`navbar-nav ${navStyles.navbarNav}`}>
 						<li className='nav-item'>
 							<Link
 								to='/features'
-								className='nav-link active'
+								className={`nav-link active ${navStyles.navLink}`}
 								aria-current='page'>
 								<span className={`${navStyles.features}`}>
 									Features
@@ -46,7 +46,7 @@ const Navbar = () => {
 						<li className='nav-item'>
 							<Link
 								to='/pricing'
-								className='nav-link dropdown-toggle'
+								className={`nav-link dropdown-toggle ${navStyles.navLink}`}
 								role='button'
 								data-bs-toggle='dropdown'
 								aria-expanded='false'>
@@ -56,7 +56,9 @@ const Navbar = () => {
 							</Link>
 						</li>
 						<li className='nav-item'>
-							<Link to='/community' className='nav-link'>
+							<Link
+								to='/community'
+								className={`nav-link ${navStyles.navLink}`}>
 								<span className={`${navStyles.comms}`}>
 									Community
 								</span>
@@ -65,7 +67,7 @@ const Navbar = () => {
 						<li className='nav-item'>
 							<Link
 								to='/downloads'
-								className='nav-link dropdown-toggle'
+								className={`nav-link dropdown-toggle ${navStyles.navLink}`}
 								role='button'
 								data-bs-toggle='dropdown'
 								aria-expanded='false'>
@@ -80,7 +82,9 @@ const Navbar = () => {
 							</span>
 						</li>
 						<li className='nav-item'>
-							<Link to='/signup' className='nav-link'>
+							<Link
+								to='/signup'
+								className={`nav-link ${navStyles.navLink}`}>
 								<span className={`${navStyles.signU}`}>
 									Sign Up
 								</span>

@@ -9,9 +9,9 @@
 	margin-top: 15px;
 }
 
-.navbar-nav {
+.navbarNav {
 	position: relative;
-	left: 140px;
+	left: 240px;
 }
 
 .searchLogo {
@@ -21,7 +21,7 @@
 	margin-right: 10px;
 }
 
-.nav-link {
+.navLink {
 	margin-right: 60px;
 }
 
@@ -29,7 +29,7 @@
 	font-size: 18px;
 	color: black;
 	position: relative;
-	top: 1px;
+	top: 5px;
 	font-weight: bold;
 	margin-left: 5px;
 	text-decoration: none;
@@ -37,7 +37,7 @@
 
 .image {
 	position: relative;
-	bottom: 19px;
+	bottom: 10px;
 }
 
 .navbarBrand {
@@ -86,6 +86,21 @@
 		right: 120px;
 	}
 
+	.image {
+		position: relative;
+		bottom: 10px;
+	}
+
+	.zuriChat {
+		font-size: 18px;
+		color: black;
+		position: relative;
+		top: 5px;
+		font-weight: bold;
+		margin-left: 5px;
+		text-decoration: none;
+	}
+
 	/* .svg-inline--fa {
 		position: relative;
 		left: 25px;
@@ -97,8 +112,17 @@
 		margin-top: 15px;
 	}
 
+	.navbarNav {
+		position: relative;
+		left: 120px;
+	}
+
 	.navButton {
 		margin-left: 160px;
+	}
+
+	.navLink {
+		margin-right: 60px;
 	}
 
 	.searchLogo {
