@@ -1,5 +1,7 @@
 import styles from '../../styles/Login.module.css';
 import React, { useState } from 'react';
+import Link from '../../components/externalPagesComponents/Link';
+
 
 const Login = () => {
 
@@ -32,7 +34,8 @@ const Login = () => {
         </div>
 
         <div>
-          <button className={` ${styles.button} btn mb-3 col-12 col-md-6 px-5 px-md-5 py-2 btn-primary`}>Sign In</button>
+          
+          <button className={` ${styles.button} btn mb-3 col-12 col-md-6 px-5 px-md-5 py-2 btn-primary`}><Link title="Sign In" to="" /></button>
         </div>
         <span className={``}>Don't have an account? <a className={styles.link} href="/signup">Create an account</a></span>
       </div>
