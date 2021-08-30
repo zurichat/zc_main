@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.room {
+  margin-right: 1.875em;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.pluginContent {
+  flex: 0 1 auto;
+  position: relative;
+}
