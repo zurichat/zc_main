@@ -10,6 +10,18 @@ APIRouter.get('/plugins', (_, res) => {
     'whiteboard.zuri.chat': {
       name: 'Whiteboard Room',
     },
+    'calendar.zuri.chat': {
+      name: 'Company Holiday Calendar',
+    },
+    'noticeboard.zuri.chat': {
+      name: 'Notice Board Plugin',
+    },
+    'channels.zuri.chat': {
+      name: 'Channels Plugin',
+    },
+    'todo.zuri.chat': {
+      name: 'Zuri Todo App',
+    },
   })
 })
 

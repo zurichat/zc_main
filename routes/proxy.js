@@ -8,8 +8,7 @@ Proxy.get('/', async (req, res) => {
   let { url, mimeType } = req.query
   mimeType = mimeType || 'text/html'
 
-  //   if (!url || !reSubdomain.test(url)) {
-  if (!url) {
+  if (!url || !reSubdomain.test(url)) {
     return res.status(400).send({ message: 'Invalid Paramaters' })
   }
 
