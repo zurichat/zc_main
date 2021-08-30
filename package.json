@@ -1,0 +1,25 @@
+{
+  "name": "zc_main",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "git@github.com:zurichat/zc_main.git",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run frontend:build && npm run run-start",
+    "dev": "concurrently --kill-others-on-fail \"npm run run-dev\" \"npm run frontend:dev\"",
+    "run-start": "cross-env NODE_ENV=production node server.js",
+    "run-dev": "cross-env NODE_ENV=development nodemon server.js",
+    "frontend:build": "npm run build --prefix zc_frontend",
+    "frontend:dev": "npm start --prefix zc_frontend",
+    "postinstall": "cd zc_frontend && yarpm-yarn install"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.1",
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.12",
+    "yarpm": "^1.1.1"
+  }
+}

@@ -1,0 +1,63 @@
+.container {
+  margin-top: 0.5em;
+}
+
+.isClosed .dropDownButton img {
+  transform: rotateZ(-90deg);
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1.875em;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.header p {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #999999;
+}
+
+.dropDownButton {
+  margin-right: 1rem;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.dropDownButton img {
+  transition: transform 0.2s ease-out;
+}
+
+.addButton {
+  margin-left: auto;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+
+.content {
+  margin-left: 3.5em;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 18px;
+  color: #999999;
+  overflow: hidden;
+}
+
+.isClosed .content {
+  height: 0;
+}
+
+.item {
+  cursor: pointer;
+  padding: 0.3rem;
+}
