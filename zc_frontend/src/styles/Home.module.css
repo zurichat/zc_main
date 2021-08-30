@@ -4,7 +4,6 @@
 }
 
 .room {
-  margin-right: 1.875em;
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -12,6 +11,7 @@
 }
 
 .pluginContent {
-  flex: 0 1 auto;
+  flex: 1;
   position: relative;
+  overflow: auto;
 }
