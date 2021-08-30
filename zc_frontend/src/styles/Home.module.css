@@ -8,10 +8,9 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  height: 100vh;
 }
 
 .pluginContent {
-  flex: 0 1 auto;
+  flex: 1;
   position: relative;
 }

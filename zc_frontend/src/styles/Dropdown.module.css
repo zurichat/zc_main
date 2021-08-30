@@ -23,11 +23,6 @@
   color: #999999;
 }
 
-.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
 .dropDownButton {
   margin-right: 1rem;
   padding: 0;
