@@ -25,6 +25,6 @@ jobs:
           script: |
             cd staging.zuri.chat
             git pull
-            npm update
+            npm install
             npm run build
             pm2 reload staging
