@@ -1,0 +1,73 @@
+.switchUserActive {
+    width: 240px;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profilePic>img {
+    width: 225px;
+    margin-bottom: 20px;
+    height: 225px;
+    border-radius: 10px;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+.imageBtn {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+}
+
+.imageBtnUpload {
+    background-color: #00b87c;
+    font-size: 12px;
+    border-radius: 3px;
+    height: 36px;
+    color: white;
+    width: 129px;
+    line-height: 20px;
+    margin-bottom: 12px;
+}
+
+.imageBtnDelete {
+    background-color: transparent;
+    color: #999999;
+    font-weight: 600;
+    width: 129px;
+    line-height: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.setActive {
+    color: #434343;
+    width: 70%;
+    justify-content: space-around;
+    display: flex;
+    font-weight: 600;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.setActive>button {
+    background-color: transparent;
+    width: 47px;
+    font-weight: 400;
+    font-size: 9px;
+    color: #00b87c;
+    border: 0.25px solid #00b87c;
+    border-radius: 5px;
+    height: 26px;
+}
