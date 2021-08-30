@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TimezoneSelect from "react-timezone-select";
-import styles from "../styles/Timezone.module.css";
+import styles from "../../styles/Timezone.module.css";
 
 const TimeZone = () => {
   const [selectedTimezone, setSelectedTimezone] = useState(
