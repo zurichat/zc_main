@@ -27,4 +27,4 @@ jobs:
             git pull
             npm update
             npm run build
-            pm2 reload staging-zuri
+            pm2 reload staging
