@@ -91,7 +91,7 @@ const Navbar = () => {
 						</li>
 						<li className='nav-item'>
 							<Link
-								to='/signin'
+								to='/login'
 								className={`btn ${navStyles.signIn}`}
 								role='button'>
 								<span className={`${navStyles.signI}`}>

@@ -1,21 +1,22 @@
 import React from 'react'
-import '../styles/LoginLoading.module.css'
+import styles from '../styles/LoginLoading.module.css'
+
 const LoginLoading = () => {
     return (
-        <div className="loading-container">
-            <div className="loading-header">
+        <div className={styles.loadingContainer}>
+            <div className={styles.loadingHeader}>
                 <img src="/zurichatlogo.svg" alt="logo" />
                 <span>ZURI</span>
             </div>
-            <div className="loader-container">
-                <div className="loading-circle">
+            <div className={styles.loaderContainer}>
+                <div className={styles.loadingCircle}>
                 </div>
                 <img src="/zurichatlogo.svg" alt="logo" />
             </div>
-            <div className="loading-status">
+            <div className={styles.loadingStatus}>
                 <h1>Launching Zuri Chat</h1>
             </div>
-            <div className="loading-image">
+            <div className={styles.loadingImage}>
                 <img src="/loading-image.svg" alt="" />
             </div>
 
