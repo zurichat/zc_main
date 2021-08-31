@@ -1,0 +1,52 @@
+span {
+  color: black;
+  font-weight: 700;
+  font-size: 25px;
+}
+.faqs {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.5rem;
+  display: block;
+}
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.5rem;
+}
+.accordion {
+  width: 700px;
+}
+.items {
+  padding: 10px 20px;
+  line-height: 2;
+  box-shadow: 0px 1px black;
+  border-bottom: 0.1rem solid grey;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.title {
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.answer {
+  text-align: left;
+  overflow: hidden;
+  cursor: pointer;
+  font-weight: 500;
+  max-height: 0;
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+}
+.answer.show {
+  /*font-weight: 500;*/
+  height: auto;
+  max-height: 1000px;
+  transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+}
