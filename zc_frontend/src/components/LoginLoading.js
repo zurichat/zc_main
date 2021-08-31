@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/LoginLoading.css'
+import '../styles/LoginLoading.module.css'
 const LoginLoading = () => {
     return (
         <div className="loading-container">
