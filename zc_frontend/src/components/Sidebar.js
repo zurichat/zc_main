@@ -46,19 +46,10 @@ export const Sidebar = () => {
           <Dropdown
             title={plugins[key].name}
             key={key}
-            showAddButto={false}
+            showAddButton={false}
             onTitleClick={() => setUrl(key)}
           ></Dropdown>
         ))}
-
-      {/* <Dropdown title="Plugins">
-        {plugins &&
-          Object.keys(plugins).map((key) => (
-            <span key={key} onClick={() => setUrl(key)}>
-              {plugins[key].name}
-            </span>
-          ))}
-      </Dropdown> */}
       <Dropdown title="messages">
         {messagesData &&
           messagesData.messages.map((message, index) => (
