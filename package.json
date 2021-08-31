@@ -17,6 +17,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "express": "^4.17.1",
+    "multer": "^1.4.3",
     "nodemailer": "^6.6.3"
   },
   "devDependencies": {

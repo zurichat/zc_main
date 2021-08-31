@@ -1,5 +1,6 @@
 const express = require("express");
 const APIRouter = express.Router();
+const profilePhotoUtil = require("../lib/profile_picture");
 
 // /GET get all plugins
 APIRouter.get("/plugins", (_, res) => {
@@ -135,4 +136,5 @@ APIRouter.post("/login", async (req, res) => {
 	res.json(response);
 });
 
+APIRouter.post("profile_upload", profilePhotoUtil.uploadProfilePhoto);
 module.exports = APIRouter;
