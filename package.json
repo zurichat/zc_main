@@ -19,9 +19,12 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "autoprefixer": "^10.3.3",
     "concurrently": "^6.2.1",
     "cross-env": "^7.0.3",
     "nodemon": "^2.0.12",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.9",
     "yarpm": "^1.1.1"
   }
 }
