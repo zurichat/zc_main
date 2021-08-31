@@ -1,7 +1,7 @@
-const APIRouter = require('./api')
-const Proxy = require('./proxy')
+const apiRoutes = require('./api')
+const proxy = require('./proxy')
 
 module.exports = (app) => {
-  app.use('/api', APIRouter)
-  app.use('/proxy', Proxy)
+  app.use('/api', ...apiRoutes)
+  app.use('/proxy', proxy)
 }
