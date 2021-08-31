@@ -3,47 +3,17 @@ import { Sidebar } from '../../components/Sidebar'
 import { Topbar } from '../../components/Topbar'
 import styles from '../../styles/Home.module.css'
 import { UrlProvider } from '../../contexts/Url'
-import ProfileModal from '../../components/ProfileModal'
-import { useState } from 'react'
+import TopbarModal from './../../components/TopbarModal';
 
 const Home = () => {
 
-  const [isShow, setShow] = useState(true);
-
   return (
-    <UrlProvider>
-      <ProfileModal isShow={isShow} setShow={setShow} title="Edit your profile">
-        Testing
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        Test
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />e
-        <br />
-        Test
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />e
-        <br />
-        Test
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />e
-      </ProfileModal>
+    <UrlProvider >
       <div className={styles.container}>
         <Sidebar />
         <div className={styles.room}>
           <Topbar />
+          <TopbarModal />
           <div className={styles.pluginContent}>
             <PluginContent />
           </div>
