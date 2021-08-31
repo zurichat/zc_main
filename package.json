@@ -16,9 +16,14 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+<<<<<<< HEAD
     "crypto-js": "^4.1.1",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1"
+=======
+    "express": "^4.17.1",
+    "nodemailer": "^6.6.3"
+>>>>>>> d223ce5dd2e49057c224f8b88404e90a5380b37c
   },
   "devDependencies": {
     "concurrently": "^6.2.1",
