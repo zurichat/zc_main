@@ -5,6 +5,7 @@ import SignUp from './pages/signup';
 import Blog from './pages/blog';
 import News from './pages/news';
 import './styles/globals.css';
+import 'tailwindcss/tailwind.css'
 
 const App = () => (
   <BrowserRouter>
