@@ -1,6 +1,7 @@
 import styles from './styles/Login.module.css'
 import React, { useState } from 'react'
 import LoginLoading from '../../components/LoginLoading';
+import Link from '../../components/externalPagesComponents/Link';
 
 
 const Login = () => {
@@ -68,9 +69,7 @@ const Login = () => {
         </div>
         <span className={``}>
           Don't have an account?{' '}
-          <a className={styles.link} href="/signup">
-            Create an account
-          </a>
+         <Link title="Create an account" color="#2F80ED" to="/signup" />
         </span>
       </div>
     </div>
