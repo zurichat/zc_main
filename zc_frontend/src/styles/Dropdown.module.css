@@ -6,6 +6,11 @@
   transform: rotateZ(-90deg);
 }
 
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .header {
   display: flex;
   flex-direction: row;
