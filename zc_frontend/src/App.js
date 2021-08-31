@@ -6,7 +6,7 @@ import Blog from "./pages/blog";
 import News from "./pages/news";
 import Navbar from "./components/externalPagesComponents/Navbar";
 import "./styles/globals.css";
-// import '@fortawesome/fontawesome-free/js/all.js';
+import "@fortawesome/fontawesome-free/js/all.js";
 
 const App = () => (
   <BrowserRouter>
