@@ -28,7 +28,6 @@
   border: 1px solid #069e6b;
 }
 
-.general_button__primary:active,
-.general_button__secondary:active {
+.general_button:active {
   transform: scale(0.95);
 }
