@@ -6,9 +6,11 @@ import cheerio from 'cheerio'
 import styles from '../styles/PluginContent.module.css'
 import Welcome from './Welcome'
 
-export const PluginContent = () => {
+export const PluginContent = () => { 
   // const pluginUrl = '/apps/default';
-  const { url } = useContext(URLContext)
+  const state = useContext(URLContext)
+  const [url] = state.url
+  
 
   useEffect(() => {
     if (!url) return
