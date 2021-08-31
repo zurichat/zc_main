@@ -1,0 +1,257 @@
+.navbar-expand-lg {
+	flex-wrap: wrap;
+	justify-content: start;
+	padding-left: 25px;
+}
+
+.navbar {
+	padding-left: 20px;
+	margin-top: 15px;
+}
+
+.navbarNav {
+	position: relative;
+	left: 240px;
+}
+
+.searchLogo {
+	position: relative;
+	right: 20px;
+	top: 10px;
+	margin-right: 10px;
+}
+
+.navLink {
+	margin-right: 60px;
+}
+
+.zuriChat {
+	font-size: 18px;
+	color: black;
+	position: relative;
+	top: 5px;
+	font-weight: bold;
+	margin-left: 5px;
+	text-decoration: none;
+}
+
+.image {
+	position: relative;
+	bottom: 10px;
+}
+
+.navbarBrand {
+	text-decoration: none;
+	float: left;
+}
+
+.features {
+	color: black;
+	font-weight: 300;
+}
+
+.signU {
+	color: #1e88e5;
+	font-weight: 300;
+}
+
+.signI {
+	font-weight: 300;
+}
+
+.signIn {
+	background-color: #00b87c;
+	color: white;
+	border-radius: 0px;
+}
+
+.pricing {
+	color: black;
+	font-weight: 300;
+}
+
+.comms {
+	color: black;
+	font-weight: 300;
+}
+
+.download {
+	color: black;
+	font-weight: 300;
+}
+
+@media only screen and (min-width: 1440px) {
+	.collapse {
+		position: relative;
+		right: 55px;
+	}
+
+	.image {
+		position: relative;
+		bottom: 10px;
+	}
+
+	.zuriChat {
+		font-size: 18px;
+		color: black;
+		position: relative;
+		top: 5px;
+		font-weight: bold;
+		margin-left: 5px;
+		text-decoration: none;
+	}
+
+	/* .svg-inline--fa {
+      position: relative;
+      left: 25px;
+      bottom: 10px;
+    } */
+
+	.navbar {
+		padding-left: 20px;
+		margin-top: 15px;
+	}
+
+	.navbarNav {
+		position: relative;
+		left: 120px;
+	}
+
+	.navButton {
+		margin-left: 160px;
+	}
+
+	.navLink {
+		margin-right: 60px;
+	}
+
+	.searchLogo {
+		position: relative;
+		right: 25px;
+		top: 10px;
+		margin-right: 10px;
+	}
+
+	.signIn {
+		background-color: #00b87c;
+		color: white;
+		border-radius: 0px;
+	}
+
+	.signI {
+		font-weight: 300;
+	}
+
+	.signU {
+		color: #1e88e5;
+		font-weight: 300;
+	}
+
+	.download {
+		color: black;
+		font-weight: 300;
+	}
+
+	.comms {
+		color: black;
+		font-weight: 300;
+	}
+
+	.pricing {
+		color: black;
+		font-weight: 300;
+	}
+
+	.features {
+		color: black;
+		font-weight: 300;
+	}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+	.collapse {
+		position: relative;
+		right: 120px;
+	}
+
+	.image {
+		position: relative;
+		bottom: 10px;
+	}
+
+	.zuriChat {
+		font-size: 18px;
+		color: black;
+		position: relative;
+		top: 5px;
+		font-weight: bold;
+		margin-left: 5px;
+		text-decoration: none;
+	}
+
+	/* .svg-inline--fa {
+		position: relative;
+		left: 25px;
+		bottom: 10px;
+	} */
+
+	.navbar {
+		padding-left: 20px;
+		margin-top: 15px;
+	}
+
+	.navbarNav {
+		position: relative;
+		left: 120px;
+	}
+
+	.navButton {
+		margin-left: 160px;
+	}
+
+	.navLink {
+		margin-right: 60px;
+	}
+
+	.searchLogo {
+		position: relative;
+		right: auto;
+		top: auto;
+		margin-right: 10px;
+	}
+
+	.signIn {
+		background-color: #00b87c;
+		color: white;
+		border-radius: 0px;
+	}
+
+	.signI {
+		font-weight: 300;
+	}
+
+	.signU {
+		color: #1e88e5;
+		font-weight: 300;
+	}
+
+	.download {
+		color: black;
+		font-weight: 300;
+	}
+
+	.comms {
+		color: black;
+		font-weight: 300;
+	}
+
+	.pricing {
+		color: black;
+		font-weight: 300;
+	}
+
+	.features {
+		color: black;
+		font-weight: 300;
+	}
+}
