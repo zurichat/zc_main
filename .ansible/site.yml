@@ -1,5 +1,4 @@
 ---
-
 - hosts: zuri_main
   remote_user: root
 

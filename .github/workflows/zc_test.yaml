@@ -1,6 +1,6 @@
 name: Zuri chat testing pipeline
 
-on: 
+on:
   push:
     branches:
       - develop
@@ -8,7 +8,7 @@ on:
       - master
 
 env:
-  NODE_VERSION: '12.x'                # set this to the node version to use
+  NODE_VERSION: '12.x' # set this to the node version to use
 
 jobs:
   test:
@@ -24,11 +24,10 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-      
-      # Not sure if i should add this 
+
+      # Not sure if i should add this
       - name: Check for linting errors
         run: yarn lint
 
       # - name: Create optimized production build
       #   run: npm run build
-          

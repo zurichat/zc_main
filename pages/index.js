@@ -9,7 +9,7 @@ import React, { useState } from 'react';
 export const URLContext = React.createContext(null);
 
 export default function Home() {
-  const [url, setUrl] = useState("https://api.zuri.chat");
+  const [url, setUrl] = useState('https://api.zuri.chat');
 
   return (
     <div className={styles.container}>

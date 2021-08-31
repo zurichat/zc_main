@@ -44,7 +44,6 @@ format on save for the eslint & prettier plugins in your editor 🙃
 - Check if there are any linting errors by running `yarn lint` before commiting your code.
 - Please make sure your commit messages and pr titles give enough info about the changes you've made.
 
-
 # Pull Requests(Aristotle)
 
 - Take note of all instructions above
@@ -55,13 +54,13 @@ format on save for the eslint & prettier plugins in your editor 🙃
 - Add a live link to your Pull Request
 - Make sure your commit messages and PR title are precise and meaningful, no..."it is now working" or "finally" commit messages, else your PR may not be merged
 - Add a screenshot of what it is that you've worked on for all screens...mobile, tab, desktop screens
-- Make sure your branch is up to date with the main branch and without conflicts before making your pull request, if not your PR may not be merged 
+- Make sure your branch is up to date with the main branch and without conflicts before making your pull request, if not your PR may not be merged
 - Push your code as soon as you can [ASAP]
 - Link whatever issue it is that you worked on to your pull request
-- Add all other neccessary links you may have to your pull request inluding the link to the design 
+- Add all other neccessary links you may have to your pull request inluding the link to the design
 - In the comment section of the pull request, document your work thoroughly(a helpful description)
 - In a situation where you work on functional parts add a show `what it does` video if you can
 - Do `git fetch` at least twice a day to be up to date with the repo
-- Always do a git fetch or pull of the main branch before you write code and before making your pull request 
+- Always do a git fetch or pull of the main branch before you write code and before making your pull request
 - Your pull request must not change the work of others
 - Your work should be pixel perfect
