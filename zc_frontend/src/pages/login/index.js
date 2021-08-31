@@ -1,10 +1,18 @@
 import styles from '../../styles/Login.module.css';
+import GoogleLogin from 'react-google-login';
+import { useHistory } from "react-router-dom";
 import React, { useState } from 'react';
 
 const Login = () => {
 
   const [email, setEmail] = useState("");
-
+  let history = useHistory();
+  const successResponseGoogle = (response) => {
+    history.push("/");
+  }
+  const failureResponseGoogle = (response) => {
+    console.log(response);
+  }
   return (
     <div className={`container text-center m-auto`}>
       <div className={`pt-5 px-3 mt-5`}>
@@ -12,10 +20,19 @@ const Login = () => {
         <h2 className={` pt-2`}>Sign in to Zuri Chat</h2>
         <p className={styles.subtext}>Enter your email to sign In</p>
         <div className={`my-3`}>
-          <button className={`${styles.button_outline} m-0 col-12 col-md-6 px-2 px-md-5 py-2 btn btn-outline-dark`}><img className={`text-align-center px-2`} src={`/googleicon.svg`} alt="google icon" />Sign in with Google</button>
+        <GoogleLogin
+          clientId="78755437309-27q9m2toval9c439d2r7q5gj28h0pqcc.apps.googleusercontent.com"
+          render={ (renderProps) => (
+            <button onClick={renderProps.onClick} className={`${styles.button_outline} m-0 col-12 col-md-6 px-2 px-md-5 py-2 btn btn-outline-dark`}><img className={`text-align-center m-2`} src={`/googleicon.svg`} alt="google icon" />Sign in with Google</button>
+          )}
+          buttonText="Login"
+          onSuccess={successResponseGoogle}
+          onFailure={failureResponseGoogle}
+          cookiePolicy={'single_host_origin'}
+        />
         </div>
         <div className={`my-3`}>
-          <button className={`${styles.button_outline} m-0 col-12 col-md-6 btn px-2 px-md-5 py-2 btn-outline-primary`}><img className={`text-align-center px-2`} src={`/facebookicon.svg`} alt="google icon" />Sign in with Facebook</button>
+          <button className={`${styles.button_outline} m-0 col-12 col-md-6 btn px-2 px-md-5 py-2 btn-outline-primary`}><img className={`text-align-center m-2`} src={`/facebookicon.svg`} alt="google icon" />Sign in with Facebook</button>
         </div>
         <div className={`d-flex`}>
           <div className={`col-12 col-md-6 m-auto mt-5`}>
