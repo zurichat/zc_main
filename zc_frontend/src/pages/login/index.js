@@ -2,10 +2,12 @@ import styles from '../../styles/Login.module.css';
 import GoogleLogin from 'react-google-login';
 import { useHistory } from "react-router-dom";
 import React, { useState } from 'react';
+import LoginLoading from '../../components/LoginLoading';
 
 const Login = () => {
 
   const [email, setEmail] = useState("");
+  const [loggingIn, setLoggingIn] = useState(false)
   let history = useHistory();
   const successResponseGoogle = (response) => {
     history.push("/");
@@ -13,8 +15,10 @@ const Login = () => {
   const failureResponseGoogle = (response) => {
     console.log(response);
   }
+  
   return (
     <div className={`container text-center m-auto`}>
+      {email && loggingIn && < LoginLoading />}
       <div className={`pt-5 px-3 mt-5`}>
         <span><img src="/zurichatlogo.svg" alt="logo" /><p className={`d-inline  p-2`}>Zuri chat</p></span>
         <h2 className={` pt-2`}>Sign in to Zuri Chat</h2>
@@ -49,7 +53,7 @@ const Login = () => {
         </div>
 
         <div>
-          <button className={` ${styles.button} btn mb-3 col-12 col-md-6 px-5 px-md-5 py-2 btn-primary`}>Sign In</button>
+          <button className={` ${styles.button} btn mb-3 col-12 col-md-6 px-5 px-md-5 py-2 btn-primary`} onClick={() => setLoggingIn(true)}>Sign In</button>
         </div>
         <span className={``}>Don't have an account? <a className={styles.link} href="/signup">Create an account</a></span>
       </div>
