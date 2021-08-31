@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
 .timezoneContainer {
   position: absolute;
   width: 520px;
@@ -21,7 +23,7 @@
   height: 21px;
   left: 348px;
   top: 801px;
-  font-family: Lato;
+  font-family: "Lato";
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
