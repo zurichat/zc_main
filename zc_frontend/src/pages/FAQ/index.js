@@ -44,7 +44,7 @@ const data = [
   },
   {
     question:
-      "Our team has several accounts which are not being actively used, but which we don't want to diable. Do we still have to pay for them?",
+      "Our team has several accounts which are not being actively used, but which we don't want to disable. Do we still have to pay for them?",
     answer:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias.",
   },
@@ -60,7 +60,7 @@ const data = [
   },
   {
     question:
-      "My team wants to cancel its subscription. How do we do that? Can we get refund?",
+      "My team wants to cancel its subscription. How do we do that? Can we get a refund?",
     answer:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias.",
   },
