@@ -14,6 +14,31 @@ const Home = () => {
     <UrlProvider>
       <ProfileModal isShow={isShow} setShow={setShow} title="Edit your profile">
         Testing
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        Test
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />e
+        <br />
+        Test
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />e
+        <br />
+        Test
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />e
       </ProfileModal>
       <div className={styles.container}>
         <Sidebar />
