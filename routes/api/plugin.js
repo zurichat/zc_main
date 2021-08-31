@@ -6,10 +6,10 @@ const plugin = express.Router()
 plugin.get('/plugin/list', (_, res) => {
   return res.send({
     'chess.zuri.chat': {
-      name: 'Chess Board Room',
+      name: 'ChessBoard',
     },
     'whiteboard.zuri.chat': {
-      name: 'Whiteboard Room',
+      name: 'Whiteboard',
     },
     'calendar.zuri.chat': {
       name: 'Company Holiday Calendar',
@@ -25,6 +25,12 @@ plugin.get('/plugin/list', (_, res) => {
     },
     'goals.zuri.chat': {
       name: 'Goals Zuri App',
+    },
+    'tracker.zuri.chat': {
+      name: 'Tracker Zuri App',
+    },
+    'sales.zuri.chat': {
+      name: 'Sales Zuri App',
     },
   })
 })
