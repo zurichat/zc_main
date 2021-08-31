@@ -69,13 +69,9 @@ const Login = () => {
         </div>
         <span className={``}>
           Don't have an account?{' '}
-<<<<<<< HEAD
-         <Link title="Create an account" color="#2F80ED" to="/signup" />
-=======
           <a className={styles.link} href="/signup">
             Create an account
           </a>
->>>>>>> main
         </span>
       </div>
     </div>
