@@ -1,14 +1,14 @@
 import styles from '../../styles/Login.module.css';
 import React, { useState } from 'react';
-import Link from '../../components/externalPagesComponents/Link';
-
+import LoginLoading from '../../components/LoginLoading';
 
 const Login = () => {
 
   const [email, setEmail] = useState("");
-
+  const [loggingIn, setLoggingIn] = useState(false)
   return (
     <div className={`container text-center m-auto`}>
+      {email && loggingIn && < LoginLoading />}
       <div className={`pt-5 px-3 mt-5`}>
         <span><img src="/zurichatlogo.svg" alt="logo" /><p className={`d-inline  p-2`}>Zuri chat</p></span>
         <h2 className={` pt-2`}>Sign in to Zuri Chat</h2>
@@ -34,8 +34,7 @@ const Login = () => {
         </div>
 
         <div>
-          
-          <button className={` ${styles.button} btn mb-3 col-12 col-md-6 px-5 px-md-5 py-2 btn-primary`}><Link title="Sign In" to="" /></button>
+          <button className={` ${styles.button} btn mb-3 col-12 col-md-6 px-5 px-md-5 py-2 btn-primary`} onClick={() => setLoggingIn(true)}>Sign In</button>
         </div>
         <span className={``}>Don't have an account? <a className={styles.link} href="/signup">Create an account</a></span>
       </div>
