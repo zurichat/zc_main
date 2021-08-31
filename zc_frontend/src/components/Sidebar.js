@@ -8,9 +8,9 @@ import Dropdown from './Dropdown'
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
 export const Sidebar = () => {
-  const { data: channelsData } = useSWR('/api/plugins/channels', fetcher)
-  const { data: messagesData } = useSWR('/api/plugins/messages', fetcher)
-  const { data: plugins } = useSWR('/api/plugins/', fetcher)
+  const { data: channelsData } = useSWR('/api/plugin/channels', fetcher)
+  const { data: messagesData } = useSWR('/api/plugin/messages', fetcher)
+  const { data: plugins } = useSWR('/api/plugin/list', fetcher)
 
   const { setUrl } = useContext(URLContext)
 
