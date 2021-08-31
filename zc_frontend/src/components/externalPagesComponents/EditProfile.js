@@ -118,6 +118,7 @@ function EditProfile() {
                       <img
                         src={profileImage}
                         className="object-contain"
+                        alt=""
                       />
                     </div>
                     <div className="flex flex-col justify-center">
