@@ -1,21 +1,45 @@
-body {
+.body {
     background-image: url('../pages/images/backgroundImage.svg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
 }
+.far {
+    position: relative;
+    right: 30px;
+    top: 10px;
+    cursor: pointer;
+}
+.checktext {
+    font-size: 14px;
+    font-weight: 500;
+}
+.checklink {
+    color: #02ca87 !important;
+}
+.or {
+    font-size: 14px;
+    margin-top: 1%;
+    font-weight: 500;
+}
+
+.footer > a {
+    font-size: 10px;
+}
 .button{
     padding: 0.8rem 8rem;
     box-sizing: border-box;
     width: 100%;
     background-color: #00B87C !important;
+    font-weight: 500;
 }
 
 .button_outline { 
     padding: 0.8rem 8rem ; 
     box-sizing: border-box;
     width: 100%;
+    font-weight: 500;
 }
 
 .button_outline > img{ 
@@ -24,9 +48,11 @@ padding-bottom: 2px;
 }
 
 .subtext{
-    color: #4F4F4F;
+    color: #686666;
     font-weight: 500;
-    padding-bottom: 10px;
+    padding-bottom: 13px;
+    font-size: 14px;
+    letter-spacing: normal;
 }
 
 .email_input{
@@ -41,6 +67,9 @@ padding-bottom: 2px;
     color: #1E88E5;
 }
 
+.footer-text {
+    font-size: 12px !important;
+}
 @media only screen and (max-width: 768px) {
     .button_outline > img{ 
         width: 14%;
