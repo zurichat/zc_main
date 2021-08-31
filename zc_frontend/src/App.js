@@ -5,9 +5,11 @@ import SignUp from './pages/signup';
 import Blog from './pages/blog';
 import News from './pages/news';
 import './styles/globals.css';
+import Navbar from './components/externalPagesComponents/Navbar';
 
 const App = () => (
 	<BrowserRouter>
+		<Navbar />
 		<Switch>
 			<Route path='/' exact>
 				<Home />

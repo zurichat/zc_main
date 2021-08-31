@@ -11,18 +11,36 @@
 
 .navbarNav {
 	position: relative;
-	left: 240px;
+	left: 280px;
+}
+
+.searchLogo1 {
+	display: none;
 }
 
 .searchLogo {
+	display: inline;
 	position: relative;
 	right: 20px;
 	top: 10px;
-	margin-right: 10px;
+	margin-left: 130px;
+	margin-right: 15px;
 }
 
-.navLink {
-	margin-right: 60px;
+.navLinkFeatures {
+	margin-right: 50px;
+}
+
+.navLinkPricing {
+	margin-right: 50px;
+}
+
+.navLinkComms {
+	margin-right: 50px;
+}
+
+.navLinkSignUp {
+	margin-right: 10px;
 }
 
 .zuriChat {
@@ -37,7 +55,7 @@
 
 .image {
 	position: relative;
-	bottom: 10px;
+	top: 5px;
 }
 
 .navbarBrand {
@@ -83,7 +101,7 @@
 @media only screen and (min-width: 1440px) {
 	.collapse {
 		position: relative;
-		right: 55px;
+		left: 125px;
 	}
 
 	.image {
@@ -121,15 +139,32 @@
 		margin-left: 160px;
 	}
 
-	.navLink {
-		margin-right: 60px;
+	.navLinkFeatures {
+		margin-right: 50px;
+	}
+
+	.navLinkPricing {
+		margin-right: 50px;
+	}
+
+	.navLinkComms {
+		margin-right: 50px;
+	}
+
+	.navLinkSignUp {
+		margin-right: 10px;
 	}
 
 	.searchLogo {
 		position: relative;
-		right: 25px;
+		right: 20px;
 		top: 10px;
-		margin-right: 10px;
+		margin-left: 100px;
+		margin-right: 15px;
+	}
+
+	.searchLogo1 {
+		display: none;
 	}
 
 	.signIn {
@@ -206,18 +241,31 @@
 	}
 
 	.navButton {
-		margin-left: 160px;
+		position: relative;
+		bottom: 15px;
+		left: 195px;
 	}
 
 	.navLink {
 		margin-right: 60px;
 	}
 
-	.searchLogo {
+	.navbarBrand {
+		text-decoration: none;
+		float: left;
 		position: relative;
-		right: auto;
-		top: auto;
-		margin-right: 10px;
+		top: 5px;
+	}
+
+	.searchLogo {
+		display: none;
+	}
+
+	.searchLogo1 {
+		display: inline;
+		position: relative;
+		left: 140px;
+		top: 15px;
 	}
 
 	.signIn {
