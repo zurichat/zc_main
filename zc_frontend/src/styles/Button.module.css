@@ -1,0 +1,34 @@
+.general_button {
+  padding: 0.5em 1em;
+  background: #ffffff;
+  border-radius: 3px;
+  font-family: Lato;
+  font-size: 1rem;
+  border: none;
+}
+
+.general_button__primary {
+  background: #00b87c;
+  color: #ffffff;
+  border: 1px solid #02c584;
+}
+
+.general_button__secondary {
+  background: #ffffff;
+  color: #00b87c;
+  border: 1px solid #00b87c;
+}
+.general_button__primary:hover {
+  background: #069e6b;
+  border: 1px solid #069e6b;
+}
+
+.general_button__secondary:hover {
+  color: #069e6b;
+  border: 1px solid #069e6b;
+}
+
+.general_button__primary:active,
+.general_button__secondary:active {
+  transform: scale(0.95);
+}
