@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+}
+.pageWrapper {
+  position: relative;
+}
+.pageWrapper .backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.pageWrapper .backdrop .profileWrapper {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  margin-bottom: 200px;
+}
+.pageWrapper .backdrop .profileWrapper .profile {
+  width: 885px;
+  z-index: 1000;
+  height: 90vh;
+  padding-bottom: 40px;
+overflow-y: scroll;
+  margin: 15px auto 20px auto;
+  flex-direction: column;
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+.profile::-webkit-scrollbar{
+    display: none;
+}
+
+.profileHeader {
+  border-radius: 5px 5px 0px 0px;
+  background: #00b87c;
+  padding: 25px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
+  position: sticky;
+
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.profileMain {
+  background-color: #ffffff;
+  display: flex;
+  padding: 35px;
+}
+.profileMain .sectionA {
+  width: 70%;
+  margin-right: 25px;
+}
+.profileMain .sectionB {
+  width: 30%;
+}
+.profileMain .sectionA form {
+  padding-top: 20px;
+}
+.nameInput {
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 8px;
+  margin-top: 10px;
+  outline: none;
+  display: block;
+  width: 100%;
+}
+.formWrapper {
+  margin-bottom: 15px;
+}

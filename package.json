@@ -5,8 +5,9 @@
   "repository": "git@github.com:zurichat/zc_main.git",
   "license": "MIT",
   "scripts": {
-    "start": "npm run run-start",
-    "build": "npm run frontend:build",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "dev": "concurrently --kill-others-on-fail \"npm run run-dev\" \"npm run frontend:dev\"",
     "run-start": "cross-env NODE_ENV=production node server.js",
     "run-dev": "cross-env NODE_ENV=development nodemon server.js",
