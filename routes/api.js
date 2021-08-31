@@ -22,6 +22,9 @@ APIRouter.get("/plugins", (_, res) => {
 		"todo.zuri.chat": {
 			name: "Zuri Todo App",
 		},
+		"goals.zuri.chat": {
+			name: "Goals Zuri App", 
+		} 
 	});
 });
 
