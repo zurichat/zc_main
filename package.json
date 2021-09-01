@@ -8,6 +8,8 @@
     "start": "npm run run-start",
     "build": "npm run frontend:build",
     "dev": "concurrently --kill-others-on-fail \"npm run run-dev\" \"npm run frontend:dev\"",
+    "format": "prettier -w .",
+    "lint": "prettier -c .",
     "run-start": "cross-env NODE_ENV=production node server.js",
     "run-dev": "cross-env NODE_ENV=development nodemon server.js",
     "frontend:build": "npm run build --prefix zc_frontend",
@@ -24,6 +26,7 @@
     "concurrently": "^6.2.1",
     "cross-env": "^7.0.3",
     "nodemon": "^2.0.12",
+    "prettier": "^2.3.2",
     "yarpm": "^1.1.1"
   }
 }

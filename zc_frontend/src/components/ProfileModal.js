@@ -21,7 +21,7 @@ const ProfileModal = ({ title, children }) => {
                 { children }
             </div>
         </div>
-    )
+  )
 }
 
 export default ProfileModal

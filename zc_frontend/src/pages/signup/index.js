@@ -1,4 +1,4 @@
-import styles from "../../styles/Signup.module.css";
+import styles from '../../styles/Signup.module.css'
 
 const Login = () => {
   /**
@@ -10,47 +10,47 @@ const Login = () => {
   const passwordCheck = (password, okay_length = 0) => {
     /** Check if password meets required length */
     if (password.length < okay_length)
-      return { valid: false, msg: `password is too short`, short: `length` };
+      return { valid: false, msg: `password is too short`, short: `length` }
 
     /** Special Character regex */
-    const special_characters = /[ `!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~]/;
+    const special_characters = /[ `!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~]/
     /** Check if password contains a special character */
     if (!special_characters.test(password))
       return {
         valid: false,
         msg: `password must contain a special character`,
-        short: `special`,
-      };
+        short: `special`
+      }
 
     /** Check if password contains a special character */
-    const number_regex = /[0-9]/;
+    const number_regex = /[0-9]/
     if (!number_regex.test(password))
       return {
         valid: false,
         msg: `password must contain a number`,
-        short: `number`,
-      };
+        short: `number`
+      }
 
     /** Check if password contains a lowercase character */
-    const lowercase_regex = /[a-z]/;
+    const lowercase_regex = /[a-z]/
     if (!lowercase_regex.test(password))
       return {
         valid: false,
         msg: `password must contain a lowercase letter`,
-        short: `lower`,
-      };
+        short: `lower`
+      }
 
     /** Check if password contains an uppercase character */
-    const uppercase_regex = /[A-Z]/;
+    const uppercase_regex = /[A-Z]/
     if (!uppercase_regex.test(password))
       return {
         valid: false,
         msg: `password must contain an uppercase letter`,
-        short: `upper`,
-      };
+        short: `upper`
+      }
 
-    return { valid: true, msg: `password is okay`, short: `okay` };
-  };
+    return { valid: true, msg: `password is okay`, short: `okay` }
+  }
 
   console.log(passwordCheck);
 
@@ -61,7 +61,7 @@ const Login = () => {
         Sign up
       </button>
     </>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

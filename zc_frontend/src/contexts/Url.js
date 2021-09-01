@@ -1,8 +1,9 @@
-import { createContext, useState, useRef } from 'react'
+import { createContext, useState } from 'react'
 
 export const URLContext = createContext(null)
 export const UrlProvider = ({ children }) => {
   const [url, setUrl] = useState(null)
+<<<<<<< HEAD
   const modalRef = useRef();
 
   // setting up my states for the profile topbar modal
@@ -68,9 +69,11 @@ export const UrlProvider = ({ children }) => {
     profileModal
   }
 
+=======
+>>>>>>> 3dd8e76b1815124ade931ef5df3d3a7bcf1aaada
 
   return (
-    <URLContext.Provider value={state}>
+    <URLContext.Provider value={{ url, setUrl }}>
       {children}
     </URLContext.Provider>
   )
