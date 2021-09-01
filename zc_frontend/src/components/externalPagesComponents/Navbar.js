@@ -96,11 +96,6 @@ const Navbar = () => {
 							</Link>
 						</li>
 						<li className='nav-item'>
-							<span className={`${navStyles.searchLogo}`}>
-								<i className='fas fa-search'></i>
-							</span>
-						</li>
-						<li className='nav-item'>
 							<Link
 								to='/signin'
 								className={`btn ${navStyles.signIn}`}
