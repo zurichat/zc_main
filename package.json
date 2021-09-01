@@ -20,7 +20,8 @@
     "axios": "^0.21.1",
     "express": "^4.17.1",
     "helmet": "^4.6.0",
-    "nodemailer": "^6.6.3"
+    "nodemailer": "^6.6.3",
+    "yarn": "^1.22.11"
   },
   "devDependencies": {
     "concurrently": "^6.2.1",
