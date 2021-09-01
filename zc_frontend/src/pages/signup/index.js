@@ -55,7 +55,10 @@ const Login = () => {
   return (
     <>
       <div>This is signup page</div>
-      <button type="submit" className={styles.signup_btn}>
+      <button 
+        type="submit" 
+        className={styles.signup_btn}
+        onClick={passwordCheck}>
         Sign up
       </button>
     </>
