@@ -1,0 +1,26 @@
+.searchBar {
+  width: 443px;
+  height: 48px;
+  background: #ffffff;
+  border: 1px solid #bebebe;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin-right: 1.5em;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.searchInput {
+  border: none;
+  outline: none;
+  font-family: 'Lato', sans-serif;
+}
+.searchInput::placeholder {
+  font-size: 13px;
+  line-height: 16px;
+}
+.searchSvg {
+  cursor: pointer;
+  fill: #bebebe;
+}
