@@ -1,17 +1,15 @@
-import React from 'react'
-import styles from '../../styles/Download.module.css'
-import Link from 'react-router-dom';
+import React from 'react';
+import styles from '../../styles/Download.module.css';
 
 const Download = () => {
   return (
     <>
-      {/* <Header /> */}
       <section>
         <div className={`${styles.container} container`}>
           <h1 className={styles.h1}>Zuri Chat Download</h1>
-          <Link to="/news" className={styles.link}>
+          <a href="/news" className={styles.link}>
             What's New
-          </Link>
+          </a>
         </div>
         <div className={styles.images}>
           <img
@@ -49,13 +47,16 @@ const Download = () => {
             </p>
           </div>
           <div className={styles.storelink}>
-            <Link className={styles.imgLink} to="#">
+            <a className={styles.imgLink} href="https://play.google.com/">
               <img src="/Play_Store_badge.svg" alt="Google Play Store"></img>
-            </Link>
+            </a>
 
-            <Link className={styles.imgLink} to="#">
+            <a
+              className={styles.imgLink}
+              href="https://www.apple.com/app-store/"
+            >
               <img src="/App_Store_badge.svg" alt="Apple App Store"></img>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
