@@ -4,6 +4,7 @@ import { Topbar } from '../../components/Topbar'
 import styles from '../../styles/Home.module.css'
 import { UrlProvider } from '../../contexts/Url'
 import TopbarModal from './../../components/TopbarModal'
+import { TopbarProvider } from '../../contexts/Topbar'
 
 const Home = () => {
   return (
@@ -11,8 +12,10 @@ const Home = () => {
       <div className={styles.container}>
         <Sidebar />
         <div className={styles.room}>
-          <Topbar />
-          <TopbarModal />
+          <TopbarProvider>
+            <Topbar />
+            <TopbarModal />
+          </TopbarProvider>
           <div className={styles.pluginContent}>
             <PluginContent />
           </div>
