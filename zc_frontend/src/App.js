@@ -4,6 +4,7 @@ import Login from './pages/login'
 import SignUp from './pages/signup'
 import Features from './pages/features'
 import './styles/globals.css'
+import Pricing from './pages/pricing'
 
 const App = () => (
   <BrowserRouter>
@@ -19,6 +20,9 @@ const App = () => (
       </Route>
       <Route path="/features">
         <Features />
+      </Route>
+      <Route path="/pricing">
+        <Pricing />
       </Route>
     </Switch>
   </BrowserRouter>
