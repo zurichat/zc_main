@@ -6,13 +6,12 @@ import SearchBar from './externalPagesComponents/SearchBar'
 
 export const Topbar = () => {
   const state = useContext(URLContext)
-  const {openModal} = state
-
+  const { openModal } = state
 
   return (
     <div className={styles.container}>
       <div className={styles.topbar}>
-          <SearchBar />
+        <SearchBar />
         <img src="/settings.svg" alt="settings" />
         <div className={styles.profile} onClick={openModal}>
           <img src="/profile.png" alt="Profile" />

@@ -1,10 +1,10 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from './pages/home';
-import Login from './pages/login';
-import SignUp from './pages/signup';
-import Blog from './pages/blog';
-import News from './pages/news';
-import './styles/globals.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Home from './pages/home'
+import Login from './pages/login'
+import SignUp from './pages/signup'
+import Blog from './pages/blog'
+import News from './pages/news'
+import './styles/globals.css'
 
 const App = () => (
   <BrowserRouter>
@@ -26,6 +26,6 @@ const App = () => (
       </Route>
     </Switch>
   </BrowserRouter>
-);
+)
 
-export default App;
+export default App
