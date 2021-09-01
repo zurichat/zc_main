@@ -18,7 +18,7 @@ const Header = () => {
           <span className={`${headerStyles.zuriChat}`}>Zuri Chat</span>
         </Link>
 
-        <div className="nav-item search">
+        <div className={`nav-item ${headerStyles.searchLogo1}`}>
           <img
             src={searchlogo}
             alt="zuri-logo"
@@ -83,7 +83,7 @@ const Header = () => {
                 <span className={`${headerStyles.download}`}>Downloads</span>
               </Link>
             </li>
-            <li className="nav-item">
+            <li className={`nav-item ${headerStyles.searchLogo}`}>
               <img
                 src={searchlogo}
                 alt="search-logo"
