@@ -1,4 +1,4 @@
-// This components helps to setup a modal for profile screens
+// This components helps to setup a modal for profile
 
 import React, { useContext } from 'react'
 import { URLContext } from '../contexts/Url';
