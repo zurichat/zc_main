@@ -1,7 +1,6 @@
 import styles from './styles/Login.module.css'
 import React, { useState } from 'react'
-import LoginLoading from '../../components/LoginLoading';
-
+import LoginLoading from '../../components/LoginLoading'
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -9,7 +8,7 @@ const Login = () => {
 
   return (
     <div className={`container text-center m-auto`}>
-      {email && loggingIn && < LoginLoading />}
+      {email && loggingIn && <LoginLoading />}
       <div className={`pt-5 px-3 mt-5`}>
         <span>
           <img src="/zurichatlogo.svg" alt="logo" />
@@ -54,7 +53,7 @@ const Login = () => {
               type="email"
               className={`py-2 form-control`}
               value={email}
-              onChange={(e) => {
+              onChange={e => {
                 console.log(e.target.value)
                 setEmail(e.target.value)
               }}
@@ -64,7 +63,12 @@ const Login = () => {
         </div>
 
         <div>
-          <button className={` ${styles.button} btn mb-3 col-12 col-md-6 px-5 px-md-5 py-2 btn-primary`} onClick={() => setLoggingIn(true)}>Sign In</button>
+          <button
+            className={` ${styles.button} btn mb-3 col-12 col-md-6 px-5 px-md-5 py-2 btn-primary`}
+            onClick={() => setLoggingIn(true)}
+          >
+            Sign In
+          </button>
         </div>
         <span className={``}>
           Don't have an account?{' '}
