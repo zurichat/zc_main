@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap");
+
+*{
+    margin:0;
+    padding:0;
+    font-family: "Lato", sans-serif;
+  }
+  
+  body{
+    max-width: 1440px;
+    background-color: #E5E5E5;
+    box-sizing: border-box;
+  }
+
+  .featuresContainer {    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 150px 60px;
+  }
+
+  .header {
+      max-width: 1256px;
+      max-height: 126px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .header h2 {
+    max-width: 1256px;
+    max-height: 48px;
+    color: #242424;
+    font-size: 40px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    line-height: 48px;
+    letter-spacing: 0.02em;
+}
+.header p {
+    width: 1200px;
+    height: 58px;
+    color: #3A3A3A;
+    font-size: 24px;
+    font-weight: 500; 
+    text-align: center;
+    line-height: 29px;
+    letter-spacing: 0.02em;
+}
+
+  .featuresSection {
+    max-width: 1320px;
+    max-height: 330px;
+    padding:3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 20px;
+  }
+  .featureCard {
+    width: 196px;
+    height: 330px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 20px;
+  }
+  .featureCard h3 {
+    width: 118px;
+    height: 97px;
+    color: #1A61DB;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0px;
+    text-align: center;
+    line-height: 29px;
+    letter-spacing: 0.02em;
+  }
+  .featureCard p {
+    width: 196px;
+    height: 108px;
+    color: #3A3A3A;
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 500;
+      text-align: center;
+      line-height: 22px;
+      letter-spacing: 0.02em;
+  }
+
+  /* Media Query for extra large screen */
+
+  @media screen and (min-width: 1500px) {
+    body{
+      margin: 0px auto;      
+    }
+  }
+
+    /* Media Query for ipad and tablets screen */
+
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+    body{
+      width: 100vw;      
+    }
+    .featuresContainer {    
+      margin: 10px 5px;
+    }
+
+    .header {
+      width: 98vw;
+  }
+  .header h2 {
+    width: 96vw;
+    padding: 40px 0px 20px 0px;
+    text-align: center;
+  }
+  .header p {
+    width: 80vw;
+    line-height: 40px;
+  }
+
+  .featuresSection {
+    width: 96vw;
+    flex-wrap: wrap;
+    margin-top: 60px;
+  }
+
+  .featureCard {
+      width: 40vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin: 20px 0px;
+  }
+  }
