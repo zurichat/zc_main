@@ -1,14 +1,15 @@
 const express = require('express')
-const APIRouter = express.Router()
+
+const plugin = express.Router()
 
 // /GET get all plugins
-APIRouter.get('/plugins', (_, res) => {
+plugin.get('/plugin/list', (_, res) => {
   return res.send({
     'chess.zuri.chat': {
-      name: 'Chess Board Room',
+      name: 'ChessBoard',
     },
     'whiteboard.zuri.chat': {
-      name: 'Whiteboard Room',
+      name: 'Whiteboard',
     },
     'calendar.zuri.chat': {
       name: 'Company Holiday Calendar',
@@ -22,10 +23,19 @@ APIRouter.get('/plugins', (_, res) => {
     'todo.zuri.chat': {
       name: 'Zuri Todo App',
     },
+    'goals.zuri.chat': {
+      name: 'Goals Zuri App',
+    },
+    'tracker.zuri.chat': {
+      name: 'Tracker Zuri App',
+    },
+    'sales.zuri.chat': {
+      name: 'Sales Zuri App',
+    },
   })
 })
 
-APIRouter.get('/plugins/:name', (req, res) => {
+plugin.get('/plugin/:name', (req, res) => {
   const { name } = req.params
 
   if (name in defaultData === false) {
@@ -95,4 +105,4 @@ const defaultData = {
   ],
 }
 
-module.exports = APIRouter
+module.exports = plugin

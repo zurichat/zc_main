@@ -6,9 +6,15 @@
   transform: rotateZ(-90deg);
 }
 
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .header {
   display: flex;
   flex-direction: row;
+  gap: 0.5rem;
   margin-left: 1.875em;
   align-items: center;
   padding: 0.5rem 0;
