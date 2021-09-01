@@ -1,16 +1,13 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from "./pages/home";
-import Login from "./pages/login";
-import SignUp from "./pages/signup";
-import Blog from "./pages/blog";
-import News from "./pages/news";
-import Navbar from "./components/externalPagesComponents/Navbar";
-import "./styles/globals.css";
-import "@fortawesome/fontawesome-free/js/all.js";
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Home from './pages/home'
+import Login from './pages/login'
+import SignUp from './pages/signup'
+import Blog from './pages/blog'
+import News from './pages/news'
+import './styles/globals.css'
 
 const App = () => (
   <BrowserRouter>
-    <Navbar />
     <Switch>
       <Route path="/" exact>
         <Home />
@@ -29,6 +26,6 @@ const App = () => (
       </Route>
     </Switch>
   </BrowserRouter>
-);
+)
 
-export default App;
+export default App
