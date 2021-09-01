@@ -4,6 +4,7 @@ import Login from './pages/login';
 import SignUp from './pages/signup';
 import Blog from './pages/blog';
 import News from './pages/news';
+import Download from './pages/download';
 import './styles/globals.css';
 
 const App = () => (
@@ -23,6 +24,9 @@ const App = () => (
       </Route>
       <Route path="/news">
         <News />
+      </Route>
+      <Route path="/app-download">
+        <Download />
       </Route>
     </Switch>
   </BrowserRouter>
