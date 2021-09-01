@@ -1,6 +1,4 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
-
 
 
 
@@ -10,6 +8,7 @@
   height: 5.0625em;
   margin-right: 1.875em;
   justify-content: flex-end;
+  
 }
 .profile {
   background-color: #acffe6;
@@ -72,6 +71,45 @@
   border-radius: 8px;
   padding: 20px 0;
 }
+
+/* THE MEDIA SCREEN */
+@media screen and (min-width:1453px){
+  .topbarModal{
+    top:8%;
+  }
+}
+@media screen and (max-width:1352px) and (min-width:1026px){
+  .topbarModal{
+    top:7%;
+  }
+}
+@media screen and (max-width:1025px) and (min-width:769px){
+  .topbarModal{
+    top:6%;
+  }
+}
+@media screen and (max-width:768px) and (min-width:426px){
+  .topbarModal{
+    top:7%;
+  }
+}
+@media screen and (max-width:425px) and (min-width:376px){
+  .topbarModal{
+    top:7%;
+  }
+}
+@media screen and (max-width:375px) and (min-width:321px){
+  .topbarModal{
+    top:7%;
+  }
+}@media screen and (max-width:320px){
+  .topbarModal{
+    top:7%;
+  }
+}
+
+
+
 
 
 
