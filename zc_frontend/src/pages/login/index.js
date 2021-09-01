@@ -1,7 +1,8 @@
 import styles from './styles/Login.module.css'
 import React, { useState } from 'react'
-import LoginLoading from '../../components/LoginLoading'
-import Link from '../../components/externalPagesComponents/Link'
+import LoginLoading from '../../components/LoginLoading';
+import Link from '../../components/externalPagesComponents/Link';
+
 
 const Login = () => {
   const [email, setEmail] = useState('')
