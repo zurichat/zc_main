@@ -142,11 +142,12 @@
 .topPricingTick {
   width: 12.15px;
   height: 12px;
-  background-color: green;
+  /* background-color: green; */
 }
 
 .topPricingText {
   display: inline-flex;
+  flex-direction: column;
   font-style: normal;
   font-weight: bold;
   font-size: 10px;
@@ -154,5 +155,15 @@
 }
 
 .topPricingBottomFoot{
+    display: flex;
     justify-content: center;
+}
+
+.topPricingBottomFoot span{
+    width: 51px;
+    height: 12px;
+    color: #00B87C;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
 }
