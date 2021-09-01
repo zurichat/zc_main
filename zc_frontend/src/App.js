@@ -3,7 +3,6 @@ import Home from './pages/home'
 import Login from './pages/login'
 import SignUp from './pages/signup'
 import Features from './pages/features'
-import Header from './components/externalPagesComponents/Header'
 import './styles/globals.css'
 
 const App = () => (
