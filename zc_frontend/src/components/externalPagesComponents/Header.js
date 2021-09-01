@@ -1,6 +1,6 @@
-import { Link, withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import headerStyles from '../../styles/Header.module.css'
-import navlogo from '../../assets/images/hngLogo.png'
+import navlogo from '../../../public/zurichatlogo.svg'
 import searchlogo from '../../assets/images/search.png'
 
 const Header = () => {
@@ -116,4 +116,4 @@ const Header = () => {
   )
 }
 
-export default withRouter(Header)
+export default Header
