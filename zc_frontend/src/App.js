@@ -21,9 +21,6 @@ const App = () => (
       <Route path="/features">
         <Features />
       </Route>
-      <Route path="/header">
-        <Header />
-      </Route>
     </Switch>
   </BrowserRouter>
 )
