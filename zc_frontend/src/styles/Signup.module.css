@@ -1,3 +1,112 @@
+
+.container{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+.Account_having {
+   width: 90%;
+}
+
+.Account_having p{
+   margin-top: 50px;
+   text-align: right;
+   margin: 20px;
+}
+
+.Account_having p a{
+   color: #00bb7c;
+   font-weight: bold;
+}
+
+.login_container{
+   display: grid; 
+   justify-content: center;
+   align-items: center;
+}
+
+.logoImage{
+   width: 50px;
+   height: 50px;
+}
+
+.logo{
+   display: flex; 
+   justify-content: center;
+   align-items: center;
+}
+
+ .logoText{
+   font-family: 'Gilroy' sans-serif;
+   font-size: 30px;
+   padding: 10px 10px 10px 10px;
+}
+
+.head_text h1{
+   text-align: center;
+   padding: 10px;
+}
+
+.head_text p{
+   text-align: center;
+}
+
+.signing_by_buttons .google_email{
+   border: 1px solid black;
+   border-radius: 5px;
+   width: 100%;
+   padding: 0.5rem 5rem;
+   font-weight: bold;
+   background-color: white;
+}
+
+.signing_by_buttons .facebook_email{
+   border: 1px solid rgb(41, 41, 179);
+   border-radius: 5px;
+   width: 100%;
+   padding: 0.5rem 5rem;
+   font-weight: bold;
+   color: rgb(41, 41, 179);
+   background-color: white;
+   margin-top: 20px;
+}
+
+.signing_by_buttons .google_email:hover{
+   background-color: rgb(194, 194, 194);
+}
+
+.signing_by_buttons .facebook_email:hover{
+   background-color: rgb(194, 194, 194);
+}
+
+.signing_by_buttons{
+   margin-top: 2rem;
+}
+
+.signing_by_buttons button img{
+   width: 30px;
+   height: 30px;
+   margin-right: 10px;
+}
+
+.signing_by_Email{
+   margin-top: 20px;
+}
+
+.signing_by_Email label{
+   font-weight: bold;
+   padding: 0.5rem 0.5rem 0.5rem 0rem;
+}
+
+.signing_by_Email input{
+   border: 1px solid black;
+   border-radius: 5px;
+   width: 100%;
+   padding: 0.5rem 0.5rem;
+   background-color: white;
+}
+
 .signup_btn {
    all:  unset;
    display: flex;
@@ -9,6 +118,41 @@
    font-weight: bold;
    font-size: 1.2rem;
    width: 10rem;
-
-   margin-left: 5rem;
+   margin-top: 20px;
 }
+
+.signup_btn:hover {
+   background: #038f60;
+}
+
+.checkbox{
+   padding: 2rem 0.7rem 0.7rem 0rem;
+}
+
+.checkbox span{
+   margin-left: 10px;
+}
+
+input[type="checkbox"]{
+   height: 15px;
+   width: 15px;
+   border-radius: 10px;
+   color: teal;
+   cursor: pointer;
+}
+
+
+.agreement p{
+   padding: 1rem 0.5rem 0.5rem 0rem;
+   color: rgb(141, 141, 141);
+}
+
+.footer_menu{
+   margin: 50px 0 100px 0;
+}
+
+.footer_menu ul{
+   display: flex;
+   justify-content: space-around;  
+}
+
