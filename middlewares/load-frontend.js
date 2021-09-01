@@ -6,6 +6,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 module.exports = app => {
   app.use(
     (_, res, next) => {
+      res.set('X-Build-Mode', process.env.NODE_ENV)
       if (!isProduction) {
         return res.redirect('http://127.0.0.1:5000') // redirect to frontend in dev build
       }
