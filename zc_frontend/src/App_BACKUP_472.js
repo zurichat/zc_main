@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-import PricingPageSection1 from './pages/pricing/pricingPageSection1/PricingPageSection1';
-
-const App = () => (
-	<PricingPageSection1 />
-);
-=======
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from './pages/home'
 import Login from './pages/login'
@@ -34,6 +27,5 @@ const App = () => (
     </Switch>
   </BrowserRouter>
 )
->>>>>>> f39cddfcfbb4ff713091f10b2df89039c1e7bee1
 
 export default App
