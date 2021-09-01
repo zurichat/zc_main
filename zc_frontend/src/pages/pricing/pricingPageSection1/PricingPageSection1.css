@@ -50,21 +50,21 @@
   flex: 1;
   height: 100%;
   margin-right: 16px;
-  border-right: 0.5px solid rgba(0, 0, 0, 0.5);
+  border-right: 1px solid rgba(122, 122, 122, 0.5);
 }
 
 .topPricingMiddle1 {
   flex: 1;
   height: 100%;
   margin-right: 16px;
-  border-right: 0.5px solid rgba(0, 0, 0, 0.5);
+  border-right: 1px solid rgba(122, 122, 122, 0.5);
 }
 
 .topPricingMiddle2 {
   flex: 1;
   height: 100%;
   margin-right: 16px;
-  border-right: 0.5px solid rgba(0, 0, 0, 0.5);
+  border-right: 1px solid rgba(122, 122, 122, 0.5);
 }
 
 .topPricingEnd {
@@ -142,7 +142,7 @@
 .topPricingTick {
   width: 12.15px;
   height: 12px;
-  /* background-color: green; */
+  margin-right: 8px;
 }
 
 .topPricingText {
