@@ -1,0 +1,53 @@
+span {
+  color: #333333;
+  font-size: 1.3rem;
+}
+.faqs {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.5rem;
+  display: block;
+}
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.accordion {
+  padding: 1.1rem 1.1rem;
+  width: 62.5rem;
+}
+.items {
+  padding: 10px 0;
+  border-bottom: 2px solid grey;
+  text-align: left;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+}
+.title h6 {
+  padding-right: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1.5;
+}
+.answer {
+  text-align: left;
+  overflow: hidden;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #333333;
+  max-height: 0;
+  line-height: 2;
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+}
+.answer.show {
+  height: auto;
+  max-height: 62.5rem;
+  transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+}

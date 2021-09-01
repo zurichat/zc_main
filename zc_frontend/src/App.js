@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from './pages/home'
 import Login from './pages/login'
-import SignUp from './pages/signup'
 import Features from './pages/features'
+import FAQ from './pages/FAQ'
 import './styles/globals.css'
 
 const App = () => (
@@ -14,8 +14,8 @@ const App = () => (
       <Route path="/login">
         <Login />
       </Route>
-      <Route path="/signup">
-        <SignUp />
+      <Route path="/faq">
+        <FAQ />
       </Route>
       <Route path="/features">
         <Features />
