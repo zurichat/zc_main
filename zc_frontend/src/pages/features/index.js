@@ -1,11 +1,11 @@
-import Section4 from "./components/Section4"
+import Section4 from './components/Section4'
 
 const Features = () => {
-    return (
-        <>
-            <Section4 />
-        </>
-    )
+  return (
+    <>
+      <Section4 />
+    </>
+  )
 }
 
-export default Features;
+export default Features
