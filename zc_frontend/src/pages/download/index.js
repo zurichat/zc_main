@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../../styles/Download.module.css'
-//import Header from 'C:UsersDellDesktopzc_mainzc_frontendsrccomponentsexternalPagesComponentsHeader.js'
+import Link from 'react-router-dom';
 
 const Download = () => {
   return (
@@ -9,9 +9,9 @@ const Download = () => {
       <section>
         <div className={`${styles.container} container`}>
           <h1 className={styles.h1}>Zuri Chat Download</h1>
-          <a className={styles.link} href="#">
+          <Link to="/news" className={styles.link}>
             What's New
-          </a>
+          </Link>
         </div>
         <div className={styles.images}>
           <img
@@ -49,13 +49,13 @@ const Download = () => {
             </p>
           </div>
           <div className={styles.storelink}>
-            <a className={styles.imgLink} href="">
+            <Link className={styles.imgLink} to="#">
               <img src="/Play_Store_badge.svg" alt="Google Play Store"></img>
-            </a>
+            </Link>
 
-            <a className={styles.imgLink} href="">
+            <Link className={styles.imgLink} to="#">
               <img src="/App_Store_badge.svg" alt="Apple App Store"></img>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
