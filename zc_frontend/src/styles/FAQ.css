@@ -1,7 +1,3 @@
-span {
-  color: #333333;
-  font-size: 1.3rem;
-}
 .faqs {
   text-align: center;
   justify-content: center;
@@ -16,7 +12,7 @@ span {
   align-items: center;
 }
 .accordion {
-  padding: 1.1rem 1.1rem;
+  padding: 1.1rem 2rem;
   width: 62.5rem;
 }
 .items {
@@ -30,10 +26,14 @@ span {
   text-align: left;
 }
 .title h6 {
-  padding-right: 3rem;
+  padding-right: 2rem;
   font-weight: bold;
   cursor: pointer;
   line-height: 1.5;
+}
+.title span {
+  color: #333333;
+  font-size: 1.5rem;
 }
 .answer {
   text-align: left;
@@ -50,4 +50,16 @@ span {
   height: auto;
   max-height: 62.5rem;
   transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+}
+.billing {
+  font-weight: bold;
+  margin-top: 1.3rem;
+  padding: 0 5rem;
+  font-size: 18px;
+}
+.billing .info {
+  color: rgb(107, 180, 107);
+}
+.billing .info:hover {
+  text-decoration: underline;
 }

@@ -38,6 +38,12 @@ const Index = () => {
           ))}
         </div>
       </div>
+      <div className="billing">
+        Get more information on{' '}
+        <a className="info" href="/faq">
+          billing at Zuri Chat.
+        </a>
+      </div>
     </div>
   )
 }
