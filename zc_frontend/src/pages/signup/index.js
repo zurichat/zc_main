@@ -1,6 +1,10 @@
 import styles from "../../styles/Signup.module.css";
+import { useState } from "react";
 
 const Login = () => {
+  const [password, setpassword] = useState("");
+  const [passwordErrorMessage, setpasswordErrorMessage] = useState("");
+
   /**
    * @param password {string} - password to test
    * @param okay_length {number} - minimum length of password (defaults to 0)
@@ -52,15 +56,43 @@ const Login = () => {
     return { valid: true, msg: `password is okay`, short: `okay` };
   };
 
+  /**
+   * submits form if details are valid
+   */
+  const validateForm = (form) => {
+    form.preventDefault();
+
+    if (!password) {
+      setpasswordErrorMessage("input password");
+      return;
+    }
+
+    const { valid: passwordValidity, msg } = passwordCheck(password);
+    setpasswordErrorMessage(passwordValidity ? "" : msg);
+
+    // add other validation tests to the
+    // if statement to submit if true
+    if (passwordValidity) {
+      form.submit();
+    }
+    return;
+  };
+
   return (
     <>
       <div>This is signup page</div>
-      <button 
-        type="submit" 
-        className={styles.signup_btn}
-        onClick={passwordCheck}>
-        Sign up
-      </button>
+      <form onSubmit={validateForm}>
+        <input
+          onChange={(e) => setpassword(e.target.value)}
+          value={password}
+          placeholder="password"
+          type="password"
+        />
+        {passwordErrorMessage}
+        <button type="submit" className={styles.signup_btn}>
+          Sign up
+        </button>
+      </form>
     </>
   );
 };
