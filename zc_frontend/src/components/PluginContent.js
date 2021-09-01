@@ -6,11 +6,10 @@ import cheerio from 'cheerio'
 import styles from '../styles/PluginContent.module.css'
 import Welcome from './Welcome'
 
-export const PluginContent = () => { 
+export const PluginContent = () => {
   // const pluginUrl = '/apps/default';
   const state = useContext(URLContext)
   const [url] = state.url
-  
 
   useEffect(() => {
     if (!url) return
@@ -25,13 +24,13 @@ export const PluginContent = () => {
 
     axios
       .get(prefixLink(oURL.toString()))
-      .then((res) => {
+      .then(res => {
         const $ = cheerio.load(res.data)
 
         // append stylesheet
         $(`link[rel="stylesheet"]`).each(function () {
           const link = document.createElement('link')
-          Object.keys(this.attribs).forEach((attr) =>
+          Object.keys(this.attribs).forEach(attr =>
             link.setAttribute(attr, this.attribs[attr])
           )
           link.setAttribute(
@@ -46,7 +45,7 @@ export const PluginContent = () => {
         // append scripts
         $('script').each(function () {
           const script = document.createElement('script')
-          Object.keys(this.attribs).forEach((attr) =>
+          Object.keys(this.attribs).forEach(attr =>
             script.setAttribute(attr, this.attribs[attr])
           )
           if (script.src) {
@@ -63,14 +62,14 @@ export const PluginContent = () => {
         })
         elRoot.innerHTML = $('body').html()
       })
-      .catch((e) => {
+      .catch(e => {
         elRoot.innerHTML = `Failed to Load ${url} Plugin: ${e.message}`
       })
     return () => {
       elRoot.innerHTML = ''
       document
         .querySelectorAll('[data-plugin-res]')
-        .forEach((node) => node.remove())
+        .forEach(node => node.remove())
     }
   }, [url])
 
