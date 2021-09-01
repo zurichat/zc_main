@@ -1,6 +1,8 @@
-This is the Zuri Chat frontend built using [Next.js](https://nextjs.org/) and [React](https://reactjs.org/)
+# zc_main
 
-## Getting Started
+This is the Zuri Chat frontend built with [ExpressJS](http://expressjs.com/) (Backend) and [React](https://reactjs.org/) (Frontend)
+
+## Getting Started.
 
 Make sure you have nodejs installed by running the following command:
 
@@ -16,7 +18,19 @@ After installing nodejs install [yarn](https://www.npmjs.com/package/yarn) if yo
 yarn install
 ```
 
-Run the development server using either of the following commands:
+## Run the Server
+
+Run the development server from the root folder using either of the following commands:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+## Run the application -- Frontend specific
+
+Open the frontend folder `zc_frontend` in your terminal and run the application from the folder using either of the following commands:
 
 ```bash
 npm run dev
@@ -35,11 +49,8 @@ format on save for the eslint & prettier plugins in your editor 🙃
 ## Project structure
 
 - All components are in the components folder and styles for those components are in the styles folder.
-- The frontend routes are in the pages folder, learn more about Next.js pages [here](https://nextjs.org/docs/basic-features/pages).
-- Api routes are in the ./pages/api folder, learn more about Next.js api routes [here](https://nextjs.org/learn/basics/api-routes).
-- Assets are in the public folder
+- Assets are in the assets folder, including images
 
 ## Contributing
 
-- Check if there are any linting errors by running `yarn lint` before commiting your code.
-- Please make sure your commit messages and pr titles give enough info about the changes you've made.
+For detailed information on how to go about contribution. Check out the [Contribution Guide](docs/CONTRIBUTING.md)
