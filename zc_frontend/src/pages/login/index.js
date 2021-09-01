@@ -1,12 +1,20 @@
-import styles from './styles/Login.module.css'
-import React, { useState } from 'react'
+import styles from './styles/Login.module.css';
+import React, { useState } from 'react';
 import LoginLoading from '../../components/LoginLoading';
-
+import GoogleLogin from 'react-google-login';
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState('')
   const [loggingIn, setLoggingIn] = useState(false)
+  let history = useHistory();
 
+  const successResponseGoogle = (response) => {
+    history.push("/");
+  }
+  const failureResponseGoogle = (response) => {
+    console.log(response);
+  }
   return (
     <div className={`container text-center m-auto`}>
       {email && loggingIn && < LoginLoading />}
@@ -18,16 +26,25 @@ const Login = () => {
         <h2 className={` pt-2`}>Sign in to Zuri Chat</h2>
         <p className={styles.subtext}>Enter your email to sign In</p>
         <div className={`my-3`}>
-          <button
-            className={`${styles.button_outline} m-0 col-12 col-md-6 px-2 px-md-5 py-2 btn btn-outline-dark`}
-          >
-            <img
-              className={`text-align-center px-2`}
-              src={`/googleicon.svg`}
-              alt="google icon"
-            />
-            Sign in with Google
-          </button>
+          <GoogleLogin
+            clientId="78755437309-27q9m2toval9c439d2r7q5gj28h0pqcc.apps.googleusercontent.com"
+            render={ (renderProps) => (
+              <button
+                onClick={renderProps.onClick}
+                className={`${styles.button_outline} m-0 col-12 col-md-6 px-2 px-md-5 py-2 btn btn-outline-primary`}
+              >
+                <img
+                  className={`text-align-center px-2`}
+                  src={`/googleicon.svg`}
+                  alt="google icon"
+                />Sign in with Google
+                </button>
+            )}
+            buttonText="Login"
+            onSuccess={successResponseGoogle}
+            onFailure={failureResponseGoogle}
+            cookiePolicy={'single_host_origin'}
+          />
         </div>
         <div className={`my-3`}>
           <button
