@@ -7,21 +7,27 @@
   "scripts": {
     "start": "npm run run-start",
     "build": "npm run frontend:build",
+    "deploy":"gh-pages -d build",
     "dev": "concurrently --kill-others-on-fail \"npm run run-dev\" \"npm run frontend:dev\"",
     "run-start": "cross-env NODE_ENV=production node server.js",
     "run-dev": "cross-env NODE_ENV=development nodemon server.js",
     "frontend:build": "npm run build --prefix zc_frontend",
     "frontend:dev": "cross-env PORT=5000 npm start --prefix zc_frontend",
     "postinstall": "cd zc_frontend && yarpm-yarn install"
+    
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "gh-pages": "^3.2.3"
   },
   "devDependencies": {
+    "autoprefixer": "^10.3.3",
     "concurrently": "^6.2.1",
     "cross-env": "^7.0.3",
     "nodemon": "^2.0.12",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.9",
     "yarpm": "^1.1.1"
   }
 }
