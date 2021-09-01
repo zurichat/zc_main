@@ -6,6 +6,8 @@ import Blog from './pages/blog';
 import News from './pages/news';
 import './styles/globals.css';
 
+
+
 const App = () => (
   <BrowserRouter>
     <Switch>
