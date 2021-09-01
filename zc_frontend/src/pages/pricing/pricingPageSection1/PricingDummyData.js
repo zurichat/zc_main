@@ -5,7 +5,7 @@ export const Pricing = [
         topPricingSubtitle: "The quickest and easiest way to try Zuri Chat",
         topPricingAmount: "$0 USD/mo",
         topPricingBottomHeadText: "",
-        topPricingTick: "/checkmarks.png",
+        topPricingTick: "/checkmarks.svg",
         topPricingTickAlt: "checkmarks",
         topPricingText: [
             "Access to 10,000 of your team’s most recent messages",
@@ -48,7 +48,7 @@ export const Pricing = [
         topPricingSubtitle: "Slack for the most demanding enterprises - all the flexibility to meet your regulatory requirementsand all the power to match your growth",
         topPricingAmount: "",
         topPricingBottomHeadText: "All the greatness of business+, and:",
-        topPricingTick: "/checkmarks.png",
+        topPricingTick: "/checkmarks.svg",
         topPricingTickAlt: "checkmarks",
         topPricingText: [
             "Peace of mind with enterprise-grade security and compliance, such as HIPAA support and the Enterprise Key Management add-on",
