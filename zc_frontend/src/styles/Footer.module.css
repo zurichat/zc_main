@@ -98,20 +98,17 @@ li {
 	color: #6a6a6a;
 	font-size: 0.9rem;
 }
-.show {
-    padding:32px 52px 53px 100px;
-}
+
 .notShow {
     padding:67px 52px 53px 100px;
 }
 
 @media (max-width: 69rem) {
-	.show,.notShow{
+	.notShow {
 		padding-top: 48px;
 		padding-right: 32px;
 		padding-left: 32px;
 	}
-   
 	.topSection {
 		display: revert;
 	}
@@ -124,13 +121,8 @@ li {
 	}
 }
 @media (max-width: 35rem) {
-    .advert {
-     
-    }
-    .advert > p {
-        font-size: 1.5rem;
-        margin-bottom: 32px;
-    }
+    
+   
     .buttonSection {
         display: flex;
         flex-direction: column;

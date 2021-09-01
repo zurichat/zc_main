@@ -5,7 +5,7 @@ import Message from './Message';
 const Footer = ({showMessage,type}) => (
     <footer  className={styles.footer}>
             {showMessage && <Message type={type}/>}
-            <div className={styles.notShow}>
+            <div style={showMessage ?{paddingTop:"48px"}:{paddingTop:"67px"}} className={styles.notShow}>
             <section className={styles.topSection}>
             <div className={styles.logoWrapper}>
             <div className={styles.logo}>
