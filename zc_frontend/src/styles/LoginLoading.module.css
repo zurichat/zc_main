@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 .loadingContainer {
     z-index: 999999999;
@@ -17,7 +17,7 @@
     height: 40px;
 }
 .loadingHeader {
-    padding: 20px 0;
+    padding: 25px 0;
     font-size: 30px;
     letter-spacing: 10px;
     font-weight: 900;
@@ -26,9 +26,22 @@
 .loadingHeader img {
     padding: 0 10px;
 }
+.loadingImage {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+  align-items: baseline;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
 .loadingImage img{
     height: 50vh;
     max-width: 90vw;
+}
+.loadingImage img:first-child, .loadingImage img:last-child{
+  height: 30vh;
+  max-width: 90vw;
 }
 .loaderContainer {
     display: flex;
@@ -50,12 +63,12 @@
     animation: rotate 2s linear infinite;
 }
 @keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .loadingStatus h1{
@@ -66,4 +79,14 @@
 }
 .loadingArc {
     height: 30px;
+}
+@media screen and (max-width: 700px){
+  .loadingImage {
+    justify-content: center;
+    height: 40vh;
+    overflow: hidden;
+  }
+  .loadingImage img:first-child, .loadingImage img:last-child{
+    display: none;
+  }
 }
