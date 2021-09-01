@@ -5,8 +5,6 @@ import SignUp from './pages/signup'
 import Features from './pages/features'
 import './styles/globals.css'
 
-
-
 const App = () => (
   <BrowserRouter>
     <Switch>
