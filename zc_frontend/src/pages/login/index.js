@@ -3,8 +3,8 @@
 import styles from './styles/Login.module.css'
 import React, { useState } from 'react'
 // import LoginLoading from '../../components/LoginLoading'
-// import GoogleLogin from 'react-google-login'
-// import { useHistory } from 'react-router-dom'
+import GoogleLogin from 'react-google-login'
+import { useHistory } from 'react-router-dom'
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -12,7 +12,7 @@ const Login = () => {
     password: '',
     showPassword: false
   })
-  // let history = useHistory()
+  let history = useHistory()
   // const handleClickShowPassword = () => {
   //   setPass({ ...pass, showPassword: !pass.showPassword })
   // }
@@ -24,12 +24,12 @@ const Login = () => {
   const handlePasswordChange = prop => event => {
     setPass({ ...pass, [prop]: event.target.value })
   }
-  // const successResponseGoogle = response => {
-  //   history.push('/')
-  // }
-  // const failureResponseGoogle = response => {
-  //   console.log(response)
-  // }
+  const successResponseGoogle = response => {
+    history.push('/')
+  }
+  const failureResponseGoogle = response => {
+    console.log(response)
+  }
   return (
     <div className={`container-fluid ${styles.body}`}>
       <div class={`row`}>
@@ -142,7 +142,7 @@ const Login = () => {
               <img className={`w-50 p-3`} src="Line.svg" alt="line" srcset="" />
             </div>
             <div className={`my-3 text-center`}>
-              {/* <GoogleLogin
+              <GoogleLogin
                 clientId="78755437309-27q9m2toval9c439d2r7q5gj28h0pqcc.apps.googleusercontent.com"
                 render={renderProps => (
                   <img
@@ -156,7 +156,7 @@ const Login = () => {
                 onSuccess={successResponseGoogle}
                 onFailure={failureResponseGoogle}
                 cookiePolicy={'single_host_origin'}
-              /> */}
+              />
               <img
                 className={`mx-3 ${styles.icon}`}
                 src={`/apple.png`}
