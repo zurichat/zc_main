@@ -1,12 +1,11 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { TopbarContext } from '../contexts/Topbar'
 
-import { URLContext } from '../contexts/Url'
 import styles from '../styles/Topbar.module.css'
 import SearchBar from './externalPagesComponents/SearchBar'
 
 export const Topbar = () => {
-  const state = useContext(URLContext)
+  const state = useContext(TopbarContext)
   const { openModal } = state
 
   return (
