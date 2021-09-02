@@ -1,11 +1,10 @@
-
 /* eslint-disable no-template-curly-in-string */
 /* eslint-disable react/jsx-no-duplicate-props */
-import styles from './styles/Login.module.css';
-import React, { useState } from 'react';
-import LoginLoading from '../../components/LoginLoading';
-import GoogleLogin from 'react-google-login';
-import { useHistory } from "react-router-dom";
+import styles from './styles/Login.module.css'
+import React, { useState } from 'react'
+import LoginLoading from '../../components/LoginLoading'
+import GoogleLogin from 'react-google-login'
+import { useHistory } from 'react-router-dom'
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -13,7 +12,7 @@ const Login = () => {
     password: '',
     showPassword: false
   })
-  let history = useHistory();
+  let history = useHistory()
   const handleClickShowPassword = () => {
     setPass({ ...pass, showPassword: !pass.showPassword })
   }
@@ -25,11 +24,11 @@ const Login = () => {
   const handlePasswordChange = prop => event => {
     setPass({ ...pass, [prop]: event.target.value })
   }
-  const successResponseGoogle = (response) => {
-    history.push("/");
+  const successResponseGoogle = response => {
+    history.push('/')
   }
-  const failureResponseGoogle = (response) => {
-    console.log(response);
+  const failureResponseGoogle = response => {
+    console.log(response)
   }
   return (
     <div className={`container-fluid ${styles.body}`}>
@@ -145,7 +144,7 @@ const Login = () => {
             <div className={`my-3 text-center`}>
               <GoogleLogin
                 clientId="78755437309-27q9m2toval9c439d2r7q5gj28h0pqcc.apps.googleusercontent.com"
-                render={ (renderProps) => (
+                render={renderProps => (
                   <img
                     onClick={renderProps.onClick}
                     className={`mx-3 ${styles.icon}`}
