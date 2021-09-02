@@ -9,6 +9,7 @@ const app = express()
 
 // activate helmet--server security
 app.use(helmet())
+app.set('x-powered-by', false)
 
 routes(app)
 loadFrontend(app)

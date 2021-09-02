@@ -52,13 +52,11 @@ const Login = () => {
     return { valid: true, msg: `password is okay`, short: `okay` };
   };
 
-  console.log(passwordCheck)
-
   return (
     <>
       <div>This is signup page</div>
-      <button
-        type="submit"
+      <button 
+        type="submit" 
         className={styles.signup_btn}
         onClick={passwordCheck}>
         Sign up
