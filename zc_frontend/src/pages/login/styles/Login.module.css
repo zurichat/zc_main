@@ -1,0 +1,151 @@
+.headimg {
+  position: relative;
+  left: 11%;
+  width: 35%;
+}
+.header {
+  position: relative;
+  top: -50px;
+  font-weight: 500;
+}
+.headertext {
+  line-height: 25px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.text {
+  font-weight: 500;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.person {
+  position: absolute;
+  top: 30%;
+  left: 1px;
+  background-image: url('../../images/Group3145.svg');
+  background-repeat: no-repeat;
+}
+.person1 {
+  width: 30%;
+  height: 73vh;
+  position: relative;
+  /* margin-left: -10%; */
+}
+.person2 {
+  width: 60%;
+}
+.flower {
+  width: 10%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.login {
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+.side {
+  background-color: #00b87c;
+  background-image: url('../../images/Vector.svg');
+}
+.far {
+  position: relative;
+  right: 30px;
+  top: 10px;
+  cursor: pointer;
+}
+.checktext {
+  font-size: 14px;
+  font-weight: 500;
+}
+.checklink {
+  color: #02ca87 !important;
+}
+.or {
+  font-size: 14px;
+  margin-top: 1%;
+  font-weight: 500;
+}
+
+.footer > a {
+  font-size: 10px;
+}
+.button {
+  padding: 0.8rem 8rem;
+  box-sizing: border-box;
+  width: 100%;
+  font-weight: 500;
+  background-color: #2f80ed;
+  color: #fff;
+}
+.button:hover {
+  background-color: #82b0eb;
+  color: #fff;
+  border: 1px solid #448be8;
+}
+.button:active {
+  background-color: #cadcf4;
+  color: #fff;
+}
+
+.button_outline {
+  padding: 0.8rem 8rem;
+  box-sizing: border-box;
+  width: 100%;
+  font-weight: 500;
+}
+
+.button_outline > img {
+  width: 9%;
+  padding-bottom: 2px;
+}
+
+.subtext {
+  color: #686666;
+  font-weight: 500;
+  padding-bottom: 13px;
+  font-size: 14px;
+  letter-spacing: normal;
+}
+
+.email_input {
+  color: #828282;
+}
+
+.email_subheading {
+  color: #828282;
+}
+
+.link {
+  color: #1e88e5;
+}
+
+.footer-text {
+  font-size: 12px !important;
+}
+@media only screen and (max-width: 768px) {
+  .button_outline > img {
+    width: 14%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .side {
+    display: none;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .button_outline > img {
+    width: 10%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .button_outline > img {
+    width: 12%;
+  }
+}
