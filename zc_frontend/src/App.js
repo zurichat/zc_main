@@ -5,6 +5,7 @@ import SignUp from './pages/signup'
 import Features from './pages/features'
 import './styles/globals.css'
 
+
 const App = () => (
   <BrowserRouter>
     <Switch>
@@ -19,7 +20,7 @@ const App = () => (
       </Route>
       <Route path="/features">
         <Features />
-      </Route>
+      </Route>  
     </Switch>
   </BrowserRouter>
 )
