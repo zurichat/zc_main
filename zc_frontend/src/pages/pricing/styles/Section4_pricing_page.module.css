@@ -1,0 +1,38 @@
+.wrapper a {
+  text-decoration: none;
+  color: #00b87c !important;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 850px;
+  margin: auto;
+}
+
+.cardwrapper {
+  max-width: 850px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.logowrapper {
+  max-width: 850px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.titletext {
+  color: #333333;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 38.4px;
+  font-family: Lato;
+  font-style: normal;
+}
+
+.arrow {
+  color: #000000;
+}
