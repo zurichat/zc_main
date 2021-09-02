@@ -10,7 +10,7 @@
     "format": "prettier -w .",
     "lint": "prettier -c .",
     "deploy": "gh-pages -d build",
-    "dev": "npm run run-start",
+    "dev": "concurrently --kill-others-on-fail \"npm run run-dev\" \"npm run frontend:dev\"",
     "run-start": "cross-env NODE_ENV=production node server.js",
     "run-dev": "cross-env NODE_ENV=development nodemon server.js",
     "frontend:build": "npm run build --prefix zc_frontend",
