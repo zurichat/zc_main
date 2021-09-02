@@ -18,6 +18,9 @@ import Careers from './pages/careers'
 import Download from './pages/download'
 import ContactUs from './pages/contact-us'
 import Pricing from './pages/pricing'
+<<<<<<< HEAD
+>>>>>>> 17c29f43419c9fba4fb0fee35f9125fee2241a9c
+=======
 >>>>>>> 17c29f43419c9fba4fb0fee35f9125fee2241a9c
 
 const App = () => (
@@ -64,6 +67,9 @@ const App = () => (
       <Route path="/pricing">
         <Pricing />
       </Route>
+<<<<<<< HEAD
+>>>>>>> 17c29f43419c9fba4fb0fee35f9125fee2241a9c
+=======
 >>>>>>> 17c29f43419c9fba4fb0fee35f9125fee2241a9c
     </Switch>
   </BrowserRouter>

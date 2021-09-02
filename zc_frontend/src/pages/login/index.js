@@ -3,7 +3,10 @@
 import styles from '../../styles/Login.module.css'
 import React, { useState } from 'react'
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 17c29f43419c9fba4fb0fee35f9125fee2241a9c
 // import LoginLoading from '../../components/LoginLoading'
 import GoogleLogin from 'react-google-login'
 import { useHistory } from 'react-router-dom'
