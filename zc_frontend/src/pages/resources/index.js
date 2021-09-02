@@ -1,9 +1,5 @@
 function Resources() {
-    return (
-        <div>
-            This is resources page
-        </div>
-    )
+  return <div>This is resources page</div>
 }
 
 export default Resources
