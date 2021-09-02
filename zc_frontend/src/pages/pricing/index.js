@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import PricingTable from './components/PricingTable'
 
 function Pricing() {
@@ -7,6 +8,10 @@ function Pricing() {
       <PricingTable />
     </div>
   )
+=======
+function Pricing() {
+  return <div>This is pricing page</div>
+>>>>>>> develop
 }
 
 export default Pricing
