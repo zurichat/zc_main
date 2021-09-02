@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
 function Logocard({ logoImageClass }) {
-  return <div className={logoImageClass}></div>;
+  return <div className={logoImageClass}></div>
 }
 
-export default Logocard;
+export default Logocard
