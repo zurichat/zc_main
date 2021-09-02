@@ -1,0 +1,40 @@
+.profilemenu {
+  position: absolute;
+  top: 4.6rem;
+  right: 2rem;
+  height: auto;
+  width: 350px;
+  background-color: #fff;
+  z-index: 500;
+  padding: 0.7rem 1rem;
+  border-radius: 0.3rem;
+  border: 1px solid #eaeaea;
+}
+.profilemenu__header {
+  display: flex;
+  place-items: center;
+}
+.profilemenu__thumbnail img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+.profilemenu__name {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.online__presence {
+  display: flex;
+  place-items: center;
+  font-size: 0.8rem;
+  color: #777;
+  font-weight: 500;
+}
+.badge {
+  background: green;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 0.2rem;
+}
