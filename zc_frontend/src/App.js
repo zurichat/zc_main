@@ -11,7 +11,7 @@ import AppsAndIntegrations from './pages/apps-integrations'
 import Careers from './pages/careers'
 import Download from './pages/download'
 import ContactUs from './pages/contact-us'
->>>>>>> 2e9384e6414cdf274cab728addc484f4c55ce9f4
+import Pricing from './pages/pricing/components/PricingTable'
 
 const App = () => (
   <BrowserRouter>
