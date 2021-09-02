@@ -359,16 +359,16 @@ export default class PricingTable extends React.Component {
         </div>
         <div className={styles.btnGroup}>
           <div style={{ marginLeft: '700px' }} className={styles.btn}>
-            <a href="#">Get Started</a>
+            <a href="/get-started">Get Started</a>
           </div>
           <div style={{ marginLeft: '110px' }} className={styles.btn}>
-            <a href="#">Get Started</a>
+            <a href="/get-started">Get Started</a>
           </div>
           <div style={{ marginLeft: '120px' }} className={styles.btn}>
-            <a href="#">Get Started</a>
+            <a href="/get-started">Get Started</a>
           </div>
           <div style={{ marginLeft: '120px' }} className={styles.btn}>
-            <a href="#">Get Started</a>
+            <a href="/get-started">Get Started</a>
           </div>
         </div>
       </section>
