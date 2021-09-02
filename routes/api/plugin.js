@@ -6,32 +6,32 @@ const plugin = express.Router()
 plugin.get('/plugin/list', (_, res) => {
   return res.send({
     'chess.zuri.chat': {
-      name: 'ChessBoard'
+      name: 'ChessBoard',
     },
     'whiteboard.zuri.chat': {
-      name: 'Whiteboard'
+      name: 'Whiteboard',
     },
     'calendar.zuri.chat': {
-      name: 'Company Holiday Calendar'
+      name: 'Company Holiday Calendar',
     },
     'noticeboard.zuri.chat': {
-      name: 'Notice Board Plugin'
+      name: 'Notice Board Plugin',
     },
     'channels.zuri.chat': {
-      name: 'Channels Plugin'
+      name: 'Channels Plugin',
     },
     'todo.zuri.chat': {
-      name: 'Zuri Todo App'
+      name: 'Zuri Todo App',
     },
     'goals.zuri.chat': {
-      name: 'Goals Zuri App'
+      name: 'Goals Zuri App',
     },
     'tracker.zuri.chat': {
-      name: 'Tracker Zuri App'
+      name: 'Tracker Zuri App',
     },
     'sales.zuri.chat': {
-      name: 'Sales Zuri App'
-    }
+      name: 'Sales Zuri App',
+    },
   })
 })
 
@@ -40,12 +40,12 @@ plugin.get('/plugin/:name', (req, res) => {
 
   if (name in defaultData === false) {
     return res.status(404).send({
-      messages: 'not found!'
+      messages: 'not found!',
     })
   } else {
     return res.status(200).send({
       messages: 'success',
-      [name]: defaultData[name]
+      [name]: defaultData[name],
     })
   }
 })
@@ -55,23 +55,23 @@ const defaultData = {
     {
       id: 1,
       name: 'announcements',
-      description: ''
+      description: '',
     },
     {
       id: 2,
       name: 'games',
-      description: ''
+      description: '',
     },
     {
       id: 3,
       name: 'designers',
-      description: ''
+      description: '',
     },
     {
       id: 4,
       name: 'developers',
-      description: ''
-    }
+      description: '',
+    },
   ],
   messages: [
     {
@@ -79,30 +79,30 @@ const defaultData = {
       name: 'John Doe',
       display_name: 'johndoe',
       avatar: '/avatar1.svg',
-      description: ''
+      description: '',
     },
     {
       id: 2,
       name: 'Ige Damilola',
       display_name: 'idmcalculus',
       avatar: '/avatar2.svg',
-      description: ''
+      description: '',
     },
     {
       id: 3,
       name: 'Mark Essien',
       display_name: 'markessien',
       avatar: '/avatar1.svg',
-      description: ''
+      description: '',
     },
     {
       id: 4,
       name: 'Seyi Onifade',
       display_name: 'xyluz',
       avatar: '/avatar2.svg',
-      description: ''
-    }
-  ]
+      description: '',
+    },
+  ],
 }
 
 module.exports = plugin

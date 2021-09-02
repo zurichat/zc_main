@@ -2,8 +2,6 @@
 
 # Contributing to Zuri Main Web App
 
-## IMPORTANT!!! : OPEN YOUR PULL REQUESTS ON "develop" BRANCH, NOT MAIN
-
 First off, thanks for taking the time to be part of this awesome project ❤️
 
 All Team members contribution are valued and encouraged, therefore, do not hesitate to contribute. See the [Table of Contents](#table-of-contents) for different ways to help and details about how this project handles them. Please make sure to read the relevant section before making your contribution. It will make it a lot easier for the Team leads and PR Leads and smooth out the experience for all involved. Can't wait to collaborate and build an elegant Zuri Chat Application 🎉

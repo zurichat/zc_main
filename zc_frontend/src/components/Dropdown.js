@@ -41,14 +41,14 @@ const Dropdown = ({ children, title, opened, showAddButton, onTitleClick }) => {
 }
 
 Dropdown.defaultProps = {
-  opened: true
+  opened: true,
 }
 
 Dropdown.propTypes = {
   title: PropTypes.string.isRequired,
   isOpen: PropTypes.bool,
   onTitleClick: PropTypes.func,
-  showAddButton: PropTypes.bool
+  showAddButton: PropTypes.bool,
 }
 
 export default Dropdown
