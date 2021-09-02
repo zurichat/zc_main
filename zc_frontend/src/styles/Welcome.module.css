@@ -12,3 +12,9 @@
   background: #f9f9f9;
   color: #999999;
 }
+
+@media screen and (max-width:768px) {
+  .container {
+    margin-left: -10px;
+  }
+}

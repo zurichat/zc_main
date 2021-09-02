@@ -24,3 +24,19 @@
     cursor:pointer;
     fill:#bebebe
 }
+
+@media screen and (max-width:768px) {
+    .searchBar {
+        width: 60%;
+    }
+
+    .searchSvg {
+        margin-left: -20px;
+    }
+}
+
+@media screen and (max-width:768px) and (min-width:374px) {
+    .searchBar {
+        margin-left: 10px;
+    }
+}

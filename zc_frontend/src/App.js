@@ -5,6 +5,7 @@ import SignUp from './pages/signup';
 import Blog from './pages/blog';
 import News from './pages/news';
 import './styles/globals.css';
+import Notification from './components/Notification';
 
 const App = () => (
   <BrowserRouter>
@@ -25,6 +26,7 @@ const App = () => (
         <News />
       </Route>
     </Switch>
+    <Notification />  
   </BrowserRouter>
 );
 
