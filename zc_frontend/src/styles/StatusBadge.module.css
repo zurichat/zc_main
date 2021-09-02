@@ -1,0 +1,16 @@
+.statusBadge {
+  margin-left: 1.375em;
+  margin-right: -1em;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  padding: 0.1em 0.2em;
+  background: none;
+  transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.statusBadge:focus {
+  border: 1px solid #00b87c;
+}
+.statusBadge:hover {
+  background-color: #bbd8ce;
+}

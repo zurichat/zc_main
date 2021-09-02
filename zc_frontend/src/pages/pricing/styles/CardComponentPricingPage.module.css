@@ -1,0 +1,60 @@
+.wrapper {
+  width: 200px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: ghostwhite;
+  box-shadow: 5px 5px 8px 5px #888888;
+  margin-top: 1em;
+  text-align: left;
+}
+
+.image,
+.image2,
+.image3,
+.image4 {
+  width: 100%;
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.image {
+  background-image: url('../../../assets/intuit-quickbooks-hero.png');
+}
+.image2 {
+  background-image: url('../../../assets/lyft-slack-customer@2x\ 1.png');
+}
+.image3 {
+  background-image: url('../../../assets/Slack-Customer-Shopify-hero@2x-1\ 1.png');
+}
+.image4 {
+  background-image: url('../../../assets/slack-customer-everlane-hero\ 1.png');
+}
+
+.textlogo {
+  margin: 20px 20px 10px 30px;
+}
+.logo,
+.logo2,
+.logo3,
+.logo4 {
+  width: 80px;
+  height: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.logo {
+  background-image: url('../../../assets/Logo@2x\ 1.png');
+}
+.logo2 {
+  background-image: url('../../../assets/customer-lyft-logo.png');
+}
+.logo3 {
+  background-image: url('../../../assets/Shopify-color-logo@2x\ 1.png');
+}
+.logo4 {
+  background-image: url('../../../assets/Everlane-logo-color@2x\ 1.png');
+}
