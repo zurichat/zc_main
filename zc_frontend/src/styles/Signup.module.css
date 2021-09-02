@@ -52,6 +52,13 @@
    text-align: center;
 }
 
+
+ .seperator p{
+   padding: 1rem 0.5rem 0.5rem 0rem;
+   color: rgb(141, 141, 141);
+   text-align: center;
+}
+
 .signing_by_buttons .google_email{
    border: 1px solid black;
    border-radius: 5px;
@@ -85,7 +92,7 @@
 }
 
 .signing_by_buttons button img{
-   width: 30px;
+
    height: 30px;
    margin-right: 10px;
 }
@@ -108,17 +115,18 @@
 }
 
 .signup_btn {
-   all:  unset;
-   display: flex;
-   justify-content: center;
+   border: none;
    padding: 0.5rem 10rem;
    background: #00bb7c;
    border-radius: 8px;
    color: #fff;
    font-weight: bold;
    font-size: 1.2rem;
-   width: 10rem;
    margin-top: 20px;
+   border-radius: 5px;
+   width: 100%;
+   padding: 0.5rem 5rem;
+   font-weight: bold;
 }
 
 .signup_btn:hover {
@@ -156,3 +164,66 @@ input[type="checkbox"]{
    justify-content: space-around;  
 }
 
+
+@media screen and (max-width: 992px) {
+
+ }
+ 
+
+ @media screen and (max-width: 600px) {
+   .Account_having {
+      width: 100%;
+   }
+   
+   .Account_having p{
+      margin-top: 50px;
+      text-align: center;
+      margin: 0px;
+      padding: 10px;
+   }
+
+   .signing_by_buttons .google_email{
+      padding: 0.5rem 0rem;
+   }
+   .signing_by_buttons .facebook_email{
+      padding: 0.5rem 0rem;
+   }
+   
+   .signing_by_buttons{
+      margin-left: 50px;
+      margin-right: 50px;
+   }
+   .signing_by_Email{
+      margin-left: 50px;
+      margin-right: 50px;
+   }
+
+   .signup_btn {
+      padding: 0.5rem 0rem;
+   }
+   .signup_button{
+      margin-left: 50px;
+      margin-right: 50px;
+   }
+
+   .checkbox{
+      margin-left: 50px;
+      margin-right: 50px;
+   }
+   .agreement{
+      margin-left: 50px;
+      margin-right: 50px;
+   }
+   .footer_menu ul{
+      display: block;
+      text-align: center;
+   }
+
+   .footer_menu{
+      margin: 30px 0 100px 0;
+   }
+
+   .footer_menu ul li{
+      margin-top: 20px;
+   } 
+ }
