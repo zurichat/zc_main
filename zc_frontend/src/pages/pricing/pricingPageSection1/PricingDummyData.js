@@ -5,13 +5,8 @@ export const Pricing = [
         topPricingSubtitle: "The quickest and easiest way to try Zuri Chat",
         topPricingAmount: "$0 USD/mo",
         topPricingBottomHeadText: "",
-<<<<<<< HEAD
-        topPricingTick: "/checkmarks.svg",
-        topPricingTickAlt: "checkmarks",
-=======
         topPricingTick: "/checkmark.svg",
         topPricingTickAlt: "checkmark",
->>>>>>> test-launch
         topPricingText: [
             "Access to 10,000 of your team’s most recent messages",
             "10 integrations with other apps like Google Drive, Office 365 and many more",
