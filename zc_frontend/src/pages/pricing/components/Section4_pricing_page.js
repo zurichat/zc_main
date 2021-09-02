@@ -36,7 +36,7 @@ function Section4PricingPage() {
           coverImageClass={card.image2}
           logoImageClass={card.logo2}
           descriptionText={
-            "Support agents at intuit QuickBooks increase customer satisfaction by 12% with Slack"
+           "Mission-critical sales work at Lyft Business"
           }
         />
 
@@ -44,7 +44,7 @@ function Section4PricingPage() {
           coverImageClass={card.image3}
           logoImageClass={card.logo3}
           descriptionText={
-            "Support agents at intuit QuickBooks increase customer satisfaction by 12% with Slack"
+             "eCommerce platform deploys super bot to enable glitch-free purchases"
           }
         />
 
@@ -52,7 +52,7 @@ function Section4PricingPage() {
           coverImageClass={card.image4}
           logoImageClass={card.logo4}
           descriptionText={
-            "Support agents at intuit QuickBooks increase customer satisfaction by 12% with Slack"
+             "Everlane and Happy Returns elevate customer service with zuri chat"
           }
         />
       </div>
