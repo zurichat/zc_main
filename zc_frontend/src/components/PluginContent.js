@@ -8,8 +8,7 @@ import Welcome from './Welcome'
 
 export const PluginContent = () => {
   // const pluginUrl = '/apps/default';
-  const state = useContext(URLContext)
-  const [url] = state.url
+  const { url } = useContext(URLContext)
 
   useEffect(() => {
     if (!url) return
