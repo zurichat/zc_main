@@ -1,4 +1,7 @@
+
+
 function Careers() {
+
   return <div>This is careers page</div>
 }
 
