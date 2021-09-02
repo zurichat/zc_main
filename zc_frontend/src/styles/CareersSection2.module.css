@@ -30,6 +30,10 @@
   margin-right: 0rem;
 }
 @media (max-width: 769px) {
+  .one,
+  .two {
+    padding: 3rem 2rem;
+  }
   .two {
     flex-direction: column;
   }
