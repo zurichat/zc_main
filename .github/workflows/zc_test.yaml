@@ -26,8 +26,8 @@ jobs:
         run: npm install
 
       # Not sure if i should add this
-      #- name: Check for linting errors
-      #  run: yarn lint
+      - name: Check for linting errors
+        run: yarn lint
 
       # - name: Create optimized production build
       #   run: npm run build
