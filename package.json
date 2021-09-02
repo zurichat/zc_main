@@ -1,34 +1,41 @@
 {
-  "name": "zc_main",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "git@github.com:zurichat/zc_main.git",
-  "license": "MIT",
-  "scripts": {
-    "start": "npm run run-start",
-    "build": "npm run frontend:build",
-    "dev": "concurrently --kill-others-on-fail \"npm run run-dev\" \"npm run frontend:dev\"",
-    "run-start": "cross-env NODE_ENV=production node server.js",
-    "run-dev": "cross-env NODE_ENV=development nodemon server.js",
-    "frontend:build": "npm run build --prefix zc_frontend",
-    "frontend:dev": "cross-env PORT=5000 npm start --prefix zc_frontend",
-    "postinstall": "cd zc_frontend && yarpm-yarn install"
-  },
-  "dependencies": {
-    "axios": "^0.21.1",
-<<<<<<< HEAD
-    "crypto-js": "^4.1.1",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1"
-=======
-    "express": "^4.17.1",
-    "nodemailer": "^6.6.3"
->>>>>>> d223ce5dd2e49057c224f8b88404e90a5380b37c
-  },
-  "devDependencies": {
-    "concurrently": "^6.2.1",
-    "cross-env": "^7.0.3",
-    "nodemon": "^2.0.12",
-    "yarpm": "^1.1.1"
-  }
+    "name": "zc_main",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "git@github.com:zurichat/zc_main.git",
+    "license": "MIT",
+    "scripts": {
+        "start": "npm run run-start",
+        "build": "npm run frontend:build",
+        "format": "prettier -w .",
+        "lint": "prettier -c .",
+        "deploy": "gh-pages -d build",
+        "dev": "concurrently --kill-others-on-fail \"npm run run-dev\" \"npm run frontend:dev\"",
+        "run-start": "cross-env NODE_ENV=production node server.js",
+        "run-dev": "cross-env NODE_ENV=development nodemon server.js",
+        "frontend:build": "npm run build --prefix zc_frontend",
+        "frontend:dev": "cross-env PORT=5000 npm start --prefix zc_frontend",
+        "postinstall": "cd zc_frontend && yarpm-yarn install"
+    },
+    "dependencies": {
+        "axios": "^0.21.1",
+
+        "crypto-js": "^4.1.1",
+        "express": "^4.17.1",
+        "jsonwebtoken": "^8.5.1",
+        "emoji-picker-react": "^3.4.8",
+
+        "gh-pages": "^3.2.3",
+        "nodemailer": "^6.6.3"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.3.3",
+        "concurrently": "^6.2.1",
+        "cross-env": "^7.0.3",
+        "nodemon": "^2.0.12",
+        "postcss": "^8.3.6",
+        "prettier": "^2.3.2",
+        "tailwindcss": "^2.2.9",
+        "yarpm": "^1.1.1"
+    }
 }
