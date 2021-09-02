@@ -5,12 +5,12 @@ import { URLContext } from '../contexts/Url'
 import styles from '../styles/Sidebar.module.css'
 import Dropdown from './Dropdown'
 
-const fetcher = (url) => fetch(url).then((res) => res.json())
+const fetcher = url => fetch(url).then(res => res.json())
 
 export const Sidebar = () => {
-  const { data: channelsData } = useSWR('/api/plugins/channels', fetcher)
-  const { data: messagesData } = useSWR('/api/plugins/messages', fetcher)
-  const { data: plugins } = useSWR('/api/plugins/', fetcher)
+  const { data: channelsData } = useSWR('/api/plugin/channels', fetcher)
+  const { data: messagesData } = useSWR('/api/plugin/messages', fetcher)
+  const { data: plugins } = useSWR('/api/plugin/list', fetcher)
 
   const { setUrl } = useContext(URLContext)
 
@@ -42,23 +42,14 @@ export const Sidebar = () => {
           ))}
       </Dropdown>
       {plugins &&
-        Object.keys(plugins).map((key) => (
+        Object.keys(plugins).map(key => (
           <Dropdown
             title={plugins[key].name}
             key={key}
-            showAddButto={false}
+            showAddButton={false}
             onTitleClick={() => setUrl(key)}
           ></Dropdown>
         ))}
-
-      {/* <Dropdown title="Plugins">
-        {plugins &&
-          Object.keys(plugins).map((key) => (
-            <span key={key} onClick={() => setUrl(key)}>
-              {plugins[key].name}
-            </span>
-          ))}
-      </Dropdown> */}
       <Dropdown title="messages">
         {messagesData &&
           messagesData.messages.map((message, index) => (
