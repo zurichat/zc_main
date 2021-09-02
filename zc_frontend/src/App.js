@@ -5,6 +5,8 @@ import SignUp from './pages/signup';
 import Blog from './pages/blog';
 import News from './pages/news';
 import './styles/globals.css';
+import MarketPlace from './pages/marketplace/marketplace';
+import PluginDetails from './pages/marketplace/PluginDetails'
 
 const App = () => (
   <BrowserRouter>
@@ -23,6 +25,12 @@ const App = () => (
       </Route>
       <Route path="/news">
         <News />
+      </Route>
+      <Route path="/marketplace" exact>
+        <MarketPlace />        
+      </Route>
+      <Route path="/marketplace/plugins/:pluginId/:pluginName" exact>
+        <PluginDetails />
       </Route>
     </Switch>
   </BrowserRouter>

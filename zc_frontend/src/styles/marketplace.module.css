@@ -1,0 +1,224 @@
+.marketplace {
+    background: #f8f7f6;
+    min-height: 50vh;
+    padding-bottom: 15rem;
+    font-size: 15px;
+    font-family: 'Lato';
+}
+
+.zuriMarketPlace__container {
+    display: grid;
+    grid-template-columns: repeat(4, 230px);
+    grid-gap: 1rem;
+    padding-left: 2%;
+}
+
+.pluginCardContainer {
+    background: #ffffff;
+    border: 1px solid #f2f1f0;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.zuri_marketplaceHome__searchInput_container {
+    width: 100%;
+}
+
+.marketPlace__searchField {
+    height: 45px;
+    border: 0;
+    outline: 0;
+    width: 95%;
+    background: transparent;
+}
+
+.pluginCard {
+    width: 320px;
+    padding: 20px 16px;
+}
+
+.pluginImage {
+    width: 190px;
+    height: 190px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pluginImage img {
+    width: 100%;
+    width: 100%;
+}
+
+.cardImage img {
+    width: 24px;
+    height: 24px;
+}
+
+.pluginDescription {
+    color: #333758;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+    line-height: 25px;
+    text-transform: capitalize;
+}
+
+.pluginContent {
+    font-size: 14px;
+    line-height: 20px;
+    color: #455880;
+}
+
+.pluginViewBtnContainer button {
+    border: 0;
+    outline: 0;
+    background-color: blue;
+}
+
+.pluginCardContainer:hover {
+    box-shadow: 0 1px 8px 0 rgb(0 0 0 / 15%);
+    text-decoration: none;
+    transition: box-shadow .15s ease-out;
+}
+
+.marketplaceNavbar {
+    max-width: 87%;
+    margin: 0 auto;
+    padding-top: 3.5rem;
+}
+
+.marketplaceHero {
+    padding-top: 1.5rem;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #455880;
+    margin-bottom: 5rem;
+}
+
+.marketplaceHero h1 {
+    font-weight: 700;
+    font-size: 45px;
+    width: 80%;
+    line-height: 4.1rem;
+    text-align: center;
+    text-transform: capitalize;
+    color: #333758;
+}
+
+.marketplaceHero p {
+    text-align: center;
+    width: 60%;
+}
+
+.marketPlaceContainer {
+    max-width: 85vw;
+}
+
+.marketplaceMain {
+    margin-top: 8rem;
+}
+
+.marketplaceFeature:nth-child(1) {
+    width: 250px;
+}
+
+.mot-templates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 16px 10px;
+}
+
+@media (max-width: 800px) {
+    .marketplaceNavbar {
+        max-width: 95%;
+    }
+    .marketplaceHero {
+        font-size: 16px;
+    }
+    .marketplaceHero h1 {
+        font-size: 30px;
+        width: 95%;
+        line-height: 2.5rem;
+    }
+    .marketplaceHero p {
+        width: 85%;
+    }
+    .marketplaceHero p+div {
+        width: 375px;
+    }
+}
+
+.marketplaceFeature {
+    width: 46%;
+}
+
+.marketplaceFeature:nth-child(1) {
+    width: 46%;
+}
+
+.marketplaceFeature:nth-of-type(3) {
+    margin-top: 0.95rem;
+}
+
+.marketPlaceContainer {
+    max-width: 95vw;
+}
+
+.mot-templates-grid {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin-top: 2rem;
+    align-items: center;
+}
+
+.marketPlaceSidebar {
+    padding: 0.95rem 1rem;
+    font-size: 16px;
+    max-height: 1100px;
+    color: #333758;
+}
+
+.marketPlaceSidebarList {
+    margin-top: 6rem;
+}
+
+.marketPlaceSidebarItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    cursor: pointer;
+    margin-top: 1.25rem;
+    font-size: 16px;
+    cursor: pointer;
+    border-bottom: 1.5px solid rgba(69, 88, 128, 0.15);
+    border-radius: 4px 4px 0px 0px;
+}
+
+.marketPlaceSidebarItem__info {
+    display: flex;
+    align-items: baseline;
+}
+
+.marketPlaceSidebarItem:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+    .motTemplateSidebar {
+        width: 100%;
+    }
+}
+
+.zuri_marketplace__searchForm {
+    padding-left: 2%;
+    padding-bottom: 5%;
+    border: 1px solid black;
+    height: 45px;
+    margin-bottom: 5%;
+    margin-left: 2%;
+}
