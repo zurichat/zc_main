@@ -4,6 +4,7 @@ import Login from './pages/login'
 import SignUp from './pages/signup'
 import Blog from './pages/blog'
 import News from './pages/news'
+import Header from './components/externalPagesComponents/Header'
 import './styles/globals.css'
 import 'tailwindcss/tailwind.css'
 
@@ -24,6 +25,9 @@ const App = () => (
       </Route>
       <Route path="/news">
         <News />
+      </Route>
+      <Route path="/header">
+        <Header />
       </Route>
     </Switch>
   </BrowserRouter>
