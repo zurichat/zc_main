@@ -5,8 +5,13 @@ export const Pricing = [
         topPricingSubtitle: "The quickest and easiest way to try Zuri Chat",
         topPricingAmount: "$0 USD/mo",
         topPricingBottomHeadText: "",
+<<<<<<< HEAD
         topPricingTick: "/checkmarks.svg",
         topPricingTickAlt: "checkmarks",
+=======
+        topPricingTick: "/checkmark.svg",
+        topPricingTickAlt: "checkmark",
+>>>>>>> test-launch
         topPricingText: [
             "Access to 10,000 of your team’s most recent messages",
             "10 integrations with other apps like Google Drive, Office 365 and many more",
@@ -19,7 +24,7 @@ export const Pricing = [
         topPricingSubtitle: "More power for small teams who want better collaboration",
         topPricingAmount: "$6.67 USD/mo",
         topPricingBottomHeadText: "All the benefits of Free, and:",
-        topPricingTick: "/checkmarks.svg",
+        topPricingTick: "/checkmark.svg",
         topPricingTickAlt: "checkmarks",
         topPricingText: [
             "The full context of your organization’s message history at your fingertips",
@@ -34,7 +39,7 @@ export const Pricing = [
         topPricingSubtitle: "Scale your business, increase productivity, and keep your teams connected",
         topPricingAmount: "$12.50 USD/mo",
         topPricingBottomHeadText: "All the goodness of Pro, and:",
-        topPricingTick: "/checkmarks.svg",
+        topPricingTick: "/checkmark.svg",
         topPricingTickAlt: "checkmarks",
         topPricingText: [
             "Advanced identity management through SAML-based SSO and real-time Active Directory sync with OneLogin, Okta and Ping Identity",
@@ -48,7 +53,7 @@ export const Pricing = [
         topPricingSubtitle: "Slack for the most demanding enterprises - all the flexibility to meet your regulatory requirementsand all the power to match your growth",
         topPricingAmount: "",
         topPricingBottomHeadText: "All the greatness of business+, and:",
-        topPricingTick: "/checkmarks.svg",
+        topPricingTick: "/checkmark.svg",
         topPricingTickAlt: "checkmarks",
         topPricingText: [
             "Peace of mind with enterprise-grade security and compliance, such as HIPAA support and the Enterprise Key Management add-on",
