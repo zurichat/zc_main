@@ -9,8 +9,11 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.10",
+    "emoji-picker-react": "^3.4.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-google-login": "^5.2.2",
+    "react-icons": "^4.2.0",
     "react-router-dom": "^5.2.1",
     "react-scripts": "4.0.3",
     "swr": "^1.0.0",
@@ -38,6 +41,14 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.14.5"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
     ]
   }
 }

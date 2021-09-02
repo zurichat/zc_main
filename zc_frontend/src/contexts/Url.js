@@ -5,7 +5,7 @@ export const UrlProvider = ({ children }) => {
   const [url, setUrl] = useState(null)
 
   return (
-    <URLContext.Provider value={{ setUrl, url }}>
+    <URLContext.Provider value={{ url, setUrl }}>
       {children}
     </URLContext.Provider>
   )

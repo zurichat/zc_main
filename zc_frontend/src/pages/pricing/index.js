@@ -7,6 +7,4 @@ function Pricing() {
       <PricingTable />
     </div>
   )
-}
-
 export default Pricing
