@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: row;
+}
+.room {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.pluginContent {
+  flex: 1;
+  position: relative;
+  overflow: auto;
+}
