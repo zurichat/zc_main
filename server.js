@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000
 const app = express()
 
 // activate helmet--server security
-app.use(helmet())
+// app.use(helmet())
 
 routes(app)
 loadFrontend(app)
