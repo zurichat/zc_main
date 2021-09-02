@@ -143,10 +143,20 @@ const Login = () => {
               <img className={`w-50 p-3`} src="Line.svg" alt="line" srcset="" />
             </div>
             <div className={`my-3 text-center`}>
-              <img
-                className={`mx-3 ${styles.icon}`}
-                src={`/google.png`}
-                alt="google icon"
+              <GoogleLogin
+                clientId="78755437309-27q9m2toval9c439d2r7q5gj28h0pqcc.apps.googleusercontent.com"
+                render={ (renderProps) => (
+                  <img
+                    onClick={renderProps.onClick}
+                    className={`mx-3 ${styles.icon}`}
+                    src={`/google.png`}
+                    alt="google icon"
+                  />
+                )}
+                buttonText=""
+                onSuccess={successResponseGoogle}
+                onFailure={failureResponseGoogle}
+                cookiePolicy={'single_host_origin'}
               />
               <img
                 className={`mx-3 ${styles.icon}`}
