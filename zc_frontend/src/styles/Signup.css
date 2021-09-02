@@ -115,7 +115,7 @@ section .contentBx .formBx .inputBx input{
     color: #B8003C;
 }
 
-section .contentBx .formBx .inputBx input[type="submit"]{
+.btn{
     background: #CADCF4;
     color: #fff;
     outline: none;
