@@ -15,10 +15,12 @@
     "postinstall": "cd zc_frontend && yarpm-yarn install"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "axios": "^0.21.1",
     "express": "^4.17.1",
     "multer": "^1.4.3",
-    "nodemailer": "^6.6.3"
+    "nodemailer": "^6.6.3",
+    "react-router-dom": "^5.2.1"
   },
   "devDependencies": {
     "concurrently": "^6.2.1",
