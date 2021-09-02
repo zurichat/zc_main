@@ -1,46 +1,24 @@
-import React from 'react'
-import './styles.css'
-const SectionSix = () => {
+import styles from '../../features/styles/section6.module.css'
+
+const Section6 = () => {
   return (
-    <div className="section">
-      <h1
-        style={{
-          textAlign: 'center',
-          paddingBottom: '3.75rem',
-          lineHeight: '3rem',
-          fontSize: '2.5rem',
-          fontWeight: '700'
-        }}
-      >
+    <div className={`${styles.section}`}>
+      <h1 className={`${styles.title}`}>
         Learn More about the Zuri Chat Workspace
       </h1>
-      <div className="card-container">
-        <div
-          className="card"
-          style={{ display: 'flex', flexDirection: 'column', height: 'auto' }}
-        >
-          <div
-            className="content"
-            style={{ width: '100%', height: '274px' }}
-          ></div>
-          <div
-            style={{
-              display: 'inherit',
-              flexDirection: 'inherit',
-              padding: '20px'
-            }}
-          >
-            <div
-              style={{ textAlign: 'start', padding: '1.2rem', color: 'grey' }}
-            >
+      <div className={`${styles.cardContainer}`}>
+        <div className={`${styles.card} ${styles.cardFlex}`}>
+          <div className={`${styles.content} ${styles.contentSize}`}></div>
+          <div className={`${styles.cardPosition}`}>
+            <div className={`${styles.descTitle}`}>
               <h3>News</h3>
             </div>
-            <div className="description">
+            <div className={`${styles.description}`}>
               <p> How zuri Chat is changing the </p>
               <p>Tech World with Great </p>
               <p>Innovations</p>
             </div>
-            <div className="text-bottom">
+            <div className={`${styles.textBottom}`}>
               <div>
                 <span>Continue reading</span>
               </div>
@@ -62,30 +40,19 @@ const SectionSix = () => {
             </div>
           </div>
         </div>
-        <div
-          className="card"
-          style={{ display: 'flex', flexDirection: 'column', height: 'auto' }}
-        >
-          <div
-            className="content-a"
-            style={{ width: '100%', height: '274px' }}
-          ></div>
-          <div
-            style={{
-              display: 'inherit',
-              flexDirection: 'inherit',
-              padding: '20px'
-            }}
-          >
-            <div
-              style={{ textAlign: 'start', padding: '1.2rem', color: 'grey' }}
-            >
-              <h3>Tutorial</h3>
+
+        <div className={`${styles.card} ${styles.cardFlex}`}>
+          <div className={`${styles.content} ${styles.contentSize}`}></div>
+          <div className={`${styles.cardPosition}`}>
+            <div className={`${styles.descTitle}`}>
+              <h3>News</h3>
             </div>
-            <div className="description">
-              <p> Getting started with Zuri Chat </p>
+            <div className={`${styles.description}`}>
+              <p> How zuri Chat is changing the </p>
+              <p>Tech World with Great </p>
+              <p>Innovations</p>
             </div>
-            <div className="text-bottom">
+            <div className={`${styles.textBottom}`}>
               <div>
                 <span>Continue reading</span>
               </div>
@@ -107,31 +74,18 @@ const SectionSix = () => {
             </div>
           </div>
         </div>
-        <div
-          className="card"
-          style={{ display: 'flex', flexDirection: 'column', height: 'auto' }}
-        >
-          <div
-            className="content-b"
-            style={{ width: '100%', height: '274px' }}
-          ></div>
-          <div
-            style={{
-              display: 'inherit',
-              flexDirection: 'inherit',
-              padding: '20px'
-            }}
-          >
-            <div
-              style={{ textAlign: 'start', padding: '1.2rem', color: 'grey' }}
-            >
-              <h3>Testimonies</h3>
+        <div className={`${styles.card} ${styles.cardFlex}`}>
+          <div className={`${styles.content} ${styles.contentSize}`}></div>
+          <div className={`${styles.cardPosition}`}>
+            <div className={`${styles.descTitle}`}>
+              <h3>News</h3>
             </div>
-            <div className="description">
-              <p> What our Partners and </p>
-              <p>customers say about Us </p>
+            <div className={`${styles.description}`}>
+              <p> How zuri Chat is changing the </p>
+              <p>Tech World with Great </p>
+              <p>Innovations</p>
             </div>
-            <div className="text-bottom">
+            <div className={`${styles.textBottom}`}>
               <div>
                 <span>Continue reading</span>
               </div>
@@ -158,4 +112,4 @@ const SectionSix = () => {
   )
 }
 
-export default SectionSix
+export default Section6

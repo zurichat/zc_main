@@ -1,5 +1,6 @@
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import LandingPage from './components/LandingPage'
 import Home from './pages/home'
 import Login from './pages/login'
 import SignUp from './pages/signup'
@@ -12,12 +13,16 @@ import AppsAndIntegrations from './pages/apps-integrations'
 import Careers from './pages/careers'
 import Download from './pages/download'
 import ContactUs from './pages/contact-us'
-import Pricing from "./pages/pricing";
+import Pricing from './pages/pricing'
+import Header from './components/externalPagesComponents/Header'
 
 const App = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/" exact>
+        <LandingPage />
+      </Route>
+      <Route path="/home">
         <Home />
       </Route>
       <Route path="/login">
@@ -28,6 +33,9 @@ const App = () => (
       </Route>
       <Route path="/features">
         <Features />
+      </Route>
+      <Route path="/pricing">
+        <Pricing />
       </Route>
       <Route path="/security">
         <Security />
@@ -49,6 +57,9 @@ const App = () => (
       </Route>
       <Route path="/pricing">
         <Pricing />
+      </Route>
+      <Route path="/header">
+        <Header />
       </Route>
     </Switch>
   </BrowserRouter>
