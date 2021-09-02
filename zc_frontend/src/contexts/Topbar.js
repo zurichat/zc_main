@@ -7,7 +7,7 @@ export const TopbarProvider = ({ children }) => {
   // setting up my states for the profile topbar modal
   const [showModal, setShowModal] = useState(false)
   const [showStatus, setShowStatus] = useState(false)
-  const [chosenEmoji, setChosenEmoji] = useState(null)
+  const [chosenEmoji, setChosenEmoji] = useState({ emoji: '4️⃣' })
 
   // The function that opens the topbar profile modal
   const openModal = () => {
