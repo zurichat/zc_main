@@ -12,7 +12,6 @@ const PricingPageSection1 = () => {
           <div className="topPricingPageBody">
             <div className="topPricingLine"></div>
             <div className="topPricingPageColumns">
-
               {Pricing.map(p => {
                 return (
                   <>
