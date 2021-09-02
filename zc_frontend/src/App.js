@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from './pages/home';
-import Login from './pages/login';
-import SignUp from './pages/signup';
-import Blog from './pages/blog';
-import News from './pages/news';
-import Download from './pages/download';
-import './styles/globals.css';
-=======
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from './pages/home'
 import Login from './pages/login'
@@ -21,7 +11,6 @@ import AppsAndIntegrations from './pages/apps-integrations'
 import Careers from './pages/careers'
 import Download from './pages/download'
 import ContactUs from './pages/contact-us'
->>>>>>> 13c9efe0800025b30df1420999e6ad25feff594b
 
 const App = () => (
   <BrowserRouter>
@@ -55,9 +44,6 @@ const App = () => (
       </Route>
       <Route path="/contact-us">
         <ContactUs />
-      </Route>
-      <Route path="/app-download">
-        <Download />
       </Route>
     </Switch>
   </BrowserRouter>
