@@ -30,13 +30,22 @@ const SignUp = () => {
               </button>
           </div>
 
+
+          <div className={styles.seperator}>
+            <p>Or</p>
+          </div>
+
           <div className={styles.signing_by_Email}>
               <label>Email</label><br/>
               <input type="text" placeholder="aristotle@gmail.com" required></input>
 
           </div>
+
+          <div className={styles.signup_button}>
+            <button type="submit" className={styles.signup_btn}>Sign up</button>
+          </div>
         
-          <button type="submit" className={styles.signup_btn}>Sign up</button>
+          
 
           <div className={styles.checkbox}>
             <input type="checkbox" id="mail_receive" color="teal"/>
