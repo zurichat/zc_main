@@ -1,5 +1,6 @@
 import styles from '../../styles/Signup.module.css';
-// import logo from '../../assets/hngLogo.png';
+import logo from '../../assets/zurichatlogo.svg';
+// import line from '../../assets/Line.svg';
 import googlesignup from '../../assets/icons8-google-48.png';
 import facebooksignup from '../../assets/icons8-facebook-48.png';
 
@@ -63,7 +64,7 @@ const SignUp = () => {
         </div>
         <div className={styles.login_container} >
           <div className={styles.logo}>
-            {/* <img src={ logo } className={styles.logoImage} /> */}
+            <img src={ logo } className={styles.logoImage} />
             <b className={styles.logoText}>Zuri Chat</b>
           </div>
           <div className={styles.head_text}>
@@ -81,9 +82,10 @@ const SignUp = () => {
               </button>
           </div>
 
-
           <div className={styles.seperator}>
+            <div className={styles.line}></div>
             <p>Or</p>
+            <div className={styles.line}></div>
           </div>
 
           <div className={styles.signing_by_Email}>
@@ -117,7 +119,6 @@ const SignUp = () => {
           </div>
         </div>
       </div>
-      <div>This is signup page</div>
     </>
   )
 }

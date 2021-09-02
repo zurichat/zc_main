@@ -51,9 +51,21 @@
    text-align: center;
 }
 
+.seperator{
+   display: flex;
+   justify-content: space-around;
+   margin-top: 3rem;
+}
+
+.seperator .line{
+   margin: 1rem 0.5rem 0.5rem 0.5rem;
+   background-color: rgb(141, 141, 141);
+   height: 2px;
+   width: 100%;
+}
 
  .seperator p{
-   padding: 1rem 0.5rem 0.5rem 0rem;
+   margin: 0rem;
    color: rgb(141, 141, 141);
    text-align: center;
 }
@@ -225,4 +237,11 @@ input[type="checkbox"]{
    .footer_menu ul li{
       margin-top: 20px;
    } 
+
+   
+
+    .seperator{
+      margin-left: 50px;
+      margin-right: 50px;
+   }
  }
