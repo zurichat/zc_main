@@ -1,13 +1,13 @@
-import React, { useContext } from "react";
-import { TopbarContext } from "../contexts/Topbar";
+import React, { useContext } from 'react'
+import { TopbarContext } from '../contexts/Topbar'
 
-import styles from "../styles/Topbar.module.css";
-import SearchBar from "./externalPagesComponents/SearchBar";
-import StatusBadge from "./StatusBadge";
+import styles from '../styles/Topbar.module.css'
+import SearchBar from './externalPagesComponents/SearchBar'
+import StatusBadge from './StatusBadge'
 
 export const Topbar = () => {
-  const state = useContext(TopbarContext);
-  const { openModal } = state;
+  const state = useContext(TopbarContext)
+  const { openModal } = state
 
   return (
     <div className={styles.container}>
@@ -20,5 +20,5 @@ export const Topbar = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
