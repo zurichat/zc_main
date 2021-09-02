@@ -1,4 +1,4 @@
-import Section4PricingPage from "./components/Section4_pricing_page"
+import Section4PricingPage from './components/Section4_pricing_page'
 function Pricing() {
   return (
     <>

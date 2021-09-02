@@ -1,9 +1,9 @@
-import React from "react";
-import Card from './CardComponentPricingPage';
-import Logocard from "./LogoComponent";
-import section4 from "../styles/Section4_pricing_page.module.css";
-import card from "../styles/CardComponentPricingPage.module.css";
-import logo from "../styles/LogoComponent.module.css";
+import React from 'react'
+import Card from './CardComponentPricingPage'
+import Logocard from './LogoComponent'
+import section4 from '../styles/Section4_pricing_page.module.css'
+import card from '../styles/CardComponentPricingPage.module.css'
+import logo from '../styles/LogoComponent.module.css'
 
 function Section4PricingPage() {
   return (
@@ -15,10 +15,10 @@ function Section4PricingPage() {
           where their work happens
         </h3>
         <h4>
-          {" "}
+          {' '}
           <a href="https://www.google.com" rel="noreferrer" _blank="true">
-            {" "}
-            View all customer stories &nbsp;{" "}
+            {' '}
+            View all customer stories &nbsp;{' '}
             <span className={section4.arrow}>⟶</span>
           </a>
         </h4>
@@ -28,23 +28,21 @@ function Section4PricingPage() {
           coverImageClass={card.image}
           logoImageClass={card.logo}
           descriptionText={
-            "Support agents at intuit QuickBooks increase customer satisfaction by 12% with Slack"
+            'Support agents at intuit QuickBooks increase customer satisfaction by 12% with Slack'
           }
         />
 
         <Card
           coverImageClass={card.image2}
           logoImageClass={card.logo2}
-          descriptionText={
-           "Mission-critical sales work at Lyft Business"
-          }
+          descriptionText={'Mission-critical sales work at Lyft Business'}
         />
 
         <Card
           coverImageClass={card.image3}
           logoImageClass={card.logo3}
           descriptionText={
-             "eCommerce platform deploys super bot to enable glitch-free purchases"
+            'eCommerce platform deploys super bot to enable glitch-free purchases'
           }
         />
 
@@ -52,7 +50,7 @@ function Section4PricingPage() {
           coverImageClass={card.image4}
           logoImageClass={card.logo4}
           descriptionText={
-             "Everlane and Happy Returns elevate customer service with zuri chat"
+            'Everlane and Happy Returns elevate customer service with zuri chat'
           }
         />
       </div>
@@ -65,7 +63,7 @@ function Section4PricingPage() {
         <Logocard logoImageClass={logo.image6} />
       </div>
     </div>
-  );
+  )
 }
 
-export default Section4PricingPage;
+export default Section4PricingPage
