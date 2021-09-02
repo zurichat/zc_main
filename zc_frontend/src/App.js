@@ -1,3 +1,12 @@
+
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from "./pages/home";
+import Login from "./pages/login";
+import SignUp from "./pages/signup";
+import Blog from "./pages/blog";
+import News from "./pages/news";
+import "./styles/globals.css";
+import Pricing from "./pages/pricing";
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import LandingPage from './components/LandingPage'
 import Home from './pages/home'
@@ -48,6 +57,9 @@ const App = () => (
       </Route>
       <Route path="/contact-us">
         <ContactUs />
+      </Route>
+      <Route path="/pricing">
+        <Pricing />
       </Route>
     </Switch>
   </BrowserRouter>
