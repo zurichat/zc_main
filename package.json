@@ -30,6 +30,7 @@
     "cross-env": "^7.0.3",
     "nodemon": "^2.0.12",
     "postcss": "^8.3.6",
+    "prettier": "^2.3.2",
     "tailwindcss": "^2.2.9",
     "yarpm": "^1.1.1"
   }
