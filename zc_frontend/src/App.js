@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import WorkspaceLoader from './components/WorkspaceLoading';
 import Home from './pages/home'
 import Login from './pages/login'
 import SignUp from './pages/signup'
@@ -21,7 +20,6 @@ const App = () => (
         	<SignUp />
       </Route>
     </Switch>
-	 <WorkspaceLoader />
   </BrowserRouter>
 )
 

@@ -12,6 +12,7 @@ html {
 
 body {
 	position: relative;
+	font-family: 'Lato', sans-serif;
 	font-size: 1.6rem;
 }
 
@@ -117,4 +118,18 @@ body {
 	right: 5rem;
 	bottom: 0;
 	width: 120px;
+}
+
+@media screen and (max-width:900px) {
+	.loader h2 {
+		font-size: 3rem;
+	}
+
+	.footer img:nth-child(1), .footer img:nth-child(3) {
+		width: 80px;
+	}
+
+	.footer img:nth-child(2) {
+	width: 500px;
+	}
 }
