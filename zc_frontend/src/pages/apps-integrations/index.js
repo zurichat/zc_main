@@ -1,9 +1,7 @@
-import Categories from "./Categories"
+import Categories from './Categories'
 
 function AppsAndIntegrations() {
-  return (
-    <Categories/>
-  )
+  return <Categories />
 }
 
 export default AppsAndIntegrations
