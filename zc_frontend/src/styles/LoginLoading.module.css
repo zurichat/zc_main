@@ -13,6 +13,9 @@
     height: 100vh;
     width: 100%;
 }
+.loadingHeader {
+  text-align: center;
+}
 .loadingHeader img {
     height: 40px;
 }
@@ -76,6 +79,7 @@
     font-family: 'Lato', sans-serif;
     font-size: 30px;
     padding: 25px 0;
+    text-align: center;
 }
 .loadingArc {
     height: 30px;
