@@ -7,6 +7,8 @@
   "scripts": {
     "start": "npm run run-start",
     "build": "npm run frontend:build",
+    "format": "prettier -w .",
+    "lint": "prettier -c .",
     "deploy": "gh-pages -d build",
     "dev": "concurrently --kill-others-on-fail \"npm run run-dev\" \"npm run frontend:dev\"",
     "run-start": "cross-env NODE_ENV=production node server.js",
@@ -28,6 +30,7 @@
     "cross-env": "^7.0.3",
     "nodemon": "^2.0.12",
     "postcss": "^8.3.6",
+    "prettier": "^2.3.2",
     "tailwindcss": "^2.2.9",
     "yarpm": "^1.1.1"
   }
