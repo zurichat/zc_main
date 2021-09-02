@@ -1,9 +1,9 @@
 import React from "react";
-import Card from "./card";
-import Logocard from "./logocard";
-import section4 from "./section4_pricing_page.module.css";
-import card from "./card.module.css";
-import logo from "./logocard.module.css";
+import Card from './CardComponentPricingPage';
+import Logocard from "./LogoComponent";
+import section4 from "../styles/Section4_pricing_page.module.css";
+import card from "../styles/CardComponentPricingPage.module.css";
+import logo from "../styles/LogoComponent.module.css";
 
 function Section4PricingPage() {
   return (
