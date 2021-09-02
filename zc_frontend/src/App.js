@@ -14,43 +14,43 @@ import Download from './pages/download'
 import ContactUs from './pages/contact-us'
 
 const App = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route path="/" exact>
-        <LandingPage />
-      </Route>
-      <Route path="/home">
-        <Home />
-      </Route>
-      <Route path="/login">
-        <Login />
-      </Route>
-      <Route path="/signup">
-        <SignUp />
-      </Route>
-      <Route path="/features">
-        <Features />
-      </Route>
-      <Route path="/security">
-        <Security />
-      </Route>
-      <Route path="/careers">
-        <Careers />
-      </Route>
-      <Route path="/apps-integrations">
-        <AppsAndIntegrations />
-      </Route>
-      <Route path="/resources">
-        <Resources />
-      </Route>
-      <Route path="/download-app">
-        <Download />
-      </Route>
-      <Route path="/contact-us">
-        <ContactUs />
-      </Route>
-    </Switch>
-  </BrowserRouter>
+    <BrowserRouter>
+        <Switch>
+            <Route path="/" exact>
+                <LandingPage />
+            </Route>
+            <Route path="/home">
+                <Home />
+            </Route>
+            <Route path="/login">
+                <Login />
+            </Route>
+            <Route path="/signup">
+                <SignUp />
+            </Route>
+            <Route path="/features">
+                <Features />
+            </Route>
+            <Route path="/security">
+                <Security />
+            </Route>
+            <Route path="/careers">
+                <Careers />
+            </Route>
+            <Route path="/apps-integrations">
+                <AppsAndIntegrations />
+            </Route>
+            <Route path="/resources">
+                <Resources />
+            </Route>
+            <Route path="/download-app">
+                <Download />
+            </Route>
+            <Route path="/contact-us">
+                <ContactUs />
+            </Route>
+        </Switch>
+    </BrowserRouter>
 )
 
 export default App

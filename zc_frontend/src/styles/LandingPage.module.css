@@ -63,8 +63,15 @@
     align-items: flex-end;
 }
 
+/* Media Query 720 HD Screens */
+@media only screen and (max-width: 1280px) and (max-height: 720px) {
+    .wrapper {
+        padding-top: 0;
+    }
+}
+
 /* Media Query 1080px and Smaller */
-@media only screen and (max-width: 1080px) {    
+@media only screen and (max-width: 1080px) {
     .welcome__div h1 {
         display: flex;
         flex-direction: column;
@@ -74,7 +81,7 @@
         font-size: 3rem;
         line-height: 4rem;
     }
-     
+
     .btn__continue {
         width: 80%;
         height: 56px;
@@ -99,37 +106,36 @@
     .wrapper {
         padding-top: 15%;
     }
-    
+
     .img__div {
         height: 30%;
     }
 }
 
 /* Media Query 325px and Smaller */
-@media only screen and (max-width: 325px) {   
+@media only screen and (max-width: 325px) {
     .welcome__div h1 {
         font-size: 2.8rem;
     }
 }
 
 /* Media Query 305px and Smaller */
-@media only screen and (max-width: 305px) {   
+@media only screen and (max-width: 305px) {
     .welcome__div h1 {
         font-size: 2.5rem;
     }
 }
 
 /* Media Query 270px and Smaller */
-@media only screen and (max-width: 270px) {   
+@media only screen and (max-width: 270px) {
     .welcome__div h1 {
         font-size: 2.3rem;
     }
 }
 
 /* Media Query 250px and Smaller */
-@media only screen and (max-width: 250px) {   
+@media only screen and (max-width: 250px) {
     .welcome__div h1 {
         font-size: 2rem;
     }
 }
-
