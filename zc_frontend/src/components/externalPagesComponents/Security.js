@@ -5,7 +5,7 @@ function Security() {
   return (
     <div className={styles.container}>
       <div className={styles.side}>
-        <h5>SECURITY AT ZURI</h5>
+        <h6>SECURITY AT ZURI</h6>
         <h1 className={styles.h1}>Enterprise-grade data Protection</h1>
         <h4>
           Trust Zuri to keep your data secure and meet your compliance
