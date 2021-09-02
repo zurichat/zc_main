@@ -52,6 +52,8 @@ const Login = () => {
     return { valid: true, msg: `password is okay`, short: `okay` };
   };
 
+  console.log(passwordCheck)
+
   return (
     <>
       <div>This is signup page</div>
