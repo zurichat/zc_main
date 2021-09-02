@@ -1,0 +1,33 @@
+.image,
+.image2,
+.image3,
+.image4,
+.image5,
+.image6 {
+  width: 120px;
+  height: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 3em;
+}
+
+.image {
+  background-image: url("./airbnb-logo@2x\ 1.png");
+}
+.image2 {
+  background-image: url("./electronic-arts-logo@2x.png");
+}
+.image3 {
+  background-image: url("./ameritrade-logo@2x.png");
+}
+.image4 {
+  background-image: url("./oracle-logo@2x.png");
+}
+.image5 {
+  background-image: url("./target-logo@2x.png");
+}
+
+.image6 {
+  background-image: url("./autodesk-logo@2x.png");
+}
