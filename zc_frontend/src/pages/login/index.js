@@ -1,7 +1,10 @@
 /* eslint-disable no-template-curly-in-string */
 /* eslint-disable react/jsx-no-duplicate-props */
-import styles from '../../styles/Login.module.css'
+import styles from './styles/Login.module.css'
 import React, { useState } from 'react'
+// import LoginLoading from '../../components/LoginLoading'
+import GoogleLogin from 'react-google-login'
+import { useHistory } from 'react-router-dom'
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -9,9 +12,10 @@ const Login = () => {
     password: '',
     showPassword: false
   })
-  const handleClickShowPassword = () => {
-    setPass({ ...pass, showPassword: !pass.showPassword })
-  }
+  let history = useHistory()
+  // const handleClickShowPassword = () => {
+  //   setPass({ ...pass, showPassword: !pass.showPassword })
+  // }
 
   const handleMouseDownPassword = event => {
     event.preventDefault()
@@ -20,7 +24,12 @@ const Login = () => {
   const handlePasswordChange = prop => event => {
     setPass({ ...pass, [prop]: event.target.value })
   }
-
+  const successResponseGoogle = response => {
+    history.push('/')
+  }
+  const failureResponseGoogle = response => {
+    console.log(response)
+  }
   return (
     <div className={`container-fluid ${styles.body}`}>
       <div class={`row`}>
@@ -94,7 +103,7 @@ const Login = () => {
               </div>
               <i
                 className={`far fa-eye-slash ${styles.far}`}
-                onClick={handleClickShowPassword}
+                // onClick={handleClickShowPassword}
                 onMouseDown={handleMouseDownPassword}
               ></i>
               {/* {pass.password ? <i className={`far far-eye ${styles.far}`}></i>: <i className={`far fa-eye-slash ${styles.far}`}></i>} */}
@@ -133,10 +142,20 @@ const Login = () => {
               <img className={`w-50 p-3`} src="Line.svg" alt="line" srcset="" />
             </div>
             <div className={`my-3 text-center`}>
-              <img
-                className={`mx-3 ${styles.icon}`}
-                src={`/google.png`}
-                alt="google icon"
+              <GoogleLogin
+                clientId="78755437309-27q9m2toval9c439d2r7q5gj28h0pqcc.apps.googleusercontent.com"
+                render={renderProps => (
+                  <img
+                    onClick={renderProps.onClick}
+                    className={`mx-3 ${styles.icon}`}
+                    src={`/google.png`}
+                    alt="google icon"
+                  />
+                )}
+                buttonText=""
+                onSuccess={successResponseGoogle}
+                onFailure={failureResponseGoogle}
+                cookiePolicy={'single_host_origin'}
               />
               <img
                 className={`mx-3 ${styles.icon}`}
