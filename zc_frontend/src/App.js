@@ -17,14 +17,10 @@ const App = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/" exact>
-<<<<<<< HEAD
-      	<Home />
-=======
         <LandingPage />
       </Route>
       <Route path="/home">
         <Home />
->>>>>>> cc61a91a96c71e59205fbec91bec514db162e934
       </Route>
       <Route path="/login">
         	<Login />
