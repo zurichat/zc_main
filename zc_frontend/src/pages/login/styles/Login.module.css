@@ -21,7 +21,7 @@
   position: absolute;
   top: 30%;
   left: 1px;
-  background-image: url('../pages/images/Group3145.svg');
+  background-image: url('../../images/Group3145.svg');
   background-repeat: no-repeat;
 }
 .person1 {
@@ -51,7 +51,7 @@
 
 .side {
   background-color: #00b87c;
-  background-image: url('../pages/images/Vector.svg');
+  background-image: url('../../images/Vector.svg');
 }
 .far {
   position: relative;
