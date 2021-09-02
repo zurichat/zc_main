@@ -19,18 +19,18 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
-.image {
-  background-image: url(/zc_frontend/public/intuit-quickbooks-hero@2x-1\ 1.png);
+ .image {
+  background-image: url("../../../assets/intuit-quickbooks-hero.png");
 }
 .image2 {
-  background-image: url('/zc_frontend/public/lyft-slack-customer@2x\ 1.png');
+  background-image: url('../../../assets/lyft-slack-customer@2x\ 1.png');
 }
 .image3 {
-  background-image: url('/zc_frontend/public/Slack-Customer-Shopify-hero@2x-1\ 1.png');
+  background-image: url('../../../assets/Slack-Customer-Shopify-hero@2x-1\ 1.png');
 }
 .image4 {
-  background-image: url('/zc_frontend/public/slack-customer-everlane-hero\ 1.png');
-}
+  background-image: url('../../../assets/slack-customer-everlane-hero\ 1.png');
+} 
 
 .textlogo {
   margin: 20px 20px 10px 30px;
@@ -46,15 +46,15 @@
   background-size: contain;
 }
 
-.logo {
-  background-image: url(/zc_frontend/public/Logo@2x\ 1.png);
+ .logo {
+  background-image: url("../../../assets/Logo@2x\ 1.png");
 }
 .logo2 {
-  background-image: url('/zc_frontend/public/customer-lyft-logo@2x\ 1.png');
+  background-image: url('../../../assets/customer-lyft-logo.png');
 }
 .logo3 {
-  background-image: url('/zc_frontend/public/Shopify-color-logo@2x\ 1.png');
+  background-image: url('../../../assets/Shopify-color-logo@2x\ 1.png');
 }
 .logo4 {
-  background-image: url(/zc_frontend/public/Everlane-logo-color@2x\ 1.png);
-}
+  background-image: url("../../../assets/Everlane-logo-color@2x\ 1.png");
+} 
