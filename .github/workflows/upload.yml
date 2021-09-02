@@ -2,12 +2,12 @@ name: Zuri Main Staging Deployment
 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+#  push:
+#    branches: [main]
+#  pull_request:
+#    branches: [main]
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Allows you to run this workflow manually from the Action tab
   workflow_dispatch:
 
 jobs:
@@ -25,6 +25,6 @@ jobs:
           script: |
             cd staging.zuri.chat
             git pull
-            npm update
+            npm install
             npm run build
             pm2 reload staging
