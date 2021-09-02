@@ -68,6 +68,7 @@
    margin: 0rem;
    color: rgb(141, 141, 141);
    text-align: center;
+   font-weight: bold;
 }
 
 .signing_by_buttons .google_email{
@@ -238,7 +239,6 @@ input[type="checkbox"]{
       margin-top: 20px;
    } 
 
-   
 
     .seperator{
       margin-left: 50px;
