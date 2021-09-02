@@ -1,5 +1,5 @@
 import React from "react";
-import card from "./card.module.css";
+import card from "../styles/CardComponentPricingPage.module.css";
 
 function Card({ coverImageClass, logoImageClass, descriptionText }) {
   return (
@@ -9,7 +9,7 @@ function Card({ coverImageClass, logoImageClass, descriptionText }) {
         <div className={logoImageClass}></div>
         <h4 className={card.text}>
           {descriptionText}
-          {/*  */}
+        
         </h4>
       </div>
     </div>

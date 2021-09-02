@@ -13,21 +13,26 @@
 }
 
 .image {
-  background-image: url("./airbnb-logo@2x\ 1.png");
+  background-image: url(/zc_frontend/public/airbnb-logo@2x\ 1.png);
 }
 .image2 {
-  background-image: url("./electronic-arts-logo@2x.png");
+  background-image: url(/zc_frontend/public/electronic-arts-logo@2x.png);
+
 }
 .image3 {
-  background-image: url("./ameritrade-logo@2x.png");
+  background-image: url(/zc_frontend/public/ameritrade-logo@2x.png);
 }
 .image4 {
-  background-image: url("./oracle-logo@2x.png");
+  background-image: url(/zc_frontend/public/oracle-logo@2x.png);
+
 }
 .image5 {
-  background-image: url("./target-logo@2x.png");
+  background-image: url(/zc_frontend/public/target-logo@2x.png);
+
+  
 }
 
 .image6 {
-  background-image: url("./autodesk-logo@2x.png");
+  background-image: url(/zc_frontend/public/autodesk-logo@2x.png);
+
 }
