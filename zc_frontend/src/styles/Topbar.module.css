@@ -178,6 +178,23 @@
   padding:10px;
 }
 
+@media screen and (max-width:768px) {
+  .profile {
+    margin-left: 17px;
+  }
+}
+
+@media screen and (max-width:768px) and (min-width:374px) {
+  .profile {
+    margin-left: 62px;
+  }
+}
+
+@media screen and (max-width:768px) and (min-width:424px) {
+  .profile {
+    margin-left: 112px;
+  }
+}
 
 /* responsiveness for picker */
 @media screen and (max-width:650px){
