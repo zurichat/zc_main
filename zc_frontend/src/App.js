@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import LandingPage from './components/LandingPage'
 import Home from './pages/home'
 import Login from './pages/login'
 import SignUp from './pages/signup'
@@ -16,6 +17,9 @@ const App = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/" exact>
+        <LandingPage />
+      </Route>
+      <Route path="/home">
         <Home />
       </Route>
       <Route path="/login">
