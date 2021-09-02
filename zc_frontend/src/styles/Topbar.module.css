@@ -1,8 +1,4 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
-
-
-
 
 .container {
   display: flex;
@@ -20,12 +16,12 @@
   justify-content: center;
   height: 2.5em;
   width: 2.5em;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.profile img{
-  width:100%;
-  height:100%;
+.profile img {
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
 }
 
@@ -66,16 +62,14 @@
   top: 11%;
   right: 1%;
   width: 100%;
-  max-width:300px;
+  max-width: 300px;
   z-index: 9999;
   border: 1px solid #bebebe;
   border-radius: 8px;
   padding: 20px 0;
 }
 
-
-
-.backgrounds{
+.backgrounds {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.158);
@@ -83,15 +77,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index:99999;
+  z-index: 99999;
 }
 
 /* The section one */
 .sectionOne {
   display: flex;
   align-items: center;
-  width:85%;
-  margin:auto;
+  width: 85%;
+  margin: auto;
   margin-bottom: 17px;
 }
 
@@ -104,7 +98,7 @@
 .oneLeft img {
   width: 100%;
   height: 100%;
-  border-radius:50%;
+  border-radius: 50%;
 }
 
 .oneRight {
@@ -121,16 +115,15 @@
   color: #242424;
 }
 
-.online{
-  display:flex;
+.online {
+  display: flex;
   align-items: center;
 }
 
-
-.circle{
-  color:green;
-  font-size:7px;
-  margin-right:5px;
+.circle {
+  color: green;
+  font-size: 7px;
+  margin-right: 5px;
 }
 
 .oneRight p {
@@ -141,107 +134,101 @@
   color: #3a3a3a;
 }
 
-
-
 /* The section two */
 .sectionTwo {
   background: #fafafa;
   padding: 2px 10px;
   border-radius: 3px;
   border: 0.5px solid #bebebe;
-  width:85%;
-  margin:auto;
+  width: 85%;
+  margin: auto;
   cursor: pointer;
-  height:30px;
+  height: 30px;
 }
 
-.sectionTwo:hover{
-  border:1px solid red;
+.sectionTwo:hover {
+  border: 1px solid red;
 }
 
 /* The section of the picker */
 
-.smileys{
-  padding-top:50px;
+.smileys {
+  padding-top: 50px;
 }
 
-.picker{
-  position:fixed;
+.picker {
+  position: fixed;
   top: 20%;
-  left:50%;
+  left: 50%;
   /* transform: translate(-80%); */
-  height:400px;
-  background:#fff;
-  width:100%;
-  width:300px;
-  z-index:999999;
-  padding:10px;
+  height: 400px;
+  background: #fff;
+  width: 100%;
+  width: 300px;
+  z-index: 999999;
+  padding: 10px;
 }
-
 
 /* responsiveness for picker */
-@media screen and (max-width:650px){
-  .picker{
-    left:30%;
+@media screen and (max-width: 650px) {
+  .picker {
+    left: 30%;
   }
 }
 
-
-.times{
-  color:red;
-  position:absolute;
-  right:10px;
-  top:10px;
-  cursor:pointer;
+.times {
+  color: red;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
 }
-
 
 /* The section three */
 .sectionThree {
   line-height: 25px;
   font-style: normal;
   font-weight: normal;
-  margin:auto;
-  margin-top:10px;
+  margin: auto;
+  margin-top: 10px;
 }
 
-.sectionThree p{
-  font-family:Lato;
-  color:#242424;
+.sectionThree p {
+  font-family: Lato;
+  color: #242424;
   font-size: 14px;
-  font-weight:700;
-  cursor:pointer;
-  padding:2px 20px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 2px 20px;
 }
 
-.sectionThree p:hover{
-  background:#1692F1;
-  color:#fff;
+.sectionThree p:hover {
+  background: #1692f1;
+  color: #fff;
 }
 
-.pause{
-  display:flex;
+.pause {
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.pause:hover{
-  background:#1692F1;
-  color:#fff;
+.pause:hover {
+  background: #1692f1;
+  color: #fff;
 }
 
-.pause:hover p{
-  background:#1692F1;
-  color:#fff;
+.pause:hover p {
+  background: #1692f1;
+  color: #fff;
 }
 
-.chevron{
-  font-size:10px;
-  font-weight:normal;
-  margin-right:20px;
+.chevron {
+  font-size: 10px;
+  font-weight: normal;
+  margin-right: 20px;
 }
-
 
 /* The section four */
 
@@ -249,24 +236,23 @@
   line-height: 22px;
   font-style: normal;
   font-weight: normal;
-  margin:auto;
-  margin-top:-8px;
+  margin: auto;
+  margin-top: -8px;
 }
 
-.sectionFour p{
-  font-family:Lato;
-  color:#242424;
+.sectionFour p {
+  font-family: Lato;
+  color: #242424;
   font-size: 14px;
-  font-weight:700;
-  cursor:pointer;
-  padding:2px 20px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 2px 20px;
 }
 
-.sectionFour p:hover{
-  background:#1692F1;
-  color:#fff;
+.sectionFour p:hover {
+  background: #1692f1;
+  color: #fff;
 }
-
 
 /* The section five */
 
@@ -274,20 +260,20 @@
   line-height: 22px;
   font-style: normal;
   font-weight: normal;
-  margin:auto;
-  margin-top:-8px;
+  margin: auto;
+  margin-top: -8px;
 }
 
-.sectionFive p{
-  font-family:Lato;
-  color:#242424;
+.sectionFive p {
+  font-family: Lato;
+  color: #242424;
   font-size: 14px;
-  font-weight:700;
-  cursor:pointer;
-  padding:2px 20px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 2px 20px;
 }
 
-.sectionFive p:hover{
-  background:#1692F1;
-  color:#fff;
+.sectionFive p:hover {
+  background: #1692f1;
+  color: #fff;
 }
