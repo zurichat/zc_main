@@ -2,6 +2,7 @@ const express = require('express')
 const routes = require('./routes')
 const helmet = require('helmet')
 const loadFrontend = require('./middlewares/load-frontend')
+const sessions = require('./lib/user_session')
 
 const PORT = process.env.PORT || 3000
 
@@ -17,6 +18,8 @@ app.set('x-powered-by', false)
 
 routes(app)
 loadFrontend(app)
+sessions.startSession(app)
+
 
 app.listen(PORT, () => {
   console.log(
