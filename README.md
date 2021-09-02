@@ -1,4 +1,4 @@
-# zc_main_nodereact
+# zc_main
 
 This is the Zuri Chat frontend built with [ExpressJS](http://expressjs.com/) (Backend) and [React](https://reactjs.org/) (Frontend)
 
@@ -54,3 +54,9 @@ format on save for the eslint & prettier plugins in your editor 🙃
 ## Contributing
 
 For detailed information on how to go about contribution. Check out the [Contribution Guide](docs/CONTRIBUTING.md)
+
+**Before send PR or making a merge make sure you code is properly formatted.** You can easily do that by running
+
+```bash
+yarn format # in project directory
+```

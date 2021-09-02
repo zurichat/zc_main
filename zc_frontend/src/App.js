@@ -1,34 +1,32 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from './pages/home';
-import Login from './pages/login';
-import SignUp from './pages/signup';
-import Blog from './pages/blog';
-import News from './pages/news';
-import Navbar from './components/externalPagesComponents/Navbar';
-import './styles/globals.css';
-import '@fortawesome/fontawesome-free/js/all.js';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Home from './pages/home'
+import Login from './pages/login'
+import SignUp from './pages/signup'
+import Blog from './pages/blog'
+import News from './pages/news'
+import './styles/globals.css'
+import 'tailwindcss/tailwind.css'
 
 const App = () => (
-	<BrowserRouter>
-		<Navbar />
-		<Switch>
-			<Route path='/' exact>
-				<Home />
-			</Route>
-			<Route path='/login'>
-				<Login />
-			</Route>
-			<Route path='/signup'>
-				<SignUp />
-			</Route>
-			<Route path='/blog'>
-				<Blog />
-			</Route>
-			<Route path='/news'>
-				<News />
-			</Route>
-		</Switch>
-	</BrowserRouter>
-);
+  <BrowserRouter>
+    <Switch>
+      <Route path="/" exact>
+        <Home />
+      </Route>
+      <Route path="/login">
+        <Login />
+      </Route>
+      <Route path="/signup">
+        <SignUp />
+      </Route>
+      <Route path="/blog">
+        <Blog />
+      </Route>
+      <Route path="/news">
+        <News />
+      </Route>
+    </Switch>
+  </BrowserRouter>
+)
 
-export default App;
+export default App
