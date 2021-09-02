@@ -4,7 +4,7 @@ import Login from './pages/login'
 import SignUp from './pages/signup'
 import Features from './pages/features'
 import './styles/globals.css'
-
+import AppsAndIntegrations from './pages/apps-integrations'
 
 const App = () => (
   <BrowserRouter>
@@ -20,7 +20,11 @@ const App = () => (
       </Route>
       <Route path="/features">
         <Features />
-      </Route>  
+      </Route>
+
+      <Route path="/apps-integrations">
+        <AppsAndIntegrations/>
+      </Route>
     </Switch>
   </BrowserRouter>
 )
