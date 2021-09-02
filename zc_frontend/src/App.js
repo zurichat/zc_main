@@ -5,7 +5,6 @@ import Login from './pages/login'
 import SignUp from './pages/signup'
 import './styles/globals.css'
 // import 'tailwindcss/tailwind.css'
-import Security from './pages/security'
 import Features from './pages/features'
 import Resources from './pages/resources'
 import AppsAndIntegrations from './pages/apps-integrations'
@@ -14,6 +13,7 @@ import Download from './pages/download'
 import ContactUs from './pages/contact-us'
 import Pricing from './pages/pricing'
 import Header from './components/externalPagesComponents/Header'
+import Security from './components/externalPagesComponents/Security'
 
 const App = () => (
   <BrowserRouter>
@@ -36,9 +36,6 @@ const App = () => (
       <Route path="/pricing">
         <Pricing />
       </Route>
-      <Route path="/security">
-        <Security />
-      </Route>
       <Route path="/careers">
         <Careers />
       </Route>
@@ -59,6 +56,9 @@ const App = () => (
       </Route>
       <Route path="/header">
         <Header />
+      </Route>
+      <Route path="/security">
+        <Security />
       </Route>
     </Switch>
   </BrowserRouter>
