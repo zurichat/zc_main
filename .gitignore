@@ -6,6 +6,10 @@
 /.pnp
 .pnp.js
 
+#logs
+combined.log
+error.log
+
 # testing
 /coverage
 
