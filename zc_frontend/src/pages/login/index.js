@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 import styles from './styles/Login.module.css'
 import React, { useState } from 'react'
-import LoginLoading from '../../components/LoginLoading'
+// import LoginLoading from '../../components/LoginLoading'
 import GoogleLogin from 'react-google-login'
 import { useHistory } from 'react-router-dom'
 
@@ -13,9 +13,9 @@ const Login = () => {
     showPassword: false
   })
   let history = useHistory()
-  const handleClickShowPassword = () => {
-    setPass({ ...pass, showPassword: !pass.showPassword })
-  }
+  // const handleClickShowPassword = () => {
+  //   setPass({ ...pass, showPassword: !pass.showPassword })
+  // }
 
   const handleMouseDownPassword = event => {
     event.preventDefault()
@@ -103,7 +103,7 @@ const Login = () => {
               </div>
               <i
                 className={`far fa-eye-slash ${styles.far}`}
-                onClick={handleClickShowPassword}
+                // onClick={handleClickShowPassword}
                 onMouseDown={handleMouseDownPassword}
               ></i>
               {/* {pass.password ? <i className={`far far-eye ${styles.far}`}></i>: <i className={`far fa-eye-slash ${styles.far}`}></i>} */}
