@@ -1,10 +1,10 @@
-import Section4PricingPage from './components/Section4_pricing_page'
+import PricingTable from './components/PricingTable'
+
 function Pricing() {
   return (
-    <>
-      <Section4PricingPage />
-    </>
+    <div>
+      <PricingTable />
+    </div>
   )
 }
-
 export default Pricing
