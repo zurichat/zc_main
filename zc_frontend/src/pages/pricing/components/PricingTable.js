@@ -5,7 +5,7 @@ import { ReactComponent as Tick } from "../assets/goodTick.svg";
 export default class PricingTable extends React.Component {
   render() {
     return (
-      <section>
+      <section className={styles.pricing}>
         <div className={styles.pricingTable}>
           <div className={styles.col1}>
             <div>
