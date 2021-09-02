@@ -1,13 +1,4 @@
-<<<<<<< HEAD
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from "./pages/home";
-import Login from "./pages/login";
-import SignUp from "./pages/signup";
-import Blog from "./pages/blog";
-import News from "./pages/news";
-import "./styles/globals.css";
-import Pricing from "./pages/pricing";
-=======
+
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from './pages/home'
 import Login from './pages/login'
@@ -21,7 +12,7 @@ import AppsAndIntegrations from './pages/apps-integrations'
 import Careers from './pages/careers'
 import Download from './pages/download'
 import ContactUs from './pages/contact-us'
->>>>>>> develop
+import Pricing from "./pages/pricing";
 
 const App = () => (
   <BrowserRouter>
