@@ -1,15 +1,15 @@
-import React from "react";
-import "./styles.css";
+import React from 'react'
+import './styles.css'
 const SectionSix = () => {
   return (
     <div className="section">
       <h1
         style={{
-          textAlign: "center",
-          paddingBottom: "3.75rem",
-          lineHeight: "3rem",
-          fontSize: "2.5rem",
-          fontWeight: "700",
+          textAlign: 'center',
+          paddingBottom: '3.75rem',
+          lineHeight: '3rem',
+          fontSize: '2.5rem',
+          fontWeight: '700'
         }}
       >
         Learn More about the Zuri Chat Workspace
@@ -17,21 +17,21 @@ const SectionSix = () => {
       <div className="card-container">
         <div
           className="card"
-          style={{ display: "flex", flexDirection: "column", height: "auto" }}
+          style={{ display: 'flex', flexDirection: 'column', height: 'auto' }}
         >
           <div
             className="content"
-            style={{ width: "100%", height: "274px" }}
+            style={{ width: '100%', height: '274px' }}
           ></div>
           <div
             style={{
-              display: "inherit",
-              flexDirection: "inherit",
-              padding: "20px",
+              display: 'inherit',
+              flexDirection: 'inherit',
+              padding: '20px'
             }}
           >
             <div
-              style={{ textAlign: "start", padding: "1.2rem", color: "grey" }}
+              style={{ textAlign: 'start', padding: '1.2rem', color: 'grey' }}
             >
               <h3>News</h3>
             </div>
@@ -64,21 +64,21 @@ const SectionSix = () => {
         </div>
         <div
           className="card"
-          style={{ display: "flex", flexDirection: "column", height: "auto" }}
+          style={{ display: 'flex', flexDirection: 'column', height: 'auto' }}
         >
           <div
             className="content-a"
-            style={{ width: "100%", height: "274px" }}
+            style={{ width: '100%', height: '274px' }}
           ></div>
           <div
             style={{
-              display: "inherit",
-              flexDirection: "inherit",
-              padding: "20px",
+              display: 'inherit',
+              flexDirection: 'inherit',
+              padding: '20px'
             }}
           >
             <div
-              style={{ textAlign: "start", padding: "1.2rem", color: "grey" }}
+              style={{ textAlign: 'start', padding: '1.2rem', color: 'grey' }}
             >
               <h3>Tutorial</h3>
             </div>
@@ -109,21 +109,21 @@ const SectionSix = () => {
         </div>
         <div
           className="card"
-          style={{ display: "flex", flexDirection: "column", height: "auto" }}
+          style={{ display: 'flex', flexDirection: 'column', height: 'auto' }}
         >
           <div
             className="content-b"
-            style={{ width: "100%", height: "274px" }}
+            style={{ width: '100%', height: '274px' }}
           ></div>
           <div
             style={{
-              display: "inherit",
-              flexDirection: "inherit",
-              padding: "20px",
+              display: 'inherit',
+              flexDirection: 'inherit',
+              padding: '20px'
             }}
           >
             <div
-              style={{ textAlign: "start", padding: "1.2rem", color: "grey" }}
+              style={{ textAlign: 'start', padding: '1.2rem', color: 'grey' }}
             >
               <h3>Testimonies</h3>
             </div>
@@ -155,7 +155,7 @@ const SectionSix = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SectionSix;
+export default SectionSix
