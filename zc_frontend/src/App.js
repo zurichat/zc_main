@@ -14,7 +14,6 @@ import Download from './pages/download'
 import ContactUs from './pages/contact-us'
 import Pricing from './pages/pricing'
 import Header from './components/externalPagesComponents/Header'
-import WorkspaceLoader from './components/WorkspaceLoading'
 
 const App = () => (
   <BrowserRouter>
@@ -62,7 +61,6 @@ const App = () => (
         <Header />
       </Route>
     </Switch>
-    <WorkspaceLoader />
   </BrowserRouter>
 )
 
