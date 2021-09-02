@@ -5,7 +5,7 @@ import SignUp from './pages/signup'
 // import Blog from './pages/blog'
 // import News from './pages/news'
 import './styles/globals.css'
-// import 'tailwindcss/tailwind.css'
+import 'tailwindcss/tailwind.css'
 
 const App = () => (
   <BrowserRouter>
@@ -17,7 +17,7 @@ const App = () => (
         	<Login />
       </Route>
       <Route path="/signup">
-        	<SignUp />
+        <SignUp />
       </Route>
     </Switch>
   </BrowserRouter>
