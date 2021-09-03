@@ -109,7 +109,7 @@ const EditProfile = ()=> {
                     </div>
                   </form>
                 </div>
-                {/* Second Half Side Form */}
+                {/* Second Half Side picture Update */}
 
                 <div className={styles.sectionB}>
                   <div className={styles.subContainer}>
