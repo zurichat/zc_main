@@ -13,8 +13,12 @@ function Pricing() {
       <PricingPageSection1 />
       <PricingTable />
       {/* <Section4PricingPage /> */}
-      <FAQ />
-      <Message />
+      <div id="faq">
+        <FAQ />
+      </div>
+      <div id="message">
+        <Message />
+      </div>
       <Footer />
     </div>
   )
