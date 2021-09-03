@@ -16,6 +16,7 @@ import Pricing from './pages/pricing'
 import Header from './components/externalPagesComponents/Header'
 import Cookies from './pages/cookies-settings'
 import Input from './components/externalPagesComponents/Input'
+import FAQ from './pages/FAQ'
 
 const App = () => (
   <BrowserRouter>
@@ -34,9 +35,6 @@ const App = () => (
       </Route>
       <Route path="/features">
         <Features />
-      </Route>
-      <Route path="/pricing">
-        <Pricing />
       </Route>
       <Route path="/security">
         <Security />
@@ -64,6 +62,9 @@ const App = () => (
       </Route>
       <Route path="/cookies">
         <Cookies />
+        </Route>
+      <Route path="/faq">
+        <FAQ />
       </Route>
       <Route path="/input">
         <Input />
