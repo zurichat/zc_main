@@ -11,17 +11,17 @@
 
 .welcome__div,
 .img__div {
-    background-color: #fff;
-    height: 50%;
-    width: 100%;
+  background-color: #fff;
+  height: 50%;
+  width: 100%;
 }
 
 .welcome__div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .welcome__div h1 {
@@ -65,9 +65,9 @@
 
 /* Media Query 720 HD Screens */
 @media only screen and (max-width: 1280px) and (height: 720px) {
-    .wrapper {
-        padding-top: 0;
-    }
+  .wrapper {
+    padding-top: 0;
+  }
 }
 
 /* Media Query 1080px and Smaller */
