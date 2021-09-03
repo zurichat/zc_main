@@ -15,12 +15,12 @@
     "react-google-login": "^5.2.2",
     "react-icons": "^4.2.0",
     "react-router-dom": "^5.2.1",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^4.0.3",
     "swr": "^1.0.0",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -44,11 +44,6 @@
     ]
   },
   "devDependencies": {
-    "@babel/preset-react": "^7.14.5"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-react"
-    ]
+    "prettier": "2.3.2"
   }
 }
