@@ -1,11 +1,11 @@
-import { useContext, Fragment } from 'react'
+import { useContext, Fragment, useState } from 'react'
 import useSWR from 'swr'
 import { URLContext } from '../contexts/Url'
 
 import styles from '../styles/Sidebar.module.css'
 import Dropdown from './Dropdown'
-
-const fetcher = (url) => fetch(url).then((res) => res.json())
+import Modal from './InviteModal'
+const fetcher = url => fetch(url).then(res => res.json())
 
 export const Sidebar = () => {
   const { data: channelsData } = useSWR('/api/plugin/channels', fetcher)
@@ -13,6 +13,7 @@ export const Sidebar = () => {
   const { data: plugins } = useSWR('/api/plugin/list', fetcher)
 
   const { setUrl } = useContext(URLContext)
+  const [show, setShow] = useState(false)
 
   return (
     <div className={styles.container}>
@@ -42,7 +43,7 @@ export const Sidebar = () => {
           ))}
       </Dropdown>
       {plugins &&
-        Object.keys(plugins).map((key) => (
+        Object.keys(plugins).map(key => (
           <Dropdown
             title={plugins[key].name}
             key={key}
@@ -61,6 +62,11 @@ export const Sidebar = () => {
             </Fragment>
           ))}
       </Dropdown>
+      {/* button for adding invites */}
+      <div className={styles.buttonstyle}>
+        <button onClick={() => setShow(true)}>Send Invite</button>
+        <Modal onClose={() => setShow(false)} show={show} />
+      </div>
     </div>
   )
 }
