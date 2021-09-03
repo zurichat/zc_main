@@ -1,7 +1,7 @@
-import React from 'react';
-import * as FaIcons from 'react-icons/fi';
-import * as AiIcons from 'react-icons/ai';
-import * as VscIcons from 'react-icons/vsc';
+import React from 'react'
+import * as FaIcons from 'react-icons/fi'
+import * as AiIcons from 'react-icons/ai'
+import * as VscIcons from 'react-icons/vsc'
 
 export const PreferenceListData = [
   {
@@ -58,6 +58,4 @@ export const PreferenceListData = [
     cName: 'tab-text',
     path: '#'
   }
- 
 ]
-
