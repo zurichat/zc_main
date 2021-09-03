@@ -14,6 +14,7 @@ import Download from './pages/download'
 import ContactUs from './pages/contact-us'
 import Pricing from './pages/pricing'
 import Header from './components/externalPagesComponents/Header'
+import Cookies from './pages/cookies-settings'
 import Input from './components/externalPagesComponents/Input'
 import FAQ from './pages/FAQ'
 
@@ -59,6 +60,9 @@ const App = () => (
       <Route path="/header">
         <Header />
       </Route>
+      <Route path="/cookies">
+        <Cookies />
+        </Route>
       <Route path="/faq">
         <FAQ />
       </Route>
