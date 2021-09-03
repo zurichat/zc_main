@@ -3,9 +3,8 @@ import style from '../../../styles/marketplace.module.css'
 
 export const PluginCard = ({
   name,
-  id,
-  description,
-  uses,    
+  id,  
+  status,    
   icon_url
 }) => {
   const linkableName = name.split(' ').join('-').toLowerCase()
@@ -17,11 +16,15 @@ export const PluginCard = ({
           className={style.pluginImage}          
         >
           <img src={icon_url} alt={`resource of ${name}`} />
-        </figure>
-        <h2 className={style.pluginDescription}>{name}</h2>
+        </figure> 
+        {
+          status === 'installed' && <span className={style.pluginInstallStatus}>Installed</span>
+        } 
+            
       </section>
-      <section className={style.pluginContent}>
-        <p>{description}</p>
+      <section className={`px-2 ${style.pluginContent}`}>
+        <h2 className={`mb-0 ${style.pluginDescription}`}>{name}</h2>
+        <p className="m-0 p-0">12mb</p>
       </section>      
     </div>
     </a>
