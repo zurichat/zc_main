@@ -14,8 +14,8 @@ import Download from './pages/download'
 import ContactUs from './pages/contact-us'
 import Pricing from './pages/pricing'
 import Header from './components/externalPagesComponents/Header'
-import './styles/globals.css';
-import MarketPlace from './pages/marketplace/marketplace';'
+import './styles/globals.css'
+import MarketPlace from './pages/marketplace/marketplace'
 import Input from './components/externalPagesComponents/Input'
 import FAQ from './pages/FAQ'
 
@@ -59,7 +59,7 @@ const App = () => (
         <Header />
       </Route>
       <Route path="/marketplace" exact>
-        <MarketPlace />        
+        <MarketPlace />
       </Route>
       <Route path="/faq">
         <FAQ />
