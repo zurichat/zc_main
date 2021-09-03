@@ -1,0 +1,151 @@
+.categories{
+    background:  #F0F4F8;
+    width: 80%;
+    margin: auto;
+    height: 310px;
+    margin-top: 3rem;
+    overflow: hidden;
+}
+.categoriesModal{
+    background:  #F0F4F8;
+    width: 70%;
+    margin: 2rem auto 2rem auto;
+    height: max-content;
+    position: relative; 
+
+    
+}
+
+button{
+    background: none;
+    border: none;
+    margin-left: 1rem;
+    cursor: pointer;
+    font-size: 15px;
+    color: #00B87C;
+    
+}
+.icons,
+.icons_close{
+    font-size: 30px;
+   
+}
+.icons_close{
+   position: absolute;
+   right: 0;
+}
+.btn{
+    align-content: center;
+    justify-content: center;
+    display: flex;
+}
+
+
+
+.linkContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.categories div a,
+.categoriesModal div a{
+    padding: 1rem 2rem;
+    color: #fff;
+    background: #00B87C;
+    border-radius: 5px;
+    margin-left: .5rem;
+    margin-bottom: 1rem;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+   
+   
+}
+
+
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 100%;
+    border-bottom: 2px solid black;
+    margin-bottom: 1rem;
+    position: relative;
+}
+.headerx{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 1rem;
+    width: 100%;
+    border-bottom: 2px solid black;
+    margin-bottom: 1rem;
+    position: relative;
+}
+.background{
+    background-color:rgba(0, 0, 0, 0.7);
+    position: absolute;
+    z-index: 10;
+    top: 0; bottom: 0;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+    min-height: 100vh;
+    
+}
+
+
+@media screen and (max-width:768px){
+    .categories{
+      height: 235px;
+    }
+    .categories div a
+    {
+        padding: .5rem 1.5rem;
+       font-size: 10px;
+        margin-left: .5rem;
+        margin-bottom: .3rem;
+    }
+    .header,
+    .headerx{
+        padding: .5rem;
+    }
+    .header h3{
+        font-size: 15px;
+    }
+    .header button{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width:425px){
+    .categories{
+      height: 245px;
+    }
+   
+    .categories div a,
+    .categoriesModal div a{
+        padding: .6rem 1rem;
+       font-size: 10px;
+        margin-left: .5rem;
+        margin-bottom: .3rem;
+    }
+    .header{
+        padding: .5rem;
+    }
+    .header h3{
+        font-size: 15px;
+    }
+    .header button{
+        font-size: 12px;
+    }
+    .linkContainer{
+       padding: 0;
+    }
+    .header{
+    margin-bottom: .5rem;
+}
+}
