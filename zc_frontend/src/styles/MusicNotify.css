@@ -1,0 +1,22 @@
+.modal-hold {
+    /* background: lightgreen; */
+    color: #DC1AA3;
+    border-radius: 10px;
+}
+.modal-body, .modal-header {
+    border: none;
+    outline: none;
+}
+.modal-header {
+    border-radius: 10px 10px 0 0;
+}
+.modal-body h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1A61DB;
+}
+.modal-body h1 span {
+    font-size: 36px;
+    font-weight: 900;
+    color: #FEA162;
+}
