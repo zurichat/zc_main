@@ -3,7 +3,7 @@ const getSession = express.Router()
 
 getSession.get('/session/test', (req, res) => {
   //set a test cookie to persist dummy user data
-  res.cookie(`userID`,`124D2345#6T67`);
+  res.cookie(`userID`, `124D2345#6T67`)
 
   res.json({
     status: 200,
