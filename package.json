@@ -19,8 +19,6 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "connect-memcached": "^1.0.0",
-    "connect-redis": "^6.0.0",
     "cookie-parser": "^1.4.5",
     "dotenv": "^10.0.0",
     "emoji-picker-react": "^3.4.8",
