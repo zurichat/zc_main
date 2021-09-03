@@ -76,11 +76,21 @@ section .contentBx .formBx .inputBx {
 section .contentBx .formBx .inputBx span {
   font-weight: 700;
   font-size: 24px;
-  display: block;
+  /* display: block; */
   color: #3a3a3a;
   font-size: 16px;
   letter-spacing: 1px;
   padding-bottom: 5px;
+}
+section .contentBx .formBx .inputBx span span[class='input-errormsg'],
+.input-errormsg {
+  font-weight: normal;
+  font-size: 1rem;
+  /* text-transform: capitalize; */
+  /* display: block; */
+  padding-left: 1rem;
+  color: #ff0000;
+  letter-spacing: 1px;
 }
 
 section .contentBx .formBx .inputBx input {
