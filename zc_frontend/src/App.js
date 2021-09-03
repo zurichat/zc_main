@@ -12,6 +12,9 @@ import AppsAndIntegrations from './pages/apps-integrations'
 import Careers from './pages/careers'
 import Download from './pages/download'
 import ContactUs from './pages/contact-us'
+import Pricing from './pages/pricing'
+import Header from './components/externalPagesComponents/Header'
+import Input from './components/externalPagesComponents/Input'
 
 const App = () => (
   <BrowserRouter>
@@ -31,6 +34,9 @@ const App = () => (
       <Route path="/features">
         <Features />
       </Route>
+      <Route path="/pricing">
+        <Pricing />
+      </Route>
       <Route path="/security">
         <Security />
       </Route>
@@ -48,6 +54,15 @@ const App = () => (
       </Route>
       <Route path="/contact-us">
         <ContactUs />
+      </Route>
+      <Route path="/pricing">
+        <Pricing />
+      </Route>
+      <Route path="/header">
+        <Header />
+      </Route>
+      <Route path="/input">
+        <Input />
       </Route>
     </Switch>
   </BrowserRouter>
