@@ -2,15 +2,9 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 import styles from './styles/Login.module.css'
 import React, { useState } from 'react'
-<<<<<<< HEAD
-import LoginLoading from '../../components/LoginLoading';
-import Link from '../../components/externalPagesComponents/Link';
-
-=======
 // import LoginLoading from '../../components/LoginLoading'
 import GoogleLogin from 'react-google-login'
 import { useHistory } from 'react-router-dom'
->>>>>>> develop
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -193,13 +187,6 @@ const Login = () => {
             </a>
           </div>
         </div>
-<<<<<<< HEAD
-        <span className={``}>
-          Don't have an account?{' '}
-          <Link title="Create an account" color="#2F80ED" to="/signup" />
-        </span>
-=======
->>>>>>> develop
       </div>
     </div>
   )
