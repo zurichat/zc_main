@@ -1,21 +1,24 @@
-// This components helps to setup a modal for profile screens
+// This components helps to setup a modal for profile
 
-import React from 'react'
-
+import React, { useContext } from 'react'
+import { ProfileContext } from '../contexts/ProfileModal'
 import styles from '../styles/ProfileModal.module.css'
 
-const ProfileModal = ({ title, children, isShow, setShow }) => {
+const ProfileModal = ({ title, children }) => {
+  const { modal, toggleModalState } = useContext(ProfileContext)
+
   return (
     <div
       className={styles.modalContainer}
-      style={isShow ? { display: 'flex' } : { display: 'none' }}
+      style={modal ? { display: 'flex' } : { display: 'none' }}
     >
+      <div className={styles.overlay} onClick={toggleModalState}></div>
       <div className={styles.modalContent}>
         <div className={styles.modalHeader}>
           {title}
 
           <svg
-            onClick={() => setShow(false)}
+            onClick={toggleModalState}
             className={styles.closeIcon}
             viewBox="0 0 329.26933 329"
             xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +27,7 @@ const ProfileModal = ({ title, children, isShow, setShow }) => {
           </svg>
         </div>
 
-        <div className={styles.modalInnerContainer}>{children}</div>
+        {children}
       </div>
     </div>
   )

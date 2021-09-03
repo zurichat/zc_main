@@ -3,13 +3,13 @@ import React, { useContext } from 'react'
 // react icons
 import { FaChevronRight, FaCircle, FaTimes } from 'react-icons/fa'
 
-import { URLContext } from './../contexts/Url'
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
 
 import styles from '../styles/Topbar.module.css'
+import { TopbarContext } from '../contexts/Topbar'
 
 const TopbarModal = () => {
-  const state = useContext(URLContext)
+  const state = useContext(TopbarContext)
   const [showModal] = state.show
   const [showStatus, setShowStatus] = state.status
   const [chosenEmoji] = state.emoji
