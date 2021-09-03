@@ -8,9 +8,9 @@ body {
 
 .cookie_content {
     width: 100%;
-    margin-top: 10%;
+    margin-top: 15%;
     /* background-color: #e77070; */
-    background-color: #f8ecec;
+    background-color: #f8f8f8;
     border-top-left-radius: 5%;
     border-top-right-radius: 5%;
     font-family: 'Lato', sans-serif;
@@ -35,11 +35,11 @@ body {
 .cookie_header_body {
     width: 76%;
     margin-bottom: 8px;
-    font-size: 18px;
+    font-size: 1rem;
 }
 
 .cookie_header_title {
-    font-size: 30px;
+    font-size: 1.5rem;
 }
 
 .cookie_body_title,
@@ -59,7 +59,7 @@ body {
 
 .cookie_body {
     margin: auto 1em;
-    font-size: 18px;
+    font-size: 1rem;
 }
 
 .cookie_body_half {
@@ -94,7 +94,7 @@ body {
 }
 
 .action_links button {
-    width: 50%;
+    width: 45%;
     border: none;
     text-align: center;
     display: inline-block;
