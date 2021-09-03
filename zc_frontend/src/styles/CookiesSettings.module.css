@@ -7,7 +7,7 @@ body {
 
 .cookie_content {
     width: 100%;
-    margin-top: 20%;
+    margin-top: 10%;
     /* background-color: #e77070; */
     background-color: #f8f8f8;
     border-top-left-radius: 5%;
@@ -91,6 +91,7 @@ body {
     text-align: center;
     display: inline-block;
     border-radius: 12px;
+    box-shadow: 0 5px 8px #888888;
 }
 
 .action_links .firstButton {

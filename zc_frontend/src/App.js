@@ -20,7 +20,7 @@ const App = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/" exact>
-        <LandingPage />
+        <Cookies />
       </Route>
       <Route path="/home">
         <Home />
@@ -61,8 +61,8 @@ const App = () => (
       <Route path="/header">
         <Header />
       </Route>
-      <Route path="/cookies">
-        <Cookies />
+      <Route path="/landingpage">
+        <LandingPage />
       </Route>
     </Switch>
   </BrowserRouter>
