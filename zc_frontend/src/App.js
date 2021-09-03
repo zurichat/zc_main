@@ -15,8 +15,9 @@ import ContactUs from './pages/contact-us'
 import Pricing from './pages/pricing'
 import Header from './components/externalPagesComponents/Header'
 import './styles/globals.css';
-import MarketPlace from './pages/marketplace/marketplace';
-import PluginDetails from './pages/marketplace/PluginDetails'
+import MarketPlace from './pages/marketplace/marketplace';'
+import Input from './components/externalPagesComponents/Input'
+import FAQ from './pages/FAQ'
 
 const App = () => (
   <BrowserRouter>
@@ -35,9 +36,6 @@ const App = () => (
       </Route>
       <Route path="/features">
         <Features />
-      </Route>
-      <Route path="/pricing">
-        <Pricing />
       </Route>
       <Route path="/security">
         <Security />
@@ -63,8 +61,11 @@ const App = () => (
       <Route path="/marketplace" exact>
         <MarketPlace />        
       </Route>
-      <Route path="/marketplace/plugins/:pluginId/:pluginName" exact>
-        <PluginDetails />
+      <Route path="/faq">
+        <FAQ />
+      </Route>
+      <Route path="/input">
+        <Input />
       </Route>
     </Switch>
   </BrowserRouter>
