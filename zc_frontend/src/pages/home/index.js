@@ -1,8 +1,8 @@
-import { PluginContent } from '../../components/PluginContent'
-import { Sidebar } from '../../components/Sidebar'
-import { Topbar } from '../../components/Topbar'
-import styles from '../../styles/Home.module.css'
-import { UrlProvider } from '../../contexts/Url'
+import { PluginContent } from "../../components/PluginContent";
+import { Sidebar } from "../../components/Sidebar";
+import { Topbar } from "../../components/Topbar";
+import styles from "../../styles/Home.module.css";
+import { UrlProvider } from "../../contexts/Url";
 
 const Home = () => {
   return (
@@ -17,7 +17,7 @@ const Home = () => {
         </div>
       </div>
     </UrlProvider>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
