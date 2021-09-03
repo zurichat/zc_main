@@ -168,7 +168,10 @@ const Login = () => {
                 className={`text-center py-2 text-secondary ${styles.checktext}`}
               >
                 New to us?{' '}
-                <a href="../../signup/index.js" className={`${styles.checklink}`}>
+                <a
+                  href="../../signup/index.js"
+                  className={`${styles.checklink}`}
+                >
                   Create an Account
                 </a>
               </p>

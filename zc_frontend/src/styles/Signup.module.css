@@ -1,247 +1,241 @@
-.container{
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
+.container {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .Account_having {
-   width: 90%;
+  width: 90%;
 }
 
-.Account_having p{
-   margin-top: 50px;
-   text-align: right;
-   margin: 20px;
+.Account_having p {
+  margin-top: 50px;
+  text-align: right;
+  margin: 20px;
 }
 
-.Account_having p a{
-   color: #00bb7c;
-   font-weight: bold;
+.Account_having p a {
+  color: #00bb7c;
+  font-weight: bold;
 }
 
-.login_container{
-   display: grid; 
-   justify-content: center;
-   align-items: center;
+.login_container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 
-.logoImage{
-   width: 50px;
-   height: 50px;
+.logoImage {
+  width: 50px;
+  height: 50px;
 }
 
-.logo{
-   display: flex; 
-   justify-content: center;
-   align-items: center;
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
- .logoText{
-   font-family: 'Gilroy' sans-serif;
-   font-size: 30px;
-   padding: 10px 10px 10px 10px;
+.logoText {
+  font-family: 'Gilroy' sans-serif;
+  font-size: 30px;
+  padding: 10px 10px 10px 10px;
 }
 
-.head_text h1{
-   text-align: center;
-   padding: 10px;
+.head_text h1 {
+  text-align: center;
+  padding: 10px;
 }
 
-.head_text p{
-   text-align: center;
+.head_text p {
+  text-align: center;
 }
 
-.seperator{
-   display: flex;
-   justify-content: space-around;
-   margin-top: 3rem;
+.seperator {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3rem;
 }
 
-.seperator .line{
-   margin: 1rem 0.5rem 0.5rem 0.5rem;
-   background-color: rgb(141, 141, 141);
-   height: 2px;
-   width: 100%;
+.seperator .line {
+  margin: 1rem 0.5rem 0.5rem 0.5rem;
+  background-color: rgb(141, 141, 141);
+  height: 2px;
+  width: 100%;
 }
 
- .seperator p{
-   margin: 0rem;
-   color: rgb(141, 141, 141);
-   text-align: center;
-   font-weight: bold;
+.seperator p {
+  margin: 0rem;
+  color: rgb(141, 141, 141);
+  text-align: center;
+  font-weight: bold;
 }
 
-.signing_by_buttons .google_email{
-   border: 1px solid black;
-   border-radius: 5px;
-   width: 100%;
-   padding: 0.5rem 5rem;
-   font-weight: bold;
-   background-color: white;
+.signing_by_buttons .google_email {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100%;
+  padding: 0.5rem 5rem;
+  font-weight: bold;
+  background-color: white;
 }
 
-.signing_by_buttons .facebook_email{
-   border: 1px solid rgb(41, 41, 179);
-   border-radius: 5px;
-   width: 100%;
-   padding: 0.5rem 5rem;
-   font-weight: bold;
-   color: rgb(41, 41, 179);
-   background-color: white;
-   margin-top: 20px;
+.signing_by_buttons .facebook_email {
+  border: 1px solid rgb(41, 41, 179);
+  border-radius: 5px;
+  width: 100%;
+  padding: 0.5rem 5rem;
+  font-weight: bold;
+  color: rgb(41, 41, 179);
+  background-color: white;
+  margin-top: 20px;
 }
 
-.signing_by_buttons .google_email:hover{
-   background-color: rgb(194, 194, 194);
+.signing_by_buttons .google_email:hover {
+  background-color: rgb(194, 194, 194);
 }
 
-.signing_by_buttons .facebook_email:hover{
-   background-color: rgb(194, 194, 194);
+.signing_by_buttons .facebook_email:hover {
+  background-color: rgb(194, 194, 194);
 }
 
-.signing_by_buttons{
-   margin-top: 2rem;
+.signing_by_buttons {
+  margin-top: 2rem;
 }
 
-.signing_by_buttons button img{
-
-   height: 30px;
-   margin-right: 10px;
+.signing_by_buttons button img {
+  height: 30px;
+  margin-right: 10px;
 }
 
-.signing_by_Email{
-   margin-top: 20px;
+.signing_by_Email {
+  margin-top: 20px;
 }
 
-.signing_by_Email label{
-   font-weight: bold;
-   padding: 0.5rem 0.5rem 0.5rem 0rem;
+.signing_by_Email label {
+  font-weight: bold;
+  padding: 0.5rem 0.5rem 0.5rem 0rem;
 }
 
-.signing_by_Email input{
-   border: 1px solid black;
-   border-radius: 5px;
-   width: 100%;
-   padding: 0.5rem 0.5rem;
-   background-color: white;
+.signing_by_Email input {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+  background-color: white;
 }
 
 .signup_btn {
-   border: none;
-   padding: 0.5rem 10rem;
-   background: #00bb7c;
-   border-radius: 8px;
-   color: #fff;
-   font-weight: bold;
-   font-size: 1.2rem;
-   margin-top: 20px;
-   border-radius: 5px;
-   width: 100%;
-   padding: 0.5rem 5rem;
-   font-weight: bold;
+  border: none;
+  padding: 0.5rem 10rem;
+  background: #00bb7c;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  border-radius: 5px;
+  width: 100%;
+  padding: 0.5rem 5rem;
+  font-weight: bold;
 }
 
 .signup_btn:hover {
-   background: #038f60;
+  background: #038f60;
 }
 
-.checkbox{
-   padding: 2rem 0.7rem 0.7rem 0rem;
+.checkbox {
+  padding: 2rem 0.7rem 0.7rem 0rem;
 }
 
-.checkbox span{
-   margin-left: 10px;
+.checkbox span {
+  margin-left: 10px;
 }
 
-input[type="checkbox"]{
-   height: 15px;
-   width: 15px;
-   border-radius: 10px;
-   color: teal;
-   cursor: pointer;
+input[type='checkbox'] {
+  height: 15px;
+  width: 15px;
+  border-radius: 10px;
+  color: teal;
+  cursor: pointer;
 }
 
-
-.agreement p{
-   padding: 1rem 0.5rem 0.5rem 0rem;
-   color: rgb(141, 141, 141);
+.agreement p {
+  padding: 1rem 0.5rem 0.5rem 0rem;
+  color: rgb(141, 141, 141);
 }
 
-.footer_menu{
-   margin: 50px 0 100px 0;
+.footer_menu {
+  margin: 50px 0 100px 0;
 }
 
-.footer_menu ul{
-   display: flex;
-   justify-content: space-around;  
+.footer_menu ul {
+  display: flex;
+  justify-content: space-around;
 }
-
 
 @media screen and (max-width: 992px) {
+}
 
- }
- 
+@media screen and (max-width: 600px) {
+  .Account_having {
+    width: 100%;
+  }
 
- @media screen and (max-width: 600px) {
-   .Account_having {
-      width: 100%;
-   }
-   
-   .Account_having p{
-      margin-top: 50px;
-      text-align: center;
-      margin: 0px;
-      padding: 10px;
-   }
+  .Account_having p {
+    margin-top: 50px;
+    text-align: center;
+    margin: 0px;
+    padding: 10px;
+  }
 
-   .signing_by_buttons .google_email{
-      padding: 0.5rem 0rem;
-   }
-   .signing_by_buttons .facebook_email{
-      padding: 0.5rem 0rem;
-   }
-   
-   .signing_by_buttons{
-      margin-left: 50px;
-      margin-right: 50px;
-   }
-   .signing_by_Email{
-      margin-left: 50px;
-      margin-right: 50px;
-   }
+  .signing_by_buttons .google_email {
+    padding: 0.5rem 0rem;
+  }
+  .signing_by_buttons .facebook_email {
+    padding: 0.5rem 0rem;
+  }
 
-   .signup_btn {
-      padding: 0.5rem 0rem;
-   }
-   .signup_button{
-      margin-left: 50px;
-      margin-right: 50px;
-   }
+  .signing_by_buttons {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .signing_by_Email {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
 
-   .checkbox{
-      margin-left: 50px;
-      margin-right: 50px;
-   }
-   .agreement{
-      margin-left: 50px;
-      margin-right: 50px;
-   }
-   .footer_menu ul{
-      display: block;
-      text-align: center;
-   }
+  .signup_btn {
+    padding: 0.5rem 0rem;
+  }
+  .signup_button {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
 
-   .footer_menu{
-      margin: 30px 0 100px 0;
-   }
+  .checkbox {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .agreement {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .footer_menu ul {
+    display: block;
+    text-align: center;
+  }
 
-   .footer_menu ul li{
-      margin-top: 20px;
-   } 
+  .footer_menu {
+    margin: 30px 0 100px 0;
+  }
 
+  .footer_menu ul li {
+    margin-top: 20px;
+  }
 
-    .seperator{
-      margin-left: 50px;
-      margin-right: 50px;
-   }
- }
+  .seperator {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
