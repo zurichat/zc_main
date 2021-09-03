@@ -1,11 +1,17 @@
 const mongoose = require('mongoose')
+const validator = require('validator')
 
 const workspaceSchema = new mongoose.Schema({
     name: {
-        type: String
+        type: String,
+        required: [true, 'Please choose a workspace name!']
     },
     email: {
-        type: String
+        type: String,
+        required: [true, 'Please provide your email'],
+        unique: true,
+        lowercase: true,
+        validate: [validator.isEmail, 'Please provide a valid email']
     },
     channels: [String]
 })

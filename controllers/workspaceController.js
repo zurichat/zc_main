@@ -83,7 +83,8 @@ exports.getWorkspace = async (req, res) => {
 
     try {
         const workspace = await Workspace.findByIdAndUpdate(req.params.id, req.body, {
-            new: true
+            new: true,
+            runValidators: true
         })
 
         if (!workspace) {
