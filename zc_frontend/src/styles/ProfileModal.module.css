@@ -32,9 +32,11 @@
   max-width: 885px;
   background: #fff;
   border-radius: 5px;
+  overflow-y: scroll;
 }
 
 .modalHeader, .modalHeaderMobile {
+  z-index: 100;
   width: 100%;
   height: 6.3125rem;
   background: #00b87c;
