@@ -77,6 +77,13 @@ body {
 
 .cookie_body_second_button {
     color: #00b87c;
+    /* position: relative;
+    width: 71px;
+    height: 32px;
+    left: 317px;
+    top: 516px;
+    background: #00B87C;
+    border-radius: 58px; */
 }
 
 .cookie_body_text,

@@ -1,4 +1,6 @@
 import styles from '../../styles/CookiesSettings.module.css'
+import toggleButton from '../../assets/toggle.svg'
+import lockButton from '../../assets/lock.svg'
 
 
 function Cookies() {
@@ -24,7 +26,8 @@ function Cookies() {
                         </div>
                     </div>
                     <div className={styles.cookie_body_first_button}>
-                    <i class="fas fa-lock"></i>
+                    {/* <i class="fas fa-lock"></i> */}
+                    <img src={lockButton} alt="lock" />
                     </div>
                 </div>
                 <div className={styles.cookie_body_half}>
@@ -38,7 +41,8 @@ function Cookies() {
                         </div>
                     </div>
                     <div className={styles.cookie_body_second_button} >
-                    <i class="fas fa-toggle-on fa-2x"></i>
+                    {/* <i class="fas fa-toggle-on fa-2x"></i> */}
+                    <img src={toggleButton} alt="toggle button" />
                     </div>
                 </div>
                 <div className={styles.learn_more_link}>
