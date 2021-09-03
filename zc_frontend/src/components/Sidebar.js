@@ -1,18 +1,18 @@
-import { useContext, Fragment } from 'react'
-import useSWR from 'swr'
-import { URLContext } from '../contexts/Url'
+import { useContext, Fragment } from "react";
+import useSWR from "swr";
+import { URLContext } from "../contexts/Url";
 
-import styles from '../styles/Sidebar.module.css'
-import Dropdown from './Dropdown'
-
-const fetcher = (url) => fetch(url).then((res) => res.json())
+import styles from "../styles/Sidebar.module.css";
+import Dropdown from "./Dropdown";
+import ReactTooltip from "react-tooltip";
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export const Sidebar = () => {
-  const { data: channelsData } = useSWR('/api/plugins/channels', fetcher)
-  const { data: messagesData } = useSWR('/api/plugins/messages', fetcher)
-  const { data: plugins } = useSWR('/api/plugins/', fetcher)
+  const { data: channelsData } = useSWR("/api/plugins/channels", fetcher);
+  const { data: messagesData } = useSWR("/api/plugins/messages", fetcher);
+  const { data: plugins } = useSWR("/api/plugins/", fetcher);
 
-  const { setUrl } = useContext(URLContext)
+  const { setUrl } = useContext(URLContext);
 
   return (
     <div className={styles.container}>
@@ -35,10 +35,14 @@ export const Sidebar = () => {
       <Dropdown title="Channels">
         {channelsData &&
           channelsData.channels.map((channel, index) => (
-            <Fragment key={index}>
-              <span>#</span>
-              {channel.name}
-            </Fragment>
+            <div key={index}>
+              <ReactTooltip />
+              <span
+                data-tip={`Welcome to ${channel.name} channel, click on join to allow you interact in this channel`}
+              >
+                #{channel.name}
+              </span>
+            </div>
           ))}
       </Dropdown>
       {plugins &&
@@ -71,5 +75,5 @@ export const Sidebar = () => {
           ))}
       </Dropdown>
     </div>
-  )
-}
+  );
+};
