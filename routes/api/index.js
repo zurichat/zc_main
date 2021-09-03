@@ -1,1 +1,1 @@
-module.exports = [require('./plugin'), require('../../middlewares/getDevice'), require('../../middlewares/getUserDetails')]
+module.exports = [require('./plugin'), require('../../middlewares/getDevice'), require('../../middlewares/getSession'), require('../../middlewares/getUserDetails')]
