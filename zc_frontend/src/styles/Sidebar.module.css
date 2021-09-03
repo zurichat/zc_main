@@ -6,6 +6,26 @@
   height: 100vh;
   overflow: auto;
   width: max-content;
+  overflow-y: scroll;
+}
+
+.container::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.container::-webkit-scrollbar {
+  width: 12px;
+  background: #fff;
+}
+
+.container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #00b87ba8;
 }
 
 .zuriLogo {
@@ -201,4 +221,12 @@
 .channelItem {
   cursor: pointer;
   padding: 0.4rem 0;
+}
+
+.buttonstyle button {
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
