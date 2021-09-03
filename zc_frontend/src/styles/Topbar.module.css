@@ -120,10 +120,15 @@
   align-items: center;
 }
 
-.circle {
+.circle, .regCircle {
   color: green;
   font-size: 7px;
   margin-right: 5px;
+}
+
+
+.regCircle{
+  color: gray;
 }
 
 .oneRight p {

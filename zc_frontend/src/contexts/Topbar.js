@@ -8,6 +8,7 @@ export const TopbarProvider = ({ children }) => {
   const [showModal, setShowModal] = useState(false)
   const [showStatus, setShowStatus] = useState(false)
   const [chosenEmoji, setChosenEmoji] = useState({ emoji: '4️⃣' })
+  const [online,setStatus] = useState(true)
 
   // The function that opens the topbar profile modal
   const openModal = () => {
@@ -39,15 +40,21 @@ export const TopbarProvider = ({ children }) => {
     setChosenEmoji(emojiObject)
   }
 
+  //The fuction that toggles online status
+  const toggleStatus = ()=> {
+    setStatus(!online)
+  }
+
   // Passes all functions and states to the state object
   const state = {
     openModal,
     closeModal,
     openStatus,
     closeStatus,
+    toggleStatus,
     modalRef,
     show: [showModal, setShowModal],
-    status: [showStatus, setShowStatus],
+    status: [showStatus, setShowStatus,online,setStatus],
     emoji: [chosenEmoji, setChosenEmoji],
     onEmojiClick
   }

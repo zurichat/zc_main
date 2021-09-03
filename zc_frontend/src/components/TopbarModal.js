@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 
 // react icons
-import { FaChevronRight, FaCircle, FaTimes } from 'react-icons/fa'
+import { FaChevronRight, FaCircle, FaRegCircle ,FaTimes } from 'react-icons/fa'
 
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
 
@@ -11,9 +11,9 @@ import { TopbarContext } from '../contexts/Topbar'
 const TopbarModal = () => {
   const state = useContext(TopbarContext)
   const [showModal] = state.show
-  const [showStatus, setShowStatus] = state.status
+  const [showStatus, setShowStatus, online] = state.status
   const [chosenEmoji] = state.emoji
-  const { onEmojiClick, openStatus, closeStatus, modalRef } = state
+  const { onEmojiClick, openStatus, closeStatus, modalRef, toggleStatus } = state
 
   return (
     <>
@@ -49,8 +49,8 @@ const TopbarModal = () => {
             <div className={styles.oneRight}>
               <h4>Praise.A</h4>
               <div className={styles.online}>
-                <FaCircle className={styles.circle} />
-                <p>Active</p>
+                {online ? <FaCircle className={styles.circle} /> : <FaRegCircle className={styles.regCircle} />}
+                <p>{`${online ? "Active" : "Away"}`}</p>
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@ const TopbarModal = () => {
 
           <div className={styles.sectionThree}>
             <p onClick={openStatus}>Set a status</p>
-            <p>Set yourself as away</p>
+            <p onClick={toggleStatus}>{online ? "Set yourself as away" : "Set yourself as active"}</p>
             <div className={styles.pause}>
               <p>Pause Notifications</p>
               <FaChevronRight className={styles.chevron} />
