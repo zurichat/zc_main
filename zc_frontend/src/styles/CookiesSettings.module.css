@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    min-height: 100vh;
+    min-height: 95vh;
 }
 
 .cookie_content {
@@ -80,7 +80,7 @@ body {
 
 .action_links {
     margin-top: .9em;
-    margin-bottom: .9em;
+    /* margin-bottom: .9em; */
 }
 
 button {
