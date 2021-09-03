@@ -1,11 +1,12 @@
 import React, { useContext } from 'react'
+import { TopbarContext } from '../contexts/Topbar'
 
-import { URLContext } from '../contexts/Url'
 import styles from '../styles/Topbar.module.css'
 import SearchBar from './externalPagesComponents/SearchBar'
+import StatusBadge from './StatusBadge'
 
 export const Topbar = () => {
-  const state = useContext(URLContext)
+  const state = useContext(TopbarContext)
   const { openModal } = state
 
   return (
@@ -13,6 +14,7 @@ export const Topbar = () => {
       <div className={styles.topbar}>
         <SearchBar />
         <img src="/settings.svg" alt="settings" />
+        <StatusBadge />
         <div className={styles.profile} onClick={openModal}>
           <img src="/profile.png" alt="Profile" />
         </div>
