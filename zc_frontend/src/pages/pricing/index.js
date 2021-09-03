@@ -9,17 +9,23 @@ import PricingPageSection1 from './pricingPageSection1/PricingPageSection1'
 function Pricing() {
   return (
     <div>
-      {/* <Header /> */}
-      <PricingPageSection1 />
-      <PricingTable />
-      {/* <Section4PricingPage /> */}
+      <div id="header">{/* <Header /> */}</div>
+      <div id="section1">
+        <PricingPageSection1 />
+      </div>
+      <div id="section4">
+        <PricingTable />
+        {/* <Section4PricingPage /> */}
+      </div>
       <div id="faq">
         <FAQ />
       </div>
       <div id="message">
         <Message />
       </div>
-      <Footer />
+      <div id="footer">
+        <Footer />
+      </div>
     </div>
   )
 }
