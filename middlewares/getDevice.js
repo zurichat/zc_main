@@ -1,6 +1,6 @@
 const express = require('express')
 const getDevice = express.Router()
-const geoip = require('geoip-lite')
+const { lookup } = require('geoip-lite')
 
 const getname = useragent => {
   if (useragent.isTablet) return 'Tablet'
@@ -15,8 +15,7 @@ const getname = useragent => {
 
 getDevice.get('/test/deviceinfo', (req, res) => {
   const name = getname(req.useragent)
-  const ip = req.ip
-  let geo = geoip.lookup(ip)
+  const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress
   res.json({
     status: 'success',
     data: {
@@ -24,8 +23,7 @@ getDevice.get('/test/deviceinfo', (req, res) => {
       browser: req.useragent.browser || 'unknown',
       ip: ip || 'unknown',
       deviceName: name,
-      contry: geo ? geo.country : 'unknown',
-      region: geo ? geo.region : 'unknown'
+      location: lookup(ip) || 'unknown'
     }
   })
 })
