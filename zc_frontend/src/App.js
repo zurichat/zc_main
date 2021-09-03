@@ -15,6 +15,7 @@ import ContactUs from './pages/contact-us'
 import Pricing from './pages/pricing'
 import Header from './components/externalPagesComponents/Header'
 import Cookies from './pages/cookies-settings'
+import Input from './components/externalPagesComponents/Input'
 
 const App = () => (
   <BrowserRouter>
@@ -63,6 +64,9 @@ const App = () => (
       </Route>
       <Route path="/cookies">
         <Cookies />
+      </Route>
+      <Route path="/input">
+        <Input />
       </Route>
     </Switch>
   </BrowserRouter>
