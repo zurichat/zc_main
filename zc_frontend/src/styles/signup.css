@@ -107,7 +107,8 @@ section .contentBx .formBx .inputBx input{
 }
 
 .toc input{
-    margin-right: 12px;
+    margin-right: 14px;
+    margin-top: 1px;
 }
 
 .tocText{
@@ -136,17 +137,17 @@ section .contentBx .formBx .inputBx input{
   
   .lineSpan::before{
     flex-grow: 1;
-    height: 1px;
+    height: 1.5px;
     content: '\a0';
-    background-color:#00B87C;
+    background-color:rgb(0, 184, 124, 0.3);
     position: relative;
     top: 0.5em;
   }
   .lineSpan:after {
     flex-grow: 1;
-    height: 1px;
+    height: 1.5px;
     content: '\a0';
-    background-color: #00B87C;
+    background-color: rgb(0, 184, 124, 0.3);
     position: relative;
     top: 0.5em;
   }
@@ -241,6 +242,12 @@ section .contentBx .formBx .inputBx input{
         align-items: center;
         justify-content: center;
     }
+    .footer a{
+
+        margin: auto 16px;
+        
+    }
+  
     
 }
 
