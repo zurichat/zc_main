@@ -1,9 +1,13 @@
 import ComplianceCertification from './components/ComplianceCertification'
 import securityStyles from './styles/security.module.css'
+import Header from '../../components/externalPagesComponents/Header'
+import Footer from '../../components/externalPagesComponents/Footer/Footer'
 
 const Security = () => {
   return (
-    <section className={securityStyles.compliancesection}>
+    <div>
+      <Header />
+      <section className={securityStyles.compliancesection}>
         <h2 className={securityStyles.complianceheading}>The security program at Zuri protects our organization and your data at every layer</h2>
         <p className={securityStyles.compliancetext}>Compliance certifications and attestations</p>
         <div className={securityStyles.compliancewrapper}>
@@ -17,7 +21,9 @@ const Security = () => {
           <ComplianceCertification img="/Schellman-APEC-Processor2.png" title="ISO/IEC 27001" description="Information Security Management System (ISMS)" />
           <ComplianceCertification img="/logo_csa.png" title="ISO/IEC 27001" description="Information Security Management System (ISMS)" />
         </div>
-    </section>
+      </section>
+      <Footer />
+    </div>
   )
 }
 
