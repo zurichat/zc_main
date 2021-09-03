@@ -8,6 +8,8 @@ import StatusBadge from './StatusBadge'
 export const Topbar = () => {
   const state = useContext(TopbarContext)
   const { openModal } = state
+  import  ProfileModal  from './ProfileModal'
+
 
   return (
     <div className={styles.container}>
@@ -18,6 +20,8 @@ export const Topbar = () => {
         <div className={styles.profile} onClick={openModal}>
           <img src="/profile.png" alt="Profile" />
         </div>
+        <ProfileModal />
+
       </div>
     </div>
   )
