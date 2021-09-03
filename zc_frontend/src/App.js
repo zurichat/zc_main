@@ -17,7 +17,6 @@ import Header from './components/externalPagesComponents/Header'
 import Input from './components/externalPagesComponents/Input'
 import FAQ from './pages/FAQ'
 
-
 const App = () => (
   <BrowserRouter>
     <Switch>
