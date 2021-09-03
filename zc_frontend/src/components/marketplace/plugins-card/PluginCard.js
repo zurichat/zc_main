@@ -1,4 +1,5 @@
 import React from 'react'
+import { useMarketPlaceContext } from '../../../contexts/MarketPlace.context'
 import style from '../../../styles/marketplace.module.css'
 
 export const PluginCard = ({
@@ -7,9 +8,15 @@ export const PluginCard = ({
   status,    
   icon_url
 }) => {
-  const linkableName = name.split(' ').join('-').toLowerCase()
+  const marketplace = useMarketPlaceContext()
+  //const linkableName = name.split(' ').join('-').toLowerCase()
+  //href={`/marketplace/plugins/${id}/${linkableName}`}
+  const renderPluginData = () => {
+    marketplace.setPluginId(id)
+  }
   return (
-    <a href={`/marketplace/plugins/${id}/${linkableName}`} className={style.pluginCardContainer}>
+    // eslint-disable-next-line jsx-a11y/anchor-is-valid
+    <a href="#" onClick={renderPluginData} className={style.pluginCardContainer}>
       <div className={style.pluginCard} datatype={name}>
       <section className={style.pluginCardTop}>
         <figure

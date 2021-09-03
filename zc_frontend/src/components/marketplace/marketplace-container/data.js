@@ -102,7 +102,7 @@ const registeredPlugins = [
     "programming_language":["PHP","Javascript"],
   },
   {    
-    "id": 's89hadf0fr',
+    "id": 's89hadf0f1212312r',
     "name":"Youtube Plugin",
     "description":"Zuri.chat Plugin",
     "scaffold_structure":"Monolith",
@@ -122,7 +122,7 @@ const registeredPlugins = [
     "programming_language":["PHP","Javascript"],
   } ,
   {    
-    "id": '21dafads89',
+    "id": '21dafdafdsfads89',
     "name":"ChessBoard Plugin",
     "description":"Zuri.chat Plugin",
     "scaffold_structure":"Monolith",
@@ -142,7 +142,7 @@ const registeredPlugins = [
     "programming_language":["PHP","Javascript"],
   },
   {    
-    "id": 'hadf0fr21d',
+    "id": 'hadsafdf0fr21d',
     "name":"Zoom Integration Plugin",
     "description":"Zuri.chat Plugin",
     "scaffold_structure":"Monolith",
