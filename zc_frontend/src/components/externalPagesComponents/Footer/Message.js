@@ -1,26 +1,33 @@
-import React from 'react';
-import styles from './Message.module.css';
-const Message = ({type}) => {
-  if(type === "contact") {
-      return(
-        <div  className={styles.message}>
-            <p>Discover More.</p>
-        <span>From channels to chat,learn how zuri chat works from top to bottom</span>
+import React from 'react'
+import styles from './Message.module.css'
+const Message = ({ type }) => {
+  if (type === 'contact') {
+    return (
+      <div className={styles.message}>
+        <p>Discover More.</p>
+        <span>
+          From channels to chat,learn how zuri chat works from top to bottom
+        </span>
         <div className={styles.buttonSection}>
-            <button className={styles.buttonOutline}><a>Visit Help Center</a></button>
+          <button className={styles.buttonOutline}>
+            <a>Visit Help Center</a>
+          </button>
         </div>
-    </div>
-      )
+      </div>
+    )
   }
   return (
     <div className={styles.message}>
-    <p>Whatever work you do,you can do it in Zuri Chat</p>
-    <div className={styles.buttonSection}>
-        <button className={styles.buttonFilled}><a>Talk to Sales</a></button>
-        <button className={styles.buttonOutline}><a>TRY IT FREE</a></button>
+      <p>Whatever work you do,you can do it in Zuri Chat</p>
+      <div className={styles.buttonSection}>
+        <button className={styles.buttonFilled}>
+          <a>Talk to Sales</a>
+        </button>
+        <button className={styles.buttonOutline}>
+          <a>TRY IT FREE</a>
+        </button>
+      </div>
     </div>
-</div>
   )
-
 }
-export default Message;
+export default Message
