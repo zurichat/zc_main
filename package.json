@@ -14,7 +14,7 @@
     "run-start": "cross-env NODE_ENV=production node server.js",
     "run-dev": "cross-env NODE_ENV=development nodemon server.js",
     "frontend:build": "npm run build --prefix zc_frontend",
-    "frontend:dev": "cross-env PORT=5000 npm run dev --prefix zc_frontend",
+    "frontend:dev": "cross-env PORT=5000 npm run start --prefix zc_frontend",
     "postinstall": "cd zc_frontend && yarpm-yarn install"
   },
   "dependencies": {
