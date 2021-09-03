@@ -2,19 +2,16 @@
 body {
     margin: 0;
     padding: 0;
-    /* height: 95vh; */
     min-height: 100%;
+    font-family: 'Lato', sans-serif;
 }
 
 .cookie_content {
     width: 100%;
     margin-top: 15%;
-    /* background-color: #e77070; */
     background-color: #f8f8f8;
     border-top-left-radius: 5%;
     border-top-right-radius: 5%;
-    font-family: 'Lato', sans-serif;
-    /* height: 100vh; */
 }
 
 .cookie_header {
@@ -49,7 +46,6 @@ body {
 
 .cookie_body_text {
     width: 100%;
-    border: 1px solid;
 }
 
 .action_links {
@@ -70,24 +66,6 @@ body {
     margin-top: 1em;
 }
 
-
-/* .cookie_body_first_button {
-    border: 1px solid gray;
-    width: 80px;
-} */
-
-.cookie_body_second_button {
-    color: #00b87c;
-    border: 1px solid;
-    /* position: relative;
-    width: 71px;
-    height: 32px;
-    left: 317px;
-    top: 516px;
-    background: #00B87C;
-    border-radius: 58px; */
-}
-
 .cookie_body_text,
 .learn_more_link {
     margin-top: .5em;
@@ -103,8 +81,8 @@ body {
     margin-bottom: .9em;
 }
 
-.action_links button {
-    width: 45%;
+button {
+    width: 40%;
     border: none;
     text-align: center;
     display: inline-block;
@@ -112,11 +90,16 @@ body {
     box-shadow: 0 5px 8px #888888;
 }
 
-.action_links .firstButton {
+button:active {
+    box-shadow: 0 5px 8px #888888;
+    transform: translateY(4px);
+}
+
+.firstButton {
     color: white;
     background-color: #00b87c;
 }
 
-.action_links .secondButton {
+.secondButton {
     background-color: #c4c4c4;
 }

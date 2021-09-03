@@ -26,22 +26,20 @@ function Cookies() {
                         </div>
                     </div>
                     <div className={styles.cookie_body_first_button}>
-                    {/* <i class="fas fa-lock"></i> */}
                     <img src={lockButton} alt="lock" />
                     </div>
                 </div>
                 <div className={styles.cookie_body_half}>
                     <div>
                         <div className={styles.cookie_body_title}>
-                            Essential cookies
+                            Analytics and advertising cookies
                         </div>
 
                         <div className={styles.cookie_body_text}>
-                            Essential cookies helps access the website and each of its web pages and subdomains, by enabling functions like cookies consent. They cannot be disabled
+                            These allow us to recognise and count the numbers of visitors to our website and see how many visitors browse our website, so we can improve it where necessary.
                         </div>
                     </div>
                     <div className={styles.cookie_body_second_button} >
-                    {/* <i class="fas fa-toggle-on fa-2x"></i> */}
                     <img src={toggleButton} alt="toggle button" />
                     </div>
                 </div>
