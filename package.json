@@ -15,7 +15,12 @@
     "run-dev": "cross-env NODE_ENV=development nodemon server.js",
     "frontend:build": "npm run build --prefix zc_frontend",
     "frontend:dev": "cross-env PORT=5000 npm start --prefix zc_frontend",
-    "postinstall": "cd zc_frontend && yarpm-yarn install"
+    "postinstall": "cd zc_frontend && yarpm-yarn install",
+    "zcmain:install": "yarn && cd zc_frontend && yarn",
+    "frontend:serve": "cd zc_frontend && yarn dev",
+    "backend:serve": "yarn dev",
+    "backend": "yarn",
+    "frontend": "cd zc_frontend && yarn"
   },
   "dependencies": {
     "axios": "^0.21.1",

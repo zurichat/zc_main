@@ -15,28 +15,46 @@ If the output is not the version of your nodejs installation, install nodejs fro
 After installing nodejs install [yarn](https://www.npmjs.com/package/yarn) if you don't have it then install the project's dependencies:
 
 ```bash
-yarn install
+yarn zcmain:install
 ```
 
-## Run the Server
+## STARTING THE SERVER
 
-Run the development server from the root folder using either of the following commands:
+### Backend
 
 ```bash
-npm run dev
-# or
-yarn dev
+yarn backend:serve
 ```
 
-## Run the application -- Frontend specific
-
-Open the frontend folder `zc_frontend` in your terminal and run the application from the folder using either of the following commands:
+### Frontend
 
 ```bash
-npm run dev
-# or
-yarn dev
+yarn frontend:serve
 ```
+
+## RUNNING YARN COMMANDS
+
+### Backend
+
+```bash
+yarn backend <command>
+
+for example
+
+yarn backend add is-odd
+```
+
+### Frontend
+
+```bash
+yarn frontend <command>
+
+for example
+
+yarn frontend add is-odd
+```
+
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
