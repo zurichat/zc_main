@@ -26,10 +26,6 @@ const App = () => (
       <Route path="/news">
         <News />
       </Route>
-
-      <Route path="/apps-integrations">
-        <AppsAndIntegrations/>
-      </Route>
     </Switch>
   </BrowserRouter>
 )
