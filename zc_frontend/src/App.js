@@ -14,6 +14,7 @@ import Download from './pages/download'
 import ContactUs from './pages/contact-us'
 import Pricing from './pages/pricing'
 import Header from './components/externalPagesComponents/Header'
+import Input from './components/externalPagesComponents/Input'
 import FAQ from './pages/FAQ'
 
 const App = () => (
@@ -60,6 +61,9 @@ const App = () => (
       </Route>
       <Route path="/faq">
         <FAQ />
+      </Route>
+      <Route path="/input">
+        <Input />
       </Route>
     </Switch>
   </BrowserRouter>
