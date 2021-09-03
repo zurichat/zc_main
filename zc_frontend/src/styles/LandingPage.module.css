@@ -38,16 +38,17 @@
 }
 
 .btn__continue {
-  width: 559px;
-  height: 56px;
   background-color: #1a61db;
-  color: #fff;
+  color: #fff !important;
   border-radius: 8px;
   font-weight: bold;
   font-size: 1.5rem;
   line-height: 1.6rem;
   outline: none;
   border: none;
+  padding: 0.8rem 3rem;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  z-index: 2;
 }
 
 .btn__continue:hover {
@@ -83,8 +84,6 @@
   }
 
   .btn__continue {
-    width: 80%;
-    height: 56px;
     z-index: 5;
   }
 
