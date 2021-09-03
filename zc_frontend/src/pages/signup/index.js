@@ -71,7 +71,7 @@ const SignUp = () => {
         <div className="contentBx">
             <img src={zuri} className="formLogo" alt="zuri"></img> 
             <div className="formBx">
-                <form className="formInline" action="">
+                <form className="formInline" action="" >
                     <h2>Create Account</h2>
                     <div className="social">
                             <a href="/"><img src={google} alt="google" /></a>
@@ -81,11 +81,11 @@ const SignUp = () => {
                     
                     <div className="inputBx">
                         <span>Full name</span>
-                        <input type="text" placeholder="Enter your name" name="Fname" id="Fname" />
+                        <input type="text" placeholder="John Doe" name="name" id="name" />
                     </div>
                     <div className="inputBx">
                             <span>Email</span>
-                            <input type="email" placeholder="Enter your email address" name="email" id="email" />
+                            <input type="email" placeholder="johndoe@example.com" name="email" id="email" />
                     </div>
                     <div className="inputBx">
                             <span>Password</span>
@@ -107,7 +107,6 @@ const SignUp = () => {
                         Sign up
                     </button>
                     </div>
-                    
                      <div className="bottomline">
                             <span>Already have an account?<a href="/"> Log in </a></span>
                      </div>
@@ -129,21 +128,3 @@ const SignUp = () => {
   export default SignUp
   
 
-
-// const Login = () => {
-  
-//   return (
-//     <>
-//       <div>This is signup page</div>
-//       <button
-//         type="submit"
-//         className={styles.signup_btn}
-//         onClick={passwordCheck}
-//       >
-//         Sign up
-//       </button>
-//     </>
-//   )
-// }
-
-// export default Login
