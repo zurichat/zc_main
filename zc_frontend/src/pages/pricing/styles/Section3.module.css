@@ -86,11 +86,12 @@ section h2 {
 }
 
 .section3 {
-  background-color: #e5e5e5;
+  background-color: #f9f9f9;
   font-weight: 600;
 }
 .section3 .container {
-  max-width: 900px;
+  max-width: 550px;
+  text-align: center;
 }
 .section3 footer {
   font-size: 1.1rem;
