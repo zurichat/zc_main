@@ -9,6 +9,7 @@ const EditProfile = ()=> {
             <div className={styles.profile}>
             
               <div className={styles.profileMain}>
+                {/* Half Side form */}
                 <div className={styles.sectionA}>
                   <form>
                     <div className={styles.formWrapper}>
@@ -55,7 +56,7 @@ const EditProfile = ()=> {
                       />
                     </div>
                     <div className={styles.subText}>
-                      Let people know what you do at{" "}
+                      Let people know what you do at
                       <span className={styles.fontBold}>ZURI</span>
                     </div>
                     <div className={styles.mt}>
@@ -108,6 +109,8 @@ const EditProfile = ()=> {
                     </div>
                   </form>
                 </div>
+                {/* Second Half Side Form */}
+
                 <div className={styles.sectionB}>
                   <div className={styles.subContainer}>
                     <div className={styles.profilePic}>
