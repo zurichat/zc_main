@@ -5,9 +5,7 @@ import React, { useState } from 'react'
 // import LoginLoading from '../../components/LoginLoading'
 import GoogleLogin from 'react-google-login'
 import { useHistory } from 'react-router-dom'
-// import LoginLoading from '../../components/LoginLoading'
-import GoogleLogin from 'react-google-login'
-import { useHistory } from 'react-router-dom'
+
 
 
 const Login = () => {

@@ -82,22 +82,22 @@
 }
 @media screen and (max-width: 1025px) and (min-width: 769px) {
   .topbarModal {
-    top: 6.5%;
+    top: 6%;
   }
 }
-@media screen and (max-width: 768px) and (min-width: 426px) {
+@media screen and (max-width: 768px) and (min-width: 767px) {
   .topbarModal {
     top: 7.5%;
   }
 }
 @media screen and (max-width: 425px) and (min-width: 376px) {
   .topbarModal {
-    top: 7%;
+    top: 6%;
   }
 }
 @media screen and (max-width: 375px) and (min-width: 321px) {
   .topbarModal {
-    top: 6.6%;
+    top: 6%;
   }
 }
 @media screen and (max-width: 320px) {
@@ -105,6 +105,7 @@
     top: 7%;
   }
 }
+
 
 .backgrounds {
   width: 100%;
@@ -124,6 +125,7 @@
   width: 85%;
   margin: auto;
   margin-bottom: 17px;
+  height:60px;
 }
 
 .oneLeft {
@@ -140,7 +142,7 @@
 
 .oneRight {
   margin-left: 15px;
-  line-height: 10px;
+  line-height:0px;
 }
 
 .oneRight h4 {
@@ -148,8 +150,8 @@
   font-family: Lato;
   font-style: normal;
   font-weight: 900;
-  line-height: 20px;
   color: #242424;
+  margin-top:9px;
 }
 
 .online {
@@ -160,7 +162,8 @@
 .circle {
   color: green;
   font-size: 7px;
-  margin-right: 5px;
+  margin-right: -5px;
+  margin-top:-6px;
 }
 
 .oneRight p {
@@ -169,6 +172,7 @@
   font-style: normal;
   font-weight: normal;
   color: #3a3a3a;
+  margin-top:-6px;
 }
 
 /* The section two */
@@ -181,6 +185,10 @@
   margin: auto;
   cursor: pointer;
   height: 30px;
+}
+
+.sectionTwo p{
+  margin-top:-8px;
 }
 
 .sectionTwo:hover {
