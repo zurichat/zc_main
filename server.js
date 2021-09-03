@@ -17,6 +17,12 @@ app.use(
 )
 app.set('x-powered-by', false)
 
+<<<<<<< HEAD
+=======
+//load the session middleware
+sessions.startSession(app)
+
+>>>>>>> e6bb5d81 (ran prettier)
 // Retrieve device information for logging purposes.
 app.use(device.capture())
 app.use(useragent.express())
