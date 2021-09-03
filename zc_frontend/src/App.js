@@ -19,14 +19,14 @@ const App = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/" exact>
-       <Login />
+       <LandingPage />
       </Route>
       <Route path="/home">
         <Home />
       </Route>
-      {/* <Route path="/login">
+      <Route path="/login">
         <Login />
-      </Route> */}
+      </Route>
       <Route path="/signup">
         <SignUp />
       </Route>
