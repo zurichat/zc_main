@@ -3,6 +3,7 @@ import { Sidebar } from '../../components/Sidebar'
 import { Topbar } from '../../components/Topbar'
 import styles from '../../styles/Home.module.css'
 import { UrlProvider } from '../../contexts/Url'
+import { ProfileProvider } from '../../contexts/ProfileModal'
 import TopbarModal from './../../components/TopbarModal'
 import { TopbarProvider } from '../../contexts/Topbar'
 
@@ -11,15 +12,17 @@ const Home = () => {
     <UrlProvider>
       <div className={styles.container}>
         <Sidebar />
-        <div className={styles.room}>
-          <TopbarProvider>
-            <Topbar />
-            <TopbarModal />
-          </TopbarProvider>
-          <div className={styles.pluginContent}>
-            <PluginContent />
+        <ProfileProvider>
+          <div className={styles.room}>
+            <TopbarProvider>
+              <Topbar />
+              <TopbarModal />
+            </TopbarProvider>
+            <div className={styles.pluginContent}>
+              <PluginContent />
+            </div>
           </div>
-        </div>
+        </ProfileProvider>
       </div>
     </UrlProvider>
   )
