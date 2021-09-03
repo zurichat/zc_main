@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    min-height: 100%;
+    min-height: 95vh;
 }
 
 .cookie_content {
@@ -12,7 +12,7 @@ body {
     border-top-left-radius: 5%;
     border-top-right-radius: 5%;
     font-family: 'Lato', sans-serif;
-    overflow: hidden;
+    min-height: 100vh;
 }
 
 .cookie_header {
@@ -33,7 +33,6 @@ body {
 .cookie_header_body {
     width: 76%;
     margin-top: 8px;
-    margin-bottom: 8px;
     font-size: 1rem;
 }
 
@@ -52,7 +51,7 @@ body {
 
 .action_links {
     display: grid;
-    row-gap: 20px;
+    row-gap: 25px;
     justify-items: center;
 }
 
@@ -80,7 +79,6 @@ body {
 
 .action_links {
     margin-top: .9em;
-    margin-bottom: .9em;
 }
 
 button {
