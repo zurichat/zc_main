@@ -12,6 +12,7 @@ body {
     border-top-left-radius: 5%;
     border-top-right-radius: 5%;
     font-family: 'Lato', sans-serif;
+    overflow: hidden;
 }
 
 .cookie_header {
@@ -83,7 +84,7 @@ body {
 }
 
 button {
-    width: 40%;
+    width: 45%;
     border: none;
     text-align: center;
     display: inline-block;
