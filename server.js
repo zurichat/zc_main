@@ -18,7 +18,6 @@ app.use(
 )
 app.set('x-powered-by', false)
 
-
 //load the session middleware
 sessions.startSession(app)
 
