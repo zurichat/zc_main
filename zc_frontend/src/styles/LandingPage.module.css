@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
 .wrapper {
-  background-color: #f9f9f9;
-  padding-top: 7%;
+  background-color: #fff;
+  padding-top: 6%;
   width: 100vw;
   height: 100vh;
   font-family: 'Lato', sans-serif;
@@ -11,7 +11,7 @@
 
 .welcome__div,
 .img__div {
-  background-color: #f9f9f9;
+  background-color: #fff;
   height: 50%;
   width: 100%;
 }
@@ -21,7 +21,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .welcome__div h1 {
@@ -38,16 +38,17 @@
 }
 
 .btn__continue {
-  width: 559px;
-  height: 56px;
   background-color: #1a61db;
-  color: #fff;
+  color: #fff !important;
   border-radius: 8px;
   font-weight: bold;
   font-size: 1.5rem;
   line-height: 1.6rem;
   outline: none;
   border: none;
+  padding: 0.8rem 3rem;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  z-index: 2;
 }
 
 .btn__continue:hover {
@@ -63,6 +64,13 @@
   align-items: flex-end;
 }
 
+/* Media Query 720 HD Screens */
+@media only screen and (max-width: 1280px) and (height: 720px) {
+  .wrapper {
+    padding-top: 0;
+  }
+}
+
 /* Media Query 1080px and Smaller */
 @media only screen and (max-width: 1080px) {
   .welcome__div h1 {
@@ -76,8 +84,6 @@
   }
 
   .btn__continue {
-    width: 80%;
-    height: 56px;
     z-index: 5;
   }
 
