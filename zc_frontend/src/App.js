@@ -13,7 +13,8 @@ import Download from './pages/download'
 import ContactUs from './pages/contact-us'
 import Pricing from './pages/pricing'
 import Header from './components/externalPagesComponents/Header'
-import Security from './components/externalPagesComponents/Security'
+import Input from './components/externalPagesComponents/Input'
+import FAQ from './pages/FAQ'
 
 const App = () => (
   <BrowserRouter>
@@ -35,6 +36,8 @@ const App = () => (
       </Route>
       <Route path="/pricing">
         <Pricing />
+      <Route path="/security">
+        <Security />
       </Route>
       <Route path="/careers">
         <Careers />
@@ -59,6 +62,11 @@ const App = () => (
       </Route>
       <Route path="/security">
         <Security />
+      <Route path="/faq">
+        <FAQ />
+      </Route>
+      <Route path="/input">
+        <Input />
       </Route>
     </Switch>
   </BrowserRouter>
