@@ -1,10 +1,11 @@
 const express = require('express')
 const routes = require('./routes')
 const helmet = require('helmet')
+const loadFrontend = require('./middlewares/load-frontend')
+const sessions = require('./lib/user_session')
 const device = require('express-device')
 const useragent = require('express-useragent')
 
-const loadFrontend = require('./middlewares/load-frontend')
 const PORT = process.env.PORT || 3000
 
 const app = express()
@@ -18,11 +19,18 @@ app.use(
 app.set('x-powered-by', false)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 //load the session middleware
 sessions.startSession(app)
 
 >>>>>>> e6bb5d81 (ran prettier)
+=======
+
+//load the session middleware
+sessions.startSession(app)
+
+>>>>>>> f6694cf8dc484c982593d7a5456cf863b2765aa9
 // Retrieve device information for logging purposes.
 app.use(device.capture())
 app.use(useragent.express())
