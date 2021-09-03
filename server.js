@@ -18,15 +18,16 @@ app.use(
 )
 app.set('x-powered-by', false)
 
+
+//load the session middleware
+sessions.startSession(app)
+
 // Retrieve device information for logging purposes.
 app.use(device.capture())
 app.use(useragent.express())
 
 routes(app)
 loadFrontend(app)
-
-//load the session middleware
-sessions.startSession(app)
 
 app.listen(PORT, () => {
   console.log(
