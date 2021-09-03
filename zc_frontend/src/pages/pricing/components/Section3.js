@@ -2,7 +2,10 @@ import styles from '../styles/Section3.module.css'
 
 function Section3() {
   return (
-    <section className={`${styles.section3} ${styles.py3}`}>
+    <section
+      id="security-assurance"
+      className={`${styles.section3} ${styles.py3}`}
+    >
       <div className={styles.container}>
         <header>
           <h2>Leading the way in enterprise security</h2>
