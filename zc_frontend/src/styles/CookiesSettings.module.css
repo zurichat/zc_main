@@ -48,7 +48,8 @@ body {
 }
 
 .cookie_body_text {
-    width: 83%;
+    width: 100%;
+    border: 1px solid;
 }
 
 .action_links {
@@ -77,6 +78,7 @@ body {
 
 .cookie_body_second_button {
     color: #00b87c;
+    border: 1px solid;
     /* position: relative;
     width: 71px;
     height: 32px;
@@ -98,6 +100,7 @@ body {
 
 .action_links {
     margin-top: .9em;
+    margin-bottom: .9em;
 }
 
 .action_links button {
