@@ -1,5 +1,13 @@
+import Footer from '../../components/externalPagesComponents/Footer/Footer'
+import Message from '../../components/externalPagesComponents/Footer/Message'
+
 function ContactUs() {
-  return <div>This is contact us page</div>
+  return (
+    <div>
+      <Message />
+      <Footer />
+    </div>
+  )
 }
 
 export default ContactUs
