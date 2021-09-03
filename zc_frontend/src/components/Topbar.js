@@ -16,7 +16,7 @@ export const Topbar = () => {
       <div className={styles.topbar}>
         <SearchBar />
         <img src="/settings.svg" alt="settings" />
-        {/* <StatusBadge /> */}
+        <StatusBadge />
         <div className={styles.profile} onClick={openModal}>
           <img src="/profile.png" alt="Profile" />
         </div>
