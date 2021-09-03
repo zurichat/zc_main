@@ -2,6 +2,7 @@ import React from 'react'
 import styles from '../styles/pricingTable.module.css'
 import TableRow from './TableRow'
 
+
 export default class PricingTable extends React.Component {
   render() {
     return (
@@ -204,6 +205,7 @@ export default class PricingTable extends React.Component {
               />
             </tbody>
           </table>
+=
         </div>
         <div className={styles.btnGroup}>
           <div style={{ marginLeft: '700px' }} className={styles.btn}>
