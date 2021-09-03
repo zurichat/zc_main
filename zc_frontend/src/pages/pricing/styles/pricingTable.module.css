@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 .tableSection2 {
-  display: hidden;
+  display: none;
 }
 
 @media only screen and (min-width: 600px) {
