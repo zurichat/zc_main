@@ -1,8 +1,8 @@
-import styles from '../../styles/Signup.module.css';
-import logo from '../../assets/zurichatlogo.svg';
+import styles from '../../styles/Signup.module.css'
+import logo from '../../assets/zurichatlogo.svg'
 // import line from '../../assets/Line.svg';
-import googlesignup from '../../assets/icons8-google-48.png';
-import facebooksignup from '../../assets/icons8-facebook-48.png';
+import googlesignup from '../../assets/icons8-google-48.png'
+import facebooksignup from '../../assets/icons8-facebook-48.png'
 
 const SignUp = () => {
   /**
@@ -58,13 +58,16 @@ const SignUp = () => {
 
   return (
     <>
-    <div className={styles.container}>
+      <div className={styles.container}>
         <div className={styles.Account_having}>
-          <p>Already have an account? <br/><a href="../../login/index.js">Login to your Zuri Account</a></p>
+          <p>
+            Already have an account? <br />
+            <a href="../../login/index.js">Login to your Zuri Account</a>
+          </p>
         </div>
-        <div className={styles.login_container} >
+        <div className={styles.login_container}>
           <div className={styles.logo}>
-            <img src={ logo } className={styles.logoImage} />
+            <img src={logo} className={styles.logoImage} />
             <b className={styles.logoText}>Zuri Chat</b>
           </div>
           <div className={styles.head_text}>
@@ -72,14 +75,15 @@ const SignUp = () => {
             <p>Enter your mail to create new Account</p>
           </div>
           <div className={styles.signing_by_buttons}>
-              <button className={styles.google_email}>
-                <img src={ googlesignup } className="logoImage px-2" />
-                SignUp with Google
-              </button><br/>
-              <button className={styles.facebook_email}>
-                <img src={ facebooksignup } className="logoImage" />
-                SignUp with Facebook
-              </button>
+            <button className={styles.google_email}>
+              <img src={googlesignup} className="logoImage px-2" />
+              SignUp with Google
+            </button>
+            <br />
+            <button className={styles.facebook_email}>
+              <img src={facebooksignup} className="logoImage" />
+              SignUp with Facebook
+            </button>
           </div>
 
           <div className={styles.seperator}>
@@ -89,32 +93,51 @@ const SignUp = () => {
           </div>
 
           <div className={styles.signing_by_Email}>
-              <label>Email</label><br/>
-              <input type="text" placeholder="aristotle@gmail.com" required></input>
-
+            <label>Email</label>
+            <br />
+            <input
+              type="text"
+              placeholder="aristotle@gmail.com"
+              required
+            ></input>
           </div>
 
           <div className={styles.signup_button}>
-            <button type="submit" className={styles.signup_btn} onClick={passwordCheck}>Sign up</button>
+            <button
+              type="submit"
+              className={styles.signup_btn}
+              onClick={passwordCheck}
+            >
+              Sign up
+            </button>
           </div>
-        
-          
 
           <div className={styles.checkbox}>
-            <input type="checkbox" id="mail_receive" color="teal"/>
+            <input type="checkbox" id="mail_receive" color="teal" />
             <span>It's okay to receive Emails from Zuri Chat</span>
           </div>
 
           <div className={styles.agreement}>
-            <p>By continuing you're agreeing to our Customer Terms of <br/> Service, Privacy Policy, and Cookie Policy</p>
+            <p>
+              By continuing you're agreeing to our Customer Terms of <br />{' '}
+              Service, Privacy Policy, and Cookie Policy
+            </p>
           </div>
 
           <div className={styles.footer_menu}>
             <ul>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Terms</a></li>
-              <li><a href="#">Help Center</a></li>
-              <li><a href="#">Contact Us</a></li>
+              <li>
+                <a href="#">Privacy</a>
+              </li>
+              <li>
+                <a href="#">Terms</a>
+              </li>
+              <li>
+                <a href="#">Help Center</a>
+              </li>
+              <li>
+                <a href="#">Contact Us</a>
+              </li>
             </ul>
           </div>
         </div>
