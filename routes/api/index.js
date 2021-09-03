@@ -1,1 +1,1 @@
-module.exports = [require('./plugin'), require('../../middlewares/getDevice')]
+module.exports = [require('./test'), require('./plugin'), require('../../middlewares/getDevice')]
