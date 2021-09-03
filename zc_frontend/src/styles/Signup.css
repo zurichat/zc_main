@@ -58,16 +58,16 @@ section .contentBx .formBx .formInline{
 
 
 section .contentBx .formLogo{
-    margin: 18px 0 18px -60px;
+    margin: 10px 0 10px -60px;
     height: 2.5rem;
 }
 
 section .contentBx .formBx .formInline h2{
     color: #3A3A3A;
     font-weight: bolder;
-    font-size:24px;
+    font-size:20px;
     text-transform: uppercase;
-    margin: 6px 0;
+    margin: 2px 0;
 }
 
 section .contentBx .formBx .inputBx{
@@ -90,13 +90,12 @@ section .contentBx .formBx .inputBx input{
     width: 100%;
     padding: 12px;
     outline: none;
-    border: 1px solid #BEBEBE;
+    border: 1px solid #EFEFEF;
     font-size: 12px;
     letter-spacing: 1px;
     color: #3A3A3A;
-    background: transparent;
+    background: #fff;
     border-radius: 8px;
-    box-shadow: #3A3A3A ;
 }
 
 .toc{
@@ -116,7 +115,8 @@ section .contentBx .formBx .inputBx input{
 }
 
 .btn{
-    background: #CADCF4;
+    width: 100%;
+    background: #2F80ED;
     color: #fff;
     outline: none;
     border: none;
@@ -170,8 +170,7 @@ section .contentBx .formBx .inputBx input{
       width: 30px;
       margin: auto 16px;
       padding: 5px;
-      background-color: #EFEFEF
-      ;
+      background-color: #EFEFEF;
       border-radius: 50%;
   }
 
@@ -181,7 +180,7 @@ section .contentBx .formBx .inputBx input{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 16px;
   }
 
   .bottomline a{
@@ -221,7 +220,7 @@ section .contentBx .formBx .inputBx input{
         padding: 0;
     }
     section .contentBx .formLogo{
-        margin: 20px 0 20px -40px;
+        margin: 16px 0 16px -40px;
         height: 1.5rem;   
     }
     section .contentBx .formBx .formInline h2{
