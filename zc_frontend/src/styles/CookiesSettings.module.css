@@ -33,7 +33,7 @@ body {
 .cookie_header_body {
     width: 76%;
     margin-top: 8px;
-    margin-bottom: 8px;
+    /* margin-bottom: 8px; */
     font-size: 1rem;
 }
 
@@ -80,7 +80,7 @@ body {
 
 .action_links {
     margin-top: .9em;
-    /* margin-bottom: .9em; */
+    /* margin-bottom: 5em; */
 }
 
 button {
