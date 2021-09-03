@@ -38,7 +38,7 @@ export const Sidebar = () => {
             <div key={index}>
               <ReactTooltip />
               <span
-                data-tip={`Welcome to ${channel.name} channel, click on join to allow you interact in this channel`}
+                data-tip={`Welcome to ${channel.name} channel, click on join to allow you interact in this channel!`}
               >
                 #{channel.name}
               </span>
