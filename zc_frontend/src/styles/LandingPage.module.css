@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
 .wrapper {
-    background-color: #F9F9F9;
+    background-color: #fff;
     padding-top: 7%;
     width: 100vw;
     height: 100vh;
@@ -11,7 +11,7 @@
 
 .welcome__div,
 .img__div {
-    background-color: #F9F9F9;
+    background-color: #fff;
     height: 50%;
     width: 100%;
 }
@@ -21,7 +21,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .welcome__div h1 {
