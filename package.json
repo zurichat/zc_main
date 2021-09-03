@@ -7,9 +7,10 @@
   "scripts": {
     "start": "npm run run-start",
     "build": "npm run frontend:build",
-    "dev": "concurrently --kill-others-on-fail \"npm run run-dev\" \"npm run frontend:dev\"",
     "format": "prettier -w .",
     "lint": "prettier -c .",
+    "deploy": "gh-pages -d build",
+    "dev": "concurrently --kill-others-on-fail \"npm run run-dev\" \"npm run frontend:dev\"",
     "run-start": "cross-env NODE_ENV=production node server.js",
     "run-dev": "cross-env NODE_ENV=development nodemon server.js",
     "frontend:build": "npm run build --prefix zc_frontend",
@@ -18,16 +19,25 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "emoji-picker-react": "^3.4.8",
     "express": "^4.17.1",
+    "express-device": "^0.4.2",
+    "express-useragent": "^1.0.15",
+    "geoip-lite": "^1.4.2",
+    "gh-pages": "^3.2.3",
     "helmet": "^4.6.0",
     "nodemailer": "^6.6.3",
     "yarn": "^1.22.11"
   },
   "devDependencies": {
+    "autoprefixer": "^10.3.3",
     "concurrently": "^6.2.1",
     "cross-env": "^7.0.3",
     "nodemon": "^2.0.12",
+    "postcss": "^8.3.6",
     "prettier": "^2.3.2",
+    "tailwindcss": "^2.2.9",
     "yarpm": "^1.1.1"
   }
 }
