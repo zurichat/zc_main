@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+section {
+  font-family: 'Lato', sans-serif;
+}
+.container {
+  margin: 30px;
+  text-align: center;
+}
+.h1 {
+  font-size: 35px;
+  line-height: 50px;
+  font-weight: 800;
+}
+.link {
+  color: #00b87c;
+  text-decoration-line: underline;
+}
+.images {
+  margin: 0;
+  height: 400px;
+}
+.circle {
+  position: absolute;
+  height: 196px;
+  width: 110px;
+  top: 60px;
+  left: 50px;
+}
+.circle2 {
+  position: relative;
+  height: 372px;
+  z-index: auto;
+  width: 214px;
+  left: 523px;
+  top: -415px;
+}
+.screenshot {
+  position: relative;
+  height: 506px;
+  z-index: 2;
+  width: 555px;
+  left: 80px;
+  top: -70px;
+}
+.buttondiv {
+  text-align: center;
+}
+.button1 {
+  margin: 0 10px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background-color: #00b87c;
+  padding: 10px;
+  width: 30%;
+  font-size: 15px;
+}
+.button2 {
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #00b87c;
+  margin: 0 10px;
+  font-size: 15px;
+}
+.windows {
+  text-align: left;
+  margin: 10px 125px;
+  font-size: 15px;
+}
+.store {
+  margin-top: 50px;
+  text-align: center;
+}
+.storep {
+  padding: 10px;
+  font-size: 16px;
+}
+.storelink {
+  margin-top: 30px;
+}
+.imgLink {
+  margin: 15px;
+}
+
+@media screen and (min-width: 1024px) {
+  .images {
+    height: 505px;
+  }
+  .circle {
+    width: 150px;
+    top: 98px;
+    left: 299px;
+  }
+  .screenshot {
+    width: 655px;
+    left: 375px;
+    top: -8px;
+  }
+  .circle2 {
+    width: 250px;
+    left: 285px;
+    top: 95px;
+  }
+  .windows {
+    margin: 10px 310px;
+  }
+  .store {
+    margin-top: 70px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .h1 {
+    font-size: 42px;
+  }
+
+  .container {
+    margin: 50px;
+  }
+  .images {
+    margin: 10px 50px 10px 250px;
+    height: 600px;
+  }
+  .circle {
+    position: absolute;
+    width: 196px;
+    height: 196px;
+    left: 207px;
+    top: 120px;
+  }
+  .circle2 {
+    position: relative;
+    width: 372px;
+    height: 372px;
+    left: 700px;
+    top: -323px;
+    z-index: auto;
+  }
+  .screenshot {
+    position: relative;
+    width: 782px;
+    height: 506px;
+    left: 40px;
+    top: 30px;
+    z-index: 2;
+  }
+  .buttondiv {
+    text-align: center;
+  }
+  .button1 {
+    padding: 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 4px;
+    width: 25%;
+    font-size: 23px;
+    color: white;
+    background-color: #00b87c;
+  }
+  .button2 {
+    margin: 0 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    background-color: transparent;
+    color: #00b87c;
+  }
+  .windows {
+    text-align: left;
+    margin: 10px 373px;
+    font-size: 18px;
+  }
+  .store {
+    margin-top: 100px;
+    text-align: center;
+  }
+  .storep {
+    padding: 10px;
+    font-size: 20px;
+  }
+  .storelink {
+    margin-top: 50px;
+  }
+  .imgLink {
+    margin: 25px;
+  }
+}
