@@ -15,6 +15,7 @@ import ContactUs from './pages/contact-us'
 import Pricing from './pages/pricing'
 import Header from './components/externalPagesComponents/Header'
 import Input from './components/externalPagesComponents/Input'
+import FAQ from './pages/FAQ'
 
 const App = () => (
   <BrowserRouter>
@@ -33,9 +34,6 @@ const App = () => (
       </Route>
       <Route path="/features">
         <Features />
-      </Route>
-      <Route path="/pricing">
-        <Pricing />
       </Route>
       <Route path="/security">
         <Security />
@@ -60,6 +58,9 @@ const App = () => (
       </Route>
       <Route path="/header">
         <Header />
+      </Route>
+      <Route path="/faq">
+        <FAQ />
       </Route>
       <Route path="/input">
         <Input />
