@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: row;
 }
-
 .room {
   display: flex;
   flex: 1;
