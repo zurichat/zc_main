@@ -1,46 +1,209 @@
 .marketplace {
-    background: #f8f7f6;
-    min-height: 50vh;
-    padding-bottom: 15rem;
+    background: #ffffff;
+    min-height: 100vh;
     font-size: 15px;
+}
+
+.marketplaceNavbar {
+    border: 1px solid rgba(187, 186, 231, 0.15);
+    padding-bottom: 10px;
+}
+
+.navbar {
+    display: grid;
+    grid-template-columns: 20% 30% 50%;
+    width: 100%;
+    padding-left: 35px;
+    column-gap: 5rem;
+}
+
+.marketplaceSearchBar {
+    width: 100%;
+    height: 45px;
+    background: #FAFAFA;
+    border: 1px solid rgba(187, 186, 231, 0.15);
+    box-sizing: border-box;
+    border-radius: 2px;
+    padding: 8px 5px 8px 15px;
+}
+
+.marketplaceSearchBar input {
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    width: calc(100% - 40px);
+    height: 100%;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #606060;
+}
+
+.marketplaceSearchBar input::placeholder {
+    font-size: 14px;
+    color: #606060;
+}
+
+.accountOwnerAvatar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+.accountOwnerAvatarContainer {
+    width: 36px;
+    height: 36px;
+    background: #C4C4C4;
+    border-radius: 100%;
+}
+
+.marketplaceHero {
+    min-height: 80vh;
+    display: flex;
+    max-width: 95%;
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    font-family: 'Lato', sans-serif;
+    padding-top: 2rem;
+}
+
+.marketplaceHero h1 {
+    font-weight: 700;
+    font-size: 40px;
+    width: 75%;
+    text-align: left;
+    text-transform: capitalize;
+    line-height: 64px;
+    color: #212121;
+}
+
+.marketplaceHero p {
+    font-weight: 400;
+    text-align: left;
+    width: 55%;
+    font-size: 16px;
+    line-height: 169%;
+    color: #606060;
+}
+
+.circleBackground {
+    width: 400px;
+    height: 600px;
+    position: relative;
+}
+
+.marketplaceSvg {
+    position: absolute;
+}
+
+.marketplaceSvg:nth-child(1) {
+    top: 0;
+    left: 3%;
+}
+
+.marketplaceSvg:nth-child(2) {
+    top: 40%;
+    left: -45%;
+}
+
+.marketplaceSvg:nth-child(3) {
+    top: 40%;
+    right: -5%;
+}
+
+.svgConnectionLineOne {
+    position: absolute;
+    left: -92%;
+    top: 24%;
+}
+
+.svgConnectionLineTwo {
+    position: absolute;
+    left: 15%;
+}
+
+.svgConnectionLineThree {
+    position: absolute;
+    top: -109%;
+    right: 33%;
+}
+
+.marketplaceTabs {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: #C4C4C4;
     font-family: 'Lato';
+}
+
+.marketplaceTabSelected {
+    font-family: 'Lato';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #00B87C;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #00B87C;
+}
+
+.marketplaceTabList {
+    border-bottom: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 93px;
+}
+
+.marketplaceTab {
+    font-family: 'Lato';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.marketplaceTab:nth-child(2) {
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.marketPlaceContainer {
+    /*max-width: 100%;*/
+    background: #e5e5e5;
+    padding-top: 50px;
 }
 
 .zuriMarketPlace__container {
     display: grid;
-    grid-template-columns: repeat(4, 230px);
-    grid-gap: 1rem;
-    padding-left: 2%;
+    grid-template-columns: repeat(6, 180px);
+    column-gap: 2rem;
+    justify-content: center;
+    margin-bottom: 95px;
 }
 
 .pluginCardContainer {
-    background: #ffffff;
-    border: 1px solid #f2f1f0;
-    border-radius: 8px;
     cursor: pointer;
     text-decoration: none;
-}
-
-.zuri_marketplaceHome__searchInput_container {
-    width: 100%;
-}
-
-.marketPlace__searchField {
-    height: 45px;
-    border: 0;
-    outline: 0;
-    width: 95%;
-    background: transparent;
+    margin-bottom: 60px;
 }
 
 .pluginCard {
-    width: 320px;
-    padding: 20px 16px;
+    width: 100%;
+}
+
+.pluginCardTop {
+    background: white;
+    width: 180px;
+    height: 170px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .pluginImage {
-    width: 190px;
-    height: 190px;
+    width: 61px;
+    height: 61px;
     border-radius: 8px;
     display: flex;
     justify-content: center;
@@ -52,90 +215,44 @@
     width: 100%;
 }
 
-.cardImage img {
-    width: 24px;
-    height: 24px;
+.pluginInstallStatus {
+    position: absolute;
+    background: #00B87C;
+    border-radius: 0px 20px 0px 0px;
+    color: white;
+    top: 0;
+    right: 0;
+    padding: 4px 9px;
 }
 
 .pluginDescription {
-    color: #333758;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 16px;
     text-align: left;
-    line-height: 25px;
     text-transform: capitalize;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    color: #000000;
 }
 
 .pluginContent {
     font-size: 14px;
     line-height: 20px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
     color: #455880;
+    align-items: center;
 }
 
-.pluginViewBtnContainer button {
-    border: 0;
-    outline: 0;
-    background-color: blue;
-}
-
-.pluginCardContainer:hover {
-    box-shadow: 0 1px 8px 0 rgb(0 0 0 / 15%);
-    text-decoration: none;
-    transition: box-shadow .15s ease-out;
-}
-
-.marketplaceNavbar {
-    max-width: 87%;
-    margin: 0 auto;
-    padding-top: 3.5rem;
-}
-
-.marketplaceHero {
-    padding-top: 1.5rem;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 30px;
-    color: #455880;
-    margin-bottom: 5rem;
-}
-
-.marketplaceHero h1 {
-    font-weight: 700;
-    font-size: 45px;
-    width: 80%;
-    line-height: 4.1rem;
-    text-align: center;
-    text-transform: capitalize;
-    color: #333758;
-}
-
-.marketplaceHero p {
-    text-align: center;
-    width: 60%;
-}
-
-.marketPlaceContainer {
-    max-width: 85vw;
-}
-
-.marketplaceMain {
-    margin-top: 8rem;
-}
-
-.marketplaceFeature:nth-child(1) {
-    width: 250px;
-}
-
-.mot-templates-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 16px 10px;
+.pluginContent p {
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 19px;
+    color: #606060;
 }
 
 @media (max-width: 800px) {
-    .marketplaceNavbar {
-        max-width: 95%;
-    }
     .marketplaceHero {
         font-size: 16px;
     }
@@ -150,75 +267,47 @@
     .marketplaceHero p+div {
         width: 375px;
     }
-}
-
-.marketplaceFeature {
-    width: 46%;
-}
-
-.marketplaceFeature:nth-child(1) {
-    width: 46%;
-}
-
-.marketplaceFeature:nth-of-type(3) {
-    margin-top: 0.95rem;
-}
-
-.marketPlaceContainer {
-    max-width: 95vw;
-}
-
-.mot-templates-grid {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin-top: 2rem;
-    align-items: center;
-}
-
-.marketPlaceSidebar {
-    padding: 0.95rem 1rem;
-    font-size: 16px;
-    max-height: 1100px;
-    color: #333758;
-}
-
-.marketPlaceSidebarList {
-    margin-top: 6rem;
-}
-
-.marketPlaceSidebarItem {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    cursor: pointer;
-    margin-top: 1.25rem;
-    font-size: 16px;
-    cursor: pointer;
-    border-bottom: 1.5px solid rgba(69, 88, 128, 0.15);
-    border-radius: 4px 4px 0px 0px;
-}
-
-.marketPlaceSidebarItem__info {
-    display: flex;
-    align-items: baseline;
-}
-
-.marketPlaceSidebarItem:hover {
-    text-decoration: underline;
-}
-
-@media (max-width: 500px) {
-    .motTemplateSidebar {
-        width: 100%;
+    .zuriMarketPlace__container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
-}
-
-.zuri_marketplace__searchForm {
-    padding-left: 2%;
-    padding-bottom: 5%;
-    border: 1px solid black;
-    height: 45px;
-    margin-bottom: 5%;
-    margin-left: 2%;
+    .circleBackground {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .marketplaceSvg {
+        position: relative;
+        top: 0 !important;
+        left: auto !important;
+        right: auto !important;
+    }
+    .svgConnectionLineOne,
+    .svgConnectionLineThree,
+    .svgConnectionLineTwo {
+        display: none;
+    }
+    .marketplaceTab:nth-child(2) {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    .navbar {
+        padding-left: 15px;
+        margin-top: 5px;
+    }
+    .navbar-brand {
+        padding-left: 0;
+    }
+    .marketplaceSearchBar {
+        margin-top: 1rem;
+        width: 95%;
+    }
+    .accountOwnerAvatar {
+        margin-top: 1rem;
+    }
 }

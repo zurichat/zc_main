@@ -1,101 +1,90 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Col, Row, Container } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 import styles from '../../styles/marketplace.module.css'
 import MarketPlaceContainer from '../../components/marketplace/marketplace-container/MarketPlaceContainer'
-import { MarketPlaceLabel } from '../../components/marketplace/labels/Label'
+import Header from '../../components/externalPagesComponents/Header'
+import Footer from '../../components/externalPagesComponents/Footer/Footer'
+import { InstallPluginSvg } from '../../components/marketplace/marketplace-container/InstallPluginSvg'
+import { CollaborationSvg } from '../../components/marketplace/marketplace-container/CollaborationSvg'
+import { DiscoverPluginSvg } from '../../components/marketplace/marketplace-container/DiscoverPluginSvg'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+import MarketplaceHeader from '../../components/marketplace/marketplace-container/MarketplaceHeder'
+
 
 const MarketPlace = () => {
   return (
     <div className={styles.marketplace}>
       <div className={`w-100 d-flex flex-wrap justify-content-between align-items-baseline ${styles.marketplaceNavbar}`}>
-        <div className='mb-2'>
-          <Link to='/'>
-            <img src='/zurichatlogo.svg' alt='' className='brand-logo' />
-        </Link>
-      </div>
+        <MarketplaceHeader />
     </div>
-    <Container>
-      <Row className={`${styles.marketplaceHero} align-items-center justify-content-center`}>
-        <h1>
-          A whole marketplace of plugins for different usecase
-        </h1>
-        <p>
-          More than hundreds of business / personal plugins on organization, management,
-          relaxation and much more in just some simple click.{' '}
-        </p>
-        <Row className='d-flex px-2 px-md-0 justify-content-center flex-md-wrap'>
-          <Col md={4} className={styles.marketplaceFeature}>
-            <MarketPlaceLabel
-              svg={'/green-mark.svg'}
-              content='Discover apps for zuri chat'
-              styling='hero-label'
-            />
-          </Col>
-          <Col md={4} className={styles.marketplaceFeature}>
-            <MarketPlaceLabel
-              svg={'/green-mark.svg'}
-              content='Add Plugins, get things done'
-              styling='hero-label'
-            />
-          </Col>
-          <Col md={4} className={styles.marketplaceFeature}>
-            <MarketPlaceLabel
-              svg={'/green-mark.svg'}
-              content='Speed up Collaboration'
-              styling='hero-label'
-            />
-          </Col>
-        </Row>
-      </Row>
-    </Container>
-    <Container className={styles.marketPlaceContainer}>
-      <Row className={styles.marketplaceMain}>
-        <Col md={2}>
-          <div className={styles.marketPlaceSidebar}>            
-            <section className={styles.marketPlaceSidebarList}>          
-                <div className={styles.marketPlaceSidebarItem}>
-                  <span className={styles.marketPlaceSidebarItem__info}>                  
-                    <p className='ml-2'>Files Management</p>
-                  </span>
-                </div>
-                <div className={styles.marketPlaceSidebarItem}>
-                  <span className={styles.marketPlaceSidebarItem__info}>                  
-                    <p className='ml-2'>Marketing</p>
-                  </span>
-                </div>              
-                <div className={styles.marketPlaceSidebarItem}>
-                  <span className={styles.marketPlaceSidebarItem__info}>                  
-                    <p className='ml-2'>Productivity</p>
-                  </span>
-                </div>
-                <div className={styles.marketPlaceSidebarItem}>
-                  <span className={styles.marketPlaceSidebarItem__info}>                  
-                    <p className='ml-2'>Voice & Video</p>
-                  </span>
-                </div>            
-            </section>          
-          </div>
-        </Col>        
-        <Col md={10} className={styles.pluginContent}>
-          <div className="flex-one d-flex justify-content-center align-items-center">
-            <div className={`${styles.zuri_marketplaceHome__searchInput_container} position-relative large_bottom_margin`}>
-              <form className={styles.zuri_marketplace__searchForm}>                
-                  <input 
-                    name="marketplace__searchField"
-                    className={styles.marketPlace__searchField}
-                    type="text"                   
-                    placeholder="Find a new plugin, or a plugin you already installed." 
-                    autocomplete="off"                                    
-                  />
-                  <i class="ts_icon ts_icon_search icon_search icon_search_input"></i>              
-              </form>
+    <div className={styles.marketplaceHero}>
+      <Row className={`align-items-center justify-content-center`}>
+        <Col md={8}>
+          <h1>
+          Your number one plugin hub created for better experience
+          </h1>
+          <p className="p-0">
+          Integrate your favorite plugins and get more exciting experience from the  Zuri app. Collaborate, work smarter and better.{' '}
+          </p>
+        </Col>  
+        <Col md={4}>
+          <div className={styles.circleBackground}>
+            <div className={styles.marketplaceSvg}>
+              <DiscoverPluginSvg />
+              <div className={styles.svgConnectionLineOne}>
+              <svg width="179" height="205" viewBox="0 0 179 255" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M178.001 1C1.00098 71.8269 1.00098 255 1.00098 255" stroke="#C4C4C4"/>
+                </svg>
+
+              </div>
             </div>
+            <div className={styles.marketplaceSvg}>
+              <InstallPluginSvg />
+              <div className={styles.svgConnectionLineTwo}>
+              <svg width="516" height="108" viewBox="0 0 516 138" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1.00003C1 1.00003 104.32 137.772 248.96 136.997C450.427 135.917 515 1.00003 515 1.00003" stroke="#C4C4C4"/>
+              </svg>  
+              </div>
+            </div>
+            <div className={styles.marketplaceSvg}>
+              <CollaborationSvg />
+              <div className={styles.svgConnectionLineThree}>
+              <svg width="184" height="205" viewBox="0 0 184 255" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.00001 1C183 71.8269 183 255 183 255" stroke="#C4C4C4"/>
+              </svg>
+
+              </div>
+            </div>      
           </div>
-          <MarketPlaceContainer />
-        </Col>
+        </Col>      
       </Row>
-    </Container>
+    </div>
+    <div className={styles.marketPlaceContainer}>
+    <Tabs 
+      className={styles.marketplaceTabs}
+      selectedTabClassName={styles.marketplaceTabSelected}
+    >
+      <TabList className={styles.marketplaceTabList}>
+        <Tab className={styles.marketplaceTab}>New plugin</Tab>
+        <Tab className={styles.marketplaceTab}>Recommended for you</Tab>
+        <Tab className={styles.marketplaceTab}>Popular Plugins</Tab>
+      </TabList>
+      <Row className={`mx-0`}>  
+        <TabPanel>
+          <MarketPlaceContainer /> 
+        </TabPanel>
+        <TabPanel>
+          <MarketPlaceContainer /> 
+        </TabPanel>
+        <TabPanel>
+          <MarketPlaceContainer /> 
+        </TabPanel>
+      </Row>
+      </Tabs>
+    </div>
+    <Footer />
   </div>   
   )
 }
