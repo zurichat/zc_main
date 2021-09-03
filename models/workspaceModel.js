@@ -13,7 +13,16 @@ const workspaceSchema = new mongoose.Schema({
         lowercase: true,
         validate: [validator.isEmail, 'Please provide a valid email']
     },
-    channels: [String]
+    channels: {
+        type: [String],
+        default: ["announcements"]
+    },
+    subscriptionPlan: {
+        type: String,
+        default: 'Free',
+    }
+}, {
+    timestamps: true
 })
 
 const Workspace = mongoose.model('Workspace', workspaceSchema)

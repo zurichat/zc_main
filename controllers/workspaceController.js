@@ -6,7 +6,8 @@ exports.createWorkspace = async (req, res, next) => {
       const workspace = await Workspace.create({
         name: req.body.name,
         email: req.body.email,
-        channels: req.body.channels
+        channels: req.body.channels,
+        subscriptionPlan: req.body.subscriptionPlan
       })
     
       res.status(200).json({
