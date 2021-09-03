@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 body {
     margin: 0;
     padding: 0;
@@ -9,9 +10,10 @@ body {
     width: 100%;
     margin-top: 10%;
     /* background-color: #e77070; */
-    background-color: #f8f8f8;
+    background-color: #f8ecec;
     border-top-left-radius: 5%;
     border-top-right-radius: 5%;
+    font-family: 'Lato', sans-serif;
     /* height: 100vh; */
 }
 
@@ -33,6 +35,11 @@ body {
 .cookie_header_body {
     width: 76%;
     margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.cookie_header_title {
+    font-size: 30px;
 }
 
 .cookie_body_title,
@@ -52,6 +59,7 @@ body {
 
 .cookie_body {
     margin: auto 1em;
+    font-size: 18px;
 }
 
 .cookie_body_half {
