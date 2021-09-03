@@ -1,5 +1,7 @@
+import Categories from './Categories'
+
 function AppsAndIntegrations() {
-  return <div>This is Apps and Integrations Page</div>
+  return <Categories />
 }
 
 export default AppsAndIntegrations
