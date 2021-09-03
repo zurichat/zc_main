@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-.tableSection2 {
-  display: hidden;
+.section2 {
+  display: none;
 }
 
 @media only screen and (min-width: 600px) {
@@ -127,7 +127,7 @@
     padding: 11.2px 16px;
   }
 
-  .tableSection2 {
+  .section2 {
     display: block;
   }
 }
@@ -255,7 +255,7 @@
     padding: 11.2px 16px;
   }
 
-  .tableSection2 {
+  .section2 {
     display: block;
   }
 }

@@ -5,7 +5,7 @@ import TableRow from './TableRow'
 export default class PricingTable extends React.Component {
   render() {
     return (
-      <section className={styles.tableSection2}>
+      <section className={styles.section2}>
         <div className={styles.table_container}>
           <table>
             <colgroup>
