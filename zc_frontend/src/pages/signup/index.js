@@ -1,12 +1,11 @@
-import '../../styles/Signup.css'
+import styles from '../../styles/Signup.module.css'
 import React, { useState } from 'react'
-import apple from '../../images/apple.svg'
-import bg from '../../images/bg.svg'
-import google from '../../images/google.svg'
-import zuri from '../../images/zuri.svg'
-import globe from '../../images/globe.svg'
-import chevron from '../../images/chevron.svg'
-// import styles from '../../styles/Signup.module.css'
+import apple from '../images/apple.svg'
+import bg from '../images/bg.svg'
+import google from '../images/google.svg'
+import zuri from '../images/zuri.svg'
+import globe from '../images/globe.svg'
+import chevron from '../images/chevron.svg'
 
 /**
  * @param password {string} - password to test
@@ -123,33 +122,55 @@ const SignUp = () => {
 
   return (
     <>
-      <section>
-        <div className="imgBx">
-          <img src={bg} alt="img" />
+      <section
+        className={`${styles.section}`}
+        style={{
+          margin: 0,
+          padding: 0,
+          boxSizing: 'border-box',
+          fontFamily: `'Lato', sans-serif`,
+          backgroundColor: '#ffffff'
+        }}
+      >
+        <div className={`${styles.imgBx}`}>
+          <img src={bg} alt="img" className={`${styles.imgBx_img}`} />
         </div>
-        <div className="contentBx">
-          <img src={zuri} className="formLogo" alt="zuri"></img>
-          <div className="formBx">
-            <form className="formInline" method="POST" onSubmit={handleSubmit}>
-              <h2>Create Account</h2>
-              <div className="social">
+        <div className={`${styles.contentBx}`}>
+          <img src={zuri} className={`${styles.formLogo}`} alt="zuri"></img>
+          <div className={`${styles.formBx}`}>
+            <form
+              className={`${styles.formInline}`}
+              method="POST"
+              onSubmit={handleSubmit}
+            >
+              <h2 className={`${styles.formInline_h2}`}>Create Account</h2>
+              <div className={`${styles.social}`}>
                 <a href="/">
-                  <img src={google} alt="google" />
+                  <img
+                    src={google}
+                    alt="google"
+                    className={`${styles.social_img}`}
+                  />
                 </a>
                 <a href="/">
-                  <img src={apple} alt="apple" />
+                  <img
+                    src={apple}
+                    alt="apple"
+                    className={`${styles.social_img}`}
+                  />
                 </a>
               </div>
               <div>
-                <span className="lineSpan">or sign up with</span>
+                <span className={`${styles.lineSpan}`}>or sign up with</span>
               </div>
 
-              <div className="inputBx">
-                <span>
+              <div className={`${styles.inputBx}`}>
+                <span className={`${styles.inputBx_span}`}>
                   <span>Full name</span>
-                  <span className="input-errormsg">{nameERR}</span>
+                  <span className={`${styles.inputErrorMsg}`}>{nameERR}</span>
                 </span>
                 <input
+                  className={`${styles.inputBx_input}`}
                   type="text"
                   placeholder="John Doe"
                   name="name"
@@ -158,12 +179,13 @@ const SignUp = () => {
                   onChange={e => setname(e.target.value)}
                 />
               </div>
-              <div className="inputBx">
-                <span>
+              <div className={`${styles.inputBx}`}>
+                <span className={`${styles.inputBx_span}`}>
                   <span>Email</span>
-                  <span className="input-errormsg">{emailERR}</span>
+                  <span className={`${styles.inputErrorMsg}`}>{emailERR}</span>
                 </span>
                 <input
+                  className={`${styles.inputBx_input}`}
                   type="email"
                   placeholder="johndoe@example.com"
                   name="email"
@@ -172,13 +194,16 @@ const SignUp = () => {
                   onChange={e => setemail(e.target.value)}
                 />
               </div>
-              <div className="inputBx">
-                <span>
+              <div className={`${styles.inputBx}`}>
+                <span className={`${styles.inputBx_span}`}>
                   <span>Password</span>
-                  <span className="input-errormsg">{passwordERR}</span>
+                  <span className={`${styles.inputErrorMsg}`}>
+                    {passwordERR}
+                  </span>
                 </span>
 
                 <input
+                  className={`${styles.inputBx_input}`}
                   type="password"
                   placeholder="Enter a password"
                   name="password"
@@ -187,13 +212,16 @@ const SignUp = () => {
                   onChange={e => setpassword(e.target.value)}
                 />
               </div>
-              <div className="inputBx">
-                <span>
+              <div className={`${styles.inputBx}`}>
+                <span className={`${styles.inputBx_span}`}>
                   <span>Confirm password</span>
-                  <span className="input-errormsg">{confirmPasswordERR}</span>
+                  <span className={`${styles.inputErrorMsg}`}>
+                    {confirmPasswordERR}
+                  </span>
                 </span>
 
                 <input
+                  className={`${styles.inputBx_input}`}
                   type="password"
                   placeholder="Enter the password"
                   name="confirm_password"
@@ -202,8 +230,9 @@ const SignUp = () => {
                   onChange={e => setconfirmPassword(e.target.value)}
                 />
               </div>
-              <div className="toc">
+              <div className={`${styles.toc}`}>
                 <input
+                  className={`${styles.toc_input}`}
                   type="checkbox"
                   name="toc"
                   id="toc"
@@ -212,36 +241,44 @@ const SignUp = () => {
                 />
                 <label>
                   I agree with Zurichat's{' '}
-                  <a href="/" className="tocText">
+                  <a href="/" className={`${styles.tocText}`}>
                     Terms of service
                   </a>{' '}
                   and{' '}
-                  <a href="/" className="tocText">
+                  <a href="/" className={`${styles.tocText}`}>
                     {' '}
                     privacy{' '}
                   </a>
                 </label>
               </div>
-              <div className="input-errormsg">{TOSConfirmERR}</div>
-              <div className="inputBx">
-                <button type="submit" className="btn">
+              <div className={`${styles.inputErrorMsg}`}>{TOSConfirmERR}</div>
+              <div className={`${styles.inputBx}`}>
+                <button type="submit" className={`btn ${styles.btn}`}>
                   Sign up
                 </button>
               </div>
-              <div className="bottomline">
+              <div className={`${styles.bottomline}`}>
                 <span>
-                  Already have an account?<a href="/login"> Log in </a>
+                  Already have an account?
+                  <a href="/login" className={`${styles.bottomline_a}`}>
+                    {' '}
+                    Log in{' '}
+                  </a>
                 </span>
               </div>
-              <div className="footer">
-                <a href="/">contact Us</a>
-                <a href="/">Legal Policy</a>
-                <a href="/">
+              <footer className={`${styles.footer}`}>
+                <a href="/" className={`${styles.footer_a}`}>
+                  contact Us
+                </a>
+                <a href="/" className={`${styles.footer_a}`}>
+                  Legal Policy
+                </a>
+                <a href="/" className={`${styles.footer_a}`}>
                   <img src={globe} alt="globe" />
                   change Region
                   <img src={chevron} alt="arrow" />
                 </a>
-              </div>
+              </footer>
             </form>
           </div>
         </div>
