@@ -7,7 +7,7 @@ import { IconContext } from 'react-icons'
 const PreferenceTabList = () => {
   return (
     <>
-      <IconContext.Provider value={{ size: '1.3rem'}}>
+      <IconContext.Provider value={{ size: '1.3rem' }}>
         <div className={styles.container}>
           <ul className={styles.ul}>
             {PreferenceListData.map((item, index) => {
