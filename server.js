@@ -4,6 +4,7 @@ const helmet = require('helmet')
 const device = require('express-device')
 const useragent = require('express-useragent')
 const sessions = require('./lib/user_session')
+const ApiError = require('./lib/ApiError')
 
 const loadFrontend = require('./middlewares/load-frontend')
 const PORT = process.env.PORT || 3000
@@ -27,6 +28,16 @@ app.use(useragent.express())
 
 routes(app)
 loadFrontend(app)
+
+app.use((err, req, res, next) => {
+  if (err) {
+    if (err instanceof ApiError) {
+      return res.status(err.code).send(err.message)
+    }
+    res.status(500).send('Something Went Wrong')
+    console.error(err)
+  }
+})
 
 app.listen(PORT, () => {
   console.log(
