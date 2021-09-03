@@ -21,6 +21,7 @@
 
 .modalContent {
   width: 90%;
+  height: 100vh;
   max-width: 885px;
   background: #fff;
   border-radius: 5px;
