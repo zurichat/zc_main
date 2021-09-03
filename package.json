@@ -23,6 +23,9 @@
     "emoji-picker-react": "^3.4.8",
     "express": "^4.17.1",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 22b29b5b (Revert "add logic and route for profile picture upload closes #473")
     "express-device": "^0.4.2",
     "express-useragent": "^1.0.15",
     "geoip-lite": "^1.4.2",
