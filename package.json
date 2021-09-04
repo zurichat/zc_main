@@ -24,6 +24,7 @@
     "dotenv": "^10.0.0",
     "emoji-picker-react": "^3.4.8",
     "express": "^4.17.1",
+    "express-limiter": "^1.6.1",
     "express-device": "^0.4.2",
     "express-useragent": "^1.0.15",
     "geoip-lite": "^1.4.2",
