@@ -130,15 +130,15 @@ body {
   border-color: rgba(0, 184, 124, 0.6);
 }
 
- .visibility {
-   height: 1.4rem;
-   width: 1.2rem;
-   margin-right: 1.2rem;
-   transition: all 0.5s ease-out;
-   -webkit-transition: all 0.5s ease-out;
-   -moz-transition: all 0.5s ease-out;
-   cursor: pointer;
- } 
+.visibility {
+  height: 1.4rem;
+  width: 1.2rem;
+  margin-right: 1.2rem;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  cursor: pointer;
+}
 
 .toc {
   color: #3a3a3a;
