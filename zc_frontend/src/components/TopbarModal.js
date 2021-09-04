@@ -7,9 +7,6 @@ import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
 
 import styles from '../styles/Topbar.module.css'
 import { TopbarContext } from '../contexts/Topbar'
-import { ProfileContext } from '../contexts/ProfileModal'
-import ProfileModal from './ProfileModal'
-import PreferenceTabList from './preferenceTab/PreferenceTabList'
 
 const TopbarModal = () => {
   const state = useContext(TopbarContext)
@@ -17,7 +14,6 @@ const TopbarModal = () => {
   const [showStatus, setShowStatus] = state.status
   const [chosenEmoji] = state.emoji
   const { onEmojiClick, openStatus, closeStatus, modalRef } = state
-  const { toggleModalState } = useContext(ProfileContext)
 
   return (
     <>
@@ -77,11 +73,8 @@ const TopbarModal = () => {
           <div className={styles.sectionFour}>
             <p>Edit profile</p>
             <p>View profile</p>
-            <p onClick={toggleModalState}>Preference</p>
+            <p>Preference</p>
           </div>
-          <ProfileModal title="Preferences">
-            <PreferenceTabList />
-          </ProfileModal>
 
           <hr />
 
