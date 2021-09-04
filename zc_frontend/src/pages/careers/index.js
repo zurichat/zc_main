@@ -1,7 +1,3 @@
- integration-section-one
-function Careers() {
-  return <div>This is careers page</div>
-
 import Footer from '../../components/externalPagesComponents/Footer/Footer'
 import Message from '../../components/externalPagesComponents/Footer/Message'
 import CareersSection2 from './CareersSection2'
@@ -18,7 +14,6 @@ function Careers() {
       <Footer />
     </div>
   )
- develop
 }
 
 export default Careers
