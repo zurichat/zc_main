@@ -5,7 +5,7 @@
   line-height: 31px;
 }
 
-.highlighted_text {
+.highlighted_text > p{
   color: #00b87c;
   font-size: 25px;
   text-decoration: underline;
@@ -15,7 +15,7 @@
 }
 
 
-.text {
+.text > p{
   font-size: 18px;
   font-weight: 500;
   font-style: normal;
