@@ -1,5 +1,9 @@
 import React from 'react'
+<<<<<<< HEAD
 import styles from '../../styles/Cookies.modules.css'
+=======
+import styles from './styles/Cookies.modules.css'
+>>>>>>> 891157794c0faf2fc360bb52192c67843274f2a9
 import hamburger from '../../assets/hamburger.png'
 
 const Cookies = () => {
