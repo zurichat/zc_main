@@ -46,7 +46,6 @@
     ]
   },
   "devDependencies": {
-    "@babel/helper-wrap-function": "^7.15.4",
     "prettier": "2.3.2"
   }
 }
