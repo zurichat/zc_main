@@ -67,7 +67,9 @@ const Login = () => {
             </span>
           </div>
           <div className={`pt-1 mt-3`}>
-            <h2 className={`pt-2 `}><Link title="Log in" color="#00B87C"/></h2>
+            <h2 className={`pt-2 `}>
+              <Link title="Log in" color="#00B87C" />
+            </h2>
             <p className={styles.subtext}>
               Login with the data you entered during your
             </p>
