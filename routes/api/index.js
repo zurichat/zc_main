@@ -6,4 +6,3 @@ module.exports = [
   require('../../middlewares/getSession'),
   require('../../middlewares/routeAccess')
 ]
-
