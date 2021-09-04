@@ -59,7 +59,7 @@ const Login = () => {
             <img class={`${styles.person2}`} src="person2.svg" alt="" />
           </div>
         </div>
-        <div class={`col-md-7 ${styles.login}`}>
+        <div class={`col-lg-7 col-md-12 ${styles.login}`}>
           <div className={`pt-4 mt-3 text-center`}>
             <span>
               <img src="logo.svg" alt="logo" />
@@ -177,7 +177,7 @@ const Login = () => {
             </div>
           </div>
           <div
-            class={`d-flex justify-content-around my-md-3  ${styles.footer}`}
+            class={`d-flex justify-content-around my-lg-3 my-md-5 ${styles.footer}`}
           >
             <a href="/" class={`mx-md-4 text-secondary`}>
               Contact Us
