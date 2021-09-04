@@ -1,7 +1,7 @@
 // This components helps to setup a modal for profile
 
 import React, { useContext } from 'react'
-import { ProfileContext } from '../contexts/ProfileModal'
+import { ProfileContext } from '../contexts/ProfileModal';
 import styles from '../styles/ProfileModal.module.css'
 
 const ProfileModal = ({ title, children, full }) => {
