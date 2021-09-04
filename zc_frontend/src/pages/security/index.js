@@ -32,7 +32,7 @@ const Security = () => {
             description="Information Security Management System (ISMS)"
           />
           <ComplianceCertification
-            img="/security-badge-green.png"
+            img="/iso_27018.png"
             title="ISO/IEC 27001"
             description="Information Security Management System (ISMS)"
           />
