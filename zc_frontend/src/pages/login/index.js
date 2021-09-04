@@ -4,13 +4,14 @@ import styles from './styles/Login.module.css'
 import React, { useState } from 'react'
 // import LoginLoading from '../../components/LoginLoading'
 import GoogleLogin from 'react-google-login'
+import LoginLoading from '../../components/LoginLoading'
 import { Link, useHistory } from 'react-router-dom'
 
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
-
+  const [showLoader, setShowLoader] = useState(false)
   let history = useHistory()
 
   const handleClickShowPassword = () => {
@@ -25,6 +26,7 @@ const Login = () => {
   }
   return (
     <div className={`container-fluid ${styles.body}`}>
+      {showLoader && <LoginLoading />}
       <div class={`row`}>
         <div class={`col-md-5 ${styles.side}`}>
           <div className={`row`}>
@@ -128,6 +130,7 @@ const Login = () => {
             <div>
               <button
                 className={`${styles.button} btn mb-3 col-12 col-md-6 px-5 px-md-5 py-2`}
+                onClick={() => setShowLoader(true)}
               >
                 Log In
               </button>
