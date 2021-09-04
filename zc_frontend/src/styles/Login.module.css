@@ -26,7 +26,6 @@
   width: 30%;
   height: 70vh;
   position: relative;
-  /* margin-left: -10%; */
 }
 .person2 {
   width: 60%;
@@ -120,6 +119,7 @@
 .footer-text {
   font-size: 12px !important;
 }
+
 @media only screen and (max-width: 768px) {
   .button_outline > img {
     width: 14%;
