@@ -1,0 +1,292 @@
+.navbar-expand-lg {
+  flex-wrap: wrap;
+  justify-content: start;
+  padding-left: 25px;
+}
+
+.navbar {
+  padding-left: 20px;
+  margin-top: 15px;
+}
+
+.navbarNav {
+  margin-left: 240px;
+}
+
+.searchLogo1 {
+  display: none;
+}
+
+.searchLogo {
+  position: relative;
+  right: 20px;
+  top: 5px;
+  margin-left: 150px;
+  margin-right: -10px;
+}
+
+.navLinkFeatures {
+  margin-right: 40px;
+}
+
+.navLinkPricing {
+  margin-right: 40px;
+}
+
+.navLinkComms {
+  margin-right: 40px;
+}
+
+.navLinkSignUp {
+  margin-right: 10px;
+}
+
+.zuriChat {
+  font-size: 18px;
+  color: black;
+  position: relative;
+  top: 5px;
+  font-weight: bold;
+  margin-left: 5px;
+  text-decoration: none;
+}
+
+.image {
+  position: relative;
+  top: 10px;
+}
+
+.navbarBrand {
+  text-decoration: none;
+  float: left;
+}
+
+.features {
+  color: black;
+  font-weight: 300;
+}
+
+.signU {
+  color: #1e88e5;
+  font-weight: 300;
+}
+
+.signI {
+  font-weight: 300;
+}
+
+.signIn {
+  background-color: #00b87c;
+  color: white;
+  border-radius: 0px;
+}
+
+.pricing {
+  color: black;
+  font-weight: 300;
+}
+
+.comms {
+  color: black;
+  font-weight: 300;
+}
+
+.download {
+  color: black;
+  font-weight: 300;
+}
+
+@media only screen and (min-width: 1440px) {
+  .collapse {
+    margin-left: 200px;
+  }
+
+  .image {
+    position: relative;
+    top: 10px;
+  }
+
+  .zuriChat {
+    font-size: 18px;
+    color: black;
+    position: relative;
+    top: 5px;
+    font-weight: bold;
+    margin-left: 5px;
+    text-decoration: none;
+  }
+
+  .navbar {
+    margin-top: 15px;
+  }
+
+  .navbarNav {
+    margin-left: 140px;
+  }
+
+  .navbarBrand {
+    text-decoration: none;
+    padding-left: 20px;
+  }
+
+  .navButton {
+    margin-left: 160px;
+  }
+
+  .navLinkFeatures {
+    margin-right: 50px;
+  }
+
+  .navLinkPricing {
+    margin-right: 50px;
+  }
+
+  .navLinkComms {
+    margin-right: 50px;
+  }
+
+  .navLinkSignUp {
+    margin-right: 10px;
+  }
+
+  .searchLogo {
+    position: relative;
+    right: 20px;
+    top: 5px;
+    margin-left: 200px;
+    margin-right: 15px;
+  }
+
+  .searchLogo1 {
+    display: none;
+  }
+
+  .signIn {
+    background-color: #00b87c;
+    color: white;
+    border-radius: 0px;
+  }
+
+  .signI {
+    font-weight: 300;
+  }
+
+  .signU {
+    color: #1e88e5;
+    font-weight: 300;
+  }
+
+  .download {
+    color: black;
+    font-weight: 300;
+  }
+
+  .comms {
+    color: black;
+    font-weight: 300;
+  }
+
+  .pricing {
+    color: black;
+    font-weight: 300;
+  }
+
+  .features {
+    color: black;
+    font-weight: 300;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .collapse {
+    position: relative;
+    right: 120px;
+    padding: auto;
+  }
+
+  .image {
+    position: relative;
+    top: 10px;
+  }
+
+  .zuriChat {
+    font-size: 18px;
+    color: black;
+    position: relative;
+    top: 5px;
+    font-weight: bold;
+    margin-left: 5px;
+    text-decoration: none;
+  }
+
+  .navbar {
+    padding-left: 20px;
+    margin-top: 15px;
+  }
+
+  .navbarNav {
+    margin-left: 140px;
+  }
+
+  .navButton {
+    position: relative;
+    top: 10px;
+    right: 5px;
+  }
+
+  .navLink {
+    margin-right: 60px;
+  }
+
+  .navbarBrand {
+    text-decoration: none;
+    padding-left: 20px;
+  }
+
+  .searchLogo {
+    display: none;
+  }
+
+  .searchLogo1 {
+    display: inline;
+    position: relative;
+    left: 40px;
+    top: 5px;
+  }
+
+  .signIn {
+    background-color: #00b87c;
+    color: white;
+    border-radius: 0px;
+    font-weight: 300;
+  }
+
+  .signI {
+    font-weight: 300;
+  }
+
+  .signU {
+    color: #1e88e5;
+    font-weight: 300;
+  }
+
+  .download {
+    color: black;
+    font-weight: 300;
+  }
+
+  .comms {
+    color: black;
+    font-weight: 300;
+  }
+
+  .pricing {
+    color: black;
+    font-weight: 300;
+  }
+
+  .features {
+    color: black;
+    font-weight: 300;
+  }
+}

@@ -2,6 +2,9 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 import styles from '../../styles/Login.module.css'
 import React, { useState } from 'react'
+// import LoginLoading from '../../components/LoginLoading'
+import GoogleLogin from 'react-google-login'
+import { useHistory } from 'react-router-dom'
 
 const Login = () => {
   const [email, setEmail] = useState('')
