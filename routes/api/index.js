@@ -1,1 +1,6 @@
-module.exports = [require('./plugin'), require('../../middlewares/getDevice')]
+module.exports = [
+  require('./workspace'),
+  require('./plugin'),
+  require('../../middlewares/getDevice'),
+  require('../../middlewares/getSession')
+]
