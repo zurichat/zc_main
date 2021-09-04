@@ -18,6 +18,7 @@ import Input from './components/externalPagesComponents/Input'
 import FAQ from './pages/FAQ'
 import Settings from './pages/settings'
 import SearchResult from './components/SearchResults3'
+import LinkComponent from './components/externalPagesComponents/Link'
 
 const App = () => (
   <BrowserRouter>
@@ -72,6 +73,14 @@ const App = () => (
       </Route>
       <Route path="/search">
         <SearchResult />
+      </Route>
+      <Route path="/link">
+        <LinkComponent
+          title={`test-to-home`}
+          to={`/home`}
+          color={`black`}
+          underline
+        />
       </Route>
     </Switch>
   </BrowserRouter>
