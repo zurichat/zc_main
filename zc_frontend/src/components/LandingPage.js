@@ -30,7 +30,6 @@ const LandingPage = () => {
         <ContinueButton />
       </div>
 
-
       <div className={styles.welcome__div}>
         <h1>
           <span>
