@@ -3,8 +3,9 @@
 import styles from './styles/Login.module.css'
 import React, { useState } from 'react'
 // import LoginLoading from '../../components/LoginLoading'
-// import GoogleLogin from 'react-google-login'
-// import { useHistory } from 'react-router-dom'
+import GoogleLogin from 'react-google-login'
+import LoginLoading from '../../components/LoginLoading'
+import { Link, useHistory } from 'react-router-dom'
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -12,7 +13,8 @@ const Login = () => {
     password: '',
     showPassword: false
   })
-  // let history = useHistory()
+  const [showLoader, setShowLoader] = useState(false)
+  let history = useHistory()
   // const handleClickShowPassword = () => {
   //   setPass({ ...pass, showPassword: !pass.showPassword })
   // }
@@ -24,14 +26,15 @@ const Login = () => {
   const handlePasswordChange = prop => event => {
     setPass({ ...pass, [prop]: event.target.value })
   }
-  // const successResponseGoogle = response => {
-  //   history.push('/')
-  // }
-  // const failureResponseGoogle = response => {
-  //   console.log(response)
-  // }
+  const successResponseGoogle = response => {
+    history.push('/')
+  }
+  const failureResponseGoogle = response => {
+    console.log(response)
+  }
   return (
     <div className={`container-fluid ${styles.body}`}>
+      {showLoader && <LoginLoading />}
       <div class={`row`}>
         <div class={`col-md-5 ${styles.side}`}>
           <div className={`row`}>
@@ -67,7 +70,9 @@ const Login = () => {
             </span>
           </div>
           <div className={`pt-1 mt-3`}>
-            <h2 className={`pt-2 `}>Log in</h2>
+            <h2 className={`pt-2 `}>
+              <Link title="Log in" color="#00B87C" />
+            </h2>
             <p className={styles.subtext}>
               Login with the data you entered during your
             </p>
@@ -132,6 +137,7 @@ const Login = () => {
             <div>
               <button
                 className={`${styles.button} btn mb-3 col-12 col-md-6 px-5 px-md-5 py-2`}
+                onClick={() => setShowLoader(true)}
               >
                 Log In
               </button>
@@ -142,7 +148,7 @@ const Login = () => {
               <img className={`w-50 p-3`} src="Line.svg" alt="line" srcset="" />
             </div>
             <div className={`my-3 text-center`}>
-              {/* <GoogleLogin
+              <GoogleLogin
                 clientId="78755437309-27q9m2toval9c439d2r7q5gj28h0pqcc.apps.googleusercontent.com"
                 render={renderProps => (
                   <img
@@ -156,7 +162,7 @@ const Login = () => {
                 onSuccess={successResponseGoogle}
                 onFailure={failureResponseGoogle}
                 cookiePolicy={'single_host_origin'}
-              /> */}
+              />
               <img
                 className={`mx-3 ${styles.icon}`}
                 src={`/apple.png`}
