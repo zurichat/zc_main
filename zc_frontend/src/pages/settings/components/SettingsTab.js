@@ -1,5 +1,7 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 import styles from '../styles/SettingsTab.module.css'
+
 
 const SettingsTab = () => {
   return (
@@ -37,7 +39,7 @@ const SettingsTab = () => {
           Time Zone
           <br />
           <span>
-            Slack uses your time zone to send summary and notification emails,
+            Zurichat uses your time zone to send summary and notification emails,
             for times in your activity feeds and for reminders. Your time zone
             is currently set to: (UTC+01:00) West Central Africa.
           </span>
@@ -51,7 +53,7 @@ const SettingsTab = () => {
         <div className={styles.settingleft}>
           Language <br />
           <span>
-            Choose the language you’d like to use with Slack. Your language is
+            Choose the language you’d like to use with Zurichat. Your language is
             currently set to: English (Nigeria).
           </span>
         </div>
@@ -80,18 +82,24 @@ const SettingsTab = () => {
         <div className={styles.settingleft}>
           Deactivate Account <br />
           <span>
-            If you no longer need your account for the Zuri, you can deactivate
+            If you no longer need your account for the Zurichat, you can deactivate
             your account. Any other Slack workspaces you belong to will not be
             affected.
           </span>
           <br />
           <span>
-            Note: Don’t deactivate your account if you just want to change your
-            email address.
+            Note: Don’t deactivate your account if you just want to <NavLink to="/" className={styles.emailLink}>change your email address.</NavLink>
           </span>
         </div>
         <div className={styles.settingsright}>
           <button className={styles.delete}>Deactivate your account</button>
+        </div>
+      </div>
+    
+      <div className={styles.settingsTab}>
+        <div className={styles.settingleft}>Username</div>
+        <div className={styles.settingsright}>
+          <button>Expand</button>
         </div>
       </div>
     </>
