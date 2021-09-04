@@ -99,7 +99,9 @@ const Login = () => {
             </div>
             <div className={`d-flex ${styles.email_input}`}>
               <div className={`mb-2 col-12 col-md-6 w-100`}>
-              <label for="Email1" class="form-label">Email address</label>
+                <label for="Email1" class="form-label">
+                  Email address
+                </label>
                 <input
                   type="email"
                   className={`py-1 form-control`}
@@ -115,7 +117,9 @@ const Login = () => {
             </div>
             <div className={`d-flex ${styles.email_input}`}>
               <div className={`mb-3 col-12 col-md-6 w-100`}>
-              <label for="Password" class="form-label">Password</label>
+                <label for="Password" class="form-label">
+                  Password
+                </label>
                 <input
                   type={pass.showPassword ? 'text' : 'password'}
                   onChange={handlePasswordChange('password')}
@@ -138,11 +142,7 @@ const Login = () => {
               {/* {pass.password ? <i className={`far far-eye ${styles.far}`}></i>: <i className={`far fa-eye-slash ${styles.far}`}></i>} */}
             </div>
             <div class="mb-2 form-check">
-              <input
-                type="checkbox"
-                class="form-check-input"
-                id="Check1"
-              />
+              <input type="checkbox" class="form-check-input" id="Check1" />
               <label
                 className={`form-check-label text-secondary ${styles.check}`}
                 for="exampleCheck1"
@@ -176,7 +176,9 @@ const Login = () => {
               </p>
             </div>
           </div>
-          <div class={`d-flex justify-content-around my-md-3  ${styles.footer}`}>
+          <div
+            class={`d-flex justify-content-around my-md-3  ${styles.footer}`}
+          >
             <a href="/" class={`mx-md-4 text-secondary`}>
               Contact Us
             </a>
