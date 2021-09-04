@@ -10,16 +10,13 @@ const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
-  
+
   let history = useHistory()
-  
+
   const handleClickShowPassword = () => {
-     setShowPassword((prev)=> !prev)
-   }
+    setShowPassword(prev => !prev)
+  }
 
-  
-
-  
   const successResponseGoogle = response => {
     history.push('/')
   }
@@ -88,7 +85,6 @@ const Login = () => {
               <div className={`mb-3 col-12 col-md-6 w-100 d-flex`}>
                 <input
                   type={showPassword ? 'text' : 'password'}
-                  
                   className={`py-2 form-control`}
                   value={password}
                   onChange={e => {
@@ -100,7 +96,9 @@ const Login = () => {
                 />
               </div>
               <i
-                className={`far fa-eye${showPassword ? '' : '-slash'} ${styles.far} cursor-pointer`}
+                className={`cursor-pointer far fa-eye${
+                  showPassword ? '' : '-slash'
+                } ${styles.far}`}
                 onClick={handleClickShowPassword}
                 //onMouseDown={handleMouseDownPassword}
               ></i>
