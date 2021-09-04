@@ -17,6 +17,7 @@ import Header from './components/externalPagesComponents/Header'
 import Input from './components/externalPagesComponents/Input'
 import FAQ from './pages/FAQ'
 import SearchResult from './components/SearchResults3'
+import Notification from './components/Notification'
 
 const App = () => (
   <BrowserRouter>
@@ -68,6 +69,9 @@ const App = () => (
       </Route>
       <Route path="/search">
         <SearchResult />
+      </Route>
+      <Route path="/notification">
+        <Notification />
       </Route>
     </Switch>
   </BrowserRouter>
