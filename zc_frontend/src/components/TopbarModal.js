@@ -13,13 +13,12 @@ import EditProfile from './EditProfile'
 
 const TopbarModal = () => {
   const state = useContext(TopbarContext)
-  const { toggleModalState } = useContext(ProfileContext);
+  const { toggleModalState } = useContext(ProfileContext)
   const [showModal] = state.show
   const [showStatus, setShowStatus] = state.status
   const [chosenEmoji] = state.emoji
   const { onEmojiClick, openStatus, closeStatus, modalRef } = state
-  const [modal, setModal] = useState('');
-
+  const [modal, setModal] = useState('')
 
   return (
     <>
@@ -76,22 +75,29 @@ const TopbarModal = () => {
 
           <hr />
 
-         
           <div className={styles.sectionFour}>
-            <p onClick={() => { toggleModalState(); setModal('edit profile')}}>Edit profile</p>
+            <p
+              onClick={() => {
+                toggleModalState()
+                setModal('edit profile')
+              }}
+            >
+              Edit profile
+            </p>
             <p>View profile</p>
-            <p onClick={() => { toggleModalState(); setModal('preference')}}>Preference</p>
+            <p
+              onClick={() => {
+                toggleModalState()
+                setModal('preference')
+              }}
+            >
+              Preference
+            </p>
           </div>
 
-          {
-            modal === "edit profile" &&
-            <EditProfile />
-          }
+          {modal === 'edit profile' && <EditProfile />}
 
-          {
-            modal === "preference" &&
-            <Preferences />
-          }
+          {modal === 'preference' && <Preferences />}
 
           <hr />
 
