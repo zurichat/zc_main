@@ -7,20 +7,19 @@ import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
 
 import styles from '../styles/Topbar.module.css'
 import { TopbarContext } from '../contexts/Topbar'
-import { ProfileContext } from '../contexts/ProfileModal';
+import { ProfileContext } from '../contexts/ProfileModal'
 import Preferences from './Preferences'
 import EditProfile from './EditProfile'
 
-
 const TopbarModal = () => {
-  const { toggleModalState } = useContext(ProfileContext);
+  const { toggleModalState } = useContext(ProfileContext)
 
   const state = useContext(TopbarContext)
   const [showModal] = state.show
   const [showStatus, setShowStatus] = state.status
   const [chosenEmoji] = state.emoji
   const { onEmojiClick, openStatus, closeStatus, modalRef } = state
-  const [modal, setModal] = useState('');
+  const [modal, setModal] = useState('')
 
   return (
     <>
@@ -78,21 +77,28 @@ const TopbarModal = () => {
           <hr />
 
           <div className={styles.sectionFour}>
-            <p onClick={() => { toggleModalState(); setModal('edit profile')}}>Edit profile</p>
+            <p
+              onClick={() => {
+                toggleModalState()
+                setModal('edit profile')
+              }}
+            >
+              Edit profile
+            </p>
             <p>View profile</p>
-            <p onClick={() => { toggleModalState(); setModal('preference')}}>Preference</p>
+            <p
+              onClick={() => {
+                toggleModalState()
+                setModal('preference')
+              }}
+            >
+              Preference
+            </p>
           </div>
 
-          {
-            modal === "edit profile" &&
-            <EditProfile />
-          }
+          {modal === 'edit profile' && <EditProfile />}
 
-          {
-            modal === "preference" &&
-            <Preferences />
-          }
-
+          {modal === 'preference' && <Preferences />}
 
           <hr />
 
