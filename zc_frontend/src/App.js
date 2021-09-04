@@ -21,7 +21,7 @@ const App = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/" exact>
-       <LandingPage />
+        <LandingPage />
       </Route>
       <Route path="/home">
         <Home />
