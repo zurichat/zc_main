@@ -29,7 +29,6 @@ const LandingPage = () => {
         <img src={landing_zuri_logo} alt="zuri chat logo" />
         <ContinueButton />
       </div>
-
       <div className={styles.welcome__div}>
         <h1>
           <span>
