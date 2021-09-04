@@ -4,8 +4,8 @@ import styles from './styles/Login.module.css'
 import React, { useState } from 'react'
 // import LoginLoading from '../../components/LoginLoading'
 import GoogleLogin from 'react-google-login'
-import { useHistory } from 'react-router-dom'
 import LoginLoading from '../../components/LoginLoading'
+import { Link, useHistory } from 'react-router-dom'
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -70,7 +70,9 @@ const Login = () => {
             </span>
           </div>
           <div className={`pt-1 mt-3`}>
-            <h2 className={`pt-2 `}>Log in</h2>
+            <h2 className={`pt-2 `}>
+              <Link title="Log in" color="#00B87C" />
+            </h2>
             <p className={styles.subtext}>
               Login with the data you entered during your
             </p>
