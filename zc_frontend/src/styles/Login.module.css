@@ -124,6 +124,16 @@
   .button_outline > img {
     width: 14%;
   }
+  .side {
+    display: none;
+  }
+  .loginheader {
+    text-align: center;
+  }
+  .subtext {
+    text-align: center;
+    font-size: 14px;
+  }
 }
 @media only screen and (max-width: 600px) {
   .side {
