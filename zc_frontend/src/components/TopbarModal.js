@@ -12,8 +12,9 @@ import Preferences from './Preferences'
 import EditProfile from './EditProfile'
 
 const TopbarModal = () => {
-  const state = useContext(TopbarContext)
   const { toggleModalState } = useContext(ProfileContext)
+
+  const state = useContext(TopbarContext)
   const [showModal] = state.show
   const [showStatus, setShowStatus] = state.status
   const [chosenEmoji] = state.emoji
