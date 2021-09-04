@@ -1,6 +1,6 @@
 import React from 'react'
 import './Spinner.css'
-import zuriicon from '../../images/zuriicon.png'
+import zuriicon from '../../../assets/loadingPageImages/zurilogo.png'
 
 const Spinner = () => {
   return (
