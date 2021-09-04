@@ -637,7 +637,6 @@ cookie-session@^1.4.0:
     debug "2.6.9"
     on-headers "~1.0.2"
 
->>>>>>> cfd40e828908629eb8163783c383279121086717
 cookie-signature@1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/cookie-signature/-/cookie-signature-1.0.6.tgz#e303a882b342cc3ee8ca513a79999734dab3ae2c"
@@ -768,7 +767,6 @@ depd@~2.0.0:
   resolved "https://registry.yarnpkg.com/depd/-/depd-2.0.0.tgz#b696163cc757560d09cf22cc8fad1571b79e76df"
   integrity sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==
 
->>>>>>> cfd40e828908629eb8163783c383279121086717
 destroy@~1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/destroy/-/destroy-1.0.4.tgz#978857442c44749e4206613e37946205826abd80"
@@ -2805,18 +2803,12 @@ yargs@^16.2.0:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
-=======
->>>>>>> cfd40e828908629eb8163783c383279121086717
+
 yarn@^1.22.11:
   version "1.22.11"
   resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.11.tgz#d0104043e7349046e0e2aec977c24be106925ed6"
   integrity sha512-AWje4bzqO9RUn3sdnM5N8n4ZJ0BqCc/kqFJvpOI5/EVkINXui0yuvU7NDCEF//+WaxHuNay2uOHxA4+tq1P3cg==
 
-<<<<<<< HEAD
-=======
->>>>>>> c023180bebfe2a84cff2fa9bd2396e7d821f8d9a
-=======
->>>>>>> cfd40e828908629eb8163783c383279121086717
 yarpm@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/yarpm/-/yarpm-1.1.1.tgz#23e25e512b409d941524a9674718f1871e5fb52a"
