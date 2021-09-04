@@ -74,6 +74,9 @@ const App = () => (
       </Route>
       <Route path="/header">
         <Header />
+    <Route path="/marketplace" exact>
+        <MarketPlace />
+      </Route>
       </Route>
       <Route path="/faq">
         <FAQ />
