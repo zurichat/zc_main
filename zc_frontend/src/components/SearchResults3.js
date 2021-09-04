@@ -11,7 +11,9 @@ const data = [
   { content: 'MORE' }
 ]
 
-const Headings = ({ content }) => <div className={styles.heading}>{content}</div>
+const Headings = ({ content }) => (
+  <div className={styles.heading}>{content}</div>
+)
 
 const SearchResults3 = () => {
   const [searchTerm, setSearchTerm] = useState('')
@@ -36,8 +38,8 @@ const SearchResults3 = () => {
         </div>
         <div className={styles.results}>
           <div>
-            Your search <span className={styles.bold}>{searchTerm}</span> did not match any answers we
-            have.
+            Your search <span className={styles.bold}>{searchTerm}</span> did
+            not match any answers we have.
           </div>
 
           <h4>Suggestions:</h4>

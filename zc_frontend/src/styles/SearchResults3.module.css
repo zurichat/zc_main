@@ -7,11 +7,11 @@
 }
 
 .wrapper {
-    width: 500px;
+  width: 500px;
 }
 
 .formContainer {
-    width: 100%;
+  width: 100%;
 }
 
 .formContainer input {
@@ -23,60 +23,60 @@
 }
 
 .headings {
-    margin: 1em 0 2em;
-    display: flex;
-    gap: 8px;
-    font-size: 13px;
-    font-weight: 600;
-    white-space: nowrap
+  margin: 1em 0 2em;
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .heading {
-    padding-bottom: 5px;
-    cursor: pointer;
+  padding-bottom: 5px;
+  cursor: pointer;
 }
 
-.heading:hover{
-    padding-bottom: 3px;
-    border-bottom: 2px solid #000000;
+.heading:hover {
+  padding-bottom: 3px;
+  border-bottom: 2px solid #000000;
 }
 
 .bold {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .results {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .results > div {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .results > h4 {
-    font-size: 1.1rem;
-    font-weight: 700;
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 
 .results li {
-    list-style-type: disc;
-    list-style-position: inside;
+  list-style-type: disc;
+  list-style-position: inside;
 }
 
 @media (max-width: 768px) {
-    .wrapper {
-        width: 450px;
-    }
+  .wrapper {
+    width: 450px;
+  }
 }
 
 @media (max-width: 576px) {
-    .wrapper {
-        width: 300px;
-    }
+  .wrapper {
+    width: 300px;
+  }
 
-    .headings {
-        gap: 4px;
-        font-size: 8px;
-    }
+  .headings {
+    gap: 4px;
+    font-size: 8px;
+  }
 }
