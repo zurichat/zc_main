@@ -18,6 +18,7 @@ import './styles/globals.css'
 import MarketPlace from './pages/marketplace/marketplace'
 import Input from './components/externalPagesComponents/Input'
 import FAQ from './pages/FAQ'
+import SearchResult from './components/SearchResults3'
 
 const App = () => (
   <BrowserRouter>
@@ -66,6 +67,9 @@ const App = () => (
       </Route>
       <Route path="/input">
         <Input />
+      </Route>
+      <Route path="/search">
+        <SearchResult />
       </Route>
     </Switch>
   </BrowserRouter>
