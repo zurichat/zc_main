@@ -16,7 +16,7 @@ import Pricing from './pages/pricing'
 import Header from './components/externalPagesComponents/Header'
 import Input from './components/externalPagesComponents/Input'
 import FAQ from './pages/FAQ'
-import Notification from './components/Notification'
+import SearchResult from './components/SearchResults3'
 
 const App = () => (
   <BrowserRouter>
@@ -66,8 +66,8 @@ const App = () => (
       <Route path="/input">
         <Input />
       </Route>
-      <Route path="/notification">
-        <Notification />
+      <Route path="/search">
+        <SearchResult />
       </Route>
     </Switch>
   </BrowserRouter>
