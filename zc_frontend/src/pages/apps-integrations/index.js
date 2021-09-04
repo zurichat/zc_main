@@ -1,3 +1,4 @@
+ integration-section-one
 import SectionOne from './SectionOne'
 
 function AppsAndIntegrations() {
@@ -7,6 +8,11 @@ function AppsAndIntegrations() {
       <SectionOne />
     </div>
   )
+import Categories from './Categories'
+
+function AppsAndIntegrations() {
+  return <Categories />
+ develop
 }
 
 export default AppsAndIntegrations
