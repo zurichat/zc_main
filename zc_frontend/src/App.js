@@ -20,7 +20,6 @@ import Input from './components/externalPagesComponents/Input'
 import FAQ from './pages/FAQ'
 import Settings from './pages/settings'
 import SearchResult from './components/SearchResults3'
-import Notification from './components/Notification'
 import LinkComponent from './components/externalPagesComponents/Link'
 import Cookies from './pages/cookies'
 
@@ -91,9 +90,6 @@ const App = () => (
           color={`black`}
           underline
         />
-      </Route>
-      <Route path="/notification">
-        <Notification />
       </Route>
     </Switch>
   </BrowserRouter>
