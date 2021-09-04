@@ -9,8 +9,7 @@ const LoginLoading = () => {
         <span>ZURI</span>
       </div>
       <div className={styles.loaderContainer}>
-        <div className={styles.loadingCircle}>
-        </div>
+        <div className={styles.loadingCircle}></div>
         <img src="/zurichatlogo.svg" alt="logo" />
       </div>
       <div className={styles.loadingStatus}>
@@ -21,7 +20,6 @@ const LoginLoading = () => {
         <img src="/loading-image-2.svg" alt="" />
         <img src="/loading-image-3.svg" alt="" />
       </div>
-
     </div>
   )
 }
