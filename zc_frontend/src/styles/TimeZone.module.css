@@ -16,3 +16,10 @@
   border-radius: 5px;
 }
 
+@media only screen and (max-width: 600px) {
+  .timezoneContainer {
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+  }
+}
