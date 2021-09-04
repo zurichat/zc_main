@@ -10,6 +10,7 @@
 .container {
   display: flex;
   background-color: #ffffff;
+  flex-direction: row;
   margin-left: 50px;
   margin-top: 20px;
   margin: 0 auto;
