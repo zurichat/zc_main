@@ -5,9 +5,11 @@ import SignUp from './pages/signup';
 import Blog from './pages/blog';
 import News from './pages/news';
 import './styles/globals.css';
+import InvitationAcceptance from './components/InvitationAcceptance';
 
 const App = () => (
   <BrowserRouter>
+    <InvitationAcceptance/>
     <Switch>
       <Route path="/" exact>
         <Home />
