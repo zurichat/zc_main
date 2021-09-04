@@ -1,0 +1,17 @@
+.marketplace-label {
+  background: #00b87c;
+  border: 1px solid #00b87c;
+  border-radius: 32px;
+  align-items: center;
+}
+
+.marketplace-label img {
+  margin-right: 12px;
+}
+
+.hero-label {
+  height: 50px;
+  padding: 0.5rem 1.2rem;
+  width: 100%;
+  justify-content: center;
+}
