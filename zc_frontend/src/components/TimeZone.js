@@ -15,11 +15,7 @@ const TimeZone = () => {
 
   return (
     <div className={styles.timezoneContainer}>
-      <div>Time Zone</div>
       <TimezoneSelect value={selectedTimezone} onChange={setSelectedTimezone} />
-      <div className={styles.timezoneSelect}>
-        Current Date / Time in <pre>{datetime.unixFmt('HH:mm')}</pre>
-      </div>
     </div>
   )
 }
