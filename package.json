@@ -18,7 +18,10 @@
     "postinstall": "cd zc_frontend && yarpm-yarn install"
   },
   "dependencies": {
+    "@babel/helper-wrap-function": "^7.15.4",
     "axios": "^0.21.1",
+    "cookie-parser": "^1.4.5",
+    "cookie-session": "^1.4.0",
     "dotenv": "^10.0.0",
     "emoji-picker-react": "^3.4.8",
     "express": "^4.17.1",
