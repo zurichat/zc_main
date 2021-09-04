@@ -3,7 +3,7 @@ const path = require('path')
 
 const isProduction = process.env.NODE_ENV === 'production'
 
-module.exports = (app) => {
+module.exports = app => {
   app.use(
     (_, res, next) => {
       if (!isProduction) {
