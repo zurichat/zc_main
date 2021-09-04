@@ -1,16 +1,16 @@
-import zurilogo from '../assets/loadingPagesImages/zuriicon.png';
-import chattingguys from '../assets/loadingPagesImages/chattingguys.png';
-import flowerpot1 from '../assets/loadingPagesImages/flowerpot1.png';
-import flowerpot2 from '../assets/loadingPagesImages/flowerpot2.png';
-import Spinner from '../spinner/Spinner';
-import './loading.css';
+import zurilogo from '../assets/loadingPagesImages/zuriicon.png'
+import chattingguys from '../assets/loadingPagesImages/chattingguys.png'
+import flowerpot1 from '../assets/loadingPagesImages/flowerpot1.png'
+import flowerpot2 from '../assets/loadingPagesImages/flowerpot2.png'
+import Spinner from '../spinner/Spinner'
+import './loading.css'
 
-function loading () {
+function loading() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={zurilogo} className="App-logo" alt="logo" />
-        <Spinner/>
+        <Spinner />
         <p className="zuri-launch">
           <strong>Launching Zuri Chat...</strong>
         </p>
@@ -19,7 +19,7 @@ function loading () {
         <img src={chattingguys} className="chatting-guys" alt="Guys chatting" />
       </header>
     </div>
-  );
-};
+  )
+}
 
-export default loading;
+export default loading

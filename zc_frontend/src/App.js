@@ -3,7 +3,7 @@ import LandingPage from './components/LandingPage'
 import Loading from './components/Loading/loading'
 import Home from './pages/home'
 import Login from './pages/login'
-import SignUp from './pages/signup';
+import SignUp from './pages/signup'
 import './styles/globals.css'
 // import 'tailwindcss/tailwind.css'
 import Security from './pages/security'
@@ -26,7 +26,6 @@ import Settings from './pages/settings'
 import SearchResult from './components/SearchResults3'
 import LinkComponent from './components/externalPagesComponents/Link'
 import Cookies from './pages/cookies'
-
 
 const App = () => (
   <BrowserRouter>
@@ -75,9 +74,9 @@ const App = () => (
       </Route>
       <Route path="/header">
         <Header />
-    <Route path="/marketplace" exact>
-        <MarketPlace />
-      </Route>
+        <Route path="/marketplace" exact>
+          <MarketPlace />
+        </Route>
       </Route>
       <Route path="/faq">
         <FAQ />
