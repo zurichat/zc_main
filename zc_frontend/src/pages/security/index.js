@@ -68,9 +68,9 @@ const Security = () => {
         </div>
       </section>
       <section className={securityFeatureStyles.wrapper}>
-      <h2 className={securityStyles.complianceheading}>
-          Meet specific industry regulations and international security and data privacy
-          standards.
+        <h2 className={securityStyles.complianceheading}>
+          Meet specific industry regulations and international security and data
+          privacy standards.
         </h2>
         <div className={securityFeatureStyles.features}>
           <SecurityFeature
@@ -81,15 +81,11 @@ const Security = () => {
             img="/FINRA.png"
             title="Financial Industry Regulatory Authority(FINRA)"
           />
-          <SecurityFeature
-            img="/FR.png"
-            title="FR"
-          />
+          <SecurityFeature img="/FR.png" title="FR" />
           <SecurityFeature
             img="/TISAX.png"
             title="TRUSTED INFORMATION SECURITY ASSESSMENT EXCHANGE(TISAX)"
           />
-
         </div>
         <div className={securityFeatureStyles.banner}>
           <h2>Want to know more about Zuri for your Organisation?</h2>
