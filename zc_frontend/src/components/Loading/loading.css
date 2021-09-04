@@ -20,11 +20,11 @@
     right: 0%;
     bottom: 0%;
   }
-  .zuri-launch{
+  .zuri-launch {
     position: absolute;
     top: 30%;
   }
-} 
+}
 .App-header {
   background-color: #fff;
   min-height: 100vh;
@@ -35,4 +35,3 @@
   font-size: calc(10px + 2vmin);
   color: #000;
 }
-
