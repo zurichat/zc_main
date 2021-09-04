@@ -69,7 +69,7 @@ const App = () => (
       </Route>
       <Route path="/settings">
         <Settings />
-        </Route>
+      </Route>
       <Route path="/search">
         <SearchResult />
       </Route>
