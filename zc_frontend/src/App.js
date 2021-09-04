@@ -18,6 +18,7 @@ import './styles/globals.css'
 import MarketPlace from './pages/marketplace/marketplace'
 import Input from './components/externalPagesComponents/Input'
 import FAQ from './pages/FAQ'
+import Settings from './pages/settings'
 import SearchResult from './components/SearchResults3'
 import LinkComponent from './components/externalPagesComponents/Link'
 
@@ -68,6 +69,9 @@ const App = () => (
       </Route>
       <Route path="/input">
         <Input />
+      </Route>
+      <Route path="/settings">
+        <Settings />
       </Route>
       <Route path="/search">
         <SearchResult />

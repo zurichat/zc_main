@@ -138,7 +138,6 @@ export default class PricingTable extends React.Component {
                 business="thick"
                 enterprise="thick"
               />
-
               <TableRow head="ADMINISTRATION" isLabel={true} />
               <TableRow
                 head="Manage channel posting permissions"
