@@ -20,12 +20,12 @@
     right: 0%;
     bottom: 0%;
   }
-  .zuri_launch {
+  .zuri-launch {
     position: absolute;
     top: 30%;
   }
 }
-.App_header {
+.App-header {
   background-color: #fff;
   min-height: 100vh;
   display: flex;
