@@ -38,6 +38,7 @@
     z-index:1;
     padding:30px 0;
 }
+
 .banner::after{
     position:absolute;
     top:0;
