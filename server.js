@@ -28,6 +28,12 @@ app.use(useragent.express())
 routes(app)
 loadFrontend(app)
 
+const URL = 'mongodb+srv://workspaces:workspaces@cluster0.bow5d.mongodb.net/workspaces?retryWrites=true&w=majority'
+mongoose
+    .connect(URL)
+    .then(() => console.log('DB connection successful!!'))
+    .catch(() => console.log('ERROR: DB connection Failed!!'))
+
 app.listen(PORT, () => {
   console.log(
     `Server Started on Port: ${PORT}\nMode: ${process.env.NODE_ENV}\nURI: http://127.0.0.1:${PORT}`
