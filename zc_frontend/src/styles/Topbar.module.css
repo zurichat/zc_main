@@ -125,7 +125,11 @@
   font-size: 7px;
   margin-right: 5px;
 }
-
+.circlegrey {
+  color: grey;
+  font-size: 7px;
+  margin-right: 5px;
+}
 .oneRight p {
   font-size: 12px;
   font-family: Lato;

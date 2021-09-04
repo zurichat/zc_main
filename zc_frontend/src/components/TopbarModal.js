@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 
 // react icons
 import { FaChevronRight, FaCircle, FaTimes } from 'react-icons/fa'
@@ -15,6 +15,8 @@ const TopbarModal = () => {
   const [chosenEmoji] = state.emoji
   const { onEmojiClick, openStatus, closeStatus, modalRef } = state
 
+  //online appearance
+ const [appearOffline, setAppearOffline]= useState(false)
   return (
     <>
       {/* The section that shows the status */}
@@ -48,10 +50,17 @@ const TopbarModal = () => {
             </div>
             <div className={styles.oneRight}>
               <h4>Praise.A</h4>
+              {appearOffline?
+                <div className={styles.online}>
+                <FaCircle className={styles.circlegrey} />
+                <p>Away</p>
+              </div>
+              :
               <div className={styles.online}>
                 <FaCircle className={styles.circle} />
                 <p>Active</p>
               </div>
+              }
             </div>
           </div>
 
@@ -61,7 +70,9 @@ const TopbarModal = () => {
 
           <div className={styles.sectionThree}>
             <p onClick={openStatus}>Set a status</p>
-            <p>Set yourself as away</p>
+            <p onClick={()=>setAppearOffline(!appearOffline)}>
+            {appearOffline?'Set yourself as online': 'Set yourself as away'}
+            </p>
             <div className={styles.pause}>
               <p>Pause Notifications</p>
               <FaChevronRight className={styles.chevron} />
