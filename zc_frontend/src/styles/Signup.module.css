@@ -1,4 +1,12 @@
-.section {
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1rem;
+}
+
+.section_signup {
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -35,6 +43,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
   height: auto;
 }
@@ -48,14 +57,15 @@
 
 .formLogo {
   margin: 10px 0 10px -60px;
-  height: 2.5rem;
+  height: 4rem;
 }
 
 .formInline_h2 {
   color: #3a3a3a;
   font-weight: bolder;
-  font-size: 20px;
-  text-transform: uppercase;
+  font-size: 3.1rem;
+  line-height: 4.8rem;
+  text-transform: capitalize;
   margin: 2px 0;
 }
 
@@ -67,7 +77,8 @@
 
 .inputBx_span {
   font-weight: 700;
-  font-size: 24px;
+  font-size: 2.1rem;
+  line-height: 2.4rem;
   display: block;
   color: #3a3a3a;
   font-size: 16px;
@@ -77,10 +88,30 @@
 
 .inputErrorMsg {
   font-weight: normal;
-  font-size: 1rem;
-  padding-left: 1rem;
+  font-size: 1.6rem;
+  padding-left: 1.6rem;
   color: #ff0000;
   letter-spacing: 1px;
+}
+
+.cust_input_grp {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  border: 1px solid rgb(239, 239, 239);
+  border-radius: 0.8rem;
+}
+
+.cust_input_grp:active {
+  border-color: rgba(0, 184, 124, 0.6);
+}
+
+.cust_input_grp .inputBx_input {
+  border: none;
+}
+
+.cust_input_grp .inputBx_input:focus {
+  border-color: transparent;
 }
 
 .inputBx_input {
@@ -95,24 +126,40 @@
   border-radius: 8px;
 }
 
+.inputBx_input:focus {
+  border-color: rgba(0, 184, 124, 0.6);
+}
+
+ .visibility {
+   height: 1.4rem;
+   width: 1.2rem;
+   margin-right: 1.2rem;
+   transition: all 0.5s ease-out;
+   -webkit-transition: all 0.5s ease-out;
+   -moz-transition: all 0.5s ease-out;
+   cursor: pointer;
+ } 
+
 .toc {
   color: #3a3a3a;
   font-size: 12px;
   letter-spacing: 1px;
-  padding: 5px 5px;
-  display: inline-flex;
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
 }
 
 .toc_input {
   margin-right: 14px;
-  margin-top: 1px;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 .tocText {
   color: #b8003c;
 }
 
-.btn {
+.custom_form_btn {
   width: 100%;
   background: #2f80ed;
   color: #fff;
@@ -121,7 +168,9 @@
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
-  margin-left: -1px;
+  border-radius: 0.8rem;
+  padding: 1.4rem 0;
+  margin: 0;
 }
 
 .lineSpan {
@@ -130,6 +179,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   padding: 10px 0;
 }
 
@@ -137,17 +187,13 @@
   flex-grow: 1;
   height: 1.5px;
   content: '\a0';
-  background-color: rgb(0, 184, 124, 0.3);
-  position: relative;
-  top: 0.5em;
+  background-color: rgb(0, 184, 124);
 }
 .lineSpan:after {
   flex-grow: 1;
   height: 1.5px;
   content: '\a0';
-  background-color: rgb(0, 184, 124, 0.3);
-  position: relative;
-  top: 0.5em;
+  background-color: rgb(0, 184, 124);
 }
 
 .lineSpan:before {
@@ -195,6 +241,7 @@
   font-size: 10px;
   margin: auto 24px;
   color: #999999;
+  text-transform: capitalize;
 }
 
 @media screen and (max-width: 768px) {
@@ -218,11 +265,11 @@
   }
   .formLogo {
     margin: 16px 0 16px -3px;
-    height: 1.5rem;
+    height: 2.4rem;
   }
 
   .formInline {
-    width: 80%;
+    width: 90%;
     padding: 0 0 0 0;
     align-items: center;
     height: 100%;
@@ -237,6 +284,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .terms_label {
+    font-size: 1.1rem;
+    line-height: 2rem;
   }
   .footer_a {
     margin: auto 16px;
