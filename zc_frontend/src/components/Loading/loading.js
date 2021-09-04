@@ -1,8 +1,8 @@
-import zurilogo from '../assets/loadingPagesImages/zuriicon.png'
-import chattingguys from '../assets/loadingPagesImages/chattingguys.png'
-import flowerpot1 from '../assets/loadingPagesImages/flowerpot1.png'
-import flowerpot2 from '../assets/loadingPagesImages/flowerpot2.png'
-import Spinner from '../spinner/Spinner'
+import zurilogo from '../../assets/loadingPageImages/zurilogo.png'
+import chattingguys from '../../assets/loadingPageImages/chattingguys.png'
+import flowerpot1 from '../../assets/loadingPageImages/flowerpot1.png'
+import flowerpot2 from '../../assets/loadingPageImages/flowerpot2.png'
+import Spinner from './spinner/Spinner'
 import './loading.css'
 
 function loading() {
