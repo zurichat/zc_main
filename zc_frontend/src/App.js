@@ -80,6 +80,18 @@ const App = () => (
           underline
         />
       </Route>
+      <Route path="/header">
+        <Header />
+      </Route>
+      <Route path="/faq">
+        <FAQ />
+      </Route>
+      <Route path="/input">
+        <Input />
+      </Route>
+      <Route path="/search">
+        <SearchResult />
+      </Route>
     </Switch>
   </BrowserRouter>
 )

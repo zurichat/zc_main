@@ -13,6 +13,8 @@ const Message = ({ type }) => {
             <a>Visit Help Center</a>
 
             <a href="/help-center">Visit Help Center</a>
+
+            <a href="/help-center">Visit Help Center</a>
           </button>
         </div>
       </div>
@@ -23,6 +25,7 @@ const Message = ({ type }) => {
       <p>Whatever work you do,you can do it in Zuri Chat</p>
       <div className={styles.buttonSection}>
         <button className={styles.buttonFilled}>
+          integration-section-one
           <a>Talk to Sales</a>
         </button>
         <button className={styles.buttonOutline}>
