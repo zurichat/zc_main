@@ -10,5 +10,4 @@ router.get('/workspaces/:id', workspaceController.getWorkspace)
 router.patch('/workspaces/:id', workspaceController.updateWorkspace)
 router.delete('/workspaces/:id', workspaceController.deleteWorkspace)
 
-
 module.exports = router
