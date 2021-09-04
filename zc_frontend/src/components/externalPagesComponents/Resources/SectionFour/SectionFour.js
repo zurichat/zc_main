@@ -61,7 +61,7 @@ function SectionFour() {
   return (
     <div className={styles.container}>
       <div className={styles.divider}>
-        <img src="divider.svg" alt="" />
+        <img alt="divider" src="divider.svg" />
       </div>
       <h3 className={styles.intro}>
         Discover the only skill-building platform designed for learners and L&D
@@ -74,7 +74,7 @@ function SectionFour() {
             Leading organizations share their tips for supporting workplace
             collaboration—no matter where or when that work happens
           </h3>
-          <img src="resourceimage4a.png" alt="" />
+          <img alt="resource" src="resourceimage4a.png" />
           <div className={styles.icon_container}>
             <div className={styles.like}>
               <i className="far fa-thumbs-up"></i>
@@ -91,7 +91,7 @@ function SectionFour() {
             Leading organizations share their tips for supporting workplace
             collaboration—no matter where or when that work happens
           </h3>
-          <img src="resourceimage4b.png" />
+          <img alt="resource" src="resourceimage4b.png" />
           <div className={styles.icon_container}>
             <div className={styles.like}>
               <i className="far fa-thumbs-up"></i>
@@ -107,7 +107,7 @@ function SectionFour() {
 
       <div className={styles.section_two}>
         <div className={styles.header}>
-          <img src="logo.svg" />
+          <img alt="resource" src="logo.svg" />
           <div className={styles.header_description}>
             <h3>Try Zuri Chat with your team for free.</h3>
             <h5>Get Started</h5>
@@ -139,7 +139,7 @@ function SectionFour() {
       </div>
 
       <div className={styles.section_four}>
-        <img src="getApp.svg" alt="" />
+        <img alt="resource" src="getApp.svg" />
         <div className={styles.footer_body}>
           <div className={styles.footer_others}>
             <OtherList otherList={otherList} />
@@ -147,10 +147,10 @@ function SectionFour() {
           <div className={styles.footer_download}>
             <h4>Download Zuri</h4>
             <div className={styles.icons_box}>
-              <img src="facebook-icon.svg" alt="" />
-              <img src="twitter-icon.svg" alt="" />
-              <img src="instagram-icon.svg" alt="" />
-              <img src="youtube-icon.svg" alt="" />
+              <img alt="resource" src="facebook-icon.svg" />
+              <img alt="resource" src="twitter-icon.svg" />
+              <img alt="resource" src="instagram-icon.svg" />
+              <img alt="resource" src="youtube-icon.svg" />
             </div>
           </div>
         </div>
