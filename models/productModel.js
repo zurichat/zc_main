@@ -4,31 +4,30 @@ const productSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: true,
+      required: true
     },
     description: {
-      type: String,
+      type: String
     },
     category: {
       type: SchemaTypes.ObjectId,
-      ref: 'category',
+      ref: 'category'
     },
     productImage: {
-      type: String,
+      type: String
     },
     price: {
       type: Number,
-      required: true,
+      required: true
     },
     dateAdded: {
       type: Date,
-      default: Date.now,
-    },
+      default: Date.now
+    }
   },
 
   { timestamps: true }
-);
-
+)
 
 const Product = mongoose.model('Product', productSchema)
 
