@@ -15,6 +15,7 @@ import ContactUs from './pages/contact-us'
 import Pricing from './pages/pricing'
 import Header from './components/externalPagesComponents/Header'
 import Input from './components/externalPagesComponents/Input'
+import CookiesBanner from './components/externalPagesComponents/CookiesBanner/cookiesBanner'
 import FAQ from './pages/FAQ'
 
 const App = () => (
@@ -64,6 +65,9 @@ const App = () => (
       </Route>
       <Route path="/input">
         <Input />
+      </Route>
+      <Route path="/CookiesBanner">
+        <CookiesBanner />
       </Route>
     </Switch>
   </BrowserRouter>
