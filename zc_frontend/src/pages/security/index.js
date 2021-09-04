@@ -2,11 +2,13 @@ import ComplianceCertification from './components/ComplianceCertification'
 import securityStyles from './styles/security.module.css'
 // import Header from '../../components/externalPagesComponents/Header'
 import Footer from '../../components/externalPagesComponents/Footer/Footer'
+import Section1 from '../../components/externalPagesComponents/Security'
 
 const Security = () => {
   return (
     <div>
       {/* <Header /> */}
+      <Section1 />
       <section className={securityStyles.compliancesection}>
         <h2 className={securityStyles.complianceheading}>
           The security program at Zuri protects our organization and your data
@@ -32,7 +34,7 @@ const Security = () => {
             description="Information Security Management System (ISMS)"
           />
           <ComplianceCertification
-            img="/security-badge-green.png"
+            img="/iso_27018.png"
             title="ISO/IEC 27001"
             description="Information Security Management System (ISMS)"
           />
