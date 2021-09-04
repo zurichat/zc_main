@@ -11,7 +11,7 @@ const SectionOne = () => (
       <div
         className={`col-md-7 col-sm-12 d-flex flex-column justify-content-center`}
       >
-        <div className={`${styles.content} px-3 px-lg-0`}>
+        <div className={`mx- ${styles.content}`}>
           <h2 className={styles.heading2}>Work with us</h2>
           <p className={`py-4 mb-4 px-0 ${styles.explore}`}>
             Explore remote-friendly, flexible opportunities and join our mission
@@ -24,7 +24,7 @@ const SectionOne = () => (
       </div>
 
       <div className={`col-md-5 col-sm-12`}>
-        <div className={`${styles.icontainer} px-3 px-lg-0`}>
+        <div className={`${styles.icontainer}`}>
           <img
             src={careerPersons}
             alt="career_persons"
