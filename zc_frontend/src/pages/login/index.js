@@ -8,22 +8,18 @@ import { Link, useHistory } from 'react-router-dom'
 
 const Login = () => {
   const [email, setEmail] = useState('')
-  const [pass, setPass] = useState({
-    password: '',
-    showPassword: false
-  })
+  const [password, setPassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
+  
   let history = useHistory()
-  // const handleClickShowPassword = () => {
-  //   setPass({ ...pass, showPassword: !pass.showPassword })
-  // }
+  
+  const handleClickShowPassword = () => {
+     setShowPassword((prev)=> !prev)
+   }
 
-  const handleMouseDownPassword = event => {
-    event.preventDefault()
-  }
+  
 
-  const handlePasswordChange = prop => event => {
-    setPass({ ...pass, [prop]: event.target.value })
-  }
+  
   const successResponseGoogle = response => {
     history.push('/')
   }
@@ -91,22 +87,22 @@ const Login = () => {
             <div className={`d-flex ${styles.email_input}`}>
               <div className={`mb-3 col-12 col-md-6 w-100 d-flex`}>
                 <input
-                  type={pass.showPassword ? 'text' : 'password'}
-                  onChange={handlePasswordChange('password')}
+                  type={showPassword ? 'text' : 'password'}
+                  
                   className={`py-2 form-control`}
-                  value={pass.password}
+                  value={password}
                   onChange={e => {
                     console.log(e.target.value)
-                    setPass(e.target.value)
+                    setPassword(e.target.value)
                   }}
                   placeholder="Enter a password"
                   id="id_password"
                 />
               </div>
               <i
-                className={`far fa-eye-slash ${styles.far}`}
-                // onClick={handleClickShowPassword}
-                onMouseDown={handleMouseDownPassword}
+                className={`far fa-eye${showPassword ? '' : '-slash'} ${styles.far} cursor-pointer`}
+                onClick={handleClickShowPassword}
+                //onMouseDown={handleMouseDownPassword}
               ></i>
               {/* {pass.password ? <i className={`far far-eye ${styles.far}`}></i>: <i className={`far fa-eye-slash ${styles.far}`}></i>} */}
             </div>
