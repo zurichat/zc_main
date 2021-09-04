@@ -21,6 +21,7 @@ import FAQ from './pages/FAQ'
 import Settings from './pages/settings'
 import SearchResult from './components/SearchResults3'
 import LinkComponent from './components/externalPagesComponents/Link'
+import SearchSuggestion from './pages/searchSuggestion'
 
 const App = () => (
   <BrowserRouter>
@@ -78,6 +79,9 @@ const App = () => (
       </Route>
       <Route path="/search">
         <SearchResult />
+      </Route>
+      <Route path="/searchsuggestion">
+        <SearchSuggestion />
       </Route>
       <Route path="/link">
         <LinkComponent
