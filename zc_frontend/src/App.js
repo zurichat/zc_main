@@ -22,6 +22,7 @@ import Settings from './pages/settings'
 import SearchResult from './components/SearchResults3'
 import Notification from './components/Notification'
 import LinkComponent from './components/externalPagesComponents/Link'
+import Cookies from './pages/cookies'
 
 const App = () => (
   <BrowserRouter>
@@ -79,6 +80,9 @@ const App = () => (
       </Route>
       <Route path="/search">
         <SearchResult />
+      </Route>
+      <Route path="/cookies-banner">
+        <Cookies />
       </Route>
       <Route path="/link">
         <LinkComponent
