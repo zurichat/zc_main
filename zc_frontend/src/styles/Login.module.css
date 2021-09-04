@@ -99,9 +99,10 @@
 
 .subtext {
   color: #686666;
-  padding-bottom: 13px;
   font-size: 14px;
   letter-spacing: normal;
+  position: relative;
+  right: 3%;
 }
 
 .email_input {
@@ -133,7 +134,7 @@
     margin-top: 10%;
   }
   .subtext {
-    font-size: 11px;
+    font-size: 10px;
     text-align: center;
   }
   .line {
