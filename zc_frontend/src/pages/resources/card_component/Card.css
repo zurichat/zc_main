@@ -1,0 +1,22 @@
+.cards {
+  width: 295px;
+  font-family: Lato;
+  font-weight: normal;
+  line-height: 31px;
+}
+
+.highlighted_text {
+  color: #00b87c;
+  font-size: 25px;
+  text-decoration: underline;
+  font-style: normal;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+
+.text {
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+}

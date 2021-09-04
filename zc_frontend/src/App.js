@@ -2,10 +2,11 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from './pages/home'
 import Login from './pages/login'
 import SignUp from './pages/signup'
+import Resource from './pages/resources'
 // import Blog from './pages/blog'
 // import News from './pages/news'
 import './styles/globals.css'
-import 'tailwindcss/tailwind.css'
+// import 'tailwindcss/tailwind.css'
 
 const App = () => (
   <BrowserRouter>
@@ -18,6 +19,9 @@ const App = () => (
       </Route>
       <Route path="/signup">
         <SignUp />
+      </Route>
+      <Route path="/Resource">
+        <Resource />
       </Route>
     </Switch>
   </BrowserRouter>
