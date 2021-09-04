@@ -16,6 +16,7 @@ import Pricing from './pages/pricing'
 import Header from './components/externalPagesComponents/Header'
 import Input from './components/externalPagesComponents/Input'
 import FAQ from './pages/FAQ'
+import Settings from './pages/settings'
 
 const App = () => (
   <BrowserRouter>
@@ -64,6 +65,9 @@ const App = () => (
       </Route>
       <Route path="/input">
         <Input />
+      </Route>
+      <Route path="/settings">
+        <Settings />
       </Route>
     </Switch>
   </BrowserRouter>
