@@ -12,7 +12,7 @@
 .compliancewrapper {
   display: flex;
   align-items: center;
-  justify-content: start;
+  /* justify-content: start; */
   flex-wrap: wrap;
 }
 .complianceheading {
@@ -60,7 +60,7 @@
   .compliancewrapper {
     display: flex;
     align-items: center;
-    justify-content: start;
+    /* justify-content: start; */
     flex-wrap: wrap;
   }
   .complianceheading {
