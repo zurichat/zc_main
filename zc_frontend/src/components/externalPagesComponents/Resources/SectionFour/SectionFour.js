@@ -3,13 +3,35 @@ import styles from './SectionFour.module.css'
 
 function SectionFour() {
   let productList = ['Features', 'Integrations', 'Enterprise', 'Solution']
-  let whySlackList = ['Slack vs Email', 'Channels', 'Engagement', 'Scale', 'Watch the demo']
-  const pricingList = ['Plans','Paid vs Free']
-  const resourceList = ['Partners', 'Developers', 'Apps' ]
+  let whySlackList = [
+    'Slack vs Email',
+    'Channels',
+    'Engagement',
+    'Scale',
+    'Watch the demo'
+  ]
+  const pricingList = ['Plans', 'Paid vs Free']
+  const resourceList = ['Partners', 'Developers', 'Apps']
   const partnerList = ['Blogs', 'Help Center', 'Events']
-  const companyList = ['About us', 'Leadership','Investor Relations', 'News', 'Career', 'Media Kit']
+  const companyList = [
+    'About us',
+    'Leadership',
+    'Investor Relations',
+    'News',
+    'Career',
+    'Media Kit'
+  ]
 
-  const otherList = ['Status', 'Privacy', 'Terms', 'Cookie', 'Preferences', 'Contact Us', 'Change', 'Region']
+  const otherList = [
+    'Status',
+    'Privacy',
+    'Terms',
+    'Cookie',
+    'Preferences',
+    'Contact Us',
+    'Change',
+    'Region'
+  ]
 
   const ProductList = ({ name, productArray }) => {
     return (
@@ -24,23 +46,23 @@ function SectionFour() {
     )
   }
 
-  const OtherList = ({ otherList}) => {
-      return (
-          <>
-            <ul className={styles.other_list}>
-                {otherList.map((other, key)=> (
-                    <li key={key}>{other}</li>
-                ))}
-            </ul>
-          </>
-      )
+  const OtherList = ({ otherList }) => {
+    return (
+      <>
+        <ul className={styles.other_list}>
+          {otherList.map((other, key) => (
+            <li key={key}>{other}</li>
+          ))}
+        </ul>
+      </>
+    )
   }
 
   return (
     <div className={styles.container}>
-        <div className={styles.divider}>
-            <img src="divider.svg" alt="" />
-        </div>
+      <div className={styles.divider}>
+        <img src="divider.svg" alt="" />
+      </div>
       <h3 className={styles.intro}>
         Discover the only skill-building platform designed for learners and L&D
         professionals
@@ -117,22 +139,25 @@ function SectionFour() {
       </div>
 
       <div className={styles.section_four}>
-          <img src="getApp.svg" alt="" />
-          <div className={styles.footer_body}>
-                <div className={styles.footer_others}>
-                    <OtherList otherList={otherList} />
-                </div>
-                <div className={styles.footer_download}>
-                    <h4>Download Zuri</h4>
-                    <div className={styles.icons_box}>
-                        <img src="facebook-icon.svg" alt="" />
-                        <img src="twitter-icon.svg" alt="" />
-                        <img src="instagram-icon.svg" alt="" />
-                        <img src="youtube-icon.svg" alt="" />
-                    </div>
-                </div>
+        <img src="getApp.svg" alt="" />
+        <div className={styles.footer_body}>
+          <div className={styles.footer_others}>
+            <OtherList otherList={otherList} />
           </div>
-          <p>©2021 Slack Technologies, LLC, a Salesforce company. All rights reserved. Various trademarks held by their respective owners.</p>
+          <div className={styles.footer_download}>
+            <h4>Download Zuri</h4>
+            <div className={styles.icons_box}>
+              <img src="facebook-icon.svg" alt="" />
+              <img src="twitter-icon.svg" alt="" />
+              <img src="instagram-icon.svg" alt="" />
+              <img src="youtube-icon.svg" alt="" />
+            </div>
+          </div>
+        </div>
+        <p>
+          ©2021 Slack Technologies, LLC, a Salesforce company. All rights
+          reserved. Various trademarks held by their respective owners.
+        </p>
       </div>
     </div>
   )

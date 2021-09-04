@@ -1,9 +1,11 @@
-import SectionFour from "../../components/externalPagesComponents/Resources/SectionFour/SectionFour.js";
+import SectionFour from '../../components/externalPagesComponents/Resources/SectionFour/SectionFour.js'
 
 function Resources() {
-  return <div>
-        <SectionFour />
+  return (
+    <div>
+      <SectionFour />
     </div>
+  )
 }
 
 export default Resources
