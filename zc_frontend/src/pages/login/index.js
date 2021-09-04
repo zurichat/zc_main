@@ -33,7 +33,7 @@ const Login = () => {
   return (
     <div className={`container-fluid ${styles.body}`}>
       <div class={`row`}>
-        <div class={`col-md-5 ${styles.side}`}>
+        <div class={`col-lg-5 col-md-12 ${styles.side}`}>
           <div className={`row`}>
             <img src="/Group3155.png" alt="" />
             <div className={`col-md-12 mb-5`}>
@@ -53,7 +53,7 @@ const Login = () => {
             </p>
             <img src="/Group3149.svg" alt="" />
           </div>
-          <div class={` col-md-6 d-flex ${styles.person}`}>
+          <div class={`col-md-6 col-md-6 d-flex ${styles.person}`}>
             <img class={`${styles.flower}`} src="/Group3151.png" alt="" />
             <img class={`${styles.person1}`} src="person1.svg" alt="" />
             <img class={`${styles.person2}`} src="person2.svg" alt="" />
@@ -177,7 +177,7 @@ const Login = () => {
             </div>
           </div>
           <div
-            class={`d-flex justify-content-around my-lg-3 my-md-5 ${styles.footer}`}
+            class={`d-flex justify-content-around my-lg-3 my-md-3 ${styles.footer}`}
           >
             <a href="/" class={`mx-md-4 text-secondary`}>
               Contact Us
