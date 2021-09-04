@@ -179,9 +179,9 @@ autoprefixer@^10.3.3:
     postcss-value-parser "^4.1.0"
 
 axios@^0.21.1:
-  version "0.21.3"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.3.tgz#f85d9b747f9b66d59ca463605cedf1844872b82e"
-  integrity sha512-JtoZ3Ndke/+Iwt5n+BgSli/3idTvpt5OjKyoCmz4LX5+lPiY5l7C1colYezhlxThjNa/NhngCUWZSZFypIFuaA==
+  version "0.21.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.2.tgz#21297d5084b2aeeb422f5d38e7be4fbb82239017"
+  integrity sha512-87otirqUw3e8CzHTMO+/9kh/FSgXt/eVDvipijwDtEuwbkySWZ9SBm6VEubmJ/kLKEoLQV/POhxXFb66bfekfg==
   dependencies:
     follow-redirects "^1.14.0"
 
@@ -731,6 +731,11 @@ express-device@^0.4.2:
   dependencies:
     device ">=0.3.1"
     express-partials "0.3.0"
+
+express-limiter@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/express-limiter/-/express-limiter-1.6.1.tgz#70ede144f9e875e3c7e120644018a6f7784bda71"
+  integrity sha512-w/Xz/FIHuAOIVIUeHSe6g2rSYTqCSKA9WFLO2CxX15BzEAK+avp7HoYd7pu/M2tEp5E/to253+4x8vQ6WcTJkQ==
 
 express-partials@0.3.0:
   version "0.3.0"
