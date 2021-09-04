@@ -10,7 +10,7 @@ const Features = () => {
     <>
       <Header />
       <Section2 />
-       <Section3 /> 
+      <Section3 />
       <Section4 />
       <SpecialFeatures />
       <Section6 />
