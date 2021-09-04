@@ -1,0 +1,46 @@
+.settingsTab {
+  padding: 20px 0;
+  border-bottom: 1px solid #dedede;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.settingsTab:last-child {
+  border-bottom: none;
+}
+
+.settingleft {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 15px;
+  color: #242424;
+  font-weight: bold;
+  width: 70%;
+}
+
+.settingleft span {
+  font-size: 11px;
+  font-weight: normal;
+  color: #999999;
+}
+
+.settingsright button {
+  background: #ffffff;
+  border: 1px solid #dedede;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 9px 18px;
+  font-size: 13px;
+}
+
+.settingsright .signout {
+  background: #f40101;
+  color: white;
+  font-size: 10px;
+}
+
+.settingsright .delete {
+  font-size: 10px;
+}
