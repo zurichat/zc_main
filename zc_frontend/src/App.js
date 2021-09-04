@@ -14,6 +14,8 @@ import Download from './pages/download'
 import ContactUs from './pages/contact-us'
 import Pricing from './pages/pricing'
 import Header from './components/externalPagesComponents/Header'
+import './styles/globals.css'
+import MarketPlace from './pages/marketplace/marketplace'
 import Input from './components/externalPagesComponents/Input'
 import FAQ from './pages/FAQ'
 import SearchResult from './components/SearchResults3'
@@ -54,11 +56,11 @@ const App = () => (
       <Route path="/contact-us">
         <ContactUs />
       </Route>
-      <Route path="/pricing">
-        <Pricing />
-      </Route>
       <Route path="/header">
         <Header />
+      </Route>
+      <Route path="/marketplace" exact>
+        <MarketPlace />
       </Route>
       <Route path="/faq">
         <FAQ />
