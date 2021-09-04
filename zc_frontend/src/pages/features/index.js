@@ -6,6 +6,8 @@ import Section6 from './components/Section6'
 
 import Section3 from './components/Section3'
 
+// import Section3 from './components/Section3'
+
 import Section2 from './components/Section2'
 import Footer from '../../components/externalPagesComponents/Footer/Footer'
 import SpecialFeatures from './components/SpecialFeatures'
@@ -18,6 +20,8 @@ const Features = () => {
       {/* <Section3 /> */}
 
       <Section3 />
+
+      {/* <Section3 /> */}
 
       <Section4 />
       <SpecialFeatures />
