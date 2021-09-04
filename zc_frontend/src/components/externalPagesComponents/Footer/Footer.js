@@ -74,7 +74,6 @@ const Footer = ({ showMessage, type }) => (
             <li className={styles.mainList}>
               <span className={styles.title}>Social Media</span>
               <div className={styles.socialMedia}>
-<<<<<<< HEAD
                 <a>
                   <img src="/facebook.svg" alt="" />
                 </a>
@@ -84,8 +83,7 @@ const Footer = ({ showMessage, type }) => (
                 <a>
                   <img src="/twitter.svg" alt="" />
                 </a>
-                <a>
-=======
+
                 <a href="/">
                   <img src="/facebook.svg" alt="" />
                 </a>
@@ -96,7 +94,6 @@ const Footer = ({ showMessage, type }) => (
                   <img src="/twitter.svg" alt="" />
                 </a>
                 <a href="/">
->>>>>>> 7208f18bad98a4b85b3e336b5146a068b6bd05b6
                   <img src="/linkedin.svg" alt="" />
                 </a>
               </div>
