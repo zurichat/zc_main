@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../../styles/Cookies.modules.css'
+import styles from './styles/Cookies.modules.css'
 import hamburger from '../../assets/hamburger.png'
 
 const Cookies = () => {
