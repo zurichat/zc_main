@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 
-
 import styles from '../styles/Tab.module.css'
 import SettingsTab from './SettingsTab'
 import ProfileTab from './ProfileTab'
@@ -33,30 +32,45 @@ const Tab = () => {
           id={menu ? styles.bloctabs : styles.none}
           onClick={() => setMenu(!menu)}
         >
-
           <button
-            className={toggleState === 1 ? `${styles.tabs} ${styles.activetabs}` : styles.tabs}
+            className={
+              toggleState === 1
+                ? `${styles.tabs} ${styles.activetabs}`
+                : styles.tabs
+            }
             onClick={() => toggleTab(1)}
           >
             Settings
           </button>
 
           <button
-            className={toggleState === 2 ? `${styles.tabs} ${styles.activetabs}` : styles.tabs}
+            className={
+              toggleState === 2
+                ? `${styles.tabs} ${styles.activetabs}`
+                : styles.tabs
+            }
             onClick={() => toggleTab(2)}
           >
             Notification
           </button>
 
           <button
-            className={toggleState === 3 ? `${styles.tabs} ${styles.activetabs}` : styles.tabs}
+            className={
+              toggleState === 3
+                ? `${styles.tabs} ${styles.activetabs}`
+                : styles.tabs
+            }
             onClick={() => toggleTab(3)}
           >
             Profile
           </button>
 
           <button
-            className={toggleState === 4 ? `${styles.tabs} ${styles.activetabs}` : styles.tabs}
+            className={
+              toggleState === 4
+                ? `${styles.tabs} ${styles.activetabs}`
+                : styles.tabs
+            }
             //   onClick={() => toggleTab(4)}
           >
             Access Log
@@ -64,12 +78,13 @@ const Tab = () => {
           {/* </div> */}
         </div>
 
-
         {/* THE SECTION OF THE CONTENT */}
         <div className={styles.contenttabs}>
           <div
             className={
-              toggleState === 1 ? `${styles.content} ${styles.activecontent}` : styles.content
+              toggleState === 1
+                ? `${styles.content} ${styles.activecontent}`
+                : styles.content
             }
           >
             <SettingsTab />
@@ -77,7 +92,9 @@ const Tab = () => {
 
           <div
             className={
-              toggleState === 2 ? `${styles.content} ${styles.activecontent}` : styles.content
+              toggleState === 2
+                ? `${styles.content} ${styles.activecontent}`
+                : styles.content
             }
           >
             <NotificationTab />
@@ -85,7 +102,9 @@ const Tab = () => {
 
           <div
             className={
-              toggleState === 3 ? `${styles.content} ${styles.activecontent}` : styles.content
+              toggleState === 3
+                ? `${styles.content} ${styles.activecontent}`
+                : styles.content
             }
           >
             <ProfileTab />
