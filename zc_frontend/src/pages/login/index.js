@@ -2,9 +2,10 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 import styles from './styles/Login.module.css'
 import React, { useState } from 'react'
-import LoginLoading from '../../components/LoginLoading'
+// import LoginLoading from '../../components/LoginLoading'
 import GoogleLogin from 'react-google-login'
-import { useHistory } from 'react-router-dom'
+import LoginLoading from '../../components/LoginLoading'
+import { Link, useHistory } from 'react-router-dom'
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -12,10 +13,11 @@ const Login = () => {
     password: '',
     showPassword: false
   })
+  const [showLoader, setShowLoader] = useState(false)
   let history = useHistory()
-  const handleClickShowPassword = () => {
-    setPass({ ...pass, showPassword: !pass.showPassword })
-  }
+  // const handleClickShowPassword = () => {
+  //   setPass({ ...pass, showPassword: !pass.showPassword })
+  // }
 
   const handleMouseDownPassword = event => {
     event.preventDefault()
@@ -32,6 +34,7 @@ const Login = () => {
   }
   return (
     <div className={`container-fluid ${styles.body}`}>
+      {showLoader && <LoginLoading />}
       <div class={`row`}>
         <div class={`col-md-5 ${styles.side}`}>
           <div className={`row`}>
@@ -67,7 +70,9 @@ const Login = () => {
             </span>
           </div>
           <div className={`pt-1 mt-3`}>
-            <h2 className={`pt-2 `}>Log in</h2>
+            <h2 className={`pt-2 `}>
+              <Link title="Log in" color="#00B87C" />
+            </h2>
             <p className={styles.subtext}>
               Login with the data you entered during your
             </p>
@@ -103,7 +108,7 @@ const Login = () => {
               </div>
               <i
                 className={`far fa-eye-slash ${styles.far}`}
-                onClick={handleClickShowPassword}
+                // onClick={handleClickShowPassword}
                 onMouseDown={handleMouseDownPassword}
               ></i>
               {/* {pass.password ? <i className={`far far-eye ${styles.far}`}></i>: <i className={`far fa-eye-slash ${styles.far}`}></i>} */}
@@ -132,6 +137,7 @@ const Login = () => {
             <div>
               <button
                 className={`${styles.button} btn mb-3 col-12 col-md-6 px-5 px-md-5 py-2`}
+                onClick={() => setShowLoader(true)}
               >
                 Log In
               </button>

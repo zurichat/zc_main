@@ -1,11 +1,16 @@
 const express = require('express')
 const routes = require('./routes')
 const helmet = require('helmet')
-const loadFrontend = require('./middlewares/load-frontend')
+const device = require('express-device')
+const useragent = require('express-useragent')
+const sessions = require('./lib/user_session')
 
+const loadFrontend = require('./middlewares/load-frontend')
 const PORT = process.env.PORT || 3000
 
 const app = express()
+
+app.use(express.json())
 
 // activate helmet--server security
 app.use(
@@ -14,6 +19,13 @@ app.use(
   })
 )
 app.set('x-powered-by', false)
+
+//load the session middleware
+sessions.startSession(app)
+
+// Retrieve device information for logging purposes.
+app.use(device.capture())
+app.use(useragent.express())
 
 routes(app)
 loadFrontend(app)
