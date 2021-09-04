@@ -43,10 +43,12 @@ const SettingsTab = () => {
             for times in your activity feeds and for reminders. Your time zone
             is currently set to: (UTC+01:00) West Central Africa.
           </span>
-          { show ? <TimeZone /> : null }
+          {show ? <TimeZone /> : null}
         </div>
         <div className={styles.settingsright}>
-          <button onClick={() => setShow(!show)}>{ show ? 'Close' : 'Expand' }</button>
+          <button onClick={() => setShow(!show)}>
+            {show ? 'Close' : 'Expand'}
+          </button>
         </div>
       </div>
 
