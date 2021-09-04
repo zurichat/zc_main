@@ -1,0 +1,15 @@
+<<<<<<< HEAD =======>>>>>>>ffd9262d77425f11e13db365707135d470728632 .underline {
+  text-decoration: underline;
+}
+
+.text_link {
+  color: #2f80ed;
+}
+
+.text_link:hover {
+  text-decoration: underline;
+}
+
+.pagination_link {
+  color: #00b87c;
+}
