@@ -4,7 +4,7 @@ import { TopbarContext } from '../contexts/Topbar'
 import styles from '../styles/Topbar.module.css'
 import SearchBar from './externalPagesComponents/SearchBar'
 import StatusBadge from './StatusBadge'
-import  ProfileModal  from './ProfileModal'
+import ProfileModal from './ProfileModal'
 
 export const Topbar = () => {
   const state = useContext(TopbarContext)
@@ -20,7 +20,6 @@ export const Topbar = () => {
           <img src="/profile.png" alt="Profile" />
         </div>
         <ProfileModal />
-
       </div>
     </div>
   )
