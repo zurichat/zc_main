@@ -4,11 +4,14 @@ const helmet = require('helmet')
 const device = require('express-device')
 const useragent = require('express-useragent')
 const sessions = require('./lib/user_session')
+const mongoose = require('mongoose')
 
 const loadFrontend = require('./middlewares/load-frontend')
 const PORT = process.env.PORT || 3000
 
 const app = express()
+
+app.use(express.json())
 
 // activate helmet--server security
 app.use(
