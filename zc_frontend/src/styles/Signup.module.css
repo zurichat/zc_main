@@ -116,12 +116,6 @@
   width: 100%;
   background: #2f80ed;
   color: #fff;
-<<<<<<< HEAD
-  font-weight: bold;
-  font-size: 1.2rem;
-  width: 10rem;
-  margin-left: 5rem;
-=======
   outline: none;
   border: none;
   font-size: 16px;
@@ -247,5 +241,4 @@
   .footer_a {
     margin: auto 16px;
   }
->>>>>>> cfd40e828908629eb8163783c383279121086717
 }

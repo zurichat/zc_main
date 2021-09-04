@@ -9,7 +9,6 @@ import PricingPageSection1 from './pricingPageSection1/PricingPageSection1'
 function Pricing() {
   return (
     <div>
-
       {/* <Header /> */}
       <PricingPageSection1 />
       <PricingTable />

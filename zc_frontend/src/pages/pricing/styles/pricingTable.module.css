@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-.tableSection2 {
+.section2 {
   display: none;
 }
 
@@ -152,11 +152,16 @@
   .btn {
     text-align: center;
     color: #00b87c;
-    border-bottom: solid 1px #00b87c;
+    background-color: white;
+    font-size: 13px;
+    padding-top: 15px;
+    /* border-bottom: solid 1px #00b87c; */
+    border: none;
+    /* text-decoration: none; */
   }
 
   a:hover {
-    color: #8ab1a4;
+    color: #8ab1a4 !important;
   }
   table {
     border-collapse: separate;
@@ -213,13 +218,6 @@
 
   .sidebar tr {
     background-color: white;
-  }
-
-  .btnGroup {
-    display: flex;
-    margin-left: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
   }
 
   .col1 {

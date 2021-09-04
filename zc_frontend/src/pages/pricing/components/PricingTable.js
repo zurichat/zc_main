@@ -2,7 +2,6 @@ import React from 'react'
 import styles from '../styles/pricingTable.module.css'
 import TableRow from './TableRow'
 
-
 export default class PricingTable extends React.Component {
   render() {
     return (
@@ -203,23 +202,31 @@ export default class PricingTable extends React.Component {
                 business="thick"
                 enterprise="thick"
               />
+              <tr>
+                <td className={styles.sidebar}></td>
+                <td>
+                  <div className={styles.btn}>
+                    <a href="/get-started">Get Started</a>
+                  </div>
+                </td>
+                <td>
+                  <div className={styles.btn}>
+                    <a href="/get-started">Get Started</a>
+                  </div>
+                </td>
+                <td>
+                  <div className={styles.btn}>
+                    <a href="/get-started">Get Started</a>
+                  </div>
+                </td>
+                <td>
+                  <div className={styles.btn}>
+                    <a href="/get-started">Get Started</a>
+                  </div>
+                </td>
+              </tr>
             </tbody>
           </table>
-=
-        </div>
-        <div className={styles.btnGroup}>
-          <div style={{ marginLeft: '700px' }} className={styles.btn}>
-            <a href="/get-started">Get Started</a>
-          </div>
-          <div style={{ marginLeft: '110px' }} className={styles.btn}>
-            <a href="/get-started">Get Started</a>
-          </div>
-          <div style={{ marginLeft: '120px' }} className={styles.btn}>
-            <a href="/get-started">Get Started</a>
-          </div>
-          <div style={{ marginLeft: '120px' }} className={styles.btn}>
-            <a href="/get-started">Get Started</a>
-          </div>
         </div>
       </section>
     )
