@@ -31,6 +31,7 @@
     "helmet": "^4.6.0",
     "mongoose": "^6.0.4",
     "nodemailer": "^6.6.3",
+    "validator": "^13.6.0",
     "yarn": "^1.22.11"
   },
   "devDependencies": {
