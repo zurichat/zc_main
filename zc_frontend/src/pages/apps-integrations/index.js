@@ -1,10 +1,11 @@
 import SectionOne from './SectionOne'
+import Categories from './Categories'
 
 function AppsAndIntegrations() {
   return (
     <div>
-      <h2>This is Apps and Integrations Page</h2>
       <SectionOne />
+      <Categories />
     </div>
   )
 }

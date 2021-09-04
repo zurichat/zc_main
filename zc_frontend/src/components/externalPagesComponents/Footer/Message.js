@@ -10,7 +10,11 @@ const Message = ({ type }) => {
         </span>
         <div className={styles.buttonSection}>
           <button className={styles.buttonOutline}>
+<<<<<<< HEAD
             <a>Visit Help Center</a>
+=======
+            <a href="/help-center">Visit Help Center</a>
+>>>>>>> 7208f18bad98a4b85b3e336b5146a068b6bd05b6
           </button>
         </div>
       </div>
@@ -21,10 +25,17 @@ const Message = ({ type }) => {
       <p>Whatever work you do,you can do it in Zuri Chat</p>
       <div className={styles.buttonSection}>
         <button className={styles.buttonFilled}>
+<<<<<<< HEAD
           <a>Talk to Sales</a>
         </button>
         <button className={styles.buttonOutline}>
           <a>TRY IT FREE</a>
+=======
+          <a href="/sales">Talk to Sales</a>
+        </button>
+        <button className={styles.buttonOutline}>
+          <a href="/try-it-free">TRY IT FREE</a>
+>>>>>>> 7208f18bad98a4b85b3e336b5146a068b6bd05b6
         </button>
       </div>
     </div>
