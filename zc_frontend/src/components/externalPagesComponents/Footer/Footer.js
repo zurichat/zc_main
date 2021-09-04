@@ -74,18 +74,6 @@ const Footer = ({ showMessage, type }) => (
             <li className={styles.mainList}>
               <span className={styles.title}>Social Media</span>
               <div className={styles.socialMedia}>
-integration-section-one
-                <a>
-                  <img src="/facebook.svg" alt="" />
-                </a>
-                <a>
-                  <img src="/instagram.svg" alt="" />
-                </a>
-                <a>
-                  <img src="/twitter.svg" alt="" />
-                </a>
-                <a>
-
                 <a href="/">
                   <img src="/facebook.svg" alt="" />
                 </a>
@@ -96,7 +84,6 @@ integration-section-one
                   <img src="/twitter.svg" alt="" />
                 </a>
                 <a href="/">
- develop
                   <img src="/linkedin.svg" alt="" />
                 </a>
               </div>
