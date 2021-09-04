@@ -14,7 +14,7 @@
     "run-start": "cross-env NODE_ENV=production node server.js",
     "run-dev": "cross-env NODE_ENV=development nodemon server.js",
     "frontend:build": "npm run build --prefix zc_frontend",
-    "frontend:dev": "cross-env PORT=5000 npm start --prefix zc_frontend",
+    "frontend:dev": "cross-env PORT=5000 npm run start --prefix zc_frontend",
     "postinstall": "cd zc_frontend && yarpm-yarn install"
   },
   "dependencies": {
@@ -30,15 +30,10 @@
     "geoip-lite": "^1.4.2",
     "gh-pages": "^3.2.3",
     "helmet": "^4.6.0",
-<<<<<<< HEAD
-    "nodemailer": "^6.6.3",
-    "react-multi-email": "^0.5.3"
-=======
+    "react-multi-email": "^0.5.3",
     "mongoose": "^6.0.4",
     "nodemailer": "^6.6.3",
-    "validator": "^13.6.0",
     "yarn": "^1.22.11"
->>>>>>> dea7a65f8c435c03ff81f187cd8491e3325e2b22
   },
   "devDependencies": {
     "autoprefixer": "^10.3.3",
