@@ -1,10 +1,11 @@
 import React from 'react'
-import './Spinner.css'
+
+import styles from './Spinner.module.css'
 import zuriicon from '../../../assets/loadingPageImages/zuriicon.png'
 
 const Spinner = () => {
   return (
-    <div className="spinner-1">
+    <div className={`${styles.spinner_1}`}>
       <div>
         <img src={zuriicon} className="zuri-icon" alt="zuri icon" />
       </div>
