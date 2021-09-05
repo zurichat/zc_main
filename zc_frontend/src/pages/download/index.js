@@ -13,6 +13,7 @@ import styles from '../../styles/Download.module.css'
 import { Topbar } from '../../components/Topbar'
 
 const Download = () => {
+  let copy =React.string({js|\u00a9|js});
   return (
   <div  className={styles.downloadWrapper}>
     <Topbar/> 
@@ -86,7 +87,7 @@ const Download = () => {
       <Linkedin/>
     </div>
 </div>
-    <p className={styles.copyright}>&copy 2021 zuri,Team Aristotle. All Rights Reserved.</p>
+    <p className={styles.copyright}>{copy} 2021 zuri,Team Aristotle. All Rights Reserved.</p>
     
   </div>
   )
