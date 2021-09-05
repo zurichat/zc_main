@@ -1,5 +1,14 @@
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from './pages/home';
+import Login from './pages/login';
+import SignUp from './pages/signup';
+import Blog from './pages/blog';
+import News from './pages/news';
+import './styles/globals.css';
+import InvitationAcceptance from './components/InvitationAcceptance';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import LandingPage from './components/LandingPage'
+import Loading from './components/Loading/loading'
 import Home from './pages/home'
 import Login from './pages/login'
 import SignUp from './pages/signup'
@@ -16,13 +25,22 @@ import Pricing from './pages/pricing'
 import Header from './components/externalPagesComponents/Header'
 import Input from './components/externalPagesComponents/Input'
 import FAQ from './pages/FAQ'
+import './styles/globals.css'
+import MarketPlace from './pages/marketplace/marketplace'
+import Settings from './pages/settings'
 import SearchResult from './components/SearchResults3'
+import LinkComponent from './components/externalPagesComponents/Link'
+import Cookies from './pages/cookies'
 
 const App = () => (
   <BrowserRouter>
+    <InvitationAcceptance/>
     <Switch>
       <Route path="/" exact>
         <LandingPage />
+      </Route>
+      <Route path="/loading">
+        <Loading />
       </Route>
       <Route path="/home">
         <Home />
@@ -35,6 +53,9 @@ const App = () => (
       </Route>
       <Route path="/features">
         <Features />
+      </Route>
+      <Route path="/pricing">
+        <Pricing />
       </Route>
       <Route path="/security">
         <Security />
@@ -59,6 +80,9 @@ const App = () => (
       </Route>
       <Route path="/header">
         <Header />
+        <Route path="/marketplace" exact>
+          <MarketPlace />
+        </Route>
       </Route>
       <Route path="/faq">
         <FAQ />
@@ -66,11 +90,24 @@ const App = () => (
       <Route path="/input">
         <Input />
       </Route>
+      <Route path="/settings">
+        <Settings />
+      </Route>
       <Route path="/search">
         <SearchResult />
+      </Route>
+      <Route path="/cookies-banner">
+        <Cookies />
+      </Route>
+      <Route path="/link">
+        <LinkComponent
+          title={`test-to-home`}
+          to={`/home`}
+          color={`black`}
+          underline
+        />
       </Route>
     </Switch>
   </BrowserRouter>
 )
-
 export default App

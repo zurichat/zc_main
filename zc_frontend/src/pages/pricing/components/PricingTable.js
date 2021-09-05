@@ -1,375 +1,231 @@
 import React from 'react'
 import styles from '../styles/pricingTable.module.css'
-import { ReactComponent as Tick } from '../assets/goodTick.svg'
+import TableRow from './TableRow'
 
 export default class PricingTable extends React.Component {
   render() {
     return (
-      <section>
-        <div className={styles.pricingTable}>
-          <div className={styles.col1}>
-            <div>
-              <p className={styles.colHeader}>Productivity Basics</p>
-              <p>Message history</p>
-              <p style={{ marginBottom: '1px' }}>
-                Relevant people, channels and files in search results
-              </p>
-              <p>Integrations with other apps</p>
-              <p style={{ paddingTop: '15px' }}>File storage</p>
-              <p className={styles.adjustWok}>Workspaces</p>
-              <p>Customizable sections</p>
-              <p>Zuri Chat Huddles</p>
-            </div>
-            <div>
-              <p style={{ marginTop: '20px', fontWeight: 'Bold' }}>
-                EXTERNAL COLLABORATION
-              </p>
-              <p>Work with other organizations</p>
-              <p style={{ marginBottom: '1px' }}>Work with individuals</p>
-            </div>
+      <section className={styles.section2}>
+        <div className={styles.table_container}>
+          <table>
+            <colgroup>
+              <col span="1" />
+              <col span="4" style={{ backgroundColor: '#f2f2f2' }} />
+            </colgroup>
+            <thead>
+              <tr>
+                <th className={styles.sidebar}></th>
+                <th>Free</th>
+                <th>Pro</th>
+                <th>Business+</th>
+                <th>Enterprise Grid</th>
+              </tr>
+            </thead>
+            <tbody>
+              <TableRow head="Productivity Basics" isLabel={true} />
+              <TableRow
+                head="Message history"
+                free="10K of your team’s most recent messages"
+                pro="Unlimited"
+                business="Unlimited"
+                enterprise="Unlimited"
+              />
+              <TableRow
+                head="Relevant people, channels and files in search results"
+                free="thick"
+                pro="thick"
+                business="thick"
+                enterprise="thick"
+              />
+              <TableRow
+                head="Integrations with other apps"
+                free="10"
+                pro="Unlimited"
+                business="Unlimited"
+                enterprise="Unlimited"
+              />
+              <TableRow
+                head="File storage"
+                free="5 GB Total"
+                pro="10 GB per team member"
+                business="20 GB per team member"
+                enterprise="1 TB per team member"
+              />
+              <TableRow
+                head="Workspaces"
+                free="1"
+                pro="1"
+                business="1"
+                enterprise="Unlimited"
+              />
+              <TableRow
+                head="Customizable sections"
+                pro="thick"
+                business="thick"
+                enterprise="thick"
+              />
+              <TableRow
+                head="Zuri Chat Huddles"
+                pro="thick"
+                business="thick"
+                enterprise="thick"
+              />
+              <TableRow head="EXTERNAL COLLABORATION" isLabel={true} />
+              <TableRow
+                head="Work with other organizations"
+                pro="thick"
+                business="thick"
+                enterprise="thick"
+              />
+              <TableRow
+                head="Work with individuals"
+                free="thick"
+                pro="thick"
+                business="thick"
+                enterprise="thick"
+              />
+              <TableRow head="SECURITY" isLabel={true} />
+              <TableRow
+                head="Data encryption at rest and in transit"
+                free="thick"
+                pro="thick"
+                business="thick"
+                enterprise="thick"
+              />
+              <TableRow
+                head="Two-factor authentication"
+                pro="thick"
+                business="thick"
+                enterprise="thick"
+              />
+              <TableRow head="OAuth with Google" pro="thick" business="thick" />
+              <TableRow
+                head="SAML-based single sign-on (SSO)"
+                business="thick"
+                enterprise="thick"
+              />
+              <TableRow
+                head="Slack Enterprise Key Management"
+                enterprise="Add-on"
+              />
 
-            <div>
-              <p style={{ marginTop: '20px', fontWeight: 'Bold' }}>SECURITY</p>
-              <p>Data encryption at rest and in transit</p>
-              <p>Two-factor authentication</p>
-              <p>OAuth with Google</p>
-              <p>SAML-based single sign-on (SSO)</p>
-              <p>Slack Enterprise Key Management</p>
-              <p>
-                Integration with Enterprise Mobility Management
-                <br /> (EMM)
-              </p>
-              <p style={{ marginBottom: '1px' }}>Work with individuals</p>
-            </div>
-            <div>
-              <p style={{ marginTop: '20px', fontWeight: 'Bold' }}>
-                COMPLIANCE
-              </p>
-              <p>Custom retention policies for messages and files</p>
-              <p>Data exports for all messages</p>
-              <p>Support for HIPAA compliance</p>
-              <p style={{ marginBottom: '1px' }}>Data residency</p>
-            </div>
-            <div>
-              <p style={{ marginTop: '20px', fontWeight: 'Bold' }}>
-                ADMINISTRATION
-              </p>
-              <p>Manage channel posting permissions</p>
-              <p style={{ marginTop: '14px' }}>Custom User Groups</p>
-              <p>
-                Real-time Active Directory sync with OneLogin,
-                <br /> Okta and Ping Identity
-              </p>
-              <p>User management with SCIM provisioning</p>
-              <p>
-                Support for integrations with Data Loss Prevention (DLP),
-                <br />
-                e-Discovery, and offline backup providers
-              </p>
-              <p>Domain claiming</p>
-              <p style={{ marginBottom: '1px' }}>Custom Terms of Service</p>
-            </div>
-            <div>
-              <p style={{ marginTop: '20px', fontWeight: 'Bold' }}>CALLS</p>
-              <p>Voice and video calls</p>
-              <p style={{ marginBottom: '1px' }}>Screen sharing</p>
-            </div>
-            <div>
-              <p style={{ marginTop: '20px', fontWeight: 'Bold' }}>SUPPORT</p>
-              <p>Access to customer support</p>
-              <p>99.99% guaranteed uptime SLA</p>
-              <p style={{ marginTop: '5px' }}>
-                Designated account and customer success team
-              </p>
-            </div>
-          </div>
+              <TableRow
+                head="Integration with Enterprise Mobility Management
+                (EMM)"
+                enterprise="thick"
+              />
 
-          <div className={styles.col2}>
-            <div>
-              <div className={styles.headText}>
-                <strong> Free</strong>
-              </div>
-              <p className={styles.colHeader}></p>
-              <p className={styles.text}>
-                10K of your team’s most recent messages
-              </p>
-              <p style={{ padding: '10px' }}>
-                <Tick />
-              </p>
-              <p>10</p>
-              <p>5 GB Total</p>
-              <p className={styles.adjustWok}> 1</p>
-              {/* <p></p>
-            <p style={{ marginTop: '20px', fontWeight: 'Bold' }}></p> */}
-            </div>
-            <div style={{ marginTop: '280px' }}>
-              <p>
-                <Tick />
-              </p>
-              <p>
-                <Tick />
-              </p>
-            </div>
-            <div style={{ marginTop: '506px' }}>
-              <p>Limited to #general channel only</p>
-            </div>
-            <div style={{ marginTop: '343px' }}>
-              <p>One-on-one only </p>
-            </div>
-            <div style={{ marginTop: '100px' }}>
-              <p> Standard support</p>
-            </div>
-          </div>
-          <div className={styles.col2}>
-            <div>
-              <div className={styles.headText}>
-                <strong>Pro</strong>
-              </div>
-              <p className={styles.colHeader}></p>
-              <p>Unlimited</p>
-              <p className={styles.adjust}>
-                <Tick />
-              </p>
-              <p>Unlimited</p>
-              <p>10 GB per team member</p>
-              <p>1</p>
-              <p>
-                <Tick />
-              </p>
-              <p>
-                <Tick />
-              </p>
-            </div>
-            <div style={{ marginTop: '39px' }}>
-              <p>
-                <Tick />
-              </p>
-              <p>
-                <Tick />
-              </p>
-            </div>
-            <div style={{ marginTop: '42px' }}>
-              <p>
-                <Tick />
-              </p>
-              <p>
-                <Tick />
-              </p>
-              <p style={{ paddingTop: '2px' }}>
-                <Tick />
-              </p>
-            </div>
-            <div style={{ marginTop: '225px' }}>
-              <p>
-                <Tick />
-              </p>
-            </div>
-            <div style={{ marginTop: '192px' }}>
-              <p>Limited to #general channel only</p>
-              <p>
-                <Tick />
-              </p>
-            </div>
-            <div style={{ marginTop: '293px' }}>
-              <p>Up to 15 participants</p>
-              <p>
-                <Tick />
-              </p>
-            </div>
-            <div style={{ marginTop: '50px' }}>
-              <p>24/7 support</p>
-            </div>
-          </div>
+              <TableRow head="Work with individuals" />
 
-          <div className={styles.col2}>
-            <div>
-              <div className={styles.headText}>
-                <strong>Business+</strong>
-              </div>
-              <p className={styles.colHeader}></p>
-              <p>Unlimited</p>
-              <p className={styles.adjust}>
-                <Tick />
-              </p>
-              <p>Unlimited</p>
-              <p>20 GB per team member</p>
-              <p>1</p>
-              <p>
-                <Tick />
-              </p>
-              <p>
-                <Tick />
-              </p>
-            </div>
-            <div style={{ marginTop: '40px' }}>
-              <p>
-                <Tick />
-              </p>
-              <p>
-                <Tick />
-              </p>
-            </div>
-            <div style={{ marginTop: '40px' }}>
-              <p>
-                <Tick />
-              </p>
-              <p>
-                <Tick />
-              </p>
-              <p style={{ paddingTop: '2px' }}>
-                <Tick />
-              </p>
-              <p style={{ paddingTop: '2px' }}>
-                <Tick />
-              </p>
-            </div>
-            <div style={{ paddingTop: '185px' }}>
-              <p>
-                <Tick />
-              </p>
-              <p>
-                <Tick />
-              </p>
-              <p></p>
-              <p style={{ marginTop: '15px' }}>
-                <Tick />
-              </p>
-              <div style={{ marginTop: '58px' }}>
-                <p>Unlimited number of channels</p>
-                <p>
-                  <Tick />
-                </p>
-                <p>
-                  <Tick />
-                </p>
-              </div>
-              <div style={{ marginTop: '241px' }}>
-                <p>Up to 15 participants</p>
-                <p>
-                  <Tick />
-                </p>
-              </div>
-              <div style={{ marginTop: '50px' }}>
-                <p> 24/7 support with four-hour first response time</p>
-                <p style={{ paddingTop: '4px' }}>
-                  <Tick />
-                </p>
-                <p>
-                  <Tick />
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.col2}>
-            <div>
-              <div className={styles.headText}>
-                <strong>Enterprise Grid</strong>
-              </div>
-              <p className={styles.colHeader}></p>
-              <p>Unlimited</p>
-              <p className={styles.adjust}>
-                <Tick />
-              </p>
-              <p>Unlimited</p>
-              <p>1 TB per team member </p>
-              <p className={styles.adjustWok}>Unlimited</p>
-              <p>
-                <Tick />
-              </p>
-              <p>
-                <Tick />
-              </p>
-            </div>
-            <div style={{ marginTop: '43px' }}>
-              <p>
-                <Tick />
-              </p>
-              <p>
-                <Tick />
-              </p>
-            </div>
-            <div style={{ marginTop: '42px' }}>
-              <p>
-                <Tick />
-              </p>
-              <p>
-                <Tick />
-              </p>
-              <p></p>
-              <p>
-                <Tick />
-              </p>
-              <p>Add-on</p>
-              <p>
-                <Tick />
-              </p>
-            </div>
-            <div style={{ marginTop: '98px' }}>
-              <p>
-                <Tick />
-              </p>
-              <p>
-                <Tick />
-              </p>
-              <p>
-                <Tick />
-              </p>
-              <p>
-                <Tick />
-              </p>
-            </div>
-            <div style={{ marginTop: '50px' }}>
-              <p>Unlimited number of channels</p>
-              <p>
-                <Tick />
-              </p>
-              <p>
-                <Tick />
-              </p>
-              <p>
-                <Tick />
-              </p>
-              <p>
-                <Tick />
-              </p>
-              <p>
-                <Tick />
-              </p>
-              <p>
-                <Tick />
-              </p>
-            </div>
-            <div style={{ marginTop: '40px' }}>
-              <p>Up to 15 participants</p>
-              <p>
-                <Tick />
-              </p>
-            </div>
-            <div style={{ marginTop: '40px' }}>
-              <p>24/7 priority support with four-hour first response time</p>
-              <p style={{ paddingTop: '0' }}>
-                <Tick />
-              </p>
-              <p>
-                <Tick />
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className={styles.btnGroup}>
-          <div style={{ marginLeft: '700px' }} className={styles.btn}>
-            <a href="/get-started">Get Started</a>
-          </div>
-          <div style={{ marginLeft: '110px' }} className={styles.btn}>
-            <a href="/get-started">Get Started</a>
-          </div>
-          <div style={{ marginLeft: '120px' }} className={styles.btn}>
-            <a href="/get-started">Get Started</a>
-          </div>
-          <div style={{ marginLeft: '120px' }} className={styles.btn}>
-            <a href="/get-started">Get Started</a>
-          </div>
+              <TableRow head="COMPLIANCE" isLabel={true} />
+              <TableRow
+                head="Custom retention policies for messages and files"
+                pro="thick"
+                business="thick"
+                enterprise="thick"
+              />
+              <TableRow
+                head="Data exports for all messages"
+                business="thick"
+                enterprise="thick"
+              />
+              <TableRow
+                head="Support for HIPAA compliance"
+                enterprise="thick"
+              />
+              <TableRow
+                head="Data residency"
+                business="thick"
+                enterprise="thick"
+              />
+              <TableRow head="ADMINISTRATION" isLabel={true} />
+              <TableRow
+                head="Manage channel posting permissions"
+                free="Limited to #general channel only"
+                pro="Limited to #general channel only"
+                business="Unlimited number of channels"
+                enterprise="Unlimited number of channels"
+              />
+              <TableRow
+                head="Custom User Groups"
+                pro="thick"
+                business="thick"
+                enterprise="thick"
+              />
+              <TableRow
+                head="Real-time Active Directory sync with OneLogin,
+                Okta and Ping Identity"
+                business="thick"
+                enterprise="thick"
+              />
+              <TableRow
+                head="User management with SCIM provisioning"
+                enterprise="thick"
+              />
+              <TableRow
+                head="Support for integrations with Data Loss Prevention (DLP),
+                e-Discovery, and offline backup providers"
+                enterprise="thick"
+              />
+              <TableRow head="Domain claiming" enterprise="thick" />
+              <TableRow head="Custom Terms of Service" enterprise="thick" />
+              <TableRow head="CALLS" isLabel={true} />
+              <TableRow
+                head="Voice and video calls"
+                free="One-on-one only"
+                pro="Up to 15 participants"
+                business="Up to 15 participants"
+                enterprise="Up to 15 participants"
+              />
+              <TableRow
+                head="Screen sharing"
+                pro="thick"
+                business="thick"
+                enterprise="thick"
+              />
+              <TableRow head="SUPPORT" isLabel={true} />
+              <TableRow
+                head="Access to customer support"
+                free="Standard support"
+                pro="24/7 support"
+                business="24/7 support with four-hour first response time"
+                enterprise="24/7 support with four-hour first response time"
+              />
+              <TableRow
+                head="99.99% guaranteed uptime SLA"
+                business="thick"
+                enterprise="thick"
+              />
+              <TableRow
+                head="Designated account and customer success team"
+                business="thick"
+                enterprise="thick"
+              />
+              <tr>
+                <td className={styles.sidebar}></td>
+                <td>
+                  <div className={styles.btn}>
+                    <a href="/get-started">Get Started</a>
+                  </div>
+                </td>
+                <td>
+                  <div className={styles.btn}>
+                    <a href="/get-started">Get Started</a>
+                  </div>
+                </td>
+                <td>
+                  <div className={styles.btn}>
+                    <a href="/get-started">Get Started</a>
+                  </div>
+                </td>
+                <td>
+                  <div className={styles.btn}>
+                    <a href="/get-started">Get Started</a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
     )
