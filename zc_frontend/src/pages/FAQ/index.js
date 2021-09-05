@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import '../../styles/FAQ.css'
+import styles from '../../styles/FAQ.module.css'
 
 const Index = () => {
   const [selected, setSelected] = useState(null)
@@ -12,13 +12,13 @@ const Index = () => {
     setSelected(i)
   }
   return (
-    <div className="faqs">
+    <div className={styles.faqs}>
       <h2>Commonly Asked Questions</h2>
-      <div className="wrapper">
-        <div className="accordion">
+      <div className={styles.wrapper}>
+        <div className={styles.accordion}>
           {data.map(i => (
-            <div className="items">
-              <div className="title" onClick={() => toggle(i)}>
+            <div className={styles.items}>
+              <div className={styles.title} onClick={() => toggle(i)}>
                 <h6>{i.question}</h6>
                 <span>
                   {selected === i ? (
@@ -38,9 +38,9 @@ const Index = () => {
           ))}
         </div>
       </div>
-      <div className="billing">
+      <div className={styles.billing}>
         Get more information on{' '}
-        <a className="info" href="/faq">
+        <a className={styles.info} href="/faq">
           billing at Zuri Chat.
         </a>
       </div>
