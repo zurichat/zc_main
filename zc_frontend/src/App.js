@@ -1,11 +1,3 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from './pages/home';
-import Login from './pages/login';
-import SignUp from './pages/signup';
-import Blog from './pages/blog';
-import News from './pages/news';
-import './styles/globals.css';
-import InvitationAcceptance from './components/InvitationAcceptance';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import LandingPage from './components/LandingPage'
 import Loading from './components/Loading/loading'
@@ -32,9 +24,10 @@ import SearchResult from './components/SearchResults3'
 import LinkComponent from './components/externalPagesComponents/Link'
 import Cookies from './pages/cookies'
 
+import DeactivateAccount from './pages/settings/components/AcctDeactivation'
+
 const App = () => (
   <BrowserRouter>
-    <InvitationAcceptance/>
     <Switch>
       <Route path="/" exact>
         <LandingPage />
@@ -98,6 +91,9 @@ const App = () => (
       </Route>
       <Route path="/cookies-banner">
         <Cookies />
+      </Route>
+      <Route path="/deactivate-account">
+        <DeactivateAccount />
       </Route>
       <Route path="/link">
         <LinkComponent
