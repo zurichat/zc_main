@@ -8,8 +8,9 @@
   top: -50px;
 }
 .headertext {
-  line-height: 25px;
+  line-height: 38px;
   color: rgba(255, 255, 255, 0.8);
+  font-size: 35px;
 }
 .text {
   line-height: 20px;
@@ -26,7 +27,6 @@
   width: 30%;
   height: 70vh;
   position: relative;
-  /* margin-left: -10%; */
 }
 .person2 {
   width: 60%;
@@ -40,6 +40,10 @@
 
 .icon {
   cursor: pointer;
+  width: 30px;
+}
+.line {
+  width: 38%;
 }
 
 .login {
@@ -55,21 +59,20 @@
 .far {
   position: relative;
   right: 30px;
-  top: 44px;
+  top: 39px;
   cursor: pointer;
-}
-.checktext,
-.check {
-  font-size: 14px;
 }
 .checklink {
   color: #02ca87 !important;
 }
 .or {
-  font-size: 14px;
+  font-size: 13px;
   margin-top: 1%;
 }
 
+.footer {
+  margin-top: 15%;
+}
 .footer > a {
   font-size: 10px;
 }
@@ -79,7 +82,8 @@
   width: 100%;
   background-color: #cadcf4;
   color: #fff;
-  margin-left: 1%;
+  margin-left: 0%;
+  font-size: 14px;
 }
 .button:active {
   background-color: #448be8;
@@ -120,25 +124,42 @@
 .footer-text {
   font-size: 12px !important;
 }
+
 @media only screen and (max-width: 768px) {
   .button_outline > img {
     width: 14%;
+  }
+  .side {
+    display: none;
+  }
+  .loginheader {
+    text-align: center;
+  }
+  .subtext {
+    text-align: center;
+    font-size: 14px;
   }
 }
 @media only screen and (max-width: 600px) {
   .side {
     display: none;
   }
+  .login {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
   .loginheader {
     text-align: center;
     margin-top: 10%;
   }
   .subtext {
-    font-size: 10px;
+    font-size: 11px;
     text-align: center;
+    margin-bottom: 8%;
+    margin-top: 8%;
   }
   .line {
-    margin-top: -5%;
+    margin-top: 5%;
   }
   .checktextlink {
     margin-top: -2%;
@@ -154,6 +175,14 @@
     font-size: 11px;
     position: relative;
     left: 12%;
+  }
+  .or {
+    font-size: 11px;
+    margin-top: 5%;
+  }
+  .far {
+    right: 20px;
+    top: 34px;
   }
 }
 @media only screen and (max-width: 425px) {
