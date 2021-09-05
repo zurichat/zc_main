@@ -10,21 +10,25 @@
 }
 
 .brand {
-  width: 15%;
+  width: 25%;
   display: flex;
 }
 
 .brand img {
-  width: 30%;
-  height: 80%;
+  width: 100%;
+  max-width: 30px;
+  height: 100%;
+  max-height: 30px;
+  object-fit: cover;
 }
 
 .brand h3 {
   font-family: 'Lato';
   font-size: 25px;
   font-weight: 700;
-  padding-top: 5px;
+  /* padding-top: 5px; */
   background: none;
+  margin-left: 5px;
 }
 
 /* The section of the  account bar*/
@@ -32,17 +36,17 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-end;
-  height: 40px;
+  justify-content: space-between;
+  width: 40%;
 }
 
 .searchBar {
-  width: 443px;
-  height: 48px;
-  background: #ffffff;
+  width: 60%;
+  height: 30px;
+  background: #f6f6f6;
   border: 1px solid #bebebe;
   box-sizing: border-box;
-  border-radius: 8px;
+  border-radius: 2px;
   margin-right: 1.5em;
   padding: 0 10px;
   display: flex;
@@ -54,9 +58,11 @@
   border: none;
   outline: none;
   font-family: 'Lato', sans-serif;
+  font-size: 11px;
+  background: #f6f6f6;
 }
 .searchInput::placeholder {
-  font-size: 13px;
+  font-size: 11px;
   line-height: 16px;
 }
 .searchSvg {
@@ -64,20 +70,54 @@
   fill: #bebebe;
 }
 
+/* THE SECTION OF THE RIGHT NAV */
+.rightnav {
+  width: 10%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .profile {
   border-radius: 50%;
   display: flex;
-  margin-left: 1.375em;
+  /* margin-left: 1.375em; */
   align-items: center;
   justify-content: center;
-  height: 2.5em;
-  width: 2.5em;
   cursor: pointer;
 }
 
-.profile img {
+.settings {
+  margin-right: 19px;
+}
+
+.status {
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.pImage {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.pImage .profileImg {
   width: 100%;
   height: 100%;
+  border-radius: 50%;
+  background: #dbdada;
+}
+
+.circles {
+  background: green;
+  height: 7px;
+  width: 7px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   border-radius: 50%;
 }
 
@@ -88,9 +128,9 @@
 /* ===================================== */
 /* THE SECTION OF THE MEDIA QUERY */
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .brand {
-    width: 25%;
+    width: 55%;
   }
 
   .brand img {
@@ -98,7 +138,7 @@
     height: 80%;
   }
 
-  .accountbar {
+  .searchBar {
     position: fixed;
     top: 70px;
     left: -100%;
@@ -119,7 +159,7 @@
   }
 
   .containers .menubars {
-    display: block;
+    /* display: block; */
     position: absolute;
     top: 5px;
     right: 20px;
@@ -128,6 +168,10 @@
 
   .searchBar {
     width: 300px;
+  }
+
+  .rightnav {
+    width: 20%;
   }
 }
 

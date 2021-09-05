@@ -4968,4 +4968,7 @@ yauzl@^2.9.2:
   dependencies:
     buffer-crc32 "~0.2.3"
     fd-slicer "~1.1.0"
+<<<<<<< HEAD
 >>>>>>> 418877884a8e95f278d70d6f72197e6e8a8ea385
+=======
+>>>>>>> 7ebe876ca60572c629c347a7fecce9333f047269

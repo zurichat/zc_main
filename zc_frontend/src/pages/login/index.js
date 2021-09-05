@@ -6,21 +6,34 @@ import GoogleLogin from 'react-google-login'
 import { useHistory } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 import LoginLoading from '../../components/LoginLoading'
+<<<<<<< HEAD
 
 
 const Login = () => {
   const [email, setEmail] = useState('');
+=======
+
+const Login = () => {
+  const [email, setEmail] = useState('')
+>>>>>>> 7ebe876ca60572c629c347a7fecce9333f047269
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [showLoader, setShowLoader] = useState(false)
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 7ebe876ca60572c629c347a7fecce9333f047269
   const handleEmailChange = e => {
     setEmail(e.target.value)
   }
   const handleSubmit = e => {
+<<<<<<< HEAD
     e.preventDefault();
+=======
+    e.preventDefault()
+>>>>>>> 7ebe876ca60572c629c347a7fecce9333f047269
     alert(`Your state values: \n
             emal: ${email} \n
             password: ${password} \n
@@ -102,11 +115,26 @@ const Login = () => {
             <div className={` d-flex justify-content-between`}>
               <img className={`${styles.line}`} src="Line.svg" alt="line" />
               <p className={`${styles.or}`}>Or log in with</p>
+<<<<<<< HEAD
               <img className={`${styles.line}`} src="Line.svg" alt="line" srcset="" />
             </div>
             <form className={`mb-sm-3`} onSubmit={handleSubmit}>
               <div className={` ${styles.email_input}`}>
                 <div className={`mb-lg-3 mb-md-3 mb-sm-3 col-sm-12 col-md-6 w-100`}>
+=======
+              <img
+                className={`${styles.line}`}
+                src="Line.svg"
+                alt="line"
+                srcset=""
+              />
+            </div>
+            <form className={`mb-sm-3`} onSubmit={handleSubmit}>
+              <div className={` ${styles.email_input}`}>
+                <div
+                  className={`mb-lg-3 mb-md-3 mb-sm-3 col-sm-12 col-md-6 w-100`}
+                >
+>>>>>>> 7ebe876ca60572c629c347a7fecce9333f047269
                   <label for="Email1" class="form-label">
                     Email address
                   </label>
@@ -116,17 +144,30 @@ const Login = () => {
                     value={email}
                     onChange={handleEmailChange}
                     placeholder="Enter your email address"
+<<<<<<< HEAD
                    
+=======
+>>>>>>> 7ebe876ca60572c629c347a7fecce9333f047269
                   />
                 </div>
               </div>
               <div className={`d-flex ${styles.email_input}`}>
+<<<<<<< HEAD
                 <div className={`mb-lg-3 mb-md-3 mb-sm-3  col-sm-12 col-md-6 w-100`}>
+=======
+                <div
+                  className={`mb-lg-3 mb-md-3 mb-sm-3  col-sm-12 col-md-6 w-100`}
+                >
+>>>>>>> 7ebe876ca60572c629c347a7fecce9333f047269
                   <label for="Password" class="form-label">
                     Password
                   </label>
                   <input
+<<<<<<< HEAD
                      type={showPassword ? 'text' : 'password'}
+=======
+                    type={showPassword ? 'text' : 'password'}
+>>>>>>> 7ebe876ca60572c629c347a7fecce9333f047269
                     className={`py-lg-3 py-md-3 py-sm-3 form-control`}
                     value={password}
                     onChange={e => {
@@ -136,11 +177,19 @@ const Login = () => {
                   />
                 </div>
                 <i
+<<<<<<< HEAD
                 className={`cursor-pointer far fa-eye${
                   showPassword ? '' : '-slash'
                 } ${styles.far}`}
                 onClick={handleClickShowPassword}
               ></i>
+=======
+                  className={`cursor-pointer far fa-eye${
+                    showPassword ? '' : '-slash'
+                  } ${styles.far}`}
+                  onClick={handleClickShowPassword}
+                ></i>
+>>>>>>> 7ebe876ca60572c629c347a7fecce9333f047269
               </div>
               <div class="mb-lg-2 mb-md-2 mb-sm-3 my-sm-3 form-check">
                 <input type="checkbox" class="form-check-input" id="Check" />
@@ -162,12 +211,21 @@ const Login = () => {
             </form>
             <div>
               <Button
+<<<<<<< HEAD
                  className={`${styles.button} btn mb-3 col-12 col-md-6 px-lg-5 px-md-5 py-lg-3 py-md-3`}
                  type="submit"
                  disabled={!email || !password}
                  onClick={() => setShowLoader(true)}
                >
                  Log in
+=======
+                className={`${styles.button} btn mb-3 col-12 col-md-6 px-lg-5 px-md-5 py-lg-3 py-md-3`}
+                type="submit"
+                disabled={!email || !password}
+                onClick={() => setShowLoader(true)}
+              >
+                Log in
+>>>>>>> 7ebe876ca60572c629c347a7fecce9333f047269
               </Button>
             </div>
             <div className={`my-2`}>
@@ -181,9 +239,13 @@ const Login = () => {
               </p>
             </div>
           </div>
+<<<<<<< HEAD
           <div
             class={`d-flex justify-content-around ${styles.footer}`}
           >
+=======
+          <div class={`d-flex justify-content-around ${styles.footer}`}>
+>>>>>>> 7ebe876ca60572c629c347a7fecce9333f047269
             <a href="/" class={`mx-md-4 text-secondary`}>
               Contact Us
             </a>
