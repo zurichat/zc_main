@@ -24,10 +24,10 @@
   gap: 1.5rem;
 }
 
-.wave{
-  height:60px!important;
-  width:60px!important;
-  margin-top:-15px;
+.wave {
+  height: 60px !important;
+  width: 60px !important;
+  margin-top: -15px;
 }
 
 .welcome__div h1 {
@@ -43,11 +43,11 @@
   align-items: center;
 }
 
-.welcome__div img{
-  width:130px;
-  height:120px;
+.welcome__div img {
+  width: 130px;
+  height: 120px;
   object-fit: contain;
-  margin-top:-40px;
+  margin-top: -40px;
 }
 
 .btn__continue {
@@ -61,7 +61,7 @@
   padding: 0.5rem 8rem;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
   z-index: 2;
-  margin-top:-30px;
+  margin-top: -30px;
 }
 
 .btn__continue:hover {
