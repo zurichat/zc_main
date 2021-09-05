@@ -6,6 +6,17 @@
   z-index: 100000;
 }
 
+@media (max-width: 468px) {
+  .container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
 .containerNone {
   display: none;
 }
