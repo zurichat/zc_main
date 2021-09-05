@@ -16,7 +16,7 @@ import ContactUs from './pages/contact-us'
 import Pricing from './pages/pricing'
 import Header from './components/externalPagesComponents/Header'
 import Input from './components/externalPagesComponents/Input'
-import CookiesBanner from './components/externalPagesComponents/CookiesBanner/cookiesBanner'
+// import CookiesBanner from './components/externalPagesComponents/CookiesBanner/cookiesBanner'
 import FAQ from './pages/FAQ'
 import './styles/globals.css'
 import MarketPlace from './pages/marketplace/marketplace'
@@ -84,10 +84,6 @@ const App = () => (
       <Route path="/input">
         <Input />
       </Route>
-<<<<<<< HEAD
-      <Route path="/CookiesBanner">
-        <CookiesBanner />
-=======
       <Route path="/settings">
         <Settings />
       </Route>
@@ -107,7 +103,6 @@ const App = () => (
           color={`black`}
           underline
         />
->>>>>>> 73c452829c447231b11649af66d8df737fed8703
       </Route>
     </Switch>
   </BrowserRouter>
