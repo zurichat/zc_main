@@ -1,0 +1,218 @@
+.app {
+  background-color: #f0f4f8;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 5em 0.5em 0;
+  position: relative;
+  height: 100vh;
+}
+
+.offer {
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.leftKite {
+  position: absolute;
+  left: 15vw;
+  top: -7vh;
+}
+
+.rightKite {
+  position: absolute;
+  right: 13vw;
+  top: 2vh;
+}
+
+.offer p {
+  margin: 30px 0;
+  color: #999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.offer p span {
+  margin: 0 5px;
+}
+
+.offer p span {
+  margin: 0 5px;
+}
+
+.offer button {
+  border: none;
+  background-color: #00b87c;
+  color: #fff;
+  padding: 20px;
+  border-radius: 7px;
+  margin: 70px 0;
+}
+
+.circleLine {
+  position: absolute;
+  left: 0;
+  bottom: 25vh;
+}
+.circleDot {
+  position: absolute;
+  left: 100px;
+  bottom: 60vh;
+  z-index: 99;
+}
+
+.mail {
+  position: absolute;
+  left: 20vw;
+  bottom: 42vh;
+}
+.searchKite {
+  position: absolute;
+  right: 8vw;
+  bottom: 26vh;
+}
+::placeholder {
+  color: #bebebe;
+  font-size: 18px;
+}
+
+.app input {
+  margin-top: 10em;
+  width: 35%;
+
+  border-radius: 7px;
+  border: none;
+  padding: 20px;
+  position: relative;
+  z-index: 99;
+  padding-left: 5%;
+}
+
+.app input:focus {
+  outline: none;
+}
+.searchIcon {
+  position: absolute;
+  left: 33vw;
+  bottom: 22vh;
+  z-index: 120;
+}
+
+@media screen and (max-width: 1200px) {
+  .leftKite {
+    position: absolute;
+    left: 0;
+    top: -7vh;
+  }
+
+  .rightKite {
+    position: absolute;
+    right: 0;
+    top: 2vh;
+  }
+
+  .circleDot {
+    left: 6vw;
+    bottom: 63vh;
+  }
+
+  .mail {
+    position: absolute;
+    left: 20vw;
+    bottom: 45vh;
+  }
+
+  .leftKite,
+  .rightKite,
+  .searchKite {
+    width: 250px;
+  }
+
+  .circleDot,
+  .circleLine {
+    width: 150px;
+  }
+
+  .circleDot,
+  .mail {
+    width: 50px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .app {
+    padding: 2em 0.5em 0;
+  }
+  .offer h1 {
+    font-size: 15px;
+  }
+
+  .offer p {
+    font-size: 9px;
+    margin-top: 15px;
+  }
+
+  .offer button {
+    padding: 9px;
+    margin: 5px 0;
+    font-size: 9px;
+    border-radius: 3px;
+  }
+
+  .app input {
+    width: 85%;
+  }
+  .circleLine {
+    left: 0;
+    bottom: 20vh;
+  }
+  .circleDot {
+    left: 5vw;
+    bottom: 60vh;
+  }
+
+  .mail {
+    position: absolute;
+    left: 81vw;
+    bottom: 60vh;
+  }
+
+  .searchIcon {
+    position: absolute;
+    left: 20vw;
+    bottom: 43vh;
+  }
+
+  .offer button {
+    padding: 15px;
+    border-radius: 5px;
+  }
+
+  .app input {
+    width: 65%;
+    padding: 10px;
+    font-size: 8px;
+  }
+
+  ::placeholder {
+    font-size: 10px;
+    padding-left: 25px;
+  }
+
+  .circleLine,
+  .mail {
+    width: 40px;
+  }
+
+  .circleDot,
+  .searchIcon {
+    width: 20px;
+  }
+
+  .leftKite,
+  .rightKite,
+  .searchKite {
+    display: none;
+  }
+}

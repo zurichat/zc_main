@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+.wrapper {
+  background-color: #fff;
+  padding-top: 6%;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+}
+
+.welcome__div,
+.img__div {
+  background-color: #fff;
+  height: 50%;
+  width: 100%;
+}
+
+.welcome__div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.welcome__div h1 {
+  width: 100%;
+  font-weight: 300;
+  font-size: 70px;
+  line-height: 72px;
+  color: #393939;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn__continue {
+  background-color: #1a61db;
+  color: #fff !important;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 1.6rem;
+  outline: none;
+  border: none;
+  padding: 0.8rem 3rem;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.btn__continue:hover {
+  background-color: #0050dd;
+}
+
+.img__div {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+/* Media Query 720 HD Screens */
+@media only screen and (max-width: 1280px) and (height: 720px) {
+  .wrapper {
+    padding-top: 0;
+  }
+}
+
+/* Media Query 1080px and Smaller */
+@media only screen and (max-width: 1080px) {
+  .welcome__div h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+
+  .btn__continue {
+    z-index: 5;
+  }
+
+  .img__div {
+    height: 40%;
+  }
+
+  .img__div > img {
+    width: 100vw;
+  }
+
+  .display_none {
+    display: none;
+  }
+}
+
+/* Media Query 600px and Smaller */
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    padding-top: 15%;
+  }
+
+  .img__div {
+    height: 30%;
+  }
+}
+
+/* Media Query 325px and Smaller */
+@media only screen and (max-width: 325px) {
+  .welcome__div h1 {
+    font-size: 2.8rem;
+  }
+}
+
+/* Media Query 305px and Smaller */
+@media only screen and (max-width: 305px) {
+  .welcome__div h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Media Query 270px and Smaller */
+@media only screen and (max-width: 270px) {
+  .welcome__div h1 {
+    font-size: 2.3rem;
+  }
+}
+
+/* Media Query 250px and Smaller */
+@media only screen and (max-width: 250px) {
+  .welcome__div h1 {
+    font-size: 2rem;
+  }
+}
