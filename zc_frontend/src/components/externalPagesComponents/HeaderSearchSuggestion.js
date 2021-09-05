@@ -80,7 +80,10 @@ const HeaderSearchSuggestion = () => {
             } ${headerStyles.navbarNav}`}
           >
             {openSearchbar && !matchesMediumSize ? (
-              <SearchSuggestionBar  handleSearchBarClose={handleSearchBarClose} className="w-75" />
+              <SearchSuggestionBar
+                handleSearchBarClose={handleSearchBarClose}
+                className="w-75"
+              />
             ) : (
               <>
                 <li className="nav-item">
@@ -157,4 +160,4 @@ const HeaderSearchSuggestion = () => {
     </nav>
   )
 }
-export default  HeaderSearchSuggestion
+export default HeaderSearchSuggestion
