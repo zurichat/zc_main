@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import LandingPage from './components/LandingPage'
+import Loading from './components/Loading/loading'
 import Home from './pages/home'
 import Login from './pages/login'
 import SignUp from './pages/signup'
@@ -14,19 +15,26 @@ import Download from './pages/download'
 import ContactUs from './pages/contact-us'
 import Pricing from './pages/pricing'
 import Header from './components/externalPagesComponents/Header'
+import Input from './components/externalPagesComponents/Input'
+// import CookiesBanner from './components/externalPagesComponents/CookiesBanner/cookiesBanner'
+import FAQ from './pages/FAQ'
 import './styles/globals.css'
 import MarketPlace from './pages/marketplace/marketplace'
-import Input from './components/externalPagesComponents/Input'
-import FAQ from './pages/FAQ'
 import Settings from './pages/settings'
 import SearchResult from './components/SearchResults3'
 import LinkComponent from './components/externalPagesComponents/Link'
+import Cookies from './pages/cookies'
+
+import DeactivateAccount from './pages/settings/components/AcctDeactivation'
 
 const App = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/" exact>
         <LandingPage />
+      </Route>
+      <Route path="/loading">
+        <Loading />
       </Route>
       <Route path="/home">
         <Home />
@@ -61,11 +69,14 @@ const App = () => (
       <Route path="/contact-us">
         <ContactUs />
       </Route>
+      <Route path="/pricing">
+        <Pricing />
+      </Route>
       <Route path="/header">
         <Header />
-      </Route>
-      <Route path="/marketplace" exact>
-        <MarketPlace />
+        <Route path="/marketplace" exact>
+          <MarketPlace />
+        </Route>
       </Route>
       <Route path="/faq">
         <FAQ />
@@ -78,6 +89,12 @@ const App = () => (
       </Route>
       <Route path="/search">
         <SearchResult />
+      </Route>
+      <Route path="/cookies-banner">
+        <Cookies />
+      </Route>
+      <Route path="/deactivate-account">
+        <DeactivateAccount />
       </Route>
       <Route path="/link">
         <LinkComponent

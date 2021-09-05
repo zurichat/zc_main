@@ -4,5 +4,6 @@ module.exports = [
   require('../../middlewares/getDevice'),
   require('../../middlewares/getUser'),
   require('../../middlewares/getSession'),
+  require('./user'),
   require('../../middlewares/routeAccess')
 ]
