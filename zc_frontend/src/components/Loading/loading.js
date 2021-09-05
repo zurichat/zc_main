@@ -1,22 +1,34 @@
-import zurilogo from '../assets/loadingPagesImages/zuriicon.png'
-import chattingguys from '../assets/loadingPagesImages/chattingguys.png'
-import flowerpot1 from '../assets/loadingPagesImages/flowerpot1.png'
-import flowerpot2 from '../assets/loadingPagesImages/flowerpot2.png'
-import Spinner from '../spinner/Spinner'
-import './loading.css'
+import zurilogo from '../../assets/loadingPageImages/zurilogo.png'
+import chattingguys from '../../assets/loadingPageImages/chattingguys.png'
+import flowerpot1 from '../../assets/loadingPageImages/flowerpot1.png'
+import flowerpot2 from '../../assets/loadingPageImages/flowerpot2.png'
+import Spinner from './spinner/Spinner'
+import styles from './loading.css'
 
 function loading() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={zurilogo} className="App-logo" alt="logo" />
+    <div className={`${styles.App}`}>
+      <header className={`${styles.App_header}`}>
+        <img src={zurilogo} className={`${styles.App_logo}`} alt="logo" />
         <Spinner />
-        <p className="zuri-launch">
+        <p className={`${styles.zuri_launch}`}>
           <strong>Launching Zuri Chat...</strong>
         </p>
-        <img src={flowerpot1} className="flower-pot1" alt="First flower" />
-        <img src={flowerpot2} className="flower-pot2" alt="Second flower" />
-        <img src={chattingguys} className="chatting-guys" alt="Guys chatting" />
+        <img
+          src={flowerpot1}
+          className={`${styles.flower_pot1}`}
+          alt="First flower"
+        />
+        <img
+          src={flowerpot2}
+          className={`${styles.flower_pot2}`}
+          alt="Second flower"
+        />
+        <img
+          src={chattingguys}
+          className={`${styles.chatting_guys}`}
+          alt="Guys chatting"
+        />
       </header>
     </div>
   )
