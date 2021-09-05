@@ -1,4 +1,3 @@
-
 import React from 'react'
 import Footer from '../../components/externalPagesComponents/Footer/Footer'
 import Header from '../../components/externalPagesComponents/Header'

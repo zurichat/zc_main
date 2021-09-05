@@ -1,9 +1,12 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const jwt = require('jsonwebtoken');
 const { dummyDB } = require('../controllers/loginController');
 =======
  review
+=======
+>>>>>>> cd31f1ca8a6f76c450829ee975c4dd186c10cf51
 const jwt = require('jsonwebtoken')
 const { dummyDB } = require('../controllers/loginController')
 >>>>>>> c1e958023d0207fbd2d7eeca049f7a66bc31d234
@@ -39,6 +42,7 @@ const jwt = require('jsonwebtoken')
 const { dummyDB } = require('../controllers/loginController')
 =======
       })
+<<<<<<< HEAD
 =======
 const jwt = require('jsonwebtoken');
 const { dummyDB } = require('../controllers/loginController');
@@ -75,20 +79,26 @@ module.exports = (req, res, next) => {
       });
  main
 >>>>>>> c1e958023d0207fbd2d7eeca049f7a66bc31d234
+=======
+>>>>>>> cd31f1ca8a6f76c450829ee975c4dd186c10cf51
     }
 
     // findUser
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  review
+=======
+>>>>>>> cd31f1ca8a6f76c450829ee975c4dd186c10cf51
     const user = dummyDB.find(x => x.id === payload.id)
     if (!user) {
       return res.status(401).json({
         status: false,
         message: 'Unauthorized'
       })
+<<<<<<< HEAD
 =======
 >>>>>>> c1e958023d0207fbd2d7eeca049f7a66bc31d234
     const user = dummyDB.find((x) => x.id === payload.id);
@@ -109,10 +119,13 @@ module.exports = (req, res, next) => {
 =======
  main
 >>>>>>> c1e958023d0207fbd2d7eeca049f7a66bc31d234
+=======
+>>>>>>> cd31f1ca8a6f76c450829ee975c4dd186c10cf51
     }
 
     next()
   })
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 }
@@ -126,3 +139,6 @@ module.exports = (req, res, next) => {
 }
  main
 >>>>>>> c1e958023d0207fbd2d7eeca049f7a66bc31d234
+=======
+}
+>>>>>>> cd31f1ca8a6f76c450829ee975c4dd186c10cf51

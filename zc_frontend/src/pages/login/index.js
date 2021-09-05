@@ -9,6 +9,7 @@ import LoginLoading from '../../components/LoginLoading'
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  review
 =======
@@ -33,12 +34,20 @@ const Login = () => {
 =======
  main
 >>>>>>> c1e958023d0207fbd2d7eeca049f7a66bc31d234
+=======
+import axios from 'axios'
+import Illustration from '../../components/Illustration'
+
+const Login = () => {
+  const [email, setEmail] = useState('')
+>>>>>>> cd31f1ca8a6f76c450829ee975c4dd186c10cf51
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [showLoader, setShowLoader] = useState(false)
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
@@ -50,12 +59,15 @@ const Login = () => {
 
  main
 >>>>>>> c1e958023d0207fbd2d7eeca049f7a66bc31d234
+=======
+>>>>>>> cd31f1ca8a6f76c450829ee975c4dd186c10cf51
   const handleEmailChange = e => {
     setEmail(e.target.value)
   }
   const handleSubmit = e => {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     e.preventDefault();
 =======
     e.preventDefault()
@@ -67,6 +79,9 @@ const Login = () => {
     e.preventDefault();
  main
 >>>>>>> c1e958023d0207fbd2d7eeca049f7a66bc31d234
+=======
+    e.preventDefault()
+>>>>>>> cd31f1ca8a6f76c450829ee975c4dd186c10cf51
     alert(`Your state values: \n
             emal: ${email} \n
             password: ${password} \n
@@ -110,6 +125,7 @@ const Login = () => {
 
   return (
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div className={`container-fluid ${styles.body}`}>
         {showLoader && <LoginLoading />}
       <div class={`row`}>
@@ -139,6 +155,8 @@ const Login = () => {
             <img class={`${styles.person2}`} src="person2.svg" alt="" />
           </div>
 =======
+=======
+>>>>>>> cd31f1ca8a6f76c450829ee975c4dd186c10cf51
     <div className={styles.login__container}>
       {showLoader && <LoginLoading />}
       <Illustration />
@@ -147,7 +165,10 @@ const Login = () => {
           <span>
             <img src="logo.svg" alt="logo" />
           </span>
+<<<<<<< HEAD
 >>>>>>> f01da7467b46bba8645ad955cbebfb55571e7e0a
+=======
+>>>>>>> cd31f1ca8a6f76c450829ee975c4dd186c10cf51
         </div>
         <div className={`pt-1 mt-3`}>
           <h2 className={`pt-2 ${styles.loginheader} text-dark`}>Log in</h2>
@@ -176,6 +197,7 @@ const Login = () => {
               alt="apple icon"
             />
           </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
           <div className={`pt-1 mt-3`}>
             <h2 className={`pt-2 ${styles.loginheader} text-dark`}>Log in</h2>
@@ -352,6 +374,8 @@ const Login = () => {
                     Get help signing in
                   </a>
 =======
+=======
+>>>>>>> cd31f1ca8a6f76c450829ee975c4dd186c10cf51
           <div className={` d-flex justify-content-between`}>
             <img className={`${styles.line}`} src="Line.svg" alt="line" />
             <p className={`${styles.or}`}>Or log in with</p>
@@ -369,7 +393,10 @@ const Login = () => {
               >
                 <label for="Email1" class="form-label">
                   Email address
+<<<<<<< HEAD
 >>>>>>> f01da7467b46bba8645ad955cbebfb55571e7e0a
+=======
+>>>>>>> cd31f1ca8a6f76c450829ee975c4dd186c10cf51
                 </label>
                 <input
                   type="email"
@@ -379,6 +406,7 @@ const Login = () => {
                   placeholder="Enter your email address"
                 />
               </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
             </form>
             <div>
@@ -415,6 +443,8 @@ const Login = () => {
 >>>>>>> c1e958023d0207fbd2d7eeca049f7a66bc31d234
               </Button>
 =======
+=======
+>>>>>>> cd31f1ca8a6f76c450829ee975c4dd186c10cf51
             </div>
             <div className={`d-flex ${styles.email_input}`}>
               <div
@@ -439,7 +469,10 @@ const Login = () => {
                 } ${styles.far}`}
                 onClick={handleClickShowPassword}
               ></i>
+<<<<<<< HEAD
 >>>>>>> f01da7467b46bba8645ad955cbebfb55571e7e0a
+=======
+>>>>>>> cd31f1ca8a6f76c450829ee975c4dd186c10cf51
             </div>
             <div class="mb-lg-2 mb-md-2 mb-sm-3 my-sm-3 form-check">
               <input type="checkbox" class="form-check-input" id="Check" />
@@ -472,6 +505,7 @@ const Login = () => {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           <div
             class={`d-flex justify-content-around ${styles.footer}`}
           >
@@ -498,6 +532,8 @@ const Login = () => {
               <i class="fas fa-caret-down"></i>
             </a>
 =======
+=======
+>>>>>>> cd31f1ca8a6f76c450829ee975c4dd186c10cf51
           <div className={`my-2`}>
             <p
               className={`text-center py-1 text-secondary ${styles.checktextlink}`}
@@ -507,7 +543,10 @@ const Login = () => {
                 Create an Account
               </a>
             </p>
+<<<<<<< HEAD
 >>>>>>> f01da7467b46bba8645ad955cbebfb55571e7e0a
+=======
+>>>>>>> cd31f1ca8a6f76c450829ee975c4dd186c10cf51
           </div>
         </div>
         <div class={`d-flex justify-content-around ${styles.footer}`}>

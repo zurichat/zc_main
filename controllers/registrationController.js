@@ -21,6 +21,7 @@ exports.register = (req, res, _) => {
     status: true,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     message: 'registration successful',
 >>>>>>> 7ebe876ca60572c629c347a7fecce9333f047269
@@ -30,6 +31,9 @@ exports.register = (req, res, _) => {
 =======
  main
 >>>>>>> c1e958023d0207fbd2d7eeca049f7a66bc31d234
+=======
+    message: 'registration successful',
+>>>>>>> cd31f1ca8a6f76c450829ee975c4dd186c10cf51
     data: {
       user: { ...newData, ...extraData },
       token
@@ -41,8 +45,11 @@ exports.register = (req, res, _) => {
 =======
 =======
 
+<<<<<<< HEAD
 >>>>>>> c1e958023d0207fbd2d7eeca049f7a66bc31d234
 
+=======
+>>>>>>> cd31f1ca8a6f76c450829ee975c4dd186c10cf51
 exports.handleRegister = (_, res) => {
   const user = {
     id: 1,
@@ -71,8 +78,11 @@ exports.handleRegister = (_, res) => {
   })
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 7ebe876ca60572c629c347a7fecce9333f047269
 =======
 
 
 >>>>>>> c1e958023d0207fbd2d7eeca049f7a66bc31d234
+=======
+>>>>>>> cd31f1ca8a6f76c450829ee975c4dd186c10cf51
