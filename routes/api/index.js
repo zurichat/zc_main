@@ -3,6 +3,6 @@ module.exports = [
   require('./plugin'),
   require('../../middlewares/getDevice'),
   require('../../middlewares/getSession'),
-  require('./user'),
+  // require('./user'),
   require('../../middlewares/routeAccess')
 ]
