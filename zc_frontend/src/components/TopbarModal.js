@@ -1,12 +1,13 @@
 import React, { useContext, useState } from 'react'
 
 // react icons
-import { FaChevronRight, FaCircle, FaTimes } from 'react-icons/fa'
+import { FaChevronRight, FaTimes } from 'react-icons/fa'
 
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
 
 import styles from '../styles/Topbar.module.css'
 import { TopbarContext } from '../contexts/Topbar'
+import StatusBadge from './StatusBadge'
 import { ProfileContext } from '../contexts/ProfileModal'
 import Preferences from './Preferences'
 import EditProfile from './EditProfile'
@@ -17,7 +18,6 @@ const TopbarModal = () => {
   const state = useContext(TopbarContext)
   const [showModal] = state.show
   const [showStatus, setShowStatus] = state.status
-  const [chosenEmoji] = state.emoji
   const { onEmojiClick, openStatus, closeStatus, modalRef } = state
   const [modal, setModal] = useState('')
 
@@ -27,7 +27,7 @@ const TopbarModal = () => {
       {showStatus ? (
         <div
           ref={modalRef}
-          className={styles.backgrounds}
+          className={styles.modalContainers}
           onClick={closeStatus}
         >
           <div className={styles.picker}>
@@ -50,19 +50,20 @@ const TopbarModal = () => {
         <section className={styles.topbarModal}>
           <div className={styles.sectionOne}>
             <div className={styles.oneLeft}>
-              <img src="/profile.png" alt="profile" />
+              <img src="/profilepic.png" alt="profile" />
             </div>
+
             <div className={styles.oneRight}>
               <h4>Praise.A</h4>
               <div className={styles.online}>
-                <FaCircle className={styles.circle} />
+                <div className={styles.circle}></div>
                 <p>Active</p>
               </div>
             </div>
           </div>
 
           <div onClick={openStatus} className={styles.sectionTwo}>
-            <p>{chosenEmoji ? chosenEmoji.emoji : null}</p>
+            <StatusBadge />
           </div>
 
           <div className={styles.sectionThree}>
