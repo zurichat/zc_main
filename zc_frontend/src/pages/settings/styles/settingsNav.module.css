@@ -16,7 +16,7 @@
 
 .brand img {
   width: 100%;
-  max-width:30px;
+  max-width: 30px;
   height: 70%;
   object-fit: cover;
 }
@@ -25,9 +25,9 @@
   font-family: 'Lato';
   font-size: 25px;
   font-weight: 700;
-  padding-top: 5px;
+  /* padding-top: 5px; */
   background: none;
-  margin-left:5px;
+  margin-left: 5px;
 }
 
 /* The section of the  account bar*/
@@ -36,9 +36,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width:40%;
+  width: 40%;
 }
-
 
 .searchBar {
   width: 60%;
@@ -58,8 +57,8 @@
   border: none;
   outline: none;
   font-family: 'Lato', sans-serif;
-  font-size:11px;
-  background:#f6f6f6;
+  font-size: 11px;
+  background: #f6f6f6;
 }
 .searchInput::placeholder {
   font-size: 11px;
@@ -70,53 +69,56 @@
   fill: #bebebe;
 }
 
-
 /* THE SECTION OF THE RIGHT NAV */
-.rightnav{
-  width:10%;
-  display:flex;
+.rightnav {
+  width: 10%;
+  display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
-
 .profile {
   border-radius: 50%;
   display: flex;
-  margin-left: 1.375em;
+  /* margin-left: 1.375em; */
   align-items: center;
   justify-content: center;
-  height: 2.5em;
-  width: 2.5em;
   cursor: pointer;
-  position:relative;
 }
 
-.status{
-  margin-right:5px;
+.settings {
+  margin-right: 19px;
 }
 
-.profile img {
-  width: 100%;
-  max-width:60px;
-  height: 100%;
-  max-height:40px;
+.status {
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.pImage {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
   border-radius: 50%;
-  /* background:#dbdada; */
+}
+
+.pImage .profileImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #dbdada;
 }
 
 .circles {
-  background:green;
-  max-height:7px;
-  height:100%;
-  max-width:7px;
-  width:100%;
-  position:absolute;
-  bottom:5px;
-  right:-14px;
+  background: green;
+  height: 7px;
+  width: 7px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   border-radius: 50%;
 }
-
 
 .containers .menubars {
   display: none;
@@ -125,7 +127,7 @@
 /* ===================================== */
 /* THE SECTION OF THE MEDIA QUERY */
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .brand {
     width: 25%;
   }
@@ -135,7 +137,7 @@
     height: 80%;
   }
 
-  .accountbar {
+  .searchBar {
     position: fixed;
     top: 70px;
     left: -100%;
@@ -156,7 +158,7 @@
   }
 
   .containers .menubars {
-    display: block;
+    /* display: block; */
     position: absolute;
     top: 5px;
     right: 20px;
@@ -165,6 +167,10 @@
 
   .searchBar {
     width: 300px;
+  }
+
+  .rightnav {
+    width: 20%;
   }
 }
 

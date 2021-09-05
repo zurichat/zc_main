@@ -5,9 +5,6 @@
   --xl: 1200px;
 } */
 
-* {
-  box-sizing: border-box;
-}
 /* LAYOUT */
 .container {
   width: 100%;

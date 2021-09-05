@@ -3,7 +3,7 @@ import ProfileModal from './ProfileModal'
 
 const EditProfile = () => {
   return (
-    <ProfileModal full title="Edit Profile">
+    <ProfileModal full title="Edit your profile">
       <>
         <div className={styles.profileWrapper}>
           <div className={styles.profile}>
@@ -116,7 +116,7 @@ const EditProfile = () => {
                       />
                     </div>
 
-                    <img src="/profile.png" alt="profile-pic" />
+                    <img src="/profiles.svg" alt="profile-pic" />
                     <div className={styles.username}>
                       <div className={styles.mt} style={{ width: '100%' }}>
                         <label>Display Name</label>
@@ -136,7 +136,6 @@ const EditProfile = () => {
                     <div className={styles.subContainer}>
                       <div className={styles.mxAuto}>
                         <button className={styles.save}>Upload an Image</button>
-                        ْ
                       </div>
                       <button className={styles.deleteImage}>
                         Delete image
