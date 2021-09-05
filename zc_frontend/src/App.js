@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './pages/home';
 import Login from './pages/login';
@@ -7,7 +7,6 @@ import Blog from './pages/blog';
 import News from './pages/news';
 import './styles/globals.css';
 import EmailNotification from './components/EmailNotification';
-=======
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import LandingPage from './components/LandingPage'
 import Loading from './components/Loading/loading'
@@ -33,8 +32,6 @@ import Settings from './pages/settings'
 import SearchResult from './components/SearchResults3'
 import LinkComponent from './components/externalPagesComponents/Link'
 import Cookies from './pages/cookies'
-
->>>>>>> 499015cbb7307394413abe391eb7521c4632a396
 const App = () => (
   <BrowserRouter>
     <Switch>
@@ -114,12 +111,7 @@ const App = () => (
       </Route>
     </Switch>
   </BrowserRouter>
-<<<<<<< HEAD
-  
 );
 
 export default App;
-=======
-)
-export default App
->>>>>>> 499015cbb7307394413abe391eb7521c4632a396
+
