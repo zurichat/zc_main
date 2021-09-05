@@ -7,20 +7,17 @@ import { useHistory } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 import LoginLoading from '../../components/LoginLoading'
 
-
 const Login = () => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [showLoader, setShowLoader] = useState(false)
-
-
 
   const handleEmailChange = e => {
     setEmail(e.target.value)
   }
   const handleSubmit = e => {
-    e.preventDefault();
+    e.preventDefault()
     alert(`Your state values: \n
             emal: ${email} \n
             password: ${password} \n
@@ -38,7 +35,7 @@ const Login = () => {
   }
   return (
     <div className={`container-fluid ${styles.body}`}>
-        {showLoader && <LoginLoading />}
+      {showLoader && <LoginLoading />}
       <div class={`row`}>
         <div class={`col-lg-5 col-md-12 ${styles.side}`}>
           <div className={`row`}>
@@ -102,11 +99,18 @@ const Login = () => {
             <div className={` d-flex justify-content-between`}>
               <img className={`${styles.line}`} src="Line.svg" alt="line" />
               <p className={`${styles.or}`}>Or log in with</p>
-              <img className={`${styles.line}`} src="Line.svg" alt="line" srcset="" />
+              <img
+                className={`${styles.line}`}
+                src="Line.svg"
+                alt="line"
+                srcset=""
+              />
             </div>
             <form className={`mb-sm-3`} onSubmit={handleSubmit}>
               <div className={` ${styles.email_input}`}>
-                <div className={`mb-lg-3 mb-md-3 mb-sm-3 col-sm-12 col-md-6 w-100`}>
+                <div
+                  className={`mb-lg-3 mb-md-3 mb-sm-3 col-sm-12 col-md-6 w-100`}
+                >
                   <label for="Email1" class="form-label">
                     Email address
                   </label>
@@ -116,17 +120,18 @@ const Login = () => {
                     value={email}
                     onChange={handleEmailChange}
                     placeholder="Enter your email address"
-                   
                   />
                 </div>
               </div>
               <div className={`d-flex ${styles.email_input}`}>
-                <div className={`mb-lg-3 mb-md-3 mb-sm-3  col-sm-12 col-md-6 w-100`}>
+                <div
+                  className={`mb-lg-3 mb-md-3 mb-sm-3  col-sm-12 col-md-6 w-100`}
+                >
                   <label for="Password" class="form-label">
                     Password
                   </label>
                   <input
-                     type={showPassword ? 'text' : 'password'}
+                    type={showPassword ? 'text' : 'password'}
                     className={`py-lg-3 py-md-3 py-sm-3 form-control`}
                     value={password}
                     onChange={e => {
@@ -136,11 +141,11 @@ const Login = () => {
                   />
                 </div>
                 <i
-                className={`cursor-pointer far fa-eye${
-                  showPassword ? '' : '-slash'
-                } ${styles.far}`}
-                onClick={handleClickShowPassword}
-              ></i>
+                  className={`cursor-pointer far fa-eye${
+                    showPassword ? '' : '-slash'
+                  } ${styles.far}`}
+                  onClick={handleClickShowPassword}
+                ></i>
               </div>
               <div class="mb-lg-2 mb-md-2 mb-sm-3 my-sm-3 form-check">
                 <input type="checkbox" class="form-check-input" id="Check" />
@@ -162,12 +167,12 @@ const Login = () => {
             </form>
             <div>
               <Button
-                 className={`${styles.button} btn mb-3 col-12 col-md-6 px-lg-5 px-md-5 py-lg-3 py-md-3`}
-                 type="submit"
-                 disabled={!email || !password}
-                 onClick={() => setShowLoader(true)}
-               >
-                 Log in
+                className={`${styles.button} btn mb-3 col-12 col-md-6 px-lg-5 px-md-5 py-lg-3 py-md-3`}
+                type="submit"
+                disabled={!email || !password}
+                onClick={() => setShowLoader(true)}
+              >
+                Log in
               </Button>
             </div>
             <div className={`my-2`}>
@@ -181,9 +186,7 @@ const Login = () => {
               </p>
             </div>
           </div>
-          <div
-            class={`d-flex justify-content-around ${styles.footer}`}
-          >
+          <div class={`d-flex justify-content-around ${styles.footer}`}>
             <a href="/" class={`mx-md-4 text-secondary`}>
               Contact Us
             </a>
