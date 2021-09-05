@@ -60,9 +60,24 @@ const controllers = () => {
       }
     })
   }
+  const login = (_, res) => {
+    const user = dummyDB[0]
+    const token = createJwt(user.id)
+    const userCopy = { ...user }
+    delete userCopy.password
+    return res.status(200).json({
+      status: true,
+      message: 'login sucessful',
+      data: {
+        token,
+        user: userCopy
+      }
+    })
+  }
 
   return {
-    handleLogin
+    handleLogin,
+    login
   }
 }
 
