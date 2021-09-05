@@ -1,0 +1,284 @@
+.notify {
+  background: white;
+  width: 800px;
+  box-sizing: border-box;
+  margin-left: 450px;
+  margin-top: 10px;
+  height: 140vh;
+  margin-bottom: 200px;
+  border: 1px solid rgb(241, 235, 235);
+}
+
+.notifywrapper {
+  margin-left: 40px;
+}
+
+.head {
+  border-top: 1px solid rgb(233, 227, 227);
+  margin-top: 35px;
+  width: 95%;
+}
+
+.text {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: rgb(44, 29, 29);
+}
+
+.subtext {
+  font-size: 0.7rem;
+  color: rgb(134, 115, 115);
+  margin-top: 5px;
+}
+
+.button {
+  margin-top: 25px;
+  background: whitesmoke;
+  border: 1px solid rgb(201, 195, 195);
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 5px 10px 5px 10px;
+  margin-bottom: 20px;
+  color: rgb(85, 84, 84);
+}
+
+.preview {
+  display: flex;
+  flex-direction: row;
+}
+
+.msg {
+  margin-left: 10px;
+  color: rgb(85, 84, 84);
+}
+
+.msg2 {
+  margin-left: 10px;
+  color: rgb(85, 84, 84);
+}
+
+.mute {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.picksound {
+  display: flex;
+  margin-bottom: 50px;
+  margin-top: 26px;
+  color: rgb(85, 84, 84);
+}
+
+.lounge {
+  margin-left: 60px;
+  color: rgb(85, 84, 84);
+}
+
+.dropdown {
+  margin-top: 5px;
+}
+
+.dropdown2 {
+  margin-top: 5px;
+}
+
+.button2 {
+  padding-right: 120px;
+  padding-left: 5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  cursor: pointer;
+  border: 1px solid rgb(218, 215, 215);
+  border-radius: 4px;
+  color: rgb(85, 84, 84);
+}
+
+.button3 {
+  padding-right: 100px;
+  padding-left: 5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  cursor: pointer;
+  border: 1px solid rgb(218, 215, 215);
+  border-radius: 4px;
+  color: rgb(85, 84, 84);
+}
+
+.section2 {
+  display: flex;
+  flex-direction: column;
+  margin-left: -575px;
+  margin-top: 115px;
+}
+
+.head2 {
+  border-top: 1px solid rgb(233, 227, 227);
+  margin-top: -28px;
+  width: 232%;
+}
+
+.text2 {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: rgb(44, 29, 29);
+}
+
+.flash {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.never {
+  margin-left: 10px;
+  color: rgb(85, 84, 84);
+}
+
+.flash2 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+}
+
+.idle {
+  margin-left: 10px;
+  color: rgb(85, 84, 84);
+}
+
+.flash3 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+}
+
+.always {
+  margin-left: 10px;
+  color: rgb(85, 84, 84);
+}
+
+.deliver {
+  margin-top: 28px;
+}
+
+.dropdown3 {
+  margin-top: 5px;
+}
+
+.button4 {
+  padding-right: 100px;
+  padding-left: 5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  cursor: pointer;
+  border: 1px solid rgb(218, 215, 215);
+  border-radius: 4px;
+  color: rgb(85, 84, 84);
+}
+
+.section3 {
+  display: flex;
+  flex-direction: column;
+  margin-left: -310px;
+  margin-top: 380px;
+}
+
+.head3 {
+  border-top: 1px solid rgb(233, 227, 227);
+  margin-top: -10px;
+  width: 230%;
+}
+
+.text3 {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: rgb(44, 29, 29);
+}
+
+.mobile {
+  margin-top: 25px;
+  color: rgb(85, 84, 84);
+}
+
+.dropdown4 {
+  margin-top: 5px;
+}
+
+.button5 {
+  padding-right: 100px;
+  padding-left: 5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  cursor: pointer;
+  border: 1px solid rgb(218, 215, 215);
+  border-radius: 4px;
+  color: rgb(85, 84, 84);
+}
+
+.email {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+}
+
+.msg5 {
+  margin-left: 10px;
+  color: rgb(85, 84, 84);
+}
+
+@media screen and (max-width: 768px) {
+  .notify {
+    margin-left: 25px;
+    width: 85%;
+    height: 220vh;
+  }
+
+  .notifywrapper {
+    margin-left: 20px;
+  }
+
+  .picksound {
+    flex-direction: column;
+  }
+
+  .lounge {
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+
+  .section2 {
+    margin-left: 2px;
+  }
+
+  .head2 {
+    margin-top: -90px;
+    width: 90%;
+  }
+
+  .section3 {
+    margin-left: 2px;
+    margin-top: 114px;
+  }
+
+  .head3 {
+    margin-top: -90px;
+    width: 90%;
+  }
+
+  .button5 {
+    padding-right: 70px;
+  }
+
+  .email {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 424px) {
+  .notify {
+    margin-left: 33px;
+  }
+}
