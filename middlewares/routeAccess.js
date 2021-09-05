@@ -8,7 +8,7 @@ const restrictToTest = express.Router()
 
 
 //For testing purpose
-restrictToTest.get('/test/route-access-controller',(req, res) => {
+restrictToTest.get('/vik/route-access-controller',(req, res) => {
   
   const ra = (...roles) => {
     
