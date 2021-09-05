@@ -20,9 +20,16 @@ exports.register = (req, res, _) => {
   res.status(201).json({
     status: true,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     message: 'registration successful',
 >>>>>>> 7ebe876ca60572c629c347a7fecce9333f047269
+=======
+
+    message: 'registration successful',
+=======
+ main
+>>>>>>> c1e958023d0207fbd2d7eeca049f7a66bc31d234
     data: {
       user: { ...newData, ...extraData },
       token
@@ -30,7 +37,11 @@ exports.register = (req, res, _) => {
   })
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> c1e958023d0207fbd2d7eeca049f7a66bc31d234
 
 exports.handleRegister = (_, res) => {
   const user = {
@@ -59,4 +70,9 @@ exports.handleRegister = (_, res) => {
     }
   })
 }
+<<<<<<< HEAD
 >>>>>>> 7ebe876ca60572c629c347a7fecce9333f047269
+=======
+
+
+>>>>>>> c1e958023d0207fbd2d7eeca049f7a66bc31d234
