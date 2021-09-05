@@ -12,7 +12,7 @@ import Preferences from './Preferences'
 import EditProfile from './EditProfile'
 
 const TopbarModal = () => {
-  const { toggleModalState } = useContext(ProfileContext)
+  const { toggleModalState, toggleProfileState } = useContext(ProfileContext)
 
   const state = useContext(TopbarContext)
   const [showModal] = state.show
@@ -85,7 +85,7 @@ const TopbarModal = () => {
             >
               Edit profile
             </p>
-            <p>View profile</p>
+            <p onClick={toggleProfileState}>View profile</p>
             <p
               onClick={() => {
                 toggleModalState()
