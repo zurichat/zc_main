@@ -6,6 +6,7 @@ import google from '../images/google.svg'
 import zuri from '../images/zuri.svg'
 import globe from '../images/globe.svg'
 import chevron from '../images/chevron.svg'
+
 import usePasswordVisibilityReducer from '../../components/usePasswordVisibilityReducer'
 // import Illustration from '../../components/Illustration'
 
@@ -222,8 +223,9 @@ const SignUp = () => {
     <>
       <div className={styles.container}>
         <div className={styles.login_container}>
-          <div className={styles.logo}>
-            <img src={logo} className={styles.logoImage} />
+          <div>
+          {/* <div className={styles.logo}> */}
+            <img src={zuri} className={styles.logoImage} />
             <b className={styles.logoText}>Zuri Chat</b>
           </div>
   
