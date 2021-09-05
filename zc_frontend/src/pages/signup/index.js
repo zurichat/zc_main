@@ -220,12 +220,10 @@ const SignUp = () => {
 
   return (
     <>
-      <section
-        className={`${styles.section_signup}`}>
+      <section className={`${styles.section_signup}`}>
         <div className={`${styles.imgBx}`}>
           <img src={bg} alt="img" className={`${styles.imgBx_img}`} />
         </div>
-
 
         {/* <Illustration /> */}
         <div className={`${styles.contentBx}`}>
@@ -337,7 +335,6 @@ const SignUp = () => {
                 </div>
               </div>
 
-              
               <div className={`${styles.toc}`}>
                 <input
                   className={`${styles.toc_input}`}
@@ -393,7 +390,6 @@ const SignUp = () => {
             </form>
           </div>
         </div>
-      
       </section>
     </>
   )
