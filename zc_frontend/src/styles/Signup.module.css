@@ -1,42 +1,28 @@
-/* html {
-  font-size: 62.5%;
-}
-
-body {
-  font-size: 1rem;
-}
 
 .section_signup {
-  position: relative;
-  width: 100vw;
   height: 100vh;
   display: flex;
 }
 
 .imgBx {
   position: relative;
-  width: 39.7%;
-  height: 100vh;
-  object-fit: cover;
-  object-position: center;
+  width: 39%;
+  object-fit: contain;
+  /* object-position: center; */
 }
 
 .imgBx_img {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
 }
 
+/*  THE SECTION OF THE CONTENT */
 .contentBx {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  width: 60.3%;
-  height: 100%;
-  overflow: hidden;
+  width: 50%;
 }
 
 .formBx {
@@ -45,50 +31,44 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: auto;
 }
 
 .formInline {
   width: 80%;
-  padding: 0 40px 0 0;
   align-items: center;
-  height: 100%;
 }
 
 .formLogo {
-  margin: 10px 0 10px -60px;
-  height: 4rem;
+  height: 3rem;
+  width:8rem;
+  margin-top:10px;
 }
 
 .formInline_h2 {
   color: #3a3a3a;
   font-weight: bolder;
-  font-size: 3.1rem;
-  line-height: 4.8rem;
+  font-size:1.1rem;
   text-transform: capitalize;
-  margin: 2px 0;
+  margin: 10px 0;
+  text-align:left;
 }
 
 .inputBx {
-  padding: 8px 0;
+  padding:0;
   width: 100%;
-  height: auto;
 }
 
 .inputBx_span {
   font-weight: 700;
-  font-size: 2.1rem;
-  line-height: 2.4rem;
   display: block;
   color: #3a3a3a;
-  font-size: 16px;
-  letter-spacing: 1px;
-  padding-bottom: 5px;
+  font-size: 14px;
+  letter-spacing: 1px;  
 }
 
 .inputErrorMsg {
   font-weight: normal;
-  font-size: 1.6rem;
+  font-size: 12px;
   padding-left: 1.6rem;
   color: #ff0000;
   letter-spacing: 1px;
@@ -99,7 +79,7 @@ body {
   grid-template-columns: 1fr auto;
   align-items: center;
   border: 1px solid rgb(239, 239, 239);
-  border-radius: 0.8rem;
+  border-radius:3px;
 }
 
 .cust_input_grp:active {
@@ -116,14 +96,19 @@ body {
 
 .inputBx_input {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   outline: none;
   border: 1px solid #efefef;
   font-size: 12px;
   letter-spacing: 1px;
   color: #3a3a3a;
   background: #fff;
-  border-radius: 8px;
+  border-radius: 2px;
+  margin-bottom:10px;
+}
+
+.inputBx_input::-webkit-input-placeholder{
+  font-size:12px;
 }
 
 .inputBx_input:focus {
@@ -151,8 +136,8 @@ body {
 
 .toc_input {
   margin-right: 14px;
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1rem;
+  width: 1rem;
 }
 
 .tocText {
@@ -165,12 +150,16 @@ body {
   color: #fff;
   outline: none;
   border: none;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   cursor: pointer;
-  border-radius: 0.8rem;
-  padding: 1.4rem 0;
-  margin: 0;
+  border-radius: 3px;
+  padding: 10px;
+  margin-top:10px;
+}
+
+.custom_form_btn:hover{
+  color:#fff;
 }
 
 .lineSpan {
@@ -224,7 +213,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px;
+  padding: 13px;
 }
 
 .bottomline_a {
@@ -286,10 +275,15 @@ body {
     justify-content: center;
   }
   .terms_label {
-    font-size: 1.1rem;
+    font-size: 12px;
     line-height: 2rem;
   }
+
+  .tocText{
+    font-size:12px;
+  }
+
   .footer_a {
     margin: auto 16px;
   }
-} */
+}
