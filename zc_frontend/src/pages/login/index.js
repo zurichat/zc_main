@@ -1,30 +1,34 @@
 /* eslint-disable no-template-curly-in-string */
 /* eslint-disable react/jsx-no-duplicate-props */
-import styles from './styles/Login.module.css'
+import styles from '../../styles/Login.module.css'
 import React, { useState } from 'react'
-// import LoginLoading from '../../components/LoginLoading'
 import GoogleLogin from 'react-google-login'
+import { useHistory } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
 import LoginLoading from '../../components/LoginLoading'
-import { Link, useHistory } from 'react-router-dom'
+
 
 const Login = () => {
-  const [email, setEmail] = useState('')
-  const [pass, setPass] = useState({
-    password: '',
-    showPassword: false
-  })
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
   const [showLoader, setShowLoader] = useState(false)
-  let history = useHistory()
-  // const handleClickShowPassword = () => {
-  //   setPass({ ...pass, showPassword: !pass.showPassword })
-  // }
 
-  const handleMouseDownPassword = event => {
-    event.preventDefault()
+
+
+  const handleEmailChange = e => {
+    setEmail(e.target.value)
   }
-
-  const handlePasswordChange = prop => event => {
-    setPass({ ...pass, [prop]: event.target.value })
+  const handleSubmit = e => {
+    e.preventDefault();
+    alert(`Your state values: \n
+            emal: ${email} \n
+            password: ${password} \n
+            You can replace this alert with your proces`)
+  }
+  let history = useHistory()
+  const handleClickShowPassword = () => {
+    setShowPassword(prev => !prev)
   }
   const successResponseGoogle = response => {
     history.push('/')
@@ -34,9 +38,9 @@ const Login = () => {
   }
   return (
     <div className={`container-fluid ${styles.body}`}>
-      {showLoader && <LoginLoading />}
+        {showLoader && <LoginLoading />}
       <div class={`row`}>
-        <div class={`col-md-5 ${styles.side}`}>
+        <div class={`col-lg-5 col-md-12 ${styles.side}`}>
           <div className={`row`}>
             <img src="/Group3155.png" alt="" />
             <div className={`col-md-12 mb-5`}>
@@ -56,98 +60,24 @@ const Login = () => {
             </p>
             <img src="/Group3149.svg" alt="" />
           </div>
-          <div class={` col-md-6 d-flex ${styles.person}`}>
+          <div class={`col-md-6 col-md-6 d-flex ${styles.person}`}>
             <img class={`${styles.flower}`} src="/Group3151.png" alt="" />
             <img class={`${styles.person1}`} src="person1.svg" alt="" />
             <img class={`${styles.person2}`} src="person2.svg" alt="" />
           </div>
         </div>
-        <div class={`col-md-7 ${styles.login}`}>
+        <div class={`col-lg-7 col-md-12 ${styles.login}`}>
           <div className={`pt-4 mt-3 text-center`}>
             <span>
-              <img src="zurichatlogo.svg" alt="logo" />
-              <p className={`d-inline p-2`}>Zuri chat</p>
+              <img src="logo.svg" alt="logo" />
             </span>
           </div>
           <div className={`pt-1 mt-3`}>
-            <h2 className={`pt-2 `}>
-              <Link title="Log in" color="#00B87C" />
-            </h2>
+            <h2 className={`pt-2 ${styles.loginheader} text-dark`}>Log in</h2>
             <p className={styles.subtext}>
-              Login with the data you entered during your
+              Login with the data you entered during your registration
             </p>
-            <div className={`d-flex ${styles.email_input}`}>
-              <div className={`mb-3 col-12 col-md-6 w-100`}>
-                <input
-                  type="email"
-                  className={`py-2 form-control`}
-                  value={email}
-                  onChange={e => {
-                    console.log(e.target.value)
-                    setEmail(e.target.value)
-                  }}
-                  placeholder="Enter your email address"
-                  required
-                />
-              </div>
-            </div>
-            <div className={`d-flex ${styles.email_input}`}>
-              <div className={`mb-3 col-12 col-md-6 w-100 d-flex`}>
-                <input
-                  type={pass.showPassword ? 'text' : 'password'}
-                  onChange={handlePasswordChange('password')}
-                  className={`py-2 form-control`}
-                  value={pass.password}
-                  onChange={e => {
-                    console.log(e.target.value)
-                    setPass(e.target.value)
-                  }}
-                  placeholder="Enter a password"
-                  id="id_password"
-                />
-              </div>
-              <i
-                className={`far fa-eye-slash ${styles.far}`}
-                // onClick={handleClickShowPassword}
-                onMouseDown={handleMouseDownPassword}
-              ></i>
-              {/* {pass.password ? <i className={`far far-eye ${styles.far}`}></i>: <i className={`far fa-eye-slash ${styles.far}`}></i>} */}
-            </div>
-            <div class="mb-3 form-check">
-              <input
-                type="checkbox"
-                class="form-check-input"
-                id="exampleCheck1"
-              />
-              <label
-                className={`form-check-label text-secondary ${styles.checktext}`}
-                for="exampleCheck1"
-              >
-                Remember me
-              </label>
-              <label
-                className={`float-md-end text-secondary  ${styles.checktext}`}
-              >
-                Forgot password?{' '}
-                <a href="/" className={`${styles.checklink}`}>
-                  Get help signing in
-                </a>
-              </label>
-            </div>
-            <div>
-              <button
-                className={`${styles.button} btn mb-3 col-12 col-md-6 px-5 px-md-5 py-2`}
-                onClick={() => setShowLoader(true)}
-              >
-                Log In
-              </button>
-            </div>
-            <div className={`my-2 d-flex justify-content-around`}>
-              <img className={`w-50 p-3`} src="Line.svg" alt="line" />
-              <p className={`${styles.or}`}>OR</p>
-              <img className={`w-50 p-3`} src="Line.svg" alt="line" srcset="" />
-            </div>
-            <div className={`my-3 text-center`}>
+            <div className={`my-lg-3 my-sm-3 text-center`}>
               <GoogleLogin
                 clientId="78755437309-27q9m2toval9c439d2r7q5gj28h0pqcc.apps.googleusercontent.com"
                 render={renderProps => (
@@ -164,14 +94,85 @@ const Login = () => {
                 cookiePolicy={'single_host_origin'}
               />
               <img
-                className={`mx-3 ${styles.icon}`}
+                className={`mx-lg-3 mx-sm-3 ${styles.icon}`}
                 src={`/apple.png`}
                 alt="apple icon"
               />
             </div>
-            <div className={`my-3`}>
+            <div className={` d-flex justify-content-between`}>
+              <img className={`${styles.line}`} src="Line.svg" alt="line" />
+              <p className={`${styles.or}`}>Or log in with</p>
+              <img className={`${styles.line}`} src="Line.svg" alt="line" srcset="" />
+            </div>
+            <form className={`mb-sm-3`} onSubmit={handleSubmit}>
+              <div className={` ${styles.email_input}`}>
+                <div className={`mb-lg-3 mb-md-3 mb-sm-3 col-sm-12 col-md-6 w-100`}>
+                  <label for="Email1" class="form-label">
+                    Email address
+                  </label>
+                  <input
+                    type="email"
+                    className={`py-lg-3 py-md-3 py-sm-3 form-control`}
+                    value={email}
+                    onChange={handleEmailChange}
+                    placeholder="Enter your email address"
+                   
+                  />
+                </div>
+              </div>
+              <div className={`d-flex ${styles.email_input}`}>
+                <div className={`mb-lg-3 mb-md-3 mb-sm-3  col-sm-12 col-md-6 w-100`}>
+                  <label for="Password" class="form-label">
+                    Password
+                  </label>
+                  <input
+                     type={showPassword ? 'text' : 'password'}
+                    className={`py-lg-3 py-md-3 py-sm-3 form-control`}
+                    value={password}
+                    onChange={e => {
+                      setPassword(e.target.value)
+                    }}
+                    placeholder="Enter a password"
+                  />
+                </div>
+                <i
+                className={`cursor-pointer far fa-eye${
+                  showPassword ? '' : '-slash'
+                } ${styles.far}`}
+                onClick={handleClickShowPassword}
+              ></i>
+              </div>
+              <div class="mb-lg-2 mb-md-2 mb-sm-3 my-sm-3 form-check">
+                <input type="checkbox" class="form-check-input" id="Check" />
+                <label
+                  className={`form-check-label text-secondary ${styles.check}`}
+                  for="Check"
+                >
+                  Remember me
+                </label>
+                <label
+                  className={`float-md-end text-secondary  ${styles.checktext}`}
+                >
+                  Forgot password?{' '}
+                  <a href="/" className={`${styles.checklink}`}>
+                    Get help signing in
+                  </a>
+                </label>
+              </div>
+            </form>
+            <div>
+              <Button
+                 className={`${styles.button} btn mb-3 col-12 col-md-6 px-lg-5 px-md-5 py-lg-3 py-md-3`}
+                 type="submit"
+                 disabled={!email || !password}
+                 onClick={() => setShowLoader(true)}
+               >
+                 Log in
+              </Button>
+            </div>
+            <div className={`my-2`}>
               <p
-                className={`text-center py-2 text-secondary ${styles.checktext}`}
+                className={`text-center py-1 text-secondary ${styles.checktextlink}`}
               >
                 New to us?{' '}
                 <a href="/" className={`${styles.checklink}`}>
@@ -180,7 +181,9 @@ const Login = () => {
               </p>
             </div>
           </div>
-          <div class={`d-flex justify-content-around my-5  ${styles.footer}`}>
+          <div
+            class={`d-flex justify-content-around ${styles.footer}`}
+          >
             <a href="/" class={`mx-md-4 text-secondary`}>
               Contact Us
             </a>
