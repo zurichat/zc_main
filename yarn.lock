@@ -732,6 +732,11 @@ express-device@^0.4.2:
     device ">=0.3.1"
     express-partials "0.3.0"
 
+express-limiter@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/express-limiter/-/express-limiter-1.6.1.tgz#70ede144f9e875e3c7e120644018a6f7784bda71"
+  integrity sha512-w/Xz/FIHuAOIVIUeHSe6g2rSYTqCSKA9WFLO2CxX15BzEAK+avp7HoYd7pu/M2tEp5E/to253+4x8vQ6WcTJkQ==
+
 express-partials@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/express-partials/-/express-partials-0.3.0.tgz#88b9c40164afd9a55278629b2948e6ace7bff45f"
