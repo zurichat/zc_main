@@ -1,4 +1,4 @@
-/* html {
+html {
   font-size: 62.5%;
 }
 
@@ -7,10 +7,8 @@ body {
 }
 
 .section_signup {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
 
 .imgBx {
@@ -245,6 +243,9 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  .section_signup {
+    grid-template-columns: 1fr;
+  }
   .imgBx {
     display: none;
   }
@@ -292,4 +293,4 @@ body {
   .footer_a {
     margin: auto 16px;
   }
-} */
+}
