@@ -17,7 +17,8 @@
   "dependencies": {
     "axios": "^0.21.1",
     "express": "^4.17.1",
-    "nodemailer": "^6.6.3"
+    "nodemailer": "^6.6.3",
+    "react-bootstrap": "^1.6.1"
   },
   "devDependencies": {
     "concurrently": "^6.2.1",
