@@ -223,14 +223,8 @@ const SignUp = () => {
     <>
       <div className={styles.container}>
         <div className={styles.login_container}>
-<<<<<<< HEAD
-          <div>
-          {/* <div className={styles.logo}> */}
-            <img src={zuri} className={styles.logoImage} />
-=======
           <div className={styles.logo}>
             {/* <img src={logo} className={styles.logoImage} /> */}
->>>>>>> 6cdf7bfa9bc4202850ee2665c9b475944970b5dd
             <b className={styles.logoText}>Zuri Chat</b>
           </div>
 
