@@ -14,7 +14,7 @@
     "run-start": "cross-env NODE_ENV=production node server.js",
     "run-dev": "cross-env NODE_ENV=development nodemon server.js",
     "frontend:build": "npm run build --prefix zc_frontend",
-    "frontend:dev": "cross-env PORT=5000 npm start --prefix zc_frontend",
+    "frontend:dev": "cross-env PORT=5000 npm run start --prefix zc_frontend",
     "postinstall": "cd zc_frontend && yarpm-yarn install"
   },
   "dependencies": {
@@ -25,11 +25,13 @@
     "emoji-picker-react": "^3.4.8",
     "express": "^4.17.1",
     "express-device": "^0.4.2",
+    "express-limiter": "^1.6.1",
     "express-useragent": "^1.0.15",
     "geoip-lite": "^1.4.2",
     "gh-pages": "^3.2.3",
     "helmet": "^4.6.0",
     "nodemailer": "^6.6.3",
+    "react-bootstrap": "^1.6.1",
     "yarn": "^1.22.11"
   },
   "devDependencies": {
