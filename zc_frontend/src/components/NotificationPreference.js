@@ -275,7 +275,6 @@ const NotificationPreference = () => {
                   </div>
                 </div>
               </div>
-
               <div className={styles.section3}>
                 <div className={styles.head3}>
                   <div className={styles.text3}>

@@ -5,7 +5,7 @@
   flex-direction: column;
   padding: 5em 0.5em 0;
   position: relative;
-  height: 100vh;
+  min-height: 50vh;
 }
 
 .offer {
@@ -53,24 +53,24 @@
 .circleLine {
   position: absolute;
   left: 0;
-  bottom: 25vh;
+  bottom: 30px;
 }
 .circleDot {
   position: absolute;
   left: 100px;
-  bottom: 60vh;
+  bottom: 270px;
   z-index: 99;
 }
 
 .mail {
   position: absolute;
   left: 20vw;
-  bottom: 42vh;
+  bottom: 80px;
 }
 .searchKite {
   position: absolute;
   right: 8vw;
-  bottom: 26vh;
+  bottom: 50px;
 }
 ::placeholder {
   color: #bebebe;
@@ -95,11 +95,14 @@
 .searchIcon {
   position: absolute;
   left: 33vw;
-  bottom: 22vh;
+  bottom: 10px;
   z-index: 120;
 }
 
 @media screen and (max-width: 1200px) {
+  .app input {
+    width: 50%;
+  }
   .leftKite {
     position: absolute;
     left: 0;
@@ -114,13 +117,20 @@
 
   .circleDot {
     left: 6vw;
-    bottom: 63vh;
+    bottom: 260px;
   }
 
   .mail {
     position: absolute;
     left: 20vw;
-    bottom: 45vh;
+    bottom: 60;
+  }
+  .searchKite {
+    bottom: 10px;
+    width: 320px;
+  }
+  .searchIcon {
+    left: 25vw;
   }
 
   .leftKite,
@@ -142,7 +152,7 @@
 
 @media screen and (max-width: 660px) {
   .app {
-    padding: 2em 0.5em 0;
+    padding: 3em 0.5em 0;
   }
   .offer h1 {
     font-size: 15px;
@@ -150,14 +160,15 @@
 
   .offer p {
     font-size: 9px;
-    margin-top: 15px;
+    margin-top: 20px;
   }
 
   .offer button {
-    padding: 9px;
-    margin: 5px 0;
-    font-size: 9px;
-    border-radius: 3px;
+    padding: 7px;
+    min-width: 150px;
+    margin: 8px 0;
+    font-size: 8px;
+    border-radius: 2px;
   }
 
   .app input {
@@ -165,27 +176,30 @@
   }
   .circleLine {
     left: 0;
-    bottom: 20vh;
+    bottom: -150px;
+    width: 70px;
   }
   .circleDot {
     left: 5vw;
-    bottom: 60vh;
+    bottom: 80px;
+    width: 35px;
   }
 
   .mail {
     position: absolute;
-    left: 81vw;
-    bottom: 60vh;
+    left: 75vw;
+    bottom: 30px;
+    width: 60px;
   }
 
   .searchIcon {
     position: absolute;
     left: 20vw;
-    bottom: 43vh;
+    bottom: 0;
   }
 
   .offer button {
-    padding: 15px;
+    padding: 10px;
     border-radius: 5px;
   }
 
@@ -193,6 +207,7 @@
     width: 65%;
     padding: 10px;
     font-size: 8px;
+    margin-top: 100px;
   }
 
   ::placeholder {
@@ -200,12 +215,6 @@
     padding-left: 25px;
   }
 
-  .circleLine,
-  .mail {
-    width: 40px;
-  }
-
-  .circleDot,
   .searchIcon {
     width: 20px;
   }
