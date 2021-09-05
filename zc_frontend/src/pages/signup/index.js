@@ -7,6 +7,7 @@ import zuri from '../images/zuri.svg'
 import globe from '../images/globe.svg'
 import chevron from '../images/chevron.svg'
 import usePasswordVisibilityReducer from '../../components/usePasswordVisibilityReducer'
+// import Illustration from '../../components/Illustration'
 
 /**
  * @param password {string} - password to test
@@ -219,19 +220,12 @@ const SignUp = () => {
 
   return (
     <>
-      <section
-        className={`${styles.section_signup}`}
-        style={{
-          margin: 0,
-          padding: 0,
-          boxSizing: 'border-box',
-          fontFamily: `'Lato', sans-serif`,
-          backgroundColor: '#ffffff'
-        }}
-      >
+      <section className={`${styles.section_signup}`}>
         <div className={`${styles.imgBx}`}>
           <img src={bg} alt="img" className={`${styles.imgBx_img}`} />
         </div>
+
+        {/* <Illustration /> */}
         <div className={`${styles.contentBx}`}>
           <img src={zuri} className={`${styles.formLogo}`} alt="zuri"></img>
           <div className={`${styles.formBx}`}>
@@ -257,6 +251,7 @@ const SignUp = () => {
                   />
                 </a>
               </div>
+
               <div className={`${styles.line_container}`}>
                 <span className={`${styles.lineSpan}`}>Or sign up with</span>
               </div>
@@ -339,6 +334,7 @@ const SignUp = () => {
                   {showVisibleIconTwo && displayVisibilityTwo}
                 </div>
               </div>
+
               <div className={`${styles.toc}`}>
                 <input
                   className={`${styles.toc_input}`}

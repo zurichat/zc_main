@@ -60,7 +60,6 @@ const controllers = () => {
       }
     })
   }
-
   const login = (_, res) => {
     const user = dummyDB[0]
     const token = createJwt(user.id)
@@ -79,10 +78,6 @@ const controllers = () => {
   return {
     handleLogin,
     login
-=======
-
-  return {
-    handleLogin
   }
 }
 
