@@ -19,13 +19,17 @@ exports.register = (req, res, _) => {
   }
   res.status(201).json({
     status: true,
+
     message: 'registration successful',
+=======
+ main
     data: {
       user: { ...newData, ...extraData },
       token
     }
   })
 }
+
 
 exports.handleRegister = (_, res) => {
   const user = {
@@ -54,3 +58,5 @@ exports.handleRegister = (_, res) => {
     }
   })
 }
+
+
