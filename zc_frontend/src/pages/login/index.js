@@ -28,6 +28,16 @@ const Login = () => {
   let history = useHistory()
   const handleClickShowPassword = () => {
     setShowPassword(prev => !prev)
+  const handleClickShowPassword = () => {
+    setPass({ ...pass, showPassword: !pass.showPassword })
+  }
+
+  const handleMouseDownPassword = event => {
+    event.preventDefault()
+  }
+
+  const handlePasswordChange = prop => event => {
+    setPass({ ...pass, [prop]: event.target.value })
   }
   const successResponseGoogle = response => {
     history.push('/')
@@ -116,9 +126,82 @@ const Login = () => {
                 <label for="Email1" class="form-label">
                   Email address
                 </label>
+      <div class={`row`}>
+        <div class={`col-lg-5 col-md-12 ${styles.side}`}>
+          <div className={`row`}>
+            <img src="/Group3155.png" alt="" />
+            <div className={`col-md-12 mb-5`}>
+              <img
+                className={`float-end mt-4 ${styles.headimg}`}
+                src="/Group3150.svg"
+                alt=""
+              />
+            </div>
+          </div>
+          <div className={`col-md-12 text-center text-white ${styles.header}`}>
+            <h3 className={` ${styles.headertext}`}>
+              Have fun while working <br /> as a team
+            </h3>
+            <p className={`${styles.text}`}>
+              Unlimited team collaboration platform
+            </p>
+            <img src="/Group3149.svg" alt="" />
+          </div>
+          <div class={`col-md-6 col-md-6 d-flex ${styles.person}`}>
+            <img class={`${styles.flower}`} src="/Group3151.png" alt="" />
+            <img class={`${styles.person1}`} src="person1.svg" alt="" />
+            <img class={`${styles.person2}`} src="person2.svg" alt="" />
+          </div>
+        </div>
+        <div class={`col-lg-7 col-md-12 ${styles.login}`}>
+          <div className={`pt-4 mt-3 text-center`}>
+            <span>
+              <img src="logo.svg" alt="logo" />
+            </span>
+          </div>
+          <div className={`pt-1 mt-3`}>
+            <h2 className={`pt-2 `}>
+              <Link title="Log in" color="#00B87C" />
+            </h2>
+            <p className={styles.subtext}>
+              Login with the data you entered during your registration
+            </p>
+            <div className={` d-flex justify-content-around ${styles.line}`}>
+              <img className={`w-50 p-3`} src="Line.svg" alt="line" />
+              <p className={`${styles.or}`}>OR</p>
+              <img className={`w-50 p-3`} src="Line.svg" alt="line" srcset="" />
+            </div>
+            <div className={`my-1 text-center`}>
+              <GoogleLogin
+                clientId="78755437309-27q9m2toval9c439d2r7q5gj28h0pqcc.apps.googleusercontent.com"
+                render={renderProps => (
+                  <img
+                    onClick={renderProps.onClick}
+                    className={`mx-3 ${styles.icon}`}
+                    src={`/google.png`}
+                    alt="google icon"
+                  />
+                )}
+                buttonText=""
+                onSuccess={successResponseGoogle}
+                onFailure={failureResponseGoogle}
+                cookiePolicy={'single_host_origin'}
+              />
+              <img
+                className={`mx-3 ${styles.icon}`}
+                src={`/apple.png`}
+                alt="apple icon"
+              />
+            </div>
+            <div className={`d-flex ${styles.email_input}`}>
+              <div className={`mb-2 col-12 col-md-6 w-100`}>
+                <label for="Email1" class="form-label">
+                  Email address
+                </label>
                 <input
                   type="email"
                   className={`py-lg-3 py-md-3 py-sm-3 form-control`}
+                  className={`py-1 form-control`}
                   value={email}
                   onChange={handleEmailChange}
                   placeholder="Enter your email address"
@@ -132,6 +215,10 @@ const Login = () => {
                 <label for="Password" class="form-label">
                   Password
                 </label>
+              <div className={`mb-3 col-12 col-md-6 w-100`}>
+                <label for="Password" class="form-label">
+                  Password
+                </label>
                 <input
                   type={showPassword ? 'text' : 'password'}
                   className={`py-lg-3 py-md-3 py-sm-3 form-control`}
@@ -140,6 +227,8 @@ const Login = () => {
                     setPassword(e.target.value)
                   }}
                   placeholder="Enter a password"
+                  id="id_password"
+                  required
                 />
               </div>
               <i
@@ -147,13 +236,20 @@ const Login = () => {
                   showPassword ? '' : '-slash'
                 } ${styles.far}`}
                 onClick={handleClickShowPassword}
+                className={`far fa-eye-slash ${styles.far}`}
+                onClick={handleClickShowPassword}
+                onMouseDown={handleMouseDownPassword}
               ></i>
             </div>
             <div class="mb-lg-2 mb-md-2 mb-sm-3 my-sm-3 form-check">
               <input type="checkbox" class="form-check-input" id="Check" />
+            <div class="mb-2 form-check">
+              <input type="checkbox" class="form-check-input" id="Check1" />
               <label
                 className={`form-check-label text-secondary ${styles.check}`}
                 for="Check"
+                className={`form-check-label text-secondary ${styles.check}`}
+                for="exampleCheck1"
               >
                 Remember me
               </label>
@@ -199,6 +295,39 @@ const Login = () => {
             <i class="fas fa-globe"></i> Change Region{' '}
             <i class="fas fa-caret-down"></i>
           </a>
+            <div>
+              <button
+                className={`${styles.button} btn mb-3 col-12 col-md-6 px-5 px-md-5 py-2`}
+                onClick={() => setShowLoader(true)}
+              >
+                Log In
+              </button>
+            </div>
+            <div className={`my-2`}>
+              <p
+                className={`text-center py-1 text-secondary ${styles.checktextlink}`}
+              >
+                New to us?{' '}
+                <a href="/" className={`${styles.checklink}`}>
+                  Create an Account
+                </a>
+              </p>
+            </div>
+          </div>
+          <div
+            class={`d-flex justify-content-around my-lg-3 my-md-3 ${styles.footer}`}
+          >
+            <a href="/" class={`mx-md-4 text-secondary`}>
+              Contact Us
+            </a>
+            <a href="/" class={`mx-md-4 text-secondary`}>
+              Legal Policy
+            </a>
+            <a href="/" class={`mx-md-4 text-secondary`}>
+              <i class="fas fa-globe"></i> Change Region{' '}
+              <i class="fas fa-caret-down"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
