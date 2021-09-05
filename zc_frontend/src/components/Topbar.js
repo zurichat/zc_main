@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { TopbarContext } from '../contexts/Topbar'
+import {Link} from 'react-router-dom'
 
 import styles from '../styles/Topbar.module.css'
 import SearchBar from './externalPagesComponents/SearchBar'
@@ -15,7 +16,9 @@ export const Topbar = () => {
     <div className={styles.container}>
       <SearchBar />
       <div className={styles.topbar}>
-        <img src="/settings.svg" alt="settings" className={styles.settings} />
+        <Link to="/settings">
+          <img src="/settings.svg" alt="settings" className={styles.settings} />
+        </Link>
         <StatusBadge />
         <div className={styles.profile} onClick={openModal}>
           <img src="/profilepic.png" alt="Profile" />
