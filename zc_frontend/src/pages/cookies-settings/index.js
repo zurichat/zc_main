@@ -2,9 +2,10 @@ import styles from '../../styles/CookiesSettings.module.css'
 import toggleButton from '../../assets/toggle.svg'
 import lockButton from '../../assets/lock.svg'
 
-function Cookies() {
+function CookiesSettings() {
   return (
-    <div className={styles.cookie_content}>
+    <div className={styles.wrapper}>
+          <div className={styles.cookie_content}>
       <div className={styles.cookie_header}>
         <div className={styles.cookie_header_title}>Cookie Settings</div>
         <div className={styles.cookie_header_body}>
@@ -47,12 +48,13 @@ function Cookies() {
           <a href=".">Learn more</a>
         </div>
         <div className={styles.action_links}>
-          <button className={styles.firstButton}>Accept all cookies</button>
-          <button className={styles.secondButton}>Save settings</button>
+          <button className={`${styles.firstButton} ${styles.button}`}>Accept all cookies</button>
+          <button className={`${styles.secondButton} ${styles.button}`}>Save settings</button>
         </div>
       </div>
+    </div>
     </div>
   )
 }
 
-export default Cookies
+export default CookiesSettings;
