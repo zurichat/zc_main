@@ -1,0 +1,105 @@
+.container {
+  width: 100%;
+  /* position: fixed; */
+  height: 5.0625em;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  z-index: 999;
+  background: #f6f6f6;
+}
+
+.brand {
+  width: 15%;
+  display: flex;
+}
+
+.brand img {
+  width: 35px;
+  height: 35px;
+}
+
+.brand h3 {
+  font-family: 'Lato';
+  font-size: 25px;
+  font-weight: 900;
+  padding-left: 5px;
+  background: none;
+}
+
+/* Deactivation Bar */
+.deactivationSection {
+  padding-top: 35px;
+  margin: 0 10%;
+}
+
+.deactivationTab p {
+  font-size: 25px;
+  font-weight: 900;
+  line-height: 30px;
+}
+
+.deactivationCaution {
+  border: 2px solid #eedede;
+  border-left: 4px solid #ff0000;
+  padding: 5px;
+  margin: 15px;
+}
+
+.deactivationCaution img,
+.deactivationCaution span {
+  padding: 2px;
+}
+
+.deactivationCaution span {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.deactivationNote {
+  margin: 15px;
+  border: 2px solid #eedede;
+}
+
+.blue {
+  color: #0000ff;
+}
+
+.firstP,
+.secondP {
+  margin: 10px 15px;
+  font-size: 15px;
+}
+
+.firstP {
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.secondP {
+  background-color: #fcf4da;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.deactivateButton,
+.cancelButton {
+  border-radius: 0.5rem;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.deactivateButton {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 10px;
+}
+
+.cancelButton {
+  border: 1px solid #c4c4c4;
+  color: #000;
+  padding: 10px;
+}
