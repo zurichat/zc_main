@@ -1,6 +1,7 @@
 import React from 'react'
-import styles from './styles/Cookies.modules.css'
+import styles from "../../styles/Cookies.modules.css"
 import hamburger from '../../assets/hamburger.png'
+import {Link } from 'react-router-dom'
 
 const Cookies = () => {
   return (
@@ -12,14 +13,15 @@ const Cookies = () => {
           We use cookies to ensure that we give you the best experience on our
           website. We also use cookies to ensure we show <br></br>
           you advertising that is relevant to you{' '}
-          <a href="http://" class={styles.second}>
-            Manage cookie settings
-          </a>
+          <Link href ="/cookies-settings" className={styles.second}>
+           Manage cookie settings
+          </Link>
+         
           at anytime.
         </p>
       </div>
       <div className={styles.wrapper}>
-        <button href="./settings" className={styles.third}>
+        <button className={styles.third}>
           Allow all cookies
         </button>
         <button href="./settings" className={styles.fourth}>
