@@ -2,7 +2,7 @@
 
 .wrapper {
   background-color: #fff;
-  padding-top: 6%;
+  padding-top: 1%;
   width: 100vw;
   height: 100vh;
   font-family: 'Lato', sans-serif;
@@ -24,11 +24,17 @@
   gap: 1.5rem;
 }
 
+.wave{
+  height:60px!important;
+  width:60px!important;
+  margin-top:-15px;
+}
+
 .welcome__div h1 {
   width: 100%;
   font-weight: 300;
-  font-size: 70px;
-  line-height: 72px;
+  font-size: 40px;
+  line-height: 42px;
   color: #393939;
   margin-block-start: 0;
   margin-block-end: 0;
@@ -37,18 +43,25 @@
   align-items: center;
 }
 
+.welcome__div img{
+  width:130px;
+  height:120px;
+  object-fit: contain;
+  margin-top:-40px;
+}
+
 .btn__continue {
   background-color: #1a61db;
   color: #fff !important;
-  border-radius: 8px;
+  border-radius: 3px;
   font-weight: bold;
   font-size: 1.5rem;
-  line-height: 1.6rem;
   outline: none;
   border: none;
-  padding: 0.8rem 3rem;
+  padding: 1rem 12rem;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
   z-index: 2;
+  margin-top:-30px;
 }
 
 .btn__continue:hover {
