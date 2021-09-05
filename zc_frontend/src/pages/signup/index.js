@@ -1,61 +1,4 @@
 import styles from '../../styles/Signup.module.css'
-<<<<<<< HEAD
-import logo from '../../assets/zurichatlogo.svg'
-// import line from '../../assets/Line.svg';
-import googlesignup from '../../assets/icons8-google-48.png'
-import facebooksignup from '../../assets/icons8-facebook-48.png'
-
-const SignUp = () => {
-  /**
-   * @param password {string} - password to test
-   * @param okay_length {number} - minimum length of password (defaults to 0)
-   *
-   * @return {{valid: boolean, msg: string, short: `length` | `special` | `number` | `lower` | `upper` | `okay`}}
-   */
-  const passwordCheck = (password, okay_length = 0) => {
-    /** Check if password meets required length */
-    if (password.length < okay_length)
-      return { valid: false, msg: `password is too short`, short: `length` }
-
-    /** Special Character regex */
-    const special_characters = /[ `!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~]/
-    /** Check if password contains a special character */
-    if (!special_characters.test(password))
-      return {
-        valid: false,
-        msg: `password must contain a special character`,
-        short: `special`
-      }
-
-    /** Check if password contains a special character */
-    const number_regex = /[0-9]/
-    if (!number_regex.test(password))
-      return {
-        valid: false,
-        msg: `password must contain a number`,
-        short: `number`
-      }
-
-    /** Check if password contains a lowercase character */
-    const lowercase_regex = /[a-z]/
-    if (!lowercase_regex.test(password))
-      return {
-        valid: false,
-        msg: `password must contain a lowercase letter`,
-        short: `lower`
-      }
-
-    /** Check if password contains an uppercase character */
-    const uppercase_regex = /[A-Z]/
-    if (!uppercase_regex.test(password))
-      return {
-        valid: false,
-        msg: `password must contain an uppercase letter`,
-        short: `upper`
-      }
-
-    return { valid: true, msg: `password is okay`, short: `okay` }
-=======
 import React, { useState, useRef } from 'react'
 import apple from '../images/apple.svg'
 import bg from '../images/bg.svg'
@@ -64,6 +7,7 @@ import zuri from '../images/zuri.svg'
 import globe from '../images/globe.svg'
 import chevron from '../images/chevron.svg'
 import usePasswordVisibilityReducer from '../../components/usePasswordVisibilityReducer'
+// import Illustration from '../../components/Illustration'
 
 /**
  * @param password {string} - password to test
@@ -208,7 +152,6 @@ const SignUp = () => {
       setShowVisibilityIconTwo(false)
       containerTwoRef.current.style.borderColor = 'rgb(239, 239, 239)'
     }
->>>>>>> 73c452829c447231b11649af66d8df737fed8703
   }
 
   const displayPasswordOne = toggleVisibilityOne ? (
@@ -277,7 +220,6 @@ const SignUp = () => {
 
   return (
     <>
-<<<<<<< HEAD
       <div className={styles.container}>
         <div className={styles.login_container}>
           <div className={styles.logo}>
@@ -297,7 +239,6 @@ const SignUp = () => {
 
         </div>
       </div>
-=======
       <section
         className={`${styles.section_signup}`}
         style={{
@@ -308,9 +249,13 @@ const SignUp = () => {
           backgroundColor: '#ffffff'
         }}
       >
+
+      <section className={`${styles.section_signup}`}>
         <div className={`${styles.imgBx}`}>
           <img src={bg} alt="img" className={`${styles.imgBx_img}`} />
         </div>
+
+        {/* <Illustration /> */}
         <div className={`${styles.contentBx}`}>
           <img src={zuri} className={`${styles.formLogo}`} alt="zuri"></img>
           <div className={`${styles.formBx}`}>
@@ -336,6 +281,7 @@ const SignUp = () => {
                   />
                 </a>
               </div>
+
               <div className={`${styles.line_container}`}>
                 <span className={`${styles.lineSpan}`}>Or sign up with</span>
               </div>
@@ -418,6 +364,7 @@ const SignUp = () => {
                   {showVisibleIconTwo && displayVisibilityTwo}
                 </div>
               </div>
+
               <div className={`${styles.toc}`}>
                 <input
                   className={`${styles.toc_input}`}
@@ -474,7 +421,7 @@ const SignUp = () => {
           </div>
         </div>
       </section>
->>>>>>> 73c452829c447231b11649af66d8df737fed8703
+      </section>
     </>
   )
 }
