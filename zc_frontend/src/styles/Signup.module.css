@@ -1,12 +1,5 @@
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-size: 1rem;
-}
-
 .section_signup {
+  font-size: 1rem;
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
