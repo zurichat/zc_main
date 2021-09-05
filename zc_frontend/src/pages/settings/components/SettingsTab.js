@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import styles from '../styles/SettingsTab.module.css'
 import TimeZone from '../../../components/TimeZone'
+import { Link } from 'react-router-dom'
 
 const SettingsTab = () => {
   const [show, setShow] = useState(false)
@@ -99,7 +100,9 @@ const SettingsTab = () => {
           </span>
         </div>
         <div className={styles.settingsright}>
-          <button className={styles.delete}>Deactivate your account</button>
+          <Link to="/deactivate-account">
+            <button className={styles.delete}>Deactivate your account</button>
+          </Link>
         </div>
       </div>
 

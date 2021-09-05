@@ -95,11 +95,14 @@ const Download = () => {
 }
 =======
 import React from 'react'
+import Footer from '../../components/externalPagesComponents/Footer/Footer'
+import Header from '../../components/externalPagesComponents/Header'
 import styles from '../download/styles/download.module.css'
 
 const Download = () => {
   return (
     <>
+      <Header />
       <section>
         <div className={`${styles.container} container`}>
           <h1 className={styles.h1}>Zuri Chat Download</h1>
@@ -157,6 +160,7 @@ const Download = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   )
 }
