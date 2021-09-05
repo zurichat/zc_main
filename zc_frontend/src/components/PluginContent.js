@@ -5,6 +5,7 @@ import cheerio from 'cheerio'
 
 import styles from '../styles/PluginContent.module.css'
 import Welcome from './Welcome'
+import MusicNotify from './MusicNotify'
 
 export const PluginContent = () => { 
   // const pluginUrl = '/apps/default';
@@ -78,6 +79,7 @@ export const PluginContent = () => {
     <>
       <section className={styles.container}>
         <div id="zc-plugin-root">Loading...</div>
+        <MusicNotify />
       </section>
       {!url && <Welcome />}
     </>
