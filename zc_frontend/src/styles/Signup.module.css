@@ -234,6 +234,9 @@
 }
 
 @media screen and (max-width: 768px) {
+  .section_signup {
+    grid-template-columns: 1fr;
+  }
   .imgBx {
     display: none;
   }
