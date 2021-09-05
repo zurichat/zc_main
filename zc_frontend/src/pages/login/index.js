@@ -38,27 +38,28 @@ const Login = () => {
 
   //Handle login Auth
   const handleLogin = async () => {
-    await axios.post('/api/login', {
-      email, password 
-    }).then(response => {
-      const {token, userCopy} = response.data
+    await axios
+      .post('/api/login', {
+        email,
+        password
+      })
+      .then(response => {
+        const { token, userCopy } = response.data
 
-      //store token in localStorage
-      localStorage.setItem('token', token)
+        //store token in localStorage
+        localStorage.setItem('token', token)
 
-      //store user data in localStorage
-      localStorage.setItem('user', userCopy)
+        //store user data in localStorage
+        localStorage.setItem('user', userCopy)
 
-      //Redirect to loading page
-      setShowLoader(true)
-
-    })
-    .catch(() => {
-      //Remove this when there is an error design
-      alert('Invalid username or password')
-    })
+        //Redirect to loading page
+        setShowLoader(true)
+      })
+      .catch(() => {
+        //Remove this when there is an error design
+        alert('Invalid username or password')
+      })
   }
-
 
   return (
     <div className={styles.login__container}>

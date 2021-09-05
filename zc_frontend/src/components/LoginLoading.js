@@ -5,7 +5,7 @@ import styles from '../styles/LoginLoading.module.css'
 const LoginLoading = () => {
   //Redirect to dashboard
   let history = useHistory()
-  setTimeout(()=> {
+  setTimeout(() => {
     history.push('/home')
   }, 2000)
   return (
