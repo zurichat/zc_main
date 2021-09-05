@@ -7,6 +7,7 @@ import zuri from '../images/zuri.svg'
 import globe from '../images/globe.svg'
 import chevron from '../images/chevron.svg'
 import usePasswordVisibilityReducer from '../../components/usePasswordVisibilityReducer'
+import Illustration from '../../components/Illustration'
 
 /**
  * @param password {string} - password to test
@@ -229,9 +230,7 @@ const SignUp = () => {
           backgroundColor: '#ffffff'
         }}
       >
-        <div className={`${styles.imgBx}`}>
-          <img src={bg} alt="img" className={`${styles.imgBx_img}`} />
-        </div>
+        <Illustration />
         <div className={`${styles.contentBx}`}>
           <img src={zuri} className={`${styles.formLogo}`} alt="zuri"></img>
           <div className={`${styles.formBx}`}>
