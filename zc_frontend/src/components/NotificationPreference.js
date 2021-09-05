@@ -174,7 +174,6 @@ const NotificationPreference = () => {
           </ul>
         </div>
 
-
         {/* Michael's sound check code */}
         <div className={styles.notify}>
           <div className={styles.notifywrapper}>
@@ -190,7 +189,9 @@ const NotificationPreference = () => {
               <div className={styles.checkbox2}>
                 <input type="checkbox" />
               </div>
-              <div className={styles.msg2}>Include preview message in notification</div>
+              <div className={styles.msg2}>
+                Include preview message in notification
+              </div>
             </form>
 
             <form className={styles.mute}>
@@ -201,41 +202,40 @@ const NotificationPreference = () => {
             </form>
 
             <div className={styles.picksound}>
-             <div className={styles.share}>
-             <div className={styles.sound}>
-                <div className={styles.msg3}>
-                  Set your notifications right (Message)
+              <div className={styles.share}>
+                <div className={styles.sound}>
+                  <div className={styles.msg3}>
+                    Set your notifications right (Message)
+                  </div>
+                  <div className={styles.dropdown}>
+                    <select className={styles.button2}>
+                      <option value="rising-tune">Rising Tune</option>
+                      <option value="ding-dong">Ding Dong</option>
+                      <option selected value="pick-sound">
+                        Pick Sound
+                      </option>
+                      <option value="ring">Ring</option>
+                    </select>
+                  </div>
                 </div>
-                <div className={styles.dropdown}>
-                  <select className={styles.button2}>
-                    <option value="rising-tune">Rising Tune</option>
-                    <option value="ding-dong">Ding Dong</option>
-                    <option selected value="pick-sound">
-                      Pick Sound
-                    </option>
-                    <option value="ring">Ring</option>
-                  </select>
-                </div>
-              </div>
-              
-              <div className={styles.lounge}>
-                <div className={styles.msg4}>
-                  Set your notifications right (Lounge)
-                </div>
-                <div className={styles.dropdown2}>
-                  <select className={styles.button3}>
-                    <option value="evening-tune">Evening Tune</option>
-                    <option value="top-hill">Top Hill</option>
-                    <option selected value="pick-sound">
-                      Pick Sound
-                    </option>
-                    <option value="bells">Bells</option>
-                  </select>
-                </div>
-              </div>
 
-             </div>
-             {/* <hr/> */}
+                <div className={styles.lounge}>
+                  <div className={styles.msg4}>
+                    Set your notifications right (Lounge)
+                  </div>
+                  <div className={styles.dropdown2}>
+                    <select className={styles.button3}>
+                      <option value="evening-tune">Evening Tune</option>
+                      <option value="top-hill">Top Hill</option>
+                      <option selected value="pick-sound">
+                        Pick Sound
+                      </option>
+                      <option value="bells">Bells</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              {/* <hr/> */}
               <div className={styles.section2}>
                 <div className={styles.head2}>
                   <div className={styles.text2}>
@@ -248,7 +248,7 @@ const NotificationPreference = () => {
                   </div>
                   <div className={styles.never}>Never</div>
                 </form>
-                
+
                 <form className={styles.flash2}>
                   <div className={styles.radio2}>
                     <input type="radio" />
@@ -303,7 +303,6 @@ const NotificationPreference = () => {
                   </div>
                 </form>
               </div>
-            
             </div>
           </div>
         </div>
