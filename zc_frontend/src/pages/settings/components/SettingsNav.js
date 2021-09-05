@@ -2,30 +2,33 @@ import React, { useState } from 'react'
 
 import styles from '../styles/settingsNav.module.css'
 import { BiMenuAltRight } from 'react-icons/bi'
+import { Link } from 'react-router-dom'
 
 const SettingsNav = () => {
   const [menu, setMenu] = useState(false)
 
   // THE SECTION OF THE STYLE MENU
-  const styleMenu = {
-    left: menu ? 0 : '-100%'
-  }
+  // const styleMenu = {
+  //   left: menu ? 0 : '-100%'
+  // }
 
   return (
     <div className={styles.containers}>
-      <div className={styles.brand}>
-        <img src="./zurichatlogo.svg" alt="" />
-        <h3>ZURI</h3>
-      </div>
+      <div className={styles.accountbar}>
+        <Link to="/">
+          <div className={styles.brand}>
+            <img src="./zurichatlogo.svg" alt="" />
+            <h3>ZURI</h3>
+          </div>
+        </Link>
 
-      <div className={styles.menubars} onClick={() => setMenu(!menu)}>
-        <BiMenuAltRight />
-      </div>
+        <div className={styles.menubars} onClick={() => setMenu(!menu)}>
+          <BiMenuAltRight />
+        </div>
 
-      <div className={styles.accountbar} style={styleMenu}>
         <div className={styles.searchBar}>
           <input
-            type="search"
+            type="text"
             className={styles.searchInput}
             placeholder="Search here"
           />
@@ -35,11 +38,23 @@ const SettingsNav = () => {
             alt="search"
           />
         </div>
+      </div>
 
-        <img src="/settings.svg" alt="settings" />
+      <div className={styles.rightnav}>
+        <div className={styles.settings}>
+          <img src="/settings.svg" alt="settings" />
+        </div>
 
         <div className={styles.profile}>
-          <img src="/profile.png" alt="Profile" />
+          <div className={styles.status}>4️⃣</div>
+          <div className={styles.pImage}>
+            <img
+              src="/profilepic.png"
+              alt="Profile"
+              className={styles.profileImg}
+            />
+            <div className={styles.circles}></div>
+          </div>
         </div>
       </div>
     </div>
