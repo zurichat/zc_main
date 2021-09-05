@@ -1,65 +1,98 @@
 .modalContainer {
-  width: 100%;
-  height: 100%;
-  max-width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 3;
+  z-index: 1000;
   background: rgba(0, 0, 0, 0.3);
   display: none;
   justify-content: center;
-  padding-top: 5.6875rem;
+  padding-top: 1.6875rem;
   padding-bottom: 2rem;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  cursor: pointer;
 }
 
 .modalActive {
   display: flex;
 }
 
-.modalContent {
+.modalContent,
+.modalFull {
   width: 90%;
   max-width: 885px;
   background: #fff;
-  border-radius: 5px;
+  border-radius: 3px;
+  padding-bottom: 20px;
+  overflow-y: scroll;
 }
 
-.modalHeader {
+.modalFull::-webkit-scrollbar {
+  display: none;
+}
+
+.modalContent::-webkit-scrollbar {
+  display: none;
+}
+
+.modalHeader,
+.modalHeaderMobile {
   width: 100%;
-  height: 6.3125rem;
+  height: auto;
   background: #00b87c;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.5rem;
+  padding: 15px 1.5rem;
   font-family: 'Lato', sans-serif;
   color: #fff;
   font-weight: 700;
-  font-size: 1.5rem;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
+  font-size: 1.2rem;
+  z-index: 999;
+  position: sticky;
+
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
-.closeIcon {
-  width: 1rem;
-  width: 1rem;
+.closeIcon,
+.closeIconPath {
+  width: 0.7rem;
+  width: 0.7rem;
   cursor: pointer;
 }
+
+/* .closeIconPath {
+  path: #333;
+} */
 
 .closeIcon path {
   fill: #fff;
 }
 
-.closeIcon:hover path {
+/* .closeIcon:hover path {
   fill: red;
-}
+} */
 
 .modalInnerContainer {
   width: 100%;
   height: 100%;
   padding: 2.375rem 2.8125rem;
+}
+
+.mobile {
+  display: none;
 }
 
 @media (max-width: 768px) {
@@ -68,7 +101,27 @@
   }
 
   .modalContent {
-    width: 96%;
+    width: 100%;
+    position: absolute;
+    top: 15vh;
+    left: 0;
+    right: 0;
+    height: 85vh;
+    border-radius: 20px 20px 0px 0px;
+    max-width: 100vw;
+  }
+
+  .modalFull {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+    background: #fff;
+    border-radius: 0px;
+    background: orange;
   }
 
   .modalHeader {
@@ -77,6 +130,46 @@
     padding: 0 1.5rem;
     font-weight: 700;
     font-size: 1.2rem;
+    background: none;
+    border-radius: 20px 20px 0px 0px;
+    border-bottom: 1px solid #dadada;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #242424;
+    position: relative;
+    display: none;
+  }
+
+  .modalHeaderMobile {
+    display: none;
+  }
+
+  .mobile {
+    background: #00b87c;
+    padding: 12px 20px;
+    display: block;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: sticky;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .closeIcon,
+  .closeIconPath {
+    position: absolute;
+    left: 1rem;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .closeIcon path {
+    fill: #242424;
   }
 
   .modalInnerContainer {
