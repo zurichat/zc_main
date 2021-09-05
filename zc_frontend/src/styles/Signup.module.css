@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 .container {
   box-sizing: border-box;
   margin: 0;
@@ -34,6 +35,9 @@
 .logo {
 =======
 html {
+=======
+/* html {
+>>>>>>> 34e4e605f53b2ae2ab4a593b217006659b532b5c
   font-size: 62.5%;
 }
 
@@ -536,4 +540,4 @@ input[type='checkbox'] {
     margin: auto 16px;
 >>>>>>> 73c452829c447231b11649af66d8df737fed8703
   }
-}
+} */
