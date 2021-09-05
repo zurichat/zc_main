@@ -5,7 +5,7 @@ import { URLContext } from '../contexts/Url'
 import styles from '../styles/Sidebar.module.css'
 import Dropdown from './Dropdown'
 
-const fetcher = (url) => fetch(url).then((res) => res.json())
+const fetcher = url => fetch(url).then(res => res.json())
 
 export const Sidebar = () => {
   const { data: channelsData } = useSWR('/api/plugin/channels', fetcher)
@@ -42,7 +42,7 @@ export const Sidebar = () => {
           ))}
       </Dropdown>
       {plugins &&
-        Object.keys(plugins).map((key) => (
+        Object.keys(plugins).map(key => (
           <Dropdown
             title={plugins[key].name}
             key={key}
