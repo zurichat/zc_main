@@ -2,20 +2,20 @@
   text-align: center;
 }
 @media (prefers-reduced-motion: no-preference) {
-  .App_logo {
+  .App-logo {
     position: absolute;
     top: 3%;
   }
-  .chatting_guys {
+  .chatting-guys {
     position: absolute;
     bottom: 0%;
   }
-  .flower_pot1 {
+  .flower-pot1 {
     position: absolute;
     left: 0%;
     bottom: 0%;
   }
-  .flower_pot2 {
+  .flower-pot2 {
     position: absolute;
     right: 0%;
     bottom: 0%;
