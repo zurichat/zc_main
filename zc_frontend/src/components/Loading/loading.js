@@ -3,7 +3,7 @@ import chattingguys from '../../assets/loadingPageImages/chattingguys.png'
 import flowerpot1 from '../../assets/loadingPageImages/flowerpot1.png'
 import flowerpot2 from '../../assets/loadingPageImages/flowerpot2.png'
 import Spinner from './spinner/Spinner'
-import styles from './loading.css'
+import styles from './loading.module.css'
 
 function loading() {
   return (

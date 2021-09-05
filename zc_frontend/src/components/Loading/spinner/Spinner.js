@@ -1,5 +1,6 @@
 import React from 'react'
-import styles from './Spinner.css'
+
+import styles from './Spinner.module.css'
 import zuriicon from '../../../assets/loadingPageImages/zuriicon.png'
 
 const Spinner = () => {
