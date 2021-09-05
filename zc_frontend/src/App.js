@@ -32,6 +32,12 @@ import Settings from './pages/settings'
 import SearchResult from './components/SearchResults3'
 import LinkComponent from './components/externalPagesComponents/Link'
 import Cookies from './pages/cookies'
+ feat/emailnotification
+=======
+
+import DeactivateAccount from './pages/settings/components/AcctDeactivation'
+
+ main
 const App = () => (
   <BrowserRouter>
     <Switch>
@@ -97,6 +103,9 @@ const App = () => (
       </Route>
       <Route path="/cookies-banner">
         <Cookies />
+      </Route>
+      <Route path="/deactivate-account">
+        <DeactivateAccount />
       </Route>
       <Route path="/link">
         <LinkComponent
