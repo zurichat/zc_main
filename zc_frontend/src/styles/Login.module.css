@@ -1,3 +1,7 @@
+.login__container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
 .headimg {
   position: relative;
   left: 11%;
@@ -47,8 +51,9 @@
 }
 
 .login {
-  padding-left: 12%;
-  padding-right: 12%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .side {
@@ -126,6 +131,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .login__container {
+    grid-template-columns: 1fr;
+  }
   .button_outline > img {
     width: 14%;
   }

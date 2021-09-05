@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import classes from '../../styles/Categories.module.css'
+import classes from '../styles/Categories.module.css'
 import { BiChevronRight, BiChevronLeft } from 'react-icons/bi'
 import { MdClose } from 'react-icons/md'
 
