@@ -223,12 +223,17 @@ const SignUp = () => {
     <>
       <div className={styles.container}>
         <div className={styles.login_container}>
+<<<<<<< HEAD
           <div>
           {/* <div className={styles.logo}> */}
             <img src={zuri} className={styles.logoImage} />
+=======
+          <div className={styles.logo}>
+            {/* <img src={logo} className={styles.logoImage} /> */}
+>>>>>>> 6cdf7bfa9bc4202850ee2665c9b475944970b5dd
             <b className={styles.logoText}>Zuri Chat</b>
           </div>
-  
+
           <div className={styles.signup_button}>
             <button
               type="submit"
@@ -238,7 +243,6 @@ const SignUp = () => {
               Sign up
             </button>
           </div>
-
         </div>
       </div>
       <section
@@ -251,178 +255,179 @@ const SignUp = () => {
           backgroundColor: '#ffffff'
         }}
       >
-
-      <section className={`${styles.section_signup}`}>
-        <div className={`${styles.imgBx}`}>
-          <img src={bg} alt="img" className={`${styles.imgBx_img}`} />
-        </div>
-
-        {/* <Illustration /> */}
-        <div className={`${styles.contentBx}`}>
-          <img src={zuri} className={`${styles.formLogo}`} alt="zuri"></img>
-          <div className={`${styles.formBx}`}>
-            <form
-              className={`${styles.formInline}`}
-              method="POST"
-              onSubmit={handleSubmit}
-            >
-              <h2 className={`${styles.formInline_h2}`}>Create Account</h2>
-              <div className={`${styles.social}`}>
-                <a href="/">
-                  <img
-                    src={google}
-                    alt="google"
-                    className={`${styles.social_img}`}
-                  />
-                </a>
-                <a href="/">
-                  <img
-                    src={apple}
-                    alt="apple"
-                    className={`${styles.social_img}`}
-                  />
-                </a>
-              </div>
-
-              <div className={`${styles.line_container}`}>
-                <span className={`${styles.lineSpan}`}>Or sign up with</span>
-              </div>
-
-              <div className={`${styles.inputBx}`}>
-                <span className={`${styles.inputBx_span}`}>
-                  <span>Full name</span>
-                  <span className={`${styles.inputErrorMsg}`}>{nameERR}</span>
-                </span>
-                <input
-                  className={`${styles.inputBx_input}`}
-                  type="text"
-                  placeholder="John Doe"
-                  name="name"
-                  id="name"
-                  value={name}
-                  onChange={e => setname(e.target.value)}
-                />
-              </div>
-              <div className={`${styles.inputBx}`}>
-                <span className={`${styles.inputBx_span}`}>
-                  <span>Email</span>
-                  <span className={`${styles.inputErrorMsg}`}>{emailERR}</span>
-                </span>
-                <input
-                  className={`${styles.inputBx_input}`}
-                  type="email"
-                  placeholder="johndoe@example.com"
-                  name="email"
-                  id="email"
-                  value={email}
-                  onChange={e => setemail(e.target.value)}
-                />
-              </div>
-              <div className={`${styles.inputBx}`}>
-                <span className={`${styles.inputBx_span}`}>
-                  <span>Password</span>
-                  <span className={`${styles.inputErrorMsg}`}>
-                    {passwordERR}
-                  </span>
-                </span>
-
-                {/* Password input with visibility toggle */}
-                <div
-                  className={`${styles.cust_input_grp}`}
-                  ref={containerOneRef}
-                >
-                  <input
-                    className={`${styles.inputBx_input}`}
-                    type={toggleVisibilityOne ? 'text' : 'password'}
-                    placeholder="Enter a password"
-                    name="password"
-                    id="password"
-                    value={password}
-                    onChange={handlePassword}
-                  />
-                  {showVisibleIconOne && displayPasswordOne}
-                </div>
-              </div>
-              <div className={`${styles.inputBx}`}>
-                <span className={`${styles.inputBx_span}`}>
-                  <span>Confirm password</span>
-                  <span className={`${styles.inputErrorMsg}`}>
-                    {confirmPasswordERR}
-                  </span>
-                </span>
-                <div
-                  className={`${styles.cust_input_grp}`}
-                  ref={containerTwoRef}
-                >
-                  <input
-                    className={`${styles.inputBx_input}`}
-                    type={`${toggleVisibilityTwo ? 'text' : 'password'}`}
-                    placeholder="Enter the password"
-                    name="confirm_password"
-                    id="confirm_password"
-                    value={confirmPassword}
-                    onChange={handleConfirmPassword}
-                  />
-                  {showVisibleIconTwo && displayVisibilityTwo}
-                </div>
-              </div>
-
-              <div className={`${styles.toc}`}>
-                <input
-                  className={`${styles.toc_input}`}
-                  type="checkbox"
-                  name="toc"
-                  id="toc"
-                  checked={TOSConfirm}
-                  onChange={() => setTOSConfirm(!TOSConfirm)}
-                />
-                <label className="term_label">
-                  I agree with Zurichat's{' '}
-                  <a href="/" className={`${styles.tocText}`}>
-                    Terms of service
-                  </a>{' '}
-                  and{' '}
-                  <a href="/" className={`${styles.tocText}`}>
-                    {' '}
-                    privacy{' '}
-                  </a>
-                </label>
-              </div>
-              <div className={`${styles.inputErrorMsg}`}>{TOSConfirmERR}</div>
-              <div className={`${styles.inputBx}`}>
-                <button
-                  type="submit"
-                  className={`btn ${styles.custom_form_btn}`}
-                >
-                  Sign up
-                </button>
-              </div>
-              <div className={`${styles.bottomline}`}>
-                <span>
-                  Already have an account? &nbsp;
-                  <a href="/login" className={`${styles.bottomline_a}`}>
-                    {' '}
-                    Log in{' '}
-                  </a>
-                </span>
-              </div>
-              <footer className={`${styles.footer}`}>
-                <a href="/" className={`${styles.footer_a}`}>
-                  contact Us
-                </a>
-                <a href="/" className={`${styles.footer_a}`}>
-                  Legal Policy
-                </a>
-                <a href="/" className={`${styles.footer_a}`}>
-                  <img src={globe} alt="globe" />
-                  &nbsp; change Region
-                  <img src={chevron} alt="arrow" />
-                </a>
-              </footer>
-            </form>
+        <section className={`${styles.section_signup}`}>
+          <div className={`${styles.imgBx}`}>
+            <img src={bg} alt="img" className={`${styles.imgBx_img}`} />
           </div>
-        </div>
-      </section>
+
+          {/* <Illustration /> */}
+          <div className={`${styles.contentBx}`}>
+            <img src={zuri} className={`${styles.formLogo}`} alt="zuri"></img>
+            <div className={`${styles.formBx}`}>
+              <form
+                className={`${styles.formInline}`}
+                method="POST"
+                onSubmit={handleSubmit}
+              >
+                <h2 className={`${styles.formInline_h2}`}>Create Account</h2>
+                <div className={`${styles.social}`}>
+                  <a href="/">
+                    <img
+                      src={google}
+                      alt="google"
+                      className={`${styles.social_img}`}
+                    />
+                  </a>
+                  <a href="/">
+                    <img
+                      src={apple}
+                      alt="apple"
+                      className={`${styles.social_img}`}
+                    />
+                  </a>
+                </div>
+
+                <div className={`${styles.line_container}`}>
+                  <span className={`${styles.lineSpan}`}>Or sign up with</span>
+                </div>
+
+                <div className={`${styles.inputBx}`}>
+                  <span className={`${styles.inputBx_span}`}>
+                    <span>Full name</span>
+                    <span className={`${styles.inputErrorMsg}`}>{nameERR}</span>
+                  </span>
+                  <input
+                    className={`${styles.inputBx_input}`}
+                    type="text"
+                    placeholder="John Doe"
+                    name="name"
+                    id="name"
+                    value={name}
+                    onChange={e => setname(e.target.value)}
+                  />
+                </div>
+                <div className={`${styles.inputBx}`}>
+                  <span className={`${styles.inputBx_span}`}>
+                    <span>Email</span>
+                    <span className={`${styles.inputErrorMsg}`}>
+                      {emailERR}
+                    </span>
+                  </span>
+                  <input
+                    className={`${styles.inputBx_input}`}
+                    type="email"
+                    placeholder="johndoe@example.com"
+                    name="email"
+                    id="email"
+                    value={email}
+                    onChange={e => setemail(e.target.value)}
+                  />
+                </div>
+                <div className={`${styles.inputBx}`}>
+                  <span className={`${styles.inputBx_span}`}>
+                    <span>Password</span>
+                    <span className={`${styles.inputErrorMsg}`}>
+                      {passwordERR}
+                    </span>
+                  </span>
+
+                  {/* Password input with visibility toggle */}
+                  <div
+                    className={`${styles.cust_input_grp}`}
+                    ref={containerOneRef}
+                  >
+                    <input
+                      className={`${styles.inputBx_input}`}
+                      type={toggleVisibilityOne ? 'text' : 'password'}
+                      placeholder="Enter a password"
+                      name="password"
+                      id="password"
+                      value={password}
+                      onChange={handlePassword}
+                    />
+                    {showVisibleIconOne && displayPasswordOne}
+                  </div>
+                </div>
+                <div className={`${styles.inputBx}`}>
+                  <span className={`${styles.inputBx_span}`}>
+                    <span>Confirm password</span>
+                    <span className={`${styles.inputErrorMsg}`}>
+                      {confirmPasswordERR}
+                    </span>
+                  </span>
+                  <div
+                    className={`${styles.cust_input_grp}`}
+                    ref={containerTwoRef}
+                  >
+                    <input
+                      className={`${styles.inputBx_input}`}
+                      type={`${toggleVisibilityTwo ? 'text' : 'password'}`}
+                      placeholder="Enter the password"
+                      name="confirm_password"
+                      id="confirm_password"
+                      value={confirmPassword}
+                      onChange={handleConfirmPassword}
+                    />
+                    {showVisibleIconTwo && displayVisibilityTwo}
+                  </div>
+                </div>
+
+                <div className={`${styles.toc}`}>
+                  <input
+                    className={`${styles.toc_input}`}
+                    type="checkbox"
+                    name="toc"
+                    id="toc"
+                    checked={TOSConfirm}
+                    onChange={() => setTOSConfirm(!TOSConfirm)}
+                  />
+                  <label className="term_label">
+                    I agree with Zurichat's{' '}
+                    <a href="/" className={`${styles.tocText}`}>
+                      Terms of service
+                    </a>{' '}
+                    and{' '}
+                    <a href="/" className={`${styles.tocText}`}>
+                      {' '}
+                      privacy{' '}
+                    </a>
+                  </label>
+                </div>
+                <div className={`${styles.inputErrorMsg}`}>{TOSConfirmERR}</div>
+                <div className={`${styles.inputBx}`}>
+                  <button
+                    type="submit"
+                    className={`btn ${styles.custom_form_btn}`}
+                  >
+                    Sign up
+                  </button>
+                </div>
+                <div className={`${styles.bottomline}`}>
+                  <span>
+                    Already have an account? &nbsp;
+                    <a href="/login" className={`${styles.bottomline_a}`}>
+                      {' '}
+                      Log in{' '}
+                    </a>
+                  </span>
+                </div>
+                <footer className={`${styles.footer}`}>
+                  <a href="/" className={`${styles.footer_a}`}>
+                    contact Us
+                  </a>
+                  <a href="/" className={`${styles.footer_a}`}>
+                    Legal Policy
+                  </a>
+                  <a href="/" className={`${styles.footer_a}`}>
+                    <img src={globe} alt="globe" />
+                    &nbsp; change Region
+                    <img src={chevron} alt="arrow" />
+                  </a>
+                </footer>
+              </form>
+            </div>
+          </div>
+        </section>
       </section>
     </>
   )
