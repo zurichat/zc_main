@@ -103,3 +103,9 @@ button:active {
 .secondButton {
     background-color: #c4c4c4;
 }
+
+@media only screen and (min-width: 769px) {
+    .cookie_content {
+        display: none;
+    }
+}
