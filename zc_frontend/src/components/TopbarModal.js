@@ -27,7 +27,7 @@ const TopbarModal = () => {
       {showStatus ? (
         <div
           ref={modalRef}
-          className={styles.backgrounds}
+          className={styles.modalContainers}
           onClick={closeStatus}
         >
           <div className={styles.picker}>
@@ -60,11 +60,10 @@ const TopbarModal = () => {
                 <p>Active</p>
               </div>
             </div>
-            
           </div>
 
           <div onClick={openStatus} className={styles.sectionTwo}>
-              <StatusBadge/>
+            <StatusBadge />
           </div>
 
           <div className={styles.sectionThree}>
