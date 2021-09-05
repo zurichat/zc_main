@@ -1,6 +1,7 @@
 import styles from '../../styles/Signup.module.css'
 import React, { useState, useRef } from 'react'
 import apple from '../images/apple.svg'
+// import bg from '../images/bg.svg'
 import google from '../images/google.svg'
 import zuri from '../images/zuri.svg'
 import globe from '../images/globe.svg'
