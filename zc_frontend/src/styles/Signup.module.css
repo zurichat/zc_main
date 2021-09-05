@@ -1,127 +1,164 @@
-.section {
-  position: relative;
-  width: 100vw;
+.section_signup {
   height: 100vh;
   display: flex;
 }
 
 .imgBx {
   position: relative;
-  width: 39.7%;
-  height: 100vh;
-  object-fit: cover;
-  object-position: center;
+  width: 39%;
+  object-fit: contain;
+  /* object-position: center; */
 }
 
 .imgBx_img {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
 }
 
+/*  THE SECTION OF THE CONTENT */
 .contentBx {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  width: 60.3%;
-  height: 100%;
-  overflow: hidden;
+  width: 50%;
 }
 
 .formBx {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
-  height: auto;
 }
 
 .formInline {
   width: 80%;
-  padding: 0 40px 0 0;
   align-items: center;
-  height: 100%;
 }
 
 .formLogo {
-  margin: 10px 0 10px -60px;
-  height: 2.5rem;
+  height: 3rem;
+  width: 8rem;
+  margin-top: 10px;
 }
 
 .formInline_h2 {
   color: #3a3a3a;
   font-weight: bolder;
-  font-size: 20px;
-  text-transform: uppercase;
-  margin: 2px 0;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  margin: 10px 0;
+  text-align: left;
 }
 
 .inputBx {
-  padding: 8px 0;
+  padding: 0;
   width: 100%;
-  height: auto;
 }
 
 .inputBx_span {
   font-weight: 700;
-  font-size: 24px;
   display: block;
   color: #3a3a3a;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 1px;
-  padding-bottom: 5px;
 }
 
 .inputErrorMsg {
   font-weight: normal;
-  font-size: 1rem;
-  padding-left: 1rem;
+  font-size: 12px;
+  padding-left: 1.6rem;
   color: #ff0000;
   letter-spacing: 1px;
 }
 
+.cust_input_grp {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  border: 1px solid rgb(239, 239, 239);
+  border-radius: 3px;
+}
+
+.cust_input_grp:active {
+  border-color: rgba(0, 184, 124, 0.6);
+}
+
+.cust_input_grp .inputBx_input {
+  border: none;
+}
+
+.cust_input_grp .inputBx_input:focus {
+  border-color: transparent;
+}
+
 .inputBx_input {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   outline: none;
   border: 1px solid #efefef;
   font-size: 12px;
   letter-spacing: 1px;
   color: #3a3a3a;
   background: #fff;
-  border-radius: 8px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+.inputBx_input::-webkit-input-placeholder {
+  font-size: 12px;
+}
+
+.inputBx_input:focus {
+  border-color: rgba(0, 184, 124, 0.6);
+}
+
+.visibility {
+  height: 1.4rem;
+  width: 1.2rem;
+  margin-right: 1.2rem;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  cursor: pointer;
 }
 
 .toc {
   color: #3a3a3a;
   font-size: 12px;
   letter-spacing: 1px;
-  padding: 5px 5px;
-  display: inline-flex;
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
 }
 
 .toc_input {
   margin-right: 14px;
-  margin-top: 1px;
+  height: 1rem;
+  width: 1rem;
 }
 
 .tocText {
   color: #b8003c;
 }
 
-.btn {
+.custom_form_btn {
   width: 100%;
   background: #2f80ed;
   color: #fff;
   outline: none;
   border: none;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   cursor: pointer;
-  margin-left: -1px;
+  border-radius: 3px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.custom_form_btn:hover {
+  color: #fff;
 }
 
 .lineSpan {
@@ -130,6 +167,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   padding: 10px 0;
 }
 
@@ -137,17 +175,13 @@
   flex-grow: 1;
   height: 1.5px;
   content: '\a0';
-  background-color: rgb(0, 184, 124, 0.3);
-  position: relative;
-  top: 0.5em;
+  background-color: rgb(0, 184, 124);
 }
 .lineSpan:after {
   flex-grow: 1;
   height: 1.5px;
   content: '\a0';
-  background-color: rgb(0, 184, 124, 0.3);
-  position: relative;
-  top: 0.5em;
+  background-color: rgb(0, 184, 124);
 }
 
 .lineSpan:before {
@@ -178,7 +212,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px;
+  padding: 13px;
 }
 
 .bottomline_a {
@@ -195,9 +229,13 @@
   font-size: 10px;
   margin: auto 24px;
   color: #999999;
+  text-transform: capitalize;
 }
 
 @media screen and (max-width: 768px) {
+  .section_signup {
+    grid-template-columns: 1fr;
+  }
   .imgBx {
     display: none;
   }
@@ -218,11 +256,11 @@
   }
   .formLogo {
     margin: 16px 0 16px -3px;
-    height: 1.5rem;
+    height: 2.4rem;
   }
 
   .formInline {
-    width: 80%;
+    width: 90%;
     padding: 0 0 0 0;
     align-items: center;
     height: 100%;
@@ -238,6 +276,15 @@
     align-items: center;
     justify-content: center;
   }
+  .terms_label {
+    font-size: 12px;
+    line-height: 2rem;
+  }
+
+  .tocText {
+    font-size: 12px;
+  }
+
   .footer_a {
     margin: auto 16px;
   }

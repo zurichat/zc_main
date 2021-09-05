@@ -3,7 +3,7 @@ const SearchBar = () => {
   return (
     <div className={styles.searchBar}>
       <input
-        type="search"
+        type="text"
         className={styles.searchInput}
         placeholder="Search here"
       />
