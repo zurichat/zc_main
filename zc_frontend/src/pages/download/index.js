@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import { ReactComponent as GreenCircle} from '../images/circle.svg';
 import { ReactComponent as Rectangle} from '../images/downloadRectangle.svg';
 import { ReactComponent as Googleplay} from '../images/googleplay.svg';
