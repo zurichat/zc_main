@@ -15,6 +15,7 @@ const CookiesBanner = () => {
             </div>
             <div className={styles.BannerTitle}>
               <h1>OUR COOKIE POLICY</h1> 
+              
             </div>
             <div className={styles.BannerText}>
               <p>We use cookies to ensure that that we give the best experience on or website. We also use cookies to ensure we show<br/> you advertisiing that si relevant to you <a href="#">manage cookie settings</a> at anytime.</p>
