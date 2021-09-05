@@ -6,11 +6,16 @@
   height: 5.0625em;
   margin-right: 1.875em;
   justify-content: space-between;
-  width:100%;
-  padding:0 25px;
-  position:relative;
+  width: 100%;
+  padding: 0 25px;
+  position: relative;
 }
 
+@media screen and (max-width: 800px) {
+  .container {
+    justify-content: flex-end;
+  }
+}
 
 .profile {
   background-color: #acffe6;
@@ -22,11 +27,22 @@
   height: 2.5em;
   width: 2.5em;
   cursor: pointer;
+  position: relative;
 }
 
 .profile img {
   width: 100%;
   height: 100%;
+  border-radius: 50%;
+}
+
+.circles {
+  background: green;
+  height: 7px;
+  width: 7px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   border-radius: 50%;
 }
 
@@ -48,7 +64,6 @@
   border-radius: 3px;
 }
 
-
 .search::placeholder {
   font-family: Lato;
   font-style: normal;
@@ -59,7 +74,9 @@
   padding-left: 0.2em;
 }
 
-
+.settings {
+  margin-right: 20px;
+}
 
 /* =========================================== */
 /* THE SECTION OF THE TOP BAR MODAL */
@@ -67,7 +84,7 @@
 .topbarModal {
   background: #fff;
   position: absolute;
-  top: 90%;
+  top: 100%;
   right: 1%;
   width: 100%;
   max-width: 300px;
@@ -77,15 +94,19 @@
   padding: 20px 0;
 }
 
-.backgrounds {
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.158);
+.modalContainers {
+  height: 100vh;
+  width: 100vw;
   position: fixed;
-  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.3);
+  /* display: none; */
   justify-content: center;
-  align-items: center;
-  z-index: 99999;
+  padding-top: 5.6875rem;
+  padding-bottom: 2rem;
 }
 
 /* The section one */
@@ -107,7 +128,7 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background:#00b87b44;
+  background: #00b87b44;
 }
 
 /* THE SECTION OF THE ONE RIGHT */
@@ -121,23 +142,20 @@
   font-style: normal;
   font-weight: 900;
   color: #242424;
-  margin-top:10px;
+  margin-top: 10px;
 }
 
 .online {
   display: flex;
   align-items: center;
-  height:20px;
-  margin-top:-8px;
-  
+  height: 20px;
+  margin-top: -8px;
 }
 
 .circle {
-  background:green;
-  max-height:7px;
-  height:100%;
-  max-width:7px;
-  width:100%;
+  background: green;
+  height: 6px;
+  width: 6px;
   border-radius: 50%;
 }
 
@@ -147,7 +165,7 @@
   font-style: normal;
   font-weight: normal;
   color: #3a3a3a;
-  margin-left:-10px;
+  margin-left: -10px;
 }
 
 /* The section two */
@@ -164,12 +182,6 @@
 
 .sectionTwo:hover {
   border: 1px solid #00b87c;
-}
-
-.badge{
-  margin-left:10px;
-  background:red;
-  max-width:30px;
 }
 
 /* The section of the picker */
