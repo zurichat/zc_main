@@ -26,6 +26,7 @@ import LinkComponent from './components/externalPagesComponents/Link'
 import Cookies from './pages/cookies'
 
 import DeactivateAccount from './pages/settings/components/AcctDeactivation'
+import CookiesSetting from './pages/cookies-settings'
 
 const App = () => (
   <BrowserRouter>
@@ -92,6 +93,9 @@ const App = () => (
       </Route>
       <Route path="/cookies-banner">
         <Cookies />
+      </Route>
+      <Route path="/cookies-settings">
+        <CookiesSetting />
       </Route>
       <Route path="/deactivate-account">
         <DeactivateAccount />
