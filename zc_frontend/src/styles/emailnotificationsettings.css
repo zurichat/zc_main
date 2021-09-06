@@ -1,0 +1,39 @@
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #282c34;
+}
+
+
+
+.Header{
+  background-color: #00b87c;
+  color: white;
+}
+
+.custom-btn {
+  
+  color: #00b87c;
+  border: 2px solid;
+  border-radius: 3px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
