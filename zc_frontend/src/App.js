@@ -23,6 +23,7 @@ import MarketPlace from './pages/marketplace/marketplace'
 import Settings from './pages/settings'
 import SearchResult from './components/SearchResults3'
 import LinkComponent from './components/externalPagesComponents/Link'
+import SearchSuggestion from './pages/searchSuggestion'
 import Cookies from './pages/cookies'
 
 import DeactivateAccount from './pages/settings/components/AcctDeactivation'
@@ -111,6 +112,9 @@ const App = () => (
           color={`black`}
           underline
         />
+      </Route>
+      <Route path="searchSuggestion">
+        <SearchSuggestion />
       </Route>
     </Switch>
   </BrowserRouter>
