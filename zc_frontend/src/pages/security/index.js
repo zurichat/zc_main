@@ -2,14 +2,14 @@ import ComplianceCertification from './components/ComplianceCertification'
 import SecurityFeature from './components/SecurityFeature'
 import securityStyles from './styles/security.module.css'
 import securityFeatureStyles from './styles/security_features.module.css'
-import Header from '../../components/externalPagesComponents/Header'
 import Footer from '../../components/externalPagesComponents/Footer/Footer'
 import Section1 from '../../components/externalPagesComponents/Security'
+import SearchSuggestion from '../searchSuggestion'
 
 const Security = () => {
   return (
     <div>
-      <Header />
+      <SearchSuggestion />
       <Section1 />
       <section className={securityStyles.compliancesection}>
         <h2 className={securityStyles.complianceheading}>

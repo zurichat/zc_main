@@ -4,27 +4,16 @@ import { ReactComponent as Apple} from '../images/apple.svg';
 
 import React from 'react'
 
- import Header from '../../components/externalPagesComponents/Header'
-// import styles from '../download/styles/download.module.css'
- import RectangleOverlay from '../images/rectangle.png';
- import Circle from '../images/circleimg.png';
- import Logo from '../images/ZuriLogo.png';
-import Downarow from '../images/chevrondown.png';
-import Facebook from '../images/facebook.png';
-import Instagram from '../images/instagram.png';
-import Twitter from '../images/twitter.png';
-import Linkedin from '../images/linkedin.png';
-
-import styles from '../../styles/Download.module.css'
-// import Header from '../../components/externalPagesComponents/Header';
-
+import Footer from '../../components/externalPagesComponents/Footer/Footer'
+import styles from '../download/styles/download.module.css'
+import SearchSuggestion from '../searchSuggestion'
 
 const Download = () => {
 
   return (
-    <div>
-      <Header/>
-    <section>
+    <>
+      <SearchSuggestion />
+      <section>
         <div className={`${styles.container} container`}>
           <h1 className={styles.h1}>Zuri Chat Download</h1>
           <a href="/news" className={styles.link}>

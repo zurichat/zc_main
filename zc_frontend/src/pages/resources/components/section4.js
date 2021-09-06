@@ -1,6 +1,5 @@
 import React from 'react'
 import Card from '../card_component/Card'
-import '../styles/section4.css'
 import image1 from '../assests/Rectangle 170.png'
 import image2 from '../assests/Rectangle 171.png'
 import image3 from '../assests/Rectangle 172.png'
@@ -9,12 +8,12 @@ import image5 from '../assests/Rectangle 174.png'
 import image6 from '../assests/Rectangle 175.png'
 import image7 from '../assests/Rectangle 176.png'
 import image8 from '../assests/Rectangle 177.png'
-
+import styles from '../styles/section4.module.css'
 const index = () => {
   return (
-    <div className="card_section">
-      <h5 className="section_heading">Browse all resources</h5>
-      <div className="card">
+    <div className={styles.card_section}>
+      <h5 className={styles.section_heading}>Browse all resources</h5>
+      <div className={styles.card}>
         <Card
           image={image1}
           highlighted_text="How to transform your organization to an event-driven and composable enterprise"
