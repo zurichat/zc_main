@@ -8,23 +8,20 @@ import React from 'react'
 // import styles from '../download/styles/download.module.css'
  import RectangleOverlay from '../images/rectangle.png';
  import Circle from '../images/circleimg.png';
- import Logo from '../images/ZuriLogo.png';
-import Downarow from '../images/chevrondown.png';
-import Facebook from '../images/facebook.png';
-import Instagram from '../images/instagram.png';
-import Twitter from '../images/twitter.png';
-import Linkedin from '../images/linkedin.png';
 
 import styles from '../../styles/Download.module.css'
 // import Header from '../../components/externalPagesComponents/Header';
 
+import Footer from '../../components/externalPagesComponents/Footer/Footer'
+import styles from '../download/styles/download.module.css'
+import SearchSuggestion from '../searchSuggestion'
 
 const Download = () => {
 
   return (
-    <div>
-      <Header/>
-    <section>
+    <>
+      <SearchSuggestion />
+      <section>
         <div className={`${styles.container} container`}>
           <h1 className={styles.h1}>Zuri Chat Download</h1>
           <a href="/news" className={styles.link}>
@@ -87,30 +84,8 @@ const Download = () => {
          </div>
         </div>
       </section>
-      <div className={styles.zurilogo}>
-        <span><img src={Logo} alt="zurilogo" /><span className={styles.zuri_logo_text}>Zuri Chat</span></span>
-      </div>
-      <footer>
-        <div className={styles.footertext}><p>WHY ZURI CHAT</p> <img src={Downarow} alt="down arrow" /></div>
-        <div className={styles.footertext}><p>PRODUCTS</p><img src={Downarow} alt="down arrow" /></div>
-        <div className={styles.footertext}><p>PRICING</p><img src={Downarow} alt="down arrow" /></div>
-        <div className={styles.footertext}><p>RESOURCES</p><img src={Downarow} alt="down arrow" /></div>
-
-        <div className={styles.footerlinks}>
-          <a href="/">Privacy</a>
-          <a href="/">Terms</a>
-          <a href="/">Help Center</a>
-          <a href="/">Contact US</a>
-        </div>
-            <div className={styles.socio}>
-              <p><img src={Facebook} alt="facebook" /></p>
-              <p><img src={Instagram} alt="instagram" /></p>
-              <p><img src={Twitter} alt="twitter" /></p>
-              <p><img src={Linkedin} alt="linkedin" /></p>
-            </div>
-      </footer>
-      <p className={styles.copyright}><span dangerouslySetInnerHTML={{ "__html": "&copy;" }} />2021 zuri,Team Aristotle. All Rights Reserved.</p>
-  </div>
+      <Footer/>
+      </>
   )
 }
 
