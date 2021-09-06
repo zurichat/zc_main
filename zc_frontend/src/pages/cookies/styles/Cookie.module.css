@@ -1,0 +1,99 @@
+.bannerContainer {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bannerBox {
+  background-color: rgb(240, 240, 240);
+  padding: 3rem 8rem;
+  margin: 5rem 10rem 2rem 10rem;
+  border-radius: 20px;
+  position: absolute;
+  bottom: 0px;
+}
+
+.bannerLogo {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.bannerTitle h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Gilroy', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+    sans-serif;
+}
+
+.bannerText p {
+  font-family: 'Gilroy', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+    sans-serif;
+  text-align: center;
+}
+
+.bannerText p a {
+  color: red;
+}
+.button {
+  width: 186px;
+}
+.bannerButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  gap: 38px;
+}
+
+.allowButton {
+  background-color: rgb(0, 172, 134);
+  color: white;
+
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+.allowButtons:hover {
+  background-color: rgb(0, 124, 97);
+}
+
+.declineButtons {
+  color: red;
+  margin-left: 2rem;
+  font-weight: bold;
+  border-radius: 20px;
+}
+.bannerButtons .DeclineButtons:hover {
+  color: rgb(187, 0, 0);
+}
+
+@media screen and (max-width: 600px) {
+  .bannerTitle h1 {
+    font-size: 1.5rem;
+  }
+  .bannerBox {
+    padding: 4rem 1rem 4rem 1rem;
+    margin: 1.5rem;
+  }
+  .bannerBox > button {
+    width: 137px;
+  }
+  .bannerBox {
+    gap: 22px;
+  }
+  .button {
+    width: 147px;
+  }
+  .bannerButtons {
+    display: flex;
+  }
+
+  .bannerButtons > .declineButton {
+    margin-left: 0.7rem;
+  }
+}
