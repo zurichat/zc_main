@@ -5,13 +5,14 @@ const device = require('express-device')
 const useragent = require('express-useragent')
 const sessions = require('./lib/user_session')
 const logoutRoute = require('./lib/logout')
-
+const cors = require('cors')
 const loadFrontend = require('./middlewares/load-frontend')
 const PORT = process.env.PORT || 3000
 
 const app = express()
 
 app.use(express.json())
+app.use(cors())
 
 // activate helmet--server security
 app.use(

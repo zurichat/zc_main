@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-}
-section {
-  font-family: 'Lato', sans-serif;
-}
 .container {
   margin: 30px;
   text-align: center;
