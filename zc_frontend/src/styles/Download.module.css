@@ -4,7 +4,27 @@ body {
   box-sizing: border-box;
 }
 
-.downloadWrapper {
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container h1 {
+  margin: 10px 0;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 26px;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+/* CENTERED ITEMS */
+.buttondiv,
+.images,
+section.store {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -12,27 +32,10 @@ body {
   flex-direction: column;
 }
 
-.downloadTitle {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-}
-
-.downloadTitle h1 {
-  /* Zuri Chat Download;*/
-  font-family: Lato;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 22px;
-  line-height: 26px;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.downloadTitle P {
+.container a {
   /* What’s New */
   height: 17px;
+  margin-bottom: 10px;
   font-family: Lato;
   font-style: normal;
   font-weight: normal;
@@ -40,40 +43,28 @@ body {
   line-height: 17px;
   /* identical to box height */
   text-decoration-line: underline;
+
   color: #00b87c;
 }
 
-.rectangleContainer {
-  margin-top: -130px;
-  margin-bottom: -60px;
-  width: 100%;
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-}
-.circle {
-  width: 30%;
-  position: absolute;
-  left: 15px;
-  top: 17%;
-}
-.rectangle {
-  position: relative;
-  width: 340px;
-}
-.downloadPc {
+.images {
   margin-bottom: 50px;
 }
-.downloadPc,
-.devicetype {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-  width: 100%;
+img.circle {
+  width: 111px;
+  left: 15px;
+  top: 70px;
+  position: absolute;
 }
-.downloadPc h2 {
+img.circle2 {
+  display: none;
+}
+.screenshot {
+  width: 80%;
+  position: relative;
+}
+
+.buttondiv p {
   /* Available on Windows 8 and higher */
   font-family: Lato;
   font-style: normal;
@@ -83,11 +74,14 @@ body {
 
   color: #999999;
 }
+.buttondiv {
+  margin-top: 40px;
+}
 
-.downloadPc a {
+.buttondiv button.button1 {
   border-radius: 4px;
   width: 75%;
-  padding: 10px;
+  padding: 20px 10px;
   color: #ffffff;
   margin: 0 auto;
 
@@ -96,14 +90,21 @@ body {
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;
-
+  outline: none;
+  border: none;
+  outline-style: none;
+  outline-color: none;
   background: #00b87c;
   color: #ffffff;
 }
 
-.downloadPc h3 {
+.buttondiv button.button2 {
   /* Download for Mac OS X 10.10 and higher */
-
+  margin-top: 10px;
+  outline: none;
+  border: none;
+  outline-style: none;
+  outline-color: none;
   height: 22px;
 
   font-family: Lato;
@@ -116,34 +117,31 @@ body {
   color: #00b87c;
 }
 
-.devicetype h2 {
-  /* Zuri Chat for Mobile */
-  height: 29px;
-
+.h1 {
   font-family: Lato;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
-  line-height: 29px;
-  /* identical to box height */
+  padding: 0;
+  margin: 0;
 }
-.devicetype h3 {
+.storep {
   /* Keep up with your team and hold meetings from your device */
 
   height: 38px;
-
+  margin: 10px 0;
   font-family: Lato;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-  padding: 0 50px;
+  padding: 0 60px;
   color: #666666;
-
 }
 
 .google_apple_Box {
+  margin-top: 100px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -151,7 +149,8 @@ body {
   flex-direction: column;
   margin-bottom: 40px;
 }
-.appleBox {
+.appleBox,
+.googleBox {
   border-radius: 10px;
   width: 50%;
   display: flex;
@@ -160,8 +159,10 @@ body {
   padding: 10px;
 }
 
-.appleBox_text {
+.appleBox_text,
+.googleBox_text {
   /* Vector */
+  margin-left: 5px;
   color: #ffffff;
   width: 130px;
   text-align: left;
@@ -176,57 +177,46 @@ body {
 small {
   font-size: 15px;
 }
-.appleText {
+.appleText,
+.googleText {
+  padding: 0;
   font-size: 18px;
   font-weight: bold;
 }
 
 .zurilogo {
   margin-top: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  padding-left: 20px;
+  position: relative;
 }
-/* .zc_logo {
-  
-} */
+
+.zurilogo img {
+  width: 30px;
+  margin-right: 8px;
+  margin-top: 5px;
+}
+.zuri_logo_text {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 8px;
+}
 
 .zurilogo div span {
   margin-left: 10px;
-  font-size: 45px;
-  font-weight: bold;
 }
 
-.footer {
-  width: 100%;
+footer {
   padding: 0 20px;
 }
 
-.zcdescription p {
-  /* WHY ZURI CHAT */
-  height: 20px;
-
-  font-family: Lato;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 20px;
-  /* identical to box height, or 143% */
-  letter-spacing: 0.02em;
-  font-feature-settings: 'salt' on;
-
-  color: #333333;
-
-  width: 100%;
+.footertext {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
-}
-
-.zc_footer_nav {
-  margin: 50px 0 50px 0;
-}
-.zc_footer_nav p {
-  /* Privacy */
+  /* WHY ZURI CHAT */
   height: 20px;
-
+  margin-bottom: 20px;
   font-family: Lato;
   font-style: normal;
   font-weight: 600;
@@ -234,33 +224,29 @@ small {
   line-height: 20px;
   /* identical to box height, or 143% */
   letter-spacing: 0.02em;
-  font-feature-settings: 'salt' on;
 
   color: #333333;
-
-  margin-top: 23px;
-  text-decoration: none;
 }
-.socialMedia {
+.footerlinks a {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.socio {
   margin-top: 20px;
   padding: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
-.facebook {
-  margin-left: -20px;
-}
-.facebook,
-.instagram,
-.twitter,
-.linkedin {
-  width: 50px;
+
+.socio p img {
+  width: 25px;
 }
 .copyright {
   /* ©️2021 Zuri, Team Aristotle. All Rights Reserved. */
   height: 20px;
-
+  text-align: center;
   font-family: Lato;
   font-style: normal;
   font-weight: normal;
@@ -272,4 +258,95 @@ small {
   color: #6a6a6a;
 
   margin: 20px;
+}
+
+@media only screen and (min-width: 500px) {
+  img.circle {
+    width: 30%;
+    left: 15px;
+    top: 9rem;
+    position: absolute;
+  }
+  .container h1 {
+    font-size: 42px;
+  }
+  .container a {
+    font-size: 22px;
+    margin: 15px 0;
+  }
+  .buttondiv p {
+    font-size: 18px;
+  }
+  .buttondiv button.button1 {
+    width: 65%;
+    padding: 0 -10px;
+    font-size: 22px;
+  }
+  .buttondiv button.button2 {
+    margin-top: 15px;
+    font-size: 22px;
+  }
+  h1.h1 {
+    font-size: 28px;
+  }
+
+  .storep {
+    font-size: 18px;
+    padding: 0 7rem;
+  }
+
+  .appleBox,
+  .googleBox {
+    padding: 8px 10px;
+    width: 45%;
+  }
+  .appleText {
+    font-size: 22.5px;
+    letter-spacing: 1.5;
+  }
+  .googleText {
+    font-size: 22.5px;
+    letter-spacing: 1.5;
+  }
+  .copyright {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  img.circle {
+    left: 17px;
+  }
+  .container h1 {
+    font-size: 46px;
+  }
+  .container a {
+    font-size: 24px;
+  }
+  .buttondiv button.button1 {
+    padding: 0 -10px;
+    font-size: 28px;
+  }
+  .buttondiv button.button2 {
+    font-size: 25px;
+  }
+  .googleBox,
+  .appleBox {
+    width: 35%;
+    padding: 10px 0 10px 10px;
+  }
+  .appleBox_text,
+  .googleBox_text {
+    /* Vector */
+    width: 70%;
+  }
+  .appleText,
+  .googleText {
+    font-size: 25px;
+  }
+  .footertext {
+    font-size: 21px;
+  }
+  .footerlinks a {
+    font-size: 16px;
+  }
 }

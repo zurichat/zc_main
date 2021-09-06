@@ -1,8 +1,6 @@
 const express = require('express')
 const userRoute = express.Router()
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 const { register } = require('../../controllers/registrationController')
 const { validateRegistration } = require('../../lib/authValidator')
 const { validateLogin } = require('../../lib/authValidator')
@@ -11,12 +9,7 @@ const { handleLogin } = require('../../controllers/loginController.js')
 userRoute.post('/register', validateRegistration, register)
 userRoute.post('/login', validateLogin, handleLogin)
 
-=======
-=======
- review
->>>>>>> c1e958023d0207fbd2d7eeca049f7a66bc31d234
-=======
->>>>>>> cd31f1ca8a6f76c450829ee975c4dd186c10cf51
+
 const {
   register,
   handleRegister
@@ -29,11 +22,6 @@ userRoute.post('/register', validateRegistration, register)
 userRoute.post('/login', validateLogin, handleLogin)
 userRoute.get('/register', handleRegister)
 userRoute.get('/login', login)
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 7ebe876ca60572c629c347a7fecce9333f047269
-=======
-=======
 const { register } = require('../../controllers/registrationController')
 const { validateRegistration } = require('../../lib/authValidator')
 const { validateLogin } = require('../../lib/authValidator')
@@ -43,7 +31,5 @@ userRoute.post('/register', validateRegistration, register)
 userRoute.post('/login', validateLogin, handleLogin)
 
  main
->>>>>>> c1e958023d0207fbd2d7eeca049f7a66bc31d234
-=======
->>>>>>> cd31f1ca8a6f76c450829ee975c4dd186c10cf51
+
 module.exports = userRoute
