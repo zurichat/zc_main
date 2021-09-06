@@ -56,19 +56,17 @@ const TopbarModal = () => {
 
             <div className={styles.oneRight}>
               <h4>Praise.A</h4>
-              {
-                active ?
-                 <div className={styles.online}>
+              {active ? (
+                <div className={styles.online}>
                   <FaCircle className={styles.circle} />
                   <p>Active</p>
                 </div>
-                
-                :
+              ) : (
                 <div className={styles.online}>
                   <FaCircle className={styles.circlegrey} />
                   <p>Away</p>
                 </div>
-              }
+              )}
             </div>
           </div>
 
@@ -78,7 +76,9 @@ const TopbarModal = () => {
 
           <div className={styles.sectionThree}>
             <p onClick={openStatus}>Set a status</p>
-            <p onClick={()=>setActive(!active)}>{active?'Set yourself as away':'Set yourself as online'}</p>
+            <p onClick={() => setActive(!active)}>
+              {active ? 'Set yourself as away' : 'Set yourself as online'}
+            </p>
             <div className={styles.pause}>
               <p>Pause Notifications</p>
               <FaChevronRight className={styles.chevron} />
