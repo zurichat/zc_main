@@ -9,7 +9,7 @@ import Section1 from '../../components/externalPagesComponents/Security'
 const Security = () => {
   return (
     <div>
-      {/* <Header /> */}
+      <Header />
       <Section1 />
       <section className={securityStyles.compliancesection}>
         <h2 className={securityStyles.complianceheading}>
