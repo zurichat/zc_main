@@ -1,30 +1,55 @@
 import React from 'react'
-import styles from './styles/Cookies.modules.css'
+import styles from '../../styles/Cookie.module.css'
 import hamburger from '../../assets/hamburger.png'
+import { Link } from 'react-router-dom'
 
 const Cookies = () => {
   return (
-    <div className={styles.container}>
-      <h1 className={styles.first}>OUR COOKIE POLICY</h1>
-      <div className={styles.content}>
-        <img src={hamburger} alt="hamburger" />
-        <p>
-          We use cookies to ensure that we give you the best experience on our
-          website. We also use cookies to ensure we show <br></br>
-          you advertising that is relevant to you{' '}
-          <a href="http://" class={styles.second}>
-            Manage cookie settings
-          </a>
-          at anytime.
-        </p>
-      </div>
-      <div className={styles.wrapper}>
-        <button href="./settings" className={styles.third}>
-          Allow all cookies
-        </button>
-        <button href="./settings" className={styles.fourth}>
-          Decline
-        </button>
+    <div className={styles.bannerContainer}>
+      <div className={styles.bannerBox}>
+        <div className={styles.bannerLogo}></div>
+        <div className={styles.bannerTitle}>
+          <h1>OUR COOKIE POLICY</h1>
+        </div>
+        <div className={styles.bannerText}>
+          <p>
+            We use cookies to ensure that that we give the best experience on or
+            website. We also use cookies to ensure we show
+            <br /> you advertisiing that si relevant to you{' '}
+            <Link to="/cookies-settings">manage cookie settings</Link> at
+            anytime.
+          </p>
+        </div>
+        <div className={styles.bannerButtons}>
+          <button
+            style={{
+              backgroundColor: '#00b87c',
+              color: 'white',
+
+              fontWeight: 'bold',
+              padding: '10px 0',
+              borderRadius: '20px',
+              border: 'none'
+            }}
+            className={`${styles.allowButton} ${styles.button} `}
+          >
+            Allow
+          </button>
+          <button
+            style={{
+              backgroundColor: 'white',
+              color: 'black',
+
+              padding: '10px 0 ',
+              fontWeight: 'bold',
+              borderRadius: '20px',
+              border: 'none'
+            }}
+            className={`${styles.declineButton} ${styles.button}`}
+          >
+            Decline
+          </button>
+        </div>
       </div>
     </div>
   )

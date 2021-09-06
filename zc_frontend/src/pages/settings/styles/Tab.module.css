@@ -31,6 +31,7 @@
 
 .bloctabs button {
   width: 20%;
+  /* background:red; */
 }
 
 @media screen and (min-width: 1000px) {
@@ -63,6 +64,7 @@
   outline: none;
   color: #7c7c7c;
   font-weight: bold;
+  font-size: 17px !important;
 }
 
 #tabs {
@@ -152,11 +154,11 @@
     flex-direction: column;
     background: #f6f6f6 !important;
     z-index: 99;
+    border: 1px solid #cccccc;
   }
 
   .tabs {
     background: none;
-    background: #fff;
     margin-left: 0;
     text-align: left;
   }

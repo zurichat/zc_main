@@ -1,69 +1,96 @@
-.container {
-  background-color: #e8e8e8;
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  margin: auto;
-  margin-top: 8em;
+.test {
+  background-color: green;
 }
-
-.first {
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  padding-left: 1em;
-  padding-right: 2em;
-  width: 80%;
-  margin: auto;
-}
-
-.second {
-  text-decoration: none;
-  color: red;
-}
-
-.wrapper {
-  display: flex;
-  width: 30%;
-  margin: auto;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.third,
-.fourth {
+.Bannercontainer {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.BannerBox {
+  background-color: rgb(240, 240, 240);
+  padding: 3rem 8rem;
+  margin: 5rem 10rem 2rem 10rem;
+  border-radius: 20px;
+  position: absolute;
+  bottom: 0px;
+}
+
+.BannerLogo {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.BannerTitle h1 {
   text-align: center;
-  width: 45%;
-  border-radius: 50px;
-  padding: 10px 1em;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
-    0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
-    0 16px 16px rgba(0, 0, 0, 0.12);
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Gilroy', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+    sans-serif;
 }
 
-.third {
-  text-decoration: none;
-  outline: none;
-  border: none;
-  background-color: #00b87c;
-  color: white;
+.BannerText p {
+  font-family: 'Gilroy', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+    sans-serif;
+  text-align: center;
 }
 
-.fourth {
-  text-decoration: none;
-  outline: none;
-  border: none;
-  background-color: #fff;
+.BannerText p a {
   color: red;
+}
+
+.BannerButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.BannerButtons .AllowButtons {
+  background-color: rgb(0, 172, 134);
+  color: white;
+  padding: 0.5rem 2em;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+.BannerButtons .AllowButtons:hover {
+  background-color: rgb(0, 124, 97);
+}
+
+.BannerButtons .DeclineButtons {
+  color: red;
+  margin-left: 2rem;
+  font-weight: bold;
+  border-radius: 20px;
+}
+.BannerButtons .DeclineButtons:hover {
+  color: rgb(187, 0, 0);
+}
+
+@media screen and (max-width: 600px) {
+  .BannerTitle h1 {
+    font-size: 1.5rem;
+  }
+  .BannerBox {
+    padding: 4rem 1rem 4rem 1rem;
+    margin: 1.5rem;
+  }
+
+  .BannerButtons {
+    display: flex;
+  }
+
+  .BannerButtons .AllowButtons {
+    padding: 0.5rem 1em;
+  }
+
+  .BannerButtons .DeclineButtons {
+    margin-left: 0.7rem;
+  }
 }
