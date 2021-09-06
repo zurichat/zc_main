@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 
 // react icons
-import { FaChevronRight, FaTimes } from 'react-icons/fa'
+import { FaChevronRight, FaTimes, FaCircle } from 'react-icons/fa'
 
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
 
