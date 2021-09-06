@@ -8,6 +8,7 @@
     "lib": "lib"
   },
   "scripts": {
+<<<<<<< HEAD
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
@@ -19,10 +20,29 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/rajiss-ctrl/zc_main/issues"
+=======
+    "start": "npm run run-start",
+    "build": "npm run frontend:build",
+    "format": "prettier -w .",
+    "lint": "prettier -c .",
+    "deploy": "gh-pages -d build",
+    "dev": "concurrently --kill-others-on-fail \"npm run run-dev\" \"npm run frontend:dev\"",
+    "run-start": "cross-env NODE_ENV=production node server.js",
+    "run-dev": "cross-env NODE_ENV=development nodemon server.js",
+    "frontend:build": "npm run build --prefix zc_frontend",
+    "frontend:dev": "cross-env PORT=5000 npm start --prefix zc_frontend",
+    "postinstall": "cd zc_frontend && yarpm-yarn install",
+    "zcmain:install": "yarn && cd zc_frontend && yarn",
+    "frontend:serve": "cd zc_frontend && yarn dev",
+    "backend:serve": "yarn dev",
+    "backend": "yarn",
+    "frontend": "cd zc_frontend && yarn"
+>>>>>>> 8d129e1f897dc58ad8b3eed725b24c8335f078f2
   },
   "homepage": "https://github.com/rajiss-ctrl/zc_main#readme",
   "dependencies": {
     "axios": "^0.21.1",
+    "bootstrap": "^5.1.0",
     "cookie-parser": "^1.4.5",
     "cookie-session": "^1.4.0",
     "cors": "^2.8.5",
@@ -32,7 +52,6 @@
     "express-device": "^0.4.2",
     "express-limiter": "^1.6.1",
     "express-useragent": "^1.0.15",
-    "format": "^0.2.2",
     "geoip-lite": "^1.4.2",
     "gh-pages": "^3.2.3",
     "helmet": "^4.6.0",
@@ -40,6 +59,7 @@
     "jsonwebtoken": "^8.5.1",
     "node": "^16.6.1",
     "nodemailer": "^6.6.3",
+    "react-bootstrap": "^2.0.0-beta.6",
     "yarn": "^1.22.11"
   },
   "devDependencies": {

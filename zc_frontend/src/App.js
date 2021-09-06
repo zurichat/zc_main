@@ -16,15 +16,19 @@ import ContactUs from './pages/contact-us'
 import Pricing from './pages/pricing'
 import Header from './components/externalPagesComponents/Header'
 import Input from './components/externalPagesComponents/Input'
+// import CookiesBanner from './components/externalPagesComponents/CookiesBanner/cookiesBanner'
 import FAQ from './pages/FAQ'
 import './styles/globals.css'
 import MarketPlace from './pages/marketplace/marketplace'
 import Settings from './pages/settings'
 import SearchResult from './components/SearchResults3'
 import LinkComponent from './components/externalPagesComponents/Link'
+import SearchSuggestion from './pages/searchSuggestion'
 import Cookies from './pages/cookies'
 
 import DeactivateAccount from './pages/settings/components/AcctDeactivation'
+import CookiesSetting from './pages/cookies-settings'
+import SearchResults2 from './components/externalPagesComponents/searchResults2'
 
 const App = () => (
   <BrowserRouter>
@@ -73,9 +77,9 @@ const App = () => (
       </Route>
       <Route path="/header">
         <Header />
-        <Route path="/marketplace" exact>
-          <MarketPlace />
-        </Route>
+      </Route>
+      <Route path="/marketplace" exact>
+        <MarketPlace />
       </Route>
       <Route path="/faq">
         <FAQ />
@@ -92,8 +96,17 @@ const App = () => (
       <Route path="/cookies-banner">
         <Cookies />
       </Route>
+      <Route path="/cookies-settings">
+        <CookiesSetting />
+      </Route>
       <Route path="/deactivate-account">
         <DeactivateAccount />
+      </Route>
+      <Route path="/search-results">
+        <SearchResults2 />
+      </Route>
+      <Route path="/search-suggestions">
+        <SearchSuggestion />
       </Route>
       <Route path="/link">
         <LinkComponent
@@ -102,6 +115,9 @@ const App = () => (
           color={`black`}
           underline
         />
+      </Route>
+      <Route path="searchSuggestion">
+        <SearchSuggestion />
       </Route>
     </Switch>
   </BrowserRouter>
