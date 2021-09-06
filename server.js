@@ -4,8 +4,7 @@ const helmet = require('helmet')
 const device = require('express-device')
 const useragent = require('express-useragent')
 const sessions = require('./lib/user_session')
-// const ejs = require('ejs')
-// const path = require('path')
+
 
 const loadFrontend = require('./middlewares/load-frontend')
 const PORT = process.env.PORT || 3000
