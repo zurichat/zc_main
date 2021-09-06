@@ -23,11 +23,12 @@ import MarketPlace from './pages/marketplace/marketplace'
 import Settings from './pages/settings'
 import SearchResult from './components/SearchResults3'
 import LinkComponent from './components/externalPagesComponents/Link'
+import SearchSuggestion from './pages/searchSuggestion'
 import Cookies from './pages/cookies'
 
 import DeactivateAccount from './pages/settings/components/AcctDeactivation'
 import CookiesSetting from './pages/cookies-settings'
-import SearchResults3 from './components/SearchResults3'
+import SearchResults2 from './components/externalPagesComponents/searchResults2'
 
 const App = () => (
   <BrowserRouter>
@@ -102,7 +103,10 @@ const App = () => (
         <DeactivateAccount />
       </Route>
       <Route path="/search-results">
-        <SearchResults3 />
+        <SearchResults2 />
+      </Route>
+      <Route path="/search-suggestions">
+        <SearchSuggestion />
       </Route>
       <Route path="/link">
         <LinkComponent
@@ -111,6 +115,9 @@ const App = () => (
           color={`black`}
           underline
         />
+      </Route>
+      <Route path="searchSuggestion">
+        <SearchSuggestion />
       </Route>
     </Switch>
   </BrowserRouter>
