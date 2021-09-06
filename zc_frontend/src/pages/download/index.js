@@ -4,7 +4,6 @@ import { ReactComponent as Apple} from '../images/apple.svg';
 
 import React from 'react'
 
- import Header from '../../components/externalPagesComponents/Header'
 // import styles from '../download/styles/download.module.css'
  import RectangleOverlay from '../images/rectangle.png';
  import Circle from '../images/circleimg.png';

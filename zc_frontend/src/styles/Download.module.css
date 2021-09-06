@@ -49,11 +49,12 @@ section.store {
 
 .images {
   margin-bottom: 50px;
+  position: relative;
 }
 img.circle {
   width: 111px;
   left: 15px;
-  top: 70px;
+  top: 40px;
   position: absolute;
 }
 img.circle2 {
@@ -184,86 +185,11 @@ small {
   font-weight: bold;
 }
 
-.zurilogo {
-  margin-top: 30px;
-  margin-bottom: 20px;
-  display: flex;
-  padding-left: 20px;
-  position: relative;
-}
-
-.zurilogo img {
-  width: 30px;
-  margin-right: 8px;
-  margin-top: 5px;
-}
-.zuri_logo_text {
-  font-size: 25px;
-  font-weight: bold;
-  margin-top: 8px;
-}
-
-.zurilogo div span {
-  margin-left: 10px;
-}
-
-footer {
-  padding: 0 20px;
-}
-
-.footertext {
-  display: flex;
-  justify-content: space-between;
-  /* WHY ZURI CHAT */
-  height: 20px;
-  margin-bottom: 20px;
-  font-family: Lato;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 20px;
-  /* identical to box height, or 143% */
-  letter-spacing: 0.02em;
-
-  color: #333333;
-}
-.footerlinks a {
-  margin-bottom: 10px;
-  display: block;
-}
-
-.socio {
-  margin-top: 20px;
-  padding: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.socio p img {
-  width: 25px;
-}
-.copyright {
-  /* ©️2021 Zuri, Team Aristotle. All Rights Reserved. */
-  height: 20px;
-  text-align: center;
-  font-family: Lato;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 20px;
-  /* identical to box height, or 167% */
-  letter-spacing: 0.02em;
-
-  color: #6a6a6a;
-
-  margin: 20px;
-}
 
 @media only screen and (min-width: 500px) {
   img.circle {
     width: 30%;
-    left: 15px;
+    left: 35px;
     top: 9rem;
     position: absolute;
   }
@@ -308,9 +234,7 @@ footer {
     font-size: 22.5px;
     letter-spacing: 1.5;
   }
-  .copyright {
-    font-size: 16px;
-  }
+ 
 }
 @media only screen and (min-width: 768px) {
   img.circle {
@@ -343,10 +267,6 @@ footer {
   .googleText {
     font-size: 25px;
   }
-  .footertext {
-    font-size: 21px;
-  }
-  .footerlinks a {
-    font-size: 16px;
-  }
+  
+  
 }
