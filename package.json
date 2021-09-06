@@ -5,6 +5,7 @@
   "repository": "git@github.com:zurichat/zc_main.git",
   "license": "MIT",
   "scripts": {
+    "prepare": "husky install",
     "start": "npm run run-start",
     "build": "npm run frontend:build",
     "format": "prettier -w .",
@@ -41,6 +42,7 @@
     "autoprefixer": "^10.3.3",
     "concurrently": "^6.2.1",
     "cross-env": "^7.0.3",
+    "husky": "^7.0.2",
     "nodemon": "^2.0.12",
     "postcss": "^8.3.6",
     "prettier": "^2.3.2",
