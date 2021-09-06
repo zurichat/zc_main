@@ -1,12 +1,3 @@
-
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from './pages/home';
-import Login from './pages/login';
-import SignUp from './pages/signup';
-import Blog from './pages/blog';
-import News from './pages/news';
-import './styles/globals.css';
-import EmailNotification from './components/EmailNotification';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import LandingPage from './components/LandingPage'
 import Loading from './components/Loading/loading'
@@ -32,12 +23,9 @@ import Settings from './pages/settings'
 import SearchResult from './components/SearchResults3'
 import LinkComponent from './components/externalPagesComponents/Link'
 import Cookies from './pages/cookies'
- feat/emailnotification
-=======
 
 import DeactivateAccount from './pages/settings/components/AcctDeactivation'
 
- main
 const App = () => (
   <BrowserRouter>
     <Switch>
@@ -115,12 +103,7 @@ const App = () => (
           underline
         />
       </Route>
-      <Route path="/EmailNotification">
-        <EmailNotification />
-      </Route>
     </Switch>
   </BrowserRouter>
-);
-
-export default App;
-
+)
+export default App
