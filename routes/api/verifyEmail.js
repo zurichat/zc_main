@@ -1,9 +1,10 @@
 const express = require('express')
 const router = express.Router()
-
 const ejs = require('ejs');
 const path = require('path');
  
+const app = express()
+
 // ejs as template engine
 app.set("view engine", "ejs");
 
