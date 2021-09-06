@@ -20,6 +20,7 @@ const TopbarModal = () => {
   const [chosenEmoji] = state.emoji
   const { onEmojiClick, openStatus, closeStatus, modalRef } = state
   const [modal, setModal] = useState('')
+  const [active, setActive] = useState(true)
 
   return (
     <>
@@ -54,10 +55,19 @@ const TopbarModal = () => {
             </div>
             <div className={styles.oneRight}>
               <h4>Praise.A</h4>
-              <div className={styles.online}>
-                <FaCircle className={styles.circle} />
-                <p>Active</p>
-              </div>
+              {
+                active ?
+                 <div className={styles.online}>
+                  <FaCircle className={styles.circle} />
+                  <p>Active</p>
+                </div>
+                
+                :
+                <div className={styles.online}>
+                  <FaCircle className={styles.circlegrey} />
+                  <p>Away</p>
+                </div>
+              }
             </div>
           </div>
 
@@ -67,7 +77,7 @@ const TopbarModal = () => {
 
           <div className={styles.sectionThree}>
             <p onClick={openStatus}>Set a status</p>
-            <p>Set yourself as away</p>
+            <p onClick={()=>setActive(!active)}>{active?'Set yourself as away':'Set yourself as online'}</p>
             <div className={styles.pause}>
               <p>Pause Notifications</p>
               <FaChevronRight className={styles.chevron} />
