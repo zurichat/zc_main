@@ -105,7 +105,7 @@ function SectionFour() {
         </div>
       </div>
 
-      <div className={styles.section_two}>
+       <div className={styles.section_two}>
         <div className={styles.header}>
           <img alt="resource" src="logo.svg" />
           <div className={styles.header_description}>
@@ -136,9 +136,9 @@ function SectionFour() {
             <ProductList name="Company" productArray={companyList} />
           </div>
         </div>
-      </div>
+      </div> 
 
-      <div className={styles.section_four}>
+       <div className={styles.section_four}>
         <img alt="resource" src="getApp.svg" />
         <div className={styles.footer_body}>
           <div className={styles.footer_others}>
