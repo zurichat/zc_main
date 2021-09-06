@@ -64,12 +64,8 @@
 .far {
   position: relative;
   right: 30px;
-  top: 44px;
+  top: 39px;
   cursor: pointer;
-}
-.checktext,
-.check {
-  font-size: 14px;
 }
 .checklink {
   color: #02ca87 !important;
@@ -91,7 +87,8 @@
   width: 100%;
   background-color: #cadcf4;
   color: #fff;
-  margin-left: 1%;
+  margin-left: 0%;
+  font-size: 14px;
 }
 .button:active {
   background-color: #448be8;
@@ -155,16 +152,22 @@
   .side {
     display: none;
   }
+  .login {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
   .loginheader {
     text-align: center;
     margin-top: 10%;
   }
   .subtext {
-    font-size: 10px;
+    font-size: 11px;
     text-align: center;
+    margin-bottom: 8%;
+    margin-top: 8%;
   }
   .line {
-    margin-top: -5%;
+    margin-top: 5%;
   }
   .checktextlink {
     margin-top: -2%;
@@ -180,6 +183,14 @@
     font-size: 11px;
     position: relative;
     left: 12%;
+  }
+  .or {
+    font-size: 11px;
+    margin-top: 5%;
+  }
+  .far {
+    right: 20px;
+    top: 34px;
   }
 }
 @media only screen and (max-width: 425px) {
