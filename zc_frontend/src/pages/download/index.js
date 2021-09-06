@@ -1,12 +1,12 @@
 import React from 'react'
 import Footer from '../../components/externalPagesComponents/Footer/Footer'
-import Header from '../../components/externalPagesComponents/Header'
 import styles from '../download/styles/download.module.css'
+import SearchSuggestion from '../searchSuggestion'
 
 const Download = () => {
   return (
     <>
-      <Header />
+      <SearchSuggestion />
       <section>
         <div className={`${styles.container} container`}>
           <h1 className={styles.h1}>Zuri Chat Download</h1>
