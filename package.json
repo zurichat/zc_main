@@ -37,7 +37,10 @@
     "backend:serve": "yarn dev",
     "backend": "yarn",
     "frontend": "cd zc_frontend && yarn"
+<<<<<<< HEAD
 >>>>>>> 8d129e1f897dc58ad8b3eed725b24c8335f078f2
+=======
+>>>>>>> 8d3056afd8f6e7c19f2e9bd30ab52dbdc08a5ab6
   },
   "homepage": "https://github.com/rajiss-ctrl/zc_main#readme",
   "dependencies": {
