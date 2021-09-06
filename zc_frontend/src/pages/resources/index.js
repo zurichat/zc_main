@@ -6,12 +6,12 @@ import Section4 from './components/section4'
 
 function Resources() {
   return (
-    <div style={{"overflow":"hidden"}}>
-      <Header /> 
+    <div style={{ overflow: 'hidden' }}>
+      <Header />
       <Section1 />
       <Section4 />
       <SectionFour />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }

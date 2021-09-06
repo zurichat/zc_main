@@ -105,6 +105,9 @@ const App = () => (
       <Route path="/search-results">
         <SearchResults2 />
       </Route>
+      <Route path="/search-suggestions">
+        <SearchSuggestion />
+      </Route>
       <Route path="/link">
         <LinkComponent
           title={`test-to-home`}
