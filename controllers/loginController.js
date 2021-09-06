@@ -60,6 +60,18 @@ const controllers = () => {
       }
     })
   }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+  return {
+    handleLogin
+=======
+=======
+
+>>>>>>> c1e958023d0207fbd2d7eeca049f7a66bc31d234
+=======
+>>>>>>> cd31f1ca8a6f76c450829ee975c4dd186c10cf51
   const login = (_, res) => {
     const user = dummyDB[0]
     const token = createJwt(user.id)
@@ -78,6 +90,17 @@ const controllers = () => {
   return {
     handleLogin,
     login
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 7ebe876ca60572c629c347a7fecce9333f047269
+=======
+=======
+
+  return {
+    handleLogin
+>>>>>>> c1e958023d0207fbd2d7eeca049f7a66bc31d234
+=======
+>>>>>>> cd31f1ca8a6f76c450829ee975c4dd186c10cf51
   }
 }
 
