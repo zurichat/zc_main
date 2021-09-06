@@ -25,6 +25,10 @@
     "dotenv": "^10.0.0",
     "emoji-picker-react": "^3.4.8",
     "express": "^4.17.1",
+<<<<<<< HEAD
+    "nodemailer": "^6.6.3",
+    "react-bootstrap": "^1.6.1"
+=======
     "express-device": "^0.4.2",
     "express-limiter": "^1.6.1",
     "express-useragent": "^1.0.15",
@@ -36,6 +40,7 @@
     "jsonwebtoken": "^8.5.1",
     "nodemailer": "^6.6.3",
     "yarn": "^1.22.11"
+>>>>>>> 499015cbb7307394413abe391eb7521c4632a396
   },
   "devDependencies": {
     "autoprefixer": "^10.3.3",
