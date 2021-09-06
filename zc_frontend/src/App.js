@@ -110,8 +110,8 @@ const App = () => (
         />
       </Route>
       <Route path="searchSuggestion">
-        <SearchSuggestion/>
-        </Route>     
+        <SearchSuggestion />
+      </Route>
     </Switch>
   </BrowserRouter>
 )
