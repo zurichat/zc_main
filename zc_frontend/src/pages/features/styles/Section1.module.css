@@ -2,10 +2,10 @@
 * {
   font-family: 'Lato', sans-serif;
 }
-h2 {
+/* h2 {
   font-size: 28px;
   color: #1a61db;
-}
+} */
 .total {
   display: flex;
   margin-top: 15px;
@@ -27,7 +27,7 @@ h3 {
   font-size: 56px;
   margin-bottom: 0px;
 }
-button {
+.button {
   padding: 15px;
   font-size: 24px;
   cursor: pointer;
