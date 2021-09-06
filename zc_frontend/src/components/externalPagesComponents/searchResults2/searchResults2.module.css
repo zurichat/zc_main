@@ -1,14 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   font-family: lato;
   box-sizing: border-box;
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
 }
-
 
 main {
   width: 50%;
