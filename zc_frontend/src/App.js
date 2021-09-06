@@ -27,6 +27,7 @@ import Cookies from './pages/cookies'
 
 import DeactivateAccount from './pages/settings/components/AcctDeactivation'
 import CookiesSetting from './pages/cookies-settings'
+import SearchResults3 from './components/SearchResults3'
 
 const App = () => (
   <BrowserRouter>
@@ -99,6 +100,9 @@ const App = () => (
       </Route>
       <Route path="/deactivate-account">
         <DeactivateAccount />
+      </Route>
+      <Route path="/search-results">
+        <SearchResults3 />
       </Route>
       <Route path="/link">
         <LinkComponent
