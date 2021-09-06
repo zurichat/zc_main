@@ -3,11 +3,6 @@ const router = express.Router()
 const ejs = require('ejs');
 const path = require('path');
  
-const app = express()
-
-// ejs as template engine
-app.set("view engine", "ejs");
-
 router.get('/verify', (req, res, next) => {
     let emailTemplate;
     let capitalizedFirstName = 'John';
