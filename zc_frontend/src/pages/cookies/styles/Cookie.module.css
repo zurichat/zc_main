@@ -1,7 +1,4 @@
-.test {
-  background-color: green;
-}
-.Bannercontainer {
+.bannerContainer {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -10,8 +7,7 @@
   justify-content: center;
   align-items: center;
 }
-
-.BannerBox {
+.bannerBox {
   background-color: rgb(240, 240, 240);
   padding: 3rem 8rem;
   margin: 5rem 10rem 2rem 10rem;
@@ -20,13 +16,13 @@
   bottom: 0px;
 }
 
-.BannerLogo {
+.bannerLogo {
   display: grid;
   justify-content: center;
   align-items: center;
 }
 
-.BannerTitle h1 {
+.bannerTitle h1 {
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
@@ -34,63 +30,70 @@
     sans-serif;
 }
 
-.BannerText p {
+.bannerText p {
   font-family: 'Gilroy', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
     sans-serif;
   text-align: center;
 }
 
-.BannerText p a {
+.bannerText p a {
   color: red;
 }
-
-.BannerButtons {
+.button {
+  width: 186px;
+}
+.bannerButtons {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
+  gap: 38px;
 }
 
-.BannerButtons .AllowButtons {
+.allowButton {
   background-color: rgb(0, 172, 134);
   color: white;
-  padding: 0.5rem 2em;
+
   font-weight: bold;
   border-radius: 20px;
 }
 
-.BannerButtons .AllowButtons:hover {
+.allowButtons:hover {
   background-color: rgb(0, 124, 97);
 }
 
-.BannerButtons .DeclineButtons {
+.declineButtons {
   color: red;
   margin-left: 2rem;
   font-weight: bold;
   border-radius: 20px;
 }
-.BannerButtons .DeclineButtons:hover {
+.bannerButtons .DeclineButtons:hover {
   color: rgb(187, 0, 0);
 }
 
 @media screen and (max-width: 600px) {
-  .BannerTitle h1 {
+  .bannerTitle h1 {
     font-size: 1.5rem;
   }
-  .BannerBox {
+  .bannerBox {
     padding: 4rem 1rem 4rem 1rem;
     margin: 1.5rem;
   }
-
-  .BannerButtons {
+  .bannerBox > button {
+    width: 137px;
+  }
+  .bannerBox {
+    gap: 22px;
+  }
+  .button {
+    width: 147px;
+  }
+  .bannerButtons {
     display: flex;
   }
 
-  .BannerButtons .AllowButtons {
-    padding: 0.5rem 1em;
-  }
-
-  .BannerButtons .DeclineButtons {
+  .bannerButtons > .declineButton {
     margin-left: 0.7rem;
   }
 }
