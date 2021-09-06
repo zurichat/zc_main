@@ -1,3 +1,7 @@
+.login__container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
 .headimg {
   position: relative;
   left: 11%;
@@ -8,8 +12,9 @@
   top: -50px;
 }
 .headertext {
-  line-height: 25px;
+  line-height: 38px;
   color: rgba(255, 255, 255, 0.8);
+  font-size: 35px;
 }
 .text {
   line-height: 20px;
@@ -39,11 +44,16 @@
 
 .icon {
   cursor: pointer;
+  width: 30px;
+}
+.line {
+  width: 38%;
 }
 
 .login {
-  padding-left: 12%;
-  padding-right: 12%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .side {
@@ -65,10 +75,13 @@
   color: #02ca87 !important;
 }
 .or {
-  font-size: 14px;
+  font-size: 13px;
   margin-top: 1%;
 }
 
+.footer {
+  margin-top: 15%;
+}
 .footer > a {
   font-size: 10px;
 }
@@ -121,6 +134,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .login__container {
+    grid-template-columns: 1fr;
+  }
   .button_outline > img {
     width: 14%;
   }
