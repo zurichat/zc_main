@@ -19,8 +19,37 @@ exports.register = (req, res, _) => {
   }
   res.status(201).json({
     status: true,
+    message: 'registration successful',
     data: {
       user: { ...newData, ...extraData },
+      token
+    }
+  })
+}
+
+exports.handleRegister = (_, res) => {
+  const user = {
+    id: 1,
+    fullname: 'Mark Essien',
+    firstname: 'Mark',
+    lastname: 'Essien',
+    email: 'markessien@gmail.com',
+    verified: false,
+    profileImageUrl:
+      'https://techpoint.africa/wp-content/uploads/2020/01/mark-essien-e1580122566517.jpg',
+    status: 'Hi, I am new here',
+    phoneNumber: '',
+    occupation: 'CEO',
+    bio: 'CEOing',
+    facebookUrl: '',
+    twitterUrl: 'https://twitter.com/markessien?t=2nvvnl2hKj5563cEDk-vrA&s=09'
+  }
+  const token = createJwt(user.id)
+  res.status(200).json({
+    status: true,
+    message: 'registration successful',
+    data: {
+      user: user,
       token
     }
   })
