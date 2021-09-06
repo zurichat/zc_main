@@ -1,15 +1,11 @@
 
-// import { ReactComponent as Rectangle} from '../images/downloadRectangle.svg';
 import { ReactComponent as Googleplay} from '../images/googleplay.svg';
 import { ReactComponent as Apple} from '../images/apple.svg';
 
 import React from 'react'
-// import Footer from '../../components/externalPagesComponents/Footer/Footer'
-// import Header from '../../components/externalPagesComponents/Header'
+
+ import Header from '../../components/externalPagesComponents/Header'
 // import styles from '../download/styles/download.module.css'
-
-
-// import Googleplay from '../images/Google_Play-Icon-Logo.wine.png';
  import RectangleOverlay from '../images/rectangle.png';
  import Circle from '../images/circleimg.png';
  import Logo from '../images/ZuriLogo.png';
@@ -18,10 +14,7 @@ import Facebook from '../images/facebook.png';
 import Instagram from '../images/instagram.png';
 import Twitter from '../images/twitter.png';
 import Linkedin from '../images/linkedin.png';
-// import { ReactComponent as Facebook} from '../images/facebook.svg';
-// import { ReactComponent as Instagram} from '../images/instagram.svg';
-// import { ReactComponent as Twitter} from '../images/twitter.svg';
-// import { ReactComponent as Linkedin} from '../images/linkedin.svg';
+
 import styles from '../../styles/Download.module.css'
 // import Header from '../../components/externalPagesComponents/Header';
 
@@ -30,6 +23,7 @@ const Download = () => {
 
   return (
     <div>
+      <Header/>
     <section>
         <div className={`${styles.container} container`}>
           <h1 className={styles.h1}>Zuri Chat Download</h1>
