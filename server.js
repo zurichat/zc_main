@@ -14,9 +14,6 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-// ejs as template engine
-app.set("view engine", "ejs");
-
 
 
 // activate helmet--server security
