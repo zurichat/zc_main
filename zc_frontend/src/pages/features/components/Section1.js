@@ -14,8 +14,12 @@ const Section1 = () => {
           easy access.
         </p>
         <div className={styles.btn}>
-          <button className={styles.getStarted}>Get Started</button>
-          <button className={styles.features}>See all Features</button>
+          <button className={`${styles.getStarted} ${styles.button}`}>
+            Get Started
+          </button>
+          <button className={`${styles.features} ${styles.button}`}>
+            See all Features
+          </button>
         </div>
       </div>
       <div className={group}>
