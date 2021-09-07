@@ -3,16 +3,24 @@ body {
   margin: 0;
   padding: 0;
   min-height: 95vh;
+  font-family: 'Lato', sans-serif;
+}
+.wrapper {
+  padding-top: 166px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 .cookie_content {
-  width: 100%;
-  margin-top: 15%;
+  /* margin-top: 15%; */
   background-color: #f3f3f3;
   border-top-left-radius: 5%;
   border-top-right-radius: 5%;
   font-family: 'Lato', sans-serif;
-  min-height: 100vh;
+  padding-bottom: 32px;
+  /* min-height: 100vh; */
 }
 
 .cookie_header {
@@ -81,16 +89,20 @@ body {
   margin-top: 0.9em;
 }
 
-button {
-  width: 45%;
+.button {
+  /* width: 45%; */
+  width: 200px;
+
   border: none;
   text-align: center;
   display: inline-block;
   border-radius: 12px;
   box-shadow: 0 5px 8px #888888;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-button:active {
+.button:active {
   box-shadow: 0 5px 8px #888888;
   transform: translateY(4px);
 }
@@ -103,9 +115,13 @@ button:active {
 .secondButton {
   background-color: #c4c4c4;
 }
-
-@media only screen and (min-width: 769px) {
+@media (min-width: 35rem) {
   .cookie_content {
-    display: none;
+    max-width: 50%;
+  }
+  .button {
+    width: 250px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
