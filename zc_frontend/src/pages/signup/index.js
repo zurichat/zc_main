@@ -338,7 +338,7 @@ const SignUp = () => {
                 </div>
                 <div className={`${styles.inputBx}`}>
                   <span className={`${styles.inputBx_span}`}>
-                    <span>First name</span>
+                    <span>Phone</span>
                     {/* <span className={`${styles.inputErrorMsg}`}>{nameERR}</span>  */}
                   </span>
                   <input
