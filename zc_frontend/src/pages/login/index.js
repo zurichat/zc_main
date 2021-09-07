@@ -54,6 +54,7 @@ const Login = ({ history }) => {
         history.push('/home')
       })
       .catch(e => {
+        alert('Error: Wrong Email and password')
         history.push('/login')
       })
   }
