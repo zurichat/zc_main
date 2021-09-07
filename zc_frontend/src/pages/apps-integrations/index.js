@@ -1,12 +1,12 @@
 // import Categories from './components/Categories'
 import Footer from '../../components/externalPagesComponents/Footer/Footer'
-import Header from '../../components/externalPagesComponents/Header'
+import SearchSuggestion from '../searchSuggestion'
 import SectionOne from './components/SectionOne'
 
 function AppsAndIntegrations() {
   return (
     <div>
-      <Header />
+      <SearchSuggestion />
       <SectionOne />
       {/* <Categories /> */}
       <Footer />
