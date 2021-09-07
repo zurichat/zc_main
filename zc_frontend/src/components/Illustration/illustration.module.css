@@ -71,13 +71,13 @@
   background-size: contain;
   background-position: bottom left;
   position: absolute;
-  bottom: 0;
+  bottom: 2px;
   left: 0;
 }
 .illustration__woman {
   background-image: url('images/person1.svg');
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  bottom: -15px;
   left: 0;
   width: 20vw;
   height: 500px;
@@ -90,13 +90,12 @@
   background-image: url('images/person2.svg');
   background-size: contain;
   background-position: bottom;
-  width: 30vw;
-  height: 450px;
+  width: 35vw;
+  /* height: 450px; */
   background-repeat: no-repeat;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  z-index: 121212;
+  bottom: -15px;
+  right: 30%;
+  position: relative;
   transform: translate(12vw, 0px);
 }
 

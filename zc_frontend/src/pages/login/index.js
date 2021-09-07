@@ -66,7 +66,7 @@ const Login = () => {
       {showLoader && <LoginLoading />}
       <Illustration />
       <div class={`col-12 ${styles.login}`}>
-        <div className={`pt-4 mt-3 text-center`}>
+        <div className={`pt-2 mt-3 text-center`}>
           <span>
             <img src="logo.svg" alt="logo" />
           </span>
@@ -111,14 +111,14 @@ const Login = () => {
           <form className={`mb-sm-3`} onSubmit={handleSubmit}>
             <div className={` ${styles.email_input}`}>
               <div
-                className={`mb-lg-3 mb-md-3 mb-sm-3 col-sm-12 col-md-6 w-100`}
+                className={`mb-lg-2 mb-md-2 mb-sm-2 col-sm-12 col-md-6 w-100`}
               >
                 <label for="Email1" class="form-label">
                   Email address
                 </label>
                 <input
                   type="email"
-                  className={`py-lg-3 py-md-3 py-sm-3 form-control`}
+                  className={`py-lg-2 py-md-2 py-sm-3 form-control`}
                   value={email}
                   onChange={handleEmailChange}
                   placeholder="Enter your email address"
@@ -127,14 +127,14 @@ const Login = () => {
             </div>
             <div className={`d-flex ${styles.email_input}`}>
               <div
-                className={`mb-lg-3 mb-md-3 mb-sm-3  col-sm-12 col-md-6 w-100`}
+                className={`mb-lg-2 mb-md-2 mb-sm-2  col-sm-12 col-md-6 w-100`}
               >
                 <label for="Password" class="form-label">
                   Password
                 </label>
                 <input
                   type={showPassword ? 'text' : 'password'}
-                  className={`py-lg-3 py-md-3 py-sm-3 form-control`}
+                  className={`py-lg-2 py-md-2 py-sm-2 form-control`}
                   value={password}
                   onChange={e => {
                     setPassword(e.target.value)
@@ -169,7 +169,7 @@ const Login = () => {
           </form>
           <div>
             <Button
-              className={`${styles.button} btn mb-3 col-12 col-md-6 px-lg-5 px-md-5 py-lg-3 py-md-3`}
+              className={`${styles.button} mb-3 col-12 col-md-6 px-lg-2 px-md-2 py-lg-2 py-md-2`}
               type="submit"
               disabled={!email || !password}
               onClick={() => handleLogin()}
