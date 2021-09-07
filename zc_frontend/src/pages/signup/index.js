@@ -1,14 +1,14 @@
 import styles from '../../styles/Signup.module.css'
 import React, { useState, useRef } from 'react'
 import apple from '../images/apple.svg'
-import bg from '../images/bg.svg'
+// import bg from '../images/bg.svg'
 import google from '../images/google.svg'
 import zuri from '../images/zuri.svg'
 import globe from '../images/globe.svg'
 import chevron from '../images/chevron.svg'
-
+import axios from 'axios'
+// import useHistory from 'react-router-dom';
 import usePasswordVisibilityReducer from '../../components/usePasswordVisibilityReducer'
-// import Illustration from '../../components/Illustration'
 
 /**
  * @param password {string} - password to test
@@ -64,13 +64,18 @@ const passwordCheck = (password, okay_length = 0) => {
 }
 
 const SignUp = () => {
-  const [name, setname] = useState('')
+  const [firstName, setfirstName] = useState('')
+  const [lastName, setlastName] = useState('')
   const [email, setemail] = useState('')
   const [password, setpassword] = useState('')
+  const [displayName, setdisplayName] = useState('')
+  const [phone, setphone] = useState('')
+  const [success, setsuccess] = useState('')
+  const [failed, setfailed] = useState('')
   const [confirmPassword, setconfirmPassword] = useState('')
   const [TOSConfirm, setTOSConfirm] = useState(false)
 
-  const [nameERR, setnameERR] = useState('')
+  // const [nameERR, setnameERR] = useState('')
   const [emailERR, setemailERR] = useState('')
   const [passwordERR, setpasswordERR] = useState('')
   const [confirmPasswordERR, setconfirmPasswordERR] = useState('')
@@ -86,9 +91,9 @@ const SignUp = () => {
   const containerTwoRef = useRef(null)
 
   const formValidate = () => {
-    setnameERR(
-      name && name.length > 3 ? `` : `Name must be at least 3 characters long`
-    )
+    // setnameERR(
+    //   name && name.length > 3 ? `` : `Name must be at least 3 characters long`
+    // )
 
     const emailReg =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -108,11 +113,7 @@ const SignUp = () => {
 
     setTOSConfirmERR(TOSConfirm ? `` : `You must accept the Terms of Service`)
 
-    return !nameERR &&
-      !emailERR &&
-      !passwordERR &&
-      !confirmPasswordERR &&
-      !TOSConfirmERR
+    return !emailERR && !passwordERR && !confirmPasswordERR && !TOSConfirmERR
       ? true
       : false
   }
@@ -120,15 +121,32 @@ const SignUp = () => {
   const handleSubmit = e => {
     e.preventDefault()
     if (formValidate()) {
-      // submit request here
+      axios({
+        url: `https://api.zuri.chat/users`,
+        method: 'POST',
+        data: {
+          first_name: firstName,
+          last_name: lastName,
+          display_name: displayName,
+          email: email,
+          password: password,
+          phone: phone
+        }
+      })
+        .then(res => {
+          console.log(res)
+
+          console.log(res.data.message)
+
+          if (res.data.message === 'user created') {
+            setsuccess('Successfully created user')
+          } else {
+            setfailed('User already exists')
+          }
+        })
+        .catch(err => console.log(err))
     } else {
-      console.log(
-        nameERR,
-        emailERR,
-        passwordERR,
-        confirmPasswordERR,
-        TOSConfirmERR
-      )
+      console.log(emailERR, passwordERR, confirmPasswordERR, TOSConfirmERR)
     }
   }
 
@@ -222,22 +240,7 @@ const SignUp = () => {
   return (
     <>
       <div className={styles.container}>
-        <div className={styles.login_container}>
-          <div className={styles.logo}>
-            {/* <img src={logo} className={styles.logoImage} /> */}
-            <b className={styles.logoText}>Zuri Chat</b>
-          </div>
-
-          <div className={styles.signup_button}>
-            <button
-              type="submit"
-              className={styles.signup_btn}
-              onClick={passwordCheck}
-            >
-              Sign up
-            </button>
-          </div>
-        </div>
+        <div className={styles.login_container}></div>
       </div>
       <section
         className={`${styles.section_signup}`}
@@ -251,19 +254,22 @@ const SignUp = () => {
       >
         <section className={`${styles.section_signup}`}>
           <div className={`${styles.imgBx}`}>
-            <img src={bg} alt="img" className={`${styles.imgBx_img}`} />
+            {/* <img src={bg} alt="img" className={`${styles.imgBx_img}`} /> */}
           </div>
 
-          {/* <Illustration /> */}
           <div className={`${styles.contentBx}`}>
             <img src={zuri} className={`${styles.formLogo}`} alt="zuri"></img>
             <div className={`${styles.formBx}`}>
+              {<p style={{ color: 'green' }}>{success}</p>}
+              {<p style={{ color: 'red' }}>{failed}</p>}
               <form
                 className={`${styles.formInline}`}
                 method="POST"
                 onSubmit={handleSubmit}
               >
-                <h2 className={`${styles.formInline_h2}`}>Create Account</h2>
+                <h2 className={`text-center ${styles.formInline_h2}`}>
+                  Create Account
+                </h2>
                 <div className={`${styles.social}`}>
                   <a href="/">
                     <img
@@ -287,17 +293,62 @@ const SignUp = () => {
 
                 <div className={`${styles.inputBx}`}>
                   <span className={`${styles.inputBx_span}`}>
-                    <span>Full name</span>
-                    <span className={`${styles.inputErrorMsg}`}>{nameERR}</span>
+                    <span>First name</span>
+                    {/* <span className={`${styles.inputErrorMsg}`}>{nameERR}</span> */}
                   </span>
                   <input
                     className={`${styles.inputBx_input}`}
                     type="text"
-                    placeholder="John Doe"
-                    name="name"
-                    id="name"
-                    value={name}
-                    onChange={e => setname(e.target.value)}
+                    placeholder="John"
+                    name="firstName"
+                    id="firstName"
+                    value={firstName}
+                    onChange={e => setfirstName(e.target.value)}
+                  />
+                </div>
+                <div className={`${styles.inputBx}`}>
+                  <span className={`${styles.inputBx_span}`}>
+                    <span>Last name</span>
+                    {/* <span className={`${styles.inputErrorMsg}`}>{nameERR}</span> */}
+                  </span>
+                  <input
+                    className={`${styles.inputBx_input}`}
+                    type="text"
+                    placeholder="Doe"
+                    name="lastName"
+                    id="lastName"
+                    value={lastName}
+                    onChange={e => setlastName(e.target.value)}
+                  />
+                </div>
+                <div className={`${styles.inputBx}`}>
+                  <span className={`${styles.inputBx_span}`}>
+                    <span>Username</span>
+                    {/* <span className={`${styles.inputErrorMsg}`}>{nameERR}</span> */}
+                  </span>
+                  <input
+                    className={`${styles.inputBx_input}`}
+                    type="text"
+                    placeholder="Username"
+                    name="username"
+                    id="username"
+                    value={displayName}
+                    onChange={e => setdisplayName(e.target.value)}
+                  />
+                </div>
+                <div className={`${styles.inputBx}`}>
+                  <span className={`${styles.inputBx_span}`}>
+                    <span>First name</span>
+                    {/* <span className={`${styles.inputErrorMsg}`}>{nameERR}</span>  */}
+                  </span>
+                  <input
+                    className={`${styles.inputBx_input}`}
+                    type="number"
+                    placeholder="tel"
+                    name="phone"
+                    id="phone"
+                    value={phone}
+                    onChange={e => setphone(e.target.value)}
                   />
                 </div>
                 <div className={`${styles.inputBx}`}>
