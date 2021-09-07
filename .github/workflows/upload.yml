@@ -42,11 +42,11 @@ jobs:
     - name: Use cached node_modules
       uses: c-hive/gha-yarn-cache@v2
       with:
-        directory: client
+        directory: zc_frontend
 
     - name: Install yarn dependencies and Run ESLint
       run: |
-        cd client
+        cd zc_frontend
         yarn install
         yarn run lint --fix
     - name: Commit changes
@@ -69,12 +69,9 @@ jobs:
     
     - name: Use cached node_modules
       uses: c-hive/gha-yarn-cache@v2
-      with:
-        directory: server
 
     - name: Install yarn dependencies and Run ESLint
       run: |
-        cd server
         yarn install
         yarn run lint --fix
     - name: Commit changes
