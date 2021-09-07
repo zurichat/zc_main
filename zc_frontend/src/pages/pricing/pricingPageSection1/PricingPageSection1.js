@@ -12,48 +12,46 @@ const PricingPageSection1 = () => {
           <div className="topPricingPageBody">
             <div className="topPricingLine"></div>
             <div className="topPricingPageColumns">
-              {Pricing.map(p => {
+              {Pricing.map((p, id) => {
                 return (
-                  <>
-                    <div className={p.className}>
-                      <div className="topPricingTop">
-                        <p className="topPricingTitle">{p.topPricingTitle}</p>
-                        <p className="topPricingSubtitle">
-                          {p.topPricingSubtitle}
+                  <div key={id} className={p.className}>
+                    <div className="topPricingTop">
+                      <p className="topPricingTitle">{p.topPricingTitle}</p>
+                      <p className="topPricingSubtitle">
+                        {p.topPricingSubtitle}
+                      </p>
+                      <p className="topPricingAmount">{p.topPricingAmount}</p>
+                    </div>
+
+                    <button className="topPricingButton">Get Started</button>
+
+                    <div className="topPricingBottom">
+                      <div className="topPricingBottomHead">
+                        <p className="topPricingBottomHeadText">
+                          {p.topPricingBottomHeadText}
                         </p>
-                        <p className="topPricingAmount">{p.topPricingAmount}</p>
                       </div>
 
-                      <button className="topPricingButton">Get Started</button>
+                      <div className="topPricingBottomBody">
+                        {p.topPricingText.map((pt, id) => {
+                          return (
+                            <div key={id} className="topPricingBottomBodyPart">
+                              <img
+                                className="topPricingTick"
+                                src={p.topPricingTick}
+                                alt={p.topPricingTickAlt}
+                              />
+                              <p className="topPricingText">{pt}</p>
+                            </div>
+                          )
+                        })}
+                      </div>
 
-                      <div className="topPricingBottom">
-                        <div className="topPricingBottomHead">
-                          <p className="topPricingBottomHeadText">
-                            {p.topPricingBottomHeadText}
-                          </p>
-                        </div>
-
-                        <div className="topPricingBottomBody">
-                          {p.topPricingText.map(pt => {
-                            return (
-                              <div className="topPricingBottomBodyPart">
-                                <img
-                                  className="topPricingTick"
-                                  src={p.topPricingTick}
-                                  alt={p.topPricingTickAlt}
-                                />
-                                <p className="topPricingText">{pt}</p>
-                              </div>
-                            )
-                          })}
-                        </div>
-
-                        <div className="topPricingBottomFoot">
-                          <span>Learn more</span>
-                        </div>
+                      <div className="topPricingBottomFoot">
+                        <span>Learn more</span>
                       </div>
                     </div>
-                  </>
+                  </div>
                 )
               })}
             </div>

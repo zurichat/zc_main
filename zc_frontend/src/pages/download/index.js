@@ -1,9 +1,12 @@
 import React from 'react'
+import Footer from '../../components/externalPagesComponents/Footer/Footer'
 import styles from '../download/styles/download.module.css'
+import SearchSuggestion from '../searchSuggestion'
 
 const Download = () => {
   return (
     <>
+      <SearchSuggestion />
       <section>
         <div className={`${styles.container} container`}>
           <h1 className={styles.h1}>Zuri Chat Download</h1>
@@ -60,6 +63,7 @@ const Download = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   )
 }
