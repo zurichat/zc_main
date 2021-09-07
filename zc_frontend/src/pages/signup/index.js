@@ -113,10 +113,7 @@ const SignUp = () => {
 
     setTOSConfirmERR(TOSConfirm ? `` : `You must accept the Terms of Service`)
 
-    return !emailERR &&
-      !passwordERR &&
-      !confirmPasswordERR &&
-      !TOSConfirmERR
+    return !emailERR && !passwordERR && !confirmPasswordERR && !TOSConfirmERR
       ? true
       : false
   }
@@ -124,40 +121,32 @@ const SignUp = () => {
   const handleSubmit = e => {
     e.preventDefault()
     if (formValidate()) {
-
       axios({
         url: `https://api.zuri.chat/users`,
         method: 'POST',
         data: {
-          "first_name": firstName,
-          "last_name": lastName,
-          "display_name": displayName,
-          "email": email,
-          "password": password,
-          "phone": phone
+          first_name: firstName,
+          last_name: lastName,
+          display_name: displayName,
+          email: email,
+          password: password,
+          phone: phone
         }
       })
-        .then((res) => {
+        .then(res => {
           console.log(res)
 
           console.log(res.data.message)
 
-          if(res.data.message === "user created") {
+          if (res.data.message === 'user created') {
             setsuccess('Successfully created user')
           } else {
             setfailed('User already exists')
           }
-
         })
-        .catch(err => console.log(err));
-
+        .catch(err => console.log(err))
     } else {
-      console.log(
-        emailERR,
-        passwordERR,
-        confirmPasswordERR,
-        TOSConfirmERR
-      )
+      console.log(emailERR, passwordERR, confirmPasswordERR, TOSConfirmERR)
     }
   }
 
@@ -251,9 +240,7 @@ const SignUp = () => {
   return (
     <>
       <div className={styles.container}>
-        <div className={styles.login_container}>
-
-        </div>
+        <div className={styles.login_container}></div>
       </div>
       <section
         className={`${styles.section_signup}`}
@@ -273,14 +260,16 @@ const SignUp = () => {
           <div className={`${styles.contentBx}`}>
             <img src={zuri} className={`${styles.formLogo}`} alt="zuri"></img>
             <div className={`${styles.formBx}`}>
-              {<p style={{color: 'green'}}>{success}</p>}
-              {<p style={{color: 'red'}}>{failed}</p>}
+              {<p style={{ color: 'green' }}>{success}</p>}
+              {<p style={{ color: 'red' }}>{failed}</p>}
               <form
                 className={`${styles.formInline}`}
                 method="POST"
                 onSubmit={handleSubmit}
               >
-                <h2 className={`text-center ${styles.formInline_h2}`}>Create Account</h2>
+                <h2 className={`text-center ${styles.formInline_h2}`}>
+                  Create Account
+                </h2>
                 <div className={`${styles.social}`}>
                   <a href="/">
                     <img
@@ -350,7 +339,7 @@ const SignUp = () => {
                 <div className={`${styles.inputBx}`}>
                   <span className={`${styles.inputBx_span}`}>
                     <span>First name</span>
-                     {/* <span className={`${styles.inputErrorMsg}`}>{nameERR}</span>  */}
+                    {/* <span className={`${styles.inputErrorMsg}`}>{nameERR}</span>  */}
                   </span>
                   <input
                     className={`${styles.inputBx_input}`}
