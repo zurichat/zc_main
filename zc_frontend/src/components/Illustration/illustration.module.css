@@ -80,7 +80,6 @@
   bottom: -15px;
   left: 0;
   width: 20vw;
-  height: 500px;
   background-size: contain;
   background-position: bottom left;
   background-repeat: no-repeat;
@@ -91,11 +90,11 @@
   background-size: contain;
   background-position: bottom;
   width: 35vw;
-  /* height: 450px; */
   background-repeat: no-repeat;
   bottom: -15px;
   right: 30%;
   position: relative;
+  z-index: 12;
   transform: translate(12vw, 0px);
 }
 

@@ -108,11 +108,10 @@ const Login = () => {
               srcset=""
             />
           </div>
-          <form className={`mb-sm-3`} onSubmit={handleSubmit}>
+          <form className={`mb-lg-1 mb-sm-3`} onSubmit={handleSubmit}>
             <div className={` ${styles.email_input}`}>
               <div
                 className={`mb-lg-2 mb-md-2 mb-sm-2 col-sm-12 col-md-6 w-100`}
-              >
                 <label for="Email1" class="form-label">
                   Email address
                 </label>
@@ -169,7 +168,7 @@ const Login = () => {
           </form>
           <div>
             <Button
-              className={`${styles.button} mb-3 col-12 col-md-6 px-lg-2 px-md-2 py-lg-2 py-md-2`}
+              className={`${styles.button} mb-lg-2 col-12 col-md-6 px-lg-2 px-md-2 py-lg-2 py-md-2`}
               type="submit"
               disabled={!email || !password}
               onClick={() => handleLogin()}
