@@ -66,7 +66,7 @@ const Login = () => {
       {showLoader && <LoginLoading />}
       <Illustration />
       <div class={`col-12 ${styles.login}`}>
-        <div className={`pt-4 mt-3 text-center`}>
+        <div className={`pt-2 mt-3 text-center`}>
           <span>
             <img src="logo.svg" alt="logo" />
           </span>
