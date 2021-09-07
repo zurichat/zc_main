@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import GoogleLogin from 'react-google-login'
 import { withRouter } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
-import LoginLoading from '../../components/LoginLoading'
+// import LoginLoading from '../../components/LoginLoading'
 import axios from 'axios'
 import Illustration from '../../components/Illustration'
 import Cookies from 'universal-cookie'
@@ -16,7 +16,7 @@ const Login = ({ history }) => {
     password: ''
   })
   const [showPassword, setShowPassword] = useState(false)
-  const [showLoader, setShowLoader] = useState(false)
+  // const [showLoader, setShowLoader] = useState(false)
   const url = 'https://api.zuri.chat/auth/login'
   const cookies = new Cookies()
 
@@ -61,7 +61,7 @@ const Login = ({ history }) => {
 
   return (
     <div className={styles.login__container}>
-      {showLoader && <LoginLoading />}
+      {/* {showLoader && <LoginLoading />} */}
       <Illustration />
       <div class={`col-12 ${styles.login}`}>
         <div className={`pt-4 mt-3 text-center`}>
