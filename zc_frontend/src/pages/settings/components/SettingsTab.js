@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import styles from '../styles/SettingsTab.module.css'
 import TimeZone from '../../../components/TimeZone'
-import { Link } from 'react-router-dom';
-import PreferenceWrapper from './PreferenceWrapper';
-import { AnimateSharedLayout } from 'framer-motion';
+import { Link } from 'react-router-dom'
+import PreferenceWrapper from './PreferenceWrapper'
+import { AnimateSharedLayout } from 'framer-motion'
 
 const SettingsTab = () => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false)
 
-  const showTime = show ? <TimeZone /> : null;
+  const showTime = show ? <TimeZone /> : null
 
   return (
     <>
@@ -19,18 +19,16 @@ const SettingsTab = () => {
           <p>Replace this tag with something password bla</p>
         </PreferenceWrapper>
       </AnimateSharedLayout>
-      
+
       <AnimateSharedLayout>
         <PreferenceWrapper
-         title="Two-Factor Authentication"
-         text="Two factor authentication is active for your account" 
-         btnText="Expand"
-         timeZone=""
+          title="Two-Factor Authentication"
+          text="Two factor authentication is active for your account"
+          btnText="Expand"
+          timeZone=""
         >
-
           {/* Two factor authentication input field goes under here */}
           <p>Authentication</p>
-
         </PreferenceWrapper>
       </AnimateSharedLayout>
 
@@ -41,10 +39,8 @@ const SettingsTab = () => {
           btnText="Expand"
           timeZone=""
         >
-
           {/* Email address input field goes under here */}
           <p>Remove this tag and replace with Email input bla</p>
-
         </PreferenceWrapper>
       </AnimateSharedLayout>
 
@@ -55,10 +51,8 @@ const SettingsTab = () => {
           btnText="Expand"
           timeZone={showTime}
         >
-
           {/* TimeZone input field goes under here */}
           <p>Remove this tag and replace with timezone bla</p>
-
         </PreferenceWrapper>
       </AnimateSharedLayout>
 
@@ -69,10 +63,8 @@ const SettingsTab = () => {
           btnText="Expand"
           timeZone=""
         >
-
           {/* Language input field goes under here */}
           <p>Remove this tag and replace with language input bla</p>
-
         </PreferenceWrapper>
       </AnimateSharedLayout>
 
@@ -91,7 +83,6 @@ const SettingsTab = () => {
           </button>
         </div>
       </div>
-      
 
       <div className={styles.settingsTab}>
         <div className={styles.settingleft}>
@@ -123,10 +114,8 @@ const SettingsTab = () => {
           btnText="Expand"
           timeZone=""
         >
-
           {/* Username input field goes under here */}
           <p>Remove this tag and replace with Username input bla</p>
-
         </PreferenceWrapper>
       </AnimateSharedLayout>
     </>

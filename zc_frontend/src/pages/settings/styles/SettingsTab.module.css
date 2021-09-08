@@ -1,9 +1,9 @@
-.settings_wrapper  {
+.settings_wrapper {
   border-bottom: 1px solid #dedede;
   padding: 20px 0;
 }
 
-.settingsTab { 
+.settingsTab {
   display: flex;
   align-items: center;
   justify-content: space-between;
