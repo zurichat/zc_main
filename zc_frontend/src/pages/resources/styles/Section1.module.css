@@ -19,30 +19,18 @@
   font-weight: 500;
 }
 
-<<<<<<< HEAD
 a {
-=======
-.a {
->>>>>>> 012fd747b12c9da8f068bdd3ea593dc87edeae53
   font-size: 1.5rem;
   color: #00b87c !important;
   font-weight: 700;
   text-decoration: underline;
 }
 
-<<<<<<< HEAD
-a:link {
-  color: #00b87c;
-}
-
-a:hover {
-=======
 .a:link {
   color: #00b87c;
 }
 
 .a:hover {
->>>>>>> 012fd747b12c9da8f068bdd3ea593dc87edeae53
   color: #0be49c;
 }
 
