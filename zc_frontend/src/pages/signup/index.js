@@ -1,58 +1,87 @@
-//import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import style from './styles/SignUp.module.css'
-import authBg from './images/auth_img.png'
-import logo from './images/logo.svg'
-//import GoogleLogin from 'react-google-login'
+import { useState } from 'react'
 import { withRouter } from 'react-router-dom'
+//import GoogleLogin from 'react-google-login'
 
-//import AuthInputBox from '../../components/AuthInputBox'
-import AuthFormWrapper from '../../components/AuthFormWrapper'
+import style from '../../styles/AuthPage.module.css'
 
-const AuthHeader = () => {
-  return (
-    <header className={style.header}>
-      <Link className={style.logo} to="/home" replace={true}>
-        <img src={logo} alt="zuri logo" />
-      </Link>
-    </header>
-  )
-}
-
-const AuthFooter = () => {
-  return (
-    <footer className={style.footer}>
-      <Link className={style.contact} to="/contact-us" replace={true}>
-        <small>Contact Us</small>
-      </Link>
-      <Link className={style.policy} to="/" replace={true}>
-        <small>Legal Policy</small>
-      </Link>
-    </footer>
-  )
-}
+import AuthInputBox from '../../components/AuthInputBox'
+import {
+  AuthFormWrapper,
+  AuthHeader,
+  AuthFooter,
+  AuthSideBar
+} from '../../components/AuthFormElements'
 
 const Signup = () => {
+  const [fName, setfName] = useState('')
+  const [lName, setlName] = useState('')
+  const [phone, setphone] = useState('')
+  const [email, setemail] = useState('')
+  const [password, setpassword] = useState('')
+  const [confirmPassword, setconfirmPassword] = useState('')
+
+  const submitSignUp = () => {}
+
   return (
-    <main id={style.authPageWrapper}>
-      <aside id={style.authAsideContainer} className={style.display_none}>
-        <div id={style.authImageWrapper}>
-          <img src={authBg} alt="backgroundImage" />
-          <di id={style.aside_txt}>
-            <h4>Have fun while working</h4>
-            <h4>as a team</h4>
-            <p>Unlimited team collaboration platform</p>
-          </di>
-        </div>
-      </aside>
-      <section id={style.authFormContainer}>
+    <div className={style.authPageWrapper}>
+      <AuthSideBar />
+      <section className={style.authFormContainer}>
         <AuthHeader />
 
-        <AuthFormWrapper>ADD FORM HERE</AuthFormWrapper>
+        <AuthFormWrapper handleSubmit={submitSignUp}>
+          <AuthInputBox
+            id="fName"
+            name="First Name"
+            type="text"
+            placeholder="Enter your first Name"
+            value={fName}
+            setValue={setfName}
+          />
+          <AuthInputBox
+            id="lName"
+            name="Last Name"
+            type="text"
+            placeholder="Enter your last Name"
+            value={lName}
+            setValue={setlName}
+          />
+          <AuthInputBox
+            id="telephone"
+            name="Phone Number"
+            type="tel"
+            placeholder="Enter your phone number"
+            value={phone}
+            setValue={setphone}
+          />
+          <AuthInputBox
+            id="email"
+            name="Email Address"
+            type="email"
+            placeholder="Enter your email address"
+            value={email}
+            setValue={setemail}
+          />
+          <AuthInputBox
+            id="password"
+            name="Password"
+            type="password"
+            placeholder="Enter your password"
+            value={password}
+            setValue={setpassword}
+          />
+          <AuthInputBox
+            id="confirmPassword"
+            name="Confirm Password"
+            type="password"
+            placeholder="Enter the same password"
+            value={confirmPassword}
+            setValue={setconfirmPassword}
+          />
+        </AuthFormWrapper>
 
         <AuthFooter />
       </section>
-    </main>
+    </div>
   )
 }
 
