@@ -75,7 +75,7 @@ const TopbarModal = () => {
             </div>
           </div>
 
-          <hr />
+          <hr className={styles.hr} />
 
           <div className={styles.sectionFour}>
             <p
@@ -93,15 +93,21 @@ const TopbarModal = () => {
                 setModal('preference')
               }}
             >
-              Preference
+              Preferences
             </p>
+          </div>
+
+          <hr className={styles.hr} />
+
+          <div className={styles.sectionSix}>
+            <p>Downloads</p>
           </div>
 
           {modal === 'edit profile' && <EditProfile />}
 
           {modal === 'preference' && <Preferences />}
 
-          <hr />
+          <hr className={styles.hr} />
 
           <div className={styles.sectionFive}>
             <p>Sign out of Team Einstein workspace</p>
