@@ -10,7 +10,7 @@ import { DiscoverPluginSvg } from '../../components/marketplace/marketplace-cont
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 import MarketplaceHeader from '../../components/marketplace/marketplace-container/MarketplaceHeder'
-import { MarketPlaceProvider } from '../../contexts/MarketPlace.context'
+import { MarketPlaceProvider } from '../../context/MarketPlace.context.js'
 
 const MarketPlace = () => {
   return (
