@@ -111,8 +111,7 @@ const Login = () => {
           <form className={`mb-lg-1 mb-sm-3`} onSubmit={handleSubmit}>
             <div className={` ${styles.email_input}`}>
               <div
-                className={`mb-lg-2 mb-md-2 mb-sm-3 col-sm-12 col-md-6 w-100`}
-              >
+                className={`mb-lg-2 mb-md-2 mb-sm-2 col-sm-12 col-md-6 w-100`}
                 <label for="Email1" class="form-label">
                   Email address
                 </label>
@@ -127,14 +126,14 @@ const Login = () => {
             </div>
             <div className={`d-flex ${styles.email_input}`}>
               <div
-                className={`mb-lg-2 mb-md-2 mb-sm-3  col-sm-12 col-md-6 w-100`}
+                className={`mb-lg-2 mb-md-2 mb-sm-2  col-sm-12 col-md-6 w-100`}
               >
                 <label for="Password" class="form-label">
                   Password
                 </label>
                 <input
                   type={showPassword ? 'text' : 'password'}
-                  className={`py-lg-2 py-md-2 py-sm-3 form-control`}
+                  className={`py-lg-2 py-md-2 py-sm-2 form-control`}
                   value={password}
                   onChange={e => {
                     setPassword(e.target.value)
