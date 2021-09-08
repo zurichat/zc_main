@@ -78,7 +78,7 @@
   margin-left: 0.5rem;
 }
 
-.mobileBackButton{
+.mobileBackButton {
   display: none;
 }
 
@@ -155,7 +155,8 @@
   margin-bottom: 0.5rem;
 }
 
-.infoContent, .infoLink {
+.infoContent,
+.infoLink {
   font-size: 1rem;
   font-weight: 400;
   color: #242424;
@@ -268,7 +269,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
-    padding: 2rem .6rem;
+    padding: 2rem 0.6rem;
   }
 
   .buttonGroupsMobile button {
@@ -277,23 +278,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid #2F80ED;
+    border: 1.5px solid #2f80ed;
     background: none;
     font-size: 1rem;
     font-weight: 700;
-    color: #2F80ED;
+    color: #2f80ed;
     border-radius: 4px;
   }
 
   .buttonGroupsMobile button:hover {
-    background: #2F80ED;
+    background: #2f80ed;
     color: #fff;
   }
 
   .moreInfo {
-    margin: 0 .6rem;
-    margin-bottom: .8rem;
-    padding-bottom: .5rem;
+    margin: 0 0.6rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
     border-bottom: 1px solid #999;
   }
 
@@ -303,21 +304,22 @@
 
   .infoTitle {
     font-size: 13px;
-    margin-bottom: .2rem;
+    margin-bottom: 0.2rem;
     color: #999;
   }
 
-  .infoContent, .infoLink {
+  .infoContent,
+  .infoLink {
     font-size: 1rem;
     font-weight: 700;
   }
 
   .infoContent span {
     background: #2f80ed;
-    padding: .15rem .3rem;
+    padding: 0.15rem 0.3rem;
     color: #fff;
-    border-radius: .3rem;
-    font-size: .8rem;
+    border-radius: 0.3rem;
+    font-size: 0.8rem;
   }
 
   .social .icons {
