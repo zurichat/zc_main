@@ -10,7 +10,6 @@ const PluginLoader = () => {
   useEffect(() => {
     if (loader === "loading") {
       setShow(true)
-      return
     } else if (loader === "ready") {
       loaderEl.current.style.clipPath = "circle(0px at 50% 50%)"
       loaderEl.current.style.opacity = "0"
