@@ -111,7 +111,8 @@ const Login = () => {
           <form className={`mb-lg-1 mb-sm-3`} onSubmit={handleSubmit}>
             <div className={` ${styles.email_input}`}>
               <div
-                className={`mb-lg-2 mb-md-2 mb-sm-2 col-sm-12 col-md-6 w-100`}>
+                className={`mb-lg-2 mb-md-2 mb-sm-2 col-sm-12 col-md-6 w-100`}
+              >
                 <label for="Email1" class="form-label">
                   Email address
                 </label>
