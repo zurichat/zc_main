@@ -6,17 +6,21 @@ import GoogleLogin from 'react-google-login'
 import { withRouter } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 // import LoginLoading from '../../components/LoginLoading'
-import axios from 'axios'
 import Illustration from '../../components/Illustration'
 import Cookies from 'universal-cookie'
+import { connect } from 'react-redux'
 
-const Login = ({ history }) => {
+import { loginUser } from '../../redux/userAction/userActions'
+
+const Login = ({ history, loginUser }) => {
   const [loginInfo, setLoginInfo] = useState({
     email: '',
     password: ''
   })
   const [showPassword, setShowPassword] = useState(false)
+
   // const [showLoader, setShowLoader] = useState(false)
+
   const url = 'https://api.zuri.chat/auth/login'
   const cookies = new Cookies()
 
@@ -47,16 +51,7 @@ const Login = ({ history }) => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    axios
-      .post(url, loginInfo)
-      .then(({ data }) => {
-        setCookies('Zuri_Chat', data.data.token, { path: '/' })
-        history.push('/home')
-      })
-      .catch(e => {
-        alert('Error: Wrong Email and password')
-        history.push('/login')
-      })
+    loginUser(url, loginInfo, setCookies, history)
   }
 
   return (
@@ -106,18 +101,19 @@ const Login = ({ history }) => {
               srcset=""
             />
           </div>
-          <form className={`mb-sm-3`} onSubmit={handleSubmit}>
+          <form className={`mb-lg-1 mb-sm-3`} onSubmit={handleSubmit}>
             <div className={` ${styles.email_input}`}>
               <div
-                className={`mb-lg-3 mb-md-3 mb-sm-3 col-sm-12 col-md-6 w-100`}
+                className={`mb-lg-2 mb-md-2 mb-sm-3 col-sm-12 col-md-6 w-100`}
               >
-                <label for="Email1" class="form-label">
+                <label for="Email" class="form-label">
                   Email address
                 </label>
                 <input
                   name="email"
                   type="email"
                   className={`py-lg-3 py-md-3 py-sm-3 form-control`}
+                  className={`py-lg-2 py-md-2 py-sm-3 form-control`}
                   placeholder="Enter your email address"
                   required
                   value={loginInfo.email}
@@ -127,7 +123,7 @@ const Login = ({ history }) => {
             </div>
             <div className={`d-flex ${styles.email_input}`}>
               <div
-                className={`mb-lg-3 mb-md-3 mb-sm-3  col-sm-12 col-md-6 w-100`}
+                className={`mb-lg-2 mb-md-2 mb-sm-3  col-sm-12 col-md-6 w-100`}
               >
                 <label for="Password" class="form-label">
                   Password
@@ -136,6 +132,7 @@ const Login = ({ history }) => {
                   name="password"
                   type={showPassword ? 'text' : 'password'}
                   className={`py-lg-3 py-md-3 py-sm-3 form-control`}
+                  className={`py-lg-2 py-md-2 py-sm-3 form-control`}
                   placeholder="Enter a password"
                   required
                   value={loginInfo.password}
@@ -169,7 +166,7 @@ const Login = ({ history }) => {
           </form>
           <div>
             <Button
-              className={`${styles.button} btn mb-3 col-12 col-md-6 px-lg-5 px-md-5 py-lg-3 py-md-3`}
+              className={`${styles.button} mb-lg-2 col-12 col-md-6 px-lg-2 px-md-2 py-lg-2 py-md-2`}
               type="submit"
               disabled={!loginInfo.email || !loginInfo.password}
               onClick={handleSubmit}
@@ -205,4 +202,8 @@ const Login = ({ history }) => {
   )
 }
 
-export default withRouter(Login)
+const mapDispatchToProps = {
+  loginUser
+}
+
+export default connect(null, mapDispatchToProps)(withRouter(Login))
