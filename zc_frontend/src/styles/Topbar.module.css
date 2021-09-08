@@ -307,8 +307,8 @@
   line-height: 22px;
   font-style: normal;
   font-weight: normal;
-  margin: auto;
-  /* margin-top: -8px; */
+  margin-top: -5px;
+  margin-bottom: -5px;
 }
 
 .sectionFive p {
