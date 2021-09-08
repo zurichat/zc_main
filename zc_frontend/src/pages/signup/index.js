@@ -1,6 +1,6 @@
 //import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import style from './styles/Login.module.css'
+import style from './styles/SignUp.module.css'
 import authBg from './images/auth_img.png'
 import logo from './images/logo.svg'
 //import GoogleLogin from 'react-google-login'
@@ -32,7 +32,7 @@ const AuthFooter = () => {
   )
 }
 
-const Login = () => {
+const Signup = () => {
   return (
     <main id={style.authPageWrapper}>
       <aside id={style.authAsideContainer} className={style.display_none}>
@@ -56,4 +56,4 @@ const Login = () => {
   )
 }
 
-export default withRouter(Login)
+export default withRouter(Signup)
