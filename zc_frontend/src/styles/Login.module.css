@@ -91,7 +91,7 @@
   margin-top: 5%;
 }
 
-.footer>a {
+.footer > a {
   font-size: 10px;
 }
 
@@ -106,7 +106,7 @@
 }
 
 .button:active {
-  background-color: #2F80ED !important;
+  background-color: #2f80ed !important;
 }
 .subtext {
   color: #686666;
@@ -134,7 +134,7 @@
     grid-template-columns: 1fr;
   }
 
-  .button_outline>img {
+  .button_outline > img {
     width: 14%;
   }
 
@@ -153,7 +153,6 @@
 }
 
 @media only screen and (max-width: 600px) {
-
   .side {
     display: none;
   }
@@ -210,13 +209,13 @@
 }
 
 @media only screen and (max-width: 425px) {
-  .button_outline>img {
+  .button_outline > img {
     width: 10%;
   }
 }
 
 @media only screen and (max-width: 320px) {
-  .button_outline>img {
+  .button_outline > img {
     width: 12%;
   }
 
