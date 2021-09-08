@@ -1,22 +1,27 @@
-import React, { useContext, useEffect, useRef } from 'react'
-import { PluginLoaderContext } from '../contexts/Url'
+import React, { useContext, useEffect, useRef, useState } from 'react'
+import { PluginLoaderContext } from '../contexts/PluginLoaderState'
 import styles from '../styles/PluginLoader.module.css'
 
 const PluginLoader = () => {
-
+  const [show, setShow] = useState(true)
   const { loader } = useContext(PluginLoaderContext);
   const loaderEl = useRef(null);
 
   useEffect(() => {
-    if (loader) {
+    if (loader === "loading") {
+      setShow(true)
+      return
+    } else if (loader === "ready") {
+      loaderEl.current.style.clipPath = "circle(0px at 50% 50%)"
+      loaderEl.current.style.opacity = "0"
       setTimeout(() => {
-        loaderEl.current.animation = "reduce 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);"
-      }, 1000)
+        setShow(false);
+      }, 400)
     }
-  })
+  }, [loader])
 
   return (
-    <div ref={loaderEl} class={styles.loader}>
+    show && <div ref={loaderEl} class={styles.loader}>
       <svg xmlns="http://www.w3.org/2000/svg" width="67" height="72" viewBox="0 0 47 52" fill="none">
         <rect class={styles.topLeft} x="6.30078" width="18.9016" height="19.8545" rx="1.0991" fill="#00B87C" />
         <rect class={styles.bottomLeft} y="22.6904" width="18.9016" height="19.8545" rx="1.0991" fill="#FEA162" />
