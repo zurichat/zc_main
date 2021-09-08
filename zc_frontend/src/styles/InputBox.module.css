@@ -1,20 +1,38 @@
-.InputWrapper {
-  margin: 0.5rem 1rem;
+.InputContainer {
+  margin: 2rem 1rem;
   font-family: 'Lato', sans-serif;
 }
 
+/* input Label */
 .InputLabel {
   font-weight: 700;
   font-size: 21px;
-  margin-block: 1rem;
 }
 
-.InputElement {
+/* Input wrapper */
+.InputWrapper {
   border: 1px solid #bebebe;
   border-radius: 8px;
   width: 100%;
   height: 4rem;
-  padding-inline: 1rem;
+  overflow: hidden;
+}
+.InputWrapper:focus-within {
+  border: 1px solid blue;
+}
+/* input wrapper WITH password */
+.InputWrapperWithPassword {
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+/* actual input element */
+.InputElement {
+  padding: 0 1rem;
+  border: none;
+  width: 100%;
+  height: 100%;
 }
 
 .InputElement:invalid,
@@ -26,6 +44,17 @@
 .InputElement:focus,
 .InputElement:focus-visible {
   outline: none;
+}
+
+/* password toggle */
+.ToggleVisibility {
+  border: none;
+  background: red;
+  height: 100%;
+  font-size: 1.2rem;
+}
+.ToggleVisibility > i {
+  background-color: #000000;
 }
 
 .InputError {
