@@ -111,7 +111,7 @@ const Login = ({ history }) => {
               <div
                 className={`mb-lg-2 mb-md-2 mb-sm-2 col-sm-12 col-md-6 w-100`}
               >
-                <label for="Email1" class="form-label">
+                <label for="Email" class="form-label">
                   Email address
                 </label>
                 <input
