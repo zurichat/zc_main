@@ -1,10 +1,10 @@
 import styles from '../styles/AcctDeactivation.module.css'
-import SettingsNav from './SettingsNav';
+import SettingsNav from './SettingsNav'
 
 const AcctDeactivation = () => {
   return (
     <>
-    <SettingsNav/>
+      <SettingsNav />
       <div className={styles.deactivationSection}>
         <div className={styles.deactivationTab}>
           <p>Deactivate Account</p>
@@ -24,7 +24,8 @@ const AcctDeactivation = () => {
           </p>
 
           <p className={styles.secondP}>
-            <strong>Note:</strong> Don’t deactivate your account if you must want to change your
+            <strong>Note:</strong> Don’t deactivate your account if you must
+            want to change your
             <span className={styles.blue}> email address</span> or{' '}
             <span className={styles.blue}>username</span>.
           </p>
