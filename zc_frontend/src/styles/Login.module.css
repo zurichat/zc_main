@@ -88,7 +88,7 @@
 }
 
 .footer {
-  margin-top: 28%;
+  margin-top: 5%;
 }
 
 .footer > a {
@@ -205,6 +205,9 @@
     right: 10px;
     top: 41px;
     margin-left: -7%;
+  }
+  .footer {
+    margin-top: 28%;
   }
 }
 
