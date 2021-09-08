@@ -33,7 +33,7 @@
   animation: zuriLoaderBottomRight 1s infinite;
 }
 
-@keyframes enlarge {
+@keyframes reduce {
   to {
     clip-path: circle(0px at 50% 50%);
   }
