@@ -5,6 +5,7 @@ import styles from '../../styles/Home.module.css'
 import { UrlProvider } from '../../contexts/Url'
 import { ProfileProvider } from '../../contexts/ProfileModal'
 import { TopbarProvider } from '../../contexts/Topbar'
+import { PluginLoaderProvider } from '../../contexts/PluginLoaderState'
 import Profile from '../../components/Profile'
 
 const Home = () => {
@@ -19,7 +20,9 @@ const Home = () => {
             </TopbarProvider>
             <div className={styles.spaceWrapper}>
               <div className={styles.pluginContent}>
-                <PluginContent />
+                <PluginLoaderProvider>
+                  <PluginContent />
+                </PluginLoaderProvider>
               </div>
               <Profile />
             </div>
