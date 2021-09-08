@@ -31,14 +31,14 @@ exports.restrictToMain = (...roles) => {
 
 //For testing purpose
 restrictToTest.route('/test/route-access-controller').get((req, res, next) => {
-  role = 'admin, user'
   const ra = (...roles) => {
     //roles ['admin', 'lead-guide'], role ='user'
     // console.log(roles);
+    let role = 'admin, user'
     if (!roles.includes(role)) {
-      return next(
-        '403: You do not have permission to perform this action,The action might be limited to certain  users or You are a site visitor, login to gain access'
-      )
+      res.json({
+        403: 'You do not have permission to perform this action,The action might be limited to certain  users or You are a site visitor, login to gain access'
+      })
     }
   }
 
