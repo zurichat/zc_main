@@ -1,6 +1,6 @@
 .login__container {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 40% 60%;
 }
 .headimg {
   position: relative;
@@ -51,9 +51,9 @@
 }
 
 .login {
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 18px;
 }
 
 .side {
@@ -64,7 +64,7 @@
 .far {
   position: relative;
   right: 30px;
-  top: 39px;
+  top: 42px;
   cursor: pointer;
 }
 .checklink {
@@ -76,42 +76,30 @@
 }
 
 .footer {
-  margin-top: 15%;
+  margin-top: 5%;
 }
 .footer > a {
   font-size: 10px;
 }
 .button {
-  padding: 0.8rem 8rem;
   box-sizing: border-box;
   width: 100%;
-  background-color: #cadcf4;
+  background-color: #cadcf4 !important;
   color: #fff;
   margin-left: 0%;
-  font-size: 14px;
+  font-size: 18px;
+  border-color: 1px solid #cadcf4 !important;
 }
+
 .button:active {
-  background-color: #448be8;
+  background-color: #448be8 !important;
   color: #fff;
-}
-
-.button_outline {
-  padding: 0.8rem 8rem;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.button_outline > img {
-  width: 9%;
-  padding-bottom: 2px;
 }
 
 .subtext {
   color: #686666;
   font-size: 14px;
   letter-spacing: normal;
-  position: relative;
-  right: 3%;
 }
 
 .email_input {
@@ -120,10 +108,6 @@
 
 .email_subheading {
   color: #828282;
-}
-
-.link {
-  color: #1e88e5;
 }
 
 .footer-text {
@@ -189,8 +173,10 @@
     margin-top: 5%;
   }
   .far {
-    right: 20px;
-    top: 34px;
+    margin-left: -5%;
+  }
+  .footer {
+    margin-top: 28%;
   }
 }
 @media only screen and (max-width: 425px) {
