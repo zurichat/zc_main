@@ -20,45 +20,45 @@ const passwordCheck = (password, okay_length = 0) => {
   if (!password) return { valid: false, msg: `Enter password`, short: `null` }
 
   /** Check if password meets required length */
-  if (password.length < okay_length)
+  if (password.length < okay_length || 6)
     return { valid: false, msg: `Password is too short`, short: `length` }
 
   /** Special Character regex */
-  const special_characters = /[ `!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~]/
+  // const special_characters = /[ `!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~]/
   /** Check if password contains a special character */
-  if (!special_characters.test(password))
-    return {
-      valid: false,
-      msg: `Password must contain a special character`,
-      short: `special`
-    }
+  // if (!special_characters.test(password))
+  //   return {
+  //     valid: false,
+  //     msg: `Password must contain a special character`,
+  //     short: `special`
+  //   }
 
   /** Check if password contains a special character */
-  const number_regex = /[0-9]/
-  if (!number_regex.test(password))
-    return {
-      valid: false,
-      msg: `Password must contain a number`,
-      short: `number`
-    }
+  // const number_regex = /[0-9]/
+  // if (!number_regex.test(password))
+  //   return {
+  //     valid: false,
+  //     msg: `Password must contain a number`,
+  //     short: `number`
+  //   }
 
   /** Check if password contains a lowercase character */
-  const lowercase_regex = /[a-z]/
-  if (!lowercase_regex.test(password))
-    return {
-      valid: false,
-      msg: `Password must contain a lowercase letter`,
-      short: `lower`
-    }
+  // const lowercase_regex = /[a-z]/
+  // if (!lowercase_regex.test(password))
+  //   return {
+  //     valid: false,
+  //     msg: `Password must contain a lowercase letter`,
+  //     short: `lower`
+  //   }
 
   /** Check if password contains an uppercase character */
-  const uppercase_regex = /[A-Z]/
-  if (!uppercase_regex.test(password))
-    return {
-      valid: false,
-      msg: `Password must contain an uppercase letter`,
-      short: `upper`
-    }
+  // const uppercase_regex = /[A-Z]/
+  // if (!uppercase_regex.test(password))
+  //   return {
+  //     valid: false,
+  //     msg: `Password must contain an uppercase letter`,
+  //     short: `upper`
+  //   }
 
   return { valid: true, msg: `Password is okay`, short: `okay` }
 }
@@ -338,7 +338,7 @@ const SignUp = () => {
                 </div>
                 <div className={`${styles.inputBx}`}>
                   <span className={`${styles.inputBx_span}`}>
-                    <span>First name</span>
+                    <span>Phone</span>
                     {/* <span className={`${styles.inputErrorMsg}`}>{nameERR}</span>  */}
                   </span>
                   <input
@@ -371,9 +371,9 @@ const SignUp = () => {
                 <div className={`${styles.inputBx}`}>
                   <span className={`${styles.inputBx_span}`}>
                     <span>Password</span>
-                    <span className={`${styles.inputErrorMsg}`}>
+                    {/* <span className={`${styles.inputErrorMsg}`}>
                       {passwordERR}
-                    </span>
+                    </span> */}
                   </span>
 
                   {/* Password input with visibility toggle */}
@@ -396,9 +396,9 @@ const SignUp = () => {
                 <div className={`${styles.inputBx}`}>
                   <span className={`${styles.inputBx_span}`}>
                     <span>Confirm password</span>
-                    <span className={`${styles.inputErrorMsg}`}>
+                    {/* <span className={`${styles.inputErrorMsg}`}>
                       {confirmPasswordERR}
-                    </span>
+                    </span> */}
                   </span>
                   <div
                     className={`${styles.cust_input_grp}`}
