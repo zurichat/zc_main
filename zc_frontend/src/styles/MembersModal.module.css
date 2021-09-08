@@ -1,0 +1,10 @@
+.modalButtonWrapper {
+  margin-right: 7%;
+}
+
+.modalButton {
+  width: fit-content;
+  height: fit-content;
+  font-size: unset;
+  padding: unset;
+}
