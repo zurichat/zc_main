@@ -2,19 +2,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #f9f9f9;
   width: 100%;
   height: 100%;
   position: absolute;
+  z-index: 100;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: hidden;
-  background-color: aliceblue;
   display: flex;
   justify-content: center;
   align-items: center;
   clip-path: circle(100%);
-  /* animation: enlarge 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
+  transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .topLeft {
