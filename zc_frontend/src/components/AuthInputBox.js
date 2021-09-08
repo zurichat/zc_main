@@ -10,7 +10,8 @@ const InputBox = ({
   setValue,
   className = '',
   placeholder,
-  name
+  name,
+  required = 'required'
 }) => {
   const ref = useRef(null)
   const [passwordVisible, setpasswordVisible] = useState(
