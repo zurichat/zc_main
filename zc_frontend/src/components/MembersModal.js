@@ -5,26 +5,53 @@ import { IoMdClose, IoMdSearch } from 'react-icons/io'
 import { TopbarContext } from '../contexts/Topbar'
 import styles from '../styles/MembersModal.module.css'
 
-const MembersModal = ({ channelTitle }) => {
+// Generate placeholder data with faker
+const placeHolder = n => {
+  const placeHolderMembersArray = []
+  for (let i = 0; i < n; i++) {
+    placeHolderMembersArray.push({
+      userName: faker.internet.userName().toLowerCase(),
+      fullName: `${faker.name.firstName()} ${faker.name.lastName()}`,
+      status: faker.lorem.sentence(),
+      avatar: faker.internet.avatar()
+    })
+  }
+  return placeHolderMembersArray
+}
+const faked = placeHolder(1000)
+
+const MembersModal = ({ channelTitle, membersArray }) => {
+  // membersArray is be an array of users, exact object structure can be updated
+
+  const _membersArray = membersArray || faked
+
   return (
     <div className={styles.modalWrapper}>
-      <Header channelTitle={channelTitle || 'announcement'} />
+      <Header
+        channelTitle={channelTitle || 'announcement'}
+        memberNumber={_membersArray.length}
+      />
       <Search />
-      <MemberList />
+      <MemberList membersArray={_membersArray} />
     </div>
   )
 }
 
-const Header = ({ channelTitle }) => {
+const Header = ({ channelTitle, memberNumber }) => {
+  const { closeMembersModal } = useContext(TopbarContext)
+
   return (
     <div className={styles.headerWrapper}>
       <div className={styles.headerTop}>
         <div className={styles.headerText}>{`#${channelTitle}`}</div>
         <div>
-          <IoMdClose />
+          <IoMdClose
+            onClick={closeMembersModal}
+            style={{ cursor: 'pointer', color: 'red' }}
+          />
         </div>
       </div>
-      <p>Members - 1470</p>
+      <p>Members - {memberNumber}</p>
     </div>
   )
 }
@@ -40,47 +67,52 @@ const Search = () => {
   )
 }
 
-const MemberList = () => {
-  const n = 100
-
+const MemberList = ({ membersArray }) => {
   return (
     <div id="member-list" className={styles.memberlist}>
-      {[...Array(n)].map((val, idx) => {
-        return <MemberCard key={idx} />
+      {membersArray.map((val, idx) => {
+        return <MemberCard data={val} key={idx} />
       })}
     </div>
   )
 }
 
-const MemberCard = ({ username, fullname, status, avatar }) => {
-  // faker for placeholder data
-  const _username = username || `${faker.internet.userName().toLowerCase()}`
-  const _fullname =
-    fullname || `${faker.name.firstName()} ${faker.name.lastName()}`
-  const _status = status || `${faker.lorem.sentence()}`
-  const _avatar = avatar || faker.internet.avatar()
-
+const MemberCard = ({ data: { userName, fullName, status, avatar } }) => {
   return (
+    // To be updated to anchor tags with appropriate resources linked
     <div id="member-card" className={styles.membercardWrapper}>
-      <img src={_avatar} alt="user avatar" />
+      <img src={avatar} alt="user avatar" />
       <div className={styles.membercardTextBlock}>
         <div className={styles.membercardUserDetails}>
-          <b>{_username}</b>
+          <b>{userName}</b>
           {'-'}
-          <p>{_fullname}</p>
+          <p>{fullName}</p>
         </div>
-        <div className={styles.membercardStatus}>{_status}</div>
+        <div className={styles.membercardStatus}>{status}</div>
       </div>
     </div>
   )
 }
 
 export const MembersModalButton = () => {
+  // This would ordinarily be a slice of the membersArray
+  const imageArray = faked.slice(0, 3)
+
+  // Ordinarily memberArray.length
+  const _membersArraySize = faked.length
+
   const { openMembersModal } = useContext(TopbarContext)
   return (
-    <div className={styles.modalButtonWrapper}>
+    <div className={styles.modalbuttonWrapper}>
       <button onClick={openMembersModal} className={styles.modalButton}>
-        Show Modal
+        <div className={styles.modalbuttonImageWrapper}>
+          {imageArray.map((val, idx) => (
+            <span>
+              <img src={val.avatar} key={idx} alt={'user avatar'} />
+            </span>
+          ))}
+        </div>
+        <p>{_membersArraySize}</p>
       </button>
     </div>
   )
