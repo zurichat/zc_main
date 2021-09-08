@@ -1,11 +1,9 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import LandingPage from './components/LandingPage'
-import Loading from './components/Loading/loading'
 import Home from './pages/home'
 import Login from './pages/login'
 import SignUp from './pages/signup'
 import './styles/globals.css'
-// import 'tailwindcss/tailwind.css'
 import Security from './pages/security'
 import Features from './pages/features'
 import Resources from './pages/resources'
@@ -23,20 +21,18 @@ import MarketPlace from './pages/marketplace/marketplace'
 import Settings from './pages/settings'
 import SearchResult from './components/SearchResults3'
 import LinkComponent from './components/externalPagesComponents/Link'
+import SearchSuggestion from './pages/searchSuggestion'
 import Cookies from './pages/cookies'
 
 import DeactivateAccount from './pages/settings/components/AcctDeactivation'
 import CookiesSetting from './pages/cookies-settings'
-import SearchResults3 from './components/SearchResults3'
+import SearchResults2 from './components/externalPagesComponents/searchResults2'
 
 const App = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/" exact>
         <LandingPage />
-      </Route>
-      <Route path="/loading">
-        <Loading />
       </Route>
       <Route path="/home">
         <Home />
@@ -102,7 +98,10 @@ const App = () => (
         <DeactivateAccount />
       </Route>
       <Route path="/search-results">
-        <SearchResults3 />
+        <SearchResults2 />
+      </Route>
+      <Route path="/search-suggestions">
+        <SearchSuggestion />
       </Route>
       <Route path="/link">
         <LinkComponent
@@ -111,6 +110,9 @@ const App = () => (
           color={`black`}
           underline
         />
+      </Route>
+      <Route path="searchSuggestion">
+        <SearchSuggestion />
       </Route>
     </Switch>
   </BrowserRouter>

@@ -19,3 +19,15 @@
   font-weight: 500;
   font-style: normal;
 }
+
+@media only screen and (max-width: 600px) {
+  .highlighted_text > p {
+    font-size: 16px;
+    margin-top: 0.5em;
+  }
+  .text > p {
+    font-size: 14px;
+    opacity: 0.6;
+    line-height: 27.3px;
+  }
+}
