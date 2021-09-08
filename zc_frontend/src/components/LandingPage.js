@@ -27,10 +27,10 @@ const LandingPage = () => {
               src={landing_waving_hand}
               alt="waving hand"
               className={styles.wave}
-            />{' '}
+            />
             ,
           </span>
-          <span> Welcome to</span>
+          <span>Welcome to</span>
         </h1>
         <img src={landing_zuri_logo} alt="zuri chat logo" />
         <ContinueButton />
