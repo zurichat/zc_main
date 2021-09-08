@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar } from 'react-bootstrap';
-import './styles/InvitationAcceptance.css';
+import '../styles/InvitationAcceptance.css';
 
 function InvitationAcceptance() {
     return (
