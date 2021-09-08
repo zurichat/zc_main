@@ -2,7 +2,7 @@
 
 .wrapper {
   background-color: #fff;
-  padding-top: 6%;
+  padding-top: 5%;
   width: 100vw;
   height: 100vh;
   font-family: 'Lato', sans-serif;
@@ -24,12 +24,23 @@
   gap: 1.5rem;
 }
 
+.wave {
+  width: 4rem !important;
+  height: 4rem !important;
+  margin-top: -1rem !important;
+}
+
+.welcome__div span,
+.welcome__div .wave {
+  margin-inline: 0.8rem;
+}
+
 .welcome__div h1 {
   width: 100%;
-  font-weight: 300;
-  font-size: 70px;
-  line-height: 72px;
   color: #393939;
+  font-weight: 300;
+  font-size: 4rem;
+  line-height: 4.5rem;
   margin-block-start: 0;
   margin-block-end: 0;
   display: flex;
@@ -37,18 +48,25 @@
   align-items: center;
 }
 
+.welcome__div img {
+  width: 200px;
+  height: 150px;
+  object-fit: contain;
+  margin-top: -2.5rem;
+}
+
 .btn__continue {
   background-color: #1a61db;
   color: #fff !important;
-  border-radius: 8px;
+  border-radius: 5px;
   font-weight: bold;
-  font-size: 1.5rem;
-  line-height: 1.6rem;
+  font-size: 1.2rem;
   outline: none;
   border: none;
-  padding: 0.8rem 3rem;
+  padding: 0.8rem 14rem;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
   z-index: 2;
+  margin-top: -2rem;
 }
 
 .btn__continue:hover {
@@ -69,22 +87,16 @@
   .wrapper {
     padding-top: 0;
   }
+
+  .btn__continue {
+    padding: 0.8rem 8rem;
+  }
 }
 
 /* Media Query 1080px and Smaller */
 @media only screen and (max-width: 1080px) {
-  .welcome__div h1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-weight: 700;
-    font-size: 3rem;
-    line-height: 4rem;
-  }
-
   .btn__continue {
-    z-index: 5;
+    padding: 0.8rem 10rem;
   }
 
   .img__div {
@@ -100,41 +112,109 @@
   }
 }
 
-/* Media Query 600px and Smaller */
-@media only screen and (max-width: 600px) {
+/* Media Query 768px and Smaller */
+@media only screen and (max-width: 768px) {
   .wrapper {
     padding-top: 15%;
   }
+}
 
+/* Media Query 680px and Smaller */
+@media only screen and (max-width: 680px) {
+  .welcome__div h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+}
+
+/* Media Query 600px and Smaller */
+@media only screen and (max-width: 600px) {
   .img__div {
     height: 30%;
   }
 }
 
-/* Media Query 325px and Smaller */
-@media only screen and (max-width: 325px) {
-  .welcome__div h1 {
-    font-size: 2.8rem;
+/* Media Query 550px and Smaller */
+@media only screen and (max-width: 550px) {
+  .btn__continue {
+    padding: 0.7rem 6rem;
+  }
+
+  .welcome__div img {
+    margin-top: 1;
   }
 }
 
-/* Media Query 305px and Smaller */
-@media only screen and (max-width: 305px) {
+/* Media Query 425px and Smaller */
+@media only screen and (max-width: 425px) {
+  .wrapper {
+    padding-top: 20%;
+  }
+
+  .welcome__div img {
+    margin-top: -2.5rem;
+  }
+}
+
+/* Media Query 395px and Smaller */
+@media only screen and (max-width: 395px) {
+  /* .wrapper {
+        padding-top: 15%;
+    } */
+
   .welcome__div h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+  }
+
+  .welcome__div img {
+    margin-top: -2.5rem;
+  }
+}
+
+/* Media Query 375px and Smaller */
+@media only screen and (max-width: 375px) {
+  .welcome__div img {
+    margin-top: -3rem;
+  }
+}
+
+/* Media Query 365px and Smaller */
+@media only screen and (max-width: 365px) {
+  .welcome__div img {
+    margin-top: 0rem;
+  }
+
+  .btn__continue {
+    padding: 0.6rem 5.5rem;
+    margin-top: 1rem;
+  }
+}
+
+/* Media Query 335px and Smaller */
+@media only screen and (max-width: 335px) {
+  .btn__continue {
+    padding: 0.5rem 4rem;
+  }
+}
+
+/* Media Query 320px and Smaller */
+@media only screen and (max-width: 320px) {
+  .welcome__div h1 {
+    font-size: 2.2rem;
   }
 }
 
 /* Media Query 270px and Smaller */
 @media only screen and (max-width: 270px) {
   .welcome__div h1 {
-    font-size: 2.3rem;
-  }
-}
-
-/* Media Query 250px and Smaller */
-@media only screen and (max-width: 250px) {
-  .welcome__div h1 {
     font-size: 2rem;
+  }
+
+  .btn__continue {
+    padding: 0.4rem 3rem;
   }
 }

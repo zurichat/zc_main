@@ -1,0 +1,33 @@
+.InputWrapper {
+  margin: 0.5rem 1rem;
+  font-family: 'Lato', sans-serif;
+}
+
+.InputLabel {
+  font-weight: 700;
+  font-size: 21px;
+  margin-block: 1rem;
+}
+
+.InputElement {
+  border: 1px solid #bebebe;
+  border-radius: 8px;
+  width: 100%;
+  height: 4rem;
+  padding-inline: 1rem;
+}
+
+.InputElement:invalid,
+.InputElement.is_invalid {
+  border-color: #ff0000;
+  color: #000000;
+}
+
+.InputElement:focus,
+.InputElement:focus-visible {
+  outline: none;
+}
+
+.InputError {
+  color: #ff0000;
+}
