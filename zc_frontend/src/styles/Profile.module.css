@@ -1,20 +1,9 @@
 .container {
-  width: 382px;
+  width: 20.5rem;
   height: 100%;
   background: #fff;
   position: relative;
-  z-index: 100000;
-}
-
-@media (max-width: 468px) {
-  .container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100vw;
-    height: 100vh;
-  }
+  z-index: 10000;
 }
 
 .containerNone {
@@ -89,6 +78,10 @@
   margin-left: 0.5rem;
 }
 
+.mobileBackButton{
+  display: none;
+}
+
 .userDetails p {
   font-size: 1rem;
   font-weight: 400;
@@ -123,7 +116,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 98px;
+  width: 5.5rem;
   height: 36px;
   font-size: 0.6rem;
   border-radius: 4px;
@@ -162,10 +155,15 @@
   margin-bottom: 0.5rem;
 }
 
-.infoContent {
+.infoContent, .infoLink {
   font-size: 1rem;
   font-weight: 400;
   color: #242424;
+}
+
+.infoLink {
+  color: #2f80ed;
+  font-weight: 700;
 }
 
 .social {
@@ -232,4 +230,117 @@
   color: #999;
   margin-bottom: 1rem;
   display: block;
+}
+
+.buttonGroupsMobile {
+  display: none;
+}
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    border-radius: 8px 8px 0px 0px;
+  }
+
+  .header {
+    display: none;
+  }
+
+  .content {
+    padding: 10px;
+  }
+
+  .buttonGroups {
+    display: none;
+  }
+
+  .buttonGroupsMobile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    padding: 2rem .6rem;
+  }
+
+  .buttonGroupsMobile button {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid #2F80ED;
+    background: none;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #2F80ED;
+    border-radius: 4px;
+  }
+
+  .buttonGroupsMobile button:hover {
+    background: #2F80ED;
+    color: #fff;
+  }
+
+  .moreInfo {
+    margin: 0 .6rem;
+    margin-bottom: .8rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid #999;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .infoTitle {
+    font-size: 13px;
+    margin-bottom: .2rem;
+    color: #999;
+  }
+
+  .infoContent, .infoLink {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .infoContent span {
+    background: #2f80ed;
+    padding: .15rem .3rem;
+    color: #fff;
+    border-radius: .3rem;
+    font-size: .8rem;
+  }
+
+  .social .icons {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .social .icons img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .mobileBackButton {
+    position: fixed;
+    top: 1.5rem;
+    left: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    z-index: 10001;
+  }
+
+  .mobileBackButton path {
+    stroke: #000;
+    stroke-width: 2px;
+  }
 }
