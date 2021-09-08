@@ -1,5 +1,5 @@
 .InputContainer {
-  margin: 0.5rem 1rem;
+  margin: 2rem 1rem;
   font-family: 'Lato', sans-serif;
 }
 
@@ -49,7 +49,7 @@
 /* password toggle */
 .ToggleVisibility {
   border: none;
-  /* background: red; */
+  background: red;
   height: 100%;
   font-size: 1.2rem;
 }
