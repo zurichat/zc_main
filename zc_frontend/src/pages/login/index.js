@@ -6,17 +6,21 @@ import GoogleLogin from 'react-google-login'
 import { withRouter } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 // import LoginLoading from '../../components/LoginLoading'
-import axios from 'axios'
 import Illustration from '../../components/Illustration'
 import Cookies from 'universal-cookie'
+import { connect } from 'react-redux'
 
-const Login = ({ history }) => {
+import { loginUser } from '../../redux/userAction/userActions'
+
+const Login = ({ history, loginUser }) => {
   const [loginInfo, setLoginInfo] = useState({
     email: '',
     password: ''
   })
   const [showPassword, setShowPassword] = useState(false)
+
   // const [showLoader, setShowLoader] = useState(false)
+
   const url = 'https://api.zuri.chat/auth/login'
   const cookies = new Cookies()
 
@@ -47,16 +51,7 @@ const Login = ({ history }) => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    axios
-      .post(url, loginInfo)
-      .then(({ data }) => {
-        setCookies('Zuri_Chat', data.data.token, { path: '/' })
-        history.push('/home')
-      })
-      .catch(e => {
-        alert('Error: Wrong Email and password')
-        history.push('/login')
-      })
+    loginUser(url, loginInfo, setCookies, history)
   }
 
   return (
@@ -117,6 +112,7 @@ const Login = ({ history }) => {
                 <input
                   name="email"
                   type="email"
+                  className={`py-lg-3 py-md-3 py-sm-3 form-control`}
                   className={`py-lg-2 py-md-2 py-sm-3 form-control`}
                   placeholder="Enter your email address"
                   required
@@ -135,6 +131,7 @@ const Login = ({ history }) => {
                 <input
                   name="password"
                   type={showPassword ? 'text' : 'password'}
+                  className={`py-lg-3 py-md-3 py-sm-3 form-control`}
                   className={`py-lg-2 py-md-2 py-sm-3 form-control`}
                   placeholder="Enter a password"
                   required
@@ -205,4 +202,8 @@ const Login = ({ history }) => {
   )
 }
 
-export default withRouter(Login)
+const mapDispatchToProps = {
+  loginUser
+}
+
+export default connect(null, mapDispatchToProps)(withRouter(Login))
