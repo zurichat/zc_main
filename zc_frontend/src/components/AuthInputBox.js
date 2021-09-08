@@ -11,7 +11,7 @@ const InputBox = ({
   className = '',
   placeholder,
   name,
-  required = 'required'
+  required = true
 }) => {
   const ref = useRef(null)
   const [passwordVisible, setpasswordVisible] = useState(
@@ -45,10 +45,11 @@ const InputBox = ({
             type={type}
             placeholder={placeholder}
             value={value}
+            required={required}
             onChange={e => setValue(e.target.value)}
           />
 
-          {/password/.test(name) && (
+          {/password/i.test(name) && (
             <div
               className={`${styles.ToggleVisibility}`}
               onClick={passwordToggle}
