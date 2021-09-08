@@ -12,16 +12,19 @@ const TwoFactor = () => {
         phone in order to sign into your Zuri Chat account.
       </p>
       <p>
-        Learn more at our 
+        Learn more at our
         <Link to=""> two-factor authentication help page</Link>
       </p>
 
       <div class="col-md-4 mb-1 mt-2">
-          <button class="btn btn-primary">
-            Set up two-factor authentication page
-          </button>
-        </div>
-        <span>Note: Activating two-factor authentication will sign you out of all other rooms.</span>
+        <button class="btn btn-primary">
+          Set up two-factor authentication page
+        </button>
+      </div>
+      <span>
+        Note: Activating two-factor authentication will sign you out of all
+        other rooms.
+      </span>
     </div>
   )
 }

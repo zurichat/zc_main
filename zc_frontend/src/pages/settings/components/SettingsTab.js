@@ -33,7 +33,7 @@ const SettingsTab = () => {
           timeZone=""
         >
           {/* Two factor authentication input field goes under here */}
-          <TwoFactor/>
+          <TwoFactor />
         </PreferenceWrapper>
       </AnimateSharedLayout>
 
@@ -45,7 +45,7 @@ const SettingsTab = () => {
           timeZone=""
         >
           {/* Email address input field goes under here */}
-          <ChangeEmail/>
+          <ChangeEmail />
         </PreferenceWrapper>
       </AnimateSharedLayout>
 
@@ -57,7 +57,7 @@ const SettingsTab = () => {
           timeZone={showTime}
         >
           {/* TimeZone input field goes under here */}
-          <TimeZone/>
+          <TimeZone />
         </PreferenceWrapper>
       </AnimateSharedLayout>
 
@@ -69,7 +69,7 @@ const SettingsTab = () => {
           timeZone=""
         >
           {/* Language input field goes under here */}
-          <Language/>
+          <Language />
         </PreferenceWrapper>
       </AnimateSharedLayout>
 
@@ -99,7 +99,8 @@ const SettingsTab = () => {
           </span>
           <br />
           <span>
-           <strong> Note:</strong> Don’t deactivate your account if you just want to{' '}
+            <strong> Note:</strong> Don’t deactivate your account if you just
+            want to{' '}
             <NavLink to="/" className={styles.emailLink}>
               change your email address.
             </NavLink>
@@ -120,7 +121,7 @@ const SettingsTab = () => {
           timeZone=""
         >
           {/* Username input field goes under here */}
-          <UserName/>
+          <UserName />
         </PreferenceWrapper>
       </AnimateSharedLayout>
     </>

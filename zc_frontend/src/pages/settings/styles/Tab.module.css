@@ -160,7 +160,7 @@
     background: none;
     margin-left: 0;
     text-align: left;
-    font-size:14px!important;
+    font-size: 14px !important;
   }
 
   .bloctabs button:last-child {
@@ -192,14 +192,13 @@
   }
 }
 
-
-@media screen and (max-width:425px){
+@media screen and (max-width: 425px) {
   .tabcontainer {
     padding-top: 110px;
     padding-bottom: 50px;
   }
 
-  .tabs{
-    width:70%!important;
+  .tabs {
+    width: 70% !important;
   }
 }
