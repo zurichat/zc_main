@@ -3,7 +3,7 @@ import { PluginLoaderContext } from '../contexts/PluginLoaderState'
 import styles from '../styles/PluginLoader.module.css'
 
 const PluginLoader = () => {
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
   const { loader } = useContext(PluginLoaderContext);
   const loaderEl = useRef(null);
 
