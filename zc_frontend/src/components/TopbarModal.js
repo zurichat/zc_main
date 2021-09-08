@@ -20,8 +20,7 @@ const TopbarModal = () => {
   const [showModal] = state.show
   const [showStatus, setShowStatus] = state.status
   const [showMembersModal] = state.modal
-  const { onEmojiClick, openStatus, closeStatus, modalRef, closeMembersModal } =
-    state
+  const { onEmojiClick, openStatus, closeStatus, modalRef } = state
   const [modal, setModal] = useState('')
 
   return (
@@ -53,7 +52,7 @@ const TopbarModal = () => {
         <div
           ref={modalRef}
           className={styles.modalContainers}
-          onClick={closeMembersModal}
+          // onClick={closeMembersModal}
         >
           <MembersModal />
         </div>
