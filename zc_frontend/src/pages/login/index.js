@@ -118,8 +118,6 @@ const Login = ({ history }) => {
                   name="email"
                   type="email"
                   className={`py-lg-2 py-md-2 py-sm-3 form-control`}
-                  value={email}
-                  onChange={handleEmailChange}
                   placeholder="Enter your email address"
                   required
                   value={loginInfo.email}
@@ -138,10 +136,6 @@ const Login = ({ history }) => {
                   name="password"
                   type={showPassword ? 'text' : 'password'}
                   className={`py-lg-2 py-md-2 py-sm-2 form-control`}
-                  value={password}
-                  onChange={e => {
-                    setPassword(e.target.value)
-                  }}
                   placeholder="Enter a password"
                   required
                   value={loginInfo.password}
