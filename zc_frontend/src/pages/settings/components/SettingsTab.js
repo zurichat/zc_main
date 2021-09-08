@@ -2,70 +2,79 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import styles from '../styles/SettingsTab.module.css'
 import TimeZone from '../../../components/TimeZone'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import PreferenceWrapper from './PreferenceWrapper';
+import { AnimateSharedLayout } from 'framer-motion';
 
 const SettingsTab = () => {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
+
+  const showTime = show ? <TimeZone /> : null;
+
   return (
     <>
-      <div className={styles.settingsTab}>
-        <div className={styles.settingleft}>Password</div>
-        <div className={styles.settingsright}>
-          <button>Expand</button>
-        </div>
-      </div>
+      <AnimateSharedLayout>
+        <PreferenceWrapper title="Password" text="" btnText="Expand">
+          {/* Password input goes uunder here */}
+          <p>Replace this tag with something password bla</p>
+        </PreferenceWrapper>
+      </AnimateSharedLayout>
+      
+      <AnimateSharedLayout>
+        <PreferenceWrapper
+         title="Two-Factor Authentication"
+         text="Two factor authentication is active for your account" 
+         btnText="Expand"
+         timeZone=""
+        >
 
-      <div className={styles.settingsTab}>
-        <div className={styles.settingleft}>
-          Two-Factor Authentication <br />
-          <span>Two factor authentication is active for your account</span>
-        </div>
-        <div className={styles.settingsright}>
-          <button>Expand</button>
-        </div>
-      </div>
+          {/* Two factor authentication input field goes under here */}
+          <p>Authentication</p>
 
-      <div className={styles.settingsTab}>
-        <div className={styles.settingleft}>
-          Email Address
-          <br />
-          <span>Your email address is layobright@gmail.com</span>
-        </div>
-        <div className={styles.settingsright}>
-          <button>Expand</button>
-        </div>
-      </div>
+        </PreferenceWrapper>
+      </AnimateSharedLayout>
 
-      <div className={styles.settingsTab}>
-        <div className={styles.settingleft}>
-          Time Zone
-          <br />
-          <span>
-            Zurichat uses your time zone to send summary and notification
-            emails, for times in your activity feeds and for reminders. Your
-            time zone is currently set to: (UTC+01:00) West Central Africa.
-          </span>
-          {show ? <TimeZone /> : null}
-        </div>
-        <div className={styles.settingsright}>
-          <button onClick={() => setShow(!show)}>
-            {show ? 'Close' : 'Expand'}
-          </button>
-        </div>
-      </div>
+      <AnimateSharedLayout>
+        <PreferenceWrapper
+          title="Email Address"
+          text="Your email address is layobright@gmail.com"
+          btnText="Expand"
+          timeZone=""
+        >
 
-      <div className={styles.settingsTab}>
-        <div className={styles.settingleft}>
-          Language <br />
-          <span>
-            Choose the language you’d like to use with Zurichat. Your language
-            is currently set to: English (Nigeria).
-          </span>
-        </div>
-        <div className={styles.settingsright}>
-          <button>Expand</button>
-        </div>
-      </div>
+          {/* Email address input field goes under here */}
+          <p>Remove this tag and replace with Email input bla</p>
+
+        </PreferenceWrapper>
+      </AnimateSharedLayout>
+
+      <AnimateSharedLayout>
+        <PreferenceWrapper
+          title="Time zone"
+          text="Zurichat uses your time zone to send summary and notification emails, for times in your activity feeds and for  reminders. Your time zone is currently set to: (UTC+01:00) West Central Africa."
+          btnText="Expand"
+          timeZone={showTime}
+        >
+
+          {/* TimeZone input field goes under here */}
+          <p>Remove this tag and replace with timezone bla</p>
+
+        </PreferenceWrapper>
+      </AnimateSharedLayout>
+
+      <AnimateSharedLayout>
+        <PreferenceWrapper
+          title="Language"
+          text="Choose the language you’d like to use with Zurichat. Your language is currently set to: English (Nigeria)."
+          btnText="Expand"
+          timeZone=""
+        >
+
+          {/* Language input field goes under here */}
+          <p>Remove this tag and replace with language input bla</p>
+
+        </PreferenceWrapper>
+      </AnimateSharedLayout>
 
       <div className={styles.settingsTab}>
         <div className={styles.settingleft}>
@@ -82,6 +91,7 @@ const SettingsTab = () => {
           </button>
         </div>
       </div>
+      
 
       <div className={styles.settingsTab}>
         <div className={styles.settingleft}>
@@ -106,12 +116,19 @@ const SettingsTab = () => {
         </div>
       </div>
 
-      <div className={styles.settingsTab}>
-        <div className={styles.settingleft}>Username</div>
-        <div className={styles.settingsright}>
-          <button>Expand</button>
-        </div>
-      </div>
+      <AnimateSharedLayout>
+        <PreferenceWrapper
+          title="Username"
+          text=""
+          btnText="Expand"
+          timeZone=""
+        >
+
+          {/* Username input field goes under here */}
+          <p>Remove this tag and replace with Username input bla</p>
+
+        </PreferenceWrapper>
+      </AnimateSharedLayout>
     </>
   )
 }
