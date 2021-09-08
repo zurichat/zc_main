@@ -106,18 +106,18 @@ const Login = ({ history }) => {
               srcset=""
             />
           </div>
-          <form className={`mb-sm-3`} onSubmit={handleSubmit}>
+          <form className={`mb-lg-1 mb-sm-3`} onSubmit={handleSubmit}>
             <div className={` ${styles.email_input}`}>
               <div
-                className={`mb-lg-3 mb-md-3 mb-sm-3 col-sm-12 col-md-6 w-100`}
+                className={`mb-lg-2 mb-md-2 mb-sm-3 col-sm-12 col-md-6 w-100`}
               >
-                <label for="Email1" class="form-label">
+                <label for="Email" class="form-label">
                   Email address
                 </label>
                 <input
                   name="email"
                   type="email"
-                  className={`py-lg-3 py-md-3 py-sm-3 form-control`}
+                  className={`py-lg-2 py-md-2 py-sm-3 form-control`}
                   placeholder="Enter your email address"
                   required
                   value={loginInfo.email}
@@ -127,7 +127,7 @@ const Login = ({ history }) => {
             </div>
             <div className={`d-flex ${styles.email_input}`}>
               <div
-                className={`mb-lg-3 mb-md-3 mb-sm-3  col-sm-12 col-md-6 w-100`}
+                className={`mb-lg-2 mb-md-2 mb-sm-3  col-sm-12 col-md-6 w-100`}
               >
                 <label for="Password" class="form-label">
                   Password
@@ -135,7 +135,7 @@ const Login = ({ history }) => {
                 <input
                   name="password"
                   type={showPassword ? 'text' : 'password'}
-                  className={`py-lg-3 py-md-3 py-sm-3 form-control`}
+                  className={`py-lg-2 py-md-2 py-sm-3 form-control`}
                   placeholder="Enter a password"
                   required
                   value={loginInfo.password}
@@ -169,7 +169,7 @@ const Login = ({ history }) => {
           </form>
           <div>
             <Button
-              className={`${styles.button} btn mb-3 col-12 col-md-6 px-lg-5 px-md-5 py-lg-3 py-md-3`}
+              className={`${styles.button} mb-lg-2 col-12 col-md-6 px-lg-2 px-md-2 py-lg-2 py-md-2`}
               type="submit"
               disabled={!loginInfo.email || !loginInfo.password}
               onClick={handleSubmit}

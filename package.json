@@ -7,6 +7,7 @@
   "scripts": {
     "start": "npm run run-start",
     "build": "npm run frontend:build",
+    "prepare": "husky install",
     "format": "prettier -w .",
     "lint": "eslint ",
     "deploy": "gh-pages -d build",
