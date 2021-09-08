@@ -1,21 +1,16 @@
 import styles from '../styles/AcctDeactivation.module.css'
+import SettingsNav from './SettingsNav';
 
 const AcctDeactivation = () => {
   return (
     <>
-      <div className={styles.container}>
-        <div className={styles.brand}>
-          <img src="./zurichatlogo.svg" alt="Zuri_logo" />
-          <h3>ZURI</h3>
-        </div>
-      </div>
-
+    <SettingsNav/>
       <div className={styles.deactivationSection}>
         <div className={styles.deactivationTab}>
           <p>Deactivate Account</p>
           <div className={styles.deactivationCaution}>
             <img src="./alertTriangle.svg" alt="alert_triangle" />
-            <span>Are you sure you want to deactivate your account</span>
+            <span>Are you sure you want to deactivate your account?</span>
           </div>
         </div>
 
@@ -29,7 +24,7 @@ const AcctDeactivation = () => {
           </p>
 
           <p className={styles.secondP}>
-            Note: Don’t deactivate your account if you must want to change your
+            <strong>Note:</strong> Don’t deactivate your account if you must want to change your
             <span className={styles.blue}> email address</span> or{' '}
             <span className={styles.blue}>username</span>.
           </p>
