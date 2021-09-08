@@ -16,10 +16,11 @@
 
 .brand img {
   width: 100%;
-  max-width: 30px;
+  max-width: 80px;
   height: 100%;
-  max-height: 30px;
+  max-height: 80px;
   object-fit: cover;
+  
 }
 
 .brand h3 {
@@ -135,8 +136,8 @@
   }
 
   .brand img {
-    width: 60%;
-    height: 80%;
+    width: 50%;
+    height: 70%;
   }
 
   .searchBar {
@@ -179,5 +180,10 @@
 @media screen and (max-width: 425px) {
   .searchBar {
     width: 60%;
+  }
+
+  .rightnav{
+    width:15%;
+    margin-right:20px;
   }
 }
