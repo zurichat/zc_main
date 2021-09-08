@@ -1,5 +1,4 @@
-import React from 'react'
-import { useMarketPlaceContext } from '../../../contexts/MarketPlace.context'
+import { useMarketPlaceContext } from '../../../context/MarketPlace.context'
 import style from '../../../styles/marketplace.module.css'
 
 export const PluginCard = ({ name, id, status, icon_url }) => {
