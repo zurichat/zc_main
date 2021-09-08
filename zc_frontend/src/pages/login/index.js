@@ -3,29 +3,23 @@
 import styles from '../../styles/Login.module.css'
 import React, { useState } from 'react'
 import GoogleLogin from 'react-google-login'
-import { useHistory } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
-import LoginLoading from '../../components/LoginLoading'
+// import LoginLoading from '../../components/LoginLoading'
 import axios from 'axios'
 import Illustration from '../../components/Illustration'
+import Cookies from 'universal-cookie'
 
-const Login = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+const Login = ({ history }) => {
+  const [loginInfo, setLoginInfo] = useState({
+    email: '',
+    password: ''
+  })
   const [showPassword, setShowPassword] = useState(false)
-  const [showLoader, setShowLoader] = useState(false)
+  // const [showLoader, setShowLoader] = useState(false)
+  const url = 'https://api.zuri.chat/auth/login'
+  const cookies = new Cookies()
 
-  const handleEmailChange = e => {
-    setEmail(e.target.value)
-  }
-  const handleSubmit = e => {
-    e.preventDefault()
-    alert(`Your state values: \n
-            emal: ${email} \n
-            password: ${password} \n
-            You can replace this alert with your proces`)
-  }
-  let history = useHistory()
   const handleClickShowPassword = () => {
     setShowPassword(prev => !prev)
   }
@@ -36,34 +30,38 @@ const Login = () => {
     console.log(response)
   }
 
+  //Save token function
+  const setCookies = (key, value, option) => {
+    cookies.set(key, value, option)
+  }
+
   //Handle login Auth
-  const handleLogin = async () => {
-    await axios
-      .post('/api/login', {
-        email,
-        password
+
+  const handleChange = e => {
+    const { name, value } = e.target
+    setLoginInfo({
+      ...loginInfo,
+      [name]: value
+    })
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    axios
+      .post(url, loginInfo)
+      .then(({ data }) => {
+        setCookies('Zuri_Chat', data.data.token, { path: '/' })
+        history.push('/home')
       })
-      .then(response => {
-        const { token, userCopy } = response.data
-
-        //store token in localStorage
-        localStorage.setItem('token', token)
-
-        //store user data in localStorage
-        localStorage.setItem('user', userCopy)
-
-        //Redirect to loading page
-        setShowLoader(true)
-      })
-      .catch(() => {
-        //Remove this when there is an error design
-        alert('Invalid username or password')
+      .catch(e => {
+        alert('Error: Wrong Email and password')
+        history.push('/login')
       })
   }
 
   return (
     <div className={styles.login__container}>
-      {showLoader && <LoginLoading />}
+      {/* {showLoader && <LoginLoading />} */}
       <Illustration />
       <div class={`col-12 ${styles.login}`}>
         <div className={`pt-2 mt-3 text-center`}>
@@ -117,11 +115,15 @@ const Login = () => {
                   Email address
                 </label>
                 <input
+                  name="email"
                   type="email"
                   className={`py-lg-2 py-md-2 py-sm-3 form-control`}
                   value={email}
                   onChange={handleEmailChange}
                   placeholder="Enter your email address"
+                  required
+                  value={loginInfo.email}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -133,6 +135,7 @@ const Login = () => {
                   Password
                 </label>
                 <input
+                  name="password"
                   type={showPassword ? 'text' : 'password'}
                   className={`py-lg-2 py-md-2 py-sm-2 form-control`}
                   value={password}
@@ -140,6 +143,9 @@ const Login = () => {
                     setPassword(e.target.value)
                   }}
                   placeholder="Enter a password"
+                  required
+                  value={loginInfo.password}
+                  onChange={handleChange}
                 />
               </div>
               <i
@@ -171,8 +177,8 @@ const Login = () => {
             <Button
               className={`${styles.button} mb-3 col-12 col-md-6 px-lg-2 px-md-2 py-lg-2 py-md-2`}
               type="submit"
-              disabled={!email || !password}
-              onClick={() => handleLogin()}
+              disabled={!loginInfo.email || !loginInfo.password}
+              onClick={handleSubmit}
             >
               Log in
             </Button>
@@ -205,4 +211,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default withRouter(Login)

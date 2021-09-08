@@ -30,25 +30,6 @@
   height: 50px;
 }
 
-.logo {
-  /* html {
-  font-size: 62.5%;
-}
-
-body {
-  font-size: 1rem;
-}
-.section_signup {
-  height: 100vh;
-  display: flex;
-}
-
-.imgBx {
-  position: relative;
-  width: 39%;
-  object-fit: contain;
-  /* object-position: center; */
-}
 .imgBx_img {
   width: 100%;
   height: 100%;
@@ -60,7 +41,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  width: 50%;
+  /* width: 75%; */
 }
 
 .formBx {
@@ -72,7 +53,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  width: 50%;
+  /* width: 50%; */
 }
 
 .formBx {
@@ -506,17 +487,6 @@ input[type='checkbox'] {
     color: #999999;
     text-transform: capitalize;
   }
-  width: 100%;
-  background: #2f80ed;
-  color: #fff;
-  outline: none;
-  border: none;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  border-radius: 3px;
-  padding: 10px;
-  margin-top: 10px;
 }
 
 .custom_form_btn:hover {
