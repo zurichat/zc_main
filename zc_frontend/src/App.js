@@ -1,9 +1,9 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from './pages/home';
-import Login from './pages/login';
-import SignUp from './pages/signup';
-import './styles/globals.css';
-import InvitationAcceptance from './components/InvitationAcceptance';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Home from './pages/home'
+import Login from './pages/login'
+import SignUp from './pages/signup'
+import './styles/globals.css'
+import InvitationAcceptance from './components/InvitationAcceptance'
 import LandingPage from './components/LandingPage'
 import Loading from './components/Loading/loading'
 import './styles/globals.css'
@@ -100,7 +100,7 @@ const App = () => (
         />
       </Route>
       <Route path="components">
-      <InvitationAcceptance/>
+        <InvitationAcceptance />
       </Route>
     </Switch>
   </BrowserRouter>
