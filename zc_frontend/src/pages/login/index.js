@@ -19,7 +19,7 @@ const Login = ({ history, loginUser }) => {
   })
   const [showPassword, setShowPassword] = useState(false)
 
-  const [showLoader, setShowLoader] = useState(false)
+  // const [showLoader, setShowLoader] = useState(false)
 
   const url = 'https://api.zuri.chat/auth/login'
   const cookies = new Cookies()

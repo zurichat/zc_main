@@ -16,7 +16,7 @@ export const loginUser = (url, loginInfo, setCookies, history) => {
         history.push('/home')
       })
       .catch(e => {
-        alert(`Error: Wrong Email or password ${e.message}`)
+        alert('Error: Wrong Email or password ')
         history.push('/login')
       })
   }
