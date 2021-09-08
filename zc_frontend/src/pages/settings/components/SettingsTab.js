@@ -8,6 +8,7 @@ import { AnimateSharedLayout } from 'framer-motion'
 
 const SettingsTab = () => {
   const [show, setShow] = useState(false)
+  setShow(false)
 
   const showTime = show ? <TimeZone /> : null
 
