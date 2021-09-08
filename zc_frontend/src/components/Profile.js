@@ -33,9 +33,24 @@ const Profile = () => {
 
   return (
     <div className={showProfile ? styles.container : styles.containerNone}>
-      <svg className={styles.mobileBackButton} onClick={toggleProfileState} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M19.9998 12H3.99982" strokeWidth="1.22693" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M9.99982 18L3.99982 12L9.99982 6" strokeLinecap="round" strokeLinejoin="round"/>
+      <svg
+        className={styles.mobileBackButton}
+        onClick={toggleProfileState}
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.9998 12H3.99982"
+          strokeWidth="1.22693"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M9.99982 18L3.99982 12L9.99982 6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
 
       <div className={styles.header}>
@@ -66,7 +81,9 @@ const Profile = () => {
               toggleModalState()
               setModal('edit profile')
             }}
-          >Edit Profile</button>
+          >
+            Edit Profile
+          </button>
         </div>
 
         <div className={styles.buttonGroups}>
@@ -165,15 +182,21 @@ const Profile = () => {
         </div>
         <div className={`${styles.moreInfo} ${styles.mobile}`}>
           <div className={styles.infoTitle}>Status</div>
-          <div className={styles.infoContent}><span>5</span></div>
+          <div className={styles.infoContent}>
+            <span>5</span>
+          </div>
         </div>
         <div className={styles.moreInfo}>
           <div className={styles.infoTitle}>Email address</div>
-          <a href="mailto:praise@example.com" className={styles.infoLink}>praise@example.com</a>
+          <a href="mailto:praise@example.com" className={styles.infoLink}>
+            praise@example.com
+          </a>
         </div>
         <div className={styles.moreInfo}>
           <div className={styles.infoTitle}>Phone number</div>
-          <a href="tel:2348101234567" className={styles.infoLink}>+234 810 123 4567</a>
+          <a href="tel:2348101234567" className={styles.infoLink}>
+            +234 810 123 4567
+          </a>
         </div>
         <div className={styles.moreInfo}>
           <div className={styles.infoTitle}>Local time</div>
