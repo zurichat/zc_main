@@ -1,58 +1,51 @@
-//import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import style from './styles/Login.module.css'
-import authBg from './images/auth_img.png'
-import logo from './images/logo.svg'
-//import GoogleLogin from 'react-google-login'
+import { useState } from 'react'
 import { withRouter } from 'react-router-dom'
+//import GoogleLogin from 'react-google-login'
 
-//import AuthInputBox from '../../components/AuthInputBox'
-import AuthFormWrapper from '../../components/AuthFormWrapper'
+import style from '../../styles/AuthPage.module.css'
 
-const AuthHeader = () => {
-  return (
-    <header className={style.header}>
-      <Link className={style.logo} to="/home" replace={true}>
-        <img src={logo} alt="zuri logo" />
-      </Link>
-    </header>
-  )
-}
-
-const AuthFooter = () => {
-  return (
-    <footer className={style.footer}>
-      <Link className={style.contact} to="/contact-us" replace={true}>
-        <small>Contact Us</small>
-      </Link>
-      <Link className={style.policy} to="/" replace={true}>
-        <small>Legal Policy</small>
-      </Link>
-    </footer>
-  )
-}
+import AuthInputBox from '../../components/AuthInputBox'
+import {
+  AuthFooter,
+  AuthFormWrapper,
+  AuthHeader,
+  AuthSideBar
+} from '../../components/AuthFormElements'
 
 const Login = () => {
+  const [name, setname] = useState('')
+  const [password, setpassword] = useState('')
+
+  const submitLogin = () => {}
+
   return (
-    <main id={style.authPageWrapper}>
-      <aside id={style.authAsideContainer} className={style.display_none}>
-        <div id={style.authImageWrapper}>
-          <img src={authBg} alt="backgroundImage" />
-          <di id={style.aside_txt}>
-            <h4>Have fun while working</h4>
-            <h4>as a team</h4>
-            <p>Unlimited team collaboration platform</p>
-          </di>
-        </div>
-      </aside>
-      <section id={style.authFormContainer}>
+    <div className={style.authPageWrapper}>
+      <AuthSideBar />
+      <section className={style.authFormContainer}>
         <AuthHeader />
 
-        <AuthFormWrapper>ADD FORM HERE</AuthFormWrapper>
+        <AuthFormWrapper submitHandler={submitLogin}>
+          <AuthInputBox
+            id="email"
+            name="Email Address"
+            type="email"
+            placeholder="Enter your email address"
+            value={name}
+            setValue={setname}
+          />
+          <AuthInputBox
+            id="password"
+            name="Password"
+            type="password"
+            placeholder="Enter your password"
+            value={password}
+            setValue={setpassword}
+          />
+        </AuthFormWrapper>
 
         <AuthFooter />
       </section>
-    </main>
+    </div>
   )
 }
 
