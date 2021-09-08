@@ -2,10 +2,7 @@ import { useState } from 'react'
 import { withRouter } from 'react-router-dom'
 //import GoogleLogin from 'react-google-login'
 
-//import AuthInputBox from '../../components/AuthInputBox'
-import AuthFormWrapper from '../../components/AuthFormWrapper'
-import CheckEmail from '../../components/CheckEmail'
-// import Modal from 'react-modal'
+import style from '../../styles/AuthPage.module.css'
 
 import AuthInputBox from '../../components/AuthInputBox'
 import {
