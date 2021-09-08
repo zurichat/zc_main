@@ -16,7 +16,7 @@ export const PluginContent = () => {
   useEffect(() => {
     if (!url) return
 
-    setLoader("loading");
+    setLoader('loading')
 
     const elRoot = document.getElementById('zc-plugin-root')
     const reProtocol = /^https?:\/\//
@@ -82,8 +82,7 @@ export const PluginContent = () => {
   return (
     <>
       <section className={styles.container}>
-        <div id="zc-plugin-root">
-        </div>
+        <div id="zc-plugin-root"></div>
         <PluginLoader />
       </section>
       {!url && <Welcome />}
