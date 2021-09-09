@@ -28,8 +28,6 @@
 }
 
 #authFormContainer {
-  display: flex;
-  justify-content: center;
   width: 57%;
   overflow-y: scroll;
 }

@@ -8,7 +8,8 @@ const InputBox = ({
   setValue,
   className = '',
   placeholder,
-  name
+  name,
+  required = 'required'
 }) => {
   return (
     <>
@@ -24,6 +25,7 @@ const InputBox = ({
           type={type}
           placeholder={placeholder}
           value={value}
+          required={required}
           onChange={e => setValue(e.target.value)}
         />
 
