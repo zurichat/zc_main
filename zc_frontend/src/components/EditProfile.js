@@ -3,7 +3,7 @@ import ProfileModal from './ProfileModal'
 
 const EditProfile = () => {
   return (
-    <ProfileModal full title="Edit your profile">
+    <ProfileModal full title="Edit profile">
       <>
         <div className={styles.profileWrapper}>
           <div className={styles.profile}>
@@ -161,14 +161,14 @@ const EditProfile = () => {
                 </label>
                 <input type="text" name="name" className={styles.formInput} />
                 <div className={styles.addLink}>
-                  <span class={styles.plus}>+</span>
+                  <span className={styles.plus}>+</span>
                   <span className={styles.textYellow}>Add New Link</span>
                 </div>
               </div>
               <div className={styles.formFooter}>
-                <div>
+                <div style={{display: 'flex' }}>
                   <button className={styles.cancel}>Cancel</button>
-                  <button className={styles.save}>Save Changes</button>
+                  <button className={styles.saveChange}>Save Changes</button>
                 </div>
               </div>
             </div>
