@@ -7,17 +7,23 @@ import styles from '../styles/ProfileModal.module.css'
 const ProfileModal = ({ title, children, full }) => {
   const { modal, toggleModalState } = useContext(ProfileContext)
 
+  const mql = window.matchMedia('(max-width: 768px)');
+  let mobileView = mql.matches;
+
   return (
     <div
       className={styles.modalContainer}
       style={modal ? { display: 'flex' } : { display: 'none' }}
     >
-      <div className={styles.overlay} onClick={toggleModalState}></div>
+      <div className={full ? styles.overlayGreen : styles.overlay} onClick={toggleModalState}></div>
       <div className={full ? styles.modalFull : styles.modalContent}>
-        {full && <div className={styles.mobile}>You</div>}
         <div className={`${styles.modalHeader}`}>
           {title}
           {
+            mobileView ?
+            <svg onClick={toggleModalState} className={styles.backIcon} viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.9995 21L11.9995 15L17.9995 9" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg> :
             <svg
               onClick={toggleModalState}
               className={styles.closeIcon}
@@ -28,7 +34,9 @@ const ProfileModal = ({ title, children, full }) => {
             </svg>
           }
         </div>
-        {children}
+        <div className={styles.modalCont}>
+          {children}
+        </div>
       </div>
     </div>
   )
