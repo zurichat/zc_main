@@ -1,4 +1,3 @@
-import React from 'react'
 import ProfileModal from './ProfileModal'
 import NotificationPreference from './NotificationPreference'
 
