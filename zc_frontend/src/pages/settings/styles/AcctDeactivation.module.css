@@ -10,7 +10,11 @@
   }
 
   .deactivationNote {
-    padding: 20px !important;
+    padding: 20px 10px!important;
+  }
+
+  .deactivateButton {
+    margin-right: 15px;
   }
 }
 

@@ -5,7 +5,7 @@ const UserName = () => {
   return (
     <div className={styles.passwordsection}>
       <form class="row d-flex flex-column">
-        <div class="col-md-5">
+        <div class="col-md-5 mt-2">
           <input type="password" class="form-control" required />
         </div>
         <div class="col-md-4 mb-3 mt-3">
