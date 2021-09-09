@@ -12,7 +12,6 @@ import Language from './Language'
 import UserName from './UserName'
 
 const SettingsTab = () => {
-  const [show] = useState(false)
 
   // const showTime = show ? <TimeZone /> : null
 
