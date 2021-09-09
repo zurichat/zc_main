@@ -23,11 +23,11 @@
 .header {
   color: #000;
   font-weight: 700;
-  font-size: 16px;  
+  font-size: 16px;
   margin: 8px 0 1px 0;
 }
 
-.subHeader{
+.subHeader {
   position: relative;
   margin-top: -20px;
   font-size: 12px;
@@ -78,7 +78,6 @@
   justify-content: center;
   padding: 2px 0;
 }
-
 
 .topLine::before {
   flex-grow: 1;
@@ -138,7 +137,7 @@
   border-radius: 5px;
 }
 
-.btnContainer .btnDisabled{
+.btnContainer .btnDisabled {
   display: flex;
   align-items: center;
   justify-content: center;
