@@ -10,17 +10,17 @@ export const Dropdown = () => {
   const { toggleModalState } = useContext(ProfileContext)
   const [modal, setModal] = useState('')
   const state = useContext(TopbarContext)
-  const {  presence } = state
-  const [active, setActive]  = presence
+  const { presence } = state
+  const [active, setActive] = presence
   return (
     <>
       <div className={styles.profileDropDown}>
         <div className={styles.topSection}>
           <p
-           onClick={() => {
-            setModal('preference')
-            toggleModalState()
-          }}
+            onClick={() => {
+              setModal('preference')
+              toggleModalState()
+            }}
             className={styles.paragraph}
           >
             View preferences
@@ -42,5 +42,3 @@ export const Dropdown = () => {
     </>
   )
 }
-
-

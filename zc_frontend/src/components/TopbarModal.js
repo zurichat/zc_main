@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react'
 
 // react icons
-import { FaChevronRight, FaTimes,  } from 'react-icons/fa'
+import { FaChevronRight, FaTimes } from 'react-icons/fa'
 
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
 
@@ -59,12 +59,12 @@ const TopbarModal = () => {
               {active ? (
                 <div className={styles.online}>
                   <div className={styles.circle} />
-                  <p >Active</p>
+                  <p>Active</p>
                 </div>
               ) : (
                 <div className={styles.online}>
                   <div className={styles.circlegrey} />
-                  <p style={{marginLeft: '14px'}} >Away</p>
+                  <p style={{ marginLeft: '14px' }}>Away</p>
                 </div>
               )}
             </div>

@@ -141,7 +141,7 @@ label {
   border: none;
   --tw-text-opacity: 1;
   color: rgba(107, 114, 128, var(--tw-text-opacity));
-  background-color: transparent ;
+  background-color: transparent;
   font-size: 15px;
   font-weight: 400;
   width: auto;
@@ -243,7 +243,7 @@ label {
   --tw-text-opacity: 1;
   color: rgba(156, 163, 175, var(--tw-text-opacity));
 }
-.formFooter .saveChange{
+.formFooter .saveChange {
   border-radius: 5px;
   width: auto;
   transition-property: background-color, border-color, color, fill, stroke,
@@ -257,7 +257,6 @@ label {
   font-size: 13px;
   padding: 10px;
   /* font-weight: 400; */
-
 }
 
 /* button {

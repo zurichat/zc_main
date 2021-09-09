@@ -166,7 +166,7 @@ const EditProfile = () => {
                 </div>
               </div>
               <div className={styles.formFooter}>
-                <div style={{display: 'flex' }}>
+                <div style={{ display: 'flex' }}>
                   <button className={styles.cancel}>Cancel</button>
                   <button className={styles.saveChange}>Save Changes</button>
                 </div>
