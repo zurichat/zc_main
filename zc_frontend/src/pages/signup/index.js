@@ -1,87 +1,106 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
+// import { Link } from 'react-router-dom'
+import authBg from '../../pages/images/backg.svg'
 import { withRouter } from 'react-router-dom'
+import AuthInputBox from '../../components/AuthInputBox'
+import FormWrapper from '../../components/AuthFormWrapper'
+import styles from '../../styles/AuthFormElements.module.css'
+// import styles from './styles/SignUp.module.css'
 //import GoogleLogin from 'react-google-login'
 
-import style from '../../styles/AuthPage.module.css'
-
-import AuthInputBox from '../../components/AuthInputBox'
-import {
-  AuthFormWrapper,
-  AuthHeader,
-  AuthFooter,
-  AuthSideBar
-} from '../../components/AuthFormElements'
-
 const Signup = () => {
-  const [fName, setfName] = useState('')
-  const [lName, setlName] = useState('')
-  const [phone, setphone] = useState('')
-  const [email, setemail] = useState('')
-  const [password, setpassword] = useState('')
-  const [confirmPassword, setconfirmPassword] = useState('')
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+  const [tos, setTos] = useState(false)
+  const { error, setError } = useState('')
 
-  const submitSignUp = () => {}
+  const handleSubmit = e => {
+    e.preventDefault()
+  }
 
   return (
-    <div className={style.authPageWrapper}>
-      <AuthSideBar />
-      <section className={style.authFormContainer}>
-        <AuthHeader />
-
-        <AuthFormWrapper handleSubmit={submitSignUp}>
+    <main id={styles.authPageWrapper}>
+      <aside id={styles.authAsideContainer} className={styles.display_none}>
+        <div id={styles.authImageWrapper}>
+          <img src={authBg} alt="backgroundImage" />
+          <div id={styles.aside_txt}></div>
+        </div>
+      </aside>
+      <section id={styles.authFormContainer}>
+        <FormWrapper
+          header="Create Account"
+          subHeader=""
+          googleHeader="Sign up with Google"
+          topLineText="OR"
+          submitButtonName="Sign up"
+          name={name}
+          email={email}
+          password={password}
+          check={tos}
+          handleSubmit={handleSubmit}
+          bottomLine="Already have an account?"
+          bottomLink="Log in"
+        >
           <AuthInputBox
-            id="fName"
-            name="First Name"
+            className={`${styles.inputElement}`}
+            id="name"
+            name="Full name"
             type="text"
-            placeholder="Enter your first Name"
-            value={fName}
-            setValue={setfName}
+            placeholder="John Doe"
+            value={name}
+            setValue={setName}
+            error={error}
           />
           <AuthInputBox
-            id="lName"
-            name="Last Name"
-            type="text"
-            placeholder="Enter your last Name"
-            value={lName}
-            setValue={setlName}
-          />
-          <AuthInputBox
-            id="telephone"
-            name="Phone Number"
-            type="tel"
-            placeholder="Enter your phone number"
-            value={phone}
-            setValue={setphone}
-          />
-          <AuthInputBox
+            className={`${styles.inputElement}`}
             id="email"
-            name="Email Address"
+            name="Email address"
             type="email"
-            placeholder="Enter your email address"
+            placeholder="johnDoe@example.com"
             value={email}
-            setValue={setemail}
+            setValue={setEmail}
+            error={error}
           />
           <AuthInputBox
+            className={`${styles.inputElement}`}
             id="password"
             name="Password"
             type="password"
-            placeholder="Enter your password"
+            placeholder="Enter your Password"
             value={password}
-            setValue={setpassword}
+            setValue={setPassword}
+            error={error}
           />
           <AuthInputBox
-            id="confirmPassword"
-            name="Confirm Password"
+            className={`${styles.inputElement}`}
+            id="cpassword"
+            name="Confirm password"
             type="password"
-            placeholder="Enter the same password"
+            placeholder="Enter your password"
             value={confirmPassword}
-            setValue={setconfirmPassword}
+            setValue={setConfirmPassword}
+            error={error}
           />
-        </AuthFormWrapper>
-
-        <AuthFooter />
+          <div className={`${styles.tos}`}>
+            <input
+              className={`${styles.checkBox}`}
+              name="tos"
+              type="checkbox"
+              value={tos}
+              onClick={() => {
+                setTos(!tos)
+              }}
+            />
+            <span className={`${styles.tosText}`}>
+              I agree to Zurichat's {''}
+              <a href="">terms of services{''} </a>&<a href=""> {''}privacy</a>
+            </span>
+          </div>
+        </FormWrapper>
       </section>
-    </div>
+    </main>
   )
 }
 
