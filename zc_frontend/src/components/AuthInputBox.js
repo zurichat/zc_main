@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 
 import styles from '../styles/InputBox.module.css'
 
@@ -14,16 +14,16 @@ const InputBox = ({
   required = true
 }) => {
   const ref = useRef(null)
-  const [passwordVisible, setpasswordVisible] = useState(
-    type === 'password' ? true : false
-  )
+  // const [passwordVisible, setpasswordVisible] = useState(
+  //   type === 'password' ? true : false
+  // )
 
-  const passwordToggle = e => {
-    e.preventDefault()
-    setpasswordVisible(!passwordVisible)
+  // const passwordToggle = e => {
+  //   e.preventDefault()
+  //   setpasswordVisible(!passwordVisible)
 
-    ref.current.type = passwordVisible ? 'text' : 'password'
-  }
+  //   ref.current.type = passwordVisible ? 'text' : 'password'
+  // }
 
   return (
     <>
@@ -32,15 +32,13 @@ const InputBox = ({
           {name}
         </label>
 
-        <div
-          className={`${styles.InputWrapper} ${
-            type === 'password' ? styles.InputWrapperWithPassword : ''
-          }`}
-        >
+        <div className={`${styles.InputWrapper}`}>
           <input
             id={id}
             ref={ref}
-            className={`${styles.InputElement} ${error && styles.is_invalid}`}
+            className={`${styles.InputElement} ${
+              error ? '' : styles.is_invalid
+            }`}
             name={name}
             type={type}
             placeholder={placeholder}
@@ -49,17 +47,17 @@ const InputBox = ({
             onChange={e => setValue(e.target.value)}
           />
 
-          {/password/i.test(name) && (
+          {/* {/password/i.test(name) && (
             <div
               className={`${styles.ToggleVisibility}`}
               onClick={passwordToggle}
             >
               <i className={`far ${passwordVisible ? 'eye-slash' : 'eye'}`}></i>
             </div>
-          )}
+          )} */}
         </div>
 
-        <span className={`${styles.InputError}`}>{error}</span>
+        {/* <span className={`${styles.InputError}`}>{error}</span> */}
       </div>
     </>
   )
