@@ -99,7 +99,9 @@ const TopbarModal = () => {
 
           <hr className={styles.hr} />
 
-          
+          <div className={styles.sectionSix}>
+            <p>Downloads</p>
+          </div>
 
           {modal === 'edit profile' && <EditProfile />}
 
