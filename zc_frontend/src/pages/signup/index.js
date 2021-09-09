@@ -1,56 +1,104 @@
-//import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import style from './styles/SignUp.module.css'
-import authBg from './images/auth_img.png'
-import logo from './images/logo.svg'
-//import GoogleLogin from 'react-google-login'
+import React, { useState } from 'react'
+// import { Link } from 'react-router-dom'
+import authBg from '../../pages/images/backg.svg'
 import { withRouter } from 'react-router-dom'
-
-//import AuthInputBox from '../../components/AuthInputBox'
-import AuthFormWrapper from '../../components/AuthFormWrapper'
-
-const AuthHeader = () => {
-  return (
-    <header className={style.header}>
-      <Link className={style.logo} to="/home" replace={true}>
-        <img src={logo} alt="zuri logo" />
-      </Link>
-    </header>
-  )
-}
-
-const AuthFooter = () => {
-  return (
-    <footer className={style.footer}>
-      <Link className={style.contact} to="/contact-us" replace={true}>
-        <small>Contact Us</small>
-      </Link>
-      <Link className={style.policy} to="/" replace={true}>
-        <small>Legal Policy</small>
-      </Link>
-    </footer>
-  )
-}
+import AuthInputBox from '../../components/AuthInputBox'
+import FormWrapper from '../../components/AuthFormWrapper'
+import styles from '../../styles/AuthFormElements.module.css'
+// import styles from './styles/SignUp.module.css'
+//import GoogleLogin from 'react-google-login'
 
 const Signup = () => {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+  const [tos, setTos] = useState(false)
+  const { error, setError } = useState('')
+
+  const handleSubmit = e => {
+    e.preventDefault()
+  }
+
   return (
-    <main id={style.authPageWrapper}>
-      <aside id={style.authAsideContainer} className={style.display_none}>
-        <div id={style.authImageWrapper}>
+    <main id={styles.authPageWrapper}>
+      <aside id={styles.authAsideContainer} className={styles.display_none}>
+        <div id={styles.authImageWrapper}>
           <img src={authBg} alt="backgroundImage" />
-          <di id={style.aside_txt}>
-            <h4>Have fun while working</h4>
-            <h4>as a team</h4>
-            <p>Unlimited team collaboration platform</p>
-          </di>
+          <div id={styles.aside_txt}></div>
         </div>
       </aside>
-      <section id={style.authFormContainer}>
-        <AuthHeader />
-
-        <AuthFormWrapper>ADD FORM HERE</AuthFormWrapper>
-
-        <AuthFooter />
+      <section id={styles.authFormContainer}>
+        <FormWrapper
+          header="Create Account"
+          subHeader=""
+          googleHeader="Sign up with Google"
+          topLineText="OR"
+          submitButtonName="Sign up"
+          name={name}
+          email={email}
+          password={password}
+          check={tos}
+          handleSubmit={handleSubmit}
+          bottomLine="Already have an account?"
+          bottomLink="Log in"
+        >
+          <AuthInputBox
+            className={`${styles.inputElement}`}
+            id="name"
+            name="Full name"
+            type="text"
+            placeholder="John Doe"
+            value={name}
+            setValue={setName}
+            error={error}
+          />
+          <AuthInputBox
+            className={`${styles.inputElement}`}
+            id="email"
+            name="Email address"
+            type="email"
+            placeholder="johnDoe@example.com"
+            value={email}
+            setValue={setEmail}
+            error={error}
+          />
+          <AuthInputBox
+            className={`${styles.inputElement}`}
+            id="password"
+            name="Password"
+            type="password"
+            placeholder="Enter your Password"
+            value={password}
+            setValue={setPassword}
+            error={error}
+          />
+          <AuthInputBox
+            className={`${styles.inputElement}`}
+            id="cpassword"
+            name="Confirm password"
+            type="password"
+            placeholder="Enter your password"
+            value={confirmPassword}
+            setValue={setConfirmPassword}
+            error={error}
+          />
+          <div className={`${styles.tos}`}>
+            <input
+              className={`${styles.checkBox}`}
+              name="tos"
+              type="checkbox"
+              value={tos}
+              onClick={() => {
+                setTos(!tos)
+              }}
+            />
+            <span className={`${styles.tosText}`}>
+              I agree to Zurichat's {''}
+              <a href="">terms of services{''} </a>&<a href=""> {''}privacy</a>
+            </span>
+          </div>
+        </FormWrapper>
       </section>
     </main>
   )
