@@ -14,7 +14,6 @@
   flex-direction: row;
 }
 
-
 .settingsTab:nth-child(6),
 .settingsTab:nth-child(7) {
   border-bottom: 1px solid #dedede;
@@ -70,8 +69,6 @@
 .settings_wrapper {
   padding: 10px 0;
 }
-
-
 
 /* THE SECTION OF THE PASSWORD */
 .passwordsection button {
@@ -138,7 +135,7 @@
 
   .passwordsection input,
   .passwordsection select {
-    width: 60% !important;
+    width: 90% !important;
   }
 }
 
@@ -151,12 +148,23 @@
     width: 95%;
   }
 
-  .passwordsection input,  
+  .passwordsection input,
   .passwordsection select {
-    width:90%!important;
-    display:none!important;
+    width: 100% !important;
+    /* display: none !important; */
+  }
+
+  .two_factor button{
+    padding:10px 25px;
+  }
+
+  .two_factor p {
+    width: 95%;
+  }
+
+  .passwordsection p {
+    font-size: 12px;
+    width: 95%;
   }
 
 }
-
-
