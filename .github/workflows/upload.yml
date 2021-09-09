@@ -12,14 +12,14 @@ on:
 
 jobs:
   prettier:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - name: Checkout
       uses: actions/checkout@v2
       with:
         # Make sure the actual branch is checked out when running on pull requests
-        ref: ${{ github.head_ref }}
+        ref: ${{ github.event.pull_request.head.ref }}
 
     - name: Prettify code
       uses: creyD/prettier_action@v3.1
@@ -33,14 +33,14 @@ jobs:
   fe_eslint:
     needs: prettier
 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - name: Checkout
       uses: actions/checkout@v2
       with:
         # Make sure the actual branch is checked out when running on pull requests
-        ref: ${{ github.head_ref }}
+        ref: ${{ github.event.pull_request.head.ref }}
     
     - name: Use cached node_modules
       uses: c-hive/gha-yarn-cache@v2
@@ -61,14 +61,14 @@ jobs:
   be_eslint:
     needs: fe_eslint
 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - name: Checkout
       uses: actions/checkout@v2
       with:
         # Make sure the actual branch is checked out when running on pull requests
-        ref: ${{ github.head_ref }}
+        ref: ${{ github.event.pull_request.head.ref }}
     
     - name: Use cached node_modules
       uses: c-hive/gha-yarn-cache@v2
