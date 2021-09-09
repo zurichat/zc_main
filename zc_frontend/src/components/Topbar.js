@@ -12,7 +12,7 @@ import ProfileModal from './ProfileModal'
 const Topbar = ({ userProfile: { last_name, first_name } }) => {
   const state = useContext(TopbarContext)
   const { openModal, presence } = state
-  const [active]  = presence
+  const [active] = presence
 
   return (
     <div className={styles.container}>
