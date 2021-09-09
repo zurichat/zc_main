@@ -63,7 +63,7 @@
   position: relative;
   outline: none;
   color: #7c7c7c;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 17px !important;
 }
 
@@ -146,7 +146,6 @@
     display: flex;
     flex-direction: column;
     background: white;
-    background: blue;
   }
 
   #bloctabs {
@@ -161,6 +160,7 @@
     background: none;
     margin-left: 0;
     text-align: left;
+    font-size: 14px !important;
   }
 
   .bloctabs button:last-child {
@@ -189,5 +189,16 @@
 
   #none {
     display: none;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .tabcontainer {
+    padding-top: 110px;
+    padding-bottom: 50px;
+  }
+
+  .tabs {
+    width: 70% !important;
   }
 }

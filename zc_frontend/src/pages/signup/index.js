@@ -1,42 +1,22 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import authBg from '../../pages/images/backg.svg'
-import logo from './images/logo.svg'
+import logo from '../../pages/images/zuri.svg'
 import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
 import FormWrapper from '../../components/AuthFormWrapper'
-import styles from './styles/SignUp.module.css'
+import styles from '../../styles/AuthFormElements.module.css'
+// import styles from './styles/SignUp.module.css'
 //import GoogleLogin from 'react-google-login'
 
-// const AuthHeader = () => {
-//   return (
-//     <header className={styles.header}>
-//       <Link className={styles.logo} to="/home" replace={true}>
-//         <img src={logo} alt="zuri logo" />
-//       </Link>
-//     </header>
-//   )
-// }
-
-// const AuthFooter = () => {
-//   return (
-//     <footer className={styles.footer}>
-//       <Link className={styles.contact} to="/contact-us" replace={true}>
-//         <small>Contact Us</small>
-//       </Link>
-//       <Link className={styles.policy} to="/" replace={true}>
-//         <small>Legal Policy</small>
-//       </Link>
-//     </footer>
-//   )
-// }
 
 const Signup = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [cpassword, setCPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
   const [tos, setTos] = useState(false)
+  const {error, setError} = useState('')
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -54,7 +34,7 @@ const Signup = () => {
         <FormWrapper
           header="Create Account"
           googleHeader="Sign up with Google"
-          topLineText="or"
+          topLineText="OR"
           submitButtonName="Sign up"
           name={name}
           email={email}
@@ -67,22 +47,22 @@ const Signup = () => {
           <AuthInputBox
             className={`${styles.inputElement}`}
             id="name"
-            name="Full Name"
+            name="Full name"
             type="text"
             placeholder="John Doe"
             value={name}
             setValue={setName}
-            error=""
+            error={error}
           />
           <AuthInputBox
             className={`${styles.inputElement}`}
             id="email"
-            name="Email"
+            name="Email address"
             type="email"
             placeholder="johnDoe@example.com"
             value={email}
             setValue={setEmail}
-            error=""
+            error={error}
           />
           <AuthInputBox
             className={`${styles.inputElement}`}
@@ -92,17 +72,17 @@ const Signup = () => {
             placeholder="Enter your Password"
             value={password}
             setValue={setPassword}
-            error=""
+            error={error}
           />
           <AuthInputBox
             className={`${styles.inputElement}`}
             id="cpassword"
-            name="confirmPassword"
+            name="Confirm password"
             type="password"
             placeholder="Enter your password"
-            value={cpassword}
-            setValue={setCPassword}
-            error={false}
+            value={confirmPassword}
+            setValue={setConfirmPassword}
+            error={error}
           />
           <div className={`${styles.tos}`}>
             <input
@@ -117,13 +97,13 @@ const Signup = () => {
             <span className={`${styles.tosText}`}>
               I agree to Zurichat's {''}
               <a href="">terms of services{''} </a>
-              and
+              &
               <a href=""> {''}privacy</a>
             </span>
           </div>
         </FormWrapper>
       </section>
-    </main>
+ </main>
   )
 }
 

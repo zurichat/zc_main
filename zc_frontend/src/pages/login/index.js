@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import styles from './styles/Login.module.css'
 import authBg from '../../pages/images/backg.svg'
-import logo from './images/logo.svg'
+import logo from '../../pages/images/zuri.svg'
 import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
 import FormWrapper from '../../components/AuthFormWrapper'
+import styles from '../../styles/AuthFormElements.module.css'
+
 //import GoogleLogin from 'react-google-login'
 
 const Login = () => {
@@ -28,6 +29,7 @@ const Login = () => {
       <section id={styles.authFormContainer}>
         <FormWrapper
           header="Login"
+          subHeader="Login with the data you entered during your registration"
           googleHeader="Login with Google"
           topLineText="OR"
           submitButtonName="Log in"
@@ -41,8 +43,8 @@ const Login = () => {
           <AuthInputBox
             className={`${styles.inputElement}`}
             id="email"
-            name="Email adress"
-            type="eemail"
+            name="Email address"
+            type="email"
             placeholder="Johndoe@example.com"
             value={email}
             setValue={setEmail}
@@ -54,12 +56,13 @@ const Login = () => {
             name="Password"
             type="password"
             placeholder="Enter a password"
-            value={email}
-            setValue={setEmail}
+            value={password}
+            setValue={setPassword}
             error=""
           />
 
           <div className={`${styles.rememberMe}`}>
+          <span className={`${styles.left}`} > 
             <input
               className={`${styles.checkBox}`}
               name="RememeberMe"
@@ -69,11 +72,11 @@ const Login = () => {
                 setRememberMe(!rememberMe)
               }}
             />
-            {/* <span 
-              className={`${styles.rememberMe}`}> 
-              
-                
-                </span> */}
+            remember me
+            </span>
+            <span className={`${styles.right}`}>
+            Forgot password?<a href=""> {''}Get help signing in</a>
+            </span>
           </div>
         </FormWrapper>
       </section>

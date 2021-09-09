@@ -3,12 +3,13 @@ import AuthInputBox from './AuthInputBox'
 import styles from '../styles/AuthFormWrapper.module.css'
 import logo from '../pages/images/logo.svg'
 import google from '../pages/images/google.svg'
-import chevron from '../pages/images/chevron.svg'
-import globe from '../pages/images/globe.svg'
+// import chevron from '../pages/images/chevron.svg'
+// import globe from '../pages/images/globe.svg'
 
 const FormWrapper = ({
   children,
   header,
+  subHeader,
   googleHeader,
   topLineText,
   submitButtonName,
@@ -26,6 +27,7 @@ const FormWrapper = ({
         <img src={logo} alt="zuri" />
       </div>
       <h1 className={`${styles.header}`}>{header}</h1>
+      <p className={`${styles.subHeader}`}>{subHeader}</p>
       <div className={`${styles.googleBtn}`}>
         <a href="" className="google">
           <img src={google} alt="google" />
@@ -40,7 +42,9 @@ const FormWrapper = ({
 
         <div className={`${styles.btnContainer}`}>
           <button
-            className={`${styles.btn}`}
+            className={`${
+              name || email || password || check ?
+              styles.btn : styles.btnDisabled}`}
             type="submit"
             disabled={!name || !email || !password || !check}
           >
