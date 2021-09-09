@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import styles from '../styles/PreferenceMenu.module.css';
-import { ProfileContext } from '../../../contexts/ProfileModal';
+import { ProfileContext } from '../../../context/ProfileModal';
 import { AiOutlineBell, AiOutlineEye, AiOutlineSetting   } from 'react-icons/ai';
 import {BsLayoutSidebar, BsCheckCircle} from 'react-icons/bs';
 import {FiMessageCircle, FiGlobe, FiVideo} from 'react-icons/fi';

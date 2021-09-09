@@ -4,7 +4,7 @@ import ProfileModal from './ProfileModal'
 import SidebarPreference from '../pages/preferences/components/SidebarPreference'
 import PreferenceMenu from '../pages/preferences/components/PreferenceMenu';
 import styles from '../pages/preferences/styles/NotificationPreference.module.css';
-import { ProfileContext } from '../contexts/ProfileModal';
+import { ProfileContext } from '../context/ProfileModal';
 
 
 const Preferences = () => {
