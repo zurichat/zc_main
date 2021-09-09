@@ -78,7 +78,10 @@ const Login = ({ history, loginUser }) => {
                   className={`mx-3 ${styles.icon}`}
                   src={`/google.png`}
                   alt="google icon"
-                > Login with Google </Button>
+                >
+                  {' '}
+                  Login with Google{' '}
+                </Button>
               )}
               buttonText=""
               onSuccess={successResponseGoogle}
