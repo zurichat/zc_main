@@ -3,6 +3,7 @@ import LandingPage from './components/LandingPage'
 import Home from './pages/home'
 import Login from './pages/login'
 import SignUp from './pages/signup'
+import EmailVerification from './pages/email-verify'
 import './styles/globals.css'
 import Security from './pages/security'
 import Features from './pages/features'
@@ -27,6 +28,7 @@ import Cookies from './pages/cookies'
 import DeactivateAccount from './pages/settings/components/AcctDeactivation'
 import CookiesSetting from './pages/cookies-settings'
 import SearchResults2 from './components/externalPagesComponents/searchResults2'
+import ApiDocs from './pages/api-docs'
 
 const App = () => (
   <BrowserRouter>
@@ -42,6 +44,9 @@ const App = () => (
       </Route>
       <Route path="/signup">
         <SignUp />
+      </Route>
+      <Route path="/verify-email">
+        <EmailVerification />
       </Route>
       <Route path="/features">
         <Features />
@@ -113,6 +118,9 @@ const App = () => (
       </Route>
       <Route path="searchSuggestion">
         <SearchSuggestion />
+      </Route>
+      <Route path="/documentation" exact>
+        <ApiDocs />
       </Route>
     </Switch>
   </BrowserRouter>
