@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import ReactCodeInput from 'react-code-input'
-import styles from '../../styles/EmailVerification.module.css'
+import styles from './styles/EmailVerification.module.css'
 import logo from '../../assets/auth_images/logo.svg'
 import { Link } from 'react-router-dom'
 
