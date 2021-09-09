@@ -27,6 +27,7 @@ import Cookies from './pages/cookies'
 import DeactivateAccount from './pages/settings/components/AcctDeactivation'
 import CookiesSetting from './pages/cookies-settings'
 import SearchResults2 from './components/externalPagesComponents/searchResults2'
+import AdvancedSettings from './components/AdvancedSettings'
 
 const App = () => (
   <BrowserRouter>
@@ -114,6 +115,9 @@ const App = () => (
       <Route path="searchSuggestion">
         <SearchSuggestion />
       </Route>
+      <Route path="advancedSettings">
+        <AdvancedSettings />
+      </Route> 
     </Switch>
   </BrowserRouter>
 )
