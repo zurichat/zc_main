@@ -17,10 +17,10 @@ const TopbarModal = () => {
 
   const state = useContext(TopbarContext)
   const [showModal] = state.show
+  const [active, setActive] = state.presence
   const [showStatus, setShowStatus] = state.status
   const { onEmojiClick, openStatus, closeStatus, modalRef } = state
   const [modal, setModal] = useState('')
-  const [active, setActive] = useState(true)
 
   return (
     <>

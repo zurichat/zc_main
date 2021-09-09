@@ -11,7 +11,8 @@ import ProfileModal from './ProfileModal'
 
 const Topbar = ({ userProfile: { last_name, first_name } }) => {
   const state = useContext(TopbarContext)
-  const { openModal } = state
+  const { openModal, presence } = state
+  const [active]  = presence
 
   return (
     <div className={styles.container}>
@@ -23,7 +24,11 @@ const Topbar = ({ userProfile: { last_name, first_name } }) => {
         <StatusBadge />
         <div className={styles.profile} onClick={openModal}>
           <img src="/profilepic.png" alt="Profile" />
-          <div className={styles.circles}></div>
+          {active ? (
+            <div className={styles.circles}></div>
+          ) : (
+            <div className={styles.circleAway}></div>
+          )}
         </div>
         <p>
           {last_name} {first_name}
@@ -32,7 +37,6 @@ const Topbar = ({ userProfile: { last_name, first_name } }) => {
 
       <ProfileModal />
       <TopbarModal />
-
     </div>
   )
 }
