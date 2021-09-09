@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 const Language = [
   ' Albanian-shqip',
   ' Amharic - አማርኛ ',
