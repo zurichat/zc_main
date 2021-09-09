@@ -5,12 +5,9 @@ import avatar from '../assets/avatar.png'
 import twitter from '../assets/twitter.svg'
 import linkedin from '../assets/linkedin.svg'
 import instagram from '../assets/instagram.svg'
-<<<<<<< HEAD
 import { Link } from 'react-router-dom'
 import { ProfileContext } from '../contexts/ProfileModal'
-=======
 import { ProfileContext } from '../context/ProfileModal'
->>>>>>> ec93eb8fea7dfde44dc85f7e4868192c6462f10e
 import EditProfile from './EditProfile'
 import Preferences from './Preferences'
 
