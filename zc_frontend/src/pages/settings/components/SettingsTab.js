@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styles from '../styles/SettingsTab.module.css'
 import TimeZone from './TimeZone'
@@ -14,7 +14,7 @@ import UserName from './UserName'
 const SettingsTab = () => {
   const [show] = useState(false)
 
-  const showTime = show ? <TimeZone /> : null
+  // const showTime = show ? <TimeZone /> : null
 
   return (
     <>
@@ -54,7 +54,7 @@ const SettingsTab = () => {
           title="Time zone"
           text="Zurichat uses your time zone to send summary and notification emails, for times in your activity feeds and for  reminders. Your time zone is currently set to: (UTC+01:00) West Central Africa."
           btnText="Expand"
-          timeZone={showTime}
+          // timeZone={showTime}
         >
           {/* TimeZone input field goes under here */}
           <TimeZone />
