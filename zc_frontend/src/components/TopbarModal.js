@@ -59,12 +59,12 @@ const TopbarModal = () => {
               {active ? (
                 <div className={styles.online}>
                   <FaCircle className={styles.circle} />
-                  <p>Active</p>
+                  <p className={styles.active}>Active</p>
                 </div>
               ) : (
                 <div className={styles.online}>
                   <FaCircle className={styles.circlegrey} />
-                  <p>Away</p>
+                  <p className={styles.away}>Away</p>
                 </div>
               )}
             </div>
