@@ -45,12 +45,11 @@
   font-size: 12px;
 }
 
-  .InputElement:focus-within {
-    border: 1px solid blue;
-  }
+.InputElement:focus-within {
+  border: 1px solid blue;
+}
 
-.InputElement:invalid
-.InputElement .is_invalid {
+.InputElement:invalid .InputElement .is_invalid {
   border-color: #ff0000;
   color: #000000;
 }
@@ -74,4 +73,3 @@
 .InputError {
   color: #ff0000;
 }
-
