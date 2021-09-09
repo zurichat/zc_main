@@ -15,7 +15,6 @@
     "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
-    "react-code-input": "^3.10.1",
     "react-dom": "^17.0.2",
     "react-google-login": "^5.2.2",
     "react-icons": "^4.2.0",
@@ -25,6 +24,7 @@
     "react-scripts": "^4.0.3",
     "react-tabs": "^3.2.2",
     "react-timezone-select": "^1.0.7",
+    "react-verification-code-input": "^1.2.9",
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0",
     "swr": "^1.0.0",
@@ -58,6 +58,6 @@
     ]
   },
   "devDependencies": {
-    "prettier": "2.3.2"
+    "prettier": "^2.3.2"
   }
 }
