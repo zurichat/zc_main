@@ -71,7 +71,7 @@
 .storelink {
   margin-top: 30px;
 }
-.badge{
+.badge {
   margin-bottom: 20px;
 }
 .imgLink {
@@ -85,79 +85,78 @@
     font-weight: 800;
   }
   .link {
-  color: #00b87c;
-  text-decoration-line: underline;
-}
-.images {
-  margin: 0;
-  height: 400px;
-}
-.circle {
-  position: absolute;
-  height: 196px;
-  width: 110px;
-  top: 140px;
-  left: 50px;
-}
-.circle2 {
-  display: unset;
-  position: relative;
-  height: 372px;
-  z-index: auto;
-  width: 214px;
-  left: 523px;
-  top: -415px;
-}
-.screenshot {
-  position: relative;
-  height: 506px;
-  z-index: 2;
-  width: 555px;
-  left: 80px;
-  top: -70px;
-}
-.buttondiv {
-  text-align: center;
-}
-.button1 {
-  margin: 0 10px;
-  border: none;
-  border-radius: 4px;
-  color: white;
-  background-color: #00b87c;
-  padding: 16px;
-  width: 30%;
-  font-size: 14px;
-}
-.button2 {
-  border: none;
-  border-radius: 4px;
-  background-color: transparent;
-  color: #00b87c;
-  margin: 0 10px;
-  font-size: 14px;
-}
-.windows {
-  position: static;
-  text-align: left;
-  margin: 10px 125px;
-  font-size: 15px;
-}
-.store {
-  margin-top: 50px;
-  text-align: center;
-}
-.storep {
-  padding: 10px;
-  font-size: 16px;
-}
-.storelink {
-  margin-top: 30px;
-}
-.imgLink {
-  margin: 15px;
-}
-
+    color: #00b87c;
+    text-decoration-line: underline;
+  }
+  .images {
+    margin: 0;
+    height: 400px;
+  }
+  .circle {
+    position: absolute;
+    height: 196px;
+    width: 110px;
+    top: 140px;
+    left: 50px;
+  }
+  .circle2 {
+    display: unset;
+    position: relative;
+    height: 372px;
+    z-index: auto;
+    width: 214px;
+    left: 523px;
+    top: -415px;
+  }
+  .screenshot {
+    position: relative;
+    height: 506px;
+    z-index: 2;
+    width: 555px;
+    left: 80px;
+    top: -70px;
+  }
+  .buttondiv {
+    text-align: center;
+  }
+  .button1 {
+    margin: 0 10px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color: #00b87c;
+    padding: 16px;
+    width: 30%;
+    font-size: 14px;
+  }
+  .button2 {
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #00b87c;
+    margin: 0 10px;
+    font-size: 14px;
+  }
+  .windows {
+    position: static;
+    text-align: left;
+    margin: 10px 125px;
+    font-size: 15px;
+  }
+  .store {
+    margin-top: 50px;
+    text-align: center;
+  }
+  .storep {
+    padding: 10px;
+    font-size: 16px;
+  }
+  .storelink {
+    margin-top: 30px;
+  }
+  .imgLink {
+    margin: 15px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
