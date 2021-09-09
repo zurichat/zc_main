@@ -1,18 +1,22 @@
 import axios from 'axios'
 import { useContext, useEffect } from 'react'
-import { URLContext } from '../contexts/Url'
+import { URLContext } from '../context/Url'
+import { PluginLoaderContext } from '../context/PluginLoaderState'
 import cheerio from 'cheerio'
 
+import PluginLoader from './PluginLoader'
 import styles from '../styles/PluginContent.module.css'
 import Welcome from './Welcome'
 
 export const PluginContent = () => {
   // const pluginUrl = '/apps/default';
-  const state = useContext(URLContext)
-  const [url] = state.url
+  const { url } = useContext(URLContext)
+  const { setLoader } = useContext(PluginLoaderContext)
 
   useEffect(() => {
     if (!url) return
+
+    setLoader('loading')
 
     const elRoot = document.getElementById('zc-plugin-root')
     const reProtocol = /^https?:\/\//
@@ -61,9 +65,11 @@ export const PluginContent = () => {
           document.body.appendChild(script)
         })
         elRoot.innerHTML = $('body').html()
+        setLoader('ready')
       })
       .catch(e => {
         elRoot.innerHTML = `Failed to Load ${url} Plugin: ${e.message}`
+        setLoader('ready')
       })
     return () => {
       elRoot.innerHTML = ''
@@ -71,12 +77,13 @@ export const PluginContent = () => {
         .querySelectorAll('[data-plugin-res]')
         .forEach(node => node.remove())
     }
-  }, [url])
+  }, [url, setLoader])
 
   return (
     <>
       <section className={styles.container}>
-        <div id="zc-plugin-root">Loading...</div>
+        <div id="zc-plugin-root"></div>
+        <PluginLoader />
       </section>
       {!url && <Welcome />}
     </>
