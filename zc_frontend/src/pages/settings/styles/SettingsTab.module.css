@@ -3,20 +3,21 @@
   padding: 20px 0;
 }
 
+.settings_wrapper:last-child {
+  border-bottom: none;
+}
+
 .settingsTab {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row;
 }
 
 .settingsTab:nth-child(6),
 .settingsTab:nth-child(7) {
   border-bottom: 1px solid #dedede;
   padding: 20px 0;
-}
-
-.settingsTab:last-child {
-  border-bottom: none;
 }
 
 .settingleft {
@@ -67,4 +68,102 @@
 
 .settings_wrapper {
   padding: 10px 0;
+}
+
+/* THE SECTION OF THE PASSWORD */
+.passwordsection button {
+  font-size: 13px;
+  padding: 10px 22px;
+}
+
+.passwordsection::-webkit-input-placeholder {
+  font-size: 12px !important;
+}
+
+.passwordsection p {
+  font-size: 12px;
+  width: 60%;
+}
+
+.passwordsection select.form-select:focus,
+.passwordsection button.form-control:focus,
+.passwordsection input[type='text']:focus,
+.passwordsection input[type='password']:focus {
+  box-shadow: inset 0 -1px 0 #ddd;
+}
+
+.passwordsection select:focus {
+  box-shadow: inset 0 -1px 0 #ddd;
+}
+
+.passwordsection select {
+  font-size: 13px;
+  padding: 9px;
+  color: #8c8c8c;
+}
+
+/* THE SECTION OF THE TWO FACTOR */
+.two_factor p {
+  font-size: 12px;
+  width: 60%;
+  margin-top: 10px;
+  line-height: 20px;
+}
+
+.two_factor p a {
+  color: green;
+}
+
+.two_factor button {
+  font-size: 11px;
+}
+
+.two_factor span {
+  font-size: 10.5px;
+  color: #3a3a3a;
+}
+
+@media screen and (max-width: 868px) {
+  #settingtab {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .settingsright {
+    margin-top: 10px;
+  }
+
+  .passwordsection input,
+  .passwordsection select {
+    width: 90% !important;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #settingtab {
+    width: 100%;
+  }
+
+  #settingleft {
+    width: 95%;
+  }
+
+  .passwordsection input,
+  .passwordsection select {
+    width: 100% !important;
+    /* display: none !important; */
+  }
+
+  .two_factor button {
+    padding: 10px 25px;
+  }
+
+  .two_factor p {
+    width: 95%;
+  }
+
+  .passwordsection p {
+    font-size: 12px;
+    width: 95%;
+  }
 }
