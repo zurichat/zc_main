@@ -9,6 +9,7 @@ import {
   AuthFooter,
   AuthFormWrapper,
   AuthHeader,
+  AuthLoginText,
   AuthSideBar
 } from '../../components/AuthFormElements'
 
@@ -23,7 +24,13 @@ const Login = () => {
       <AuthSideBar />
       <section className={style.authFormContainer}>
         <AuthHeader />
-
+        <AuthLoginText />
+        <button
+          className={`btn btn-outline-primary ${style.GoogleloginButton}`}
+        >
+          {/* <img src="zc_frontend/src/pages/images/google.svg" alt="" />  */}
+          Log in with Google
+        </button>
         <AuthFormWrapper submitHandler={submitLogin}>
           <AuthInputBox
             id="email"

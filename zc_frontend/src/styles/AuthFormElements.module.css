@@ -65,9 +65,23 @@
   line-height: 1.8rem;
 }
 
+/* Codinggee  */
+.loginHeader,
+.loginText {
+  margin-left: 3%;
+}
+
+.GoogleloginButton {
+  background-color: #fff;
+  font-size: 16px;
+  width: 100%;
+  border: 1px solid #4285f4 !important;
+  background-image: url('../pages/images/google.svg');
+}
 .logo,
 .contact,
-.policy {
+.policy,
+.zurichat {
   cursor: pointer;
   z-index: 2;
 }
