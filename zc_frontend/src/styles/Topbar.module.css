@@ -88,7 +88,7 @@
   right: 3%;
   width: 100%;
   max-width: 300px;
-  z-index: 99;
+  z-index: 9999;
   border: 1px solid #bebebe;
   border-radius: 8px;
   padding: 20px 0;
@@ -101,7 +101,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 3;
+  z-index: 100000;
   background: rgba(0, 0, 0, 0.3);
   /* display: none; */
   justify-content: center;
@@ -172,7 +172,7 @@
   font-style: normal;
   font-weight: normal;
   color: #3a3a3a;
-  margin-left: -10px;
+
 }
 
 /* The section two */

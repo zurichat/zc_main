@@ -32,6 +32,7 @@ const Topbar = ({ userProfile: { last_name, first_name } }) => {
 
       <ProfileModal />
       <TopbarModal />
+
     </div>
   )
 }
