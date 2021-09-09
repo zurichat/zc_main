@@ -7,7 +7,7 @@ import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
 
 import styles from '../styles/Topbar.module.css'
 import { TopbarContext } from '../context/Topbar'
-import StatusBadge from './StatusBadge'
+import StatusBadgeModal from './StatusBadgeModal'
 import { ProfileContext } from '../context/ProfileModal'
 import Preferences from './Preferences'
 import EditProfile from './EditProfile'
@@ -71,13 +71,13 @@ const TopbarModal = () => {
           </div>
 
           <div onClick={openStatus} className={styles.sectionTwo}>
-            <StatusBadge />
+            <StatusBadgeModal />
           </div>
 
           <div className={styles.sectionThree}>
             <p onClick={openStatus}>Set a status</p>
             <p onClick={() => setActive(!active)}>
-              {active ? 'Set yourself as away' : 'Set yourself as online'}
+              {active ? 'Set yourself as away' : 'Set yourself as active'}
             </p>
             <div className={styles.pause}>
               <p>Pause Notifications</p>
