@@ -74,7 +74,7 @@ const Login = () => {
               remember me
             </span>
             <span className={`${styles.right}`}>
-              Forgot password?<a href=""> {''}Get help signing in</a>
+              Forgot password?<a href="/"> {''}Get help signing in</a>
             </span>
           </div>
         </FormWrapper>
