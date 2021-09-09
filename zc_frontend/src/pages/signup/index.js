@@ -14,7 +14,7 @@ const Signup = () => {
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [tos, setTos] = useState(false)
-  const { error, setError } = useState('')
+  // const { error, setError } = useState('')
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -51,7 +51,7 @@ const Signup = () => {
             placeholder="John Doe"
             value={name}
             setValue={setName}
-            error={error}
+            // error={error}
           />
           <AuthInputBox
             className={`${styles.inputElement}`}
@@ -61,7 +61,7 @@ const Signup = () => {
             placeholder="johnDoe@example.com"
             value={email}
             setValue={setEmail}
-            error={error}
+            // error={error}
           />
           <AuthInputBox
             className={`${styles.inputElement}`}
@@ -71,7 +71,7 @@ const Signup = () => {
             placeholder="Enter your Password"
             value={password}
             setValue={setPassword}
-            error={error}
+            // error={error}
           />
           <AuthInputBox
             className={`${styles.inputElement}`}
@@ -81,7 +81,7 @@ const Signup = () => {
             placeholder="Enter your password"
             value={confirmPassword}
             setValue={setConfirmPassword}
-            error={error}
+            // error={error}
           />
           <div className={`${styles.tos}`}>
             <input
@@ -95,7 +95,8 @@ const Signup = () => {
             />
             <span className={`${styles.tosText}`}>
               I agree to Zurichat's {''}
-              <a href="">terms of services{''} </a>&<a href=""> {''}privacy</a>
+              <a href="/">terms of services{''} </a>&
+              <a href="/"> {''}privacy</a>
             </span>
           </div>
         </FormWrapper>

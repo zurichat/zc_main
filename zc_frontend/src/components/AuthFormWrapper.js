@@ -1,5 +1,5 @@
 import React from 'react'
-import AuthInputBox from './AuthInputBox'
+// import AuthInputBox from './AuthInputBox'
 import styles from '../styles/AuthFormWrapper.module.css'
 import logo from '../pages/images/logo.svg'
 import google from '../pages/images/google.svg'
@@ -31,7 +31,7 @@ const FormWrapper = ({
         <p className={`${styles.subHeader}`}>{subHeader}</p>
       </div>
       <div className={`${styles.googleBtn}`}>
-        <a href="" className="google">
+        <a href="/" className="google">
           <img src={google} alt="google" />
           {googleHeader}
         </a>
@@ -60,7 +60,7 @@ const FormWrapper = ({
         <span>
           {bottomLine}
           {''}
-          <a className={`${styles.bottomLink}`} href="">
+          <a className={`${styles.bottomLink}`} href="/">
             {''} {bottomLink}
           </a>
         </span>
