@@ -9,7 +9,7 @@ on:
 
 jobs:
   prettier:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - name: Checkout
@@ -30,7 +30,7 @@ jobs:
   fe_eslint:
     needs: prettier
 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - name: Checkout
@@ -58,7 +58,7 @@ jobs:
   be_eslint:
     needs: fe_eslint
 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - name: Checkout
