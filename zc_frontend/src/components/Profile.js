@@ -5,46 +5,11 @@ import avatar from '../assets/avatar.png'
 import twitter from '../assets/twitter.svg'
 import linkedin from '../assets/linkedin.svg'
 import instagram from '../assets/instagram.svg'
-import { Link } from 'react-router-dom'
 import { ProfileContext } from '../context/ProfileModal'
 import { TopbarContext } from '../context/Topbar'
 import EditProfile from './EditProfile'
 import Preferences from './Preferences'
-
-const Dropdown = () => {
-  const { toggleModalState } = useContext(ProfileContext)
-  const [modal, setModal] = useState('')
-  const [active, setActive] = useState(true)
-  return (
-    <>
-      <div className={styles.profileDropDown}>
-        <div className={styles.topSection}>
-          <p
-            onClick={() => {
-              setModal(() => 'preference')
-              toggleModalState()
-            }}
-            className={styles.paragraph}
-          >
-            View preferences
-          </p>
-          <p className={styles.paragraph}>View your files</p>
-          <p onClick={() => setActive(!active)} className={styles.paragraph}>
-            Set yourself away
-          </p>
-        </div>
-        <div className={styles.bottomSection}>
-          <p className={styles.paragraphNull}>Copy member ID</p>
-          <small className={styles.small}>U031203013</small>
-          <Link to="/settings">
-            <p className={styles.paragraphNull}>Account settings</p>
-          </Link>
-        </div>
-      </div>
-      {modal === 'preference' && <Preferences />}
-    </>
-  )
-}
+import {Dropdown} from './ProfileMore'
 
 const Profile = () => {
   const { toggleModalState, showProfile, toggleProfileState } =
