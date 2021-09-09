@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+ 
+
+#authPageWrapper {
+  font-family: 'Lato', sans-serif;
+  margin-block: 0;
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  font-style: normal;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#authAsideContainer,
+#authImageWrapper,
+#authFormContainer,
+#authImageWrapper img {
+  height: inherit;
+}
+
+#authAsideContainer {
+  width: 43%;
+  color: #fff;
+}
+
+#authFormContainer {
+  width: 57%;
+  overflow-y: scroll;
+}
+
+#authImageWrapper {
+  width: 100%;
+}
+
+#authImageWrapper img {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+/* #aside_txt {
+  width: 38%;
+  position: absolute;
+  top: 25%;
+  transform: translateY(-25%);
+  display: block;
+  text-align: center;
+}
+
+#aside_txt h4 {
+  color: #ffffffcc;
+  font-weight: 700;
+  font-size: 2.3rem;
+  line-height: 2.5rem;
+}
+
+#aside_txt p {
+  padding-top: 1.2rem;
+  color: #fff;
+  font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+} */
+
+#authFormContainer {
+  /* padding-inline: 1rem; */
+}
+
+.tos{
+  position: relative;
+  font-size: 12px;
+  line-height: 1.5rem;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.tos .checkBox{ 
+  position: relative;
+  margin-right: 8px;
+  height: 15px;
+  width: 15px;
+  border-radius: 10px;
+  border-color: rgb(0, 0, 0, 0.25);
+  cursor: pointer;
+  top:3px;
+}
+
+.tosText{
+  font-size: 10px;
+}
+
+.tosText a{
+  color: #DC0037;
+}
+
+/* Media Query 1440px and Smaller */
+/* @media only screen and (max-width: 1440px) {
+  #aside_txt h4 {
+    font-size: 2rem;
+    line-height: 2.3rem;
+  }
+
+  #aside_txt p {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+} */
+
+/* Media Query 1170px and Smaller
+@media only screen and (max-width: 1170px) {
+  #aside_txt h4 {
+    font-size: 1.8rem;
+    line-height: 2rem;
+  }
+
+  #aside_txt p {
+    font-size: 1.15rem;
+    line-height: 1.4rem;
+  }
+} */
+
+/* Media Query 1080px and Smaller */
+@media only screen and (max-width: 768px) {
+  .display_none {
+    display: none;
+  }
+
+  #authFormContainer {
+    padding-inline: 3%;
+  }
+
+  #authFormContainer {
+    width: 100%;
+    overflow-y: scroll;
+  }
+
+}
