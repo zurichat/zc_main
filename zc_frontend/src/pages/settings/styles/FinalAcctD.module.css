@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+.bottomform {
+  width: 55%;
+  height: 0%;
+}
+
+button {
+  background-color: red;
+  height: 35px;
+  width: 30%;
+  border-radius: 0.5em;
+  margin-left: 10%;
+  margin-bottom: 0%;
+  position: relative;
+}
+.social-left {
+  position: relative;
+  display: block;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(240, 235, 235);
+
+  padding: 1.5em 18.5em 1.8em 5em;
+  /* padding: 1.5em 16.5em 1.8em 5em; */
+}
+
+.social-left {
+  flex-direction: column;
+  padding: 1.5em 12em 1.8em 3em;
+  line-height: 17px;
+  max-width: 100%;
+}
+
+.container {
+  display: flex; /* or inline-flex */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.container.bottom {
+  display: flex; /* or inline-flex */
+}
+
+/*mediaQueries responsiveness incase my viewport tags mess up */
+/* For tablets */
+@media (max-width:768px){
+ .social-left{
+   max-width: 100%;
+   font-size: 17px;
+   padding: 1.5em 12em 1.8em 3em;
+ }
+.container{
+  max-width: 100%;
+  font-size: 15px;
+}
+
+.button {
+  
+  height: 35px;
+  width: 30%;
+  border-radius: 0.5em;
+  margin-left: 10%;
+  margin-bottom: 0%;
+}
+}
+ 
+
+
+@media only screen and (max-width: 600px) {
+  /* CSS for tablets here */
+  .container {
+    max-width: 100%;
+    font-size: 15px;
+  }
+  .social-left {
+    max-width: 100%;
+    font-size: 15px;
+    padding: 1.5em 10em 1.8em 3em;
+}
+.button {
+  
+  height: 30px;
+  width: 30%;
+  border-radius: 0.5em;
+  margin-left: 10%;
+  margin-bottom: 0%;
+}
+}
+
+
+@media only screen and (max-width: 425px) {
+  /* CSS for for laptops / small screen desktops column */
+  .container {
+    max-width: 100%;
+    font-size: 15px;
+  }
+  .social-left {
+    max-width: 100%;
+    font-size: 15px;
+    padding: .8em 10em 1.8em 2em;
+        
+    }
+    .button {
+  
+      height: 30px;
+      width: 25%;
+      border-radius: 0.5em;
+      margin-left: 10%;
+      margin-bottom: 0%;
+    }
+    }
+
+
+
+@media only screen and (max-width: 320px) {
+  
+  .container {
+    max-width: 100%;
+  }
+  .social-left {
+    max-width: 100%;
+    font-size: 15px;
+    padding: .5em 10em 1.8em 1.5em;
+        
+    }
+    .button {
+  
+      height: 35px;
+      width: 30%;
+      border-radius: 0.5em;
+      margin-left: 10%;
+      margin-bottom: 0%;
+    }
+    }
+  
