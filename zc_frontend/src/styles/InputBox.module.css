@@ -17,14 +17,14 @@
   height: 2.3rem;
   padding: 10px;
   outline: none;
-  border: 1px solid #BEBEBE;
+  border: 1px solid #bebebe;
   font-size: 16px;
   letter-spacing: 1px;
   color: #607d8b;
   margin-bottom: 5px;
 }
 
-.InputElement::-webkit-input-placeholder{
+.InputElement::-webkit-input-placeholder {
   font-size: 12px;
 }
 
