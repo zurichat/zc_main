@@ -15,6 +15,17 @@ export const AuthHeader = () => {
   )
 }
 
+export const AuthLoginText = () => {
+  return (
+    <div>
+      <h3 className={style.loginHeader}>Log in</h3>
+      <p className={style.loginText}>
+        Login with the data you entered during your registration
+      </p>
+    </div>
+  )
+}
+
 export const AuthFooter = () => {
   return (
     <footer className={style.footer}>
@@ -23,6 +34,9 @@ export const AuthFooter = () => {
       </Link>
       <Link className={style.policy} to="/" replace={true}>
         <small>Legal Policy</small>
+      </Link>
+      <Link className={style.zurichat} to="/" replace={true}>
+        <small>About Zurichat</small>
       </Link>
     </footer>
   )
