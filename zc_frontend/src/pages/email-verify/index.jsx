@@ -33,7 +33,7 @@ export default function EmailVerification() {
       </div>
 
       <p>Code expired?</p>
-      <Link to="" className={styles.request}>
+      <Link to="/home" className={styles.request}>
         Click here to request a new code!
       </Link>
     </div>
