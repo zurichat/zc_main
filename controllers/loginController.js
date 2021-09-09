@@ -1,4 +1,5 @@
 const { createJwt } = require('../lib/jwtHelper.js')
+const bcrypt = require("bcrypt")
 
 // Dummy database
 const dummyDB = [
@@ -24,7 +25,7 @@ const dummyDB = [
 module.exports.dummyDB = dummyDB
 
 const controllers = () => {
-  const handleLogin = (req, res) => {
+  const handleLogin = async (req, res) => {
     const { email, password } = req.body
     // find user in db
     const user = dummyDB.find(x => x.email === email)
@@ -43,6 +44,13 @@ const controllers = () => {
       })
     }
 
+
+    // hash user password
+    const salt = await bcrypt.genSalt(10)
+    const hashedPassword = await bcrypt.hash(req.body.password, salt)
+
+    console.log(password, hashedPassword)
+
     // generate the tokens
     const token = createJwt(user.id)
 
@@ -56,9 +64,11 @@ const controllers = () => {
       message: 'login sucessful',
       data: {
         token,
-        userCopy
+        userCopy,
+        password: hashedPassword
       }
     })
+
   }
   const login = (_, res) => {
     const user = dummyDB[0]
