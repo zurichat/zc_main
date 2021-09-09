@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react'
 
 // react icons
-import { FaChevronRight, FaTimes, FaCircle } from 'react-icons/fa'
+import { FaChevronRight, FaTimes,  } from 'react-icons/fa'
 
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
 
@@ -58,13 +58,13 @@ const TopbarModal = () => {
               <h4>Praise.A</h4>
               {active ? (
                 <div className={styles.online}>
-                  <FaCircle className={styles.circle} />
-                  <p>Active</p>
+                  <div className={styles.circle} />
+                  <p >Active</p>
                 </div>
               ) : (
                 <div className={styles.online}>
-                  <FaCircle className={styles.circlegrey} />
-                  <p>Away</p>
+                  <div className={styles.circlegrey} />
+                  <p style={{marginLeft: '14px'}} >Away</p>
                 </div>
               )}
             </div>
@@ -90,8 +90,8 @@ const TopbarModal = () => {
           <div className={styles.sectionFour}>
             <p
               onClick={() => {
-                toggleModalState()
                 setModal('edit profile')
+                toggleModalState()
               }}
             >
               Edit profile
@@ -99,8 +99,8 @@ const TopbarModal = () => {
             <p onClick={toggleProfileState}>View profile</p>
             <p
               onClick={() => {
-                toggleModalState()
                 setModal('preference')
+                toggleModalState()
               }}
             >
               Preferences
