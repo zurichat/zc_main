@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
- 
-
 #authPageWrapper {
   font-family: 'Lato', sans-serif;
   margin-block: 0;
@@ -71,7 +69,7 @@
   /* padding-inline: 1rem; */
 }
 
-.tos{
+.tos {
   position: relative;
   font-size: 12px;
   line-height: 1.5rem;
@@ -79,7 +77,7 @@
   margin: 10px 0;
 }
 
-.tos .checkBox{ 
+.tos .checkBox {
   position: relative;
   margin-right: 8px;
   height: 15px;
@@ -87,15 +85,15 @@
   border-radius: 10px;
   border-color: rgb(0, 0, 0, 0.25);
   cursor: pointer;
-  top:3px;
+  top: 3px;
 }
 
-.tosText{
+.tosText {
   font-size: 10px;
 }
 
-.tosText a{
-  color: #DC0037;
+.tosText a {
+  color: #dc0037;
 }
 
 /* Media Query 1440px and Smaller */
@@ -138,5 +136,4 @@
     width: 100%;
     overflow-y: scroll;
   }
-
 }
