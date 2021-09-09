@@ -7,6 +7,7 @@ export const ProfileProvider = ({ children }) => {
 
   const toggleModalState = () => {
     setModal(!modal)
+    console.log(modal);
   }
 
   const toggleProfileState = () => {

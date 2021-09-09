@@ -116,7 +116,7 @@ label {
   margin-right: auto;
 }
 
-.save {
+.subContainer .mxAuto .save {
   border-radius: 5px;
   width: auto;
   transition-property: background-color, border-color, color, fill, stroke,
@@ -129,19 +129,22 @@ label {
   color: #fff;
   font-size: 13px;
   padding: 10px;
+  /* font-weight: 400; */
 }
 .save:hover {
   background: #1160c7;
 }
-.deleteImage {
+.subContainer .deleteImage {
   margin-top: 1rem /* 16px */;
   padding: 0.75rem /* 12px */;
   outline: none;
   border: none;
   --tw-text-opacity: 1;
   color: rgba(107, 114, 128, var(--tw-text-opacity));
-  background-color: transparent;
+  background-color: transparent ;
   font-size: 15px;
+  font-weight: 400;
+  width: auto;
 }
 .tagContainer {
   display: flex;
@@ -227,9 +230,10 @@ label {
   display: flex;
   text-align: center;
   justify-content: flex-end;
+  /* justify-content: space-between; */
 }
 
-.cancel {
+.formFooter .cancel {
   padding: 0.75rem /* 12px */;
   margin-right: 1rem /* 16px */;
   outline: none;
@@ -239,6 +243,23 @@ label {
   --tw-text-opacity: 1;
   color: rgba(156, 163, 175, var(--tw-text-opacity));
 }
+.formFooter .saveChange{
+  border-radius: 5px;
+  width: auto;
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  background: #2f80ed;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 13px;
+  padding: 10px;
+  /* font-weight: 400; */
+
+}
+
 /* button {
   font-size: 12px;
   line-height: 21px;
