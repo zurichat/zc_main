@@ -60,6 +60,7 @@
   font-weight: 700;
   font-size: 1.2rem;
   position: sticky;
+  z-index: 100;
 
   top: 0;
   left: 0;
