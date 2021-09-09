@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import styles from '../../styles/Signup.module.css'
-import AuthInputBox from '../../components/AuthInputBox'
 import FormWrapper from '../../components/AuthFormWrapper'
 
 
@@ -40,7 +39,7 @@ const SignUp = () => {
         placeholder="Enter your name"
         value={name}
         setValue={setName}
-        error="Sorry, this email does not exist. Try again or click Create an account to sign up with us."
+        error="Sorry, this email does not exist."
       />
       <AuthInputBox
         className={`${styles.inputElement}`}
@@ -50,7 +49,7 @@ const SignUp = () => {
         placeholder="Enter your email address"
         value={email}
         setValue={setEmail}
-        error="Sorry, this email does not exist. Try again or click Create an account to sign up with us."
+        error="Sorry, this email does not exist."
       />
       <AuthInputBox
         className={`${styles.inputElement}`}
@@ -60,7 +59,7 @@ const SignUp = () => {
         placeholder="Enter your Password"
         value={password}
         setValue={setPassword}
-        error="Sorry, this email does not exist. Try again or click Create an account to sign up with us."
+        error="Sorry, this email does not exist"
       />
       <AuthInputBox
         className={`${styles.inputElement}`}
@@ -94,4 +93,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+//export default SignUp

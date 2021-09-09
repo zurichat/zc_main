@@ -1,7 +1,6 @@
 import React, { Children } from 'react'
 import AuthInputBox from './AuthInputBox'
 import styles from '../styles/AuthFormWrapper.module.css'
-import {Button} from 'react-bootstrap'
 import logo from '../pages/images/logo.svg'
 import google from '../pages/images/google.svg'
 import chevron from '../pages/images/chevron.svg'
@@ -37,15 +36,20 @@ const FormWrapper = ({
     <div className={`${styles.googleBtn}`}>
      <a href="" className="google"><img src={google} alt="google"/>{googleHeader}</a>
     </div>
-    <div className={`${styles.topLine}`}>
-    {topLineText}
+    <div >
+      <span className={`${styles.topLine}`}>
+      {topLineText}
+      </span>
     </div>
     <form
       className={`${styles.form}`}
       onSubmit={handleSubmit}
        method = "post"
     >
+    <div className={`${styles.inputSection}`} >
       {children}
+
+    </div>
 
       <div className={`${styles.btnContainer}`}>
        <button
@@ -58,8 +62,8 @@ const FormWrapper = ({
       </div>
     </form>
     <div className={`${styles.bottomLine}`}>
-      <span>{bottomLine}
-        <a className={`${styles.bottomLink}`} href="">{bottomLink}</a>
+      <span>{bottomLine}{''}
+        <a className={`${styles.bottomLink}`} href="">{''} {bottomLink}</a>
         </span>
     </div>
     <div className={`${styles.footer}`}>
@@ -70,9 +74,7 @@ const FormWrapper = ({
       Legal Policy
     </a>
     <a href="/" className={`${styles.footer_a}`}>
-      <img src={globe} alt="globe" />
-      &nbsp; change Region
-      <img src={chevron} alt="arrow" />
+      About Zurichat
     </a>
     </div>
     </section>
