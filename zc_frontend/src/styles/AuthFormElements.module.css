@@ -34,7 +34,6 @@
   color: #fff;
 }
 
-
 #authImageWrapper {
   width: 100%;
 }
@@ -45,7 +44,6 @@
   top: 0;
   left: 0;
 }
-
 
 #authFormContainer {
   display: flex;
@@ -98,25 +96,22 @@
   cursor: pointer;
   top: 3px;
 }
- 
 
-.rememberMe a{
+.rememberMe a {
   color: #00b87c;
 }
 
-.rememberMe .left{
+.rememberMe .left {
   display: block;
-  float:left;
+  float: left;
   width: auto;
 }
 
-.rememberMe .right{
-  display:  block;
-  float:right;
+.rememberMe .right {
+  display: block;
+  float: right;
   width: auto;
 }
-
-
 
 /* Media Query 768px and Smaller */
 @media only screen and (max-width: 768px) {

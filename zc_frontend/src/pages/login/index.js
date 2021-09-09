@@ -62,20 +62,20 @@ const Login = () => {
           />
 
           <div className={`${styles.rememberMe}`}>
-          <span className={`${styles.left}`} > 
-            <input
-              className={`${styles.checkBox}`}
-              name="RememeberMe"
-              type="checkbox"
-              value={rememberMe}
-              onClick={() => {
-                setRememberMe(!rememberMe)
-              }}
-            />
-            remember me
+            <span className={`${styles.left}`}>
+              <input
+                className={`${styles.checkBox}`}
+                name="RememeberMe"
+                type="checkbox"
+                value={rememberMe}
+                onClick={() => {
+                  setRememberMe(!rememberMe)
+                }}
+              />
+              remember me
             </span>
             <span className={`${styles.right}`}>
-            Forgot password?<a href=""> {''}Get help signing in</a>
+              Forgot password?<a href=""> {''}Get help signing in</a>
             </span>
           </div>
         </FormWrapper>

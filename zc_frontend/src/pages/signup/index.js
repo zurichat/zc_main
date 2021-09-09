@@ -9,14 +9,13 @@ import styles from '../../styles/AuthFormElements.module.css'
 // import styles from './styles/SignUp.module.css'
 //import GoogleLogin from 'react-google-login'
 
-
 const Signup = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [tos, setTos] = useState(false)
-  const {error, setError} = useState('')
+  const { error, setError } = useState('')
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -96,14 +95,12 @@ const Signup = () => {
             />
             <span className={`${styles.tosText}`}>
               I agree to Zurichat's {''}
-              <a href="">terms of services{''} </a>
-              &
-              <a href=""> {''}privacy</a>
+              <a href="">terms of services{''} </a>&<a href=""> {''}privacy</a>
             </span>
           </div>
         </FormWrapper>
       </section>
- </main>
+    </main>
   )
 }
 

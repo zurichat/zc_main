@@ -25,7 +25,6 @@ const InputBox = ({
     ref.current.type = passwordVisible ? 'text' : 'password'
   }
 
-
   return (
     <>
       <div className={`${styles.InputContainer} ${className}`}>
@@ -33,13 +32,13 @@ const InputBox = ({
           {name}
         </label>
 
-        <div
-          className={`${styles.InputWrapper}`}
-        >
+        <div className={`${styles.InputWrapper}`}>
           <input
             id={id}
             ref={ref}
-            className={`${styles.InputElement} ${ error ? "" : styles.is_invalid}`}
+            className={`${styles.InputElement} ${
+              error ? '' : styles.is_invalid
+            }`}
             name={name}
             type={type}
             placeholder={placeholder}
