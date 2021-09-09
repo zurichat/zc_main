@@ -1,6 +1,6 @@
 import { useContext, Fragment } from 'react'
 import useSWR from 'swr'
-import { URLContext } from '../contexts/Url'
+import { URLContext } from '../context/Url'
 
 import styles from '../styles/Sidebar.module.css'
 import Dropdown from './Dropdown'

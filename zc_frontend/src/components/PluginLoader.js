@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
-import { PluginLoaderContext } from '../contexts/PluginLoaderState'
+import { useContext, useEffect, useRef, useState } from 'react'
+import { PluginLoaderContext } from '../context/PluginLoaderState'
 import styles from '../styles/PluginLoader.module.css'
 
 const PluginLoader = () => {
