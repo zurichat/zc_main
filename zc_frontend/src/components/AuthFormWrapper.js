@@ -27,8 +27,8 @@ const FormWrapper = ({
         <img src={logo} alt="zuri" />
       </div>
       <div className={`${styles.headers}`}>
-      <h1 className={`${styles.header}`}>{header}</h1>
-      <p className={`${styles.subHeader}`}>{subHeader}</p>
+        <h1 className={`${styles.header}`}>{header}</h1>
+        <p className={`${styles.subHeader}`}>{subHeader}</p>
       </div>
       <div className={`${styles.googleBtn}`}>
         <a href="" className="google">
