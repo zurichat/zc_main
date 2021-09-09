@@ -37,7 +37,7 @@
 }
 
 .emailLink {
-  color: #00B87C !important;
+  color: #00b87c !important;
   /* font-size: 12px; */
   text-decoration: none;
 }
@@ -54,7 +54,7 @@
   -ms-transition: all 0.5s ease-out;
   -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
-  font-weight:600;
+  font-weight: 600;
 }
 
 .settingsright .signout {
@@ -112,7 +112,7 @@
 }
 
 .two_factor p a {
-  color: #00B87C;
+  color: #00b87c;
 }
 
 .two_factor button {
