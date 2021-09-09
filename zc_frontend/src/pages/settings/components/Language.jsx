@@ -3,9 +3,7 @@ import Languages from '../constants/Language'
 import styles from '../styles/SettingsTab.module.css'
 
 const Language = () => {
-  const result = Languages.map(item => (
-    <option>{item}</option>
-  ))
+  const result = Languages.map(item => <option>{item}</option>)
 
   return (
     <div className={styles.passwordsection}>

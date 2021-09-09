@@ -1,6 +1,5 @@
-
 const Language = [
-' Albanian-shqip',
+  ' Albanian-shqip',
   ' Amharic - አማርኛ ',
   ' Arabic - العربية',
   ' Aragonese - aragonés',

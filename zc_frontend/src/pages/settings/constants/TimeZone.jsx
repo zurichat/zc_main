@@ -1,4 +1,3 @@
-
 const TimeZone = [
   '(UTC+01:00) West Central Africa',
   '(GMT -12:00) Eniwetok, Kwajalein',
