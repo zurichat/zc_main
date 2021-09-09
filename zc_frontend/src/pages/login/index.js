@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import authBg from '../../pages/images/backg.svg'
-import logo from '../../pages/images/zuri.svg'
 import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
 import FormWrapper from '../../components/AuthFormWrapper'
