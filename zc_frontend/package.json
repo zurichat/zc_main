@@ -24,6 +24,7 @@
     "react-scripts": "^4.0.3",
     "react-tabs": "^3.2.2",
     "react-timezone-select": "^1.0.7",
+    "react-verification-code-input": "^1.2.9",
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0",
     "swr": "^1.0.0",
