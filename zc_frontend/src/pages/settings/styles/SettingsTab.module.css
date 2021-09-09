@@ -60,11 +60,11 @@
 .settingsright .signout {
   background: #f40101;
   color: white;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .settingsright .delete {
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .settings_wrapper {
@@ -72,6 +72,7 @@
 }
 
 /* THE SECTION OF THE PASSWORD */
+
 .passwordsection button {
   font-size: 13px;
   padding: 10px 22px;
@@ -101,6 +102,7 @@
   font-size: 13px;
   padding: 9px;
   color: #8c8c8c;
+  width:130%;
 }
 
 /* THE SECTION OF THE TWO FACTOR */
@@ -109,6 +111,7 @@
   width: 60%;
   margin-top: 10px;
   line-height: 20px;
+  color:#3a3a3a;
 }
 
 .two_factor p a {
@@ -152,7 +155,6 @@
   .passwordsection input,
   .passwordsection select {
     width: 100% !important;
-    /* display: none !important; */
   }
 
   .two_factor button {
