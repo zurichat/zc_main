@@ -7,7 +7,7 @@ const ChangeEmail = () => {
       <form class="row d-flex flex-column">
         <div class="col-md-5">
           <label for="firstname" class="form-label">
-            Current password
+            Current Email
           </label>
           <input type="password" class="form-control" required />
         </div>
