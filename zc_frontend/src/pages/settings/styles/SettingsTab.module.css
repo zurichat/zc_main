@@ -154,8 +154,8 @@
     /* display: none !important; */
   }
 
-  .two_factor button{
-    padding:10px 25px;
+  .two_factor button {
+    padding: 10px 25px;
   }
 
   .two_factor p {
@@ -166,5 +166,4 @@
     font-size: 12px;
     width: 95%;
   }
-
 }
