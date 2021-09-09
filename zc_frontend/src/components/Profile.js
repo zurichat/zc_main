@@ -9,7 +9,7 @@ import { ProfileContext } from '../context/ProfileModal'
 import { TopbarContext } from '../context/Topbar'
 import EditProfile from './EditProfile'
 import Preferences from './Preferences'
-import {Dropdown} from './ProfileMore'
+import { Dropdown } from './ProfileMore'
 
 const Profile = () => {
   const { toggleModalState, showProfile, toggleProfileState } =
@@ -17,7 +17,6 @@ const Profile = () => {
   const state = useContext(TopbarContext)
   const [dropdown, setDropdown] = useState(false)
   const [modal, setModal] = useState('')
-
 
   return (
     <div className={showProfile ? styles.container : styles.containerNone}>
@@ -80,7 +79,6 @@ const Profile = () => {
               setModal(() => 'edit profile')
               toggleModalState()
             }}
-            
           >
             <svg
               viewBox="0 0 12 12"
