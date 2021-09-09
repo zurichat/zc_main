@@ -18,7 +18,6 @@ export const TopbarProvider = ({ children }) => {
   const closeModal = e => {
     if (modalRef.current === e.target) {
       setShowModal(false)
-      console.log('close')
     }
   }
 

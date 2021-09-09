@@ -14,10 +14,9 @@ const Home = () => {
       <div className={styles.container}>
         <Sidebar />
         <ProfileProvider>
-          <div className={styles.room}>
             <TopbarProvider>
+          <div className={styles.room}>
               <Topbar />
-            </TopbarProvider>
             <div className={styles.spaceWrapper}>
               <div className={styles.pluginContent}>
                 <PluginLoaderProvider>
@@ -27,6 +26,7 @@ const Home = () => {
               <Profile />
             </div>
           </div>
+            </TopbarProvider>
         </ProfileProvider>
       </div>
     </UrlProvider>
