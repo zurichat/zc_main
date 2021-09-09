@@ -14,7 +14,8 @@ const Login = () => {
   const [rememberMe, setRememberMe] = useState('')
 
   const handleSubmit = e => {
-    e.preventDefault()
+    // e.preventDefault()
+    console.log("work")
   }
 
   return (

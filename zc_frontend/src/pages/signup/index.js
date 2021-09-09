@@ -17,7 +17,7 @@ const Signup = () => {
   const { error, setError } = useState('')
 
   const handleSubmit = e => {
-    e.preventDefault()
+    // e.preventDefault()
   }
 
   return (

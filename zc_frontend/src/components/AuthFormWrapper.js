@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{Component} from 'react'
 import AuthInputBox from './AuthInputBox'
 import styles from '../styles/AuthFormWrapper.module.css'
 import logo from '../pages/images/logo.svg'
@@ -27,8 +27,8 @@ const FormWrapper = ({
         <img src={logo} alt="zuri" />
       </div>
       <div className={`${styles.headers}`}>
-      <h1 className={`${styles.header}`}>{header}</h1>
-      <p className={`${styles.subHeader}`}>{subHeader}</p>
+        <h1 className={`${styles.header}`}>{header}</h1>
+        <p className={`${styles.subHeader}`}>{subHeader}</p>
       </div>
       <div className={`${styles.googleBtn}`}>
         <a href="" className="google">
@@ -39,21 +39,18 @@ const FormWrapper = ({
       <div>
         <span className={`${styles.topLine}`}>{topLineText}</span>
       </div>
-      <form className={`${styles.form}`} onSubmit={handleSubmit} method="post">
+      <form className={`${styles.form}`}  onSubmit={handleSubmit} method="post" action="">
         <div className={`${styles.inputSection}`}>{children}</div>
 
         <div className={`${styles.btnContainer}`}>
-          <button
+          <input
+          type="submit"
+          value={submitButtonName}
             className={`${
               name || email || password || check
                 ? styles.btn
                 : styles.btnDisabled
-            }`}
-            type="submit"
-            disabled={!name || !email || !password || !check}
-          >
-            {submitButtonName}
-          </button>
+            }`} />
         </div>
       </form>
       <div className={`${styles.bottomLine}`}>
