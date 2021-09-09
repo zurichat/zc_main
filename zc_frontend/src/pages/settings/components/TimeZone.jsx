@@ -1,11 +1,9 @@
 import React from 'react'
 import styles from '../styles/SettingsTab.module.css'
-import TimeZones from "../constants/TimeZone"
+import TimeZones from '../constants/TimeZone'
 
 const TimeZone = () => {
-  const result = TimeZones.map(item => (
-    <option>{item}</option>
-  ))
+  const result = TimeZones.map(item => <option>{item}</option>)
   return (
     <div className={styles.passwordsection}>
       <form class="row d-flex flex-column">

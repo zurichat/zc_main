@@ -102,7 +102,7 @@
   font-size: 13px;
   padding: 9px;
   color: #8c8c8c;
-  width:130%;
+  width: 130%;
 }
 
 /* THE SECTION OF THE TWO FACTOR */
@@ -111,7 +111,7 @@
   width: 60%;
   margin-top: 10px;
   line-height: 20px;
-  color:#3a3a3a;
+  color: #3a3a3a;
 }
 
 .two_factor p a {
