@@ -111,9 +111,9 @@
   border-radius: 50%;
   background: #dbdada;
 }
-
+ 
 .circles {
-  background: green;
+  background: #00b87c;
   height: 7px;
   width: 7px;
   position: absolute;
