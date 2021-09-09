@@ -18,7 +18,16 @@
   justify-content: center;
   align-items: center;
 }
-
+.modal {
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  z-index: 999;
+}
 #authAsideContainer,
 #authImageWrapper,
 #authFormContainer,
