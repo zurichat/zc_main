@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import { useContext, useState } from 'react'
 
 // react icons
 import { FaChevronRight, FaTimes, FaCircle } from 'react-icons/fa'
@@ -6,9 +6,9 @@ import { FaChevronRight, FaTimes, FaCircle } from 'react-icons/fa'
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
 
 import styles from '../styles/Topbar.module.css'
-import { TopbarContext } from '../contexts/Topbar'
+import { TopbarContext } from '../context/Topbar'
 import StatusBadge from './StatusBadge'
-import { ProfileContext } from '../contexts/ProfileModal'
+import { ProfileContext } from '../context/ProfileModal'
 import Preferences from './Preferences'
 import EditProfile from './EditProfile'
 
@@ -85,7 +85,7 @@ const TopbarModal = () => {
             </div>
           </div>
 
-          <hr />
+          <hr className={styles.hr} />
 
           <div className={styles.sectionFour}>
             <p
@@ -103,15 +103,21 @@ const TopbarModal = () => {
                 setModal('preference')
               }}
             >
-              Preference
+              Preferences
             </p>
+          </div>
+
+          <hr className={styles.hr} />
+
+          <div className={styles.sectionSix}>
+            <p>Downloads</p>
           </div>
 
           {modal === 'edit profile' && <EditProfile />}
 
           {modal === 'preference' && <Preferences />}
 
-          <hr />
+          <hr className={styles.hr} />
 
           <div className={styles.sectionFive}>
             <p>Sign out of Team Einstein workspace</p>
