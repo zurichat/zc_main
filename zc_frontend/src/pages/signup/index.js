@@ -1,69 +1,108 @@
-import styles from '../../styles/Signup.module.css'
+import React, { useState } from 'react'
+// import { Link } from 'react-router-dom'
+import authBg from '../../pages/images/backg.svg'
+import { withRouter } from 'react-router-dom'
+import AuthInputBox from '../../components/AuthInputBox'
+import FormWrapper from '../../components/AuthFormWrapper'
+import styles from '../../styles/AuthFormElements.module.css'
+// import styles from './styles/SignUp.module.css'
+//import GoogleLogin from 'react-google-login'
 
-const Login = () => {
-  /**
-   * @param password {string} - password to test
-   * @param okay_length {number} - minimum length of password (defaults to 0)
-   *
-   * @return {{valid: boolean, msg: string, short: `length` | `special` | `number` | `lower` | `upper` | `okay`}}
-   */
-  const passwordCheck = (password, okay_length = 0) => {
-    /** Check if password meets required length */
-    if (password.length < okay_length)
-      return { valid: false, msg: `password is too short`, short: `length` }
+const Signup = () => {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+  const [tos, setTos] = useState(false)
+  // const { error, setError } = useState('')
 
-    /** Special Character regex */
-    const special_characters = /[ `!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~]/
-    /** Check if password contains a special character */
-    if (!special_characters.test(password))
-      return {
-        valid: false,
-        msg: `password must contain a special character`,
-        short: `special`
-      }
-
-    /** Check if password contains a special character */
-    const number_regex = /[0-9]/
-    if (!number_regex.test(password))
-      return {
-        valid: false,
-        msg: `password must contain a number`,
-        short: `number`
-      }
-
-    /** Check if password contains a lowercase character */
-    const lowercase_regex = /[a-z]/
-    if (!lowercase_regex.test(password))
-      return {
-        valid: false,
-        msg: `password must contain a lowercase letter`,
-        short: `lower`
-      }
-
-    /** Check if password contains an uppercase character */
-    const uppercase_regex = /[A-Z]/
-    if (!uppercase_regex.test(password))
-      return {
-        valid: false,
-        msg: `password must contain an uppercase letter`,
-        short: `upper`
-      }
-
-    return { valid: true, msg: `password is okay`, short: `okay` }
+  const handleSubmit = e => {
+    e.preventDefault()
   }
 
   return (
-    <>
-      <div>This is signup page</div>
-      <button
-        type="submit"
-        className={styles.signup_btn}
-        onClick={passwordCheck}
-      >
-        Sign up
-      </button>
-    </>
+    <main id={styles.authPageWrapper}>
+      <aside id={styles.authAsideContainer} className={styles.display_none}>
+        <div id={styles.authImageWrapper}>
+          <img src={authBg} alt="backgroundImage" />
+          <div id={styles.aside_txt}></div>
+        </div>
+      </aside>
+      <section id={styles.authFormContainer}>
+        <FormWrapper
+          header="Create Account"
+          subHeader=""
+          googleHeader="Sign up with Google"
+          topLineText="OR"
+          submitButtonName="Sign up"
+          name={name}
+          email={email}
+          password={password}
+          check={tos}
+          handleSubmit={handleSubmit}
+          bottomLine="Already have an account?"
+          bottomLink="Log in"
+        >
+          <AuthInputBox
+            className={`${styles.inputElement}`}
+            id="name"
+            name="Full name"
+            type="text"
+            placeholder="John Doe"
+            value={name}
+            setValue={setName}
+            // error={error}
+          />
+          <AuthInputBox
+            className={`${styles.inputElement}`}
+            id="email"
+            name="Email address"
+            type="email"
+            placeholder="johnDoe@example.com"
+            value={email}
+            setValue={setEmail}
+            // error={error}
+          />
+          <AuthInputBox
+            className={`${styles.inputElement}`}
+            id="password"
+            name="Password"
+            type="password"
+            placeholder="Enter your Password"
+            value={password}
+            setValue={setPassword}
+            // error={error}
+          />
+          <AuthInputBox
+            className={`${styles.inputElement}`}
+            id="cpassword"
+            name="Confirm password"
+            type="password"
+            placeholder="Enter your password"
+            value={confirmPassword}
+            setValue={setConfirmPassword}
+            // error={error}
+          />
+          <div className={`${styles.tos}`}>
+            <input
+              className={`${styles.checkBox}`}
+              name="tos"
+              type="checkbox"
+              value={tos}
+              onClick={() => {
+                setTos(!tos)
+              }}
+            />
+            <span className={`${styles.tosText}`}>
+              I agree to Zurichat's {''}
+              <a href="/">terms of services{''} </a>&
+              <a href="/"> {''}privacy</a>
+            </span>
+          </div>
+        </FormWrapper>
+      </section>
+    </main>
   )
 }
 
-export default Login
+export default withRouter(Signup)
