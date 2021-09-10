@@ -45,6 +45,15 @@
   right: 0;
   border-radius: 50%;
 }
+.circleAway {
+  background: grey;
+  height: 7px;
+  width: 7px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+}
 
 .topbar {
   display: flex;
@@ -101,7 +110,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 3;
+  z-index: 100000;
   background: rgba(0, 0, 0, 0.3);
   /* display: none; */
   justify-content: center;
@@ -184,7 +193,6 @@
   font-style: normal;
   font-weight: normal;
   color: #3a3a3a;
-  margin-left: -10px;
 }
 
 /* The section two */
