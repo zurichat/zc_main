@@ -2,9 +2,12 @@
   background-color: #e8e8e8;
   display: flex;
   flex-direction: column;
-  width: 80%;
-  margin: auto;
-  margin-top: 8em;
+  justify-content: flex-end;
+  padding: 0px 24px 14px;
+  height: 100vh;
+  /* width: 80%;
+  margin: auto; */
+  /* margin-top: 8em; */
 }
 
 .first {
