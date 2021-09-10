@@ -127,7 +127,10 @@ const TopbarModal = () => {
             <p
               onClick={() => {
                 setModal('downloads')
-              }}>Downloads</p>
+              }}
+            >
+              Downloads
+            </p>
           </div>
 
           {modal === 'edit profile' && <EditProfile />}
