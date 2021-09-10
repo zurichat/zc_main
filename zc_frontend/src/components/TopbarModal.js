@@ -134,7 +134,7 @@ const TopbarModal = () => {
 
           {modal === 'preference' && <Preferences />}
 
-          {modal === 'downloads' && <Downloads />}
+          {modal === 'downloads' && <Downloads setModal={setModal} />}
 
           <hr className={styles.hr} />
 
