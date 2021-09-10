@@ -15,30 +15,49 @@ If the output is not the version of your nodejs installation, install nodejs fro
 After installing nodejs install [yarn](https://www.npmjs.com/package/yarn) if you don't have it then install the project's dependencies:
 
 ```bash
-yarn install
+yarn zcmain:install
 ```
 
-## Run the Server
+## STARTING THE SERVER
 
-Run the development server from the root folder using either of the following commands:
+### Backend
 
 ```bash
-npm run dev
-# or
-yarn dev
+yarn backend:serve
 ```
 
-## Run the application -- Frontend specific
+Open [http://localhost:5000](http://localhost:5000) with your browser to see the result.
 
-Open the frontend folder `zc_frontend` in your terminal and run the application from the folder using either of the following commands:
+### Frontend
 
 ```bash
-npm run dev
-# or
-yarn dev
+yarn frontend:serve
+
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## RUNNING YARN COMMANDS
+
+### Backend
+
+```bash
+yarn backend <command>
+
+for example
+
+yarn backend add is-odd
+```
+
+### Frontend
+
+```bash
+yarn frontend <command>
+
+for example
+
+yarn frontend add is-odd
+```
 
 ## Editor setup
 
@@ -54,3 +73,9 @@ format on save for the eslint & prettier plugins in your editor 🙃
 ## Contributing
 
 For detailed information on how to go about contribution. Check out the [Contribution Guide](docs/CONTRIBUTING.md)
+
+**Before send PR or making a merge make sure you code is properly formatted.** You can easily do that by running
+
+```bash
+yarn format # in project directory
+```
