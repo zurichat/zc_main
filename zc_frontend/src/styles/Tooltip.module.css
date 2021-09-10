@@ -1,0 +1,21 @@
+.toolTip {
+  position: absolute;
+  background-color: #ffffff;
+  border: 0.7px solid #bebebe;
+  box-sizing: border-box;
+  top: -100%;
+}
+.toolTip img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+
+.toolTip p {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  font-size: 0.8125rem;
+  line-height: 147%;
+  color: #000000;
+}
