@@ -100,7 +100,7 @@
 
 .heading {
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 0.9375rem;
   line-height: 147%;
   color: #000000;
   margin-bottom: 8px;
@@ -108,8 +108,7 @@
 
 .content {
   font-weight: 500;
-  font-size: 1rem;
-  line-height: 120.5%;
+  font-size: 0.8125rem;
   color: #999999;
 }
 
