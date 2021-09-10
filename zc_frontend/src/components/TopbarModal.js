@@ -12,6 +12,7 @@ import { ProfileContext } from '../context/ProfileModal'
 import Preferences from './Preferences'
 import EditProfile from './EditProfile'
 import MembersModal from './MembersModal'
+import Downloads from './Downloads'
 
 const TopbarModal = () => {
   const { toggleModalState, toggleProfileState } = useContext(ProfileContext)
@@ -123,12 +124,17 @@ const TopbarModal = () => {
           <hr className={styles.hr} />
 
           <div className={styles.sectionSix}>
-            <p>Downloads</p>
+            <p
+              onClick={() => {
+                setModal('downloads')
+              }}>Downloads</p>
           </div>
 
           {modal === 'edit profile' && <EditProfile />}
 
           {modal === 'preference' && <Preferences />}
+
+          {modal === 'downloads' && <Downloads />}
 
           <hr className={styles.hr} />
 
