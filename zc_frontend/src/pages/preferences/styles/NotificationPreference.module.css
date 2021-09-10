@@ -12,7 +12,6 @@
 
 /* THE SECTION OF THE SIDEBAR */
 
-
 /* THE SECTION OF THE CONTENT */
 .notifyContent {
   width: 75%;
@@ -38,7 +37,7 @@
   margin-left: 40px;
   line-height: 20px;
 }
-.titleSmall{
+.titleSmall {
   font-family: Lato;
   font-style: normal;
   font-size: 12px;
@@ -48,12 +47,11 @@
   line-height: 20px;
 }
 .itemTitle1 span {
-  color: #00B87C;
+  color: #00b87c;
   font-size: 13px;
   font-size: 15px;
   font-weight: normal;
   font-family: Lato;
-  
 }
 
 .radio {
@@ -74,7 +72,7 @@
   color: #999999;
 }
 
-input[type="checkbox"]{
+input[type='checkbox'] {
   margin-right: 19px;
 }
 
@@ -87,7 +85,7 @@ input[type="checkbox"]{
 .checkbox label {
   padding: 10px 5px 3px;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   align-self: center;
   display: block;
   font-weight: 500;
@@ -119,7 +117,7 @@ input[type="checkbox"]{
   margin-bottom: 5px;
 }
 .itemTitle2 .spanSmall {
-  color: #00B87C;
+  color: #00b87c;
 }
 .textarea {
   border-color: 1px #e5e5e5;
@@ -133,15 +131,13 @@ input[type="checkbox"]{
   margin-bottom: 10px;
 }
 
-
-.list{
+.list {
   display: flex;
   flex-direction: row;
   list-style-type: none;
   width: 97%;
   margin-left: 40px;
   justify-content: space-evenly;
-   
 }
 
 .selectButton {
@@ -154,10 +150,9 @@ input[type="checkbox"]{
   font-weight: normal;
   border: 1px solid #e0e0e0;
   color: #999999;
-   
 }
 
-.listChild p{
+.listChild p {
   color: #999999;
   text-align: center;
   align-self: center;
@@ -211,7 +206,7 @@ input[type="checkbox"]{
   background: whitesmoke;
   cursor: pointer;
   border-radius: 4px;
-  padding: 5px 5px 3px; 
+  padding: 5px 5px 3px;
   margin-bottom: 10px;
   color: #999999;
   border: 1px solid #e5e5e5;
@@ -268,7 +263,7 @@ input[type="checkbox"]{
 }
 
 .picksound {
-  display: flex; 
+  display: flex;
   flex-direction: column;
   margin-top: 5px;
   margin-left: 40px;
@@ -290,7 +285,6 @@ input[type="checkbox"]{
 
 .dropdown {
   margin-top: 5px;
- 
 }
 
 .dropdown2 {
@@ -310,7 +304,6 @@ input[type="checkbox"]{
   border-radius: 4px;
   color: #999999;
   outline: none;
-
 }
 
 .button3 {
@@ -407,7 +400,7 @@ input[type="checkbox"]{
   border: 1px solid rgb(218, 215, 215);
   border-radius: 4px;
   font-size: 1rem;
-  color: #999999;  
+  color: #999999;
   outline: none;
   width: 385px;
   height: 35px;
@@ -533,11 +526,9 @@ input[type="checkbox"]{
   .email {
     width: 90%;
   }
-  .notifySidebar{
+  .notifySidebar {
     display: none;
   }
-  
-
 }
 
 @media screen and (max-width: 768px) and (min-width: 424px) {
