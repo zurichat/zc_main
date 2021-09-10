@@ -5,29 +5,16 @@ import avatar from '../assets/avatar.png'
 import twitter from '../assets/twitter.svg'
 import linkedin from '../assets/linkedin.svg'
 import instagram from '../assets/instagram.svg'
-import { ProfileContext } from '../contexts/ProfileModal'
+import { ProfileContext } from '../context/ProfileModal'
+import { TopbarContext } from '../context/Topbar'
 import EditProfile from './EditProfile'
-
-const Dropdown = () => {
-  return (
-    <div className={styles.profileDropDown}>
-      <div className={styles.topSection}>
-        <p className={styles.paragraph}>View preferences</p>
-        <p className={styles.paragraph}>View your files</p>
-        <p className={styles.paragraph}>Set yourself away</p>
-      </div>
-      <div className={styles.bottomSection}>
-        <p className={styles.paragraphNull}>Set yourself away</p>
-        <small className={styles.small}>U031203013</small>
-        <p className={styles.paragraphNull}>Account settings</p>
-      </div>
-    </div>
-  )
-}
+import Preferences from './Preferences'
+import { Dropdown } from './ProfileMore'
 
 const Profile = () => {
   const { toggleModalState, showProfile, toggleProfileState } =
     useContext(ProfileContext)
+  const state = useContext(TopbarContext)
   const [dropdown, setDropdown] = useState(false)
   const [modal, setModal] = useState('')
 
@@ -78,8 +65,9 @@ const Profile = () => {
           <button>Message</button>
           <button
             onClick={() => {
+              toggleProfileState()
+              setModal(() => 'edit profile')
               toggleModalState()
-              setModal('edit profile')
             }}
           >
             Edit Profile
@@ -89,8 +77,8 @@ const Profile = () => {
         <div className={styles.buttonGroups}>
           <button
             onClick={() => {
+              setModal(() => 'edit profile')
               toggleModalState()
-              setModal('edit profile')
             }}
           >
             <svg
@@ -113,7 +101,7 @@ const Profile = () => {
             </svg>
             Edit Profile
           </button>
-          <button>
+          <button onClick={state.openStatus}>
             <svg
               viewBox="0 0 12 12"
               fill="none"
@@ -165,6 +153,7 @@ const Profile = () => {
             More
           </button>
           {dropdown && <Dropdown />}
+          {modal === 'preference' && <Preferences />}
           {modal === 'edit profile' && <EditProfile />}
         </div>
 
