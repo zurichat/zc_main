@@ -16,33 +16,33 @@ const Login = () => {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    await axios.post('/api/login', {
-      email,
-      password
-    })
-    .then(response => {
-      const { data, message } = response.data
-      
-      //Store token in localstorage
-      localStorage.setItem('token', data.token)
+    await axios
+      .post('/api/login', {
+        email,
+        password
+      })
+      .then(response => {
+        const { data, message } = response.data
 
-      //Store user copy in localstorage
-      localStorage.setItem('user', data.userCopy)
+        //Store token in localstorage
+        localStorage.setItem('token', data.token)
 
-      //Display message
-      alert(message) //Change this when there is a design
+        //Store user copy in localstorage
+        localStorage.setItem('user', data.userCopy)
 
-      setTimeout(() => {
-        //Redirect to some other page
-      }, 2000);
+        //Display message
+        alert(message) //Change this when there is a design
 
-    })
-    .catch(error => {
-      const { data } = error.response
+        setTimeout(() => {
+          //Redirect to some other page
+        }, 2000)
+      })
+      .catch(error => {
+        const { data } = error.response
 
-      //Render error message to the user
-      alert(data.message) //Change this when there is a design
-    })
+        //Render error message to the user
+        alert(data.message) //Change this when there is a design
+      })
   }
 
   return (
