@@ -1,5 +1,4 @@
 import React from 'react'
-// import AuthInputBox from './AuthInputBox'
 import styles from '../styles/AuthFormWrapper.module.css'
 import logo from '../pages/images/logo.svg'
 import google from '../pages/images/google.svg'
@@ -39,7 +38,12 @@ const FormWrapper = ({
       <div>
         <span className={`${styles.topLine}`}>{topLineText}</span>
       </div>
-      <form className={`${styles.form}`} onSubmit={handleSubmit} method="post">
+      <form
+        className={`${styles.form}`}
+        onSubmit={handleSubmit}
+        method="post"
+        action=""
+      >
         <div className={`${styles.inputSection}`}>{children}</div>
 
         <div className={`${styles.btnContainer}`}>
@@ -51,7 +55,6 @@ const FormWrapper = ({
             }`}
             value={submitButtonName}
             type="submit"
-            disabled={!name || !email || !password || !check}
           />
         </div>
       </form>
