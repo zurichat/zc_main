@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
 import FormWrapper from '../../components/AuthFormWrapper'
 import styles from '../../styles/AuthFormElements.module.css'
+import axios from 'axios'
 // import styles from './styles/SignUp.module.css'
 //import GoogleLogin from 'react-google-login'
 
@@ -16,8 +17,34 @@ const Signup = () => {
   const [tos, setTos] = useState(false)
   // const { error, setError } = useState('')
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
+    await axios.post('/api/register', {
+      fullName: name,
+      email,
+      password
+    })
+    .then(response => {
+      const { data, message } = response.data
+      
+      //Store token in localstorage
+      localStorage.setItem('token', data.token)
+
+      //Display message
+      alert(message) //Change this when there is a design
+
+      setTimeout(() => {
+        //Redirect to some other page
+      }, 2000);
+
+    })
+    .catch(error => {
+      const { data,status } = error.response
+
+      //Render error message to the user
+      if(status === 400) alert(data) //Change this when there is a design
+      else if(status === 409) alert(data.reason) //Change this when there is a design
+    })
   }
 
   return (
