@@ -301,7 +301,7 @@
   .sectionB {
     width: 100% !important;
   }
-  label {
+  .label {
     font-weight: 700;
   }
   .linkTab {
