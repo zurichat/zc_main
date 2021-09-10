@@ -3,7 +3,7 @@ import { PluginCard } from '../plugins-card/PluginCard'
 import registeredPlugins from './data'
 import styles from '../../../styles/marketplace.module.css'
 import { Modal, Row, Col } from 'react-bootstrap'
-import { useMarketPlaceContext } from '../../../contexts/MarketPlace.context'
+import { useMarketPlaceContext } from '../../../context/MarketPlace.context'
 
 const MarketPlaceContainer = () => {
   const [plugins, setPlugins] = useState([])
