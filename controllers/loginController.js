@@ -48,7 +48,7 @@ const controllers = () => {
     const salt = await bcrypt.genSalt(10)
     const hashedPassword = await bcrypt.hash(req.body.password, salt)
 
-    console.log(password, hashedPassword)
+    // console.log(password, hashedPassword)
 
     // generate the tokens
     const token = createJwt(user.id)
