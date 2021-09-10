@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
 import FormWrapper from '../../components/AuthFormWrapper'
 import styles from '../../styles/AuthFormElements.module.css'
+import axios from 'axios'
 
 //import GoogleLogin from 'react-google-login'
 
@@ -13,8 +14,35 @@ const Login = () => {
   const [password, setPassword] = useState('')
   const [rememberMe, setRememberMe] = useState('')
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
+    await axios
+      .post('/api/login', {
+        email,
+        password
+      })
+      .then(response => {
+        const { data, message } = response.data
+
+        //Store token in localstorage
+        localStorage.setItem('token', data.token)
+
+        //Store user copy in localstorage
+        localStorage.setItem('user', data.userCopy)
+
+        //Display message
+        alert(message) //Change this when there is a design
+
+        setTimeout(() => {
+          //Redirect to some other page
+        }, 2000)
+      })
+      .catch(error => {
+        const { data } = error.response
+
+        //Render error message to the user
+        alert(data.message) //Change this when there is a design
+      })
   }
 
   return (
