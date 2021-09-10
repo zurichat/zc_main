@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import styles from '../styles/settingsNav.module.css'
 import { BiMenuAltRight } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
+import zuri from '../../images/zuri.svg'
 
 const SettingsNav = () => {
   const [menu, setMenu] = useState(false)
@@ -17,8 +18,7 @@ const SettingsNav = () => {
       <div className={styles.accountbar}>
         <Link to="/home">
           <div className={styles.brand}>
-            <img src="./zurichatlogo.svg" alt="" />
-            <h3>ZURI</h3>
+            <img src={zuri} alt="Zuri logo" />
           </div>
         </Link>
 
