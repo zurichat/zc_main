@@ -141,6 +141,12 @@
 /* THE SECTION OF THE MEDIA QUERY */
 
 @media screen and (max-width: 800px) {
+  .tabcontainer h3 {
+    width: 100%;
+    margin-left: 25px;
+    margin-bottom: 20px;
+  }
+
   .tabcenter {
     width: 95% !important;
   }
@@ -197,11 +203,17 @@
 
 @media screen and (max-width: 425px) {
   .tabcontainer {
-    padding-top: 110px;
+    padding-top: 50px;
     padding-bottom: 50px;
   }
 
   .tabs {
     width: 70% !important;
+  }
+
+  .tabcontainer h3 {
+    width: 70%;
+    margin-left: 10px;
+    margin-bottom: 20px;
   }
 }
