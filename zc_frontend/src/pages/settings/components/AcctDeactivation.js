@@ -1,5 +1,6 @@
 import styles from '../styles/AcctDeactivation.module.css'
 import SettingsNav from './SettingsNav'
+import { Link } from 'react-router-dom';
 
 const AcctDeactivation = () => {
   return (
@@ -34,7 +35,9 @@ const AcctDeactivation = () => {
             <button className={styles.deactivateButton}>
               Yes, deactivate my account
             </button>
-            <button className={styles.cancelButton}>Cancel</button>
+            <Link to="/settings">
+              <button className={styles.cancelButton}>Cancel</button>
+            </Link>
           </div>
         </div>
       </div>

@@ -8,7 +8,6 @@ const Language = () => {
   const [isTimezone, setIsTimezone] = useState(false)
   const [isSpell, setIsSpell] = useState(false)
   const [data, setData] = useState('')
-  
 
   // THE SECTION OF HANDLECHECK
   const handleTimezone = e => {
@@ -84,7 +83,9 @@ const Language = () => {
           </div>
 
           <div className={styles.choosed}>
-            <span className={isSpell ? styles.block : styles.none}>{isSpell && data} </span>
+            <span className={isSpell ? styles.block : styles.none}>
+              {isSpell && data}{' '}
+            </span>
           </div>
           <p>
             Choose the languages you’d like Zurichat to spellcheck as you type.
