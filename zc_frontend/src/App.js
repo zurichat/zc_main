@@ -4,6 +4,7 @@ import Login from './pages/login';
 import SignUp from './pages/signup';
 import Blog from './pages/blog';
 import News from './pages/news';
+import EmailNotification from './components/EmailNotification';
 import './styles/globals.css';
 
 const App = () => (
@@ -23,6 +24,9 @@ const App = () => (
       </Route>
       <Route path="/news">
         <News />
+      </Route>
+      <Route path="/EmailNotification">
+        <EmailNotification />
       </Route>
     </Switch>
   </BrowserRouter>
