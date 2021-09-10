@@ -9,7 +9,7 @@ const ChangeEmail = () => {
           <label for="firstname" className="form-label">
             Current Email
           </label>
-          <input type="password" className="form-control" required />
+          <input type="text" className="form-control" required />
         </div>
         <div className="col-md-5">
           <label for="lastname" className="form-label">
