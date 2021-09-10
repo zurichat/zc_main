@@ -7,6 +7,7 @@ export const TopbarProvider = ({ children }) => {
   // setting up my states for the profile topbar modal
   const [showModal, setShowModal] = useState(false)
   const [showStatus, setShowStatus] = useState(false)
+  const [showMembersModal, setShowMembersModal] = useState(false)
   const [chosenEmoji, setChosenEmoji] = useState({ emoji: '4️⃣' })
 
   // The function that opens the topbar profile modal
@@ -39,16 +40,29 @@ export const TopbarProvider = ({ children }) => {
     setChosenEmoji(emojiObject)
   }
 
+  // The function that opens the member list modal
+  const openMembersModal = () => {
+    setShowMembersModal(true)
+  }
+
+  // The function that closes the member list modal
+  const closeMembersModal = () => {
+    setShowMembersModal(false)
+  }
+
   // Passes all functions and states to the state object
   const state = {
     openModal,
     closeModal,
     openStatus,
     closeStatus,
+    openMembersModal,
+    closeMembersModal,
     modalRef,
     show: [showModal, setShowModal],
     status: [showStatus, setShowStatus],
     emoji: [chosenEmoji, setChosenEmoji],
+    modal: [showMembersModal, setShowMembersModal],
     onEmojiClick
   }
 
