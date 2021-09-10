@@ -65,7 +65,6 @@ const Profile = () => {
           <button>Message</button>
           <button
             onClick={() => {
-              toggleProfileState()
               setModal(() => 'edit profile')
               toggleModalState()
             }}
