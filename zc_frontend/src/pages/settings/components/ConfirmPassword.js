@@ -20,7 +20,7 @@ const ConfirmPassword = () => {
   const handleSubmit = e => {
     e.preventDefault()
 
-    if (password.length > 8) {
+    if (password.length > 5) {
       history.push('/deactivate-account')
     } else {
       setError(true)
