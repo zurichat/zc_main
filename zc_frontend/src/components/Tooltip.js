@@ -6,6 +6,7 @@ const Tooltip = ({children}) => {
     <div role="tooltip" className={styles.toolTip}>
       {children}
       <img src={pointy} alt="" />
+      {/* <span className={styles.pointy}></span> */}
     </div>
   )
 }
