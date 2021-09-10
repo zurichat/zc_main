@@ -3,19 +3,10 @@ import styles from '../styles/Downloads.module.css'
 import pdf from '../assets/file-earmark-pdf.svg'
 import open from '../assets/file-open.svg'
 import close from '../assets/file-close.svg'
-import pointy from '../assets/pointy.png'
+import pointy from '../assets/pointy.svg'
 
 const Downloads = ({setModal}) => {
-  const [files] = useState([
-    {
-      name: 'HNG Design Rules Book.pdf',
-      size: '5MB PDF'
-    },
-    {
-      name: 'HNG Entrepreneurship - Assignment 1.pdf',
-      size: '205KB PDF'
-    }
-  ])
+  const [files] = useState(null)
   return(
   <>
     <section
