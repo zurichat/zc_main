@@ -49,10 +49,7 @@ const Language = () => {
           <br />
 
           <div className="d-flex align-items-center mb-2">
-            <input
-              type="checkbox"
-              onChange={handleTimezone}
-            />
+            <input type="checkbox" onChange={handleTimezone} />
             <small>Set timezone automatically</small>
           </div>
 
