@@ -11,6 +11,7 @@ import StatusBadge from './StatusBadge'
 import { ProfileContext } from '../context/ProfileModal'
 import Preferences from './Preferences'
 import EditProfile from './EditProfile'
+import MembersModal from './MembersModal'
 
 const TopbarModal = () => {
   const { toggleModalState, toggleProfileState } = useContext(ProfileContext)
@@ -19,6 +20,7 @@ const TopbarModal = () => {
   const [showModal] = state.show
   const [active, setActive] = state.presence
   const [showStatus, setShowStatus] = state.status
+  const [showMembersModal] = state.modal
   const { onEmojiClick, openStatus, closeStatus, modalRef } = state
   const [modal, setModal] = useState('')
 
@@ -43,6 +45,17 @@ const TopbarModal = () => {
               />
             </div>
           </div>
+        </div>
+      ) : null}
+
+      {/* The section that shows the members modal */}
+      {showMembersModal ? (
+        <div
+          ref={modalRef}
+          className={styles.modalContainers}
+          // onClick={closeMembersModal}
+        >
+          <MembersModal />
         </div>
       ) : null}
 
