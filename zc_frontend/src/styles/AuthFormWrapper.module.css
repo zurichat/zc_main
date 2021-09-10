@@ -54,11 +54,11 @@
   height: 100%;
   padding: 10px;
   outline: none;
-  border: 1px solid #0d6efd;
+  border: 1px solid #1A61DB;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 1px;
-  color: blue;
+  color: #1A61DB;
   background: transparent;
   border-radius: 5px;
 }
@@ -87,21 +87,21 @@
 
 .topLine::before {
   flex-grow: 1;
-  height: 1.5px;
+  height: 2px;
   content: '\a0';
-  background-color: rgb(0, 184, 124, 0.5);
+  background-color: rgb(0, 184, 124, 0.4);
   position: relative;
-  top: 7.5px;
+  top: 7px;
   margin-right: 10px;
 }
 
 .topLine:after {
   flex-grow: 1;
-  height: 1.5px;
+  height: 2px;
   content: '\a0';
-  background-color: rgb(0, 184, 124, 0.5);
+  background-color: rgb(0, 184, 124, 0.4);
   position: relative;
-  top: 7.5px;
+  top: 7px;
   margin-left: 10px;
 }
 
@@ -132,7 +132,7 @@
   justify-content: center;
   width: 100%;
   height: 2.3rem;
-  background: #2f80ed;
+  background: #2F80ED;
   color: #fff;
   font-weight: 700;
   cursor: pointer;
@@ -156,7 +156,7 @@
   outline: none;
   border: none;
   font-size: 16px;
-  letter-spacing: 1px; 
+  letter-spacing: 1px;
   border-radius: 5px;
   background: rgb(47, 128, 237, 0.5);
 }
@@ -186,15 +186,14 @@
   color: rgba(0, 0, 0, 0.5);
 }
 
-@media only screen and (max-width: 768px){
-  .container{
-   width: 80%;
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 80%;
   }
 }
 
-@media only screen and (max-width: 468px){
-  .container{
-   width: 90%;
+@media only screen and (max-width: 468px) {
+  .container {
+    width: 90%;
   }
 }
-
