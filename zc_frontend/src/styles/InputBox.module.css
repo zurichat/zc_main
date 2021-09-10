@@ -7,8 +7,8 @@
 
 /* input Label */
 .InputLabel {
-  font-weight: 700;
-  font-size: 14px;
+  font-weight: 600;
+  font-size: 16px;
   margin-bottom: 2px;
   margin-top: 10px;
 }
@@ -31,7 +31,7 @@
 .InputElement {
   border-radius: 5px;
   width: 100%;
-  height: 2.3rem;
+  height: 2.5rem;
   padding: 10px;
   outline: none;
   border: 1px solid #bebebe;

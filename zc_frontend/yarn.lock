@@ -9632,11 +9632,7 @@ react-transition-group@^4.3.0, react-transition-group@^4.4.1:
 
 react-verification-code-input@^1.2.9:
   version "1.2.9"
-<<<<<<< HEAD
-  resolved "https://registry.yarnpkg.com/react-verification-code-input/-/react-verification-code-input-1.2.9.tgz#16051396f0c75752aab0cd9f37cb7be7084b98d0"
-=======
   resolved "https://registry.npmjs.org/react-verification-code-input/-/react-verification-code-input-1.2.9.tgz"
->>>>>>> 19708796c823520da8daf744718e4dcc1bf8258f
   integrity sha512-Fg0B3SGGRoZtZFiQ/8FGSK5MQby9k5ssIUupPLvb8/U++Yxvc0T8ps/7CClLnvN+wowS5oL8xS7vqUTR9fRH6Q==
 
 react@^17.0.2:
