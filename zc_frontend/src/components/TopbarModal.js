@@ -1,26 +1,28 @@
 import { useContext, useState } from 'react'
 
 // react icons
-import { FaChevronRight, FaTimes, FaCircle } from 'react-icons/fa'
+import { FaCircle, FaChevronRight, FaTimes } from 'react-icons/fa'
 
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
 
 import styles from '../styles/Topbar.module.css'
 import { TopbarContext } from '../context/Topbar'
-import StatusBadge from './StatusBadge'
+import StatusBadgeModal from './StatusBadgeModal'
 import { ProfileContext } from '../context/ProfileModal'
 import Preferences from './Preferences'
 import EditProfile from './EditProfile'
+import MembersModal from './MembersModal'
 
 const TopbarModal = () => {
   const { toggleModalState, toggleProfileState } = useContext(ProfileContext)
 
   const state = useContext(TopbarContext)
   const [showModal] = state.show
+  const [active, setActive] = state.presence
   const [showStatus, setShowStatus] = state.status
+  const [showMembersModal] = state.modal
   const { onEmojiClick, openStatus, closeStatus, modalRef } = state
   const [modal, setModal] = useState('')
-  const [active, setActive] = useState(true)
 
   return (
     <>
@@ -46,6 +48,17 @@ const TopbarModal = () => {
         </div>
       ) : null}
 
+      {/* The section that shows the members modal */}
+      {showMembersModal ? (
+        <div
+          ref={modalRef}
+          className={styles.modalContainers}
+          // onClick={closeMembersModal}
+        >
+          <MembersModal />
+        </div>
+      ) : null}
+
       {/* The section that shows the topbarprofile */}
       {showModal ? (
         <section className={styles.topbarModal}>
@@ -59,25 +72,25 @@ const TopbarModal = () => {
               {active ? (
                 <div className={styles.online}>
                   <FaCircle className={styles.circle} />
-                  <p>Active</p>
+                  <p className={styles.active}>Active</p>
                 </div>
               ) : (
                 <div className={styles.online}>
                   <FaCircle className={styles.circlegrey} />
-                  <p>Away</p>
+                  <p className={styles.away}>Away</p>
                 </div>
               )}
             </div>
           </div>
 
           <div onClick={openStatus} className={styles.sectionTwo}>
-            <StatusBadge />
+            <StatusBadgeModal />
           </div>
 
           <div className={styles.sectionThree}>
             <p onClick={openStatus}>Set a status</p>
             <p onClick={() => setActive(!active)}>
-              {active ? 'Set yourself as away' : 'Set yourself as online'}
+              {active ? 'Set yourself as away' : 'Set yourself as active'}
             </p>
             <div className={styles.pause}>
               <p>Pause Notifications</p>
@@ -90,8 +103,8 @@ const TopbarModal = () => {
           <div className={styles.sectionFour}>
             <p
               onClick={() => {
-                toggleModalState()
                 setModal('edit profile')
+                toggleModalState()
               }}
             >
               Edit profile
@@ -99,8 +112,8 @@ const TopbarModal = () => {
             <p onClick={toggleProfileState}>View profile</p>
             <p
               onClick={() => {
-                toggleModalState()
                 setModal('preference')
+                toggleModalState()
               }}
             >
               Preferences
