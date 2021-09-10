@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import Tooltip from './Tooltip'
 import styles from '../styles/Downloads.module.css'
 import pdf from '../assets/file-earmark-pdf.svg'
 import open from '../assets/file-open.svg'
@@ -57,6 +58,9 @@ const Downloads = () => {
                 <div className={styles.more}>
                   <button className={styles.openBtn}>
                     <img src={open} alt="" />
+                    <Tooltip>
+                      <p>Open containing folder</p>
+                    </Tooltip>
                   </button>
                   <button className={styles.closeBtn}>
                     <img src={close} alt="" />
