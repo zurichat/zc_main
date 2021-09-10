@@ -4,24 +4,23 @@ import AddLink from './AddLink'
 import ProfileModal from './ProfileModal'
 
 const EditProfile = () => {
-
   const imageRef = useRef(null)
   const avatarRef = useRef(null)
 
-  const handleImageChange = (event) => {
+  const handleImageChange = event => {
     if (imageRef.current.files[0]) {
-      let fileReader = new FileReader();
+      let fileReader = new FileReader()
 
       fileReader.onload = function (event) {
-        avatarRef.current.src = event.target.result;
-      };
+        avatarRef.current.src = event.target.result
+      }
 
-      fileReader.readAsDataURL(imageRef.current.files[0]);
+      fileReader.readAsDataURL(imageRef.current.files[0])
     }
   }
 
   return (
-    <ProfileModal full title="Edit your profile">
+    <ProfileModal full title="Edit profile">
       <>
         <div className={styles.profileWrapper}>
           <div className={styles.profile}>
@@ -36,7 +35,7 @@ const EditProfile = () => {
                       className={styles.formInput}
                     />
                   </div>
-                  <div 
+                  <div
                     style={{ display: 'flex' }}
                     className={styles.formWrapper}
                   >
@@ -54,7 +53,7 @@ const EditProfile = () => {
                     </div>
 
                     <div className={styles.sectionB}>
-                      <label>Pronouns</label>
+                      <label className="label">Pronouns</label>
                       <select className={styles.formInput}>
                         <option value="John">He/him</option>
                         <option value="John">She/her</option>
@@ -63,7 +62,7 @@ const EditProfile = () => {
                   </div>
 
                   <div className={styles.mt}>
-                    <label>What you do</label>
+                    <label className="label">What you do</label>
                     <input
                       type="text"
                       name="name"
@@ -75,7 +74,7 @@ const EditProfile = () => {
                     <span className={styles.fontBold}>ZURI</span>
                   </div>
                   <div className={styles.mt}>
-                    <label>Bio</label>
+                    <label className="label">Bio</label>
                     <textarea rows="3" className={styles.formInput} />
                   </div>
 
@@ -96,7 +95,7 @@ const EditProfile = () => {
                       </span>
                     </div>
                   </div>
-                  <label>Timezones</label>
+                  <label className="label">Timezones</label>
                   <div>
                     <select className={styles.timeZone}>
                       <option value="timezone">
@@ -135,7 +134,11 @@ const EditProfile = () => {
                     </label>
 
                     <div className={styles.avatar}>
-                      <img ref={avatarRef} src="/profiles.svg" alt="profile-pic" />
+                      <img
+                        ref={avatarRef}
+                        src="/profiles.svg"
+                        alt="profile-pic"
+                      />
                     </div>
                     <div className={styles.username}>
                       <div className={styles.mt} style={{ width: '100%' }}>
@@ -151,8 +154,16 @@ const EditProfile = () => {
                   <div className={styles.profileFunc}>
                     <div className={styles.subContainer}>
                       <div className={styles.mxAuto}>
-                        <label htmlFor="img" className={styles.save}>Upload an Image</label>
-                        <input ref={imageRef} onChange={handleImageChange} type="file" hidden id="img" />
+                        <label htmlFor="img" className={styles.save}>
+                          Upload an Image
+                        </label>
+                        <input
+                          ref={imageRef}
+                          onChange={handleImageChange}
+                          type="file"
+                          hidden
+                          id="img"
+                        />
                       </div>
                       <button className={styles.deleteImage}>
                         Delete image
@@ -172,9 +183,9 @@ const EditProfile = () => {
             <div className={styles.px9}>
               <AddLink />
               <div className={styles.formFooter}>
-                <div>
+                <div style={{ display: 'flex' }}>
                   <button className={styles.cancel}>Cancel</button>
-                  <button className={styles.save}>Save Changes</button>
+                  <button className={styles.saveChange}>Save Changes</button>
                 </div>
               </div>
             </div>
