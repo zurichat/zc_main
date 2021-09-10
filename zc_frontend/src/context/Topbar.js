@@ -5,6 +5,7 @@ export const TopbarProvider = ({ children }) => {
   const modalRef = useRef()
 
   // setting up my states for the profile topbar modal
+  const [active, setActive] = useState(true)
   const [showModal, setShowModal] = useState(false)
   const [showStatus, setShowStatus] = useState(false)
   const [showMembersModal, setShowMembersModal] = useState(false)
@@ -19,7 +20,6 @@ export const TopbarProvider = ({ children }) => {
   const closeModal = e => {
     if (modalRef.current === e.target) {
       setShowModal(false)
-      console.log('close')
     }
   }
 
@@ -59,6 +59,7 @@ export const TopbarProvider = ({ children }) => {
     openMembersModal,
     closeMembersModal,
     modalRef,
+    presence: [active, setActive],
     show: [showModal, setShowModal],
     status: [showStatus, setShowStatus],
     emoji: [chosenEmoji, setChosenEmoji],
