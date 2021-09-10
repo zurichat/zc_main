@@ -14,8 +14,7 @@ const Login = () => {
   const [rememberMe, setRememberMe] = useState('')
 
   const handleSubmit = e => {
-    // e.preventDefault()
-    console.log('work')
+    e.preventDefault()
   }
 
   return (
@@ -75,7 +74,7 @@ const Login = () => {
               remember me
             </span>
             <span className={`${styles.right}`}>
-              Forgot password?<a href=""> {''}Get help signing in</a>
+              Forgot password?<a href="/"> {''}Get help signing in</a>
             </span>
           </div>
         </FormWrapper>
