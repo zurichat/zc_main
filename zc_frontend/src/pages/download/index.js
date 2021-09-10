@@ -32,18 +32,10 @@ const Download = () => {
           ></img>
         </div>
         <div className={styles.buttondiv}>
-          <a
-            href="https://drive.google.com/file/d/1C5s3Hm44shxtIJ6XElV3lqBk1XLAbrMm/view?usp=drivesdk"
-            className={styles.button1}
-            type="submit"
-          >
+          <a href="app-release.apk" download className={styles.button1}>
             Download for Windows (64bits)
           </a>
-          <a
-            href="https://drive.google.com/file/d/1C5s3Hm44shxtIJ6XElV3lqBk1XLAbrMm/view?usp=drivesdk"
-            className={styles.button2}
-            type="submit"
-          >
+          <a href="app-release.apk" download className={styles.button2}>
             Download for Mac OS X 10.10 and higher
           </a>
           <p className={styles.windows}>Available on windows 8 and higher</p>
