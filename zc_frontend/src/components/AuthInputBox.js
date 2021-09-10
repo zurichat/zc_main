@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 
 import styles from '../styles/InputBox.module.css'
 
@@ -14,16 +14,16 @@ const InputBox = ({
   required = true
 }) => {
   const ref = useRef(null)
-  const [passwordVisible, setpasswordVisible] = useState(
-    type === 'password' ? true : false
-  )
+  // const [passwordVisible, setpasswordVisible] = useState(
+  //   type === 'password' ? true : false
+  // )
 
-  const passwordToggle = e => {
-    e.preventDefault()
-    setpasswordVisible(!passwordVisible)
+  // const passwordToggle = e => {
+  //   e.preventDefault()
+  //   setpasswordVisible(!passwordVisible)
 
-    ref.current.type = passwordVisible ? 'text' : 'password'
-  }
+  //   ref.current.type = passwordVisible ? 'text' : 'password'
+  // }
 
   return (
     <>

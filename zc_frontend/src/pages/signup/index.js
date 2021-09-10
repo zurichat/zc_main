@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
 import FormWrapper from '../../components/AuthFormWrapper'
 import styles from '../../styles/AuthFormElements.module.css'
+import axios from 'axios'
 // import styles from './styles/SignUp.module.css'
 //import GoogleLogin from 'react-google-login'
 
@@ -14,10 +15,37 @@ const Signup = () => {
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [tos, setTos] = useState(false)
-  const { error, setError } = useState('')
+  // const { error, setError } = useState('')
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
+    await axios
+      .post('/api/register', {
+        fullName: name,
+        email,
+        password
+      })
+      .then(response => {
+        const { data, message } = response.data
+
+        //Store token in localstorage
+        localStorage.setItem('token', data.token)
+
+        //Display message
+        alert(message) //Change this when there is a design
+
+        setTimeout(() => {
+          //Redirect to some other page
+        }, 2000)
+      })
+      .catch(error => {
+        const { data, status } = error.response
+
+        //Render error message to the user
+        if (status === 400) alert(data)
+        //Change this when there is a design
+        else if (status === 409) alert(data.reason) //Change this when there is a design
+      })
   }
 
   return (
@@ -51,7 +79,7 @@ const Signup = () => {
             placeholder="John Doe"
             value={name}
             setValue={setName}
-            error={error}
+            // error={error}
           />
           <AuthInputBox
             className={`${styles.inputElement}`}
@@ -61,7 +89,7 @@ const Signup = () => {
             placeholder="johnDoe@example.com"
             value={email}
             setValue={setEmail}
-            error={error}
+            // error={error}
           />
           <AuthInputBox
             className={`${styles.inputElement}`}
@@ -71,7 +99,7 @@ const Signup = () => {
             placeholder="Enter your Password"
             value={password}
             setValue={setPassword}
-            error={error}
+            // error={error}
           />
           <AuthInputBox
             className={`${styles.inputElement}`}
@@ -81,7 +109,7 @@ const Signup = () => {
             placeholder="Enter your password"
             value={confirmPassword}
             setValue={setConfirmPassword}
-            error={error}
+            // error={error}
           />
           <div className={`${styles.tos}`}>
             <input
@@ -95,7 +123,8 @@ const Signup = () => {
             />
             <span className={`${styles.tosText}`}>
               I agree to Zurichat's {''}
-              <a href="">terms of services{''} </a>&<a href=""> {''}privacy</a>
+              <a href="/">terms of services{''} </a>&
+              <a href="/"> {''}privacy</a>
             </span>
           </div>
         </FormWrapper>

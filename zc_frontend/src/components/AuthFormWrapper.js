@@ -1,5 +1,4 @@
 import React from 'react'
-import AuthInputBox from './AuthInputBox'
 import styles from '../styles/AuthFormWrapper.module.css'
 import logo from '../pages/images/logo.svg'
 import google from '../pages/images/google.svg'
@@ -31,7 +30,7 @@ const FormWrapper = ({
         <p className={`${styles.subHeader}`}>{subHeader}</p>
       </div>
       <div className={`${styles.googleBtn}`}>
-        <a href="" className="google">
+        <a href="/" className="google">
           <img src={google} alt="google" />
           {googleHeader}
         </a>
@@ -39,28 +38,31 @@ const FormWrapper = ({
       <div>
         <span className={`${styles.topLine}`}>{topLineText}</span>
       </div>
-      <form className={`${styles.form}`} onSubmit={handleSubmit} method="post">
+      <form
+        className={`${styles.form}`}
+        onSubmit={handleSubmit}
+        method="post"
+        action=""
+      >
         <div className={`${styles.inputSection}`}>{children}</div>
 
         <div className={`${styles.btnContainer}`}>
-          <button
+          <input
             className={`${
               name || email || password || check
                 ? styles.btn
                 : styles.btnDisabled
             }`}
+            value={submitButtonName}
             type="submit"
-            disabled={!name || !email || !password || !check}
-          >
-            {submitButtonName}
-          </button>
+          />
         </div>
       </form>
       <div className={`${styles.bottomLine}`}>
         <span>
           {bottomLine}
           {''}
-          <a className={`${styles.bottomLink}`} href="">
+          <a className={`${styles.bottomLink}`} href="/">
             {''} {bottomLink}
           </a>
         </span>
