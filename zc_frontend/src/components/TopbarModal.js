@@ -1,14 +1,14 @@
-import React, { useContext, useState } from 'react'
+import { useContext, useState } from 'react'
 
 // react icons
-import { FaChevronRight, FaTimes } from 'react-icons/fa'
+import { FaChevronRight, FaTimes, FaCircle } from 'react-icons/fa'
 
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
 
 import styles from '../styles/Topbar.module.css'
-import { TopbarContext } from '../contexts/Topbar'
+import { TopbarContext } from '../context/Topbar'
 import StatusBadge from './StatusBadge'
-import { ProfileContext } from '../contexts/ProfileModal'
+import { ProfileContext } from '../context/ProfileModal'
 import Preferences from './Preferences'
 import EditProfile from './EditProfile'
 import MembersModal from './MembersModal'
@@ -22,6 +22,7 @@ const TopbarModal = () => {
   const [showMembersModal] = state.modal
   const { onEmojiClick, openStatus, closeStatus, modalRef } = state
   const [modal, setModal] = useState('')
+  const [active, setActive] = useState(true)
 
   return (
     <>
@@ -68,10 +69,17 @@ const TopbarModal = () => {
 
             <div className={styles.oneRight}>
               <h4>Praise.A</h4>
-              <div className={styles.online}>
-                <div className={styles.circle}></div>
-                <p>Active</p>
-              </div>
+              {active ? (
+                <div className={styles.online}>
+                  <FaCircle className={styles.circle} />
+                  <p>Active</p>
+                </div>
+              ) : (
+                <div className={styles.online}>
+                  <FaCircle className={styles.circlegrey} />
+                  <p>Away</p>
+                </div>
+              )}
             </div>
           </div>
 
@@ -81,14 +89,16 @@ const TopbarModal = () => {
 
           <div className={styles.sectionThree}>
             <p onClick={openStatus}>Set a status</p>
-            <p>Set yourself as away</p>
+            <p onClick={() => setActive(!active)}>
+              {active ? 'Set yourself as away' : 'Set yourself as online'}
+            </p>
             <div className={styles.pause}>
               <p>Pause Notifications</p>
               <FaChevronRight className={styles.chevron} />
             </div>
           </div>
 
-          <hr />
+          <hr className={styles.hr} />
 
           <div className={styles.sectionFour}>
             <p
@@ -106,15 +116,21 @@ const TopbarModal = () => {
                 setModal('preference')
               }}
             >
-              Preference
+              Preferences
             </p>
+          </div>
+
+          <hr className={styles.hr} />
+
+          <div className={styles.sectionSix}>
+            <p>Downloads</p>
           </div>
 
           {modal === 'edit profile' && <EditProfile />}
 
           {modal === 'preference' && <Preferences />}
 
-          <hr />
+          <hr className={styles.hr} />
 
           <div className={styles.sectionFive}>
             <p>Sign out of Team Einstein workspace</p>
