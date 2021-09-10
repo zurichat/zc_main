@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import faker from 'faker'
 
 import { IoMdClose, IoMdSearch } from 'react-icons/io'
-import { TopbarContext } from '../contexts/Topbar'
+import { TopbarContext } from '../context/Topbar'
 import styles from '../styles/MembersModal.module.css'
 
 // Generate placeholder data with faker
@@ -18,7 +18,7 @@ const placeHolder = n => {
   }
   return placeHolderMembersArray
 }
-const faked = placeHolder(1000)
+const faked = placeHolder(379)
 
 const MembersModal = ({ channelTitle, membersArray }) => {
   // membersArray is be an array of users, exact object structure can be updated
