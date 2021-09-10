@@ -105,7 +105,7 @@ const SettingsTab = () => {
           </span>
         </div>
         <div className={styles.settingsright}>
-          <Link to="/settings/confirm-password">  
+          <Link to="/settings/confirm-password">
             <button className={styles.delete}>Deactivate your account</button>
           </Link>
         </div>
