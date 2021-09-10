@@ -8,8 +8,13 @@
   flex-direction: column;
 }
 
-.pluginContent {
+.spaceWrapper {
+  display: flex;
   flex: 1;
+}
+
+.pluginContent {
   position: relative;
   overflow: auto;
+  flex-grow: 1;
 }
