@@ -1,7 +1,9 @@
+import { useHistory } from 'react-router-dom'
 import styles from '../styles/AcctDeactivation.module.css'
 import SettingsNav from './SettingsNav'
 
 const AcctDeactivation = () => {
+  const history = useHistory()
   return (
     <>
       <SettingsNav />
@@ -31,7 +33,13 @@ const AcctDeactivation = () => {
           </p>
 
           <div>
-            <button className={styles.deactivateButton}>
+            <button className={styles.deactivateButton}
+            onClick={
+              ()=>{
+                history.push('/confirm-deactivation')
+              }
+            }
+            >
               Yes, deactivate my account
             </button>
             <button className={styles.cancelButton}>Cancel</button>
