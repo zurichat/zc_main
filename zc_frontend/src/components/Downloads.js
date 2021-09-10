@@ -1,6 +1,8 @@
 import {useState} from 'react'
 import styles from '../styles/Downloads.module.css'
 import pdf from '../assets/file-earmark-pdf.svg'
+import open from '../assets/file-open.svg'
+import close from '../assets/file-close.svg'
 
 const Downloads = () => {
   const [files] = useState([
@@ -53,7 +55,12 @@ const Downloads = () => {
                   </div>
                 </a>
                 <div className={styles.more}>
-                  
+                  <button className={styles.openBtn}>
+                    <img src={open} alt="" />
+                  </button>
+                  <button className={styles.closeBtn}>
+                    <img src={close} alt="" />
+                  </button>
                 </div>
               </li>
               ))}

@@ -113,6 +113,7 @@
   padding: 14px;
   margin-bottom: 24px;
   transition: background-color 0.3s ease-in-out;
+  position: relative;
 }
 
 .filesItem:hover {
@@ -136,4 +137,33 @@
 
 .filesDetails {
   margin-left: 16px;
+}
+
+.more {
+  padding: 8px 11.25px;
+  background-color: #ffffff;
+  border: 0.7px solid #bebebe;
+  border-radius: 6px;
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-40%);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.filesItem:hover .more {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+.more button {
+  background: none;
+  outline: 0;
+  border: 0;
+  padding: 0;
+}
+
+.openBtn {
+  margin-right: 20px;
 }
