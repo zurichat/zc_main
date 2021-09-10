@@ -380,12 +380,12 @@
   /* set yourself as away*/
   .away {
     position: absolute;
-    right: 88px;
+    right: 183px;
   }
 
   /* set yourself as active*/
   .active {
     position: absolute;
-    right: 85px;
+    right: 180px;
   }
 }
