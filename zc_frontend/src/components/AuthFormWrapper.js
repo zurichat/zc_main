@@ -43,17 +43,16 @@ const FormWrapper = ({
         <div className={`${styles.inputSection}`}>{children}</div>
 
         <div className={`${styles.btnContainer}`}>
-          <button
+          <input
             className={`${
               name || email || password || check
                 ? styles.btn
                 : styles.btnDisabled
             }`}
+            value={submitButtonName}
             type="submit"
             disabled={!name || !email || !password || !check}
-          >
-            {submitButtonName}
-          </button>
+          />
         </div>
       </form>
       <div className={`${styles.bottomLine}`}>
