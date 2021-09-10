@@ -1,13 +1,13 @@
 import { useContext, useState } from 'react'
 
 // react icons
-import { FaChevronRight, FaTimes } from 'react-icons/fa'
+import { FaCircle, FaChevronRight, FaTimes } from 'react-icons/fa'
 
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
 
 import styles from '../styles/Topbar.module.css'
 import { TopbarContext } from '../context/Topbar'
-import StatusBadge from './StatusBadge'
+import StatusBadgeModal from './StatusBadgeModal'
 import { ProfileContext } from '../context/ProfileModal'
 import Preferences from './Preferences'
 import EditProfile from './EditProfile'
@@ -71,26 +71,26 @@ const TopbarModal = () => {
               <h4>Praise.A</h4>
               {active ? (
                 <div className={styles.online}>
-                  <div className={styles.circle} />
-                  <p>Active</p>
+                  <FaCircle className={styles.circle} />
+                  <p className={styles.active}>Active</p>
                 </div>
               ) : (
                 <div className={styles.online}>
-                  <div className={styles.circlegrey} />
-                  <p style={{ marginLeft: '14px' }}>Away</p>
+                  <FaCircle className={styles.circlegrey} />
+                  <p className={styles.away}>Away</p>
                 </div>
               )}
             </div>
           </div>
 
           <div onClick={openStatus} className={styles.sectionTwo}>
-            <StatusBadge />
+            <StatusBadgeModal />
           </div>
 
           <div className={styles.sectionThree}>
             <p onClick={openStatus}>Set a status</p>
             <p onClick={() => setActive(!active)}>
-              {active ? 'Set yourself as away' : 'Set yourself as online'}
+              {active ? 'Set yourself as away' : 'Set yourself as active'}
             </p>
             <div className={styles.pause}>
               <p>Pause Notifications</p>
