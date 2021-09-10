@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import Languages from '../../settings/constants/Language'
 import TimeZone from '../../settings/constants/TimeZone'
