@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+.card_section {
+  padding-left: 65px;
+  padding-right: 65px;
+  padding-bottom: 30px;
+  /*background-color: white; */
+}
+
+.section_heading {
+  font-family: Lato;
+  font-weight: bold;
+  line-height: 31px;
+  text-decoration-line: underline;
+  font-style: normal;
+  font-size: 36px;
+  padding-bottom: 26px;
+  color: #000000;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  border: none;
+  background-color: transparent;
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .card_section {
+    padding: 2.5em;
+  }
+  .section_heading {
+    font-size: 16px;
+  }
+}
