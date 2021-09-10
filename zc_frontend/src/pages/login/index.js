@@ -1,209 +1,86 @@
-/* eslint-disable no-template-curly-in-string */
-/* eslint-disable react/jsx-no-duplicate-props */
-import styles from '../../styles/Login.module.css'
 import React, { useState } from 'react'
-import GoogleLogin from 'react-google-login'
+// import { Link } from 'react-router-dom'
+import authBg from '../../pages/images/backg.svg'
 import { withRouter } from 'react-router-dom'
-import { Button } from 'react-bootstrap'
-// import LoginLoading from '../../components/LoginLoading'
-import Illustration from '../../components/Illustration'
-import Cookies from 'universal-cookie'
-import { connect } from 'react-redux'
+import AuthInputBox from '../../components/AuthInputBox'
+import FormWrapper from '../../components/AuthFormWrapper'
+import styles from '../../styles/AuthFormElements.module.css'
 
-import { loginUser } from '../../redux/userAction/userActions'
+//import GoogleLogin from 'react-google-login'
 
-const Login = ({ history, loginUser }) => {
-  const [loginInfo, setLoginInfo] = useState({
-    email: '',
-    password: ''
-  })
-  const [showPassword, setShowPassword] = useState(false)
-
-  // const [showLoader, setShowLoader] = useState(false)
-
-  const url = 'https://api.zuri.chat/auth/login'
-  const cookies = new Cookies()
-
-  const handleClickShowPassword = () => {
-    setShowPassword(prev => !prev)
-  }
-  const successResponseGoogle = response => {
-    history.push('/')
-  }
-  const failureResponseGoogle = response => {
-    console.log(response)
-  }
-
-  //Save token function
-  const setCookies = (key, value, option) => {
-    cookies.set(key, value, option)
-  }
-
-  //Handle login Auth
-
-  const handleChange = e => {
-    const { name, value } = e.target
-    setLoginInfo({
-      ...loginInfo,
-      [name]: value
-    })
-  }
+const Login = () => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [rememberMe, setRememberMe] = useState('')
 
   const handleSubmit = e => {
     e.preventDefault()
-    loginUser(url, loginInfo, setCookies, history)
   }
 
   return (
-    <div className={styles.login__container}>
-      {/* {showLoader && <LoginLoading />} */}
-      <Illustration />
-      <div class={`col-12 ${styles.login}`}>
-        <div className={`pt-4 mt-3 text-center`}>
-          <span>
-            <img src="logo.svg" alt="logo" />
-          </span>
+    <main id={styles.authPageWrapper}>
+      <aside id={styles.authAsideContainer} className={styles.display_none}>
+        <div id={styles.authImageWrapper}>
+          <img src={authBg} alt="backgroundImage" />
+          <div id={styles.aside_txt}></div>
         </div>
-        <div className={`pt-1 mt-3`}>
-          <h2 className={`pt-2 ${styles.loginheader} text-dark`}>Log in</h2>
-          <p className={styles.subtext}>
-            Login with the data you entered during your registration
-          </p>
-          <div className={`my-lg-3 my-sm-3 text-center`}>
-            <GoogleLogin
-              clientId="78755437309-27q9m2toval9c439d2r7q5gj28h0pqcc.apps.googleusercontent.com"
-              render={renderProps => (
-                <img
-                  onClick={renderProps.onClick}
-                  className={`mx-3 ${styles.icon}`}
-                  src={`/google.png`}
-                  alt="google icon"
-                />
-              )}
-              buttonText=""
-              onSuccess={successResponseGoogle}
-              onFailure={failureResponseGoogle}
-              cookiePolicy={'single_host_origin'}
-            />
-            <img
-              className={`mx-lg-3 mx-sm-3 ${styles.icon}`}
-              src={`/apple.png`}
-              alt="apple icon"
-            />
+      </aside>
+      <section id={styles.authFormContainer}>
+        <FormWrapper
+          header="Login"
+          subHeader="Login with the data you entered during your registration"
+          googleHeader="Login with Google"
+          topLineText="OR"
+          submitButtonName="Log in"
+          email={email}
+          password={password}
+          check={rememberMe}
+          handleSubmit={handleSubmit}
+          bottomLine="New to us? Create an Account"
+          bottomLink="Log in"
+        >
+          <AuthInputBox
+            className={`${styles.inputElement}`}
+            id="email"
+            name="Email address"
+            type="email"
+            placeholder="Johndoe@example.com"
+            value={email}
+            setValue={setEmail}
+            error=""
+          />
+          <AuthInputBox
+            className={`${styles.inputElement}`}
+            id="password"
+            name="Password"
+            type="password"
+            placeholder="Enter a password"
+            value={password}
+            setValue={setPassword}
+            error=""
+          />
+
+          <div className={`${styles.rememberMe}`}>
+            <span className={`${styles.left}`}>
+              <input
+                className={`${styles.checkBox}`}
+                name="RememeberMe"
+                type="checkbox"
+                value={rememberMe}
+                onClick={() => {
+                  setRememberMe(!rememberMe)
+                }}
+              />
+              remember me
+            </span>
+            <span className={`${styles.right}`}>
+              Forgot password?<a href="/"> {''}Get help signing in</a>
+            </span>
           </div>
-          <div className={` d-flex justify-content-between`}>
-            <img className={`${styles.line}`} src="Line.svg" alt="line" />
-            <p className={`${styles.or}`}>Or log in with</p>
-            <img
-              className={`${styles.line}`}
-              src="Line.svg"
-              alt="line"
-              srcset=""
-            />
-          </div>
-          <form className={`mb-lg-1 mb-sm-3`} onSubmit={handleSubmit}>
-            <div className={` ${styles.email_input}`}>
-              <div
-                className={`mb-lg-2 mb-md-2 mb-sm-3 col-sm-12 col-md-6 w-100`}
-              >
-                <label for="Email" class="form-label">
-                  Email address
-                </label>
-                <input
-                  name="email"
-                  type="email"
-                  className={`py-lg-3 py-md-3 py-sm-3 form-control`}
-                  className={`py-lg-2 py-md-2 py-sm-3 form-control`}
-                  placeholder="Enter your email address"
-                  required
-                  value={loginInfo.email}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
-            <div className={`d-flex ${styles.email_input}`}>
-              <div
-                className={`mb-lg-2 mb-md-2 mb-sm-3  col-sm-12 col-md-6 w-100`}
-              >
-                <label for="Password" class="form-label">
-                  Password
-                </label>
-                <input
-                  name="password"
-                  type={showPassword ? 'text' : 'password'}
-                  className={`py-lg-3 py-md-3 py-sm-3 form-control`}
-                  className={`py-lg-2 py-md-2 py-sm-3 form-control`}
-                  placeholder="Enter a password"
-                  required
-                  value={loginInfo.password}
-                  onChange={handleChange}
-                />
-              </div>
-              <i
-                className={`cursor-pointer far fa-eye${
-                  showPassword ? '' : '-slash'
-                } ${styles.far}`}
-                onClick={handleClickShowPassword}
-              ></i>
-            </div>
-            <div class="mb-lg-2 mb-md-2 mb-sm-3 my-sm-3 form-check">
-              <input type="checkbox" class="form-check-input" id="Check" />
-              <label
-                className={`form-check-label text-secondary ${styles.check}`}
-                for="Check"
-              >
-                Remember me
-              </label>
-              <label
-                className={`float-md-end text-secondary  ${styles.checktext}`}
-              >
-                Forgot password?{' '}
-                <a href="/" className={`${styles.checklink}`}>
-                  Get help signing in
-                </a>
-              </label>
-            </div>
-          </form>
-          <div>
-            <Button
-              className={`${styles.button} mb-lg-2 col-12 col-md-6 px-lg-2 px-md-2 py-lg-2 py-md-2`}
-              type="submit"
-              disabled={!loginInfo.email || !loginInfo.password}
-              onClick={handleSubmit}
-            >
-              Log in
-            </Button>
-          </div>
-          <div className={`my-2`}>
-            <p
-              className={`text-center py-1 text-secondary ${styles.checktextlink}`}
-            >
-              New to us?{' '}
-              <a href="/" className={`${styles.checklink}`}>
-                Create an Account
-              </a>
-            </p>
-          </div>
-        </div>
-        <div class={`d-flex justify-content-around ${styles.footer}`}>
-          <a href="/" class={`mx-md-4 text-secondary`}>
-            Contact Us
-          </a>
-          <a href="/" class={`mx-md-4 text-secondary`}>
-            Legal Policy
-          </a>
-          <a href="/" class={`mx-md-4 text-secondary`}>
-            <i class="fas fa-globe"></i> Change Region{' '}
-            <i class="fas fa-caret-down"></i>
-          </a>
-        </div>
-      </div>
-    </div>
+        </FormWrapper>
+      </section>
+    </main>
   )
 }
 
-const mapDispatchToProps = {
-  loginUser
-}
-
-export default connect(null, mapDispatchToProps)(withRouter(Login))
+export default withRouter(Login)

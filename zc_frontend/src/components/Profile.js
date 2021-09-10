@@ -5,7 +5,7 @@ import avatar from '../assets/avatar.png'
 import twitter from '../assets/twitter.svg'
 import linkedin from '../assets/linkedin.svg'
 import instagram from '../assets/instagram.svg'
-import { ProfileContext } from '../contexts/ProfileModal'
+import { ProfileContext } from '../context/ProfileModal'
 import EditProfile from './EditProfile'
 
 const Dropdown = () => {
