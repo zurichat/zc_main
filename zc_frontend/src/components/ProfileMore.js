@@ -27,7 +27,7 @@ export const Dropdown = () => {
           </p>
           <p className={styles.paragraph}>View your files</p>
           <p onClick={() => setActive(!active)} className={styles.paragraph}>
-            Set yourself away
+            Set yourself {active ?  'away' : 'active'}
           </p>
         </div>
         <div className={styles.bottomSection}>
