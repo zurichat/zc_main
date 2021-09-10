@@ -1,5 +1,5 @@
 .tabcontainer {
-  padding-top: 150px;
+  padding-top: 80px;
   padding-bottom: 150px;
   display: flex;
   /* align-items: center; */
@@ -15,6 +15,9 @@
   background: none;
   font-size: 20px;
   margin-bottom: 20px;
+  color:#242424;
+  font-family:Lato;
+  font-weight:900;
 }
 
 .tabcenter {
