@@ -15,7 +15,7 @@ const SettingsNav = () => {
   return (
     <div className={styles.containers}>
       <div className={styles.accountbar}>
-        <Link to="/">
+        <Link to="/home">
           <div className={styles.brand}>
             <img src="./zurichatlogo.svg" alt="" />
             <h3>ZURI</h3>

@@ -1,6 +1,7 @@
-import React, { useContext } from 'react'
-import { TopbarContext } from '../contexts/Topbar'
+import { useContext } from 'react'
+import { TopbarContext } from '../context/Topbar'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import styles from '../styles/Topbar.module.css'
 import SearchBar from './externalPagesComponents/SearchBar'
@@ -8,7 +9,7 @@ import StatusBadge from './StatusBadge'
 import TopbarModal from './TopbarModal'
 import ProfileModal from './ProfileModal'
 
-export const Topbar = () => {
+const Topbar = ({ userProfile: { last_name, first_name } }) => {
   const state = useContext(TopbarContext)
   const { openModal } = state
 
@@ -24,6 +25,9 @@ export const Topbar = () => {
           <img src="/profilepic.png" alt="Profile" />
           <div className={styles.circles}></div>
         </div>
+        <p>
+          {last_name} {first_name}
+        </p>
       </div>
 
       <ProfileModal />
@@ -31,3 +35,9 @@ export const Topbar = () => {
     </div>
   )
 }
+
+const mapStateToProps = state => ({
+  userProfile: state
+})
+
+export default connect(mapStateToProps)(Topbar)
