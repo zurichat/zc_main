@@ -1,95 +1,117 @@
-/* Deactivation Bar */
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 .deactivationSection {
-  padding-top: 130px;
+  padding-top: 100px;
   margin: 0 13%;
+  position: relative;
 }
-
-@media screen and (max-width: 800px) {
-  .deactivationSection {
-    margin: 0 5%;
-  }
-
-  .deactivationNote {
-    padding: 20px 10px !important;
-  }
-
-  .deactivateButton {
-    margin-right: 15px;
-  }
+.confirmationHeader {
+  font-family: 'Lato', sans-serif;
+  font-size: 25px;
+  line-height: 16px;
+  color: #242424;
 }
-
-.deactivationTab p {
-  font-size: 18px;
-  font-weight: 900;
-  line-height: 30px;
-  margin-bottom: 10px;
-}
-
-.deactivationCaution {
-  border: 2px solid #eedede;
-  border-left: 4px solid #ff0000;
-  padding: 12px 10px;
+.confirmationBox {
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  border: 1px solid #bebebe;
+  box-sizing: border-box;
   border-radius: 3px;
-  background: #fff;
+  padding: 30px 50px;
+  margin-top: 20px;
+}
+.confirmationBox p {
+  font-family: 'Lato', sans-serif;
+  font-size: 21px;
+  line-height: 20px;
+  color: #3a3a3a;
+}
+.confirmationQuestion {
+  font-size: 15px;
   display: flex;
   align-items: center;
+  height: 20px;
+  margin: 15px 0;
 }
-
-.deactivationCaution img {
-  margin-right: 10px;
-  margin-top: -3px;
+.buttonContainer {
+  margin-top: 25px;
 }
-
-.deactivationCaution span {
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 22px;
-}
-
-.deactivationNote {
-  border: 2px solid #eedede;
-  background: #fff;
-  margin-top: 16px;
-  padding: 20px 50px;
-}
-
-.blue {
-  color: rgb(42, 155, 42);
-}
-
-.firstP {
-  font-size: 15px;
-  font-weight: normal;
-  margin-bottom: 10px;
-  line-height: 25px;
-}
-
-.secondP {
-  background-color: #fcf4da;
-  font-weight: 500;
-  line-height: 20px;
-  padding: 10px 5px;
-}
-
-.deactivateButton {
-  background-color: #ff0000;
-  color: #fff;
-  padding: 10px;
+.danger1,
+.danger2,
+.cancel {
+  padding: 14px 60px;
+  font-size: 21px;
+  color: #3a3a3a;
   border: none;
-  outline: none;
-  margin-top: 15px;
-  margin-right: 25px;
-  font-size: 13px;
   border-radius: 3px;
 }
-
-.cancelButton {
-  border: 1px solid #c4c4c4;
-  color: #000;
-  padding: 10px 25px;
-  outline: none;
-  margin-top: 15px;
-  font-size: 13px;
-  background: #fff;
-  border-radius: 3px;
+.danger1,
+.danger2 {
+  margin-right: 10px;
+}
+.danger1 {
+  background: #ed2222;
+  color: white;
+}
+.danger2 {
+  background: #bebebe;
+}
+.cancel {
+  background-color: white;
+  border: 1px solid black;
+  margin-left: 10px;
+}
+.cancel:hover {
+  color: #3a3a3a;
+}
+.checkBoxInactive {
+  display: inline-block;
+  margin-right: 10px;
+  height: 12px;
+  width: 12px;
+  background: #ffffff;
+  border: 1px solid #999999;
+  border-radius: 1px;
+  cursor: pointer;
+}
+.checkBoxActive {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  height: 12px;
+  width: 12px;
+  font-size: 8px;
+  background: #00b87c;
+  color: #ffffff;
+  border-radius: 1px;
+  cursor: pointer;
+}
+@media screen and (max-width: 900px) {
+  .deactivationSection {
+    margin: 0 3%;
+  }
+  .confirmationBox {
+    padding: 15px 25px;
+  }
+  .danger1,
+  .danger2,
+  .cancel {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 620px) {
+  .confirmationBox p {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 410px) {
+  .danger1,
+  .danger2,
+  .cancel {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
 }

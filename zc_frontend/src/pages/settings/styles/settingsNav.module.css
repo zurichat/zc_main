@@ -15,10 +15,8 @@
 }
 
 .brand img {
-  width: 100%;
-  max-width: 80px;
-  height: 100%;
-  max-height: 80px;
+  min-height: 32px;
+  height: 32px;
   object-fit: cover;
 }
 
@@ -37,7 +35,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 40%;
+  width: 100%;
 }
 
 .searchBar {
@@ -132,11 +130,6 @@
 @media screen and (max-width: 900px) {
   .brand {
     width: 55%;
-  }
-
-  .brand img {
-    width: 50%;
-    height: 70%;
   }
 
   .searchBar {

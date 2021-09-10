@@ -1,43 +1,69 @@
+import { useState } from 'react'
+import { FaCheck } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import styles from '../styles/AcctDeactivation.module.css'
+
 import SettingsNav from './SettingsNav'
 
+
+
 const AcctDeactivation = () => {
+  const [wantToDeactivate, setWantToDeactivate] = useState(false)
+  const history = useHistory()
   return (
     <>
       <SettingsNav />
       <div className={styles.deactivationSection}>
-        <div className={styles.deactivationTab}>
-          <p>Deactivate Account</p>
-          <div className={styles.deactivationCaution}>
-            <img src="./alertTriangle.svg" alt="alert_triangle" />
-            <span>Are you sure you want to deactivate your account?</span>
-          </div>
+            <h2 className={styles.confirmationHeader}>Deactivate Account</h2>
+            <div className={styles.confirmationBox}>
+                <p>Are you really sure you want to deactivate your account ?</p>
+                <div className={styles.confirmationQuestion}>
+                    {
+                      wantToDeactivate ? 
+                       <span 
+                        className={styles.checkBoxActive}
+                        onClick={()=> {
+                        setWantToDeactivate(false)
+                        }}>
+                          <FaCheck />
+                       </span>
+                      :
+                     
+                       <span 
+                        className={styles.checkBoxInactive}
+                        onClick={()=> {
+                         setWantToDeactivate(true)
+                        }}>
+
+                       </span>
+                    }
+                    <span>
+                        Yes I want to deactivate my account
+                    </span>
+                </div>
+                <div className={styles.buttonContainer}>
+                  {
+                    wantToDeactivate ?
+                    <button className={styles.danger1} onClick={
+                      ()=> {
+                        history.push('/account-deactivated')
+                      }
+                    }>
+                        Deactivate my Account
+                    </button>
+                    :
+                    <button className={styles.danger2}>
+                        Deactivate my Account
+                    </button>
+                  }
+                    
+                    <Link to='/settings'className={styles.cancel}>
+                        Cancel
+                    </Link>
+                </div>
+            </div>
         </div>
-
-        <div className={styles.deactivationNote}>
-          <p className={styles.firstP}>
-            This change will take effect immediately. An administrator of your
-            workspace will need to re-enable your accountif you would like to
-            rejoin this workspace. Your messages and files will be kept safe if
-            your account is ever reactivated. Any other Zurichat workspaces you
-            belong to will not be affected.
-          </p>
-
-          <p className={styles.secondP}>
-            <strong>Note:</strong> Don’t deactivate your account if you must
-            want to change your
-            <span className={styles.blue}> email address</span> or{' '}
-            <span className={styles.blue}>username</span>.
-          </p>
-
-          <div>
-            <button className={styles.deactivateButton}>
-              Yes, deactivate my account
-            </button>
-            <button className={styles.cancelButton}>Cancel</button>
-          </div>
-        </div>
-      </div>
     </>
   )
 }
