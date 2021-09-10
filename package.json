@@ -24,6 +24,7 @@
     "frontend": "cd zc_frontend && yarn"
   },
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "axios": "^0.21.1",
     "bootstrap": "^5.1.0",
     "cookie-parser": "^1.4.5",
