@@ -49,13 +49,13 @@ const FormWrapper = ({
 
         <div className={`${styles.btnContainer}`}>
           <input
-            type="submit"
-            value={submitButtonName}
             className={`${
               name || email || password || check
                 ? styles.btn
                 : styles.btnDisabled
             }`}
+            value={submitButtonName}
+            type="submit"
           />
         </div>
       </form>
