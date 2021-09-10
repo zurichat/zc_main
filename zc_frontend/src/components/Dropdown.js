@@ -1,7 +1,14 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 import styles from '../styles/Dropdown.module.css'
-const Dropdown = ({ children, title, opened, showAddButton, onTitleClick, onAddButtonClick }) => {
+const Dropdown = ({
+  children,
+  title,
+  opened,
+  showAddButton,
+  onTitleClick,
+  onAddButtonClick
+}) => {
   const [isOpen, setIsOpen] = useState(opened)
 
   return (
