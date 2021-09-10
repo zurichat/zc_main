@@ -31,6 +31,12 @@
   font-family: 'Lato', sans-serif;
   overflow-y: scroll;
 }
+.downloadsModal button {
+  background: none;
+  outline: 0;
+  border: 0;
+  padding: 0;
+}
 
 .downloadsModal::-webkit-scrollbar {
   display: none;
@@ -131,6 +137,10 @@
   transition: opacity 0.3s ease-in-out;
 }
 
+.filesDetails .content {
+  text-align: left;
+}
+
 .filesLink {
   display: flex;
 }
@@ -155,13 +165,6 @@
 .filesItem:hover .more {
   opacity: 1;
   transform: translateY(-50%);
-}
-
-.more button {
-  background: none;
-  outline: 0;
-  border: 0;
-  padding: 0;
 }
 
 .openBtn {
