@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { useContext, Fragment } from 'react'
 import useSWR from 'swr'
 import { URLContext } from '../context/Url'
@@ -13,6 +14,22 @@ export const Sidebar = () => {
   const { data: plugins } = useSWR('/api/plugin/list', fetcher)
 
   const { setUrl } = useContext(URLContext)
+
+  const sidebarApi = () => {
+    axios({
+      url: `https://channels.zuri.chat/api/v1/sidebar/?org=1&user=43567868`,
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Vary': 'Accept, Accept-Language, Origin',
+        'Allow': 'GET, HEAD, OPTIONS',
+      }
+    })
+      .then((res) => {
+        console.log(res)
+      })
+      .catch(err => console.log(err));
+  }
 
   return (
     <div className={styles.container}>
@@ -46,8 +63,11 @@ export const Sidebar = () => {
           <Dropdown
             title={plugins[key].name}
             key={key}
-            showAddButton={false}
+            showAddButton={true}
             onTitleClick={() => setUrl(key)}
+            onAddButtonClick={() => {
+              console.log(sidebarApi)
+            }}
           ></Dropdown>
         ))}
       <Dropdown title="messages">
