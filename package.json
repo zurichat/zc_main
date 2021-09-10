@@ -7,8 +7,9 @@
   "scripts": {
     "start": "npm run run-start",
     "build": "npm run frontend:build",
+    "prepare": "husky install",
     "format": "prettier -w .",
-    "lint": "prettier -c .",
+    "lint": "eslint ",
     "deploy": "gh-pages -d build",
     "dev": "concurrently --kill-others-on-fail \"npm run run-dev\" \"npm run frontend:dev\"",
     "run-start": "cross-env NODE_ENV=production node server.js",
