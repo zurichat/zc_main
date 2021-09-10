@@ -1,6 +1,6 @@
 import styles from '../styles/AcctDeactivation.module.css'
 import SettingsNav from './SettingsNav'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 const AcctDeactivation = () => {
   return (
