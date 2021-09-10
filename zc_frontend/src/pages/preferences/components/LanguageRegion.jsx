@@ -51,7 +51,6 @@ const Language = () => {
           <div className="d-flex align-items-center mb-2">
             <input
               type="checkbox"
-              check={isTimezone}
               onChange={handleTimezone}
             />
             <small>Set timezone automatically</small>
@@ -78,13 +77,13 @@ const Language = () => {
           <br />
 
           <div className="d-flex align-items-center mb-2">
-            <input type="checkbox" check={isSpell} onChange={handleSpell} />
+            <input type="checkbox" onChange={handleSpell} />
             <small>Enable spell check on your messages</small>
           </div>
 
           <div className={styles.choosed}>
             <span className={isSpell ? styles.block : styles.none}>
-              {isSpell && data}{' '}
+              {isSpell && data}
             </span>
           </div>
           <p>
