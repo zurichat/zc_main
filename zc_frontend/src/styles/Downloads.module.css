@@ -1,3 +1,4 @@
+/* Modal container */
 .downloadsContainer {
   height: 100vh;
   width: 100vw;
@@ -22,6 +23,7 @@
   cursor: pointer;
 }
 
+/* Modal */
 .downloadsModal {
   width: 90%;
   max-width: 490px;
