@@ -47,13 +47,13 @@ const Downloads = () => {
             files && <ul className={styles.files}>
               {files.map((file, index) => (
               <li key={index} className={styles.filesItem}>
-                <a href="hng.tech" target="_blank"  className={styles.filesLink}>
+                <button className={styles.filesLink}>
                   <img src={pdf} alt="" />
                   <div className={styles.filesDetails}>
                     <h6 className={styles.heading}>{file.name}</h6>
                     <p data-text={file.size} aria-label={file.size} className={styles.content}></p>
                   </div>
-                </a>
+                </button>
                 <div className={styles.more}>
                   <button className={styles.openBtn}>
                     <img src={open} alt="" />
