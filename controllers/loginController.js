@@ -1,5 +1,5 @@
 const { createJwt } = require('../lib/jwtHelper.js')
-const bcrypt = require("bcrypt")
+const bcrypt = require('bcrypt')
 
 // Dummy database
 const dummyDB = [
@@ -44,7 +44,6 @@ const controllers = () => {
       })
     }
 
-
     // hash user password
     const salt = await bcrypt.genSalt(10)
     const hashedPassword = await bcrypt.hash(req.body.password, salt)
@@ -68,7 +67,6 @@ const controllers = () => {
         password: hashedPassword
       }
     })
-
   }
   const login = (_, res) => {
     const user = dummyDB[0]
