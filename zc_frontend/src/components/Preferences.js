@@ -5,6 +5,8 @@ import SidebarPreference from '../pages/preferences/components/SidebarPreference
 import PreferenceMenu from '../pages/preferences/components/PreferenceMenu'
 import styles from '../pages/preferences/styles/NotificationPreference.module.css'
 import { ProfileContext } from '../context/ProfileModal'
+import LanguageRegion from '../pages/preferences/components/LanguageRegion'
+
 
 const Preferences = () => {
   const { sideBar } = useContext(ProfileContext)
@@ -19,6 +21,7 @@ const Preferences = () => {
         <div>
           {sideBar === 1 && <NotificationPreference />}
           {sideBar === 2 && <SidebarPreference />}
+          {sideBar === 2 && <LanguageRegion />}
         </div>
       </div>
     </ProfileModal>
