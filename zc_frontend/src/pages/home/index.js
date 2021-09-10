@@ -14,19 +14,19 @@ const Home = () => {
       <div className={styles.container}>
         <Sidebar />
         <ProfileProvider>
-          <div className={styles.room}>
-            <TopbarProvider>
+          <TopbarProvider>
+            <div className={styles.room}>
               <Topbar />
-            </TopbarProvider>
-            <div className={styles.spaceWrapper}>
-              <div className={styles.pluginContent}>
-                <PluginLoaderProvider>
-                  <PluginContent />
-                </PluginLoaderProvider>
+              <div className={styles.spaceWrapper}>
+                <div className={styles.pluginContent}>
+                  <PluginLoaderProvider>
+                    <PluginContent />
+                  </PluginLoaderProvider>
+                </div>
+                <Profile />
               </div>
-              <Profile />
             </div>
-          </div>
+          </TopbarProvider>
         </ProfileProvider>
       </div>
     </UrlProvider>
