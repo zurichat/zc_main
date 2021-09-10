@@ -28,6 +28,7 @@ import Cookies from './pages/cookies'
 import DeactivateAccount from './pages/settings/components/AcctDeactivation'
 import CookiesSetting from './pages/cookies-settings'
 import SearchResults2 from './components/externalPagesComponents/searchResults2'
+import ConfirmPassword from './pages/settings/components/ConfirmPassword'
 import ApiDocs from './pages/api-docs'
 import AccDeactivated from './pages/settings/components/AccDeactivated'
 
@@ -88,8 +89,11 @@ const App = () => (
       <Route path="/input">
         <Input />
       </Route>
-      <Route path="/settings">
+      <Route path="/settings" exact>
         <Settings />
+      </Route>
+      <Route path="/settings/:id">
+        <ConfirmPassword />
       </Route>
       <Route path="/search">
         <SearchResult />

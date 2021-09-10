@@ -1,6 +1,7 @@
 .containers {
   width: 100%;
-  position: fixed;
+  position: sticky;
+  top: 0;
   height: 5.0625em;
   display: flex;
   justify-content: space-between;
@@ -10,8 +11,8 @@
 }
 
 .brand {
-  width: 25%;
   display: flex;
+  align-items: center;
 }
 
 .brand img {
