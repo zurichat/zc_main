@@ -2,25 +2,6 @@ import React, { useState } from 'react'
 import styles from '../styles/NotificationPreference.module.css'
 import { AiOutlineQuestionCircle } from 'react-icons/ai'
 
-const TextInput = ({ type = 'text', label }) => {
-  const [value, setValue] = useState('')
-
-  function handleChange(e) {
-    setValue(e.target.value)
-  }
-  return (
-    <div className={styles.inputContainer}>
-      <input
-        type={type}
-        className={styles.textInput}
-        value={value}
-        onChange={handleChange}
-      />
-      <label className={value && 'filled'}>{label}</label>
-    </div>
-  )
-}
-
 const NotificationPreference = () => {
   const [state, setState] = useState({
     name: 'React',
@@ -49,6 +30,7 @@ const NotificationPreference = () => {
           </span>
         </div>
         <form>
+          <div className={styles.radioBox}>
           <div className={styles.radio}>
             <input
               type="radio"
@@ -75,6 +57,7 @@ const NotificationPreference = () => {
               onChange={onValueChange}
             />
             <label htmlFor="none">Nothing</label>
+          </div>
           </div>
           <div className={styles.checkbox}>
             <label htmlFor="for-mobile">
