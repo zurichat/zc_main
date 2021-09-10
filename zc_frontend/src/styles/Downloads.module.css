@@ -131,12 +131,10 @@
 
 .filesItem:hover .filesDetails .content:before {
   content: 'Open file';
-  opacity: 1;
 }
 
 .filesDetails .content:before {
   content: attr(data-text);
-  opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
 
