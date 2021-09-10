@@ -19,32 +19,33 @@ const Signup = () => {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    await axios.post('/api/register', {
-      fullName: name,
-      email,
-      password
-    })
-    .then(response => {
-      const { data, message } = response.data
-      
-      //Store token in localstorage
-      localStorage.setItem('token', data.token)
+    await axios
+      .post('/api/register', {
+        fullName: name,
+        email,
+        password
+      })
+      .then(response => {
+        const { data, message } = response.data
 
-      //Display message
-      alert(message) //Change this when there is a design
+        //Store token in localstorage
+        localStorage.setItem('token', data.token)
 
-      setTimeout(() => {
-        //Redirect to some other page
-      }, 2000);
+        //Display message
+        alert(message) //Change this when there is a design
 
-    })
-    .catch(error => {
-      const { data,status } = error.response
+        setTimeout(() => {
+          //Redirect to some other page
+        }, 2000)
+      })
+      .catch(error => {
+        const { data, status } = error.response
 
-      //Render error message to the user
-      if(status === 400) alert(data) //Change this when there is a design
-      else if(status === 409) alert(data.reason) //Change this when there is a design
-    })
+        //Render error message to the user
+        if (status === 400) alert(data)
+        //Change this when there is a design
+        else if (status === 409) alert(data.reason) //Change this when there is a design
+      })
   }
 
   return (
