@@ -8,10 +8,7 @@ const Language = () => {
   const [isTimezone, setIsTimezone] = useState(false)
   const [isSpell, setIsSpell] = useState(false)
   const [data, setData] = useState('')
-
-  useEffect(() => {
-      setData(data)
-  },[])
+  
 
   // THE SECTION OF HANDLECHECK
   const handleTimezone = e => {
