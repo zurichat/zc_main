@@ -2,7 +2,7 @@ import * as React from 'react'
 import { ReactMultiEmail, isEmail } from 'react-multi-email'
 import 'react-multi-email/style.css'
 
-interface IProps { }
+interface IProps {}
 interface IState {
   emails: string[];
 }
