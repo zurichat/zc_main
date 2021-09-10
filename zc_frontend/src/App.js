@@ -5,6 +5,8 @@ import Login from './pages/login'
 import SignUp from './pages/signup'
 import EmailVerification from './pages/email-verify'
 import './styles/globals.css'
+import InvitationAcceptance from './components/InvitationAcceptance'
+import './styles/globals.css'
 import Security from './pages/security'
 import Features from './pages/features'
 import Resources from './pages/resources'
@@ -17,7 +19,6 @@ import Header from './components/externalPagesComponents/Header'
 import Input from './components/externalPagesComponents/Input'
 // import CookiesBanner from './components/externalPagesComponents/CookiesBanner/cookiesBanner'
 import FAQ from './pages/FAQ'
-import './styles/globals.css'
 import MarketPlace from './pages/marketplace/marketplace'
 import Settings from './pages/settings'
 import SearchResult from './components/SearchResults3'
@@ -115,6 +116,9 @@ const App = () => (
           color={`black`}
           underline
         />
+      </Route>
+      <Route path="components">
+        <InvitationAcceptance />
       </Route>
       <Route path="searchSuggestion">
         <SearchSuggestion />
