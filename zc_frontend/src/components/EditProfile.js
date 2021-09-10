@@ -11,7 +11,7 @@ const EditProfile = () => {
               <div className={styles.sectionA}>
                 <form>
                   <div className={styles.formWrapper}>
-                    <label className='label'>First Name</label>
+                    <label className="label">First Name</label>
                     <input
                       type="text"
                       name="name"
@@ -23,7 +23,7 @@ const EditProfile = () => {
                     className={styles.formWrapper}
                   >
                     <div className={styles.displayNameDesktop}>
-                      <label className='label'>Choose a Display Name</label>
+                      <label className="label">Choose a Display Name</label>
                       <input
                         type="text"
                         name="displayName"
@@ -36,7 +36,7 @@ const EditProfile = () => {
                     </div>
 
                     <div className={styles.sectionB}>
-                      <label className='label'>Pronouns</label>
+                      <label className="label">Pronouns</label>
                       <select className={styles.formInput}>
                         <option value="John">He/him</option>
                         <option value="John">She/her</option>
@@ -45,7 +45,7 @@ const EditProfile = () => {
                   </div>
 
                   <div className={styles.mt}>
-                    <label className='label'>What you do</label>
+                    <label className="label">What you do</label>
                     <input
                       type="text"
                       name="name"
@@ -57,12 +57,12 @@ const EditProfile = () => {
                     <span className={styles.fontBold}>ZURI</span>
                   </div>
                   <div className={styles.mt}>
-                    <label className='label'>Bio</label>
+                    <label className="label">Bio</label>
                     <textarea rows="3" className={styles.formInput} />
                   </div>
 
                   <div className="my-4">
-                    <label className='label'>Phone Number</label>
+                    <label className="label">Phone Number</label>
                     <div className={styles.phoneNumber}>
                       <span>
                         <select>
@@ -78,7 +78,7 @@ const EditProfile = () => {
                       </span>
                     </div>
                   </div>
-                  <label className='label'>Timezones</label>
+                  <label className="label">Timezones</label>
                   <div>
                     <select className={styles.timeZone}>
                       <option value="timezone">
@@ -88,7 +88,7 @@ const EditProfile = () => {
                   </div>
 
                   <div className={styles.mt}>
-                    <label className='label'>Twitter</label>
+                    <label className="label">Twitter</label>
                     <input
                       type="text"
                       name="name"
@@ -96,7 +96,7 @@ const EditProfile = () => {
                     />
                   </div>
                   <div className={styles.mt}>
-                    <label className='label'>Facebook</label>
+                    <label className="label">Facebook</label>
                     <input
                       type="text"
                       name="name"
@@ -119,7 +119,7 @@ const EditProfile = () => {
                     <img src="/profiles.svg" alt="profile-pic" />
                     <div className={styles.username}>
                       <div className={styles.mt} style={{ width: '100%' }}>
-                        <label className='label'>Display Name</label>
+                        <label className="label">Display Name</label>
                         <input
                           type="text"
                           name="name"
@@ -152,10 +152,10 @@ const EditProfile = () => {
 
             <div className={styles.px9}>
               <div className={styles.linkTab}>
-                <label className='label'>
+                <label className="label">
                   <span className={styles.fontMed}>
                     {' '}
-                    <label className='label'>Additional Links</label>{' '}
+                    <label className="label">Additional Links</label>{' '}
                   </span>
                   <span className={styles.fontRed}> (5max) </span>
                 </label>
