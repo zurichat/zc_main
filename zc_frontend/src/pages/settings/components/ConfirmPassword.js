@@ -16,9 +16,9 @@ const ConfirmPassword = () => {
 
   const history = useHistory()
 
-  const handleInputChange = (e) => {
-    setPassword(e.target.value);
-    setError(false);
+  const handleInputChange = e => {
+    setPassword(e.target.value)
+    setError(false)
   }
 
   // Form submit
@@ -26,7 +26,7 @@ const ConfirmPassword = () => {
     e.preventDefault()
 
     if (password.length > 5) {
-      history.push('/deactivate-account');
+      history.push('/deactivate-account')
     } else {
       setError(true)
     }
