@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useContext, useEffect } from 'react'
-import { URLContext } from '../contexts/Url'
-import { PluginLoaderContext } from '../contexts/PluginLoaderState'
+import { URLContext } from '../context/Url'
+import { PluginLoaderContext } from '../context/PluginLoaderState'
 import cheerio from 'cheerio'
 
 import PluginLoader from './PluginLoader'
