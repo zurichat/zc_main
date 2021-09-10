@@ -16,8 +16,8 @@ const TwoFactor = () => {
         <Link to=""> two-factor authentication help page</Link>
       </p>
 
-      <div class="col-md-4 mb-1 mt-2">
-        <button class="btn btn-primary">
+      <div className="col-md-4 mb-1 mt-2">
+        <button className="btn btn-primary">
           Set up two-factor authentication page
         </button>
       </div>

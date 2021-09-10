@@ -20,7 +20,7 @@ const Preferences = () => {
         <div>
           {sideBar === 1 && <NotificationPreference />}
           {sideBar === 2 && <SidebarPreference />}
-          {sideBar === 2 && <LanguageRegion />}
+          {sideBar === 5 && <LanguageRegion />}
         </div>
       </div>
     </ProfileModal>
