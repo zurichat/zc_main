@@ -21,14 +21,14 @@ export const Sidebar = () => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Vary': 'Accept, Accept-Language, Origin',
-        'Allow': 'GET, HEAD, OPTIONS',
+        Vary: 'Accept, Accept-Language, Origin',
+        Allow: 'GET, HEAD, OPTIONS'
       }
     })
-      .then((res) => {
+      .then(res => {
         console.log(res)
       })
-      .catch(err => console.log(err));
+      .catch(err => console.log(err))
   }
 
   return (
