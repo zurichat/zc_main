@@ -6,7 +6,16 @@ import close from '../assets/file-close.svg'
 import pointy from '../assets/pointy.svg'
 
 const Downloads = ({setModal}) => {
-  const [files] = useState(null)
+  const [files] = useState([
+    {
+      name: 'HNG Design Rules Book.pdf',
+      size: '5MB PDF'
+    },
+    {
+      name: 'HNG Entrepreneurship - Assignment 1.pdf',
+      size: '205KB PDF'
+    }
+  ])
   return(
   <>
     <section
