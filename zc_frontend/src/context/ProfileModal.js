@@ -4,6 +4,7 @@ export const ProfileContext = createContext(null)
 export const ProfileProvider = ({ children }) => {
   const [modal, setModal] = useState(false)
   const [showProfile, setShowProfile] = useState(false)
+  const [sideBar, setSideBar] = useState(1)
 
   const toggleModalState = () => {
     setModal(!modal)
@@ -15,7 +16,14 @@ export const ProfileProvider = ({ children }) => {
 
   return (
     <ProfileContext.Provider
-      value={{ modal, toggleModalState, showProfile, toggleProfileState }}
+      value={{
+        modal,
+        toggleModalState,
+        showProfile,
+        toggleProfileState,
+        sideBar,
+        setSideBar
+      }}
     >
       {children}
     </ProfileContext.Provider>
