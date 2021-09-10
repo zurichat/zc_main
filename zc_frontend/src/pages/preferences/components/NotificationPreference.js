@@ -33,7 +33,7 @@ const NotificationPreference = () => {
 
   const onValueChange = event => {
     setState({
-      selectedOption: event.target.value
+      name: event.target.value
     })
   }
 
