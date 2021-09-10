@@ -127,15 +127,15 @@
     width: 100%;
     overflow-y: scroll;
   }
-
-  
 }
 
-@media only screen and (max-width: 468px){
-.rememberMe .right {
+@media only screen and (max-width: 468px) {
+  .rememberMe .right {
     display: block;
     float: left;
     width: auto;
   }
-
+  .tos .checkBox {
+    top: 2px;
+  }
 }
