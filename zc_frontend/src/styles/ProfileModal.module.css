@@ -13,7 +13,8 @@
   padding-bottom: 2rem;
 }
 
-.overlay, .overlayGreen {
+.overlay,
+.overlayGreen {
   position: fixed;
   top: 0;
   left: 0;
@@ -58,8 +59,8 @@
   color: #fff;
   font-weight: 700;
   font-size: 1.2rem;
-  z-index: 999;
   position: sticky;
+  z-index: 100;
 
   top: 0;
   left: 0;
@@ -73,7 +74,6 @@
   width: 0.7rem;
   cursor: pointer;
 }
-
 
 /* .closeIconPath {
   path: #333;
@@ -111,7 +111,7 @@
     height: 85vh;
     max-width: 100vw;
   }
-  
+
   .modalFull {
     position: absolute;
     top: 0;
@@ -158,7 +158,6 @@
     right: 0;
     left: 0;
     top: 0;
-    z-index: 1000;
   }
 
   .closeIcon,

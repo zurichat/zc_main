@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+#authPageWrapper {
+  font-family: 'Lato', sans-serif;
+  margin-block: 0;
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  font-style: normal;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.modal {
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  z-index: 999;
+}
+#authAsideContainer,
+#authImageWrapper,
+#authFormContainer,
+#authImageWrapper img {
+  height: inherit;
+}
+
+#authAsideContainer {
+  width: 43%;
+  color: #fff;
+}
+
+#authImageWrapper {
+  width: 100%;
+}
+
+#authImageWrapper img {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+#authFormContainer {
+  display: flex;
+  justify-content: center;
+  width: 57%;
+  overflow-y: scroll;
+  padding-right: 4rem;
+}
+
+.tos {
+  position: relative;
+  font-size: 12px;
+  line-height: 1.5rem;
+  display: inline-block;
+  margin: 5px 0 15px;
+}
+
+.tos .checkBox {
+  position: relative;
+  margin-right: 8px;
+  height: 15px;
+  width: 15px;
+  border-radius: 10px;
+  border-color: rgb(0, 0, 0, 0.25);
+  cursor: pointer;
+  top: 3px;
+}
+
+.tosText {
+  font-size: 12px;
+}
+
+.tosText a {
+  color: #dc0037;
+}
+.rememberMe {
+  font-size: 12px;
+  line-height: 1.5rem;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.rememberMe .checkBox {
+  position: relative;
+  margin-right: 8px;
+  height: 15px;
+  width: 15px;
+  border-radius: 10px;
+  border-color: rgb(0, 0, 0, 0.25);
+  cursor: pointer;
+  top: 3px;
+}
+
+.rememberMe a {
+  color: #00b87c;
+}
+
+.rememberMe .left {
+  display: block;
+  float: left;
+  width: auto;
+}
+
+.rememberMe .right {
+  display: block;
+  float: right;
+  width: auto;
+}
+
+/* Media Query 768px and Smaller */
+@media only screen and (max-width: 768px) {
+  .display_none {
+    display: none;
+  }
+
+  #authFormContainer {
+    padding-inline: 3%;
+  }
+
+  #authFormContainer {
+    width: 100%;
+    overflow-y: scroll;
+  }
+}
