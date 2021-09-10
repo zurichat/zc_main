@@ -8,6 +8,7 @@ import SearchBar from './externalPagesComponents/SearchBar'
 import StatusBadge from './StatusBadge'
 import TopbarModal from './TopbarModal'
 import ProfileModal from './ProfileModal'
+import { MembersModalButton } from './MembersModal'
 
 const Topbar = ({ userProfile: { last_name, first_name } }) => {
   const state = useContext(TopbarContext)
@@ -18,6 +19,7 @@ const Topbar = ({ userProfile: { last_name, first_name } }) => {
     <div className={styles.container}>
       <SearchBar />
       <div className={styles.topbar}>
+        <MembersModalButton />
         <Link to="/settings">
           <img src="/settings.svg" alt="settings" className={styles.settings} />
         </Link>
