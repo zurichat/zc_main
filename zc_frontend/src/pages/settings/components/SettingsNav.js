@@ -42,16 +42,19 @@ const SettingsNav = () => {
       </div>
 
       <div className={styles.rightnav}>
-        <div className={styles.settings}
-         onClick={() => {
-           history.push('/settings')
-         }}
+        <div
+          className={styles.settings}
+          onClick={() => {
+            history.push('/settings')
+          }}
         >
           <img src="/settings.svg" alt="settings" />
         </div>
 
         <div className={styles.profile}>
-          <div className={styles.status}><img src="./status.svg" alt="" /></div>
+          <div className={styles.status}>
+            <img src="./status.svg" alt="" />
+          </div>
           <div className={styles.pImage}>
             <img
               src="/profilepic.png"
