@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import AuthInputBox from './AuthInputBox'
+import React from 'react'
 import styles from '../styles/AuthFormWrapper.module.css'
 import logo from '../pages/images/logo.svg'
 import google from '../pages/images/google.svg'
