@@ -120,7 +120,7 @@ const TopbarModal = () => {
           <hr className={styles.hr} />
 
           <div className={styles.sectionFive}>
-            <p>Sign out of Team Einstein workspace</p>
+            <p> <a href="/signout">Sign out of Team Einstein workspace</a> </p>
           </div>
         </section>
       ) : null}
