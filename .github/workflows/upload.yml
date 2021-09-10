@@ -1,6 +1,9 @@
 name: Zuri Main Testing Pipeline
 on:
   # Triggers the workflow on push or pull request events but only for the dev branch
+  pull_request:
+    branches: [review]
+
   push:
     branches: [review]
 
@@ -79,4 +82,3 @@ jobs:
       uses: stefanzweifel/git-auto-commit-action@v4.1.2
       with:
         commit_message: Backend EsLint Fixes
-
