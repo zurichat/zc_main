@@ -30,7 +30,6 @@
   border-radius: 3px;
   font-family: 'Lato', sans-serif;
   overflow: visible;
-  /* overflow-y: scroll; */
 }
 .downloadsModal button {
   background: none;
@@ -232,11 +231,8 @@
   width: max-content;
 }
 
-.show {
-  opacity: 0;
-  transform: translateY(-10px);
-}
-.hide {
-  opacity: 1;
-  transform: translateY(0);
+@media (max-width: 768px) {
+  .downloadsModal {
+    width: 95%;
+  }
 }
