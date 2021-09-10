@@ -9,6 +9,7 @@
   font-family: 'Lato', sans-serif;
   font-size: 25px;
   line-height: 16px;
+  font-weight: 700;
   color: #242424;
 }
 .confirmationBox {
@@ -83,7 +84,7 @@
   height: 12px;
   width: 12px;
   font-size: 8px;
-  background: #00b87c;
+  background: #11855f;
   color: #ffffff;
   border-radius: 1px;
   cursor: pointer;
