@@ -26,7 +26,7 @@
 .screenshot {
   position: relative;
   height: 220px;
-  width: 340px;
+  width: 275px;
   left: 31px;
   top: -15px;
 }
@@ -34,15 +34,14 @@
   text-align: center;
 }
 .button1 {
-  width: 290px;
-  height: 54px;
-  margin: 60px 10px 0;
+  display: block;
+  margin: 10px 35px 0;
   border: none;
   border-radius: 4px;
   color: white;
   background-color: #00b87c;
-  padding: 10px;
-  font-size: 16px;
+  padding: 15px;
+  font-size: 15px;
 }
 .button2 {
   border: none;
@@ -50,14 +49,14 @@
   background-color: transparent;
   color: #00b87c;
   margin: 0 10px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 22px;
 }
 .windows {
   position: relative;
-  top: -120px;
-  font-size: 16px;
+  top: -105px;
+  font-size: 14px;
 }
 .store {
   margin-top: 80px;
@@ -76,6 +75,14 @@
 }
 .imgLink {
   margin: 15px;
+}
+@media screen and (min-width: 375px) {
+  .screenshot {
+    width: 340px;
+  }
+  .button1 {
+    margin-top: 55px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -120,6 +127,7 @@
     text-align: center;
   }
   .button1 {
+    display: inline;
     margin: 0 10px;
     border: none;
     border-radius: 4px;
@@ -179,7 +187,7 @@
     top: 95px;
   }
   .windows {
-    margin: 10px 310px;
+    margin: 15px 380px;
   }
   .store {
     margin-top: 70px;
