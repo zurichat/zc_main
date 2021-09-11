@@ -128,7 +128,7 @@ const App = () => (
       <Route path="/documentation" exact>
         <ApiDocs />
       </Route>
-      <Route path='/confirm-deactivation'>
+      <Route path="/confirm-deactivation">
         <ConfirmDeactivation />
       </Route>
       <Route path="/account-deactivated">
