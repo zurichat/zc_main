@@ -1,84 +1,144 @@
-import React, { useContext } from 'react'
+import { useContext, useState } from 'react'
 
 // react icons
-import { FaChevronRight, FaCircle, FaTimes } from 'react-icons/fa'
+import { FaCircle, FaChevronRight, FaTimes } from 'react-icons/fa'
 
-import { URLContext } from './../contexts/Url';
-import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react';
+import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
 
 import styles from '../styles/Topbar.module.css'
+import { TopbarContext } from '../context/Topbar'
+import StatusBadgeModal from './StatusBadgeModal'
+import { ProfileContext } from '../context/ProfileModal'
+import Preferences from './Preferences'
+import EditProfile from './EditProfile'
+import MembersModal from './MembersModal'
 
 const TopbarModal = () => {
-    const state = useContext(URLContext)
-    const [showModal] = state.show
-    const [showStatus, setShowStatus] = state.status
-    const [chosenEmoji] = state.emoji
-    const { onEmojiClick, openStatus, closeStatus, modalRef } = state
+  const { toggleModalState, toggleProfileState } = useContext(ProfileContext)
 
+  const state = useContext(TopbarContext)
+  const [showModal] = state.show
+  const [active, setActive] = state.presence
+  const [showStatus, setShowStatus] = state.status
+  const [showMembersModal] = state.modal
+  const { onEmojiClick, openStatus, closeStatus, modalRef } = state
+  const [modal, setModal] = useState('')
 
+  return (
+    <>
+      {/* The section that shows the status */}
+      {showStatus ? (
+        <div
+          ref={modalRef}
+          className={styles.modalContainers}
+          onClick={closeStatus}
+        >
+          <div className={styles.picker}>
+            <FaTimes
+              className={styles.times}
+              onClick={() => setShowStatus(!showStatus)}
+            />
+            <div className={styles.smileys}>
+              <Picker
+                onEmojiClick={onEmojiClick}
+                skinTone={SKIN_TONE_MEDIUM_DARK}
+              />
+            </div>
+          </div>
+        </div>
+      ) : null}
 
-    return (
-        <>
-            {/* The section that shows the status */}
-            {showStatus ? (
-                <div ref={modalRef} className={styles.backgrounds} onClick={closeStatus}>
-                    <div className={styles.picker}>
-                        <FaTimes className={styles.times} onClick={() => setShowStatus(!showStatus)} />
-                        <div className={styles.smileys}>
-                            <Picker  onEmojiClick={onEmojiClick} skinTone={SKIN_TONE_MEDIUM_DARK} />
-                        </div>
-                    </div>
+      {/* The section that shows the members modal */}
+      {showMembersModal ? (
+        <div
+          ref={modalRef}
+          className={styles.modalContainers}
+          // onClick={closeMembersModal}
+        >
+          <MembersModal />
+        </div>
+      ) : null}
+
+      {/* The section that shows the topbarprofile */}
+      {showModal ? (
+        <section className={styles.topbarModal}>
+          <div className={styles.sectionOne}>
+            <div className={styles.oneLeft}>
+              <img src="/profilepic.png" alt="profile" />
+            </div>
+
+            <div className={styles.oneRight}>
+              <h4>Praise.A</h4>
+              {active ? (
+                <div className={styles.online}>
+                  <FaCircle className={styles.circle} />
+                  <p className={styles.active}>Active</p>
                 </div>
-            )
-                :
-                null}
+              ) : (
+                <div className={styles.online}>
+                  <FaCircle className={styles.circlegrey} />
+                  <p className={styles.away}>Away</p>
+                </div>
+              )}
+            </div>
+          </div>
 
-            {/* The section that shows the topbarprofile */}
-            {showModal ? (
-                <section className={styles.topbarModal}>
-                    <div className={styles.sectionOne}>
-                        <div className={styles.oneLeft}>
-                            <img src="/profile.png" alt="profile" />
-                        </div>
-                        <div className={styles.oneRight}>
-                            <h4>Praise.A</h4>
-                            <div className={styles.online}>
-                                <FaCircle className={styles.circle} />
-                                <p>Active</p>
-                            </div>
-                        </div>
-                    </div>
+          <div onClick={openStatus} className={styles.sectionTwo}>
+            <StatusBadgeModal />
+          </div>
 
-                    <div onClick={openStatus} className={styles.sectionTwo}>
-                        <p>{chosenEmoji ? chosenEmoji.emoji : null}</p>
-                    </div>
+          <div className={styles.sectionThree}>
+            <p onClick={openStatus}>Set a status</p>
+            <p onClick={() => setActive(!active)}>
+              {active ? 'Set yourself as away' : 'Set yourself as active'}
+            </p>
+            <div className={styles.pause}>
+              <p>Pause Notifications</p>
+              <FaChevronRight className={styles.chevron} />
+            </div>
+          </div>
 
-                    <div className={styles.sectionThree}>
-                        <p onClick={openStatus}>Set a status</p>
-                        <p>Set yourself as away</p>
-                        <div className={styles.pause}>
-                            <p>Pause Notifications</p>
-                            <FaChevronRight className={styles.chevron} />
-                        </div>
-                    </div>
+          <hr className={styles.hr} />
 
-                    <hr />
+          <div className={styles.sectionFour}>
+            <p
+              onClick={() => {
+                setModal('edit profile')
+                toggleModalState()
+              }}
+            >
+              Edit profile
+            </p>
+            <p onClick={toggleProfileState}>View profile</p>
+            <p
+              onClick={() => {
+                setModal('preference')
+                toggleModalState()
+              }}
+            >
+              Preferences
+            </p>
+          </div>
 
-                    <div className={styles.sectionFour}>
-                        <p>Edit profile</p>
-                        <p>View profile</p>
-                        <p>Preference</p>
-                    </div>
+          <hr className={styles.hr} />
 
-                    <hr />
+          <div className={styles.sectionSix}>
+            <p>Downloads</p>
+          </div>
 
-                    <div className={styles.sectionFive}>
-                        <p>Sign out of Team Einstein workspace</p>
-                    </div>
-                </section>
-            ) : null}
-        </>
-    );
+          {modal === 'edit profile' && <EditProfile />}
+
+          {modal === 'preference' && <Preferences />}
+
+          <hr className={styles.hr} />
+
+          <div className={styles.sectionFive}>
+            <p>Sign out of Team Einstein workspace</p>
+          </div>
+        </section>
+      ) : null}
+    </>
+  )
 }
 
 export default TopbarModal
