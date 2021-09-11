@@ -3,7 +3,6 @@ import LandingPage from './components/LandingPage'
 import Home from './pages/home'
 import Login from './pages/login'
 import SignUp from './pages/signup'
-import SignOut from './pages/signout'
 import EmailVerification from './pages/email-verify'
 import './styles/globals.css'
 import Security from './pages/security'
@@ -47,9 +46,7 @@ const App = () => (
       <Route path="/signup">
         <SignUp />
       </Route>
-      <Route path="/signout">
-        <SignOut />
-      </Route>
+      
       <Route path="/verify-email">
         <EmailVerification />
       </Route>

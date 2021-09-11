@@ -24,6 +24,8 @@ const TopbarModal = () => {
   const { onEmojiClick, openStatus, closeStatus, modalRef } = state
   const [modal, setModal] = useState('')
 
+  
+
   return (
     <>
       {/* The section that shows the status */}
@@ -34,13 +36,14 @@ const TopbarModal = () => {
           onClick={closeStatus}
         >
           <div className={styles.picker}>
-            <FaTimes
+            {/* <FaTimes
               className={styles.times}
               onClick={() => setShowStatus(!showStatus)}
-            />
-            <div className={styles.smileys}>
+            /> */}
+            <div className={styles.smileys} >
               <Picker
                 onEmojiClick={onEmojiClick}
+                
                 skinTone={SKIN_TONE_MEDIUM_DARK}
               />
             </div>
