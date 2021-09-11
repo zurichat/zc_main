@@ -222,3 +222,21 @@
   cursor: pointer;
   padding: 0.4rem 0;
 }
+
+.addTeamMates {
+  box-sizing: border-box;
+  width: 100%;
+  background: rgba(0, 184, 124, 0.1);
+  padding: 6px 33px;
+  color: #999999;
+  display: inline-block;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.addTeamMates img {
+  margin-right: 10px;
+}

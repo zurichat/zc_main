@@ -1,13 +1,22 @@
-import { useContext, Fragment } from 'react'
+import { useContext, useState, Fragment } from 'react'
 import useSWR from 'swr'
 import { URLContext } from '../context/Url'
 
 import styles from '../styles/Sidebar.module.css'
-import Dropdown from './Dropdown'
+import Dropdown from './Dropdown';
+import Modal from './UI/Modal/Modal';
+import alt_add from '../assets/alt_add.svg'
+import InviteDialogue from './Invite/InviteDialogue/InviteDialogue';
 
 const fetcher = url => fetch(url).then(res => res.json())
 
 export const Sidebar = () => {
+  const [display, setDisplay] = useState(false);
+
+  const handleDisplayModal = () => {
+    setDisplay(!display)
+  }
+
   const { data: channelsData } = useSWR('/api/plugin/channels', fetcher)
   const { data: messagesData } = useSWR('/api/plugin/messages', fetcher)
   const { data: plugins } = useSWR('/api/plugin/list', fetcher)
@@ -15,6 +24,7 @@ export const Sidebar = () => {
   const { setUrl } = useContext(URLContext)
 
   return (
+    <Fragment>
     <div className={styles.container}>
       <div className={styles.zuriLogo}>
         <img src="/zurichatlogo.svg" alt="Zuri Chat logo" />
@@ -61,6 +71,9 @@ export const Sidebar = () => {
             </Fragment>
           ))}
       </Dropdown>
+      <div onClick={handleDisplayModal} className={styles.addTeamMates}><img src={alt_add} alt="add"/> Add Teammates</div>
     </div>
+    <Modal modalClosed={handleDisplayModal} show={display}><InviteDialogue /></Modal>
+    </Fragment>
   )
 }
