@@ -51,7 +51,9 @@ function AllSessionSignOut () {
                   name="password" 
                   className={`${styles.form_input}`} 
                 />
-                <button type="submit">Sign out all other sessions</button>
+                
+                <button type="submit"  className={`${styles.Submit}`}>Sign out all other sessions</button>
+              
               </div>
             </form>
           </section>
