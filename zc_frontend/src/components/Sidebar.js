@@ -25,12 +25,7 @@ export const Sidebar = () => {
   const close = () => setShowDialog(false)
   const [rooms, setRooms] = useState({})
   const [query, setQuery] = useState('')
-  // const [sort,setSort] = useState('');
-
-  useEffect(() => {
-    sidebarApi()
-    // rooms.filter()
-  })
+  // const [sort,setSort] = useState('')
 
   // const sorters = {
   //   leastMembers : (a,b)=>{return a.members - b.members},
@@ -46,45 +41,51 @@ export const Sidebar = () => {
   //     return (aName < bName) ? 1:-1
   //   }
   // }
-  const sorters = [
-    (a, b) => {
-      return a.unread - b.unread
-    },
-    (a, b) => {
-      return b.unread - a.unread
-    },
-    (a, b) => {
-      const aName = a.title.toUpperCase()
-      const bName = b.title.toUpperCase()
-      return aName === bName ? 0 : aName < bName ? 1 : -1
-    },
-    (a, b) => {
-      const aName = a.title.toUpperCase()
-      const bName = b.title.toUpperCase()
-      return aName === bName ? 0 : aName < bName ? -1 : 1
-    }
-  ]
+  // const sorters = [
+  //   (a, b) => {
+  //     return a.unread - b.unread
+  //   },
+  //   (a, b) => {
+  //     return b.unread - a.unread
+  //   },
+  //   (a, b) => {
+  //     const aName = a.title.toUpperCase()
+  //     const bName = b.title.toUpperCase()
+  //     return aName === bName ? 0 : aName < bName ? 1 : -1
+  //   },
+  //   (a, b) => {
+  //     const aName = a.title.toUpperCase()
+  //     const bName = b.title.toUpperCase()
+  //     return aName === bName ? 0 : aName < bName ? -1 : 1
+  //   }
+  // ]
 
-  const sidebarApi = () => {
-    axios
-      .get(
+  const sidebarApi = async () => {
+    try {
+      const res = await axios.get(
         `https://channels.zuri.chat/api/v1/sidebar/?org=1&user=43567868&format=json`
       )
-      .then(res => {
-        // console.log(res)
-
-        let result = res.data
-        setRooms(result)
-        // console.log(rooms.joinedRooms)
-        // console.log(result.joined_rooms[1].icon)
-        sorters.forEach((sortfunc, ind) => {
-          const sortedroom = rooms.public_rooms.sort(sortfunc)
-          console.log(sortedroom)
-          // rooms.joined_rooms.forEach(curr => console.log(ind,curr.sort(sortfunc)))
-        })
-      })
-      .catch(err => console.log(err))
+      // console.log(res)
+      // let result = res.data
+      // setRooms(result)
+      // console.log(rooms.joinedRooms)
+      // console.log(result.joined_rooms[1].icon)
+      // sorters.forEach((sortfunc, ind) => {
+      //   const sortedroom = rooms.public_rooms.sort(sortfunc)
+      //   console.log(sortedroom)
+      //   // rooms.joined_rooms.forEach(curr => console.log(ind,curr.sort(sortfunc)))
+      // })
+      return res.data
+    } catch (err) {
+      return console.log(err)
+    }
   }
+
+  useEffect(() => {
+    sidebarApi().then(data => {
+      setRooms(data)
+    })
+  }, [])
 
   return (
     <div className={styles.container}>
@@ -101,7 +102,7 @@ export const Sidebar = () => {
           />
         </div>
         <Overlay isOpen={showDialog} onDismiss={close}>
-          <Content>
+          <Content aria-label="Room list">
             <CloseButton className="close-button" onClick={close}>
               {/* <VisuallyHidden>Close</VisuallyHidden> */}
               <span aria-hidden>×</span>
