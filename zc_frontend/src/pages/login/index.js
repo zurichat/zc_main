@@ -1,58 +1,85 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
+// import { Link } from 'react-router-dom'
+import authBg from '../../pages/images/backg.svg'
 import { withRouter } from 'react-router-dom'
+import AuthInputBox from '../../components/AuthInputBox'
+import FormWrapper from '../../components/AuthFormWrapper'
+import styles from '../../styles/AuthFormElements.module.css'
+
 //import GoogleLogin from 'react-google-login'
 
-import style from '../../styles/AuthPage.module.css'
-
-import AuthInputBox from '../../components/AuthInputBox'
-import {
-  AuthFooter,
-  AuthFormWrapper,
-  AuthHeader,
-  AuthLoginText,
-  AuthSideBar
-} from '../../components/AuthFormElements'
-
 const Login = () => {
-  const [name, setname] = useState('')
-  const [password, setpassword] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [rememberMe, setRememberMe] = useState('')
 
-  const submitLogin = () => {}
+  const handleSubmit = e => {
+    e.preventDefault()
+  }
 
   return (
-    <div className={style.authPageWrapper}>
-      <AuthSideBar />
-      <section className={style.authFormContainer}>
-        <AuthHeader />
-        <AuthLoginText />
-        <button
-          className={`btn btn-outline-primary ${style.GoogleloginButton}`}
+    <main id={styles.authPageWrapper}>
+      <aside id={styles.authAsideContainer} className={styles.display_none}>
+        <div id={styles.authImageWrapper}>
+          <img src={authBg} alt="backgroundImage" />
+          <div id={styles.aside_txt}></div>
+        </div>
+      </aside>
+      <section id={styles.authFormContainer}>
+        <FormWrapper
+          header="Login"
+          subHeader="Login with the data you entered during your registration"
+          googleHeader="Login with Google"
+          topLineText="OR"
+          submitButtonName="Log in"
+          email={email}
+          password={password}
+          check={rememberMe}
+          handleSubmit={handleSubmit}
+          bottomLine="New to us? Create an Account"
+          bottomLink="Log in"
         >
-          {/* <img src="zc_frontend/src/pages/images/google.svg" alt="" />  */}
-          Log in with Google
-        </button>
-        <AuthFormWrapper submitHandler={submitLogin}>
           <AuthInputBox
+            className={`${styles.inputElement}`}
             id="email"
-            name="Email Address"
+            name="Email address"
             type="email"
-            placeholder="Enter your email address"
-            value={name}
-            setValue={setname}
+            placeholder="Johndoe@example.com"
+            value={email}
+            setValue={setEmail}
+            error=""
           />
           <AuthInputBox
+            className={`${styles.inputElement}`}
             id="password"
             name="Password"
             type="password"
-            placeholder="Enter your password"
+            placeholder="Enter a password"
             value={password}
-            setValue={setpassword}
+            setValue={setPassword}
+            error=""
           />
-        </AuthFormWrapper>
 
-        <AuthFooter />
+          <div className={`${styles.rememberMe}`}>
+            <span className={`${styles.left}`}>
+              <input
+                className={`${styles.checkBox}`}
+                name="RememeberMe"
+                type="checkbox"
+                value={rememberMe}
+                onClick={() => {
+                  setRememberMe(!rememberMe)
+                }}
+              />
+              remember me
+            </span>
+            <span className={`${styles.right}`}>
+              Forgot password?<a href="/"> {''}Get help signing in</a>
+            </span>
+          </div>
+        </FormWrapper>
       </section>
-    </div>
+    </main>
   )
 }
 
