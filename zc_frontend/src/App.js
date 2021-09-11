@@ -36,6 +36,8 @@ import AllSessionSignOut from './pages/settings/components/AllSessionSignOut'
 import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation'
 import AccDeactivated from './pages/settings/components/AccDeactivated'
 
+import '@reach/dialog/styles.css'
+
 const App = () => (
   <BrowserRouter>
     <Switch>
