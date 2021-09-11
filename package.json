@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn run run-start",
-    "build": "yarn run frontend:build",
+    "build": "yarn run yarn run build --prefix zc_frontend",
     "prepare": "husky install",
     "format": "prettier -w .",
     "lint": "eslint ",
