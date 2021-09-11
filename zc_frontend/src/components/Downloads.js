@@ -6,6 +6,7 @@ import close from '../assets/file-close.svg'
 import pointy from '../assets/pointy.svg'
 
 const Downloads = ({ setModal }) => {
+  //State For testing
   const [files] = useState([
     {
       name: 'HNG Design Rules Book.pdf',
@@ -18,7 +19,7 @@ const Downloads = ({ setModal }) => {
   ])
   return (
     <>
-      <section className={styles.downloadsContainer}>
+      <section role="dialog" className={styles.downloadsContainer}>
         <div
           className={styles.overlay}
           onClick={() => {
@@ -31,7 +32,8 @@ const Downloads = ({ setModal }) => {
             <div className={styles.iconContainer}>
               {files && (
                 <div className={styles.deleteIconContainer}>
-                  <svg
+                  <button aria-label="Click to clear all downloads">
+                    <svg
                     className={styles.deleteIcon}
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -55,8 +57,10 @@ const Downloads = ({ setModal }) => {
                     <p>Clear download</p>
                     <img src={pointy} alt="" />
                   </div>
+                  </button>
                 </div>
               )}
+              <button  aria-label="Click to close modal">
               <svg
                 onClick={() => {
                   setModal('no')
@@ -83,6 +87,7 @@ const Downloads = ({ setModal }) => {
                   stroke-linejoin="round"
                 />
               </svg>
+              </button>
             </div>
           </header>
           <article className={styles.downloadsBody}>
@@ -99,7 +104,7 @@ const Downloads = ({ setModal }) => {
               <ul className={styles.files}>
                 {files.map((file, index) => (
                   <li key={index} className={styles.filesItem}>
-                    <button className={styles.filesLink}>
+                    <button aria-label="Click to open file" className={styles.filesLink}>
                       <img src={pdf} alt="" />
                       <div className={styles.filesDetails}>
                         <h6 className={styles.heading}>{file.name}</h6>
@@ -111,14 +116,14 @@ const Downloads = ({ setModal }) => {
                       </div>
                     </button>
                     <div className={styles.more}>
-                      <button className={styles.openBtn}>
+                      <button aria-label={`Open ${file.size} file`} className={styles.openBtn}>
                         <img src={open} alt="" />
                         <div role="tooltip" className={styles.toolTip}>
                           <p>Open containing folder</p>
                           <img src={pointy} alt="" />
                         </div>
                       </button>
-                      <button className={styles.closeBtn}>
+                      <button aria-label={`Clear ${file.size} file `} className={styles.closeBtn}>
                         <img src={close} alt="" />
                         <div role="tooltip" className={styles.toolTip}>
                           <p>Clear download</p>
