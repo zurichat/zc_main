@@ -13,7 +13,8 @@
   padding-bottom: 2rem;
 }
 
-.overlay, .overlayGreen {
+.overlay,
+.overlayGreen {
   position: fixed;
   top: 0;
   left: 0;
@@ -74,7 +75,6 @@
   cursor: pointer;
 }
 
-
 /* .closeIconPath {
   path: #333;
 } */
@@ -111,7 +111,7 @@
     height: 85vh;
     max-width: 100vw;
   }
-  
+
   .modalFull {
     position: absolute;
     top: 0;
