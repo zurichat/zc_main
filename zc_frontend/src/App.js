@@ -1,22 +1,16 @@
-feat/inviteFlowEmail
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from './pages/home';
-import Login from './pages/login';
-import SignUp from './pages/signup';
-import Blog from './pages/blog';
-import News from './pages/news';
-import EmailNotification from './components/EmailNotification';
-import EmailNotification from './components/EmailConfirmation';
-import './styles/globals.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import LandingPage from './components/LandingPage'
 import Home from './pages/home'
 import Login from './pages/login'
 import SignUp from './pages/signup'
+import Blog from './pages/blog'
+import News from './pages/news'
+import EmailNotification from './components/EmailNotification'
+import EmailConfirmation from './components/EmailConfirmation'
+import './styles/globals.css'
+import LandingPage from './components/LandingPage'
 import EmailVerification from './pages/email-verify'
 import './styles/globals.css'
 import InvitationAcceptance from './components/InvitationAcceptance'
-import './styles/globals.css'
 import Security from './pages/security'
 import Features from './pages/features'
 import Resources from './pages/resources'
@@ -41,7 +35,7 @@ import CookiesSetting from './pages/cookies-settings'
 import SearchResults2 from './components/externalPagesComponents/searchResults2'
 import ConfirmPassword from './pages/settings/components/ConfirmPassword'
 import ApiDocs from './pages/api-docs'
- main
+
 
 const App = () => (
   <BrowserRouter>
