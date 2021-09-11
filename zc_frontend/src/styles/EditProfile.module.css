@@ -34,7 +34,7 @@
   padding-top: 10px;
 }
 
-label {
+.label {
   color: #3a3a3a;
   font-size: 14px;
   line-height: 21px;
@@ -311,7 +311,7 @@ label {
   .sectionB {
     width: 100% !important;
   }
-  label {
+  .label {
     font-weight: 700;
   }
   .linkTab {
