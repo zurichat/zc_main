@@ -29,4 +29,3 @@ const AccDeactivated = () => {
 }
 
 export default AccDeactivated
-
