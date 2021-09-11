@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react'
 
 // react icons
-import { FaCircle, FaChevronRight, FaTimes } from 'react-icons/fa'
+import { FaCircle, FaChevronRight } from 'react-icons/fa'
 
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
 
@@ -20,7 +20,7 @@ const TopbarModal = () => {
   const state = useContext(TopbarContext)
   const [showModal] = state.show
   const [active, setActive] = state.presence
-  const [showStatus, setShowStatus] = state.status
+  const [showStatus] = state.status
   const [showMembersModal] = state.modal
   const { onEmojiClick, openStatus, closeStatus, modalRef } = state
   const [modal, setModal] = useState('')
