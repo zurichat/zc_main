@@ -8,7 +8,6 @@ import News from './pages/news';
 import EmailNotification from './components/EmailNotification';
 import EmailNotification from './components/EmailConfirmation';
 import './styles/globals.css';
-=======
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import LandingPage from './components/LandingPage'
 import Home from './pages/home'
