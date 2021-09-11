@@ -12,7 +12,7 @@
 
 .session_content {
   padding: 2rem 0.75rem;
-  border: 1px solid #BEBEBE;
+  border: 1px solid #bebebe;
   border-radius: 0.19rem;
 }
 
@@ -77,12 +77,12 @@ li.action_item {
   display: flex;
   align-items: center;
   flex-direction: column;
-} 
+}
 
 .signout_form input {
   padding: 0.625rem;
   border-radius: 0.19rem;
-  border: 1px solid #BEBEBE;
+  border: 1px solid #bebebe;
   width: 100%;
   margin-bottom: 1rem;
 }
@@ -90,9 +90,9 @@ li.action_item {
 .submit_btn {
   width: 100%;
   padding: 0.65rem 3rem;
-  border: 1px solid #ED2222;
+  border: 1px solid #ed2222;
   border-radius: 0.19rem;
-  background-color: #ED2222;
+  background-color: #ed2222;
   color: #fff;
   font-size: calc(1.31rem * var(--type-scale, 1));
   line-height: calc(1.575rem * var(--type-scale, 1));
@@ -122,7 +122,7 @@ li.action_item {
   .session_content {
     padding: 2rem;
   }
-  
+
   .dot {
     width: 0.35rem;
     height: 0.35rem;
@@ -138,7 +138,7 @@ li.action_item {
   li.action_item {
     align-items: center;
   }
-  
+
   .dot {
     width: 0.5rem;
     height: 0.5rem;
