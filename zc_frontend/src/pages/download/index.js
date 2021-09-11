@@ -1,7 +1,8 @@
 import React from 'react'
 import Footer from '../../components/externalPagesComponents/Footer/Footer'
-import styles from '../download/styles/download.module.css'
+import styles from './styles/download.module.css'
 import SearchSuggestion from '../searchSuggestion'
+import Apk from './apk/appRelease.apk'
 
 const Download = () => {
   return (
@@ -32,18 +33,10 @@ const Download = () => {
           ></img>
         </div>
         <div className={styles.buttondiv}>
-          <a
-            href="https://drive.google.com/file/d/1C5s3Hm44shxtIJ6XElV3lqBk1XLAbrMm/view?usp=drivesdk"
-            className={styles.button1}
-            type="submit"
-          >
+          <a href={Apk} download="release.apk" className={styles.button1}>
             Download for Windows (64bits)
           </a>
-          <a
-            href="https://drive.google.com/file/d/1C5s3Hm44shxtIJ6XElV3lqBk1XLAbrMm/view?usp=drivesdk"
-            className={styles.button2}
-            type="submit"
-          >
+          <a href={Apk} download="release.apk" className={styles.button2}>
             Download for Mac OS X 10.10 and higher
           </a>
           <p className={styles.windows}>Available on windows 8 and higher</p>

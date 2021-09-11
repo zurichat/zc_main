@@ -45,6 +45,15 @@
   right: 0;
   border-radius: 50%;
 }
+.circleAway {
+  background: grey;
+  height: 7px;
+  width: 7px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+}
 
 .topbar {
   display: flex;
@@ -101,7 +110,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 3;
+  z-index: 100000;
   background: rgba(0, 0, 0, 0.3);
   /* display: none; */
   justify-content: center;
@@ -152,6 +161,18 @@
   margin-top: -8px;
 }
 
+/* set yourself as away*/
+.away {
+  position: absolute;
+  right: 182px;
+}
+
+/* set yourself as active*/
+.active {
+  position: absolute;
+  right: 178px;
+}
+
 .circle {
   background: green;
   height: 6px;
@@ -172,7 +193,6 @@
   font-style: normal;
   font-weight: normal;
   color: #3a3a3a;
-  margin-left: -10px;
 }
 
 /* The section two */
@@ -353,4 +373,18 @@
 .sectionSix p:hover {
   background: #1692f1;
   color: #fff;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  /* set yourself as away*/
+  .away {
+    position: absolute;
+    right: 183px;
+  }
+
+  /* set yourself as active*/
+  .active {
+    position: absolute;
+    right: 180px;
+  }
 }

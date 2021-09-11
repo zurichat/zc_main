@@ -28,7 +28,10 @@ import Cookies from './pages/cookies'
 import DeactivateAccount from './pages/settings/components/AcctDeactivation'
 import CookiesSetting from './pages/cookies-settings'
 import SearchResults2 from './components/externalPagesComponents/searchResults2'
+import ConfirmPassword from './pages/settings/components/ConfirmPassword'
 import ApiDocs from './pages/api-docs'
+import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation'
+import AccDeactivated from './pages/settings/components/AccDeactivated'
 
 const App = () => (
   <BrowserRouter>
@@ -87,8 +90,11 @@ const App = () => (
       <Route path="/input">
         <Input />
       </Route>
-      <Route path="/settings">
+      <Route path="/settings" exact>
         <Settings />
+      </Route>
+      <Route path="/settings/:id">
+        <ConfirmPassword />
       </Route>
       <Route path="/search">
         <SearchResult />
@@ -121,6 +127,12 @@ const App = () => (
       </Route>
       <Route path="/documentation" exact>
         <ApiDocs />
+      </Route>
+      <Route path="/confirm-deactivation">
+        <ConfirmDeactivation />
+      </Route>
+      <Route path="/account-deactivated">
+        <AccDeactivated />
       </Route>
     </Switch>
   </BrowserRouter>
