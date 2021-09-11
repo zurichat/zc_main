@@ -206,8 +206,8 @@
 }
 
 .deleteIcon:hover + .toolTip,
-.openBtn:hover .toolTip,
-.closeBtn:hover .toolTip {
+.openBtn img:hover + .toolTip,
+.closeBtn img:hover + .toolTip {
   opacity: 1;
   transform: translateY(0);
 }
