@@ -1,61 +1,61 @@
 .InviteDialogue {
-    width: 720px;
-    padding-bottom: 30px;
+  width: 720px;
+  padding-bottom: 30px;
 }
 .Title {
-    font-size: 25px;
-    margin-bottom: 10px;
-    color: #242424B2;
-    font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 10px;
+  color: #242424b2;
+  font-weight: bold;
 }
 .inviteForm {
-    height: fit-content;
+  height: fit-content;
 }
 .inviteForm label {
-    font-size: 15px;
-    color: rgba(0, 0, 0, 0.7);
-    font-weight: bold;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: bold;
 }
 .inviteForm textarea {
-    height: 94px;
-    width: 100%;
-    margin-top: 10px;
-    border: 1px solid #008B5E;
-    outline: none;
-    border-radius: 10px;
-    resize: none;
-    padding: 10px 18px;
-    font-size: 15px;
+  height: 94px;
+  width: 100%;
+  margin-top: 10px;
+  border: 1px solid #008b5e;
+  outline: none;
+  border-radius: 10px;
+  resize: none;
+  padding: 10px 18px;
+  font-size: 15px;
 }
 .DialogueFooter {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 .copyLink {
-    font-weight: 500;
-    font-size: 15px;
+  font-weight: 500;
+  font-size: 15px;
 }
 .copyLink img:first-child {
-    margin-right: 22px;
+  margin-right: 22px;
 }
-.copyLink span:first-of-type{
-    color: #008B5E;
+.copyLink span:first-of-type {
+  color: #008b5e;
 }
-.copyLink span:last-of-type{
-    color: rgba(0, 0, 0, 0.7);
+.copyLink span:last-of-type {
+  color: rgba(0, 0, 0, 0.7);
 }
 #hyphen {
-    padding: 0px 7.75px;
+  padding: 0px 7.75px;
 }
 .DialogueFooter button {
-    font-size: 12px;
-    height: fit-content;
-    padding: 8px 34px;
-    margin: auto 0;
-    background: #008B5E;
-    border: none;
-    color: #fff;
+  font-size: 12px;
+  height: fit-content;
+  padding: 8px 34px;
+  margin: auto 0;
+  background: #008b5e;
+  border: none;
+  color: #fff;
 }

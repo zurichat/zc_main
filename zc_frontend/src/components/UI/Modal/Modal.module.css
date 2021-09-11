@@ -1,18 +1,17 @@
 .Modal {
-    position: fixed;
-    z-index: 1500;
-    background-color: white;
-    width: fit-content;
-    border-radius: 10px;
-    padding: 20px 30px;
-    left: 50%;
-    top: 45%;
-    transform: translate(-50%, -50%);
-    box-sizing: border-box;
-    transition: all 0.2s ease-out;
+  position: fixed;
+  z-index: 1500;
+  background-color: white;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 20px 30px;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  transition: all 0.2s ease-out;
 }
 .Modal #cancel {
-    float: right;
-    cursor: pointer;
+  float: right;
+  cursor: pointer;
 }
-

@@ -1,12 +1,14 @@
-import React, {Component, Fragment} from 'react';
-import classes from "./Modal.module.css";
-import Backdrop from "../Backdrop/Backdrop";
-import cancel from '../../../assets/cancel.svg';
+import React, { Component, Fragment } from 'react'
+import classes from './Modal.module.css'
+import Backdrop from '../Backdrop/Backdrop'
+import cancel from '../../../assets/cancel.svg'
 
 class Modal extends Component {
-
-  shouldComponentUpdate(nextProps, nextState){
-    return nextProps.show !== this.props.show || nextProps.children !== this.props.children;
+  shouldComponentUpdate(nextProps, nextState) {
+    return (
+      nextProps.show !== this.props.show ||
+      nextProps.children !== this.props.children
+    )
   }
   render() {
     return (
@@ -15,15 +17,20 @@ class Modal extends Component {
         <div
           className={classes.Modal}
           style={{
-            opacity: this.props.show ? "1" : "0",
+            opacity: this.props.show ? '1' : '0'
           }}
         >
-        <img id={classes.cancel} src={cancel} alt="" onClick={this.props.modalClosed} />
+          <img
+            id={classes.cancel}
+            src={cancel}
+            alt=""
+            onClick={this.props.modalClosed}
+          />
           {this.props.children}
         </div>
       </Fragment>
-    );
+    )
   }
 }
 
-export default Modal;
+export default Modal
