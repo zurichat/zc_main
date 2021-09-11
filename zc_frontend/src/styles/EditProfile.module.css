@@ -355,8 +355,8 @@ label {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background: #F6F6F6;
-    border: 1px solid #FFFFFF;
+    background: #f6f6f6;
+    border: 1px solid #ffffff;
   }
   .cameraIcon {
     font-size: 1rem;
