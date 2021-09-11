@@ -3,6 +3,8 @@ import styles from '../styles/EditProfile.module.css'
 import AddLink from './AddLink'
 import ProfileModal from './ProfileModal'
 
+import { AiFillCamera } from 'react-icons/ai';
+
 const EditProfile = () => {
   const imageRef = useRef(null)
   const avatarRef = useRef(null)
@@ -126,11 +128,7 @@ const EditProfile = () => {
                 <div className={styles.subContainer}>
                   <div className={styles.profilePic}>
                     <label htmlFor="img" className={styles.camera}>
-                      <img
-                        src="/camera.svg"
-                        alt="camera"
-                        style={{ display: 'flex' }}
-                      />
+                      <AiFillCamera className={styles.cameraIcon} />
                     </label>
 
                     <div className={styles.avatar}>
