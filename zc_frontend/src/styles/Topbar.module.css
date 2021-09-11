@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
-
 .container {
   display: flex;
   align-items: center;
@@ -45,6 +44,7 @@
   right: 0;
   border-radius: 50%;
 }
+
 .circleAway {
   background: grey;
   height: 7px;
@@ -88,6 +88,7 @@
 }
 
 /* =========================================== */
+
 /* THE SECTION OF THE TOP BAR MODAL */
 
 .topbarModal {
@@ -119,6 +120,7 @@
 }
 
 /* The section one */
+
 .sectionOne {
   display: flex;
   align-items: center;
@@ -141,6 +143,7 @@
 }
 
 /* THE SECTION OF THE ONE RIGHT */
+
 .oneRight {
   margin-left: 15px;
 }
@@ -162,12 +165,14 @@
 }
 
 /* set yourself as away*/
+
 .away {
   position: absolute;
   right: 182px;
 }
 
 /* set yourself as active*/
+
 .active {
   position: absolute;
   right: 178px;
@@ -180,6 +185,7 @@
   border-radius: 50%;
   margin-right: 15px;
 }
+
 .circlegrey {
   background: grey;
   height: 6px;
@@ -196,6 +202,7 @@
 }
 
 /* The section two */
+
 .sectionTwo {
   background: #fafafa;
   padding: 0px;
@@ -214,7 +221,7 @@
 /* The section of the picker */
 
 .smileys {
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 .picker {
@@ -222,8 +229,8 @@
   top: 20%;
   left: 50%;
   /* transform: translate(-80%); */
-  height: 400px;
-  background: #fff;
+  /* height: 400px; */
+  /* background: green; */
   width: 100%;
   width: 300px;
   z-index: 999999;
@@ -231,6 +238,7 @@
 }
 
 /* responsiveness for picker */
+
 @media screen and (max-width: 650px) {
   .picker {
     left: 30%;
@@ -243,10 +251,13 @@
   right: 10px;
   top: 10px;
   cursor: pointer;
+  display: none;
 }
 
 /* The section three */
+
 .sectionThree {
+  position: relative;
   line-height: 25px;
   font-style: normal;
   font-weight: normal;
@@ -352,6 +363,7 @@
 }
 
 /* The section Six */
+
 .sectionSix {
   line-height: 22px;
   font-style: normal;
@@ -381,7 +393,6 @@
     position: absolute;
     right: 183px;
   }
-
   /* set yourself as active*/
   .active {
     position: absolute;
