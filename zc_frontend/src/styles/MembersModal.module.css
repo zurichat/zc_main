@@ -158,8 +158,13 @@
 .membercardImage {
   border-radius: 0.5rem;
   padding-top: 0.55%;
-  min-width: 10%;
   text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .membercardImage {
+    min-width: 10%;
+  }
 }
 
 .membercardImage img {
