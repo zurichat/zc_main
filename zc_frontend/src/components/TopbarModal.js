@@ -24,7 +24,7 @@ const TopbarModal = () => {
   const [showMembersModal] = state.modal
   const { onEmojiClick, openStatus, closeStatus, modalRef } = state
   const [modal, setModal] = useState('')
-  const [pause, setPause] = useState(false);
+  const [pause, setPause] = useState(false)
 
   return (
     <>
@@ -98,10 +98,7 @@ const TopbarModal = () => {
               <p onClick={() => setPause(!pause)}>Pause Notifications</p>
               <FaChevronRight className={styles.chevron} />
             </div>
-            {
-              pause &&
-              <PauseNotification pause={pause} setPause={setPause} />
-            }
+            {pause && <PauseNotification pause={pause} setPause={setPause} />}
           </div>
 
           <hr className={styles.hr} />
