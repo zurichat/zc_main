@@ -1,22 +1,25 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styles from '../styles/SettingsTab.module.css'
-import TimeZone from '../../../components/TimeZone'
+import TimeZone from './TimeZone'
 import { Link } from 'react-router-dom'
 import PreferenceWrapper from './PreferenceWrapper'
 import { AnimateSharedLayout } from 'framer-motion'
+import SavePassword from './SavePassword'
+import TwoFactor from './TwoFactor'
+import ChangeEmail from './ChangeEmail'
+import Language from './Language'
+import UserName from './UserName'
 
 const SettingsTab = () => {
-  const [show, setShow] = useState(false)
-
-  const showTime = show ? <TimeZone /> : null
+  // const showTime = show ? <TimeZone /> : null
 
   return (
     <>
       <AnimateSharedLayout>
         <PreferenceWrapper title="Password" text="" btnText="Expand">
           {/* Password input goes uunder here */}
-          <p>Replace this tag with something password bla</p>
+          <SavePassword />
         </PreferenceWrapper>
       </AnimateSharedLayout>
 
@@ -28,7 +31,7 @@ const SettingsTab = () => {
           timeZone=""
         >
           {/* Two factor authentication input field goes under here */}
-          <p>Authentication</p>
+          <TwoFactor />
         </PreferenceWrapper>
       </AnimateSharedLayout>
 
@@ -40,7 +43,7 @@ const SettingsTab = () => {
           timeZone=""
         >
           {/* Email address input field goes under here */}
-          <p>Remove this tag and replace with Email input bla</p>
+          <ChangeEmail />
         </PreferenceWrapper>
       </AnimateSharedLayout>
 
@@ -49,10 +52,10 @@ const SettingsTab = () => {
           title="Time zone"
           text="Zurichat uses your time zone to send summary and notification emails, for times in your activity feeds and for  reminders. Your time zone is currently set to: (UTC+01:00) West Central Africa."
           btnText="Expand"
-          timeZone={showTime}
+          // timeZone={showTime}
         >
           {/* TimeZone input field goes under here */}
-          <p>Remove this tag and replace with timezone bla</p>
+          <TimeZone />
         </PreferenceWrapper>
       </AnimateSharedLayout>
 
@@ -64,12 +67,12 @@ const SettingsTab = () => {
           timeZone=""
         >
           {/* Language input field goes under here */}
-          <p>Remove this tag and replace with language input bla</p>
+          <Language />
         </PreferenceWrapper>
       </AnimateSharedLayout>
 
-      <div className={styles.settingsTab}>
-        <div className={styles.settingleft}>
+      <div className={styles.settingsTab} id={styles.settingtab}>
+        <div className={styles.settingleft} id={styles.settingleft}>
           Sign out all other sessions <br />
           <span>
             Lost your phone? Left yourself logged in on a public computer? Need
@@ -84,8 +87,8 @@ const SettingsTab = () => {
         </div>
       </div>
 
-      <div className={styles.settingsTab}>
-        <div className={styles.settingleft}>
+      <div className={styles.settingsTab} id={styles.settingtab}>
+        <div className={styles.settingleft} id={styles.settingleft}>
           Deactivate Account <br />
           <span>
             If you no longer need your account for the Zurichat, you can
@@ -94,14 +97,15 @@ const SettingsTab = () => {
           </span>
           <br />
           <span>
-            Note: Don’t deactivate your account if you just want to{' '}
+            <strong> Note:</strong> Don’t deactivate your account if you just
+            want to{' '}
             <NavLink to="/" className={styles.emailLink}>
               change your email address.
             </NavLink>
           </span>
         </div>
         <div className={styles.settingsright}>
-          <Link to="/deactivate-account">
+          <Link to="/settings/confirm-password">
             <button className={styles.delete}>Deactivate your account</button>
           </Link>
         </div>
@@ -115,7 +119,7 @@ const SettingsTab = () => {
           timeZone=""
         >
           {/* Username input field goes under here */}
-          <p>Remove this tag and replace with Username input bla</p>
+          <UserName />
         </PreferenceWrapper>
       </AnimateSharedLayout>
     </>

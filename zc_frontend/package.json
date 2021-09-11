@@ -10,19 +10,23 @@
     "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.10",
     "emoji-picker-react": "^3.4.8",
-    "framer-motion": "^4.1.17",
     "eslint": "^7.32.0",
+    "faker": "^5.5.3",
+    "framer-motion": "^4.1.17",
     "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
+    "react-datepicker": "^4.2.1",
     "react-dom": "^17.0.2",
     "react-google-login": "^5.2.2",
     "react-icons": "^4.2.0",
+    "react-modal": "^3.14.3",
     "react-redux": "^7.2.5",
     "react-router-dom": "^5.2.1",
     "react-scripts": "^4.0.3",
     "react-tabs": "^3.2.2",
     "react-timezone-select": "^1.0.7",
+    "react-verification-code-input": "^1.2.9",
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0",
     "swr": "^1.0.0",
@@ -56,6 +60,6 @@
     ]
   },
   "devDependencies": {
-    "prettier": "2.3.2"
+    "prettier": "^2.3.2"
   }
 }
