@@ -33,12 +33,11 @@ const AcctDeactivation = () => {
           </p>
 
           <div>
-            <button className={styles.deactivateButton}
-            onClick={
-              ()=>{
+            <button
+              className={styles.deactivateButton}
+              onClick={() => {
                 history.push('/confirm-deactivation')
-              }
-            }
+              }}
             >
               Yes, deactivate my account
             </button>
