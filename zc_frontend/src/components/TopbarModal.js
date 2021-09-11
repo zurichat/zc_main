@@ -13,7 +13,7 @@ import Preferences from './Preferences'
 import EditProfile from './EditProfile'
 import MembersModal from './MembersModal'
 
-const TopbarModal = () => {
+const TopbarModal = ({ members }) => {
   const { toggleModalState, toggleProfileState } = useContext(ProfileContext)
 
   const state = useContext(TopbarContext)
@@ -57,7 +57,7 @@ const TopbarModal = () => {
             onClick={closeMembersModal}
             className={styles.membersModalOverlay}
           />
-          <MembersModal />
+          <MembersModal members={members} roomTitle={'announcements'} />
         </div>
       ) : null}
 
