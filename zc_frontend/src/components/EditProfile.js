@@ -3,7 +3,7 @@ import styles from '../styles/EditProfile.module.css'
 import AddLink from './AddLink'
 import ProfileModal from './ProfileModal'
 
-import { AiFillCamera } from 'react-icons/ai';
+import { AiFillCamera } from 'react-icons/ai'
 
 const EditProfile = () => {
   const imageRef = useRef(null)
