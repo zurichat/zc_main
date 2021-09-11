@@ -21,7 +21,8 @@ const TopbarModal = () => {
   const [active, setActive] = state.presence
   const [showStatus, setShowStatus] = state.status
   const [showMembersModal] = state.modal
-  const { onEmojiClick, openStatus, closeStatus, modalRef } = state
+  const { onEmojiClick, openStatus, closeStatus, modalRef, closeMembersModal } =
+    state
   const [modal, setModal] = useState('')
 
   return (
@@ -50,11 +51,12 @@ const TopbarModal = () => {
 
       {/* The section that shows the members modal */}
       {showMembersModal ? (
-        <div
-          ref={modalRef}
-          className={styles.modalContainers}
-          // onClick={closeMembersModal}
-        >
+        <div ref={modalRef} className={styles.modalContainers}>
+          <div
+            id="overlay"
+            onClick={closeMembersModal}
+            className={styles.membersModalOverlay}
+          />
           <MembersModal />
         </div>
       ) : null}

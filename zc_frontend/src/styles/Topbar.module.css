@@ -17,6 +17,15 @@
   }
 }
 
+.membersModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  z-index: -1;
+}
+
 .profile {
   background-color: #acffe6;
   border-radius: 50%;

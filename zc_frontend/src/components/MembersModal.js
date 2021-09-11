@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useReducer, useState } from 'react'
 import faker from 'faker'
 
 import { IoMdClose, IoMdSearch } from 'react-icons/io'
@@ -22,8 +22,10 @@ const faked = placeHolder(379)
 
 const MembersModal = ({ channelTitle, membersArray }) => {
   // membersArray is be an array of users, exact object structure can be updated
+  const [_membersArray, set_MembersArray] = useState(membersArray || faked)
 
-  const _membersArray = membersArray || faked
+  const [filtedArr] = useReducer(searchReducer, _membersArray)
+  console.log(filtedArr)
 
   return (
     <div className={styles.modalWrapper}>
@@ -31,7 +33,7 @@ const MembersModal = ({ channelTitle, membersArray }) => {
         channelTitle={channelTitle || 'announcement'}
         memberNumber={_membersArray.length}
       />
-      <Search />
+      <Search membersArray={_membersArray} />
       <MemberList membersArray={_membersArray} />
     </div>
   )
@@ -56,15 +58,29 @@ const Header = ({ channelTitle, memberNumber }) => {
   )
 }
 
-const Search = () => {
+const Search = ({ membersArray }) => {
+  const [, dispatch] = useReducer(searchReducer, membersArray)
   return (
     <div id="search" className={styles.searchWrapper}>
       <div className={styles.searchBox}>
         <IoMdSearch fontSize={20} />
-        <input placeholder="Find members" />
+        <input
+          placeholder="Find members"
+          onChange={e => dispatch({ type: 'search', payload: e.target.value })}
+        />
       </div>
     </div>
   )
+}
+
+const searchReducer = (state, action) => {
+  switch (action.type) {
+    case 'search':
+      console.log(state)
+      return [...state].filter(e => e.userName.indexOf(action.payload) > -1)
+    default:
+      return state
+  }
 }
 
 const MemberList = ({ membersArray }) => {
@@ -81,14 +97,16 @@ const MemberCard = ({ data: { userName, fullName, status, avatar } }) => {
   return (
     // To be updated to anchor tags with appropriate resources linked
     <div id="member-card" className={styles.membercardWrapper}>
-      <img src={avatar} alt="user avatar" />
+      <div className={styles.membercardImage}>
+        <img src={avatar} alt="user avatar" />
+      </div>
       <div className={styles.membercardTextBlock}>
         <div className={styles.membercardUserDetails}>
           <b>{userName}</b>
           {'-'}
           <p>{fullName}</p>
         </div>
-        <div className={styles.membercardStatus}>{status}</div>
+        <p className={styles.membercardStatus}>{status}</p>
       </div>
     </div>
   )
