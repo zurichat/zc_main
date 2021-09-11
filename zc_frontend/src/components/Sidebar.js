@@ -6,7 +6,7 @@ import { URLContext } from '../context/Url'
 import styles from '../styles/Sidebar.module.css'
 import Dropdown from './Dropdown'
 
-import { Dialog, DialogOverlay, DialogContent } from '@reach/dialog'
+import { DialogOverlay, DialogContent } from '@reach/dialog'
 import styled from 'styled-components'
 import AuthInputBox from '../components/AuthInputBox'
 // import "@reach/dialog/styles.css";
@@ -30,7 +30,7 @@ export const Sidebar = () => {
   useEffect(() => {
     sidebarApi()
     // rooms.filter()
-  }, [query])
+  })
 
   // const sorters = {
   //   leastMembers : (a,b)=>{return a.members - b.members},
