@@ -24,7 +24,7 @@ const placeHolder = n => {
   }
   return placeHolderMembersArray
 }
-const faked = placeHolder(263)
+const faked = placeHolder(44134)
 
 const Topbar = ({ userProfile: { last_name, first_name } }) => {
   const state = useContext(TopbarContext)
