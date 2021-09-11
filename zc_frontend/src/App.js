@@ -30,6 +30,12 @@ import CookiesSetting from './pages/cookies-settings'
 import SearchResults2 from './components/externalPagesComponents/searchResults2'
 import ConfirmPassword from './pages/settings/components/ConfirmPassword'
 import ApiDocs from './pages/api-docs'
+ 
+import AllSessionSignOut from './pages/settings/components/AllSessionSignOut'
+
+import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation'
+import AccDeactivated from './pages/settings/components/AccDeactivated'
+
 
 const App = () => (
   <BrowserRouter>
@@ -46,6 +52,7 @@ const App = () => (
       <Route path="/signup">
         <SignUp />
       </Route>
+
       <Route path="/verify-email">
         <EmailVerification />
       </Route>
@@ -106,6 +113,9 @@ const App = () => (
       <Route path="/deactivate-account">
         <DeactivateAccount />
       </Route>
+      <Route path="/session-signout">
+        <AllSessionSignOut />
+      </Route>
       <Route path="/search-results">
         <SearchResults2 />
       </Route>
@@ -125,6 +135,12 @@ const App = () => (
       </Route>
       <Route path="/documentation" exact>
         <ApiDocs />
+      </Route>
+      <Route path="/confirm-deactivation">
+        <ConfirmDeactivation />
+      </Route>
+      <Route path="/account-deactivated">
+        <AccDeactivated />
       </Route>
     </Switch>
   </BrowserRouter>
