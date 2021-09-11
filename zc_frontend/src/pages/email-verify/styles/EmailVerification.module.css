@@ -1,19 +1,25 @@
 .main {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  background-color: white;
 }
 .main > p {
   text-align: center;
 }
 .img {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+}
+.email {
+  color: blue;
 }
 .input {
-  margin: 15px 0;
+  margin-top: 20px 0;
 }
+/* .codeInput{} */
+
 .request {
   color: #2f80ed;
 }
