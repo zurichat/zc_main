@@ -45,6 +45,15 @@
   right: 0;
   border-radius: 50%;
 }
+.circleAway {
+  background: grey;
+  height: 7px;
+  width: 7px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+}
 
 .topbar {
   display: flex;
@@ -84,8 +93,8 @@
 .topbarModal {
   background: #fff;
   position: absolute;
-  top: 100%;
-  right: 1%;
+  top: 75%;
+  right: 3%;
   width: 100%;
   max-width: 300px;
   z-index: 9999;
@@ -101,7 +110,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 3;
+  z-index: 100000;
   background: rgba(0, 0, 0, 0.3);
   /* display: none; */
   justify-content: center;
@@ -152,8 +161,27 @@
   margin-top: -8px;
 }
 
+/* set yourself as away*/
+.away {
+  position: absolute;
+  right: 182px;
+}
+
+/* set yourself as active*/
+.active {
+  position: absolute;
+  right: 178px;
+}
+
 .circle {
   background: green;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.circlegrey {
+  background: grey;
   height: 6px;
   width: 6px;
   border-radius: 50%;
@@ -165,7 +193,6 @@
   font-style: normal;
   font-weight: normal;
   color: #3a3a3a;
-  margin-left: -10px;
 }
 
 /* The section two */
@@ -173,7 +200,7 @@
   background: #fafafa;
   padding: 0px;
   border-radius: 3px;
-  border: 0.5px solid #bebebe;
+  border: none;
   width: 85%;
   margin: auto;
   cursor: pointer;
@@ -231,9 +258,10 @@
   font-family: Lato;
   color: #242424;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
   cursor: pointer;
   padding: 2px 20px;
+  margin-bottom: 5px;
 }
 
 .sectionThree p:hover {
@@ -264,6 +292,16 @@
   margin-right: 20px;
 }
 
+/* hr */
+
+.hr {
+  height: 15px;
+  background: #242424;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
 /* The section four */
 
 .sectionFour {
@@ -278,9 +316,10 @@
   font-family: Lato;
   color: #242424;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
   cursor: pointer;
   padding: 2px 20px;
+  margin-bottom: 10px;
 }
 
 .sectionFour p:hover {
@@ -294,15 +333,15 @@
   line-height: 22px;
   font-style: normal;
   font-weight: normal;
-  margin: auto;
-  margin-top: -8px;
+  margin-top: -5px;
+  margin-bottom: -5px;
 }
 
 .sectionFive p {
   font-family: Lato;
   color: #242424;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
   cursor: pointer;
   padding: 2px 20px;
 }
@@ -310,4 +349,42 @@
 .sectionFive p:hover {
   background: #1692f1;
   color: #fff;
+}
+
+/* The section Six */
+.sectionSix {
+  line-height: 22px;
+  font-style: normal;
+  font-weight: normal;
+  margin: auto;
+  margin-top: -8px;
+}
+
+.sectionSix p {
+  font-family: Lato;
+  color: #242424;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 2px 20px;
+  margin-bottom: 10px;
+}
+
+.sectionSix p:hover {
+  background: #1692f1;
+  color: #fff;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  /* set yourself as away*/
+  .away {
+    position: absolute;
+    right: 88px;
+  }
+
+  /* set yourself as active*/
+  .active {
+    position: absolute;
+    right: 85px;
+  }
 }
