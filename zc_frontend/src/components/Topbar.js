@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
-import { TopbarContext } from '../contexts/Topbar'
+import { useContext } from 'react'
+import { TopbarContext } from '../context/Topbar'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
@@ -8,22 +8,29 @@ import SearchBar from './externalPagesComponents/SearchBar'
 import StatusBadge from './StatusBadge'
 import TopbarModal from './TopbarModal'
 import ProfileModal from './ProfileModal'
+import { MembersModalButton } from './MembersModal'
 
 const Topbar = ({ userProfile: { last_name, first_name } }) => {
   const state = useContext(TopbarContext)
-  const { openModal } = state
+  const { openModal, presence } = state
+  const [active] = presence
 
   return (
     <div className={styles.container}>
       <SearchBar />
       <div className={styles.topbar}>
+        <MembersModalButton />
         <Link to="/settings">
           <img src="/settings.svg" alt="settings" className={styles.settings} />
         </Link>
         <StatusBadge />
         <div className={styles.profile} onClick={openModal}>
           <img src="/profilepic.png" alt="Profile" />
-          <div className={styles.circles}></div>
+          {active ? (
+            <div className={styles.circles}></div>
+          ) : (
+            <div className={styles.circleAway}></div>
+          )}
         </div>
         <p>
           {last_name} {first_name}
