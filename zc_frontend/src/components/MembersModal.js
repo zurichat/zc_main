@@ -138,8 +138,8 @@ export const MembersModalButton = ({ members }) => {
       <button onClick={openMembersModal} className={styles.modalButton}>
         <div className={styles.modalbuttonImageWrapper}>
           {imageArray.map((val, idx) => (
-            <span>
-              <img src={val.avatar} key={idx} alt={'user avatar'} />
+            <span key={idx}>
+              <img src={val.avatar} alt={'user avatar'} />
             </span>
           ))}
         </div>
