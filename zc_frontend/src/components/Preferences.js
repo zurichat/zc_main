@@ -3,6 +3,7 @@ import ProfileModal from './ProfileModal'
 import NotificationPreference from '../pages/preferences/components/NotificationPreference'
 import SidebarPreference from '../pages/preferences/components/SidebarPreference'
 import PreferenceMenu from '../pages/preferences/components/PreferenceMenu'
+import MarkAsRead from '../pages/preferences/components/MarkAsRead'
 import styles from '../pages/preferences/styles/NotificationPreference.module.css'
 import { ProfileContext } from '../context/ProfileModal'
 
@@ -19,6 +20,7 @@ const Preferences = () => {
         <div>
           {sideBar === 1 && <NotificationPreference />}
           {sideBar === 2 && <SidebarPreference />}
+          {sideBar === 7 && <MarkAsRead />}
         </div>
       </div>
     </ProfileModal>
