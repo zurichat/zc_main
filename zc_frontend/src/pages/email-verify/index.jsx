@@ -11,14 +11,16 @@ export default function EmailVerification() {
     <div className={styles.main}>
       <img src={logo} alt="zurichat logo" className={styles.img} />
       <p>
-        Enter the 6-digit code sent to your email address. This code expires
-        shortly so be quick
+        Enter the 6-digit code sent to your{' '}
+        <span className={styles.email}>johndoe@gmail.com</span>. This code
+        expires shortly so be quick
       </p>
       <div className={styles.input}>
         <ReactCodeInput
           type="number"
           fields={6}
           autoFocus={true}
+          className={styles.codeInput}
           // onComplete={sendCode}
         />
       </div>
