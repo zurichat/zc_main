@@ -1,19 +1,22 @@
 import axios from 'axios'
 import { useContext, useEffect } from 'react'
-import { URLContext } from '../contexts/Url'
+import { URLContext } from '../context/Url'
+import { PluginLoaderContext } from '../context/PluginLoaderState'
 import cheerio from 'cheerio'
 
+import PluginLoader from './PluginLoader'
 import styles from '../styles/PluginContent.module.css'
 import Welcome from './Welcome'
 
-export const PluginContent = () => { 
+export const PluginContent = () => {
   // const pluginUrl = '/apps/default';
-  const state = useContext(URLContext)
-  const [url] = state.url
-  
+  const { url } = useContext(URLContext)
+  const { setLoader } = useContext(PluginLoaderContext)
 
   useEffect(() => {
     if (!url) return
+
+    setLoader('loading')
 
     const elRoot = document.getElementById('zc-plugin-root')
     const reProtocol = /^https?:\/\//
@@ -25,13 +28,13 @@ export const PluginContent = () => {
 
     axios
       .get(prefixLink(oURL.toString()))
-      .then((res) => {
+      .then(res => {
         const $ = cheerio.load(res.data)
 
         // append stylesheet
         $(`link[rel="stylesheet"]`).each(function () {
           const link = document.createElement('link')
-          Object.keys(this.attribs).forEach((attr) =>
+          Object.keys(this.attribs).forEach(attr =>
             link.setAttribute(attr, this.attribs[attr])
           )
           link.setAttribute(
@@ -46,7 +49,7 @@ export const PluginContent = () => {
         // append scripts
         $('script').each(function () {
           const script = document.createElement('script')
-          Object.keys(this.attribs).forEach((attr) =>
+          Object.keys(this.attribs).forEach(attr =>
             script.setAttribute(attr, this.attribs[attr])
           )
           if (script.src) {
@@ -62,22 +65,25 @@ export const PluginContent = () => {
           document.body.appendChild(script)
         })
         elRoot.innerHTML = $('body').html()
+        setLoader('ready')
       })
-      .catch((e) => {
+      .catch(e => {
         elRoot.innerHTML = `Failed to Load ${url} Plugin: ${e.message}`
+        setLoader('ready')
       })
     return () => {
       elRoot.innerHTML = ''
       document
         .querySelectorAll('[data-plugin-res]')
-        .forEach((node) => node.remove())
+        .forEach(node => node.remove())
     }
-  }, [url])
+  }, [url, setLoader])
 
   return (
     <>
       <section className={styles.container}>
-        <div id="zc-plugin-root">Loading...</div>
+        <div id="zc-plugin-root"></div>
+        <PluginLoader />
       </section>
       {!url && <Welcome />}
     </>
