@@ -60,8 +60,8 @@
   color: #999999;
   display: flex;
   flex-direction: row;
-  margin-top: 0px;
   font-family: Lato;
+  margin-top: -10px;
 }
 .radio label {
   margin-left: 19px;
@@ -81,6 +81,7 @@ input[type='checkbox'] {
   font-size: 13px;
   color: #3a3a3a;
   font-family: Lato;
+  margin-top: -10px;
 }
 .checkbox label {
   padding: 10px 5px 3px;
@@ -108,13 +109,14 @@ input[type='checkbox'] {
   justify-content: space-between;
   padding: 16px;
   font-family: Lato;
-  margin-top: 10px;
+  margin-top: -10px;
 }
 .itemTitle2 span {
   color: #999999;
   font-size: 11px;
   margin-left: 40px;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
+  margin-top: -10px;
 }
 .itemTitle2 .spanSmall {
   color: #00b87c;
@@ -197,9 +199,6 @@ input[type='checkbox'] {
 
 /* ======================================= */
 /* Michael's sound check stylings */
-.notify {
-  padding: 0 20px;
-}
 
 .button {
   margin-top: 10px;
@@ -221,21 +220,6 @@ input[type='checkbox'] {
   line-height: 21px;
 }
 
-.preview {
-  display: flex;
-  flex-direction: row;
-  /* margin-left: -267px; */
-  align-items: center;
-  background: red;
-  padding: 0 !important;
-}
-
-.msg {
-  /* margin-left: -5px; */
-  font-size: 1rem;
-  color: rgb(85, 84, 84);
-}
-
 .msg2 {
   margin-left: 10px;
   font-size: 1rem;
@@ -249,10 +233,6 @@ input[type='checkbox'] {
   font-size: 12px;
   line-height: 20px;
   color: #999999;
-}
-
-.msg4 {
-  font-size: 0.9rem;
 }
 
 .mute {
@@ -306,69 +286,8 @@ input[type='checkbox'] {
   outline: none;
 }
 
-.button3 {
-  padding-right: 90px;
-  padding-left: 5px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  border: 1px solid rgb(218, 215, 215);
-  border-radius: 4px;
-  color: rgb(85, 84, 84);
-  outline: none;
-}
-
 .section2 {
   margin-top: 0px;
-}
-
-.text2 {
-  margin-top: 20px;
-  font-weight: 600;
-  font-size: 1rem;
-  color: rgb(44, 29, 29);
-}
-
-.flash {
-  display: flex;
-  flex-direction: row;
-  /* margin-top: 20px; */
-  align-items: center;
-}
-
-.never {
-  font-size: 1rem;
-  color: rgb(85, 84, 84);
-  margin-top: -5px;
-}
-
-.flash2 {
-  display: flex;
-  flex-direction: row;
-  margin-top: -5px;
-  margin-left: 16px;
-  align-items: center;
-}
-
-.idle {
-  margin-left: 10px;
-  font-size: 1rem;
-  color: rgb(85, 84, 84);
-  margin-top: -5px;
-}
-
-.flash3 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.always {
-  margin-left: -5px;
-  font-size: 1rem;
-  color: rgb(85, 84, 84);
-  margin-top: -5px;
 }
 
 .deliver {
@@ -416,54 +335,8 @@ input[type='checkbox'] {
   margin-top: 30px;
 }
 
-.head3 {
-  border-top: 1px solid rgb(233, 227, 227);
-  /* margin-top: -10px; */
-  /* width: 274%; */
-}
-
-.text3 {
-  margin-top: 20px;
-  font-weight: 600;
-  font-size: 1rem;
-  color: rgb(44, 29, 29);
-}
-
 .mobile {
   margin-top: 25px;
-  color: rgb(85, 84, 84);
-}
-
-.send {
-  font-size: 1rem;
-}
-
-.dropdown4 {
-  margin-top: 5px;
-}
-
-.button5 {
-  padding-right: 100px;
-  padding-left: 5px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  border: 1px solid rgb(218, 215, 215);
-  border-radius: 4px;
-  color: rgb(85, 84, 84);
-  outline: none;
-}
-
-.email {
-  display: flex;
-  flex-direction: row;
-  font-size: 1rem;
-  margin-top: 15px;
-}
-
-.msg5 {
-  margin-left: 10px;
   color: rgb(85, 84, 84);
 }
 
