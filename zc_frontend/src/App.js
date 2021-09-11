@@ -3,6 +3,7 @@ import LandingPage from './components/LandingPage'
 import Home from './pages/home'
 import Login from './pages/login'
 import SignUp from './pages/signup'
+import EmailVerification from './pages/email-verify'
 import './styles/globals.css'
 import Security from './pages/security'
 import Features from './pages/features'
@@ -28,6 +29,13 @@ import Cookies from './pages/cookies'
 import DeactivateAccount from './pages/settings/components/AcctDeactivation'
 import CookiesSetting from './pages/cookies-settings'
 import SearchResults2 from './components/externalPagesComponents/searchResults2'
+import ConfirmPassword from './pages/settings/components/ConfirmPassword'
+import ApiDocs from './pages/api-docs'
+
+import AllSessionSignOut from './pages/settings/components/AllSessionSignOut'
+
+import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation'
+import AccDeactivated from './pages/settings/components/AccDeactivated'
 
 const App = () => (
   <BrowserRouter>
@@ -43,6 +51,10 @@ const App = () => (
       </Route>
       <Route path="/signup">
         <SignUp />
+      </Route>
+
+      <Route path="/verify-email">
+        <EmailVerification />
       </Route>
       <Route path="/features">
         <Features />
@@ -83,8 +95,11 @@ const App = () => (
       <Route path="/input">
         <Input />
       </Route>
-      <Route path="/settings">
+      <Route path="/settings" exact>
         <Settings />
+      </Route>
+      <Route path="/settings/:id">
+        <ConfirmPassword />
       </Route>
       <Route path="/search">
         <SearchResult />
@@ -97,6 +112,9 @@ const App = () => (
       </Route>
       <Route path="/deactivate-account">
         <DeactivateAccount />
+      </Route>
+      <Route path="/session-signout">
+        <AllSessionSignOut />
       </Route>
       <Route path="/search-results">
         <SearchResults2 />
@@ -114,6 +132,15 @@ const App = () => (
       </Route>
       <Route path="searchSuggestion">
         <SearchSuggestion />
+      </Route>
+      <Route path="/documentation" exact>
+        <ApiDocs />
+      </Route>
+      <Route path="/confirm-deactivation">
+        <ConfirmDeactivation />
+      </Route>
+      <Route path="/account-deactivated">
+        <AccDeactivated />
       </Route>
     </Switch>
   </BrowserRouter>

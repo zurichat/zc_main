@@ -1,3 +1,6 @@
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
+import { useRef, useState } from 'react'
+
 import styles from '../styles/InputBox.module.css'
 
 const InputBox = ({
@@ -8,24 +11,55 @@ const InputBox = ({
   setValue,
   className = '',
   placeholder,
-  name
+  name,
+  required = true
 }) => {
+  const ref = useRef(null)
+  const [passwordVisible, setpasswordVisible] = useState(
+    type === 'password' ? true : false
+  )
+
+  const passwordToggle = e => {
+    e.preventDefault()
+    setpasswordVisible(!passwordVisible)
+
+    ref.current.type = passwordVisible ? 'text' : 'password'
+  }
+
   return (
     <>
-      <div className={`${styles.InputWrapper} ${className}`}>
+      <div className={`${styles.InputContainer}`}>
         <label htmlFor={id} className={`${styles.InputLabel}`}>
           {name}
         </label>
 
-        <input
-          id={id}
-          className={`${styles.InputElement} ${error && styles.is_invalid}`}
-          name={name}
-          type={type}
-          placeholder={placeholder}
-          value={value}
-          onChange={e => setValue(e.target.value)}
-        />
+        <div
+          className={`${styles.InputWrapper} ${
+            type === 'password' ? styles.InputWrapperWithPassword : ''
+          }`}
+        >
+          <input
+            id={id}
+            ref={ref}
+            className={`${styles.InputElement} ${error && styles.is_invalid}`}
+            name={name}
+            type={type}
+            placeholder={placeholder}
+            value={value}
+            required={required}
+            onChange={e => setValue(e.target.value)}
+          />
+
+          {/password/i.test(name) && (
+            <div
+              className={`${styles.ToggleVisibility}`}
+              onClick={passwordToggle}
+            >
+              {/* <i className={`far ${passwordVisible ? 'eye-slash' : 'eye'}`}></i> */}
+              {passwordVisible ? <FaEye /> : <FaEyeSlash />}
+            </div>
+          )}
+        </div>
 
         <span className={`${styles.InputError}`}>{error}</span>
       </div>
