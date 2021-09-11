@@ -1,11 +1,10 @@
-import React from "react";
-import styles from '../styles/AllSessionSignOut.module.css';
-import SignOutActionList from "./SignOutActionList";
-import SettingsNav from "./SettingsNav";
-import boxArrow from "./../box-arrow-right.svg";
+import React from 'react'
+import styles from '../styles/AllSessionSignOut.module.css'
+import SignOutActionList from './SignOutActionList'
+import SettingsNav from './SettingsNav'
+import boxArrow from './../box-arrow-right.svg'
 
-function AllSessionSignOut () {
-
+function AllSessionSignOut() {
   return (
     <>
       <SettingsNav />
@@ -20,21 +19,11 @@ function AllSessionSignOut () {
             <div className={`${styles.signout_content}`}>
               <p>This will:</p>
               <ul>
-                <SignOutActionList 
-                  text="Reset all cookies used for Zurichat sign-in (except in your current browser)"
-                />
-                <SignOutActionList 
-                  text="Reset all API tokens associated with your account (so you will need to sign in again on your phone)"
-                />
-                <SignOutActionList 
-                  text="Reset all outstanding magic links associated with your account"
-                />
-                <SignOutActionList 
-                  text="Remove push notifications configured for your mobile device"
-                />
-                <SignOutActionList 
-                  text="Remove push notifications configured for your mobile device"
-                />
+                <SignOutActionList text="Reset all cookies used for Zurichat sign-in (except in your current browser)" />
+                <SignOutActionList text="Reset all API tokens associated with your account (so you will need to sign in again on your phone)" />
+                <SignOutActionList text="Reset all outstanding magic links associated with your account" />
+                <SignOutActionList text="Remove push notifications configured for your mobile device" />
+                <SignOutActionList text="Remove push notifications configured for your mobile device" />
               </ul>
               <p>This will not reset your password.</p>
             </div>
@@ -46,21 +35,22 @@ function AllSessionSignOut () {
               </header>
               <div className={`${styles.form_group}`}>
                 <input
-                  type="text" 
-                  placeholder="Password" 
-                  name="password" 
-                  className={`${styles.form_input}`} 
+                  type="text"
+                  placeholder="Password"
+                  name="password"
+                  className={`${styles.form_input}`}
                 />
-                
-                <button type="submit"  className={`${styles.Submit}`}>Sign out all other sessions</button>
-              
+
+                <button type="submit" className={`${styles.Submit}`}>
+                  Sign out all other sessions
+                </button>
               </div>
             </form>
           </section>
         </article>
       </main>
     </>
-  );
+  )
 }
 
-export default AllSessionSignOut;
+export default AllSessionSignOut
