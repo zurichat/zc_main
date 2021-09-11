@@ -16,17 +16,15 @@ export const Sidebar = () => {
   const { setUrl } = useContext(URLContext)
 
   const sidebarApi = () => {
-    axios({
-      url: `https://channels.zuri.chat/api/v1/sidebar/?org=1&user=43567868`,
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Vary: 'Accept, Accept-Language, Origin',
-        Allow: 'GET, HEAD, OPTIONS'
-      }
-    })
+    axios
+      .get(
+        `https://channels.zuri.chat/api/v1/sidebar/?org=1&user=43567868&format=json`
+      )
       .then(res => {
         console.log(res)
+        console.log(res.data)
+        console.log(res.data.public_rooms)
+        const publicRooms = res.data.public_rooms
       })
       .catch(err => console.log(err))
   }
@@ -65,10 +63,14 @@ export const Sidebar = () => {
             key={key}
             showAddButton={true}
             onTitleClick={() => setUrl(key)}
-            onAddButtonClick={() => {
-              console.log(sidebarApi)
-            }}
-          ></Dropdown>
+            onAddButtonClick={sidebarApi}
+          >
+            {
+              // <Fragment>
+              //   me
+              // </Fragment>
+            }
+          </Dropdown>
         ))}
       <Dropdown title="messages">
         {messagesData &&
