@@ -46,7 +46,7 @@ const App = () => (
       <Route path="/signup">
         <SignUp />
       </Route>
-      
+
       <Route path="/verify-email">
         <EmailVerification />
       </Route>
