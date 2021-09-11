@@ -1,26 +1,30 @@
 import { useContext, useState } from 'react'
 
 // react icons
-import { FaChevronRight, FaTimes, FaCircle } from 'react-icons/fa'
+import { FaCircle, FaChevronRight } from 'react-icons/fa'
 
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
 
 import styles from '../styles/Topbar.module.css'
 import { TopbarContext } from '../context/Topbar'
-import StatusBadge from './StatusBadge'
+import StatusBadgeModal from './StatusBadgeModal'
 import { ProfileContext } from '../context/ProfileModal'
 import Preferences from './Preferences'
 import EditProfile from './EditProfile'
+import MembersModal from './MembersModal'
+import PauseNotification from './PauseNotification'
 
 const TopbarModal = () => {
   const { toggleModalState, toggleProfileState } = useContext(ProfileContext)
 
   const state = useContext(TopbarContext)
   const [showModal] = state.show
-  const [showStatus, setShowStatus] = state.status
+  const [active, setActive] = state.presence
+  const [showStatus] = state.status
+  const [showMembersModal] = state.modal
   const { onEmojiClick, openStatus, closeStatus, modalRef } = state
   const [modal, setModal] = useState('')
-  const [active, setActive] = useState(true)
+  const [pause, setPause] = useState(false)
 
   return (
     <>
@@ -32,10 +36,10 @@ const TopbarModal = () => {
           onClick={closeStatus}
         >
           <div className={styles.picker}>
-            <FaTimes
+            {/* <FaTimes
               className={styles.times}
               onClick={() => setShowStatus(!showStatus)}
-            />
+            /> */}
             <div className={styles.smileys}>
               <Picker
                 onEmojiClick={onEmojiClick}
@@ -43,6 +47,17 @@ const TopbarModal = () => {
               />
             </div>
           </div>
+        </div>
+      ) : null}
+
+      {/* The section that shows the members modal */}
+      {showMembersModal ? (
+        <div
+          ref={modalRef}
+          className={styles.modalContainers}
+          // onClick={closeMembersModal}
+        >
+          <MembersModal />
         </div>
       ) : null}
 
@@ -59,30 +74,31 @@ const TopbarModal = () => {
               {active ? (
                 <div className={styles.online}>
                   <FaCircle className={styles.circle} />
-                  <p>Active</p>
+                  <p className={styles.active}>Active</p>
                 </div>
               ) : (
                 <div className={styles.online}>
                   <FaCircle className={styles.circlegrey} />
-                  <p>Away</p>
+                  <p className={styles.away}>Away</p>
                 </div>
               )}
             </div>
           </div>
 
           <div onClick={openStatus} className={styles.sectionTwo}>
-            <StatusBadge />
+            <StatusBadgeModal />
           </div>
 
           <div className={styles.sectionThree}>
             <p onClick={openStatus}>Set a status</p>
             <p onClick={() => setActive(!active)}>
-              {active ? 'Set yourself as away' : 'Set yourself as online'}
+              {active ? 'Set yourself as away' : 'Set yourself as active'}
             </p>
             <div className={styles.pause}>
-              <p>Pause Notifications</p>
+              <p onClick={() => setPause(!pause)}>Pause Notifications</p>
               <FaChevronRight className={styles.chevron} />
             </div>
+            {pause && <PauseNotification pause={pause} setPause={setPause} />}
           </div>
 
           <hr className={styles.hr} />
@@ -90,8 +106,8 @@ const TopbarModal = () => {
           <div className={styles.sectionFour}>
             <p
               onClick={() => {
-                toggleModalState()
                 setModal('edit profile')
+                toggleModalState()
               }}
             >
               Edit profile
@@ -99,8 +115,8 @@ const TopbarModal = () => {
             <p onClick={toggleProfileState}>View profile</p>
             <p
               onClick={() => {
-                toggleModalState()
                 setModal('preference')
+                toggleModalState()
               }}
             >
               Preferences
@@ -120,7 +136,10 @@ const TopbarModal = () => {
           <hr className={styles.hr} />
 
           <div className={styles.sectionFive}>
-            <p>Sign out of Team Einstein workspace</p>
+            <p>
+              {' '}
+              <a href="/signout">Sign out of Team Einstein workspace</a>{' '}
+            </p>
           </div>
         </section>
       ) : null}
