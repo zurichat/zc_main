@@ -1,0 +1,15 @@
+.underline {
+  text-decoration: underline;
+}
+
+.text_link {
+  color: #2f80ed;
+}
+
+.text_link:hover {
+  text-decoration: underline;
+}
+
+.pagination_link {
+  color: #00b87c;
+}

@@ -1,80 +1,114 @@
-import styles from './styles/Login.module.css'
 import React, { useState } from 'react'
-import LoginLoading from '../../components/LoginLoading';
+// import { Link } from 'react-router-dom'
+import authBg from '../../pages/images/backg.svg'
+import { withRouter } from 'react-router-dom'
+import AuthInputBox from '../../components/AuthInputBox'
+import FormWrapper from '../../components/AuthFormWrapper'
+import styles from '../../styles/AuthFormElements.module.css'
+import axios from 'axios'
 
+//import GoogleLogin from 'react-google-login'
 
 const Login = () => {
   const [email, setEmail] = useState('')
-  const [loggingIn, setLoggingIn] = useState(false)
+  const [password, setPassword] = useState('')
+  const [rememberMe, setRememberMe] = useState('')
+
+  const handleSubmit = async e => {
+    e.preventDefault()
+    await axios
+      .post('/api/login', {
+        email,
+        password
+      })
+      .then(response => {
+        const { data, message } = response.data
+
+        //Store token in localstorage
+        localStorage.setItem('token', data.token)
+
+        //Store user copy in localstorage
+        localStorage.setItem('user', data.userCopy)
+
+        //Display message
+        alert(message) //Change this when there is a design
+
+        setTimeout(() => {
+          //Redirect to some other page
+        }, 2000)
+      })
+      .catch(error => {
+        const { data } = error.response
+
+        //Render error message to the user
+        alert(data.message) //Change this when there is a design
+      })
+  }
 
   return (
-    <div className={`container text-center m-auto`}>
-      {email && loggingIn && < LoginLoading />}
-      <div className={`pt-5 px-3 mt-5`}>
-        <span>
-          <img src="/zurichatlogo.svg" alt="logo" />
-          <p className={`d-inline  p-2`}>Zuri chat</p>
-        </span>
-        <h2 className={` pt-2`}>Sign in to Zuri Chat</h2>
-        <p className={styles.subtext}>Enter your email to sign In</p>
-        <div className={`my-3`}>
-          <button
-            className={`${styles.button_outline} m-0 col-12 col-md-6 px-2 px-md-5 py-2 btn btn-outline-dark`}
-          >
-            <img
-              className={`text-align-center px-2`}
-              src={`/googleicon.svg`}
-              alt="google icon"
-            />
-            Sign in with Google
-          </button>
+    <main id={styles.authPageWrapper}>
+      <aside id={styles.authAsideContainer} className={styles.display_none}>
+        <div id={styles.authImageWrapper}>
+          <img src={authBg} alt="backgroundImage" />
+          <div id={styles.aside_txt}></div>
         </div>
-        <div className={`my-3`}>
-          <button
-            className={`${styles.button_outline} m-0 col-12 col-md-6 btn px-2 px-md-5 py-2 btn-outline-primary`}
-          >
-            <img
-              className={`text-align-center px-2`}
-              src={`/facebookicon.svg`}
-              alt="google icon"
-            />
-            Sign in with Facebook
-          </button>
-        </div>
-        <div className={`d-flex`}>
-          <div className={`col-12 col-md-6 m-auto mt-5`}>
-            <p className={`mb-0 text-start ${styles.email_subheading}`}>
-              Or sign up with Email
-            </p>
-          </div>
-        </div>
-        <div className={`d-flex ${styles.email_input}`}>
-          <div className={`mb-3 col-12 col-md-6 m-auto`}>
-            <input
-              type="email"
-              className={`py-2 form-control`}
-              value={email}
-              onChange={(e) => {
-                console.log(e.target.value)
-                setEmail(e.target.value)
-              }}
-              placeholder="aristotle@gmail.com"
-            />
-          </div>
-        </div>
+      </aside>
+      <section id={styles.authFormContainer}>
+        <FormWrapper
+          header="Login"
+          subHeader="Login with the data you entered during your registration"
+          googleHeader="Login with Google"
+          topLineText="OR"
+          submitButtonName="Log in"
+          email={email}
+          password={password}
+          check={rememberMe}
+          handleSubmit={handleSubmit}
+          bottomLine="New to us? Create an Account"
+          bottomLink="Log in"
+        >
+          <AuthInputBox
+            className={`${styles.inputElement}`}
+            id="email"
+            name="Email address"
+            type="email"
+            placeholder="Johndoe@example.com"
+            value={email}
+            setValue={setEmail}
+            error=""
+          />
+          <AuthInputBox
+            className={`${styles.inputElement}`}
+            id="password"
+            name="Password"
+            type="password"
+            placeholder="Enter a password"
+            value={password}
+            setValue={setPassword}
+            error=""
+          />
 
-        <div>
-          <button className={` ${styles.button} btn mb-3 col-12 col-md-6 px-5 px-md-5 py-2 btn-primary`} onClick={() => setLoggingIn(true)}>Sign In</button>
-        </div>
-        <span className={``}>
-          Don't have an account?{' '}
-          <a className={styles.link} href="/signup">
-            Create an account
-          </a>
-        </span>
-      </div>
-    </div>
+          <div className={`${styles.rememberMe}`}>
+            <span className={`${styles.left}`}>
+              <input
+                className={`${styles.checkBox}`}
+                name="RememeberMe"
+                type="checkbox"
+                value={rememberMe}
+                onClick={() => {
+                  setRememberMe(!rememberMe)
+                }}
+              />
+              remember me
+            </span>
+            <span className={`${styles.right}`}>
+              Forgot password?<a href="/"> {''}Get help signing in</a>
+            </span>
+          </div>
+        </FormWrapper>
+      </section>
+    </main>
   )
 }
 
-export default Login
+export default withRouter(Login)
