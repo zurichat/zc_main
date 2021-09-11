@@ -85,9 +85,12 @@ const TopbarModal = () => {
             </div>
           </div>
 
-          <div onClick={openStatus} className={styles.sectionTwo}>
+          <div className={styles.sectionTwo}>
             <StatusBadgeModal />
           </div>
+          {/* <div onClick={openStatus} className={styles.sectionTwo}>
+            <StatusBadgeModal />
+          </div> */}
 
           <div className={styles.sectionThree}>
             <p onClick={openStatus}>Set a status</p>
