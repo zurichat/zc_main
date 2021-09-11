@@ -34,10 +34,10 @@ const TopbarModal = () => {
           onClick={closeStatus}
         >
           <div className={styles.picker}>
-            <FaTimes
+            {/* <FaTimes
               className={styles.times}
               onClick={() => setShowStatus(!showStatus)}
-            />
+            /> */}
             <div className={styles.smileys}>
               <Picker
                 onEmojiClick={onEmojiClick}
@@ -133,7 +133,10 @@ const TopbarModal = () => {
           <hr className={styles.hr} />
 
           <div className={styles.sectionFive}>
-            <p>Sign out of Team Einstein workspace</p>
+            <p>
+              {' '}
+              <a href="/signout">Sign out of Team Einstein workspace</a>{' '}
+            </p>
           </div>
         </section>
       ) : null}
