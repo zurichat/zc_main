@@ -92,14 +92,14 @@ const Login = () => {
             <span className={`${styles.left}`}>
               <input
                 className={`${styles.checkBox}`}
-                name="RememeberMe"
+                name="RememberMe"
                 type="checkbox"
                 value={rememberMe}
                 onClick={() => {
                   setRememberMe(!rememberMe)
                 }}
               />
-              remember me
+              Remember me
             </span>
             <span className={`${styles.right}`}>
               Forgot password?<a href="/"> {''}Get help signing in</a>
