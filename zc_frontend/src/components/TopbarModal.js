@@ -12,6 +12,7 @@ import { ProfileContext } from '../context/ProfileModal'
 import Preferences from './Preferences'
 import EditProfile from './EditProfile'
 import MembersModal from './MembersModal'
+import PauseNotification from './PauseNotification'
 
 const TopbarModal = () => {
   const { toggleModalState, toggleProfileState } = useContext(ProfileContext)
@@ -23,6 +24,7 @@ const TopbarModal = () => {
   const [showMembersModal] = state.modal
   const { onEmojiClick, openStatus, closeStatus, modalRef } = state
   const [modal, setModal] = useState('')
+  const [pause, setPause] = useState(false)
 
   return (
     <>
@@ -93,9 +95,10 @@ const TopbarModal = () => {
               {active ? 'Set yourself as away' : 'Set yourself as active'}
             </p>
             <div className={styles.pause}>
-              <p>Pause Notifications</p>
+              <p onClick={() => setPause(!pause)}>Pause Notifications</p>
               <FaChevronRight className={styles.chevron} />
             </div>
+            {pause && <PauseNotification pause={pause} setPause={setPause} />}
           </div>
 
           <hr className={styles.hr} />
