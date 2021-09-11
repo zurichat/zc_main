@@ -1,4 +1,6 @@
 import React, { useContext, useState } from 'react'
+import { FixedSizeList as List } from 'react-window'
+import AutoSizer from 'react-virtualized-auto-sizer'
 
 import { IoMdClose, IoMdSearch } from 'react-icons/io'
 import { TopbarContext } from '../context/Topbar'
@@ -67,19 +69,47 @@ const Search = ({ members, setSearchFiltered }) => {
 }
 
 const MemberList = ({ members }) => {
+  const Row = ({ index, style }) => (
+    <MemberCard data={members[index]} style={style} />
+  )
+
   return (
-    <div id="member-list" className={styles.memberlist}>
-      {members.map((val, idx) => {
-        return <MemberCard data={val} key={idx} />
-      })}
+    <div
+      id="member-list"
+      className={styles.memberlist}
+      style={{ flex: '1 1 auto' }}
+    >
+      <AutoSizer>
+        {({ height, width }) => (
+          <List
+            height={height}
+            itemCount={members.length}
+            itemSize={67}
+            width={width}
+          >
+            {Row}
+          </List>
+        )}
+      </AutoSizer>
     </div>
   )
+
+  // return (
+  //   <div id="member-list" className={styles.memberlist}>
+  //     {members.map((val, idx) => {
+  //       return <MemberCard data={val} key={idx} />
+  //     })}
+  //   </div>
+  // )
 }
 
-const MemberCard = ({ data: { userName, fullName, status, avatar } }) => {
+const MemberCard = ({
+  style,
+  data: { userName, fullName, status, avatar }
+}) => {
   return (
     // To be updated to anchor tags with appropriate resources linked
-    <div id="member-card" className={styles.membercardWrapper}>
+    <div id="member-card" className={styles.membercardWrapper} style={style}>
       <div className={styles.membercardImage}>
         <img src={avatar} alt="user avatar" />
       </div>

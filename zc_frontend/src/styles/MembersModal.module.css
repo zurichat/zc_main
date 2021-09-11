@@ -185,5 +185,5 @@
 }
 
 .memberlist {
-  overflow-y: scroll;
+  overflow: hidden;
 }
