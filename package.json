@@ -5,16 +5,15 @@
   "repository": "git@github.com:zurichat/zc_main.git",
   "license": "MIT",
   "scripts": {
-    "start": "yarn run run-start",
-    "build": "yarn run yarn run build --prefix zc_frontend",
-    "prepare": "husky install",
+    "start": "npm run run-start",
+    "build": "npm run frontend:build",
     "format": "prettier -w .",
-    "lint": "eslint ",
+    "lint": "prettier -c .",
     "deploy": "gh-pages -d build",
-    "dev": "concurrently --kill-others-on-fail \"yarn run run-dev\" \"yarn run frontend:dev\"",
+    "dev": "concurrently --kill-others-on-fail \"npm run run-dev\" \"npm run frontend:dev\"",
     "run-start": "cross-env NODE_ENV=production node server.js",
     "run-dev": "cross-env NODE_ENV=development nodemon server.js",
-    "postinstall": "cd zc_frontend && yarpm-yarn install"
+    "frontend:build": "npm run build --prefix zc_frontend"
   },
   "dependencies": {
     "axios": "^0.21.1",
