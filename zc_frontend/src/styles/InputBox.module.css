@@ -1,8 +1,11 @@
 .InputContainer {
-  /* margin: 0.5rem auto; */
+  font-family: 'Lato', sans-serif;
+  margin: 1rem auto;
   width: 100%;
   /* font-size: 16px; */
-  font-family: 'Lato', sans-serif;
+
+  margin-top: 0;
+  padding-top: 0;
 }
 
 /* input Label */
@@ -39,9 +42,9 @@
   letter-spacing: 1px;
   color: #000000;
 }
-.InputElement::-webkit-input-placeholder {
+/* .InputElement::-webkit-input-placeholder {
   font-size: 12px;
-}
+} */
 
 .InputElement:invalid,
 .InputElement.is_invalid {
@@ -64,9 +67,6 @@
   background: #ffffffa8;
   height: 100%;
   font-size: 1rem;
-}
-.ToggleVisibility > i {
-  background-color: #000000;
 }
 
 .InputError {

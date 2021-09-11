@@ -28,7 +28,7 @@ const InputBox = ({
 
   return (
     <>
-      <div className={`${styles.InputContainer} ${className}`}>
+      <div className={`${styles.InputContainer}`}>
         <label htmlFor={id} className={`${styles.InputLabel}`}>
           {name}
         </label>
