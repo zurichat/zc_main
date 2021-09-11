@@ -1,4 +1,4 @@
-import React,{ useState } from 'react'
+import React, { useState } from 'react'
 import authBg from '../../pages/images/backg.svg'
 import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
@@ -6,11 +6,11 @@ import FormWrapper from '../../components/AuthFormWrapper'
 import styles from '../../styles/AuthFormElements.module.css'
 // import axios from 'axios'
 const Index = () => {
-    const [password, setPassword] = useState('')
-    const [confirmPassword, setConfirmPassword] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
 
-    return (
-       <main id={styles.authPageWrapper}>
+  return (
+    <main id={styles.authPageWrapper}>
       <aside id={styles.authAsideContainer} className={styles.display_none}>
         <div id={styles.authImageWrapper}>
           <img src={authBg} alt="backgroundImage" />
@@ -23,9 +23,8 @@ const Index = () => {
           subHeader="Create a new password for your account"
           submitButtonName="Continue"
           password={password}
-        //   handleSubmit={handleSubmit}
+          //   handleSubmit={handleSubmit}
         >
-        
           <AuthInputBox
             className={`${styles.inputElement}`}
             id="password"
@@ -49,7 +48,7 @@ const Index = () => {
         </FormWrapper>
       </section>
     </main>
-    )
+  )
 }
 
 export default withRouter(Index)
