@@ -1,7 +1,24 @@
+import { useRef } from 'react'
 import styles from '../styles/EditProfile.module.css'
+import AddLink from './AddLink'
 import ProfileModal from './ProfileModal'
 
 const EditProfile = () => {
+  const imageRef = useRef(null)
+  const avatarRef = useRef(null)
+
+  const handleImageChange = event => {
+    if (imageRef.current.files[0]) {
+      let fileReader = new FileReader()
+
+      fileReader.onload = function (event) {
+        avatarRef.current.src = event.target.result
+      }
+
+      fileReader.readAsDataURL(imageRef.current.files[0])
+    }
+  }
+
   return (
     <ProfileModal full title="Edit profile">
       <>
@@ -10,8 +27,8 @@ const EditProfile = () => {
             <div className={styles.profileMain}>
               <div className={styles.sectionA}>
                 <form>
-                  <div className={styles.formWrapper}>
-                    <label className="label">First Name</label>
+                  <div className={styles.displayNameDesktop}>
+                    <label>First Name</label>
                     <input
                       type="text"
                       name="name"
@@ -22,8 +39,8 @@ const EditProfile = () => {
                     style={{ display: 'flex' }}
                     className={styles.formWrapper}
                   >
-                    <div className={styles.displayNameDesktop}>
-                      <label className="label">Choose a Display Name</label>
+                    <div className={styles.formMargin}>
+                      <label>Choose a Display Name</label>
                       <input
                         type="text"
                         name="displayName"
@@ -61,8 +78,8 @@ const EditProfile = () => {
                     <textarea rows="3" className={styles.formInput} />
                   </div>
 
-                  <div className="my-4">
-                    <label className="label">Phone Number</label>
+                  <div className="my-3">
+                    <label>Phone Number</label>
                     <div className={styles.phoneNumber}>
                       <span>
                         <select>
@@ -87,16 +104,16 @@ const EditProfile = () => {
                     </select>
                   </div>
 
-                  <div className={styles.mt}>
-                    <label className="label">Twitter</label>
+                  <div className="mt-3">
+                    <label>Twitter</label>
                     <input
                       type="text"
                       name="name"
                       className={styles.formInput}
                     />
                   </div>
-                  <div className={styles.mt}>
-                    <label className="label">Facebook</label>
+                  <div className="mt-3">
+                    <label>Facebook</label>
                     <input
                       type="text"
                       name="name"
@@ -108,34 +125,45 @@ const EditProfile = () => {
               <div className={styles.sectionB}>
                 <div className={styles.subContainer}>
                   <div className={styles.profilePic}>
-                    <div className={styles.camera}>
+                    <label htmlFor="img" className={styles.camera}>
                       <img
                         src="/camera.svg"
                         alt="camera"
                         style={{ display: 'flex' }}
                       />
-                    </div>
+                    </label>
 
-                    <img src="/profiles.svg" alt="profile-pic" />
+                    <div className={styles.avatar}>
+                      <img
+                        ref={avatarRef}
+                        src="/profiles.svg"
+                        alt="profile-pic"
+                      />
+                    </div>
                     <div className={styles.username}>
                       <div className={styles.mt} style={{ width: '100%' }}>
-                        <label className="label">Display Name</label>
+                        <label>Full Name</label>
                         <input
                           type="text"
                           name="name"
                           className={styles.formInput}
                         />
-                        <div className={styles.subText}>
-                          Please use a unique and permanent display name. If
-                          someone uses your exact name, you should change it!
-                        </div>
                       </div>
                     </div>
                   </div>
                   <div className={styles.profileFunc}>
                     <div className={styles.subContainer}>
                       <div className={styles.mxAuto}>
-                        <button className={styles.save}>Upload an Image</button>
+                        <label htmlFor="img" className={styles.save}>
+                          Upload an Image
+                        </label>
+                        <input
+                          ref={imageRef}
+                          onChange={handleImageChange}
+                          type="file"
+                          hidden
+                          id="img"
+                        />
                       </div>
                       <button className={styles.deleteImage}>
                         Delete image
@@ -150,21 +178,10 @@ const EditProfile = () => {
               </div>
             </div>
 
+            <button className={styles.bottomBtn}>Save</button>
+
             <div className={styles.px9}>
-              <div className={styles.linkTab}>
-                <label className="label">
-                  <span className={styles.fontMed}>
-                    {' '}
-                    <label className="label">Additional Links</label>{' '}
-                  </span>
-                  <span className={styles.fontRed}> (5max) </span>
-                </label>
-                <input type="text" name="name" className={styles.formInput} />
-                <div className={styles.addLink}>
-                  <span className={styles.plus}>+</span>
-                  <span className={styles.textYellow}>Add New Link</span>
-                </div>
-              </div>
+              <AddLink />
               <div className={styles.formFooter}>
                 <div style={{ display: 'flex' }}>
                   <button className={styles.cancel}>Cancel</button>
