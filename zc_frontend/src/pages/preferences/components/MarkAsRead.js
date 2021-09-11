@@ -10,7 +10,7 @@ const MarkAsRead = () => {
                     <h5>When i view a channel:</h5>
                     <form action="">
                         <div>
-                            <input type="radio"
+                            <input type="radio" name="view-channel"
                                 value="Start me where i left off and mark the channel read"
                             />
                             <label htmlFor="Start me where i left off and mark the channel read">
@@ -18,7 +18,7 @@ const MarkAsRead = () => {
                             </label>
                         </div>
                         <div>
-                            <input type="radio"
+                            <input type="radio" name="view-channel"
                                 value="Start me at the newest message and amrk the channel read"
                                 checked />
                             <label htmlFor="Start me at the newest message and amrk the channel read">
@@ -26,7 +26,7 @@ const MarkAsRead = () => {
                             </label>
                         </div>
                         <div>
-                            <input type="radio"
+                            <input type="radio" name="view-channel"
                                 value="Start me at the newest message but leave unseen messages unread"
                             />
                             <label htmlFor="Start me at the newest message but leave unseen messages unread">
@@ -62,8 +62,9 @@ const MarkAsRead = () => {
                                 <span className={styles.esc}>Alt </span> {' '} {' '}
                                 and click message</li>
                         </ul>
-                        <p>And that’s just the beginning. To view the full list of keywords shortcurts, just press
-                            <span className={styles.esc}>Alt </span>
+                        <p>And that’s just the beginning. To view the full list of keywords shortcuts,
+                            just press <br />
+                            <span className={styles.esc}> Ctrl </span>
                             {' '} {' '} +
                             <span className={styles.esc}> / </span></p>
                     </div>
