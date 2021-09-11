@@ -15,7 +15,7 @@ const ChangeEmail = () => {
           <label for="lastname" class="form-label">
             New email address
           </label>
-          <input type="password" class="form-control" required />
+          <input type="email" class="form-control" required />
         </div>
         <div class="col-md-4 mb-3 mt-3">
           <button class="btn btn-primary" id="submit">
