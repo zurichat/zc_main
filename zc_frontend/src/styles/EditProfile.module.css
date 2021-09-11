@@ -44,7 +44,7 @@ label {
   border: 1px solid #e5e5e5;
   box-sizing: border-box;
   border-radius: 5px;
-  padding: .5rem;
+  padding: 0.5rem;
   margin-top: 5px;
   outline: none;
   display: block;
@@ -55,7 +55,8 @@ label {
 .formWrapper {
   margin-bottom: 15px;
 }
-.displayNameDesktop, .formMargin {
+.displayNameDesktop,
+.formMargin {
   width: 100%;
   margin-right: 25px;
   display: block;
@@ -67,9 +68,9 @@ label {
   line-height: 1.4;
   font-weight: 400;
   margin-top: 0.5rem;
-  font-size: .7rem;
-  margin-bottom: .8rem;
-  color: #3A3A3A;
+  font-size: 0.7rem;
+  margin-bottom: 0.8rem;
+  color: #3a3a3a;
 }
 
 .profilePic img {
@@ -110,7 +111,7 @@ label {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: .6rem;
+  margin-bottom: 0.6rem;
 }
 
 .mxAuto {
@@ -368,7 +369,7 @@ label {
     z-index: 3333;
     right: 1rem;
     background: none;
-    color: #2F80ED;
+    color: #2f80ed;
     border: none;
     outline: none;
   }
