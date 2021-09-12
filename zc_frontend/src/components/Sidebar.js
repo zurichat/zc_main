@@ -24,12 +24,13 @@ export const Sidebar = () => {
   const getCookies = () => {
     const token = cookies.get("Zuri_Chat")
     if (!token) { history.push('/login') }
+    console.log(token)
   }
   const token = getCookies()
 
   useEffect(() => {
 
-    axios.get("/api/plugin/list", { headers: { "Authorization": "Token " + token } })
+    axios.get("/api/plugin/list")
       .then(r => {
         let p = [];
         let apiPlugins = r.data.data
