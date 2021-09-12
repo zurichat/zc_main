@@ -7,7 +7,7 @@ export const INITIAL_STATE = {
 }
 
 export const marketplaceReducer = (state, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case 'GET_PLUGINS_START':
       return {
         ...state,
@@ -24,12 +24,12 @@ export const marketplaceReducer = (state, action) => {
       return {
         ...state,
         isModal: action.payload
-      } 
+      }
     case 'SET_PLUGIN_ID':
       return {
         ...state,
         pluginId: action.payload
-      }   
+      }
     default:
       return state
   }
