@@ -1,12 +1,12 @@
-import PublicRoomsList from "./PublicRoomsList";
+import PublicRoomsList from './PublicRoomsList'
 
-const PublicRooms = ({rooms}) => {
-    return(
-        <ul>
-        {rooms.map(room => (
-           <PublicRoomsList key={room.id} {...room}/>
-        ))}
+const PublicRooms = ({ rooms }) => {
+  return (
+    <ul>
+      {rooms.map(room => (
+        <PublicRoomsList key={room.id} {...room} />
+      ))}
     </ul>
-    )
+  )
 }
-export default PublicRooms;
+export default PublicRooms
