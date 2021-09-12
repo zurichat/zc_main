@@ -1,18 +1,21 @@
 import {
   createContext,
   useContext,
-  useEffect,  
+  useEffect,
   useCallback,
   useReducer
 } from 'react'
 
-import { INITIAL_STATE, marketplaceReducer } from './marketplace/marketplace.reducer'
+import {
+  INITIAL_STATE,
+  marketplaceReducer
+} from './marketplace/marketplace.reducer'
 import { setModal } from './marketplace/marketplace.action'
 
 export const MarketPlaceContext = createContext(null)
 
 export const MarketPlaceProvider = ({ children }) => {
-  const [ state, dispatch ] = useReducer(marketplaceReducer, INITIAL_STATE)
+  const [state, dispatch] = useReducer(marketplaceReducer, INITIAL_STATE)
   const { pluginId } = state
 
   const toggleModalState = useCallback(() => {
@@ -28,9 +31,7 @@ export const MarketPlaceProvider = ({ children }) => {
   }, [pluginId, toggleModalState])
 
   return (
-    <MarketPlaceContext.Provider
-      value={{ state, dispatch }}
-    >
+    <MarketPlaceContext.Provider value={{ state, dispatch }}>
       {children}
     </MarketPlaceContext.Provider>
   )

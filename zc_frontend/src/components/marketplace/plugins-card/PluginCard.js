@@ -9,11 +9,8 @@ export const PluginCard = ({ name, id, status, icon_url }) => {
   const renderPluginData = () => {
     marketplace.dispatch(setPluginId(id))
   }
-  return (    
-    <div
-      onClick={renderPluginData}
-      className={style.pluginCardContainer}
-    >
+  return (
+    <div onClick={renderPluginData} className={style.pluginCardContainer}>
       <div className={style.pluginCard} datatype={name}>
         <section className={style.pluginCardTop}>
           <figure className={style.pluginImage}>
@@ -24,7 +21,7 @@ export const PluginCard = ({ name, id, status, icon_url }) => {
           )}
         </section>
         <section className={`px-2 ${style.pluginContent}`}>
-          <h2 className={`mb-0 ${style.pluginDescription}`}>{name}</h2>          
+          <h2 className={`mb-0 ${style.pluginDescription}`}>{name}</h2>
         </section>
       </div>
     </div>
