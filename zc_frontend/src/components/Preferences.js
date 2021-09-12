@@ -7,6 +7,7 @@ import MessagesMedia from '../pages/preferences/components/MessagesMedia'
 import PreferenceMenu from '../pages/preferences/components/PreferenceMenu'
 import styles from '../pages/preferences/styles/NotificationPreference.module.css'
 import { ProfileContext } from '../context/ProfileModal'
+import LanguageRegion from '../pages/preferences/components/LanguageRegion'
 
 const Preferences = () => {
   const { sideBar } = useContext(ProfileContext)
@@ -23,6 +24,7 @@ const Preferences = () => {
           {sideBar === 2 && <SidebarPreference />}
           {sideBar === 3 && <Themes />}
           {sideBar === 4 && <MessagesMedia />}
+          {sideBar === 5 && <LanguageRegion />}
         </div>
       </div>
     </ProfileModal>
