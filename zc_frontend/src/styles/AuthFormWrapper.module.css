@@ -75,14 +75,33 @@
   background: #fff;
 }
 
-.topLine {
+.hrWrapper {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(0, 184, 124, 0.4);
+  height: 2px;
+  align-items: center;
+  margin-bottom: 0;
+  margin: 2rem 0;
+}
+.hrWrapper div {
+  background: white;
+  padding: 0 1rem;
+}
+.hrLeft,
+.hrRight {
+  width: 100%;
+}
+
+/* .topLine {
   font-size: 10px;
   font-weight: 700;
   text-align: center;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 2px 0;
+  // padding: 2px 0;
+  padding: 0;
 }
 
 .topLine::before {
@@ -103,7 +122,7 @@
   position: relative;
   top: 7px;
   margin-left: 10px;
-}
+} */
 
 .form {
   display: flex;
