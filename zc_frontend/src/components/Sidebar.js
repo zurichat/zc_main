@@ -30,7 +30,7 @@ export const Sidebar = () => {
   useEffect(() => {
     sidebarApi()
     // rooms.filter()
-  })
+  },[])
 
   // const sorters = {
   //   leastMembers : (a,b)=>{return a.members - b.members},
@@ -74,6 +74,7 @@ export const Sidebar = () => {
         // console.log(res)
 
         let result = res.data
+        console.log(result);
         setRooms(result)
         // console.log(rooms.joinedRooms)
         // console.log(result.joined_rooms[1].icon)
@@ -104,7 +105,7 @@ export const Sidebar = () => {
           <Content>
             <CloseButton className="close-button" onClick={close}>
               {/* <VisuallyHidden>Close</VisuallyHidden> */}
-              <span aria-hidden>×</span>
+              <Span aria-hidden>×</Span>
             </CloseButton>
             <AuthInputBox
               value={query}
