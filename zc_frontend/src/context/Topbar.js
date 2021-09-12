@@ -57,7 +57,7 @@ export const TopbarProvider = ({ children }) => {
     openStatus,
     closeStatus,
     openMembersModal,
-    closeMembersModal,
+    closeMembersModal, 
     modalRef,
     presence: [active, setActive],
     show: [showModal, setShowModal],

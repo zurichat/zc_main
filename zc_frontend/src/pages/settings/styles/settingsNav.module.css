@@ -93,7 +93,6 @@
 
 .status {
   margin-right: 5px;
-  font-size: 14px;
 }
 
 .pImage {
@@ -172,6 +171,9 @@
 
   .rightnav {
     width: 20%;
+  }
+  .status {
+    margin-right: -5px;
   }
 }
 
