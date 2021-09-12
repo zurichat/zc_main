@@ -37,6 +37,8 @@ import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation
 import AccDeactivated from './pages/settings/components/AccDeactivated'
 import { TopbarProvider } from './context/Topbar'
 
+import '@reach/dialog/styles.css'
+
 const App = () => (
   <TopbarProvider>
     <BrowserRouter>
