@@ -31,38 +31,27 @@ export const Sidebar = () => {
   const [loading, setLoading] = useState(false)
   // const [error, setError] = useState('')
 
-  // const sorters = {
-  //   leastMembers : (a,b)=>{return a.members - b.members},
-  //   mostMembers : (a,b)=>{return b.members - a.members},
-  //   aToZ : (a,b)=>{
-  //     const aName = a.title.toUpperCase();
-  //     const bName = b.title.toUpperCase();
-  //     return (aName < bName) ? 1:-1
-  //   },
-  //   zToA : (a,b)=>{
-  //     const aName = a.title.toUpperCase();
-  //     const bName = b.title.toUpperCase();
-  //     return (aName < bName) ? 1:-1
-  //   }
-  // }
-  // const sorters = [
-  //   (a, b) => {
-  //     return a.unread - b.unread
-  //   },
-  //   (a, b) => {
-  //     return b.unread - a.unread
-  //   },
-  //   (a, b) => {
-  //     const aName = a.title.toUpperCase()
-  //     const bName = b.title.toUpperCase()
-  //     return aName === bName ? 0 : aName < bName ? 1 : -1
-  //   },
-  //   (a, b) => {
-  //     const aName = a.title.toUpperCase()
-  //     const bName = b.title.toUpperCase()
-  //     return aName === bName ? 0 : aName < bName ? -1 : 1
-  //   }
-  // ]
+  const sortRooms = (val, type) => {
+    let values = [...val]
+    console.log(type)
+    switch (type) {
+      case 'atoz':
+        values.sort((a, b) => a.title.localeCompare(b.title))
+        break
+      case 'ztoa':
+        values.sort((a, b) => b.title.localeCompare(a.title))
+        break
+      case 'minmax':
+        values.sort((a, b) => a.members - b.members)
+        break
+      case 'maxmin':
+        values.sort((a, b) => b.members - a.members)
+        break
+      default:
+        break
+    }
+    return values
+  }
 
   const sidebarApi = async () => {
     setLoading(true)
@@ -70,16 +59,6 @@ export const Sidebar = () => {
       const res = await axios.get(
         `https://channels.zuri.chat/api/v1/sidebar/?org=1&user=43567868&format=json`
       )
-      // console.log(res)
-      // let result = res.data
-      // setRooms(result)
-      // console.log(rooms.joinedRooms)
-      // console.log(result.joined_rooms[1].icon)
-      // sorters.forEach((sortfunc, ind) => {
-      //   const sortedroom = rooms.public_rooms.sort(sortfunc)
-      //   console.log(sortedroom)
-      //   // rooms.joined_rooms.forEach(curr => console.log(ind,curr.sort(sortfunc)))
-      // })
       return res.data
     } catch (err) {
       return console.log(err)
@@ -98,10 +77,17 @@ export const Sidebar = () => {
     : null
 
   useEffect(() => {
-    sidebarApi().then(data => {
-      setRooms(data)
-      setLoading(false)
-    })
+    ;(async () => {
+      await sidebarApi().then(async res => {
+        setRooms(res)
+        setLoading(false)
+
+        console.log(sortRooms(res.public_rooms, 'ztoa'))
+        console.log(sortRooms(res.public_rooms, 'atoz'))
+        console.log(sortRooms(res.public_rooms, 'minmax'))
+        console.log(sortRooms(res.public_rooms, 'maxmin'))
+      })
+    })()
   }, [])
 
   return (
