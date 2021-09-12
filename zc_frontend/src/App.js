@@ -32,8 +32,10 @@ import ConfirmPassword from './pages/settings/components/ConfirmPassword'
 import ApiDocs from './pages/api-docs'
 import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation'
 import AccDeactivated from './pages/settings/components/AccDeactivated'
+import { TopbarProvider } from './context/Topbar'
 
 const App = () => (
+  <TopbarProvider>
   <BrowserRouter>
     <Switch>
       <Route path="/" exact>
@@ -123,7 +125,7 @@ const App = () => (
           underline
         />
       </Route>
-      <Route path="searchSuggestion">
+      <Route path="searchSuggestion"> 
         <SearchSuggestion />
       </Route>
       <Route path="/documentation" exact>
@@ -137,5 +139,6 @@ const App = () => (
       </Route>
     </Switch>
   </BrowserRouter>
+  </TopbarProvider>
 )
 export default App
