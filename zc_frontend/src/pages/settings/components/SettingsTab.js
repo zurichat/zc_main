@@ -81,9 +81,11 @@ const SettingsTab = () => {
           </span>
         </div>
         <div className={styles.settingsright}>
+          <Link to="/session-signout">
           <button className={styles.signout}>
             Sign out of all othe sessions
           </button>
+          </Link>
         </div>
       </div>
 
