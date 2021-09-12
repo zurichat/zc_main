@@ -29,9 +29,9 @@
   position: relative;
 }
 
-@media screen and (min-width:900px){
-  .profile{
-    margin-left:0.8rem;
+@media screen and (min-width: 900px) {
+  .profile {
+    margin-left: 0.8rem;
   }
 }
 
