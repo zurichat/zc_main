@@ -9,6 +9,8 @@ import Dropdown from './Dropdown'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
 import styled from 'styled-components'
 import AuthInputBox from '../components/AuthInputBox'
+import JoinedRooms from './joinedRooms/JoinedRooms'
+import PublicRooms from '../publicRooms/PublicRooms'
 // import "@reach/dialog/styles.css";
 
 const fetcher = url => fetch(url).then(res => res.json())
@@ -25,6 +27,9 @@ export const Sidebar = () => {
   const close = () => setShowDialog(false)
   const [rooms, setRooms] = useState({})
   const [query, setQuery] = useState('')
+  const [loading,setLoading] = useState(false);
+  const [error,setError] = useState('')
+  
   // const [sort,setSort] = useState('');
 
   useEffect(() => {
@@ -66,6 +71,7 @@ export const Sidebar = () => {
   ]
 
   const sidebarApi = () => {
+    setLoading(true)
     axios
       .get(
         `https://channels.zuri.chat/api/v1/sidebar/?org=1&user=43567868&format=json`
@@ -75,6 +81,7 @@ export const Sidebar = () => {
 
         let result = res.data
         console.log(result);
+        setLoading(false);
         setRooms(result)
         // console.log(rooms.joinedRooms)
         // console.log(result.joined_rooms[1].icon)
@@ -86,7 +93,9 @@ export const Sidebar = () => {
       })
       .catch(err => console.log(err))
   }
-
+   const filteredJoinedRooms = rooms.joined_rooms ? rooms.joined_rooms.filter(room => room.title.toLowerCase().includes(query)):null;
+  const filteredPublicRooms = rooms.joined_rooms ? rooms.public_rooms.filter(room => room.title.toLowerCase().includes(query)):null;
+  
   return (
     <div className={styles.container}>
       <div className={styles.zuriLogo}>
@@ -113,7 +122,11 @@ export const Sidebar = () => {
               placeholder="🔍 Search by channel name or description"
             />
             <Wrapper>
-              <p>
+              {loading && <p>Loading..</p>}
+              <JoinedRooms rooms={filteredJoinedRooms}/> 
+              <PublicRooms  rooms={filteredPublicRooms}/>
+              {/* {loading === false && rooms <JoinedRooms rooms={rooms} />} */}
+              {/* <p>
                 {rooms.joined_rooms
                   ? `${
                       rooms.joined_rooms.length + rooms.public_rooms.length
@@ -151,10 +164,11 @@ export const Sidebar = () => {
                       )
                     }
                     return null
+
                   })}
               </div>
               {/* {console.log(rooms)} */}
-              <div>
+              {/* <div>
                 {rooms.public_rooms &&
                   rooms.public_rooms.map((room, id) => {
                     if (query === '') {
@@ -184,7 +198,8 @@ export const Sidebar = () => {
                     }
                     return null
                   })}
-              </div>
+              </div> */} 
+
             </Wrapper>
           </Content>
         </Overlay>
@@ -249,7 +264,7 @@ const Content = styled(DialogContent)`
 `
 
 const Wrapper = styled.div`
-  overflow-y: scroll;
+  overflow-y: auto;
   padding: 1rem 0;
 `
 const CloseButton = styled.button`
