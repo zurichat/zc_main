@@ -18,7 +18,7 @@ const Login = () => {
   const handleSubmit = async e => {
     e.preventDefault()
     await axios
-      .post('/api/login', {
+      .post('https://api.zuri.chat/auth/login', {
         email,
         password
       })
@@ -26,10 +26,10 @@ const Login = () => {
         const { data, message } = response.data
 
         //Store token in localstorage
-        localStorage.setItem('token', data.token)
+        sessionStorage.setItem('session_id', data.session_id)
 
         //Store user copy in localstorage
-        localStorage.setItem('user', data.userCopy)
+        sessionStorage.setItem('user', JSON.stringify(data.user))
 
         //Display message
         alert(message) //Change this when there is a design
