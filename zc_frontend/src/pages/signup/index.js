@@ -19,17 +19,30 @@ const Signup = () => {
 
   const handleSubmit = async e => {
     e.preventDefault()
+
+    //Seperate user fullname
+    const seperateName = name.split(' ')
+    let first_name = '',
+      other_name = ''
+
+    seperateName.map((name, index) => {
+      if (index === 0) first_name += name
+      else other_name += `${name} `
+    })
+
     await axios
-      .post('/api/register', {
-        fullName: name,
+      .post('https://api.zuri.chat/users', {
+        first_name,
+        last_name: other_name,
         email,
         password
       })
       .then(response => {
         const { data, message } = response.data
+        console.log(response.data)
 
         //Store token in localstorage
-        localStorage.setItem('token', data.token)
+        sessionStorage.setItem('user_id', data.InsertedId)
 
         //Display message
         alert(message) //Change this when there is a design
@@ -39,12 +52,10 @@ const Signup = () => {
         }, 2000)
       })
       .catch(error => {
-        const { data, status } = error.response
+        const { data } = error.response
 
         //Render error message to the user
-        if (status === 400) alert(data)
-        //Change this when there is a design
-        else if (status === 409) alert(data.reason) //Change this when there is a design
+        alert(data.message) //Change this when there is a design
       })
   }
 
