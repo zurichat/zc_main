@@ -257,6 +257,7 @@
 /* The section three */
 
 .sectionThree {
+  position: relative;
   line-height: 25px;
   font-style: normal;
   font-weight: normal;
