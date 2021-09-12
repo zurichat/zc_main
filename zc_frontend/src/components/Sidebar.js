@@ -29,7 +29,7 @@ export const Sidebar = () => {
   const [query, setQuery] = useState('')
   // const [sort,setSort] = useState('')
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState('')
+  // const [error, setError] = useState('')
 
   // const sorters = {
   //   leastMembers : (a,b)=>{return a.members - b.members},
@@ -284,44 +284,48 @@ const CloseButton = styled.button`
   background-color: transparent;
   border: none;
 `
-const Div = styled.div`
-  padding: 0.5rem 2rem;
-  border-top: 1px solid #dee1ec;
-  &:hover {
-    button {
-      display: block;
-    }
-  }
-  position: relative;
-`
-const Button = styled.button`
-  padding: 0.5rem 1.2rem;
-  position: absolute;
-  right: 10px;
-  top: 25%;
-  font-size: 1rem;
-  border: none;
-  &.leave {
-    background-color: #007a5a;
-    color: white;
-  }
-  &.join {
-    background-color: #dee1ec;
-  }
-  display: none;
-  margin-left: auto;
-  border-radius: 5px;
-`
+// const Div = styled.div`
+//   padding: 0.5rem 2rem;
+//   border-top: 1px solid #dee1ec;
+//   &:hover {
+//     button {
+//       display: block;
+//     }
+//   }
+//   position: relative;
+// `
+
+// const Button = styled.button`
+//   padding: 0.5rem 1.2rem;
+//   position: absolute;
+//   right: 10px;
+//   top: 25%;
+//   font-size: 1rem;
+//   border: none;
+//   &.leave {
+//     background-color: #007a5a;
+//     color: white;
+//   }
+//   &.join {
+//     background-color: #dee1ec;
+//   }
+//   display: none;
+//   margin-left: auto;
+//   border-radius: 5px;
+// `
+
 const Span = styled.span`
   font-size: 0.8rem;
 `
-const Hash = styled(Span)`
-  padding: 0.5rem;
-`
 
-const Joined = styled(Span)`
-  color: #007a5a;
-`
-const Bull = styled(Span)`
-  padding: 0 0 0.5rem;
-`
+// const Hash = styled(Span)`
+//   padding: 0.5rem;
+// `
+
+// const Joined = styled(Span)`
+//   color: #007a5a;
+// `
+
+// const Bull = styled(Span)`
+//   padding: 0 0 0.5rem;
+// `
