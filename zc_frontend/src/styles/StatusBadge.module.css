@@ -1,10 +1,8 @@
 .statusBadge {
-  margin-right: -1em;
   cursor: pointer;
   outline: none;
-  font-size: 17px;
+  font-size: 16px;
   border: 0;
-  padding: 0.1em 0.2em;
   background: none;
   transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
