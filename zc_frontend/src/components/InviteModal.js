@@ -8,6 +8,13 @@ const Modal = props => {
     return null
   }
 
+  // const data = fetch("{}", {
+  //   method: "POST", 
+  //   body: JSON.stringify(data)
+  // }).then(res => {
+  //   console.log("Request complete! response:", res);
+  // });
+
   return (
     <>
       <div className={styles.modal} onClick={props.onClose}>
