@@ -119,7 +119,7 @@
   margin-right: auto;
 }
 
-.subContainer .mxAuto .save {
+.save {
   border-radius: 5px;
   width: auto;
   transition-property: background-color, border-color, color, fill, stroke,
@@ -137,7 +137,7 @@
 .save:hover {
   background: #1160c7;
 }
-.subContainer .deleteImage {
+.deleteImage {
   margin-top: 1rem /* 16px */;
   padding: 0.75rem /* 12px */;
   outline: none;
@@ -146,8 +146,6 @@
   color: rgba(107, 114, 128, var(--tw-text-opacity));
   background-color: transparent;
   font-size: 15px;
-  font-weight: 400;
-  width: auto;
 }
 .tagContainer {
   display: flex;
@@ -232,10 +230,9 @@
   display: flex;
   text-align: center;
   justify-content: flex-end;
-  /* justify-content: space-between; */
 }
 
-.formFooter .cancel {
+.cancel {
   padding: 0.75rem /* 12px */;
   margin-right: 1rem /* 16px */;
   outline: none;
@@ -245,22 +242,6 @@
   --tw-text-opacity: 1;
   color: rgba(156, 163, 175, var(--tw-text-opacity));
 }
-.formFooter .saveChange {
-  border-radius: 5px;
-  width: auto;
-  transition-property: background-color, border-color, color, fill, stroke,
-    opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  background: #2f80ed;
-  outline: none;
-  border: none;
-  color: #fff;
-  font-size: 13px;
-  padding: 10px;
-  /* font-weight: 400; */
-}
-
 /* button {
   font-size: 12px;
   line-height: 21px;
@@ -365,20 +346,21 @@
 
   .profilePic .camera {
     position: absolute;
-    left: 10px;
+    left: 0;
     top: 10px;
-    display: grid;
-    background: #e5e5e5;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
-    padding: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+    background: #f6f6f6;
+    border: 1px solid #ffffff;
   }
-  .profilePic .camera img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-    margin-bottom: 0;
-    margin-right: 0;
+  .cameraIcon {
+    font-size: 1rem;
+    color: #999;
   }
 
   .bottomBtn {

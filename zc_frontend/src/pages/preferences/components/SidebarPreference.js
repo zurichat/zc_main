@@ -19,12 +19,12 @@ const SidebarPreference = () => {
   }
 
   return (
-    <div className={styles.body}>
+    <div>
       <div className={styles.notifiyContent}>
+        <div className={styles.itemTitle1}>
+          <h4 className={styles.titleLarge}>Always show in Sidebar</h4>
+        </div>
         <form action="">
-          <div className={styles.itemTitle2}>
-            <h4 className={styles.titleLarge}>Always show in Sidebar</h4>
-          </div>
           <div className={styles.checkbox}>
             <label htmlFor="for-unread">
               <input type="checkbox" value="for-unread" />
