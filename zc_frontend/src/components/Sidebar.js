@@ -4,23 +4,23 @@ import useSWR from 'swr'
 import { URLContext } from '../context/Url'
 
 import styles from '../styles/Sidebar.module.css'
-import Dropdown from './Dropdown';
-import Modal from './UI/Modal/Modal';
-import alt_add from '../assets/alt_add.svg';
+import Dropdown from './Dropdown'
+import Modal from './UI/Modal/Modal'
+import alt_add from '../assets/alt_add.svg'
 
 import { DialogOverlay, DialogContent } from '@reach/dialog'
 import styled from 'styled-components'
-import AuthInputBox from '../components/AuthInputBox';
-import InviteDialogue from './Invite/InviteDialogue/InviteDialogue';
+import AuthInputBox from '../components/AuthInputBox'
+import InviteDialogue from './Invite/InviteDialogue/InviteDialogue'
 // import "@reach/dialog/styles.css";
 
 const fetcher = url => fetch(url).then(res => res.json())
 
 export const Sidebar = () => {
-  const [display, setDisplay] = useState(false);
+  const [display, setDisplay] = useState(false)
 
   const handleDisplayModal = () => {
-    setDisplay(!display);
+    setDisplay(!display)
   }
 
   const { data: channelsData } = useSWR('/api/plugin/channels', fetcher)
@@ -97,139 +97,139 @@ export const Sidebar = () => {
 
   return (
     <Fragment>
-    <div className={styles.container}>
-      <div className={styles.zuriLogo}>
-        <img src="/zurichatlogo.svg" alt="Zuri Chat logo" />
-        <p>ZURI</p>
-      </div>
-      <div className={styles.orgInfo}>
-        <div className={styles.orgName}>
-          <p>HNGi8</p>
-          <img
-            src="/shapekeyboardarrowdown.svg"
-            alt="Organisation settings button"
-          />
+      <div className={styles.container}>
+        <div className={styles.zuriLogo}>
+          <img src="/zurichatlogo.svg" alt="Zuri Chat logo" />
+          <p>ZURI</p>
         </div>
-        <Overlay isOpen={showDialog} onDismiss={close}>
-          <Content>
-            <CloseButton className="close-button" onClick={close}>
-              {/* <VisuallyHidden>Close</VisuallyHidden> */}
-              <span aria-hidden>×</span>
-            </CloseButton>
-            <AuthInputBox
-              value={query}
-              setValue={setQuery}
-              placeholder="🔍 Search by channel name or description"
+        <div className={styles.orgInfo}>
+          <div className={styles.orgName}>
+            <p>HNGi8</p>
+            <img
+              src="/shapekeyboardarrowdown.svg"
+              alt="Organisation settings button"
             />
-            <Wrapper>
-              <p>
-                {rooms.joined_rooms
-                  ? `${
-                      rooms.joined_rooms.length + rooms.public_rooms.length
-                    } channels`
-                  : null}
-              </p>
-              <div style={{ marginTop: `1rem` }}>
-                {rooms.joined_rooms &&
-                  rooms.joined_rooms.map((room, id) => {
-                    if (query === '') {
-                      return (
-                        <Div key={id}>
-                          <p>
-                            <Hash>#</Hash>
-                            {room.title}
-                          </p>
-                          <Joined>&#10003; joined</Joined>{' '}
-                          <Bull>&bull; {room.members} members</Bull>{' '}
-                          <Span>&bull; {room.unread} unread</Span>
-                          <Button className={`leave`}>leave</Button>
-                        </Div>
-                      )
-                    } else if (room.title.toLowerCase().includes(query)) {
-                      return (
-                        <Div key={id}>
-                          <p>
-                            <Hash>#</Hash>
-                            {room.title}
-                          </p>
-                          <Joined>&#10003; joined</Joined>{' '}
-                          <Bull>&bull; {room.members} members</Bull>{' '}
-                          <Span>&bull; {room.unread} unread</Span>
-                          <Button className={`leave`}>leave</Button>
-                        </Div>
-                      )
-                    }
-                    return null
-                  })}
-              </div>
-              {/* {console.log(rooms)} */}
-              <div>
-                {rooms.public_rooms &&
-                  rooms.public_rooms.map((room, id) => {
-                    if (query === '') {
-                      return (
-                        <Div key={id}>
-                          <p>
-                            <Hash>#</Hash>
-                            {room.title}
-                          </p>
-                          <Bull> {room.members} members</Bull>{' '}
-                          <Span>&bull; {room.unread} unread</Span>
-                          <Button className={`join`}>join</Button>
-                        </Div>
-                      )
-                    } else if (room.title.toLowerCase().includes(query)) {
-                      return (
-                        <Div key={id}>
-                          <p>
-                            <Hash>#</Hash>
-                            {room.title}
-                          </p>
-                          <Bull> {room.members} members</Bull>{' '}
-                          <Span>&bull; {room.unread} unread</Span>
-                          <Button className={`join`}>join</Button>
-                        </Div>
-                      )
-                    }
-                    return null
-                  })}
-              </div>
-            </Wrapper>
-          </Content>
-        </Overlay>
-        <div className={styles.newMessage}>
-          <img src="/newmessage.svg" alt="New message icon" />
+          </div>
+          <Overlay isOpen={showDialog} onDismiss={close}>
+            <Content>
+              <CloseButton className="close-button" onClick={close}>
+                {/* <VisuallyHidden>Close</VisuallyHidden> */}
+                <span aria-hidden>×</span>
+              </CloseButton>
+              <AuthInputBox
+                value={query}
+                setValue={setQuery}
+                placeholder="🔍 Search by channel name or description"
+              />
+              <Wrapper>
+                <p>
+                  {rooms.joined_rooms
+                    ? `${
+                        rooms.joined_rooms.length + rooms.public_rooms.length
+                      } channels`
+                    : null}
+                </p>
+                <div style={{ marginTop: `1rem` }}>
+                  {rooms.joined_rooms &&
+                    rooms.joined_rooms.map((room, id) => {
+                      if (query === '') {
+                        return (
+                          <Div key={id}>
+                            <p>
+                              <Hash>#</Hash>
+                              {room.title}
+                            </p>
+                            <Joined>&#10003; joined</Joined>{' '}
+                            <Bull>&bull; {room.members} members</Bull>{' '}
+                            <Span>&bull; {room.unread} unread</Span>
+                            <Button className={`leave`}>leave</Button>
+                          </Div>
+                        )
+                      } else if (room.title.toLowerCase().includes(query)) {
+                        return (
+                          <Div key={id}>
+                            <p>
+                              <Hash>#</Hash>
+                              {room.title}
+                            </p>
+                            <Joined>&#10003; joined</Joined>{' '}
+                            <Bull>&bull; {room.members} members</Bull>{' '}
+                            <Span>&bull; {room.unread} unread</Span>
+                            <Button className={`leave`}>leave</Button>
+                          </Div>
+                        )
+                      }
+                      return null
+                    })}
+                </div>
+                {/* {console.log(rooms)} */}
+                <div>
+                  {rooms.public_rooms &&
+                    rooms.public_rooms.map((room, id) => {
+                      if (query === '') {
+                        return (
+                          <Div key={id}>
+                            <p>
+                              <Hash>#</Hash>
+                              {room.title}
+                            </p>
+                            <Bull> {room.members} members</Bull>{' '}
+                            <Span>&bull; {room.unread} unread</Span>
+                            <Button className={`join`}>join</Button>
+                          </Div>
+                        )
+                      } else if (room.title.toLowerCase().includes(query)) {
+                        return (
+                          <Div key={id}>
+                            <p>
+                              <Hash>#</Hash>
+                              {room.title}
+                            </p>
+                            <Bull> {room.members} members</Bull>{' '}
+                            <Span>&bull; {room.unread} unread</Span>
+                            <Button className={`join`}>join</Button>
+                          </Div>
+                        )
+                      }
+                      return null
+                    })}
+                </div>
+              </Wrapper>
+            </Content>
+          </Overlay>
+          <div className={styles.newMessage}>
+            <img src="/newmessage.svg" alt="New message icon" />
+          </div>
         </div>
-      </div>
-      <Dropdown onAddButtonClick={open} showAddButton={true} title="Channels">
-        {channelsData &&
-          channelsData.channels.map((channel, index) => (
-            <Fragment key={index}>
-              <span>#</span>
-              {channel.name}
-            </Fragment>
+        <Dropdown onAddButtonClick={open} showAddButton={true} title="Channels">
+          {channelsData &&
+            channelsData.channels.map((channel, index) => (
+              <Fragment key={index}>
+                <span>#</span>
+                {channel.name}
+              </Fragment>
+            ))}
+        </Dropdown>
+        {plugins &&
+          Object.keys(plugins).map(key => (
+            <Dropdown
+              title={plugins[key].name}
+              key={key}
+              onTitleClick={() => setUrl(key)}
+            ></Dropdown>
           ))}
-      </Dropdown>
-      {plugins &&
-        Object.keys(plugins).map(key => (
-          <Dropdown
-            title={plugins[key].name}
-            key={key}
-            onTitleClick={() => setUrl(key)}
-          ></Dropdown>
-        ))}
-      <Dropdown title="messages">
-        {messagesData &&
-          messagesData.messages.map((message, index) => (
-            <Fragment key={index}>
-              <span>
-                <img src={message.avatar} alt="avatar" />
-              </span>
-              {message.name}
-            </Fragment>
-          ))}
-      </Dropdown>
-    <div onClick={handleDisplayModal} className={styles.addTeamMates}>
+        <Dropdown title="messages">
+          {messagesData &&
+            messagesData.messages.map((message, index) => (
+              <Fragment key={index}>
+                <span>
+                  <img src={message.avatar} alt="avatar" />
+                </span>
+                {message.name}
+              </Fragment>
+            ))}
+        </Dropdown>
+        <div onClick={handleDisplayModal} className={styles.addTeamMates}>
           <img src={alt_add} alt="add" /> Add Teammates
         </div>
       </div>
