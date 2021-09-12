@@ -27,15 +27,15 @@ export const Sidebar = () => {
   const close = () => setShowDialog(false)
   const [rooms, setRooms] = useState({})
   const [query, setQuery] = useState('')
-  const [loading,setLoading] = useState(false);
-  const [error,setError] = useState('')
-  
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+
   // const [sort,setSort] = useState('');
 
   useEffect(() => {
     sidebarApi()
     // rooms.filter()
-  },[])
+  }, [])
 
   // const sorters = {
   //   leastMembers : (a,b)=>{return a.members - b.members},
@@ -80,8 +80,8 @@ export const Sidebar = () => {
         // console.log(res)
 
         let result = res.data
-        console.log(result);
-        setLoading(false);
+        console.log(result)
+        setLoading(false)
         setRooms(result)
         // console.log(rooms.joinedRooms)
         // console.log(result.joined_rooms[1].icon)
@@ -93,9 +93,17 @@ export const Sidebar = () => {
       })
       .catch(err => console.log(err))
   }
-   const filteredJoinedRooms = rooms.joined_rooms ? rooms.joined_rooms.filter(room => room.title.toLowerCase().includes(query)):null;
-  const filteredPublicRooms = rooms.joined_rooms ? rooms.public_rooms.filter(room => room.title.toLowerCase().includes(query)):null;
-  
+  const filteredJoinedRooms = rooms.joined_rooms
+    ? rooms.joined_rooms.filter(room =>
+        room.title.toLowerCase().includes(query)
+      )
+    : null
+  const filteredPublicRooms = rooms.joined_rooms
+    ? rooms.public_rooms.filter(room =>
+        room.title.toLowerCase().includes(query)
+      )
+    : null
+
   return (
     <div className={styles.container}>
       <div className={styles.zuriLogo}>
@@ -123,8 +131,8 @@ export const Sidebar = () => {
             />
             <Wrapper>
               {loading && <p>Loading..</p>}
-              <JoinedRooms rooms={filteredJoinedRooms}/> 
-              <PublicRooms  rooms={filteredPublicRooms}/>
+              <JoinedRooms rooms={filteredJoinedRooms} />
+              <PublicRooms rooms={filteredPublicRooms} />
               {/* {loading === false && rooms <JoinedRooms rooms={rooms} />} */}
               {/* <p>
                 {rooms.joined_rooms
@@ -198,8 +206,7 @@ export const Sidebar = () => {
                     }
                     return null
                   })}
-              </div> */} 
-
+              </div> */}
             </Wrapper>
           </Content>
         </Overlay>
