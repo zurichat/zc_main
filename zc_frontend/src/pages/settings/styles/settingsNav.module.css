@@ -16,7 +16,7 @@
 }
 
 .brand img {
-  width: 70%;
+  width: 60%;
   max-width: 100%;
   height: 100%;
 }
@@ -93,7 +93,6 @@
 
 .status {
   margin-right: 5px;
-  font-size: 14px;
 }
 
 .pImage {
@@ -112,7 +111,7 @@
 }
 
 .circles {
-  background: green;
+  background: #00b87c;
   height: 7px;
   width: 7px;
   position: absolute;
@@ -172,6 +171,9 @@
 
   .rightnav {
     width: 20%;
+  }
+  .status {
+    margin-right: -5px;
   }
 }
 

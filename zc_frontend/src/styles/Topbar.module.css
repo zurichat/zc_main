@@ -20,13 +20,19 @@
   background-color: #acffe6;
   border-radius: 50%;
   display: flex;
-  margin-left: 1.375em;
+  margin-left: -0.3em;
   align-items: center;
   justify-content: center;
   height: 2.5em;
   width: 2.5em;
   cursor: pointer;
   position: relative;
+}
+
+@media screen and (min-width: 900px) {
+  .profile {
+    margin-left: 0.8rem;
+  }
 }
 
 .profile img {
