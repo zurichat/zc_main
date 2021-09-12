@@ -42,13 +42,13 @@
 .danger2,
 .cancel {
   padding: 14px 60px;
-  font-size:17px;
-  font-weight:bold;
+  font-size: 17px;
+  font-weight: bold;
   color: #3a3a3a;
   border: none;
   border-radius: 3px;
 }
-.danger1{
+.danger1 {
   margin-right: 10px;
 }
 .danger1 {
@@ -57,7 +57,7 @@
 }
 .danger2 {
   background: #bebebe;
-  margin-right:10px;
+  margin-right: 10px;
 }
 .cancel {
   background-color: white;

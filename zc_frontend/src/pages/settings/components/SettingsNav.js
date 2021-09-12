@@ -47,7 +47,7 @@ const SettingsNav = () => {
 
         <div className={styles.profile}>
           <div className={styles.status}>
-          <StatusBadge />
+            <StatusBadge />
           </div>
           <div className={styles.pImage}>
             <img
