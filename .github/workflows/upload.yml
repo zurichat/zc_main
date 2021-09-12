@@ -1,9 +1,6 @@
 name: Zuri Main Testing Pipeline
 on:
   # Triggers the workflow on push or pull request events but only for the dev branch
-  pull_request:
-    branches: [review]
-
   push:
     branches: [review]
 

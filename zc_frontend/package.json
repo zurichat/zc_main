@@ -7,7 +7,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "axios": "^0.21.1",
+    "axios": "^0.21.4",
     "cheerio": "^1.0.0-rc.10",
     "emoji-picker-react": "^3.4.8",
     "eslint": "^7.32.0",
@@ -29,6 +29,7 @@
     "react-verification-code-input": "^1.2.9",
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0",
+    "styled-components": "^5.3.1",
     "swr": "^1.0.0",
     "universal-cookie": "^4.0.4",
     "web-vitals": "^1.0.1"
