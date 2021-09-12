@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 // import { Link } from 'react-router-dom'
-import authBg from '../../pages/images/backg.svg'
+//import authBg from '../../pages/images/backg.svg'
+import authBg from '../../assets/auth_images/auth_aside_bg.svg'
 import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
 import FormWrapper from '../../components/AuthFormWrapper'
