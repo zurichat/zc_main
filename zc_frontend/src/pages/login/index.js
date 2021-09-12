@@ -50,7 +50,7 @@ const Login = ({ history }) => {
     axios
       .post(url, loginInfo)
       .then(({ data }) => {
-        setCookies('Zuri_Chat', data.data.token, { path: '/' })
+        setCookies('Zuri_Chat', data.data, { path: '/' })
         history.push('/home')
       })
       .catch(e => {
