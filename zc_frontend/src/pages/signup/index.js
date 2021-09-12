@@ -22,13 +22,13 @@ const Signup = () => {
 
     //Seperate user fullname
     const seperateName = name.split(' ')
-    let first_name ='', other_name=''
+    let first_name = '',
+      other_name = ''
 
-    seperateName.map((name,index) => {
-      if(index === 0) first_name += name
+    seperateName.map((name, index) => {
+      if (index === 0) first_name += name
       else other_name += `${name} `
     })
-
 
     await axios
       .post('https://api.zuri.chat/users', {
@@ -39,7 +39,7 @@ const Signup = () => {
       })
       .then(response => {
         const { data, message } = response.data
-        console.log(response.data);
+        console.log(response.data)
 
         //Store token in localstorage
         sessionStorage.setItem('user_id', data.InsertedId)
@@ -55,7 +55,7 @@ const Signup = () => {
         const { data } = error.response
 
         //Render error message to the user
-        alert(data.message); //Change this when there is a design
+        alert(data.message) //Change this when there is a design
       })
   }
 
