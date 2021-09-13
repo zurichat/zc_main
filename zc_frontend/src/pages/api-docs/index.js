@@ -1,14 +1,12 @@
-
 // import axios from 'axios'
 // import { useContext, useEffect } from 'react'
 // import { PluginLoaderContext } from '../../context/PluginLoaderState'
 import styles from '../../styles/PluginContent.module.css'
 // import cheerio from 'cheerio'
 // import DocLoader from '../../components/PluginLoader'
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
 
 function ApiDocs() {
-
   // const url = `https://api.zuri.chat/docs/user.html`
 
   // const { setLoader } = useContext(PluginLoaderContext)
@@ -99,18 +97,16 @@ function ApiDocs() {
         {/* <div id="zc-plugin-root"></div> */}
         {/* <DocLoader /> */}
         <div>
-        <NavLink to="/documentation/users">Users</NavLink>
+          <NavLink to="/documentation/users">Users</NavLink>
         </div>
         <div>
           <NavLink to="/documentation/organisation">Organisation</NavLink>
         </div>
         <div>
           <NavLink to="/documentation/data">Data</NavLink>
-
         </div>
         <div>
           <NavLink to="/documentation/marketplace">Marketplace</NavLink>
-
         </div>
         <div>
           <NavLink to="/documentation/users">Plugin</NavLink>
@@ -119,6 +115,5 @@ function ApiDocs() {
     </>
   )
 }
-
 
 export default ApiDocs
