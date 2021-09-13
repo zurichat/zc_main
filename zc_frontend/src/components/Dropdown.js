@@ -7,10 +7,10 @@ const Dropdown = ({
   opened,
   showAddButton,
   onTitleClick,
-  onAddButtonClick, 
+  onAddButtonClick,
   plugin
 }) => {
-    const [isOpen, setIsOpen] = useState(opened)
+  const [isOpen, setIsOpen] = useState(opened)
 
   return (
     <div
@@ -59,7 +59,7 @@ Dropdown.propTypes = {
   isOpen: PropTypes.bool,
   onTitleClick: PropTypes.func,
   showAddButton: PropTypes.bool,
-  plugin:PropTypes.bool,
+  plugin: PropTypes.bool
 }
 
 export default Dropdown
