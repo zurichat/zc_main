@@ -1,4 +1,4 @@
-import { RedocStandalone } from 'redoc'
+import { RedocStandalone } from 'redoc';
 import users from '../user.yaml'
 
 function UsersApi() {
