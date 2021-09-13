@@ -204,7 +204,7 @@ export const Sidebar = () => {
           })
         })
       })
-  }, [])
+  }, [setPlugins])
 
   return (
     <div className={styles.container}>

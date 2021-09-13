@@ -26,8 +26,10 @@ const Signup = () => {
       other_name = ''
 
     seperateName.map((name, index) => {
-      if (index === 0) first_name += name
-      else other_name += `${name} `
+      if (index === 0){
+        return first_name += name
+      } 
+      return other_name += `${name} `
     })
 
     await axios
@@ -90,7 +92,7 @@ const Signup = () => {
             placeholder="John Doe"
             value={name}
             setValue={setName}
-            // error={error}
+          // error={error}
           />
           <AuthInputBox
             className={`${styles.inputElement}`}
@@ -100,7 +102,7 @@ const Signup = () => {
             placeholder="johnDoe@example.com"
             value={email}
             setValue={setEmail}
-            // error={error}
+          // error={error}
           />
           <AuthInputBox
             className={`${styles.inputElement}`}
@@ -110,7 +112,7 @@ const Signup = () => {
             placeholder="Enter your Password"
             value={password}
             setValue={setPassword}
-            // error={error}
+          // error={error}
           />
           <AuthInputBox
             className={`${styles.inputElement}`}
@@ -120,7 +122,7 @@ const Signup = () => {
             placeholder="Enter your password"
             value={confirmPassword}
             setValue={setConfirmPassword}
-            // error={error}
+          // error={error}
           />
           <div className={`${styles.tos}`}>
             <input

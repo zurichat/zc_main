@@ -86,7 +86,7 @@ export const PluginContent = () => {
     //     .forEach(node => node.remove())
     // }
     // }, [url, setLoader])
-  }, [url])
+  }, [url, plugins])
 
   return (
     <>
