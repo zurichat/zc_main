@@ -29,5 +29,5 @@ jobs:
             yarn install
             cd zc_frontend
             yarn build
-            pm2 restart zuri_chat
+            pm2 restart "zuri_chat"
              
