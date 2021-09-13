@@ -14,6 +14,7 @@ const Signup = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
+  // const [confirmPassword, setConfirmPassword] = useState('')
   const [tos, setTos] = useState(false)
   // const { error, setError } = useState('')
 
@@ -81,13 +82,14 @@ const Signup = () => {
           handleSubmit={handleSubmit}
           bottomLine="Already have an account?"
           bottomLink="Log in"
+          bottomLinkHref="login"
         >
           <AuthInputBox
             className={`${styles.inputElement}`}
             id="name"
             name="Full name"
             type="text"
-            placeholder="John Doe"
+            placeholder="Enter your Name"
             value={name}
             setValue={setName}
             // error={error}
@@ -97,7 +99,7 @@ const Signup = () => {
             id="email"
             name="Email address"
             type="email"
-            placeholder="johnDoe@example.com"
+            placeholder="Enter you email address"
             value={email}
             setValue={setEmail}
             // error={error}
@@ -107,7 +109,7 @@ const Signup = () => {
             id="password"
             name="Password"
             type="password"
-            placeholder="Enter your Password"
+            placeholder="Enter a password"
             value={password}
             setValue={setPassword}
             // error={error}
@@ -117,7 +119,7 @@ const Signup = () => {
             id="cpassword"
             name="Confirm password"
             type="password"
-            placeholder="Enter your password"
+            placeholder="Confirm password"
             value={confirmPassword}
             setValue={setConfirmPassword}
             // error={error}
