@@ -26,8 +26,10 @@ const Signup = () => {
       other_name = ''
 
     seperateName.map((name, index) => {
-      if (index === 0) first_name += name
-      else other_name += `${name} `
+      if (index === 0) {
+        return (first_name += name)
+      }
+      return (other_name += `${name} `)
     })
 
     await axios
