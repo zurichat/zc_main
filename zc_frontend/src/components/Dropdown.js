@@ -7,7 +7,8 @@ const Dropdown = ({
   opened,
   showAddButton,
   onTitleClick,
-  onAddButtonClick
+  onAddButtonClick,
+  plugin
 }) => {
   const [isOpen, setIsOpen] = useState(opened)
 
@@ -40,7 +41,7 @@ const Dropdown = ({
           children.map((child, index) => {
             return (
               <li key={index} className={styles.item}>
-                {child}
+                {plugin ? `${child.title}` : child}
               </li>
             )
           })}
@@ -57,7 +58,8 @@ Dropdown.propTypes = {
   title: PropTypes.string.isRequired,
   isOpen: PropTypes.bool,
   onTitleClick: PropTypes.func,
-  showAddButton: PropTypes.bool
+  showAddButton: PropTypes.bool,
+  plugin: PropTypes.bool
 }
 
 export default Dropdown
