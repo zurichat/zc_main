@@ -2,25 +2,6 @@ import React, { useState } from 'react'
 import styles from '../styles/NotificationPreference.module.css'
 import { AiOutlineQuestionCircle } from 'react-icons/ai'
 
-const TextInput = ({ type = 'text', label }) => {
-  const [value, setValue] = useState('')
-
-  function handleChange(e) {
-    setValue(e.target.value)
-  }
-  return (
-    <div className={styles.inputContainer}>
-      <input
-        type={type}
-        className={styles.textInput}
-        value={value}
-        onChange={handleChange}
-      />
-      <label className={value && 'filled'}>{label}</label>
-    </div>
-  )
-}
-
 const NotificationPreference = () => {
   const [state, setState] = useState({
     name: 'React',
@@ -33,7 +14,7 @@ const NotificationPreference = () => {
 
   const onValueChange = event => {
     setState({
-      selectedOption: event.target.value
+      name: event.target.value
     })
   }
 
@@ -49,34 +30,36 @@ const NotificationPreference = () => {
           </span>
         </div>
         <form>
-          <div className={styles.radio}>
-            <input
-              type="radio"
-              value="all-messages"
-              checked={state.selectedOption === 'all-messages'}
-              onChange={onValueChange}
-            />
-            <label htmlFor="all-messages">All messages</label>
-          </div>
-          <div className={styles.radio}>
-            <input
-              type="radio"
-              value="direct-messages"
-              checked={state.selectedOption === 'direct-messages'}
-              onChange={onValueChange}
-            />
-            <label htmlFor="direct-messages">
-              Direct messages, mentions & network
-            </label>
-          </div>
-          <div className={styles.radio}>
-            <input
-              type="radio"
-              value="none"
-              checked={state.selectedOption === 'none'}
-              onChange={onValueChange}
-            />
-            <label htmlFor="none">Nothing</label>
+          <div className={styles.radioBox}>
+            <div className={styles.radio}>
+              <input
+                type="radio"
+                value="all-messages"
+                checked={state.selectedOption === 'all-messages'}
+                onChange={onValueChange}
+              />
+              <label htmlFor="all-messages">All messages</label>
+            </div>
+            <div className={styles.radio}>
+              <input
+                type="radio"
+                value="direct-messages"
+                checked={state.selectedOption === 'direct-messages'}
+                onChange={onValueChange}
+              />
+              <label htmlFor="direct-messages">
+                Direct messages, mentions & network
+              </label>
+            </div>
+            <div className={styles.radio}>
+              <input
+                type="radio"
+                value="none"
+                checked={state.selectedOption === 'none'}
+                onChange={onValueChange}
+              />
+              <label htmlFor="none">Nothing</label>
+            </div>
           </div>
           <div className={styles.checkbox}>
             <label htmlFor="for-mobile">

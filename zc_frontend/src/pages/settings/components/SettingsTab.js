@@ -17,7 +17,7 @@ const SettingsTab = () => {
   return (
     <>
       <AnimateSharedLayout>
-        <PreferenceWrapper title="Password" text="" btnText="Expand">
+        <PreferenceWrapper title="Password" text="" btnText="expand">
           {/* Password input goes uunder here */}
           <SavePassword />
         </PreferenceWrapper>
@@ -27,7 +27,7 @@ const SettingsTab = () => {
         <PreferenceWrapper
           title="Two-Factor Authentication"
           text="Two factor authentication is active for your account"
-          btnText="Expand"
+          btnText="expand"
           timeZone=""
         >
           {/* Two factor authentication input field goes under here */}
@@ -39,7 +39,7 @@ const SettingsTab = () => {
         <PreferenceWrapper
           title="Email Address"
           text="Your email address is layobright@gmail.com"
-          btnText="Expand"
+          btnText="expand"
           timeZone=""
         >
           {/* Email address input field goes under here */}
@@ -51,7 +51,7 @@ const SettingsTab = () => {
         <PreferenceWrapper
           title="Time zone"
           text="Zurichat uses your time zone to send summary and notification emails, for times in your activity feeds and for  reminders. Your time zone is currently set to: (UTC+01:00) West Central Africa."
-          btnText="Expand"
+          btnText="expand"
           // timeZone={showTime}
         >
           {/* TimeZone input field goes under here */}
@@ -63,7 +63,7 @@ const SettingsTab = () => {
         <PreferenceWrapper
           title="Language"
           text="Choose the language you’d like to use with Zurichat. Your language is currently set to: English (Nigeria)."
-          btnText="Expand"
+          btnText="expand"
           timeZone=""
         >
           {/* Language input field goes under here */}
@@ -81,9 +81,11 @@ const SettingsTab = () => {
           </span>
         </div>
         <div className={styles.settingsright}>
-          <button className={styles.signout}>
-            Sign out of all othe sessions
-          </button>
+          <Link to="/session-signout">
+            <button className={styles.signout}>
+              Sign out of all othe sessions
+            </button>
+          </Link>
         </div>
       </div>
 
@@ -92,7 +94,7 @@ const SettingsTab = () => {
           Deactivate Account <br />
           <span>
             If you no longer need your account for the Zurichat, you can
-            deactivate your account. Any other Slack workspaces you belong to
+            deactivate your account. Any other Zurichat workspaces you belong to
             will not be affected.
           </span>
           <br />
@@ -105,7 +107,7 @@ const SettingsTab = () => {
           </span>
         </div>
         <div className={styles.settingsright}>
-          <Link to="/deactivate-account">
+          <Link to="/settings/confirm-password">
             <button className={styles.delete}>Deactivate your account</button>
           </Link>
         </div>
@@ -115,7 +117,7 @@ const SettingsTab = () => {
         <PreferenceWrapper
           title="Username"
           text=""
-          btnText="Expand"
+          btnText="expand"
           timeZone=""
         >
           {/* Username input field goes under here */}

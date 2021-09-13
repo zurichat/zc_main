@@ -4,21 +4,21 @@ import styles from '../styles/SettingsTab.module.css'
 const ChangeEmail = () => {
   return (
     <div className={styles.passwordsection}>
-      <form class="row d-flex flex-column">
-        <div class="col-md-5">
-          <label for="firstname" class="form-label">
-            Current password
+      <form className="row d-flex flex-column">
+        <div className="col-md-5">
+          <label for="firstname" className="form-label">
+            Current Email
           </label>
-          <input type="password" class="form-control" required />
+          <input type="text" className="form-control" required />
         </div>
-        <div class="col-md-5">
-          <label for="lastname" class="form-label">
+        <div className="col-md-5">
+          <label for="lastname" className="form-label">
             New email address
           </label>
-          <input type="password" class="form-control" required />
+          <input type="text" className="form-control" required />
         </div>
-        <div class="col-md-4 mb-3 mt-3">
-          <button class="btn btn-primary" id="submit">
+        <div className="col-md-4 mb-3 mt-3">
+          <button className="btn btn-primary" id="submit">
             Update email address
           </button>
         </div>

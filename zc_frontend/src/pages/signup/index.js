@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
 import FormWrapper from '../../components/AuthFormWrapper'
 import styles from '../../styles/AuthFormElements.module.css'
+import axios from 'axios'
 // import styles from './styles/SignUp.module.css'
 //import GoogleLogin from 'react-google-login'
 
@@ -16,8 +17,46 @@ const Signup = () => {
   const [tos, setTos] = useState(false)
   // const { error, setError } = useState('')
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
+
+    //Seperate user fullname
+    const seperateName = name.split(' ')
+    let first_name = '',
+      other_name = ''
+
+    seperateName.map((name, index) => {
+      if (index === 0) first_name += name
+      else other_name += `${name} `
+    })
+
+    await axios
+      .post('https://api.zuri.chat/users', {
+        first_name,
+        last_name: other_name,
+        email,
+        password
+      })
+      .then(response => {
+        const { data, message } = response.data
+        console.log(response.data)
+
+        //Store token in localstorage
+        sessionStorage.setItem('user_id', data.InsertedId)
+
+        //Display message
+        alert(message) //Change this when there is a design
+
+        setTimeout(() => {
+          //Redirect to some other page
+        }, 2000)
+      })
+      .catch(error => {
+        const { data } = error.response
+
+        //Render error message to the user
+        alert(data.message) //Change this when there is a design
+      })
   }
 
   return (
