@@ -129,13 +129,13 @@ export const Sidebar = () => {
             )
             const prefixLink = (url, oURL, mimeType = 'text/html') => {
               let ret = reProtocol.test(url) ? url : `${oURL.origin}${url}`
-              return `/proxy?url=${ret}&mimeType=${mimeType}`
+              return `${ret}&mimeType=${mimeType}`
             }
             axios
               .get(prefixLink(oURL.toString()))
               .then(res => {
                 const $ = cheerio.load(res.data)
-
+                console.log(res.data)
                 // append stylesheet
                 $(`link[rel="stylesheet"]`).each(function () {
                   const link = document.createElement('link')
