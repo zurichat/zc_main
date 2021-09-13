@@ -1,0 +1,20 @@
+.navbar-brand{
+    margin-left: 2rem;
+}
+
+.items .nav-item{
+    margin-left: .2rem;
+}
+  
+
+@media only screen and (min-width: 768px){
+.items .nav-item{
+    margin-left: 2rem;
+}
+}
+
+@media only screen and (min-width: 1024px){
+    .items .nav-item{
+        margin-left: 4rem;
+    }
+}

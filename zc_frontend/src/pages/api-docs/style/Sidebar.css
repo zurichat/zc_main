@@ -1,0 +1,76 @@
+
+.sidenav {
+    position: fixed;
+    z-index: 1;
+    top: 0rem;
+    overflow-x: hidden;
+  }
+  
+  .sidenav a {
+    padding: 6px 20px 6px 30px;
+    margin-top: 2rem;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    display: block;
+    text-align: left !important;
+  }
+  
+  .sidenav a:hover {
+    color: blue;
+  }
+  
+  ul.sideUl{
+    height: 65rem;
+    margin-top: 2rem;
+    padding: 0;
+  }
+  
+  span.hidden{
+    float: right;
+    margin-right: 2rem;
+    margin-top: -1.7rem;
+  }
+  
+
+  
+  
+  @media screen and (min-width: 990px) {
+  .sidenav {
+    height: 100%;
+    width: 230px;
+    position: fixed;
+    z-index: 1;
+    top: 0rem;
+    left: 0;
+    overflow-x: hidden;
+  }
+  
+  .sidenav a {
+    margin-top: 15px;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color:#0D6EFD;
+  }
+  
+  span.hidden{
+    visibility: hidden;
+  }
+  
+  div.collapse{
+    margin-top: -34rem;
+  }
+  
+  a.navLogout{
+    margin-top: 13rem;
+  }
+  
+  ul.sideUl{
+    margin-left: -2rem;
+    height: 0; 
+  }
+  }
