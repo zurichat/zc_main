@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useContext, Fragment, useState, useEffect } from 'react'
 import useSWR from 'swr'
 import { URLContext } from '../context/Url'
+import { PluginContext } from '../context/Plugins'
 
 import styles from '../styles/Sidebar.module.css'
 import Dropdown from './Dropdown'
@@ -11,6 +12,8 @@ import styled from 'styled-components'
 import AuthInputBox from '../components/AuthInputBox'
 import JoinedRooms from './joinedRooms/JoinedRooms'
 import PublicRooms from '../publicRooms/PublicRooms'
+import cheerio from 'cheerio'
+
 // import "@reach/dialog/styles.css";
 
 const fetcher = url => fetch(url).then(res => res.json())
@@ -18,10 +21,15 @@ const fetcher = url => fetch(url).then(res => res.json())
 export const Sidebar = () => {
   const { data: channelsData } = useSWR('/api/plugin/channels', fetcher)
   const { data: messagesData } = useSWR('/api/plugin/messages', fetcher)
-  const { data: plugins } = useSWR('/api/plugin/list', fetcher)
+  // const { data: plugins } = useSWR('/api/plugin/list', fetcher)
+  // const { data: organization } = useSWR('https://api.zuri.chat/organizations/6133c5a68006324323416896', fetcher)
+  // console.log(organization)
 
   const { setUrl } = useContext(URLContext)
+  const { plugins, setPlugins } = useContext(PluginContext)
 
+  //   // const user = JSON.parse(sessionStorage.getItem('user'))
+  // const org_id = '6133c5a68006324323416896'
   const [showDialog, setShowDialog] = useState(false)
   const open = () => setShowDialog(true)
   const close = () => setShowDialog(false)
@@ -102,6 +110,100 @@ export const Sidebar = () => {
       setRooms(data)
       setLoading(false)
     })
+
+    axios
+      .get('https://api.zuri.chat/organizations/6133c5a68006324323416896')
+      .then(r => {
+        r.data.data[0].plugins.forEach(api_plugin => {
+          let homepage_url
+          // Get Homepage
+          axios.get(api_plugin.info_url).then(res => {
+            homepage_url = res.data.data.homepage_url
+            let homepage = null
+            let loaded = false
+            const reProtocol = /^https?:\/\//
+            const oURL = new URL(
+              reProtocol.test(homepage_url)
+                ? homepage_url
+                : 'http://' + homepage_url
+            )
+            const prefixLink = (url, oURL, mimeType = 'text/html') => {
+              let ret = reProtocol.test(url) ? url : `${oURL.origin}${url}`
+              return `/proxy?url=${ret}&mimeType=${mimeType}`
+            }
+            axios
+              .get(prefixLink(oURL.toString()))
+              .then(res => {
+                const $ = cheerio.load(res.data)
+
+                // append stylesheet
+                $(`link[rel="stylesheet"]`).each(function () {
+                  const link = document.createElement('link')
+                  Object.keys(this.attribs).forEach(attr =>
+                    link.setAttribute(attr, this.attribs[attr])
+                  )
+                  link.setAttribute(
+                    'href',
+                    prefixLink(this.attribs.href, oURL, 'text/css')
+                  )
+                  link.setAttribute('data-plugin-res', true)
+                  $(this).remove()
+                  document.head.prepend(link)
+                })
+
+                // append scripts
+                $('script').each(function () {
+                  const script = document.createElement('script')
+                  Object.keys(this.attribs).forEach(attr =>
+                    script.setAttribute(attr, this.attribs[attr])
+                  )
+                  if (script.src) {
+                    script.setAttribute(
+                      'src',
+                      prefixLink(
+                        this.attribs.src,
+                        oURL,
+                        'application/javascript'
+                      )
+                    )
+                  } else {
+                    script.innerText = $(this).html()
+                  }
+                  $(this).remove()
+                  script.setAttribute('data-plugin-res', true)
+                  document.body.appendChild(script)
+                })
+                homepage = $('body').html()
+              })
+              .catch(e => {
+                homepage = `Failed to Load ${homepage_url} Plugin: ${e.message}`
+              })
+
+            // Get Sidebar Info
+            // console.log(`${r.data.data.sidebar_url}?org=${org_id}&user=${user.id}`)
+            axios
+              .get(
+                'https://chess.zuri.chat/api/v1/sidebar?userId=test_user_id&org=1&token=1'
+              )
+              .then(r => {
+                const api_plugin = r.data.data
+                const plugin = {
+                  name: api_plugin.group_name,
+                  joined_rooms: api_plugin.joined_rooms,
+                  homepage,
+                  homepage_url,
+                  loaded
+                }
+                let _plugins = []
+                if (api_plugin) {
+                  _plugins.push(plugin)
+                }
+                console.log('plugins ', _plugins)
+                setPlugins(_plugins)
+              })
+          })
+        })
+      })
   }, [])
 
   return (
@@ -172,7 +274,6 @@ export const Sidebar = () => {
                       )
                     }
                     return null
-
                   })}
               </div>
               {/* {console.log(rooms)} */}
@@ -223,13 +324,18 @@ export const Sidebar = () => {
             </Fragment>
           ))}
       </Dropdown>
-      {plugins &&
-        Object.keys(plugins).map(key => (
-          <Dropdown
-            title={plugins[key].name}
-            key={key}
-            onTitleClick={() => setUrl(key)}
-          ></Dropdown>
+      {plugins.length > 0 &&
+        plugins.map((plugin, i) => (
+          <Fragment key={i}>
+            {plugin && (
+              <Dropdown
+                title={plugin.name}
+                plugin
+                onTitleClick={() => setUrl(plugin.homepage_url)}
+                children={plugin.joined_rooms}
+              ></Dropdown>
+            )}
+          </Fragment>
         ))}
       <Dropdown title="messages">
         {messagesData &&
