@@ -5,9 +5,10 @@ const plugin = express.Router()
 
 // /GET get all plugins
 plugin.get('/plugin/list', (_, res) => {
-  axios.get("https://api.zuri.chat/marketplace/plugins/")
-  .then(r => res.send(r.data))
-  .catch(e => res.status(400).json({"message":e}))
+  axios
+    .get('https://api.zuri.chat/marketplace/plugins/')
+    .then(r => res.send(r.data))
+    .catch(e => res.status(400).json({ message: e }))
   // return res.send({
   //   'chess.zuri.chat': {
   //     name: 'ChessBoard'
@@ -39,19 +40,19 @@ plugin.get('/plugin/list', (_, res) => {
   // })
 })
 
-
 plugin.get('/plugin/sidebar', (req, res) => {
   const { url } = req.query
   console.log(req.query)
-  if(url){
-    axios.get(url)
-  .then(r => res.json(r.data))
-  .catch(e =>{
-    return res.status(404).json({
-      messages: `${url} couldn't be reached!`
-    })
-  })
-  } else{
+  if (url) {
+    axios
+      .get(url)
+      .then(r => res.json(r.data))
+      .catch(e => {
+        return res.status(404).json({
+          messages: `${url} couldn't be reached!`
+        })
+      })
+  } else {
     return res.status(404).json({
       messages: 'URL not found'
     })

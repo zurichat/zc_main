@@ -20,7 +20,7 @@ export const PluginContent = () => {
     const elRoot = document.getElementById('zc-plugin-root')
     let currentPlugin = plugins.find(plugin => plugin.homepage_url === url)
     console.log(plugins)
-    if(currentPlugin){
+    if (currentPlugin) {
       elRoot.innerHTML = currentPlugin.homepage
       console.log(currentPlugin)
     }
@@ -85,8 +85,8 @@ export const PluginContent = () => {
     //     .querySelectorAll('[data-plugin-res]')
     //     .forEach(node => node.remove())
     // }
-  // }, [url, setLoader])
-}, [url])
+    // }, [url, setLoader])
+  }, [url])
 
   return (
     <>
