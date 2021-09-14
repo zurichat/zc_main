@@ -13,6 +13,8 @@ import axios from 'axios'
 // import styles from './styles/SignUp.module.css'
 //import GoogleLogin from 'react-google-login'
 
+import EmailVerification from './email-verify'
+
 const Signup = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -21,6 +23,7 @@ const Signup = () => {
   // const [confirmPassword, setConfirmPassword] = useState('')
   const [tos, setTos] = useState(false)
   // const { error, setError } = useState('')
+  const [showDialog, setShowDialog] = useState(true)
 
   const images = [authBg1, authBg2, authBg3, authBg4]
   const [currentImage, setcurrentImage] = useState(
@@ -79,6 +82,7 @@ const Signup = () => {
       .then(response => {
         const { data, message } = response.data
         console.log(response.data)
+        setShowDialog(true)
 
         //Store token in localstorage
         sessionStorage.setItem('user_id', data.InsertedId)
@@ -92,6 +96,7 @@ const Signup = () => {
       })
       .catch(error => {
         const { data } = error.response
+        setShowDialog(false)
 
         //Render error message to the user
         alert(data.message) //Change this when there is a design
@@ -100,6 +105,7 @@ const Signup = () => {
 
   return (
     <main id={styles.authPageWrapper}>
+      {showDialog && <EmailVerification />}
       <aside id={styles.authAsideContainer} className={styles.display_none}>
         <div id={styles.authImageWrapper}>
           <img src={images[currentImage]} alt="backgroundImage" />
