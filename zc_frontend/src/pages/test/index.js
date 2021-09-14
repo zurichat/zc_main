@@ -144,7 +144,7 @@ function Test() {
     const [word, setWord] = useState("");
     const [email, setEmail] = useState("");
     const [selected, setSelected] = useState(false);
-    const [checked, setChecked] = useState(true)
+    const [checked, setChecked] = useState(false)
 
     return (
         <div>
@@ -198,7 +198,7 @@ function Test() {
 
             {/* checkbox */}
             <div>
-                <Checkbox onClick={() => setChecked(!checked)} />
+                <Checkbox checked={checked} onClick={() => setChecked(!checked)} />
             </div>
 
             {/* Toggle */}
