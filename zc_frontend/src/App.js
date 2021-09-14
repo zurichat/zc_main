@@ -48,7 +48,7 @@ import PluginApi from './pages/api-docs/components/plugin'
 
 import '@reach/dialog/styles.css'
 import StyleGuide from './components/verified/StyleGuide'
-import RecoveryEmail from './pages/passwordRecovery/index'
+import RecoverPassword from './pages/passwordRecovery/index'
 import ResetPassword from './pages/passwordReset/Index'
 
 const App = () => (
@@ -175,8 +175,8 @@ const App = () => (
         <Route path="/account-deactivated">
           <AccDeactivated />
         </Route>
-        <Route path="/recover-email">
-          <RecoveryEmail />
+        <Route path="/recover-password">
+          <RecoverPassword />
         </Route>
         <Route path="/reset-password">
           <ResetPassword />
