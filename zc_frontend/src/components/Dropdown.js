@@ -1,7 +1,15 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 import styles from '../styles/Dropdown.module.css'
-const Dropdown = ({ children, title, opened, showAddButton, onTitleClick }) => {
+const Dropdown = ({
+  children,
+  title,
+  opened,
+  showAddButton,
+  onTitleClick,
+  onAddButtonClick,
+  plugin
+}) => {
   const [isOpen, setIsOpen] = useState(opened)
 
   return (
@@ -22,8 +30,10 @@ const Dropdown = ({ children, title, opened, showAddButton, onTitleClick }) => {
           className={`${styles.addButton}${
             showAddButton ? '' : ` ${styles.hidden}`
           }`}
+          onClick={onAddButtonClick}
           src="/addicon.svg"
           alt="Add button"
+          role="button"
         />
       </div>
       <ul className={styles.content}>
@@ -31,7 +41,7 @@ const Dropdown = ({ children, title, opened, showAddButton, onTitleClick }) => {
           children.map((child, index) => {
             return (
               <li key={index} className={styles.item}>
-                {child}
+                {plugin ? `${child.title}` : child}
               </li>
             )
           })}
@@ -48,7 +58,8 @@ Dropdown.propTypes = {
   title: PropTypes.string.isRequired,
   isOpen: PropTypes.bool,
   onTitleClick: PropTypes.func,
-  showAddButton: PropTypes.bool
+  showAddButton: PropTypes.bool,
+  plugin: PropTypes.bool
 }
 
 export default Dropdown
