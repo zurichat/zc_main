@@ -46,10 +46,8 @@ import MarketplaceApi from './pages/api-docs/components/marketplace'
 import DataApi from './pages/api-docs/components/data'
 import PluginApi from './pages/api-docs/components/plugin'
 
-import RecoveryEmail from './pages/passwordRecovery/index';
+import RecoveryEmail from './pages/passwordRecovery/index'
 import ResetPassword from './pages/passwordReset/Index'
-
-
 
 const App = () => (
   <TopbarProvider>
