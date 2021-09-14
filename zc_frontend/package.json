@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://127.0.0.1:3000",
   "dependencies": {
+    "@emotion/memoize": "^0.7.5",
     "@reach/dialog": "^0.16.0",
     "axios": "^0.21.4",
     "babel-eslint": "^10.1.0",

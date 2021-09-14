@@ -51,6 +51,7 @@ import StyleGuide from './components/verified'
 import Test from './pages/test'
 import RecoverPassword from './pages/passwordRecovery/index'
 import ResetPassword from './pages/passwordReset/Index'
+import AuthApi from './pages/api-docs/components/auth'
 
 const App = () => (
   <TopbarProvider>
@@ -141,6 +142,9 @@ const App = () => (
         {/* Api docs */}
         <Route exact path="/documentation/users">
           <UsersApi />
+        </Route>
+        <Route exact path="/documentation/auth">
+          <AuthApi />
         </Route>
         <Route path="/documentation/organisation">
           <OrganisationApi />

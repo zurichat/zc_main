@@ -111,6 +111,9 @@ function ApiDocs() {
         <div>
           <NavLink to="/documentation/plugin">Plugin</NavLink>
         </div>
+        <div>
+          <NavLink to="/documentation/auth">Auth</NavLink>
+        </div>
       </section>
     </>
   )
