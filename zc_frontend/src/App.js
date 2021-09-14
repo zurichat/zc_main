@@ -37,6 +37,20 @@ import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation
 import AccDeactivated from './pages/settings/components/AccDeactivated'
 import { TopbarProvider } from './context/Topbar'
 
+import '@reach/dialog/styles.css'
+
+import { PluginLoaderProvider } from './context/PluginLoaderState'
+import UsersApi from './pages/api-docs/components/users'
+import OrganisationApi from './pages/api-docs/components/organisation'
+import MarketplaceApi from './pages/api-docs/components/marketplace'
+import DataApi from './pages/api-docs/components/data'
+import PluginApi from './pages/api-docs/components/plugin'
+
+import '@reach/dialog/styles.css'
+import StyleGuide from './components/verified/StyleGuide'
+import RecoveryEmail from './pages/passwordRecovery/index'
+import ResetPassword from './pages/passwordReset/Index'
+
 const App = () => (
   <TopbarProvider>
     <BrowserRouter>
@@ -53,7 +67,6 @@ const App = () => (
         <Route path="/signup">
           <SignUp />
         </Route>
-
         <Route path="/verify-email">
           <EmailVerification />
         </Route>
@@ -123,6 +136,23 @@ const App = () => (
         <Route path="/search-suggestions">
           <SearchSuggestion />
         </Route>
+
+        {/* Api docs */}
+        <Route exact path="/documentation/users">
+          <UsersApi />
+        </Route>
+        <Route path="/documentation/organisation">
+          <OrganisationApi />
+        </Route>
+        <Route path="/documentation/marketplace">
+          <MarketplaceApi />
+        </Route>
+        <Route path="/documentation/data">
+          <DataApi />
+        </Route>
+        <Route path="/documentation/plugin">
+          <PluginApi />
+        </Route>
         <Route path="/link">
           <LinkComponent
             title={`test-to-home`}
@@ -135,13 +165,24 @@ const App = () => (
           <SearchSuggestion />
         </Route>
         <Route path="/documentation" exact>
-          <ApiDocs />
+          <PluginLoaderProvider>
+            <ApiDocs />
+          </PluginLoaderProvider>
         </Route>
         <Route path="/confirm-deactivation">
           <ConfirmDeactivation />
         </Route>
         <Route path="/account-deactivated">
           <AccDeactivated />
+        </Route>
+        <Route path="/recover-email">
+          <RecoveryEmail />
+        </Route>
+        <Route path="/reset-password">
+          <ResetPassword />
+        </Route>
+        <Route path="/style-guide">
+          <StyleGuide />
         </Route>
       </Switch>
     </BrowserRouter>
