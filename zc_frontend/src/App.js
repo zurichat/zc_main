@@ -14,11 +14,12 @@ import Download from './pages/download'
 import ContactUs from './pages/contact-us'
 import Pricing from './pages/pricing'
 import Header from './components/externalPagesComponents/Header'
+import './styles/globals.css'
+import MarketPlace from './pages/marketplace/marketplace'
 import Input from './components/externalPagesComponents/Input'
 // import CookiesBanner from './components/externalPagesComponents/CookiesBanner/cookiesBanner'
 import FAQ from './pages/FAQ'
 import './styles/globals.css'
-import MarketPlace from './pages/marketplace/marketplace'
 import Settings from './pages/settings'
 import SearchResult from './components/SearchResults3'
 import LinkComponent from './components/externalPagesComponents/Link'
@@ -133,7 +134,6 @@ const App = () => (
         <Route path="/search-suggestions">
           <SearchSuggestion />
         </Route>
-
         {/* Api docs */}
         <Route exact path="/documentation/users">
           <UsersApi />
