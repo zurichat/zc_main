@@ -7,13 +7,13 @@ info:
     email: developer@zuri.chat
 servers:
   - description: Zuri Chat Core API
-    url: "https://api.zuri.chat/"
+    url: 'https://api.zuri.chat/'
 
 paths:
   /data/write:
     post:
       tags:
-      - write
+        - write
       description: Lets plugin post new data to DB.
       requestBody:
         content:
@@ -22,7 +22,7 @@ paths:
               $ref: '#/components/schemas/DataWriteRequestBody'
         required: true
       responses:
-        "201":
+        '201':
           description: Data created successfully
           content:
             application/json:
@@ -36,7 +36,7 @@ paths:
                 $ref: '#/components/schemas/Error'
     put:
       tags:
-      - write
+        - write
       description: Updates data in databse
       requestBody:
         content:
@@ -45,7 +45,7 @@ paths:
               $ref: '#/components/schemas/DataWriteRequestBody'
         required: true
       responses:
-        "200":
+        '200':
           description: Data updated successfully
           content:
             application/json:
@@ -61,7 +61,7 @@ paths:
   /data/read/{plugin_id}/{coll_name}/{org_id}:
     get:
       tags:
-      - read
+        - read
       description: Retrieves data from the database
       parameters:
         - in: path
@@ -83,7 +83,7 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           description: Data retrieved successfully
           content:
             application/json:
@@ -99,7 +99,7 @@ paths:
   /data/delete:
     post:
       tags:
-      - delete
+        - delete
       description: Lets plugin delete data from DB.
       requestBody:
         content:
@@ -108,7 +108,7 @@ paths:
               $ref: '#/components/schemas/DataDeleteRequestBody'
         required: true
       responses:
-        "200":
+        '200':
           description: Data deleted successfully
           content:
             application/json:
@@ -124,64 +124,64 @@ paths:
 components:
   schemas:
     DataWriteRequestBody:
-        type: object
-        required:
-          - plugin_id
-          - organization_id
-          - collection_name
-          - payload
-        properties:
-          plugin_id:
-            type: string
-            description: The plugin ID.
-          organization_id:
-            type: string
-            description: The ID of the organization plugin belongs to.
-          collection_name:
-            type: string
-            description: The name of collection to insert data into.
-          bulk_write:
-            type: boolean
-            description: Boolean value that indicates whether many documents are to be inserted or not.
-          object_id:
-            type: string
-            description: The ID of inserted data (to be set at server side)
-          filter:
-            type: object
-            description: Query to be matched
-          payload:
-            type: object
-            description: Actual data plugin wants to store in DB.
+      type: object
+      required:
+        - plugin_id
+        - organization_id
+        - collection_name
+        - payload
+      properties:
+        plugin_id:
+          type: string
+          description: The plugin ID.
+        organization_id:
+          type: string
+          description: The ID of the organization plugin belongs to.
+        collection_name:
+          type: string
+          description: The name of collection to insert data into.
+        bulk_write:
+          type: boolean
+          description: Boolean value that indicates whether many documents are to be inserted or not.
+        object_id:
+          type: string
+          description: The ID of inserted data (to be set at server side)
+        filter:
+          type: object
+          description: Query to be matched
+        payload:
+          type: object
+          description: Actual data plugin wants to store in DB.
 
     DataDeleteRequestBody:
-        type: object
-        required:
-          - plugin_id
-          - organization_id
-          - collection_name
-          - payload
-        properties:
-          plugin_id:
-            type: string
-            description: The plugin ID.
-          organization_id:
-            type: string
-            description: The ID of the organization plugin belongs to.
-          collection_name:
-            type: string
-            description: The name of collection to insert data into.
-          bulk_delete:
-            type: boolean
-            description: Boolean value that indicates whether many documents are to be deleted or not.
-          object_id:
-            type: string
-            description: The ID of inserted data (to be set at server side)
-          filter:
-            type: object
-            description: Query to be matched
-          payload:
-            type: object
-            description: Actual data plugin wants to store in DB.
+      type: object
+      required:
+        - plugin_id
+        - organization_id
+        - collection_name
+        - payload
+      properties:
+        plugin_id:
+          type: string
+          description: The plugin ID.
+        organization_id:
+          type: string
+          description: The ID of the organization plugin belongs to.
+        collection_name:
+          type: string
+          description: The name of collection to insert data into.
+        bulk_delete:
+          type: boolean
+          description: Boolean value that indicates whether many documents are to be deleted or not.
+        object_id:
+          type: string
+          description: The ID of inserted data (to be set at server side)
+        filter:
+          type: object
+          description: Query to be matched
+        payload:
+          type: object
+          description: Actual data plugin wants to store in DB.
 
     DataPostResponse:
       type: object

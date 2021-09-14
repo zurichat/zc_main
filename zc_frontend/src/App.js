@@ -190,7 +190,7 @@ const App = () => (
           <StyleGuide />
         </Route>
         <Route path="/test">
-          <Test/>
+          <Test />
         </Route>
       </Switch>
     </BrowserRouter>
