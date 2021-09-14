@@ -48,6 +48,8 @@ import PluginApi from './pages/api-docs/components/plugin'
 
 import '@reach/dialog/styles.css'
 import StyleGuide from './components/verified/StyleGuide'
+import RecoveryEmail from './pages/passwordRecovery/index'
+import ResetPassword from './pages/passwordReset/Index'
 
 const App = () => (
   <TopbarProvider>
@@ -172,6 +174,12 @@ const App = () => (
         </Route>
         <Route path="/account-deactivated">
           <AccDeactivated />
+        </Route>
+        <Route path="/recover-email">
+          <RecoveryEmail />
+        </Route>
+        <Route path="/reset-password">
+          <ResetPassword />
         </Route>
         <Route path="/style-guide">
           <StyleGuide />
