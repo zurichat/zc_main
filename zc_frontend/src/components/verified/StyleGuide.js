@@ -1,6 +1,6 @@
 import { FiPhoneCall } from 'react-icons/fi'
-import Button from '../verified'
-import FloatingButton from '../verified'
+import { Button } from '../verified'
+import { FloatingButton } from '../verified'
 
 // import styled from 'styled-components'
 
