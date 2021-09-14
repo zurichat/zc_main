@@ -12,6 +12,7 @@ import { ProfileContext } from '../context/ProfileModal'
 import Preferences from './Preferences'
 import EditProfile from './EditProfile'
 import MembersModal from './MembersModal'
+import Downloads from './Downloads'
 import PauseNotification from './PauseNotification'
 
 const TopbarModal = ({ members }) => {
@@ -87,9 +88,12 @@ const TopbarModal = ({ members }) => {
             </div>
           </div>
 
-          <div onClick={openStatus} className={styles.sectionTwo}>
+          <div className={styles.sectionTwo}>
             <StatusBadgeModal />
           </div>
+          {/* <div onClick={openStatus} className={styles.sectionTwo}>
+            <StatusBadgeModal />
+          </div> */}
 
           <div className={styles.sectionThree}>
             <p onClick={openStatus}>Set a status</p>
@@ -128,12 +132,20 @@ const TopbarModal = ({ members }) => {
           <hr className={styles.hr} />
 
           <div className={styles.sectionSix}>
-            <p>Downloads</p>
+            <p
+              onClick={() => {
+                setModal('downloads')
+              }}
+            >
+              Downloads
+            </p>
           </div>
 
           {modal === 'edit profile' && <EditProfile />}
 
           {modal === 'preference' && <Preferences />}
+
+          {modal === 'downloads' && <Downloads setModal={setModal} />}
 
           <hr className={styles.hr} />
 

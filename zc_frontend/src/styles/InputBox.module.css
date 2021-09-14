@@ -1,30 +1,41 @@
 .InputContainer {
-  font-family: 'Lato', sans-serif;
-  margin: 1rem auto;
   width: 100%;
+  margin-block-start: 0.2rem;
+  margin-block-end: 1rem;
+  margin-inline: auto;
+  /* margin: 1rem auto; */
   /* font-size: 16px; */
+  /* margin-top: 0;
+  padding-top: 0; */
+}
 
-  margin-top: 0;
-  padding-top: 0;
+.InputContainer:last-of-type {
+  margin-block-end: 0rem;
 }
 
 /* input Label */
 .InputLabel {
-  font-weight: 700;
-  font-size: 21px;
+  margin-block: 1rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 24px;
+  color: #3a3a3a;
 }
 
 /* Input wrapper */
 .InputWrapper {
   border: 1px solid #bebebe;
-  border-radius: 8px;
+  border-radius: 6px;
   width: 100%;
-  height: 3rem;
+  height: 3.5rem;
   overflow: hidden;
 }
+
 .InputWrapper:focus-within {
-  border: 1px solid blue;
+  border: 1px solid #00b87c;
+  /* border: 1px solid blue; */
 }
+
 /* input wrapper WITH password */
 .InputWrapperWithPassword {
   display: grid;
@@ -34,17 +45,22 @@
 
 /* actual input element */
 .InputElement {
-  padding: 0 1rem;
-  border: none;
   width: 100%;
   height: 100%;
-  /* font-size: 12px; */
+  padding-inline-start: 1rem;
+  padding-inline-end: 1rem;
   letter-spacing: 1px;
   color: #000000;
+  border: none;
+  font-size: 1.5rem;
+  /* padding: 0 1rem; */
+  /* padding: 0, 0.625rem, 0, 1rem; */
+  /* text-indent: 1rem; */
 }
-/* .InputElement::-webkit-input-placeholder {
-  font-size: 12px;
-} */
+
+.InputElement::placeholder {
+  font-size: 1.2rem;
+}
 
 .InputElement:invalid,
 .InputElement.is_invalid {
@@ -59,16 +75,56 @@
 
 /* password toggle */
 .ToggleVisibility {
+  font-size: 1.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  border: none;
-  background: #ffffffa8;
-  height: 100%;
-  font-size: 1rem;
+  /* border: none; */
+  /* background: #ffffffa8; */
+  /* height: 100%; */
 }
 
 .InputError {
   color: #ff0000;
+}
+
+/* Media Query 768px and Smaller */
+/* Media Query 920px and Smaller */
+/* Media Query for Screen Width 1080px and Smaller */
+@media only screen and (max-width: 1080px) {
+  .InputContainer {
+    margin-block: 1rem;
+    width: 100%;
+  }
+
+  .InputContainer:last-of-type {
+    margin-block-end: 0rem;
+  }
+
+  /* input Label */
+  .InputLabel {
+    margin-block: 0.5rem;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  }
+
+  /* actual input element */
+  .InputElement {
+    text-indent: 0.7rem;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+    font-size: 1.2rem;
+  }
+
+  .InputElement::placeholder {
+    font-size: 1.2rem;
+    margin-inline: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+  }
+
+  /* input wrapper WITH password */
+  .InputWrapperWithPassword {
+    grid-template-columns: 9fr 2fr;
+  }
 }

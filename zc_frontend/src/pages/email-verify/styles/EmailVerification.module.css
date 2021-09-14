@@ -15,11 +15,39 @@
 .email {
   color: blue;
 }
-.input {
-  margin: 20px 0;
+.codeInput {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }
-/* .codeInput{} */
-
+.codeLabel {
+  margin-bottom: 16px;
+}
+.codeInputs {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.codeInputs input {
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  text-align: center;
+  height: 60px;
+  width: 50px;
+  margin: 0;
+  border: 1px solid #4f5b66;
+  font-size: 38px;
+}
+.codeInputs input:focus {
+  outline: none;
+}
+.codeInputs input:nth-child(3n) {
+  margin-right: 24px;
+}
 .request {
   color: #2f80ed;
 }
