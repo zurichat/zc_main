@@ -1,0 +1,29 @@
+:root{
+    --primary-color: #00B87C;
+    --primary-color-hover: rgba(0, 184, 124, 0.502);
+    --primary-color-2: #E1FDF4;
+    --secondary-color: #1264A3;
+    --body-color: #1d1c1d; /* Header color */
+    --body-shade: #1d1c1d; /* Header shade && Icon Color */
+
+    /* text colors */
+    --inactive-text: #B0AFB0;
+    --inactive-text-shade: #E7E7E7;
+    --lines: #F6F6F6;
+
+    /* Bg colors */
+    --bg-1: #F6F6F6;
+    --bg-2: #FFFFFF;
+
+    /* Progress colors */
+    --accent-color: #B8003C;
+    --error-color: #F40101;
+    --success-color: #008B5E;
+    --success-color-2: #FFB425;
+}
+
+p{
+    color: var(--primary-color);
+    font-size: 3rem;
+}
+
