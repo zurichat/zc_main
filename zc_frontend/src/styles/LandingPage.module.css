@@ -54,21 +54,21 @@
 }
 
 .btn__continue {
-  background-color: #1a61db;
+  background-color: #00b87c;
   color: #fff !important;
   border-radius: 5px;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   outline: none;
   border: none;
   padding: 0.8rem 14rem;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
   z-index: 2;
   margin-top: -2rem;
 }
 
 .btn__continue:hover {
-  background-color: #0050dd;
+  /* background-color: #00aa70; */
+  box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.25);
 }
 
 .img__div {
