@@ -43,7 +43,6 @@ const StyleGuide = () => {
       <h1>Floating Button</h1>
       <FloatingButton />
       <FloatingButton disabled /> */}
-        
     </>
   )
 }

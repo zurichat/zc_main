@@ -39,7 +39,6 @@ const StyleGuide = () => {
       <FloatingButton />
       <FloatingButton disabled />
       <FloatingButton />
-
     </>
   )
 }
