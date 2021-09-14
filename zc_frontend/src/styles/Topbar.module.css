@@ -16,6 +16,15 @@
   }
 }
 
+.membersModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  z-index: -1;
+}
+
 .profile {
   background-color: #acffe6;
   border-radius: 50%;
@@ -220,9 +229,9 @@
   height: 30px;
 }
 
-.sectionTwo:hover {
+/* .sectionTwo:hover {
   border: 1px solid #00b87c;
-}
+} */
 
 /* The section of the picker */
 
