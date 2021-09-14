@@ -6,12 +6,9 @@ import { useHistory } from 'react-router-dom'
 import styles from '../styles/ConfirmDeactivation.module.css'
 import SettingsNav from './SettingsNav'
 
-
-
 const ConfirmDeactivation = () => {
   const [wantToDeactivate, setWantToDeactivate] = useState(false)
   const history = useHistory()
-
 
   return (
     <>
