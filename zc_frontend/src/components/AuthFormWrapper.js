@@ -1,4 +1,5 @@
 import React from 'react'
+//import { Link } from 'react-router-dom'
 import styles from '../styles/AuthFormWrapper.module.css'
 import logo from '../pages/images/logo.svg'
 import google from '../pages/images/google.svg'
@@ -18,30 +19,39 @@ const FormWrapper = ({
   check,
   handleSubmit,
   bottomLine,
-  bottomLink
+  bottomLink,
+  bottomLinkHref
 }) => {
   return (
     <section className={`${styles.container}`}>
-      <div>
-        <div className={`${styles.logo}`}>
-          <img src={logo} alt="zuri" />
-        </div>
+      <div className={`${styles.logo}`}>
+        <img src={logo} alt="zuri" />
+      </div>
+      <div className={styles.FormWrapper}>
         <div className={`${styles.headers}`}>
           <h1 className={`${styles.header}`}>{header}</h1>
           <p className={`${styles.subHeader}`}>{subHeader}</p>
         </div>
-        <div className={`${styles.googleBtn}`}>
-          <a href="/" className="google">
+        {/* <div className="googleBtn_div">
+          <Link className={styles.google__btn} to="/" replace={true}>
             <img src={google} alt="google" />
             {googleHeader}
-          </a>
+          </Link>
+        </div> */}
+        <div className={`${styles.googleAuthDiv}`}>
+          <div className={`${styles.googleBtn}`}>
+            <a href="/" className="google">
+              <img src={google} alt="google" />
+              {googleHeader}
+            </a>
+          </div>
+          <span className={`${styles.hrWrapper}`}>
+            {/* <span className={`${styles.topLine}`}>{topLineText}</span> */}
+            <hr className={`${styles.hrLeft}`} />
+            <div>{topLineText}</div>
+            <hr className={`${styles.hrRight}`} />
+          </span>
         </div>
-        <span className={`${styles.hrWrapper}`}>
-          {/* <span className={`${styles.topLine}`}>{topLineText}</span> */}
-          <hr className={`${styles.hrLeft}`}></hr>
-          <div>{topLineText}</div>
-          <hr className={`${styles.hrRight}`}></hr>
-        </span>
         <form
           className={`${styles.form}`}
           onSubmit={handleSubmit}
@@ -61,8 +71,19 @@ const FormWrapper = ({
               type="submit"
             />
           </div>
+
+          <div className={`${styles.bottomLine}`}>
+            <span>
+              {bottomLine}
+              {''}
+              <a className={`${styles.bottomLink}`} href={`/${bottomLinkHref}`}>
+                {''} {bottomLink}
+              </a>
+            </span>
+          </div>
         </form>
-        <div className={`${styles.bottomLine}`}>
+
+        {/* <div className={`${styles.bottomLine}`}>
           <span>
             {bottomLine}
             {''}
@@ -70,7 +91,7 @@ const FormWrapper = ({
               {''} {bottomLink}
             </a>
           </span>
-        </div>
+        </div> */}
       </div>
 
       <div className={`${styles.footer}`}>

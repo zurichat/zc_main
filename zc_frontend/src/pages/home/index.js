@@ -3,6 +3,7 @@ import { Sidebar } from '../../components/Sidebar'
 import Topbar from '../../components/Topbar'
 import styles from '../../styles/Home.module.css'
 import { UrlProvider } from '../../context/Url'
+import { PluginProvider } from '../../context/Plugins'
 import { ProfileProvider } from '../../context/ProfileModal'
 import { TopbarProvider } from '../../context/Topbar'
 import { PluginLoaderProvider } from '../../context/PluginLoaderState'
@@ -11,24 +12,26 @@ import Profile from '../../components/Profile'
 const Home = () => {
   return (
     <UrlProvider>
-      <div className={styles.container}>
-        <Sidebar />
-        <ProfileProvider>
-          <TopbarProvider>
-            <div className={styles.room}>
-              <Topbar />
-              <div className={styles.spaceWrapper}>
-                <div className={styles.pluginContent}>
-                  <PluginLoaderProvider>
-                    <PluginContent />
-                  </PluginLoaderProvider>
+      <PluginProvider>
+        <PluginLoaderProvider>
+          <div className={styles.container}>
+            <Sidebar />
+            <ProfileProvider>
+              <TopbarProvider>
+                <div className={styles.room}>
+                  <Topbar />
+                  <div className={styles.spaceWrapper}>
+                    <div className={styles.pluginContent}>
+                      <PluginContent />
+                    </div>
+                    <Profile />
+                  </div>
                 </div>
-                <Profile />
-              </div>
-            </div>
-          </TopbarProvider>
-        </ProfileProvider>
-      </div>
+              </TopbarProvider>
+            </ProfileProvider>
+          </div>
+        </PluginLoaderProvider>
+      </PluginProvider>
     </UrlProvider>
   )
 }

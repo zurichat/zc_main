@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 // import { Link } from 'react-router-dom'
-import authBg from '../../pages/images/backg.svg'
+// import authBg1 from '../../pages/images/backg.svg'
+import authBg1 from '../../assets/auth_images/auth_bg1.svg'
+import authBg2 from '../../assets/auth_images/auth_bg2.svg'
+import authBg3 from '../../assets/auth_images/auth_bg3.svg'
+import authBg4 from '../../assets/auth_images/auth_bg4.svg'
 import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
 import FormWrapper from '../../components/AuthFormWrapper'
@@ -13,23 +17,71 @@ const Signup = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
+  // const [confirmPassword, setConfirmPassword] = useState('')
+  // const [confirmPassword, setConfirmPassword] = useState('')
   const [tos, setTos] = useState(false)
   // const { error, setError } = useState('')
 
+  const images = [authBg1, authBg2, authBg3, authBg4]
+  const [currentImage, setcurrentImage] = useState(
+    Math.floor(Math.random() * 3)
+  )
+  // console.log(images)
+
+  const displayImage = () => {
+    let i = currentImage
+    i >= images.length - 1 ? (i = 0) : i++
+    setcurrentImage(i)
+    console.log(images[i], i)
+
+    // for(i=0; i<images.length; i++) {
+    //     setImage(image=>images[i])
+    // }
+  }
+
+  //   setInterval(()=>{
+  //     // setImage(image=>images[0])
+  //   for(let i=0; i<images.length; i++){
+  //     if(i>images.length){
+  //       i=0
+  //       continue;
+  //     }
+  //     setImage(image=>images[i])
+  //     // console.log(image)
+  //     // if(i===images.length){
+  //     //   i=0
+  //     // }
+  //   }
+  // },5000)
+
   const handleSubmit = async e => {
     e.preventDefault()
+
+    //Seperate user fullname
+    const seperateName = name.split(' ')
+    let first_name = '',
+      other_name = ''
+
+    seperateName.map((name, index) => {
+      if (index === 0) {
+        return (first_name += name)
+      }
+      return (other_name += `${name} `)
+    })
+
     await axios
-      .post('/api/register', {
-        fullName: name,
+      .post('https://api.zuri.chat/users', {
+        first_name,
+        last_name: other_name,
         email,
         password
       })
       .then(response => {
         const { data, message } = response.data
+        console.log(response.data)
 
         //Store token in localstorage
-        localStorage.setItem('token', data.token)
+        sessionStorage.setItem('user_id', data.InsertedId)
 
         //Display message
         alert(message) //Change this when there is a design
@@ -39,12 +91,10 @@ const Signup = () => {
         }, 2000)
       })
       .catch(error => {
-        const { data, status } = error.response
+        const { data } = error.response
 
         //Render error message to the user
-        if (status === 400) alert(data)
-        //Change this when there is a design
-        else if (status === 409) alert(data.reason) //Change this when there is a design
+        alert(data.message) //Change this when there is a design
       })
   }
 
@@ -52,7 +102,7 @@ const Signup = () => {
     <main id={styles.authPageWrapper}>
       <aside id={styles.authAsideContainer} className={styles.display_none}>
         <div id={styles.authImageWrapper}>
-          <img src={authBg} alt="backgroundImage" />
+          <img src={images[currentImage]} alt="backgroundImage" />
           <div id={styles.aside_txt}></div>
         </div>
       </aside>
@@ -70,15 +120,17 @@ const Signup = () => {
           handleSubmit={handleSubmit}
           bottomLine="Already have an account?"
           bottomLink="Log in"
+          bottomLinkHref="login"
         >
           <AuthInputBox
             className={`${styles.inputElement}`}
             id="name"
             name="Full name"
             type="text"
-            placeholder="John Doe"
+            placeholder="Enter your Name"
             value={name}
             setValue={setName}
+            onFocus={displayImage}
             // error={error}
           />
           <AuthInputBox
@@ -86,9 +138,10 @@ const Signup = () => {
             id="email"
             name="Email address"
             type="email"
-            placeholder="johnDoe@example.com"
+            placeholder="Enter you email address"
             value={email}
             setValue={setEmail}
+            onFocus={displayImage}
             // error={error}
           />
           <AuthInputBox
@@ -96,21 +149,22 @@ const Signup = () => {
             id="password"
             name="Password"
             type="password"
-            placeholder="Enter your Password"
+            placeholder="Enter a password"
             value={password}
             setValue={setPassword}
+            onFocus={displayImage}
             // error={error}
           />
-          <AuthInputBox
+          {/* <AuthInputBox
             className={`${styles.inputElement}`}
             id="cpassword"
             name="Confirm password"
             type="password"
-            placeholder="Enter your password"
+            placeholder="Confirm password"
             value={confirmPassword}
             setValue={setConfirmPassword}
             // error={error}
-          />
+          /> */}
           <div className={`${styles.tos}`}>
             <input
               className={`${styles.checkBox}`}
