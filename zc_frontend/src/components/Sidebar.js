@@ -61,7 +61,7 @@ export const Sidebar = () => {
     return values
   }
 
-  const sidebarApi = async (url) => {
+  const sidebarApi = async url => {
     setLoading(true)
     try {
       const res = await axios.get(

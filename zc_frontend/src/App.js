@@ -49,7 +49,6 @@ import PluginApi from './pages/api-docs/components/plugin'
 import '@reach/dialog/styles.css'
 import StyleGuide from './components/verified/StyleGuide'
 
-
 const App = () => (
   <TopbarProvider>
     <BrowserRouter>
