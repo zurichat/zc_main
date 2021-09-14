@@ -1,6 +1,6 @@
 /* Deactivation Bar */
 .deactivationSection {
-  padding-top: 130px;
+  padding-top: 80px;
   margin: 0 13%;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .blue {
-  color: rgb(42, 155, 42);
+  color: #00b87c;
 }
 
 .firstP {
