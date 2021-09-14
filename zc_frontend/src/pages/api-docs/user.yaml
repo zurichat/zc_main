@@ -7,7 +7,7 @@ info:
     email: developer@zuri.chat
 servers:
   - description: Zuri Chat Core API
-    url: 'https://api.zuri.chat/'
+    url: "https://api.zuri.chat/"
 tags:
   - name: user
     description: Controls user registration, login and password recovery
@@ -19,12 +19,12 @@ paths:
       tags:
         - Users
       responses:
-        '200':
+        "200":
           description: Returns information about all users
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UsersResponse'
+                $ref: "#/components/schemas/UsersResponse"
 
     post:
       summary: Create a new user
@@ -36,27 +36,27 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/User'
+              $ref: "#/components/schemas/User"
 
       responses:
-        '201':
+        "201":
           description: Returns ID of created user
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CreateUserResponse'
+                $ref: "#/components/schemas/CreateUserResponse"
           links:
             UserID:
               operationId: getUserID
               parameters:
                 user_id: $response.body#/data/InsertedID
-        '400':
+        "400":
           description: Invalid user email
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/VerifyEmail'
-        '422':
+                $ref: "#/components/schemas/VerifyEmail"
+        "422":
           description: Unprocessable entity
           content:
             application/json:
@@ -74,7 +74,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
 
   /users/{user_id}:
     patch:
@@ -84,67 +84,67 @@ paths:
       security:
         - BearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/user_id'
+        - $ref: "#/components/parameters/user_id"
 
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/User'
+              $ref: "#/components/schemas/User"
       tags:
         - Users
 
       responses:
-        '200':
+        "200":
           description: User was successfully updated
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UpdateUser'
+                $ref: "#/components/schemas/UpdateUser"
 
-        '404':
+        "404":
           description: No user with the specified user_id was found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
 
-        '500':
+        "500":
           description: Someting went wrong
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
 
     get:
       summary: Retrieves the information about a user
       security:
         - BearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/user_id'
+        - $ref: "#/components/parameters/user_id"
 
       responses:
-        '200':
+        "200":
           description: Returns the full info about a user
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FullUser'
+                $ref: "#/components/schemas/FullUser"
 
-        '404':
+        "404":
           description: No user with the specified user_id was found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
 
-        '500':
+        "500":
           description: Something went wrong
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
 
       tags:
         - Users
@@ -154,38 +154,38 @@ paths:
       security:
         - BearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/user_id'
+        - $ref: "#/components/parameters/user_id"
 
       tags:
         - Users
 
       responses:
-        '200':
+        "200":
           description: User was successfully deactivated
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DeleteUser'
-        '404':
+                $ref: "#/components/schemas/DeleteUser"
+        "404":
           description: No user with the specified user_id was found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
 
-        '500':
+        "500":
           description: Something went wrong
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
 
   /users/search/{query}:
     get:
       summary: Retrieves all users that match the given query parameter
       description: Retrieves all created users saved to the DB
       security:
-        - BearerAuth: []
+        - BearerAuth: [ ]
       tags:
         - Users
       parameters:
@@ -271,7 +271,7 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/FullUser'
+            $ref: "#/components/schemas/FullUser"
 
     FullUser:
       type: object
@@ -299,7 +299,7 @@ components:
           example: null
         time_zone:
           type: string
-          example: ''
+          example: ""
         created_at:
           type: string
           example: 2021-09-07T12:22:06.932180616+01:00
