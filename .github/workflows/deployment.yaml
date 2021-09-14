@@ -46,7 +46,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           host: ${{ secrets.ZURI_MAIN_HOST }}
           password: ${{ secrets.PASSWORD }}
-          localPath: './zc_frontend/build/*'
+          localPath: './zc_frontend/build/'
           remotePath: '/var/www/zurichat/zuri.chat/zc_frontent/build'
         
 
