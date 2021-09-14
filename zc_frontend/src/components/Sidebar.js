@@ -28,7 +28,7 @@ export const Sidebar = () => {
   const { setUrl } = useContext(URLContext)
   const { plugins, setPlugins } = useContext(PluginContext)
 
-  //   // const user = JSON.parse(sessionStorage.getItem('user'))
+  // const user = JSON.parse(sessionStorage.getItem('user'))
   // const org_id = '6133c5a68006324323416896'
   const [showDialog, setShowDialog] = useState(false)
   const open = () => setShowDialog(true)
@@ -39,78 +39,66 @@ export const Sidebar = () => {
   const [loading, setLoading] = useState(false)
   // const [error, setError] = useState('')
 
-  // const sorters = {
-  //   leastMembers : (a,b)=>{return a.members - b.members},
-  //   mostMembers : (a,b)=>{return b.members - a.members},
-  //   aToZ : (a,b)=>{
-  //     const aName = a.title.toUpperCase();
-  //     const bName = b.title.toUpperCase();
-  //     return (aName < bName) ? 1:-1
-  //   },
-  //   zToA : (a,b)=>{
-  //     const aName = a.title.toUpperCase();
-  //     const bName = b.title.toUpperCase();
-  //     return (aName < bName) ? 1:-1
-  //   }
-  // }
-  // const sorters = [
-  //   (a, b) => {
-  //     return a.unread - b.unread
-  //   },
-  //   (a, b) => {
-  //     return b.unread - a.unread
-  //   },
-  //   (a, b) => {
-  //     const aName = a.title.toUpperCase()
-  //     const bName = b.title.toUpperCase()
-  //     return aName === bName ? 0 : aName < bName ? 1 : -1
-  //   },
-  //   (a, b) => {
-  //     const aName = a.title.toUpperCase()
-  //     const bName = b.title.toUpperCase()
-  //     return aName === bName ? 0 : aName < bName ? -1 : 1
-  //   }
-  // ]
+  const sortRooms = (val, type) => {
+    let values = [...val]
+    console.log(type)
+    switch (type) {
+      case 'atoz':
+        values.sort((a, b) => a.title.localeCompare(b.title))
+        break
+      case 'ztoa':
+        values.sort((a, b) => b.title.localeCompare(a.title))
+        break
+      case 'minmax':
+        values.sort((a, b) => a.members - b.members)
+        break
+      case 'maxmin':
+        values.sort((a, b) => b.members - a.members)
+        break
+      default:
+        break
+    }
+    return values
+  }
 
-  const sidebarApi = async () => {
+  const sidebarApi = async url => {
     setLoading(true)
     try {
       const res = await axios.get(
         `https://channels.zuri.chat/api/v1/sidebar/?org=1&user=43567868&format=json`
       )
-      // console.log(res)
-      // let result = res.data
-      // setRooms(result)
-      // console.log(rooms.joinedRooms)
-      // console.log(result.joined_rooms[1].icon)
-      // sorters.forEach((sortfunc, ind) => {
-      //   const sortedroom = rooms.public_rooms.sort(sortfunc)
-      //   console.log(sortedroom)
-      //   // rooms.joined_rooms.forEach(curr => console.log(ind,curr.sort(sortfunc)))
-      // })
       return res.data
     } catch (err) {
       return console.log(err)
     }
   }
 
-  const filteredJoinedRooms = rooms.joined_rooms
+  const filteredJoinedRooms = rooms?.joined_rooms
     ? rooms.joined_rooms.filter(room =>
         room.title.toLowerCase().includes(query)
       )
     : null
-  const filteredPublicRooms = rooms.joined_rooms
+  const filteredPublicRooms = rooms?.joined_rooms
     ? rooms.public_rooms.filter(room =>
         room.title.toLowerCase().includes(query)
       )
     : null
 
   useEffect(() => {
-    sidebarApi().then(data => {
-      setRooms(data)
-      setLoading(false)
-    })
+    ;(async () => {
+      await sidebarApi().then(async res => {
+        setRooms(res)
+        setLoading(false)
 
+        console.log(sortRooms(res.public_rooms, 'ztoa'))
+        console.log(sortRooms(res.public_rooms, 'atoz'))
+        console.log(sortRooms(res.public_rooms, 'minmax'))
+        console.log(sortRooms(res.public_rooms, 'maxmin'))
+      })
+    })()
+  }, [])
+
+  useEffect(() => {
     axios
       .get('https://api.zuri.chat/organizations/6133c5a68006324323416896')
       .then(r => {
@@ -223,7 +211,6 @@ export const Sidebar = () => {
         <Overlay isOpen={showDialog} onDismiss={close}>
           <Content aria-label="room-list">
             <CloseButton className="close-button" onClick={close}>
-              {/* <VisuallyHidden>Close</VisuallyHidden> */}
               <Span aria-hidden>×</Span>
             </CloseButton>
             <AuthInputBox
@@ -235,79 +222,6 @@ export const Sidebar = () => {
               {loading && <p>Loading..</p>}
               <JoinedRooms rooms={filteredJoinedRooms} />
               <PublicRooms rooms={filteredPublicRooms} />
-              {/* {loading === false && rooms <JoinedRooms rooms={rooms} />} */}
-              {/* <p>
-                {rooms.joined_rooms
-                  ? `${
-                      rooms.joined_rooms.length + rooms.public_rooms.length
-                    } channels`
-                  : null}
-              </p>
-              <div style={{ marginTop: `1rem` }}>
-                {rooms.joined_rooms &&
-                  rooms.joined_rooms.map((room, id) => {
-                    if (query === '') {
-                      return (
-                        <Div key={id}>
-                          <p>
-                            <Hash>#</Hash>
-                            {room.title}
-                          </p>
-                          <Joined>&#10003; joined</Joined>{' '}
-                          <Bull>&bull; {room.members} members</Bull>{' '}
-                          <Span>&bull; {room.unread} unread</Span>
-                          <Button className={`leave`}>leave</Button>
-                        </Div>
-                      )
-                    } else if (room.title.toLowerCase().includes(query)) {
-                      return (
-                        <Div key={id}>
-                          <p>
-                            <Hash>#</Hash>
-                            {room.title}
-                          </p>
-                          <Joined>&#10003; joined</Joined>{' '}
-                          <Bull>&bull; {room.members} members</Bull>{' '}
-                          <Span>&bull; {room.unread} unread</Span>
-                          <Button className={`leave`}>leave</Button>
-                        </Div>
-                      )
-                    }
-                    return null
-                  })}
-              </div>
-              {/* {console.log(rooms)} */}
-              {/* <div>
-                {rooms.public_rooms &&
-                  rooms.public_rooms.map((room, id) => {
-                    if (query === '') {
-                      return (
-                        <Div key={id}>
-                          <p>
-                            <Hash>#</Hash>
-                            {room.title}
-                          </p>
-                          <Bull> {room.members} members</Bull>{' '}
-                          <Span>&bull; {room.unread} unread</Span>
-                          <Button className={`join`}>join</Button>
-                        </Div>
-                      )
-                    } else if (room.title.toLowerCase().includes(query)) {
-                      return (
-                        <Div key={id}>
-                          <p>
-                            <Hash>#</Hash>
-                            {room.title}
-                          </p>
-                          <Bull> {room.members} members</Bull>{' '}
-                          <Span>&bull; {room.unread} unread</Span>
-                          <Button className={`join`}>join</Button>
-                        </Div>
-                      )
-                    }
-                    return null
-                  })}
-              </div> */}
             </Wrapper>
           </Content>
         </Overlay>
@@ -333,6 +247,8 @@ export const Sidebar = () => {
                 plugin
                 onTitleClick={() => setUrl(plugin.homepage_url)}
                 children={plugin.joined_rooms}
+                showAddButton={true}
+                onAddButtonClick={open}
               ></Dropdown>
             )}
           </Fragment>
