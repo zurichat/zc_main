@@ -12,6 +12,7 @@ const InputBox = ({
   //className = '',
   placeholder,
   name,
+  onFocus,
   required = true
 }) => {
   const ref = useRef(null)
@@ -48,6 +49,7 @@ const InputBox = ({
             value={value}
             required={required}
             onChange={e => setValue(e.target.value)}
+            onFocus={onFocus}
           />
 
           {/password/i.test(name) && (
