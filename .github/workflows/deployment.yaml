@@ -40,7 +40,9 @@ jobs:
             yarn install
           
       - name: checking current directory
-        run: pwd
+        run: |
+          cd zc_frontend
+          ls
             
       - name: copy build to server
         uses: wlixcc/SFTP-Deploy-Action@v1.0
