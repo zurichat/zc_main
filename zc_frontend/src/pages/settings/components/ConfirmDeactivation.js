@@ -1,13 +1,18 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 import { FaCheck } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 import styles from '../styles/ConfirmDeactivation.module.css'
 import SettingsNav from './SettingsNav'
 
+
+
 const ConfirmDeactivation = () => {
   const [wantToDeactivate, setWantToDeactivate] = useState(false)
   const history = useHistory()
+
+
   return (
     <>
       <SettingsNav />
