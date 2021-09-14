@@ -11,17 +11,25 @@
   margin-top: 15px;
 }
 
+.checkbox {
+  margin-top: -2px;
+}
+
 .os {
-  margin-left: 10px;
-  font-weight: 800;
-  font-size: 0.9rem;
+  font-weight: bold;
+  font-size: 12px;
+  font-style: normal;
+  position: relative;
+  line-height: 20px;
+  color: #3a3a3a;
 }
 
 .text {
-  margin-left: 42px;
-  font-size: 1rem;
-  width: 80%;
-  color: rgb(141, 137, 137);
+  font-size: 15px;
+  margin-left: 31px;
+  font-weight: 700;
+  color: #3a3a3a;
+  position: relative;
 }
 
 .direct {
@@ -29,66 +37,87 @@
   margin-top: 12px;
 }
 
+.radio {
+  margin-top: -2px;
+}
+
 .mention {
-  margin-left: 29px;
-  font-size: 0.9rem;
-  color: rgb(141, 137, 137);
+  font-size: 13px;
+  color: #3a3a3a;
+  font-weight: 500;
+  line-height: 20px;
+  font-style: normal;
+  position: relative;
+  margin-left: 18px;
 }
 
 .text2 {
-  margin-left: 42px;
-  font-size: 0.9rem;
-  line-height: 1.5rem;
-  color: rgb(141, 137, 137);
+  margin-left: 32px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #3a3a3a;
+  font-style: normal;
+  position: relative;
 }
 
 .theme1 {
-  width: 76%;
+  width: 87%;
   margin-top: 25px;
-  margin-left: 42px;
+  margin-left: 32px;
 }
 
 .theme2 {
-  width: 76%;
+  width: 87%;
   margin-top: 25px;
-  margin-left: 42px;
+  margin-left: 32px;
 }
 
 .customize {
-  border-top: 1px solid rgb(192, 186, 186);
+  border-top: 1px solid rgba(153, 153, 153, 0.5);
   margin-top: 30px;
-  margin-left: 42px;
-  width: 76%;
+  margin-left: 32px;
+  width: 87%;
 }
 
 .text3 {
   margin-top: 20px;
-  font-weight: 800;
-  font-size: 0.9rem;
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 20px;
+  color: #3a3a3a;
 }
 
 .custom {
-  font-size: 0.9rem;
-  color: rgb(141, 137, 137);
+  font-size: 13px;
+  color: #3a3a3a;
   margin-top: 17px;
+  font-weight: 500;
+  line-height: 20px;
+  font-style: normal;
 }
 
 .create {
-  font-size: 0.9rem;
+  font-size: 13px;
   color: #00b87c;
-  font-weight: 700;
+  font-weight: 600;
   margin-top: 12px;
+  line-height: 20px;
+  font-style: normal;
 }
 
 .true {
-  font-size: 0.9rem;
-  color: rgb(141, 137, 137);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  font-style: normal;
+  color: #999999;
   margin-top: 25px;
 }
 
 .set1 {
   display: flex;
-  margin-left: 42px;
+  margin-left: 32px;
   margin-top: 20px;
 }
 
@@ -106,27 +135,35 @@
 .all {
   display: flex;
   margin-top: 20px;
-  margin-left: 42px;
+  margin-left: 32px;
 }
 
 .show {
   margin-left: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  font-style: normal;
+  color: #333333;
 }
 
 .arrow {
-  margin-top: -2px;
+  margin-top: -5px;
 }
 
 .clean {
   margin-top: 20px;
-  margin-left: 42px;
-  font-size: 1rem;
-  color: rgb(141, 137, 137);
+  margin-left: 32px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  font-style: normal;
+  color: #999999;
 }
 
 .set2 {
   display: flex;
-  margin-left: 42px;
+  margin-left: 32px;
   margin-top: 20px;
 }
 
@@ -143,7 +180,7 @@
 
 .set3 {
   display: flex;
-  margin-left: 42px;
+  margin-left: 32px;
   margin-top: 20px;
 }
 
@@ -160,8 +197,8 @@
 
 .set4 {
   border-bottom: 1px solid rgb(192, 186, 186);
-  margin-left: 42px;
-  width: 76%;
+  margin-left: 32px;
+  width: 87%;
 }
 
 .bottom {
