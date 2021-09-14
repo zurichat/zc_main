@@ -39,18 +39,15 @@ jobs:
             cd zc_frontend
             yarn install
           
-      - name: checking current directory
-        run: |
-          cd zc_frontend
             
       - name: copy build to server
-        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        uses: Creepios/sftp-action@v1.0.1
         with:
           username: ${{ secrets.USERNAME }}
-          server: ${{ secrets.ZURI_MAIN_HOST }}
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          local_path: './build/*'
-          remote_path: '/var/www/zurichat/zuri.chat/zc_frontent/build'
-          args: '-o ConnectTimeout=5'
+          host: ${{ secrets.ZURI_MAIN_HOST }}
+          password: ${{ secrets.PASSWORD }}
+          localPath: './zc_frontend/build/*'
+          remotePath: '/var/www/zurichat/zuri.chat/zc_frontent/build'
+        
 
              
