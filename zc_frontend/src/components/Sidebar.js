@@ -61,7 +61,7 @@ export const Sidebar = () => {
     return values
   }
 
-  const sidebarApi = async () => {
+  const sidebarApi = async url => {
     setLoading(true)
     try {
       const res = await axios.get(
@@ -73,12 +73,12 @@ export const Sidebar = () => {
     }
   }
 
-  const filteredJoinedRooms = rooms.joined_rooms
+  const filteredJoinedRooms = rooms?.joined_rooms
     ? rooms.joined_rooms.filter(room =>
         room.title.toLowerCase().includes(query)
       )
     : null
-  const filteredPublicRooms = rooms.joined_rooms
+  const filteredPublicRooms = rooms?.joined_rooms
     ? rooms.public_rooms.filter(room =>
         room.title.toLowerCase().includes(query)
       )
@@ -211,7 +211,6 @@ export const Sidebar = () => {
         <Overlay isOpen={showDialog} onDismiss={close}>
           <Content aria-label="room-list">
             <CloseButton className="close-button" onClick={close}>
-              {/* <VisuallyHidden>Close</VisuallyHidden> */}
               <Span aria-hidden>×</Span>
             </CloseButton>
             <AuthInputBox
@@ -223,79 +222,6 @@ export const Sidebar = () => {
               {loading && <p>Loading..</p>}
               <JoinedRooms rooms={filteredJoinedRooms} />
               <PublicRooms rooms={filteredPublicRooms} />
-              {/* {loading === false && rooms <JoinedRooms rooms={rooms} />} */}
-              {/* <p>
-                {rooms.joined_rooms
-                  ? `${
-                      rooms.joined_rooms.length + rooms.public_rooms.length
-                    } channels`
-                  : null}
-              </p>
-              <div style={{ marginTop: `1rem` }}>
-                {rooms.joined_rooms &&
-                  rooms.joined_rooms.map((room, id) => {
-                    if (query === '') {
-                      return (
-                        <Div key={id}>
-                          <p>
-                            <Hash>#</Hash>
-                            {room.title}
-                          </p>
-                          <Joined>&#10003; joined</Joined>{' '}
-                          <Bull>&bull; {room.members} members</Bull>{' '}
-                          <Span>&bull; {room.unread} unread</Span>
-                          <Button className={`leave`}>leave</Button>
-                        </Div>
-                      )
-                    } else if (room.title.toLowerCase().includes(query)) {
-                      return (
-                        <Div key={id}>
-                          <p>
-                            <Hash>#</Hash>
-                            {room.title}
-                          </p>
-                          <Joined>&#10003; joined</Joined>{' '}
-                          <Bull>&bull; {room.members} members</Bull>{' '}
-                          <Span>&bull; {room.unread} unread</Span>
-                          <Button className={`leave`}>leave</Button>
-                        </Div>
-                      )
-                    }
-                    return null
-                  })}
-              </div>
-              {/* {console.log(rooms)} */}
-              {/* <div>
-                {rooms.public_rooms &&
-                  rooms.public_rooms.map((room, id) => {
-                    if (query === '') {
-                      return (
-                        <Div key={id}>
-                          <p>
-                            <Hash>#</Hash>
-                            {room.title}
-                          </p>
-                          <Bull> {room.members} members</Bull>{' '}
-                          <Span>&bull; {room.unread} unread</Span>
-                          <Button className={`join`}>join</Button>
-                        </Div>
-                      )
-                    } else if (room.title.toLowerCase().includes(query)) {
-                      return (
-                        <Div key={id}>
-                          <p>
-                            <Hash>#</Hash>
-                            {room.title}
-                          </p>
-                          <Bull> {room.members} members</Bull>{' '}
-                          <Span>&bull; {room.unread} unread</Span>
-                          <Button className={`join`}>join</Button>
-                        </Div>
-                      )
-                    }
-                    return null
-                  })}
-              </div> */}
             </Wrapper>
           </Content>
         </Overlay>
@@ -321,6 +247,8 @@ export const Sidebar = () => {
                 plugin
                 onTitleClick={() => setUrl(plugin.homepage_url)}
                 children={plugin.joined_rooms}
+                showAddButton={true}
+                onAddButtonClick={open}
               ></Dropdown>
             )}
           </Fragment>
