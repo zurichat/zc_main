@@ -46,7 +46,7 @@ const Index = () => {
             setValue={setConfirmPassword}
             // error={error}
           />
-           <div className={`${styles.tos}`}>
+          <div className={`${styles.tos}`}>
             <input
               className={`${styles.checkBox}`}
               name="tos"
