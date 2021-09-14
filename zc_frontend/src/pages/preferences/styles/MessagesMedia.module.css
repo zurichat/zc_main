@@ -3,12 +3,15 @@
 .msgCon {
   margin-top: 54px;
   margin-left: 50px;
-  width: 190%;
+  width: 165%;
 }
 
 .title {
-  font-weight: 550;
-  font-size: 1rem;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  font-style: normal;
+  color: #242424;
 }
 
 .clean {
@@ -18,22 +21,27 @@
 
 .cln {
   margin-left: 10px;
-  font-size: 0.8rem;
-  color: rgb(141, 137, 137);
+  font-size: 13px;
+  color: #3a3a3a;
+  font-style: normal;
+  line-height: 14px;
 }
 
 .compt {
   margin-left: 10px;
-  font-size: 0.8rem;
-  color: rgb(141, 137, 137);
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 15px;
+  color: #3a3a3a;
 }
 
 .radio {
-  margin-top: -3px;
+  margin-top: -5px;
 }
 
 .radio2 {
-  margin-top: -3px;
+  margin-top: -5px;
 }
 
 .compact {
@@ -42,26 +50,32 @@
 }
 
 .text {
-  font-size: 0.8rem;
+  font-size: 13px;
+  line-height: 15px;
+  font-style: normal;
+  font-weight: normal;
   margin-top: 6px;
-  color: rgb(141, 137, 137);
+  color: #3a3a3a;
 }
 
 .theme11 {
-  width: 83%;
+  width: 90%;
   margin-top: 15px;
 }
 
 .bottom {
   margin-top: 20px;
   margin-bottom: 20px;
-  border-bottom: 1px solid rgb(192, 186, 186);
-  width: 83%;
+  border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+  width: 90%;
 }
 
 .name {
-  font-weight: 550;
-  font-size: 1rem;
+  font-weight: bold;
+  font-size: 15px;
+  font-style: normal;
+  line-height: 20px;
+  color: #242424;
 }
 
 .full {
@@ -71,22 +85,28 @@
 
 .display {
   margin-left: 10px;
-  font-size: 0.8rem;
-  color: rgb(141, 137, 137);
+  font-size: 13px;
+  color: #3a3a3a;
+  font-weight: normal;
+  line-height: 20px;
+  font-style: normal;
 }
 
 .jst {
   margin-left: 10px;
-  font-size: 0.8rem;
-  color: rgb(141, 137, 137);
+  font-size: 13px;
+  color: #3a3a3a;
+  font-weight: normal;
+  line-height: 20px;
+  font-style: normal;
 }
 
 .radio3 {
-  margin-top: -3px;
+  margin-top: -2px;
 }
 
 .radio4 {
-  margin-top: -3px;
+  margin-top: -2px;
 }
 
 .just {
@@ -95,29 +115,32 @@
 }
 
 .theme12 {
-  width: 83%;
+  width: 90%;
   margin-top: 15px;
 }
 
 .change {
   margin-top: 10px;
-  font-size: 0.8rem;
-  color: rgb(141, 137, 137);
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+  color: #999999;
 }
 
 .change p {
   color: #00b87c;
-  margin-top: -19px;
-  margin-left: 244px;
-  font-weight: 700;
-  font-size: 0.8rem;
+  margin-top: -20px;
+  margin-left: 248px;
+  font-weight: normal;
+  font-size: 13px;
 }
 
 .bottom2 {
   margin-top: 20px;
   margin-bottom: 20px;
-  border-bottom: 1px solid rgb(192, 186, 186);
-  width: 83%;
+  border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+  width: 90%;
 }
 
 .info {
@@ -126,9 +149,12 @@
 }
 
 .current {
-  margin-left: 10px;
-  font-size: 0.8rem;
-  color: rgb(141, 137, 137);
+  margin-left: -10px;
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
 }
 
 .time {
@@ -137,9 +163,12 @@
 }
 
 .hour {
-  margin-left: 10px;
-  font-size: 0.8rem;
-  color: rgb(141, 137, 137);
+  margin-left: -10px;
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
 }
 
 .hexa {
@@ -148,14 +177,20 @@
 }
 
 .color {
-  margin-left: 10px;
-  font-size: 0.8rem;
-  color: rgb(141, 137, 137);
+  margin-left: -10px;
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
 }
 
 .add {
-  font-weight: 550;
-  font-size: 1rem;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 20px;
+  font-style: normal;
+  color: #333333;
 }
 
 .checkbox {
@@ -173,26 +208,34 @@
 .bottom3 {
   margin-top: 20px;
   margin-bottom: 20px;
-  border-bottom: 1px solid rgb(192, 186, 186);
-  width: 83%;
+  border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+  width: 90%;
 }
 
 .emoji {
-  font-weight: 550;
-  font-size: 1rem;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  font-style: normal;
+  color: #333333;
 }
 
 .tone {
   margin-top: 10px;
-  font-size: 1rem;
-  color: rgb(141, 137, 137);
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
 }
 
 .choose {
   margin-top: 10px;
-  font-size: 0.8rem;
-  line-height: 1.4rem;
-  color: rgb(141, 137, 137);
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
 }
 
 .hands {
@@ -201,41 +244,41 @@
 }
 
 .theme13 {
-  width: 5%;
+  width: 6.5%;
   height: 6vh;
   cursor: pointer;
 }
 
 .theme14 {
-  width: 5%;
+  width: 6.5%;
   height: 6vh;
   margin-left: 19px;
   cursor: pointer;
 }
 
 .theme15 {
-  width: 5%;
+  width: 6.5%;
   height: 6vh;
   margin-left: 19px;
   cursor: pointer;
 }
 
 .theme16 {
-  width: 5%;
+  width: 6.5%;
   height: 6vh;
   margin-left: 19px;
   cursor: pointer;
 }
 
 .theme17 {
-  width: 5%;
+  width: 6.5%;
   height: 6vh;
   margin-left: 19px;
   cursor: pointer;
 }
 
 .theme18 {
-  width: 5%;
+  width: 6.5%;
   height: 6vh;
   margin-left: 19px;
   cursor: pointer;
@@ -247,9 +290,12 @@
 }
 
 .plain {
-  margin-left: 10px;
-  font-size: 0.8rem;
-  color: rgb(141, 137, 137);
+  margin-left: -10px;
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
 }
 
 .jumb {
@@ -258,9 +304,12 @@
 }
 
 .jumbomoji {
-  margin-left: 10px;
-  font-size: 0.8rem;
-  color: rgb(141, 137, 137);
+  margin-left: -10px;
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
 }
 
 .checkbox4 {
@@ -273,32 +322,40 @@
 
 .versions {
   margin-top: 10px;
-  font-size: 0.8rem;
-  line-height: 1.4rem;
-  color: rgb(141, 137, 137);
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
 }
 
 .example {
   margin-top: 10px;
-  font-size: 0.8rem;
-  color: rgb(141, 137, 137);
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
 }
 
 .theme19 {
-  width: 83%;
+  width: 90%;
   margin-top: 15px;
 }
 
 .bottom4 {
   margin-top: 20px;
   margin-bottom: 20px;
-  border-bottom: 1px solid rgb(192, 186, 186);
-  width: 83%;
+  border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+  width: 90%;
 }
 
 .media {
-  font-weight: 550;
-  font-size: 1rem;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  font-style: normal;
+  color: #333333;
 }
 
 .images {
@@ -307,9 +364,12 @@
 }
 
 .files {
-  margin-left: 10px;
-  font-size: 0.8rem;
-  color: rgb(141, 137, 137);
+  margin-left: -10px;
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
 }
 
 .websites {
@@ -318,9 +378,12 @@
 }
 
 .linked {
-  margin-left: 10px;
-  font-size: 0.8rem;
-  color: rgb(141, 137, 137);
+  margin-left: -10px;
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
 }
 
 .checkbox6 {
@@ -334,13 +397,15 @@
 .larger {
   display: flex;
   margin-top: 10px;
-  margin-left: 25px;
 }
 
 .than {
-  margin-left: 10px;
-  font-size: 0.8rem;
-  color: rgb(141, 137, 137);
+  margin-left: -10px;
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
 }
 
 .checkbox8 {
@@ -353,9 +418,12 @@
 }
 
 .of {
-  margin-left: 10px;
-  font-size: 0.8rem;
-  color: rgb(141, 137, 137);
+  margin-left: -10px;
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
 }
 
 .checkbox9 {
@@ -365,26 +433,31 @@
 .bottom5 {
   margin-top: 20px;
   margin-bottom: 20px;
-  border-bottom: 1px solid rgb(192, 186, 186);
-  width: 83%;
+  border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+  width: 90%;
 }
 
 .emails {
-  font-weight: 550;
-  font-size: 1rem;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  font-style: normal;
+  color: #333333;
 }
 
 .upload {
   margin-top: 10px;
-  font-size: 0.8rem;
-  line-height: 1.4rem;
-  color: rgb(141, 137, 137);
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
 }
 
 .button {
   border-radius: 6px;
   background-color: white;
-  color: rgb(141, 137, 137);
+  color: #999999;
   border: 1px solid rgb(54, 54, 54);
   margin-top: 24px;
   margin-bottom: 30px;
@@ -396,5 +469,5 @@
   margin-left: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
-  font-size: 0.8rem;
+  font-size: 13px;
 }
