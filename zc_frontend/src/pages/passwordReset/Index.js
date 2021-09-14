@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import authBg from '../../pages/images/backg.svg'
 import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
@@ -58,8 +59,8 @@ const Index = () => {
             />
             <span className={`${styles.tosText}`}>
               I agree to Zurichat's {''}
-              <a href="/">terms of services{''} </a>&
-              <a href="/"> {''}privacy</a>
+              <Link to="/">terms of services{''} </Link>&
+              <Link to="/"> {''}privacy</Link>
             </span>
           </div>
         </FormWrapper>
