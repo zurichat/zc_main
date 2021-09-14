@@ -9,7 +9,7 @@ const InputBox = ({
   value,
   error,
   setValue,
-  className = '',
+  //className = '',
   placeholder,
   name,
   required = true
