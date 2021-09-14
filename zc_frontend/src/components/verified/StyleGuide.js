@@ -39,12 +39,7 @@ const StyleGuide = () => {
       <FloatingButton />
       <FloatingButton disabled />
       <FloatingButton />
-      {/* <P >This is the test site</P>
-<p className="subtext">This is the test site</p>
-<p className="small_text">This is the test site</p>
-<p className="header_1">This is the test site</p>
-<p className="header_2">This is the test site</p>
-<p className="normal_text">This is the test site</p> */}
+
     </>
   )
 }

@@ -47,7 +47,8 @@ import DataApi from './pages/api-docs/components/data'
 import PluginApi from './pages/api-docs/components/plugin'
 
 import '@reach/dialog/styles.css'
-import StyleGuide from './components/verified/StyleGuide'
+import StyleGuide from './components/verified'
+import Test from './pages/test'
 
 const App = () => (
   <TopbarProvider>
@@ -173,8 +174,11 @@ const App = () => (
         <Route path="/account-deactivated">
           <AccDeactivated />
         </Route>
-        <Route path="/style-guide">
+        <Route exact path="/style-guide">
           <StyleGuide />
+        </Route>
+        <Route path="/test">
+          <Test/>
         </Route>
       </Switch>
     </BrowserRouter>
