@@ -42,14 +42,13 @@ jobs:
       - name: checking current directory
         run: |
           cd zc_frontend
-          ls
             
       - name: copy build to server
         uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
           username: ${{ secrets.USERNAME }}
           server: ${{ secrets.ZURI_MAIN_HOST }}
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh_private_key: ${{ secrets.PASSWORD }}
           local_path: './build/*'
           remote_path: '/var/www/react-app/'
           args: '-o ConnectTimeout=5'
