@@ -8,6 +8,7 @@ import styles from '../../styles/AuthFormElements.module.css'
 const Index = () => {
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
+  const [tos, setTos] = useState(false)
 
   return (
     <main id={styles.authPageWrapper}>
@@ -19,7 +20,7 @@ const Index = () => {
       </aside>
       <section id={styles.authFormContainer}>
         <FormWrapper
-          header="Rest Password"
+          header="Reset Password"
           subHeader="Create a new password for your account"
           submitButtonName="Continue"
           password={password}
@@ -45,6 +46,22 @@ const Index = () => {
             setValue={setConfirmPassword}
             // error={error}
           />
+           <div className={`${styles.tos}`}>
+            <input
+              className={`${styles.checkBox}`}
+              name="tos"
+              type="checkbox"
+              value={tos}
+              onClick={() => {
+                setTos(!tos)
+              }}
+            />
+            <span className={`${styles.tosText}`}>
+              I agree to Zurichat's {''}
+              <a href="/">terms of services{''} </a>&
+              <a href="/"> {''}privacy</a>
+            </span>
+          </div>
         </FormWrapper>
       </section>
     </main>
