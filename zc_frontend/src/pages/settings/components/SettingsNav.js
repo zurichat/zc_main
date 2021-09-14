@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+
+import { TopbarContext } from '../../../context/Topbar'
 
 import styles from '../styles/settingsNav.module.css'
 import { BiMenuAltRight } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 import zuri from '../../images/zuri.svg'
+import StatusBadge from './../../../components/StatusBadge'
 
 const SettingsNav = () => {
   const [menu, setMenu] = useState(false)
-
-  // THE SECTION OF THE STYLE MENU
-  // const styleMenu = {
-  //   left: menu ? 0 : '-100%'
-  // }
+  const state = useContext(TopbarContext)
+  const [active] = state.presence
 
   return (
     <div className={styles.containers}>
@@ -46,14 +46,20 @@ const SettingsNav = () => {
         </div>
 
         <div className={styles.profile}>
-          <div className={styles.status}>4️⃣</div>
+          <div className={styles.status}>
+            <StatusBadge />
+          </div>
           <div className={styles.pImage}>
             <img
               src="/profilepic.png"
               alt="Profile"
               className={styles.profileImg}
             />
-            <div className={styles.circles}></div>
+            {active ? (
+              <div className={styles.circles}></div>
+            ) : (
+              <div className={styles.circleAway}></div>
+            )}
           </div>
         </div>
       </div>
