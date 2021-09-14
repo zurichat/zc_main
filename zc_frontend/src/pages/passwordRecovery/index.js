@@ -20,10 +20,9 @@ const Index = () => {
       <section id={styles.authFormContainer}>
         <FormWrapper
           header="Recover Password"
-          subHeader="Don't fret!Fill in the details, and your account wil be all yours again."
+          subHeader="Don't fret! Fill in the details, and your account wil be all yours again."
           email={email}
           username={username}
-          submitButtonName="Continue"
           // handleSubmit={handleSubmit}
         >
           <AuthInputBox
