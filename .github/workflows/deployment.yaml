@@ -48,7 +48,7 @@ jobs:
         with:
           username: ${{ secrets.USERNAME }}
           server: ${{ secrets.ZURI_MAIN_HOST }}
-          ssh_private_key: ${{ secrets.PASSWORD }}
+          ssh_private_key: ${{ secrets.PRIVATE_KEY }}
           local_path: './build/*'
           remote_path: '/var/www/zurichat/zuri.chat/zc_frontent/build'
           args: '-o ConnectTimeout=5'
