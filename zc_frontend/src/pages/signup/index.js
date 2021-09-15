@@ -1,58 +1,39 @@
 import React, { useState } from 'react'
+import { withRouter } from 'react-router-dom'
 // import { Link } from 'react-router-dom'
-// import authBg1 from '../../pages/images/backg.svg'
 import authBg1 from '../../assets/auth_images/auth_bg1.svg'
 import authBg2 from '../../assets/auth_images/auth_bg2.svg'
 import authBg3 from '../../assets/auth_images/auth_bg3.svg'
 import authBg4 from '../../assets/auth_images/auth_bg4.svg'
-import { withRouter } from 'react-router-dom'
+import authBg5 from '../../assets/auth_images/auth_bg5.svg'
 import AuthInputBox from '../../components/AuthInputBox'
 import FormWrapper from '../../components/AuthFormWrapper'
 import styles from '../../styles/AuthFormElements.module.css'
 import axios from 'axios'
-// import styles from './styles/SignUp.module.css'
-//import GoogleLogin from 'react-google-login'
+
+import EmailVerification from './email-verify'
 
 const Signup = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  // const [confirmPassword, setConfirmPassword] = useState('')
-  // const [confirmPassword, setConfirmPassword] = useState('')
   const [tos, setTos] = useState(false)
   // const { error, setError } = useState('')
+  const [showDialog, setShowDialog] = useState(false)
 
-  const images = [authBg1, authBg2, authBg3, authBg4]
+  // Background Images
+  const images = [authBg1, authBg2, authBg3, authBg4, authBg5]
   const [currentImage, setcurrentImage] = useState(
-    Math.floor(Math.random() * 3)
+    Math.floor(Math.random() * 4)
   )
-  // console.log(images)
 
+  // To Display Random Aside Background Image
   const displayImage = () => {
     let i = currentImage
     i >= images.length - 1 ? (i = 0) : i++
     setcurrentImage(i)
     console.log(images[i], i)
-
-    // for(i=0; i<images.length; i++) {
-    //     setImage(image=>images[i])
-    // }
   }
-
-  //   setInterval(()=>{
-  //     // setImage(image=>images[0])
-  //   for(let i=0; i<images.length; i++){
-  //     if(i>images.length){
-  //       i=0
-  //       continue;
-  //     }
-  //     setImage(image=>images[i])
-  //     // console.log(image)
-  //     // if(i===images.length){
-  //     //   i=0
-  //     // }
-  //   }
-  // },5000)
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -79,6 +60,7 @@ const Signup = () => {
       .then(response => {
         const { data, message } = response.data
         console.log(response.data)
+        setShowDialog(true)
 
         //Store token in localstorage
         sessionStorage.setItem('user_id', data.InsertedId)
@@ -92,6 +74,7 @@ const Signup = () => {
       })
       .catch(error => {
         const { data } = error.response
+        setShowDialog(false)
 
         //Render error message to the user
         alert(data.message) //Change this when there is a design
@@ -100,10 +83,11 @@ const Signup = () => {
 
   return (
     <main id={styles.authPageWrapper}>
+      {showDialog && <EmailVerification />}
       <aside id={styles.authAsideContainer} className={styles.display_none}>
         <div id={styles.authImageWrapper}>
           <img src={images[currentImage]} alt="backgroundImage" />
-          <div id={styles.aside_txt}></div>
+          {/* <div id={styles.aside_txt}></div> */}
         </div>
       </aside>
       <section id={styles.authFormContainer}>
@@ -174,6 +158,7 @@ const Signup = () => {
               onClick={() => {
                 setTos(!tos)
               }}
+              onFocus={displayImage}
             />
             <span className={`${styles.tosText}`}>
               I agree to Zurichat's {''}
