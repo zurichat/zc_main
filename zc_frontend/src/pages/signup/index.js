@@ -23,7 +23,7 @@ const Signup = () => {
   // const [confirmPassword, setConfirmPassword] = useState('')
   const [tos, setTos] = useState(false)
   // const { error, setError } = useState('')
-  const [showDialog, setShowDialog] = useState(true)
+  const [showDialog, setShowDialog] = useState(false)
 
   const images = [authBg1, authBg2, authBg3, authBg4]
   const [currentImage, setcurrentImage] = useState(
