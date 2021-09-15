@@ -114,7 +114,7 @@ p {
 
 .Header {
   text-align: center;
-  background-image: url(./red1.jpg);
+  background-image: url(../components/images/red1.jpg);
   background-repeat: no-repeat;
   background-position: center;
   color: white;
