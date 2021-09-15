@@ -10,6 +10,7 @@ import LanguageAndRegion from '../pages/preferences/components/LanguageAndRegion
 import styles from '../pages/preferences/styles/NotificationPreference.module.css'
 import { ProfileContext } from '../context/ProfileModal'
 
+
 const Preferences = () => {
   const { sideBar } = useContext(ProfileContext)
 
