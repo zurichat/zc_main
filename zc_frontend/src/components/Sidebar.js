@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useContext, Fragment, useState, useEffect } from 'react'
-// import useSWR from 'swr'
+import useSWR from 'swr'
 import { URLContext } from '../context/Url'
 import { PluginContext } from '../context/Plugins'
 
@@ -23,10 +23,10 @@ import addIcon from '../pages/test/assets/icons/add-icon.svg'
 
 // import "@reach/dialog/styles.css";
 
-// const fetcher = url => fetch(url).then(res => res.json())
+const fetcher = url => fetch(url).then(res => res.json())
 
 export const Sidebar = () => {
-  // const { data: channelsData } = useSWR('/api/plugin/channels', fetcher)
+  const { data: channelsData } = useSWR('/api/plugin/channels', fetcher)
   // const { data: messagesData } = useSWR('/api/plugin/messages', fetcher)
   // const { data: plugins } = useSWR('/api/plugin/list', fetcher)
   // const { data: organization } = useSWR('https://api.zuri.chat/organizations/6133c5a68006324323416896', fetcher)
@@ -42,8 +42,8 @@ export const Sidebar = () => {
   const close = () => setShowDialog(false)
   const [rooms, setRooms] = useState({})
   const [query, setQuery] = useState('')
-  // const [sort,setSort] = useState('')
   const [loading, setLoading] = useState(false)
+  const [availablePlugins, setAvailablePlugins] = useState()
   // const [error, setError] = useState('')
 
   const sortRooms = (val, type) => {
@@ -80,6 +80,24 @@ export const Sidebar = () => {
     }
   }
 
+  const getAllPlugins = async url => {
+    setLoading(true)
+    try {
+      const res = await axios.get(`https://api.zuri.chat/marketplace/plugins`)
+      return res.data
+    } catch (err) {
+      return console.log(err)
+    }
+  }
+
+  // const SeeAvailablePlugins = ( availablePlugins ) => {
+  //   return (<ul>
+  //     {availablePlugins.map(plugins => (
+  //       <p>{plugins}</p>
+  //     ))}
+  //   </ul>)
+  // }
+
   const filteredJoinedRooms = rooms?.joined_rooms
     ? rooms.joined_rooms.filter(room =>
         room.title.toLowerCase().includes(query)
@@ -97,10 +115,15 @@ export const Sidebar = () => {
         setRooms(res)
         setLoading(false)
 
-        console.log(sortRooms(res.public_rooms, 'ztoa'))
-        console.log(sortRooms(res.public_rooms, 'atoz'))
-        console.log(sortRooms(res.public_rooms, 'minmax'))
-        console.log(sortRooms(res.public_rooms, 'maxmin'))
+        // console.log(sortRooms(res.public_rooms, 'ztoa'))
+        // console.log(sortRooms(res.public_rooms, 'atoz'))
+        // console.log(sortRooms(res.public_rooms, 'minmax'))
+        // console.log(sortRooms(res.public_rooms, 'maxmin'))
+      })
+
+      await getAllPlugins().then(async res => {
+        setAvailablePlugins(res.data)
+        console.log(res.data)
       })
     })()
   }, [])
@@ -130,7 +153,6 @@ export const Sidebar = () => {
               .get(prefixLink(oURL.toString()))
               .then(res => {
                 const $ = cheerio.load(res.data)
-                console.log(res.data)
                 // append stylesheet
                 $(`link[rel="stylesheet"]`).each(function () {
                   const link = document.createElement('link')
@@ -211,7 +233,7 @@ export const Sidebar = () => {
             alt="Organisation settings button"
           />
         </div>
-        <Overlay isOpen={showDialog} onDismiss={close}>
+        {/* <Overlay isOpen={showDialog} onDismiss={close}>
           <Content aria-label="room-list">
             <CloseButton className="close-button" onClick={close}>
               <Span aria-hidden>×</Span>
@@ -225,6 +247,31 @@ export const Sidebar = () => {
               {loading && <p>Loading..</p>}
               <JoinedRooms rooms={filteredJoinedRooms} />
               <PublicRooms rooms={filteredPublicRooms} />
+            </Wrapper>
+          </Content>
+        </Overlay>*/}
+        <Overlay isOpen={showDialog} onDismiss={close}>
+          <Content aria-label="room-list">
+            <CloseButton className="close-button" onClick={close}>
+              <Span aria-hidden>×</Span>
+            </CloseButton>
+            <AuthInputBox
+              value={query}
+              setValue={setQuery}
+              placeholder="🔍 Search for plugins"
+            />
+            <Wrapper>
+              {loading && <p>Loading..</p>}
+              <p>
+                {availablePlugins &&
+                  availablePlugins.map((plugs, id) => {
+                    return (
+                      <div key={id}>
+                        <p>{plugs.name}</p>
+                      </div>
+                    )
+                  })}
+              </p>
             </Wrapper>
           </Content>
         </Overlay>
@@ -261,7 +308,7 @@ export const Sidebar = () => {
           <img src={pluginIcon} alt="icon" />
           <p>Plugins</p>{' '}
           <ClickButton
-            // onClick={onAddButtonClick}
+            onClick={open}
             className={`${styles.addButton}`}
             src={addIcon}
             alt="Add button"
@@ -269,7 +316,7 @@ export const Sidebar = () => {
           />
         </Item>
       </div>
-      {/* <Dropdown onAddButtonClick={open} showAddButton={true} title="Channels">
+      <Dropdown onAddButtonClick={open} showAddButton={true} title="Channels">
         {channelsData &&
           channelsData.channels.map((channel, index) => (
             <Fragment key={index}>
@@ -277,7 +324,7 @@ export const Sidebar = () => {
               {channel.name}
             </Fragment>
           ))}
-      </Dropdown> */}
+      </Dropdown>
       {plugins.length > 0 &&
         plugins.map((plugin, i) => (
           <Fragment key={i}>
