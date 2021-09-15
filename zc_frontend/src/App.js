@@ -2,15 +2,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from './pages/home'
 import Login from './pages/login'
 import SignUp from './pages/signup'
-import Blog from './pages/blog'
-import News from './pages/news'
-import EmailNotification from './components/EmailNotification'
-import EmailConfirmation from './components/EmailConfirmation'
 import './styles/globals.css'
 import LandingPage from './components/LandingPage'
 import EmailVerification from './pages/email-verify'
-import './styles/globals.css'
-import InvitationAcceptance from './components/InvitationAcceptance'
 import Security from './pages/security'
 import Features from './pages/features'
 import Resources from './pages/resources'
@@ -126,21 +120,14 @@ const App = () => (
           underline
         />
       </Route>
-      <Route path="components">
-        <InvitationAcceptance />
-      </Route>
+
       <Route path="searchSuggestion">
         <SearchSuggestion />
       </Route>
       <Route path="/documentation" exact>
         <ApiDocs />
       </Route>
-      <Route path="/EmailNotification">
-        <EmailNotification />
-      </Route>
-      <Route path="/EmailConfirmation">
-        <EmailConfirmation />
-      </Route>
+
     </Switch>
   </BrowserRouter>
 )

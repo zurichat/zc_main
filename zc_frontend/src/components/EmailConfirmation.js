@@ -1,9 +1,8 @@
 import React from 'react'
-import chatIcon from '../images/chatIcon.svg'
-import icon from '../components/images/img.png'
+import chatIcon from'../components/images/img.png'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button } from 'react-bootstrap'
-import './EmailConfirmation.css'
+import '../styles/EmailConfirmation.css'
 
 function EmailConnfirmation() {
   return (

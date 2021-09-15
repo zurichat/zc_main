@@ -64,7 +64,7 @@ export const Sidebar = () => {
       </Dropdown>
       {/* button for adding invites */}
       <div className={styles.buttonstyle}>
-        <button onClick={() => setShow(true)}>Send Invite</button>
+        <button onClick={() => setShow(true)}>Add Teammates</button>
         <Modal onClose={() => setShow(false)} show={show} />
       </div>
     </div>

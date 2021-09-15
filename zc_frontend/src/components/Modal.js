@@ -1,5 +1,5 @@
 import React from 'react'
-import './Modal.css'
+import '../styles/Modal.css'
 
 function Modal({ closeModal }) {
   return (
@@ -20,9 +20,9 @@ function Modal({ closeModal }) {
         </div>
 
         <div className="footer">
-          <a href="#">
+          <a href="_#">
             {' '}
-            <img src="arrow.png" />{' '}
+            <img src="arrow.png" alt="img"/>{' '}
           </a>{' '}
           <h4 className="see"> See previous invites </h4>
           <button id="sendBtn">Send more invites</button>
