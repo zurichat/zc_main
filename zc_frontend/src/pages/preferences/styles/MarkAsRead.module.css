@@ -1,14 +1,11 @@
-.body::-webkit-scrollbar {
-  display: none;
-  background: #ffffff;
-}
+
 
 .container {
   width: 250%;
-  margin: 60px 50px 20px;
+  margin: 65px 55px 20px;
 }
 
-h5 {
+.subhead {
   font-family: Lato;
   font-size: 16px;
   font-style: normal;
@@ -17,9 +14,10 @@ h5 {
   letter-spacing: 0em;
 }
 
-label,
-.thirdSection li,
-.thirdSection p {
+.option,
+.markAll,
+.shortcut,
+.shortcutP {
   font-family: Lato;
   font-size: 12px;
   font-style: normal;
@@ -30,18 +28,74 @@ label,
   color: #999999;
 }
 
-label {
+.option {
   margin-bottom: 10px;
   margin-left: 8px;
 }
 
-.thirdSection li {
+/* .markAll {
+  margin-bottom: 20px;
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.markAll .prompt {
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 17px;
+  width: 17px;
+  background-color: #eee;
+
+}
+
+.markAll .prompt:checked ~ .checkmark {
+  background-color: #00b87c;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.markAll .prompt:checked ~ .checkmark:after {
+  display: block;
+}
+
+.markAll .checkmark:after {
+left: 5px;
+  top: 3px;
+  width: 6px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+} */
+
+.shortcut {
   margin-left: 23px;
   margin-bottom: 15px;
   list-style-type: disc;
 }
 
-.thirdSection p {
+.shortcutP {
   margin-top: 20px;
 }
 
@@ -60,10 +114,9 @@ label {
   margin: 3px;
 }
 
-
-.firstSection input[type='radio']:after {
-  width: 15px;
-  height: 16px;
+/* .viewChannel:after {
+  width: 18px;
+  height: 18px;
   border-radius: 15px;
   top: -2px;
   left: -1px;
@@ -75,25 +128,65 @@ label {
   border: 2px solid white;
 }
 
-.firstSection input[type='radio']:checked:after {
-  width: 15px;
-  height: 15px;
+.viewChannel:checked:after {
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  top: -2px;
-  left: -1px;
+  top: -5px;
+  left: 1px;
   position: relative;
-  background-color: #00B87C;
+  background-color: #00b87c;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid #d1d3d1;
+} */
+
+/* .prompt:after {
+  width: 16px;
+  height: 16px;
+  top: -3px;
+  left: -2px;
+  position: relative;
+  background-color: #d1d3d1;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.prompt:checked ~ .checkmark:after {
+  display: block;
+}
+
+.prompt:checked:after {
+  width: 16px;
+  height: 16px;
+  top: -3px;
+  left: -2px;
+  position: relative;
+  background-color: #00b87c;
   content: '';
   display: inline-block;
   visibility: visible;
   border: 2px solid #d1d3d1;
 }
 
-
-/* .secondSection input[type='checkbox']:after {
-
-}
-
-.secondSection input[type='checkbox']:after {
-
+.prompt .checkmark:after {
+  left: 6px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid red;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 } */
+
