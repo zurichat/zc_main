@@ -52,7 +52,7 @@ jobs:
           host: ${{ secrets.ZURI_MAIN_HOST }}
           password: ${{ secrets.PASSWORD }}
           localPath: './zc_frontend/build/'
-          remotePath: '/var/www/zurichat/zuri.chat/zc_frontent/build'
+          remotePath: '/var/www/zurichat/zuri.chat/zc_frontend/build'
         
       - name: restart pm2
         uses: appleboy/ssh-action@master
@@ -62,7 +62,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             pm2 list
-            pm2 restart 1
+            pm2 restart 0
         
 
              
