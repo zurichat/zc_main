@@ -12,9 +12,10 @@ import { ProfileContext } from '../context/ProfileModal'
 import Preferences from './Preferences'
 import EditProfile from './EditProfile'
 import MembersModal from './MembersModal'
+import Downloads from './Downloads'
 import PauseNotification from './PauseNotification'
 
-const TopbarModal = () => {
+const TopbarModal = ({ members }) => {
   const { toggleModalState, toggleProfileState } = useContext(ProfileContext)
 
   const state = useContext(TopbarContext)
@@ -22,7 +23,8 @@ const TopbarModal = () => {
   const [active, setActive] = state.presence
   const [showStatus] = state.status
   const [showMembersModal] = state.modal
-  const { onEmojiClick, openStatus, closeStatus, modalRef } = state
+  const { onEmojiClick, openStatus, closeStatus, modalRef, closeMembersModal } =
+    state
   const [modal, setModal] = useState('')
   const [pause, setPause] = useState(false)
 
@@ -52,12 +54,13 @@ const TopbarModal = () => {
 
       {/* The section that shows the members modal */}
       {showMembersModal ? (
-        <div
-          ref={modalRef}
-          className={styles.modalContainers}
-          // onClick={closeMembersModal}
-        >
-          <MembersModal />
+        <div ref={modalRef} className={styles.modalContainers}>
+          <div
+            id="overlay"
+            onClick={closeMembersModal}
+            className={styles.membersModalOverlay}
+          />
+          <MembersModal members={members} roomTitle={'announcements'} />
         </div>
       ) : null}
 
@@ -85,9 +88,12 @@ const TopbarModal = () => {
             </div>
           </div>
 
-          <div onClick={openStatus} className={styles.sectionTwo}>
+          <div className={styles.sectionTwo}>
             <StatusBadgeModal />
           </div>
+          {/* <div onClick={openStatus} className={styles.sectionTwo}>
+            <StatusBadgeModal />
+          </div> */}
 
           <div className={styles.sectionThree}>
             <p onClick={openStatus}>Set a status</p>
@@ -126,12 +132,20 @@ const TopbarModal = () => {
           <hr className={styles.hr} />
 
           <div className={styles.sectionSix}>
-            <p>Downloads</p>
+            <p
+              onClick={() => {
+                setModal('downloads')
+              }}
+            >
+              Downloads
+            </p>
           </div>
 
           {modal === 'edit profile' && <EditProfile />}
 
           {modal === 'preference' && <Preferences />}
+
+          {modal === 'downloads' && <Downloads setModal={setModal} />}
 
           <hr className={styles.hr} />
 
