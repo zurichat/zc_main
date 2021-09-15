@@ -1,8 +1,6 @@
 import { FiPhoneCall } from 'react-icons/fi'
-import Button from '../verified'
-import FloatingButton from '../verified'
-
-// import styled from 'styled-components'
+import { Button } from '../verified'
+import { FloatingButton } from '../verified'
 
 const StyleGuide = () => {
   return (
@@ -36,6 +34,8 @@ const StyleGuide = () => {
         <FiPhoneCall /> Button
       </Button>
       <br />
+
+      <h1>Floating Button</h1>
       <FloatingButton />
       <FloatingButton disabled />
       <FloatingButton />

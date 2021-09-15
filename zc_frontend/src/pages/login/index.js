@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
-// import { Link } from 'react-router-dom'
-//import authBg from '../../pages/images/backg.svg'
-import authBg from '../../assets/auth_images/auth_aside_bg.svg'
 import { withRouter } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import authBg1 from '../../assets/auth_images/auth_bg1.svg'
+import authBg2 from '../../assets/auth_images/auth_bg2.svg'
+import authBg3 from '../../assets/auth_images/auth_bg3.svg'
+import authBg4 from '../../assets/auth_images/auth_bg4.svg'
+import authBg5 from '../../assets/auth_images/auth_bg5.svg'
 import AuthInputBox from '../../components/AuthInputBox'
 import FormWrapper from '../../components/AuthFormWrapper'
 import styles from '../../styles/AuthFormElements.module.css'
@@ -14,6 +17,20 @@ const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [rememberMe, setRememberMe] = useState('')
+
+  // Background Images
+  const images = [authBg1, authBg2, authBg3, authBg4, authBg5]
+  const [currentImage, setcurrentImage] = useState(
+    Math.floor(Math.random() * 4)
+  )
+
+  // To Display Random Aside Background Image
+  const displayImage = () => {
+    let i = currentImage
+    i >= images.length - 1 ? (i = 0) : i++
+    setcurrentImage(i)
+    console.log(images[i], i)
+  }
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -50,8 +67,8 @@ const Login = () => {
     <main id={styles.authPageWrapper}>
       <aside id={styles.authAsideContainer} className={styles.display_none}>
         <div id={styles.authImageWrapper}>
-          <img src={authBg} alt="backgroundImage" />
-          <div id={styles.aside_txt}></div>
+          <img src={images[currentImage]} alt="backgroundImage" />
+          {/* <div id={styles.aside_txt}></div> */}
         </div>
       </aside>
       <section id={styles.authFormContainer}>
@@ -65,8 +82,9 @@ const Login = () => {
           password={password}
           check={rememberMe}
           handleSubmit={handleSubmit}
-          bottomLine="New to us? Create an Account"
-          bottomLink="Log in"
+          bottomLine="New to us?"
+          bottomLink="Create an Account"
+          bottomLinkHref="signup"
         >
           <AuthInputBox
             className={`${styles.inputElement}`}
@@ -77,6 +95,7 @@ const Login = () => {
             value={email}
             setValue={setEmail}
             error=""
+            onFocus={displayImage}
           />
           <AuthInputBox
             className={`${styles.inputElement}`}
@@ -87,6 +106,7 @@ const Login = () => {
             value={password}
             setValue={setPassword}
             error=""
+            onFocus={displayImage}
           />
 
           <div className={`${styles.rememberMe}`}>
@@ -99,6 +119,7 @@ const Login = () => {
                 onClick={() => {
                   setRememberMe(!rememberMe)
                 }}
+                onFocus={displayImage}
               />
               Remember me
             </span>
