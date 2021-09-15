@@ -27,6 +27,8 @@
     "react-tabs": "^3.2.2",
     "react-timezone-select": "^1.0.7",
     "react-verification-code-input": "^1.2.9",
+    "react-virtualized-auto-sizer": "^1.0.6",
+    "react-window": "^1.8.6",
     "redoc": "^2.0.0-rc.56",
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0",
