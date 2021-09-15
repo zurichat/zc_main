@@ -24,10 +24,9 @@ export const PluginContent = () => {
 
   return (
     <>
-      <section className={styles.container}> 
-      <PluginNavBar />
-        <div id="zc-plugin-root">
-        </div>
+      <section className={styles.container}>
+        <PluginNavBar />
+        <div id="zc-plugin-root"></div>
         <PluginLoader />
       </section>
       {!url && <Welcome />}
