@@ -16,6 +16,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         
+      - name: Use cached node_modules
+        uses: c-hive/gha-yarn-cache@v2
+        with:
+         directory: zc_frontend
+         
       - name: install Dependencies
         run: |
           yarn install
@@ -55,7 +60,9 @@ jobs:
           host: ${{ secrets.ZURI_MAIN_HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          run: pm2 restart 1
+          script: |
+            pm2 list
+            pm2 restart 1
         
 
              
