@@ -155,7 +155,7 @@ const TopNavBar = () => {
         value={search}
         onChange={e => setSearch(e.target.value)}
         type="text"
-        width={8}
+        width={7}
         error
         placeholder="Search here"
         border={'#99999933'}
@@ -438,7 +438,7 @@ const LogoName = styled.span`
 `
 const PluginNavBarBase = styled.div`
   background-color: var(--primary-color);
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   margin: auto;
   display: flex;
   justify-content: space-between;
