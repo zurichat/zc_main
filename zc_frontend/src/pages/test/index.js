@@ -476,12 +476,11 @@ const AllUsersSpan = styled.span`
   padding: 0 0.1rem;
 `
 export {
-    Input,
-    Button,
-    FloatingButton,
-    Toggle,
-    Checkbox,
-    TopNavBar,
-    PluginNavBar
-
-};
+  Input,
+  Button,
+  FloatingButton,
+  Toggle,
+  Checkbox,
+  TopNavBar,
+  PluginNavBar
+}
