@@ -3,10 +3,9 @@ import { useContext, Fragment, useState, useEffect } from 'react'
 import useSWR from 'swr'
 import { URLContext } from '../context/Url'
 import { PluginContext } from '../context/Plugins'
-
 import styles from '../styles/Sidebar.module.css'
 import Dropdown from './Dropdown'
-
+import Modal from './InviteModal'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
 import styled from 'styled-components'
 import AuthInputBox from '../components/AuthInputBox'
@@ -33,6 +32,7 @@ export const Sidebar = () => {
   // console.log(organization)
 
   const { setUrl } = useContext(URLContext)
+  const [show, setShow] = useState(false)
   const { plugins, setPlugins } = useContext(PluginContext)
 
   // const user = JSON.parse(sessionStorage.getItem('user'))
@@ -343,6 +343,11 @@ export const Sidebar = () => {
             </Fragment>
           ))}
       </Dropdown>
+      {/* button for adding invites */}
+      <div className={styles.buttonstyle}>
+        <button onClick={() => setShow(true)}>Add Teammates</button>
+        <Modal onClose={() => setShow(false)} show={show} />
+      </div>
     </div>
   )
 }
