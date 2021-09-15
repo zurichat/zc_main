@@ -20,7 +20,7 @@ const Download = () => {
               With the Zuri Chat app, you will always be in touch with your
               team.
             </p>
-            <a href={Apk} download="release.apk" className={styles.button1}>
+            <a href="#" className={styles.button1}>
               DOWNLOAD (64-BIT)
             </a>
           </div>
@@ -94,7 +94,7 @@ const Download = () => {
                 With the Zuri Chat app, you will always be in touch with your
                 team.
               </p>
-              <a href={Apk} download="release.apk" className={styles.button1}>
+              <a href="#" className={styles.button1}>
                 DOWNLOAD
               </a>
             </div>
@@ -211,8 +211,7 @@ const Download = () => {
           </h1>
           <div className={`mt-lg-5`}>
             <a
-              href={Apk}
-              download="release.apk"
+              href="#"
               className={`${styles.button2} d-inline`}
             >
               DOWNLOAD FOR WINDOWS
