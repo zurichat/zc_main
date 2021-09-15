@@ -102,10 +102,10 @@ export const Sidebar = () => {
     axios
       .get('https://api.zuri.chat/organizations/6133c5a68006324323416896')
       .then(r => {
-        r.data.data[0].plugins.forEach(api_plugin => {
+        r.data.data.plugins.forEach(api_plugin => {
           let homepage_url
           // Get Homepage
-          axios.get(api_plugin.info_url).then(res => {
+          axios.get(`https://chess.zuri.chat/api/v1/info`).then(res => {
             homepage_url = res.data.data.homepage_url
             let homepage = null
             let loaded = false
@@ -196,10 +196,10 @@ export const Sidebar = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.zuriLogo}>
+      {/* <div className={styles.zuriLogo}>
         <img src="/zurichatlogo.svg" alt="Zuri Chat logo" />
         <p>ZURI</p>
-      </div>
+      </div> */}
       <div className={styles.orgInfo}>
         <div className={styles.orgName}>
           <p>HNGi8</p>
