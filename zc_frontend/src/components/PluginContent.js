@@ -5,6 +5,7 @@ import { PluginContext } from '../context/Plugins'
 import PluginLoader from './PluginLoader'
 import styles from '../styles/PluginContent.module.css'
 import Welcome from './Welcome'
+import { PluginNavBar } from '../pages/test'
 
 export const PluginContent = () => {
   const { url } = useContext(URLContext)
@@ -23,8 +24,10 @@ export const PluginContent = () => {
 
   return (
     <>
-      <section className={styles.container}>
-        <div id="zc-plugin-root"></div>
+      <section className={styles.container}> 
+      <PluginNavBar />
+        <div id="zc-plugin-root">
+        </div>
         <PluginLoader />
       </section>
       {!url && <Welcome />}
