@@ -210,10 +210,7 @@ const Download = () => {
             Looking for a better work environment?
           </h1>
           <div className={`mt-lg-5`}>
-            <a
-              href="#"
-              className={`${styles.button2} d-inline`}
-            >
+            <a href="#" className={`${styles.button2} d-inline`}>
               DOWNLOAD FOR WINDOWS
             </a>
             <a
