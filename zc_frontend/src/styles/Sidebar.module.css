@@ -222,3 +222,12 @@
   cursor: pointer;
   padding: 0.4rem 0;
 }
+
+.buttonstyle button {
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
