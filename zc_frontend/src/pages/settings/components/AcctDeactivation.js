@@ -1,7 +1,10 @@
+import { useHistory } from 'react-router-dom'
 import styles from '../styles/AcctDeactivation.module.css'
 import SettingsNav from './SettingsNav'
+import { Link } from 'react-router-dom'
 
 const AcctDeactivation = () => {
+  const history = useHistory()
   return (
     <>
       <SettingsNav />
@@ -17,24 +20,31 @@ const AcctDeactivation = () => {
         <div className={styles.deactivationNote}>
           <p className={styles.firstP}>
             This change will take effect immediately. An administrator of your
-            workspace will need to re-enable your accountif you would like to
+            workspace will need to re-enable your account if you would like to
             rejoin this workspace. Your messages and files will be kept safe if
             your account is ever reactivated. Any other Zurichat workspaces you
             belong to will not be affected.
           </p>
 
           <p className={styles.secondP}>
-            <strong>Note:</strong> Don’t deactivate your account if you must
+            <strong>Note:</strong> Don’t deactivate your account if you just
             want to change your
             <span className={styles.blue}> email address</span> or{' '}
             <span className={styles.blue}>username</span>.
           </p>
 
           <div>
-            <button className={styles.deactivateButton}>
+            <button
+              className={styles.deactivateButton}
+              onClick={() => {
+                history.push('/confirm-deactivation')
+              }}
+            >
               Yes, deactivate my account
             </button>
-            <button className={styles.cancelButton}>Cancel</button>
+            <Link to="/settings">
+              <button className={styles.cancelButton}>Cancel</button>
+            </Link>
           </div>
         </div>
       </div>
