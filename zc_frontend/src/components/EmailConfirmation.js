@@ -1,5 +1,5 @@
 import React from 'react'
-import chatIcon from'../components/images/img.png'
+import chatIcon from '../components/images/img.png'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button } from 'react-bootstrap'
 import '../styles/EmailConfirmation.css'
@@ -39,7 +39,11 @@ function EmailConnfirmation() {
         <h3 className="head">Zuri</h3>
         <h5 className="workspace">
           Workspace URL:
-          <a href="https://www.zuriboard.zuri.com" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.zuriboard.zuri.com"
+            target="_blank"
+            rel="noreferrer"
+          >
             zuriboard.zuri.com
           </a>
         </h5>

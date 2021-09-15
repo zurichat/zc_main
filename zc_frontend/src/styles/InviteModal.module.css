@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 .modal {
   position: fixed;
   left: 0;
@@ -30,13 +30,13 @@
 
 .modaltitle {
   margin: 0;
-  font-family: "Lato";
+  font-family: 'Lato';
   color: rgba(36, 36, 36, 0.7);
 }
 
 .modalbody {
   padding: 0 22px 22px 22px;
-  font-family: "Lato";
+  font-family: 'Lato';
   font-size: 14px;
   color: rgba(0, 0, 0, 0.7);
 }
@@ -65,7 +65,7 @@
   justify-content: space-evenly;
 }
 .copy a {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: rgba(0, 139, 94, 1);
   margin-left: 10px;
   margin-right: 10px;
@@ -79,14 +79,14 @@
 }
 .send button {
   background-color: rgba(0, 139, 94, 1);
-  font-family: "Lato";
+  font-family: 'Lato';
   color: #ffffff;
   border-radius: 3px;
   padding: 10px 20px;
   border: none;
 }
-.send button:hover{
-    transform: scale(1.2);
+.send button:hover {
+  transform: scale(1.2);
 }
 .invitedusers {
   padding: 3px;
@@ -95,19 +95,19 @@
   display: flex;
   flex-direction: column;
 }
-.inviteclose button{
+.inviteclose button {
   background-color: white;
   border: none;
-} 
-.inviteclose button:hover{
-    transform: scale(1.1);
+}
+.inviteclose button:hover {
+  transform: scale(1.1);
 }
 .emailbox {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.invitedusers input{
+.invitedusers input {
   margin-top: 5px;
   max-width: 100%;
   flex: 1 0 auto;
