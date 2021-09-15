@@ -10,8 +10,8 @@ import Dropdown from './Dropdown'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
 import styled from 'styled-components'
 import AuthInputBox from '../components/AuthInputBox'
-import JoinedRooms from './joinedRooms/JoinedRooms'
-import PublicRooms from '../publicRooms/PublicRooms'
+// import JoinedRooms from './joinedRooms/JoinedRooms'
+// import PublicRooms from '../publicRooms/PublicRooms'
 import cheerio from 'cheerio'
 
 import threadIcon from '../pages/test/assets/icons/thread-icon.svg'
@@ -27,7 +27,7 @@ const fetcher = url => fetch(url).then(res => res.json())
 
 export const Sidebar = () => {
   const { data: channelsData } = useSWR('/api/plugin/channels', fetcher)
-  // const { data: messagesData } = useSWR('/api/plugin/messages', fetcher)
+  const { data: messagesData } = useSWR('/api/plugin/messages', fetcher)
   // const { data: plugins } = useSWR('/api/plugin/list', fetcher)
   // const { data: organization } = useSWR('https://api.zuri.chat/organizations/6133c5a68006324323416896', fetcher)
   // console.log(organization)
@@ -40,33 +40,33 @@ export const Sidebar = () => {
   const [showDialog, setShowDialog] = useState(false)
   const open = () => setShowDialog(true)
   const close = () => setShowDialog(false)
-  const [rooms, setRooms] = useState({})
+  // const [rooms, setRooms] = useState({})
   const [query, setQuery] = useState('')
   const [loading, setLoading] = useState(false)
   const [availablePlugins, setAvailablePlugins] = useState()
   // const [error, setError] = useState('')
 
-  const sortRooms = (val, type) => {
-    let values = [...val]
-    console.log(type)
-    switch (type) {
-      case 'atoz':
-        values.sort((a, b) => a.title.localeCompare(b.title))
-        break
-      case 'ztoa':
-        values.sort((a, b) => b.title.localeCompare(a.title))
-        break
-      case 'minmax':
-        values.sort((a, b) => a.members - b.members)
-        break
-      case 'maxmin':
-        values.sort((a, b) => b.members - a.members)
-        break
-      default:
-        break
-    }
-    return values
-  }
+  // const sortRooms = (val, type) => {
+  //   let values = [...val]
+  //   console.log(type)
+  //   switch (type) {
+  //     case 'atoz':
+  //       values.sort((a, b) => a.title.localeCompare(b.title))
+  //       break
+  //     case 'ztoa':
+  //       values.sort((a, b) => b.title.localeCompare(a.title))
+  //       break
+  //     case 'minmax':
+  //       values.sort((a, b) => a.members - b.members)
+  //       break
+  //     case 'maxmin':
+  //       values.sort((a, b) => b.members - a.members)
+  //       break
+  //     default:
+  //       break
+  //   }
+  //   return values
+  // }
 
   const sidebarApi = async url => {
     setLoading(true)
@@ -90,29 +90,21 @@ export const Sidebar = () => {
     }
   }
 
-  // const SeeAvailablePlugins = ( availablePlugins ) => {
-  //   return (<ul>
-  //     {availablePlugins.map(plugins => (
-  //       <p>{plugins}</p>
-  //     ))}
-  //   </ul>)
-  // }
-
-  const filteredJoinedRooms = rooms?.joined_rooms
-    ? rooms.joined_rooms.filter(room =>
-        room.title.toLowerCase().includes(query)
-      )
-    : null
-  const filteredPublicRooms = rooms?.joined_rooms
-    ? rooms.public_rooms.filter(room =>
-        room.title.toLowerCase().includes(query)
-      )
-    : null
+  // const filteredJoinedRooms = rooms?.joined_rooms ?
+  //    rooms.joined_rooms.filter(room =>
+  //       room.title.toLowerCase().includes(query)
+  //     )
+  //   : null
+  // const filteredPublicRooms = rooms?.joined_rooms ?
+  //    rooms.public_rooms.filter(room =>
+  //       room.title.toLowerCase().includes(query)
+  //     )
+  //   : null
 
   useEffect(() => {
     ;(async () => {
       await sidebarApi().then(async res => {
-        setRooms(res)
+        // setRooms(res)
         setLoading(false)
 
         // console.log(sortRooms(res.public_rooms, 'ztoa'))
@@ -340,7 +332,7 @@ export const Sidebar = () => {
             )}
           </Fragment>
         ))}
-      {/* <Dropdown title="messages">
+      <Dropdown title="messages">
         {messagesData &&
           messagesData.messages.map((message, index) => (
             <Fragment key={index}>
@@ -350,7 +342,7 @@ export const Sidebar = () => {
               {message.name}
             </Fragment>
           ))}
-      </Dropdown> */}
+      </Dropdown>
     </div>
   )
 }
