@@ -2,7 +2,7 @@ import React from 'react'
 import { Modal } from 'react-bootstrap'
 import Button from '../../components/verified/Button'
 
-const ResetModal = (props) => {
+const ResetModal = props => {
   return (
     <div>
       <Modal
@@ -20,8 +20,8 @@ const ResetModal = (props) => {
           <h4>Centered Modal</h4>
           <p>
             Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
+            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
+            ac consectetur ac, vestibulum at eros.
           </p>
         </Modal.Body>
         <Modal.Footer>
