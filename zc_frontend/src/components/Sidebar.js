@@ -82,17 +82,17 @@ export const Sidebar = () => {
 
   const filteredJoinedRooms = rooms?.joined_rooms
     ? rooms.joined_rooms.filter(room =>
-      room.title.toLowerCase().includes(query)
-    )
+        room.title.toLowerCase().includes(query)
+      )
     : null
   const filteredPublicRooms = rooms?.joined_rooms
     ? rooms.public_rooms.filter(room =>
-      room.title.toLowerCase().includes(query)
-    )
+        room.title.toLowerCase().includes(query)
+      )
     : null
 
   useEffect(() => {
-    ; (async () => {
+    ;(async () => {
       await sidebarApi().then(async res => {
         setRooms(res)
         setLoading(false)
@@ -233,25 +233,41 @@ export const Sidebar = () => {
         </div>
       </div>
       <div>
-        <Item><img src={threadIcon} alt="icon" /><p>Threads</p></Item>
+        <Item>
+          <img src={threadIcon} alt="icon" />
+          <p>Threads</p>
+        </Item>
       </div>
       <div>
-        <Item><img src={dmIcon} alt="icon" /><p>All DMs</p></Item>
+        <Item>
+          <img src={dmIcon} alt="icon" />
+          <p>All DMs</p>
+        </Item>
       </div>
       <div>
-        <Item><img src={draftIcon} alt="icon" /><p>Drafts</p></Item>
+        <Item>
+          <img src={draftIcon} alt="icon" />
+          <p>Drafts</p>
+        </Item>
       </div>
       <div>
-        <Item><img src={filesIcon} alt="icon" /><p>Files</p></Item>
+        <Item>
+          <img src={filesIcon} alt="icon" />
+          <p>Files</p>
+        </Item>
       </div>
       <div>
-        <Item><img src={pluginIcon} alt="icon" /><p>Plugins</p> <ClickButton
-          // onClick={onAddButtonClick}
-          className={`${styles.addButton}`}
-          src={addIcon}
-          alt="Add button"
-          role="button"
-        /></Item>
+        <Item>
+          <img src={pluginIcon} alt="icon" />
+          <p>Plugins</p>{' '}
+          <ClickButton
+            // onClick={onAddButtonClick}
+            className={`${styles.addButton}`}
+            src={addIcon}
+            alt="Add button"
+            role="button"
+          />
+        </Item>
       </div>
       {/* <Dropdown onAddButtonClick={open} showAddButton={true} title="Channels">
         {channelsData &&
@@ -348,5 +364,5 @@ padding:0.25rem;
 `
 
 const ClickButton = styled.img`
-margin-left:auto;
+  margin-left: auto;
 `
