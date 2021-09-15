@@ -1,15 +1,7 @@
-import Imagebar from "./Imagebar";
-
-
+import Imagebar from './Imagebar'
 
 function AppApp() {
-    return (
-        <Imagebar />
-
-
-
-    )
-
+  return <Imagebar />
 }
 
-export default AppApp;
+export default AppApp

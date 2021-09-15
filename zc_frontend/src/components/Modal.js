@@ -22,7 +22,7 @@ function Modal({ closeModal }) {
         <div className="footer">
           <a href="_#">
             {' '}
-            <img src="arrow.png" alt="img"/>{' '}
+            <img src="arrow.png" alt="img" />{' '}
           </a>{' '}
           <h4 className="see"> See previous invites </h4>
           <button id="sendBtn">Send more invites</button>

@@ -30,7 +30,6 @@ import SearchResults2 from './components/externalPagesComponents/searchResults2'
 import ConfirmPassword from './pages/settings/components/ConfirmPassword'
 import ApiDocs from './pages/api-docs'
 
-
 const App = () => (
   <BrowserRouter>
     <Switch>
@@ -127,7 +126,6 @@ const App = () => (
       <Route path="/documentation" exact>
         <ApiDocs />
       </Route>
-
     </Switch>
   </BrowserRouter>
 )
