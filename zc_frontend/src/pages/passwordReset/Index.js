@@ -11,9 +11,8 @@ import ResetModal from '../../components/verified/ResetModal'
 // import axios from 'axios'
 const Index = () => {
   const [email, setEmail] = useState('')
-  const [modalShow, setModalShow] = useState(false);
- 
-  
+  const [modalShow, setModalShow] = useState(false)
+
   return (
     <main id={styles.authPageWrapper}>
       <aside id={styles.authAsideContainer} className={styles.display_none}>
@@ -29,11 +28,10 @@ const Index = () => {
         </div>
         {/* header text  */}
         <div className={``}>
-          <h4 className={styles.headerText}>
-            Recover Password
-          </h4>
+          <h4 className={styles.headerText}>Recover Password</h4>
           <p>
-            Enter the email address you registered with, a reset link will be sent to your email!
+            Enter the email address you registered with, a reset link will be
+            sent to your email!
           </p>
         </div>
         {/* form section  */}
@@ -47,12 +45,8 @@ const Index = () => {
             value={email}
             setValue={setEmail}
             error=""
-           />
-          <Button className={styles.button}
-            onClick={() => (
-              setModalShow(true)
-            )}
-          >
+          />
+          <Button className={styles.button} onClick={() => setModalShow(true)}>
             Continue
           </Button>
           {/* <ResetModal 
