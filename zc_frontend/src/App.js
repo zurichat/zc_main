@@ -66,9 +66,6 @@ const App = () => (
         <Route path="/signup">
           <SignUp />
         </Route>
-        <Route path="/verify-email">
-          <EmailVerification />
-        </Route>
         <Route path="/features">
           <Features />
         </Route>
