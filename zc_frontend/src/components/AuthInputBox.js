@@ -1,4 +1,5 @@
-import { FaEye, FaEyeSlash } from 'react-icons/fa'
+// import { FaEye, FaEyeSlash } from 'react-icons/fa'
+import { FiEye, FiEyeOff } from 'react-icons/fi'
 import { useRef, useState } from 'react'
 
 import styles from '../styles/InputBox.module.css'
@@ -58,7 +59,7 @@ const InputBox = ({
               onClick={passwordToggle}
             >
               {/* <i className={`far ${passwordVisible ? 'eye-slash' : 'eye'}`}></i> */}
-              {passwordVisible ? <FaEye /> : <FaEyeSlash />}
+              {passwordVisible ? <FiEye /> : <FiEyeOff />}
             </div>
           )}
         </div>
