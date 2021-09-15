@@ -13,19 +13,19 @@
   margin-bottom: 50px;
 }
 .email {
-  color: blue;
+  color: #1a61db;
 }
 .codeInput {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
 }
 .codeLabel {
   margin-bottom: 16px;
 }
 .codeInputs {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 .codeInputs input {
@@ -36,10 +36,10 @@
   -moz-box-shadow: none;
   box-shadow: none;
   text-align: center;
-  height: 60px;
+  height: 50px;
   width: 50px;
   margin: 0;
-  border: 1px solid #4f5b66;
+  border: 1px solid #999999;
   font-size: 38px;
 }
 .codeInputs input:focus {
