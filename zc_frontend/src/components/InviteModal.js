@@ -1,7 +1,9 @@
 import React from 'react'
 import Basic from './externalPagesComponents/Basic'
-// import X from '../images/letter-x.svg'
 import styles from '../styles/InviteModal.module.css'
+// import InviteSuccess from './InvitationAcceptance'
+// import InviteFailed from './Modal'
+// import InviteLoading from './SendingInvite'
 
 const Modal = props => {
   if (!props.show) {
@@ -18,6 +20,7 @@ const Modal = props => {
   return (
     <>
       <div className={styles.modal} onClick={props.onClose}>
+
         <div className={styles.modalcontent} onClick={e => e.stopPropagation()}>
           <div className={styles.top}>
             <div className={styles.modalheader}>
@@ -60,6 +63,7 @@ const Modal = props => {
               </button>
             </div>
           </div>
+          <form>
           <div className={styles.modalbody}>To:</div>
           <div className={styles.invitebox}>
             <div className={styles.invitedusers}>
@@ -99,16 +103,10 @@ const Modal = props => {
               <button>Send</button>
             </div>
           </div>
+          </form>
         </div>
       </div>
 
-      {/* <div className="mobile">
-<div className="header-top">
-
-</div>
-<p>hello</p>
-<h1>haopoppopfggfgo</h1>
-               </div> */}
     </>
   )
 }
