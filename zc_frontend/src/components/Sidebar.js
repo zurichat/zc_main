@@ -9,9 +9,16 @@ import Modal from './InviteModal'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
 import styled from 'styled-components'
 import AuthInputBox from '../components/AuthInputBox'
-import JoinedRooms from './joinedRooms/JoinedRooms'
-import PublicRooms from '../publicRooms/PublicRooms'
+// import JoinedRooms from './joinedRooms/JoinedRooms'
+// import PublicRooms from '../publicRooms/PublicRooms'
 import cheerio from 'cheerio'
+
+import threadIcon from '../pages/test/assets/icons/thread-icon.svg'
+import dmIcon from '../pages/test/assets/icons/dm-icon.svg'
+import draftIcon from '../pages/test/assets/icons/draft-icon.svg'
+import filesIcon from '../pages/test/assets/icons/files-icon.svg'
+import pluginIcon from '../pages/test/assets/icons/plugin-icon.svg'
+import addIcon from '../pages/test/assets/icons/add-icon.svg'
 
 // import "@reach/dialog/styles.css";
 
@@ -28,96 +35,99 @@ export const Sidebar = () => {
   const [show, setShow] = useState(false)
   const { plugins, setPlugins } = useContext(PluginContext)
 
-  //   // const user = JSON.parse(sessionStorage.getItem('user'))
+  // const user = JSON.parse(sessionStorage.getItem('user'))
   // const org_id = '6133c5a68006324323416896'
   const [showDialog, setShowDialog] = useState(false)
   const open = () => setShowDialog(true)
   const close = () => setShowDialog(false)
-  const [rooms, setRooms] = useState({})
+  // const [rooms, setRooms] = useState({})
   const [query, setQuery] = useState('')
-  // const [sort,setSort] = useState('')
   const [loading, setLoading] = useState(false)
+  const [availablePlugins, setAvailablePlugins] = useState()
   // const [error, setError] = useState('')
 
-  // const sorters = {
-  //   leastMembers : (a,b)=>{return a.members - b.members},
-  //   mostMembers : (a,b)=>{return b.members - a.members},
-  //   aToZ : (a,b)=>{
-  //     const aName = a.title.toUpperCase();
-  //     const bName = b.title.toUpperCase();
-  //     return (aName < bName) ? 1:-1
-  //   },
-  //   zToA : (a,b)=>{
-  //     const aName = a.title.toUpperCase();
-  //     const bName = b.title.toUpperCase();
-  //     return (aName < bName) ? 1:-1
+  // const sortRooms = (val, type) => {
+  //   let values = [...val]
+  //   console.log(type)
+  //   switch (type) {
+  //     case 'atoz':
+  //       values.sort((a, b) => a.title.localeCompare(b.title))
+  //       break
+  //     case 'ztoa':
+  //       values.sort((a, b) => b.title.localeCompare(a.title))
+  //       break
+  //     case 'minmax':
+  //       values.sort((a, b) => a.members - b.members)
+  //       break
+  //     case 'maxmin':
+  //       values.sort((a, b) => b.members - a.members)
+  //       break
+  //     default:
+  //       break
   //   }
+  //   return values
   // }
-  // const sorters = [
-  //   (a, b) => {
-  //     return a.unread - b.unread
-  //   },
-  //   (a, b) => {
-  //     return b.unread - a.unread
-  //   },
-  //   (a, b) => {
-  //     const aName = a.title.toUpperCase()
-  //     const bName = b.title.toUpperCase()
-  //     return aName === bName ? 0 : aName < bName ? 1 : -1
-  //   },
-  //   (a, b) => {
-  //     const aName = a.title.toUpperCase()
-  //     const bName = b.title.toUpperCase()
-  //     return aName === bName ? 0 : aName < bName ? -1 : 1
-  //   }
-  // ]
 
-  const sidebarApi = async () => {
+  const sidebarApi = async url => {
     setLoading(true)
     try {
       const res = await axios.get(
         `https://channels.zuri.chat/api/v1/sidebar/?org=1&user=43567868&format=json`
       )
-      // console.log(res)
-      // let result = res.data
-      // setRooms(result)
-      // console.log(rooms.joinedRooms)
-      // console.log(result.joined_rooms[1].icon)
-      // sorters.forEach((sortfunc, ind) => {
-      //   const sortedroom = rooms.public_rooms.sort(sortfunc)
-      //   console.log(sortedroom)
-      //   // rooms.joined_rooms.forEach(curr => console.log(ind,curr.sort(sortfunc)))
-      // })
       return res.data
     } catch (err) {
       return console.log(err)
     }
   }
 
-  const filteredJoinedRooms = rooms.joined_rooms
-    ? rooms.joined_rooms.filter(room =>
-        room.title.toLowerCase().includes(query)
-      )
-    : null
-  const filteredPublicRooms = rooms.joined_rooms
-    ? rooms.public_rooms.filter(room =>
-        room.title.toLowerCase().includes(query)
-      )
-    : null
+  const getAllPlugins = async url => {
+    setLoading(true)
+    try {
+      const res = await axios.get(`https://api.zuri.chat/marketplace/plugins`)
+      return res.data
+    } catch (err) {
+      return console.log(err)
+    }
+  }
+
+  // const filteredJoinedRooms = rooms?.joined_rooms ?
+  //    rooms.joined_rooms.filter(room =>
+  //       room.title.toLowerCase().includes(query)
+  //     )
+  //   : null
+  // const filteredPublicRooms = rooms?.joined_rooms ?
+  //    rooms.public_rooms.filter(room =>
+  //       room.title.toLowerCase().includes(query)
+  //     )
+  //   : null
 
   useEffect(() => {
-    sidebarApi().then(data => {
-      setRooms(data)
-      setLoading(false)
-    })
+    ;(async () => {
+      await sidebarApi().then(async res => {
+        // setRooms(res)
+        setLoading(false)
 
+        // console.log(sortRooms(res.public_rooms, 'ztoa'))
+        // console.log(sortRooms(res.public_rooms, 'atoz'))
+        // console.log(sortRooms(res.public_rooms, 'minmax'))
+        // console.log(sortRooms(res.public_rooms, 'maxmin'))
+      })
+
+      await getAllPlugins().then(async res => {
+        setAvailablePlugins(res.data)
+        console.log(res.data)
+      })
+    })()
+  }, [])
+
+  useEffect(() => {
     axios
       .get('https://api.zuri.chat/organizations/6133c5a68006324323416896')
       .then(r => {
-        r.data.data[0].plugins.forEach(api_plugin => {
+        r.data.data.plugins.forEach(api_plugin => {
           let homepage_url
           // Get Homepage
-          axios.get(api_plugin.info_url).then(res => {
+          axios.get(`https://chess.zuri.chat/api/v1/info`).then(res => {
             homepage_url = res.data.data.homepage_url
             let homepage = null
             let loaded = false
@@ -135,7 +145,6 @@ export const Sidebar = () => {
               .get(prefixLink(oURL.toString()))
               .then(res => {
                 const $ = cheerio.load(res.data)
-                console.log(res.data)
                 // append stylesheet
                 $(`link[rel="stylesheet"]`).each(function () {
                   const link = document.createElement('link')
@@ -208,10 +217,6 @@ export const Sidebar = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.zuriLogo}>
-        <img src="/zurichatlogo.svg" alt="Zuri Chat logo" />
-        <p>ZURI</p>
-      </div>
       <div className={styles.orgInfo}>
         <div className={styles.orgName}>
           <p>HNGi8</p>
@@ -220,10 +225,9 @@ export const Sidebar = () => {
             alt="Organisation settings button"
           />
         </div>
-        <Overlay isOpen={showDialog} onDismiss={close}>
+        {/* <Overlay isOpen={showDialog} onDismiss={close}>
           <Content aria-label="room-list">
             <CloseButton className="close-button" onClick={close}>
-              {/* <VisuallyHidden>Close</VisuallyHidden> */}
               <Span aria-hidden>×</Span>
             </CloseButton>
             <AuthInputBox
@@ -235,85 +239,74 @@ export const Sidebar = () => {
               {loading && <p>Loading..</p>}
               <JoinedRooms rooms={filteredJoinedRooms} />
               <PublicRooms rooms={filteredPublicRooms} />
-              {/* {loading === false && rooms <JoinedRooms rooms={rooms} />} */}
-              {/* <p>
-                {rooms.joined_rooms
-                  ? `${
-                      rooms.joined_rooms.length + rooms.public_rooms.length
-                    } channels`
-                  : null}
+            </Wrapper>
+          </Content>
+        </Overlay>*/}
+        <Overlay isOpen={showDialog} onDismiss={close}>
+          <Content aria-label="room-list">
+            <CloseButton className="close-button" onClick={close}>
+              <Span aria-hidden>×</Span>
+            </CloseButton>
+            <AuthInputBox
+              value={query}
+              setValue={setQuery}
+              placeholder="🔍 Search for plugins"
+            />
+            <Wrapper>
+              {loading && <p>Loading..</p>}
+              <p>
+                {availablePlugins &&
+                  availablePlugins.map((plugs, id) => {
+                    return (
+                      <div key={id}>
+                        <p>{plugs.name}</p>
+                      </div>
+                    )
+                  })}
               </p>
-              <div style={{ marginTop: `1rem` }}>
-                {rooms.joined_rooms &&
-                  rooms.joined_rooms.map((room, id) => {
-                    if (query === '') {
-                      return (
-                        <Div key={id}>
-                          <p>
-                            <Hash>#</Hash>
-                            {room.title}
-                          </p>
-                          <Joined>&#10003; joined</Joined>{' '}
-                          <Bull>&bull; {room.members} members</Bull>{' '}
-                          <Span>&bull; {room.unread} unread</Span>
-                          <Button className={`leave`}>leave</Button>
-                        </Div>
-                      )
-                    } else if (room.title.toLowerCase().includes(query)) {
-                      return (
-                        <Div key={id}>
-                          <p>
-                            <Hash>#</Hash>
-                            {room.title}
-                          </p>
-                          <Joined>&#10003; joined</Joined>{' '}
-                          <Bull>&bull; {room.members} members</Bull>{' '}
-                          <Span>&bull; {room.unread} unread</Span>
-                          <Button className={`leave`}>leave</Button>
-                        </Div>
-                      )
-                    }
-                    return null
-                  })}
-              </div>
-              {/* {console.log(rooms)} */}
-              {/* <div>
-                {rooms.public_rooms &&
-                  rooms.public_rooms.map((room, id) => {
-                    if (query === '') {
-                      return (
-                        <Div key={id}>
-                          <p>
-                            <Hash>#</Hash>
-                            {room.title}
-                          </p>
-                          <Bull> {room.members} members</Bull>{' '}
-                          <Span>&bull; {room.unread} unread</Span>
-                          <Button className={`join`}>join</Button>
-                        </Div>
-                      )
-                    } else if (room.title.toLowerCase().includes(query)) {
-                      return (
-                        <Div key={id}>
-                          <p>
-                            <Hash>#</Hash>
-                            {room.title}
-                          </p>
-                          <Bull> {room.members} members</Bull>{' '}
-                          <Span>&bull; {room.unread} unread</Span>
-                          <Button className={`join`}>join</Button>
-                        </Div>
-                      )
-                    }
-                    return null
-                  })}
-              </div> */}
             </Wrapper>
           </Content>
         </Overlay>
         <div className={styles.newMessage}>
           <img src="/newmessage.svg" alt="New message icon" />
         </div>
+      </div>
+      <div>
+        <Item>
+          <img src={threadIcon} alt="icon" />
+          <p>Threads</p>
+        </Item>
+      </div>
+      <div>
+        <Item>
+          <img src={dmIcon} alt="icon" />
+          <p>All DMs</p>
+        </Item>
+      </div>
+      <div>
+        <Item>
+          <img src={draftIcon} alt="icon" />
+          <p>Drafts</p>
+        </Item>
+      </div>
+      <div>
+        <Item>
+          <img src={filesIcon} alt="icon" />
+          <p>Files</p>
+        </Item>
+      </div>
+      <div>
+        <Item>
+          <img src={pluginIcon} alt="icon" />
+          <p>Plugins</p>{' '}
+          <ClickButton
+            onClick={open}
+            className={`${styles.addButton}`}
+            src={addIcon}
+            alt="Add button"
+            role="button"
+          />
+        </Item>
       </div>
       <Dropdown onAddButtonClick={open} showAddButton={true} title="Channels">
         {channelsData &&
@@ -333,6 +326,8 @@ export const Sidebar = () => {
                 plugin
                 onTitleClick={() => setUrl(plugin.homepage_url)}
                 children={plugin.joined_rooms}
+                showAddButton={true}
+                onAddButtonClick={open}
               ></Dropdown>
             )}
           </Fragment>
@@ -380,7 +375,6 @@ const Content = styled(DialogContent)`
   margin: auto;
   flex-direction: column;
 `
-
 const Wrapper = styled.div`
   overflow-y: auto;
   padding: 1rem 0;
@@ -395,48 +389,24 @@ const CloseButton = styled.button`
   background-color: transparent;
   border: none;
 `
-// const Div = styled.div`
-//   padding: 0.5rem 2rem;
-//   border-top: 1px solid #dee1ec;
-//   &:hover {
-//     button {
-//       display: block;
-//     }
-//   }
-//   position: relative;
-// `
-
-// const Button = styled.button`
-//   padding: 0.5rem 1.2rem;
-//   position: absolute;
-//   right: 10px;
-//   top: 25%;
-//   font-size: 1rem;
-//   border: none;
-//   &.leave {
-//     background-color: #007a5a;
-//     color: white;
-//   }
-//   &.join {
-//     background-color: #dee1ec;
-//   }
-//   display: none;
-//   margin-left: auto;
-//   border-radius: 5px;
-// `
-
 const Span = styled.span`
   font-size: 0.8rem;
 `
+const Item = styled.p`
+font-family: Lato;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px;
+letter-spacing: 0em;
+text-align: left;
+display: flex;
+padding:0.25rem;
+& > img { 
+  padding: 0 1rem;
 
-// const Hash = styled(Span)`
-//   padding: 0.5rem;
-// `
+`
 
-// const Joined = styled(Span)`
-//   color: #007a5a;
-// `
-
-// const Bull = styled(Span)`
-//   padding: 0 0 0.5rem;
-// `
+const ClickButton = styled.img`
+  margin-left: auto;
+`

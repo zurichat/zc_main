@@ -16,6 +16,7 @@ paths:
         - Organization
       summary: Displays a list of organizations
       security:
+        - cookieAuth: []
         - bearerAuth: []
       responses:
         '200':
@@ -31,6 +32,7 @@ paths:
         - Organization
       summary: Create an organization
       security:
+        - cookieAuth: []
         - bearerAuth: []
       requestBody:
         $ref: '#/components/requestBodies/orgCreateRequestBody'
@@ -54,6 +56,7 @@ paths:
         - Organization
       summary: Get an organization
       security:
+        - cookieAuth: []
         - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/organization_id'
@@ -69,12 +72,12 @@ paths:
 
         '500':
           $ref: '#/components/responses/InternalServerError'
-
     delete:
       tags:
         - Organization
       summary: Delete organization information
       security:
+        - cookieAuth: []
         - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/organization_id'
@@ -98,6 +101,7 @@ paths:
         - Organization
       summary: Update organization url
       security:
+        - cookieAuth: []
         - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/organization_id'
@@ -126,6 +130,7 @@ paths:
         - Organization
       summary: Get an organization by its URL
       security:
+        - cookieAuth: []
         - bearerAuth: []
       parameters:
         - in: path
@@ -153,6 +158,7 @@ paths:
         - Organization
       summary: Update organization name
       security:
+        - cookieAuth: []
         - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/organization_id'
@@ -181,6 +187,7 @@ paths:
         - Organization
       summary: Update organization logo
       security:
+        - cookieAuth: []
         - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/organization_id'
@@ -209,6 +216,7 @@ paths:
         - Organization-Member
       summary: Get a list of members in an organization
       security:
+        - cookieAuth: []
         - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/organization_id'
@@ -229,6 +237,7 @@ paths:
         - Organization-Member
       summary: Add user to an organization
       security:
+        - cookieAuth: []
         - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/organization_id'
@@ -256,12 +265,34 @@ paths:
           $ref: '#/components/responses/InternalServerError'
 
   /organizations/{organization_id}/members/{member_id}:
+    get:
+      tags:
+        - Organization-Member
+      summary: Get a record of a member in an organization
+      security:
+        - cookieAuth: []
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/organization_id'
+      responses:
+        '200':
+          $ref: '#/components/responses/getMemberResponse'
+
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+        '500':
+          $ref: '#/components/responses/InternalServerError'
     put:
       tags:
-        - Organization
+        - Organization-Member
       summary: Update user
       description: This endpoint will be used to update the user's organization information. e.g user roles and permissions
       security:
+        - cookieAuth: []
         - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/organization_id'
@@ -290,10 +321,11 @@ paths:
           $ref: '#/components/responses/InternalServerError'
     delete:
       tags:
-        - Organization
+        - Organization-Member
       summary: Delete user
       description: Remove a user from an organization
       security:
+        - cookieAuth: []
         - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/organization_id'
@@ -316,6 +348,7 @@ paths:
         - Organization-Plugin
       summary: Get all plugins from an organization
       security:
+        - cookieAuth: []
         - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/organization_id'
@@ -336,6 +369,7 @@ paths:
         - Organization-Plugin
       summary: Add a plugin to an organization
       security:
+        - cookieAuth: []
         - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/organization_id'
@@ -372,6 +406,7 @@ paths:
         - Organization-Member
       summary: Update member status for an organization
       security:
+        - cookieAuth: []
         - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/organization_id'
@@ -404,6 +439,7 @@ paths:
         - Organization-Member
       summary: Update member profile picture for an organization
       security:
+        - cookieAuth: []
         - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/organization_id'
@@ -433,6 +469,7 @@ paths:
         - Organization-Member
       summary: Update member profile for an organization
       security:
+        - cookieAuth: []
         - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/organization_id'
@@ -449,6 +486,70 @@ paths:
       responses:
         '200':
           $ref: '#/components/responses/resourceUpdated'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /organizations/{organization_id}/members/{member_id}/presence:
+    post:
+      tags:
+        - Organization-Member
+      summary: Toggle a member presence (Away/Active)
+      security:
+        - cookieAuth: []
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/organization_id'
+        - $ref: '#/components/parameters/member_id'
+      responses:
+        '200':
+          $ref: '#/components/responses/resourceUpdated'
+
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /organizations/{organization_id}/members/{member_id}/settings:
+    patch:
+      tags:
+        - Organization-Member
+      summary: update a member settings field(s)
+      security:
+        - cookieAuth: []
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/organization_id'
+        - $ref: '#/components/parameters/member_id'
+      requestBody:
+        description: The structure for the entire request
+        content:
+          'application/json':
+            schema:
+              type: object
+              example:
+                {
+                  'global_settings':
+                    {
+                      'allow_user_add_plugins': true,
+                      'allow_only_admin_invite': true
+                    },
+                  'plugin_settings':
+                    { 'chess_plugin': { 'allow_in_every_channel': false } }
+                }
+      responses:
+        '200':
+          $ref: '#/components/responses/resourceUpdated'
+
         '401':
           $ref: '#/components/responses/UnauthorizedError'
 
@@ -624,6 +725,25 @@ components:
                 items:
                   $ref: '#/components/schemas/Organization'
 
+    getMemberResponse:
+      description: Successfully returned record of a member in an organization
+      content:
+        application/json:
+          schema:
+            required:
+              - code
+              - message
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                example: 200
+              message:
+                type: string
+              data:
+                $ref: '#/components/schemas/Member'
+
     getMembersResponse:
       description: Successfully returned list of members in an organization, including an empty array if there are no members
       content:
@@ -770,3 +890,7 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: JSESSIONID

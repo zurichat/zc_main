@@ -19,7 +19,8 @@ const FormWrapper = ({
   check,
   handleSubmit,
   bottomLine,
-  bottomLink
+  bottomLink,
+  bottomLinkHref
 }) => {
   return (
     <section className={`${styles.container}`}>
@@ -75,7 +76,7 @@ const FormWrapper = ({
             <span>
               {bottomLine}
               {''}
-              <a className={`${styles.bottomLink}`} href="/">
+              <a className={`${styles.bottomLink}`} href={`/${bottomLinkHref}`}>
                 {''} {bottomLink}
               </a>
             </span>

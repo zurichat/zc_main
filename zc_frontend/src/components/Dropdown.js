@@ -1,6 +1,11 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 import styles from '../styles/Dropdown.module.css'
+import dropdownIcon from '../pages/test/assets/icons/dropdown-icon.svg'
+import addIcon from '../pages/test/assets/icons/add-icon.svg'
+
+import styled from 'styled-components'
+
 const Dropdown = ({
   children,
   title,
@@ -16,26 +21,24 @@ const Dropdown = ({
     <div
       className={`${styles.container}${!isOpen ? ` ${styles.isClosed}` : ''}`}
     >
-      <div className={styles.header}>
-        <button
+      <Item>
+        <img
           className={`${styles.dropDownButton}${
             children ? '' : ` ${styles.hidden}`
           }`}
           onClick={() => setIsOpen(!isOpen)}
-        >
-          <img src="/shapekeyboardarrowdown2.svg" alt="Dropdown button" />
-        </button>
-        <span onClick={onTitleClick}>{title}</span>
-        <img
-          className={`${styles.addButton}${
-            showAddButton ? '' : ` ${styles.hidden}`
-          }`}
+          src={dropdownIcon}
+          role="button"
+          alt="Dropdown button"
+        />
+        <p onClick={onTitleClick}>{title}</p>
+        <ClickButton
           onClick={onAddButtonClick}
-          src="/addicon.svg"
+          src={addIcon}
           alt="Add button"
           role="button"
         />
-      </div>
+      </Item>
       <ul className={styles.content}>
         {children &&
           children.map((child, index) => {
@@ -63,3 +66,22 @@ Dropdown.propTypes = {
 }
 
 export default Dropdown
+
+const Item = styled.p`
+font-family: Lato;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px;
+letter-spacing: 0em;
+text-align: left;
+display: flex;
+padding:0.25rem;
+& > img { 
+  padding: 0 1rem;
+
+`
+
+const ClickButton = styled.img`
+  margin-left: auto;
+`

@@ -2,22 +2,13 @@
   margin-top: 0.5em;
 }
 
-.isClosed .dropDownButton img {
+.isClosed .dropDownButton {
   transform: rotateZ(-90deg);
 }
 
 .hidden {
   opacity: 0;
   pointer-events: none;
-}
-
-.header {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-  margin-left: 1.875em;
-  align-items: center;
-  padding: 0.5rem 0;
 }
 
 .header span {
@@ -27,15 +18,6 @@
   font-size: 15px;
   line-height: 18px;
   color: #999999;
-  cursor: pointer;
-}
-
-.dropDownButton {
-  margin-right: 1rem;
-  padding: 0;
-  background: none;
-  border: none;
-  outline: none;
   cursor: pointer;
 }
 
