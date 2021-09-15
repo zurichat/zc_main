@@ -16,6 +16,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         
+      - name: Use cached node_modules
+        uses: c-hive/gha-yarn-cache@v2
+        with:
+         directory: zc_frontend
+         
       - name: install Dependencies
         run: |
           yarn install
@@ -48,6 +53,16 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           localPath: './zc_frontend/build/'
           remotePath: '/var/www/zurichat/zuri.chat/zc_frontent/build'
+        
+      - name: restart pm2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.ZURI_MAIN_HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: |
+            pm2 list
+            pm2 restart 1
         
 
              
