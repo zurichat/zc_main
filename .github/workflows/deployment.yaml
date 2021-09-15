@@ -50,7 +50,12 @@ jobs:
           remotePath: '/var/www/zurichat/zuri.chat/zc_frontent/build'
         
       - name: restart pm2
-        run: pm2 restart zuri_chart
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.ZURI_MAIN_HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          run: pm2 restart 1
         
 
              
