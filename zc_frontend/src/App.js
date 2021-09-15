@@ -46,9 +46,11 @@ import DataApi from './pages/api-docs/components/data'
 import PluginApi from './pages/api-docs/components/plugin'
 
 import '@reach/dialog/styles.css'
-import StyleGuide from './components/verified/StyleGuide'
+import StyleGuide from './components/verified'
+import Test from './pages/test'
 import RecoverPassword from './pages/passwordRecovery/index'
 import ResetPassword from './pages/passwordReset/Index'
+import AuthApi from './pages/api-docs/components/auth'
 
 const App = () => (
   <TopbarProvider>
@@ -137,6 +139,9 @@ const App = () => (
         <Route exact path="/documentation/users">
           <UsersApi />
         </Route>
+        <Route exact path="/documentation/auth">
+          <AuthApi />
+        </Route>
         <Route path="/documentation/organisation">
           <OrganisationApi />
         </Route>
@@ -179,6 +184,9 @@ const App = () => (
         </Route>
         <Route path="/style-guide">
           <StyleGuide />
+        </Route>
+        <Route path="/test">
+          <Test />
         </Route>
       </Switch>
     </BrowserRouter>
