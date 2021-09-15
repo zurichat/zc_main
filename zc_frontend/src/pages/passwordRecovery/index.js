@@ -8,7 +8,7 @@ import styles from '../../styles/AuthFormElements.module.css'
 
 const Index = () => {
   const [email, setEmail] = useState('')
-  const [username, setUsername] = useState('')
+
   return (
     <main id={styles.authPageWrapper}>
       <aside id={styles.authAsideContainer} className={styles.display_none}>
@@ -22,7 +22,6 @@ const Index = () => {
           header="Recover Password"
           subHeader="Don't fret! Fill in the details, and your account wil be all yours again."
           email={email}
-          username={username}
           // handleSubmit={handleSubmit}
         >
           <AuthInputBox
@@ -35,16 +34,11 @@ const Index = () => {
             setValue={setEmail}
             error=""
           />
-          <AuthInputBox
-            className={`${styles.inputElement}`}
-            id="username"
-            name="username"
-            type="username"
-            placeholder="Johny12345"
-            value={username}
-            setValue={setUsername}
-            error=""
-          />
+          <div
+            style={{
+              margin: '20px 0'
+            }}
+          ></div>
         </FormWrapper>
       </section>
     </main>
