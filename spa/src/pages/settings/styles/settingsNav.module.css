@@ -1,0 +1,189 @@
+.containers {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  height: 5.0625em;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  z-index: 999;
+  background: #f6f6f6;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand img {
+  width: 60%;
+  max-width: 100%;
+  height: 100%;
+}
+
+.brand h3 {
+  font-family: 'Lato';
+  font-size: 25px;
+  font-weight: 700;
+  /* padding-top: 5px; */
+  background: none;
+  margin-left: 5px;
+}
+
+/* The section of the  account bar*/
+.accountbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.searchBar {
+  width: 60%;
+  height: 30px;
+  background: #f6f6f6;
+  border: 1px solid #bebebe;
+  box-sizing: border-box;
+  border-radius: 2px;
+  margin-right: 1.5em;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.searchInput {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 11px;
+  background: #f6f6f6;
+}
+.searchInput::placeholder {
+  font-size: 11px;
+  line-height: 16px;
+}
+.searchSvg {
+  cursor: pointer;
+  fill: #bebebe;
+}
+
+/* THE SECTION OF THE RIGHT NAV */
+.rightnav {
+  width: 10%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.profile {
+  border-radius: 50%;
+  display: flex;
+  /* margin-left: 1.375em; */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.settings {
+  margin-right: 19px;
+  cursor: pointer;
+}
+
+.status {
+  margin-right: 5px;
+}
+
+.pImage {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.pImage .profileImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #dbdada;
+}
+
+.circles {
+  background: #00b87c;
+  height: 7px;
+  width: 7px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+}
+
+.containers .menubars {
+  display: none;
+}
+
+/* ===================================== */
+/* THE SECTION OF THE MEDIA QUERY */
+
+@media screen and (max-width: 900px) {
+  .brand {
+    width: 55%;
+  }
+
+  .brand img {
+    width: 100%;
+    height: auto;
+  }
+
+  .searchBar {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: 30vh;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.98;
+    z-index: 9999999;
+    transition: 0.5s ease-in-out;
+    overflow-y: scroll;
+  }
+
+  .accountbar .search {
+    background: red !important;
+  }
+
+  .containers .menubars {
+    /* display: block; */
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    font-size: 40px;
+  }
+
+  .searchBar {
+    width: 300px;
+  }
+
+  .rightnav {
+    width: 20%;
+  }
+  .status {
+    margin-right: -5px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .searchBar {
+    width: 60%;
+  }
+
+  .rightnav {
+    width: 15%;
+    margin-right: 20px;
+  }
+}

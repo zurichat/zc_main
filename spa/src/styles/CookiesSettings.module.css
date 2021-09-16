@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 95vh;
+  font-family: 'Lato', sans-serif;
+}
+.wrapper {
+  padding-top: 166px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.cookie_content {
+  /* margin-top: 15%; */
+  background-color: #f3f3f3;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+  font-family: 'Lato', sans-serif;
+  padding-bottom: 32px;
+  /* min-height: 100vh; */
+}
+
+.cookie_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid gray;
+}
+
+.cookie_header_title,
+.cookie_header_body {
+  width: 100%;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.cookie_header_body {
+  width: 76%;
+  margin-top: 8px;
+  font-size: 1rem;
+}
+
+.cookie_header_title {
+  font-size: 1.5rem;
+}
+
+.cookie_body_title,
+.cookie_header_title {
+  font-weight: 800;
+}
+
+.cookie_body_text {
+  width: 100%;
+}
+
+.action_links {
+  display: grid;
+  row-gap: 25px;
+  justify-items: center;
+}
+
+.cookie_body {
+  margin: auto 1em;
+  font-size: 1rem;
+}
+
+.cookie_body_half {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+.cookie_body_text,
+.learn_more_link {
+  margin-top: 0.5em;
+}
+
+.learn_more_link a {
+  color: #00b87c;
+  text-decoration: underline;
+}
+
+.action_links {
+  margin-top: 0.9em;
+}
+
+.button {
+  /* width: 45%; */
+  width: 200px;
+
+  border: none;
+  text-align: center;
+  display: inline-block;
+  border-radius: 12px;
+  box-shadow: 0 5px 8px #888888;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.button:active {
+  box-shadow: 0 5px 8px #888888;
+  transform: translateY(4px);
+}
+
+.firstButton {
+  color: white;
+  background-color: #00b87c;
+}
+
+.secondButton {
+  background-color: #c4c4c4;
+}
+@media (min-width: 35rem) {
+  .cookie_content {
+    max-width: 50%;
+  }
+  .button {
+    width: 250px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
