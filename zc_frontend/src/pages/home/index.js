@@ -8,7 +8,7 @@ import { ProfileProvider } from '../../context/ProfileModal'
 import { TopbarProvider } from '../../context/Topbar'
 import { PluginLoaderProvider } from '../../context/PluginLoaderState'
 import Profile from '../../components/Profile'
-import { TopNavBar } from '../test/index'
+import { TopNavBar } from '../../components/verified-components/index'
 
 const Home = () => {
   return (
@@ -21,7 +21,6 @@ const Home = () => {
             <ProfileProvider>
               <TopbarProvider>
                 <div className={styles.room}>
-                  {/* <Topbar /> */}
                   <div className={styles.spaceWrapper}>
                     <div className={styles.pluginContent}>
                       <PluginContent />

@@ -7,6 +7,7 @@
   overflow: auto;
   width: max-content;
   overflow-y: scroll;
+  padding-top: 4.3rem;
 }
 
 .container::-webkit-scrollbar-track {

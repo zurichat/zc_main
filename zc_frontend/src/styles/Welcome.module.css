@@ -6,7 +6,7 @@
   gap: 0.5rem;
   justify-content: center;
   align-items: center;
-  overflow-y: scroll;
+  overflow-y: auto;
   background: #f9f9f9;
   color: #999999;
 }

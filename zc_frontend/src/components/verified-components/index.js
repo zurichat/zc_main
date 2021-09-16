@@ -3,8 +3,10 @@ import errImg from './assets/errImg.svg'
 import zurichatlogo from './assets/zurichatlogo.svg'
 import userAvatar from './assets/user.svg'
 import arrowDown from './assets/arrow-down.svg'
-import '../../components/verified/master.css'
+import '../../components/verified-components/master.css'
+import Toggle from '../verified/toggle'
 import { useState } from 'react'
+import { DialogOverlay, DialogContent } from '@reach/dialog'
 
 // Input tag
 const Input = ({
@@ -117,19 +119,20 @@ const FloatingButton = ({
 
 //   Toggle
 
-const Toggle = ({ selected, toggleSelected }) => {
-  return (
-    <div
-      className={`toggle ${selected ? '' : 'toggle_disabled'}`}
-      onClick={toggleSelected}
-    >
-      <div
-        selected={selected}
-        className={`toggle_ball ${selected ? '' : 'toggle_ball_disabled'}`}
-      ></div>
-    </div>
-  )
-}
+// const Toggle = ({ selected, toggleSelected }) => {
+//   return (
+//     <div
+//       className={`toggle ${selected ? '' : 'toggle_disabled'}`}
+//       onClick={toggleSelected}
+//     >
+//       <div
+//         selected={selected}
+//         className={`toggle_ball ${selected ? '' : 'toggle_ball_disabled'}`}
+//       ></div>
+//     </div>
+//   )
+// }
+;<Toggle />
 
 const Checkbox = ({ checked, onClick }) => {
   return (
@@ -196,6 +199,7 @@ function Test() {
 
   return (
     <div>
+      <h1>Input </h1>
       {/* Input tags */}
       <div>
         <Input
@@ -226,6 +230,7 @@ function Test() {
         {/* <p>props for input tag: type, placeholder, id, border, label, error, width</p> */}
       </div>
 
+      <h1>Typography</h1>
       {/* Typography */}
       <div>
         <h1>Header 1</h1>
@@ -266,10 +271,12 @@ function Test() {
       </div>
 
       {/* checkbox */}
+      <h1>Checkbox</h1>
       <div>
         <Checkbox checked={checked} onClick={() => setChecked(!checked)} />
       </div>
-
+      <br />
+      <h1>Toggle</h1>
       {/* Toggle */}
       <div>
         <Toggle
@@ -282,12 +289,26 @@ function Test() {
       <br />
 
       {/* Topbar */}
+      <h1>Topbar Button</h1>
+
       <div>
         <TopNavBar />
       </div>
 
       {/* Plugin Navbar */}
-      <PluginNavBar />
+      <h1>Plugin Button</h1>
+      <div>
+        <PluginNavBar />
+      </div>
+      {/* <Overlay >
+          <Content aria-label="room-list">
+            <CloseButton className="close-button" >
+              <Span aria-hidden>×</Span>
+            </CloseButton>
+            <Wrapper>Î
+            </Wrapper>
+          </Content>
+        </Overlay> */}
     </div>
   )
 }
@@ -423,6 +444,10 @@ const TopNavBarBase = styled.div`
   margin: auto;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  margin-bottom: 3rem !important;
 `
 
 const LogoName = styled.span`
@@ -442,6 +467,9 @@ const PluginNavBarBase = styled.div`
   margin: auto;
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  top: 69px;
 `
 
 const PluginName = styled.span`
@@ -475,6 +503,65 @@ const AllUsersSpan = styled.span`
   vertical-align: middle;
   padding: 0 0.1rem;
 `
+export const Overlay = styled(DialogOverlay)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: hsl(220deg 5% 40% / 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+`
+export const Content = styled(DialogContent)`
+  position: relative;
+  background: white;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+`
+// const Wrapper = styled.div`
+//   overflow-y: auto;
+//   padding: 1rem 0;
+// `
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 0px;
+  right: 0;
+  padding: 0.5rem;
+  width: 50px;
+  color: red;
+  background-color: transparent;
+  border: none;
+`
+// const Span = styled.span`
+//   font-size: 0.8rem;
+// `
+// const Item = styled.p`
+// font-family: Lato;
+// font-size: 15px;
+// font-style: normal;
+// font-weight: 400;
+// line-height: 28px;
+// letter-spacing: 0em;
+// text-align: left;
+// display: flex;
+// padding:0.25rem;
+// & > img {
+//   padding: 0 1rem;
+
+// `
+
+// const ClickButton = styled.img`
+//   margin-left: auto;
+// `
+
 export {
   Input,
   Button,

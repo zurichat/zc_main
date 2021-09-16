@@ -5,7 +5,7 @@ import { PluginContext } from '../context/Plugins'
 import PluginLoader from './PluginLoader'
 import styles from '../styles/PluginContent.module.css'
 import Welcome from './Welcome'
-import { PluginNavBar } from '../pages/test'
+import { PluginNavBar } from './verified-components'
 
 export const PluginContent = () => {
   const { url } = useContext(URLContext)
