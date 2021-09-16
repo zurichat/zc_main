@@ -1,15 +1,17 @@
-import '../../components/verified/master.css'
+// import '../../components/verified/master.css'
 
-import { FiPhoneCall } from 'react-icons/fi'
-import Button from '../verified'
-import FloatingButton from '../verified'
+// import { FiPhoneCall } from 'react-icons/fi'
+// import Button from '../verified'
+// import FloatingButton from '../verified'
 
 // import styled from 'styled-components'
+
+//  import { Input } from "../verified/Input";
 
 const StyleGuide = () => {
   return (
     <>
-      <h1>Primary Button</h1>
+      {/* <h1>Primary Button</h1>
       <Button>Medium Button</Button>
       <Button>Medium Button</Button>
       <Button>
@@ -40,13 +42,7 @@ const StyleGuide = () => {
 
       <h1>Floating Button</h1>
       <FloatingButton />
-      <FloatingButton disabled />
-      {/* <P >This is the test site</P>
-<p className="subtext">This is the test site</p>
-<p className="small_text">This is the test site</p>
-<p className="header_1">This is the test site</p>
-<p className="header_2">This is the test site</p>
-<p className="normal_text">This is the test site</p> */}
+      <FloatingButton disabled /> */}
     </>
   )
 }

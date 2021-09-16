@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import LandingPage from './components/LandingPage'
 import Home from './pages/home'
 import Login from './pages/login'
 import SignUp from './pages/signup'
-import EmailVerification from './pages/email-verify'
 import './styles/globals.css'
+import LandingPage from './components/LandingPage'
+//import EmailVerification from './pages/email-verify'
 import Security from './pages/security'
 import Features from './pages/features'
 import Resources from './pages/resources'
@@ -14,11 +14,11 @@ import Download from './pages/download'
 import ContactUs from './pages/contact-us'
 import Pricing from './pages/pricing'
 import Header from './components/externalPagesComponents/Header'
+import './styles/globals.css'
+import MarketPlace from './pages/marketplace/marketplace'
 import Input from './components/externalPagesComponents/Input'
 // import CookiesBanner from './components/externalPagesComponents/CookiesBanner/cookiesBanner'
 import FAQ from './pages/FAQ'
-import './styles/globals.css'
-import MarketPlace from './pages/marketplace/marketplace'
 import Settings from './pages/settings'
 import SearchResult from './components/SearchResults3'
 import LinkComponent from './components/externalPagesComponents/Link'
@@ -47,10 +47,14 @@ import DataApi from './pages/api-docs/components/data'
 import PluginApi from './pages/api-docs/components/plugin'
 
 import '@reach/dialog/styles.css'
-import StyleGuide from './components/verified/StyleGuide'
-import RecoveryEmail from './pages/passwordRecovery/index'
+import StyleGuide from './components/verified'
+import Test from './components/verified-components'
+import RecoverPassword from './pages/passwordRecovery/index'
 import ResetPassword from './pages/passwordReset/Index'
 import PrivateRoute from './pages/settings/Utils/PrivateRoute'
+import AuthApi from './pages/api-docs/components/auth'
+
+import './components/verified-components/master.css'
 
 const App = () => (
   <TopbarProvider>
@@ -67,9 +71,6 @@ const App = () => (
         </Route>
         <Route path="/signup">
           <SignUp />
-        </Route>
-        <Route path="/verify-email">
-          <EmailVerification />
         </Route>
         <Route path="/features">
           <Features />
@@ -126,10 +127,12 @@ const App = () => (
         <Route path="/search-suggestions">
           <SearchSuggestion />
         </Route>
-
         {/* Api docs */}
         <Route exact path="/documentation/users">
           <UsersApi />
+        </Route>
+        <Route exact path="/documentation/auth">
+          <AuthApi />
         </Route>
         <Route path="/documentation/organisation">
           <OrganisationApi />
@@ -173,12 +176,18 @@ const App = () => (
 
         <Route path="/recover-email">
           <RecoveryEmail />
+          </Route>
+        <Route path="/recover-password">
+          <RecoverPassword />
         </Route>
         <Route path="/reset-password">
           <ResetPassword />
         </Route>
         <Route path="/style-guide">
           <StyleGuide />
+        </Route>
+        <Route path="/test">
+          <Test />
         </Route>
       </Switch>
     </BrowserRouter>
