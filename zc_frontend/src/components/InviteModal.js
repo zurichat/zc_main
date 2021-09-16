@@ -1,5 +1,4 @@
 import React from 'react'
-import Basic from './externalPagesComponents/Basic'
 import styles from '../styles/InviteModal.module.css'
 // import InviteSuccess from './InvitationAcceptance'
 // import InviteFailed from './Modal'
@@ -66,7 +65,6 @@ const Modal = props => {
             <div className={styles.modalbody}>To:</div>
             <div className={styles.invitebox}>
               <div className={styles.invitedusers}>
-                <Basic />
               </div>
             </div>
             <div className={styles.bottominvite}>
