@@ -1,0 +1,194 @@
+.modalWrapper {
+  padding: 1%;
+}
+
+.modalbuttonWrapper {
+  display: flex;
+  flex: 0 0 auto;
+  margin-right: 1.375rem;
+  align-items: center;
+  border: none;
+  /* border: 1px solid gray; */
+}
+
+.modalButton {
+  display: flex;
+  font-size: unset;
+  padding: 5%;
+  padding-top: 2%;
+  background-color: unset;
+  border: 0.2px solid #d3d3d3;
+}
+
+.modalbuttonImageWrapper {
+  display: flex;
+}
+
+.modalbuttonImageWrapper img {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.modalbuttonImageWrapper span {
+  width: 1.5rem;
+  height: 1.5rem;
+  /* height: 10%; */
+}
+
+.modalbuttonImageWrapper span:last-child {
+  margin-right: 0.5rem;
+}
+
+.modalButton p {
+  display: inline-flex;
+}
+
+.modalWrapper {
+  background-color: white;
+  width: 70%;
+  height: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3%;
+}
+
+@media (max-width: 768px) {
+  .modalWrapper {
+    width: 90%;
+    max-width: 100%;
+  }
+
+  .membercardWrapper img {
+    padding: unset;
+  }
+
+  .membercardImage {
+    border-radius: 0.5rem;
+    padding-top: 0.55%;
+    min-width: 10%;
+    max-width: 10%;
+    text-align: center;
+  }
+
+  .membercardImage img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+
+  .membercardTextBlock {
+    align-self: center;
+    margin-left: 1%;
+  }
+
+  .membercardStatus {
+    width: 250px;
+  }
+}
+
+.headerWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerText {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.headerWrapper p {
+  font-weight: 600;
+}
+
+.searchBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1%;
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 0.275rem;
+  padding: 0.75%;
+}
+
+.searchBox:focus-within {
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #00b87c;
+}
+
+.searchBox input {
+  width: 100%;
+  border: none;
+}
+
+.searchBox input::placeholder {
+  font-size: large;
+  padding: unset;
+}
+
+.searchBox input:focus {
+  outline: none;
+}
+
+.membercardWrapper {
+  display: flex;
+  height: 4.2rem;
+  padding: 1%;
+  cursor: pointer;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.membercardWrapper:hover {
+  background-color: #d3d3d3;
+}
+
+.membercardTextBlock {
+  margin-left: 1%;
+}
+
+.membercardImage {
+  border-radius: 0.5rem;
+  padding-top: 0.55%;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .membercardImage {
+    min-width: 10%;
+  }
+}
+
+.membercardImage img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.membercardUserDetails {
+  display: flex;
+  width: 100%;
+  gap: 0.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.membercardStatus {
+  color: gray;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.memberlist {
+  overflow: hidden;
+}
