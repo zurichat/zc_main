@@ -241,13 +241,13 @@ body {
     left: 324px;
     top: 1226px;
   }
-.versionlink{
-  font-size: 12px;
-}
-.mobilelink{
-  font-size: 12px;
-  margin-left: 16px;
-}
+  .versionlink {
+    font-size: 12px;
+  }
+  .mobilelink {
+    font-size: 12px;
+    margin-left: 16px;
+  }
   .button {
     padding: 75px;
   }
