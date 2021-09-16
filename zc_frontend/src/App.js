@@ -48,10 +48,12 @@ import PluginApi from './pages/api-docs/components/plugin'
 
 import '@reach/dialog/styles.css'
 import StyleGuide from './components/verified'
-import Test from './pages/test'
+import Test from './components/verified-components'
 import RecoverPassword from './pages/passwordRecovery/index'
 import ResetPassword from './pages/passwordReset/Index'
 import AuthApi from './pages/api-docs/components/auth'
+
+import './components/verified-components/master.css'
 
 const App = () => (
   <TopbarProvider>

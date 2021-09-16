@@ -42,11 +42,12 @@ const Slider = styled.span`
   }
 `
 const Div = styled.div`
+  padding-left: 100px;
   background: #e5e5e5;
-  height: 300px;
+  height: 50px;
 `
 const Input = styled.input`
   position: absolute;
-  left: 9999px;
+  visibility: hidden;
 `
 export default Toggle
