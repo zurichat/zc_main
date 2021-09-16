@@ -109,7 +109,10 @@ function ApiDocs() {
           <NavLink to="/documentation/marketplace">Marketplace</NavLink>
         </div>
         <div>
-          <NavLink to="/documentation/users">Plugin</NavLink>
+          <NavLink to="/documentation/plugin">Plugin</NavLink>
+        </div>
+        <div>
+          <NavLink to="/documentation/auth">Auth</NavLink>
         </div>
       </section>
     </>
