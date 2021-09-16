@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "@zuri/main": "//localhost:8080/zuri-main.js"
+  }
+}
