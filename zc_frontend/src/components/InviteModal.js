@@ -56,7 +56,7 @@ const Modal = props => {
           <form>
             <div className={styles.modalbody}>To:</div>
             <div className={styles.invitebox}>
-              <h6>Email goes here</h6>
+              <input />
             </div>
             <div className={styles.bottominvite}>
               <div className={styles.copy}>
