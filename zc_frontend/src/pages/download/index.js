@@ -20,7 +20,7 @@ const Download = () => {
               With the Zuri Chat app, you will always be in touch with your
               team.
             </p>
-            <a href="#" className={styles.button1}>
+            <a href="/" className={styles.button1}>
               DOWNLOAD (64-BIT)
             </a>
           </div>
@@ -53,7 +53,7 @@ const Download = () => {
           </div>
           <div className={`${styles.version} `}>
             <p className={`${styles.versionp} d-inline`}>VERSION 4.4.4 -</p>
-            <a className={styles.versionlink} href="#">
+            <a className={styles.versionlink} href="/news">
               What's New
             </a>
             <p className={`d-inline`}>/</p>
@@ -61,7 +61,7 @@ const Download = () => {
               Get the Beta
             </a>
             <p className={`d-inline`}>/</p>
-            <a className={styles.versionlink} href="#">
+            <a className={styles.versionlink} href="/">
               Enterprise Deployments
             </a>
             <p className={`${styles.mobilelink} d-inline`}>
@@ -74,14 +74,14 @@ const Download = () => {
                 alt="arrow-down"
               />
             </a>
-            <a className={`${styles.bit}`} href="#">
+            <a className={`${styles.bit}`} href="/">
               Download 32-bit app
             </a>
           </div>
         </div>
       </section>
 
-      <a id="download-mac">
+      <a href="/" id="download-mac">
         <section className={`row`}>
           <div
             className={`${styles.container} col container p-lg-5 p-md-5 m-md-4 m-lg-5`}
@@ -94,7 +94,7 @@ const Download = () => {
                 With the Zuri Chat app, you will always be in touch with your
                 team.
               </p>
-              <a href="#" className={styles.button1}>
+              <a href="/" className={styles.button1}>
                 DOWNLOAD
               </a>
             </div>
@@ -129,7 +129,7 @@ const Download = () => {
             </div>
             <div className={`${styles.version} `}>
               <p className={`${styles.versionp} d-inline`}>VERSION 4.4.4 -</p>
-              <a className={styles.versionlink} href="#">
+              <a className={styles.versionlink} href="/">
                 What's New
               </a>
               <p className={`d-inline`}>/</p>
@@ -141,7 +141,7 @@ const Download = () => {
                 Get the Beta
               </a>
               <p className={`d-inline`}>/</p>
-              <a className={styles.versionlink} href="#">
+              <a className={styles.versionlink} href="/">
                 Enterprise Deployments
               </a>
               <p className={`${styles.mobilelink} d-inline`}>
@@ -154,14 +154,14 @@ const Download = () => {
                   alt="arrow-down"
                 />
               </a>
-              <a className={`${styles.bit}`} href="#">
+              <a className={`${styles.bit}`} href="/">
                 Download 32-bit app
               </a>
             </div>
           </div>
         </section>
       </a>
-      <a id="download-mobile">
+      <a href="/" id="download-mobile">
         <section className={`row`}>
           <div className={` col container p-lg-5 p-md-5 m-md-4 m-lg-5`}>
             <div>
@@ -170,11 +170,11 @@ const Download = () => {
               </h1>
               <p className={styles.p}>
                 Innovate in your workspace with the Zurichat apps on
-                <a className={`${styles.versionlink} px-lg-1 fw-bold`} href="#">
+                <a className={`${styles.versionlink} px-lg-1 fw-bold`} href="/">
                   Android
                 </a>{' '}
                 and
-                <a className={`${styles.versionlink} px-lg-1 fw-bold`} href="#">
+                <a className={`${styles.versionlink} px-lg-1 fw-bold`} href="/">
                   IOS
                 </a>
               </p>
@@ -210,7 +210,7 @@ const Download = () => {
             Looking for a better work environment?
           </h1>
           <div className={`mt-lg-5`}>
-            <a href="#" className={`${styles.button2} d-inline`}>
+            <a href="/" className={`${styles.button2} d-inline`}>
               DOWNLOAD FOR WINDOWS
             </a>
             <a

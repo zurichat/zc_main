@@ -1,4 +1,4 @@
-import '../../components/verified/master.css'
+// import '../../components/verified/master.css'
 
 // import { FiPhoneCall } from 'react-icons/fi'
 // import Button from '../verified'
