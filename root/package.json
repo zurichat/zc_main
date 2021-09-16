@@ -2,6 +2,7 @@
   "name": "@zuri/root-config",
   "scripts": {
     "start": "webpack serve --port 9000 --env isLocal",
+    "dev": "yarn start",
     "lint": "eslint src --ext js",
     "test": "cross-env BABEL_ENV=test jest --passWithNoTests",
     "format": "prettier --write .",
