@@ -1,0 +1,57 @@
+.notifySidebar {
+  width: 200px;
+  background: #f9f9f9;
+  height: 100%;
+  position: relative;
+  float: left;
+}
+.itemsContainer {
+  margin-top: 15px;
+}
+.one,
+.active {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  padding: 3px;
+  margin-bottom: 22px;
+  cursor: pointer;
+}
+.one:first-child {
+  padding-top: 15px;
+}
+.icon {
+  margin-right: 10px;
+}
+.active p {
+  color: #00b87c;
+}
+
+.one,
+.active {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  padding: 2px;
+  margin-bottom: 22px;
+  cursor: pointer;
+}
+.one:first-child {
+  padding-top: 15px;
+}
+.icon {
+  margin-right: 10px;
+  color: #333333;
+}
+.active p,
+.icon {
+  color: #00b87c;
+}
+
+.one p {
+  color: #999999;
+}
+
+.one .icon {
+  color: #333333;
+}
