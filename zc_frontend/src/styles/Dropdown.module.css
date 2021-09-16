@@ -31,17 +31,6 @@
   cursor: pointer;
 }
 
-.content {
-  margin-left: 3.5em;
-  font-family: Lato;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 15px;
-  line-height: 18px;
-  color: #999999;
-  overflow: hidden;
-}
-
 .isClosed .content {
   height: 0;
 }

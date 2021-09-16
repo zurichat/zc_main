@@ -18,7 +18,8 @@ const Signup = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [tos, setTos] = useState(false)
-  // const { error, setError } = useState('')
+  const [error, seterror] = useState('')
+  const [emailerror, setemailerror] = useState('')
   const [showDialog, setShowDialog] = useState(false)
 
   // Background Images
@@ -76,8 +77,10 @@ const Signup = () => {
         const { data } = error.response
         setShowDialog(false)
 
-        //Render error message to the user
-        alert(data.message) //Change this when there is a design
+        RegExp(/Users with email/).test(data.message) &&
+          setemailerror('This email is already in use')
+
+        !RegExp('Users with email').test(data.message) && seterror(data.message)
       })
   }
 
@@ -98,6 +101,7 @@ const Signup = () => {
           topLineText="OR"
           submitButtonName="Sign up"
           name={name}
+          error={error}
           email={email}
           password={password}
           check={tos}
@@ -126,7 +130,7 @@ const Signup = () => {
             value={email}
             setValue={setEmail}
             onFocus={displayImage}
-            // error={error}
+            error={emailerror}
           />
           <AuthInputBox
             className={`${styles.inputElement}`}
