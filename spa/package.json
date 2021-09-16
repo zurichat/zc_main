@@ -2,6 +2,7 @@
   "name": "@zuri/main",
   "scripts": {
     "start": "webpack serve",
+    "dev": "yarn start",
     "start:standalone": "webpack serve --env standalone",
     "build": "concurrently yarn:build:*",
     "build:webpack": "webpack --mode=production",
