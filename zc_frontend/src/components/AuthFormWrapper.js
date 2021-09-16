@@ -1,5 +1,6 @@
 import React from 'react'
 //import { Link } from 'react-router-dom'
+import { RiErrorWarningLine } from 'react-icons/ri'
 import styles from '../styles/AuthFormWrapper.module.css'
 import logo from '../pages/images/logo.svg'
 import google from '../pages/images/google.svg'
@@ -13,13 +14,15 @@ const FormWrapper = ({
   googleHeader,
   topLineText,
   submitButtonName,
+  error,
   name,
   email,
   password,
   check,
   handleSubmit,
   bottomLine,
-  bottomLink
+  bottomLink,
+  bottomLinkHref
 }) => {
   return (
     <section className={`${styles.container}`}>
@@ -50,6 +53,12 @@ const FormWrapper = ({
             <div>{topLineText}</div>
             <hr className={`${styles.hrRight}`} />
           </span>
+          {error && (
+            <div className={`${styles.errWrapper}`}>
+              <RiErrorWarningLine />
+              <div>{error}</div>
+            </div>
+          )}
         </div>
         <form
           className={`${styles.form}`}
@@ -71,11 +80,14 @@ const FormWrapper = ({
             />
           </div>
 
-          <div className={`${styles.bottomLine}`}>
+          <div
+            className={`${styles.bottomLine}`}
+            style={{ paddingTop: '20px' }}
+          >
             <span>
               {bottomLine}
               {''}
-              <a className={`${styles.bottomLink}`} href="/">
+              <a className={`${styles.bottomLink}`} href={`/${bottomLinkHref}`}>
                 {''} {bottomLink}
               </a>
             </span>
