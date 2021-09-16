@@ -8,7 +8,7 @@ import paperplane from '../../../assets/auth_images/paperplane.svg'
 import okayimage from '../../../assets/auth_images/okayimage.svg'
 import styles from './styles/EmailVerification.module.css'
 import CodeInput from './codeInput'
-import { Button } from '../../test/index'
+import { Button } from '../../../components/verified-components'
 
 export default function EmailVerification({ email = 'johndoe@example.com' }) {
   const [success, setsuccess] = useState(false)

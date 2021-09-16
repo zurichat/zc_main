@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 import styles from '../styles/Dropdown.module.css'
-import dropdownIcon from '../pages/test/assets/icons/dropdown-icon.svg'
-import addIcon from '../pages/test/assets/icons/add-icon.svg'
+import dropdownIcon from './verified-components/assets/icons/dropdown-icon.svg'
+import addIcon from './verified-components/assets/icons/add-icon.svg'
 
 import styled from 'styled-components'
 
@@ -39,16 +39,16 @@ const Dropdown = ({
           role="button"
         />
       </Item>
-      <ul className={styles.content}>
+      <Ul className={styles.content}>
         {children &&
           children.map((child, index) => {
             return (
-              <li key={index} className={styles.item}>
+              <Li key={index} className={styles.item}>
                 {plugin ? `${child.title}` : child}
-              </li>
+              </Li>
             )
           })}
-      </ul>
+      </Ul>
     </div>
   )
 }
@@ -84,4 +84,21 @@ padding:0.25rem;
 
 const ClickButton = styled.img`
   margin-left: auto;
+`
+
+const Ul = styled.ul`
+  padding: 0.3rem 2.5rem;
+  font-family: Lato;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 18px;
+  color: #454545;
+  overflow: hidden;
+`
+const Li = styled.li`
+  height: 28px;
+  width: 167px;
+  left: 26px;
+  top: 0px;
+  border-radius: nullpx;
 `
