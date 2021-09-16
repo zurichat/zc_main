@@ -96,8 +96,8 @@
   display: flex;
   flex-direction: column;
 }
-.invitebox input{
- width:  539.3px;
+.invitebox input {
+  width: 539.3px;
 }
 .inviteclose button {
   background-color: white;
