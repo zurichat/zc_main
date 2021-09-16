@@ -146,6 +146,21 @@
   margin-left: 10px;
 } */
 
+.errWrapper {
+  background-color: #f40101;
+  color: rgb(255, 255, 255);
+  padding: 0.5rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.errWrapper > div {
+  padding-left: 0.3rem;
+}
+
 .form {
   display: flex;
   flex-direction: column;
