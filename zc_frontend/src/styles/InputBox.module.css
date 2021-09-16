@@ -1,12 +1,19 @@
 .InputContainer {
-  font-family: 'Lato', sans-serif;
-  /* margin: 1rem auto; */
-  /* margin-block: 1rem;
-  margin-inline: auto; */
   width: 100%;
+  margin-block-start: 0.2rem;
+  margin-block-end: 1rem;
+  margin-inline: auto;
+  /* margin: 1rem auto; */
   /* font-size: 16px; */
   /* margin-top: 0;
   padding-top: 0; */
+}
+.InputContainerError {
+  border-color: #ff0000 !important;
+}
+
+.InputContainer:last-of-type {
+  margin-block-end: 0rem;
 }
 
 /* input Label */
@@ -43,7 +50,8 @@
 .InputElement {
   width: 100%;
   height: 100%;
-  padding-inline: 1rem;
+  padding-inline-start: 1rem;
+  padding-inline-end: 1rem;
   letter-spacing: 1px;
   color: #000000;
   border: none;
@@ -70,7 +78,7 @@
 
 /* password toggle */
 .ToggleVisibility {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,4 +89,47 @@
 
 .InputError {
   color: #ff0000;
+  display: flex;
+  align-items: center;
+}
+
+/* Media Query 768px and Smaller */
+/* Media Query 920px and Smaller */
+/* Media Query for Screen Width 1080px and Smaller */
+@media only screen and (max-width: 1080px) {
+  .InputContainer {
+    margin-block: 1rem;
+    width: 100%;
+  }
+
+  .InputContainer:last-of-type {
+    margin-block-end: 0rem;
+  }
+
+  /* input Label */
+  .InputLabel {
+    margin-block: 0.5rem;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  }
+
+  /* actual input element */
+  .InputElement {
+    text-indent: 0.7rem;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+    font-size: 1.2rem;
+  }
+
+  .InputElement::placeholder {
+    font-size: 1.2rem;
+    margin-inline: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+  }
+
+  /* input wrapper WITH password */
+  .InputWrapperWithPassword {
+    grid-template-columns: 9fr 2fr;
+  }
 }
