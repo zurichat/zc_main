@@ -6,7 +6,7 @@
     "start:standalone": "webpack serve --env standalone",
     "build": "concurrently yarn:build:*",
     "build:webpack": "webpack --mode=production",
-    "analyze": "webpack --mode=production --env analyze",
+    "analyze": "webpack --mode=production --env analyze"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
