@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import axios from 'axios'
 // Component
 import SettingsNav from './SettingsNav'
 //Style
@@ -10,30 +11,52 @@ import FormMessage from './FormMessage'
 import successIcon from '../../images/bx-success.svg'
 import errorIcon from '../../images/bx-error.svg'
 
+import {getToken} from '../Utils/Common'
+
+
+const initialState = {
+  password: ""
+}
+
 const ConfirmPassword = () => {
   const [error, setError] = useState(false)
-  const [password, setPassword] = useState('')
-
+  const [data, setData] = useState(initialState)
+  const {password} = data
   const history = useHistory()
+  const token = getToken()
 
-  const handleInputChange = e => {
-    setPassword(e.target.value)
+
+   // The section of the handle change input
+   const handleChange = e => {
+    const { name, value } = e.target
+    setData({ ...data, [name]: value })
     setError(false)
-  }
+}
 
-  // Form submit
-  const handleSubmit = e => {
+  // FUNCTION TO CONFIRM THE PASSWORD
+  const confirmPassword = async e => {
     e.preventDefault()
+    try {
+      const res = await axios.post('https://api.zuri.chat/auth/confirm-password', { password }, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
 
-    if (password.length > 5) {
+      setData({ ...data }, console.log(res))
+      console.log(res)
       history.push('/deactivate-account')
-    } else {
+
+    } catch (err) {
       setError(true)
+      console.log(err)
     }
   }
 
+
+
   return (
-    <>
+    <div>
       <SettingsNav />
       <section className={`${styles.password_wrapper}`}>
         <FormMessage
@@ -53,7 +76,7 @@ const ConfirmPassword = () => {
         )}
 
         <div className={`${styles.form_wrapper}`}>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={confirmPassword}>
             <div className={`${styles.form_group}`}>
               <label htmlFor="password">
                 Enter your &nbsp;
@@ -62,7 +85,7 @@ const ConfirmPassword = () => {
               <input
                 type="text"
                 placeholder="Password"
-                onChange={handleInputChange}
+                onChange={handleChange}
               />
             </div>
             <button className={`${styles.submit_btn}`} type="submit">
@@ -71,7 +94,7 @@ const ConfirmPassword = () => {
           </form>
         </div>
       </section>
-    </>
+    </div>
   )
 }
 

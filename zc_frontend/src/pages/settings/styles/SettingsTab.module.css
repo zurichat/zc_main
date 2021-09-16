@@ -1,6 +1,7 @@
 .settings_wrapper {
   border-bottom: 1px solid #dedede;
   padding: 20px 0;
+  background:#fff;
 }
 
 .settings_wrapper:last-child {
@@ -73,17 +74,43 @@
 
 /* THE SECTION OF THE PASSWORD */
 
+.passwordsection{
+  margin-top:10px;
+}
+
 .passwordsection button {
-  font-size: 13px;
+  font-size: 15px;
   padding: 10px 22px;
+  background:#00B87C;
+  outline:none!important;
+}
+
+.passwordsection button:hover{
+  background:#00B87C;
 }
 
 .passwordsection::-webkit-input-placeholder {
   font-size: 12px !important;
 }
 
+
+
+#p_section {
+  font-size: 1px;
+  width:100%;
+}
+
+#p_section p{
+  font-size:15px;
+  margin-top:5px;
+}
+
+#p_section p span{
+  color: #2F80ED;
+}
+
 .passwordsection p {
-  font-size: 14px;
+  font-size: 15px;
   width: 60%;
 }
 
@@ -107,7 +134,7 @@
 
 /* THE SECTION OF THE TWO FACTOR */
 .two_factor p {
-  font-size: 14px;
+  font-size: 15px;
   width: 60%;
   margin-top: 10px;
   line-height: 20px;
@@ -115,16 +142,22 @@
 }
 
 .two_factor p a {
-  color: #00b87c;
+  color: #2F80ED;
 }
 
 .two_factor button {
-  font-size: 11px;
+  font-size: 15px;
+  background:#00B87C;
+  color:#fff;
+}
+
+.two_factor button:hover{
+  color:#fff;
 }
 
 .two_factor span {
-  font-size: 13px;
-  color: #3a3a3a;
+  font-size: 15px;
+  color: rgba(58, 58, 58, 0.7);
 }
 
 @media screen and (max-width: 868px) {
