@@ -9,19 +9,20 @@ const AdvancedSettings = () => {
                 <div className={styles.check}>
                   <div className={styles.checktype}>
                         <input type="checkbox" name="" id="" />
-                        <div className={styles.typing}><span> When typing code with """", <button className={styles.btn}>Enter</button>
-                            should send message </span><br/> With this ticket, use <button className={styles.btn}>Shift</button>
-                            <button className={styles.btn}>Enter</button> to send
+                        <div className={styles.typing}><span> When typing code with "", &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; should send the message </span><br/> With this ticket, 
+                        use <button className={styles.btn}>Shift</button> &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp;to send
                         </div>
                   </div>
                   <div className={styles.checkformat}>
                         <input type="checkbox" name="" id="" />
                         <div className={styles.typing}><span> Format messages with markup</span> <br/>
-                            The text formatting toolbar won't show in the computer
+                            The text formatting toolbar won't show in the composer
                         </div>
                   </div>
                 </div>
-                <h5 className={styles.head}>When writing a message, press <button className={styles.btn}>Enter</button> to:</h5>
+                <h5 className={styles.head}>When writing a message, press </h5>
                 <div className={styles.radio}>
                   <div className={styles.radiosend}>
                     <input type="radio" name="" id="" />
