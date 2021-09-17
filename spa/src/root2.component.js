@@ -17,6 +17,7 @@ import LandingPage from "./components/LandingPage";
 const Root = () => {
   return <div> Hello </div>;
   // return <LandingPage />;
+  // return <LandingPage />;
 };
 export default Root;
 
