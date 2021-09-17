@@ -136,6 +136,7 @@
 }
 
 /* THE SECTION OF THE TWO FACTOR */
+
 .two_factor p {
   font-size: 14px;
   width: 60%;
@@ -152,7 +153,7 @@
   font-size: 13px;
   background: #00b87c;
   color: #fff;
-  padding: 10px;
+  padding: 10px 25px;
 }
 
 .two_factor button:hover {
@@ -177,6 +178,10 @@
   .passwordsection input,
   .passwordsection select {
     width: 90% !important;
+  }
+
+  .two_factor button {
+    padding: 10px 25px;
   }
 }
 
