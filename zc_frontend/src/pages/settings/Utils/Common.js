@@ -19,7 +19,7 @@ export const removeUserSession = () => {
 
 // The section of the password length
 export const isLength = password => {
-  if (password.length < 8) return true
+  if (password.length < 6) return true
   return false
 }
 

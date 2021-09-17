@@ -18,7 +18,7 @@ const SavePassword = () => {
           <input type="password" className="form-control" required />
         </div>
         <div className="col-md-4 mb-3 mt-3" id={styles.p_section}>
-          <button className="btn btn-primary" id="submit">
+          <button className="btn" id="submit">
             Save password
           </button>
           <br />

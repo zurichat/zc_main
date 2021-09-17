@@ -83,6 +83,7 @@
   padding: 10px 22px;
   background: #00b87c;
   outline: none !important;
+  color:#fff;
 }
 
 .passwordsection button:hover {
@@ -172,6 +173,7 @@
   .passwordsection select {
     width: 90% !important;
   }
+  
 }
 
 @media screen and (max-width: 425px) {
@@ -184,7 +186,7 @@
   }
 
   .passwordsection input,
-  .passwordsection select {
+  .passwordsection select { 
     width: 100% !important;
   }
 

@@ -41,7 +41,7 @@ const ConfirmPassword = () => {
       return setData(
         { ...data },
         setError(true),
-        setMessage('Your password should be more than 8 characters')
+        setMessage('Your password should be more than 6 characters')
       )
 
     if (!isMatch(password, confirm_password))

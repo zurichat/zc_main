@@ -10,7 +10,7 @@ const Language = () => {
       <form className="row d-flex flex-column">
         <div className="col-md-5 mt-2">
           <select className="form-select" required>
-            <option disabled selected>
+            <option disabled defaultValue>
               Choose language
             </option>
             {result}
