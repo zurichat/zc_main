@@ -92,7 +92,7 @@ function ApiDocs() {
 
   return (
     <>
-      <section >
+      <section>
         {/* <div id="zc-plugin-root"></div> */}
         {/* <DocLoader /> */}
         <div>

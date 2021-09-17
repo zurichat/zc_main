@@ -23,7 +23,6 @@ const placeHolder = n => {
 const faked = placeHolder(250)
 
 const MembersModal = ({ channelTitle, members }) => {
-
   // if(!members){
 
   // }
@@ -57,7 +56,7 @@ const Header = ({ channelTitle, memberNumber }) => {
             onClick={closeMembersModal}
             style={{ cursor: 'pointer', color: 'red' }}
           />
-        </div> 
+        </div>
       </div>
       <p>Members - {memberNumber}</p>
     </div>

@@ -7,7 +7,6 @@ import Welcome from './Welcome'
 import { PluginNavBar } from './verified-components'
 import faker from 'faker'
 
-
 export const PluginContent = () => {
   const { url } = useContext(URLContext)
   const { plugins } = useContext(PluginContext)
@@ -39,8 +38,8 @@ export const PluginContent = () => {
 
   return (
     <>
-      <section style={{position:'relative'}} >
-        <PluginNavBar  members={faked}/>
+      <section style={{ position: 'relative' }}>
+        <PluginNavBar members={faked} />
         <div id="zc-plugin-root"></div>
         <PluginLoader />
       </section>
