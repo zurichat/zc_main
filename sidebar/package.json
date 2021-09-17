@@ -1,9 +1,10 @@
 {
   "name": "@zuri/sidebar",
+  "license": "MIT",
   "scripts": {
     "start": "webpack serve",
     "start:standalone": "webpack serve --env standalone",
-    "dev": "yarn start --port=8080",
+    "dev": "yarn start --port=8081",
     "check-format": "prettier -c .",
     "format": "prettier -w .",
     "lint": "eslint src --ext js",
