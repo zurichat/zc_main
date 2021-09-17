@@ -1,11 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400,500&display=swap');
-
-body {
-    font-family: "Lato";
-    color: #aeaeae;
-}
 .container {
     width: 400%;
+    font-family: "Lato";
 }
 
 .head {
@@ -56,9 +51,9 @@ body {
     margin-left: 1rem;
 }
 
-input {
+/* input {
     margin-top: .5rem;
-}
+} */
 
 .typing span {
     font-weight: bold;
