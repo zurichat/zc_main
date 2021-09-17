@@ -5,11 +5,16 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack serve --port 9000 --env isLocal",
-    "dev": "concurrently --kill-others-on-fail \"npm run start\"",
+    "start:control": "npm dev --prefix control",
+    "start:sidebar": "npm dev --prefix sidebar",
+    "dev": "concurrently --kill-others-on-fail \"npm:start:*\"",
     "check-format": "prettier -c .",
     "format": "prettier -w .",
     "lint": "eslint src --ext js",
     "prepare": "husky install",
+    "setup:control": "(cd control && yarn)",
+    "setup:sidebar": "(cd sidebar && yarn)",
+    "postinstall": "concurrently --kill-others-on-fail yarn:setup:*",
     "build": "concurrently yarn:build:*",
     "build:webpack": "webpack --mode=production"
   },
