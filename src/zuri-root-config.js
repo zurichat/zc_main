@@ -1,4 +1,4 @@
-import { registerApplication, start } from "single-spa";
+import { registerApplication, start } from 'single-spa'
 
 // registerApplication({
 //   name: "@single-spa/welcome",
@@ -10,20 +10,20 @@ import { registerApplication, start } from "single-spa";
 // });
 
 registerApplication({
-  name: "@zuri/main",
+  name: '@zuri/main',
   // app: () => System.import("@zuri/main"),
-  app: () => System.import("//localhost:8080/zuri-main.js"),
-  activeWhen: ["/"],
-});
+  app: () => System.import('//localhost:8080/zuri-main.js'),
+  activeWhen: ['/']
+})
 
 registerApplication({
-  name: "@zuri/spa-app-2",
+  name: '@zuri/spa-app-2',
   // app: () => System.import("@zuri/main"),
   // app: () => System.import("//localhost:8080/zuri-main.js"),
-  app: () => System.import("//localhost:8082/zuri-spa-app-2.js"),
-  activeWhen: ["/"],
-});
+  app: () => System.import('//localhost:8082/zuri-spa-app-2.js'),
+  activeWhen: ['/']
+})
 
 start({
-  urlRerouteOnly: true,
-});
+  urlRerouteOnly: true
+})
