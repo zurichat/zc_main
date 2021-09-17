@@ -45,7 +45,7 @@ const Login = () => {
         password
       })
       .then(response => {
-        const { data, message } = response.data 
+        const { data, message } = response.data
 
         //Store token in localstorage
         sessionStorage.setItem('token', data.user.token)

@@ -20,10 +20,13 @@ const SavePassword = () => {
         <div className="col-md-4 mb-3 mt-3" id={styles.p_section}>
           <button className="btn btn-primary" id="submit">
             Save password
-          </button><br/>
-          <p>Can’t remember your current password? <span>Reset your password by email</span></p>
+          </button>
+          <br />
+          <p>
+            Can’t remember your current password?{' '}
+            <span>Reset your password by email</span>
+          </p>
         </div>
-
       </form>
     </div>
   )

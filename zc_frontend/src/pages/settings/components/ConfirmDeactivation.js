@@ -5,11 +5,7 @@ import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 import styles from '../styles/ConfirmDeactivation.module.css'
 import SettingsNav from './SettingsNav'
-import {
-  getToken,
-  getUser,
-  removeUserSession
-} from '../Utils/Common' 
+import { getToken, getUser, removeUserSession } from '../Utils/Common'
 
 const ConfirmDeactivation = () => {
   const [deactivate, setDeactivate] = useState(false)
@@ -18,7 +14,6 @@ const ConfirmDeactivation = () => {
   // const [org, setOrg] = useState(null)
   const user = getUser()
   const token = getToken()
-
 
   useEffect(() => {
     if (token) {
@@ -45,9 +40,7 @@ const ConfirmDeactivation = () => {
     }
   }, [token, user.id])
 
-
-
-  // THE SECTION OF THE DELETE FUNCTION   
+  // THE SECTION OF THE DELETE FUNCTION
   const handleDelete = async () => {
     if (token) {
       try {
@@ -71,8 +64,7 @@ const ConfirmDeactivation = () => {
     }
   }
 
-
-  // THE SECTION OF THE DELETE FUNCTION   
+  // THE SECTION OF THE DELETE FUNCTION
   // const handleDelete = async (id, org) => {
   //   if (token) {
   //     try {
@@ -96,7 +88,6 @@ const ConfirmDeactivation = () => {
   //   }
   // }
 
-  
   return (
     <>
       <SettingsNav />
@@ -128,7 +119,8 @@ const ConfirmDeactivation = () => {
           <div className={styles.buttonContainer}>
             <button
               className={deactivate ? styles.danger1 : styles.danger2}
-              onClick={() => handleDelete()} disabled={!deactivate ? true: false}
+              onClick={() => handleDelete()}
+              disabled={!deactivate ? true : false}
             >
               Deactivate my Account
             </button>

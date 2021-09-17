@@ -7,7 +7,6 @@ import { BiMenuAltRight } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 import zuri from '../../images/zuri.svg'
 
-
 const SettingsNav = () => {
   const [menu, setMenu] = useState(false)
   const state = useContext(TopbarContext)

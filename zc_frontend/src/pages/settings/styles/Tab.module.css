@@ -1,4 +1,3 @@
-
 .tabcontainer {
   padding-top: 60px;
   padding-bottom: 150px;
@@ -58,7 +57,7 @@
   padding: 15px;
   text-align: center;
   width: 50%;
-  background:#fff;
+  background: #fff;
   cursor: pointer;
   border-bottom: 1px solid rgba(0, 0, 0, 0.274);
   box-sizing: content-box;
@@ -84,10 +83,10 @@
 .activetabs {
   background: white;
   color: #00b87c;
-  border-top:1px solid #E5E5E5!important;
-  border-left:1px solid #E5E5E5!important;
-  border-right:1px solid #E5E5E5!important;
-  z-index:99;
+  border-top: 1px solid #e5e5e5 !important;
+  border-left: 1px solid #e5e5e5 !important;
+  border-right: 1px solid #e5e5e5 !important;
+  z-index: 99;
 }
 
 .bloctabs button {
@@ -105,8 +104,8 @@
   width: 100%;
   height: 100%;
   display: none;
-  border:1px solid #E5E5E5!important;
-  border-radius:3px;
+  border: 1px solid #e5e5e5 !important;
+  border-radius: 3px;
 }
 
 #content {
@@ -139,8 +138,6 @@
 .mobiletab {
   display: none;
 }
-
-
 
 /* ================================== */
 /* THE SECTION OF THE MEDIA QUERY */
@@ -188,7 +185,7 @@
     background: none;
     margin-left: 0;
     text-align: left;
-    border:none!important;
+    border: none !important;
   }
 
   .mobiletab {

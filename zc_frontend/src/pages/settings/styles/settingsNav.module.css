@@ -62,10 +62,9 @@
 .searchInput::placeholder {
   font-size: 11px;
   line-height: 16px;
-  color:#616061;
+  color: #616061;
   font-weight: normal;
 }
-
 
 /* THE SECTION OF THE RIGHT NAV */
 .rightnav {
@@ -73,7 +72,6 @@
   justify-content: space-evenly;
   align-items: center;
 }
-
 
 .status {
   margin-right: 5px;
@@ -94,14 +92,14 @@
 }
 
 .circles {
-  background: #0DBE3F;
+  background: #0dbe3f;
   height: 14px;
   width: 14px;
   position: absolute;
   bottom: -3px;
   right: -5px;
   border-radius: 50%;
-  border:2px solid white;
+  border: 2px solid white;
 }
 
 .containers .menubars {
@@ -162,5 +160,4 @@
   .searchBar {
     width: 60%;
   }
-
 }

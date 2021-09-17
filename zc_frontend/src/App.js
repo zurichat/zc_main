@@ -111,7 +111,7 @@ const App = () => (
         <Route path="/input">
           <Input />
         </Route>
-        
+
         <Route path="/search">
           <SearchResult />
         </Route>
@@ -163,20 +163,24 @@ const App = () => (
           </PluginLoaderProvider>
         </Route>
 
-       {/* ----------------settings routes opened------------------------ */}
-       <PrivateRoute path="/confirm-deactivation" component={ConfirmDeactivation}/>
+        {/* ----------------settings routes opened------------------------ */}
+        <PrivateRoute
+          path="/confirm-deactivation"
+          component={ConfirmDeactivation}
+        />
         <Route path="/account-deactivated">
           <AccDeactivated />
         </Route>
-        <PrivateRoute path="/deactivate-account" component={DeactivateAccount}/>
-        <PrivateRoute path="/session-signout" component={AllSessionSignOut}/>
-        <PrivateRoute path="/settings" exact component={Settings}/>
-        <PrivateRoute path="/settings/:id" component={ConfirmPassword}/>
+        <PrivateRoute
+          path="/deactivate-account"
+          component={DeactivateAccount}
+        />
+        <PrivateRoute path="/session-signout" component={AllSessionSignOut} />
+        <PrivateRoute path="/settings" exact component={Settings} />
+        <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
         {/* ----------------settings routes closed----------------- */}
 
-        <Route path="/recover-email">
-          {/* <RecoveryEmail /> */}
-          </Route>
+        <Route path="/recover-email">{/* <RecoveryEmail /> */}</Route>
         <Route path="/recover-password">
           <RecoverPassword />
         </Route>

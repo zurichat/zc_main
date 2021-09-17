@@ -21,7 +21,7 @@ const initialState = {
 const ConfirmPassword = () => {
   const [error, setError] = useState(false)
   const [data, setData] = useState(initialState)
-  const [message, setMessage] = useState("")
+  const [message, setMessage] = useState('')
   const { password, confirm_password } = data
   const history = useHistory()
   const token = getToken()
@@ -39,12 +39,17 @@ const ConfirmPassword = () => {
 
     if (isLength(password))
       return setData(
-        { ...data }, setError(true),
+        { ...data },
+        setError(true),
         setMessage('Your password should be more than 8 characters')
       )
 
     if (!isMatch(password, confirm_password))
-      return setData({ ...data }, setError(true), setMessage('password & confirm-password does not match'))
+      return setData(
+        { ...data },
+        setError(true),
+        setMessage('password & confirm-password does not match')
+      )
 
     try {
       const res = await axios.post(
@@ -111,7 +116,11 @@ const ConfirmPassword = () => {
                 name="confirm_password"
               />
             </div>
-            <button onClick={confirmPassword} className={`${styles.submit_btn}`} type="submit">
+            <button
+              onClick={confirmPassword}
+              className={`${styles.submit_btn}`}
+              type="submit"
+            >
               Confirm password
             </button>
           </form>

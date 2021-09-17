@@ -3,20 +3,17 @@ export const getToken = () => {
   return sessionStorage.getItem('token') || null
 }
 
-
 export const getUser = () => {
   const result = JSON.parse(sessionStorage.getItem('user') || null)
   return result
 }
 
-
 // remove the token and user from the session storage
 export const removeUserSession = () => {
-  sessionStorage.removeItem('token');
-  sessionStorage.removeItem('user');
-  sessionStorage.removeItem('session_id');
+  sessionStorage.removeItem('token')
+  sessionStorage.removeItem('user')
+  sessionStorage.removeItem('session_id')
 }
-
 
 // ================================================
 
@@ -25,7 +22,6 @@ export const isLength = password => {
   if (password.length < 8) return true
   return false
 }
-
 
 // The section of the confirm password
 export const isMatch = (password, cfpassword) => {
