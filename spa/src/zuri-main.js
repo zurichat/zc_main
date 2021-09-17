@@ -1,4 +1,6 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import ReactDOM from "react-dom";
 import singleSpaReact from "single-spa-react";
 import Root from "./root2.component";
@@ -14,14 +16,40 @@ const lifecycles = singleSpaReact({
   },
 });
 
-let defaultUserID = `61377a21e2358b02686503c5---`;
 
-export const GetUserInfo = ({ userID }) => {
+export const GetUserInfo = ({ userID, token }) => {
+  const [userData, setUserData] = useState();
+
+  useEffect(() => {
+    axios
+      .get(`https://api.zuri.chat/users/${userID}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+      .then((res) => {
+        setUserData(res.data.data);
+        console.log(userData);
+
+        let dat = res.json;
+        console.log(dat);
+
+      })
+      .catch(err => console.log(err));
+
+  }, [])
+
+
   return (
     <div>
       <p>This is user...</p>
-      <div>{defaultUserID}, {userID}</div>
-    </div>);
+      <div>This is the user id {userID}</div>
+      <div> this is the auth token {token}</div>
+      {userData &&
+        <div style={{color:'red'}}>user email {userData.email}</div>}
+    </div>
+  );
 }
 
 export const { bootstrap, mount, unmount } = lifecycles;
