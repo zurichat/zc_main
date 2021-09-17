@@ -1,5 +1,5 @@
-import React from "react";
-import CompanyNameCSS from "./styles/CompanyName.module.css";
+import React from 'react'
+import CompanyNameCSS from './styles/CompanyName.module.css'
 
 function CompanyName() {
   return (
@@ -29,7 +29,7 @@ function CompanyName() {
         </div>
       </article>
     </div>
-  );
+  )
 }
 
-export default CompanyName;
+export default CompanyName
