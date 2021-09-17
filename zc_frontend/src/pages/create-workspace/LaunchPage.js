@@ -1,12 +1,12 @@
-import React from "react";
-import LaunchPageCSS from "./styles/LaunchPage.module.css";
+import React from 'react'
+import LaunchPageCSS from './styles/LaunchPage.module.css'
 
 function LaunchPage() {
   return (
     <div>
       <article className={LaunchPageCSS.wrapper}>
         <div className={LaunchPageCSS.email}>
-          {" "}
+          {' '}
           adimchisylester2@gmail.com <a href="zuri.chat">Change</a>
         </div>
         <div className={LaunchPageCSS.centerWrapper}>
@@ -28,7 +28,7 @@ function LaunchPage() {
             Open Zuri Chat App
           </a>
           <p>
-            Don't have the app ? You can also{" "}
+            Don't have the app ? You can also{' '}
             <a href="zuri.chat" className={LaunchPageCSS.inBrowser}>
               use Zuri Chat in your browser
             </a>
@@ -36,7 +36,7 @@ function LaunchPage() {
         </div>
       </article>
     </div>
-  );
+  )
 }
 
-export default LaunchPage;
+export default LaunchPage
