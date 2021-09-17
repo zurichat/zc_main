@@ -1,13 +1,93 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 import { FaCheck } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 import styles from '../styles/ConfirmDeactivation.module.css'
 import SettingsNav from './SettingsNav'
+import { getToken, getUser, removeUserSession } from '../Utils/Common'
 
 const ConfirmDeactivation = () => {
-  const [wantToDeactivate, setWantToDeactivate] = useState(false)
+  const [deactivate, setDeactivate] = useState(false)
   const history = useHistory()
+  // const [id, setId] = useState(null)
+  // const [org, setOrg] = useState(null)
+  const user = getUser()
+  const token = getToken()
+
+  useEffect(() => {
+    if (token) {
+      const getUser = async () => {
+        try {
+          const res = await axios.get(
+            `https://api.zuri.chat/users/${user.id}`,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+              }
+            }
+          )
+          console.log(res.data)
+          // setId(res.data.data._id)
+          // setOrg(res.data.data.Organizations[0])
+        } catch (error) {
+          console.log(error)
+        }
+      }
+      getUser()
+    }
+  }, [token, user.id])
+
+  // THE SECTION OF THE DELETE FUNCTION
+  const handleDelete = async () => {
+    if (token) {
+      try {
+        const res = await axios.delete(
+          `https://api.zuri.chat/users/${user.id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+              Accept: 'application/json',
+              'Content-Type': 'application/json'
+            }
+          }
+        )
+        console.log(res)
+
+        removeUserSession()
+        history.push('/account-deactivated')
+      } catch (err) {
+        console.log(err)
+      }
+    }
+  }
+
+  // THE SECTION OF THE DELETE FUNCTION
+  // const handleDelete = async (id, org) => {
+  //   if (token) {
+  //     try {
+  //       const res = await axios.delete(
+  //         `https://api.zuri.chat/organizations/${org}/members/${id}`,
+  //         {
+  //           headers: {
+  //             Authorization: `Bearer ${token}`,
+  //             Accept: 'application/json',
+  //             'Content-Type': 'application/json'
+  //           }
+  //         }
+  //       )
+  //       console.log(res)
+
+  //       removeUserSession()
+  //       history.push('/account-deactivated')
+  //     } catch (err) {
+  //       console.log(err)
+  //     }
+  //   }
+  // }
+
   return (
     <>
       <SettingsNav />
@@ -16,11 +96,11 @@ const ConfirmDeactivation = () => {
         <div className={styles.confirmationBox}>
           <p>Are you really sure you want to deactivate your account ?</p>
           <div className={styles.confirmationQuestion}>
-            {wantToDeactivate ? (
+            {deactivate ? (
               <span
                 className={styles.checkBoxActive}
                 onClick={() => {
-                  setWantToDeactivate(false)
+                  setDeactivate(!deactivate)
                 }}
               >
                 <FaCheck />
@@ -29,25 +109,21 @@ const ConfirmDeactivation = () => {
               <span
                 className={styles.checkBoxInactive}
                 onClick={() => {
-                  setWantToDeactivate(true)
+                  setDeactivate(!deactivate)
                 }}
               ></span>
             )}
             <span>Yes, I want to deactivate my account</span>
           </div>
+
           <div className={styles.buttonContainer}>
-            {wantToDeactivate ? (
-              <button
-                className={styles.danger1}
-                onClick={() => {
-                  history.push('/account-deactivated')
-                }}
-              >
-                Deactivate my Account
-              </button>
-            ) : (
-              <button className={styles.danger2}>Deactivate my Account</button>
-            )}
+            <button
+              className={deactivate ? styles.danger1 : styles.danger2}
+              onClick={() => handleDelete()}
+              disabled={!deactivate ? true : false}
+            >
+              Deactivate my Account
+            </button>
 
             <Link to="/settings" className={styles.cancel}>
               Cancel

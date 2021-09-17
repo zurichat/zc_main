@@ -5,21 +5,40 @@ import AutoSizer from 'react-virtualized-auto-sizer'
 import { IoMdClose, IoMdSearch } from 'react-icons/io'
 import { TopbarContext } from '../context/Topbar'
 import styles from '../styles/MembersModal.module.css'
+import faker from 'faker'
+
+const placeHolder = n => {
+  const placeHolderMembersArray = []
+  for (let i = 0; i < n; i++) {
+    placeHolderMembersArray.push({
+      userName: faker.internet.userName().toLowerCase(),
+      fullName: `${faker.name.firstName()} ${faker.name.lastName()}`,
+      status: faker.lorem.sentence(),
+      avatar: faker.internet.avatar()
+    })
+  }
+  return placeHolderMembersArray
+}
+
+const faked = placeHolder(250)
 
 const MembersModal = ({ channelTitle, members }) => {
+  // if(!members){
+
+  // }
   const [searchFiltered, setSearchFiltered] = useState(null)
 
   return (
     <div className={styles.modalWrapper}>
       <Header
         channelTitle={channelTitle || 'announcement'}
-        memberNumber={members.length}
+        memberNumber={faked.length}
       />
-      <Search members={members} setSearchFiltered={setSearchFiltered} />
+      <Search members={faked} setSearchFiltered={setSearchFiltered} />
       {searchFiltered !== null ? (
         <MemberList members={searchFiltered} />
       ) : (
-        <MemberList members={members} />
+        <MemberList members={faked} />
       )}
     </div>
   )
@@ -125,28 +144,28 @@ const MemberCard = ({
   )
 }
 
-export const MembersModalButton = ({ members }) => {
-  // This would ordinarily be a slice of the members
-  const imageArray = members.slice(0, 3)
+// export const MembersModalButton = ({ members }) => {
+//   // This would ordinarily be a slice of the members
+//   const imageArray = members.slice(0, 3)
 
-  // Ordinarily memberArray.length
-  const _membersArraySize = members.length
+//   // Ordinarily memberArray.length
+//   const _membersArraySize = members.length
 
-  const { openMembersModal } = useContext(TopbarContext)
-  return (
-    <div className={styles.modalbuttonWrapper}>
-      <button onClick={openMembersModal} className={styles.modalButton}>
-        <div className={styles.modalbuttonImageWrapper}>
-          {imageArray.map((val, idx) => (
-            <span key={idx}>
-              <img src={val.avatar} alt={'user avatar'} />
-            </span>
-          ))}
-        </div>
-        <p>{_membersArraySize}</p>
-      </button>
-    </div>
-  )
-}
+//   const { openMembersModal } = useContext(TopbarContext)
+//   return (
+//     <div className={styles.modalbuttonWrapper}>
+//       <button onClick={openMembersModal} className={styles.modalButton}>
+//         <div className={styles.modalbuttonImageWrapper}>
+//           {imageArray.map((val, idx) => (
+//             <span key={idx}>
+//               <img src={val.avatar} alt={'user avatar'} />
+//             </span>
+//           ))}
+//         </div>
+//         <p>{_membersArraySize}</p>
+//       </button>
+//     </div>
+//   )
+// }
 
 export default MembersModal

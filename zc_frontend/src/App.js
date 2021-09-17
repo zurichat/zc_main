@@ -51,6 +51,7 @@ import StyleGuide from './components/verified'
 import Test from './components/verified-components'
 import RecoverPassword from './pages/passwordRecovery/index'
 import ResetPassword from './pages/passwordReset/Index'
+import PrivateRoute from './pages/settings/Utils/PrivateRoute'
 import AuthApi from './pages/api-docs/components/auth'
 
 import './components/verified-components/master.css'
@@ -110,12 +111,7 @@ const App = () => (
         <Route path="/input">
           <Input />
         </Route>
-        <Route path="/settings" exact>
-          <Settings />
-        </Route>
-        <Route path="/settings/:id">
-          <ConfirmPassword />
-        </Route>
+
         <Route path="/search">
           <SearchResult />
         </Route>
@@ -124,12 +120,6 @@ const App = () => (
         </Route>
         <Route path="/cookies-settings">
           <CookiesSetting />
-        </Route>
-        <Route path="/deactivate-account">
-          <DeactivateAccount />
-        </Route>
-        <Route path="/session-signout">
-          <AllSessionSignOut />
         </Route>
         <Route path="/search-results">
           <SearchResults2 />
@@ -172,12 +162,25 @@ const App = () => (
             <ApiDocs />
           </PluginLoaderProvider>
         </Route>
-        <Route path="/confirm-deactivation">
-          <ConfirmDeactivation />
-        </Route>
+
+        {/* ----------------settings routes opened------------------------ */}
+        <PrivateRoute
+          path="/confirm-deactivation"
+          component={ConfirmDeactivation}
+        />
         <Route path="/account-deactivated">
           <AccDeactivated />
         </Route>
+        <PrivateRoute
+          path="/deactivate-account"
+          component={DeactivateAccount}
+        />
+        <PrivateRoute path="/session-signout" component={AllSessionSignOut} />
+        <PrivateRoute path="/settings" exact component={Settings} />
+        <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
+        {/* ----------------settings routes closed----------------- */}
+
+        <Route path="/recover-email">{/* <RecoveryEmail /> */}</Route>
         <Route path="/recover-password">
           <RecoverPassword />
         </Route>
