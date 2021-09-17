@@ -66,6 +66,7 @@ yarn frontend add is-odd
 `cd root && yarn install && yarn dev`
 
 ### spa
+
 `cd spa && yarn install && yarn dev`
 
 ## Editor setup
