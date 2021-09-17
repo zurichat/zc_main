@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 import errImg from './assets/errImg.svg'
-import zurichatlogo from './assets/zurichatlogo.svg'
-import userAvatar from './assets/user.svg'
 import arrowDown from './assets/arrow-down.svg'
 import '../../components/verified-components/master.css'
 import Toggle from '../verified/toggle'
 import { useState } from 'react'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
+import TopNavBar from '../verified-components/TopNavBar'
+import userAvatar from './assets/user.svg'
 
 // Input tag
 const Input = ({
@@ -119,19 +119,6 @@ const FloatingButton = ({
 
 //   Toggle
 
-// const Toggle = ({ selected, toggleSelected }) => {
-//   return (
-//     <div
-//       className={`toggle ${selected ? '' : 'toggle_disabled'}`}
-//       onClick={toggleSelected}
-//     >
-//       <div
-//         selected={selected}
-//         className={`toggle_ball ${selected ? '' : 'toggle_ball_disabled'}`}
-//       ></div>
-//     </div>
-//   )
-// }
 ;<Toggle />
 
 const Checkbox = ({ checked, onClick }) => {
@@ -142,31 +129,6 @@ const Checkbox = ({ checked, onClick }) => {
         <span className="checkmark"></span>
       </label>
     </div>
-  )
-}
-
-const TopNavBar = () => {
-  const [search, setSearch] = useState('')
-
-  return (
-    <TopNavBarBase>
-      <div>
-        <img src={zurichatlogo} alt="zuri chat logo" />
-        <LogoName>ZURI</LogoName>
-      </div>
-      <BaseInput
-        value={search}
-        onChange={e => setSearch(e.target.value)}
-        type="text"
-        width={7}
-        error
-        placeholder="Search here"
-        border={'#99999933'}
-      />
-      <div>
-        <img src={userAvatar} alt="user profile avatar" />
-      </div>
-    </TopNavBarBase>
   )
 }
 
@@ -436,31 +398,6 @@ const FloatingButtonBase = styled.button`
 
 // Checkbox
 
-//  TopNavBar
-
-const TopNavBarBase = styled.div`
-  background-color: var(--bg-2);
-  padding: 1rem;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  z-index: 2;
-  width: 100%;
-  margin-bottom: 3rem !important;
-`
-
-const LogoName = styled.span`
-  font-family: Lato;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 27px;
-  letter-spacing: 0px;
-  padding: 0.5rem;
-  text-align: center;
-  vertical-align: middle;
-`
 const PluginNavBarBase = styled.div`
   background-color: var(--primary-color);
   padding: 0.5rem 1rem;
@@ -564,10 +501,10 @@ export const CloseButton = styled.button`
 
 export {
   Input,
+  BaseInput,
   Button,
   FloatingButton,
   Toggle,
   Checkbox,
-  TopNavBar,
   PluginNavBar
 }
