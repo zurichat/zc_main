@@ -1,7 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '../styles/LanguageAndRegion.module.css'
 
 const LanguageAndRegion = () => {
+
+
+
+  const [checked, setChecked] = useState(true);
+  // const toggle = 
+
+  function handleSpellCheck() {
+    setChecked(previous => !previous);
+    // PATCH REQUEST
+    fetch('https://api.zuri.chat/organizations/6133c5a68006324323416896/members/6141dd279fd1f4f655d4452b/settings', {
+      method: 'PATCH',
+      body: JSON.stringify({
+        spell_check: false
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      }
+    })
+      .then(res => res.json)
+      .then(data => console.log(data))
+  }
+
   return (
     <div className={styles.container}>
       <div>
@@ -26,7 +48,7 @@ const LanguageAndRegion = () => {
               <input
                 type="checkbox"
                 value="set time zone automatically"
-                checked="checked"
+                checked
               />
               <span className={styles.checkmark}></span>
               Set time zone automatically
@@ -58,7 +80,8 @@ const LanguageAndRegion = () => {
               <input
                 type="checkbox"
                 value="Enable spellcheck on your messages"
-                checked="checked"
+                checked={checked}
+                onClick={handleSpellCheck}
               />
               <span className={styles.checkmark}></span>
               Enable spellcheck on your messages
@@ -82,3 +105,7 @@ const LanguageAndRegion = () => {
 }
 
 export default LanguageAndRegion
+
+
+/* https://api.zuri.chat/organizations/6133c5a68006324323416896/members/6141dd279fd1f4f655d4452b/settings
+ */
