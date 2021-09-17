@@ -1,5 +1,22 @@
-const { merge } = require('webpack-merge')
+const { mergeWithRules } = require('webpack-merge')
 const singleSpaDefaults = require('webpack-config-single-spa-react')
+
+const mergeRules = {
+  plugins: 'replace',
+  devServer: {
+    static: {
+      directory: 'replace'
+    }
+  },
+  module: {
+    rules: {
+      test: 'match',
+      include: 'replace',
+      exclude: 'replace',
+      use: 'replace'
+    }
+  }
+}
 
 module.exports = (webpackConfigEnv, argv) => {
   const defaultConfig = singleSpaDefaults({
@@ -9,7 +26,25 @@ module.exports = (webpackConfigEnv, argv) => {
     argv
   })
 
-  return merge(defaultConfig, {
-    // modify the webpack config however you'd like to by adding to this object
+  return mergeWithRules(mergeRules)(defaultConfig, {
+    module: {
+      rules: [
+        {
+          test: /\.css$/i,
+          use: [
+            'style-loader',
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 1,
+                modules: {
+                  localIdentName: '[local]--[hash:base64:5]__[name]'
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
   })
 }
