@@ -1,5 +1,5 @@
-import React from "react";
-import ProjectNameCSS from "./styles/ProjectName.module.css";
+import React from 'react'
+import ProjectNameCSS from './styles/ProjectName.module.css'
 
 function ProjectName() {
   return (
@@ -29,7 +29,7 @@ function ProjectName() {
         </div>
       </article>
     </div>
-  );
+  )
 }
 
-export default ProjectName;
+export default ProjectName

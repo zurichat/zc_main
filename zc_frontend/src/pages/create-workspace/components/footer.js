@@ -1,5 +1,5 @@
-import React from "react";
-import footer from "../styles/footer.module.css";
+import React from 'react'
+import footer from '../styles/footer.module.css'
 
 function Footer() {
   return (
@@ -11,7 +11,7 @@ function Footer() {
         <span>Contact Us</span>
       </div>
     </div>
-  );
+  )
 }
 
-export default Footer;
+export default Footer
