@@ -5,6 +5,8 @@ env:
 extends:
   - 'eslint:recommended'
   - 'plugin:react/recommended'
+  - 'important-stuff'
+  - 'plugin:prettier/recommended'
 parserOptions:
   ecmaFeatures:
     jsx: true
