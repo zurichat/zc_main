@@ -9,6 +9,7 @@ import { TopbarProvider } from '../../context/Topbar'
 import { PluginLoaderProvider } from '../../context/PluginLoaderState'
 import Profile from '../../components/Profile'
 import TopNavBar from '../../components/verified-components/TopNavBar'
+// import Topbar from '../../components/Topbar'
 
 const Home = () => {
   return (
@@ -17,9 +18,9 @@ const Home = () => {
         <PluginLoaderProvider>
           <ProfileProvider>
             <TopbarProvider>
+              <TopNavBar />
+              {/* <Topbar /> */}
               <div className={styles.room}>
-                {/* <Topbar /> */}
-                <TopNavBar />
                 <div className={styles.container}>
                   <Sidebar />
                   <div className={styles.spaceWrapper}>
