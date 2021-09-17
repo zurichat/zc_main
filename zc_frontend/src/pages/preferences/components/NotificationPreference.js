@@ -66,7 +66,8 @@ const NotificationPreference = () => {
               {' '}
               <input type="checkbox" value="for-mobile" />
               Use different settings for my mobile device
-            </label>          </div>
+            </label>{' '}
+          </div>
           <div className={styles.line}></div>
           {/* <hr />  */}
           <div className={styles.checkbox}>
