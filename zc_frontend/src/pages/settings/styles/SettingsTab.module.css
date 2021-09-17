@@ -4,6 +4,10 @@
   background: #fff;
 }
 
+.settings_wrapper button{
+  outline:none;
+}
+
 .settings_wrapper:last-child {
   border-bottom: none;
 }
