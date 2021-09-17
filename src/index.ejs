@@ -15,11 +15,13 @@
     }
 
     div[id*='zuri-control'] {
+      background-color: red;
       width: 100vw;
       height: 100vh;
     }
 
     div[id*='zuri-content-wrapper'] {
+      background-color: red;
       width: inherit;
       height: 80vh;
     }
@@ -34,7 +36,7 @@
       width: 80vh;
     }
   </style>
-  <title>Root Config</title>
+  <title>Zuri Chat</title>
   <!--
     Remove this if you only support browsers that support async/await.
     This is needed by babel to share largeish helper code for compiling async/await in older
@@ -66,7 +68,6 @@
         "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
         "react": "https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.production.min.js",
         "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.production.min.js",
-
         "@zuri/root-config": "//localhost:9000/zuri-root-config.js"
       }
     }
@@ -76,13 +77,22 @@
   <!-- Add your organization's prod import map URL to this script's src  -->
   <!-- <script type="systemjs-importmap" src="./importmap.json"></script> -->
 
+  <!-- ZURI PLUGINS GO HERE TILL WE MOVE TO THE MAP ABOVE -->
+  <script type="systemjs-importmap">
+    {
+      "imports": {
+        "@zuri/zuri-plugin-chessboard": "https://chess.zuri.chat/zuri-zuri-plugin-chessboard.js"
+      }
+    }
+  </script>
+
   <% if (isLocal) { %>
   <script type="systemjs-importmap">
     {
       "imports": {
-        "@zuri/root-config": "http://localhost:9000/zuri-root-config.js",
-        "@zuri/control": "https://localhost:8080/zuri-control.js",
-        "@zuri/sidebar": "https://localhost:8081/zuri-sidebar.js"
+        "@zuri/root-config": "//localhost:9000/zuri-root-config.js",
+        "@zuri/control": "//localhost:8080/zuri-control.js",
+        "@zuri/sidebar": "//localhost:8081/zuri-sidebar.js"
       }
     }
   </script>
@@ -98,7 +108,6 @@
       }
   </script>
   <% } %>
-  <!-- "@zuri/main": "//localhost:8080/zuri-main.js" -->
 
   <!--
     If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
@@ -120,14 +129,6 @@
   <noscript>
     You need to enable JavaScript to run this app.
   </noscript>
-
-  <main>
-    <div id="zuri-control"></div>
-    <div id="zuri-content-wrapper">
-      <div id="zuri-sidebar"></div>
-      <div id="zuri-plugin"></div>
-    </div>
-  </main>
 
   <script>
     System.import('@zuri/root-config');
