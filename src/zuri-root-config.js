@@ -7,13 +7,18 @@ import { registerApplication, start } from 'single-spa'
 // });
 
 registerApplication({
-  name: '@zuri/control',
-  app: () => System.import('@zuri/control'),
+  name: '@zuri/topbar',
+  app: () => System.import('@zuri/topbar'),
   activeWhen: ['/']
 })
 registerApplication({
   name: '@zuri/sidebar',
   app: () => System.import('@zuri/sidebar'),
+  activeWhen: ['/']
+})
+registerApplication({
+  name: '@zuri/control',
+  app: () => System.import('@zuri/control'),
   activeWhen: ['/']
 })
 
