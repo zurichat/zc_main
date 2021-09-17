@@ -9,7 +9,7 @@ import {
   getToken,
   getUser,
   removeUserSession
-} from '../Utils/Common'
+} from '../Utils/Common' 
 
 const ConfirmDeactivation = () => {
   const [deactivate, setDeactivate] = useState(false)
@@ -96,6 +96,7 @@ const ConfirmDeactivation = () => {
   //   }
   // }
 
+  
   return (
     <>
       <SettingsNav />

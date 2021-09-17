@@ -175,7 +175,7 @@ const App = () => (
         {/* ----------------settings routes closed----------------- */}
 
         <Route path="/recover-email">
-          <RecoveryEmail />
+          {/* <RecoveryEmail /> */}
           </Route>
         <Route path="/recover-password">
           <RecoverPassword />
