@@ -7,7 +7,7 @@
     "start": "webpack serve --port 9000 --env isLocal",
     "start:control": "npm dev --prefix control",
     "start:sidebar": "npm dev --prefix sidebar",
-    "dev": "concurrently --kill-others-on-fail \"npm:start:*\"",
+    "dev": "yarn start",
     "check-format": "prettier -c .",
     "format": "prettier -w .",
     "lint": "eslint src --ext js",
