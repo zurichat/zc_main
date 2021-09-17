@@ -2,22 +2,13 @@
   margin-top: 0.5em;
 }
 
-.isClosed .dropDownButton img {
+.isClosed .dropDownButton {
   transform: rotateZ(-90deg);
 }
 
 .hidden {
   opacity: 0;
   pointer-events: none;
-}
-
-.header {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-  margin-left: 1.875em;
-  align-items: center;
-  padding: 0.5rem 0;
 }
 
 .header span {
@@ -30,15 +21,6 @@
   cursor: pointer;
 }
 
-.dropDownButton {
-  margin-right: 1rem;
-  padding: 0;
-  background: none;
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-
 .dropDownButton img {
   transition: transform 0.2s ease-out;
 }
@@ -47,17 +29,6 @@
   margin-left: auto;
   margin-right: 2rem;
   cursor: pointer;
-}
-
-.content {
-  margin-left: 3.5em;
-  font-family: Lato;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 15px;
-  line-height: 18px;
-  color: #999999;
-  overflow: hidden;
 }
 
 .isClosed .content {

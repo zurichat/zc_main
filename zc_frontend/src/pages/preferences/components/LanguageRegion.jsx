@@ -5,17 +5,44 @@ import TimeZone from '../../settings/constants/TimeZone'
 import styles from '../styles/LanguageRegion.module.css'
 
 const Language = () => {
-  const [isTimezone, setIsTimezone] = useState(false)
-  const [isSpell, setIsSpell] = useState(false)
+  const [tzChecked, tzSetChecked] = useState(true)
+  const [spellChecked, spellSetChecked] = useState(true,
+    fetch('https://api.zuri.chat/organizations/6133c5a68006324323416896/members/6141dd279fd1f4f655d4452b/settings', {
+      method: 'PATCH',
+      body: JSON.stringify({
+        spell_check: true
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      }
+    })
+      .then(res => res.json())
+      .then(data => console.log(data))
+    )
+  const [isTimezone, setIsTimezone] = useState(true)
+  const [isSpell, setIsSpell] = useState(true)
   const [data, setData] = useState('')
 
   // THE SECTION OF HANDLECHECK
   const handleTimezone = e => {
+    tzSetChecked(!tzChecked)
     setIsTimezone(!isTimezone)
   }
 
   const handleSpell = e => {
+    spellSetChecked(!spellChecked)
     setIsSpell(!isSpell)
+    fetch('https://api.zuri.chat/organizations/6133c5a68006324323416896/members/6141dd279fd1f4f655d4452b/settings', {
+      method: 'PATCH',
+      body: JSON.stringify({
+        spell_check: false
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      }
+    })
+      .then(res => res.json())
+      .then(data => console.log(data))
   }
 
   const handleChange = e => {
@@ -23,7 +50,14 @@ const Language = () => {
     setData(value)
   }
 
-  const result = Languages.map(item => <option>{item}</option>)
+  const result = Languages.map((item) => {
+    if (item !== 'English (UK)') {
+      return ''
+    }
+    else {
+      return <option selected>{item}</option>;
+    }
+  })
 
   const results = TimeZone.map(item => <option>{item}</option>)
 
@@ -49,7 +83,7 @@ const Language = () => {
           <br />
 
           <div className="d-flex align-items-center mb-2">
-            <input type="checkbox" onChange={handleTimezone} />
+            <input type="checkbox" checked={tzChecked} onChange={handleTimezone} />
             <small>Set timezone automatically</small>
           </div>
 
@@ -74,7 +108,7 @@ const Language = () => {
           <br />
 
           <div className="d-flex align-items-center mb-2">
-            <input type="checkbox" onChange={handleSpell} />
+            <input type="checkbox" onChange={handleSpell} checked={spellChecked}/>
             <small>Enable spell check on your messages</small>
           </div>
 

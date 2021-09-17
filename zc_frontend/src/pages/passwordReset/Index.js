@@ -1,71 +1,73 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
 import authBg from '../../pages/images/backg.svg'
+import Logo from '../../pages/images/zuri.svg'
 import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
-import FormWrapper from '../../components/AuthFormWrapper'
-import styles from '../../styles/AuthFormElements.module.css'
+// import FormWrapper from '../../components/AuthFormWrapper'
+import Button from '../../components/verified/Button'
+// import styles from '../../styles/AuthFormElements.module.css'
+import styles from '../../styles/ResetPassword.module.css'
+import ResetModal from '../../components/verified/ResetModal'
 // import axios from 'axios'
 const Index = () => {
-  const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
-  const [tos, setTos] = useState(false)
+  const [email, setEmail] = useState('')
+  const [modalShow, setModalShow] = useState(false)
+
+  const toggleModal = () => {
+    setModalShow(!modalShow)
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    toggleModal()
+  }
 
   return (
-    <main id={styles.authPageWrapper}>
-      <aside id={styles.authAsideContainer} className={styles.display_none}>
-        <div id={styles.authImageWrapper}>
-          <img src={authBg} alt="backgroundImage" />
-          <div id={styles.aside_txt}></div>
-        </div>
-      </aside>
-      <section id={styles.authFormContainer}>
-        <FormWrapper
-          header="Reset Password"
-          subHeader="Create a new password for your account"
-          submitButtonName="Continue"
-          password={password}
-          //   handleSubmit={handleSubmit}
-        >
-          <AuthInputBox
-            className={`${styles.inputElement}`}
-            id="password"
-            name="Password"
-            type="password"
-            placeholder="Enter your Password"
-            value={password}
-            setValue={setPassword}
-            // error={error}
-          />
-          <AuthInputBox
-            className={`${styles.inputElement}`}
-            id="cpassword"
-            name="Confirm password"
-            type="password"
-            placeholder="Enter your password"
-            value={confirmPassword}
-            setValue={setConfirmPassword}
-            // error={error}
-          />
-          <div className={`${styles.tos}`}>
-            <input
-              className={`${styles.checkBox}`}
-              name="tos"
-              type="checkbox"
-              value={tos}
-              onClick={() => {
-                setTos(!tos)
-              }}
-            />
-            <span className={`${styles.tosText}`}>
-              I agree to Zurichat's {''}
-              <Link to="/">terms of services{''} </Link>&
-              <Link to="/"> {''}privacy</Link>
-            </span>
+    <>
+      <ResetModal show={modalShow} onHide={toggleModal} />
+      <main id={styles.authPageWrapper}>
+        <aside id={styles.authAsideContainer} className={styles.display_none}>
+          <div id={styles.authImageWrapper}>
+            <img src={authBg} alt="backgroundImage" />
+            <div id={styles.aside_txt}></div>
           </div>
-        </FormWrapper>
-      </section>
-    </main>
+        </aside>
+        <section id={``}>
+          {/* logo div  */}
+          <div className={``}>
+            <img className={styles.logo} src={Logo} alt="" />
+          </div>
+          {/* header text  */}
+          <div className={``}>
+            <h4 className={styles.headerText}>Recover Password</h4>
+            <p>
+              Enter the email address you registered with, a reset link will be
+              sent to your email!
+            </p>
+          </div>
+          {/* form section  */}
+          <form action="">
+            <AuthInputBox
+              className={`${styles.resetInput}`}
+              id="email"
+              name="Email address"
+              type="email"
+              placeholder="Johndoe@example.com"
+              value={email}
+              setValue={setEmail}
+              error=""
+            />
+            <Button className={styles.button} onClick={handleSubmit}>
+              Continue
+            </Button>
+            {/* <ResetModal 
+            show={modalShow}
+            onHide={setModalShow(false)}
+          /> */}
+          </form>
+        </section>
+      </main>
+    </>
   )
 }
 
