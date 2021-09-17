@@ -11,8 +11,6 @@ import { ProfileProvider } from '../../context/ProfileModal'
 import { TopbarProvider } from '../../context/Topbar'
 import { TopbarContext } from '../../context/Topbar'
 
-
-
 // Input tag
 const Input = ({
   type,
@@ -122,9 +120,9 @@ const FloatingButton = ({
   )
 }
 
-  //   Toggle
+//   Toggle
 
-  ; <Toggle />
+;<Toggle />
 
 const Checkbox = ({ checked, onClick }) => {
   return (
@@ -138,7 +136,6 @@ const Checkbox = ({ checked, onClick }) => {
 }
 
 const PluginNavBar = () => {
-
   const { openMembersModal } = useContext(TopbarContext)
 
   return (
@@ -151,7 +148,7 @@ const PluginNavBar = () => {
           <img src={arrowDown} alt="user profile avatar" />
         </PluginName>
       </div>
-      <AllUsers  role="button" onClick={openMembersModal}>
+      <AllUsers role="button" onClick={openMembersModal}>
         <AllUsersImg src={userAvatar} role="button" alt="user profile avatar" />
         <AllUsersImg src={userAvatar} role="button" alt="user profile avatar" />
         <AllUsersImg src={userAvatar} role="button" alt="user profile avatar" />
@@ -417,7 +414,7 @@ const PluginNavBarBase = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top:69px;
+  margin-top: 69px;
 `
 
 const PluginName = styled.span`
