@@ -17,7 +17,7 @@ const Language = () => {
           </select>
         </div>
         <div className="col-md-4 mb-3 mt-2">
-          <button className="btn btn-primary">Save Locale</button>
+          <button className="btn">Save Locale</button>
         </div>
       </form>
     </div>
