@@ -39,7 +39,7 @@ paths:
               $ref: '#/components/schemas/User'
 
       responses:
-        '201':
+        '200':
           description: Returns ID of created user
           content:
             application/json:
@@ -82,7 +82,8 @@ paths:
       description: Updates existing user fields - first_name, last_name, phone
       operationId: getUserID
       security:
-        - BearerAuth: []
+        - cookieAuth: []
+        - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/user_id'
 
@@ -120,7 +121,8 @@ paths:
     get:
       summary: Retrieves the information about a user
       security:
-        - BearerAuth: []
+        - cookieAuth: []
+        - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/user_id'
 
@@ -152,7 +154,8 @@ paths:
     delete:
       summary: Deactivates a user's account
       security:
-        - BearerAuth: []
+        - bearerAuth: []
+        - cookieAuth: []
       parameters:
         - $ref: '#/components/parameters/user_id'
 
@@ -180,31 +183,46 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
 
-  /users/search/{query}:
+  /users/{email}/organizations:
     get:
-      summary: Retrieves all users that match the given query parameter
-      description: Retrieves all created users saved to the DB
+      summary: Get a users organizations
+      description: retrive all organizations a user belongs to
+      operationId: getUserOrgs
       security:
-        - BearerAuth: []
-      tags:
-        - Users
+        - cookieAuth: []
+        - bearerAuth: []
       parameters:
         - in: path
-          name: query
+          name: email
           required: true
           schema:
-            oneOf:
-              - $ref: '#/components/parameters/first_name'
-              - $ref: '#/components/parameters/last_name'
-              - $ref: '#/components/parameters/email'
+            type: string
+            format: email
+      tags:
+        - Users
+
       responses:
         '200':
-          description: User found or empty result if not found
+          description: User's organization(s) retrieved successfully
           content:
             application/json:
               schema:
-                oneOf:
-                  - $ref: '#/components/schemas/UsersResponse'
+                $ref: '#/components/schemas/UserOrgs'
+
+        '404':
+          description: No record found
+          content:
+            application/json:
+              schema:
+                type: string
+                example: user with email user1@gmail.com has no organization
+
+        '500':
+          description: Someting went wrong
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
 
 components:
   parameters:
@@ -221,29 +239,7 @@ components:
       required: true
       schema:
         type: integer
-    first_name:
-      in: path
-      name: first_name
-      required: true
-      schema:
-        type: string
-        example: Jane
 
-    last_name:
-      in: path
-      name: last_name
-      required: true
-      schema:
-        type: string
-        example: Doe
-
-    email:
-      in: path
-      name: email
-      required: true
-      schema:
-        type: string
-        example: janedoe@email.com
   schemas:
     User:
       type: object
@@ -375,6 +371,34 @@ components:
               type: string
               example: null
 
+    UserOrgs:
+      type: object
+      properties:
+        status:
+          type: number
+          example: 200
+        message:
+          type: string
+          example: user organizations retrieved successfully
+        data:
+          type: object
+          properties:
+            id:
+              type: string
+              example: 61408b3e009d394a85088ba3
+            isOwner:
+              type: boolean
+              example: false
+            logo_url:
+              type: string
+              example: 'https://imagelocation.com/image.png'
+            name:
+              type: string
+              example: ZuriHNG
+            workspace_url:
+              type: string
+              example: zurichat-ssr9730.zurichat.com
+
     DeleteUser:
       type: object
       properties:
@@ -411,6 +435,10 @@ components:
           example: email address is not valid
 
   securitySchemes:
-    BearerAuth:
+    bearerAuth:
       type: http
       scheme: bearer
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: JSESSIONID
