@@ -18,7 +18,7 @@ const AudioVideo = () => {
                 </div>
                 <div className={styles.line}></div>
                 <div className={styles.microphone}>
-                    <h5 className={styles.head}>Microphone</h5>
+                    <h6 className={styles.head}>Microphone</h6>
                     <div className={styles.select}>
                         <select name="" id="">
                             <option selected disabled>Default - Microphone Array [Realtek...</option>
@@ -52,7 +52,7 @@ const AudioVideo = () => {
                             </div>
                         </div>
                     </div>
-                    <h5 className={styles.headspeaker}>Speaker</h5>
+                    <h6 className={styles.headspeaker}>Speaker</h6>
                     <div className={styles.speaker}>
                         <div className={styles.selecttwo}>
                             <select name="" id="">
@@ -66,7 +66,7 @@ const AudioVideo = () => {
                 </div>
                 <div className={styles.line}></div>
                 <div className={styles.join}>
-                    <h5 className={styles.head}>When joining a ZuriChat call...</h5>
+                    <h6 className={styles.head}>When joining a ZuriChat call...</h6>
                     <div className={styles.check}>
                         <div className={styles.checkset}>
                             <input type="checkbox" name="" id="" />
@@ -87,7 +87,7 @@ const AudioVideo = () => {
                 </div>
                 <div className={styles.line}></div>
                 <div className={styles.huddle}>
-                    <h5 className={styles.head}>When joining a huddle...</h5>
+                    <h6 className={styles.head}>When joining a huddle...</h6>
                     <div className={styles.check}>
                         <div className={styles.checkstatus}>
                             <input type="checkbox" name="" id="" />
@@ -137,7 +137,7 @@ const AudioVideo = () => {
                 </div>    
                 <div className={styles.line}></div>
                 <div className={styles.screen}>
-                    <h5 className={styles.head}>When your screen saver starts or your computer locks...</h5>
+                    <div className={styles.screensaver}>When your screen saver starts or your computer locks...</div>
                     <div className={styles.check}>
                         <div className={styles.checkcall}>
                             <input type="checkbox" name="" id="" />
