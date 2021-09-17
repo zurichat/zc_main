@@ -79,7 +79,7 @@
 }
 
 .passwordsection button {
-  font-size: 15px;
+  font-size: 13px;
   padding: 10px 22px;
   background: #00b87c;
   outline: none !important;
@@ -100,7 +100,7 @@
 }
 
 #p_section p {
-  font-size: 15px;
+  font-size: 14px;
   margin-top: 5px;
 }
 
@@ -109,7 +109,7 @@
 }
 
 .passwordsection p {
-  font-size: 15px;
+  font-size: 14px;
   width: 60%;
 }
 
@@ -133,7 +133,7 @@
 
 /* THE SECTION OF THE TWO FACTOR */
 .two_factor p {
-  font-size: 15px;
+  font-size: 14px;
   width: 60%;
   margin-top: 10px;
   line-height: 20px;
@@ -145,9 +145,10 @@
 }
 
 .two_factor button {
-  font-size: 15px;
+  font-size: 13px;
   background: #00b87c;
   color: #fff;
+  padding: 10px;
 }
 
 .two_factor button:hover {
@@ -155,7 +156,7 @@
 }
 
 .two_factor span {
-  font-size: 15px;
+  font-size: 14px;
   color: rgba(58, 58, 58, 0.7);
 }
 
