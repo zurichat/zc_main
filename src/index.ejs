@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: grid;
+      grid-template-columns: 0.6fr 1.4fr;
+      grid-template-rows: 0.5fr 1.5fr;
+      gap: 0px 0px;
+      grid-template-areas:
+        'topbar topbar'
+        'sidebar plugincontent';
+    }
+
+    div[id*='zuri'] {
+      /* min-height: inherit;  min-width: inherit; */
+      /* max-height: inherit;  max-width: inherit; */
+      width: 100%;
+      width: 100%;
+    }
+
+    div[id*='zuri/topbar'] {
+      grid-area: control;
+
+      background-color: red;
+      padding: 2rem;
+      font-size: 3rem;
+    }
+
+    div[id*='zuri/control'] {
+      grid-area: topbar;
+    }
+
+    div[id*='zuri/sidebar'] {
+      grid-area: sidebar;
+
+      background-color: green;
+      font-size: 3rem;
+    }
+
+    div[id*='zuri-plugin'] {
+      grid-area: plugincontent;
+    }
+  </style>
+  <title>Zuri Chat</title>
+  <!--
+    Remove this if you only support browsers that support async/await.
+    This is needed by babel to share largeish helper code for compiling async/await in older
+    browsers. More information at https://github.com/single-spa/create-single-spa/issues/112
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.7/runtime.min.js"></script>
+  <!--
+    This CSP allows any SSL-enabled host and for arbitrary eval(), but you should limit these directives further to increase your app's security.
+    Learn more about CSP policies at https://content-security-policy.com/#directive
+  -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' 'unsafe-eval' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';">
+  <meta name="importmap-type" content="systemjs-importmap" />
+  <!-- If you wish to turn off import-map-overrides for specific environments (prod), uncomment the line below -->
+  <!-- More info at https://github.com/joeldenning/import-map-overrides/blob/master/docs/configuration.md#domain-list -->
+  <!-- <meta name="import-map-overrides-domains" content="denylist:prod.example.com" /> -->
+
+  <!-- Shared dependencies go into this import map. Your shared dependencies must be of one of the following formats:
+
+    1. System.register (preferred when possible) - https://github.com/systemjs/systemjs/blob/master/docs/system-register.md
+    2. UMD - https://github.com/umdjs/umd
+    3. Global variable
+
+    More information about shared dependencies can be found at https://single-spa.js.org/docs/recommended-setup#sharing-with-import-maps.
+  -->
+  <script type="systemjs-importmap">
+    {
+      "imports": {
+        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
+        "react": "https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.production.min.js",
+        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.production.min.js"
+      }
+    }
+  </script>
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js" as="script">
+
+  <!-- Add your organization's prod import map URL to this script's src  -->
+  <!-- <script type="systemjs-importmap" src="./importmap.json"></script> -->
+
+  <!-- ZURI PLUGINS GO HERE TILL WE MOVE TO THE MAP ABOVE -->
+  <script type="systemjs-importmap">
+    {
+      "imports": {
+        "@zuri/zuri-plugin-chessboard": "https://chess.zuri.chat/zuri-zuri-plugin-chessboard.js"
+      }
+    }
+  </script>
+
+  <% if (isLocal) { %>
+  <script type="systemjs-importmap">
+    {
+      "imports": {
+        "@zuri/root-config": "//localhost:9000/zuri-root-config.js",
+        "@zuri/topbar": "//localhost:8080/zuri-topbar.js",
+        "@zuri/sidebar": "//localhost:8081/zuri-sidebar.js",
+        "@zuri/control": "//localhost:8082/zuri-control.js"
+      }
+    }
+  </script>
+  <% } else { %>
+  <script type="systemjs-importmap">
+    {
+      "imports": {
+          "@zuri/root-config": "https://zuri.chat/zuri-root-config.js",
+          "@zuri/topbar": "https://zuri.chat/zuri-topbar.js",
+          "@zuri/sidebar": "https://zuri.chat/zuri-sidebar.js",
+          "@zuri/control": "https://zuri.chat/zuri-control.js"
+        }
+      }
+  </script>
+  <% } %>
+
+  <!--
+    If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
+    Learn more about why at https://single-spa.js.org/docs/ecosystem-angular/#zonejs
+  -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script> -->
+
+  <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
+  <% if (isLocal) { %>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
+  <% } else { %>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
+  <% } %>
+</head>
+
+<body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+
+  <script>
+    System.import('@zuri/root-config');
+  </script>
+  <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
+</body>
+
+</html>
