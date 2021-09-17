@@ -1,13 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400,500&display=swap');
-
-body {
-    font-family: "Lato";
-
-}
-
 .container {
     width: 400%;
     margin: 2rem;
+    font-family: "Lato";
 }
 
 .head {
@@ -32,11 +26,11 @@ body {
 }
 
 
-select {
+/* select {
     height: 3rem;
     border-radius: 4px;
     padding-left: .5rem;
-}
+} */
 
 .line {
     background: #aeaeae;
@@ -286,11 +280,3 @@ select {
     color: #3a3a3a;
     font-weight: bold;
 }
-
-
-
-
-
-
-
-
