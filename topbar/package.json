@@ -1,10 +1,10 @@
 {
-  "name": "@zuri/control",
+  "name": "@zuri/topbar",
   "license": "MIT",
   "scripts": {
     "start": "webpack serve",
     "start:standalone": "webpack serve --env standalone",
-    "dev": "yarn start --port=8082",
+    "dev": "yarn start --port=8080",
     "check-format": "prettier -c .",
     "format": "prettier -w .",
     "lint": "eslint src --ext js",
