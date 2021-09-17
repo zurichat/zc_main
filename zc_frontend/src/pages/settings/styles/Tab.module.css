@@ -1,11 +1,11 @@
 .tabcontainer {
-  padding-top: 80px;
+  padding-top: 60px;
   padding-bottom: 150px;
   display: flex;
   /* align-items: center; */
   flex-direction: column;
   justify-content: center;
-  background: #f6f6f6;
+  background: #fff;
   height: 200%;
 }
 
@@ -13,7 +13,7 @@
   width: 70%;
   margin: 0 auto;
   background: none;
-  font-size: 20px;
+  font-size: 25px;
   margin-bottom: 20px;
   color: #242424;
   font-family: Lato;
@@ -27,14 +27,12 @@
 
 .bloctabs {
   display: flex;
-  /* justify-content: space-between; */
-  background: #f6f6f6 !important;
+  background: #fff !important;
   position: relative;
 }
 
 .bloctabs button {
   width: 20%;
-  /* background:red; */
 }
 
 @media screen and (min-width: 1000px) {
@@ -59,14 +57,13 @@
   padding: 15px;
   text-align: center;
   width: 50%;
-  background: #f6f6f6;
+  background: #fff;
   cursor: pointer;
   border-bottom: 1px solid rgba(0, 0, 0, 0.274);
   box-sizing: content-box;
   position: relative;
   outline: none;
   color: #7c7c7c;
-  /* font-weight: bold; */
   font-size: 17px !important;
 }
 
@@ -74,7 +71,6 @@
   padding: 15px;
   text-align: center;
   width: 50%;
-  background: #f6f6f6;
   cursor: pointer;
   border-bottom: 1px solid rgba(0, 0, 0, 0.274);
   box-sizing: content-box;
@@ -87,6 +83,10 @@
 .activetabs {
   background: white;
   color: #00b87c;
+  border-top: 1px solid #e5e5e5 !important;
+  border-left: 1px solid #e5e5e5 !important;
+  border-right: 1px solid #e5e5e5 !important;
+  z-index: 99;
 }
 
 .bloctabs button {
@@ -104,6 +104,8 @@
   width: 100%;
   height: 100%;
   display: none;
+  border: 1px solid #e5e5e5 !important;
+  border-radius: 3px;
 }
 
 #content {
@@ -160,7 +162,6 @@
   #bloctabs {
     display: flex;
     flex-direction: column;
-    background: #f6f6f6 !important;
     z-index: 99;
     border: 1px solid #cccccc;
   }
@@ -184,10 +185,11 @@
     background: none;
     margin-left: 0;
     text-align: left;
+    border: none !important;
   }
 
   .mobiletab {
-    border-bottom: 1px solid #dedede;
+    border: 1px solid #dedede;
     padding: 10px;
     display: block;
     font-size: 18px;
