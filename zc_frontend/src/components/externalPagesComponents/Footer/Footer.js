@@ -34,7 +34,7 @@ const Footer = ({ showMessage, type }) => (
                 <a className={styles.link} href="/">
                   News
                 </a>
-                <Link to='/Careers' className={styles.link}>
+                <Link to="/Careers" className={styles.link}>
                   Careers
                 </Link>
               </li>
