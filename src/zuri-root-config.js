@@ -26,7 +26,7 @@ registerApplication({
 registerApplication({
   name: '@zuri/zuri-plugin-chessboard',
   app: () => System.import('@zuri/zuri-plugin-chessboard'),
-  activeWhen: ['/', location => location.pathname.startsWith('/chess')]
+  activeWhen: [location => location.pathname.startsWith('/chess')]
 })
 
 start({
