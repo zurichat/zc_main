@@ -34,7 +34,7 @@ const Themes = () => {
         </div>
       </div>
       <div className={styles.text2}>
-        Automatically switch between light and dark themes when your <br />{' '}
+        Automatically switch between light and dark themes when your <br />
         system does.
       </div>
       <div className={styles.img}>
@@ -46,7 +46,7 @@ const Themes = () => {
       <div className={styles.customize}>
         <div className={styles.text3}>Colors</div>
         <div className={styles.custom}>
-          Customize the look of your workspace. Feeling adventurous?
+          Customize the look of your workspace. Feeling <br /> adventurous?
         </div>
         <div className={styles.create}>Create a custom theme</div>
         <div className={styles.true}>Tried and true</div>

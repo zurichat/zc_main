@@ -141,9 +141,9 @@ const MessagesMedia = () => {
       <div className={styles.bottom5}></div>
       <div className={styles.emails}>Bring emails into Zurichat</div>
       <div className={styles.upload}>
-        You can upload any important email to Slack by forwarding it to a unique{' '}
-        <br /> email address. Slackbot will deliver the email and you can keep
-        it private or <br /> share it with your team.
+        You can upload any important email to Slack by forwarding it to a <br /> unique
+        email address. Slackbot will deliver the email and you can <br /> keep
+        it private or share it with your team.
       </div>
       <button className={styles.button}>
         <div className={styles.forward}>Get a forwarding address</div>

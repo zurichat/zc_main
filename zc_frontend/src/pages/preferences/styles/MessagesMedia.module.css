@@ -449,7 +449,7 @@
   margin-top: 10px;
   font-size: 13px;
   color: #999999;
-  line-height: 20px;
+  line-height: 22px;
   font-weight: normal;
   font-style: normal;
 }
@@ -457,9 +457,9 @@
 .button {
   border-radius: 6px;
   background-color: white;
-  color: #999999;
-  border: 1px solid rgb(54, 54, 54);
-  margin-top: 24px;
+  color: #00B87C;
+  border: 1px solid #00B87C;
+  margin-top: 10px;
   margin-bottom: 30px;
   cursor: pointer;
 }

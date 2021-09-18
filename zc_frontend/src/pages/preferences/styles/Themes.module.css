@@ -16,8 +16,8 @@
 }
 
 .os {
-  font-weight: bold;
-  font-size: 12px;
+  font-weight: 750;
+  font-size: 14px;
   font-style: normal;
   position: relative;
   line-height: 20px;
@@ -25,10 +25,10 @@
 }
 
 .text {
-  font-size: 15px;
+  font-size: 14px;
   margin-left: 31px;
-  font-weight: 700;
-  color: #3a3a3a;
+  font-weight: 500;
+  color: #999999;
   position: relative;
 }
 
@@ -42,8 +42,8 @@
 }
 
 .mention {
-  font-size: 13px;
-  color: #3a3a3a;
+  font-size: 14px;
+  color: #999999;
   font-weight: 500;
   line-height: 20px;
   font-style: normal;
@@ -53,10 +53,10 @@
 
 .text2 {
   margin-left: 32px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 20px;
-  color: #3a3a3a;
+  color: #999999;
   font-style: normal;
   position: relative;
 }
@@ -75,13 +75,13 @@
 
 .customize {
   border-top: 1px solid rgba(153, 153, 153, 0.5);
-  margin-top: 30px;
+  margin-top: 15px;
   margin-left: 32px;
   width: 87%;
 }
 
 .text3 {
-  margin-top: 20px;
+  margin-top: 27px;
   font-weight: 900;
   font-size: 15px;
   line-height: 20px;
@@ -89,9 +89,9 @@
 }
 
 .custom {
-  font-size: 13px;
-  color: #3a3a3a;
-  margin-top: 17px;
+  font-size: 14px;
+  color: #999999;
+  margin-top: 13px;
   font-weight: 500;
   line-height: 20px;
   font-style: normal;
@@ -107,18 +107,18 @@
 }
 
 .true {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 20px;
   font-style: normal;
   color: #999999;
-  margin-top: 25px;
+  margin-top: 8px;
 }
 
 .set1 {
   display: flex;
   margin-left: 32px;
-  margin-top: 20px;
+  margin-top: 13px;
 }
 
 .theme3 {
@@ -134,14 +134,14 @@
 
 .all {
   display: flex;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-left: 32px;
 }
 
 .show {
-  margin-left: 10px;
-  font-size: 13px;
-  font-weight: 500;
+  margin-left: 8px;
+  font-size: 12px;
+  font-weight: 600;
   line-height: 20px;
   font-style: normal;
   color: #333333;
@@ -152,7 +152,7 @@
 }
 
 .clean {
-  margin-top: 20px;
+  margin-top: 25px;
   margin-left: 32px;
   font-size: 13px;
   font-weight: 500;
@@ -164,7 +164,7 @@
 .set2 {
   display: flex;
   margin-left: 32px;
-  margin-top: 20px;
+  margin-top: 12px;
 }
 
 .theme5 {
