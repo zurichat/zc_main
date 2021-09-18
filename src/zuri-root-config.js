@@ -14,7 +14,7 @@ registerApplication({
 registerApplication({
   name: '@zuri/sidebar',
   app: () => System.import('@zuri/sidebar'),
-  activeWhen: ['/']
+  activeWhen: () => true
 })
 registerApplication({
   name: '@zuri/control',
