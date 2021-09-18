@@ -13,9 +13,9 @@ import AuthInputBox from '../components/AuthInputBox'
 import JoinedRooms from './joinedRooms/JoinedRooms'
 import PublicRooms from '../publicRooms/PublicRooms'
 import cheerio from 'cheerio'
-import newMessageIcon from "../assets/newmessage.svg"
-import zurilogo from "../assets/zurichatlogo.svg"
-import arrowHead from "../assets/shapekeyboardarrowdown.svg"
+import newMessageIcon from '../assets/newmessage.svg'
+import zurilogo from '../assets/zurichatlogo.svg'
+import arrowHead from '../assets/shapekeyboardarrowdown.svg'
 
 // import "@reach/dialog/styles.css";
 
@@ -206,10 +206,7 @@ export const Sidebar = () => {
       <div className={styles.orgInfo}>
         <div className={styles.orgName}>
           <p>HNGi8</p>
-          <img
-            src={arrowHead}
-            alt="Organisation settings button"
-          />
+          <img src={arrowHead} alt="Organisation settings button" />
         </div>
         <Overlay isOpen={showDialog} onDismiss={close}>
           <Content aria-label="room-list">

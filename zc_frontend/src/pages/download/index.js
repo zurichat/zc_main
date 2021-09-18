@@ -3,12 +3,11 @@ import Footer from '../../components/externalPagesComponents/Footer/Footer'
 import styles from './styles/download.module.css'
 import SearchSuggestion from '../searchSuggestion'
 import Apk from './apk/appRelease.apk'
-import ellipseA from "../../assets/Ellipse159.svg"
-import ellipseB from "../../assets/Ellipse160.svg"
-import screenSHot from "../../assets/rectangle.svg"
-import playStore from "../../assets/Play_Store_badge.svg"
-import appleStore from "../../assets/App_Store_Badge.svg"
-
+import ellipseA from '../../assets/Ellipse159.svg'
+import ellipseB from '../../assets/Ellipse160.svg'
+import screenSHot from '../../assets/rectangle.svg'
+import playStore from '../../assets/Play_Store_badge.svg'
+import appleStore from '../../assets/App_Store_Badge.svg'
 
 const Download = () => {
   return (
@@ -22,21 +21,13 @@ const Download = () => {
           </a>
         </div>
         <div className={styles.images}>
-          <img
-            className={styles.circle}
-            src={ellipseA}
-            alt="circle"
-          ></img>
+          <img className={styles.circle} src={ellipseA} alt="circle"></img>
           <img
             className={`${styles.screenshot}`}
             src={screenSHot}
             alt="app screenshot"
           ></img>
-          <img
-            className={styles.circle2}
-            src={ellipseB}
-            alt="circle2"
-          ></img>
+          <img className={styles.circle2} src={ellipseB} alt="circle2"></img>
         </div>
         <div className={styles.buttondiv}>
           <a href={Apk} download="release.apk" className={styles.button1}>

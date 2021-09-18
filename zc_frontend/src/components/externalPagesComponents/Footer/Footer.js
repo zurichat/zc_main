@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from './Footer.module.css'
 import Message from './Message'
-import zurilogo from "../../../assets/zurichatlogo.svg"
-import facebook from "../../../assets/facebook.svg"
-import instagram from "../../../assets/instagram.svg"
-import twitter from "../../../assets/twitter.svg"
-import linkedIn from "../../../assets/linkedin.svg"
+import zurilogo from '../../../assets/zurichatlogo.svg'
+import facebook from '../../../assets/facebook.svg'
+import instagram from '../../../assets/instagram.svg'
+import twitter from '../../../assets/twitter.svg'
+import linkedIn from '../../../assets/linkedin.svg'
 
 const Footer = ({ showMessage, type }) => (
   <footer className={styles.footer}>

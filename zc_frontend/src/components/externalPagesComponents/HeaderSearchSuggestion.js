@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import headerStyles from '../../styles/HeaderSearchSuggestion.module.css'
 import SearchSuggestionBar from '../SearchSuggestionBar'
 import useMatchMedia from '../useMatchMedia'
-import searchLineIcon from "../../assets/search-2-line.svg"
-import zurilogo from "../../assets/zurichatlogo.svg"
+import searchLineIcon from '../../assets/search-2-line.svg'
+import zurilogo from '../../assets/zurichatlogo.svg'
 
 const HeaderSearchSuggestion = () => {
   const [openSearchbar, setOpenSearchbar] = useState(false)

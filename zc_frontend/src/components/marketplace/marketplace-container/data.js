@@ -1,4 +1,4 @@
-import zurilogo from "../../../assets/zurichatlogo.svg"
+import zurilogo from '../../../assets/zurichatlogo.svg'
 
 const registeredPlugins = [
   {

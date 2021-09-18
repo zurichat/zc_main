@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import SignOutActionList from './SignOutActionList'
 import SettingsNav from './SettingsNav'
@@ -9,14 +9,13 @@ import styles from '../styles/AllSessionSignOut.module.css'
 import boxArrow from '../../images/box-arrow-right.svg'
 import errorIcon from '../../images/bx-error.svg'
 // HTTP request library
-import axios from "axios"
-
+import axios from 'axios'
 
 function AllSessionSignOut() {
-  const [error, setError] = useState("")
+  const [error, setError] = useState('')
   //const [userSession, setUserSession] = useState({})
   const [user, setUser] = useState({})
-  const [currentPassword, setCurrentPassword] = useState("")
+  const [currentPassword, setCurrentPassword] = useState('')
 
   const history = useHistory()
 
@@ -24,7 +23,7 @@ function AllSessionSignOut() {
     let timerId
     if (error) {
       timerId = setTimeout(() => {
-        setError("")
+        setError('')
       }, 3000)
     }
 
@@ -35,27 +34,29 @@ function AllSessionSignOut() {
     const userPassword = {
       password: currentPassword
     }
-    
-    try {
 
-      const response = await axios.post("https://api.zuri.chat/auth/logout/othersessions", {
-        body: JSON.stringify(userPassword)
-      })
-      
-      if(response.status !== 200) {
+    try {
+      const response = await axios.post(
+        'https://api.zuri.chat/auth/logout/othersessions',
+        {
+          body: JSON.stringify(userPassword)
+        }
+      )
+
+      if (response.status !== 200) {
         throw new Error(`Failed to fetch data, status: ${response.status} `)
       }
 
-      const {data} = await response.data
+      const { data } = await response.data
       setUser(data)
       console.log(data)
     } catch (error) {
       console.log(error)
-      setError("That password is incorrect. Please try again")
+      setError('That password is incorrect. Please try again')
     }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault()
 
     comparePassword()
@@ -71,11 +72,8 @@ function AllSessionSignOut() {
             <h3>Sign out all other sessions</h3>
           </header>
           {error && (
-            <FormMessage
-              message={error}
-              icon={errorIcon}
-              color="#F40101"
-            />)}
+            <FormMessage message={error} icon={errorIcon} color="#F40101" />
+          )}
           <section className={`${styles.session_content}`}>
             <h4>Click the button below to sign out of all other sessions.</h4>
             <div className={`${styles.signout_content}`}>

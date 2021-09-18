@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 import styles from '../styles/Dropdown.module.css'
-import addicon from "../assets/addicon.svg"
+import addicon from '../assets/addicon.svg'
 const Dropdown = ({
   children,
   title,

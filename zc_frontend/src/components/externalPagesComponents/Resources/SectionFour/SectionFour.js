@@ -1,13 +1,13 @@
 import React from 'react'
 import styles from './SectionFour.module.css'
-import resourceA from "../../../../assets/resourceimage4a.png"
-import resourceB from "../../../../assets/resourceimage4b.png"
-import logo from "../../../../assets/logo.svg"
-import facebook from "../../../../assets/facebook-icon.svg"
-import twitter from "../../../../assets/twitter-icon.svg"
-import instagram from "../../../../assets/instagram-icon.svg"
-import youtube from "../../../../assets/youtube-icon.svg"
-import getApp from "../../../../assets/getApp.svg"
+import resourceA from '../../../../assets/resourceimage4a.png'
+import resourceB from '../../../../assets/resourceimage4b.png'
+import logo from '../../../../assets/logo.svg'
+import facebook from '../../../../assets/facebook-icon.svg'
+import twitter from '../../../../assets/twitter-icon.svg'
+import instagram from '../../../../assets/instagram-icon.svg'
+import youtube from '../../../../assets/youtube-icon.svg'
+import getApp from '../../../../assets/getApp.svg'
 
 function SectionFour() {
   let productList = ['Features', 'Integrations', 'Enterprise', 'Solution']

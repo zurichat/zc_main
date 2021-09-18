@@ -1,9 +1,9 @@
 import css from '../styles/section3.module.css'
-import channelIcon from "../../../assets/channels.svg"
-import todoListIcon from "../../../assets/todolist.svg"
-import calenderIcon from "../../../assets/calendar.svg"
-import chatIcon from "../../../assets/chats.svg"
-import deadLineIcon from "../../../assets/deadline.svg"
+import channelIcon from '../../../assets/channels.svg'
+import todoListIcon from '../../../assets/todolist.svg'
+import calenderIcon from '../../../assets/calendar.svg'
+import chatIcon from '../../../assets/chats.svg'
+import deadLineIcon from '../../../assets/deadline.svg'
 
 const Section3 = () => {
   return (

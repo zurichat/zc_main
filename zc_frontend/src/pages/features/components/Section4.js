@@ -1,6 +1,6 @@
 import styles from '../styles/Section4.module.css'
-import appImage from "../../../assets/app.png"
-import funImage from "../../../assets/Fun.png"
+import appImage from '../../../assets/app.png'
+import funImage from '../../../assets/Fun.png'
 const Section4 = () => {
   return (
     <div className={styles.section4}>

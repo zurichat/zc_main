@@ -2,7 +2,7 @@ import { useHistory } from 'react-router-dom'
 import styles from '../styles/AcctDeactivation.module.css'
 import SettingsNav from './SettingsNav'
 import { Link } from 'react-router-dom'
-import errorAlert from "../../../assets/alertTriangle.svg"
+import errorAlert from '../../../assets/alertTriangle.svg'
 
 const AcctDeactivation = () => {
   const history = useHistory()

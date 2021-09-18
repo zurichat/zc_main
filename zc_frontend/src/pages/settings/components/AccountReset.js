@@ -1,13 +1,12 @@
-import React from "react"
+import React from 'react'
 import FormMessage from './FormMessage'
-import SettingsNav from "./SettingsNav"
+import SettingsNav from './SettingsNav'
 
 import styles from '../styles/AllSessionSignOut.module.css'
 //Icons
 import successIcon from '../../images/bx-success.svg'
 
 const AccountReset = () => {
-
   return (
     <>
       <SettingsNav />
@@ -26,11 +25,15 @@ const AccountReset = () => {
           </header>
           <div className={`${styles.account_reset_info}`}>
             <p>
-              Get a magic link by email to automatically sign in on our mobile or desktop apps.
+              Get a magic link by email to automatically sign in on our mobile
+              or desktop apps.
             </p>
             <br />
             <p>
-              If you’ve just reset your password (hopefully to something stronger and more secure), you can easily sign in  on mobile using a magic link. Open the magic link email on your mobile device, click the link and your new   password will now work!
+              If you’ve just reset your password (hopefully to something
+              stronger and more secure), you can easily sign in on mobile using
+              a magic link. Open the magic link email on your mobile device,
+              click the link and your new password will now work!
             </p>
             <br />
             <button className={`${styles.account_reset_btn}`}>
@@ -43,4 +46,4 @@ const AccountReset = () => {
   )
 }
 
-export default AccountReset;
+export default AccountReset

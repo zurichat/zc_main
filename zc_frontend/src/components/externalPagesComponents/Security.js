@@ -1,6 +1,6 @@
 import styles from '../../styles/Security.module.css'
 import padlock from '../../assets/padlock.png'
-import padlockIcon from "../../assets/padlock.svg"
+import padlockIcon from '../../assets/padlock.svg'
 import approved from '../../assets/approved.svg'
 import dataProcIcon from '../../assets/data-protection.svg'
 

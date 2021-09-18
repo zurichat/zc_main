@@ -1,13 +1,13 @@
 import React from 'react'
 import LinkComponent from '../../../components/externalPagesComponents/Link'
-import intuitIcon from "../../../assets/intuit-logo.svg"
-import lyftIcon from "../../../assets/lyft-logo.svg"
-import shopifyIcon from "../../../assets/shopify-logo.svg"
-import everlaneIcon from "../../../assets/everlane-logo.svg"
-import card1 from "../../../assets/card1.svg"
-import card2 from "../../../assets/card2.svg"
-import card3 from "../../../assets/card3.svg"
-import card4 from "../../../assets/card4.svg"
+import intuitIcon from '../../../assets/intuit-logo.svg'
+import lyftIcon from '../../../assets/lyft-logo.svg'
+import shopifyIcon from '../../../assets/shopify-logo.svg'
+import everlaneIcon from '../../../assets/everlane-logo.svg'
+import card1 from '../../../assets/card1.svg'
+import card2 from '../../../assets/card2.svg'
+import card3 from '../../../assets/card3.svg'
+import card4 from '../../../assets/card4.svg'
 
 function Section4PricingPage() {
   return (

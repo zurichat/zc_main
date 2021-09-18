@@ -9,9 +9,9 @@ import StatusBadge from './StatusBadge'
 import TopbarModal from './TopbarModal'
 import ProfileModal from './ProfileModal'
 import { MembersModalButton } from './MembersModal'
-import settingsIcon from "../assets/settings.svg"
+import settingsIcon from '../assets/settings.svg'
 
-import profilepic from "../assets/profilepic.png"
+import profilepic from '../assets/profilepic.png'
 
 const Topbar = ({ userProfile: { last_name, first_name } }) => {
   const state = useContext(TopbarContext)

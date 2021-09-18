@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import headerStyles from '../../styles/Header.module.css'
-import searchLine from "../../assets/search-2-line.svg"
-import zurilogo from "../../assets/zurichatlogo.svg"
+import searchLine from '../../assets/search-2-line.svg'
+import zurilogo from '../../assets/zurichatlogo.svg'
 
 const Header = () => {
   return (

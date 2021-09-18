@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import headerStyles from '../../../styles/Header.module.css'
 import styles from '../../../styles/marketplace.module.css'
-import zurilogo from "../../../assets/zurichatlogo.svg"
+import zurilogo from '../../../assets/zurichatlogo.svg'
 
 const MarketplaceHeader = () => {
   return (

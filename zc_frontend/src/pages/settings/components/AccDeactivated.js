@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from '../styles/AccountDeactivated.module.css'
-import zurilogo from "../../../assets/zurichatlogo.svg"
+import zurilogo from '../../../assets/zurichatlogo.svg'
 
 const AccDeactivated = () => {
   return (
