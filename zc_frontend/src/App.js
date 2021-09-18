@@ -95,9 +95,6 @@ const App = () => (
         <Route path="/contact-us">
           <ContactUs />
         </Route>
-        <Route path="/pricing">
-          <Pricing />
-        </Route>
         <Route path="/header">
           <Header />
         </Route>
@@ -164,9 +161,6 @@ const App = () => (
             color={`black`}
             underline
           />
-        </Route>
-        <Route path="searchSuggestion">
-          <SearchSuggestion />
         </Route>
         <Route path="/documentation" exact>
           <PluginLoaderProvider>
