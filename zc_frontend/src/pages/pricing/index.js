@@ -13,11 +13,11 @@ function Pricing() {
       <SearchSuggestion />
       <PricingPageSection1 />
       {/* <PricingTable /> */}
-      <Section3 />
+      {/* <Section3 />
       <FAQ />
       <Section4PricingPage />
       <Message />
-      <Footer />
+      <Footer /> */}
     </div>
   )
 }

@@ -1,0 +1,105 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    padding: 30px;
+    margin-top: 20px;
+    background-color: rgb(230, 228, 228);
+}
+
+.wrapper > .topText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px auto;
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+}
+
+.cardContainer {
+  display: flex;
+  height: fit-content;
+  padding: 0 auto;
+  justify-content: center;
+  flex: 0 1 auto;
+  /* grid-template-columns: repeat(auto-fit, minmax(236px, 1fr)); */
+  /* grid-template-rows: repeat(auto-fit, minmax(auto, 1fr)); */
+  /* margin-right: 70px; */
+  /* margin-left: 70px; */
+  gap: 1rem;
+}
+
+
+.card {
+    display: flex;
+    width: 200px;
+    height: 438px;
+  margin-top: 65px;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.cardFlex {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+
+
+
+
+
+
+.content {
+  background-image: url('https://res.cloudinary.com/ujuzi/image/upload/v1630463021/Cars%20Images%20project/pexels-eren-li-7241616_m2ojcj.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffffff;
+  object-fit: cover;
+}
+.contentSize {
+  width: 100%;
+  height: 274px;
+}
+.description {
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  word-wrap: break-word;
+  font-weight: 600;
+}
+.textBottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+}
+.textBottom span {
+  font-size: 1.2rem;
+  color: #0063da;
+}
+.title {
+  text-align: center;
+  padding-bottom: 3.75rem;
+  line-height: 3rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+.descTitle {
+  text-align: start;
+  padding: 0.2rem;
+  color: grey;
+}
+.cardPosition {
+  display: inherit;
+  flex-direction: inherit;
+  padding: 20px;
+}

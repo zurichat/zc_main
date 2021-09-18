@@ -1,18 +1,29 @@
-.message {
+.message_box {
   padding-top: 67px;
-  background-repeat: no-repeat;
   font-family: 'Lato', sans-serif;
-  height: 308px;
-  background-image: url('../../../assets/rectangle.svg');
+  min-height: 370px;
+  height: auto;
+  width: 100%;
+  background: #00B87C;
+  border: none;
+  clip-path: ellipse(75% 100% at center top);
 }
-.message > p {
+
+.message{
+  margin: 0 auto;
+}
+
+.background{
+  width: 100%;
+}
+.message_box > p, .message > p {
   font-weight: 900;
   font-size: 2.37rem;
   color: white;
   text-align: center;
   margin-bottom: 64px;
 }
-.message > span {
+.message_box > span {
   display: block;
   text-align: center;
   color: white;
@@ -59,10 +70,14 @@
   font-size: 1rem;
   font-weight: 400;
 }
-@media (max-width: 69rem) {
+@media (max-width: 70rem) {
+  .message_box {
+    padding-top: 47px;
+  }
+
   .message > p {
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 1.65rem;
     margin-bottom: 32px;
   }
   .message > span {
@@ -71,13 +86,25 @@
     font-size: 0.98rem;
     opacity: 0.98;
   }
+  .buttonSection {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 85%;
+  gap: 20px;
+  justify-content: center;
+  align-content: center;
+  }
+
+  .buttonFilled, .buttonOutline{
+    width: 100%;
+  }
+
 }
 @media (max-width: 35rem) {
-  .message {
-    padding: 32px;
-
-    background-image: url('../../../assets/mobileBackground.svg');
-    height: 220px;
+  .message_box {
+    padding: 22px;
+    height: 180px;
   }
   .buttonFilled,
   .buttonOutline {

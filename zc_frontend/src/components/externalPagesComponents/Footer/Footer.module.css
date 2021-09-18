@@ -1,10 +1,12 @@
 .footer {
   background-color: #fafafa;
+  margin-top: 38px;
 }
 
 .topSection {
   display: flex;
   gap: 119px;
+  margin: 0 100px;
   align-items: flex-start;
   padding-bottom: 45px;
   border-bottom: 1px solid rgba(187, 186, 231, 0.15);

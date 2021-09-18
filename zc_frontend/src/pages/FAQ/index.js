@@ -13,7 +13,7 @@ const Index = () => {
   }
   return (
     <div className={styles.faqs}>
-      <h2>Commonly Asked Questions</h2>
+      <h2 className='text-center'>Commonly Asked Questions</h2>
       <div className={styles.wrapper}>
         <div className={styles.accordion}>
           {data.map(i => (

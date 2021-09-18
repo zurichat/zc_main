@@ -4,8 +4,8 @@
   "private": true,
   "proxy": "http://127.0.0.1:3000",
   "dependencies": {
-    "@material-ui/core": "^4.12.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@material-ui/core": "^4.12.3",
     "@reach/dialog": "^0.16.0",
     "axios": "^0.21.4",
     "babel-eslint": "^10.1.0",
@@ -25,6 +25,7 @@
     "react-google-login": "^5.2.2",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
+    "react-multi-email": "^0.5.3",
     "react-redux": "^7.2.5",
     "react-router-dom": "^5.2.1",
     "react-scripts": "^4.0.3",
