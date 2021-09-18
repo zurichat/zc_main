@@ -19,6 +19,7 @@ const App = () => (
         {/* <Route path="/features">
           <Features />
         </Route> */}
+        
       </Switch>
     </BrowserRouter>
 )

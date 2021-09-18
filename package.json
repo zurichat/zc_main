@@ -4,7 +4,7 @@
   "repository": "git@github.com:zurichat/zc_main.git",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve --port 9000 --env",
+    "start": "webpack serve --port 9000 --env islocal",
     "start:topbar": "npm dev --prefix topbar",
     "start:control": "npm dev --prefix control",
     "start:sidebar": "npm dev --prefix sidebar",
