@@ -1,84 +1,146 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
 
-* {
+.section4 {
+  margin-top: 100px;
   font-family: 'Lato', sans-serif;
 }
-.section4 {
-  text-align: center;
-  padding: 40px;
-  margin-top: 10px;
+
+.section4Wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.appImage {
+
+.leftSideContentWrapper {
+  flex: 4;
+}
+
+.chessboardImage {
   width: 100%;
 }
-.funSection {
+
+
+.rightSideContentWrapper {
+  flex: 5;
   display: flex;
-  grid-gap: 2rem;
-  flex-direction: row;
-  margin-top: 10rem;
-}
-.funImage {
-  width: auto;
-  position: relative;
-}
-.funText {
-  position: relative;
-  padding: 6rem;
-  text-align: left;
-}
-.funText h2 {
-  font-size: 40px;
-}
-.funText p {
-  font-size: 25px;
-  line-height: 1.5;
+  justify-content: center;
+  align-items: center;
 }
 
-@media screen and (max-width: 1200px) {
-  .funImage {
-    width: 25rem;
+.rightSideTextWrapper {
+  width: 73%;
+}
+
+.rightSideTextWrapper h2 {
+  width: 85%;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2.5rem;
+  line-height: 130%;
+  color: #242424;
+}
+
+.rightSideTextWrapper p {
+  margin-top: 30px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 130%;
+  color: #3A3A3A;
+}
+
+
+
+/* Mediaquieries */
+
+@media (max-width: 1200px) {
+
+  .rightSideTextWrapper h2 {
+    width: 85%;
+    font-size: 2.0rem;
   }
-  .funText {
-    padding: 20px;
-    text-align: left;
+
+  .rightSideTextWrapper p {
+    margin-top: 30px;
+    font-size: 1.2rem;
   }
 }
 
-@media screen and (max-width: 900px) {
-  .funImage {
-    width: 20rem;
+@media (max-width: 1024px) {
+
+  .rightSideTextWrapper {
+    width: 72%;
   }
-  .funText h2 {
-    font-size: 30px;
+
+  .rightSideTextWrapper h2 {
+    width: 85%;
+    font-size: 1.8rem;
   }
-  .funText p {
-    font-size: 20px;
-    line-height: 1.5;
+
+  .rightSideTextWrapper p {
+    margin-top: 30px;
+    font-size: 1.0rem;
   }
 }
 
-@media screen and (max-width: 740px) {
-  .funSection {
-    flex-direction: column-reverse;
-    margin-top: 5rem;
+@media (max-width: 800px) {
+
+  .rightSideTextWrapper h2 {
+    width: 85%;
+    font-size: 1.3rem;
   }
-  .funText {
-    padding: 20px;
-    text-align: center;
-  }
-  .funImage {
-    width: auto;
+
+  .rightSideTextWrapper p {
+    margin-top: 20px;
+    font-size: 0.7rem;
   }
 }
-@media screen and (max-width: 400px) {
-  .funText {
-    padding: 10px;
+
+
+@media (max-width: 600px) {
+
+  .rightSideTextWrapper h2 {
+    width: 90%;
+    font-size: 0.9rem;
   }
-  .funText h2 {
-    font-size: 26px;
+
+  .rightSideTextWrapper p {
+    margin-top: 15px;
+    font-size: 0.5rem;
   }
-  .funText p {
-    font-size: 18px;
-    line-height: 1.5;
+}
+
+
+@media (max-width: 500px) {
+  .section4 {
+    margin-top: 80px;
+  }
+
+  .section4Wrapper {
+    flex-direction: column;
+  }
+
+  .leftSideContentWrapper {
+    order: 2;
+    margin-top: 60px;
+  }
+
+
+  .rightSideContentWrapper {
+    order: 1;
+  }
+
+  .rightSideTextWrapper {
+    width: 100%;
+  }
+
+  .rightSideTextWrapper h2 {
+    width: 100%;
+    font-size: 1.8rem;
+  }
+
+  .rightSideTextWrapper p {
+    margin-top: 25px;
+    font-size: 0.98rem;
   }
 }

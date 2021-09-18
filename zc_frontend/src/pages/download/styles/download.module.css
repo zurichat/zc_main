@@ -23,6 +23,9 @@ body {
   font-size: 18px;
   line-height: 26px;
 }
+.col-8 {
+  padding: 0;
+}
 .circle {
   position: absolute;
   z-index: 0;
@@ -115,6 +118,10 @@ body {
   width: 100%;
 }
 .button {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
   position: relative;
   z-index: 1;
   padding: 119px;
@@ -125,6 +132,7 @@ body {
   font-weight: 900;
   font-size: 48px;
   line-height: 58px;
+  text-align: center;
 }
 .button2 {
   margin: 0 10px;
@@ -142,6 +150,10 @@ body {
   border: 2px solid #ffffff;
   border-radius: 3px;
   padding: 16px;
+}
+a:hover {
+  text-decoration: none;
+  color: #000000;
 }
 
 @media screen and (max-width: 1325px) {
