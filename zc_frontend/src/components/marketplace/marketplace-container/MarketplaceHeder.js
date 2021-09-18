@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import headerStyles from '../../../styles/Header.module.css'
 import styles from '../../../styles/marketplace.module.css'
+import zurilogo from "../../../assets/zurichatlogo.svg"
 
 const MarketplaceHeader = () => {
   return (
@@ -9,7 +10,7 @@ const MarketplaceHeader = () => {
     >
       <Link to="/" className={`navbar-brand`}>
         <img
-          src="/zurichatlogo.svg"
+          src={zurilogo}
           alt="zuri-logo"
           width="20"
           height="20"

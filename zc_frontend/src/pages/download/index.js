@@ -3,6 +3,12 @@ import Footer from '../../components/externalPagesComponents/Footer/Footer'
 import styles from './styles/download.module.css'
 import SearchSuggestion from '../searchSuggestion'
 import Apk from './apk/appRelease.apk'
+import ellipseA from "../../assets/Ellipse159.svg"
+import ellipseB from "../../assets/Ellipse160.svg"
+import screenSHot from "../../assets/rectangle.svg"
+import playStore from "../../assets/Play_Store_badge.svg"
+import appleStore from "../../assets/App_Store_Badge.svg"
+
 
 const Download = () => {
   return (
@@ -18,17 +24,17 @@ const Download = () => {
         <div className={styles.images}>
           <img
             className={styles.circle}
-            src="/Ellipse159.svg"
+            src={ellipseA}
             alt="circle"
           ></img>
           <img
             className={`${styles.screenshot}`}
-            src="/Rectangle.svg"
+            src={screenSHot}
             alt="app screenshot"
           ></img>
           <img
             className={styles.circle2}
-            src="/Ellipse160.svg"
+            src={ellipseB}
             alt="circle2"
           ></img>
         </div>
@@ -54,7 +60,7 @@ const Download = () => {
             <a className={`${styles.imgLink}`} href="https://play.google.com/">
               <img
                 className={`${styles.badge}`}
-                src="/Play_Store_badge.svg"
+                src={playStore}
                 alt="Google Play Store"
               ></img>
             </a>
@@ -65,7 +71,7 @@ const Download = () => {
             >
               <img
                 className={`${styles.badge}`}
-                src="/App_Store_badge.svg"
+                src={appleStore}
                 alt="Apple App Store"
               ></img>
             </a>

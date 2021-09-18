@@ -13,6 +13,9 @@ import AuthInputBox from '../components/AuthInputBox'
 import JoinedRooms from './joinedRooms/JoinedRooms'
 import PublicRooms from '../publicRooms/PublicRooms'
 import cheerio from 'cheerio'
+import newMessageIcon from "../assets/newmessage.svg"
+import zurilogo from "../assets/zurichatlogo.svg"
+import arrowHead from "../assets/shapekeyboardarrowdown.svg"
 
 // import "@reach/dialog/styles.css";
 
@@ -197,14 +200,14 @@ export const Sidebar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.zuriLogo}>
-        <img src="/zurichatlogo.svg" alt="Zuri Chat logo" />
+        <img src={zurilogo} alt="Zuri Chat logo" />
         <p>ZURI</p>
       </div>
       <div className={styles.orgInfo}>
         <div className={styles.orgName}>
           <p>HNGi8</p>
           <img
-            src="/shapekeyboardarrowdown.svg"
+            src={arrowHead}
             alt="Organisation settings button"
           />
         </div>
@@ -226,7 +229,7 @@ export const Sidebar = () => {
           </Content>
         </Overlay>
         <div className={styles.newMessage}>
-          <img src="/newmessage.svg" alt="New message icon" />
+          <img src={newMessageIcon} alt="New message icon" />
         </div>
       </div>
       <Dropdown onAddButtonClick={open} showAddButton={true} title="Channels">

@@ -5,6 +5,16 @@ import securityFeatureStyles from './styles/security_features.module.css'
 import Footer from '../../components/externalPagesComponents/Footer/Footer'
 import Section1 from '../../components/externalPagesComponents/Security'
 import SearchSuggestion from '../searchSuggestion'
+import iso1 from "../../assets/iso_27001.png"
+import iso2 from "../../assets//iso_27017.png"
+import iso3 from "../../assets/iso_27018.png"
+import soc2 from "../../assets/logo_soc2.png"
+import csaLogo from "../../assets/logo_csa.png"
+import HIPAA from "../../assets/HIPAA.png"
+import FINRA from "../../assets/FINRA.png"
+import TISAX from "../../assets/TISAX.png"
+import FR from "../../assets/FR.png"
+import schellman from "../../assets/Schellman-APEC-Processor.png"
 
 const Security = () => {
   return (
@@ -21,47 +31,47 @@ const Security = () => {
         </p>
         <div className={securityStyles.compliancewrapper}>
           <ComplianceCertification
-            img="/iso_27001.png"
+            img={iso1}
             title="ISO/IEC 27001"
             description="Information Security Management System (ISMS)"
           />
           <ComplianceCertification
-            img="/iso_27017.png"
+            img={iso2}
             title="ISO/IEC 27001"
             description="Information Security Management System (ISMS)"
           />
           <ComplianceCertification
-            img="/iso_27018.png"
+            img={iso3}
             title="ISO/IEC 27001"
             description="Information Security Management System (ISMS)"
           />
           <ComplianceCertification
-            img="/iso_27018.png"
+            img={iso3}
             title="ISO/IEC 27001"
             description="Information Security Management System (ISMS)"
           />
           <ComplianceCertification
-            img="/logo_soc3.png"
+            img={soc2}
             title="ISO/IEC 27001"
             description="Information Security Management System (ISMS)"
           />
           <ComplianceCertification
-            img="/logo_soc2.png"
+            img={soc2}
             title="ISO/IEC 27001"
             description="Information Security Management System (ISMS)"
           />
           <ComplianceCertification
-            img="/Schellman-APEC-Processor.png"
+            img={schellman}
             title="ISO/IEC 27001"
             description="Information Security Management System (ISMS)"
           />
           <ComplianceCertification
-            img="/Schellman-APEC-Processor2.png"
+            img={schellman}
             title="ISO/IEC 27001"
             description="Information Security Management System (ISMS)"
           />
           <ComplianceCertification
-            img="/logo_csa.png"
+            img={csaLogo}
             title="ISO/IEC 27001"
             description="Information Security Management System (ISMS)"
           />
@@ -74,16 +84,16 @@ const Security = () => {
         </h2>
         <div className={securityFeatureStyles.features}>
           <SecurityFeature
-            img="/HIPAA.png"
+            img={HIPAA}
             title="Health Insurance Portability and Accountability Act(HIPAA)"
           />
           <SecurityFeature
-            img="/FINRA.png"
+            img={FINRA}
             title="Financial Industry Regulatory Authority(FINRA)"
           />
-          <SecurityFeature img="/FR.png" title="FR" />
+          <SecurityFeature img={FR} title="FR" />
           <SecurityFeature
-            img="/TISAX.png"
+            img={TISAX}
             title="TRUSTED INFORMATION SECURITY ASSESSMENT EXCHANGE(TISAX)"
           />
         </div>

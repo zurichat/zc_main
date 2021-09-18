@@ -9,6 +9,9 @@ import StatusBadge from './StatusBadge'
 import TopbarModal from './TopbarModal'
 import ProfileModal from './ProfileModal'
 import { MembersModalButton } from './MembersModal'
+import settingsIcon from "../assets/settings.svg"
+
+import profilepic from "../assets/profilepic.png"
 
 const Topbar = ({ userProfile: { last_name, first_name } }) => {
   const state = useContext(TopbarContext)
@@ -21,11 +24,11 @@ const Topbar = ({ userProfile: { last_name, first_name } }) => {
       <div className={styles.topbar}>
         <MembersModalButton />
         <Link to="/settings">
-          <img src="/settings.svg" alt="settings" className={styles.settings} />
+          <img src={settingsIcon} alt="settings" className={styles.settings} />
         </Link>
         <StatusBadge />
         <div className={styles.profile} onClick={openModal}>
-          <img src="/profilepic.png" alt="Profile" />
+          <img src={profilepic} alt="Profile" />
           {active ? (
             <div className={styles.circles}></div>
           ) : (

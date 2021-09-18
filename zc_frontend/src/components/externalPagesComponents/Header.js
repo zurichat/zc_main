@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import headerStyles from '../../styles/Header.module.css'
+import searchLine from "../../assets/search-2-line.svg"
+import zurilogo from "../../assets/zurichatlogo.svg"
 
 const Header = () => {
   return (
@@ -8,7 +10,7 @@ const Header = () => {
     >
       <Link to="/" className={`navbar-brand ${headerStyles.navbarBrand}`}>
         <img
-          src="/zurichatlogo.svg"
+          src={zurilogo}
           alt="zuri-logo"
           width="20"
           height="20"
@@ -19,8 +21,8 @@ const Header = () => {
 
       <div className="nav-item">
         <img
-          src="/search-2-line.svg"
-          alt="zuri-logo"
+          src={searchLine}
+          alt="search line"
           width="20"
           height="20"
           className={`${headerStyles.searchLogo1}`}
@@ -84,7 +86,7 @@ const Header = () => {
           </li>
           <li className="nav-item">
             <img
-              src="/search-2-line.svg"
+              src={searchLine}
               alt="search-logo"
               width="20"
               height="20"

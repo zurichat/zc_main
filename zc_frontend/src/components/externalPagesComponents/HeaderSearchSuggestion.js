@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import headerStyles from '../../styles/HeaderSearchSuggestion.module.css'
 import SearchSuggestionBar from '../SearchSuggestionBar'
 import useMatchMedia from '../useMatchMedia'
+import searchLineIcon from "../../assets/search-2-line.svg"
+import zurilogo from "../../assets/zurichatlogo.svg"
 
 const HeaderSearchSuggestion = () => {
   const [openSearchbar, setOpenSearchbar] = useState(false)
@@ -27,7 +29,7 @@ const HeaderSearchSuggestion = () => {
           className={`navbar-brand me-0 me-md-2 d-flex align-items-center ${headerStyles.navbarBrand}`}
         >
           <img
-            src="/zurichatlogo.svg"
+            src={zurilogo}
             alt="zuri-logo"
             width="20"
             height="20"
@@ -43,7 +45,7 @@ const HeaderSearchSuggestion = () => {
         ) : (
           <div className="nav-item ms-auto">
             <img
-              src="/search-2-line.svg"
+              src={searchLineIcon}
               alt="zuri-logo"
               width="20"
               height="20"
@@ -129,7 +131,7 @@ const HeaderSearchSuggestion = () => {
                 </li>
                 <li className="nav-item d-flex justify-content-lg-start align-items-lg-center justify-content-start align-items-center">
                   <img
-                    src="/search-2-line.svg"
+                    src={searchLineIcon}
                     alt="search-logo"
                     onClick={() => setOpenSearchbar(true)}
                     className={`d-none d-lg-block ms-0 me-0 ms-lg-5 me-lg-2 my-2 my-lg-0 ${headerStyles.searchLogo}`}

@@ -1,6 +1,11 @@
 import React from 'react'
 import styles from './Footer.module.css'
 import Message from './Message'
+import zurilogo from "../../../assets/zurichatlogo.svg"
+import facebook from "../../../assets/facebook.svg"
+import instagram from "../../../assets/instagram.svg"
+import twitter from "../../../assets/twitter.svg"
+import linkedIn from "../../../assets/linkedin.svg"
 
 const Footer = ({ showMessage, type }) => (
   <footer className={styles.footer}>
@@ -12,7 +17,7 @@ const Footer = ({ showMessage, type }) => (
       <section className={styles.topSection}>
         <div className={styles.logowrapper}>
           <div className={styles.logo}>
-            <img src="/zurichatlogo.svg" alt="" />
+            <img src={zurilogo} alt="" />
             <span className={styles.zuriText}>Zuri Chat</span>
           </div>
         </div>
@@ -75,16 +80,16 @@ const Footer = ({ showMessage, type }) => (
               <span className={styles.title}>Social Media</span>
               <div className={styles.socialMedia}>
                 <a href="/">
-                  <img src="/facebook.svg" alt="" />
+                  <img src={facebook} alt="" />
                 </a>
                 <a href="/">
-                  <img src="/instagram.svg" alt="" />
+                  <img src={instagram} alt="" />
                 </a>
                 <a href="/">
-                  <img src="/twitter.svg" alt="" />
+                  <img src={twitter} alt="" />
                 </a>
                 <a href="/">
-                  <img src="/linkedin.svg" alt="" />
+                  <img src={linkedIn} alt="" />
                 </a>
               </div>
             </li>

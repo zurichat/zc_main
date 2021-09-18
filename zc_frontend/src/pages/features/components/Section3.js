@@ -1,4 +1,9 @@
 import css from '../styles/section3.module.css'
+import channelIcon from "../../../assets/channels.svg"
+import todoListIcon from "../../../assets/todolist.svg"
+import calenderIcon from "../../../assets/calendar.svg"
+import chatIcon from "../../../assets/chats.svg"
+import deadLineIcon from "../../../assets/deadline.svg"
 
 const Section3 = () => {
   return (
@@ -12,7 +17,7 @@ const Section3 = () => {
       </div>
       <div className={css.featuresSection}>
         <div className={css.featureCard}>
-          <img src={`/channels.svg`} alt="Channels Icon" />
+          <img src={channelIcon} alt="Channels Icon" />
           <h3>Channels</h3>
           <p>
             Increase level of organisation in your team focused with cetralized
@@ -20,7 +25,7 @@ const Section3 = () => {
           </p>
         </div>
         <div className={css.featureCard}>
-          <img src={`/todolist.svg`} alt="To do List Icon" />
+          <img src={todoListIcon} alt="To do List Icon" />
           <h3>To do list</h3>
           <p>
             Get your tasks organized with the to-do list feature and never
@@ -28,17 +33,17 @@ const Section3 = () => {
           </p>
         </div>
         <div className={css.featureCard}>
-          <img src={`/calendar.svg`} alt="Calendar Icon" />
+          <img src={calenderIcon} alt="Calendar Icon" />
           <h3>Company Holiday Calendar</h3>
           <p>Never miss an holiday and get the rest you deserve</p>
         </div>
         <div className={css.featureCard}>
-          <img src={`/chats.svg`} alt="Chats Icon" />
+          <img src={chatIcon} alt="Chats Icon" />
           <h3>Quick Reply App</h3>
           <p>Get quick replies in your DMs as fast as possible</p>
         </div>
         <div className={css.featureCard}>
-          <img src={`/deadline.svg`} alt="Deadline Icon" />
+          <img src={deadLineIcon} alt="Deadline Icon" />
           <h3>Company Important Deadline</h3>
           <p>
             Never miss a company deadline with our company Important deadline

@@ -1,10 +1,12 @@
 import styles from '../styles/Section4.module.css'
+import appImage from "../../../assets/app.png"
+import funImage from "../../../assets/Fun.png"
 const Section4 = () => {
   return (
     <div className={styles.section4}>
-      <img src={`/app.png`} alt="app" className={styles.appImage} />
+      <img src={appImage} alt="app" className={styles.appImage} />
       <div className={styles.funSection}>
-        <img src={`/Fun.png`} alt="fun" className={styles.funImage} />
+        <img src={funImage} alt="fun" className={styles.funImage} />
         <div className={styles.funText}>
           <h2>Fun at is Peak</h2>
           <p>

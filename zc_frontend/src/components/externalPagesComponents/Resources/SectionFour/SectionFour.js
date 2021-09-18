@@ -1,5 +1,13 @@
 import React from 'react'
 import styles from './SectionFour.module.css'
+import resourceA from "../../../../assets/resourceimage4a.png"
+import resourceB from "../../../../assets/resourceimage4b.png"
+import logo from "../../../../assets/logo.svg"
+import facebook from "../../../../assets/facebook-icon.svg"
+import twitter from "../../../../assets/twitter-icon.svg"
+import instagram from "../../../../assets/instagram-icon.svg"
+import youtube from "../../../../assets/youtube-icon.svg"
+import getApp from "../../../../assets/getApp.svg"
 
 function SectionFour() {
   let productList = ['Features', 'Integrations', 'Enterprise', 'Solution']
@@ -74,7 +82,7 @@ function SectionFour() {
             Leading organizations share their tips for supporting workplace
             collaboration—no matter where or when that work happens
           </h3>
-          <img alt="resource" src="resourceimage4a.png" />
+          <img alt="resource" src={resourceA} />
           <div className={styles.icon_container}>
             <div className={styles.like}>
               <i className="far fa-thumbs-up"></i>
@@ -91,7 +99,7 @@ function SectionFour() {
             Leading organizations share their tips for supporting workplace
             collaboration—no matter where or when that work happens
           </h3>
-          <img alt="resource" src="resourceimage4b.png" />
+          <img alt="resource" src={resourceB} />
           <div className={styles.icon_container}>
             <div className={styles.like}>
               <i className="far fa-thumbs-up"></i>
@@ -107,7 +115,7 @@ function SectionFour() {
 
       <div className={styles.section_two}>
         <div className={styles.header}>
-          <img alt="resource" src="logo.svg" />
+          <img alt="logo" src={logo} />
           <div className={styles.header_description}>
             <h3>Try Zuri Chat with your team for free.</h3>
             <h5>Get Started</h5>
@@ -139,7 +147,7 @@ function SectionFour() {
       </div>
 
       <div className={styles.section_four}>
-        <img alt="resource" src="getApp.svg" />
+        <img alt="resource" src={getApp} />
         <div className={styles.footer_body}>
           <div className={styles.footer_others}>
             <OtherList otherList={otherList} />
@@ -147,10 +155,10 @@ function SectionFour() {
           <div className={styles.footer_download}>
             <h4>Download Zuri</h4>
             <div className={styles.icons_box}>
-              <img alt="resource" src="facebook-icon.svg" />
-              <img alt="resource" src="twitter-icon.svg" />
-              <img alt="resource" src="instagram-icon.svg" />
-              <img alt="resource" src="youtube-icon.svg" />
+              <img alt="facbook" src={facebook} />
+              <img alt="twitter" src={twitter} />
+              <img alt="instagram" src={instagram} />
+              <img alt="youtube" src={youtube} />
             </div>
           </div>
         </div>

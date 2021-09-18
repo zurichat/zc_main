@@ -1,5 +1,13 @@
 import React from 'react'
 import LinkComponent from '../../../components/externalPagesComponents/Link'
+import intuitIcon from "../../../assets/intuit-logo.svg"
+import lyftIcon from "../../../assets/lyft-logo.svg"
+import shopifyIcon from "../../../assets/shopify-logo.svg"
+import everlaneIcon from "../../../assets/everlane-logo.svg"
+import card1 from "../../../assets/card1.svg"
+import card2 from "../../../assets/card2.svg"
+import card3 from "../../../assets/card3.svg"
+import card4 from "../../../assets/card4.svg"
 
 function Section4PricingPage() {
   return (
@@ -22,9 +30,9 @@ function Section4PricingPage() {
           <div className={`row g-2`}>
             <div className={`col-lg-3 col-md-6 col-12`}>
               <div className={`card`}>
-                <img src={`/card1.svg`} className={`card-img-top`} alt="..." />
+                <img src={card1} className={`card-img-top`} alt="..." />
                 <div className={`card-body`}>
-                  <img src={`/intuit-logo.svg`} alt={`intuit logo`} />
+                  <img src={intuitIcon} alt={`intuit logo`} />
                   <p className={`pt-3 card-text`}>
                     Support agents at Intuit QuickBooks increase customer
                     satisfaction by 12% with Slack
@@ -34,9 +42,9 @@ function Section4PricingPage() {
             </div>
             <div className={`col-lg-3 col-md-6 col-12`}>
               <div className={`card`}>
-                <img src={`/card2.svg`} className={`card-img-top`} alt="..." />
+                <img src={card2} className={`card-img-top`} alt="..." />
                 <div className={`card-body`}>
-                  <img src={`/lyft-logo.svg`} alt={`lyft logo`} />
+                  <img src={lyftIcon} alt={`lyft logo`} />
                   <p className={`pt-3 card-text`}>
                     Mission-critical sales work at Lyft Business
                   </p>
@@ -45,9 +53,9 @@ function Section4PricingPage() {
             </div>
             <div className={`col-lg-3 col-md-6 col-12`}>
               <div className={`card`}>
-                <img src={`card3.svg`} className={`card-img-top`} alt="..." />
+                <img src={card3} className={`card-img-top`} alt="..." />
                 <div className={`card-body`}>
-                  <img src={`/shopify-logo.svg`} alt={`shopify logo`} />
+                  <img src={shopifyIcon} alt={`shopify logo`} />
                   <p className={`pt-3 card-text`}>
                     eCommerce platform deploys super bot to enable glitch-free
                     purchases
@@ -57,9 +65,9 @@ function Section4PricingPage() {
             </div>
             <div className={`col-lg-3 col-md-6 col-12`}>
               <div className={`card`}>
-                <img src={`/card4.svg`} className={`card-img-top`} alt="..." />
+                <img src={card4} className={`card-img-top`} alt="..." />
                 <div className={`card-body`}>
-                  <img src={`/everlane-logo.svg`} alt={`everlane logo`} />
+                  <img src={everlaneIcon} alt={`everlane logo`} />
                   <p className={`pt-3 card-text`}>
                     Everlane and Happy Returns elevate customer service with
                     Zuri Chat

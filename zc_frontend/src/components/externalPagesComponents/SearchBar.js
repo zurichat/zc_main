@@ -1,4 +1,5 @@
 import styles from '../../styles/SearchBar.module.css'
+import searchIcon from "../../assets/search-2-line.svg"
 const SearchBar = () => {
   return (
     <div className={styles.searchBar}>
@@ -7,7 +8,7 @@ const SearchBar = () => {
         className={styles.searchInput}
         placeholder="Search here"
       />
-      <img src="/search-2-line.svg" className={styles.searchSvg} alt="search" />
+      <img src={searchIcon} className={styles.searchSvg} alt="search" />
     </div>
   )
 }

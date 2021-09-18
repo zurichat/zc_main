@@ -1,3 +1,5 @@
+import zurilogo from "../../../assets/zurichatlogo.svg"
+
 const registeredPlugins = [
   {
     id: 'a0i01noav0',
@@ -7,7 +9,7 @@ const registeredPlugins = [
     uses: "Set and Manage individual / team Project's Tasks",
     team: 'HNG-8.0/Team-Kant',
     sub_domain: 'https://todo.zuri.chat',
-    icon_url: '/zurichatlogo.svg',
+    icon_url: `${zurilogo}`,
     status: 'installed',
     mvp_features: {
       'feature-1': 'Create Todo Tasks',
@@ -73,7 +75,7 @@ const registeredPlugins = [
     uses: "Set and Manage individual / team Project's Tasks",
     team: 'HNG-8.0/Team-Kant',
     sub_domain: 'https://todo.zuri.chat',
-    icon_url: '/zurichatlogo.svg',
+    icon_url: `${zurilogo}`,
     mvp_features: {
       'feature-1': 'Create Todo Tasks',
       'feature-2': 'Assign Tasks To An Individual Or A Team',
@@ -94,7 +96,7 @@ const registeredPlugins = [
     uses: "Set and Manage individual / team Project's Tasks",
     team: 'HNG-8.0/Team-Kant',
     sub_domain: 'https://todo.zuri.chat',
-    icon_url: '/zurichatlogo.svg',
+    icon_url: `${zurilogo}`,
     status: 'installed',
     mvp_features: {
       'feature-1': 'Create Todo Tasks',
@@ -138,7 +140,7 @@ const registeredPlugins = [
     uses: "Set and Manage individual / team Project's Tasks",
     team: 'HNG-8.0/Team-Kant',
     sub_domain: 'https://todo.zuri.chat',
-    icon_url: '/zurichatlogo.svg',
+    icon_url: `${zurilogo}`,
     mvp_features: {
       'feature-1': 'Create Todo Tasks',
       'feature-2': 'Assign Tasks To An Individual Or A Team',
@@ -181,7 +183,7 @@ const registeredPlugins = [
     uses: "Set and Manage individual / team Project's Tasks",
     team: 'HNG-8.0/Team-Kant',
     sub_domain: 'https://todo.zuri.chat',
-    icon_url: '/zurichatlogo.svg',
+    icon_url: `${zurilogo}`,
     mvp_features: {
       'feature-1': 'Create Todo Tasks',
       'feature-2': 'Assign Tasks To An Individual Or A Team',
@@ -225,7 +227,7 @@ const registeredPlugins = [
     uses: "Set and Manage individual / team Project's Tasks",
     team: 'HNG-8.0/Team-Kant',
     sub_domain: 'https://todo.zuri.chat',
-    icon_url: '/zurichatlogo.svg',
+    icon_url: `${zurilogo}`,
     mvp_features: {
       'feature-1': 'Create Todo Tasks',
       'feature-2': 'Assign Tasks To An Individual Or A Team',

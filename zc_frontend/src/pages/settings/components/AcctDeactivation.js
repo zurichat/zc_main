@@ -2,6 +2,7 @@ import { useHistory } from 'react-router-dom'
 import styles from '../styles/AcctDeactivation.module.css'
 import SettingsNav from './SettingsNav'
 import { Link } from 'react-router-dom'
+import errorAlert from "../../../assets/alertTriangle.svg"
 
 const AcctDeactivation = () => {
   const history = useHistory()
@@ -12,7 +13,7 @@ const AcctDeactivation = () => {
         <div className={styles.deactivationTab}>
           <p>Deactivate Account</p>
           <div className={styles.deactivationCaution}>
-            <img src="./alertTriangle.svg" alt="alert_triangle" />
+            <img src={errorAlert} alt="alert_triangle" />
             <span>Are you sure you want to deactivate your account?</span>
           </div>
         </div>
