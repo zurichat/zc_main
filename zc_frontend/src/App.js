@@ -32,6 +32,7 @@ import ConfirmPassword from './pages/settings/components/ConfirmPassword'
 import ApiDocs from './pages/api-docs'
 
 import AllSessionSignOut from './pages/settings/components/AllSessionSignOut'
+import AccountReset from './pages/settings/components/AccountReset'
 
 import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation'
 import AccDeactivated from './pages/settings/components/AccDeactivated'
@@ -127,8 +128,11 @@ const App = () => (
         <Route path="/deactivate-account">
           <DeactivateAccount />
         </Route>
-        <Route path="/session-signout">
+        <Route path="/session-signout" exact>
           <AllSessionSignOut />
+        </Route>
+        <Route path="/session-signout/:id">
+          <AccountReset />
         </Route>
         <Route path="/search-results">
           <SearchResults2 />
