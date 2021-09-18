@@ -1,10 +1,10 @@
 import React from 'react'
-import styles from '../../features/styles/section2.module.css'
-import image1 from '../../../assets/image 4.png'
-import image2 from '../../../assets/image 3.png'
-import image3 from '../../../assets/image 8.png'
-import image4 from '../../../assets/image 6.png'
-import image5 from '../../../assets/image 5.png'
+import styles from '../../styles/section2.module.css'
+import image1 from '../../../../assets/image 4.png'
+import image2 from '../../../../assets/image 3.png'
+import image3 from '../../../../assets/image 8.png'
+import image4 from '../../../../assets/image 6.png'
+import image5 from '../../../../assets/image 5.png'
 
 const ChatFeatureSection2 = () => {
   return (
