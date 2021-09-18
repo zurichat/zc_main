@@ -15,38 +15,38 @@
     }
 
     body {
-      display: grid;
+      /* display: grid; */
       grid-template-columns: 0.6fr 1.4fr;
       grid-template-rows: 0.5fr 1.5fr;
       gap: 0px 0px;
       grid-template-areas:
-        "control control"
-        "sidebar plugincontent";
+        'topbar topbar'
+        'sidebar plugincontent';
     }
 
-    div[id*='zuri-control'],
-    div[id*='zuri-sidebar'],
-    div[id*='zuri-plugin'] {
-      /* min-height: inherit;
-      max-height: inherit;
+    /* div[id*='zuri'] { */
+      /* min-height: inherit;  min-width: inherit; */
+      /* max-height: inherit;  max-width: inherit; */
+      /* height: 100%; */
+      /* width: 100%; */
+    /* } */
 
-      min-width: inherit;
-      max-width: inherit; */
-      width: 100%;
-      width: 100%;
-    }
+    div[id*='zuri/topbar'] {
+      grid-area: topbar;
 
-    div[id*='zuri/control'] {
-      grid-area: control;
       background-color: red;
       padding: 2rem;
       font-size: 3rem;
     }
 
+    div[id*='zuri/control'] {
+      grid-area: control;
+    }
+
     div[id*='zuri/sidebar'] {
       grid-area: sidebar;
+
       background-color: green;
-      display: block;
       font-size: 3rem;
     }
 
@@ -85,8 +85,7 @@
       "imports": {
         "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
         "react": "https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.production.min.js",
-        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.production.min.js",
-        "@zuri/root-config": "//localhost:9000/zuri-root-config.js"
+        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.production.min.js"
       }
     }
   </script>
@@ -109,8 +108,9 @@
     {
       "imports": {
         "@zuri/root-config": "//localhost:9000/zuri-root-config.js",
-        "@zuri/control": "//localhost:8080/zuri-control.js",
-        "@zuri/sidebar": "//localhost:8081/zuri-sidebar.js"
+        "@zuri/topbar": "//localhost:8080/zuri-topbar.js",
+        "@zuri/sidebar": "//localhost:8081/zuri-sidebar.js",
+        "@zuri/control": "//localhost:8082/zuri-control.js"
       }
     }
   </script>
@@ -119,9 +119,9 @@
     {
       "imports": {
           "@zuri/root-config": "https://zuri.chat/zuri-root-config.js",
-          "@zuri/control": "https://zuri.chat/zuri-control.js",
+          "@zuri/topbar": "https://zuri.chat/zuri-topbar.js",
           "@zuri/sidebar": "https://zuri.chat/zuri-sidebar.js",
-          "@zuri/zuri-plugin-chessboard": "https://chess.zuri.chat/zuri-zuri-plugin-chessboard.js"
+          "@zuri/control": "https://zuri.chat/zuri-control.js"
         }
       }
   </script>

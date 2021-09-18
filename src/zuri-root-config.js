@@ -7,13 +7,18 @@ import { registerApplication, start } from 'single-spa'
 // });
 
 registerApplication({
-  name: '@zuri/control',
-  app: () => System.import('@zuri/control'),
-  activeWhen: ['/']
+  name: '@zuri/topbar',
+  app: () => System.import('@zuri/topbar'),
+  activeWhen: ['/home']
 })
 registerApplication({
   name: '@zuri/sidebar',
   app: () => System.import('@zuri/sidebar'),
+  activeWhen: ['/home']
+})
+registerApplication({
+  name: '@zuri/control',
+  app: () => System.import('@zuri/control'),
   activeWhen: ['/']
 })
 
@@ -21,7 +26,7 @@ registerApplication({
 registerApplication({
   name: '@zuri/zuri-plugin-chessboard',
   app: () => System.import('@zuri/zuri-plugin-chessboard'),
-  activeWhen: ['/', location => location.pathname.startsWith('/chess')]
+  activeWhen: [location => location.pathname.startsWith('/chess')]
 })
 
 start({
