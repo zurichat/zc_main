@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
-import { TopbarContext } from '../contexts/Topbar'
+import { useContext } from 'react'
+import { TopbarContext } from '../context/Topbar'
 import styles from '../styles/StatusBadge.module.css'
 
 const StatusBadge = () => {

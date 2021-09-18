@@ -5,34 +5,41 @@ import avatar from '../assets/avatar.png'
 import twitter from '../assets/twitter.svg'
 import linkedin from '../assets/linkedin.svg'
 import instagram from '../assets/instagram.svg'
-import { ProfileContext } from '../contexts/ProfileModal'
+import { ProfileContext } from '../context/ProfileModal'
+import { TopbarContext } from '../context/Topbar'
 import EditProfile from './EditProfile'
-
-const Dropdown = () => {
-  return (
-    <div className={styles.profileDropDown}>
-      <div className={styles.topSection}>
-        <p className={styles.paragraph}>View preferences</p>
-        <p className={styles.paragraph}>View your files</p>
-        <p className={styles.paragraph}>Set yourself away</p>
-      </div>
-      <div className={styles.bottomSection}>
-        <p className={styles.paragraphNull}>Set yourself away</p>
-        <small className={styles.small}>U031203013</small>
-        <p className={styles.paragraphNull}>Account settings</p>
-      </div>
-    </div>
-  )
-}
+import Preferences from './Preferences'
+import { Dropdown } from './ProfileMore'
 
 const Profile = () => {
   const { toggleModalState, showProfile, toggleProfileState } =
     useContext(ProfileContext)
+  const state = useContext(TopbarContext)
   const [dropdown, setDropdown] = useState(false)
   const [modal, setModal] = useState('')
 
   return (
     <div className={showProfile ? styles.container : styles.containerNone}>
+      <svg
+        className={styles.mobileBackButton}
+        onClick={toggleProfileState}
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.9998 12H3.99982"
+          strokeWidth="1.22693"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M9.99982 18L3.99982 12L9.99982 6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+
       <div className={styles.header}>
         <div className={styles.title}>Profile</div>
         <svg
@@ -54,11 +61,24 @@ const Profile = () => {
           <small>He/Him</small>
         </div>
 
+        <div className={styles.buttonGroupsMobile}>
+          <button>Message</button>
+          <button
+            onClick={() => {
+              toggleProfileState()
+              setModal(() => 'edit profile')
+              toggleModalState()
+            }}
+          >
+            Edit Profile
+          </button>
+        </div>
+
         <div className={styles.buttonGroups}>
           <button
             onClick={() => {
+              setModal(() => 'edit profile')
               toggleModalState()
-              setModal('edit profile')
             }}
           >
             <svg
@@ -68,36 +88,36 @@ const Profile = () => {
             >
               <path
                 d="M10 10.5V9.5C10 8.39543 9.10457 7.5 8 7.5H4C2.89543 7.5 2 8.39543 2 9.5V10.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M6 5.5C7.10457 5.5 8 4.60457 8 3.5C8 2.39543 7.10457 1.5 6 1.5C4.89543 1.5 4 2.39543 4 3.5C4 4.60457 4.89543 5.5 6 5.5Z"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
             Edit Profile
           </button>
-          <button>
+          <button onClick={state.openStatus}>
             <svg
               viewBox="0 0 12 12"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M7 1.00005L9 3L3.5 8.5H1.5V6.5L7 1.00005Z"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M1.5 11H10.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
             Edit Status
@@ -109,44 +129,63 @@ const Profile = () => {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M6.5 7C7.05228 7 7.5 6.55228 7.5 6C7.5 5.44772 7.05228 5 6.5 5C5.94772 5 5.5 5.44772 5.5 6C5.5 6.55228 5.94772 7 6.5 7Z"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M10.5 7C11.0523 7 11.5 6.55228 11.5 6C11.5 5.44772 11.0523 5 10.5 5C9.94772 5 9.5 5.44772 9.5 6C9.5 6.55228 9.94772 7 10.5 7Z"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M2.5 7C3.05228 7 3.5 6.55228 3.5 6C3.5 5.44772 3.05228 5 2.5 5C1.94772 5 1.5 5.44772 1.5 6C1.5 6.55228 1.94772 7 2.5 7Z"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
             More
           </button>
           {dropdown && <Dropdown />}
+          {modal === 'preference' && <Preferences />}
           {modal === 'edit profile' && <EditProfile />}
         </div>
 
+        <div className={`${styles.moreInfo} ${styles.mobile}`}>
+          <div className={styles.infoTitle}>What i do</div>
+          <div className={styles.infoContent}>Design</div>
+        </div>
+        <div className={`${styles.moreInfo} ${styles.mobile}`}>
+          <div className={styles.infoTitle}>Pronouns</div>
+          <div className={styles.infoContent}>Her</div>
+        </div>
         <div className={styles.moreInfo}>
           <div className={styles.infoTitle}>Display name</div>
           <div className={styles.infoContent}>Praise.A</div>
         </div>
+        <div className={`${styles.moreInfo} ${styles.mobile}`}>
+          <div className={styles.infoTitle}>Status</div>
+          <div className={styles.infoContent}>
+            <span>5</span>
+          </div>
+        </div>
         <div className={styles.moreInfo}>
           <div className={styles.infoTitle}>Email address</div>
-          <div className={styles.infoContent}>praise@example.com</div>
+          <a href="mailto:praise@example.com" className={styles.infoLink}>
+            praise@example.com
+          </a>
         </div>
         <div className={styles.moreInfo}>
           <div className={styles.infoTitle}>Phone number</div>
-          <div className={styles.infoContent}>+234 810 123 4567</div>
+          <a href="tel:2348101234567" className={styles.infoLink}>
+            +234 810 123 4567
+          </a>
         </div>
         <div className={styles.moreInfo}>
           <div className={styles.infoTitle}>Local time</div>

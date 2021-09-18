@@ -1,105 +1,100 @@
-.container {
-  width: 100%;
-  /* position: fixed; */
-  height: 5.0625em;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  z-index: 999;
-  background: #f6f6f6;
-}
-
-.brand {
-  width: 15%;
-  display: flex;
-}
-
-.brand img {
-  width: 35px;
-  height: 35px;
-}
-
-.brand h3 {
-  font-family: 'Lato';
-  font-size: 25px;
-  font-weight: 900;
-  padding-left: 5px;
-  background: none;
-}
-
 /* Deactivation Bar */
 .deactivationSection {
-  padding-top: 35px;
-  margin: 0 10%;
+  padding-top: 80px;
+  margin: 0 13%;
+}
+
+@media screen and (max-width: 800px) {
+  .deactivationSection {
+    padding-top: 40px;
+  }
+
+  .deactivationSection {
+    margin: 0 5%;
+  }
+
+  .deactivationNote {
+    padding: 20px 10px !important;
+  }
+
+  .deactivateButton {
+    margin-right: 15px;
+  }
 }
 
 .deactivationTab p {
-  font-size: 25px;
+  font-size: 18px;
   font-weight: 900;
   line-height: 30px;
+  margin-bottom: 10px;
 }
 
 .deactivationCaution {
   border: 2px solid #eedede;
   border-left: 4px solid #ff0000;
-  padding: 5px;
-  margin: 15px;
+  padding: 12px 10px;
+  border-radius: 3px;
+  background: #fff;
+  display: flex;
+  align-items: center;
 }
 
-.deactivationCaution img,
-.deactivationCaution span {
-  padding: 2px;
+.deactivationCaution img {
+  margin-right: 10px;
+  margin-top: -3px;
 }
 
 .deactivationCaution span {
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 500;
   line-height: 22px;
+  color: #3a3a3a;
 }
 
 .deactivationNote {
-  margin: 15px;
   border: 2px solid #eedede;
+  background: #fff;
+  margin-top: 16px;
+  padding: 20px 50px;
 }
 
 .blue {
-  color: #0000ff;
-}
-
-.firstP,
-.secondP {
-  margin: 10px 15px;
-  font-size: 15px;
+  color: #2f80ed;
 }
 
 .firstP {
-  font-weight: 500;
-  line-height: 22px;
+  font-size: 15px;
+  font-weight: normal;
+  margin-bottom: 10px;
+  line-height: 25px;
 }
 
 .secondP {
   background-color: #fcf4da;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 20px;
-}
-
-.deactivateButton,
-.cancelButton {
-  border-radius: 0.5rem;
-  font-size: 13px;
-  font-weight: 700;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  padding: 10px 5px;
 }
 
 .deactivateButton {
   background-color: #ff0000;
   color: #fff;
   padding: 10px;
+  border: none;
+  outline: none;
+  margin-top: 15px;
+  margin-right: 25px;
+  font-size: 13px;
+  border-radius: 3px;
 }
 
 .cancelButton {
   border: 1px solid #c4c4c4;
   color: #000;
-  padding: 10px;
+  padding: 10px 25px;
+  outline: none;
+  margin-top: 15px;
+  font-size: 13px;
+  background: #fff;
+  border-radius: 3px;
 }

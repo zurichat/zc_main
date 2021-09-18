@@ -1,7 +1,3 @@
-.profile::-webkit-scrollbar {
-  display: none;
-}
-
 .profileHeader {
   border-radius: 5px 5px 0px 0px;
   background: #00b87c;
@@ -22,12 +18,12 @@
 .profileMain {
   background-color: #ffffff;
   display: flex;
-  padding: 35px;
+  padding: 1.5rem;
 }
 
 .profileMain .sectionA {
   width: 70%;
-  margin-right: 25px;
+  margin-right: 4rem;
 }
 
 .profileMain .sectionB {
@@ -38,7 +34,7 @@
   padding-top: 10px;
 }
 
-label {
+.label {
   color: #3a3a3a;
   font-size: 14px;
   line-height: 21px;
@@ -48,7 +44,7 @@ label {
   border: 1px solid #e5e5e5;
   box-sizing: border-box;
   border-radius: 5px;
-  padding: 8px;
+  padding: 0.5rem;
   margin-top: 5px;
   outline: none;
   display: block;
@@ -59,17 +55,22 @@ label {
 .formWrapper {
   margin-bottom: 15px;
 }
-.displayNameDesktop {
-  width: 70%;
+.displayNameDesktop,
+.formMargin {
+  width: 100%;
   margin-right: 25px;
   display: block;
+  margin-bottom: 1rem;
 }
+
 .subText {
   --tw-text-opacity: 0.6;
-  line-height: 1.25rem /* 20px */;
+  line-height: 1.4;
   font-weight: 400;
-  margin-top: 0.5rem /* 8px */;
-  font-size: 10px;
+  margin-top: 0.5rem;
+  font-size: 0.7rem;
+  margin-bottom: 0.8rem;
+  color: #3a3a3a;
 }
 
 .profilePic img {
@@ -109,6 +110,8 @@ label {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  margin-bottom: 0.6rem;
 }
 
 .mxAuto {
@@ -129,6 +132,7 @@ label {
   color: #fff;
   font-size: 13px;
   padding: 10px;
+  cursor: pointer;
 }
 .save:hover {
   background: #1160c7;
@@ -169,8 +173,7 @@ label {
   background-color: #1160c7;
 }
 .px9 {
-  padding-left: 2.25rem /* 36px */;
-  padding-right: 2.25rem /* 36px */;
+  padding: 0 1.5rem;
 }
 .mt {
   margin-top: 12px;
@@ -252,13 +255,40 @@ label {
   display: none;
 }
 
+.bottomBtn {
+  display: none;
+}
+
+.avatar {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 12rem;
+  height: 12rem;
+  margin-bottom: 1.5rem;
+}
+
+.avatar img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 @media (max-width: 768px) {
   .username {
     display: flex;
     align-items: center;
-    width: 100% !important;
-    flex: 1 1 auto;
+    width: 100%;
+    flex-grow: 1;
   }
+
+  .mt {
+    margin-top: 0;
+  }
+
+  .mt input {
+    height: 2.3rem;
+  }
+
   .profileFunc {
     display: none;
   }
@@ -281,7 +311,7 @@ label {
   .sectionB {
     width: 100% !important;
   }
-  label {
+  .label {
     font-weight: 700;
   }
   .linkTab {
@@ -294,33 +324,58 @@ label {
     display: none;
   }
   .profilePic {
-    display: flex;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 7rem auto;
+    grid-gap: 1rem;
+    align-items: center;
     position: relative;
   }
-  .profilePic img {
-    height: 40%;
-    width: 40%;
+  .avatar {
+    height: 7rem;
+    width: 7rem;
     border-radius: 50%;
-    object-fit: contain;
-    margin-bottom: 20px;
-    margin-right: 20px;
+    margin-bottom: 0;
+    overflow: hidden;
+  }
+
+  .avatar img {
+    object-fit: cover;
+    width: 100%;
   }
 
   .profilePic .camera {
     position: absolute;
-    left: 10px;
+    left: 0;
     top: 10px;
-    display: grid;
-    background: #e5e5e5;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
-    padding: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+    background: #f6f6f6;
+    border: 1px solid #ffffff;
   }
-  .profilePic .camera img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
+  .cameraIcon {
+    font-size: 1rem;
+    color: #999;
+  }
+
+  .bottomBtn {
+    display: block;
+    position: fixed;
+    top: 2rem;
+    z-index: 3333;
+    right: 1rem;
+    background: none;
+    color: #2f80ed;
+    border: none;
+    outline: none;
+  }
+
+  .formMargin {
     margin-bottom: 0;
-    margin-right: 0;
   }
 }

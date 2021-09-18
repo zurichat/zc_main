@@ -1,25 +1,24 @@
 .containers {
   width: 100%;
-  position: fixed;
+  position: sticky;
+  top: 0;
   height: 5.0625em;
   display: flex;
   justify-content: space-between;
   padding: 20px;
   z-index: 999;
-  background: #f6f6f6;
+  background: #fff;
 }
 
 .brand {
-  width: 25%;
   display: flex;
+  align-items: center;
 }
 
 .brand img {
-  width: 100%;
-  max-width: 30px;
+  width: 60%;
+  max-width: 100%;
   height: 100%;
-  max-height: 30px;
-  object-fit: cover;
 }
 
 .brand h3 {
@@ -37,14 +36,14 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 40%;
+  width: 50%;
 }
 
 .searchBar {
-  width: 60%;
+  width: 65%;
   height: 30px;
-  background: #f6f6f6;
-  border: 1px solid #bebebe;
+  background: #fff;
+  border: 0.8px solid rgba(153, 153, 153, 0.2);
   box-sizing: border-box;
   border-radius: 2px;
   margin-right: 1.5em;
@@ -59,67 +58,48 @@
   outline: none;
   font-family: 'Lato', sans-serif;
   font-size: 11px;
-  background: #f6f6f6;
 }
 .searchInput::placeholder {
   font-size: 11px;
   line-height: 16px;
-}
-.searchSvg {
-  cursor: pointer;
-  fill: #bebebe;
+  color: #616061;
+  font-weight: normal;
 }
 
 /* THE SECTION OF THE RIGHT NAV */
 .rightnav {
-  width: 10%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
-.profile {
-  border-radius: 50%;
-  display: flex;
-  /* margin-left: 1.375em; */
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.settings {
-  margin-right: 19px;
-  cursor: pointer;
-}
-
 .status {
   margin-right: 5px;
-  font-size: 14px;
 }
 
 .pImage {
   position: relative;
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
   cursor: pointer;
-  border-radius: 50%;
+  border-radius: 10%;
 }
 
 .pImage .profileImg {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  background: #dbdada;
+  border-radius: 10%;
 }
 
 .circles {
-  background: green;
-  height: 7px;
-  width: 7px;
+  background: #0dbe3f;
+  height: 14px;
+  width: 14px;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -3px;
+  right: -5px;
   border-radius: 50%;
+  border: 2px solid white;
 }
 
 .containers .menubars {
@@ -135,8 +115,8 @@
   }
 
   .brand img {
-    width: 60%;
-    height: 80%;
+    width: 100%;
+    height: auto;
   }
 
   .searchBar {
@@ -171,8 +151,8 @@
     width: 300px;
   }
 
-  .rightnav {
-    width: 20%;
+  .status {
+    margin-right: -5px;
   }
 }
 
