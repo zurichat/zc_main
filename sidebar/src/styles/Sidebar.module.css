@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+.container ul {
+  list-style: none;
+  color: #000;
+}
+.container a {
+  text-decoration: none;
+  color: #000;
+}
 .container {
   background-color: #ffffff;
   display: flex;
