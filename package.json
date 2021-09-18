@@ -13,6 +13,7 @@
     "format": "prettier -w .",
     "lint": "eslint src --ext js",
     "prepare": "husky install",
+    "server:run": "serve -p 9001 -s dist/",
     "setup:topbar": "(cd topbar && yarn)",
     "setup:control": "(cd control && yarn)",
     "setup:sidebar": "(cd sidebar && yarn)",
