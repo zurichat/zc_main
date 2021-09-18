@@ -11,9 +11,9 @@
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   overflow: auto;
-  width: max-content;
+  width: 100%;
   overflow-y: scroll;
   padding-top: 4.3rem;
 }
