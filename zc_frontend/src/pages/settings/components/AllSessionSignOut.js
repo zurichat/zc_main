@@ -29,31 +29,21 @@ function AllSessionSignOut() {
     }
 
     return () => clearTimeout(timerId)
-    //const getUserFromStorage = () => {
-    //  let userDetail;
-    //  if(sessionStorage.getItem("user") && sessionStorage.getItem("session_id")) {
-    //    userDetail = JSON.parse(sessionStorage.getItem("user"))
-    //    setUserSession(userDetail)
-    //      //fetchUser(userDetail.id, userDetail.token)
-    //  } else {
-    //    history("/login")
-    //  }  
-    //}
-    //getUserFromStorage()
   })
 
-
   const comparePassword = async () => {
+    const userPassword = {
+      password: currentPassword
+    }
     
     try {
+
       const response = await axios.post("https://api.zuri.chat/auth/logout/othersessions", {
-        body: {
-          "password": currentPassword
-        }
+        body: JSON.stringify(userPassword)
       })
       
       if(response.status !== 200) {
-        throw new Error(`Failed to fetch data, ${response.status} `)
+        throw new Error(`Failed to fetch data, status: ${response.status} `)
       }
 
       const {data} = await response.data
@@ -65,36 +55,10 @@ function AllSessionSignOut() {
     }
   }
 
-  //const comparePassword = async (token) => {
-  //  console.log(token)
-  //  try {
-  //    const response = await axios.post("https://api.zuri.chat/auth/confirm-password", {
-  //      headers: {
-  //        "Authorization": `Bearer ${token}`
-  //      },
-  //      body: {
-  //        "password": currentPassword,
-  //        "current_password": currentPassword
-  //      }
-  //    })
-//
-  //    const {data} = await response.data
-  //    console.log(response.data)
-  //  } catch (error) {
-  //    console.log(error)
-  //  }
-  //}  
-
   const handleSubmit = (e) => {
     e.preventDefault()
 
     comparePassword()
-    //if((currentPassWord < 5))) {
-    //  setError("That password is incorrect. Please try again")
-    //} else {
-    //  confirmPassword()
-    //  history("/session-signout/account-reset")
-    //}
   }
 
   return (
