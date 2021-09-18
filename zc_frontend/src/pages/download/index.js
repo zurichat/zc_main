@@ -6,18 +6,23 @@ import DownloadsIOS from './DownloadsIOS'
 import isIOs from 'react-device-detect'
 
 const Download = () => {
-    const [width, setWidth] = React.useState(window.innerWidth);
-    const breakpoint = 768;
-  
-    React.useEffect(() => {
-      const handleWindowResize = () => setWidth(window.innerWidth)
-      window.addEventListener("resize", handleWindowResize);
-  
-      return () => window.removeEventListener("resize", handleWindowResize);
-    }, []);
-  
-    return width > breakpoint ? <DownloadsDesktop /> :
-    (isIOs ? <DownloadsIOS /> : <DownloadsAndroid />);
-  }
+  const [width, setWidth] = React.useState(window.innerWidth)
+  const breakpoint = 768
 
-  export default Download
+  React.useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth)
+    window.addEventListener('resize', handleWindowResize)
+
+    return () => window.removeEventListener('resize', handleWindowResize)
+  }, [])
+
+  return width > breakpoint ? (
+    <DownloadsDesktop />
+  ) : isIOs ? (
+    <DownloadsIOS />
+  ) : (
+    <DownloadsAndroid />
+  )
+}
+
+export default Download

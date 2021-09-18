@@ -170,11 +170,19 @@ const DownloadsDesktop = () => {
               </h1>
               <p className={styles.p}>
                 Innovate in your workspace with the Zurichat apps on
-                <a className={`${styles.versionlink} px-lg-1 fw-bold`} href={Apk} download="release.apk">
+                <a
+                  className={`${styles.versionlink} px-lg-1 fw-bold`}
+                  href={Apk}
+                  download="release.apk"
+                >
                   Android
                 </a>{' '}
                 and
-                <a className={`${styles.versionlink} px-lg-1 fw-bold`} href={Apk} download="release.apk">
+                <a
+                  className={`${styles.versionlink} px-lg-1 fw-bold`}
+                  href={Apk}
+                  download="release.apk"
+                >
                   IOS
                 </a>
               </p>
