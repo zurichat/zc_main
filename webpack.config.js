@@ -18,7 +18,7 @@ module.exports = (webpackConfigEnv, argv) => {
     output: {
       // path: path.join(__dirname, '..', 'dist'), // string (default)
       // filename: "[name].js", // string (default)
-      publicPath: path.join(__dirname, 'dist', 'assets') // string
+      // publicPath: path.join(__dirname, 'dist', 'assets') // string
     },
     plugins: [
       new HtmlWebpackPlugin({
