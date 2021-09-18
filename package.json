@@ -17,11 +17,11 @@
     "setup:control": "(cd control && yarn)",
     "setup:sidebar": "(cd sidebar && yarn)",
     "postinstall": "concurrently --kill-others-on-fail -m 1 yarn:setup:*",
-    "build": "concurrently -m 1 yarn:build:*",
+    "build": "concurrently --kill-others-on-fail -m 1 yarn:build:*",
+    "build:webpack": "webpack --mode=production",
     "build:topbar": "npm run build --prefix topbar",
     "build:control": "npm run build --prefix control",
-    "build:sidebar": "npm run build --prefix sidebar",
-    "build:webpack": "webpack --mode=production"
+    "build:sidebar": "npm run build --prefix sidebar"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",

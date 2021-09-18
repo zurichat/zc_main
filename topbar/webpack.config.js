@@ -1,5 +1,6 @@
 const { mergeWithRules } = require('webpack-merge')
 const singleSpaDefaults = require('webpack-config-single-spa-react')
+const path = require('path')
 
 const mergeRules = {
   plugins: 'replace',
@@ -27,6 +28,11 @@ module.exports = (webpackConfigEnv, argv) => {
   })
 
   return mergeWithRules(mergeRules)(defaultConfig, {
+    output: {
+      path: path.join(__dirname, '..', 'dist'), // string (default)
+      // filename: "[name].js", // string (default)
+      publicPath: path.join(__dirname, '..', 'dist', 'assets') // string
+    },
     module: {
       rules: [
         {
