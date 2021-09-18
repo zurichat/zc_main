@@ -4,7 +4,8 @@
   "repository": "git@github.com:zurichat/zc_main.git",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve --port 9000 --env isLocal",
+    "start": "webpack serve --port 9000 --env",
+    "start:topbar": "npm dev --prefix topbar",
     "start:control": "npm dev --prefix control",
     "start:sidebar": "npm dev --prefix sidebar",
     "dev": "yarn start",
@@ -12,11 +13,15 @@
     "format": "prettier -w .",
     "lint": "eslint src --ext js",
     "prepare": "husky install",
+    "setup:topbar": "(cd topbar && yarn)",
     "setup:control": "(cd control && yarn)",
     "setup:sidebar": "(cd sidebar && yarn)",
-    "postinstall": "concurrently --kill-others-on-fail yarn:setup:*",
-    "build": "concurrently yarn:build:*",
-    "build:webpack": "webpack --mode=production"
+    "postinstall": "concurrently --kill-others-on-fail -m 1 yarn:setup:*",
+    "build": "concurrently --kill-others-on-fail -m 1 yarn:build:*",
+    "build:webpack": "webpack --mode=production",
+    "build:topbar": "npm run build --prefix topbar",
+    "build:control": "npm run build --prefix control",
+    "build:sidebar": "npm run build --prefix sidebar"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",

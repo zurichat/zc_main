@@ -1,0 +1,24 @@
+.wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: auto;
+  color: #6a6a6a;
+  height: 20px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  font-feature-settings: "salt" on;
+}
+
+.wrapper span {
+  cursor: pointer;
+}
+@media screen and (min-width: 765px) {
+  .wrapper {
+    width: 50%;
+  }
+}

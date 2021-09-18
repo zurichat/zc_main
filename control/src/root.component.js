@@ -1,7 +1,7 @@
-import styles from './styles.module.css'
+import App from './App'
 
 export default function Root(props) {
   return (
-    <section className={`${styles.test}`}>{props.name} is mounted!</section>
+    <App />
   )
 }
