@@ -13,4 +13,15 @@ const lifecycles = singleSpaReact({
   }
 })
 
+export const GetUserInfo = () => {
+
+  let user = sessionStorage.getItem('user')
+  let token = sessionStorage.getItem('token')
+  let sessionId = sessionStorage.getItem('session_id')
+
+  console.log(user, token, sessionId)
+
+
+  }
+
 export const { bootstrap, mount, unmount } = lifecycles

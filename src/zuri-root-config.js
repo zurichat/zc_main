@@ -9,7 +9,7 @@ import { registerApplication, start } from 'single-spa'
 registerApplication({
   name: '@zuri/topbar',
   app: () => System.import('@zuri/topbar'),
-  activeWhen: ['/']
+  activeWhen: ['/home']
 })
 registerApplication({
   name: '@zuri/sidebar',
