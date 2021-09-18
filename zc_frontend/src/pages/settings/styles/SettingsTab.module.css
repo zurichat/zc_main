@@ -42,14 +42,15 @@
 }
 
 .emailLink {
-  color: #00b87c !important;
+  color: #B8003C !important;
   /* font-size: 12px; */
   text-decoration: none;
 }
 
 .settingsright button {
   background: #ffffff;
-  border: 1px solid #dedede;
+  border: 1px solid rgba(0, 184, 124, 0.5);
+  color: rgba(0, 184, 124, 0.5);
   box-sizing: border-box;
   border-radius: 4px;
   padding: 9px 18px;
@@ -162,7 +163,7 @@
 
 .two_factor span {
   font-size: 14px;
-  color: rgba(58, 58, 58, 0.7);
+  color: #B8003C
 }
 
 @media screen and (max-width: 868px) {

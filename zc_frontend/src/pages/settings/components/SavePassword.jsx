@@ -6,13 +6,13 @@ const SavePassword = () => {
     <div className={styles.passwordsection}>
       <form className="row d-flex flex-column">
         <div className="col-md-5">
-          <label for="firstname" className="form-label">
+          <label htmlFor="firstname" className="form-label">
             Current password
           </label>
           <input type="password" className="form-control" required />
         </div>
         <div className="col-md-5">
-          <label for="lastname" className="form-label">
+          <label htmlFor="lastname" className="form-label">
             New password
           </label>
           <input type="password" className="form-control" required />

@@ -1,10 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from '../styles/AccountDeactivated.module.css'
+import zuri from '../../images/zuri.svg'
+
 
 const AccDeactivated = () => {
   return (
-    <div className={styles.container}>
+   <div className={styles.containers}>
+     <nav className={styles.nav}>
+     <img src={zuri} alt="Zuri logo" />
+     </nav>
+
+      <div className={styles.container}>
       <div className={styles.content}>
         <h2>Account Deactivated</h2>
         <p>
@@ -17,6 +24,7 @@ const AccDeactivated = () => {
         <p className={styles.greeting}>Thank you for using Zurichat!</p>
       </div>
     </div>
+   </div>
   )
 }
 
