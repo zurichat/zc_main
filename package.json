@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack serve --port 9000 --env isLocal",
+    "start:topbar": "npm dev --prefix topbar",
     "start:control": "npm dev --prefix control",
     "start:sidebar": "npm dev --prefix sidebar",
     "dev": "yarn start",
@@ -12,10 +13,14 @@
     "format": "prettier -w .",
     "lint": "eslint src --ext js",
     "prepare": "husky install",
+    "setup:topbar": "(cd topbar && yarn)",
     "setup:control": "(cd control && yarn)",
     "setup:sidebar": "(cd sidebar && yarn)",
-    "postinstall": "concurrently --kill-others-on-fail yarn:setup:*",
-    "build": "concurrently yarn:build:*",
+    "postinstall": "concurrently --kill-others-on-fail -m 1 yarn:setup:*",
+    "build": "concurrently -m 1 yarn:build:*",
+    "build:topbar": "npm run build --prefix topbar",
+    "build:control": "npm run build --prefix control",
+    "build:sidebar": "npm run build --prefix sidebar",
     "build:webpack": "webpack --mode=production"
   },
   "devDependencies": {
