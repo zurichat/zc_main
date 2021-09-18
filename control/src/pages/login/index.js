@@ -10,6 +10,7 @@ import AuthInputBox from '../../components/AuthInputBox'
 import FormWrapper from '../../components/AuthFormWrapper'
 import styles from '../../component-styles/AuthFormElements.module.css'
 import axios from 'axios'
+import { GetUserInfo } from '../../zuri-control'
 
 //import GoogleLogin from 'react-google-login'
 
@@ -61,6 +62,7 @@ const Login = () => {
 
         setTimeout(() => {
           //Redirect to some other page
+          GetUserInfo();
         }, 2000)
       })
       .catch(error => {
