@@ -7,18 +7,18 @@ import image from '../../../../assets/careerPage-images/section_one_image.svg'
 
 const SectionOne = () => (
   <div className={`${styles.Section1}`}>
-  <div className={`${styles.section1Left}`}>
+    <div className={`${styles.section1Left}`}>
       <h1>Work with us</h1>
-      <p>Explore remotely-friendly, flexible opportunities 
-          and join our mission to make work life simpler, 
-          more pleasant and more productive
+      <p>
+        Explore remotely-friendly, flexible opportunities and join our mission
+        to make work life simpler, more pleasant and more productive
       </p>
-      <Link to="/signup" > 
+      <Link to="/signup">
         <button>Join us</button>
       </Link>
+    </div>
+    <img src={image} alt="people" />
   </div>
-  <img src={image} alt="people" />
-</div>
 )
 
 export default SectionOne
