@@ -8,30 +8,31 @@ import { ProfileProvider } from '../../context/ProfileModal'
 import { TopbarProvider } from '../../context/Topbar'
 import { PluginLoaderProvider } from '../../context/PluginLoaderState'
 import Profile from '../../components/Profile'
-import { TopNavBar } from '../test/index'
+import TopNavBar from '../../components/verified-components/TopNavBar'
+// import Topbar from '../../components/Topbar'
 
 const Home = () => {
   return (
     <UrlProvider>
       <PluginProvider>
         <PluginLoaderProvider>
-          <TopNavBar />
-          <div className={styles.container}>
-            <Sidebar />
-            <ProfileProvider>
-              <TopbarProvider>
-                <div className={styles.room}>
-                  {/* <Topbar /> */}
+          <ProfileProvider>
+            <TopbarProvider>
+              <TopNavBar />
+              {/* <Topbar /> */}
+              <div className={styles.room}>
+                <div className={styles.container}>
+                  <Sidebar />
                   <div className={styles.spaceWrapper}>
                     <div className={styles.pluginContent}>
                       <PluginContent />
                     </div>
-                    <Profile />
                   </div>
+                  <Profile />
                 </div>
-              </TopbarProvider>
-            </ProfileProvider>
-          </div>
+              </div>
+            </TopbarProvider>
+          </ProfileProvider>
         </PluginLoaderProvider>
       </PluginProvider>
     </UrlProvider>

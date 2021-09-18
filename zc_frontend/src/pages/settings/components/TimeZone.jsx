@@ -13,7 +13,7 @@ const TimeZone = () => {
           </select>
         </div>
         <div className="col-md-4 mb-3 mt-2">
-          <button className="btn btn-primary">Save Time Zone</button>
+          <button className="btn">Save Time Zone</button>
         </div>
       </form>
     </div>

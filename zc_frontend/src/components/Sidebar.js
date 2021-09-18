@@ -13,14 +13,12 @@ import AuthInputBox from '../components/AuthInputBox'
 // import PublicRooms from '../publicRooms/PublicRooms'
 import cheerio from 'cheerio'
 
-import threadIcon from '../pages/test/assets/icons/thread-icon.svg'
-import dmIcon from '../pages/test/assets/icons/dm-icon.svg'
-import draftIcon from '../pages/test/assets/icons/draft-icon.svg'
-import filesIcon from '../pages/test/assets/icons/files-icon.svg'
-import pluginIcon from '../pages/test/assets/icons/plugin-icon.svg'
-import addIcon from '../pages/test/assets/icons/add-icon.svg'
-
-// import "@reach/dialog/styles.css";
+import threadIcon from './verified-components/assets/icons/thread-icon.svg'
+import dmIcon from './verified-components/assets/icons/dm-icon.svg'
+import draftIcon from './verified-components/assets/icons/draft-icon.svg'
+import filesIcon from './verified-components/assets/icons/files-icon.svg'
+import pluginIcon from './verified-components/assets/icons/plugin-icon.svg'
+import addIcon from './verified-components/assets/icons/add-icon.svg'
 
 const fetcher = url => fetch(url).then(res => res.json())
 
@@ -43,8 +41,9 @@ export const Sidebar = () => {
   // const [rooms, setRooms] = useState({})
   const [query, setQuery] = useState('')
   const [loading, setLoading] = useState(false)
-  const [availablePlugins, setAvailablePlugins] = useState()
   // const [error, setError] = useState('')
+
+  // Sort room function
 
   // const sortRooms = (val, type) => {
   //   let values = [...val]
@@ -80,25 +79,15 @@ export const Sidebar = () => {
     }
   }
 
-  const getAllPlugins = async url => {
-    setLoading(true)
-    try {
-      const res = await axios.get(`https://api.zuri.chat/marketplace/plugins`)
-      return res.data
-    } catch (err) {
-      return console.log(err)
-    }
-  }
-
   // const filteredJoinedRooms = rooms?.joined_rooms ?
-  //    rooms.joined_rooms.filter(room =>
-  //       room.title.toLowerCase().includes(query)
-  //     )
+  //   rooms.joined_rooms.filter(room =>
+  //     room.title.toLowerCase().includes(query)
+  //   )
   //   : null
   // const filteredPublicRooms = rooms?.joined_rooms ?
-  //    rooms.public_rooms.filter(room =>
-  //       room.title.toLowerCase().includes(query)
-  //     )
+  //   rooms.public_rooms.filter(room =>
+  //     room.title.toLowerCase().includes(query)
+  //   )
   //   : null
 
   useEffect(() => {
@@ -112,11 +101,6 @@ export const Sidebar = () => {
         // console.log(sortRooms(res.public_rooms, 'minmax'))
         // console.log(sortRooms(res.public_rooms, 'maxmin'))
       })
-
-      await getAllPlugins().then(async res => {
-        setAvailablePlugins(res.data)
-        console.log(res.data)
-      })
     })()
   }, [])
 
@@ -127,7 +111,7 @@ export const Sidebar = () => {
         r.data.data.plugins.forEach(api_plugin => {
           let homepage_url
           // Get Homepage
-          axios.get(`https://chess.zuri.chat/api/v1/info`).then(res => {
+          axios.get(api_plugin).then(res => {
             homepage_url = res.data.data.homepage_url
             let homepage = null
             let loaded = false
@@ -192,7 +176,7 @@ export const Sidebar = () => {
             // console.log(`${r.data.data.sidebar_url}?org=${org_id}&user=${user.id}`)
             axios
               .get(
-                'https://chess.zuri.chat/api/v1/sidebar?userId=test_user_id&org=1&token=1'
+                'https://sales.zuri.chat/api/v1/sidebar?org=5336&user=Devjoseph&token=FGEZJJ-ZFDGB-FDGG'
               )
               .then(r => {
                 const api_plugin = r.data.data
@@ -225,7 +209,7 @@ export const Sidebar = () => {
             alt="Organisation settings button"
           />
         </div>
-        {/* <Overlay isOpen={showDialog} onDismiss={close}>
+        <Overlay isOpen={showDialog} onDismiss={close}>
           <Content aria-label="room-list">
             <CloseButton className="close-button" onClick={close}>
               <Span aria-hidden>×</Span>
@@ -237,12 +221,12 @@ export const Sidebar = () => {
             />
             <Wrapper>
               {loading && <p>Loading..</p>}
-              <JoinedRooms rooms={filteredJoinedRooms} />
-              <PublicRooms rooms={filteredPublicRooms} />
+              {/* {rooms.joined_rooms && <JoinedRooms rooms={filteredJoinedRooms} />} */}
+              {/* {rooms.public_rooms && <PublicRooms rooms={filteredPublicRooms} />} */}
             </Wrapper>
           </Content>
-        </Overlay>*/}
-        <Overlay isOpen={showDialog} onDismiss={close}>
+        </Overlay>
+        {/* <Overlay isOpen={showDialog} onDismiss={close}>
           <Content aria-label="room-list">
             <CloseButton className="close-button" onClick={close}>
               <Span aria-hidden>×</Span>
@@ -266,7 +250,7 @@ export const Sidebar = () => {
               </p>
             </Wrapper>
           </Content>
-        </Overlay>
+        </Overlay> */}
         <div className={styles.newMessage}>
           <img src="/newmessage.svg" alt="New message icon" />
         </div>
@@ -309,6 +293,20 @@ export const Sidebar = () => {
         </Item>
       </div>
       <Dropdown onAddButtonClick={open} showAddButton={true} title="Channels">
+        {channelsData &&
+          channelsData.channels.map((channel, index) => (
+            <Fragment key={index}>
+              <span>#</span>
+              {channel.name}
+            </Fragment>
+          ))}
+      </Dropdown>
+      <Dropdown
+        onAddButtonClick={open}
+        onTitleClick={() => setUrl(`https://sales.zuri.chat/`)}
+        showAddButton={true}
+        title="Sales"
+      >
         {channelsData &&
           channelsData.channels.map((channel, index) => (
             <Fragment key={index}>
@@ -364,6 +362,7 @@ const Overlay = styled(DialogOverlay)`
   align-items: center;
   width: 100%;
   padding: 2rem;
+  z-index: 5;
 `
 const Content = styled(DialogContent)`
   position: relative;

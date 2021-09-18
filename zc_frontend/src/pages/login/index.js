@@ -16,6 +16,9 @@ import axios from 'axios'
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [error, seterror] = useState('')
+  const [emailerror, setemailerror] = useState('')
+  const [passworderror, setpassworderror] = useState('')
   const [rememberMe, setRememberMe] = useState('')
 
   // Background Images
@@ -33,6 +36,8 @@ const Login = () => {
   }
 
   const handleSubmit = async e => {
+    setemailerror('')
+    setpassworderror('')
     e.preventDefault()
     await axios
       .post('https://api.zuri.chat/auth/login', {
@@ -41,6 +46,9 @@ const Login = () => {
       })
       .then(response => {
         const { data, message } = response.data
+
+        //Store token in localstorage
+        sessionStorage.setItem('token', data.user.token)
 
         //Store token in localstorage
         sessionStorage.setItem('session_id', data.session_id)
@@ -57,9 +65,19 @@ const Login = () => {
       })
       .catch(error => {
         const { data } = error.response
+        console.log(data)
+
+        RegExp('not found').test(data.message) &&
+          setemailerror(
+            'Sorry, this email is not registered, try again or click Create an Account.'
+          )
+        RegExp(/Invalid login/).test(data.message) &&
+          setpassworderror(
+            'Sorry, you have entered the wrong password. Try again or click Get help signing in.'
+          )
 
         //Render error message to the user
-        alert(data.message) //Change this when there is a design
+        seterror(data.message) //Change this when there is a design
       })
   }
 
@@ -81,6 +99,7 @@ const Login = () => {
           email={email}
           password={password}
           check={rememberMe}
+          error={error}
           handleSubmit={handleSubmit}
           bottomLine="New to us?"
           bottomLink="Create an Account"
@@ -94,7 +113,7 @@ const Login = () => {
             placeholder="Johndoe@example.com"
             value={email}
             setValue={setEmail}
-            error=""
+            error={emailerror}
             onFocus={displayImage}
           />
           <AuthInputBox
@@ -105,7 +124,7 @@ const Login = () => {
             placeholder="Enter a password"
             value={password}
             setValue={setPassword}
-            error=""
+            error={passworderror}
             onFocus={displayImage}
           />
 

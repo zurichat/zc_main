@@ -1,10 +1,15 @@
 import styled from 'styled-components'
 import errImg from './assets/errImg.svg'
-import zurichatlogo from './assets/zurichatlogo.svg'
-import userAvatar from './assets/user.svg'
 import arrowDown from './assets/arrow-down.svg'
-import '../../components/verified/master.css'
-import { useState } from 'react'
+import '../../components/verified-components/master.css'
+import Toggle from '../verified/toggle'
+import { useContext, useState } from 'react'
+import { DialogOverlay, DialogContent } from '@reach/dialog'
+import TopNavBar from '../verified-components/TopNavBar'
+import userAvatar from './assets/user.svg'
+import { ProfileProvider } from '../../context/ProfileModal'
+import { TopbarProvider } from '../../context/Topbar'
+import { TopbarContext } from '../../context/Topbar'
 
 // Input tag
 const Input = ({
@@ -117,19 +122,7 @@ const FloatingButton = ({
 
 //   Toggle
 
-const Toggle = ({ selected, toggleSelected }) => {
-  return (
-    <div
-      className={`toggle ${selected ? '' : 'toggle_disabled'}`}
-      onClick={toggleSelected}
-    >
-      <div
-        selected={selected}
-        className={`toggle_ball ${selected ? '' : 'toggle_ball_disabled'}`}
-      ></div>
-    </div>
-  )
-}
+;<Toggle />
 
 const Checkbox = ({ checked, onClick }) => {
   return (
@@ -142,32 +135,9 @@ const Checkbox = ({ checked, onClick }) => {
   )
 }
 
-const TopNavBar = () => {
-  const [search, setSearch] = useState('')
-
-  return (
-    <TopNavBarBase>
-      <div>
-        <img src={zurichatlogo} alt="zuri chat logo" />
-        <LogoName>ZURI</LogoName>
-      </div>
-      <BaseInput
-        value={search}
-        onChange={e => setSearch(e.target.value)}
-        type="text"
-        width={7}
-        error
-        placeholder="Search here"
-        border={'#99999933'}
-      />
-      <div>
-        <img src={userAvatar} alt="user profile avatar" />
-      </div>
-    </TopNavBarBase>
-  )
-}
-
 const PluginNavBar = () => {
+  const { openMembersModal } = useContext(TopbarContext)
+
   return (
     <PluginNavBarBase>
       <div>
@@ -178,7 +148,7 @@ const PluginNavBar = () => {
           <img src={arrowDown} alt="user profile avatar" />
         </PluginName>
       </div>
-      <AllUsers>
+      <AllUsers role="button" onClick={openMembersModal}>
         <AllUsersImg src={userAvatar} role="button" alt="user profile avatar" />
         <AllUsersImg src={userAvatar} role="button" alt="user profile avatar" />
         <AllUsersImg src={userAvatar} role="button" alt="user profile avatar" />
@@ -196,6 +166,7 @@ function Test() {
 
   return (
     <div>
+      <h1>Input </h1>
       {/* Input tags */}
       <div>
         <Input
@@ -226,6 +197,7 @@ function Test() {
         {/* <p>props for input tag: type, placeholder, id, border, label, error, width</p> */}
       </div>
 
+      <h1>Typography</h1>
       {/* Typography */}
       <div>
         <h1>Header 1</h1>
@@ -266,10 +238,12 @@ function Test() {
       </div>
 
       {/* checkbox */}
+      <h1>Checkbox</h1>
       <div>
         <Checkbox checked={checked} onClick={() => setChecked(!checked)} />
       </div>
-
+      <br />
+      <h1>Toggle</h1>
       {/* Toggle */}
       <div>
         <Toggle
@@ -282,12 +256,30 @@ function Test() {
       <br />
 
       {/* Topbar */}
+      <h1>Topbar Button</h1>
+
       <div>
-        <TopNavBar />
+        <ProfileProvider>
+          <TopbarProvider>
+            <TopNavBar />
+          </TopbarProvider>
+        </ProfileProvider>
       </div>
 
       {/* Plugin Navbar */}
-      <PluginNavBar />
+      <h1>Plugin Button</h1>
+      <div>
+        <PluginNavBar />
+      </div>
+      {/* <Overlay >
+          <Content aria-label="room-list">
+            <CloseButton className="close-button" >
+              <Span aria-hidden>×</Span>
+            </CloseButton>
+            <Wrapper>Î
+            </Wrapper>
+          </Content>
+        </Overlay> */}
     </div>
   )
 }
@@ -415,33 +407,14 @@ const FloatingButtonBase = styled.button`
 
 // Checkbox
 
-//  TopNavBar
-
-const TopNavBarBase = styled.div`
-  background-color: var(--bg-2);
-  padding: 1rem;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-`
-
-const LogoName = styled.span`
-  font-family: Lato;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 27px;
-  letter-spacing: 0px;
-  padding: 0.5rem;
-  text-align: center;
-  vertical-align: middle;
-`
 const PluginNavBarBase = styled.div`
   background-color: var(--primary-color);
   padding: 0.5rem 1rem;
   margin: auto;
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  margin-top: 69px;
 `
 
 const PluginName = styled.span`
@@ -475,12 +448,71 @@ const AllUsersSpan = styled.span`
   vertical-align: middle;
   padding: 0 0.1rem;
 `
+export const Overlay = styled(DialogOverlay)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: hsl(220deg 5% 40% / 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+`
+export const Content = styled(DialogContent)`
+  position: relative;
+  background: white;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+`
+// const Wrapper = styled.div`
+//   overflow-y: auto;
+//   padding: 1rem 0;
+// `
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 0px;
+  right: 0;
+  padding: 0.5rem;
+  width: 50px;
+  color: red;
+  background-color: transparent;
+  border: none;
+`
+// const Span = styled.span`
+//   font-size: 0.8rem;
+// `
+// const Item = styled.p`
+// font-family: Lato;
+// font-size: 15px;
+// font-style: normal;
+// font-weight: 400;
+// line-height: 28px;
+// letter-spacing: 0em;
+// text-align: left;
+// display: flex;
+// padding:0.25rem;
+// & > img {
+//   padding: 0 1rem;
+
+// `
+
+// const ClickButton = styled.img`
+//   margin-left: auto;
+// `
+
 export {
   Input,
+  BaseInput,
   Button,
   FloatingButton,
   Toggle,
   Checkbox,
-  TopNavBar,
   PluginNavBar
 }

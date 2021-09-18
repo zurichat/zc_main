@@ -6,6 +6,10 @@
 
 @media screen and (max-width: 800px) {
   .deactivationSection {
+    padding-top: 40px;
+  }
+
+  .deactivationSection {
     margin: 0 5%;
   }
 
@@ -42,8 +46,9 @@
 
 .deactivationCaution span {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 22px;
+  color: #3a3a3a;
 }
 
 .deactivationNote {
@@ -54,7 +59,7 @@
 }
 
 .blue {
-  color: #00b87c;
+  color: #2f80ed;
 }
 
 .firstP {
