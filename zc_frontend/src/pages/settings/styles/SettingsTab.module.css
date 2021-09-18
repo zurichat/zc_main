@@ -42,7 +42,7 @@
 }
 
 .emailLink {
-  color: #B8003C !important;
+  color: #b8003c !important;
   /* font-size: 12px; */
   text-decoration: none;
 }
@@ -163,7 +163,7 @@
 
 .two_factor span {
   font-size: 14px;
-  color: #B8003C
+  color: #b8003c;
 }
 
 @media screen and (max-width: 868px) {
