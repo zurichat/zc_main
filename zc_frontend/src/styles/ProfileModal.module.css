@@ -13,7 +13,8 @@
   padding-bottom: 2rem;
 }
 
-.overlay {
+.overlay,
+.overlayGreen {
   position: fixed;
   top: 0;
   left: 0;
@@ -67,7 +68,8 @@
 }
 
 .closeIcon,
-.closeIconPath {
+.closeIconPath,
+.backIcon {
   width: 0.7rem;
   width: 0.7rem;
   cursor: pointer;
@@ -107,7 +109,6 @@
     left: 0;
     right: 0;
     height: 85vh;
-    border-radius: 20px 20px 0px 0px;
     max-width: 100vw;
   }
 
@@ -121,28 +122,28 @@
     max-width: 100vw;
     background: #fff;
     border-radius: 0px;
-    background: orange;
+    margin-top: 1.5rem;
+    border-radius: 20px 20px 0px 0px;
   }
 
   .modalHeader {
+    position: fixed;
+    top: 1.5rem;
     width: 100%;
     height: 4rem;
     padding: 0 1.5rem;
-    font-weight: 700;
     font-size: 1.2rem;
     background: none;
     border-radius: 20px 20px 0px 0px;
     border-bottom: 1px solid #dadada;
     justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
     color: #242424;
-    position: relative;
-    display: none;
+    background: #fff;
   }
 
-  .modalHeaderMobile {
-    display: none;
+  .modalCont {
+    margin-top: 4rem;
   }
 
   .mobile {
@@ -161,11 +162,17 @@
   }
 
   .closeIcon,
-  .closeIconPath {
+  .closeIconPath,
+  .backIcon {
     position: absolute;
     left: 1rem;
     width: 1rem;
     height: 1rem;
+  }
+
+  .backIcon {
+    height: 2rem;
+    width: 2rem;
   }
 
   .closeIcon path {
@@ -174,5 +181,9 @@
 
   .modalInnerContainer {
     padding: 2.375rem 1.5rem;
+  }
+
+  .overlayGreen {
+    background: #00b87c;
   }
 }

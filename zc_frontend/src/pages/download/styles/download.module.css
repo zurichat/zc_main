@@ -1,186 +1,257 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
 
+body {
+  font-family: 'Lato', sans-serif !important;
+}
 .container {
-  margin: 30px;
-  text-align: center;
+  margin-top: 100px !important;
 }
 .h1 {
-  font-size: 35px;
-  line-height: 50px;
   font-weight: 800;
+  font-size: 42px;
+  line-height: 50px;
 }
-.link {
+.p {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+}
+.plink {
   color: #00b87c;
   text-decoration-line: underline;
-}
-.images {
-  margin: 0;
-  height: 400px;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 26px;
 }
 .circle {
   position: absolute;
-  height: 196px;
-  width: 110px;
-  top: 60px;
-  left: 50px;
-}
-.circle2 {
-  position: relative;
-  height: 372px;
-  z-index: auto;
-  width: 214px;
-  left: 523px;
-  top: -415px;
+  z-index: 0;
 }
 .screenshot {
   position: relative;
-  height: 506px;
-  z-index: 2;
-  width: 555px;
-  left: 80px;
-  top: -70px;
+  left: 17px;
+  top: 0;
+  z-index: 1;
 }
-.buttondiv {
-  text-align: center;
+.circle2 {
+  position: absolute;
+  left: 1165px;
+  top: 273px;
+  z-index: 0;
 }
 .button1 {
-  margin: 0 10px;
-  border: none;
-  border-radius: 4px;
+  display: block;
+  margin: 10px 0;
+  width: 222px;
+  border-radius: 3px;
   color: white;
   background-color: #00b87c;
-  padding: 10px;
-  width: 30%;
+  padding: 16px;
   font-size: 15px;
-}
-.button2 {
-  border: none;
-  border-radius: 4px;
-  background-color: transparent;
-  color: #00b87c;
-  margin: 0 10px;
-  font-size: 15px;
-}
-.windows {
-  text-align: left;
-  margin: 10px 125px;
-  font-size: 15px;
-}
-.store {
-  margin-top: 50px;
+  line-height: 18px;
+  font-weight: 800;
   text-align: center;
 }
-.storep {
-  padding: 10px;
-  font-size: 16px;
+.version {
+  margin: -60px 0 0 60px;
 }
-.storelink {
-  margin-top: 30px;
+.versionp {
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 26px;
 }
-.imgLink {
-  margin: 15px;
+.versionlink {
+  font-size: 14px;
+  line-height: 26px;
+  color: #00b87c;
+  text-decoration-line: underline;
+}
+.mobilelink {
+  margin-left: 98px;
+  font-size: 14px;
+  line-height: 26px;
+  color: #00b87c;
+  text-decoration-line: underline;
+}
+.bit {
+  position: relative;
+  z-index: 1;
+  margin-left: 23px;
+  color: white;
+}
+.circle1 {
+  position: absolute;
+  z-index: 0;
+  top: 989px;
+}
+.half {
+  position: absolute;
+  z-index: 0;
+  left: 1170px;
+  top: 874px;
+}
+.rec {
+  position: absolute;
+  z-index: 0;
+  top: 1471px;
+  left: 537px;
+}
+.dm {
+  position: relative;
+  z-index: 1;
+  left: 240px;
+}
+.android {
+  position: relative;
+  z-index: 1;
+  left: 160px;
+}
+.foot {
+  height: 460px;
+}
+.rec1 {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+}
+.button {
+  position: relative;
+  z-index: 1;
+  padding: 119px;
+  text-align: center;
+}
+.work {
+  color: #f6f6f6;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 58px;
+}
+.button2 {
+  margin: 0 10px;
+  border-radius: 3px;
+  background-color: white;
+  color: #00b87c;
+  padding: 16px;
+  font-weight: 800;
+}
+.button3 {
+  margin: 0 10px;
+  color: #ffffff;
+  width: 234px;
+  height: 50px;
+  border: 2px solid #ffffff;
+  border-radius: 3px;
+  padding: 16px;
 }
 
-@media screen and (min-width: 1024px) {
-  .images {
-    height: 505px;
+@media screen and (max-width: 1325px) {
+  .container {
+    margin-top: 0 !important;
+  }
+  .h1 {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 50px;
+  }
+  .p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
   }
   .circle {
     width: 150px;
-    top: 98px;
-    left: 299px;
   }
   .screenshot {
-    width: 655px;
-    left: 375px;
-    top: -8px;
+    width: 763px;
+  }
+  .circle1 {
+    top: 875px;
+    width: 150px;
   }
   .circle2 {
-    width: 250px;
-    left: 285px;
-    top: 95px;
+    top: 235px;
+    left: 1005px;
+    width: 235px;
   }
-  .windows {
-    margin: 10px 310px;
+  .version {
+    margin: -65px 0 0 0;
   }
-  .store {
-    margin-top: 70px;
+  .mobilelink {
+    margin-left: 25px;
+  }
+  .half {
+    left: 1005px;
+    width: 235px;
+    top: 785px;
+  }
+  .rec {
+    top: 1365px;
+    left: 549px;
+    width: 700px;
+  }
+  .dm {
+    width: 200px;
+    top: 40px;
+  }
+  .android {
+    width: 200px;
+    top: 40px;
   }
 }
 
-@media screen and (min-width: 1440px) {
-  .h1 {
-    font-size: 42px;
-  }
-
+@media screen and (max-width: 1200px) {
   .container {
-    margin: 50px;
+    padding: 0 !important;
+    margin-top: 20px !important;
   }
-  .images {
-    margin: 10px 50px 10px 250px;
-    height: 600px;
+  .h1 {
+    font-size: 24px;
+  }
+  .p {
+    font-size: 12px;
   }
   .circle {
-    position: absolute;
-    width: 196px;
-    height: 196px;
-    left: 207px;
-    top: 120px;
-  }
-  .circle2 {
-    position: relative;
-    width: 372px;
-    height: 372px;
-    left: 700px;
-    top: -323px;
-    z-index: auto;
+    width: 130px;
   }
   .screenshot {
-    position: relative;
-    width: 782px;
-    height: 506px;
-    left: 40px;
-    top: 30px;
-    z-index: 2;
+    width: 669px;
   }
-  .buttondiv {
-    text-align: center;
+  .circle2 {
+    top: 240px;
+    left: 840px;
+    width: 190px;
   }
-  .button1 {
-    padding: 20px;
-    margin: 0 10px;
-    border: none;
-    border-radius: 4px;
-    width: 25%;
-    font-size: 23px;
+  .version {
+    margin: -50px 0 0 0;
+  }
+  .circle1 {
+    top: 768px;
+    width: 150px;
+  }
+  .half {
+    left: 831px;
+    width: 190px;
+    top: 700px;
+  }
+  .bit {
+    font-size: 13px;
     color: white;
-    background-color: #00b87c;
   }
-  .button2 {
-    margin: 0 10px;
-    border: none;
-    border-radius: 4px;
-    font-size: 18px;
-    background-color: transparent;
-    color: #00b87c;
+  .rec {
+    left: 324px;
+    top: 1226px;
   }
-  .windows {
-    text-align: left;
-    margin: 10px 373px;
-    font-size: 18px;
+  .versionlink {
+    font-size: 12px;
   }
-  .store {
-    margin-top: 100px;
-    text-align: center;
+  .mobilelink {
+    font-size: 12px;
+    margin-left: 16px;
   }
-  .storep {
-    padding: 10px;
-    font-size: 20px;
+  .button {
+    padding: 75px;
   }
-  .storelink {
-    margin-top: 50px;
-  }
-  .imgLink {
-    margin: 25px;
+  .work {
+    font-size: 35px;
   }
 }

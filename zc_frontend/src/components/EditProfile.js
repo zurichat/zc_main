@@ -1,16 +1,35 @@
+import { useRef } from 'react'
 import styles from '../styles/EditProfile.module.css'
+import AddLink from './AddLink'
 import ProfileModal from './ProfileModal'
 
+import { AiFillCamera } from 'react-icons/ai'
+
 const EditProfile = () => {
+  const imageRef = useRef(null)
+  const avatarRef = useRef(null)
+
+  const handleImageChange = event => {
+    if (imageRef.current.files[0]) {
+      let fileReader = new FileReader()
+
+      fileReader.onload = function (event) {
+        avatarRef.current.src = event.target.result
+      }
+
+      fileReader.readAsDataURL(imageRef.current.files[0])
+    }
+  }
+
   return (
-    <ProfileModal full title="Edit your profile">
+    <ProfileModal full title="Edit profile">
       <>
         <div className={styles.profileWrapper}>
           <div className={styles.profile}>
             <div className={styles.profileMain}>
               <div className={styles.sectionA}>
                 <form>
-                  <div className={styles.formWrapper}>
+                  <div className={styles.displayNameDesktop}>
                     <label>First Name</label>
                     <input
                       type="text"
@@ -22,7 +41,7 @@ const EditProfile = () => {
                     style={{ display: 'flex' }}
                     className={styles.formWrapper}
                   >
-                    <div className={styles.displayNameDesktop}>
+                    <div className={styles.formMargin}>
                       <label>Choose a Display Name</label>
                       <input
                         type="text"
@@ -36,7 +55,7 @@ const EditProfile = () => {
                     </div>
 
                     <div className={styles.sectionB}>
-                      <label>Pronouns</label>
+                      <label className="label">Pronouns</label>
                       <select className={styles.formInput}>
                         <option value="John">He/him</option>
                         <option value="John">She/her</option>
@@ -45,7 +64,7 @@ const EditProfile = () => {
                   </div>
 
                   <div className={styles.mt}>
-                    <label>What you do</label>
+                    <label className="label">What you do</label>
                     <input
                       type="text"
                       name="name"
@@ -57,11 +76,11 @@ const EditProfile = () => {
                     <span className={styles.fontBold}>ZURI</span>
                   </div>
                   <div className={styles.mt}>
-                    <label>Bio</label>
+                    <label className="label">Bio</label>
                     <textarea rows="3" className={styles.formInput} />
                   </div>
 
-                  <div className="my-4">
+                  <div className="my-3">
                     <label>Phone Number</label>
                     <div className={styles.phoneNumber}>
                       <span>
@@ -78,7 +97,7 @@ const EditProfile = () => {
                       </span>
                     </div>
                   </div>
-                  <label>Timezones</label>
+                  <label className="label">Timezones</label>
                   <div>
                     <select className={styles.timeZone}>
                       <option value="timezone">
@@ -87,7 +106,7 @@ const EditProfile = () => {
                     </select>
                   </div>
 
-                  <div className={styles.mt}>
+                  <div className="mt-3">
                     <label>Twitter</label>
                     <input
                       type="text"
@@ -95,7 +114,7 @@ const EditProfile = () => {
                       className={styles.formInput}
                     />
                   </div>
-                  <div className={styles.mt}>
+                  <div className="mt-3">
                     <label>Facebook</label>
                     <input
                       type="text"
@@ -108,34 +127,41 @@ const EditProfile = () => {
               <div className={styles.sectionB}>
                 <div className={styles.subContainer}>
                   <div className={styles.profilePic}>
-                    <div className={styles.camera}>
+                    <label htmlFor="img" className={styles.camera}>
+                      <AiFillCamera className={styles.cameraIcon} />
+                    </label>
+
+                    <div className={styles.avatar}>
                       <img
-                        src="/camera.svg"
-                        alt="camera"
-                        style={{ display: 'flex' }}
+                        ref={avatarRef}
+                        src="/profiles.svg"
+                        alt="profile-pic"
                       />
                     </div>
-
-                    <img src="/profiles.svg" alt="profile-pic" />
                     <div className={styles.username}>
                       <div className={styles.mt} style={{ width: '100%' }}>
-                        <label>Display Name</label>
+                        <label>Full Name</label>
                         <input
                           type="text"
                           name="name"
                           className={styles.formInput}
                         />
-                        <div className={styles.subText}>
-                          Please use a unique and permanent display name. If
-                          someone uses your exact name, you should change it!
-                        </div>
                       </div>
                     </div>
                   </div>
                   <div className={styles.profileFunc}>
                     <div className={styles.subContainer}>
                       <div className={styles.mxAuto}>
-                        <button className={styles.save}>Upload an Image</button>
+                        <label htmlFor="img" className={styles.save}>
+                          Upload an Image
+                        </label>
+                        <input
+                          ref={imageRef}
+                          onChange={handleImageChange}
+                          type="file"
+                          hidden
+                          id="img"
+                        />
                       </div>
                       <button className={styles.deleteImage}>
                         Delete image
@@ -150,25 +176,14 @@ const EditProfile = () => {
               </div>
             </div>
 
+            <button className={styles.bottomBtn}>Save</button>
+
             <div className={styles.px9}>
-              <div className={styles.linkTab}>
-                <label>
-                  <span className={styles.fontMed}>
-                    {' '}
-                    <label>Additional Links</label>{' '}
-                  </span>
-                  <span className={styles.fontRed}> (5max) </span>
-                </label>
-                <input type="text" name="name" className={styles.formInput} />
-                <div className={styles.addLink}>
-                  <span class={styles.plus}>+</span>
-                  <span className={styles.textYellow}>Add New Link</span>
-                </div>
-              </div>
+              <AddLink />
               <div className={styles.formFooter}>
-                <div>
+                <div style={{ display: 'flex' }}>
                   <button className={styles.cancel}>Cancel</button>
-                  <button className={styles.save}>Save Changes</button>
+                  <button className={styles.saveChange}>Save Changes</button>
                 </div>
               </div>
             </div>

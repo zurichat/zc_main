@@ -1,9 +1,6 @@
 name: Zuri Main Testing Pipeline
 on:
   # Triggers the workflow on push or pull request events but only for the dev branch
-  pull_request:
-    branches: [review]
-
   push:
     branches: [review]
 
@@ -12,7 +9,7 @@ on:
 
 jobs:
   prettier:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout
@@ -33,7 +30,7 @@ jobs:
   fe_eslint:
     needs: prettier
 
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout
@@ -61,7 +58,7 @@ jobs:
   be_eslint:
     needs: fe_eslint
 
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout
@@ -82,4 +79,3 @@ jobs:
       uses: stefanzweifel/git-auto-commit-action@v4.1.2
       with:
         commit_message: Backend EsLint Fixes
-

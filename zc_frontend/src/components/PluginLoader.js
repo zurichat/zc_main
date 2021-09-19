@@ -10,7 +10,7 @@ const PluginLoader = () => {
   useEffect(() => {
     if (loader === 'loading') {
       setShow(true)
-    } else if (loader === 'ready') {
+    } else if (loader === 'ready' && loaderEl.current) {
       loaderEl.current.style.clipPath = 'circle(0px at 50% 50%)'
       loaderEl.current.style.opacity = '0'
       setTimeout(() => {
@@ -21,7 +21,7 @@ const PluginLoader = () => {
 
   return (
     show && (
-      <div ref={loaderEl} class={styles.loader}>
+      <div ref={loaderEl} className={styles.loader}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="67"
@@ -30,7 +30,7 @@ const PluginLoader = () => {
           fill="none"
         >
           <rect
-            class={styles.topLeft}
+            className={styles.topLeft}
             x="6.30078"
             width="18.9016"
             height="19.8545"
@@ -38,7 +38,7 @@ const PluginLoader = () => {
             fill="#00B87C"
           />
           <rect
-            class={styles.bottomLeft}
+            className={styles.bottomLeft}
             y="22.6904"
             width="18.9016"
             height="19.8545"
@@ -46,7 +46,7 @@ const PluginLoader = () => {
             fill="#FEA162"
           />
           <rect
-            class={styles.topRight}
+            className={styles.topRight}
             x="27.9033"
             y="9.45508"
             width="18.9016"
@@ -55,7 +55,7 @@ const PluginLoader = () => {
             fill="#1A61DB"
           />
           <rect
-            class={styles.bottomRight}
+            className={styles.bottomRight}
             x="21.6025"
             y="32.1455"
             width="18.9016"

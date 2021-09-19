@@ -15,7 +15,7 @@ const PreferenceWrapper = ({ title, text, btnText, timeZone, children }) => {
         </div>
         <div className={styles.settingsright}>
           <button onClick={() => setShowContent(prev => !prev)}>
-            {showContent ? 'Close' : btnText}
+            {showContent ? 'close' : btnText}
           </button>
         </div>
       </motion.div>

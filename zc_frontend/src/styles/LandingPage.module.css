@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
-
 .wrapper {
   background-color: #fff;
   padding-top: 5%;
@@ -56,21 +54,21 @@
 }
 
 .btn__continue {
-  background-color: #1a61db;
+  background-color: #00b87c;
   color: #fff !important;
   border-radius: 5px;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   outline: none;
   border: none;
   padding: 0.8rem 14rem;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
   z-index: 2;
   margin-top: -2rem;
 }
 
 .btn__continue:hover {
-  background-color: #0050dd;
+  /* background-color: #00aa70; */
+  box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.25);
 }
 
 .img__div {
@@ -82,14 +80,34 @@
   align-items: flex-end;
 }
 
+/* Media Query 1366px Desktop Screens */
+@media only screen and (max-width: 1366px) and (height: 768px) {
+  .welcome__div {
+    justify-content: flex-start;
+  }
+}
+
 /* Media Query 720 HD Screens */
-@media only screen and (max-width: 1280px) and (height: 720px) {
+@media only screen and (max-width: 1280px) {
   .wrapper {
-    padding-top: 0;
+    padding-top: 2%;
   }
 
-  .btn__continue {
-    padding: 0.8rem 8rem;
+  .welcome__div {
+    justify-content: flex-start;
+  }
+}
+
+/* Media Query Laptop with Touch 1280px Screens */
+@media only screen and (max-width: 1280px) and (height: 950px) {
+  .wrapper {
+    padding-top: 10%;
+  }
+}
+
+@media only screen and (max-width: 1280px) and (height: 800px) {
+  .welcome__div {
+    justify-content: center;
   }
 }
 
@@ -112,10 +130,38 @@
   }
 }
 
-/* Media Query 768px and Smaller */
+/* Media Query iPad Pro 12.9 inches Tablet Screens */
+@media only screen and (max-width: 1024px) and (height: 1366px) {
+  .wrapper {
+    padding-top: 30%;
+  }
+}
+
+/* Media Query iPad Pro 12.9 inches Tablet Screens */
+@media only screen and (max-width: 1024px) and (height: 889px) {
+  .wrapper {
+    padding-top: 10%;
+  }
+}
+
+/* Media Query iPad Pro 10.5 inches Tablet Screens */
+@media only screen and (max-width: 834px) and (height: 1112px) {
+  .wrapper {
+    padding-top: 30%;
+  }
+}
+
+/* Media Query Kindle Fire HDX Linux Tablet Screens */
+@media only screen and (max-width: 800px) and (height: 1280px) {
+  .wrapper {
+    padding-top: 50%;
+  }
+}
+
+/* Media Query iPad Mini and 768px and Smaller */
 @media only screen and (max-width: 768px) {
   .wrapper {
-    padding-top: 15%;
+    padding-top: 20%;
   }
 }
 

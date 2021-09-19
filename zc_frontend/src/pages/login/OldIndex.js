@@ -73,27 +73,25 @@ const Login = ({ history, loginUser }) => {
             <GoogleLogin
               clientId="78755437309-27q9m2toval9c439d2r7q5gj28h0pqcc.apps.googleusercontent.com"
               render={renderProps => (
-                <img
+                <Button
                   onClick={renderProps.onClick}
                   className={`mx-3 ${styles.icon}`}
                   src={`/google.png`}
                   alt="google icon"
-                />
+                >
+                  {' '}
+                  Login with Google{' '}
+                </Button>
               )}
               buttonText=""
               onSuccess={successResponseGoogle}
               onFailure={failureResponseGoogle}
               cookiePolicy={'single_host_origin'}
             />
-            <img
-              className={`mx-lg-3 mx-sm-3 ${styles.icon}`}
-              src={`/apple.png`}
-              alt="apple icon"
-            />
           </div>
           <div className={` d-flex justify-content-between`}>
             <img className={`${styles.line}`} src="Line.svg" alt="line" />
-            <p className={`${styles.or}`}>Or log in with</p>
+            <p className={`${styles.or}`}>Or</p>
             <img
               className={`${styles.line}`}
               src="Line.svg"

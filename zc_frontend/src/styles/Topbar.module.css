@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
-
 .container {
   display: flex;
   align-items: center;
@@ -17,17 +16,32 @@
   }
 }
 
+.membersModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  z-index: -1;
+}
+
 .profile {
   background-color: #acffe6;
   border-radius: 50%;
   display: flex;
-  margin-left: 1.375em;
+  margin-left: -0.3em;
   align-items: center;
   justify-content: center;
   height: 2.5em;
   width: 2.5em;
   cursor: pointer;
   position: relative;
+}
+
+@media screen and (min-width: 900px) {
+  .profile {
+    margin-left: 0.8rem;
+  }
 }
 
 .profile img {
@@ -38,6 +52,16 @@
 
 .circles {
   background: green;
+  height: 7px;
+  width: 7px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+}
+
+.circleAway {
+  background: grey;
   height: 7px;
   width: 7px;
   position: absolute;
@@ -79,6 +103,7 @@
 }
 
 /* =========================================== */
+
 /* THE SECTION OF THE TOP BAR MODAL */
 
 .topbarModal {
@@ -101,7 +126,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 3;
+  z-index: 100000;
   background: rgba(0, 0, 0, 0.3);
   /* display: none; */
   justify-content: center;
@@ -110,6 +135,7 @@
 }
 
 /* The section one */
+
 .sectionOne {
   display: flex;
   align-items: center;
@@ -132,6 +158,7 @@
 }
 
 /* THE SECTION OF THE ONE RIGHT */
+
 .oneRight {
   margin-left: 15px;
 }
@@ -152,6 +179,20 @@
   margin-top: -8px;
 }
 
+/* set yourself as away*/
+
+.away {
+  position: absolute;
+  right: 182px;
+}
+
+/* set yourself as active*/
+
+.active {
+  position: absolute;
+  right: 178px;
+}
+
 .circle {
   background: green;
   height: 6px;
@@ -159,6 +200,7 @@
   border-radius: 50%;
   margin-right: 15px;
 }
+
 .circlegrey {
   background: grey;
   height: 6px;
@@ -172,10 +214,10 @@
   font-style: normal;
   font-weight: normal;
   color: #3a3a3a;
-  margin-left: -10px;
 }
 
 /* The section two */
+
 .sectionTwo {
   background: #fafafa;
   padding: 0px;
@@ -187,14 +229,14 @@
   height: 30px;
 }
 
-.sectionTwo:hover {
+/* .sectionTwo:hover {
   border: 1px solid #00b87c;
-}
+} */
 
 /* The section of the picker */
 
 .smileys {
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 .picker {
@@ -202,8 +244,8 @@
   top: 20%;
   left: 50%;
   /* transform: translate(-80%); */
-  height: 400px;
-  background: #fff;
+  /* height: 400px; */
+  /* background: green; */
   width: 100%;
   width: 300px;
   z-index: 999999;
@@ -211,6 +253,7 @@
 }
 
 /* responsiveness for picker */
+
 @media screen and (max-width: 650px) {
   .picker {
     left: 30%;
@@ -223,10 +266,13 @@
   right: 10px;
   top: 10px;
   cursor: pointer;
+  display: none;
 }
 
 /* The section three */
+
 .sectionThree {
+  position: relative;
   line-height: 25px;
   font-style: normal;
   font-weight: normal;
@@ -332,6 +378,7 @@
 }
 
 /* The section Six */
+
 .sectionSix {
   line-height: 22px;
   font-style: normal;
@@ -353,4 +400,17 @@
 .sectionSix p:hover {
   background: #1692f1;
   color: #fff;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  /* set yourself as away*/
+  .away {
+    position: absolute;
+    right: 183px;
+  }
+  /* set yourself as active*/
+  .active {
+    position: absolute;
+    right: 180px;
+  }
 }

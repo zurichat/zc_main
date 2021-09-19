@@ -4,21 +4,21 @@ import styles from '../styles/SettingsTab.module.css'
 const SavePassword = () => {
   return (
     <div className={styles.passwordsection}>
-      <form class="row d-flex flex-column">
-        <div class="col-md-5">
-          <label for="firstname" class="form-label">
+      <form className="row d-flex flex-column">
+        <div className="col-md-5">
+          <label for="firstname" className="form-label">
             Current password
           </label>
-          <input type="password" class="form-control" required />
+          <input type="password" className="form-control" required />
         </div>
-        <div class="col-md-5">
-          <label for="lastname" class="form-label">
+        <div className="col-md-5">
+          <label for="lastname" className="form-label">
             New password
           </label>
-          <input type="password" class="form-control" required />
+          <input type="password" className="form-control" required />
         </div>
-        <div class="col-md-4 mb-3 mt-3">
-          <button class="btn btn-primary" id="submit">
+        <div className="col-md-4 mb-3 mt-3">
+          <button className="btn btn-primary" id="submit">
             Save password
           </button>
         </div>
