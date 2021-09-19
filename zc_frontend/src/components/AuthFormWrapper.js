@@ -42,10 +42,10 @@ const FormWrapper = ({
           </Link>
         </div> */}
         <div className={`${styles.googleAuthDiv}`}>
-          <GoogleSignIn 
-           className={styles.googleBtn} 
-           googleHeader={googleHeader} 
-           google={google} 
+          <GoogleSignIn
+            className={styles.googleBtn}
+            googleHeader={googleHeader}
+            google={google}
           />
           {/*<div className={`${styles.googleBtn}`}>
             <a href="/" className="google">
