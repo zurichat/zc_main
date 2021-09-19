@@ -84,6 +84,7 @@ const App = () => (
         <Route path="/careers">
           <Careers />
         </Route>
+        
         <Route path="/apps-integrations">
           <AppsAndIntegrations />
         </Route>
