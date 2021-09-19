@@ -12,9 +12,8 @@ const Section6 = () => {
       {
         Articles.map( article => (
           <ArticlesCard key={article.article_id} article={article} />
-        ))
-      }
-     </div>
+        ))}
+      </div>
     </div>
   )
 }

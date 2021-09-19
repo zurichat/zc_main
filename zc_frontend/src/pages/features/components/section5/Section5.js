@@ -9,11 +9,9 @@ function SpecialFeatures() {
         <p>Get all your work tools and information assembled in one place for easy access and increase Productivity.</p>
       </div>
       <div className={styles.section5CardWrapper}>
-        {
-          Features.map(feature => (
-            <SpecialFeaturesCard key={feature.feature_id} feature={feature} />
-          ))
-        }
+        {Features.map(feature => (
+          <SpecialFeaturesCard key={feature.feature_id} feature={feature} />
+        ))}
       </div>
     </div>
   )
