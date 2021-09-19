@@ -1,7 +1,7 @@
-import Footer from "../../components/externalPagesComponents/Footer/Footer";
-import SearchSuggestion from "../searchSuggestion";
-import Message from "../../components/externalPagesComponents/Footer/Message";
-import ContactMain from "./components/ContactMain";
+import Footer from '../../components/externalPagesComponents/Footer/Footer'
+import SearchSuggestion from '../searchSuggestion'
+import Message from '../../components/externalPagesComponents/Footer/Message'
+import ContactMain from './components/ContactMain'
 
 function ContactUs() {
   return (
@@ -11,7 +11,7 @@ function ContactUs() {
       <Message />
       <Footer />
     </div>
-  );
+  )
 }
 
-export default ContactUs;
+export default ContactUs
