@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import singleSpaReact from 'single-spa-react'
 import Root from './root.component'
+import axios from 'axios'
 
 const lifecycles = singleSpaReact({
   React,
@@ -13,8 +14,10 @@ const lifecycles = singleSpaReact({
   }
 })
 
-export const GetUserInfo = ({ userID = "61437054d0284bc6a922346b", token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb29raWUiOiJNVFl6TWpBek9UWTVNbnhIZDNkQlIwUlplRTVFVFROTlJGVXdXa1JCZVU5RVVtbFplbHBvVDFSSmVVMTZVVEpaWnowOWZBbXRlXzVuVUN5b2tfdmItaURmNHhfQkZjQXpRTUhYQThDUm51LUxxRjJRIiwiZW1haWwiOiJ0ZXN0MkBnbWFpbC5jb20iLCJpZCI6IjYxNDM3MDU0ZDAyODRiYzZhOTIyMzQ2YiIsIm9wdGlvbnMiOnsiUGF0aCI6Ii8iLCJEb21haW4iOiIiLCJNYXhBZ2UiOjYzMDcyMDAwMDAsIlNlY3VyZSI6ZmFsc2UsIkh0dHBPbmx5IjpmYWxzZSwiU2FtZVNpdGUiOjB9LCJzZXNzaW9uX25hbWUiOiJmNjgyMmFmOTRlMjliYTExMmJlMzEwZDNhZjQ1ZDVjNyJ9.MLA-teUt0AN6nYzMYa6KkCTu5mKI8W1bSjsG34a0VAo"}) => {
+export const GetUserInfo = () => {
 
+  let userID = "6146f82c845b436ea04d10e1"
+  let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb29raWUiOiJNVFl6TWpBME1qa3pNbnhIZDNkQlIwUlplRTVFVFROTlJGVXdXa1JCZVU5RVVtbFplbHBvVDFSSmVVMTZVVEpaWnowOWZEZmM3TGdsUUc1OGhuak1oY1dVcGNOTS1xQXN5UEZtajR3eURYVlBtWkdFIiwiZW1haWwiOiJwaWRAb3h5LmNvbSIsImlkIjoiNjE0MzcwNTRkMDI4NGJjNmE5MjIzNDZiIiwib3B0aW9ucyI6eyJQYXRoIjoiLyIsIkRvbWFpbiI6IiIsIk1heEFnZSI6NjMwNzIwMDAwMCwiU2VjdXJlIjpmYWxzZSwiSHR0cE9ubHkiOmZhbHNlLCJTYW1lU2l0ZSI6MH0sInNlc3Npb25fbmFtZSI6ImY2ODIyYWY5NGUyOWJhMTEyYmUzMTBkM2FmNDVkNWM3In0.jrfU1SdZWYfRDW15LQqucu1CQUn52HyJKk-RlThN7fg"
   // let user = JSON.parse(sessionStorage.getItem('user'))
   // let token = sessionStorage.getItem('token')
   // let sessionId = sessionStorage.getItem('session_id')
@@ -23,7 +26,6 @@ export const GetUserInfo = ({ userID = "61437054d0284bc6a922346b", token = "eyJh
   // console.log( token)
   // console.log(sessionId)
 
-  const [userData, setUserData] = useState();
 
     axios
       .get(`https://api.zuri.chat/users/${userID}`,
@@ -33,11 +35,7 @@ export const GetUserInfo = ({ userID = "61437054d0284bc6a922346b", token = "eyJh
           }
         })
       .then((res) => {
-        setUserData(res.data.data);
-        console.log(userData);
-
-        let dat = res.json;
-        console.log(dat);
+        console.log(res.data);
 
       })
       .catch(err => console.log(err));
