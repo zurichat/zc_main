@@ -3,10 +3,13 @@ import errImg from './assets/errImg.svg'
 import arrowDown from './assets/arrow-down.svg'
 import '../../components/verified-components/master.css'
 import Toggle from '../verified/toggle'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
 import TopNavBar from '../verified-components/TopNavBar'
 import userAvatar from './assets/user.svg'
+import { ProfileProvider } from '../../context/ProfileModal'
+import { TopbarProvider } from '../../context/Topbar'
+import { TopbarContext } from '../../context/Topbar'
 
 // Input tag
 const Input = ({
@@ -133,6 +136,8 @@ const Checkbox = ({ checked, onClick }) => {
 }
 
 const PluginNavBar = () => {
+  const { openMembersModal } = useContext(TopbarContext)
+
   return (
     <PluginNavBarBase>
       <div>
@@ -143,7 +148,7 @@ const PluginNavBar = () => {
           <img src={arrowDown} alt="user profile avatar" />
         </PluginName>
       </div>
-      <AllUsers>
+      <AllUsers role="button" onClick={openMembersModal}>
         <AllUsersImg src={userAvatar} role="button" alt="user profile avatar" />
         <AllUsersImg src={userAvatar} role="button" alt="user profile avatar" />
         <AllUsersImg src={userAvatar} role="button" alt="user profile avatar" />
@@ -254,7 +259,11 @@ function Test() {
       <h1>Topbar Button</h1>
 
       <div>
-        <TopNavBar />
+        <ProfileProvider>
+          <TopbarProvider>
+            <TopNavBar />
+          </TopbarProvider>
+        </ProfileProvider>
       </div>
 
       {/* Plugin Navbar */}
@@ -405,8 +414,7 @@ const PluginNavBarBase = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  position: fixed;
-  top: 69px;
+  margin-top: 69px;
 `
 
 const PluginName = styled.span`
