@@ -11,6 +11,8 @@ import AllSessionSignOut from './pages/settings/components/AllSessionSignOut'
 import ResetPassword from './pages/passwordReset'
 import CookiesSetting from './pages/cookiesSettings'
 import Cookies from './pages/cookies'
+import Features from './pages/features'
+
 
 const App = () => (
   <BrowserRouter>
@@ -24,9 +26,9 @@ const App = () => (
       <Route path="/signup">
         <SignUp />
       </Route>
-      {/* <Route path="/features">
+      <Route path="/features">
           <Features />
-        </Route> */}
+        </Route>
       <Route path="/settings">
         <Settings />
       </Route>
