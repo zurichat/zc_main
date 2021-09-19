@@ -1,12 +1,6 @@
-<<<<<<< HEAD:zc_frontend/src/pages/features/components/Section1.js
-import React from 'react';
-import styles from '../../features/styles/Features.module.css';
-import group from '../../../assets/group.png';
-=======
 import React from 'react'
 import styles from '../../styles/Section1.module.css'
 import group from '../../../../assets/image.png'
->>>>>>> 68c0b8959286eaa37c2e5f11ceaf9c8a76d24bd6:zc_frontend/src/pages/features/components/section1/Section1.js
 
     const Section1 = () => {
                 return(

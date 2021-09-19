@@ -1,10 +1,10 @@
 import React from 'react'
-import styles from '../../features/styles/Features.module.css'
-import hashtag from '../../../assets/hashtag.png'
-import holiday from '../../../assets/holiday.png'
-import deadline from '../../../assets/deadline.png'
-import chat from '../../../assets/chat.png'
-import todolist from '../../../assets/todolist.png'
+import styles from '../../../features/styles/Features.module.css'
+import hashtag from '../../../../assets/hashtag.png'
+import holiday from '../../../../assets/holiday.png'
+import deadline from '../../../../assets/deadline.png'
+import chat from '../../../../assets/chat.png'
+import todolist from '../../../../assets/todolist.png'
 
 const Section3 = () => {
   return (
