@@ -266,7 +266,7 @@ const Sidebar = props => {
                   return (
                     <div key={id}>
                       <a href={plugs.href} onClick={navigateToUrl}>
-                          <p>{plugs.name}</p>
+                        <p>{plugs.name}</p>
                       </a>
                     </div>
                   )
