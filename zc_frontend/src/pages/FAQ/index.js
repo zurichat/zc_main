@@ -6,11 +6,12 @@ const Index = () => {
 
   const toggle = i => {
     if (selected === i) {
-      return setSelected(null)
+      setSelected(null)
     }
 
     setSelected(i)
   }
+
   return (
     <div className={styles.faqs}>
       <h2 className='text-center'>Commonly Asked Questions</h2>
@@ -28,12 +29,13 @@ const Index = () => {
                   )}
                 </span>
               </div>
-              <div
+              {selected === i &&
+                <div
                 className={selected === i ? 'answer show' : 'answer'}
                 onClick={() => toggle(i)}
               >
                 {i.answer}
-              </div>
+              </div>}
             </div>
           ))}
         </div>

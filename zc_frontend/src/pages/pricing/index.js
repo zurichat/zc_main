@@ -9,7 +9,7 @@ import SearchSuggestion from '../searchSuggestion'
 
 function Pricing() {
   return (
-    <div>
+    <div style={{justifyContent : 'center'}}>
       <SearchSuggestion />
       <PricingPageSection1 />
       {/* <PricingTable /> */}

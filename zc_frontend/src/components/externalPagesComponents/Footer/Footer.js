@@ -116,7 +116,7 @@ const Footer = ({ showMessage, type }) => (
               </a>
             </li>
             <li>
-              <a className={styles.bottomLink} href="/">
+              <a className={styles.bottomLink} href="/contact-us">
                 Contact Us
               </a>
             </li>

@@ -98,6 +98,12 @@ li {
   padding: 67px 52px 53px 100px;
 }
 
+a > img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
 @media (max-width: 69rem) {
   .notShow {
     padding-top: 48px;

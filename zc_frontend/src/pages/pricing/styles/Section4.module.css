@@ -4,6 +4,7 @@
     height: fit-content;
     width: 100%;
     padding: 30px;
+    padding-bottom: 8%;
     margin-top: 20px;
     background-color: rgb(230, 228, 228);
 }
@@ -27,16 +28,13 @@
   padding: 0 auto;
   justify-content: center;
   flex: 0 1 auto;
-  /* grid-template-columns: repeat(auto-fit, minmax(236px, 1fr)); */
-  /* grid-template-rows: repeat(auto-fit, minmax(auto, 1fr)); */
-  /* margin-right: 70px; */
-  /* margin-left: 70px; */
   gap: 1rem;
 }
 
 
 .card {
     display: flex;
+    flex-direction: column;
     width: 200px;
     height: 438px;
   margin-top: 65px;
@@ -46,60 +44,63 @@
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
-.cardFlex {
-  display: flex;
-  flex-direction: column;
-  height: auto;
-}
 
-
-
-
-
-
-
-.content {
-  background-image: url('https://res.cloudinary.com/ujuzi/image/upload/v1630463021/Cars%20Images%20project/pexels-eren-li-7241616_m2ojcj.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #ffffff;
+img {
+  height: 50%;
+  width: 100%;
   object-fit: cover;
 }
-.contentSize {
-  width: 100%;
-  height: 274px;
-}
-.description {
-  padding: 0.5rem;
-  font-size: 1.1rem;
-  word-wrap: break-word;
-  font-weight: 600;
-}
-.textBottom {
+
+.bottomCardSub1{
+  height: 10%;
+  margin: 5%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-top: 1.5rem;
+  justify-content: center;
 }
-.textBottom span {
-  font-size: 1.2rem;
-  color: #0063da;
+
+.bottomCardSub2{
+  display: block;
+  padding: 5%;
+  height: 30%;
 }
-.title {
-  text-align: center;
-  padding-bottom: 3.75rem;
-  line-height: 3rem;
-  font-size: 2.5rem;
-  font-weight: 600;
+
+.bottomCardSub3{
+  display: flex;
+  justify-content: flex-end;
+  height: 10%;
+  margin: 5%;
 }
-.descTitle {
-  text-align: start;
-  padding: 0.2rem;
-  color: grey;
+
+
+@media (max-width: 768px) {
+  .wrapper{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    padding: 30px;
+    padding-bottom: 8%;
+    margin-top: 20px;
+    background-color: white;
 }
-.cardPosition {
-  display: inherit;
-  flex-direction: inherit;
-  padding: 20px;
+
+ .cardContainer {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  width: auto;
+  padding: 0 auto;
+  margin: 5% auto;
+  justify-content: center;
+  flex: 0 1 auto;
+  gap: 1rem;
 }
+
+.bottomCardSub2{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 8%;
+  height: 30%;
+}
+}
+

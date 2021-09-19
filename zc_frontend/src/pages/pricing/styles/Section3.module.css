@@ -8,35 +8,49 @@
 /* LAYOUT */
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  text-align: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
   margin-right: auto;
   margin-left: auto;
 }
+
+.container > a:hover {
+  text-decoration: underline;
+  color: #00b87c;
+}
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
+    text-align: center;
   }
 }
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
+    text-align: center;
   }
 }
 @media (min-width: 992px) {
   .container {
     max-width: 960px;
+    text-align: center;
   }
 }
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
+    text-align: center;
   }
 }
 
 section h2 {
   font-size: 1.4rem;
   font-weight: 600;
+  text-align: center;
+  line-height: 1.5rem;
+  margin-bottom: 1.8rem;
 }
 @media (min-width: 768px) {
   section h2 {
