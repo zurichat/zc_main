@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './styles/CareersSection2.module.css'
+import styles from '../styles/CareersSection2.module.css'
 
 function CareersSection2() {
   return (
