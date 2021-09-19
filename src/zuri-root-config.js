@@ -9,7 +9,7 @@ const pluginRoutes = [
 registerApplication({
   name: '@zuri/topbar',
   app: () => System.import('@zuri/topbar'),
-  activeWhen: ['/']
+  activeWhen: ['/home', ...pluginRoutes]
 })
 registerApplication({
   name: '@zuri/sidebar',
