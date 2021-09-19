@@ -1,34 +1,13 @@
-import { useRef, useState, useContext } from 'react'
+import { useRef } from 'react'
 import styles from '../styles/EditProfile.module.css'
 import AddLink from './AddLink'
-import { ProfileModal } from './ProfileModal2'
-// import axios from 'axios'
+import ProfileModal from './ProfileModal'
 
 import { AiFillCamera } from 'react-icons/ai'
-import avatar from '../assets/avatar.png'
-import { ProfileContext } from '../context/ProfileModal'
-import { authAxios } from '../util/Api'
 
 const EditProfile = () => {
   const imageRef = useRef(null)
   const avatarRef = useRef(null)
-  const { user, orgId } = useContext(ProfileContext)
-
-  console.log(user)
-  const [state, setState] = useState({
-    name: user.name,
-    displayName: user.displayName,
-    pronouns: user.pronouns,
-    todo: '',
-    bio: '',
-    phone: user.phone,
-    prefix: '',
-    timezone: '',
-    twitter: '',
-    facebook: '',
-    otherLinks: [''],
-    loading: false
-  })
 
   const handleImageChange = event => {
     if (imageRef.current.files[0]) {
@@ -40,34 +19,6 @@ const EditProfile = () => {
 
       fileReader.readAsDataURL(imageRef.current.files[0])
     }
-  }
-
-  // This will handle the profile form submission
-
-  const handleFormSubmit = e => {
-    e.preventDefault()
-    setState({ loading: true })
-
-    const data = {
-      name: state.name,
-      displayName: state.displayName,
-      email: state.email,
-      pronouns: state.pronouns,
-      phone: state.phone,
-      bio: state.bio,
-      timeZone: state.timezone
-    }
-
-    authAxios
-      .patch(`/organizations/${orgId}/members/${user._id}/profile`, data)
-      .then(res => {
-        console.log(res)
-        setState({ loading: false })
-      })
-      .catch(err => {
-        console.log(err?.response?.data)
-        setState({ loading: false })
-      })
   }
 
   return (
@@ -84,11 +35,6 @@ const EditProfile = () => {
                       type="text"
                       name="name"
                       className={styles.formInput}
-                      onChange={e =>
-                        setState({ ...state, name: e.target.value })
-                      }
-                      value={state.name}
-                      defaultValue={user.name}
                     />
                   </div>
                   <div
@@ -101,10 +47,6 @@ const EditProfile = () => {
                         type="text"
                         name="displayName"
                         className={styles.formInput}
-                        onChange={e =>
-                          setState({ ...state, displayName: e.target.value })
-                        }
-                        value={state.displayName}
                       />
                       <div className={styles.subText}>
                         Please use a unique and permanent display name. If
@@ -114,30 +56,19 @@ const EditProfile = () => {
 
                     <div className={styles.sectionB}>
                       <label className="label">Pronouns</label>
-                      <select
-                        name="pronouns"
-                        className={styles.formInput}
-                        onChange={e =>
-                          setState({ ...state, pronouns: e.target.value })
-                        }
-                        value={state.pronouns}
-                      >
-                        <option value="he/him">He/him</option>
-                        <option value="she/her">She/her</option>
+                      <select className={styles.formInput}>
+                        <option value="John">He/him</option>
+                        <option value="John">She/her</option>
                       </select>
                     </div>
                   </div>
 
-                  <div>
+                  <div className={styles.mt}>
                     <label className="label">What you do</label>
                     <input
                       type="text"
-                      name="todo"
+                      name="name"
                       className={styles.formInput}
-                      onChange={e =>
-                        setState({ ...state, todo: e.target.value })
-                      }
-                      value={state.todo}
                     />
                   </div>
                   <div className={styles.subText}>
@@ -146,28 +77,14 @@ const EditProfile = () => {
                   </div>
                   <div className={styles.mt}>
                     <label className="label">Bio</label>
-                    <textarea
-                      rows="3"
-                      className={styles.formInput2}
-                      name="bio"
-                      onChange={e =>
-                        setState({ ...state, bio: e.target.value })
-                      }
-                      value={state.bio}
-                    />
+                    <textarea rows="3" className={styles.formInput} />
                   </div>
 
                   <div className="my-3">
-                    <label className="my-2">Phone Number</label>
+                    <label>Phone Number</label>
                     <div className={styles.phoneNumber}>
                       <span>
-                        <select
-                          name="pre"
-                          onChange={e =>
-                            setState({ ...state, prefix: e.target.value })
-                          }
-                          value={state.prefix}
-                        >
+                        <select>
                           <option value="number">+234</option>
                         </select>
                       </span>
@@ -176,23 +93,13 @@ const EditProfile = () => {
                           type="text"
                           name="number"
                           className="focus:outline-none"
-                          onChange={e =>
-                            setState({ ...state, phone: e.target.value })
-                          }
-                          value={state.phone}
                         />
                       </span>
                     </div>
                   </div>
-                  <label className="label my-2">Timezones</label>
+                  <label className="label">Timezones</label>
                   <div>
-                    <select
-                      className={styles.timeZone}
-                      onChange={e =>
-                        setState({ ...state, timezone: e.target.value })
-                      }
-                      value={state.timezone}
-                    >
+                    <select className={styles.timeZone}>
                       <option value="timezone">
                         (UTC+01:00) West Central Africa
                       </option>
@@ -203,11 +110,7 @@ const EditProfile = () => {
                     <label>Twitter</label>
                     <input
                       type="text"
-                      name="twitter"
-                      onChange={e =>
-                        setState({ ...state, twitter: e.target.value })
-                      }
-                      value={state.twitter}
+                      name="name"
                       className={styles.formInput}
                     />
                   </div>
@@ -215,11 +118,7 @@ const EditProfile = () => {
                     <label>Facebook</label>
                     <input
                       type="text"
-                      name="facebook"
-                      onChange={e =>
-                        setState({ ...state, facebook: e.target.value })
-                      }
-                      value={state.facebook}
+                      name="name"
                       className={styles.formInput}
                     />
                   </div>
@@ -233,10 +132,14 @@ const EditProfile = () => {
                     </label>
 
                     <div className={styles.avatar}>
-                      <img ref={avatarRef} src={avatar} alt="profile-pic" />
+                      <img
+                        ref={avatarRef}
+                        src="/profiles.svg"
+                        alt="profile-pic"
+                      />
                     </div>
                     <div className={styles.username}>
-                      <div style={{ width: '100%' }}>
+                      <div className={styles.mt} style={{ width: '100%' }}>
                         <label>Full Name</label>
                         <input
                           type="text"
@@ -273,16 +176,14 @@ const EditProfile = () => {
               </div>
             </div>
 
-            <button className={styles.bottomButton}>Save</button>
+            <button className={styles.bottomBtn}>Save</button>
 
             <div className={styles.px9}>
               <AddLink />
               <div className={styles.formFooter}>
                 <div style={{ display: 'flex' }}>
                   <button className={styles.cancel}>Cancel</button>
-                  <button onClick={handleFormSubmit} className={styles.save}>
-                    {state.loading ? 'Loading...' : 'Save Changes'}
-                  </button>
+                  <button className={styles.saveChange}>Save Changes</button>
                 </div>
               </div>
             </div>

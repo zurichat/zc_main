@@ -1,4 +1,6 @@
 import { useContext, useState } from 'react'
+import { authAxios } from '../util/Api'
+import { useEffect } from 'react'
 
 // react icons
 import { FaCircle, FaChevronRight } from 'react-icons/fa'
@@ -16,18 +18,40 @@ import Downloads from './Downloads'
 import PauseNotification from './PauseNotification'
 
 const TopbarModal = ({ members }) => {
-  const { toggleModalState, toggleProfileState } = useContext(ProfileContext)
+  const { toggleModalState, toggleProfileState, user, orgId } =
+    useContext(ProfileContext)
+  // const [prescence, setPrescence] = useState(true)
 
   const state = useContext(TopbarContext)
 
   const [showModal] = state.show
-  const [active, setActive] = state.presence
+  const [presence, setPresence] = state.presence
   const [showStatus] = state.status
   const [showMembersModal] = state.modal
   const { onEmojiClick, openStatus, closeStatus, modalRef, closeMembersModal } =
     state
   const [modal, setModal] = useState('')
   const [pause, setPause] = useState(false)
+
+  const onSetPresence = () => {
+    setPresence(!presence)
+  }
+
+  useEffect(() => {
+    // onSetPresence()
+    authAxios
+      .post(
+        `/organizations/${orgId}/members/${user._id}/presence`,
+        JSON.stringify(presence)
+      )
+      .then(res => {
+        console.log('response', res)
+      })
+      .catch(err => {
+        console.log(err?.response?.data)
+      })
+    console.log('check for user presence', presence)
+  }, [presence])
 
   return (
     <>
@@ -75,7 +99,7 @@ const TopbarModal = ({ members }) => {
 
             <div className={styles.oneRight}>
               <h4>Praise.A</h4>
-              {active ? (
+              {presence ? (
                 <div className={styles.online}>
                   <FaCircle className={styles.circle} />
                   <p className={styles.active}>Active</p>
@@ -98,8 +122,12 @@ const TopbarModal = ({ members }) => {
 
           <div className={styles.sectionThree}>
             <p onClick={openStatus}>Set a status</p>
-            <p onClick={() => setActive(!active)}>
-              {active ? 'Set yourself as away' : 'Set yourself as active'}
+            <p
+              onClick={() => {
+                onSetPresence()
+              }}
+            >
+              {presence ? 'Set yourself as active' : 'Set yourself as away'}
             </p>
             <div className={styles.pause}>
               <p onClick={() => setPause(!pause)}>Pause Notifications</p>

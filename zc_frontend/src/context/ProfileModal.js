@@ -5,6 +5,8 @@ export const ProfileProvider = ({ children }) => {
   const [modal, setModal] = useState(false)
   const [showProfile, setShowProfile] = useState(false)
   const [sideBar, setSideBar] = useState(1)
+  const [orgId, setOrgId] = useState('')
+  const [user, setUser] = useState([])
 
   const toggleModalState = () => {
     setModal(!modal)
@@ -22,7 +24,11 @@ export const ProfileProvider = ({ children }) => {
         showProfile,
         toggleProfileState,
         sideBar,
-        setSideBar
+        setSideBar,
+        orgId,
+        setOrgId,
+        user,
+        setUser
       }}
     >
       {children}
