@@ -5,16 +5,23 @@ import { useGoogleLogin } from 'react-google-login'
 const CLIENT_ID = '943002582641-tlnq61fj7bp3jv2fp1qo0hnglmatn2v3.apps.googleusercontent.com'
 const GoogleSignIn = ({className, googleHeader, google}) => {
     const [loading, setLoading] = useState('')
+    const [buttonClicked, setButtonClicked] = useState(false)
     const history = useHistory()
     const onSuccess = (res) => {
         if(googleHeader === 'Sign up with Google'){
-            setLoading('Signup successful, redirecting ...')
-            console.log('Signup Successful', res)
-            history.push('/home')
+            
+            if(buttonClicked){
+                setLoading('Signup successful, redirecting ...')
+                console.log('Signup Successful', res) 
+                history.push('/home')
+            }
+            
         } else {
-            setLoading('Signin successful, redirecting ...')
-            console.log('Signin Successful', res)
-            history.push('/home')
+            if(buttonClicked){
+                setLoading('Signin successful, redirecting ...')
+                console.log('Signin Successful', res)
+                history.push('/home')
+            }
         }
         
     }
@@ -30,6 +37,7 @@ const GoogleSignIn = ({className, googleHeader, google}) => {
     
     return (
             <div className={className} onClick={() => {
+                setButtonClicked(true)
                 if(googleHeader === 'Sign up with Google'){
                     setLoading('Signing Up...')
                 } else {
