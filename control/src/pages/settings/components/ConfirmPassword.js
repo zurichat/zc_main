@@ -7,8 +7,8 @@ import styles from '../styles/confirmPassword.module.css'
 import FormMessage from './FormMessage'
 
 //Icons
-import successIcon from '../../images/bx-success.svg'
-import errorIcon from '../../images/bx-error.svg'
+import successIcon from '../../../component-assets/bx-success.svg'
+import errorIcon from '../../../component-assets/bx-error.svg'
 
 const ConfirmPassword = () => {
   const [error, setError] = useState(false)
