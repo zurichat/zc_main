@@ -9,7 +9,7 @@ import SearchBar from './externalPagesComponents/SearchBar'
 import StatusBadge from './StatusBadge'
 import TopbarModal from './TopbarModal'
 import ProfileModal from './ProfileModal'
-import { MembersModalButton } from './MembersModal'
+// import { MembersModalButton } from './MembersModal'
 
 // Placeholder data
 const placeHolder = n => {
@@ -35,7 +35,7 @@ const Topbar = ({ userProfile: { last_name, first_name } }) => {
     <div className={styles.container}>
       <SearchBar />
       <div className={styles.topbar}>
-        <MembersModalButton members={faked} />
+        {/* <MembersModalButton members={faked} /> */}
         <Link to="/settings">
           <img src="/settings.svg" alt="settings" className={styles.settings} />
         </Link>

@@ -3,9 +3,9 @@ import { URLContext } from '../context/Url'
 import { PluginContext } from '../context/Plugins'
 
 import PluginLoader from './PluginLoader'
-import styles from '../styles/PluginContent.module.css'
 import Welcome from './Welcome'
 import { PluginNavBar } from './verified-components'
+import faker from 'faker'
 
 export const PluginContent = () => {
   const { url } = useContext(URLContext)
@@ -22,10 +22,24 @@ export const PluginContent = () => {
     }
   }, [url, plugins])
 
+  const placeHolder = n => {
+    const placeHolderMembersArray = []
+    for (let i = 0; i < n; i++) {
+      placeHolderMembersArray.push({
+        userName: faker.internet.userName().toLowerCase(),
+        fullName: `${faker.name.firstName()} ${faker.name.lastName()}`,
+        status: faker.lorem.sentence(),
+        avatar: faker.internet.avatar()
+      })
+    }
+    return placeHolderMembersArray
+  }
+  const faked = placeHolder(44134)
+
   return (
     <>
-      <section className={styles.container}>
-        <PluginNavBar />
+      <section style={{ position: 'relative' }}>
+        <PluginNavBar members={faked} />
         <div id="zc-plugin-root"></div>
         <PluginLoader />
       </section>

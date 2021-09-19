@@ -1,8 +1,8 @@
 import Footer from '../../components/externalPagesComponents/Footer/Footer'
 import Message from '../../components/externalPagesComponents/Footer/Message'
-import CareersSection2 from './CareersSection2'
-import Section3 from './components/Section3/Section3'
-import SectionOne from './components/section1/sectionOne'
+import CareersSection2 from './components/CareersSection2'
+import Section3 from './components/Section3'
+import SectionOne from './components/sectionOne'
 import SearchSuggestion from '../searchSuggestion'
 
 function Careers() {
