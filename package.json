@@ -5,18 +5,11 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack serve --port 9000 --env isLocal",
-<<<<<<< HEAD
-    "start:topbar": "npm dev --prefix topbar",
-    "start:control": "npm dev --prefix control",
-    "start:sidebar": "npm dev --prefix sidebar",
-    "dev": "yarn start",
-=======
     "start:root": "npm run start",
     "start:topbar": "npm run dev --prefix topbar",
     "start:control": "npm run dev --prefix control",
     "start:sidebar": "npm run dev --prefix sidebar",
     "dev": "npm-run-all --parallel start:*",
->>>>>>> 9b269929814f6f2d4a3a54f41c2cbe13698451ad
     "check-format": "prettier -c .",
     "format": "prettier -w .",
     "lint": "eslint src --ext js",
