@@ -3,6 +3,9 @@ const singleSpaDefaults = require('webpack-config-single-spa-react')
 const path = require('path')
 
 const mergeRules = {
+  externals: {
+    jquery: 'jQuery',
+  },
   plugins: 'replace',
   devServer: {
     static: {
