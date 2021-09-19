@@ -1,20 +1,20 @@
 import { registerApplication, start } from 'single-spa'
 
-// registerApplication({
-//   name: "@single-spa/welcome",
-// app: () => System.import("https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js"),
-//   activeWhen: ["/"],
-// });
+const pluginRoutes = [
+  location => location.pathname.startsWith('/chess'),
+  location => location.pathname.startsWith('/sales'),
+  location => location.pathname.startsWith('/music')
+]
 
 registerApplication({
   name: '@zuri/topbar',
   app: () => System.import('@zuri/topbar'),
-  activeWhen: ['/home']
+  activeWhen: ['/']
 })
 registerApplication({
   name: '@zuri/sidebar',
   app: () => System.import('@zuri/sidebar'),
-  activeWhen: ['/home']
+  activeWhen: ['/home', ...pluginRoutes]
 })
 registerApplication({
   name: '@zuri/control',
