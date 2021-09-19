@@ -60,7 +60,7 @@ const Login = () => {
         sessionStorage.setItem('user', JSON.stringify(data.user))
 
         //Display message
-        alert(message) //Change this when there is a design
+        // alert(message) //Change this when there is a design
 
         //Return the login data globally
         $behaviorSubject.next(response.data)

@@ -12,21 +12,29 @@ import { Button } from '../../../components/'
 
 export default function EmailVerification({ email = 'johndoe@example.com' }) {
   const [success, setsuccess] = useState(false)
+  const [errorMsg, seterrorMsg] = useState(false)
 
   const handleSubmit = async code => {
     await axios
-      .post(`url for the email verification`, {
-        verificationCode: code
-      })
-      .then(_res => {
-        setsuccess(true)
-        console.log(success)
+      .post(`https://api.zuri.chat/account/verify-account`, { code })
+      .then(res => {
+        console.log('res')
+        if (res.status === 200) {
+          setsuccess(true)
+        } else {
+          setsuccess(false)
+          seterrorMsg(res?.message)
+        }
+
+        setTimeout(() => {
+          //Redirect to some other page
+          window.location.href = '/home'
+        }, 2000)
       })
       .catch(err => {
+        seterrorMsg(err.response.data.message)
         setsuccess(false)
-        console.log(err)
       })
-    setsuccess(true)
   }
 
   const goHome = () => {
@@ -47,6 +55,7 @@ export default function EmailVerification({ email = 'johndoe@example.com' }) {
               </a>
               . This code expires shortly so be quick
             </p>
+            <div>{errorMsg}</div>
             <div>
               <CodeInput
                 length={6}
