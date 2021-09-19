@@ -48,6 +48,7 @@
 }
 .answer.show {
   height: auto;
+  background: rgb(230, 228, 228);
   max-height: 62.5rem;
   transition: all 0.5s cubic-bezier(1, 0, 1, 0);
 }
@@ -56,10 +57,58 @@
   margin-top: 1.3rem;
   padding: 0 5rem;
   font-size: 18px;
+  margin-bottom: 3.5rem;
 }
 .billing .info {
   color: rgb(107, 180, 107);
 }
 .billing .info:hover {
   text-decoration: underline;
+}
+
+
+
+@media (max-width: 576px) {
+  .faqs {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.5rem;
+  background: rgb(230, 228, 228);
+  display: block;
+  }
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  h6 {
+    font-size: 1rem;
+  }
+  .answer.show {
+  height: auto;  
+  max-height: 62.5rem;
+  transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+}
+}
+@media (max-width: 768px) {
+  .faqs {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.5rem;
+  background: rgb(230, 228, 228);
+  display: block;
+  }
+  .answer.show {
+  height: auto;
+  max-height: 62.5rem;
+  transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+}
+
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+    text-align: center;
+  }
 }
