@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { withRouter } from 'react-router-dom'
+import { BehaviorSubject } from 'rxjs'
 // import { Link } from 'react-router-dom'
 import authBg1 from './assets/auth_bg1.svg'
 import authBg2 from './assets/auth_bg2.svg'
@@ -11,6 +12,7 @@ import FormWrapper from '../../components/AuthFormWrapper'
 import styles from '../../component-styles/AuthFormElements.module.css'
 import axios from 'axios'
 import { GetUserInfo } from '../../zuri-control'
+import $behaviorSubject from '../../../../globalState'
 
 //import GoogleLogin from 'react-google-login'
 
@@ -58,11 +60,14 @@ const Login = () => {
         sessionStorage.setItem('user', JSON.stringify(data.user))
 
         //Display message
-        alert(message) //Change this when there is a design
+        // alert(message) //Change this when there is a design
+
+        //Return the login data globally
+        $behaviorSubject.next(response.data)
 
         setTimeout(() => {
           //Redirect to some other page
-          GetUserInfo();
+          GetUserInfo()
         }, 2000)
       })
       .catch(error => {

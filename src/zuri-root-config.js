@@ -1,20 +1,23 @@
 import { registerApplication, start } from 'single-spa'
 
-// registerApplication({
-//   name: "@single-spa/welcome",
-// app: () => System.import("https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js"),
-//   activeWhen: ["/"],
-// });
+export const pluginRoutes = [
+  location => location.pathname.startsWith('/chess'),
+  location => location.pathname.startsWith('/sales'),
+  location => location.pathname.startsWith('/music'),
+  location => location.pathname.startsWith('/deadlines'),
+  location => location.pathname.startsWith('/goals'),
+  location => location.pathname.startsWith('/dm')
+]
 
 registerApplication({
   name: '@zuri/topbar',
   app: () => System.import('@zuri/topbar'),
-  activeWhen: ['/home']
+  activeWhen: ['/home', ...pluginRoutes]
 })
 registerApplication({
   name: '@zuri/sidebar',
   app: () => System.import('@zuri/sidebar'),
-  activeWhen: ['/home']
+  activeWhen: ['/home', ...pluginRoutes]
 })
 registerApplication({
   name: '@zuri/control',
@@ -27,6 +30,42 @@ registerApplication({
   name: '@zuri/zuri-plugin-chessboard',
   app: () => System.import('@zuri/zuri-plugin-chessboard'),
   activeWhen: [location => location.pathname.startsWith('/chess')]
+})
+
+registerApplication({
+  name: '@zuri/zuri-plugin-company-sales-prospects',
+  app: () => System.import('@zuri/zuri-plugin-company-sales-prospects'),
+  activeWhen: [location => location.pathname.startsWith('/sales')]
+})
+
+registerApplication({
+  name: '@zuri/zuri-plugin-music',
+  app: () => System.import('@zuri/zuri-plugin-music'),
+  activeWhen: [location => location.pathname.startsWith('/music')]
+})
+
+registerApplication({
+  name: '@zuri/zuri-plugin-deadlines',
+  app: () => System.import('@zuri/zuri-plugin-deadlines'),
+  activeWhen: [location => location.pathname.startsWith('/deadlines')]
+})
+
+registerApplication({
+  name: '@zuri/zuri-plugin-company-goals',
+  app: () => System.import('@zuri/zuri-plugin-company-goals'),
+  activeWhen: [location => location.pathname.startsWith('/goals')]
+})
+
+registerApplication({
+  name: '@zuri/zuri-plugin-todo',
+  app: () => System.import('@zuri/zuri-plugin-todo'),
+  activeWhen: [location => location.pathname.startsWith('/todo')]
+})
+
+registerApplication({
+  name: '@zuri/zuri-plugin-dm',
+  app: () => System.import('@zuri/zuri-plugin-dm'),
+  activeWhen: [location => location.pathname.startsWith('/dm')]
 })
 
 start({
