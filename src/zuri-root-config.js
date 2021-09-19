@@ -29,6 +29,18 @@ registerApplication({
   activeWhen: [location => location.pathname.startsWith('/chess')]
 })
 
+registerApplication({
+  name: '@zuri/zuri-plugin-company-sales-prospects',
+  app: () => System.import('@zuri/zuri-plugin-company-sales-prospects'),
+  activeWhen: [location => location.pathname.startsWith('/sales')]
+})
+
+registerApplication({
+  name: '@zuri/zuri-plugin-music',
+  app: () => System.import('@zuri/zuri-plugin-music'),
+  activeWhen: [location => location.pathname.startsWith('/music')]
+})
+
 start({
   urlRerouteOnly: true
 })
