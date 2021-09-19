@@ -1,0 +1,171 @@
+.settings_wrapper {
+  border-bottom: 1px solid #dedede;
+  padding: 20px 0;
+}
+
+.settings_wrapper:last-child {
+  border-bottom: none;
+}
+
+.settingsTab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.settingsTab:nth-child(6),
+.settingsTab:nth-child(7) {
+  border-bottom: 1px solid #dedede;
+  padding: 20px 0;
+}
+
+.settingleft {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 15px;
+  color: #242424;
+  font-weight: bold;
+  width: 70%;
+}
+
+.settingleft span {
+  font-size: 14px;
+  font-weight: normal;
+  color: rgba(58, 58, 58, 0.9);
+}
+
+.emailLink {
+  color: #00b87c !important;
+  /* font-size: 12px; */
+  text-decoration: none;
+}
+
+.settingsright button {
+  background: #ffffff;
+  border: 1px solid #dedede;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 9px 18px;
+  font-size: 13px;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  font-weight: 600;
+}
+
+.settingsright .signout {
+  background: #f40101;
+  color: white;
+  font-size: 12px;
+}
+
+.settingsright .delete {
+  font-size: 12px;
+}
+
+.settings_wrapper {
+  padding: 10px 0;
+}
+
+/* THE SECTION OF THE PASSWORD */
+
+.passwordsection button {
+  font-size: 13px;
+  padding: 10px 22px;
+}
+
+.passwordsection::-webkit-input-placeholder {
+  font-size: 12px !important;
+}
+
+.passwordsection p {
+  font-size: 14px;
+  width: 60%;
+}
+
+.passwordsection select.form-select:focus,
+.passwordsection button.form-control:focus,
+.passwordsection input[type='text']:focus,
+.passwordsection input[type='password']:focus {
+  box-shadow: inset 0 -1px 0 #ddd;
+}
+
+.passwordsection select:focus {
+  box-shadow: inset 0 -1px 0 #ddd;
+}
+
+.passwordsection select {
+  font-size: 13px;
+  padding: 9px;
+  color: #8c8c8c;
+  width: 130%;
+}
+
+/* THE SECTION OF THE TWO FACTOR */
+.two_factor p {
+  font-size: 14px;
+  width: 60%;
+  margin-top: 10px;
+  line-height: 20px;
+  color: #3a3a3a;
+}
+
+.two_factor p a {
+  color: #00b87c;
+}
+
+.two_factor button {
+  font-size: 11px;
+}
+
+.two_factor span {
+  font-size: 13px;
+  color: #3a3a3a;
+}
+
+@media screen and (max-width: 868px) {
+  #settingtab {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .settingsright {
+    margin-top: 10px;
+  }
+
+  .passwordsection input,
+  .passwordsection select {
+    width: 90% !important;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #settingtab {
+    width: 100%;
+  }
+
+  #settingleft {
+    width: 95%;
+  }
+
+  .passwordsection input,
+  .passwordsection select {
+    width: 100% !important;
+  }
+
+  .two_factor button {
+    padding: 10px 25px;
+  }
+
+  .two_factor p {
+    width: 95%;
+  }
+
+  .passwordsection p {
+    width: 95%;
+  }
+}
