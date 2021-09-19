@@ -4,6 +4,7 @@ import { RiErrorWarningLine } from 'react-icons/ri'
 import styles from '../styles/AuthFormWrapper.module.css'
 import logo from '../pages/images/logo.svg'
 import google from '../pages/images/google.svg'
+import GoogleSignIn from './GoogleSignIn'
 // import chevron from '../pages/images/chevron.svg'
 // import globe from '../pages/images/globe.svg'
 
@@ -41,12 +42,17 @@ const FormWrapper = ({
           </Link>
         </div> */}
         <div className={`${styles.googleAuthDiv}`}>
-          <div className={`${styles.googleBtn}`}>
+          <GoogleSignIn
+            className={styles.googleBtn}
+            googleHeader={googleHeader}
+            google={google}
+          />
+          {/*<div className={`${styles.googleBtn}`}>
             <a href="/" className="google">
               <img src={google} alt="google" />
               {googleHeader}
             </a>
-          </div>
+          </div>*/}
           <span className={`${styles.hrWrapper}`}>
             {/* <span className={`${styles.topLine}`}>{topLineText}</span> */}
             <hr className={`${styles.hrLeft}`} />
