@@ -1,13 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from '../styles/AccountDeactivated.module.css'
+import zuriLogo from '../../../component-assets/zurichatlogo.svg'
 
 const AccDeactivated = () => {
   return (
     <div className={styles.container}>
       <div className={styles.nav}>
         <div className={styles.brand}>
-          <img src="zurichatlogo.svg" alt="" />
+          <img src={zuriLogo} alt="" />
           <p>ZURI</p>
         </div>
       </div>
