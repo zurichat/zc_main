@@ -1,10 +1,9 @@
-import React from 'react'
-import styles from '../../features/styles/Features.module.css'
-import hashtag from '../../../assets/hashtag.png'
-import holiday from '../../../assets/holiday.png'
-import deadline from '../../../assets/deadline.png'
-import chat from '../../../assets/chat.png'
-import todolist from '../../../assets/todolist.png'
+import styles from '../../styles/Features.module.css'
+// import hashtag from '../../../assets/hashtag.png'
+// import holiday from '../../../assets/holiday.png'
+// import deadline from '../../../assets/deadline.png'
+// import chat from '../../../assets/chat.png'
+// import todolist from '../../../assets/todolist.png'
 
 const Section3 = () => {
   return (
@@ -24,7 +23,7 @@ const Section3 = () => {
       <div className={styles.featuresSection}>
         <div className={styles.featureCard}>
           <div className={styles.imagea}>
-            <img src={hashtag} alt="hashtag" className={styles.hashtag} />
+            <img src={`/channels_icon.png`} alt="hashtag" className={styles.hashtag} />
           </div>
           <h3>Channels </h3>
           <p>
@@ -37,7 +36,7 @@ const Section3 = () => {
         </div>
         <div className={styles.featureCard}>
           <div className={styles.imageh}>
-            <img src={holiday} alt="holiday" className={styles.holiday} />
+            <img src={`/holiday_calender_icon.png`} alt="holiday" className={styles.holiday} />
           </div>
           <h3 className={styles.com}>
             Company Holiday
@@ -51,7 +50,7 @@ const Section3 = () => {
         </div>
         <div className={styles.featureCard}>
           <div className={styles.imaged}>
-            <img src={deadline} alt="deadline" className={styles.deadline} />
+            <img src={`/company_deadline_icon.png`} alt="deadline" className={styles.deadline} />
           </div>
           <h3>Company deadline</h3>
           <p>
@@ -64,7 +63,7 @@ const Section3 = () => {
         </div>
         <div className={styles.featureCard}>
           <div className={styles.imagec}>
-            <img src={chat} alt="chat" className={styles.chat} />
+            <img src={`/quick_reply_app_icon.png`} alt="chat" className={styles.chat} />
           </div>
           <h3>Quick Reply App</h3>
           <p>
@@ -74,7 +73,7 @@ const Section3 = () => {
         </div>
         <div className={styles.featureCard}>
           <div className={styles.imaget}>
-            <img src={todolist} alt="To do list" className={styles.todolist} />
+            <img src={`/to_do_list_icon.png`} alt="To do list" className={styles.todolist} />
           </div>
           <h3>To Do List</h3>
           <p>
