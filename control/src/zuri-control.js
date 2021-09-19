@@ -42,11 +42,7 @@ export const GetUserInfo = ({ userID = "61437054d0284bc6a922346b", token = "eyJh
       })
       .catch(err => console.log(err));
 
-  return token;
-
-
-  }
-
-
+  return token
+}
 
 export const { bootstrap, mount, unmount } = lifecycles
