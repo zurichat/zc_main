@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
 
-export class AdminSetup extends Component {
-    continue = e => {
+export const AdminSetup = (props)=> {
+    
+    const Continue = e => {
         e.preventDefault();
-        this.props.nextStep();
+        props.nextStep();
     };
 
-    render() {
+    
 
         return (
 
             <div className="form-container">
                 <br />
                 <div className="text-right">
-                    <button className="btn btn-primary" onClick={this.continue}
+                    <button className="btn btn-primary" onClick={Continue}
                         style={{
                             color: "white",
                             backgroundColor: " #00B87C",
@@ -27,6 +28,5 @@ export class AdminSetup extends Component {
 
         )
     }
-}
 
-export default AdminSetup
+export default AdminSetup;

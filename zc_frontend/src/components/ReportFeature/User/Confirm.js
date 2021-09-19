@@ -56,10 +56,10 @@ export  const Confirm = (props) => {
             <div className="form-container">
                 <h1 className="mb-5">Confirm</h1>
                 <ul className="list-group">
-                    <li className="list-group-item">Name: {email}</li>
-                    <li className="list-group-item">Offence: {offence}</li>
-                    <li className="list-group-item">Description: {description}</li>
-                    <li className="list-group-item">anonymous: {anonymous.toString()}</li>
+                    <li className="list-group-item"><b>Name</b>: {email}</li>
+                    <li className="list-group-item"><b>Offence</b>: {offence}</li>
+                    <li className="list-group-item"><b>Description</b>: {description}</li>
+                    <li className="list-group-item"><b>anonymous</b>: {anonymous.toString()}</li>
                 </ul>
 
                 <br /><br />

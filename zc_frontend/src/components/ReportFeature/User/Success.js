@@ -24,4 +24,4 @@ export const Success = (props)=>{
         )
                 }
 
-export default Success
+export default Success;

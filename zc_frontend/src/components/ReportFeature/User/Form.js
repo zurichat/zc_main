@@ -1,96 +1,93 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import AdminSetup from './AdminSetup';
 import ComplaintProfiles from './ComplaintProfiles';
 import {Confirm} from './Confirm';
 import Success from './Success';
 import './reports.css';
 
-export class UserForm extends Component {
-    state = {
-        step: 1,
-        email: '',
-        offence: 'Anti Semitism',
-        description:'',
-        date:'',
-        anonymous: false,
-        postSuccess:true,
-        password: '',
-        facebook: '',
-        twitter: '',
-        github: ''
+export const UserForm = ()=> {
+
+    const [step,setStep]  = useState(1);
+    const [email,setEmail]  = useState('');
+    const [offence,setOffence]  = useState('Anti Semitism');
+    const [description,setDescription]  = useState('');
+    const [anonymous,setAnonymous]  = useState(false);
+    const [postSuccess,setPostSuccess]  = useState(true);
+    
+
+    const nextStep = () => {
+        const  steps  = step;
+        setStep(steps + 1);
     };
 
-    nextStep = () => {
-        const { step } = this.state;
-        this.setState({ step: step + 1 });
+    const prevStep = () => {
+        const  steps  = step;
+        setStep(steps - 1);
     };
 
-    prevStep = () => {
-        const { step } = this.state;
-        this.setState({ step: step - 1 });
-    };
-
-    inputChange = input => e => {
+    const inputChange = input => e => {
         if(input === 'anonymous'){
-            this.setState({
-                [input]: e.target.checked
-            })
+            
+        setAnonymous(e.target.checked);
             // console.log(input, e.target.checked);
-        }else{
-        this.setState({
-            [input]: e.target.value
-        })
+        }
+        if(input === 'email'){
+            setEmail(e.target.value)
+        }
+        if(input === 'offence'){
+            setOffence(e.target.value)
+        }
+        if(input === 'description'){
+            setDescription(e.target.value)
+        }
         // console.log(input, e.target.value);
     }
-    };
+    
 
-    setPostSuccess = (response) =>{
-        this.setState({
-            postSuccess: response
-        })
+    const setPostSucc = (response) => {
+        
+        setPostSuccess(response)
     }
 
-    render() {
-        const { step } = this.state;
-        const { email, offence,date, description,anonymous, postSuccess, password, facebook, twitter, github } = this.state;
-        const values = { email, offence,date, description, anonymous, postSuccess, password, facebook, twitter, github };
+    
+  const values = { email, offence, description, anonymous, postSuccess};
 
-        switch (step) {
-            case 1:
-                return (
-                    <AdminSetup
-                        nextStep={this.nextStep}
-                        inputChange={this.inputChange}
-                        values={values}
-                    />
-                );
-            case 2:
-                return (
-                    <ComplaintProfiles
-                        nextStep={this.nextStep}
-                        prevStep={this.prevStep}
-                        inputChange={this.inputChange}
-                        values={values}
-                    />
-                );
-            case 3:
-                return (
-                    <Confirm
-                        nextStep={this.nextStep}
-                        prevStep={this.prevStep}
-                        setPostSucc={this.setPostSuccess}
-                        values={values}
-                    />
-                );
-            case 4:
-                return (
-                    <Success 
-                    postSucc = {postSuccess}/>
-                );
-                default:
-                    return
+    return (
+        <>
+
+        {step===1 ?
+            <AdminSetup
+            nextStep={nextStep}
+            inputChange={inputChange}
+            values={values}
+            />
+        : null
         }
+        {step===2 ?
+            <ComplaintProfiles
+            nextStep={nextStep}
+            prevStep={prevStep}
+            inputChange={inputChange}
+            values={values}
+            />  
+        : null
+        }
+        {step===3 ?
+            <Confirm
+            nextStep={nextStep}
+            prevStep={prevStep}
+            setPostSucc={setPostSucc}
+            values={values}
+            />
+        : null
+        }
+        {step===4 ?
+            <Success 
+            postSucc = {postSuccess}/>
+            : null
+        }
+    
+    </>
+    )
     }
-}
-
-export default UserForm
+export default UserForm;

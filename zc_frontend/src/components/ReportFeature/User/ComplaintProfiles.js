@@ -1,19 +1,20 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export class ComplaintProfiles extends Component {
-    continue = e => {
+export const ComplaintProfiles = (props) => {
+
+  const Continue = e => {
         e.preventDefault();
-        this.props.nextStep();
+        props.nextStep();
 
     };
 
-    back = e => {
+    const back = e => {
         e.preventDefault();
-        this.props.prevStep();
+        props.prevStep();
     };
 
-    render() {
-        const { values, inputChange } = this.props;
+    
+        const { values, inputChange } = props;
 
         return (
 
@@ -92,7 +93,7 @@ export class ComplaintProfiles extends Component {
                 <div className="row" style={{ display: "flex", flexDirection: "flex-end" }} >
                     <div className="col-2">
                         <button className="btn btn-secondary"
-                            onClick={this.back} style={{
+                            onClick={back} style={{
                                 color: "white",
                                 // backgroundColor: "#00B87C",
                                 borderRadius: "10%",
@@ -101,7 +102,7 @@ export class ComplaintProfiles extends Component {
                     </div>
                     <div className="col-2" >
                         <button className="btn btn-success"
-                            onClick={this.continue}
+                            onClick={Continue}
                             style={{
                                 color: "white",
                                 backgroundColor: "#00B87C",
@@ -115,6 +116,6 @@ export class ComplaintProfiles extends Component {
             </div >
         )
     }
-}
 
-export default ComplaintProfiles
+
+export default ComplaintProfiles;
