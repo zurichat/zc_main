@@ -14,5 +14,13 @@ export const links = [
   {
     name: 'Deadlines',
     href: '/deadlines'
+  },
+  {
+    name: 'Goals',
+    href: '/goals'
+  },
+  {
+    name: 'Todo',
+    href: '/todo'
   }
 ]
