@@ -1,11 +1,8 @@
 .articlesCard {
-    /* margin-left: 20px; */
-    /* width: 450px; */
     height: 500px;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
-    background: #F6F6F6;
+    background: #fff;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: transform 420ms cubic-bezier(.165,.84,.44,1);

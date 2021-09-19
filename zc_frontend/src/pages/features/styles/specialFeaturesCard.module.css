@@ -1,10 +1,8 @@
 .specialFeaturesCard {
     margin-left: 20px;
-    /* min-width: 283px; */
     height: 220px;
     padding: 20px;
-    background: #F6F6F6;
-    border: 1px solid #DADADA;
+    cursor: pointer;
 }
 
 .specialFeaturesCard:first-child {
@@ -24,7 +22,7 @@
     margin-top: 15px;
     font-weight: normal;
     font-size: 1rem;
-    line-height: 130%;
+    line-height: 21px;
     color: #000000;
 }
 
