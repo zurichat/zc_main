@@ -5,7 +5,83 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
   <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    div[id*='zuri'] {
+      width: 100%;
+    }
+
+    div[id*='zuri/topbar'] {
+      z-index: 2;
+      width: 100%;
+      height: 10vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: red;
+      /* padding: 2rem; */
+      font-size: 3rem;
+    }
+
+    div[id*='zuri/sidebar']::-webkit-scrollbar {
+      display: none;
+    }
+
+    div[id*='zuri/sidebar'] {
+      width: 20%;
+      height: 90vh;
+      overflow-y: scroll;
+      -ms-overflow-style: none;
+      /* Hide scrollbar for IE and Edge */
+      scrollbar-width: none;
+      /* Hide scrollbar for Firefox */
+      position: fixed;
+      top: 10vh;
+      left: 0;
+      background-color: green;
+      font-size: 3rem;
+    }
+
+    div[id*='zuri-plugin'] {
+      width: 80%;
+      position: absolute;
+      top: 10%;
+      right: 0;
+    }
+
+    /* CHESS STYLE */
+    .app__container {
+      padding: 0 !important;
+      padding-block: 5rem;
+    }
+
+    @media (max-width: 375px) {
+      .mini-board {
+        height: calc(34.8rem * 0.9);
+        width: calc(26.4rem * 0.9);
+      }
+    }
+
+    /* CHESS STYLE */
+  </style>
+
+  <!-- <style>
     html,
     body {
       height: 100%;
@@ -24,12 +100,12 @@
         'sidebar plugincontent';
     }
 
-    div[id*='zuri'] {
-      /* min-height: inherit;  min-width: inherit; */
-      /* max-height: inherit;  max-width: inherit; */
-      /* height: 100%; */
-      /* width: 100%; */
-    }
+    /* div[id*='zuri'] { */
+    /* min-height: inherit;  min-width: inherit; */
+    /* max-height: inherit;  max-width: inherit; */
+    /* height: 100%; */
+    /* width: 100%; */
+    /* } */
 
     div[id*='zuri/topbar'] {
       grid-area: topbar;
@@ -85,7 +161,9 @@
       "imports": {
         "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
         "react": "https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.production.min.js",
-        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.production.min.js"
+        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.production.min.js",
+        "vue": "https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js",
+        "vue-router": "https://cdn.jsdelivr.net/npm/vue-router@3.1.6/dist/vue-router.min.js"
       }
     }
   </script>
@@ -98,13 +176,19 @@
   <script type="systemjs-importmap">
     {
       "imports": {
-        "@zuri/zuri-plugin-chessboard": "https://chess.zuri.chat/zuri-zuri-plugin-chessboard.js"
+        "@zuri/zuri-plugin-chessboard": "https://chess.zuri.chat/zuri-zuri-plugin-chessboard.js",
+        "@zuri/zuri-plugin-company-sales-prospects": "https://sales.zuri.chat/static/zuri-zuri-plugin-company-sales-prospects.js",
+        "@zuri/zuri-plugin-music": "https://music.zuri.chat/static/zuri-music-plugin.js",
+        "@zuri/zuri-plugin-deadlines": "https://reminders.zuri.chat/zuri-zuri-plugin-deadlines.js",
+        "@zuri/zuri-plugin-company-goals": "https://goals.zuri.chat/zuri-plugin-company-goals.js",
+        "@zuri/zuri-plugin-todo": "https://todo.zuri.chat/js/app.js",
+        "@zuri/zuri-plugin-dm": "https://dm.zuri.chat/static/js/app.js"
       }
     }
   </script>
 
   <% if (isLocal) { %>
-  <script type="systemjs-importmap">
+    <script type="systemjs-importmap">
     {
       "imports": {
         "@zuri/root-config": "//localhost:9000/zuri-root-config.js",
@@ -114,33 +198,33 @@
       }
     }
   </script>
-  <% } else { %>
-  <script type="systemjs-importmap">
+    <% } else { %>
+      <script type="systemjs-importmap">
     {
       "imports": {
-          "@zuri/root-config": "https://zuri.chat/zuri-root-config.js",
-          "@zuri/topbar": "https://zuri.chat/zuri-topbar.js",
-          "@zuri/sidebar": "https://zuri.chat/zuri-sidebar.js",
-          "@zuri/control": "https://zuri.chat/zuri-control.js"
+          "@zuri/root-config": "/zuri-root-config.js",
+          "@zuri/topbar": "/zuri-topbar.js",
+          "@zuri/sidebar": "/zuri-sidebar.js",
+          "@zuri/control": "/zuri-control.js"
         }
       }
   </script>
-  <% } %>
+      <% } %>
 
-  <!--
+        <!--
     If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
     Learn more about why at https://single-spa.js.org/docs/ecosystem-angular/#zonejs
   -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script> -->
 
-  <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
-  <% if (isLocal) { %>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
-  <% } else { %>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
-  <% } %>
+        <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
+        <% if (isLocal) { %>
+          <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
+          <% } else { %>
+            <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
+            <% } %>
 </head>
 
 <body>
@@ -151,6 +235,12 @@
   <script>
     System.import('@zuri/root-config');
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+    integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+    integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+    crossorigin="anonymous"></script>
   <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
 </body>
 
