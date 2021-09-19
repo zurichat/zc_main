@@ -1,6 +1,6 @@
 import React from 'react'
 import CompanyNameCSS from './styles/CompanyName.module.css'
-import {Link,useRouteMatch} from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom'
 function CompanyName() {
   let match = useRouteMatch()
   return (
@@ -26,7 +26,10 @@ function CompanyName() {
           <span className={CompanyNameCSS.charLimit}>
             Maximum 50 characters
           </span>
-         <Link to={`${match.url}/step2`}> <button> Continue</button> </Link>
+          <Link to={`${match.url}/step2`}>
+            {' '}
+            <button> Continue</button>{' '}
+          </Link>
         </div>
       </article>
     </div>

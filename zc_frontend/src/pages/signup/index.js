@@ -69,7 +69,6 @@ const Signup = () => {
         alert(message) //Change this when there is a design
 
         setTimeout(() => {
-         
           //Redirect to some other page
         }, 2000)
       })
@@ -86,7 +85,7 @@ const Signup = () => {
 
   return (
     <main id={styles.authPageWrapper}>
-      {showDialog && <EmailVerification/>}
+      {showDialog && <EmailVerification />}
       <aside id={styles.authAsideContainer} className={styles.display_none}>
         <div id={styles.authImageWrapper}>
           <img src={images[currentImage]} alt="backgroundImage" />

@@ -10,9 +10,9 @@ import { useEffect } from 'react'
 
 function Pricing() {
   useEffect(() => {
-    sessionStorage.setItem('token',1234);
-    const user = sessionStorage.getItem('token');
-    console.log(user);
+    sessionStorage.setItem('token', 1234)
+    const user = sessionStorage.getItem('token')
+    console.log(user)
   })
   return (
     <div>

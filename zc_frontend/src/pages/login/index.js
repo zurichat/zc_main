@@ -61,7 +61,7 @@ const Login = () => {
 
         setTimeout(() => {
           //Redirect to some other page
-          window.location.href = "/home"
+          window.location.href = '/home'
         }, 2000)
       })
       .catch(error => {

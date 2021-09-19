@@ -2,7 +2,6 @@ import React from 'react'
 
 import styles from '../styles/CareersSection2.module.css'
 
-
 function CareersSection2() {
   return (
     <div className={`${styles.Section2}`}>

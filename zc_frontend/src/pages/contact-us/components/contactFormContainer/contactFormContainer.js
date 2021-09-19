@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react'
 import ContactFormStyle from '../../styles/contactFormContainer.module.css'
 import detailsData from './detailsArray'
 import axios from 'axios'
-import { useDropzone } from "react-dropzone"
+import { useDropzone } from 'react-dropzone'
 import Alert from '../../../images/alert-circle.svg'
 
 const activeStyle = {

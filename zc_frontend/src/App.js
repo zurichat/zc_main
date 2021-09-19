@@ -56,14 +56,14 @@ import RecoverPassword from './pages/passwordRecovery/index'
 import ResetPassword from './pages/passwordReset/Index'
 import PrivateRoute from './pages/settings/Utils/PrivateRoute'
 import AuthApi from './pages/api-docs/components/auth'
-import {useRouteMatch} from 'react-router-dom';
+import { useRouteMatch } from 'react-router-dom'
 import './components/verified-components/master.css'
 import CompanyName from './pages/create-workspace/CompanyName'
 import Step3 from './pages/create-workspace/Step3'
 
 const App = () => {
-  let workspaceRoute = "/home/createworkspace";
-  return(
+  let workspaceRoute = '/home/createworkspace'
+  return (
     <TopbarProvider>
       <Switch>
         <Route path="/" exact>
@@ -96,24 +96,24 @@ const App = () => {
         <Route path="/resources">
           <Resources />
         </Route>
-        <Route path= {workspaceRoute} exact>
+        <Route path={workspaceRoute} exact>
           <CreateWorkspace />
-          </Route>
-          {/* <Route path = {`${match.path}/companyname`}>
+        </Route>
+        {/* <Route path = {`${match.path}/companyname`}>
           <CompanyName/>
           </Route> */}
-          <Route path={`${workspaceRoute}/step1`} exact>
-            <CompanyName />
-            </Route>
-            <Route path={`${workspaceRoute}/step1/step2`} exact>
-            <ProjectName />
-            </Route>
-            <Route path={`${workspaceRoute}/step1/step2/step3`} exact>
-            <Step3 />
-            </Route>
-            <Route path={`${workspaceRoute}/step1/step2/step3/launch`}>
-            <LaunchPage />
-            </Route>
+        <Route path={`${workspaceRoute}/step1`} exact>
+          <CompanyName />
+        </Route>
+        <Route path={`${workspaceRoute}/step1/step2`} exact>
+          <ProjectName />
+        </Route>
+        <Route path={`${workspaceRoute}/step1/step2/step3`} exact>
+          <Step3 />
+        </Route>
+        <Route path={`${workspaceRoute}/step1/step2/step3/launch`}>
+          <LaunchPage />
+        </Route>
         <Route path="/download-app">
           <Download />
         </Route>
@@ -218,10 +218,8 @@ const App = () => {
           <Test />
         </Route>
       </Switch>
-    
-  </TopbarProvider>
+    </TopbarProvider>
   )
-  
 }
 
 export default App
