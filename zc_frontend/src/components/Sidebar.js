@@ -91,6 +91,8 @@ export const Sidebar = () => {
   //   : null
 
   useEffect(() => {
+    const user = sessionStorage.getItem('session_id');
+    console.log(user)
     ;(async () => {
       await sidebarApi().then(async res => {
         // setRooms(res)
@@ -403,9 +405,7 @@ display: flex;
 padding:0.25rem;
 & > img { 
   padding: 0 1rem;
-
 `
-
 const ClickButton = styled.img`
   margin-left: auto;
 `

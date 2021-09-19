@@ -1,7 +1,10 @@
 import React from 'react'
+import { Link,useRouteMatch } from 'react-router-dom'
 import ProjectNameCSS from './styles/ProjectName.module.css'
 
+
 function ProjectName() {
+  let match = useRouteMatch();
   return (
     <div>
       <article className={ProjectNameCSS.wrapper}>
@@ -25,7 +28,7 @@ function ProjectName() {
           <span className={ProjectNameCSS.charLimit}>
             Maximum 80 characters
           </span>
-          <button> Continue</button>
+          <Link to={`${match.url}/step3`}><button> Continue</button></Link>
         </div>
       </article>
     </div>
