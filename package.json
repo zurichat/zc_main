@@ -4,11 +4,12 @@
   "repository": "git@github.com:zurichat/zc_main.git",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve --port 9000 --env islocal",
-    "start:topbar": "npm dev --prefix topbar",
-    "start:control": "npm dev --prefix control",
-    "start:sidebar": "npm dev --prefix sidebar",
-    "dev": "yarn start",
+    "start": "webpack serve --port 9000 --env isLocal",
+    "start:root": "npm run start",
+    "start:topbar": "npm run dev --prefix topbar",
+    "start:control": "npm run dev --prefix control",
+    "start:sidebar": "npm run dev --prefix sidebar",
+    "dev": "npm-run-all --parallel start:*",
     "check-format": "prettier -c .",
     "format": "prettier -w .",
     "lint": "eslint src --ext js",
@@ -48,7 +49,8 @@
     "webpack-cli": "^4.8.0",
     "webpack-config-single-spa": "^5.0.0",
     "webpack-dev-server": "^4.0.0",
-    "webpack-merge": "^5.8.0"
+    "webpack-merge": "^5.8.0",
+    "yarn-run-all": "^3.1.1"
   },
   "dependencies": {
     "@types/jest": "^27.0.1",
