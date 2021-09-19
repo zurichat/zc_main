@@ -23,7 +23,7 @@
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 130%;
-  color: #3A3A3A;
+  color: #3a3a3a;
 }
 
 .section5CardWrapper {
@@ -31,7 +31,6 @@
   display: flex;
   align-items: center;
 }
-
 
 /* Mediaquieries */
 
@@ -45,13 +44,12 @@
   .section5TopTextsWrapper h2 {
     font-size: 1.8rem;
   }
-  
+
   .section5TopTextsWrapper p {
     margin-top: 10px;
-    font-size: 1.0rem;
+    font-size: 1rem;
   }
 }
-
 
 @media (max-width: 800px) {
   .section5 {
@@ -61,7 +59,7 @@
   .section5TopTextsWrapper h2 {
     font-size: 1.3rem;
   }
-  
+
   .section5TopTextsWrapper p {
     margin-top: 10px;
     font-size: 0.7rem;
@@ -71,7 +69,6 @@
     grid-template-columns: repeat(auto-fill, minmax(150px, 1.1fr));
   }
 }
-
 
 @media (max-width: 500px) {
   .section5 {
@@ -85,9 +82,9 @@
   .section5TopTextsWrapper h2 {
     font-size: 1.7rem;
   }
-  
+
   .section5TopTextsWrapper p {
     margin-top: 10px;
-    font-size: 1.0rem;
+    font-size: 1rem;
   }
 }

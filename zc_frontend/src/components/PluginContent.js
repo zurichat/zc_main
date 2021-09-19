@@ -6,7 +6,7 @@ import PluginLoader from './PluginLoader'
 import Welcome from './Welcome'
 import { PluginNavBar } from './verified-components'
 import faker from 'faker'
-import UserForm from './ReportFeature/User/Form';
+import UserForm from './ReportFeature/User/Form'
 
 export const PluginContent = () => {
   const { url } = useContext(URLContext)
@@ -43,7 +43,6 @@ export const PluginContent = () => {
         <PluginNavBar members={faked} />
         <div id="zc-plugin-root"></div>
         <PluginLoader />
-        
       </section>
       <UserForm />
       {!url && <Welcome />}
