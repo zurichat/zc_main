@@ -61,5 +61,6 @@ export default Section4PricingPage
 const DummyData = [
   {ok:'ok'},
   {yeah:'yeah'},
-  {now:'now'}
+  {now:'now'},
+  {then: 'then'}
 ]

@@ -1,6 +1,5 @@
 import Footer from '../../components/externalPagesComponents/Footer/Footer'
 import Message from '../../components/externalPagesComponents/Footer/Message'
-// import PricingTable from './components/PricingTable'
 import Section3 from './components/Section3'
 import Section4PricingPage from './components/Section4_pricing_page'
 import FAQ from '../FAQ'
@@ -12,7 +11,6 @@ function Pricing() {
     <div style={{justifyContent : 'center'}}>
       <SearchSuggestion />
       <PricingPageSection1 />
-      {/* <PricingTable /> */}
       <Section3 />
       <FAQ />
       <Section4PricingPage />

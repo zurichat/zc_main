@@ -52,7 +52,6 @@ html, body{
   flex: 1 1 1;
   box-sizing: content-box;
   height: 100%;
-  /* width: 100%; */
   padding: 1.4rem;
 }
 
@@ -74,6 +73,7 @@ html, body{
 .topPricingMiddle2 {
   flex: 1;
   height: 100%;
+  padding: 0 8px;
   margin-right: 1rem;
   border-right: 1px solid rgba(122, 122, 122, 0.5);
 }
@@ -113,8 +113,9 @@ html, body{
 }
 
 .topPricingButton {
-  display: block;
-  margin-top: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #00b87c;
   border: none;
   border-radius: .19rem;
@@ -194,6 +195,24 @@ html, body{
   html, body{
   font-size: 14px;
 }
+}
+
+@media only screen and (max-width: 1200px) {
+  html, body{
+  font-size: 10px;
+  background-color: white;
+}
+
+.topPricingPageBody {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 74.375rem;
+  height: 38rem;
+  box-shadow: 5px 15px 20px 5px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
 }
 
 @media only screen and (max-width: 780px) {
@@ -314,8 +333,9 @@ html, body{
 }
 
 .topPricingButton {
-  display: block;
-  margin-top: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #00b87c;
   border: none;
   border-radius: .19rem;
@@ -383,5 +403,111 @@ html, body{
   font-weight: bold;
   font-size: .65rem;
 }
+}
 
+
+/* Table Section Styling */
+.section2{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 75%;
+  margin: auto auto;
+  table-layout: fixed;
+}
+
+colgroup{
+  display: table-column-group;
+}
+
+col{
+  display: table-column;
+}
+
+.colSpec{
+  background-color: #f5f5f5;
+  min-width: 2rem;
+  max-width: 180px;
+}
+
+.pricingtableSpacer{
+  width: 1.5rem;
+}
+
+.tableContainer{
+  margin: 5%;
+  background-color: white;
+}
+
+thead{
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+  text-align: center;
+}
+
+table tr{
+  border: none;
+  color: #333333;
+}
+
+thead tr .th1col{
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+table th, table td{
+  padding: 1.25rem 1.5rem;
+}
+
+tbody tr{
+  border: none;
+  color: #333333;
+}
+
+tfoot{
+  text-align: center;
+}
+
+tfoot th{
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.pricingTableRowFooter th{
+  background-color: #ffffff;
+  font-weight: 400;
+  padding-top: 2rem;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.pricingTableRowFooter a{
+  color: #00b87c;
+  background: 0 0;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 1px solid #00b87c;
+  word-break: break-all;
+}
+
+.pricingTableRowFooter a:hover{
+  text-decoration: underline;
+  color: #00b87c;
+}
+
+.colStart{
+  text-align: start;
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .section2{
+    display: none;
+  }
 }
