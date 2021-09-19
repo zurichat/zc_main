@@ -48,6 +48,12 @@
   font-weight: 500;
   font-size: 1rem;
 }
+
+.buttonOutline > a {
+  font-weight: 500;
+  font-size: 1rem;
+  color: white;
+}
 .buttonFilled:hover {
   transition: background 350ms;
   background: #00b87c;
@@ -56,10 +62,10 @@
 }
 .buttonOutline {
   padding: 12px 18px;
-  background-color: transparent;
+  background: #00b87c;
   border: 1px solid white;
   border-radius: 3px;
-  color: #ffffff;
+  color: #000
 }
 .buttonOutline:hover {
   transition: background 350ms;

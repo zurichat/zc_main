@@ -1,5 +1,6 @@
 html, body{
   font-size: 16px;
+  background-color: white;
 }
 
 .topPricingSectionContainer {
@@ -124,6 +125,10 @@ html, body{
   color: #ffffff;
 }
 
+.link {
+  color: #ffffff;
+}
+
 .topPricingBottom {
   height: calc(100% - 8.8rem);
   display: flex;
@@ -178,6 +183,11 @@ html, body{
   font-style: normal;
   font-weight: bold;
   font-size: .65rem;
+}
+
+.topPricingBottomFoot span:hover{
+  text-decoration: underline;
+  color: #00b87c;
 }
 
 @media only screen and (max-width: 1380px) {

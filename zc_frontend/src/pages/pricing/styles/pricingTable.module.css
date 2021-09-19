@@ -1,6 +1,4 @@
-body{
-  background-color: white;
-}
+
 .section2 {
   display: flex;
   flex-direction: column;
@@ -8,23 +6,8 @@ body{
   align-items: center;
   margin: 3% 10%;
   background-color: white;
-
 }
 
-@media only screen and (max-width: 1200px) {
-  html{
-    background-color: white;
-  }
-  .section2{
-    display: none;
-  }
-
-  .table_container{
-    display: none;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
   .adjust {
     margin-top: 15px;
   }
@@ -35,7 +18,9 @@ body{
 
   .table_container {
     display: flex;
-    justify-content: flex-start;
+    align-items: center;
+    margin: 3% 30%;
+    justify-content: center;
     font-family: 'Lato', sans-serif;
   }
 
@@ -148,5 +133,14 @@ body{
 
   .section2 {
     display: block;
+  }
+
+@media only screen and (max-width: 1200px) {
+  .section2{
+    display: none;
+  }
+
+  .table_container{
+    display: none;
   }
 }

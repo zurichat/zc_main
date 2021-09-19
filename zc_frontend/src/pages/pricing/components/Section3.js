@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styles from '../styles/Section3.module.css'
 
 function Section3() {
@@ -16,9 +17,9 @@ function Section3() {
           comprehensive compliance ans assurance programs.
         </p>
 
-        <a className={styles.textLink} href="./">
+        <Link className={styles.textLink} href="./security">
           Learn more about security
-        </a>
+        </Link>
       </div>
     </section>
   )

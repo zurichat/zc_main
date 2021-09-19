@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './PricingPageSection1.css'
 import { Pricing } from './PricingDummyData'
 
@@ -23,7 +24,7 @@ const PricingPageSection1 = () => {
                       <p className="topPricingAmount">{p.topPricingAmount}</p>
                     </div>
 
-                    <button className="topPricingButton">Get Started</button>
+                    <button className="topPricingButton"><Link to='/login' className='link'>Get Started</Link></button>
 
                     <div className="topPricingBottom">
                       <div className="topPricingBottomHead">
@@ -48,7 +49,7 @@ const PricingPageSection1 = () => {
                       </div>
 
                       <div className="topPricingBottomFoot">
-                        <span>Learn more</span>
+                        <Link to='/'> <span>Learn more</span></Link>
                       </div>
                     </div>
                   </div>

@@ -1,9 +1,7 @@
-import React from 'react'
 import styles from '../styles/pricingTable.module.css'
 import TableRow from './TableRow'
 
-export default class PricingTable extends React.Component {
-  render() {
+export default function PricingTable() {
     return (
       <section className={styles.section2}>
         <div className={styles.table_container}>
@@ -230,4 +228,4 @@ export default class PricingTable extends React.Component {
       </section>
     )
   }
-}
+

@@ -14,6 +14,12 @@
   margin-right: auto;
   margin-left: auto;
 }
+
+.container > a:hover {
+  text-decoration: underline;
+  color: #00b87c;
+}
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;

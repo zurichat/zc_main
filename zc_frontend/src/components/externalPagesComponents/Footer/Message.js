@@ -22,10 +22,10 @@ const Message = ({ type }) => {
       <p>Whatever work you do,you can do it in Zuri Chat</p>
       <div className={styles.buttonSection}>
         <button className={styles.buttonFilled}>
-          <a href="/sales">Talk to Sales</a>
+          <a href="/contact-us">Talk to Sales</a>
         </button>
         <button className={styles.buttonOutline}>
-          <a href="/try-it-free">TRY IT FREE</a>
+          <a href="/login">TRY IT FREE</a>
         </button>
       </div>
       </div>
