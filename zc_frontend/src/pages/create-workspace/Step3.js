@@ -1,20 +1,29 @@
 import styled from 'styled-components';
-import { Button, Footer, FooterLink } from './CreateWorkSpace';
+import {  Footer, FooterLink } from './UserOrganization';
+import {Button} from './CreateWorkSpace';
 import LinkIcon from './assets/link.svg';
 import Oval from './assets/Oval.svg';
 import {Link,useRouteMatch} from 'react-router-dom';
 import Header from '../../components/externalPagesComponents/Header';
+import { useEffect,useState } from 'react';
 const Step3 = () => {
     let match = useRouteMatch();
+    const [user,setUser] = useState(null)
+    useEffect(() => {
+        const user = JSON.parse(sessionStorage.getItem('user'));
+        if(user) {
+            setUser(user)
+        }  
+    },[])
     return(
             <>
             <Header/>
             <Wrapper>
             <TopSpanWrapper>
             <TopSpans>
-             <SignedInAs>
-                 Signed in as adimchisylvester2@gmail.com
-             </SignedInAs>
+                {user ? <SignedInAs>
+                 Signed in as {user.email}
+             </SignedInAs>:null}
              <Change>
                  Change
              </Change>

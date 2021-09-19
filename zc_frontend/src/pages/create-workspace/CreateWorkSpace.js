@@ -1,35 +1,47 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import RightArrow from './assets/right-arrow.png';
-import Oval from './assets/Oval.svg';
 import HngLogo from './assets/hng.png';
-// import Link from './assets/link.svg';
-import ZuriLogo from './assets/zuri.png';
+
 import Active from './assets/active.svg';
 import Pic from './assets/pic.png';
 import Header from '../../components/externalPagesComponents/Header';
-import { useHistory,useRouteMatch,Link,Route } from 'react-router-dom';
+import { useRouteMatch,Link} from 'react-router-dom';
+import UserOrganization from "./UserOrganization";
 
 
 
 const CreateWorkspace = () => {
-    const {path,url} = useRouteMatch();
-    console.log(path,url);
-useEffect(() => {
-    const user = JSON.parse(sessionStorage.getItem('user'));
-    console.log(user)
-    const {email,id,token} = user;
-    const config = {
-        headers: { Authorization: `Bearer ${token}` }
-    };
-    axios.get(`https://api.zuri.chat/users/${email}/organizations`,config)
-    .then(res => console.log(res));
-})
+    const {url} = useRouteMatch();
+    const[organizations,setOrganizations] = useState([])
+    const [user,setUser] = useState(null);
+
+
+    useEffect(()=> {
+        const user = JSON.parse(sessionStorage.getItem('user'));
+        console.log(user)
+        if(user) {
+            setUser(user);
+            console.log(user)
+            const {email,id,token} = user;
+            const config = {
+                headers: { Authorization: `Bearer ${token}` }
+            }
+            async function fetchData(){
+                const result = await axios.get(`https://api.zuri.chat/users/${email}/organizations`,config)
+                const {data} = result.data;
+                console.log(data)
+                setOrganizations(data);
+            }
+           fetchData();
+        }
+       
+    },[]);
     return(
         <Wrapper>
             <Header />
-            <TopSection>
+            <TopSection style={user === true ? {paddingBottom:"0"}:{paddingBottom:"50px"}}>
             <TextSection>
             <Heading>
                 Create a new workspace
@@ -58,44 +70,7 @@ useEffect(() => {
                 <img src={Pic} alt="" />
             </ImageSection>
             </TopSection>
-            <BottomSection>
-                <Or>Or</Or>
-                <Header2>Open a workspace</Header2>
-                <SelectWorkSpace>
-                    <p style={{paddingLeft:"10px"}}>Workspaces for <strong style={{fontWeight:"700"}}>adimchisylvester2@gmail.com</strong></p>
-                    <Hng>
-                    <img src={HngLogo} alt=""/>
-                    <Organization>
-                        <Logo_Members>
-                    <OrganizationName>HNGI8</OrganizationName>
-                    <Members>1464 members</Members>
-                    </Logo_Members>
-                    </Organization>
-                    <Arrow><img src={RightArrow}/></Arrow>
-                </Hng>
-                <Hng>
-                    <img src={ZuriLogo}/>
-                    <Organization>
-                        <Logo_Members>
-                    <OrganizationName>Zuri X I4G Training </OrganizationName>
-                    <Members>21484 members</Members>
-                    </Logo_Members>
-                        
-                    </Organization>
-                    <Arrow><img src={RightArrow}/></Arrow>
-                </Hng>
-                </SelectWorkSpace>
-                <TryDifferentWrapper>
-                    <TextBottom>Not seeing your workspace?</TextBottom>
-                    <SecondText>Try a different email</SecondText>
-                </TryDifferentWrapper>
-                <Footer>
-                    <FooterLink>Privacy</FooterLink>
-                    <FooterLink>Terms</FooterLink>
-                    <FooterLink>Help Centre</FooterLink>
-                    <FooterLink>Contac Us</FooterLink>
-                </Footer>
-            </BottomSection>
+            {user ? <UserOrganization user={user} organizations={organizations}/>:null }
         </Wrapper>
         
     )
@@ -191,119 +166,7 @@ max-width: 325px;
 line-height: 18.78px;
 margin-top:9px;
 `
-const BottomSection = styled.section`
-padding-top: 133px;
-display:flex;
-flex-direction:column;
-align-items: center;
-@media (max-width:35rem){
-    padding-top:101px;
-    padding-left:24px;
-    padding-right: 24px;
-}
 
-`
-const Or = styled.span`
-font-weight: 600;
-font-family: "Lato",sans-serif;
-font-size: ${18/16}rem;
-color: #333333;
-margin-bottom: 14px;
-`
-const Header2 = styled.h2`
-color: #333333;
-font-family: "Lato",sans-serif;
-font-weight: 700;
-font-size: ${24/16}rem;
-margin-bottom: 42px;
-`;
-const SelectWorkSpace = styled.div`
-width: 538px;
-border: 1px solid hsla(0,0%,20%,0.51);
-padding-top: 16px;
-margin-bottom: 28px;
-
-& > p {
-   font-size :${18/16}rem;
-   font-weight: 400;
-   color: #333333;
-   font-family:"Lato",sans-serif;
-   margin-bottom: 16px;
-   padding-right: 10px;
-   text-align:center;
-}
-@media (max-width:35rem){
-    width:100%;
-}
-` 
-const Hng = styled.div`
-border-top: 1px solid hsla(0,0%,20%,0.51);
-padding-top: 21px;
-padding-bottom: 21px;
-padding-left: 10px;
-padding-right: 36px;
-display: flex;
-gap: 19px;
-`
-const OrganizationName = styled.span`
-font-weight: 600;
-font-size:${20/16}rem;
-font-family: "Lato",sans-serif;
-color: #333333;
-`
-const Members = styled(OrganizationName)`
-font-size:1rem;
-font-weight: 400;
-`
-const Organization = styled.div`
-display:flex;
-flex-direction:row;
-
-`
-const Logo_Members = styled.div`
-display: flex;
-flex-direction: column;
-`
-const TryDifferentWrapper = styled.div`
-display:flex;
-align-items:baseline;
-gap:5px;
-padding-bottom: 96.5px;
-@media (max-width:35rem) {
-    flex-direction: column;
-    align-items:center;
-}
-`
-const TextBottom = styled.p`
-font-weight:400;
-font-size:${18 / 16}rem;
-font-family: "Lato" sans-serif;
-`
-const SecondText = styled(TextBottom)`
-color:#00B87C;
-font-weight:600;
-`
-export const Footer = styled.footer`
-margin:0;
-display:flex;
-gap:28px;
-padding-bottom:35px;
-`
-export const FooterLink = styled.a`
-text-decoration:none;
-font-weight:700;
-color:#6a6a6a;
-font-family:"Lato",sans-serif;
-@media (max-width:35rem){
-    font-size:${14/16}rem;
-}
-`
-const Arrow = styled.div`
-margin-left:auto;
-& > img {
-display:block; 
-}
-`
 const ImageSection = styled.div`
 @media(max-width:35rem) {
     margin-bottom:41px;
