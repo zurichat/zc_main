@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Login from './pages/login'
 import SignUp from './pages/signup'
 import LandingPage from './pages/LandingPage'
+import Settings from './pages/settings'
 
 const App = () => (
   <BrowserRouter>
@@ -18,6 +19,9 @@ const App = () => (
       {/* <Route path="/features">
           <Features />
         </Route> */}
+      <Route path="/settings" exact>
+        <Settings />
+      </Route>
     </Switch>
   </BrowserRouter>
 )
