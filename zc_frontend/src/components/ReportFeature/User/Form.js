@@ -54,7 +54,6 @@ export const UserForm = ()=> {
 
     return (
         <>
-
         {step===1 ?
             <AdminSetup
             nextStep={nextStep}

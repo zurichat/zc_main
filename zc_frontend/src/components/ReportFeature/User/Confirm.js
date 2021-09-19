@@ -54,7 +54,7 @@ export  const Confirm = (props) => {
 
         return (
             <div className="form-container">
-                <h1 className="mb-5">Confirm</h1>
+                <h1 className="mb-5 head1">Confirm</h1>
                 <ul className="list-group">
                     <li className="list-group-item"><b>Name</b>: {email}</li>
                     <li className="list-group-item"><b>Offence</b>: {offence}</li>
