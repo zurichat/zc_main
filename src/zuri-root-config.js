@@ -3,7 +3,8 @@ import { registerApplication, start } from 'single-spa'
 const pluginRoutes = [
   location => location.pathname.startsWith('/chess'),
   location => location.pathname.startsWith('/sales'),
-  location => location.pathname.startsWith('/music')
+  location => location.pathname.startsWith('/music'),
+  location => location.pathname.startsWith('/deadlines')
 ]
 
 registerApplication({
@@ -39,6 +40,12 @@ registerApplication({
   name: '@zuri/zuri-plugin-music',
   app: () => System.import('@zuri/zuri-plugin-music'),
   activeWhen: [location => location.pathname.startsWith('/music')]
+})
+
+registerApplication({
+  name: '@zuri/zuri-plugin-deadlines',
+  app: () => System.import('@zuri/zuri-plugin-deadlines'),
+  activeWhen: [location => location.pathname.startsWith('/deadlines')]
 })
 
 start({
