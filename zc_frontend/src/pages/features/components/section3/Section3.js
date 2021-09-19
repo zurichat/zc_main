@@ -1,48 +1,92 @@
-import css from '../../styles/section3.module.css'
+import React from 'react'
+import styles from '../../features/styles/Features.module.css'
+import hashtag from '../../../assets/hashtag.png'
+import holiday from '../../../assets/holiday.png'
+import deadline from '../../../assets/deadline.png'
+import chat from '../../../assets/chat.png'
+import todolist from '../../../assets/todolist.png'
 
 const Section3 = () => {
   return (
-    <div className={css.featuresContainer}>
-      <div className={css.header}>
-        <h2>Remote work made easier</h2>
-        <p>
-          work comfortably and efficiently at home with zuri chat. Connect with
-          colleagues and teams to make fast decisions and get great outputs.
+    <div className={styles.real}>
+      <div id="featuresSection">
+        <h3 className={styles.remote}>
+          Working remotely, more intriguing than ever
+        </h3>
+        <p className={styles.work}>
+          Zuri chat is where work meets fun. Activate body and mind, maintain
+          high productivity levels, connect and interact
+          <br />
+          with your team comfortable and efficiently, making quick decisions and
+          getting great outcomes.
         </p>
       </div>
-      <div className={css.featuresSection}>
-        <div className={css.featureCard}>
-          <img src={`/channels.svg`} alt="Channels Icon" />
-          <h3>Channels</h3>
+      <div className={styles.featuresSection}>
+        <div className={styles.featureCard}>
+          <div className={styles.imagea}>
+            <img src={hashtag} alt="hashtag" className={styles.hashtag} />
+          </div>
+          <h3>Channels </h3>
           <p>
-            Increase level of organisation in your team focused with cetralized
-            spaces for conversations
+            Increase level of <br />
+            organization in your <br />
+            team focused with <br />
+            centralized spaces for <br />
+            conversions
           </p>
         </div>
-        <div className={css.featureCard}>
-          <img src={`/todolist.svg`} alt="To do List Icon" />
-          <h3>To do list</h3>
+        <div className={styles.featureCard}>
+          <div className={styles.imageh}>
+            <img src={holiday} alt="holiday" className={styles.holiday} />
+          </div>
+          <h3 className={styles.com}>
+            Company Holiday
+            <br /> Calendar
+          </h3>
           <p>
-            Get your tasks organized with the to-do list feature and never
-            forget to do anything
+            Add holidays and set
+            <br /> reminders. See all <br />
+            holidays in one view
           </p>
         </div>
-        <div className={css.featureCard}>
-          <img src={`/calendar.svg`} alt="Calendar Icon" />
-          <h3>Company Holiday Calendar</h3>
-          <p>Never miss an holiday and get the rest you deserve</p>
+        <div className={styles.featureCard}>
+          <div className={styles.imaged}>
+            <img src={deadline} alt="deadline" className={styles.deadline} />
+          </div>
+          <h3>Company deadline</h3>
+          <p>
+            Meet up with deadlines
+            <br />
+            with the company
+            <br />
+            deadline feature
+          </p>
         </div>
-        <div className={css.featureCard}>
-          <img src={`/chats.svg`} alt="Chats Icon" />
+        <div className={styles.featureCard}>
+          <div className={styles.imagec}>
+            <img src={chat} alt="chat" className={styles.chat} />
+          </div>
           <h3>Quick Reply App</h3>
-          <p>Get quick replies in your DMs as fast as possible</p>
-        </div>
-        <div className={css.featureCard}>
-          <img src={`/deadline.svg`} alt="Deadline Icon" />
-          <h3>Company Important Deadline</h3>
           <p>
-            Never miss a company deadline with our company Important deadline
-            feature.
+            Swift replies to your <br />
+            messages in your DMs
+          </p>
+        </div>
+        <div className={styles.featureCard}>
+          <div className={styles.imaget}>
+            <img src={todolist} alt="To do list" className={styles.todolist} />
+          </div>
+          <h3>To Do List</h3>
+          <p>
+            Get your task organized
+            <br />
+            with the to do list
+            <br />
+            feature ensuring your
+            <br />
+            most urgent tasks are
+            <br />
+            duly attended to.
           </p>
         </div>
       </div>
