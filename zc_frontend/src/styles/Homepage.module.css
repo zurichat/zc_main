@@ -375,6 +375,7 @@ button {
   .hero_left_btn {
     padding: 0.75rem;
   }
+
   /* * COMPANY BANNER ----------------------------- */
   .cbp {
     font-size: 1rem;
@@ -386,7 +387,6 @@ button {
   .features {
     padding: 4rem var(--page-pad-mob) 7rem var(--page-pad-mob);
   }
-
   .ft_row {
     flex-direction: column;
     margin-bottom: 6rem;
