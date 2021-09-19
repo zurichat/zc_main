@@ -1,100 +1,113 @@
-.sectionThree {
-  margin: 130px 0;
-  /* padding: 70px 0; */
-  width: 100%;
-}
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
 
-.sectionTopContentContainer {
-  margin: 0 auto;
-  width: 50%;
+* {
+  font-family: "Lato", sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+button:hover {
+  cursor: pointer;
+}
+.Section3 h2 {
+  font-size: 36px;
+  margin: 0;
   text-align: center;
 }
-
-.sectionTopContentContainer h3 {
-  font-weight: 700;
-  font-size: 2rem;
-  line-height: 43px;
+.Section3 p {
+  padding: 0px 30px 20px 30px;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
 }
-
-.sectionTopContentContainer p {
-  font-weight: 400;
-  font-size: 1rem;
-}
-
-.sectionMiddleContentContainer {
-  margin: 60px auto;
-  padding: 30px;
-  width: 90%;
+.section3Cards {
+  padding: 60px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  grid-gap: 20px;
+  grid-template-columns: auto auto auto;
 }
-
-.sectionBottomContentContainer {
-  margin: 0 auto;
-  width: 50%;
-  text-align: center;
-}
-
-.sectionBottomContentContainer p {
-  margin-bottom: 20px;
-  font-weight: 700;
-  font-size: 1.2rem;
-}
-
-.sectionBottomContentContainer a {
-  margin: 20px 0;
-  padding: 16px 65px;
-  color: #fff !important;
-  text-decoration: none;
-  /* height: 70px; */
-  background: #f44336;
+.section3Cards div {
+  background-color: white;
+  padding: 20px;
+  border: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
   border-radius: 3px;
 }
-
-/* Mediaqueries For Smaller Screens  */
-@media (max-width: 900px) {
-  .sectionTopContentContainer {
-    width: 75%;
+.section3Cards div h3 {
+  font-size: 20px;
+}
+.section3Cards div p {
+  padding: 0;
+  font-size: 16px;
+  padding-right: 10px;
+  text-align: left;
+}
+.section3Cards .languages {
+  padding: 0;
+  margin: 35px 0px 12px 0px;
+  box-shadow: none;
+}
+hr {
+  position: static;
+  margin-right: 50px;
+  border: 1px solid #999999;
+}
+.section3Cards .languages li {
+  list-style: none;
+  font-size: 16px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  margin-right: 15px;
+}
+.Section4 {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.Section4 .regbtn {
+  padding: 20px 88.5px 20px 88.5px;
+  font-size: 22px;
+  border: none;
+  background-color: #00b87c;
+  color: white;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 1085px) {  
+  .section3Cards {
+    padding: 30px;
   }
-
-  .sectionTopContentContainer h3 {
-    font-size: 1.8rem;
-  }
-
-  .sectionTopContentContainer p {
-    font-size: 0.8rem;
-  }
-
-  .sectionMiddleContentContainer {
-    width: 95%;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .sectionBottomContentContainer {
-    width: 70%;
-    text-align: center;
-  }
-
-  .sectionBottomContentContainer p {
-    font-size: 1.1rem;
+}
+@media screen and (max-width: 850px) {
+  .section3Cards {
+    padding: 30px;
+    grid-template-columns: auto auto;
   }
 }
 
-@media (max-width: 500px) {
-  .sectionMiddleContentContainer {
-    width: 98%;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 15px;
+@media screen and (max-width: 500px) {
+  .Section3 h2 {
+    font-size: 24px;
   }
-
-  .sectionBottomContentContainer {
-    width: 88%;
+  .Section3 p {
+    font-size: 16px;
+  }
+  .section3Cards {
+    padding: 30px;
+    grid-template-columns: auto;
+  }
+  .section3Cards div p {
+    padding: 0;
+    font-size: 14px;
+    padding-right: 10px;
+    text-align: left;
+  }
+  .Section4 p {
+    font-size: 22px;
     text-align: center;
   }
-
-  .sectionBottomContentContainer p {
-    font-size: 1rem;
+  .Section4 button {
+    padding: 16px 97.5px 16px 97.5px;
+    font-size: 18px;
   }
 }

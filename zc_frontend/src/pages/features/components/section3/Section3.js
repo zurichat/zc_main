@@ -1,4 +1,4 @@
-import css from '../styles/section3.module.css'
+import css from '../../styles/section3.module.css'
 
 const Section3 = () => {
   return (

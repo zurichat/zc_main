@@ -48,6 +48,9 @@ const Login = () => {
         const { data, message } = response.data
 
         //Store token in localstorage
+        sessionStorage.setItem('token', data.user.token)
+
+        //Store token in localstorage
         sessionStorage.setItem('session_id', data.session_id)
 
         //Store user copy in localstorage
