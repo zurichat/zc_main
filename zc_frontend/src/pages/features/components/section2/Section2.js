@@ -28,7 +28,9 @@ const Section2 = () => {
            </div>
           </div>
         </div>
-    )
+      </div>
+    </div>
+  )
 }
 
-export default Section2;
+export default Section2
