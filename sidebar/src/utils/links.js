@@ -10,5 +10,9 @@ export const links = [
   {
     name: 'Sales',
     href: '/sales'
+  },
+  {
+    name: 'Deadlines',
+    href: '/deadlines'
   }
 ]
