@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
 
 .section4 {
-  margin-top: 100px;
+  margin-top: 200px;
   font-family: 'Lato', sans-serif;
 }
 
@@ -34,8 +34,8 @@
   width: 85%;
   font-style: normal;
   font-weight: bold;
-  font-size: 2.5rem;
-  line-height: 130%;
+  font-size: 2.4rem;
+  line-height: 52px;
   color: #242424;
 }
 
@@ -43,8 +43,8 @@
   margin-top: 30px;
   font-style: normal;
   font-weight: 500;
-  font-size: 1.5rem;
-  line-height: 130%;
+  font-size: 1.55rem;
+  line-height: 39px;
   color: #3a3a3a;
 }
 
