@@ -17,11 +17,11 @@ const DownloadsAndroid = () => {
         <div className={downloadStyles.container}>
           <div className={downloadStyles.containerfluid}>
             <p className={downloadStyles.zuritext}>Zuri Chat for Android</p>
-            <a href={Apk} download="release.apk">
+            {/* <a href={Apk} download="release.apk">
               <div className={downloadStyles.playstorediv}>
                 <img src={PlayStorelogo} alt="" />
               </div>
-            </a>
+            </a> */}
             <p className={downloadStyles.newtext}>What's new</p>
             <div className={downloadStyles.phonediv}>
               <img src={PhoneDM} alt="" className={downloadStyles.PhoneDM} />

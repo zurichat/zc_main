@@ -66,18 +66,18 @@ const App = () => (
         <MarketPlace />
       </Route>
       <Route path="/documentation" exact>
-          <PluginLoaderProvider>
-            <ApiDocs />
-          </PluginLoaderProvider>
-        </Route>
+        <PluginLoaderProvider>
+          <ApiDocs />
+        </PluginLoaderProvider>
+      </Route>
       {/* Api docs */}
-       {/* <Route exact path="/documentation/users">
+      {/* <Route exact path="/documentation/users">
           <UsersApi />
         </Route> */}
-        {/* <Route exact path="/documentation/auth">
+      {/* <Route exact path="/documentation/auth">
           <AuthApi />
         </Route> */}
-        {/*<Route path="/documentation/organisation">
+      {/*<Route path="/documentation/organisation">
           <OrganisationApi />
         </Route>
         <Route path="/documentation/marketplace">
