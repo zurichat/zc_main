@@ -7,8 +7,8 @@ const Section3 = () => {
         <h1>Join Our Free Internship</h1>
         <p>
           Zuri Internship is a 100% free, remote and fast paced training for
-          young professionals seeking to improve their tech skills and boost their
-          resume.
+          young professionals seeking to improve their tech skills and boost
+          their resume.
         </p>
         <div className={`${styles.section3Cards}`}>
           <div>
