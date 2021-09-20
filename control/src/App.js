@@ -27,12 +27,16 @@ import { PluginLoaderProvider } from './context/PluginLoaderState'
 import Download from './pages/download'
 import Careers from './pages/careers'
 import MarketPlace from './pages/marketplace/marketplace'
+import Blogs from './pages/blogs'
 
 const App = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/" exact>
         <LandingPage />
+      </Route>
+      <Route path="/blogs">
+        <Blogs />
       </Route>
       <Route path="/login">
         <Login />
