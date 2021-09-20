@@ -6,8 +6,8 @@ info:
   contact:
     email: developer@zuri.chat
 servers:
-  - description: Zuri Chat Core API 
-    url: "https://api.zuri.chat/"
+  - description: Zuri Chat Core API
+    url: 'https://api.zuri.chat/'
 
 paths:
   /organizations:
@@ -19,14 +19,14 @@ paths:
         - cookieAuth: []
         - bearerAuth: []
       responses:
-        "200":
-          $ref: "#/components/responses/getOrgsResponse"
+        '200':
+          $ref: '#/components/responses/getOrgsResponse'
 
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
 
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+        '500':
+          $ref: '#/components/responses/InternalServerError'
     post:
       tags:
         - Organization
@@ -35,20 +35,20 @@ paths:
         - cookieAuth: []
         - bearerAuth: []
       requestBody:
-        $ref: "#/components/requestBodies/orgCreateRequestBody"
+        $ref: '#/components/requestBodies/orgCreateRequestBody'
 
       responses:
-        "201":
-          $ref: "#/components/responses/resourceCreated"
+        '201':
+          $ref: '#/components/responses/resourceCreated'
 
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
 
-        "400":
-          $ref: "#/components/responses/BadRequest"
+        '400':
+          $ref: '#/components/responses/BadRequest'
 
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /organizations/{organization_id}:
     get:
@@ -59,19 +59,19 @@ paths:
         - cookieAuth: []
         - bearerAuth: []
       parameters:
-        - $ref: "#/components/parameters/organization_id"
+        - $ref: '#/components/parameters/organization_id'
       responses:
-        "200":
-          $ref: "#/components/responses/getOrgResponse"
+        '200':
+          $ref: '#/components/responses/getOrgResponse'
 
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
 
-        "400":
-          $ref: "#/components/responses/BadRequest"
+        '400':
+          $ref: '#/components/responses/BadRequest'
 
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+        '500':
+          $ref: '#/components/responses/InternalServerError'
     delete:
       tags:
         - Organization
@@ -80,20 +80,20 @@ paths:
         - cookieAuth: []
         - bearerAuth: []
       parameters:
-        - $ref: "#/components/parameters/organization_id"
+        - $ref: '#/components/parameters/organization_id'
 
       responses:
-        "200":
-          $ref: "#/components/responses/resourceDeleted"
+        '200':
+          $ref: '#/components/responses/resourceDeleted'
 
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
 
-        "400":
-          $ref: "#/components/responses/BadRequest"
+        '400':
+          $ref: '#/components/responses/BadRequest'
 
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /organizations/{organization_id}/url:
     patch:
@@ -104,25 +104,25 @@ paths:
         - cookieAuth: []
         - bearerAuth: []
       parameters:
-        - $ref: "#/components/parameters/organization_id"
+        - $ref: '#/components/parameters/organization_id'
       requestBody:
         description: The structure for the entire request
         content:
-          "application/json":
+          'application/json':
             schema:
               type: object
-              example: { "url": "https://hngworkspace.zuri.chat" }
+              example: { 'url': 'https://hngworkspace.zuri.chat' }
       responses:
-        "200":
-          $ref: "#/components/responses/resourceUpdated"
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
+        '200':
+          $ref: '#/components/responses/resourceUpdated'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
 
-        "400":
-          $ref: "#/components/responses/BadRequest"
+        '400':
+          $ref: '#/components/responses/BadRequest'
 
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /organizations/url/{workspace_url}:
     get:
@@ -138,19 +138,19 @@ paths:
           required: true
           schema:
             type: string
-            example: "hngi8.zuri.chat"
+            example: 'hngi8.zuri.chat'
       responses:
-        "200":
-          $ref: "#/components/responses/getOrgResponse"
+        '200':
+          $ref: '#/components/responses/getOrgResponse'
 
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
 
-        "400":
-          $ref: "#/components/responses/BadRequest"
+        '400':
+          $ref: '#/components/responses/BadRequest'
 
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /organizations/{organization_id}/name:
     patch:
@@ -161,25 +161,25 @@ paths:
         - cookieAuth: []
         - bearerAuth: []
       parameters:
-        - $ref: "#/components/parameters/organization_id"
+        - $ref: '#/components/parameters/organization_id'
       requestBody:
         description: The structure for the entire request
         content:
-          "application/json":
+          'application/json':
             schema:
               type: object
-              example: { "organization_name": "hngworkspace" }
+              example: { 'organization_name': 'hngworkspace' }
       responses:
-        "200":
-          $ref: "#/components/responses/resourceUpdated"
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
+        '200':
+          $ref: '#/components/responses/resourceUpdated'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
 
-        "400":
-          $ref: "#/components/responses/BadRequest"
+        '400':
+          $ref: '#/components/responses/BadRequest'
 
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /organizations/{organization_id}/logo:
     patch:
@@ -190,25 +190,25 @@ paths:
         - cookieAuth: []
         - bearerAuth: []
       parameters:
-        - $ref: "#/components/parameters/organization_id"
+        - $ref: '#/components/parameters/organization_id'
       requestBody:
         description: The structure for the entire request
         content:
-          "application/json":
+          'application/json':
             schema:
               type: object
-              example: { "url": "https://image.storage/image.png" }
+              example: { 'url': 'https://image.storage/image.png' }
       responses:
-        "200":
-          $ref: "#/components/responses/resourceUpdated"
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
+        '200':
+          $ref: '#/components/responses/resourceUpdated'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
 
-        "400":
-          $ref: "#/components/responses/BadRequest"
+        '400':
+          $ref: '#/components/responses/BadRequest'
 
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /organizations/{organization_id}/plugins:
     get:
@@ -219,19 +219,19 @@ paths:
         - cookieAuth: []
         - bearerAuth: []
       parameters:
-        - $ref: "#/components/parameters/organization_id"
+        - $ref: '#/components/parameters/organization_id'
       responses:
-        "200":
-          $ref: "#/components/responses/getPluginsResponse"
+        '200':
+          $ref: '#/components/responses/getPluginsResponse'
 
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
 
-        "400":
-          $ref: "#/components/responses/BadRequest"
+        '400':
+          $ref: '#/components/responses/BadRequest'
 
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+        '500':
+          $ref: '#/components/responses/InternalServerError'
     post:
       tags:
         - Organization-Plugin
@@ -240,34 +240,34 @@ paths:
         - cookieAuth: []
         - bearerAuth: []
       parameters:
-        - $ref: "#/components/parameters/organization_id"
+        - $ref: '#/components/parameters/organization_id'
       requestBody:
         description: The structure for the entire request
         content:
-          "application/json":
+          'application/json':
             schema:
               properties:
                 plugin_id:
                   type: integer
                   description: This is the id of the plugin to be added to the organization
-                  example: "6137d69b21d3c78fc9a84bdf"
+                  example: '6137d69b21d3c78fc9a84bdf'
                 user_id:
                   type: integer
                   description: This is the id of the user adding a plugin to the organization
-                  example: "6137d69b21d3c78fc9a84bdf"
+                  example: '6137d69b21d3c78fc9a84bdf'
       responses:
-        "201":
-          $ref: "#/components/responses/resourceCreated"
+        '201':
+          $ref: '#/components/responses/resourceCreated'
 
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
 
-        "400":
-          $ref: "#/components/responses/BadRequest"
+        '400':
+          $ref: '#/components/responses/BadRequest'
 
-        "500":
-          $ref: "#/components/responses/InternalServerError"
-  
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
   /organizations/{organization_id}/members:
     get:
       tags:
@@ -284,19 +284,19 @@ paths:
               - $ref: '#/components/parameters/first_name'
               - $ref: '#/components/parameters/last_name'
               - $ref: '#/components/parameters/email'
-        - $ref: "#/components/parameters/organization_id"
+        - $ref: '#/components/parameters/organization_id'
       responses:
-        "200":
-          $ref: "#/components/responses/getMembersResponse"
+        '200':
+          $ref: '#/components/responses/getMembersResponse'
 
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
 
-        "400":
-          $ref: "#/components/responses/BadRequest"
+        '400':
+          $ref: '#/components/responses/BadRequest'
 
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+        '500':
+          $ref: '#/components/responses/InternalServerError'
     post:
       tags:
         - Organization-Member
@@ -305,29 +305,29 @@ paths:
         - cookieAuth: []
         - bearerAuth: []
       parameters:
-        - $ref: "#/components/parameters/organization_id"
+        - $ref: '#/components/parameters/organization_id'
       requestBody:
         description: The structure for the entire request
         content:
-          "application/json":
+          'application/json':
             schema:
               properties:
                 user_email:
                   type: integer
                   description: This is the email of the user to be added to the organization
-                  example: "user@email.com"
+                  example: 'user@email.com'
       responses:
-        "201":
-          $ref: "#/components/responses/resourceCreated"
+        '201':
+          $ref: '#/components/responses/resourceCreated'
 
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
 
-        "400":
-          $ref: "#/components/responses/BadRequest"
+        '400':
+          $ref: '#/components/responses/BadRequest'
 
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /organizations/{organization_id}/members/{member_id}:
     get:
@@ -338,20 +338,20 @@ paths:
         - cookieAuth: []
         - bearerAuth: []
       parameters:
-        - $ref: "#/components/parameters/organization_id"
-        - $ref: "#/components/parameters/member_id"
+        - $ref: '#/components/parameters/organization_id'
+        - $ref: '#/components/parameters/member_id'
       responses:
-        "200":
-          $ref: "#/components/responses/getMemberResponse"
+        '200':
+          $ref: '#/components/responses/getMemberResponse'
 
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
 
-        "400":
-          $ref: "#/components/responses/BadRequest"
+        '400':
+          $ref: '#/components/responses/BadRequest'
 
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+        '500':
+          $ref: '#/components/responses/InternalServerError'
     put:
       tags:
         - Organization-Member
@@ -361,13 +361,13 @@ paths:
         - cookieAuth: []
         - bearerAuth: []
       parameters:
-        - $ref: "#/components/parameters/organization_id"
-        - $ref: "#/components/parameters/member_id"
+        - $ref: '#/components/parameters/organization_id'
+        - $ref: '#/components/parameters/member_id'
       requestBody:
         description: The structure for the entire request
         required: true
         content:
-          "application/json":
+          'application/json':
             schema:
               properties:
                 data:
@@ -375,16 +375,16 @@ paths:
                   description: Data to be updated
                   example: 2
       responses:
-        "200":
-          $ref: "#/components/responses/resourceUpdated"
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
+        '200':
+          $ref: '#/components/responses/resourceUpdated'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
 
-        "400":
-          $ref: "#/components/responses/BadRequest"
+        '400':
+          $ref: '#/components/responses/BadRequest'
 
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+        '500':
+          $ref: '#/components/responses/InternalServerError'
     delete:
       tags:
         - Organization-Member
@@ -394,19 +394,19 @@ paths:
         - cookieAuth: []
         - bearerAuth: []
       parameters:
-        - $ref: "#/components/parameters/organization_id"
-        - $ref: "#/components/parameters/member_id"
+        - $ref: '#/components/parameters/organization_id'
+        - $ref: '#/components/parameters/member_id'
       responses:
-        "200":
-          $ref: "#/components/responses/resourceUpdated"
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
+        '200':
+          $ref: '#/components/responses/resourceUpdated'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
 
-        "400":
-          $ref: "#/components/responses/BadRequest"
+        '400':
+          $ref: '#/components/responses/BadRequest'
 
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /organizations/{organization_id}/members/{member_id}/status:
     patch:
@@ -417,29 +417,29 @@ paths:
         - cookieAuth: []
         - bearerAuth: []
       parameters:
-        - $ref: "#/components/parameters/organization_id"
-        - $ref: "#/components/parameters/member_id"
+        - $ref: '#/components/parameters/organization_id'
+        - $ref: '#/components/parameters/member_id'
       requestBody:
         description: The structure for the entire request
         content:
-          "application/json":
+          'application/json':
             schema:
               properties:
                 status:
                   type: string
                   description: Status to be updated
-                  example: "Available"
+                  example: 'Available'
       responses:
-        "200":
-          $ref: "#/components/responses/resourceUpdated"
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
+        '200':
+          $ref: '#/components/responses/resourceUpdated'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
 
-        "400":
-          $ref: "#/components/responses/BadRequest"
+        '400':
+          $ref: '#/components/responses/BadRequest'
 
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /organizations/{organization_id}/members/{member_id}/photo:
     patch:
@@ -450,26 +450,26 @@ paths:
         - cookieAuth: []
         - bearerAuth: []
       parameters:
-        - $ref: "#/components/parameters/organization_id"
-        - $ref: "#/components/parameters/member_id"
+        - $ref: '#/components/parameters/organization_id'
+        - $ref: '#/components/parameters/member_id'
       requestBody:
         description: The structure for the entire request
         content:
-          "application/json":
+          'application/json':
             schema:
               type: object
-              example: { "image_utl": "https://image.storage/image.png" }
+              example: { 'image_utl': 'https://image.storage/image.png' }
       responses:
-        "200":
-          $ref: "#/components/responses/resourceUpdated"
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
+        '200':
+          $ref: '#/components/responses/resourceUpdated'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
 
-        "400":
-          $ref: "#/components/responses/BadRequest"
+        '400':
+          $ref: '#/components/responses/BadRequest'
 
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /organizations/{organization_id}/members/{member_id}/profile:
     patch:
@@ -480,29 +480,29 @@ paths:
         - cookieAuth: []
         - bearerAuth: []
       parameters:
-        - $ref: "#/components/parameters/organization_id"
-        - $ref: "#/components/parameters/member_id"
+        - $ref: '#/components/parameters/organization_id'
+        - $ref: '#/components/parameters/member_id'
       requestBody:
         description: The structure for the entire request
         content:
-          "application/json":
+          'application/json':
             schema:
               properties:
                 data:
                   type: string
                   description: Data to be updated
       responses:
-        "200":
-          $ref: "#/components/responses/resourceUpdated"
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
+        '200':
+          $ref: '#/components/responses/resourceUpdated'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
 
-        "400":
-          $ref: "#/components/responses/BadRequest"
+        '400':
+          $ref: '#/components/responses/BadRequest'
 
-        "500":
-          $ref: "#/components/responses/InternalServerError"
-  
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
   /organizations/{organization_id}/members/{member_id}/presence:
     post:
       tags:
@@ -512,20 +512,20 @@ paths:
         - cookieAuth: []
         - bearerAuth: []
       parameters:
-        - $ref: "#/components/parameters/organization_id"
-        - $ref: "#/components/parameters/member_id"
+        - $ref: '#/components/parameters/organization_id'
+        - $ref: '#/components/parameters/member_id'
       responses:
-        "200":
-          $ref: "#/components/responses/resourceUpdated"
-        
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
+        '200':
+          $ref: '#/components/responses/resourceUpdated'
 
-        "400":
-          $ref: "#/components/responses/BadRequest"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
 
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   /organizations/{organization_id}/members/{member_id}/settings:
     patch:
@@ -536,27 +536,36 @@ paths:
         - cookieAuth: []
         - bearerAuth: []
       parameters:
-        - $ref: "#/components/parameters/organization_id"
-        - $ref: "#/components/parameters/member_id"
+        - $ref: '#/components/parameters/organization_id'
+        - $ref: '#/components/parameters/member_id'
       requestBody:
         description: The structure for the entire request
         content:
-          "application/json":
+          'application/json':
             schema:
               type: object
-              example: {"global_settings": {"allow_user_add_plugins": true, "allow_only_admin_invite": true}, "plugin_settings": {"chess_plugin": {"allow_in_every_channel": false}}}
+              example:
+                {
+                  'global_settings':
+                    {
+                      'allow_user_add_plugins': true,
+                      'allow_only_admin_invite': true
+                    },
+                  'plugin_settings':
+                    { 'chess_plugin': { 'allow_in_every_channel': false } }
+                }
       responses:
-        "200":
-          $ref: "#/components/responses/resourceUpdated"
-        
-        "401":
-          $ref: "#/components/responses/UnauthorizedError"
+        '200':
+          $ref: '#/components/responses/resourceUpdated'
 
-        "400":
-          $ref: "#/components/responses/BadRequest"
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
 
-        "500":
-          $ref: "#/components/responses/InternalServerError"
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+        '500':
+          $ref: '#/components/responses/InternalServerError'
 
   # /organizations/{organization_id}/members:
   #   get:
@@ -592,7 +601,7 @@ components:
       required: true
       schema:
         type: string
-        example: "6137d69b21d3c78fc9a84bdf"
+        example: '6137d69b21d3c78fc9a84bdf'
 
     organization_id:
       in: path
@@ -600,8 +609,8 @@ components:
       required: true
       schema:
         type: string
-        example: "6137d69b21d3c78fc9a84bdf"
-    
+        example: '6137d69b21d3c78fc9a84bdf'
+
     first_name:
       in: path
       name: first_name
@@ -696,7 +705,7 @@ components:
                 type: string
               data:
                 type: object
-                example: { "InsertedID": "6137d69b21d3c78fc9a84bdf" }
+                example: { 'InsertedID': '6137d69b21d3c78fc9a84bdf' }
 
     resourceDeleted:
       description: Successfully deleted the resource
@@ -714,7 +723,7 @@ components:
                 example: 200
               message:
                 type: string
-                example: "resource deleted successfully"
+                example: 'resource deleted successfully'
 
     resourceUpdated:
       description: Successfully updated the resource
@@ -732,7 +741,7 @@ components:
                 example: 200
               message:
                 type: string
-                example: "resource updated successfully"
+                example: 'resource updated successfully'
 
     getOrgResponse:
       description: Successfully retrieve the resource
@@ -751,7 +760,7 @@ components:
               message:
                 type: string
               data:
-                $ref: "#/components/schemas/Organization"
+                $ref: '#/components/schemas/Organization'
 
     getOrgsResponse:
       description: Successfully returned list of organizations, including an empty array if there are no organizations
@@ -772,7 +781,7 @@ components:
               data:
                 type: array
                 items:
-                  $ref: "#/components/schemas/Organization"
+                  $ref: '#/components/schemas/Organization'
 
     getMemberResponse:
       description: Successfully returned record of a member in an organization
@@ -791,7 +800,7 @@ components:
               message:
                 type: string
               data:
-                $ref: "#/components/schemas/Member"
+                $ref: '#/components/schemas/Member'
 
     getMembersResponse:
       description: Successfully returned list of members in an organization, including an empty array if there are no members
@@ -812,7 +821,7 @@ components:
               data:
                 type: array
                 items:
-                  $ref: "#/components/schemas/Member"
+                  $ref: '#/components/schemas/Member'
 
     getPluginsResponse:
       description: Successfully returned list of plugins from an organization, including an empty array if there are no plugins
@@ -833,14 +842,14 @@ components:
               data:
                 type: array
                 items:
-                  $ref: "#/components/schemas/Plugin"
+                  $ref: '#/components/schemas/Plugin'
 
   requestBodies:
     orgCreateRequestBody:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/OrgCreateRB"
+            $ref: '#/components/schemas/OrgCreateRB'
 
   schemas:
     Member:
@@ -848,15 +857,15 @@ components:
       properties:
         _id:
           type: string
-          example: "6137d69b21d3c78fc9a84bdf"
+          example: '6137d69b21d3c78fc9a84bdf'
         orgId:
           type: string
-          example: "6137d69b21d3c78fc9a84bdf"
+          example: '6137d69b21d3c78fc9a84bdf'
         files:
           type: object
         image_url:
           type: string
-          example: "https://image.location/image.png"
+          example: 'https://image.location/image.png'
         name:
           type: string
         status:
@@ -883,19 +892,19 @@ components:
       properties:
         _id:
           type: string
-          example: "6137d69b21d3c78fc9a84bdf"
+          example: '6137d69b21d3c78fc9a84bdf'
         name:
           type: string
-          example: "HNG"
+          example: 'HNG'
         creator_email:
           type: string
-          example: "hng@email.com"
+          example: 'hng@email.com'
         creator_id:
           type: string
-          example: "6137d69b21d3c78fc9a84bdf"
+          example: '6137d69b21d3c78fc9a84bdf'
         logo_url:
           type: string
-          example: "hng.zuri.chat"
+          example: 'hng.zuri.chat'
         created_at:
           type: string
           format: date
@@ -906,13 +915,13 @@ components:
           type: string
           example:
             {
-              "global_settings":
+              'global_settings':
                 {
-                  "allow_user_add_plugins": true,
-                  "allow_only_admin_invite": true,
+                  'allow_user_add_plugins': true,
+                  'allow_only_admin_invite': true
                 },
-              "plugin_settings":
-                { "chess_plugin": { "allow_in_every_channel": false } },
+              'plugin_settings':
+                { 'chess_plugin': { 'allow_in_every_channel': false } }
             }
 
     OrgCreateRB:
@@ -922,24 +931,24 @@ components:
         creator_email:
           type: string
           description: Email of the owner of the organization
-          example: "hng@email.com"
+          example: 'hng@email.com'
 
     Plugin:
       type: object
       properties:
         plugin_id:
           type: string
-          example: "6137d69b21d3c78fc9a84bdf"
+          example: '6137d69b21d3c78fc9a84bdf'
         user_id:
           type: string
-          example: "6137d69b21d3c78fc9a84bdf"
+          example: '6137d69b21d3c78fc9a84bdf'
 
   securitySchemes:
     bearerAuth:
       type: http
       scheme: bearer
       bearerFormat: JWT
-    cookieAuth:         
+    cookieAuth:
       type: apiKey
       in: cookie
       name: JSESSIONID

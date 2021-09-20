@@ -28,7 +28,6 @@ import Download from './pages/download'
 import Careers from './pages/careers'
 import MarketPlace from './pages/marketplace/marketplace'
 
-
 const App = () => (
   <BrowserRouter>
     <Switch>

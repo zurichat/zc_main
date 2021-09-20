@@ -6,7 +6,7 @@ import styles from '../../component-styles/FAQ.module.css'
 const FAQ = () => {
   const [selected, setSelected] = useState(null)
 
-const data = [
+  const data = [
     {
       question: 'What are my payment options - credit card and/or invoice?',
       answer:
@@ -24,7 +24,8 @@ const data = [
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias.'
     },
     {
-      question: 'We need to add new users to our team. How will that be billed?',
+      question:
+        'We need to add new users to our team. How will that be billed?',
       answer:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias.'
     },
@@ -85,7 +86,5 @@ const data = [
     </div>
   )
 }
-
-
 
 export default FAQ
