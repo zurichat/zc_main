@@ -98,9 +98,8 @@ const HeaderSearchSuggestion = () => {
                 <li className="nav-item">
                   <Link
                     to="/pricing"
-                    className={`nav-link dropdown-toggle ${headerStyles.navLinkPricing}`}
+                    className={`nav-link ${headerStyles.navLinkPricing}`}
                     role="button"
-                    data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
                     <span className={`${headerStyles.pricing}`}>Pricing</span>
@@ -108,7 +107,7 @@ const HeaderSearchSuggestion = () => {
                 </li>
                 <li className="nav-item">
                   <Link
-                    to="/community"
+                    to="/resources"
                     className={`nav-link ${headerStyles.navLinkComms}`}
                   >
                     <span className={`${headerStyles.comms}`}>Community</span>
@@ -116,10 +115,9 @@ const HeaderSearchSuggestion = () => {
                 </li>
                 <li className="nav-item">
                   <Link
-                    to="/downloads"
-                    className="nav-link dropdown-toggle"
+                    to="/download-app"
+                    className="nav-link"
                     role="button"
-                    data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
                     <span className={`${headerStyles.download}`}>
