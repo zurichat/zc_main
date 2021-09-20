@@ -9,7 +9,7 @@ function Section3() {
     >
       <div className={styles.container}>
         <header>
-          <h2>Leading the way in enterprise security</h2>
+          <h2 className={`${styles.textHead}`}>Leading the way in enterprise security</h2>
         </header>
 
         <p>

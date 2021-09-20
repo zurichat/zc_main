@@ -26,7 +26,7 @@ function Section4PricingPage() {
           {DummyData.map(d => {
             return (<>
           <div className={`${styles.card}`}>
-            <img alt='' src={'https://res.cloudinary.com/ujuzi/image/upload/v1630463006/Cars%20Images%20project/pexels-kampus-production-8353777_wjgvrh.jpg'}/>
+            <img className={`${styles.imgTop}`} alt='' src={'https://res.cloudinary.com/ujuzi/image/upload/v1630463006/Cars%20Images%20project/pexels-kampus-production-8353777_wjgvrh.jpg'}/>
             <div className={styles.bottomCardSub1}><p>INTUIT</p></div>
             <div className={styles.bottomCardSub2}>eCommerce platform deploys super bot to enable glitch-free purchases</div>
             <div className={styles.bottomCardSub3}>

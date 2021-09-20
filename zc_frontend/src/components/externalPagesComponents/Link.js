@@ -4,7 +4,7 @@ const Link = ({ title, to, color, underline }) => {
   return (
     <a
       href={to}
-      className={`${style.underline}`}
+      className={`${style.a}`}
     >
       {title}
     </a>

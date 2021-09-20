@@ -45,8 +45,8 @@
   cursor: pointer;
 }
 
-img {
-  height: 50%;
+.imgTop {
+  height: 70%;
   width: 100%;
   object-fit: cover;
 }

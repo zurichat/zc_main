@@ -14,14 +14,14 @@ const Index = () => {
 
   return (
     <div className={styles.faqs}>
-      <h2 className='text-center'>Commonly Asked Questions</h2>
+      <h2 className={`{styles.h2} text-center`}>Commonly Asked Questions</h2>
       <div className={styles.wrapper}>
         <div className={styles.accordion}>
           {data.map(i => (
             <div className={styles.items}>
               <div className={styles.title} onClick={() => toggle(i)}>
-                <h6>{i.question}</h6>
-                <span>
+                <h6 className={styles.h6}>{i.question}</h6>
+                <span className={styles.span}>
                   {selected === i ? (
                     <i className="fas fa-angle-up"></i>
                   ) : (

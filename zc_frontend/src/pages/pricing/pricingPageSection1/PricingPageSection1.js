@@ -8,7 +8,7 @@ const PricingPageSection1 = () => {
     <>
       <div className="topPricingSectionContainer">
         <div className="topPricingPageSection1">
-          <p>Make teamwork more productive</p>
+          <p className="p">Make teamwork more productive</p>
 
           <div className="topPricingPageBody">
             <div className="topPricingLine"></div>
@@ -55,7 +55,7 @@ const PricingPageSection1 = () => {
                       <div className="topPricingBottomFoot">
                         <Link to="/">
                           {' '}
-                          <span>Learn more</span>
+                          <span className="span">Learn more</span>
                         </Link>
                       </div>
                     </div>
@@ -70,9 +70,9 @@ const PricingPageSection1 = () => {
       <section className="section2">
         <div className="tableContainer">
           <table className="tableMain">
-            <colgroup>
-              <col></col>
-              <col></col>
+            <colgroup className="colgroup">
+              <col className="col"></col>
+              <col className="col"></col>
               <col className="colSpec"></col>
               <col className="pricingtableSpacer"></col>
               <col className="colSpec"></col>
@@ -82,8 +82,8 @@ const PricingPageSection1 = () => {
               <col className="colSpec"></col>
               <col className="pricingtableSpacer"></col>
             </colgroup>
-            <thead>
-              <tr>
+            <thead className="thead">
+              <tr className="tr">
                 <th colSpan="2" className="th1col colStart"></th>
                 <th className="th1col">
                   <strong>Free</strong>
@@ -104,7 +104,7 @@ const PricingPageSection1 = () => {
               </tr>
             </thead>
             <tbody>
-              <tr className="tableRowPricingHeader ">
+              <tr className="tableRowPricingHeader">
                 <td colSpan="2" className="colStart">
                   <strong>PRODUCTIVITY BASICS</strong>
                 </td>

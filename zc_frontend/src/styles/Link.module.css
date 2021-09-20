@@ -1,9 +1,9 @@
-.underline:hover {
+.a:hover {
   text-decoration: underline;
   color: #00b87c;
 }
 
-a {
+.a {
   color:  #00b87c;
 }
 

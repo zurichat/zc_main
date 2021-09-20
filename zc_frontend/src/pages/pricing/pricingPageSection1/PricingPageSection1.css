@@ -18,7 +18,7 @@ html, body{
   margin-bottom: 1.25rem;
 }
 
-.topPricingPageSection1 > p {
+.topPricingPageSection1 > .p {
   display: flex;
   align-content: center;
   justify-content: center;
@@ -177,7 +177,7 @@ html, body{
   justify-content: center;
 }
 
-.topPricingBottomFoot span {
+.topPricingBottomFoot .span {
   width: 3.5rem;
   height: 1.8rem;
   color: #00b87c;
@@ -186,7 +186,7 @@ html, body{
   font-size: .65rem;
 }
 
-.topPricingBottomFoot span:hover{
+.topPricingBottomFoot .span:hover{
   text-decoration: underline;
   color: #00b87c;
 }
@@ -243,7 +243,7 @@ html, body{
   margin-bottom: 1.25rem;
 }
 
-.topPricingPageSection1 > p {
+.topPricingPageSection1 > .p {
   display: flex;
   text-align: start;  
   justify-content: start;
@@ -395,7 +395,7 @@ html, body{
   margin-top: 1.3rem;
 }
 
-.topPricingBottomFoot span {
+.topPricingBottomFoot .span {
   width: 3.5rem;
   height: 1.8rem;
   color: #00b87c;
@@ -413,7 +413,7 @@ html, body{
   text-align: center;
 }
 
-table{
+.tableMain{
   border-collapse: collapse;
   border-spacing: 0;
   width: 75%;
@@ -421,11 +421,11 @@ table{
   table-layout: fixed;
 }
 
-colgroup{
+.colgroup{
   display: table-column-group;
 }
 
-col{
+.col, .colSpec, .pricingtableSpacer{
   display: table-column;
 }
 
@@ -444,14 +444,14 @@ col{
   background-color: white;
 }
 
-thead{
+.thead{
   display: table-header-group;
   vertical-align: middle;
   border-color: inherit;
   text-align: center;
 }
 
-table tr{
+.tableMain tr{
   border: none;
   color: #333333;
 }
