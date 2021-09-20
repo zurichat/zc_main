@@ -1,0 +1,281 @@
+.container {
+  width: 400%;
+  margin: 2rem;
+  font-family: 'Lato';
+}
+
+.head {
+  font-family: 'Lato';
+  font-weight: bolder;
+  display: flex;
+  margin-top: 1rem;
+  color: #000;
+}
+
+.rectangle {
+  background: #000;
+  width: 25%;
+  height: 17rem;
+  border-radius: 7px;
+  margin-bottom: 1.5rem;
+}
+
+.selectfirst {
+  width: 15%;
+  margin-bottom: 1.5rem;
+}
+
+/* select {
+    height: 3rem;
+    border-radius: 4px;
+    padding-left: .5rem;
+} */
+
+.line {
+  background: #aeaeae;
+  width: 37%;
+  height: 1px;
+}
+
+.inputlevel {
+  color: #000;
+  display: flex;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.barfirst {
+  background: #00b87c;
+  width: 1.2%;
+  height: 0.8rem;
+  margin: 0.4rem 0.5rem 0 1rem;
+  border-radius: 5px;
+}
+
+.barsecond {
+  background: #00b87c;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.4rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.barthird {
+  background: #00b87c;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.4rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.barfourth {
+  background: #00b87c;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.4rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.barfifth {
+  background: #00b87c;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.4rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.barsixth {
+  background: #00b87c;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.4rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.barseventh {
+  background: #00b87c;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.4rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.bareight {
+  background: #aeaeae;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.4rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.barninth {
+  background: #aeaeae;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.4rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.bartenth {
+  background: #aeaeae;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.4rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.bareleventh {
+  background: #aeaeae;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.4rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.bartwelfth {
+  background: #aeaeae;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.4rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.barthirtenth {
+  background: #aeaeae;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.4rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.barfourtenth {
+  background: #aeaeae;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.4rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.barfiftenth {
+  background: #aeaeae;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.4rem;
+  border-radius: 5px;
+}
+
+.checkenable {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.enable {
+  font-weight: bold;
+}
+
+.speaker {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+.headspeaker {
+  font-family: 'Lato';
+  font-weight: bolder;
+  display: flex;
+  margin-top: 2rem;
+  color: #000;
+}
+
+.button {
+  margin-left: 3rem;
+  background: #fff;
+  border: #000 1px solid;
+  padding: 0 1rem;
+  border-radius: 3px;
+}
+
+.join {
+  margin-bottom: 1rem;
+}
+
+.huddle {
+  margin-bottom: 1rem;
+}
+
+.check {
+  color: #3a3a3a;
+}
+
+.checkset {
+  display: flex;
+}
+
+.checkmute {
+  display: flex;
+}
+
+.checkstatus {
+  display: flex;
+}
+
+.checkmutemic {
+  display: flex;
+}
+
+.checkautomatic {
+  display: flex;
+}
+
+.checkwarning {
+  display: flex;
+}
+
+.checkmusic {
+  display: flex;
+}
+
+.checkallow {
+  display: flex;
+}
+
+.checkcall {
+  display: flex;
+}
+
+.checkleavehuddle {
+  display: flex;
+}
+
+.statuscall {
+  font-weight: bold;
+}
+
+.statushuddle {
+  font-weight: bold;
+}
+
+.mute {
+  font-weight: bold;
+}
+
+.mute {
+  font-weight: bold;
+}
+
+.screensaver {
+  font-size: 20px;
+  color: #3a3a3a;
+  font-weight: bold;
+}
