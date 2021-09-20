@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
 
 * {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 body {
   margin: 0;
@@ -73,7 +73,7 @@ hr {
   color: white;
   margin-bottom: 20px;
 }
-@media screen and (max-width: 1085px) {  
+@media screen and (max-width: 1085px) {
   .section3Cards {
     padding: 30px;
   }
