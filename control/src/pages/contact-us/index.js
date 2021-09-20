@@ -7,7 +7,7 @@ function ContactUs() {
     <div>
       <Header />
       <ContactMain />
-      <Footer showMessage/>
+      <Footer showMessage />
     </div>
   )
 }

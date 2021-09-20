@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap'); */
 .container ul {
   list-style: none;
   color: #000;
@@ -62,10 +62,11 @@
 .orgInfo {
   background-color: #00b87c;
   /* height: 3.125em; */
-  height: 10vh;
+  height: 7vh;
   /* display: flex; */
   /* flex-direction: row; */
 }
+
 .orgName {
   height: inherit;
   width: inherit;
@@ -77,11 +78,12 @@
   align-items: center;
   height: 3.125em; */
 }
+
 .orgInfo .orgName p {
   color: #ffffff;
   font-family: 'Lato', sans-serif;
   font-weight: 900;
-  font-size: 2rem;
+  font-size: 1.5rem;
   /* font-size: 1.125em; */
 }
 

@@ -9,7 +9,6 @@ const HeaderSearchSuggestion = () => {
   const [openSearchbar, setOpenSearchbar] = useState(false)
   const matchesMediumSize = useMatchMedia('(max-width: 992px)')
 
-
   const handleSearchBarClose = () => {
     setOpenSearchbar(false)
   }

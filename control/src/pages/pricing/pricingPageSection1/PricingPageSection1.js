@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './PricingPageSection1.module.css'
-import {Pricing} from './PricingDummyData'
+import { Pricing } from './PricingDummyData'
 
 const PricingPageSection1 = () => {
   return (
@@ -12,18 +12,24 @@ const PricingPageSection1 = () => {
           <div className={`${styles.topPricingPageBody}`}>
             <div className={`${styles.topPricingLine}`}></div>
             <div className={`${styles.topPricingPageColumns}`}>
-              {Pricing.map((p) => {
+              {Pricing.map(p => {
                 return (
                   <li key={p.className} className={p.className}>
                     <div className={`${styles.topPricingTop}`}>
-                      <p className={`${styles.topPricingTitle}`}>{p.topPricingTitle}</p>
+                      <p className={`${styles.topPricingTitle}`}>
+                        {p.topPricingTitle}
+                      </p>
                       <p className={`${styles.topPricingSubtitle}`}>
                         {p.topPricingSubtitle}
                       </p>
-                      <p className={`${styles.topPricingAmount}`}>{p.topPricingAmount}</p>
+                      <p className={`${styles.topPricingAmount}`}>
+                        {p.topPricingAmount}
+                      </p>
                     </div>
 
-                    <button className={`${styles.topPricingButton}`}>Get Started</button>
+                    <button className={`${styles.topPricingButton}`}>
+                      Get Started
+                    </button>
 
                     <div className={`${styles.topPricingBottom}`}>
                       <div className={`${styles.topPricingBottomHead}`}>
@@ -35,7 +41,10 @@ const PricingPageSection1 = () => {
                       <div className={`${styles.topPricingBottomBody}`}>
                         {p.topPricingText.map((pt, id) => {
                           return (
-                            <div key={id} className={`${styles.topPricingBottomBodyPart}`}>
+                            <div
+                              key={id}
+                              className={`${styles.topPricingBottomBodyPart}`}
+                            >
                               <img
                                 className={`${styles.topPricingTick}`}
                                 src={p.topPricingTick}

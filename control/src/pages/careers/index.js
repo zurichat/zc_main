@@ -11,7 +11,7 @@ function Careers() {
       <SectionOne />
       <CareersSection2 />
       <Section3 />
-      <Footer showMessage/>
+      <Footer showMessage />
     </div>
   )
 }
