@@ -19,11 +19,6 @@ import ContactUs from './pages/contact-us'
 import ApiDocs from './pages/api-docs'
 import AppsAndIntegrations from './pages/apps-integration'
 import { PluginLoaderProvider } from './context/PluginLoaderState'
-// import UsersApi from './pages/api-docs/components/users'
-// import OrganisationApi from './pages/api-docs/components/organisation'
-// import MarketplaceApi from './pages/api-docs/components/marketplace'
-// import DataApi from './pages/api-docs/components/data'
-// import PluginApi from './pages/api-docs/components/plugin'
 import Download from './pages/download'
 import Careers from './pages/careers'
 import MarketPlace from './pages/marketplace/marketplace'
@@ -73,25 +68,6 @@ const App = () => (
           <ApiDocs />
         </PluginLoaderProvider>
       </Route>
-      {/* Api docs */}
-      {/* <Route exact path="/documentation/users">
-          <UsersApi />
-        </Route> */}
-      {/* <Route exact path="/documentation/auth">
-          <AuthApi />
-        </Route> */}
-      {/*<Route path="/documentation/organisation">
-          <OrganisationApi />
-        </Route>
-        <Route path="/documentation/marketplace">
-          <MarketplaceApi />
-        </Route>
-        <Route path="/documentation/data">
-          <DataApi />
-        </Route>
-        <Route path="/documentation/plugin">
-          <PluginApi />
-        </Route> */}
       <Route path="/apps-integrations">
         <AppsAndIntegrations />
       </Route>
