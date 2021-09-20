@@ -29,13 +29,14 @@ const Index = () => {
                   )}
                 </span>
               </div>
-              {selected === i &&
+              {selected === i && (
                 <div
-                className={selected === i ? 'answer show' : 'answer'}
-                onClick={() => toggle(i)}
-              >
-                {i.answer}
-              </div>}
+                  className={selected === i ? 'answer show' : 'answer'}
+                  onClick={() => toggle(i)}
+                >
+                  {i.answer}
+                </div>
+              )}
             </div>
           ))}
         </div>

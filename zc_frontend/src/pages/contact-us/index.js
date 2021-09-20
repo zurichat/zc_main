@@ -8,7 +8,7 @@ function ContactUs() {
     <div>
       <SearchSuggestion />
       <ContactMain />
-      <Message type='contact'/>
+      <Message type="contact" />
       <Footer />
     </div>
   )

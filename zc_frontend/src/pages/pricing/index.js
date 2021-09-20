@@ -14,7 +14,7 @@ function Pricing() {
     console.log(user)
   })
   return (
-    <div style={{justifyContent : 'center'}}>
+    <div style={{ justifyContent: 'center' }}>
       <SearchSuggestion />
       <PricingPageSection1 />
       <Section3 />
