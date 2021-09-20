@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, useHistory } from 'react-router-dom'
 import { BehaviorSubject } from 'rxjs'
 // import { Link } from 'react-router-dom'
 import authBg1 from './assets/auth_bg1.svg'
@@ -35,8 +35,9 @@ const Login = () => {
     let i = currentImage
     i >= images.length - 1 ? (i = 0) : i++
     setcurrentImage(i)
-    console.log(images[i], i)
   }
+
+  let history = useHistory()
 
   const handleSubmit = async e => {
     setemailerror('')
@@ -68,6 +69,7 @@ const Login = () => {
         setTimeout(() => {
           //Redirect to some other page
           GetUserInfo()
+          history.push('/home')
         }, 2000)
       })
       .catch(error => {
