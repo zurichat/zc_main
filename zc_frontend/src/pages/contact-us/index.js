@@ -1,6 +1,6 @@
 import Footer from '../../components/externalPagesComponents/Footer/Footer'
-import Message from '../../components/externalPagesComponents/Footer/Message'
 import SearchSuggestion from '../searchSuggestion'
+import Message from '../../components/externalPagesComponents/Footer/Message'
 import ContactMain from './components/ContactMain'
 
 function ContactUs() {
@@ -8,7 +8,7 @@ function ContactUs() {
     <div>
       <SearchSuggestion />
       <ContactMain />
-      <Message />
+      <Message type="contact" />
       <Footer />
     </div>
   )
