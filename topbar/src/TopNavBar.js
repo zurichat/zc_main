@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { TopbarContext } from './context/Topbar'
 import { connect } from 'react-redux'
-import zurichatlogo from './assets/images/logo.svg'
+import zurichatlogo from './assets/images/Logo.svg'
 import { useState } from 'react'
 import styled from 'styled-components'
 import { BaseInput } from './TopBarIndex'
