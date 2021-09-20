@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
+
+* {
+  font-family: 'Lato', sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+button:hover {
+  cursor: pointer;
+}
+.Section3 h2 {
+  font-size: 36px;
+  margin: 0;
+  text-align: center;
+}
+.Section3 p {
+  padding: 0px 30px 20px 30px;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+}
+.section3Cards {
+  padding: 60px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: auto auto auto;
+}
+.section3Cards div {
+  background-color: white;
+  padding: 20px;
+  border: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+.section3Cards div h3 {
+  font-size: 20px;
+}
+.section3Cards div p {
+  padding: 0;
+  font-size: 16px;
+  padding-right: 10px;
+  text-align: left;
+}
+.section3Cards .languages {
+  padding: 0;
+  margin: 35px 0px 12px 0px;
+  box-shadow: none;
+}
+hr {
+  position: static;
+  margin-right: 50px;
+  border: 1px solid #999999;
+}
+.section3Cards .languages li {
+  list-style: none;
+  font-size: 16px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  margin-right: 15px;
+}
+.Section4 {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.Section4 .regbtn {
+  padding: 20px 88.5px 20px 88.5px;
+  font-size: 22px;
+  border: none;
+  background-color: #00b87c;
+  color: white;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 1085px) {
+  .section3Cards {
+    padding: 30px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .section3Cards {
+    padding: 30px;
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .Section3 h2 {
+    font-size: 24px;
+  }
+  .Section3 p {
+    font-size: 16px;
+  }
+  .section3Cards {
+    padding: 30px;
+    grid-template-columns: auto;
+  }
+  .section3Cards div p {
+    padding: 0;
+    font-size: 14px;
+    padding-right: 10px;
+    text-align: left;
+  }
+  .Section4 p {
+    font-size: 22px;
+    text-align: center;
+  }
+  .Section4 button {
+    padding: 16px 97.5px 16px 97.5px;
+    font-size: 18px;
+  }
+}

@@ -4,7 +4,7 @@ const path = require('path')
 
 const mergeRules = {
   externals: {
-    jquery: 'jQuery',
+    jquery: 'jQuery'
   },
   plugins: 'replace',
   devServer: {
@@ -36,8 +36,21 @@ module.exports = (webpackConfigEnv, argv) => {
       // filename: "[name].js", // string (default)
       // publicPath: path.join(__dirname, '..', 'dist', 'assets') // string
     },
+    resolve: {
+      fallback: {
+        fs: false,
+        path: false,
+        http: false,
+        tty: false,
+        buffer: false
+      }
+    },
     module: {
       rules: [
+        {
+          test: /\.yaml$/,
+          use: 'js-yaml-loader'
+        },
         {
           test: /\.css$/i,
           use: [

@@ -16,7 +16,9 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   return (
     <TopNavBarBase>
       <div>
-        <a href="#"><img src={zurichatlogo} alt="zuri chat logo" /></a>
+        <a href="#">
+          <img src={zurichatlogo} alt="zuri chat logo" />
+        </a>
         {/* <LogoName>ZURI</LogoName> */}
       </div>
       <BaseInput
