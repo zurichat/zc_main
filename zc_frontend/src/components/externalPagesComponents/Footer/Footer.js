@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styles from './Footer.module.css'
 import Message from './Message'
 import zurilogo from '../../../assets/zurichatlogo.svg'
@@ -38,6 +39,9 @@ const Footer = ({ showMessage, type }) => (
                 <a className={styles.link} href="/">
                   News
                 </a>
+                <Link to="/Careers" className={styles.link}>
+                  Careers
+                </Link>
               </li>
             </li>
             <li className={styles.mainList}>

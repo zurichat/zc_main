@@ -2,6 +2,10 @@ import PropTypes from 'prop-types'
 import { useState } from 'react'
 import styles from '../styles/Dropdown.module.css'
 import addicon from '../assets/addicon.svg'
+import dropdownIcon from './verified-components/assets/icons/dropdown-icon.svg'
+import addIcon from './verified-components/assets/icons/add-icon.svg'
+
+import styled from 'styled-components'
 const Dropdown = ({
   children,
   title,
@@ -17,36 +21,34 @@ const Dropdown = ({
     <div
       className={`${styles.container}${!isOpen ? ` ${styles.isClosed}` : ''}`}
     >
-      <div className={styles.header}>
-        <button
+      <Item>
+        <img
           className={`${styles.dropDownButton}${
             children ? '' : ` ${styles.hidden}`
           }`}
           onClick={() => setIsOpen(!isOpen)}
-        >
-          <img src="/shapekeyboardarrowdown2.svg" alt="Dropdown button" />
-        </button>
-        <span onClick={onTitleClick}>{title}</span>
-        <img
-          className={`${styles.addButton}${
-            showAddButton ? '' : ` ${styles.hidden}`
-          }`}
+          src={dropdownIcon}
+          role="button"
+          alt="Dropdown button"
+        />
+        <p onClick={onTitleClick}>{title}</p>
+        <ClickButton
           onClick={onAddButtonClick}
-          src={addicon}
+          src={addIcon}
           alt="Add button"
           role="button"
         />
-      </div>
-      <ul className={styles.content}>
+      </Item>
+      <Ul className={styles.content}>
         {children &&
           children.map((child, index) => {
             return (
-              <li key={index} className={styles.item}>
+              <Li key={index} className={styles.item}>
                 {plugin ? `${child.title}` : child}
-              </li>
+              </Li>
             )
           })}
-      </ul>
+      </Ul>
     </div>
   )
 }
@@ -64,3 +66,39 @@ Dropdown.propTypes = {
 }
 
 export default Dropdown
+
+const Item = styled.p`
+font-family: Lato;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px;
+letter-spacing: 0em;
+text-align: left;
+display: flex;
+padding:0.25rem;
+& > img { 
+  padding: 0 1rem;
+}
+`
+
+const ClickButton = styled.img`
+  margin-left: auto;
+`
+
+const Ul = styled.ul`
+  padding: 0.3rem 2.5rem;
+  font-family: Lato;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 18px;
+  color: #454545;
+  overflow: hidden;
+`
+const Li = styled.li`
+  height: 28px;
+  width: 167px;
+  left: 26px;
+  top: 0px;
+  border-radius: nullpx;
+`

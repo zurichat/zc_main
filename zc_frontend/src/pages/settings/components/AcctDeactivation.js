@@ -30,8 +30,14 @@ const AcctDeactivation = () => {
           <p className={styles.secondP}>
             <strong>Note:</strong> Don’t deactivate your account if you just
             want to change your
-            <span className={styles.blue}> email address</span> or{' '}
-            <span className={styles.blue}>username</span>.
+            <span className={styles.blue}>
+              <Link to="/settings"> email address</Link>
+            </span>{' '}
+            or
+            <span className={styles.blue}>
+              <Link to="/settings"> username</Link>
+            </span>
+            .
           </p>
 
           <div>

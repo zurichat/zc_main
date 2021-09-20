@@ -30,7 +30,7 @@
 }
 
 #authAsideContainer {
-  width: 32.5vw;
+  width: 33vw;
   color: #fff;
 }
 
@@ -38,18 +38,19 @@
   width: 100%;
 }
 
+/* 
 #authImageWrapper img {
   width: 100%;
   position: relative;
   top: 0;
   left: 0;
-}
+} */
 
 #authFormContainer {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 67.5vw;
+  width: 67vw;
   overflow-y: scroll;
   /* padding-right: 4rem; */
 }
@@ -92,9 +93,10 @@
   font-size: 0.8rem;
 }
 
-.tosText a {
+.tosText a,
+.rememberMe a {
   color: #1a61db;
-  /* color: #dc0037; */
+  /* color: #00b87c; */
 }
 
 .rememberMe {
@@ -120,9 +122,10 @@
   /* top: 3px; */
 }
 
-.rememberMe a {
-  color: #00b87c;
-}
+/* .rememberMe a {
+  /* color: #00b87c; *
+  color: #1a61db;
+} */
 
 .rememberMe .left {
   display: block;

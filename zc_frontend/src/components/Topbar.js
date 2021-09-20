@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { TopbarContext } from '../context/Topbar'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import faker from 'faker'
 
 import styles from '../styles/Topbar.module.css'
 import SearchBar from './externalPagesComponents/SearchBar'
@@ -12,6 +13,22 @@ import { MembersModalButton } from './MembersModal'
 import settingsIcon from '../assets/settings.svg'
 
 import profilepic from '../assets/profilepic.png'
+// import { MembersModalButton } from './MembersModal'
+
+// Placeholder data
+const placeHolder = n => {
+  const placeHolderMembersArray = []
+  for (let i = 0; i < n; i++) {
+    placeHolderMembersArray.push({
+      userName: faker.internet.userName().toLowerCase(),
+      fullName: `${faker.name.firstName()} ${faker.name.lastName()}`,
+      status: faker.lorem.sentence(),
+      avatar: faker.internet.avatar()
+    })
+  }
+  return placeHolderMembersArray
+}
+const faked = placeHolder(44134)
 
 const Topbar = ({ userProfile: { last_name, first_name } }) => {
   const state = useContext(TopbarContext)
@@ -22,7 +39,7 @@ const Topbar = ({ userProfile: { last_name, first_name } }) => {
     <div className={styles.container}>
       <SearchBar />
       <div className={styles.topbar}>
-        <MembersModalButton />
+        {/* <MembersModalButton members={faked} /> */}
         <Link to="/settings">
           <img src={settingsIcon} alt="settings" className={styles.settings} />
         </Link>
@@ -41,7 +58,7 @@ const Topbar = ({ userProfile: { last_name, first_name } }) => {
       </div>
 
       <ProfileModal />
-      <TopbarModal />
+      <TopbarModal members={faked} />
     </div>
   )
 }

@@ -1,4 +1,6 @@
-import { FaEye, FaEyeSlash } from 'react-icons/fa'
+// import { FaEye, FaEyeSlash } from 'react-icons/fa'
+import { FiEye, FiEyeOff } from 'react-icons/fi'
+import { RiErrorWarningLine } from 'react-icons/ri'
 import { useRef, useState } from 'react'
 
 import styles from '../styles/InputBox.module.css'
@@ -37,7 +39,7 @@ const InputBox = ({
         <div
           className={`${styles.InputWrapper} ${
             type === 'password' ? styles.InputWrapperWithPassword : ''
-          }`}
+          } ${error ? styles.InputContainerError : ''}`}
         >
           <input
             id={id}
@@ -58,12 +60,17 @@ const InputBox = ({
               onClick={passwordToggle}
             >
               {/* <i className={`far ${passwordVisible ? 'eye-slash' : 'eye'}`}></i> */}
-              {passwordVisible ? <FaEye /> : <FaEyeSlash />}
+              {passwordVisible ? <FiEye /> : <FiEyeOff />}
             </div>
           )}
         </div>
 
-        <span className={`${styles.InputError}`}>{error}</span>
+        {error && (
+          <span className={`${styles.InputError}`}>
+            <RiErrorWarningLine />
+            <div style={{ paddingLeft: '0.3rem' }}>{error}</div>
+          </span>
+        )}
       </div>
     </>
   )

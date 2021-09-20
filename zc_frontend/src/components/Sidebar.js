@@ -3,22 +3,27 @@ import { useContext, Fragment, useState, useEffect } from 'react'
 import useSWR from 'swr'
 import { URLContext } from '../context/Url'
 import { PluginContext } from '../context/Plugins'
-
 import styles from '../styles/Sidebar.module.css'
 import Dropdown from './Dropdown'
-
+import Modal from './InviteModal'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
 import styled from 'styled-components'
 import AuthInputBox from '../components/AuthInputBox'
-import JoinedRooms from './joinedRooms/JoinedRooms'
-import PublicRooms from '../publicRooms/PublicRooms'
+// import JoinedRooms from './joinedRooms/JoinedRooms'
+// import PublicRooms from '../publicRooms/PublicRooms'
 import cheerio from 'cheerio'
 import newMessageIcon from '../assets/newmessage.svg'
 import zurilogo from '../assets/zurichatlogo.svg'
 import arrowHead from '../assets/shapekeyboardarrowdown.svg'
 
-// import "@reach/dialog/styles.css";
-
+import threadIcon from './verified-components/assets/icons/thread-icon.svg'
+import dmIcon from './verified-components/assets/icons/dm-icon.svg'
+import draftIcon from './verified-components/assets/icons/draft-icon.svg'
+import filesIcon from './verified-components/assets/icons/files-icon.svg'
+import pluginIcon from './verified-components/assets/icons/plugin-icon.svg'
+import addIcon from './verified-components/assets/icons/add-icon.svg'
+import { Button } from '../pages/create-workspace/CreateWorkSpace'
+import { Link, useRouteMatch } from 'react-router-dom'
 const fetcher = url => fetch(url).then(res => res.json())
 
 export const Sidebar = () => {
@@ -29,6 +34,7 @@ export const Sidebar = () => {
   // console.log(organization)
 
   const { setUrl } = useContext(URLContext)
+  const [show, setShow] = useState(false)
   const { plugins, setPlugins } = useContext(PluginContext)
 
   // const user = JSON.parse(sessionStorage.getItem('user'))
@@ -36,33 +42,36 @@ export const Sidebar = () => {
   const [showDialog, setShowDialog] = useState(false)
   const open = () => setShowDialog(true)
   const close = () => setShowDialog(false)
-  const [rooms, setRooms] = useState({})
+  // const [rooms, setRooms] = useState({})
   const [query, setQuery] = useState('')
-  // const [sort,setSort] = useState('')
   const [loading, setLoading] = useState(false)
+
+  const match = useRouteMatch()
   // const [error, setError] = useState('')
 
-  const sortRooms = (val, type) => {
-    let values = [...val]
-    console.log(type)
-    switch (type) {
-      case 'atoz':
-        values.sort((a, b) => a.title.localeCompare(b.title))
-        break
-      case 'ztoa':
-        values.sort((a, b) => b.title.localeCompare(a.title))
-        break
-      case 'minmax':
-        values.sort((a, b) => a.members - b.members)
-        break
-      case 'maxmin':
-        values.sort((a, b) => b.members - a.members)
-        break
-      default:
-        break
-    }
-    return values
-  }
+  // Sort room function
+
+  // const sortRooms = (val, type) => {
+  //   let values = [...val]
+  //   console.log(type)
+  //   switch (type) {
+  //     case 'atoz':
+  //       values.sort((a, b) => a.title.localeCompare(b.title))
+  //       break
+  //     case 'ztoa':
+  //       values.sort((a, b) => b.title.localeCompare(a.title))
+  //       break
+  //     case 'minmax':
+  //       values.sort((a, b) => a.members - b.members)
+  //       break
+  //     case 'maxmin':
+  //       values.sort((a, b) => b.members - a.members)
+  //       break
+  //     default:
+  //       break
+  //   }
+  //   return values
+  // }
 
   const sidebarApi = async url => {
     setLoading(true)
@@ -76,27 +85,29 @@ export const Sidebar = () => {
     }
   }
 
-  const filteredJoinedRooms = rooms?.joined_rooms
-    ? rooms.joined_rooms.filter(room =>
-        room.title.toLowerCase().includes(query)
-      )
-    : null
-  const filteredPublicRooms = rooms?.joined_rooms
-    ? rooms.public_rooms.filter(room =>
-        room.title.toLowerCase().includes(query)
-      )
-    : null
+  // const filteredJoinedRooms = rooms?.joined_rooms ?
+  //   rooms.joined_rooms.filter(room =>
+  //     room.title.toLowerCase().includes(query)
+  //   )
+  //   : null
+  // const filteredPublicRooms = rooms?.joined_rooms ?
+  //   rooms.public_rooms.filter(room =>
+  //     room.title.toLowerCase().includes(query)
+  //   )
+  //   : null
 
   useEffect(() => {
+    const user = sessionStorage.getItem('session_id')
+    console.log(user)
     ;(async () => {
       await sidebarApi().then(async res => {
-        setRooms(res)
+        // setRooms(res)
         setLoading(false)
 
-        console.log(sortRooms(res.public_rooms, 'ztoa'))
-        console.log(sortRooms(res.public_rooms, 'atoz'))
-        console.log(sortRooms(res.public_rooms, 'minmax'))
-        console.log(sortRooms(res.public_rooms, 'maxmin'))
+        // console.log(sortRooms(res.public_rooms, 'ztoa'))
+        // console.log(sortRooms(res.public_rooms, 'atoz'))
+        // console.log(sortRooms(res.public_rooms, 'minmax'))
+        // console.log(sortRooms(res.public_rooms, 'maxmin'))
       })
     })()
   }, [])
@@ -105,10 +116,10 @@ export const Sidebar = () => {
     axios
       .get('https://api.zuri.chat/organizations/6133c5a68006324323416896')
       .then(r => {
-        r.data.data[0].plugins.forEach(api_plugin => {
+        r.data.data.plugins.forEach(api_plugin => {
           let homepage_url
           // Get Homepage
-          axios.get(api_plugin.info_url).then(res => {
+          axios.get(api_plugin).then(res => {
             homepage_url = res.data.data.homepage_url
             let homepage = null
             let loaded = false
@@ -126,7 +137,6 @@ export const Sidebar = () => {
               .get(prefixLink(oURL.toString()))
               .then(res => {
                 const $ = cheerio.load(res.data)
-                console.log(res.data)
                 // append stylesheet
                 $(`link[rel="stylesheet"]`).each(function () {
                   const link = document.createElement('link')
@@ -174,7 +184,7 @@ export const Sidebar = () => {
             // console.log(`${r.data.data.sidebar_url}?org=${org_id}&user=${user.id}`)
             axios
               .get(
-                'https://chess.zuri.chat/api/v1/sidebar?userId=test_user_id&org=1&token=1'
+                'https://sales.zuri.chat/api/v1/sidebar?org=5336&user=Devjoseph&token=FGEZJJ-ZFDGB-FDGG'
               )
               .then(r => {
                 const api_plugin = r.data.data
@@ -199,10 +209,6 @@ export const Sidebar = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.zuriLogo}>
-        <img src={zurilogo} alt="Zuri Chat logo" />
-        <p>ZURI</p>
-      </div>
       <div className={styles.orgInfo}>
         <div className={styles.orgName}>
           <p>HNGi8</p>
@@ -220,16 +226,92 @@ export const Sidebar = () => {
             />
             <Wrapper>
               {loading && <p>Loading..</p>}
-              <JoinedRooms rooms={filteredJoinedRooms} />
-              <PublicRooms rooms={filteredPublicRooms} />
+              {/* {rooms.joined_rooms && <JoinedRooms rooms={filteredJoinedRooms} />} */}
+              {/* {rooms.public_rooms && <PublicRooms rooms={filteredPublicRooms} />} */}
             </Wrapper>
           </Content>
         </Overlay>
+        {/* <Overlay isOpen={showDialog} onDismiss={close}>
+          <Content aria-label="room-list">
+            <CloseButton className="close-button" onClick={close}>
+              <Span aria-hidden>×</Span>
+            </CloseButton>
+            <AuthInputBox
+              value={query}
+              setValue={setQuery}
+              placeholder="🔍 Search for plugins"
+            />
+            <Wrapper>
+              {loading && <p>Loading..</p>}
+              <p>
+                {availablePlugins &&
+                  availablePlugins.map((plugs, id) => {
+                    return (
+                      <div key={id}>
+                        <p>{plugs.name}</p>
+                      </div>
+                    )
+                  })}
+              </p>
+            </Wrapper>
+          </Content>
+        </Overlay> */}
         <div className={styles.newMessage}>
           <img src={newMessageIcon} alt="New message icon" />
         </div>
       </div>
+      <div>
+        <Item>
+          <img src={threadIcon} alt="icon" />
+          <p>Threads</p>
+        </Item>
+      </div>
+      <div>
+        <Item>
+          <img src={dmIcon} alt="icon" />
+          <p>All DMs</p>
+        </Item>
+      </div>
+      <div>
+        <Item>
+          <img src={draftIcon} alt="icon" />
+          <p>Drafts</p>
+        </Item>
+      </div>
+      <div>
+        <Item>
+          <img src={filesIcon} alt="icon" />
+          <p>Files</p>
+        </Item>
+      </div>
+      <div>
+        <Item>
+          <img src={pluginIcon} alt="icon" />
+          <p>Plugins</p>{' '}
+          <ClickButton
+            onClick={open}
+            className={`${styles.addButton}`}
+            src={addIcon}
+            alt="Add button"
+            role="button"
+          />
+        </Item>
+      </div>
       <Dropdown onAddButtonClick={open} showAddButton={true} title="Channels">
+        {channelsData &&
+          channelsData.channels.map((channel, index) => (
+            <Fragment key={index}>
+              <span>#</span>
+              {channel.name}
+            </Fragment>
+          ))}
+      </Dropdown>
+      <Dropdown
+        onAddButtonClick={open}
+        onTitleClick={() => setUrl(`https://sales.zuri.chat/`)}
+        showAddButton={true}
+        title="Sales"
+      >
         {channelsData &&
           channelsData.channels.map((channel, index) => (
             <Fragment key={index}>
@@ -264,6 +346,16 @@ export const Sidebar = () => {
             </Fragment>
           ))}
       </Dropdown>
+      {/* button for adding invites */}
+      <div className={styles.buttonstyle}>
+        <button onClick={() => setShow(true)}>Add Teammates</button>
+        <Modal onClose={() => setShow(false)} show={show} />
+      </div>
+      <Link to={`${match.url}/createworkspace`}>
+        <ButtonWrapper>
+          <Button>Create Workspace</Button>
+        </ButtonWrapper>
+      </Link>
     </div>
   )
 }
@@ -280,6 +372,7 @@ const Overlay = styled(DialogOverlay)`
   align-items: center;
   width: 100%;
   padding: 2rem;
+  z-index: 5;
 `
 const Content = styled(DialogContent)`
   position: relative;
@@ -291,7 +384,6 @@ const Content = styled(DialogContent)`
   margin: auto;
   flex-direction: column;
 `
-
 const Wrapper = styled.div`
   overflow-y: auto;
   padding: 1rem 0;
@@ -306,48 +398,28 @@ const CloseButton = styled.button`
   background-color: transparent;
   border: none;
 `
-// const Div = styled.div`
-//   padding: 0.5rem 2rem;
-//   border-top: 1px solid #dee1ec;
-//   &:hover {
-//     button {
-//       display: block;
-//     }
-//   }
-//   position: relative;
-// `
-
-// const Button = styled.button`
-//   padding: 0.5rem 1.2rem;
-//   position: absolute;
-//   right: 10px;
-//   top: 25%;
-//   font-size: 1rem;
-//   border: none;
-//   &.leave {
-//     background-color: #007a5a;
-//     color: white;
-//   }
-//   &.join {
-//     background-color: #dee1ec;
-//   }
-//   display: none;
-//   margin-left: auto;
-//   border-radius: 5px;
-// `
-
 const Span = styled.span`
   font-size: 0.8rem;
 `
-
-// const Hash = styled(Span)`
-//   padding: 0.5rem;
-// `
-
-// const Joined = styled(Span)`
-//   color: #007a5a;
-// `
-
-// const Bull = styled(Span)`
-//   padding: 0 0 0.5rem;
-// `
+const ButtonWrapper = styled.div`
+  max-width: 80%;
+  margin: 0 auto;
+  margin-top: 30px;
+`
+const Item = styled.p`
+font-family: Lato;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px;
+letter-spacing: 0em;
+text-align: left;
+display: flex;
+padding:0.25rem;
+& > img { 
+  padding: 0 1rem;
+}
+`
+const ClickButton = styled.img`
+  margin-left: auto;
+`

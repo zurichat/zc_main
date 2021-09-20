@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
-// import { Link } from 'react-router-dom'
-//import authBg from '../../pages/images/backg.svg'
-import authBg from '../../assets/auth_images/auth_aside_bg.svg'
 import { withRouter } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import authBg1 from '../../assets/auth_images/auth_bg1.svg'
+import authBg2 from '../../assets/auth_images/auth_bg2.svg'
+import authBg3 from '../../assets/auth_images/auth_bg3.svg'
+import authBg4 from '../../assets/auth_images/auth_bg4.svg'
+import authBg5 from '../../assets/auth_images/auth_bg5.svg'
 import AuthInputBox from '../../components/AuthInputBox'
 import FormWrapper from '../../components/AuthFormWrapper'
 import styles from '../../styles/AuthFormElements.module.css'
@@ -13,9 +16,28 @@ import axios from 'axios'
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [error, seterror] = useState('')
+  const [emailerror, setemailerror] = useState('')
+  const [passworderror, setpassworderror] = useState('')
   const [rememberMe, setRememberMe] = useState('')
 
+  // Background Images
+  const images = [authBg1, authBg2, authBg3, authBg4, authBg5]
+  const [currentImage, setcurrentImage] = useState(
+    Math.floor(Math.random() * 4)
+  )
+
+  // To Display Random Aside Background Image
+  const displayImage = () => {
+    let i = currentImage
+    i >= images.length - 1 ? (i = 0) : i++
+    setcurrentImage(i)
+    console.log(images[i], i)
+  }
+
   const handleSubmit = async e => {
+    setemailerror('')
+    setpassworderror('')
     e.preventDefault()
     await axios
       .post('https://api.zuri.chat/auth/login', {
@@ -24,6 +46,9 @@ const Login = () => {
       })
       .then(response => {
         const { data, message } = response.data
+        console.log(data)
+        //Store token in localstorage
+        sessionStorage.setItem('token', data.user.token)
 
         //Store token in localstorage
         sessionStorage.setItem('session_id', data.session_id)
@@ -36,13 +61,24 @@ const Login = () => {
 
         setTimeout(() => {
           //Redirect to some other page
+          window.location.href = '/home'
         }, 2000)
       })
       .catch(error => {
         const { data } = error.response
+        console.log(data)
+
+        RegExp('not found').test(data.message) &&
+          setemailerror(
+            'Sorry, this email is not registered, try again or click Create an Account.'
+          )
+        RegExp(/Invalid login/).test(data.message) &&
+          setpassworderror(
+            'Sorry, you have entered the wrong password. Try again or click Get help signing in.'
+          )
 
         //Render error message to the user
-        alert(data.message) //Change this when there is a design
+        seterror(data.message) //Change this when there is a design
       })
   }
 
@@ -50,8 +86,8 @@ const Login = () => {
     <main id={styles.authPageWrapper}>
       <aside id={styles.authAsideContainer} className={styles.display_none}>
         <div id={styles.authImageWrapper}>
-          <img src={authBg} alt="backgroundImage" />
-          <div id={styles.aside_txt}></div>
+          <img src={images[currentImage]} alt="backgroundImage" />
+          {/* <div id={styles.aside_txt}></div> */}
         </div>
       </aside>
       <section id={styles.authFormContainer}>
@@ -64,9 +100,11 @@ const Login = () => {
           email={email}
           password={password}
           check={rememberMe}
+          error={error}
           handleSubmit={handleSubmit}
-          bottomLine="New to us? Create an Account"
-          bottomLink="Log in"
+          bottomLine="New to us?"
+          bottomLink="Create an Account"
+          bottomLinkHref="signup"
         >
           <AuthInputBox
             className={`${styles.inputElement}`}
@@ -76,7 +114,8 @@ const Login = () => {
             placeholder="Johndoe@example.com"
             value={email}
             setValue={setEmail}
-            error=""
+            error={emailerror}
+            onFocus={displayImage}
           />
           <AuthInputBox
             className={`${styles.inputElement}`}
@@ -86,7 +125,8 @@ const Login = () => {
             placeholder="Enter a password"
             value={password}
             setValue={setPassword}
-            error=""
+            error={passworderror}
+            onFocus={displayImage}
           />
 
           <div className={`${styles.rememberMe}`}>
@@ -99,6 +139,7 @@ const Login = () => {
                 onClick={() => {
                   setRememberMe(!rememberMe)
                 }}
+                onFocus={displayImage}
               />
               Remember me
             </span>

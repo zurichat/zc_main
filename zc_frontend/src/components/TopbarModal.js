@@ -15,15 +15,17 @@ import MembersModal from './MembersModal'
 import Downloads from './Downloads'
 import PauseNotification from './PauseNotification'
 
-const TopbarModal = () => {
+const TopbarModal = ({ members }) => {
   const { toggleModalState, toggleProfileState } = useContext(ProfileContext)
 
   const state = useContext(TopbarContext)
+
   const [showModal] = state.show
   const [active, setActive] = state.presence
   const [showStatus] = state.status
   const [showMembersModal] = state.modal
-  const { onEmojiClick, openStatus, closeStatus, modalRef } = state
+  const { onEmojiClick, openStatus, closeStatus, modalRef, closeMembersModal } =
+    state
   const [modal, setModal] = useState('')
   const [pause, setPause] = useState(false)
 
@@ -53,12 +55,13 @@ const TopbarModal = () => {
 
       {/* The section that shows the members modal */}
       {showMembersModal ? (
-        <div
-          ref={modalRef}
-          className={styles.modalContainers}
-          // onClick={closeMembersModal}
-        >
-          <MembersModal />
+        <div ref={modalRef} className={styles.modalContainers}>
+          <div
+            id="overlay"
+            onClick={closeMembersModal}
+            className={styles.membersModalOverlay}
+          />
+          <MembersModal members={members} roomTitle={'announcements'} />
         </div>
       ) : null}
 
@@ -86,9 +89,12 @@ const TopbarModal = () => {
             </div>
           </div>
 
-          <div onClick={openStatus} className={styles.sectionTwo}>
+          <div className={styles.sectionTwo}>
             <StatusBadgeModal />
           </div>
+          {/* <div onClick={openStatus} className={styles.sectionTwo}>
+            <StatusBadgeModal />
+          </div> */}
 
           <div className={styles.sectionThree}>
             <p onClick={openStatus}>Set a status</p>

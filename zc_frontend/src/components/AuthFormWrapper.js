@@ -1,8 +1,10 @@
 import React from 'react'
 //import { Link } from 'react-router-dom'
+import { RiErrorWarningLine } from 'react-icons/ri'
 import styles from '../styles/AuthFormWrapper.module.css'
 import logo from '../pages/images/logo.svg'
 import google from '../pages/images/google.svg'
+import GoogleSignIn from './GoogleSignIn'
 // import chevron from '../pages/images/chevron.svg'
 // import globe from '../pages/images/globe.svg'
 
@@ -13,6 +15,7 @@ const FormWrapper = ({
   googleHeader,
   topLineText,
   submitButtonName,
+  error,
   name,
   email,
   password,
@@ -39,18 +42,29 @@ const FormWrapper = ({
           </Link>
         </div> */}
         <div className={`${styles.googleAuthDiv}`}>
-          <div className={`${styles.googleBtn}`}>
+          <GoogleSignIn
+            className={styles.googleBtn}
+            googleHeader={googleHeader}
+            google={google}
+          />
+          {/*<div className={`${styles.googleBtn}`}>
             <a href="/" className="google">
               <img src={google} alt="google" />
               {googleHeader}
             </a>
-          </div>
+          </div>*/}
           <span className={`${styles.hrWrapper}`}>
             {/* <span className={`${styles.topLine}`}>{topLineText}</span> */}
             <hr className={`${styles.hrLeft}`} />
             <div>{topLineText}</div>
             <hr className={`${styles.hrRight}`} />
           </span>
+          {error && (
+            <div className={`${styles.errWrapper}`}>
+              <RiErrorWarningLine />
+              <div>{error}</div>
+            </div>
+          )}
         </div>
         <form
           className={`${styles.form}`}
@@ -72,7 +86,10 @@ const FormWrapper = ({
             />
           </div>
 
-          <div className={`${styles.bottomLine}`}>
+          <div
+            className={`${styles.bottomLine}`}
+            style={{ paddingTop: '20px' }}
+          >
             <span>
               {bottomLine}
               {''}

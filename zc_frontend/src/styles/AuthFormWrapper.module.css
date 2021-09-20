@@ -1,14 +1,13 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap'); */
-
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  /* margin: 0 auto; */
   margin-inline: 5%;
   width: 100%;
+  max-width: 700px;
   height: 100%;
+  /* margin: 0 auto; */
   /* overflow: hidden; */
 }
 
@@ -31,8 +30,8 @@
 .headers {
   display: flex;
   flex-direction: column;
-  /* margin: 10px 0; */
   margin-block: 2rem;
+  /* margin: 10px 0; */
 }
 
 .header {
@@ -55,31 +54,32 @@
   height: 3.5rem;
 }
 
-.googleBtn a {
+.googleBtn span {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
-  /* padding: 10px; */
   outline: none;
   border: 1px solid #00b87c;
-  /* border: 1px solid #1a61db; */
   font-size: 1.2rem;
   font-weight: bold;
   letter-spacing: 1px;
   color: #1a61db;
   background: transparent;
   border-radius: 3px;
+  cursor: pointer;
+  /* border: 1px solid #1a61db; */
+  /* padding: 10px; */
   /* border-radius: 3px; */
 }
 
-.googleBtn a:hover {
+.googleBtn span:hover {
   /* color: #fff;
   background: #2f80ed; */
   /* color: #1a61db; */
   /* box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.3); */
-  box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 7px 20px #00000040;
 }
 
 .googleBtn a:active {
@@ -146,6 +146,21 @@
   top: 7px;
   margin-left: 10px;
 } */
+
+.errWrapper {
+  background-color: #f40101;
+  color: rgb(255, 255, 255);
+  padding: 0.5rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.errWrapper > div {
+  padding-left: 0.3rem;
+}
 
 .form {
   display: flex;
@@ -233,6 +248,7 @@
 }
 
 .footer {
+  /* width: 100%; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -248,6 +264,11 @@
   /* color: rgba(0, 0, 0, 0.5); */
   /* font-size: 10px; */
   /* margin: 16px 20px; */
+}
+
+.footer_a:hover,
+.footer_a:active {
+  color: #b8003c;
 }
 
 /* Media Query for Screen Width 920px and Smaller */
