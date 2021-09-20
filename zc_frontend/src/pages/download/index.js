@@ -1,9 +1,9 @@
-import React from 'react'
+/*import React from 'react'
 import DownloadsDesktop from './DownloadsDesktop'
 import DownloadsAndroid from './DownloadsAndroid'
 import DownloadsIOS from './DownloadsIOS'
 
-import isIOs from 'react-device-detect'
+//import isIOs from 'react-device-detect'
 
 const Download = () => {
   const [width, setWidth] = React.useState(window.innerWidth)
@@ -16,13 +16,13 @@ const Download = () => {
     return () => window.removeEventListener('resize', handleWindowResize)
   }, [])
 
-  return width > breakpoint ? (
+  /*return width > breakpoint ? (
     <DownloadsDesktop />
-  ) : isIOs ? (
+  //) : isIOs ? (
     <DownloadsIOS />
   ) : (
     <DownloadsAndroid />
   )
 }
 
-export default Download
+export default Download*/
