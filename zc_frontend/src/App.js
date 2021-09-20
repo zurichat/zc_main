@@ -52,6 +52,8 @@ import Test from './components/verified-components'
 import RecoverPassword from './pages/passwordRecovery/index'
 import ResetPassword from './pages/passwordReset/Index'
 import AuthApi from './pages/api-docs/components/auth'
+// import Eventspage from './pages/events/components/Eventspage'
+import EventsMainWrapper from './pages/events/components/EventsMainWrapper'
 
 import './components/verified-components/master.css'
 
@@ -189,6 +191,9 @@ const App = () => (
         </Route>
         <Route path="/test">
           <Test />
+        </Route>
+        <Route path="/events">
+          <EventsMainWrapper />
         </Route>
       </Switch>
     </BrowserRouter>
