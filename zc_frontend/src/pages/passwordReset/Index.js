@@ -9,7 +9,7 @@ import Button from '../../components/verified/Button'
 // import styles from '../../styles/AuthFormElements.module.css'
 import styles from '../../styles/ResetPassword.module.css'
 import ResetModal from '../../components/verified/ResetModal'
-// import axios from 'axios'
+import axios from 'axios'
 const Index = () => {
   const [email, setEmail] = useState('')
   const [modalShow, setModalShow] = useState(false)
@@ -21,6 +21,22 @@ const Index = () => {
   const handleSubmit = e => {
     e.preventDefault()
     toggleModal()
+  }
+  const sendEmail = async () => {
+    if (email) {
+      try {
+        const res = await axios.post(
+          'https://api.zuri.chat/account/request-password-reset-code',
+          {
+            email
+          }
+        )
+
+        console.log(res.data)
+      } catch (err) {
+        console.error(err)
+      }
+    }
   }
 
   return (
