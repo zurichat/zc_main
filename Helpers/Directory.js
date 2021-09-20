@@ -1,43 +1,51 @@
-const fs = require('fs')
+const {readdir, stat} = require('fs').promises
 const path = require('path');
 
 //var newArr = [];
-module.exports.getFiles = (folderPath, fileName, newArr = []) => {
-
-    const allNames = fs.readdir(folderPath, (err, folder) =>{
-       
-        if(err) {
-            console.log(err)
-            return false
-        }
-
-       const newArray = folder.filter((file)=>{
+const getFiles = async (folderPath, fileName) => {
+    try{
+        const allFileNames = await readdir(folderPath)
+        const newArray = allFileNames.filter( file =>{
+           
             const filePath = path.join(folderPath, file);
-            const baseName = path.basename(filePath)
-          fs.stat(filePath, (err, stat)=>{
-                if(err) {
-                    console.log(err)
-                }
-                if(stat.isDirectory()) {
-                    getFiles(filePath, fileName)
-                }
-                if( baseName.includes(fileName)){
-                    return true
-                } 
-            })
-
-            if( baseName.includes(fileName)){
+            const baseName = path.basename(filePath);
+    
+                                       
+            if(baseName.includes(fileName)){
                 return true
-            } 
+            }
+              
         })
-        newArr = [...newArray]        
-    })
+        return newArray;
+    }
 
-    console.log({newArray})
+
+    catch(error){
+        console.log(error.message)
+    }
 }
 
 
 
 
 
+
+// const innerFiles = await stat(filePath);
+            // if( innerFiles.isDirectory()){  
+            //     try{
+            //         await getFiles(filePath, this.fileName);  
+            //     }               
+            //     catch(error){
+            //         console.log(error.message)
+            //     }
+            //     if(baseName.includes(fileName)){
+            //         return true
+            //     }
+            // } 
+
+
+
+module.exports = {
+    getFiles
+};
     
