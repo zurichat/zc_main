@@ -10,23 +10,12 @@
   --page-pad-mob: 0.75rem;
 }
 
-/* * OTHERS ----------------------------- */
-
-.homepage a {
-  text-decoration: none;
-}
-.homepage a:hover {
-  text-decoration: underline;
-}
-.homepage button {
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-
 /* * TOP LEVEL WRAPS ----------------------------- */
-.homepage * {
+.homepage {
   font-family: var(--font);
+  color: #000000;
+}
+.homepage * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -65,20 +54,16 @@
   justify-content: space-between;
   align-items: flex-start;
 }
-
 .hero_text_one {
-  /* font-family: var(--font); */
   font-size: 1rem;
   font-weight: 400;
 }
 .hero_heading {
-  /* font-family: var(--font); */
   font-size: 2.5rem;
   font-weight: 700;
   margin: 2rem 0 1rem 0;
 }
 .hero_p {
-  /* font-family: var(--font); */
   font-size: 1.25rem;
   font-weight: 500;
 }
@@ -87,11 +72,12 @@
   background-color: var(--brand);
   color: var(--white);
   margin-top: 2rem;
-  /* font-family: var(--font); */
   font-size: 1rem;
   font-weight: 600;
   border: 2px solid var(--brand);
   transition: 200ms;
+  outline: none;
+  cursor: pointer;
 }
 .hero_left_btn:hover {
   text-decoration: none;
@@ -108,6 +94,7 @@
   width: 100%;
   max-width: 800px;
 }
+
 /* * COMPANY BANNER ----------------------------- */
 .company_banner_wrap {
   background-color: #f5f5fb;
@@ -119,7 +106,6 @@
   align-items: center;
 }
 .cbp {
-  /* font-family: var(--font); */
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 2rem;
@@ -131,9 +117,13 @@
   align-items: center;
   width: 100%;
 }
+/* .ft_col div {
+  border: 2px solid lime;
+} */
 .logo {
   max-width: 200px;
   width: 100%;
+  min-width: 100px;
   height: auto;
 }
 
@@ -169,33 +159,39 @@
   max-width: 600px;
   width: 100%;
 }
+.ft_link_wrap {
+  margin-top: 1.5rem;
+}
 .ft_link {
   text-decoration: none;
   color: var(--brand);
-  /* font-family: var(--font); */
   font-size: 1.125rem;
   font-weight: 700;
 }
+.ft_link:hover {
+  color: var(--brand);
+  text-decoration: underline;
+}
 .ft_link div {
   display: flex;
+  align-items: center;
 }
 .ft_text_one {
-  /* font-family: var(--font); */
   font-size: 1.25rem;
   font-weight: 400;
 }
 .ft_heading {
-  /* font-family: var(--font); */
   font-size: 2.25rem;
   font-weight: 700;
   margin: 2rem 0 1rem 0;
+  color: inherit;
+  width: auto;
+  height: auto;
 }
 .ft_p {
-  /* font-family: var(--font); */
   font-size: 1.5rem;
   font-weight: 500;
 }
-
 .ft_link svg {
   margin-left: 0.75rem;
 }
@@ -221,13 +217,11 @@
   justify-content: center;
 }
 .sign_up_left p {
-  /* font-family: var(--font); */
   font-size: 36px;
   font-weight: 700;
   color: var(--white);
 }
 .sign_up_btn {
-  /* font-family: var(--font); */
   font-size: 16px;
   font-weight: 600;
   padding: 1.5rem;
@@ -236,6 +230,8 @@
   margin-top: 2rem;
   border: 2px solid var(--white);
   transition: 200ms;
+  outline: none;
+  cursor: pointer;
 }
 .sign_up_btn:hover {
   text-decoration: none;
@@ -243,7 +239,6 @@
   color: var(--white);
   border: 2px solid var(--white);
 }
-
 .sign_up_right {
   display: flex;
 }
@@ -300,11 +295,14 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+  .logo {
+    min-width: 150px;
+  }
+
   /* * FEATURES ----------------------------- */
   .features {
     padding: 4rem var(--page-pad-mid) 7rem var(--page-pad-mid);
   }
-
   .ft_row {
     flex-direction: column;
     margin-bottom: 6rem;
@@ -312,13 +310,11 @@
   .ft_row_reverse .ft_col:first-child {
     margin-left: 0;
   }
-
   .ft_col:first-child {
     margin: 0;
     margin-bottom: 2.5rem;
     align-items: center;
   }
-
   .ft_text_one {
     display: none;
   }
@@ -330,6 +326,7 @@
     font-size: 1.5rem;
     margin: 1rem 0 2rem 0;
   }
+
   /* * SIGN UP BANNER ----------------------------- */
 
   .sign_up_left {
@@ -342,7 +339,6 @@
   .sign_up_btn {
     padding: 0.75rem;
   }
-
   .sign_up_right {
     display: none;
   }
@@ -358,7 +354,6 @@
   }
 
   /* * HERO ----------------------------- */
-
   .hero {
     padding: 7.5rem var(--page-pad-mob);
   }
@@ -385,6 +380,7 @@
   .logo {
     max-width: 150px;
   }
+
   /* * FEATURES ----------------------------- */
   .features {
     padding: 4rem var(--page-pad-mob) 7rem var(--page-pad-mob);
@@ -396,7 +392,6 @@
   .ft_row_reverse .ft_col:first-child {
     margin-left: 0;
   }
-
   .ft_col:first-child {
     margin: 0;
     margin-bottom: 2.5rem;
@@ -412,8 +407,8 @@
     font-size: 1.5rem;
     margin: 1rem 0 2rem 0;
   }
-  /* * SIGN UP BANNER ----------------------------- */
 
+  /* * SIGN UP BANNER ----------------------------- */
   .sign_up_left {
     padding: 0;
     margin: 4rem 0;
