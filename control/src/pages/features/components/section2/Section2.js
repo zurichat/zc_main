@@ -1,28 +1,27 @@
-import React from 'react'
 import styles from '../../styles/section2.module.css'
-import image1 from '../../assets/image 4.png'
-import image2 from '../../assets/image 3.png'
-import image3 from '../../assets/image 8.png'
-import image4 from '../../assets/image 6.png'
-import image5 from '../../assets/image 5.png'
+import image1 from '../../assets/i4g_image.png'
+import image2 from '../../assets/hng_image.png'
+import image3 from '../../assets/nucle_image.png'
+import image4 from '../../assets/zuri_internship_image.png'
+import image5 from '../../assets/zuri_i4g_image.png'
 
 const Section2 = () => {
   return (
-    <div className={styles.real}>
-      <div className={styles.container}>
-        <div className={styles.image1}>
+    <div className={styles.section2}>
+      <div className={styles.section2Wrapper}>
+        <div className={styles.imageWrapper}>
           <img src={image1} alt="imageu" />
         </div>
-        <div className={styles.image2}>
+        <div className={styles.imageWrapper}>
           <img src={image2} alt="imageo" />
         </div>
-        <div className={styles.image3}>
+        <div className={styles.imageWrapper}>
           <img src={image3} alt="imagei" />
         </div>
-        <div className={styles.image4}>
+        <div className={styles.imageWrapper}>
           <img src={image4} alt="imageg" />
         </div>
-        <div className={styles.image5}>
+        <div className={styles.imageWrapper}>
           <img src={image5} alt="imagen" />
         </div>
       </div>
