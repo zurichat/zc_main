@@ -9,8 +9,6 @@ import MarkAsRead from '../pages/preferences/components/MarkAsRead'
 import LanguageAndRegion from '../pages/preferences/components/LanguageAndRegion'
 import styles from '../pages/preferences/styles/NotificationPreference.module.css'
 import { ProfileContext } from '../context/ProfileModal'
-import AudioVideo from '../pages/preferences/components/AudioVideo'
-import AdvancedSettings from '../pages/preferences/components/AdvancedSettings'
 
 const Preferences = () => {
   const { sideBar } = useContext(ProfileContext)
@@ -29,8 +27,6 @@ const Preferences = () => {
           {sideBar === 4 && <MessagesMedia />}
           {sideBar === 5 && <LanguageAndRegion />}
           {sideBar === 7 && <MarkAsRead />}
-          {sideBar === 8 && <AudioVideo />}
-          {sideBar === 9 && <AdvancedSettings />}
         </div>
       </div>
     </ProfileModal>
