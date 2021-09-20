@@ -1,6 +1,9 @@
 .container {
     width: 400%;
     font-family: "Lato";
+    color: #3a3a3a;
+    font-size: 13px;
+    line-height: 2rem;
 }
 
 .head {
@@ -8,22 +11,15 @@
     font-weight: bolder;
     display: flex;
     margin: 1rem 0;
-    color: #000;
+    color: #242424;
+    font-size: 15px;
 }
 
-.borderbottomone {
-    margin-left: 20px;
-    margin-right: 20px;
-    width: 30%;
-    height: .5rem; 
-    border-bottom: 1px solid #000;
-}
-
-.borderbottomtwo {
-    margin-left: 20px;
-    width: 30%;
-    height: .5rem; 
-    border-bottom: 1px solid #000;
+.line {
+    background: #bebebe;
+    width: 27%;
+    height: 1px;
+    margin-left: 1rem;
 }
 
 .checktype {
@@ -31,16 +27,32 @@
     margin-bottom: .4rem;
 }
 
+.checktype input {
+    margin-top: .6rem;
+}
+
 .checkformat {
     display: flex;
 }
 
+.checkformat input {
+    margin-top: .6rem;
+}
+
 .radiosend {
     display: flex;
+} 
+
+.radiosend input {
+    margin-top: .6rem;
 }
 
 .radiostart {
     display: flex;
+}
+
+.radiostart input {
+    margin-top:.6rem ;
 }
 
 .radiosend .send {
@@ -50,10 +62,6 @@
 .radiostart .start {
     margin-left: 1rem;
 }
-
-/* input {
-    margin-top: .5rem;
-} */
 
 .typing span {
     font-weight: bold;
@@ -72,9 +80,10 @@
     background: #dbdbdb;
     border: none;
     border-radius: 3px;
-    padding:1px 4px;
+    padding:1px 6px;
     margin: 2px;
     color: #3a3a3a;
+    font-weight: bold;
 }
 
 .input {
@@ -83,11 +92,15 @@
 }
 
 .bartype {
-    border: .5px solid #aeaeae;
+    border: 1px solid #dadada;
     padding-left: 1.5rem;
     padding-right: 22rem ;
-    height: 4rem;
+    height: 3rem;
     
+}
+
+.bartype::placeholder {
+    font-size: 13px;
 }
 
 .search {
@@ -99,16 +112,32 @@
     display: flex;
 }
 
+.checkkeys input {
+    margin-top: .6rem;
+}
+
 .ask {
     display: flex;
+}
+
+.ask input {
+    margin-top: .6rem;
 }
 
 .survey {
     display: flex;
 }
 
+.survey input {
+    margin-top: .6rem;
+}
+
 .warn {
     display: flex;
+}
+
+.warn input {
+    margin-top: .6rem;
 }
 
 
