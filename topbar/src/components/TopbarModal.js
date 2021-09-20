@@ -19,13 +19,11 @@ const TopbarModal = ({ members }) => {
   const { toggleModalState, toggleProfileState } = useContext(ProfileContext)
 
   const state = useContext(TopbarContext)
-
   const [showModal] = state.show
   const [active, setActive] = state.presence
   const [showStatus] = state.status
   const [showMembersModal] = state.modal
-  const { onEmojiClick, openStatus, closeStatus, modalRef, closeMembersModal } =
-    state
+  const { onEmojiClick, openStatus, closeStatus, modalRef, closeMembersModal } = state
   const [modal, setModal] = useState('')
   const [pause, setPause] = useState(false)
 
@@ -113,7 +111,7 @@ const TopbarModal = ({ members }) => {
           <div className={styles.sectionFour}>
             <p
               onClick={() => {
-                setModal('edit profile')
+                // setModal('edit profile') //needs refactoring
                 toggleModalState()
               }}
             >
@@ -122,7 +120,7 @@ const TopbarModal = ({ members }) => {
             <p onClick={toggleProfileState}>View profile</p>
             <p
               onClick={() => {
-                setModal('preference')
+                // setModal('preference') //needs refactoring
                 toggleModalState()
               }}
             >
