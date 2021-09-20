@@ -50,20 +50,23 @@ function ContactFormContainer() {
   })
   // .xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf
 
-  const handleFileDelete=(index)=>()=>{
-        delete acceptedFiles[index]
+  const handleFileDelete = index => () => {
+    delete acceptedFiles[index]
   }
 
-  const acceptedFileItems = acceptedFiles.map((file,i) => (
+  const acceptedFileItems = acceptedFiles.map((file, i) => (
     <div className="d-flex justify-content-between align-items-center">
-    <p className="mb-2 text-dark w-100" key={file.path}>
-      {file.name} - {file.size} bytes
-    </p>
-    <p className={`text-danger ${ContactFormStyle.cancel}`} fw-bold onClick={handleFileDelete(i)}>
-      X
-      </p>      
+      <p className="mb-2 text-dark w-100" key={file.path}>
+        {file.name} - {file.size} bytes
+      </p>
+      <p
+        className={`text-danger ${ContactFormStyle.cancel}`}
+        fw-bold
+        onClick={handleFileDelete(i)}
+      >
+        X
+      </p>
     </div>
-
   ))
 
   const style = useMemo(
