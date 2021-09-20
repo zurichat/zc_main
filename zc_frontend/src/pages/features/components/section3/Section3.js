@@ -1,94 +1,85 @@
-import React from 'react'
-import styles from '../../../features/styles/Features.module.css'
-import hashtag from '../../../../assets/hashtag.png'
-import holiday from '../../../../assets/holiday.png'
-import deadline from '../../../../assets/deadline.png'
-import chat from '../../../../assets/chat.png'
-import todolist from '../../../../assets/todolist.png'
+import styles from '../../styles/section3.module.css'
 
 const Section3 = () => {
   return (
-    <div className={styles.real}>
-      <div id="featuresSection">
+    <div className={styles.section3}>
+      <div className={styles.section3TopTextsWrapper}>
         <h3 className={styles.remote}>
           Working remotely, more intriguing than ever
         </h3>
         <p className={styles.work}>
-          Zuri chat is where work meets fun. Activate body and mind, maintain
-          high productivity levels, connect and interact
-          <br />
-          with your team comfortable and efficiently, making quick decisions and
-          getting great outcomes.
+          Zuri Chat is where work meets fun. Activate body and mind, maintain
+          high productivity levels, connect and interact with your team
+          comfortably and efficiently.
         </p>
       </div>
       <div className={styles.featuresSection}>
         <div className={styles.featureCard}>
-          <div className={styles.imagea}>
-            <img src={hashtag} alt="hashtag" className={styles.hashtag} />
+          <div className={styles.iconWrapper}>
+            <img
+              src={`/channels_icon.png`}
+              alt="hashtag"
+              className={styles.hashtag}
+            />
           </div>
-          <h3>Channels </h3>
+          <h3>Channels</h3>
           <p>
-            Increase level of <br />
-            organization in your <br />
-            team focused with <br />
-            centralized spaces for <br />
-            conversions
+            Increase level of organisation in your team focused with cetralized
+            spaces.
           </p>
         </div>
         <div className={styles.featureCard}>
-          <div className={styles.imageh}>
-            <img src={holiday} alt="holiday" className={styles.holiday} />
+          <div className={styles.iconWrapper}>
+            <img
+              src={`/holiday_calender_icon.png`}
+              alt="holiday"
+              className={styles.holiday}
+            />
           </div>
-          <h3 className={styles.com}>
-            Company Holiday
-            <br /> Calendar
-          </h3>
-          <p>
-            Add holidays and set
-            <br /> reminders. See all <br />
-            holidays in one view
-          </p>
+          <h3 className={styles.com}>Holiday Calendar</h3>
+          <p>Add holidays, set reminders and see all in one view</p>
         </div>
         <div className={styles.featureCard}>
-          <div className={styles.imaged}>
-            <img src={deadline} alt="deadline" className={styles.deadline} />
+          <div className={styles.iconWrapper}>
+            <img
+              src={`/company_deadline_icon.png`}
+              alt="deadline"
+              className={styles.deadline}
+            />
           </div>
-          <h3>Company deadline</h3>
-          <p>
-            Meet up with deadlines
-            <br />
-            with the company
-            <br />
-            deadline feature
-          </p>
+          <h3>Company Deadline</h3>
+          <p>Meet up with deadlines with the company deadline feature.</p>
         </div>
         <div className={styles.featureCard}>
-          <div className={styles.imagec}>
-            <img src={chat} alt="chat" className={styles.chat} />
+          <div className={styles.iconWrapper}>
+            <img
+              src={`/quick_reply_app_icon.png`}
+              alt="chat"
+              className={styles.chat}
+            />
           </div>
           <h3>Quick Reply App</h3>
           <p>
-            Swift replies to your <br />
-            messages in your DMs
+            Get swift replies to Direct Messages and across all your channels.
           </p>
         </div>
         <div className={styles.featureCard}>
-          <div className={styles.imaget}>
-            <img src={todolist} alt="To do list" className={styles.todolist} />
+          <div className={styles.iconWrapper}>
+            <img
+              src={`/to_do_list_icon.png`}
+              alt="To do list"
+              className={styles.todolist}
+            />
           </div>
-          <h3>To Do List</h3>
+          <h3>To do list</h3>
           <p>
-            Get your task organized
-            <br />
-            with the to do list
-            <br />
-            feature ensuring your
-            <br />
-            most urgent tasks are
-            <br />
+            Organize tasks with the to-do list feature ensuring urgent tasks are
             duly attended to.
           </p>
         </div>
+      </div>
+      <div className={styles.zuriInterfaceViewWrapper}>
+        <img src={`/to_do_interface_image.png`} alt="Zuri Interface" />
       </div>
     </div>
   )
