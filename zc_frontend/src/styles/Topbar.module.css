@@ -194,7 +194,7 @@
 }
 
 .circle {
-  background: green;
+  background-color: green;
   height: 6px;
   width: 6px;
   border-radius: 50%;
@@ -202,7 +202,7 @@
 }
 
 .circlegrey {
-  background: grey;
+  background-color: grey;
   height: 6px;
   width: 6px;
   border-radius: 50%;

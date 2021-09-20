@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { ProfileModal } from './ProfileModal2'
+import ProfileModal from './ProfileModal'
 import NotificationPreference from '../pages/preferences/components/NotificationPreference'
 import SidebarPreference from '../pages/preferences/components/SidebarPreference'
 import Themes from '../pages/preferences/components/Themes'

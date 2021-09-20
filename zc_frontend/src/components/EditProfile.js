@@ -1,32 +1,34 @@
-import { useRef, useState, useContext } from 'react'
+import { useRef, useState, useEffect, useContext } from 'react'
 import styles from '../styles/EditProfile.module.css'
 import AddLink from './AddLink'
-import { ProfileModal } from './ProfileModal2'
+import ProfileModal from './ProfileModal'
 // import axios from 'axios'
 
 import { AiFillCamera } from 'react-icons/ai'
-import avatar from '../assets/avatar.png'
+import userAvatar from '../assets/user.svg'
 import { ProfileContext } from '../context/ProfileModal'
 import { authAxios } from '../util/Api'
+import Loader from 'react-loader-spinner'
+import toast, { Toaster } from 'react-hot-toast'
 
 const EditProfile = () => {
   const imageRef = useRef(null)
   const avatarRef = useRef(null)
-  const { user, orgId } = useContext(ProfileContext)
-
-  console.log(user)
+  const { user, orgId, userProfileImage, setUserProfileImage } =
+    useContext(ProfileContext)
+  const [otherLinks, setotherLinks] = useState([])
   const [state, setState] = useState({
     name: user.name,
-    displayName: user.displayName,
+    display_name: user.display_name,
     pronouns: user.pronouns,
-    todo: '',
+    role: user.role,
+    image_url: user.image_url,
     bio: '',
     phone: user.phone,
     prefix: '',
     timezone: '',
     twitter: '',
     facebook: '',
-    otherLinks: [''],
     loading: false
   })
 
@@ -36,11 +38,29 @@ const EditProfile = () => {
 
       fileReader.onload = function (event) {
         avatarRef.current.src = event.target.result
+        setUserProfileImage(event.target.result)
       }
 
-      fileReader.readAsDataURL(imageRef.current.files[0])
+      const imgUrl = fileReader.readAsDataURL(imageRef.current.files[0])
+
+      authAxios
+        .patch(`/organizations/${orgId}/members/${user._id}/photo`, {
+          image_url:
+            'https://images.unsplash.com/photo-1632071929769-2c42d1c29c6a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'
+        })
+        .then(res => {
+          console.log(res)
+        })
+        .catch(err => {
+          console.log(err)
+        })
     }
   }
+
+  useEffect(() => {
+    handleImageChange()
+    console.log(userProfileImage)
+  })
 
   // This will handle the profile form submission
 
@@ -50,12 +70,13 @@ const EditProfile = () => {
 
     const data = {
       name: state.name,
-      displayName: state.displayName,
+      display_name: state.display_name,
       email: state.email,
       pronouns: state.pronouns,
       phone: state.phone,
       bio: state.bio,
       timeZone: state.timezone
+      // socials: [state.twitter, state.facebook, ...otherLinks],
     }
 
     authAxios
@@ -63,10 +84,16 @@ const EditProfile = () => {
       .then(res => {
         console.log(res)
         setState({ loading: false })
+        toast.success('User Profile Updated Successful', {
+          position: 'bottom-center'
+        })
       })
       .catch(err => {
-        console.log(err?.response?.data)
+        console.log(err)
         setState({ loading: false })
+        toast.error(err?.message, {
+          position: 'bottom-center'
+        })
       })
   }
 
@@ -88,7 +115,7 @@ const EditProfile = () => {
                         setState({ ...state, name: e.target.value })
                       }
                       value={state.name}
-                      defaultValue={user.name}
+                      defaultValue={state.name}
                     />
                   </div>
                   <div
@@ -102,9 +129,9 @@ const EditProfile = () => {
                         name="displayName"
                         className={styles.formInput}
                         onChange={e =>
-                          setState({ ...state, displayName: e.target.value })
+                          setState({ ...state, display_name: e.target.value })
                         }
-                        value={state.displayName}
+                        value={state.display_name}
                       />
                       <div className={styles.subText}>
                         Please use a unique and permanent display name. If
@@ -135,9 +162,9 @@ const EditProfile = () => {
                       name="todo"
                       className={styles.formInput}
                       onChange={e =>
-                        setState({ ...state, todo: e.target.value })
+                        setState({ ...state, role: e.target.value })
                       }
-                      value={state.todo}
+                      value={state.role}
                     />
                   </div>
                   <div className={styles.subText}>
@@ -154,6 +181,7 @@ const EditProfile = () => {
                         setState({ ...state, bio: e.target.value })
                       }
                       value={state.bio}
+                      defaultValue={user.bio}
                     />
                   </div>
 
@@ -233,7 +261,11 @@ const EditProfile = () => {
                     </label>
 
                     <div className={styles.avatar}>
-                      <img ref={avatarRef} src={avatar} alt="profile-pic" />
+                      <img
+                        ref={avatarRef}
+                        src={state.image_url ? state.image_url : userAvatar}
+                        alt="profile-pic"
+                      />
                     </div>
                     <div className={styles.username}>
                       <div style={{ width: '100%' }}>
@@ -242,6 +274,11 @@ const EditProfile = () => {
                           type="text"
                           name="name"
                           className={styles.formInput}
+                          onChange={e =>
+                            setState({ ...state, name: e.target.value })
+                          }
+                          value={state.name}
+                          defaultValue={user.name}
                         />
                       </div>
                     </div>
@@ -273,19 +310,36 @@ const EditProfile = () => {
               </div>
             </div>
 
-            <button className={styles.bottomButton}>Save</button>
+            <button onClick={handleFormSubmit} className={styles.bottomButton}>
+              {state.loading ? (
+                <Loader type="ThreeDots" color="#FFF" height={32} width={32} />
+              ) : (
+                'Save'
+              )}
+            </button>
 
             <div className={styles.px9}>
-              <AddLink />
+              <AddLink setotherLinks={setotherLinks} />
               <div className={styles.formFooter}>
                 <div style={{ display: 'flex' }}>
                   <button className={styles.cancel}>Cancel</button>
                   <button onClick={handleFormSubmit} className={styles.save}>
-                    {state.loading ? 'Loading...' : 'Save Changes'}
+                    {state.loading ? (
+                      <Loader
+                        type="ThreeDots"
+                        color="#FFF"
+                        height={40}
+                        width={40}
+                      />
+                    ) : (
+                      'Save Changes'
+                    )}
                   </button>
                 </div>
               </div>
             </div>
+
+            <Toaster />
           </div>
         </div>
       </>
