@@ -35,13 +35,13 @@ export const GetUserInfo = () => {
           }
         })
       .then((res) => {
-        // let user = res.data.data
-        // console.log(user)
+        let user = res.data.data
+        console.log(user)
 
       })
       .catch(err => console.log(err));
 
-  return token
+  return user
 }
 
 export const { bootstrap, mount, unmount } = lifecycles
