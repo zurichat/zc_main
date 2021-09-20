@@ -25,13 +25,13 @@
   justify-content: space-between;
   text-align: left;
 }
-.title h6 {
+.title .h6 {
   padding-right: 2rem;
   font-weight: bold;
   cursor: pointer;
   line-height: 1.5;
 }
-.title span {
+.title .span {
   color: #333333;
   font-size: 1.5rem;
 }
@@ -41,25 +41,91 @@
   cursor: pointer;
   font-weight: 500;
   font-size: 1rem;
+  background: white;
   color: #333333;
   max-height: 0;
   line-height: 2;
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  /* transition: all 0.5s cubic-bezier(0, 1, 0, 1); */
 }
 .answer.show {
   height: auto;
+  background: white;
   max-height: 62.5rem;
-  transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+  /* transition: all 0.5s cubic-bezier(1, 0, 1, 0); */
 }
 .billing {
   font-weight: bold;
   margin-top: 1.3rem;
-  padding: 0 5rem;
+  padding: auto 5rem;
   font-size: 18px;
+  padding-bottom: 3.5rem;
 }
 .billing .info {
   color: rgb(107, 180, 107);
 }
 .billing .info:hover {
   text-decoration: underline;
+}
+
+
+
+@media (max-width: 576px) {
+  .faqs {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.5rem;
+  background: rgb(230, 228, 228);
+  display: block;
+  }
+  .h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .h6 {
+    font-size: 1rem;
+  }
+
+.answer {
+  text-align: left;
+  overflow: hidden;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  background: white;
+  color: #333333;
+  max-height: 0;
+  line-height: 2;
+  /* transition: all 0.5s cubic-bezier(0, 1, 0, 1); */
+}
+.show {
+  height: auto;
+  background: white;
+  max-height: 62.5rem;
+  /* transition: all 0.5s cubic-bezier(1, 0, 1, 0); */
+}
+}
+
+
+@media (max-width: 768px) {
+  .faqs {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.5rem;
+  background: rgb(230, 228, 228);
+  display: block;
+  }
+  .answer.show {
+  height: auto;
+  max-height: 62.5rem;
+  transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+}
+
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+    text-align: center;
+  }
 }
