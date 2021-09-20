@@ -7,10 +7,9 @@ import Footer from '../../components/Footer'
 import Section5 from './components/section5/Section5'
 import Header from '../../components/Header'
 
-
 const Features = () => {
   return (
-    <div >
+    <div>
       <Header />
       <Section1 />
       <Section2 />
