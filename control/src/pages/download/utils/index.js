@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const fetchInstall = async (type) => {
+const fetchInstall = async type => {
   try {
     // const res = await axios.get("link to download url", {type})
     // const {link, name} = res.data
