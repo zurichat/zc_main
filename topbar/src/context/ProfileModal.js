@@ -13,6 +13,7 @@ export const ProfileProvider = ({ children }) => {
   const toggleProfileState = () => {
     setShowProfile(!showProfile)
   }
+  
 
   return (
     <ProfileContext.Provider
