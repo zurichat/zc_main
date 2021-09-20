@@ -9,62 +9,33 @@ import theme16 from '../../images/theme12.png'
 import theme17 from '../../images/theme13.png'
 import theme18 from '../../images/theme14.png'
 import theme19 from '../../images/theme15.png'
-import { useState, useContext, useEffect } from "react";
-import { authAxios } from '../../../util/Api'
-import { ProfileContext } from '../../../context/ProfileModal'
+import { useState } from "react";
 
 const MessagesMedia = () => {
   const [isChecked, setIsChecked] = useState(false)
   const [active1, setActive1] = useState(0)
 
-  const { user, orgId } = useContext(ProfileContext)
-
-  const [msgMed, setMsgMed] = useState({
-    // channel_hurdle_notification: channel_hurdle,
-    additional_options: null,
-    bring_emails_into_zuri_bson: "",
-    convert_emoticons_to_emoji: false,
-    custom: false,
-    emoji: "",
-    emoji_as_text: false,
-    frequently_used_emoji: false,
-    inline_media_and_links: null,
-    messages_one_click_reaction: null,
-    names: "",
-    show_jumbomoji: false,
-    theme: "",
-  })
-
   // handleSubmit function on the form
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(isChecked)
-    // console.log(user)
-  }
+    }
   
-  React.useEffect(() => {
-    console.log(user)
-   
-  }, [user])
+    
   
-
-  // const setData = () => {
-  //   authAxios
-  //     .patch(`/organizations/${orgId}/members/${user._id}/settings`, {
-  //       settings: {
-  //         notifications: dataState
-  //       }
-  //     })
-  //     .then(res => {
-  //       console.log(res)
-        
-  //     })
-  //     .catch(err => {
-  //       console.log(err?.response?.data)
-        
-  //     })
-  // }
-
+    React.useEffect(() =>{
+      fetch("https://api.zuri.chat/", {
+          method: "POST",
+          headers: {
+              // authorization if any
+              "Content-Type": 'application/json',
+          },
+          body: JSON.stringify(isChecked)
+      }).then((res) => console.log(res)).catch((error) => console.log(error))
+  })
+  
+    
+  
   return (
     <div className={styles.msgCon}>
       <div className={styles.title}>Theme</div>
