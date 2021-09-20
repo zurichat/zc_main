@@ -13,13 +13,17 @@ import CookiesSetting from './pages/cookiesSettings'
 import Cookies from './pages/cookies'
 import Features from './pages/features'
 import Resources from './pages/resources'
-import SearchSuggestion from './pages/searchSuggestion'
 import Pricing from './pages/pricing'
-import FAQ from './pages/FAQ'
 import Security from './pages/security'
+import ApiDocs from './pages/api-docs'
+// import { PluginLoaderProvider } from './context/PluginLoaderState'
+// import UsersApi from './pages/api-docs/components/users'
+// import OrganisationApi from './pages/api-docs/components/organisation'
+// import MarketplaceApi from './pages/api-docs/components/marketplace'
+// import DataApi from './pages/api-docs/components/data'
+// import PluginApi from './pages/api-docs/components/plugin'
 
 
-console.log(FAQ)
 const App = () => (
   <BrowserRouter>
     <Switch>
@@ -44,12 +48,30 @@ const App = () => (
         <Route path="/security">
           <Security />
         </Route>  
-        <Route path="/faq">
-          <FAQ />
+        {/* <Route path="/documentation" exact>
+          <PluginLoaderProvider>
+            <ApiDocs />
+          </PluginLoaderProvider>
+        </Route> */}
+        {/* Api docs */}
+        {/* <Route exact path="/documentation/users">
+          <UsersApi />
         </Route>
-        <Route path="/searchSuggestion">
-          <SearchSuggestion />
+        <Route exact path="/documentation/auth">
+          <AuthApi />
         </Route>
+        <Route path="/documentation/organisation">
+          <OrganisationApi />
+        </Route>
+        <Route path="/documentation/marketplace">
+          <MarketplaceApi />
+        </Route>
+        <Route path="/documentation/data">
+          <DataApi />
+        </Route>
+        <Route path="/documentation/plugin">
+          <PluginApi />
+        </Route> */}
       <Route path="/settings">
         <Settings />
       </Route>
