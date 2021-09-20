@@ -10,6 +10,7 @@ import halfCircle from './assets/half-circle.svg'
 import Rect2 from './assets/DP-Rect-2.svg'
 import Rect1 from './assets/DP-Rec-1.svg'
 import homeAndroid from './assets/Home-Android.svg'
+import dm from './assets/DM.svg'
 
 const DownloadsDesktop = () => {
   return (
@@ -208,7 +209,7 @@ const DownloadsDesktop = () => {
                 src={homeAndroid}
                 alt="mobile screenshot"
               ></img>
-              <img className={styles.dm} src="/DM.svg" alt="DM"></img>
+              <img className={styles.dm} src={dm} alt="DM"></img>
             </div>
           </div>
         </section>
