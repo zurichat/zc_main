@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useContext, Fragment, useState, useEffect } from 'react'
 import useSWR from 'swr'
 import { URLContext } from '../context/Url'
-import {ProfileContext} from "../context/ProfileModal";
+import { ProfileContext } from '../context/ProfileModal'
 import { PluginContext } from '../context/Plugins'
 import styles from '../styles/Sidebar.module.css'
 import Dropdown from './Dropdown'
@@ -22,7 +22,6 @@ import pluginIcon from './verified-components/assets/icons/plugin-icon.svg'
 import addIcon from './verified-components/assets/icons/add-icon.svg'
 
 import { authAxios } from '../util/Api'
-
 
 import { Button } from '../pages/create-workspace/CreateWorkSpace'
 import { Link, useRouteMatch } from 'react-router-dom'
@@ -52,7 +51,7 @@ export const Sidebar = () => {
 
   const match = useRouteMatch()
   // const [error, setError] = useState('')
-  const [organizations, setOrganizations] = useState([]);
+  const [organizations, setOrganizations] = useState([])
 
   // Sort room function
 
@@ -118,33 +117,40 @@ export const Sidebar = () => {
   }, [])
 
   // const getOrganizations = async () => {
-  //   await 
+  //   await
   // }
   // console.log('Organization', getOrganizations())
 
   useEffect(() => {
-    const userdef = JSON.parse(sessionStorage.getItem('user'));
+    const userdef = JSON.parse(sessionStorage.getItem('user'))
     async function getOrganizations() {
-      await authAxios.get(`/users/${userdef.email}/organizations`)
+      await authAxios
+        .get(`/users/${userdef.email}/organizations`)
         .then(response => {
-          setOrganizations(response.data.data);
-          setOrgId(response.data.data[0]?.id);
-          authAxios.get(`/organizations/${response.data.data[0]?.id}/members`)
-        .then(response => {
-          setUser(response.data.data.find(member => member.email === userdef.email));
-          return response.data.data.find(member => member.email === userdef.email);
+          setOrganizations(response.data.data)
+          setOrgId(response.data.data[0]?.id)
+          authAxios
+            .get(`/organizations/${response.data.data[0]?.id}/members`)
+            .then(response => {
+              setUser(
+                response.data.data.find(
+                  member => member.email === userdef.email
+                )
+              )
+              return response.data.data.find(
+                member => member.email === userdef.email
+              )
+            })
+            .catch(err => {
+              console.log(err.response.data)
+            })
         })
         .catch(err => {
-          console.log(err.response.data);
-        })
-        })
-        .catch(err => {
-          console.log(err);
+          console.log(err)
         })
     }
 
-    getOrganizations();
-    
+    getOrganizations()
   }, [setOrgId, setUser])
 
   // useEffect(() => {
@@ -246,15 +252,12 @@ export const Sidebar = () => {
     <div className={styles.container}>
       <div className={styles.orgInfo}>
         <select className={styles.orgName}>
-          {
-            organizations.map(org => (
-              <option key={org.id} value={org.id}>
-                {org.name}
-              </option>
-              // console.log(org.name)
-            ))
-          }
-
+          {organizations.map(org => (
+            <option key={org.id} value={org.id}>
+              {org.name}
+            </option>
+            // console.log(org.name)
+          ))}
         </select>
         <Overlay isOpen={showDialog} onDismiss={close}>
           <Content aria-label="room-list">
