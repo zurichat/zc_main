@@ -16,11 +16,11 @@ export default function EmailVerification() {
   const handleSubmit = async usercode => {
     await axios
       .post(`https://api.zuri.chat/account/verify-account`, {
-        code : usercode
+        code: usercode
       })
       .then(_res => {
         setsuccess(true)
-        console.log(success,usercode)
+        console.log(success, usercode)
       })
       .catch(err => {
         setsuccess(false)

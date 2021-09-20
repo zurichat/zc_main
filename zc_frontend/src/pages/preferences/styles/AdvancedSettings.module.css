@@ -1,0 +1,151 @@
+.container {
+    width: 400%;
+    font-family: "Lato";
+    color: #3a3a3a;
+    font-size: 13px;
+    line-height: 2rem;
+}
+
+.head {
+    font-family: "Lato";
+    font-weight: bolder;
+    display: flex;
+    margin: 1rem 0;
+    color: #242424;
+    font-size: 15px;
+}
+
+.line {
+    background: #bebebe;
+    width: 27%;
+    height: 1px;
+    margin-left: 1rem;
+}
+
+.checktype {
+    display: flex;
+    margin-bottom: .4rem;
+}
+
+.checktype input {
+    margin-top: .6rem;
+}
+
+.checkformat {
+    display: flex;
+}
+
+.checkformat input {
+    margin-top: .6rem;
+}
+
+.radiosend {
+    display: flex;
+} 
+
+.radiosend input {
+    margin-top: .6rem;
+}
+
+.radiostart {
+    display: flex;
+}
+
+.radiostart input {
+    margin-top:.6rem ;
+}
+
+.radiosend .send {
+    margin-left: 1rem;
+}
+
+.radiostart .start {
+    margin-left: 1rem;
+}
+
+.typing span {
+    font-weight: bold;
+    color: #3a3a3a; ;
+}
+
+.behaviour span {
+    color: #3a3a3a;
+}
+
+.browser span {
+    color: #3a3a3a;
+}
+
+.btn {
+    background: #dbdbdb;
+    border: none;
+    border-radius: 3px;
+    padding:1px 6px;
+    margin: 2px;
+    color: #3a3a3a;
+    font-weight: bold;
+}
+
+.input {
+    margin-left: 3rem;
+    margin-bottom: 1rem;
+}
+
+.bartype {
+    border: 1px solid #dadada;
+    padding-left: 1.5rem;
+    padding-right: 22rem ;
+    height: 3rem;
+    
+}
+
+.bartype::placeholder {
+    font-size: 13px;
+}
+
+.search {
+    margin-left: 3rem;
+    margin-bottom: 2rem;
+}
+
+.checkkeys {
+    display: flex;
+}
+
+.checkkeys input {
+    margin-top: .6rem;
+}
+
+.ask {
+    display: flex;
+}
+
+.ask input {
+    margin-top: .6rem;
+}
+
+.survey {
+    display: flex;
+}
+
+.survey input {
+    margin-top: .6rem;
+}
+
+.warn {
+    display: flex;
+}
+
+.warn input {
+    margin-top: .6rem;
+}
+
+
+.options {
+    margin-left: 3rem;
+    color: #3a3a3a;
+}
+
+.options span {
+    color: #aeaeae;
+}
