@@ -17,9 +17,9 @@
   font-size: 0.8rem;
 }
 
-.blog_title p{
+.blog_title p {
   font-size: 2.5rem;
-  font-weight:900;
+  font-weight: 900;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
@@ -100,15 +100,12 @@
   padding: 0 15px 2px 30px;
   display: flex;
   justify-content: flex-start;
-  ;
   flex-direction: column;
 }
 .blog_newletter .newletter_text h2 {
   font-size: 1.5rem;
   font-weight: 900;
   color: black;
-  
-  
 }
 
 .blog_newletter .newletter_text a {
@@ -297,7 +294,7 @@ form textarea {
     font-size: 0.8rem;
   }
 
-  .blog_title p{
+  .blog_title p {
     font-size: 1.5rem;
   }
 
@@ -321,9 +318,9 @@ form textarea {
     margin: 0;
     top: 0;
   }
-  .blog_newletter .newletter_text{
-		margin-left: 30px;
-	}
+  .blog_newletter .newletter_text {
+    margin-left: 30px;
+  }
   .font {
     font-size: 0.8rem !important;
   }
