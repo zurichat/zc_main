@@ -1,0 +1,133 @@
+.contact_form_container {
+  padding: 1.5625rem 1.875rem;
+  background: #ffffff;
+}
+
+.form_control {
+  padding: 1rem 1.25rem;
+  border-color: #bdbdbd;
+}
+.form_control:focus {
+  box-shadow: none;
+  border-color: #bdbdbd;
+}
+
+.btn_disabled {
+  background: #ebeaeb;
+  padding: 1.1875rem 2.3125rem;
+}
+.bg_primary {
+  background: #00b87c;
+}
+.text_primary {
+  color: #00b87c;
+}
+
+.btn_topic {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 1.25rem;
+}
+.btn_topic:hover {
+  background: #00b87c;
+  color: #ffffff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 1.25rem;
+}
+.btn_topic:focus {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.btn_topic:disabled {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: not-allowed;
+  color: #dadada;
+}
+
+/* primary button */
+.btn_primary {
+  background: #00b87c;
+  color: #ffffff;
+  padding: 1.125rem 2rem;
+}
+.btn_primary:hover {
+  background: #00b87c;
+  color: #ffffff;
+}
+.btn_primary:focus {
+  background: #00b87c;
+  color: #ffffff;
+}
+.btn_primary:disabled {
+  background: #ebeaeb;
+  color: #616061;
+}
+
+.btn_topic_select {
+  padding: 0.5rem 1.25rem;
+}
+
+.change {
+  cursor: pointer;
+}
+
+.faqs_topic {
+  transition: max-height 550ms cubic-bezier(0.06, 0.6, 0.08, 0.99);
+  max-height: 650px;
+}
+
+.topic_tiles {
+  max-height: 650px;
+  transition: max-height 550ms cubic-bezier(0.06, 0.6, 0.08, 0.99);
+}
+.is_hidden_animate {
+  max-height: 0px;
+  transition: max-height 550ms cubic-bezier(0.06, 0.6, 0.08, 0.99);
+  overflow: hidden;
+}
+
+.accordion {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+}
+.accordion h2 {
+  width: 100%;
+  height: fit-content;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2rem;
+}
+
+.cancel {
+  cursor: pointer;
+}
+
+.accordion h2 {
+  width: 100%;
+  height: fit-content;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2rem;
+}
+
+.cancel {
+  cursor: pointer;
+}
+
+.accordion_button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion_collapse a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.drag_drop {
+  flex: 1;
+  display: flex;
+  padding: 1.875rem 1.875rem;
+  border-radius: 0.125rem;
+  border: 0.125rem dashed #bdbdbd;
+  background-color: #fafafa;
+  color: #bdbdbd;
+  outline: none;
+  transition: border 0.24s ease-in-out;
+}

@@ -1,0 +1,140 @@
+.message_box {
+  padding-top: 67px;
+  font-family: 'Lato', sans-serif;
+<<<<<<< HEAD:zc_frontend/src/components/externalPagesComponents/Footer/Message.module.css
+  min-height: 370px;
+  height: auto;
+  width: 100%;
+  background: #00B87C;
+  border: none;
+  clip-path: ellipse(75% 100% at center top);
+}
+
+.message{
+  margin: 0 auto;
+=======
+  height: 308px;
+  background-image: url('../component-assets/rectangle.svg');
+>>>>>>> 580007abd26a6469578ee154622071a0c97ab881:control/src/component-styles/Message.module.css
+}
+
+.background{
+  width: 100%;
+}
+.message_box > .p, .message > .p {
+  font-weight: 900;
+  font-size: 2.37rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 64px;
+}
+.message_box > .span {
+  display: block;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 32px;
+  margin-top: -32px;
+}
+.buttonSection {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.buttonFilled {
+  border: none;
+  padding: 12px 30px;
+  background-color: white;
+  color: #00b87c;
+  cursor: pointer;
+}
+.buttonFilled > .a {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.buttonOutline > .a {
+  font-weight: 500;
+  font-size: 1rem;
+  color: white;
+}
+.buttonFilled:hover {
+  transition: background 350ms;
+  background: #00b87c;
+  color: white;
+  outline: 1px solid white;
+}
+.buttonOutline {
+  padding: 12px 18px;
+  background: #00b87c;
+  border: 1px solid white;
+  border-radius: 3px;
+  color: #000
+}
+.buttonOutline:hover {
+  transition: background 350ms;
+  background: white;
+  color: #00b87c;
+}
+.buttonSection > .button > .a {
+  font-size: 1rem;
+  font-weight: 400;
+}
+@media (max-width: 70rem) {
+  .message_box {
+    padding-top: 47px;
+  }
+
+  .message > .p {
+    font-weight: 700;
+    font-size: 1.65rem;
+    margin-bottom: 32px;
+  }
+  .message > .span {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 0.98rem;
+    opacity: 0.98;
+  }
+  .buttonSection {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 85%;
+  gap: 20px;
+  justify-content: center;
+  align-content: center;
+  }
+
+  .buttonFilled, .buttonOutline{
+    width: 100%;
+  }
+
+}
+@media (max-width: 35rem) {
+<<<<<<< HEAD:zc_frontend/src/components/externalPagesComponents/Footer/Message.module.css
+  .message_box {
+    padding: 22px;
+    height: 180px;
+=======
+  .message {
+    padding: 32px;
+
+    background-image: url('../component-assets/mobileBackground.svg');
+    height: 220px;
+>>>>>>> 580007abd26a6469578ee154622071a0c97ab881:control/src/component-styles/Message.module.css
+  }
+  .buttonFilled,
+  .buttonOutline {
+    padding: 12px 16px;
+  }
+  .message > .p {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
+  .buttonSection {
+    gap: 32px;
+  }
+}
