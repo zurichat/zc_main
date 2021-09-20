@@ -7,6 +7,7 @@ import LandingPage from './components/LandingPage'
 //import EmailVerification from './pages/email-verify'
 import Security from './pages/security'
 import Features from './pages/features'
+import InviteRequest from './pages/InviteRequest'
 import Resources from './pages/resources'
 import AppsAndIntegrations from './pages/apps-integrations'
 import Careers from './pages/careers'
@@ -83,6 +84,12 @@ const App = () => (
         </Route>
         <Route path="/careers">
           <Careers />
+        </Route>
+        <Route path="/IniteRequest">
+          <IniteRequest />
+        </Route>
+        <Route path="/SendRequest">
+          <SendRequest />
         </Route>
         <Route path="/apps-integrations">
           <AppsAndIntegrations />
