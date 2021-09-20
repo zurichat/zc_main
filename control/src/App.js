@@ -23,6 +23,7 @@ import AppsAndIntegrations from './pages/apps-integration'
 // import MarketplaceApi from './pages/api-docs/components/marketplace'
 // import DataApi from './pages/api-docs/components/data'
 // import PluginApi from './pages/api-docs/components/plugin'
+import Download from './pages/download'
 
 
 const App = () => (
@@ -49,6 +50,9 @@ const App = () => (
       <Route path="/security">
         <Security />
       </Route>
+      <Route path="/download-app">
+          <Download />
+        </Route>
       {/* <Route path="/documentation" exact>
           <PluginLoaderProvider>
             <ApiDocs />
