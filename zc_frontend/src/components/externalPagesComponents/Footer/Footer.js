@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Footer.module.css'
 import Message from './Message'
+import { Link } from 'react-router-dom'
 
 const Footer = ({ showMessage, type }) => (
   <footer className={styles.footer}>
@@ -25,8 +26,13 @@ const Footer = ({ showMessage, type }) => (
                 <a className={styles.link} href="/">
                   Finalists
                 </a>
-                <a className={styles.link} href="/">
+                {/* <a className={styles.link} href="/">
                   Events
+                </a> */}
+                <Link className={styles.link} to="/events" replace={true}>
+                  Events
+                </Link>
+                <a className={styles.link} href="/">
                 </a>
                 <Link to="/blogs" className={styles.link}>
                   Blog posts

@@ -58,6 +58,9 @@ import RecoverPassword from './pages/passwordRecovery/index'
 import ResetPassword from './pages/passwordReset/Index'
 import PrivateRoute from './pages/settings/Utils/PrivateRoute'
 import AuthApi from './pages/api-docs/components/auth'
+// import Eventspage from './pages/events/components/Eventspage'
+import EventsMainWrapper from './pages/events/components/EventsMainWrapper'
+
 import { useRouteMatch } from 'react-router-dom'
 import './components/verified-components/master.css'
 import CompanyName from './pages/create-workspace/CompanyName'
@@ -224,6 +227,9 @@ const App = () => {
         </Route>
         <Route path="/test">
           <Test />
+        </Route>
+        <Route path="/events">
+          <EventsMainWrapper />
         </Route>
       </Switch>
     </TopbarProvider>
