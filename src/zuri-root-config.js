@@ -1,10 +1,12 @@
 import { registerApplication, start } from 'single-spa'
 
-const pluginRoutes = [
+export const pluginRoutes = [
   location => location.pathname.startsWith('/chess'),
   location => location.pathname.startsWith('/sales'),
   location => location.pathname.startsWith('/music'),
-  location => location.pathname.startsWith('/deadlines')
+  location => location.pathname.startsWith('/deadlines'),
+  location => location.pathname.startsWith('/goals'),
+  location => location.pathname.startsWith('/dm')
 ]
 
 registerApplication({
@@ -46,6 +48,24 @@ registerApplication({
   name: '@zuri/zuri-plugin-deadlines',
   app: () => System.import('@zuri/zuri-plugin-deadlines'),
   activeWhen: [location => location.pathname.startsWith('/deadlines')]
+})
+
+registerApplication({
+  name: '@zuri/zuri-plugin-company-goals',
+  app: () => System.import('@zuri/zuri-plugin-company-goals'),
+  activeWhen: [location => location.pathname.startsWith('/goals')]
+})
+
+registerApplication({
+  name: '@zuri/zuri-plugin-todo',
+  app: () => System.import('@zuri/zuri-plugin-todo'),
+  activeWhen: [location => location.pathname.startsWith('/todo')]
+})
+
+registerApplication({
+  name: '@zuri/zuri-plugin-dm',
+  app: () => System.import('@zuri/zuri-plugin-dm'),
+  activeWhen: [location => location.pathname.startsWith('/dm')]
 })
 
 start({

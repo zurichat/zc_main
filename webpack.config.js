@@ -14,9 +14,9 @@ module.exports = (webpackConfigEnv, argv) => {
   })
 
   return merge(defaultConfig, {
-    // 
+    //
     externals: {
-      jquery: 'jQuery',
+      jquery: 'jQuery'
     },
     // modify the webpack config however you'd like to by adding to this object
     output: {
