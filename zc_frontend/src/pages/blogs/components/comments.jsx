@@ -148,12 +148,12 @@ const Comments = () => {
             style={{
               overflowY: 'scroll',
               height: '25rem'
-              // transitionProperty: 'height',
-              // transitionDuration: '2s'
             }}
           >
             <div>
-              <b><h3>Comments</h3></b>
+              <b>
+                <h3 style={{ fontSize: 30 }}>Comments</h3>
+              </b>
             </div>
 
             {comments

@@ -12,16 +12,16 @@ import {
 
 const container = () => {
   return (
-    // <div class={style.Blog_text}>
     <>
+      {/* <div class={style.Blog_text}> */}
       <div className={style.get_started}>
         <p>Get Started</p>
       </div>
       <div className={style.blog_title}>
-        <h2>
+        <p>
           Boost teamwork in world in the hybrid <br />
           workplace with Zuri Chat
-        </h2>
+        </p>
       </div>
       <div className={style.Author}>
         <p>
@@ -106,6 +106,7 @@ const container = () => {
           culture.
         </p>
       </div>
+      {/* </div> */}
     </>
   )
 }
