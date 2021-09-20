@@ -60,7 +60,6 @@ const Signup = () => {
       })
       .then(response => {
         const { data, message } = response.data
-        console.log(response.data)
         setShowDialog(true)
 
         //Store token in localstorage

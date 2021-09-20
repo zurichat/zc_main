@@ -6,8 +6,14 @@ import Section4PricingPage from './components/Section4_pricing_page'
 import FAQ from '../FAQ'
 import PricingPageSection1 from './pricingPageSection1/PricingPageSection1'
 import SearchSuggestion from '../searchSuggestion'
+import { useEffect } from 'react'
 
 function Pricing() {
+  useEffect(() => {
+    sessionStorage.setItem('token', 1234)
+    const user = sessionStorage.getItem('token')
+    console.log(user)
+  })
   return (
     <div>
       <SearchSuggestion />
