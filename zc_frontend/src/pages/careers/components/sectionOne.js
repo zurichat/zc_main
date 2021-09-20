@@ -2,8 +2,8 @@ import React from 'react'
 
 import { Link } from 'react-router-dom'
 
-import styles from '../../styles/sectionOne.module.css'
-import image from '../../../../assets/careerPage-images/section_one_image.svg'
+import styles from '../styles/sectionOne.module.css'
+import image from '../../../assets/careerPage-images/section_one_image.svg'
 
 const SectionOne = () => (
   <div className={`${styles.Section1}`}>
