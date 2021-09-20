@@ -1,4 +1,4 @@
-import styles from '../../styles/section4.module.css'
+import styles from '../../styles/Section4.module.css'
 import chessboard from '../../assets/chessboard-image.png'
 const Section4 = () => {
   return (
