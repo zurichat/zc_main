@@ -19,13 +19,11 @@ const TopbarModal = ({ members }) => {
   const { toggleModalState, toggleProfileState } = useContext(ProfileContext)
 
   const state = useContext(TopbarContext)
-
   const [showModal] = state.show
   const [active, setActive] = state.presence
   const [showStatus] = state.status
   const [showMembersModal] = state.modal
-  const { onEmojiClick, openStatus, closeStatus, modalRef, closeMembersModal } =
-    state
+  const { onEmojiClick, openStatus, closeStatus, modalRef, closeMembersModal } = state
   const [modal, setModal] = useState('')
   const [pause, setPause] = useState(false)
 
