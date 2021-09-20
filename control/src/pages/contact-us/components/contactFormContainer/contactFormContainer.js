@@ -50,10 +50,23 @@ function ContactFormContainer() {
   })
   // .xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf
 
-  const acceptedFileItems = acceptedFiles.map(file => (
-    <p className="mb-2 text-dark w-100" key={file.path}>
-      {file.name} - {file.size} bytes
-    </p>
+  const handleFileDelete = index => () => {
+    delete acceptedFiles[index]
+  }
+
+  const acceptedFileItems = acceptedFiles.map((file, i) => (
+    <div className="d-flex justify-content-between align-items-center">
+      <p className="mb-2 text-dark w-100" key={file.path}>
+        {file.name} - {file.size} bytes
+      </p>
+      <p
+        className={`text-danger ${ContactFormStyle.cancel}`}
+        fw-bold
+        onClick={handleFileDelete(i)}
+      >
+        X
+      </p>
+    </div>
   ))
 
   const style = useMemo(
@@ -116,9 +129,8 @@ function ContactFormContainer() {
     <div className={`container-xl ${ContactFormStyle.contact_form_container}`}>
       <form className="" onSubmit={handleSubmit}>
         <div
-          className={`mb-3 ${
-            sessionStorage.getItem('user') && ContactFormStyle.is_hidden_animate
-          }`}
+          className={`mb-3 ${sessionStorage.getItem('user') && ContactFormStyle.is_hidden_animate
+            }`}
         >
           <label htmlFor="email" className="form-label fw-bold">
             Your Email Address
@@ -138,9 +150,8 @@ function ContactFormContainer() {
         </div>
 
         <div
-          className={`${ContactFormStyle.faqs_topic} ${
-            !currentDetails.topic && ContactFormStyle.is_hidden_animate
-          }`}
+          className={`${ContactFormStyle.faqs_topic} ${!currentDetails.topic && ContactFormStyle.is_hidden_animate
+            }`}
         >
           <div className={`w-100`}>
             <div className={`d-flex align-items-center mb-3`}>
@@ -173,7 +184,7 @@ function ContactFormContainer() {
               {currentDetails.faqs &&
                 currentDetails.faqs.map(({ title, details }, index) => (
                   <div className="accordion-item" key={title}>
-                    <h2 className="accordion-header" id="headingOne">
+                    <h2 className="accordion-header px-2 py-3" id="headingOne">
                       <button
                         className={`accordion-button fw-bold ${ContactFormStyle.accordion_button} bg-white shadow-none p-0 px-2`}
                         type="button"
@@ -203,9 +214,8 @@ function ContactFormContainer() {
         </div>
 
         <div
-          className={`${ContactFormStyle.topic_tiles} ${
-            currentDetails.topic && ContactFormStyle.is_hidden_animate
-          } bg-white`}
+          className={`${ContactFormStyle.topic_tiles} ${currentDetails.topic && ContactFormStyle.is_hidden_animate
+            } bg-white`}
         >
           <p className="fw-bold mb-3">Select a Topic</p>
           <div className={`d-flex flex-wrap`}>
@@ -225,9 +235,8 @@ function ContactFormContainer() {
         </div>
 
         <div
-          className={`mb-3 ${
-            currentDetails.topic && ContactFormStyle.is_hidden_animate
-          }`}
+          className={`mb-3 ${currentDetails.topic && ContactFormStyle.is_hidden_animate
+            }`}
         >
           <label htmlFor="topic" className="form-label fw-bold">
             Or tell us what you need help with:
@@ -247,7 +256,7 @@ function ContactFormContainer() {
 
         {!(values.subject === '') && (
           <>
-            <div class="mb-3">
+            <div className="mb-3">
               <label htmlFor="content" className="form-label fw-bold">
                 Can you give us more details?
               </label>
@@ -281,8 +290,8 @@ function ContactFormContainer() {
                 <input {...getInputProps()} />
                 <p>Drag 'n' drop some files here, or click to select files</p>
                 <em>
-                  (Only 2 files of the following type : images/jpg,jpeg,png doc,
-                  pdf, docx will be accepted)
+                {`(Only 2 files(1mb max each) of the following type : images/jpg,jpeg,png doc,
+                  pdf, docx will be accepted)`}
                 </em>
               </div>
             </div>
