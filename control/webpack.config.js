@@ -22,23 +22,6 @@ const mergeRules = {
   }
 }
 
-module.exports = {
-  resolve: {
-    fallback: {
-      "fs": false,
-      "tls": false,
-      "net": false,
-      "path": false,
-      "zlib": false,
-      "http": false,
-      "https": false,
-      "stream": false,
-      "crypto": false,
-      "tty": false
-    } 
-  }
-};
-
 module.exports = (webpackConfigEnv, argv) => {
   
   const defaultConfig = singleSpaDefaults({
@@ -56,8 +39,21 @@ module.exports = (webpackConfigEnv, argv) => {
       // filename: "[name].js", // string (default)
       // publicPath: path.join(__dirname, '..', 'dist', 'assets') // string
     },
+    resolve: {
+      fallback: {
+        "fs": false,
+        "path": false,
+        "http": false,
+        "tty": false,
+        "buffer": false
+      } 
+    },
     module: {
       rules: [
+        {
+          test: /\.yaml$/,
+          use: 'js-yaml-loader',
+        },
         {
           test: /\.css$/i,
           use: [
@@ -70,7 +66,7 @@ module.exports = (webpackConfigEnv, argv) => {
                   localIdentName: '[local]--[hash:base64:5]__[name]'
                 }
               }
-            }
+            },
           ]
         }
       ]

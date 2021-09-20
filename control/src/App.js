@@ -16,9 +16,9 @@ import Resources from './pages/resources'
 import Pricing from './pages/pricing'
 import Security from './pages/security'
 import ContactUs from './pages/contact-us'
-// import ApiDocs from './pages/api-docs'
+import ApiDocs from './pages/api-docs'
 import AppsAndIntegrations from './pages/apps-integration'
-// import { PluginLoaderProvider } from './context/PluginLoaderState'
+import { PluginLoaderProvider } from './context/PluginLoaderState'
 // import UsersApi from './pages/api-docs/components/users'
 // import OrganisationApi from './pages/api-docs/components/organisation'
 // import MarketplaceApi from './pages/api-docs/components/marketplace'
@@ -65,19 +65,19 @@ const App = () => (
       <Route path="/marketplace" exact>
         <MarketPlace />
       </Route>
-      {/* <Route path="/documentation" exact>
+      <Route path="/documentation" exact>
           <PluginLoaderProvider>
             <ApiDocs />
           </PluginLoaderProvider>
-        </Route> */}
+        </Route>
       {/* Api docs */}
-      {/* <Route exact path="/documentation/users">
+       {/* <Route exact path="/documentation/users">
           <UsersApi />
-        </Route>
-        <Route exact path="/documentation/auth">
+        </Route> */}
+        {/* <Route exact path="/documentation/auth">
           <AuthApi />
-        </Route>
-        <Route path="/documentation/organisation">
+        </Route> */}
+        {/*<Route path="/documentation/organisation">
           <OrganisationApi />
         </Route>
         <Route path="/documentation/marketplace">
