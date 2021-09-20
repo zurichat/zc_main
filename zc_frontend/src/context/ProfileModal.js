@@ -1,10 +1,16 @@
 import { createContext, useState } from 'react'
+import userAvatar from '../assets/user.svg'
+
 
 export const ProfileContext = createContext(null)
 export const ProfileProvider = ({ children }) => {
   const [modal, setModal] = useState(false)
   const [showProfile, setShowProfile] = useState(false)
   const [sideBar, setSideBar] = useState(1)
+  const [user, setUser] = useState([])
+  const [orgId, setOrgId] = useState('');
+  const [userProfileImage, setUserProfileImage ] = useState(userAvatar);
+
 
   const toggleModalState = () => {
     setModal(!modal)
@@ -22,7 +28,13 @@ export const ProfileProvider = ({ children }) => {
         showProfile,
         toggleProfileState,
         sideBar,
-        setSideBar
+        setSideBar,
+        user,
+        setUser,
+        orgId,
+        setOrgId,
+        userProfileImage,
+        setUserProfileImage
       }}
     >
       {children}
