@@ -25,6 +25,7 @@ import AppsAndIntegrations from './pages/apps-integration'
 // import DataApi from './pages/api-docs/components/data'
 // import PluginApi from './pages/api-docs/components/plugin'
 import Download from './pages/download'
+import Careers from './pages/careers'
 
 
 const App = () => (
@@ -52,11 +53,14 @@ const App = () => (
         <Security />
       </Route>
       <Route path="/download-app">
-          <Download />
-        </Route>
-        <Route path="/contact-us">
-          <ContactUs />
-        </Route>
+        <Download />
+      </Route>
+      <Route path="/contact-us">
+        <ContactUs />
+      </Route>
+      <Route path="/careers">
+        <Careers />
+      </Route>
       {/* <Route path="/documentation" exact>
           <PluginLoaderProvider>
             <ApiDocs />
@@ -82,8 +86,8 @@ const App = () => (
           <PluginApi />
         </Route> */}
       <Route path="/apps-integrations">
-          <AppsAndIntegrations />
-        </Route>
+        <AppsAndIntegrations />
+      </Route>
       <Route path="/settings">
         <Settings />
       </Route>
