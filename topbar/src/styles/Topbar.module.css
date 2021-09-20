@@ -1,0 +1,415 @@
+.container {
+  display: flex;
+  align-items: center;
+  height: 5.0625em;
+  margin-right: 1.875em;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 25px;
+  position: relative;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    justify-content: flex-end;
+  }
+}
+
+.membersModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  z-index: -1;
+}
+
+.profile {
+  background-color: #acffe6;
+  border-radius: 50%;
+  display: flex;
+  margin-left: -0.3em;
+  align-items: center;
+  justify-content: center;
+  height: 2.5em;
+  width: 2.5em;
+  cursor: pointer;
+  position: relative;
+}
+
+@media screen and (min-width: 900px) {
+  .profile {
+    margin-left: 0.8rem;
+  }
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.circles {
+  background: green;
+  height: 7px;
+  width: 7px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+}
+
+.circleAway {
+  background: grey;
+  height: 7px;
+  width: 7px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+}
+
+.topbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  height: 40px;
+}
+
+.search {
+  width: 390px;
+  height: 32px;
+  margin-right: 1em;
+  background: rgba(255, 255, 255, 0.4);
+  border: 0.8px solid rgba(153, 153, 153, 0.2);
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+.search::placeholder {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  color: #999999;
+  padding-left: 0.2em;
+}
+
+.settings {
+  margin-right: 20px;
+}
+
+/* =========================================== */
+
+/* THE SECTION OF THE TOP BAR MODAL */
+
+.topbarModal {
+  background: #fff;
+  position: absolute;
+  top: 75%;
+  right: 3%;
+  width: 100%;
+  max-width: 300px;
+  z-index: 9999;
+  border: 1px solid #bebebe;
+  border-radius: 8px;
+  padding: 20px 0;
+}
+
+.modalContainers {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100000;
+  background: rgba(0, 0, 0, 0.3);
+  /* display: none; */
+  justify-content: center;
+  padding-top: 5.6875rem;
+  padding-bottom: 2rem;
+}
+
+/* The section one */
+
+.sectionOne {
+  display: flex;
+  align-items: center;
+  width: 85%;
+  margin: auto;
+  margin-bottom: 17px;
+}
+
+.oneLeft {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
+.oneLeft img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #00b87b44;
+}
+
+/* THE SECTION OF THE ONE RIGHT */
+
+.oneRight {
+  margin-left: 15px;
+}
+
+.oneRight h4 {
+  font-size: 13px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 900;
+  color: #242424;
+  margin-top: 10px;
+}
+
+.online {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  margin-top: -8px;
+}
+
+/* set yourself as away*/
+
+.away {
+  position: absolute;
+  right: 182px;
+}
+
+/* set yourself as active*/
+
+.active {
+  position: absolute;
+  right: 178px;
+}
+
+.circle {
+  background: green;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.circlegrey {
+  background: grey;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+}
+
+.oneRight p {
+  font-size: 12px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  color: #3a3a3a;
+}
+
+/* The section two */
+
+.sectionTwo {
+  background: #fafafa;
+  padding: 0px;
+  border-radius: 3px;
+  border: none;
+  width: 85%;
+  margin: auto;
+  cursor: pointer;
+  height: 30px;
+}
+
+/* .sectionTwo:hover {
+    border: 1px solid #00b87c;
+  } */
+
+/* The section of the picker */
+
+.smileys {
+  padding-top: 20px;
+}
+
+.picker {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  /* transform: translate(-80%); */
+  /* height: 400px; */
+  /* background: green; */
+  width: 100%;
+  width: 300px;
+  z-index: 999999;
+  padding: 10px;
+}
+
+/* responsiveness for picker */
+
+@media screen and (max-width: 650px) {
+  .picker {
+    left: 30%;
+  }
+}
+
+.times {
+  color: red;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  display: none;
+}
+
+/* The section three */
+
+.sectionThree {
+  position: relative;
+  line-height: 25px;
+  font-style: normal;
+  font-weight: normal;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.sectionThree p {
+  font-family: Lato;
+  color: #242424;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 2px 20px;
+  margin-bottom: 5px;
+}
+
+.sectionThree p:hover {
+  background: #1692f1;
+  color: #fff;
+}
+
+.pause {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pause:hover {
+  background: #1692f1;
+  color: #fff;
+}
+
+.pause:hover p {
+  background: #1692f1;
+  color: #fff;
+}
+
+.chevron {
+  font-size: 10px;
+  font-weight: normal;
+  margin-right: 20px;
+}
+
+/* hr */
+
+.hr {
+  height: 15px;
+  background: #242424;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+/* The section four */
+
+.sectionFour {
+  line-height: 22px;
+  font-style: normal;
+  font-weight: normal;
+  margin: auto;
+  margin-top: -8px;
+}
+
+.sectionFour p {
+  font-family: Lato;
+  color: #242424;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 2px 20px;
+  margin-bottom: 10px;
+}
+
+.sectionFour p:hover {
+  background: #1692f1;
+  color: #fff;
+}
+
+/* The section five */
+
+.sectionFive {
+  line-height: 22px;
+  font-style: normal;
+  font-weight: normal;
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
+
+.sectionFive p {
+  font-family: Lato;
+  color: #242424;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 2px 20px;
+}
+
+.sectionFive p:hover {
+  background: #1692f1;
+  color: #fff;
+}
+
+/* The section Six */
+
+.sectionSix {
+  line-height: 22px;
+  font-style: normal;
+  font-weight: normal;
+  margin: auto;
+  margin-top: -8px;
+}
+
+.sectionSix p {
+  font-family: Lato;
+  color: #242424;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 2px 20px;
+  margin-bottom: 10px;
+}
+
+.sectionSix p:hover {
+  background: #1692f1;
+  color: #fff;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  /* set yourself as away*/
+  .away {
+    position: absolute;
+    right: 183px;
+  }
+  /* set yourself as active*/
+  .active {
+    position: absolute;
+    right: 180px;
+  }
+}

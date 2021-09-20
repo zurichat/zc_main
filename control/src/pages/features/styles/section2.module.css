@@ -1,0 +1,29 @@
+.section2 {
+  margin-top: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section2Wrapper {
+  width: 78%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.imageWrapper img {
+  width: 100%;
+}
+@media (max-width: 800px) {
+  .section2 {
+    margin-top: 100px;
+  }
+  .section2Wrapper {
+    width: 100%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 40px;
+  }
+}
+@media (max-width: 578px) {
+}
