@@ -1,4 +1,4 @@
-import styles from '../../styles/Section4.module.css'
+import styles from '../../styles/section4.module.css'
 const Section4 = () => {
   return (
     <div className={styles.section4}>

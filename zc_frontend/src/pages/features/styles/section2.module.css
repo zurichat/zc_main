@@ -1,3 +1,16 @@
+
+.section2 {
+  margin-top: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section2Wrapper {
+  width: 78%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .wrapper img {
   width: 100px;
   height: 70px;
