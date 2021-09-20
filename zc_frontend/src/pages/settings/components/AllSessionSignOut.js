@@ -14,10 +14,20 @@ import axios from 'axios'
 function AllSessionSignOut() {
   const [error, setError] = useState('')
   //const [userSession, setUserSession] = useState({})
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState()
   const [currentPassword, setCurrentPassword] = useState('')
 
   const history = useHistory()
+
+  useEffect(() => {
+    if(sessionStorage.getItem('user') && sessionStorage.getItem('session_id')) {
+      const userInfo = JSON.parse(sessionStorage.getItem('user'))
+      console.log(userInfo)
+      setUser(userInfo)
+    } else {
+      history.push("./login")
+    }
+  }, [history])
 
   useEffect(() => {
     let timerId
@@ -30,23 +40,21 @@ function AllSessionSignOut() {
     return () => clearTimeout(timerId)
   })
 
-  const comparePassword = async () => {
-    const userPassword = {
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    const passwordData = {
       password: currentPassword
     }
 
     try {
       const response = await axios.post(
-        'https://api.zuri.chat/auth/logout/othersessions',
-        {
-          body: JSON.stringify(userPassword)
-        }
-      )
-
+        'https://api.zuri.chat/auth/logout/othersessions',{
+        body: JSON.stringify(passwordData)
+      })
       if (response.status !== 200) {
         throw new Error(`Failed to fetch data, status: ${response.status} `)
       }
-
       const { data } = await response.data
       setUser(data)
       console.log(data)
@@ -54,12 +62,6 @@ function AllSessionSignOut() {
       console.log(error)
       setError('That password is incorrect. Please try again')
     }
-  }
-
-  const handleSubmit = e => {
-    e.preventDefault()
-
-    comparePassword()
   }
 
   return (
@@ -92,7 +94,7 @@ function AllSessionSignOut() {
             <form className={`${styles.signout_form}`} onSubmit={handleSubmit}>
               <div className={`${styles.form_group}`}>
                 <input
-                  type="text"
+                  type="password"
                   placeholder="Password"
                   name="password"
                   className={`${styles.form_input}`}
