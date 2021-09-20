@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchSuggestion from '../searchSuggestion'
+import Header from '../../components/Header'
 import Message from '../../components/Message'
 // import PricingTable from './components/PricingTable'
 import Section3 from './components/Section3'
@@ -11,7 +11,7 @@ import Footer from '../../components/Footer'
 function Pricing() {
   return (
     <div>
-      <SearchSuggestion />
+      <Header />
       <PricingPageSection1 />
       {/* <PricingTable /> */}
       <Section3 />

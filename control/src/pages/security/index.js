@@ -4,12 +4,12 @@ import securityStyles from './styles/security.module.css'
 import securityFeatureStyles from './styles/security_features.module.css'
 import Footer from '../../components/Footer'
 import Section1 from '../../components/Security'
-import SearchSuggestion from '../searchSuggestion'
+import Header from '../../components/Header'
 
 const Security = () => {
   return (
     <div>
-      <SearchSuggestion />
+      <Header />
       <Section1 />
       <section className={securityStyles.compliancesection}>
         <h2 className={securityStyles.complianceheading}>
