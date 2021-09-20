@@ -60,6 +60,7 @@ import { useRouteMatch } from 'react-router-dom'
 import './components/verified-components/master.css'
 import CompanyName from './pages/create-workspace/CompanyName'
 import Step3 from './pages/create-workspace/Step3'
+import PrivacyPolicy from './pages/privacy-policy'
 
 const App = () => {
   let workspaceRoute = '/home/createworkspace'
@@ -185,6 +186,9 @@ const App = () => {
           <PluginLoaderProvider>
             <ApiDocs />
           </PluginLoaderProvider>
+        </Route>
+        <Route path="/privacy">
+           <PrivacyPolicy />
         </Route>
 
         {/* ----------------settings routes opened------------------------ */}
