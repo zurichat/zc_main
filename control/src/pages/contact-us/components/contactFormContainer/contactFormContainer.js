@@ -294,7 +294,7 @@ function ContactFormContainer() {
                 <input {...getInputProps()} />
                 <p>Drag 'n' drop some files here, or click to select files</p>
                 <em>
-                  {`(Only 2 files (1mb max each) of the following type : images/jpg,jpeg,png doc,
+                  {`(Only 2 files(1mb max each) of the following type : images/jpg,jpeg,png doc,
                   pdf, docx will be accepted)`}
                 </em>
               </div>

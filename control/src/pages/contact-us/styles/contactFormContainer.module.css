@@ -99,8 +99,16 @@
   cursor: pointer;
 }
 
-.accordion_button:not(.collapsed) {
-  color: #000000;
+.accordion h2 {
+  width: 100%;
+  height: fit-content;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2rem;
+}
+
+.cancel {
+  cursor: pointer;
 }
 
 .accordion_button:not(.collapsed)::after {
