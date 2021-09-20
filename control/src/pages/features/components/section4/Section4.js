@@ -1,11 +1,12 @@
-import styles from '../../styles/Section4.module.css'
+import styles from '../../styles/section4.module.css'
+import chessboard from '../../assets/chessboard-image.png'
 const Section4 = () => {
   return (
     <div className={styles.section4}>
       <div className={styles.section4Wrapper}>
         <div className={styles.leftSideContentWrapper}>
           <img
-            src={`/chessboard-image.png`}
+            src={chessboard}
             alt="Chessboard"
             className={styles.chessboardImage}
           />

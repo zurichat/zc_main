@@ -20,7 +20,7 @@
 .section6CardWrapper {
   margin-top: 60px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(158.5px, 30.36%));
+  grid-template-columns: repeat(auto-fill, minmax(158.5px, 32.2%));
   gap: 20px;
 }
 
