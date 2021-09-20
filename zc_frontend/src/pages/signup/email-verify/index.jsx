@@ -10,23 +10,23 @@ import styles from './styles/EmailVerification.module.css'
 import CodeInput from './codeInput'
 import { Button } from '../../../components/verified-components'
 
-export default function EmailVerification({ email = 'johndoe@example.com' }) {
+export default function EmailVerification() {
   const [success, setsuccess] = useState(false)
 
-  const handleSubmit = async code => {
+  const handleSubmit = async usercode => {
     await axios
-      .post(`url for the email verification`, {
-        verificationCode: code
+      .post(`https://api.zuri.chat/account/verify-account`, {
+        code : usercode
       })
       .then(_res => {
         setsuccess(true)
-        console.log(success)
+        console.log(success,usercode)
       })
       .catch(err => {
         setsuccess(false)
         console.log(err)
       })
-    setsuccess(true)
+    // setsuccess(true)
   }
 
   const goHome = () => {
@@ -42,9 +42,9 @@ export default function EmailVerification({ email = 'johndoe@example.com' }) {
             <h4>Check your email for your code !</h4>
             <p className={styles.enterCode}>
               Enter the 6-digit code sent to you at{' '}
-              <a href={`mailto:${email}`} className={styles.email}>
+              {/* <a href={`mailto:${email}`} className={styles.email}>
                 {email}
-              </a>
+              </a> */}
               . This code expires shortly so be quick
             </p>
             <div>

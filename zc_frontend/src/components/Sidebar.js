@@ -19,7 +19,8 @@ import draftIcon from './verified-components/assets/icons/draft-icon.svg'
 import filesIcon from './verified-components/assets/icons/files-icon.svg'
 import pluginIcon from './verified-components/assets/icons/plugin-icon.svg'
 import addIcon from './verified-components/assets/icons/add-icon.svg'
-
+import { Button } from '../pages/create-workspace/CreateWorkSpace'
+import { Link, useRouteMatch } from 'react-router-dom'
 const fetcher = url => fetch(url).then(res => res.json())
 
 export const Sidebar = () => {
@@ -41,6 +42,8 @@ export const Sidebar = () => {
   // const [rooms, setRooms] = useState({})
   const [query, setQuery] = useState('')
   const [loading, setLoading] = useState(false)
+
+  const match = useRouteMatch()
   // const [error, setError] = useState('')
 
   // Sort room function
@@ -91,6 +94,8 @@ export const Sidebar = () => {
   //   : null
 
   useEffect(() => {
+    const user = sessionStorage.getItem('session_id')
+    console.log(user)
     ;(async () => {
       await sidebarApi().then(async res => {
         // setRooms(res)
@@ -346,6 +351,11 @@ export const Sidebar = () => {
         <button onClick={() => setShow(true)}>Add Teammates</button>
         <Modal onClose={() => setShow(false)} show={show} />
       </div>
+      <Link to={`${match.url}/createworkspace`}>
+        <ButtonWrapper>
+          <Button>Create Workspace</Button>
+        </ButtonWrapper>
+      </Link>
     </div>
   )
 }
@@ -391,6 +401,11 @@ const CloseButton = styled.button`
 const Span = styled.span`
   font-size: 0.8rem;
 `
+const ButtonWrapper = styled.div`
+  max-width: 80%;
+  margin: 0 auto;
+  margin-top: 30px;
+`
 const Item = styled.p`
 font-family: Lato;
 font-size: 15px;
@@ -403,9 +418,7 @@ display: flex;
 padding:0.25rem;
 & > img { 
   padding: 0 1rem;
-
 `
-
 const ClickButton = styled.img`
   margin-left: auto;
 `
