@@ -1,5 +1,5 @@
 import Footer from '../../components/Footer'
-import SectionFour from '../../components/SectionFour'
+import SectionFour from './components/SectionFour'
 import Section1 from './components/section1'
 import Section4 from './components/section4'
 import Header from '../../components/Header'

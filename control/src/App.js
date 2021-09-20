@@ -15,6 +15,7 @@ import Features from './pages/features'
 import Resources from './pages/resources'
 import Pricing from './pages/pricing'
 import Security from './pages/security'
+import ContactUs from './pages/contact-us'
 // import ApiDocs from './pages/api-docs'
 import AppsAndIntegrations from './pages/apps-integration'
 // import { PluginLoaderProvider } from './context/PluginLoaderState'
@@ -52,6 +53,9 @@ const App = () => (
       </Route>
       <Route path="/download-app">
           <Download />
+        </Route>
+        <Route path="/contact-us">
+          <ContactUs />
         </Route>
       {/* <Route path="/documentation" exact>
           <PluginLoaderProvider>
