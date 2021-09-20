@@ -35,10 +35,11 @@ export const GetUserInfo = () => {
     .then(res => {
       let user = res.data.data
       console.log(user)
+      return user;
     })
     .catch(err => console.log(err))
 
-  return user
+  return token;
 }
 
 export const { bootstrap, mount, unmount } = lifecycles
