@@ -51,6 +51,7 @@ import '@reach/dialog/styles.css'
 import StyleGuide from './components/verified/StyleGuide'
 import RecoveryEmail from './pages/passwordRecovery/index'
 import ResetPassword from './pages/passwordReset/Index'
+import Workspace from './components/Workspace/components/Workspace'
 
 const App = () => (
   <TopbarProvider>
@@ -58,6 +59,9 @@ const App = () => (
       <Switch>
         <Route path="/" exact>
           <LandingPage />
+        </Route>
+        <Route path="/choose-workspace">
+          <Workspace />
         </Route>
         <Route path="/home">
           <Home />
