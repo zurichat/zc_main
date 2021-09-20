@@ -7,7 +7,7 @@ info:
     email: developer@zuri.chat
 servers:
   - description: Zuri Chat Core API
-    url: "https://api.zuri.chat/"
+    url: 'https://api.zuri.chat/'
 tags:
   - name: user
     description: Controls user registration, login and password recovery
@@ -19,12 +19,12 @@ paths:
       tags:
         - Users
       responses:
-        "200":
+        '200':
           description: Returns information about all users
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/UsersResponse"
+                $ref: '#/components/schemas/UsersResponse'
 
     post:
       summary: Create a new user
@@ -36,27 +36,27 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/User"
+              $ref: '#/components/schemas/User'
 
       responses:
-        "200":
+        '200':
           description: Returns ID of created user
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/CreateUserResponse"
+                $ref: '#/components/schemas/CreateUserResponse'
           links:
             UserID:
               operationId: getUserID
               parameters:
                 user_id: $response.body#/data/InsertedID
-        "400":
+        '400':
           description: Invalid user email
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/VerifyEmail"
-        "422":
+                $ref: '#/components/schemas/VerifyEmail'
+        '422':
           description: Unprocessable entity
           content:
             application/json:
@@ -74,7 +74,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Error"
+                $ref: '#/components/schemas/Error'
 
   /users/{user_id}:
     patch:
@@ -85,38 +85,38 @@ paths:
         - cookieAuth: []
         - bearerAuth: []
       parameters:
-        - $ref: "#/components/parameters/user_id"
+        - $ref: '#/components/parameters/user_id'
 
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/User"
+              $ref: '#/components/schemas/User'
       tags:
         - Users
 
       responses:
-        "200":
+        '200':
           description: User was successfully updated
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/UpdateUser"
+                $ref: '#/components/schemas/UpdateUser'
 
-        "404":
+        '404':
           description: No user with the specified user_id was found
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Error"
+                $ref: '#/components/schemas/Error'
 
-        "500":
+        '500':
           description: Someting went wrong
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Error"
+                $ref: '#/components/schemas/Error'
 
     get:
       summary: Retrieves the information about a user
@@ -124,29 +124,29 @@ paths:
         - cookieAuth: []
         - bearerAuth: []
       parameters:
-        - $ref: "#/components/parameters/user_id"
+        - $ref: '#/components/parameters/user_id'
 
       responses:
-        "200":
+        '200':
           description: Returns the full info about a user
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/FullUser"
+                $ref: '#/components/schemas/FullUser'
 
-        "404":
+        '404':
           description: No user with the specified user_id was found
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Error"
+                $ref: '#/components/schemas/Error'
 
-        "500":
+        '500':
           description: Something went wrong
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Error"
+                $ref: '#/components/schemas/Error'
 
       tags:
         - Users
@@ -157,31 +157,31 @@ paths:
         - bearerAuth: []
         - cookieAuth: []
       parameters:
-        - $ref: "#/components/parameters/user_id"
+        - $ref: '#/components/parameters/user_id'
 
       tags:
         - Users
 
       responses:
-        "200":
+        '200':
           description: User was successfully deactivated
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/DeleteUser"
-        "404":
+                $ref: '#/components/schemas/DeleteUser'
+        '404':
           description: No user with the specified user_id was found
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Error"
+                $ref: '#/components/schemas/Error'
 
-        "500":
+        '500':
           description: Something went wrong
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Error"
+                $ref: '#/components/schemas/Error'
 
   /users/{email}/organizations:
     get:
@@ -202,14 +202,14 @@ paths:
         - Users
 
       responses:
-        "200":
+        '200':
           description: User's organization(s) retrieved successfully
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/UserOrgs"
+                $ref: '#/components/schemas/UserOrgs'
 
-        "404":
+        '404':
           description: No record found
           content:
             application/json:
@@ -217,12 +217,12 @@ paths:
                 type: string
                 example: user with email user1@gmail.com has no organization
 
-        "500":
+        '500':
           description: Someting went wrong
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Error"
+                $ref: '#/components/schemas/Error'
 
 components:
   parameters:
@@ -267,7 +267,7 @@ components:
         data:
           type: array
           items:
-            $ref: "#/components/schemas/FullUser"
+            $ref: '#/components/schemas/FullUser'
 
     FullUser:
       type: object
@@ -295,7 +295,7 @@ components:
           example: null
         time_zone:
           type: string
-          example: ""
+          example: ''
         created_at:
           type: string
           example: 2021-09-07T12:22:06.932180616+01:00
@@ -373,7 +373,7 @@ components:
             UpsertedID:
               type: string
               example: null
-    
+
     UserOrgs:
       type: object
       properties:
@@ -394,7 +394,7 @@ components:
               example: false
             logo_url:
               type: string
-              example: "https://imagelocation.com/image.png"
+              example: 'https://imagelocation.com/image.png'
             name:
               type: string
               example: ZuriHNG
@@ -441,7 +441,7 @@ components:
     bearerAuth:
       type: http
       scheme: bearer
-    cookieAuth:         
+    cookieAuth:
       type: apiKey
       in: cookie
       name: JSESSIONID

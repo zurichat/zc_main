@@ -6,8 +6,8 @@ info:
   contact:
     email: developer@zuri.chat
 servers:
-  - description: Zuri Chat Core API 
-    url: "https://api.zuri.chat/"
+  - description: Zuri Chat Core API
+    url: 'https://api.zuri.chat/'
 
 paths:
   /marketplace/plugins:
@@ -117,8 +117,8 @@ components:
   schemas:
     Error:
       required:
-      - code
-      - message
+        - code
+        - message
       type: object
       properties:
         code:
@@ -131,10 +131,10 @@ components:
       properties:
         _id:
           type: string
-          example: "6137d69b21d3c78fc9a84bdf"
+          example: '6137d69b21d3c78fc9a84bdf'
         name:
           type: string
-          example: "Google Drive"
+          example: 'Google Drive'
         description:
           type: string
         developerName:
@@ -143,12 +143,12 @@ components:
           type: string
           example: developer@zuri.chat
         metadata:
-          type: object  
+          type: object
         templateUrl:
           type: string
         sidebarUrl:
           type: string
         iconUrl:
-          type: string 
+          type: string
         approved:
           type: boolean
