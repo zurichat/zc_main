@@ -17,7 +17,6 @@
   color: #242424;
 }
 
-
 .section6CardWrapper {
   margin-top: 60px;
   display: grid;
@@ -25,21 +24,15 @@
   gap: 20px;
 }
 
-
 /* Mediaqueries */
 
 @media (max-width: 1024px) {
-
 }
-
 
 @media (max-width: 800px) {
- 
 }
 
-
 @media (max-width: 500px) {
-
   .section6 {
     margin: 80px 0;
   }
