@@ -1317,9 +1317,9 @@
     strip-json-comments "^3.1.1"
 
 "@exodus/schemasafe@^1.0.0-rc.2":
-  version "1.0.0-rc.5"
-  resolved "https://registry.yarnpkg.com/@exodus/schemasafe/-/schemasafe-1.0.0-rc.5.tgz#d35cbcd25d17902c78b3a44643b415015048ac0a"
-  integrity sha512-4RvAd9BRQMdyhBi12x3Z4GJyF/1YtwxzHQHVoq1Se1RUdHk1RAZeUut0H8EEPEDY0DYrHkHMyVjZgPmQUHFMQA==
+  version "1.0.0-rc.6"
+  resolved "https://registry.yarnpkg.com/@exodus/schemasafe/-/schemasafe-1.0.0-rc.6.tgz#7985f681564cff4ffaebb5896eb4be20af3aae7a"
+  integrity sha512-dDnQizD94EdBwEj/fh3zPRa/HWCS9O5au2PuHhZBbuM3xWHxuaKzPBOEWze7Nn0xW68MIpZ7Xdyn1CoCpjKCuQ==
 
 "@fortawesome/fontawesome-common-types@^0.2.36":
   version "0.2.36"
@@ -1728,9 +1728,9 @@
     uri-js "^4.2.2"
 
 "@redocly/openapi-core@^1.0.0-beta.50":
-  version "1.0.0-beta.59"
-  resolved "https://registry.yarnpkg.com/@redocly/openapi-core/-/openapi-core-1.0.0-beta.59.tgz#b3e235443055f9d5d68491a7dbfbdb9bd002624d"
-  integrity sha512-MAQs2wZaK6GkdYuNtFo0WPvCpU3TFxJ307O+6bdavlTszAqNjWZB34Igx81EXGMPNwE/SEIFUCYICu4+eG7z8w==
+  version "1.0.0-beta.60"
+  resolved "https://registry.yarnpkg.com/@redocly/openapi-core/-/openapi-core-1.0.0-beta.60.tgz#21d542dcb1f28fa40dc0c37e00e4fe36e533c975"
+  integrity sha512-XxpHcdIc50f/yqNu9zObo/gF2QVkWe1QqC6l7ju05bj35fhf2fUcx+XAroPeyJpEePCeT6FeM/rID40dM1c5Nw==
   dependencies:
     "@redocly/ajv" "^8.6.2"
     "@types/node" "^14.11.8"
@@ -4630,9 +4630,9 @@ domhandler@^4.0.0, domhandler@^4.2.0:
     domelementtype "^2.2.0"
 
 dompurify@^2.2.8:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.3.2.tgz#c773efa410abb5c087c7caf44934fefa448f6e60"
-  integrity sha512-jXJnvWloI+scD+N5uBikpUMsYXZb0LCAXxLFAOLS5duCzKfXLqBCpuINvFOiI4eJgTLggrngljT18HNoakHUsA==
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.3.3.tgz#c1af3eb88be47324432964d8abc75cf4b98d634c"
+  integrity sha512-dqnqRkPMAjOZE0FogZ+ceJNM2dZ3V/yNOuFB7+39qpO93hHhfRpHw3heYQC7DPK9FqbQTfBKUJhiSfz4MvXYwg==
 
 domutils@^1.7.0:
   version "1.7.0"
@@ -8267,9 +8267,9 @@ node-readfiles@^0.2.0:
     es6-promise "^3.2.1"
 
 node-releases@^1.1.61, node-releases@^1.1.75:
-  version "1.1.75"
-  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.75.tgz#6dd8c876b9897a1b8e5a02de26afa79bb54ebbfe"
-  integrity sha512-Qe5OUajvqrqDSy6wrWFmMwfJ0jVgwiw4T3KqmbTcZ62qW0gQkheXYhcFM1+lOVcGUoRxcEcfyvFMAnDgaF1VWw==
+  version "1.1.76"
+  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.76.tgz#df245b062b0cafbd5282ab6792f7dccc2d97f36e"
+  integrity sha512-9/IECtNr8dXNmPWmFXepT0/7o5eolGesHUa3mtr0KlgnCvnZxwh2qensKL42JJY2vQKC3nIBXetFAqR+PW1CmA==
 
 normalize-package-data@^2.3.2, normalize-package-data@^2.5.0:
   version "2.5.0"
