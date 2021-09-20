@@ -1,8 +1,7 @@
 import React from 'react'
 import styles from '../styles/AudioVideo.module.css'
-import { MdPhone } from "react-icons/md";
-import { FaHeadphones } from "react-icons/fa";
-
+import { MdPhone } from 'react-icons/md'
+import { FaHeadphones } from 'react-icons/fa'
 
 const AudioVideo = () => {
   return (
@@ -79,7 +78,7 @@ const AudioVideo = () => {
               <input type="checkbox" name="" id="" />
               <div className={styles.set}>
                 <span className={styles.statuscall}>
-                  Set my status to " <MdPhone color="#00b87c"/> On a call..."
+                  Set my status to " <MdPhone color="#00b87c" /> On a call..."
                 </span>
                 <br />
                 If you already have a status set, ZuriChat won't change it.
@@ -100,7 +99,8 @@ const AudioVideo = () => {
               <div className={styles.status}>
                 <span className={styles.statushuddle}>
                   {' '}
-                  Set my status to " <FaHeadphones color="#00b87c"/> In a huddle..."
+                  Set my status to " <FaHeadphones color="#00b87c" /> In a
+                  huddle..."
                 </span>{' '}
                 <br />
                 If you already have a status set, ZuriChat won't change it.

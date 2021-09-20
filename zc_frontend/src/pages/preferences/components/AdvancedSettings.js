@@ -12,11 +12,15 @@ const AdvancedSettings = () => {
             <div className={styles.typing}>
               <span>
                 {' '}
-                When typing code with "", <button type="button" className={styles.btn}>Enter</button>
+                When typing code with "",{' '}
+                <button type="button" className={styles.btn}>
+                  Enter
+                </button>
                 &nbsp; should send the message{' '}
               </span>
               <br /> With this ticket, use{' '}
-              <button className={styles.btn}>Shift</button> <button className={styles.btn}>Enter</button> to send
+              <button className={styles.btn}>Shift</button>{' '}
+              <button className={styles.btn}>Enter</button> to send
             </div>
           </div>
           <div className={styles.checkformat}>
@@ -27,7 +31,10 @@ const AdvancedSettings = () => {
             </div>
           </div>
         </div>
-        <p className={styles.head}>When writing a message, press <button className={styles.btn}>Enter</button></p>
+        <p className={styles.head}>
+          When writing a message, press{' '}
+          <button className={styles.btn}>Enter</button>
+        </p>
         <div className={styles.radio}>
           <div className={styles.radiosend}>
             <input type="radio" name="" id="" />
