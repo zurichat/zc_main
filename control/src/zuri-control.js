@@ -26,20 +26,17 @@ export const GetUserInfo = () => {
   // console.log( token)
   // console.log(sessionId)
 
-
-    axios
-      .get(`https://api.zuri.chat/users/${userID}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        })
-      .then((res) => {
-        let user = res.data.data
-        console.log(user)
-
-      })
-      .catch(err => console.log(err));
+  axios
+    .get(`https://api.zuri.chat/users/${userID}`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .then(res => {
+      let user = res.data.data
+      console.log(user)
+    })
+    .catch(err => console.log(err))
 
   return user
 }
