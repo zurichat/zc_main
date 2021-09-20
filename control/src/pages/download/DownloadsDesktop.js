@@ -33,20 +33,12 @@ const DownloadsDesktop = () => {
           </div>
           <p className={`${styles.plink} mt-lg-4 d-inline`}>Looking for Mac?</p>
           <a href="#download-mac">
-            <img
-              className={`d-inline mx-1`}
-              src={arrowDown}
-              alt="arrow-down"
-            />
+            <img className={`d-inline mx-1`} src={arrowDown} alt="arrow-down" />
           </a>
         </div>
         <div className={`col-8`}>
           <div className={styles.images}>
-            <img
-              className={styles.circle}
-              src={Ellipse159}
-              alt="circle"
-            ></img>
+            <img className={styles.circle} src={Ellipse159} alt="circle"></img>
             <img
               className={`${styles.screenshot}`}
               src={screenshot}
@@ -75,11 +67,7 @@ const DownloadsDesktop = () => {
               Looking for Mobile?
             </p>
             <a href="#download-mobile">
-              <img
-                className={`mx-1`}
-                src={arrowDown}
-                alt="arrow-down"
-              />
+              <img className={`mx-1`} src={arrowDown} alt="arrow-down" />
             </a>
             <a className={`${styles.bit}`} href="/">
               Download 32-bit app
@@ -128,11 +116,7 @@ const DownloadsDesktop = () => {
                 src={screenshot}
                 alt="app screenshot"
               ></img>
-              <img
-                className={styles.half}
-                src={halfCircle}
-                alt="circle2"
-              ></img>
+              <img className={styles.half} src={halfCircle} alt="circle2"></img>
             </div>
             <div className={`${styles.version} `}>
               <p className={`${styles.versionp} d-inline`}>VERSION 4.4.4 -</p>
@@ -155,11 +139,7 @@ const DownloadsDesktop = () => {
                 Looking for Mobile?
               </p>
               <a href="#download-mobile">
-                <img
-                  className={`mx-lg-1`}
-                  src={arrowDown}
-                  alt="arrow-down"
-                />
+                <img className={`mx-lg-1`} src={arrowDown} alt="arrow-down" />
               </a>
               <a className={`${styles.bit}`} href="/">
                 Download 32-bit app
@@ -198,11 +178,7 @@ const DownloadsDesktop = () => {
           </div>
           <div className={`col-8`}>
             <div className={styles.images}>
-              <img
-                className={styles.rec}
-                src={Rect2}
-                alt="vector"
-              ></img>
+              <img className={styles.rec} src={Rect2} alt="vector"></img>
               <img
                 className={`${styles.android}`}
                 src={homeAndroid}

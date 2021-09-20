@@ -24,7 +24,7 @@
     }
 
     div[id*='zuri/topbar'] {
-      z-index: 2;
+      z-index: 5;
       width: 100%;
       height: 10vh;
       position: fixed;
@@ -34,9 +34,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: red;
-      /* padding: 2rem; */
-      font-size: 3rem;
+      background-color: #fff;
     }
 
     div[id*='zuri/sidebar']::-webkit-scrollbar {
@@ -47,15 +45,13 @@
       width: 20%;
       height: 90vh;
       overflow-y: scroll;
-      -ms-overflow-style: none;
       /* Hide scrollbar for IE and Edge */
-      scrollbar-width: none;
+      -ms-overflow-style: none;
       /* Hide scrollbar for Firefox */
+      scrollbar-width: none;
       position: fixed;
       top: 10vh;
       left: 0;
-      background-color: green;
-      font-size: 3rem;
     }
 
     div[id*='zuri-plugin'] {
@@ -77,59 +73,9 @@
         width: calc(26.4rem * 0.9);
       }
     }
-
     /* CHESS STYLE */
   </style>
 
-  <!-- <style>
-    html,
-    body {
-      height: 100%;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      /* display: grid; */
-      grid-template-columns: 0.6fr 1.4fr;
-      grid-template-rows: 0.5fr 1.5fr;
-      gap: 0px 0px;
-      grid-template-areas:
-        'topbar topbar'
-        'sidebar plugincontent';
-    }
-
-    /* div[id*='zuri'] { */
-    /* min-height: inherit;  min-width: inherit; */
-    /* max-height: inherit;  max-width: inherit; */
-    /* height: 100%; */
-    /* width: 100%; */
-    /* } */
-
-    div[id*='zuri/topbar'] {
-      grid-area: topbar;
-
-      background-color: red;
-      padding: 2rem;
-      font-size: 3rem;
-    }
-
-    div[id*='zuri/control'] {
-      grid-area: control;
-    }
-
-    div[id*='zuri/sidebar'] {
-      grid-area: sidebar;
-
-      background-color: green;
-      font-size: 3rem;
-    }
-
-    div[id*='zuri-plugin'] {
-      grid-area: plugincontent;
-    }
-  </style>
   <title>Zuri Chat</title>
   <!--
     Remove this if you only support browsers that support async/await.

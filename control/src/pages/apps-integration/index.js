@@ -3,7 +3,6 @@ import Header from '../../components/Header'
 // import Categories from './components/Categories'
 import SectionOne from './components/SectionOne'
 
-
 function AppsAndIntegrations() {
   return (
     <div>
