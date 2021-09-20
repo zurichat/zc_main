@@ -3,7 +3,8 @@ import Home from './pages/home'
 import Login from './pages/login'
 import SignUp from './pages/signup'
 import './styles/globals.css'
-import LandingPage from './components/LandingPage'
+// import LandingPage from './components/LandingPage'
+import Homepage from './components/Homepage'
 //import EmailVerification from './pages/email-verify'
 import Security from './pages/security'
 import Features from './pages/features'
@@ -45,27 +46,34 @@ import OrganisationApi from './pages/api-docs/components/organisation'
 import MarketplaceApi from './pages/api-docs/components/marketplace'
 import DataApi from './pages/api-docs/components/data'
 import PluginApi from './pages/api-docs/components/plugin'
+import CreateWorkspace from './pages/create-workspace/CreateWorkSpace'
+import ProjectName from './pages/create-workspace/ProjectName'
+import LaunchPage from './pages/create-workspace/LaunchPage'
 
 import '@reach/dialog/styles.css'
 import StyleGuide from './components/verified'
 import Test from './components/verified-components'
 import RecoverPassword from './pages/passwordRecovery/index'
 import ResetPassword from './pages/passwordReset/Index'
+import PrivateRoute from './pages/settings/Utils/PrivateRoute'
 import AuthApi from './pages/api-docs/components/auth'
-
+import { useRouteMatch } from 'react-router-dom'
 import './components/verified-components/master.css'
 import CompanyName from './pages/create-workspace/CompanyName'
 import Step3 from './pages/create-workspace/Step3'
-import PrivacyPolicy from './pages/privacy-policy'
 
-const App = () => (
-  <TopbarProvider>
-    <BrowserRouter>
+const App = () => {
+  let workspaceRoute = '/home/createworkspace'
+  return (
+    <TopbarProvider>
       <Switch>
-        <Route path="/" exact>
+        {/* <Route path="/" exact>
           <LandingPage />
+        </Route> */}
+        <Route path="/" exact>
+          <Homepage />
         </Route>
-        <Route path="/home">
+        <Route path="/home" exact>
           <Home />
         </Route>
         <Route path="/login">
@@ -86,11 +94,30 @@ const App = () => (
         <Route path="/careers">
           <Careers />
         </Route>
+
         <Route path="/apps-integrations">
           <AppsAndIntegrations />
         </Route>
         <Route path="/resources">
           <Resources />
+        </Route>
+        <Route path={workspaceRoute} exact>
+          <CreateWorkspace />
+        </Route>
+        {/* <Route path = {`${match.path}/companyname`}>
+          <CompanyName/>
+          </Route> */}
+        <Route path={`${workspaceRoute}/step1`} exact>
+          <CompanyName />
+        </Route>
+        <Route path={`${workspaceRoute}/step1/step2`} exact>
+          <ProjectName />
+        </Route>
+        <Route path={`${workspaceRoute}/step1/step2/step3`} exact>
+          <Step3 />
+        </Route>
+        <Route path={`${workspaceRoute}/step1/step2/step3/launch`}>
+          <LaunchPage />
         </Route>
         <Route path="/download-app">
           <Download />
@@ -113,12 +140,7 @@ const App = () => (
         <Route path="/input">
           <Input />
         </Route>
-        <Route path="/settings" exact>
-          <Settings />
-        </Route>
-        <Route path="/settings/:id">
-          <ConfirmPassword />
-        </Route>
+
         <Route path="/search">
           <SearchResult />
         </Route>
@@ -127,12 +149,6 @@ const App = () => (
         </Route>
         <Route path="/cookies-settings">
           <CookiesSetting />
-        </Route>
-        <Route path="/deactivate-account">
-          <DeactivateAccount />
-        </Route>
-        <Route path="/session-signout">
-          <AllSessionSignOut />
         </Route>
         <Route path="/search-results">
           <SearchResults2 />
@@ -175,21 +191,25 @@ const App = () => (
             <ApiDocs />
           </PluginLoaderProvider>
         </Route>
-        <Route path="/privacy">
-           <PrivacyPolicy />
-        </Route>
 
         {/* ----------------settings routes opened------------------------ */}
         <PrivateRoute
           path="/confirm-deactivation"
           component={ConfirmDeactivation}
         />
-        <Route path="/confirm-deactivation">
-          <ConfirmDeactivation />
-        </Route>
         <Route path="/account-deactivated">
           <AccDeactivated />
         </Route>
+        <PrivateRoute
+          path="/deactivate-account"
+          component={DeactivateAccount}
+        />
+        <PrivateRoute path="/session-signout" component={AllSessionSignOut} />
+        <PrivateRoute path="/settings" exact component={Settings} />
+        <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
+        {/* ----------------settings routes closed----------------- */}
+
+        <Route path="/recover-email">{/* <RecoveryEmail /> */}</Route>
         <Route path="/recover-password">
           <RecoverPassword />
         </Route>
@@ -203,7 +223,8 @@ const App = () => (
           <Test />
         </Route>
       </Switch>
-    </BrowserRouter>
-  </TopbarProvider>
-)
+    </TopbarProvider>
+  )
+}
+
 export default App
