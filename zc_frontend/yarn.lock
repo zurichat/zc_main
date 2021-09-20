@@ -1728,9 +1728,9 @@
     uri-js "^4.2.2"
 
 "@redocly/openapi-core@^1.0.0-beta.50":
-  version "1.0.0-beta.59"
-  resolved "https://registry.yarnpkg.com/@redocly/openapi-core/-/openapi-core-1.0.0-beta.59.tgz#b3e235443055f9d5d68491a7dbfbdb9bd002624d"
-  integrity sha512-MAQs2wZaK6GkdYuNtFo0WPvCpU3TFxJ307O+6bdavlTszAqNjWZB34Igx81EXGMPNwE/SEIFUCYICu4+eG7z8w==
+  version "1.0.0-beta.60"
+  resolved "https://registry.yarnpkg.com/@redocly/openapi-core/-/openapi-core-1.0.0-beta.60.tgz#21d542dcb1f28fa40dc0c37e00e4fe36e533c975"
+  integrity sha512-XxpHcdIc50f/yqNu9zObo/gF2QVkWe1QqC6l7ju05bj35fhf2fUcx+XAroPeyJpEePCeT6FeM/rID40dM1c5Nw==
   dependencies:
     "@redocly/ajv" "^8.6.2"
     "@types/node" "^14.11.8"
