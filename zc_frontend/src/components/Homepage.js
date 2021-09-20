@@ -11,9 +11,8 @@ import ft_img2 from '../assets/Homepage-images/ft_img2.png'
 import ft_img3 from '../assets/Homepage-images/ft_img3.png'
 import ft_img4 from '../assets/Homepage-images/ft_img4.png'
 import sign_up_img from '../assets/Homepage-images/sign_up_img.png'
-
-import SearchSuggestion from '../pages/searchSuggestion'
-import Footer from '../components/externalPagesComponents/Footer/Footer'
+import Header from '../pages/Homepage/Header'
+import Footer from '../pages/Homepage/Footer'
 
 import { Link } from 'react-router-dom'
 
@@ -65,7 +64,8 @@ export default function Homepage() {
   }
   return (
     <>
-      <SearchSuggestion />
+      {/*<SearchSuggestion />*/}
+      <Header />
       <div className={`${style.homepage}`}>
         {/* HERO */}
         <div className={`${style.hero_wrap}`}>
