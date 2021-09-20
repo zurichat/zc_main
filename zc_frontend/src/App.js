@@ -2,8 +2,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from './pages/home'
 import Login from './pages/login'
 import SignUp from './pages/signup'
-import './styles/globals.css'
-import LandingPage from './components/LandingPage'
+import HomePage from './pages/Homepage/'
+//import './styles/globals.css'
+//import LandingPage from './components/LandingPage'
 //import EmailVerification from './pages/email-verify'
 import Security from './pages/security'
 import Features from './pages/features'
@@ -14,7 +15,6 @@ import Download from './pages/download'
 import ContactUs from './pages/contact-us'
 import Pricing from './pages/pricing'
 import Header from './components/externalPagesComponents/Header'
-import './styles/globals.css'
 import MarketPlace from './pages/marketplace/marketplace'
 import Input from './components/externalPagesComponents/Input'
 // import CookiesBanner from './components/externalPagesComponents/CookiesBanner/cookiesBanner'
@@ -67,7 +67,7 @@ const App = () => {
     <TopbarProvider>
       <Switch>
         <Route path="/" exact>
-          <LandingPage />
+          <HomePage />
         </Route>
         <Route path="/home" exact>
           <Home />
