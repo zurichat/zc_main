@@ -1,6 +1,6 @@
-import contactStyle from "../styles/contactMain.module.css";
-import ContactUs from "./ContactUsImg.png";
-import FAQselected from "./FAQSelected.js";
+import contactStyle from '../styles/contactMain.module.css'
+import ContactUs from './ContactUsImg.png'
+import FAQselected from './FAQSelected.js'
 
 const contactTitle = () => {
   return (
@@ -21,7 +21,7 @@ const contactTitle = () => {
         <img className="d-none d-xl-flex" src={ContactUs} alt="contact us" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default contactTitle;
+export default contactTitle
