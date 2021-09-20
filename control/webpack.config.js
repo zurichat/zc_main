@@ -22,13 +22,33 @@ const mergeRules = {
   }
 }
 
+module.exports = {
+  resolve: {
+    fallback: {
+      "fs": false,
+      "tls": false,
+      "net": false,
+      "path": false,
+      "zlib": false,
+      "http": false,
+      "https": false,
+      "stream": false,
+      "crypto": false,
+      "tty": false
+    } 
+  }
+};
+
 module.exports = (webpackConfigEnv, argv) => {
+  
   const defaultConfig = singleSpaDefaults({
     orgName: 'zuri',
     projectName: 'control',
     webpackConfigEnv,
     argv
   })
+
+
 
   return mergeWithRules(mergeRules)(defaultConfig, {
     output: {
