@@ -4,9 +4,9 @@ import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
 import FormWrapper from '../../components/AuthFormWrapper'
 import styles from '../../styles/AuthFormElements.module.css'
-// import axios from 'axios'
+import axios from 'axios'
 
-const Index = ({ resetCode }) => {
+const Index = ({ resetCode , email, displayImage}) => {
   const [password, setPassword] = useState('')
   const handleSubmit = async () => {
     const res = await axios.post('api.zuri.chat/account/update-password', {
