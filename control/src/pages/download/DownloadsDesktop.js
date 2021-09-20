@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Footer from '../../components/Footer'
 import styles from './styles/download.module.css'
 import Header from '../../components/Header'
@@ -21,7 +21,9 @@ const DownloadsDesktop = () => {
   // const [dmg, setdmg] = useState({ link: '', name: '' })
 
   useEffect(() => {
-    fetchInstall('exe').then(res => {setexe(res)})
+    fetchInstall('exe').then(res => {
+      setexe(res)
+    })
     // fetchInstall('msi').then(res => {setmsi(res)})
     // fetchInstall('dmg').then(res => {setdmg(res)})
   }, [])
@@ -70,7 +72,11 @@ const DownloadsDesktop = () => {
               What's New
             </a>
             <p className={`d-inline`}>/</p>
-            <a className={styles.versionlink} href={exe.link} download={exe.name}>
+            <a
+              className={styles.versionlink}
+              href={exe.link}
+              download={exe.name}
+            >
               Get the Beta
             </a>
             <p className={`d-inline`}>/</p>
@@ -140,7 +146,8 @@ const DownloadsDesktop = () => {
               <p className={`d-inline`}>/</p>
               <a
                 className={styles.versionlink}
-                href={exe.link} download={exe.name}
+                href={exe.link}
+                download={exe.name}
               >
                 Get the Beta
               </a>
@@ -172,14 +179,16 @@ const DownloadsDesktop = () => {
                 Innovate in your workspace with the Zurichat apps on
                 <a
                   className={`${styles.versionlink} px-lg-1 fw-bold`}
-                  href={exe.link} download={exe.name}
+                  href={exe.link}
+                  download={exe.name}
                 >
                   Android
                 </a>{' '}
                 and
                 <a
                   className={`${styles.versionlink} px-lg-1 fw-bold`}
-                  href={exe.link} download={exe.name}
+                  href={exe.link}
+                  download={exe.name}
                 >
                   IOS
                 </a>
@@ -216,7 +225,8 @@ const DownloadsDesktop = () => {
               DOWNLOAD FOR WINDOWS
             </a>
             <a
-              href={exe.link} download={exe.name}
+              href={exe.link}
+              download={exe.name}
               className={`${styles.button3} d-inline`}
             >
               DOWNLOAD FOR MOBILE
