@@ -66,7 +66,9 @@ function ContactFormContainer() {
   )
 
   const handleChange = e => {
-    setValues(values => ({ ...values, [e.target.name]: e.target.value }))
+    // setValues(values => ({ ...values, [e.target.name]: e.target.value }))
+    setValues({ ...values, [e.target.name]: e.target.value })
+    console.log(values)
   }
   const handleTopicChange = detail => e => {
     setCurrentDetails(detail)
