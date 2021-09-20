@@ -75,6 +75,12 @@ registerApplication({
   activeWhen: [location => location.pathname.startsWith('/noticeboard')]
 })
 
+registerApplication({
+  name: '@zuri/zuri-plugin-companyfiles',
+  app: () => System.import('@zuri/zuri-plugin-companyfiles'),
+  activeWhen: [location => location.pathname.startsWith('/companyfiles')]
+})
+
 start({
   urlRerouteOnly: true
 })
