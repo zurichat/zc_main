@@ -12,8 +12,8 @@ const SectionOne = () => (
     <div className={`${styles.section1Left}`}>
       <h1>Work with us</h1>
       <p>
-        Explore remotely-friendly, flexible opportunities and join our mission
-        to make work life simpler, more pleasant and more productive
+        Explore flexible and remote-friendly opportunities, join our mission to make 
+        work and life easier, more convenient, and more productive.
       </p>
       <Link to="/signup">
         <button>Join us</button>

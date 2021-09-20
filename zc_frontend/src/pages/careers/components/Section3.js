@@ -4,10 +4,10 @@ const Section3 = () => {
   return (
     <>
       <div className={`${styles.Section3}`}>
-        <h2>Join our internship</h2>
+        <h1>Join Our Free Internship</h1>
         <p>
           Zuri Internship is a 100% free, remote and fast paced training for
-          young professionals seeking to hon their tech skills and boost their
+          young professionals seeking to improve their tech skills and boost their
           resume.
         </p>
         <div className={`${styles.section3Cards}`}>
@@ -93,7 +93,7 @@ const Section3 = () => {
         </div>
       </div>
       <div className={`${styles.Section4}`}>
-        <p>Be a part of next cohort starting summer of 2022</p>
+        <p>Join the next cohort starting summer of 2022</p>
         <a
           className="registerBtn"
           href="https://internship.zuri.team/"

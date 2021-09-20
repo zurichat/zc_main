@@ -13,7 +13,7 @@ button:hover {
 .Section2 {
   margin-bottom: 7rem;
 }
-.Section2 h2 {
+.Section2 h1 {
   font-size: 36px;
   margin: 0;
   text-align: center;
@@ -52,7 +52,7 @@ button:hover {
   }
 }
 @media screen and (max-width: 850px) {
-  .Section2 h2 {
+  .Section2 h1 {
     font-size: 40px;
   }
   .Section2 p {
@@ -70,7 +70,7 @@ button:hover {
 }
 
 @media screen and (max-width: 500px) {
-  .Section2 h2 {
+  .Section2 h1 {
     font-size: 22px;
   }
   .Section2 p {

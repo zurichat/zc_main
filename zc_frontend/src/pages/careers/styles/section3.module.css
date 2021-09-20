@@ -10,7 +10,7 @@ body {
 button:hover {
   cursor: pointer;
 }
-.Section3 h2 {
+.Section3 h1 {
   font-size: 36px;
   margin: 0;
   text-align: center;
@@ -86,7 +86,7 @@ hr {
 }
 
 @media screen and (max-width: 500px) {
-  .Section3 h2 {
+  .Section3 h1 {
     font-size: 24px;
   }
   .Section3 p {
