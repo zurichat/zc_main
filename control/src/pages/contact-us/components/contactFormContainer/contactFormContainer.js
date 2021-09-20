@@ -129,8 +129,9 @@ function ContactFormContainer() {
     <div className={`container-xl ${ContactFormStyle.contact_form_container}`}>
       <form className="" onSubmit={handleSubmit}>
         <div
-          className={`mb-3 ${sessionStorage.getItem('user') && ContactFormStyle.is_hidden_animate
-            }`}
+          className={`mb-3 ${
+            sessionStorage.getItem('user') && ContactFormStyle.is_hidden_animate
+          }`}
         >
           <label htmlFor="email" className="form-label fw-bold">
             Your Email Address
@@ -150,8 +151,9 @@ function ContactFormContainer() {
         </div>
 
         <div
-          className={`${ContactFormStyle.faqs_topic} ${!currentDetails.topic && ContactFormStyle.is_hidden_animate
-            }`}
+          className={`${ContactFormStyle.faqs_topic} ${
+            !currentDetails.topic && ContactFormStyle.is_hidden_animate
+          }`}
         >
           <div className={`w-100`}>
             <div className={`d-flex align-items-center mb-3`}>
@@ -214,8 +216,9 @@ function ContactFormContainer() {
         </div>
 
         <div
-          className={`${ContactFormStyle.topic_tiles} ${currentDetails.topic && ContactFormStyle.is_hidden_animate
-            } bg-white`}
+          className={`${ContactFormStyle.topic_tiles} ${
+            currentDetails.topic && ContactFormStyle.is_hidden_animate
+          } bg-white`}
         >
           <p className="fw-bold mb-3">Select a Topic</p>
           <div className={`d-flex flex-wrap`}>
@@ -235,8 +238,9 @@ function ContactFormContainer() {
         </div>
 
         <div
-          className={`mb-3 ${currentDetails.topic && ContactFormStyle.is_hidden_animate
-            }`}
+          className={`mb-3 ${
+            currentDetails.topic && ContactFormStyle.is_hidden_animate
+          }`}
         >
           <label htmlFor="topic" className="form-label fw-bold">
             Or tell us what you need help with:
@@ -290,7 +294,7 @@ function ContactFormContainer() {
                 <input {...getInputProps()} />
                 <p>Drag 'n' drop some files here, or click to select files</p>
                 <em>
-                {`(Only 2 files(1mb max each) of the following type : images/jpg,jpeg,png doc,
+                  {`(Only 2 files(1mb max each) of the following type : images/jpg,jpeg,png doc,
                   pdf, docx will be accepted)`}
                 </em>
               </div>
