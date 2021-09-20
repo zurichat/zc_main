@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Footer.module.css'
 import Message from './Message'
+import { Link } from 'react-router-dom'
 
 const Footer = ({ showMessage, type }) => (
   <footer className={styles.footer}>

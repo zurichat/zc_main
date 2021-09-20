@@ -19,6 +19,7 @@ import Header from './components/externalPagesComponents/Header'
 import './styles/globals.css'
 import MarketPlace from './pages/marketplace/marketplace'
 import Input from './components/externalPagesComponents/Input'
+import PrivacyPolicy from './pages/privacy-policy/index'
 // import CookiesBanner from './components/externalPagesComponents/CookiesBanner/cookiesBanner'
 import FAQ from './pages/FAQ'
 import Settings from './pages/settings'
@@ -67,6 +68,7 @@ const App = () => {
   let workspaceRoute = '/home/createworkspace'
   return (
     <TopbarProvider>
+      <BrowserRouter>
       <Switch>
         {/* <Route path="/" exact>
           <LandingPage />
@@ -143,6 +145,9 @@ const App = () => {
         </Route>
         <Route path="/input">
           <Input />
+        </Route>
+        <Route path="/privacy">
+          <PrivacyPolicy /> 
         </Route>
 
         <Route path="/search">
@@ -227,6 +232,7 @@ const App = () => {
           <Test />
         </Route>
       </Switch>
+      </BrowserRouter>
     </TopbarProvider>
   )
 }
