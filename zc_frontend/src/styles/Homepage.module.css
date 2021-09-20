@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/* * VARIABLES ----------------------------- */
+:root {
+  --white: #ffffff;
+  --brand: #00b87c;
+  --font: 'Lato';
+  --page-pad-desk: 3rem;
+  --page-pad-mid: 3rem;
+  --page-pad-mob: 1rem;
+}
+
+/* * TOP LEVEL WRAPS ----------------------------- */
+.homepage {
+  font-family: var(--font);
+  color: #000000;
+}
+.homepage * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.hero_wrap,
+.company_banner_wrap,
+.features_wrap,
+.sign_up_banner_wrap {
+  width: 100%;
+}
+.hero,
+.company_banner,
+.features,
+.sign_up_banner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--page-pad-desk);
+}
+
+/* * HERO ----------------------------- */
+.hero_wrap {
+  background-color: var(--white);
+}
+.hero {
+  display: flex;
+  padding: 7.5rem var(--page-pad-desk);
+}
+.hero_left,
+.hero_right {
+  flex: 1;
+}
+.hero_left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.hero_text_one {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.hero_heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem 0;
+}
+.hero_p {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.hero_left_btn {
+  padding: 1.5rem;
+  background-color: var(--brand);
+  color: var(--white);
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid var(--brand);
+  transition: 200ms;
+  outline: none;
+  cursor: pointer;
+}
+.hero_left_btn:hover {
+  text-decoration: none;
+  background-color: var(--white);
+  color: var(--brand);
+  border: 2px solid var(--brand);
+}
+.hero_right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero_img {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* * COMPANY BANNER ----------------------------- */
+.company_banner_wrap {
+  background-color: #f5f5fb;
+}
+.company_banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cbp {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+/* .ft_col div {
+  border: 2px solid lime;
+} */
+.logo {
+  max-width: 200px;
+  width: 100%;
+  min-width: 100px;
+  height: auto;
+}
+
+/* * FEATURES ----------------------------- */
+.features {
+  padding: 7.75rem var(--page-pad-desk);
+}
+.ft_row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rem;
+}
+.ft_row:last-child {
+  margin-bottom: 0;
+}
+.ft_col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.ft_col:first-child {
+  margin-right: 3.75rem;
+}
+.ft_row_reverse {
+  flex-direction: row-reverse;
+}
+.ft_row_reverse .ft_col:first-child {
+  margin-right: 0;
+  margin-left: 3.75rem;
+}
+.ft_img {
+  max-width: 600px;
+  width: 100%;
+}
+.ft_link_wrap {
+  margin-top: 1.5rem;
+}
+.ft_link {
+  text-decoration: none;
+  color: var(--brand);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+.ft_link:hover {
+  color: var(--brand);
+  text-decoration: underline;
+}
+.ft_link div {
+  display: flex;
+  align-items: center;
+}
+.ft_text_one {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.ft_heading {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem 0;
+  color: inherit;
+  width: auto;
+  height: auto;
+}
+.ft_p {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.ft_link svg {
+  margin-left: 0.75rem;
+}
+
+/* * SIGN UP BANNER ----------------------------- */
+.sign_up_banner_wrap {
+  background-color: var(--brand);
+}
+.sign_up_banner {
+  background-color: var(--brand);
+  display: flex;
+  padding: 0;
+}
+.sign_up_left,
+.sign_up_right {
+  flex: 1;
+}
+.sign_up_left {
+  padding: var(--page-pad-desk);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.sign_up_left p {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--white);
+}
+.sign_up_btn {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 1.5rem;
+  background-color: var(--white);
+  color: var(--brand);
+  margin-top: 2rem;
+  border: 2px solid var(--white);
+  transition: 200ms;
+  outline: none;
+  cursor: pointer;
+}
+.sign_up_btn:hover {
+  text-decoration: none;
+  background-color: var(--brand);
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+.sign_up_right {
+  display: flex;
+}
+.sign_up_right img {
+  margin-top: 5.5rem;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* * MEDIA QUERIES ----------------------------- */
+/* ipad */
+@media (max-width: 769px) {
+  .hero,
+  .company_banner,
+  .features,
+  .sign_up_banner {
+    padding: var(--page-pad-mid);
+  }
+
+  /* * HERO ----------------------------- */
+  .hero {
+    flex-direction: column;
+    padding: 7.5rem var(--page-pad-mid);
+  }
+
+  .hero_left {
+    margin-bottom: 5rem;
+  }
+  .hero_text_one {
+    font-size: 0.875rem;
+  }
+  .hero_heading {
+    font-size: 2rem;
+  }
+  .hero_p {
+    font-size: 1rem;
+  }
+  .hero_left_btn {
+    padding: 0.75rem;
+  }
+
+  /* * COMPANY BANNER ----------------------------- */
+  .cbp {
+    font-size: 1rem;
+  }
+
+  /* todo hide horizontal scroll bar */
+  .logos::-webkit-scrollbar {
+    -webkit-overflow-scrolling: touch;
+    display: none;
+  }
+  .logos {
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .logo {
+    min-width: 150px;
+  }
+
+  /* * FEATURES ----------------------------- */
+  .features {
+    padding: 4rem var(--page-pad-mid) 7rem var(--page-pad-mid);
+  }
+  .ft_row {
+    flex-direction: column;
+    margin-bottom: 6rem;
+  }
+  .ft_row_reverse .ft_col:first-child {
+    margin-left: 0;
+  }
+  .ft_col:first-child {
+    margin: 0;
+    margin-bottom: 2.5rem;
+    align-items: center;
+  }
+  .ft_text_one {
+    display: none;
+  }
+  .ft_heading {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  .ft_p {
+    font-size: 1.5rem;
+    margin: 1rem 0 2rem 0;
+  }
+
+  /* * SIGN UP BANNER ----------------------------- */
+
+  .sign_up_left {
+    padding: 0;
+    margin: 4rem 0;
+  }
+  .sign_up_left p {
+    font-size: 1.5rem;
+  }
+  .sign_up_btn {
+    padding: 0.75rem;
+  }
+  .sign_up_right {
+    display: none;
+  }
+}
+
+/* smartphone */
+@media (max-width: 469px) {
+  .hero,
+  .company_banner,
+  .features,
+  .sign_up_banner {
+    padding: var(--page-pad-mob);
+  }
+
+  /* * HERO ----------------------------- */
+  .hero {
+    padding: 7.5rem var(--page-pad-mob);
+  }
+  .hero_left {
+    margin-bottom: 5rem;
+  }
+  .hero_text_one {
+    font-size: 0.875rem;
+  }
+  .hero_heading {
+    font-size: 2rem;
+  }
+  .hero_p {
+    font-size: 1rem;
+  }
+  .hero_left_btn {
+    padding: 0.75rem;
+  }
+
+  /* * COMPANY BANNER ----------------------------- */
+  .cbp {
+    font-size: 1rem;
+  }
+  .logo {
+    max-width: 150px;
+  }
+
+  /* * FEATURES ----------------------------- */
+  .features {
+    padding: 4rem var(--page-pad-mob) 7rem var(--page-pad-mob);
+  }
+  .ft_row {
+    flex-direction: column;
+    margin-bottom: 6rem;
+  }
+  .ft_row_reverse .ft_col:first-child {
+    margin-left: 0;
+  }
+  .ft_col:first-child {
+    margin: 0;
+    margin-bottom: 2.5rem;
+  }
+  .ft_text_one {
+    display: none;
+  }
+  .ft_heading {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  .ft_p {
+    font-size: 1.5rem;
+    margin: 1rem 0 2rem 0;
+  }
+
+  /* * SIGN UP BANNER ----------------------------- */
+  .sign_up_left {
+    padding: 0;
+    margin: 4rem 0;
+  }
+  .sign_up_left p {
+    font-size: 1.5rem;
+  }
+  .sign_up_btn {
+    padding: 0.75rem;
+  }
+  .sign_up_right {
+    display: none;
+  }
+}

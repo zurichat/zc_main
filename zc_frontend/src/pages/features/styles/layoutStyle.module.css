@@ -1,0 +1,13 @@
+.layoutStyle {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+  overflow-x: hidden;
+  background-color: #fff;
+}
+
+@media (max-width: 500px) {
+  .layoutStyle {
+    padding: 0 24px;
+  }
+}

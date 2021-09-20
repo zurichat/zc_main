@@ -1,0 +1,221 @@
+.tabcontainer {
+  padding-top: 60px;
+  padding-bottom: 150px;
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  justify-content: center;
+  background: #fff;
+  height: 200%;
+}
+
+.tabcontainer h3 {
+  width: 70%;
+  margin: 0 auto;
+  background: none;
+  font-size: 25px;
+  margin-bottom: 20px;
+  color: #242424;
+  font-family: Lato;
+  font-weight: 900;
+}
+
+.tabcenter {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.bloctabs {
+  display: flex;
+  background: #fff !important;
+  position: relative;
+}
+
+.bloctabs button {
+  width: 20%;
+}
+
+@media screen and (min-width: 1000px) {
+  .bloctabs button {
+    width: 10%;
+  }
+}
+
+@media screen and (min-width: 801px) {
+  .bloctabs button:first-child {
+    margin-left: 0;
+  }
+}
+
+.bloctabs button:last-child {
+  position: absolute;
+  right: 10px;
+  width: 20%;
+}
+
+.tabs {
+  padding: 15px;
+  text-align: center;
+  width: 50%;
+  background: #fff;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+  box-sizing: content-box;
+  position: relative;
+  outline: none;
+  color: #7c7c7c;
+  font-size: 17px !important;
+}
+
+#tabs {
+  padding: 15px;
+  text-align: center;
+  width: 50%;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+  box-sizing: content-box;
+  position: relative;
+  outline: none;
+  color: #7c7c7c;
+  font-weight: bold;
+}
+
+.activetabs {
+  background: white;
+  color: #00b87c;
+  border-top: 1px solid #e5e5e5 !important;
+  border-left: 1px solid #e5e5e5 !important;
+  border-right: 1px solid #e5e5e5 !important;
+  z-index: 99;
+}
+
+.bloctabs button {
+  border: none;
+  outline: none;
+}
+
+/* THE SECTION OF THE CONTENT */
+.contenttabs {
+  flex-grow: 1;
+}
+.content {
+  background: none;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: none;
+  border: 1px solid #e5e5e5 !important;
+  border-radius: 3px;
+}
+
+#content {
+  background: none;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.content h2 {
+  padding: 0px 0 5px 0px;
+  font-size: 18px;
+}
+.content hr {
+  width: 100px;
+  height: 2px;
+  background: #222;
+  margin-bottom: 5px;
+}
+.content p {
+  width: 100%;
+  height: 100%;
+}
+.activecontent {
+  display: block;
+  background: #fff;
+}
+
+.mobiletab {
+  display: none;
+}
+
+/* ================================== */
+/* THE SECTION OF THE MEDIA QUERY */
+
+@media screen and (max-width: 800px) {
+  .tabcontainer h3 {
+    width: 100%;
+    margin-left: 25px;
+    margin-bottom: 20px;
+  }
+
+  .tabcenter {
+    width: 95% !important;
+  }
+
+  .bloctabs {
+    display: flex;
+    flex-direction: column;
+    background: white;
+  }
+
+  #bloctabs {
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+    border: 1px solid #cccccc;
+  }
+
+  .tabs {
+    background: none;
+    margin-left: 0;
+    text-align: left;
+    font-size: 14px !important;
+  }
+
+  .bloctabs button:last-child {
+    position: initial;
+    margin-left: 0;
+    right: 0;
+    left: 0;
+    text-align: left;
+  }
+
+  .activetabs {
+    background: none;
+    margin-left: 0;
+    text-align: left;
+    border: none !important;
+  }
+
+  .mobiletab {
+    border: 1px solid #dedede;
+    padding: 10px;
+    display: block;
+    font-size: 18px;
+    cursor: pointer;
+    color: #00b87c;
+    background: #fff;
+  }
+
+  #none {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .tabcontainer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .tabs {
+    width: 70% !important;
+  }
+
+  .tabcontainer h3 {
+    width: 70%;
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
+}
