@@ -17,8 +17,7 @@
 }
 
 .logo {
-  margin-block: 2em;
-  margin-inline: auto;
+  margin: 2em auto 0;
   height: 2em;
   /* margin: 18px auto 8px; */
   /* position: relative; */
@@ -39,7 +38,7 @@
   color: #3a3a3a;
   font-weight: 700;
   font-size: 2.3em;
-  margin: 8px 0 5px 0;
+  margin: 0 0 0;
 }
 
 .subHeader {
@@ -90,7 +89,7 @@
 
 .googleBtn img {
   height: 1.5em;
-  margin: 0 8px;
+  margin: 0 4px;
   padding: 2px;
   background: #fff;
 }
@@ -101,8 +100,8 @@
   align-items: center;
   background-color: #00b87c66;
   height: 2px;
-  margin-block-start: 3em;
-  margin-block-end: 1.5em;
+  margin-block-start: 2em;
+  margin-block-end: 1em;
   /* margin: 2em 0; */
 }
 
@@ -256,8 +255,8 @@
 }
 
 .footer_a {
-  margin-block-start: 3.5em;
-  margin-block-end: 3.5em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
   margin-inline: 1.5em;
   font-size: 0.8em;
   color: #999999;
