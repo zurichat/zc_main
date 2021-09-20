@@ -8,7 +8,8 @@ export const pluginRoutes = [
   location => location.pathname.startsWith('/goals'),
   location => location.pathname.startsWith('/dm'),
   location => location.pathname.startsWith('/noticeboard'),
-  location => location.pathname.startsWith('/companyfiles')
+  location => location.pathname.startsWith('/companyfiles'),
+  location => location.pathname.startsWith('/calendar')
 ]
 
 registerApplication({
@@ -80,6 +81,12 @@ registerApplication({
   name: '@zuri/zuri-plugin-companyfiles',
   app: () => System.import('@zuri/zuri-plugin-companyfiles'),
   activeWhen: [location => location.pathname.startsWith('/companyfiles')]
+})
+
+registerApplication({
+  name: '@zuri/zuri-plugin-calendar',
+  app: () => System.import('@zuri/zuri-plugin-calendar'),
+  activeWhen: [location => location.pathname.startsWith('/calendar')]
 })
 
 start({
