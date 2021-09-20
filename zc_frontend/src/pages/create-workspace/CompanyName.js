@@ -1,7 +1,7 @@
 import React from 'react'
 import CompanyNameCSS from './styles/CompanyName.module.css'
 import { Link, useRouteMatch } from 'react-router-dom'
-function CompanyName() {
+function CompanyName({input}) {
   let match = useRouteMatch()
   return (
     <div>
@@ -28,7 +28,7 @@ function CompanyName() {
           </span>
           <Link to={`${match.url}/step2`}>
             {' '}
-            <button> Continue</button>{' '}
+            <button style={input.length > 1 ?{backgroundColor:"#00b87c",color:"white"}:{backgroundColor:"revert"}}> Continue</button>{' '}
           </Link>
         </div>
       </article>
