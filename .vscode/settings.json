@@ -3,5 +3,6 @@
     "**/*.js": "javascript",
     "**/src/**/*.js": "javascriptreact",
     "**/src/**/*.jsx": "javascriptreact"
-  }
+  },
+  "liveServer.settings.port": 5501
 }
