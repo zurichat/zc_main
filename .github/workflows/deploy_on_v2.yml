@@ -26,6 +26,7 @@ jobs:
             git fetch --all
             git reset --hard origin/v2
             git pull origin v2
+            yarn clean:fresh
             yarn install
             yarn build 
             pm2 stop ecosystem.config.js
