@@ -1,3 +1,13 @@
 # don't mess with CI/CD workflow files
 .ansible
 .github
+.gitignore
+.prettierignore
+yarn.lock
+yarn-error.log
+package-lock.json
+LICENSE
+*.ejs
+dist
+coverage
+pnpm-lock.yaml

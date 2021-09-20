@@ -1,11 +1,12 @@
-import React, { useContext } from 'react'
-import faker from 'faker'
+import React, { useContext, useState } from 'react'
+import { FixedSizeList as List } from 'react-window'
+import AutoSizer from 'react-virtualized-auto-sizer'
 
 import { IoMdClose, IoMdSearch } from 'react-icons/io'
 import { TopbarContext } from '../context/Topbar'
 import styles from '../styles/MembersModal.module.css'
+import faker from 'faker'
 
-// Generate placeholder data with faker
 const placeHolder = n => {
   const placeHolderMembersArray = []
   for (let i = 0; i < n; i++) {
@@ -18,21 +19,27 @@ const placeHolder = n => {
   }
   return placeHolderMembersArray
 }
-const faked = placeHolder(379)
 
-const MembersModal = ({ channelTitle, membersArray }) => {
-  // membersArray is be an array of users, exact object structure can be updated
+const faked = placeHolder(250)
 
-  const _membersArray = membersArray || faked
+const MembersModal = ({ channelTitle, members }) => {
+  // if(!members){
+
+  // }
+  const [searchFiltered, setSearchFiltered] = useState(null)
 
   return (
     <div className={styles.modalWrapper}>
       <Header
         channelTitle={channelTitle || 'announcement'}
-        memberNumber={_membersArray.length}
+        memberNumber={faked.length}
       />
-      <Search />
-      <MemberList membersArray={_membersArray} />
+      <Search members={faked} setSearchFiltered={setSearchFiltered} />
+      {searchFiltered !== null ? (
+        <MemberList members={searchFiltered} />
+      ) : (
+        <MemberList members={faked} />
+      )}
     </div>
   )
 }
@@ -56,66 +63,109 @@ const Header = ({ channelTitle, memberNumber }) => {
   )
 }
 
-const Search = () => {
+const Search = ({ members, setSearchFiltered }) => {
   return (
     <div id="search" className={styles.searchWrapper}>
       <div className={styles.searchBox}>
         <IoMdSearch fontSize={20} />
-        <input placeholder="Find members" />
+        <input
+          placeholder="Find members"
+          onChange={e => {
+            if (e.target.value !== '') {
+              const filtered = members.filter(val => {
+                const regex = new RegExp(`${e.target.value}`, 'ig')
+                return val.userName.match(regex) || val.fullName.match(regex)
+              })
+              setSearchFiltered(filtered)
+            } else {
+              setSearchFiltered(null)
+            }
+          }}
+        />
       </div>
     </div>
   )
 }
 
-const MemberList = ({ membersArray }) => {
+const MemberList = ({ members }) => {
+  const Row = ({ index, style }) => (
+    <MemberCard data={members[index]} style={style} />
+  )
+
   return (
-    <div id="member-list" className={styles.memberlist}>
-      {membersArray.map((val, idx) => {
-        return <MemberCard data={val} key={idx} />
-      })}
+    <div
+      id="member-list"
+      className={styles.memberlist}
+      style={{ flex: '1 1 auto' }}
+    >
+      <AutoSizer>
+        {({ height, width }) => (
+          <List
+            height={height}
+            itemCount={members.length}
+            itemSize={67}
+            width={width}
+          >
+            {Row}
+          </List>
+        )}
+      </AutoSizer>
     </div>
   )
+
+  // return (
+  //   <div id="member-list" className={styles.memberlist}>
+  //     {members.map((val, idx) => {
+  //       return <MemberCard data={val} key={idx} />
+  //     })}
+  //   </div>
+  // )
 }
 
-const MemberCard = ({ data: { userName, fullName, status, avatar } }) => {
+const MemberCard = ({
+  style,
+  data: { userName, fullName, status, avatar }
+}) => {
   return (
     // To be updated to anchor tags with appropriate resources linked
-    <div id="member-card" className={styles.membercardWrapper}>
-      <img src={avatar} alt="user avatar" />
+    <div id="member-card" className={styles.membercardWrapper} style={style}>
+      <div className={styles.membercardImage}>
+        <img src={avatar} alt="user avatar" />
+      </div>
       <div className={styles.membercardTextBlock}>
         <div className={styles.membercardUserDetails}>
           <b>{userName}</b>
           {'-'}
           <p>{fullName}</p>
         </div>
-        <div className={styles.membercardStatus}>{status}</div>
+        <p className={styles.membercardStatus}>{status}</p>
       </div>
     </div>
   )
 }
 
-export const MembersModalButton = () => {
-  // This would ordinarily be a slice of the membersArray
-  const imageArray = faked.slice(0, 3)
+// export const MembersModalButton = ({ members }) => {
+//   // This would ordinarily be a slice of the members
+//   const imageArray = members.slice(0, 3)
 
-  // Ordinarily memberArray.length
-  const _membersArraySize = faked.length
+//   // Ordinarily memberArray.length
+//   const _membersArraySize = members.length
 
-  const { openMembersModal } = useContext(TopbarContext)
-  return (
-    <div className={styles.modalbuttonWrapper}>
-      <button onClick={openMembersModal} className={styles.modalButton}>
-        <div className={styles.modalbuttonImageWrapper}>
-          {imageArray.map((val, idx) => (
-            <span key={idx}>
-              <img src={val.avatar} alt={'user avatar'} />
-            </span>
-          ))}
-        </div>
-        <p>{_membersArraySize}</p>
-      </button>
-    </div>
-  )
-}
+//   const { openMembersModal } = useContext(TopbarContext)
+//   return (
+//     <div className={styles.modalbuttonWrapper}>
+//       <button onClick={openMembersModal} className={styles.modalButton}>
+//         <div className={styles.modalbuttonImageWrapper}>
+//           {imageArray.map((val, idx) => (
+//             <span key={idx}>
+//               <img src={val.avatar} alt={'user avatar'} />
+//             </span>
+//           ))}
+//         </div>
+//         <p>{_membersArraySize}</p>
+//       </button>
+//     </div>
+//   )
+// }
 
 export default MembersModal
