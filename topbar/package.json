@@ -43,8 +43,20 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@reach/dialog": "^0.16.0",
+    "emoji-picker-react": "^3.4.8",
+    "faker": "^5.5.3",
+    "framer-motion": "^4.1.17",
     "react": "^17.0.2",
+    "react-datepicker": "^4.2.1",
     "react-dom": "^17.0.2",
-    "single-spa-react": "^4.3.1"
+    "react-icons": "^4.2.0",
+    "react-redux": "^7.2.5",
+    "react-router-dom": "^5.3.0",
+    "react-virtualized-auto-sizer": "^1.0.6",
+    "react-window": "^1.8.6",
+    "redux-thunk": "^2.3.0",
+    "single-spa-react": "^4.3.1",
+    "styled-components": "^5.3.1"
   }
 }

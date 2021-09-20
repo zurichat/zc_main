@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import  Circle from '../assets/circle.svg'
-import  SearchIcon from '../assets/searchIcon.svg'
-import  CircleDot from '../assets/circleDot.svg'
-import  SearchKite from '../assets/kites1.svg'
-import  LeftKite from '../assets/leftKite.svg'
-import  RightKite from '../assets/rightKite.svg'
-import  Mail from '../assets/mail.svg'
+import Circle from '../assets/circle.svg'
+import SearchIcon from '../assets/searchIcon.svg'
+import CircleDot from '../assets/circleDot.svg'
+import SearchKite from '../assets/kites1.svg'
+import LeftKite from '../assets/leftKite.svg'
+import RightKite from '../assets/rightKite.svg'
+import Mail from '../assets/mail.svg'
 import SectionOneStyles from '../styles/SectionOne.module.css'
 
 function App() {

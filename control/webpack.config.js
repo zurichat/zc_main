@@ -4,7 +4,7 @@ const path = require('path')
 
 const mergeRules = {
   externals: {
-    jquery: 'jQuery',
+    jquery: 'jQuery'
   },
   plugins: 'replace',
   devServer: {
@@ -23,15 +23,12 @@ const mergeRules = {
 }
 
 module.exports = (webpackConfigEnv, argv) => {
-  
   const defaultConfig = singleSpaDefaults({
     orgName: 'zuri',
     projectName: 'control',
     webpackConfigEnv,
     argv
   })
-
-
 
   return mergeWithRules(mergeRules)(defaultConfig, {
     output: {
@@ -41,18 +38,18 @@ module.exports = (webpackConfigEnv, argv) => {
     },
     resolve: {
       fallback: {
-        "fs": false,
-        "path": false,
-        "http": false,
-        "tty": false,
-        "buffer": false
-      } 
+        fs: false,
+        path: false,
+        http: false,
+        tty: false,
+        buffer: false
+      }
     },
     module: {
       rules: [
         {
           test: /\.yaml$/,
-          use: 'js-yaml-loader',
+          use: 'js-yaml-loader'
         },
         {
           test: /\.css$/i,
@@ -66,7 +63,7 @@ module.exports = (webpackConfigEnv, argv) => {
                   localIdentName: '[local]--[hash:base64:5]__[name]'
                 }
               }
-            },
+            }
           ]
         }
       ]
