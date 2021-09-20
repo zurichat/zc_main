@@ -378,4 +378,8 @@
   .formMargin {
     margin-bottom: 0;
   }
+
+  .imageUpload {
+    display: none;
+  }
 }

@@ -12,12 +12,11 @@ import Loader from 'react-loader-spinner'
 import toast, { Toaster } from 'react-hot-toast'
 
 const EditProfile = () => {
-  // const imageRef = useRef(null)
+  const imageRef = useRef(null)
   const avatarRef = useRef(null)
   const { user, orgId, userProfileImage, setUserProfileImage } =
     useContext(ProfileContext)
   const [otherLinks, setotherLinks] = useState([])
-  const [imageUrl, setImageUrl] = useState('')
   const [state, setState] = useState({
     name: user.name,
     display_name: user.display_name,
@@ -33,52 +32,35 @@ const EditProfile = () => {
     loading: false
   })
 
-  const onImageUpload = () => {
-    console.log(imageUrl)
-    setUserProfileImage(imageUrl)
-    authAxios
-      .patch(`/organizations/${orgId}/members/${user._id}/photo`, {
-        image_url: imageUrl
-      })
-      .then(res => {
-        console.log(res)
-        toast.success('User Profile Picture Updated Successful', {
-          position: 'bottom-center'
+  const handleImageChange = event => {
+    if (imageRef.current.files[0]) {
+      let fileReader = new FileReader()
+
+      fileReader.onload = function (event) {
+        avatarRef.current.src = event.target.result
+        setUserProfileImage(event.target.result)
+      }
+
+      const imgUrl = fileReader.readAsDataURL(imageRef.current.files[0])
+
+      authAxios
+        .patch(`/organizations/${orgId}/members/${user._id}/photo`, {
+          image_url:
+            'https://images.unsplash.com/photo-1631995586475-872da9f4fd8b?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyM3x8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
         })
-      })
-      .catch(err => {
-        toast.error(err?.message, {
-          position: 'bottom-center'
+        .then(res => {
+          console.log(res)
         })
-      })
+        .catch(err => {
+          console.log(err)
+        })
+    }
   }
 
-  let validateImageUrl = true
-
-  if (imageUrl.length === 0) {
-    validateImageUrl = true
-  } else {
-    validateImageUrl = false
-  }
-
-  // const handleImageChange = event => {
-  //   if (imageRef.current.files[0]) {
-  //     let fileReader = new FileReader()
-
-  //     fileReader.onload = function (event) {
-  //       avatarRef.current.src = event.target.result
-  //       setUserProfileImage(event.target.result)
-  //     }
-
-  //     const imgUrl = fileReader.readAsDataURL(imageRef.current.files[0])
-
-  //   }
-  // }
-
-  // useEffect(() => {
-
-  // onImageUpload()
-  // },[imageUrl])
+  useEffect(() => {
+    handleImageChange()
+    console.log(userProfileImage)
+  })
 
   // This will handle the profile form submission
 
@@ -281,7 +263,7 @@ const EditProfile = () => {
                     <div className={styles.avatar}>
                       <img
                         ref={avatarRef}
-                        src={userProfileImage ? userProfileImage : userAvatar}
+                        src={state.image_url ? state.image_url : userAvatar}
                         alt="profile-pic"
                       />
                     </div>
@@ -301,38 +283,19 @@ const EditProfile = () => {
                       </div>
                     </div>
                   </div>
-
-                  <input
-                    type="text"
-                    placeholder="Image Url"
-                    className={styles.imageUpload}
-                    value={imageUrl}
-                    onChange={e => {
-                      setImageUrl(e.target.value)
-                    }}
-                  />
-
                   <div className={styles.profileFunc}>
                     <div className={styles.subContainer}>
                       <div className={styles.mxAuto}>
-                        <button
-                          type="button"
-                          onClick={onImageUpload}
-                          disabled={validateImageUrl}
-                          className={styles.save}
-                          style={{
-                            cursor: validateImageUrl ? 'not-allowed' : 'pointer'
-                          }}
-                        >
+                        <label htmlFor="img" className={styles.save}>
                           Upload an Image
-                        </button>
-                        {/* <input
+                        </label>
+                        <input
                           ref={imageRef}
                           onChange={handleImageChange}
                           type="file"
                           hidden
                           id="img"
-                        /> */}
+                        />
                       </div>
                       <button className={styles.deleteImage}>
                         Delete image

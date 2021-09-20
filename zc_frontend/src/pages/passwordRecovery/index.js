@@ -8,12 +8,12 @@ import styles from '../../styles/AuthFormElements.module.css'
 
 const Index = ({ resetCode }) => {
   const [password, setPassword] = useState('')
-  const handleSubmit = async () => {
-    const res = await axios.post('api.zuri.chat/account/update-password', {
-      password
-    })
-    // + resetCode,
-  }
+  // const handleSubmit = async () => {
+  //   const res = await axios.post('api.zuri.chat/account/update-password', {
+  //     password
+  //   })
+  //   // + resetCode,
+  // }
 
   return (
     <main id={styles.authPageWrapper}>
@@ -26,7 +26,7 @@ const Index = ({ resetCode }) => {
       <section id={styles.authFormContainer}>
         <FormWrapper
           header="Enter your new password"
-          email={email}
+          // email={email}
           // handleSubmit={handleSubmit}
         >
           <AuthInputBox
@@ -37,7 +37,7 @@ const Index = ({ resetCode }) => {
             placeholder="Enter your new password"
             value={password}
             setValue={setPassword}
-            onFocus={displayImage}
+            // onFocus={displayImage}
             // error={error}
           />
 

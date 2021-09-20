@@ -36,7 +36,8 @@ export const Sidebar = () => {
   // console.log(organization)
 
   const { setUrl } = useContext(URLContext)
-  const { setUser, setOrgId } = useContext(ProfileContext)
+  const { setUser, setOrgId, setUserProfileImage, user } =
+    useContext(ProfileContext)
   const [show, setShow] = useState(false)
   const { plugins, setPlugins } = useContext(PluginContext)
 
@@ -149,9 +150,9 @@ export const Sidebar = () => {
           console.log(err)
         })
     }
-
+    setUserProfileImage(user.image_url)
     getOrganizations()
-  }, [setOrgId, setUser])
+  }, [setOrgId, user, setUser])
 
   // useEffect(() => {
   //   axios
