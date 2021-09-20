@@ -59,6 +59,7 @@
   background: #bebebe;
   margin-right: 10px;
 }
+
 .cancel {
   background-color: white;
   border: 1px solid black;
@@ -108,11 +109,14 @@
     font-size: 18px;
   }
 }
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 415px) {
   .danger1,
   .danger2,
   .cancel {
     padding: 8px 15px;
     font-size: 14px;
+  }
+  .confirmationBox {
+    padding: 15px 10px;
   }
 }

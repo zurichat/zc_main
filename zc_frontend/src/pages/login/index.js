@@ -46,6 +46,9 @@ const Login = () => {
       })
       .then(response => {
         const { data, message } = response.data
+        console.log(data)
+        //Store token in localstorage
+        sessionStorage.setItem('token', data.user.token)
 
         //Store token in localstorage
         sessionStorage.setItem('session_id', data.session_id)
@@ -58,6 +61,7 @@ const Login = () => {
 
         setTimeout(() => {
           //Redirect to some other page
+          window.location.href = '/home'
         }, 2000)
       })
       .catch(error => {
