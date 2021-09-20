@@ -20,6 +20,7 @@
     "setup:sidebar": "(cd sidebar && yarn)",
     "postinstall": "concurrently --kill-others-on-fail -m 1 \"yarn:setup:*\"",
     "clean": "rimraf dist",
+    "clean:fresh": "rimraf node_modules yarn.lock topbar/node_modules topbar/yarn.lock sidebar/node_modules sidebar/yarn.lock control/node_modules control/yarn.lock",
     "build": "concurrently --kill-others-on-fail -m 1 \"yarn run clean\" \"yarn:build:*\"",
     "build:webpack": "webpack --mode=production",
     "build:topbar": "npm run build --prefix topbar",
@@ -55,11 +56,8 @@
     "yarn-run-all": "^3.1.1"
   },
   "dependencies": {
-    "@reach/dialog": "^0.16.0",
     "@types/jest": "^27.0.1",
     "@types/systemjs": "^6.1.1",
-    "axios": "^0.21.4",
-    "framer-motion": "^4.1.17",
     "rxjs": "^7.3.0",
     "single-spa": "^5.9.3"
   }

@@ -6,7 +6,8 @@ export const pluginRoutes = [
   location => location.pathname.startsWith('/music'),
   location => location.pathname.startsWith('/deadlines'),
   location => location.pathname.startsWith('/goals'),
-  location => location.pathname.startsWith('/dm')
+  location => location.pathname.startsWith('/dm'),
+  location => location.pathname.startsWith('/noticeboard')
 ]
 
 registerApplication({
@@ -66,6 +67,12 @@ registerApplication({
   name: '@zuri/zuri-plugin-dm',
   app: () => System.import('@zuri/zuri-plugin-dm'),
   activeWhen: [location => location.pathname.startsWith('/dm')]
+})
+
+registerApplication({
+  name: '@zuri/zuri-plugin-noticeboard',
+  app: () => System.import('@zuri/zuri-plugin-noticeboard'),
+  activeWhen: [location => location.pathname.startsWith('/noticeboard')]
 })
 
 start({
