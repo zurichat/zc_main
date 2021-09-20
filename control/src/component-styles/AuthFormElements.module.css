@@ -46,6 +46,10 @@
   left: 0;
 } */
 
+#authFormContainer::-webkit-scrollbar {
+  background: none;
+}
+
 #authFormContainer {
   display: flex;
   align-items: center;
