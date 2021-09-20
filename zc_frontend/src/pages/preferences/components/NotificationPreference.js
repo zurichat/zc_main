@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import styles from '../styles/NotificationPreference.module.css'
 import { AiOutlineQuestionCircle } from 'react-icons/ai'
-// import { TextInput } from './TextInput'
+import { TextInput } from './TextInput'
 import { authAxios } from '../../../util/Api'
 import { ProfileContext } from '../../../context/ProfileModal'
 
