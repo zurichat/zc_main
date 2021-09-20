@@ -55,11 +55,57 @@ paths:
       tags:
         - Authentication
       summary: validates the user before access is granted.
+      security:
+        - cookieAuth: []
+        - bearerAuth: []
       responses:
         '200':
           $ref: '#/components/responses/TokenVerified'
         '500':
           $ref: '#/components/responses/InternalServerError'
+
+  /auth/confirm-password:
+    post:
+      tags:
+        - Authentication
+      summary: confirm user password
+      description: verify user password
+      operationId: verifyPassword
+      security:
+        - cookieAuth: []
+        - bearerAuth: []
+      requestBody:
+        $ref: '#/components/requestBodies/confirm_password'
+      responses:
+        '200':
+          $ref: '#/components/responses/PasswordConfirmSuccess'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /auth/request-reset-password:
+    post:
+      summary: Reset user password
+      description: Reset user password
+      operationId: resetPassword
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+              format: email
+      tags:
+        - Authentication
+      responses:
+        default:
+          description: if no errors email for a password reset is sent to the submitted email
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+        '400':
+          $ref: '#/components/responses/BadRequest'
 
 components:
   responses:
@@ -131,6 +177,24 @@ components:
               message:
                 type: string
 
+    PasswordConfirmSuccess:
+      description: Unauthorized Error
+      content:
+        application/json:
+          schema:
+            required:
+              - code
+              - message
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+                example: 200
+              message:
+                type: string
+                example: Password confirm successful
+
     LoginSuccess:
       description: login successful
       content:
@@ -185,7 +249,9 @@ components:
                       update_at:
                         type: string
                         example: 0001-01-01T00:00:00Z
-
+                      token:
+                        type: object
+                        example: l6TVRneU9ESTBNSHhIZDNkQlIwUlplRTVFVFhwYWFsVXlXa1JCZVU5RVVtbFplbHBvVDFSSmVVMTZUbXBPVVQwOWZFQWpod01iU0E2d1FOUkczQlcwaUZDbHVqUnVOVXFFTHk4QUdGMGhMdkgzIiwiZW1haWwiOiJqYjEyQGdtYWlsLmNvbSIsImlkIjoiNjE0MzNmNTZkMDI4NGJjNmE5MjIzM2M1Iiwib3B0aW9ucyI6ey
     TokenVerified:
       description: Token verification successful
       content:
@@ -265,7 +331,11 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/loginReqB'
-
+    confirm_password:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/loginReqB'
   schemas:
     loginReqB:
       type: object
@@ -276,3 +346,21 @@ components:
         password:
           type: string
           format: password
+    confirmPassReqB:
+      type: object
+      properties:
+        confirm_password:
+          type: string
+          format: password
+        password:
+          type: string
+          format: password
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: JSESSIONID

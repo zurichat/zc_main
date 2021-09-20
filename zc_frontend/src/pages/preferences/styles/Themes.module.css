@@ -3,7 +3,7 @@
 .themeCont {
   margin-top: 54px;
   margin-left: 50px;
-  width: 340%;
+  width: 70%;
 }
 
 .sync {
@@ -48,7 +48,6 @@
   line-height: 20px;
   font-style: normal;
   position: relative;
-  margin-left: 18px;
 }
 
 .text2 {
@@ -62,22 +61,24 @@
 }
 
 .theme1 {
-  width: 87%;
+  width: 100%;
   margin-top: 25px;
   margin-left: 32px;
+  cursor: pointer;
 }
 
 .theme2 {
-  width: 87%;
+  width: 100%;
   margin-top: 25px;
   margin-left: 32px;
+  cursor: pointer;
 }
 
 .customize {
   border-top: 1px solid rgba(153, 153, 153, 0.5);
   margin-top: 15px;
   margin-left: 32px;
-  width: 87%;
+  width: 100%;
 }
 
 .text3 {
@@ -124,12 +125,14 @@
 .theme3 {
   width: 110%;
   height: 21vh;
+  cursor: pointer;
 }
 
 .theme4 {
   width: 90%;
   height: 21vh;
   margin-left: 42px;
+  cursor: pointer;
 }
 
 .all {
@@ -170,12 +173,14 @@
 .theme5 {
   width: 110%;
   height: 21vh;
+  cursor: pointer;
 }
 
 .theme6 {
   width: 90%;
   height: 21vh;
   margin-left: 42px;
+  cursor: pointer;
 }
 
 .set3 {
@@ -187,18 +192,20 @@
 .theme7 {
   width: 110%;
   height: 21vh;
+  cursor: pointer;
 }
 
 .theme8 {
   width: 90%;
   height: 21vh;
   margin-left: 42px;
+  cursor: pointer;
 }
 
 .set4 {
   border-bottom: 1px solid rgb(192, 186, 186);
   margin-left: 32px;
-  width: 87%;
+  width: 100%;
 }
 
 .bottom {
@@ -210,10 +217,12 @@
 .theme9 {
   width: 110%;
   height: 21vh;
+  cursor: pointer;
 }
 
 .theme10 {
   width: 90%;
   height: 21vh;
   margin-left: 42px;
+  cursor: pointer;
 }

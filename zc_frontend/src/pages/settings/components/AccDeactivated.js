@@ -5,12 +5,6 @@ import styles from '../styles/AccountDeactivated.module.css'
 const AccDeactivated = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.nav}>
-        <div className={styles.brand}>
-          <img src="zurichatlogo.svg" alt="" />
-          <p>ZURI</p>
-        </div>
-      </div>
       <div className={styles.content}>
         <h2>Account Deactivated</h2>
         <p>

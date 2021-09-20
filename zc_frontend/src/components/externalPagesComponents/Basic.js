@@ -47,4 +47,4 @@ class Basic extends React.Component<IProps, IState> {
   }
 }
 
-export default Basic 
+export default Basic

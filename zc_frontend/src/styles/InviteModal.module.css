@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .modal {
   position: fixed;
   left: 0;
@@ -94,6 +95,9 @@
   width: 600px;
   display: flex;
   flex-direction: column;
+}
+.invitebox input {
+  width: 539.3px;
 }
 .inviteclose button {
   background-color: white;

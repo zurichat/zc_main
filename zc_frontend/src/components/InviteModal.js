@@ -1,5 +1,4 @@
 import React from 'react'
-import Basic from './externalPagesComponents/Basic'
 import styles from '../styles/InviteModal.module.css'
 // import InviteSuccess from './InvitationAcceptance'
 // import InviteFailed from './Modal'
@@ -10,13 +9,6 @@ const Modal = props => {
     return null
   }
 
-  // const data = fetch("{}", {
-  //   method: "POST",
-  //   body: JSON.stringify(data)
-  // }).then(res => {
-  //   console.log("Request complete! response:", res);
-  // });
-
   return (
     <>
       <div className={styles.modal} onClick={props.onClose}>
@@ -26,8 +18,7 @@ const Modal = props => {
               <h4 className={styles.modaltitle}>Invite People to the Team</h4>
             </div>
             <div className={styles.inviteclose}>
-              <button onClick={props.onClose} className="button">
-                {' '}
+              <button onClick={props.onClose} className={styles.button}>
                 <svg
                   width="18"
                   height="18"
@@ -65,9 +56,7 @@ const Modal = props => {
           <form>
             <div className={styles.modalbody}>To:</div>
             <div className={styles.invitebox}>
-              <div className={styles.invitedusers}>
-                <Basic />
-              </div>
+              <input />
             </div>
             <div className={styles.bottominvite}>
               <div className={styles.copy}>

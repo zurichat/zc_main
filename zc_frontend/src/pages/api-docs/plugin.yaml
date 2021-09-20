@@ -16,8 +16,6 @@ paths:
     post:
       tags:
         - plugin
-      security:
-        - bearerAuth: []
       description: Register a new plugin
       requestBody:
         content:
@@ -143,9 +141,3 @@ components:
             plugin_id:
               type: string
               example: '6138cd01dbe109094d59ffaa'
-
-  securitySchemes:
-    bearerAuth:
-      type: http
-      scheme: bearer
-      bearerFormat: JWT

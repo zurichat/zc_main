@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useContext, Fragment, useState, useEffect } from 'react'
 import useSWR from 'swr'
 import { URLContext } from '../context/Url'
+import {ProfileContext} from "../context/ProfileModal";
 import { PluginContext } from '../context/Plugins'
 import styles from '../styles/Sidebar.module.css'
 import Dropdown from './Dropdown'
@@ -19,6 +20,7 @@ import draftIcon from './verified-components/assets/icons/draft-icon.svg'
 import filesIcon from './verified-components/assets/icons/files-icon.svg'
 import pluginIcon from './verified-components/assets/icons/plugin-icon.svg'
 import addIcon from './verified-components/assets/icons/add-icon.svg'
+import { authAxios } from '../util/Api'
 
 const fetcher = url => fetch(url).then(res => res.json())
 
@@ -30,6 +32,7 @@ export const Sidebar = () => {
   // console.log(organization)
 
   const { setUrl } = useContext(URLContext)
+  const { setUser, setOrgId } = useContext(ProfileContext)
   const [show, setShow] = useState(false)
   const { plugins, setPlugins } = useContext(PluginContext)
 
@@ -42,6 +45,7 @@ export const Sidebar = () => {
   const [query, setQuery] = useState('')
   const [loading, setLoading] = useState(false)
   // const [error, setError] = useState('')
+  const [organizations, setOrganizations] = useState([]);
 
   // Sort room function
 
@@ -104,111 +108,145 @@ export const Sidebar = () => {
     })()
   }, [])
 
+  // const getOrganizations = async () => {
+  //   await 
+  // }
+  // console.log('Organization', getOrganizations())
+
   useEffect(() => {
-    axios
-      .get('https://api.zuri.chat/organizations/6133c5a68006324323416896')
-      .then(r => {
-        r.data.data.plugins.forEach(api_plugin => {
-          let homepage_url
-          // Get Homepage
-          axios.get(api_plugin).then(res => {
-            homepage_url = res.data.data.homepage_url
-            let homepage = null
-            let loaded = false
-            const reProtocol = /^https?:\/\//
-            const oURL = new URL(
-              reProtocol.test(homepage_url)
-                ? homepage_url
-                : 'http://' + homepage_url
-            )
-            const prefixLink = (url, oURL, mimeType = 'text/html') => {
-              let ret = reProtocol.test(url) ? url : `${oURL.origin}${url}`
-              return `${ret}&mimeType=${mimeType}`
-            }
-            axios
-              .get(prefixLink(oURL.toString()))
-              .then(res => {
-                const $ = cheerio.load(res.data)
-                // append stylesheet
-                $(`link[rel="stylesheet"]`).each(function () {
-                  const link = document.createElement('link')
-                  Object.keys(this.attribs).forEach(attr =>
-                    link.setAttribute(attr, this.attribs[attr])
-                  )
-                  link.setAttribute(
-                    'href',
-                    prefixLink(this.attribs.href, oURL, 'text/css')
-                  )
-                  link.setAttribute('data-plugin-res', true)
-                  $(this).remove()
-                  document.head.prepend(link)
-                })
-
-                // append scripts
-                $('script').each(function () {
-                  const script = document.createElement('script')
-                  Object.keys(this.attribs).forEach(attr =>
-                    script.setAttribute(attr, this.attribs[attr])
-                  )
-                  if (script.src) {
-                    script.setAttribute(
-                      'src',
-                      prefixLink(
-                        this.attribs.src,
-                        oURL,
-                        'application/javascript'
-                      )
-                    )
-                  } else {
-                    script.innerText = $(this).html()
-                  }
-                  $(this).remove()
-                  script.setAttribute('data-plugin-res', true)
-                  document.body.appendChild(script)
-                })
-                homepage = $('body').html()
-              })
-              .catch(e => {
-                homepage = `Failed to Load ${homepage_url} Plugin: ${e.message}`
-              })
-
-            // Get Sidebar Info
-            // console.log(`${r.data.data.sidebar_url}?org=${org_id}&user=${user.id}`)
-            axios
-              .get(
-                'https://sales.zuri.chat/api/v1/sidebar?org=5336&user=Devjoseph&token=FGEZJJ-ZFDGB-FDGG'
-              )
-              .then(r => {
-                const api_plugin = r.data.data
-                const plugin = {
-                  name: api_plugin.group_name,
-                  joined_rooms: api_plugin.joined_rooms,
-                  homepage,
-                  homepage_url,
-                  loaded
-                }
-                let _plugins = []
-                if (api_plugin) {
-                  _plugins.push(plugin)
-                }
-                console.log('plugins ', _plugins)
-                setPlugins(_plugins)
-              })
-          })
+    const userdef = JSON.parse(sessionStorage.getItem('user'));
+    async function getOrganizations() {
+      await authAxios.get(`/users/${userdef.email}/organizations`)
+        .then(response => {
+          setOrganizations(response.data.data);
+          setOrgId(response.data.data[0]?.id);
+          authAxios.get(`/organizations/${response.data.data[0]?.id}/members`)
+        .then(response => {
+          setUser(response.data.data.find(member => member.email === userdef.email));
+          return response.data.data.find(member => member.email === userdef.email);
         })
-      })
-  }, [setPlugins])
+        .catch(err => {
+          console.log(err.response.data);
+        })
+        })
+        .catch(err => {
+          console.log(err);
+        })
+    }
+
+    getOrganizations();
+    
+  }, [setOrgId, setUser])
+
+  // useEffect(() => {
+  //   axios
+  //     .get('https://api.zuri.chat/organizations/6133c5a68006324323416896')
+  //     .then(r => {
+  //       r.data.data.plugins.forEach(api_plugin => {
+  //         let homepage_url
+  //         // Get Homepage
+  //         axios.get(api_plugin).then(res => {
+  //           homepage_url = res.data.data.homepage_url
+  //           let homepage = null
+  //           let loaded = false
+  //           const reProtocol = /^https?:\/\//
+  //           const oURL = new URL(
+  //             reProtocol.test(homepage_url)
+  //               ? homepage_url
+  //               : 'http://' + homepage_url
+  //           )
+  //           const prefixLink = (url, oURL, mimeType = 'text/html') => {
+  //             let ret = reProtocol.test(url) ? url : `${oURL.origin}${url}`
+  //             return `${ret}&mimeType=${mimeType}`
+  //           }
+  //           axios
+  //             .get(prefixLink(oURL.toString()))
+  //             .then(res => {
+  //               const $ = cheerio.load(res.data)
+  //               // append stylesheet
+  //               $(`link[rel="stylesheet"]`).each(function () {
+  //                 const link = document.createElement('link')
+  //                 Object.keys(this.attribs).forEach(attr =>
+  //                   link.setAttribute(attr, this.attribs[attr])
+  //                 )
+  //                 link.setAttribute(
+  //                   'href',
+  //                   prefixLink(this.attribs.href, oURL, 'text/css')
+  //                 )
+  //                 link.setAttribute('data-plugin-res', true)
+  //                 $(this).remove()
+  //                 document.head.prepend(link)
+  //               })
+
+  //               // append scripts
+  //               $('script').each(function () {
+  //                 const script = document.createElement('script')
+  //                 Object.keys(this.attribs).forEach(attr =>
+  //                   script.setAttribute(attr, this.attribs[attr])
+  //                 )
+  //                 if (script.src) {
+  //                   script.setAttribute(
+  //                     'src',
+  //                     prefixLink(
+  //                       this.attribs.src,
+  //                       oURL,
+  //                       'application/javascript'
+  //                     )
+  //                   )
+  //                 } else {
+  //                   script.innerText = $(this).html()
+  //                 }
+  //                 $(this).remove()
+  //                 script.setAttribute('data-plugin-res', true)
+  //                 document.body.appendChild(script)
+  //               })
+  //               homepage = $('body').html()
+  //             })
+  //             .catch(e => {
+  //               homepage = `Failed to Load ${homepage_url} Plugin: ${e.message}`
+  //             })
+
+  //           // Get Sidebar Info
+  //           // console.log(`${r.data.data.sidebar_url}?org=${org_id}&user=${user.id}`)
+  //           axios
+  //             .get(
+  //               'https://sales.zuri.chat/api/v1/sidebar?org=5336&user=Devjoseph&token=FGEZJJ-ZFDGB-FDGG'
+  //             )
+  //             .then(r => {
+  //               const api_plugin = r.data.data
+  //               const plugin = {
+  //                 name: api_plugin.group_name,
+  //                 joined_rooms: api_plugin.joined_rooms,
+  //                 homepage,
+  //                 homepage_url,
+  //                 loaded
+  //               }
+  //               let _plugins = []
+  //               if (api_plugin) {
+  //                 _plugins.push(plugin)
+  //               }
+  //               console.log('plugins ', _plugins)
+  //               setPlugins(_plugins)
+  //             })
+  //         })
+  //       })
+  //     })
+  // }, [setPlugins])
 
   return (
     <div className={styles.container}>
       <div className={styles.orgInfo}>
-        <div className={styles.orgName}>
-          <p>HNGi8</p>
-          <img
-            src="/shapekeyboardarrowdown.svg"
-            alt="Organisation settings button"
-          />
-        </div>
+        <select className={styles.orgName}>
+          {
+            organizations.map(org => (
+              <option key={org.id} value={org.id}>
+                {org.name}
+              </option>
+              // console.log(org.name)
+            ))
+          }
+
+        </select>
         <Overlay isOpen={showDialog} onDismiss={close}>
           <Content aria-label="room-list">
             <CloseButton className="close-button" onClick={close}>
