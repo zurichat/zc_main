@@ -26,6 +26,7 @@ import AppsAndIntegrations from './pages/apps-integration'
 // import PluginApi from './pages/api-docs/components/plugin'
 import Download from './pages/download'
 import Careers from './pages/careers'
+import MarketPlace from './pages/marketplace/marketplace'
 
 
 const App = () => (
@@ -60,6 +61,9 @@ const App = () => (
       </Route>
       <Route path="/careers">
         <Careers />
+      </Route>
+      <Route path="/marketplace" exact>
+        <MarketPlace />
       </Route>
       {/* <Route path="/documentation" exact>
           <PluginLoaderProvider>
