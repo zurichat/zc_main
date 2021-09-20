@@ -7,5 +7,6 @@ export const links = [
   { name: 'Todo', href: '/todo' },
   { name: 'DM', href: '/dm' },
   { name: 'Noticeboard', href: '/noticeboard' },
-  { name: 'Companyfiles', href: '/companyfiles' }
+  { name: 'Companyfiles', href: '/companyfiles' },
+  { name: 'Holiday Calendar', href: '/calendar' }
 ]
