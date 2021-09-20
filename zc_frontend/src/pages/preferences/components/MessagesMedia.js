@@ -21,8 +21,6 @@ const MessagesMedia = () => {
     console.log(isChecked)
     }
   
-    
-  
     React.useEffect(() =>{
       fetch("https://api.zuri.chat/", {
           method: "POST",

@@ -6,21 +6,22 @@ const Index = () => {
 
   const toggle = i => {
     if (selected === i) {
-      return setSelected(null)
+      setSelected(null)
     }
 
     setSelected(i)
   }
+
   return (
     <div className={styles.faqs}>
-      <h2>Commonly Asked Questions</h2>
+      <h2 className={`{styles.h2} text-center`}>Commonly Asked Questions</h2>
       <div className={styles.wrapper}>
         <div className={styles.accordion}>
           {data.map(i => (
             <div className={styles.items}>
               <div className={styles.title} onClick={() => toggle(i)}>
-                <h6>{i.question}</h6>
-                <span>
+                <h6 className={styles.h6}>{i.question}</h6>
+                <span className={styles.span}>
                   {selected === i ? (
                     <i className="fas fa-angle-up"></i>
                   ) : (
@@ -28,12 +29,14 @@ const Index = () => {
                   )}
                 </span>
               </div>
-              <div
-                className={selected === i ? 'answer show' : 'answer'}
-                onClick={() => toggle(i)}
-              >
-                {i.answer}
-              </div>
+              {selected === i && (
+                <div
+                  className={selected === i ? 'answer show' : 'answer'}
+                  onClick={() => toggle(i)}
+                >
+                  {i.answer}
+                </div>
+              )}
             </div>
           ))}
         </div>

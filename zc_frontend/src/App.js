@@ -3,13 +3,15 @@ import Home from './pages/home'
 import Login from './pages/login'
 import SignUp from './pages/signup'
 import './styles/globals.css'
-import LandingPage from './components/LandingPage'
+// import LandingPage from './components/LandingPage'
+import Homepage from './components/Homepage'
 //import EmailVerification from './pages/email-verify'
 import Security from './pages/security'
 import Features from './pages/features'
 import Resources from './pages/resources'
 import AppsAndIntegrations from './pages/apps-integrations'
 import Careers from './pages/careers'
+import Blogs from './pages/blogs'
 import Download from './pages/download'
 import ContactUs from './pages/contact-us'
 import Pricing from './pages/pricing'
@@ -45,6 +47,8 @@ import OrganisationApi from './pages/api-docs/components/organisation'
 import MarketplaceApi from './pages/api-docs/components/marketplace'
 import DataApi from './pages/api-docs/components/data'
 import PluginApi from './pages/api-docs/components/plugin'
+import CreateWorkspace from './pages/create-workspace/CreateWorkSpace'
+
 
 import '@reach/dialog/styles.css'
 import StyleGuide from './components/verified'
@@ -53,17 +57,27 @@ import RecoverPassword from './pages/passwordRecovery/index'
 import ResetPassword from './pages/passwordReset/Index'
 import PrivateRoute from './pages/settings/Utils/PrivateRoute'
 import AuthApi from './pages/api-docs/components/auth'
+// import Eventspage from './pages/events/components/Eventspage'
+import EventsMainWrapper from './pages/events/components/EventsMainWrapper'
 
+import { useRouteMatch } from 'react-router-dom'
 import './components/verified-components/master.css'
+import CreateWorkSpaces from './pages/create-workspace/createWorkSpaceContext'
 
-const App = () => (
-  <TopbarProvider>
-    <BrowserRouter>
+
+const App = () => {
+  let workspaceRoute = '/home/createworkspace'
+  return (
+    <TopbarProvider>
       <Switch>
-        <Route path="/" exact>
+        {/* <Route path="/" exact>
           <LandingPage />
+        </Route> */}
+        <CreateWorkSpaces />
+        <Route path="/" exact>
+          <Homepage />
         </Route>
-        <Route path="/home">
+        <Route path="/home" exact>
           <Home />
         </Route>
         <Route path="/login">
@@ -84,15 +98,18 @@ const App = () => (
         <Route path="/careers">
           <Careers />
         </Route>
+        <Route path="/blogs">
+          <Blogs />
+        </Route>
         <Route path="/apps-integrations">
           <AppsAndIntegrations />
         </Route>
         <Route path="/resources">
           <Resources />
         </Route>
-        <Route path="/download-app">
+        {/* <Route path="/download-app">
           <Download />
-        </Route>
+        </Route> */}
         <Route path="/contact-us">
           <ContactUs />
         </Route>
@@ -193,8 +210,12 @@ const App = () => (
         <Route path="/test">
           <Test />
         </Route>
+        <Route path="/events">
+          <EventsMainWrapper />
+        </Route>
       </Switch>
-    </BrowserRouter>
-  </TopbarProvider>
-)
+    </TopbarProvider>
+  )
+}
+
 export default App

@@ -1,6 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styles from './Footer.module.css'
 import Message from './Message'
+import { Link } from 'react-router-dom'
 
 const Footer = ({ showMessage, type }) => (
   <footer className={styles.footer}>
@@ -24,25 +26,36 @@ const Footer = ({ showMessage, type }) => (
                 <a className={styles.link} href="/">
                   Finalists
                 </a>
-                <a className={styles.link} href="/">
+                {/* <a className={styles.link} href="/">
                   Events
-                </a>
+                </a> */}
+                <Link className={styles.link} to="/events" replace={true}>
+                  Events
+                </Link>
                 <a className={styles.link} href="/">
-                  Blog posts
                 </a>
+                <Link to="/blogs" className={styles.link}>
+                  Blog posts
+                </Link>
                 <a className={styles.link} href="/">
                   News
                 </a>
+                <Link to="/Careers" className={styles.link}>
+                  Careers
+                </Link>
               </li>
             </li>
             <li className={styles.mainList}>
               <span className={styles.title}>Explore</span>
               <li className={styles.subList}>
-                <a className={styles.link} href="/">
+                <a className={styles.link} href="/features">
                   Features
                 </a>
                 <a className={styles.link} href="/">
                   Plugins
+                </a>
+                <a className={styles.link} href="/pricing">
+                  Pricing
                 </a>
               </li>
             </li>
@@ -113,7 +126,7 @@ const Footer = ({ showMessage, type }) => (
               </a>
             </li>
             <li>
-              <a className={styles.bottomLink} href="/">
+              <a className={styles.bottomLink} href="/contact-us">
                 Contact Us
               </a>
             </li>
