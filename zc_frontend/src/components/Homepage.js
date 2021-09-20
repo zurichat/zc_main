@@ -12,6 +12,11 @@ import ft_img3 from '../assets/Homepage-images/ft_img3.png'
 import ft_img4 from '../assets/Homepage-images/ft_img4.png'
 import sign_up_img from '../assets/Homepage-images/sign_up_img.png'
 
+import Footer from '../components/externalPagesComponents/Footer/Footer'
+import SearchSuggestion from '../pages/searchSuggestion'
+
+import { Link } from 'react-router-dom'
+
 export default function Homepage() {
   const FeatureRow = props => {
     return (
@@ -59,120 +64,119 @@ export default function Homepage() {
     )
   }
   return (
-    <>
-      {/* HERO */}
-      <div className={`${style.hero_wrap}`}>
-        <div className={`hero ${style.hero}`}>
-          <div className={`${style.hero_left}`}>
-            <div className={`${style.hero_left_texts}`}>
-              <p className={`${style.hero_text_one}`}>
-                For Organizations &amp; Institutions
-              </p>
-              <h1 className={`${style.hero_heading}`}>
-                Where communication and collaboration thrives
-              </h1>
-              <p className={`${style.hero_p}`}>
-                Create your future with us, network, collaborate, educate and
-                learn remotely
-              </p>
+    <div>
+      <SearchSuggestion />
+      <div className={`${style.homepage}`}>
+        {/* HERO */}
+        <div className={`${style.hero_wrap}`}>
+          <div className={`hero ${style.hero}`}>
+            <div className={`${style.hero_left}`}>
+              <div className={`${style.hero_left_texts}`}>
+                <p className={`${style.hero_text_one}`}>
+                  For Organizations &amp; Institutions
+                </p>
+                <h1 className={`${style.hero_heading}`}>
+                  Where communication and collaboration thrives
+                </h1>
+                <p className={`${style.hero_p}`}>
+                  Create your future with us, network, collaborate, educate and
+                  learn remotely
+                </p>
+              </div>
+              <div className={`${style.hero_left_btn_wrap}`}>
+                <Link to="/signup">
+                  <button className={`${style.hero_left_btn}`}>
+                    Try Zuri.chat for free
+                  </button>
+                </Link>
+              </div>
             </div>
-            <div className={`${style.hero_left_btn_wrap}`}>
-              {/* change to link tag */}
-              {/* <button href='#'>Try Zuri.chat for free</button> */}
+            <div className={`${style.hero_right}`}>
+              <img src={hero_img} className={`${style.hero_img}`} alt="" />
+            </div>
+          </div>
+        </div>
+        {/* COMPANIES */}
+        <div className={`${style.company_banner_wrap}`}>
+          <div className={`${style.company_banner}`}>
+            <p className={`${style.cbp}`}>Trusted by top companies worldwide</p>
+            <div className={`${style.logos}`}>
+              <img src={logo1} alt="" className={`${style.logo}`} />
+              <img src={logo2} alt="" className={`${style.logo}`} />
+              <img src={logo3} alt="" className={`${style.logo}`} />
+              <img src={logo4} alt="" className={`${style.logo}`} />
+              <img src={logo5} alt="" className={`${style.logo}`} />
+            </div>
+          </div>
+        </div>
+        {/* FEATURES */}
+        <div className={`${style.features_wrap}`}>
+          <div className={`${style.features}`}>
+            <FeatureRow
+              src={ft_img1}
+              // * put a semantic alt description
+              alt="img"
+              pContent1="Seamless collaboration"
+              h2Content="Communicate and collaborate from wherever you are"
+              pContent2="Invite your team to your workspace. Stay connected,stay in sync, and explore ideas together from anywhere."
+              href="#"
+              aContent="Create your own workspace"
+            />
+            <FeatureRow
+              src={ft_img2}
+              // * put a semantic alt description
+              alt="img"
+              pContent1="Remote Education"
+              h2Content="Learn on the Go"
+              pContent2="Take your classroom everywhere, make learning fun, stay engaged and inspired with the virtual lounge and games."
+              href="#"
+              aContent="Learn more about the virtual lounge"
+              rowOrder={style.ft_row_reverse}
+            />
+            <FeatureRow
+              src={ft_img3}
+              // * put a semantic alt description
+              alt="img"
+              pContent1="All-in-one Workspace"
+              h2Content="Customise your Workspace"
+              pContent2="One tool, several plugins. Track company expenses, send information fast and smoothly, manage files and integrate tools all with Zuri.chat."
+              href="#"
+              aContent="Explore Plugins"
+            />
+            <FeatureRow
+              src={ft_img4}
+              // * put a semantic alt description
+              alt="img"
+              pContent1="Advanced Search"
+              h2Content="Access Files and Messages in your Workspace Effortlessly"
+              pContent2="With the search tool, find previously shared messages, files and links with ease."
+              href="#"
+              aContent="Learn more about Search"
+              rowOrder={style.ft_row_reverse}
+            />
+          </div>
+        </div>
+        {/* SIGN UP */}
+        <div className={`${style.sign_up_banner_wrap}`}>
+          <div className={`${style.sign_up_banner}`}>
+            <div className={`${style.sign_up_left}`}>
+              <p>
+                A flexible Way to Educate, Collaborate and Team Up From Wherever
+                You Are
+              </p>
               <a href="/">
-                <button className={`${style.hero_left_btn}`}>
-                  Try Zuri.chat for free
+                <button className={`${style.sign_up_btn}`}>
+                  Sign up now for Free!!!
                 </button>
               </a>
             </div>
-          </div>
-          <div className={`${style.hero_right}`}>
-            <img src={hero_img} className={`${style.hero_img}`} alt="" />
-          </div>
-        </div>
-      </div>
-      {/* COMPANIES */}
-      <div className={`${style.company_banner_wrap}`}>
-        <div className={`${style.company_banner}`}>
-          <p className={`${style.cbp}`}>Trusted by top companies worldwide</p>
-          <div className={`${style.logos}`}>
-            {/* create component to replace this */}
-            <img src={logo1} alt="" className={`${style.logo}`} />
-            <img src={logo2} alt="" className={`${style.logo}`} />
-            <img src={logo3} alt="" className={`${style.logo}`} />
-            <img src={logo4} alt="" className={`${style.logo}`} />
-            <img src={logo5} alt="" className={`${style.logo}`} />
+            <div className={`${style.sign_up_right}`}>
+              <img src={sign_up_img} alt="img" />
+            </div>
           </div>
         </div>
       </div>
-      {/* FEATURES */}
-      <div className={`${style.features_wrap}`}>
-        <div className={`${style.features}`}>
-          <FeatureRow
-            src={ft_img1}
-            // * put a semantic alt description
-            alt="img"
-            pContent1="Seamless collaboration"
-            h2Content="Communicate and collaborate from wherever you are"
-            pContent2="Invite your team to your workspace. Stay connected,stay in sync, and explore ideas together from anywhere."
-            href="#"
-            aContent="Create your own workspace"
-            // rowOrder={style.ft_row_reverse}
-          />
-          <FeatureRow
-            src={ft_img2}
-            // * put a semantic alt description
-            alt="img"
-            pContent1="Remote Education"
-            h2Content="Learn on the Go"
-            pContent2="Take your classroom everywhere, make learning fun, stay engaged and inspired with the virtual lounge and games."
-            href="#"
-            aContent="Learn more about the virtual lounge"
-            rowOrder={style.ft_row_reverse}
-          />
-          <FeatureRow
-            src={ft_img3}
-            // * put a semantic alt description
-            alt="img"
-            pContent1="All-in-one Workspace"
-            h2Content="Customise your Workspace"
-            pContent2="One tool, several plugins. Track company expenses, send information fast and smoothly, manage files and integrate tools all with Zuri.chat."
-            href="#"
-            aContent="Explore Plugins"
-            // rowOrder={style.ft_row_reverse}
-          />
-          <FeatureRow
-            src={ft_img4}
-            // * put a semantic alt description
-            alt="img"
-            pContent1="Advanced Search"
-            h2Content="Access Files and Messages in your Workspace Effortlessly"
-            pContent2="With the search tool, find previously shared messages, files and links with ease."
-            href="#"
-            aContent="Learn more about Search"
-            rowOrder={style.ft_row_reverse}
-          />
-        </div>
-      </div>
-      {/* SIGN UP */}
-      <div className={`${style.sign_up_banner_wrap}`}>
-        <div className={`${style.sign_up_banner}`}>
-          <div className={`${style.sign_up_left}`}>
-            <p>
-              A flexible Way to Educate, Collaborate and Team Up From Wherever
-              You Are
-            </p>
-            <a href="/">
-              <button className={`${style.sign_up_btn}`}>
-                Sign up now for Free!!!
-              </button>
-            </a>
-          </div>
-          <div className={`${style.sign_up_right}`}>
-            <img src={sign_up_img} alt="img" />
-          </div>
-        </div>
-      </div>
-    </>
+      <Footer />
+    </div>
   )
 }
