@@ -94,11 +94,11 @@ const TopbarModal = ({ members }) => {
 
   useEffect(() => {
     setPresence(user.presence)
-    toggleUserPresence()
+    // toggleUserPresence()
     console.log('check for user', user)
     console.log('auth axios presence', presence)
     console.log('check for current presence', presence)
-  }, [])
+  }, [user])
 
   return (
     <>
