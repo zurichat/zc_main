@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
+
+* {
+  font-family: 'Lato', sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+button:hover {
+  cursor: pointer;
+}
+.Section2 {
+  margin-bottom: 7rem;
+}
+.Section2 h2 {
+  font-size: 36px;
+  margin: 0;
+  text-align: center;
+}
+.Section2 p {
+  font-size: 20px;
+  text-align: center;
+}
+.subSection2 {
+  text-align: left;
+  padding: 69px 60px 69px 60px;
+  background-color: #00b87c;
+  display: flex;
+  flex-direction: row;
+  grid-gap: 100px;
+}
+.subSection2 h3 {
+  font-size: 24px;
+}
+.subSection2 p {
+  margin: 0;
+  text-align: left;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1085px) {
+  .subSection2 {
+    grid-gap: 80px;
+  }
+  .subSection2 h3 {
+    font-size: 22px;
+  }
+  .subSection2 p {
+    padding: 0;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .Section2 h2 {
+    font-size: 40px;
+  }
+  .Section2 p {
+    padding: 0px 20px 20px 20px;
+    font-size: 18px;
+  }
+  .subSection2 {
+    flex-direction: column;
+    grid-gap: 80px;
+    padding: 69px 60px 69px 60px;
+  }
+  .subSection2 p {
+    padding: 0 50px 0px 0px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .Section2 h2 {
+    font-size: 22px;
+  }
+  .Section2 p {
+    font-size: 16px;
+  }
+  .subSection2 {
+    grid-gap: 30px;
+    padding: 30px;
+  }
+  .subSection2 h3 {
+    font-size: 22px;
+  }
+  .subSection2 p {
+    padding: 0;
+  }
+}
