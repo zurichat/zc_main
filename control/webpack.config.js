@@ -23,6 +23,7 @@ const mergeRules = {
 }
 
 module.exports = (webpackConfigEnv, argv) => {
+  
   const defaultConfig = singleSpaDefaults({
     orgName: 'zuri',
     projectName: 'control',
@@ -30,14 +31,29 @@ module.exports = (webpackConfigEnv, argv) => {
     argv
   })
 
+
+
   return mergeWithRules(mergeRules)(defaultConfig, {
     output: {
       path: path.join(__dirname, '..', 'dist') // string (default)
       // filename: "[name].js", // string (default)
       // publicPath: path.join(__dirname, '..', 'dist', 'assets') // string
     },
+    resolve: {
+      fallback: {
+        "fs": false,
+        "path": false,
+        "http": false,
+        "tty": false,
+        "buffer": false
+      } 
+    },
     module: {
       rules: [
+        {
+          test: /\.yaml$/,
+          use: 'js-yaml-loader',
+        },
         {
           test: /\.css$/i,
           use: [
@@ -50,7 +66,7 @@ module.exports = (webpackConfigEnv, argv) => {
                   localIdentName: '[local]--[hash:base64:5]__[name]'
                 }
               }
-            }
+            },
           ]
         }
       ]
