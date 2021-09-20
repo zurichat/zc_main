@@ -28,9 +28,9 @@ const Footer = ({ showMessage, type }) => (
                 <a className={styles.link} href="/">
                   Events
                 </a>
-                <a className={styles.link} href="/">
+                <Link to="/blogs" className={styles.link}>
                   Blog posts
-                </a>
+                </Link>
                 <a className={styles.link} href="/">
                   News
                 </a>
@@ -42,11 +42,14 @@ const Footer = ({ showMessage, type }) => (
             <li className={styles.mainList}>
               <span className={styles.title}>Explore</span>
               <li className={styles.subList}>
-                <a className={styles.link} href="/">
+                <a className={styles.link} href="/features">
                   Features
                 </a>
                 <a className={styles.link} href="/">
                   Plugins
+                </a>
+                <a className={styles.link} href="/pricing">
+                  Pricing
                 </a>
               </li>
             </li>
@@ -117,7 +120,7 @@ const Footer = ({ showMessage, type }) => (
               </a>
             </li>
             <li>
-              <a className={styles.bottomLink} href="/">
+              <a className={styles.bottomLink} href="/contact-us">
                 Contact Us
               </a>
             </li>

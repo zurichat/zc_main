@@ -8,38 +8,53 @@
 /* LAYOUT */
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  text-align: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
   margin-right: auto;
   margin-left: auto;
 }
+
+.container > .textLink:hover {
+  text-decoration: underline;
+  color: #00b87c;
+}
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
+    text-align: center;
   }
 }
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
+    text-align: center;
   }
 }
 @media (min-width: 992px) {
   .container {
     max-width: 960px;
+    text-align: center;
   }
 }
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
+    text-align: center;
   }
 }
 
-section h2 {
+.textHead {
+  width: auto;
   font-size: 1.4rem;
   font-weight: 600;
+  text-align: center;
+  line-height: 1.5rem;
+  margin-bottom: 1.8rem;
 }
 @media (min-width: 768px) {
-  section h2 {
+  .section3.textHead {
     font-size: 1.8rem;
     text-align: center;
   }
@@ -90,10 +105,10 @@ section h2 {
   max-width: 550px;
   text-align: center;
 }
-.section3 footer {
+/* .section3 footer {
   font-size: 1.1rem;
   line-height: 1.2;
-}
+} */
 
 .question {
   display: flex;

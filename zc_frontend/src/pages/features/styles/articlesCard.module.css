@@ -1,8 +1,18 @@
 .articlesCard {
+<<<<<<< HEAD
   height: 560px;
   display: flex;
   flex-direction: column;
   background: #fff;
+=======
+  /* margin-left: 20px; */
+  /* width: 450px; */
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  background: #f6f6f6;
+>>>>>>> df181989d942b834924f433693311b54be3c9a55
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 420ms cubic-bezier(0.165, 0.84, 0.44, 1);

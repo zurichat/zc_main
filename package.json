@@ -18,6 +18,10 @@
     "postinstall": "cd zc_frontend && yarn install"
   },
   "dependencies": {
+    "@fortawesome/react-fontawesome": "^0.1.15",
+    "@iconscout/react-unicons": "^1.1.6",
+    "@iconscout/react-unicons-thinline": "^0.0.1",
+    "@reach/dialog": "^0.16.0",
     "axios": "^0.21.1",
     "cookie-parser": "^1.4.5",
     "cookie-session": "^1.4.0",
@@ -35,7 +39,9 @@
     "nodemailer": "^6.6.3",
     "react-bootstrap": "^2.0.0-beta.6",
     "react-device-detect": "^1.17.0",
+    "react-dropzone": "^11.4.0",
     "react-multi-email": "^0.5.3",
+    "react-transition-group": "^4.4.2",
     "yarn": "^1.22.11"
   },
   "devDependencies": {

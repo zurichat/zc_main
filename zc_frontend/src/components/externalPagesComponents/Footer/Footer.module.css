@@ -1,10 +1,12 @@
 .footer {
   background-color: #fafafa;
+  margin-top: 38px;
 }
 
 .topSection {
   display: flex;
   gap: 119px;
+  margin: 0 100px;
   align-items: flex-start;
   padding-bottom: 45px;
   border-bottom: 1px solid rgba(187, 186, 231, 0.15);
@@ -94,6 +96,12 @@ li {
 
 .notShow {
   padding: 67px 52px 53px 100px;
+}
+
+a > img {
+  height: 80%;
+  width: 80%;
+  object-fit: contain;
 }
 
 @media (max-width: 69rem) {

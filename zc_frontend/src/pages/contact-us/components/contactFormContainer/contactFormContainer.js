@@ -50,10 +50,23 @@ function ContactFormContainer() {
   })
   // .xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf
 
-  const acceptedFileItems = acceptedFiles.map(file => (
-    <p className="mb-2 text-dark w-100" key={file.path}>
-      {file.name} - {file.size} bytes
-    </p>
+  const handleFileDelete = index => () => {
+    delete acceptedFiles[index]
+  }
+
+  const acceptedFileItems = acceptedFiles.map((file, i) => (
+    <div className="d-flex justify-content-between align-items-center">
+      <p className="mb-2 text-dark w-100" key={file.path}>
+        {file.name} - {file.size} bytes
+      </p>
+      <p
+        className={`text-danger ${ContactFormStyle.cancel}`}
+        fw-bold
+        onClick={handleFileDelete(i)}
+      >
+        X
+      </p>
+    </div>
   ))
 
   const style = useMemo(
@@ -171,7 +184,7 @@ function ContactFormContainer() {
               {currentDetails.faqs &&
                 currentDetails.faqs.map(({ title, details }, index) => (
                   <div className="accordion-item" key={title}>
-                    <h2 className="accordion-header" id="headingOne">
+                    <h2 className="accordion-header px-2 py-3" id="headingOne">
                       <button
                         className={`accordion-button fw-bold ${ContactFormStyle.accordion_button} bg-white shadow-none p-0 px-2`}
                         type="button"
@@ -245,7 +258,7 @@ function ContactFormContainer() {
 
         {!(values.subject === '') && (
           <>
-            <div class="mb-3">
+            <div className="mb-3">
               <label htmlFor="content" className="form-label fw-bold">
                 Can you give us more details?
               </label>
@@ -279,8 +292,8 @@ function ContactFormContainer() {
                 <input {...getInputProps()} />
                 <p>Drag 'n' drop some files here, or click to select files</p>
                 <em>
-                  (Only 2 files of the following type : images/jpg,jpeg,png doc,
-                  pdf, docx will be accepted)
+                  {`(Only 2 files(1mb max each) of the following type : images/jpg,jpeg,png doc,
+                  pdf, docx will be accepted)`}
                 </em>
               </div>
             </div>
