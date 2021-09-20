@@ -3,7 +3,8 @@ import Home from './pages/home'
 import Login from './pages/login'
 import SignUp from './pages/signup'
 import './styles/globals.css'
-import LandingPage from './components/LandingPage'
+// import LandingPage from './components/LandingPage'
+import Homepage from './components/Homepage'
 //import EmailVerification from './pages/email-verify'
 import Security from './pages/security'
 import Features from './pages/features'
@@ -66,8 +67,11 @@ const App = () => {
   return (
     <TopbarProvider>
       <Switch>
-        <Route path="/" exact>
+        {/* <Route path="/" exact>
           <LandingPage />
+        </Route> */}
+        <Route path="/" exact>
+          <Homepage />
         </Route>
         <Route path="/home" exact>
           <Home />
