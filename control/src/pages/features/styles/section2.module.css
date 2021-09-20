@@ -1,20 +1,29 @@
-.wrapper img {
-  width: 100px;
-  height: 70px;
-  object-fit: contain;
-  margin-bottom: 20px;
+.section2 {
+  margin-top: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.container {
-  margin: 20px;
-}
-.container > div {
+.section2Wrapper {
+  width: 78%;
+  display: flex;
   justify-content: space-between;
-  box-sizing: border-box;
+  align-items: center;
 }
-@media only screen and (max-width: 578px) {
-  .container > div {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    --bs-gutter-x: 0px;
+.imageWrapper img {
+  width: 100%;
+}
+@media (max-width: 800px) {
+  .section2 {
+    margin-top: 100px;
   }
+  .section2Wrapper {
+    width: 100%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 40px;
+  }
+}
+@media (max-width: 578px) {
 }
