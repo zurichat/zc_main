@@ -35,7 +35,8 @@ export const GetUserInfo = () => {
           }
         })
       .then((res) => {
-        console.log(res.data);
+        // let user = res.data.data
+        // console.log(user)
 
       })
       .catch(err => console.log(err));
