@@ -1,6 +1,7 @@
 // import axios from 'axios'
 // import { useContext, useEffect } from 'react'
 // import { PluginLoaderContext } from '../../context/PluginLoaderState'
+import styles from '../../styles/PluginContent.module.css'
 // import cheerio from 'cheerio'
 // import DocLoader from '../../components/PluginLoader'
 import { NavLink } from 'react-router-dom'
@@ -92,7 +93,7 @@ function ApiDocs() {
 
   return (
     <>
-      <section>
+      <section className={styles.container}>
         {/* <div id="zc-plugin-root"></div> */}
         {/* <DocLoader /> */}
         <div>
