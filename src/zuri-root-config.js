@@ -7,7 +7,8 @@ export const pluginRoutes = [
   location => location.pathname.startsWith('/deadlines'),
   location => location.pathname.startsWith('/goals'),
   location => location.pathname.startsWith('/dm'),
-  location => location.pathname.startsWith('/noticeboard')
+  location => location.pathname.startsWith('/noticeboard'),
+  location => location.pathname.startsWith('/companyfiles')
 ]
 
 registerApplication({
