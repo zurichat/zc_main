@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from 'react'
 import { authAxios } from '../util/Api'
 
 // react icons
-import { FaCircle, FaChevronRight } from 'react-icons/fa'
+import { FaChevronRight } from 'react-icons/fa'
 
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
 
@@ -59,7 +59,7 @@ const TopbarModal = ({ members }) => {
       userPresence = 'Set yourself as away'
       toggleStaus = (
         <div className={styles.online}>
-          <FaCircle className={styles.circle} />
+          <div className={styles.activeCircle} />
           <p className={styles.active}>Active</p>
         </div>
       )
@@ -68,7 +68,7 @@ const TopbarModal = ({ members }) => {
       userPresence = 'Set yourself as active'
       toggleStaus = (
         <div className={styles.online}>
-          <FaCircle className={styles.circlegrey} />
+          <div className={styles.awayCircle} />
           <p className={styles.away}>Away</p>
         </div>
       )
@@ -110,10 +110,6 @@ const TopbarModal = ({ members }) => {
           onClick={closeStatus}
         >
           <div className={styles.picker}>
-            {/* <FaTimes
-              className={styles.times}
-              onClick={() => setShowStatus(!showStatus)}
-            /> */}
             <div className={styles.smileys}>
               <Picker
                 onEmojiClick={onEmojiClick}
@@ -147,26 +143,12 @@ const TopbarModal = ({ members }) => {
             <div className={styles.oneRight}>
               <h4>Praise.A</h4>
               {toggleStaus}
-              {/* {presence ? (
-                <div className={styles.online}>
-                  <FaCircle className={styles.circle} />
-                  <p className={styles.active}>Active</p>
-                </div>
-              ) : (
-                <div className={styles.online}>
-                  <FaCircle className={styles.circlegrey} />
-                  <p className={styles.away}>Away</p>
-                </div>
-              )} */}
             </div>
           </div>
 
           <div className={styles.sectionTwo}>
             <StatusBadgeModal />
           </div>
-          {/* <div onClick={openStatus} className={styles.sectionTwo}>
-            <StatusBadgeModal />
-          </div> */}
 
           <div className={styles.sectionThree}>
             <p onClick={openStatus}>Set a status</p>
@@ -176,7 +158,6 @@ const TopbarModal = ({ members }) => {
               }}
             >
               {userPresence}
-              {/* {presence ? 'Set yourself as active' : 'Set yourself as away'} */}
             </p>
             <div className={styles.pause}>
               <p onClick={() => setPause(!pause)}>Pause Notifications</p>

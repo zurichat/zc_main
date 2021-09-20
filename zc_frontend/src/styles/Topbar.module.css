@@ -184,6 +184,7 @@
 .away {
   position: absolute;
   right: 182px;
+  top: 65px;
 }
 
 /* set yourself as active*/
@@ -191,21 +192,26 @@
 .active {
   position: absolute;
   right: 178px;
+  top: 65px;
 }
 
-.circle {
+.activeCircle {
   background-color: green;
   height: 6px;
   width: 6px;
   border-radius: 50%;
   margin-right: 15px;
+  position: absolute;
+  top: 70px;
 }
 
-.circlegrey {
+.awayCircle {
   background-color: grey;
   height: 6px;
   width: 6px;
   border-radius: 50%;
+  position: absolute;
+  top: 70px;
 }
 
 .oneRight p {
@@ -229,10 +235,6 @@
   height: 30px;
 }
 
-/* .sectionTwo:hover {
-  border: 1px solid #00b87c;
-} */
-
 /* The section of the picker */
 
 .smileys {
@@ -243,9 +245,6 @@
   position: fixed;
   top: 20%;
   left: 50%;
-  /* transform: translate(-80%); */
-  /* height: 400px; */
-  /* background: green; */
   width: 100%;
   width: 300px;
   z-index: 999999;

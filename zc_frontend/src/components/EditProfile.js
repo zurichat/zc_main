@@ -46,7 +46,7 @@ const EditProfile = () => {
       authAxios
         .patch(`/organizations/${orgId}/members/${user._id}/photo`, {
           image_url:
-            'https://images.unsplash.com/photo-1632071929769-2c42d1c29c6a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'
+            'https://images.unsplash.com/photo-1631995586475-872da9f4fd8b?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyM3x8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
         })
         .then(res => {
           console.log(res)
