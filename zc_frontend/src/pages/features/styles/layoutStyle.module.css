@@ -1,7 +1,8 @@
 .layoutStyle {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 60px;
+  overflow-x: hidden;
   background-color: #fff;
 }
 

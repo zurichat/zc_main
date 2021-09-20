@@ -12,7 +12,7 @@ const articlesCard = ({ article }) => {
       </div>
       <div className={styles.articleFooterWrapper}>
         <p>Continue Reading</p>
-        <img src="/arrow-right.png" alt="Arrow Right" />
+        <img src="/arrow_right.png" alt="Arrow Right" />
       </div>
     </div>
   )

@@ -5,7 +5,7 @@ function SpecialFeatures() {
   return (
     <div className={styles.section5}>
       <div className={styles.section5TopTextsWrapper}>
-        <h2>Special features you need</h2>
+        <h2>Special Features you need</h2>
         <p>
           Get all your work tools and information assembled in one place for
           easy access and increase Productivity.

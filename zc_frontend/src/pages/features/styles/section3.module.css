@@ -1,138 +1,136 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'Lato', sans-serif;
+.section3 {
+  margin-top: 100px;
 }
-
-.featuresContainer {
+.section3TopTextsWrapper {
+  margin: 0 auto;
+  width: 72%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 150px 0px;
-  padding: 5rem 0px;
-  background-color: #e5e5e5;
-  box-sizing: border-box;
-}
-
-.header {
-  display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
-
-.header h2 {
-  color: #242424;
-  font-size: 40px;
+.section3TopTextsWrapper h3 {
+  font-style: normal;
   font-weight: bold;
-  padding-bottom: 20px;
-  line-height: 48px;
-  letter-spacing: 0.02em;
-}
-.header p {
-  width: 1200px;
-  height: 58px;
-  color: #3a3a3a;
-  font-size: 24px;
-  font-weight: 500;
+  font-size: 2.2rem;
+  line-height: 130%;
   text-align: center;
-  line-height: 29px;
-  letter-spacing: 0.02em;
+  color: #242424;
 }
-
+.section3TopTextsWrapper p {
+  margin-top: 18px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.33rem;
+  line-height: 130%;
+  text-align: center;
+  color: #3a3a3a;
+}
 .featuresSection {
-  width: 1320px;
-  padding: 3em;
+  margin-top: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.featureCard {
+  width: 235px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.iconWrapper {
+  width: 150px;
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 20px;
-}
-
-.featureCard {
-  width: 196px;
-  height: 330px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 20px;
+  background: #ecf8f5;
+  border-radius: 50%;
 }
 .featureCard h3 {
-  color: #1a61db;
-  font-size: 24px;
+  margin-top: 15px;
+  font-style: normal;
   font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
   text-align: center;
-  line-height: 29px;
   letter-spacing: 0.02em;
+  color: #242424;
 }
 .featureCard p {
-  height: 108px;
-  color: #3a3a3a;
+  margin-top: 10px;
   font-style: normal;
-  font-size: 18px;
   font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
   text-align: center;
-  line-height: 22px;
-  letter-spacing: 0.02em;
+  color: #3a3a3a;
+}
+.zuriInterfaceViewWrapper {
+  margin-top: 150px;
+  width: 100%;
+}
+.zuriInterfaceViewWrapper img {
+  width: 100%;
 }
 
-/* Media Query for Mobile Screens */
+/* Mediaqueries */
 
-@media screen and (max-width: 1020px) and (min-width: 300px) {
-  .featuresContainer {
-    width: 100vw;
-    align-items: flex-start;
-    padding: 0px;
-  }
-  .header {
-    width: 95vw;
-    justify-content: center;
-    padding: 30px 10px;
-  }
-  .header h2 {
-    font-size: 26px;
-    line-height: 31.2px;
-  }
+/* @media (max-width: 800px) {
 
-  .header p {
-    width: 90vw;
+} */
+
+@media (max-width: 500px) {
+  .section3TopTextsWrapper {
+    margin: 0;
+    width: 100%;
+  }
+  .section3TopTextsWrapper h3 {
+    font-size: 28px;
+    line-height: 36px;
+    text-align: left;
+  }
+  .section3TopTextsWrapper p {
     font-size: 18px;
-    line-height: 22px;
+    line-height: 23px;
+    text-align: left;
   }
   .featuresSection {
-    width: 95vw;
-    padding: 0;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: 60px;
+    margin-top: 65px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    column-gap: 15px;
+    row-gap: 40px;
   }
   .featureCard {
+    width: 158px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .iconWrapper {
+    width: 100px;
+    height: 100px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0px;
+    background: #ecf8f5;
+    border-radius: 50%;
   }
-
+  .iconWrapper img {
+    width: 40%;
+  }
   .featureCard h3 {
-    width: 77px;
-    height: 22px;
-    color: #1a61db;
-    font-size: 18px;
-    font-weight: bold;
-    margin: 50px 0px;
-    text-align: center;
-    line-height: 22px;
-    letter-spacing: 0.02em;
+    font-size: 1rem;
+    line-height: 130%;
   }
-
-  .featureCard p {
-    width: 175px;
-    height: 83px;
-    color: #3a3a3a;
-    font-size: 14px;
-    line-height: 17px;
-    letter-spacing: 0.01em;
+  .featuresSection p {
+    font-size: 0.7rem;
+    line-height: 130%;
+  }
+  .zuriInterfaceViewWrapper {
+    margin-top: 50px;
   }
 }

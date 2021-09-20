@@ -9,16 +9,18 @@ import SearchSuggestion from '../searchSuggestion'
 import styles from './styles/layoutStyle.module.css'
 const Features = () => {
   return (
-    <div className={styles.layoutStyle}>
+    <>
       <SearchSuggestion />
-      <Section1 />
-      <Section2 />
-      <Section3 />
-      <Section4 />
-      <Section5 />
-      <Section6 />
+      <div className={styles.layoutStyle}>
+        <Section1 />
+        <Section2 />
+        <Section3 />
+        <Section4 />
+        <Section5 />
+        <Section6 />
+      </div>
       <Footer />
-    </div>
+    </>
   )
 }
 
