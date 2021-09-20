@@ -1043,6 +1043,20 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.0.tgz#87de7af9c231826fdd68ac7258f77c429e0e5fcf"
   integrity sha512-wdppn25U8z/2yiaT6YGquE6X8sSv7hNMWSXYSSU1jGv/yd6XqjXgTDJ8KP4NgjTXfJ3GbRjeeb8RTV7a/VpM+w==
 
+"@iconscout/react-unicons-thinline@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@iconscout/react-unicons-thinline/-/react-unicons-thinline-0.0.1.tgz#408993ac18b331906f6d702b36825ea8de70ba29"
+  integrity sha512-TESh9ITs1ttieik1han05W1vkco33M9dunU6qtY4oCHJZDqAwnL6OnarYcd85HkyU5taFEC8izBtXocN91h59Q==
+  dependencies:
+    react ">=15.0.0 <17.0.0"
+
+"@iconscout/react-unicons@^1.1.6":
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/@iconscout/react-unicons/-/react-unicons-1.1.6.tgz#4137afb831666f9c6d3b45a410610b9db9507f3a"
+  integrity sha512-BnyVvBew7Vm1lvL8+qyqjchUbkVHlDyNAlN+r5b+0P0KrkQ66BHPBuJEJ2faT89L8qRu+TohE7dHMV+bndje3Q==
+  dependencies:
+    react ">=15.0.0 <17.0.0"
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"
@@ -6056,6 +6070,15 @@ react-transition-group@^4.4.1:
     "@babel/runtime" "^7.5.5"
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
+    prop-types "^15.6.2"
+
+"react@>=15.0.0 <17.0.0":
+  version "16.14.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"
+  integrity sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
     prop-types "^15.6.2"
 
 react@^17.0.2:
