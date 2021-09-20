@@ -8,7 +8,7 @@ function AppsAndIntegrations() {
     <div>
       <SearchSuggestion />
       <SectionOne />
-      {/* <Categories /> */}
+
       <Footer />
     </div>
   )

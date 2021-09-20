@@ -11,6 +11,7 @@ import Features from './pages/features'
 import Resources from './pages/resources'
 import AppsAndIntegrations from './pages/apps-integrations'
 import Careers from './pages/careers'
+import Blogs from './pages/blogs'
 import Download from './pages/download'
 import ContactUs from './pages/contact-us'
 import Pricing from './pages/pricing'
@@ -94,7 +95,9 @@ const App = () => {
         <Route path="/careers">
           <Careers />
         </Route>
-
+        <Route path="/blogs">
+          <Blogs />
+        </Route>
         <Route path="/apps-integrations">
           <AppsAndIntegrations />
         </Route>
