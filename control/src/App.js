@@ -15,7 +15,8 @@ import Features from './pages/features'
 import Resources from './pages/resources'
 import Pricing from './pages/pricing'
 import Security from './pages/security'
-import ApiDocs from './pages/api-docs'
+// import ApiDocs from './pages/api-docs'
+import AppsAndIntegrations from './pages/apps-integration'
 // import { PluginLoaderProvider } from './context/PluginLoaderState'
 // import UsersApi from './pages/api-docs/components/users'
 // import OrganisationApi from './pages/api-docs/components/organisation'
@@ -37,24 +38,24 @@ const App = () => (
         <SignUp />
       </Route>
       <Route path="/features">
-          <Features />
-        </Route>
-        <Route path="/resources">
-          <Resources />
-        </Route>
-        <Route path="/pricing">
-          <Pricing />
-        </Route>
-        <Route path="/security">
-          <Security />
-        </Route>  
-        {/* <Route path="/documentation" exact>
+        <Features />
+      </Route>
+      <Route path="/resources">
+        <Resources />
+      </Route>
+      <Route path="/pricing">
+        <Pricing />
+      </Route>
+      <Route path="/security">
+        <Security />
+      </Route>
+      {/* <Route path="/documentation" exact>
           <PluginLoaderProvider>
             <ApiDocs />
           </PluginLoaderProvider>
         </Route> */}
-        {/* Api docs */}
-        {/* <Route exact path="/documentation/users">
+      {/* Api docs */}
+      {/* <Route exact path="/documentation/users">
           <UsersApi />
         </Route>
         <Route exact path="/documentation/auth">
@@ -72,6 +73,9 @@ const App = () => (
         <Route path="/documentation/plugin">
           <PluginApi />
         </Route> */}
+      <Route path="/apps-integrations">
+          <AppsAndIntegrations />
+        </Route>
       <Route path="/settings">
         <Settings />
       </Route>
