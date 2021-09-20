@@ -12,8 +12,14 @@ import ResetPassword from './pages/passwordReset'
 import CookiesSetting from './pages/cookiesSettings'
 import Cookies from './pages/cookies'
 import Features from './pages/features'
+import Resources from './pages/resources'
+import SearchSuggestion from './pages/searchSuggestion'
+import Pricing from './pages/pricing'
+import FAQ from './pages/FAQ'
+import Security from './pages/security'
 
 
+console.log(FAQ)
 const App = () => (
   <BrowserRouter>
     <Switch>
@@ -28,6 +34,21 @@ const App = () => (
       </Route>
       <Route path="/features">
           <Features />
+        </Route>
+        <Route path="/resources">
+          <Resources />
+        </Route>
+        <Route path="/pricing">
+          <Pricing />
+        </Route>
+        <Route path="/security">
+          <Security />
+        </Route>  
+        <Route path="/faq">
+          <FAQ />
+        </Route>
+        <Route path="/searchSuggestion">
+          <SearchSuggestion />
         </Route>
       <Route path="/settings">
         <Settings />
