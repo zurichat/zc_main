@@ -2204,7 +2204,7 @@ react-device-detect@^1.17.0:
 
 react-dropzone@^11.4.0:
   version "11.4.0"
-  resolved "https://registry.npmjs.org/react-dropzone/-/react-dropzone-11.4.0.tgz"
+  resolved "https://registry.yarnpkg.com/react-dropzone/-/react-dropzone-11.4.0.tgz#bbf3b2491341864c91c218a606a7f2568e5a94a8"
   integrity sha512-5NRpAN4ZmpEn0kvtkO18rPInE7n4eVjGeTLP/c0JcGAnV+5yrpr5QHdPH27M05SP2tsjkRoRf02DCK/4fxbsog==
   dependencies:
     attr-accept "^2.2.1"
