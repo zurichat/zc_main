@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { useEffect,useState } from 'react'
 import Footer from '../../components/Footer'
 import styles from './styles/download.module.css'
 import Header from '../../components/Header'
-// import Apk from './apk/appRelease.apk'
 import arrowDown from './assets/DP-arrow_down.svg'
 import Ellipse159 from './assets/Ellipse159.svg'
 import screenshot from './assets/screenshot.svg'
@@ -11,8 +10,22 @@ import Rect2 from './assets/DP-Rect-2.svg'
 import Rect1 from './assets/DP-Rec-1.svg'
 import homeAndroid from './assets/Home-Android.svg'
 import dm from './assets/DM.svg'
+import fetchInstall from './utils/index'
+
+// const Apk = '../../apk/appRelease.apk'
+// import Apk from '../../apk/appRelease.apk'
 
 const DownloadsDesktop = () => {
+  const [exe, setexe] = useState({ link: '', name: '' })
+  // const [msi, setmsi] = useState({ link: '', name: '' })
+  // const [dmg, setdmg] = useState({ link: '', name: '' })
+
+  useEffect(() => {
+    fetchInstall('exe').then(res => {setexe(res)})
+    // fetchInstall('msi').then(res => {setmsi(res)})
+    // fetchInstall('dmg').then(res => {setdmg(res)})
+  }, [])
+
   return (
     <>
       <Header />
@@ -28,7 +41,7 @@ const DownloadsDesktop = () => {
               With the Zuri Chat app, you will always be in touch with your
               team.
             </p>
-            <a href="/" className={styles.button1}>
+            <a href={exe.link} className={styles.button1}>
               DOWNLOAD (64-BIT)
             </a>
           </div>
@@ -57,9 +70,9 @@ const DownloadsDesktop = () => {
               What's New
             </a>
             <p className={`d-inline`}>/</p>
-            {/* <a className={styles.versionlink} href={Apk} download="release.apk">
+            <a className={styles.versionlink} href={exe.link} download={exe.name}>
               Get the Beta
-            </a> */}
+            </a>
             <p className={`d-inline`}>/</p>
             <a className={styles.versionlink} href="/">
               Enterprise Deployments
@@ -70,7 +83,7 @@ const DownloadsDesktop = () => {
             <a href="#download-mobile">
               <img className={`mx-1`} src={arrowDown} alt="arrow-down" />
             </a>
-            <a className={`${styles.bit}`} href="/">
+            <a className={`${styles.bit}`} href={exe.link} download={exe.name}>
               Download 32-bit app
             </a>
           </div>
@@ -90,7 +103,7 @@ const DownloadsDesktop = () => {
                 With the Zuri Chat app, you will always be in touch with your
                 team.
               </p>
-              <a href="/" className={styles.button1}>
+              <a href={exe.link} download={exe.name} className={styles.button1}>
                 DOWNLOAD
               </a>
             </div>
@@ -125,13 +138,12 @@ const DownloadsDesktop = () => {
                 What's New
               </a>
               <p className={`d-inline`}>/</p>
-              {/* <a
+              <a
                 className={styles.versionlink}
-                href={Apk}
-                download="release.apk"
+                href={exe.link} download={exe.name}
               >
                 Get the Beta
-              </a> */}
+              </a>
               <p className={`d-inline`}>/</p>
               <a className={styles.versionlink} href="/">
                 Enterprise Deployments
@@ -158,22 +170,19 @@ const DownloadsDesktop = () => {
               </h1>
               <p className={styles.p}>
                 Innovate in your workspace with the Zurichat apps on
-                {/* <a
+                <a
                   className={`${styles.versionlink} px-lg-1 fw-bold`}
-                  href={Apk}
-                  download="release.apk"
+                  href={exe.link} download={exe.name}
                 >
                   Android
-                </a>
-                {' '}
+                </a>{' '}
                 and
                 <a
                   className={`${styles.versionlink} px-lg-1 fw-bold`}
-                  href={Apk}
-                  download="release.apk"
+                  href={exe.link} download={exe.name}
                 >
                   IOS
-                </a> */}
+                </a>
               </p>
             </div>
           </div>
@@ -206,13 +215,12 @@ const DownloadsDesktop = () => {
             <a href="/" className={`${styles.button2} d-inline`}>
               DOWNLOAD FOR WINDOWS
             </a>
-            {/* <a
-              href={Apk}
-              download="release.apk"
+            <a
+              href={exe.link} download={exe.name}
               className={`${styles.button3} d-inline`}
             >
               DOWNLOAD FOR MOBILE
-            </a> */}
+            </a>
           </div>
         </div>
       </section>
