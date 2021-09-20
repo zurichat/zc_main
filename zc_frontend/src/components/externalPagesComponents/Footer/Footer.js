@@ -28,9 +28,9 @@ const Footer = ({ showMessage, type }) => (
                 <a className={styles.link} href="/">
                   Events
                 </a>
-                <a className={styles.link} href="/">
+                <Link to="/blogs" className={styles.link}>
                   Blog posts
-                </a>
+                </Link>
                 <a className={styles.link} href="/">
                   News
                 </a>
