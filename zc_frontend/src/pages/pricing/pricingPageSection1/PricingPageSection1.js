@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './PricingPageSection1.css'
+import './PricingPageSection1.module.css'
 import { Pricing } from './PricingDummyData'
 
 const PricingPageSection1 = () => {
