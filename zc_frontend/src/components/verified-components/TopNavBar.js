@@ -7,9 +7,11 @@ import styled from 'styled-components'
 import { BaseInput } from '.'
 import userAvatar from './assets/user.svg'
 import TopbarModal from '../TopbarModal'
+import { ProfileContext } from '../../context/ProfileModal'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const state = useContext(TopbarContext)
+  const { userProfileImage } = useContext(ProfileContext)
   const { openModal } = state
   const [search, setSearch] = useState('')
 
@@ -30,7 +32,8 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       />
       <div>
         <img
-          src={userAvatar}
+          style={{ height: "40px", width: "40px", borderRadius: '5px' }}
+          src={userProfileImage ? userProfileImage : userAvatar }
           onClick={openModal}
           role="button"
           alt="user profile avatar"
