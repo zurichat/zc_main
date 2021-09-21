@@ -1,3 +1,5 @@
+import checkmark from '../assets/checkmark.svg'
+
 export const Pricing = [
   {
     className: 'topPricingStart',
@@ -5,7 +7,7 @@ export const Pricing = [
     topPricingSubtitle: 'The quickest and easiest way to try Zuri Chat',
     topPricingAmount: '$0 USD/mo',
     topPricingBottomHeadText: '',
-    topPricingTick: '/checkmark.svg',
+    topPricingTick: checkmark,
     topPricingTickAlt: 'checkmark',
     topPricingText: [
       'Access to 10,000 of your team’s most recent messages',
@@ -20,7 +22,7 @@ export const Pricing = [
       'More power for small teams who want better collaboration',
     topPricingAmount: '$6.67 USD/mo',
     topPricingBottomHeadText: 'All the benefits of Free, and:',
-    topPricingTick: '/checkmark.svg',
+    topPricingTick: checkmark,
     topPricingTickAlt: 'checkmarks',
     topPricingText: [
       'The full context of your organization’s message history at your fingertips',
@@ -36,7 +38,7 @@ export const Pricing = [
       'Scale your business, increase productivity, and keep your teams connected',
     topPricingAmount: '$12.50 USD/mo',
     topPricingBottomHeadText: 'All the goodness of Pro, and:',
-    topPricingTick: '/checkmark.svg',
+    topPricingTick: checkmark,
     topPricingTickAlt: 'checkmarks',
     topPricingText: [
       'Advanced identity management through SAML-based SSO and real-time Active Directory sync with OneLogin, Okta and Ping Identity',
@@ -51,7 +53,7 @@ export const Pricing = [
       'Slack for the most demanding enterprises - all the flexibility to meet your regulatory requirementsand all the power to match your growth',
     topPricingAmount: '',
     topPricingBottomHeadText: 'All the greatness of business+, and:',
-    topPricingTick: '/checkmark.svg',
+    topPricingTick: checkmark,
     topPricingTickAlt: 'checkmarks',
     topPricingText: [
       'Peace of mind with enterprise-grade security and compliance, such as HIPAA support and the Enterprise Key Management add-on',

@@ -2,6 +2,7 @@ import { useState,useEffect } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Login from './pages/login'
 import SignUp from './pages/signup'
+import Workspace from './pages/workspace/components/Workspace'
 import LandingPage from './pages/LandingPage'
 import ResetPassword from './pages/passwordReset'
 import CookiesSetting from './pages/cookiesSettings'
@@ -12,7 +13,6 @@ import Pricing from './pages/pricing'
 import Security from './pages/security'
 import ContactUs from './pages/contact-us'
 import AppsAndIntegrations from './pages/apps-integration'
-import { PluginLoaderProvider } from './context/PluginLoaderState'
 import Events from './pages/events/components/EventsMainWrapper'
 import Download from './pages/download'
 import Careers from './pages/careers'
@@ -59,6 +59,9 @@ return(
       </Route>
       <Route path="/signup">
         <SignUp />
+      </Route>
+      <Route path="/choose-workspace">
+        <Workspace />
       </Route>
       <Route path="/features">
         <Features />
