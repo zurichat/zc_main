@@ -164,7 +164,7 @@ export default function Homepage() {
                 A flexible Way to Educate, Collaborate and Team Up From Wherever
                 You Are
               </p>
-              <a href="/">
+              <a href="/signup">
                 <button className={`${style.sign_up_btn}`}>
                   Sign up now for Free!!!
                 </button>
