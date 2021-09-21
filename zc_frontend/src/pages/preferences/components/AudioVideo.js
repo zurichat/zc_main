@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from '../styles/AudioVideo.module.css'
+import { MdPhone } from 'react-icons/md'
+import { FaHeadphones } from 'react-icons/fa'
 
 const AudioVideo = () => {
   return (
@@ -22,7 +24,7 @@ const AudioVideo = () => {
         <div className={styles.microphone}>
           <h6 className={styles.head}>Microphone</h6>
           <div className={styles.select}>
-            <select name="" id="">
+            <select name="" id="" className={styles.selectsecond}>
               <option selected disabled>
                 Default - Microphone Array [Realtek...
               </option>
@@ -57,7 +59,7 @@ const AudioVideo = () => {
           <h6 className={styles.headspeaker}>Speaker</h6>
           <div className={styles.speaker}>
             <div className={styles.selecttwo}>
-              <select name="" id="">
+              <select name="" id="" className={styles.selectthird}>
                 <option selected disabled>
                   Default - Speakers/Headphones (Re...
                 </option>
@@ -76,9 +78,8 @@ const AudioVideo = () => {
               <input type="checkbox" name="" id="" />
               <div className={styles.set}>
                 <span className={styles.statuscall}>
-                  {' '}
-                  Set my status to "On a call..."
-                </span>{' '}
+                  Set my status to " <MdPhone color="#00b87c" /> On a call..."
+                </span>
                 <br />
                 If you already have a status set, ZuriChat won't change it.
               </div>
@@ -98,7 +99,8 @@ const AudioVideo = () => {
               <div className={styles.status}>
                 <span className={styles.statushuddle}>
                   {' '}
-                  Set my status to "In a huddle..."
+                  Set my status to " <FaHeadphones color="#00b87c" /> In a
+                  huddle..."
                 </span>{' '}
                 <br />
                 If you already have a status set, ZuriChat won't change it.

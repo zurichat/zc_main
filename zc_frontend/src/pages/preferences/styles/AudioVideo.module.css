@@ -9,7 +9,8 @@
     font-weight: bolder;
     display: flex;
     margin-top: 1rem;
-    color: #000;
+    color: #242424;
+    font-size: 15px;
 }
 
 .rectangle {
@@ -23,19 +24,35 @@
 .selectfirst {
    width: 15%;
    margin-bottom: 1.5rem;
+   height: 3rem;
+   border-radius: 4px;
+   padding-left: .5rem;
+   border: #dde5e9 solid 1px;
+   color: #3a3a3a;
 }
 
 
-/* select {
+ .selectsecond {
     height: 3rem;
     border-radius: 4px;
     padding-left: .5rem;
-} */
+    border: #dde5e9 solid 1px;
+    color: #3a3a3a;
+}
+
+.selectthird {
+    height: 3rem;
+    border-radius: 4px;
+    padding-left: .5rem;
+    border: #dde5e9 solid 1px;
+    color: #3a3a3a;
+}
 
 .line {
     background: #aeaeae;
-    width: 37%;
+    width: 30%;
     height: 1px;
+    color: #bebebe;
 }
 
 .inputlevel {
@@ -181,6 +198,10 @@
 .checkenable {
     display: flex;
     margin-bottom: 1rem;
+    margin-top: .5rem;
+}
+.checkenable input {
+    margin-top: .4rem;
 }
 
 .enable {
@@ -196,15 +217,18 @@
     font-weight: bolder;
     display: flex;
     margin-top: 2rem;
-    color: #000;
+    color: #242424;
+    font-size: 15px;
 } 
 
 .button {
     margin-left: 3rem;
     background: #fff;
-    border: #000 1px solid;
+    border: #dde5e9 1px solid;
     padding: 0 1rem;
-    border-radius: 3px;
+    border-radius: 4px;
+    color: #3a3a3a;
+    font-size: 15px;
 }
 
 .join {
@@ -223,40 +247,80 @@
     display: flex;
 }
 
+.checkset input {
+    margin-top: .4rem;
+}
+
 .checkmute {
     display: flex;
 }
 
+.checkmute input {
+    margin-top: .4rem;
+}
+
 .checkstatus {
     display: flex;
+}  
+
+.checkstatus input {
+    margin-top: .4rem;
 }
 
 .checkmutemic {
     display: flex;
 }
 
+.checkmutemic input {
+    margin-top: .4rem;
+}
+
 .checkautomatic {
     display: flex;
+}
+
+.checkautomatic input {
+    margin-top: .4rem;
 }
 
 .checkwarning {
     display: flex;
 }
 
+.checkwarning input {
+    margin-top: .4rem;
+}
+
 .checkmusic {
     display: flex;
+}
+
+.checkmusic input {
+    margin-top: .4rem;
 }
 
 .checkallow {
     display: flex;
 }
 
+.checkallow input {
+    margin-top: .4rem;
+}
+
 .checkcall {
     display: flex;
 }
 
+.checkcall input {
+    margin-top: .4rem;
+}
+
 .checkleavehuddle {
     display: flex;
+}
+
+.checkleavehuddle input {
+    margin-top: .4rem;
 }
 
 .statuscall {
@@ -276,7 +340,7 @@
 }
 
 .screensaver {
-    font-size: 20px;
+    font-size: 15px;
     color: #3a3a3a;
     font-weight: bold;
 }
