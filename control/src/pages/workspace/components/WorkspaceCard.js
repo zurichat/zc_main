@@ -4,13 +4,13 @@ import styles from '../style/workspace.module.css'
 import { useWorkspaceContext } from './WorkspaceContext'
 
 const WorkspaceCard = () => {
-  const { organizations } = useWorkspaceContext()
+  const { organizations, user } = useWorkspaceContext()
 
   return (
     <section className={`${styles.workspace_card}`}>
       <header className={`${styles.card_header}`}>
         <h4 className={`${styles.card_title}`}>
-          Workspaces for praise@example.com
+          {!organizations.length ? 'No user is logged in' : `Workspaces for ${user.email}`}
         </h4>
       </header>
       <div className={`${styles.singleworkspace_wrapper}`}>
