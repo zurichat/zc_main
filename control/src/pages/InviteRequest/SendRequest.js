@@ -1,5 +1,8 @@
 import React from 'react';
 import { Navbar } from 'react-bootstrap';
+import cancel from './assets/cancel.png'
+import shape from 'assets/shape.png'
+import add from './assets/add.png'
 import SendRequest from './styles/SendRequest.module.css';
 
 function SendRequest() {
@@ -8,15 +11,15 @@ function SendRequest() {
           <div className="Request">
       <div className="nav">
       <Navbar className="navbar">
-        <img className="cancel" src="cancel.png" alt="cancel" href="#"/>
+        <img className="cancel" src={cancel} alt="cancel" href="#"/>
       </Navbar>
       </div>
       <div className="check">
-        <img className="tick" src="shape.png" alt="shape" />
+        <img className="tick" src={shape} alt="shape" />
       </div>
       <div className="info">
       <h1>Sent!</h1>
-      <p> <img className="add" src="add.png" alt="add"/> olaorosamson@yahoo.com</p>
+      <p> <img className="add" src={add} alt="add"/> olaorosamson@yahoo.com</p>
       <p className="desc">Will be invited as a member of Zuri Chat once an admin
          approves the request.</p>
       </div>

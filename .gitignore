@@ -70,3 +70,4 @@ dist
 *.sw?
 .DS_Store
 .trash
+*.db

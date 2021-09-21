@@ -1,27 +1,36 @@
- import React from 'react'
+import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
+import { Container, Form } from 'react-bootstrap';
 import { makeStyles } from '@material-ui/core/styles'
 import {Card, CardContent ,Typography, TextField}  from '@material-ui/core'
-import {ArrowDropDown, AddCircleOutline} from '@material-ui/icons'
+import { AddCircleOutline} from '@material-ui/icons'
 
 const UseStyles = makeStyles(theme => ({
   root: {
     width: '40rem',
-    height: '580px',
+    height: '620px',
     margin: '20px auto',
     fontSize: "10px",
     backgroundcolor: '#FFFFFF'
   },
-
-    h1:{
-  fontSize: '10px'
+  firsticon:{
+    paddingRight: "9px"
+  },
+  main:{
+  fontSize: '6px'
    },
 
   submain:{
     textAlign: 'center' 
   },
-
+  p:{
+    fontSize: '12px' 
+  },
+  btnd: {
+    backgroundcolor: 'rgba(0, 139, 94, 1)',
+    color: 'white',
+    },
   button:{
     backgroundcolor: '#00B87C'
   }
@@ -41,31 +50,39 @@ export default function Inviterequest() {
         style={{ alignItems: 'center', justifyContent: 'center' }}
       >
         <CardContent>
-          <br />
-          <br />
           <Typography className={classes.title} gutterBottom align="left">
-              <h1 className="main">Request Invitation to Zuri Chat <AddCircleOutline/> </h1>
+              <p className="main">Request Invitation to Zuri Chat <AddCircleOutline className="firsticon"/> </p>
               <form>
            <div className="first-input">
                <p> To: </p>
-
-            <TextField fullWidth label="tosben@hnginternship.com" 
-             placeholder="tosben@hnginternship.com"> </TextField>
-
+             <Container>
+      <Form.Control
+        style={{ fontSize: 12, padding: 20, width: 500 }}
+        name="foo"
+        placeholder="tosben@hnginternship.com"
+      />
+    </Container>
            </div>
            <div className="second-input">
-           <p> Invite as: </p>
-            <TextField fullWidth label={"Member"} placeholder="Member">
-            <ArrowDropDown/> 
-               </TextField>
+    <p> Invite as: </p>
+            <Container>
+      <Form.Control
+        style={{ fontSize: 12, padding: 5, width: 500 }}
+        name="foo"
+        placeholder="Member"
+      />
+    </Container>
            </div>
-           <div className="third-input">
+           <div className="third-input"> 
            <p> Reason for request(optional): </p>
-
-            <TextField fullWidth label={"Add a note to your admin"} placeholder="Add a note to your admin">
-            <ArrowDropDown/> 
-               </TextField>
-           </div>
+     <Container>
+      <Form.Control
+        style={{ fontSize: 12, padding: 16, width: 500 }}
+        name="foo"
+        placeholder="Add a note to your admin"
+      />
+    </Container>
+    </div>
            </form>
            </Typography>
            <Typography className={classes.submain}  gutterBottom align="center">
@@ -75,8 +92,8 @@ export default function Inviterequest() {
                       href='addmore'> Add more</a> </p>
            </div>
           <div className="secondsubmain">
-            <Link to="/SendRequest">
-            <button href="SendRequest" variant="contained" color="success" type='submit' >Send Request</button>
+            <Link to="./SendRequest">
+            <button href="SendRequest" className="btnd" variant="contained" backgroundcolor='#00B87C' color="success" type='submit' >Send Request</button>
             </Link>
           </div>
           </Typography>
@@ -85,4 +102,4 @@ export default function Inviterequest() {
       </Card>
     </div>
   )
-} 
+}
