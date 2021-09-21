@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Login from './pages/login'
 import SignUp from './pages/signup'
+import Workspace from './pages/workspace/components/Workspace'
 import LandingPage from './pages/LandingPage'
 import ResetPassword from './pages/passwordReset'
 import CookiesSetting from './pages/cookiesSettings'
@@ -40,6 +41,9 @@ const App = () => (
       <Route path="/signup">
         <SignUp />
       </Route>
+      <Route path="/choose-workspace">
+        <Workspace />
+      </Route>
       <Route path="/features">
         <Features />
       </Route>
@@ -53,8 +57,8 @@ const App = () => (
         <Security />
       </Route>
       <Route path="/events">
-          <Events />
-        </Route>
+        <Events />
+      </Route>
       <Route path="/download-app">
         <Download />
       </Route>
