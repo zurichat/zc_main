@@ -76,14 +76,9 @@ return(
         <Security />
       </Route>
       <Route path="/events">
-<<<<<<< HEAD
-        <Events />
-      </Route>
-=======
           <Events />
         </Route>
         <CreateWorkSpaces/>
->>>>>>> 1c7772a0b9f3fd3e3bb8e6a80ef356618c2e8829
       <Route path="/download-app">
         <Download />
       </Route>
