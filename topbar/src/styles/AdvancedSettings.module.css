@@ -1,0 +1,120 @@
+.container {
+  width: 400%;
+  font-family: 'Lato';
+}
+
+.head {
+  font-family: 'Lato';
+  font-weight: bolder;
+  display: flex;
+  margin: 1rem 0;
+  color: #000;
+}
+
+.borderbottomone {
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 30%;
+  height: 0.5rem;
+  border-bottom: 1px solid #000;
+}
+
+.borderbottomtwo {
+  margin-left: 20px;
+  width: 30%;
+  height: 0.5rem;
+  border-bottom: 1px solid #000;
+}
+
+.checktype {
+  display: flex;
+  margin-bottom: 0.4rem;
+}
+
+.checkformat {
+  display: flex;
+}
+
+.radiosend {
+  display: flex;
+}
+
+.radiostart {
+  display: flex;
+}
+
+.radiosend .send {
+  margin-left: 1rem;
+}
+
+.radiostart .start {
+  margin-left: 1rem;
+}
+
+/* input {
+    margin-top: .5rem;
+} */
+
+.typing span {
+  font-weight: bold;
+  color: #3a3a3a;
+}
+
+.behaviour span {
+  color: #3a3a3a;
+}
+
+.browser span {
+  color: #3a3a3a;
+}
+
+.btn {
+  background: #dbdbdb;
+  border: none;
+  border-radius: 3px;
+  padding: 1px 4px;
+  margin: 2px;
+  color: #3a3a3a;
+}
+
+.input {
+  margin-left: 3rem;
+  margin-bottom: 1rem;
+}
+
+.bartype {
+  border: 0.5px solid #aeaeae;
+  padding-left: 1.5rem;
+  padding-right: 22rem;
+  height: 4rem;
+}
+
+.search {
+  margin-left: 3rem;
+  margin-bottom: 2rem;
+}
+
+.checkkeys {
+  display: flex;
+}
+
+.ask {
+  display: flex;
+}
+
+.survey {
+  display: flex;
+}
+
+.warn {
+  display: flex;
+}
+
+.options {
+  margin-left: 3rem;
+  color: #3a3a3a;
+}
+
+.options span {
+  color: #aeaeae;
+}

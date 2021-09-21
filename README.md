@@ -59,6 +59,16 @@ for example
 yarn frontend add is-odd
 ```
 
+## root & spa
+
+### root
+
+`cd root && yarn install && yarn dev`
+
+### spa
+
+`cd spa && yarn install && yarn dev`
+
 ## Editor setup
 
 We're using eslint for linting and prettier for code formating, make sure you install eslint and prettier plugins in your editor so you can
