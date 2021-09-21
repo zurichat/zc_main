@@ -7,13 +7,7 @@ import styled from 'styled-components'
 import { BaseInput } from './TopBarIndex'
 import userAvatar from './assets/images/user.svg'
 import TopbarModal from './components/TopbarModal'
-<<<<<<< HEAD
-import { authAxios } from './utils/Api'
-import { ProfileContext } from './context/ProfileModal'
-
-=======
 import UserForm from '../../control/src/pages/ReportFeature/components/Form'
->>>>>>> 804fbc33a39a386e2be55391d0b53ad50470dbc9
 
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
