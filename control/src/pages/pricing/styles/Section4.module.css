@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -21,6 +22,31 @@
 .link {
   display: flex;
   justify-content: center;
+=======
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    padding: 30px;
+    padding-bottom: 8%;
+    margin-top: 20px;
+    background-color: rgb(230, 228, 228);
+}
+
+.wrapper > .topText{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px auto;
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+>>>>>>> 1c7772a0b9f3fd3e3bb8e6a80ef356618c2e8829
 }
 
 .cardContainer {
@@ -32,11 +58,20 @@
   gap: 1rem;
 }
 
+<<<<<<< HEAD
 .card {
   display: flex;
   flex-direction: column;
   width: 200px;
   height: 438px;
+=======
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 438px;
+>>>>>>> 1c7772a0b9f3fd3e3bb8e6a80ef356618c2e8829
   margin-top: 65px;
   border-radius: 0.5rem;
   background-color: #fff;
@@ -51,28 +86,46 @@
   object-fit: cover;
 }
 
+<<<<<<< HEAD
 .bottomCardSub1 {
+=======
+.bottomCardSub1{
+>>>>>>> 1c7772a0b9f3fd3e3bb8e6a80ef356618c2e8829
   height: 10%;
   margin: 5%;
   display: flex;
   justify-content: center;
 }
 
+<<<<<<< HEAD
 .bottomCardSub2 {
+=======
+.bottomCardSub2{
+>>>>>>> 1c7772a0b9f3fd3e3bb8e6a80ef356618c2e8829
   display: block;
   padding: 5%;
   height: 30%;
 }
 
+<<<<<<< HEAD
 .bottomCardSub3 {
+=======
+.bottomCardSub3{
+>>>>>>> 1c7772a0b9f3fd3e3bb8e6a80ef356618c2e8829
   display: flex;
   justify-content: flex-end;
   height: 10%;
   margin: 5%;
 }
 
+<<<<<<< HEAD
 @media (max-width: 768px) {
   .wrapper {
+=======
+
+@media (max-width: 768px) {
+  .wrapper{
+>>>>>>> 1c7772a0b9f3fd3e3bb8e6a80ef356618c2e8829
     display: flex;
     flex-direction: column;
     height: fit-content;
@@ -81,6 +134,7 @@
     padding-bottom: 8%;
     margin-top: 20px;
     background-color: white;
+<<<<<<< HEAD
   }
 
   .cardContainer {
@@ -102,3 +156,27 @@
     height: 30%;
   }
 }
+=======
+}
+
+ .cardContainer {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  width: auto;
+  padding: 0 auto;
+  margin: 5% auto;
+  justify-content: center;
+  flex: 0 1 auto;
+  gap: 1rem;
+}
+
+.bottomCardSub2{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 8%;
+  height: 30%;
+}
+}
+
+>>>>>>> 1c7772a0b9f3fd3e3bb8e6a80ef356618c2e8829
