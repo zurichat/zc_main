@@ -1,6 +1,7 @@
 import styles from './styles/CookiesSettings.module.css'
-import toggleButton from '../../component-assets/toggle.svg'
 import lockButton from '../../component-assets/lock.svg'
+import ToggleButton from './ToggleButton'
+
 
 function CookiesSettings() {
   return (
@@ -40,18 +41,18 @@ function CookiesSettings() {
                 can improve it where necessary.
               </div>
             </div>
-            <div className={styles.cookie_body_second_button}>
-              <img src={toggleButton} alt="toggle button" />
-            </div>
+              <ToggleButton className={styles.toggle_button}/>
           </div>
           <div className={styles.learn_more_link}>
             <a href=".">Learn more</a>
           </div>
           <div className={styles.action_links}>
-            <button className={`${styles.firstButton} ${styles.button}`}>
+            <button className={`${styles.firstButton} ${styles.button}`}
+            onClick={handleButtonClick}>
               Accept all cookies
             </button>
-            <button className={`${styles.secondButton} ${styles.button}`}>
+            <button className={`${styles.secondButton} ${styles.button}`}
+            onClick={handleButtonClick}>
               Save settings
             </button>
           </div>
@@ -59,6 +60,11 @@ function CookiesSettings() {
       </div>
     </div>
   )
+}
+
+const handleButtonClick = () => {
+  sessionStorage.setItem('cookies-allow', 'true');
+  window.history.back()
 }
 
 export default CookiesSettings
