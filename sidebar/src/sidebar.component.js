@@ -40,14 +40,6 @@ const Sidebar = props => {
     {
       id: 1,
       name: 'games'
-    },
-    {
-      id: 2,
-      name: 'designers'
-    },
-    {
-      id: 3,
-      name: 'developers'
     }
   ]
   // const { data: plugins } = useSWR('/api/plugin/list', fetcher)
@@ -337,19 +329,6 @@ const Sidebar = props => {
           ))}
           </Dropdown>*/}
       <Dropdown onAddButtonClick={open} showAddButton={true} title="Channels">
-        {channelsData.map((channel, index) => (
-          <Fragment key={index}>
-            <span>#</span>
-            {channel.name}
-          </Fragment>
-        ))}
-      </Dropdown>
-      <Dropdown
-        onAddButtonClick={open}
-        onTitleClick={() => setUrl(`https://sales.zuri.chat/`)}
-        showAddButton={true}
-        title="Sales"
-      >
         {channelsData.map((channel, index) => (
           <Fragment key={index}>
             <span>#</span>
