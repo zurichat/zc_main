@@ -56,8 +56,8 @@ const App = () => (
         <Security />
       </Route>
       <Route path="/events">
-          <Events />
-        </Route>
+        <Events />
+      </Route>
       <Route path="/download-app">
         <Download />
       </Route>

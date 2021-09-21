@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import styles from '../styles/AllSessionSignOut.module.css'
 import SignOutActionList from './SignOutActionList'
@@ -8,7 +8,6 @@ import boxArrow from './../box-arrow-right.svg'
 import errorIcon from '../../../component-assets/icons/bx-error.svg'
 
 function AllSessionSignOut() {
-  
   const [error, setError] = useState('')
   //const [userSession, setUserSession] = useState({})
   const [user, setUser] = useState()
@@ -17,12 +16,15 @@ function AllSessionSignOut() {
   const history = useHistory()
 
   useEffect(() => {
-    if(sessionStorage.getItem('user') && sessionStorage.getItem('session_id')) {
+    if (
+      sessionStorage.getItem('user') &&
+      sessionStorage.getItem('session_id')
+    ) {
       const userInfo = JSON.parse(sessionStorage.getItem('user'))
       console.log(userInfo)
       setUser(userInfo)
     } else {
-      history.push("./login")
+      history.push('./login')
     }
   }, [history])
 
@@ -37,7 +39,7 @@ function AllSessionSignOut() {
     return () => clearTimeout(timerId)
   })
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault()
 
     const passwordData = {
@@ -46,9 +48,11 @@ function AllSessionSignOut() {
 
     try {
       const response = await axios.post(
-        'https://api.zuri.chat/auth/logout/othersessions',{
-        body: JSON.stringify(passwordData)
-      })
+        'https://api.zuri.chat/auth/logout/othersessions',
+        {
+          body: JSON.stringify(passwordData)
+        }
+      )
       if (response.status !== 200) {
         throw new Error(`Failed to fetch data, status: ${response.status} `)
       }

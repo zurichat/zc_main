@@ -10,9 +10,13 @@ const userOrganizations = [
   {
     id: 1,
     icon: `${HNG_icon}`,
-    name: "HNGi9 x I4G",
+    name: 'HNGi9 x I4G',
     imgs: [
-      `${member1}`, `${member2}`, `${member3}`, `${member4}`, `${member5}`
+      `${member1}`,
+      `${member2}`,
+      `${member3}`,
+      `${member4}`,
+      `${member5}`
     ],
     number: '3,194',
     selected: true
@@ -20,9 +24,13 @@ const userOrganizations = [
   {
     id: 2,
     icon: `${zuri_icon}`,
-    name: "Zuri x I4G Training",
+    name: 'Zuri x I4G Training',
     imgs: [
-      `${member1}`, `${member2}`, `${member3}`, `${member4}`, `${member5}`
+      `${member1}`,
+      `${member2}`,
+      `${member3}`,
+      `${member4}`,
+      `${member5}`
     ],
     number: '20,047',
     selected: false
