@@ -7,7 +7,6 @@
 
 .workspace_container {
   width: 100%;
-  max-width: 97%;
   margin: 0 auto;
   padding: 0 0.94rem;
   display: grid;
@@ -38,6 +37,7 @@
   font-size: calc(2.69rem * var(--type-scale, 1));
   line-height: calc(3.72rem * var(--type-scale, 1));
   font-weight: 700;
+  text-align: center;
 }
 
 .page_header p {
@@ -78,6 +78,7 @@
   width: 100%;
   max-width: 42.25rem;
   margin: 0 auto;
+  padding: 0.625rem 0;
 }
 
 .workspace_section_intro {
@@ -88,19 +89,21 @@
 }
 
 .workspace_section_intro p,
-.workspace_btn {
+button.workspace_btn {
   font-size: calc(0.94rem * var(--type-scale, 1));
   line-height: calc(1.22rem * var(--type-scale, 1));
   font-weight: bold;
   color: #333333;
 }
 
-.workspace_btn {
+button.workspace_btn {
   color: #fff;
   padding: 0.5rem;
   border-radius: 3px;
   border-width: 1px;
   border-style: solid;
+  width: auto;
+  height: auto;
   outline: none;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -110,7 +113,10 @@
 .workspace_card {
   border: 1px solid #e5e5e5;
   border-radius: 8px;
-}
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;  
+} 
 
 .card_header {
   padding: 1.25rem;
@@ -204,6 +210,10 @@
 }
 
 @media only screen and (min-width: 600px) {
+  .workspace_container {
+    max-width: 97%;
+  }
+
   .workspace {
     --type-scale: 0.9;
   }
