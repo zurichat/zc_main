@@ -6,12 +6,16 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import { BaseInput } from './TopBarIndex'
 import userAvatar from './assets/images/user.svg'
+import HelpIcon from './assets/download_images/question.svg'
+import HelpIcons from '@material-ui/icons/HelpOutline'
 import TopbarModal from './components/TopbarModal'
+import HelpModal from './components/HelpModal'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const state = useContext(TopbarContext)
   const { openModal } = state
   const [search, setSearch] = useState('')
+  const [helpModal, setHelpModal] = useState(false)
 
   return (
     <TopNavBarBase>
@@ -30,6 +34,11 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         placeholder="Search here"
         border={'#99999933'}
       />
+      <HelpContainer>
+        <HelpIcons onClick={() => setHelpModal(true)} />
+      </HelpContainer>
+      {helpModal ? <HelpModal  setHelpModal={setHelpModal}/> : ''}
+
       <div>
         <img
           src={userAvatar}
@@ -78,3 +87,13 @@ const TopNavBarBase = styled.div`
 //   text-align: center;
 //   vertical-align: middle;
 // `
+
+const HelpContainer = styled.div`
+  .MuiSvgIcon-root {
+    opacity: 0.5;
+  }
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+`
