@@ -2,12 +2,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Login from './pages/login'
 import SignUp from './pages/signup'
 import LandingPage from './pages/LandingPage'
-import Settings from './pages/settings'
-import ConfirmPassword from './pages/settings/components/ConfirmPassword'
-import AccDeactivated from './pages/settings/components/AccDeactivated'
-import ConfirmDeactivation from './pages/settings/components/AcctDeactivation'
-import DeactivateAccount from './pages/settings/components/AccDeactivated'
-import AllSessionSignOut from './pages/settings/components/AllSessionSignOut'
 import ResetPassword from './pages/passwordReset'
 import CookiesSetting from './pages/cookiesSettings'
 import Cookies from './pages/cookies'
@@ -23,6 +17,13 @@ import Download from './pages/download'
 import Careers from './pages/careers'
 import MarketPlace from './pages/marketplace/marketplace'
 import Blogs from './pages/blogs'
+import Settings from './pages/settings'
+import ConfirmPassword from './pages/settings/components/ConfirmPassword'
+import AccDeactivated from './pages/settings/components/AccDeactivated'
+import DeactivateAccount from './pages/settings/components/AcctDeactivation'
+import AllSessionSignOut from './pages/settings/components/AllSessionSignOut'
+import PrivateRoute from './pages/settings/Utils/PrivateRoute'
+import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation'
 
 const App = () => (
   <BrowserRouter>
@@ -69,24 +70,19 @@ const App = () => (
       <Route path="/apps-integrations">
         <AppsAndIntegrations />
       </Route>
-      <Route path="/settings">
-        <Settings />
-      </Route>
-      <Route path="/settings/:id">
-        <ConfirmPassword />
-      </Route>
+      {/* ----------------settings routes opened------------------------ */}
+      <PrivateRoute
+        path="/confirm-deactivation"
+        component={ConfirmDeactivation}
+      />
       <Route path="/account-deactivated">
         <AccDeactivated />
       </Route>
-      <Route path="/confirm-deactivation">
-        <ConfirmDeactivation />
-      </Route>
-      <Route path="/deactivate-account">
-        <DeactivateAccount />
-      </Route>
-      <Route path="/session-signout">
-        <AllSessionSignOut />
-      </Route>
+      <PrivateRoute path="/deactivate-account" component={DeactivateAccount} />
+      <PrivateRoute path="/session-signout" component={AllSessionSignOut} />
+      <PrivateRoute path="/settings" exact component={Settings} />
+      <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
+      {/* ----------------settings routes closed----------------- */}
       <Route path="/reset-password">
         <ResetPassword />
       </Route>
