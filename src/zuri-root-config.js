@@ -89,6 +89,13 @@ registerApplication({
   activeWhen: [location => location.pathname.startsWith('/calendar')]
 })
 
+registerApplication({
+  name: '@zuri/zuri-plugin-expenses',
+  app: () => System.import('@zuri/zuri-plugin-expenses'),
+  activeWhen: [location => location.pathname.startsWith('/expenses')]
+})
+
+
 start({
   urlRerouteOnly: true
 })
