@@ -285,8 +285,10 @@
   font-size: 14px;
   font-weight: 400;
   cursor: pointer;
-  padding: 2px 20px;
   margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  padding: 2px 25px 2px 10px;
 }
 
 .sectionThree p:hover {
@@ -338,13 +340,15 @@
 }
 
 .sectionFour p {
+  display: flex;
+  flex-direction: row;
   font-family: Lato;
   color: #242424;
   font-size: 14px;
   font-weight: 400;
   cursor: pointer;
-  padding: 2px 20px;
   margin-bottom: 10px;
+  padding: 2px 25px 2px 10px;
 }
 
 .sectionFour p:hover {
@@ -368,7 +372,9 @@
   font-size: 14px;
   font-weight: 400;
   cursor: pointer;
-  padding: 2px 20px;
+  display: flex;
+  flex-direction: row;
+  padding: 2px 25px 2px 10px;
 }
 
 .sectionFive p:hover {
@@ -392,8 +398,10 @@
   font-size: 14px;
   font-weight: 400;
   cursor: pointer;
-  padding: 2px 20px;
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  padding: 2px 25px 2px 10px;
 }
 
 .sectionSix p:hover {
