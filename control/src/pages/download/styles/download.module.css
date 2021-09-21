@@ -23,11 +23,12 @@ body {
   font-size: 18px;
   line-height: 26px;
 }
-.col-8 {
-  padding: 0;
+.divcol {
+  padding: 0 !important;
 }
 .circle {
   position: absolute;
+  top: 122px;
   z-index: 0;
 }
 .screenshot {
@@ -38,7 +39,7 @@ body {
 }
 .circle2 {
   position: absolute;
-  left: 1165px;
+  left: 1160px;
   top: 273px;
   z-index: 0;
 }
@@ -54,14 +55,7 @@ body {
   line-height: 18px;
   font-weight: 800;
   text-align: center;
-}
-.version {
-  margin: -60px 0 0 60px;
-}
-.versionp {
-  font-weight: 800;
-  font-size: 14px;
-  line-height: 26px;
+  text-decoration: none;
 }
 .versionlink {
   font-size: 14px;
@@ -85,19 +79,19 @@ body {
 .circle1 {
   position: absolute;
   z-index: 0;
-  top: 989px;
+  top: 770px;
 }
 .half {
   position: absolute;
   z-index: 0;
-  left: 1170px;
+  left: 1160px;
   top: 874px;
 }
 .rec {
   position: absolute;
   z-index: 0;
-  top: 1471px;
-  left: 537px;
+  top: 1555px;
+  left: 525px;
 }
 .dm {
   position: relative;
@@ -118,10 +112,6 @@ body {
   width: 100%;
 }
 .button {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
   position: relative;
   z-index: 1;
   padding: 119px;
@@ -141,6 +131,7 @@ body {
   color: #00b87c;
   padding: 16px;
   font-weight: 800;
+  text-decoration: none;
 }
 .button3 {
   margin: 0 10px;
@@ -150,6 +141,7 @@ body {
   border: 2px solid #ffffff;
   border-radius: 3px;
   padding: 16px;
+  text-decoration: none;
 }
 a:hover {
   text-decoration: none;
@@ -177,37 +169,36 @@ a:hover {
     width: 763px;
   }
   .circle1 {
-    top: 875px;
+    top: 695px;
     width: 150px;
   }
   .circle2 {
     top: 235px;
-    left: 1005px;
+    left: 1020px;
     width: 235px;
-  }
-  .version {
-    margin: -65px 0 0 0;
   }
   .mobilelink {
     margin-left: 25px;
   }
   .half {
-    left: 1005px;
+    left: 1020px;
     width: 235px;
     top: 785px;
   }
   .rec {
-    top: 1365px;
-    left: 549px;
+    top: 1440px;
+    left: 560px;
     width: 700px;
   }
   .dm {
     width: 200px;
     top: 40px;
+    left: 265px;
   }
   .android {
     width: 200px;
     top: 40px;
+    left: 220px;
   }
 }
 
@@ -233,9 +224,6 @@ a:hover {
     left: 840px;
     width: 190px;
   }
-  .version {
-    margin: -50px 0 0 0;
-  }
   .circle1 {
     top: 768px;
     width: 150px;
@@ -252,6 +240,12 @@ a:hover {
   .rec {
     left: 324px;
     top: 1226px;
+  }
+  .android {
+    left: 100px;
+  }
+  .dm {
+    left: 140px;
   }
   .versionlink {
     font-size: 12px;
