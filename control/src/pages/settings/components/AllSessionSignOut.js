@@ -2,7 +2,7 @@ import React from 'react'
 import styles from '../styles/AllSessionSignOut.module.css'
 import SignOutActionList from './SignOutActionList'
 import SettingsNav from './SettingsNav'
-import boxArrow from './../box-arrow-right.svg'
+import boxArrow from '../box-arrow-right.svg'
 
 function AllSessionSignOut() {
   return (
