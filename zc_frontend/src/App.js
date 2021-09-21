@@ -86,8 +86,8 @@ const App = () => (
         <Route path="/careers">
           <Careers />
         </Route>
-        <Route path="/IniteRequest">
-          <IniteRequest />
+        <Route path="/InviteRequest">
+          <InviteRequest />
         </Route>
         <Route path="/SendRequest">
           <SendRequest />

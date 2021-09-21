@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar } from 'react-bootstrap';
-import SentRequest from './SentRequest.module.css';
+import SentRequest from './styles/SentRequest.module.css';
 
 function SentRequest() {
     return (
