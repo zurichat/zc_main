@@ -7,6 +7,8 @@ import styled from 'styled-components'
 import { BaseInput } from './TopBarIndex'
 import userAvatar from './assets/images/user.svg'
 import TopbarModal from './components/TopbarModal'
+import UserForm from '../../control/src/pages/ReportFeature/components/Form'
+
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const state = useContext(TopbarContext)
@@ -30,6 +32,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         placeholder="Search here"
         border={'#99999933'}
       />
+        <UserForm />
       <div>
         <img
           src={userAvatar}
