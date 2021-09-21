@@ -13,7 +13,6 @@ import AuthInputBox from './components/AuthInputBox'
 // import PublicRooms from '../publicRooms/PublicRooms'
 // import cheerio from 'cheerio'
 
-
 import threadIcon from './verified-components/assets/icons/thread-icon.svg'
 import dmIcon from './verified-components/assets/icons/dm-icon.svg'
 import draftIcon from './verified-components/assets/icons/draft-icon.svg'
@@ -28,8 +27,6 @@ import { navigateToUrl } from 'single-spa'
 const fetcher = url => fetch(url).then(res => res.json())
 
 const Sidebar = props => {
-
-
   // const { data: channelsData } = useSWR('/api/plugin/channels', fetcher)
   const { data: messagesData } = useSWR('/api/plugin/messages', fetcher)
 
@@ -49,7 +46,7 @@ const Sidebar = props => {
 
   // const { setUrl } = useContext(URLContext)
   const [show, setShow] = useState(false)
-// console.log("user", user)
+  // console.log("user", user)
   // const { plugins, setPlugins } = useContext(PluginContext)
 
   // // const user = JSON.parse(sessionStorage.getItem('user'))
@@ -61,9 +58,6 @@ const Sidebar = props => {
   const [query, setQuery] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-
-
-
 
   // // Sort room function
 
@@ -231,7 +225,7 @@ const Sidebar = props => {
             alt="Organisation settings button"
           />
         </div>
-      
+
         <Overlay isOpen={showDialog} onDismiss={close}>
           <Content aria-label="room-list">
             <CloseButton className="close-button" onClick={close}>
