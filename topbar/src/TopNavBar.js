@@ -6,11 +6,11 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import { BaseInput } from './TopBarIndex'
 import userAvatar from './assets/images/user.svg'
-//import TopbarModal from './components/TopbarModal'
+import TopbarModal from './components/TopbarModal'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const state = useContext(TopbarContext)
-  // const { openModal } = state
+  const { openModal } = state
   const [search, setSearch] = useState('')
 
   return (
@@ -33,12 +33,12 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       <div>
         <img
           src={userAvatar}
-          // onClick={openModal}
+          onClick={openModal}
           role="button"
           alt="user profile avatar"
         />
       </div>
-      {/* <TopbarModal /> */}
+      <TopbarModal />
     </TopNavBarBase>
   )
 }

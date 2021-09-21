@@ -106,8 +106,8 @@ hr {
     font-size: 22px;
     text-align: center;
   }
-  .Section4 button {
-    padding: 16px 97.5px 16px 97.5px;
+  .Section4 .regbtn {
+    padding: 16px 95px 16px 95px;
     font-size: 18px;
   }
 }

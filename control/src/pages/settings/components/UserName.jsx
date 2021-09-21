@@ -8,8 +8,8 @@ const UserName = () => {
         <div className="col-md-5 mt-2">
           <input type="text" className="form-control" required />
         </div>
-        <div class="col-md-4 mb-3 mt-3">
-          <button className="btn btn-primary px-5">Save</button>
+        <div className="col-md-4 mb-3 mt-3">
+          <button className="btn">Save</button>
         </div>
         <p>
           Usernames are not part of your profile and are only required by
