@@ -27,9 +27,9 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         .get(`/users/${userdef.email}/organizations`)
         .then(response => {
           setOrganizations(response.data.data)
-          setOrgId(response.data.data[0]?.id)
+          setOrgId(response.data.data[0].id)
           authAxios
-            .get(`/organizations/${response.data.data[0]?.id}/members`)
+            .get(`/organizations/${response.data.data[0].id}/members`)
             .then(response => {
               setUser(
                 response.data.data.find(
