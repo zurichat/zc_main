@@ -45,7 +45,7 @@
   font-size: 14px;
   line-height: 17px;
   color: #1d1c1d;
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 .phonediv {
