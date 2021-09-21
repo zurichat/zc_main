@@ -1,10 +1,14 @@
 /* Deactivation Bar */
 .deactivationSection {
-  padding-top: 80px;
+  padding-top: 60px;
   margin: 0 13%;
 }
 
 @media screen and (max-width: 800px) {
+  .deactivationSection {
+    padding-top: 40px;
+  }
+
   .deactivationSection {
     margin: 0 5%;
   }
@@ -33,6 +37,7 @@
   background: #fff;
   display: flex;
   align-items: center;
+  font-weight: bold;
 }
 
 .deactivationCaution img {
@@ -44,6 +49,7 @@
   font-size: 14px;
   font-weight: 700;
   line-height: 22px;
+  color: #3a3a3a;
 }
 
 .deactivationNote {
@@ -54,7 +60,7 @@
 }
 
 .blue {
-  color: #00b87c;
+  color: #2f80ed;
 }
 
 .firstP {
@@ -65,7 +71,7 @@
 }
 
 .secondP {
-  background-color: #fcf4da;
+  /* background-color: #fcf4da; */
   font-weight: 500;
   line-height: 20px;
   padding: 10px 5px;
@@ -84,8 +90,8 @@
 }
 
 .cancelButton {
-  border: 1px solid #c4c4c4;
-  color: #000;
+  border: 1px solid rgba(0, 184, 124, 0.5);
+  color: rgba(0, 184, 124, 0.5);
   padding: 10px 25px;
   outline: none;
   margin-top: 15px;

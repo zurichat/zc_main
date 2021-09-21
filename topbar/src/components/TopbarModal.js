@@ -23,7 +23,8 @@ const TopbarModal = ({ members }) => {
   const [active, setActive] = state.presence
   const [showStatus] = state.status
   const [showMembersModal] = state.modal
-  const { onEmojiClick, openStatus, closeStatus, modalRef, closeMembersModal } = state
+  const { onEmojiClick, openStatus, closeStatus, modalRef, closeMembersModal } =
+    state
   const [modal, setModal] = useState('')
   const [pause, setPause] = useState(false)
 
