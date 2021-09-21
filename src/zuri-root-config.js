@@ -95,7 +95,6 @@ registerApplication({
   activeWhen: [location => location.pathname.startsWith('/expenses')]
 })
 
-
 start({
   urlRerouteOnly: true
 })
