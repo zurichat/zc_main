@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Login from './pages/login'
 import SignUp from './pages/signup'
 import LandingPage from './pages/LandingPage'
+import InviteRequest from './pages/InviteRequest'
+import SendRequest from './pages/SendRequest'
 import Settings from './pages/settings'
 import ConfirmPassword from './pages/settings/components/ConfirmPassword'
 import AccDeactivated from './pages/settings/components/AccDeactivated'
@@ -46,6 +48,12 @@ const App = () => (
       </Route>
       <Route path="/pricing">
         <Pricing />
+      </Route>
+      <Route path="/InviteRequest">
+        < InviteRequest/>
+      </Route>
+      <Route path="/SendRequest">
+        <SendRequest />
       </Route>
       <Route path="/security">
         <Security />
