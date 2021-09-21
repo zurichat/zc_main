@@ -23,17 +23,17 @@ const Cookies = () => {
           </div>
         </div>
         <div className={styles.bannerButtons}>
-          <button
+          <button 
             style={{
               backgroundColor: '#00b87c',
               color: 'white',
-
               fontWeight: 'bold',
               padding: '10px 0',
               borderRadius: '20px',
               border: 'none'
             }}
-            className={`${styles.allowButton} ${styles.button} `}
+            className={`${styles.allowButton} ${styles.button}`}
+            onClick={handleClickAllow}
           >
             Allow
           </button>
@@ -48,6 +48,7 @@ const Cookies = () => {
               border: 'none'
             }}
             className={`${styles.declineButton} ${styles.button}`}
+            onClick={handleClickDecline}
           >
             Decline
           </button>
@@ -55,6 +56,16 @@ const Cookies = () => {
       </div>
     </div>
   )
+}
+
+const handleClickAllow = (event) => {
+  sessionStorage.setItem('cookies-allow', 'true');
+  event.target.parentNode.parentNode.parentNode.style.display = 'none';
+}
+
+const handleClickDecline = (event) => {
+  sessionStorage.setItem('cookies-decline', 'true');
+  event.target.parentNode.parentNode.parentNode.style.display = 'none';
 }
 
 export default Cookies
