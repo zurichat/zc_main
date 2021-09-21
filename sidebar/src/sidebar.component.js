@@ -48,6 +48,7 @@ const Sidebar = props => {
 
   // const { setUrl } = useContext(URLContext)
   const [show, setShow] = useState(false)
+  // console.log("user", user)
   // const { plugins, setPlugins } = useContext(PluginContext)
 
   // // const user = JSON.parse(sessionStorage.getItem('user'))
@@ -226,6 +227,7 @@ const Sidebar = props => {
             alt="Organisation settings button"
           />
         </div>
+
         <Overlay isOpen={showDialog} onDismiss={close}>
           <Content aria-label="room-list">
             <CloseButton className="close-button" onClick={close}>
