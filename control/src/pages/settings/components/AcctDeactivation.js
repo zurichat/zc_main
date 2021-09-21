@@ -2,6 +2,7 @@ import { useHistory } from 'react-router-dom'
 import styles from '../styles/AcctDeactivation.module.css'
 import SettingsNav from './SettingsNav'
 import { Link } from 'react-router-dom'
+import alertTriangle from '../assets/alertTriangle.svg'
 
 const AcctDeactivation = () => {
   const history = useHistory()
@@ -12,7 +13,7 @@ const AcctDeactivation = () => {
         <div className={styles.deactivationTab}>
           <p>Deactivate Account</p>
           <div className={styles.deactivationCaution}>
-            <img src="./alertTriangle.svg" alt="alert_triangle" />
+            <img src={alertTriangle} alt="alert_triangle" />
             <span>Are you sure you want to deactivate your account?</span>
           </div>
         </div>
@@ -29,19 +30,22 @@ const AcctDeactivation = () => {
           <p className={styles.secondP}>
             <strong>Note:</strong> Don’t deactivate your account if you just
             want to change your
-            <span className={styles.blue}> email address</span> or{' '}
-            <span className={styles.blue}>username</span>.
+            <span className={styles.blue}>
+              <Link to="/settings"> email address</Link>
+            </span>{' '}
+            or
+            <span className={styles.blue}>
+              <Link to="/settings"> username</Link>
+            </span>
+            .
           </p>
 
           <div>
-            <button
-              className={styles.deactivateButton}
-              onClick={() => {
-                history.push('/confirm-deactivation')
-              }}
-            >
-              Yes, deactivate my account
-            </button>
+            <Link to="/confirm-deactivation">
+              <button className={styles.deactivateButton}>
+                Yes, deactivate my account
+              </button>
+            </Link>
             <Link to="/settings">
               <button className={styles.cancelButton}>Cancel</button>
             </Link>
