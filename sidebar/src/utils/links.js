@@ -8,5 +8,6 @@ export const links = [
   { name: 'DM', href: '/dm' },
   { name: 'Noticeboard', href: '/noticeboard' },
   { name: 'Companyfiles', href: '/companyfiles' },
-  { name: 'Holiday Calendar', href: '/calendar' }
+  { name: 'Holiday Calendar', href: '/calendar' },
+  { name: 'Expenses', href: '/expenses' }
 ]

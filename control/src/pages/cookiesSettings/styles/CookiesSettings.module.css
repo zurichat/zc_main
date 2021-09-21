@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
 body {
   margin: 0;
   padding: 0;
   min-height: 95vh;
   font-family: 'Lato', sans-serif;
 }
+
 .wrapper {
-  padding-top: 166px;
+  padding-top: 100px;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -18,6 +20,8 @@ body {
   background-color: #f3f3f3;
   border-top-left-radius: 5%;
   border-top-right-radius: 5%;
+  border-bottom-right-radius: 2%;
+  border-bottom-left-radius: 2%;
   font-family: 'Lato', sans-serif;
   padding-bottom: 32px;
   /* min-height: 100vh; */
@@ -28,7 +32,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid gray;
+  border-bottom: 2px solid #d3d3d3;
 }
 
 .cookie_header_title,
@@ -39,7 +43,7 @@ body {
 }
 
 .cookie_header_body {
-  width: 76%;
+  width: 59%;
   margin-top: 8px;
   font-size: 1rem;
 }
@@ -51,6 +55,10 @@ body {
 .cookie_body_title,
 .cookie_header_title {
   font-weight: 800;
+}
+
+.cookie_body_title {
+  padding-top: 20px;
 }
 
 .cookie_body_text {
@@ -73,6 +81,12 @@ body {
   flex-direction: row;
   justify-content: space-between;
   margin-top: 1em;
+  background: none;
+}
+
+.toggle_button {
+  background: none !important;
+  background-color: red;
 }
 
 .cookie_body_text,
@@ -87,6 +101,7 @@ body {
 
 .action_links {
   margin-top: 0.9em;
+
 }
 
 .button {
@@ -96,7 +111,7 @@ body {
   border: none;
   text-align: center;
   display: inline-block;
-  border-radius: 12px;
+  border-radius: 100px;
   box-shadow: 0 5px 8px #888888;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -110,15 +125,22 @@ body {
 .firstButton {
   color: white;
   background-color: #00b87c;
+  font-size: 1rem;
 }
 
 .secondButton {
-  background-color: #c4c4c4;
+  color: #00b87c;
+  box-shadow: none;
+  /* background-color: #c4c4c4; */
+  font-size: 1rem;
 }
+
+
 @media (min-width: 35rem) {
   .cookie_content {
     max-width: 50%;
   }
+
   .button {
     width: 250px;
     padding-top: 10px;

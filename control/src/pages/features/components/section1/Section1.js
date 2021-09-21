@@ -40,11 +40,7 @@ const Section1 = () => {
           </div>
         </div>
         <div className={styles.section1ImageWrapper}>
-          <img
-            src={hero}
-            alt="group"
-            className={styles.groupImage}
-          />
+          <img src={hero} alt="group" className={styles.groupImage} />
         </div>
       </div>
     </div>
