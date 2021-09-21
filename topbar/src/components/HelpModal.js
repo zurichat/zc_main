@@ -122,7 +122,7 @@ const BackDrop = styled.div`
 const HelpContainer = styled.div`
   margin: 10% auto;
   padding: 1em;
-  width: 50%;
+  width: 40%;
   position: relative;
   z-index: 999;
   background-color: white;
@@ -135,7 +135,7 @@ const Head = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 0 0.15em;
-
+  margin-bottom: 0.5em;
   h3 {
     font-size: 20px;
     line-height: 30.77px;
@@ -149,10 +149,10 @@ const HeadIcon = styled.div`
   align-items: center;
 
   > img {
-    height: 0.4em;
+    height: 0.6em;
 
     &.middle {
-      height: 0.85em;
+      height: 0.9em;
       position: relative;
       top: -0.2em;
     }
@@ -206,9 +206,8 @@ const SearchUser = styled.div`
 
   span {
     position: absolute;
-    left: 0;
-    top: -0.1em;
-    padding-left: 0.5em;
+    top: -0.07em;
+    padding-left: 0.7em;
     color: #999999;
   }
 `
@@ -259,16 +258,16 @@ const GreenBox = styled.div`
 `
 
 const MiscContainer = styled.div`
-  margin-bottom: 3em;
+  margin: 0em 0 3em 0;
   > div {
     width: 100%;
-    height: 2em;
+    //height: 4em;
     border: 1px solid #bebebe;
     border-radius: 5px;
     display: flex;
     align-items: center;
     padding: 0.5em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.9em;
 
     > p {
       font-size: 13px;
@@ -278,20 +277,30 @@ const MiscContainer = styled.div`
         font-size: 11px;
       }
     }
+    @media (max-width: ${500}px) {
+      height: unset;
+    }
+  }
+  @media (max-width: ${500}px) {
+    margin: 0em 0 2em 0;
   }
 `
 
 const SmileyBox = styled.div`
   border: 1px solid #bebebe;
   /* padding: .3em; */
-  height: 1.2em;
-  width: 1.2em;
+  height: 2em;
+  width: 2em;
   border-radius: 5px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   > img {
-    height: 0.7em;
+    height: 1em;
+  }
+  @media (max-width: ${500}px) {
+    height: 1.5em;
+    width: 1.5em;
   }
 `
 

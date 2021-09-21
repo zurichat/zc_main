@@ -10,6 +10,8 @@ import HelpIcon from './assets/download_images/question.svg'
 import HelpIcons from '@material-ui/icons/HelpOutline'
 import TopbarModal from './components/TopbarModal'
 import HelpModal from './components/HelpModal'
+import UserForm from '../../control/src/pages/ReportFeature/components/Form'
+
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const state = useContext(TopbarContext)
@@ -39,6 +41,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       </HelpContainer>
       {helpModal ? <HelpModal  setHelpModal={setHelpModal}/> : ''}
 
+        <UserForm />
       <div>
         <img
           src={userAvatar}
@@ -89,7 +92,7 @@ const TopNavBarBase = styled.div`
 // `
 
 const HelpContainer = styled.div`
-  .MuiSvgIcon-root {
+  > .MuiSvgIcon-root {
     opacity: 0.5;
   }
   &:hover {
