@@ -1,0 +1,136 @@
+.section3 {
+  margin-top: 100px;
+}
+.section3TopTextsWrapper {
+  margin: 0 auto;
+  width: 72%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section3TopTextsWrapper h3 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2.2rem;
+  line-height: 130%;
+  text-align: center;
+  color: #242424;
+}
+.section3TopTextsWrapper p {
+  margin-top: 18px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.33rem;
+  line-height: 130%;
+  text-align: center;
+  color: #3a3a3a;
+}
+.featuresSection {
+  margin-top: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.featureCard {
+  width: 235px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.iconWrapper {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ecf8f5;
+  border-radius: 50%;
+}
+.featureCard h3 {
+  margin-top: 15px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #242424;
+}
+.featureCard p {
+  margin-top: 10px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
+  text-align: center;
+  color: #3a3a3a;
+}
+.zuriInterfaceViewWrapper {
+  margin-top: 150px;
+  width: 100%;
+}
+.zuriInterfaceViewWrapper img {
+  width: 100%;
+}
+
+/* Mediaqueries */
+
+/* @media (max-width: 800px) {
+
+} */
+
+@media (max-width: 500px) {
+  .section3TopTextsWrapper {
+    margin: 0;
+    width: 100%;
+  }
+  .section3TopTextsWrapper h3 {
+    font-size: 28px;
+    line-height: 36px;
+    text-align: left;
+  }
+  .section3TopTextsWrapper p {
+    font-size: 18px;
+    line-height: 23px;
+    text-align: left;
+  }
+  .featuresSection {
+    margin-top: 65px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    column-gap: 15px;
+    row-gap: 40px;
+  }
+  .featureCard {
+    width: 158px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .iconWrapper {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ecf8f5;
+    border-radius: 50%;
+  }
+  .iconWrapper img {
+    width: 40%;
+  }
+  .featureCard h3 {
+    font-size: 1rem;
+    line-height: 130%;
+  }
+  .featuresSection p {
+    font-size: 0.7rem;
+    line-height: 130%;
+  }
+  .zuriInterfaceViewWrapper {
+    margin-top: 50px;
+  }
+}
