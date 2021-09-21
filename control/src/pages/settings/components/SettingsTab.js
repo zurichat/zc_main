@@ -28,7 +28,6 @@ const SettingsTab = () => {
           title="Two-Factor Authentication"
           text="Two factor authentication is active for your account"
           btnText="expand"
-          timeZone=""
         >
           {/* Two factor authentication input field goes under here */}
           <TwoFactor />
@@ -40,7 +39,6 @@ const SettingsTab = () => {
           title="Email Address"
           text="Your email address is layobright@gmail.com"
           btnText="expand"
-          timeZone=""
         >
           {/* Email address input field goes under here */}
           <ChangeEmail />
@@ -52,7 +50,6 @@ const SettingsTab = () => {
           title="Time zone"
           text="Zurichat uses your time zone to send summary and notification emails, for times in your activity feeds and for  reminders. Your time zone is currently set to: (UTC+01:00) West Central Africa."
           btnText="expand"
-          // timeZone={showTime}
         >
           {/* TimeZone input field goes under here */}
           <TimeZone />
@@ -64,7 +61,6 @@ const SettingsTab = () => {
           title="Language"
           text="Choose the language you’d like to use with Zurichat. Your language is currently set to: English (Nigeria)."
           btnText="expand"
-          timeZone=""
         >
           {/* Language input field goes under here */}
           <Language />
@@ -114,12 +110,7 @@ const SettingsTab = () => {
       </div>
 
       <AnimateSharedLayout>
-        <PreferenceWrapper
-          title="Username"
-          text=""
-          btnText="expand"
-          timeZone=""
-        >
+        <PreferenceWrapper title="Username" btnText="expand">
           {/* Username input field goes under here */}
           <UserName />
         </PreferenceWrapper>
