@@ -3,7 +3,7 @@ import axios from 'axios'
 import styles from './reports.module.css'
 
 export const Confirm = props => {
-  const reportComplaint = (token, complaint) => {
+  const reportComplaint = async (token, complaint) => {
     // console.log(token,complaint)
     axios.defaults.xsrfHeaderName = 'X-CSRFTOKEN'
     axios.defaults.xsrfCookieName = 'csrftoken'
@@ -11,7 +11,7 @@ export const Confirm = props => {
       'Content-Type': 'application/json'
       //   Authorization: `Token ${token}`
     }
-    axios
+    await axios
       .post(`/api/report/`, complaint)
       .then(res => {
         console.log(res)
