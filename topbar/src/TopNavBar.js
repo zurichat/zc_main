@@ -8,8 +8,12 @@ import { BaseInput } from './TopBarIndex'
 import userAvatar from './assets/images/user.svg'
 import TopbarModal from './components/TopbarModal'
 import UserForm from '../../control/src/pages/ReportFeature/components/Form'
+<<<<<<< HEAD
 import { ProfileContext } from './context/ProfileModal'
 import { authAxios } from './utils/Api'
+=======
+
+>>>>>>> 1c7772a0b9f3fd3e3bb8e6a80ef356618c2e8829
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { openModal } = useContext(TopbarContext)
@@ -71,7 +75,11 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         placeholder="Search here"
         border={'#99999933'}
       />
+<<<<<<< HEAD
       <UserForm />
+=======
+        <UserForm />
+>>>>>>> 1c7772a0b9f3fd3e3bb8e6a80ef356618c2e8829
       <div>
         <img
           style={{ height: '30px', width: '30px', borderRadius: '5px' }}
