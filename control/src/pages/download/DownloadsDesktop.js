@@ -37,7 +37,7 @@ const DownloadsDesktop = () => {
         >
           <div>
             <h1 className={styles.h1}>
-              Download the Zuri Chat <br/> for Windows
+              Download the Zuri Chat <br /> for Windows
             </h1>
             <p className={styles.p}>
               With the Zuri Chat app, you will always be in touch with your
@@ -75,7 +75,7 @@ const DownloadsDesktop = () => {
             className={`${styles.container} col container p-lg-5 p-md-5 m-md-4 m-lg-5`}
           >
             <div>
-              <h1 className={ `${styles.h1}`}>
+              <h1 className={`${styles.h1}`}>
                 Download the Zuri Chat <br /> for MacOS
               </h1>
               <p className={styles.p}>
