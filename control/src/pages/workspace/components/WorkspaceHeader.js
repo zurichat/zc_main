@@ -1,10 +1,9 @@
-import React from "react"
-import {Link} from 'react-router-dom'
-import ZuriLogo from "./ZuriLogo"
+import React from 'react'
+import { Link } from 'react-router-dom'
+import ZuriLogo from './ZuriLogo'
 import styles from '../style/workspace.module.css'
 
 const WorkspaceHeader = () => {
-
   return (
     <header className={`${styles.workspace_header}`}>
       <section className={`${styles.page_header}`}>

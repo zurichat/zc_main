@@ -1,23 +1,22 @@
-
 const reducer = (state, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case 'SELECT_WORKSPACE':
       let tempOrg = state.organizations.map(org => {
-        if(org.id === action.payload) {
-          return {...org, selected: !org.selected}
+        if (org.id === action.payload) {
+          return { ...org, selected: !org.selected }
         }
         return org
       })
-      return {...state, organizations: tempOrg}
+      return { ...state, organizations: tempOrg }
     case 'ACTION_CALL_API':
-      return {...state, loading: true}
+      return { ...state, loading: true }
     case 'ACTION_SUCCESSFUL':
       const organizations = action.data.map(org => {
-        return {...org, selected: false}
+        return { ...org, selected: false }
       })
-      return {...state, organizations, loading: false}
+      return { ...state, organizations, loading: false }
     case 'ACTION_FAILED':
-      return {...state, error: action.error, loading: false}
+      return { ...state, error: action.error, loading: false }
     default:
       return state
   }

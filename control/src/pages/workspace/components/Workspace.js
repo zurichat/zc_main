@@ -1,17 +1,15 @@
-import React from "react"
+import React from 'react'
 // Components
-import WorkspaceHeader from "./WorkspaceHeader"
-import { WorkspaceProvider } from "./WorkspaceContext"
-import { useWorkspaceContext } from "./WorkspaceContext"
+import WorkspaceHeader from './WorkspaceHeader'
+import { WorkspaceProvider } from './WorkspaceContext'
+import { useWorkspaceContext } from './WorkspaceContext'
 // Styles
 import styles from '../style/workspace.module.css'
-import WorkspaceCard from "./WorkspaceCard"
-import WorkspaceFooter from "./WorkspaceFooter"
-import SelectedWorkspace from "./SelectedWorkspace"
-
+import WorkspaceCard from './WorkspaceCard'
+import WorkspaceFooter from './WorkspaceFooter'
+import SelectedWorkspace from './SelectedWorkspace'
 
 const Workspace = () => {
-
   return (
     <WorkspaceProvider>
       <div className={`${styles.workspace}`}>
@@ -22,7 +20,7 @@ const Workspace = () => {
             <WorkspaceCard />
           </article>
         </main>
-        <WorkspaceFooter/>
+        <WorkspaceFooter />
       </div>
     </WorkspaceProvider>
   )
