@@ -1,0 +1,49 @@
+.section6 {
+  margin: 180px 0;
+}
+
+.section6TopTextWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.section6TopTextWrapper h2 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2.5rem;
+  line-height: 130%;
+  color: #242424;
+}
+
+.section6CardWrapper {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(158.5px, 32.2%));
+  gap: 20px;
+}
+
+/* Mediaqueries */
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 800px) {
+}
+
+@media (max-width: 500px) {
+  .section6 {
+    margin: 80px 0;
+  }
+
+  .section6CardWrapper {
+    margin-top: 60px;
+    gap: 10px;
+  }
+
+  .section6TopTextWrapper h2 {
+    text-align: center;
+    font-size: 1.7rem;
+  }
+}

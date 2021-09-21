@@ -1,0 +1,217 @@
+.themeCont {
+  margin-top: 54px;
+  margin-left: 50px;
+  width: 340%;
+}
+
+.sync {
+  display: flex;
+  margin-top: 15px;
+}
+
+.checkbox {
+  margin-top: -2px;
+}
+
+.os {
+  font-weight: bold;
+  font-size: 12px;
+  font-style: normal;
+  position: relative;
+  line-height: 20px;
+  color: #3a3a3a;
+}
+
+.text {
+  font-size: 15px;
+  margin-left: 31px;
+  font-weight: 700;
+  color: #3a3a3a;
+  position: relative;
+}
+
+.direct {
+  display: flex;
+  margin-top: 12px;
+}
+
+.radio {
+  margin-top: -2px;
+}
+
+.mention {
+  font-size: 13px;
+  color: #3a3a3a;
+  font-weight: 500;
+  line-height: 20px;
+  font-style: normal;
+  position: relative;
+  margin-left: 18px;
+}
+
+.text2 {
+  margin-left: 32px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #3a3a3a;
+  font-style: normal;
+  position: relative;
+}
+
+.theme1 {
+  width: 87%;
+  margin-top: 25px;
+  margin-left: 32px;
+}
+
+.theme2 {
+  width: 87%;
+  margin-top: 25px;
+  margin-left: 32px;
+}
+
+.customize {
+  border-top: 1px solid rgba(153, 153, 153, 0.5);
+  margin-top: 30px;
+  margin-left: 32px;
+  width: 87%;
+}
+
+.text3 {
+  margin-top: 20px;
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 20px;
+  color: #3a3a3a;
+}
+
+.custom {
+  font-size: 13px;
+  color: #3a3a3a;
+  margin-top: 17px;
+  font-weight: 500;
+  line-height: 20px;
+  font-style: normal;
+}
+
+.create {
+  font-size: 13px;
+  color: #00b87c;
+  font-weight: 600;
+  margin-top: 12px;
+  line-height: 20px;
+  font-style: normal;
+}
+
+.true {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  font-style: normal;
+  color: #999999;
+  margin-top: 25px;
+}
+
+.set1 {
+  display: flex;
+  margin-left: 32px;
+  margin-top: 20px;
+}
+
+.theme3 {
+  width: 110%;
+  height: 21vh;
+}
+
+.theme4 {
+  width: 90%;
+  height: 21vh;
+  margin-left: 42px;
+}
+
+.all {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 32px;
+}
+
+.show {
+  margin-left: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  font-style: normal;
+  color: #333333;
+}
+
+.arrow {
+  margin-top: -5px;
+}
+
+.clean {
+  margin-top: 20px;
+  margin-left: 32px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  font-style: normal;
+  color: #999999;
+}
+
+.set2 {
+  display: flex;
+  margin-left: 32px;
+  margin-top: 20px;
+}
+
+.theme5 {
+  width: 110%;
+  height: 21vh;
+}
+
+.theme6 {
+  width: 90%;
+  height: 21vh;
+  margin-left: 42px;
+}
+
+.set3 {
+  display: flex;
+  margin-left: 32px;
+  margin-top: 20px;
+}
+
+.theme7 {
+  width: 110%;
+  height: 21vh;
+}
+
+.theme8 {
+  width: 90%;
+  height: 21vh;
+  margin-left: 42px;
+}
+
+.set4 {
+  border-bottom: 1px solid rgb(192, 186, 186);
+  margin-left: 32px;
+  width: 87%;
+}
+
+.bottom {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.theme9 {
+  width: 110%;
+  height: 21vh;
+}
+
+.theme10 {
+  width: 90%;
+  height: 21vh;
+  margin-left: 42px;
+}
