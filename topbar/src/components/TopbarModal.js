@@ -112,7 +112,7 @@ const TopbarModal = ({ members }) => {
           <div className={styles.sectionFour}>
             <p
               onClick={() => {
-                // setModal('edit profile') //needs refactoring
+               setModal('edit profile') 
                 toggleModalState()
               }}
             >
@@ -121,7 +121,7 @@ const TopbarModal = ({ members }) => {
             <p onClick={toggleProfileState}>View profile</p>
             <p
               onClick={() => {
-                // setModal('preference') //needs refactoring
+                setModal('preference') 
                 toggleModalState()
               }}
             >
