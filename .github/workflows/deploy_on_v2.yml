@@ -3,7 +3,7 @@ name: Zuri main Deployment
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [v2]
+    branches: [main]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -21,11 +21,11 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            cd /var/www/zurichat/v2_branch/zc_main
+            cd /var/www/zurichat/main_branch/zc_main
             git stash
             git fetch --all
-            git reset --hard origin/v2
-            git pull origin v2
+            git reset --hard origin/main
+            git pull origin main
             yarn install
             yarn build 
             pm2 stop ecosystem.config.js

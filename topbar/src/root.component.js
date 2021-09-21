@@ -8,11 +8,11 @@ import TopNavBar from './TopNavBar'
 export default function Root() {
   return (
     <Provider store={store}>
-    <TopbarProvider>
-    <ProfileProvider>
-      <TopNavBar />
-    </ProfileProvider>
-    </TopbarProvider>
+      <TopbarProvider>
+        <ProfileProvider>
+          <TopNavBar />
+        </ProfileProvider>
+      </TopbarProvider>
     </Provider>
   )
 }
