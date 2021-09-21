@@ -22,11 +22,7 @@ const Section3 = () => {
       <div className={styles.featuresSection}>
         <div className={styles.featureCard}>
           <div className={styles.iconWrapper}>
-            <img
-              src={channels}
-              alt="hashtag"
-              className={styles.hashtag}
-            />
+            <img src={channels} alt="hashtag" className={styles.hashtag} />
           </div>
           <h3>Channels</h3>
           <p>
@@ -36,33 +32,21 @@ const Section3 = () => {
         </div>
         <div className={styles.featureCard}>
           <div className={styles.iconWrapper}>
-            <img
-              src={holiday}
-              alt="holiday"
-              className={styles.holiday}
-            />
+            <img src={holiday} alt="holiday" className={styles.holiday} />
           </div>
           <h3 className={styles.com}>Holiday Calendar</h3>
           <p>Add holidays, set reminders and see all in one view</p>
         </div>
         <div className={styles.featureCard}>
           <div className={styles.iconWrapper}>
-            <img
-              src={company}
-              alt="deadline"
-              className={styles.deadline}
-            />
+            <img src={company} alt="deadline" className={styles.deadline} />
           </div>
           <h3>Company Deadline</h3>
           <p>Meet up with deadlines with the company deadline feature.</p>
         </div>
         <div className={styles.featureCard}>
           <div className={styles.iconWrapper}>
-            <img
-              src={quick}
-              alt="chat"
-              className={styles.chat}
-            />
+            <img src={quick} alt="chat" className={styles.chat} />
           </div>
           <h3>Quick Reply App</h3>
           <p>
@@ -71,11 +55,7 @@ const Section3 = () => {
         </div>
         <div className={styles.featureCard}>
           <div className={styles.iconWrapper}>
-            <img
-              src={list}
-              alt="To do list"
-              className={styles.todolist}
-            />
+            <img src={list} alt="To do list" className={styles.todolist} />
           </div>
           <h3>To do list</h3>
           <p>
