@@ -2,7 +2,6 @@
   "files.associations": {
     "**/*.js": "javascript",
     "**/src/**/*.js": "javascriptreact",
-    "**/src/**/*.jsx": "javascriptreact",
-    "**/.husky/": "bash"
+    "**/src/**/*.jsx": "javascriptreact"
   }
 }

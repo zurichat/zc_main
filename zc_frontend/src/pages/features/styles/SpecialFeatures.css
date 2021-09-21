@@ -1,0 +1,22 @@
+.features {
+  margin: 40px;
+}
+
+.links {
+  background-color: #fff;
+  margin-top: 20px;
+  display: flex;
+  padding: 0 10px;
+  justify-content: space-between;
+}
+
+.arrow {
+  margin-left: 120px;
+}
+
+@media only screen and (max-width: 600px) {
+  .links {
+    display: inline-block;
+    padding: 55px;
+  }
+}

@@ -1,0 +1,65 @@
+.faqs {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.5rem;
+  display: block;
+}
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.accordion {
+  padding: 1.1rem 2rem;
+  width: 62.5rem;
+}
+.items {
+  padding: 10px 0;
+  border-bottom: 2px solid grey;
+  text-align: left;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+}
+.title h6 {
+  padding-right: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1.5;
+}
+.title span {
+  color: #333333;
+  font-size: 1.5rem;
+}
+.answer {
+  text-align: left;
+  overflow: hidden;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #333333;
+  max-height: 0;
+  line-height: 2;
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+}
+.answer.show {
+  height: auto;
+  max-height: 62.5rem;
+  transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+}
+.billing {
+  font-weight: bold;
+  margin-top: 1.3rem;
+  padding: 0 5rem;
+  font-size: 18px;
+}
+.billing .info {
+  color: rgb(107, 180, 107);
+}
+.billing .info:hover {
+  text-decoration: underline;
+}
