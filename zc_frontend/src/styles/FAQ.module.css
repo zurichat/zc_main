@@ -5,6 +5,14 @@
   padding-top: 1.5rem;
   display: block;
 }
+
+.faqs > .h2{
+  display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .wrapper {
   display: flex;
   flex-wrap: wrap;
