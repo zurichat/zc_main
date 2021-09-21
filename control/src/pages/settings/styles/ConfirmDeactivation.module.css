@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 .deactivationSection {
-  padding-top: 100px;
+  padding-top: 60px;
   margin: 0 13%;
   /* position: relative; */
 }
@@ -41,9 +41,8 @@
 .danger1,
 .danger2,
 .cancel {
-  padding: 14px 60px;
-  font-size: 17px;
-  font-weight: bold;
+  padding: 12px 40px;
+  font-size: 15px;
   color: #3a3a3a;
   border: none;
   border-radius: 3px;
@@ -59,13 +58,13 @@
   background: #bebebe;
   margin-right: 10px;
 }
+
 .cancel {
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 184, 124, 0.5);
+  color: rgba(0, 184, 124, 0.5);
 }
-.cancel:hover {
-  color: #3a3a3a;
-}
+
 .checkBoxInactive {
   display: inline-block;
   margin-right: 10px;
@@ -89,6 +88,7 @@
   border-radius: 1px;
   cursor: pointer;
 }
+
 @media screen and (max-width: 900px) {
   .deactivationSection {
     margin: 0 3%;
@@ -103,16 +103,21 @@
     font-size: 16px;
   }
 }
+
 @media screen and (max-width: 620px) {
   .confirmationBox p {
     font-size: 18px;
   }
 }
-@media screen and (max-width: 410px) {
+
+@media screen and (max-width: 415px) {
   .danger1,
   .danger2,
   .cancel {
     padding: 8px 15px;
     font-size: 14px;
+  }
+  .confirmationBox {
+    padding: 15px 10px;
   }
 }

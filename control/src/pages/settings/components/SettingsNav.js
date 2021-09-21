@@ -1,15 +1,12 @@
 import React, { useState, useContext } from 'react'
 
-// import { TopbarContext } from '../../../context/Topbar'
+import { TopbarContext } from '../../../context/Topbar'
 
 import styles from '../styles/settingsNav.module.css'
 import { BiMenuAltRight } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
-import zuri from '../../../component-assets/zuri.svg'
-import searchIcon from '../../../component-assets/search-2-line.svg'
-import settingsIcon from '../../../component-assets/settings.svg'
-import profilePic from '../../../component-assets/profilepic.png'
-// import StatusBadge from './../../../components/StatusBadge'
+import zuri from '../assets/zuri.svg'
+import navImage from '../assets/navImage.png'
 
 const SettingsNav = () => {
   const [menu, setMenu] = useState(false)
@@ -35,26 +32,17 @@ const SettingsNav = () => {
             className={styles.searchInput}
             placeholder="Search here"
           />
-          <img src={searchIcon} className={styles.searchSvg} alt="search" />
         </div>
       </div>
 
       <div className={styles.rightnav}>
-        <div className={styles.settings}>
-          <img src={settingsIcon} alt="settings" />
-        </div>
-
-        <div className={styles.profile}>
-          <div className={styles.status}>{/*<StatusBadge />*/}</div>
-          <div className={styles.pImage}>
-            <img src={profilePic} alt="Profile" className={styles.profileImg} />
+        <div className={styles.pImage}>
+          <img src={navImage} alt="Profile" className={styles.profileImg} />
+          {/* {active ? (
             <div className={styles.circles}></div>
-            {/*active ? (
-              <div className={styles.circles}></div>
-            ) : (
-              <div className={styles.circleAway}></div>
-            )*/}
-          </div>
+          ) : (
+            <div className={styles.circleAway}></div>
+          )} */}
         </div>
       </div>
     </div>

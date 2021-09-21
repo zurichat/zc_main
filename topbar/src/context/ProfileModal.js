@@ -5,7 +5,7 @@ export const ProfileProvider = ({ children }) => {
   const [modal, setModal] = useState(false)
   const [showProfile, setShowProfile] = useState(false)
   const [sideBar, setSideBar] = useState(1)
-  
+
   const toggleModalState = () => {
     setModal(!modal)
   }
@@ -13,7 +13,6 @@ export const ProfileProvider = ({ children }) => {
   const toggleProfileState = () => {
     setShowProfile(!showProfile)
   }
-  
 
   return (
     <ProfileContext.Provider
