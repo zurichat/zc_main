@@ -123,6 +123,7 @@ const TopbarModal = ({ members }) => {
               onClick={() => {
                 setModal('preference')
                 toggleModalState()
+                
               }}
             >
               Preferences
