@@ -94,8 +94,6 @@ const TopbarModal = ({ members }) => {
 
   useEffect(() => {
     setPresence(user.presence)
- 
-   
   }, [user])
 
   return (

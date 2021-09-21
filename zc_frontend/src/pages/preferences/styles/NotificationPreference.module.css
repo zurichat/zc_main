@@ -7,7 +7,6 @@
   display: none;
 }
 
-
 /* THE SECTION OF THE CONTENT */
 .notifyContent {
   width: 75%;
@@ -15,7 +14,6 @@
   padding-bottom: 70px;
   display: block;
   margin-top: 24px;
-  
 }
 
 .itemTitle1 {
@@ -47,7 +45,7 @@
   line-height: 21px;
 }
 .itemTitle1 span {
-  color: #1A61DB;
+  color: #1a61db;
   font-size: 13px;
   font-size: 15px;
   font-weight: normal;
@@ -69,7 +67,7 @@
   font-family: Lato;
   font-weight: 400;
   font-size: 13px;
-  color: #3A3A3A;
+  color: #3a3a3a;
   line-height: 21px;
   align-self: center;
 }
@@ -77,7 +75,7 @@
 input[type='checkbox'] {
   margin-right: 19px;
   border-color: #00b87c;
-  background-color: #00b87c
+  background-color: #00b87c;
 }
 
 .checkbox {
@@ -98,7 +96,7 @@ input[type='checkbox'] {
   display: block;
   font-weight: 400;
   font-size: 13px;
-  color: #3A3A3A;
+  color: #3a3a3a;
   overflow-wrap: break-word;
 }
 .line {
@@ -106,7 +104,7 @@ input[type='checkbox'] {
   width: 600px;
   height: 1px;
   border: 1px thin rgba(196, 196, 196, 0.3);
-  background-color: #C4C4C4;
+  background-color: #c4c4c4;
   position: relative;
   margin-left: 30px;
   margin-bottom: 5px;
@@ -123,14 +121,14 @@ input[type='checkbox'] {
   margin-top: 10px;
 }
 .itemTitle2 span {
-  color: #3A3A3A;
+  color: #3a3a3a;
   font-size: 13px;
   margin-left: 0px;
   margin-bottom: 4px;
   margin-top: -10px;
 }
 .itemTitle2 .spanSmall {
-  color: #1A61DB;
+  color: #1a61db;
 }
 .textarea {
   border-color: 1px #e5e5e5;
@@ -161,7 +159,7 @@ input[type='checkbox'] {
   font-family: lato;
   font-weight: normal;
   border: 1px solid #e0e0e0;
-  color: #3A3A3A;
+  color: #3a3a3a;
   margin-top: 24px;
 }
 .listChild p {
@@ -219,7 +217,7 @@ input[type='checkbox'] {
   border-radius: 4px;
   padding: 5px 5px 3px;
   margin-bottom: 16px;
-  color: #3A3A3A;
+  color: #3a3a3a;
   border: 1px solid #e5e5e5;
   outline: none;
   font-style: normal;
@@ -243,7 +241,7 @@ input[type='checkbox'] {
   font-weight: 400;
   font-size: 13px;
   line-height: 21px;
-  color: #3A3A3A;
+  color: #3a3a3a;
 }
 
 .mute {
@@ -293,7 +291,7 @@ input[type='checkbox'] {
   font-size: 12px;
   border: 1px solid rgb(218, 215, 215);
   border-radius: 4px;
-  color: #3A3A3A;
+  color: #3a3a3a;
   outline: none;
 }
 
@@ -307,7 +305,7 @@ input[type='checkbox'] {
 
 .when {
   font-size: 13px;
-  color: #3A3A3A;
+  color: #3a3a3a;
   font-family: Lato;
   font-style: normal;
   font-weight: 400;
@@ -330,7 +328,7 @@ input[type='checkbox'] {
   border: 1px solid rgb(218, 215, 215);
   border-radius: 4px;
   font-size: 13px;
-  color: #3A3A3A;
+  color: #3a3a3a;
   outline: none;
   width: 273px;
   height: 39px;

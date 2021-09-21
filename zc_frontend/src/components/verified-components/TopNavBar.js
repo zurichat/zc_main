@@ -32,8 +32,8 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       />
       <div>
         <img
-          style={{ height: "40px", width: "40px", borderRadius: '5px' }}
-          src={userProfileImage ? userProfileImage : userAvatar }
+          style={{ height: '40px', width: '40px', borderRadius: '5px' }}
+          src={userProfileImage ? userProfileImage : userAvatar}
           onClick={openModal}
           role="button"
           alt="user profile avatar"

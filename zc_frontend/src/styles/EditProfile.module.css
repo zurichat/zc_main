@@ -39,7 +39,7 @@
   font-size: 14px;
   line-height: 21px;
 }
-.imageUpload{
+.imageUpload {
   border: 1px solid #e5e5e5;
   box-sizing: border-box;
   border-radius: 5px;
@@ -390,8 +390,7 @@
   .formMargin {
     margin-bottom: 0;
   }
-  .imageUpload{
-    display : none
+  .imageUpload {
+    display: none;
   }
-
 }

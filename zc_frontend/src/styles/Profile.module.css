@@ -1,6 +1,6 @@
 .container {
   width: 20.5rem;
- margin-top : 4.25em;
+  margin-top: 4.25em;
   height: calc(100vh - 4.25em);
   background: #fff;
   position: relative;
@@ -51,13 +51,13 @@
 }
 
 .userAvatar {
-   display: flex;
-  align-self: center; 
-  margin: 0 auto; 
+  display: flex;
+  align-self: center;
+  margin: 0 auto;
   width: 300px;
   height: 200px;
   object-fit: cover;
-  border-radius : 10px
+  border-radius: 10px;
 }
 
 .userDetails {
@@ -260,14 +260,13 @@
 
 @media (max-width: 768px) {
   .container {
-    
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     width: 100vw;
     height: 100vh;
-    margin-top : 5px;
+    margin-top: 5px;
     overflow-y: auto;
     border-radius: 8px 8px 0px 0px;
   }

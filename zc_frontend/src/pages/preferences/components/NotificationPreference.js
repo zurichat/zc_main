@@ -5,48 +5,41 @@ import { TextInput } from './TextInput'
 import { authAxios } from '../../../util/Api'
 import { ProfileContext } from '../../../context/ProfileModal'
 
-
-
-
 const NotificationPreference = () => {
   const [active, setActive] = useState(0)
   const [active1, setActive1] = useState(0)
 
   const { user, orgId } = useContext(ProfileContext)
- 
-  const [dataState, setDataState] = useState ({
+
+  const [dataState, setDataState] = useState({
     // channel_hurdle_notification: channel_hurdle,
     email_notifications_for_mentions_and_dm: null,
     message_preview_in_each_notification: false,
     mute_all_sounds: false,
-    my_keywords: "",
-    notification_schedule: "",
-    notify_me_about: "",
+    my_keywords: '',
+    notification_schedule: '',
+    notify_me_about: '',
     thread_replies_notification: false,
-    use_different_settings_mobile: "",
-    when_iam_not_active_on_desktop: ""
+    use_different_settings_mobile: '',
+    when_iam_not_active_on_desktop: ''
   })
-  
-   
-
 
   const setData = () => {
-        authAxios.patch(`/organizations/${orgId}/members/${user._id}/settings`, {         
-          settings: {
-              notifications: dataState
-            }
-          })
-        .then(res => {
+    authAxios
+      .patch(`/organizations/${orgId}/members/${user._id}/settings`, {
+        settings: {
+          notifications: dataState
+        }
+      })
+      .then(res => {
         console.log(res)
         setState({ loading: false })
-})
-        .catch(err => {
+      })
+      .catch(err => {
         console.log(err?.response?.data)
         setState({ loading: false })
-}
-  
-)
-} 
+      })
+  }
   const [state, setState] = useState({
     name: 'React',
     value: 'duration'
@@ -57,10 +50,9 @@ const NotificationPreference = () => {
   }
 
   useEffect(() => {
-    setData();
+    setData()
     console.log(dataState)
     console.log(user)
-    
   }, [dataState])
 
   return (
@@ -80,9 +72,12 @@ const NotificationPreference = () => {
               <input
                 type="radio"
                 value="all-messages"
-               
                 checked={active1 === 0}
-                onClick={() => {setActive1(0); setDataState({notify_me_about: "all-messages"}); setData()}}
+                onClick={() => {
+                  setActive1(0)
+                  setDataState({ notify_me_about: 'all-messages' })
+                  setData()
+                }}
               />
               <label htmlFor="all-messages">All messages</label>
             </div>
@@ -92,7 +87,11 @@ const NotificationPreference = () => {
                 type="radio"
                 value="direct-messages"
                 checked={active1 === 1}
-                onClick={() => {setActive1(1); setDataState({notify_me_about: "direct-message"}); setData()}}
+                onClick={() => {
+                  setActive1(1)
+                  setDataState({ notify_me_about: 'direct-message' })
+                  setData()
+                }}
               />
               <label htmlFor="direct-messages">Direct messages</label>
             </div>
@@ -101,7 +100,11 @@ const NotificationPreference = () => {
                 type="radio"
                 value="none"
                 checked={active1 === 2}
-                onClick={() => {setActive1(2); setDataState({thread_replies_notification:"none"}); setData()}}
+                onClick={() => {
+                  setActive1(2)
+                  setDataState({ thread_replies_notification: 'none' })
+                  setData()
+                }}
               />
               <label htmlFor="none">Nothing</label>
             </div>
@@ -117,24 +120,33 @@ const NotificationPreference = () => {
           {/* <hr />  */}
           <div className={styles.checkbox}>
             <label htmlFor="for-meeting">
-              <input type="checkbox" value="for-meeting" 
-              onClick= {()=>{setDataState({use_different_settings_mobile: "yes"}); setData()}} />
+              <input
+                type="checkbox"
+                value="for-meeting"
+                onClick={() => {
+                  setDataState({ use_different_settings_mobile: 'yes' })
+                  setData()
+                }}
+              />
               Notify me when a meeting is set
             </label>
           </div>
           <div className={styles.checkbox}>
             <label htmlFor="for-thread">
-              <input 
-               
-              type="checkbox" value="for-thread"
-              onClick= {()=>{setDataState({use_different_settings_mobile: "yes"}); setData()}}
+              <input
+                type="checkbox"
+                value="for-thread"
+                onClick={() => {
+                  setDataState({ use_different_settings_mobile: 'yes' })
+                  setData()
+                }}
               />
               Notify me of replies to thread
             </label>
           </div>
         </form>
         <div className={styles.itemTitle2}>
-        <div className={styles.line}></div>
+          <div className={styles.line}></div>
           <h4 class={styles.titleSmall}>Keywords</h4>{' '}
           <span>
             You will be notified anything, someone uses these keywords in a
@@ -196,8 +208,13 @@ const NotificationPreference = () => {
           </div>
           <div className={styles.checkbox}>
             <label htmlFor="for-muteall">
-              <input type="checkbox"               
-              onClick= {()=>{setDataState({mute_all_sounds: "yes"}); setData()}} />
+              <input
+                type="checkbox"
+                onClick={() => {
+                  setDataState({ mute_all_sounds: 'yes' })
+                  setData()
+                }}
+              />
               Mute all
             </label>
           </div>
@@ -252,7 +269,11 @@ const NotificationPreference = () => {
                 type="radio"
                 value="never"
                 checked={active === 0}
-                onClick={() => {setActive(0); setDataState({notify_me_about: "all-messages"}); setData()}}
+                onClick={() => {
+                  setActive(0)
+                  setDataState({ notify_me_about: 'all-messages' })
+                  setData()
+                }}
               />
               <label htmlFor="never">Never</label>
             </div>
@@ -306,9 +327,14 @@ const NotificationPreference = () => {
         </div>
         <div className={styles.checkbox}>
           <label>
-            <input type="checkbox" 
-                onClick={() => {setDataState({notify_me_about: "all-messages"}); setData()}}            
-            /> Send me email notifications for mentions{' '}
+            <input
+              type="checkbox"
+              onClick={() => {
+                setDataState({ notify_me_about: 'all-messages' })
+                setData()
+              }}
+            />{' '}
+            Send me email notifications for mentions{' '}
           </label>
         </div>
       </div>
