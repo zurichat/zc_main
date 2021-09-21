@@ -1,3 +1,4 @@
+import { useState,useEffect } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Login from './pages/login'
 import SignUp from './pages/signup'
@@ -23,11 +24,30 @@ import AccDeactivated from './pages/settings/components/AccDeactivated'
 import DeactivateAccount from './pages/settings/components/AcctDeactivation'
 import AllSessionSignOut from './pages/settings/components/AllSessionSignOut'
 import PrivateRoute from './pages/settings/Utils/PrivateRoute'
-import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation'
+import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation';
+import WorkspaceHome from './pages/createworkspace/components/WorkspaceHome'
+import ProjectName from './pages/createworkspace/components/ProjectName';
+import LaunchPage from './pages/createworkspace/components/LaunchPage';
+import Step3 from './pages/createworkspace/components/Step3';
+import CompanyName from './pages/createworkspace/components/CompanyName';
+import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContext'
 
-const App = () => (
+
+const App = () => {
+//   const [input,setInput] = useState('');
+
+// useEffect(() => {
+//     localStorage.setItem('input',input);
+// },[input]);
+
+// const handleInputChange = (event) => {
+//     setInput(event.target.value);
+// }
+// let workspaceRoute = '/createworkspace';
+return(
   <BrowserRouter>
     <Switch>
+    
       <Route path="/" exact>
         <LandingPage />
       </Route>
@@ -55,6 +75,7 @@ const App = () => (
       <Route path="/events">
           <Events />
         </Route>
+        <CreateWorkSpaces/>
       <Route path="/download-app">
         <Download />
       </Route>
@@ -95,4 +116,6 @@ const App = () => (
     </Switch>
   </BrowserRouter>
 )
+  
+}
 export default App
