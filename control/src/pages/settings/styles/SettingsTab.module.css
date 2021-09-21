@@ -1,6 +1,15 @@
 .settings_wrapper {
   border-bottom: 1px solid #dedede;
   padding: 20px 0;
+  background: #fff;
+}
+
+.settings_wrapper button {
+  outline: none;
+}
+
+.settings_wrapper button:hover {
+  color: #fff;
 }
 
 .settings_wrapper:last-child {
@@ -37,17 +46,18 @@
 }
 
 .emailLink {
-  color: #00b87c !important;
+  color: #b8003c !important;
   /* font-size: 12px; */
   text-decoration: none;
 }
 
 .settingsright button {
   background: #ffffff;
-  border: 1px solid #dedede;
+  border: 1px solid rgba(0, 184, 124, 0.5);
+  color: rgba(0, 184, 124, 0.5);
   box-sizing: border-box;
   border-radius: 4px;
-  padding: 9px 18px;
+  padding: 9px 18px !important;
   font-size: 13px;
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
@@ -55,6 +65,13 @@
   -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
   font-weight: 600;
+  line-height: 15px;
+  width: 100%;
+  height: 40px;
+}
+
+.settingsright button:hover {
+  color: rgba(0, 184, 123, 0.719);
 }
 
 .settingsright .signout {
@@ -73,13 +90,44 @@
 
 /* THE SECTION OF THE PASSWORD */
 
+.passwordsection {
+  margin-top: 10px;
+}
+
 .passwordsection button {
   font-size: 13px;
   padding: 10px 22px;
+  background: #00b87c;
+  outline: none !important;
+  color: #fff;
+  width: 80% !important;
+  height: 50px;
+}
+
+.passwordsection button:hover {
+  background: #00b87c;
 }
 
 .passwordsection::-webkit-input-placeholder {
   font-size: 12px !important;
+}
+
+#p_section {
+  font-size: 1px;
+  width: 100%;
+}
+
+#p_section button {
+  width: 30% !important;
+}
+
+#p_section p {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+#p_section p span {
+  color: #2f80ed;
 }
 
 .passwordsection p {
@@ -98,7 +146,8 @@
   box-shadow: inset 0 -1px 0 #ddd;
 }
 
-.passwordsection select {
+.passwordsection select,
+.passwordsection input {
   font-size: 13px;
   padding: 9px;
   color: #8c8c8c;
@@ -106,6 +155,7 @@
 }
 
 /* THE SECTION OF THE TWO FACTOR */
+
 .two_factor p {
   font-size: 14px;
   width: 60%;
@@ -115,16 +165,24 @@
 }
 
 .two_factor p a {
-  color: #00b87c;
+  color: #2f80ed;
 }
 
 .two_factor button {
-  font-size: 11px;
+  font-size: 13px;
+  background: #00b87c;
+  color: #fff;
+  padding: 10px 25px;
+  height: 50px;
+}
+
+.two_factor button:hover {
+  color: #fff;
 }
 
 .two_factor span {
-  font-size: 13px;
-  color: #3a3a3a;
+  font-size: 14px;
+  color: #b8003c;
 }
 
 @media screen and (max-width: 868px) {
@@ -139,7 +197,21 @@
 
   .passwordsection input,
   .passwordsection select {
-    width: 90% !important;
+    width: 100% !important;
+  }
+
+  .passwordsection button {
+    width: 100% !important;
+  }
+
+  .two_factor button {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 766px) {
+  #p_section button {
+    width: 100% !important;
   }
 }
 
