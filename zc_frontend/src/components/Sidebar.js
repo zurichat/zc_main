@@ -12,7 +12,7 @@ import styled from 'styled-components'
 import AuthInputBox from '../components/AuthInputBox'
 // import JoinedRooms from './joinedRooms/JoinedRooms'
 // import PublicRooms from '../publicRooms/PublicRooms'
-import cheerio from 'cheerio'
+//import cheerio from 'cheerio'
 
 import threadIcon from './verified-components/assets/icons/thread-icon.svg'
 import dmIcon from './verified-components/assets/icons/dm-icon.svg'
@@ -38,7 +38,7 @@ export const Sidebar = () => {
   const { setUrl } = useContext(URLContext)
   const { setUser, setOrgId } = useContext(ProfileContext)
   const [show, setShow] = useState(false)
-  const { plugins, setPlugins } = useContext(PluginContext)
+ // const { plugins, setPlugins } = useContext(PluginContext)
 
   // const user = JSON.parse(sessionStorage.getItem('user'))
   // const org_id = '6133c5a68006324323416896'

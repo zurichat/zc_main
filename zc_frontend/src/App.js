@@ -1,9 +1,9 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Home from './pages/home'
 import Login from './pages/login'
 import SignUp from './pages/signup'
 import './styles/globals.css'
-// import LandingPage from './components/LandingPage'
+//import LandingPage from './components/LandingPage'
 import Homepage from './components/Homepage'
 //import EmailVerification from './pages/email-verify'
 import Security from './pages/security'
@@ -12,14 +12,14 @@ import Resources from './pages/resources'
 import AppsAndIntegrations from './pages/apps-integrations'
 import Careers from './pages/careers'
 import Blogs from './pages/blogs'
-import Download from './pages/download'
+//import Download from './pages/download'
 import ContactUs from './pages/contact-us'
 import Pricing from './pages/pricing'
 import Header from './components/externalPagesComponents/Header'
 import './styles/globals.css'
 import MarketPlace from './pages/marketplace/marketplace'
 import Input from './components/externalPagesComponents/Input'
-// import CookiesBanner from './components/externalPagesComponents/CookiesBanner/cookiesBanner'
+//import CookiesBanner from './components/externalPagesComponents/CookiesBanner/cookiesBanner'
 import FAQ from './pages/FAQ'
 import Settings from './pages/settings'
 import SearchResult from './components/SearchResults3'
@@ -47,7 +47,7 @@ import OrganisationApi from './pages/api-docs/components/organisation'
 import MarketplaceApi from './pages/api-docs/components/marketplace'
 import DataApi from './pages/api-docs/components/data'
 import PluginApi from './pages/api-docs/components/plugin'
-import CreateWorkspace from './pages/create-workspace/CreateWorkSpace'
+//import CreateWorkspace from './pages/create-workspace/CreateWorkSpace'
 
 
 import '@reach/dialog/styles.css'
@@ -57,19 +57,19 @@ import RecoverPassword from './pages/passwordRecovery/index'
 import ResetPassword from './pages/passwordReset/Index'
 import PrivateRoute from './pages/settings/Utils/PrivateRoute'
 import AuthApi from './pages/api-docs/components/auth'
-// import Eventspage from './pages/events/components/Eventspage'
+//import Eventspage from './pages/events/components/Eventspage'
 import EventsMainWrapper from './pages/events/components/EventsMainWrapper'
 
-import { useRouteMatch } from 'react-router-dom'
+//import { useRouteMatch } from 'react-router-dom'
 import './components/verified-components/master.css'
 import CreateWorkSpaces from './pages/create-workspace/createWorkSpaceContext'
 
 
 const App = () => {
-  let workspaceRoute = '/home/createworkspace'
+  //let workspaceRoute = '/home/createworkspace'
   return (
     <TopbarProvider>
-      <Switch>
+     <Switch>
         {/* <Route path="/" exact>
           <LandingPage />
         </Route> */}
@@ -197,23 +197,25 @@ const App = () => {
         <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
         {/* ----------------settings routes closed----------------- */}
 
-        <Route path="/recover-email">{/* <RecoveryEmail /> */}</Route>
+        {/* <Route path="/recover-email">
+        <RecoveryEmail />
+        </Route> */}
         <Route path="/recover-password">
           <RecoverPassword />
-        </Route>
-        <Route path="/reset-password">
+          </Route>
+         <Route path="/reset-password">
           <ResetPassword />
         </Route>
         <Route path="/style-guide">
           <StyleGuide />
-        </Route>
-        <Route path="/test">
+        </Route> 
+         <Route path="/test">
           <Test />
-        </Route>
+        </Route> 
         <Route path="/events">
           <EventsMainWrapper />
         </Route>
-      </Switch>
+        </Switch> 
     </TopbarProvider>
   )
 }
