@@ -11,7 +11,6 @@ import Pricing from './pages/pricing'
 import Security from './pages/security'
 import ContactUs from './pages/contact-us'
 import AppsAndIntegrations from './pages/apps-integration'
-import { PluginLoaderProvider } from './context/PluginLoaderState'
 import Events from './pages/events/components/EventsMainWrapper'
 import Download from './pages/download'
 import Careers from './pages/careers'
@@ -53,8 +52,8 @@ const App = () => (
         <Security />
       </Route>
       <Route path="/events">
-          <Events />
-        </Route>
+        <Events />
+      </Route>
       <Route path="/download-app">
         <Download />
       </Route>
