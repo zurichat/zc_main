@@ -39,6 +39,18 @@
   font-size: 14px;
   line-height: 21px;
 }
+.imageUpload {
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-bottom: 10px;
+  outline: none;
+  display: block;
+  width: 100%;
+  font-size: 13px;
+  resize: none;
+}
 
 .formInput {
   border: 1px solid #e5e5e5;
@@ -243,9 +255,9 @@
   color: rgba(156, 163, 175, var(--tw-text-opacity));
 }
 /* button {
-    font-size: 12px;
-    line-height: 21px;
-  } */
+  font-size: 12px;
+  line-height: 21px;
+} */
 
 .profileFunc {
   display: block;
@@ -377,5 +389,8 @@
 
   .formMargin {
     margin-bottom: 0;
+  }
+  .imageUpload {
+    display: none;
   }
 }
