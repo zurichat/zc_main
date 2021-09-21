@@ -16,13 +16,16 @@ const DownloadsIOS = () => {
       <div className={downloadStyles.containermain}>
         <div className={downloadStyles.container}>
           <div className={downloadStyles.containerfluid}>
-            <p className={downloadStyles.zuritext}>Zuri Chat for iOS</p>
+            <p className={downloadStyles.zuritext}>Download Zuri Chat beta for iOS.</p>
             {/* <a href={Apk} download="release.apk">
-              <div className={downloadStyles.appstorediv}>
+              
+            </a> */}
+            <div className={downloadStyles.appstorediv}>
                 <img src={AppStorelogo} alt="" />
               </div>
-            </a> */}
-            <p className={downloadStyles.newtext}>What's new</p>
+            <p className={downloadStyles.newtext}>
+              Get Zuri Chat DM & Channel
+            </p>
             <div className={downloadStyles.phonediv}>
               <img src={PhoneDM} alt="" className={downloadStyles.PhoneDM} />
               <img
@@ -44,7 +47,7 @@ const DownloadsIOS = () => {
             placeholder="name@example.com"
             className={downloadStyles.emailinput}
           />
-          <button className={downloadStyles.btn}>GET LINK</button>
+          <button className={downloadStyles.btn}>GET DOWNLOAD LINK</button>
         </div>
       </div>
       <Footer />
