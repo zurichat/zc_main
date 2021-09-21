@@ -40,7 +40,7 @@ h1 {
   font-weight: 700;
   line-height: 62px;
   letter-spacing: 0em;
-  text-align: left;
+  /* text-align: left; */
 }
 
 h2 {
@@ -51,7 +51,7 @@ h2 {
   font-style: normal;
   line-height: 52px;
   letter-spacing: 0em;
-  text-align: left;
+  /* text-align: left; */
 }
 
 h3 {
@@ -61,7 +61,7 @@ h3 {
   font-weight: 700;
   line-height: 47px;
   letter-spacing: 0em;
-  text-align: left;
+  /* text-align: left; */
 }
 
 h4 {
@@ -71,7 +71,7 @@ h4 {
   font-weight: 700;
   line-height: 42px;
   letter-spacing: 0em;
-  text-align: left;
+  /* text-align: left; */
 }
 
 h5 {
@@ -81,7 +81,7 @@ h5 {
   font-weight: 700;
   line-height: 39px;
   letter-spacing: 0em;
-  text-align: left;
+  /* text-align: left; */
 }
 
 h6 {
@@ -91,7 +91,7 @@ h6 {
   font-style: normal;
   line-height: 36px;
   letter-spacing: 0em;
-  text-align: left;
+  /* text-align: left; */
 }
 
 .h_small {
@@ -101,7 +101,7 @@ h6 {
   font-style: normal;
   line-height: 41px;
   letter-spacing: 0em;
-  text-align: left;
+  /* text-align: left; */
 }
 
 .t_btn_big {
@@ -112,7 +112,7 @@ h6 {
   font-style: normal;
   line-height: 34px;
   letter-spacing: 0em;
-  text-align: left;
+  /* text-align: left; */
 }
 
 .t_btn_small {
@@ -123,7 +123,7 @@ h6 {
   font-style: normal;
   line-height: 34px;
   letter-spacing: 0em;
-  text-align: left;
+  /* text-align: left; */
 }
 
 .t_regular {
@@ -133,7 +133,7 @@ h6 {
   font-style: normal;
   line-height: 31px;
   letter-spacing: 0em;
-  text-align: left;
+  /* text-align: left; */
 }
 
 .t_small {
@@ -143,7 +143,7 @@ h6 {
   font-style: normal;
   line-height: 24px;
   letter-spacing: 0em;
-  text-align: left;
+  /* text-align: left; */
 }
 
 /* Toggle */
