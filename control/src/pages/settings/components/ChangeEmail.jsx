@@ -18,7 +18,7 @@ const ChangeEmail = () => {
           <input type="text" className="form-control" required />
         </div>
         <div className="col-md-4 mb-3 mt-3">
-          <button className="btn btn-primary" id="submit">
+          <button className="btn" id="submit">
             Update email address
           </button>
         </div>
