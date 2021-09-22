@@ -56,9 +56,9 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     }
 
     setUserProfileImage(user.image_url)
-
     getOrganizations()
   }, [setOrgId, user.image_url, setUser])
+  
 
   useEffect(() => {
     const userdef = JSON.parse(sessionStorage.getItem('user'))
