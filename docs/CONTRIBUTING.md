@@ -2,7 +2,7 @@
 
 # Contributing to Zuri Main Web App
 
-## IMPORTANT!!! : OPEN YOUR PULL REQUESTS ON "develop" BRANCH, NOT MAIN
+## IMPORTANT!!! : OPEN YOUR PULL REQUESTS ON `dev` BRANCH, NOT `main`
 
 First off, thanks for taking the time to be part of this awesome project ❤️
 
@@ -139,6 +139,8 @@ So here is a run down of how you would go about contributing:
 
 We advocate for clean code and well structured codes. It is easier said than done, which is why there are linting configurations set up in the repository. Endeavour to keep the code you write clean and maintainable. Software is not only a science, but also an art.
 
+The structure of the repo is the SPA format, you would be working in `control` folder mostly, there are three main folders there as we have our `sidebar` as a standalone as well as out `topbar`, In `control` you'd find a src folder and in it a pages folder, in each page's folder there's an **assets** folder, **components** and **styles**, do not keep your files outside of your pages folder, also now that there are timelines for milestones, there'd be deadlines for making PRs, **moving forward 30 mins to deadline no PR would be merged or go live**, for general components, there's a components folder in `control` folder and a sister component-assets folder and brother component-styles folder strictly for general components e.g header, footer...if you peradventure leave your pages component there it will not be merged
+
 ### Commit Messages
 
 Commit messages should include concise messages about what was done and what has changed. Failure to follow this would result in the pull request being rejected.
@@ -147,7 +149,7 @@ Let's build the next generation workspace, shall we ?🎉
 
 ## Other Information
 
-- Check if there are any linting errors by running `yarn lint` before commiting your code.
+- Check if there are any linting errors by running `yarn check-format` before commiting your code.
 - Please make sure your commit messages and pr titles give enough info about the changes you've made.
 
 - ### Pull Requests

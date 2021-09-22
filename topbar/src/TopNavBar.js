@@ -8,8 +8,12 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import { BaseInput } from './TopBarIndex'
 import userAvatar from './assets/images/user.svg'
+import HelpIcon from './assets/download_images/question.svg'
+import HelpIcons from '@material-ui/icons/HelpOutline'
 import TopbarModal from './components/TopbarModal'
-import UserForm from '../../control/src/pages/ReportFeature/components/Form'
+import HelpModal from './components/HelpModal'
+import UserForm from '../../control/src/pages/ReportFeature/User/Form'
+import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
 import { authAxios } from './utils/Api'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
@@ -19,6 +23,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const [organizations, setOrganizations] = useState([])
 
   const [search, setSearch] = useState('')
+  const [helpModal, setHelpModal] = useState(false)
 
   useEffect(() => {
     const userdef = JSON.parse(sessionStorage.getItem('user'))
@@ -71,7 +76,13 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         placeholder="Search here"
         border={'#99999933'}
       />
-        <UserForm />
+      <HelpContainer>
+        <HelpIcons onClick={() => setHelpModal(true)} />
+      </HelpContainer>
+      {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''}
+
+      <UserForm />
+      <AdminForm />
       <div>
         <img
           style={{ height: '30px', width: '30px', borderRadius: '5px' }}
@@ -81,6 +92,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           alt="user profile avatar"
         />
       </div>
+
       <TopbarModal />
     </TopNavBarBase>
   )
@@ -121,3 +133,13 @@ const TopNavBarBase = styled.div`
 //   text-align: center;
 //   vertical-align: middle;
 // `
+
+const HelpContainer = styled.div`
+  > .MuiSvgIcon-root {
+    opacity: 0.5;
+  }
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+`
