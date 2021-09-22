@@ -2,8 +2,6 @@ import { useContext, useState, useEffect } from 'react'
 import { authAxios } from '../utils/Api'
 import { FaChevronRight } from 'react-icons/fa'
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
-import Profile from './Profile'
-import userAvatar from '../assets/images/user.svg'
 
 import styles from '../styles/Topbar.module.css'
 import { TopbarContext } from '../context/Topbar'
@@ -93,7 +91,12 @@ const TopbarModal = ({ members }) => {
   }
 
   useEffect(() => {
+    console.log('user presence', user.presence)
     setPresence(user.presence)
+    // toggleUserPresence()
+    console.log('check for user', user)
+    console.log('auth axios presence', presence)
+    console.log('check for current presence', presence)
   }, [user])
 
   return (
@@ -133,7 +136,7 @@ const TopbarModal = ({ members }) => {
         <section className={styles.topbarModal}>
           <div className={styles.sectionOne}>
             <div className={styles.oneLeft}>
-              <img src={userProfileImage ? userProfileImage : userAvatar} alt="profile-pic" />
+              <img src={userProfileImage} alt="profile-pic" />
             </div>
 
             <div className={styles.oneRight}>
@@ -176,8 +179,7 @@ const TopbarModal = ({ members }) => {
             <p
               onClick={() => {
                 toggleProfileState()
-                openModal();
-                // console.log(showModal)
+                openModal()
               }}
             >
               View profile
@@ -207,8 +209,6 @@ const TopbarModal = ({ members }) => {
           {modal === 'edit profile' && <EditProfile />}
 
           {modal === 'preference' && <Preferences />}
-
-          {showModal && <Profile />}
 
           {modal === 'downloads' && <Downloads setModal={setModal} />}
 
