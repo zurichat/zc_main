@@ -25,12 +25,7 @@ import AccDeactivated from './pages/settings/components/AccDeactivated'
 import DeactivateAccount from './pages/settings/components/AcctDeactivation'
 import AllSessionSignOut from './pages/settings/components/AllSessionSignOut'
 import PrivateRoute from './pages/settings/Utils/PrivateRoute'
-import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation';
-import WorkspaceHome from './pages/createworkspace/components/WorkspaceHome'
-import ProjectName from './pages/createworkspace/components/ProjectName';
-import LaunchPage from './pages/createworkspace/components/LaunchPage';
-import Step3 from './pages/createworkspace/components/Step3';
-import CompanyName from './pages/createworkspace/components/CompanyName';
+import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation'
 import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContext'
 
 
@@ -48,7 +43,6 @@ const App = () => {
 return(
   <BrowserRouter>
     <Switch>
-    
       <Route path="/" exact>
         <LandingPage />
       </Route>
@@ -85,7 +79,6 @@ return(
       <Route path="/events">
           <Events />
         </Route>
-        <CreateWorkSpaces/>
       <Route path="/download-app">
         <Download />
       </Route>
@@ -123,6 +116,7 @@ return(
       <Route path="/cookies-banner">
         <Cookies />
       </Route>
+      <CreateWorkSpaces/>
     </Switch>
   </BrowserRouter>
 )
