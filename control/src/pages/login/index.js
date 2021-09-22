@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import { withRouter, useHistory } from 'react-router-dom'
 import { BehaviorSubject } from 'rxjs'
 // import { Link } from 'react-router-dom'
-import authBg1 from './assets/auth_bg1.svg'
-import authBg2 from './assets/auth_bg2.svg'
-import authBg3 from './assets/auth_bg3.svg'
-import authBg4 from './assets/auth_bg4.svg'
-import authBg5 from './assets/auth_bg5.svg'
+// import authBg1 from './assets/auth_bg1.svg'
+// import authBg2 from './assets/auth_bg2.svg'
+// import authBg3 from './assets/auth_bg3.svg'
+// import authBg4 from './assets/auth_bg4.svg'
+// import authBg5 from './assets/auth_bg5.svg'
 import AuthInputBox from '../../components/AuthInputBox'
 import FormWrapper from '../../components/AuthFormWrapper'
 import styles from '../../component-styles/AuthFormElements.module.css'
@@ -24,18 +24,18 @@ const Login = () => {
   const [passworderror, setpassworderror] = useState('')
   const [rememberMe, setRememberMe] = useState('')
 
-  // Background Images
-  const images = [authBg1, authBg2, authBg3, authBg4, authBg5]
-  const [currentImage, setcurrentImage] = useState(
-    Math.floor(Math.random() * 4)
-  )
+  // // Background Images
+  // const images = [authBg1, authBg2, authBg3, authBg4, authBg5]
+  // const [currentImage, setcurrentImage] = useState(
+  //   Math.floor(Math.random() * 4)
+  // )
 
-  // To Display Random Aside Background Image
-  const displayImage = () => {
-    let i = currentImage
-    i >= images.length - 1 ? (i = 0) : i++
-    setcurrentImage(i)
-  }
+  // // To Display Random Aside Background Image
+  // const displayImage = () => {
+  //   let i = currentImage
+  //   i >= images.length - 1 ? (i = 0) : i++
+  //   setcurrentImage(i)
+  // }
 
   let history = useHistory()
 
@@ -92,12 +92,11 @@ const Login = () => {
 
   return (
     <main id={styles.authPageWrapper}>
-      <aside id={styles.authAsideContainer} className={styles.display_none}>
+      {/* <aside id={styles.authAsideContainer} className={styles.display_none}>
         <div id={styles.authImageWrapper}>
           <img src={images[currentImage]} alt="backgroundImage" />
-          {/* <div id={styles.aside_txt}></div> */}
         </div>
-      </aside>
+      </aside> */}
       <section id={styles.authFormContainer}>
         <FormWrapper
           header="Login"
@@ -123,7 +122,7 @@ const Login = () => {
             value={email}
             setValue={setEmail}
             error={emailerror}
-            onFocus={displayImage}
+            // onFocus={displayImage}
           />
           <AuthInputBox
             className={`${styles.inputElement}`}
@@ -134,7 +133,7 @@ const Login = () => {
             value={password}
             setValue={setPassword}
             error={passworderror}
-            onFocus={displayImage}
+            // onFocus={displayImage}
           />
 
           <div className={`${styles.rememberMe}`}>
@@ -147,7 +146,7 @@ const Login = () => {
                 onClick={() => {
                   setRememberMe(!rememberMe)
                 }}
-                onFocus={displayImage}
+                // onFocus={displayImage}
               />
               Remember me
             </span>

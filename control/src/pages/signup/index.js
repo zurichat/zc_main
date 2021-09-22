@@ -87,12 +87,11 @@ const Signup = () => {
   return (
     <main id={styles.authPageWrapper}>
       {showDialog && <EmailVerification />}
-      <aside id={styles.authAsideContainer} className={styles.display_none}>
+      {/* <aside id={styles.authAsideContainer} className={styles.display_none}>
         <div id={styles.authImageWrapper}>
           <img src={images[currentImage]} alt="backgroundImage" />
-          {/* <div id={styles.aside_txt}></div> */}
         </div>
-      </aside>
+      </aside> */}
       <section id={styles.authFormContainer}>
         <FormWrapper
           header="Create Account"
@@ -143,16 +142,6 @@ const Signup = () => {
             onFocus={displayImage}
             // error={error}
           />
-          {/* <AuthInputBox
-            className={`${styles.inputElement}`}
-            id="cpassword"
-            name="Confirm password"
-            type="password"
-            placeholder="Confirm password"
-            value={confirmPassword}
-            setValue={setConfirmPassword}
-            // error={error}
-          /> */}
           <div className={`${styles.tos}`}>
             <input
               className={`${styles.checkBox}`}
@@ -166,8 +155,8 @@ const Signup = () => {
             />
             <span className={`${styles.tosText}`}>
               I agree to Zurichat's {''}
-              <a href="/">terms of services{''} </a>&
-              <a href="/"> {''}privacy</a>
+              <a href="/">Terms of services{''} </a>&
+              <a href="/"> {''}Privacy</a>
             </span>
           </div>
         </FormWrapper>

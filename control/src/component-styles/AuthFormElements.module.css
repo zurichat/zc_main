@@ -22,21 +22,21 @@
   z-index: 5;
 }
 
-#authAsideContainer,
+/* #authAsideContainer,
 #authImageWrapper,
-#authFormContainer,
-#authImageWrapper img {
+#authImageWrapper img, */
+#authFormContainer {
   height: inherit;
 }
 
-#authAsideContainer {
+/* #authAsideContainer {
   width: 33vw;
   color: #fff;
-}
+} */
 
-#authImageWrapper {
+/* #authImageWrapper {
   width: 100%;
-}
+} */
 
 /* 
 #authImageWrapper img {
@@ -54,21 +54,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 67vw;
-  overflow-y: scroll;
+  width: inherit;
+  /* overflow-y: scroll; */
   /* padding-right: 4rem; */
 }
 
 .tos {
   height: 5vh;
   margin-block-start: 1rem;
-  margin-block-end: 2rem;
+  margin-block-end: 1rem;
   font-size: 0.8rem;
   line-height: 1.5rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   /* position: relative;
+  margin-block-end: 2rem;
   font-size: 12px;
   line-height: 1.5rem;
   display: inline-block;
@@ -99,8 +100,14 @@
 
 .tosText a,
 .rememberMe a {
-  color: #1a61db;
-  /* color: #00b87c; */
+  /* color: #1a61db; */
+  color: #00b87c;
+}
+
+.tosText a:hover,
+.rememberMe a:hover {
+  color: #b8003c;
+  /* color: #1a61db; */
 }
 
 .rememberMe {
@@ -109,6 +116,7 @@
   font-size: 0.8rem;
   line-height: 1.5rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   /* display: inline-block; */
@@ -131,17 +139,19 @@
   color: #1a61db;
 } */
 
-.rememberMe .left {
+/* .rememberMe .left {
+  align-self: center;
   display: block;
   float: left;
   width: auto;
 }
 
 .rememberMe .right {
+  align-self: center;
   display: block;
   float: right;
   width: auto;
-}
+} */
 
 /* Media Query 768px and Smaller */
 /* Media Query 920px and Smaller */

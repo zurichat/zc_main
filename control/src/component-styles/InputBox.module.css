@@ -1,7 +1,7 @@
 .InputContainer {
   width: 100%;
   margin-block-start: 0.2rem;
-  margin-block-end: 1rem;
+  margin-block-end: 0.5rem;
   margin-inline: auto;
   /* margin: 1rem auto; */
   /* font-size: 16px; */
@@ -18,10 +18,10 @@
 
 /* input Label */
 .InputLabel {
-  margin-block: 1rem;
+  margin-block: 0.8rem;
   font-weight: bold;
   font-size: 1.5rem;
-  line-height: 24px;
+  /* line-height: 24px; */
   color: #3a3a3a;
 }
 
@@ -30,8 +30,10 @@
   border: 1px solid #bebebe;
   border-radius: 6px;
   width: 100%;
-  height: 3.5rem;
+  height: 4rem;
   overflow: hidden;
+  box-sizing: border-box;
+
 }
 
 .InputWrapper:focus-within {
@@ -93,12 +95,29 @@
   align-items: center;
 }
 
-/* Media Query 768px and Smaller */
-/* Media Query 920px and Smaller */
+/* Media Query for Screen Width 1370px and Smaller */
+/* @media only screen and (max-width: 1370px) {
+  .InputContainer {
+    margin-block-end: 0.5rem;
+  }
+} */
+
+
+/* Media Query for Screen Width 1370px and Smaller */
+/* @media only screen and (max-width: 1370px) {
+  .InputWrapper {
+    border: 2px solid #bebebe;
+  }
+  
+  .InputWrapper:focus-within {
+    border: 2px solid #00b87c;
+  }
+} */
+
 /* Media Query for Screen Width 1080px and Smaller */
 @media only screen and (max-width: 1080px) {
   .InputContainer {
-    margin-block: 1rem;
+    /* margin-block: 0.5rem; */
     width: 100%;
   }
 
@@ -108,7 +127,7 @@
 
   /* input Label */
   .InputLabel {
-    margin-block: 0.5rem;
+    /* margin-block: 0.5rem; */
     font-size: 1.3rem;
     line-height: 1.5rem;
   }
@@ -133,3 +152,15 @@
     grid-template-columns: 9fr 2fr;
   }
 }
+
+
+/* Media Query for Screen Width 1080px and Smaller */
+/* @media only screen and (max-width: 1080px) {
+  .InputWrapper {
+    border: 1px solid #bebebe;
+    border-radius: 6px;
+    width: 100%;
+    height: 4em;
+    overflow: hidden;
+  }
+} */
