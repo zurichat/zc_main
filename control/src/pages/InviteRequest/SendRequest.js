@@ -19,8 +19,8 @@ function SendRequest() {
         <img className={styles.tick} src={shape} alt="shape" />
       </div>
       <div className={styles.info}>
-      <h1>Sent!</h1>
-      <p> <img className={styles.add} src={add} alt="add"/> 
+      <h1 className={styles.descs}>Sent!</h1>
+      <p className={styles.des}> <img className={styles.add} src={add} alt="add"/> 
       olaorosamson@yahoo.com</p>
       <p className={styles.desc}>Will be invited as a member of Zuri Chat once an admin
          approves the request.</p>
