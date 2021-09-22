@@ -10,13 +10,13 @@ import Features from './pages/features'
 import Resources from './pages/resources'
 import Pricing from './pages/pricing'
 import Security from './pages/security'
+import Inviterequest from './pages/InviteRequest/InviteRequest'
+import SendRequest from './pages/InviteRequest/SendRequest'
 import ContactUs from './pages/contact-us'
 import AppsAndIntegrations from './pages/apps-integration'
 import Events from './pages/events/components/EventsMainWrapper'
 import Download from './pages/download'
 import Careers from './pages/careers'
-import RequestInvite from './pages/RequestInvite/RequestInvite'
-import RequestSent from './pages/RequestInvite/RequestSent'
 import MarketPlace from './pages/marketplace/marketplace'
 import Blogs from './pages/blogs'
 import Settings from './pages/settings'
@@ -40,48 +40,7 @@ const App = () => {
   // useEffect(() => {
   //     localStorage.setItem('input',input);
   // },[input]);
-// const handleInputChange = (event) => {
-//     setInput(event.target.value);
-// }
-// let workspaceRoute = '/createworkspace';
-return(
-  <BrowserRouter>
-    <Switch>
-    
-      <Route path="/" exact>
-        <LandingPage />
-      </Route>
-      <Route path="/blogs">
-        <Blogs />
-      </Route>
-      <Route path="/login">
-        <Login />
-      </Route>
-      <Route path="/signup">
-        <SignUp />
-      </Route>
-      <Route path="/choose-workspace">
-        <Workspace />
-      </Route>
-      <Route path="/features">
-        <Features />
-      </Route>
-      <Route path="/resources">
-        <Resources />
-      </Route>
-      <Route path="/pricing">
-        <Pricing />
-        <Route path="/RequestInvite">
-        < RequestInvite/>
-      </Route>
-      <Route path="/RequestSent">
-        < RequestSent/>
-      </Route>
-      </Route>
-      <Route path="/security">
-        <Security />
-      </Route>
-      <Route path="/events">
+
   // const handleInputChange = (event) => {
   //     setInput(event.target.value);
   // }
