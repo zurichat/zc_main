@@ -11,7 +11,6 @@ import fetchInstall from './utils/index'
 
 // import Apk from './apk/appRelease.apk'
 
-
 const DownloadsAndroid = () => {
   const [exe, setexe] = useState({ link: '', name: '' })
   // const [msi, setmsi] = useState({ link: '', name: '' })
@@ -30,15 +29,21 @@ const DownloadsAndroid = () => {
       <div className={downloadStyles.containermain}>
         <div className={downloadStyles.container}>
           <div className={downloadStyles.containerfluid}>
-            <p className={downloadStyles.zuritext}>Downlaod the Zuri Chat beta APK for Android</p>
-            <a  href={exe.link} download={exe.name}>
-             <div className={downloadStyles.playstorediv}>
+            <p className={downloadStyles.zuritext}>
+              Downlaod the Zuri Chat beta APK for Android
+            </p>
+            <a href={exe.link} download={exe.name}>
+              <div className={downloadStyles.playstorediv}>
                 <img src={PlayStorelogo} alt="" />
               </div>
-            </a> 
-              <a href={exe.link} download={exe.name} className={downloadStyles.newtext}>
-                Get Zuri Chat for DM & Channel
-              </a> 
+            </a>
+            <a
+              href={exe.link}
+              download={exe.name}
+              className={downloadStyles.newtext}
+            >
+              Get Zuri Chat for DM & Channel
+            </a>
             <div className={downloadStyles.phonediv}>
               <img src={PhoneDM} alt="" className={downloadStyles.PhoneDM} />
               <img
