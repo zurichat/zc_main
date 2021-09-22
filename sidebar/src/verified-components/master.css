@@ -33,12 +33,12 @@ body {
 /* Typography  */
 
 h1 {
-  line-height: 62.4px;
+  /* line-height: 62.4px; */
   font-family: inherit;
   font-size: 48px;
   font-style: normal;
   font-weight: 700;
-  line-height: 62px;
+  /* line-height: 62px; */
   letter-spacing: 0em;
   text-align: left;
 }
@@ -49,7 +49,7 @@ h2 {
   font-family: inherit;
   font-size: 40px;
   font-style: normal;
-  line-height: 52px;
+  /* line-height: 52px; */
   letter-spacing: 0em;
   text-align: left;
 }
@@ -59,7 +59,7 @@ h3 {
   font-size: 36px;
   font-style: normal;
   font-weight: 700;
-  line-height: 47px;
+  /* line-height: 47px; */
   letter-spacing: 0em;
   text-align: left;
 }
@@ -69,7 +69,7 @@ h4 {
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
-  line-height: 42px;
+  /* line-height: 42px; */
   letter-spacing: 0em;
   text-align: left;
 }
