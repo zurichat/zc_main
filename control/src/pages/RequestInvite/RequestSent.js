@@ -3,9 +3,9 @@ import { Navbar } from 'react-bootstrap'
 import cancel from './assets/cancel.png'
 import shape from './assets/shape.png'
 import add from './assets/add.png'
-import styles from './styles/SendRequest.module.css'
+import styles from './styles/RequestSent.module.css'
 
-function SendRequest() {
+function RequestSent() {
   return (
     <div className={styles.App}>
       <div className={styles.Request}>
@@ -37,4 +37,4 @@ function SendRequest() {
     </div>
   )
 }
-export default SendRequest
+export default RequestSent

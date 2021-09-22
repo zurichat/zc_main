@@ -88,7 +88,7 @@
     margin: 1.5rem;
   }
 
-  .bannerBox>button {
+  .bannerBox > button {
     width: 137px;
   }
 
@@ -104,7 +104,7 @@
     display: flex;
   }
 
-  .bannerButtons>.declineButton {
+  .bannerButtons > .declineButton {
     margin-left: 0.7rem;
   }
 }

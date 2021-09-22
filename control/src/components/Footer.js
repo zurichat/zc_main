@@ -37,13 +37,7 @@ const Footer = () => {
       <div className={styles.mobile}>
         <div className={styles.logo}>
           <a href="/landing">
-            <img
-              className={styles.logo_img}
-              src={logo}
-              alt="Logo"
-              width="40px"
-              height="40px"
-            />
+            <img className={styles.logo_img} src={logo} alt="Logo" />
             <p className={styles.logo_name}>Zuri Chat</p>
           </a>
         </div>
@@ -162,9 +156,9 @@ const Footer = () => {
               <img
                 className={styles.logo_img}
                 src={logo}
-                /*alt="Logo"*/
-                width="40px"
-                height="40px"
+                alt="Logo"
+                width="30px"
+                height="30px"
               />
               <p className={styles.logo_name}>Zuri Chat</p>
             </a>
