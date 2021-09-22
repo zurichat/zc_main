@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Container, Form, Card } from 'react-bootstrap'
-import styles from './styles/InviteRequest.module.css'
+import styles from './styles/RequestInvite.module.css'
 
-function Inviterequest() {
+function RequestInvite() {
   return (
     <div>
       <Card
@@ -14,7 +14,7 @@ function Inviterequest() {
           <div className={styles.title} gutterBottom align="left">
             <p className={styles.main}>Request Invitation to Zuri Chat</p>
             <form>
-              <div>
+              <div className={styles.first - input}>
                 <p> To: </p>
                 <Container>
                   <Form.Control
@@ -24,7 +24,7 @@ function Inviterequest() {
                   />
                 </Container>
               </div>
-              <div>
+              <div className={styles.second - input}>
                 <p> Invite as: </p>
                 <Container>
                   <Form.Control
@@ -34,7 +34,7 @@ function Inviterequest() {
                   />
                 </Container>
               </div>
-              <div>
+              <div className={styles.third - input}>
                 <p> Reason for request(optional): </p>
                 <Container>
                   <Form.Control
@@ -60,9 +60,9 @@ function Inviterequest() {
               </p>
             </div>
             <div className={styles.secondsubmain}>
-              <Link to="./SendRequest">
+              <Link to="./RequestSent">
                 <button
-                  href="SendRequest"
+                  href="RequestSent"
                   className={styles.btnr}
                   variant="contained"
                   backgroundcolor="#00B87C"
@@ -81,4 +81,4 @@ function Inviterequest() {
   )
 }
 
-export default Inviterequest
+export default RequestInvite
