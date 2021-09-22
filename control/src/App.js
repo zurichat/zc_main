@@ -63,9 +63,9 @@ const App = () => {
         <Route path="/choose-workspace">
           <Workspace />
         </Route>
-        <Route path="/features">
+        {/* <Route path="/features">
           <Features />
-        </Route>
+        </Route> */}
         <Route path="/invite-request">
           <Inviterequest />
         </Route>
