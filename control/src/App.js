@@ -1,4 +1,3 @@
-import { useState,useEffect } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Login from './pages/login'
 import SignUp from './pages/signup'
@@ -11,6 +10,8 @@ import Features from './pages/features'
 import Resources from './pages/resources'
 import Pricing from './pages/pricing'
 import Security from './pages/security'
+import Inviterequest from './pages/InviteRequest/InviteRequest'
+import SendRequest from './pages/InviteRequest/SendRequest'
 import ContactUs from './pages/contact-us'
 import AppsAndIntegrations from './pages/apps-integration'
 import Events from './pages/events/components/EventsMainWrapper'
@@ -65,6 +66,12 @@ return(
       </Route>
       <Route path="/features">
         <Features />
+      </Route>
+      <Route path="/Inviterequest">
+        <Inviterequest />
+      </Route>
+      <Route path="/SendRequest">
+        <SendRequest />
       </Route>
       <Route path="/resources">
         <Resources />

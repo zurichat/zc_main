@@ -1,0 +1,22 @@
+.marketplace_authNotifyBanner {
+    width: 100%;
+    background: #00b87c;
+    color: #fff;
+    text-align: center;
+    padding: .75rem .5rem;
+}
+
+.authNotifyBannerText {
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.authNotifyBannerLink {
+    font-weight: bold;
+    text-decoration: underline;
+    padding-bottom: .5rem;
+}
+
+.authNotifyBannerLink:hover {
+    color: white;
+}
