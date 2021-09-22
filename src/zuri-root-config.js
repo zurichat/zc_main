@@ -2,17 +2,18 @@ import { registerApplication, start } from 'single-spa'
 
 export const pluginRoutes = [
   location => location.pathname.startsWith('/chess'),
-  location => location.pathname.startsWith('/sales'),
   location => location.pathname.startsWith('/music'),
+  location => location.pathname.startsWith('/sales'),
   location => location.pathname.startsWith('/deadlines'),
   location => location.pathname.startsWith('/goals'),
+  location => location.pathname.startsWith('/todo'),
   location => location.pathname.startsWith('/dm'),
   location => location.pathname.startsWith('/noticeboard'),
   location => location.pathname.startsWith('/companyfiles'),
   location => location.pathname.startsWith('/calendar'),
   location => location.pathname.startsWith('/expenses'),
-  location => location.pathname.startsWith('/todo')
-
+  location => location.pathname.startsWith('/tools'),
+  location => location.pathname.startsWith('/channels')
 ]
 
 registerApplication({
@@ -96,6 +97,18 @@ registerApplication({
   name: '@zuri/zuri-plugin-expenses',
   app: () => System.import('@zuri/zuri-plugin-expenses'),
   activeWhen: [location => location.pathname.startsWith('/expenses')]
+})
+
+registerApplication({
+  name: '@zuri/zuri-plugin-tools',
+  app: () => System.import('@zuri/zuri-plugin-tools'),
+  activeWhen: [location => location.pathname.startsWith('/tools')]
+})
+
+registerApplication({
+  name: '@zuri/zuri-plugin-channels',
+  app: () => System.import('@zuri/zuri-plugin-channels'),
+  activeWhen: [location => location.pathname.startsWith('/channels')]
 })
 
 start({
