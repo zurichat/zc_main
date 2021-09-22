@@ -119,8 +119,8 @@ button.workspace_btn {
   border-radius: 8px;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;  
-} 
+  transition: all 0.3s ease-out;
+}
 
 .card_header {
   padding: 1.25rem;
