@@ -26,10 +26,7 @@ a {
 .logo {
   display: inline-flex;
   padding-left: 40px;
-  padding-top: 15px;
-}
-.logo_img {
-  padding-top: 10;
+  padding-top: 5px;
 }
 .logo a {
   display: inline-flex;
@@ -37,7 +34,7 @@ a {
 .logo p {
   color: black;
   padding-left: 5px;
-  padding-top: 5px;
+  padding-top: 15px;
   font-size: 1.3rem;
 }
 .menu {
@@ -71,7 +68,7 @@ a {
   flex-direction: column;
   position: absolute;
   visibility: hidden;
-  top: 250%;
+  top: 265%;
   left: 43%;
   transform: translate(-50%, -50%);
 }
@@ -95,7 +92,7 @@ a {
   flex-direction: column;
   position: absolute;
   visibility: hidden;
-  top: 250%;
+  top: 265%;
   left: 94%;
   transform: translate(-50%, -50%);
 }
@@ -151,7 +148,6 @@ a {
 .header_list i {
   padding-left: 8px;
 }
-
 .header_signs ul {
   width: 100%;
   display: flex;
@@ -243,6 +239,7 @@ a {
     font-size: 1.2rem;
   }
 }
+
 @media screen and (max-width: 1200px) {
   .logo p {
     font-size: 1.5rem;
@@ -318,6 +315,7 @@ a {
     font-size: 1.5rem;
   }
 }
+
 @media screen and (max-width: 769px) {
   .logo p {
     font-size: 2rem;
@@ -438,6 +436,9 @@ a {
   }
   .mobile_signs a {
     font-size: 18px;
+  }
+  .mobile_signs li {
+    padding-left: 10px;
   }
   .header_signin {
     padding: 10px 20px;
