@@ -10,8 +10,6 @@
   border-bottom: 1px solid rgba(187, 186, 231, 0.15);
 }
 .logo {
-<<<<<<< HEAD:control/src/component-styles/footer.module.css
-=======
   padding-left: 40px;
   padding-top: 25px;
 }
@@ -28,7 +26,6 @@
   font-size: 1.3rem;
 }
 .menu {
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/FooterStyle.module.css
   display: flex;
   align-items: center;
 }
@@ -111,7 +108,6 @@ li {
   font-size: 0.9rem;
 }
 
-<<<<<<< HEAD:control/src/component-styles/footer.module.css
 .notShow {
   padding: 67px 52px 53px 100px;
 }
@@ -121,7 +117,6 @@ li {
     padding-top: 48px;
     padding-right: 32px;
     padding-left: 32px;
-=======
 /*media queries */
 @media screen and (max-width: 1250px) {
   .logo p {
@@ -164,7 +159,6 @@ li {
   }
   .social h5 {
     font-size: 1.8rem;
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/FooterStyle.module.css
   }
   .topSection {
     display: revert;
@@ -177,13 +171,11 @@ li {
     margin-bottom: 32px;
   }
 }
-<<<<<<< HEAD:control/src/component-styles/footer.module.css
 @media (max-width: 35rem) {
   .buttonSection {
     display: flex;
     flex-direction: column;
     align-items: center;
-=======
 
 @media screen and (max-width: 900px) {
   .top_footer {
@@ -199,7 +191,6 @@ li {
   .m_footer {
     background: #f8f8ff;
     padding-bottom: 10px;
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/FooterStyle.module.css
   }
   .nav {
     display: flex;
@@ -207,19 +198,16 @@ li {
     align-items: center;
   }
   .logo {
-<<<<<<< HEAD:control/src/component-styles/footer.module.css
     justify-content: center;
   }
   .socialMedia {
     justify-content: center;
-=======
     display: inline-block;
     padding-left: 10px;
     padding-bottom: 10px;
   }
   .logo p {
     font-size: 2.5rem;
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/FooterStyle.module.css
   }
   .bottomNav {
     width: 100%;
@@ -236,10 +224,8 @@ li {
   .copyright {
     font-size: 0.7rem;
     width: 100%;
-<<<<<<< HEAD:control/src/component-styles/footer.module.css
     text-align: center;
     margin-bottom: 12px;
-=======
     position: relative;
     padding-top: 20px;
   }
@@ -262,7 +248,6 @@ li {
   }
   .dropdown_list {
     font-size: 100%;
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/FooterStyle.module.css
   }
   .navItems {
     gap: 16px;

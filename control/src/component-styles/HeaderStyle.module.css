@@ -3,12 +3,12 @@
   justify-content: start;
   padding-left: 25px;
 }
-<<<<<<< HEAD:control/src/component-styles/header.module.css
+
 
 .navbar {
   margin-top: 15px;
   border-bottom: 1px solid rgba(187, 186, 231, 0.15);
-=======
+
 li {
   padding-left: 0;
   text-decoration: none;
@@ -43,25 +43,22 @@ a {
   padding-left: 5px;
   padding-top: 15px;
   font-size: 1.3rem;
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
 }
 
 .navButton {
   border: none;
   box-shadow: none;
 }
-<<<<<<< HEAD:control/src/component-styles/header.module.css
 
 .navButton:focus {
   border: none;
   box-shadow: none;
-=======
+
 .menu ul {
   display: flex;
   justify-content: space-around;
   padding-top: 20px;
   padding-bottom: 0;
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
 }
 
 .searchLogo1 {
@@ -69,10 +66,9 @@ a {
   width: 22px;
   height: 22px;
 }
-<<<<<<< HEAD:control/src/component-styles/header.module.css
 
 .searchLogo {
-=======
+
 .fa {
   padding-left: 5px;
   top: 30%;
@@ -141,11 +137,10 @@ a {
 .navLinkSignUp {
   margin-right: 10px;
 }
-<<<<<<< HEAD:control/src/component-styles/header.module.css
 
 .zuriChat {
   font-size: 18px;
-=======
+
 .header_signs ul {
   width: 100%;
   display: flex;
@@ -160,11 +155,10 @@ a {
   margin-left: 5px;
   text-decoration: none;
 }
-<<<<<<< HEAD:control/src/component-styles/header.module.css
 
 .image {
   position: relative;
-=======
+
 .header_signs ul li {
   padding-left: 30px;
 }
@@ -193,7 +187,6 @@ a {
   font-weight: 600;
 }
 
-<<<<<<< HEAD:control/src/component-styles/header.module.css
 .signI {
   font-weight: 600;
 }
@@ -276,7 +269,7 @@ a {
     background-color: #00b87c;
     color: white;
     border-radius: 0px;
-=======
+
 /*mobile section */
 .mobile_nav {
   display: grid;
@@ -421,7 +414,6 @@ a {
   .signI {
     font-weight: 600;
   }
-<<<<<<< HEAD:control/src/component-styles/header.module.css
 
   .signU {
     color: #00b87c;
@@ -446,7 +438,7 @@ a {
   .features {
     color: black;
     font-weight: 300;
-=======
+
   .dropdown_items {
     font-size: 2rem;
     width: 120px;
@@ -478,7 +470,6 @@ a {
     transform: scale(0.8);
   }
 
-<<<<<<< HEAD:control/src/component-styles/header.module.css
   .zuriChat {
     font-size: 16px;
     color: black;
@@ -502,7 +493,7 @@ a {
   }
 
   .signIn {
-=======
+
   .mobile_nav {
     visibility: visible;
     padding-left: 10px;
@@ -555,7 +546,6 @@ a {
     border-radius: 0px;
     font-weight: 600;
   }
-<<<<<<< HEAD:control/src/component-styles/header.module.css
 
   .signI {
     font-weight: 600;
@@ -564,7 +554,7 @@ a {
   .signU {
     color: #00b87c;
     font-weight: 600;
-=======
+
   .dropdown {
     display: inline-block;
     flex-direction: column;
@@ -598,12 +588,11 @@ a {
     color: black;
     font-weight: 300;
   }
-<<<<<<< HEAD:control/src/component-styles/header.module.css
 
   .comms {
     color: black;
     font-weight: 300;
-=======
+
   .mobile_signs li {
     padding-left: 10px;
   }
@@ -612,7 +601,6 @@ a {
 >>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
   }
 
-<<<<<<< HEAD:control/src/component-styles/header.module.css
   .pricing {
     color: black;
     font-weight: 300;
@@ -621,7 +609,7 @@ a {
   .features {
     color: black;
     font-weight: 300;
-=======
+
 @media screen and (max-width: 600px) {
   .m_logo p {
     font-size: 1.3rem;
