@@ -10,6 +10,8 @@ import Features from './pages/features'
 import Resources from './pages/resources'
 import Pricing from './pages/pricing'
 import Security from './pages/security'
+import Inviterequest from './pages/Inviterequest'
+import SendRequest from './pages/SendRequest'
 import ContactUs from './pages/contact-us'
 import AppsAndIntegrations from './pages/apps-integration'
 import Events from './pages/events/components/EventsMainWrapper'
@@ -45,6 +47,12 @@ const App = () => (
       </Route>
       <Route path="/features">
         <Features />
+      </Route>
+      <Route path="/Inviterequest">
+        <Inviterequest />
+      </Route>
+      <Route path="/SendRequest">
+        <SendRequest />
       </Route>
       <Route path="/resources">
         <Resources />
