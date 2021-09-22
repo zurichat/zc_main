@@ -1,0 +1,116 @@
+/*.classes.root{
+    width: 20rem;
+    height: 200px;
+    margin: 20px auto;
+    margin-top: 205px;
+    background-color: #FFFFFF;
+  } */
+.nav {
+  border-bottom: 1px solid;
+  width: 100%;
+}
+
+.navbar {
+  padding: 20px;
+}
+
+.tick {
+  width: 15px;
+  height: 15px;
+}
+.cancel {
+  width: 15px;
+  height: 15px;
+}
+.add {
+  width: 15px;
+  height: 15px;
+}
+.check {
+  margin: 2em 10em;
+  background: rgba(0, 139, 94, 0.3);
+  border-radius: 50%;
+  width: fit-content;
+}
+
+.tick {
+  width: 60px;
+  height: 57px;
+  padding: 17px;
+}
+
+.info {
+  text-align: center;
+}
+.descs {
+  font-size: 1.5rem;
+  line-height: 3.5rem;
+}
+
+.des {
+  font-size: 0.8rem;
+  margin: 1rem;
+}
+.desc {
+  font-size: 0.8rem;
+  margin: 1rem;
+}
+
+.buttons {
+  width: 90%;
+  margin: 1em;
+  margin-top: 10em;
+}
+
+/*button {
+    width: 100%;
+    border: 1px solid;
+    border-color: rgba(0, 139, 94, 1);
+    padding: 1em;
+    }
+    */
+.btninv {
+  margin-bottom: 1em;
+  color: rgba(0, 139, 94, 1);
+  background-color: #ffffff;
+}
+
+.btnd {
+  background-color: rgba(0, 139, 94, 1);
+  color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    border: none;
+  }
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .check {
+    display: flex;
+    margin: auto;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  .desc {
+    color: black;
+  }
+
+  .tick {
+    align-items: center;
+  }
+  .buttons {
+    display: flex;
+    width: 25%;
+    margin: auto;
+    margin-left: 45em;
+    margin-top: 3em;
+  }
+  .btninv {
+    margin: auto;
+    margin-right: 1em;
+  }
+}
