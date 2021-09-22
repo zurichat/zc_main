@@ -111,7 +111,6 @@
 }
 
 .rememberMe {
-  /* height: 5vh; */
   margin-bottom: 2rem;
   font-size: 0.8rem;
   line-height: 1.5rem;
@@ -119,6 +118,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  /* height: 5vh; */
   /* display: inline-block; */
   /* margin: 10px 0; */
 }

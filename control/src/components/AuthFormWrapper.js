@@ -46,7 +46,7 @@ const FormWrapper = ({
             </a>
           </div>
           <span className={`${styles.hrWrapper}`}>
-            {/* <span className={`${styles.topLine}`}>{topLineText}</span> */}
+            {/* <span className={`${styles.topLine}`}> {topLineText}</span> */}
             <hr className={`${styles.hrLeft}`} />
             <div>{topLineText}</div>
             <hr className={`${styles.hrRight}`} />

@@ -21,8 +21,8 @@
   margin-block: 0.8rem;
   font-weight: bold;
   font-size: 1.5rem;
-  /* line-height: 24px; */
   color: #3a3a3a;
+  /* line-height: 24px; */
 }
 
 /* Input wrapper */
@@ -115,8 +115,8 @@
 /* Media Query for Screen Width 1080px and Smaller */
 @media only screen and (max-width: 1080px) {
   .InputContainer {
-    /* margin-block: 0.5rem; */
     width: 100%;
+    /* margin-block: 0.5rem; */
   }
 
   .InputContainer:last-of-type {
@@ -125,9 +125,9 @@
 
   /* input Label */
   .InputLabel {
-    /* margin-block: 0.5rem; */
     font-size: 1.3rem;
     line-height: 1.5rem;
+    /* margin-block: 0.5rem; */
   }
 
   /* actual input element */

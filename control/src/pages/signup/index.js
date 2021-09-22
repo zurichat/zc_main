@@ -91,7 +91,7 @@ const Signup = () => {
         <div id={styles.authImageWrapper}>
           <img src={images[currentImage]} alt="backgroundImage" />
         </div>
-      </aside> */}
+      </aside>  */}
       <section id={styles.authFormContainer}>
         <FormWrapper
           header="Create Account"

@@ -59,8 +59,8 @@ const InputBox = ({
               className={`${styles.ToggleVisibility}`}
               onClick={passwordToggle}
             >
-              {/* <i className={`far ${passwordVisible ? 'eye-slash' : 'eye'}`}></i> */}
               {passwordVisible ? <FiEyeOff /> : <FiEye />}
+              {/* <i className={`far ${passwordVisible ? 'eye-slash' : 'eye'}`}></i> */}
             </div>
           )}
         </div>
