@@ -1,396 +1,377 @@
-.profileHeader {
-  border-radius: 5px 5px 0px 0px;
-  background: #00b87c;
-  padding: 25px 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.container {
+  width: 20.5rem;
+  margin-top: 4.25em;
+  height: calc(100vh - 4.25em);
+  background: #fff;
+  position: relative;
+  z-index: 10000;
+  overflow-y: scroll;
+}
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.containerNone {
+  display: none;
+}
+
+.header {
   width: 100%;
-  color: #fff;
-  font-size: 24px;
-  font-weight: 400;
-  position: sticky;
+  height: 50px;
+  z-index: 40;
+
   top: 0;
   left: 0;
-  right: 0;
-}
-
-.profileMain {
-  background-color: #ffffff;
+  position: sticky;
+  background: #00b87c;
   display: flex;
-  padding: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
 }
 
-.profileMain .sectionA {
-  width: 70%;
-  margin-right: 4rem;
+.title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
 }
 
-.profileMain .sectionB {
-  width: 30%;
+.closeIcon {
+  width: 1rem;
+  height: 1rem;
 }
 
-.profileMain .sectionA form {
-  padding-top: 10px;
+.closeIcon path {
+  fill: #fff;
+  cursor: pointer;
 }
 
-.label {
+.content {
+  padding: 20px;
+}
+
+.userAvatar {
+  display: flex;
+  align-self: center;
+  margin: 0 auto;
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.userDetails {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.userDetails h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #242424;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+}
+
+.userDetails h3 span {
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1692f1;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 900;
+  border-radius: 1px;
+  margin-left: 0.5rem;
+}
+
+.mobileBackButton {
+  display: none;
+}
+
+.userDetails p {
+  font-size: 1rem;
+  font-weight: 400;
   color: #3a3a3a;
-  font-size: 14px;
-  line-height: 21px;
-}
-.imageUpload {
-  border: 1px solid #e5e5e5;
-  box-sizing: border-box;
-  border-radius: 5px;
-  padding: 0.5rem;
-  margin-bottom: 10px;
-  outline: none;
-  display: block;
-  width: 100%;
-  font-size: 13px;
-  resize: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  margin-top: 0.6rem;
 }
 
-.formInput {
-  border: 1px solid #e5e5e5;
-  box-sizing: border-box;
-  border-radius: 5px;
-  padding: 0.5rem;
-  margin-top: 5px;
-  outline: none;
-  display: block;
-  width: 100%;
-  font-size: 13px;
-  resize: none;
+.userDetails small {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #3a3a3a;
+  margin-top: 0.6rem;
 }
-.formWrapper {
-  margin-bottom: 15px;
+
+.buttonGroups {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.displayNameDesktop,
-.formMargin {
-  width: 100%;
-  margin-right: 25px;
+
+.buttonGroups button {
+  background: #00b87c;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.5rem;
+  height: 36px;
+  font-size: 0.6rem;
+  border-radius: 4px;
+  font-weight: 700;
+  border: none;
+}
+
+.buttonGroups button:hover {
+  background: none;
+  border: 1px solid #00b87c;
+  color: #00b87c;
+}
+
+.buttonGroups button svg {
+  width: 0.8rem;
+  margin-right: 0.3rem;
+}
+
+.buttonGroups button svg path {
+  stroke: #fff;
+}
+
+.buttonGroups button:hover svg path {
+  stroke: #00b87c;
+}
+
+.moreInfo {
   display: block;
   margin-bottom: 1rem;
 }
 
-.subText {
-  --tw-text-opacity: 0.6;
-  line-height: 1.4;
+.infoTitle {
+  font-size: 15px;
   font-weight: 400;
-  margin-top: 0.5rem;
-  font-size: 0.7rem;
-  margin-bottom: 0.8rem;
   color: #3a3a3a;
+  margin-bottom: 0.5rem;
 }
 
-.profilePic img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  margin-bottom: 20px;
+.infoContent,
+.infoLink {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #242424;
 }
 
-.phoneNumber {
-  border: 1px solid #e5e5e5;
-  padding: 0.5rem /* 8px */;
-  color: rgb(14, 16, 20);
-  border-radius: 0.375rem /* 6px */;
-  width: 100%;
+.infoLink {
+  color: #2f80ed;
+  font-weight: 700;
 }
 
-.phoneNumber input {
-  outline: none;
-  border: none;
-  width: 70%;
-}
-.phoneNumber select {
-  outline: none;
-  border: none;
-  padding-right: 5px;
-  border-right: 1px solid #e5e5e5;
-}
-.timeZone {
-  border: 1px solid #e5e5e5;
-  padding: 0.5rem /* 8px */;
-  color: rgb(14, 16, 20);
-  border-radius: 0.375rem /* 6px */;
-  width: 100%;
-}
-.subContainer {
+.social {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin-bottom: 0.6rem;
+  margin-top: 1.4rem;
+  margin-bottom: 3rem;
 }
 
-.mxAuto {
-  margin-left: auto;
-  margin-right: auto;
+.social .icons {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7f7f7;
+  cursor: pointer;
+  margin-right: 1.3rem;
 }
 
-.save {
-  border-radius: 5px;
-  width: auto;
-  transition-property: background-color, border-color, color, fill, stroke,
-    opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  background: #2f80ed;
-  outline: none;
-  border: none;
-  color: #fff;
-  font-size: 13px;
-  padding: 10px;
+.social .icons img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.profileDropDown {
+  position: absolute;
+  top: 110%;
+  right: 16px;
+  width: 227px;
+  background: #ffffff;
+  border: 1px solid #bebebe;
+  border-radius: 10px;
+}
+
+.topSection {
+  padding: 1.5rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0;
+}
+
+.bottomSection {
+  border-top: 1px solid #bebebe;
+  padding: 1.5rem;
+  padding-bottom: 0.7rem;
+  padding-top: 1rem;
+}
+
+.paragraph {
+  padding: 0;
+  margin: 0;
+  padding-bottom: 1rem;
   cursor: pointer;
 }
-.save:hover {
-  background: #1160c7;
-}
-.deleteImage {
-  margin-top: 1rem /* 16px */;
-  padding: 0.75rem /* 12px */;
-  outline: none;
-  border: none;
-  --tw-text-opacity: 1;
-  color: rgba(107, 114, 128, var(--tw-text-opacity));
-  background-color: transparent;
-  font-size: 15px;
-}
-.tagContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.setTag {
-  margin-right: 1rem /* 16px */;
-  font-weight: 500;
-  font-size: 15px;
-}
-.away {
-  border-width: 1px;
-  padding: 4px 8px;
-  border-radius: 0.5rem /* 8px */;
-  text-align: center;
-  background: transparent;
-  border: 1px solid #2f80ed;
-  font-size: 14px;
-}
-.away:hover {
-  color: #fff;
-  --tw-bg-opacity: 1;
-  background-color: #1160c7;
-}
-.px9 {
-  padding: 0 1.5rem;
-}
-.mt {
-  margin-top: 12px;
-}
-.linkTab {
-  --tw-bg-opacity: 1;
-  background-color: rgba(249, 250, 251, var(--tw-bg-opacity));
-  padding-left: 2.5rem /* 40px */;
-  padding-right: 2.5rem /* 40px */;
-  padding-top: 1.75rem /* 28px */;
-  padding-bottom: 3.5rem /* 56px */;
-  margin-top: 2rem /* 32px */;
-  margin-bottom: 4rem /* 64px */;
-  border-radius: 5px;
-}
-.fontMed {
-  font-weight: 500;
-}
-.fontRed {
-  --tw-text-opacity: 1;
-  color: rgba(239, 68, 68, var(--tw-text-opacity));
-}
-
-.addLink {
+.paragraphNull {
+  padding: 0;
+  margin: 0;
+  padding-bottom: 0.3rem;
   cursor: pointer;
-  margin-top: 1.5rem /* 24px */;
-  font-size: 1.125rem /* 18px */;
-  line-height: 1.75rem /* 28px */;
 }
 
-.plus {
-  border-radius: 0.5rem /* 8px */;
-  padding-top: 0.5rem /* 8px */;
-  padding-bottom: 0.5rem /* 8px */;
-  padding-left: 0.75rem /* 12px */;
-  padding-right: 0.75rem /* 12px */;
-  margin-right: 1.25rem /* 20px */;
-  --tw-bg-opacity: 1;
-  background-color: rgba(252, 211, 77, var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgba(251, 191, 36, var(--tw-text-opacity));
-}
-.plus:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgba(251, 191, 36, var(--tw-bg-opacity));
-}
-.textYellow {
-  --tw-text-opacity: 1;
-  font-size: 13px;
-  color: rgba(251, 191, 36, var(--tw-text-opacity));
-}
-
-.formFooter {
-  display: flex;
-  text-align: center;
-  justify-content: flex-end;
-}
-
-.cancel {
-  padding: 0.75rem /* 12px */;
-  margin-right: 1rem /* 16px */;
-  outline: none;
-  border: none;
-  background: transparent;
-  font-size: 13px;
-  --tw-text-opacity: 1;
-  color: rgba(156, 163, 175, var(--tw-text-opacity));
-}
-/* button {
-  font-size: 12px;
-  line-height: 21px;
-} */
-
-.profileFunc {
+.small {
+  font-size: 10px;
+  color: #999;
+  margin-bottom: 1rem;
   display: block;
 }
-.camera,
-.username {
+
+.buttonGroupsMobile {
   display: none;
 }
 
-.bottomBtn {
+.mobile {
   display: none;
-}
-
-.avatar {
-  border-radius: 50%;
-  overflow: hidden;
-  width: 12rem;
-  height: 12rem;
-  margin-bottom: 1.5rem;
-}
-
-.avatar img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
 }
 
 @media (max-width: 768px) {
-  .username {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    flex-grow: 1;
-  }
-
-  .mt {
-    margin-top: 0;
-  }
-
-  .mt input {
-    height: 2.3rem;
-  }
-
-  .profileFunc {
-    display: none;
-  }
-  .formWrapper {
-    display: flex;
-    flex-direction: column;
-  }
-  .displayNameDesktop {
-    display: none;
-  }
-  .profileMain {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 6px;
-  }
-  .profileMain .sectionA {
-    order: 2;
-    width: 100%;
-  }
-  .sectionB {
-    width: 100% !important;
-  }
-  .label {
-    font-weight: 700;
-  }
-  .linkTab {
-    background: #fff;
-    padding: 0;
-    margin: 0 0;
-  }
-  .plus,
-  .formFooter {
-    display: none;
-  }
-  .profilePic {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 7rem auto;
-    grid-gap: 1rem;
-    align-items: center;
-    position: relative;
-  }
-  .avatar {
-    height: 7rem;
-    width: 7rem;
-    border-radius: 50%;
-    margin-bottom: 0;
-    overflow: hidden;
-  }
-
-  .avatar img {
-    object-fit: cover;
-    width: 100%;
-  }
-
-  .profilePic .camera {
-    position: absolute;
+  .container {
+    position: fixed;
+    top: 0;
     left: 0;
-    top: 10px;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    margin-top: 5px;
+    overflow-y: auto;
+    border-radius: 8px 8px 0px 0px;
+  }
+
+  /* .header {
+    display: none;
+  } */
+
+  .content {
+    padding: 10px;
+  }
+
+  .buttonGroups {
+    display: none;
+  }
+
+  .buttonGroupsMobile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    padding: 2rem 0.6rem;
+  }
+
+  .buttonGroupsMobile button {
+    width: 100%;
+    height: 3.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    background: #f6f6f6;
-    border: 1px solid #ffffff;
-  }
-  .cameraIcon {
+    border: 1.5px solid #00b87c;
+    background: none;
     font-size: 1rem;
+    font-weight: 700;
+    color: #00b87c;
+    border-radius: 4px;
+  }
+
+  .buttonGroupsMobile button:hover {
+    background: #00b87c;
+    color: #fff;
+  }
+
+  .moreInfo {
+    margin: 0 0.6rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #999;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .infoTitle {
+    font-size: 15px;
+    margin-bottom: 0.2rem;
     color: #999;
   }
 
-  .bottomBtn {
-    display: block;
-    position: fixed;
-    top: 2rem;
-    z-index: 3333;
-    right: 1rem;
-    background: none;
-    color: #2f80ed;
-    border: none;
-    outline: none;
+  .infoContent,
+  .infoLink {
+    font-size: 1rem;
+    font-weight: 700;
   }
 
-  .formMargin {
-    margin-bottom: 0;
+  .infoContent span {
+    background: #2f80ed;
+    padding: 0.15rem 0.3rem;
+    color: #fff;
+    border-radius: 0.3rem;
+    font-size: 0.8rem;
   }
-  .imageUpload {
+
+  .social .icons {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .social .icons img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .mobileBackButton {
+    position: fixed;
+    top: 1.5rem;
+    left: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    z-index: 10001;
+  }
+
+  .mobileBackButton path {
+    stroke: #000;
+    stroke-width: 2px;
+  }
+  .userDetails {
     display: none;
+  }
+  .userAvatar {
+    display: flex;
+    align-self: center;
+    margin: 0 auto;
+    width: 80%;
+    height: 25rem;
+    /* object-fit: contain; */
   }
 }
