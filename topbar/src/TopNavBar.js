@@ -12,7 +12,8 @@ import HelpIcon from './assets/download_images/question.svg'
 import HelpIcons from '@material-ui/icons/HelpOutline'
 import TopbarModal from './components/TopbarModal'
 import HelpModal from './components/HelpModal'
-import UserForm from '../../control/src/pages/ReportFeature/components/Form'
+import UserForm from '../../control/src/pages/ReportFeature/User/Form'
+import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
 import { authAxios } from './utils/Api'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
@@ -81,6 +82,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       {helpModal ? <HelpModal  setHelpModal={setHelpModal}/> : ''}
 
         <UserForm />
+        <AdminForm />
       <div>
         <img
           style={{ height: '30px', width: '30px', borderRadius: '5px' }}
@@ -90,6 +92,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           alt="user profile avatar"
         />
       </div>
+
       <TopbarModal />
     </TopNavBarBase>
   )
