@@ -12,7 +12,7 @@ a {
 }
 .large {
   display: grid;
-  grid-template-columns: 20% 60% 20%;
+  grid-template-columns: 30% 40% 30%;
   padding: 0 30px;
   background: transparent;
   border-bottom: 0.1rem solid rgba(235, 234, 234);
@@ -20,25 +20,22 @@ a {
   top: 0;
   position: fixed;
   width: 100%;
+  height: 55px;
   background-color: white;
 }
 .logo {
-  display: inline-block;
-  justify-content: center;
+  display: inline-flex;
   padding-left: 40px;
-  padding-top: 10px;
-  font-size: 22px;
-}
-.logo_img {
-  padding-top: 0;
-}
-.logo_name {
-  display: inline-block;
-  padding-left: 5px;
   padding-top: 5px;
+}
+.logo a {
+  display: inline-flex;
+}
+.logo p {
   color: black;
+  padding-left: 5px;
+  padding-top: 15px;
   font-size: 1.3rem;
-  font-weight: bold;
 }
 .menu {
   position: relative;
@@ -48,7 +45,7 @@ a {
 .menu ul {
   display: flex;
   justify-content: space-around;
-  padding-top: 15px;
+  padding-top: 20px;
   padding-bottom: 0;
 }
 .header_list {
@@ -58,8 +55,8 @@ a {
 }
 .fa {
   padding-left: 5px;
-  font-size: 1.8rem;
-  padding-top: 8px;
+  top: 30%;
+  font-size: 2rem;
   position: absolute;
 }
 #menu:hover {
@@ -71,14 +68,14 @@ a {
   flex-direction: column;
   position: absolute;
   visibility: hidden;
-  top: 260%;
-  left: 41.5%;
+  top: 265%;
+  left: 43%;
   transform: translate(-50%, -50%);
 }
 .dropdown_items {
   position: relative;
   line-height: 30px;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   display: none;
   color: black;
   visibility: hidden;
@@ -95,8 +92,8 @@ a {
   flex-direction: column;
   position: absolute;
   visibility: hidden;
-  top: 260%;
-  left: 92%;
+  top: 265%;
+  left: 94%;
   transform: translate(-50%, -50%);
 }
 .menu ul li:hover > .dropdown1 li,
@@ -151,14 +148,16 @@ a {
 .header_list i {
   padding-left: 8px;
 }
-
 .header_signs ul {
   width: 100%;
   display: flex;
-  justify-content: space-around;
-  font-size: 1.3rem;
+  justify-content: center;
+  font-size: 1.2rem;
   padding-top: 15px;
   color: black;
+}
+.header_signs ul li {
+  padding-left: 30px;
 }
 .header_signin {
   background: #00b87c;
@@ -194,59 +193,37 @@ a {
   z-index: 100;
   padding-right: 10px;
   padding-left: 10px;
-  padding-top: 10px;
+  padding-top: 5px;
   height: 45px;
   top: 0;
   position: fixed;
   width: 100%;
   background-color: white;
 }
-.m_logo {
-  display: inline-block;
-  justify-content: left;
-  padding-left: 10px;
-}
-
-.mobile_menu {
-  padding-right: 10px;
-  display: inline-flex;
-  float: right;
-}
-.mobile_menu li {
-  padding: 5px 10px;
-}
-.mobile_fa {
-  font-size: 3rem;
-  position: relative;
-}
 
 /*media queries*/
 @media screen and (max-width: 1250px) {
-  .logo {
-    padding-left: 0;
-  }
-  .logo_name {
-    font-size: 1.3rem;
+  .logo p {
+    font-size: 1.2rem;
   }
   .dropdown1 {
     top: 260%;
-    left: 40.5%;
+    left: 41%;
   }
   .dropdown2 {
     top: 260%;
-    left: 91.5%;
+    left: 92%;
   }
   .dropdown_items {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     width: 150px;
   }
   .header_list {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   .fa {
     padding-left: 5px;
     font-size: 2rem;
-    padding-top: 5px;
     position: absolute;
   }
   .header_signs ul {
@@ -255,61 +232,96 @@ a {
     padding-right: 0;
   }
   .header_signin {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     padding: 8px 5px;
   }
   .header_signup {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
 
 @media screen and (max-width: 1200px) {
-  .logo img {
-    width: 35px;
-    height: 35px;
+  .logo p {
+    font-size: 1.5rem;
   }
-  .logo_name {
-    font-size: 1.8rem;
+  .header_signs {
+    padding-top: 2px;
+  }
+  .header_signin {
+    font-size: 1.5rem;
+    padding: 8px 6px;
+  }
+  .header_signup {
+    font-size: 1.5rem;
+  }
+  .dropdown_items {
+    font-size: 1.5rem;
+    width: 150px;
   }
   .header_list {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+  }
+  .dropdown1 {
+    top: 265%;
+    left: 42%;
+  }
+  .dropdown2 {
+    top: 265%;
+    left: 93.5%;
   }
   .fa {
     padding-left: 5px;
     font-size: 2.5rem;
-    padding-top: 5px;
+    padding-top: 0;
+    position: absolute;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .large {
+    grid-template-columns: 20% 60% 20%;
+  }
+  .header_signs ul li {
+    padding-left: 10px;
+  }
+  .logo p {
+    font-size: 1.5rem;
+  }
+  .header_list {
+    font-size: 1.5rem;
+  }
+  .fa {
+    padding-left: 5px;
+    font-size: 2.5rem;
     position: absolute;
   }
   .dropdown_items {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     width: 150px;
   }
   .dropdown1 {
-    top: 275%;
-    left: 40.5%;
+    top: 265%;
+    left: 41%;
   }
   .dropdown2 {
-    top: 275%;
-    left: 91.5%;
+    top: 265%;
+    left: 92%;
   }
   .header_signin {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     padding: 8px 5px;
   }
   .header_signup {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 }
-@media screen and (max-width: 780px) {
-  .logo img {
-    width: 30px;
-    height: 30px;
-  }
-  .logo_name {
-    font-size: 2.2rem;
+
+@media screen and (max-width: 769px) {
+  .logo p {
+    font-size: 2rem;
   }
   .header_list {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
   .fa {
     padding-left: 5px;
@@ -318,23 +330,26 @@ a {
     position: absolute;
   }
   .dropdown_items {
-    font-size: 2.2rem;
+    font-size: 2rem;
     width: 120px;
   }
   .dropdown1 {
-    top: 285%;
+    top: 265%;
     left: 38%;
   }
   .dropdown2 {
-    top: 285%;
+    top: 265%;
     left: 89.5%;
   }
+  .header_signs ul li {
+    padding-left: 0;
+  }
   .header_signin {
-    font-size: 2.2rem;
+    font-size: 2rem;
     padding: 8px 5px;
   }
   .header_signup {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 }
 
@@ -342,20 +357,44 @@ a {
   .large {
     visibility: hidden;
   }
-  .m_logo_name {
-    display: inline-block;
-    padding-left: 5px;
-    color: black;
-    position: absolute;
-    font-size: 2.2rem;
-    font-weight: bold;
-  }
+
   .mobile_nav {
     visibility: visible;
     padding-left: 10px;
   }
+  .m_logo {
+    display: inline-flex;
+    justify-content: left;
+    padding-left: 10px;
+  }
+  .m_logo a {
+    display: inline-flex;
+  }
+  .m_logo p {
+    padding-top: 10px;
+    padding-left: 35px;
+    font-size: 2.2rem;
+    color: black;
+    display: inline-block;
+    position: absolute;
+  }
+  .mobile_menu {
+    padding-right: 10px;
+    display: inline-flex;
+    float: right;
+  }
+  .icon {
+    padding-right: 0;
+    padding-top: 5px;
+  }
+  .mobile_fa {
+    padding-top: 5px;
+    font-size: 3rem;
+    position: relative;
+  }
   .dropdown_list {
     position: relative;
+    padding: 5px 20px;
     line-height: 30px;
     font-size: 18px;
     display: inline-block;
@@ -363,9 +402,6 @@ a {
     background: white;
     color: black;
     width: 190vw;
-  }
-  .dropdown_list a {
-    padding-left: 20px;
   }
   .dropdown_list:hover {
     background-color: #00b87c;
@@ -377,7 +413,7 @@ a {
     position: absolute;
     visibility: visible;
     transition: 0.5s ease-in-out;
-    top: 365%;
+    top: 360%;
     left: 95%;
     transform: translate(-50%, -50%);
   }
@@ -393,7 +429,7 @@ a {
   }
   .mobile_signs {
     background-color: white;
-    padding-top: 5px;
+    padding-top: 15px;
     padding-bottom: 25px;
     padding-left: 120px;
     display: flex;
@@ -401,22 +437,20 @@ a {
   .mobile_signs a {
     font-size: 18px;
   }
+  .mobile_signs li {
+    padding-left: 10px;
+  }
   .header_signin {
     padding: 10px 20px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .m_logo_name {
-    display: inline-block;
-    padding-left: 5px;
-    color: black;
-    position: absolute;
+  .m_logo p {
     font-size: 1.3rem;
-    font-weight: bold;
   }
   .mobile_fa {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     position: relative;
   }
 }
