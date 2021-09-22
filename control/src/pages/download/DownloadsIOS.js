@@ -12,7 +12,7 @@ import fetchInstall from './utils/index'
 // import Apk from './apk/appRelease.apk'
 
 const DownloadsIOS = () => {
-   const [exe, setexe] = useState({ link: '', name: '' })
+  const [exe, setexe] = useState({ link: '', name: '' })
   // const [msi, setmsi] = useState({ link: '', name: '' })
   // const [dmg, setdmg] = useState({ link: '', name: '' })
 
@@ -29,16 +29,16 @@ const DownloadsIOS = () => {
       <div className={downloadStyles.containermain}>
         <div className={downloadStyles.container}>
           <div className={downloadStyles.containerfluid}>
-            <p className={downloadStyles.zuritext}>Download Zuri Chat beta for iOS.</p>
+            <p className={downloadStyles.zuritext}>
+              Download Zuri Chat beta for iOS.
+            </p>
             <a href={exe.link} download={exe.name}>
-               <div className={downloadStyles.appstorediv}>
+              <div className={downloadStyles.appstorediv}>
                 <img src={AppStorelogo} alt="" />
               </div>
             </a>
-           
-            <p className={downloadStyles.newtext}>
-              Get Zuri Chat DM & Channel
-            </p>
+
+            <p className={downloadStyles.newtext}>Get Zuri Chat DM & Channel</p>
             <div className={downloadStyles.phonediv}>
               <img src={PhoneDM} alt="" className={downloadStyles.PhoneDM} />
               <img

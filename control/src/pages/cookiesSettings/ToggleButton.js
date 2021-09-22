@@ -9,7 +9,7 @@ const ToggleButton = () => {
         <Input type="checkbox" />
         <Slider
           onClick={() => setToggle(!toggle)}
-          style={{     
+          style={{
             '--justify-item': toggle ? 'flex-end' : 'flex-start',
             '--background-color': toggle ? '#00b87c' : '#d3d3d3'
           }}
@@ -28,7 +28,7 @@ const Slider = styled.span`
   justify-content: var(--justify-item);
   height: 20.92px;
   width: 40.22px;
-  background-color: var(--background-color) ;
+  background-color: var(--background-color);
   border-radius: 15.2px;
   &:before {
     content: '';
