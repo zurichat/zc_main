@@ -1,4 +1,4 @@
-import React, { useEffect, useState }  from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Col, Row } from 'react-bootstrap'
 import styles from './styles/marketplace.module.css'
@@ -15,10 +15,10 @@ import AuthNotifyBanner from './components/AuthNotifyBanner/'
 import axios from 'axios'
 
 const MarketPlace = () => {
-  let data = JSON.parse(sessionStorage.getItem('user'));  
-  const [ userDetails, setUserDetails ] = useState(null)
-  const [ loadingUser, setLoadingUser ] = useState(false)
-  const [ err, setErr ] = useState(null)
+  let data = JSON.parse(sessionStorage.getItem('user'))
+  const [userDetails, setUserDetails] = useState(null)
+  const [loadingUser, setLoadingUser] = useState(false)
+  const [err, setErr] = useState(null)
 
   const fetchUserInformation = async () => {
     const { token, id } = data
@@ -35,8 +35,8 @@ const MarketPlace = () => {
       } else {
         setErr('Network Error')
         setLoadingUser(false)
-      }    
-    } catch(err) {
+      }
+    } catch (err) {
       console.log(err)
       setErr('Something Went Wrong Fetching User Details')
       setLoadingUser(false)
@@ -54,19 +54,32 @@ const MarketPlace = () => {
         <div
           className={`w-100 d-flex flex-wrap justify-content-between align-items-baseline ${styles.marketplaceNavbar}`}
         >
-          <MarketplaceHeader user={data} /> 
-          {
-            !data && !loadingUser ?
-              <AuthNotifyBanner 
-                text={!loadingUser && !userDetails ? 'You are currently not logged in,' : "You are currently not in an organization"} 
-                action={!loadingUser && !userDetails ? { link: '/login', name: 'Login'} : {link: '/home/join/organization', name: 'Join An Organization'}} 
-              />:
-              data && !userDetails ? <AuthNotifyBanner 
-                text={"You are currently not in an organization"} 
-                action={{link: '/home/join/organization', name: 'Join An Organization'}} 
-              />
-            : null
-          }                 
+          <MarketplaceHeader user={data} />
+          {!data && !loadingUser ? (
+            <AuthNotifyBanner
+              text={
+                !loadingUser && !userDetails
+                  ? 'You are currently not logged in,'
+                  : 'You are currently not in an organization'
+              }
+              action={
+                !loadingUser && !userDetails
+                  ? { link: '/login', name: 'Login' }
+                  : {
+                      link: '/home/join/organization',
+                      name: 'Join An Organization'
+                    }
+              }
+            />
+          ) : data && !userDetails ? (
+            <AuthNotifyBanner
+              text={'You are currently not in an organization'}
+              action={{
+                link: '/home/join/organization',
+                name: 'Join An Organization'
+              }}
+            />
+          ) : null}
         </div>
         <div className={styles.marketplaceHero}>
           <Row className={`align-items-center justify-content-center`}>
@@ -149,7 +162,10 @@ const MarketPlace = () => {
             </TabList>
             <Row className={`mx-0`}>
               <TabPanel>
-                <MarketPlaceContainer user={data} organizations={userDetails?.Organizations} />
+                <MarketPlaceContainer
+                  user={data}
+                  organizations={userDetails?.Organizations}
+                />
               </TabPanel>
               <TabPanel>
                 <MarketPlaceContainer />
