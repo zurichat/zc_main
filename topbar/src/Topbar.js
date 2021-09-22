@@ -9,6 +9,7 @@ import SearchBar from './components/SearchBar'
 import StatusBadge from './components/StatusBadge'
 import TopbarModal from './components/TopbarModal'
 import ProfileModal from './components/ProfileModal'
+import Profile from './components/Profile'
 // import { MembersModalButton } from './MembersModal'
 
 // Placeholder data
@@ -34,6 +35,7 @@ const Topbar = ({ userProfile: { last_name, first_name } }) => {
   return (
     <div className={styles.container}>
       <SearchBar />
+
       <div className={styles.topbar}>
         {/* <MembersModalButton members={faked} /> */}
         <Link to="/settings">
@@ -53,6 +55,7 @@ const Topbar = ({ userProfile: { last_name, first_name } }) => {
         </p>
       </div>
 
+      <Profile />
       <ProfileModal />
       <TopbarModal members={faked} />
     </div>
