@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react'
-import styles from '../component-styles/footer.module.css'
+import styles from '../component-styles/FooterStyle.module.css'
 import logo from '../component-assets/zurichatlogo.svg'
 import facebook from '../component-assets/facebook.svg'
 import twitter from '../component-assets/twitter.svg'
@@ -37,13 +37,7 @@ const Footer = () => {
       <div className={styles.mobile}>
         <div className={styles.logo}>
           <a href="/landing">
-            <img
-              className={styles.logo_img}
-              src={logo}
-              alt="Logo"
-              width="40px"
-              height="40px"
-            />
+            <img className={styles.logo_img} src={logo} alt="Logo" />
             <p className={styles.logo_name}>Zuri Chat</p>
           </a>
         </div>
@@ -162,9 +156,9 @@ const Footer = () => {
               <img
                 className={styles.logo_img}
                 src={logo}
-                /*alt="Logo"*/
-                width="40px"
-                height="40px"
+                alt="Logo"
+                width="30px"
+                height="30px"
               />
               <p className={styles.logo_name}>Zuri Chat</p>
             </a>

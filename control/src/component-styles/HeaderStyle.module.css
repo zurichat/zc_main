@@ -1,0 +1,634 @@
+.navbar-expand-lg {
+  flex-wrap: wrap;
+  justify-content: start;
+  padding-left: 25px;
+}
+<<<<<<< HEAD:control/src/component-styles/header.module.css
+
+.navbar {
+  margin-top: 15px;
+  border-bottom: 1px solid rgba(187, 186, 231, 0.15);
+=======
+li {
+  padding-left: 0;
+  text-decoration: none;
+}
+a {
+  padding-left: 0;
+  text-decoration: none;
+}
+.large {
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  padding: 0 30px;
+  background: transparent;
+  border-bottom: 0.1rem solid rgba(235, 234, 234);
+  z-index: 100;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: 55px;
+  background-color: white;
+}
+.logo {
+  display: inline-flex;
+  padding-left: 40px;
+  padding-top: 5px;
+}
+.logo a {
+  display: inline-flex;
+}
+.logo p {
+  color: black;
+  padding-left: 5px;
+  padding-top: 15px;
+  font-size: 1.3rem;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
+}
+
+.navButton {
+  border: none;
+  box-shadow: none;
+}
+<<<<<<< HEAD:control/src/component-styles/header.module.css
+
+.navButton:focus {
+  border: none;
+  box-shadow: none;
+=======
+.menu ul {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+  padding-bottom: 0;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
+}
+
+.searchLogo1 {
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
+}
+<<<<<<< HEAD:control/src/component-styles/header.module.css
+
+.searchLogo {
+=======
+.fa {
+  padding-left: 5px;
+  top: 30%;
+  font-size: 2rem;
+  position: absolute;
+}
+#menu:hover {
+  padding-bottom: 5px;
+  border-bottom: 0.2rem solid #00b87c;
+}
+.dropdown1 {
+  display: inline-block;
+  flex-direction: column;
+  position: absolute;
+  visibility: hidden;
+  top: 265%;
+  left: 43%;
+  transform: translate(-50%, -50%);
+}
+.dropdown_items {
+  position: relative;
+  line-height: 30px;
+  font-size: 1.2rem;
+  display: none;
+  color: black;
+  visibility: hidden;
+  background: white;
+  width: 180px;
+  padding: 5px 8px;
+}
+.dropdown_items:hover {
+  background-color: #00b87c;
+  color: #fff;
+}
+.dropdown2 {
+  display: inline-block;
+  flex-direction: column;
+  position: absolute;
+  visibility: hidden;
+  top: 265%;
+  left: 94%;
+  transform: translate(-50%, -50%);
+}
+.menu ul li:hover > .dropdown1 li,
+.menu ul li:hover > .dropdown2 li {
+  display: block;
+  visibility: visible;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+}
+
+.navLinkFeatures {
+  margin-right: 40px;
+}
+
+.navLinkPricing {
+  margin-right: 40px;
+}
+
+.navLinkComms {
+  margin-right: 40px;
+}
+
+.navLinkSignUp {
+  margin-right: 10px;
+}
+<<<<<<< HEAD:control/src/component-styles/header.module.css
+
+.zuriChat {
+  font-size: 18px;
+=======
+.header_signs ul {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+  padding-top: 15px;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
+  color: black;
+  position: relative;
+  top: 5px;
+  font-weight: bold;
+  margin-left: 5px;
+  text-decoration: none;
+}
+<<<<<<< HEAD:control/src/component-styles/header.module.css
+
+.image {
+  position: relative;
+=======
+.header_signs ul li {
+  padding-left: 30px;
+}
+.header_signin {
+  background: #00b87c;
+  border: 2px solid #00b87c;
+  border-radius: 4px;
+  padding: 8px 20px;
+  color: white;
+  font-size: 1.3rem;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
+}
+
+.navbarBrand {
+  text-decoration: none;
+  float: left;
+}
+
+.features {
+  color: black;
+  font-weight: 300;
+}
+
+.signU {
+  color: #00b87c;
+  font-weight: 600;
+}
+
+<<<<<<< HEAD:control/src/component-styles/header.module.css
+.signI {
+  font-weight: 600;
+}
+
+.signIn {
+  background-color: #00b87c;
+  color: white;
+  border-radius: 0px;
+}
+
+.signIn:hover {
+  background-color: #00b87c;
+  color: white;
+}
+
+.pricing {
+  color: black;
+  font-weight: 300;
+}
+
+.comms {
+  color: black;
+  font-weight: 300;
+}
+
+.download {
+  color: black;
+  font-weight: 300;
+}
+
+@media only screen and (min-width: 1440px) {
+  .collapse {
+    margin-left: 200px;
+  }
+
+  .image {
+    position: relative;
+  }
+
+  .zuriChat {
+    font-size: 18px;
+    color: black;
+    position: relative;
+    top: 5px;
+    font-weight: bold;
+    margin-left: 5px;
+    text-decoration: none;
+  }
+
+  .navbar {
+    margin-top: 15px;
+  }
+
+  .navbarBrand {
+    text-decoration: none;
+    padding-left: 20px;
+  }
+
+  .navButton {
+    border: none;
+  }
+
+  .navLinkFeatures {
+    margin-right: 50px;
+  }
+
+  .navLinkPricing {
+    margin-right: 50px;
+  }
+
+  .navLinkComms {
+    margin-right: 50px;
+  }
+
+  .navLinkSignUp {
+    margin-right: 10px;
+  }
+
+  .signIn {
+    background-color: #00b87c;
+    color: white;
+    border-radius: 0px;
+=======
+/*mobile section */
+.mobile_nav {
+  display: grid;
+  visibility: hidden;
+  grid-template-columns: 70% 30%;
+  border-bottom: 0.1rem solid rgba(235, 234, 234);
+  z-index: 100;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+  height: 45px;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+}
+
+/*media queries*/
+@media screen and (max-width: 1250px) {
+  .logo p {
+    font-size: 1.2rem;
+  }
+  .dropdown1 {
+    top: 260%;
+    left: 41%;
+  }
+  .dropdown2 {
+    top: 260%;
+    left: 92%;
+  }
+  .dropdown_items {
+    font-size: 1.2rem;
+    width: 150px;
+  }
+  .header_list {
+    font-size: 1.2rem;
+  }
+  .fa {
+    padding-left: 5px;
+    font-size: 2rem;
+    position: absolute;
+  }
+  .header_signs ul {
+    display: inline-flex;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .header_signin {
+    font-size: 1.2rem;
+    padding: 8px 5px;
+  }
+  .header_signup {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .logo p {
+    font-size: 1.5rem;
+  }
+  .header_signs {
+    padding-top: 2px;
+  }
+  .header_signin {
+    font-size: 1.5rem;
+    padding: 8px 6px;
+  }
+  .header_signup {
+    font-size: 1.5rem;
+  }
+  .dropdown_items {
+    font-size: 1.5rem;
+    width: 150px;
+  }
+  .header_list {
+    font-size: 1.5rem;
+  }
+  .dropdown1 {
+    top: 265%;
+    left: 42%;
+  }
+  .dropdown2 {
+    top: 265%;
+    left: 93.5%;
+  }
+  .fa {
+    padding-left: 5px;
+    font-size: 2.5rem;
+    padding-top: 0;
+    position: absolute;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .large {
+    grid-template-columns: 20% 60% 20%;
+  }
+  .header_signs ul li {
+    padding-left: 10px;
+  }
+  .logo p {
+    font-size: 1.5rem;
+  }
+  .header_list {
+    font-size: 1.5rem;
+  }
+  .fa {
+    padding-left: 5px;
+    font-size: 2.5rem;
+    position: absolute;
+  }
+  .dropdown_items {
+    font-size: 1.5rem;
+    width: 150px;
+  }
+  .dropdown1 {
+    top: 265%;
+    left: 41%;
+  }
+  .dropdown2 {
+    top: 265%;
+    left: 92%;
+  }
+  .header_signin {
+    font-size: 1.5rem;
+    padding: 8px 5px;
+  }
+  .header_signup {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .logo p {
+    font-size: 2rem;
+  }
+  .header_list {
+    font-size: 2rem;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
+  }
+
+  .signI {
+    font-weight: 600;
+  }
+<<<<<<< HEAD:control/src/component-styles/header.module.css
+
+  .signU {
+    color: #00b87c;
+    font-weight: 600;
+  }
+
+  .download {
+    color: black;
+    font-weight: 300;
+  }
+
+  .comms {
+    color: black;
+    font-weight: 300;
+  }
+
+  .pricing {
+    color: black;
+    font-weight: 300;
+  }
+
+  .features {
+    color: black;
+    font-weight: 300;
+=======
+  .dropdown_items {
+    font-size: 2rem;
+    width: 120px;
+  }
+  .dropdown1 {
+    top: 265%;
+    left: 38%;
+  }
+  .dropdown2 {
+    top: 265%;
+    left: 89.5%;
+  }
+  .header_signs ul li {
+    padding-left: 0;
+  }
+  .header_signin {
+    font-size: 2rem;
+    padding: 8px 5px;
+  }
+  .header_signup {
+    font-size: 2rem;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .image {
+    position: relative;
+    transform: scale(0.8);
+  }
+
+<<<<<<< HEAD:control/src/component-styles/header.module.css
+  .zuriChat {
+    font-size: 16px;
+    color: black;
+    position: relative;
+    top: 5px;
+    font-weight: bold;
+    margin-left: 5px;
+    text-decoration: none;
+  }
+
+  .navbar {
+    margin-top: 15px;
+  }
+
+  .navLink {
+    margin-right: 60px;
+  }
+
+  .navbarBrand {
+    text-decoration: none;
+  }
+
+  .signIn {
+=======
+  .mobile_nav {
+    visibility: visible;
+    padding-left: 10px;
+  }
+  .m_logo {
+    display: inline-flex;
+    justify-content: left;
+    padding-left: 10px;
+  }
+  .m_logo a {
+    display: inline-flex;
+  }
+  .m_logo p {
+    padding-top: 10px;
+    padding-left: 35px;
+    font-size: 2.2rem;
+    color: black;
+    display: inline-block;
+    position: absolute;
+  }
+  .mobile_menu {
+    padding-right: 10px;
+    display: inline-flex;
+    float: right;
+  }
+  .icon {
+    padding-right: 0;
+    padding-top: 5px;
+  }
+  .mobile_fa {
+    padding-top: 5px;
+    font-size: 3rem;
+    position: relative;
+  }
+  .dropdown_list {
+    position: relative;
+    padding: 5px 20px;
+    line-height: 30px;
+    font-size: 18px;
+    display: inline-block;
+    border: 0.1rem solid white;
+    background: white;
+    color: black;
+    width: 190vw;
+  }
+  .dropdown_list:hover {
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
+    background-color: #00b87c;
+    color: white;
+    border-radius: 0px;
+    font-weight: 600;
+  }
+<<<<<<< HEAD:control/src/component-styles/header.module.css
+
+  .signI {
+    font-weight: 600;
+  }
+
+  .signU {
+    color: #00b87c;
+    font-weight: 600;
+=======
+  .dropdown {
+    display: inline-block;
+    flex-direction: column;
+    position: absolute;
+    visibility: visible;
+    transition: 0.5s ease-in-out;
+    top: 360%;
+    left: 95%;
+    transform: translate(-50%, -50%);
+  }
+  .dropdown_hide {
+    display: inline-block;
+    flex-direction: column;
+    position: absolute;
+    visibility: hidden;
+    top: 180%;
+    left: 95%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s ease-in-out;
+  }
+  .mobile_signs {
+    background-color: white;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    padding-left: 120px;
+    display: flex;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
+  }
+
+  .download {
+    color: black;
+    font-weight: 300;
+  }
+<<<<<<< HEAD:control/src/component-styles/header.module.css
+
+  .comms {
+    color: black;
+    font-weight: 300;
+=======
+  .mobile_signs li {
+    padding-left: 10px;
+  }
+  .header_signin {
+    padding: 10px 20px;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
+  }
+
+<<<<<<< HEAD:control/src/component-styles/header.module.css
+  .pricing {
+    color: black;
+    font-weight: 300;
+  }
+
+  .features {
+    color: black;
+    font-weight: 300;
+=======
+@media screen and (max-width: 600px) {
+  .m_logo p {
+    font-size: 1.3rem;
+  }
+  .mobile_fa {
+    font-size: 1.6rem;
+    position: relative;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
+  }
+}

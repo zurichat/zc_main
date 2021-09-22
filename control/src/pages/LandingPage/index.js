@@ -19,24 +19,23 @@ import { Link } from 'react-router-dom'
 import Cookies from '../cookies'
 
 export default function Homepage() {
-  const { useState , useEffect } = React;
+  const { useState, useEffect } = React
 
-  const [loading,setLoading] = useState(true);
-  const allowCookie = sessionStorage.getItem('cookies-allow');
-  const declineCookie = sessionStorage.getItem('cookies-decline');
+  const [loading, setLoading] = useState(true)
+  const allowCookie = sessionStorage.getItem('cookies-allow')
+  const declineCookie = sessionStorage.getItem('cookies-decline')
 
-    if(!allowCookie == true || declineCookie == true) {
-      useEffect(() => {
-        const timer = () => setTimeout(() => setLoading(false) , 2000);
-        const timerId = timer();
-        return () => {
-          clearTimeout(timerId);
-        };
-      });
-    }
+  if (!allowCookie == true || declineCookie == true) {
+    useEffect(() => {
+      const timer = () => setTimeout(() => setLoading(false), 2000)
+      const timerId = timer()
+      return () => {
+        clearTimeout(timerId)
+      }
+    })
+  }
 
   const FeatureRow = props => {
-
     return (
       <div className={`${style.ft_row} ${props.rowOrder}`}>
         <div className={`${style.ft_col}`}>
@@ -114,10 +113,8 @@ export default function Homepage() {
             </div>
           </div>
         </div>
-          {/* { COOKIES BANNER} */}
-        <div>
-          { loading ? " " : <Cookies  />}
-        </div>
+        {/* { COOKIES BANNER} */}
+        <div>{loading ? ' ' : <Cookies />}</div>
         {/* COMPANIES */}
         <div className={`${style.company_banner_wrap}`}>
           <div className={`${style.company_banner}`}>
@@ -131,7 +128,7 @@ export default function Homepage() {
             </div>
           </div>
         </div>
-      
+
         {/* FEATURES */}
         <div className={`${style.features_wrap}`}>
           <div className={`${style.features}`}>
