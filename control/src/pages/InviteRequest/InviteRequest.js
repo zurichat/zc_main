@@ -14,7 +14,7 @@ function Inviterequest() {
           <div className={styles.title} gutterBottom align="left">
             <p className={styles.main}>Request Invitation to Zuri Chat</p>
             <form>
-              <div className={styles.first - input}>
+              <div>
                 <p> To: </p>
                 <Container>
                   <Form.Control
@@ -24,7 +24,7 @@ function Inviterequest() {
                   />
                 </Container>
               </div>
-              <div className={styles.second - input}>
+              <div>
                 <p> Invite as: </p>
                 <Container>
                   <Form.Control
@@ -34,7 +34,7 @@ function Inviterequest() {
                   />
                 </Container>
               </div>
-              <div className={styles.third - input}>
+              <div>
                 <p> Reason for request(optional): </p>
                 <Container>
                   <Form.Control
