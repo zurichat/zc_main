@@ -55,9 +55,9 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     }
 
     setUserProfileImage(user.image_url)
-
     getOrganizations()
   }, [setOrgId, user.image_url, setUser])
+  
 
   return (
     <TopNavBarBase>

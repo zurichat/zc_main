@@ -33,7 +33,7 @@ export const WorkspaceProvider = ({ children }) => {
       )
       if (response.status !== 200) {
         throw Error(
-          `Unable to fetch list of organizations, status code: ${response.status}`
+          `Unable to fetch list of wokspaces, status code: ${response.status}`
         )
       }
       const { data } = await response.data
