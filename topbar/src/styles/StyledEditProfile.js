@@ -5,6 +5,125 @@ export const StyledProfileWrapper = styled.section`
     height: 100%;
     padding: 2rem;
 
+    /* CSS variables. */
+    :root {
+        --PhoneInput-color--focus: #03b2cb;
+        --PhoneInputInternationalIconPhone-opacity: 0.8;
+        --PhoneInputInternationalIconGlobe-opacity: 0.65;
+        --PhoneInputCountrySelect-marginRight: 0.35em;
+        --PhoneInputCountrySelectArrow-width: 0.3em;
+        --PhoneInputCountrySelectArrow-marginLeft: var(--PhoneInputCountrySelect-marginRight);
+        --PhoneInputCountrySelectArrow-borderWidth: 1px;
+        --PhoneInputCountrySelectArrow-opacity: 0.45;
+        --PhoneInputCountrySelectArrow-color: inherit;
+        --PhoneInputCountrySelectArrow-color--focus: var(--PhoneInput-color--focus);
+        --PhoneInputCountrySelectArrow-transform: rotate(45deg);
+        --PhoneInputCountryFlag-aspectRatio: 1.5;
+        --PhoneInputCountryFlag-height: 1em;
+        --PhoneInputCountryFlag-borderWidth: 1px;
+        --PhoneInputCountryFlag-borderColor: rgba(0,0,0,0.5);
+        --PhoneInputCountryFlag-borderColor--focus: var(--PhoneInput-color--focus);
+        --PhoneInputCountryFlag-backgroundColor--loading: rgba(0,0,0,0.1);
+    }
+
+    .PhoneInput {
+        /* This is done to stretch the contents of this component. */
+        display: flex;
+        align-items: center;
+    }
+
+    .PhoneInputInput {
+        /* The phone number input stretches to fill all empty space */
+        flex: 1;
+        /* The phone number input should shrink
+        to make room for the extension input */
+        min-width: 0;
+    }
+
+    .PhoneInputCountryIcon {
+        width: calc(var(--PhoneInputCountryFlag-height) * var(--PhoneInputCountryFlag-aspectRatio));
+        height: var(--PhoneInputCountryFlag-height);
+    }
+
+    .PhoneInputCountryIcon--square {
+        width: var(--PhoneInputCountryFlag-height);
+    }
+
+    .PhoneInputCountryIcon--border {
+        background-color: var(--PhoneInputCountryFlag-backgroundColor--loading);
+        box-shadow: 0 0 0 var(--PhoneInputCountryFlag-borderWidth) var(--PhoneInputCountryFlag-borderColor),
+            inset 0 0 0 var(--PhoneInputCountryFlag-borderWidth) var(--PhoneInputCountryFlag-borderColor);
+    }
+
+    .PhoneInputCountryIconImg {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .PhoneInputInternationalIconPhone {
+        opacity: var(--PhoneInputInternationalIconPhone-opacity);
+    }
+
+    .PhoneInputInternationalIconGlobe {
+        opacity: var(--PhoneInputInternationalIconGlobe-opacity);
+    }
+
+    .PhoneInputCountry {
+        position: relative;
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        margin-right: var(--PhoneInputCountrySelect-marginRight);
+    }
+
+    .PhoneInputCountrySelect {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        border: 0;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .PhoneInputCountrySelect[disabled] {
+        cursor: default;
+    }
+
+    .PhoneInputCountrySelectArrow {
+        display: block;
+        content: '';
+        width: var(--PhoneInputCountrySelectArrow-width);
+        height: var(--PhoneInputCountrySelectArrow-width);
+        margin-left: var(--PhoneInputCountrySelectArrow-marginLeft);
+        border-style: solid;
+        border-color: var(--PhoneInputCountrySelectArrow-color);
+        border-top-width: 0;
+        border-bottom-width: var(--PhoneInputCountrySelectArrow-borderWidth);
+        border-left-width: 0;
+        border-right-width: var(--PhoneInputCountrySelectArrow-borderWidth);
+        transform: var(--PhoneInputCountrySelectArrow-transform);
+        opacity: var(--PhoneInputCountrySelectArrow-opacity);
+    }
+
+    .PhoneInputCountrySelect:focus + .PhoneInputCountryIcon + .PhoneInputCountrySelectArrow {
+        opacity: 1;
+        color: var(--PhoneInputCountrySelectArrow-color--focus);
+    }
+
+    .PhoneInputCountrySelect:focus + .PhoneInputCountryIcon--border {
+        box-shadow: 0 0 0 var(--PhoneInputCountryFlag-borderWidth) var(--PhoneInputCountryFlag-borderColor--focus),
+            inset 0 0 0 var(--PhoneInputCountryFlag-borderWidth) var(--PhoneInputCountryFlag-borderColor--focus);
+    }
+
+    .PhoneInputCountrySelect:focus + .PhoneInputCountryIcon .PhoneInputInternationalIconGlobe {
+        opacity: 1;
+        color: var(--PhoneInputCountrySelectArrow-color--focus);
+    }
+
     .grid-container {
         display: flex;
         align-items: flex-start;
@@ -91,6 +210,12 @@ export const StyledProfileWrapper = styled.section`
                     .PhoneInputCountrySelect {
                         width: 3rem;
                     }
+
+                    .PhoneInputInput {
+                        outline: none;
+                        color: #000;
+                        font-size: 1rem;
+                    }
                 }
 
                 .css-2b097c-container {
@@ -113,6 +238,7 @@ export const StyledProfileWrapper = styled.section`
                 .warning {
                     font-size: .75rem;
                     color: #FB9002;
+                    cursor: pointer;
                 }
 
                 .para {
@@ -140,7 +266,6 @@ export const StyledProfileWrapper = styled.section`
 
         .img-container {
             width: 24rem;
-            height: auto;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -152,8 +277,10 @@ export const StyledProfileWrapper = styled.section`
             
             .avatar {
                 width: 100%;
+                height: 24rem;
                 
                 .img {
+                    object-fit: cover;
                     width: 100%;
                     height: auto;
                     margin-bottom: 1.5rem;

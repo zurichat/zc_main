@@ -35,15 +35,12 @@
   background: #fff;
   border-radius: 3px;
   padding-bottom: 20px;
+}
+
+.modalCont {
+  height: 100%;
+  max-height: 82vh;
   overflow-y: scroll;
-}
-
-.modalFull::-webkit-scrollbar {
-  display: none;
-}
-
-.modalContent::-webkit-scrollbar {
-  display: none;
 }
 
 .modalHeader,

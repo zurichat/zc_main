@@ -1,6 +1,6 @@
 import { useRef, useState, useContext } from 'react'
 import ProfileModal from './ProfileModal'
-// import axios from 'axios'
+import axios from 'axios'
 
 import { AiFillCamera } from 'react-icons/ai'
 import avatar from "../assets/images/avatar.jpg";
@@ -21,6 +21,7 @@ const EditProfile = () => {
   const [selectedTimezone, setSelectedTimezone] = useState({})
   const [links, setLinks] = useState([""]);
   const [phone, setPhone] = useState('');
+  const [imgUrl, setImgUrl] = useState('')
   const [state, setState] = useState({
     name: user.first_name,
     display_name: user.display_name,
@@ -48,23 +49,49 @@ const EditProfile = () => {
   }
 
   const handleImageChange = event => {
-    if (imageRef.current.files[0]) {
-      let fileReader = new FileReader()
 
-      fileReader.onload = function (event) {
-        avatarRef.current.src = event.target.result
-      }
+    setState({ loading: true })
 
-      const imgUrl = fileReader.readAsDataURL(imageRef.current.files[0])
+    const CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dradv0ljv/upload";
+    const CLOUDIRY_UPLOAD_PRESET = "x8ksgbhl";
 
-      authAxios.patch(`/organizations/${orgId}/members/${user._id}/photo`, {"image_utl": imgUrl})
+    let file = event.target.files[0];
+    let formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', CLOUDIRY_UPLOAD_PRESET)
+
+    axios({
+      url: CLOUDINARY_URL,
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-encoded'
+      },
+      data: formData
+    })
+      .then((res) => {
+        authAxios.patch(`/organizations/${orgId}/members/${user._id}/photo`, {"image_url": res.data.url})
         .then (res => {
           console.log(res)
+          setState({ loading: false })
+          toast.success("User Image Updated Successfully", {
+            position: "bottom-center"
+          })
         })
         .catch(err => {
           console.log(err)
+          setState({loading: false})
+          toast.error(err?.message, {
+            position: "bottom-center"
+          })
         })
-    }
+      })
+      .catch(err => {
+        console.log(err)
+        setState({loading: false})
+        toast.error(err?.message, {
+          position: "bottom-center"
+        })
+      })
   }
 
 

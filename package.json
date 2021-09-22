@@ -61,6 +61,7 @@
     "@fortawesome/react-fontawesome": "^0.1.15",
     "@types/jest": "^27.0.1",
     "@types/systemjs": "^6.1.1",
+    "react-phone-number-input": "^3.1.27",
     "rxjs": "^7.3.0",
     "single-spa": "^5.9.3"
   }
