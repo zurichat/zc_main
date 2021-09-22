@@ -108,7 +108,7 @@ export const AdminForm = props => {
         keyboard={false}
       >
         <Modal.Header>
-          <Modal.Title className="text-success">Zurichat Watches</Modal.Title>
+          <Modal.Title className="text-success">ZuriChat Watches</Modal.Title>
           <BsFillXCircleFill variant="secondary" onClick={handleClose} />
         </Modal.Header>
         {step === 1 ? (
