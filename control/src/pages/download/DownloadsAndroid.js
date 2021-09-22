@@ -30,7 +30,7 @@ const DownloadsAndroid = () => {
         <div className={downloadStyles.container}>
           <div className={downloadStyles.containerfluid}>
             <p className={downloadStyles.zuritext}>
-              Downlaod the Zuri Chat beta APK for Android
+              Download the Zuri Chat beta APK for Android
             </p>
             <a href={exe.link} download={exe.name}>
               <div className={downloadStyles.playstorediv}>

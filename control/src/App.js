@@ -26,25 +26,19 @@ import DeactivateAccount from './pages/settings/components/AcctDeactivation'
 import AllSessionSignOut from './pages/settings/components/AllSessionSignOut'
 import PrivateRoute from './pages/settings/Utils/PrivateRoute'
 import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation'
-// import WorkspaceHome from './pages/createworkspace/components/WorkspaceHome'
-// import ProjectName from './pages/createworkspace/components/ProjectName';
-// import LaunchPage from './pages/createworkspace/components/LaunchPage';
-// import Step3 from './pages/createworkspace/components/Step3';
-// import CompanyName from './pages/createworkspace/components/CompanyName';
 import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContext'
 import PrivacyPolicy from './pages/privacy-policy/index'
 
+// useEffect(() => {
+//     localStorage.setItem('input',input);
+// },[input]);
+
+// const handleInputChange = (event) => {
+//     setInput(event.target.value);
+// }
+// let workspaceRoute = '/createworkspace';
+
 const App = () => {
-  //   const [input,setInput] = useState('');
-
-  // useEffect(() => {
-  //     localStorage.setItem('input',input);
-  // },[input]);
-
-  // const handleInputChange = (event) => {
-  //     setInput(event.target.value);
-  // }
-  // let workspaceRoute = '/createworkspace';
   return (
     <BrowserRouter>
       <Switch>
