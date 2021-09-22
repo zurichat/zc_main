@@ -26,11 +26,10 @@ a {
 .logo {
   display: inline-flex;
   padding-left: 40px;
-  padding-top: 5px;
-  font-size: 22px;
+  padding-top: 15px;
 }
 .logo_img {
-  padding-top: 0;
+  padding-top: 10;
 }
 .logo a {
   display: inline-flex;
@@ -38,7 +37,7 @@ a {
 .logo p {
   color: black;
   padding-left: 5px;
-  padding-top: 15px;
+  padding-top: 5px;
   font-size: 1.3rem;
 }
 .menu {
@@ -72,7 +71,7 @@ a {
   flex-direction: column;
   position: absolute;
   visibility: hidden;
-  top: 260%;
+  top: 250%;
   left: 43%;
   transform: translate(-50%, -50%);
 }
@@ -96,7 +95,7 @@ a {
   flex-direction: column;
   position: absolute;
   visibility: hidden;
-  top: 260%;
+  top: 250%;
   left: 94%;
   transform: translate(-50%, -50%);
 }
@@ -208,9 +207,6 @@ a {
 
 /*media queries*/
 @media screen and (max-width: 1250px) {
-  .logo {
-    padding-left: 0;
-  }
   .logo p {
     font-size: 1.2rem;
   }
