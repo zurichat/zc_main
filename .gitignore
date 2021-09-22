@@ -23,11 +23,17 @@ coverage
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
+<<<<<<< HEAD
 # Bower dependency directory (https://bower.io/)
 bower_components
 
 # node-waf configuration
 .lock-wscript
+=======
+# since yarn is the default package manager
+package-lock.json
+yarn.lock
+>>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release

@@ -51,6 +51,9 @@ const Login = () => {
       })
       .then(response => {
         const { data, message } = response.data
+        console.log(data)
+        //Store token in localstorage
+        sessionStorage.setItem('token', data.user.token)
 
         //Store token in localstorage
         sessionStorage.setItem('token', data.user.token)
@@ -71,9 +74,13 @@ const Login = () => {
 
         setTimeout(() => {
           //Redirect to some other page
+<<<<<<< HEAD:control/src/pages/login/index.js
           GetUserInfo()
           history.push('/home')
           setLoading(false)
+=======
+          window.location.href = '/home'
+>>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5:zc_frontend/src/pages/login/index.js
         }, 2000)
       })
       .catch(error => {

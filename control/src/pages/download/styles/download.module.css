@@ -23,8 +23,13 @@ body {
   font-size: 18px;
   line-height: 26px;
 }
+<<<<<<< HEAD:control/src/pages/download/styles/download.module.css
 .divcol {
   padding: 0 !important;
+=======
+.col-8 {
+  padding: 0;
+>>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5:zc_frontend/src/pages/download/styles/download.module.css
 }
 .circle {
   position: absolute;
@@ -112,6 +117,10 @@ body {
   width: 100%;
 }
 .button {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
   position: relative;
   z-index: 1;
   padding: 119px;
@@ -142,6 +151,10 @@ body {
   border-radius: 3px;
   padding: 16px;
   text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+  color: #000000;
 }
 a:hover {
   text-decoration: none;

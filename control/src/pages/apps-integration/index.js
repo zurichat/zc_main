@@ -8,7 +8,7 @@ function AppsAndIntegrations() {
     <div>
       <Header />
       <SectionOne />
-      {/* <Categories /> */}
+
       <Footer />
     </div>
   )

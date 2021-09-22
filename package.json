@@ -13,6 +13,7 @@
     "dev": "npm-run-all --parallel dev:*",
     "check-format": "prettier -c .",
     "format": "prettier -w .",
+<<<<<<< HEAD
     "lint": "eslint src --ext js",
     "prepare": "husky install",
     "setup:topbar": "(cd topbar && yarn)",
@@ -26,6 +27,47 @@
     "build:topbar": "npm run build --prefix topbar",
     "build:control": "npm run build --prefix control",
     "build:sidebar": "npm run build --prefix sidebar"
+=======
+    "lint": "prettier -c .",
+    "deploy": "gh-pages -d build",
+    "dev": "concurrently --kill-others-on-fail \"npm run run-dev\" \"npm run frontend:dev\"",
+    "run-start": "cross-env NODE_ENV=production node server.js",
+    "run-dev": "cross-env NODE_ENV=development nodemon server.js",
+    "frontend:build": "npm run build --prefix zc_frontend",
+    "frontend:dev": "cross-env PORT=5000 npm start --prefix zc_frontend",
+    "postinstall": "cd zc_frontend && yarn install"
+  },
+  "dependencies": {
+    "@fortawesome/react-fontawesome": "^0.1.15",
+    "@iconscout/react-unicons": "^1.1.6",
+    "@iconscout/react-unicons-thinline": "^0.0.1",
+    "@reach/dialog": "^0.16.0",
+    "axios": "^0.21.1",
+    "cookie-parser": "^1.4.5",
+    "cookie-session": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-device": "^0.4.2",
+    "express-useragent": "^1.0.15",
+    "faker": "^5.5.3",
+    "geoip-lite": "^1.4.2",
+    "gh-pages": "^3.2.3",
+    "helmet": "^4.6.0",
+    "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "nodemailer": "^6.6.3",
+    "react-bootstrap": "^2.0.0-beta.6",
+<<<<<<< HEAD
+    "react-multi-email": "^0.5.3",
+=======
+    "react-device-detect": "^1.17.0",
+    "react-dropzone": "^11.4.0",
+    "react-multi-email": "^0.5.3",
+    "react-transition-group": "^4.4.2",
+>>>>>>> e06dda98922f78c204d1addb6322931af2f5e51b
+    "yarn": "^1.22.11"
+>>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",

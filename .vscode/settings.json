@@ -2,7 +2,13 @@
   "files.associations": {
     "**/*.js": "javascript",
     "**/src/**/*.js": "javascriptreact",
+<<<<<<< HEAD
     "**/src/**/*.jsx": "javascriptreact",
     "**/.husky/": "bash"
   }
+=======
+    "**/src/**/*.jsx": "javascriptreact"
+  },
+  "liveServer.settings.port": 5501
+>>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5
 }
