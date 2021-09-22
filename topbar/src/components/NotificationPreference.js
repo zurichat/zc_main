@@ -5,33 +5,10 @@ import { authAxios } from '../utils/Api'
 import { ProfileContext } from '../context/ProfileModal'
 
 
- const TextInput = ({ type = 'text', label }) => {
-  const [value, setValue] = useState('')
-
-  function handleChange(e) {
-    setValue(e.target.value)
-  }
-  return (
-    <div className={styles.inputContainer}>
-      <input
-        type={type}
-        className={styles.textInput}
-        value={value}
-        onChange={handleChange}
-      />
-      <label className={value && 'filled'}>{label}</label>
-    </div>
-  )
-}
-
-
-
-
 
 const NotificationPreference = () => {
   const [active, setActive] = useState(0)
   const [active1, setActive1] = useState(0)
-
   const { user, orgId } = useContext(ProfileContext)
  
   const [dataState, setDataState] = useState ({
@@ -56,11 +33,11 @@ const NotificationPreference = () => {
           })
         .then(res => {
         console.log(res)
-        setState({ loading: false })
+        // setState({ loading: false })
 })
         .catch(err => {
         console.log(err?.response?.data)
-        setState({ loading: false })
+        // setState({ loading: false })
 }
   
 )
@@ -78,7 +55,6 @@ const NotificationPreference = () => {
     setData();
     console.log(dataState)
     console.log(user)
-    
   }, [dataState])
 
   return (
@@ -87,9 +63,8 @@ const NotificationPreference = () => {
       <div className={styles.notifyContent}>
         <div className={styles.itemTitle1}>
           <h4 className={styles.titleLarge}>Notify me about </h4>{' '}
-          <span>
-            <AiOutlineQuestionCircle />
-            Learn about notifications
+          <span className={styles.spanL}>
+          <AiOutlineQuestionCircle className={styles.quest}/>Learn about notifications
           </span>
         </div>
         <form>
@@ -124,23 +99,23 @@ const NotificationPreference = () => {
               <label htmlFor="none">Nothing</label>
             </div>
           </div>
-          <div className={styles.checkbox}>
+          <div className={styles.markbox}>
             <label htmlFor="for-mobile">
               {' '}
-              <input type="checkbox" value="for-mobile" />
+              <input type="checkbox" className={styles.check} value="for-mobile" />
               Use different settings for my mobile device
             </label>
           </div>
-          <div className={styles.line}></div>
-          {/* <hr />  */}
-          <div className={styles.checkbox}>
+         {/* <div className={styles.line} /> */}
+          
+          <div className={styles.markbox}>
             <label htmlFor="for-meeting">
               <input type="checkbox" value="for-meeting" 
               onClick= {()=>{setDataState({use_different_settings_mobile: "yes"}); setData()}} />
               Notify me when a meeting is set
             </label>
           </div>
-          <div className={styles.checkbox}>
+          <div className={styles.markbox}>
             <label htmlFor="for-thread">
               <input 
                
@@ -154,7 +129,7 @@ const NotificationPreference = () => {
         <div className={styles.itemTitle2}>
         <div className={styles.line}></div>
           <h4 class={styles.titleSmall}>Keywords</h4>{' '}
-          <span>
+          <span className={styles.spanBlock}>
             You will be notified anything, someone uses these keywords in a
             thread
           </span>
@@ -163,9 +138,9 @@ const NotificationPreference = () => {
         <div className={styles.line} />
         <div className={styles.itemTitle2}>
           <h4 class={styles.titleSmall}>Notification Schedule</h4>{' '}
-          <span>
+          <span className={styles.spanBlock}>
             You'll only receive notifications in the hours that you choose.
-            Outside of those times, notifications will be paused.{' '}
+            Outside of those times, notifications will be paused.
             <span className={styles.spanSmall}>Learn more</span>
           </span>
         </div>
@@ -200,26 +175,25 @@ const NotificationPreference = () => {
         {/* Michael's sound check code */}
         <div className={styles.itemTitle2}>
           <h4 className={styles.titleSmall}>Sound & appearance</h4>
-          <span>Choose your notification sound</span>
+          <span className={styles.spanBlock}>Choose your notification sound</span>
           <button className={styles.button}>Example Sound</button>
         </div>
 
-        <form className={styles.mute}>
-          <div className={styles.checkbox}>
+        <div className={styles.mute}>
+          <div className={styles.markbox}>
             <label htmlFor="for-includepreview">
-              {' '}
               <input type="checkbox" />
               Include preview message in notification
             </label>
           </div>
-          <div className={styles.checkbox}>
+          <div className={styles.markbox}>
             <label htmlFor="for-muteall">
               <input type="checkbox"               
               onClick= {()=>{setDataState({mute_all_sounds: "yes"}); setData()}} />
               Mute all
             </label>
           </div>
-        </form>
+        </div>
 
         <div className={styles.picksound}>
           <div className={styles.share}>
@@ -258,7 +232,7 @@ const NotificationPreference = () => {
           {/* <hr/> */}
         </div>
 
-        <div className={styles.section2}>
+         <div className={styles.section2}> 
           <div className={styles.itemTitle2}>
             <div className={styles.titleSmall}>
               Flash window when notification comes
@@ -322,7 +296,7 @@ const NotificationPreference = () => {
             </div>
           </div>
         </div>
-        <div className={styles.checkbox}>
+        <div className={styles.markbox}>
           <label>
             <input type="checkbox" 
                 onClick={() => {setDataState({notify_me_about: "all-messages"}); setData()}}            
@@ -335,3 +309,23 @@ const NotificationPreference = () => {
 }
 
 export default NotificationPreference
+
+
+const TextInput = ({ type = 'text', label }) => {
+  const [value, setValue] = useState('')
+
+  function handleChange(e) {
+    setValue(e.target.value)
+  }
+  return (
+    <div className={styles.inputContainer}>
+      <input
+        type={type}
+        className={styles.textInput}
+        value={value}
+        onChange={handleChange}
+      />
+      <label className={value && 'filled'}>{label}</label>
+    </div>
+  )
+}
