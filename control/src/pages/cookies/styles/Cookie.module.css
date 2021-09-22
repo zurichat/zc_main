@@ -6,7 +6,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  bottom: 0;
 }
+
 .bannerBox {
   background-color: rgb(240, 240, 240);
   padding: 3rem 8rem;
@@ -39,9 +42,11 @@
 .bannerText p a {
   color: red;
 }
+
 .button {
   width: 186px;
 }
+
 .bannerButtons {
   display: flex;
   justify-content: center;
@@ -68,6 +73,7 @@
   font-weight: bold;
   border-radius: 20px;
 }
+
 .bannerButtons .DeclineButtons:hover {
   color: rgb(187, 0, 0);
 }
@@ -76,24 +82,29 @@
   .bannerTitle h1 {
     font-size: 1.5rem;
   }
+
   .bannerBox {
     padding: 4rem 1rem 4rem 1rem;
     margin: 1.5rem;
   }
-  .bannerBox > button {
+
+  .bannerBox>button {
     width: 137px;
   }
+
   .bannerBox {
     gap: 22px;
   }
+
   .button {
     width: 147px;
   }
+
   .bannerButtons {
     display: flex;
   }
 
-  .bannerButtons > .declineButton {
+  .bannerButtons>.declineButton {
     margin-left: 0.7rem;
   }
 }
