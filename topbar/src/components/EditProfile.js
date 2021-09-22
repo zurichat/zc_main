@@ -51,37 +51,30 @@ const EditProfile = () => {
 
     setState({ loading: true })
 
-    const CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dradv0ljv/upload";
-    const CLOUDIRY_UPLOAD_PRESET = "x8ksgbhl";
+
+    let fileReader = new FileReader();
+
+    fileReader.onload = function (event) {
+      avatarRef.current.src = event.target.result;
+    };
+
+    let reader = fileReader.readAsDataURL(event.target.files[0]);
 
     let file = event.target.files[0];
     let formData = new FormData();
-    formData.append('file', file);
-    formData.append('upload_preset', CLOUDIRY_UPLOAD_PRESET)
+    let url = URL.createObjectURL(file);
+    formData.append('image', reader);
 
-    axios({
-      url: CLOUDINARY_URL,
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-encoded'
-      },
-      data: formData
+    console.log("file", reader)
+
+    authAxios.patch(`/organizations/${orgId}/members/${user._id}/photo`, {data: formData}, {
+      headers: { "Content-Type": "multipart/form-data" },
     })
-      .then((res) => {
-        authAxios.patch(`/organizations/${orgId}/members/${user._id}/photo`, {"image_url": res.data.url})
-        .then (res => {
-          console.log(res)
-          setState({ loading: false })
-          toast.success("User Image Updated Successfully", {
-            position: "bottom-center"
-          })
-        })
-        .catch(err => {
-          console.log(err)
-          setState({loading: false})
-          toast.error(err?.message, {
-            position: "bottom-center"
-          })
+      .then (res => {
+        console.log(res)
+        setState({ loading: false })
+        toast.success("User Image Updated Successfully", {
+          position: "bottom-center"
         })
       })
       .catch(err => {
@@ -228,7 +221,13 @@ const EditProfile = () => {
                 />
 
                 <input ref={imageRef} onChange={handleImageChange} type="file" hidden id="img" />
-                <label htmlFor="img" className="btns chgBtn">Upload an image</label>
+                <label htmlFor="img" className="btns chgBtn">{state.loading ? 
+                <Loader
+                  type="ThreeDots"
+                  color="#00B87C"
+                  height={40}
+                  width={40}
+                /> : "Upload Image"}</label>
                 <button className="btns rmvBtn">Delete image</button>
               </div>
             </div>
