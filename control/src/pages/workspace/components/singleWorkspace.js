@@ -8,19 +8,15 @@ import member3 from '../assets/member_image3.png'
 import member4 from '../assets/member_image4.png'
 import member5 from '../assets/member_image5.png'
 
-const imgs = [member1, member2, member3, member4, member5]
-
 const SingleWorkspace = ({
   id,
   icon,
   workspace_name,
-  member_imgs,
+  member_imgs = [member1, member2, member3, member4, member5],
   member_number,
   selected
 }) => {
   const { toggleSelected } = useWorkspaceContext()
-
-  console.log(member_imgs)
 
   return (
     <section className={`${styles.single_workspace}`}>
@@ -44,7 +40,7 @@ const SingleWorkspace = ({
               return (
                 <img
                   className={`${styles.member_img}`}
-                  src={img || imgs[index]}
+                  src={img}
                   key={index}
                   alt="Workspace members"
                 />

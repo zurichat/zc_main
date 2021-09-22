@@ -1,14 +1,7 @@
-.navbar-expand-lg {
-  flex-wrap: wrap;
-  justify-content: start;
-  padding-left: 25px;
+ul {
+  list-style: none;
+  padding-left: 0;
 }
-
-
-.navbar {
-  margin-top: 15px;
-  border-bottom: 1px solid rgba(187, 186, 231, 0.15);
-
 li {
   padding-left: 0;
   text-decoration: none;
@@ -44,31 +37,22 @@ a {
   padding-top: 15px;
   font-size: 1.3rem;
 }
-
-.navButton {
-  border: none;
-  box-shadow: none;
+.menu {
+  position: relative;
+  width: 100%;
+  color: black;
 }
-
-.navButton:focus {
-  border: none;
-  box-shadow: none;
-
 .menu ul {
   display: flex;
   justify-content: space-around;
   padding-top: 20px;
   padding-bottom: 0;
 }
-
-.searchLogo1 {
+.header_list {
+  color: black;
+  font-size: 1.3rem;
   cursor: pointer;
-  width: 22px;
-  height: 22px;
 }
-
-.searchLogo {
-
 .fa {
   padding-left: 5px;
   top: 30%;
@@ -116,49 +100,62 @@ a {
 .menu ul li:hover > .dropdown2 li {
   display: block;
   visibility: visible;
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
   cursor: pointer;
-  width: 32px;
-  height: 32px;
 }
-
-.navLinkFeatures {
-  margin-right: 40px;
+.menu ul li:hover > .dropdown1,
+.menu ul li:hover > .dropdown2 {
+  perspective: 1000px;
+  visibility: visible;
 }
-
-.navLinkPricing {
-  margin-right: 40px;
+.menu ul li:hover > .dropdown1 li,
+.menu ul li:hover > .dropdown2 li {
+  transform-origin: top center;
+  opacity: 0;
 }
-
-.navLinkComms {
-  margin-right: 40px;
+.menu ul li:hover > .dropdown1 li:nth-child(1),
+.menu ul li:hover > .dropdown2 li:nth-child(1) {
+  animation: animate 0.5s ease-in-out forwards;
 }
-
-.navLinkSignUp {
-  margin-right: 10px;
+.menu ul li:hover > .dropdown1 li:nth-child(2),
+.menu ul li:hover > .dropdown2 li:nth-child(2) {
+  animation: animate 0.5s ease-in-out forwards;
 }
-
-.zuriChat {
-  font-size: 18px;
-
+.menu ul li:hover > .dropdown1 li:nth-child(3),
+.menu ul li:hover > .dropdown2 li:nth-child(3) {
+  animation: animate 0.5s ease-in-out forwards;
+}
+.menu ul li:hover > .dropdown1 li:nth-child(4),
+.menu ul li:hover > .dropdown2 li:nth-child(4) {
+  animation: animate 0.5s ease-in-out forwards;
+}
+.menu ul li:hover > .dropdown1 li:nth-child(5),
+.menu ul li:hover > .dropdown2 li:nth-child(5) {
+  animation: animate 0.5s ease-in-out forwards;
+}
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+  50% {
+    transform: rotateX(20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+.header_list i {
+  padding-left: 8px;
+}
 .header_signs ul {
   width: 100%;
   display: flex;
   justify-content: center;
   font-size: 1.2rem;
   padding-top: 15px;
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
   color: black;
-  position: relative;
-  top: 5px;
-  font-weight: bold;
-  margin-left: 5px;
-  text-decoration: none;
 }
-
-.image {
-  position: relative;
-
 .header_signs ul li {
   padding-left: 30px;
 }
@@ -169,106 +166,23 @@ a {
   padding: 8px 20px;
   color: white;
   font-size: 1.3rem;
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
 }
-
-.navbarBrand {
+.header_signin:hover {
   text-decoration: none;
-  float: left;
-}
-
-.features {
-  color: black;
-  font-weight: 300;
-}
-
-.signU {
+  background: white;
   color: #00b87c;
-  font-weight: 600;
+  border-color: #00b87c;
 }
-
-.signI {
-  font-weight: 600;
+.header_signup {
+  font-size: 1.3rem;
+  color: #00b87c;
+  padding: 8px;
+  border-color: #00b87c;
 }
-
-.signIn {
-  background-color: #00b87c;
-  color: white;
-  border-radius: 0px;
+.header_signup:hover {
+  color: #00b87c;
+  border-bottom: 2px solid #00b87c;
 }
-
-.signIn:hover {
-  background-color: #00b87c;
-  color: white;
-}
-
-.pricing {
-  color: black;
-  font-weight: 300;
-}
-
-.comms {
-  color: black;
-  font-weight: 300;
-}
-
-.download {
-  color: black;
-  font-weight: 300;
-}
-
-@media only screen and (min-width: 1440px) {
-  .collapse {
-    margin-left: 200px;
-  }
-
-  .image {
-    position: relative;
-  }
-
-  .zuriChat {
-    font-size: 18px;
-    color: black;
-    position: relative;
-    top: 5px;
-    font-weight: bold;
-    margin-left: 5px;
-    text-decoration: none;
-  }
-
-  .navbar {
-    margin-top: 15px;
-  }
-
-  .navbarBrand {
-    text-decoration: none;
-    padding-left: 20px;
-  }
-
-  .navButton {
-    border: none;
-  }
-
-  .navLinkFeatures {
-    margin-right: 50px;
-  }
-
-  .navLinkPricing {
-    margin-right: 50px;
-  }
-
-  .navLinkComms {
-    margin-right: 50px;
-  }
-
-  .navLinkSignUp {
-    margin-right: 10px;
-  }
-
-  .signIn {
-    background-color: #00b87c;
-    color: white;
-    border-radius: 0px;
 
 /*mobile section */
 .mobile_nav {
@@ -408,37 +322,13 @@ a {
   }
   .header_list {
     font-size: 2rem;
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
   }
-
-  .signI {
-    font-weight: 600;
+  .fa {
+    padding-left: 5px;
+    font-size: 3rem;
+    padding-top: 5px;
+    position: absolute;
   }
-
-  .signU {
-    color: #00b87c;
-    font-weight: 600;
-  }
-
-  .download {
-    color: black;
-    font-weight: 300;
-  }
-
-  .comms {
-    color: black;
-    font-weight: 300;
-  }
-
-  .pricing {
-    color: black;
-    font-weight: 300;
-  }
-
-  .features {
-    color: black;
-    font-weight: 300;
-
   .dropdown_items {
     font-size: 2rem;
     width: 120px;
@@ -460,39 +350,13 @@ a {
   }
   .header_signup {
     font-size: 2rem;
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
   }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 768px) {
-  .image {
-    position: relative;
-    transform: scale(0.8);
+@media screen and (max-width: 768px) {
+  .large {
+    visibility: hidden;
   }
-
-  .zuriChat {
-    font-size: 16px;
-    color: black;
-    position: relative;
-    top: 5px;
-    font-weight: bold;
-    margin-left: 5px;
-    text-decoration: none;
-  }
-
-  .navbar {
-    margin-top: 15px;
-  }
-
-  .navLink {
-    margin-right: 60px;
-  }
-
-  .navbarBrand {
-    text-decoration: none;
-  }
-
-  .signIn {
 
   .mobile_nav {
     visibility: visible;
@@ -540,21 +404,9 @@ a {
     width: 190vw;
   }
   .dropdown_list:hover {
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
     background-color: #00b87c;
-    color: white;
-    border-radius: 0px;
-    font-weight: 600;
+    color: #fff;
   }
-
-  .signI {
-    font-weight: 600;
-  }
-
-  .signU {
-    color: #00b87c;
-    font-weight: 600;
-
   .dropdown {
     display: inline-block;
     flex-direction: column;
@@ -581,34 +433,17 @@ a {
     padding-bottom: 25px;
     padding-left: 120px;
     display: flex;
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
   }
-
-  .download {
-    color: black;
-    font-weight: 300;
+  .mobile_signs a {
+    font-size: 18px;
   }
-
-  .comms {
-    color: black;
-    font-weight: 300;
-
   .mobile_signs li {
     padding-left: 10px;
   }
   .header_signin {
     padding: 10px 20px;
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
   }
-
-  .pricing {
-    color: black;
-    font-weight: 300;
-  }
-
-  .features {
-    color: black;
-    font-weight: 300;
+}
 
 @media screen and (max-width: 600px) {
   .m_logo p {
@@ -617,6 +452,5 @@ a {
   .mobile_fa {
     font-size: 1.6rem;
     position: relative;
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
   }
 }

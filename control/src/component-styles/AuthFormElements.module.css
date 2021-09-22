@@ -22,21 +22,21 @@
   z-index: 5;
 }
 
-/* #authAsideContainer,
+#authAsideContainer,
 #authImageWrapper,
-#authImageWrapper img,  */
-/* #authFormContainer{
+#authFormContainer,
+#authImageWrapper img {
   height: inherit;
-} */
+}
 
-/* #authAsideContainer {
+#authAsideContainer {
   width: 33vw;
   color: #fff;
-} */
+}
 
-/* #authImageWrapper {
+#authImageWrapper {
   width: 100%;
-} */
+}
 
 /* 
 #authImageWrapper img {
@@ -54,7 +54,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+  width: 67vw;
   overflow-y: scroll;
   /* padding-right: 4rem; */
 }
@@ -99,23 +99,18 @@
 
 .tosText a,
 .rememberMe a {
-  color: #00b87c;
-  /* color: #1a61db; */
-}
-
-.tosText a:hover,
-.rememberMe a:hover {
-  color: #b8003c;
+  color: #1a61db;
+  /* color: #00b87c; */
 }
 
 .rememberMe {
+  /* height: 5vh; */
   margin-bottom: 2rem;
   font-size: 0.8rem;
   line-height: 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* height: 5vh; */
   /* display: inline-block; */
   /* margin: 10px 0; */
 }
@@ -148,6 +143,8 @@
   width: auto;
 }
 
+/* Media Query 768px and Smaller */
+/* Media Query 920px and Smaller */
 /* Media Query for Screen Width 1080px and Smaller */
 @media only screen and (max-width: 1080px) {
   .display_none {
@@ -155,7 +152,7 @@
   }
 
   #authFormContainer {
-    padding-inline: 7%;
+    padding-inline: 10%;
   }
 
   #authFormContainer {

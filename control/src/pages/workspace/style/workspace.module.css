@@ -13,9 +13,6 @@
   grid-template-rows: auto 1fr;
 }
 
-/* Zuri Logo */
-
-
 /* Workspace header */
 
 .workspace_header {
@@ -71,7 +68,6 @@
   line-height: calc(1.056rem * var(--type-scale, 1));
   font-weight: bold;
   color: #1a61db;
-  text-decoration: none;
 }
 
 .header_extra a:hover {
@@ -155,12 +151,9 @@ button.workspace_btn {
 
 .single_workspace input[type='checkbox'] {
   margin-right: 0.25rem;
-  width: 12px;
-  height: 12px;
+  width: 0.75rem;
+  height: 0.75rem;
   cursor: pointer;
-  border: 1px solid #999999;
-  filter: drop-shadow(0px 4px 8px rgba(28, 37, 44, 0.08));
-  border-radius: 2px;
 }
 
 .workspace_info h5 {
@@ -210,7 +203,6 @@ button.workspace_btn {
   line-height: calc(1.056rem * var(--type-scale, 1));
   font-weight: bold;
   color: #1a61db;
-  text-decoration: none;
 }
 
 .workspace_footer a:hover {

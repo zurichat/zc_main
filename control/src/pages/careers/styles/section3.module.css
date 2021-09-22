@@ -48,7 +48,7 @@ button:hover {
   margin: 35px 0px 12px 0px;
   box-shadow: none;
 }
-.languages hr {
+hr {
   position: static;
   margin-right: 50px;
   border: 1px solid #999999;
@@ -61,11 +61,11 @@ button:hover {
   padding: 0;
   margin-right: 15px;
 }
-.registerNow {
+.Section4 {
   text-align: center;
   margin-bottom: 5rem;
 }
-.registerNow .regbtn {
+.Section4 .regbtn {
   padding: 20px 88.5px 20px 88.5px;
   font-size: 22px;
   border: none;
@@ -102,11 +102,11 @@ button:hover {
     padding-right: 10px;
     text-align: left;
   }
-  .registerNow p {
+  .Section4 p {
     font-size: 22px;
     text-align: center;
   }
-  .registerNow .regbtn {
+  .Section4 .regbtn {
     padding: 16px 95px 16px 95px;
     font-size: 18px;
   }

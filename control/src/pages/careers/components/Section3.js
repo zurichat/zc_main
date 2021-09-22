@@ -92,9 +92,10 @@ const Section3 = () => {
           </div>
         </div>
       </div>
-      <div className={`${styles.registerNow}`}>
+      <div className={`${styles.Section4}`}>
         <p>Be a part of next cohort starting summer of 2022</p>
         <a
+          className="registerBtn"
           href="https://internship.zuri.team/"
           target="_blank"
           rel="noreferrer"
