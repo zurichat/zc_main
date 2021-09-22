@@ -2,6 +2,7 @@ import { useContext, useState, useEffect } from 'react'
 import { authAxios } from '../utils/Api'
 import { FaChevronRight } from 'react-icons/fa'
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
+import Profile from './Profile'
 
 import styles from '../styles/Topbar.module.css'
 import { TopbarContext } from '../context/Topbar'
@@ -91,12 +92,7 @@ const TopbarModal = ({ members }) => {
   }
 
   useEffect(() => {
-    console.log('user presence', user.presence)
     setPresence(user.presence)
-    // toggleUserPresence()
-    console.log('check for user', user)
-    console.log('auth axios presence', presence)
-    console.log('check for current presence', presence)
   }, [user])
 
   return (
@@ -209,6 +205,8 @@ const TopbarModal = ({ members }) => {
           {modal === 'edit profile' && <EditProfile />}
 
           {modal === 'preference' && <Preferences />}
+
+          {showModal && <Profile />}
 
           {modal === 'downloads' && <Downloads setModal={setModal} />}
 
