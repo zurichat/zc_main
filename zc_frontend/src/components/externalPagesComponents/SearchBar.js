@@ -2,6 +2,7 @@ import { data } from 'autoprefixer'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import styles from '../../styles/SearchBar.module.css'
+
 const SearchBar = () => {
   const [ APIData, setAPIData ] = useState([])
   const [ searchInput, setSearchInput ] = useState('')
@@ -10,8 +11,9 @@ const SearchBar = () => {
   useEffect(() => {
     axios.get(`https://goals.zuri.chat/api/v1/search/files?channelName=goals&fileName=o`)
          .then((response) => {
-           setAPIData(response.data)
-          
+          setAPIData(response.data.data)
+          console.log(APIData, response.data.data)
+
            
          })
   }, [])
@@ -37,26 +39,29 @@ const SearchBar = () => {
       />
       <img src="/search-2-line.svg" className={styles.searchSvg} alt="search" />
       <div>
-      {searchInput.length > 1 ? (
-                    filteredResults.map((item) => {
-                        return (
-                            <li>
-                               {item.goals}.{item.ChannelName}
+      
+                    {searchInput.length > 1 ? (
+                      filteredResults.map((item, id) => {
+                          return (
+                            <li key={id}>
+                              {item}
                             </li>
-                        )
-                    })
-                ) : (
-                    APIData.map((item) => {
-                        return (
-                            <li>
-                                 {item.goals}.{item.ChannelName}
-                            </li>
-                        )
-                    })
-                )}
+                          )
+                      })
+                    ) : (
+                      APIData.map((item, id) => {
+                          return (
+                            <div>
+                            {/* <li key={id}>
+                                {item}
+                            </li> */}
+                            </div>
+                          )
+                      })
+                    )}
       </div>
     </div>
   )
 }
 
-export default SearchBar;
+export default SearchBar
