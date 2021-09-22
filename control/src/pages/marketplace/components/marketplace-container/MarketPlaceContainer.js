@@ -11,10 +11,13 @@ import {
   fetchPlugins
 } from '../../../../context/marketplace/marketplace.action'
 
-const MarketPlaceContainer = () => {
+const MarketPlaceContainer = ({ organizations, user }) => {
   const [plugin, setPlugin] = useState([])
   const [isLoading, setisLoading] = useState(false)
+  const [ installLoading, setInstallLoading ] = useState(false)
+  const [ installErr, setInstallErr ] = useState(null)
   const marketplace = useMarketPlaceContext()
+
 
   const retrievePlugins = async () => {
     marketplace.dispatch(fetchPlugins())
@@ -44,6 +47,33 @@ const MarketPlaceContainer = () => {
       }
     } catch (e) {
       console.log(e)
+    }
+  }
+
+  const installPluginToOrganization = async () => {
+    if (!organizations) {
+      alert('You are not logged in any Organization/workspace')
+    }
+    setInstallLoading(true)
+    setInstallErr(null)
+    try {
+      const response = await axios.post(`https://api.zuri.chat/organizations/${organizations[0]}/plugins`, {
+        plugin_id: plugin.id,
+        user_id: user.id
+      });
+      if (response.data.status === 200) {
+        alert(response.data.message)
+        setInstallLoading(false)
+        window.location.replace('/home')
+      } else {
+        alert(response.data.message)
+        setInstallLoading(false)
+      }
+    } catch(err) {
+      console.log(err)
+      setInstallLoading(false)
+    } finally {
+      console.log('plugin installed')
     }
   }
 
@@ -101,7 +131,18 @@ const MarketPlaceContainer = () => {
                     </Col>
                   </Row>
                    */}
-                <button className={styles.modalInstallBtn}>Install</button>
+                <button onClick={() => installPluginToOrganization()} className={styles.modalInstallBtn}>
+                  {
+                    installLoading ? 
+                    <div className="d-flex flex-row align-items-center">
+                      <Spinner animation="border" variant="light" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                      </Spinner>
+                      <p className="ml-2">Installing</p>
+                    </div>
+                    : 'Install'
+                  }                  
+                </button>
               </div>
               <div className={styles.marketplaceModalMain}>
                 <h3>about</h3>
