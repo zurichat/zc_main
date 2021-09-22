@@ -31,13 +31,13 @@ const DownloadsDesktop = () => {
   return (
     <>
       <Header />
-      <section className={`row`}>
+      <section className={`row mx-0`}>
         <div
           className={`${styles.container} col container p-lg-5 p-md-5 m-lg-5 m-md-4`}
         >
           <div>
             <h1 className={styles.h1}>
-              Zuri Chat <br /> for Windows
+              Download the Zuri Chat <br /> for Windows
             </h1>
             <p className={styles.p}>
               With the Zuri Chat app, you will always be in touch with your
@@ -52,7 +52,7 @@ const DownloadsDesktop = () => {
             <img className={`d-inline mx-1`} src={arrowDown} alt="arrow-down" />
           </a>
         </div>
-        <div className={`col-8`}>
+        <div className={`${styles.divcol} col-8`}>
           <div className={styles.images}>
             <img className={styles.circle} src={Ellipse159} alt="circle"></img>
             <img
@@ -66,44 +66,17 @@ const DownloadsDesktop = () => {
               alt="circle2"
             ></img>
           </div>
-          <div className={`${styles.version} `}>
-            <p className={`${styles.versionp} d-inline`}>VERSION 4.4.4 -</p>
-            <a className={styles.versionlink} href="/news">
-              What's New
-            </a>
-            <p className={`d-inline`}>/</p>
-            <a
-              className={styles.versionlink}
-              href={exe.link}
-              download={exe.name}
-            >
-              Get the Beta
-            </a>
-            <p className={`d-inline`}>/</p>
-            <a className={styles.versionlink} href="/">
-              Enterprise Deployments
-            </a>
-            <p className={`${styles.mobilelink} d-inline`}>
-              Looking for Mobile?
-            </p>
-            <a href="#download-mobile">
-              <img className={`mx-1`} src={arrowDown} alt="arrow-down" />
-            </a>
-            <a className={`${styles.bit}`} href={exe.link} download={exe.name}>
-              Download 32-bit app
-            </a>
-          </div>
         </div>
       </section>
 
-      <a href="/" id="download-mac">
-        <section className={`row`}>
+      <a id="download-mac">
+        <section className={`row mx-0`}>
           <div
             className={`${styles.container} col container p-lg-5 p-md-5 m-md-4 m-lg-5`}
           >
             <div>
-              <h1 className={styles.h1}>
-                Zuri Chat <br /> for Mac
+              <h1 className={`${styles.h1}`}>
+                Download the Zuri Chat <br /> for MacOS
               </h1>
               <p className={styles.p}>
                 With the Zuri Chat app, you will always be in touch with your
@@ -124,7 +97,7 @@ const DownloadsDesktop = () => {
               />
             </a>
           </div>
-          <div className={`col-8`}>
+          <div className={`${styles.divcol} col-8`}>
             <div className={styles.images}>
               <img
                 className={styles.circle1}
@@ -138,38 +111,11 @@ const DownloadsDesktop = () => {
               ></img>
               <img className={styles.half} src={halfCircle} alt="circle2"></img>
             </div>
-            <div className={`${styles.version} `}>
-              <p className={`${styles.versionp} d-inline`}>VERSION 4.4.4 -</p>
-              <a className={styles.versionlink} href="/">
-                What's New
-              </a>
-              <p className={`d-inline`}>/</p>
-              <a
-                className={styles.versionlink}
-                href={exe.link}
-                download={exe.name}
-              >
-                Get the Beta
-              </a>
-              <p className={`d-inline`}>/</p>
-              <a className={styles.versionlink} href="/">
-                Enterprise Deployments
-              </a>
-              <p className={`${styles.mobilelink} d-inline`}>
-                Looking for Mobile?
-              </p>
-              <a href="#download-mobile">
-                <img className={`mx-lg-1`} src={arrowDown} alt="arrow-down" />
-              </a>
-              <a className={`${styles.bit}`} href="/">
-                Download 32-bit app
-              </a>
-            </div>
           </div>
         </section>
       </a>
-      <a href="/" id="download-mobile">
-        <section className={`row`}>
+      <a id="download-mobile">
+        <section className={`row mx-0`}>
           <div className={` col container p-lg-5 p-md-5 m-md-4 m-lg-5`}>
             <div>
               <h1 className={styles.h1}>
@@ -183,7 +129,7 @@ const DownloadsDesktop = () => {
                   download={exe.name}
                 >
                   Android
-                </a>{' '}
+                </a>
                 and
                 <a
                   className={`${styles.versionlink} px-lg-1 fw-bold`}
@@ -195,7 +141,7 @@ const DownloadsDesktop = () => {
               </p>
             </div>
           </div>
-          <div className={`col-8`}>
+          <div className={`col-8 px-0`}>
             <div className={styles.images}>
               <img className={styles.rec} src={Rect2} alt="vector"></img>
               <img
