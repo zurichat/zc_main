@@ -4,8 +4,8 @@
 
 .container {
   height: 480px;
-  background-color: #ECF8F5;
-  color: #1D1C1D;
+  background-color: #ecf8f5;
+  color: #1d1c1d;
   overflow: hidden;
 }
 
@@ -16,7 +16,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: left;
-  color: #1D1C1D;
+  color: #1d1c1d;
 }
 
 .zuritext {
@@ -24,7 +24,7 @@
   font-weight: 800;
   font-size: 42px;
   line-height: 50px;
-  color: #1D1C1D;
+  color: #1d1c1d;
   padding-top: 30px;
 }
 

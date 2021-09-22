@@ -79,10 +79,10 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       <HelpContainer>
         <HelpIcons onClick={() => setHelpModal(true)} />
       </HelpContainer>
-      {helpModal ? <HelpModal  setHelpModal={setHelpModal}/> : ''}
+      {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''}
 
-        <UserForm />
-        <AdminForm />
+      <UserForm />
+      <AdminForm />
       <div>
         <img
           style={{ height: '30px', width: '30px', borderRadius: '5px' }}
