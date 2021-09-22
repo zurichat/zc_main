@@ -442,4 +442,11 @@
     .marketplaceModalMain {
         padding: 0 18px 20px;
     }
+    .marketplaceTabList {
+        width: 80%;
+        align-self: center;
+    }
+    .marketplaceTab {
+        font-size: 14px;
+    }
 }
