@@ -21,4 +21,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
+            cd /var/www/zurichat/main_branch/zc_main
             yarn server:run
