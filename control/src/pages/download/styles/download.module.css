@@ -85,7 +85,7 @@ body {
   position: absolute;
   z-index: 0;
   left: 1160px;
-  top: 874px;
+  top: 950px;
 }
 .rec {
   position: absolute;
@@ -183,7 +183,7 @@ a:hover {
   .half {
     left: 1020px;
     width: 235px;
-    top: 785px;
+    top: 845px;
   }
   .rec {
     top: 1440px;
@@ -225,13 +225,13 @@ a:hover {
     width: 190px;
   }
   .circle1 {
-    top: 768px;
+    top: 590px;
     width: 150px;
   }
   .half {
     left: 831px;
     width: 190px;
-    top: 700px;
+    top: 740px;
   }
   .bit {
     font-size: 13px;

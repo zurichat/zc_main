@@ -1,155 +1,236 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import headerStyles from '../component-styles/Header.module.css'
-import SearchSuggestionBar from '../components/SearchSuggestionBar'
-import useMatchMedia from '../components/useMatchMedia'
-import search from '../component-assets/search-2-line.svg'
-import zurichatlogo from '../component-assets/zurichatlogo.svg'
-const HeaderSearchSuggestion = () => {
-  const [openSearchbar, setOpenSearchbar] = useState(false)
-  const matchesMediumSize = useMatchMedia('(max-width: 992px)')
+import styles from '../component-styles/HeaderStyle.module.css'
+import logo from '../component-assets/zurichatlogo.svg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faAngleUp,
+  faAngleDown,
+  faTimes,
+  faBars
+} from '@fortawesome/free-solid-svg-icons'
 
-  const handleSearchBarClose = () => {
-    setOpenSearchbar(false)
+const Header = () => {
+  const [isHovering, setIsHovering] = useState(false)
+  const [isHoveringD, setIsHoveringD] = useState(false)
+  const [toggleMenu, toggledMenu] = useState(false)
+  const [show, setShow] = useState(false)
+  const [show2, setShow2] = useState(false)
+
+  const handleMouseEnter = () => {
+    setIsHovering(true)
+  }
+  const handleMouseLeave = () => {
+    setIsHovering(false)
+  }
+  const handleMouseEnterD = () => {
+    setIsHoveringD(true)
+  }
+  const handleMouseLeaveD = () => {
+    setIsHoveringD(false)
+  }
+
+  const Menu = () => {
+    toggleMenu ? toggledMenu(false) : toggledMenu(true)
+  }
+  const Show = () => {
+    show ? setShow(false) : setShow(true)
+  }
+  const Show2 = () => {
+    show2 ? setShow2(false) : setShow2(true)
   }
 
   return (
-    <nav
-      className={`navbar navbar-expand-lg navbar-light ${headerStyles.navbar}`}
-      // onBlur={()=>{
-      //   console.log('blur pressed')
-      //   handleSearchBarClose()}}
-    >
-      <div className="container-xl">
-        <Link
-          to="/"
-          className={`navbar-brand me-0 me-md-2 d-flex align-items-center ${headerStyles.navbarBrand}`}
-        >
-          <img
-            src={zurichatlogo}
-            alt="zuri-logo"
-            width="20"
-            height="20"
-            className={`d-inline-block align-top ${headerStyles.image}`}
-          />
-          <span className={`mb-2 ${headerStyles.zuriChat}`}>Zuri Chat</span>
-        </Link>
-        {openSearchbar && matchesMediumSize ? (
-          <SearchSuggestionBar
-            handleSearchBarClose={handleSearchBarClose}
-            className={`${matchesMediumSize ? 'me-0 me-md-3 w-50' : 'w-75'}`}
-          />
-        ) : (
-          <div className="nav-item ms-auto">
-            <img
-              src={search}
-              alt="zuri-logo"
-              width="20"
-              height="20"
-              onClick={() => {
-                console.log('clicked')
-                return setOpenSearchbar(true)
-              }}
-              className={`d-block d-lg-none ${headerStyles.searchLogo1}`}
-            />
-          </div>
-        )}
-
-        <button
-          className={`navbar-toggler ${headerStyles.navButton}`}
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        <div
-          className={`collapse px-3 w-100 navbar-collapse ${headerStyles.collapse}`}
-          id="navbarSupportedContent"
-        >
-          <ul
-            className={`navbar-nav w-100 ${
-              openSearchbar
-                ? 'd-flex justify-content-between align-items-start align-items-lg-center'
-                : 'd-flex justify-content-end  align-items-start align-items-lg-center'
-            } ${headerStyles.navbarNav}`}
-          >
-            {openSearchbar && !matchesMediumSize ? (
-              <SearchSuggestionBar
-                handleSearchBarClose={handleSearchBarClose}
-                className="w-75"
-              />
-            ) : (
-              <>
-                <li className="nav-item">
-                  <Link
-                    to="/features"
-                    className={`nav-link ${headerStyles.navLinkFeatures}`}
-                    aria-current="page"
-                  >
-                    <span className={`${headerStyles.features}`}>Features</span>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    to="/pricing"
-                    className={`nav-link ${headerStyles.navLinkPricing}`}
-                    role="button"
-                    aria-expanded="false"
-                  >
-                    <span className={`${headerStyles.pricing}`}>Pricing</span>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    to="/resources"
-                    className={`nav-link ${headerStyles.navLinkComms}`}
-                  >
-                    <span className={`${headerStyles.comms}`}>Community</span>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    to="/download-app"
-                    className="nav-link"
-                    role="button"
-                    aria-expanded="false"
-                  >
-                    <span className={`${headerStyles.download}`}>
-                      Downloads
-                    </span>
-                  </Link>
-                </li>
-                <li className="nav-item d-flex justify-content-lg-start align-items-lg-center justify-content-start align-items-center">
-                  <img
-                    src={search}
-                    alt="search-logo"
-                    onClick={() => setOpenSearchbar(true)}
-                    className={`d-none d-lg-block ms-0 me-0 ms-lg-5 me-lg-2 my-2 my-lg-0 ${headerStyles.searchLogo}`}
+    <nav>
+      {/* mobile view */}
+      <div className={styles.mobile_nav}>
+        <div className={styles.m_logo}>
+          <a href="/">
+            <img src={logo} alt="Logo" />
+            <p className={styles.m_logo_name}>Zuri Chat</p>
+          </a>
+        </div>
+        <div>
+          <ul class={styles.mobile_menu}>
+            <div>
+              <li>
+                <a>
+                  <FontAwesomeIcon
+                    onClick={Menu}
+                    className={styles.mobile_fa}
+                    icon={toggleMenu ? faTimes : faBars}
                   />
-                </li>
-              </>
-            )}
-            <li className="nav-item">
-              <Link
-                to="/signup"
-                className={`nav-link ${headerStyles.navLinkSignUp}`}
+                </a>
+                <ul
+                  className={
+                    toggleMenu ? styles.dropdown : styles.dropdown_hide
+                  }
+                >
+                  <div>
+                    <a href="/features">
+                      <li className={styles.dropdown_list}>Features</li>
+                    </a>
+
+                    <a onClick={Show}>
+                      <li className={styles.dropdown_list}>
+                        Product
+                        <i
+                          className={`fas ${
+                            show ? 'fa-angle-up' : 'fa-angle-down'
+                          }`}
+                        ></i>
+                      </li>
+                    </a>
+                    <a href="/community">
+                      <li className={styles.dropdown_list}>Community</li>
+                    </a>
+                    <a onClick={Show2}>
+                      <li className={styles.dropdown_list}>
+                        Downloads
+                        <i
+                          className={`fas ${
+                            show2 ? 'fa-angle-up' : 'fa-angle-down'
+                          }`}
+                        ></i>
+                        <ul className={styles.dropdown2}>
+                          <a href="/andriod-download">
+                            <li className={styles.dropdown_items}>Andriod</li>
+                          </a>
+                          <a href="/iOS-download">
+                            <li className={styles.dropdown_items}>iOS</li>
+                          </a>
+                          <a href="/windows-download">
+                            <li className={styles.dropdown_items}>Windows</li>
+                          </a>
+                          <a href="/mac-download">
+                            <li className={styles.dropdown_items}>Mac</li>
+                          </a>
+                          <a href="/linus-download">
+                            <li className={styles.dropdown_items}>Linux</li>
+                          </a>
+                        </ul>
+                      </li>
+                    </a>
+                    <div className={styles.mobile_signs}>
+                      <li>
+                        <a className={styles.header_signup} href="/signup">
+                          Signup
+                        </a>{' '}
+                      </li>
+                      <li>
+                        <a className={styles.header_signin} href="/login">
+                          Sign In
+                        </a>{' '}
+                      </li>
+                    </div>
+                  </div>
+                </ul>
+              </li>
+            </div>
+          </ul>
+        </div>
+      </div>
+
+      {/* laptop view */}
+      <div className={styles.large}>
+        <div className={styles.logo}>
+          <a href="/">
+            <img
+              className={styles.logo_img}
+              src={logo}
+              alt="Logo"
+              width="40px"
+              height="40px"
+            />
+            <p className={styles.logo_name}>Zuri Chat</p>
+          </a>
+        </div>
+
+        <div className={styles.menu}>
+          <ul>
+            <li>
+              <a
+                href="/features"
+                id={styles.menu}
+                className={styles.header_list}
               >
-                <span className={`signup ${headerStyles.signU}`}>Sign Up</span>
-              </Link>
+                Features
+              </a>
             </li>
-            <li className="nav-item">
-              <Link
-                to="/login"
-                className={`btn ${headerStyles.signIn}`}
-                role="button"
-              >
-                <span className="signin">Sign In</span>
-              </Link>
+            <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+              <a className={styles.header_list}>
+                Products
+                <FontAwesomeIcon
+                  className={styles.fa}
+                  icon={isHovering ? faAngleUp : faAngleDown}
+                />
+              </a>
+              <ul className={styles.dropdown1}>
+                <a href="/channels">
+                  <li className={styles.dropdown_items}>Channels</li>
+                </a>
+                <a href="/security">
+                  <li className={styles.dropdown_items}>Security</li>
+                </a>
+                <a href="/integration">
+                  <li className={styles.dropdown_items}>Integration</li>
+                </a>
+                <a href="/customers">
+                  <li className={styles.dropdown_items}>Customers</li>
+                </a>
+                <a href="/solutions">
+                  <li className={styles.dropdown_items}>Solutions</li>
+                </a>
+              </ul>
+            </li>
+            <li id={styles.menu}>
+              <a href="/community" className={styles.header_list}>
+                Community
+              </a>
+            </li>
+            <li
+              onMouseEnter={handleMouseEnterD}
+              onMouseLeave={handleMouseLeaveD}
+            >
+              <a className={styles.header_list}>
+                Downloads
+                <FontAwesomeIcon
+                  className={styles.fa}
+                  icon={isHoveringD ? faAngleUp : faAngleDown}
+                />
+              </a>
+              <ul className={styles.dropdown2}>
+                <a href="/andriod-download">
+                  <li className={styles.dropdown_items}>Andriod</li>
+                </a>
+                <a href="/iOS-download">
+                  <li className={styles.dropdown_items}>iOS</li>
+                </a>
+                <a href="/windows-download">
+                  <li className={styles.dropdown_items}>Windows</li>
+                </a>
+                <a href="/mac-download">
+                  <li className={styles.dropdown_items}>Mac</li>
+                </a>
+                <a href="/linus-download">
+                  <li className={styles.dropdown_items}>Linux</li>
+                </a>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div className={styles.header_signs}>
+          <ul>
+            <li className={styles.header_list}>
+              <a className={styles.header_signup} href="/signup">
+                Signup
+              </a>{' '}
+            </li>
+            <li>
+              <a className={styles.header_signin} href="/login">
+                Sign In
+              </a>{' '}
             </li>
           </ul>
         </div>
@@ -157,4 +238,5 @@ const HeaderSearchSuggestion = () => {
     </nav>
   )
 }
-export default HeaderSearchSuggestion
+
+export default Header
