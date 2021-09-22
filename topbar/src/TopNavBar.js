@@ -8,6 +8,10 @@ import { BaseInput } from './TopBarIndex'
 import userAvatar from './assets/images/user.svg'
 import TopbarModal from './components/TopbarModal'
 import UserForm from '../../control/src/pages/ReportFeature/components/Form'
+<<<<<<< HEAD
+=======
+
+>>>>>>> 676470551dfa9f9323738587c373a936585dd7bc
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const state = useContext(TopbarContext)
@@ -31,7 +35,11 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         placeholder="Search here"
         border={'#99999933'}
       />
+<<<<<<< HEAD
       <UserForm />
+=======
+        <UserForm />
+>>>>>>> 676470551dfa9f9323738587c373a936585dd7bc
       <div>
         <img
           src={userAvatar}
