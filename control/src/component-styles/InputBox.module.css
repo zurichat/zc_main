@@ -33,7 +33,6 @@
   height: 4rem;
   overflow: hidden;
   box-sizing: border-box;
-
 }
 
 .InputWrapper:focus-within {
@@ -102,7 +101,6 @@
   }
 } */
 
-
 /* Media Query for Screen Width 1370px and Smaller */
 /* @media only screen and (max-width: 1370px) {
   .InputWrapper {
@@ -152,7 +150,6 @@
     grid-template-columns: 9fr 2fr;
   }
 }
-
 
 /* Media Query for Screen Width 1080px and Smaller */
 /* @media only screen and (max-width: 1080px) {

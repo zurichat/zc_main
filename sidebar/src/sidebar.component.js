@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useContext, Fragment, useState, useEffect } from 'react'
 import useSWR from 'swr'
+import { Link } from 'react-router-dom'
 // import { URLContext } from './context/Url'
 // import { PluginContext } from './context/Plugins'
 import styles from './styles/Sidebar.module.css'
@@ -23,6 +24,7 @@ import shapekeyboardarrowdown from './verified-components/assets/icons/shapekeyb
 import newmessage from './verified-components/assets/icons/newmessage.svg'
 import { links } from './utils/links'
 import { navigateToUrl } from 'single-spa'
+import { Button } from '../../control/src/pages/createworkspace/components/WorkspaceHome'
 
 const fetcher = url => fetch(url).then(res => res.json())
 
@@ -46,6 +48,7 @@ const Sidebar = props => {
 
   // const { setUrl } = useContext(URLContext)
   const [show, setShow] = useState(false)
+  // console.log("user", user)
   // const { plugins, setPlugins } = useContext(PluginContext)
 
   // // const user = JSON.parse(sessionStorage.getItem('user'))
@@ -224,6 +227,7 @@ const Sidebar = props => {
             alt="Organisation settings button"
           />
         </div>
+
         <Overlay isOpen={showDialog} onDismiss={close}>
           <Content aria-label="room-list">
             <CloseButton className="close-button" onClick={close}>
@@ -379,10 +383,26 @@ const Sidebar = props => {
         <button onClick={() => setShow(true)}>Add Teammates</button>
         <Modal onClose={() => setShow(false)} show={show} />
       </div>
+      <Button
+        style={{
+          width: '80%',
+          margin: '0 auto',
+          marginTop: '20px',
+          color: 'white'
+        }}
+      >
+        <LinkStyled to={'/createworkspace'}>Create Workspace</LinkStyled>{' '}
+      </Button>
     </div>
   )
 }
 
+const LinkStyled = styled(Link)`
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  color: white;
+`
 const Overlay = styled(DialogOverlay)`
   position: fixed;
   top: 0;
