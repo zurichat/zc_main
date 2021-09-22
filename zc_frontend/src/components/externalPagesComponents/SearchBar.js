@@ -4,31 +4,31 @@ import { useEffect, useState } from 'react'
 import styles from '../../styles/SearchBar.module.css'
 
 const SearchBar = () => {
-  const [ APIData, setAPIData ] = useState([])
-  const [ searchInput, setSearchInput ] = useState('')
+  const [APIData, setAPIData] = useState([])
+  const [searchInput, setSearchInput] = useState('')
   const [filteredResults, setFilteredResults] = useState([]);
 
   useEffect(() => {
     axios.get(`https://goals.zuri.chat/api/v1/search/files?channelName=goals&fileName=o`)
-         .then((response) => {
-          setAPIData(response.data.data)
-          console.log(APIData, response.data.data)
+      .then((response) => {
+        setAPIData(response.data.data)
+        console.log(APIData, response.data.data)
 
-           
-         })
+
+      })
   }, [])
 
   const searchItems = (searchValue) => {
     setSearchInput(searchValue)
     if (searchInput !== '') {
-     const filteredData = APIData.filter((item) => {
-       return Object.values(item).join('').toLowerCase().includes(searchInput.toLowerCase())
-       })
-       setFilteredResults(filteredData)
+      const filteredData = APIData.filter((item) => {
+        return Object.values(item).join('').toLowerCase().includes(searchInput.toLowerCase())
+      })
+      setFilteredResults(filteredData)
     } else {
       setFilteredResults(APIData)
     }
-}
+  }
   return (
     <div className={styles.searchBar}>
       <input
@@ -39,26 +39,26 @@ const SearchBar = () => {
       />
       <img src="/search-2-line.svg" className={styles.searchSvg} alt="search" />
       <div>
-      
-                    {searchInput.length > 1 ? (
-                      filteredResults.map((item, id) => {
-                          return (
-                            <li key={id}>
-                              {item}
-                            </li>
-                          )
-                      })
-                    ) : (
-                      APIData.map((item, id) => {
-                          return (
-                            <div>
-                            {/* <li key={id}>
+
+        {searchInput.length > 1 ? (
+          filteredResults.map((item, id) => {
+            return (
+              <li key={id}>
+                {item}
+              </li>
+            )
+          })
+        ) : (
+          APIData.map((item, id) => {
+            return (
+              <div>
+                {/* <li key={id}>
                                 {item}
                             </li> */}
-                            </div>
-                          )
-                      })
-                    )}
+              </div>
+            )
+          })
+        )}
       </div>
     </div>
   )
