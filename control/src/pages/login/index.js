@@ -97,7 +97,7 @@ const Login = () => {
   return (
     <main id={styles.authPageWrapper}>
       {Loading && <LoginLoading />}
-      <aside id={styles.authAsideContainer} className={styles.display_none}>
+      {/* <aside id={styles.authAsideContainer} className={styles.display_none}>
         <div id={styles.authImageWrapper}>
           <img src={images[currentImage]} alt="backgroundImage" />
         </div>
