@@ -169,6 +169,7 @@ cursor: pointer;
 export const Heading = styled.h1`
 font-size:48px;
 margin-bottom:24px;
+line-height: 54px;
 color:var(--color);
 margin-top:26px;
 & > span {
@@ -178,6 +179,7 @@ margin-top:26px;
     font-size:28px;
     font-weight:700;
     width:fit-content;
+    line-height: 33.36px;
     & > br {
         display:none;
     }
@@ -198,7 +200,7 @@ margin-bottom: 24px;
     font-family:"Lato",sans-serif;
 }
 @media (max-width:35rem){
-   width: calc(100% - 24px);
+   width: 100%;
    &::placeholder {
        font-size: 1rem;
    }
@@ -219,9 +221,9 @@ display:flex;
 
 padding-bottom:65px;
 @media (max-width:35rem){
+    width:100%;
     justify-content: space-between;
-    gap:10px;
-    margin-top:34px;
+    
     padding-bottom:83px;
 }
 `
@@ -229,6 +231,7 @@ const AddLinkWrapper = styled.div`
 position:relative;
 display:flex;
 align-items:center;
+margin-top:0;
 @media (max-width:35rem){
     margin-left:-10px;
 }
@@ -281,6 +284,10 @@ align-items:center;
     margin:0;
 }
 @media (max-width:35rem) {
+    & > button {
+        padding:revert;
+        padding-left:13px;
+    }
     gap:21px;
 }
 `
