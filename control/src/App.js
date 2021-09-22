@@ -27,10 +27,10 @@ import AllSessionSignOut from './pages/settings/components/AllSessionSignOut'
 import PrivateRoute from './pages/settings/Utils/PrivateRoute'
 import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation';
 import WorkspaceHome from './pages/createworkspace/components/WorkspaceHome'
-import ProjectName from './pages/createworkspace/components/ProjectName';
-import LaunchPage from './pages/createworkspace/components/LaunchPage';
-import Step3 from './pages/createworkspace/components/Step3';
-import CompanyName from './pages/createworkspace/components/CompanyName';
+// import ProjectName from './pages/createworkspace/components/ProjectName';
+// import LaunchPage from './pages/createworkspace/components/LaunchPage';
+// import Step3 from './pages/createworkspace/components/Step3';
+// import CompanyName from './pages/createworkspace/components/CompanyName';
 import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContext'
 
 
@@ -67,10 +67,10 @@ return(
       <Route path="/features">
         <Features />
       </Route>
-      <Route path="/Inviterequest">
+      <Route path="/invite-request">
         <Inviterequest />
       </Route>
-      <Route path="/SendRequest">
+      <Route path="/send-request">
         <SendRequest />
       </Route>
       <Route path="/resources">
