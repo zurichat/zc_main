@@ -53,7 +53,7 @@ const Header = () => {
         <div>
           <ul class={styles.mobile_menu}>
             <div>
-              <li>
+              <li className={styles.icon}>
                 <a>
                   <FontAwesomeIcon
                     onClick={Menu}
@@ -139,8 +139,8 @@ const Header = () => {
               className={styles.logo_img}
               src={logo}
               alt="Logo"
-              width="40px"
-              height="40px"
+              width="30px"
+              height="30px"
             />
             <p className={styles.logo_name}>Zuri Chat</p>
           </a>
