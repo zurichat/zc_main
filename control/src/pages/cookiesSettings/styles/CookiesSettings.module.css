@@ -101,7 +101,6 @@ body {
 
 .action_links {
   margin-top: 0.9em;
-
 }
 
 .button {
@@ -134,7 +133,6 @@ body {
   /* background-color: #c4c4c4; */
   font-size: 1rem;
 }
-
 
 @media (min-width: 35rem) {
   .cookie_content {
