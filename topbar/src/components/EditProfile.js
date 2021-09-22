@@ -2,11 +2,12 @@ import { useRef, useState, useEffect, useContext } from 'react'
 import styles from '../styles/EditProfile.module.css'
 // import AddLink from './AddLink'
 import ProfileModal from './ProfileModal'
-// import axios from 'axios'
+
+import { authAxios } from '../utils/Api'
+
 import { AiFillCamera } from 'react-icons/ai'
 import userAvatar from '../assets/images/user.svg'
 import { ProfileContext } from '../context/ProfileModal'
-import { authAxios } from '../utils/Api'
 import Loader from 'react-loader-spinner'
 import toast, { Toaster } from 'react-hot-toast'
 
@@ -27,7 +28,7 @@ const EditProfile = () => {
     phone: user.phone,
     prefix: '',
     timezone: '',
-    twitter: '',
+    twitter: '', 
     facebook: '',
     loading: false
   })
@@ -44,12 +45,19 @@ const EditProfile = () => {
         toast.success('User Profile Picture Updated Successful', {
           position: 'bottom-center'
         })
+        setImageUrl('')
       })
       .catch(err => {
         toast.error(err?.message, {
           position: 'bottom-center'
         })
       })
+  }
+
+  const handleUploadWithEnter = e => {
+    if (e.keyCode === 13) {
+      onImageUpload()
+    }
   }
 
   let validateImageUrl = true
@@ -279,7 +287,6 @@ const EditProfile = () => {
 
                     <div className={styles.avatar}>
                       <img
-                        ref={avatarRef}
                         src={userProfileImage ? userProfileImage : userAvatar}
                         alt="profile-pic"
                       />
@@ -306,6 +313,7 @@ const EditProfile = () => {
                     placeholder="Image Url"
                     className={styles.imageUpload}
                     value={imageUrl}
+                    onKeyDown={handleUploadWithEnter}
                     onChange={e => {
                       setImageUrl(e.target.value)
                     }}

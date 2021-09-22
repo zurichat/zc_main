@@ -12,7 +12,6 @@ export const pluginRoutes = [
   location => location.pathname.startsWith('/calendar'),
   location => location.pathname.startsWith('/expenses'),
   location => location.pathname.startsWith('/todo')
-
 ]
 
 registerApplication({
