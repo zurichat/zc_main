@@ -13,11 +13,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 20px ;
+  margin-left: 20px;
   padding: 3px;
   margin-bottom: 22px;
   cursor: pointer;
-
 }
 .one:first-child {
   padding-top: 15px;
@@ -66,4 +65,3 @@
     display: none;
   }
 }
-
