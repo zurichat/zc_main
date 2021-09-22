@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react'
-import styles from '../component-styles/Header.module.css'
+import styles from '../component-styles/HeaderStyle.module.css'
 import logo from '../component-assets/zurichatlogo.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
