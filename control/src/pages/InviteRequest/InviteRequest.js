@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Container, Form, Card } from 'react-bootstrap'
-import styles from './styles/SendRequest.module.css'
+import styles from './styles/InviteRequest.module.css'
 
 function Inviterequest() {
   return (
