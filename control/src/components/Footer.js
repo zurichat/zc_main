@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react'
-import styles from '../component-styles/footer.module.css'
+import styles from '../component-styles/FooterStyle.module.css'
 import logo from '../component-assets/zurichatlogo.svg'
 import facebook from '../component-assets/facebook.svg'
 import twitter from '../component-assets/twitter.svg'
