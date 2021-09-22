@@ -25,6 +25,10 @@ export const UserForm = () => {
     setStep(steps + 1)
   }
 
+  const resetStep = () => {
+    setStep(1)
+  }
+
   const prevStep = () => {
     const steps = step
     setStep(steps - 1)
@@ -92,7 +96,9 @@ export const UserForm = () => {
             values={values}
           />
         ) : null}
-        {step === 4 ? <Success postSucc={postSuccess} /> : null}
+        {step === 4 ? (
+          <Success postSucc={postSuccess} resetStep={resetStep} />
+        ) : null}
       </Modal>
     </>
   )
