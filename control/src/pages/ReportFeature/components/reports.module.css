@@ -17,7 +17,8 @@
   background: #fff;
   border-radius: 20px;
   padding: 30px 80px;
-  max-width: 800px;
+  min-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   box-shadow: 0 15px 16px 0.17px rgba(0, 0, 0, 0.05);
 }
