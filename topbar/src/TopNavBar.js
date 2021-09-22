@@ -1,26 +1,25 @@
 import { useContext, useEffect } from 'react'
+import { authAxios } from './utils/Api.js'
 import { TopbarContext } from './context/Topbar'
 import { connect } from 'react-redux'
 import zurichatlogo from './assets/images/Logo.svg'
 import { useState } from 'react'
 import styled from 'styled-components'
 import { BaseInput } from './TopBarIndex'
+import { ProfileContext } from './context/ProfileModal'
 import userAvatar from './assets/images/user.svg'
 import TopbarModal from './components/TopbarModal'
 import UserForm from '../../control/src/pages/ReportFeature/components/Form'
-import { ProfileContext } from './context/ProfileModal'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
-  const { openModal }  =  useContext(TopbarContext)
-  const { setUser, user, setOrgId, setUserProfileImage } = useContext(ProfileContext)
+  const { openModal } = useContext(TopbarContext)
+  const { setUser, user, setOrgId, setUserProfileImage } =
+    useContext(ProfileContext)
   const [organizations, setOrganizations] = useState([])
 
   const [search, setSearch] = useState('')
 
-
-  
-
- useEffect(() => {
+  useEffect(() => {
     const userdef = JSON.parse(sessionStorage.getItem('user'))
     async function getOrganizations() {
       await authAxios
@@ -48,9 +47,8 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           console.log(err)
         })
     }
-  
+
     setUserProfileImage(user.image_url)
-    
 
     getOrganizations()
   }, [setOrgId, setUser])
@@ -74,10 +72,10 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         placeholder="Search here"
         border={'#99999933'}
       />
-        <UserForm />
+      <UserForm />
       <div>
         <img
-          style={{height : '30px', width: "30px", borderRadius : '10px'}}
+          style={{ height: '30px', width: '30px', borderRadius: '10px' }}
           src={user.image_url ? user.image_url : userAvatar}
           onClick={openModal}
           role="button"
