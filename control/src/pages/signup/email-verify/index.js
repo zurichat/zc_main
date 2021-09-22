@@ -10,7 +10,7 @@ import styles from './styles/EmailVerification.module.css'
 import CodeInput from './codeInput'
 import { Button } from '../../../components/'
 
-export default function EmailVerification({ email = 'johndoe@example.com' }) {
+export default function EmailVerification({ email }) {
   const [success, setsuccess] = useState(false)
   const [errorMsg, seterrorMsg] = useState(false)
 
@@ -18,18 +18,18 @@ export default function EmailVerification({ email = 'johndoe@example.com' }) {
     await axios
       .post(`https://api.zuri.chat/account/verify-account`, { code })
       .then(res => {
-        console.log('res')
+        console.log(res.data)
         if (res.status === 200) {
           setsuccess(true)
         } else {
           setsuccess(false)
-          seterrorMsg(res?.message)
+          seterrorMsg(res)
         }
 
-        setTimeout(() => {
-          //Redirect to some other page
-          window.location.href = '/home'
-        }, 2000)
+        // setTimeout(() => {
+        //   //Redirect to some other page
+        //   window.location.href = '/home'
+        // }, 2000)
       })
       .catch(err => {
         seterrorMsg(err.response.data.message)
