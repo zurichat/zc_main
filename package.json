@@ -71,7 +71,6 @@
     "single-spa": "^5.9.3"
   }
 }
-=======
 {
   "name": "@zuri/root-config",
   "version": "2.0.0",
