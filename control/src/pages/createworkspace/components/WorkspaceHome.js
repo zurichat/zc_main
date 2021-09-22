@@ -50,7 +50,7 @@ const WorkspaceHome = () => {
             together. To create a new workspace, click the button below
           </Text>
           <Link to={`${url}/step1`}>
-            <Button>
+            <Button style={{minWidth:"259px"}}>
               Create a new workspace
               <img src={Active} alt="" />
             </Button>
@@ -101,6 +101,11 @@ const Heading = styled.h1`
   width: 320px;
   margin-bottom: 14px;
   color: #333333;
+  @media (max-width:35rem) {
+    font-size: 28px;
+    line-height: 33.6px;
+    width:191px;
+  }
 `
 
 const Text = styled.p`
@@ -112,6 +117,10 @@ const Text = styled.p`
   line-height: 26.91px;
   color: #333333;
   margin-bottom: 29px;
+  @media (max-width:35rem) {
+    font-size:1rem;
+    line-height:23.92px;
+  }
 `
 export const Button = styled.button`
   display: flex;
