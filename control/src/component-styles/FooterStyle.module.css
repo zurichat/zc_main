@@ -28,11 +28,10 @@ a {
 }
 .logo {
   padding-left: 40px;
-  padding-top: 5px;
-  font-size: 22px;
+  padding-top: 25px;
 }
 .logo_img {
-  padding-top: 10px;
+  padding-top: 0;
 }
 .logo a {
   display: inline-flex;
@@ -40,7 +39,7 @@ a {
 .logo p {
   color: black;
   padding-left: 5px;
-  padding-top: 15px;
+  padding-top: 5px;
   font-size: 1.3rem;
 }
 .menu {
@@ -105,10 +104,6 @@ a {
 
 /*media queries */
 @media screen and (max-width: 1250px) {
-  .logo {
-    padding-top: 10px;
-    padding-left: 0;
-  }
   .logo p {
     font-size: 1.2rem;
   }
@@ -162,6 +157,13 @@ a {
   }
 }
 
+@media screen and (max-width: 900px) {
+  .top_footer {
+    display: grid;
+    grid-template-columns: 22% 58% 20%;
+    padding-bottom: 40px;
+  }
+}
 @media screen and (max-width: 768px) {
   .footer {
     display: none;
