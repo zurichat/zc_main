@@ -1,13 +1,51 @@
-import { useRef } from 'react'
-import styles from '../styles/EditProfile.module.css'
-import AddLink from './AddLink'
+import { useRef, useState, useContext } from 'react'
 import ProfileModal from './ProfileModal'
+// import axios from 'axios'
 
 import { AiFillCamera } from 'react-icons/ai'
+import avatar from "../assets/images/avatar.jpg";
+import { ProfileContext } from '../context/ProfileModal'
+import { authAxios } from '../utils/Api'
+import Loader from 'react-loader-spinner'
+import toast, { Toaster } from 'react-hot-toast'
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
+import TimezoneSelect from 'react-timezone-select';
+import { StyledProfileWrapper } from '../styles/StyledEditProfile';
+
 
 const EditProfile = () => {
   const imageRef = useRef(null)
   const avatarRef = useRef(null)
+  const { user, orgId } = useContext(ProfileContext)
+  const [selectedTimezone, setSelectedTimezone] = useState({})
+  const [links, setLinks] = useState([""]);
+  const [phone, setPhone] = useState('');
+  const [state, setState] = useState({
+    name: user.first_name,
+    display_name: user.display_name,
+    pronouns: user.pronouns,
+    role: user.role,
+    image_url: user.image_url,
+    bio: "",
+    prefix: "",
+    timezone: "",
+    twitter: "",
+    facebook: "",
+    loading: false,
+  })
+
+  console.log("users", user);
+
+  const addList = () => {
+    setLinks([...links, ""])
+  }
+
+  const handleLinks = (e, index) => {
+    links[index] = e.target.value
+
+    setLinks(links[index]);
+  }
 
   const handleImageChange = event => {
     if (imageRef.current.files[0]) {
@@ -17,178 +55,181 @@ const EditProfile = () => {
         avatarRef.current.src = event.target.result
       }
 
-      fileReader.readAsDataURL(imageRef.current.files[0])
+      const imgUrl = fileReader.readAsDataURL(imageRef.current.files[0])
+
+      authAxios.patch(`/organizations/${orgId}/members/${user._id}/photo`, {"image_utl": imgUrl})
+        .then (res => {
+          console.log(res)
+        })
+        .catch(err => {
+          console.log(err)
+        })
     }
+  }
+
+
+  // This will handle the profile form submission
+
+  const handleFormSubmit = e => {
+    e.preventDefault()
+    setState({ loading: true })
+
+    const data = {
+      first_name: state.name,
+      display_name: state.display_name,
+      pronouns: state.pronouns,
+      phone: phone,
+      bio: state.bio,
+      timeZone: state.timezone,
+      // socials: [
+      //   {
+      //     "title": "twitter",
+      //     "url": state.twitter
+      //   },
+      //   {
+      //     "title": "facebook",
+      //     "url": state.facebook
+      //   },
+      // ],
+    }
+
+    authAxios.patch(`/organizations/${orgId}/members/${user._id}/profile`, data)
+      .then(res => {
+        console.log(res)
+        setState({ loading: false })
+        toast.success("User Profile Updated Successfully", {
+          position: "bottom-center"
+        })
+      })
+      .catch(err => {
+        console.log(err)
+        setState({ loading: false })
+        toast.error(err?.message, {
+          position: "bottom-center"
+        })
+      }
+    )
   }
 
   return (
     <ProfileModal full title="Edit profile">
       <>
-        <div className={styles.profileWrapper}>
-          <div className={styles.profile}>
-            <div className={styles.profileMain}>
-              <div className={styles.sectionA}>
-                <form>
-                  <div className={styles.displayNameDesktop}>
-                    <label>First Name</label>
-                    <input
-                      type="text"
-                      name="name"
-                      className={styles.formInput}
-                    />
-                  </div>
-                  <div
-                    style={{ display: 'flex' }}
-                    className={styles.formWrapper}
-                  >
-                    <div className={styles.formMargin}>
-                      <label>Choose a Display Name</label>
-                      <input
-                        type="text"
-                        name="displayName"
-                        className={styles.formInput}
-                      />
-                      <div className={styles.subText}>
-                        Please use a unique and permanent display name. If
-                        someone uses your exact name, you should change it!
-                      </div>
-                    </div>
-
-                    <div className={styles.sectionB}>
-                      <label className="label">Pronouns</label>
-                      <select className={styles.formInput}>
-                        <option value="John">He/him</option>
-                        <option value="John">She/her</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className={styles.mt}>
-                    <label className="label">What you do</label>
-                    <input
-                      type="text"
-                      name="name"
-                      className={styles.formInput}
-                    />
-                  </div>
-                  <div className={styles.subText}>
-                    Let people know what you do at{' '}
-                    <span className={styles.fontBold}>ZURI</span>
-                  </div>
-                  <div className={styles.mt}>
-                    <label className="label">Bio</label>
-                    <textarea rows="3" className={styles.formInput} />
-                  </div>
-
-                  <div className="my-3">
-                    <label>Phone Number</label>
-                    <div className={styles.phoneNumber}>
-                      <span>
-                        <select>
-                          <option value="number">+234</option>
-                        </select>
-                      </span>
-                      <span>
-                        <input
-                          type="text"
-                          name="number"
-                          className="focus:outline-none"
-                        />
-                      </span>
-                    </div>
-                  </div>
-                  <label className="label">Timezones</label>
-                  <div>
-                    <select className={styles.timeZone}>
-                      <option value="timezone">
-                        (UTC+01:00) West Central Africa
-                      </option>
-                    </select>
-                  </div>
-
-                  <div className="mt-3">
-                    <label>Twitter</label>
-                    <input
-                      type="text"
-                      name="name"
-                      className={styles.formInput}
-                    />
-                  </div>
-                  <div className="mt-3">
-                    <label>Facebook</label>
-                    <input
-                      type="text"
-                      name="name"
-                      className={styles.formInput}
-                    />
-                  </div>
-                </form>
-              </div>
-              <div className={styles.sectionB}>
-                <div className={styles.subContainer}>
-                  <div className={styles.profilePic}>
-                    <label htmlFor="img" className={styles.camera}>
-                      <AiFillCamera className={styles.cameraIcon} />
+        <StyledProfileWrapper>
+          <div className="grid-container">
+            <div className="input-cage">
+                <div className="mobileCon">
+                  <div className="mobileAvataeCon">
+                    <img ref={avatarRef} src={state.image_url ? state.image_url : avatar}
+                      alt="profile-pic" className="avatar"/>
+                    
+                    <label htmlFor="img" className="icon-container">
+                      <AiFillCamera className="icon" />
                     </label>
-
-                    <div className={styles.avatar}>
-                      <img
-                        ref={avatarRef}
-                        src="/profiles.svg"
-                        alt="profile-pic"
-                      />
-                    </div>
-                    <div className={styles.username}>
-                      <div className={styles.mt} style={{ width: '100%' }}>
-                        <label>Full Name</label>
-                        <input
-                          type="text"
-                          name="name"
-                          className={styles.formInput}
-                        />
-                      </div>
-                    </div>
                   </div>
-                  <div className={styles.profileFunc}>
-                    <div className={styles.subContainer}>
-                      <div className={styles.mxAuto}>
-                        <label htmlFor="img" className={styles.save}>
-                          Upload an Image
-                        </label>
-                        <input
-                          ref={imageRef}
-                          onChange={handleImageChange}
-                          type="file"
-                          hidden
-                          id="img"
-                        />
-                      </div>
-                      <button className={styles.deleteImage}>
-                        Delete image
-                      </button>
-                    </div>
-                    <div className={styles.tagContainer}>
-                      <p className={styles.setTag}>Set yourself as</p>
-                      <button className={styles.away}>Away</button>
-                    </div>
+                  <div className="input-group ml-4 md:ml-0">
+                    <label htmlFor="name" className="inputLabel">First Name</label>
+                    <input type="text" className="input" id="name" defaultValue={state.name} onChange={(e) => setState({ name: e.target.value })} name="name" />
                   </div>
                 </div>
+
+              <div className="double-input">
+                <div className="input-group">
+                  <label htmlFor="dname" className="inputLabel">Choose a Display Name</label>
+                  <input type="text" className="input" id="dname" defaultValue={state.display_name} onClick={(e) => setState({ display_name: e.target.value })} name="dname" />
+                  <p className="para">Please use a unique and permanent display name. If someone uses your exact name, you should change it!</p>
+                </div>
+                <div className="input-group">
+                  <label htmlFor="pronouns" className="inputLabel">Pronouns</label>
+                  <select name="pronouns" defaultValue={state.pronouns} onClick={(e) => setState({ pronouns: e.target.value })} className="select" id="pronouns">
+                    <option value="He/him">He/him</option>
+                    <option value="She/her">She/her</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="input-group">
+                <label htmlFor="what" className="inputLabel">What you do</label>
+                <input type="text" onClick={(e) => setState({ what: e.target.value })} defaultValue={state.what} className="input" id="what" name="what" />
+                <p className="para">Let people know what you do at <b>ZURI</b></p>
+              </div>
+
+              <div className="input-group">
+                <label htmlFor="bio" className="inputLabel">Bio</label>
+                <textarea onClick={(e) => setState({ bio: e.target.value })} defaultValue={state.bio} className="textarea" name="bio" id="bio"></textarea>
+              </div>
+              <div className="input-group">
+                <label className="inputLabel">Phone Number</label>
+                <PhoneInput
+                  placeholder="Enter phone number"
+                  value={phone}
+                  onChange={setPhone}/>
+              </div>
+              <div className="input-group">
+                <label className="inputLabel">Time Zone</label>
+                <TimezoneSelect
+                  value={selectedTimezone}
+                  onChange={setSelectedTimezone}
+                />
+              </div>
+
+              <div className="input-group">
+                <label htmlFor="twitter" className="inputLabel">Twitter</label>
+                <input type="text" className="input" defaultValue={state.twitter} onClick={(e) => setState({ twitter: e.target.value })} id="twitter" name="twitter" />
+              </div>
+              <div className="input-group">
+                <label htmlFor="facebook" className="inputLabel">Facebook</label>
+                <input defaultValue={state.facebook} onClick={(e) => setState({ facebook: e.target.value })} type="text" className="input" id="facebook" name="facebook" />
+              </div>
+
+              <div className="input-group">
+                <label className="inputLabel">Additional Links <span>(5 max)</span></label>
+                {
+                  links?.map((list, index) => (
+                    <input type="text" className="input mb-3" key={index} />
+                  ))
+                }
+
+                <p className="warning" onClick={addList}>Add new link</p>
               </div>
             </div>
+            <div className="img-container">
+              <div className="avatar">
+                <img
+                  ref={avatarRef}
+                  className="img"
+                  src={state.image_url ? state.image_url : avatar}
+                  alt="profile-pic"
+                />
 
-            <button className={styles.bottomBtn}>Save</button>
-
-            <div className={styles.px9}>
-              <AddLink />
-              <div className={styles.formFooter}>
-                <div style={{ display: 'flex' }}>
-                  <button className={styles.cancel}>Cancel</button>
-                  <button className={styles.saveChange}>Save Changes</button>
-                </div>
+                <input ref={imageRef} onChange={handleImageChange} type="file" hidden id="img" />
+                <label htmlFor="img" className="btns chgBtn">Upload an image</label>
+                <button className="btns rmvBtn">Delete image</button>
               </div>
             </div>
           </div>
-        </div>
+
+          <div onClick={handleFormSubmit} className="mobileButton">
+          {state.loading ? 
+              <Loader
+                type="ThreeDots"
+                color="#00B87C"
+                height={24}
+                width={24}
+              /> : "Save"}
+          </div>
+          <div className="button-wrapper">
+            <button className="btns rmvBtn">Cancel</button>
+            <button onClick={handleFormSubmit} className="btns chgBtn">{state.loading ? 
+              <Loader
+                type="ThreeDots"
+                color="#00B87C"
+                height={40}
+                width={40}
+              /> : "Save Changes"}
+            </button>
+          </div>
+          <Toaster/>
+        </StyledProfileWrapper>
       </>
     </ProfileModal>
   )
