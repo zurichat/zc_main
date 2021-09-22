@@ -11,8 +11,9 @@
 .one,
 .active {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  margin-left: 20px;
+  margin-left: 20px ;
   padding: 3px;
   margin-bottom: 22px;
   cursor: pointer;
@@ -21,7 +22,7 @@
   padding-top: 15px;
 }
 .icon {
-  margin-right: 10px;
+  margin-right: 15px;
 }
 .active p {
   color: #00b87c;
@@ -30,6 +31,8 @@
 .one,
 .active {
   display: flex;
+  flex-direction: row;
+  font-size: 15px;
   align-items: center;
   margin-left: 20px;
   padding: 2px;
@@ -37,11 +40,10 @@
   cursor: pointer;
 }
 .one:first-child {
-  padding-top: 15px;
+  padding-top: 10px;
 }
 .icon {
   margin-right: 10px;
-  color: #333333;
 }
 .active p,
 .icon {
@@ -55,3 +57,10 @@
 .one .icon {
   color: #999999;
 }
+
+@media screen and (max-width: 768px) {
+  .notifySidebar {
+    display: none;
+  }
+}
+
