@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { ProfileContext } from '../context/ProfileModal'
 import { TopbarContext } from '../context/Topbar'
 import 'react-notifications/lib/notifications.css'
-import toast, { Toaster } from 'react-hot-toast'
+import { NotificationContainer, NotificationManager } from 'react-notifications'
 
 import Preferences from './Preferences'
 
@@ -20,13 +20,11 @@ export const Dropdown = () => {
     const copiedText = getText.current.innerHTML
     navigator.clipboard.writeText(copiedText).then(
       () => {
-        toast.success('User Profile Picture Updated Successful', {
-          position: 'bottom-center'
-        })      },
+        NotificationManager.success('copied!', '', 3000, () => {}, true)
+      },
       err => {
-        toast.error(err?.message, {
-          position: 'bottom-center'
-        })      }
+        NotificationManager.warning('copy failed!', '', 3000, () => {}, true)
+      }
     )
   }
 
@@ -61,7 +59,7 @@ export const Dropdown = () => {
         </div>
       </div>
       {modal === 'preference' && <Preferences />}
-      <Toaster />
+      <NotificationContainer />
     </>
   )
 }
