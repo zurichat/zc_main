@@ -21,7 +21,6 @@ const EditProfile = () => {
   const [selectedTimezone, setSelectedTimezone] = useState({})
   const [links, setLinks] = useState([""]);
   const [phone, setPhone] = useState('');
-  const [imgUrl, setImgUrl] = useState('')
   const [state, setState] = useState({
     name: user.first_name,
     display_name: user.display_name,
