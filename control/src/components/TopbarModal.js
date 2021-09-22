@@ -19,7 +19,6 @@ const TopbarModal = ({ members }) => {
   const { toggleModalState, toggleProfileState } = useContext(ProfileContext)
 
   const state = useContext(TopbarContext)
-
   const [showModal] = state.show
   const [active, setActive] = state.presence
   const [showStatus] = state.status

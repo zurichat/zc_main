@@ -19,11 +19,7 @@ function Section3() {
           comprehensive compliance ans assurance programs.
         </p>
 
-<<<<<<< HEAD:control/src/pages/pricing/components/Section3.js
         <Link className={styles.textLink} to="./security">
-=======
-        <Link className={styles.textLink} href="./security">
->>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5:zc_frontend/src/pages/pricing/components/Section3.js
           Learn more about security
         </Link>
       </div>

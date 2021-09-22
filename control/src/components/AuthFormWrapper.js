@@ -1,18 +1,9 @@
 import React from 'react'
 //import { Link } from 'react-router-dom'
 import { RiErrorWarningLine } from 'react-icons/ri'
-<<<<<<< HEAD:control/src/components/AuthFormWrapper.js
 import styles from '../component-styles/AuthFormWrapper.module.css'
 import logo from '../component-assets/logo.svg'
 import google from '../component-assets/google.svg'
-=======
-import styles from '../styles/AuthFormWrapper.module.css'
-import logo from '../pages/images/logo.svg'
-import google from '../pages/images/google.svg'
-import GoogleSignIn from './GoogleSignIn'
-// import chevron from '../pages/images/chevron.svg'
-// import globe from '../pages/images/globe.svg'
->>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5:zc_frontend/src/components/AuthFormWrapper.js
 
 const FormWrapper = ({
   children,
@@ -48,17 +39,12 @@ const FormWrapper = ({
           </Link>
         </div> */}
         <div className={`${styles.googleAuthDiv}`}>
-          <GoogleSignIn
-            className={styles.googleBtn}
-            googleHeader={googleHeader}
-            google={google}
-          />
-          {/*<div className={`${styles.googleBtn}`}>
+          <div className={`${styles.googleBtn}`}>
             <a href="/" className="google">
               <img src={google} alt="google" />
               {googleHeader}
             </a>
-          </div>*/}
+          </div>
           <span className={`${styles.hrWrapper}`}>
             {/* <span className={`${styles.topLine}`}>{topLineText}</span> */}
             <hr className={`${styles.hrLeft}`} />

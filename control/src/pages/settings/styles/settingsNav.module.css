@@ -79,13 +79,8 @@
 
 .pImage {
   position: relative;
-<<<<<<< HEAD:control/src/pages/settings/styles/settingsNav.module.css
   height: 30px;
   width: 30px;
-=======
-  height: 35px;
-  width: 35px;
->>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5:zc_frontend/src/pages/settings/styles/settingsNav.module.css
   cursor: pointer;
   border-radius: 10%;
 }
@@ -98,13 +93,8 @@
 
 .circles {
   background: #0dbe3f;
-<<<<<<< HEAD:control/src/pages/settings/styles/settingsNav.module.css
   height: 10px;
   width: 10px;
-=======
-  height: 14px;
-  width: 14px;
->>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5:zc_frontend/src/pages/settings/styles/settingsNav.module.css
   position: absolute;
   bottom: -3px;
   right: -5px;

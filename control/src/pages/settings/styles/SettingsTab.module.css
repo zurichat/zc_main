@@ -6,13 +6,10 @@
 
 .settings_wrapper button {
   outline: none;
-<<<<<<< HEAD:control/src/pages/settings/styles/SettingsTab.module.css
 }
 
 .settings_wrapper button:hover {
   color: #fff;
-=======
->>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5:zc_frontend/src/pages/settings/styles/SettingsTab.module.css
 }
 
 .settings_wrapper:last-child {
@@ -103,11 +100,8 @@
   background: #00b87c;
   outline: none !important;
   color: #fff;
-<<<<<<< HEAD:control/src/pages/settings/styles/SettingsTab.module.css
   width: 80% !important;
   height: 50px;
-=======
->>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5:zc_frontend/src/pages/settings/styles/SettingsTab.module.css
 }
 
 .passwordsection button:hover {
@@ -123,13 +117,10 @@
   width: 100%;
 }
 
-<<<<<<< HEAD:control/src/pages/settings/styles/SettingsTab.module.css
 #p_section button {
   width: 30% !important;
 }
 
-=======
->>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5:zc_frontend/src/pages/settings/styles/SettingsTab.module.css
 #p_section p {
   font-size: 14px;
   margin-top: 5px;
@@ -182,10 +173,7 @@
   background: #00b87c;
   color: #fff;
   padding: 10px 25px;
-<<<<<<< HEAD:control/src/pages/settings/styles/SettingsTab.module.css
   height: 50px;
-=======
->>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5:zc_frontend/src/pages/settings/styles/SettingsTab.module.css
 }
 
 .two_factor button:hover {
@@ -194,11 +182,7 @@
 
 .two_factor span {
   font-size: 14px;
-<<<<<<< HEAD:control/src/pages/settings/styles/SettingsTab.module.css
   color: #b8003c;
-=======
-  color: rgba(58, 58, 58, 0.7);
->>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5:zc_frontend/src/pages/settings/styles/SettingsTab.module.css
 }
 
 @media screen and (max-width: 868px) {
@@ -228,10 +212,6 @@
 @media screen and (max-width: 766px) {
   #p_section button {
     width: 100% !important;
-  }
-
-  .two_factor button {
-    padding: 10px 25px;
   }
 }
 

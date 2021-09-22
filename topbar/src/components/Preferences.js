@@ -9,13 +9,8 @@ import MarkAsRead from '../components/MarkAsRead'
 import LanguageAndRegion from '../components/LanguageAndRegion'
 import styles from '../styles/NotificationPreference.module.css'
 import { ProfileContext } from '../context/ProfileModal'
-<<<<<<< HEAD:topbar/src/components/Preferences.js
 import AudioVideo from '../components/AudioVideo'
 import AdvancedSettings from '../components/AdvancedSettings'
-=======
-import AudioVideo from '../pages/preferences/components/AudioVideo'
-import AdvancedSettings from '../pages/preferences/components/AdvancedSettings'
->>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5:zc_frontend/src/components/Preferences.js
 
 const Preferences = () => {
   const { sideBar } = useContext(ProfileContext)

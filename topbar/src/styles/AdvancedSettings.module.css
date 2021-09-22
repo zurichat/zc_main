@@ -1,151 +1,120 @@
 .container {
-    width: 400%;
-    font-family: "Lato";
-    color: #3a3a3a;
-    font-size: 13px;
-    line-height: 2rem;
+  width: 400%;
+  font-family: 'Lato';
 }
 
 .head {
-    font-family: "Lato";
-    font-weight: bolder;
-    display: flex;
-    margin: 1rem 0;
-    color: #242424;
-    font-size: 15px;
+  font-family: 'Lato';
+  font-weight: bolder;
+  display: flex;
+  margin: 1rem 0;
+  color: #000;
 }
 
-.line {
-    background: #bebebe;
-    width: 27%;
-    height: 1px;
-    margin-left: 1rem;
+.borderbottomone {
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 30%;
+  height: 0.5rem;
+  border-bottom: 1px solid #000;
+}
+
+.borderbottomtwo {
+  margin-left: 20px;
+  width: 30%;
+  height: 0.5rem;
+  border-bottom: 1px solid #000;
 }
 
 .checktype {
-    display: flex;
-    margin-bottom: .4rem;
-}
-
-.checktype input {
-    margin-top: .6rem;
+  display: flex;
+  margin-bottom: 0.4rem;
 }
 
 .checkformat {
-    display: flex;
-}
-
-.checkformat input {
-    margin-top: .6rem;
+  display: flex;
 }
 
 .radiosend {
-    display: flex;
-} 
-
-.radiosend input {
-    margin-top: .6rem;
+  display: flex;
 }
 
 .radiostart {
-    display: flex;
-}
-
-.radiostart input {
-    margin-top:.6rem ;
+  display: flex;
 }
 
 .radiosend .send {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 .radiostart .start {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
+/* input {
+    margin-top: .5rem;
+} */
+
 .typing span {
-    font-weight: bold;
-    color: #3a3a3a; ;
+  font-weight: bold;
+  color: #3a3a3a;
 }
 
 .behaviour span {
-    color: #3a3a3a;
+  color: #3a3a3a;
 }
 
 .browser span {
-    color: #3a3a3a;
+  color: #3a3a3a;
 }
 
 .btn {
-    background: #dbdbdb;
-    border: none;
-    border-radius: 3px;
-    padding:1px 6px;
-    margin: 2px;
-    color: #3a3a3a;
-    font-weight: bold;
+  background: #dbdbdb;
+  border: none;
+  border-radius: 3px;
+  padding: 1px 4px;
+  margin: 2px;
+  color: #3a3a3a;
 }
 
 .input {
-    margin-left: 3rem;
-    margin-bottom: 1rem;
+  margin-left: 3rem;
+  margin-bottom: 1rem;
 }
 
 .bartype {
-    border: 1px solid #dadada;
-    padding-left: 1.5rem;
-    padding-right: 22rem ;
-    height: 3rem;
-    
-}
-
-.bartype::placeholder {
-    font-size: 13px;
+  border: 0.5px solid #aeaeae;
+  padding-left: 1.5rem;
+  padding-right: 22rem;
+  height: 4rem;
 }
 
 .search {
-    margin-left: 3rem;
-    margin-bottom: 2rem;
+  margin-left: 3rem;
+  margin-bottom: 2rem;
 }
 
 .checkkeys {
-    display: flex;
-}
-
-.checkkeys input {
-    margin-top: .6rem;
+  display: flex;
 }
 
 .ask {
-    display: flex;
-}
-
-.ask input {
-    margin-top: .6rem;
+  display: flex;
 }
 
 .survey {
-    display: flex;
-}
-
-.survey input {
-    margin-top: .6rem;
+  display: flex;
 }
 
 .warn {
-    display: flex;
+  display: flex;
 }
-
-.warn input {
-    margin-top: .6rem;
-}
-
 
 .options {
-    margin-left: 3rem;
-    color: #3a3a3a;
+  margin-left: 3rem;
+  color: #3a3a3a;
 }
 
 .options span {
-    color: #aeaeae;
+  color: #aeaeae;
 }

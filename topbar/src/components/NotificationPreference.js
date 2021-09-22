@@ -1,22 +1,12 @@
 import React, { useState, useContext, useEffect } from 'react'
 import styles from '../styles/NotificationPreference.module.css'
 import { AiOutlineQuestionCircle } from 'react-icons/ai'
-<<<<<<< HEAD:topbar/src/components/NotificationPreference.js
 import { authAxios } from '../utils/Api'
 import { ProfileContext } from '../context/ProfileModal'
-=======
-//import { TextInput } from './TextInput'
-import { authAxios } from '../../../util/Api'
-import { ProfileContext } from '../../../context/ProfileModal'
->>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5:zc_frontend/src/pages/preferences/components/NotificationPreference.js
 
 const NotificationPreference = () => {
   const [active, setActive] = useState(0)
   const [active1, setActive1] = useState(0)
-<<<<<<< HEAD:topbar/src/components/NotificationPreference.js
-=======
-
->>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5:zc_frontend/src/pages/preferences/components/NotificationPreference.js
   const { user, orgId } = useContext(ProfileContext)
 
   const [dataState, setDataState] = useState({
@@ -41,19 +31,11 @@ const NotificationPreference = () => {
       })
       .then(res => {
         console.log(res)
-<<<<<<< HEAD:topbar/src/components/NotificationPreference.js
         // setState({ loading: false })
       })
       .catch(err => {
         console.log(err?.response?.data)
         // setState({ loading: false })
-=======
-        setState({ loading: false })
-      })
-      .catch(err => {
-        console.log(err?.response?.data)
-        setState({ loading: false })
->>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5:zc_frontend/src/pages/preferences/components/NotificationPreference.js
       })
   }
   const [state, setState] = useState({
@@ -168,11 +150,7 @@ const NotificationPreference = () => {
         <div className={styles.itemTitle2}>
           <div className={styles.line}></div>
           <h4 class={styles.titleSmall}>Keywords</h4>{' '}
-<<<<<<< HEAD:topbar/src/components/NotificationPreference.js
           <span className={styles.spanBlock}>
-=======
-          <span>
->>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5:zc_frontend/src/pages/preferences/components/NotificationPreference.js
             You will be notified anything, someone uses these keywords in a
             thread
           </span>
@@ -183,11 +161,7 @@ const NotificationPreference = () => {
           <h4 class={styles.titleSmall}>Notification Schedule</h4>{' '}
           <span className={styles.spanBlock}>
             You'll only receive notifications in the hours that you choose.
-<<<<<<< HEAD:topbar/src/components/NotificationPreference.js
             Outside of those times, notifications will be paused.
-=======
-            Outside of those times, notifications will be paused.{' '}
->>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5:zc_frontend/src/pages/preferences/components/NotificationPreference.js
             <span className={styles.spanSmall}>Learn more</span>
           </span>
         </div>
@@ -208,21 +182,13 @@ const NotificationPreference = () => {
                 </select>
               </div>
             </li>
-<<<<<<< HEAD:topbar/src/components/NotificationPreference.js
             <li className={styles.listChild}>
-=======
-            {/* <li className={styles.listChild}>
->>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5:zc_frontend/src/pages/preferences/components/NotificationPreference.js
               <TextInput label="From" />
             </li>
 
             <li className={styles.listChild}>
               <TextInput label="to" />
-<<<<<<< HEAD:topbar/src/components/NotificationPreference.js
             </li>
-=======
-            </li> */}
->>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5:zc_frontend/src/pages/preferences/components/NotificationPreference.js
           </ul>
         </div>
         <div className={styles.line} />
@@ -230,13 +196,9 @@ const NotificationPreference = () => {
         {/* Michael's sound check code */}
         <div className={styles.itemTitle2}>
           <h4 className={styles.titleSmall}>Sound & appearance</h4>
-<<<<<<< HEAD:topbar/src/components/NotificationPreference.js
           <span className={styles.spanBlock}>
             Choose your notification sound
           </span>
-=======
-          <span>Choose your notification sound</span>
->>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5:zc_frontend/src/pages/preferences/components/NotificationPreference.js
           <button className={styles.button}>Example Sound</button>
         </div>
 
@@ -324,7 +286,6 @@ const NotificationPreference = () => {
                 value="direct-messages"
                 checked={active === 1}
                 onClick={() => setActive(1)}
-<<<<<<< HEAD:topbar/src/components/NotificationPreference.js
               />
               <label htmlFor="direct-messages">When idle</label>
             </div>
@@ -335,18 +296,6 @@ const NotificationPreference = () => {
                 checked={active === 2}
                 onClick={() => setActive(2)}
               />
-=======
-              />
-              <label htmlFor="direct-messages">When idle</label>
-            </div>
-            <div className={styles.radio}>
-              <input
-                type="radio"
-                value="direct-messages"
-                checked={active === 2}
-                onClick={() => setActive(2)}
-              />
->>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5:zc_frontend/src/pages/preferences/components/NotificationPreference.js
               <label htmlFor="direct-messages">Mute all</label>
             </div>
           </form>
@@ -379,11 +328,7 @@ const NotificationPreference = () => {
             </div>
           </div>
         </div>
-<<<<<<< HEAD:topbar/src/components/NotificationPreference.js
         <div className={styles.markbox}>
-=======
-        <div className={styles.checkbox}>
->>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5:zc_frontend/src/pages/preferences/components/NotificationPreference.js
           <label>
             <input
               type="checkbox"

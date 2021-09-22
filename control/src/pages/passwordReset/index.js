@@ -3,19 +3,12 @@ import authBg from '../../component-assets/backg.svg'
 import Logo from '../../component-assets/zuri.svg'
 import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
-
 // import FormWrapper from '../../components/AuthFormWrapper'
 import Button from '../../components/Button'
 // import styles from '../../styles/AuthFormElements.module.css'
-<<<<<<< HEAD:control/src/pages/passwordReset/index.js
 import styles from '../../component-styles/ResetPassword.module.css'
 // import ResetModal from '../../components/verified/ResetModal'
 // import axios from 'axios'
-=======
-import styles from '../../styles/ResetPassword.module.css'
-import ResetModal from '../../components/verified/ResetModal'
-import axios from 'axios'
->>>>>>> 685502ac6df2845dd53fb0dbf969d47faf4f64f5:zc_frontend/src/pages/passwordReset/Index.js
 const Index = () => {
   const [email, setEmail] = useState('')
   const [modalShow, setModalShow] = useState(false)
@@ -27,22 +20,6 @@ const Index = () => {
   const handleSubmit = e => {
     e.preventDefault()
     toggleModal()
-  }
-  const sendEmail = async () => {
-    if (email) {
-      try {
-        const res = await axios.post(
-          'https://api.zuri.chat/account/request-password-reset-code',
-          {
-            email
-          }
-        )
-
-        console.log(res.data)
-      } catch (err) {
-        console.error(err)
-      }
-    }
   }
 
   return (
