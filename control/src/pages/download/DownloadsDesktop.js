@@ -43,7 +43,7 @@ const DownloadsDesktop = () => {
               With the Zuri Chat app, you will always be in touch with your
               team.
             </p>
-            <a href={exe.link} className={styles.button1}>
+            <a href={exe.link} download={exe.name} className={styles.button1}>
               DOWNLOAD (64-BIT)
             </a>
           </div>
@@ -167,7 +167,7 @@ const DownloadsDesktop = () => {
             Looking for a better work environment?
           </h1>
           <div className={`mt-lg-5`}>
-            <a href="/" className={`${styles.button2} d-inline`}>
+            <a href={exe.link} download={exe.name} className={`${styles.button2} d-inline`}>
               DOWNLOAD FOR WINDOWS
             </a>
             <a
