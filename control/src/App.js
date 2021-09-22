@@ -2,6 +2,7 @@ import { useState,useEffect } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Login from './pages/login'
 import SignUp from './pages/signup'
+import SignOut from './pages/signout/index'
 import Workspace from './pages/workspace/components/Workspace'
 import LandingPage from './pages/LandingPage'
 import ResetPassword from './pages/passwordReset'
@@ -59,6 +60,9 @@ return(
       </Route>
       <Route path="/signup">
         <SignUp />
+      </Route>
+      <Route path="/signout">
+        <SignOut />
       </Route>
       <Route path="/choose-workspace">
         <Workspace />
