@@ -28,4 +28,4 @@ jobs:
             git pull origin main
             yarn install
             yarn build 
-            yarn server:run
+          
