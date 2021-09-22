@@ -4,8 +4,8 @@ import styled from 'styled-components'
 
 import Active from '../assets/active.svg'
 import Pic from '../assets/pic.png'
-import Header from "../../../components/Header";
-import { useRouteMatch, Link } from 'react-router-dom';
+import Header from '../../../components/Header'
+import { useRouteMatch, Link } from 'react-router-dom'
 import UserOrganization from './UserOrganization'
 
 const WorkspaceHome = () => {
@@ -50,7 +50,7 @@ const WorkspaceHome = () => {
             together. To create a new workspace, click the button below
           </Text>
           <Link to={`${url}/step1`}>
-            <Button style={{minWidth:"259px"}}>
+            <Button style={{ minWidth: '259px' }}>
               Create a new workspace
               <img src={Active} alt="" />
             </Button>
@@ -101,10 +101,10 @@ const Heading = styled.h1`
   width: 320px;
   margin-bottom: 14px;
   color: #333333;
-  @media (max-width:35rem) {
+  @media (max-width: 35rem) {
     font-size: 28px;
     line-height: 33.6px;
-    width:191px;
+    width: 191px;
   }
 `
 
@@ -117,9 +117,9 @@ const Text = styled.p`
   line-height: 26.91px;
   color: #333333;
   margin-bottom: 29px;
-  @media (max-width:35rem) {
-    font-size:1rem;
-    line-height:23.92px;
+  @media (max-width: 35rem) {
+    font-size: 1rem;
+    line-height: 23.92px;
   }
 `
 export const Button = styled.button`
@@ -182,4 +182,4 @@ const ImageSection = styled.div`
   }
 `
 const TextSection = styled.div``
-export default WorkspaceHome;
+export default WorkspaceHome
