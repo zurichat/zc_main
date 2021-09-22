@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react'
 import styles from '../styles/Profile.module.css'
 
-// import avatar from '../assets/avatar.png'
-// import twitter from '../assets/twitter.svg'
-// import linkedin from '../assets/linkedin.svg'
-// import instagram from '../assets/instagram.svg'
+import avatar from '../assets/avatar.png'
+import twitter from '../assets/twitter.svg'
+import linkedin from '../assets/linkedin.svg'
+import instagram from '../assets/instagram.svg'
 import { ProfileContext } from '../context/ProfileModal'
 import { TopbarContext } from '../context/Topbar'
 import EditProfile from './EditProfile'
@@ -200,7 +200,7 @@ const Profile = () => {
           <div className={styles.infoContent}>11:33 PM</div>
         </div>
 
-        {/* <div className={styles.social}>
+        <div className={styles.social}>
           <div className={styles.icons}>
             <img src={linkedin} alt="linkedin" />
           </div>
@@ -210,7 +210,7 @@ const Profile = () => {
           <div className={styles.icons}>
             <img src={twitter} alt="twitter" />
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   )
