@@ -36,7 +36,7 @@ yarn dev
 To only start a single application server run the following command
 
 ```bash
-yarn start:<FOLDER-NAME>
+yarn dev:<FOLDER-NAME>
 ```
 
 Open [http://localhost:9000](http://localhost:9000) with your browser to see the result.

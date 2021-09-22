@@ -12,7 +12,8 @@ export const pluginRoutes = [
   location => location.pathname.startsWith('/companyfiles'),
   location => location.pathname.startsWith('/calendar'),
   location => location.pathname.startsWith('/expenses'),
-  location => location.pathname.startsWith('/tools')
+  location => location.pathname.startsWith('/tools'),
+  location => location.pathname.startsWith('/channels')
 ]
 
 registerApplication({
@@ -102,6 +103,12 @@ registerApplication({
   name: '@zuri/zuri-plugin-tools',
   app: () => System.import('@zuri/zuri-plugin-tools'),
   activeWhen: [location => location.pathname.startsWith('/tools')]
+})
+
+registerApplication({
+  name: '@zuri/zuri-plugin-channels',
+  app: () => System.import('@zuri/zuri-plugin-channels'),
+  activeWhen: [location => location.pathname.startsWith('/channels')]
 })
 
 start({
