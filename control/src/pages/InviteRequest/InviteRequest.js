@@ -56,7 +56,7 @@ function Inviterequest(){
            </div>
           <div className={styles.secondsubmain}>
             <Link to="./SendRequest">
-            <button href="SendRequest" className={styles.btnd} variant="contained" backgroundcolor='#00B87C' color="success" type='submit' >Send Request</button>
+            <button href="SendRequest" className={styles.btnr} variant="contained" backgroundcolor='#00B87C' color="success" type='submit' >Send Request</button>
             </Link>
           </div>
           </div>

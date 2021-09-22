@@ -24,11 +24,8 @@
   p{
     font-size: 15px ;
   }
-  .btnd {
-    background-color: rgba(0, 139, 94, 1);
-    color: white;
-    }
-  button{
+  .btnr {
     background-color: #00B87C;
+    color: white;
     padding-left: 9px;
-  }
+    }
