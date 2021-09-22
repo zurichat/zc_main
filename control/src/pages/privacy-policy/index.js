@@ -1,5 +1,5 @@
-import Footer from '../../components/externalPagesComponents/Footer/Footer'
-import SearchSuggestion from '../searchSuggestion';
+import Footer from '../../components/Footer';
+import SearchSuggestion from '../../components/SearchSuggestionBar';
 import Content from './components/Content';
 
 const PrivacyPolicy = () => {

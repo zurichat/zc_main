@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import Link from '../../../components/externalPagesComponents/Link';
+import Link from '../../../components/Link';
 import Style from '../styles/content.module.css';
 
 import imageTut from "../assets/image1.png";

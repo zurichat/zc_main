@@ -32,6 +32,7 @@ import LaunchPage from './pages/createworkspace/components/LaunchPage';
 import Step3 from './pages/createworkspace/components/Step3';
 import CompanyName from './pages/createworkspace/components/CompanyName';
 import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContext'
+import PrivacyPolicy from './pages/privacy-policy/index'
 
 
 const App = () => {
@@ -94,6 +95,9 @@ return(
       </Route>
       <Route path="/careers">
         <Careers />
+      </Route>
+      <Route path="/privacy">
+        <PrivacyPolicy />
       </Route>
       <Route path="/marketplace" exact>
         <MarketPlace />
