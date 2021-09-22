@@ -20,7 +20,7 @@ function Pricing() {
       <Section3 />
       <FAQ />
       <Section4PricingPage />
-      <Footer showMessage/>
+      <Footer showMessage />
     </div>
   )
 }

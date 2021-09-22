@@ -14,10 +14,9 @@ import {
 const MarketPlaceContainer = ({ organizations, user }) => {
   const [plugin, setPlugin] = useState([])
   const [isLoading, setisLoading] = useState(false)
-  const [ installLoading, setInstallLoading ] = useState(false)
-  const [ installErr, setInstallErr ] = useState(null)
+  const [installLoading, setInstallLoading] = useState(false)
+  const [installErr, setInstallErr] = useState(null)
   const marketplace = useMarketPlaceContext()
-
 
   const retrievePlugins = async () => {
     marketplace.dispatch(fetchPlugins())
@@ -57,10 +56,13 @@ const MarketPlaceContainer = ({ organizations, user }) => {
     setInstallLoading(true)
     setInstallErr(null)
     try {
-      const response = await axios.post(`https://api.zuri.chat/organizations/${organizations[0]}/plugins`, {
-        plugin_id: plugin.id,
-        user_id: user.id
-      });
+      const response = await axios.post(
+        `https://api.zuri.chat/organizations/${organizations[0]}/plugins`,
+        {
+          plugin_id: plugin.id,
+          user_id: user.id
+        }
+      )
       if (response.data.status === 200) {
         alert(response.data.message)
         setInstallLoading(false)
@@ -69,7 +71,7 @@ const MarketPlaceContainer = ({ organizations, user }) => {
         alert(response.data.message)
         setInstallLoading(false)
       }
-    } catch(err) {
+    } catch (err) {
       console.log(err)
       setInstallLoading(false)
     } finally {
@@ -131,17 +133,20 @@ const MarketPlaceContainer = ({ organizations, user }) => {
                     </Col>
                   </Row>
                    */}
-                <button onClick={() => installPluginToOrganization()} className={styles.modalInstallBtn}>
-                  {
-                    installLoading ? 
+                <button
+                  onClick={() => installPluginToOrganization()}
+                  className={styles.modalInstallBtn}
+                >
+                  {installLoading ? (
                     <div className="d-flex flex-row align-items-center">
                       <Spinner animation="border" variant="light" role="status">
                         <span className="visually-hidden">Loading...</span>
                       </Spinner>
                       <p className="ml-2">Installing</p>
                     </div>
-                    : 'Install'
-                  }                  
+                  ) : (
+                    'Install'
+                  )}
                 </button>
               </div>
               <div className={styles.marketplaceModalMain}>
