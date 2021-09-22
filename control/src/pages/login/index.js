@@ -9,6 +9,7 @@ import authBg4 from './assets/auth_bg4.svg'
 import authBg5 from './assets/auth_bg5.svg'
 import AuthInputBox from '../../components/AuthInputBox'
 import FormWrapper from '../../components/AuthFormWrapper'
+import LoginLoading from '../../components/LoginLoading'
 import styles from '../../component-styles/AuthFormElements.module.css'
 import axios from 'axios'
 import { GetUserInfo } from '../../zuri-control'
@@ -23,6 +24,7 @@ const Login = () => {
   const [emailerror, setemailerror] = useState('')
   const [passworderror, setpassworderror] = useState('')
   const [rememberMe, setRememberMe] = useState('')
+  const [Loading, setLoading] = useState(false)
 
   // Background Images
   const images = [authBg1, authBg2, authBg3, authBg4, authBg5]
@@ -65,11 +67,14 @@ const Login = () => {
 
         //Return the login data globally
         $behaviorSubject.next(response.data)
+  
+        setLoading(true);
 
         setTimeout(() => {
           //Redirect to some other page
           GetUserInfo()
           history.push('/home')
+          setLoading(false)
         }, 2000)
       })
       .catch(error => {
@@ -92,6 +97,7 @@ const Login = () => {
 
   return (
     <main id={styles.authPageWrapper}>
+      {Loading && <LoginLoading />}
       <aside id={styles.authAsideContainer} className={styles.display_none}>
         <div id={styles.authImageWrapper}>
           <img src={images[currentImage]} alt="backgroundImage" />
