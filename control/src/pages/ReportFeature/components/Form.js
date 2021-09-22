@@ -55,7 +55,7 @@ export const UserForm = () => {
 
   return (
     <>
-      <BsFillExclamationDiamondFill onClick={handleShow} />
+      <BsFillExclamationDiamondFill color="green" onClick={handleShow} />
       <Modal
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
@@ -66,7 +66,7 @@ export const UserForm = () => {
         keyboard={false}
       >
         <Modal.Header>
-          <Modal.Title className="text-success">Zurichat Watches</Modal.Title>
+          <Modal.Title className="text-success">ZuriChat Watches</Modal.Title>
           <BsFillXCircleFill variant="secondary" onClick={handleClose} />
         </Modal.Header>
         {step === 1 ? (
