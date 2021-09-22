@@ -10,5 +10,6 @@ export const links = [
   { name: 'Companyfiles', href: '/companyfiles' },
   { name: 'Holiday Calendar', href: '/calendar' },
   { name: 'Expenses', href: '/expenses' },
-  { name: 'Plugin tools', href: '/tools' }
+  { name: 'Plugin tools', href: '/tools' },
+  { name: 'Channels', href: '/channels' }
 ]
