@@ -26,19 +26,19 @@ import DeactivateAccount from './pages/settings/components/AcctDeactivation'
 import AllSessionSignOut from './pages/settings/components/AllSessionSignOut'
 import PrivateRoute from './pages/settings/Utils/PrivateRoute'
 import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation'
+import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContext'
+import PrivacyPolicy from './pages/privacy-policy/index'
 
-  // useEffect(() => {
-  //     localStorage.setItem('input',input);
-  // },[input]);
+// useEffect(() => {
+//     localStorage.setItem('input',input);
+// },[input]);
 
-  // const handleInputChange = (event) => {
-  //     setInput(event.target.value);
-  // }
-  // let workspaceRoute = '/createworkspace';
-
+// const handleInputChange = (event) => {
+//     setInput(event.target.value);
+// }
+// let workspaceRoute = '/createworkspace';
 
 const App = () => {
-
   return (
     <BrowserRouter>
       <Switch>
@@ -125,5 +125,5 @@ const App = () => {
       </Switch>
     </BrowserRouter>
   )
-  }
+}
 export default App
