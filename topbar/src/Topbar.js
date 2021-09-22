@@ -35,6 +35,7 @@ const Topbar = ({ userProfile: { last_name, first_name } }) => {
   return (
     <div className={styles.container}>
       <SearchBar />
+
       <div className={styles.topbar}>
         {/* <MembersModalButton members={faked} /> */}
         <Link to="/settings">

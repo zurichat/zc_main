@@ -14,12 +14,7 @@ const UserOrganization = ({ organizations, user }) => {
 
         {organizations.map(organization => (
           <OrganizationWrapper key={organization.id}>
-            <Image
-              src={
-                ZuriLogo
-              }
-              alt=""
-            />
+            <Image src={ZuriLogo} alt="" />
             <Organization>
               <Logo_Members>
                 <OrganizationName>{organization.name}</OrganizationName>

@@ -17,7 +17,9 @@ const PricingPageSection1 = () => {
                 return (
                   <div key={id} className={`styles.${p.className}`}>
                     <div className={styles.topPricingTop}>
-                      <p className={styles.topPricingTitle}>{`${p.topPricingTitle}`}</p>
+                      <p
+                        className={styles.topPricingTitle}
+                      >{`${p.topPricingTitle}`}</p>
                       <p className={styles.topPricingSubtitle}>
                         {p.topPricingSubtitle}
                       </p>
@@ -1339,27 +1341,19 @@ const PricingPageSection1 = () => {
               <tr className={styles.pricingTableRowFooter}>
                 <th colSpan="2"></th>
                 <th>
-                  <a href="/login">
-                    Get started
-                  </a>
+                  <a href="/login">Get started</a>
                 </th>
                 <th></th>
                 <th>
-                  <a href="/login">
-                    Get started
-                  </a>
+                  <a href="/login">Get started</a>
                 </th>
                 <th></th>
                 <th>
-                  <a href="/login">
-                    Get started
-                  </a>
+                  <a href="/login">Get started</a>
                 </th>
                 <th></th>
                 <th>
-                  <a href="/login">
-                    Get started
-                  </a>
+                  <a href="/login">Get started</a>
                 </th>
                 <th></th>
               </tr>
