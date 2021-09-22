@@ -26,10 +26,13 @@ const SelectedWorkspace = () => {
       <button
         style={{
           background: `${
-            !numSelectedWorkspace.length ? '#00b87c79' : '#00B87C'
+            !numSelectedWorkspace.length ? '#BEBEBE' : '#00B87C'
+          }`,
+          color: `${
+            !numSelectedWorkspace.length ? '#242424' : '#ffffff'
           }`,
           borderColor: `${
-            !numSelectedWorkspace.length ? '#00b87c79' : '#00B87C'
+            !numSelectedWorkspace.length ? '#C4C4C4' : '#00B87C'
           }`
         }}
         type="button"
@@ -45,7 +48,7 @@ const SelectedWorkspace = () => {
           viewBox="0 0 17 16"
         >
           <path
-            stroke="#fff"
+            stroke={`${!numSelectedWorkspace.length ? '#242424' : '#fff'}`}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="1.2"
