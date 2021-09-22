@@ -39,6 +39,18 @@
   font-size: 14px;
   line-height: 21px;
 }
+.imageUpload {
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-bottom: 10px;
+  outline: none;
+  display: block;
+  width: 100%;
+  font-size: 13px;
+  resize: none;
+}
 
 .formInput, .formInput2 {
   border: 1px solid #A1A1A1;

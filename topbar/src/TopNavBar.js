@@ -9,7 +9,10 @@ import styled from 'styled-components'
 import { BaseInput } from './TopBarIndex'
 import { ProfileContext } from './context/ProfileModal'
 import userAvatar from './assets/images/user.svg'
+import HelpIcon from './assets/download_images/question.svg'
+import HelpIcons from '@material-ui/icons/HelpOutline'
 import TopbarModal from './components/TopbarModal'
+import HelpModal from './components/HelpModal'
 import UserForm from '../../control/src/pages/ReportFeature/components/Form'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
@@ -19,6 +22,41 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const [organizations, setOrganizations] = useState([])
 
   const [search, setSearch] = useState('')
+  const [helpModal, setHelpModal] = useState(false)
+
+  useEffect(() => {
+    const userdef = JSON.parse(sessionStorage.getItem('user'))
+    async function getOrganizations() {
+      await authAxios
+        .get(`/users/${userdef.email}/organizations`)
+        .then(response => {
+          setOrganizations(response.data.data)
+          setOrgId(response.data.data[0].id)
+          authAxios
+            .get(`/organizations/${response.data.data[0].id}/members`)
+            .then(response => {
+              setUser(
+                response.data.data.find(
+                  member => member.email === userdef.email
+                )
+              )
+              return response.data.data.find(
+                member => member.email === userdef.email
+              )
+            })
+            .catch(err => {
+              console.log(err.response.data)
+            })
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
+
+    setUserProfileImage(user.image_url)
+
+    getOrganizations()
+  }, [setOrgId, user.image_url, setUser])
 
   useEffect(() => {
     const userdef = JSON.parse(sessionStorage.getItem('user'))
@@ -110,4 +148,26 @@ const TopNavBarBase = styled.div`
   // padding: 1rem;
   // margin: auto;
   // margin-bottom: 3rem !important;
+`
+
+// const LogoName = styled.span`
+//   font-family: Lato;
+//   font-size: 20px;
+//   font-style: normal;
+//   font-weight: 700;
+//   line-height: 27px;
+//   letter-spacing: 0px;
+//   padding: 0.5rem;
+//   text-align: center;
+//   vertical-align: middle;
+// `
+
+const HelpContainer = styled.div`
+  > .MuiSvgIcon-root {
+    opacity: 0.5;
+  }
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
 `
