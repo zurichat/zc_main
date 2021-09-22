@@ -28,7 +28,7 @@ const EditProfile = () => {
     phone: user.phone,
     prefix: '',
     timezone: '',
-    twitter: '',
+    twitter: '', 
     facebook: '',
     loading: false
   })

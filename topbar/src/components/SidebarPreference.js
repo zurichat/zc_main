@@ -24,49 +24,49 @@ const SidebarPreference = () => {
         <div className={styles.itemTitle1}>
           <h4 className={styles.titleLarge}>Always show in Sidebar</h4>
         </div>
-        <form action="">
-          <div className={styles.checkbox}>
+          <div className={styles.markbox}>
             <label htmlFor="for-unread">
               <input type="checkbox" value="for-unread" />
               All Unreads
             </label>
           </div>
-          <div className={styles.checkbox}>
+          <div className={styles.markbox}>
             <label htmlFor="for-unread">
               <input type="checkbox" value="for-unread" />
               All DMs
             </label>
           </div>
-          <div className={styles.checkbox}>
+          <div className={styles.markbox}>
             <label htmlFor="for-unread">
               <input type="checkbox" value="for-unread" />
               Mentions & Reactions
             </label>
           </div>
-          <div className={styles.checkbox}>
+          <div className={styles.markbox}>
             <label htmlFor="for-unread">
               <input type="checkbox" value="for-unread" />
               Saved Items
             </label>
           </div>
-          <div className={styles.checkbox}>
+          <div className={styles.markbox}>
             <label htmlFor="for-unread">
               <input type="checkbox" value="for-unread" />
               Zuri Connect
             </label>
           </div>
-          <div className={styles.checkbox}>
+          <div className={styles.markbox}>
             <label htmlFor="for-unread">
               <input type="checkbox" value="for-unread" />
               File Browser
             </label>
           </div>
-          <div className={styles.checkbox}>
+          <div className={styles.markbox}>
             <label htmlFor="for-unread">
               <input type="checkbox" value="for-unread" />
               People
             </label>
           </div>
+    
           <div className={styles.itemTitle2}>
             <h4 className={styles.titleLarge}>Show All the Following</h4>
           </div>
@@ -128,25 +128,25 @@ const SidebarPreference = () => {
             <label htmlFor="most-recent">Priority</label>
           </div>
 
-          <div className={styles.checkbox}>
+          <div className={styles.markbox}>
             <label htmlFor="for-unread">
               <input type="checkbox" value="for-unread" />
               Show Profile Photo
             </label>
           </div>
-          <div className={styles.checkbox}>
+          <div className={styles.markbox}>
             <label htmlFor="for-unread">
               <input type="checkbox" value="for-unread" />
               List Private Channels together
             </label>
           </div>
-          <div className={styles.checkbox}>
+          <div className={styles.markbox}>
             <label htmlFor="for-unread">
               <input type="checkbox" value="for-unread" />
               Organise conversations
             </label>
           </div>
-        </form>
+        
       </div>
     </div>
   )
