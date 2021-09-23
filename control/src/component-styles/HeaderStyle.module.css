@@ -3,17 +3,17 @@
   padding: 0.5rem 1rem;
 }
 
-.navbar_toggle_icon span{
+.navbar_toggle_icon span {
   display: block;
   width: 30px;
   height: 3px;
   margin-bottom: 5px;
   position: relative;
   text-align: center;
-  justify-content: center;  
+  justify-content: center;
   background: rgb(85, 83, 83);
   border-radius: 3px;
-  z-index: 1;  
+  z-index: 1;
 }
 
 .navLinkFeatures {
@@ -45,12 +45,11 @@
   color: #00b87c;
   font-weight: 400;
   border-radius: 3px;
-
 }
 
 .signU:hover {
   background-color: #00b87c;
-  color:   white;
+  color: white;
 }
 
 .signIn {
@@ -61,7 +60,7 @@
 
 .signIn:hover {
   background-color: #156349;
-  color: white ;
+  color: white;
 }
 
 .item {
