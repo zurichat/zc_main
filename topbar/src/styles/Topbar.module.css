@@ -523,8 +523,8 @@
 .topbarModal {
   background: #fff;
   position: absolute;
-  top: 75%;
-  right: 3%;
+  top: 60%;
+  right: 2%;
   width: 100%;
   max-width: 300px;
   z-index: 9999;
@@ -706,7 +706,7 @@
 }
 
 .sectionThree p:hover {
-  background: #1692f1;
+  background: #01d892;
   color: #fff;
 }
 
@@ -718,12 +718,12 @@
 }
 
 .pause:hover {
-  background: #1692f1;
+  background: #01d892;
   color: #fff;
 }
 
 .pause:hover p {
-  background: #1692f1;
+  background: #01d892;
   color: #fff;
 }
 
@@ -766,7 +766,7 @@
 }
 
 .sectionFour p:hover {
-  background: #1692f1;
+  background: #01d892;
   color: #fff;
 }
 
@@ -792,7 +792,12 @@
 }
 
 .sectionFive p:hover {
-  background: #1692f1;
+  background: #01d892;
+  color: #fff;
+}
+
+.sectionFive a:hover {
+  background: #01d892;
   color: #fff;
 }
 
@@ -819,7 +824,7 @@
 }
 
 .sectionSix p:hover {
-  background: #1692f1;
+  background: #01d892;
   color: #fff;
 }
 
