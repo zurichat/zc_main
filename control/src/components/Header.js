@@ -1,242 +1,132 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react'
-import styles from '../component-styles/HeaderStyle.module.css'
-import logo from '../component-assets/zurichatlogo.svg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faAngleUp,
-  faAngleDown,
-  faTimes,
-  faBars
-} from '@fortawesome/free-solid-svg-icons'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import headerStyles from '../component-styles/HeaderStyle.module.css'
+import zurichatlogo from '../component-assets/zurichatlogo.svg'
+import { Button } from '../pages/createworkspace/components/WorkspaceHome'
 
-const Header = () => {
-  const [isHovering, setIsHovering] = useState(false)
-  const [isHoveringD, setIsHoveringD] = useState(false)
-  const [toggleMenu, toggledMenu] = useState(false)
-  const [show, setShow] = useState(false)
-  const [show2, setShow2] = useState(false)
-
-  const handleMouseEnter = () => {
-    setIsHovering(true)
-  }
-  const handleMouseLeave = () => {
-    setIsHovering(false)
-  }
-  const handleMouseEnterD = () => {
-    setIsHoveringD(true)
-  }
-  const handleMouseLeaveD = () => {
-    setIsHoveringD(false)
-  }
-
-  const Menu = () => {
-    toggleMenu ? toggledMenu(false) : toggledMenu(true)
-  }
-  const Show = () => {
-    show ? setShow(false) : setShow(true)
-  }
-  const Show2 = () => {
-    show2 ? setShow2(false) : setShow2(true)
-  }
+const HeaderSearchSuggestion = () => {
 
   return (
-    <nav>
-      {/* mobile view */}
-      <div className={styles.mobile_nav}>
-        <div className={styles.m_logo}>
-          <a href="/">
-            <img src={logo} alt="Logo" />
-            <p className={styles.m_logo_name}>Zuri Chat</p>
-          </a>
-        </div>
-        <div>
-          <ul class={styles.mobile_menu}>
-            <div>
-              <li>
-                <a>
-                  <FontAwesomeIcon
-                    onClick={Menu}
-                    className={styles.mobile_fa}
-                    icon={toggleMenu ? faTimes : faBars}
-                  />
-                </a>
-                <ul
-                  className={
-                    toggleMenu ? styles.dropdown : styles.dropdown_hide
-                  }
-                >
-                  <div>
-                    <a href="/features">
-                      <li className={styles.dropdown_list}>Features</li>
-                    </a>
+    <nav
+      className={`navbar navbar-expand-lg navbar-light ${headerStyles.navbar}`}
+    >
+      <Link
+        to="/"
+        className={`navbar-brand me-0 me-md-2 d-flex align-items-center ${headerStyles.navbarBrand}`}
+      >
+        <img
+          src={zurichatlogo}
+          alt="zuri-logo"
+          width="20"
+          height="20"
+          className={`d-inline-block align-top ${headerStyles.image}`}
+        />
+        <span className={`mb-2 ${headerStyles.zuriChat}`}>Zuri Chat</span>
+      </Link>
 
-                    <a onClick={Show}>
-                      <li className={styles.dropdown_list}>
-                        Product
-                        <i
-                          className={`fas ${
-                            show ? 'fa-angle-up' : 'fa-angle-down'
-                          }`}
-                        ></i>
-                      </li>
-                    </a>
-                    <a href="/community">
-                      <li className={styles.dropdown_list}>Community</li>
-                    </a>
-                    <a onClick={Show2}>
-                      <li className={styles.dropdown_list}>
-                        Downloads
-                        <i
-                          className={`fas ${
-                            show2 ? 'fa-angle-up' : 'fa-angle-down'
-                          }`}
-                        ></i>
-                        <ul className={styles.dropdown2}>
-                          <a href="/andriod-download">
-                            <li className={styles.dropdown_items}>Andriod</li>
-                          </a>
-                          <a href="/iOS-download">
-                            <li className={styles.dropdown_items}>iOS</li>
-                          </a>
-                          <a href="/windows-download">
-                            <li className={styles.dropdown_items}>Windows</li>
-                          </a>
-                          <a href="/mac-download">
-                            <li className={styles.dropdown_items}>Mac</li>
-                          </a>
-                          <a href="/linus-download">
-                            <li className={styles.dropdown_items}>Linux</li>
-                          </a>
-                        </ul>
-                      </li>
-                    </a>
-                    <div className={styles.mobile_signs}>
-                      <li>
-                        <a className={styles.header_signup} href="/signup">
-                          Signup
-                        </a>{' '}
-                      </li>
-                      <li>
-                        <a className={styles.header_signin} href="/login">
-                          Sign In
-                        </a>{' '}
-                      </li>
-                    </div>
-                  </div>
-                </ul>
-              </li>
-            </div>
-          </ul>
-        </div>
-      </div>
+      <button
+        className={`navbar-toggler ${headerStyles.toggle}`}
+        type="button"
+        data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText"
+        aria-expanded="false" aria-label="Toggle navigation"
+      >
+        <span className={headerStyles.navbar_toggle_icon}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
 
-      {/* laptop view */}
-      <div className={styles.large}>
-        <div className={styles.logo}>
-          <a href="/">
-            <img
-              className={styles.logo_img}
-              src={logo}
-              alt="Logo"
-              width="40px"
-              height="40px"
-            />
-            <p className={styles.logo_name}>Zuri Chat</p>
-          </a>
-        </div>
-
-        <div className={styles.menu}>
-          <ul>
-            <li>
-              <a
-                href="/features"
-                id={styles.menu}
-                className={styles.header_list}
-              >
-                Features
-              </a>
-            </li>
-            <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-              <a className={styles.header_list}>
-                Products
-                <FontAwesomeIcon
-                  className={styles.fa}
-                  icon={isHovering ? faAngleUp : faAngleDown}
-                />
-              </a>
-              <ul className={styles.dropdown1}>
-                <a href="/channels">
-                  <li className={styles.dropdown_items}>Channels</li>
-                </a>
-                <a href="/security">
-                  <li className={styles.dropdown_items}>Security</li>
-                </a>
-                <a href="/integration">
-                  <li className={styles.dropdown_items}>Integration</li>
-                </a>
-                <a href="/customers">
-                  <li className={styles.dropdown_items}>Customers</li>
-                </a>
-                <a href="/solutions">
-                  <li className={styles.dropdown_items}>Solutions</li>
-                </a>
-              </ul>
-            </li>
-            <li id={styles.menu}>
-              <a href="/community" className={styles.header_list}>
-                Community
-              </a>
-            </li>
-            <li
-              onMouseEnter={handleMouseEnterD}
-              onMouseLeave={handleMouseLeaveD}
+      <div
+        className={`collapse px-3 justify-content-center navbar-collapse ${headerStyles.collapse}`}
+        id="navbarText"
+      >
+        <ul
+          className={`navbar-nav d-flex justify-content-between align-items-start align-items-lg-center ${headerStyles.navbarNav}`}
+        >
+          <li className="nav-item">
+            <Link
+              to="/features"
+              className={`nav-link ${headerStyles.navLinkFeatures}`}
+              aria-current="page"
             >
-              <a className={styles.header_list}>
+              <span className={`${headerStyles.item}`}>Features</span>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/pricing"
+              className={`nav-link ${headerStyles.navLinkPricing}`}
+              role="button"
+              aria-expanded="false"
+            >
+              <span className={`${headerStyles.item}`}>Pricing</span>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/careers"
+              className={`nav-link ${headerStyles.navLinkComms}`}
+            >
+              <span className={`${headerStyles.item}`}>Careers</span>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/download-app"
+              className="nav-link"
+              role="button"
+              aria-expanded="false"
+            >
+              <span className={`${headerStyles.item}`}>
                 Downloads
-                <FontAwesomeIcon
-                  className={styles.fa}
-                  icon={isHoveringD ? faAngleUp : faAngleDown}
-                />
-              </a>
-              <ul className={styles.dropdown2}>
-                <a href="/andriod-download">
-                  <li className={styles.dropdown_items}>Andriod</li>
-                </a>
-                <a href="/iOS-download">
-                  <li className={styles.dropdown_items}>iOS</li>
-                </a>
-                <a href="/windows-download">
-                  <li className={styles.dropdown_items}>Windows</li>
-                </a>
-                <a href="/mac-download">
-                  <li className={styles.dropdown_items}>Mac</li>
-                </a>
-                <a href="/linus-download">
-                  <li className={styles.dropdown_items}>Linux</li>
-                </a>
-              </ul>
-            </li>
-          </ul>
-        </div>
-
-        <div className={styles.header_signs}>
-          <ul>
-            <li className={styles.header_list}>
-              <a className={styles.header_signup} href="/signup">
-                Signup
-              </a>{' '}
-            </li>
-            <li>
-              <a className={styles.header_signin} href="/login">
-                Sign In
-              </a>{' '}
-            </li>
-          </ul>
-        </div>
+              </span>
+            </Link>
+          </li>
+        </ul>
+        <ul class="navbar-nav d-lg-none me-auto my-2 my-lg-0 navbar-nav-scroll" >
+        <li className="nav-item">
+          <Link
+            to="/signup"
+            className={`nav-link ${headerStyles.navLinkSignUp}`}
+          >
+            <span className={`signup ${headerStyles.signU}`}>Sign Up</span>
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link
+            className="nav-link"
+            to="/login"
+            className={`btn ${headerStyles.signIn}`}
+            role="button"
+          >
+            <span className="signin">Sign In</span>
+          </Link>
+        </li> 
+      </ul>
       </div>
+      <ul class="navbar-nav d-none d-lg-flex me-auto my-2 my-lg-0 navbar-nav-scroll" >
+        <li className="nav-item">
+          <Link
+            to="/signup"
+            className={`nav-link btn ${headerStyles.navLinkSignUp}`}
+          >
+            <span className={` ${headerStyles.signU}`}>Sign Up</span>
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link
+            className={``}
+            to="/login"
+            className={`btn nav-link ${headerStyles.signIn}`}
+            role="button"
+          >
+            <span >Sign In</span>
+          </Link>
+        </li> 
+      </ul>
     </nav>
+
   )
 }
-
-export default Header
+export default HeaderSearchSuggestion
