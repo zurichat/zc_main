@@ -5,7 +5,6 @@ import zurichatlogo from '../component-assets/zurichatlogo.svg'
 import { Button } from '../pages/createworkspace/components/WorkspaceHome'
 
 const HeaderSearchSuggestion = () => {
-
   return (
     <nav
       className={`navbar navbar-expand-lg navbar-light ${headerStyles.navbar}`}
@@ -27,8 +26,11 @@ const HeaderSearchSuggestion = () => {
       <button
         className={`navbar-toggler ${headerStyles.toggle}`}
         type="button"
-        data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText"
-        aria-expanded="false" aria-label="Toggle navigation"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarText"
+        aria-controls="navbarText"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
       >
         <span className={headerStyles.navbar_toggle_icon}>
           <span></span>
@@ -78,34 +80,32 @@ const HeaderSearchSuggestion = () => {
               role="button"
               aria-expanded="false"
             >
-              <span className={`${headerStyles.item}`}>
-                Downloads
-              </span>
+              <span className={`${headerStyles.item}`}>Downloads</span>
             </Link>
           </li>
         </ul>
-        <ul class="navbar-nav d-lg-none me-auto my-2 my-lg-0 navbar-nav-scroll" >
-        <li className="nav-item">
-          <Link
-            to="/signup"
-            className={`nav-link ${headerStyles.navLinkSignUp}`}
-          >
-            <span className={`signup ${headerStyles.signU}`}>Sign Up</span>
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link
-            className="nav-link"
-            to="/login"
-            className={`btn ${headerStyles.signIn}`}
-            role="button"
-          >
-            <span className="signin">Sign In</span>
-          </Link>
-        </li> 
-      </ul>
+        <ul class="navbar-nav d-lg-none me-auto my-2 my-lg-0 navbar-nav-scroll">
+          <li className="nav-item">
+            <Link
+              to="/signup"
+              className={`nav-link ${headerStyles.navLinkSignUp}`}
+            >
+              <span className={`signup ${headerStyles.signU}`}>Sign Up</span>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              className="nav-link"
+              to="/login"
+              className={`btn ${headerStyles.signIn}`}
+              role="button"
+            >
+              <span className="signin">Sign In</span>
+            </Link>
+          </li>
+        </ul>
       </div>
-      <ul class="navbar-nav d-none d-lg-flex me-auto my-2 my-lg-0 navbar-nav-scroll" >
+      <ul class="navbar-nav d-none d-lg-flex me-auto my-2 my-lg-0 navbar-nav-scroll">
         <li className="nav-item">
           <Link
             to="/signup"
@@ -121,12 +121,11 @@ const HeaderSearchSuggestion = () => {
             className={`btn nav-link ${headerStyles.signIn}`}
             role="button"
           >
-            <span >Sign In</span>
+            <span>Sign In</span>
           </Link>
-        </li> 
+        </li>
       </ul>
     </nav>
-
   )
 }
 export default HeaderSearchSuggestion

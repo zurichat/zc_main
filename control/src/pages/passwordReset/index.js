@@ -1,15 +1,16 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import authBg from '../../component-assets/backg.svg'
 import Logo from '../../component-assets/zuri.svg'
 import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
+
 // import FormWrapper from '../../components/AuthFormWrapper'
 import Button from '../../components/Button'
-// import styles from '../../styles/AuthFormElements.module.css'
+// import styles from '../../components-styles/AuthFormElements.module.css'
 import styles from '../../component-styles/ResetPassword.module.css'
 // import ResetModal from '../../components/verified/ResetModal'
-// import axios from 'axios'
-const Index = () => {
+import axios from 'axios'
+const ResetDefault = () => {
   const [email, setEmail] = useState('')
   const [modalShow, setModalShow] = useState(false)
 
@@ -21,9 +22,26 @@ const Index = () => {
     e.preventDefault()
     toggleModal()
   }
+  const sendEmail = async () => {
+    if (email) {
+      try {
+        const res = await axios.post(
+          'https://api.zuri.chat/account/request-password-reset-code',
+          {
+            email
+          }
+        )
+
+        console.log(res.data)
+      } catch (err) {
+        console.error(err)
+      }
+    }
+  }
 
   return (
     <>
+      {/* <ResetModal show={modalShow} onHide={toggleModal} /> */}
       <main id={styles.authPageWrapper}>
         <aside id={styles.authAsideContainer} className={styles.display_none}>
           <div id={styles.authImageWrapper}>
@@ -70,4 +88,4 @@ const Index = () => {
   )
 }
 
-export default withRouter(Index)
+export default ResetDefault
