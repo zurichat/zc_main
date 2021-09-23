@@ -10,7 +10,9 @@ const Message = ({ type }) => {
         </span>
         <div className={styles.buttonSection}>
           <button className={`${styles.button} ${styles.buttonOutline}`}>
-            <a className={styles.a} href="/help-center">Visit Help Center</a>
+            <a className={styles.a} href="/help-center">
+              Visit Help Center
+            </a>
           </button>
         </div>
       </div>
@@ -18,16 +20,22 @@ const Message = ({ type }) => {
   }
   return (
     <div className={styles.message_box}>
-    <div className={styles.message}>
-      <p className={styles.p}>Whatever work you do,you can do it in Zuri Chat</p>
-      <div className={styles.buttonSection}>
-        <button className={styles.buttonFilled}>
-          <a className={styles.a} href="/contact-us">Talk to Sales</a>
-        </button>
-        <button className={styles.buttonOutline}>
-          <a className={styles.a} href="/login">TRY IT FREE</a>
-        </button>
-      </div>
+      <div className={styles.message}>
+        <p className={styles.p}>
+          Whatever work you do,you can do it in Zuri Chat
+        </p>
+        <div className={styles.buttonSection}>
+          <button className={styles.buttonFilled}>
+            <a className={styles.a} href="/contact-us">
+              Talk to Sales
+            </a>
+          </button>
+          <button className={styles.buttonOutline}>
+            <a className={styles.a} href="/login">
+              TRY IT FREE
+            </a>
+          </button>
+        </div>
       </div>
     </div>
   )
