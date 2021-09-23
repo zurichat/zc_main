@@ -16,7 +16,7 @@ const NotificationPreference = () => {
     email_notifications_for_mentions_and_dm: null,
     message_preview_in_each_notification: false,
     mute_all_sounds: false,
-    my_keywords: "",  
+    my_keywords: "",
     notification_schedule: "",
     notify_me_about: "",
     thread_replies_notification: false,
@@ -26,7 +26,7 @@ const NotificationPreference = () => {
   
    
   const setData = () => {
-        authAxios.patch(`/organizations/${orgId}/members/${user._id}/settings`, {         
+        authAxios.patch(`/organizations/${orgId}/members/${user._id}/settings`, {
           settings: {
               notifications: dataState
             }
