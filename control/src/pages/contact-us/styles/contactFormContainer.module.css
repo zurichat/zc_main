@@ -1,12 +1,11 @@
 .contact_form_container * {
-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .contact_form_container {
   padding: 25px 30px;
   background: #ffffff;
 }
-
 
 .form_control {
   padding: 16px 20px;
@@ -18,16 +17,20 @@ box-sizing: border-box;
   border-color: #bdbdbd;
 }
 
-.contact_form_container .form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.contact_form_container .form-control::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
   font-size: 16px !important;
 }
-.contact_form_container .form-control::-moz-placeholder { /* Firefox 19+ */
+.contact_form_container .form-control::-moz-placeholder {
+  /* Firefox 19+ */
   font-size: 16px !important;
 }
-.contact_form_container .form-control:-ms-input-placeholder { /* IE 10+ */
+.contact_form_container .form-control:-ms-input-placeholder {
+  /* IE 10+ */
   font-size: 16px !important;
 }
-.contact_form_container .form-control:-moz-placeholder { /* Firefox 18- */
+.contact_form_container .form-control:-moz-placeholder {
+  /* Firefox 18- */
   font-size: 16px !important;
 }
 .btn_disabled {
@@ -132,24 +135,23 @@ box-sizing: border-box;
   cursor: pointer;
 }
 
-.accordion_button{
+.accordion_button {
   font-size: 15px;
 }
-.btn_topic{
+.btn_topic {
   font-size: 15px;
 }
 
-.accordion_body{
+.accordion_body {
   font-size: 14px;
   font-weight: 500;
 }
 /* .accordion_button:not(.collapsed)::after {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 } */
-.accordion_button:not(.collapsed){
+.accordion_button:not(.collapsed) {
   color: #000;
 }
-
 
 .accordion_collapse a {
   color: blue;
@@ -167,4 +169,3 @@ box-sizing: border-box;
   outline: none;
   transition: border 0.24s ease-in-out;
 }
-

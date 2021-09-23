@@ -4,7 +4,7 @@ import detailsData from './detailsArray'
 import axios from 'axios'
 import { useDropzone } from 'react-dropzone'
 import Alert from '../../assets/alert-circle.svg'
-import {GetUserInfo} from '../../../../zuri-control'
+import { GetUserInfo } from '../../../../zuri-control'
 
 const activeStyle = {
   borderColor: '#2196f3'
@@ -20,7 +20,7 @@ const rejectStyle = {
 
 function ContactFormContainer() {
   const [currentDetails, setCurrentDetails] = useState({})
-  const [userAuth, setUserAuth]=useState({})
+  const [userAuth, setUserAuth] = useState({})
   const [values, setValues] = useState({
     email: '',
     subject: '',
@@ -31,9 +31,9 @@ function ContactFormContainer() {
   })
 
   useEffect(() => {
-    let userInfo= GetUserInfo()
-    console.log('this is user info', )
-    setUserAuth((userInfo.email)?userInfo:{})
+    let userInfo = GetUserInfo()
+    console.log('this is user info')
+    setUserAuth(userInfo.email ? userInfo : {})
     setValues(values => ({
       ...values,
       email: userAuth.email ? userAuth.email : values.email
@@ -53,20 +53,23 @@ function ContactFormContainer() {
     accept: 'image/*,.xlsx,.xls,.doc, .docx,.ppt, .pptx,.txt,.pdf'
   })
   // .xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf
-   console.log(acceptedFiles)
+  console.log(acceptedFiles)
 
-     
   const handleFileDelete = index => () => {
     delete acceptedFiles[index]
   }
 
   const acceptedFileItems = acceptedFiles.map((file, i) => (
-    <div className="d-flex justify-content-between align-items-center" key={file.size}>
-      <p className="mb-2 text-dark w-100" >
+    <div
+      className="d-flex justify-content-between align-items-center"
+      key={file.size}
+    >
+      <p className="mb-2 text-dark w-100">
         {file.name} - {file.size} bytes
       </p>
       <p
-        style={{fontSize:12}} className={`text-danger ${ContactFormStyle.cancel}`}
+        style={{ fontSize: 12 }}
+        className={`text-danger ${ContactFormStyle.cancel}`}
         fw-bold
         onClick={handleFileDelete(i)}
       >
@@ -131,13 +134,14 @@ function ContactFormContainer() {
         }))
       })
   }
-  
+
   return (
     <div className={`mb-5 ${ContactFormStyle.contact_form_container}`}>
       <form className="" onSubmit={handleSubmit}>
         <div
           className={`mb-3 ${
-            (!!userAuth.email )? ContactFormStyle.is_hidden_animate:'' }`}
+            !!userAuth.email ? ContactFormStyle.is_hidden_animate : ''
+          }`}
         >
           <label htmlFor="email" className="form-label fw-bold">
             Your Email Address
@@ -158,7 +162,8 @@ function ContactFormContainer() {
 
         <div
           className={`${ContactFormStyle.faqs_topic} ${
-            (!currentDetails.topic)? ContactFormStyle.is_hidden_animate:''}`}
+            !currentDetails.topic ? ContactFormStyle.is_hidden_animate : ''
+          }`}
         >
           <div className={`w-100`}>
             <div className={`d-flex align-items-center mb-3`}>
@@ -222,7 +227,7 @@ function ContactFormContainer() {
 
         <div
           className={`${ContactFormStyle.topic_tiles} ${
-            (currentDetails.topic)? ContactFormStyle.is_hidden_animate:''
+            currentDetails.topic ? ContactFormStyle.is_hidden_animate : ''
           } bg-white`}
         >
           <p className="fw-bold mb-3">Select a Topic</p>
@@ -235,7 +240,6 @@ function ContactFormContainer() {
                 className={`btn ${ContactFormStyle.btn_topic} text-nowrap fw-bold rounded-pill mb-3 me-3`}
                 onClick={handleTopicChange(detail)}
               >
-
                 {detail.topic}
               </button>
             ))}
@@ -245,7 +249,7 @@ function ContactFormContainer() {
 
         <div
           className={`mb-3 ${
-            (currentDetails.topic)? ContactFormStyle.is_hidden_animate:''
+            currentDetails.topic ? ContactFormStyle.is_hidden_animate : ''
           }`}
         >
           <label htmlFor="topic" className="form-label fw-bold">
@@ -279,7 +283,6 @@ function ContactFormContainer() {
                 rows="3"
               ></textarea>
             </div>
-            
 
             <div className="my-3">
               <label htmlFor="attachments" className="form-label fw-bold">

@@ -18,17 +18,22 @@ export default function VerifyResetCode() {
       console.error(err)
       setsuccess(false)
     }
-    // setsuccess(true)
   }
   return (
     <div>
-      <h1>Enter the reset code sent to your mail</h1>
-      <CodeInput
-        length={6}
-        onComplete={code => {
-          handleSubmit(code)
-        }}
-      />
+      {success ? (
+        <div>Successful Reset!</div>
+      ) : (
+        <div>
+          <h1>Enter the reset code sent to your mail</h1>
+          <CodeInput
+            length={6}
+            onComplete={code => {
+              handleSubmit(code)
+            }}
+          />
+        </div>
+      )}
     </div>
   )
 }
