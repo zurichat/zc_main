@@ -50,12 +50,12 @@ const TopbarModal = ({ members }) => {
   }
 
   let userPresence = null
-  let toggleStaus = null
+  let toggleStatus = null
 
   switch (presence) {
     case 'true':
       userPresence = 'Set yourself as away'
-      toggleStaus = (
+      toggleStatus = (
         <div className={styles.online}>
           <div className={styles.activeCircle} />
           <p className={styles.active}>Active</p>
@@ -64,7 +64,7 @@ const TopbarModal = ({ members }) => {
       break
     case 'false':
       userPresence = 'Set yourself as active'
-      toggleStaus = (
+      toggleStatus = (
         <div className={styles.online}>
           <div className={styles.awayCircle} />
           <p className={styles.away}>Away</p>
@@ -91,7 +91,6 @@ const TopbarModal = ({ members }) => {
   }
 
   useEffect(() => {
-    console.log('user presence', user.presence)
     setPresence(user.presence)
     // toggleUserPresence()
     console.log('check for user', user)
@@ -141,7 +140,7 @@ const TopbarModal = ({ members }) => {
 
             <div className={styles.oneRight}>
               <h4>Praise.A</h4>
-              {toggleStaus}
+              {toggleStatus}
             </div>
           </div>
 
