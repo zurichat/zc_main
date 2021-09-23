@@ -137,7 +137,10 @@ const TopbarModal = ({ members }) => {
         <section className={styles.topbarModal}>
           <div className={styles.sectionOne}>
             <div className={styles.oneLeft}>
-              <img  src={userProfileImage ? userProfileImage : userAvatar} alt="profile-pic" />
+              <img
+                src={userProfileImage ? userProfileImage : userAvatar}
+                alt="profile-pic"
+              />
             </div>
 
             <div className={styles.oneRight}>
