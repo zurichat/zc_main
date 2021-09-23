@@ -1,5 +1,5 @@
 .container {
-  width: 250%;
+  width: 90%;
   margin-left: 55px;
   margin-top: 27px;
 }
@@ -15,9 +15,13 @@
   color: #242424;
 }
 
+.section {
+  text-align: left;
+}
+
 .selectbox {
   display: block;
-  width: 160%;
+  width: 80%;
   margin: 10px 0;
   padding: 10px;
   border: 1px solid #dde5e9;
@@ -32,13 +36,9 @@
   color: #4c4c4c;
 }
 
-/* .selectbox[value="English"] {
-  color: #999999;
-} */
-
 .note {
   font-family: Lato;
-  width: 149%;
+  width: 75%;
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
@@ -61,3 +61,36 @@
   text-align: left;
   color: #3a3a3a;
 }
+
+.choosed {
+  width: 80%;
+  color: #999;
+  font-size: 13px;
+  border: 1px solid #323232;
+  height: 40px;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.block {
+  display: block;
+  background: #999;
+  /* width:20%; */
+   padding: 3px;
+  margin-top: -4px;
+  color: #fff;
+  padding: 3px 10px;
+  display: inline-block;
+}
+
+/* .none {
+  display: none;
+}  */
+
+/* .choosed span{
+    background:#999;
+    padding:3px;
+    margin-top:-4px;
+    color:#fff;
+    padding:3px 10px;
+} */
