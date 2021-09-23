@@ -87,7 +87,7 @@ body {
 .topPricingTop {
   display: flex;
   flex-direction: column;
-  height: 6.25rem;
+  height: 6.65rem;
   max-height: fit-content;
   width: 100%;
   max-height: auto;
@@ -120,6 +120,7 @@ body {
   background: #00b87c;
   border: none;
   border-radius: 0.19rem;
+  margin-top: 8%;
   width: 12.5rem;
   height: 2.56rem;
   font-weight: 900;
@@ -127,7 +128,15 @@ body {
   color: #ffffff;
 }
 
+.topPricingButton:hover {
+  transform: scale(1.05);
+}
+
 .link {
+  color: #ffffff;
+}
+
+.link:hover {
   color: #ffffff;
 }
 
