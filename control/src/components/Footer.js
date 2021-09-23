@@ -192,6 +192,9 @@ const Footer = () => {
                 <li>
                   <a href="/plugins">Plugins</a>{' '}
                 </li>
+                <li>
+                  <a href="/pricing">Pricing</a>{' '}
+                </li>
               </ul>
             </div>
 
