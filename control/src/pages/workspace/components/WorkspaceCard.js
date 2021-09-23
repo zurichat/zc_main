@@ -10,13 +10,15 @@ const WorkspaceCard = () => {
     <section className={`${styles.workspace_card}`}>
       <header className={`${styles.card_header}`}>
         <h4 className={`${styles.card_title}`}>
-
-          { !user.email ? 'Please login to view your workspaces' : !organizations.length ? error : `Workspaces for ${user.email}`}
-=======
+          {!user.email
+            ? 'Please login to view your workspaces'
+            : !organizations.length
+            ? error
+            : `Workspaces for ${user.email}`}
+          =======
           {!organizations.length
             ? 'No user is logged in'
             : `Workspaces for ${user.email}`}
-
         </h4>
       </header>
       <div className={`${styles.singleworkspace_wrapper}`}>
