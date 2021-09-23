@@ -23,6 +23,7 @@ const NotificationPreference = () => {
   })
 
   const setData = () => {
+
     authAxios
       .patch(`/organizations/${orgId}/members/${user._id}/settings`, {
         settings: {
