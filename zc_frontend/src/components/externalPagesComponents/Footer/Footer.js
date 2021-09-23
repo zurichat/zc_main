@@ -32,8 +32,7 @@ const Footer = ({ showMessage, type }) => (
                 <Link className={styles.link} to="/events" replace={true}>
                   Events
                 </Link>
-                <a className={styles.link} href="/">
-                </a>
+                <a className={styles.link} href="/"></a>
                 <Link to="/blogs" className={styles.link}>
                   Blog posts
                 </Link>

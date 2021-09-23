@@ -49,7 +49,6 @@ import DataApi from './pages/api-docs/components/data'
 import PluginApi from './pages/api-docs/components/plugin'
 import CreateWorkspace from './pages/create-workspace/CreateWorkSpace'
 
-
 import '@reach/dialog/styles.css'
 import StyleGuide from './components/verified'
 import Test from './components/verified-components'
@@ -63,7 +62,6 @@ import EventsMainWrapper from './pages/events/components/EventsMainWrapper'
 import { useRouteMatch } from 'react-router-dom'
 import './components/verified-components/master.css'
 import CreateWorkSpaces from './pages/create-workspace/createWorkSpaceContext'
-
 
 const App = () => {
   let workspaceRoute = '/home/createworkspace'

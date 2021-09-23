@@ -89,7 +89,6 @@ const data = [
 
 export default Index
 
-
 // .
 
 // <tr className={styles.pricingTableRowFeature}>
@@ -98,8 +97,6 @@ export default Index
 // <td className={styles.pricingtableSpacer}></td>
 
 // <td className={`{stles.pricingtableSpacer} {styles.lastColumn}`}></td>
-
-
 
 // <tr className={styles.pricingTableRowFeature}>
 //                 <td colSpan="2" className={styles.colStart}></td>
