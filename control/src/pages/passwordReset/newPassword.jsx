@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import Logo from '../../component-assets/zuri.svg'
 import authBg from '../../component-assets/backg.svg'
 import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
-// import styles from '../../component-styles/ResetPassword.modules.css'
+import styles from '../../component-styles/ResetPassword.module.css'
 import axios from 'axios'
 import Button from '../../components/Button'
 
@@ -19,7 +20,7 @@ const NewPassword = ({ resetCode }) => {
     <main id={styles.authPageWrapper}>
       <aside id={styles.authAsideContainer} className={styles.display_none}>
         <div id={styles.authImageWrapper}>
-          {/* <img src={authBg} alt="backgroundImage" /> */}
+          <img src={authBg} alt="backgroundImage" />
           <div id={styles.aside_txt}></div>
         </div>
       </aside>
@@ -46,7 +47,7 @@ const NewPassword = ({ resetCode }) => {
             placeholder="Enter your new password"
             value={password}
             setValue={setPassword}
-            onFocus={displayImage}
+            // onFocus={displayImage}
             // error={error}
           />
 
