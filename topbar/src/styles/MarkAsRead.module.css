@@ -1,6 +1,6 @@
 .container {
-  width: 250%;
-  margin: 65px 55px 20px;
+  width: 100%;
+  margin: 62px 53px 20px;
 }
 
 .subhead {
@@ -10,6 +10,11 @@
   font-weight: 700;
   line-height: 20px;
   letter-spacing: 0em;
+  margin-top: 10px;
+}
+
+.section {
+  text-align: left;
 }
 
 .option,
@@ -25,6 +30,7 @@
   text-align: left;
   color: #999999;
 }
+
 
 .option {
   margin-bottom: 10px;

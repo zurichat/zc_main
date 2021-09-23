@@ -4,8 +4,8 @@
 
 .container {
   height: 480px;
-  background-color: #00b87c;
-  color: #ffffff;
+  background-color: #ecf8f5;
+  color: #1d1c1d;
   overflow: hidden;
 }
 
@@ -16,7 +16,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: left;
-  color: #ffffff;
+  color: #1d1c1d;
 }
 
 .zuritext {
@@ -24,7 +24,7 @@
   font-weight: 800;
   font-size: 42px;
   line-height: 50px;
-  color: #ffffff;
+  color: #1d1c1d;
   padding-top: 30px;
 }
 
@@ -33,7 +33,7 @@
   justify-content: center;
   align-items: center;
   background-color: #000000;
-  width: 95%;
+  width: 98%;
   height: 55px;
   margin: 18px 0;
   border-radius: 5px;
@@ -44,7 +44,7 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 17px;
-  color: #ffffff;
+  color: #e0e0e0;
   text-decoration: underline;
 }
 
@@ -52,7 +52,6 @@
   display: flex;
   width: 90%;
   margin: auto;
-  color: red;
 }
 
 .PhoneDM,
@@ -86,7 +85,7 @@
   font-weight: 800;
   font-size: 24px;
   line-height: 29px;
-  color: #000000;
+  color: #1d1c1d;
   margin: 10px 0;
   padding-top: 20px;
   text-align: center;
@@ -103,9 +102,9 @@
 }
 
 .emailinput {
-  width: 90%;
+  width: 97%;
   margin: 10px 0;
-  padding: 20px;
+  padding: 15px 5px 15px 5px;
   background-color: #ffffff;
   color: #bdbdbd;
   border: 1px solid #828282;
