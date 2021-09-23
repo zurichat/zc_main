@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react'
 import authBg from '../../pages/images/backg.svg'
 import { withRouter } from 'react-router-dom'
@@ -7,7 +6,7 @@ import FormWrapper from '../../components/AuthFormWrapper'
 import styles from '../../styles/AuthFormElements.module.css'
 import axios from 'axios'
 
-export default function NewPassword  ({ resetCode }) {
+export default function NewPassword({ resetCode }) {
   const [password, setPassword] = useState('')
   const handleSubmit = async () => {
     const res = await axios.post('api.zuri.chat/account/update-password', {
