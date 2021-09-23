@@ -1,6 +1,5 @@
 import { useContext, useEffect } from 'react'
 import { ProfileContext } from './context/ProfileModal'
-
 import { TopbarContext } from './context/Topbar'
 import { connect } from 'react-redux'
 import zurichatlogo from './assets/images/Logo.svg'
@@ -21,12 +20,16 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { setUser, user, userProfileImage, setOrgId, setUserProfileImage } =
     useContext(ProfileContext)
   const [organizations, setOrganizations] = useState([])
-
   const [search, setSearch] = useState('')
   const [helpModal, setHelpModal] = useState(false)
 
   useEffect(() => {
     const userdef = JSON.parse(sessionStorage.getItem('user'))
+
+    if(!userdef){
+      window.location.href = "https://zuri.chat/login";
+    }
+
     async function getOrganizations() {
       await authAxios
         .get(`/users/${userdef.email}/organizations`)
