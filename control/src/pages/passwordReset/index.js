@@ -1,13 +1,14 @@
+import axios from 'axios'
 import { useState } from 'react'
 import authBg from '../../component-assets/backg.svg'
 import Logo from '../../component-assets/zuri.svg'
-// import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
 import Button from '../../components/Button'
-// import styles from '../../components-styles/AuthFormElements.module.css'
 import styles from '../../component-styles/ResetPassword.module.css'
 // import ResetModal from '../../components/verified/ResetModal'
-import axios from 'axios'
+// import styles from '../../components-styles/AuthFormElements.module.css'
+// import { withRouter } from 'react-router-dom'
+
 const ResetDefault = () => {
   const [email, setEmail] = useState('')
   const [showDialog, setShowDialog] = useState(false)
