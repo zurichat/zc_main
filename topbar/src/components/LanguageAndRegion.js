@@ -10,23 +10,22 @@ const LanguageAndRegion = () => {
   const [spellChb, setSpellChb] = useState(true)
   const [tzChb, setTzChb] = useState(true)
 
-
-const { user, orgId } = useContext(ProfileContext)
+  const { user, orgId } = useContext(ProfileContext)
 
   const connectData = () => {
-    authAxios.patch(`/organizations/${orgId}/members/${user._id}/settings`, {
-      settings: {
-        spell_check: spellChb
-      }
-    })
+    authAxios
+      .patch(`/organizations/${orgId}/members/${user._id}/settings`, {
+        settings: {
+          spell_check: spellChb
+        }
+      })
       .then(res => {
         console.log(res)
       })
       .catch(err => {
         console.log(err)
       })
-   }
-
+  }
 
   const handleSpell = () => {
     setSpellChb(connectData)
@@ -35,7 +34,6 @@ const { user, orgId } = useContext(ProfileContext)
   const handleTZ = () => {
     setTzChb(!tzChb)
   }
-
 
   return (
     <div className={styles.container}>
@@ -58,11 +56,7 @@ const { user, orgId } = useContext(ProfileContext)
               Time zone
             </label>
             <label className={styles.auto} htmlFor="">
-              <input
-                type="checkbox"
-                onChange={handleTZ}
-                checked={tzChb}
-              />
+              <input type="checkbox" onChange={handleTZ} checked={tzChb} />
               <span className={styles.checkmark}></span>
               Set time zone automatically
             </label>
@@ -100,9 +94,7 @@ const { user, orgId } = useContext(ProfileContext)
             </label>
 
             <div className={styles.choosed}>
-              <span className={styles.block}>
-                English
-              </span>
+              <span className={styles.block}>English</span>
             </div>
             <p className={styles.note}>
               Choose the languages you’d like Zurichat to spellcheck as you
@@ -117,17 +109,10 @@ const { user, orgId } = useContext(ProfileContext)
 
 export default LanguageAndRegion
 
-
-
-
-
-
-
 // const LanguageAndRegion = () => {
 //   // CHECKBOXES
 //   const [tzChecked, tzSetChecked] = useState(true)
 //   const [spellChecked, spellSetChecked] = useState(true)
-
 
 //   const [isTimezone, setIsTimezone] = useState(true)
 //   const [isSpell, setIsSpell] = useState(true)
@@ -168,8 +153,6 @@ export default LanguageAndRegion
 //     setData(value)
 //   }
 
-
-
 //   const result = Languages.map((item) => {
 //     if (item !== 'English (UK)') {
 //       return ''
@@ -180,7 +163,6 @@ export default LanguageAndRegion
 //   }
 //     // <option>{item}</option>
 //   )
-
 
 //   const results = TimeZones.map(item => <option>{item}</option>)
 
@@ -248,4 +230,3 @@ export default LanguageAndRegion
 //     </div>
 //   )
 // }
-
