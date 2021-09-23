@@ -95,7 +95,7 @@ const Section3 = () => {
       <div className={`${styles.registerNow}`}>
         <p>Be a part of next cohort starting summer of 2022</p>
         <a
-          href="https://internship.zuri.team/"
+          href="https://internship.zuri.team/enrollment"
           target="_blank"
           rel="noreferrer"
         >
