@@ -6,6 +6,7 @@ import Footer from '../../components/Footer'
 import FAQ from '../FAQ'
 import PricingPageSection1 from './pricingPageSection1/PricingPageSection1'
 import { useEffect } from 'react'
+import Message from './components/Message'
 
 function Pricing() {
   useEffect(() => {
@@ -18,9 +19,10 @@ function Pricing() {
       <Header />
       <PricingPageSection1 />
       <Section3 />
-      <FAQ />
+      {/* <FAQ /> */}
       <Section4PricingPage />
-      <Footer showMessage />
+      <Message />
+      <Footer />
     </div>
   )
 }
