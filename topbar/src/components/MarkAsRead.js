@@ -4,7 +4,7 @@ import styles from '../styles/MarkAsRead.module.css'
 const MarkAsRead = () => {
   const [prompt, SetPrompt] = useState(true)
 
- const handlePrompt = () => {
+  const handlePrompt = () => {
     SetPrompt(!prompt)
   }
   return (
