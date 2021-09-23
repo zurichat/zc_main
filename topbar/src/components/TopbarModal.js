@@ -2,6 +2,7 @@ import { useContext, useState, useEffect } from 'react'
 import { authAxios } from '../utils/Api'
 import { FaChevronRight } from 'react-icons/fa'
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
+import userAvatar from '../assets/images/user.svg'
 
 import styles from '../styles/Topbar.module.css'
 import { TopbarContext } from '../context/Topbar'
@@ -136,7 +137,7 @@ const TopbarModal = ({ members }) => {
         <section className={styles.topbarModal}>
           <div className={styles.sectionOne}>
             <div className={styles.oneLeft}>
-              <img src={userProfileImage} alt="profile-pic" />
+              <img  src={userProfileImage ? userProfileImage : userAvatar} alt="profile-pic" />
             </div>
 
             <div className={styles.oneRight}>
