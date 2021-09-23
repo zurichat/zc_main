@@ -8,6 +8,7 @@
 .navbar {
   margin-top: 15px;
   border-bottom: 1px solid rgba(187, 186, 231, 0.15);
+}
 
 li {
   padding-left: 0;
@@ -53,7 +54,7 @@ a {
 .navButton:focus {
   border: none;
   box-shadow: none;
-
+}
 .menu ul {
   display: flex;
   justify-content: space-around;
@@ -67,7 +68,7 @@ a {
   height: 22px;
 }
 
-.searchLogo {
+
 
 .fa {
   padding-left: 5px;
@@ -116,7 +117,6 @@ a {
 .menu ul li:hover > .dropdown2 li {
   display: block;
   visibility: visible;
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
   cursor: pointer;
   width: 32px;
   height: 32px;
@@ -140,14 +140,13 @@ a {
 
 .zuriChat {
   font-size: 18px;
-
+}
 .header_signs ul {
   width: 100%;
   display: flex;
   justify-content: center;
   font-size: 1.2rem;
   padding-top: 15px;
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
   color: black;
   position: relative;
   top: 5px;
@@ -158,6 +157,7 @@ a {
 
 .image {
   position: relative;
+}
 
 .header_signs ul li {
   padding-left: 30px;
@@ -169,7 +169,6 @@ a {
   padding: 8px 20px;
   color: white;
   font-size: 1.3rem;
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
 }
 
 .navbarBrand {
@@ -269,6 +268,7 @@ a {
     background-color: #00b87c;
     color: white;
     border-radius: 0px;
+  }
 
 /*mobile section */
 .mobile_nav {
@@ -408,7 +408,6 @@ a {
   }
   .header_list {
     font-size: 2rem;
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
   }
 
   .signI {
@@ -438,6 +437,7 @@ a {
   .features {
     color: black;
     font-weight: 300;
+  }
 
   .dropdown_items {
     font-size: 2rem;
@@ -460,7 +460,6 @@ a {
   }
   .header_signup {
     font-size: 2rem;
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
   }
 }
 
@@ -492,7 +491,6 @@ a {
     text-decoration: none;
   }
 
-  .signIn {
 
   .mobile_nav {
     visibility: visible;
@@ -540,7 +538,6 @@ a {
     width: 190vw;
   }
   .dropdown_list:hover {
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
     background-color: #00b87c;
     color: white;
     border-radius: 0px;
@@ -554,7 +551,7 @@ a {
   .signU {
     color: #00b87c;
     font-weight: 600;
-
+  }
   .dropdown {
     display: inline-block;
     flex-direction: column;
@@ -581,7 +578,6 @@ a {
     padding-bottom: 25px;
     padding-left: 120px;
     display: flex;
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
   }
 
   .download {
@@ -592,13 +588,12 @@ a {
   .comms {
     color: black;
     font-weight: 300;
-
+  }
   .mobile_signs li {
     padding-left: 10px;
   }
   .header_signin {
     padding: 10px 20px;
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
   }
 
   .pricing {
@@ -609,7 +604,8 @@ a {
   .features {
     color: black;
     font-weight: 300;
-
+  }
+}
 @media screen and (max-width: 600px) {
   .m_logo p {
     font-size: 1.3rem;
@@ -617,6 +613,7 @@ a {
   .mobile_fa {
     font-size: 1.6rem;
     position: relative;
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/component-styles/HeaderStyle.module.css
   }
+}
+
 }
