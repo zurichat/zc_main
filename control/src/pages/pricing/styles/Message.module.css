@@ -4,19 +4,20 @@
   min-height: 370px;
   height: auto;
   width: 100%;
-  background: #00B87C;
+  background: #00b87c;
   border: none;
   clip-path: ellipse(75% 100% at center top);
 }
 
-.message{
+.message {
   margin: 0 auto;
 }
 
-.background{
+.background {
   width: 100%;
 }
-.message_box > .p, .message > .p {
+.message_box > .p,
+.message > .p {
   font-weight: 900;
   font-size: 2.37rem;
   color: white;
@@ -65,7 +66,7 @@
   background: #00b87c;
   border: 1px solid white;
   border-radius: 3px;
-  color: #000
+  color: #000;
 }
 .buttonOutline:hover {
   transition: background 350ms;
@@ -93,19 +94,19 @@
     opacity: 0.98;
   }
   .buttonSection {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  width: 85%;
-  gap: 20px;
-  justify-content: center;
-  align-content: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 85%;
+    gap: 20px;
+    justify-content: center;
+    align-content: center;
   }
 
-  .buttonFilled, .buttonOutline{
+  .buttonFilled,
+  .buttonOutline {
     width: 100%;
   }
-
 }
 @media (max-width: 35rem) {
   .message_box {
