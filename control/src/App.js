@@ -3,7 +3,10 @@ import Login from './pages/login'
 import SignUp from './pages/signup'
 import Workspace from './pages/workspace/components/Workspace'
 import LandingPage from './pages/LandingPage'
-import ResetPassword from './pages/passwordReset'
+// password block
+import ResetPassword from './pages/passwordReset/index'
+import NewPassword from './pages/passwordReset/newPassword'
+// end password block
 import CookiesSetting from './pages/cookiesSettings'
 import Cookies from './pages/cookies'
 import Features from './pages/features'
@@ -114,6 +117,9 @@ const App = () => {
         {/* ----------------settings routes closed----------------- */}
         <Route path="/reset-password">
           <ResetPassword />
+        </Route>
+        <Route path="/change-password">
+          <NewPassword />
         </Route>
         <Route path="/cookies-settings">
           <CookiesSetting />
