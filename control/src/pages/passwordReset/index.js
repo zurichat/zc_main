@@ -19,8 +19,8 @@ const ResetDefault = () => {
   // }
 
   const handleSubmit = e => {
-    e.preventDefault();
-    open();
+    e.preventDefault()
+    open()
   }
   const sendEmail = async () => {
     if (email) {
@@ -41,7 +41,6 @@ const ResetDefault = () => {
 
   return (
     <>
-    
       <main id={styles.authPageWrapper}>
         <aside id={styles.authAsideContainer} className={styles.display_none}>
           <div id={styles.authImageWrapper}>
