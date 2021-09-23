@@ -17,6 +17,7 @@ import Footer from '../../components/Footer'
 
 import { Link } from 'react-router-dom'
 import Cookies from '../cookies'
+import Subscribe from './components/Subscribe'
 
 export default function Homepage() {
   const { useState, useEffect } = React
@@ -196,6 +197,7 @@ export default function Homepage() {
           </div>
         </div>
       </div>
+      <Subscribe />
       <Footer />
     </>
   )
