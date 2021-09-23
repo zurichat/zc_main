@@ -26,31 +26,31 @@ const NewPassword = ({ resetCode }) => {
       <section id={``}>
         {/* logo div  */}
         <div className={``}>
-            <img className={styles.logo} src={Logo} alt="" />
-          </div>
-          {/* header text  */}
-          <div className={``}>
-            <h4 className={styles.headerText}>Change Password</h4>
-            <p>
-              Enter the email address you registered with, a reset link will be
-              sent to your email!
-            </p>
-          </div>
-            {/* form section  */}
-            <form action="">
-              <AuthInputBox
-                className={`${styles.inputElement}`}
-                id="password"
-                name="Password"
-                type="password"
-                placeholder="Enter your new password"
-                value={password}
-                setValue={setPassword}
-                onFocus={displayImage}
-                // error={error}
-              />
+          <img className={styles.logo} src={Logo} alt="" />
+        </div>
+        {/* header text  */}
+        <div className={``}>
+          <h4 className={styles.headerText}>Change Password</h4>
+          <p>
+            Enter the email address you registered with, a reset link will be
+            sent to your email!
+          </p>
+        </div>
+        {/* form section  */}
+        <form action="">
+          <AuthInputBox
+            className={`${styles.inputElement}`}
+            id="password"
+            name="Password"
+            type="password"
+            placeholder="Enter your new password"
+            value={password}
+            setValue={setPassword}
+            onFocus={displayImage}
+            // error={error}
+          />
 
-              {/* <AuthInputBox
+          {/* <AuthInputBox
                 className={`${styles.inputElement}`}
                 id="cpassword"
                 name="Confirm password"
@@ -60,10 +60,10 @@ const NewPassword = ({ resetCode }) => {
                 setValue={setConfirmPassword}
                 // error={error}
               /> */}
-              <Button className={styles.button} onClick={handleSubmit}>
-                Continue
-              </Button>
-          </form>
+          <Button className={styles.button} onClick={handleSubmit}>
+            Continue
+          </Button>
+        </form>
       </section>
     </main>
   )
