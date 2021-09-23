@@ -3,10 +3,10 @@ import Login from './pages/login'
 import SignUp from './pages/signup'
 import Workspace from './pages/workspace/components/Workspace'
 import LandingPage from './pages/LandingPage'
-// password block 
+// password block
 import ResetPassword from './pages/passwordReset/index'
 import NewPassword from './pages/passwordReset/newPassword'
-// end password block 
+// end password block
 import CookiesSetting from './pages/cookiesSettings'
 import Cookies from './pages/cookies'
 import Features from './pages/features'
