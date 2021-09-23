@@ -1,16 +1,13 @@
-
-import { useState } from 'react'
+import React, { useState } from 'react'
 import authBg from '../../pages/images/backg.svg'
 import Logo from '../../pages/images/zuri.svg'
 import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
-
-// import FormWrapper from '../../components/AuthFormWrapper'
 import Button from '../../components/verified/Button'
-// import styles from '../../styles/AuthFormElements.module.css'
 import styles from '../../styles/ResetPassword.module.css'
 import ResetModal from '../../components/verified/ResetModal'
 import axios from 'axios'
+
 const Index = () => {
   const [email, setEmail] = useState('')
   const [modalShow, setModalShow] = useState(false)
