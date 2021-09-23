@@ -10,7 +10,7 @@ const ResetModal = props => {
   return (
     <div>
       <button onClick={open}>Show Dialog</button>
-      <Dialog style={{ color: 'red' }} isOpen={showDialog} onDismiss={close}>
+      <Dialog isOpen={showDialog} onDismiss={close}>
         <p>My text is red because the style prop got applied to the div</p>
         <button onClick={close}>Okay</button>
       </Dialog>
