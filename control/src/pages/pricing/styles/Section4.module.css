@@ -9,6 +9,10 @@
   background-color: rgb(230, 228, 228);
 }
 
+.wrapper:hover {
+  transform: scale(1.05);
+}
+
 .wrapper > .topText {
   display: flex;
   text-align: center;
