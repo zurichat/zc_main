@@ -1,4 +1,3 @@
-
 import { useState } from 'react'
 import authBg from '../../pages/images/backg.svg'
 import Logo from '../../pages/images/zuri.svg'
