@@ -66,8 +66,8 @@ const Login = () => {
 
         //Return the login data globally
         $behaviorSubject.next(response.data)
-  
-        setLoading(true);
+
+        setLoading(true)
 
         setTimeout(() => {
           //Redirect to some other page
