@@ -19,10 +19,10 @@ function Pricing() {
       <Header />
       <PricingPageSection1 />
       <Section3 />
-      <FAQ />
+      {/* <FAQ /> */}
       <Section4PricingPage />
       <Message />
-      <Footer showMessage />
+      <Footer />
     </div>
   )
 }
