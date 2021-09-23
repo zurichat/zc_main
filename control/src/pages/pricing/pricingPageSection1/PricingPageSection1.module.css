@@ -127,7 +127,15 @@ html, body{
   color: #ffffff;
 }
 
+.topPricingButton:hover {
+  transform: scale(1.05);
+}
+
 .link {
+  color: #ffffff;
+}
+
+.link:hover{
   color: #ffffff;
 }
 
