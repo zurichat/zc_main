@@ -26,9 +26,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   useEffect(() => {
     const userdef = JSON.parse(sessionStorage.getItem('user'))
 
-    if(!userdef){
-      window.location.href = "https://zuri.chat/login";
-    }
+    
 
     async function getOrganizations() {
       await authAxios
