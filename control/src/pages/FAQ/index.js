@@ -29,13 +29,14 @@ const Index = () => {
                   )}
                 </span>
               </div>
-              {selected === i &&
+              {selected === i && (
                 <div
-                className={selected === i ? 'answer show' : 'answer'}
-                onClick={() => toggle(i)}
-              >
-                {i.answer}
-              </div>}
+                  className={selected === i ? 'answer show' : 'answer'}
+                  onClick={() => toggle(i)}
+                >
+                  {i.answer}
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -88,7 +89,6 @@ const data = [
 
 export default Index
 
-
 // .
 
 // <tr className={styles.pricingTableRowFeature}>
@@ -97,8 +97,6 @@ export default Index
 // <td className={styles.pricingtableSpacer}></td>
 
 // <td className={`{stles.pricingtableSpacer} {styles.lastColumn}`}></td>
-
-
 
 // <tr className={styles.pricingTableRowFeature}>
 //                 <td colSpan="2" className={styles.colStart}></td>
