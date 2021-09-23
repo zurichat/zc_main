@@ -36,7 +36,6 @@ export const GetUserInfo = () => {
       return user
     })
     .catch(err => console.log(err))
-
 }
 
 // const GetWorkspaceUsers = () => {
@@ -474,8 +473,7 @@ export const GetUserInfo = () => {
 //   // let it = data
 //   // console.log(it)
 //   sessionStorage.setItem('WorkspaceUsers', JSON.stringify(data.data));
-  
-  
+
 // }
 
 // GetWorkspaceUsers();
