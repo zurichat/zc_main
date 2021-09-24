@@ -40,6 +40,7 @@ const TopbarModal = ({ members }) => {
   } = state
   const [modal, setModal] = useState('')
   const [pause, setPause] = useState(false)
+  const [statusModal, setStatusModal] = useState(false)
 
   const onSetPresence = () => {
     setPresence(() => {
