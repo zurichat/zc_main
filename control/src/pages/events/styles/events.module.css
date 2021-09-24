@@ -16,11 +16,11 @@ body {
 }
 
 .eventsMainWrapper {
-  padding: 1.5% 2.5% 0 2.5%
+  padding: 1.5% 2.5% 0 2.5%;
 }
 
 .heroSection {
-  padding: 5% 2%;
+  padding: 5% 2% 0 2%;
   font-family: inherit;
   display: flex;
   align-items: stretch;
