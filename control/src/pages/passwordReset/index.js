@@ -1,26 +1,21 @@
+import axios from 'axios'
 import { useState } from 'react'
 import authBg from '../../component-assets/backg.svg'
 import Logo from '../../component-assets/zuri.svg'
-// import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
 import Button from '../../components/Button'
-// import styles from '../../components-styles/AuthFormElements.module.css'
 import styles from '../../component-styles/ResetPassword.module.css'
-// import ResetModal from '../../components/verified/ResetModal'
-import axios from 'axios'
-const ResetDefault = () => {
+import VerifyResetCode from './verifyCode'
+
+const ResetPassword = () => {
   const [email, setEmail] = useState('')
   const [showDialog, setShowDialog] = useState(false)
   const open = () => setShowDialog(true)
-  const close = () => setShowDialog(false)
-
-  // const toggleModal = () => {
-  //   setModalShow(!modalShow)
-  // }
+  // const close = () => setShowDialog(false)
 
   const handleSubmit = e => {
     e.preventDefault()
-    open()
+    sendEmail()
   }
   const sendEmail = async () => {
     if (email) {
@@ -31,10 +26,11 @@ const ResetDefault = () => {
             email
           }
         )
-
+        open()
         console.log(res.data)
       } catch (err) {
         console.error(err)
+        alert(err)
       }
     }
   }
@@ -42,6 +38,8 @@ const ResetDefault = () => {
   return (
     <>
       <main id={styles.authPageWrapper}>
+        {showDialog && <VerifyResetCode />}
+
         <aside id={styles.authAsideContainer} className={styles.display_none}>
           <div id={styles.authImageWrapper}>
             <img src={authBg} alt="backgroundImage" />
@@ -55,10 +53,10 @@ const ResetDefault = () => {
           </div>
           {/* header text  */}
           <div className={``}>
-            <h4 className={styles.headerText}>Recover Password</h4>
+            <h4 className={styles.headerText}>Get a new password</h4>
             <p>
-              Enter the email address you registered with, a reset link will be
-              sent to your email!
+              Enter the email address you registered with and a reset code will
+              be sent to your email.
             </p>
           </div>
           {/* form section  */}
@@ -83,4 +81,4 @@ const ResetDefault = () => {
   )
 }
 
-export default ResetDefault
+export default ResetPassword
