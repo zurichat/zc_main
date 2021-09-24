@@ -20,6 +20,7 @@ body {
 }
 
 .heroSection {
+  padding: 5% 2.0%;
   font-family: inherit;
   display: flex;
   align-items: stretch;
