@@ -67,6 +67,12 @@ To remove all node_modules and yarn.lock
 yarn clean:fresh
 ```
 
+To open [app](http://localhost:9000) in the browser
+
+```bash
+yarn open
+```
+
 ## Editor setup
 
 We're using eslint for linting and prettier for code formating, make sure you install eslint and prettier plugins in your editor so you can
