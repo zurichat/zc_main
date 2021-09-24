@@ -28,6 +28,7 @@ const TopbarModal = ({ members }) => {
   const state = useContext(TopbarContext)
   const [showModal] = state.show
   const [presence, setPresence] = state.presence
+  const [username, setUsername] = state.username
   const [showStatus] = state.status
   const [showMembersModal] = state.modal
   const {
@@ -41,7 +42,7 @@ const TopbarModal = ({ members }) => {
   const [modal, setModal] = useState('')
   const [pause, setPause] = useState(false)
   const [statusModal, setStatusModal] = useState(false)
-  const [username, setUsername] = useState('')
+  
 
   const onSetPresence = () => {
     setPresence(() => {

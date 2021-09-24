@@ -6,6 +6,7 @@ export const TopbarProvider = ({ children }) => {
 
   // setting up my states for the profile topbar modal
   const [presence, setPresence] = useState('true')
+  const [username, setUsername] = useState('')
   const [showModal, setShowModal] = useState(false)
   const [showStatus, setShowStatus] = useState(false)
   const [showMembersModal, setShowMembersModal] = useState(false)
@@ -60,6 +61,7 @@ export const TopbarProvider = ({ children }) => {
     closeMembersModal,
     modalRef,
     presence: [presence, setPresence],
+    username: [username, setUsername],
     show: [showModal, setShowModal],
     status: [showStatus, setShowStatus],
     emoji: [chosenEmoji, setChosenEmoji],
