@@ -28,7 +28,7 @@ const TopbarModal = ({ members }) => {
   const state = useContext(TopbarContext)
   const [showModal] = state.show
   const [presence, setPresence] = state.presence
-  const [username, setUsername] = state.username
+  // const [username, setUsername] = state.username
   const [showStatus] = state.status
   const [showMembersModal] = state.modal
   const {
