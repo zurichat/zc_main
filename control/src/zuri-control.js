@@ -38,7 +38,7 @@ export const GetUserInfo = async () => {
   }
 }
 
-GetUserInfo()
+// GetUserInfo()
 
 // const GetWorkspaceUsers = () => {
 //   // let org_id = `61459d8e62688da5302acdb1`;
