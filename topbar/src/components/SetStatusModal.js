@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
-import DatePicker from 'react-date-picker'
+import DatePicker from 'react-datepicker'
 import TimePicker from 'react-time-picker'
 import styles from '../styles/SetStatusModal.module.css'
 
