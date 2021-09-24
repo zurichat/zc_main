@@ -99,7 +99,7 @@ const TopbarModal = ({ members }) => {
 
   useEffect(() => {
     setPresence(user.presence)
-    setUsername(user.user_name)
+    // setUsername(user.user_name)
     // toggleUserPresence()
     console.log('check for user', user)
     console.log('auth axios presence', presence)
@@ -150,9 +150,7 @@ const TopbarModal = ({ members }) => {
             </div>
 
             <div className={styles.oneRight}>
-              <h4>{`${username.charAt(0).toUpperCase()}${username.slice(
-                1
-              )}`}</h4>
+              <h4>Praise.A</h4>
               {toggleStatus}
             </div>
           </div>
