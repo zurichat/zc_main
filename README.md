@@ -45,9 +45,9 @@ Open [http://localhost:9000](http://localhost:9000) with your browser to see the
 
 Topbar : [http://localhost:8080](http://localhost:8080)
 
-Sidebar : [http://localhost:8081](http://localhost:8080)
+Sidebar : [http://localhost:8081](http://localhost:8081)
 
-Control : [http://localhost:8082](http://localhost:8080)
+Control : [http://localhost:8082](http://localhost:8082)
 
 ### **Building**
 
