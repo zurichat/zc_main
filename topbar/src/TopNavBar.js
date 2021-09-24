@@ -20,7 +20,6 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { setUser, user, userProfileImage, setOrgId, setUserProfileImage } =
     useContext(ProfileContext)
   const [organizations, setOrganizations] = useState([])
-
   const [search, setSearch] = useState('')
   const [helpModal, setHelpModal] = useState(false)
 
