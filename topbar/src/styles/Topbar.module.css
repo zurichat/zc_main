@@ -153,8 +153,9 @@
 .oneLeft img {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
+  border-radius: 10%;
   background: #00b87b44;
+  margin-top: 8px;
 }
 
 /* THE SECTION OF THE ONE RIGHT */
