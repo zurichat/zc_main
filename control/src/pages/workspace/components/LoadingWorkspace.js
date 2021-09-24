@@ -1,8 +1,8 @@
-import React from "react"
+import React from 'react'
 // Components
 import WorkspaceHeader from './WorkspaceHeader'
 import { useWorkspaceContext } from './WorkspaceContext'
-import LoginLoading from "../../../components/LoginLoading"
+import LoginLoading from '../../../components/LoginLoading'
 // Styles
 import styles from '../style/workspace.module.css'
 import WorkspaceCard from './WorkspaceCard'
@@ -14,10 +14,9 @@ const LoadingWorkspace = () => {
 
   return (
     <>
-      {
-        pageLoading ? (
-          <LoginLoading />
-        ) : (
+      {pageLoading ? (
+        <LoginLoading />
+      ) : (
         <div className={`${styles.workspace}`}>
           <main className={`${styles.workspace_container}`}>
             <WorkspaceHeader />
@@ -28,8 +27,7 @@ const LoadingWorkspace = () => {
           </main>
           <WorkspaceFooter />
         </div>
-        )
-      }
+      )}
     </>
   )
 }

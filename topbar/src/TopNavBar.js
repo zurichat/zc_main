@@ -1,6 +1,5 @@
 import { useContext, useEffect } from 'react'
 import { ProfileContext } from './context/ProfileModal'
-
 import { TopbarContext } from './context/Topbar'
 import { connect } from 'react-redux'
 import zurichatlogo from './assets/images/Logo.svg'

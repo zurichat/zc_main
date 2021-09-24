@@ -52,10 +52,10 @@ export const WorkspaceProvider = ({ children }) => {
   }
 
   const redirectPage = () => {
-    dispatch({type: 'LOADER_ACTION'})
+    dispatch({ type: 'LOADER_ACTION' })
 
     setTimeout(() => {
-      dispatch({type: 'PAGE_REDIRECT'})
+      dispatch({ type: 'PAGE_REDIRECT' })
       history.push('/home')
     }, 3000)
   }
