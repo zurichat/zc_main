@@ -33,18 +33,23 @@ module.exports = (webpackConfigEnv, argv) => {
       // filename: "[name].js", // string (default)
       // publicPath: path.join(__dirname, '..', 'dist', 'assets') // string
     },
+    devServer: {
+      historyApiFallback: true
+      // https: true,
+    },
     module: {
       rules: [
         {
           test: /\.css$/i,
           use: [
-            'style-loader',
+            require.resolve('css-loader', {
+              paths: [require.resolve('webpack-config-single-spa')]
+            }),
             {
-              loader: 'css-loader',
+              loader: 'postcss-loader',
               options: {
-                importLoaders: 1,
-                modules: {
-                  localIdentName: '[local]--[hash:base64:5]__[name]'
+                postcssOptions: {
+                  plugins: [require('autoprefixer'), require('tailwindcss')]
                 }
               }
             }

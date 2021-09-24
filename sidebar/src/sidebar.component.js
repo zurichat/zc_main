@@ -46,7 +46,7 @@ const Sidebar = props => {
     <div className={styles.container}>
       <div className={styles.orgInfo}>
         <div className={styles.orgName}>
-          <p>HNGi8</p>
+          <p className="sb-bg-red-500">HNGi8</p>
           <img
             src={shapekeyboardarrowdown}
             alt="Organisation settings button"
