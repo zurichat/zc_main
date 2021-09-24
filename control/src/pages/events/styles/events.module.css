@@ -20,7 +20,7 @@ body {
 }
 
 .heroSection {
-  padding: 5% 2.0%;
+  padding: 5% 2%;
   font-family: inherit;
   display: flex;
   align-items: stretch;
@@ -59,28 +59,28 @@ body {
   height: 400px;
 }
 .eventsMeetTextWrapper {
-  width: 40%;
+  width: auto;
 }
 .eventsMeetLogoBlock {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 15px;
+  /* justify-content: flex-start; */
 }
 .boldText {
-  font-weight: 800;
-  font-size: 25px;
+  font-weight: bold;
+  font-size: 30px;
   color: #333333;
-  margin: 0 5px;
+  margin-left: 5px;
 }
 .logoText {
-  font-size: 25px;
+  font-size: 30px;
   font-weight: normal;
   color: #333333;
+  margin-left: 5px;
 }
 
 .eventsMeetTextWrapper > h2 {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   font-size: 32px;
   font-weight: 900;
   color: #242424;
@@ -88,8 +88,9 @@ body {
 .eventsMeetTextWrapper > p {
   font-size: 20px;
   color: #3a3a3a;
-  font-weight: 700;
-  margin-bottom: 15px;
+  font-weight: normal;
+  margin-bottom: 5px;
+  width: 100%;
 }
 
 .checkoutLinkBlock {
@@ -449,7 +450,7 @@ body {
     width: 40%;
   }
   .eventsMeetLogoBlock {
-    margin-bottom: 15px;
+    margin-bottom: 0px;
   }
   .eventsMeetTextWrapper > h2 {
     margin-bottom: 20px;
@@ -537,14 +538,14 @@ body {
     width: 40%;
   }
   .eventsMeetLogoBlock {
-    margin-bottom: 15px;
+    margin-bottom: 0px;
   }
   .eventsMeetTextWrapper > h2 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .eventsMeetTextWrapper > p {
-    margin-bottom: 15px;
-    max-width: auto;
+    margin-bottom: 10px;
+    max-width: 100%;
   }
 
   .checkoutLinkBlock {
@@ -625,14 +626,14 @@ body {
     width: 40%;
   }
   .eventsMeetLogoBlock {
-    margin-bottom: 15px;
+    margin-bottom: 0px;
   }
   .eventsMeetTextWrapper > h2 {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
   .eventsMeetTextWrapper > p {
-    margin-bottom: 15px;
-    max-width: auto;
+    margin-bottom: 5px;
+    max-width: 100%;
   }
 
   .checkoutLinkBlock {
