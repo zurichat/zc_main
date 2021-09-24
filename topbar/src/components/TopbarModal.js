@@ -41,6 +41,7 @@ const TopbarModal = ({ members }) => {
   const [modal, setModal] = useState('')
   const [pause, setPause] = useState(false)
   const [statusModal, setStatusModal] = useState(false)
+  const [username, setUsername] = useState('')
 
   const onSetPresence = () => {
     setPresence(() => {
@@ -84,7 +85,12 @@ const TopbarModal = ({ members }) => {
         return authAxios.get(`/organizations/${orgId}/members/${user._id}/`)
       })
       .then(res => {
-        console.log('response2', res.data.data.presence)
+        username = res.data.data.user_name
+        console.log(
+          'response2',
+          res.data.data.presence,
+          res.data.data.user_name
+        )
       })
       .catch(err => {
         console.log(err?.response?.data)
@@ -93,6 +99,7 @@ const TopbarModal = ({ members }) => {
 
   useEffect(() => {
     setPresence(user.presence)
+    setUsername(user.user_name)
     // toggleUserPresence()
     console.log('check for user', user)
     console.log('auth axios presence', presence)
@@ -143,7 +150,9 @@ const TopbarModal = ({ members }) => {
             </div>
 
             <div className={styles.oneRight}>
-              <h4>Praise.A</h4>
+              <h4>{`${username.charAt(0).toUpperCase()}${username.slice(
+                1
+              )}`}</h4>
               {toggleStatus}
             </div>
           </div>
