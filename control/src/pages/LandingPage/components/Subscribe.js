@@ -34,7 +34,7 @@ const Subscribe = () => {
         <div
           className={`col-md-6 col-sm-12 d-flex flex-column ${css.rightColumn}`}
         >
-          <div className={`mx-3 ${css.text}`}>
+          <div className={` ${css.text}`}>
             <h2 className={` ${css.heading2}`}>
               Be the First to get updates and exclusive offers from Zuri Chat
             </h2>
@@ -51,7 +51,7 @@ const Subscribe = () => {
                   value={email}
                   onChange={handleChange}
                   required
-                  className={` ${css.inputField}`}
+                  className={`mb-3 ${css.inputField}`}
                 />
                 <button type="submit" className={`${css.subscribeBtn}`}>
                   Subscribe
