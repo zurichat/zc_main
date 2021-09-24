@@ -14,7 +14,7 @@ const lifecycles = singleSpaReact({
   }
 })
 
-export const GetUserInfo = async () => {
+export const GetUserInfo = async ({userID, token}) => {
   // let userID = '6146f82c845b436ea04d10e1'
   // let token =
   //   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb29raWUiOiJNVFl6TWpBME1qa3pNbnhIZDNkQlIwUlplRTVFVFROTlJGVXdXa1JCZVU5RVVtbFplbHBvVDFSSmVVMTZVVEpaWnowOWZEZmM3TGdsUUc1OGhuak1oY1dVcGNOTS1xQXN5UEZtajR3eURYVlBtWkdFIiwiZW1haWwiOiJwaWRAb3h5LmNvbSIsImlkIjoiNjE0MzcwNTRkMDI4NGJjNmE5MjIzNDZiIiwib3B0aW9ucyI6eyJQYXRoIjoiLyIsIkRvbWFpbiI6IiIsIk1heEFnZSI6NjMwNzIwMDAwMCwiU2VjdXJlIjpmYWxzZSwiSHR0cE9ubHkiOmZhbHNlLCJTYW1lU2l0ZSI6MH0sInNlc3Npb25fbmFtZSI6ImY2ODIyYWY5NGUyOWJhMTEyYmUzMTBkM2FmNDVkNWM3In0.jrfU1SdZWYfRDW15LQqucu1CQUn52HyJKk-RlThN7fg'
@@ -26,7 +26,7 @@ export const GetUserInfo = async () => {
 
   try {
     const response = await axios
-      .get(`https://api.zuri.chat/users/${user.id}`, {
+      .get(`https://api.zuri.chat/users/${userID}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
