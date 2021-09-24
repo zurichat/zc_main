@@ -9,7 +9,6 @@ const NotificationPreference = () => {
   const [active, setActive] = useState(0)
   const [active1, setActive1] = useState(0)
   const { user, orgId } = useContext(ProfileContext)
-
   const [dataState, setDataState] = useState({
     // channel_hurdle_notification: channel_hurdle,
     email_notifications_for_mentions_and_dm: null,
