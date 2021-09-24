@@ -16,8 +16,8 @@ const PreferenceMenu = () => {
           onClick={() => setSideBar(1)}
           className={sideBar === 1 ? styles.active : styles.one}
         >
-          <AiOutlineBell className={styles.icon} />
-          <p>Notifications</p>
+         
+         <AiOutlineBell className={styles.icon} /><p>Notifications</p>
         </div>
         <div
           onClick={() => setSideBar(2)}

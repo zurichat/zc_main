@@ -22,9 +22,7 @@ const NotificationPreference = () => {
     when_iam_not_active_on_desktop: ''
   })
 
-  const setData = () => {
-    authAxios
-      .patch(`/organizations/${orgId}/members/${user._id}/settings`, {
+  const setData = () => {authAxios.patch(`/organizations/${orgId}/members/${user._id}/settings`, {
         settings: {
           notifications: dataState
         }

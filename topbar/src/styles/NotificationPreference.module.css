@@ -47,7 +47,7 @@
 .itemTitle1 .spanL {
   display: flex;
   flex-direction: row;
-  color: #1a61db;
+  color: #00b87c;
   font-size: 13px;
   font-size: 15px;
   font-weight: normal;
@@ -135,7 +135,7 @@ input[type='checkbox'] {
   text-align: left;
 }
 .itemTitle2 .spanSmall {
-  color: #1a61db;
+  color: #00b87c;
 }
 .textarea {
   border-color: 1px #e5e5e5;
