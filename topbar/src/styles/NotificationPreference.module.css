@@ -1,0 +1,555 @@
+.body {
+  display: flex;
+  flex-direction: row;
+}
+
+.body::-webkit-scrollbar {
+  display: none;
+}
+
+<<<<<<< HEAD:zc_frontend/src/pages/preferences/styles/NotificationPreference.module.css
+
+=======
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:topbar/src/styles/NotificationPreference.module.css
+/* THE SECTION OF THE CONTENT */
+.notifyContent {
+  width: 75%;
+  padding: 0 20px;
+  padding-bottom: 70px;
+  display: block;
+  margin-top: 24px;
+<<<<<<< HEAD:zc_frontend/src/pages/preferences/styles/NotificationPreference.module.css
+  
+=======
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:topbar/src/styles/NotificationPreference.module.css
+}
+
+.itemTitle1 {
+  width: 630px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 16px;
+  height: 20px;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+.titleLarge {
+  font-family: Lato;
+  font-style: normal;
+  font-size: 15px;
+  font-weight: 500;
+  color: #242424;
+  margin-left: 0px;
+  line-height: 21px;
+}
+.titleSmall {
+  font-family: Lato;
+  font-style: normal;
+  font-size: 15px;
+  font-weight: 500;
+  color: #242424;
+  margin-left: 0px;
+  line-height: 21px;
+}
+<<<<<<< HEAD:zc_frontend/src/pages/preferences/styles/NotificationPreference.module.css
+.itemTitle1 span {
+  color: #1A61DB;
+=======
+.itemTitle1 .spanL {
+  display: flex;
+  flex-direction: row;
+  color: #1a61db;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:topbar/src/styles/NotificationPreference.module.css
+  font-size: 13px;
+  font-size: 15px;
+  font-weight: normal;
+  font-family: Lato;
+}
+.itemTitle1 .spanL .quest {
+  align-self: center;
+}
+.radio {
+  padding: 15px;
+  font-size: 13px;
+  display: flex;
+  flex-direction: row;
+  font-family: Lato;
+  margin-top: -15px;
+  margin-bottom: -20px;
+}
+.radio label {
+  margin-left: 19px;
+  justify-content: center;
+  font-family: Lato;
+  font-weight: 400;
+  font-size: 13px;
+<<<<<<< HEAD:zc_frontend/src/pages/preferences/styles/NotificationPreference.module.css
+  color: #3A3A3A;
+=======
+  color: #3a3a3a;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:topbar/src/styles/NotificationPreference.module.css
+  line-height: 21px;
+  align-self: center;
+}
+
+input[type='checkbox'] {
+  margin-right: 19px;
+  border-color: #00b87c;
+<<<<<<< HEAD:zc_frontend/src/pages/preferences/styles/NotificationPreference.module.css
+  background-color: #00b87c
+}
+
+.checkbox {
+=======
+  background-color: #00b87c;
+}
+
+.markbox {
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:topbar/src/styles/NotificationPreference.module.css
+  position: relative;
+  padding: 10px;
+  font-size: 13px;
+  color: #3a3a3a;
+  font-family: Lato;
+<<<<<<< HEAD:zc_frontend/src/pages/preferences/styles/NotificationPreference.module.css
+  margin-top: -16px;
+  margin-bottom: 25px;
+  height: 21px;
+=======
+  margin-top: -10px;
+  margin-bottom: 20px;
+  height: 21px;
+  text-align: left;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:topbar/src/styles/NotificationPreference.module.css
+}
+.markbox label {
+  padding: 10px 5px 3px;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  display: block;
+  font-weight: 400;
+  font-size: 13px;
+<<<<<<< HEAD:zc_frontend/src/pages/preferences/styles/NotificationPreference.module.css
+  color: #3A3A3A;
+=======
+  color: #3a3a3a;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:topbar/src/styles/NotificationPreference.module.css
+  overflow-wrap: break-word;
+}
+.line {
+  position: relative;
+  width: 600px;
+  height: 1px;
+  border: 1px thin rgba(196, 196, 196, 0.3);
+<<<<<<< HEAD:zc_frontend/src/pages/preferences/styles/NotificationPreference.module.css
+  background-color: #C4C4C4;
+=======
+  background-color: #c4c4c4;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:topbar/src/styles/NotificationPreference.module.css
+  position: relative;
+  margin-left: 30px;
+  margin-bottom: 5px;
+  margin-top: 16px;
+  transform: rotate(180deg);
+}
+.itemTitle2 {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 16px;
+  font-family: Lato;
+  margin-top: 10px;
+}
+<<<<<<< HEAD:zc_frontend/src/pages/preferences/styles/NotificationPreference.module.css
+.itemTitle2 span {
+  color: #3A3A3A;
+  font-size: 13px;
+  margin-left: 0px;
+  margin-bottom: 4px;
+  margin-top: -10px;
+}
+.itemTitle2 .spanSmall {
+  color: #1A61DB;
+=======
+.itemTitle2 .spanBlock {
+  color: #3a3a3a;
+  font-size: 13px;
+  margin-right: auto;
+  margin-bottom: 4px;
+  margin-top: 5px;
+  float: left;
+  text-align: left;
+}
+.itemTitle2 .spanSmall {
+  color: #1a61db;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:topbar/src/styles/NotificationPreference.module.css
+}
+.textarea {
+  border-color: 1px #e5e5e5;
+  outline: none;
+  resize: none;
+  margin-top: 10px;
+  overflow: hidden;
+  height: 98px;
+  width: 520px;
+<<<<<<< HEAD:zc_frontend/src/pages/preferences/styles/NotificationPreference.module.css
+=======
+  font-size: 13px;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:topbar/src/styles/NotificationPreference.module.css
+  margin-bottom: 0px;
+}
+
+.list {
+  position: inherit;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  width: 97%;
+  margin-left: 19px;
+}
+
+.selectButton {
+  width: 115px;
+  height: 35px;
+  border-radius: 5px;
+  border-color: 2px #e5e5e5;
+  font-size: 13px;
+  font-family: lato;
+  font-weight: normal;
+  border: 1px solid #e0e0e0;
+<<<<<<< HEAD:zc_frontend/src/pages/preferences/styles/NotificationPreference.module.css
+  color: #3A3A3A;
+=======
+  color: #3a3a3a;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:topbar/src/styles/NotificationPreference.module.css
+  margin-top: 24px;
+}
+.listChild p {
+  color: #999999;
+  text-align: center;
+  align-self: center;
+  font-size: 12px;
+  font-family: Lato;
+  font-weight: 900;
+  font-style: normal;
+  margin-top: 7px;
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-top: 24px;
+}
+.inputContainer label {
+  position: absolute;
+  pointer-events: none;
+  transform: translate(0, 9px) scale(1);
+  transform-origin: top left;
+  transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  color: #3a3a3a;
+  font-size: 13px;
+  line-height: 1;
+  left: 16px;
+}
+
+.inputContainer:focus-within label {
+  transform: translate(0, 5px) scale(0.8);
+  color: #3a3a3a;
+}
+
+.textInput {
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: 173px;
+  height: 39px;
+  outline: none;
+  z-index: 0;
+}
+
+/* ======================================= */
+/* Michael's sound check stylings */
+
+.button {
+  margin-top: 8px;
+  background: whitesmoke;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 5px 5px 3px;
+  margin-bottom: 16px;
+<<<<<<< HEAD:zc_frontend/src/pages/preferences/styles/NotificationPreference.module.css
+  color: #3A3A3A;
+=======
+  color: #3a3a3a;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:topbar/src/styles/NotificationPreference.module.css
+  border: 1px solid #e5e5e5;
+  outline: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  width: 117px;
+  height: 30px;
+  text-align: center;
+  line-height: 21px;
+}
+
+.msg2 {
+  margin-left: 10px;
+  font-size: 1rem;
+  color: rgb(85, 84, 84);
+}
+
+.msg3 {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 21px;
+<<<<<<< HEAD:zc_frontend/src/pages/preferences/styles/NotificationPreference.module.css
+  color: #3A3A3A;
+=======
+  color: #3a3a3a;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:topbar/src/styles/NotificationPreference.module.css
+}
+
+.mute {
+  display: flex;
+  flex-direction: column;
+<<<<<<< HEAD:zc_frontend/src/pages/preferences/styles/NotificationPreference.module.css
+  align-items: left;
+  margin-top: -12px;
+=======
+  margin-top: -12px;
+  justify-content: flex-start;
+  align-items: flex-start;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:topbar/src/styles/NotificationPreference.module.css
+}
+
+.picksound {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  margin-left: 12px;
+  color: rgb(85, 84, 84);
+}
+
+.share {
+  display: flex;
+  justify-content: space-between;
+  width: 488px;
+  margin-top: 5px;
+  flex-direction: row;
+}
+
+.lounge {
+  /* display:flex; */
+  color: rgb(85, 84, 84);
+}
+
+.dropdown {
+  margin-top: 5px;
+}
+
+.dropdown2 {
+  margin-top: 5px;
+}
+
+.dropdown .button2 {
+  padding-right: 90px;
+  padding-left: 5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 180px;
+  height: 35px;
+  cursor: pointer;
+  font-size: 12px;
+  border: 1px solid rgb(218, 215, 215);
+  border-radius: 4px;
+<<<<<<< HEAD:zc_frontend/src/pages/preferences/styles/NotificationPreference.module.css
+  color: #3A3A3A;
+=======
+  color: #3a3a3a;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:topbar/src/styles/NotificationPreference.module.css
+  outline: none;
+}
+
+.section2 {
+  margin-top: 15px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.deliver {
+  margin-top: 10px;
+}
+
+.when {
+  font-size: 13px;
+<<<<<<< HEAD:zc_frontend/src/pages/preferences/styles/NotificationPreference.module.css
+  color: #3A3A3A;
+=======
+  color: #3a3a3a;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:topbar/src/styles/NotificationPreference.module.css
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+  margin-left: 16px;
+  align-self: center;
+}
+
+.dropdown3 {
+  margin-top: 5px;
+  margin-left: 16px;
+}
+
+.button4 {
+  padding-right: 100px;
+  padding-left: 5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  cursor: pointer;
+  border: 1px solid rgb(218, 215, 215);
+  border-radius: 4px;
+  font-size: 13px;
+<<<<<<< HEAD:zc_frontend/src/pages/preferences/styles/NotificationPreference.module.css
+  color: #3A3A3A;
+=======
+  color: #3a3a3a;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:topbar/src/styles/NotificationPreference.module.css
+  outline: none;
+  width: 273px;
+  height: 39px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+/* ----------------------------- */
+.section3 {
+<<<<<<< HEAD:zc_frontend/src/pages/preferences/styles/NotificationPreference.module.css
+  height: 90px;
+  margin-bottom: 16px;
+=======
+  margin-top: 15px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+>>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:topbar/src/styles/NotificationPreference.module.css
+}
+
+.mobile {
+  margin-top: 25px;
+  color: rgb(85, 84, 84);
+}
+
+.checkbox3 {
+  margin-top: 2px;
+}
+
+/* -------------------------------------- */
+@media screen and (max-width: 768px) {
+  .notify {
+    margin-left: 255px;
+    position: relative;
+    width: 85%;
+    height: 220vh;
+    align-items: left;
+    left: 40%;
+  }
+
+  .notifywrapper {
+    margin-left: 10px;
+  }
+
+  .picksound {
+    flex-direction: column;
+  }
+
+  .lounge {
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+
+  .section2 {
+    margin-left: 2px;
+  }
+
+  .head {
+    width: 109%;
+  }
+
+  .head2 {
+    margin-top: -90px;
+    width: 55%;
+  }
+
+  .section3 {
+    padding: 16px;
+    margin-left: 2px;
+    margin-top: 114px;
+  }
+
+  .head3 {
+    margin-top: -90px;
+    width: 55%;
+  }
+
+  .button5 {
+    padding-right: 70px;
+  }
+
+  .email {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 424px) {
+  .notify {
+    margin-left: 243px;
+  }
+}
+
+/* Tuasegun's media query */
+@media (max-width: 450px) {
+  .itemTitle1 {
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px;
+  }
+  .line {
+    width: 350px;
+    height: 16px;
+    border-bottom: 1px solid #c4c4c4;
+    position: relative;
+    margin: 0 auto;
+    margin-left: 30px;
+  }
+  .textarea {
+    border-color: 1px #e5e5e5;
+    outline: none;
+    resize: none;
+    margin-top: 10px;
+    overflow: hidden;
+    height: 98px;
+    width: 350px;
+    font-size: 13px;
+    font-weight: normal;
+  }
+  .list {
+    display: flex;
+    flex-direction: column;
+  }
+  .listChild {
+    margin-top: 10px;
+  }
+}
