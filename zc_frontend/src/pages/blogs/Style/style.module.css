@@ -116,15 +116,31 @@
 .blog_newletter .newletter_text a:hover {
   color: dodgerblue;
 }
+.commentBtn{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #00b87c66;
+  border-radius: 5px;
+  border: 1px solid #00b87c66;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px;
+  cursor: pointer;
 
+}
 .comment_form textarea {
   width: 100%;
   padding: 10px;
   font-family: 'Gilroy', sans-serif;
-  border: 2px solid #4e4e4e;
+  border: 2px solid #919191;
   border-radius: 10px;
 }
+.comment_form textarea{
 
+  outline-color: #00b87c;
+}
 .comment_form button {
   padding: 8px;
   font-family: 'Gilroy', sans-serif;
@@ -199,13 +215,15 @@
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
-  width: 42rem;
+  width: 42rem
+  /* max-width: 42rem;
+  overflow-x: hidden; */
 }
+
 .dot span {
   font-size: 30px;
 }
-.avatar img {
-}
+
 .comment_content {
   margin-bottom: 50px;
 }
@@ -267,7 +285,13 @@ form textarea {
 .keep_reading_text .getting_text {
   font-size: 0.8rem;
 }
+.getting_text span {
+  font-size: 0.8rem;
+  color: dodgerblue;
+  padding-top: 2rem;
+  cursor: pointer;
 
+}
 .keep_reading_text .getting_text a {
   text-decoration: none;
   color: dodgerblue;
@@ -282,6 +306,10 @@ form textarea {
 
 .date_min p {
   font-size: 0.8rem;
+  font-weight: 700;
+  color: black;
+  padding-top: 20px;
+
 }
 
 @media screen and (max-width: 600px) {
@@ -305,6 +333,7 @@ form textarea {
   .blogimage img {
     width: 100%;
     height: 200px;
+    cursor: pointer;
   }
 
   .blog_newletter {

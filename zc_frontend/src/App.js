@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import Home from './pages/home'
 import Login from './pages/login'
 import SignUp from './pages/signup'
@@ -11,7 +11,8 @@ import Features from './pages/features'
 import Resources from './pages/resources'
 import AppsAndIntegrations from './pages/apps-integrations'
 import Careers from './pages/careers'
-import Blogs from './pages/blogs'
+import Blogs from './pages/blogs/components/index'
+import Check from './pages/blogs/components/check'
 import Download from './pages/download'
 import ContactUs from './pages/contact-us'
 import Pricing from './pages/pricing'
@@ -96,8 +97,14 @@ const App = () => {
           <Careers />
         </Route>
         <Route path="/blogs">
+          <Check />
+        </Route>
+        <Route path="/blogs/:id">
           <Blogs />
         </Route>
+        {/* <Route path="/blogs/:id/comments">
+          <Check />
+        </Route> */}
         <Route path="/apps-integrations">
           <AppsAndIntegrations />
         </Route>

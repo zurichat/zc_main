@@ -1,28 +1,17 @@
 import React from 'react'
-import styles from './Style/style.module.css'
-import BlogContent from './components/blogContent'
-import NewsLetter from './components/newsLetterSection'
-import Comments from './components/comments'
-import RelatedArticles from './components/relatedArticles'
-import Footer from '../../components/externalPagesComponents/Footer/Footer'
-import Header from '../../components/externalPagesComponents/Header'
-const index = () => {
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Blog from './components'
+const Bolgs = () => {
   return (
     <>
-      <Header />
-      <div className={styles.Blog_container}>
-        <div className={styles.Blog_text}>
-          <BlogContent />
-          <NewsLetter />
-          <Comments />
-        </div>
-        <div className={styles.keep_reading}>
-          <RelatedArticles />
-        </div>
-      </div>
-      <Footer />
+      <Router>
+        <Switch>
+          <Route path="/blogs" exact components={Blog} />
+          <Route path="/blogs/:_id" exact components={Blog} />
+        </Switch>
+      </Router>
     </>
   )
 }
 
-export default index
+export default Bolgs

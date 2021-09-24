@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
 import FormWrapper from '../../components/AuthFormWrapper'
 import styles from '../../styles/AuthFormElements.module.css'
-// import axios from 'axios'
+import axios from 'axios' // by me
 
 const Index = ({ resetCode }) => {
   const [password, setPassword] = useState('')
@@ -26,7 +26,7 @@ const Index = ({ resetCode }) => {
       <section id={styles.authFormContainer}>
         <FormWrapper
           header="Enter your new password"
-          email={email}
+          // email={email} by me
           // handleSubmit={handleSubmit}
         >
           <AuthInputBox
@@ -37,7 +37,7 @@ const Index = ({ resetCode }) => {
             placeholder="Enter your new password"
             value={password}
             setValue={setPassword}
-            onFocus={displayImage}
+            // onFocus={displayImage} by me
             // error={error}
           />
 

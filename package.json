@@ -41,6 +41,7 @@
     "react-device-detect": "^1.17.0",
     "react-dropzone": "^11.4.0",
     "react-multi-email": "^0.5.3",
+    "react-read-more-read-less": "^1.0.7",
     "react-transition-group": "^4.4.2",
     "yarn": "^1.22.11"
   },

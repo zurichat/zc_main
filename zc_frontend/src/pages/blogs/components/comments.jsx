@@ -5,7 +5,7 @@ import { UitCommentDots } from '@iconscout/react-unicons-thinline'
 import Like from '../assets/thumbs-up-white.svg'
 import Avatar from '../assets/user.svg'
 import { TransitionGroup } from 'react-transition-group'
-
+import { useParams, useHistory } from 'react-router-dom'
 import {
   UilFacebookF,
   UilTwitter,
@@ -18,7 +18,8 @@ const Comments = () => {
   const [comment_content, setComment] = useState('')
   const [PostComment, setPostComment] = useState(0)
   const [show, setShow] = useState(false)
-
+  const history = useHistory()
+  const { _id } = useParams()
   const handleClear = () => {
     setComment('')
   }
@@ -26,23 +27,27 @@ const Comments = () => {
   const handleShow = () => {
     setShow(!show)
   }
-  // https://api.zuri.chat/posts
+  // https://api.zuri.chat/posts   post comment
   const handleSubmit = e => {
     e.preventDefault()
 
     axios
-      .post('https://api.zuri.chat/posts/61464f251a5607b13c00bc48/comments', {
+      .post(`https://api.zuri.chat/posts/${_id}/comments`, {
         comment_content: comment_content
       })
       .then(res => {
         console.log(res.data)
         setComment(res.data.comment_content)
+        history.push(`/blogs/${_id}/comments`)
       })
+      .catch(err => console.log(err))
     handleClear()
   }
 
   useEffect(() => {
-    const url = 'https://api.zuri.chat/posts/61464f251a5607b13c00bc48/comments'
+    // get comments
+    // https://api.zuri.chat/posts/61464f251a5607b13c00bc48/comments
+    const url = `https://api.zuri.chat/posts/${_id}/comments`
 
     const fetchData = async () => {
       try {
@@ -62,14 +67,14 @@ const Comments = () => {
   }, [])
 
   useEffect(() => {
-    const url = ' https://api.zuri.chat/posts'
+    const url = `https://api.zuri.chat/posts/${_id}/comments`
 
     const fetchPostComment = async () => {
       try {
         const response = await fetch(url)
         const json = await response.json()
 
-        console.log(json.data[0].comments, 'Mwafrika Comment')
+        // console.log(json.data[0].comments, 'Mwafrika Comment')
         setPostComment(json.data[0].comments)
       } catch (error) {
         console.log('error', error)
@@ -98,7 +103,11 @@ const Comments = () => {
             placeholder="Comment here"
             onClick={handleShow}
           ></textarea>
-          <button type="submit" onClick={handleSubmit}>
+          <button
+            className={style.commentBtn}
+            type="submit"
+            onClick={handleSubmit}
+          >
             Comment
           </button>
         </form>
@@ -107,9 +116,8 @@ const Comments = () => {
       <div className={style.comment_box}>
         <div className={style.comment_like}>
           <p>
-            <a href="">
-              <img src={Like} alt="" />
-            </a>
+            <img src={Like} alt="" />
+
             <span>20</span>
           </p>
           <p>
