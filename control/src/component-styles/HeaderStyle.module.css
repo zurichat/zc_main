@@ -1,13 +1,18 @@
 .navbar {
   border-bottom: 1px solid rgba(187, 186, 231, 0.15);
   padding: 0.5rem 1rem;
+  top: 0;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  background-color: white;
 }
 
 .navbar_toggle_icon span {
   display: block;
   width: 30px;
   height: 3px;
-  margin-bottom: 5px;
+  margin: 5px 0;
   position: relative;
   text-align: center;
   justify-content: center;
@@ -28,33 +33,41 @@
   margin-right: 40px;
 }
 
-.navLinkSignUp {
-  margin-right: 10px;
-}
-
 .image {
   margin: auto;
 }
-
+.navbarBrand {
+  padding-left: 55px;
+}
 .navbarBrand span {
   padding: 0.5rem;
+  font-size: 22px;
   margin: 0 !important;
 }
 
+.signs {
+  padding-right: 6rem;
+}
+.signs li {
+  padding: 8px 20px;
+}
 .signU {
   color: #00b87c;
   font-weight: 400;
-  border-radius: 3px;
+  font-size: 18px;
+  padding: 8px 10px;
 }
 
 .signU:hover {
-  background-color: #00b87c;
-  color: white;
+  border-bottom: 0.2rem solid #00b87c;
 }
 
 .signIn {
   background-color: #00b87c;
   color: white !important;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 8px 20px;
   border-radius: 3px;
 }
 
@@ -65,26 +78,47 @@
 
 .item {
   color: black;
-  font-weight: 300;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 8px 5px;
+}
+.navbarNav li span:hover {
+  border-bottom: 0.2rem solid #00b87c;
+}
+.toggle {
+  margin-right: 12px;
 }
 
-@media only screen and (min-width: 1440px) {
-  .image {
-    position: relative;
-  }
-
-  .zuriChat {
-    font-size: 18px;
-    color: black;
-    position: relative;
-    top: 5px;
-    font-weight: bold;
-    margin-left: 5px;
-    text-decoration: none;
-  }
-
+@media screen and (max-width: 768px) {
   .navbarBrand {
-    text-decoration: none;
-    padding-left: 20px;
+    padding-left: 12px;
+  }
+  .navbarNav li {
+    padding: 5px 0;
+  }
+  .navbarNav li span:hover {
+    border-bottom: none;
+  }
+  .signs {
+    display: inline-flex;
+    padding: 0 10px;
+  }
+  .signs li {
+    padding: 0 20px;
+  }
+  .signU:hover {
+    border-bottom: none;
+    color: #00b87c;
+  }
+}
+@media screen and (max-width: 414px) {
+  .navbarNav li span {
+    padding-left: 0;
+  }
+  .navbarBrand {
+    padding-left: 0;
+  }
+  .toggle {
+    margin-right: 0;
   }
 }
