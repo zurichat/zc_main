@@ -16,10 +16,11 @@ body {
 }
 
 .eventsMainWrapper {
-  padding: 5% 2.5% 5% 2.5%;
+  padding: 1.5% 0 0 0;
 }
 
 .heroSection {
+  padding: 5% 2% 0 2%;
   font-family: inherit;
   display: flex;
   align-items: stretch;
@@ -46,7 +47,7 @@ body {
   width: auto;
 }
 .eventsMeetSection {
-  padding: 10% 0;
+  padding: 10% 2.5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -58,28 +59,28 @@ body {
   height: 400px;
 }
 .eventsMeetTextWrapper {
-  width: 40%;
+  width: auto;
 }
 .eventsMeetLogoBlock {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 15px;
+  /* justify-content: flex-start; */
 }
 .boldText {
-  font-weight: 800;
-  font-size: 25px;
+  font-weight: bold;
+  font-size: 30px;
   color: #333333;
-  margin: 0 5px;
+  margin-left: 5px;
 }
 .logoText {
-  font-size: 25px;
+  font-size: 30px;
   font-weight: normal;
   color: #333333;
+  margin-left: 5px;
 }
 
 .eventsMeetTextWrapper > h2 {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   font-size: 32px;
   font-weight: 900;
   color: #242424;
@@ -87,8 +88,9 @@ body {
 .eventsMeetTextWrapper > p {
   font-size: 20px;
   color: #3a3a3a;
-  font-weight: 700;
-  margin-bottom: 15px;
+  font-weight: normal;
+  margin-bottom: 5px;
+  width: 100%;
 }
 
 .checkoutLinkBlock {
@@ -107,17 +109,18 @@ body {
 
 .eventsUpcomingMeetsSection {
   width: 100%;
+  padding: 0 10% 5% 10%;
 }
 .eventsUpcomingMeetsHeaderBox {
   width: 100%;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 .eventsUpcomingMeetsHeaderBox > h2 {
   font-size: 32px;
   font-weight: 900;
   color: #242424;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 .eventsUpcomingMeetsHeaderBox > p {
   color: #3a3a3a;
@@ -139,6 +142,10 @@ body {
 .eventsBlock > h3,
 .eventsBlock > p {
   font-size: 18px;
+  color: #242424;
+}
+.eventsBlock > h3{
+  font-weight: 900;
 }
 .eventsBlockLinkBlock {
   display: flex;
@@ -197,7 +204,7 @@ body {
   }
   .eventsMeetTextWrapper > p {
     margin-bottom: 10px;
-    max-width: 60%;
+    max-width: 100%;
   }
 
   .checkoutLinkBlock {
@@ -214,6 +221,9 @@ body {
     font-weight: 700;
     margin-right: 5px;
   }
+  .eventsUpcomingMeetsSection {
+    padding: 0 5% 5% 5%;
+  }
   .eventsUpcomingMeetsHeaderBox {
     padding-bottom: 40px;
     border-bottom: 1px solid #dfdfdf;
@@ -222,15 +232,14 @@ body {
     margin-bottom: 10px;
   }
   .eventsUpcomingMeetsHeaderBox > p {
-    max-width: 80%;
+    max-width: 100%;
   }
 
   .eventsBlock {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    border-bottom: 1px solid #dfdfdf;
-    padding: 40px 0;
+    padding: 20px 0;
     max-width: 100%;
   }
   .eventsBlock > h3,
@@ -283,7 +292,7 @@ body {
   }
   .eventsMeetTextWrapper > p {
     margin-bottom: 10px;
-    max-width: 60%;
+    max-width: 80%;
   }
 
   .checkoutLinkBlock {
@@ -300,6 +309,9 @@ body {
     font-weight: 700;
     margin-right: 5px;
   }
+  .eventsUpcomingMeetsSection {
+    padding: 0 5% 5% 5%;
+  }
   .eventsUpcomingMeetsHeaderBox {
     padding-bottom: 40px;
     border-bottom: 1px solid #dfdfdf;
@@ -308,14 +320,13 @@ body {
     margin-bottom: 10px;
   }
   .eventsUpcomingMeetsHeaderBox > p {
-    max-width: 80%;
+    max-width: 100%;
   }
 
   .eventsBlock {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    border-bottom: 1px solid #dfdfdf;
     padding: 40px 0;
     max-width: 100%;
   }
@@ -391,7 +402,7 @@ body {
     border-bottom: 1px solid #dfdfdf;
   }
   .eventsUpcomingMeetsHeaderBox > h2 {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   .eventsUpcomingMeetsHeaderBox > p {
     max-width: 80%;
@@ -401,7 +412,6 @@ body {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    border-bottom: 1px solid #dfdfdf;
     padding: 40px 0;
     max-width: 100%;
   }
@@ -448,13 +458,13 @@ body {
     width: 40%;
   }
   .eventsMeetLogoBlock {
-    margin-bottom: 15px;
+    margin-bottom: 0px;
   }
   .eventsMeetTextWrapper > h2 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .eventsMeetTextWrapper > p {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     max-width: auto;
   }
 
@@ -478,7 +488,7 @@ body {
   }
   .eventsUpcomingMeetsHeaderBox > h2 {
     font-size: 32px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .eventsUpcomingMeetsHeaderBox > p {
     max-width: 40%;
@@ -486,9 +496,8 @@ body {
 
   .eventsBlock {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #dfdfdf;
     padding: 40px 0;
     max-width: 100%;
     margin: 0 auto;
@@ -496,6 +505,7 @@ body {
   .eventsBlock > h3,
   .eventsBlock > p {
     font-size: 18px;
+    margin-bottom: 0;
   }
 }
 
@@ -536,14 +546,14 @@ body {
     width: 40%;
   }
   .eventsMeetLogoBlock {
-    margin-bottom: 15px;
+    margin-bottom: 0px;
   }
   .eventsMeetTextWrapper > h2 {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
   .eventsMeetTextWrapper > p {
-    margin-bottom: 15px;
-    max-width: auto;
+    margin-bottom: 10px;
+    max-width: 100%;
   }
 
   .checkoutLinkBlock {
@@ -560,13 +570,16 @@ body {
     font-weight: 700;
     margin-right: 5px;
   }
+  .eventsUpcomingMeetsSection {
+    padding: 0 10% 5%;
+  }
   .eventsUpcomingMeetsHeaderBox {
     width: 100%;
     padding-bottom: 30px;
   }
   .eventsUpcomingMeetsHeaderBox > h2 {
     font-size: 32px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
   .eventsUpcomingMeetsHeaderBox > p {
     max-width: 40%;
@@ -576,7 +589,6 @@ body {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    border-bottom: 1px solid #dfdfdf;
     padding: 40px 0;
     max-width: 100%;
     margin: 0 auto;
@@ -584,6 +596,7 @@ body {
   .eventsBlock > h3,
   .eventsBlock > p {
     font-size: 18px;
+    margin-bottom: 0;
   }
 }
 
@@ -624,14 +637,14 @@ body {
     width: 40%;
   }
   .eventsMeetLogoBlock {
-    margin-bottom: 15px;
+    margin-bottom: 0px;
   }
   .eventsMeetTextWrapper > h2 {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
   .eventsMeetTextWrapper > p {
-    margin-bottom: 15px;
-    max-width: auto;
+    margin-bottom: 5px;
+    max-width: 100%;
   }
 
   .checkoutLinkBlock {
@@ -650,11 +663,11 @@ body {
   }
   .eventsUpcomingMeetsHeaderBox {
     width: 100%;
-    padding-bottom: 30px;
+    padding-bottom: 60px;
   }
   .eventsUpcomingMeetsHeaderBox > h2 {
     font-size: 32px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
   .eventsUpcomingMeetsHeaderBox > p {
     max-width: 40%;
@@ -662,9 +675,8 @@ body {
 
   .eventsBlock {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #dfdfdf;
     padding: 40px 0;
     max-width: 100%;
     margin: 0 auto;
@@ -672,5 +684,6 @@ body {
   .eventsBlock > h3,
   .eventsBlock > p {
     font-size: 18px;
+    margin-bottom: 0;
   }
 }
