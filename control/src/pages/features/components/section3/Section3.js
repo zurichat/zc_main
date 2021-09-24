@@ -8,10 +8,10 @@ import list from '../../assets/to_do_list_icon.png'
 
 const Section3 = () => {
   return (
-    <div className={styles.section3}>
+    <div id="featuresSection">
       <div className={styles.section3TopTextsWrapper}>
         <h3 className={styles.remote}>
-          Working remotely, more intriguing than ever
+          Working remotely more intriguing than ever
         </h3>
         <p className={styles.work}>
           Zuri Chat is where work meets fun. Activate body and mind, maintain

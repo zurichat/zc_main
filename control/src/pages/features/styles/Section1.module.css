@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
 .section1 {
-  margin-top: 60px;
+  margin-top: 40px;
   min-height: 100vh;
 }
 .section1Wrapper {
@@ -13,6 +15,7 @@
 }
 .section1TextWrapper {
   width: 90%;
+  padding-top: 2px;
   /* display: flex; */
   /* margin-top: 15px;
   padding: 40px;
@@ -33,7 +36,7 @@
   font-style: normal;
   font-weight: 800;
   font-size: 2.8rem;
-  line-height: 130%;
+  line-height: 133%;
   color: #242424;
 }
 .section1TextWrapper p {
@@ -41,7 +44,7 @@
   font-style: normal;
   font-weight: normal;
   font-size: 1.75rem;
-  line-height: 130%;
+  line-height: 143%;
   color: #3a3a3a;
 }
 .buttonsWrapper {
@@ -51,16 +54,18 @@
   justify-content: space-between;
   align-items: center;
 }
+/* button { */
+  /* padding: 22px 72px; */
 /* button {
   padding: 26px 60px;
   font-weight: 600;
   font-size: 1.2rem;
   line-height: 28px;
   border-radius: 3px;
-  cursor: pointer;
-} */
+  /* cursor: pointer; */
+/* }  */
 .getStarted {
-  padding: 26px 75px;
+  padding: 22px 78px;
   /* background-color: #b5b6b6; */
   background-color: #00b87c;
   border: 2px solid #00b87c;
@@ -71,6 +76,8 @@
   background-color: transparent;
   color: #00b87c;
   border: 2px solid #00b87c;
+  padding: 22px 78px;
+  /* box-shadow: inset 0 0 0 1px #00b87c; */
 }
 /* .features:hover {
   box-sizing: border-box;
@@ -108,12 +115,13 @@
     font-size: 40px;
     margin-bottom: 0px;
   }
-  button {
-    padding: 10px;
+  .features {
+    padding: 10px 20px 10px 20px;
     font-size: 18px;
   }
   .getStarted {
     padding: 10px 20px 10px 20px;
+    font-size: 18px;
   }
 }
 
@@ -144,14 +152,26 @@
     justify-content: space-between;
     align-items: center;
   }
-  /* button {
+
+   .features {
     width: 48%;
     height: 75px;
     font-weight: normal;
     font-size: 0.9rem;
     line-height: 19px;
     letter-spacing: 0.02em;
-  } */
+    margin-right: 55px;
+  }
+  .getStarted{
+    width: 124%;
+    height: 75px;
+    font-weight:normal ;
+    font-size: 0.9rem;
+    line-height: 19px;
+    letter-spacing: 0.02em;
+    margin-left: 55px;
+  }
+  
 
   .section1ImageWrapper {
     margin-top: 50px;
@@ -176,6 +196,20 @@
   .section1TextWrapper h2 {
     width: 100%;
     font-size: 1.8rem;
+  }
+  .getStarted {
+    width: 55%;
+    height: 56px;
+    font-size: 0.7rem;
+    margin-left: 30px;
+    padding-right: 40px;
+  }
+  .features {
+    width:50%;
+    height: 56px;
+    font-size: 0.7rem;
+    margin-right: 70px;
+    padding-left: 40px;
   }
   /* button {
     width: 46%;

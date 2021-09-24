@@ -10,27 +10,22 @@ const Section1 = () => {
             <h4>Zuri Chat Features</h4>
             <h2>A platform for your team, work and fun.</h2>
             <p>
-              Build the right connection with your team by using special
-              features like Channels, DMs to complete your work goals.
+              Build the right connection with your team by<br /> using special
+              features like Channels, DMs to<br /> complete your work goals.
             </p>
             <div className={styles.buttonsWrapper}>
-              <button
-                type="button"
-                className={styles.getStarted}
-                onClick={e => {
-                  e.preventDefault()
-                  window.location.replace('https://zuri.chat/signup')
-                }}
-              >
+              <a href="https://zuri.chat/signup">
+                <button type="button"
+                className={styles.getStarted}>
                 Get Started
-              </button>
+              </button></a>
               <button
                 type="button"
                 className={styles.features}
                 onClick={e => {
                   e.preventDefault()
                   window.location.replace(
-                    './components/Section3/#featuresSection'
+                    "#featuresSection"
                   )
                 }}
               >
