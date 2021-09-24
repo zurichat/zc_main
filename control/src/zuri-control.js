@@ -18,27 +18,27 @@ export const GetUserInfo = async () => {
   let user = JSON.parse(sessionStorage.getItem('user'))
   let token = sessionStorage.getItem('token')
 
-    if((user && token) !== null){
-  try {
-    const response = await axios
-      .get(`https://api.zuri.chat/users/${user.id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`
+  if ((user && token) !== null) {
+    try {
+      const response = await axios.get(
+        `https://api.zuri.chat/users/${user.id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
         }
-      });
-    console.log(response.data.data);
-    return response.data.data;
+      )
+      console.log(response.data.data)
+      return response.data.data
+    } catch (err) {
+      console.log(err)
+    }
+  } else {
+    console.log('YOU ARE NOT LOGGED IN, PLEASE LOGGED IN')
   }
-  catch(err) {
-    console.log(err);
-  }
-} else{
-  console.log("YOU ARE NOT LOGGED IN, PLEASE LOGGED IN")
 }
 
-}
-
-GetUserInfo();
+GetUserInfo()
 
 // const GetWorkspaceUsers = () => {
 //   // let org_id = `61459d8e62688da5302acdb1`;
