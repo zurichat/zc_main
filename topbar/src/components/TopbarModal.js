@@ -65,7 +65,7 @@ const TopbarModal = ({ members }) => {
         </div>
       )
       break
-    case 'false':
+    default:
       userPresence = 'Set yourself as active'
       toggleStatus = (
         <div className={styles.online}>
@@ -73,8 +73,6 @@ const TopbarModal = ({ members }) => {
           <p className={styles.away}>Away</p>
         </div>
       )
-      break
-    default:
   }
 
   const toggleUserPresence = () => {
