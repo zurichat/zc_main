@@ -13,6 +13,7 @@ import EditProfile from './EditProfile'
 import MembersModal from './MembersModal'
 import Downloads from './Downloads'
 import PauseNotification from './PauseNotification'
+import SetStatusModal from './SetStatusModal'
 // react icons
 
 const TopbarModal = ({ members }) => {
@@ -153,7 +154,15 @@ const TopbarModal = ({ members }) => {
           </div>
 
           <div className={styles.sectionThree}>
-            <p onClick={openStatus}>Set a status</p>
+            {/* <p onClick={openStatus}>Set a status</p> */}
+            <p onClick={() => setStatusModal(!statusModal)}>Set a status</p>
+            {statusModal && (
+              <SetStatusModal
+                statusModal={statusModal}
+                setStatusModal={setStatusModal}
+                openStatus={openStatus}
+              />
+            )}
             <p
               onClick={() => {
                 toggleUserPresence()
