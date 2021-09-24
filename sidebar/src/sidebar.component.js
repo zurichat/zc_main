@@ -1,5 +1,4 @@
-import axios from 'axios'
-import { useContext, Fragment, useState, useEffect } from 'react'
+import { Fragment, useState } from 'react'
 import useSWR from 'swr'
 import { Link } from 'react-router-dom'
 // import { URLContext } from './context/Url'
@@ -25,197 +24,23 @@ import newmessage from './verified-components/assets/icons/newmessage.svg'
 import { links } from './utils/links'
 import { navigateToUrl } from 'single-spa'
 import { Button } from '../../control/src/pages/createworkspace/components/WorkspaceHome'
+import Channels from './components/Channels'
 
 const fetcher = url => fetch(url).then(res => res.json())
 
 const Sidebar = props => {
   // const { data: channelsData } = useSWR('/api/plugin/channels', fetcher)
+
   const { data: messagesData } = useSWR('/api/plugin/messages', fetcher)
 
-  const channelsData = [
-    {
-      id: 0,
-      name: 'announcments'
-    },
-    {
-      id: 1,
-      name: 'games'
-    }
-  ]
-  // const { data: plugins } = useSWR('/api/plugin/list', fetcher)
-  // const { data: organization } = useSWR('https://api.zuri.chat/organizations/6133c5a68006324323416896', fetcher)
-  // console.log(organization)
-
-  // const { setUrl } = useContext(URLContext)
   const [show, setShow] = useState(false)
-  // console.log("user", user)
-  // const { plugins, setPlugins } = useContext(PluginContext)
 
-  // // const user = JSON.parse(sessionStorage.getItem('user'))
-  // // const org_id = '6133c5a68006324323416896'
   const [showDialog, setShowDialog] = useState(false)
   const open = () => setShowDialog(true)
   const close = () => setShowDialog(false)
-  // // const [rooms, setRooms] = useState({})
   const [query, setQuery] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-
-  // // Sort room function
-
-  // // const sortRooms = (val, type) => {
-  // //   let values = [...val]
-  // //   console.log(type)
-  // //   switch (type) {
-  // //     case 'atoz':
-  // //       values.sort((a, b) => a.title.localeCompare(b.title))
-  // //       break
-  // //     case 'ztoa':
-  // //       values.sort((a, b) => b.title.localeCompare(a.title))
-  // //       break
-  // //     case 'minmax':
-  // //       values.sort((a, b) => a.members - b.members)
-  // //       break
-  // //     case 'maxmin':
-  // //       values.sort((a, b) => b.members - a.members)
-  // //       break
-  // //     default:
-  // //       break
-  // //   }
-  // //   return values
-  // // }
-
-  // const sidebarApi = async url => {
-  //   setLoading(true)
-  //   try {
-  //     const res = await axios.get(
-  //       `https://channels.zuri.chat/api/v1/sidebar/?org=1&user=43567868&format=json`
-  //     )
-  //     return res.data
-  //   } catch (err) {
-  //     return console.log(err)
-  //   }
-  // }
-
-  // // const filteredJoinedRooms = rooms?.joined_rooms ?
-  // //   rooms.joined_rooms.filter(room =>
-  // //     room.title.toLowerCase().includes(query)
-  // //   )
-  // //   : null
-  // // const filteredPublicRooms = rooms?.joined_rooms ?
-  // //   rooms.public_rooms.filter(room =>
-  // //     room.title.toLowerCase().includes(query)
-  // //   )
-  // //   : null
-
-  // useEffect(() => {
-  //   ;(async () => {
-  //     await sidebarApi().then(async res => {
-  //       // setRooms(res)
-  //       setLoading(false)
-
-  //       // console.log(sortRooms(res.public_rooms, 'ztoa'))
-  //       // console.log(sortRooms(res.public_rooms, 'atoz'))
-  //       // console.log(sortRooms(res.public_rooms, 'minmax'))
-  //       // console.log(sortRooms(res.public_rooms, 'maxmin'))
-  //     })
-  //   })()
-  // }, [])
-
-  // useEffect(() => {
-  //   axios
-  //     .get('https://api.zuri.chat/organizations/6133c5a68006324323416896')
-  //     .then(r => {
-  //       r.data.data.plugins.forEach(api_plugin => {
-  //         let homepage_url
-  //         // Get Homepage
-  //         axios.get(api_plugin).then(res => {
-  //           homepage_url = res.data.data.homepage_url
-  //           let homepage = null
-  //           let loaded = false
-  //           const reProtocol = /^https?:\/\//
-  //           const oURL = new URL(
-  //             reProtocol.test(homepage_url)
-  //               ? homepage_url
-  //               : 'http://' + homepage_url
-  //           )
-  //           const prefixLink = (url, oURL, mimeType = 'text/html') => {
-  //             let ret = reProtocol.test(url) ? url : `${oURL.origin}${url}`
-  //             return `${ret}&mimeType=${mimeType}`
-  //           }
-  //           axios
-  //             .get(prefixLink(oURL.toString()))
-  //             .then(res => {
-  //               const $ = cheerio.load(res.data)
-  //               // append stylesheet
-  //               $(`link[rel="stylesheet"]`).each(function () {
-  //                 const link = document.createElement('link')
-  //                 Object.keys(this.attribs).forEach(attr =>
-  //                   link.setAttribute(attr, this.attribs[attr])
-  //                 )
-  //                 link.setAttribute(
-  //                   'href',
-  //                   prefixLink(this.attribs.href, oURL, 'text/css')
-  //                 )
-  //                 link.setAttribute('data-plugin-res', true)
-  //                 $(this).remove()
-  //                 document.head.prepend(link)
-  //               })
-
-  //               // append scripts
-  //               $('script').each(function () {
-  //                 const script = document.createElement('script')
-  //                 Object.keys(this.attribs).forEach(attr =>
-  //                   script.setAttribute(attr, this.attribs[attr])
-  //                 )
-  //                 if (script.src) {
-  //                   script.setAttribute(
-  //                     'src',
-  //                     prefixLink(
-  //                       this.attribs.src,
-  //                       oURL,
-  //                       'application/javascript'
-  //                     )
-  //                   )
-  //                 } else {
-  //                   script.innerText = $(this).html()
-  //                 }
-  //                 $(this).remove()
-  //                 script.setAttribute('data-plugin-res', true)
-  //                 document.body.appendChild(script)
-  //               })
-  //               homepage = $('body').html()
-  //             })
-  //             .catch(e => {
-  //               homepage = `Failed to Load ${homepage_url} Plugin: ${e.message}`
-  //             })
-
-  //           // Get Sidebar Info
-  //           // console.log(`${r.data.data.sidebar_url}?org=${org_id}&user=${user.id}`)
-  //           axios
-  //             .get(
-  //               'https://sales.zuri.chat/api/v1/sidebar?org=5336&user=Devjoseph&token=FGEZJJ-ZFDGB-FDGG'
-  //             )
-  //             .then(r => {
-  //               const api_plugin = r.data.data
-  //               const plugin = {
-  //                 name: api_plugin.group_name,
-  //                 joined_rooms: api_plugin.joined_rooms,
-  //                 homepage,
-  //                 homepage_url,
-  //                 loaded
-  //               }
-  //               let _plugins = []
-  //               if (api_plugin) {
-  //                 _plugins.push(plugin)
-  //               }
-  //               console.log('plugins ', _plugins)
-  //               setPlugins(_plugins)
-  //             })
-  //         })
-  //       })
-  //     })
-  // }, [setPlugins])
 
   return (
     <div className={styles.container}>
@@ -330,43 +155,9 @@ const Sidebar = props => {
             </Fragment>
           ))}
           </Dropdown>*/}
-      <Dropdown onAddButtonClick={open} showAddButton={true} title="Channels">
-        {channelsData.map((channel, index) => (
-          <Fragment key={index}>
-            <span>#</span>
-            {channel.name}
-          </Fragment>
-        ))}
-      </Dropdown>
-      {/*<Dropdown
-        onAddButtonClick={open}
-        onTitleClick={() => setUrl(`https://sales.zuri.chat/`)}
-        showAddButton={true}
-        title="Sales"
-      >
-        {channelsData &&
-          channelsData.channels.map((channel, index) => (
-            <Fragment key={index}>
-              <span>#</span>
-              {channel.name}
-            </Fragment>
-          ))}
-          </Dropdown>*/}
-      {/*plugins.length > 0 &&
-        plugins.map((plugin, i) => (
-          <Fragment key={i}>
-            {plugin && (
-              <Dropdown
-                title={plugin.name}
-                plugin
-                onTitleClick={() => setUrl(plugin.homepage_url)}
-                children={plugin.joined_rooms}
-                showAddButton={true}
-                onAddButtonClick={open}
-              ></Dropdown>
-            )}
-          </Fragment>
-            ))*/}
+
+      <Channels />
+
       <Dropdown title="messages">
         {messagesData &&
           messagesData.messages.map((message, index) => (
