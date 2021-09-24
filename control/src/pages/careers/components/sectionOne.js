@@ -13,7 +13,7 @@ const SectionOne = () => (
         make work life easier, more convenient, and more productive.
       </p>
       <Link to="/signup">
-        <button>Join us</button>
+        <a className={styles.JoinBtn}>Join us</a>
       </Link>
     </div>
     <img src={image} alt="people" />
