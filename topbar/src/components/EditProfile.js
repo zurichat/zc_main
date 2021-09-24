@@ -1,7 +1,6 @@
 import { useRef, useState, useEffect, useContext } from 'react'
 import ProfileModal from './ProfileModal'
 
-
 import { AiFillCamera } from 'react-icons/ai'
 import avatar from '../assets/images/user.svg'
 import { ProfileContext } from '../context/ProfileModal'
@@ -47,14 +46,9 @@ const EditProfile = () => {
     setLinks(links[index])
   }
 
-
-
-
-
-    const handleImageChange = event => {
-      setState({ loading: true })
+  const handleImageChange = event => {
+    setState({ loading: true })
     if (imageRef.current.files[0]) {
-     
       let fileReader = new FileReader()
 
       fileReader.onload = function (event) {
@@ -62,16 +56,14 @@ const EditProfile = () => {
         setUserProfileImage(event.target.result)
         console.log(event.target.result)
       }
-      
+
       fileReader.readAsDataURL(imageRef.current.files[0])
-     
 
       const imageReader = event.target.files[0]
 
       const formData = new FormData()
       formData.append('image', imageReader)
-  
-  
+
       authAxios
         .patch(`/organizations/${orgId}/members/${user._id}/photo`, formData)
         .then(res => {
@@ -81,8 +73,8 @@ const EditProfile = () => {
           toast.success('User Image Updated Successfully', {
             position: 'bottom-center'
           })
-        }).then(res => {
-         
+        })
+        .then(res => {
           return authAxios.get(`/organizations/${orgId}/members/${user._id}/`)
         })
         .catch(err => {
@@ -92,21 +84,12 @@ const EditProfile = () => {
             position: 'bottom-center'
           })
         })
-
     }
   }
 
   useEffect(() => {
     // handleImageChange()
-  },[userProfileImage])
-
-
-
-
-
-
-
-
+  }, [userProfileImage])
 
   // const handleImageChange = event => {
   //   setState({ loading: true })
@@ -124,20 +107,15 @@ const EditProfile = () => {
   //   }
   //   reader.readAsDataURL(file)
 
-    // let fileReader = new FileReader();
+  // let fileReader = new FileReader();
 
-    // fileReader.onload = function (event) {
-    //   avatarRef.current.src = event.target.result;
-    //   console.log(event.target.result);
-    // };
+  // fileReader.onload = function (event) {
+  //   avatarRef.current.src = event.target.result;
+  //   console.log(event.target.result);
+  // };
 
-    // let reader = fileReader.readAsDataURL(event.target.files[0]);
-    // console.log(reader)
-
-   
-  
-
-
+  // let reader = fileReader.readAsDataURL(event.target.files[0]);
+  // console.log(reader)
 
   useEffect(() => {
     setUserProfileImage(user.image_url)
@@ -168,7 +146,8 @@ const EditProfile = () => {
       // ],
     }
 
-    authAxios.patch(`/organizations/${orgId}/members/${user._id}/profile`, data)
+    authAxios
+      .patch(`/organizations/${orgId}/members/${user._id}/profile`, data)
       .then(res => {
         console.log(res)
         setState({ loading: false })
@@ -180,13 +159,10 @@ const EditProfile = () => {
         console.log(err)
         setState({ loading: false })
         toast.error(err?.message, {
-          position: "bottom-center"
+          position: 'bottom-center'
         })
-      }
-    )
+      })
   }
-
-
 
   return (
     <ProfileModal full title="Edit profile">
