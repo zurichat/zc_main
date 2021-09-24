@@ -12,12 +12,15 @@ const AdvancedSettings = () => {
             <div className={styles.typing}>
               <span>
                 {' '}
-                When typing code with "", &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                When typing code with "",{' '}
+                <button type="button" className={styles.btn}>
+                  Enter
+                </button>
                 &nbsp; should send the message{' '}
               </span>
               <br /> With this ticket, use{' '}
-              <button className={styles.btn}>Shift</button> &nbsp; &nbsp; &nbsp;
-              &nbsp; &nbsp; &nbsp;to send
+              <button className={styles.btn}>Shift</button>{' '}
+              <button className={styles.btn}>Enter</button> to send
             </div>
           </div>
           <div className={styles.checkformat}>
@@ -28,7 +31,10 @@ const AdvancedSettings = () => {
             </div>
           </div>
         </div>
-        <h5 className={styles.head}>When writing a message, press </h5>
+        <p className={styles.head}>
+          When writing a message, press{' '}
+          <button className={styles.btn}>Enter</button>
+        </p>
         <div className={styles.radio}>
           <div className={styles.radiosend}>
             <input type="radio" name="" id="" />
@@ -37,14 +43,14 @@ const AdvancedSettings = () => {
           <div className={styles.radiostart}>
             <input type="radio" name="" id="" />
             <div className={styles.start}>
-              Start a new line | use
+              Start a new line (use
               <button className={styles.btn}>Ctrl</button>
-              <button className={styles.btn}>Enter</button> to send ]
+              <button className={styles.btn}>Enter</button> to send )
             </div>
           </div>
         </div>
       </div>
-      <div className={styles.borderbottomone}></div>
+      <div className={styles.line}></div>
       <div className={styles.search}>
         <h5 className={styles.head}>Search Options</h5>
         <div className="check">
@@ -83,7 +89,7 @@ const AdvancedSettings = () => {
           </div>
         </div>
       </div>
-      <div className={styles.borderbottomtwo}></div>
+      <div className={styles.line}></div>
       <div className={styles.options}>
         <h5 className={styles.head}>Other Options</h5>
         <div className={styles.check}>
