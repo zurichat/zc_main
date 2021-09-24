@@ -25,17 +25,15 @@ export const GetUserInfo = async () => {
   // console.log(user.id)
 
   try {
-    const response = await axios
-      .get(`https://api.zuri.chat/users/${user.id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      });
-    console.log(response.data.data);
-    return response.data.data;
-  }
-  catch(err) {
-    console.log(err);
+    const response = await axios.get(`https://api.zuri.chat/users/${user.id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    console.log(response.data.data)
+    return response.data.data
+  } catch (err) {
+    console.log(err)
   }
 }
 
