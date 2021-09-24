@@ -85,7 +85,6 @@ const TopbarModal = ({ members }) => {
         return authAxios.get(`/organizations/${orgId}/members/${user._id}/`)
       })
       .then(res => {
-        username = res.data.data.user_name
         console.log(
           'response2',
           res.data.data.presence,
