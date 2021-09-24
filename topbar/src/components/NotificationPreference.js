@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import styles from '../styles/NotificationPreference.module.css'
 import { AiOutlineQuestionCircle } from 'react-icons/ai'
+//import { TextInput } from './TextInput'
 import { authAxios } from '../utils/Api'
 import { ProfileContext } from '../context/ProfileModal'
 
@@ -23,7 +24,6 @@ const NotificationPreference = () => {
   })
 
   const setData = () => {
-
     authAxios
       .patch(`/organizations/${orgId}/members/${user._id}/settings`, {
         settings: {
@@ -32,11 +32,11 @@ const NotificationPreference = () => {
       })
       .then(res => {
         console.log(res)
-        // setState({ loading: false })
+        setState({ loading: false })
       })
       .catch(err => {
         console.log(err?.response?.data)
-        // setState({ loading: false })
+        setState({ loading: false })
       })
   }
   const [state, setState] = useState({
@@ -151,7 +151,7 @@ const NotificationPreference = () => {
         <div className={styles.itemTitle2}>
           <div className={styles.line}></div>
           <h4 class={styles.titleSmall}>Keywords</h4>{' '}
-          <span className={styles.spanBlock}>
+          <span>
             You will be notified anything, someone uses these keywords in a
             thread
           </span>
@@ -162,7 +162,7 @@ const NotificationPreference = () => {
           <h4 class={styles.titleSmall}>Notification Schedule</h4>{' '}
           <span className={styles.spanBlock}>
             You'll only receive notifications in the hours that you choose.
-            Outside of those times, notifications will be paused.
+            Outside of those times, notifications will be paused.{' '}
             <span className={styles.spanSmall}>Learn more</span>
           </span>
         </div>
@@ -183,13 +183,13 @@ const NotificationPreference = () => {
                 </select>
               </div>
             </li>
-            <li className={styles.listChild}>
+            {/* <li className={styles.listChild}>
               <TextInput label="From" />
             </li>
 
             <li className={styles.listChild}>
               <TextInput label="to" />
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className={styles.line} />
@@ -197,9 +197,7 @@ const NotificationPreference = () => {
         {/* Michael's sound check code */}
         <div className={styles.itemTitle2}>
           <h4 className={styles.titleSmall}>Sound & appearance</h4>
-          <span className={styles.spanBlock}>
-            Choose your notification sound
-          </span>
+          <span>Choose your notification sound</span>
           <button className={styles.button}>Example Sound</button>
         </div>
 
@@ -329,7 +327,7 @@ const NotificationPreference = () => {
             </div>
           </div>
         </div>
-        <div className={styles.markbox}>
+        <div className={styles.checkbox}>
           <label>
             <input
               type="checkbox"

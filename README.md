@@ -75,7 +75,10 @@ format on save for the eslint & prettier plugins in your editor 🙃
 
 ## Contributing
 
-For detailed information on how to go about contribution. Check out the [Contribution Guide](docs/CONTRIBUTING.md)
+For detailed information on how to go about contributing to this project. Check out the
+
+- [Contribution Guide](docs/CONTRIBUTING.md)
+- [Styling Guide](docs/STYLING.md)
 
 **Before send PR or making a merge make sure you code is properly formatted.** You can easily do that by running
 

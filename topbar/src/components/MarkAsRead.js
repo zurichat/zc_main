@@ -5,6 +5,7 @@ const MarkAsRead = () => {
   const [prompt, SetPrompt] = useState(true)
 
  const handlePrompt = () => {
+  const handlePrompt = () => {
     SetPrompt(!prompt)
   }
   return (
