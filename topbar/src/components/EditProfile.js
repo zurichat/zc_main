@@ -100,7 +100,7 @@ const EditProfile = () => {
   //  e.preventDefault()
   //  setState({ loading: true })
   //
-//
+  //
   //  const data = {
   //    name: state.name,
   //    display_name: state.display_name,
@@ -111,7 +111,7 @@ const EditProfile = () => {
   //    timeZone: state.timezone
   //  }
   //}
-      // socials: [state.twitter, state.facebook, ...otherLinks],
+  // socials: [state.twitter, state.facebook, ...otherLinks],
   console.log('users', user)
 
   const addList = () => {
@@ -275,7 +275,6 @@ const EditProfile = () => {
                   />
                 </div>
               </div>
-
               <div className="double-input">
                 <div className="input-group">
                   <label htmlFor="dname" className="inputLabel">
@@ -309,38 +308,44 @@ const EditProfile = () => {
                     <option value="She/her">She/her</option>
                   </select>
                 </div>
-              </div>*/
-
-            <button onClick={handleFormSubmit} className={styles.bottomButton}>
-              {state.loading ? (
-                <Loader type="ThreeDots" color="#FFF" height={32} width={32} />
-              ) : (
-                'Save'
-              )}
-            </button>
-
-            <div className={styles.px9}>
-              {/* <AddLink setotherLinks={setotherLinks} /> */}
-              <div className={styles.formFooter}>
-                <div style={{ display: 'flex' }}>
-                  <button className={styles.cancel}>Cancel</button>
-                  <button onClick={handleFormSubmit} className={styles.save}>
-                    {state.loading ? (
-                      <Loader
-                        type="ThreeDots"
-                        color="#FFF"
-                        height={40}
-                        width={40}
-                      />
-                    ) : (
-                      'Save Changes'
-                    )}
-                  </button>
+              </div>
+              */
+              <button
+                onClick={handleFormSubmit}
+                className={styles.bottomButton}
+              >
+                {state.loading ? (
+                  <Loader
+                    type="ThreeDots"
+                    color="#FFF"
+                    height={32}
+                    width={32}
+                  />
+                ) : (
+                  'Save'
+                )}
+              </button>
+              <div className={styles.px9}>
+                {/* <AddLink setotherLinks={setotherLinks} /> */}
+                <div className={styles.formFooter}>
+                  <div style={{ display: 'flex' }}>
+                    <button className={styles.cancel}>Cancel</button>
+                    <button onClick={handleFormSubmit} className={styles.save}>
+                      {state.loading ? (
+                        <Loader
+                          type="ThreeDots"
+                          color="#FFF"
+                          height={40}
+                          width={40}
+                        />
+                      ) : (
+                        'Save Changes'
+                      )}
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <Toaster />
+              <Toaster />
               <div className="input-group">
                 <label htmlFor="what" className="inputLabel">
                   What you do
@@ -357,7 +362,6 @@ const EditProfile = () => {
                   Let people know what you do at <b>ZURI</b>
                 </p>
               </div>
-
               <div className="input-group">
                 <label htmlFor="bio" className="inputLabel">
                   Bio
@@ -385,7 +389,6 @@ const EditProfile = () => {
                   onChange={setSelectedTimezone}
                 />
               </div>
-
               <div className="input-group">
                 <label htmlFor="twitter" className="inputLabel">
                   Twitter
@@ -412,7 +415,6 @@ const EditProfile = () => {
                   name="facebook"
                 />
               </div>
-
               <div className="input-group">
                 <label className="inputLabel">
                   Additional Links <span>(5 max)</span>
