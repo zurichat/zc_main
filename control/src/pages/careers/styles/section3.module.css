@@ -62,17 +62,21 @@ button:hover {
   margin-right: 15px;
 }
 .registerNow {
+  padding: 60px;
   text-align: center;
   margin-bottom: 5rem;
 }
 .registerNow p {
+  margin-bottom: 10px;
   font-size: 24px;
   text-align: center;
 }
 .registerNow .regbtn {
-  padding: 20px 88.5px 20px 88.5px;
+  display: inline-block;
+  padding: 20px 70px 20px 70px;
   font-size: 22px;
   border: none;
+  border-radius: 3px;
   background-color: #00b87c;
   color: white;
   margin-bottom: 20px;
@@ -86,6 +90,9 @@ button:hover {
   .section3Cards {
     padding: 30px;
     grid-template-columns: auto auto;
+  }
+  .registerNow {
+    padding: 30px;
   }
 }
 
@@ -111,7 +118,14 @@ button:hover {
     text-align: center;
   }
   .registerNow .regbtn {
-    padding: 16px 95px 16px 95px;
+    padding: 18px 80px 18px 80px;
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .registerNow .regbtn {
+    padding: 18px 60px 18px 60px;
     font-size: 18px;
   }
 }
