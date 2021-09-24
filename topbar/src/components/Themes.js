@@ -10,8 +10,71 @@ import theme7 from '../assets/images/theme3.png'
 import theme8 from '../assets/images/theme3.png'
 import theme9 from '../assets/images/theme3.png'
 import theme10 from '../assets/images/theme3.png'
+import { useState } from 'react'
 
 const Themes = () => {
+  // // handleSubmit function on the form
+  // const handleSubmit = (e) => {
+  //   e.preventDefault()
+  //   console.log(isChecked)
+  // }
+
+  // const { user, orgId } = useContext(ProfileContext)
+
+  // const [dataState, setDataState] = useState({
+  //   // channel_hurdle_notification: channel_hurdle,
+  //   sync_with_os: false,
+  //   direct_messages_mentions_and_network: ''
+  // })
+
+  // const setData = () => {
+  //   authAxios
+  //     .patch(`/organizations/${orgId}/members/${user._id}/settings`, {
+  //       settings: {
+  //         notifications: dataState
+  //       }
+  //     })
+  //     .then(res => {
+  //       console.log(res)
+  //       setState({ loading: false })
+  //     })
+  //     .catch(err => {
+  //       console.log(err?.response?.data)
+  //       setState({ loading: false })
+  //     })
+  // }
+  // const [state, setState] = useState({
+  //   name: 'React',
+  //   value: 'duration'
+  // })
+
+  // useEffect(() => {
+  //   setData()
+  //   console.log(dataState)
+  //   console.log(user)
+  // }, [dataState])
+
+  const [isChecked, setIsChecked] = useState(false)
+
+  // handleSubmit function on the form
+  const handleSubmit = e => {
+    e.preventDefault()
+    console.log(isChecked)
+  }
+
+  React.useEffect(() => {
+    fetch('https://api.zuri.chat/', {
+      method: 'POST',
+      headers: {
+        // authorization if any
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(isChecked)
+    })
+      .then(res => console.log(res))
+      .catch(error => console.log(error))
+  })
+
   return (
     <div className={styles.themeCont}>
       <div className={styles.title}>
@@ -20,23 +83,35 @@ const Themes = () => {
         </div>
       </div>
       <div className={styles.sync}>
-        <div className={styles.checkbox}>
-          <input type="checkbox" />
-        </div>
+        <form onsubmit={handleSubmit}>
+          <div className={styles.checkbox}>
+            <input
+              type="checkbox"
+              name="sync"
+              onChange={e => setIsChecked(e.target.checked)}
+            />
+          </div>
+        </form>
         <div className={styles.os}>Sync with OS setting</div>
       </div>
       <div className={styles.direct}>
-        <div className={styles.radio}>
-          <input type="radio" />
-        </div>
+        <form onsubmit={handleSubmit}>
+          <div className={styles.radio}>
+            <input
+              type="checkbox"
+              name="direct"
+              onChange={e => setIsChecked(e.target.checked)}
+            />
+          </div>
+        </form>
         <div className={styles.mention}>
           Direct messages, mentions & network
         </div>
       </div>
       <div className={styles.text2}>
-        Automatically switch between light and dark themes when your <br />{' '}
-        system does.
+        Automatically switch between light and dark themes
       </div>
+      <div className={styles.text2b}>when your system does.</div>
       <div className={styles.img}>
         <img src={theme1} alt="theme1" className={styles.theme1} />
       </div>
@@ -46,8 +121,9 @@ const Themes = () => {
       <div className={styles.customize}>
         <div className={styles.text3}>Colors</div>
         <div className={styles.custom}>
-          Customize the look of your workspace. Feeling adventurous?
+          Customize the look of your workspace. Feeling
         </div>
+        <div className={styles.custom2}>adventurous?</div>
         <div className={styles.create}>Create a custom theme</div>
         <div className={styles.true}>Tried and true</div>
       </div>
