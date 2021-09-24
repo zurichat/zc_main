@@ -16,7 +16,7 @@ export const ComplaintProfiles = props => {
 
   return (
     <div className={styles.formcontainer}>
-      <div className="main-container">
+      <form className="main-container" onSubmit={Continue}>
         <h1 className="mb-5">Report Complaint</h1>
 
         <br />
@@ -40,6 +40,7 @@ export const ComplaintProfiles = props => {
             placeholder="Input offender's e-mail"
             className="form-control"
             name="email"
+            required
             onChange={inputChange('email')}
             value={values.email}
             style={{ width: '19rem', padding: '12px' }}
@@ -112,43 +113,44 @@ export const ComplaintProfiles = props => {
             />
           </label>
         </div>
-      </div>
-      <br />
 
-      <div
-        className="row"
-        style={{ display: 'flex', flexDirection: 'flex-end' }}
-      >
-        <div className="col-2">
-          <button
-            className="btn btn-secondary"
-            onClick={back}
-            style={{
-              color: 'white',
-              // backgroundColor: "#00B87C",
-              borderRadius: '10%',
-              padding: '12px'
-            }}
-          >
-            Back
-          </button>
+        <div
+          className="row"
+          style={{ display: 'flex', flexDirection: 'flex-end' }}
+        >
+          <div className="col-2">
+            <button
+              className="btn btn-secondary"
+              onClick={back}
+              style={{
+                color: 'white',
+                // backgroundColor: "#00B87C",
+                borderRadius: '10%',
+                padding: '12px'
+              }}
+            >
+              Back
+            </button>
+          </div>
+          <div className="col-2">
+            <button
+              type="submit"
+              className="btn btn-success"
+              // onClick={Continue}
+              style={{
+                color: 'white',
+                backgroundColor: '#00B87C',
+                padding: '12px',
+                borderRadius: '10%',
+                marginLeft: '290px'
+              }}
+            >
+              Next
+            </button>
+          </div>
         </div>
-        <div className="col-2">
-          <button
-            className="btn btn-success"
-            onClick={Continue}
-            style={{
-              color: 'white',
-              backgroundColor: '#00B87C',
-              padding: '12px',
-              borderRadius: '10%',
-              marginLeft: '290px'
-            }}
-          >
-            Next
-          </button>
-        </div>
-      </div>
+      </form>
+      <br />
     </div>
   )
 }

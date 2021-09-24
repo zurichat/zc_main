@@ -1,32 +1,26 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import authBg from '../../component-assets/backg.svg'
 import Logo from '../../component-assets/zuri.svg'
-import { withRouter } from 'react-router-dom'
+// import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
-
-// import FormWrapper from '../../components/AuthFormWrapper'
 import Button from '../../components/Button'
-// import styles from '../../styles/AuthFormElements.module.css'
-<<<<<<< HEAD:zc_frontend/src/pages/passwordReset/Index.js
-import styles from '../../styles/ResetPassword.module.css'
-import ResetModal from '../../components/verified/ResetModal'
-import axios from 'axios'
-=======
+// import styles from '../../components-styles/AuthFormElements.module.css'
 import styles from '../../component-styles/ResetPassword.module.css'
 // import ResetModal from '../../components/verified/ResetModal'
-// import axios from 'axios'
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/pages/passwordReset/index.js
-const Index = () => {
+import axios from 'axios'
+const ResetDefault = () => {
   const [email, setEmail] = useState('')
-  const [modalShow, setModalShow] = useState(false)
+  const [showDialog, setShowDialog] = useState(false)
+  const open = () => setShowDialog(true)
+  const close = () => setShowDialog(false)
 
-  const toggleModal = () => {
-    setModalShow(!modalShow)
-  }
+  // const toggleModal = () => {
+  //   setModalShow(!modalShow)
+  // }
 
   const handleSubmit = e => {
     e.preventDefault()
-    toggleModal()
+    open()
   }
   const sendEmail = async () => {
     if (email) {
@@ -82,10 +76,6 @@ const Index = () => {
             <Button className={styles.button} onClick={handleSubmit}>
               Continue
             </Button>
-            {/* <ResetModal 
-            show={modalShow}
-            onHide={setModalShow(false)}
-          /> */}
           </form>
         </section>
       </main>
@@ -93,4 +83,4 @@ const Index = () => {
   )
 }
 
-export default withRouter(Index)
+export default ResetDefault

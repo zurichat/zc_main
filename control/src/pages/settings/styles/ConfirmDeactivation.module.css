@@ -109,10 +109,7 @@
     font-size: 18px;
   }
 }
-<<<<<<< HEAD:zc_frontend/src/pages/settings/styles/ConfirmDeactivation.module.css
-=======
 
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/pages/settings/styles/ConfirmDeactivation.module.css
 @media screen and (max-width: 415px) {
   .danger1,
   .danger2,

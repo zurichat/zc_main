@@ -4,12 +4,18 @@ import styles from '../style/workspace.module.css'
 import { useWorkspaceContext } from './WorkspaceContext'
 
 const WorkspaceCard = () => {
-  const { organizations, user } = useWorkspaceContext()
+  const { organizations, user, error } = useWorkspaceContext()
 
   return (
     <section className={`${styles.workspace_card}`}>
       <header className={`${styles.card_header}`}>
         <h4 className={`${styles.card_title}`}>
+          {!user.email
+            ? 'Please login to view your workspaces'
+            : !organizations.length
+            ? error
+            : `Workspaces for ${user.email}`}
+          =======
           {!organizations.length
             ? 'No user is logged in'
             : `Workspaces for ${user.email}`}

@@ -10,24 +10,12 @@ import styles from './styles/EmailVerification.module.css'
 import CodeInput from './codeInput'
 import { Button } from '../../../components/'
 
-<<<<<<< HEAD:zc_frontend/src/pages/signup/email-verify/index.jsx
-export default function EmailVerification() {
-=======
 export default function EmailVerification({ email }) {
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/pages/signup/email-verify/index.js
   const [success, setsuccess] = useState(false)
   const [errorMsg, seterrorMsg] = useState(false)
 
-  const handleSubmit = async usercode => {
+  const handleSubmit = async code => {
     await axios
-<<<<<<< HEAD:zc_frontend/src/pages/signup/email-verify/index.jsx
-      .post(`https://api.zuri.chat/account/verify-account`, {
-        code: usercode
-      })
-      .then(_res => {
-        setsuccess(true)
-        console.log(success, usercode)
-=======
       .post(`https://api.zuri.chat/account/verify-account`, { code })
       .then(res => {
         console.log(res.data)
@@ -42,16 +30,11 @@ export default function EmailVerification({ email }) {
         //   //Redirect to some other page
         //   window.location.href = '/home'
         // }, 2000)
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/pages/signup/email-verify/index.js
       })
       .catch(err => {
         seterrorMsg(err.response.data.message)
         setsuccess(false)
       })
-<<<<<<< HEAD:zc_frontend/src/pages/signup/email-verify/index.jsx
-    // setsuccess(true)
-=======
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/pages/signup/email-verify/index.js
   }
 
   const goHome = () => {
@@ -67,9 +50,9 @@ export default function EmailVerification({ email }) {
             <h4>Check your email for your code !</h4>
             <p className={styles.enterCode}>
               Enter the 6-digit code sent to you at{' '}
-              {/* <a href={`mailto:${email}`} className={styles.email}>
+              <a href={`mailto:${email}`} className={styles.email}>
                 {email}
-              </a> */}
+              </a>
               . This code expires shortly so be quick
             </p>
             <div>{errorMsg}</div>

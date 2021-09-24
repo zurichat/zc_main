@@ -1,12 +1,6 @@
 import React, { useState } from 'react'
 import { withRouter, useHistory } from 'react-router-dom'
-import { BehaviorSubject } from 'rxjs'
-// import { Link } from 'react-router-dom'
-import authBg1 from './assets/auth_bg1.svg'
-import authBg2 from './assets/auth_bg2.svg'
-import authBg3 from './assets/auth_bg3.svg'
-import authBg4 from './assets/auth_bg4.svg'
-import authBg5 from './assets/auth_bg5.svg'
+// import { BehaviorSubject } from 'rxjs'
 import AuthInputBox from '../../components/AuthInputBox'
 import FormWrapper from '../../components/AuthFormWrapper'
 import LoginLoading from '../../components/LoginLoading'
@@ -14,7 +8,12 @@ import styles from '../../component-styles/AuthFormElements.module.css'
 import axios from 'axios'
 import { GetUserInfo } from '../../zuri-control'
 import $behaviorSubject from '../../../../globalState'
-
+// import { Link } from 'react-router-dom'
+// import authBg1 from './assets/auth_bg1.svg'
+// import authBg2 from './assets/auth_bg2.svg'
+// import authBg3 from './assets/auth_bg3.svg'
+// import authBg4 from './assets/auth_bg4.svg'
+// import authBg5 from './assets/auth_bg5.svg'
 //import GoogleLogin from 'react-google-login'
 
 const Login = () => {
@@ -27,17 +26,17 @@ const Login = () => {
   const [Loading, setLoading] = useState(false)
 
   // Background Images
-  const images = [authBg1, authBg2, authBg3, authBg4, authBg5]
-  const [currentImage, setcurrentImage] = useState(
-    Math.floor(Math.random() * 4)
-  )
+  // const images = [authBg1, authBg2, authBg3, authBg4, authBg5]
+  // const [currentImage, setcurrentImage] = useState(
+  //   Math.floor(Math.random() * 4)
+  // )
 
   // To Display Random Aside Background Image
-  const displayImage = () => {
-    let i = currentImage
-    i >= images.length - 1 ? (i = 0) : i++
-    setcurrentImage(i)
-  }
+  // const displayImage = () => {
+  //   let i = currentImage
+  //   i >= images.length - 1 ? (i = 0) : i++
+  //   setcurrentImage(i)
+  // }
 
   let history = useHistory()
 
@@ -52,9 +51,6 @@ const Login = () => {
       })
       .then(response => {
         const { data, message } = response.data
-        console.log(data)
-        //Store token in localstorage
-        sessionStorage.setItem('token', data.user.token)
 
         //Store token in localstorage
         sessionStorage.setItem('token', data.user.token)
@@ -70,18 +66,14 @@ const Login = () => {
 
         //Return the login data globally
         $behaviorSubject.next(response.data)
-  
-        setLoading(true);
+
+        setLoading(true)
 
         setTimeout(() => {
           //Redirect to some other page
-<<<<<<< HEAD:zc_frontend/src/pages/login/index.js
-          window.location.href = '/home'
-=======
           GetUserInfo()
           history.push('/home')
           setLoading(false)
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/pages/login/index.js
         }, 2000)
       })
       .catch(error => {
@@ -105,12 +97,11 @@ const Login = () => {
   return (
     <main id={styles.authPageWrapper}>
       {Loading && <LoginLoading />}
-      <aside id={styles.authAsideContainer} className={styles.display_none}>
+      {/* <aside id={styles.authAsideContainer} className={styles.display_none}>
         <div id={styles.authImageWrapper}>
           <img src={images[currentImage]} alt="backgroundImage" />
-          {/* <div id={styles.aside_txt}></div> */}
         </div>
-      </aside>
+      </aside> */}
       <section id={styles.authFormContainer}>
         <FormWrapper
           header="Login"
@@ -125,7 +116,7 @@ const Login = () => {
           handleSubmit={handleSubmit}
           bottomLine="New to us?"
           bottomLink="Create an Account"
-          bottomLinkHref="signup"
+          bottomLinkHref="Signup"
         >
           <AuthInputBox
             className={`${styles.inputElement}`}
@@ -136,7 +127,7 @@ const Login = () => {
             value={email}
             setValue={setEmail}
             error={emailerror}
-            onFocus={displayImage}
+            // onFocus={displayImage}
           />
           <AuthInputBox
             className={`${styles.inputElement}`}
@@ -147,7 +138,7 @@ const Login = () => {
             value={password}
             setValue={setPassword}
             error={passworderror}
-            onFocus={displayImage}
+            // onFocus={displayImage}
           />
 
           <div className={`${styles.rememberMe}`}>
@@ -160,7 +151,7 @@ const Login = () => {
                 onClick={() => {
                   setRememberMe(!rememberMe)
                 }}
-                onFocus={displayImage}
+                // onFocus={displayImage}
               />
               Remember me
             </span>

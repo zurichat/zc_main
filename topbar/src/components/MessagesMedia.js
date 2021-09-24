@@ -1,19 +1,5 @@
 import React from 'react'
 import styles from '../styles/MessagesMedia.module.css'
-<<<<<<< HEAD:zc_frontend/src/pages/preferences/components/MessagesMedia.js
-import theme11 from '../../images/theme7.png'
-import theme12 from '../../images/theme8.png'
-import theme13 from '../../images/theme9.png'
-import theme14 from '../../images/theme10.png'
-import theme15 from '../../images/theme11.png'
-import theme16 from '../../images/theme12.png'
-import theme17 from '../../images/theme13.png'
-import theme18 from '../../images/theme14.png'
-import theme19 from '../../images/theme15.png'
-import { useState, useContext, useEffect } from 'react'
-import { authAxios } from '../../../util/Api'
-import { ProfileContext } from '../../../context/ProfileModal'
-=======
 import theme11 from '../assets/images/theme7.png'
 import theme12 from '../assets/images/theme8.png'
 import theme13 from '../assets/images/theme9.png'
@@ -23,57 +9,30 @@ import theme16 from '../assets/images/theme12.png'
 import theme17 from '../assets/images/theme13.png'
 import theme18 from '../assets/images/theme14.png'
 import theme19 from '../assets/images/theme15.png'
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:topbar/src/components/MessagesMedia.js
+import { useState } from 'react'
 
 const MessagesMedia = () => {
   const [isChecked, setIsChecked] = useState(false)
   const [active1, setActive1] = useState(0)
 
-  const { user, orgId } = useContext(ProfileContext)
-
-  const [msgMed, setMsgMed] = useState({
-    // channel_hurdle_notification: channel_hurdle,
-    additional_options: null,
-    bring_emails_into_zuri_bson: '',
-    convert_emoticons_to_emoji: false,
-    custom: false,
-    emoji: '',
-    emoji_as_text: false,
-    frequently_used_emoji: false,
-    inline_media_and_links: null,
-    messages_one_click_reaction: null,
-    names: '',
-    show_jumbomoji: false,
-    theme: ''
-  })
-
   // handleSubmit function on the form
   const handleSubmit = e => {
     e.preventDefault()
     console.log(isChecked)
-    // console.log(user)
   }
 
   React.useEffect(() => {
-    console.log(user)
-  }, [user])
-
-  // const setData = () => {
-  //   authAxios
-  //     .patch(`/organizations/${orgId}/members/${user._id}/settings`, {
-  //       settings: {
-  //         notifications: dataState
-  //       }
-  //     })
-  //     .then(res => {
-  //       console.log(res)
-
-  //     })
-  //     .catch(err => {
-  //       console.log(err?.response?.data)
-
-  //     })
-  // }
+    fetch('https://api.zuri.chat/', {
+      method: 'POST',
+      headers: {
+        // authorization if any
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(isChecked)
+    })
+      .then(res => console.log(res))
+      .catch(error => console.log(error))
+  })
 
   return (
     <div className={styles.msgCon}>
@@ -190,8 +149,9 @@ const MessagesMedia = () => {
       <div className={styles.tone}>Default Skin Tone</div>
       <div className={styles.choose}>
         Choose the default skin tone that will be used whenever you use certain
-        emojis in <br /> reactions and messages.
+        emojis in
       </div>
+      <div className={styles.choose2}>reactions and messages.</div>
       <div className={styles.hands}>
         <img src={theme13} alt="theme13" className={styles.theme13} />
         <img src={theme14} alt="theme14" className={styles.theme14} />
@@ -225,8 +185,8 @@ const MessagesMedia = () => {
         <div className={styles.jumbomoji}>Show JUMBOMOJI</div>
       </div>
       <div className={styles.versions}>
-        Display the jumbo versions of emoji (up to 23 at a time!) in messages{' '}
-        <br /> without text.
+        Display the jumbo versions of emoji (up to 23 at a time!) in messages
+        without text.
       </div>
       <div className={styles.example}>Here is an example</div>
       <img src={theme19} alt="theme19" className={styles.theme19} />
@@ -287,8 +247,12 @@ const MessagesMedia = () => {
       <div className={styles.bottom5}></div>
       <div className={styles.emails}>Bring emails into Zurichat</div>
       <div className={styles.upload}>
-        You can upload any important email to Slack by forwarding it to a <br />{' '}
-        unique email address. Slackbot will deliver the email and you can <br />{' '}
+        You can upload any important email to Slack by forwarding it to a
+      </div>
+      <div className={styles.upload2}>
+        unique email address. Slackbot will deliver the email and you can
+      </div>
+      <div className={styles.upload3}>
         keep it private or share it with your team.
       </div>
       <button className={styles.button}>

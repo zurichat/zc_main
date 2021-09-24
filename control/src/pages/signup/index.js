@@ -1,17 +1,16 @@
 import React, { useState } from 'react'
 import { withRouter } from 'react-router-dom'
-// import { Link } from 'react-router-dom'
-import authBg1 from './assets/auth_bg1.svg'
-import authBg2 from './assets/auth_bg2.svg'
-import authBg3 from './assets/auth_bg3.svg'
-import authBg4 from './assets/auth_bg4.svg'
-import authBg5 from './assets/auth_bg5.svg'
 import AuthInputBox from '../../components/AuthInputBox'
 import FormWrapper from '../../components/AuthFormWrapper'
 import styles from '../../component-styles/AuthFormElements.module.css'
 import axios from 'axios'
-
 import EmailVerification from './email-verify'
+// import { Link } from 'react-router-dom'
+// import authBg1 from './assets/auth_bg1.svg'
+// import authBg2 from './assets/auth_bg2.svg'
+// import authBg3 from './assets/auth_bg3.svg'
+// import authBg4 from './assets/auth_bg4.svg'
+// import authBg5 from './assets/auth_bg5.svg'
 
 const Signup = () => {
   const [name, setName] = useState('')
@@ -23,18 +22,18 @@ const Signup = () => {
   const [showDialog, setShowDialog] = useState(false)
 
   // Background Images
-  const images = [authBg1, authBg2, authBg3, authBg4, authBg5]
-  const [currentImage, setcurrentImage] = useState(
-    Math.floor(Math.random() * 4)
-  )
+  // const images = [authBg1, authBg2, authBg3, authBg4, authBg5]
+  // const [currentImage, setcurrentImage] = useState(
+  //   Math.floor(Math.random() * 4)
+  // )
 
   // To Display Random Aside Background Image
-  const displayImage = () => {
-    let i = currentImage
-    i >= images.length - 1 ? (i = 0) : i++
-    setcurrentImage(i)
-    console.log(images[i], i)
-  }
+  // const displayImage = () => {
+  //   let i = currentImage
+  //   i >= images.length - 1 ? (i = 0) : i++
+  //   setcurrentImage(i)
+  //   console.log(images[i], i)
+  // }
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -60,6 +59,7 @@ const Signup = () => {
       })
       .then(response => {
         const { data, message } = response.data
+        console.log(response.data)
         setShowDialog(true)
 
         //Store token in localstorage
@@ -86,12 +86,11 @@ const Signup = () => {
   return (
     <main id={styles.authPageWrapper}>
       {showDialog && <EmailVerification email={email} />}
-      <aside id={styles.authAsideContainer} className={styles.display_none}>
+      {/* <aside id={styles.authAsideContainer} className={styles.display_none}>
         <div id={styles.authImageWrapper}>
           <img src={images[currentImage]} alt="backgroundImage" />
-          {/* <div id={styles.aside_txt}></div> */}
         </div>
-      </aside>
+      </aside> */}
       <section id={styles.authFormContainer}>
         <FormWrapper
           header="Create Account"
@@ -117,7 +116,7 @@ const Signup = () => {
             placeholder="Enter your Name"
             value={name}
             setValue={setName}
-            onFocus={displayImage}
+            // onFocus={displayImage}
             // error={error}
           />
           <AuthInputBox
@@ -128,8 +127,8 @@ const Signup = () => {
             placeholder="Enter you email address"
             value={email}
             setValue={setEmail}
-            onFocus={displayImage}
             error={emailerror}
+            // onFocus={displayImage}
           />
           <AuthInputBox
             className={`${styles.inputElement}`}
@@ -139,19 +138,9 @@ const Signup = () => {
             placeholder="Enter a password"
             value={password}
             setValue={setPassword}
-            onFocus={displayImage}
+            // onFocus={displayImage}
             // error={error}
           />
-          {/* <AuthInputBox
-            className={`${styles.inputElement}`}
-            id="cpassword"
-            name="Confirm password"
-            type="password"
-            placeholder="Confirm password"
-            value={confirmPassword}
-            setValue={setConfirmPassword}
-            // error={error}
-          /> */}
           <div className={`${styles.tos}`}>
             <input
               className={`${styles.checkBox}`}
@@ -161,12 +150,12 @@ const Signup = () => {
               onClick={() => {
                 setTos(!tos)
               }}
-              onFocus={displayImage}
+              // onFocus={displayImage}
             />
             <span className={`${styles.tosText}`}>
               I agree to Zurichat's {''}
-              <a href="/">terms of services{''} </a>&
-              <a href="/"> {''}privacy</a>
+              <a href="/">Terms of services{''} </a>&
+              <a href="/"> {''}Privacy</a>
             </span>
           </div>
         </FormWrapper>

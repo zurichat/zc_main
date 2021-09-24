@@ -18,11 +18,6 @@
   height: 85vh;
 }
 
-<<<<<<< HEAD:zc_frontend/src/pages/settings/styles/AccountDeactivated.module.css
-.content {
-  width: 310px;
-  margin: 50px auto;
-=======
 .nav {
   height: 15vh;
   display: flex;
@@ -42,7 +37,6 @@
   text-align: center;
   padding: 30px 10px;
   margin-top: -50px;
->>>>>>> bf60a340a9cd4f0152b05fd9a25629dbe09c80bf:control/src/pages/settings/styles/AccountDeactivated.module.css
 }
 .content h2 {
   font-weight: 900;

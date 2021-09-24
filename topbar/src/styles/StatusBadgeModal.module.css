@@ -37,7 +37,7 @@
   padding-bottom: 10px;
   position: absolute;
   left: 25px;
-  top: 82px;
+  top: 108px;
   background: none;
   transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -52,8 +52,8 @@
     border: 0;
     padding: 5px;
     position: absolute;
-    left: -30px;
-    top: 105px;
+    right: 10px;
+    top: 115px;
     background: none;
     transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
