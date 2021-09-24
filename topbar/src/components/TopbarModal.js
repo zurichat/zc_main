@@ -30,6 +30,7 @@ const TopbarModal = ({ members }) => {
   const [presence, setPresence] = state.presence
   const [showStatus] = state.status
   const [showMembersModal] = state.modal
+  const [statusModal, setStatusModal]= useState(false)
   const {
     onEmojiClick,
     openModal,
