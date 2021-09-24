@@ -16,7 +16,7 @@ body {
 }
 
 .eventsMainWrapper {
-  padding: 1.5% 2.5% 0 2.5%;
+  padding: 1.5% 0 0 0;
 }
 
 .heroSection {
@@ -47,7 +47,7 @@ body {
   width: auto;
 }
 .eventsMeetSection {
-  padding: 10% 0;
+  padding: 10% 2.5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -109,17 +109,18 @@ body {
 
 .eventsUpcomingMeetsSection {
   width: 100%;
+  padding: 0 10% 5% 10%;
 }
 .eventsUpcomingMeetsHeaderBox {
   width: 100%;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 .eventsUpcomingMeetsHeaderBox > h2 {
   font-size: 32px;
   font-weight: 900;
   color: #242424;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 .eventsUpcomingMeetsHeaderBox > p {
   color: #3a3a3a;
@@ -141,6 +142,10 @@ body {
 .eventsBlock > h3,
 .eventsBlock > p {
   font-size: 18px;
+  color: #242424;
+}
+.eventsBlock > h3{
+  font-weight: 900;
 }
 .eventsBlockLinkBlock {
   display: flex;
@@ -199,7 +204,7 @@ body {
   }
   .eventsMeetTextWrapper > p {
     margin-bottom: 10px;
-    max-width: 60%;
+    max-width: 100%;
   }
 
   .checkoutLinkBlock {
@@ -216,6 +221,9 @@ body {
     font-weight: 700;
     margin-right: 5px;
   }
+  .eventsUpcomingMeetsSection {
+    padding: 0 5% 5% 5%;
+  }
   .eventsUpcomingMeetsHeaderBox {
     padding-bottom: 40px;
     border-bottom: 1px solid #dfdfdf;
@@ -224,15 +232,14 @@ body {
     margin-bottom: 10px;
   }
   .eventsUpcomingMeetsHeaderBox > p {
-    max-width: 80%;
+    max-width: 100%;
   }
 
   .eventsBlock {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    border-bottom: 1px solid #dfdfdf;
-    padding: 40px 0;
+    padding: 20px 0;
     max-width: 100%;
   }
   .eventsBlock > h3,
@@ -285,7 +292,7 @@ body {
   }
   .eventsMeetTextWrapper > p {
     margin-bottom: 10px;
-    max-width: 60%;
+    max-width: 80%;
   }
 
   .checkoutLinkBlock {
@@ -302,6 +309,9 @@ body {
     font-weight: 700;
     margin-right: 5px;
   }
+  .eventsUpcomingMeetsSection {
+    padding: 0 5% 5% 5%;
+  }
   .eventsUpcomingMeetsHeaderBox {
     padding-bottom: 40px;
     border-bottom: 1px solid #dfdfdf;
@@ -310,14 +320,13 @@ body {
     margin-bottom: 10px;
   }
   .eventsUpcomingMeetsHeaderBox > p {
-    max-width: 80%;
+    max-width: 100%;
   }
 
   .eventsBlock {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    border-bottom: 1px solid #dfdfdf;
     padding: 40px 0;
     max-width: 100%;
   }
@@ -393,7 +402,7 @@ body {
     border-bottom: 1px solid #dfdfdf;
   }
   .eventsUpcomingMeetsHeaderBox > h2 {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   .eventsUpcomingMeetsHeaderBox > p {
     max-width: 80%;
@@ -403,7 +412,6 @@ body {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    border-bottom: 1px solid #dfdfdf;
     padding: 40px 0;
     max-width: 100%;
   }
@@ -453,10 +461,10 @@ body {
     margin-bottom: 0px;
   }
   .eventsMeetTextWrapper > h2 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .eventsMeetTextWrapper > p {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     max-width: auto;
   }
 
@@ -480,7 +488,7 @@ body {
   }
   .eventsUpcomingMeetsHeaderBox > h2 {
     font-size: 32px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .eventsUpcomingMeetsHeaderBox > p {
     max-width: 40%;
@@ -488,9 +496,8 @@ body {
 
   .eventsBlock {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #dfdfdf;
     padding: 40px 0;
     max-width: 100%;
     margin: 0 auto;
@@ -498,6 +505,7 @@ body {
   .eventsBlock > h3,
   .eventsBlock > p {
     font-size: 18px;
+    margin-bottom: 0;
   }
 }
 
@@ -541,7 +549,7 @@ body {
     margin-bottom: 0px;
   }
   .eventsMeetTextWrapper > h2 {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   .eventsMeetTextWrapper > p {
     margin-bottom: 10px;
@@ -562,13 +570,16 @@ body {
     font-weight: 700;
     margin-right: 5px;
   }
+  .eventsUpcomingMeetsSection {
+    padding: 0 10% 5%;
+  }
   .eventsUpcomingMeetsHeaderBox {
     width: 100%;
     padding-bottom: 30px;
   }
   .eventsUpcomingMeetsHeaderBox > h2 {
     font-size: 32px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
   .eventsUpcomingMeetsHeaderBox > p {
     max-width: 40%;
@@ -578,7 +589,6 @@ body {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    border-bottom: 1px solid #dfdfdf;
     padding: 40px 0;
     max-width: 100%;
     margin: 0 auto;
@@ -586,6 +596,7 @@ body {
   .eventsBlock > h3,
   .eventsBlock > p {
     font-size: 18px;
+    margin-bottom: 0;
   }
 }
 
@@ -652,11 +663,11 @@ body {
   }
   .eventsUpcomingMeetsHeaderBox {
     width: 100%;
-    padding-bottom: 30px;
+    padding-bottom: 60px;
   }
   .eventsUpcomingMeetsHeaderBox > h2 {
     font-size: 32px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
   .eventsUpcomingMeetsHeaderBox > p {
     max-width: 40%;
@@ -664,9 +675,8 @@ body {
 
   .eventsBlock {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #dfdfdf;
     padding: 40px 0;
     max-width: 100%;
     margin: 0 auto;
@@ -674,5 +684,6 @@ body {
   .eventsBlock > h3,
   .eventsBlock > p {
     font-size: 18px;
+    margin-bottom: 0;
   }
 }
