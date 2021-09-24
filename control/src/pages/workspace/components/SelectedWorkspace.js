@@ -23,15 +23,9 @@ const SelectedWorkspace = () => {
       <p>{numberOfSelected} selected</p>
       <button
         style={{
-          background: `${
-            !numSelectedWorkspace.length ? '#BEBEBE' : '#00B87C'
-          }`,
-          color: `${
-            !numSelectedWorkspace.length ? '#242424' : '#ffffff'
-          }`,
-          borderColor: `${
-            !numSelectedWorkspace.length ? '#C4C4C4' : '#00B87C'
-          }`
+          background: `${!numSelectedWorkspace.length ? '#BEBEBE' : '#00B87C'}`,
+          color: `${!numSelectedWorkspace.length ? '#242424' : '#ffffff'}`,
+          borderColor: `${!numSelectedWorkspace.length ? '#C4C4C4' : '#00B87C'}`
         }}
         type="button"
         className={`${styles.workspace_btn}`}

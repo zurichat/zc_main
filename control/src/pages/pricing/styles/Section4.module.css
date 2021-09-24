@@ -45,6 +45,10 @@
   cursor: pointer;
 }
 
+.card:hover {
+  transform: scale(1.05);
+}
+
 .imgTop {
   height: 70%;
   width: 100%;
