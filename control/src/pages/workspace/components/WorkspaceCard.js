@@ -8,9 +8,9 @@ const WorkspaceCard = () => {
 
   return (
     <section className={`${styles.workspace_card}`}>
-      <header className={`${styles.card_header}`}>
+      <header className={`${styles.card_header}`} style={{borderBottom: (!organizations.length && 'none')}}>
         <h4 className={`${styles.card_title}`}>
-          { !user.email ? 'Please login to view your workspaces' : !organizations.length ? 'No workspace found' : `Workspaces for ${user.email}`}
+          { !user.email ? 'Please login to view your workspaces' : !organizations.length ? 'No workspace found or session expired' : `Workspaces for ${user.email}`}
         </h4>
       </header>
       <div className={`${styles.singleworkspace_wrapper}`}>
