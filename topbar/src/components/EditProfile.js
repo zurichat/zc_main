@@ -8,7 +8,6 @@ import { authAxios } from '../utils/Api'
 import { AiFillCamera } from 'react-icons/ai'
 import avatar from '../assets/images/user.svg'
 import { ProfileContext } from '../context/ProfileModal'
-import { authAxios } from '../utils/Api'
 import Loader from 'react-loader-spinner'
 import toast, { Toaster } from 'react-hot-toast'
 import 'react-phone-number-input/style.css'
@@ -97,19 +96,21 @@ const EditProfile = () => {
 
   // This will handle the profile form submission
 
-  const handleFormSubmit = e => {
-    e.preventDefault()
-    setState({ loading: true })
-
-    const data = {
-      name: state.name,
-      display_name: state.display_name,
-      email: state.email,
-      pronouns: state.pronouns,
-      phone: state.phone,
-      bio: state.bio,
-      timeZone: state.timezone
-    }
+  //const handleFormSubmit = e => {
+  //  e.preventDefault()
+  //  setState({ loading: true })
+  //
+//
+  //  const data = {
+  //    name: state.name,
+  //    display_name: state.display_name,
+  //    email: state.email,
+  //    pronouns: state.pronouns,
+  //    phone: state.phone,
+  //    bio: state.bio,
+  //    timeZone: state.timezone
+  //  }
+  //}
       // socials: [state.twitter, state.facebook, ...otherLinks],
   console.log('users', user)
 
