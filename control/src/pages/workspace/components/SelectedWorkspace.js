@@ -1,22 +1,20 @@
 import React from 'react'
 import { useWorkspaceContext } from './WorkspaceContext'
 import styles from '../style/workspace.module.css'
-import { useHistory } from 'react-router-dom'
 
 const SelectedWorkspace = () => {
-  const { organizations } = useWorkspaceContext()
+  const { organizations, redirectPage } = useWorkspaceContext()
 
   const numSelectedWorkspace = organizations.filter(org => org.selected)
 
   const numberOfSelected =
     numSelectedWorkspace.length > 0 ? numSelectedWorkspace.length : 'None'
-  const history = useHistory()
 
   const handleNextPage = () => {
     if (!numSelectedWorkspace.length) {
       return
     } else {
-      history.push('/home')
+      redirectPage()
     }
   }
 
