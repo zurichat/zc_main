@@ -1,10 +1,13 @@
 import { useRef, useState, useEffect, useContext } from 'react'
+import styles from '../styles/EditProfile.module.css'
+// import AddLink from './AddLink'
 import ProfileModal from './ProfileModal'
+
+import { authAxios } from '../utils/Api'
 
 import { AiFillCamera } from 'react-icons/ai'
 import avatar from '../assets/images/user.svg'
 import { ProfileContext } from '../context/ProfileModal'
-import { authAxios } from '../utils/Api'
 import Loader from 'react-loader-spinner'
 import toast, { Toaster } from 'react-hot-toast'
 import 'react-phone-number-input/style.css'
@@ -13,13 +16,15 @@ import TimezoneSelect from 'react-timezone-select'
 import { StyledProfileWrapper } from '../styles/StyledEditProfile'
 
 const EditProfile = () => {
-  const imageRef = useRef(null)
+  // const imageRef = useRef(null)
   const avatarRef = useRef(null)
   const { user, orgId, userProfileImage, setUserProfileImage } =
     useContext(ProfileContext)
+  const [otherLinks, setotherLinks] = useState([])
   const [selectedTimezone, setSelectedTimezone] = useState({})
   const [links, setLinks] = useState([''])
   const [phone, setPhone] = useState('')
+  const [imageUrl, setImageUrl] = useState('')
   const [state, setState] = useState({
     name: user.first_name,
     display_name: user.display_name,
@@ -27,13 +32,14 @@ const EditProfile = () => {
     role: user.role,
     image_url: user.image_url,
     bio: '',
+    phone: user.phone,
     prefix: '',
     timezone: '',
     twitter: '',
     facebook: '',
     loading: false
   })
-
+  let newUploadedImage = null
   console.log('users', user)
 
   const addList = () => {
@@ -46,6 +52,8 @@ const EditProfile = () => {
     setLinks(links[index])
   }
 
+  //Function handling Image Upload
+
   const handleImageChange = event => {
     setState({ loading: true })
     if (imageRef.current.files[0]) {
@@ -53,8 +61,6 @@ const EditProfile = () => {
 
       fileReader.onload = function (event) {
         avatarRef.current.src = event.target.result
-        setUserProfileImage(event.target.result)
-        console.log(event.target.result)
       }
 
       fileReader.readAsDataURL(imageRef.current.files[0])
@@ -68,14 +74,12 @@ const EditProfile = () => {
         .patch(`/organizations/${orgId}/members/${user._id}/photo`, formData)
         .then(res => {
           console.log(res)
+          newUploadedImage = res.data.data
           setState({ loading: false })
-          setUserProfileImage(res.data.data.image_url)
+          setUserProfileImage(res.data.data)
           toast.success('User Image Updated Successfully', {
             position: 'bottom-center'
           })
-        })
-        .then(res => {
-          return authAxios.get(`/organizations/${orgId}/members/${user._id}/`)
         })
         .catch(err => {
           console.log(err)
@@ -88,38 +92,8 @@ const EditProfile = () => {
   }
 
   useEffect(() => {
-    // handleImageChange()
-  }, [userProfileImage])
-
-  // const handleImageChange = event => {
-  //   setState({ loading: true })
-
-  //   const file = event.target.files[0]
-
-  //   // encode the file using the FileReader API
-  //   const reader = new FileReader()
-  //   reader.onloadend = () => {
-  //     // log to console
-  //     // logs data:<type>;base64,wL2dvYWwgbW9yZ...
-  //     avatarRef.current.src = reader.result
-  //     setUserProfileImage(reader.result)
-  //     console.log(reader.result)
-  //   }
-  //   reader.readAsDataURL(file)
-
-  // let fileReader = new FileReader();
-
-  // fileReader.onload = function (event) {
-  //   avatarRef.current.src = event.target.result;
-  //   console.log(event.target.result);
-  // };
-
-  // let reader = fileReader.readAsDataURL(event.target.files[0]);
-  // console.log(reader)
-
-  useEffect(() => {
     setUserProfileImage(user.image_url)
-  })
+  }, [user])
 
   // This will handle the profile form submission
 
@@ -197,7 +171,6 @@ const EditProfile = () => {
                   />
                 </div>
               </div>
-
               <div className="double-input">
                 <div className="input-group">
                   <label htmlFor="dname" className="inputLabel">
@@ -232,7 +205,43 @@ const EditProfile = () => {
                   </select>
                 </div>
               </div>
-
+              */
+              <button
+                onClick={handleFormSubmit}
+                className={styles.bottomButton}
+              >
+                {state.loading ? (
+                  <Loader
+                    type="ThreeDots"
+                    color="#FFF"
+                    height={32}
+                    width={32}
+                  />
+                ) : (
+                  'Save'
+                )}
+              </button>
+              <div className={styles.px9}>
+                {/* <AddLink setotherLinks={setotherLinks} /> */}
+                <div className={styles.formFooter}>
+                  <div style={{ display: 'flex' }}>
+                    <button className={styles.cancel}>Cancel</button>
+                    <button onClick={handleFormSubmit} className={styles.save}>
+                      {state.loading ? (
+                        <Loader
+                          type="ThreeDots"
+                          color="#FFF"
+                          height={40}
+                          width={40}
+                        />
+                      ) : (
+                        'Save Changes'
+                      )}
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <Toaster />
               <div className="input-group">
                 <label htmlFor="what" className="inputLabel">
                   What you do
@@ -249,7 +258,6 @@ const EditProfile = () => {
                   Let people know what you do at <b>ZURI</b>
                 </p>
               </div>
-
               <div className="input-group">
                 <label htmlFor="bio" className="inputLabel">
                   Bio
@@ -277,7 +285,6 @@ const EditProfile = () => {
                   onChange={setSelectedTimezone}
                 />
               </div>
-
               <div className="input-group">
                 <label htmlFor="twitter" className="inputLabel">
                   Twitter
@@ -304,7 +311,6 @@ const EditProfile = () => {
                   name="facebook"
                 />
               </div>
-
               <div className="input-group">
                 <label className="inputLabel">
                   Additional Links <span>(5 max)</span>
@@ -335,16 +341,16 @@ const EditProfile = () => {
                   id="img"
                 />
                 <label htmlFor="img" className="btns chgBtn">
-                  {state.loading ? (
+                  {/* {state.loading ? (
                     <Loader
                       type="ThreeDots"
                       color="#00B87C"
                       height={40}
                       width={40}
                     />
-                  ) : (
-                    'Upload Image'
-                  )}
+                  ) : ( */}
+                  Upload Image
+                  {/* ) */}
                 </label>
                 <button className="btns rmvBtn">Delete image</button>
               </div>
