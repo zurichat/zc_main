@@ -78,7 +78,9 @@ const Themes = () => {
     setColor(color)
 
     authAxios
-      .patch(`/organizations/${orgId}/members/${user._id}/profile`, {name: 'mike'})
+      .patch(`/organizations/${orgId}/members/${user._id}/profile`, {
+        name: 'mike'
+      })
       .then(res => {
         console.log(res)
         toast.success('Color succesfuly Set', {
