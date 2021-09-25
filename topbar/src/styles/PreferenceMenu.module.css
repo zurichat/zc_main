@@ -11,8 +11,8 @@
 }
 .one,
 .active {
-   display: flex;
-  flex-direction: row; 
+   /* display: flex;
+  flex-direction: row;  */
   align-items: center;
   margin-left: 20px;
   padding: 3px;
