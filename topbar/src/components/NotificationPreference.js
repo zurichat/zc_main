@@ -8,9 +8,7 @@ import { ProfileContext } from '../context/ProfileModal'
 const NotificationPreference = () => {
   const [active, setActive] = useState(0)
   const [active1, setActive1] = useState(0)
-
   const { user, orgId } = useContext(ProfileContext)
-
   const [dataState, setDataState] = useState({
     // channel_hurdle_notification: channel_hurdle,
     email_notifications_for_mentions_and_dm: null,
@@ -61,8 +59,8 @@ const NotificationPreference = () => {
       <div className={styles.notifyContent}>
         <div className={styles.itemTitle1}>
           <h4 className={styles.titleLarge}>Notify me about </h4>{' '}
-          <span>
-            <AiOutlineQuestionCircle />
+          <span className={styles.spanL}>
+            <AiOutlineQuestionCircle className={styles.quest} />
             Learn about notifications
           </span>
         </div>
@@ -109,16 +107,20 @@ const NotificationPreference = () => {
               <label htmlFor="none">Nothing</label>
             </div>
           </div>
-          <div className={styles.checkbox}>
+          <div className={styles.markbox}>
             <label htmlFor="for-mobile">
               {' '}
-              <input type="checkbox" value="for-mobile" />
+              <input
+                type="checkbox"
+                className={styles.check}
+                value="for-mobile"
+              />
               Use different settings for my mobile device
-            </label>{' '}
+            </label>
           </div>
-          <div className={styles.line}></div>
-          {/* <hr />  */}
-          <div className={styles.checkbox}>
+          {/* <div className={styles.line} /> */}
+
+          <div className={styles.markbox}>
             <label htmlFor="for-meeting">
               <input
                 type="checkbox"
@@ -131,7 +133,7 @@ const NotificationPreference = () => {
               Notify me when a meeting is set
             </label>
           </div>
-          <div className={styles.checkbox}>
+          <div className={styles.markbox}>
             <label htmlFor="for-thread">
               <input
                 type="checkbox"
@@ -157,7 +159,7 @@ const NotificationPreference = () => {
         <div className={styles.line} />
         <div className={styles.itemTitle2}>
           <h4 class={styles.titleSmall}>Notification Schedule</h4>{' '}
-          <span>
+          <span className={styles.spanBlock}>
             You'll only receive notifications in the hours that you choose.
             Outside of those times, notifications will be paused.{' '}
             <span className={styles.spanSmall}>Learn more</span>
@@ -200,15 +202,14 @@ const NotificationPreference = () => {
           <button className={styles.button}>Example Sound</button>
         </div>
 
-        <form className={styles.mute}>
-          <div className={styles.checkbox}>
+        <div className={styles.mute}>
+          <div className={styles.markbox}>
             <label htmlFor="for-includepreview">
-              {' '}
               <input type="checkbox" />
               Include preview message in notification
             </label>
           </div>
-          <div className={styles.checkbox}>
+          <div className={styles.markbox}>
             <label htmlFor="for-muteall">
               <input
                 type="checkbox"
@@ -220,7 +221,7 @@ const NotificationPreference = () => {
               Mute all
             </label>
           </div>
-        </form>
+        </div>
 
         <div className={styles.picksound}>
           <div className={styles.share}>
@@ -345,3 +346,22 @@ const NotificationPreference = () => {
 }
 
 export default NotificationPreference
+
+const TextInput = ({ type = 'text', label }) => {
+  const [value, setValue] = useState('')
+
+  function handleChange(e) {
+    setValue(e.target.value)
+  }
+  return (
+    <div className={styles.inputContainer}>
+      <input
+        type={type}
+        className={styles.textInput}
+        value={value}
+        onChange={handleChange}
+      />
+      <label className={value && 'filled'}>{label}</label>
+    </div>
+  )
+}
