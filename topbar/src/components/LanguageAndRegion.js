@@ -94,7 +94,8 @@ const LanguageAndRegion = () => {
             </label>
 
             <div className={styles.choosed}>
-              <span className={styles.block}>English
+              <span className={styles.block}>
+                English
                 <span className={styles.closebtn}>
                   <span aria-hidden="true">&times;</span>
                 </span>
