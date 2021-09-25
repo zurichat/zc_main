@@ -11,6 +11,7 @@ import styles from '../styles/NotificationPreference.module.css'
 import { ProfileContext } from '../context/ProfileModal'
 import AudioVideo from '../components/AudioVideo'
 import AdvancedSettings from '../components/AdvancedSettings'
+import Accessibility from './Accessibility'
 
 const Preferences = () => {
   const { sideBar } = useContext(ProfileContext)
@@ -28,6 +29,7 @@ const Preferences = () => {
           {sideBar === 3 && <Themes />}
           {sideBar === 4 && <MessagesMedia />}
           {sideBar === 5 && <LanguageAndRegion />}
+          {sideBar === 6 && <Accessibility />}
           {sideBar === 7 && <MarkAsRead />}
           {sideBar === 8 && <AudioVideo />}
           {sideBar === 9 && <AdvancedSettings />}
