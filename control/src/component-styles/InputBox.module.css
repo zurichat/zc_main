@@ -8,7 +8,9 @@
   /* font-size: 16px; */
   /* margin-top: 0;
   padding-top: 0; */
+  font-size: 14px;
 }
+
 .InputContainerError {
   border-color: #ff0000 !important;
 }
@@ -19,10 +21,10 @@
 
 /* input Label */
 .InputLabel {
-  margin-block: 1rem;
+  margin-block: 0.2em;
   font-weight: bold;
-  font-size: 1.5rem;
-  line-height: 24px;
+  font-size: 1.4em;
+  /* line-height: 1.8em; */
   color: #3a3a3a;
 }
 
@@ -31,7 +33,8 @@
   border: 1px solid #bebebe;
   border-radius: 6px;
   width: 100%;
-  height: 3.5rem;
+  /* height: 3em; */
+  height: 3.8em;
   overflow: hidden;
 }
 
@@ -44,6 +47,7 @@
 .InputWrapperWithPassword {
   display: grid;
   grid-template-columns: 9fr 1fr;
+  /* grid-template-columns: 9fr 2fr; */
   grid-template-rows: 1fr;
 }
 
@@ -51,25 +55,27 @@
 .InputElement {
   width: 100%;
   height: 100%;
-  padding-inline-start: 1rem;
-  padding-inline-end: 1rem;
-  letter-spacing: 1px;
-  color: #000000;
+  /* padding-inline-start: 1em; */
+  /* padding-inline-end: 1rem; */
+  color: #3a3a3a;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  text-indent: 0.8em;
   /* padding: 0 1rem; */
   /* padding: 0, 0.625rem, 0, 1rem; */
   /* text-indent: 1rem; */
 }
 
 .InputElement::placeholder {
-  font-size: 1.2rem;
+  font-size: 1.2em;
+  /* font-size: 1.2rem; */
 }
 
 .InputElement:invalid,
 .InputElement.is_invalid {
   border-color: #ff0000;
-  color: #000000;
+  color: #3a3a3a;
 }
 
 .InputElement:focus,
@@ -79,9 +85,10 @@
 
 /* password toggle */
 .ToggleVisibility {
-  font-size: 1.5rem;
+  font-size: 1.3em;
+  /* font-size: 1.5rem; */
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   /* border: none; */
   /* background: #ffffffa8; */
@@ -94,12 +101,10 @@
   align-items: center;
 }
 
-/* Media Query 768px and Smaller */
-/* Media Query 920px and Smaller */
 /* Media Query for Screen Width 1080px and Smaller */
 @media only screen and (max-width: 1080px) {
   .InputContainer {
-    margin-block: 0.5rem;
+    margin-block: 0.5em;
     width: 100%;
   }
 
@@ -107,30 +112,51 @@
     margin-block-end: 0rem;
   }
 
-  /* input Label */
-  .InputLabel {
-    margin-block: 0.5rem;
-    font-size: 1.3rem;
-    line-height: 1.5rem;
-  }
-
-  /* actual input element */
   .InputElement {
-    text-indent: 0.7rem;
+    text-indent: 0.6em;
+  }
+}
+
+/* { */
+/* input Label */
+/* .InputLabel {
+    margin-block: 0.5em;
+    /* font-size: 1.3rem; */
+/* line-height: 1.5rem;  */
+/* font-size: 1em; */
+/* line-height: 1.5em; *
+  } */
+
+/* actual input element */
+/* .InputElement {
+    text-indent: 0.8em;
     padding-inline-start: 0;
     padding-inline-end: 0;
-    font-size: 1.2rem;
-  }
+    /* font-size: 1.2rem; *
+  } */
 
-  .InputElement::placeholder {
+/* .InputElement::placeholder {
     font-size: 1.2rem;
     margin-inline: 0;
     padding-inline-start: 0;
     padding-inline-end: 0;
-  }
+  } */
 
-  /* input wrapper WITH password */
-  .InputWrapperWithPassword {
-    grid-template-columns: 9fr 2fr;
-  }
-}
+/* input wrapper WITH password */
+/* .InputWrapperWithPassword {
+    grid-template-columns: 9fr 1fr;
+  } */
+/* } */
+
+/* Media Query for Screen Width 360px and Smaller */
+/* @media only screen and (max-width: 375px) {
+  /* .InputElement {  
+    text-indent: 0.5em;
+    padding-inline-start: 0em;
+    /* padding-inline-end: 0em; *
+  } */
+
+/* .InputWrapperWithPassword {
+    grid-template-columns: 9fr 1fr;
+  } *
+} */

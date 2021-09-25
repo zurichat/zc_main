@@ -1,7 +1,8 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
-import styles from '../../styles/Signout.module.css'
-import logo from '../images/zuri.svg'
+// import styles from '../../styles/Signout.module.css'
+import styles from '../../component-styles/Signout.module.css'
+import logo from '../../component-assets/zuri.svg'
 
 const Signout = () => {
   return (
