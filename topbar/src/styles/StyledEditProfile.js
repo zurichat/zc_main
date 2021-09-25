@@ -294,7 +294,7 @@ export const StyledProfileWrapper = styled.section`
 
       .avatar {
         width: 100%;
-        height: 24rem;
+        height: 150px;
 
         .img {
           object-fit: cover;
