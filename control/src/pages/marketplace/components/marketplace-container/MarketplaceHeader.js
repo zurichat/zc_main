@@ -3,7 +3,7 @@ import headerStyles from '../../styles/Header.module.css'
 import styles from '../../styles/marketplace.module.css'
 import logo from '../../../../component-assets/zurichatlogo.svg'
 
-const MarketplaceHeader = () => {
+const MarketplaceHeader = ({ user }) => {
   return (
     <nav
       className={`navbar navbar-expand-lg navbar-light ${headerStyles.navbar} ${styles.navbar}`}
@@ -35,7 +35,10 @@ const MarketplaceHeader = () => {
         <input type="text" placeholder="Search Plugins" />
       </div>
       <div className={styles.accountOwnerAvatar}>
-        <div className={styles.accountOwnerAvatarContainer}></div>
+        <span className={styles.accountOwnerFirstName}>{user.first_name}</span>
+        <div className={styles.accountOwnerAvatarContainer}>
+          {user.first_name[0].toUpperCase()}
+        </div>
       </div>
     </nav>
   )
