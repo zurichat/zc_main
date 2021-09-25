@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Login from './pages/login'
 import SignUp from './pages/signup'
+import SignOut from './pages/signout/index'
 import Workspace from './pages/workspace/components/Workspace'
 import LandingPage from './pages/LandingPage'
 // password block
@@ -42,44 +43,48 @@ import PrivacyPolicy from './pages/privacy-policy/index'
 // }
 // let workspaceRoute = '/createworkspace';
 
-const App = () => {
-  return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/" exact>
-          <LandingPage />
-        </Route>
-        <Route path="/blogs">
-          <Blogs />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/signup">
-          <SignUp />
-        </Route>
-        <Route path="/choose-workspace">
-          <Workspace />
-        </Route>
-        <Route path="/features">
-          <Features />
-        </Route>
-        <Route path="/invite-request">
-          <Inviterequest />
-        </Route>
-        <Route path="/send-request">
-          <SendRequest />
-        </Route>
-        <Route path="/resources">
-          <Resources />
-        </Route>
-        <Route path="/pricing">
-          <Pricing />
-        </Route>
-        <Route path="/security">
-          <Security />
-        </Route>
-        <Route path="/events">
+  const App = () => {
+return(
+  <BrowserRouter>
+    <Switch>
+    
+      <Route path="/" exact>
+        <LandingPage />
+      </Route>
+      <Route path="/blogs">
+        <Blogs />
+      </Route>
+      <Route path="/login">
+        <Login />
+      </Route>
+      <Route path="/signup">
+        <SignUp />
+      </Route>
+      <Route path="/signout">
+        <SignOut />
+      </Route>
+      <Route path="/choose-workspace">
+        <Workspace />
+      </Route>
+      <Route path="/features">
+        <Features />
+      </Route>
+      <Route path="/invite-request">
+        <Inviterequest />
+      </Route>
+      <Route path="/send-request">
+        <SendRequest />
+      </Route>
+      <Route path="/resources">
+        <Resources />
+      </Route>
+      <Route path="/pricing">
+        <Pricing />
+      </Route>
+      <Route path="/security">
+        <Security />
+      </Route>
+      <Route path="/events">
           <Events />
         </Route>
         <Route path="/download-app">

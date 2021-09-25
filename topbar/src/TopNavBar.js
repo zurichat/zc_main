@@ -1,70 +1,26 @@
-import { useContext, useEffect } from 'react'
-import { ProfileContext } from './context/ProfileModal'
-import { TopbarContext } from './context/Topbar'
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable react/prop-types */
+/* eslint-disable no-duplicate-imports */
+import { useContext } from 'react'
+import { TopbarContext } from '../context/Topbar'
 import { connect } from 'react-redux'
-import zurichatlogo from './assets/images/Logo.svg'
+import zurichatlogo from '../component-assets/zurichatlogo.svg'
 import { useState } from 'react'
 import styled from 'styled-components'
-import { BaseInput } from './TopBarIndex'
-import userAvatar from './assets/images/user.svg'
-import HelpIcon from './assets/download_images/question.svg'
-import HelpIcons from '@material-ui/icons/HelpOutline'
-import TopbarModal from './components/TopbarModal'
-import HelpModal from './components/HelpModal'
-import UserForm from '../../control/src/pages/ReportFeature/User/Form'
-import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
-import { authAxios } from './utils/Api'
+import { BaseInput } from '.'
+import userAvatar from '../component-assets/user.svg'
+// import TopbarModal from '../components/TopbarModal.js'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
-  const { openModal } = useContext(TopbarContext)
-  const { setUser, user, userProfileImage, setOrgId, setUserProfileImage } =
-    useContext(ProfileContext)
-  const [organizations, setOrganizations] = useState([])
+  const state = useContext(TopbarContext)
+  const { openModal } = state
   const [search, setSearch] = useState('')
-  const [helpModal, setHelpModal] = useState(false)
-
-  useEffect(() => {
-    const userdef = JSON.parse(sessionStorage.getItem('user'))
-
-    async function getOrganizations() {
-      await authAxios
-        .get(`/users/${userdef.email}/organizations`)
-        .then(response => {
-          setOrganizations(response.data.data)
-          setOrgId(response.data.data[0].id)
-          authAxios
-            .get(`/organizations/${response.data.data[0].id}/members`)
-            .then(response => {
-              setUser(
-                response.data.data.find(
-                  member => member.email === userdef.email
-                )
-              )
-              return response.data.data.find(
-                member => member.email === userdef.email
-              )
-            })
-            .catch(err => {
-              console.log(err.response.data)
-            })
-        })
-        .catch(err => {
-          console.log(err)
-        })
-    }
-
-    setUserProfileImage(user.image_url)
-
-    getOrganizations()
-  }, [setOrgId, user.image_url, setUser])
 
   return (
     <TopNavBarBase>
       <div>
-        <a href="#">
-          <img src={zurichatlogo} alt="zuri chat logo" />
-        </a>
-        {/* <LogoName>ZURI</LogoName> */}
+        <img src={zurichatlogo} alt="zuri chat logo" />
+        <LogoName>ZURI</LogoName>
       </div>
       <BaseInput
         value={search}
@@ -75,24 +31,15 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         placeholder="Search here"
         border={'#99999933'}
       />
-      <HelpContainer>
-        <HelpIcons onClick={() => setHelpModal(true)} />
-      </HelpContainer>
-      {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''}
-
-      <UserForm />
-      <AdminForm />
       <div>
         <img
-          style={{ height: '30px', width: '30px', borderRadius: '5px' }}
-          src={userProfileImage ? userProfileImage : userAvatar}
+          src={userAvatar}
           onClick={openModal}
           role="button"
           alt="user profile avatar"
         />
       </div>
-
-      <TopbarModal />
+      {/* <TopbarModal /> */}
     </TopNavBarBase>
   )
 }
@@ -106,39 +53,25 @@ export default connect(mapStateToProps)(TopNavBar)
 //  TopNavBar
 
 const TopNavBarBase = styled.div`
-  padding-inline-start: 1.5rem;
-  padding-inline-end: 1.5rem;
   background-color: var(--bg-2);
+  padding: 1rem;
+  margin: auto;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  z-index: 5;
+  position: fixed;
+  z-index: 2;
   width: 100%;
-  font-size: 1.5rem;
-  // position: fixed;
-  // padding: 1rem;
-  // margin: auto;
-  // margin-bottom: 3rem !important;
+  margin-bottom: 3rem !important;
 `
 
-// const LogoName = styled.span`
-//   font-family: Lato;
-//   font-size: 20px;
-//   font-style: normal;
-//   font-weight: 700;
-//   line-height: 27px;
-//   letter-spacing: 0px;
-//   padding: 0.5rem;
-//   text-align: center;
-//   vertical-align: middle;
-// `
-
-const HelpContainer = styled.div`
-  > .MuiSvgIcon-root {
-    opacity: 0.5;
-  }
-  &:hover {
-    cursor: pointer;
-    opacity: 0.5;
-  }
+const LogoName = styled.span`
+  font-family: Lato;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: 0px;
+  padding: 0.5rem;
+  text-align: center;
+  vertical-align: middle;
 `
