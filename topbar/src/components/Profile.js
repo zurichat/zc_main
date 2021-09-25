@@ -8,7 +8,7 @@ import linkedin from '../assets/images/linkedin.svg'
 import instagram from '../assets/images/instagram.svg'
 import github from '../assets/images/github.svg'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import moment from 'moment' 
+import moment from 'moment'
 import { ProfileContext } from '../context/ProfileModal'
 import { TopbarContext } from '../context/Topbar'
 import EditProfile from './EditProfile'
@@ -27,10 +27,12 @@ const Profile = () => {
   const [dropdown, setDropdown] = useState(false)
   const [modal, setModal] = useState('')
 
- const currentTime = moment().format("h:mm a")
+  const currentTime = moment().format('h:mm a')
 
   return (
-    <div className={showProfile ? styles.ProfileContainer : styles.containerNone}>
+    <div
+      className={showProfile ? styles.ProfileContainer : styles.containerNone}
+    >
       <svg
         className={styles.mobileBackButton}
         onClick={toggleProfileState}
@@ -98,7 +100,6 @@ const Profile = () => {
               }}
               className={styles.ctaButton}
             >
-              
               {/* <FontAwesomeIcon icon={["fas", "user"]} /> */}
               <svg
                 viewBox="0 0 12 12"
@@ -146,7 +147,7 @@ const Profile = () => {
           </div>
           <div>
             <button onClick={() => setDropdown(!dropdown)}>
-            {/* <FontAwesomeIcon icon={["fas", "ellipsis-h"]} /> */}
+              {/* <FontAwesomeIcon icon={["fas", "ellipsis-h"]} /> */}
               <svg
                 viewBox="0 0 13 12"
                 fill="none"
@@ -188,11 +189,15 @@ const Profile = () => {
         </div>
         <div className={`${styles.moreInfo} ${styles.mobile}`}>
           <div className={styles.infoTitle}>Pronouns</div>
-          <div className={styles.infoContent}>{user.pronouns ? user.pronouns : 'null'}</div>
+          <div className={styles.infoContent}>
+            {user.pronouns ? user.pronouns : 'null'}
+          </div>
         </div>
         <div className={styles.moreInfo}>
           <div className={styles.infoTitle}>Display name</div>
-          <div className={styles.infoContent}>{user.user_name ? user.user_name : 'His/Her'}</div>
+          <div className={styles.infoContent}>
+            {user.user_name ? user.user_name : 'His/Her'}
+          </div>
         </div>
         <div className={`${styles.moreInfo} ${styles.mobile}`}>
           <div className={styles.infoTitle}>Status</div>
@@ -202,14 +207,14 @@ const Profile = () => {
         </div>
         <div className={styles.moreInfo}>
           <div className={styles.infoTitle}>Email address</div>
-          <div  className={styles.infoContent}>
-          {user.email ? user.email : 'null'}
+          <div className={styles.infoContent}>
+            {user.email ? user.email : 'null'}
           </div>
         </div>
         <div className={styles.moreInfo}>
           <div className={styles.infoTitle}>Phone number</div>
           <div className={styles.infoContent}>
-          {user.phone ? user.phone : 'null'}
+            {user.phone ? user.phone : 'null'}
           </div>
         </div>
         <div className={styles.moreInfo}>
@@ -221,20 +226,18 @@ const Profile = () => {
           <div className={styles.icons}>
             <img src={linkedin} alt="linkedin" />
           </div>
-        <div className={styles.icons}>
+          <div className={styles.icons}>
             <img src={facebook} alt="linkedin" />
           </div>
-        <div className={styles.icons}>
+          <div className={styles.icons}>
             <img src={github} alt="linkedin" />
           </div>
-        <div className={styles.icons}>
+          <div className={styles.icons}>
             <img src={twitter} alt="linkedin" />
           </div>
-        <div className={styles.icons}>
+          <div className={styles.icons}>
             <img src={instagram} alt="linkedin" />
           </div>
-        
-         
         </div>
       </div>
     </div>

@@ -11,8 +11,8 @@ export const Dropdown = () => {
   const { toggleModalState } = useContext(ProfileContext)
   const [modal, setModal] = useState('')
   const state = useContext(TopbarContext)
-  const { presence, toggleUserPresence  } = state
- 
+  const { presence, toggleUserPresence } = state
+
   const getText = useRef('')
 
   const CopyToClipBoard = () => {
@@ -20,12 +20,14 @@ export const Dropdown = () => {
     navigator.clipboard.writeText(copiedText).then(
       () => {
         toast.success('Member ID Copied', {
-            position: 'bottom-center'
-          })      },
+          position: 'bottom-center'
+        })
+      },
       err => {
         toast.error(err?.message, {
-            position: 'bottom-center'
-          })      }
+          position: 'bottom-center'
+        })
+      }
     )
   }
 
@@ -54,7 +56,7 @@ export const Dropdown = () => {
           <small className={styles.small} ref={getText}>
             U031203013
           </small>
-          <a href='/settings' style={{color: 'black', fontWeight: 'normal'}} >
+          <a href="/settings" style={{ color: 'black', fontWeight: 'normal' }}>
             <p className={styles.paragraphNull}>Account settings</p>
           </a>
         </div>
