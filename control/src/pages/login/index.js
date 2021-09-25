@@ -72,7 +72,7 @@ const Login = () => {
         setTimeout(() => {
           //Redirect to some other page
           GetUserInfo()
-          history.push('/home')
+          history.push('/choose-workspace')
           setLoading(false)
         }, 2000)
       })
