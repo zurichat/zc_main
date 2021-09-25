@@ -61,25 +61,6 @@ const TopbarModal = ({ members }) => {
       )
   }
 
-  const toggleUserPresence = () => {
-    authAxios
-      .post(`/organizations/${orgId}/members/${user._id}/presence`, presence)
-      .then(res => {
-        console.log('response1 =>', res)
-        return authAxios.get(`/organizations/${orgId}/members/${user._id}/`)
-      })
-      .then(res => {
-        console.log(
-          'response2',
-          res.data.data.presence,
-          res.data.data.user_name
-        )
-      })
-      .catch(err => {
-        console.log(err?.response?.data)
-      })
-  }
-
   useEffect(() => {
     console.log('user presence', user.presence)
     setPresence(user.presence)
