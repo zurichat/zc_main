@@ -94,7 +94,12 @@ const LanguageAndRegion = () => {
             </label>
 
             <div className={styles.choosed}>
-              <span className={styles.block}>English</span>
+              <span className={styles.block}>
+                English
+                <span className={styles.closebtn}>
+                  <span aria-hidden="true">&times;</span>
+                </span>
+              </span>
             </div>
             <p className={styles.note}>
               Choose the languages you’d like Zurichat to spellcheck as you

@@ -1,19 +1,33 @@
 import React, { useState } from 'react'
 import Logo from '../../component-assets/zuri.svg'
 import authBg from '../../component-assets/backg.svg'
-import { withRouter } from 'react-router-dom'
+import { withRouter, useLocation } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
 import styles from '../../component-styles/ResetPassword.module.css'
 import axios from 'axios'
 import Button from '../../components/Button'
 
-const NewPassword = ({ resetCode }) => {
+const NewPassword = () => {
   const [password, setPassword] = useState('')
+
+  function useQuery() {
+    return new URLSearchParams(useLocation().search)
+  }
+  let query = useQuery()
+  const resetCode = query.get('code')
   const handleSubmit = async () => {
-    const res = await axios.post('api.zuri.chat/account/update-password', {
-      password
-    })
-    // + resetCode,
+    try {
+      const res = await axios.post(
+        `https://api.zuri.chat/account/update-password/${resetCode}`,
+        {
+          password
+        }
+      )
+      alert('password reset!', res.data)
+    } catch (err) {
+      alert(err)
+      console.error(err)
+    }
   }
 
   return (
@@ -21,7 +35,7 @@ const NewPassword = ({ resetCode }) => {
       <aside id={styles.authAsideContainer} className={styles.display_none}>
         <div id={styles.authImageWrapper}>
           <img src={authBg} alt="backgroundImage" />
-          <div id={styles.aside_txt}></div>
+          <div id={styles.asideText}></div>
         </div>
       </aside>
       <section id={``}>
@@ -47,20 +61,9 @@ const NewPassword = ({ resetCode }) => {
             placeholder="Enter your new password"
             value={password}
             setValue={setPassword}
-            // onFocus={displayImage}
             // error={error}
           />
 
-          {/* <AuthInputBox
-                className={`${styles.inputElement}`}
-                id="cpassword"
-                name="Confirm password"
-                type="password"
-                placeholder="Confirm password"
-                value={confirmPassword}
-                setValue={setConfirmPassword}
-                // error={error}
-              /> */}
           <Button className={styles.button} onClick={handleSubmit}>
             Continue
           </Button>

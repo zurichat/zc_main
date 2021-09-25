@@ -10,9 +10,17 @@ import theme7 from '../assets/images/theme3.png'
 import theme8 from '../assets/images/theme3.png'
 import theme9 from '../assets/images/theme3.png'
 import theme10 from '../assets/images/theme3.png'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { authAxios } from '../utils/Api'
+import { ProfileContext } from '../context/ProfileModal'
+
+import toast, { Toaster } from 'react-hot-toast'
 
 const Themes = () => {
+  const { user, orgId } = useContext(ProfileContext)
+  const [color, setColor] = useState('')
+  const [theme, setTheme] = useState('')
+
   // // handleSubmit function on the form
   // const handleSubmit = (e) => {
   //   e.preventDefault()
@@ -54,26 +62,52 @@ const Themes = () => {
   //   console.log(user)
   // }, [dataState])
 
-  const [isChecked, setIsChecked] = useState(false)
-
-  // handleSubmit function on the form
-  const handleSubmit = e => {
-    e.preventDefault()
-    console.log(isChecked)
+  const [sync, setSync] = useState(false)
+  const [direct, setDirect] = useState(false)
+  const data = {
+    settings: {
+      themes: {
+        colors: 'light',
+        themes: 'theme'
+      }
+    }
   }
 
-  React.useEffect(() => {
-    fetch('https://api.zuri.chat/', {
-      method: 'POST',
-      headers: {
-        // authorization if any
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(isChecked)
-    })
-      .then(res => console.log(res))
-      .catch(error => console.log(error))
-  })
+  // handleSubmit function on the form
+  const handleSubmit = color => {
+    setColor(color)
+
+    authAxios
+      .patch(`/organizations/${orgId}/members/${user._id}/profile`, {
+        name: 'mike'
+      })
+      .then(res => {
+        console.log(res)
+        toast.success('Color succesfuly Set', {
+          position: 'bottom-center'
+        })
+        console.log(data)
+      })
+      .catch(err => {
+        console.log(err?.response?.data)
+        toast.error(err?.message, {
+          position: 'bottom-center'
+        })
+      })
+  }
+
+  // React.useEffect(() => {
+  //   fetch('https://api.zuri.chat/', {
+  //     method: 'POST',
+  //     headers: {
+  //       // authorization if any
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify(isChecked)
+  //   })
+  //     .then(res => console.log(res))
+  //     .catch(error => console.log(error))
+  // })
 
   return (
     <div className={styles.themeCont}>
@@ -83,36 +117,43 @@ const Themes = () => {
         </div>
       </div>
       <div className={styles.sync}>
-        <form onsubmit={handleSubmit}>
+        <form>
           <div className={styles.checkbox}>
             <input
               type="checkbox"
               name="sync"
-              onChange={e => setIsChecked(e.target.checked)}
+              checked={sync}
+              onChange={e => setSync(sync)}
             />
           </div>
         </form>
         <div className={styles.os}>Sync with OS setting</div>
       </div>
       <div className={styles.direct}>
-        <form onsubmit={handleSubmit}>
+        <form>
           <div className={styles.radio}>
             <input
               type="checkbox"
               name="direct"
-              onChange={e => setIsChecked(e.target.checked)}
+              checked={direct}
+              onChange={e => setDirect(!direct)}
             />
           </div>
         </form>
         <div className={styles.mention}>
-          Direct messages, mentions & network
+          Direct messages, mentions &amp; network
         </div>
       </div>
       <div className={styles.text2}>
         Automatically switch between light and dark themes
       </div>
       <div className={styles.text2b}>when your system does.</div>
-      <div className={styles.img}>
+      <div
+        className={styles.img}
+        onClick={() => {
+          handleSubmit('light')
+        }}
+      >
         <img src={theme1} alt="theme1" className={styles.theme1} />
       </div>
       <div className={styles.img2}>
@@ -166,6 +207,7 @@ const Themes = () => {
           </div>
         </div>
       </div>
+      <Toaster />
     </div>
   )
 }

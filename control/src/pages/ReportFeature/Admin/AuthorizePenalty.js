@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import styles from './reports.module.css'
 import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
-import { BsFillXCircleFill } from 'react-icons/bs'
+import { AiOutlineClose } from 'react-icons/ai'
 import { TiTick } from 'react-icons/ti'
+import { Container, Card, Button } from 'react-bootstrap'
 
 export const AuthorizePenalty = props => {
   const [check, setCheck] = useState(false)
@@ -33,15 +33,15 @@ export const AuthorizePenalty = props => {
   const { complaints } = props
 
   return (
-    <div className={styles.formcontainer}>
+    <Container className={styles.formcontainer}>
       <div>
-        <h1 className={`mb-5 ${styles.head1}`}>Complaints</h1>
+        <h1 className={`mb-5 text-success ${styles.head1}`}>Complaints</h1>
 
         <br />
 
         <span
           style={{
-            backgroundColor: '#00B87C',
+            backgroundColor: 'rgb(53, 231, 142)',
             display: 'flex',
 
             flexDirection: 'space-around'
@@ -56,46 +56,36 @@ export const AuthorizePenalty = props => {
         {complaints.length ? (
           <>
             {complaints.map((complain, idx) => (
-              <div key={idx}>
-                <div
+              <Card key={idx}>
+                <Card.Body
                   style={{ display: 'flex', flexDirection: 'space-inbetween' }}
                 >
-                  <div>
-                    <label
-                      className="form-check-label"
-                      htmlFor="flexSwitchCheckChecked"
-                    >
-                      <b>{complain.email}</b>
-                      <p className="date">{complain.date}</p>
-                    </label>
-                    {complain.authorize ? (
-                      <TiTick color="green" onClick={handleShow} />
-                    ) : null}
-
-                    {/* <input className="form-check-input "  type="checkbox" id="flexSwitchCheckChecked" 
-                        onChange={inputChange(idx)} 
-                        checked={complain.authorize}
-                        style = {{marginLeft:"0.5rem"}}
-                        /> */}
+                  <div className="col-7">
+                    <Card.Title>{complain.email}</Card.Title>
+                    <Card.Text className="date ">{complain.date}</Card.Text>
                   </div>
-
-                  <button
-                    className="btn btn-success"
-                    onClick={e => view(idx, e)}
-                    style={{
-                      // color: "#00B87C",
-                      backgroundColor: ' fff',
-                      padding: '10px 15px',
-                      borderRadius: '5%',
-                      marginLeft: '22rem'
-                    }}
-                  >
-                    View Details
-                  </button>
-                </div>
+                  {complain.authorize ? (
+                    <TiTick
+                      className="col-7"
+                      color="green"
+                      onClick={handleShow}
+                    />
+                  ) : null}
+                </Card.Body>
+                <Button
+                  className=" "
+                  onClick={e => view(idx, e)}
+                  variant="outline-success"
+                  style={{
+                    width: '30%',
+                    marginLeft: '45%'
+                  }}
+                >
+                  View Details
+                </Button>
 
                 <br />
-              </div>
+              </Card>
             ))}
           </>
         ) : (
@@ -103,31 +93,32 @@ export const AuthorizePenalty = props => {
         )}
 
         <br />
-        <div
-          className="row"
-          style={{ display: 'flex', flexDirection: 'flex-end' }}
-        >
-          <div className="col-9">
-            <button
-              className="btn btn-success"
-              onClick={handleShow}
-              style={{
-                color: 'white',
-                borderRadius: '10%',
-                padding: '12px',
-                marginLeft: '15rem'
-              }}
-            >
-              Authorize Penalty
-            </button>
-          </div>
+        {/* <div className="row" style={{ display: "flex", flexDirection: "flex-end" }} > */}
+
+        <div className="col-6 text-right">
+          <button
+            className="btn btn-success"
+            onClick={handleShow}
+            style={{
+              color: 'white',
+              borderRadius: '5%',
+              // padding: "12px",
+              marginLeft: '50%'
+            }}
+          >
+            Authorize Penalty
+          </button>
         </div>
       </div>
 
       <Modal show={check} onHide={handleClose}>
         <Modal.Header>
           <Modal.Title className="text-success">ZuriChat Watches</Modal.Title>
-          <BsFillXCircleFill variant="secondary" onClick={handleClose} />
+          <AiOutlineClose
+            color="green"
+            variant="secondary"
+            onClick={handleClose}
+          />
         </Modal.Header>
         <Modal.Body>
           Are you sure you want to authorize these penalties?
@@ -141,7 +132,7 @@ export const AuthorizePenalty = props => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </div>
+    </Container>
   )
 }
 
