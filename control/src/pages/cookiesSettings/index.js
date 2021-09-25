@@ -21,7 +21,7 @@ function CookiesSettings() {
               <div className={styles.cookie_body_text}>
                 Essential cookies helps access the website and each of its web
                 pages and subdomains, by enabling functions like cookies
-                consent. They cannot be disabled
+                consent. They cannot be disabled.
               </div>
             </div>
             <div className={styles.cookie_body_first_button}>
