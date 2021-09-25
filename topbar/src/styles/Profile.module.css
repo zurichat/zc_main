@@ -1,10 +1,5 @@
-
-  
-
-
-
 .ProfileContainer {
-  min-width: 20.5rem ;
+  min-width: 20.5rem;
   height: calc(100vh - 2.9em);
   background: #fff;
   position: fixed;
@@ -152,7 +147,6 @@
 }
 .buttonGroups button:hover {
   background: #00b87c;
-
 }
 
 .buttonGroups button svg {
@@ -164,9 +158,8 @@
   stroke: rgb(126, 123, 123);
 }
 .buttonGroups button svg path:hover {
-  stroke:  #fff;
+  stroke: #fff;
 }
-
 
 .moreInfo {
   text-align: left;
@@ -195,7 +188,6 @@
   align-items: center;
   margin-top: 1.4rem;
   margin-bottom: 3rem;
- 
 }
 
 .icons {
@@ -311,7 +303,6 @@
     color: #fff;
   }
 
-
   .moreInfo {
     text-align: left;
     margin: 0 0.6rem;
@@ -344,7 +335,7 @@
     font-size: 0.8rem;
   }
 
-  .social{
+  .social {
     margin-left: 4px;
   }
 
