@@ -7,8 +7,7 @@ import { ProfileContext } from '../context/ProfileModal'
 import { authAxios } from '../utils/Api'
 import Loader from 'react-loader-spinner'
 import toast, { Toaster } from 'react-hot-toast'
-import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
+import {data} from "../utils/CountryCode";
 import TimezoneSelect from 'react-timezone-select'
 import { StyledProfileWrapper } from '../styles/StyledEditProfile'
 
@@ -34,10 +33,12 @@ const EditProfile = () => {
     loading: false
   })
 
-  console.log('users', user)
+  console.log('data', data)
 
   const addList = () => {
-    setLinks([...links, ''])
+    if(links.length < 5) {
+      setLinks([...links, ''])
+    }
   }
 
   const handleLinks = (e, index) => {
@@ -183,7 +184,7 @@ const EditProfile = () => {
                     <AiFillCamera className="icon" />
                   </label>
                 </div>
-                <div className="input-group ml-4 md:ml-0">
+                <div className="input-group mal-4">
                   <label htmlFor="name" className="inputLabel">
                     First Name
                   </label>
@@ -199,7 +200,7 @@ const EditProfile = () => {
               </div>
 
               <div className="double-input">
-                <div className="input-group">
+                <div className="input-group mb-0">
                   <label htmlFor="dname" className="inputLabel">
                     Choose a Display Name
                   </label>
@@ -233,7 +234,7 @@ const EditProfile = () => {
                 </div>
               </div>
 
-              <div className="input-group">
+              <div className="input-group mb-0">
                 <label htmlFor="what" className="inputLabel">
                   What you do
                 </label>
@@ -262,13 +263,19 @@ const EditProfile = () => {
                   id="bio"
                 ></textarea>
               </div>
-              <div className="input-group">
+              <div className="input-group phone">
                 <label className="inputLabel">Phone Number</label>
-                <PhoneInput
-                  placeholder="Enter phone number"
-                  value={phone}
-                  onChange={setPhone}
-                />
+                <div className="phone-container">
+                  <select className="pref">
+                    {
+                      // country code
+                      data.map(item => (
+                        <option key={item.dial_code}>{item.dial_code}</option>
+                      ))
+                    }
+                  </select>
+                  <input className="phoneInput" type="number" />
+                </div>
               </div>
               <div className="input-group">
                 <label className="inputLabel">Time Zone</label>
@@ -313,9 +320,12 @@ const EditProfile = () => {
                   <input type="text" className="input mb-3" key={index} />
                 ))}
 
-                <p className="warning" onClick={addList}>
-                  Add new link
-                </p>
+                {
+                  links.length !== 5 &&
+                  <p className="warning" onClick={addList}>
+                    Add new link
+                  </p>
+                }
               </div>
             </div>
             <div className="img-container">
@@ -338,7 +348,7 @@ const EditProfile = () => {
                   {state.loading ? (
                     <Loader
                       type="ThreeDots"
-                      color="#00B87C"
+                      color="#fff"
                       height={40}
                       width={40}
                     />
@@ -364,7 +374,7 @@ const EditProfile = () => {
               {state.loading ? (
                 <Loader
                   type="ThreeDots"
-                  color="#00B87C"
+                  color="#fff"
                   height={40}
                   width={40}
                 />
