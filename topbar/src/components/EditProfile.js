@@ -39,79 +39,7 @@ const EditProfile = () => {
     facebook: '',
     loading: false
   })
-
-  const onImageUpload = () => {
-    console.log(imageUrl)
-    setUserProfileImage(imageUrl)
-    authAxios
-      .patch(`/organizations/${orgId}/members/${user._id}/photo`, {
-        image_url: imageUrl
-      })
-      .then(res => {
-        console.log(res)
-        toast.success('User Profile Picture Updated Successful', {
-          position: 'bottom-center'
-        })
-        setImageUrl('')
-      })
-      .catch(err => {
-        toast.error(err?.message, {
-          position: 'bottom-center'
-        })
-      })
-  }
-
-  const handleUploadWithEnter = e => {
-    if (e.keyCode === 13) {
-      onImageUpload()
-    }
-  }
-
-  let validateImageUrl = true
-
-  if (imageUrl.length === 0) {
-    validateImageUrl = true
-  } else {
-    validateImageUrl = false
-  }
-
-  // const handleImageChange = event => {
-  //   if (imageRef.current.files[0]) {
-  //     let fileReader = new FileReader()
-
-  //     fileReader.onload = function (event) {
-  //       avatarRef.current.src = event.target.result
-  //       setUserProfileImage(event.target.result)
-  //     }
-
-  //     const imgUrl = fileReader.readAsDataURL(imageRef.current.files[0])
-
-  //   }
-  // }
-
-  // useEffect(() => {
-
-  // onImageUpload()
-  // },[imageUrl])
-
-  // This will handle the profile form submission
-
-  //const handleFormSubmit = e => {
-  //  e.preventDefault()
-  //  setState({ loading: true })
-  //
-  //
-  //  const data = {
-  //    name: state.name,
-  //    display_name: state.display_name,
-  //    email: state.email,
-  //    pronouns: state.pronouns,
-  //    phone: state.phone,
-  //    bio: state.bio,
-  //    timeZone: state.timezone
-  //  }
-  //}
-  // socials: [state.twitter, state.facebook, ...otherLinks],
+  let newUploadedImage = null
   console.log('users', user)
 
   const addList = () => {
@@ -131,8 +59,6 @@ const EditProfile = () => {
 
       fileReader.onload = function (event) {
         avatarRef.current.src = event.target.result
-        setUserProfileImage(event.target.result)
-        console.log(event.target.result)
       }
 
       fileReader.readAsDataURL(imageRef.current.files[0])
@@ -146,14 +72,13 @@ const EditProfile = () => {
         .patch(`/organizations/${orgId}/members/${user._id}/photo`, formData)
         .then(res => {
           console.log(res)
+          newUploadedImage = res.data.data
           setState({ loading: false })
-          setUserProfileImage(res.data.data.image_url)
+          setUserProfileImage(res.data.data)
+          console.log(userProfileImage)
           toast.success('User Image Updated Successfully', {
             position: 'bottom-center'
           })
-        })
-        .then(res => {
-          return authAxios.get(`/organizations/${orgId}/members/${user._id}/`)
         })
         .catch(err => {
           console.log(err)
@@ -166,8 +91,8 @@ const EditProfile = () => {
   }
 
   useEffect(() => {
-    // handleImageChange()
-  }, [userProfileImage])
+   setUserProfileImage(user.image_url)
+  }, [user])
 
   // const handleImageChange = event => {
   //   setState({ loading: true })
@@ -195,9 +120,7 @@ const EditProfile = () => {
   // let reader = fileReader.readAsDataURL(event.target.files[0]);
   // console.log(reader)
 
-  useEffect(() => {
-    setUserProfileImage(user.image_url)
-  })
+ 
 
   // This will handle the profile form submission
 
@@ -431,6 +354,7 @@ const EditProfile = () => {
             <div className="img-container">
               <div className="avatar">
                 <img
+               
                   ref={avatarRef}
                   className="img"
                   src={userProfileImage ? userProfileImage : avatar}
@@ -445,16 +369,16 @@ const EditProfile = () => {
                   id="img"
                 />
                 <label htmlFor="img" className="btns chgBtn">
-                  {state.loading ? (
+                  {/* {state.loading ? (
                     <Loader
                       type="ThreeDots"
                       color="#00B87C"
                       height={40}
                       width={40}
                     />
-                  ) : (
-                    'Upload Image'
-                  )}
+                  ) : ( */}
+                    Upload Image
+                  {/* ) */}
                 </label>
                 <button className="btns rmvBtn">Delete image</button>
               </div>
