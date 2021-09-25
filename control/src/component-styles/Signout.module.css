@@ -96,9 +96,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .signout,
-  body,
-  html {
+  .signout{
     background: #ffffff !important;
   }
   .signout {
