@@ -14,43 +14,25 @@ const Cookies = () => {
           </div>
           <div className={styles.bannerText}>
             <p>
-              We use cookies to ensure that that we give the best experience on
-              or website. We also use cookies to ensure we show
-              <br /> you advertisiing that si relevant to you{' '}
-              <Link to="/cookies-settings">manage cookie settings</Link> at
-              anytime.
+              We use cookies to ensure that we give the best experience on our
+              website. By clicking "Allow", you agree Zuri Chat can store
+              cookies on your device.{' '}
+              <Link to="/cookies-settings">manage cookie settings </Link>
+              at anytime.
             </p>
           </div>
         </div>
-        <div className={styles.bannerButtons}>
+        <div className={styles.bannerButtonsss}>
           <button
-            style={{
-              backgroundColor: '#00b87c',
-              color: 'white',
-              fontWeight: 'bold',
-              padding: '10px 0',
-              borderRadius: '20px',
-              border: 'none'
-            }}
             className={`${styles.allowButton} ${styles.button}`}
             onClick={handleClickAllow}
           >
             Allow
           </button>
           <button
-            style={{
-              backgroundColor: 'white',
-              color: 'black',
-
-              padding: '10px 0 ',
-              fontWeight: 'bold',
-              borderRadius: '20px',
-              border: 'none'
-            }}
-            className={`${styles.declineButton} ${styles.button}`}
-            onClick={handleClickDecline}
+            className={`${styles.settingsButton} ${styles.button}`}
           >
-            Decline
+            <Link to="/cookies-settings"> Settings </Link>
           </button>
         </div>
       </div>
@@ -63,9 +45,5 @@ const handleClickAllow = event => {
   event.target.parentNode.parentNode.parentNode.style.display = 'none'
 }
 
-const handleClickDecline = event => {
-  sessionStorage.setItem('cookies-decline', 'true')
-  event.target.parentNode.parentNode.parentNode.style.display = 'none'
-}
 
 export default Cookies

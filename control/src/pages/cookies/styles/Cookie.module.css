@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 49%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,8 +12,8 @@
 
 .bannerBox {
   background-color: rgb(240, 240, 240);
-  padding: 3rem 8rem;
-  margin: 5rem 10rem 2rem 10rem;
+  padding: 2rem;
+  margin: 5rem 10rem 2rem 3rem;
   border-radius: 20px;
   position: absolute;
   bottom: 0px;
@@ -26,85 +26,108 @@
 }
 
 .bannerTitle h1 {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
   font-family: 'Gilroy', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
     sans-serif;
+  text-align: center;
+  font-size: 1.2rem;
+  margin: -1rem;
+  font-weight: bold;
 }
 
 .bannerText p {
   font-family: 'Gilroy', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
     sans-serif;
-  text-align: center;
+  text-align: left;
+  line-height: 1.3;
+  font-size: 1.1rem;
+  display: inline-block;
 }
 
 .bannerText p a {
   color: red;
+  font-size: 1rem;
 }
 
 .button {
-  width: 186px;
+  margin-top: 1rem;
+  padding: 0.8rem 4rem;
+  border-radius: 100px;
+  border: none;
 }
 
 .bannerButtons {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
-  gap: 38px;
 }
 
 .allowButton {
   background-color: rgb(0, 172, 134);
   color: white;
-
+  font-size: 1rem;
   font-weight: bold;
-  border-radius: 20px;
 }
 
 .allowButtons:hover {
   background-color: rgb(0, 124, 97);
 }
 
-.declineButtons {
-  color: red;
-  margin-left: 2rem;
-  font-weight: bold;
-  border-radius: 20px;
+.settingsButton {
+  background-color: white;
+  margin-left: 5rem;
 }
 
-.bannerButtons .DeclineButtons:hover {
+.settingsButton a {
+  color: #000;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+
+.bannerButtons .settingsButton:hover {
   color: rgb(187, 0, 0);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 890px) {
+  .button {
+    width: 100%;
+    height: 3rem;
+  }
+
+  .settingsButton {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .bannerContainer {
+    margin: 0 2rem;
+    width: 29%;
+  }
+
   .bannerTitle h1 {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    margin: -1rem;
   }
 
   .bannerBox {
-    padding: 4rem 1rem 4rem 1rem;
+    padding: 3rem 2rem;
     margin: 1.5rem;
   }
+}
 
-  .bannerBox > button {
-    width: 137px;
-  }
-
-  .bannerBox {
-    gap: 22px;
+@media screen and (max-width: 600px) {
+  .bannerContainer {
+    margin: 0 auto;
+    width: 25%;
   }
 
   .button {
-    width: 147px;
+    width: 100%;
+    height: 3rem;
   }
 
-  .bannerButtons {
-    display: flex;
-  }
-
-  .bannerButtons > .declineButton {
-    margin-left: 0.7rem;
+  .settingsButton {
+    margin-left: 0;
   }
 }
