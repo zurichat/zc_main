@@ -91,7 +91,7 @@ const EditProfile = () => {
   }
 
   useEffect(() => {
-   setUserProfileImage(user.image_url)
+    setUserProfileImage(user.image_url)
   }, [user])
 
   // const handleImageChange = event => {
@@ -119,8 +119,6 @@ const EditProfile = () => {
 
   // let reader = fileReader.readAsDataURL(event.target.files[0]);
   // console.log(reader)
-
- 
 
   // This will handle the profile form submission
 
@@ -354,7 +352,6 @@ const EditProfile = () => {
             <div className="img-container">
               <div className="avatar">
                 <img
-               
                   ref={avatarRef}
                   className="img"
                   src={userProfileImage ? userProfileImage : avatar}
@@ -377,7 +374,7 @@ const EditProfile = () => {
                       width={40}
                     />
                   ) : ( */}
-                    Upload Image
+                  Upload Image
                   {/* ) */}
                 </label>
                 <button className="btns rmvBtn">Delete image</button>
