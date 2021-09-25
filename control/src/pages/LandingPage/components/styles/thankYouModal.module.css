@@ -1,0 +1,31 @@
+.modalWrap {
+    position: fixed;
+    top: 150px;
+    left: 350px;
+    margin: 0px auto;
+    width: 70%;
+    max-width: 830px;
+    max-height: 500px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    box-shadow: 10px 10px 30px;
+    z-index: 10;
+}
+
+/* tablets */
+@media (max-width: 769px) {
+    .modalWrap {
+        left: 130px;
+        margin: 0px auto;
+    }
+}
+
+/* mobile phone */
+@media screen and (max-width: 469px) {
+    .modalWrap {
+        top: 75px;
+        left:   10px;
+        margin: 10px auto;
+        width: 90%;
+    }
+}
