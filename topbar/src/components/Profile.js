@@ -1,13 +1,14 @@
 import React, { useContext, useState } from 'react'
 import styles from '../styles/Profile.module.css'
 import userAvatar from '../assets/images/user.svg'
-
 import facebook from '../assets/images/facebook.svg'
 import twitter from '../assets/images/twitter.svg'
 import linkedin from '../assets/images/linkedin.svg'
 import instagram from '../assets/images/instagram.svg'
 import github from '../assets/images/github.svg'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { BiUser } from 'react-icons/bi'
+import { AiFillEdit } from 'react-icons/ai'
+import { FaEllipsisH } from 'react-icons/fa'
 import moment from 'moment'
 import { ProfileContext } from '../context/ProfileModal'
 import { TopbarContext } from '../context/Topbar'
@@ -100,81 +101,22 @@ const Profile = () => {
               }}
               className={styles.ctaButton}
             >
-              {/* <FontAwesomeIcon icon={["fas", "user"]} /> */}
-              <svg
-                viewBox="0 0 12 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M10 10.5V9.5C10 8.39543 9.10457 7.5 8 7.5H4C2.89543 7.5 2 8.39543 2 9.5V10.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M6 5.5C7.10457 5.5 8 4.60457 8 3.5C8 2.39543 7.10457 1.5 6 1.5C4.89543 1.5 4 2.39543 4 3.5C4 4.60457 4.89543 5.5 6 5.5Z"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <BiUser className={styles.ctaButtonIcon} />
             </button>
             <h6 className={styles.ctaText}> Edit Profile</h6>
           </div>
           <div>
-            <button onClick={state.openStatus}>
-              <svg
-                viewBox="0 0 12 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M7 1.00005L9 3L3.5 8.5H1.5V6.5L7 1.00005Z"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M1.5 11H10.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+            <button onClick={state.openStatus} className={styles.ctaButton}>
+              <AiFillEdit className={styles.ctaButtonIcon} />
             </button>
             <h6 className={styles.ctaText}> Edit Status</h6>
           </div>
           <div>
-            <button onClick={() => setDropdown(!dropdown)}>
-              {/* <FontAwesomeIcon icon={["fas", "ellipsis-h"]} /> */}
-              <svg
-                viewBox="0 0 13 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M6.5 7C7.05228 7 7.5 6.55228 7.5 6C7.5 5.44772 7.05228 5 6.5 5C5.94772 5 5.5 5.44772 5.5 6C5.5 6.55228 5.94772 7 6.5 7Z"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M10.5 7C11.0523 7 11.5 6.55228 11.5 6C11.5 5.44772 11.0523 5 10.5 5C9.94772 5 9.5 5.44772 9.5 6C9.5 6.55228 9.94772 7 10.5 7Z"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M2.5 7C3.05228 7 3.5 6.55228 3.5 6C3.5 5.44772 3.05228 5 2.5 5C1.94772 5 1.5 5.44772 1.5 6C1.5 6.55228 1.94772 7 2.5 7Z"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+            <button
+              onClick={() => setDropdown(!dropdown)}
+              className={styles.ctaButton}
+            >
+              <FaEllipsisH className={styles.ctaButtonIcon} />
             </button>
             <h6 className={styles.ctaText}>More</h6>
           </div>
