@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import CodeInput from '../signup/email-verify/codeInput.jsx'
 import { useHistory } from 'react-router-dom'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
 import CodeInput from '../signup/email-verify/codeInput'
