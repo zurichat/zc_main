@@ -2,8 +2,6 @@
 
 * {
   font-family: 'Lato', sans-serif;
-}
-body {
   margin: 0;
   padding: 0;
 }
@@ -12,14 +10,14 @@ button:hover {
 }
 .Section1 {
   padding: 60px;
-  display: flex;
-  flex-direction: row;
-  grid-gap: 61px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 20px;
   margin-bottom: 8rem;
 }
 .Section1 img {
-  width: 55%;
-  height: 55%;
+  padding-top: 30px;
+  width: 100%;
 }
 .section1Left {
   padding: 70px 40px 20px 0px;
@@ -32,8 +30,9 @@ button:hover {
   font-size: 24px;
   line-height: 1.5;
 }
-.section1Left button {
-  padding: 14px 18px 14px 18px;
+.section1Left .JoinBtn {
+  display: inline-block;
+  padding: 22px 34px 22px 34px;
   font-size: 24px;
   border-radius: 3px;
   color: white;
@@ -43,25 +42,23 @@ button:hover {
 
 @media screen and (max-width: 1085px) {
   .Section1 {
-    grid-gap: 30px;
-    margin-bottom: 8rem;
+    grid-gap: 10px;
+    margin-bottom: 6rem;
   }
   .Section1 img {
     margin-top: 5rem;
-    width: 50%;
-    height: 50%;
   }
   .section1Left p {
     font-size: 22px;
     line-height: 1.5;
   }
-  .section1Left button {
+  .section1Left .JoinBtn {
     font-size: 22px;
   }
 }
 @media screen and (max-width: 850px) {
   .Section1 {
-    flex-direction: column;
+    grid-template-columns: auto;
     padding: 30px;
   }
   .Section1 img {
@@ -72,15 +69,28 @@ button:hover {
 }
 
 @media screen and (max-width: 500px) {
+  .section1Left {
+    text-align: center;
+  }
   .section1Left h1 {
+    text-align: left;
     font-size: 24px;
   }
   .section1Left p {
+    text-align: left;
     padding-right: 0px;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.5;
   }
-  .section1Left button {
+  .section1Left .JoinBtn {
+    padding: 30px 120px 30px 120px;
     font-size: 22px;
+    border-radius: 3px;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .section1Left .JoinBtn {
+    padding: 28px 70px 28px 70px;
   }
 }

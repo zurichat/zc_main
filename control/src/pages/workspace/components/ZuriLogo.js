@@ -1,14 +1,17 @@
 import React from 'react'
 import styles from '../style/workspace.module.css'
+import { useWorkspaceContext } from './WorkspaceContext'
 
 const ZuriLogo = () => {
+  const { loading } = useWorkspaceContext()
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       width="181"
       height="52"
-      viewBox="0 0 181 52"
+      viewBox="0 0 200 60"
     >
       <g id="zuriText" className={`${styles.zuri_text}`}>
         <path
@@ -17,7 +20,7 @@ const ZuriLogo = () => {
         />
       </g>
       <rect
-        className={`${styles.rotate_logo}`}
+        className={`${loading ? styles.topleft_logo : ''}`}
         width="18.9"
         height="19.9"
         x="6.3"
@@ -25,7 +28,7 @@ const ZuriLogo = () => {
         rx="1.1"
       />
       <rect
-        className={`${styles.rotate_logo}`}
+        className={`${loading ? styles.bottomleft_logo : ''}`}
         width="18.9"
         height="19.9"
         y="22.7"
@@ -33,7 +36,7 @@ const ZuriLogo = () => {
         rx="1.1"
       />
       <rect
-        className={`${styles.rotate_logo}`}
+        className={`${loading ? styles.topright_logo : ''}`}
         width="18.9"
         height="19.9"
         x="27.9"
@@ -42,7 +45,7 @@ const ZuriLogo = () => {
         rx="1.1"
       />
       <rect
-        className={`${styles.rotate_logo}`}
+        className={`${loading ? styles.bottomright_logo : ''}`}
         width="18.9"
         height="19.9"
         x="21.6"
