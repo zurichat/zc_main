@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
 import CodeInput from '../signup/email-verify/codeInput'
+import styled from 'styled-components'
 
 export default function VerifyResetCode() {
   const [success, setsuccess] = useState(false)
