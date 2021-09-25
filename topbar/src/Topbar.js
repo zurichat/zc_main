@@ -54,7 +54,6 @@ const Topbar = ({ userProfile: { last_name, first_name } }) => {
         </p>
       </div>
 
-      
       <ProfileModal />
       <TopbarModal members={faked} />
     </div>
