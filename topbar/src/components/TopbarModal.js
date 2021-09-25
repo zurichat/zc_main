@@ -1,5 +1,4 @@
 import { useContext, useState, useEffect } from 'react'
-import { authAxios } from '../utils/Api'
 import { FaChevronRight } from 'react-icons/fa'
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
 import userAvatar from '../assets/images/user.svg'
@@ -22,13 +21,12 @@ const TopbarModal = ({ members }) => {
     toggleModalState,
     toggleProfileState,
     user,
-    orgId
+    
   } = useContext(ProfileContext)
 
   const state = useContext(TopbarContext)
   const [showModal] = state.show
-  const [presence, setPresence] = state.presence
-  const [username, setUsername] = state.username
+  const {presence, setPresence} = state
   const [showStatus] = state.status
   const [showMembersModal] = state.modal
   const {
@@ -37,21 +35,14 @@ const TopbarModal = ({ members }) => {
     openStatus,
     closeStatus,
     modalRef,
-    closeMembersModal
+    closeMembersModal,
+    toggleUserPresence
   } = state
   const [modal, setModal] = useState('')
   const [pause, setPause] = useState(false)
   const [statusModal, setStatusModal] = useState(false)
 
-  const onSetPresence = () => {
-    setPresence(() => {
-      if (presence === 'true') {
-        return 'false'
-      } else {
-        return 'true'
-      }
-    })
-  }
+
 
   let userPresence = null
   let toggleStatus = null
@@ -76,35 +67,12 @@ const TopbarModal = ({ members }) => {
       )
   }
 
-  const toggleUserPresence = () => {
-    onSetPresence()
-    authAxios
-      .post(`/organizations/${orgId}/members/${user._id}/presence`, presence)
-      .then(res => {
-        console.log('response1 =>', res)
-        return authAxios.get(`/organizations/${orgId}/members/${user._id}/`)
-      })
-      .then(res => {
-        username = res.data.data.user_name
-        console.log(
-          'response2',
-          res.data.data.presence,
-          res.data.data.user_name
-        )
-      })
-      .catch(err => {
-        console.log(err?.response?.data)
-      })
-  }
+ 
 
   useEffect(() => {
     console.log('user presence', user.presence)
     setPresence(user.presence)
-    // setUsername(user.user_name)
-    // toggleUserPresence()
-    console.log('check for user', user)
-    console.log('auth axios presence', presence)
-    console.log('check for current presence', presence)
+  
   }, [user])
 
   return (
@@ -172,6 +140,7 @@ const TopbarModal = ({ members }) => {
             )}
             <p
               onClick={() => {
+
                 toggleUserPresence()
               }}
             >
