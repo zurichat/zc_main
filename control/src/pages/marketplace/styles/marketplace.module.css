@@ -24,7 +24,10 @@
   border: 1px solid rgba(187, 186, 231, 0.15);
   box-sizing: border-box;
   border-radius: 2px;
+  display: grid;
+  grid-template-columns: auto 1fr;
   padding: 8px 5px 8px 15px;
+  place-content: center;
 }
 
 .marketplaceSearchBar input {
@@ -342,6 +345,9 @@
   color: #ffffff;
   border: 0;
   outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .marketplaceModalMain {
@@ -435,5 +441,12 @@
   }
   .marketplaceModalMain {
     padding: 0 18px 20px;
+  }
+  .marketplaceTabList {
+    width: 80%;
+    align-self: center;
+  }
+  .marketplaceTab {
+    font-size: 14px;
   }
 }

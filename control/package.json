@@ -44,6 +44,9 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
     "@iconscout/react-unicons": "^1.1.6",
     "@iconscout/react-unicons-thinline": "^0.0.1",
     "@popperjs/core": "^2.10.1",
