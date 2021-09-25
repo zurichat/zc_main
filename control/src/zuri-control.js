@@ -14,9 +14,7 @@ const lifecycles = singleSpaReact({
   }
 })
 
-
-
-export const GetUserInfo = ( userID, token ) => {
+export const GetUserInfo = (userID, token) => {
   // let userID = '6146f82c845b436ea04d10e1'
   // let token =
   //   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb29raWUiOiJNVFl6TWpBME1qa3pNbnhIZDNkQlIwUlplRTVFVFROTlJGVXdXa1JCZVU5RVVtbFplbHBvVDFSSmVVMTZVVEpaWnowOWZEZmM3TGdsUUc1OGhuak1oY1dVcGNOTS1xQXN5UEZtajR3eURYVlBtWkdFIiwiZW1haWwiOiJwaWRAb3h5LmNvbSIsImlkIjoiNjE0MzcwNTRkMDI4NGJjNmE5MjIzNDZiIiwib3B0aW9ucyI6eyJQYXRoIjoiLyIsIkRvbWFpbiI6IiIsIk1heEFnZSI6NjMwNzIwMDAwMCwiU2VjdXJlIjpmYWxzZSwiSHR0cE9ubHkiOmZhbHNlLCJTYW1lU2l0ZSI6MH0sInNlc3Npb25fbmFtZSI6ImY2ODIyYWY5NGUyOWJhMTEyYmUzMTBkM2FmNDVkNWM3In0.jrfU1SdZWYfRDW15LQqucu1CQUn52HyJKk-RlThN7fg'
@@ -25,18 +23,18 @@ export const GetUserInfo = ( userID, token ) => {
   // let sessionId = sessionStorage.getItem('session_id')
 
   // console.log(user.id)
-//  try {
-//     const response = axios.get(`https://api.zuri.chat/users/${userID}`, {
-//       headers: {
-//         Authorization: `Bearer ${token}`
-//       }
-//     })
-//     console.log(response.data.data)
-//     return response.data.data
-//   } catch (err) {
-//     console.log(err)
-//   }
-axios
+  //  try {
+  //     const response = axios.get(`https://api.zuri.chat/users/${userID}`, {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`
+  //       }
+  //     })
+  //     console.log(response.data.data)
+  //     return response.data.data
+  //   } catch (err) {
+  //     console.log(err)
+  //   }
+  axios
     .get(`https://api.zuri.chat/users/${userID}`, {
       headers: {
         Authorization: `Bearer ${token}`
@@ -49,7 +47,6 @@ axios
     })
     .catch(err => console.log(err))
 }
-
 
 // const GetWorkspaceUsers = () => {
 //   // let org_id = `61459d8e62688da5302acdb1`;

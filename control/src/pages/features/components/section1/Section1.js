@@ -16,7 +16,7 @@ const Section1 = () => {
             <div className={styles.buttonsWrapper}>
               <button
                 type="button"
-                className={styles.getStarted}
+                className={`${styles.getStarted} ${styles.featuresSection1Buttons}`}
                 onClick={e => {
                   e.preventDefault()
                   window.location.replace('https://zuri.chat/signup')
@@ -26,7 +26,7 @@ const Section1 = () => {
               </button>
               <button
                 type="button"
-                className={styles.features}
+                className={`${styles.features} ${styles.featuresSection1Buttons}`}
                 onClick={e => {
                   e.preventDefault()
                   window.location.replace(
