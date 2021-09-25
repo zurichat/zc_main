@@ -46,9 +46,7 @@ const EditProfile = () => {
     setLinks(links[index])
   }
 
-
-
-//Function handling Image Upload
+  //Function handling Image Upload
 
   const handleImageChange = event => {
     setState({ loading: true })
@@ -65,9 +63,6 @@ const EditProfile = () => {
 
       const formData = new FormData()
       formData.append('image', imageReader)
-
-
-
 
       authAxios
         .patch(`/organizations/${orgId}/members/${user._id}/photo`, formData)
@@ -93,8 +88,6 @@ const EditProfile = () => {
   useEffect(() => {
     setUserProfileImage(user.image_url)
   }, [user])
-
-
 
   // This will handle the profile form submission
 
