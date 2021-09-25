@@ -68,7 +68,7 @@ const FormWrapper = ({
 
           <div className={`${styles.btnContainer}`}>
             <input
-              disabled={((name || email) && password && check) ? false : true }
+              disabled={(name || email) && password && check ? false : true}
               className={`${
                 styles.btn
                 // (name || email) && password && check
