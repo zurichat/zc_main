@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './reports.module.css'
 
 export const Success = props => {
+  useEffect(() => {
+    return () => {
+      props.resetStep()
+    }
+  })
+
   return (
     <section className={`${styles.formcontainer}`}>
       {props.postSucc ? (

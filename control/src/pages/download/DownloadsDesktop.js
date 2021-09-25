@@ -167,7 +167,11 @@ const DownloadsDesktop = () => {
             Looking for a better work environment?
           </h1>
           <div className={`mt-lg-5`}>
-            <a href={exe.link} download={exe.name} className={`${styles.button2} d-inline`}>
+            <a
+              href={exe.link}
+              download={exe.name}
+              className={`${styles.button2} d-inline`}
+            >
               DOWNLOAD FOR WINDOWS
             </a>
             <a

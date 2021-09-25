@@ -45,9 +45,9 @@ Open [http://localhost:9000](http://localhost:9000) with your browser to see the
 
 Topbar : [http://localhost:8080](http://localhost:8080)
 
-Sidebar : [http://localhost:8081](http://localhost:8080)
+Sidebar : [http://localhost:8081](http://localhost:8081)
 
-Control : [http://localhost:8082](http://localhost:8080)
+Control : [http://localhost:8082](http://localhost:8082)
 
 ### **Building**
 
@@ -67,6 +67,12 @@ To remove all node_modules and yarn.lock
 yarn clean:fresh
 ```
 
+To open [app](http://localhost:9000) in the browser
+
+```bash
+yarn open
+```
+
 ## Editor setup
 
 We're using eslint for linting and prettier for code formating, make sure you install eslint and prettier plugins in your editor so you can
@@ -75,7 +81,10 @@ format on save for the eslint & prettier plugins in your editor 🙃
 
 ## Contributing
 
-For detailed information on how to go about contribution. Check out the [Contribution Guide](docs/CONTRIBUTING.md)
+For detailed information on how to go about contributing to this project. Check out the
+
+- [Contribution Guide](docs/CONTRIBUTING.md)
+- [Styling Guide](docs/STYLING.md)
 
 **Before send PR or making a merge make sure you code is properly formatted.** You can easily do that by running
 

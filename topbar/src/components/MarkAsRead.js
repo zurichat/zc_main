@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '../styles/MarkAsRead.module.css'
 
 const MarkAsRead = () => {
+  const [prompt, SetPrompt] = useState(true)
+
+  const handlePrompt = () => {
+    SetPrompt(!prompt)
+  }
   return (
     <div>
       <div className={styles.container}>
         <div>
           <h5 className={styles.subhead}>When i view a channel:</h5>
           <form action="">
-            <div>
+            <div className={styles.section}>
               <input
                 className={styles.viewChannel}
                 type="radio"
@@ -22,7 +27,7 @@ const MarkAsRead = () => {
                 Start me where i left off and mark the channel read
               </label>
             </div>
-            <div>
+            <div className={styles.section}>
               <input
                 className={styles.viewChannel}
                 type="radio"
@@ -37,7 +42,7 @@ const MarkAsRead = () => {
                 Start me at the newest message and amrk the channel read
               </label>
             </div>
-            <div>
+            <div className={styles.section}>
               <input
                 className={styles.viewChannel}
                 type="radio"
@@ -56,13 +61,13 @@ const MarkAsRead = () => {
         <div>
           <h5 className={styles.subhead}>When i mark everything as read:</h5>
           <form action="">
-            <div>
+            <div className={styles.section}>
               <label className={styles.markAll} htmlFor="prompt to confirm">
                 <input
                   className={styles.prompt}
                   type="checkbox"
-                  value="Prompt to confirm"
-                  checked="checked"
+                  onChange={handlePrompt}
+                  checked={prompt}
                 />
                 <span className={styles.checkmark}></span>
                 Prompt to confirm
