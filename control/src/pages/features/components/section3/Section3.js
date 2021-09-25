@@ -5,13 +5,12 @@ import holiday from '../../assets/holiday_calender_icon.png'
 import company from '../../assets/company_deadline_icon.png'
 import quick from '../../assets/quick_reply_app_icon.png'
 import list from '../../assets/to_do_list_icon.png'
-
 const Section3 = () => {
   return (
-    <div className={styles.section3}>
+    <div id="featuresSection">
       <div className={styles.section3TopTextsWrapper}>
         <h3 className={styles.remote}>
-          Working remotely, more intriguing than ever
+          Working remotely more intriguing than ever
         </h3>
         <p className={styles.work}>
           Zuri Chat is where work meets fun. Activate body and mind, maintain
@@ -70,5 +69,4 @@ const Section3 = () => {
     </div>
   )
 }
-
 export default Section3
