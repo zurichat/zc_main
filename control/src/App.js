@@ -85,7 +85,7 @@ const App = () => {
         <Route path="/download-app">
           <Download />
         </Route>
-        <Route path="/downloadsMac" >
+        <Route path="/downloadsMac">
           <DownloadsMac />
         </Route>
         <Route path="/contact-us">

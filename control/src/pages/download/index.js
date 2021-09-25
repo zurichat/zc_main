@@ -18,7 +18,7 @@ const Download = () => {
   }, [])
 
   return width > breakpoint ? (
-    <DownloadsWindows /> 
+    <DownloadsWindows />
   ) : isIOS ? (
     <DownloadsIOS />
   ) : (
