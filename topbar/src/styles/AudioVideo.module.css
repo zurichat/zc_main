@@ -1,185 +1,217 @@
 .container {
-  width: 400%;
+  width: 300%;
   margin: 2rem;
-  font-family: 'Lato';
+  font-family: "Lato";
 }
 
 .head {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-weight: bolder;
   display: flex;
   margin-top: 1rem;
-  color: #000;
+  color: #242424;
+  font-size: 20px;
 }
 
 .rectangle {
   background: #000;
   width: 25%;
-  height: 17rem;
+  height: 20rem;
   border-radius: 7px;
+  margin-top: 1rem;
   margin-bottom: 1.5rem;
 }
 
 .selectfirst {
-  width: 15%;
-  margin-bottom: 1.5rem;
+ width: 15%;
+ margin-bottom: 1.5rem;
+ height: 3rem;
+ border-radius: 4px;
+ padding-left: .5rem;
+ border: #dde5e9 solid 1px;
+ color: #3a3a3a;
+ display: flex;
+ font-size: 15px;
 }
 
-/* select {
-    height: 3rem;
-    border-radius: 4px;
-    padding-left: .5rem;
-} */
+
+.selectsecond {
+  width: 15%;
+  height: 3rem;
+  border-radius: 4px;
+  padding-left: .5rem;
+  border: #dde5e9 solid 1px;
+  color: #3a3a3a;
+  display: flex;
+  font-size: 15px;
+}
+
+.selectthird {
+  height: 3rem;
+  border-radius: 4px;
+  padding-left: .5rem;
+  padding-right: 2rem;
+  border: #dde5e9 solid 1px;
+  color: #3a3a3a;
+  font-size: 15px;
+}
 
 .line {
   background: #aeaeae;
-  width: 37%;
+  width: 30%;
   height: 1px;
+  color: #bebebe;
 }
 
 .inputlevel {
-  color: #000;
+  color: #242424 ;
   display: flex;
-  margin-top: 0.5rem;
+  margin-top: .5rem;
   font-weight: bold;
 }
 
 .barfirst {
-  background: #00b87c;
+  background:#00B87C;
   width: 1.2%;
-  height: 0.8rem;
-  margin: 0.4rem 0.5rem 0 1rem;
+  height: .8rem;
+  margin: .8rem .5rem 0 1rem;
   border-radius: 5px;
 }
 
 .barsecond {
-  background: #00b87c;
+  background: #00B87C;
   width: 1.2%;
-  height: 0.8rem;
-  margin-top: 0.4rem;
-  margin-right: 0.5rem;
+  height: .8rem;
+  margin-top: .8rem;
+  margin-right: .5rem;
   border-radius: 5px;
 }
 
 .barthird {
-  background: #00b87c;
+  background: #00B87C;
   width: 1.2%;
-  height: 0.8rem;
-  margin-top: 0.4rem;
-  margin-right: 0.5rem;
+  height: .8rem;
+  margin-top: .8rem;
+  margin-right: .5rem;
   border-radius: 5px;
 }
 
 .barfourth {
-  background: #00b87c;
+  background: #00B87C;
   width: 1.2%;
-  height: 0.8rem;
-  margin-top: 0.4rem;
-  margin-right: 0.5rem;
+  height: .8rem;
+  margin-top: .8rem;
+  margin-right: .5rem;
   border-radius: 5px;
 }
 
 .barfifth {
-  background: #00b87c;
+  background: #00B87C;
   width: 1.2%;
-  height: 0.8rem;
-  margin-top: 0.4rem;
-  margin-right: 0.5rem;
+  height: .8rem;
+  margin-top: .8rem;
+  margin-right: .5rem;
   border-radius: 5px;
 }
 
 .barsixth {
-  background: #00b87c;
+  background: #00B87C;
   width: 1.2%;
-  height: 0.8rem;
-  margin-top: 0.4rem;
-  margin-right: 0.5rem;
+  height: .8rem;
+  margin-top: .8rem;
+  margin-right: .5rem;
   border-radius: 5px;
 }
 
 .barseventh {
-  background: #00b87c;
+  background: #00B87C;
   width: 1.2%;
-  height: 0.8rem;
-  margin-top: 0.4rem;
-  margin-right: 0.5rem;
+  height: .8rem;
+  margin-top: .8rem;
+  margin-right: .5rem;
   border-radius: 5px;
 }
 
 .bareight {
   background: #aeaeae;
   width: 1.2%;
-  height: 0.8rem;
-  margin-top: 0.4rem;
-  margin-right: 0.5rem;
+  height: .8rem;
+  margin-top: .8rem;
+  margin-right: .5rem;
   border-radius: 5px;
 }
 
 .barninth {
   background: #aeaeae;
   width: 1.2%;
-  height: 0.8rem;
-  margin-top: 0.4rem;
-  margin-right: 0.5rem;
+  height: .8rem;
+  margin-top: .8rem;
+  margin-right: .5rem;
   border-radius: 5px;
 }
 
 .bartenth {
   background: #aeaeae;
   width: 1.2%;
-  height: 0.8rem;
-  margin-top: 0.4rem;
-  margin-right: 0.5rem;
+  height: .8rem;
+  margin-top: .8rem;
+  margin-right: .5rem;
   border-radius: 5px;
 }
 
 .bareleventh {
   background: #aeaeae;
   width: 1.2%;
-  height: 0.8rem;
-  margin-top: 0.4rem;
-  margin-right: 0.5rem;
+  height: .8rem;
+  margin-top: .8rem;
+  margin-right: .5rem;
   border-radius: 5px;
 }
 
 .bartwelfth {
   background: #aeaeae;
   width: 1.2%;
-  height: 0.8rem;
-  margin-top: 0.4rem;
-  margin-right: 0.5rem;
+  height: .8rem;
+  margin-top: .8rem;
+  margin-right: .5rem;
   border-radius: 5px;
 }
 
 .barthirtenth {
   background: #aeaeae;
   width: 1.2%;
-  height: 0.8rem;
-  margin-top: 0.4rem;
-  margin-right: 0.5rem;
+  height: .8rem;
+  margin-top: .8rem;
+  margin-right: .5rem;
   border-radius: 5px;
 }
 
 .barfourtenth {
   background: #aeaeae;
   width: 1.2%;
-  height: 0.8rem;
-  margin-top: 0.4rem;
-  margin-right: 0.5rem;
+  height: .8rem;
+  margin-top: .8rem;
+  margin-right: .5rem;
   border-radius: 5px;
 }
 
 .barfiftenth {
   background: #aeaeae;
   width: 1.2%;
-  height: 0.8rem;
-  margin-top: 0.4rem;
+  height: .8rem;
+  margin-top: .8rem;
   border-radius: 5px;
 }
 
 .checkenable {
   display: flex;
   margin-bottom: 1rem;
+  margin-top: .5rem;
+  font-weight: bolder;
+}
+
+.checkenable input {
+  margin-top: .4rem;
 }
 
 .enable {
@@ -191,19 +223,22 @@
   margin-bottom: 1.5rem;
 }
 .headspeaker {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-weight: bolder;
   display: flex;
   margin-top: 2rem;
-  color: #000;
-}
+  color: #242424;
+  font-size: 20px;
+} 
 
 .button {
   margin-left: 3rem;
   background: #fff;
-  border: #000 1px solid;
+  border: #00b87c 1px solid;
   padding: 0 1rem;
-  border-radius: 3px;
+  border-radius: 4px;
+  color: #00b87c;
+  font-size: 15px;
 }
 
 .join {
@@ -216,66 +251,113 @@
 
 .check {
   color: #3a3a3a;
+  font-size: 15px;
 }
 
 .checkset {
   display: flex;
 }
 
+.checkset input {
+  margin-top: .4rem;
+}
+
 .checkmute {
   display: flex;
 }
 
+.checkmute input {
+  margin-top: .4rem;
+}
+
 .checkstatus {
   display: flex;
+}  
+
+.checkstatus input {
+  margin-top: .4rem;
 }
 
 .checkmutemic {
   display: flex;
 }
 
+.checkmutemic input {
+  margin-top: .4rem;
+}
+
 .checkautomatic {
   display: flex;
+}
+
+.checkautomatic input {
+  margin-top: .4rem;
 }
 
 .checkwarning {
   display: flex;
 }
 
+.checkwarning input {
+  margin-top: .4rem;
+}
+
 .checkmusic {
   display: flex;
+}
+
+.checkmusic input {
+  margin-top: .4rem;
 }
 
 .checkallow {
   display: flex;
 }
 
+.checkallow input {
+  margin-top: .4rem;
+}
+
 .checkcall {
   display: flex;
+}
+
+.checkcall input {
+  margin-top: .4rem;
 }
 
 .checkleavehuddle {
   display: flex;
 }
 
+.checkleavehuddle input {
+  margin-top: .4rem;
+}
+
 .statuscall {
   font-weight: bold;
+  display: flex;
+  font-size:15px;
+  margin-bottom: .5rem;
 }
 
 .statushuddle {
   font-weight: bold;
+  display: flex;
+  font-size:15px;
+  margin-bottom: .5rem;
 }
 
 .mute {
   font-weight: bold;
-}
-
-.mute {
-  font-weight: bold;
+  display: flex;
+  margin-top: .5rem;
+  margin-left: 2rem;
 }
 
 .screensaver {
-  font-size: 20px;
+  font-size: 15px;
   color: #3a3a3a;
   font-weight: bold;
 }
+
