@@ -21,7 +21,7 @@ const Dropdown = ({
     <div
       className={`${styles.container}${!isOpen ? ` ${styles.isClosed}` : ''}`}
     >
-      <Item>
+      <div className="text-green-700">
         <img
           className={`${styles.dropDownButton}${
             children ? '' : ` ${styles.hidden}`
@@ -38,17 +38,17 @@ const Dropdown = ({
           alt="Add button"
           role="button"
         />
-      </Item>
-      <Ul className={styles.content}>
+      </div>
+      <div className={styles.content}>
         {children &&
           children.map((child, index) => {
             return (
-              <Li key={index} className={styles.item}>
+              <div key={index} className={styles.item}>
                 {plugin ? `${child.title}` : child}
-              </Li>
+              </div>
             )
           })}
-      </Ul>
+      </div>
     </div>
   )
 }
