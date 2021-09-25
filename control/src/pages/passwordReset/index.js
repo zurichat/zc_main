@@ -7,7 +7,6 @@ import styles from '../../component-styles/ResetPassword.module.css'
 import VerifyResetCode from './verifyCode'
 import axios from 'axios'
 
-
 const ResetDefault = () => {
   const [email, setEmail] = useState('')
   const [showDialog, setShowDialog] = useState(false)
