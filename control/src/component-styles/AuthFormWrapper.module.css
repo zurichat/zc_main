@@ -232,7 +232,7 @@
 
 /* .btnContainer .btnDisabled {
   /* cursor: pointer; */
-  /* user-select: none;
+/* user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none; *
   width: 100%;
@@ -247,10 +247,10 @@
   align-items: center;
   justify-content: center;
   /* height: 4em; */
-  /* background: #00b87c; */
-  /* background: #2f80ed; */
-  /* font-size: 16px; */
-  /* letter-spacing: 1px; *
+/* background: #00b87c; */
+/* background: #2f80ed; */
+/* font-size: 16px; */
+/* letter-spacing: 1px; *
 } */
 
 .bottomLine {
