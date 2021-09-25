@@ -8,7 +8,7 @@ const AudioVideo = () => {
     <div>
       <div className={styles.container}>
         <div className={styles.camera}>
-          <h5 className={styles.head}>Camera</h5>
+          <div className={styles.head}>Camera</div>
           <div className={styles.rectangle}></div>
           <div className={styles.select}>
             <select name="" id="" className={styles.selectfirst}>
@@ -80,14 +80,10 @@ const AudioVideo = () => {
                 <span className={styles.statuscall}>
                   Set my status to " <MdPhone color="#00b87c" /> On a call..."
                 </span>
-                <br />
                 If you already have a status set, ZuriChat won't change it.
               </div>
             </div>
-            <div className={styles.checkmute}>
-              <input type="checkbox" name="" id="" />
-              <div className={styles.mute}>Mute my microphone</div>
-            </div>
+            <div className={styles.mute}>Mute my microphone</div>
           </div>
         </div>
         <div className={styles.line}></div>
@@ -102,7 +98,6 @@ const AudioVideo = () => {
                   Set my status to " <FaHeadphones color="#00b87c" /> In a
                   huddle..."
                 </span>{' '}
-                <br />
                 If you already have a status set, ZuriChat won't change it.
               </div>
             </div>
@@ -140,7 +135,6 @@ const AudioVideo = () => {
                   {' '}
                   Allow keyboard shortcut to Mute
                 </span>{' '}
-                <br />
                 Use "Ctrl" "Shift" "Space" to mute or unmute your mic
               </div>
             </div>
