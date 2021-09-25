@@ -196,13 +196,15 @@
 }
 
 @media only screen and (max-width: 1380px) {
-  .topPricingSectionContainer, .section2 {
+  .topPricingSectionContainer,
+  .section2 {
     font-size: 14px;
   }
 }
 
 @media only screen and (max-width: 1200px) {
-  .topPricingSectionContainer, .section2 {
+  .topPricingSectionContainer,
+  .section2 {
     font-size: 10px;
     background-color: white;
   }
@@ -219,13 +221,15 @@
 }
 
 @media only screen and (max-width: 780px) {
- .topPricingSectionContainer, .section2 {
+  .topPricingSectionContainer,
+  .section2 {
     font-size: 8px;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .topPricingSectionContainer, .section2 {
+  .topPricingSectionContainer,
+  .section2 {
     font-size: 14px;
   }
 
