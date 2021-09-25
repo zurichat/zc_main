@@ -1,6 +1,5 @@
 import { useContext, useEffect } from 'react'
 import { ProfileContext } from './context/ProfileModal'
-
 import { TopbarContext } from './context/Topbar'
 import { connect } from 'react-redux'
 import zurichatlogo from './assets/images/Logo.svg'
@@ -12,20 +11,22 @@ import HelpIcon from './assets/download_images/question.svg'
 import HelpIcons from '@material-ui/icons/HelpOutline'
 import TopbarModal from './components/TopbarModal'
 import HelpModal from './components/HelpModal'
-import UserForm from '../../control/src/pages/ReportFeature/components/Form'
+import UserForm from '../../control/src/pages/ReportFeature/User/Form'
+import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
 import { authAxios } from './utils/Api'
+import Profile from './components/Profile'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { openModal } = useContext(TopbarContext)
   const { setUser, user, userProfileImage, setOrgId, setUserProfileImage } =
     useContext(ProfileContext)
   const [organizations, setOrganizations] = useState([])
-
   const [search, setSearch] = useState('')
   const [helpModal, setHelpModal] = useState(false)
 
   useEffect(() => {
     const userdef = JSON.parse(sessionStorage.getItem('user'))
+
     async function getOrganizations() {
       await authAxios
         .get(`/users/${userdef.email}/organizations`)
@@ -78,9 +79,10 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       <HelpContainer>
         <HelpIcons onClick={() => setHelpModal(true)} />
       </HelpContainer>
-      {helpModal ? <HelpModal  setHelpModal={setHelpModal}/> : ''}
+      {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''}
 
-        <UserForm />
+      <UserForm />
+      <AdminForm />
       <div>
         <img
           style={{ height: '30px', width: '30px', borderRadius: '5px' }}
@@ -91,6 +93,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         />
       </div>
 
+      <Profile />
       <TopbarModal />
     </TopNavBarBase>
   )

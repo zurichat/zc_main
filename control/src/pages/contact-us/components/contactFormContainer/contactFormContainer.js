@@ -19,6 +19,7 @@ const rejectStyle = {
 
 function ContactFormContainer() {
   const [currentDetails, setCurrentDetails] = useState({})
+  const [userAuth, setUserAuth] = useState({})
   const [values, setValues] = useState({
     email: '',
     subject: '',
@@ -29,10 +30,11 @@ function ContactFormContainer() {
   })
 
   useEffect(() => {
-    let storage = sessionStorage.getItem('user')
+    let userInfo = JSON.parse(sessionStorage.getItem('user'))
+    setUserAuth(userInfo ? userInfo : {})
     setValues(values => ({
       ...values,
-      email: storage ? JSON.parse(storage).email : values.email
+      email: userAuth.email ? userAuth.email : values.email
     }))
   }, [])
 
@@ -55,11 +57,15 @@ function ContactFormContainer() {
   }
 
   const acceptedFileItems = acceptedFiles.map((file, i) => (
-    <div className="d-flex justify-content-between align-items-center">
-      <p className="mb-2 text-dark w-100" key={file.path}>
+    <div
+      className="d-flex justify-content-between align-items-center"
+      key={file.size}
+    >
+      <p className="mb-2 text-dark w-100">
         {file.name} - {file.size} bytes
       </p>
       <p
+        style={{ fontSize: 12 }}
         className={`text-danger ${ContactFormStyle.cancel}`}
         fw-bold
         onClick={handleFileDelete(i)}
@@ -81,7 +87,6 @@ function ContactFormContainer() {
   const handleChange = e => {
     // setValues(values => ({ ...values, [e.target.name]: e.target.value }))
     setValues({ ...values, [e.target.name]: e.target.value })
-    console.log(values)
   }
   const handleTopicChange = detail => e => {
     setCurrentDetails(detail)
@@ -95,15 +100,12 @@ function ContactFormContainer() {
     values.email && contactData.append('email', values.email)
     values.subject && contactData.append('subject', values.subject)
     values.content && contactData.append('content', values.content)
-    acceptedFiles[0] && contactData.append('attachments', acceptedFiles[0])
-    acceptedFiles[1] && contactData.append('attachments', acceptedFiles[1])
+    acceptedFiles[0] && contactData.append('file', acceptedFiles[0])
+    acceptedFiles[1] && contactData.append('file', acceptedFiles[1])
 
-    console.log(contactData.get('email'))
-    console.log(values)
     axios
       .post('https://api.zuri.chat/contact', contactData)
       .then(({ data }) => {
-        console.log(data)
         setValues(values => ({
           ...values,
           error: '',
@@ -116,7 +118,6 @@ function ContactFormContainer() {
         setCurrentDetails({})
       })
       .catch(e => {
-        console.log('Error:' + e)
         setValues(values => ({
           ...values,
           error: 'error sending details pls try again',
@@ -125,12 +126,13 @@ function ContactFormContainer() {
         }))
       })
   }
+
   return (
-    <div className={`container-xl ${ContactFormStyle.contact_form_container}`}>
+    <div className={`mb-5 ${ContactFormStyle.contact_form_container}`}>
       <form className="" onSubmit={handleSubmit}>
         <div
           className={`mb-3 ${
-            sessionStorage.getItem('user') && ContactFormStyle.is_hidden_animate
+            !!userAuth.email ? ContactFormStyle.is_hidden_animate : ''
           }`}
         >
           <label htmlFor="email" className="form-label fw-bold">
@@ -152,7 +154,7 @@ function ContactFormContainer() {
 
         <div
           className={`${ContactFormStyle.faqs_topic} ${
-            !currentDetails.topic && ContactFormStyle.is_hidden_animate
+            !currentDetails.topic ? ContactFormStyle.is_hidden_animate : ''
           }`}
         >
           <div className={`w-100`}>
@@ -205,7 +207,7 @@ function ContactFormContainer() {
                       data-bs-parent="#faqs"
                     >
                       <div
-                        className="accordion-body"
+                        className={`accordion-body ${ContactFormStyle.accordion_body}`}
                         dangerouslySetInnerHTML={{ __html: details }}
                       />
                     </div>
@@ -217,11 +219,11 @@ function ContactFormContainer() {
 
         <div
           className={`${ContactFormStyle.topic_tiles} ${
-            currentDetails.topic && ContactFormStyle.is_hidden_animate
+            currentDetails.topic ? ContactFormStyle.is_hidden_animate : ''
           } bg-white`}
         >
           <p className="fw-bold mb-3">Select a Topic</p>
-          <div className={`d-flex flex-wrap`}>
+          <div className={`d-flex flex-column flex-md-row flex-md-wrap`}>
             {detailsData.map(detail => (
               <button
                 type="button"
@@ -233,13 +235,12 @@ function ContactFormContainer() {
                 {detail.topic}
               </button>
             ))}
-            {console.log(currentDetails)}
           </div>
         </div>
 
         <div
           className={`mb-3 ${
-            currentDetails.topic && ContactFormStyle.is_hidden_animate
+            currentDetails.topic ? ContactFormStyle.is_hidden_animate : ''
           }`}
         >
           <label htmlFor="topic" className="form-label fw-bold">
@@ -281,7 +282,7 @@ function ContactFormContainer() {
               <div
                 {...getRootProps({
                   style,
-                  className: `dropzone ${ContactFormStyle.drag_drop} flex-column align-items-center`
+                  className: `dropzone ${ContactFormStyle.drag_drop} text-center flex-column align-items-center`
                 })}
               >
                 <p
@@ -310,7 +311,7 @@ function ContactFormContainer() {
             GET HELP
           </button>
           <div className="d-flex align-items-center justify-content-center px-2 py-3">
-            <p className="text-nowrap">CHAT UNAVAILABLE</p>
+            <p className="text-nowrap mb-0">CHAT UNAVAILABLE</p>
             <img className="ps-2" src={Alert} alt="alert circle" />
           </div>
         </div>
