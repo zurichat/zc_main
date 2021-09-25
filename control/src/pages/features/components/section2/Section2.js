@@ -6,9 +6,7 @@ import image3 from '../../assets/camp_image.svg'
 const Section2 = () => {
   return (
     <div className={styles.section2}>
-      <p>
-      Trusted by top companies worldwide
-      </p>
+      <p>Trusted by top companies worldwide</p>
       <div className={styles.section2Wrapper}>
         <div className={styles.imageWrapper}>
           <img src={image6} alt="imageh" />
@@ -23,6 +21,5 @@ const Section2 = () => {
     </div>
   )
 }
-
 
 export default Section2
