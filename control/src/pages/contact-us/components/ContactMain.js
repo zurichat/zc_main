@@ -5,7 +5,7 @@ import FAQselected from './FAQSelected.js'
 const contactTitle = () => {
   return (
     <div>
-      <div className={contactStyle.contactHead}>
+      <div className={`${contactStyle.contactHead} mt-5 mt-lg-3`}>
         <h1>Contact Us</h1>
         <p>
           We are dedicated to making your online communication experience with
