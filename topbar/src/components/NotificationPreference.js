@@ -193,8 +193,10 @@ const NotificationPreference = () => {
 
         {/* Michael's sound check code */}
         <div className={styles.itemTitle2}>
-          <h4 className={styles.titleSmall}>Sound & appearance</h4>
-          <span>Choose your notification sound</span>
+          <h4 className={styles.titleSmall}>Sound &amp; appearance</h4>
+          <span className={styles.spanBlock}>
+            Choose your notification sound
+          </span>
           <button className={styles.button}>Example Sound</button>
         </div>
 
