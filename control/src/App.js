@@ -58,6 +58,9 @@ const App = () => {
         <Route path="/signup">
           <SignUp />
         </Route>
+        <Route path="/createworkspace">
+          <CreateWorkSpaces />
+        </Route>
         <Route path="/signout">
           <SignOut />
         </Route>
@@ -131,7 +134,6 @@ const App = () => {
         <Route path="/cookies-banner">
           <Cookies />
         </Route>
-        <CreateWorkSpaces />
       </Switch>
     </BrowserRouter>
   )
