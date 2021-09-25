@@ -2,7 +2,6 @@
 import { FiEye, FiEyeOff } from 'react-icons/fi'
 import { RiErrorWarningLine } from 'react-icons/ri'
 import { useRef, useState } from 'react'
-
 import styles from '../component-styles/InputBox.module.css'
 
 const InputBox = ({
@@ -60,7 +59,7 @@ const InputBox = ({
               onClick={passwordToggle}
             >
               {/* <i className={`far ${passwordVisible ? 'eye-slash' : 'eye'}`}></i> */}
-              {passwordVisible ? <FiEye /> : <FiEyeOff />}
+              {passwordVisible ? <FiEyeOff /> : <FiEye />}
             </div>
           )}
         </div>
