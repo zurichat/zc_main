@@ -28,7 +28,7 @@ const NewPassword = ({ resetCode }) => {
       <aside id={styles.authAsideContainer} className={styles.display_none}>
         <div id={styles.authImageWrapper}>
           <img src={authBg} alt="backgroundImage" />
-          <div id={styles.aside_txt}></div>
+          <div id={styles.asideText}></div>
         </div>
       </aside>
       <section id={``}>
@@ -54,20 +54,9 @@ const NewPassword = ({ resetCode }) => {
             placeholder="Enter your new password"
             value={password}
             setValue={setPassword}
-            // onFocus={displayImage}
             // error={error}
           />
 
-          {/* <AuthInputBox
-                className={`${styles.inputElement}`}
-                id="cpassword"
-                name="Confirm password"
-                type="password"
-                placeholder="Confirm password"
-                value={confirmPassword}
-                setValue={setConfirmPassword}
-                // error={error}
-              /> */}
           <Button className={styles.button} onClick={handleSubmit}>
             Continue
           </Button>
