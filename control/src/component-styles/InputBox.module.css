@@ -118,32 +118,32 @@
 }
 
 /* { */
-  /* input Label */
-  /* .InputLabel {
+/* input Label */
+/* .InputLabel {
     margin-block: 0.5em;
     /* font-size: 1.3rem; */
-    /* line-height: 1.5rem;  */
-    /* font-size: 1em; */
-    /* line-height: 1.5em; *
+/* line-height: 1.5rem;  */
+/* font-size: 1em; */
+/* line-height: 1.5em; *
   } */
 
-  /* actual input element */
-  /* .InputElement {
+/* actual input element */
+/* .InputElement {
     text-indent: 0.8em;
     padding-inline-start: 0;
     padding-inline-end: 0;
     /* font-size: 1.2rem; *
   } */
 
-  /* .InputElement::placeholder {
+/* .InputElement::placeholder {
     font-size: 1.2rem;
     margin-inline: 0;
     padding-inline-start: 0;
     padding-inline-end: 0;
   } */
 
-  /* input wrapper WITH password */
-  /* .InputWrapperWithPassword {
+/* input wrapper WITH password */
+/* .InputWrapperWithPassword {
     grid-template-columns: 9fr 1fr;
   } */
 /* } */
@@ -156,7 +156,7 @@
     /* padding-inline-end: 0em; *
   } */
 
-  /* .InputWrapperWithPassword {
+/* .InputWrapperWithPassword {
     grid-template-columns: 9fr 1fr;
   } *
 } */
