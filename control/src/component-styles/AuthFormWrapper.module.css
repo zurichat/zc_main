@@ -7,12 +7,14 @@
   /* width: 100%;
   max-width: 720px; */
   height: 100vh;
-  font-size: 15px;
+  /* font-size: 15px; */
   /* transform: scale(0.95); */
   /* margin: 0 auto; */
   /* overflow: hidden; */
-  width: auto;
-  max-width: unset;
+  /* width: auto;
+  max-width: unset; */
+  width: 100%;
+  max-width: 600px;
   justify-content: flex-start;
 }
 
@@ -267,7 +269,7 @@
 
 .bottomLine .bottomLink {
   color: #00b87c;
-  font-size: 1.2em;
+  /* font-size: 1.2em; */
   /* color: #1a61db; */
 }
 
