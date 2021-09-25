@@ -43,7 +43,7 @@ const ResetPassword = () => {
         <aside id={styles.authAsideContainer} className={styles.display_none}>
           <div id={styles.authImageWrapper}>
             <img src={authBg} alt="backgroundImage" />
-            <div id={styles.aside_txt}></div>
+            <div id={styles.asideText}></div>
           </div>
         </aside>
         <section id={``}>
@@ -62,7 +62,7 @@ const ResetPassword = () => {
           {/* form section  */}
           <form action="">
             <AuthInputBox
-              className={`${styles.resetInput}`}
+              className={`${styles.inputElement}`}
               id="email"
               name="Email address"
               type="email"
