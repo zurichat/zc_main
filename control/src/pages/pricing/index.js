@@ -15,7 +15,7 @@ function Pricing() {
     console.log(user)
   })
   return (
-    <div style={{ 'justifyContent: center, background-color: white' }}>
+    <div style={`{ justifyContent: center, background-color: white }`}>
       <Header />
       <PricingPageSection1 />
       <Section3 />
