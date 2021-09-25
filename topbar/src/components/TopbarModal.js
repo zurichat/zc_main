@@ -113,6 +113,7 @@ const TopbarModal = ({ members }) => {
             <div className={styles.smileys}>
               <Picker
                 onEmojiClick={onEmojiClick}
+                pickerStyle={{boxShadow: 'none'}}
                 skinTone={SKIN_TONE_MEDIUM_DARK}
               />
             </div>
