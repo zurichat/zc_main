@@ -28,6 +28,7 @@ const TopbarModal = ({ members }) => {
   const state = useContext(TopbarContext)
   const [showModal] = state.show
   const [presence, setPresence] = state.presence
+  const [username, setUsername] = state.username
   const [showStatus] = state.status
   const [showMembersModal] = state.modal
   const {
@@ -40,6 +41,7 @@ const TopbarModal = ({ members }) => {
   } = state
   const [modal, setModal] = useState('')
   const [pause, setPause] = useState(false)
+  const [statusModal, setStatusModal] = useState(false)
 
   const onSetPresence = () => {
     setPresence(() => {
@@ -64,7 +66,7 @@ const TopbarModal = ({ members }) => {
         </div>
       )
       break
-    case 'false':
+    default:
       userPresence = 'Set yourself as active'
       toggleStatus = (
         <div className={styles.online}>
@@ -72,8 +74,6 @@ const TopbarModal = ({ members }) => {
           <p className={styles.away}>Away</p>
         </div>
       )
-      break
-    default:
   }
 
   const toggleUserPresence = () => {
@@ -85,7 +85,12 @@ const TopbarModal = ({ members }) => {
         return authAxios.get(`/organizations/${orgId}/members/${user._id}/`)
       })
       .then(res => {
-        console.log('response2', res.data.data.presence)
+        username = res.data.data.user_name
+        console.log(
+          'response2',
+          res.data.data.presence,
+          res.data.data.user_name
+        )
       })
       .catch(err => {
         console.log(err?.response?.data)
@@ -94,6 +99,7 @@ const TopbarModal = ({ members }) => {
 
   useEffect(() => {
     setPresence(user.presence)
+    // setUsername(user.user_name)
     // toggleUserPresence()
     console.log('check for user', user)
     console.log('auth axios presence', presence)
