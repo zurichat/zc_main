@@ -45,8 +45,6 @@
   line-height: 21px;
 }
 .itemTitle1 .spanL {
-  display: flex;
-  flex-direction: row;
   color: #00b87c;
   font-size: 13px;
   font-size: 15px;
@@ -212,6 +210,7 @@ input[type='checkbox'] {
   width: 173px;
   height: 39px;
   outline: none;
+  font-size: 13px;
   z-index: 0;
 }
 

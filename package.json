@@ -57,10 +57,15 @@
     "yarn-run-all": "^3.1.1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@types/jest": "^27.0.1",
     "@types/systemjs": "^6.1.1",
     "fortawesome": "^0.0.1-security",
+    "libphonenumber-js": "^1.9.34",
+    "react-phone-number-input": "^3.1.27",
     "react-time-picker": "^4.4.1",
+    "react-timezone-select": "^1.0.8",
     "rxjs": "^7.3.0",
     "single-spa": "^5.9.3"
   }

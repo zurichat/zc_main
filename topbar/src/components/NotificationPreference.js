@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react'
 import styles from '../styles/NotificationPreference.module.css'
 import { AiOutlineQuestionCircle } from 'react-icons/ai'
-//import { TextInput } from './TextInput'
 import { authAxios } from '../utils/Api'
 import { ProfileContext } from '../context/ProfileModal'
 
@@ -59,9 +58,8 @@ const NotificationPreference = () => {
       <div className={styles.notifyContent}>
         <div className={styles.itemTitle1}>
           <h4 className={styles.titleLarge}>Notify me about </h4>{' '}
-          <span>
-            <AiOutlineQuestionCircle />
-            Learn about notifications
+          <span className={styles.spanL}>
+            <AiOutlineQuestionCircle /> Learn about notifications
           </span>
         </div>
         <form>
@@ -107,7 +105,7 @@ const NotificationPreference = () => {
               <label htmlFor="none">Nothing</label>
             </div>
           </div>
-          <div className={styles.checkbox}>
+          <div className={styles.markbox}>
             <label htmlFor="for-mobile">
               {' '}
               <input type="checkbox" value="for-mobile" />
@@ -116,7 +114,7 @@ const NotificationPreference = () => {
           </div>
           <div className={styles.line}></div>
           {/* <hr />  */}
-          <div className={styles.checkbox}>
+          <div className={styles.markbox}>
             <label htmlFor="for-meeting">
               <input
                 type="checkbox"
@@ -129,7 +127,7 @@ const NotificationPreference = () => {
               Notify me when a meeting is set
             </label>
           </div>
-          <div className={styles.checkbox}>
+          <div className={styles.markbox}>
             <label htmlFor="for-thread">
               <input
                 type="checkbox"
@@ -146,7 +144,7 @@ const NotificationPreference = () => {
         <div className={styles.itemTitle2}>
           <div className={styles.line}></div>
           <h4 class={styles.titleSmall}>Keywords</h4>{' '}
-          <span>
+          <span className={styles.spanBlock}>
             You will be notified anything, someone uses these keywords in a
             thread
           </span>
@@ -155,7 +153,7 @@ const NotificationPreference = () => {
         <div className={styles.line} />
         <div className={styles.itemTitle2}>
           <h4 class={styles.titleSmall}>Notification Schedule</h4>{' '}
-          <span>
+          <span className={styles.spanBlock}>
             You'll only receive notifications in the hours that you choose.
             Outside of those times, notifications will be paused.{' '}
             <span className={styles.spanSmall}>Learn more</span>
@@ -178,13 +176,13 @@ const NotificationPreference = () => {
                 </select>
               </div>
             </li>
-            {/* <li className={styles.listChild}>
+            <li className={styles.listChild}>
               <TextInput label="From" />
             </li>
 
             <li className={styles.listChild}>
               <TextInput label="to" />
-            </li> */}
+            </li>
           </ul>
         </div>
         <div className={styles.line} />
@@ -192,19 +190,19 @@ const NotificationPreference = () => {
         {/* Michael's sound check code */}
         <div className={styles.itemTitle2}>
           <h4 className={styles.titleSmall}>Sound & appearance</h4>
-          <span>Choose your notification sound</span>
+          <span className={styles.spanBlock}>Choose your notification sound</span>
           <button className={styles.button}>Example Sound</button>
         </div>
 
         <form className={styles.mute}>
-          <div className={styles.checkbox}>
+          <div className={styles.markbox}>
             <label htmlFor="for-includepreview">
               {' '}
               <input type="checkbox" />
               Include preview message in notification
             </label>
           </div>
-          <div className={styles.checkbox}>
+          <div className={styles.markbox}>
             <label htmlFor="for-muteall">
               <input
                 type="checkbox"
@@ -323,7 +321,7 @@ const NotificationPreference = () => {
             </div>
           </div>
         </div>
-        <div className={styles.checkbox}>
+        <div className={styles.markbox}>
           <label>
             <input
               type="checkbox"
@@ -341,3 +339,22 @@ const NotificationPreference = () => {
 }
 
 export default NotificationPreference
+
+const TextInput = ({ type = 'text', label }) => {
+  const [value, setValue] = useState('')
+
+  function handleChange(e) {
+    setValue(e.target.value)
+  }
+  return (
+    <div className={styles.inputContainer}>
+      <input
+        type={type}
+        className={styles.textInput}
+        value={value}
+        onChange={handleChange}
+      />
+      <label className={value && 'filled'}>{label}</label>
+    </div>
+  )
+}
