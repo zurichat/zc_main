@@ -1,10 +1,5 @@
-
-  
-
-
-
 .ProfileContainer {
-  min-width: 20.5rem ;
+  min-width: 20.5rem;
   height: calc(100vh - 2.9em);
   background: #fff;
   position: fixed;
@@ -132,7 +127,7 @@
   justify-content: space-between;
 }
 
-.buttonGroups button {
+.buttonGroups button.ctaButton {
   background: #f6f6f6;
   color: #fff;
   display: flex;
@@ -140,19 +135,23 @@
   justify-content: center;
   width: 3rem;
   height: 3rem;
-
   border-radius: 50%;
   font-weight: 700;
   border: none;
 }
+.ctaButtonIcon{
+  color: rgb(128, 126, 126);
+}
+.ctaButton:hover .ctaButtonIcon{
+  color:#fff;
+}
 .ctaText {
-  font-size: 10px;
+  font-size: 12px;
   color: rgb(128, 126, 126);
   text-align: center;
 }
 .buttonGroups button:hover {
   background: #00b87c;
-
 }
 
 .buttonGroups button svg {
@@ -164,9 +163,8 @@
   stroke: rgb(126, 123, 123);
 }
 .buttonGroups button svg path:hover {
-  stroke:  #fff;
+  stroke: #fff;
 }
-
 
 .moreInfo {
   text-align: left;
@@ -195,7 +193,6 @@
   align-items: center;
   margin-top: 1.4rem;
   margin-bottom: 3rem;
- 
 }
 
 .icons {
@@ -216,6 +213,7 @@
   background: #ffffff;
   border: 1px solid #bebebe;
   border-radius: 10px;
+  text-align: left;
 }
 
 .topSection {
@@ -311,7 +309,6 @@
     color: #fff;
   }
 
-
   .moreInfo {
     text-align: left;
     margin: 0 0.6rem;
@@ -344,7 +341,7 @@
     font-size: 0.8rem;
   }
 
-  .social{
+  .social {
     margin-left: 4px;
   }
 
