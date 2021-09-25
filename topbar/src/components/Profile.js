@@ -102,7 +102,6 @@ const Profile = () => {
               className={styles.ctaButton}
             >
               <BiUser className={styles.ctaButtonIcon} />
-           
             </button>
             <h6 className={styles.ctaText}> Edit Profile</h6>
           </div>
