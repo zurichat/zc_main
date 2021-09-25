@@ -647,6 +647,7 @@
   margin: auto;
   cursor: pointer;
   height: 30px;
+  position: relative;
 }
 
 /* The section of the picker */
@@ -659,7 +660,6 @@
   position: fixed;
   top: 20%;
   left: 50%;
-  width: 100%;
   width: 300px;
   z-index: 999999;
   padding: 10px;
