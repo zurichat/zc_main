@@ -17,6 +17,10 @@ const reducer = (state, action) => {
       return { ...state, organizations, loading: false }
     case 'ACTION_FAILED':
       return { ...state, error: action.error, loading: false }
+    case 'LOADER_ACTION':
+      return { ...state, pageLoading: true }
+    case 'PAGE_REDIRECT':
+      return { ...state, pageLoading: false }
     default:
       return state
   }
