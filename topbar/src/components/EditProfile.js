@@ -7,7 +7,7 @@ import { ProfileContext } from '../context/ProfileModal'
 import { authAxios } from '../utils/Api'
 import Loader from 'react-loader-spinner'
 import toast, { Toaster } from 'react-hot-toast'
-import {data} from "../utils/CountryCode";
+import { data } from '../utils/CountryCode'
 import TimezoneSelect from 'react-timezone-select'
 import { StyledProfileWrapper } from '../styles/StyledEditProfile'
 
@@ -36,7 +36,7 @@ const EditProfile = () => {
   console.log('data', data)
 
   const addList = () => {
-    if(links.length < 5) {
+    if (links.length < 5) {
       setLinks([...links, ''])
     }
   }
@@ -320,12 +320,11 @@ const EditProfile = () => {
                   <input type="text" className="input mb-3" key={index} />
                 ))}
 
-                {
-                  links.length !== 5 &&
+                {links.length !== 5 && (
                   <p className="warning" onClick={addList}>
                     Add new link
                   </p>
-                }
+                )}
               </div>
             </div>
             <div className="img-container">
@@ -372,12 +371,7 @@ const EditProfile = () => {
             <button className="btns rmvBtn">Cancel</button>
             <button onClick={handleFormSubmit} className="btns chgBtn">
               {state.loading ? (
-                <Loader
-                  type="ThreeDots"
-                  color="#fff"
-                  height={40}
-                  width={40}
-                />
+                <Loader type="ThreeDots" color="#fff" height={40} width={40} />
               ) : (
                 'Save Changes'
               )}

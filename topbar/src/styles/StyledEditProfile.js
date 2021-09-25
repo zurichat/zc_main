@@ -80,12 +80,13 @@ export const StyledProfileWrapper = styled.section`
 
             &:hover {
               border: 1px solid #00b87c;
-              transition: border .25s ease-in-out;
+              transition: border 0.25s ease-in-out;
             }
 
-            .pref, .phoneInput {
+            .pref,
+            .phoneInput {
               height: 3.8125rem;
-              padding: 0 .5rem;
+              padding: 0 0.5rem;
               outline: none;
               border: none;
             }
@@ -135,9 +136,10 @@ export const StyledProfileWrapper = styled.section`
           border-top-left-radius: 5px !important;
           border-bottom-left-radius: 5px !important;
 
-          &:hover, &:focus {
+          &:hover,
+          &:focus {
             border: 1px solid #00b87c;
-            transition: border .25s ease-in-out;
+            transition: border 0.25s ease-in-out;
           }
         }
 
