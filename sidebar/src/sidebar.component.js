@@ -21,8 +21,11 @@ import { Button } from '../../control/src/pages/createworkspace/components/Works
 import Channels from './components/Channels'
 import { Modall } from './components/Modal'
 import SkeletonLoader from './components/SkeletonLoader'
-import axios from 'axios'
 import Messages from './components/Messages'
+import fetcher from './utils/fetcher'
+import axios from 'axios'
+import { GetUserInfo } from '@zuri/control'
+import { authAxios } from './utils/Api'
 
 const Sidebar = props => {
   const [show, setShow] = useState(false)
@@ -33,42 +36,120 @@ const Sidebar = props => {
   const [query, setQuery] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  const [organization, setOrganization] = useState('')
 
-  const { id, token } = JSON.parse(sessionStorage.getItem('user'))
+  const [userInfo, setUserInfo] = useState({
+    userId: '',
+    Organizations: [],
+    token: ''
+  })
 
-  // console.log(userSession)
-  // const user = async () => {
-  const userInfo = async (userId, usertoken) => {
-    try {
-      const response = await axios.get(
-        `https://api.zuri.chat/users/${userId}`,
-        {
-          headers: {
-            Authorization: `Bearer ${usertoken}`
-          }
-        }
-      )
-      // console.log(response.data.data, 'sidebar')
-      const { Organizations } = response.data.data
-      return setOrganization(Organizations[0])
-    } catch (err) {
-      console.log(err)
+  const [organizationInfo, setOrganizationInfo] = useState(null)
+  const [sidebarData, setSidebarData] = useState([])
+
+  // let user = JSON.parse(sessionStorage.getItem('user'))
+  let token = sessionStorage.getItem('token')
+
+  useEffect(async () => {
+    const { _id, Organizations } = await GetUserInfo()
+    // console.log('sidebar organization', Organization)
+    setUserInfo({
+      userId: _id,
+      Organizations,
+      token
+    })
+
+    if (_id !== '') {
+      const org_url = `/organizations/${Organizations[0]}/plugins`
+      console.log('sidebar url', org_url)
+      authAxios
+        .get(org_url)
+        .then(res => setOrganizationInfo(res.data.data))
+        .catch(err => console.log(err))
+    } else {
+      console.log('Checking')
     }
-  }
-
-  //   console.log(_id, org_id, 'Sidebar')
-  // }
-  useEffect(() => {
-    userInfo(id, token)
   }, [])
+
+  useEffect(() => {
+    // console.log('sidebar plugins', organizationInfo)
+    {
+      organizationInfo &&
+        organizationInfo.map((plugin, index) => {
+          const sidebarUrl = plugin.plugin.sidebar_url
+
+          axios
+            .get(
+              `${
+                sidebarUrl.includes('https://') ||
+                sidebarUrl.includes('http://')
+                  ? sidebarUrl
+                  : `https://${sidebarUrl}`
+              }?org=${userInfo.Organizations[0]}&user=${userInfo.userId}`
+            )
+            .then(res => {
+              try {
+                const validPlugin = res.data
+                if (validPlugin.name !== undefined) {
+                  if (typeof validPlugin === 'object') {
+                    setSidebarData(prev => [...prev, validPlugin])
+                  }
+                }
+
+                // console.log(validPlugin)
+              } catch (err) {
+                console.log(err, 'Invalid plugin')
+              }
+            })
+            .catch(console.log)
+        })
+    }
+  }, [organizationInfo])
+
+  useEffect(() => {
+    {
+      sidebarData &&
+        sidebarData.map((pluginName, index) => {
+          console.log('Plugin', pluginName)
+          // if (
+          //   pluginName.data !== undefined &&
+          //   pluginName.data.joined_rooms !== undefined
+          // ) {
+          //   const pluginInfo = {
+          //     id: index,
+          //     title: pluginName.data.name,
+          //     rooms: pluginName.joined_rooms
+          //   }
+          //   // new Set(prev).add(pluginInfo)
+          //   setFilteredPlugins(prev =>
+          //     !prev.has(pluginInfo) ? new Set(prev).add(pluginInfo) : null
+          //   )
+          // } else {
+          //   if (pluginName.joined_rooms !== undefined) {
+          //     const pluginInfo = {
+          //       id: index,
+          //       title: pluginName.name,
+          //       rooms: pluginName.joined_rooms
+          //     }
+          //     setFilteredPlugins(prev =>
+          //       !prev.has(pluginInfo) ? new Set(prev).add(pluginInfo) : null
+          //     )
+          //   }
+          // }
+        })
+    }
+  }, [sidebarData])
 
   return (
     <div className={styles.container}>
       <div className={styles.orgInfo}>
-        <div className={styles.orgName}>
-          <p>HNGi8</p>
-          <img src={shapekeyboardarrowdown} alt="HNGi8" />
+        <div className="" style={{ background: theme.bgcolor }}>
+          <div className="sb-flex sb-align-center">
+            <p className="sb-mr-2">HNGi8</p>
+            <img src={shapekeyboardarrowdown} alt="HNGi8" />
+          </div>
+          <div className={styles.newMessage}>
+            <img src={newmessage} alt="message" />
+          </div>
         </div>
 
         <Modall showDialog={showDialog} closeDialog={close} />
@@ -99,9 +180,6 @@ const Sidebar = props => {
             </Wrapper>
           </Content>
         </Overlay>
-        <div className={styles.newMessage}>
-          <img src={newmessage} alt="New message icon" />
-        </div>
       </div>
       <div>
         <Item>
@@ -140,16 +218,61 @@ const Sidebar = props => {
           />
         </Item>
       </div>
+      {sidebarData &&
+        sidebarData.map((plugin, index) => {
+          return (
+            <div key={index}>
+              <h5>{plugin.name}</h5>
+
+              <ul>
+                {plugin.joined_rooms &&
+                  plugin.joined_rooms.map((room, index) => {
+                    if (room.room_name !== undefined) {
+                      return (
+                        <li key={index}>
+                          <a
+                            style={{
+                              marginLeft: '5px',
+                              color: 'red'
+                            }}
+                            href={room.room_url}
+                            onClick={navigateToUrl}
+                          >
+                            {room.room_name}
+                          </a>
+                        </li>
+                      )
+                    }
+                  })}
+              </ul>
+            </div>
+          )
+        })}
       {/*
+        {roomInfo.rooms !== undefined &&
+                roomInfo.rooms.map(room => {
+                  return (
+                    <Fragment>
+                      <a href={room.room_url} onClick={navigateToUrl}>
+                        {room.name}
+                      </a>
+                    </Fragment>
+                  )
+                })}
         <Dropdown onAddButtonClick={open} showAddButton={true} title="Plugins">
-          {links.map((plugin, index) => (
-            <Fragment key={index}>
-              <a href={plugin.href} onClick={navigateToUrl}>
-                {plugin.name}
-              </a>
-            </Fragment>
-          ))}
-        </Dropdown>
+        {sidebarData &&
+          links.map((pluginLink, index) =>
+            sidebarData.map(pluginName => {
+              pluginLink.name === pluginName.group_name ? (
+                <Fragment key={index}>
+                  <a href={pluginLink.href} onClick={navigateToUrl}>
+                    {pluginLink.name}
+                  </a>
+                </Fragment>
+              ) : null
+            })
+          )}
+      </Dropdown>
         <Dropdown onAddButtonClick={open} showAddButton={true} title="Channels">
         {channelsData &&
           channelsData.channels.map((channel, index) => (
@@ -158,22 +281,19 @@ const Sidebar = props => {
               {channel.name}
             </Fragment>
           ))}
-          </Dropdown>*/}
-
-      {organization === '' ? (
+          </Dropdown>
+          organization === '' ? (
         <SkeletonLoader />
       ) : (
         <div>
           <Channels organization={organization} userid={id} />
           <Messages organization={organization} userid={id} />
         </div>
-      )}
+      )
+          */}
 
       {/* button for adding invites */}
-      <div className={styles.buttonstyle}>
-        <button onClick={() => setShow(true)}>Add Teammates</button>
-        <Modal onClose={() => setShow(false)} show={show} />
-      </div>
+
       <Button
         style={{
           width: '80%',
@@ -253,5 +373,9 @@ padding:0.25rem;
 const ClickButton = styled.img`
   margin-left: auto;
 `
+
+const theme = {
+  bgcolor: '#00b87c'
+}
 
 export default Sidebar
