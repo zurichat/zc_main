@@ -51,14 +51,14 @@
   justify-content: space-between;
   align-items: center;
 }
-button {
+/* button {
   padding: 26px 60px;
   font-weight: 600;
   font-size: 1.2rem;
   line-height: 28px;
   border-radius: 3px;
   cursor: pointer;
-}
+} */
 .getStarted {
   padding: 26px 75px;
   /* background-color: #b5b6b6; */
@@ -92,11 +92,11 @@ button {
     font-size: 45px;
     margin-bottom: 0px;
   }
-  button {
+  /* button {
     padding: 15px;
     font-size: 20px;
     cursor: pointer;
-  }
+  } */
 }
 
 @media screen and (max-width: 900px) {
@@ -144,14 +144,15 @@ button {
     justify-content: space-between;
     align-items: center;
   }
-  button {
+  /* button {
     width: 48%;
     height: 75px;
     font-weight: normal;
     font-size: 0.9rem;
     line-height: 19px;
     letter-spacing: 0.02em;
-  }
+  } */
+
   .section1ImageWrapper {
     margin-top: 50px;
     height: 100px;
@@ -176,11 +177,11 @@ button {
     width: 100%;
     font-size: 1.8rem;
   }
-  button {
+  /* button {
     width: 46%;
     height: 56px;
     font-size: 0.7rem;
-  }
+  } */
   .section1ImageWrapper {
     margin-top: 50px;
     height: 100px;

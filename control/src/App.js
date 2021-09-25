@@ -4,7 +4,10 @@ import SignUp from './pages/signup'
 import SignOut from './pages/signout/index'
 import Workspace from './pages/workspace/components/Workspace'
 import LandingPage from './pages/LandingPage'
-import ResetPassword from './pages/passwordReset'
+// password block
+import ResetPassword from './pages/passwordReset/index'
+import NewPassword from './pages/passwordReset/newPassword'
+// end password block
 import CookiesSetting from './pages/cookiesSettings'
 import Cookies from './pages/cookies'
 import Features from './pages/features'
@@ -26,17 +29,9 @@ import AccDeactivated from './pages/settings/components/AccDeactivated'
 import DeactivateAccount from './pages/settings/components/AcctDeactivation'
 import AllSessionSignOut from './pages/settings/components/AllSessionSignOut'
 import PrivateRoute from './pages/settings/Utils/PrivateRoute'
-import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation';
-import WorkspaceHome from './pages/createworkspace/components/WorkspaceHome'
-import ProjectName from './pages/createworkspace/components/ProjectName';
-import LaunchPage from './pages/createworkspace/components/LaunchPage';
-import Step3 from './pages/createworkspace/components/Step3';
-import CompanyName from './pages/createworkspace/components/CompanyName';
+import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation'
 import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContext'
-
-
-const App = () => {
-//   const [input,setInput] = useState('');
+import PrivacyPolicy from './pages/privacy-policy/index'
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -46,6 +41,8 @@ const App = () => {
 //     setInput(event.target.value);
 // }
 // let workspaceRoute = '/createworkspace';
+
+  const App = () => {
 return(
   <BrowserRouter>
     <Switch>
@@ -71,10 +68,10 @@ return(
       <Route path="/features">
         <Features />
       </Route>
-      <Route path="/Inviterequest">
+      <Route path="/invite-request">
         <Inviterequest />
       </Route>
-      <Route path="/SendRequest">
+      <Route path="/send-request">
         <SendRequest />
       </Route>
       <Route path="/resources">
@@ -89,47 +86,55 @@ return(
       <Route path="/events">
           <Events />
         </Route>
-        <CreateWorkSpaces/>
-      <Route path="/download-app">
-        <Download />
-      </Route>
-      <Route path="/contact-us">
-        <ContactUs />
-      </Route>
-      <Route path="/careers">
-        <Careers />
-      </Route>
-      <Route path="/marketplace" exact>
-        <MarketPlace />
-      </Route>
-      <Route path="/apps-integrations">
-        <AppsAndIntegrations />
-      </Route>
-      {/* ----------------settings routes opened------------------------ */}
-      <PrivateRoute
-        path="/confirm-deactivation"
-        component={ConfirmDeactivation}
-      />
-      <Route path="/account-deactivated">
-        <AccDeactivated />
-      </Route>
-      <PrivateRoute path="/deactivate-account" component={DeactivateAccount} />
-      <PrivateRoute path="/session-signout" component={AllSessionSignOut} />
-      <PrivateRoute path="/settings" exact component={Settings} />
-      <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
-      {/* ----------------settings routes closed----------------- */}
-      <Route path="/reset-password">
-        <ResetPassword />
-      </Route>
-      <Route path="/cookies-settings">
-        <CookiesSetting />
-      </Route>
-      <Route path="/cookies-banner">
-        <Cookies />
-      </Route>
-    </Switch>
-  </BrowserRouter>
-)
-  
+        <Route path="/download-app">
+          <Download />
+        </Route>
+        <Route path="/contact-us">
+          <ContactUs />
+        </Route>
+        <Route path="/careers">
+          <Careers />
+        </Route>
+        <Route path="/privacy">
+          <PrivacyPolicy />
+        </Route>
+        <Route path="/marketplace" exact>
+          <MarketPlace />
+        </Route>
+        <Route path="/apps-integrations">
+          <AppsAndIntegrations />
+        </Route>
+        {/* ----------------settings routes opened------------------------ */}
+        <PrivateRoute
+          path="/confirm-deactivation"
+          component={ConfirmDeactivation}
+        />
+        <Route path="/account-deactivated">
+          <AccDeactivated />
+        </Route>
+        <PrivateRoute
+          path="/deactivate-account"
+          component={DeactivateAccount}
+        />
+        <PrivateRoute path="/session-signout" component={AllSessionSignOut} />
+        <PrivateRoute path="/settings" exact component={Settings} />
+        <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
+        {/* ----------------settings routes closed----------------- */}
+        <Route path="/reset-password">
+          <ResetPassword />
+        </Route>
+        <Route path="/change-password">
+          <NewPassword />
+        </Route>
+        <Route path="/cookies-settings">
+          <CookiesSetting />
+        </Route>
+        <Route path="/cookies-banner">
+          <Cookies />
+        </Route>
+        <CreateWorkSpaces />
+      </Switch>
+    </BrowserRouter>
+  )
 }
 export default App
