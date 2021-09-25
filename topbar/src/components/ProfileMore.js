@@ -3,7 +3,7 @@ import styles from '../styles/Profile.module.css'
 
 import { ProfileContext } from '../context/ProfileModal'
 import { TopbarContext } from '../context/Topbar'
-import 'react-notifications/lib/notifications.css'
+// import 'react-notifications/lib/notifications.css'
 import toast, { Toaster } from 'react-hot-toast'
 import Preferences from './Preferences'
 
