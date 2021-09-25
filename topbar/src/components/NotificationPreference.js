@@ -23,7 +23,9 @@ const NotificationPreference = () => {
     when_iam_not_active_on_desktop: ''
   })
 
-  const setData = () => {authAxios.patch(`/organizations/${orgId}/members/${user._id}/settings`, {
+  const setData = () => {
+    authAxios
+      .patch(`/organizations/${orgId}/members/${user._id}/settings`, {
         settings: {
           notifications: dataState
         }
@@ -190,7 +192,9 @@ const NotificationPreference = () => {
         {/* Michael's sound check code */}
         <div className={styles.itemTitle2}>
           <h4 className={styles.titleSmall}>Sound & appearance</h4>
-          <span className={styles.spanBlock}>Choose your notification sound</span>
+          <span className={styles.spanBlock}>
+            Choose your notification sound
+          </span>
           <button className={styles.button}>Example Sound</button>
         </div>
 

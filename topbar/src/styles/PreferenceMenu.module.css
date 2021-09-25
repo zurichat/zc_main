@@ -11,7 +11,7 @@
 }
 .one,
 .active {
-   /* display: flex;
+  /* display: flex;
   flex-direction: row;  */
   align-items: center;
   margin-left: 20px;
@@ -23,8 +23,8 @@
   padding-top: 15px;
 }
 .icon {
-     /* margin-right: 15px; */
-     margin-top: -15px; 
+  /* margin-right: 15px; */
+  margin-top: -15px;
 }
 .active p {
   color: #00b87c;
@@ -33,8 +33,8 @@
 
 .one,
 .active {
-   display: flex;
-  flex-direction: row; 
+  display: flex;
+  flex-direction: row;
   font-size: 15px;
   align-items: left;
   margin-left: 20px;
