@@ -29,9 +29,7 @@ const Cookies = () => {
           >
             Allow
           </button>
-          <button
-            className={`${styles.settingsButton} ${styles.button}`}
-          >
+          <button className={`${styles.settingsButton} ${styles.button}`}>
             <Link to="/cookies-settings"> Settings </Link>
           </button>
         </div>
@@ -44,6 +42,5 @@ const handleClickAllow = event => {
   sessionStorage.setItem('cookies-allow', 'true')
   event.target.parentNode.parentNode.parentNode.style.display = 'none'
 }
-
 
 export default Cookies
