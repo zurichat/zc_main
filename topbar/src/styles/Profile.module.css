@@ -139,11 +139,11 @@
   font-weight: 700;
   border: none;
 }
-.ctaButtonIcon{
+.ctaButtonIcon {
   color: rgb(128, 126, 126);
 }
-.ctaButton:hover .ctaButtonIcon{
-  color:#fff;
+.ctaButton:hover .ctaButtonIcon {
+  color: #fff;
 }
 .ctaText {
   font-size: 12px;
