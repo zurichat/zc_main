@@ -28,12 +28,14 @@
 }
 
 .inputField {
-  width: 350px;
-  padding: 1.35rem;
+  width: 60%;
+  /* max-width: 350px; */
+  /* padding: 1.35rem; */
+  padding: 1rem;
   background-color: #ffffff;
   color: #63636c;
-  margin-right: 30px;
-  font-size: 1.5rem;
+  margin-right: 1rem;
+  font-size: 1rem;
   border: 2px solid #63636c;
   border-radius: 4px;
 }
@@ -41,16 +43,17 @@
 input.inputField::placeholder {
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 1.5rempx;
   line-height: 29px;
 }
 
 .subscribeBtn {
-  width: 200px;
-  padding: 1.35rem;
+  width: 30%;
+  /* padding: 1.35rem; */
+  padding: 1rem;
   background-color: #00b87c;
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
   border: 2px solid #00b87c;
   border-radius: 4px;
@@ -61,8 +64,23 @@ input.inputField::placeholder {
 .subscribeBtn:hover {
   text-decoration: none;
   background-color: #ffffff;
-  color: var(--brand);
+  color: #00b87c;
   border: 2px solid #00b87c;
+}
+
+/* tablet */
+@media (max-width: 769px) {
+  .inputField {
+    width: 60%;
+    margin-right: 10px;
+    font-size: 1rem;
+
+  }
+  .subscribeBtn {
+    width: 35%;
+    margin-left: 0px;
+    font-size: 1rem;
+  }
 }
 
 /* smartphone */
@@ -94,6 +112,7 @@ input.inputField::placeholder {
 
   .subscribeBtn {
     padding: 1rem 4rem;
+    margin-left: 0px;
     width: 191px;
     font-style: normal;
     font-weight: 600;
