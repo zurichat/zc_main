@@ -16,17 +16,12 @@ import SetStatusModal from './SetStatusModal'
 // react icons
 
 const TopbarModal = ({ members }) => {
-  const {
-    userProfileImage,
-    toggleModalState,
-    toggleProfileState,
-    user,
-    
-  } = useContext(ProfileContext)
+  const { userProfileImage, toggleModalState, toggleProfileState, user } =
+    useContext(ProfileContext)
 
   const state = useContext(TopbarContext)
   const [showModal] = state.show
-  const {presence, setPresence} = state
+  const { presence, setPresence } = state
   const [showStatus] = state.status
   const [showMembersModal] = state.modal
   const {
@@ -41,8 +36,6 @@ const TopbarModal = ({ members }) => {
   const [modal, setModal] = useState('')
   const [pause, setPause] = useState(false)
   const [statusModal, setStatusModal] = useState(false)
-
-
 
   let userPresence = null
   let toggleStatus = null
@@ -67,11 +60,8 @@ const TopbarModal = ({ members }) => {
       )
   }
 
- 
-
   useEffect(() => {
     setPresence(user.presence)
-  
   }, [user])
 
   return (
@@ -139,7 +129,6 @@ const TopbarModal = ({ members }) => {
             )}
             <p
               onClick={() => {
-
                 toggleUserPresence()
               }}
             >
