@@ -1,4 +1,6 @@
-import { createContext, useState, useRef } from 'react'
+import { createContext, useState, useRef, useContext } from 'react'
+import { authAxios } from '../utils/Api'
+import { ProfileContext } from './ProfileModal'
 
 export const TopbarContext = createContext(null)
 export const TopbarProvider = ({ children }) => {
@@ -6,15 +8,17 @@ export const TopbarProvider = ({ children }) => {
 
   // setting up my states for the profile topbar modal
   const [presence, setPresence] = useState('true')
-  const [username, setUsername] = useState('')
   const [showModal, setShowModal] = useState(false)
   const [showStatus, setShowStatus] = useState(false)
   const [showMembersModal, setShowMembersModal] = useState(false)
   const [chosenEmoji, setChosenEmoji] = useState({ emoji: '4️⃣' })
+  //get Profile content state
+  const { orgId, user } = useContext(ProfileContext)
 
   // The function that opens the topbar profile modal
   const openModal = () => {
     setShowModal(!showModal)
+    console.log('profile Open')
   }
 
   // The function that closes the topbar profile modal
@@ -51,6 +55,30 @@ export const TopbarProvider = ({ children }) => {
     setShowMembersModal(false)
   }
 
+  const onSetPresence = () => {
+    setPresence(() => {
+      if (presence === 'true') {
+        return 'false'
+      } else {
+        return 'true'
+      }
+    })
+  }
+  const toggleUserPresence = () => {
+    onSetPresence()
+    authAxios
+      .post(`/organizations/${orgId}/members/${user._id}/presence`, presence)
+      .then(res => {
+        console.log('response1 =>', res)
+        return authAxios.get(`/organizations/${orgId}/members/${user._id}/`)
+      })
+      .then(res => {
+        console.log('response2', res.data.data.presence)
+      })
+      .catch(err => {
+        console.log(err?.response?.data)
+      })
+  }
   // Passes all functions and states to the state object
   const state = {
     openModal,
@@ -59,9 +87,11 @@ export const TopbarProvider = ({ children }) => {
     closeStatus,
     openMembersModal,
     closeMembersModal,
+    toggleUserPresence,
+    onSetPresence,
     modalRef,
-    presence: [presence, setPresence],
-    username: [username, setUsername],
+    presence,
+    setPresence,
     show: [showModal, setShowModal],
     status: [showStatus, setShowStatus],
     emoji: [chosenEmoji, setChosenEmoji],
