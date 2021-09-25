@@ -1,16 +1,17 @@
 import React from 'react'
 import style from './styles/LandingPage.module.css'
-import hero_img from './assets/hero-img.png'
-import logo1 from './assets/logo_hng.png'
-import logo2 from './assets/logo_i4g.png'
-import logo3 from './assets/logo_nucle.png'
-import logo4 from './assets/logo_camphouse.png'
-import logo5 from './assets/logo_zuri.png'
-import ft_img1 from './assets/ft_img1.png'
-import ft_img2 from './assets/ft_img2.png'
-import ft_img3 from './assets/ft_img3.png'
-import ft_img4 from './assets/ft_img4.png'
-import sign_up_img from './assets/sign_up_img.png'
+// import hero_img from './assets/hero-img.svg'
+import hero_svg from './assets/MacBookAir.svg'
+import logo_hng from './assets/logo_hng.svg'
+import logo_i4g from './assets/logo_i4g.svg'
+// import logo_nucle from './assets/logo_nucle.svg'
+import logo_camphouse from './assets/logo_camphouse.svg'
+import logo_zuri from './assets/logo_zuri.svg'
+import ft_img1 from './assets/ft_img1.svg'
+import ft_img2 from './assets/ft_img2.svg'
+import ft_img3 from './assets/ft_img3.svg'
+import ft_img4 from './assets/ft_img4.svg'
+import sign_up_img from './assets/sign_up_img.svg'
 
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
@@ -50,9 +51,10 @@ export default function Homepage() {
           </div>
           <div className={`${style.ft_link_wrap}`}>
             <a className={`${style.ft_link}`} href={props.href}>
-              <div>
-                {props.aContent}
+              <div className={`${style.ft_link_div}`}>
+                <p className={`${style.ft_link_p}`}>{props.aContent}</p>
                 <svg
+                  className={`${style.ft_link_svg}`}
                   width="24"
                   height="25"
                   viewBox="0 0 24 25"
@@ -110,7 +112,8 @@ export default function Homepage() {
               </div>
             </div>
             <div className={`${style.hero_right}`}>
-              <img src={hero_img} className={`${style.hero_img}`} alt="" />
+              {/* <img src={hero_img} className={`${style.hero_img}`} alt="" /> */}
+              <img src={hero_svg} className={`${style.hero_img}`} alt="" />
             </div>
           </div>
         </div>
@@ -121,11 +124,11 @@ export default function Homepage() {
           <div className={`${style.company_banner}`}>
             <p className={`${style.cbp}`}>Trusted by top companies worldwide</p>
             <div className={`${style.logos}`}>
-              <img src={logo1} alt="" className={`${style.logo}`} />
-              <img src={logo2} alt="" className={`${style.logo}`} />
-              <img src={logo3} alt="" className={`${style.logo}`} />
-              <img src={logo4} alt="" className={`${style.logo}`} />
-              <img src={logo5} alt="" className={`${style.logo}`} />
+              <img src={logo_hng} alt="" className={`${style.logo}`} />
+              <img src={logo_i4g} alt="" className={`${style.logo}`} />
+              {/* <img src={logo_nucle} alt="" className={`${style.logo}`} /> */}
+              <img src={logo_camphouse} alt="" className={`${style.logo}`} />
+              <img src={logo_zuri} alt="" className={`${style.logo}`} />
             </div>
           </div>
         </div>
@@ -181,7 +184,7 @@ export default function Homepage() {
         <div className={`${style.sign_up_banner_wrap}`}>
           <div className={`${style.sign_up_banner}`}>
             <div className={`${style.sign_up_left}`}>
-              <p>
+              <p className={`${style.sign_up_left_p}`}>
                 A flexible Way to Educate, Collaborate and Team Up From Wherever
                 You Are
               </p>
@@ -192,7 +195,11 @@ export default function Homepage() {
               </a>
             </div>
             <div className={`${style.sign_up_right}`}>
-              <img src={sign_up_img} alt="img" />
+              <img
+                src={sign_up_img}
+                alt="img"
+                className={`${style.sign_up_right_img}`}
+              />
             </div>
           </div>
         </div>
