@@ -9,23 +9,22 @@ const Section1 = () => {
             <h4>Zuri Chat Features.</h4>
             <h2>A platform for your team, work and fun.</h2>
             <p>
-              Build the right connection with your team by<br /> using special
-              features like Channels, DMs to<br /> complete your work goals.
+              Build the right connection with your team by
+              <br /> using special features like Channels, DMs to
+              <br /> complete your work goals.
             </p>
             <div className={styles.buttonsWrapper}>
               <a href="https://zuri.chat/signup">
-                <button type="button"
-                className={styles.getStarted}>
-                Get Started
-              </button></a>
+                <button type="button" className={styles.getStarted}>
+                  Get Started
+                </button>
+              </a>
               <button
                 type="button"
                 className={styles.features}
                 onClick={e => {
                   e.preventDefault()
-                  window.location.replace(
-                    "#featuresSection"
-                  )
+                  window.location.replace('#featuresSection')
                 }}
               >
                 See all Features
@@ -41,8 +40,4 @@ const Section1 = () => {
   )
 }
 
- 
 export default Section1
-
-
-
