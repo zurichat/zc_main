@@ -19,6 +19,7 @@ import ContactUs from './pages/contact-us'
 import AppsAndIntegrations from './pages/apps-integration'
 import Events from './pages/events/components/EventsMainWrapper'
 import Download from './pages/download'
+import DownloadsMac from './pages/download/DownloadsMac'
 import Careers from './pages/careers'
 import MarketPlace from './pages/marketplace/marketplace'
 import Blogs from './pages/blogs'
@@ -83,6 +84,9 @@ const App = () => {
         </Route>
         <Route path="/download-app">
           <Download />
+        </Route>
+        <Route path="/downloadsMac" >
+          <DownloadsMac />
         </Route>
         <Route path="/contact-us">
           <ContactUs />
