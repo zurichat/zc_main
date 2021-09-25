@@ -62,6 +62,11 @@ export const AdminForm = props => {
     setState({ ...state, step: steps + num })
   }
 
+  const resetStep = () => {
+    // const  steps = state.step;
+    setState({ ...state, step: 1 })
+  }
+
   const prevStep = () => {
     const steps = state.step
     setState({ ...state, step: steps - 1 })
@@ -108,7 +113,7 @@ export const AdminForm = props => {
         keyboard={false}
       >
         <Modal.Header>
-          <Modal.Title className="text-success">ZuriChat Watches</Modal.Title>
+          <Modal.Title className="text-success">Zurichat Watches</Modal.Title>
           <BsFillXCircleFill variant="secondary" onClick={handleClose} />
         </Modal.Header>
         {step === 1 ? (
@@ -137,7 +142,9 @@ export const AdminForm = props => {
             idx={detailId}
           />
         ) : null}
-        {step === 4 ? <Success postSucc={updateSuccess} /> : null}
+        {step === 4 ? (
+          <Success postSucc={updateSuccess} resetStep={resetStep} />
+        ) : null}
       </Modal>
     </>
   )

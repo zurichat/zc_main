@@ -45,7 +45,7 @@ a {
 } */
 .centerWrapper h4 {
   margin-top: 24px;
-    margin-bottom: 24px;
+  margin-bottom: 24px;
   color: #808080;
   line-height: 19px;
   font-weight: 600;
@@ -65,9 +65,8 @@ a {
   font-size: 28px;
   line-height: 34px; */
   font-weight: 700;
-  font-size:28px;
+  font-size: 28px;
   line-height: 33.36px;
-  
 }
 
 /* .centerWrapper h4 {
@@ -139,7 +138,7 @@ a {
     font-size: 16px;
     width: 350px;
   }
-  .centerWrapper h1{
+  .centerWrapper h1 {
     font-size: 48px;
     line-height: 54px;
   }

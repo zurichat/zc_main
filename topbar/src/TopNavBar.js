@@ -1,6 +1,5 @@
 import { useContext, useEffect } from 'react'
 import { ProfileContext } from './context/ProfileModal'
-
 import { TopbarContext } from './context/Topbar'
 import { connect } from 'react-redux'
 import zurichatlogo from './assets/images/Logo.svg'
@@ -21,7 +20,6 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { setUser, user, userProfileImage, setOrgId, setUserProfileImage } =
     useContext(ProfileContext)
   const [organizations, setOrganizations] = useState([])
-
   const [search, setSearch] = useState('')
   const [helpModal, setHelpModal] = useState(false)
 
@@ -79,10 +77,10 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       <HelpContainer>
         <HelpIcons onClick={() => setHelpModal(true)} />
       </HelpContainer>
-      {helpModal ? <HelpModal  setHelpModal={setHelpModal}/> : ''}
+      {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''}
 
-        <UserForm />
-        <AdminForm />
+      <UserForm />
+      <AdminForm />
       <div>
         <img
           style={{ height: '30px', width: '30px', borderRadius: '5px' }}
