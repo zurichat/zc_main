@@ -13,17 +13,6 @@ const myArray = [
   { name: 'Productivity' },
   { name: 'Meetings and calls' },
   { name: 'Management and Structure' },
-  { name: 'Education' },
-  { name: 'Co-op' },
-  { name: 'Remote' },
-  { name: 'Full-time' },
-  { name: 'Questions' },
-  { name: 'DevOps' },
-  { name: 'Python' },
-  { name: 'Cyber security' },
-  { name: 'Innovation' },
-  { name: 'Inspiration' },
-  { name: 'Blog' }
 ]
 
 function shuffle(arra1) {
@@ -67,14 +56,12 @@ function Categories() {
         <div className={classes.header}>
           <h3>Categories</h3>
           <div className={classes.btn}>
-            <button onClick={openModal}>view all</button>
+            <button className={classes.viewAllBtn} onClick={openModal}>View all</button>
             <button className={classes.icons} onClick={handleShuffle}>
-              {' '}
-              <BiChevronLeft />{' '}
+              <BiChevronLeft />
             </button>
             <button className={classes.icons} onClick={handleShuffle}>
-              {' '}
-              <BiChevronRight />{' '}
+              <BiChevronRight />
             </button>
             <button onClick={handleShuffle}>
               <i class="bi bi-chevron-right"></i>
@@ -84,7 +71,7 @@ function Categories() {
         <div className={classes.linkContainer}>
           {list.map((x, index) => (
             <div key={x.name + x.index}>
-              <a href="/#">{x.name} </a>
+              <a style={{color: '#fff'}} className={classes.link} href="#">{x.name} </a>
             </div>
           ))}
         </div>
