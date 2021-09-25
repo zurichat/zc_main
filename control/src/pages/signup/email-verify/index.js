@@ -1,3 +1,6 @@
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable react/prop-types */
+/* eslint-disable no-console */
 import axios from 'axios'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
 import { useState } from 'react'

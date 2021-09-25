@@ -6,7 +6,7 @@ import AuthInputBox from '../../components/AuthInputBox'
 import Button from '../../components/Button'
 // import styles from '../../components-styles/AuthFormElements.module.css'
 import styles from '../../component-styles/ResetPassword.module.css'
-// import ResetModal from '../../components/verified/ResetModal'
+import ResetModal from '../../components/ResetModal'
 import axios from 'axios'
 const ResetDefault = () => {
   const [email, setEmail] = useState('')
@@ -41,13 +41,8 @@ const ResetDefault = () => {
 
   return (
     <>
+      {/* <ResetModal /> */}
       <main id={styles.authPageWrapper}>
-        <aside id={styles.authAsideContainer} className={styles.display_none}>
-          <div id={styles.authImageWrapper}>
-            <img src={authBg} alt="backgroundImage" />
-            <div id={styles.aside_txt}></div>
-          </div>
-        </aside>
         <section id={``}>
           {/* logo div  */}
           <div className={``}>
@@ -77,6 +72,11 @@ const ResetDefault = () => {
               Continue
             </Button>
           </form>
+          <span className={`${styles.tosText}`}>
+            <a href="/"> Contact Us {''}</a>&
+            <a href="/">Privacy & Terms{''} </a>&
+            <a href="/"> {''}About Zurichat</a>
+          </span>
         </section>
       </main>
     </>

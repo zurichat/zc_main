@@ -9,6 +9,7 @@ import Button from '../../components/Button'
 
 const NewPassword = ({ resetCode }) => {
   const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
   const handleSubmit = async () => {
     const res = await axios.post('api.zuri.chat/account/update-password', {
       password
@@ -18,12 +19,6 @@ const NewPassword = ({ resetCode }) => {
 
   return (
     <main id={styles.authPageWrapper}>
-      <aside id={styles.authAsideContainer} className={styles.display_none}>
-        <div id={styles.authImageWrapper}>
-          <img src={authBg} alt="backgroundImage" />
-          <div id={styles.aside_txt}></div>
-        </div>
-      </aside>
       <section id={``}>
         {/* logo div  */}
         <div className={``}>
@@ -31,14 +26,11 @@ const NewPassword = ({ resetCode }) => {
         </div>
         {/* header text  */}
         <div className={``}>
-          <h4 className={styles.headerText}>Change Password</h4>
-          <p>
-            Enter the email address you registered with, a reset link will be
-            sent to your email!
-          </p>
+          <h4 className={styles.headerText}>Recover Password</h4>
+          <p>Create a new password for your account</p>
         </div>
         {/* form section  */}
-        <form action="">
+        <form action="" className={`${styles.form}`}>
           <AuthInputBox
             className={`${styles.inputElement}`}
             id="password"
@@ -51,20 +43,24 @@ const NewPassword = ({ resetCode }) => {
             // error={error}
           />
 
-          {/* <AuthInputBox
-                className={`${styles.inputElement}`}
-                id="cpassword"
-                name="Confirm password"
-                type="password"
-                placeholder="Confirm password"
-                value={confirmPassword}
-                setValue={setConfirmPassword}
-                // error={error}
-              /> */}
+          <AuthInputBox
+            className={`${styles.inputElement}`}
+            id="cpassword"
+            name="Confirm password"
+            type="password"
+            placeholder="Confirm password"
+            value={confirmPassword}
+            setValue={setConfirmPassword}
+            // error={error}
+          />
           <Button className={styles.button} onClick={handleSubmit}>
             Continue
           </Button>
         </form>
+        <span className={`${styles.tosText}`}>
+          <a href="/"> Contact Us {''}</a>&<a href="/">Privacy & Terms{''} </a>&
+          <a href="/"> {''}About Zurichat</a>
+        </span>
       </section>
     </main>
   )

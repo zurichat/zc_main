@@ -6,6 +6,7 @@ import LandingPage from './pages/LandingPage'
 // password block
 import ResetPassword from './pages/passwordReset/index'
 import NewPassword from './pages/passwordReset/newPassword'
+import VerifiedCode from './pages/passwordReset/verifyCode'
 // end password block
 import CookiesSetting from './pages/cookiesSettings'
 import Cookies from './pages/cookies'
@@ -120,6 +121,9 @@ const App = () => {
         </Route>
         <Route path="/change-password">
           <NewPassword />
+        </Route>
+        <Route path="/verify-code">
+          <VerifiedCode />
         </Route>
         <Route path="/cookies-settings">
           <CookiesSetting />

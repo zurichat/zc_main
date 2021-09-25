@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import CodeInput from '../signup/email-verify/codeInput.jsx'
+import CodeInput from '../signup/email-verify/codeInput.js'
 
 export default function VerifyResetCode() {
   const [success, setsuccess] = useState(false)
