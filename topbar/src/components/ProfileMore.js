@@ -1,30 +1,31 @@
 import React, { useContext, useState, useRef } from 'react'
 import styles from '../styles/Profile.module.css'
-import { Link } from 'react-router-dom'
+
 import { ProfileContext } from '../context/ProfileModal'
 import { TopbarContext } from '../context/Topbar'
 import 'react-notifications/lib/notifications.css'
-import { NotificationContainer, NotificationManager } from 'react-notifications'
-
+import toast, { Toaster } from 'react-hot-toast'
 import Preferences from './Preferences'
 
 export const Dropdown = () => {
   const { toggleModalState } = useContext(ProfileContext)
   const [modal, setModal] = useState('')
   const state = useContext(TopbarContext)
-  const { presence } = state
-  const [active, setActive] = presence
+  const { presence, toggleUserPresence  } = state
+ 
   const getText = useRef('')
 
   const CopyToClipBoard = () => {
     const copiedText = getText.current.innerHTML
     navigator.clipboard.writeText(copiedText).then(
       () => {
-        NotificationManager.success('copied!', '', 3000, () => {}, true)
-      },
+        toast.success('Member ID Copied', {
+            position: 'bottom-center'
+          })      },
       err => {
-        NotificationManager.warning('copy failed!', '', 3000, () => {}, true)
-      }
+        toast.error(err?.message, {
+            position: 'bottom-center'
+          })      }
     )
   }
 
@@ -42,8 +43,8 @@ export const Dropdown = () => {
             View preferences
           </p>
           <p className={styles.paragraph}>View your files</p>
-          <p onClick={() => setActive(!active)} className={styles.paragraph}>
-            Set yourself {active ? 'away' : 'active'}
+          <p onClick={() => toggleUserPresence()} className={styles.paragraph}>
+            Set yourself {presence === 'true' ? 'away' : 'active'}
           </p>
         </div>
         <div className={styles.bottomSection}>
@@ -53,13 +54,13 @@ export const Dropdown = () => {
           <small className={styles.small} ref={getText}>
             U031203013
           </small>
-          <Link to="/settings">
+          <a href='/settings' style={{color: 'black', fontWeight: 'normal'}} >
             <p className={styles.paragraphNull}>Account settings</p>
-          </Link>
+          </a>
         </div>
       </div>
       {modal === 'preference' && <Preferences />}
-      <NotificationContainer />
+      <Toaster />
     </>
   )
 }
