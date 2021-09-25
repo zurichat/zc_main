@@ -6,7 +6,7 @@ const Section1 = () => {
       <div className={styles.section1Wrapper}>
         <div className={styles.section1LeftContentWrapper}>
           <div className={styles.section1TextWrapper}>
-            <h4>Zuri Chat Features</h4>
+            <h4>Zuri Chat Features.</h4>
             <h2>A platform for your team, work and fun.</h2>
             <p>
               Build the right connection with your team by<br /> using special
