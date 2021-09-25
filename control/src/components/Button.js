@@ -84,7 +84,7 @@ const PrimaryButton = styled(ButtonBase)`
 const SecondaryButton = styled(ButtonBase)`
     background-color: transparent;
     color: var(--primary-color);
-    }
+    
     &:hover {
         background-color: var(--primary-color);
         color: white;
