@@ -14,6 +14,7 @@ import HelpModal from './components/HelpModal'
 import UserForm from '../../control/src/pages/ReportFeature/User/Form'
 import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
 import { authAxios } from './utils/Api'
+import Profile from './components/Profile'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { openModal } = useContext(TopbarContext)
@@ -25,6 +26,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   useEffect(() => {
     const userdef = JSON.parse(sessionStorage.getItem('user'))
+
     async function getOrganizations() {
       await authAxios
         .get(`/users/${userdef.email}/organizations`)
@@ -91,6 +93,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         />
       </div>
 
+      <Profile />
       <TopbarModal />
     </TopNavBarBase>
   )
