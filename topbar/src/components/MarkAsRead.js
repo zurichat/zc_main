@@ -63,13 +63,14 @@ const MarkAsRead = () => {
           <form action="">
             <div className={styles.section}>
               <label className={styles.markAll} htmlFor="prompt to confirm">
-                <input
-                  className={styles.prompt}
-                  type="checkbox"
-                  onChange={handlePrompt}
-                  checked={prompt}
-                />
-                <span className={styles.checkmark}></span>
+                <span onChange={handlePrompt}>
+                  <input
+                    className={styles.prompt}
+                    type="checkbox"
+                    checked={prompt}
+                  />
+                  <span className={styles.checkmark}></span>
+                </span>
                 Prompt to confirm
               </label>
             </div>
