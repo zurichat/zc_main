@@ -1,14 +1,14 @@
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
-// import Categories from './components/Categories'
 import SectionOne from './components/SectionOne'
+import SectionTwo from './components/SectionTwo'
 
 function AppsAndIntegrations() {
   return (
     <div>
       <Header />
       <SectionOne />
-      {/* <Categories /> */}
+      <SectionTwo />
       <Footer />
     </div>
   )
