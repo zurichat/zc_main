@@ -21,8 +21,7 @@ function Pricing() {
       <Section3 />
       {/* <FAQ /> */}
       <Section4PricingPage />
-      <Message />
-      <Footer />
+      <Footer showMessage />
     </div>
   )
 }
