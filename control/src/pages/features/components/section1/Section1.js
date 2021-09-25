@@ -1,5 +1,5 @@
-import styles from '../../styles/Section1.module.css'
-import hero from '../../assets/feature_hero_image.png'
+import styles from '../../styles/section1.module.css'
+import heroImage from '../../assets/feature_hero_image.svg'
 
 const Section1 = () => {
   return (
@@ -40,7 +40,7 @@ const Section1 = () => {
           </div>
         </div>
         <div className={styles.section1ImageWrapper}>
-          <img src={hero} alt="group" className={styles.groupImage} />
+          <img src={heroImage} alt="group" className={styles.groupImage} />
         </div>
       </div>
     </div>

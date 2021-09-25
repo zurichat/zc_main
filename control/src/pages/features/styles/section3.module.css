@@ -76,8 +76,13 @@
 .zuriInterfaceViewWrapper {
   margin-top: 150px;
   width: 100%;
+  background: #ECF8F5;
 }
-.zuriInterfaceViewWrapper img {
+.zuriInterfaceImageContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.zuriInterfaceImageContainer img {
   width: 100%;
 }
 

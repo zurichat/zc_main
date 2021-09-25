@@ -1,10 +1,10 @@
 import styles from '../../styles/section3.module.css'
-import channels from '../../assets/channels_icon.png'
-import todo from '../../assets/to_do_interface_image.png'
-import holiday from '../../assets/holiday_calender_icon.png'
-import company from '../../assets/company_deadline_icon.png'
-import quick from '../../assets/quick_reply_app_icon.png'
-import list from '../../assets/to_do_list_icon.png'
+import channels from '../../assets/channels_icon.svg'
+import todo from '../../assets/to_do_interface_image.svg'
+import holiday from '../../assets/holiday_calender_icon.svg'
+import company from '../../assets/company_deadline_icon.svg'
+import quick from '../../assets/quick_reply_app_icon.svg'
+import list from '../../assets/to_do_list_icon.svg'
 
 const Section3 = () => {
   return (
@@ -27,8 +27,8 @@ const Section3 = () => {
             </div>
             <h3>Channels</h3>
             <p>
-              Increase level of organisation in your team focused with cetralized
-              spaces.
+              Increase level of organisation in your team focused with
+              cetralized spaces.
             </p>
           </div>
           <div className={styles.featureCard}>
@@ -60,14 +60,16 @@ const Section3 = () => {
             </div>
             <h3>To do list</h3>
             <p>
-              Organize tasks with the to-do list feature ensuring urgent tasks are
-              duly attended to.
+              Organize tasks with the to-do list feature ensuring urgent tasks
+              are duly attended to.
             </p>
           </div>
         </div>
       </div>
       <div className={styles.zuriInterfaceViewWrapper}>
-        <img src={todo} alt="Zuri Interface" />
+        <div className={styles.zuriInterfaceImageContainer}>
+          <img src={todo} alt="Zuri Interface" />
+        </div>
       </div>
     </div>
   )
