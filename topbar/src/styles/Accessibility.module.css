@@ -1,0 +1,109 @@
+
+.containerAccessibility {
+    width: 482px;
+    height: 453px;
+    left: 480px;
+    top: 140px;
+    margin: 30px 50px;
+  }
+
+  .hrLine{
+    left: 23.19%;
+    right: 7.03%;
+    top: 45.6%;
+    bottom: 54.4%;
+    border: 1px solid #f0eaea;
+  }
+  
+  .animationH3, .directH3, .keyboardH3, .pressH3 {
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;;
+    letter-spacing: 0em;
+    color: #242424;
+  }
+
+  .accessibilityCheckbox, .accessibilityRadio{
+    margin: 0px;
+    height: 12px;
+    width: 10px;
+    color: green;
+  }
+
+  .accessibilityLabel{
+    margin-left: -13px;
+  }
+
+  .accessibilityRadioLabel {
+    margin-left: 10px;
+  }
+
+  #accessibilityPId{
+    margin-left: 18px;
+  }
+
+  #accessibilityPId2{
+    margin-left: 18px;
+  }
+
+  .imagesAndEmojis{
+    text-align: left;
+    font-size: 13px;
+  }
+
+  .accessibilityCheckbox input:checked ~ .accessibilityLabel::after{
+    background-color: green;
+  }
+
+  .accessibilityP{
+    font-family: Lato;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+  
+  }
+
+  .accessibilityEsc{
+    background-color: #f9f9f9;
+    padding: 2px 5px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    margin: 3px;
+    color: rgba(0, 184, 124, 0.5);;
+    width: 33px;
+    height: 20px;
+    left: 0px;
+    top: 1px;
+    border: 1px solid rgba(0, 184, 124, 0.5);
+    box-sizing: border-box;
+    border-radius: 3px;
+  }
+
+  #noteP{
+    color: #B8003C;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 130%;
+  }
+
+  #exclamation{
+    padding: 2px 5px;
+  }
+
+  #handyKeyboard{
+    color: #1264A3;
+  }
+
+  
