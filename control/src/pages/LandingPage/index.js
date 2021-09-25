@@ -1,10 +1,8 @@
 import React from 'react'
 import style from './styles/LandingPage.module.css'
-// import hero_img from './assets/hero-img.svg'
-import hero_svg from './assets/MacBookAir.svg'
+import hero_img from './assets/MacBookAir.svg'
 import logo_hng from './assets/logo_hng.svg'
 import logo_i4g from './assets/logo_i4g.svg'
-// import logo_nucle from './assets/logo_nucle.svg'
 import logo_camphouse from './assets/logo_camphouse.svg'
 import logo_zuri from './assets/logo_zuri.svg'
 import ft_img1 from './assets/ft_img1.svg'
@@ -12,6 +10,7 @@ import ft_img2 from './assets/ft_img2.svg'
 import ft_img3 from './assets/ft_img3.svg'
 import ft_img4 from './assets/ft_img4.svg'
 import sign_up_img from './assets/sign_up_img.svg'
+import arrow_right from './assets/ArrowRight.svg'
 
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
@@ -53,29 +52,11 @@ export default function Homepage() {
             <a className={`${style.ft_link}`} href={props.href}>
               <div className={`${style.ft_link_div}`}>
                 <p className={`${style.ft_link_p}`}>{props.aContent}</p>
-                <svg
-                  className={`${style.ft_link_svg}`}
-                  width="24"
-                  height="25"
-                  viewBox="0 0 24 25"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M3.75 12.7507H20.25"
-                    stroke="#00B87C"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M13.5 6.00073L20.25 12.7507L13.5 19.5007"
-                    stroke="#00B87C"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+                <img
+                  src={arrow_right}
+                  alt="arrow right icon"
+                  className={`${style.arrow_right}`}
+                />
               </div>
             </a>
           </div>
@@ -96,7 +77,7 @@ export default function Homepage() {
                   For Organizations &amp; Institutions
                 </p>
                 <h1 className={`${style.hero_heading}`}>
-                  Where communication and collaboration thrives
+                  A fully Integrated way to connect and interact
                 </h1>
                 <p className={`${style.hero_p}`}>
                   Create your future with us, network, collaborate, educate and
@@ -112,13 +93,12 @@ export default function Homepage() {
               </div>
             </div>
             <div className={`${style.hero_right}`}>
-              {/* <img src={hero_img} className={`${style.hero_img}`} alt="" /> */}
-              <img src={hero_svg} className={`${style.hero_img}`} alt="" />
+              <img src={hero_img} className={`${style.hero_img}`} alt="" />
             </div>
           </div>
         </div>
         {/* { COOKIES BANNER} */}
-        <div>{loading ? ' ' : <Cookies />}</div>
+        <div>{loading ? '' : <Cookies />}</div>
         {/* COMPANIES */}
         <div className={`${style.company_banner_wrap}`}>
           <div className={`${style.company_banner}`}>
@@ -126,7 +106,6 @@ export default function Homepage() {
             <div className={`${style.logos}`}>
               <img src={logo_hng} alt="" className={`${style.logo}`} />
               <img src={logo_i4g} alt="" className={`${style.logo}`} />
-              {/* <img src={logo_nucle} alt="" className={`${style.logo}`} /> */}
               <img src={logo_camphouse} alt="" className={`${style.logo}`} />
               <img src={logo_zuri} alt="" className={`${style.logo}`} />
             </div>
@@ -138,8 +117,7 @@ export default function Homepage() {
           <div className={`${style.features}`}>
             <FeatureRow
               src={ft_img1}
-              // * put a semantic alt description
-              alt="img"
+              alt=""
               pContent1="Seamless collaboration"
               h2Content="Communicate and collaborate from wherever you are"
               pContent2="Invite your team to your workspace. Stay connected,stay in sync, and explore ideas together from anywhere."
@@ -148,8 +126,7 @@ export default function Homepage() {
             />
             <FeatureRow
               src={ft_img2}
-              // * put a semantic alt description
-              alt="img"
+              alt=""
               pContent1="Remote Education"
               h2Content="Learn on the Go"
               pContent2="Take your classroom everywhere, make learning fun, stay engaged and inspired with the virtual lounge and games."
@@ -159,8 +136,7 @@ export default function Homepage() {
             />
             <FeatureRow
               src={ft_img3}
-              // * put a semantic alt description
-              alt="img"
+              alt=""
               pContent1="All-in-one Workspace"
               h2Content="Customise your Workspace"
               pContent2="One tool, several plugins. Track company expenses, send information fast and smoothly, manage files and integrate tools all with Zuri.chat."
@@ -169,8 +145,7 @@ export default function Homepage() {
             />
             <FeatureRow
               src={ft_img4}
-              // * put a semantic alt description
-              alt="img"
+              alt=""
               pContent1="Advanced Search"
               h2Content="Access Files and Messages in your Workspace Effortlessly"
               pContent2="With the search tool, find previously shared messages, files and links with ease."
