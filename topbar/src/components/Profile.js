@@ -6,9 +6,9 @@ import twitter from '../assets/images/twitter.svg'
 import linkedin from '../assets/images/linkedin.svg'
 import instagram from '../assets/images/instagram.svg'
 import github from '../assets/images/github.svg'
-import { BiUser } from 'react-icons/bi';
-import { AiFillEdit } from 'react-icons/ai';
-import { FaEllipsisH } from 'react-icons/fa';
+import { BiUser } from 'react-icons/bi'
+import { AiFillEdit } from 'react-icons/ai'
+import { FaEllipsisH } from 'react-icons/fa'
 import moment from 'moment'
 import { ProfileContext } from '../context/ProfileModal'
 import { TopbarContext } from '../context/Topbar'
@@ -102,21 +102,21 @@ const Profile = () => {
               className={styles.ctaButton}
             >
               <BiUser className={styles.ctaButtonIcon} />
-            
             </button>
             <h6 className={styles.ctaText}> Edit Profile</h6>
           </div>
           <div>
-            <button onClick={state.openStatus}  className={styles.ctaButton}>
-            <AiFillEdit  className={styles.ctaButtonIcon} />
-          
+            <button onClick={state.openStatus} className={styles.ctaButton}>
+              <AiFillEdit className={styles.ctaButtonIcon} />
             </button>
             <h6 className={styles.ctaText}> Edit Status</h6>
           </div>
           <div>
-            <button onClick={() => setDropdown(!dropdown)}  className={styles.ctaButton}>
-              <FaEllipsisH  className={styles.ctaButtonIcon} />
-       
+            <button
+              onClick={() => setDropdown(!dropdown)}
+              className={styles.ctaButton}
+            >
+              <FaEllipsisH className={styles.ctaButtonIcon} />
             </button>
             <h6 className={styles.ctaText}>More</h6>
           </div>
