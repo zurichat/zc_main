@@ -9,7 +9,6 @@ const Subscribe = () => {
 
   const [displayModal, setDisplayModal] = useState(false)
 
-
   const handleSubmit = async event => {
     event.preventDefault()
 
@@ -19,12 +18,12 @@ const Subscribe = () => {
         const { data, message, status } = response.data
         console.log(response.data)
         // alert(message)
-        if(status == '200') {
+        if (status == '200') {
           setEmail('')
-          setDisplayModal(true)          
+          setDisplayModal(true)
           setTimeout(() => {
             setDisplayModal(false)
-          }, 7000);
+          }, 7000)
         }
       })
       .catch(error => {
@@ -36,7 +35,10 @@ const Subscribe = () => {
 
   return (
     <>
-      <ThankYouModal displayModal={displayModal} setDisplayModal={setDisplayModal} />
+      <ThankYouModal
+        displayModal={displayModal}
+        setDisplayModal={setDisplayModal}
+      />
       <section className={`container my-5 ${css.sectionContainer}`}>
         <div className={`row`}>
           <div className={`col-md-6 col-sm-12 ${css.leftColumn}`}>
@@ -64,7 +66,8 @@ const Subscribe = () => {
                     value={email}
                     onChange={handleChange}
                     required
-                    className={`mb-3 ${css.inputField}`} />
+                    className={`mb-3 ${css.inputField}`}
+                  />
                   <button type="submit" className={`${css.subscribeBtn}`}>
                     Subscribe
                   </button>
@@ -73,7 +76,7 @@ const Subscribe = () => {
             </div>
           </div>
         </div>
-      </section>      
+      </section>
     </>
   )
 }
