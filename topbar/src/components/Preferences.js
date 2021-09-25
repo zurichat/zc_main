@@ -23,7 +23,7 @@ const Preferences = () => {
         </div>
 
         <div>
-          {sideBar === 1 && <NotificationPreference />} 
+          {sideBar === 1 && <NotificationPreference />}
           {sideBar === 2 && <SidebarPreference />}
           {sideBar === 3 && <Themes />}
           {sideBar === 4 && <MessagesMedia />}
