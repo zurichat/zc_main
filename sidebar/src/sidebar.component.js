@@ -1,17 +1,11 @@
-import { Fragment, useState } from 'react'
-import useSWR from 'swr'
+import { Fragment, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-// import { URLContext } from './context/Url'
-// import { PluginContext } from './context/Plugins'
 import styles from './styles/Sidebar.module.css'
 import Dropdown from './components/Dropdown'
 import Modal from './components/InviteModal'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
 import styled from 'styled-components'
 import AuthInputBox from './components/AuthInputBox'
-// import JoinedRooms from './joinedRooms/JoinedRooms'
-// import PublicRooms from '../publicRooms/PublicRooms'
-// import cheerio from 'cheerio'
 
 import threadIcon from './verified-components/assets/icons/thread-icon.svg'
 import dmIcon from './verified-components/assets/icons/dm-icon.svg'
@@ -25,14 +19,12 @@ import { links } from './utils/links'
 import { navigateToUrl } from 'single-spa'
 import { Button } from '../../control/src/pages/createworkspace/components/WorkspaceHome'
 import Channels from './components/Channels'
-
-const fetcher = url => fetch(url).then(res => res.json())
+import { Modall } from './components/Modal'
+import SkeletonLoader from './components/SkeletonLoader'
+import axios from 'axios'
+import Messages from './components/Messages'
 
 const Sidebar = props => {
-  // const { data: channelsData } = useSWR('/api/plugin/channels', fetcher)
-
-  const { data: messagesData } = useSWR('/api/plugin/messages', fetcher)
-
   const [show, setShow] = useState(false)
 
   const [showDialog, setShowDialog] = useState(false)
@@ -41,35 +33,46 @@ const Sidebar = props => {
   const [query, setQuery] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [organization, setOrganization] = useState('')
+
+  const { id, token } = JSON.parse(sessionStorage.getItem('user'))
+
+  // console.log(userSession)
+  // const user = async () => {
+  const userInfo = async (userId, usertoken) => {
+    try {
+      const response = await axios.get(
+        `https://api.zuri.chat/users/${userId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${usertoken}`
+          }
+        }
+      )
+      // console.log(response.data.data, 'sidebar')
+      const { Organizations } = response.data.data
+      return setOrganization(Organizations[0])
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  //   console.log(_id, org_id, 'Sidebar')
+  // }
+  useEffect(() => {
+    userInfo(id, token)
+  }, [])
 
   return (
     <div className={styles.container}>
       <div className={styles.orgInfo}>
         <div className={styles.orgName}>
           <p>HNGi8</p>
-          <img
-            src={shapekeyboardarrowdown}
-            alt="Organisation settings button"
-          />
+          <img src={shapekeyboardarrowdown} alt="HNGi8" />
         </div>
 
-        <Overlay isOpen={showDialog} onDismiss={close}>
-          <Content aria-label="room-list">
-            <CloseButton className="close-button" onClick={close}>
-              <Span aria-hidden>×</Span>
-            </CloseButton>
-            <AuthInputBox
-              value={query}
-              setValue={setQuery}
-              placeholder="🔍 Search by channel name or description"
-            />
-            <Wrapper>
-              {/*loading && <p>Loading..</p>*/}
-              {/* {rooms.joined_rooms && <JoinedRooms rooms={filteredJoinedRooms} />} */}
-              {/* {rooms.public_rooms && <PublicRooms rooms={filteredPublicRooms} />} */}
-            </Wrapper>
-          </Content>
-        </Overlay>
+        <Modall showDialog={showDialog} closeDialog={close} />
+
         <Overlay isOpen={showDialog} onDismiss={close}>
           <Content aria-label="room-list">
             <CloseButton className="close-button" onClick={close}>
@@ -136,6 +139,8 @@ const Sidebar = props => {
             role="button"
           />
         </Item>
+      </div>
+      {/*
         <Dropdown onAddButtonClick={open} showAddButton={true} title="Plugins">
           {links.map((plugin, index) => (
             <Fragment key={index}>
@@ -145,8 +150,7 @@ const Sidebar = props => {
             </Fragment>
           ))}
         </Dropdown>
-      </div>
-      {/*<Dropdown onAddButtonClick={open} showAddButton={true} title="Channels">
+        <Dropdown onAddButtonClick={open} showAddButton={true} title="Channels">
         {channelsData &&
           channelsData.channels.map((channel, index) => (
             <Fragment key={index}>
@@ -156,19 +160,15 @@ const Sidebar = props => {
           ))}
           </Dropdown>*/}
 
-      <Channels />
+      {organization === '' ? (
+        <SkeletonLoader />
+      ) : (
+        <div>
+          <Channels organization={organization} userid={id} />
+          <Messages organization={organization} userid={id} />
+        </div>
+      )}
 
-      <Dropdown title="messages">
-        {messagesData &&
-          messagesData.messages.map((message, index) => (
-            <Fragment key={index}>
-              <span>
-                <img src={message.avatar} alt="avatar" />
-              </span>
-              {message.name}
-            </Fragment>
-          ))}
-      </Dropdown>
       {/* button for adding invites */}
       <div className={styles.buttonstyle}>
         <button onClick={() => setShow(true)}>Add Teammates</button>
