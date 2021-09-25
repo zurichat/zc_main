@@ -3,7 +3,7 @@ import headerStyles from '../../styles/Header.module.css'
 import styles from '../../styles/marketplace.module.css'
 import logo from '../../../../component-assets/zurichatlogo.svg'
 
-const MarketplaceHeader = () => {
+const MarketplaceHeader = ({ user }) => {
   return (
     <nav
       className={`navbar navbar-expand-lg navbar-light ${headerStyles.navbar} ${styles.navbar}`}

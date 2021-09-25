@@ -1,25 +1,42 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import authBg from '../../component-assets/backg.svg'
 import Logo from '../../component-assets/zuri.svg'
-import { withRouter } from 'react-router-dom'
+// import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
-// import FormWrapper from '../../components/AuthFormWrapper'
 import Button from '../../components/Button'
-// import styles from '../../styles/AuthFormElements.module.css'
+// import styles from '../../components-styles/AuthFormElements.module.css'
 import styles from '../../component-styles/ResetPassword.module.css'
 // import ResetModal from '../../components/verified/ResetModal'
-// import axios from 'axios'
-const Index = () => {
+import axios from 'axios'
+const ResetDefault = () => {
   const [email, setEmail] = useState('')
-  const [modalShow, setModalShow] = useState(false)
+  const [showDialog, setShowDialog] = useState(false)
+  const open = () => setShowDialog(true)
+  const close = () => setShowDialog(false)
 
-  const toggleModal = () => {
-    setModalShow(!modalShow)
-  }
+  // const toggleModal = () => {
+  //   setModalShow(!modalShow)
+  // }
 
   const handleSubmit = e => {
     e.preventDefault()
-    toggleModal()
+    open()
+  }
+  const sendEmail = async () => {
+    if (email) {
+      try {
+        const res = await axios.post(
+          'https://api.zuri.chat/account/request-password-reset-code',
+          {
+            email
+          }
+        )
+
+        console.log(res.data)
+      } catch (err) {
+        console.error(err)
+      }
+    }
   }
 
   return (
@@ -28,7 +45,7 @@ const Index = () => {
         <aside id={styles.authAsideContainer} className={styles.display_none}>
           <div id={styles.authImageWrapper}>
             <img src={authBg} alt="backgroundImage" />
-            <div id={styles.aside_txt}></div>
+            <div id={styles.asideText}></div>
           </div>
         </aside>
         <section id={``}>
@@ -47,7 +64,7 @@ const Index = () => {
           {/* form section  */}
           <form action="">
             <AuthInputBox
-              className={`${styles.resetInput}`}
+              className={`${styles.inputElement}`}
               id="email"
               name="Email address"
               type="email"
@@ -59,10 +76,6 @@ const Index = () => {
             <Button className={styles.button} onClick={handleSubmit}>
               Continue
             </Button>
-            {/* <ResetModal 
-            show={modalShow}
-            onHide={setModalShow(false)}
-          /> */}
           </form>
         </section>
       </main>
@@ -70,4 +83,4 @@ const Index = () => {
   )
 }
 
-export default withRouter(Index)
+export default ResetDefault
