@@ -8,6 +8,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 122px;
 }
 .section3TopTextsWrapper h3 {
   font-style: normal;
@@ -74,17 +75,14 @@
 .zuriInterfaceViewWrapper img {
   width: 100%;
 }
-
 /* Mediaqueries */
-
 /* @media (max-width: 800px) {
-
 } */
-
 @media (max-width: 500px) {
   .section3TopTextsWrapper {
     margin: 0;
     width: 100%;
+    padding-top: 30px;
   }
   .section3TopTextsWrapper h3 {
     font-size: 28px;
