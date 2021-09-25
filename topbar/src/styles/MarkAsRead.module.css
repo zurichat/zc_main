@@ -119,7 +119,6 @@ left: 5px;
   margin-right: 4px;
 } */
 
-
 .shortcut {
   margin-left: 23px;
   margin-bottom: 15px;
@@ -132,8 +131,8 @@ left: 5px;
 
 .esc {
   background-color: #f9f9f9;
-  color: #00B87C;
-  border: 1px solid #00B87C;
+  color: #00b87c;
+  border: 1px solid #00b87c;
   border-radius: 3px;
   /* box-shadow: 1px 1px 1px 1px; */
   padding: 4px;

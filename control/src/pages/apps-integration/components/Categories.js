@@ -12,7 +12,7 @@ const myArray = [
   { name: 'Developer tools' },
   { name: 'Productivity' },
   { name: 'Meetings and calls' },
-  { name: 'Management and Structure' },
+  { name: 'Management and Structure' }
 ]
 
 function shuffle(arra1) {
@@ -56,7 +56,9 @@ function Categories() {
         <div className={classes.header}>
           <h3>Categories</h3>
           <div className={classes.btn}>
-            <button className={classes.viewAllBtn} onClick={openModal}>View all</button>
+            <button className={classes.viewAllBtn} onClick={openModal}>
+              View all
+            </button>
             <button className={classes.icons} onClick={handleShuffle}>
               <BiChevronLeft />
             </button>
@@ -71,7 +73,9 @@ function Categories() {
         <div className={classes.linkContainer}>
           {list.map((x, index) => (
             <div key={x.name + x.index}>
-              <a style={{color: '#fff'}} className={classes.link} href="#">{x.name} </a>
+              <a style={{ color: '#fff' }} className={classes.link} href="#">
+                {x.name}{' '}
+              </a>
             </div>
           ))}
         </div>
