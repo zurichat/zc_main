@@ -2,8 +2,6 @@
 
 * {
   font-family: 'Lato', sans-serif;
-}
-body {
   margin: 0;
   padding: 0;
 }
@@ -62,7 +60,7 @@ button:hover {
   .subSection2 {
     flex-direction: column;
     grid-gap: 80px;
-    padding: 69px 60px 69px 60px;
+    padding: 69px 30px 69px 30px;
   }
   .subSection2 p {
     padding: 0 50px 0px 0px;
