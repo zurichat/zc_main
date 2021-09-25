@@ -13,17 +13,15 @@ import TimezoneSelect from 'react-timezone-select'
 import { StyledProfileWrapper } from '../styles/StyledEditProfile'
 
 const EditProfile = () => {
-  // const imageRef = useRef(null)
+  const imageRef = useRef(null)
   const avatarRef = useRef(null)
   const { user, orgId, userProfileImage, setUserProfileImage } =
     useContext(ProfileContext)
   const [otherLinks, setotherLinks] = useState([])
   const [selectedTimezone, setSelectedTimezone] = useState({})
   const [links, setLinks] = useState([''])
-  const [phone, setPhone] = useState('')
-  const [imageUrl, setImageUrl] = useState('')
   const [state, setState] = useState({
-    name: user.first_name,
+    name: user.name,
     display_name: user.display_name,
     pronouns: user.pronouns,
     role: user.role,
@@ -99,10 +97,10 @@ const EditProfile = () => {
     setState({ loading: true })
 
     const data = {
-      first_name: state.name,
+      name: state.name,
       display_name: state.display_name,
       pronouns: state.pronouns,
-      phone: phone,
+      phone: state.phone,
       bio: state.bio,
       timeZone: state.timezone
       // socials: [
@@ -234,15 +232,15 @@ const EditProfile = () => {
               <div className="input-group phone">
                 <label className="inputLabel">Phone Number</label>
                 <div className="phone-container">
-                  <select className="pref">
+                  <select onChange={(e) => setState({ ...state, prefix: e.target.value })} className="pref">
                     {
                       // country code
                       data.map(item => (
-                        <option key={item.dial_code}>{item.dial_code}</option>
+                        <option key={item.dial_code} value={item.dial_code}>{item.dial_code}</option>
                       ))
                     }
                   </select>
-                  <input className="phoneInput" type="number" />
+                  <input onChange={(e) => setState({ ...state, phone: e.target.value })} className="phoneInput" type="number" />
                 </div>
               </div>
               <div className="input-group">
