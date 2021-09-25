@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useState } from 'react'
 import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
@@ -153,7 +154,7 @@ const Signup = () => {
               // onFocus={displayImage}
             />
             <span className={`${styles.tosText}`}>
-              I agree to Zurichat's {''}
+              I agree to Zurichat&apos;s {''}
               <a href="/">Terms of services{''} </a>&
               <a href="/"> {''}Privacy</a>
             </span>

@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable react/react-in-jsx-scope */
 import { useState } from 'react'
 import authBg from '../../component-assets/backg.svg'
 import Logo from '../../component-assets/zuri.svg'

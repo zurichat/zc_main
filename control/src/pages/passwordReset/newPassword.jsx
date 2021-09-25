@@ -7,6 +7,7 @@ import styles from '../../component-styles/ResetPassword.module.css'
 import axios from 'axios'
 import Button from '../../components/Button'
 
+// eslint-disable-next-line react/prop-types
 const NewPassword = ({ resetCode }) => {
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
