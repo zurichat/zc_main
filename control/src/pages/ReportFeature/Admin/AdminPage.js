@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './reports.module.css'
-import { Container } from 'react-bootstrap'
 
 export const AdminPage = props => {
   const Continue = e => {
@@ -9,12 +8,9 @@ export const AdminPage = props => {
   }
 
   return (
-    <Container className={styles.formcontainer}>
+    <div className={styles.formcontainer}>
       <div>
-        <span
-          className="text-success"
-          style={{ padding: '12px', marginLeft: '10px' }}
-        >
+        <span style={{ padding: '12px', marginLeft: '10px' }}>
           <h1>View Complaint</h1>
         </span>
 
@@ -28,20 +24,20 @@ export const AdminPage = props => {
       <br />
       <div className="text-right">
         <button
-          className="btn btn-success"
+          className="btn btn-primary"
           onClick={Continue}
           style={{
             color: 'white',
-            borderRadius: '5%',
-            // backgroundColor: "#00B87C",
-            // padding: "12px",
-            marginLeft: '45%'
+            borderRadius: '10%',
+            backgroundColor: '#00B87C',
+            padding: '12px',
+            marginLeft: '15rem'
           }}
         >
           View Complaint
         </button>
       </div>
-    </Container>
+    </div>
   )
 }
 
