@@ -88,8 +88,9 @@
   font-size: 1.3em;
   /* font-size: 1.5rem; */
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+
   /* border: none; */
   /* background: #ffffffa8; */
   /* height: 100%; */
