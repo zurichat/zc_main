@@ -15,9 +15,10 @@ import UserForm from '../../control/src/pages/ReportFeature/User/Form'
 import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
 import { authAxios } from './utils/Api'
 import Profile from './components/Profile'
+import styles from './styles/Topbar.module.css'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
-  const { openModal } = useContext(TopbarContext)
+  const { openModal, presence, setPresence } = useContext(TopbarContext)
   const { setUser, user, userProfileImage, setOrgId, setUserProfileImage } =
     useContext(ProfileContext)
   const [organizations, setOrganizations] = useState([])
@@ -59,6 +60,24 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     getOrganizations()
   }, [setOrgId, user.image_url, setUser])
 
+  let toggleStatus = null
+
+  switch (presence) {
+    case 'true':
+      toggleStatus = (
+        <ToggleStatus>
+          <div className="activeCircle" />
+        </ToggleStatus>
+      )
+      break
+    default:
+      toggleStatus = (
+        <ToggleStatus>
+          <div className="awayCircle" />
+        </ToggleStatus>
+      )
+  }
+
   return (
     <TopNavBarBase>
       <div>
@@ -84,6 +103,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       <UserForm />
       <AdminForm />
       <div>
+        {toggleStatus}
         <img
           style={{ height: '30px', width: '30px', borderRadius: '5px' }}
           src={userProfileImage ? userProfileImage : userAvatar}
@@ -142,5 +162,30 @@ const HelpContainer = styled.div`
   &:hover {
     cursor: pointer;
     opacity: 0.5;
+  }
+`
+const ToggleStatus = styled.div`
+  .activeCircle {
+    background-color: green;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    border: 1px solid white;
+    margin-right: 15px;
+    position: absolute;
+    top: 42px;
+    right: 10px;
+  }
+
+  .awayCircle {
+    background-color: grey;
+    height: 10px;
+    width: 10px;
+    margin-right: 15px;
+    border-radius: 50%;
+    border: 1px solid white;
+    position: absolute;
+    top: 42px;
+    right: 10px;
   }
 `
