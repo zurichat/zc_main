@@ -51,6 +51,15 @@ const Sidebar = props => {
   // let user = JSON.parse(sessionStorage.getItem('user'))
   let token = sessionStorage.getItem('token')
 
+  const trimUrl = url => {
+    if (url !== undefined) {
+      if (url.substr(-1) === '/') {
+        return url.substr(0, url.length - 1)
+      }
+      return url
+    }
+  }
+
   useEffect(() => {
     const fetchUser = async () => {
       const { _id, Organizations } = await GetUserInfo()
@@ -79,16 +88,17 @@ const Sidebar = props => {
     // console.log('sidebar plugins', organizationInfo)
     {
       organizationInfo &&
-        organizationInfo.map((plugin, index) => {
+        organizationInfo.map(plugin => {
           const sidebarUrl = plugin.plugin.sidebar_url
+          const trimmedUrl = trimUrl(sidebarUrl)
 
           axios
             .get(
               `${
-                sidebarUrl.includes('https://') ||
-                sidebarUrl.includes('http://')
-                  ? sidebarUrl
-                  : `https://${sidebarUrl}`
+                trimmedUrl.includes('https://') ||
+                trimmedUrl.includes('http://')
+                  ? trimmedUrl
+                  : `https://${trimmedUrl}`
               }?org=${userInfo.Organizations[0]}&user=${userInfo.userId}`
             )
             .then(res => {
