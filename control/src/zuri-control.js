@@ -34,7 +34,7 @@ export const GetUserInfo = async () => {
       console.log(err)
     }
   } else {
-    console.log('YOU ARE NOT LOGGED IN, PLEASE LOGGED IN')
+    console.log('YOU ARE NOT LOGGED IN, PLEASE LOG IN')
   }
 }
 
