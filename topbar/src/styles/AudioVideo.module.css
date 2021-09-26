@@ -14,7 +14,7 @@
 }
 
 .rectangle {
-  background: #3a3a3a;
+  background: #000;
   width: 25%;
   height: 20rem;
   border-radius: 7px;
@@ -403,7 +403,7 @@
 }
 
 .screensaver {
-  display: flex;
+  font-size: 15px;
   color: #3a3a3a;
   font-weight: bold;
 }
