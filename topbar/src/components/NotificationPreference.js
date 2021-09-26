@@ -8,7 +8,6 @@ const NotificationPreference = () => {
   const [active, setActive] = useState(0)
   const [active1, setActive1] = useState(0)
   const { user, orgId } = useContext(ProfileContext)
-
   const [dataState, setDataState] = useState({
     // channel_hurdle_notification: channel_hurdle,
     email_notifications_for_mentions_and_dm: null,
@@ -18,9 +17,15 @@ const NotificationPreference = () => {
     notification_schedule: '',
     notify_me_about: '',
     thread_replies_notification: false,
-    use_different_settings_mobile: '',
+    use_different_settings_mobile: false,
     when_iam_not_active_on_desktop: ''
   })
+
+  useEffect(() => {
+    if(localStorage.getItem("settings")) {
+      setDataState(JSON.parse(localStorage.getItem("settings")))
+    }
+  }, [])
 
   const setData = () => {
     authAxios
@@ -31,12 +36,14 @@ const NotificationPreference = () => {
       })
       .then(res => {
         console.log(res)
-        // setState({ loading: false })
+        setState({ loading: false })
       })
       .catch(err => {
         console.log(err?.response?.data)
-        // setState({ loading: false })
+        setState({ loading: false })
       })
+
+      localStorage.setItem('settings', JSON.stringify(dataState));
   }
   const [state, setState] = useState({
     name: 'React',
@@ -60,8 +67,7 @@ const NotificationPreference = () => {
         <div className={styles.itemTitle1}>
           <h4 className={styles.titleLarge}>Notify me about </h4>{' '}
           <span className={styles.spanL}>
-            <AiOutlineQuestionCircle className={styles.quest} />
-            Learn about notifications
+            <AiOutlineQuestionCircle /> Learn about notifications
           </span>
         </div>
         <form>
@@ -70,10 +76,10 @@ const NotificationPreference = () => {
               <input
                 type="radio"
                 value="all-messages"
-                checked={active1 === 0}
+                checked={dataState.notify_me_about === "all-messages" }
                 onClick={() => {
-                  setActive1(0)
-                  setDataState({ notify_me_about: 'all-messages' })
+                  setActive1("all-messages")
+                  setDataState({ ...dataState, notify_me_about: 'all-messages' })
                   setData()
                 }}
               />
@@ -84,10 +90,10 @@ const NotificationPreference = () => {
               <input
                 type="radio"
                 value="direct-messages"
-                checked={active1 === 1}
+                checked={dataState.notify_me_about === "direct-message"}
                 onClick={() => {
-                  setActive1(1)
-                  setDataState({ notify_me_about: 'direct-message' })
+                  setActive1("direct-message")
+                  setDataState({ ...dataState, notify_me_about: 'direct-message' })
                   setData()
                 }}
               />
@@ -97,10 +103,10 @@ const NotificationPreference = () => {
               <input
                 type="radio"
                 value="none"
-                checked={active1 === 2}
+                checked={dataState.notify_me_about === "none"}
                 onClick={() => {
-                  setActive1(2)
-                  setDataState({ thread_replies_notification: 'none' })
+                  setActive1("none")
+                  setDataState({...dataState, notify_me_about: 'none' })
                   setData()
                 }}
               />
@@ -114,21 +120,25 @@ const NotificationPreference = () => {
                 type="checkbox"
                 className={styles.check}
                 value="for-mobile"
+                checked={dataState.use_different_settings_mobile === true}
+                onClick={() => {
+                  setDataState({ ...dataState, use_different_settings_mobile: !use_different_settings_mobile })
+                  console.log("checking", dataState.use_different_settings_mobile)
+                  setData()
+                }}
               />
               Use different settings for my mobile device
             </label>
           </div>
-          {/* <div className={styles.line} /> */}
-
+          <div className={styles.line}></div>
+          {/* <hr />  */}
           <div className={styles.markbox}>
             <label htmlFor="for-meeting">
               <input
                 type="checkbox"
+                className={styles.check}
                 value="for-meeting"
-                onClick={() => {
-                  setDataState({ use_different_settings_mobile: 'yes' })
-                  setData()
-                }}
+                
               />
               Notify me when a meeting is set
             </label>
@@ -161,7 +171,7 @@ const NotificationPreference = () => {
           <h4 class={styles.titleSmall}>Notification Schedule</h4>{' '}
           <span className={styles.spanBlock}>
             You'll only receive notifications in the hours that you choose.
-            Outside of those times, notifications will be paused.
+            Outside of those times, notifications will be paused.{' '}
             <span className={styles.spanSmall}>Learn more</span>
           </span>
         </div>
@@ -271,32 +281,40 @@ const NotificationPreference = () => {
               <input
                 type="radio"
                 value="never"
-                checked={active === 0}
+                checked={dataState.notification_schedule === "never" }
                 onClick={() => {
-                  setActive(0)
-                  setDataState({ notify_me_about: 'all-messages' })
+                  setActive("never")
+                  setDataState({...dataState, notification_schedule: 'never' })
                   setData()
-                }}
+                }}  
               />
               <label htmlFor="never">Never</label>
             </div>
             <div className={styles.radio}>
               <input
                 type="radio"
-                value="direct-messages"
-                checked={active === 1}
-                onClick={() => setActive(1)}
+                value="when-idle"
+                checked={dataState.notification_schedule === "when-idle" }
+                onClick={() => {
+                  setActive("when-idle")
+                  setDataState({...dataState, notification_schedule: 'when-idle' })
+                  setData()
+                }}  
               />
-              <label htmlFor="direct-messages">When idle</label>
+              <label htmlFor="when-idle"> When Idle </label>
             </div>
             <div className={styles.radio}>
               <input
                 type="radio"
-                value="direct-messages"
-                checked={active === 2}
-                onClick={() => setActive(2)}
+                value="mute-all"
+                checked={dataState.notification_schedule === "mute-all" }
+                onClick={() => {
+                  setActive("mute-all")
+                  setDataState({...dataState, notification_schedule: 'mute-all' })
+                  setData()
+                }}  
               />
-              <label htmlFor="direct-messages">Mute all</label>
+              <label htmlFor="mute-all">Mute all</label>
             </div>
           </form>
           <div className={styles.deliver}>

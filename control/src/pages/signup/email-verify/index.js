@@ -38,7 +38,7 @@ export default function EmailVerification({ email }) {
   }
 
   const goHome = () => {
-    window.location.href = '/home'
+    window.location.href = '/createworkspace'
   }
 
   return (
