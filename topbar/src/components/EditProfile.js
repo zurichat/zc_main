@@ -94,8 +94,6 @@ const EditProfile = () => {
     setUserProfileImage(user.image_url)
   }, [user])
 
-
-
   const handleFormSubmit = e => {
     e.preventDefault()
     setState({ loading: true })
