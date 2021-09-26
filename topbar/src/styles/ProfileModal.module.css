@@ -33,14 +33,17 @@
   width: 90%;
   max-width: 885px;
   background: #fff;
-  border-radius: 4px;
-  overflow: hidden;
+  border-radius: 3px;
   padding-bottom: 20px;
+  overflow-y: scroll;
 }
 
-.modalCont {
-  overflow-y: scroll;
-  height: 80vh;
+.modalFull::-webkit-scrollbar {
+  display: none;
+}
+
+.modalContent::-webkit-scrollbar {
+  display: none;
 }
 
 .modalHeader,
