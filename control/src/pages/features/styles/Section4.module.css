@@ -6,10 +6,6 @@
 }
 
 .section4Wrapper {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
-  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,24 +27,24 @@
 }
 
 .rightSideTextWrapper {
-  width: 77%;
+  width: 73%;
 }
 
 .rightSideTextWrapper h2 {
   width: 85%;
   font-style: normal;
   font-weight: bold;
-  font-size: 2.5rem;
-  line-height: 130%;
+  font-size: 2.4rem;
+  line-height: 52px;
   color: #242424;
 }
 
 .rightSideTextWrapper p {
-  margin-top: 18px;
+  margin-top: 30px;
   font-style: normal;
   font-weight: 500;
-  font-size: 1.875rem;
-  /* line-height: 130%; */
+  font-size: 1.55rem;
+  line-height: 39px;
   color: #3a3a3a;
 }
 
@@ -112,7 +108,6 @@
   }
 
   .section4Wrapper {
-    padding: 0 24px;
     flex-direction: column;
   }
 
@@ -131,11 +126,11 @@
 
   .rightSideTextWrapper h2 {
     width: 100%;
-    font-size: 1.75rem;
+    font-size: 1.8rem;
   }
 
   .rightSideTextWrapper p {
     margin-top: 25px;
-    font-size: 1.125rem;
+    font-size: 0.98rem;
   }
 }

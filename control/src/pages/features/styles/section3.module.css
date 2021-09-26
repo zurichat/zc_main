@@ -1,24 +1,19 @@
 .section3 {
-  margin-top: 120px;
-}
-.section3TopContentWrapper {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
-  background-color: #fff;
+  margin-top: 100px;
 }
 .section3TopTextsWrapper {
   margin: 0 auto;
-  width: 75%;
+  width: 72%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 122px;
 }
 .section3TopTextsWrapper h3 {
   font-style: normal;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   line-height: 130%;
   text-align: center;
   color: #242424;
@@ -27,7 +22,7 @@
   margin-top: 18px;
   font-style: normal;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.33rem;
   line-height: 130%;
   text-align: center;
   color: #3a3a3a;
@@ -58,7 +53,7 @@
   margin-top: 15px;
   font-style: normal;
   font-weight: bold;
-  font-size: 1.25rem;
+  font-size: 20px;
   line-height: 24px;
   text-align: center;
   letter-spacing: 0.02em;
@@ -68,7 +63,7 @@
   margin-top: 10px;
   font-style: normal;
   font-weight: 500;
-  font-size: 1.125rem;
+  font-size: 18px;
   line-height: 130%;
   text-align: center;
   color: #3a3a3a;
@@ -76,37 +71,26 @@
 .zuriInterfaceViewWrapper {
   margin-top: 150px;
   width: 100%;
-  background: #ecf8f5;
 }
-.zuriInterfaceImageContainer {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-.zuriInterfaceImageContainer img {
+.zuriInterfaceViewWrapper img {
   width: 100%;
 }
-
 /* Mediaqueries */
-
 /* @media (max-width: 800px) {
-
 } */
-
 @media (max-width: 500px) {
-  .section3TopContentWrapper {
-    padding: 0 24px;
-  }
   .section3TopTextsWrapper {
     margin: 0;
     width: 100%;
+    padding-top: 30px;
   }
   .section3TopTextsWrapper h3 {
-    font-size: 1.75rem;
+    font-size: 28px;
     line-height: 36px;
     text-align: left;
   }
   .section3TopTextsWrapper p {
-    font-size: 1.125rem;
+    font-size: 18px;
     line-height: 23px;
     text-align: left;
   }
@@ -114,20 +98,16 @@
     margin-top: 65px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    column-gap: 10px;
+    column-gap: 15px;
     row-gap: 40px;
   }
   .featureCard {
-    width: 100%;
+    width: 158px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
   }
-  /* .toDoListCard {
-    grid-column: 1/-1 !important; 
-    justify-items: center;
-  } */
   .iconWrapper {
     width: 100px;
     height: 100px;
@@ -141,11 +121,11 @@
     width: 40%;
   }
   .featureCard h3 {
-    font-size: 1.125rem;
+    font-size: 1rem;
     line-height: 130%;
   }
   .featuresSection p {
-    font-size: 0.875rem;
+    font-size: 0.7rem;
     line-height: 130%;
   }
   .zuriInterfaceViewWrapper {
