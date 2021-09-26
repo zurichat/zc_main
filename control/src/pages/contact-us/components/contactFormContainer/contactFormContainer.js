@@ -4,6 +4,7 @@ import detailsData from './detailsArray'
 import axios from 'axios'
 import { useDropzone } from 'react-dropzone'
 import Alert from '../../assets/alert-circle.svg'
+import { GetUserInfo } from '../../../../zuri-control'
 
 const activeStyle = {
   borderColor: '#2196f3'
@@ -30,8 +31,9 @@ function ContactFormContainer() {
   })
 
   useEffect(() => {
-    let userInfo = JSON.parse(sessionStorage.getItem('user'))
-    setUserAuth(userInfo ? userInfo : {})
+    let userInfo = GetUserInfo()
+    console.log('this is user info')
+    setUserAuth(userInfo.email ? userInfo : {})
     setValues(values => ({
       ...values,
       email: userAuth.email ? userAuth.email : values.email
@@ -51,6 +53,7 @@ function ContactFormContainer() {
     accept: 'image/*,.xlsx,.xls,.doc, .docx,.ppt, .pptx,.txt,.pdf'
   })
   // .xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf
+  console.log(acceptedFiles)
 
   const handleFileDelete = index => () => {
     delete acceptedFiles[index]

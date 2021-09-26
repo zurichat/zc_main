@@ -120,7 +120,11 @@ const AudioVideo = () => {
                 <span className={styles.keyboard}>
                   {' '}
                   Allow keyboard shortcut to Mute
+<<<<<<< HEAD
                 </span>{' '} 
+=======
+                </span>{' '}
+>>>>>>> 708a224a381a4f3de61b6c2bdfbb1896a8eaba29
                 <div className={styles.muteunmute}> Use &nbsp;
                   <button className={styles.btn}>Ctrl</button> &nbsp;
                   <button className={styles.btn}>Shift</button> &nbsp;
@@ -139,6 +143,13 @@ const AudioVideo = () => {
         </div>
       </div>
     </div>
+<<<<<<< HEAD
   )}
 
 export default AudioVideo
+=======
+  )
+}
+export default AudioVideo;
+
+>>>>>>> 708a224a381a4f3de61b6c2bdfbb1896a8eaba29
