@@ -38,7 +38,6 @@ const ResetDefault = () => {
     <>
       <main id={styles.authPageWrapper}>
         {showDialog && <VerifyResetCode />}
-
         <aside id={styles.authAsideContainer} className={styles.display_none}>
           <div id={styles.authImageWrapper}>
             <img src={authBg} alt="backgroundImage" />
