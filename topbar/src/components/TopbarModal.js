@@ -21,7 +21,7 @@ const TopbarModal = ({ members }) => {
 
   const state = useContext(TopbarContext)
   const [showModal] = state.show
-  const { presence, setPresence } = state
+  // const [username, setUsername] = state.username
   const [showStatus] = state.status
   const [showMembersModal] = state.modal
   const {
@@ -31,9 +31,13 @@ const TopbarModal = ({ members }) => {
     closeStatus,
     modalRef,
     closeMembersModal,
-    toggleUserPresence
+    toggleUserPresence,
+    reusableModal,
+    setReusableModal,
+    presence,
+    setPresence
   } = state
-  const [modal, setModal] = useState('')
+
   const [pause, setPause] = useState(false)
   const [statusModal, setStatusModal] = useState(false)
 
@@ -109,7 +113,13 @@ const TopbarModal = ({ members }) => {
             </div>
 
             <div className={styles.oneRight}>
-              <h4>Praise.A</h4>
+              <h4>
+                {user.user_name
+                  ? `${user.user_name
+                      .charAt(0)
+                      .toUpperCase()}${user.user_name.slice(1)}`
+                  : 'Anonymous'}
+              </h4>
               {toggleStatus}
             </div>
           </div>
@@ -147,7 +157,7 @@ const TopbarModal = ({ members }) => {
           <div className={styles.sectionFour}>
             <p
               onClick={() => {
-                setModal('edit profile')
+                setReusableModal('edit profile')
                 toggleModalState()
               }}
             >
@@ -163,7 +173,7 @@ const TopbarModal = ({ members }) => {
             </p>
             <p
               onClick={() => {
-                setModal('preference')
+                setReusableModal('preference')
                 toggleModalState()
               }}
             >
@@ -176,18 +186,20 @@ const TopbarModal = ({ members }) => {
           <div className={styles.sectionSix}>
             <p
               onClick={() => {
-                setModal('downloads')
+                setReusableModal('downloads')
               }}
             >
               Downloads
             </p>
           </div>
 
-          {modal === 'edit profile' && <EditProfile />}
+          {reusableModal === 'edit profile' && <EditProfile />}
 
-          {modal === 'preference' && <Preferences />}
+          {reusableModal === 'preference' && <Preferences />}
 
-          {modal === 'downloads' && <Downloads setModal={setModal} />}
+          {reusableModal === 'downloads' && (
+            <Downloads setModal={setReusableModal} />
+          )}
 
           <hr className={styles.hr} />
 

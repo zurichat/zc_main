@@ -1,5 +1,5 @@
 .ProfileContainer {
-  min-width: 20.5rem;
+  min-width: 16rem;
   height: calc(100vh - 2.9em);
   background: #fff;
   position: fixed;
@@ -141,24 +141,18 @@
   border: none;
 }
 .ctaText {
-  font-size: 10px;
+  font-size: 12px;
   color: rgb(128, 126, 126);
   text-align: center;
 }
 .buttonGroups button:hover {
   background: #00b87c;
 }
-
-.buttonGroups button svg {
-  width: 1.2rem;
-  height: 1.2rem;
+.ctaButtonIcon {
+  color: rgb(126, 123, 123);
 }
-
-.buttonGroups button svg path {
-  stroke: rgb(126, 123, 123);
-}
-.buttonGroups button svg path:hover {
-  stroke: #fff;
+.buttonGroups button:hover .ctaButtonIcon {
+  color: #fff;
 }
 
 .moreInfo {
@@ -201,6 +195,7 @@
 }
 
 .profileDropDown {
+  text-align: left;
   position: absolute;
   top: 30%;
   right: 16px;
