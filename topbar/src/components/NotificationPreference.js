@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react'
 import styles from '../styles/NotificationPreference.module.css'
 import { AiOutlineQuestionCircle } from 'react-icons/ai'
-//import { TextInput } from './TextInput'
 import { authAxios } from '../utils/Api'
 import { ProfileContext } from '../context/ProfileModal'
 
@@ -170,7 +169,7 @@ const NotificationPreference = () => {
         <div className={styles.itemTitle2}>
           <div className={styles.line}></div>
           <h4 class={styles.titleSmall}>Keywords</h4>{' '}
-          <span>
+          <span className={styles.spanBlock}>
             You will be notified anything, someone uses these keywords in a
             thread
           </span>
@@ -202,13 +201,13 @@ const NotificationPreference = () => {
                 </select>
               </div>
             </li>
-            {/* <li className={styles.listChild}>
+            <li className={styles.listChild}>
               <TextInput label="From" />
             </li>
 
             <li className={styles.listChild}>
               <TextInput label="to" />
-            </li> */}
+            </li>
           </ul>
         </div>
         <div className={styles.line} />
@@ -362,7 +361,7 @@ const NotificationPreference = () => {
             </div>
           </div>
         </div>
-        <div className={styles.checkbox}>
+        <div className={styles.markbox}>
           <label>
             <input
               type="checkbox"
