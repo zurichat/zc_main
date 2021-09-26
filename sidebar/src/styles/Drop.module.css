@@ -1,0 +1,62 @@
+.dropDown {
+  cursor: pointer;
+}
+
+.plugin_name,
+.dropDown__name,
+.icon,
+.item__icon {
+  color: #454545;
+}
+
+.plugin_name {
+  font-weight: bold;
+}
+
+.plugin_name,
+.dropDown__name {
+  font-size: 1.2em;
+}
+
+.plugin_name,
+.dropDown__title,
+.dropDown__name {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.dropDown__name {
+  font-weight: normal;
+}
+
+.icon,
+.item__icon {
+  font-size: 2.5em;
+}
+
+.icon {
+  transform: rotate(-90deg);
+  transition: all 0.2s ease-in-out;
+}
+
+.icon.open {
+  transform: rotate(0deg);
+}
+
+.plugin__title,
+.item__row {
+  height: 7vh;
+}
+
+.item__row {
+  display: none;
+}
+
+.item__row.open {
+  display: block;
+  margin-inline-start: 0.5em;
+}
+
+.item__name {
+  padding-inline-start: 2rem;
+}
