@@ -16,7 +16,7 @@ import TimezoneSelect from 'react-timezone-select'
 import { StyledProfileWrapper } from '../styles/StyledEditProfile'
 
 const EditProfile = () => {
-  // const imageRef = useRef(null)
+  const imageRef = useRef(null)
   const avatarRef = useRef(null)
   const { user, orgId, userProfileImage, setUserProfileImage } =
     useContext(ProfileContext)
@@ -52,6 +52,8 @@ const EditProfile = () => {
     setLinks(links[index])
   }
 
+  //Function handling Image Upload
+
   const handleImageChange = event => {
     setState({ loading: true })
     if (imageRef.current.files[0]) {
@@ -75,7 +77,6 @@ const EditProfile = () => {
           newUploadedImage = res.data.data
           setState({ loading: false })
           setUserProfileImage(res.data.data)
-          console.log(userProfileImage)
           toast.success('User Image Updated Successfully', {
             position: 'bottom-center'
           })
@@ -93,32 +94,6 @@ const EditProfile = () => {
   useEffect(() => {
     setUserProfileImage(user.image_url)
   }, [user])
-
-  // const handleImageChange = event => {
-  //   setState({ loading: true })
-
-  //   const file = event.target.files[0]
-
-  //   // encode the file using the FileReader API
-  //   const reader = new FileReader()
-  //   reader.onloadend = () => {
-  //     // log to console
-  //     // logs data:<type>;base64,wL2dvYWwgbW9yZ...
-  //     avatarRef.current.src = reader.result
-  //     setUserProfileImage(reader.result)
-  //     console.log(reader.result)
-  //   }
-  //   reader.readAsDataURL(file)
-
-  // let fileReader = new FileReader();
-
-  // fileReader.onload = function (event) {
-  //   avatarRef.current.src = event.target.result;
-  //   console.log(event.target.result);
-  // };
-
-  // let reader = fileReader.readAsDataURL(event.target.files[0]);
-  // console.log(reader)
 
   // This will handle the profile form submission
 
