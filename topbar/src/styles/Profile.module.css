@@ -1,5 +1,5 @@
 .ProfileContainer {
-  min-width: 20.5rem;
+  min-width: 16rem;
   height: calc(100vh - 2.9em);
   background: #fff;
   position: fixed;
