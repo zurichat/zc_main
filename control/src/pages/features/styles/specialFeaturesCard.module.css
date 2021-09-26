@@ -1,5 +1,5 @@
 .specialFeaturesCard {
-  margin-left: 20px;
+  margin-left: 10px;
   height: 220px;
   padding: 20px;
   cursor: pointer;
@@ -7,13 +7,13 @@
 
 .specialFeaturesCard:first-child {
   margin: 0;
-  min-width: 29.7%;
+  min-width: 26%;
 }
 
 .specialFeaturesCard h3 {
   margin-top: 15px;
   font-weight: bold;
-  font-size: 1.88rem;
+  font-size: 1.875rem;
   line-height: 130%;
   color: #3a3a3a;
 }
@@ -94,13 +94,22 @@
 @media (max-width: 500px) {
   .specialFeaturesCard {
     padding: 10px;
+    height: 164px;
+  }
+
+  .featureCardIcon {
+    width: 40px;
+    height: 40px;
   }
 
   .specialFeaturesCard h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    margin-top: 10px;
   }
 
   .specialFeaturesCard p {
-    font-size: 0.7rem;
+    margin-top: 5px;
+    font-size: 0.625rem;
+    line-height: 13px;
   }
 }
