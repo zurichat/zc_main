@@ -35,7 +35,10 @@ const MarketplaceHeader = ({ user }) => {
         <input type="text" placeholder="Search Plugins" />
       </div>
       <div className={styles.accountOwnerAvatar}>
-        <div className={styles.accountOwnerAvatarContainer}></div>
+        <span className={styles.accountOwnerFirstName}>{user.first_name}</span>
+        <div className={styles.accountOwnerAvatarContainer}>
+          {user.first_name[0].toUpperCase()}
+        </div>
       </div>
     </nav>
   )

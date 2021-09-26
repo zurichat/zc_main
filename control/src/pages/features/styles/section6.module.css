@@ -1,5 +1,12 @@
 .section6 {
   margin: 180px 0;
+  background-color: #fff;
+}
+
+.section6Wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
 .section6TopTextWrapper {
@@ -20,26 +27,31 @@
 .section6CardWrapper {
   margin-top: 60px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(158.5px, 32.2%));
+  grid-template-columns: repeat(auto-fill, minmax(31%, 1fr));
   gap: 20px;
 }
 
 /* Mediaqueries */
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
 }
 
 @media (max-width: 800px) {
-}
+} */
 
 @media (max-width: 500px) {
   .section6 {
     margin: 80px 0;
   }
 
+  .section6Wrapper {
+    padding: 0 24px;
+  }
+
   .section6CardWrapper {
     margin-top: 60px;
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .section6TopTextWrapper h2 {
