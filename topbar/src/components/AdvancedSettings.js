@@ -10,31 +10,22 @@ const AdvancedSettings = () => {
           <div className={styles.checktype}>
             <input type="checkbox" name="" id="" />
             <div className={styles.typing}>
-              <span>
-                {' '}
-                When typing code with "",{' '}
-                <button type="button" className={styles.btn}>
-                  Enter
-                </button>
-                &nbsp; should send the message{' '}
-              </span>
-              <br /> With this ticket, use{' '}
-              <button className={styles.btn}>Shift</button>{' '}
-              <button className={styles.btn}>Enter</button> to send
+              <span>When typing code with "", should send the message </span>
+              <div className={styles.typingticket}>
+                With this ticket, use
+                <button className={styles.btn}>Shift</button> to send
+              </div>
             </div>
           </div>
           <div className={styles.checkformat}>
             <input type="checkbox" name="" id="" />
-            <div className={styles.typing}>
-              <span> Format messages with markup</span> <br />
+            <div className={styles.format}>
+              <span> Format messages with markup</span>
               The text formatting toolbar won't show in the composer
             </div>
           </div>
         </div>
-        <p className={styles.head}>
-          When writing a message, press{' '}
-          <button className={styles.btn}>Enter</button>
-        </p>
+        <p className={styles.headpress}>When writing a message, press </p>
         <div className={styles.radio}>
           <div className={styles.radiosend}>
             <input type="radio" name="" id="" />
@@ -57,19 +48,23 @@ const AdvancedSettings = () => {
           <div className={styles.checktype}>
             <input type="checkbox" name="" id="" />
             <div className={styles.behaviour}>
-              <button className={styles.btn}>Ctrl</button>
-              <button className={styles.btn}>F</button>
-              <span> Starts a Zurichat chat</span> <br /> Overrides normal
-              behaviour in search behaviour
+              <span>
+                <button className={styles.btn}>Ctrl</button>
+                <button className={styles.btn}>F</button>
+                Starts a Zurichat chat
+              </span>
+              Overrides normal behaviour in search behaviour
             </div>
           </div>
           <div className={styles.checkformat}>
             <input type="checkbox" name="" id="" />
             <div className={styles.browser}>
-              <button className={styles.btn}>Ctrl</button>
-              <button className={styles.btn}>K</button>
-              <span> Starts the quick switcher </span>
-              <br /> Overrides normal behaviour in some browsers
+              <span>
+                <button className={styles.btn}>Ctrl</button>
+                <button className={styles.btn}>K</button>
+                Starts the quick switcher
+              </span>
+              Overrides normal behaviour in some browsers
             </div>
           </div>
         </div>
@@ -77,7 +72,7 @@ const AdvancedSettings = () => {
           {' '}
           Exclude these channels from search results:
         </h5>
-        <div className="barcontainer">
+        <div className={styles.barcontainer}>
           <div className={styles.bar}>
             <input
               type="text"
@@ -113,12 +108,9 @@ const AdvancedSettings = () => {
           <div className={styles.survey}>
             <input type="checkbox" name="" id="" />
             <p>
-              Send me occasional survey via Zurichat bot <br />
-              <span>
-                {' '}
-                We're working to make Zurichat better. We'd always love to hear
-                your thoughts
-              </span>
+              <span>Send me occasional survey via Zurichat bot</span> We're
+              working to make Zurichat better. We'd always love to hear your
+              thoughts
             </p>
           </div>
           <div className={styles.warn}>
