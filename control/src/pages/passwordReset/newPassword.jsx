@@ -8,7 +8,6 @@ import axios from 'axios'
 import Button from '../../components/Button'
 
 const NewPassword = () => {
-
   function useQuery() {
     return new URLSearchParams(useLocation().search)
   }
@@ -16,7 +15,6 @@ const NewPassword = () => {
   const resetCode = query.get('code')
 
   const [password, setPassword] = useState('')
-
 
   const handleSubmit = async () => {
     try {
