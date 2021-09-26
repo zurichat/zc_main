@@ -41,9 +41,20 @@ const Login = () => {
   let history = useHistory()
 
   const handleSubmit = async e => {
+    e.preventDefault()
     setemailerror('')
     setpassworderror('')
-    e.preventDefault()
+
+    if (!email) {
+      setemailerror(`Enter an email address`)
+      return
+    }
+
+    if (!password) {
+      setpassworderror(`Enter a Password`)
+      return
+    }
+
     await axios
       .post('https://api.zuri.chat/auth/login', {
         email,
@@ -72,7 +83,7 @@ const Login = () => {
         setTimeout(() => {
           //Redirect to some other page
           GetUserInfo()
-          history.push('/home')
+          history.push('/choose-workspace')
           setLoading(false)
         }, 2000)
       })
@@ -109,9 +120,7 @@ const Login = () => {
           googleHeader="Login with Google"
           topLineText="OR"
           submitButtonName="Log in"
-          email={email}
-          password={password}
-          check={rememberMe}
+          disabled={email && password}
           error={error}
           handleSubmit={handleSubmit}
           bottomLine="New to us?"
@@ -142,7 +151,7 @@ const Login = () => {
           />
 
           <div className={`${styles.rememberMe}`}>
-            <span className={`${styles.left}`}>
+            <div className={`${styles.left}`}>
               <input
                 className={`${styles.checkBox}`}
                 name="RememberMe"
@@ -154,10 +163,10 @@ const Login = () => {
                 // onFocus={displayImage}
               />
               Remember me
-            </span>
-            <span className={`${styles.right}`}>
+            </div>
+            <div className={`${styles.right}`}>
               Forgot password?<a href="/"> {''}Get help signing in</a>
-            </span>
+            </div>
           </div>
         </FormWrapper>
       </section>
