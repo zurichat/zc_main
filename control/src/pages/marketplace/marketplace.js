@@ -12,16 +12,16 @@ import 'react-tabs/style/react-tabs.css'
 import MarketplaceHeader from './components/marketplace-container/MarketplaceHeader'
 import { MarketPlaceProvider } from '../../context/MarketPlace.context.js'
 import AuthNotifyBanner from './components/AuthNotifyBanner/'
+import { loggedInUser } from '../../../../globalState'
 import axios from 'axios'
 
 const MarketPlace = () => {
-  let data = JSON.parse(sessionStorage.getItem('user'))
   const [userDetails, setUserDetails] = useState(null)
   const [loadingUser, setLoadingUser] = useState(false)
   const [err, setErr] = useState(null)
 
   const fetchUserInformation = async () => {
-    const { token, id } = data
+    const { token, id } = loggedInUser
     setLoadingUser(true)
     try {
       const response = await axios.get(`https://api.zuri.chat/users/${id}`, {
@@ -44,7 +44,7 @@ const MarketPlace = () => {
   }
 
   useEffect(() => {
-    if (data) {
+    if (loggedInUser.id) {
       fetchUserInformation()
     }
   }, [userDetails])
@@ -54,8 +54,8 @@ const MarketPlace = () => {
         <div
           className={`w-100 d-flex flex-wrap justify-content-between align-items-baseline ${styles.marketplaceNavbar}`}
         >
-          <MarketplaceHeader user={data} />
-          {!data && !loadingUser ? (
+          <MarketplaceHeader user={loggedInUser} />
+          {!loggedInUser && !loadingUser ? (
             <AuthNotifyBanner
               text={
                 !loadingUser && !userDetails
@@ -71,7 +71,7 @@ const MarketPlace = () => {
                     }
               }
             />
-          ) : data && !userDetails ? (
+          ) : loggedInUser && !userDetails ? (
             <AuthNotifyBanner
               text={'You are currently not in an organization'}
               action={{
@@ -163,7 +163,7 @@ const MarketPlace = () => {
             <Row className={`mx-0`}>
               <TabPanel>
                 <MarketPlaceContainer
-                  user={data}
+                  user={loggedInUser}
                   organizations={userDetails?.Organizations}
                 />
               </TabPanel>
