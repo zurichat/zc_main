@@ -96,7 +96,6 @@ const Sidebar = props => {
                     setSidebarData(prev => [...prev, validPlugin])
                   }
                 }
-
                 // console.log(validPlugin)
               } catch (err) {
                 console.log(err, 'Invalid plugin')
@@ -180,9 +179,9 @@ const Sidebar = props => {
                 {links.map((plugs, id) => {
                   return (
                     <div key={id}>
-                      <a href={plugs.href} onClick={navigateToUrl}>
+                      <Link to={plugs.href} onClick={navigateToUrl}>
                         <p>{plugs.name}</p>
-                      </a>
+                      </Link>
                     </div>
                   )
                 })}
