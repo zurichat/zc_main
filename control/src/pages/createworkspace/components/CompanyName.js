@@ -1,16 +1,51 @@
 import React, { useState, useEffect } from 'react'
 import CompanyNameCSS from '../styles/CompanyName.module.css'
 import { Link, useRouteMatch } from 'react-router-dom'
-
+import axios from 'axios'
 function CompanyName({ input }) {
   const [user, setUser] = useState(null)
+  const [orgId, setOrgId] = useState(null)
+  const [orgName, setOrgName] = useState('')
   let match = useRouteMatch()
   useEffect(() => {
     const user = JSON.parse(sessionStorage.getItem('user'))
+
     if (user) {
       setUser(user)
+      console.log(user)
     }
   }, [])
+
+  const createUserOrg = () => {
+    axios
+      .post(
+        'https://api.zuri.chat/organizations',
+        {
+          creator_email: user.email
+        },
+        {
+          headers: {
+            Authorization: 'Bearer ' + user.token
+          }
+        }
+      )
+      .then(res => {
+        console.log(res)
+        localStorage.clear()
+      })
+      .catch(err => {
+        console.log(err.message)
+      })
+  }
+
+  //  return  axios.patch(`https://api.zuri.chat/organizations/${res.data.data.InsertedID}/Zuri Chat`,  {
+  //         "organization_name": orgName
+  //     },
+  //   { headers: {
+  //     Authorization: 'Bearer ' + user.token
+  //   }
+  // })
+
   return (
     <div>
       <article className={CompanyNameCSS.wrapper}>
@@ -29,6 +64,7 @@ function CompanyName({ input }) {
             type="text"
             placeholder="Ex: The Brand Hub"
             maxLength="50"
+            onChange={e => setOrgName(e.target.value)}
             className={CompanyNameCSS.inputBox}
           />
           <span className={CompanyNameCSS.charLimit}>
@@ -42,6 +78,7 @@ function CompanyName({ input }) {
                   ? { backgroundColor: '#00b87c', color: 'white' }
                   : { backgroundColor: 'revert' }
               }
+              onClick={createUserOrg}
             >
               {' '}
               Continue

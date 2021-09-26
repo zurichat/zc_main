@@ -31,16 +31,53 @@
   margin-bottom: 0.4rem;
 }
 
+.checktype input {
+  margin-top: 0.8rem;
+}
+
+.typingticket {
+  display: flex;
+  margin-top: 0.5rem;
+}
+
 .checkformat {
   display: flex;
+  margin-top: 1rem;
+}
+
+.checkformat input {
+  margin-top: 0.8rem;
+}
+
+.format span {
+  display: flex;
+  font-weight: bolder;
+}
+
+.headpress {
+  font-family: 'Lato';
+  font-weight: bolder;
+  display: flex;
+  margin: 1rem 0;
+  color: #000;
+  font-size: 20px;
+  margin-top: 1rem;
 }
 
 .radiosend {
   display: flex;
 }
 
+.radiosend input {
+  margin-top: 0.8rem;
+}
+
 .radiostart {
   display: flex;
+}
+
+.radiostart input {
+  margin-top: 0.8rem;
 }
 
 .radiosend .send {
@@ -96,6 +133,11 @@
 
 .checkkeys {
   display: flex;
+  font-size: 15px;
+}
+
+.checkkeys input {
+  margin-top: 0.4rem;
 }
 
 .ask {
