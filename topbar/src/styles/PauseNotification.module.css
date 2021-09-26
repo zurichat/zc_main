@@ -44,6 +44,7 @@
   width: 100%;
   border-top: 1.2px solid #e5e1e1;
   padding: 0.8125rem 1.8rem;
+  font-size: 1rem;
   cursor: pointer;
 }
 
@@ -154,7 +155,7 @@
   width: 111px;
   height: 36px;
   border-radius: 3px;
-  background: #2f80ed;
+  background: #00b87c;
   color: #fff;
   outline: none;
   border: none;
@@ -164,7 +165,7 @@
 }
 
 .btn:hover {
-  background: #2069cc;
+  background: #029765;
   transition: all 0.3s ease-in-out;
 }
 

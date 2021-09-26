@@ -9,6 +9,7 @@
   display: flex;
   margin: 1rem 0;
   color: #000;
+  font-size: 20px;
 }
 
 .borderbottomone {
@@ -99,19 +100,21 @@
 
 .behaviour span {
   color: #3a3a3a;
+  display: flex;
 }
 
 .browser span {
   color: #3a3a3a;
+  display: flex;
 }
 
 .btn {
-  background: #dbdbdb;
-  border: none;
+  background: #fff;
+  border: #89a098 1px solid;
   border-radius: 3px;
   padding: 1px 4px;
   margin: 2px;
-  color: #3a3a3a;
+  color: #00b87c;
 }
 
 .input {
@@ -124,6 +127,7 @@
   padding-left: 1.5rem;
   padding-right: 22rem;
   height: 4rem;
+  display: flex;
 }
 
 .search {
@@ -144,11 +148,27 @@
   display: flex;
 }
 
+.ask input {
+  display: flex;
+}
+
 .survey {
   display: flex;
 }
 
+.survey input {
+  display: flex;
+}
+
+.survey span {
+  display: flex;
+}
+
 .warn {
+  display: flex;
+}
+
+.warn input {
   display: flex;
 }
 
