@@ -1,19 +1,34 @@
 import React, { useState } from 'react'
 import Logo from '../../component-assets/zuri.svg'
 import authBg from '../../component-assets/backg.svg'
-import { withRouter } from 'react-router-dom'
+import { withRouter, useLocation } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
 import styles from '../../component-styles/ResetPassword.module.css'
 import axios from 'axios'
 import Button from '../../components/Button'
 
-const NewPassword = ({ resetCode }) => {
+const NewPassword = () => {
+  function useQuery() {
+    return new URLSearchParams(useLocation().search)
+  }
+  let query = useQuery()
+  const resetCode = query.get('code')
+
   const [password, setPassword] = useState('')
+
   const handleSubmit = async () => {
-    const res = await axios.post('api.zuri.chat/account/update-password', {
-      password
-    })
-    // + resetCode,
+    try {
+      const res = await axios.post(
+        `https://api.zuri.chat/account/update-password/${resetCode}`,
+        {
+          password
+        }
+      )
+      alert('password reset!', res.data)
+    } catch (err) {
+      alert(err)
+      console.error(err)
+    }
   }
 
   return (
