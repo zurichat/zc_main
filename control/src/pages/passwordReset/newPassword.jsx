@@ -8,13 +8,16 @@ import axios from 'axios'
 import Button from '../../components/Button'
 
 const NewPassword = () => {
-  const [password, setPassword] = useState('')
 
   function useQuery() {
     return new URLSearchParams(useLocation().search)
   }
   let query = useQuery()
   const resetCode = query.get('code')
+
+  const [password, setPassword] = useState('')
+
+
   const handleSubmit = async () => {
     try {
       const res = await axios.post(
