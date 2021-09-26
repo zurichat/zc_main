@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './reports.module.css'
-import { Container } from 'react-bootstrap'
 
 export const AdminSetup = props => {
   const Continue = e => {
@@ -9,23 +8,23 @@ export const AdminSetup = props => {
   }
 
   return (
-    <Container className={styles.formcontainer}>
+    <div className={styles.formcontainer}>
       <br />
-      <div className="text-center">
+      <div className="text-right">
         <button
-          className="btn btn-success"
+          className="btn btn-primary"
           onClick={Continue}
           style={{
-            // color: 'white',
-            backgroundColor: ' #00B87C'
-            // padding: '12px',
-            // borderRadius: '10%'
+            color: 'white',
+            backgroundColor: ' #00B87C',
+            padding: '12px',
+            borderRadius: '10%'
           }}
         >
           Report Complaint
         </button>
       </div>
-    </Container>
+    </div>
   )
 }
 
