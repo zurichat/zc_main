@@ -87,6 +87,8 @@ const Signup = () => {
 
         //Store token in localstorage
         sessionStorage.setItem('user_id', data.InsertedId)
+         localStorage.setItem("newUserEmail", JSON.stringify(email))
+         localStorage.setItem("userUserPassword", JSON.stringify(password))
 
         //Display message
         // alert(message) //Change this when there is a design
