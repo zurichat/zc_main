@@ -22,7 +22,7 @@ const Cookies = () => {
             </p>
           </div>
         </div>
-        <div className={styles.bannerButtonsss}>
+        <div className={styles.bannerButtons}>
           <button
             className={`${styles.allowButton} ${styles.button}`}
             onClick={handleClickAllow}
