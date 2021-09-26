@@ -3,6 +3,7 @@ import { useState } from 'react'
 import styles from '../styles/Drop.module.css'
 import { TiArrowSortedDown } from 'react-icons/ti'
 import { navigateToUrl } from 'single-spa'
+import hash from '../assets/images/hash.svg'
 
 const DropDown = ({ itemName, items }) => {
   const [isOpen, setOpen] = useState(false)
@@ -40,8 +41,9 @@ const DropDown = ({ itemName, items }) => {
                     onClick={navigateToUrl}
                   >
                     <img
-                      className={` ${styles.item__image}`}
-                      src={room.room_image}
+                      className={`${styles.item__image}`}
+                      src={room.room_image || hash.toString()}
+                      onError={e => (e.target.src = hash.toString())}
                       alt="img"
                     />
                     <p className={`mb-0 ${styles.dropDown__name}`}>
