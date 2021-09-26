@@ -12,7 +12,7 @@ export const TopbarProvider = ({ children }) => {
   const [showStatus, setShowStatus] = useState(false)
   const [showMembersModal, setShowMembersModal] = useState(false)
   const [chosenEmoji, setChosenEmoji] = useState({ emoji: '4️⃣' })
-   const [reusableModal, setReusableModal] = useState('')
+  const [reusableModal, setReusableModal] = useState('')
   //get Profile content state
   const { orgId, user } = useContext(ProfileContext)
 
@@ -93,7 +93,8 @@ export const TopbarProvider = ({ children }) => {
     modalRef,
     presence,
     setPresence,
-   reusableModal, setReusableModal,
+    reusableModal,
+    setReusableModal,
     show: [showModal, setShowModal],
     status: [showStatus, setShowStatus],
     emoji: [chosenEmoji, setChosenEmoji],

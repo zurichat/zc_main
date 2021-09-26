@@ -11,8 +11,8 @@ export const Dropdown = () => {
   const { toggleModalState } = useContext(ProfileContext)
   const [modal, setModal] = useState('')
   const state = useContext(TopbarContext)
-  const { presence, toggleUserPresence,  reusableModal,
-     setReusableModal } = state
+  const { presence, toggleUserPresence, reusableModal, setReusableModal } =
+    state
 
   const getText = useRef('')
 

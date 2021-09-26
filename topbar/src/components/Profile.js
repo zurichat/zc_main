@@ -73,7 +73,8 @@ const Profile = () => {
         />
         <div className={styles.userDetails}>
           <h3>
-            {user.first_name ? user.first_name  : 'Anonnymous'} <span>{user.status === '' ? '0' : user.status}</span>
+            {user.first_name ? user.first_name : 'Anonnymous'}{' '}
+            <span>{user.status === '' ? '0' : user.status}</span>
           </h3>
           <p>What you do</p>
           <small>{user.pronouns ? user.pronouns : 'His/Her'}</small>

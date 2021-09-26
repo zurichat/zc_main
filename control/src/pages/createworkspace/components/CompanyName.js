@@ -9,40 +9,42 @@ function CompanyName({ input }) {
   let match = useRouteMatch()
   useEffect(() => {
     const user = JSON.parse(sessionStorage.getItem('user'))
-    
+
     if (user) {
       setUser(user)
-      console.log(user);
+      console.log(user)
     }
   }, [])
 
-
-
-  const createUserOrg = () =>{
-     axios.post('https://api.zuri.chat/organizations',  {
-        "creator_email": user.email
-    },
-   { headers: {
-    Authorization: 'Bearer ' + user.token
+  const createUserOrg = () => {
+    axios
+      .post(
+        'https://api.zuri.chat/organizations',
+        {
+          creator_email: user.email
+        },
+        {
+          headers: {
+            Authorization: 'Bearer ' + user.token
+          }
+        }
+      )
+      .then(res => {
+        console.log(res)
+        localStorage.clear()
+      })
+      .catch(err => {
+        console.log(err.message)
+      })
   }
-}
-  ).then(res =>{
-      console.log(res)
-      localStorage.clear();
-    })
-    .catch(err=>{
-      console.log(err.message);
-    })
-    }
-  
-//  return  axios.patch(`https://api.zuri.chat/organizations/${res.data.data.InsertedID}/Zuri Chat`,  {        
-//         "organization_name": orgName    
-//     },
-//   { headers: {
-//     Authorization: 'Bearer ' + user.token
-//   }
-// })
 
+  //  return  axios.patch(`https://api.zuri.chat/organizations/${res.data.data.InsertedID}/Zuri Chat`,  {
+  //         "organization_name": orgName
+  //     },
+  //   { headers: {
+  //     Authorization: 'Bearer ' + user.token
+  //   }
+  // })
 
   return (
     <div>
@@ -62,7 +64,7 @@ function CompanyName({ input }) {
             type="text"
             placeholder="Ex: The Brand Hub"
             maxLength="50"
-            onChange={ e => setOrgName(e.target.value)}
+            onChange={e => setOrgName(e.target.value)}
             className={CompanyNameCSS.inputBox}
           />
           <span className={CompanyNameCSS.charLimit}>
