@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import styles from '../styles/NotificationPreference.module.css'
 import { AiOutlineQuestionCircle } from 'react-icons/ai'
+//import { TextInput } from './TextInput'
 import { authAxios } from '../utils/Api'
 import { ProfileContext } from '../context/ProfileModal'
 
@@ -17,7 +18,7 @@ const NotificationPreference = () => {
     notification_schedule: '',
     notify_me_about: '',
     thread_replies_notification: false,
-    use_different_settings_mobile: false,
+    use_different_settings_mobile: '',
     when_iam_not_active_on_desktop: ''
   })
 
@@ -67,7 +68,8 @@ const NotificationPreference = () => {
         <div className={styles.itemTitle1}>
           <h4 className={styles.titleLarge}>Notify me about </h4>{' '}
           <span className={styles.spanL}>
-            <AiOutlineQuestionCircle /> Learn about notifications
+            <AiOutlineQuestionCircle className={styles.quest} />
+            Learn about notifications
           </span>
         </div>
         <form>
@@ -143,15 +145,11 @@ const NotificationPreference = () => {
               Use different settings for my mobile device
             </label>
           </div>
-          <div className={styles.line}></div>
-          {/* <hr />  */}
+          {/* <div className={styles.line} /> */}
+
           <div className={styles.markbox}>
             <label htmlFor="for-meeting">
-              <input
-                type="checkbox"
-                className={styles.check}
-                value="for-meeting"
-              />
+              <input type="checkbox" value="for-meeting" />
               Notify me when a meeting is set
             </label>
           </div>
@@ -172,7 +170,7 @@ const NotificationPreference = () => {
         <div className={styles.itemTitle2}>
           <div className={styles.line}></div>
           <h4 class={styles.titleSmall}>Keywords</h4>{' '}
-          <span className={styles.spanBlock}>
+          <span>
             You will be notified anything, someone uses these keywords in a
             thread
           </span>
@@ -204,20 +202,20 @@ const NotificationPreference = () => {
                 </select>
               </div>
             </li>
-            <li className={styles.listChild}>
+            {/* <li className={styles.listChild}>
               <TextInput label="From" />
             </li>
 
             <li className={styles.listChild}>
               <TextInput label="to" />
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className={styles.line} />
 
         {/* Michael's sound check code */}
         <div className={styles.itemTitle2}>
-          <h4 className={styles.titleSmall}>Sound & appearance</h4>
+          <h4 className={styles.titleSmall}>Sound &amp; appearance</h4>
           <span className={styles.spanBlock}>
             Choose your notification sound
           </span>
@@ -316,7 +314,7 @@ const NotificationPreference = () => {
                   setData()
                 }}
               />
-              <label htmlFor="when-idle"> When Idle </label>
+              <label htmlFor="direct-messages">When idle</label>
             </div>
             <div className={styles.radio}>
               <input
@@ -332,7 +330,7 @@ const NotificationPreference = () => {
                   setData()
                 }}
               />
-              <label htmlFor="mute-all">Mute all</label>
+              <label htmlFor="direct-messages">Mute all</label>
             </div>
           </form>
           <div className={styles.deliver}>
@@ -364,7 +362,7 @@ const NotificationPreference = () => {
             </div>
           </div>
         </div>
-        <div className={styles.markbox}>
+        <div className={styles.checkbox}>
           <label>
             <input
               type="checkbox"

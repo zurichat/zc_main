@@ -1,7 +1,8 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import styles from '../styles/Drop.module.css'
 import { TiArrowSortedDown } from 'react-icons/ti'
+import { navigateToUrl } from 'single-spa'
 
 const DropDown = ({ itemName, items }) => {
   const [isOpen, setOpen] = useState(false)
@@ -36,6 +37,7 @@ const DropDown = ({ itemName, items }) => {
                   <a
                     className={`col-12 d-flex align-items-center ${styles.item_name}`}
                     href={room.room_url}
+                    onClick={navigateToUrl}
                   >
                     <img
                       className={` ${styles.item__image}`}
