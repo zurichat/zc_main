@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import styles from '../styles/Tab.module.css'
 import SettingsTab from './SettingsTab'
 import ProfileTab from './ProfileTab'
@@ -9,7 +9,7 @@ import { FaBars } from 'react-icons/fa'
 const Tab = () => {
   const [toggleState, setToggleState] = useState(1)
   const [menu, setMenu] = useState(true)
-  const history = useHistory(); 
+  const history = useHistory()
   useEffect(() => {
     setMenu(!menu)
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -61,7 +61,9 @@ const Tab = () => {
                 : styles.tabs
             }
             // onClick={() => toggleTab(3)}
-            onClick={ () => { history.push('/home')} }
+            onClick={() => {
+              history.push('/home')
+            }}
           >
             Profile
           </button>
