@@ -149,10 +149,7 @@ const NotificationPreference = () => {
 
           <div className={styles.markbox}>
             <label htmlFor="for-meeting">
-              <input
-                type="checkbox"
-                value="for-meeting"
-              />
+              <input type="checkbox" value="for-meeting" />
               Notify me when a meeting is set
             </label>
           </div>
