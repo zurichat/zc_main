@@ -1,6 +1,7 @@
 import styles from './styles/CookiesSettings.module.css'
 import lockButton from '../../component-assets/lock.svg'
 import ToggleButton from './ToggleButton'
+import { Link } from 'react-router-dom'
 
 function CookiesSettings() {
   return (
@@ -43,7 +44,8 @@ function CookiesSettings() {
             <ToggleButton className={styles.toggle_button} />
           </div>
           <div className={styles.learn_more_link}>
-            <a href=".">Learn more</a>
+            <Link to="/privacy">Learn more</Link>
+            {/* <a href="."></a> */}
           </div>
           <div className={styles.action_links}>
             <button

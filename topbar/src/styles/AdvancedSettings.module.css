@@ -9,6 +9,7 @@
   display: flex;
   margin: 1rem 0;
   color: #000;
+  font-size: 20px;
 }
 
 .borderbottomone {
@@ -31,16 +32,53 @@
   margin-bottom: 0.4rem;
 }
 
+.checktype input {
+  margin-top: 0.8rem;
+}
+
+.typingticket {
+  display: flex;
+  margin-top: 0.5rem;
+}
+
 .checkformat {
   display: flex;
+  margin-top: 1rem;
+}
+
+.checkformat input {
+  margin-top: 0.8rem;
+}
+
+.format span {
+  display: flex;
+  font-weight: bolder;
+}
+
+.headpress {
+  font-family: 'Lato';
+  font-weight: bolder;
+  display: flex;
+  margin: 1rem 0;
+  color: #000;
+  font-size: 20px;
+  margin-top: 1rem;
 }
 
 .radiosend {
   display: flex;
 }
 
+.radiosend input {
+  margin-top: 0.8rem;
+}
+
 .radiostart {
   display: flex;
+}
+
+.radiostart input {
+  margin-top: 0.8rem;
 }
 
 .radiosend .send {
@@ -62,19 +100,21 @@
 
 .behaviour span {
   color: #3a3a3a;
+  display: flex;
 }
 
 .browser span {
   color: #3a3a3a;
+  display: flex;
 }
 
 .btn {
-  background: #dbdbdb;
-  border: none;
+  background: #fff;
+  border: #89a098 1px solid;
   border-radius: 3px;
   padding: 1px 4px;
   margin: 2px;
-  color: #3a3a3a;
+  color: #00b87c;
 }
 
 .input {
@@ -87,6 +127,7 @@
   padding-left: 1.5rem;
   padding-right: 22rem;
   height: 4rem;
+  display: flex;
 }
 
 .search {
@@ -96,9 +137,18 @@
 
 .checkkeys {
   display: flex;
+  font-size: 15px;
+}
+
+.checkkeys input {
+  margin-top: 0.4rem;
 }
 
 .ask {
+  display: flex;
+}
+
+.ask input {
   display: flex;
 }
 
@@ -106,7 +156,19 @@
   display: flex;
 }
 
+.survey input {
+  display: flex;
+}
+
+.survey span {
+  display: flex;
+}
+
 .warn {
+  display: flex;
+}
+
+.warn input {
   display: flex;
 }
 

@@ -50,14 +50,27 @@
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   padding-right: 20px;
 }
 
+.accountOwnerFirstName {
+  font-weight: 700;
+  color: black;
+  margin-right: 8px;
+}
+
 .accountOwnerAvatarContainer {
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   background: #c4c4c4;
-  border-radius: 100%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: larger;
 }
 
 .marketplaceHero {
@@ -432,6 +445,9 @@
   .accountOwnerAvatar {
     margin-top: 1rem;
     justify-content: flex-start;
+  }
+  .accountOwnerFirstName {
+    display: none;
   }
   .marketplaceModal {
     padding: 10px 18px;
