@@ -127,7 +127,7 @@
   justify-content: space-between;
 }
 
-.buttonGroups button.ctaButton {
+.buttonGroups button {
   background: #f6f6f6;
   color: #fff;
   display: flex;
@@ -135,15 +135,10 @@
   justify-content: center;
   width: 3rem;
   height: 3rem;
+
   border-radius: 50%;
   font-weight: 700;
   border: none;
-}
-.ctaButtonIcon {
-  color: rgb(128, 126, 126);
-}
-.ctaButton:hover .ctaButtonIcon {
-  color: #fff;
 }
 .ctaText {
   font-size: 12px;
@@ -153,17 +148,11 @@
 .buttonGroups button:hover {
   background: #00b87c;
 }
-
-.buttonGroups button svg {
-  width: 1.2rem;
-  height: 1.2rem;
+.ctaButtonIcon{
+  color: rgb(126, 123, 123);
 }
-
-.buttonGroups button svg path {
-  stroke: rgb(126, 123, 123);
-}
-.buttonGroups button svg path:hover {
-  stroke: #fff;
+.buttonGroups button:hover .ctaButtonIcon{
+  color : #fff;
 }
 
 .moreInfo {
@@ -213,7 +202,6 @@
   background: #ffffff;
   border: 1px solid #bebebe;
   border-radius: 10px;
-  text-align: left;
 }
 
 .topSection {

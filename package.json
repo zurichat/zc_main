@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "serve -s dist/ -p 9001",
-    "open": "opener http://localhost:9000",
-    "dev:root": "webpack serve --port 9000 --env isLocal",
+    "open": "opener http://localhost:7000",
+    "dev:root": "webpack serve --port 7000 --env isLocal",
     "dev:topbar": "npm run dev --prefix topbar",
     "dev:control": "npm run dev --prefix control",
     "dev:sidebar": "npm run dev --prefix sidebar",
@@ -64,7 +64,6 @@
     "@types/systemjs": "^6.1.1",
     "moment": "^2.29.1",
     "react-hot-toast": "^2.1.1",
-    "react-icons": "^4.2.0",
     "react-loader-spinner": "^4.0.0",
     "react-phone-number-input": "^3.1.27",
     "react-router-dom": "^5.3.0",
