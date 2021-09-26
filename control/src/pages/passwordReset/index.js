@@ -4,8 +4,8 @@ import Logo from '../../component-assets/zuri.svg'
 import AuthInputBox from '../../components/AuthInputBox'
 import Button from '../../components/Button'
 import styles from '../../component-styles/ResetPassword.module.css'
-import VerifyResetCode from './verifyCode'
 import axios from 'axios'
+import VerifyResetCode from './verifyCode'
 
 const ResetDefault = () => {
   const [email, setEmail] = useState('')
@@ -38,7 +38,6 @@ const ResetDefault = () => {
     <>
       <main id={styles.authPageWrapper}>
         {showDialog && <VerifyResetCode />}
-
         <aside id={styles.authAsideContainer} className={styles.display_none}>
           <div id={styles.authImageWrapper}>
             <img src={authBg} alt="backgroundImage" />
