@@ -66,7 +66,7 @@ const PreferenceMenu = () => {
           className={sideBar === 8 ? styles.active : styles.one}
         >
           <FiVideo className={styles.icon} />
-          <p> Audio & Video</p>
+          <p>Audio & Video</p>
         </div>
         <div
           onClick={() => setSideBar(9)}

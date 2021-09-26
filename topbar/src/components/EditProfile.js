@@ -1,6 +1,4 @@
 import { useRef, useState, useEffect, useContext } from 'react'
-import styles from '../styles/EditProfile.module.css'
-// import AddLink from './AddLink'
 import ProfileModal from './ProfileModal'
 
 import { authAxios } from '../utils/Api'
@@ -10,8 +8,7 @@ import avatar from '../assets/images/user.svg'
 import { ProfileContext } from '../context/ProfileModal'
 import Loader from 'react-loader-spinner'
 import toast, { Toaster } from 'react-hot-toast'
-import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
+import { data } from '../utils/Countrycode'
 import TimezoneSelect from 'react-timezone-select'
 import { StyledProfileWrapper } from '../styles/StyledEditProfile'
 
@@ -20,13 +17,10 @@ const EditProfile = () => {
   const avatarRef = useRef(null)
   const { user, orgId, userProfileImage, setUserProfileImage } =
     useContext(ProfileContext)
-  const [otherLinks, setotherLinks] = useState([])
   const [selectedTimezone, setSelectedTimezone] = useState({})
   const [links, setLinks] = useState([''])
-  const [phone, setPhone] = useState('')
-  const [imageUrl, setImageUrl] = useState('')
   const [state, setState] = useState({
-    name: user.first_name,
+    name: user.name,
     display_name: user.display_name,
     pronouns: user.pronouns,
     role: user.role,
@@ -39,11 +33,13 @@ const EditProfile = () => {
     facebook: '',
     loading: false
   })
-  let newUploadedImage = null
-  console.log('users', user)
+
+  console.log('country code', data)
 
   const addList = () => {
-    setLinks([...links, ''])
+    if (links.length < 5) {
+      setLinks([...links, ''])
+    }
   }
 
   const handleLinks = (e, index) => {
@@ -102,10 +98,10 @@ const EditProfile = () => {
     setState({ loading: true })
 
     const data = {
-      first_name: state.name,
+      name: state.name,
       display_name: state.display_name,
       pronouns: state.pronouns,
-      phone: phone,
+      phone: state.phone,
       bio: state.bio,
       timeZone: state.timezone
       // socials: [
@@ -157,7 +153,7 @@ const EditProfile = () => {
                     <AiFillCamera className="icon" />
                   </label>
                 </div>
-                <div className="input-group ml-4 md:ml-0">
+                <div className="input-group mal-4">
                   <label htmlFor="name" className="inputLabel">
                     First Name
                   </label>
@@ -172,7 +168,7 @@ const EditProfile = () => {
                 </div>
               </div>
               <div className="double-input">
-                <div className="input-group">
+                <div className="input-group mb-0">
                   <label htmlFor="dname" className="inputLabel">
                     Choose a Display Name
                   </label>
@@ -205,44 +201,8 @@ const EditProfile = () => {
                   </select>
                 </div>
               </div>
-              */
-              <button
-                onClick={handleFormSubmit}
-                className={styles.bottomButton}
-              >
-                {state.loading ? (
-                  <Loader
-                    type="ThreeDots"
-                    color="#FFF"
-                    height={32}
-                    width={32}
-                  />
-                ) : (
-                  'Save'
-                )}
-              </button>
-              <div className={styles.px9}>
-                {/* <AddLink setotherLinks={setotherLinks} /> */}
-                <div className={styles.formFooter}>
-                  <div style={{ display: 'flex' }}>
-                    <button className={styles.cancel}>Cancel</button>
-                    <button onClick={handleFormSubmit} className={styles.save}>
-                      {state.loading ? (
-                        <Loader
-                          type="ThreeDots"
-                          color="#FFF"
-                          height={40}
-                          width={40}
-                        />
-                      ) : (
-                        'Save Changes'
-                      )}
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <Toaster />
-              <div className="input-group">
+
+              <div className="input-group mb-0">
                 <label htmlFor="what" className="inputLabel">
                   What you do
                 </label>
@@ -270,13 +230,32 @@ const EditProfile = () => {
                   id="bio"
                 ></textarea>
               </div>
-              <div className="input-group">
+              <div className="input-group phone">
                 <label className="inputLabel">Phone Number</label>
-                <PhoneInput
-                  placeholder="Enter phone number"
-                  value={phone}
-                  onChange={setPhone}
-                />
+                <div className="phone-container">
+                  <select
+                    onChange={e =>
+                      setState({ ...state, prefix: e.target.value })
+                    }
+                    className="pref"
+                  >
+                    {
+                      // country code
+                      data.map(item => (
+                        <option key={item.dial_code} value={item.dial_code}>
+                          {item.dial_code}
+                        </option>
+                      ))
+                    }
+                  </select>
+                  <input
+                    onChange={e =>
+                      setState({ ...state, phone: e.target.value })
+                    }
+                    className="phoneInput"
+                    type="number"
+                  />
+                </div>
               </div>
               <div className="input-group">
                 <label className="inputLabel">Time Zone</label>
@@ -319,9 +298,11 @@ const EditProfile = () => {
                   <input type="text" className="input mb-3" key={index} />
                 ))}
 
-                <p className="warning" onClick={addList}>
-                  Add new link
-                </p>
+                {links.length !== 5 && (
+                  <p className="warning" onClick={addList}>
+                    Add new link
+                  </p>
+                )}
               </div>
             </div>
             <div className="img-container">
@@ -344,7 +325,7 @@ const EditProfile = () => {
                   {/* {state.loading ? (
                     <Loader
                       type="ThreeDots"
-                      color="#00B87C"
+                      color="#fff"
                       height={40}
                       width={40}
                     />
@@ -368,12 +349,7 @@ const EditProfile = () => {
             <button className="btns rmvBtn">Cancel</button>
             <button onClick={handleFormSubmit} className="btns chgBtn">
               {state.loading ? (
-                <Loader
-                  type="ThreeDots"
-                  color="#00B87C"
-                  height={40}
-                  width={40}
-                />
+                <Loader type="ThreeDots" color="#fff" height={40} width={40} />
               ) : (
                 'Save Changes'
               )}
