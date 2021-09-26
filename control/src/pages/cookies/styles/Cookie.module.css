@@ -2,21 +2,17 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  width: 49%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  max-width: 35%;
   position: fixed;
-  bottom: 0;
+  bottom: 1rem;
 }
 
 .bannerBox {
   background-color: rgb(240, 240, 240);
-  padding: 2rem;
-  margin: 5rem 10rem 2rem 3rem;
+  padding: 1.8rem;
+  margin-left: 1rem;
   border-radius: 20px;
-  position: absolute;
-  bottom: 0px;
+  max-width: 100%;
 }
 
 .bannerLogo {
@@ -45,20 +41,17 @@
 
 .bannerText p a {
   color: red;
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
 
 .button {
+  width: 50%;
+  display: table;
+  margin: 0 auto;
   margin-top: 1rem;
-  padding: 0.8rem 4rem;
+  padding: 0.8rem 2rem;
   border-radius: 100px;
   border: none;
-}
-
-.bannerButtons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .allowButton {
@@ -74,59 +67,20 @@
 
 .settingsButton {
   background-color: white;
-  margin-left: 5rem;
 }
 
 .settingsButton a {
   color: #000;
-  font-weight: bold;
-  font-size: 1rem;
+  font-weight: bolder;
+  font-size: 1.04rem;
 }
 
 .bannerButtons .settingsButton:hover {
   color: rgb(187, 0, 0);
 }
 
-@media screen and (max-width: 890px) {
-  .button {
-    width: 100%;
-    height: 3rem;
-  }
-
-  .settingsButton {
-    margin-left: 0;
-  }
-}
-
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 760px) {
   .bannerContainer {
-    margin: 0 2rem;
-    width: 29%;
-  }
-
-  .bannerTitle h1 {
-    font-size: 1.1rem;
-    margin: -1rem;
-  }
-
-  .bannerBox {
-    padding: 3rem 2rem;
-    margin: 1.5rem;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .bannerContainer {
-    margin: 0 auto;
-    width: 25%;
-  }
-
-  .button {
-    width: 100%;
-    height: 3rem;
-  }
-
-  .settingsButton {
-    margin-left: 0;
+    max-width: 70%;
   }
 }
