@@ -51,41 +51,54 @@ const Sidebar = props => {
   // let user = JSON.parse(sessionStorage.getItem('user'))
   let token = sessionStorage.getItem('token')
 
-  useEffect(async () => {
-    const { _id, Organizations } = await GetUserInfo()
-    // console.log('sidebar organization', Organization)
-    setUserInfo({
-      userId: _id,
-      Organizations,
-      token
-    })
-
-    if (_id !== '') {
-      const org_url = `/organizations/${Organizations[0]}/plugins`
-      console.log('sidebar url', org_url)
-      authAxios
-        .get(org_url)
-        .then(res => setOrganizationInfo(res.data.data))
-        .catch(err => console.log(err))
-    } else {
-      console.log('Checking')
+  const trimUrl = url => {
+    if (url !== undefined) {
+      if (url.substr(-1) === '/') {
+        return url.substr(0, url.length - 1)
+      }
+      return url
     }
+  }
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const { _id, Organizations } = await GetUserInfo()
+      // console.log('sidebar organization', Organization)
+      setUserInfo({
+        userId: _id,
+        Organizations,
+        token
+      })
+
+      if (_id !== '') {
+        const org_url = `/organizations/${Organizations[0]}/plugins`
+        console.log('sidebar url', org_url)
+        authAxios
+          .get(org_url)
+          .then(res => setOrganizationInfo(res.data.data))
+          .catch(err => console.log(err))
+      } else {
+        console.log('Checking')
+      }
+    }
+    fetchUser()
   }, [])
 
   useEffect(() => {
     // console.log('sidebar plugins', organizationInfo)
     {
       organizationInfo &&
-        organizationInfo.map((plugin, index) => {
+        organizationInfo.map(plugin => {
           const sidebarUrl = plugin.plugin.sidebar_url
+          const trimmedUrl = trimUrl(sidebarUrl)
 
           axios
             .get(
               `${
-                sidebarUrl.includes('https://') ||
-                sidebarUrl.includes('http://')
-                  ? sidebarUrl
-                  : `https://${sidebarUrl}`
+                trimmedUrl.includes('https://') ||
+                trimmedUrl.includes('http://')
+                  ? trimmedUrl
+                  : `https://${trimmedUrl}`
               }?org=${userInfo.Organizations[0]}&user=${userInfo.userId}`
             )
             .then(res => {
@@ -96,7 +109,6 @@ const Sidebar = props => {
                     setSidebarData(prev => [...prev, validPlugin])
                   }
                 }
-
                 // console.log(validPlugin)
               } catch (err) {
                 console.log(err, 'Invalid plugin')
@@ -106,40 +118,6 @@ const Sidebar = props => {
         })
     }
   }, [organizationInfo])
-
-  useEffect(() => {
-    {
-      sidebarData &&
-        sidebarData.map((pluginName, index) => {
-          console.log('Plugin', pluginName)
-          // if (
-          //   pluginName.data !== undefined &&
-          //   pluginName.data.joined_rooms !== undefined
-          // ) {
-          //   const pluginInfo = {
-          //     id: index,
-          //     title: pluginName.data.name,
-          //     rooms: pluginName.joined_rooms
-          //   }
-          //   // new Set(prev).add(pluginInfo)
-          //   setFilteredPlugins(prev =>
-          //     !prev.has(pluginInfo) ? new Set(prev).add(pluginInfo) : null
-          //   )
-          // } else {
-          //   if (pluginName.joined_rooms !== undefined) {
-          //     const pluginInfo = {
-          //       id: index,
-          //       title: pluginName.name,
-          //       rooms: pluginName.joined_rooms
-          //     }
-          //     setFilteredPlugins(prev =>
-          //       !prev.has(pluginInfo) ? new Set(prev).add(pluginInfo) : null
-          //     )
-          //   }
-          // }
-        })
-    }
-  }, [sidebarData])
 
   return (
     <div className={`container-fluid ${styles.sb__container}`}>
@@ -180,9 +158,9 @@ const Sidebar = props => {
                 {links.map((plugs, id) => {
                   return (
                     <div key={id}>
-                      <a href={plugs.href} onClick={navigateToUrl}>
+                      <Link to={plugs.href} onClick={navigateToUrl}>
                         <p>{plugs.name}</p>
-                      </a>
+                      </Link>
                     </div>
                   )
                 })}
