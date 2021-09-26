@@ -2825,10 +2825,10 @@ es-abstract@^1.18.0-next.2:
     string.prototype.trimstart "^1.0.4"
     unbox-primitive "^1.0.1"
 
-es-module-lexer@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/es-module-lexer/-/es-module-lexer-0.9.0.tgz#fe4c4621977bc668e285c5f1f70ca3b451095fda"
-  integrity sha512-qU2eN/XHsrl3E4y7mK1wdWnyy5c8gXtCbfP6Xcsemm7fPUR1PIV1JhZfP7ojcN0Fzp69CfrS3u76h2tusvfKiQ==
+es-module-lexer@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/es-module-lexer/-/es-module-lexer-0.7.1.tgz#c2c8e0f46f2df06274cdaf0dd3f3b33e0a0b267d"
+  integrity sha512-MgtWFl5No+4S3TmhDmCz2ObFGm6lEpTnzbQi+Dd+pw4mlTIZTmM2iAs5gRlmx5zS9luzobCSBSI90JM/1/JgOw==
 
 es-to-primitive@^1.2.1:
   version "1.2.1"
@@ -5372,7 +5372,7 @@ postcss@^8.2.15:
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.3.8.tgz#9ebe2a127396b4b4570ae9f7770e7fb83db2bac1"
   integrity sha512-GT5bTjjZnwDifajzczOC+r3FI3Cu+PgPvrsjhQdRqa2kTJ4968/X9CUce9xttIB0xOs5c6xf0TCWZo/y9lF6bA==
   dependencies:
-    nanocolors "^0.1.5"
+    nanocolors "^0.2.2"
     nanoid "^3.1.25"
     source-map-js "^0.6.2"
 
@@ -6887,9 +6887,9 @@ webpack-dev-middleware@^5.1.0:
   resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-5.2.0.tgz#3047a66a4c4f53927c3834478054d8105b57dec5"
   integrity sha512-akBZtC3GIdHCJ2rA4DJAIySTZRPG2T5OVB745cIetwvxWxsdTALXSrL81LjelvRM3xZQyuPKMqTlgBYd+I+z9Q==
   dependencies:
-    colorette "^1.2.2"
     memfs "^3.2.2"
     mime-types "^2.1.31"
+    nanocolors "^0.2.1"
     range-parser "^1.2.1"
     schema-utils "^3.1.0"
 
@@ -6951,8 +6951,8 @@ webpack@^5.51.1:
     acorn-import-assertions "^1.7.6"
     browserslist "^4.14.5"
     chrome-trace-event "^1.0.2"
-    enhanced-resolve "^5.8.0"
-    es-module-lexer "^0.7.1"
+    enhanced-resolve "^5.8.3"
+    es-module-lexer "^0.9.0"
     eslint-scope "5.1.1"
     events "^3.2.0"
     glob-to-regexp "^0.4.1"
