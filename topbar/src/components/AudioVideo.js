@@ -20,7 +20,7 @@ const AudioVideo = () => {
             </select>
           </div>
         </div>
-        <div className={styles.line}></div>
+        {/* <div className={styles.line}></div> */}
         <div className={styles.microphone}>
           <h6 className={styles.head}>Microphone</h6>
           <div className={styles.select}>
@@ -56,6 +56,7 @@ const AudioVideo = () => {
               <div className={styles.enable}>Enable automatic gain control</div>
             </div>
           </div>
+          <div className={styles.line}></div>
           <h6 className={styles.headspeaker}>Speaker</h6>
           <div className={styles.speaker}>
             <div className={styles.selecttwo}>
@@ -103,30 +104,29 @@ const AudioVideo = () => {
             </div>
             <div className={styles.mutemic}>Mute my microphone</div>
             <div className={styles.automatic}>
-              Automatically turn on captions when you're in a huddle
+                Automatically turn on captions when you're in a huddle
             </div>
             <div className={styles.warning}>
-              Send a warning if you're starting a huddle in a channel with more
-              than 150 members
+                Send a warning if you're starting a huddle in a channel with
+                more than 150 members
             </div>
             <div className={styles.music}>
-              Play music to let you know when you're the last one in the huddle
+                Play music to let you know when you're the last one in the
+                huddle
             </div>
           </div>
           <div className={styles.head}>When Slack is in the background:</div>
           <div className={styles.allow}>
-            <span className={styles.keyboard}>
-              {' '}
-              Allow keyboard shortcut to Mute
-            </span>{' '}
-            <div className={styles.muteunmute}>
-              {' '}
-              Use &nbsp;
-              <button className={styles.btn}>Ctrl</button> &nbsp;
-              <button className={styles.btn}>Shift</button> &nbsp;
-              <button className={styles.btn}>Space</button> &nbsp; to mute or
-              unmute your mic
-            </div>
+                <span className={styles.keyboard}>
+                  {' '}
+                  Allow keyboard shortcut to Mute
+                </span>{' '}
+                <div className={styles.muteunmute}> Use &nbsp;
+                  <button className={styles.btn}>Ctrl</button> &nbsp;
+                  <button className={styles.btn}>Shift</button> &nbsp;
+                  <button className={styles.btn}>Space</button> &nbsp;
+                     to mute or unmute your mic
+                </div>
           </div>
         </div>
         <div className={styles.line}></div>
@@ -141,5 +141,5 @@ const AudioVideo = () => {
     </div>
   )
 }
+export default AudioVideo;
 
-export default AudioVideo
