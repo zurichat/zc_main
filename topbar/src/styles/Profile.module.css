@@ -148,11 +148,11 @@
 .buttonGroups button:hover {
   background: #00b87c;
 }
-.ctaButtonIcon{
+.ctaButtonIcon {
   color: rgb(126, 123, 123);
 }
-.buttonGroups button:hover .ctaButtonIcon{
-  color : #fff;
+.buttonGroups button:hover .ctaButtonIcon {
+  color: #fff;
 }
 
 .moreInfo {
@@ -195,6 +195,7 @@
 }
 
 .profileDropDown {
+  text-align: left;
   position: absolute;
   top: 30%;
   right: 16px;

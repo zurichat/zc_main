@@ -15,7 +15,6 @@ const AdvancedSettings = () => {
                 With this ticket, use
                 <button className={styles.btn}>Shift</button> to send
               </div>
-
             </div>
           </div>
           <div className={styles.checkformat}>
