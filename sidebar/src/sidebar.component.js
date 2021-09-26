@@ -6,7 +6,9 @@ import Modal from './components/InviteModal'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
 import styled from 'styled-components'
 import AuthInputBox from './components/AuthInputBox'
+import DropDown from './components/Drop'
 
+import newMsgIcon from './assets/images/newMsgIcon.svg'
 import threadIcon from './verified-components/assets/icons/thread-icon.svg'
 import dmIcon from './verified-components/assets/icons/dm-icon.svg'
 import draftIcon from './verified-components/assets/icons/draft-icon.svg'
@@ -140,15 +142,23 @@ const Sidebar = props => {
   }, [sidebarData])
 
   return (
-    <div className={styles.container}>
-      <div className={styles.orgInfo}>
-        <div className="" style={{ background: theme.bgcolor }}>
-          <div className="sb-flex sb-align-center">
-            <p className="sb-mr-2">HNGi8</p>
-            <img src={shapekeyboardarrowdown} alt="HNGi8" />
+    <div className={`container-fluid ${styles.sb__container}`}>
+      <div className={`row ${styles.orgDiv}`}>
+        <div className={`col-12 px-3 ${styles.orgInfo}`}>
+          <div className={`row p-0 ${styles.orgHeader}`}>
+            <p className={`col-6 mb-0 ${styles.orgTitle}`}>HNGi8</p>
+            <img
+              className={`col-6 mx-auto ${styles.arrowDown}`}
+              src={shapekeyboardarrowdown}
+              alt="HNGi8"
+            />
           </div>
-          <div className={styles.newMessage}>
-            <img src={newmessage} alt="message" />
+          <div className={`row ${styles.newMessage}`}>
+            <img
+              className={`col-3 img-fluid w-100 ${styles.newMsgIcon}`}
+              src={newMsgIcon}
+              alt="message"
+            />
           </div>
         </div>
 
@@ -181,71 +191,93 @@ const Sidebar = props => {
           </Content>
         </Overlay>
       </div>
-      <div>
-        <Item>
-          <img src={threadIcon} alt="icon" />
-          <p>Threads</p>
-        </Item>
+      <div className={`row mt-2 ${styles.sb__item}`}>
+        <div
+          className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+        >
+          <img className={`${styles.item__img}`} src={threadIcon} alt="icon" />
+          <p className={`mb-0 ${styles.item_p}`}>Threads</p>
+        </div>
       </div>
-      <div>
-        <Item>
-          <img src={dmIcon} alt="icon" />
-          <p>All DMs</p>
-        </Item>
+      <div className={`row ${styles.sb__item}`}>
+        <div
+          className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+        >
+          <img className={`${styles.item__img}`} src={dmIcon} alt="icon" />
+          <p className={`mb-0 ${styles.item_p}`}>All DMs</p>
+        </div>
       </div>
-      <div>
-        <Item>
-          <img src={draftIcon} alt="icon" />
-          <p>Drafts</p>
-        </Item>
+      <div className={`row ${styles.sb__item}`}>
+        <div
+          className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+        >
+          <img className={`${styles.item__img}`} src={draftIcon} alt="icon" />
+          <p className={`mb-0 ${styles.item_p}`}>Drafts</p>
+        </div>
       </div>
-      <div>
-        <Item>
-          <img src={filesIcon} alt="icon" />
-          <p>Files</p>
-        </Item>
+      <div className={`row ${styles.sb__item}`}>
+        <div
+          className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+        >
+          <img className={`${styles.item__img}`} src={filesIcon} alt="icon" />
+          <p className={`mb-0 ${styles.item_p}`}>Files</p>
+        </div>
       </div>
-      <div>
-        <Item>
-          <img src={pluginIcon} alt="icon" />
-          <p>Plugins</p>{' '}
-          <ClickButton
+      <div className={`row ${styles.sb__item}`}>
+        <div
+          className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+        >
+          <img className={`${styles.item__img}`} src={pluginIcon} alt="icon" />
+          <p className={`mb-0 ${styles.item_p}`}>Plugins</p>{' '}
+          <img
             onClick={open}
             className={`${styles.addButton}`}
             src={addIcon}
             alt="Add button"
             role="button"
           />
-        </Item>
+        </div>
       </div>
+
+      {/* <DropDown /> */}
+
+      {/* SIDE BAR DATA */}
       {sidebarData &&
         sidebarData.map((plugin, index) => {
           return (
-            <div key={index}>
-              <h5>{plugin.name}</h5>
+            <DropDown
+              itemName={plugin.name}
+              id={plugin.name}
+              key={index}
+              items={plugin}
+            />
+            // console.log()
 
-              <ul>
-                {plugin.joined_rooms &&
-                  plugin.joined_rooms.map((room, index) => {
-                    if (room.room_name !== undefined) {
-                      return (
-                        <li key={index}>
-                          <a
-                            style={{
-                              marginLeft: '5px',
-                              color: 'red'
-                            }}
-                            href={room.room_url}
-                            onClick={navigateToUrl}
-                          >
-                            {room.room_name}
-                          </a>
-                        </li>
-                      )
-                    }
-                  })}
-              </ul>
-            </div>
+            // <div key={index}>
+            //   <h5>{plugin.name}</h5>
+
+            //   <ul>
+            //     {plugin.joined_rooms &&
+            //       plugin.joined_rooms.map((room, index) => {
+            //         if (room.room_name !== undefined) {
+            //           return (
+            //             <li key={index}>
+            //               <a
+            //                 style={{
+            //                   marginLeft: '5px',
+            //                   color: 'red'
+            //                 }}
+            //                 href={room.room_url}
+            //                 onClick={navigateToUrl}
+            //               >
+            //                 {room.room_name}
+            //               </a>
+            //             </li>
+            //           )
+            //         }
+            //       })}
+            //   </ul>
+            // </div>
           )
         })}
       {/*
@@ -294,7 +326,7 @@ const Sidebar = props => {
 
       {/* button for adding invites */}
 
-      <Button
+      {/* <Button
         style={{
           width: '80%',
           margin: '0 auto',
@@ -303,7 +335,7 @@ const Sidebar = props => {
         }}
       >
         <LinkStyled to={'/createworkspace'}>Create Workspace</LinkStyled>{' '}
-      </Button>
+      </Button> */}
     </div>
   )
 }
