@@ -45,7 +45,9 @@
   line-height: 21px;
 }
 .itemTitle1 .spanL {
-  color: #00b87c;
+  display: flex;
+  flex-direction: row;
+  color: #1a61db;
   font-size: 13px;
   font-size: 15px;
   font-weight: normal;
@@ -133,7 +135,7 @@ input[type='checkbox'] {
   text-align: left;
 }
 .itemTitle2 .spanSmall {
-  color: #00b87c;
+  color: #1a61db;
 }
 .textarea {
   border-color: 1px #e5e5e5;
@@ -210,7 +212,6 @@ input[type='checkbox'] {
   width: 173px;
   height: 39px;
   outline: none;
-  font-size: 13px;
   z-index: 0;
 }
 
