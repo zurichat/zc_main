@@ -127,7 +127,7 @@
   justify-content: space-between;
 }
 
-.buttonGroups button {
+.buttonGroups button.ctaButton {
   background: #f6f6f6;
   color: #fff;
   display: flex;
@@ -135,13 +135,18 @@
   justify-content: center;
   width: 3rem;
   height: 3rem;
-
   border-radius: 50%;
   font-weight: 700;
   border: none;
 }
+.ctaButtonIcon {
+  color: rgb(128, 126, 126);
+}
+.ctaButton:hover .ctaButtonIcon {
+  color: #fff;
+}
 .ctaText {
-  font-size: 10px;
+  font-size: 12px;
   color: rgb(128, 126, 126);
   text-align: center;
 }
@@ -208,6 +213,7 @@
   background: #ffffff;
   border: 1px solid #bebebe;
   border-radius: 10px;
+  text-align: left;
 }
 
 .topSection {
