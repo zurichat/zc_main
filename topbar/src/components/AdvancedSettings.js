@@ -15,12 +15,13 @@ const AdvancedSettings = () => {
                 With this ticket, use
                 <button className={styles.btn}>Shift</button> to send
               </div>
+
             </div>
           </div>
           <div className={styles.checkformat}>
             <input type="checkbox" name="" id="" />
-            <div className={styles.format}>
-              <span> Format messages with markup</span>
+            <div className={styles.typing}>
+              <span> Format messages with markup</span> <br />
               The text formatting toolbar won't show in the composer
             </div>
           </div>
@@ -72,7 +73,7 @@ const AdvancedSettings = () => {
           {' '}
           Exclude these channels from search results:
         </h5>
-        <div className={styles.barcontainer}>
+        <div className="barcontainer">
           <div className={styles.bar}>
             <input
               type="text"
