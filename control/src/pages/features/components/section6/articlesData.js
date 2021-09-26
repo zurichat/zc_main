@@ -1,6 +1,6 @@
-import article from '../../assets/article_image_1.svg'
-import article2 from '../../assets/article_image_2.svg'
-import article3 from '../../assets/article_image_3.svg'
+import article from '../../assets/article-image-1.png'
+import article2 from '../../assets/article-image-2.png'
+import article3 from '../../assets/article-image-3.png'
 
 export const Articles = [
   {
