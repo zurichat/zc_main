@@ -22,7 +22,6 @@ const TopbarModal = ({ members }) => {
   const state = useContext(TopbarContext)
   const [showModal] = state.show
   // const [username, setUsername] = state.username
-  const { presence, setPresence } = state
   const [showStatus] = state.status
   const [showMembersModal] = state.modal
   const {
@@ -32,7 +31,9 @@ const TopbarModal = ({ members }) => {
     closeStatus,
     modalRef,
     closeMembersModal,
-    toggleUserPresence
+    toggleUserPresence,
+    presence,
+    setPresence
   } = state
   const [modal, setModal] = useState('')
   const [pause, setPause] = useState(false)
@@ -110,7 +111,13 @@ const TopbarModal = ({ members }) => {
             </div>
 
             <div className={styles.oneRight}>
-              <h4>Praise.A</h4>
+              <h4>
+                {user.user_name
+                  ? `${user.user_name
+                      .charAt(0)
+                      .toUpperCase()}${user.user_name.slice(1)}`
+                  : 'Anonymous'}
+              </h4>
               {toggleStatus}
             </div>
           </div>
