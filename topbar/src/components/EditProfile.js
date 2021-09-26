@@ -205,8 +205,7 @@ const EditProfile = () => {
                   </select>
                 </div>
               </div>
-            
-            
+
               <div className="input-group">
                 <label htmlFor="what" className="inputLabel">
                   What you do
@@ -306,9 +305,7 @@ const EditProfile = () => {
                   id="img"
                 />
                 <label htmlFor="img" className="btns chgBtn">
-                
                   Upload Image
-               
                 </label>
                 <button className="btns rmvBtn">Delete image</button>
               </div>

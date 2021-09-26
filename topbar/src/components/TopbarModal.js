@@ -33,9 +33,9 @@ const TopbarModal = ({ members }) => {
     closeMembersModal,
     toggleUserPresence,
     reusableModal,
-     setReusableModal
+    setReusableModal
   } = state
- 
+
   const [pause, setPause] = useState(false)
   const [statusModal, setStatusModal] = useState(false)
 
@@ -185,11 +185,13 @@ const TopbarModal = ({ members }) => {
             </p>
           </div>
 
-          { reusableModal === 'edit profile' && <EditProfile />}
+          {reusableModal === 'edit profile' && <EditProfile />}
 
-          { reusableModal === 'preference' && <Preferences />}
+          {reusableModal === 'preference' && <Preferences />}
 
-          { reusableModal === 'downloads' && <Downloads setModal={setReusableModal} />}
+          {reusableModal === 'downloads' && (
+            <Downloads setModal={setReusableModal} />
+          )}
 
           <hr className={styles.hr} />
 
