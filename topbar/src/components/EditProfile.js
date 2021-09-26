@@ -52,8 +52,6 @@ const EditProfile = () => {
     setLinks(links[index])
   }
 
-  //Function handling Image Upload
-
   const handleImageChange = event => {
     setState({ loading: true })
     if (imageRef.current.files[0]) {
@@ -77,6 +75,7 @@ const EditProfile = () => {
           newUploadedImage = res.data.data
           setState({ loading: false })
           setUserProfileImage(res.data.data)
+          console.log(userProfileImage)
           toast.success('User Image Updated Successfully', {
             position: 'bottom-center'
           })
@@ -95,7 +94,7 @@ const EditProfile = () => {
     setUserProfileImage(user.image_url)
   }, [user])
 
-  // This will handle the profile form submission
+
 
   const handleFormSubmit = e => {
     e.preventDefault()

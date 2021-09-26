@@ -145,18 +145,8 @@ const AudioVideo = () => {
           <div className={styles.screensaver}>
             When your screen saver starts or your computer locks...
           </div>
-          <div className={styles.check}>
-            <div className={styles.checkcall}>
-              <input type="checkbox" name="" id="" />
-              <div className={styles.call}>Automatically leave calls</div>
-            </div>
-            <div className={styles.checkleavehuddle}>
-              <input type="checkbox" name="" id="" />
-              <div className={styles.leavehudle}>
-                Automatically leave huddles
-              </div>
-            </div>
-          </div>
+          <div className={styles.call}>Automatically leave calls</div>
+          <div className={styles.leavehuddle}>Automatically leave huddles</div>
         </div>
       </div>
     </div>
