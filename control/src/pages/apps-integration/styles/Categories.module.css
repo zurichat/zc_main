@@ -15,7 +15,7 @@
   height: max-content;
   position: relative;
 }
-button {
+.categories button {
   background: none;
   border: none;
   margin-left: 1rem;
