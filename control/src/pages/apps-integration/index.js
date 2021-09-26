@@ -10,7 +10,7 @@ function AppsAndIntegrations() {
       <Header />
       <SectionOne />
       <SectionTwo />
-      <SectionThree/>
+      <SectionThree />
       <Footer />
     </div>
   )

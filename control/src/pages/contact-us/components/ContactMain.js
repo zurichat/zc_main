@@ -1,5 +1,5 @@
 import contactStyle from '../styles/contactMain.module.css'
-import ContactUs from './ContactUsImg.png'
+import ContactUs from './ContactUsImg.svg'
 import FAQselected from './FAQSelected.js'
 
 const contactTitle = () => {
