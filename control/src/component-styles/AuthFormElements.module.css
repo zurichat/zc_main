@@ -103,7 +103,7 @@
 .rememberMe a {
   align-self: center;
   color: #00b87c;
-  font-size: 0.95em;
+  /* font-size: 0.95em; */
   /* color: #1a61db; */
 }
 
@@ -114,12 +114,12 @@
 
 .rememberMe {
   margin-block: 1em 2em;
-  font-size: 0.95em;
+  /* font-size: 0.95em; */
   line-height: 1.5em;
   display: flex;
   flex-wrap: wrap;
   /* justify-content: center; */
-  align-items: center;
+  align-items: space-between;
   /* height: 5vh; */
   /* display: inline-block; */
   /* margin: 10px 0; */
@@ -141,11 +141,13 @@
   color: #1a61db;
 } */
 
-/* .rememberMe .left {
-  display: block;
+.rememberMe .left {
+  /* display: block;
   float: left;
-  width: auto;
-} */
+  width: auto; */
+  margin: 0;
+  margin-right: auto;
+}
 /* 
 .rememberMe .right {
   display: block;

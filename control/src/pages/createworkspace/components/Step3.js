@@ -40,7 +40,7 @@ const Step3 = () => {
           <Step>Step 3 of 3</Step>
           <Heading>
             Who do you email most about <br />
-            <span> project-{`${projectname}`}</span>?
+            <span>{`${projectname}`}</span>?
           </Heading>
           <Marketing>
             Give Zuri Chat a spin and add a few coworkers you talk with
@@ -59,9 +59,18 @@ const Step3 = () => {
 
               <SharableLink>
                 <img src={LinkIcon} alt="" />
-                <a style={{ color: '#00B87C', cursor: 'pointer' }}>
-                  Get a sharable link <span> instead</span>
+                <a
+                  style={{ color: '#00B87C', cursor: 'pointer' }}
+                  onClick={() => {
+                    navigator.clipboard.writeText(
+                      `https://zuri.chat/invite?organization=${projectname}`
+                    )
+                    alert(`link has been copied`)
+                  }}
+                >
+                  Get a sharable link
                 </a>
+                <span> instead</span>
               </SharableLink>
             </InputLinkSection>
           </InputSection>
@@ -266,7 +275,7 @@ const SharableLink = styled.div`
     font-weight: 600;
     font-size: ${18 / 16}rem;
   }
-  & > a > span {
+  & > span {
     color: var(--color);
   }
   @media (max-width: 35rem) {
