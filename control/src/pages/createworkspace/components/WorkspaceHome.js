@@ -12,7 +12,42 @@ const WorkspaceHome = () => {
   const { url } = useRouteMatch()
   const [organizations, setOrganizations] = useState([])
   const [user, setUser] = useState(null)
+  const [email, setNewUserEmail] = useState(null)
+  const [password, setNewUserPassword] = useState(null)
 
+  useEffect(() => {
+    setNewUserEmail(JSON.parse(localStorage.getItem('newUserEmail')))
+    setNewUserPassword(JSON.parse(localStorage.getItem('userUserPassword')))
+
+    console.log(email)
+    console.log(password)
+    const autoLogin = () => {
+      axios
+        .post('https://api.zuri.chat/auth/login', {
+          email,
+          password
+        })
+        .then(response => {
+          console.log(response.data)
+          const { data, message } = response.data
+
+          //Store token in localstorage
+          sessionStorage.setItem('token', data.user.token)
+
+          //Store token in localstorage
+          sessionStorage.setItem('session_id', data.session_id)
+
+          //Store user copy in localstorage
+          sessionStorage.setItem('user', JSON.stringify(data.user))
+        })
+        .catch(err => {
+          console.log(password)
+          console.log(err.message)
+        })
+    }
+
+    autoLogin()
+  }, [email, password])
   useEffect(() => {
     const user = JSON.parse(sessionStorage.getItem('user'))
     console.log(user)
