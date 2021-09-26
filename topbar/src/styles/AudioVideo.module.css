@@ -351,11 +351,73 @@
   font-weight: bold;
   display: flex;
   margin-top: 0.5rem;
-  margin-left: 2rem;
+  margin-left: 2.2rem;
+}
+
+.mutemic {
+  display: flex;
+  margin-left: 2.2rem;
+  margin-top: 0.5rem;
+}
+
+.automatic {
+  display: flex;
+  margin-left: 2.2rem;
+  margin-top: 0.5rem;
+}
+
+.warning {
+  display: flex;
+  margin-left: 2.2rem;
+  margin-top: 0.5rem;
+}
+
+.music {
+  display: flex;
+  margin-left: 2.2rem;
+  margin-top: 0.5rem;
+}
+
+.keyboard {
+  display: flex;
+  font-size: 15px;
+  margin-top: 1rem;
+  font-weight: bold;
+  margin-left: 2.2rem;
+}
+
+.muteunmute {
+  display: flex;
+  font-size: 15px;
+  margin-left: 2.2rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  background: #fff;
+  border: #00b87c 1px solid;
+  padding: 0 0.5rem;
+  border-radius: 4px;
+  color: #00b87c;
+  font-size: 15px;
 }
 
 .screensaver {
   font-size: 15px;
   color: #3a3a3a;
   font-weight: bold;
+}
+
+.call {
+  display: flex;
+  font-size: 15px;
+  margin-left: 2.2rem;
+  margin-top: 1rem;
+}
+
+.leavehuddle {
+  display: flex;
+  font-size: 15px;
+  margin-left: 2.2rem;
+  margin-top: 1rem;
 }
