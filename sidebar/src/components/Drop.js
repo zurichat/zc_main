@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import styles from '../styles/Drop.module.css'
 import { TiArrowSortedDown } from 'react-icons/ti'
+import { Link } from 'react-router-dom'
 
 const DropDown = ({ itemName, items }) => {
   const [isOpen, setOpen] = useState(false)
@@ -33,9 +34,9 @@ const DropDown = ({ itemName, items }) => {
               return (
                 // console.log(itemList)
                 <li key={index} className={`row ${styles.item__list}`}>
-                  <a
+                  <Link
                     className={`col-12 d-flex align-items-center ${styles.item_name}`}
-                    href={room.room_url}
+                    to={room.room_url}
                   >
                     <img
                       className={` ${styles.item__image}`}
@@ -45,7 +46,7 @@ const DropDown = ({ itemName, items }) => {
                     <p className={`mb-0 ${styles.dropDown__name}`}>
                       {room.room_name}
                     </p>
-                  </a>
+                  </Link>
                 </li>
               )
             }
