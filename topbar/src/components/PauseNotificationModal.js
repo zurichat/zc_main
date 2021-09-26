@@ -63,7 +63,7 @@ const PauseNotificationModal = ({ setShowModal, modal }) => {
           </div>
 
           <div className={styles.buttonContainer}>
-            <button className={styles.btn}>Save changes</button>
+            <button className={styles.btns}>Save changes</button>
           </div>
         </div>
       </div>
