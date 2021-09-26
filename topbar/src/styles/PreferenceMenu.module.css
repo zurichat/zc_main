@@ -3,7 +3,6 @@
   background: #f9f9f9;
   height: 100%;
   position: relative;
-  overflow: hidden;
   float: left;
 }
 .itemsContainer {
@@ -11,20 +10,19 @@
 }
 .one,
 .active {
-  /* display: flex;
-  flex-direction: row;  */
+  display: flex;
+  flex-direction: row;
   align-items: center;
   margin-left: 20px;
   padding: 3px;
-  margin-bottom: 10px;
+  margin-bottom: 22px;
   cursor: pointer;
 }
 .one:first-child {
   padding-top: 15px;
 }
 .icon {
-  /* margin-right: 15px; */
-  margin-top: -15px;
+  margin-right: 15px;
 }
 .active p {
   color: #00b87c;
@@ -39,11 +37,11 @@
   align-items: left;
   margin-left: 20px;
   padding: 2px;
-  margin-bottom: 0px;
+  margin-bottom: 22px;
   cursor: pointer;
 }
 .one:first-child {
-  padding-top: 0px;
+  padding-top: 10px;
 }
 .icon {
   margin-right: 10px;

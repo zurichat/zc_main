@@ -16,6 +16,7 @@ const WorkspaceHome = () => {
   const [password, setNewUserPassword] = useState(null)
 
   useEffect(() => {
+    sessionStorage.clear()
     setNewUserEmail(JSON.parse(localStorage.getItem('newUserEmail')))
     setNewUserPassword(JSON.parse(localStorage.getItem('userUserPassword')))
 
