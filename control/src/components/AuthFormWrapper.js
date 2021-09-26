@@ -13,10 +13,7 @@ const FormWrapper = ({
   topLineText,
   submitButtonName,
   error,
-  name,
-  email,
-  password,
-  check,
+  disabled,
   handleSubmit,
   bottomLine,
   bottomLink,
@@ -68,13 +65,8 @@ const FormWrapper = ({
 
           <div className={`${styles.btnContainer}`}>
             <input
-              disabled={(name || email) && password && check ? false : true}
-              className={`${
-                styles.btn
-                // (name || email) && password && check
-                //   ? styles.btn
-                //   : styles.btnDisabled
-              }`}
+              disabled={!disabled}
+              className={`${styles.btn}`}
               value={submitButtonName}
               type="submit"
             />
