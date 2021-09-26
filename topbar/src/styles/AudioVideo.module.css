@@ -1,11 +1,11 @@
 .container {
   width: 300%;
   margin: 2rem;
-  font-family: "Lato";
+  font-family: 'Lato';
 }
 
 .head {
-  font-family: "Lato";
+  font-family: 'Lato';
   font-weight: bolder;
   display: flex;
   margin-top: 1rem;
@@ -23,23 +23,22 @@
 }
 
 .selectfirst {
- width: 15%;
- margin-bottom: 1.5rem;
- height: 3rem;
- border-radius: 4px;
- padding-left: .5rem;
- border: #dde5e9 solid 1px;
- color: #3a3a3a;
- display: flex;
- font-size: 15px;
+  width: 15%;
+  margin-bottom: 1.5rem;
+  height: 3rem;
+  border-radius: 4px;
+  padding-left: 0.5rem;
+  border: #dde5e9 solid 1px;
+  color: #3a3a3a;
+  display: flex;
+  font-size: 15px;
 }
-
 
 .selectsecond {
   width: 15%;
   height: 3rem;
   border-radius: 4px;
-  padding-left: .5rem;
+  padding-left: 0.5rem;
   border: #dde5e9 solid 1px;
   color: #3a3a3a;
   display: flex;
@@ -49,7 +48,7 @@
 .selectthird {
   height: 3rem;
   border-radius: 4px;
-  padding-left: .5rem;
+  padding-left: 0.5rem;
   padding-right: 2rem;
   border: #dde5e9 solid 1px;
   color: #3a3a3a;
@@ -64,154 +63,154 @@
 }
 
 .inputlevel {
-  color: #242424 ;
+  color: #242424;
   display: flex;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   font-weight: bold;
 }
 
 .barfirst {
-  background:#00B87C;
+  background: #00b87c;
   width: 1.2%;
-  height: .8rem;
-  margin: .8rem .5rem 0 1rem;
+  height: 0.8rem;
+  margin: 0.8rem 0.5rem 0 1rem;
   border-radius: 5px;
 }
 
 .barsecond {
-  background: #00B87C;
+  background: #00b87c;
   width: 1.2%;
-  height: .8rem;
-  margin-top: .8rem;
-  margin-right: .5rem;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
   border-radius: 5px;
 }
 
 .barthird {
-  background: #00B87C;
+  background: #00b87c;
   width: 1.2%;
-  height: .8rem;
-  margin-top: .8rem;
-  margin-right: .5rem;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
   border-radius: 5px;
 }
 
 .barfourth {
-  background: #00B87C;
+  background: #00b87c;
   width: 1.2%;
-  height: .8rem;
-  margin-top: .8rem;
-  margin-right: .5rem;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
   border-radius: 5px;
 }
 
 .barfifth {
-  background: #00B87C;
+  background: #00b87c;
   width: 1.2%;
-  height: .8rem;
-  margin-top: .8rem;
-  margin-right: .5rem;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
   border-radius: 5px;
 }
 
 .barsixth {
-  background: #00B87C;
+  background: #00b87c;
   width: 1.2%;
-  height: .8rem;
-  margin-top: .8rem;
-  margin-right: .5rem;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
   border-radius: 5px;
 }
 
 .barseventh {
-  background: #00B87C;
+  background: #00b87c;
   width: 1.2%;
-  height: .8rem;
-  margin-top: .8rem;
-  margin-right: .5rem;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
   border-radius: 5px;
 }
 
 .bareight {
   background: #aeaeae;
   width: 1.2%;
-  height: .8rem;
-  margin-top: .8rem;
-  margin-right: .5rem;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
   border-radius: 5px;
 }
 
 .barninth {
   background: #aeaeae;
   width: 1.2%;
-  height: .8rem;
-  margin-top: .8rem;
-  margin-right: .5rem;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
   border-radius: 5px;
 }
 
 .bartenth {
   background: #aeaeae;
   width: 1.2%;
-  height: .8rem;
-  margin-top: .8rem;
-  margin-right: .5rem;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
   border-radius: 5px;
 }
 
 .bareleventh {
   background: #aeaeae;
   width: 1.2%;
-  height: .8rem;
-  margin-top: .8rem;
-  margin-right: .5rem;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
   border-radius: 5px;
 }
 
 .bartwelfth {
   background: #aeaeae;
   width: 1.2%;
-  height: .8rem;
-  margin-top: .8rem;
-  margin-right: .5rem;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
   border-radius: 5px;
 }
 
 .barthirtenth {
   background: #aeaeae;
   width: 1.2%;
-  height: .8rem;
-  margin-top: .8rem;
-  margin-right: .5rem;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
   border-radius: 5px;
 }
 
 .barfourtenth {
   background: #aeaeae;
   width: 1.2%;
-  height: .8rem;
-  margin-top: .8rem;
-  margin-right: .5rem;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
   border-radius: 5px;
 }
 
 .barfiftenth {
   background: #aeaeae;
   width: 1.2%;
-  height: .8rem;
-  margin-top: .8rem;
+  height: 0.8rem;
+  margin-top: 0.8rem;
   border-radius: 5px;
 }
 
 .checkenable {
   display: flex;
   margin-bottom: 1rem;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   font-weight: bolder;
 }
 
 .checkenable input {
-  margin-top: .4rem;
+  margin-top: 0.4rem;
 }
 
 .enable {
@@ -223,13 +222,13 @@
   margin-bottom: 1.5rem;
 }
 .headspeaker {
-  font-family: "Lato";
+  font-family: 'Lato';
   font-weight: bolder;
   display: flex;
   margin-top: 2rem;
   color: #242424;
   font-size: 20px;
-} 
+}
 
 .button {
   margin-left: 3rem;
@@ -259,7 +258,7 @@
 }
 
 .checkset input {
-  margin-top: .4rem;
+  margin-top: 0.4rem;
 }
 
 .checkmute {
@@ -267,15 +266,15 @@
 }
 
 .checkmute input {
-  margin-top: .4rem;
+  margin-top: 0.4rem;
 }
 
 .checkstatus {
   display: flex;
-}  
+}
 
 .checkstatus input {
-  margin-top: .4rem;
+  margin-top: 0.4rem;
 }
 
 .checkmutemic {
@@ -283,7 +282,7 @@
 }
 
 .checkmutemic input {
-  margin-top: .4rem;
+  margin-top: 0.4rem;
 }
 
 .checkautomatic {
@@ -291,7 +290,7 @@
 }
 
 .checkautomatic input {
-  margin-top: .4rem;
+  margin-top: 0.4rem;
 }
 
 .checkwarning {
@@ -299,7 +298,7 @@
 }
 
 .checkwarning input {
-  margin-top: .4rem;
+  margin-top: 0.4rem;
 }
 
 .checkmusic {
@@ -307,7 +306,7 @@
 }
 
 .checkmusic input {
-  margin-top: .4rem;
+  margin-top: 0.4rem;
 }
 
 .checkallow {
@@ -315,7 +314,7 @@
 }
 
 .checkallow input {
-  margin-top: .4rem;
+  margin-top: 0.4rem;
 }
 
 .checkcall {
@@ -323,7 +322,7 @@
 }
 
 .checkcall input {
-  margin-top: .4rem;
+  margin-top: 0.4rem;
 }
 
 .checkleavehuddle {
@@ -331,28 +330,28 @@
 }
 
 .checkleavehuddle input {
-  margin-top: .4rem;
+  margin-top: 0.4rem;
 }
 
 .statuscall {
   font-weight: bold;
   display: flex;
-  font-size:15px;
-  margin-bottom: .5rem;
+  font-size: 15px;
+  margin-bottom: 0.5rem;
 }
 
 .statushuddle {
   font-weight: bold;
   display: flex;
-  font-size:15px;
-  margin-bottom: .5rem;
+  font-size: 15px;
+  margin-bottom: 0.5rem;
 }
 
 .mute {
   font-weight: bold;
   display: flex;
-  margin-top: .5rem;
-  margin-left: 2.2rem;
+  margin-top: 0.5rem;
+  margin-left: 2rem;
 }
 
 .mutemic {
@@ -422,4 +421,3 @@
   margin-left: 2.2rem;
   margin-top: 1rem;
 }
-
