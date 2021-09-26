@@ -32,10 +32,12 @@ const TopbarModal = ({ members }) => {
     modalRef,
     closeMembersModal,
     toggleUserPresence,
+    reusableModal,
+    setReusableModal,
     presence,
     setPresence
   } = state
-  const [modal, setModal] = useState('')
+
   const [pause, setPause] = useState(false)
   const [statusModal, setStatusModal] = useState(false)
 
@@ -155,7 +157,7 @@ const TopbarModal = ({ members }) => {
           <div className={styles.sectionFour}>
             <p
               onClick={() => {
-                setModal('edit profile')
+                setReusableModal('edit profile')
                 toggleModalState()
               }}
             >
@@ -171,7 +173,7 @@ const TopbarModal = ({ members }) => {
             </p>
             <p
               onClick={() => {
-                setModal('preference')
+                setReusableModal('preference')
                 toggleModalState()
               }}
             >
@@ -184,18 +186,20 @@ const TopbarModal = ({ members }) => {
           <div className={styles.sectionSix}>
             <p
               onClick={() => {
-                setModal('downloads')
+                setReusableModal('downloads')
               }}
             >
               Downloads
             </p>
           </div>
 
-          {modal === 'edit profile' && <EditProfile />}
+          {reusableModal === 'edit profile' && <EditProfile />}
 
-          {modal === 'preference' && <Preferences />}
+          {reusableModal === 'preference' && <Preferences />}
 
-          {modal === 'downloads' && <Downloads setModal={setModal} />}
+          {reusableModal === 'downloads' && (
+            <Downloads setModal={setReusableModal} />
+          )}
 
           <hr className={styles.hr} />
 
