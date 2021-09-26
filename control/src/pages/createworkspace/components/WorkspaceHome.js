@@ -46,8 +46,8 @@ const WorkspaceHome = () => {
         <TextSection>
           <Heading>Create a new workspace</Heading>
           <Text>
-            Slack gives your team a home — a place where they can talk and work
-            together. To create a new workspace, click the button below
+            Zuri Chat gives your team a home — a place where they can talk and
+            work together. To create a new workspace, click the button below
           </Text>
           <Link to={`${url}/step1`}>
             <Button style={{ minWidth: '259px' }}>
@@ -101,6 +101,7 @@ const Heading = styled.h1`
   width: 320px;
   margin-bottom: 14px;
   color: #333333;
+  line-height: 56px;
   @media (max-width: 35rem) {
     font-size: 28px;
     line-height: 33.6px;
