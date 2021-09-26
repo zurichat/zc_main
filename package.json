@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "serve -s dist/ -p 9001",
-    "open": "opener http://localhost:9000",
-    "dev:root": "webpack serve --port 9000 --env isLocal",
+    "open": "opener http://localhost:8000",
+    "dev:root": "webpack serve --port 8000 --env isLocal",
     "dev:topbar": "npm run dev --prefix topbar",
     "dev:control": "npm run dev --prefix control",
     "dev:sidebar": "npm run dev --prefix sidebar",
