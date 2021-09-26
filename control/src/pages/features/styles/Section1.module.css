@@ -1,8 +1,6 @@
 .section1 {
-  /* margin-top: 160px; */
-  /* height: 100vh; */
   max-width: 1400px;
-  margin: 60px auto 0 auto;
+  margin: 120px auto 0 auto;
   padding: 0 40px;
   background-color: #fff;
 }
@@ -175,7 +173,8 @@
     font-size: 1.125rem;
   }
   .section1TextWrapper p {
-    font-size: 1.5rem;
+    font-weight: 500;
+    font-size: 1.125rem;
     line-height: 130%;
   }
   .section1TextWrapper h2 {
