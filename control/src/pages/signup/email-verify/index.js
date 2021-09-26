@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -13,6 +13,8 @@ import { Button } from '../../../components/'
 export default function EmailVerification({ email }) {
   const [success, setsuccess] = useState(false)
   const [errorMsg, seterrorMsg] = useState(false)
+  
+
 
   const handleSubmit = async code => {
     await axios
@@ -20,7 +22,11 @@ export default function EmailVerification({ email }) {
       .then(res => {
         console.log(res.data)
         if (res.status === 200) {
+          console.log('verify successfull');
+          
           setsuccess(true)
+           
+         
         } else {
           setsuccess(false)
           seterrorMsg(res)
@@ -40,6 +46,7 @@ export default function EmailVerification({ email }) {
   const goHome = () => {
     window.location.href = '/createworkspace'
   }
+ 
 
   return (
     <Overlay>
@@ -84,7 +91,7 @@ export default function EmailVerification({ email }) {
             <img src={okayimage} alt="zurichat logo" className={styles.img} />
             <h2>Email Verification Succesful!</h2>
             <p>Click on the Button to continue</p>
-            <Button onClick={goHome}>Continue</Button>
+            <Button onClick={()=> {goHome();} }>Continue</Button>
           </Successdiv>
         )}
       </Content>

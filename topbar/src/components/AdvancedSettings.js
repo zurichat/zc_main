@@ -10,13 +10,11 @@ const AdvancedSettings = () => {
           <div className={styles.checktype}>
             <input type="checkbox" name="" id="" />
             <div className={styles.typing}>
-              <span>
-                  When typing code with "", should send the message{' '}
-              </span>
-              <div className={styles.typingticket}>    
-                  With this ticket, use
-                  <button className={styles.btn}>Shift</button> to send
-                </div>  
+              <span>When typing code with "", should send the message </span>
+              <div className={styles.typingticket}>
+                With this ticket, use
+                <button className={styles.btn}>Shift</button> to send
+              </div>
             </div>
           </div>
           <div className={styles.checkformat}>
@@ -27,10 +25,7 @@ const AdvancedSettings = () => {
             </div>
           </div>
         </div>
-        <p className={styles.headpress}>
-          When writing a message, press{' '}
-      
-        </p>
+        <p className={styles.headpress}>When writing a message, press </p>
         <div className={styles.radio}>
           <div className={styles.radiosend}>
             <input type="radio" name="" id="" />
@@ -58,7 +53,7 @@ const AdvancedSettings = () => {
                 <button className={styles.btn}>F</button>
                 Starts a Zurichat chat
               </span>
-               Overrides normal behaviour in search behaviour
+              Overrides normal behaviour in search behaviour
             </div>
           </div>
           <div className={styles.checkformat}>
@@ -67,9 +62,9 @@ const AdvancedSettings = () => {
               <span>
                 <button className={styles.btn}>Ctrl</button>
                 <button className={styles.btn}>K</button>
-                Starts the quick switcher 
+                Starts the quick switcher
               </span>
-               Overrides normal behaviour in some browsers
+              Overrides normal behaviour in some browsers
             </div>
           </div>
         </div>
@@ -113,13 +108,9 @@ const AdvancedSettings = () => {
           <div className={styles.survey}>
             <input type="checkbox" name="" id="" />
             <p>
-              <span>
-                Send me occasional survey via Zurichat bot 
-                </span>
-                {' '}
-                We're working to make Zurichat better. We'd always love to hear
-                your thoughts
-              
+              <span>Send me occasional survey via Zurichat bot</span> We're
+              working to make Zurichat better. We'd always love to hear your
+              thoughts
             </p>
           </div>
           <div className={styles.warn}>

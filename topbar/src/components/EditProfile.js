@@ -16,7 +16,7 @@ import TimezoneSelect from 'react-timezone-select'
 import { StyledProfileWrapper } from '../styles/StyledEditProfile'
 
 const EditProfile = () => {
-  // const imageRef = useRef(null)
+  const imageRef = useRef(null)
   const avatarRef = useRef(null)
   const { user, orgId, userProfileImage, setUserProfileImage } =
     useContext(ProfileContext)
@@ -205,43 +205,8 @@ const EditProfile = () => {
                   </select>
                 </div>
               </div>
-              */
-              <button
-                onClick={handleFormSubmit}
-                className={styles.bottomButton}
-              >
-                {state.loading ? (
-                  <Loader
-                    type="ThreeDots"
-                    color="#FFF"
-                    height={32}
-                    width={32}
-                  />
-                ) : (
-                  'Save'
-                )}
-              </button>
-              <div className={styles.px9}>
-                {/* <AddLink setotherLinks={setotherLinks} /> */}
-                <div className={styles.formFooter}>
-                  <div style={{ display: 'flex' }}>
-                    <button className={styles.cancel}>Cancel</button>
-                    <button onClick={handleFormSubmit} className={styles.save}>
-                      {state.loading ? (
-                        <Loader
-                          type="ThreeDots"
-                          color="#FFF"
-                          height={40}
-                          width={40}
-                        />
-                      ) : (
-                        'Save Changes'
-                      )}
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <Toaster />
+            
+            
               <div className="input-group">
                 <label htmlFor="what" className="inputLabel">
                   What you do
@@ -341,16 +306,9 @@ const EditProfile = () => {
                   id="img"
                 />
                 <label htmlFor="img" className="btns chgBtn">
-                  {/* {state.loading ? (
-                    <Loader
-                      type="ThreeDots"
-                      color="#00B87C"
-                      height={40}
-                      width={40}
-                    />
-                  ) : ( */}
+                
                   Upload Image
-                  {/* ) */}
+               
                 </label>
                 <button className="btns rmvBtn">Delete image</button>
               </div>
