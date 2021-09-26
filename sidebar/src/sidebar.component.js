@@ -144,7 +144,7 @@ const Sidebar = props => {
   return (
     <div className={`container-fluid ${styles.sb__container}`}>
       <div className={`row ${styles.orgDiv}`}>
-        <div className={`col-12 px-4 ${styles.orgInfo}`}>
+        <div className={`col-12 px-3 ${styles.orgInfo}`}>
           <div className={`row p-0 ${styles.orgHeader}`}>
             <p className={`col-6 mb-0 ${styles.orgTitle}`}>HNGi8</p>
             <img
@@ -191,9 +191,9 @@ const Sidebar = props => {
           </Content>
         </Overlay>
       </div>
-      <div className={`row ${styles.sb__item}`}>
+      <div className={`row mt-2 ${styles.sb__item}`}>
         <div
-          className={`col-12 ps-4 d-flex align-items-center ${styles.sb__col}`}
+          className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
         >
           <img className={`${styles.item__img}`} src={threadIcon} alt="icon" />
           <p className={`mb-0 ${styles.item_p}`}>Threads</p>
@@ -201,7 +201,7 @@ const Sidebar = props => {
       </div>
       <div className={`row ${styles.sb__item}`}>
         <div
-          className={`col-12 ps-4 d-flex align-items-center ${styles.sb__col}`}
+          className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
         >
           <img className={`${styles.item__img}`} src={dmIcon} alt="icon" />
           <p className={`mb-0 ${styles.item_p}`}>All DMs</p>
@@ -209,7 +209,7 @@ const Sidebar = props => {
       </div>
       <div className={`row ${styles.sb__item}`}>
         <div
-          className={`col-12 ps-4 d-flex align-items-center ${styles.sb__col}`}
+          className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
         >
           <img className={`${styles.item__img}`} src={draftIcon} alt="icon" />
           <p className={`mb-0 ${styles.item_p}`}>Drafts</p>
@@ -217,7 +217,7 @@ const Sidebar = props => {
       </div>
       <div className={`row ${styles.sb__item}`}>
         <div
-          className={`col-12 ps-4 d-flex align-items-center ${styles.sb__col}`}
+          className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
         >
           <img className={`${styles.item__img}`} src={filesIcon} alt="icon" />
           <p className={`mb-0 ${styles.item_p}`}>Files</p>
@@ -225,7 +225,7 @@ const Sidebar = props => {
       </div>
       <div className={`row ${styles.sb__item}`}>
         <div
-          className={`col-12 ps-4 d-flex align-items-center ${styles.sb__col}`}
+          className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
         >
           <img className={`${styles.item__img}`} src={pluginIcon} alt="icon" />
           <p className={`mb-0 ${styles.item_p}`}>Plugins</p>{' '}
@@ -239,43 +239,45 @@ const Sidebar = props => {
         </div>
       </div>
 
-      <DropDown />
+      {/* <DropDown /> */}
 
       {/* SIDE BAR DATA */}
       {sidebarData &&
         sidebarData.map((plugin, index) => {
           return (
-            // <DropDown
-            //   itemName = { plugin.name }
-            //   index = { index }
-            //   itemList = { plugin.joined_rooms }
-            // />
+            <DropDown
+              itemName={plugin.name}
+              id={plugin.name}
+              key={index}
+              items={plugin}
+            />
+            // console.log()
 
-            <div key={index}>
-              <h5>{plugin.name}</h5>
+            // <div key={index}>
+            //   <h5>{plugin.name}</h5>
 
-              <ul>
-                {plugin.joined_rooms &&
-                  plugin.joined_rooms.map((room, index) => {
-                    if (room.room_name !== undefined) {
-                      return (
-                        <li key={index}>
-                          <a
-                            style={{
-                              marginLeft: '5px',
-                              color: 'red'
-                            }}
-                            href={room.room_url}
-                            onClick={navigateToUrl}
-                          >
-                            {room.room_name}
-                          </a>
-                        </li>
-                      )
-                    }
-                  })}
-              </ul>
-            </div>
+            //   <ul>
+            //     {plugin.joined_rooms &&
+            //       plugin.joined_rooms.map((room, index) => {
+            //         if (room.room_name !== undefined) {
+            //           return (
+            //             <li key={index}>
+            //               <a
+            //                 style={{
+            //                   marginLeft: '5px',
+            //                   color: 'red'
+            //                 }}
+            //                 href={room.room_url}
+            //                 onClick={navigateToUrl}
+            //               >
+            //                 {room.room_name}
+            //               </a>
+            //             </li>
+            //           )
+            //         }
+            //       })}
+            //   </ul>
+            // </div>
           )
         })}
       {/*
@@ -324,7 +326,7 @@ const Sidebar = props => {
 
       {/* button for adding invites */}
 
-      <Button
+      {/* <Button
         style={{
           width: '80%',
           margin: '0 auto',
@@ -333,7 +335,7 @@ const Sidebar = props => {
         }}
       >
         <LinkStyled to={'/createworkspace'}>Create Workspace</LinkStyled>{' '}
-      </Button>
+      </Button> */}
     </div>
   )
 }

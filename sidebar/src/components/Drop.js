@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import styles from '../styles/Drop.module.css'
 import { TiArrowSortedDown } from 'react-icons/ti'
 
-const DropDown = ({ index, itemName, itemList }) => {
+const DropDown = ({ itemName, items }) => {
   const [isOpen, setOpen] = useState(false)
   // const [items, setItems] = useState(data);
   const [selectedItem, setSelectedItem] = useState(null)
@@ -14,7 +14,7 @@ const DropDown = ({ index, itemName, itemList }) => {
     selectedItem == id ? setSelectedItem(null) : setSelectedItem(id)
   }
   return (
-    <div key={index} className={`row p-0 ${styles.dropDown}`}>
+    <div className={`row p-0 ${styles.dropDown}`}>
       <div
         className={`col-12 d-flex align-items-center ${styles.plugin__title}`}
         onClick={toggleDropdown}
@@ -27,19 +27,28 @@ const DropDown = ({ index, itemName, itemList }) => {
       <ul
         className={`col-12 ps-4 ${styles.item__row} ${isOpen && styles.open}`}
       >
-        {itemList &&
-          itemList.map((room, index) => {
-            ;<li key={index} className={`row mx-auto ${styles.item__list}`}>
-              <a
-                className={`d-flex align-items-center {styles.item_name}`}
-                href=""
-              >
-                <TiArrowSortedDown className={`${styles.item__icon}`} />
-                <p className={`mb-0 ${styles.dropDown__name}`}>
-                  {room.room_name}
-                </p>
-              </a>
-            </li>
+        {items.joined_rooms &&
+          items.joined_rooms.map((room, index) => {
+            if (room.room_name !== undefined) {
+              return (
+                // console.log(itemList)
+                <li key={index} className={`row ${styles.item__list}`}>
+                  <a
+                    className={`col-12 d-flex align-items-center ${styles.item_name}`}
+                    href={room.room_url}
+                  >
+                    <img
+                      className={` ${styles.item__image}`}
+                      src={room.room_image}
+                      alt="img"
+                    />
+                    <p className={`mb-0 ${styles.dropDown__name}`}>
+                      {room.room_name}
+                    </p>
+                  </a>
+                </li>
+              )
+            }
           })}
       </ul>
     </div>

@@ -15,14 +15,14 @@
 
 .plugin_name,
 .dropDown__name {
-  font-size: 1.2em;
+  font-size: 0.935em;
 }
 
 .plugin_name,
 .dropDown__title,
 .dropDown__name {
-  font-size: 1.5em;
-  font-weight: bold;
+  font-size: 0.935em;
+  /* font-weight: bold; */
 }
 
 .dropDown__name {
@@ -31,7 +31,8 @@
 
 .icon,
 .item__icon {
-  font-size: 2.5em;
+  /* font-size: 1.2em; */
+  width: 24px;
 }
 
 .icon {
@@ -45,7 +46,7 @@
 
 .plugin__title,
 .item__row {
-  height: 7vh;
+  margin: 0.3em 0;
 }
 
 .item__row {
@@ -54,9 +55,14 @@
 
 .item__row.open {
   display: block;
-  margin-inline-start: 0.5em;
+  /* margin-inline-start: 0.5em; */
 }
 
 .item__name {
   padding-inline-start: 2rem;
+}
+
+.item__image {
+  width: 24px;
+  margin-right: 0.25em;
 }
