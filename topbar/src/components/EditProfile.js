@@ -1,4 +1,6 @@
 import { useRef, useState, useEffect, useContext } from 'react'
+import styles from '../styles/EditProfile.module.css'
+// import AddLink from './AddLink'
 import ProfileModal from './ProfileModal'
 
 import { authAxios } from '../utils/Api'
@@ -8,20 +10,23 @@ import avatar from '../assets/images/user.svg'
 import { ProfileContext } from '../context/ProfileModal'
 import Loader from 'react-loader-spinner'
 import toast, { Toaster } from 'react-hot-toast'
-import { data } from '../utils/CountryCode'
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 import TimezoneSelect from 'react-timezone-select'
 import { StyledProfileWrapper } from '../styles/StyledEditProfile'
 
 const EditProfile = () => {
-  const imageRef = useRef(null)
+  // const imageRef = useRef(null)
   const avatarRef = useRef(null)
   const { user, orgId, userProfileImage, setUserProfileImage } =
     useContext(ProfileContext)
   const [otherLinks, setotherLinks] = useState([])
   const [selectedTimezone, setSelectedTimezone] = useState({})
   const [links, setLinks] = useState([''])
+  const [phone, setPhone] = useState('')
+  const [imageUrl, setImageUrl] = useState('')
   const [state, setState] = useState({
-    name: user.name,
+    name: user.first_name,
     display_name: user.display_name,
     pronouns: user.pronouns,
     role: user.role,
@@ -34,11 +39,11 @@ const EditProfile = () => {
     facebook: '',
     loading: false
   })
+  let newUploadedImage = null
+  console.log('users', user)
 
   const addList = () => {
-    if (links.length < 5) {
-      setLinks([...links, ''])
-    }
+    setLinks([...links, ''])
   }
 
   const handleLinks = (e, index) => {
@@ -46,8 +51,6 @@ const EditProfile = () => {
 
     setLinks(links[index])
   }
-
-  //Function handling Image Upload
 
   const handleImageChange = event => {
     setState({ loading: true })
@@ -72,6 +75,7 @@ const EditProfile = () => {
           newUploadedImage = res.data.data
           setState({ loading: false })
           setUserProfileImage(res.data.data)
+          console.log(userProfileImage)
           toast.success('User Image Updated Successfully', {
             position: 'bottom-center'
           })
@@ -90,6 +94,32 @@ const EditProfile = () => {
     setUserProfileImage(user.image_url)
   }, [user])
 
+  // const handleImageChange = event => {
+  //   setState({ loading: true })
+
+  //   const file = event.target.files[0]
+
+  //   // encode the file using the FileReader API
+  //   const reader = new FileReader()
+  //   reader.onloadend = () => {
+  //     // log to console
+  //     // logs data:<type>;base64,wL2dvYWwgbW9yZ...
+  //     avatarRef.current.src = reader.result
+  //     setUserProfileImage(reader.result)
+  //     console.log(reader.result)
+  //   }
+  //   reader.readAsDataURL(file)
+
+  // let fileReader = new FileReader();
+
+  // fileReader.onload = function (event) {
+  //   avatarRef.current.src = event.target.result;
+  //   console.log(event.target.result);
+  // };
+
+  // let reader = fileReader.readAsDataURL(event.target.files[0]);
+  // console.log(reader)
+
   // This will handle the profile form submission
 
   const handleFormSubmit = e => {
@@ -97,10 +127,10 @@ const EditProfile = () => {
     setState({ loading: true })
 
     const data = {
-      name: state.name,
+      first_name: state.name,
       display_name: state.display_name,
       pronouns: state.pronouns,
-      phone: state.phone,
+      phone: phone,
       bio: state.bio,
       timeZone: state.timezone
       // socials: [
@@ -152,7 +182,7 @@ const EditProfile = () => {
                     <AiFillCamera className="icon" />
                   </label>
                 </div>
-                <div className="input-group mal-4">
+                <div className="input-group ml-4 md:ml-0">
                   <label htmlFor="name" className="inputLabel">
                     First Name
                   </label>
@@ -167,7 +197,7 @@ const EditProfile = () => {
                 </div>
               </div>
               <div className="double-input">
-                <div className="input-group mb-0">
+                <div className="input-group">
                   <label htmlFor="dname" className="inputLabel">
                     Choose a Display Name
                   </label>
@@ -200,8 +230,44 @@ const EditProfile = () => {
                   </select>
                 </div>
               </div>
-
-              <div className="input-group mb-0">
+              */
+              <button
+                onClick={handleFormSubmit}
+                className={styles.bottomButton}
+              >
+                {state.loading ? (
+                  <Loader
+                    type="ThreeDots"
+                    color="#FFF"
+                    height={32}
+                    width={32}
+                  />
+                ) : (
+                  'Save'
+                )}
+              </button>
+              <div className={styles.px9}>
+                {/* <AddLink setotherLinks={setotherLinks} /> */}
+                <div className={styles.formFooter}>
+                  <div style={{ display: 'flex' }}>
+                    <button className={styles.cancel}>Cancel</button>
+                    <button onClick={handleFormSubmit} className={styles.save}>
+                      {state.loading ? (
+                        <Loader
+                          type="ThreeDots"
+                          color="#FFF"
+                          height={40}
+                          width={40}
+                        />
+                      ) : (
+                        'Save Changes'
+                      )}
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <Toaster />
+              <div className="input-group">
                 <label htmlFor="what" className="inputLabel">
                   What you do
                 </label>
@@ -229,19 +295,13 @@ const EditProfile = () => {
                   id="bio"
                 ></textarea>
               </div>
-              <div className="input-group phone">
+              <div className="input-group">
                 <label className="inputLabel">Phone Number</label>
-                <div className="phone-container">
-                  <select onChange={(e) => setState({ ...state, prefix: e.target.value })} className="pref">
-                    {
-                      // country code
-                      data.map(item => (
-                        <option key={item.dial_code} value={item.dial_code}>{item.dial_code}</option>
-                      ))
-                    }
-                  </select>
-                  <input onChange={(e) => setState({ ...state, phone: e.target.value })} className="phoneInput" type="number" />
-                </div>
+                <PhoneInput
+                  placeholder="Enter phone number"
+                  value={phone}
+                  onChange={setPhone}
+                />
               </div>
               <div className="input-group">
                 <label className="inputLabel">Time Zone</label>
@@ -284,11 +344,9 @@ const EditProfile = () => {
                   <input type="text" className="input mb-3" key={index} />
                 ))}
 
-                {links.length !== 5 && (
-                  <p className="warning" onClick={addList}>
-                    Add new link
-                  </p>
-                )}
+                <p className="warning" onClick={addList}>
+                  Add new link
+                </p>
               </div>
             </div>
             <div className="img-container">
@@ -311,7 +369,7 @@ const EditProfile = () => {
                   {/* {state.loading ? (
                     <Loader
                       type="ThreeDots"
-                      color="#fff"
+                      color="#00B87C"
                       height={40}
                       width={40}
                     />
@@ -335,7 +393,12 @@ const EditProfile = () => {
             <button className="btns rmvBtn">Cancel</button>
             <button onClick={handleFormSubmit} className="btns chgBtn">
               {state.loading ? (
-                <Loader type="ThreeDots" color="#fff" height={40} width={40} />
+                <Loader
+                  type="ThreeDots"
+                  color="#00B87C"
+                  height={40}
+                  width={40}
+                />
               ) : (
                 'Save Changes'
               )}
