@@ -139,6 +139,10 @@ body {
 .eventsBlock > h3,
 .eventsBlock > p {
   font-size: 18px;
+  color: #242424;
+}
+.eventsBlock > h3 {
+  font-weight: 900;
 }
 .eventsBlockLinkBlock {
   display: flex;
