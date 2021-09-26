@@ -34,7 +34,7 @@ const EditProfile = () => {
     loading: false
   })
 
-  console.log("country code", data)
+  console.log('country code', data)
 
   const addList = () => {
     if (links.length < 5) {
@@ -233,15 +233,28 @@ const EditProfile = () => {
               <div className="input-group phone">
                 <label className="inputLabel">Phone Number</label>
                 <div className="phone-container">
-                  <select onChange={(e) => setState({ ...state, prefix: e.target.value })} className="pref">
+                  <select
+                    onChange={e =>
+                      setState({ ...state, prefix: e.target.value })
+                    }
+                    className="pref"
+                  >
                     {
                       // country code
                       data.map(item => (
-                        <option key={item.dial_code} value={item.dial_code}>{item.dial_code}</option>
+                        <option key={item.dial_code} value={item.dial_code}>
+                          {item.dial_code}
+                        </option>
                       ))
                     }
                   </select>
-                  <input onChange={(e) => setState({ ...state, phone: e.target.value })} className="phoneInput" type="number" />
+                  <input
+                    onChange={e =>
+                      setState({ ...state, phone: e.target.value })
+                    }
+                    className="phoneInput"
+                    type="number"
+                  />
                 </div>
               </div>
               <div className="input-group">
