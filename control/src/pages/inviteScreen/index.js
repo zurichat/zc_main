@@ -29,7 +29,7 @@ const InvitePage = () => {
   const handleJoin = () => {
     if (sessionStorage.getItem(`user`) === null) {
       sessionStorage.setItem(`workSpaceInviteRedirect`, `invites/${id}`)
-      history.push(`/login`)
+      history.push(`login`)
       return
     }
 
