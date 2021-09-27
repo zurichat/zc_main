@@ -14,6 +14,7 @@ import Features from './pages/features'
 import Resources from './pages/resources'
 import Pricing from './pages/pricing'
 import Security from './pages/security'
+import Invite from './pages/inviteScreen'
 import Inviterequest from './pages/InviteRequest/InviteRequest'
 import SendRequest from './pages/InviteRequest/SendRequest'
 import ContactUs from './pages/contact-us'
@@ -70,6 +71,9 @@ const App = () => {
         </Route>
         <Route path="/features">
           <Features />
+        </Route>
+        <Route path="/invites/:id">
+          <Invite />
         </Route>
         <Route path="/invite-request">
           <Inviterequest />
