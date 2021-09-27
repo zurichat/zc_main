@@ -88,7 +88,7 @@ const Sidebar = props => {
       })
 
       if (_id !== '') {
-        const org_url = `/organizations/${Organizations[0]}/plugins`
+        const org_url = `/organizations/${currentWorkspace}/plugins`
         authAxios
           .get(org_url)
           .then(res => setOrganizationInfo(res.data.data))
