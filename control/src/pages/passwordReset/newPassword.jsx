@@ -46,10 +46,9 @@ const NewPassword = () => {
         </div>
         {/* header text  */}
         <div className={``}>
-          <h4 className={styles.headerText}>Change Password</h4>
+          <h4 className={styles.headerText}>Set New Password</h4>
           <p>
-            Enter the email address you registered with, a reset link will be
-            sent to your email!
+            Enter youe new password
           </p>
         </div>
         {/* form section  */}
