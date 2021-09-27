@@ -33,12 +33,14 @@ export default function VerifyResetCode() {
             <h1 style={{ textAlign: 'center' }}>
               Enter the reset code sent to your mail
             </h1>
-            <CodeInput
-              length={6}
-              onComplete={code => {
-                handleSubmit(code)
-              }}
-            />
+            <Center>
+              <CodeInput
+                length={6}
+                onComplete={code => {
+                  handleSubmit(code)
+                }}
+              />
+            </Center>
           </div>
         ) : (
           <Successdiv style={{ textAlign: 'center' }}>
@@ -100,5 +102,13 @@ const Successdiv = styled.div`
     font-size: 21px;
     line-height: 26px;
     line-height: 103%;
+  }
+`
+const Center = styled.div`
+   {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
   }
 `

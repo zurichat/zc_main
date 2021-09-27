@@ -47,9 +47,7 @@ const NewPassword = () => {
         {/* header text  */}
         <div className={``}>
           <h4 className={styles.headerText}>Set New Password</h4>
-          <p>
-            Enter youe new password
-          </p>
+          <p>Enter youe new password</p>
         </div>
         {/* form section  */}
         <form action="">
