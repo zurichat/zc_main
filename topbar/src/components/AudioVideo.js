@@ -20,7 +20,7 @@ const AudioVideo = () => {
             </select>
           </div>
         </div>
-        <div className={styles.line}></div>
+        {/* <div className={styles.line}></div> */}
         <div className={styles.microphone}>
           <h6 className={styles.head}>Microphone</h6>
           <div className={styles.select}>
@@ -56,6 +56,7 @@ const AudioVideo = () => {
               <div className={styles.enable}>Enable automatic gain control</div>
             </div>
           </div>
+          <div className={styles.line}></div>
           <h6 className={styles.headspeaker}>Speaker</h6>
           <div className={styles.speaker}>
             <div className={styles.selecttwo}>
@@ -141,5 +142,4 @@ const AudioVideo = () => {
     </div>
   )
 }
-
 export default AudioVideo
