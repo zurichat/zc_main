@@ -2,7 +2,7 @@ import { DialogOverlay, DialogContent } from '@reach/dialog'
 import styled from 'styled-components'
 import AuthInputBox from '../../../components/AuthInputBox'
 
-export const Modal = ({show,close,password,setpassword}) => {
+export const Modal = ({ show, close, password, setpassword }) => {
   return (
     <div>
       <Overlay isOpen={show} onDismiss={close}>
@@ -11,10 +11,9 @@ export const Modal = ({show,close,password,setpassword}) => {
             <Span aria-hidden>×</Span>
           </CloseButton>
 
-
           <div>
-              <h3>Enter Password to login</h3>
-              <p>Close this page if you do not want to join this workspace</p>
+            <h3>Enter Password to login</h3>
+            <p>Close this page if you do not want to join this workspace</p>
           </div>
 
           <AuthInputBox
