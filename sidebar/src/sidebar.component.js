@@ -54,7 +54,7 @@ const Sidebar = props => {
   })
 
   const [organizationInfo, setOrganizationInfo] = useState(null)
-  const [sidebarData, setSidebarData] = useState([])
+  const [sidebarData, setSidebarData] = useState({})
 
   // let user = JSON.parse(sessionStorage.getItem('user'))
   let token = sessionStorage.getItem('token')
@@ -65,6 +65,12 @@ const Sidebar = props => {
         return url.substr(0, url.length - 1)
       }
       return url
+    }
+  }
+
+  const filterUrl = url => {
+    if (url !== undefined) {
+      return url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('/')[0]
     }
   }
 
@@ -80,7 +86,6 @@ const Sidebar = props => {
 
       if (_id !== '') {
         const org_url = `/organizations/${Organizations[0]}/plugins`
-        console.log('sidebar url', org_url)
         authAxios
           .get(org_url)
           .then(res => setOrganizationInfo(res.data.data))
@@ -135,9 +140,14 @@ const Sidebar = props => {
     // console.log('sidebar plugins', organizationInfo)
     {
       organizationInfo &&
-        organizationInfo.map(plugin => {
-          const sidebarUrl = plugin.plugin.sidebar_url
+        organizationInfo.map(pluginData => {
+          const { plugin } = pluginData
+
+          // console.log(plugin)
+
+          const sidebarUrl = plugin.sidebar_url
           const trimmedUrl = trimUrl(sidebarUrl)
+          const pluginKey = filterUrl(plugin.sidebar_url)
 
           axios
             .get(
@@ -152,7 +162,9 @@ const Sidebar = props => {
                 const validPlugin = res.data
                 if (validPlugin.name !== undefined) {
                   if (typeof validPlugin === 'object') {
-                    setSidebarData(prev => [...prev, validPlugin])
+                    setSidebarData(prev => {
+                      return { ...prev, [pluginKey]: validPlugin }
+                    })
                   }
                 }
                 // console.log(validPlugin)
@@ -299,13 +311,13 @@ const Sidebar = props => {
 
       {/* SIDE BAR DATA */}
       {sidebarData &&
-        sidebarData.map((plugin, index) => {
+        Object.keys(sidebarData).map((plugin, index) => {
           return (
             <DropDown
-              itemName={plugin.name}
-              id={plugin.name}
+              itemName={sidebarData[plugin].name}
+              id={sidebarData[plugin].name}
               key={index}
-              items={plugin}
+              items={sidebarData[plugin]}
             />
             // console.log()
 
