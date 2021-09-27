@@ -32,7 +32,7 @@ import linkIcon from './assets/link.svg'
 
 const Sidebar = props => {
   const [show, setShow] = useState(false)
-  const [openInvite, setOpenInvite] = useState(false);
+  const [openInvite, setOpenInvite] = useState(false)
   const [showDialog, setShowDialog] = useState(false)
   const open = () => setShowDialog(true)
   const close = () => setShowDialog(false)
@@ -41,10 +41,10 @@ const Sidebar = props => {
   const [query, setQuery] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  const [inviteEmail, setInviteEmail] = useState("")
-  const [owner, setOwner] = useState(false);
+  const [inviteEmail, setInviteEmail] = useState('')
+  const [owner, setOwner] = useState(false)
 
-  let currentWorkspace = localStorage.getItem('currentWorkspace');
+  let currentWorkspace = localStorage.getItem('currentWorkspace')
   console.log(currentWorkspace)
 
   const [userInfo, setUserInfo] = useState({
@@ -98,7 +98,7 @@ const Sidebar = props => {
   }, [])
 
   axios({
-    method: "get",
+    method: 'get',
     url: `https://api.zuri.chat/users/pid@oxy.com/organizations`,
     headers: {
       Authorization: `Bearer ${token}`
@@ -108,14 +108,15 @@ const Sidebar = props => {
       let arr = res.data.data
       setOwner(arr.find(item => item.id === currentWorkspace).isOwner)
     })
-    .catch(err => { console.error(err) })
+    .catch(err => {
+      console.error(err)
+    })
 
   // Invite Users
 
   const inviteUser = async () => {
-
     return axios({
-      method: "post",
+      method: 'post',
       url: `https://api.zuri.chat/organizations/${currentWorkspace}/send-invite`,
       data: {
         emails: [inviteEmail]
@@ -124,12 +125,10 @@ const Sidebar = props => {
         Authorization: `Bearer ${token}`
       }
     })
-      .then(res =>
-
-        console.log('invite', res)
-      )
-      .catch(err => { console.error(err) })
-
+      .then(res => console.log('invite', res))
+      .catch(err => {
+        console.error(err)
+      })
   }
 
   // const validateEmail = (email) => {
@@ -151,10 +150,11 @@ const Sidebar = props => {
 
           axios
             .get(
-              `${trimmedUrl.includes('https://') ||
+              `${
+                trimmedUrl.includes('https://') ||
                 trimmedUrl.includes('http://')
-                ? trimmedUrl
-                : `https://${trimmedUrl}`
+                  ? trimmedUrl
+                  : `https://${trimmedUrl}`
               }?org=${userInfo.Organizations[0]}&user=${userInfo.userId}`
             )
             .then(res => {
@@ -227,7 +227,10 @@ const Sidebar = props => {
           </Content>
         </Overlay>
         <Overlay isOpen={openInvite} onDismiss={closeInviteModal}>
-          <Content style={{ width: '55%', height: '55%' }} aria-label="room-list">
+          <Content
+            style={{ width: '55%', height: '55%' }}
+            aria-label="room-list"
+          >
             <CloseButton className="close-button" onClick={closeInviteModal}>
               <Span aria-hidden>×</Span>
             </CloseButton>
@@ -239,25 +242,68 @@ const Sidebar = props => {
             </div>
             <Wrapper>
               <div>
-                <input type="email" placeholder="example@gmail.com" multiple value={inviteEmail} onChange={(e) => setInviteEmail(e.target.value)} name="email_invite" className={`pb-4 form-control`} />
+                <input
+                  type="email"
+                  placeholder="example@gmail.com"
+                  multiple
+                  value={inviteEmail}
+                  onChange={e => setInviteEmail(e.target.value)}
+                  name="email_invite"
+                  className={`pb-4 form-control`}
+                />
               </div>
-              <div className={`mt-5 pt-3 d-flex my-auto justify-content-between`}>
-                <p onClick={() => { window.navigator.clipboard.writeText(
-                  `https://zuri.chat/invite?organization=${currentWorkspace}`);
-                 alert('link has been copied')}} className={`mb-0 align-items-center`} style={{ color: "#00B87C", fontSize: '13px' }}><img className={`pe-3`} src={linkIcon} />Copy invite link </p>
-                <button onClick={() => inviteUser()} style={{ color: "white", backgroundColor: '#00B87C' }} type="button" disabled={(inviteEmail === "") ? true : false} className={`btn my-auto `}>Send</button>
+              <div
+                className={`mt-5 pt-3 d-flex my-auto justify-content-between`}
+              >
+                <p
+                  onClick={() => {
+                    window.navigator.clipboard.writeText(
+                      `https://zuri.chat/invite?organization=${currentWorkspace}`
+                    )
+                    alert('link has been copied')
+                  }}
+                  className={`mb-0 align-items-center`}
+                  style={{ color: '#00B87C', fontSize: '13px' }}
+                >
+                  <img className={`pe-3`} src={linkIcon} />
+                  Copy invite link{' '}
+                </p>
+                <button
+                  onClick={() => inviteUser()}
+                  style={{ color: 'white', backgroundColor: '#00B87C' }}
+                  type="button"
+                  disabled={inviteEmail === '' ? true : false}
+                  className={`btn my-auto `}
+                >
+                  Send
+                </button>
               </div>
             </Wrapper>
           </Content>
         </Overlay>
       </div>
       <div className={`row mt-2 ${styles.sb__item}`}>
-        {owner && <div
-          className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
-        >
-          <img style={{ width: '10%' }} className={`${styles.item__img}`} role="button" onClick={openInviteModal} src={addIcon} alt="icon" />
-          <p role="button" onClick={openInviteModal} className={`mb-0 ${styles.item_p}`}>Invite people to workspace</p>
-        </div>}
+        {owner && (
+          <div
+            className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+          >
+            <img
+              style={{ width: '10%' }}
+              className={`${styles.item__img}`}
+              role="button"
+              onClick={openInviteModal}
+              src={addIcon}
+              alt="icon"
+            />
+            <p
+              role="button"
+              onClick={openInviteModal}
+              className={`mb-0 ${styles.item_p}`}
+            >
+              Invite people to workspace
+            </p>
+          </div>
+        )}
       </div>
       <div className={`row mt-2 ${styles.sb__item}`}>
         <div
