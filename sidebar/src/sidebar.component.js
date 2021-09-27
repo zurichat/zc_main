@@ -28,16 +28,25 @@ import fetcher from './utils/fetcher'
 import axios from 'axios'
 import { GetUserInfo } from '@zuri/control'
 import { authAxios } from './utils/Api'
+import linkIcon from './assets/link.svg'
 
 const Sidebar = props => {
   const [show, setShow] = useState(false)
-
+  const [openInvite, setOpenInvite] = useState(false)
   const [showDialog, setShowDialog] = useState(false)
   const open = () => setShowDialog(true)
   const close = () => setShowDialog(false)
+  const openInviteModal = () => setOpenInvite(true)
+  const closeInviteModal = () => setOpenInvite(false)
   const [query, setQuery] = useState('')
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState('')
+  // const [error, setError] = useState('')
+  const [inviteEmail, setInviteEmail] = useState('')
+  const [owner, setOwner] = useState(false)
+  const [InviteSuccess, setInviteSuccess] = useState(false)
+
+  let currentWorkspace = localStorage.getItem('currentWorkspace')
+  console.log(currentWorkspace)
 
   const [userInfo, setUserInfo] = useState({
     userId: '',
@@ -46,7 +55,7 @@ const Sidebar = props => {
   })
 
   const [organizationInfo, setOrganizationInfo] = useState(null)
-  const [sidebarData, setSidebarData] = useState([])
+  const [sidebarData, setSidebarData] = useState({})
 
   // let user = JSON.parse(sessionStorage.getItem('user'))
   let token = sessionStorage.getItem('token')
@@ -60,7 +69,15 @@ const Sidebar = props => {
     }
   }
 
+  const filterUrl = url => {
+    if (url !== undefined) {
+      return url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('/')[0]
+    }
+  }
+
   useEffect(() => {
+    inviteVisibility()
+
     const fetchUser = async () => {
       const { _id, Organizations } = await GetUserInfo()
       // console.log('sidebar organization', Organization)
@@ -71,8 +88,7 @@ const Sidebar = props => {
       })
 
       if (_id !== '') {
-        const org_url = `/organizations/${Organizations[0]}/plugins`
-        console.log('sidebar url', org_url)
+        const org_url = `/organizations/${currentWorkspace}/plugins`
         authAxios
           .get(org_url)
           .then(res => setOrganizationInfo(res.data.data))
@@ -84,13 +100,62 @@ const Sidebar = props => {
     fetchUser()
   }, [])
 
+  const getOrgDetails = () => {
+    return axios({
+      method: 'get',
+      url: `https://api.zuri.chat/organizations/${currentWorkspace}/members`,
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+  }
+
+  const inviteVisibility = () => {
+    const userEmail = JSON.parse(sessionStorage.getItem('user')).email
+    getOrgDetails().then(res => {
+      const currentUser = res.data.data.find(user => user.email === userEmail)
+      setOwner(currentUser?.role === 'owner' || currentUser?.role === 'admin')
+    })
+  }
+
+  // Invite Users
+
+  const inviteUser = async () => {
+    return axios({
+      method: 'post',
+      url: `https://api.zuri.chat/organizations/${currentWorkspace}/send-invite`,
+      data: {
+        emails: [inviteEmail]
+      },
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+      .then(res => {
+        console.log('invite', res)
+        setInviteSuccess(true)
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }
+
+  // const validateEmail = (email) => {
+  //   return !!email.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
+  // }
+
   useEffect(() => {
     // console.log('sidebar plugins', organizationInfo)
     {
       organizationInfo &&
-        organizationInfo.map(plugin => {
-          const sidebarUrl = plugin.plugin.sidebar_url
+        organizationInfo.map(pluginData => {
+          const { plugin } = pluginData
+
+          // console.log(plugin)
+
+          const sidebarUrl = plugin.sidebar_url
           const trimmedUrl = trimUrl(sidebarUrl)
+          const pluginKey = filterUrl(plugin.sidebar_url)
 
           axios
             .get(
@@ -106,7 +171,9 @@ const Sidebar = props => {
                 const validPlugin = res.data
                 if (validPlugin.name !== undefined) {
                   if (typeof validPlugin === 'object') {
-                    setSidebarData(prev => [...prev, validPlugin])
+                    setSidebarData(prev => {
+                      return { ...prev, [pluginKey]: validPlugin }
+                    })
                   }
                 }
                 // console.log(validPlugin)
@@ -168,6 +235,89 @@ const Sidebar = props => {
             </Wrapper>
           </Content>
         </Overlay>
+        <Overlay isOpen={openInvite} onDismiss={closeInviteModal}>
+          <Content
+            style={{ width: '55%', height: '55%' }}
+            aria-label="room-list"
+          >
+            <CloseButton className="close-button" onClick={closeInviteModal}>
+              <Span aria-hidden>×</Span>
+            </CloseButton>
+            <div>
+              <h3>Invite people to The Workspace</h3>
+            </div>
+            {InviteSuccess && (
+              <div className={`alert alert-success`}>
+                Invite was sent to {inviteEmail}
+              </div>
+            )}
+            <div>
+              <label for="email_invite">To:</label>
+            </div>
+            <Wrapper>
+              <div>
+                <input
+                  type="email"
+                  placeholder="example@gmail.com"
+                  multiple
+                  value={inviteEmail}
+                  onChange={e => setInviteEmail(e.target.value)}
+                  name="email_invite"
+                  className={`pb-4 form-control`}
+                />
+              </div>
+              <div
+                className={`mt-5 pt-3 d-flex my-auto justify-content-between`}
+              >
+                <p
+                  onClick={() => {
+                    window.navigator.clipboard.writeText(
+                      `https://zuri.chat/invite?organization=${currentWorkspace}`
+                    )
+                    alert('link has been copied')
+                  }}
+                  className={`mb-0 align-items-center`}
+                  style={{ color: '#00B87C', fontSize: '13px' }}
+                >
+                  <img className={`pe-3`} src={linkIcon} />
+                  Copy invite link{' '}
+                </p>
+                <button
+                  onClick={() => inviteUser()}
+                  style={{ color: 'white', backgroundColor: '#00B87C' }}
+                  type="button"
+                  disabled={inviteEmail === '' ? true : false}
+                  className={`btn my-auto `}
+                >
+                  Send
+                </button>
+              </div>
+            </Wrapper>
+          </Content>
+        </Overlay>
+      </div>
+      <div className={`row mt-2 ${styles.sb__item}`}>
+        {owner && (
+          <div
+            className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+          >
+            <img
+              style={{ width: '10%' }}
+              className={`${styles.item__img}`}
+              role="button"
+              onClick={openInviteModal}
+              src={addIcon}
+              alt="icon"
+            />
+            <p
+              role="button"
+              onClick={openInviteModal}
+              className={`mb-0 ${styles.item_p}`}
+            >
+              Invite people to workspace
+            </p>
+          </div>
+        )}
       </div>
       <div className={`row mt-2 ${styles.sb__item}`}>
         <div
@@ -221,13 +371,13 @@ const Sidebar = props => {
 
       {/* SIDE BAR DATA */}
       {sidebarData &&
-        sidebarData.map((plugin, index) => {
+        Object.keys(sidebarData).map((plugin, index) => {
           return (
             <DropDown
-              itemName={plugin.name}
-              id={plugin.name}
+              itemName={sidebarData[plugin].name}
+              id={sidebarData[plugin].name}
               key={index}
-              items={plugin}
+              items={sidebarData[plugin]}
             />
             // console.log()
 
@@ -324,7 +474,7 @@ const LinkStyled = styled(Link)`
   font-weight: 500;
   color: white;
 `
-const Overlay = styled(DialogOverlay)`
+export const Overlay = styled(DialogOverlay)`
   position: fixed;
   top: 0;
   left: 0;
@@ -338,7 +488,7 @@ const Overlay = styled(DialogOverlay)`
   padding: 2rem;
   z-index: 5;
 `
-const Content = styled(DialogContent)`
+export const Content = styled(DialogContent)`
   position: relative;
   background: white;
   width: 100%;
