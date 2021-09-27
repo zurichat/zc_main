@@ -46,7 +46,8 @@ const Login = () => {
     const userInfo = sessionStorage.getItem(`user`)
     const redirect = sessionStorage.getItem(`workSpaceInviteRedirect`)
 
-    if (userInfo && userInfo !== null && redirect !== null) history.push(redirect)
+    if (userInfo && userInfo !== null && redirect !== null)
+      history.push(redirect)
   }, [history])
 
   const handleSubmit = async e => {
