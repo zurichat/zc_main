@@ -28,16 +28,24 @@ import fetcher from './utils/fetcher'
 import axios from 'axios'
 import { GetUserInfo } from '@zuri/control'
 import { authAxios } from './utils/Api'
+import linkIcon from './assets/link.svg'
 
 const Sidebar = props => {
   const [show, setShow] = useState(false)
-
+  const [openInvite, setOpenInvite] = useState(false);
   const [showDialog, setShowDialog] = useState(false)
   const open = () => setShowDialog(true)
   const close = () => setShowDialog(false)
+  const openInviteModal = () => setOpenInvite(true)
+  const closeInviteModal = () => setOpenInvite(false)
   const [query, setQuery] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [inviteEmail, setInviteEmail] = useState("")
+  const [owner, setOwner] = useState(false);
+
+  let currentWorkspace = localStorage.getItem('currentWorkspace');
+  console.log(currentWorkspace)
 
   const [userInfo, setUserInfo] = useState({
     userId: '',
@@ -84,6 +92,45 @@ const Sidebar = props => {
     fetchUser()
   }, [])
 
+  axios({
+    method: "get",
+    url: `https://api.zuri.chat/users/pid@oxy.com/organizations`,
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  })
+    .then(res => {
+      let arr = res.data.data
+      setOwner(arr.find(item => item.id === currentWorkspace).isOwner)
+    })
+    .catch(err => { console.error(err) })
+
+  // Invite Users
+
+  const inviteUser = async () => {
+
+    return axios({
+      method: "post",
+      url: `https://api.zuri.chat/organizations/${currentWorkspace}/send-invite`,
+      data: {
+        emails: [inviteEmail]
+      },
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+      .then(res =>
+
+        console.log('invite', res)
+      )
+      .catch(err => { console.error(err) })
+
+  }
+
+  // const validateEmail = (email) => {
+  //   return !!email.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
+  // }
+
   useEffect(() => {
     // console.log('sidebar plugins', organizationInfo)
     {
@@ -94,11 +141,10 @@ const Sidebar = props => {
 
           axios
             .get(
-              `${
-                trimmedUrl.includes('https://') ||
+              `${trimmedUrl.includes('https://') ||
                 trimmedUrl.includes('http://')
-                  ? trimmedUrl
-                  : `https://${trimmedUrl}`
+                ? trimmedUrl
+                : `https://${trimmedUrl}`
               }?org=${userInfo.Organizations[0]}&user=${userInfo.userId}`
             )
             .then(res => {
@@ -168,6 +214,38 @@ const Sidebar = props => {
             </Wrapper>
           </Content>
         </Overlay>
+        <Overlay isOpen={openInvite} onDismiss={closeInviteModal}>
+          <Content style={{ width: '55%', height: '55%' }} aria-label="room-list">
+            <CloseButton className="close-button" onClick={closeInviteModal}>
+              <Span aria-hidden>×</Span>
+            </CloseButton>
+            <div>
+              <h3>Invite people to The Workspace</h3>
+            </div>
+            <div>
+              <label for="email_invite">To:</label>
+            </div>
+            <Wrapper>
+              <div>
+                <input type="email" placeholder="example@gmail.com" multiple value={inviteEmail} onChange={(e) => setInviteEmail(e.target.value)} name="email_invite" className={`pb-4 form-control`} />
+              </div>
+              <div className={`mt-5 pt-3 d-flex my-auto justify-content-between`}>
+                <p onClick={() => { window.navigator.clipboard.writeText(
+                  `https://zuri.chat/invite?organization=${currentWorkspace}`);
+                 alert('link has been copied')}} className={`mb-0 align-items-center`} style={{ color: "#00B87C", fontSize: '13px' }}><img className={`pe-3`} src={linkIcon} />Copy invite link </p>
+                <button onClick={() => inviteUser()} style={{ color: "white", backgroundColor: '#00B87C' }} type="button" disabled={(inviteEmail === "") ? true : false} className={`btn my-auto `}>Send</button>
+              </div>
+            </Wrapper>
+          </Content>
+        </Overlay>
+      </div>
+      <div className={`row mt-2 ${styles.sb__item}`}>
+        {owner && <div
+          className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+        >
+          <img style={{ width: '10%' }} className={`${styles.item__img}`} role="button" onClick={openInviteModal} src={addIcon} alt="icon" />
+          <p role="button" onClick={openInviteModal} className={`mb-0 ${styles.item_p}`}>Invite people to workspace</p>
+        </div>}
       </div>
       <div className={`row mt-2 ${styles.sb__item}`}>
         <div
@@ -324,7 +402,7 @@ const LinkStyled = styled(Link)`
   font-weight: 500;
   color: white;
 `
-const Overlay = styled(DialogOverlay)`
+export const Overlay = styled(DialogOverlay)`
   position: fixed;
   top: 0;
   left: 0;
@@ -338,7 +416,7 @@ const Overlay = styled(DialogOverlay)`
   padding: 2rem;
   z-index: 5;
 `
-const Content = styled(DialogContent)`
+export const Content = styled(DialogContent)`
   position: relative;
   background: white;
   width: 100%;
