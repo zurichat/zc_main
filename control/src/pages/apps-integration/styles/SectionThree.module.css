@@ -1,0 +1,97 @@
+.all {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  --tw-bg-opacity: 1;
+  margin: 1rem 16px;
+  border-width: 2px;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 4px;
+}
+.firstcont {
+  padding: 10px;
+}
+.infirstcont {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total {
+  padding: 10px 15px;
+  background-color: rgb(245, 244, 244);
+  /* margin: 50px 0px; */
+}
+
+@media (min-width: 768px) {
+  .total {
+    padding: 50px 70px;
+    background-color: rgb(245, 244, 244);
+    /* margin: 50px 0px; */
+  }
+}
+@media (min-width: 768px) {
+  .firstcont {
+    padding: 5px 50px;
+    margin-top: 15px;
+  }
+}
+.h2T {
+  font-weight: bold;
+  font-size: large;
+}
+@media (min-width: 768px) {
+  .h4T {
+    --tw-text-opacity: 1;
+    padding-top: 5px;
+    color: rgba(52, 211, 153, var(--tw-text-opacity));
+  }
+}
+@media (max-width: 768px) {
+  .h4T {
+    display: none;
+  }
+}
+.secondCont {
+  padding-left: 2.5rem 40px;
+  padding-right: 2.5rem 40px;
+  margin: 10px 0px;
+}
+
+@media (min-width: 768px) {
+  .secondCont {
+    margin: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.secondContFdiv {
+  padding: 0.5rem 8px;
+  display: flex;
+}
+.secondContSdiv {
+  margin-top: 1rem 16px;
+}
+.secondContImg {
+  width: 50px;
+  height: 50px;
+  margin-top: 12px;
+}
+@media (min-width: 768px) {
+  .secondContImg {
+    width: 70px;
+    height: 70px;
+  }
+}
+.secondContTdiv {
+  margin-top: 10px;
+  margin-left: 12px;
+}
+.secondContH2 {
+  font-weight: 700;
+  font-size: x-large;
+  margin: 0;
+}
+.secondContSp {
+  font-size: 0.875rem 14px;
+  color: rgb(207, 204, 204);
+}
