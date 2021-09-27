@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { withRouter, useHistory } from 'react-router-dom'
 // import { BehaviorSubject } from 'rxjs'
 import AuthInputBox from '../../components/AuthInputBox'
@@ -39,6 +39,15 @@ const Login = () => {
   // }
 
   let history = useHistory()
+
+  // const redirect = location.search ? location.search.split("=")[1] : "/";
+
+  useEffect(() => {
+    const userInfo = sessionStorage.getItem(`user`)
+    const redirect = sessionStorage.getItem(`workSpaceInviteRedirect`)
+
+    if (userInfo && userInfo !== null && redirect !== null) history.push(redirect)
+  }, [history])
 
   const handleSubmit = async e => {
     e.preventDefault()
