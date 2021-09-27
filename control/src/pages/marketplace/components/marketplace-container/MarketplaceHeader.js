@@ -37,7 +37,7 @@ const MarketplaceHeader = ({ user }) => {
       <div className={styles.accountOwnerAvatar}>
         <span className={styles.accountOwnerFirstName}>{user.first_name}</span>
         <div className={styles.accountOwnerAvatarContainer}>
-          {user.first_name[0].toUpperCase()}
+          {user.first_name && user.first_name.slice(0, 1).toUpperCase()}
         </div>
       </div>
     </nav>
