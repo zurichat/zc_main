@@ -6,7 +6,9 @@
   /* height: 1024px; */
   background: #f6f6f6;
 }
-
+.error {
+  font-size: 1.5rem;
+}
 .logo {
   position: absolute;
   /* width: 104.96px; */
@@ -49,7 +51,7 @@
 }
 
 .firstText {
-  font-size: 1.4em;
+  /* font-size: 1.4em; */
   font-weight: bolder;
   margin-left: 2%;
   margin-right: 2%;
@@ -60,7 +62,7 @@
   /* font-size: larger; */
   /* width: fit-content; */
   font-weight: normal;
-  font-size: 0.9em;
+  /* font-size: 0.9em; */
   padding: 1%;
   margin-left: 8%;
   margin-right: 8%;
@@ -76,6 +78,7 @@
   margin-right: 5%;
   color: #ffffff;
   text-decoration: none;
+  font-size: 1.5rem;
 }
 
 .button:hover {
@@ -119,16 +122,16 @@
   }
   .displaySmall {
     display: block;
-    font-size: 0.7em;
+    /* font-size: 0.7em; */
   }
   .displaySmall a {
     color: #2f80ed;
   }
   .firstText {
-    font-size: 0.8rem;
+    /* font-size: 0.8rem; */
   }
   .secondText {
-    font-size: 0.65rem;
+    /* font-size: 0.65rem; */
     width: 99%;
     margin-left: 0.5%;
     margin-right: 0.5%;
