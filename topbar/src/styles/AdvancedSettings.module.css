@@ -33,12 +33,12 @@
 }
 
 .checktype input {
-  margin-top: .8rem;
+  margin-top: 0.8rem;
 }
 
 .typingticket {
   display: flex;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 .checkformat {
@@ -47,7 +47,7 @@
 }
 
 .checkformat input {
-  margin-top: .8rem;
+  margin-top: 0.8rem;
 }
 
 .format span {
@@ -70,7 +70,7 @@
 }
 
 .radiosend input {
-  margin-top: .8rem;
+  margin-top: 0.8rem;
 }
 
 .radiostart {
@@ -78,7 +78,7 @@
 }
 
 .radiostart input {
-  margin-top: .8rem;
+  margin-top: 0.8rem;
 }
 
 .radiosend .send {
@@ -141,7 +141,7 @@
 }
 
 .checkkeys input {
-  margin-top: .4rem;
+  margin-top: 0.4rem;
 }
 
 .ask {
