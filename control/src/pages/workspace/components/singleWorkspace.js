@@ -21,7 +21,7 @@ const SingleWorkspace = ({
   const { toggleSelected } = useWorkspaceContext()
 
   console.log(member_imgs)
-
+  // console.log(id)
   return (
     <section className={`${styles.single_workspace}`}>
       <div className={`${styles.single_workspace_inputgroup}`}>
@@ -30,7 +30,11 @@ const SingleWorkspace = ({
           name={workspace_name}
           defaultChecked={selected}
           className={`${styles.workspace_input}`}
-          onChange={() => toggleSelected(id)}
+          onChange={() => {
+            toggleSelected(id)
+            console.log(id)
+            localStorage.setItem('currentWorkspace', id)
+          }}
         />
       </div>
       <div className={`${styles.workspace_image}`}>
