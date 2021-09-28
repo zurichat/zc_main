@@ -16,8 +16,6 @@ const HeaderSearchSuggestion = () => {
         <img
           src={zurichatlogo}
           alt="zuri-logo"
-          width="30"
-          height="30"
           className={`d-inline-block align-top ${headerStyles.image}`}
         />
         <span className={`mb-2 ${headerStyles.zuriChat}`}>Zuri Chat</span>
