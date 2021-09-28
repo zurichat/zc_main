@@ -136,6 +136,7 @@ const Login = () => {
           bottomLine="New to us?"
           bottomLink="Create an Account"
           bottomLinkHref="Signup"
+          setLoading={setLoading}
         >
           <AuthInputBox
             className={`${styles.inputElement}`}
