@@ -10,12 +10,15 @@ const InvitePage = () => {
   const [success, setsuccess] = useState(false)
   const [error, seterror] = useState('')
 
-  const checkIfRegistered = async ({ uuid }) => {
+    console.log(id)
+    window.location.hre
+  const checkIfRegistered = async ({ id }) => {
     try {
       const res = await axios.get(
-        `https://api.zuri.chat/organizations/invites/${uuid}`
+        `https://api.zuri.chat/organizations/invites/${id}`
       )
       console.log(res.data.data)
+      console.log(uuid);
       return res.data
     } catch (err) {
       console.log(err)
@@ -29,7 +32,7 @@ const InvitePage = () => {
   const handleJoin = () => {
     if (sessionStorage.getItem(`user`) === null) {
       sessionStorage.setItem(`workSpaceInviteRedirect`, `invites/${id}`)
-      history.push(`/login`)
+      history.push(`/signup`)
       return
     }
 
@@ -59,7 +62,10 @@ const InvitePage = () => {
               <h5 className={styles.secondText}>
                 You have been invited to a Workspace
               </h5>
-              <button onClick={handleJoin} className={styles.button}>
+              <button 
+              onClick={handleJoin} 
+            // onClick={() => history.push('/signup')}
+              className={styles.button}>
                 Join?
               </button>
             </>
