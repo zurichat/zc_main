@@ -19,10 +19,16 @@ export const WorkspaceProvider = ({ children }) => {
   const history = useHistory()
 
   useEffect(() => {
-    dispatch({ type: 'ACTION_CALL_API' })
+    if (
+      sessionStorage.getItem('user') &&
+      sessionStorage.getItem('session_id')
+    ) {
+      const userDetails = JSON.parse(sessionStorage.getItem('user'))
+      dispatch({ type: 'ACTION_CALL_API', payload: userDetails })
+    }
 
     getOrganizations()
-  }, [])
+  }, [state.user.email])
 
   const getOrganizations = async () => {
     try {
