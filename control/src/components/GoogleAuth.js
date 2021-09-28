@@ -10,38 +10,40 @@ const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
     const [buttonClicked, setButtonClicked] = useState(false)
     const history = useHistory()
     const onSuccess = (res) => {
-        setLoading(true)
-        if (googleHeader === 'Sign up with Google') {
+        // setLoading(true)
+        // if (googleHeader === 'Sign up with Google') {
+        //     console.log("clicked")
+        //     if (buttonClicked) {
+        //         // Logic for sign up goes here
+        //     }
+            
+        // } else {
+            
+        // }
 
-            if (buttonClicked) {
-                // Logic for sign up goes here
-            }
+        axios.get(`https://api.zuri.chat/auth/social-login/google/${res.accessToken}`)
+        .then((res) => {
+            const { data } = res.data
 
-        } else {
-            axios.get(`https://api.zuri.chat/auth/social-login/google/${res.accessToken}`)
-                .then((res) => {
-                    const { data } = res.data
+                //Store token in localstorage
+                sessionStorage.setItem('token', data.user.token)
 
-                    //Store token in localstorage
-                    sessionStorage.setItem('token', data.user.token)
+                //Store session_id in localstorage
+                sessionStorage.setItem('session_id', data.session_id)
 
-                    //Store session_id in localstorage
-                    sessionStorage.setItem('session_id', data.session_id)
+                //Store user copy in localstorage
+                sessionStorage.setItem('user', JSON.stringify(data.user))
 
-                    //Store user copy in localstorage
-                    sessionStorage.setItem('user', JSON.stringify(data.user))
-
-                    $behaviorSubject.next(res.data)
-                    setTimeout(() => {
-                        GetUserInfo()
-                        history.push('/choose-workspace')
-                        setLoading(false)
-                        }, 2000)
-                })
-                .catch(err => {
-                    console.log(err)
-                })
-        }
+                $behaviorSubject.next(res.data)
+                setTimeout(() => {
+                    GetUserInfo()
+                    history.push('/choose-workspace')
+                    setLoading(false)
+                    }, 2000)
+            })
+            .catch(err => {
+                console.log(err)
+            })
 
     }
     const onFailure = (res) => {
