@@ -40,17 +40,17 @@
     }
 
     div[id*='zuri/sidebar']::-webkit-scrollbar {
-      display: none;
+      /* display: none; */
     }
 
     div[id*='zuri/sidebar'] {
       width: 20%;
       height: 90vh;
-      overflow-y: scroll;
+      /* overflow-y: scroll; */
       /* Hide scrollbar for IE and Edge */
       -ms-overflow-style: none;
       /* Hide scrollbar for Firefox */
-      scrollbar-width: none;
+      /* scrollbar-width: none; */
       position: fixed;
       top: 10vh;
       left: 0;
@@ -149,7 +149,8 @@
         "@zuri/root-config": "//localhost:9000/zuri-root-config.js",
         "@zuri/topbar": "//localhost:8080/zuri-topbar.js",
         "@zuri/sidebar": "//localhost:8081/zuri-sidebar.js",
-        "@zuri/control": "//localhost:8082/zuri-control.js"
+        "@zuri/control": "//localhost:8082/zuri-control.js",
+        "@zuri/plugin-header": "//localhost:8083/zuri-plugin-header.js"
       }
     }
   </script>
@@ -160,7 +161,8 @@
           "@zuri/root-config": "/zuri-root-config.js",
           "@zuri/topbar": "/zuri-topbar.js",
           "@zuri/sidebar": "/zuri-sidebar.js",
-          "@zuri/control": "/zuri-control.js"
+          "@zuri/control": "/zuri-control.js",
+          "@zuri/plugin-header": "/zuri-plugin-header.js"
         }
       }
   </script>
