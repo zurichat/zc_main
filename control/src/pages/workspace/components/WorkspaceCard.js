@@ -5,7 +5,7 @@ import { useWorkspaceContext } from './WorkspaceContext'
 
 const WorkspaceCard = () => {
   const { organizations, user, error } = useWorkspaceContext()
-  console.log("organizations: ", organizations)
+  console.log('organizations: ', organizations)
   return (
     <section className={`${styles.workspace_card}`}>
       <header
