@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import styles from './styles/Sidebar.module.css'
 import Dropdown from './components/Dropdown'
 import Modal from './components/InviteModal'
+import ModalComponent from './components/ModalComponent'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
 import styled from 'styled-components'
 import AuthInputBox from './components/AuthInputBox'
@@ -44,6 +45,8 @@ const Sidebar = props => {
   const [inviteEmail, setInviteEmail] = useState('')
   const [owner, setOwner] = useState(false)
   const [InviteSuccess, setInviteSuccess] = useState(false)
+  const [homeModal, toggleHomeModal] = useState(false) 
+  const toggle = () => toggleHomeModal(!homeModal);
 
   let currentWorkspace = localStorage.getItem('currentWorkspace')
   console.log(currentWorkspace)
@@ -188,9 +191,10 @@ const Sidebar = props => {
 
   return (
     <div className={`container-fluid ${styles.sb__container}`}>
+      <div className={`${styles.subCon1}`}>
       <div className={`row ${styles.orgDiv}`}>
         <div className={`col-12 px-3 ${styles.orgInfo}`}>
-          <div className={`row p-0 ${styles.orgHeader}`}>
+          <div onClick={toggle} className={`row p-0 ${styles.orgHeader}`}>
             <p className={`col-6 mb-0 ${styles.orgTitle}`}>HNGi8</p>
             <img
               className={`col-6 mx-auto ${styles.arrowDown}`}
@@ -205,7 +209,12 @@ const Sidebar = props => {
               alt="message"
             />
           </div>
+        </div>  
+        <div className={`col-12 px-3 ${styles.odalContainer}`}>
+        <ModalComponent isOpen ={homeModal}/>
         </div>
+  
+
 
         <Modall showDialog={showDialog} closeDialog={close} />
 
@@ -296,6 +305,8 @@ const Sidebar = props => {
           </Content>
         </Overlay>
       </div>
+      </div>
+      <div className={`${styles.subCon2}`}>
       <div className={`row mt-2 ${styles.sb__item}`}>
         {owner && (
           <div
@@ -464,6 +475,7 @@ const Sidebar = props => {
       >
         <LinkStyled to={'/createworkspace'}>Create Workspace</LinkStyled>{' '}
       </Button> */}
+    </div>
     </div>
   )
 }
