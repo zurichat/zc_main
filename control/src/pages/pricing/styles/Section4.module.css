@@ -1,0 +1,108 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  width: 100%;
+  padding: 30px;
+  padding-bottom: 8%;
+  margin-top: 20px;
+  background-color: rgb(230, 228, 228);
+}
+
+.wrapper > .topText {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px auto;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+}
+
+.cardContainer {
+  display: flex;
+  height: fit-content;
+  padding: 0 auto;
+  justify-content: center;
+  flex: 0 1 auto;
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 438px;
+  margin-top: 65px;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.imgTop {
+  height: 70%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.bottomCardSub1 {
+  height: 10%;
+  margin: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.bottomCardSub2 {
+  display: block;
+  padding: 5%;
+  height: 30%;
+}
+
+.bottomCardSub3 {
+  display: flex;
+  justify-content: flex-end;
+  height: 10%;
+  margin: 5%;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    padding: 30px;
+    padding-bottom: 8%;
+    margin-top: 20px;
+    background-color: white;
+  }
+
+  .cardContainer {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: auto;
+    padding: 0 auto;
+    margin: 5% auto;
+    justify-content: center;
+    flex: 0 1 auto;
+    gap: 1rem;
+  }
+
+  .bottomCardSub2 {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8%;
+    height: 30%;
+  }
+}

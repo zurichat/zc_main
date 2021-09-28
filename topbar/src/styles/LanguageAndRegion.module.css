@@ -1,0 +1,96 @@
+.container {
+  width: 90%;
+  margin-left: 55px;
+  margin-top: 27px;
+}
+
+.subhead {
+  font-family: Lato;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #242424;
+}
+
+.section {
+  text-align: left;
+}
+
+.selectbox {
+  display: block;
+  width: 80%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #dde5e9;
+  border-radius: 5px;
+  font-family: Lato;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #4c4c4c;
+}
+
+.note {
+  font-family: Lato;
+  width: 75%;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #3a3a3a;
+  margin-bottom: 10px;
+}
+
+.auto {
+  display: block;
+  padding: 10px 0;
+  font-family: Lato;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #3a3a3a;
+}
+
+.choosed {
+  width: 80%;
+  color: #999;
+  font-size: 13px;
+  border: 1px solid #323232;
+  height: 40px;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.block {
+  display: block;
+  background: #999;
+  /* width:20%; */
+  padding: 3px;
+  margin-top: -4px;
+  color: #fff;
+  padding: 3px 10px;
+  display: inline-block;
+}
+
+/* .none {
+  display: none;
+}  */
+
+/* .choosed span{
+    background:#999;
+    padding:3px;
+    margin-top:-4px;
+    color:#fff;
+    padding:3px 10px;
+} */

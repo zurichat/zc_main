@@ -1,0 +1,243 @@
+.themeCont {
+  margin-top: 54px;
+  margin-left: 50px;
+  width: 80%;
+}
+
+.sync {
+  display: flex;
+  margin-top: 15px;
+}
+
+.checkbox {
+  margin-top: -8px;
+}
+
+.os {
+  font-weight: 750;
+  font-size: 14px;
+  font-style: normal;
+  position: relative;
+  line-height: 20px;
+  color: #3a3a3a;
+}
+
+.text {
+  font-size: 14px;
+  margin-left: -109px;
+  font-weight: 500;
+  color: #999999;
+  position: relative;
+}
+
+.direct {
+  display: flex;
+  margin-top: 8px;
+}
+
+.radio {
+  margin-top: -8px;
+}
+
+.mention {
+  font-size: 14px;
+  color: #999999;
+  font-weight: 500;
+  line-height: 20px;
+  font-style: normal;
+  position: relative;
+}
+
+.text2 {
+  margin-left: -162px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #999999;
+  font-style: normal;
+  position: relative;
+  margin-top: 3px;
+}
+
+.text2b {
+  margin-left: -335px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #999999;
+  font-style: normal;
+  position: relative;
+}
+
+.theme1 {
+  width: 90%;
+  margin-top: 25px;
+  margin-left: 32px;
+}
+
+.theme2 {
+  width: 90%;
+  margin-top: 25px;
+  margin-left: 32px;
+}
+
+.customize {
+  border-top: 1px solid rgba(153, 153, 153, 0.5);
+  margin-top: 15px;
+  margin-left: 32px;
+  width: 90%;
+}
+
+.text3 {
+  margin-top: 28px;
+  margin-left: -450px;
+  font-weight: 750;
+  font-size: 14px;
+  line-height: 20px;
+  color: #3a3a3a;
+}
+
+.custom {
+  font-size: 14px;
+  color: #999999;
+  margin-top: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  font-style: normal;
+  margin-left: -207px;
+}
+
+.custom2 {
+  font-size: 14px;
+  color: #999999;
+  margin-top: -1px;
+  font-weight: 500;
+  line-height: 20px;
+  font-style: normal;
+  margin-left: -406px;
+}
+
+.create {
+  font-size: 14px;
+  color: #00b87c;
+  font-weight: 600;
+  margin-top: 12px;
+  line-height: 20px;
+  font-style: normal;
+  margin-left: -345px;
+}
+
+.true {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  font-style: normal;
+  color: #999999;
+  margin-top: 5px;
+  margin-left: -403px;
+}
+
+.set1 {
+  display: flex;
+  margin-left: 32px;
+  margin-top: 15px;
+}
+
+.theme3 {
+  width: 110%;
+  height: 21vh;
+  margin-left: 2px;
+}
+
+.theme4 {
+  width: 81%;
+  height: 21vh;
+  margin-left: 42px;
+}
+
+.all {
+  display: flex;
+  margin-top: 13px;
+  margin-left: 32px;
+}
+
+.show {
+  margin-left: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  font-style: normal;
+  color: #333333;
+}
+
+.arrow {
+  margin-top: -13px;
+}
+
+.clean {
+  margin-top: 30px;
+  margin-left: 32px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  font-style: normal;
+  color: #999999;
+  margin-left: -376px;
+}
+
+.set2 {
+  display: flex;
+  margin-left: 34px;
+  margin-top: 15px;
+}
+
+.theme5 {
+  width: 125%;
+  height: 21vh;
+}
+
+.theme6 {
+  width: 81%;
+  height: 21vh;
+  margin-left: 42px;
+}
+
+.set3 {
+  display: flex;
+  margin-left: 34px;
+  margin-top: 20px;
+}
+
+.theme7 {
+  width: 110%;
+  height: 21vh;
+}
+
+.theme8 {
+  width: 81%;
+  height: 21vh;
+  margin-left: 42px;
+}
+
+.set4 {
+  border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+  margin-left: 34px;
+  width: 90%;
+}
+
+.bottom {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.theme9 {
+  width: 110%;
+  height: 21vh;
+}
+
+.theme10 {
+  width: 81%;
+  height: 21vh;
+  margin-left: 42px;
+}

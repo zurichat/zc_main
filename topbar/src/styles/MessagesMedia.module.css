@@ -1,0 +1,524 @@
+.msgCon {
+  margin-top: 54px;
+  margin-left: 50px;
+  width: 80%;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  font-style: normal;
+  color: #242424;
+  margin-left: -500px;
+}
+
+.clean {
+  display: flex;
+  margin-top: 8px;
+}
+
+.cln {
+  margin-left: 10px;
+  font-size: 13px;
+  color: #3a3a3a;
+  font-style: normal;
+  line-height: 14px;
+}
+
+.compt {
+  margin-left: 10px;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 15px;
+  color: #3a3a3a;
+}
+
+.radio {
+  margin-top: -10px;
+}
+
+.radio2 {
+  margin-top: -10px;
+}
+
+.compact {
+  display: flex;
+  margin-top: 3px;
+}
+
+.text {
+  font-size: 13px;
+  line-height: 15px;
+  font-style: normal;
+  font-weight: normal;
+  margin-top: 6px;
+  color: #3a3a3a;
+  margin-left: -440px;
+}
+
+.theme11 {
+  width: 90%;
+  margin-top: 15px;
+}
+
+.bottom {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(214, 211, 211, 0.5);
+  width: 90%;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 15px;
+  font-style: normal;
+  line-height: 20px;
+  color: #242424;
+  margin-left: -505px;
+}
+
+.full {
+  display: flex;
+  margin-top: 8px;
+  margin-left: 1px;
+}
+
+.display {
+  margin-left: 10px;
+  font-size: 13px;
+  color: #3a3a3a;
+  font-weight: normal;
+  line-height: 20px;
+  font-style: normal;
+}
+
+.jst {
+  margin-left: 10px;
+  font-size: 13px;
+  color: #3a3a3a;
+  font-weight: normal;
+  line-height: 20px;
+  font-style: normal;
+}
+
+.radio3 {
+  margin-top: -8px;
+}
+
+.radio4 {
+  margin-top: -8px;
+  margin-left: 1px;
+}
+
+.just {
+  display: flex;
+  margin-top: 3px;
+}
+
+.theme12 {
+  width: 90%;
+  margin-top: 15px;
+  margin-left: 3px;
+}
+
+.change {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+  color: #999999;
+  margin-left: -298px;
+}
+
+.change p {
+  color: #00b87c;
+  margin-top: -20px;
+  margin-left: 319px;
+  font-weight: normal;
+  font-size: 13px;
+}
+
+.bottom2 {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(214, 211, 211, 0.5);
+  width: 90%;
+  margin-left: 3px;
+}
+
+.info {
+  display: flex;
+  margin-top: 15px;
+}
+
+.current {
+  margin-left: -10px;
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.time {
+  display: flex;
+  margin-top: 15px;
+}
+
+.hour {
+  margin-left: -10px;
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.hexa {
+  display: flex;
+  margin-top: 15px;
+}
+
+.color {
+  margin-left: -10px;
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.add {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 20px;
+  font-style: normal;
+  color: #333333;
+  margin-left: -430px;
+}
+
+.checkbox {
+  margin-top: -8px;
+}
+
+.checkbox2 {
+  margin-top: -8px;
+}
+
+.checkbox3 {
+  margin-top: -8px;
+}
+
+.bottom3 {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(214, 211, 211, 0.5);
+  width: 90%;
+}
+
+.emoji {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  font-style: normal;
+  color: #333333;
+  margin-left: -510px;
+}
+
+.tone {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+  margin-left: -448px;
+}
+
+.choose {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+  margin-left: -90px;
+}
+
+.choose2 {
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+  margin-left: -408px;
+}
+
+.hands {
+  display: flex;
+  margin-top: 16px;
+}
+
+.theme13 {
+  width: 6.5%;
+  height: 6vh;
+  cursor: pointer;
+}
+
+.theme14 {
+  width: 6.5%;
+  height: 6vh;
+  margin-left: 19px;
+  cursor: pointer;
+}
+
+.theme15 {
+  width: 6.5%;
+  height: 6vh;
+  margin-left: 19px;
+  cursor: pointer;
+}
+
+.theme16 {
+  width: 6.5%;
+  height: 6vh;
+  margin-left: 19px;
+  cursor: pointer;
+}
+
+.theme17 {
+  width: 6.5%;
+  height: 6vh;
+  margin-left: 19px;
+  cursor: pointer;
+}
+
+.theme18 {
+  width: 6.5%;
+  height: 6vh;
+  margin-left: 19px;
+  cursor: pointer;
+}
+
+.plntxt {
+  display: flex;
+  margin-top: 12px;
+}
+
+.plain {
+  margin-left: -10px;
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.jumb {
+  display: flex;
+  margin-top: 8px;
+}
+
+.jumbomoji {
+  margin-left: -10px;
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.checkbox4 {
+  margin-top: -8px;
+}
+
+.checkbox5 {
+  margin-top: -8px;
+}
+
+.versions {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+  margin-left: -90px;
+}
+
+.example {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+  margin-left: -440px;
+}
+
+.theme19 {
+  width: 90%;
+  margin-top: 15px;
+  margin-left: 2px;
+}
+
+.bottom4 {
+  margin-top: 16px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(214, 211, 211, 0.5);
+  width: 90%;
+  margin-left: 3px;
+}
+
+.media {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  font-style: normal;
+  color: #333333;
+  margin-left: -393px;
+}
+
+.images {
+  display: flex;
+  margin-top: 10px;
+}
+
+.files {
+  margin-left: -10px;
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.websites {
+  display: flex;
+  margin-top: 10px;
+}
+
+.linked {
+  margin-left: -10px;
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.checkbox6 {
+  margin-top: -8px;
+  margin-left: 3px;
+}
+
+.checkbox7 {
+  margin-top: -8px;
+  margin-left: 3px;
+}
+
+.larger {
+  display: flex;
+  margin-top: 10px;
+}
+
+.than {
+  margin-left: -10px;
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.checkbox8 {
+  margin-top: -8px;
+  margin-left: 3px;
+}
+
+.previews {
+  display: flex;
+  margin-top: 10px;
+}
+
+.of {
+  margin-left: -10px;
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.checkbox9 {
+  margin-top: -8px;
+  margin-left: 3px;
+}
+
+.bottom5 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(214, 211, 211, 0.5);
+  width: 90%;
+  margin-left: 3px;
+}
+
+.emails {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  font-style: normal;
+  color: #333333;
+  margin-left: -370px;
+}
+
+.upload {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+  margin-left: -176px;
+}
+
+.upload2 {
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+  margin-left: -176px;
+}
+
+.upload3 {
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+  margin-left: -305px;
+}
+
+.button {
+  border-radius: 6px;
+  background-color: white;
+  color: #00b87c;
+  border: 1px solid #00b87c;
+  margin-top: 24px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  margin-left: -328px;
+}
+
+.forward {
+  margin-right: -30px;
+  margin-left: -30px;
+  margin-top: -15px;
+  margin-bottom: -35px;
+  font-size: 13px;
+  font-weight: 400;
+}
