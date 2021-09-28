@@ -2,12 +2,8 @@
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 30px;
-  padding-bottom: 20px;
   background: #f8f8ff;
   width: 100%;
-}
-.mobile {
-  display: none;
 }
 ul {
   list-style: none;
@@ -24,183 +20,104 @@ a {
 .top_footer {
   display: grid;
   grid-template-columns: 20% 60% 20%;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
 .logo {
   padding-left: 40px;
-  padding-top: 25px;
-}
-.logo_img {
-  padding-top: 0;
+  margin-top: 6px;
 }
 .logo a {
   display: inline-flex;
 }
-.logo p {
+.logo span {
   color: black;
   padding-left: 5px;
   padding-top: 5px;
+  margin-top: 2px;
+  margin-left: 4px;
   font-size: 22px;
   font-weight: bold;
 }
 .menu {
   display: flex;
   justify-content: space-around;
+  margin-top: 0;
   width: 100%;
-  padding-top: 18px;
 }
-.menu_list h5 {
-  font-size: 14px;
-  font-weight: bold;
+.menu li {
+  padding-bottom: 20px;
 }
-.menu_list li {
-  padding-top: 10px;
-}
-.menu_list a {
+.menu a {
   color: #6a6a6a;
   font-weight: 500;
   font-size: 14px;
 }
-.menu_list a:hover {
+.menu a:hover {
   color: black;
 }
+.menu h5 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 0;
+}
 .social {
-  padding-top: 18px;
+  margin-top: 0;
+  padding-left: 60px;
 }
 .social h5 {
   font-size: 14px;
+  font-weight: 700;
+  margin-top: 0;
 }
 .social ul {
   display: inline-flex;
 }
 .social li {
-  padding: 10px 20px 0 0;
+  padding: 0 20px 0 0;
 }
-.social img {
-  width: 18px;
-  height: 16px;
-}
+
 .bottom_footer {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  padding: 30px;
-  padding-bottom: 10px;
-  border-top: 1px solid rgba(187, 186, 231, 0.15);
+  display: flex;
+  padding-top: 20px;
+  border-top: 2px solid rgba(187, 186, 231, 0.15);
+  justify-content: center;
 }
 .bottom_footer p {
   color: #6a6a6a;
-  padding-left: 10px;
   font-size: 14.5px;
-  font-weight: normal;
-}
-.bottom_footer ul {
-  display: inline-flex;
-  float: right;
-}
-.bottom_footer ul li a {
-  color: #6a6a6a;
-  padding: 0 20px;
-  font-size: 14px;
-  font-weight: bold;
-}
-.bottom_footer ul li a:hover {
-  color: black;
+  font-weight: 500;
+  text-align: center;
 }
 
 /*media queries */
-@media screen and (max-width: 900px) {
-  .logo {
-    padding-left: 0;
-  }
-  .bottom_footer {
-    padding: 10px 0;
-  }
-  .bottom_footer p {
-    font-size: 1.4rem;
-    padding: 0;
-  }
-  .bottom_footer ul li a {
-    font-size: 1.4rem;
-    padding: 0 10px;
-    padding-right: 0;
-  }
-  .top_footer {
-    display: grid;
-    grid-template-columns: 22% 58% 20%;
-    padding-bottom: 40px;
-  }
-}
 @media screen and (max-width: 768px) {
   .footer {
-    display: none;
+    padding: 1rem 1rem;
+    padding-bottom: 0;
   }
-  .m_footer {
-    background: #f8f8ff;
-    padding-bottom: 10px;
-  }
-  .mobile {
-    display: inline-flex;
+  .top_footer {
+    display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-bottom: 0;
   }
   .logo {
-    display: inline-block;
     padding-left: 10px;
-    padding-bottom: 10px;
   }
-  .logo p {
-    font-size: 22px;
-    font-weight: bold;
+  .menu {
+    justify-content: space-between;
+    padding: 10px;
+    padding-bottom: 0;
   }
-  .footer_menu {
+  .social {
     padding-left: 10px;
-    padding-right: 10px;
+  }
+  .bottom_footer {
     padding-top: 10px;
-    width: 95vw;
   }
-  .footer_menu p {
-    text-align: center;
-    font-size: 80%;
-    padding-top: 20px;
-  }
-  .dropdown_list {
-    font-size: 14px;
-    font-weight: 600;
-    padding-bottom: 20px;
-    cursor: pointer;
-  }
-  .dropdown_list:hover {
-    color: #6a6a6a;
-  }
-  .list {
-    padding-bottom: 20px;
-  }
-  .list a {
-    font-size: 14px;
-    font-weight: 600;
-    color: #6a6a6a;
-  }
-  .fa {
-    font-size: 25px;
-    float: right;
-    padding-top: 7px;
-    position: relative;
-  }
-  .mobile_social {
-    padding-left: 10px;
-    width: 100%;
-    position: relative;
-    padding-top: 20px;
-  }
-  .mobile_social ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-  .footer_menu p {
-    font-size: 12px;
+}
+@media screen and (max-width: 500px) {
+  .menu {
+    display: grid;
+    grid-template-columns: 50% 50%;
   }
 }
