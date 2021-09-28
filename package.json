@@ -10,6 +10,7 @@
     "dev:topbar": "npm run dev --prefix topbar",
     "dev:control": "npm run dev --prefix control",
     "dev:sidebar": "npm run dev --prefix sidebar",
+    "dev:plugin-header": "npm run dev --prefix pluginHeader",
     "dev": "npm-run-all --parallel \"dev:*\" \"open\"",
     "check-format": "prettier -c .",
     "format": "prettier -w .",
@@ -18,6 +19,7 @@
     "setup:topbar": "cd topbar && yarn",
     "setup:control": "cd control && yarn",
     "setup:sidebar": "cd sidebar && yarn",
+    "setup:plugin-header": "cd pluginHeader && yarn",
     "postinstall": "concurrently --kill-others-on-fail -m 1 \"yarn:setup:*\"",
     "clean": "rimraf dist",
     "clean:fresh": "rimraf node_modules yarn.lock topbar/node_modules topbar/yarn.lock sidebar/node_modules sidebar/yarn.lock control/node_modules control/yarn.lock",
@@ -25,7 +27,8 @@
     "build:webpack": "webpack --mode=production",
     "build:topbar": "npm run build --prefix topbar",
     "build:control": "npm run build --prefix control",
-    "build:sidebar": "npm run build --prefix sidebar"
+    "build:sidebar": "npm run build --prefix sidebar",
+    "build:plugin-header": "npm run build --prefix pluginHeader"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
