@@ -24,7 +24,7 @@
 
 .text {
   font-size: 14px;
-  margin-left: -109px;
+  margin-left: -96px;
   font-weight: 500;
   color: #999999;
   position: relative;
@@ -49,7 +49,7 @@
 }
 
 .text2 {
-  margin-left: -162px;
+  margin-left: -152px;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
@@ -60,7 +60,7 @@
 }
 
 .text2b {
-  margin-left: -335px;
+  margin-left: -326px;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
@@ -241,3 +241,4 @@
   height: 21vh;
   margin-left: 42px;
 }
+

@@ -36,12 +36,12 @@ const MessagesMedia = () => {
 
   return (
     <div className={styles.msgCon}>
-      <div className={styles.title}>Theme</div>
+      <div className={styles.title}>Messages</div>
       <div className={styles.clean}>
         <div className={styles.radio}>
           <input
             type="radio"
-            value="cln"
+            value="msg"
             checked={active1 === 0}
             onClick={() => {
               setActive1(0)

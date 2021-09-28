@@ -10,70 +10,68 @@ import theme7 from '../assets/images/theme3.png'
 import theme8 from '../assets/images/theme3.png'
 import theme9 from '../assets/images/theme3.png'
 import theme10 from '../assets/images/theme3.png'
-import { useState } from 'react'
+import { useState, useContext, useEffect } from 'react'
+import { authAxios } from '../utils/Api'
+import { ProfileContext } from '../context/ProfileModal'
+
 
 const Themes = () => {
-  // // handleSubmit function on the form
-  // const handleSubmit = (e) => {
+  
+  const { user} = useContext(ProfileContext)
+
+  const [dataState, setDataState] = useState({
+    // channel_hurdle_notification: channel_hurdle,
+    sync_with_os: null,
+    direct_messages_mentions_and_network: ''
+  })
+
+  const setData = () => {
+    authAxios
+      .patch(`/organizations/6137d69b21d3c78fc9a84bdf/members/6137d69b21d3c78fc9a84bdf/settings`, {
+        settings: {
+          themes: dataState
+        }
+      })
+      .then(res => {
+        console.log(res)
+        setState({ loading: false })
+      })
+      .catch(err => {
+        console.log(err?.response?.data)
+        setState({ loading: false })
+      })
+  }
+  const [state, setState] = useState({
+    name: 'React',
+    value: 'duration'
+  })
+
+  useEffect(() => {
+    setData()
+    console.log(dataState)
+    console.log(user)
+  }, [dataState])
+
+  //const [isChecked, setIsChecked] = useState(false)
+
+  // handleSubmit function on the form
+  // const handleSubmit = e => {
   //   e.preventDefault()
   //   console.log(isChecked)
   // }
 
-  // const { user, orgId } = useContext(ProfileContext)
-
-  // const [dataState, setDataState] = useState({
-  //   // channel_hurdle_notification: channel_hurdle,
-  //   sync_with_os: false,
-  //   direct_messages_mentions_and_network: ''
+  // React.useEffect(() => {
+  //   fetch('https://api.zuri.chat/', {
+  //     method: 'POST',
+  //     headers: {
+  //       // authorization if any
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify(isChecked)
+  //   })
+  //     .then(res => console.log(res))
+  //     .catch(error => console.log(error))
   // })
-
-  // const setData = () => {
-  //   authAxios
-  //     .patch(`/organizations/${orgId}/members/${user._id}/settings`, {
-  //       settings: {
-  //         notifications: dataState
-  //       }
-  //     })
-  //     .then(res => {
-  //       console.log(res)
-  //       setState({ loading: false })
-  //     })
-  //     .catch(err => {
-  //       console.log(err?.response?.data)
-  //       setState({ loading: false })
-  //     })
-  // }
-  // const [state, setState] = useState({
-  //   name: 'React',
-  //   value: 'duration'
-  // })
-
-  // useEffect(() => {
-  //   setData()
-  //   console.log(dataState)
-  //   console.log(user)
-  // }, [dataState])
-
-  const [isChecked, setIsChecked] = useState(false)
-
-  // handleSubmit function on the form
-  const handleSubmit = e => {
-    e.preventDefault()
-    console.log(isChecked)
-  }
-
-  React.useEffect(() => {
-    fetch('https://api.zuri.chat/', {
-      method: 'POST',
-      headers: {
-        // authorization if any
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(isChecked)
-    })
-      .then(res => console.log(res))
-      .catch(error => console.log(error))
-  })
 
   return (
     <div className={styles.themeCont}>
@@ -83,29 +81,31 @@ const Themes = () => {
         </div>
       </div>
       <div className={styles.sync}>
-        <form onsubmit={handleSubmit}>
           <div className={styles.checkbox}>
             <input
               type="checkbox"
               name="sync"
-              onChange={e => setIsChecked(e.target.checked)}
+              onClick={() => {
+                setDataState({sync_with_os: 'yes'})
+                setData()
+              }}
             />
           </div>
-        </form>
         <div className={styles.os}>Sync with OS setting</div>
       </div>
       <div className={styles.direct}>
-        <form onsubmit={handleSubmit}>
           <div className={styles.radio}>
             <input
               type="checkbox"
-              name="direct"
-              onChange={e => setIsChecked(e.target.checked)}
+              name="sync"
+              onClick={() => {
+                setDataState({direct_messages_mentions_and_network: 'yes'})
+                setData()
+              }}
             />
           </div>
-        </form>
         <div className={styles.mention}>
-          Direct messages, mentions & network
+          Direct messages, mentions &amp; network
         </div>
       </div>
       <div className={styles.text2}>
