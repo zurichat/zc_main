@@ -9,10 +9,15 @@ const InvitePage = () => {
   const [success, setsuccess] = useState(false)
   const [error, seterror] = useState('')
 
-  const checkIfRegistered = async ({ uuid }) => {
+  console.log(id)
+  window.location.hre
+  const checkIfRegistered = async ({ id }) => {
     try {
-      const res = await axios.get()
+      const res = await axios.get(
+        `https://api.zuri.chat/organizations/invites/${id}`
+      )
       console.log(res.data.data)
+      console.log(uuid)
       return res.data
     } catch (err) {
       console.log(err)
@@ -26,7 +31,7 @@ const InvitePage = () => {
   const handleJoin = () => {
     if (sessionStorage.getItem(`user`) === null) {
       sessionStorage.setItem(`workSpaceInviteRedirect`, `invites/${id}`)
-      history.push(`/login`)
+      history.push(`/signup`)
       return
     }
 
@@ -46,31 +51,33 @@ const InvitePage = () => {
         <img src={logo} alt="zuri" />
       </div>
       <div className={styles.write}>
-        <h5>You have been invited to a Workspace</h5>
-        <button onClick={checkIfRegistered} className={styles.button}>
-          Join?
-        </button>
-        {error && (
-          <div className={`alert alert-danger ${styles.error}`}>{error}</div>
-        )}
-        {!success ? (
-          <>
-            <h1 className={styles.firstText}>Join</h1>
-            <h5 className={styles.secondText}>
-              You have been invited to a Workspace
-            </h5>
-            <button onClick={handleJoin} className={styles.button}>
-              Join?
-            </button>
-          </>
-        ) : (
-          <>
-            {/* <h5 className={styles.secondText}>Welcome</h5> */}
-            <button onClick={handleGoToHome} className={styles.button}>
-              Go to the Workspace Homepage
-            </button>
-          </>
-        )}
+        <div className={styles.wrapper}>
+          {error && (
+            <div className={`alert alert-danger ${styles.error}`}>{error}</div>
+          )}
+          {!success ? (
+            <>
+              <h1 className={styles.firstText}>Join</h1>
+              <h5 className={styles.secondText}>
+                You have been invited to a Workspace
+              </h5>
+              <button
+                onClick={handleJoin}
+                // onClick={() => history.push('/signup')}
+                className={styles.button}
+              >
+                Join?
+              </button>
+            </>
+          ) : (
+            <>
+              {/* <h5 className={styles.secondText}>Welcome</h5> */}
+              <button onClick={handleGoToHome} className={styles.button}>
+                Go to the Workspace Homepage
+              </button>
+            </>
+          )}
+        </div>
       </div>
     </main>
   )
