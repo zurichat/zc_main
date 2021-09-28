@@ -67,19 +67,19 @@ const EditProfile = () => {
       authAxios
         .patch(`/organizations/${orgId}/members/${user._id}/photo`, formData)
         .then(res => {
-          console.log(res)
-          newUploadedImage = res.data.data
+          console.log('image patch', res)
+          const newUploadedImage = res.data.data
           setState({ loading: false })
-          setUserProfileImage(res.data.data)
+          setUserProfileImage(newUploadedImage)
           toast.success('User Image Updated Successfully', {
-            position: 'bottom-center'
+            position: 'top-center'
           })
         })
         .catch(err => {
           console.log(err)
           setState({ loading: false })
           toast.error(err?.message, {
-            position: 'bottom-center'
+            position: 'top-center'
           })
         })
     }
@@ -331,7 +331,7 @@ const EditProfile = () => {
                   Upload Image
                   {/* ) */}
                 </label>
-                <button className="btns rmvBtn">Delete image</button>
+                <button className="">Delete image</button>
               </div>
             </div>
           </div>
