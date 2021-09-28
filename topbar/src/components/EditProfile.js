@@ -34,8 +34,6 @@ const EditProfile = () => {
     loading: false
   })
 
-  console.log('country code', data)
-
   const addList = () => {
     if (links.length < 5) {
       setLinks([...links, ''])
@@ -241,8 +239,8 @@ const EditProfile = () => {
                   >
                     {
                       // country code
-                      data.map(item => (
-                        <option key={item.dial_code} value={item.dial_code}>
+                      data.map((item, index) => (
+                        <option key={index} value={item.dial_code}>
                           {item.dial_code}
                         </option>
                       ))
