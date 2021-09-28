@@ -305,12 +305,14 @@ const EditProfile = () => {
             </div>
             <div className="img-container">
               <div className="avatar">
-                <img
-                  ref={avatarRef}
-                  className="img"
-                  src={userProfileImage ? userProfileImage : avatar}
-                  alt="profile-pic"
-                />
+                <div className="avatar-container">
+                  <img
+                    ref={avatarRef}
+                    className="img"
+                    src={userProfileImage ? userProfileImage : avatar}
+                    alt="profile-pic"
+                  />
+                </div>
 
                 <input
                   ref={imageRef}
@@ -331,7 +333,9 @@ const EditProfile = () => {
                   Upload Image
                   {/* ) */}
                 </label>
-                <button className="">Delete image</button>
+                <div role="button" className="rmvBtn">
+                  Remove Image
+                </div>
               </div>
             </div>
           </div>
