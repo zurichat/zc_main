@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import headerStyles from '../component-styles/HeaderStyle.module.css'
 import zurichatlogo from '../component-assets/zurichatlogo.svg'
-import { Button } from '../pages/createworkspace/components/WorkspaceHome'
+//import { Button } from '../pages/createworkspace/components/WorkspaceHome'
 
 const HeaderSearchSuggestion = () => {
   return (
@@ -16,8 +16,6 @@ const HeaderSearchSuggestion = () => {
         <img
           src={zurichatlogo}
           alt="zuri-logo"
-          width="20"
-          height="20"
           className={`d-inline-block align-top ${headerStyles.image}`}
         />
         <span className={`mb-2 ${headerStyles.zuriChat}`}>Zuri Chat</span>
@@ -84,13 +82,14 @@ const HeaderSearchSuggestion = () => {
             </Link>
           </li>
         </ul>
-        <ul class="navbar-nav d-lg-none me-auto my-2 my-lg-0 navbar-nav-scroll">
+        <ul class={`d-lg-none navbar-nav-scroll ${headerStyles.signs}`}>
           <li className="nav-item">
             <Link
+              className="nav-link"
               to="/signup"
-              className={`nav-link ${headerStyles.navLinkSignUp}`}
+              className={`btn ${headerStyles.signU}`}
             >
-              <span className={`signup ${headerStyles.signU}`}>Sign Up</span>
+              <span>Sign Up</span>
             </Link>
           </li>
           <li className="nav-item">
@@ -100,28 +99,22 @@ const HeaderSearchSuggestion = () => {
               className={`btn ${headerStyles.signIn}`}
               role="button"
             >
-              <span className="signin">Sign In</span>
+              <span className="signin">Login</span>
             </Link>
           </li>
         </ul>
       </div>
-      <ul class="navbar-nav d-none d-lg-flex me-auto my-2 my-lg-0 navbar-nav-scroll">
+      <ul
+        class={`navbar-nav d-none d-lg-flex me-auto my-2 my-lg-0 navbar-nav-scroll ${headerStyles.signs}`}
+      >
         <li className="nav-item">
-          <Link
-            to="/signup"
-            className={`nav-link btn ${headerStyles.navLinkSignUp}`}
-          >
-            <span className={` ${headerStyles.signU}`}>Sign Up</span>
+          <Link to="/signup">
+            <span className={`${headerStyles.signU}`}>Sign Up</span>
           </Link>
         </li>
         <li className="nav-item">
-          <Link
-            className={``}
-            to="/login"
-            className={`btn nav-link ${headerStyles.signIn}`}
-            role="button"
-          >
-            <span>Sign In</span>
+          <Link to="/login">
+            <span className={`${headerStyles.signIn}`}>Login</span>
           </Link>
         </li>
       </ul>

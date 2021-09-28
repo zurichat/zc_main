@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { withRouter, useHistory } from 'react-router-dom'
 // import { BehaviorSubject } from 'rxjs'
 import AuthInputBox from '../../components/AuthInputBox'
@@ -40,10 +40,31 @@ const Login = () => {
 
   let history = useHistory()
 
+  // const redirect = location.search ? location.search.split("=")[1] : "/";
+
+  useEffect(() => {
+    const userInfo = sessionStorage.getItem(`user`)
+    const redirect = sessionStorage.getItem(`workSpaceInviteRedirect`)
+
+    if (userInfo && userInfo !== null && redirect !== null)
+      history.push(redirect)
+  }, [history])
+
   const handleSubmit = async e => {
+    e.preventDefault()
     setemailerror('')
     setpassworderror('')
-    e.preventDefault()
+
+    if (!email) {
+      setemailerror(`Enter an email address`)
+      return
+    }
+
+    if (!password) {
+      setpassworderror(`Enter a Password`)
+      return
+    }
+
     await axios
       .post('https://api.zuri.chat/auth/login', {
         email,
@@ -75,7 +96,7 @@ const Login = () => {
         setTimeout(() => {
           //Redirect to some other page
           GetUserInfo()
-          history.push('/home')
+          history.push('/choose-workspace')
           setLoading(false)
         }, 2000)
       })
@@ -112,14 +133,13 @@ const Login = () => {
           googleHeader="Login with Google"
           topLineText="OR"
           submitButtonName="Log in"
-          email={email}
-          password={password}
-          check={rememberMe}
+          disabled={email && password}
           error={error}
           handleSubmit={handleSubmit}
           bottomLine="New to us?"
           bottomLink="Create an Account"
           bottomLinkHref="Signup"
+          setLoading={setLoading}
         >
           <AuthInputBox
             className={`${styles.inputElement}`}
@@ -145,7 +165,7 @@ const Login = () => {
           />
 
           <div className={`${styles.rememberMe}`}>
-            <span className={`${styles.left}`}>
+            <div className={`${styles.left}`}>
               <input
                 className={`${styles.checkBox}`}
                 name="RememberMe"
@@ -157,10 +177,10 @@ const Login = () => {
                 // onFocus={displayImage}
               />
               Remember me
-            </span>
-            <span className={`${styles.right}`}>
+            </div>
+            <div className={`${styles.right}`}>
               Forgot password?<a href="/"> {''}Get help signing in</a>
-            </span>
+            </div>
           </div>
         </FormWrapper>
       </section>

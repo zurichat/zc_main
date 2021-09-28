@@ -15,7 +15,11 @@ import AdvancedSettings from '../pages/preferences/components/AdvancedSettings'
 =======
 import AudioVideo from '../components/AudioVideo'
 import AdvancedSettings from '../components/AdvancedSettings'
+<<<<<<< HEAD
 >>>>>>> upstream/dev:topbar/src/components/Preferences.js
+=======
+import Accessibility from './Accessibility'
+>>>>>>> upstream/dev
 
 const Preferences = () => {
   const { sideBar } = useContext(ProfileContext)
@@ -33,6 +37,7 @@ const Preferences = () => {
           {sideBar === 3 && <Themes />}
           {sideBar === 4 && <MessagesMedia />}
           {sideBar === 5 && <LanguageAndRegion />}
+          {sideBar === 6 && <Accessibility />}
           {sideBar === 7 && <MarkAsRead />}
           {sideBar === 8 && <AudioVideo />}
           {sideBar === 9 && <AdvancedSettings />}

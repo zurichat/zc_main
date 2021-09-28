@@ -4,169 +4,29 @@ export const StyledProfileWrapper = styled.section`
   width: 100%;
   height: 100%;
   padding: 2rem;
-
-  /* CSS variables. */
-  :root {
-    --PhoneInput-color--focus: #03b2cb;
-    --PhoneInputInternationalIconPhone-opacity: 0.8;
-    --PhoneInputInternationalIconGlobe-opacity: 0.65;
-    --PhoneInputCountrySelect-marginRight: 0.35em;
-    --PhoneInputCountrySelectArrow-width: 0.3em;
-    --PhoneInputCountrySelectArrow-marginLeft: var(
-      --PhoneInputCountrySelect-marginRight
-    );
-    --PhoneInputCountrySelectArrow-borderWidth: 1px;
-    --PhoneInputCountrySelectArrow-opacity: 0.45;
-    --PhoneInputCountrySelectArrow-color: inherit;
-    --PhoneInputCountrySelectArrow-color--focus: var(--PhoneInput-color--focus);
-    --PhoneInputCountrySelectArrow-transform: rotate(45deg);
-    --PhoneInputCountryFlag-aspectRatio: 1.5;
-    --PhoneInputCountryFlag-height: 1em;
-    --PhoneInputCountryFlag-borderWidth: 1px;
-    --PhoneInputCountryFlag-borderColor: rgba(0, 0, 0, 0.5);
-    --PhoneInputCountryFlag-borderColor--focus: var(--PhoneInput-color--focus);
-    --PhoneInputCountryFlag-backgroundColor--loading: rgba(0, 0, 0, 0.1);
-  }
-
-  .PhoneInput {
-    /* This is done to stretch the contents of this component. */
-    display: flex;
-    align-items: center;
-  }
-
-  .PhoneInputInput {
-    /* The phone number input stretches to fill all empty space */
-    flex: 1;
-    /* The phone number input should shrink
-        to make room for the extension input */
-    min-width: 0;
-  }
-
-  .PhoneInputCountryIcon {
-    width: calc(
-      var(--PhoneInputCountryFlag-height) *
-        var(--PhoneInputCountryFlag-aspectRatio)
-    );
-    height: var(--PhoneInputCountryFlag-height);
-  }
-
-  .PhoneInputCountryIcon--square {
-    width: var(--PhoneInputCountryFlag-height);
-  }
-
-  .PhoneInputCountryIcon--border {
-    background-color: var(--PhoneInputCountryFlag-backgroundColor--loading);
-    box-shadow: 0 0 0 var(--PhoneInputCountryFlag-borderWidth)
-        var(--PhoneInputCountryFlag-borderColor),
-      inset 0 0 0 var(--PhoneInputCountryFlag-borderWidth)
-        var(--PhoneInputCountryFlag-borderColor);
-  }
-
-  .PhoneInputCountryIconImg {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-
-  .PhoneInputInternationalIconPhone {
-    opacity: var(--PhoneInputInternationalIconPhone-opacity);
-  }
-
-  .PhoneInputInternationalIconGlobe {
-    opacity: var(--PhoneInputInternationalIconGlobe-opacity);
-  }
-
-  .PhoneInputCountry {
-    position: relative;
-    align-self: stretch;
-    display: flex;
-    align-items: center;
-    margin-right: var(--PhoneInputCountrySelect-marginRight);
-  }
-
-  .PhoneInputCountrySelect {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-    border: 0;
-    opacity: 0;
-    cursor: pointer;
-  }
-
-  .PhoneInputCountrySelect[disabled] {
-    cursor: default;
-  }
-
-  .PhoneInputCountrySelectArrow {
-    display: block;
-    content: '';
-    width: var(--PhoneInputCountrySelectArrow-width);
-    height: var(--PhoneInputCountrySelectArrow-width);
-    margin-left: var(--PhoneInputCountrySelectArrow-marginLeft);
-    border-style: solid;
-    border-color: var(--PhoneInputCountrySelectArrow-color);
-    border-top-width: 0;
-    border-bottom-width: var(--PhoneInputCountrySelectArrow-borderWidth);
-    border-left-width: 0;
-    border-right-width: var(--PhoneInputCountrySelectArrow-borderWidth);
-    transform: var(--PhoneInputCountrySelectArrow-transform);
-    opacity: var(--PhoneInputCountrySelectArrow-opacity);
-  }
-
-  .PhoneInputCountrySelect:focus
-    + .PhoneInputCountryIcon
-    + .PhoneInputCountrySelectArrow {
-    opacity: 1;
-    color: var(--PhoneInputCountrySelectArrow-color--focus);
-  }
-
-  .PhoneInputCountrySelect:focus + .PhoneInputCountryIcon--border {
-    box-shadow: 0 0 0 var(--PhoneInputCountryFlag-borderWidth)
-        var(--PhoneInputCountryFlag-borderColor--focus),
-      inset 0 0 0 var(--PhoneInputCountryFlag-borderWidth)
-        var(--PhoneInputCountryFlag-borderColor--focus);
-  }
-
-  .PhoneInputCountrySelect:focus
-    + .PhoneInputCountryIcon
-    .PhoneInputInternationalIconGlobe {
-    opacity: 1;
-    color: var(--PhoneInputCountrySelectArrow-color--focus);
-  }
-
   .grid-container {
     display: flex;
     align-items: flex-start;
-
     .input-cage {
       flex-grow: 1;
       margin-right: 5rem;
-
       @media (max-width: 768px) {
         margin-right: 0;
       }
-
       .mobileCon {
         width: 100%;
-
         @media (max-width: 768px) {
           display: flex;
           align-items: flex-start;
         }
-
         .mobileAvataeCon {
           display: none;
-
           @media (max-width: 768px) {
             display: block;
             position: relative;
             width: 10rem;
             height: 10rem;
             border-radius: 50%;
-
             .icon-container {
               position: absolute;
               top: -0.2rem;
@@ -179,32 +39,66 @@ export const StyledProfileWrapper = styled.section`
               display: flex;
               align-items: center;
               justify-content: center;
-
               .icon {
                 font-size: 1rem;
                 color: rgba(153, 153, 153, 1);
               }
             }
-
             .avatar {
               object-fit: cover;
               border-radius: 50%;
+              width: 100%;
             }
           }
         }
       }
-
       .input-group {
         width: 100%;
         margin-bottom: 1.5rem;
-
+        &.phone {
+          flex-direction: column;
+          align-items: flex-start;
+          .phone-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            border: 1px solid #a1a1a1;
+            border-radius: 4px;
+            &:hover {
+              border: 1px solid #00b87c;
+              transition: border 0.25s ease-in-out;
+            }
+            .pref,
+            .phoneInput {
+              height: 3.8125rem;
+              padding: 0 0.5rem;
+              outline: none;
+              border: none;
+            }
+            .pref {
+              width: 72px;
+              font-size: 1rem;
+            }
+            .phoneInput {
+              flex-grow: 1;
+              margin-left: 1rem;
+              width: 100%;
+            }
+          }
+        }
+        &.mal-4 {
+          margin-left: 0;
+          @media (max-width: 768px) {
+            margin-left: 1rem;
+          }
+        }
         .inputLabel {
           font-size: 1rem;
           font-weight: 400;
           color: #1d1c1d;
           margin-bottom: 0.75rem;
+          display: block;
         }
-
         .input,
         .select,
         .textarea,
@@ -212,52 +106,53 @@ export const StyledProfileWrapper = styled.section`
         .css-2b097c-container {
           width: 100%;
           height: 3.8125rem;
-          border-radius: 5px;
           border: 1px solid #a1a1a1;
           padding: 0 1rem;
           font-size: 1.4rem;
           outline: none;
           background: none;
+          border-radius: 5px;
+          border-top-left-radius: 5px !important;
+          border-bottom-left-radius: 5px !important;
+          &:hover,
+          &:focus {
+            border: 1px solid #00b87c;
+            transition: border 0.25s ease-in-out;
+          }
         }
-
         .PhoneInput {
           display: flex;
           align-items: center;
-
           .PhoneInputCountrySelect {
             width: 3rem;
           }
-
           .PhoneInputInput {
             outline: none;
             color: #000;
             font-size: 1rem;
+            border: none;
+            outline: none;
           }
         }
-
         .css-2b097c-container {
           display: block;
           width: 100%;
           height: 100%;
           padding: 0;
-
           .css-yk16xz-control {
             background-color: none;
             border: none;
             height: 100%;
           }
         }
-
         .textarea {
           height: 6.125rem;
         }
-
         .warning {
           font-size: 0.75rem;
           color: #fb9002;
           cursor: pointer;
         }
-
         .para {
           font-size: 0.75rem;
           font-weight: 400;
@@ -268,34 +163,28 @@ export const StyledProfileWrapper = styled.section`
           margin-top: 0.75rem;
         }
       }
-
       .double-input {
         display: grid;
         grid-template-columns: 2fr 1fr;
-        grid-gap: 2rem;
+        grid-gap: 1rem;
         align-items: flex-start;
-
         @media (max-width: 768px) {
           grid-gap: 1rem;
         }
       }
     }
-
     .img-container {
       width: 24rem;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-
       @media (max-width: 768px) {
         display: none;
       }
-
       .avatar {
         width: 100%;
-        height: 24rem;
-
+        height: 26rem;
         .img {
           object-fit: cover;
           width: 100%;
@@ -305,10 +194,8 @@ export const StyledProfileWrapper = styled.section`
       }
     }
   }
-
   .mobileButton {
     display: none;
-
     @media (max-width: 768px) {
       display: flex;
       align-items: center;
@@ -322,13 +209,12 @@ export const StyledProfileWrapper = styled.section`
       z-index: 40000;
     }
   }
-
   .button-wrapper {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-top: 4.5rem;
-
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
     @media (max-width: 768px) {
       display: none;
     }
@@ -339,23 +225,20 @@ export const StyledProfileWrapper = styled.section`
     padding: 0.75rem 1.2rem;
     outline: none;
     border: none;
-
+    cursor: pointer;
     &.chgBtn {
       background: #00b87c;
       color: #fff;
-
+      border-radius: 4px;
       &:hover {
-        background: none;
-        border: 4px solid #00b87c;
-        color: #00b87c;
+        background: #029765;
+        color: #fff;
         transition: all 0.3s ease-in-out;
       }
     }
-
     &.rmvBtn {
       background: none;
       color: #999;
-
       &:hover {
         color: red;
         transition: all 0.3s ease-in-out;

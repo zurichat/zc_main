@@ -5,24 +5,22 @@ import { useWorkspaceContext } from './WorkspaceContext'
 
 const WorkspaceCard = () => {
   const { organizations, user, error } = useWorkspaceContext()
-
   return (
     <section className={`${styles.workspace_card}`}>
-      <header className={`${styles.card_header}`}>
+      <header
+        className={`${styles.card_header}`}
+        style={{ borderBottom: !organizations.length && 'none' }}
+      >
         <h4 className={`${styles.card_title}`}>
           {!user.email
             ? 'Please login to view your workspaces'
             : !organizations.length
-            ? error
-            : `Workspaces for ${user.email}`}
-          =======
-          {!organizations.length
-            ? 'No user is logged in'
+            ? 'No workspace found or session expired'
             : `Workspaces for ${user.email}`}
         </h4>
       </header>
       <div className={`${styles.singleworkspace_wrapper}`}>
-        {organizations.map(org => {
+        {organizations.map((org, id) => {
           return (
             <SingleWorkspace
               key={org.id}

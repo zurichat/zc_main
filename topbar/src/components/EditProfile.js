@@ -1,14 +1,14 @@
 import { useRef, useState, useEffect, useContext } from 'react'
 import ProfileModal from './ProfileModal'
 
+import { authAxios } from '../utils/Api'
+
 import { AiFillCamera } from 'react-icons/ai'
 import avatar from '../assets/images/user.svg'
 import { ProfileContext } from '../context/ProfileModal'
-import { authAxios } from '../utils/Api'
 import Loader from 'react-loader-spinner'
 import toast, { Toaster } from 'react-hot-toast'
-import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
+import { data } from '../utils/Countrycode'
 import TimezoneSelect from 'react-timezone-select'
 import { StyledProfileWrapper } from '../styles/StyledEditProfile'
 
@@ -19,14 +19,14 @@ const EditProfile = () => {
     useContext(ProfileContext)
   const [selectedTimezone, setSelectedTimezone] = useState({})
   const [links, setLinks] = useState([''])
-  const [phone, setPhone] = useState('')
   const [state, setState] = useState({
-    name: user.first_name,
+    name: user.name,
     display_name: user.display_name,
     pronouns: user.pronouns,
     role: user.role,
     image_url: user.image_url,
     bio: '',
+    phone: user.phone,
     prefix: '',
     timezone: '',
     twitter: '',
@@ -34,10 +34,12 @@ const EditProfile = () => {
     loading: false
   })
 
-  console.log('users', user)
+  console.log('country code', data)
 
   const addList = () => {
-    setLinks([...links, ''])
+    if (links.length < 5) {
+      setLinks([...links, ''])
+    }
   }
 
   const handleLinks = (e, index) => {
@@ -46,6 +48,8 @@ const EditProfile = () => {
     setLinks(links[index])
   }
 
+  //Function handling Image Upload
+
   const handleImageChange = event => {
     setState({ loading: true })
     if (imageRef.current.files[0]) {
@@ -53,8 +57,6 @@ const EditProfile = () => {
 
       fileReader.onload = function (event) {
         avatarRef.current.src = event.target.result
-        setUserProfileImage(event.target.result)
-        console.log(event.target.result)
       }
 
       fileReader.readAsDataURL(imageRef.current.files[0])
@@ -68,14 +70,12 @@ const EditProfile = () => {
         .patch(`/organizations/${orgId}/members/${user._id}/photo`, formData)
         .then(res => {
           console.log(res)
+          newUploadedImage = res.data.data
           setState({ loading: false })
-          setUserProfileImage(res.data.data.image_url)
+          setUserProfileImage(res.data.data)
           toast.success('User Image Updated Successfully', {
             position: 'bottom-center'
           })
-        })
-        .then(res => {
-          return authAxios.get(`/organizations/${orgId}/members/${user._id}/`)
         })
         .catch(err => {
           console.log(err)
@@ -88,38 +88,8 @@ const EditProfile = () => {
   }
 
   useEffect(() => {
-    // handleImageChange()
-  }, [userProfileImage])
-
-  // const handleImageChange = event => {
-  //   setState({ loading: true })
-
-  //   const file = event.target.files[0]
-
-  //   // encode the file using the FileReader API
-  //   const reader = new FileReader()
-  //   reader.onloadend = () => {
-  //     // log to console
-  //     // logs data:<type>;base64,wL2dvYWwgbW9yZ...
-  //     avatarRef.current.src = reader.result
-  //     setUserProfileImage(reader.result)
-  //     console.log(reader.result)
-  //   }
-  //   reader.readAsDataURL(file)
-
-  // let fileReader = new FileReader();
-
-  // fileReader.onload = function (event) {
-  //   avatarRef.current.src = event.target.result;
-  //   console.log(event.target.result);
-  // };
-
-  // let reader = fileReader.readAsDataURL(event.target.files[0]);
-  // console.log(reader)
-
-  useEffect(() => {
     setUserProfileImage(user.image_url)
-  })
+  }, [user])
 
   // This will handle the profile form submission
 
@@ -128,10 +98,10 @@ const EditProfile = () => {
     setState({ loading: true })
 
     const data = {
-      first_name: state.name,
+      name: state.name,
       display_name: state.display_name,
       pronouns: state.pronouns,
-      phone: phone,
+      phone: state.phone,
       bio: state.bio,
       timeZone: state.timezone
       // socials: [
@@ -183,7 +153,7 @@ const EditProfile = () => {
                     <AiFillCamera className="icon" />
                   </label>
                 </div>
-                <div className="input-group ml-4 md:ml-0">
+                <div className="input-group mal-4">
                   <label htmlFor="name" className="inputLabel">
                     First Name
                   </label>
@@ -197,9 +167,8 @@ const EditProfile = () => {
                   />
                 </div>
               </div>
-
               <div className="double-input">
-                <div className="input-group">
+                <div className="input-group mb-0">
                   <label htmlFor="dname" className="inputLabel">
                     Choose a Display Name
                   </label>
@@ -233,7 +202,7 @@ const EditProfile = () => {
                 </div>
               </div>
 
-              <div className="input-group">
+              <div className="input-group mb-0">
                 <label htmlFor="what" className="inputLabel">
                   What you do
                 </label>
@@ -249,7 +218,6 @@ const EditProfile = () => {
                   Let people know what you do at <b>ZURI</b>
                 </p>
               </div>
-
               <div className="input-group">
                 <label htmlFor="bio" className="inputLabel">
                   Bio
@@ -262,13 +230,32 @@ const EditProfile = () => {
                   id="bio"
                 ></textarea>
               </div>
-              <div className="input-group">
+              <div className="input-group phone">
                 <label className="inputLabel">Phone Number</label>
-                <PhoneInput
-                  placeholder="Enter phone number"
-                  value={phone}
-                  onChange={setPhone}
-                />
+                <div className="phone-container">
+                  <select
+                    onChange={e =>
+                      setState({ ...state, prefix: e.target.value })
+                    }
+                    className="pref"
+                  >
+                    {
+                      // country code
+                      data.map(item => (
+                        <option key={item.dial_code} value={item.dial_code}>
+                          {item.dial_code}
+                        </option>
+                      ))
+                    }
+                  </select>
+                  <input
+                    onChange={e =>
+                      setState({ ...state, phone: e.target.value })
+                    }
+                    className="phoneInput"
+                    type="number"
+                  />
+                </div>
               </div>
               <div className="input-group">
                 <label className="inputLabel">Time Zone</label>
@@ -277,7 +264,6 @@ const EditProfile = () => {
                   onChange={setSelectedTimezone}
                 />
               </div>
-
               <div className="input-group">
                 <label htmlFor="twitter" className="inputLabel">
                   Twitter
@@ -304,7 +290,6 @@ const EditProfile = () => {
                   name="facebook"
                 />
               </div>
-
               <div className="input-group">
                 <label className="inputLabel">
                   Additional Links <span>(5 max)</span>
@@ -313,9 +298,11 @@ const EditProfile = () => {
                   <input type="text" className="input mb-3" key={index} />
                 ))}
 
-                <p className="warning" onClick={addList}>
-                  Add new link
-                </p>
+                {links.length !== 5 && (
+                  <p className="warning" onClick={addList}>
+                    Add new link
+                  </p>
+                )}
               </div>
             </div>
             <div className="img-container">
@@ -335,16 +322,16 @@ const EditProfile = () => {
                   id="img"
                 />
                 <label htmlFor="img" className="btns chgBtn">
-                  {state.loading ? (
+                  {/* {state.loading ? (
                     <Loader
                       type="ThreeDots"
-                      color="#00B87C"
+                      color="#fff"
                       height={40}
                       width={40}
                     />
-                  ) : (
-                    'Upload Image'
-                  )}
+                  ) : ( */}
+                  Upload Image
+                  {/* ) */}
                 </label>
                 <button className="btns rmvBtn">Delete image</button>
               </div>
@@ -362,12 +349,7 @@ const EditProfile = () => {
             <button className="btns rmvBtn">Cancel</button>
             <button onClick={handleFormSubmit} className="btns chgBtn">
               {state.loading ? (
-                <Loader
-                  type="ThreeDots"
-                  color="#00B87C"
-                  height={40}
-                  width={40}
-                />
+                <Loader type="ThreeDots" color="#fff" height={40} width={40} />
               ) : (
                 'Save Changes'
               )}

@@ -1,19 +1,14 @@
-import axios from 'axios'
-import { useContext, Fragment, useState, useEffect } from 'react'
-import useSWR from 'swr'
+import { Fragment, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-// import { URLContext } from './context/Url'
-// import { PluginContext } from './context/Plugins'
 import styles from './styles/Sidebar.module.css'
 import Dropdown from './components/Dropdown'
 import Modal from './components/InviteModal'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
 import styled from 'styled-components'
 import AuthInputBox from './components/AuthInputBox'
-// import JoinedRooms from './joinedRooms/JoinedRooms'
-// import PublicRooms from '../publicRooms/PublicRooms'
-// import cheerio from 'cheerio'
+import DropDown from './components/Drop'
 
+import newMsgIcon from './assets/images/newMsgIcon.svg'
 import threadIcon from './verified-components/assets/icons/thread-icon.svg'
 import dmIcon from './verified-components/assets/icons/dm-icon.svg'
 import draftIcon from './verified-components/assets/icons/draft-icon.svg'
@@ -25,226 +20,195 @@ import newmessage from './verified-components/assets/icons/newmessage.svg'
 import { links } from './utils/links'
 import { navigateToUrl } from 'single-spa'
 import { Button } from '../../control/src/pages/createworkspace/components/WorkspaceHome'
-
-const fetcher = url => fetch(url).then(res => res.json())
+import Channels from './components/Channels'
+import { Modall } from './components/Modal'
+import SkeletonLoader from './components/SkeletonLoader'
+import Messages from './components/Messages'
+import fetcher from './utils/fetcher'
+import axios from 'axios'
+import { GetUserInfo } from '@zuri/control'
+import { authAxios } from './utils/Api'
+import linkIcon from './assets/link.svg'
 
 const Sidebar = props => {
-  // const { data: channelsData } = useSWR('/api/plugin/channels', fetcher)
-  const { data: messagesData } = useSWR('/api/plugin/messages', fetcher)
-
-  const channelsData = [
-    {
-      id: 0,
-      name: 'announcments'
-    },
-    {
-      id: 1,
-      name: 'games'
-    }
-  ]
-  // const { data: plugins } = useSWR('/api/plugin/list', fetcher)
-  // const { data: organization } = useSWR('https://api.zuri.chat/organizations/6133c5a68006324323416896', fetcher)
-  // console.log(organization)
-
-  // const { setUrl } = useContext(URLContext)
   const [show, setShow] = useState(false)
-  // console.log("user", user)
-  // const { plugins, setPlugins } = useContext(PluginContext)
-
-  // // const user = JSON.parse(sessionStorage.getItem('user'))
-  // // const org_id = '6133c5a68006324323416896'
+  const [openInvite, setOpenInvite] = useState(false)
   const [showDialog, setShowDialog] = useState(false)
   const open = () => setShowDialog(true)
   const close = () => setShowDialog(false)
-  // // const [rooms, setRooms] = useState({})
+  const openInviteModal = () => setOpenInvite(true)
+  const closeInviteModal = () => setOpenInvite(false)
   const [query, setQuery] = useState('')
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState('')
+  // const [error, setError] = useState('')
+  const [inviteEmail, setInviteEmail] = useState('')
+  const [owner, setOwner] = useState(false)
+  const [InviteSuccess, setInviteSuccess] = useState(false)
 
-  // // Sort room function
+  let currentWorkspace = localStorage.getItem('currentWorkspace')
+  console.log(currentWorkspace)
 
-  // // const sortRooms = (val, type) => {
-  // //   let values = [...val]
-  // //   console.log(type)
-  // //   switch (type) {
-  // //     case 'atoz':
-  // //       values.sort((a, b) => a.title.localeCompare(b.title))
-  // //       break
-  // //     case 'ztoa':
-  // //       values.sort((a, b) => b.title.localeCompare(a.title))
-  // //       break
-  // //     case 'minmax':
-  // //       values.sort((a, b) => a.members - b.members)
-  // //       break
-  // //     case 'maxmin':
-  // //       values.sort((a, b) => b.members - a.members)
-  // //       break
-  // //     default:
-  // //       break
-  // //   }
-  // //   return values
-  // // }
+  const [userInfo, setUserInfo] = useState({
+    userId: '',
+    Organizations: [],
+    token: ''
+  })
 
-  // const sidebarApi = async url => {
-  //   setLoading(true)
-  //   try {
-  //     const res = await axios.get(
-  //       `https://channels.zuri.chat/api/v1/sidebar/?org=1&user=43567868&format=json`
-  //     )
-  //     return res.data
-  //   } catch (err) {
-  //     return console.log(err)
-  //   }
+  const [organizationInfo, setOrganizationInfo] = useState(null)
+  const [sidebarData, setSidebarData] = useState({})
+
+  // let user = JSON.parse(sessionStorage.getItem('user'))
+  let token = sessionStorage.getItem('token')
+
+  const trimUrl = url => {
+    if (url !== undefined) {
+      if (url.substr(-1) === '/') {
+        return url.substr(0, url.length - 1)
+      }
+      return url
+    }
+  }
+
+  const filterUrl = url => {
+    if (url !== undefined) {
+      return url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('/')[0]
+    }
+  }
+
+  useEffect(() => {
+    inviteVisibility()
+
+    const fetchUser = async () => {
+      const { _id, Organizations } = await GetUserInfo()
+      // console.log('sidebar organization', Organization)
+      setUserInfo({
+        userId: _id,
+        Organizations,
+        token
+      })
+
+      if (_id !== '') {
+        const org_url = `/organizations/${currentWorkspace}/plugins`
+        authAxios
+          .get(org_url)
+          .then(res => setOrganizationInfo(res.data.data))
+          .catch(err => console.log(err))
+      } else {
+        console.log('Checking')
+      }
+    }
+    fetchUser()
+  }, [])
+
+  const getOrgDetails = () => {
+    return axios({
+      method: 'get',
+      url: `https://api.zuri.chat/organizations/${currentWorkspace}/members`,
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+  }
+
+  const inviteVisibility = () => {
+    const userEmail = JSON.parse(sessionStorage.getItem('user')).email
+    getOrgDetails().then(res => {
+      const currentUser = res.data.data.find(user => user.email === userEmail)
+      setOwner(currentUser?.role === 'owner' || currentUser?.role === 'admin')
+    })
+  }
+
+  // Invite Users
+
+  const inviteUser = async () => {
+    return axios({
+      method: 'post',
+      url: `https://api.zuri.chat/organizations/${currentWorkspace}/send-invite`,
+      data: {
+        emails: [inviteEmail]
+      },
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+      .then(res => {
+        console.log('invite', res)
+        setInviteSuccess(true)
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }
+
+  // const validateEmail = (email) => {
+  //   return !!email.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
   // }
 
-  // // const filteredJoinedRooms = rooms?.joined_rooms ?
-  // //   rooms.joined_rooms.filter(room =>
-  // //     room.title.toLowerCase().includes(query)
-  // //   )
-  // //   : null
-  // // const filteredPublicRooms = rooms?.joined_rooms ?
-  // //   rooms.public_rooms.filter(room =>
-  // //     room.title.toLowerCase().includes(query)
-  // //   )
-  // //   : null
+  useEffect(() => {
+    // console.log('sidebar plugins', organizationInfo)
+    {
+      organizationInfo &&
+        organizationInfo.map(pluginData => {
+          const { plugin } = pluginData
 
-  // useEffect(() => {
-  //   ;(async () => {
-  //     await sidebarApi().then(async res => {
-  //       // setRooms(res)
-  //       setLoading(false)
+          // console.log(plugin)
 
-  //       // console.log(sortRooms(res.public_rooms, 'ztoa'))
-  //       // console.log(sortRooms(res.public_rooms, 'atoz'))
-  //       // console.log(sortRooms(res.public_rooms, 'minmax'))
-  //       // console.log(sortRooms(res.public_rooms, 'maxmin'))
-  //     })
-  //   })()
-  // }, [])
+          const sidebarUrl = plugin.sidebar_url
+          const trimmedUrl = trimUrl(sidebarUrl)
+          const pluginKey = filterUrl(plugin.sidebar_url)
 
-  // useEffect(() => {
-  //   axios
-  //     .get('https://api.zuri.chat/organizations/6133c5a68006324323416896')
-  //     .then(r => {
-  //       r.data.data.plugins.forEach(api_plugin => {
-  //         let homepage_url
-  //         // Get Homepage
-  //         axios.get(api_plugin).then(res => {
-  //           homepage_url = res.data.data.homepage_url
-  //           let homepage = null
-  //           let loaded = false
-  //           const reProtocol = /^https?:\/\//
-  //           const oURL = new URL(
-  //             reProtocol.test(homepage_url)
-  //               ? homepage_url
-  //               : 'http://' + homepage_url
-  //           )
-  //           const prefixLink = (url, oURL, mimeType = 'text/html') => {
-  //             let ret = reProtocol.test(url) ? url : `${oURL.origin}${url}`
-  //             return `${ret}&mimeType=${mimeType}`
-  //           }
-  //           axios
-  //             .get(prefixLink(oURL.toString()))
-  //             .then(res => {
-  //               const $ = cheerio.load(res.data)
-  //               // append stylesheet
-  //               $(`link[rel="stylesheet"]`).each(function () {
-  //                 const link = document.createElement('link')
-  //                 Object.keys(this.attribs).forEach(attr =>
-  //                   link.setAttribute(attr, this.attribs[attr])
-  //                 )
-  //                 link.setAttribute(
-  //                   'href',
-  //                   prefixLink(this.attribs.href, oURL, 'text/css')
-  //                 )
-  //                 link.setAttribute('data-plugin-res', true)
-  //                 $(this).remove()
-  //                 document.head.prepend(link)
-  //               })
-
-  //               // append scripts
-  //               $('script').each(function () {
-  //                 const script = document.createElement('script')
-  //                 Object.keys(this.attribs).forEach(attr =>
-  //                   script.setAttribute(attr, this.attribs[attr])
-  //                 )
-  //                 if (script.src) {
-  //                   script.setAttribute(
-  //                     'src',
-  //                     prefixLink(
-  //                       this.attribs.src,
-  //                       oURL,
-  //                       'application/javascript'
-  //                     )
-  //                   )
-  //                 } else {
-  //                   script.innerText = $(this).html()
-  //                 }
-  //                 $(this).remove()
-  //                 script.setAttribute('data-plugin-res', true)
-  //                 document.body.appendChild(script)
-  //               })
-  //               homepage = $('body').html()
-  //             })
-  //             .catch(e => {
-  //               homepage = `Failed to Load ${homepage_url} Plugin: ${e.message}`
-  //             })
-
-  //           // Get Sidebar Info
-  //           // console.log(`${r.data.data.sidebar_url}?org=${org_id}&user=${user.id}`)
-  //           axios
-  //             .get(
-  //               'https://sales.zuri.chat/api/v1/sidebar?org=5336&user=Devjoseph&token=FGEZJJ-ZFDGB-FDGG'
-  //             )
-  //             .then(r => {
-  //               const api_plugin = r.data.data
-  //               const plugin = {
-  //                 name: api_plugin.group_name,
-  //                 joined_rooms: api_plugin.joined_rooms,
-  //                 homepage,
-  //                 homepage_url,
-  //                 loaded
-  //               }
-  //               let _plugins = []
-  //               if (api_plugin) {
-  //                 _plugins.push(plugin)
-  //               }
-  //               console.log('plugins ', _plugins)
-  //               setPlugins(_plugins)
-  //             })
-  //         })
-  //       })
-  //     })
-  // }, [setPlugins])
+          axios
+            .get(
+              `${
+                trimmedUrl.includes('https://') ||
+                trimmedUrl.includes('http://')
+                  ? trimmedUrl
+                  : `https://${trimmedUrl}`
+              }?org=${userInfo.Organizations[0]}&user=${userInfo.userId}`
+            )
+            .then(res => {
+              try {
+                const validPlugin = res.data
+                if (validPlugin.name !== undefined) {
+                  if (typeof validPlugin === 'object') {
+                    setSidebarData(prev => {
+                      return { ...prev, [pluginKey]: validPlugin }
+                    })
+                  }
+                }
+                // console.log(validPlugin)
+              } catch (err) {
+                console.log(err, 'Invalid plugin')
+              }
+            })
+            .catch(console.log)
+        })
+    }
+  }, [organizationInfo])
 
   return (
-    <div className={styles.container}>
-      <div className={styles.orgInfo}>
-        <div className={styles.orgName}>
-          <p>HNGi8</p>
-          <img
-            src={shapekeyboardarrowdown}
-            alt="Organisation settings button"
-          />
+    <div className={`container-fluid ${styles.sb__container}`}>
+      <div className={`row ${styles.orgDiv}`}>
+        <div className={`col-12 px-3 ${styles.orgInfo}`}>
+          <div className={`row p-0 ${styles.orgHeader}`}>
+            <p className={`col-6 mb-0 ${styles.orgTitle}`}>HNGi8</p>
+            <img
+              className={`col-6 mx-auto ${styles.arrowDown}`}
+              src={shapekeyboardarrowdown}
+              alt="HNGi8"
+            />
+          </div>
+          <div className={`row ${styles.newMessage}`}>
+            <img
+              className={`col-3 img-fluid w-100 ${styles.newMsgIcon}`}
+              src={newMsgIcon}
+              alt="message"
+            />
+          </div>
         </div>
 
-        <Overlay isOpen={showDialog} onDismiss={close}>
-          <Content aria-label="room-list">
-            <CloseButton className="close-button" onClick={close}>
-              <Span aria-hidden>×</Span>
-            </CloseButton>
-            <AuthInputBox
-              value={query}
-              setValue={setQuery}
-              placeholder="🔍 Search by channel name or description"
-            />
-            <Wrapper>
-              {/*loading && <p>Loading..</p>*/}
-              {/* {rooms.joined_rooms && <JoinedRooms rooms={filteredJoinedRooms} />} */}
-              {/* {rooms.public_rooms && <PublicRooms rooms={filteredPublicRooms} />} */}
-            </Wrapper>
-          </Content>
-        </Overlay>
+        <Modall showDialog={showDialog} closeDialog={close} />
+
         <Overlay isOpen={showDialog} onDismiss={close}>
           <Content aria-label="room-list">
             <CloseButton className="close-button" onClick={close}>
@@ -261,9 +225,9 @@ const Sidebar = props => {
                 {links.map((plugs, id) => {
                   return (
                     <div key={id}>
-                      <a href={plugs.href} onClick={navigateToUrl}>
+                      <Link to={plugs.href} onClick={navigateToUrl}>
                         <p>{plugs.name}</p>
-                      </a>
+                      </Link>
                     </div>
                   )
                 })}
@@ -271,57 +235,205 @@ const Sidebar = props => {
             </Wrapper>
           </Content>
         </Overlay>
-        <div className={styles.newMessage}>
-          <img src={newmessage} alt="New message icon" />
+        <Overlay isOpen={openInvite} onDismiss={closeInviteModal}>
+          <Content
+            style={{ width: '55%', height: '55%' }}
+            aria-label="room-list"
+          >
+            <CloseButton className="close-button" onClick={closeInviteModal}>
+              <Span aria-hidden>×</Span>
+            </CloseButton>
+            <div>
+              <h3>Invite people to The Workspace</h3>
+            </div>
+            {InviteSuccess && (
+              <div className={`alert alert-success`}>
+                Invite was sent to {inviteEmail}
+              </div>
+            )}
+            <div>
+              <label for="email_invite">To:</label>
+            </div>
+            <Wrapper>
+              <div>
+                <input
+                  type="email"
+                  placeholder="example@gmail.com"
+                  multiple
+                  value={inviteEmail}
+                  onChange={e => setInviteEmail(e.target.value)}
+                  name="email_invite"
+                  className={`pb-4 form-control`}
+                />
+              </div>
+              <div
+                className={`mt-5 pt-3 d-flex my-auto justify-content-between`}
+              >
+                <p
+                  onClick={() => {
+                    window.navigator.clipboard.writeText(
+                      `https://zuri.chat/invite?organization=${currentWorkspace}`
+                    )
+                    alert('link has been copied')
+                  }}
+                  className={`mb-0 align-items-center`}
+                  style={{ color: '#00B87C', fontSize: '13px' }}
+                >
+                  <img className={`pe-3`} src={linkIcon} />
+                  Copy invite link{' '}
+                </p>
+                <button
+                  onClick={() => inviteUser()}
+                  style={{ color: 'white', backgroundColor: '#00B87C' }}
+                  type="button"
+                  disabled={inviteEmail === '' ? true : false}
+                  className={`btn my-auto `}
+                >
+                  Send
+                </button>
+              </div>
+            </Wrapper>
+          </Content>
+        </Overlay>
+      </div>
+      <div className={`row mt-2 ${styles.sb__item}`}>
+        {owner && (
+          <div
+            className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+          >
+            <img
+              style={{ width: '10%' }}
+              className={`${styles.item__img}`}
+              role="button"
+              onClick={openInviteModal}
+              src={addIcon}
+              alt="icon"
+            />
+            <p
+              role="button"
+              onClick={openInviteModal}
+              className={`mb-0 ${styles.item_p}`}
+            >
+              Invite people to workspace
+            </p>
+          </div>
+        )}
+      </div>
+      <div className={`row mt-2 ${styles.sb__item}`}>
+        <div
+          className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+        >
+          <img className={`${styles.item__img}`} src={threadIcon} alt="icon" />
+          <p className={`mb-0 ${styles.item_p}`}>Threads</p>
         </div>
       </div>
-      <div>
-        <Item>
-          <img src={threadIcon} alt="icon" />
-          <p>Threads</p>
-        </Item>
+      <div className={`row ${styles.sb__item}`}>
+        <div
+          className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+        >
+          <img className={`${styles.item__img}`} src={dmIcon} alt="icon" />
+          <p className={`mb-0 ${styles.item_p}`}>All DMs</p>
+        </div>
       </div>
-      <div>
-        <Item>
-          <img src={dmIcon} alt="icon" />
-          <p>All DMs</p>
-        </Item>
+      <div className={`row ${styles.sb__item}`}>
+        <div
+          className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+        >
+          <img className={`${styles.item__img}`} src={draftIcon} alt="icon" />
+          <p className={`mb-0 ${styles.item_p}`}>Drafts</p>
+        </div>
       </div>
-      <div>
-        <Item>
-          <img src={draftIcon} alt="icon" />
-          <p>Drafts</p>
-        </Item>
+      <div className={`row ${styles.sb__item}`}>
+        <div
+          className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+        >
+          <img className={`${styles.item__img}`} src={filesIcon} alt="icon" />
+          <p className={`mb-0 ${styles.item_p}`}>Files</p>
+        </div>
       </div>
-      <div>
-        <Item>
-          <img src={filesIcon} alt="icon" />
-          <p>Files</p>
-        </Item>
-      </div>
-      <div>
-        <Item>
-          <img src={pluginIcon} alt="icon" />
-          <p>Plugins</p>{' '}
-          <ClickButton
+      <div className={`row ${styles.sb__item}`}>
+        <div
+          className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+        >
+          <img className={`${styles.item__img}`} src={pluginIcon} alt="icon" />
+          <p className={`mb-0 ${styles.item_p}`}>Plugins</p>{' '}
+          <img
             onClick={open}
             className={`${styles.addButton}`}
             src={addIcon}
             alt="Add button"
             role="button"
           />
-        </Item>
+        </div>
+      </div>
+
+      {/* <DropDown /> */}
+
+      {/* SIDE BAR DATA */}
+      {sidebarData &&
+        Object.keys(sidebarData).map((plugin, index) => {
+          return (
+            <DropDown
+              itemName={sidebarData[plugin].name}
+              id={sidebarData[plugin].name}
+              key={index}
+              items={sidebarData[plugin]}
+            />
+            // console.log()
+
+            // <div key={index}>
+            //   <h5>{plugin.name}</h5>
+
+            //   <ul>
+            //     {plugin.joined_rooms &&
+            //       plugin.joined_rooms.map((room, index) => {
+            //         if (room.room_name !== undefined) {
+            //           return (
+            //             <li key={index}>
+            //               <a
+            //                 style={{
+            //                   marginLeft: '5px',
+            //                   color: 'red'
+            //                 }}
+            //                 href={room.room_url}
+            //                 onClick={navigateToUrl}
+            //               >
+            //                 {room.room_name}
+            //               </a>
+            //             </li>
+            //           )
+            //         }
+            //       })}
+            //   </ul>
+            // </div>
+          )
+        })}
+      {/*
+        {roomInfo.rooms !== undefined &&
+                roomInfo.rooms.map(room => {
+                  return (
+                    <Fragment>
+                      <a href={room.room_url} onClick={navigateToUrl}>
+                        {room.name}
+                      </a>
+                    </Fragment>
+                  )
+                })}
         <Dropdown onAddButtonClick={open} showAddButton={true} title="Plugins">
-          {links.map((plugin, index) => (
-            <Fragment key={index}>
-              <a href={plugin.href} onClick={navigateToUrl}>
-                {plugin.name}
-              </a>
-            </Fragment>
-          ))}
-        </Dropdown>
-      </div>
-      {/*<Dropdown onAddButtonClick={open} showAddButton={true} title="Channels">
+        {sidebarData &&
+          links.map((pluginLink, index) =>
+            sidebarData.map(pluginName => {
+              pluginLink.name === pluginName.group_name ? (
+                <Fragment key={index}>
+                  <a href={pluginLink.href} onClick={navigateToUrl}>
+                    {pluginLink.name}
+                  </a>
+                </Fragment>
+              ) : null
+            })
+          )}
+      </Dropdown>
+        <Dropdown onAddButtonClick={open} showAddButton={true} title="Channels">
         {channelsData &&
           channelsData.channels.map((channel, index) => (
             <Fragment key={index}>
@@ -329,61 +441,20 @@ const Sidebar = props => {
               {channel.name}
             </Fragment>
           ))}
-          </Dropdown>*/}
-      <Dropdown onAddButtonClick={open} showAddButton={true} title="Channels">
-        {channelsData.map((channel, index) => (
-          <Fragment key={index}>
-            <span>#</span>
-            {channel.name}
-          </Fragment>
-        ))}
-      </Dropdown>
-      {/*<Dropdown
-        onAddButtonClick={open}
-        onTitleClick={() => setUrl(`https://sales.zuri.chat/`)}
-        showAddButton={true}
-        title="Sales"
-      >
-        {channelsData &&
-          channelsData.channels.map((channel, index) => (
-            <Fragment key={index}>
-              <span>#</span>
-              {channel.name}
-            </Fragment>
-          ))}
-          </Dropdown>*/}
-      {/*plugins.length > 0 &&
-        plugins.map((plugin, i) => (
-          <Fragment key={i}>
-            {plugin && (
-              <Dropdown
-                title={plugin.name}
-                plugin
-                onTitleClick={() => setUrl(plugin.homepage_url)}
-                children={plugin.joined_rooms}
-                showAddButton={true}
-                onAddButtonClick={open}
-              ></Dropdown>
-            )}
-          </Fragment>
-            ))*/}
-      <Dropdown title="messages">
-        {messagesData &&
-          messagesData.messages.map((message, index) => (
-            <Fragment key={index}>
-              <span>
-                <img src={message.avatar} alt="avatar" />
-              </span>
-              {message.name}
-            </Fragment>
-          ))}
-      </Dropdown>
+          </Dropdown>
+          organization === '' ? (
+        <SkeletonLoader />
+      ) : (
+        <div>
+          <Channels organization={organization} userid={id} />
+          <Messages organization={organization} userid={id} />
+        </div>
+      )
+          */}
+
       {/* button for adding invites */}
-      <div className={styles.buttonstyle}>
-        <button onClick={() => setShow(true)}>Add Teammates</button>
-        <Modal onClose={() => setShow(false)} show={show} />
-      </div>
-      <Button
+
+      {/* <Button
         style={{
           width: '80%',
           margin: '0 auto',
@@ -392,7 +463,7 @@ const Sidebar = props => {
         }}
       >
         <LinkStyled to={'/createworkspace'}>Create Workspace</LinkStyled>{' '}
-      </Button>
+      </Button> */}
     </div>
   )
 }
@@ -403,7 +474,7 @@ const LinkStyled = styled(Link)`
   font-weight: 500;
   color: white;
 `
-const Overlay = styled(DialogOverlay)`
+export const Overlay = styled(DialogOverlay)`
   position: fixed;
   top: 0;
   left: 0;
@@ -417,7 +488,7 @@ const Overlay = styled(DialogOverlay)`
   padding: 2rem;
   z-index: 5;
 `
-const Content = styled(DialogContent)`
+export const Content = styled(DialogContent)`
   position: relative;
   background: white;
   width: 100%;
@@ -462,5 +533,9 @@ padding:0.25rem;
 const ClickButton = styled.img`
   margin-left: auto;
 `
+
+const theme = {
+  bgcolor: '#00b87c'
+}
 
 export default Sidebar

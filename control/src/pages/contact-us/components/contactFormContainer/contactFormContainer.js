@@ -90,7 +90,6 @@ function ContactFormContainer() {
   const handleChange = e => {
     // setValues(values => ({ ...values, [e.target.name]: e.target.value }))
     setValues({ ...values, [e.target.name]: e.target.value })
-    console.log(values)
   }
   const handleTopicChange = detail => e => {
     setCurrentDetails(detail)
@@ -107,12 +106,9 @@ function ContactFormContainer() {
     acceptedFiles[0] && contactData.append('file', acceptedFiles[0])
     acceptedFiles[1] && contactData.append('file', acceptedFiles[1])
 
-    console.log(contactData.get('email'))
-    console.log(values)
     axios
       .post('https://api.zuri.chat/contact', contactData)
       .then(({ data }) => {
-        console.log(data)
         setValues(values => ({
           ...values,
           error: '',
@@ -125,7 +121,6 @@ function ContactFormContainer() {
         setCurrentDetails({})
       })
       .catch(e => {
-        console.log('Error:' + e)
         setValues(values => ({
           ...values,
           error: 'error sending details pls try again',
@@ -243,7 +238,6 @@ function ContactFormContainer() {
                 {detail.topic}
               </button>
             ))}
-            {console.log(currentDetails)}
           </div>
         </div>
 

@@ -1,6 +1,7 @@
 import styles from './styles/CookiesSettings.module.css'
 import lockButton from '../../component-assets/lock.svg'
 import ToggleButton from './ToggleButton'
+import { Link } from 'react-router-dom'
 
 function CookiesSettings() {
   return (
@@ -21,7 +22,7 @@ function CookiesSettings() {
               <div className={styles.cookie_body_text}>
                 Essential cookies helps access the website and each of its web
                 pages and subdomains, by enabling functions like cookies
-                consent. They cannot be disabled
+                consent. They cannot be disabled.
               </div>
             </div>
             <div className={styles.cookie_body_first_button}>
@@ -43,7 +44,8 @@ function CookiesSettings() {
             <ToggleButton className={styles.toggle_button} />
           </div>
           <div className={styles.learn_more_link}>
-            <a href=".">Learn more</a>
+            <Link to="/privacy">Learn more</Link>
+            {/* <a href="."></a> */}
           </div>
           <div className={styles.action_links}>
             <button
