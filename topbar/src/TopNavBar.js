@@ -6,7 +6,7 @@ import zurichatlogo from './assets/images/Logo.svg'
 import { useState } from 'react'
 import styled from 'styled-components'
 import { BaseInput } from './TopBarIndex'
-import userAvatar from './assets/images/user.svg'
+import userAvatar from './assets/images/avatar_vct.svg'
 import HelpIcon from './assets/download_images/question.svg'
 import HelpIcons from '@material-ui/icons/HelpOutline'
 import TopbarModal from './components/TopbarModal'
@@ -105,10 +105,10 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       <div>
         {toggleStatus}
         <img
-          style={{ height: '30px', width: '30px', borderRadius: '5px' }}
           src={userProfileImage ? userProfileImage : userAvatar}
           onClick={openModal}
           role="button"
+          className="avatar-img"
           alt="user profile avatar"
         />
       </div>
@@ -141,6 +141,12 @@ const TopNavBarBase = styled.div`
   // padding: 1rem;
   // margin: auto;
   // margin-bottom: 3rem !important;
+
+  .avatar-img {
+    border-radius: 4px;
+    height: 35px;
+    width: 35px;
+  }
 `
 
 // const LogoName = styled.span`

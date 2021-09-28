@@ -187,6 +187,9 @@ export const StyledProfileWrapper = styled.section`
         width: 100%;
         height: 26rem;
         .avatar-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           width: 192px;
           height: 192px;
           margin-bottom: 1.2rem;
