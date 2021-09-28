@@ -95,13 +95,13 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         placeholder="Search here"
         border={'#99999933'}
       />
-      <HelpContainer>
+      {/* <HelpContainer>
         <HelpIcons onClick={() => setHelpModal(true)} />
-      </HelpContainer>
+      </HelpContainer> */}
       {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''}
 
-      <UserForm />
-      <AdminForm />
+      {/* <UserForm /> */}
+      {/* <AdminForm /> */}
       <div>
         {toggleStatus}
         <img
