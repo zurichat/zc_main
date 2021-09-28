@@ -34,6 +34,7 @@ import PrivateRoute from './pages/settings/Utils/PrivateRoute'
 import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation'
 import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContext'
 import PrivacyPolicy from './pages/privacy-policy/index'
+import NotFoundPage from './pages/404'
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -142,6 +143,8 @@ const App = () => {
         <Route path="/cookies-banner">
           <Cookies />
         </Route>
+
+        <Route component={NotFoundPage} />
       </Switch>
     </BrowserRouter>
   )
