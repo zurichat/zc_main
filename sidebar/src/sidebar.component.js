@@ -40,9 +40,10 @@ const Sidebar = props => {
   const closeInviteModal = () => setOpenInvite(false)
   const [query, setQuery] = useState('')
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState('')
+  // const [error, setError] = useState('')
   const [inviteEmail, setInviteEmail] = useState('')
   const [owner, setOwner] = useState(false)
+  const [InviteSuccess, setInviteSuccess] = useState(false)
 
   let currentWorkspace = localStorage.getItem('currentWorkspace')
   console.log(currentWorkspace)
@@ -54,7 +55,7 @@ const Sidebar = props => {
   })
 
   const [organizationInfo, setOrganizationInfo] = useState(null)
-  const [sidebarData, setSidebarData] = useState([])
+  const [sidebarData, setSidebarData] = useState({})
 
   // let user = JSON.parse(sessionStorage.getItem('user'))
   let token = sessionStorage.getItem('token')
@@ -68,7 +69,15 @@ const Sidebar = props => {
     }
   }
 
+  const filterUrl = url => {
+    if (url !== undefined) {
+      return url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('/')[0]
+    }
+  }
+
   useEffect(() => {
+    inviteVisibility()
+
     const fetchUser = async () => {
       const { _id, Organizations } = await GetUserInfo()
       // console.log('sidebar organization', Organization)
@@ -79,8 +88,7 @@ const Sidebar = props => {
       })
 
       if (_id !== '') {
-        const org_url = `/organizations/${Organizations[0]}/plugins`
-        console.log('sidebar url', org_url)
+        const org_url = `/organizations/${currentWorkspace}/plugins`
         authAxios
           .get(org_url)
           .then(res => setOrganizationInfo(res.data.data))
@@ -92,20 +100,23 @@ const Sidebar = props => {
     fetchUser()
   }, [])
 
-  axios({
-    method: 'get',
-    url: `https://api.zuri.chat/users/pid@oxy.com/organizations`,
-    headers: {
-      Authorization: `Bearer ${token}`
-    }
-  })
-    .then(res => {
-      let arr = res.data.data
-      setOwner(arr.find(item => item.id === currentWorkspace).isOwner)
+  const getOrgDetails = () => {
+    return axios({
+      method: 'get',
+      url: `https://api.zuri.chat/organizations/${currentWorkspace}/members`,
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
     })
-    .catch(err => {
-      console.error(err)
+  }
+
+  const inviteVisibility = () => {
+    const userEmail = JSON.parse(sessionStorage.getItem('user')).email
+    getOrgDetails().then(res => {
+      const currentUser = res.data.data.find(user => user.email === userEmail)
+      setOwner(currentUser?.role === 'owner' || currentUser?.role === 'admin')
     })
+  }
 
   // Invite Users
 
@@ -120,7 +131,10 @@ const Sidebar = props => {
         Authorization: `Bearer ${token}`
       }
     })
-      .then(res => console.log('invite', res))
+      .then(res => {
+        console.log('invite', res)
+        setInviteSuccess(true)
+      })
       .catch(err => {
         console.error(err)
       })
@@ -134,9 +148,14 @@ const Sidebar = props => {
     // console.log('sidebar plugins', organizationInfo)
     {
       organizationInfo &&
-        organizationInfo.map(plugin => {
-          const sidebarUrl = plugin.plugin.sidebar_url
+        organizationInfo.map(pluginData => {
+          const { plugin } = pluginData
+
+          // console.log(plugin)
+
+          const sidebarUrl = plugin.sidebar_url
           const trimmedUrl = trimUrl(sidebarUrl)
+          const pluginKey = filterUrl(plugin.sidebar_url)
 
           axios
             .get(
@@ -152,7 +171,9 @@ const Sidebar = props => {
                 const validPlugin = res.data
                 if (validPlugin.name !== undefined) {
                   if (typeof validPlugin === 'object') {
-                    setSidebarData(prev => [...prev, validPlugin])
+                    setSidebarData(prev => {
+                      return { ...prev, [pluginKey]: validPlugin }
+                    })
                   }
                 }
                 // console.log(validPlugin)
@@ -225,6 +246,11 @@ const Sidebar = props => {
             <div>
               <h3>Invite people to The Workspace</h3>
             </div>
+            {InviteSuccess && (
+              <div className={`alert alert-success`}>
+                Invite was sent to {inviteEmail}
+              </div>
+            )}
             <div>
               <label for="email_invite">To:</label>
             </div>
@@ -345,13 +371,13 @@ const Sidebar = props => {
 
       {/* SIDE BAR DATA */}
       {sidebarData &&
-        sidebarData.map((plugin, index) => {
+        Object.keys(sidebarData).map((plugin, index) => {
           return (
             <DropDown
-              itemName={plugin.name}
-              id={plugin.name}
+              itemName={sidebarData[plugin].name}
+              id={sidebarData[plugin].name}
               key={index}
-              items={plugin}
+              items={sidebarData[plugin]}
             />
             // console.log()
 
