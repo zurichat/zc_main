@@ -1,36 +1,41 @@
-import React, { useState } from 'react'
+import React from 'react'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 import { useGoogleLogin } from 'react-google-login'
 import { GetUserInfo } from '../zuri-control'
 import $behaviorSubject from '../../../globalState'
-
 const CLIENT_ID = '943002582641-ek6jakave3irmueaqfdoc0754v83qf6e.apps.googleusercontent.com'
 const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
-    const [buttonClicked, setButtonClicked] = useState(false)
     const history = useHistory()
     const onSuccess = (res) => {
-        setLoading(true)
         if (googleHeader === 'Sign up with Google') {
-
-            if (buttonClicked) {
-                // Logic for sign up goes here
-            }
-
-        } else {
             axios.get(`https://api.zuri.chat/auth/social-login/google/${res.accessToken}`)
                 .then((res) => {
                     const { data } = res.data
-
                     //Store token in localstorage
                     sessionStorage.setItem('token', data.user.token)
-
                     //Store session_id in localstorage
                     sessionStorage.setItem('session_id', data.session_id)
-
                     //Store user copy in localstorage
                     sessionStorage.setItem('user', JSON.stringify(data.user))
-
+                    $behaviorSubject.next(res.data)
+                        GetUserInfo()
+                        history.push('/createworkspace')
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        } else {
+            setLoading(true)
+            axios.get(`https://api.zuri.chat/auth/social-login/google/${res.accessToken}`)
+                .then((res) => {
+                    const { data } = res.data
+                    //Store token in localstorage
+                    sessionStorage.setItem('token', data.user.token)
+                    //Store session_id in localstorage
+                    sessionStorage.setItem('session_id', data.session_id)
+                    //Store user copy in localstorage
+                    sessionStorage.setItem('user', JSON.stringify(data.user))
                     $behaviorSubject.next(res.data)
                     setTimeout(() => {
                         GetUserInfo()
@@ -42,7 +47,6 @@ const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
                     console.log(err)
                 })
         }
-
     }
     const onFailure = (res) => {
         console.log(`Login Failed:`, res)
@@ -52,7 +56,6 @@ const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
         onFailure,
         clientId: CLIENT_ID
     })
-
     return (
         <div className={className} onClick={() => {
             signIn();
@@ -63,8 +66,6 @@ const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
                 {googleHeader}
             </a>
         </div>
-
     )
 }
-
 export default GoogleAuth
