@@ -4,7 +4,7 @@ import ProfileModal from './ProfileModal'
 import { authAxios } from '../utils/Api'
 
 import { AiFillCamera } from 'react-icons/ai'
-import avatar from '../assets/images/user.svg'
+import avatar from '../assets/images/avatar_vct.svg'
 import { ProfileContext } from '../context/ProfileModal'
 import Loader from 'react-loader-spinner'
 import toast, { Toaster } from 'react-hot-toast'
@@ -31,7 +31,8 @@ const EditProfile = () => {
     timezone: '',
     twitter: '',
     facebook: '',
-    loading: false
+    loading: false,
+    imageLoading: false
   })
 
   const addList = () => {
@@ -49,7 +50,7 @@ const EditProfile = () => {
   //Function handling Image Upload
 
   const handleImageChange = event => {
-    setState({ loading: true })
+    setState({ imageLoading: true })
     if (imageRef.current.files[0]) {
       let fileReader = new FileReader()
 
@@ -61,6 +62,8 @@ const EditProfile = () => {
 
       const imageReader = event.target.files[0]
 
+      console.log('Gotten image', imageReader)
+
       const formData = new FormData()
       formData.append('image', imageReader)
 
@@ -69,15 +72,15 @@ const EditProfile = () => {
         .then(res => {
           console.log('image patch', res)
           const newUploadedImage = res.data.data
-          setState({ loading: false })
           setUserProfileImage(newUploadedImage)
+          setState({ imageLoading: false })
           toast.success('User Image Updated Successfully', {
             position: 'top-center'
           })
         })
         .catch(err => {
           console.log(err)
-          setState({ loading: false })
+          setState({ imageLoading: false })
           toast.error(err?.message, {
             position: 'top-center'
           })
@@ -306,12 +309,21 @@ const EditProfile = () => {
             <div className="img-container">
               <div className="avatar">
                 <div className="avatar-container">
-                  <img
-                    ref={avatarRef}
-                    className="img"
-                    src={userProfileImage ? userProfileImage : avatar}
-                    alt="profile-pic"
-                  />
+                  {state.imageLoading ? (
+                    <Loader
+                      type="Oval"
+                      color="#00B87C"
+                      height={24}
+                      width={24}
+                    />
+                  ) : (
+                    <img
+                      ref={avatarRef}
+                      className="img"
+                      src={userProfileImage ? userProfileImage : avatar}
+                      alt="profile-pic"
+                    />
+                  )}
                 </div>
 
                 <input
