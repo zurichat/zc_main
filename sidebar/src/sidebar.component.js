@@ -545,7 +545,6 @@ display: flex;
 padding:0.25rem;
 & > img { 
   padding: 0 1rem;
-
 `
 
 const ClickButton = styled.img`
