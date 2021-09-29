@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Link, useRouteMatch } from 'react-router-dom'
 import ProjectNameCSS from '../styles/ProjectName.module.css'
 import { Button } from './WorkspaceHome'
-import { Helmet } from 'react-helmet'
 
 const ProjectName = ({ inputChangeHandler, value }) => {
   let match = useRouteMatch()
@@ -17,9 +16,6 @@ const ProjectName = ({ inputChangeHandler, value }) => {
 
   return (
     <div>
-      <Helmet>
-        <title>Choose Project Name - Zuri Chat</title>
-      </Helmet>
       <article className={ProjectNameCSS.wrapper}>
         <div className={ProjectNameCSS.email}>
           {user ? <span>Signed in as {user.email}</span> : null}

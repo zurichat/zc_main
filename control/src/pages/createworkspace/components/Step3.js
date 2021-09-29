@@ -6,7 +6,6 @@ import Oval from '../assets/Oval.svg'
 import { Link, useRouteMatch } from 'react-router-dom'
 import Header from '../../../components/Header'
 import { useEffect, useState } from 'react'
-import { Helmet } from 'react-helmet'
 
 const Step3 = () => {
   let match = useRouteMatch()
@@ -31,9 +30,6 @@ const Step3 = () => {
     <>
       <Header />
       <Wrapper>
-        <Helmet>
-          <title>Teammates - Zuri Chat</title>
-        </Helmet>
         <TopSpanWrapper>
           <TopSpans>
             {user ? <SignedInAs>Signed in as {user.email}</SignedInAs> : null}
