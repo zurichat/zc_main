@@ -53,40 +53,22 @@ const Footer = () => {
             <h5>Company</h5>
             <ul>
               <li>
-                <a href="/events">Events</a>{' '}
-              </li>
-              <li>
-                <a href="/blog">Blog posts</a>{' '}
-              </li>
-              <li>
                 <a href="/careers">Careers</a>{' '}
               </li>
-            </ul>
-          </div>
-
-          <div>
-            <h5>Explore</h5>
-            <ul>
               <li>
-                <a href="/download-app">Downloads</a>{' '}
-              </li>
-              <li>
-                <a href="/features">Features</a>{' '}
-              </li>
-              <li>
-                <a href="/apps-integrations">Apps & Integration</a>{' '}
+                <a href="/about">About Zurichat</a>{' '}
               </li>
             </ul>
           </div>
 
           <div>
-            <h5>Policy</h5>
+            <h5>Info</h5>
             <ul>
               <li>
-                <a href="/privacy">Privacy</a>{' '}
+                <a href="/privacy">Privacy & Terms</a>{' '}
               </li>
               <li>
-                <a href="/terms">Terms</a>{' '}
+                <a href="/marketplace">Market Place</a>{' '}
               </li>
             </ul>
           </div>
@@ -95,13 +77,10 @@ const Footer = () => {
             <h5>Know us</h5>
             <ul>
               <li>
-                <a href="/about">About Zuri Chat</a>{' '}
+                <a href="/downloads">Downloads</a>{' '}
               </li>
               <li>
                 <a href="/contact-us">Contact Us</a>{' '}
-              </li>
-              <li>
-                <a href="/help">Help center</a>{' '}
               </li>
             </ul>
           </div>
