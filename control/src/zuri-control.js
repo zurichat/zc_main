@@ -84,7 +84,7 @@ const GetWorkspaceUsers = async () => {
         }
       })
     let user = res.data.data
-    let workSpaceUsersData = {totalUsers:user.length, ...user.slice(0, 100)}
+    let workSpaceUsersData = { totalUsers: user.length, ...user.slice(0, 100) }
     // console.log(user.slice(0, 100))
     console.log(workSpaceUsersData)
     return workSpaceUsersData
@@ -104,20 +104,21 @@ export const CentrifugeSetup = () => {
   );
 
   // Store Centrifuge somewhere
-    localStorage.setItem('centrifuge', JSON.stringify(centrifuge));
+  // localStorage.setItem('centrifuge', JSON.stringify(centrifuge));
+  // localStorage.getItem('centrifuge')
+  // console.log(centrifuge);
 
   // Disconnect from Centrifugo (if any)
-  centrifuge.disconnect();
+  // centrifuge.disconnect();
 
-  // Connect to Centrifugo Server
-  centrifuge.connect();
 
+  return centrifuge;
 }
 
-CentrifugeSetup();
+CentrifugeSetup().connect();
 
 export const SubscribeToChannel = (plugin_id, callback) => {
-  let centrifuge = JSON.parse(localStorage.getItem('centrifuge'));
+  let centrifuge = CentrifugeSetup();
 
   centrifuge.subscribe(plugin_id, (ctx) => {
     callback(ctx);
