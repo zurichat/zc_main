@@ -8,8 +8,6 @@ import styles from '../../component-styles/AuthFormElements.module.css'
 import axios from 'axios'
 import { GetUserInfo } from '../../zuri-control'
 import $behaviorSubject from '../../../../globalState'
-import { Helmet } from 'react-helmet'
-
 // import { Link } from 'react-router-dom'
 // import authBg1 from './assets/auth_bg1.svg'
 // import authBg2 from './assets/auth_bg2.svg'
@@ -124,9 +122,6 @@ const Login = () => {
           <img src={images[currentImage]} alt="backgroundImage" />
         </div>
       </aside> */}
-      <Helmet>
-        <title>Login - Zuri Chat</title>
-      </Helmet>
       <section id={styles.authFormContainer}>
         <FormWrapper
           header="Login"

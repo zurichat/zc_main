@@ -2,14 +2,10 @@ import React from 'react'
 import styles from './styles/Cookie.module.css'
 import hamburger from '../../component-assets/hamburger.png'
 import { Link } from 'react-router-dom'
-import { Helmet } from 'react-helmet'
 
 const Cookies = () => {
   return (
     <div className={styles.bannerContainer}>
-      <Helmet>
-        <title> Cookies - Zuri Chat</title>
-      </Helmet>
       <div className={styles.bannerBox}>
         <div className={styles.bannerLogo}>
           <img className={`mx-auto`} src={hamburger} alt="hamburger" />

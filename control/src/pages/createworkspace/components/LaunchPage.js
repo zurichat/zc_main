@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import LaunchPageCSS from '../styles/LaunchPage.module.css'
-import { Helmet } from 'react-helmet'
 
 function LaunchPage() {
   const [user, setUser] = useState(null)
@@ -15,9 +14,6 @@ function LaunchPage() {
   }, [])
   return (
     <div>
-      <Helmet>
-        <title> Launch workspace - Zuri Chat</title>
-      </Helmet>
       <article className={LaunchPageCSS.wrapper}>
         <div className={LaunchPageCSS.email}>
           {' '}
