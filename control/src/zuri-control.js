@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import singleSpaReact from 'single-spa-react'
 import Root from './root.component'
 import axios from 'axios'
+import Centrifuge from 'centrifuge'
 
 const lifecycles = singleSpaReact({
   React,
@@ -30,7 +31,7 @@ export const GetUserInfo = async () => {
           }
         }
       )
-      let userData = { currentWorkspace, ...response.data.data }
+      let userData = { currentWorkspace, token, ...response.data.data }
       // console.log('getuserinfo', response.data.data)
       console.log(userData)
       return userData
@@ -98,11 +99,20 @@ const GetWorkspaceUsers = async () => {
   // localStorage.setItem('WorkspaceUsers', JSON.stringify(res.data.data))
 }
 
-// const call = () => {
-//   let it = sessionStorage.getItem('WorkspaceUser')
-//   console.log(it)
-// }
+// Setup Centrifugo Route
+const centrifuge = new Centrifuge(
+  'wss://realtime.zuri.chat/connection/websocket'
+)
 
-// call()
+centrifuge.connect()
+centrifuge.on('connect', function (connectCtx) {
+  console.log('connected', connectCtx)
+})
+
+export const SubscribeToChannel = (plugin_id, callback) => {
+  centrifuge.subscribe(plugin_id, ctx => {
+    callback(ctx)
+  })
+}
 
 export const { bootstrap, mount, unmount } = lifecycles
