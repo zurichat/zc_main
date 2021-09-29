@@ -207,7 +207,7 @@
   position: relative;
   top: -40px;
   padding-top: 30px;
-  margin-left: 10px;
+  margin-left: -5px;
 }
 
 .infoImage {
@@ -235,7 +235,7 @@
   line-height: 22px;
   padding: 0 150px 0 0;
   color: #000000;
-  margin-left: 25px;
+  margin-left: 20px;
 }
 
 .privbreakdown1 {
@@ -245,7 +245,7 @@
   font-size: 16px;
   line-height: 28px;
   letter-spacing: 0.01em;
-  padding: 0 0px 0 0;
+  /* padding: 0 0px 0 0; */
   color: #000000;
   border: none;
   width: auto;
@@ -319,6 +319,17 @@
   padding: 0 80px 0 0;
   position: relative;
   top: -25px;
+}
+
+.paraPriv1 {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.01em;
+  color: #000000;
+  padding: 0 100px 0 0;
 }
 .contentBox {
   /* display: inline-flex; */

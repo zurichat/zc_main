@@ -215,60 +215,56 @@ const Content = () => {
           </div>
           <br />
           <div className={Style.privbreakdown1}>
-            <p className={Style.paragraph}>
+            <p className={Style.paraPriv1}>
               (1) Workspace and account information. To create or update a
               Workspace account, you or your Customer (e.g. your employer)
               supply Zurichat with an email address, phone number, password,
               domain and/or similar account details. For details on Workspace
-              creation, click here. In addition, Customers that purchase a paid
-              version of the Services provide Zurichat (or its payment
-              processors) with billing details such as credit card information,
-              banking information and/or a billing address.
+              creation, <Link title="click here" /> . In addition, Customers
+              that purchase a paid version of the Services provide Zurichat (or
+              its payment processors) with billing details such as credit card
+              information, banking information and/or a billing address.
             </p>{' '}
             <br />
-            <p className={Style.paragraph}>
+            <p className={Style.paraPriv1}>
               (2) Usage information. <br />
-              *Services metadata. When an Authorized User interacts with the
-              Services, metadata is generated that provides additional context
-              about the way Authorized Users work. For example, Zurichat logs
-              the Workspaces, channels, people, features, content and links you
-              view or interact with, the types of files shared and what
+              <u>*Services metadata.</u> When an Authorized User interacts with
+              the Services, metadata is generated that provides additional
+              context about the way Authorized Users work. For example, Zurichat
+              logs the Workspaces, channels, people, features, content and links
+              you view or interact with, the types of files shared and what
               Third-Party Services are used (if any).
             </p>
-            <p className={Style.paragraph}>
-              *Log data. As with most websites and technology services delivered
-              over the Internet, our servers automatically collect information
-              when you access or use our Websites or Services and record it in
-              log files. This log data may include the Internet Protocol (IP)
-              address, the address of the web page visited before using the
-              Website or Services, browser type and settings, the date and time
-              the Services were used, information about browser configuration
-              and plugins, language preferences and cookie data.
+            <p className={Style.paraPriv1}>
+              <u>*Log data.</u> As with most websites and technology services
+              delivered over the Internet, our servers automatically collect
+              information when you access or use our Websites or Services and
+              record it in log files. This log data may include the Internet
+              Protocol (IP) address, the address of the web page visited before
+              using the Website or Services, browser type and settings, the date
+              and time the Services were used, information about browser
+              configuration and plugins, language preferences and cookie data.
             </p>{' '}
-            <br />
-            <p className={Style.paragraph}>
-              *Device information. Zurichat collects information about devices
-              accessing the Services, including type of device, what operating
-              system is used, device settings, application IDs, unique device
-              identifiers and crash data. Whether we collect some or all of this
-              Other Information often depends on the type of device used and its
-              settings.
+            <p className={Style.paraPriv1}>
+              <u>*Device information.</u> Zurichat collects information about
+              devices accessing the Services, including type of device, what
+              operating system is used, device settings, application IDs, unique
+              device identifiers and crash data. Whether we collect some or all
+              of this Other Information often depends on the type of device used
+              and its settings.
             </p>
-            <p className={Style.paragraph}>
-              *Location information. We receive information from you, your
-              Customer and other third-parties that helps us approximate your
-              location. We may, for example, use a business address submitted by
-              your employer or an IP address received from your browser or
-              device to determine approximate location. Zurichat may also
-              collect location information from devices in accordance with the
-              consent process provided by your device. Cookie information.
+            <p className={Style.paraPriv1}>
+              <u>*Location information.</u> We receive information from you,
+              your Customer and other third-parties that helps us approximate
+              your location. We may, for example, use a business address
+              submitted by your employer or an IP address received from your
+              browser or device to determine approximate location. Zurichat may
+              also collect location information from devices in accordance with
+              the consent process provided by your device. Cookie information.
               Zurichat uses a variety of cookies and similar technologies in our
               Websites and Services to help us collect Other Information. For
               more details about how we use these technologies, and your opt-out
               opportunities and other options, please see our Cookie Policy.
-            </p>{' '}
-            <br />
-            <p className={Style.paragraph}>
               Third-Party services. A Customer can choose to permit or restrict
               Third-Party Services for its Workspace. Typically, Third-Party
               Services are software that integrate with our Services, and a
@@ -277,7 +273,7 @@ const Content = () => {
               and offer Zurichat applications that connect the Services with a
               Third-Party Service. Once enabled, the provider of a Third-Party
               Service may share certain information with
-            </p>
+            </p>{' '}
           </div>
         </div>
 
