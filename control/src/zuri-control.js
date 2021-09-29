@@ -92,7 +92,7 @@ const GetWorkspaceUsers = async () => {
     console.log(err)
   }
 
-  // sessionStorage.setItem('WorkspaceUsers', JSON.stringify(res.data.data))
+  // localStorage.setItem('WorkspaceUsers', JSON.stringify(res.data.data))
 }
 
 // const call = () => {
