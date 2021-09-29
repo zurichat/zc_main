@@ -4,7 +4,7 @@ import ProfileModal from './ProfileModal'
 import { authAxios } from '../utils/Api'
 
 import { AiFillCamera } from 'react-icons/ai'
-import avatar from '../assets/images/user.svg'
+import avatar from '../assets/images/avatar_vct.svg'
 import { ProfileContext } from '../context/ProfileModal'
 import Loader from 'react-loader-spinner'
 import toast, { Toaster } from 'react-hot-toast'
@@ -31,10 +31,9 @@ const EditProfile = () => {
     timezone: '',
     twitter: '',
     facebook: '',
-    loading: false
+    loading: false,
+    imageLoading: false
   })
-
-  console.log('country code', data)
 
   const addList = () => {
     if (links.length < 5) {
@@ -51,7 +50,7 @@ const EditProfile = () => {
   //Function handling Image Upload
 
   const handleImageChange = event => {
-    setState({ loading: true })
+    setState({ imageLoading: true })
     if (imageRef.current.files[0]) {
       let fileReader = new FileReader()
 
@@ -63,25 +62,27 @@ const EditProfile = () => {
 
       const imageReader = event.target.files[0]
 
+      console.log('Gotten image', imageReader)
+
       const formData = new FormData()
       formData.append('image', imageReader)
 
       authAxios
         .patch(`/organizations/${orgId}/members/${user._id}/photo`, formData)
         .then(res => {
-          console.log(res)
-          newUploadedImage = res.data.data
-          setState({ loading: false })
-          setUserProfileImage(res.data.data)
+          console.log('image patch', res)
+          const newUploadedImage = res.data.data
+          setUserProfileImage(newUploadedImage)
+          setState({ imageLoading: false })
           toast.success('User Image Updated Successfully', {
-            position: 'bottom-center'
+            position: 'top-center'
           })
         })
         .catch(err => {
           console.log(err)
-          setState({ loading: false })
+          setState({ imageLoading: false })
           toast.error(err?.message, {
-            position: 'bottom-center'
+            position: 'top-center'
           })
         })
     }
@@ -241,8 +242,8 @@ const EditProfile = () => {
                   >
                     {
                       // country code
-                      data.map(item => (
-                        <option key={item.dial_code} value={item.dial_code}>
+                      data.map((item, index) => (
+                        <option key={index} value={item.dial_code}>
                           {item.dial_code}
                         </option>
                       ))
@@ -307,12 +308,23 @@ const EditProfile = () => {
             </div>
             <div className="img-container">
               <div className="avatar">
-                <img
-                  ref={avatarRef}
-                  className="img"
-                  src={userProfileImage ? userProfileImage : avatar}
-                  alt="profile-pic"
-                />
+                <div className="avatar-container">
+                  {state.imageLoading ? (
+                    <Loader
+                      type="Oval"
+                      color="#00B87C"
+                      height={24}
+                      width={24}
+                    />
+                  ) : (
+                    <img
+                      ref={avatarRef}
+                      className="img"
+                      src={userProfileImage ? userProfileImage : avatar}
+                      alt="profile-pic"
+                    />
+                  )}
+                </div>
 
                 <input
                   ref={imageRef}
@@ -333,7 +345,9 @@ const EditProfile = () => {
                   Upload Image
                   {/* ) */}
                 </label>
-                <button className="btns rmvBtn">Delete image</button>
+                <div role="button" className="rmvBtn">
+                  Remove Image
+                </div>
               </div>
             </div>
           </div>
@@ -346,7 +360,7 @@ const EditProfile = () => {
             )}
           </div>
           <div className="button-wrapper">
-            <button className="btns rmvBtn">Cancel</button>
+            <button className="btns cncBtn">Cancel</button>
             <button onClick={handleFormSubmit} className="btns chgBtn">
               {state.loading ? (
                 <Loader type="ThreeDots" color="#fff" height={40} width={40} />
