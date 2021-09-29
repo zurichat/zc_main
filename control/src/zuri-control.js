@@ -14,6 +14,8 @@ const lifecycles = singleSpaReact({
   }
 })
 
+const currentWorkspace = localStorage.getItem('currentWorkspace')
+
 export const GetUserInfo = async () => {
   let user = JSON.parse(sessionStorage.getItem('user'))
   let token = sessionStorage.getItem('token')
@@ -21,15 +23,17 @@ export const GetUserInfo = async () => {
   if ((user && token) !== null) {
     try {
       const response = await axios.get(
-        `https://api.zuri.chat/users/${user.id}`,
+        `https://api.zuri.chat/organizations/${currentWorkspace}/members/?query=${user.email}`,
         {
           headers: {
             Authorization: `Bearer ${token}`
           }
         }
       )
-      console.log('getuserinfo', response.data.data)
-      return response.data.data
+      let userData = {currentWorkspace, ...response.data.data}
+      // console.log('getuserinfo', response.data.data)
+      console.log(userData)
+      return userData
     } catch (err) {
       console.log(err)
     }
@@ -48,7 +52,6 @@ export const GetWorkspaceUser = async identifier => {
     throw Error('Workspace user identifier must be a valid email address.')
 
   const token = sessionStorage.getItem('token')
-  const currentWorkspace = localStorage.getItem('currentWorkspace')
 
   try {
     const response = await axios.get(
