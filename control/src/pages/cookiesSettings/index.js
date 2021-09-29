@@ -2,10 +2,14 @@ import styles from './styles/CookiesSettings.module.css'
 import lockButton from '../../component-assets/lock.svg'
 import ToggleButton from './ToggleButton'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 function CookiesSettings() {
   return (
     <div className={styles.wrapper}>
+      <Helmet>
+        <title>Cookie Settings - Zuri Main</title>
+      </Helmet>
       <div className={styles.cookie_content}>
         <div className={styles.cookie_header}>
           <div className={styles.cookie_header_title}>Cookie Settings</div>

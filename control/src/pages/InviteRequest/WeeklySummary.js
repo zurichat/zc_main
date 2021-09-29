@@ -1,10 +1,14 @@
 import React from 'react'
 import logo from './assets/logo.svg'
+import { Helmet } from 'react-helmet'
 
 const WeeklySummary = () => {
   return (
     <>
       <article className={styles.summary_wrapper}>
+        <Helmet>
+          <title>Weekly Summary - Zuri Chat</title>
+        </Helmet>
         <header>
           <img src={logo} alt="Zuri logo" />
           <h3>Sunday, Sept 5th - Saturday, Sept 11th</h3>
