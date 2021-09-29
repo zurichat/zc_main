@@ -1,12 +1,11 @@
 import Footer from '../../components/Footer'
-// import SearchSuggestion from '../../components/SearchSuggestionBar'
-import Header from '../../components/Header'
+import SearchSuggestion from '../../components/SearchSuggestionBar'
 import Content from './components/Content'
 
 const PrivacyPolicy = () => {
   return (
     <div>
-      <Header />
+      <SearchSuggestion />
       <Content />
       <Footer />
     </div>
