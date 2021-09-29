@@ -55,7 +55,7 @@ function CompanyName({ input }) {
 
         <div className={CompanyNameCSS.centerWrapper}>
           <h4> Step 1 of 3</h4>
-          <h1>What is the name of your company or team?</h1>
+          <h1>What is the name of your company or team ?</h1>
           <h4>
             This will be the name of your workspace. Choose something that your
             team will recognise
