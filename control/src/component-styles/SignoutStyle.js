@@ -19,18 +19,22 @@ export const SignoutStyleWrapper = styled.section`
 
   .content-wrapper {
     width: 600px;
-
     display: inherit;
     flex-direction: column;
     justify-content: inherit;
     align-items: inherit;
     padding-top: 2rem;
     padding-bottom: 0.5rem;
-
     background: #f6f6f6;
     border: 1px solid #e5e5e5;
     box-sizing: border-box;
     border-radius: 4px;
+
+    @media(max-width: 700px) {
+      width: auto;
+      margin: 0 1rem;
+      text-align: center
+    }
 
     h6 {
       font-family: Lato;

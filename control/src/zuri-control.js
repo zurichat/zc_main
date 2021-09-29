@@ -96,18 +96,17 @@ const GetWorkspaceUsers = async () => {
   // localStorage.setItem('WorkspaceUsers', JSON.stringify(res.data.data))
 }
 
- // Setup Centrifugo Route
- const centrifuge = new Centrifuge(
-  "wss://realtime.zuri.chat/connection/websocket"
-);
+// Setup Centrifugo Route
+const centrifuge = new Centrifuge(
+  'wss://realtime.zuri.chat/connection/websocket'
+)
 
-centrifuge.connect();
-centrifuge.on('connect', function(connectCtx){
+centrifuge.connect()
+centrifuge.on('connect', function (connectCtx) {
   console.log('connected', connectCtx)
-});
+})
 
 export const SubscribeToChannel = (plugin_id, callback) => {
-
   centrifuge.subscribe(plugin_id, ctx => {
     callback(ctx)
   })
