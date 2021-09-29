@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { withRouter } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { withRouter, useHistory } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
 import FormWrapper from '../../components/AuthFormWrapper'
 import styles from '../../component-styles/AuthFormElements.module.css'
@@ -36,6 +36,15 @@ const Signup = () => {
   //   setcurrentImage(i)
   //   console.log(images[i], i)
   // }
+
+  const history = useHistory()
+
+  useEffect(() => {
+    const userInfo = sessionStorage.getItem(`user`)
+    const redirect = sessionStorage.getItem(`workSpaceInviteRedirect`)
+
+    if (userInfo && userInfo !== null) history.push(redirect)
+  }, [history])
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -87,6 +96,8 @@ const Signup = () => {
 
         //Store token in localstorage
         sessionStorage.setItem('user_id', data.InsertedId)
+        localStorage.setItem('newUserEmail', JSON.stringify(email))
+        localStorage.setItem('userUserPassword', JSON.stringify(password))
 
         //Display message
         // alert(message) //Change this when there is a design
