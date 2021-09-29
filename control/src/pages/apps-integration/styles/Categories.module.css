@@ -15,14 +15,14 @@
   height: max-content;
   position: relative;
 }
-.categories button {
+/* button {
   background: none;
   border: none;
   margin-left: 1rem;
   cursor: pointer;
   font-size: 15px;
   color: #00b87c;
-}
+} */
 .icons,
 .icons_close {
   font-size: 30px;
@@ -31,11 +31,11 @@
   position: absolute;
   right: 0;
 }
-.btn {
+/* .btn {
   align-content: center;
   justify-content: center;
   display: flex;
-}
+} */
 .viewAllBtn {
   margin-top: 6px;
 }

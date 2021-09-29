@@ -15,9 +15,10 @@ import UserForm from '../../control/src/pages/ReportFeature/User/Form'
 import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
 import { authAxios } from './utils/Api'
 import Profile from './components/Profile'
+import styles from './styles/Topbar.module.css'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
-  const { openModal } = useContext(TopbarContext)
+  const { openModal, presence, setPresence } = useContext(TopbarContext)
   const { setUser, user, userProfileImage, setOrgId, setUserProfileImage } =
     useContext(ProfileContext)
   const [organizations, setOrganizations] = useState([])
@@ -59,14 +60,32 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     getOrganizations()
   }, [setOrgId, user.image_url, setUser])
 
+  let toggleStatus = null
+
+  switch (presence) {
+    case 'true':
+      toggleStatus = (
+        <ToggleStatus>
+          <div className="activeCircle" />
+        </ToggleStatus>
+      )
+      break
+    default:
+      toggleStatus = (
+        <ToggleStatus>
+          <div className="awayCircle" />
+        </ToggleStatus>
+      )
+  }
+
   return (
     <TopNavBarBase>
-      <div>
+      <LogoDiv>
         <a href="#">
-          <img src={zurichatlogo} alt="zuri chat logo" />
+          <Logo src={zurichatlogo} alt="zuri chat logo" />
         </a>
         {/* <LogoName>ZURI</LogoName> */}
-      </div>
+      </LogoDiv>
       <BaseInput
         value={search}
         onChange={e => setSearch(e.target.value)}
@@ -76,14 +95,15 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         placeholder="Search here"
         border={'#99999933'}
       />
-      <HelpContainer>
+      {/* <HelpContainer>
         <HelpIcons onClick={() => setHelpModal(true)} />
-      </HelpContainer>
-      {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''}
+      </HelpContainer> */}
+      {/* {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''} */}
 
-      <UserForm />
-      <AdminForm />
-      <div>
+      {/* <UserForm /> */}
+      {/* <AdminForm /> */}
+      <ProfileImageContainer>
+        {toggleStatus}
         <img
           style={{ height: '30px', width: '30px', borderRadius: '5px' }}
           src={userProfileImage ? userProfileImage : userAvatar}
@@ -91,7 +111,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           role="button"
           alt="user profile avatar"
         />
-      </div>
+      </ProfileImageContainer>
 
       <Profile />
       <TopbarModal />
@@ -108,8 +128,8 @@ export default connect(mapStateToProps)(TopNavBar)
 //  TopNavBar
 
 const TopNavBarBase = styled.div`
-  padding-inline-start: 1.5rem;
-  padding-inline-end: 1.5rem;
+  padding-inline-start: 1.4rem;
+  padding-inline-end: 1.4rem;
   background-color: var(--bg-2);
   display: flex;
   justify-content: space-between;
@@ -117,23 +137,29 @@ const TopNavBarBase = styled.div`
   z-index: 5;
   width: 100%;
   font-size: 1.5rem;
-  // position: fixed;
-  // padding: 1rem;
-  // margin: auto;
-  // margin-bottom: 3rem !important;
+  @media (max-width: 768px) {
+    padding-inline-start: 0.3rem;
+    padding-inline-end: 0.8rem;      }
+  @media (max-width: 425px) {
+    padding-inline-start: 0rem;
+    padding-inline-end: 0.8rem;  }
 `
-
-// const LogoName = styled.span`
-//   font-family: Lato;
-//   font-size: 20px;
-//   font-style: normal;
-//   font-weight: 700;
-//   line-height: 27px;
-//   letter-spacing: 0px;
-//   padding: 0.5rem;
-//   text-align: center;
-//   vertical-align: middle;
-// `
+const LogoDiv = styled.div`
+    margin: auto 0;
+    display: flex;
+    align-items: center;
+    `
+const Logo = styled.img`
+@media (max-width: 768px) {
+  width:80%;
+    }
+@media (max-width: 425px) {
+  width:70%;
+    }
+`
+const ProfileImageContainer = styled.div`
+position:relative;
+`
 
 const HelpContainer = styled.div`
   > .MuiSvgIcon-root {
@@ -142,5 +168,27 @@ const HelpContainer = styled.div`
   &:hover {
     cursor: pointer;
     opacity: 0.5;
+  }
+`
+const ToggleStatus = styled.div`
+  position: absolute;
+  top: 28px;
+  right: -18px;
+.activeCircle {
+    background-color: green;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    border: 1px solid white;
+    margin-right: 15px;
+  }
+
+  .awayCircle {
+    background-color: grey;
+    height: 10px;
+    width: 10px;
+    margin-right: 15px;
+    border-radius: 50%;
+    border: 1px solid white;
   }
 `

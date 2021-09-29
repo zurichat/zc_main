@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import AdminSetup from './AdminSetup'
 import ComplaintProfiles from './ComplaintProfiles'
 import { Confirm } from './Confirm'
 import Success from './Success'
-import { Modal } from 'react-bootstrap'
+import Modal from 'react-bootstrap/Modal'
 import { BsFillExclamationDiamondFill } from 'react-icons/bs'
-import { AiOutlineClose } from 'react-icons/ai'
+import { BsFillXCircleFill } from 'react-icons/bs'
 
 export const UserForm = () => {
   const [step, setStep] = useState(1)
@@ -17,11 +17,7 @@ export const UserForm = () => {
 
   const [show, setShow] = useState(false)
 
-  useEffect(() => {})
-  const handleClose = () => {
-    setStep(1)
-    setShow(false)
-  }
+  const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
 
   const nextStep = () => {
@@ -74,12 +70,8 @@ export const UserForm = () => {
         keyboard={false}
       >
         <Modal.Header>
-          <Modal.Title className="text-success">ZuriChat Watches</Modal.Title>
-          <AiOutlineClose
-            variant="primary"
-            color="green"
-            onClick={handleClose}
-          />
+          <Modal.Title className="text-success">Zurichat Watches</Modal.Title>
+          <BsFillXCircleFill variant="secondary" onClick={handleClose} />
         </Modal.Header>
         {step === 1 ? (
           <AdminSetup

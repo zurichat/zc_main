@@ -14,12 +14,14 @@ import Features from './pages/features'
 import Resources from './pages/resources'
 import Pricing from './pages/pricing'
 import Security from './pages/security'
+import Invite from './pages/inviteScreen'
 import Inviterequest from './pages/InviteRequest/InviteRequest'
 import SendRequest from './pages/InviteRequest/SendRequest'
 import ContactUs from './pages/contact-us'
 import AppsAndIntegrations from './pages/apps-integration'
 import Events from './pages/events/components/EventsMainWrapper'
 import Download from './pages/download'
+import DownloadsMac from './pages/download/DownloadsMac'
 import Careers from './pages/careers'
 import MarketPlace from './pages/marketplace/marketplace'
 import Blogs from './pages/blogs'
@@ -32,6 +34,7 @@ import PrivateRoute from './pages/settings/Utils/PrivateRoute'
 import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation'
 import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContext'
 import PrivacyPolicy from './pages/privacy-policy/index'
+import NotFoundPage from './pages/404'
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -49,7 +52,7 @@ const App = () => {
         <Route path="/" exact>
           <LandingPage />
         </Route>
-        <Route path="/blogs">
+        <Route path="/blog">
           <Blogs />
         </Route>
         <Route path="/login">
@@ -69,6 +72,9 @@ const App = () => {
         </Route>
         <Route path="/features">
           <Features />
+        </Route>
+        <Route path="/invites/:id">
+          <Invite />
         </Route>
         <Route path="/invite-request">
           <Inviterequest />
@@ -90,6 +96,9 @@ const App = () => {
         </Route>
         <Route path="/download-app">
           <Download />
+        </Route>
+        <Route path="/downloadsMac">
+          <DownloadsMac />
         </Route>
         <Route path="/contact-us">
           <ContactUs />
@@ -134,6 +143,8 @@ const App = () => {
         <Route path="/cookies-banner">
           <Cookies />
         </Route>
+
+        <Route component={NotFoundPage} />
       </Switch>
     </BrowserRouter>
   )

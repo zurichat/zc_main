@@ -12,7 +12,7 @@ export default function VerifyResetCode() {
   const handleSubmit = async code => {
     try {
       const res = await axios.post(
-        `https://api.zuri.chat/account/verify-reset-password`,
+        'https://api.zuri.chat/account/verify-reset-password',
         {
           code
         }
@@ -24,7 +24,6 @@ export default function VerifyResetCode() {
       console.error(err)
       setsuccess(false)
     }
-    // setsuccess(true)
   }
   return (
     <Overlay>

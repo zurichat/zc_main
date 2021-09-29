@@ -1,5 +1,12 @@
 .section5 {
-  margin-top: 160px;
+  margin-top: 180px;
+  background-color: #fff;
+}
+
+.section5Wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
 .section5TopTextsWrapper {
@@ -18,7 +25,7 @@
 }
 
 .section5TopTextsWrapper p {
-  margin-top: 30px;
+  margin-top: 18px;
   font-style: normal;
   font-weight: 500;
   font-size: 1.5rem;
@@ -27,7 +34,7 @@
 }
 
 .section5CardWrapper {
-  margin-top: 60px;
+  margin-top: 40px;
   display: flex;
   align-items: center;
 }
@@ -72,7 +79,11 @@
 
 @media (max-width: 500px) {
   .section5 {
-    margin-top: 80px;
+    margin-top: 120px;
+  }
+
+  .section5Wrapper {
+    padding: 0 24px;
   }
 
   .section5TopTextsWrapper {
@@ -80,11 +91,11 @@
   }
 
   .section5TopTextsWrapper h2 {
-    font-size: 1.7rem;
+    font-size: 1.75rem;
   }
 
   .section5TopTextsWrapper p {
     margin-top: 10px;
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
 }
