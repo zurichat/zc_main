@@ -360,7 +360,7 @@ const EditProfile = () => {
             )}
           </div>
           <div className="button-wrapper">
-            <button className="btns rmvBtn">Cancel</button>
+            <button className="btns cncBtn">Cancel</button>
             <button onClick={handleFormSubmit} className="btns chgBtn">
               {state.loading ? (
                 <Loader type="ThreeDots" color="#fff" height={40} width={40} />
