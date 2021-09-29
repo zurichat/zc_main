@@ -66,8 +66,14 @@
     "@types/jest": "^27.0.1",
     "@types/systemjs": "^6.1.1",
     "centrifuge": "^2.8.2",
+
+    "favicons-webpack-plugin": "^5.0.2",
+    "moment": "^2.29.1",
+    "react-helmet": "^6.1.0",
+
     "moment": "^2.29.1",
     "react-google-login": "^5.2.2",
+
     "react-hot-toast": "^2.1.1",
     "react-loader-spinner": "^4.0.0",
     "react-phone-number-input": "^3.1.27",
