@@ -6,7 +6,7 @@ import zurichatlogo from './assets/images/Logo.svg'
 import { useState } from 'react'
 import styled from 'styled-components'
 import { BaseInput } from './TopBarIndex'
-import userAvatar from './assets/images/avatar_vct.svg'
+import defaultAvatar from './assets/images/avatar_vct.svg'
 import HelpIcon from './assets/download_images/question.svg'
 import HelpIcons from '@material-ui/icons/HelpOutline'
 import TopbarModal from './components/TopbarModal'
@@ -16,6 +16,7 @@ import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
 import { authAxios } from './utils/Api'
 import Profile from './components/Profile'
 import styles from './styles/Topbar.module.css'
+import Loader from 'react-loader-spinner'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { openModal, presence, setPresence } = useContext(TopbarContext)
@@ -104,13 +105,23 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       {/* <AdminForm /> */}
       <ProfileImageContainer>
         {toggleStatus}
-        <img
-          src={userProfileImage ? userProfileImage : userAvatar}
-          onClick={openModal}
-          role="button"
-          className="avatar-img"
-          alt="user profile avatar"
-        />
+        {userProfileImage ? (
+          <img
+            src={userProfileImage !== '' ? userProfileImage : defaultAvatar}
+            onClick={openModal}
+            role="button"
+            className="avatar-img"
+            alt="user profile avatar"
+          />
+        ) : (
+          <Loader
+            type="ThreeDots"
+            color="#00B87C"
+            height={30}
+            width={30}
+            // style={{ cursor: 'pointer' }}
+          />
+        )}
       </ProfileImageContainer>
 
       <Profile />
