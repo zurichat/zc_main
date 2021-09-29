@@ -1,21 +1,8 @@
 .message_box {
   padding-top: 67px;
   font-family: 'Lato', sans-serif;
-<<<<<<< HEAD:zc_frontend/src/components/externalPagesComponents/Footer/Message.module.css
-  min-height: 370px;
-  height: auto;
-  width: 100%;
-  background: #00b87c;
-  border: none;
-  clip-path: ellipse(75% 100% at center top);
-}
-
-.message {
-  margin: 0 auto;
-=======
   height: 308px;
   background-image: url('../component-assets/rectangle.svg');
->>>>>>> upstream/dev:control/src/component-styles/Message.module.css
 }
 
 .background {
@@ -114,17 +101,11 @@
   }
 }
 @media (max-width: 35rem) {
-<<<<<<< HEAD:zc_frontend/src/components/externalPagesComponents/Footer/Message.module.css
-  .message_box {
-    padding: 22px;
-    height: 180px;
-=======
   .message {
     padding: 32px;
 
     background-image: url('../component-assets/mobileBackground.svg');
     height: 220px;
->>>>>>> upstream/dev:control/src/component-styles/Message.module.css
   }
   .buttonFilled,
   .buttonOutline {

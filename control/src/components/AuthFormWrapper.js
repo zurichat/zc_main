@@ -38,26 +38,12 @@ const FormWrapper = ({
           </Link>
         </div> */}
         <div className={`${styles.googleAuthDiv}`}>
-<<<<<<< HEAD
-          <GoogleSignIn
-            className={styles.googleBtn}
+          <GoogleAuth
+            className={`${styles.googleBtn}`}
             googleHeader={googleHeader}
             google={google}
+            setLoading={setLoading}
           />
-          {/*<div className={`${styles.googleBtn}`}>
-            <a href="/" className="google">
-              <img src={google} alt="google" />
-              {googleHeader}
-            </a>
-          </div>*/}
-=======
-          <GoogleAuth 
-           className={`${styles.googleBtn}`} 
-           googleHeader={googleHeader} 
-           google={google}
-           setLoading={setLoading}
-          />
->>>>>>> upstream/dev
           <span className={`${styles.hrWrapper}`}>
             {/* <span className={`${styles.topLine}`}>{topLineText}</span> */}
             <hr className={`${styles.hrLeft}`} />

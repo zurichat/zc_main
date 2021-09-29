@@ -72,22 +72,10 @@ body {
   line-height: 130%;
   color: #ffffff;
 }
-<<<<<<< HEAD
-.button {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-  position: relative;
-  z-index: 1;
-  padding: 119px;
-  text-align: center;
-=======
 .mobile {
   color: #ffffff;
   font-size: 30px;
   text-decoration: underline;
->>>>>>> upstream/dev
 }
 .buttonW {
   display: inline-block;

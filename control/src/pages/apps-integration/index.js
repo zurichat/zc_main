@@ -9,12 +9,8 @@ function AppsAndIntegrations() {
     <div>
       <Header />
       <SectionOne />
-<<<<<<< HEAD
-
-=======
       <SectionTwo />
       <SectionThree />
->>>>>>> upstream/dev
       <Footer />
     </div>
   )
