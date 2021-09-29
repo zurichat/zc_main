@@ -6,9 +6,9 @@ import imageTut from '../assets/image1.png'
 import bulbiImage from '../assets/bulb.png'
 import shakeImage from '../assets/shake.png'
 import bigLock from '../assets/bigLock.svg'
-import yellowBulb from '../assets/yellowbulb.svg'
+import yellowBulb from '../assets/yellowBulb.svg'
 import smallLock from '../assets/smallLock.svg'
-import handShake from '../assets/handshake.svg'
+import handShake from '../assets/handShake.svg'
 
 const Content = () => {
   return (
