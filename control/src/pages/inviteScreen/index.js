@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 import styles from '../../component-styles/Signout.module.css'
 import logo from '../../component-assets/zuri.svg'
 import axios from 'axios'
-import { Helmet } from 'react-helmet'
 
 const InvitePage = () => {
   const { id } = useParams()
@@ -49,9 +48,6 @@ const InvitePage = () => {
 
   return (
     <main id={styles.signout}>
-      <Helmet>
-        <title>InviteScreen - Zuri Chat</title>
-      </Helmet>
       <div className={styles.logo}>
         <img src={logo} alt="zuri" />
       </div>

@@ -4,14 +4,10 @@ import cancel from './assets/cancel.png'
 import shape from './assets/shape.png'
 import add from './assets/add.png'
 import styles from './styles/SendRequest.module.css'
-import { Helmet } from 'react-helmet'
 
 function SendRequest() {
   return (
     <div className={styles.App}>
-      <Helmet>
-        <title>SendRequest - Zuri Main</title>
-      </Helmet>
       <div className={styles.Request}>
         <div className={styles.nav}>
           <Navbar className={styles.navbar}>

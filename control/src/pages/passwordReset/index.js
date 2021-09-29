@@ -6,7 +6,6 @@ import Button from '../../components/Button'
 import styles from '../../component-styles/ResetPassword.module.css'
 import axios from 'axios'
 import VerifyResetCode from './verifyCode'
-import { Helmet } from 'react-helmet'
 
 const ResetDefault = () => {
   const [email, setEmail] = useState('')
@@ -38,9 +37,6 @@ const ResetDefault = () => {
   return (
     <>
       <main id={styles.authPageWrapper}>
-        <Helmet>
-          <title>Reset Password - Zuri Chat</title>
-        </Helmet>
         {showDialog && <VerifyResetCode />}
         <aside id={styles.authAsideContainer} className={styles.display_none}>
           <div id={styles.authImageWrapper}>

@@ -6,14 +6,9 @@ import Section1 from './components/section1/Section1'
 import Footer from '../../components/Footer'
 import Section5 from './components/section5/Section5'
 import Header from '../../components/Header'
-import { Helmet } from 'react-helmet'
-
 const Features = () => {
   return (
     <>
-      <Helmet>
-        <title> Features - Zuri Chat</title>
-      </Helmet>
       <Header />
       <Section1 />
       <Section2 />
