@@ -71,11 +71,20 @@ const Content = () => {
               <Link title="Overview" />
               <p className={Style.privacy}>Privacy</p>
               <Link title="Zurichat Privacy" /> <br />
+              <Link title="Policy" /> <br />
               <Link title="Privacy FAQ" />
               <p className={Style.datareq}>Data Requests</p>
               <Link title="Data Request Overview" underline /> <br />
               <Link title="Data Request Policy" underline /> <br />
               <Link title="Transparency Report" underline />
+              <p className={Style.compliance}>Compliance</p>
+              <Link title="Cookie Policy" /> <br />
+              <Link title="Zurichat's GDPR Commitment" /> <br />
+              <Link title="California's Consumer Policy Act" />
+              <br />
+              <Link title="(CCPA) FAQ" /> <br />
+              <Link title="CCPA Metric Disclosure" /> <br />
+              <Link title="FERPA Compliance" />
             </div>
             <div className={Style.effectiveAll}>
               <h6 className={Style.effectDate}>Effective: March 14, 2021</h6>
