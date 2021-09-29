@@ -41,14 +41,14 @@ const Signout = ({ history }) => {
         </div>
 
         <div className="content-wrapper">
-          <h6>Signed out of Team {orgName} Workspace</h6>
+          <h6 className='org-name'>Signed out of Team {orgName} Workspace</h6>
           <signoutMessage>
             You have been signed out of Team {orgName} Workspace
           </signoutMessage>
 
-          <button onClick={() => history.push('/login')}>Login</button>
-          <p>
-            or <a href="/login"> Login</a> to another workspace
+          <button className='push' onClick={() => history.push('/login')}>Login</button>
+          <p className='login'>
+            or <a href="/login" className='link'> Login</a> to another workspace
           </p>
         </div>
       </SignoutStyleWrapper>
