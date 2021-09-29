@@ -240,7 +240,6 @@ export const StyledProfileWrapper = styled.section`
       background: #00b87c;
       color: #fff;
       border-radius: 4px;
-      width: 100%;
       &:hover {
         background: #029765;
         color: #fff;
@@ -249,6 +248,18 @@ export const StyledProfileWrapper = styled.section`
     }
   }
   .rmvBtn {
+    background: none;
+    color: #999;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+    width: 100%;
+    &:hover {
+      color: red;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .cncBtn {
     background: none;
     color: #999;
     font-size: 1rem;
