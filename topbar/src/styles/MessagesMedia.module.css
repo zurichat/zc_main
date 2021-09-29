@@ -1,7 +1,7 @@
 .msgCon {
   margin-top: 54px;
   margin-left: 50px;
-  width: 165%;
+  width: 80%;
 }
 
 .title {
@@ -10,6 +10,7 @@
   line-height: 20px;
   font-style: normal;
   color: #242424;
+  margin-left: -500px;
 }
 
 .clean {
@@ -35,11 +36,11 @@
 }
 
 .radio {
-  margin-top: -5px;
+  margin-top: -10px;
 }
 
 .radio2 {
-  margin-top: -5px;
+  margin-top: -10px;
 }
 
 .compact {
@@ -54,6 +55,7 @@
   font-weight: normal;
   margin-top: 6px;
   color: #3a3a3a;
+  margin-left: -440px;
 }
 
 .theme11 {
@@ -62,9 +64,9 @@
 }
 
 .bottom {
-  margin-top: 20px;
+  margin-top: 15px;
   margin-bottom: 20px;
-  border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+  border-bottom: 1px solid rgba(214, 211, 211, 0.5);
   width: 90%;
 }
 
@@ -74,11 +76,13 @@
   font-style: normal;
   line-height: 20px;
   color: #242424;
+  margin-left: -505px;
 }
 
 .full {
   display: flex;
   margin-top: 8px;
+  margin-left: 1px;
 }
 
 .display {
@@ -100,11 +104,12 @@
 }
 
 .radio3 {
-  margin-top: -2px;
+  margin-top: -8px;
 }
 
 .radio4 {
-  margin-top: -2px;
+  margin-top: -8px;
+  margin-left: 1px;
 }
 
 .just {
@@ -115,6 +120,7 @@
 .theme12 {
   width: 90%;
   margin-top: 15px;
+  margin-left: 3px;
 }
 
 .change {
@@ -124,21 +130,23 @@
   font-weight: normal;
   font-style: normal;
   color: #999999;
+  margin-left: -298px;
 }
 
 .change p {
   color: #00b87c;
   margin-top: -20px;
-  margin-left: 248px;
+  margin-left: 319px;
   font-weight: normal;
   font-size: 13px;
 }
 
 .bottom2 {
-  margin-top: 20px;
+  margin-top: 15px;
   margin-bottom: 20px;
-  border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+  border-bottom: 1px solid rgba(214, 211, 211, 0.5);
   width: 90%;
+  margin-left: 3px;
 }
 
 .info {
@@ -189,24 +197,25 @@
   line-height: 20px;
   font-style: normal;
   color: #333333;
+  margin-left: -430px;
 }
 
 .checkbox {
-  margin-top: -2px;
+  margin-top: -8px;
 }
 
 .checkbox2 {
-  margin-top: -2px;
+  margin-top: -8px;
 }
 
 .checkbox3 {
-  margin-top: -2px;
+  margin-top: -8px;
 }
 
 .bottom3 {
-  margin-top: 20px;
+  margin-top: 15px;
   margin-bottom: 20px;
-  border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+  border-bottom: 1px solid rgba(214, 211, 211, 0.5);
   width: 90%;
 }
 
@@ -216,6 +225,7 @@
   line-height: 20px;
   font-style: normal;
   color: #333333;
+  margin-left: -510px;
 }
 
 .tone {
@@ -225,20 +235,31 @@
   line-height: 20px;
   font-weight: normal;
   font-style: normal;
+  margin-left: -448px;
 }
 
 .choose {
-  margin-top: 10px;
+  margin-top: 15px;
   font-size: 13px;
   color: #999999;
   line-height: 20px;
   font-weight: normal;
   font-style: normal;
+  margin-left: -90px;
+}
+
+.choose2 {
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+  margin-left: -408px;
 }
 
 .hands {
   display: flex;
-  margin-top: 10px;
+  margin-top: 16px;
 }
 
 .theme13 {
@@ -284,7 +305,7 @@
 
 .plntxt {
   display: flex;
-  margin-top: 15px;
+  margin-top: 12px;
 }
 
 .plain {
@@ -298,7 +319,7 @@
 
 .jumb {
   display: flex;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .jumbomoji {
@@ -311,11 +332,11 @@
 }
 
 .checkbox4 {
-  margin-top: -2px;
+  margin-top: -8px;
 }
 
 .checkbox5 {
-  margin-top: -2px;
+  margin-top: -8px;
 }
 
 .versions {
@@ -325,6 +346,7 @@
   line-height: 20px;
   font-weight: normal;
   font-style: normal;
+  margin-left: -90px;
 }
 
 .example {
@@ -334,18 +356,21 @@
   line-height: 20px;
   font-weight: normal;
   font-style: normal;
+  margin-left: -440px;
 }
 
 .theme19 {
   width: 90%;
   margin-top: 15px;
+  margin-left: 2px;
 }
 
 .bottom4 {
-  margin-top: 20px;
+  margin-top: 16px;
   margin-bottom: 20px;
-  border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+  border-bottom: 1px solid rgba(214, 211, 211, 0.5);
   width: 90%;
+  margin-left: 3px;
 }
 
 .media {
@@ -354,6 +379,7 @@
   line-height: 20px;
   font-style: normal;
   color: #333333;
+  margin-left: -393px;
 }
 
 .images {
@@ -385,11 +411,13 @@
 }
 
 .checkbox6 {
-  margin-top: -2px;
+  margin-top: -8px;
+  margin-left: 3px;
 }
 
 .checkbox7 {
-  margin-top: -2px;
+  margin-top: -8px;
+  margin-left: 3px;
 }
 
 .larger {
@@ -407,7 +435,8 @@
 }
 
 .checkbox8 {
-  margin-top: -2px;
+  margin-top: -8px;
+  margin-left: 3px;
 }
 
 .previews {
@@ -425,14 +454,16 @@
 }
 
 .checkbox9 {
-  margin-top: -2px;
+  margin-top: -8px;
+  margin-left: 3px;
 }
 
 .bottom5 {
   margin-top: 20px;
   margin-bottom: 20px;
-  border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+  border-bottom: 1px solid rgba(214, 211, 211, 0.5);
   width: 90%;
+  margin-left: 3px;
 }
 
 .emails {
@@ -441,6 +472,7 @@
   line-height: 20px;
   font-style: normal;
   color: #333333;
+  margin-left: -370px;
 }
 
 .upload {
@@ -450,22 +482,43 @@
   line-height: 20px;
   font-weight: normal;
   font-style: normal;
+  margin-left: -176px;
+}
+
+.upload2 {
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+  margin-left: -176px;
+}
+
+.upload3 {
+  font-size: 13px;
+  color: #999999;
+  line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+  margin-left: -305px;
 }
 
 .button {
   border-radius: 6px;
   background-color: white;
-  color: #999999;
-  border: 1px solid rgb(54, 54, 54);
+  color: #00b87c;
+  border: 1px solid #00b87c;
   margin-top: 24px;
   margin-bottom: 30px;
   cursor: pointer;
+  margin-left: -328px;
 }
 
 .forward {
-  margin-right: 20px;
-  margin-left: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-right: -30px;
+  margin-left: -30px;
+  margin-top: -15px;
+  margin-bottom: -35px;
   font-size: 13px;
+  font-weight: 400;
 }
