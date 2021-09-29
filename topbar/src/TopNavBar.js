@@ -80,12 +80,12 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   return (
     <TopNavBarBase>
-      <div>
+      <LogoDiv>
         <a href="#">
-          <img src={zurichatlogo} alt="zuri chat logo" />
+          <Logo src={zurichatlogo} alt="zuri chat logo" />
         </a>
         {/* <LogoName>ZURI</LogoName> */}
-      </div>
+      </LogoDiv>
       <BaseInput
         value={search}
         onChange={e => setSearch(e.target.value)}
@@ -98,11 +98,11 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       {/* <HelpContainer>
         <HelpIcons onClick={() => setHelpModal(true)} />
       </HelpContainer> */}
-      {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''}
+      {/* {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''} */}
 
       {/* <UserForm /> */}
       {/* <AdminForm /> */}
-      <div>
+      <ProfileImageContainer>
         {toggleStatus}
         <img
           style={{ height: '30px', width: '30px', borderRadius: '5px' }}
@@ -111,7 +111,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           role="button"
           alt="user profile avatar"
         />
-      </div>
+      </ProfileImageContainer>
 
       <Profile />
       <TopbarModal />
@@ -128,8 +128,8 @@ export default connect(mapStateToProps)(TopNavBar)
 //  TopNavBar
 
 const TopNavBarBase = styled.div`
-  padding-inline-start: 1.5rem;
-  padding-inline-end: 1.5rem;
+  padding-inline-start: 1.4rem;
+  padding-inline-end: 1.4rem;
   background-color: var(--bg-2);
   display: flex;
   justify-content: space-between;
@@ -137,23 +137,31 @@ const TopNavBarBase = styled.div`
   z-index: 5;
   width: 100%;
   font-size: 1.5rem;
-  // position: fixed;
-  // padding: 1rem;
-  // margin: auto;
-  // margin-bottom: 3rem !important;
+  @media (max-width: 768px) {
+    padding-inline-start: 0.3rem;
+    padding-inline-end: 0.8rem;
+  }
+  @media (max-width: 425px) {
+    padding-inline-start: 0rem;
+    padding-inline-end: 0.8rem;
+  }
 `
-
-// const LogoName = styled.span`
-//   font-family: Lato;
-//   font-size: 20px;
-//   font-style: normal;
-//   font-weight: 700;
-//   line-height: 27px;
-//   letter-spacing: 0px;
-//   padding: 0.5rem;
-//   text-align: center;
-//   vertical-align: middle;
-// `
+const LogoDiv = styled.div`
+  margin: auto 0;
+  display: flex;
+  align-items: center;
+`
+const Logo = styled.img`
+  @media (max-width: 768px) {
+    width: 80%;
+  }
+  @media (max-width: 425px) {
+    width: 70%;
+  }
+`
+const ProfileImageContainer = styled.div`
+  position: relative;
+`
 
 const HelpContainer = styled.div`
   > .MuiSvgIcon-root {
@@ -165,6 +173,9 @@ const HelpContainer = styled.div`
   }
 `
 const ToggleStatus = styled.div`
+  position: absolute;
+  top: 28px;
+  right: -18px;
   .activeCircle {
     background-color: green;
     height: 10px;
@@ -172,9 +183,6 @@ const ToggleStatus = styled.div`
     border-radius: 50%;
     border: 1px solid white;
     margin-right: 15px;
-    position: absolute;
-    top: 42px;
-    right: 10px;
   }
 
   .awayCircle {
@@ -184,8 +192,5 @@ const ToggleStatus = styled.div`
     margin-right: 15px;
     border-radius: 50%;
     border: 1px solid white;
-    position: absolute;
-    top: 42px;
-    right: 10px;
   }
 `
