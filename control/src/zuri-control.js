@@ -83,8 +83,10 @@ const GetWorkspaceUsers = async () => {
         }
       })
     let user = res.data.data
-    console.log(user.slice(0, 100))
-    return user.slice(0, 100)
+    let workSpaceUsersData = {totalUsers:user.length, ...user.slice(0, 100)}
+    // console.log(user.slice(0, 100))
+    console.log(workSpaceUsersData)
+    return workSpaceUsersData
   }
   catch (err) {
     console.log(err)
