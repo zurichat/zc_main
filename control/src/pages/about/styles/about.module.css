@@ -1,0 +1,75 @@
+.banner {
+  margin-top: 10%;
+  text-align: center;
+}
+.banner > p {
+  margin-bottom: 4%;
+}
+.working_remote {
+  text-align: center !important;
+  margin-top: 2%;
+}
+.counter > h1,
+.counter > p {
+  margin-left: 2rem;
+}
+.howedoit {
+  margin-top: 3%;
+}
+.zurichat {
+  height: 300px;
+  text-align: center;
+  background-color: #00b87c;
+}
+.zurichat_h3 {
+  padding: 3%;
+  color: #fff;
+  position: relative;
+  top: 3rem;
+}
+.vector {
+  padding: 1rem;
+  margin-left: 1.2rem;
+}
+.vector > h6 {
+  font-size: 23px;
+}
+.vector > img {
+  width: 30%;
+}
+.button {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.btn_sale {
+  background-color: #fff;
+  text-transform: uppercase;
+  color: #00b87c;
+  margin-top: 2rem;
+  font-weight: 600;
+}
+.btn_free {
+  background-color: transparent;
+  color: #fff;
+  border-radius: 5%;
+  border: 1px solid #fff;
+  margin-left: 1%;
+  text-transform: uppercase;
+  margin-top: 2rem;
+  box-shadow: 2px 4px 8px solid #fff;
+  font-weight: 600;
+}
+.working_remote_section {
+  margin-top: 2%;
+}
+.channel {
+  position: absolute;
+  margin-left: -8%;
+  margin-top: 3%;
+}
+.team > img {
+  width: 40vw;
+  position: relative;
+  top: -16%;
+}

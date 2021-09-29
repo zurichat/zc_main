@@ -7,9 +7,12 @@ export default function Header(props) {
     <div>
       {props.headerConfig && (
         <div className={styles.plugin__header}>
-          <div className={styles.plugin__header__title}>
+          <div
+            onClick={props.headerConfig.eventTitle}
+            className={styles.plugin__header__title}
+          >
             <img
-              src={props.headerConfig.logo || ''}
+              src={props.headerConfig.icon || ''}
               alt=""
               className={styles.plugin__header__icon}
             />
@@ -20,19 +23,24 @@ export default function Header(props) {
               <MdKeyboardArrowDown />
             </span>
           </div>
-          <div className={styles.plugin__header__thumbnail}>
-            <div className={styles.plugin__thumbnail}>
-              {props.headerConfig.thumbnailUrl &&
-                props.headerConfig.thumbnailUrl
-                  .slice(0, 3)
-                  .map((image, index) => {
-                    return <img key={index} src={image} alt="" />
-                  })}
+          {props.headerConfig.hasThumbnail && (
+            <div
+              className={styles.plugin__header__thumbnail}
+              onClick={props.headerConfig.eventThumbnail}
+            >
+              <div className={styles.plugin__thumbnail}>
+                {props.headerConfig.thumbnailUrl &&
+                  props.headerConfig.thumbnailUrl
+                    .slice(0, 3)
+                    .map((image, index) => {
+                      return <img key={index} src={image} alt="" />
+                    })}
+              </div>
+              <div className={styles.plugin__header__count}>
+                <p>{props.headerConfig.userCount || 0}</p>
+              </div>
             </div>
-            <div className={styles.plugin__header__count}>
-              <p>{props.headerConfig.userCount || 0}</p>
-            </div>
-          </div>
+          )}
         </div>
       )}
     </div>

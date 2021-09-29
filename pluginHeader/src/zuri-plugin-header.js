@@ -1,19 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 import singleSpaReact from 'single-spa-react'
-// import singleSpa from 'single-spa'
 import Root from './root.component'
 
 let enhancedComponent = Root
 
-export const pluginHeader = singleSpaReact(
-  {
-    React,
-    ReactDOM,
-    rootComponent: enhancedComponent
-  },
-  { user: 'name' }
-)
+export const pluginHeader = singleSpaReact({
+  React,
+  ReactDOM,
+  rootComponent: enhancedComponent
+})
 
 export const name = 'Plugin header'
 
@@ -26,9 +22,3 @@ export const bootstrap = [
 ]
 export const mount = ReactDOM
 export const unmount = enhancedComponent
-
-export const pluginConfig = () => {
-  const [state, setState] = useState('default')
-
-  return [state, setState]
-}

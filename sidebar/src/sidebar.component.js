@@ -167,7 +167,7 @@ const Sidebar = props => {
                 trimmedUrl.includes('http://')
                   ? trimmedUrl
                   : `https://${trimmedUrl}`
-              }?org=${userInfo.Organizations[0]}&user=${userInfo.userId}`
+              }?org=${currentWorkspace}&user=${userInfo.userId}`
             )
             .then(res => {
               try {
