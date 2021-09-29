@@ -6,7 +6,7 @@ import zurichatlogo from './assets/images/Logo.svg'
 import { useState } from 'react'
 import styled from 'styled-components'
 import { BaseInput } from './TopBarIndex'
-import userAvatar from './assets/images/user.svg'
+import userAvatar from './assets/images/avatar_vct.svg'
 import HelpIcon from './assets/download_images/question.svg'
 import HelpIcons from '@material-ui/icons/HelpOutline'
 import TopbarModal from './components/TopbarModal'
@@ -105,10 +105,10 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       <ProfileImageContainer>
         {toggleStatus}
         <img
-          style={{ height: '30px', width: '30px', borderRadius: '5px' }}
           src={userProfileImage ? userProfileImage : userAvatar}
           onClick={openModal}
           role="button"
+          className="avatar-img"
           alt="user profile avatar"
         />
       </ProfileImageContainer>
@@ -139,26 +139,28 @@ const TopNavBarBase = styled.div`
   font-size: 1.5rem;
   @media (max-width: 768px) {
     padding-inline-start: 0.3rem;
-    padding-inline-end: 0.8rem;      }
+    padding-inline-end: 0.8rem;
+  }
   @media (max-width: 425px) {
     padding-inline-start: 0rem;
-    padding-inline-end: 0.8rem;  }
+    padding-inline-end: 0.8rem;
+  }
 `
 const LogoDiv = styled.div`
-    margin: auto 0;
-    display: flex;
-    align-items: center;
-    `
+  margin: auto 0;
+  display: flex;
+  align-items: center;
+`
 const Logo = styled.img`
-@media (max-width: 768px) {
-  width:80%;
-    }
-@media (max-width: 425px) {
-  width:70%;
-    }
+  @media (max-width: 768px) {
+    width: 80%;
+  }
+  @media (max-width: 425px) {
+    width: 70%;
+  }
 `
 const ProfileImageContainer = styled.div`
-position:relative;
+  position: relative;
 `
 
 const HelpContainer = styled.div`
@@ -174,7 +176,7 @@ const ToggleStatus = styled.div`
   position: absolute;
   top: 28px;
   right: -18px;
-.activeCircle {
+  .activeCircle {
     background-color: green;
     height: 10px;
     width: 10px;
