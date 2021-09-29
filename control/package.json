@@ -44,6 +44,9 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
     "@iconscout/react-unicons": "^1.1.6",
     "@iconscout/react-unicons-thinline": "^0.0.1",
     "@popperjs/core": "^2.10.1",
@@ -59,6 +62,7 @@
     "react-device-detect": "^1.17.0",
     "react-dom": "^17.0.2",
     "react-dropzone": "^11.4.0",
+    "react-google-login": "^5.2.2",
     "react-icons": "^4.2.0",
     "react-redux": "^7.2.5",
     "react-router-dom": "^5.3.0",

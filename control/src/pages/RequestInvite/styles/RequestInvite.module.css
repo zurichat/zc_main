@@ -1,0 +1,31 @@
+.root {
+  width: 40rem;
+  height: 620px;
+  margin: 20px auto;
+  font-size: 10px;
+  background-color: #ffffff;
+  align-items: center;
+  justify-content: center;
+}
+.title {
+  align-items: center;
+  justify-content: center;
+}
+.firsticon {
+  padding-right: 9px;
+}
+main {
+  font-size: 6px;
+}
+
+.submain {
+  text-align: center;
+}
+p {
+  font-size: 15px;
+}
+.btnr {
+  background-color: #00b87c;
+  color: white;
+  padding-left: 9px;
+}

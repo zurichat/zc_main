@@ -1,34 +1,47 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import authBg from '../../component-assets/backg.svg'
 import Logo from '../../component-assets/zuri.svg'
-import { withRouter } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
-// import FormWrapper from '../../components/AuthFormWrapper'
 import Button from '../../components/Button'
-// import styles from '../../styles/AuthFormElements.module.css'
 import styles from '../../component-styles/ResetPassword.module.css'
-// import ResetModal from '../../components/verified/ResetModal'
-// import axios from 'axios'
-const Index = () => {
-  const [email, setEmail] = useState('')
-  const [modalShow, setModalShow] = useState(false)
+import axios from 'axios'
+import VerifyResetCode from './verifyCode'
 
-  const toggleModal = () => {
-    setModalShow(!modalShow)
-  }
+const ResetDefault = () => {
+  const [email, setEmail] = useState('')
+  const [showDialog, setShowDialog] = useState(false)
+  const open = () => setShowDialog(true)
+  // const close = () => setShowDialog(false)
 
   const handleSubmit = e => {
     e.preventDefault()
-    toggleModal()
+    sendEmail()
+  }
+  const sendEmail = async () => {
+    if (email) {
+      try {
+        const res = await axios.post(
+          'https://api.zuri.chat/account/request-password-reset-code',
+          {
+            email
+          }
+        )
+        open()
+        console.log(res.data)
+      } catch (err) {
+        console.error(err)
+      }
+    }
   }
 
   return (
     <>
       <main id={styles.authPageWrapper}>
+        {showDialog && <VerifyResetCode />}
         <aside id={styles.authAsideContainer} className={styles.display_none}>
           <div id={styles.authImageWrapper}>
             <img src={authBg} alt="backgroundImage" />
-            <div id={styles.aside_txt}></div>
+            <div id={styles.asideText}></div>
           </div>
         </aside>
         <section id={``}>
@@ -38,16 +51,16 @@ const Index = () => {
           </div>
           {/* header text  */}
           <div className={``}>
-            <h4 className={styles.headerText}>Recover Password</h4>
+            <h4 className={styles.headerText}>Get a new password</h4>
             <p>
-              Enter the email address you registered with, a reset link will be
-              sent to your email!
+              Enter the email address you registered with and a reset code will
+              be sent to your email.
             </p>
           </div>
           {/* form section  */}
           <form action="">
             <AuthInputBox
-              className={`${styles.resetInput}`}
+              className={`${styles.inputElement}`}
               id="email"
               name="Email address"
               type="email"
@@ -59,10 +72,6 @@ const Index = () => {
             <Button className={styles.button} onClick={handleSubmit}>
               Continue
             </Button>
-            {/* <ResetModal 
-            show={modalShow}
-            onHide={setModalShow(false)}
-          /> */}
           </form>
         </section>
       </main>
@@ -70,4 +79,4 @@ const Index = () => {
   )
 }
 
-export default withRouter(Index)
+export default ResetDefault
