@@ -49,8 +49,8 @@ const Content = () => {
             <p className={Style.paragraph}>
               {' '}
               This Privacy Policy, including our{' '}
-              <Link to="/Cookie Policy" title="Cookie Policy" /> applies to your
-              use of our Services.
+              <Link to="/cookies-banner" title="Cookie Policy" /> applies to
+              your use of our Services.
             </p>
           </div>
           <p className={Style.parservices}>
@@ -63,7 +63,7 @@ const Content = () => {
             residents, additional disclosures required by Nigerian law may be
             found in our{' '}
             <Link
-              to="/Nigeria Privacy Disclosure"
+              to="/nigeria-privacy-disclosure"
               title="Nigeria Privacy Disclosure."
             />
           </p>
