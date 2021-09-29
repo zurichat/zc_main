@@ -58,7 +58,7 @@ export const SignoutStyleWrapper = styled.section`
 
       a.link {
         color: steelblue;
-        margin: 0 .4rem;
+        margin: 0 0.4rem;
       }
     }
     button.push {
