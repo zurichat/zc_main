@@ -19,12 +19,10 @@ import Inviterequest from './pages/InviteRequest/InviteRequest'
 import SendRequest from './pages/InviteRequest/SendRequest'
 import ContactUs from './pages/contact-us'
 import AppsAndIntegrations from './pages/apps-integration'
-import Events from './pages/events/components/EventsMainWrapper'
 import Download from './pages/download'
 import DownloadsMac from './pages/download/DownloadsMac'
 import Careers from './pages/careers'
 import MarketPlace from './pages/marketplace/marketplace'
-import Blogs from './pages/blogs'
 import Settings from './pages/settings'
 import ConfirmPassword from './pages/settings/components/ConfirmPassword'
 import AccDeactivated from './pages/settings/components/AccDeactivated'
@@ -35,6 +33,7 @@ import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation
 import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContext'
 import PrivacyPolicy from './pages/privacy-policy/index'
 import NotFoundPage from './pages/404'
+import About from './pages/about/index'
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -51,9 +50,6 @@ const App = () => {
       <Switch>
         <Route path="/" exact>
           <LandingPage />
-        </Route>
-        <Route path="/blog">
-          <Blogs />
         </Route>
         <Route path="/login">
           <Login />
@@ -91,9 +87,6 @@ const App = () => {
         <Route path="/security">
           <Security />
         </Route>
-        <Route path="/events">
-          <Events />
-        </Route>
         <Route path="/download-app">
           <Download />
         </Route>
@@ -108,6 +101,9 @@ const App = () => {
         </Route>
         <Route path="/privacy">
           <PrivacyPolicy />
+        </Route>
+        <Route path="/about">
+          <About />
         </Route>
         <Route path="/marketplace" exact>
           <MarketPlace />
