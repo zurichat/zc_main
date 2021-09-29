@@ -23,8 +23,22 @@ export default function Homepage() {
   const { useState, useEffect } = React
 
   const [loading, setLoading] = useState(true)
-  const allowCookie = sessionStorage.getItem('cookies-allow')
-  const declineCookie = sessionStorage.getItem('cookies-decline')
+
+  const cookieStorage = {
+    getItem: key => {
+      const cookies = document.cookie
+        .split(';')
+        .map(cookie => cookie.split('='))
+        .reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: value }), {})
+      return cookies[key]
+    },
+    setItem: (key, value) => {
+      document.cookie = `${key}=${value}`
+    }
+  }
+
+  const allowCookie = cookieStorage.getItem('Zuri Chat Accept')
+  const declineCookie = cookieStorage.getItem('Zuri Chat Decline')
 
   if (!allowCookie == true || declineCookie == true) {
     useEffect(() => {
