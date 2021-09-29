@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import CompanyNameCSS from '../styles/CompanyName.module.css'
 import { Link, useRouteMatch } from 'react-router-dom'
 import axios from 'axios'
+import { Helmet } from 'react-helmet'
+
 function CompanyName({ input }) {
   const [user, setUser] = useState(null)
   const [orgId, setOrgId] = useState(null)
@@ -48,6 +50,9 @@ function CompanyName({ input }) {
 
   return (
     <div>
+      <Helmet>
+        <title>Choose Company Name - Zuri Chat</title>
+      </Helmet>
       <article className={CompanyNameCSS.wrapper}>
         <div className={CompanyNameCSS.email}>
           {user ? <span>Signed in as {user.email}</span> : null}
