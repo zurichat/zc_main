@@ -110,7 +110,7 @@
 }
 
 .datareq {
-  margin-top: 40px;
+  margin-top: 15px;
   margin-bottom: 0px;
 }
 
@@ -129,8 +129,13 @@
   top: 705px;
 }
 
+.compliance {
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
 .privacy {
-  margin-top: 40px;
+  margin-top: 30px;
   margin-bottom: 0px;
 }
 
@@ -150,7 +155,7 @@
   letter-spacing: 0.03em;
   color: #000000;
   padding: 0 120px 0 0;
-  margin-top: 380px;
+  margin-top: 180px;
 }
 
 .privPol {
