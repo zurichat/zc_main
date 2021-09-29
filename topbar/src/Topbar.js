@@ -2,7 +2,6 @@ import { useContext } from 'react'
 import { TopbarContext } from './context/Topbar'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import faker from 'faker'
 
 import styles from './styles/Topbar.module.css'
 import SearchBar from './components/SearchBar'
