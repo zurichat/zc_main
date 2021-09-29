@@ -5,7 +5,7 @@ import styles from '../../component-styles/Signout.module.css'
 import { SignoutStyleWrapper } from '../../component-styles/SignoutStyle'
 import logo from '../../component-assets/zuri.svg'
 
-const Signout = ({history}) => {
+const Signout = ({ history }) => {
   return (
     <>
       <SignoutStyleWrapper>
@@ -15,7 +15,9 @@ const Signout = ({history}) => {
 
         <div className="content-wrapper">
           <h6>Signed out of Team Einstein Workspace</h6>
-          <signoutMessage>You have been signed out of Team Einstein Workspace</signoutMessage>
+          <signoutMessage>
+            You have been signed out of Team Einstein Workspace
+          </signoutMessage>
 
           <button onClick={history.push('/home')}>Login</button>
           <p>
