@@ -117,7 +117,7 @@ export const CentrifugeSetup = () => {
 CentrifugeSetup();
 
 export const SubscribeToChannel = (plugin_id, callback) => {
-  let centrifuge = localStorage.getItem('centrifuge');
+  let centrifuge = JSON.parse(localStorage.getItem('centrifuge'));
 
   centrifuge.subscribe(plugin_id, (ctx) => {
     callback(ctx);
