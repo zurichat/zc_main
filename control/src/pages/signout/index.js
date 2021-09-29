@@ -1,36 +1,68 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { withRouter } from 'react-router-dom'
-// import styles from '../../styles/Signout.module.css'
-import styles from '../../component-styles/Signout.module.css'
+import axios from 'axios'
+// import {GetUserInfo} from '../../zuri-control'
+import { SignoutStyleWrapper } from '../../component-styles/SignoutStyle'
 import logo from '../../component-assets/zuri.svg'
 import { Helmet } from 'react-helmet'
 
-const Signout = () => {
+const Signout = ({ history }) => {
+  const currentWorkspace = localStorage.getItem('currentWorkspace')
+  let token = sessionStorage.getItem('token')
+  const [orgName, SetOrgName] = useState('')
+
+  useEffect(() => {
+    let user = JSON.parse(sessionStorage.getItem('user'))
+
+    if ((user && token) !== null) {
+      try {
+        axios
+          .get(`https://api.zuri.chat/organizations/${currentWorkspace}`, {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          })
+          .then(response => {
+            SetOrgName(response.data.data.name)
+            // let userData = { currentWorkspace, ...response.data.data }
+          })
+      } catch (err) {
+        console.log(err)
+      }
+    } else {
+      console.log('YOU ARE NOT LOGGED IN, PLEASE LOG IN')
+    }
+  }, [orgName])
+
   return (
-    <main id={styles.signout}>
-      <Helmet>
-        <title>Sign Out - Zuri Chat</title>
-      </Helmet>
-      <div className={styles.logo}>
-        <img src={logo} alt="zuri" />
-      </div>
-      <div className={styles.write}>
-        <div className={styles.wrapper}>
-          <h1 className={styles.firstText}>
-            Signed out of Team Einstein Workspace
-          </h1>
-          <h5 className={styles.secondText}>
-            You have been signed out of Team Einstein Workspace
-          </h5>
-          <a href="/login" className={styles.button}>
-            Sign in
-          </a>
-          <h6 className={styles.displaySmall}>
-            Or <a href="/login">sign into</a> another workspace
-          </h6>
+    <>
+      <SignoutStyleWrapper>
+        <div className="logo">
+          <Helmet>
+            <title>Sign Out - Zuri Chat</title>
+          </Helmet>
+          <img src={logo} alt="zuri logo" />
         </div>
-      </div>
-    </main>
+
+        <div className="content-wrapper">
+          <h6 className="org-name">Signed out of Team {orgName} Workspace</h6>
+          <signoutMessage>
+            You have been signed out of Team {orgName} Workspace
+          </signoutMessage>
+
+          <button className="push" onClick={() => history.push('/login')}>
+            Login
+          </button>
+          <p className="login">
+            or
+            <a href="/login" className="link">
+              Login
+            </a>
+            to another workspace
+          </p>
+        </div>
+      </SignoutStyleWrapper>
+    </>
   )
 }
 
