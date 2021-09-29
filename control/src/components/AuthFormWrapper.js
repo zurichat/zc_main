@@ -23,9 +23,11 @@ const FormWrapper = ({
 }) => {
   return (
     <section className={`${styles.container}`}>
-      <div className={`${styles.logo}`}>
-        <img src={logo} alt="zuri" />
-      </div>
+      <a href="/">
+        <div className={`${styles.logo}`}>
+          <img src={logo} alt="zuri" />
+        </div>
+      </a>
       <div className={styles.FormWrapper}>
         <div className={`${styles.headers}`}>
           <h1 className={`${styles.header}`}>{header}</h1>
@@ -38,11 +40,11 @@ const FormWrapper = ({
           </Link>
         </div> */}
         <div className={`${styles.googleAuthDiv}`}>
-          <GoogleAuth 
-           className={`${styles.googleBtn}`} 
-           googleHeader={googleHeader} 
-           google={google}
-           setLoading={setLoading}
+          <GoogleAuth
+            className={`${styles.googleBtn}`}
+            googleHeader={googleHeader}
+            google={google}
+            setLoading={setLoading}
           />
           <span className={`${styles.hrWrapper}`}>
             {/* <span className={`${styles.topLine}`}>{topLineText}</span> */}
