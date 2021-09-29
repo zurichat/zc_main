@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+.content {
+  margin: 0 60px;
+}
+
+.contentImage {
+  display: flex;
+}
+.headingOne {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 130%;
+  text-align: center;
+  margin: 25px 0 30px 0;
+}
+
+.headingFive {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: -2%;
+  text-decoration: underline;
+}
+
+.headingSix {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 134%;
+  letter-spacing: 3%;
+}
+
+.paragraph {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 157.5%;
+  letter-spacing: 3%;
+}
+
+.contentBox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.section {
+  margin: 20px 0;
+}
+
+.imageBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}

@@ -4,15 +4,51 @@ import styled from 'styled-components'
 
 import Active from '../assets/active.svg'
 import Pic from '../assets/pic.png'
-import Header from "../../../components/Header";
-import { useRouteMatch, Link } from 'react-router-dom';
+import Header from '../../../components/Header'
+import { useRouteMatch, Link } from 'react-router-dom'
 import UserOrganization from './UserOrganization'
 
 const WorkspaceHome = () => {
   const { url } = useRouteMatch()
   const [organizations, setOrganizations] = useState([])
   const [user, setUser] = useState(null)
+  const [email, setNewUserEmail] = useState(null)
+  const [password, setNewUserPassword] = useState(null)
 
+  useEffect(() => {
+    sessionStorage.clear()
+    setNewUserEmail(JSON.parse(localStorage.getItem('newUserEmail')))
+    setNewUserPassword(JSON.parse(localStorage.getItem('userUserPassword')))
+
+    console.log(email)
+    console.log(password)
+    const autoLogin = () => {
+      axios
+        .post('https://api.zuri.chat/auth/login', {
+          email,
+          password
+        })
+        .then(response => {
+          console.log(response.data)
+          const { data, message } = response.data
+
+          //Store token in localstorage
+          sessionStorage.setItem('token', data.user.token)
+
+          //Store token in localstorage
+          sessionStorage.setItem('session_id', data.session_id)
+
+          //Store user copy in localstorage
+          sessionStorage.setItem('user', JSON.stringify(data.user))
+        })
+        .catch(err => {
+          console.log(password)
+          console.log(err.message)
+        })
+    }
+
+    autoLogin()
+  }, [email, password])
   useEffect(() => {
     const user = JSON.parse(sessionStorage.getItem('user'))
     console.log(user)
@@ -46,11 +82,11 @@ const WorkspaceHome = () => {
         <TextSection>
           <Heading>Create a new workspace</Heading>
           <Text>
-            Slack gives your team a home — a place where they can talk and work
-            together. To create a new workspace, click the button below
+            Zuri Chat gives your team a home — a place where they can talk and
+            work together. To create a new workspace, click the button below
           </Text>
           <Link to={`${url}/step1`}>
-            <Button style={{minWidth:"259px"}}>
+            <Button style={{ minWidth: '259px' }}>
               Create a new workspace
               <img src={Active} alt="" />
             </Button>
@@ -101,10 +137,11 @@ const Heading = styled.h1`
   width: 320px;
   margin-bottom: 14px;
   color: #333333;
-  @media (max-width:35rem) {
+  line-height: 56px;
+  @media (max-width: 35rem) {
     font-size: 28px;
     line-height: 33.6px;
-    width:191px;
+    width: 191px;
   }
 `
 
@@ -117,9 +154,9 @@ const Text = styled.p`
   line-height: 26.91px;
   color: #333333;
   margin-bottom: 29px;
-  @media (max-width:35rem) {
-    font-size:1rem;
-    line-height:23.92px;
+  @media (max-width: 35rem) {
+    font-size: 1rem;
+    line-height: 23.92px;
   }
 `
 export const Button = styled.button`
@@ -182,4 +219,4 @@ const ImageSection = styled.div`
   }
 `
 const TextSection = styled.div``
-export default WorkspaceHome;
+export default WorkspaceHome

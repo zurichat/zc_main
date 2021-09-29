@@ -2,7 +2,7 @@
   display: grid;
   grid-template-rows: 1fr auto;
   min-height: 100vh;
-  --type-scale: 0.8;
+  --type-scale: 0.9;
 }
 
 .workspace_container {
@@ -11,6 +11,127 @@
   padding: 0 0.94rem;
   display: grid;
   grid-template-rows: auto 1fr;
+}
+
+/* Zuri Logo */
+
+.topleft_logo {
+  -webkit-animation: zuriLoaderTopLeft 1s infinite;
+  -moz-animation: zuriLoaderTopLeft 1s infinite;
+  animation: zuriLoaderTopLeft 1s infinite;
+}
+.topright_logo {
+  -webkit-animation: zuriLoaderTopRight 1s infinite;
+  -moz-animation: zuriLoaderTopRight 1s infinite;
+  animation: zuriLoaderTopRight 1s infinite;
+}
+.bottomleft_logo {
+  -webkit-animation: zuriLoaderBottomLeft 1s infinite;
+  -moz-animation: zuriLoaderBottomLeft 1s infinite;
+  animation: zuriLoaderBottomLeft 1s infinite;
+}
+.bottomright_logo {
+  -webkit-animation: zuriLoaderBottomRight 1s infinite;
+  -moz-animation: zuriLoaderBottomRight 1s infinite;
+  animation: zuriLoaderBottomRight 1s infinite;
+}
+
+/* Zuri animation */
+
+@keyframes zuriLoaderTopLeft {
+  50% {
+    transform: translate(16px, 37px);
+  }
+  70% {
+    transform: translate(-10.5635px, 26.88865px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@-webkit-keyframes zuriLoaderTopLeft {
+  50% {
+    transform: translate(16px, 37px);
+  }
+  70% {
+    transform: translate(-10.5635px, 26.88865px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes zuriLoaderTopRight {
+  50% {
+    transform: translate(-34px, 20px);
+  }
+  70% {
+    transform: translate(-26.5px, 10.56445px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@-webkit-keyframes zuriLoaderTopRight {
+  50% {
+    transform: translate(-34px, 20px);
+  }
+  70% {
+    transform: translate(-26.5px, 10.56445px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes zuriLoaderBottomLeft {
+  50% {
+    transform: translate(20px, -20.5px);
+  }
+  70% {
+    transform: translate(15.5px, -10.88865px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@-webkit-keyframes zuriLoaderBottomLeft {
+  50% {
+    transform: translate(20px, -20.5px);
+  }
+  70% {
+    transform: translate(-15.5px, -10.88865px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes zuriLoaderBottomRight {
+  50% {
+    transform: translate(-30px, -35px);
+  }
+  70% {
+    transform: translate(5.5px, -10.56445px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@-webkit-keyframes zuriLoaderBottomRight {
+  50% {
+    transform: translate(-16px, 37.4531px);
+  }
+  70% {
+    transform: translate(10.5px, -26.5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
 /* Workspace header */
@@ -68,6 +189,7 @@
   line-height: calc(1.056rem * var(--type-scale, 1));
   font-weight: bold;
   color: #1a61db;
+  text-decoration: none;
 }
 
 .header_extra a:hover {
@@ -96,6 +218,10 @@ button.workspace_btn {
   color: #333333;
 }
 
+.workspace_section_intro p {
+  margin: 0;
+}
+
 button.workspace_btn {
   color: #fff;
   padding: 0.5rem;
@@ -115,8 +241,8 @@ button.workspace_btn {
   border-radius: 8px;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;  
-} 
+  transition: all 0.3s ease-out;
+}
 
 .card_header {
   padding: 1.25rem;
@@ -151,9 +277,12 @@ button.workspace_btn {
 
 .single_workspace input[type='checkbox'] {
   margin-right: 0.25rem;
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 15px;
+  height: 15px;
   cursor: pointer;
+  border: 1px solid #999999;
+  filter: drop-shadow(0px 4px 8px rgba(28, 37, 44, 0.08));
+  border-radius: 2px;
 }
 
 .workspace_info h5 {
@@ -173,6 +302,7 @@ button.workspace_btn {
   line-height: calc(0.894rem * var(--type-scale, 1));
   font-weight: 500;
   color: #999999;
+  margin: 0;
 }
 
 .members_photos {
@@ -203,6 +333,7 @@ button.workspace_btn {
   line-height: calc(1.056rem * var(--type-scale, 1));
   font-weight: bold;
   color: #1a61db;
+  text-decoration: none;
 }
 
 .workspace_footer a:hover {
@@ -212,10 +343,6 @@ button.workspace_btn {
 @media only screen and (min-width: 600px) {
   .workspace_container {
     max-width: 97%;
-  }
-
-  .workspace {
-    --type-scale: 0.9;
   }
 
   .workspace_header {

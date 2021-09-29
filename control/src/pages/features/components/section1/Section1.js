@@ -1,5 +1,5 @@
 import styles from '../../styles/Section1.module.css'
-import hero from '../../assets/feature_hero_image.png'
+import heroImage from '../../assets/feature_hero_image.svg'
 
 const Section1 = () => {
   return (
@@ -16,7 +16,7 @@ const Section1 = () => {
             <div className={styles.buttonsWrapper}>
               <button
                 type="button"
-                className={styles.getStarted}
+                className={`${styles.getStarted} ${styles.featuresSection1Buttons}`}
                 onClick={e => {
                   e.preventDefault()
                   window.location.replace('https://zuri.chat/signup')
@@ -26,12 +26,10 @@ const Section1 = () => {
               </button>
               <button
                 type="button"
-                className={styles.features}
+                className={`${styles.features} ${styles.featuresSection1Buttons}`}
                 onClick={e => {
                   e.preventDefault()
-                  window.location.replace(
-                    './components/Section3/#featuresSection'
-                  )
+                  window.location.replace('#featuresSection')
                 }}
               >
                 See all Features
@@ -40,7 +38,7 @@ const Section1 = () => {
           </div>
         </div>
         <div className={styles.section1ImageWrapper}>
-          <img src={hero} alt="group" className={styles.groupImage} />
+          <img src={heroImage} alt="group" className={styles.groupImage} />
         </div>
       </div>
     </div>

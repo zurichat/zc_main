@@ -7,10 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link  href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"  rel="stylesheet"  />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
-  </script>
+    </script>
   <style>
     html,
     body {
@@ -134,50 +134,54 @@
         "@zuri/zuri-plugin-dm": "https://dm.zuri.chat/static/js/app.js",
         "@zuri/zuri-plugin-noticeboard":"https://noticeboard.zuri.chat/static/zuri-zuri-plugin-noticeboard.js",
         "@zuri/zuri-plugin-companyfiles": "https://companyfiles.zuri.chat/zuri-zuri-plugin-company-files.js",
-        "@zuri/zuri-plugin-calendar": "https://calendar.zuri.chat/zuri-zuri-plugin-holiday-calendar.js",
-        "@zuri/zuri-plugin-expenses": "https://expenses.zuri.chat/js/zuri-zuri-plugin-expenses.js"
+        "@zuri/zuri-plugin-calendar": "https://calendar.zuri.chat/static/zuri-zuri-plugin-holiday-calendar.js",
+        "@zuri/zuri-plugin-expenses": "https://expenses.zuri.chat/js/zuri-zuri-plugin-expenses.js",
+        "@zuri/zuri-plugin-tools": "https://externaltools.zuri.chat/zuri-zuri-plugin-tools.js",
+        "@zuri/zuri-plugin-channels": "https://channels.zuri.chat/static/main/dist/zuri-zuri-plugin-channels.js"
       }
     }
   </script>
 
   <% if (isLocal) { %>
-  <script type="systemjs-importmap">
+    <script type="systemjs-importmap">
     {
       "imports": {
         "@zuri/root-config": "//localhost:9000/zuri-root-config.js",
         "@zuri/topbar": "//localhost:8080/zuri-topbar.js",
         "@zuri/sidebar": "//localhost:8081/zuri-sidebar.js",
-        "@zuri/control": "//localhost:8082/zuri-control.js"
+        "@zuri/control": "//localhost:8082/zuri-control.js",
+        "@zuri/plugin-header": "//localhost:8083/zuri-plugin-header.js"
       }
     }
   </script>
-  <% } else { %>
-  <script type="systemjs-importmap">
+    <% } else { %>
+      <script type="systemjs-importmap">
     {
       "imports": {
           "@zuri/root-config": "/zuri-root-config.js",
           "@zuri/topbar": "/zuri-topbar.js",
           "@zuri/sidebar": "/zuri-sidebar.js",
-          "@zuri/control": "/zuri-control.js"
+          "@zuri/control": "/zuri-control.js",
+          "@zuri/plugin-header": "/zuri-plugin-header.js"
         }
       }
   </script>
-  <% } %>
+      <% } %>
 
-  <!--
+        <!--
     If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
     Learn more about why at https://single-spa.js.org/docs/ecosystem-angular/#zonejs
   -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script> -->
 
-  <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
-  <% if (isLocal) { %>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
-  <% } else { %>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
-  <% } %>
+        <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
+        <% if (isLocal) { %>
+          <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
+          <% } else { %>
+            <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
+            <% } %>
 </head>
 
 <body>
