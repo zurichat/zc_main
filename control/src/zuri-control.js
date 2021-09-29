@@ -104,7 +104,7 @@ export const CentrifugeSetup = () => {
   );
 
   // Store Centrifuge somewhere
-    localStorage.setItem('centrifuge', centrifuge);
+    localStorage.setItem('centrifuge', JSON.stringify(centrifuge));
 
   // Disconnect from Centrifugo (if any)
   centrifuge.disconnect();
