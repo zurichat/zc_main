@@ -37,25 +37,12 @@ const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
         )
         .then(res => {
           const { data } = res.data
-<<<<<<< HEAD
-
-          //Store token in localstorage
-          sessionStorage.setItem('token', data.user.token)
-
-          //Store session_id in localstorage
-          sessionStorage.setItem('session_id', data.session_id)
-
-          //Store user copy in localstorage
-          sessionStorage.setItem('user', JSON.stringify(data.user))
-
-=======
           //Store token in localstorage
           sessionStorage.setItem('token', data.user.token)
           //Store session_id in localstorage
           sessionStorage.setItem('session_id', data.session_id)
           //Store user copy in localstorage
           sessionStorage.setItem('user', JSON.stringify(data.user))
->>>>>>> f292fb6101930409e73d32d0df34f70a3e9f9ada
           $behaviorSubject.next(res.data)
           setTimeout(() => {
             GetUserInfo()
@@ -76,10 +63,6 @@ const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
     onFailure,
     clientId: CLIENT_ID
   })
-<<<<<<< HEAD
-
-=======
->>>>>>> f292fb6101930409e73d32d0df34f70a3e9f9ada
   return (
     <div
       className={className}
