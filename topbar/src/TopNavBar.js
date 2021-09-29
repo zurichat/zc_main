@@ -140,6 +140,7 @@ const TopNavBarBase = styled.div`
   @media (max-width: 768px) {
     padding-inline-start: 0.3rem;
 <<<<<<< HEAD
+<<<<<<< HEAD
     padding-inline-end: 0.8rem;
   }
   @media (max-width: 425px) {
@@ -164,6 +165,36 @@ const ProfileImageContainer = styled.div`
   position: relative;
 =======
     padding-inline-end: 0.8rem;      }
+=======
+
+    padding-inline-end: 0.8rem;
+  }
+>>>>>>> 36caaa237a6d8b04653df1a6e3546c742a80b10c
+  @media (max-width: 425px) {
+    padding-inline-start: 0rem;
+    padding-inline-end: 0.8rem;  }
+`
+const LogoDiv = styled.div`
+  margin: auto 0;
+  display: flex;
+  align-items: center;
+`
+const Logo = styled.img`
+  @media (max-width: 768px) {
+    width: 80%;
+  }
+  @media (max-width: 425px) {
+    width: 70%;
+  }
+`
+const ProfileImageContainer = styled.div`
+<<<<<<< HEAD
+position:relative;
+>>>>>>> 13dc5c55db7ac3f217a65bd4f2e669cde1e7d1a5
+=======
+  position: relative;
+
+    padding-inline-end: 0.8rem;      }
   @media (max-width: 425px) {
     padding-inline-start: 0rem;
     padding-inline-end: 0.8rem;  }
@@ -183,7 +214,7 @@ const Logo = styled.img`
 `
 const ProfileImageContainer = styled.div`
 position:relative;
->>>>>>> 13dc5c55db7ac3f217a65bd4f2e669cde1e7d1a5
+>>>>>>> 36caaa237a6d8b04653df1a6e3546c742a80b10c
 `
 
 const HelpContainer = styled.div`
@@ -200,10 +231,18 @@ const ToggleStatus = styled.div`
   top: 28px;
   right: -18px;
 <<<<<<< HEAD
+<<<<<<< HEAD
   .activeCircle {
 =======
 .activeCircle {
 >>>>>>> 13dc5c55db7ac3f217a65bd4f2e669cde1e7d1a5
+=======
+
+  .activeCircle {
+=======
+.activeCircle {
+
+>>>>>>> 36caaa237a6d8b04653df1a6e3546c742a80b10c
     background-color: green;
     height: 10px;
     width: 10px;
