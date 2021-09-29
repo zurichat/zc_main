@@ -2,31 +2,28 @@ import React from 'react'
 import { withRouter } from 'react-router-dom'
 // import styles from '../../styles/Signout.module.css'
 import styles from '../../component-styles/Signout.module.css'
+import { SignoutStyleWrapper } from '../../component-styles/SignoutStyle'
 import logo from '../../component-assets/zuri.svg'
 
 const Signout = () => {
   return (
-    <main id={styles.signout}>
-      <div className={styles.logo}>
-        <img src={logo} alt="zuri" />
-      </div>
-      <div className={styles.write}>
-        <div className={styles.wrapper}>
-          <h1 className={styles.firstText}>
-            Signed out of Team Einstein Workspace
-          </h1>
-          <h5 className={styles.secondText}>
-            You have been signed out of Team Einstein Workspace
-          </h5>
-          <a href="/login" className={styles.button}>
-            Sign in
-          </a>
-          <h6 className={styles.displaySmall}>
-            Or <a href="/login">sign into</a> another workspace
-          </h6>
+    <>
+      <SignoutStyleWrapper>
+        <div className="logo">
+          <img src={logo} alt="zuri logo" />
         </div>
-      </div>
-    </main>
+
+        <div className="content-wrapper">
+          <h6>Signed out of Team Einstein Workspace</h6>
+          <signoutMessage>You have been signed out of Team Einstein Workspace</signoutMessage>
+
+          <button>Login</button>
+          <p>
+            Or <a href="/login"> Login</a> to another workspace
+          </p>
+        </div>
+      </SignoutStyleWrapper>
+    </>
   )
 }
 

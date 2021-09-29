@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Login from './pages/login'
 import SignUp from './pages/signup'
 import SignOut from './pages/signout/index'
+import SuccessSignout from './pages/signout/SuccessSignout'
 import Workspace from './pages/workspace/components/Workspace'
 import LandingPage from './pages/LandingPage'
 // password block
@@ -65,6 +66,9 @@ const App = () => {
         </Route>
         <Route path="/signout">
           <SignOut />
+        </Route>
+        <Route  path="/signout-success">
+          <SuccessSignout />
         </Route>
         <Route path="/choose-workspace">
           <Workspace />
