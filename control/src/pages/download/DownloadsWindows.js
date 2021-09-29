@@ -8,7 +8,6 @@ import screen from './assets/screen.svg'
 import icon from './assets/icon.svg'
 import fetchInstall from './utils/index'
 import { Link } from 'react-router-dom'
-import { Helmet } from 'react-helmet'
 
 // const Apk = '../../apk/appRelease.apk'
 // import Apk from '../../apk/appRelease.apk'
@@ -29,13 +28,8 @@ const DownloadsWindows = () => {
   return (
     <>
       <Header />
-
       <section className={``}>
         <div className={`${styles.container} `}>
-          <Helmet>
-            <title>Download Zuri Chat</title>
-          </Helmet>
-
           <div className={`text-center p-lg-4`}>
             <h1 className={`${styles.h1}`}>Experience Zuri Chat on Windows</h1>
             <p className={styles.p}>
