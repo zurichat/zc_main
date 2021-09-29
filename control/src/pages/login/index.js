@@ -92,7 +92,6 @@ const Login = () => {
 
         setTimeout(() => {
           //Redirect to some other page
-          GetUserInfo()
           history.push('/choose-workspace')
           setLoading(false)
         }, 2000)
@@ -136,6 +135,7 @@ const Login = () => {
           bottomLine="New to us?"
           bottomLink="Create an Account"
           bottomLinkHref="Signup"
+          setLoading={setLoading}
         >
           <AuthInputBox
             className={`${styles.inputElement}`}
