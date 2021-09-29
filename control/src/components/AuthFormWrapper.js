@@ -38,11 +38,11 @@ const FormWrapper = ({
           </Link>
         </div> */}
         <div className={`${styles.googleAuthDiv}`}>
-          <GoogleAuth 
-           className={`${styles.googleBtn}`} 
-           googleHeader={googleHeader} 
-           google={google}
-           setLoading={setLoading}
+          <GoogleAuth
+            className={`${styles.googleBtn}`}
+            googleHeader={googleHeader}
+            google={google}
+            setLoading={setLoading}
           />
           <span className={`${styles.hrWrapper}`}>
             {/* <span className={`${styles.topLine}`}>{topLineText}</span> */}
