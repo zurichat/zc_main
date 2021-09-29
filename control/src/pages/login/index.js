@@ -94,7 +94,6 @@ const Login = () => {
 
         setTimeout(() => {
           //Redirect to some other page
-          GetUserInfo()
           history.push('/choose-workspace')
           setLoading(false)
         }, 2000)
