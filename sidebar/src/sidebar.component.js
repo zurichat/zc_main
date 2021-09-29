@@ -82,15 +82,13 @@ const Sidebar = props => {
     inviteVisibility()
 
     const fetchUser = async () => {
-      const { _id, Organizations } = await GetUserInfo()
-      // console.log('sidebar organization', Organization)
+      const user = await GetUserInfo()
       setUserInfo({
-        userId: _id,
-        Organizations,
+        userId: user[0]._id,
         token
       })
 
-      if (_id !== '') {
+      if (user[0]._id !== '') {
         const org_url = `/organizations/${currentWorkspace}/plugins`
         authAxios
           .get(org_url)
@@ -167,7 +165,7 @@ const Sidebar = props => {
                 trimmedUrl.includes('http://')
                   ? trimmedUrl
                   : `https://${trimmedUrl}`
-              }?org=${userInfo.Organizations[0]}&user=${userInfo.userId}`
+              }?org=${currentWorkspace}&user=${userInfo.userId}`
             )
             .then(res => {
               try {
