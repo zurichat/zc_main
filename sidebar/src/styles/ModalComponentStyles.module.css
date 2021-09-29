@@ -1,0 +1,40 @@
+.modalContainer {
+  z-index: 10000;
+  position: relative;
+}
+.topbarModal {
+  display: none;
+  background: #fff;
+  color: #000;
+  position: absolute;
+  top: 7%;
+  left: 10%;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #bebebe;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 9999;
+}
+.open {
+  display: block;
+  background: #fff;
+  color: #000;
+  position: absolute;
+  top: 7%;
+  left: 10%;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #bebebe;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 9999;
+}
+
+.sectionOne {
+  display: flex;
+  align-items: center;
+  width: auto;
+  margin: auto;
+  margin-bottom: 17px;
+}
