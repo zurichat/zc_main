@@ -3,10 +3,14 @@ import { withRouter } from 'react-router-dom'
 // import styles from '../../styles/Signout.module.css'
 import styles from '../../component-styles/Signout.module.css'
 import logo from '../../component-assets/zuri.svg'
+import { Helmet } from 'react-helmet'
 
 const Signout = () => {
   return (
     <main id={styles.signout}>
+      <Helmet>
+        <title>Sign Out - Zuri Chat</title>
+      </Helmet>
       <div className={styles.logo}>
         <img src={logo} alt="zuri" />
       </div>

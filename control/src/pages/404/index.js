@@ -7,6 +7,9 @@ const index = () => {
   return (
     <Errror404>
       <div className="LogoDiv">
+        {/*  <Helmet>
+          <title>Error 404 !</title>
+        </Helmet> */}
         <Link to="/">
           <img src={Logo} alt="Zuri Logo" />
         </Link>
