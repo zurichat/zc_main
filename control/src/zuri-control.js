@@ -53,6 +53,9 @@ export const GetWorkspaceUser = async identifier => {
 
   const token = sessionStorage.getItem('token')
 
+  if (!token || !currentWorkspace)
+    throw Error('You are not logged into a workspace')
+
   try {
     const response = await axios.get(
       `https://api.zuri.chat/organizations/${currentWorkspace}/members/?query=${identifier}`,
@@ -74,21 +77,21 @@ export const GetWorkspaceUser = async identifier => {
 }
 
 const GetWorkspaceUsers = async () => {
-
   try {
-    const res = await axios
-      .get(`https://api.zuri.chat/organizations/${currentWorkspace}/members`, {
+    const res = await axios.get(
+      `https://api.zuri.chat/organizations/${currentWorkspace}/members`,
+      {
         headers: {
           Authorization: `Bearer ${token}`
         }
-      })
+      }
+    )
     let user = res.data.data
-    let workSpaceUsersData = {totalUsers:user.length, ...user.slice(0, 100)}
+    let workSpaceUsersData = { totalUsers: user.length, ...user.slice(0, 100) }
     // console.log(user.slice(0, 100))
     console.log(workSpaceUsersData)
     return workSpaceUsersData
-  }
-  catch (err) {
+  } catch (err) {
     console.log(err)
   }
 
