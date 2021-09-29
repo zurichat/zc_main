@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import singleSpaReact from 'single-spa-react'
 import Root from './root.component'
 import axios from 'axios'
+import Centrifuge from "centrifuge";
 
 const lifecycles = singleSpaReact({
   React,
