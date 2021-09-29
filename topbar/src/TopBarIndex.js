@@ -290,7 +290,11 @@ export default Test
 
 const BaseInput = styled.input`
   border: 1px ${inActive} solid;
+<<<<<<< HEAD
   padding: 0.5rem 1rem;
+=======
+  padding: 0.2rem 1rem;
+>>>>>>> 13dc5c55db7ac3f217a65bd4f2e669cde1e7d1a5
   font-weight: 400;
   margin: 0;
   font-family: inherit;
@@ -315,7 +319,11 @@ const BaseInput = styled.input`
     border: 1px ${active} solid !important;
   }
   @media (max-width: 768px) {
+<<<<<<< HEAD
     padding: 0.25rem 1rem;
+=======
+    padding: 0.1rem 1rem;
+>>>>>>> 13dc5c55db7ac3f217a65bd4f2e669cde1e7d1a5
         }
   @media (max-width: 425px) {
 display:none;
