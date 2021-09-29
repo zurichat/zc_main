@@ -108,7 +108,7 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/zurichat">
+              <a href="/twitter">
                 <img
                   src={twitter}
                   alt="Twitter"

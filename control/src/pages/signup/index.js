@@ -5,8 +5,6 @@ import FormWrapper from '../../components/AuthFormWrapper'
 import styles from '../../component-styles/AuthFormElements.module.css'
 import axios from 'axios'
 import EmailVerification from './email-verify'
-import { Helmet } from 'react-helmet'
-
 // import { Link } from 'react-router-dom'
 // import authBg1 from './assets/auth_bg1.svg'
 // import authBg2 from './assets/auth_bg2.svg'
@@ -127,9 +125,6 @@ const Signup = () => {
           <img src={images[currentImage]} alt="backgroundImage" />
         </div>
       </aside> */}
-      <Helmet>
-        <title>Sign Up - Zuri Chat</title>
-      </Helmet>
       <section id={styles.authFormContainer}>
         <FormWrapper
           header="Create Account"

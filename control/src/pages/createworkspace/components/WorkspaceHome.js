@@ -7,7 +7,6 @@ import Pic from '../assets/pic.png'
 import Header from '../../../components/Header'
 import { useRouteMatch, Link } from 'react-router-dom'
 import UserOrganization from './UserOrganization'
-import { Helmet } from 'react-helmet'
 
 const WorkspaceHome = () => {
   const { url } = useRouteMatch()
@@ -75,9 +74,6 @@ const WorkspaceHome = () => {
   return (
     <Wrapper>
       <Header />
-      <Helmet>
-        <title> Create-Workspace Zuri Chat</title>
-      </Helmet>
       <TopSection
         style={
           user === true ? { paddingBottom: '0' } : { paddingBottom: '50px' }

@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import styles from './FAQ.module.css'
-import { Helmet } from 'react-helmet'
 
 const Index = () => {
   const [selected, setSelected] = useState(null)
@@ -15,9 +14,6 @@ const Index = () => {
 
   return (
     <div className={styles.faqs}>
-      <Helmet>
-        <title> FAQ - Zuri Chat</title>
-      </Helmet>
       <h2 className={`{styles.h2} text-center`}>Commonly Asked Questions</h2>
       <div className={styles.wrapper}>
         <div className={styles.accordion}>
