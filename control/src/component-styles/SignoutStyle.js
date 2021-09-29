@@ -33,13 +33,13 @@ export const SignoutStyleWrapper = styled.section`
     @media (max-width: 700px) {
       width: auto;
       margin: 0 1rem;
-      padding-left:  1rem;
-      padding-right:  1rem;
-      padding-top:  2rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 2rem;
       text-align: center;
     }
 
-    h6 {
+    .org-name {
       font-family: Lato;
       font-weight: 700;
       font-style: normal;
@@ -47,7 +47,7 @@ export const SignoutStyleWrapper = styled.section`
       line-height: 36.4px;
     }
 
-    p {
+    p.login {
       font-family: Lato;
       font-style: normal;
       font-weight: bold;
@@ -56,11 +56,11 @@ export const SignoutStyleWrapper = styled.section`
       text-align: center;
       color: #242424;
 
-      a {
+      a.link {
         color: steelblue;
       }
     }
-    button {
+    button.push {
       margin-top: 2rem;
       margin-bottom: 1rem;
       background: #00b87c;
