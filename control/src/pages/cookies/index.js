@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './styles/Cookie.module.css'
 import cookie from '../../component-assets/cookie.svg'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 const cookieStorage = {
   getItem: key => {
@@ -28,6 +29,9 @@ const handleClickDecline = event => {
 const Cookies = () => {
   return (
     <div className={styles.bannerContainer}>
+    <Helmet>
+        <title> Cookies - Zuri Chat</title>
+      </Helmet>
       <img src={cookie} alt="cookies" title="cookies" />
       <div className={styles.cookie_body}>
         <span>
@@ -55,3 +59,4 @@ const Cookies = () => {
 }
 
 export default Cookies
+
