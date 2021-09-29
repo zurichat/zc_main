@@ -30,10 +30,11 @@ export const SignoutStyleWrapper = styled.section`
     box-sizing: border-box;
     border-radius: 4px;
 
-    @media(max-width: 700px) {
+    @media (max-width: 700px) {
       width: auto;
       margin: 0 1rem;
-      text-align: center
+      padding: 0 1rem;
+      text-align: center;
     }
 
     h6 {
