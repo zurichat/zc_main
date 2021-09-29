@@ -106,9 +106,6 @@ const App = () => {
         <Route path="/careers">
           <Careers />
         </Route>
-        <Route path="/about">
-          <About />
-        </Route>
         <Route path="/privacy">
           <PrivacyPolicy />
         </Route>
