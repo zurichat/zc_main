@@ -33,7 +33,9 @@ export const SignoutStyleWrapper = styled.section`
     @media (max-width: 700px) {
       width: auto;
       margin: 0 1rem;
-      padding: 0 1rem;
+      padding-left:  1rem;
+      padding-right:  1rem;
+      padding-top:  2rem;
       text-align: center;
     }
 
