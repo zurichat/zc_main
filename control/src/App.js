@@ -19,10 +19,12 @@ import Inviterequest from './pages/InviteRequest/InviteRequest'
 import SendRequest from './pages/InviteRequest/SendRequest'
 import ContactUs from './pages/contact-us'
 import AppsAndIntegrations from './pages/apps-integration'
+import Events from './pages/events/components/EventsMainWrapper'
 import Download from './pages/download'
 import DownloadsMac from './pages/download/DownloadsMac'
 import Careers from './pages/careers'
 import MarketPlace from './pages/marketplace/marketplace'
+import Blogs from './pages/blogs'
 import Settings from './pages/settings'
 import ConfirmPassword from './pages/settings/components/ConfirmPassword'
 import AccDeactivated from './pages/settings/components/AccDeactivated'
@@ -49,6 +51,9 @@ const App = () => {
       <Switch>
         <Route path="/" exact>
           <LandingPage />
+        </Route>
+        <Route path="/blog">
+          <Blogs />
         </Route>
         <Route path="/login">
           <Login />
@@ -85,6 +90,9 @@ const App = () => {
         </Route>
         <Route path="/security">
           <Security />
+        </Route>
+        <Route path="/events">
+          <Events />
         </Route>
         <Route path="/download-app">
           <Download />
