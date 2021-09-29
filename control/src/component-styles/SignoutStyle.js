@@ -1,13 +1,12 @@
 import styled from 'styled-components'
 
 export const SignoutStyleWrapper = styled.section`
-  background: #f6f6f6;
+  background: #fff;
   height: 100vh;
   width: 100wv;
   display: flex;
   align-items: center;
   flex-direction: column;
- 
 
   .logo {
     padding-top: 3rem;
@@ -20,43 +19,43 @@ export const SignoutStyleWrapper = styled.section`
 
   .content-wrapper {
     width: 600px;
-    
+
     display: inherit;
     flex-direction: column;
     justify-content: inherit;
     align-items: inherit;
     padding-top: 2rem;
     padding-bottom: 0.5rem;
-  
-    background: #ffffff;
+
+    background: #f6f6f6;
     border: 1px solid #e5e5e5;
     box-sizing: border-box;
     border-radius: 4px;
 
-    h6{
-        font-family :Lato;
-        font-weight : 700;
-        font-style :  normal;
-        font-size:  24px;
-        line-height:  36.4px;
+    h6 {
+      font-family: Lato;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 36.4px;
     }
 
     p {
-        font-family: Lato;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 13px;
-        line-height: 130%;        
-        text-align: center;
-        color: #242424;
+      font-family: Lato;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 13px;
+      line-height: 130%;
+      text-align: center;
+      color: #242424;
 
-        a {
-            color: steelblue; 
-        }
+      a {
+        color: steelblue;
+      }
     }
     button {
       margin-top: 2rem;
-      margin-bottom: 1rem ;
+      margin-bottom: 1rem;
       background: #00b87c;
       border-radius: 4px;
       padding: 12px 18px;
@@ -68,9 +67,9 @@ export const SignoutStyleWrapper = styled.section`
   }
 `
 export const signoutMessage = styled.p`
-font-family: Lato;
-font-style: normal;
-font-weight: normal;
-font-size: 13px;
-line-height: 130%;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 130%;
 `

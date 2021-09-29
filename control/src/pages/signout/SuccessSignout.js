@@ -1,9 +1,5 @@
 const SuccessSignout = () => {
-  <>
-  connected
-  
-  
-  </>
+  ;<>connected</>
 }
 
 export default SuccessSignout
