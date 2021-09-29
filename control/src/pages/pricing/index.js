@@ -7,7 +7,6 @@ import FAQ from '../FAQ'
 import PricingPageSection1 from './pricingPageSection1/PricingPageSection1'
 import { useEffect } from 'react'
 import Message from './components/Message'
-import { Helmet } from 'react-helmet'
 
 function Pricing() {
   useEffect(() => {
@@ -17,9 +16,6 @@ function Pricing() {
   })
   return (
     <div>
-      <Helmet>
-        <title> Check Pricing - Zuri Chat</title>
-      </Helmet>
       <Header />
       <PricingPageSection1 />
       <Section3 />

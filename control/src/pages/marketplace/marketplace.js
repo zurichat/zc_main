@@ -14,7 +14,6 @@ import { MarketPlaceProvider } from '../../context/MarketPlace.context.js'
 import AuthNotifyBanner from './components/AuthNotifyBanner/'
 import { loggedInUser } from '../../../../globalState'
 import axios from 'axios'
-import { Helmet } from 'react-helmet'
 
 const MarketPlace = () => {
   const [userDetails, setUserDetails] = useState(null)
@@ -51,9 +50,6 @@ const MarketPlace = () => {
   }, [userDetails])
   return (
     <MarketPlaceProvider>
-      <Helmet>
-        <title>Market Place - Zuri Chat</title>
-      </Helmet>
       <div className={styles.marketplace}>
         <div
           className={`w-100 d-flex flex-wrap justify-content-between align-items-baseline ${styles.marketplaceNavbar}`}

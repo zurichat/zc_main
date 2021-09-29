@@ -2,14 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Container, Form, Card } from 'react-bootstrap'
 import styles from './styles/InviteRequest.module.css'
-import { Helmet } from 'react-helmet'
 
 function Inviterequest() {
   return (
     <div>
-      <Helmet>
-        <title> InviteRequest - Zuri Chat</title>
-      </Helmet>
       <Card
         className={styles.root}
         style={{ alignItems: 'center', justifyContent: 'center' }}
