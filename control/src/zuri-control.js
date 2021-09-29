@@ -118,7 +118,9 @@ CentrifugeSetup();
 export const SubscribeToChannel = (plugin_id, callback) => {
   let centrifuge = localStorage.getItem('centrifuge');
 
-  centrifuge.subscribe(plugin_id, callback);
+  centrifuge.subscribe(plugin_id, (ctx) => {
+    callback(ctx);
+  });
 }
 
 export const { bootstrap, mount, unmount } = lifecycles
