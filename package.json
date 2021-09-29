@@ -65,6 +65,8 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@types/jest": "^27.0.1",
     "@types/systemjs": "^6.1.1",
+    "centrifuge": "^2.8.2",
+    "favicons-webpack-plugin": "^5.0.2",
     "moment": "^2.29.1",
     "react-helmet": "^6.1.0",
     "react-hot-toast": "^2.1.1",
