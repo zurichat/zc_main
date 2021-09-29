@@ -161,12 +161,6 @@ const Logo = styled.img`
 `
 const ProfileImageContainer = styled.div`
   position: relative;
-
-  img {
-    border-radius: 4px;
-    height: 30px;
-    width: 30px;
-  }
 `
 
 const HelpContainer = styled.div`
