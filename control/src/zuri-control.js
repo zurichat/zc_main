@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import singleSpaReact from 'single-spa-react'
 import Root from './root.component'
 import axios from 'axios'
-import Centrifuge from "centrifuge";
+import Centrifuge from 'centrifuge'
 
 const lifecycles = singleSpaReact({
   React,
@@ -75,21 +75,21 @@ export const GetWorkspaceUser = async identifier => {
 }
 
 const GetWorkspaceUsers = async () => {
-
   try {
-    const res = await axios
-      .get(`https://api.zuri.chat/organizations/${currentWorkspace}/members`, {
+    const res = await axios.get(
+      `https://api.zuri.chat/organizations/${currentWorkspace}/members`,
+      {
         headers: {
           Authorization: `Bearer ${token}`
         }
-      })
+      }
+    )
     let user = res.data.data
-    let workSpaceUsersData = {totalUsers:user.length, ...user.slice(0, 100)}
+    let workSpaceUsersData = { totalUsers: user.length, ...user.slice(0, 100) }
     // console.log(user.slice(0, 100))
     console.log(workSpaceUsersData)
     return workSpaceUsersData
-  }
-  catch (err) {
+  } catch (err) {
     console.log(err)
   }
 
@@ -97,31 +97,29 @@ const GetWorkspaceUsers = async () => {
 }
 
 export const CentrifugeSetup = () => {
-
   // Setup Centrifugo Route
   const centrifuge = new Centrifuge(
-    "wss://realtime.zuri.chat/connection/websocket"
-  );
+    'wss://realtime.zuri.chat/connection/websocket'
+  )
 
   // Store Centrifuge somewhere
-    localStorage.setItem('centrifuge', JSON.stringify(centrifuge));
+  localStorage.setItem('centrifuge', JSON.stringify(centrifuge))
 
   // Disconnect from Centrifugo (if any)
-  centrifuge.disconnect();
+  centrifuge.disconnect()
 
   // Connect to Centrifugo Server
-  centrifuge.connect();
-
+  centrifuge.connect()
 }
 
-CentrifugeSetup();
+CentrifugeSetup()
 
 export const SubscribeToChannel = (plugin_id, callback) => {
-  let centrifuge = localStorage.getItem('centrifuge');
+  let centrifuge = localStorage.getItem('centrifuge')
 
-  centrifuge.subscribe(plugin_id, (ctx) => {
-    callback(ctx);
-  });
+  centrifuge.subscribe(plugin_id, ctx => {
+    callback(ctx)
+  })
 }
 
 export const { bootstrap, mount, unmount } = lifecycles
