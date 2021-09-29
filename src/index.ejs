@@ -5,12 +5,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <meta name="description" content="Zuri-Chat - Create your future with us, network, collaborate, educate and learn remotely. A messaging app that lets professionals collaborate through workspaces...">
+  <meta name="keywords" content="Zuri, Zuri Chat, hngi8, slack, workspace, collaborate">
+  <meta name="author" content="HNGi8">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
+
+<link rel="icon" href="./favicon.ico" type="image/ico"/>
+
+
+
+        <!-- Dynamic Title Tag for Plugins -->
+<script>
+  let getTitleOfPage = function(){
+    let test = location.pathname ;
+    return test
+};
+let appendZuri = `- Zuri Chat ` ;
+let title = getTitleOfPage();
+title = title.substr(1);
+title = title.charAt(0).toUpperCase() + title.slice(1);
+document.title = title + appendZuri;
+</script>
+<!-- End -->
+
+<!-- Facebook , linkedin etc  -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.zuri.chat" />
+        <meta
+          property="og:title"
+          content="Zuri-Chat - For Organizations & Institutions. A fully Integrated way to connect and interact"
+        />
+        <meta
+          property="og:description"
+          content="Zuri-Chat - Create your future with us, network, collaborate, educate and learn remotely. A messaging app that lets professionals collaborate through workspaces..."
+        />
+        <meta
+          property="og:image"
+          content="../control/src/pages/createworkspace/assets/zuriicon.png"
+        />
+      <!--   Twiitter  -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://www.zuri.chat" />
+        <meta
+          property="twitter:title"
+          content="Zuri-Chat - For Organizations & Institutions. A fully Integrated way to connect and interact"
+        />
+        <meta
+          property="twitter:description"
+          content="Zuri-Chat - Create your future with us, network, collaborate, educate and learn remotely. A messaging app that lets professionals collaborate through workspaces..."
+        />
+        <meta
+          property="twitter:image"
+          content="../control/src/pages/createworkspace/assets/zuriicon.png"
+        />
+
   <style>
     html,
     body {
