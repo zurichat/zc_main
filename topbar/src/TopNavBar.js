@@ -100,8 +100,8 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       </HelpContainer> */}
       {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''}
 
-      {/* <UserForm /> */}
-      {/* <AdminForm /> */}
+      <UserForm />
+      <AdminForm />
       <div>
         {toggleStatus}
         <img
