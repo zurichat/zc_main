@@ -66,6 +66,13 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@types/jest": "^27.0.1",
     "@types/systemjs": "^6.1.1",
+    "moment": "^2.29.1",
+    "react-helmet": "^6.1.0",
+    "react-hot-toast": "^2.1.1",
+    "react-loader-spinner": "^4.0.0",
+    "react-phone-number-input": "^3.1.27",
+    "react-router-dom": "^5.3.0",
+    "react-timezone-select": "^1.0.8",
     "rxjs": "^7.3.0",
     "single-spa": "^5.9.3"
   }
