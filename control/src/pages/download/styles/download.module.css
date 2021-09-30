@@ -219,4 +219,10 @@ a:hover {
   .p1 {
     font-size: 14px;
   }
+
+  .downloadButton {
+    padding: 11px 22px;
+    font-size: 13px;
+    margin: 15px;
+  }
 }
