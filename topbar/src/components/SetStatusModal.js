@@ -1,27 +1,44 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
 import DatePicker from 'react-datepicker'
+// import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import TimePicker from 'react-time-picker'
 import styles from '../styles/SetStatusModal.module.css'
-
+import "../timepicker.css";
+import {authAxios} from "../utils/Api";
 import blackx from '../assets/images/blackx.svg'
 import whitex from '../assets/images/whitex.svg'
 import down from '../assets/images/down.svg'
+import { ProfileContext } from "../context/ProfileModal";
+
 const SetStatusModal = ({ statusModal, setStatusModal }) => {
   const [dropdown, setDropdown] = useState(false)
   const [chosenEmoji, setChosenEmoji] = useState(null)
   const [dateTime, setDateTime] = useState(false)
   const [choosePeriod, setChoosePeriod] = useState(`Don't clear`)
+  const { user, orgId, setUser } = useContext(ProfileContext)
   const [emoji, setEmoji] = useState('')
   const [text, setText] = useState('')
   const [status, setStatus] = useState([])
   // const [timeOut, setTimeOut] = useState('')
   const onEmojiClick = (event, emojiObject) => {
     setChosenEmoji(emojiObject)
+    console.log("emoji", chosenEmoji)
+
   }
+
   const handleSubmit = e => {
     e.preventDefault()
+    setEmoji(chosenEmoji.emoji)
+    setUser({ ...user, status: {text,emoji} })
     const data = { emoji, text, choosePeriod }
+     console.log(emoji)
+    authAxios.patch(`/organizations/${orgId}/members/${user._id}/status`, { status: text} )
+      .then (res => {
+        console.log(res)
+      })
+      .catch(err => console.log(err))
+
     setStatus(status => {
       return [...status, data]
     })
@@ -46,7 +63,7 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
                 <p
                   onClick={() => setChosenEmoji(!chosenEmoji)}
                   value={emoji}
-                  onChange={e => setEmoji(e.target.value)}
+                  // onChange={e => setEmoji(e.target.value)}
                 >
                   {chosenEmoji ? chosenEmoji.emoji : 5}
                 </p>
@@ -152,7 +169,7 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
             <button
               className={styles.statuscta}
               type="submit"
-              onClick={() => handleSubmit}
+              onClick={handleSubmit}
             >
               Save changes
             </button>
@@ -188,8 +205,8 @@ const SetDateAndTime = ({ dateTime, setDateTime }) => {
             />
           </div>
           <form>
-            <div>
-              <label>Date</label>
+            <div className={styles.dateSection} >
+              <label className={styles.dateLabel}>Date</label>
               <DatePicker onChange={onChange} value={value} />
             </div>
             <div>
