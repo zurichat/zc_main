@@ -6,10 +6,14 @@ import icon from './assets/icon.svg'
 import laptop from './assets/laptop.svg'
 import apple from './assets/apple.svg'
 import windows from './assets/windows.svg'
+import { isIOS } from 'react-device-detect'
 
 const DownloadsAndroid = () => {
   const [exe, setexe] = useState({ link: '', name: '' })
-
+  React.useEffect(() => {
+    if (isIOS) return setexe({ name: 'DOWNLOAD FOR IOS' })
+    return setexe({ name: 'DOWNLOAD FOR ANDROID' })
+  }, [])
   return (
     <>
       <Header />
@@ -91,7 +95,7 @@ const DownloadsAndroid = () => {
               className={`${downloadStyles.button2} text-center`}
             >
               <img className={`px-2`} src={icon} alt="download icon"></img>
-              DOWNLOAD FOR WINDOWS
+              {exe.name}
             </a>
           </div>
           <div className={`d-flex justify-content-center `}>
