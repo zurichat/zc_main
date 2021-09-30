@@ -37,7 +37,7 @@ export default function Header(props) {
                     })}
               </div>
               <div className={styles.plugin__header__count}>
-                <p>{props.headerConfig.userCount || 0}</p>
+                <p>{props.headerConfig.userCount || 0} </p>
               </div>
             </div>
           )}
