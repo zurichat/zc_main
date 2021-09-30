@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { TopbarContext } from './context/Topbar'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import faker from 'faker'
 
 import styles from './styles/Topbar.module.css'
 import SearchBar from './components/SearchBar'
@@ -10,7 +11,20 @@ import TopbarModal from './components/TopbarModal'
 import ProfileModal from './components/ProfileModal'
 // import { MembersModalButton } from './MembersModal'
 
-const members = []
+// Placeholder data
+const placeHolder = n => {
+  const placeHolderMembersArray = []
+  for (let i = 0; i < n; i++) {
+    placeHolderMembersArray.push({
+      userName: faker.internet.userName().toLowerCase(),
+      fullName: `${faker.name.firstName()} ${faker.name.lastName()}`,
+      status: faker.lorem.sentence(),
+      avatar: faker.internet.avatar()
+    })
+  }
+  return placeHolderMembersArray
+}
+const faked = placeHolder(44134)
 
 const Topbar = ({ userProfile: { last_name, first_name } }) => {
   const state = useContext(TopbarContext)
@@ -41,7 +55,7 @@ const Topbar = ({ userProfile: { last_name, first_name } }) => {
       </div>
 
       <ProfileModal />
-      <TopbarModal members={members} />
+      <TopbarModal members={faked} />
     </div>
   )
 }
