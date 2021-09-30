@@ -8,7 +8,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 100px;
+  padding: 0 70px;
   height: 614px;
 }
 
@@ -16,12 +16,14 @@ body {
   font-weight: 600;
   font-size: 38px;
   line-height: 38px;
+  color: #333333;
 }
 .p {
   font-style: normal;
   font-weight: 400;
   font-size: 30px;
   line-height: 130%;
+  color: #333333;
 }
 
 .heroText {
@@ -53,7 +55,7 @@ body {
 }
 .info {
   background-color: #00b87c;
-  height: 900px;
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,22 +81,38 @@ body {
   font-size: 30px;
   text-decoration: underline;
 }
-.buttonW {
-  display: inline-block;
-  text-align: center;
-  margin: 0px 16px 0 0;
-  width: 309px;
-  border-radius: 4px;
-  color: white;
-  background-color: #00b87c;
-  padding: 16px;
-  font-size: 18px;
-  line-height: 22px;
-  font-weight: normal;
-}
+
 a:hover {
   text-decoration: none;
   color: #ffffff;
+}
+.downloadButtonContainer {
+ margin-bottom: 30px;
+}
+
+.downloadButton {
+  display: inline-block;
+  border-radius: 4px;
+  color: #00b87c;
+  background-color: white;
+  padding: 16px 30px;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: normal;
+  text-decoration: none;
+  margin: 15px;
+}
+
+.downloadButton:hover {
+  background-color: #e5e5e5;
+  text-decoration: none;
+  color: #00b87c;
+}
+.ctaContainer {
+  display: flex;
+  align-items: center;
+  padding: 100px 70px;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 1325px) {
@@ -139,15 +157,18 @@ a:hover {
     width: 400px !important;
     margin: 50px !important;
   }
-  .buttonW {
-    font-size: 16px;
-    line-height: 22px;
-    padding: 10px;
-    width: 270px;
-  }
 }
 
 @media screen and (max-width: 1200px) {
+
+  .hero, .ctaContainer{
+    padding: 100px 40px;
+  }
+  .heroheading {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 28px;
+  }
   .h1 {
     font-size: 28px;
   }
@@ -173,20 +194,11 @@ a:hover {
   .mobile {
     font-size: 16px;
   }
-  .buttonW {
-    font-size: 14px;
-    line-height: 20px;
-    padding: 8px;
-    width: 195px;
-  }
 }
 
 @media screen and (max-width: 950px) {
   .h1 {
     font-size: 24px;
-  }
-  .p {
-    margin: 0 190px;
   }
   .circle {
     width: 125px;
@@ -201,7 +213,6 @@ a:hover {
   }
   .button1 {
     font-size: 12px;
-    width: 120px;
   }
   .plink {
     font-size: 14px;
@@ -211,13 +222,5 @@ a:hover {
   }
   .p1 {
     font-size: 14px;
-  }
-  .laptop {
-    width: 360px !important;
-    margin: 0px !important;
-  }
-  .buttonW {
-    font-size: 12px;
-    width: 155px;
   }
 }
