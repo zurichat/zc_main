@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from '../styles/Themes.module.css'
-import theme1 from '../assets/images/theme1.png'
 import theme2 from '../assets/images/theme2.png'
 import theme3 from '../assets/images/theme3.png'
 import theme4 from '../assets/images/theme4.png'
@@ -10,13 +9,28 @@ import theme7 from '../assets/images/theme3.png'
 import theme8 from '../assets/images/theme3.png'
 import theme9 from '../assets/images/theme3.png'
 import theme10 from '../assets/images/theme3.png'
+import theme16 from '../assets/images/theme16.png'
+import theme17 from '../assets/images/theme17.png'
 import { useState, useContext, useEffect } from 'react'
 import { authAxios } from '../utils/Api'
 import { ProfileContext } from '../context/ProfileModal'
 
 
 const Themes = () => {
-  
+  const [active1, setActive1] = useState(0)
+  const [mode, setMode] = useState(() => localStorage.getItem("mode"));
+
+    useEffect(() => {
+       if(mode === "dark"){
+          document.body.classList.add("darkmode");
+          localStorage.setItem("mode", "dark");
+       }else{
+          document.body.classList.remove("darkmode");
+          localStorage.setItem("mode", "light");
+       }
+    }, [mode])
+
+
   const { user} = useContext(ProfileContext)
 
   const [dataState, setDataState] = useState({
@@ -76,6 +90,7 @@ const Themes = () => {
   return (
     <div className={styles.themeCont}>
       <div className={styles.title}>
+        <div className={styles.them}>Themes</div>
         <div className={styles.text}>
           Change the appearance of Slack across all of your workspaces.
         </div>
@@ -109,14 +124,43 @@ const Themes = () => {
         </div>
       </div>
       <div className={styles.text2}>
-        Automatically switch between light and dark themes
+        Automatically switch between light and dark themes when your system does.
       </div>
-      <div className={styles.text2b}>when your system does.</div>
-      <div className={styles.img}>
-        <img src={theme1} alt="theme1" className={styles.theme1} />
-      </div>
-      <div className={styles.img2}>
-        <img src={theme2} alt="theme2" className={styles.theme2} />
+        <div className={styles.img}>
+          <div className={styles.up}>
+            <div className={styles.upper}>
+            <img src={theme16} alt="theme16" className={styles.theme16} />
+            <div className={styles.bot}>Zuribot</div>
+            <div className={styles.time}>9:25am</div>
+            </div>
+            <div className={styles.nice}>Look nice today.</div>
+          </div>
+          <div className={styles.low}>
+            <div className={styles.lower}>
+              <div className={styles.radio6}>
+                <input type="radio" value="light" checked={active1 === 0} onClick={() => {setActive1(0)}} />
+              </div>
+              <div className={styles.light}>Light</div>
+            </div>
+          </div>
+        </div>
+        <div className={styles.img2}>
+          <div className={styles.up2}>
+            <div className={styles.upper2}>
+              <img src={theme17} alt="theme17" className={styles.theme17} />
+              <div className={styles.bot2}>Zuribot</div>
+              <div className={styles.time2}>9:25am</div>
+            </div>
+            <div className={styles.nice2}>Look nice today.</div>
+          </div>
+          <div className={styles.low2}>
+            <div className={styles.lower2}>
+              <div className={styles.radio7}>
+                <input type="radio" value="light" checked={active1 === 1} onClick={() => {setActive1(1)}} />
+              </div>
+              <div className={styles.light2}>Dark</div>
+            </div>
+          </div>
       </div>
       <div className={styles.customize}>
         <div className={styles.text3}>Colors</div>

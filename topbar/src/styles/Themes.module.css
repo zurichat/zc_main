@@ -22,9 +22,17 @@
   color: #3a3a3a;
 }
 
+.them {
+  color: #242424;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: -431px;
+}
+
 .text {
   font-size: 14px;
-  margin-left: -96px;
+  margin-top: 8px;
+  margin-left: -108px;
   font-weight: 500;
   color: #999999;
   position: relative;
@@ -49,24 +57,14 @@
 }
 
 .text2 {
-  margin-left: -152px;
+  margin-left: -19px;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
   color: #999999;
   font-style: normal;
   position: relative;
-  margin-top: 3px;
-}
-
-.text2b {
-  margin-left: -326px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
-  color: #999999;
-  font-style: normal;
-  position: relative;
+  margin-top: 10px;
 }
 
 .theme1 {
@@ -84,13 +82,12 @@
 .customize {
   border-top: 1px solid rgba(153, 153, 153, 0.5);
   margin-top: 15px;
-  margin-left: 32px;
-  width: 90%;
+  width: 115%;
 }
 
 .text3 {
   margin-top: 28px;
-  margin-left: -450px;
+  margin-left: -515px;
   font-weight: 750;
   font-size: 14px;
   line-height: 20px;
@@ -104,7 +101,7 @@
   font-weight: 500;
   line-height: 20px;
   font-style: normal;
-  margin-left: -207px;
+  margin-left: -275px;
 }
 
 .custom2 {
@@ -114,7 +111,7 @@
   font-weight: 500;
   line-height: 20px;
   font-style: normal;
-  margin-left: -406px;
+  margin-left: -473px;
 }
 
 .create {
@@ -124,7 +121,7 @@
   margin-top: 12px;
   line-height: 20px;
   font-style: normal;
-  margin-left: -345px;
+  margin-left: -410px;
 }
 
 .true {
@@ -134,12 +131,11 @@
   font-style: normal;
   color: #999999;
   margin-top: 5px;
-  margin-left: -403px;
+  margin-left: -468px;
 }
 
 .set1 {
   display: flex;
-  margin-left: 32px;
   margin-top: 15px;
 }
 
@@ -158,7 +154,7 @@
 .all {
   display: flex;
   margin-top: 13px;
-  margin-left: 32px;
+  margin-left: 4px;
 }
 
 .show {
@@ -175,7 +171,7 @@
 }
 
 .clean {
-  margin-top: 30px;
+  margin-top: 20px;
   margin-left: 32px;
   font-size: 13px;
   font-weight: 500;
@@ -187,7 +183,7 @@
 
 .set2 {
   display: flex;
-  margin-left: 34px;
+  margin-left: 2px;
   margin-top: 15px;
 }
 
@@ -204,7 +200,7 @@
 
 .set3 {
   display: flex;
-  margin-left: 34px;
+  margin-left: 2px;
   margin-top: 20px;
 }
 
@@ -221,8 +217,8 @@
 
 .set4 {
   border-bottom: 1px solid rgba(153, 153, 153, 0.5);
-  margin-left: 34px;
-  width: 90%;
+  margin-left: 2px;
+  width: 115%;
 }
 
 .bottom {
@@ -240,5 +236,155 @@
   width: 81%;
   height: 21vh;
   margin-left: 42px;
+}
+
+.theme16 {
+  width: 6%;
+}
+
+.img {
+  border: 1px solid #00b87c;
+  height: 125px;
+  width: 556px;
+  margin-top: 23px;
+  border-radius: 4px;
+}
+
+.upper {
+  display: flex;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+.lower {
+  display: flex;
+}
+
+.bot {
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 15px;
+  width: 40px;
+  height: 20px;
+}
+
+.time {
+  font-size: 10px;
+  color: #999999;
+  margin-top: 4px;
+  margin-left: 10px;
+  height: 15px;
+  width: 35px;
+}
+
+.nice {
+  font-size: 12px;
+  color: #999999;
+  margin-top: -5px;
+  margin-left: 64.1px;
+  height: 20px;
+  width: 87px;
+}
+
+.up {
+  height: 58px;
+}
+
+.low {
+  background: rgba(0, 184, 124, 0.2);
+  height: 50px;
+}
+
+.lower {
+  margin-left: 21.5px;
+}
+
+.radio6 {
+  margin-top: 8px;
+}
+
+.light {
+  margin-top: 18px;
+  margin-left: 25px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.theme17 {
+  width: 6%;
+  margin-top: 15px;
+}
+
+.img2 {
+  border: 1px solid #00b87c;
+  height: 125px;
+  width: 556px;
+  margin-top: 23px;
+  border-radius: 4px;
+}
+
+.upper2 {
+  display: flex;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+.lower2 {
+  display: flex;
+}
+
+.bot2 {
+  font-size: 12px;
+  margin-top: 15px;
+  font-weight: bold;
+  color: white;
+  margin-left: 15px;
+  width: 40px;
+  height: 20px;
+}
+
+.time2 {
+  font-size: 10px;
+  margin-top: 19px;
+  color: white;
+  margin-left: 10px;
+  height: 15px;
+  width: 35px;
+}
+
+.nice2 {
+  font-size: 12px;
+  color: white;
+  margin-top: -5px;
+  margin-left: 64.1px;
+  height: 20px;
+  width: 87px;
+}
+
+.up2 {
+  height: 68px;
+  background: #333333;
+  margin-top: -15px;
+}
+
+.low2 {
+  height: 3px;
+}
+
+.lower2 {
+  margin-left: 21.5px;
+}
+
+.radio7 {
+  margin-top: 8px;
+}
+
+.light2 {
+  margin-top: 18px;
+  margin-left: 25px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #333333;
 }
 

@@ -28,6 +28,10 @@ import PrivateRoute from './pages/settings/Utils/PrivateRoute'
 import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation'
 import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContext'
 import PrivacyPolicy from './pages/privacy-policy/index'
+import '../../topbar/src/styles/dark.css'
+
+
+
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -123,7 +127,7 @@ const App = () => {
         </Route>
         <CreateWorkSpaces />
       </Switch>
-    </BrowserRouter>
+      </BrowserRouter>
   )
 }
 export default App
