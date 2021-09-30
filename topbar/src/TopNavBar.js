@@ -6,7 +6,7 @@ import zurichatlogo from './assets/images/Logo.svg'
 import { useState } from 'react'
 import styled from 'styled-components'
 import { BaseInput } from './TopBarIndex'
-import userAvatar from './assets/images/user.svg'
+import defaultAvatar from './assets/images/avatar_vct.svg'
 import HelpIcon from './assets/download_images/question.svg'
 import HelpIcons from '@material-ui/icons/HelpOutline'
 import TopbarModal from './components/TopbarModal'
@@ -16,6 +16,8 @@ import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
 import { authAxios } from './utils/Api'
 import Profile from './components/Profile'
 import styles from './styles/Topbar.module.css'
+import Loader from 'react-loader-spinner'
+import { GetUserInfo } from '@zuri/control'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { openModal, presence, setPresence } = useContext(TopbarContext)
@@ -55,10 +57,12 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         })
     }
 
-    setUserProfileImage(user.image_url)
-
     getOrganizations()
   }, [setOrgId, user.image_url, setUser])
+
+  useEffect(() => {
+    GetUserInfo().then(res => setUserProfileImage(res['0'].image_url))
+  })
 
   let toggleStatus = null
 
@@ -80,12 +84,12 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   return (
     <TopNavBarBase>
-      <div>
+      <LogoDiv>
         <a href="#">
-          <img src={zurichatlogo} alt="zuri chat logo" />
+          <Logo src={zurichatlogo} alt="zuri chat logo" />
         </a>
         {/* <LogoName>ZURI</LogoName> */}
-      </div>
+      </LogoDiv>
       <BaseInput
         value={search}
         onChange={e => setSearch(e.target.value)}
@@ -98,20 +102,30 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       {/* <HelpContainer>
         <HelpIcons onClick={() => setHelpModal(true)} />
       </HelpContainer> */}
-      {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''}
+      {/* {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''} */}
+
 
       <UserForm />
       <AdminForm />
       <div>
+
+      {/* <UserForm /> */}
+      {/* <AdminForm /> */}
+      <ProfileImageContainer>
+
         {toggleStatus}
-        <img
-          style={{ height: '30px', width: '30px', borderRadius: '5px' }}
-          src={userProfileImage ? userProfileImage : userAvatar}
-          onClick={openModal}
-          role="button"
-          alt="user profile avatar"
-        />
-      </div>
+        {typeof userProfileImage === 'string' ? (
+          <img
+            src={userProfileImage !== '' ? userProfileImage : defaultAvatar}
+            onClick={openModal}
+            role="button"
+            className="avatar-img"
+            alt="user profile avatar"
+          />
+        ) : (
+          <Loader type="ThreeDots" color="#00B87C" height={30} width={30} />
+        )}
+      </ProfileImageContainer>
 
       <Profile />
       <TopbarModal />
@@ -120,16 +134,16 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 }
 
 const mapStateToProps = state => ({
-  userProfile: state
-})
+  userProfile: state,
+});
 
 export default connect(mapStateToProps)(TopNavBar)
 
 //  TopNavBar
 
 const TopNavBarBase = styled.div`
-  padding-inline-start: 1.5rem;
-  padding-inline-end: 1.5rem;
+  padding-inline-start: 1.4rem;
+  padding-inline-end: 1.4rem;
   background-color: var(--bg-2);
   display: flex;
   justify-content: space-between;
@@ -137,23 +151,37 @@ const TopNavBarBase = styled.div`
   z-index: 5;
   width: 100%;
   font-size: 1.5rem;
-  // position: fixed;
-  // padding: 1rem;
-  // margin: auto;
-  // margin-bottom: 3rem !important;
+  @media (max-width: 768px) {
+    padding-inline-start: 0.3rem;
+    padding-inline-end: 0.8rem;
+  }
+  @media (max-width: 425px) {
+    padding-inline-start: 0rem;
+    padding-inline-end: 0.8rem;
+  }
 `
+const LogoDiv = styled.div`
+  margin: auto 0;
+  display: flex;
+  align-items: center;
+`
+const Logo = styled.img`
+  @media (max-width: 768px) {
+    width: 80%;
+  }
+  @media (max-width: 425px) {
+    width: 70%;
+  }
+`
+const ProfileImageContainer = styled.div`
+  position: relative;
 
-// const LogoName = styled.span`
-//   font-family: Lato;
-//   font-size: 20px;
-//   font-style: normal;
-//   font-weight: 700;
-//   line-height: 27px;
-//   letter-spacing: 0px;
-//   padding: 0.5rem;
-//   text-align: center;
-//   vertical-align: middle;
-// `
+  img {
+    border-radius: 4px;
+    height: 30px;
+    width: 30px;
+  }
+`
 
 const HelpContainer = styled.div`
   > .MuiSvgIcon-root {
@@ -165,6 +193,9 @@ const HelpContainer = styled.div`
   }
 `
 const ToggleStatus = styled.div`
+  position: absolute;
+  top: 28px;
+  right: -18px;
   .activeCircle {
     background-color: green;
     height: 10px;
@@ -172,9 +203,6 @@ const ToggleStatus = styled.div`
     border-radius: 50%;
     border: 1px solid white;
     margin-right: 15px;
-    position: absolute;
-    top: 42px;
-    right: 10px;
   }
 
   .awayCircle {
@@ -184,8 +212,5 @@ const ToggleStatus = styled.div`
     margin-right: 15px;
     border-radius: 50%;
     border: 1px solid white;
-    position: absolute;
-    top: 42px;
-    right: 10px;
   }
 `

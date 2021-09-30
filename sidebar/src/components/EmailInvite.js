@@ -140,7 +140,7 @@ export const EmailInviteModal = props => {
   //     }else{
   //         onClose()
   //     }
-//   useEffect(() => {}, [props.sendLoadin])
+  //   useEffect(() => {}, [props.sendLoadin])
 
   return (
     <ChakraProvider>
@@ -390,8 +390,10 @@ export const EmailInviteModal = props => {
                   color="green.500"
                   size="xl"
                 />
-                <Text color="black.300" fontSize="lg" 
-                // onClick={loader}
+                <Text
+                  color="black.300"
+                  fontSize="lg"
+                  // onClick={loader}
                 >
                   Sending Invites...
                 </Text>
@@ -475,7 +477,6 @@ export const EmailInviteModal = props => {
                   className={`mt-1 align-items-center`}
                   style={{ fontSize: '15px' }}
                 >
-
                   {/* <img className={`pe-3`} src={linkIcon} /> */}
                   <Icon mr="1" as={FiSend} />
 
