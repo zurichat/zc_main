@@ -13,11 +13,7 @@ const Download = () => {
     return () => window.removeEventListener('resize', handleWindowResize)
   }, [])
 
-  return width > breakpoint ? (
-    <DownloadsDesktop />
-  ) : (
-    <DownloadsAndroid />
-  )
+  return width > breakpoint ? <DownloadsDesktop /> : <DownloadsAndroid />
 }
 
 export default Download

@@ -9,12 +9,11 @@ import icon from './assets/icon.svg'
 import { isMacOs } from 'react-device-detect'
 import { Link } from 'react-router-dom'
 
-
 const DownloadsDesktop = () => {
   const [exe, setexe] = useState({ link: 'Yes', name: '' })
   React.useEffect(() => {
-    if (isMacOs) return setexe({link: "no"})
-      return setexe({link: "got here"})
+    if (isMacOs) return setexe({ link: 'no' })
+    return setexe({ link: 'got here' })
   }, [])
   return (
     <>
@@ -28,7 +27,7 @@ const DownloadsDesktop = () => {
             Connecting with your team has never been easier with Zuri Chat.
           </p>
           <a href={exe.link} download={exe.name} className={styles.button1}>
-          <img className={`px-2`} src={icon} alt="download icon"></img>
+            <img className={`px-2`} src={icon} alt="download icon"></img>
             DOWNLOAD
           </a>
         </div>
@@ -36,7 +35,7 @@ const DownloadsDesktop = () => {
           className={`${styles.screenshot}`}
           src={laptop}
           alt="app screenshot"
-        /> 
+        />
       </section>
 
       <section className={`${styles.info}`}>
