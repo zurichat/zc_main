@@ -12,19 +12,19 @@ import ProfileModal from './components/ProfileModal'
 // import { MembersModalButton } from './MembersModal'
 
 // Placeholder data
-const placeHolder = n => {
-  const placeHolderMembersArray = []
-  for (let i = 0; i < n; i++) {
-    placeHolderMembersArray.push({
-      userName: faker.internet.userName().toLowerCase(),
-      fullName: `${faker.name.firstName()} ${faker.name.lastName()}`,
-      status: faker.lorem.sentence(),
-      avatar: faker.internet.avatar()
-    })
-  }
-  return placeHolderMembersArray
-}
-const faked = placeHolder(44134)
+// const placeHolder = n => {
+//   const placeHolderMembersArray = []
+//   for (let i = 0; i < n; i++) {
+//     placeHolderMembersArray.push({
+//       userName: faker.internet.userName().toLowerCase(),
+//       fullName: `${faker.name.firstName()} ${faker.name.lastName()}`,
+//       status: faker.lorem.sentence(),
+//       avatar: faker.internet.avatar()
+//     })
+//   }
+//   return placeHolderMembersArray
+// }
+const faked = []
 
 const Topbar = ({ userProfile: { last_name, first_name } }) => {
   const state = useContext(TopbarContext)
