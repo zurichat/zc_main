@@ -74,7 +74,7 @@ export const GetWorkspaceUser = async identifier => {
   }
 }
 
-const GetWorkspaceUsers = async () => {
+export const GetWorkspaceUsers = async () => {
   try {
     const res = await axios.get(
       `https://api.zuri.chat/organizations/${currentWorkspace}/members`,

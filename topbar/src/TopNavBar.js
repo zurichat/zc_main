@@ -6,7 +6,7 @@ import zurichatlogo from './assets/images/Logo.svg'
 import { useState } from 'react'
 import styled from 'styled-components'
 import { BaseInput } from './TopBarIndex'
-import userAvatar from './assets/images/avatar_vct.svg'
+import defaultAvatar from './assets/images/avatar_vct.svg'
 import HelpIcon from './assets/download_images/question.svg'
 import HelpIcons from '@material-ui/icons/HelpOutline'
 import TopbarModal from './components/TopbarModal'
@@ -16,6 +16,8 @@ import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
 import { authAxios } from './utils/Api'
 import Profile from './components/Profile'
 import styles from './styles/Topbar.module.css'
+import Loader from 'react-loader-spinner'
+import { GetUserInfo } from '@zuri/control'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { openModal, presence, setPresence } = useContext(TopbarContext)
@@ -55,10 +57,12 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         })
     }
 
-    setUserProfileImage(user.image_url)
-
     getOrganizations()
   }, [setOrgId, user.image_url, setUser])
+
+  useEffect(() => {
+    GetUserInfo().then(res => setUserProfileImage(res['0'].image_url))
+  })
 
   let toggleStatus = null
 
@@ -104,13 +108,17 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       {/* <AdminForm /> */}
       <ProfileImageContainer>
         {toggleStatus}
-        <img
-          src={userProfileImage ? userProfileImage : userAvatar}
-          onClick={openModal}
-          role="button"
-          className="avatar-img"
-          alt="user profile avatar"
-        />
+        {typeof userProfileImage === 'string' ? (
+          <img
+            src={userProfileImage !== '' ? userProfileImage : defaultAvatar}
+            onClick={openModal}
+            role="button"
+            className="avatar-img"
+            alt="user profile avatar"
+          />
+        ) : (
+          <Loader type="ThreeDots" color="#00B87C" height={30} width={30} />
+        )}
       </ProfileImageContainer>
 
       <Profile />
@@ -161,6 +169,12 @@ const Logo = styled.img`
 `
 const ProfileImageContainer = styled.div`
   position: relative;
+
+  img {
+    border-radius: 4px;
+    height: 30px;
+    width: 30px;
+  }
 `
 
 const HelpContainer = styled.div`
