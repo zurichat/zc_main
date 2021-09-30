@@ -7,7 +7,6 @@ import laptop from './assets/laptop.svg'
 import apple from './assets/apple.svg'
 import windows from './assets/windows.svg'
 
-
 const DownloadsAndroid = () => {
   const [exe, setexe] = useState({ link: '', name: '' })
 
@@ -20,7 +19,9 @@ const DownloadsAndroid = () => {
             <p className={downloadStyles.herotextHeader}>
               Experience the Zuri Chat’s desktop and mobile apps
             </p>
-            <p className='mb-4'>Connecting with your team has never been easier with Zuri Chat.</p>
+            <p className="mb-4">
+              Connecting with your team has never been easier with Zuri Chat.
+            </p>
             <a
               href={exe.link}
               download={exe.name}
@@ -52,25 +53,25 @@ const DownloadsAndroid = () => {
               macOS
               <img className={`px-2`} src={apple} alt="download icon" />
             </a>
-         </div>
-         <div className={`${downloadStyles.downloadButtonContainer}`}>
-          <a
-            href={exe.link}
-            download={exe.name}
-            className={downloadStyles.downloadButton}
-          >
-            Android
-            <img className={`px-2`} src={windows} alt="download icon" />
-          </a>
-          <a
-            href={exe.link}
-            download={exe.name}
-            className={downloadStyles.downloadButton}
-          >
-            iOS
-            <img className={`px-2`} src={apple} alt="download icon" />
-          </a>
-        </div>
+          </div>
+          <div className={`${downloadStyles.downloadButtonContainer}`}>
+            <a
+              href={exe.link}
+              download={exe.name}
+              className={downloadStyles.downloadButton}
+            >
+              Android
+              <img className={`px-2`} src={windows} alt="download icon" />
+            </a>
+            <a
+              href={exe.link}
+              download={exe.name}
+              className={downloadStyles.downloadButton}
+            >
+              iOS
+              <img className={`px-2`} src={apple} alt="download icon" />
+            </a>
+          </div>
           <div className={`d-flex justify-content-center`}>
             <img
               className={`${downloadStyles.screen}`}
