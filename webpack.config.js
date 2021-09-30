@@ -3,6 +3,7 @@ const singleSpaDefaults = require('webpack-config-single-spa')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const path = require('path')
+/* const FaviconsWebpackPlugin = require('favicons-webpack-plugin') */
 
 module.exports = (webpackConfigEnv, argv) => {
   const orgName = 'zuri'
@@ -54,7 +55,24 @@ module.exports = (webpackConfigEnv, argv) => {
           isLocal: webpackConfigEnv && webpackConfigEnv.isLocal,
           orgName
         }
-      })
+      }) /* ,
+      new FaviconsWebpackPlugin({
+        logo: './src/favicon.png',
+        mode: 'webapp',
+        devMode: 'webapp',
+        favicons: {
+          appName: 'Zuri Chat',
+          appDescription: 'Zuri Chat - Connect and Interact',
+          developerName: 'Me',
+          developerURL: null,
+          background: '#ddd',
+          theme_color: '#333',
+          icons: {
+            coast: false,
+            yandex: false
+          }
+        }
+      }) */
     ]
   })
 }
