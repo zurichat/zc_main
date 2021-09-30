@@ -7,7 +7,6 @@ import PlayStorelogo from './assets/playstore.png'
 
 import PhoneDM from './assets/PhoneDM.png'
 import PhoneChannel from './assets/PhoneChannels.png'
-import fetchInstall from './utils/index'
 
 // import Apk from './apk/appRelease.apk'
 
@@ -16,13 +15,6 @@ const DownloadsAndroid = () => {
   // const [msi, setmsi] = useState({ link: '', name: '' })
   // const [dmg, setdmg] = useState({ link: '', name: '' })
 
-  useEffect(() => {
-    fetchInstall('exe').then(res => {
-      setexe(res)
-    })
-    // fetchInstall('msi').then(res => {setmsi(res)})
-    // fetchInstall('dmg').then(res => {setdmg(res)})
-  }, [])
   return (
     <>
       <Header />
