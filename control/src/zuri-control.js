@@ -31,7 +31,7 @@ export const GetUserInfo = async () => {
           }
         }
       )
-      let userData = { currentWorkspace, ...response.data.data }
+      let userData = { currentWorkspace, token, ...response.data.data }
       // console.log('getuserinfo', response.data.data)
       console.log(userData)
       return userData
@@ -53,6 +53,9 @@ export const GetWorkspaceUser = async identifier => {
     throw Error('Workspace user identifier must be a valid email address.')
 
   const token = sessionStorage.getItem('token')
+
+  if (!token || !currentWorkspace)
+    throw Error('You are not logged into a workspace')
 
   try {
     const response = await axios.get(
