@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useReducer } from 'react'
+import { useHistory } from 'react-router-dom'
 import userOrganizations from './data'
 import reducer from './workspaceReducer'
 import axios from 'axios'
@@ -9,17 +10,25 @@ const initialState = {
   loading: false,
   user: JSON.parse(sessionStorage.getItem('user')) || {},
   organizations: [],
-  error: ''
+  error: '',
+  pageLoading: false
 }
 
 export const WorkspaceProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
+  const history = useHistory()
 
   useEffect(() => {
-    dispatch({ type: 'ACTION_CALL_API' })
+    if (
+      sessionStorage.getItem('user') &&
+      sessionStorage.getItem('session_id')
+    ) {
+      const userDetails = JSON.parse(sessionStorage.getItem('user'))
+      dispatch({ type: 'ACTION_CALL_API', payload: userDetails })
+    }
 
     getOrganizations()
-  }, [])
+  }, [state.user.email])
 
   const getOrganizations = async () => {
     try {
@@ -33,7 +42,7 @@ export const WorkspaceProvider = ({ children }) => {
       )
       if (response.status !== 200) {
         throw Error(
-          `Unable to fetch list of organizations, status code: ${response.status}`
+          `Unable to fetch list of wokspaces, status code: ${response.status}`
         )
       }
       const { data } = await response.data
@@ -48,11 +57,21 @@ export const WorkspaceProvider = ({ children }) => {
     dispatch({ type: 'SELECT_WORKSPACE', payload: id })
   }
 
+  const redirectPage = () => {
+    dispatch({ type: 'LOADER_ACTION' })
+
+    setTimeout(() => {
+      dispatch({ type: 'PAGE_REDIRECT' })
+      history.push('/home')
+    }, 3000)
+  }
+
   return (
     <WorkspaceContext.Provider
       value={{
         ...state,
-        toggleSelected
+        toggleSelected,
+        redirectPage
       }}
     >
       {children}

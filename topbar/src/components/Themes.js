@@ -210,6 +210,7 @@ const Themes = () => {
           </div>
         </div>
       </div>
+      <Toaster />
     </div>
   )
 }

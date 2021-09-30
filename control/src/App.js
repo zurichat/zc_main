@@ -1,21 +1,27 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Login from './pages/login'
 import SignUp from './pages/signup'
+import SignOut from './pages/signout/index'
 import Workspace from './pages/workspace/components/Workspace'
 import LandingPage from './pages/LandingPage'
-import ResetPassword from './pages/passwordReset'
+// password block
+import ResetPassword from './pages/passwordReset/index'
+import NewPassword from './pages/passwordReset/newPassword'
+// end password block
 import CookiesSetting from './pages/cookiesSettings'
 import Cookies from './pages/cookies'
 import Features from './pages/features'
 import Resources from './pages/resources'
 import Pricing from './pages/pricing'
 import Security from './pages/security'
+import Invite from './pages/inviteScreen'
 import Inviterequest from './pages/InviteRequest/InviteRequest'
 import SendRequest from './pages/InviteRequest/SendRequest'
 import ContactUs from './pages/contact-us'
 import AppsAndIntegrations from './pages/apps-integration'
 import Events from './pages/events/components/EventsMainWrapper'
 import Download from './pages/download'
+import DownloadsMac from './pages/download/DownloadsMac'
 import Careers from './pages/careers'
 import MarketPlace from './pages/marketplace/marketplace'
 import Blogs from './pages/blogs'
@@ -49,7 +55,7 @@ const App = () => {
         <Route path="/" exact>
           <LandingPage />
         </Route>
-        <Route path="/blogs">
+        <Route path="/blog">
           <Blogs />
         </Route>
         <Route path="/login">
@@ -58,11 +64,20 @@ const App = () => {
         <Route path="/signup">
           <SignUp />
         </Route>
+        <Route path="/createworkspace">
+          <CreateWorkSpaces />
+        </Route>
+        <Route path="/signout">
+          <SignOut />
+        </Route>
         <Route path="/choose-workspace">
           <Workspace />
         </Route>
         <Route path="/features">
           <Features />
+        </Route>
+        <Route path="/invites/:id">
+          <Invite />
         </Route>
         <Route path="/invite-request">
           <Inviterequest />
@@ -84,6 +99,9 @@ const App = () => {
         </Route>
         <Route path="/download-app">
           <Download />
+        </Route>
+        <Route path="/downloadsMac">
+          <DownloadsMac />
         </Route>
         <Route path="/contact-us">
           <ContactUs />
@@ -119,13 +137,17 @@ const App = () => {
         <Route path="/reset-password">
           <ResetPassword />
         </Route>
+        <Route path="/change-password">
+          <NewPassword />
+        </Route>
         <Route path="/cookies-settings">
           <CookiesSetting />
         </Route>
         <Route path="/cookies-banner">
           <Cookies />
         </Route>
-        <CreateWorkSpaces />
+
+        <Route component={NotFoundPage} />
       </Switch>
       </BrowserRouter>
   )

@@ -1,9 +1,15 @@
 .section3 {
-  margin-top: 100px;
+  margin-top: 120px;
+}
+.section3TopContentWrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  background-color: #fff;
 }
 .section3TopTextsWrapper {
   margin: 0 auto;
-  width: 72%;
+  width: 75%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,7 +18,7 @@
 .section3TopTextsWrapper h3 {
   font-style: normal;
   font-weight: bold;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   line-height: 130%;
   text-align: center;
   color: #242424;
@@ -21,7 +27,7 @@
   margin-top: 18px;
   font-style: normal;
   font-weight: 500;
-  font-size: 1.33rem;
+  font-size: 1.5rem;
   line-height: 130%;
   text-align: center;
   color: #3a3a3a;
@@ -52,7 +58,7 @@
   margin-top: 15px;
   font-style: normal;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 24px;
   text-align: center;
   letter-spacing: 0.02em;
@@ -62,7 +68,7 @@
   margin-top: 10px;
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 130%;
   text-align: center;
   color: #3a3a3a;
@@ -70,8 +76,13 @@
 .zuriInterfaceViewWrapper {
   margin-top: 150px;
   width: 100%;
+  background: #ecf8f5;
 }
-.zuriInterfaceViewWrapper img {
+.zuriInterfaceImageContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.zuriInterfaceImageContainer img {
   width: 100%;
 }
 
@@ -82,17 +93,20 @@
 } */
 
 @media (max-width: 500px) {
+  .section3TopContentWrapper {
+    padding: 0 24px;
+  }
   .section3TopTextsWrapper {
     margin: 0;
     width: 100%;
   }
   .section3TopTextsWrapper h3 {
-    font-size: 28px;
+    font-size: 1.75rem;
     line-height: 36px;
     text-align: left;
   }
   .section3TopTextsWrapper p {
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 23px;
     text-align: left;
   }
@@ -100,16 +114,20 @@
     margin-top: 65px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    column-gap: 15px;
+    column-gap: 10px;
     row-gap: 40px;
   }
   .featureCard {
-    width: 158px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
   }
+  /* .toDoListCard {
+    grid-column: 1/-1 !important; 
+    justify-items: center;
+  } */
   .iconWrapper {
     width: 100px;
     height: 100px;
@@ -123,11 +141,11 @@
     width: 40%;
   }
   .featureCard h3 {
-    font-size: 1rem;
+    font-size: 1.125rem;
     line-height: 130%;
   }
   .featuresSection p {
-    font-size: 0.7rem;
+    font-size: 0.875rem;
     line-height: 130%;
   }
   .zuriInterfaceViewWrapper {
