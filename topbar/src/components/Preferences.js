@@ -14,7 +14,6 @@ import { ProfileContext } from '../context/ProfileModal'
 import AudioVideo from './AudioVideo'
 import AdvancedSettings from './AdvancedSettings'
 import Accessibility from './Accessibility'
-import Accessibility from './Accessibility'
 
 const Preferences = () => {
   const { sideBar } = useContext(ProfileContext)
