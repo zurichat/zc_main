@@ -7,7 +7,6 @@ import LoginLoading from '../../../components/LoginLoading'
 import styles from '../style/workspace.module.css'
 import WorkspaceCard from './WorkspaceCard'
 import WorkspaceFooter from './WorkspaceFooter'
-import SelectedWorkspace from './SelectedWorkspace'
 
 const LoadingWorkspace = () => {
   const { pageLoading } = useWorkspaceContext()
@@ -21,7 +20,6 @@ const LoadingWorkspace = () => {
           <main className={`${styles.workspace_container}`}>
             <WorkspaceHeader />
             <article className={`${styles.workspace_wrapper}`}>
-              <SelectedWorkspace />
               <WorkspaceCard />
             </article>
           </main>
