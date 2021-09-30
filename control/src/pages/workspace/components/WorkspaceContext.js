@@ -9,7 +9,7 @@ export const WorkspaceContext = React.createContext()
 const initialState = {
   loading: false,
   user: JSON.parse(sessionStorage.getItem('user')) || {},
-  organizations: [],
+  organizations: null,
   error: '',
   pageLoading: false
 }
@@ -63,7 +63,7 @@ export const WorkspaceProvider = ({ children }) => {
     setTimeout(() => {
       dispatch({ type: 'PAGE_REDIRECT' })
       history.push('/home')
-    }, 3000)
+    }, 1000)
   }
 
   return (
