@@ -4,6 +4,7 @@ import axios from 'axios'
 // import {GetUserInfo} from '../../zuri-control'
 import { SignoutStyleWrapper } from '../../component-styles/SignoutStyle'
 import logo from '../../component-assets/zuri.svg'
+import { Helmet } from 'react-helmet'
 
 const Signout = ({ history }) => {
   const currentWorkspace = localStorage.getItem('currentWorkspace')
@@ -37,6 +38,9 @@ const Signout = ({ history }) => {
     <>
       <SignoutStyleWrapper>
         <div className="logo">
+          <Helmet>
+            <title>Sign Out - Zuri Chat</title>
+          </Helmet>
           <img src={logo} alt="zuri logo" />
         </div>
 
