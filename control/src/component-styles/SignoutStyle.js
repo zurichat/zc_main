@@ -58,6 +58,7 @@ export const SignoutStyleWrapper = styled.section`
 
       a.link {
         color: steelblue;
+        margin: 0 0.4rem;
       }
     }
     button.push {
@@ -70,6 +71,9 @@ export const SignoutStyleWrapper = styled.section`
       outline: none;
       border: none;
       color: #fff;
+      &:hover {
+        background: #156349;
+      }
     }
   }
 `
