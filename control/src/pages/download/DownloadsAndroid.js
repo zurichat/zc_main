@@ -26,7 +26,11 @@ const DownloadsAndroid = () => {
             Experience the Zuri Chat’s desktop and mobile apps
           </p>
           <p>Connecting with your team has never been easier with Zuri Chat.</p>
-          <a href={exe.link} download={exe.name} className={downloadStyles.button1}>
+          <a
+            href={exe.link}
+            download={exe.name}
+            className={downloadStyles.button1}
+          >
             <img className={`px-2`} src={icon} alt="download icon"></img>
             DOWNLOAD
           </a>
@@ -48,25 +52,29 @@ const DownloadsAndroid = () => {
               alt="app screenshot"
             ></img>
           </div>
-      </section>
-      <section >
-        <div className={` ${downloadStyles.zuri} col container`}>
-          <h1 className={`${downloadStyles.heroheading} py-3`}>
-            Same feel, same team on Zuri App!
-          </h1>
-          <a href={exe.link} download={exe.name} className={downloadStyles.button1}>
-            <img className={`px-2`} src={icon} alt="download icon"></img>
-            DOWNLOAD FOR WINDOWS
-          </a>
-        </div>
-        <div className={`col px-0`}>
-          <img
-            className={`${downloadStyles.laptop}`}
-            src={laptop}
-            alt="app screenshot"
-          ></img>
-        </div>
-      </section>
+        </section>
+        <section>
+          <div className={` ${downloadStyles.zuri} col container`}>
+            <h1 className={`${downloadStyles.heroheading} py-3`}>
+              Same feel, same team on Zuri App!
+            </h1>
+            <a
+              href={exe.link}
+              download={exe.name}
+              className={downloadStyles.button1}
+            >
+              <img className={`px-2`} src={icon} alt="download icon"></img>
+              DOWNLOAD FOR WINDOWS
+            </a>
+          </div>
+          <div className={`col px-0`}>
+            <img
+              className={`${downloadStyles.laptop}`}
+              src={laptop}
+              alt="app screenshot"
+            ></img>
+          </div>
+        </section>
       </div>
       <Footer />
     </>
