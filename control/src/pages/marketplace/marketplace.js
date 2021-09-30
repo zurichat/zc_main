@@ -12,7 +12,6 @@ import MarketplaceHeader from './components/marketplace-container/MarketplaceHea
 import { MarketPlaceProvider } from '../../context/MarketPlace.context.js'
 import { loggedInUser } from '../../../../globalState'
 
-
 const MarketPlace = () => {
   const [userDetails, setUserDetails] = useState(null)
   return (
@@ -30,7 +29,7 @@ const MarketPlace = () => {
               <p className="p-0">
                 Integrate your favorite plugins and get more exciting experience
                 from the Zuri app. Collaborate, work smarter and better.{' '}
-              </p> 
+              </p>
               <div className="d-flex align-items-center">
                 <div className={styles.marketplaceSearchBar}>
                   <svg
@@ -47,10 +46,8 @@ const MarketPlace = () => {
                   </svg>
                   <input type="text" placeholder="Search Plugins" />
                 </div>
-                <button className={styles.marketplaceHeroButton}>
-                  Search
-                </button>  
-              </div>              
+                <button className={styles.marketplaceHeroButton}>Search</button>
+              </div>
             </Col>
             <Col md={4}>
               <div className={styles.circleBackground}>
@@ -114,17 +111,23 @@ const MarketPlace = () => {
             className={styles.marketplaceTabs}
             selectedTabClassName={styles.marketplaceTabSelected}
           >
-            <div className={`d-flex justify-content-between w-100 ${styles.marketplaceContainerMain}`}>
+            <div
+              className={`d-flex justify-content-between w-100 ${styles.marketplaceContainerMain}`}
+            >
               <div>
-                <h2 className={styles.marketplaceContainerTitle}>Marketplace for you</h2>
-                <p className={styles.marketplaceContainerCaption}>Get Plugins that you would enjoy</p>
+                <h2 className={styles.marketplaceContainerTitle}>
+                  Marketplace for you
+                </h2>
+                <p className={styles.marketplaceContainerCaption}>
+                  Get Plugins that you would enjoy
+                </p>
               </div>
               <TabList className={styles.marketplaceTabList}>
                 <Tab className={styles.marketplaceTab}>New plugin</Tab>
                 <Tab className={styles.marketplaceTab}>Recommended for you</Tab>
                 <Tab className={styles.marketplaceTab}>Popular Plugins</Tab>
-            </TabList>
-            </div>            
+              </TabList>
+            </div>
             <Row className={`mx-0`}>
               <TabPanel>
                 <MarketPlaceContainer />
