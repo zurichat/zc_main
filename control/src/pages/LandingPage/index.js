@@ -18,6 +18,7 @@ import Footer from '../../components/Footer'
 import { Link } from 'react-router-dom'
 import Cookies from '../cookies'
 import Subscribe from './components/Subscribe'
+import { Helmet } from 'react-helmet'
 
 export default function Homepage() {
   const { useState, useEffect } = React
@@ -39,6 +40,9 @@ export default function Homepage() {
   const FeatureRow = props => {
     return (
       <div className={`${style.ft_row} ${props.rowOrder}`}>
+        <Helmet>
+          <title>Zuri Chat - Connect and Interact</title>
+        </Helmet>
         <div className={`${style.ft_col}`}>
           <img src={props.src} alt={props.alt} className={`${style.ft_img}`} />
         </div>
