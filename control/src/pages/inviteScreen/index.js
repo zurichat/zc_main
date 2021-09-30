@@ -10,15 +10,15 @@ const InvitePage = () => {
   const [success, setsuccess] = useState(false)
   const [error, seterror] = useState('')
 
-    console.log(id)
-    window.location.hre
+  console.log(id)
+  window.location.hre
   const checkIfRegistered = async ({ id }) => {
     try {
       const res = await axios.get(
         `https://api.zuri.chat/organizations/invites/${id}`
       )
       console.log(res.data.data)
-      console.log(uuid);
+      console.log(uuid)
       return res.data
     } catch (err) {
       console.log(err)
@@ -62,10 +62,11 @@ const InvitePage = () => {
               <h5 className={styles.secondText}>
                 You have been invited to a Workspace
               </h5>
-              <button 
-              onClick={handleJoin} 
-            // onClick={() => history.push('/signup')}
-              className={styles.button}>
+              <button
+                onClick={handleJoin}
+                // onClick={() => history.push('/signup')}
+                className={styles.button}
+              >
                 Join?
               </button>
             </>
