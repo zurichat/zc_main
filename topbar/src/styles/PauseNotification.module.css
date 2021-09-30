@@ -8,7 +8,8 @@
   top: 3.6rem;
   left: -82%;
   z-index: 1;
-  box-shadow: rgba(245, 197, 197, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  box-shadow: rgba(245, 197, 197, 0.19) 0px 10px 20px,
+    rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .topContent {
@@ -45,7 +46,7 @@
 
 .buttonContent {
   width: 100%;
-  border-top: 1.2px solid #E7E7E7;
+  border-top: 1.2px solid #e7e7e7;
   padding: 0.8125rem 1.8rem;
   font-size: 1rem;
   cursor: pointer;
