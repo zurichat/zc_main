@@ -1,12 +1,26 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-
+import { useState, useEffect } from 'react'
+/* import { Helmet } from 'react-helmet' */
 import Logo from '../../component-assets/logo.svg'
 
 const index = () => {
-  return (
-    <Errror404>
+  const [noControl, setnoControl] = useState(true)
+
+  useEffect(() => {
+    setnoControl(
+      document.querySelectorAll(`div[id*='zuri/zuri-plugin']`).length > 0
+    )
+  }, [])
+
+  return noControl ? (
+    <></>
+  ) : (
+    <ErrorPage>
       <div className="LogoDiv">
+        {/*   <Helmet>
+          <title>Error 404 !</title>
+        </Helmet> */}
         <Link to="/">
           <img src={Logo} alt="Zuri Logo" />
         </Link>
@@ -18,13 +32,13 @@ const index = () => {
           Oops something is missing!! Go to <Link to="/">zuri.chat</Link>
         </p>
       </div>
-    </Errror404>
+    </ErrorPage>
   )
 }
 
 export default index
 
-const Errror404 = styled.div`
+const ErrorPage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,19 +1,3 @@
-// import { useState, useEffect, useContext } from 'react'
-// import { fetchUser } from './utils/fetchUserDetails'
-
-// const Sidebar = props => {
-//   const nn = fetchUser()
-//   // console.log(userInfo, 'sidebar new', organizationInfo)
-
-//   useEffect(() => {
-//     console.log(nn, 'test test')
-//   })
-
-//   return <div>Welcome</div>
-// }
-
-// export default Sidebar
-
 import { Fragment, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './styles/Sidebar.module.css'
@@ -75,14 +59,11 @@ const Sidebar = props => {
     token: ''
   })
 
-  const [nullValue, setnullValue] = useState(0)
-
   const [organizationInfo, setOrganizationInfo] = useState(null)
   const [sidebarData, setSidebarData] = useState({})
 
   // let user = JSON.parse(sessionStorage.getItem('user'))
   let token = sessionStorage.getItem('token')
-  let user_id_session = JSON.parse(sessionStorage.getItem('user'))
 
   useEffect(() => {
     inviteVisibility()
@@ -90,11 +71,11 @@ const Sidebar = props => {
     const fetchUser = async () => {
       const user = await GetUserInfo()
       setUserInfo({
-        userId: user_id_session.id,
+        userId: user[0]._id,
         token
       })
 
-      if (userInfo._userId !== '') {
+      if (user[0]._id !== '') {
         const org_url = `/organizations/${currentWorkspace}/plugins`
         authAxios
           .get(org_url)
@@ -147,59 +128,14 @@ const Sidebar = props => {
       })
   }
 
-  console.log(currentWorkspace, 'workspace')
-  console.log(userInfo.userId, 'user id')
+  SubscribeToChannel(`${currentWorkspace}_${userInfo.userId}_sidebar`, ctx => {
+    const websocket = ctx
+    console.log('Websocket', websocket.data)
+    if (ctx.data.event === 'sidebar_update') {
+      console.log('check')
+    }
+  })
 
-  useEffect(() => {
-    setnullValue(1)
-  }, [])
-
-  {
-    nullValue === 1 &&
-      currentWorkspace &&
-      userInfo.userId &&
-      SubscribeToChannel(
-        `${currentWorkspace}_${userInfo.userId}_sidebar`,
-        ctx => {
-          const websocket = ctx.data
-          console.log('Websocket', websocket)
-          if (websocket.event === 'sidebar_update') {
-            console.log('check', websocket.sidebar_url)
-
-            const sidebarUrl = websocket.sidebar_url
-
-            const trimmedUrl = trimUrl(sidebarUrl)
-            const pluginKey = filterUrl(sidebarUrl)
-
-            axios
-              .get(
-                `${
-                  trimmedUrl.includes('https://') ||
-                  trimmedUrl.includes('http://')
-                    ? trimmedUrl
-                    : `https://${trimmedUrl}`
-                }?org=${currentWorkspace}&user=${userInfo.userId}`
-              )
-              .then(res => {
-                try {
-                  const validPlugin = res.data
-                  if (validPlugin.name !== undefined) {
-                    if (typeof validPlugin === 'object') {
-                      setSidebarData({
-                        ...sidebarData,
-                        [pluginKey]: validPlugin
-                      })
-                    }
-                  }
-                } catch (err) {
-                  console.log(err, 'Invalid plugin')
-                }
-              })
-              .catch(console.log)
-          }
-        }
-      )
-  }
   useEffect(() => {
     {
       organizationInfo &&
@@ -259,7 +195,7 @@ const Sidebar = props => {
               />
             </div>
           </div>
-          <div className={`col-12 px-3 ${styles.modalContainer}`}>
+          <div className={`col-12 px-3 ${styles.odalContainer}`}>
             <ModalComponent isOpen={homeModal} />
           </div>
 

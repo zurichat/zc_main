@@ -8,6 +8,7 @@ import styles from '../../component-styles/AuthFormElements.module.css'
 import axios from 'axios'
 import { GetUserInfo } from '../../zuri-control'
 import $behaviorSubject from '../../../../globalState'
+import { Helmet } from 'react-helmet'
 // import { Link } from 'react-router-dom'
 // import authBg1 from './assets/auth_bg1.svg'
 // import authBg2 from './assets/auth_bg2.svg'
@@ -92,7 +93,6 @@ const Login = () => {
 
         setTimeout(() => {
           //Redirect to some other page
-          GetUserInfo()
           history.push('/choose-workspace')
           setLoading(false)
         }, 2000)
@@ -117,6 +117,9 @@ const Login = () => {
 
   return (
     <main id={styles.authPageWrapper}>
+      <Helmet>
+        <title>Login - Zuri Chat</title>
+      </Helmet>
       {Loading && <LoginLoading />}
       {/* <aside id={styles.authAsideContainer} className={styles.display_none}>
         <div id={styles.authImageWrapper}>

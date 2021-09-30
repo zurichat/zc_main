@@ -114,11 +114,10 @@
   width: 100%;
   max-width: 300px;
   z-index: 9999;
-  border: 1px solid #E5E5E5;
+  border: 1px solid #e5e5e5;
   border-radius: 8px;
   /* padding: 20px 0; */
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-
 }
 
 .modalContainers {
@@ -205,7 +204,7 @@
 }
 
 .activeCircle {
-  background-color: #00B87C;
+  background-color: #00b87c;
   height: 6px;
   width: 6px;
   border-radius: 50%;
@@ -237,7 +236,7 @@
   background: #ffffff;
   padding: 0px;
   border-radius: 4px;
-  border: 1px solid #A1A1A1;
+  border: 1px solid #a1a1a1;
   width: 85%;
   margin: auto;
   cursor: pointer;
@@ -334,7 +333,7 @@
 
 .hr {
   height: 15px;
-  background: #E7E7E7;
+  background: #e7e7e7;
   width: 100%;
   margin-top: 5px;
   margin-bottom: 15px;
