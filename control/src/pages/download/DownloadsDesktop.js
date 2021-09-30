@@ -2,18 +2,18 @@ import React, { useState } from 'react'
 import Footer from '../../components/Footer'
 import styles from './styles/download.module.css'
 import Header from '../../components/Header'
-import Ellipse159 from './assets/Ellipse159.svg'
 import laptop from './assets/laptop.svg'
 import screen from './assets/screen.svg'
 import icon from './assets/icon.svg'
+import apple from './assets/apple.svg'
+import windows from './assets/windows.svg'
 import { isMacOs } from 'react-device-detect'
-import { Link } from 'react-router-dom'
 
 const DownloadsDesktop = () => {
-  const [exe, setexe] = useState({ link: 'Yes', name: '' })
+  const [exe, setexe] = useState({ link: '', name: '' })
   React.useEffect(() => {
-    if (isMacOs) return setexe({ link: 'no' })
-    return setexe({ link: 'got here' })
+    if (isMacOs) return setexe({ name: 'DOWNLOAD FOR MAC' })
+    return setexe({ name: 'DOWNLOAD FOR WINDOWS' })
   }, [])
   return (
     <>
@@ -23,12 +23,12 @@ const DownloadsDesktop = () => {
           <p className={`${styles.heroheading}`}>
             Experience the Zuri Chat’s desktop and mobile apps
           </p>
-          <p className={styles.p}>
+          <p className={`${styles.p} mb-4`}>
             Connecting with your team has never been easier with Zuri Chat.
           </p>
           <a href={exe.link} download={exe.name} className={styles.button1}>
             <img className={`px-2`} src={icon} alt="download icon"></img>
-            DOWNLOAD
+            {exe.name}
           </a>
         </div>
         <img
@@ -39,14 +39,26 @@ const DownloadsDesktop = () => {
       </section>
 
       <section className={`${styles.info}`}>
-        <p className={`${styles.p1} text-center`}>
+        <p className='h2 text-center font-weight-normal text-white w-50 mb-4'>
           Download and enjoy the Zuri Chat experience on any these devices
         </p>
-        <div>
-          <button>Windows</button>
-          <button>macOS</button>
-          <button>iOs</button>
-          <button>Android</button>
+        <div className={`${styles.downloadButtonContainer}`}>
+          <a href={exe.link} download={exe.name} className={styles.downloadButton}>
+            Windows
+            <img className={`px-2`} src={windows} alt="download icon" />
+          </a>
+          <a href={exe.link} download={exe.name} className={styles.downloadButton}>
+            macOS
+            <img className={`px-2`} src={apple} alt="download icon" />
+          </a>
+          <a href={exe.link} download={exe.name} className={styles.downloadButton}>
+            iOS
+            <img className={`px-2`} src={apple} alt="download icon" />
+          </a>
+          <a href={exe.link} download={exe.name} className={styles.downloadButton}>
+            Android
+            <img className={`px-2`} src={windows} alt="download icon" />
+          </a>
         </div>
         <div className={`d-flex justify-content-center`}>
           <img
@@ -57,23 +69,21 @@ const DownloadsDesktop = () => {
         </div>
       </section>
 
-      <section className={`row m-5 p-5`}>
-        <div className={` ${styles.zuri} col container`}>
-          <h1 className={`${styles.heroheading} py-3`}>
+      <section className={` ${styles.ctaContainer}`}>
+        <div>
+          <h1 className={`${styles.heroheading} py-3 mb-4`}>
             Same feel, same team on Zuri App!
           </h1>
           <a href={exe.link} download={exe.name} className={styles.button1}>
             <img className={`px-2`} src={icon} alt="download icon"></img>
-            DOWNLOAD FOR WINDOWS
+            {exe.name}
           </a>
         </div>
-        <div className={`col px-0`}>
-          <img
-            className={`${styles.laptop}`}
-            src={laptop}
-            alt="app screenshot"
-          ></img>
-        </div>
+        <img
+          className={`${styles.screenshot}`}
+          src={laptop}
+          alt="app screenshot"
+        ></img>
       </section>
       <Footer />
     </>
