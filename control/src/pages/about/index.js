@@ -41,21 +41,21 @@ const index = () => {
         </div>
         <div className={`row`}>
           <div className={`col-lg-4 ${styles.counter}`}>
-            <h1>100k+</h1>
+            <h3>100k+</h3>
             <p>
               Paid <br />
               Customers
             </p>
           </div>
           <div className={`col-lg-4 ${styles.counter}`}>
-            <h1>50</h1>
+            <h3>50</h3>
             <p>
               of the Fortune 100 <br />
               use Zurichat
             </p>
           </div>
           <div className={`col-lg-4 ${styles.counter}`}>
-            <h1>50+</h1>
+            <h3>50+</h3>
             <p>
               countries have daily <br />
               active users in Zurichat
@@ -76,13 +76,13 @@ const index = () => {
         </div>
       </div>
       {/* Who we are and how to join us */}
-      <div className={`container ${styles.howedoit}`}>
+      <div className={`container ${styles.to_join}`}>
         <div className={`row`}>
           <div className={`col-lg-6 ${styles.team}`}>
             <img src={team} alt={'image of teams'} srcset="" />
           </div>
-          <div className={`col-lg-6`}>
-            <h2>Who we are and how to join us</h2>
+          <div className={`col-lg-6 ${styles.join_us}`}>
+            <h3>Who we are and how to join us</h3>
             <p>
               We live by our mission, and improving people’s working life starts
               with our own company. We’re building a platform and products we
@@ -92,8 +92,8 @@ const index = () => {
               the process.
             </p>
             <p>
-              Careers at Zurichat offer all kinds of opportunities and a
-              simpler, more pleasant, more productive working life.
+              <span>Careers</span> at Zurichat offer all kinds of opportunities
+              and a simpler, more pleasant, more productive working life.
             </p>
           </div>
         </div>
@@ -157,7 +157,7 @@ const index = () => {
 
       {/* special features you need  */}
       <div className={`${styles.working_remote}`}>
-        <h2>Special Feature You Need</h2>
+        <h3>Special Feature You Need</h3>
         <p>
           Get all your work tools and information assembled in one place for
           easy access and increase Productivity{' '}
@@ -173,20 +173,24 @@ const index = () => {
           <div className={`col ${styles.vector}`}>
             <img src={group} alt={'image of a company file'} />
             <h6 className={``}>Company Files</h6>
-            <p>Access your files on google drive while on Zuri Chat.</p>
+            <p>
+              Access your files on google drive while <br /> on Zuri Chat.
+            </p>
           </div>
           <div className={`col ${styles.vector}`}>
             <img src={vector} alt={'accessibility image'} />
             <h6 className={``}>Accessibility</h6>
             <p>
-              Be in control, Use zuri Chat as you will and have a pleasant
-              experience.
+              Be in control, Use zuri Chat as you will <br /> and have a
+              pleasant experience.
             </p>
           </div>
           <div className={`col ${styles.vector}`}>
             <img src={user2} alt={'image of target board'} />
             <h6 className={``}>Company Goals</h6>
-            <p>Keep up with company goals to stay on track with your team.</p>
+            <p>
+              Keep up with company goals to stay on <br /> track with your team.
+            </p>
           </div>
         </div>
       </div>
