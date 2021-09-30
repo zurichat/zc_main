@@ -15,11 +15,11 @@ import {
 
 const MarketPlaceContainer = ({ organizations, user }) => {
   const [plugin, setPlugin] = useState([])
-  const [ pluginsLoading, setPluginsLoading ] = useState(false)
+  const [pluginsLoading, setPluginsLoading] = useState(false)
   const [isLoading, setisLoading] = useState(false)
   const [installLoading, setInstallLoading] = useState(false)
   const [installErr, setInstallErr] = useState(null)
-  const [ showSuccess, setShowSuccess ] = useState(false)
+  const [showSuccess, setShowSuccess] = useState(false)
   const marketplace = useMarketPlaceContext()
 
   const { state } = marketplace
@@ -41,7 +41,7 @@ const MarketPlaceContainer = ({ organizations, user }) => {
       }
     } catch (e) {
       setPluginsLoading(false)
-      console.log(e)      
+      console.log(e)
     }
   }
 
@@ -73,7 +73,7 @@ const MarketPlaceContainer = ({ organizations, user }) => {
         {
           plugin_id: plugin.id,
           user_id: user.id
-        }, 
+        },
         {
           headers: {
             Authorization: `Bearer ${token}`
@@ -86,7 +86,7 @@ const MarketPlaceContainer = ({ organizations, user }) => {
         setShowSuccess(true)
         setTimeout(() => {
           window.location.replace('/home')
-        }, 5000)        
+        }, 5000)
       } else {
         alert(response.data.message)
         setInstallLoading(false)
@@ -97,7 +97,7 @@ const MarketPlaceContainer = ({ organizations, user }) => {
     }
   }
 
-  const addDefaultImage = (e) => {
+  const addDefaultImage = e => {
     e.target.src = logo
   }
 
@@ -115,68 +115,77 @@ const MarketPlaceContainer = ({ organizations, user }) => {
 
   return (
     <>
-      {
-        pluginsLoading && 
+      {pluginsLoading && (
         <div className="d-flex justify-content-center align-items-center w-100 flex-column py-3 mb-5">
           <Spinner animation="border" variant="success" role="status">
             <span className="visually-hidden">Loading...</span>
-          </Spinner>          
+          </Spinner>
         </div>
-      }
-      { 
-        !pluginsLoading && state.plugins.length > 0 &&
-      <div className={styles.zuriMarketPlace__container}>     
-        {
-          state.plugins.map((plugin, i) => {
+      )}
+      {!pluginsLoading && state.plugins.length > 0 && (
+        <div className={styles.zuriMarketPlace__container}>
+          {state.plugins.map((plugin, i) => {
             return <PluginCard key={i} {...plugin} />
-          })
-        }  
-        {marketplace.state.isModal && marketplace.state.pluginId && (
-          <Modal
-            show={marketplace.state.isModal}
-            onHide={() => marketplace.dispatch(setPluginId(null))}
-            dialogClassName={styles.marketplaceModal}
-            contentClassName={styles.modalContent}
-            centered
-          >
-            {isLoading && (
-              <div className="d-flex h-100 justify-content-center align-items-center flex-column py-3">
-                <Spinner animation="border" variant="success" role="status">                  
-                </Spinner>
-              </div>
-            )}
-            {!isLoading && plugin && !showSuccess && (
-              <div className="h-100">
-                <div
-                  className={`d-flex flex-column justify-content-center ${styles.marketplaceModalTop}`}
-                >
-                  <div className={`${styles.pluginGrid}`}>
-                    <figure className={styles.modalPluginIcon}>
-                      <img src={plugin.icon_url} onError={addDefaultImage} alt={plugin.name} />
-                    </figure>  
-                    <div className={`ml-3 ${styles.pluginMainContent}`}>
-                      <h2>{plugin.name}</h2>
-                      <div>
-                        <h3>{plugin.developer_email}</h3>
-                      </div>                      
-                      <button
-                        onClick={() => installPluginToOrganization()}
-                        className={styles.modalInstallBtn}
-                        disabled={installLoading}
-                      >
-                        {installLoading ? (
-                          <div className="d-flex flex-row align-items-center">
-                            <Spinner animation="border" variant="light" role="status">
-                              <span className="visually-hidden text-capitalize">Loading...</span>
-                            </Spinner>                            
-                          </div>
-                        ) : (
-                          'Install'
-                        )}
-                      </button>
+          })}
+          {marketplace.state.isModal && marketplace.state.pluginId && (
+            <Modal
+              show={marketplace.state.isModal}
+              onHide={() => marketplace.dispatch(setPluginId(null))}
+              dialogClassName={styles.marketplaceModal}
+              contentClassName={styles.modalContent}
+              centered
+            >
+              {isLoading && (
+                <div className="d-flex h-100 justify-content-center align-items-center flex-column py-3">
+                  <Spinner
+                    animation="border"
+                    variant="success"
+                    role="status"
+                  ></Spinner>
+                </div>
+              )}
+              {!isLoading && plugin && !showSuccess && (
+                <div className="h-100">
+                  <div
+                    className={`d-flex flex-column justify-content-center ${styles.marketplaceModalTop}`}
+                  >
+                    <div className={`${styles.pluginGrid}`}>
+                      <figure className={styles.modalPluginIcon}>
+                        <img
+                          src={plugin.icon_url}
+                          onError={addDefaultImage}
+                          alt={plugin.name}
+                        />
+                      </figure>
+                      <div className={`ml-3 ${styles.pluginMainContent}`}>
+                        <h2>{plugin.name}</h2>
+                        <div>
+                          <h3>{plugin.developer_email}</h3>
+                        </div>
+                        <button
+                          onClick={() => installPluginToOrganization()}
+                          className={styles.modalInstallBtn}
+                          disabled={installLoading}
+                        >
+                          {installLoading ? (
+                            <div className="d-flex flex-row align-items-center">
+                              <Spinner
+                                animation="border"
+                                variant="light"
+                                role="status"
+                              >
+                                <span className="visually-hidden text-capitalize">
+                                  Loading...
+                                </span>
+                              </Spinner>
+                            </div>
+                          ) : (
+                            'Install'
+                          )}
+                        </button>
+                      </div>
                     </div>
-                  </div>                                    
-                  {/**
+                    {/**
                      * <Row className="justify-content-between w-75 align-self-center align-items-center">
                       <Col md={5}>
                         <p className="px-0 mb-0">12mb</p>
@@ -187,27 +196,32 @@ const MarketPlaceContainer = ({ organizations, user }) => {
                         </p>
                       </Col>
                     </Row>
-                    */}                  
+                    */}
+                  </div>
+                  <div className={styles.marketplaceModalMain}>
+                    <h3>About</h3>
+                    <p className="px-0">{plugin.description}</p>
+                  </div>
                 </div>
-                <div className={styles.marketplaceModalMain}>
-                  <h3>About</h3>
-                  <p className="px-0">{plugin.description}</p>
+              )}
+              {!isLoading && showSuccess && (
+                <div className="h-100 d-flex flex-column align-items-center justify-content-center">
+                  <figure className={styles.successMarkContainer}>
+                    <img
+                      src={SuccessMark}
+                      className={styles.successMark}
+                      alt="success icon"
+                    />
+                  </figure>
+                  <p className={styles.successMarkText}>
+                    Plugin installed successfully to organisation
+                  </p>
                 </div>
-              </div>
-            )}
-            {
-              !isLoading && showSuccess && 
-              <div className="h-100 d-flex flex-column align-items-center justify-content-center">
-                <figure className={styles.successMarkContainer}>
-                  <img src={SuccessMark} className={styles.successMark} alt="success icon" />
-                </figure>
-                <p className={styles.successMarkText}>Plugin installed successfully to organisation</p>
-              </div>
-            }
-          </Modal>
-        )}
-      </div>
-      }
+              )}
+            </Modal>
+          )}
+        </div>
+      )}
     </>
   )
 }
