@@ -1,9 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const OverviewTab = () => {
-    return (
-        <div>Overview</div>
-    )
+  return <div>Overview</div>
 }
 
-export default OverviewTab;
+export default OverviewTab

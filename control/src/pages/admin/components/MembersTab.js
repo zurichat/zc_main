@@ -1,9 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const MembersTab = () => {
-    return (
-        <div>Billing</div>
-    )
+  return <div>Billing</div>
 }
 
-export default MembersTab;
+export default MembersTab
