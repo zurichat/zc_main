@@ -5,10 +5,14 @@ import securityFeatureStyles from './styles/security_features.module.css'
 import Footer from '../../components/Footer'
 import Section1 from '../../components/Security'
 import Header from '../../components/Header'
+import { Helmet } from 'react-helmet'
 
 const Security = () => {
   return (
     <div>
+      <Helmet>
+        <title> Security - Zuri Chat</title>
+      </Helmet>
       <Header />
       <Section1 />
       <section className={securityStyles.compliancesection}>
