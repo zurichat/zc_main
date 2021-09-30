@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import styles from '../styles/Profile.module.css'
-import userAvatar from '../assets/images/user.svg'
+import userAvatar from '../assets/images/avatar_vct.svg'
 import facebook from '../assets/images/facebook.svg'
 import twitter from '../assets/images/twitter.svg'
 import linkedin from '../assets/images/linkedin.svg'
