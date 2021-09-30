@@ -96,17 +96,18 @@ const Login = () => {
             }
           })
           .then(res => {
-            const orgs = res.data.data['Organizations']
+            const orgs = res.data.data['Organizations'].length
+            console.log('reg orgs', orgs)
 
-            switch (orgs) {
-              case orgs.length > 1:
+            switch (true) {
+              case orgs > 1:
                 history.push('/choose-workspace')
                 break
-              case orgs.length < 1:
+              case orgs < 1:
                 history.push('/createworkspace')
+                break
               default:
                 history.push('/home')
-                break
             }
           })
           .catch(err => {
