@@ -12,7 +12,6 @@
 
 .herotext {
   color: #333333;
-
 }
 .herotextHeader {
   font-style: normal;
@@ -21,7 +20,8 @@
   line-height: 30px;
 }
 
-.button1, .button2 {
+.button1,
+.button2 {
   display: inline-block;
   border-radius: 3px;
   color: white;
@@ -37,10 +37,10 @@
   margin: 0 60px 55px 55px;
 }
 
-.button1:hover, .button2:hover {
+.button1:hover,
+.button2:hover {
   background-color: rgb(52, 179, 94);
 }
-
 
 .info {
   background-color: #00b87c;
@@ -89,7 +89,8 @@
 }
 
 @media screen and (max-width: 385px) {
-  .button1, .button2 {
+  .button1,
+  .button2 {
     padding: 12px;
     font-size: 9px;
     line-height: 22px;
