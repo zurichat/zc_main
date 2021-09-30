@@ -10,7 +10,7 @@
   justify-content: space-between;
 }
 .plugin__header__title {
-  display: flex !important;
+  display: flex;
   align-items: center;
   cursor: pointer;
   border-radius: 0.5em;
@@ -33,11 +33,15 @@
   font-size: 2.5em;
 }
 .plugin__header__thumbnail {
-  display: flex !important;
+  display: flex;
   align-items: center;
   background: #01d892;
   border-radius: 0.4em;
   padding: 1em;
+  cursor: pointer;
+}
+.plugin__thumbnail {
+  display: flex;
 }
 .plugin__thumbnail img {
   width: 2.5em;
