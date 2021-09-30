@@ -19,6 +19,17 @@
 .row {
 } */
 
+.subCon2 {
+  overflow-y: scroll;
+  height: 100%;
+  width: unset;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.subCon2::-webkit-scrollbar {
+  display: none;
+}
 .orgDiv {
   width: inherit;
   height: 44px;
@@ -40,6 +51,10 @@
   font-weight: bold;
   font-size: 1.125em;
   line-height: 28px;
+}
+
+.orgHeader {
+  cursor: pointer;
 }
 
 .arrowDown {
