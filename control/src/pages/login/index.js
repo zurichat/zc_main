@@ -98,6 +98,10 @@ const Login = () => {
           .then(res => {
             const orgs = res.data.data['Organizations'].length
             console.log('reg orgs', orgs)
+            localStorage.setItem(
+              'currentWorkspace',
+              res.data.data['Organizations'][0]
+            )
 
             switch (true) {
               case orgs > 1:
