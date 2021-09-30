@@ -8,16 +8,22 @@ const cookieStorage = {
     const cookies = document.cookie
       .split(';')
       .map(cookie => cookie.split('='))
-      .reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: value }), {})
+      .reduce(
+        (acc, [key, value]) => ({
+          ...acc,
+          [key.trim()]: value
+        }),
+        {}
+      )
     return cookies[key]
   },
-  setItem: (key, value) => {
-    document.cookie = `${key}=${value}`
+  setItem: (key, value, age) => {
+    document.cookie = `${key}=${value}; max-age=${age}`
   }
 }
 
 const handleClickAllow = event => {
-  cookieStorage.setItem('Zuri Chat Accept', 'true')
+  cookieStorage.setItem('Zuri Chat Accept', 'true', '2592000')
   event.target.parentNode.parentNode.parentNode.parentNode.style.opacity = '0'
 }
 const handleClickDecline = event => {
