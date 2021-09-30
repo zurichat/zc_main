@@ -329,7 +329,7 @@ const EditProfile = () => {
                 <img
                   ref={avatarRef}
                   className="img"
-                  src={userProfileImage ? userProfileImage : avatar}
+                  src={userProfileImage ? userProfileImage : defaultAvatar}
                   alt="profile-pic"
                 />
 
