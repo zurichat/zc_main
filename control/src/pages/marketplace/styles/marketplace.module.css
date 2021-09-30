@@ -1,468 +1,584 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 .marketplace {
-  background: #ffffff;
-  min-height: 100vh;
-  font-size: 15px;
-}
-
-.marketplaceNavbar {
-  border: 1px solid rgba(187, 186, 231, 0.15);
-  padding-bottom: 10px;
+    background: #ffffff;
+    min-height: 100vh;
+    font-size: 15px;
 }
 
 .navbar {
-  display: grid;
-  grid-template-columns: 20% 30% 50%;
-  width: 100%;
-  padding-left: 35px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 40px;
 }
 
 .marketplaceSearchBar {
-  width: 100%;
-  height: 45px;
-  background: #fafafa;
-  border: 1px solid rgba(187, 186, 231, 0.15);
-  box-sizing: border-box;
-  border-radius: 2px;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  padding: 8px 5px 8px 15px;
-  place-content: center;
+    width: 50%;
+    height: 45px;
+    background: #fafafa;
+    border: 1px solid rgba(187, 186, 231, 0.15);
+    box-sizing: border-box;
+    border-radius: 2px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding: 8px 5px 8px 15px;
+    place-content: center;
 }
 
 .marketplaceSearchBar input {
-  border: 0;
-  background-color: transparent;
-  outline: none;
-  width: calc(100% - 40px);
-  height: 100%;
-  margin-left: 10px;
-  font-size: 14px;
-  color: #606060;
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    width: calc(100% - 10px);
+    height: 100%;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #606060;
 }
 
 .marketplaceSearchBar input::placeholder {
-  font-size: 14px;
-  color: #606060;
+    font-size: 14px;
+    color: #606060;
 }
 
 .accountOwnerAvatar {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-right: 20px;
-}
-
-.accountOwnerFirstName {
-  font-weight: 700;
-  color: black;
-  margin-right: 8px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
 }
 
 .accountOwnerAvatarContainer {
-  width: 30px;
-  height: 30px;
-  background: #c4c4c4;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-weight: 900;
-  font-size: larger;
+    cursor: pointer;
+    background: #cdcdcd;
+    color: gray;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 18px;
+    position: relative;
+}
+
+.joinButton {
+    border: 0;
+    outline: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 40px;
+    border-radius: 4px;
+    font-family: 'Lato';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 15px;
+    padding: 12px 18px;
+    background: #00B87C;
+}
+
+.joinButton:hover,
+.joinButton:focus {
+    border: 1px solid #00b87c;
+    color: #00b87c;
+    background: transparent;
 }
 
 .marketplaceHero {
-  min-height: 80vh;
-  display: flex;
-  max-width: 95%;
-  margin: 0 auto;
-  padding-left: 1.5rem;
-  font-family: 'Lato', sans-serif;
-  padding-top: 2rem;
+    min-height: 80vh;
+    display: flex;
+    max-width: 95%;
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    font-family: 'Lato', sans-serif;
 }
 
 .marketplaceHero h1 {
-  font-weight: 700;
-  font-size: 40px;
-  width: 75%;
-  text-align: left;
-  text-transform: capitalize;
-  line-height: 64px;
-  color: #212121;
+    font-weight: 800;
+    font-size: 40px;
+    width: 75%;
+    text-align: left;
+    text-transform: capitalize;
+    line-height: 130%;
+    color: #1D1C1D;
 }
 
 .marketplaceHero p {
-  font-weight: 400;
-  text-align: left;
-  width: 55%;
-  font-size: 16px;
-  line-height: 169%;
-  color: #606060;
+    font-weight: 400;
+    text-align: left;
+    width: 55%;
+    font-size: 16px;
+    line-height: 130%;
+    color: #616061;
 }
 
 .marketplaceHeroButton {
-  border: 0;
-  outline: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 6px 25px;
-  width: 201px;
-  height: 51px;
-  background: #00b87c;
-  border-radius: 3px;
-  font-family: Lato;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 20px;
-  color: #ffffff;
-  text-decoration: none;
-  margin-top: 25px;
+    border: 0;
+    outline: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 25px;
+    width: 101px;
+    height: 45px;
+    background: #00b87c;
+    border-radius: 4px;
+    font-family: Lato;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 15px;
 }
 
 .marketplaceHeroButton:hover,
 .marketplaceHeroButton:focus {
-  border: 1px solid #00b87c;
-  color: #00b87c;
-  background: white;
+    border: 1px solid #00b87c;
+    color: #00b87c;
+    background: white;
+}
+
+.pluginButton {
+    border: 0;
+    outline: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 40px;
+    border-radius: 4px;
+    font-family: 'Lato';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 15px;
+    padding: 12px 18px;
+    background: #00B87C;
+}
+
+.pluginButton:hover,
+.pluginButton:focus {
+    border: 1px solid #00b87c;
+    color: #00b87c;
+    background: transparent;
 }
 
 .circleBackground {
-  width: 400px;
-  height: 600px;
-  position: relative;
+    width: 400px;
+    height: 600px;
+    position: relative;
 }
 
 .marketplaceSvg {
-  position: absolute;
+    position: absolute;
 }
 
 .marketplaceSvg:nth-child(1) {
-  top: 0;
-  left: 3%;
+    top: 0;
+    left: 3%;
 }
 
 .marketplaceSvg:nth-child(2) {
-  top: 40%;
-  left: -45%;
+    top: 40%;
+    left: -45%;
 }
 
 .marketplaceSvg:nth-child(3) {
-  top: 40%;
-  right: -5%;
+    top: 40%;
+    right: -5%;
 }
 
 .svgConnectionLineOne {
-  position: absolute;
-  left: -92%;
-  top: 24%;
+    position: absolute;
+    left: -92%;
+    top: 24%;
 }
 
 .svgConnectionLineTwo {
-  position: absolute;
-  left: 15%;
+    position: absolute;
+    left: 15%;
 }
 
 .svgConnectionLineThree {
-  position: absolute;
-  top: -109%;
-  right: 33%;
+    position: absolute;
+    top: -109%;
+    right: 33%;
 }
 
 .marketplaceTabs {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  color: #c4c4c4;
-  font-family: 'Lato';
-}
-
-.marketplaceTabSelected {
-  font-family: 'Lato';
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
-  color: #00b87c;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #00b87c;
-}
-
-.marketplaceTabList {
-  border-bottom: none;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 93px;
-}
-
-.marketplaceTab {
-  font-family: 'Lato';
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
-  cursor: pointer;
-}
-
-.marketplaceTab:nth-child(2) {
-  margin-right: 100px;
-  margin-left: 100px;
-}
-
-.marketPlaceContainer {
-  /*max-width: 100%;*/
-  background: #e5e5e5;
-  padding-top: 50px;
-}
-
-.zuriMarketPlace__container {
-  display: grid;
-  grid-template-columns: repeat(6, 180px);
-  column-gap: 2rem;
-  justify-content: center;
-  margin-bottom: 95px;
-}
-
-.pluginCardContainer {
-  cursor: pointer;
-  text-decoration: none;
-  margin-bottom: 60px;
-}
-
-.pluginCard {
-  width: 100%;
-}
-
-.pluginCardTop {
-  background: white;
-  width: 180px;
-  height: 170px;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.pluginCardTop:hover {
-  background: #f53b00;
-}
-
-.pluginImage {
-  width: 61px;
-  height: 61px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.pluginImage img {
-  width: 100%;
-  width: 100%;
-}
-
-.pluginInstallStatus {
-  position: absolute;
-  background: #00b87c;
-  border-radius: 0px 20px 0px 0px;
-  color: white;
-  top: 0;
-  right: 0;
-  padding: 4px 9px;
-}
-
-.pluginDescription {
-  font-size: 16px;
-  text-align: left;
-  text-transform: capitalize;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 22px;
-  color: #000000;
-}
-
-.pluginContent {
-  font-size: 14px;
-  line-height: 20px;
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  color: #455880;
-  align-items: center;
-}
-
-.pluginContent p {
-  font-weight: 300;
-  font-size: 13px;
-  line-height: 19px;
-  color: #606060;
-}
-
-.marketplaceModal {
-  padding: 30px 38px;
-}
-
-.marketplaceModalTop {
-  padding: 30px 38px 0;
-}
-
-.modalPluginIcon {
-  width: 120px;
-  height: 120px;
-  align-self: center;
-}
-
-.marketplaceModalTop h2 {
-  font-family: 'Poppins';
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 20px;
-  color: #000000;
-  align-self: center;
-  margin-bottom: 12px;
-}
-
-.marketplaceModalTop h3 {
-  font-family: 'Poppins';
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 16px;
-  color: #606060;
-  align-self: center;
-}
-
-.modalPluginIcon img {
-  width: 100%;
-  height: 100%;
-}
-
-.modalDownloadAmount {
-  text-align: right;
-}
-
-.modalInstallBtn {
-  margin-top: 20px;
-  align-self: center;
-  text-align: center;
-  padding: 12px 50px;
-  width: 80%;
-  height: 48px;
-  background: #2f80ed;
-  border-radius: 3px;
-  font-family: 'Lato';
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 20px;
-  color: #ffffff;
-  border: 0;
-  outline: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.marketplaceModalMain {
-  padding: 0px 38px 30px;
-  margin-top: 22px;
-}
-
-.marketplaceModalMain h3 {
-  font-family: 'Lato';
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 22px;
-  color: #000000;
-  text-transform: capitalize;
-}
-
-.marketplaceModalMain p {
-  font-family: 'Lato';
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 21px;
-  color: #606060;
-}
-
-@media (max-width: 800px) {
-  .marketplaceHero {
-    font-size: 16px;
-  }
-  .marketplaceHero h1 {
-    font-size: 30px;
-    width: 95%;
-    line-height: 2.5rem;
-  }
-  .marketplaceHero p {
-    width: 85%;
-  }
-  .marketplaceHero p + div {
-    width: 375px;
-  }
-  .zuriMarketPlace__container {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
-  }
-  .circleBackground {
-    width: 100%;
+    color: #c4c4c4;
+    font-family: 'Lato';
+}
+
+.marketplaceTabSelected {
+    font-family: 'Lato';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #00b87c;
+    position: relative;
+}
+
+.marketplaceTabSelected::before {
+    content: '';
+    position: absolute;
+    bottom: -25%;
+    width: 50%;
+    background: #00B87C;
+    height: 2px;
+}
+
+.marketplaceTabList {
+    border-bottom: none;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-bottom: 70px;
+    margin-top: 25px;
+}
+
+.marketplaceTab {
+    font-family: 'Lato';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.marketplaceTab:nth-child(2) {
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.marketPlaceContainer {
+    background: #e5e5e5;
+    padding-top: 50px;
+}
+
+.marketplaceContainerMain {
+    padding: 0 4%;
+}
+
+.marketplaceContainerTitle {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 24px;
+    color: #1D1C1D;
+}
+
+.marketplaceContainerCaption {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    margin-top: 14px;
+    color: #616061;
+}
+
+.zuriMarketPlace__container {
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    column-gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 95px;
+    padding: 0 6%;
+}
+
+.pluginCardContainer {
+    cursor: pointer;
+    margin-bottom: 40px;
+    background: white;
+    border-radius: 8px;
+    max-height: 200px;
+    font-family: 'Lato';
+    font-weight: 400;
+    font-size: 14px;
+    position: relative;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 250ms cubic-bezier(0.21, 0.45, 0.01, 0.2);
+}
+
+.pluginCardContainer:hover {
+    box-shadow: 3px 1px 25px #0000004a;
+}
+
+.pluginCardTop {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    align-items: flex-start;
+    color: #1D1C1D;
+    margin-bottom: 24px;
+}
+
+.pluginImage {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .marketplaceSvg {
-    position: relative;
-    top: 0 !important;
-    left: auto !important;
-    right: auto !important;
-  }
-  .svgConnectionLineOne,
-  .svgConnectionLineThree,
-  .svgConnectionLineTwo {
-    display: none;
-  }
-  .marketplaceTab:nth-child(2) {
-    margin-right: 20px;
-    margin-left: 20px;
-  }
-  .navbar {
-    padding-left: 15px;
-    margin-top: 5px;
-    margin-top: 5px;
-    grid-template-columns: 30% 65%;
-  }
-  .navbar-brand {
-    padding-left: 0;
-  }
-  .marketplaceSearchBar {
-    margin-top: 1rem;
-    width: 95%;
-  }
-  .accountOwnerAvatar {
-    margin-top: 1rem;
-    justify-content: flex-start;
-  }
-  .accountOwnerFirstName {
-    display: none;
-  }
-  .marketplaceModal {
-    padding: 10px 18px;
-  }
-  .marketplaceModalTop {
-    padding: 10px 18px 20px;
-  }
-  .marketplaceModalMain {
-    padding: 0 18px 20px;
-  }
-  .marketplaceTabList {
-    width: 80%;
-    align-self: center;
-  }
-  .marketplaceTab {
+    margin-right: 24px;
+    flex: 0 0 30px;
+}
+
+.pluginImage img {
+    min-width: 18px;
+    max-width: 100%;
+    height: 20px;
+}
+
+.pluginInfo {
+    margin-top: 10px;
+}
+
+.pluginName {
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 130%;
+    color: #1D1C1D;
+}
+
+.pluginDescription {
+    margin-top: 6px;
+    font-weight: 400;
     font-size: 14px;
-  }
+    line-height: 130%;
+    color: #616061;
+}
+
+.marketplaceModal {
+    max-width: 600px;
+}
+
+.modalContent {
+    height: 430px;
+    border-radius: 8px;
+}
+
+.marketplaceModalTop {
+    padding: 30px 38px;
+}
+
+.pluginGrid {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+}
+
+.modalPluginIcon {
+    width: 60px;
+    height: 60px;
+    align-self: center;
+}
+
+.pluginMainContent {
+    padding-top: 12px;
+    margin-left: 50px;
+}
+
+.marketplaceModalTop h2 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+    color: #000000;
+    align-self: center;
+    margin-bottom: 12px;
+}
+
+.marketplaceModalTop h3 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: #606060;
+    align-self: center;
+}
+
+.modalPluginIcon img {
+    width: 100%;
+    height: 100%;
+}
+
+.pluginInstallRate {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 130%;
+    color: #1D1C1D;
+}
+
+.modalDownloadAmount {
+    text-align: right;
+}
+
+.modalInstallBtn {
+    margin-top: 20px;
+    align-self: center;
+    text-align: center;
+    padding: 12px 50px;
+    width: 100%;
+    height: 48px;
+    background: #2f80ed;
+    border-radius: 3px;
+    font-family: 'Lato';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #ffffff;
+    border: 0;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.marketplaceModalMain {
+    padding: 0px 38px 10px;
+    margin-top: 22px;
+}
+
+.marketplaceModalMain h3 {
+    font-family: 'Lato';
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    text-transform: capitalize;
+}
+
+.marketplaceModalMain p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 31px;
+    color: #616061;
+}
+
+.successMarkContainer {
+    height: 100px;
+    width: 100px;
+    background: #C0FEEA;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.successMarkText {
+    margin-top: 50px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 31px;
+    text-align: center;
+    color: #1D1C1D;
+    width: 75%;
+}
+
+@media (max-width: 800px) {
+    .marketplaceHero {
+        font-size: 16px;
+        margin: 0;
+        padding-top: 2.5rem;
+    }
+    .marketplaceHero h1 {
+        font-size: 30px;
+        width: 95%;
+        line-height: 2.5rem;
+    }
+    .marketplaceHero p {
+        width: 85%;
+    }
+    .marketplaceHero p+div {
+        width: 95%;
+    }
+    .marketplaceHeroButton {
+        width: 20%;
+    }
+    .zuriMarketPlace__container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0;
+    }
+    .circleBackground {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .marketplaceSvg {
+        position: relative;
+        top: 0 !important;
+        left: auto !important;
+        right: auto !important;
+    }
+    .svgConnectionLineOne,
+    .svgConnectionLineThree,
+    .svgConnectionLineTwo {
+        display: none;
+    }
+    .marketplaceTab:nth-child(2) {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    .navbar {
+        padding-left: 15px;
+        margin-top: 5px;
+        margin-top: 5px;
+        flex-wrap: nowrap;
+    }
+    .navbar-brand {
+        padding-left: 0;
+    }
+    .marketplaceSearchBar {
+        width: 70%;
+    }
+    .accountOwnerAvatar {
+        margin-top: 1rem;
+    }
+    .accountOwnerFirstName {
+        display: none;
+    }
+    .marketplaceModal {
+        padding: 10px 18px;
+    }
+    .marketplaceModalTop {
+        padding: 10px 18px 20px;
+    }
+    .marketplaceModalMain {
+        padding: 0 18px 20px;
+    }
+    .marketplaceContainerMain {
+        flex-direction: column;
+    }
+    .marketplaceTabList {
+        width: 100%;
+        align-self: flex-start;
+    }
+    .marketplaceTab {
+        font-size: 14px;
+    }
+    .pluginMainContent {
+        margin-left: 15px;
+    }
+    .marketplaceModalMain p {
+        font-size: 16px;
+        line-height: 28px;
+    }
 }
