@@ -13,7 +13,6 @@ import { MarketPlaceProvider } from '../../context/MarketPlace.context.js'
 import axios from 'axios'
 import { Helmet } from 'react-helmet'
 
-
 const MarketPlace = () => {
   const [userDetails, setUserDetails] = useState(null)
   return (
