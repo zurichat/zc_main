@@ -4,7 +4,7 @@ import ProfileModal from './ProfileModal'
 import { authAxios } from '../utils/Api'
 
 import { AiFillCamera } from 'react-icons/ai'
-import avatar from '../assets/images/avatar_vct.svg'
+import avatar from '../assets/images/user.svg'
 import { ProfileContext } from '../context/ProfileModal'
 import Loader from 'react-loader-spinner'
 import toast, { Toaster } from 'react-hot-toast'
@@ -31,8 +31,7 @@ const EditProfile = () => {
     timezone: '',
     twitter: '',
     facebook: '',
-    loading: false,
-    imageLoading: false
+    loading: false
   })
 
   const addList = () => {
@@ -50,7 +49,7 @@ const EditProfile = () => {
   //Function handling Image Upload
 
   const handleImageChange = event => {
-    setState({ imageLoading: true })
+    setState({ loading: true })
     if (imageRef.current.files[0]) {
       let fileReader = new FileReader()
 
@@ -62,27 +61,25 @@ const EditProfile = () => {
 
       const imageReader = event.target.files[0]
 
-      console.log('Gotten image', imageReader)
-
       const formData = new FormData()
       formData.append('image', imageReader)
 
       authAxios
         .patch(`/organizations/${orgId}/members/${user._id}/photo`, formData)
         .then(res => {
-          console.log('image patch', res)
-          const newUploadedImage = res.data.data
-          setUserProfileImage(newUploadedImage)
-          setState({ imageLoading: false })
+          console.log(res)
+          newUploadedImage = res.data.data
+          setState({ loading: false })
+          setUserProfileImage(res.data.data)
           toast.success('User Image Updated Successfully', {
-            position: 'top-center'
+            position: 'bottom-center'
           })
         })
         .catch(err => {
           console.log(err)
-          setState({ imageLoading: false })
+          setState({ loading: false })
           toast.error(err?.message, {
-            position: 'top-center'
+            position: 'bottom-center'
           })
         })
     }
@@ -308,23 +305,12 @@ const EditProfile = () => {
             </div>
             <div className="img-container">
               <div className="avatar">
-                <div className="avatar-container">
-                  {state.imageLoading ? (
-                    <Loader
-                      type="Oval"
-                      color="#00B87C"
-                      height={24}
-                      width={24}
-                    />
-                  ) : (
-                    <img
-                      ref={avatarRef}
-                      className="img"
-                      src={userProfileImage ? userProfileImage : avatar}
-                      alt="profile-pic"
-                    />
-                  )}
-                </div>
+                <img
+                  ref={avatarRef}
+                  className="img"
+                  src={userProfileImage ? userProfileImage : avatar}
+                  alt="profile-pic"
+                />
 
                 <input
                   ref={imageRef}
@@ -345,9 +331,7 @@ const EditProfile = () => {
                   Upload Image
                   {/* ) */}
                 </label>
-                <div role="button" className="rmvBtn">
-                  Remove Image
-                </div>
+                <button className="btns rmvBtn">Delete image</button>
               </div>
             </div>
           </div>
@@ -360,7 +344,7 @@ const EditProfile = () => {
             )}
           </div>
           <div className="button-wrapper">
-            <button className="btns cncBtn">Cancel</button>
+            <button className="btns rmvBtn">Cancel</button>
             <button onClick={handleFormSubmit} className="btns chgBtn">
               {state.loading ? (
                 <Loader type="ThreeDots" color="#fff" height={40} width={40} />
