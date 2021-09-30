@@ -14,8 +14,7 @@ export const pluginHeader = singleSpaReact({
 export const name = 'Plugin header'
 
 export const bootstrap = [
-  args => {
-    console.log('Main component', args.name)
+  () => {
     enhancedComponent = () => <Root />
     return Promise.resolve()
   }
