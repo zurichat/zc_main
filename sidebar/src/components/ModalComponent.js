@@ -108,7 +108,7 @@ const ModalComponent = ({ isOpen }) => {
             <hr className={styles.modalDivider} />
             <p>Analytics</p>
           </div>
-        </div>  
+        </div>
       </div>
       <hr className={styles.modalDivider} />
       <div className={styles.modalSection}>
