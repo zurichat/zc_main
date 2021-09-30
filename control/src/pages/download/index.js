@@ -1,10 +1,6 @@
 import React from 'react'
-import DownloadsWindows from './DownloadsWindows'
 import DownloadsAndroid from './DownloadsAndroid'
-import DownloadsIOS from './DownloadsIOS'
-import DownloadsMac from './DownloadsMac'
-
-import { isIOS, isMacOs } from 'react-device-detect'
+import DownloadsDesktop from './DownloadsDesktop'
 
 const Download = () => {
   const [width, setWidth] = React.useState(window.innerWidth)
@@ -18,9 +14,7 @@ const Download = () => {
   }, [])
 
   return width > breakpoint ? (
-    <DownloadsWindows />
-  ) : isIOS ? (
-    <DownloadsIOS />
+    <DownloadsDesktop />
   ) : (
     <DownloadsAndroid />
   )
