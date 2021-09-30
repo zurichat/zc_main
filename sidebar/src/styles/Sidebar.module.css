@@ -87,6 +87,11 @@
   padding-inline-end: 1.5em;
 }
 
+.modalContainer {
+  z-index: 10000;
+  position: relative;
+}
+
 /* .orgHeader {
   display: flex;
   justify-content: center;
