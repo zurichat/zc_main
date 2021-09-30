@@ -17,6 +17,7 @@ import { authAxios } from './utils/Api'
 import Profile from './components/Profile'
 import styles from './styles/Topbar.module.css'
 import Loader from 'react-loader-spinner'
+import { GetWorkspaceUser } from '@zuri/control'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { openModal, presence, setPresence } = useContext(TopbarContext)
@@ -56,10 +57,16 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         })
     }
 
-    setUserProfileImage(user.image_url)
-
     getOrganizations()
   }, [setOrgId, user.image_url, setUser])
+
+  useEffect(() => {
+    const userdef = JSON.parse(sessionStorage.getItem('user'))
+
+    GetWorkspaceUser(userdef.email).then(res => {
+      setUserProfileImage(res.image_url)
+    })
+  })
 
   let toggleStatus = null
 
@@ -105,7 +112,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       {/* <AdminForm /> */}
       <ProfileImageContainer>
         {toggleStatus}
-        {userProfileImage ? (
+        {typeof userProfileImage === 'string' ? (
           <img
             src={userProfileImage !== '' ? userProfileImage : defaultAvatar}
             onClick={openModal}
@@ -114,13 +121,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
             alt="user profile avatar"
           />
         ) : (
-          <Loader
-            type="ThreeDots"
-            color="#00B87C"
-            height={30}
-            width={30}
-            // style={{ cursor: 'pointer' }}
-          />
+          <Loader type="ThreeDots" color="#00B87C" height={30} width={30} />
         )}
       </ProfileImageContainer>
 
