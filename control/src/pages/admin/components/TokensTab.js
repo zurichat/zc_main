@@ -1,9 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const TokensTab = () => {
-    return (
-        <div>Tokens</div>
-    )
+  return <div>Tokens</div>
 }
 
-export default TokensTab;
+export default TokensTab

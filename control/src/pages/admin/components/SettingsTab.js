@@ -1,9 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const SettingsTab = () => {
-    return (
-        <div>Settings</div>
-    )
+  return <div>Settings</div>
 }
 
-export default SettingsTab;
+export default SettingsTab
