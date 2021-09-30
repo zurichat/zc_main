@@ -87,7 +87,7 @@ a:hover {
   color: #ffffff;
 }
 .downloadButtonContainer {
- margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .downloadButton {
@@ -153,15 +153,11 @@ a:hover {
   .plink {
     font-size: 16px;
   }
-  .laptop {
-    width: 400px !important;
-    margin: 50px !important;
-  }
 }
 
 @media screen and (max-width: 1200px) {
-
-  .hero, .ctaContainer{
+  .hero,
+  .ctaContainer {
     padding: 100px 40px;
   }
   .heroheading {

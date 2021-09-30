@@ -39,23 +39,39 @@ const DownloadsDesktop = () => {
       </section>
 
       <section className={`${styles.info}`}>
-        <p className='h2 text-center font-weight-normal text-white w-50 mb-4'>
+        <p className="h2 text-center font-weight-normal text-white w-50 mb-4">
           Download and enjoy the Zuri Chat experience on any these devices
         </p>
         <div className={`${styles.downloadButtonContainer}`}>
-          <a href={exe.link} download={exe.name} className={styles.downloadButton}>
+          <a
+            href={exe.link}
+            download={exe.name}
+            className={styles.downloadButton}
+          >
             Windows
             <img className={`px-2`} src={windows} alt="download icon" />
           </a>
-          <a href={exe.link} download={exe.name} className={styles.downloadButton}>
+          <a
+            href={exe.link}
+            download={exe.name}
+            className={styles.downloadButton}
+          >
             macOS
             <img className={`px-2`} src={apple} alt="download icon" />
           </a>
-          <a href={exe.link} download={exe.name} className={styles.downloadButton}>
+          <a
+            href={exe.link}
+            download={exe.name}
+            className={styles.downloadButton}
+          >
             iOS
             <img className={`px-2`} src={apple} alt="download icon" />
           </a>
-          <a href={exe.link} download={exe.name} className={styles.downloadButton}>
+          <a
+            href={exe.link}
+            download={exe.name}
+            className={styles.downloadButton}
+          >
             Android
             <img className={`px-2`} src={windows} alt="download icon" />
           </a>
