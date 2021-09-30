@@ -1,5 +1,6 @@
 .containermain {
   max-width: 768px;
+  margin-top: 60px !important;
 }
 
 .container {
@@ -19,7 +20,7 @@
   color: #1d1c1d;
 }
 
-.zuritext {
+.herotext {
   font-style: normal;
   font-weight: 800;
   font-size: 30px;
@@ -28,101 +29,27 @@
   padding-top: 30px;
 }
 
-.playstorediv {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #1d1c1d;
-  width: 98%;
-  height: 55px;
-  margin: 18px 0;
-  border-radius: 5px;
+.button1 {
+  display: inline-block;
+  border-radius: 4px;
+  color: white;
+  background-color: #00b87c;
+  padding: 16px;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: normal;
+  text-decoration: none;
 }
 
-.newtext {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 17px;
-  color: #1d1c1d;
-  text-decoration: underline !important;
+.button1:hover {
+  background-color: rgb(52, 179, 94);
 }
 
-.phonediv {
-  display: flex;
-  width: 90%;
-  margin: auto;
-}
-
-.PhoneDM,
-.PhoneChannel {
-  position: relative;
-}
-
-.PhoneDM {
-  width: 310px;
-  right: 23px;
-  top: 90px;
-}
-
-.PhoneChannel {
-  width: 310px;
-  right: 280px;
-  top: 60px;
-}
-
-.desktopdiv {
-  background-color: #ffffff;
-  padding: 5%;
+.info {
+  background-color: #00b87c;
+  height: 900px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-}
-
-.desktopbigtext {
-  font-style: normal;
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 29px;
-  color: #1d1c1d;
-  margin: 10px 0;
-  padding-top: 20px;
-  text-align: center;
-}
-
-.desktopsmalltext {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  color: #616061;
-  text-align: center;
-  margin: 10px 0;
-}
-
-.emailinput {
-  width: 97%;
-  margin: 10px 0;
-  padding: 15px 5px 15px 5px;
-  background-color: #ffffff;
-  color: #bdbdbd;
-  border: 1px solid #828282;
-  border-radius: 5px;
-  outline: none;
-}
-
-.btn {
-  width: 100%;
-  margin: 10px 0;
-  padding: 20px;
-  background-color: #00b87c;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 19px;
+  align-items: center;
 }
