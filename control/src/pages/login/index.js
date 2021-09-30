@@ -6,7 +6,7 @@ import FormWrapper from '../../components/AuthFormWrapper'
 import LoginLoading from '../../components/LoginLoading'
 import styles from '../../component-styles/AuthFormElements.module.css'
 import axios from 'axios'
-import { GetUserInfo } from '../../zuri-control'
+import { GetUserInfo } from '@zuri/control'
 import $behaviorSubject from '../../../../globalState'
 import { Helmet } from 'react-helmet'
 // import { Link } from 'react-router-dom'
@@ -74,6 +74,8 @@ const Login = () => {
       .then(response => {
         const { data, message } = response.data
 
+        setLoading(true)
+
         //Store token in localstorage
         sessionStorage.setItem('token', data.user.token)
 
@@ -83,19 +85,42 @@ const Login = () => {
         //Store user copy in localstorage
         sessionStorage.setItem('user', JSON.stringify(data.user))
 
-        //Display message
-        // alert(message) //Change this when there is a design
-
         //Return the login data globally
         $behaviorSubject.next(response.data)
 
-        setLoading(true)
+        // Switch for redirects
+        axios
+          .get(`https://api.zuri.chat/users/${data.user.id}`, {
+            headers: {
+              Authorization: `Bearer ${data.user.token}`
+            }
+          })
+          .then(res => {
+            const orgs = res.data.data['Organizations']
 
-        setTimeout(() => {
-          //Redirect to some other page
-          history.push('/choose-workspace')
-          setLoading(false)
-        }, 2000)
+            switch (orgs) {
+              case orgs.length > 1:
+                history.push('/choose-workspace')
+                break
+              case orgs.length < 1:
+                history.push('/createworkspace')
+              default:
+                history.push('/home')
+                break
+            }
+          })
+          .catch(err => {
+            throw err
+          })
+
+        //Display message
+        // alert(message) //Change this when there is a design
+
+        // setTimeout(() => {
+        //   //Redirect to some other page
+        //   history.push('/choose-workspace')
+        //   setLoading(false)
+        // }, 2000)
       })
       .catch(error => {
         const { data } = error.response
