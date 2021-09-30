@@ -77,4 +77,4 @@ const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
     </div>
   )
 }
-export default GoogleAuth``
+export default GoogleAuth
