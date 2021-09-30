@@ -24,16 +24,15 @@ const PauseNotification = ({ pause, setPause }) => {
         <div onClick={() => setPause(!pause)} className={styles.newItem}>
           Until tomorrow
         </div>
-        <div 
-        onClick={() => setShowModal(!showModal)}
-         className={styles.newItem}>
+        <div
+          onClick={() => setShowModal(!showModal)}
+          className={styles.newItem}
+        >
           {/* Until next week */}
           Custom
         </div>
       </div>
-      <div
-        className={styles.buttonContent}
-      >
+      <div className={styles.buttonContent}>
         {/* Set a custom notification */}
         Set a notification Schedule
       </div>
