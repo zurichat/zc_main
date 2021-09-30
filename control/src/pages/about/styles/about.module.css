@@ -10,12 +10,32 @@
   text-align: center !important;
   margin-top: 2%;
 }
-.counter > h1,
+.working_remote > p {
+  font-size: 17px;
+}
+.working_remote_section > h6 {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 3%;
+}
+.working_remote_section > p {
+  font-size: 14px;
+  text-align: center;
+}
+.working_remote_section > img {
+  margin-left: 2rem;
+}
+.counter > h3,
 .counter > p {
   margin-left: 2rem;
 }
-.howedoit {
+.to_join {
   margin-top: 3%;
+}
+.join_us > p {
+  font-size: 14px;
+  line-height: 25px;
+  font-weight: 500;
 }
 .zurichat {
   height: 300px;
@@ -35,8 +55,11 @@
 .vector > h6 {
   font-size: 23px;
 }
+.vector > p {
+  font-size: 14px;
+}
 .vector > img {
-  width: 30%;
+  width: 15%;
 }
 .button {
   display: flex;
@@ -49,6 +72,9 @@
   color: #00b87c;
   margin-top: 2rem;
   font-weight: 600;
+}
+.btn_sale:hover {
+  color: #00b87c;
 }
 .btn_free {
   background-color: transparent;
@@ -70,7 +96,10 @@
   margin-top: 3%;
 }
 .team > img {
-  width: 40vw;
+  width: 30vw;
   position: relative;
   top: -16%;
+}
+span {
+  text-decoration: underline;
 }
