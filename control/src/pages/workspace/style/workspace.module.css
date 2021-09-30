@@ -368,7 +368,7 @@ button.workspace_btn:hover {
   }
 
   .workspace_header {
-    min-height: 40vh;
+    min-height: 25vh;
   }
 }
 
