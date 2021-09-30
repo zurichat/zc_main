@@ -4,7 +4,7 @@ import ProfileModal from './ProfileModal'
 import { authAxios } from '../utils/Api'
 
 import { AiFillCamera } from 'react-icons/ai'
-import avatar from '../assets/images/user.svg'
+import defaultAvatar from '../assets/images/avatar_vct.svg'
 import { ProfileContext } from '../context/ProfileModal'
 import Loader from 'react-loader-spinner'
 import toast, { Toaster } from 'react-hot-toast'
@@ -85,6 +85,27 @@ const EditProfile = () => {
     }
   }
 
+  const handleImageDelete = () => {
+    setState({ imageLoading: true })
+
+    authAxios
+      .patch(`/organizations/${orgId}/members/${user._id}/photo`, '')
+      .then(res => {
+        setUserProfileImage('')
+        setState({ imageLoading: false })
+        toast.success('User Image Removed Successfully', {
+          position: 'top-center'
+        })
+      })
+      .catch(err => {
+        console.log(err)
+        setState({ imageLoading: false })
+        toast.error(err?.message, {
+          position: 'top-center'
+        })
+      })
+  }
+
   useEffect(() => {
     setUserProfileImage(user.image_url)
   }, [user])
@@ -142,7 +163,7 @@ const EditProfile = () => {
                 <div className="mobileAvataeCon">
                   <img
                     ref={avatarRef}
-                    src={user.image_url ? user.image_url : avatar}
+                    src={user.image_url !== '' ? user.image_url : defaultAvatar}
                     alt="profile-pic"
                     className="avatar"
                   />
@@ -331,7 +352,13 @@ const EditProfile = () => {
                   Upload Image
                   {/* ) */}
                 </label>
-                <button className="btns rmvBtn">Delete image</button>
+                <div
+                  role="button"
+                  className="rmvBtn"
+                  onClick={handleImageDelete}
+                >
+                  Remove Image
+                </div>
               </div>
             </div>
           </div>

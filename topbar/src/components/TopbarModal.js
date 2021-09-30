@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from 'react'
 import { FaChevronRight } from 'react-icons/fa'
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
-import userAvatar from '../assets/images/user.svg'
+import defaultAvatar from '../assets/images/avatar_vct.svg'
 
 import styles from '../styles/Topbar.module.css'
 import { TopbarContext } from '../context/Topbar'
@@ -130,7 +130,7 @@ const TopbarModal = ({ members }) => {
           <div className={styles.sectionOne}>
             <div className={styles.oneLeft}>
               <img
-                src={userProfileImage ? userProfileImage : userAvatar}
+                src={userProfileImage !== '' ? userProfileImage : defaultAvatar}
                 alt="profile-pic"
               />
             </div>
