@@ -17,6 +17,7 @@ import { authAxios } from './utils/Api'
 import Profile from './components/Profile'
 import styles from './styles/Topbar.module.css'
 import Loader from 'react-loader-spinner'
+import Language from './components/selectLanguage'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { openModal, presence, setPresence } = useContext(TopbarContext)
@@ -123,7 +124,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           />
         )}
       </ProfileImageContainer>
-
+      {/* <Language /> */}
       <Profile />
       <TopbarModal />
     </TopNavBarBase>

@@ -9,6 +9,8 @@ import SearchBar from './components/SearchBar'
 import StatusBadge from './components/StatusBadge'
 import TopbarModal from './components/TopbarModal'
 import ProfileModal from './components/ProfileModal'
+
+import Language from './components/selectLanguage'
 // import { MembersModalButton } from './MembersModal'
 
 // Placeholder data
@@ -52,6 +54,8 @@ const Topbar = ({ userProfile: { last_name, first_name } }) => {
           {last_name} {first_name}
         </p>
       </div>
+      {/* to be removed */}
+      {/* <Language /> */}
 
       <ProfileModal />
       <TopbarModal members={faked} />
