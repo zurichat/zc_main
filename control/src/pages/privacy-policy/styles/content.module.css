@@ -140,10 +140,10 @@
 }
 
 .privacymat {
-  margin-top: 280px;
+  margin-top: 120px;
   text-decoration: underline;
-  position: absolute;
-  bottom: -650px;
+  /* position: absolute;
+  bottom: -650px; */
 }
 
 .zurimission {
@@ -155,7 +155,7 @@
   letter-spacing: 0.03em;
   color: #000000;
   padding: 0 120px 0 0;
-  margin-top: 180px;
+  margin-top: 20px;
 }
 
 .privPol {
