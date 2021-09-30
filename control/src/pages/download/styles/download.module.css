@@ -3,39 +3,33 @@
 body {
   font-family: 'Lato', sans-serif !important;
 }
-.container {
+.hero {
   margin-top: 100px !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
+  height: 614px;
 }
-.h1 {
-  font-weight: bold;
-  font-size: 48px;
-  line-height: 58px;
+
+.heroheading {
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 38px;
 }
 .p {
-  margin: 0 383px;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 30px;
   line-height: 130%;
 }
-.circle {
-  position: absolute;
-  left: 340px;
+
+.heroText {
+  width: 55%;
 }
-.screenshot {
-  position: relative;
-  top: 79px;
-}
-.circle2 {
-  position: absolute;
-  left: 1160px;
-  top: 273px;
-  z-index: 0;
-}
+
 .button1 {
   display: inline-block;
-  margin: 0px 16px;
-  width: 174px;
   border-radius: 4px;
   color: white;
   background-color: #00b87c;
@@ -45,6 +39,11 @@ body {
   font-weight: normal;
   text-decoration: none;
 }
+
+.button1:hover {
+  background-color: rgb(52, 179, 94);
+}
+
 .plink {
   color: #00b87c;
   text-decoration-line: underline;
@@ -52,8 +51,13 @@ body {
   font-size: 18px;
   line-height: 28px;
 }
-.bg {
+.info {
   background-color: #00b87c;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .h6zuri {
   font-style: normal;
@@ -62,9 +66,7 @@ body {
   line-height: 48px;
   color: #ffffff;
 }
-.zuri {
-  margin: auto;
-}
+
 .p1 {
   font-style: normal;
   font-weight: normal;
@@ -92,7 +94,7 @@ body {
 }
 a:hover {
   text-decoration: none;
-  color: #00b87c;
+  color: #ffffff;
 }
 
 @media screen and (max-width: 1325px) {
@@ -130,11 +132,6 @@ a:hover {
   .mobile {
     font-size: 20px;
   }
-  .button1 {
-    font-size: 16px;
-    line-height: 20px;
-    padding: 8px;
-  }
   .plink {
     font-size: 16px;
   }
@@ -153,10 +150,6 @@ a:hover {
 @media screen and (max-width: 1200px) {
   .h1 {
     font-size: 28px;
-  }
-  .p {
-    margin: 0 320px;
-    font-size: 14px;
   }
   .circle {
     width: 150px;
