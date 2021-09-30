@@ -3,11 +3,11 @@ import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
 import DatePicker from 'react-datepicker'
 import TimePicker from 'react-time-picker'
 import styles from '../styles/SetStatusModal.module.css'
-import {authAxios} from "../utils/Api";
+import { authAxios } from '../utils/Api'
 import blackx from '../assets/images/blackx.svg'
 import whitex from '../assets/images/whitex.svg'
 import down from '../assets/images/down.svg'
-import { ProfileContext } from "../context/ProfileModal";
+import { ProfileContext } from '../context/ProfileModal'
 
 const SetStatusModal = ({ statusModal, setStatusModal }) => {
   const [dropdown, setDropdown] = useState(false)
@@ -27,8 +27,11 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
     e.preventDefault()
     const data = { emoji, text, choosePeriod }
 
-    authAxios.patch(`/organizations/${orgId}/members/${user._id}/status`, { status: text } )
-      .then (res => {
+    authAxios
+      .patch(`/organizations/${orgId}/members/${user._id}/status`, {
+        status: text
+      })
+      .then(res => {
         console.log(res)
         setUser({ ...user, status: text })
       })
