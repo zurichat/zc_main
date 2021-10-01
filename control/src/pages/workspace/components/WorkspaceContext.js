@@ -41,6 +41,10 @@ export const WorkspaceProvider = ({ children }) => {
         }
       )
       if (response.status !== 200) {
+        dispatch({
+          type: 'ACTION_FAILED',
+          error: `Unable to fetch list of wokspaces, status code: ${response.status}`
+        })
         throw Error(
           `Unable to fetch list of wokspaces, status code: ${response.status}`
         )
