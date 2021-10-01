@@ -4,11 +4,10 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import icon from './assets/icon.svg'
 import laptop from './assets/laptop.svg'
-import infolaptop from './assets/infolaptop.svg'
-import herolaptop from './assets/herolaptop.svg'
+import device from './assets/device.svg'
 import apple from './assets/apple.svg'
 import windows from './assets/windows.svg'
-import playstore from './assets/playstoreIcon.svg'
+import android from './assets/android.svg'
 import { isIOS } from 'react-device-detect'
 
 const DownloadsMobile = () => {
@@ -38,11 +37,13 @@ const DownloadsMobile = () => {
               DOWNLOAD
             </a>
           </div>
-          <img
-            className={`${downloadStyles.screenshot}`}
-            src={herolaptop}
-            alt="app screenshot"
-          />
+          <div className={`${downloadStyles.heroImageDiv} d-flex justify-content-center`}>
+            <img
+              className={`${downloadStyles.heroImage}`}
+              src={device}
+              alt="app screenshot"
+            />
+          </div>
         </section>
         <section className={`${downloadStyles.info}`}>
           <p className={`h2 text-center font-weight-bold text-white mb-4`}>
@@ -66,14 +67,14 @@ const DownloadsMobile = () => {
               <img className={`px-2`} src={apple} alt="download icon" />
             </a>
           </div>
-          <div className={`${downloadStyles.downloadButtonContainer}`}>
+          <div className={`${downloadStyles.downloadButtonContainer} mb-4`}>
             <a
               href={exe.link}
               download={exe.name}
               className={downloadStyles.downloadButton}
             >
               Android
-              <img className={`px-2`} src={playstore} alt="download icon" />
+              <img className={`px-2`} src={android} alt="download icon" />
             </a>
             <a
               href={exe.link}
@@ -84,10 +85,10 @@ const DownloadsMobile = () => {
               <img className={`px-2`} src={apple} alt="download icon" />
             </a>
           </div>
-          <div className={`d-flex justify-content-center`}>
+          <div className={`d-flex justify-content-center mt-4 ${downloadStyles.infolaptopContainer}`}>
             <img
-              className={`${downloadStyles.screen}`}
-              src={infolaptop}
+              className={`${downloadStyles.infolaptop}`}
+              src={device}
               alt="app screenshot"
             ></img>
           </div>
@@ -108,7 +109,7 @@ const DownloadsMobile = () => {
           </div>
           <div className={`d-flex justify-content-center `}>
             <img
-              className={`${downloadStyles.screenshot}`}
+              className={`${downloadStyles.laptop}`}
               src={laptop}
               alt="app screenshot"
             ></img>
