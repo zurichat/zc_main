@@ -30,11 +30,13 @@ button:hover {
 }
 .subSection2 h3 {
   font-size: 24px;
+  color: #ffffff;
 }
 .subSection2 p {
   margin: 0;
   text-align: left;
   font-size: 20px;
+  color: #ffffff;
 }
 
 @media screen and (max-width: 1085px) {
