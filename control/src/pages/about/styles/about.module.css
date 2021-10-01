@@ -103,3 +103,22 @@
 span {
   text-decoration: underline;
 }
+
+@media only screen and (max-width: 600px) {
+  .banner {
+    margin-top: 29%;
+  }
+  .banner > h1 {
+    font-size: 20px;
+    line-height: normal;
+  }
+  .counter {
+    text-align: center;
+  }
+  .team > img {
+    width: 100%;
+  }
+  .join_us {
+    text-align: center;
+  }
+}
