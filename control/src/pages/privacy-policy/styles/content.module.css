@@ -153,8 +153,10 @@
 }
 
 .privacymat {
-  margin-top: 120px;
+  margin-top: 280px;
   text-decoration: underline;
+  position: absolute;
+  bottom: -650px;
 }
 
 .zurimission {
@@ -166,7 +168,7 @@
   letter-spacing: 0.03em;
   color: #000000;
   padding: 0 120px 0 0;
-  margin-top: 20px;
+  margin-top: 180px;
 }
 
 .privPol {
@@ -218,7 +220,7 @@
   position: relative;
   top: -40px;
   padding-top: 30px;
-  margin-left: -5px;
+  margin-left: 10px;
 }
 
 .infoImage {
@@ -246,7 +248,7 @@
   line-height: 22px;
   padding: 0 150px 0 0;
   color: #000000;
-  margin-left: 20px;
+  margin-left: 25px;
 }
 
 .privbreakdown1 {
@@ -256,12 +258,13 @@
   font-size: 16px;
   line-height: 28px;
   letter-spacing: 0.01em;
+  padding: 0 0px 0 0;
   color: #000000;
   border: none;
   width: auto;
 }
 
-.smallLock {
+.securityLock {
   position: relative;
   top: -40px;
   padding-top: 30px;
@@ -331,6 +334,9 @@
   top: -25px;
 }
 
+.contentBox {
+  /* display: inline-flex; */
+}
 .paraPriv1 {
   font-family: 'Lato', sans-serif;
   font-style: normal;
