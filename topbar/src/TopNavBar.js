@@ -222,6 +222,9 @@ const HelpContainer = styled.div`
     cursor: pointer;
     opacity: 0.5;
   }
+  @media (max-width: 425px) {
+    display:none;
+  }
 `
 const ToggleStatus = styled.div`
   position: absolute;
