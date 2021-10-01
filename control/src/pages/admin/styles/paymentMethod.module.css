@@ -1,0 +1,23 @@
+.paymentWrapper {
+    width: 100%;
+    max-width: 421px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.paymentHeader {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+}
+
+.paymentParagraph {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.5;
+}
