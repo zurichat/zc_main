@@ -13,7 +13,7 @@ const DropDown = ({ itemName, items }) => {
 
   const toggleDropdown = () => setOpen(!isOpen)
 
-  console.log(items)
+  console.log(items);
   const handleItemClick = id => {
     selectedItem == id ? setSelectedItem(null) : setSelectedItem(id)
   }
@@ -33,12 +33,12 @@ const DropDown = ({ itemName, items }) => {
         >
           <p className={`mb-0 ${styles.dropDown__title}`}> {itemName} </p>
           {(items && items.group_name.toLowerCase() === 'dm') ||
-          (items && items.group_name.toLowerCase() === 'channel') ||
+          (items && items.group_name.toLowerCase() === 'channel') || 
           (items && items.group_name.toLowerCase() === 'company files') ||
-          (items && items.group_name.toLowerCase() === 'active todos') ||
+          (items && items.group_name.toLowerCase() === 'active todos')  ||
           (items && items.group_name.toLowerCase() === 'chess games') ||
           (items && items.group_name.toLowerCase() === 'music') ||
-          (items && items.group_name.toLowerCase() === 'goals') ? (
+          (items && items.group_name.toLowerCase() === 'goals')  ? (
             <a
               href={
                 items && items.group_name.toLowerCase() === 'dm'
