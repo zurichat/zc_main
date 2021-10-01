@@ -5,7 +5,6 @@ import SettingsTab from './SettingsTab'
 import ProfileTab from './ProfileTab'
 import NotificationTab from './NotificationTab'
 import { FaBars } from 'react-icons/fa'
-import PlansTab from './PlansTab'
 
 const Tab = () => {
   const [toggleState, setToggleState] = useState(1)
@@ -75,17 +74,6 @@ const Tab = () => {
                 ? `${styles.tabs} ${styles.activetabs}`
                 : styles.tabs
             }
-            onClick={() => toggleTab(4)}
-          >
-            Plans
-          </button>
-
-          <button
-            className={
-              toggleState === 5
-                ? `${styles.tabs} ${styles.activetabs}`
-                : styles.tabs
-            }
             //   onClick={() => toggleTab(4)}
           >
             Access Log
@@ -123,15 +111,6 @@ const Tab = () => {
             }
           >
             <ProfileTab />
-          </div>
-          <div
-            className={
-              toggleState === 4
-                ? `${styles.content} ${styles.activecontent}`
-                : styles.content
-            }
-          >
-            <PlansTab />
           </div>
         </div>
       </div>
