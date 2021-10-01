@@ -16,3 +16,11 @@
   margin-left: 300px;
   margin-top: 5rem;
 }
+
+@media (max-width: 768px) {
+  .settingsContent {
+    margin-left: 0;
+    padding: 0 1.5rem;
+    margin-top: 2rem;
+  }
+}
