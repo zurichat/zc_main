@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <meta
+  <meta
       name="description"
       content="Zuri-Chat -  For Organizations & Institutions. A fully Integrated way to connect and interact. Create your future with us, network, collaborate, educate and learn remotely.Invite your team to your workspace. Stay connected,stay in sync, and explore ideas together from anywhere"
     />
@@ -37,7 +37,8 @@ document.title = title + appendZuri;
 </script>
 <!-- End -->
 
-    <!-- Google / Search Engine Tags -->
+
+<!-- Google / Search Engine Tags -->
     <meta
       itemprop="name"
       content="Zuri-Chat -Communicate and collaborate from wherever you are. A fully Integrated way to connect and interact"
@@ -79,6 +80,8 @@ document.title = title + appendZuri;
       content="Zuri-Chat - Create your future with us, network, collaborate, educate and learn remotely. A messaging app that lets professionals collaborate through workspaces..."
     />
     <meta name="twitter:image" content="https://i.ibb.co/SnK9MGt/ogzuri.png" />
+
+
 
 
   </script>
@@ -125,6 +128,8 @@ document.title = title + appendZuri;
       position: fixed;
       top: 8vh;
       left: 0;
+      background-color: #fff;
+      z-index: 99999;
     }
 
     div[id*='zuri-plugin'] {
@@ -134,10 +139,31 @@ document.title = title + appendZuri;
       right: 0;
     }
 
+    @media (max-width: 768px) {
+      div[id*='zuri/sidebar'] {
+        display: none;
+        width: 100%;
+      }
+      div[id*='zuri-plugin'] {
+      width: 100%;
+    }
+    }
+
     /* CHESS STYLE */
     .app__container {
       padding: 0 !important;
       padding-block: 5rem;
+    }
+
+    @media (max-width: 425px) {
+      /* div[id*='zuri/sidebar'] {
+        width: 40%;
+      } */
+
+      div[id*='zuri-plugin'] {
+        width: 100%;
+        position: relative;
+      }
     }
 
     @media (max-width: 375px) {
@@ -146,22 +172,9 @@ document.title = title + appendZuri;
         width: calc(26.4rem * 0.9);
       }
     }
-    @media (max-width: 768px) {
-      div[id*='zuri/sidebar'] {
-        display: none;
-      }
-    }
+    
 
-    @media (max-width: 425px) {
-      div[id*='zuri/sidebar'] {
-        width: 40%;
-      }
-
-      div[id*='zuri-plugin'] {
-        width: 60%;
-        position: absolute;
-      }
-    }
+    
 
     /* CHESS STYLE */
   </style>
