@@ -140,7 +140,7 @@ const Sidebar = props => {
 
   const inviteUser = async emails => {
     // console.log(currentWorkspace, token, emails)
-    console.log(...emails,'pidoxy')
+    console.log(...emails, 'pidoxy')
     setSendLoading(true)
     return await axios({
       method: 'post',
