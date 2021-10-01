@@ -15,7 +15,7 @@ import { TopbarContext } from '../context/Topbar'
 import EditProfile from './EditProfile'
 import Preferences from './Preferences'
 import { Dropdown } from './ProfileMore'
-import StatusBadgeModal from './StatusBadgeModal'
+import ProfileStatusBadgeModal from './ProfileStatusBadge'
 
 const Profile = () => {
   const {
@@ -78,7 +78,7 @@ const Profile = () => {
               ? `${user.first_name} ${user.last_name} `
               : 'Anonnymous'}{' '}
             {/* <span>{<StatusBadgeModal />  === '' ? <StatusBadgeModal />  :'0' }</span> */}
-            <StatusBadgeModal className={styles.profstatus} />
+            <ProfileStatusBadgeModal />
           </h3>
           <p>{user.bio ? user.bio : 'What you do'}</p>
           <small>{user.pronouns ? user.pronouns : 'His/Her'}</small>
