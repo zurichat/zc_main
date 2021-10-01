@@ -95,9 +95,11 @@ export const EmailInviteModal = props => {
   }
 
   const sendButton = () => {
-    if (listEmail.some(em => em.error === true)) {
+    if (listEmail.some(em => em.error === true) ) {
       setForerr('Please clear all errors before proceeding.')
-    } else {
+    } else if( listEmail.length === 0){
+         setForerr('No email(s) to send invites to. ')
+    }else {
       const finEmails = []
       listEmail.map(mail => finEmails.push(mail.mail))
       props.setInviteEmails(finEmails)

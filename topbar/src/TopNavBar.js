@@ -104,15 +104,10 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       </HelpContainer> */}
       {/* {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''} */}
 
-
       <UserForm />
       <AdminForm />
-      <div>
 
-      {/* <UserForm /> */}
-      {/* <AdminForm /> */}
       <ProfileImageContainer>
-
         {toggleStatus}
         {typeof userProfileImage === 'string' ? (
           <img
@@ -134,8 +129,8 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 }
 
 const mapStateToProps = state => ({
-  userProfile: state,
-});
+  userProfile: state
+})
 
 export default connect(mapStateToProps)(TopNavBar)
 
