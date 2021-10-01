@@ -108,14 +108,15 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
 
       <HelpContainer>
-      <img
-            src={HelpIcon}
-            role="button"
-            alt="user profile avatar"
-         onClick={() => setHelpModal(true)} />
+        <img
+          src={HelpIcon}
+          role="button"
+          alt="user profile avatar"
+          onClick={() => setHelpModal(true)}
+        />
       </HelpContainer>
       {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''}
-      
+
       {/* <UserForm /> */}
       {/* <AdminForm /> */}
 
