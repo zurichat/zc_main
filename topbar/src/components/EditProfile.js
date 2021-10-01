@@ -65,7 +65,10 @@ const EditProfile = () => {
       formData.append('image', imageReader)
 
       authAxios
-        .patch(`/organizations/${orgId}/members/${user._id}/photo`, formData)
+        .patch(
+          `/organizations/${orgId}/members/${user._id}/photo/upload`,
+          formData
+        )
         .then(res => {
           const newUploadedImage = res.data.data
           setUserProfileImage(newUploadedImage)
@@ -87,11 +90,8 @@ const EditProfile = () => {
   const handleImageDelete = () => {
     setState({ ...state, imageLoading: true })
 
-    const formData = new FormData()
-    formData.append('image', defaultAvatar)
-
     authAxios
-      .patch(`/organizations/${orgId}/members/${user._id}/photo`, formData)
+      .patch(`/organizations/${orgId}/members/${user._id}/photo/delete`)
       .then(res => {
         setUserProfileImage(defaultAvatar)
         setState({ ...state, imageLoading: false })
