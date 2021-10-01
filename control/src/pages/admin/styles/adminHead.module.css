@@ -48,3 +48,23 @@
   height: auto;
   margin-top: 6px;
 }
+
+.mobileMenu {
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .mobileMenu {
+    display: block;
+  }
+
+  .headerMenu {
+    font-size: 1.5rem;
+    color: #333;
+  }
+}
