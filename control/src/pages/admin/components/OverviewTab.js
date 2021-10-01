@@ -11,7 +11,7 @@ import { getToken, getUser, getCurrentWorkspace } from '../Utils/Common'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 import { FiCheck } from 'react-icons/fi'
 
-const OverviewTab = () => {
+const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
 
   const currentWorkspace = getCurrentWorkspace()
   const user = getUser()
@@ -39,7 +39,7 @@ const OverviewTab = () => {
       .then(res => {
         setLoading(false)
         console.log(res.data)
-        toast.success('Organisation Upgraded Successfully', {
+        toast.success(res.data.message, {
           position: 'top-center'})
       })
       .catch(err => {
@@ -61,10 +61,10 @@ const OverviewTab = () => {
       <div className={styles.plansContent}>
         <h1 className={styles.plansHeader}>
           Your workspace is currently on the{' '}
-          <b className={styles.bold}>Free Plan</b>
+          <b className={styles.bold}>{workspaceData.version === "pro" ? "Pro Plan" : "Free Plan"}</b>
         </h1>
         <div className={styles.buttonWrapper}>
-          <button onClick={handlePlan} className={styles.mainCta}>
+          <button onClick={handlePlan} disabled={workspaceData.version === "pro"} className={styles.mainCta}>
             {loading ? 
               <Loader type="ThreeDots" color="#fff" height={40} width={40} /> : 
               "Subscribe to a plan"}
@@ -97,7 +97,7 @@ const OverviewTab = () => {
           </ul>
           <p className={styles.getToken}>
             Don’t have enough tokens?{' '}
-            <span className={styles.cta}>Buy now</span>
+            <span onClick={() => { setActive(5); setOpenTab(!openTab) }} className={styles.cta}>Buy now</span>
           </p>
         </div>
       </div>
@@ -107,10 +107,12 @@ const OverviewTab = () => {
           <h6 className={styles.infoHeader}>Zuri Chat Pro Plan</h6>
           <p className={styles.infoBody}>Do More. Anytime.</p>
         </div>
-        <button className={styles.btnSecondary}>Learn More</button>
-        <button onClick={handlePlan} className={styles.btnPrimary}>{loading ? 
-              <Loader type="ThreeDots" color="#fff" height={40} width={40} /> : 
-              "Upgrade"}</button>
+        <div className={styles.buttonCont}>
+          <button className={styles.btnSecondary}>Learn More</button>
+          <button onClick={handlePlan} disabled={workspaceData.version === "pro"} className={styles.btnPrimary}>{loading ? 
+                <Loader type="ThreeDots" color="#fff" height={40} width={40} /> : 
+                "Upgrade"}</button>
+        </div>
       </div>
 
       <div className={styles.footer}>
