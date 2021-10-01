@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, useContext } from 'react'
 import ProfileModal from './ProfileModal'
-
+import defaultAvatar from '../assets/images/avatar_vct.svg'
 import { authAxios } from '../utils/Api'
 
 import { AiFillCamera } from 'react-icons/ai'
@@ -88,10 +88,13 @@ const EditProfile = () => {
   const handleImageDelete = () => {
     setState({ imageLoading: true })
 
+    const formData = new FormData()
+    formData.append('image', defaultAvatar)
+
     authAxios
-      .patch(`/organizations/${orgId}/members/${user._id}/photo`, '')
+      .patch(`/organizations/${orgId}/members/${user._id}/photo`, formData)
       .then(res => {
-        setUserProfileImage('')
+        setUserProfileImage(defaultAvatar)
         setState({ imageLoading: false })
         toast.success('User Image Removed Successfully', {
           position: 'top-center'
