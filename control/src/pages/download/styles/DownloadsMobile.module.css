@@ -12,6 +12,7 @@
 
 .herotext {
   color: #333333;
+  margin-bottom: 100px;
 }
 .herotextHeader {
   font-style: normal;
@@ -19,7 +20,13 @@
   font-size: 30px;
   line-height: 30px;
 }
+.heroImageDiv {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 15.11%, #ffffff 53.99%);
+}
 
+.heroImage {
+  width: 430px;
+}
 .button1,
 .button2 {
   display: inline-block;
@@ -48,7 +55,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 84px 24px;
+  padding: 84px 24px 0 24px;
 }
 
 .downloadButton {
@@ -69,12 +76,15 @@
   color: #00b87c;
 }
 
-.screenshot {
-  width: 302px;
-  height: 210px;
-  margin-bottom: 40px;
+.infolaptopContainer {
+  max-height: 300px;
+  overflow: hidden;
 }
 
+.infolaptop {
+  height: 530px;
+  width: 100%;
+}
 .ctaText {
   font-size: 40px;
   color: #333333;
@@ -82,9 +92,39 @@
   margin: 50px 50px 30px 50px;
   line-height: 42px;
 }
+
+.laptop {
+  width: 380px;
+  margin-bottom: 80px;
+}
+
+@media screen and (max-width: 535px) {
+  .heroImage {
+    width:380px;
+  }
+  .infolaptopContainer {
+    max-height: 150px;
+  }
+  .infolaptop {
+    height: 330px;
+  }
+}
 @media screen and (max-width: 465px) {
   .button2 {
     font-size: 13px;
+  }
+
+  .heroImage {
+    width: 350px;
+  }
+
+
+  .herotext {
+    margin-bottom: 60px;
+  }
+
+  .laptop {
+    width: 330px;
   }
 }
 
@@ -107,5 +147,14 @@
     font-size: 25px;
     margin: 30px 30px 20px 30px;
     line-height: 32px;
+  }
+
+  .heroImage {
+    width: 270px;
+  }
+
+
+  .laptop {
+    width: 270px;
   }
 }
