@@ -7,32 +7,8 @@ import logo from '../../component-assets/zuri.svg'
 import { Helmet } from 'react-helmet'
 
 const Signout = ({ history }) => {
-  const currentWorkspace = localStorage.getItem('currentWorkspace')
-  let token = sessionStorage.getItem('token')
-  const [orgName, SetOrgName] = useState('')
 
-  useEffect(() => {
-    let user = JSON.parse(sessionStorage.getItem('user'))
-
-    if ((user && token) !== null) {
-      try {
-        axios
-          .get(`https://api.zuri.chat/organizations/${currentWorkspace}`, {
-            headers: {
-              Authorization: `Bearer ${token}`
-            }
-          })
-          .then(response => {
-            SetOrgName(response.data.data.name)
-            // let userData = { currentWorkspace, ...response.data.data }
-          })
-      } catch (err) {
-        console.log(err)
-      }
-    } else {
-      console.log('YOU ARE NOT LOGGED IN, PLEASE LOG IN')
-    }
-  }, [orgName])
+const orgName = localStorage.getItem('orgName')
 
   return (
     <>
