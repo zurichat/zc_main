@@ -1,3 +1,19 @@
+// import { useState, useEffect, useContext } from 'react'
+// import { fetchUser } from './utils/fetchUserDetails'
+
+// const Sidebar = props => {
+//   const nn = fetchUser()
+//   // console.log(userInfo, 'sidebar new', organizationInfo)
+
+//   useEffect(() => {
+//     console.log(nn, 'test test')
+//   })
+
+//   return <div>Welcome</div>
+// }
+
+// export default Sidebar
+
 import { Fragment, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './styles/Sidebar.module.css'
@@ -30,6 +46,8 @@ import axios from 'axios'
 import { GetUserInfo } from '@zuri/control'
 import { authAxios } from './utils/Api'
 import linkIcon from './assets/link.svg'
+import { SubscribeToChannel } from '@zuri/control'
+import { filterUrl, trimUrl } from './utils/filterurl'
 
 const Sidebar = props => {
   const [show, setShow] = useState(false)
@@ -57,40 +75,26 @@ const Sidebar = props => {
     token: ''
   })
 
+  const [nullValue, setnullValue] = useState(0)
+
   const [organizationInfo, setOrganizationInfo] = useState(null)
   const [sidebarData, setSidebarData] = useState({})
 
   // let user = JSON.parse(sessionStorage.getItem('user'))
   let token = sessionStorage.getItem('token')
-
-  const trimUrl = url => {
-    if (url !== undefined) {
-      if (url.substr(-1) === '/') {
-        return url.substr(0, url.length - 1)
-      }
-      return url
-    }
-  }
-
-  const filterUrl = url => {
-    if (url !== undefined) {
-      return url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('/')[0]
-    }
-  }
+  let user_id_session = JSON.parse(sessionStorage.getItem('user'))
 
   useEffect(() => {
     inviteVisibility()
 
     const fetchUser = async () => {
-      const { _id, Organizations } = await GetUserInfo()
-      // console.log('sidebar organization', Organization)
+      const user = await GetUserInfo()
       setUserInfo({
-        userId: _id,
-        Organizations,
+        userId: user_id_session.id,
         token
       })
 
-      if (_id !== '') {
+      if (userInfo._userId !== '') {
         const org_url = `/organizations/${currentWorkspace}/plugins`
         authAxios
           .get(org_url)
@@ -143,18 +147,64 @@ const Sidebar = props => {
       })
   }
 
-  // const validateEmail = (email) => {
-  //   return !!email.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
-  // }
+  console.log(currentWorkspace, 'workspace')
+  console.log(userInfo.userId, 'user id')
 
   useEffect(() => {
-    // console.log('sidebar plugins', organizationInfo)
+    setnullValue(1)
+  }, [])
+
+  {
+    nullValue === 1 &&
+      currentWorkspace &&
+      userInfo.userId &&
+      SubscribeToChannel(
+        `${currentWorkspace}_${userInfo.userId}_sidebar`,
+        ctx => {
+          const websocket = ctx.data
+          console.log('Websocket', websocket)
+          if (websocket.event === 'sidebar_update') {
+            console.log('check', websocket.sidebar_url)
+
+            const sidebarUrl = websocket.sidebar_url
+
+            const trimmedUrl = trimUrl(sidebarUrl)
+            const pluginKey = filterUrl(sidebarUrl)
+
+            axios
+              .get(
+                `${
+                  trimmedUrl.includes('https://') ||
+                  trimmedUrl.includes('http://')
+                    ? trimmedUrl
+                    : `https://${trimmedUrl}`
+                }?org=${currentWorkspace}&user=${userInfo.userId}`
+              )
+              .then(res => {
+                try {
+                  const validPlugin = res.data
+                  if (validPlugin.name !== undefined) {
+                    if (typeof validPlugin === 'object') {
+                      setSidebarData({
+                        ...sidebarData,
+                        [pluginKey]: validPlugin
+                      })
+                    }
+                  }
+                } catch (err) {
+                  console.log(err, 'Invalid plugin')
+                }
+              })
+              .catch(console.log)
+          }
+        }
+      )
+  }
+  useEffect(() => {
     {
       organizationInfo &&
         organizationInfo.map(pluginData => {
           const { plugin } = pluginData
-
-          // console.log(plugin)
 
           const sidebarUrl = plugin.sidebar_url
           const trimmedUrl = trimUrl(sidebarUrl)
@@ -167,7 +217,7 @@ const Sidebar = props => {
                 trimmedUrl.includes('http://')
                   ? trimmedUrl
                   : `https://${trimmedUrl}`
-              }?org=${userInfo.Organizations[0]}&user=${userInfo.userId}`
+              }?org=${currentWorkspace}&user=${userInfo.userId}`
             )
             .then(res => {
               try {
@@ -179,7 +229,6 @@ const Sidebar = props => {
                     })
                   }
                 }
-                // console.log(validPlugin)
               } catch (err) {
                 console.log(err, 'Invalid plugin')
               }
