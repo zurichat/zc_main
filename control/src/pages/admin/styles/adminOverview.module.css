@@ -58,7 +58,7 @@
 
 .buttonWrapper .mainCta:hover {
   background: #029161;
-  transition: 0.3s ease-in-out background;
+  transition: 0.3s ease-in-out all;
 }
 
 .plansDetails {
@@ -184,6 +184,18 @@
   transition: 0.3s ease-in-out all;
 }
 
+.buttonWrapper .mainCta:disabled,
+.buttonWrapper .mainCta:disabled:hover,
+.buttonWrapper .mainCta:disabled:focus,
+.buttonWrapper .mainCta:disabled:active,
+.btnPrimary:disabled,
+.btnPrimary:disabled:hover,
+.btnPrimary:disabled:active,
+.btnPrimary:disabled:focus
+ {
+  background: rgba(0, 184, 124, 0.5);
+}
+
 .footer {
   margin-top: 2rem;
 }
@@ -198,4 +210,21 @@
 
 .footerLinkSpan {
   color: #00b87c;
+}
+
+@media (max-width: 768px) {
+  .planCta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .infoHeader {
+    text-align: center;
+  }
+
+  .infoBody {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
 }
