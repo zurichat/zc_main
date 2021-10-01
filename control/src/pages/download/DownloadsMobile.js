@@ -37,7 +37,9 @@ const DownloadsMobile = () => {
               DOWNLOAD
             </a>
           </div>
-          <div className={`${downloadStyles.heroImageDiv} d-flex justify-content-center`}>
+          <div
+            className={`${downloadStyles.heroImageDiv} d-flex justify-content-center`}
+          >
             <img
               className={`${downloadStyles.heroImage}`}
               src={device}
@@ -85,7 +87,9 @@ const DownloadsMobile = () => {
               <img className={`px-2`} src={apple} alt="download icon" />
             </a>
           </div>
-          <div className={`d-flex justify-content-center mt-4 ${downloadStyles.infolaptopContainer}`}>
+          <div
+            className={`d-flex justify-content-center mt-4 ${downloadStyles.infolaptopContainer}`}
+          >
             <img
               className={`${downloadStyles.infolaptop}`}
               src={device}
