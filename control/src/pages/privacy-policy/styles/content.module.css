@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
 .content {
   margin: 0 60px;
 }
@@ -30,6 +36,27 @@
   text-decoration: underline;
 }
 
+.headingAppl {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: -2%;
+  text-decoration: underline;
+}
+
+.headingServices {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: -2%;
+  text-decoration: underline;
+}
+
+.headingDataOthers {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: -2%;
+  text-decoration: underline;
+}
+
 .bulbImage {
   position: relative;
   top: -40px;
@@ -38,6 +65,24 @@
 }
 
 .paragraph {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 157.5%;
+  letter-spacing: 3%;
+  padding: 0 380px 0 0;
+  margin-left: 5px;
+}
+
+.paraPolicy {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 157.5%;
+  letter-spacing: 3%;
+  padding: 0 380px 0 0;
+  margin-left: 5px;
+}
+
+.parplat {
   font-size: 16px;
   font-weight: 500;
   line-height: 157.5%;
@@ -357,4 +402,179 @@
   position: relative;
   left: 840px;
   bottom: 240px;
+}
+
+@media screen and (max-width: 1085px) {
+}
+@media screen and (max-width: 850px) {
+}
+
+@media screen and (max-width: 500px) {
+  .headingOne {
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 130%;
+    text-align: center;
+    margin: 85px 0 30px 0;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .headingOne {
+    font-size: 38px;
+  }
+  .veryBigLock {
+    display: none;
+  }
+
+  .content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+
+  .parplat {
+    padding: 0 0px 0 0;
+  }
+
+  .parservices {
+    padding: 0 0px 0 0;
+  }
+
+  .headingServices {
+    margin-top: 460px;
+  }
+
+  .parregistered {
+    padding: 0 0px 0 0;
+  }
+
+  .effectiveAll {
+    position: relative;
+    left: -190px;
+    top: 40px;
+    width: 240%;
+  }
+
+  .imageBox {
+    width: 330px;
+  }
+
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    /* font-size: 100% !important; */
+  }
+
+  .effectDate {
+    margin-left: 190px;
+  }
+
+  .tablelinks {
+    margin-left: 190px;
+  }
+  .bulbImage {
+    display: none;
+  }
+
+  .shakeImage {
+    display: none;
+  }
+
+  .paraPolicy {
+    padding: 0 0 0 0;
+  }
+
+  .parinfo {
+    margin-left: 190px;
+    width: 70%;
+  }
+
+  .privacy {
+    margin-top: 25px;
+  }
+
+  .referZuri {
+    margin-left: 190px;
+  }
+
+  .zurimission {
+    padding: 0 0 0 0;
+  }
+
+  .privPol {
+    padding: 0 0 0 0;
+  }
+
+  .headingAppl {
+    font-size: 18px;
+  }
+
+  .appPrivPol1,
+  .appPrivPol2 {
+    padding: 0 0px 0 0;
+    margin-left: 0px;
+  }
+
+  .bigLock {
+    display: none;
+  }
+
+  .infoCollect {
+    font-size: 18px;
+  }
+
+  .bulb {
+    display: none;
+  }
+
+  .infopar1 {
+    padding: 0 0px 0 0;
+
+    margin-left: 0px;
+  }
+  .paraPriv1 {
+    padding: 0 0px 0 0;
+  }
+
+  .smallLock {
+    display: none;
+  }
+
+  .parOthers2 {
+    padding: 0 0px 0 0;
+  }
+
+  .parOthers {
+    margin-bottom: 35px;
+    margin-top: 0px;
+  }
+
+  .headingDataOthers {
+    margin-bottom: -20px;
+  }
+
+  .handShake {
+    display: none;
+  }
+
+  .parPartners {
+    padding: 0 0px 0 0;
+  }
+
+  .partners {
+    margin-bottom: 30px;
+    margin-left: 0px;
+  }
+  .imagePart {
+    margin-top: 10px;
+  }
+
+  .privacymat {
+    margin-top: 70px;
+  }
 }
