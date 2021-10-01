@@ -5,22 +5,6 @@ import { useGoogleLogin } from 'react-google-login'
 import { GetUserInfo } from '../zuri-control'
 import $behaviorSubject from '../../../globalState'
 
-<<<<<<< HEAD
-// const CLIENT_ID =
-//   '943002582641-ek6jakave3irmueaqfdoc0754v83qf6e.apps.googleusercontent.com'
-// const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
-//   const [buttonClicked, setButtonClicked] = useState(false)
-//   const history = useHistory()
-//   const onSuccess = res => {
-//     setLoading(true)
-//     if (googleHeader === 'Sign up with Google') {
-//       if (buttonClicked) {
-//         // Logic for sign up goes here
-//       }
-//     } else {
-
-=======
->>>>>>> dd87f7daafeb72de3f6ace31725295b0344833c0
 const CLIENT_ID =
   '943002582641-ek6jakave3irmueaqfdoc0754v83qf6e.apps.googleusercontent.com'
 const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
@@ -33,11 +17,6 @@ const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
         // Logic for sign up goes here
       }
     } else {
-<<<<<<< HEAD
-      setLoading(true)
-
-=======
->>>>>>> dd87f7daafeb72de3f6ace31725295b0344833c0
       axios
         .get(
           `https://api.zuri.chat/auth/social-login/google/${res.accessToken}`
@@ -54,16 +33,6 @@ const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
           //Store user copy in localstorage
           sessionStorage.setItem('user', JSON.stringify(data.user))
 
-<<<<<<< HEAD
-          //Store token in localstorage
-          sessionStorage.setItem('token', data.user.token)
-          //Store session_id in localstorage
-          sessionStorage.setItem('session_id', data.session_id)
-          //Store user copy in localstorage
-          sessionStorage.setItem('user', JSON.stringify(data.user))
-
-=======
->>>>>>> dd87f7daafeb72de3f6ace31725295b0344833c0
           $behaviorSubject.next(res.data)
           setTimeout(() => {
             GetUserInfo()

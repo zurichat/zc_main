@@ -52,15 +52,28 @@ export const EmailInviteModal = props => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [listEmail, setListEmail] = useState([])
   const initialRef = useRef()
-  const [openInvite, setOpenInvite] = useState(false)
-  const [showDialog, setShowDialog] = useState(false)
+
+  const [borderCol, setBorderCol] = useState("gray.300")
 
   const [forerr, setForerr] = useState('')
 
-  const open = () => setShowDialog(true)
-  const close = () => setShowDialog(false)
-  const openInviteModal = () => setOpenInvite(true)
-  const closeInviteModal = () => setOpenInvite(false)
+  const Focus = () => {
+    if (!forerr ){
+      setBorderCol('green.200')
+    }else{
+      setBorderCol('red.200')
+    }
+  }
+
+  const Blur = () => {
+    if (!forerr ){
+      setBorderCol("gray.300")
+    }else{
+      setBorderCol('red.200')
+    }
+    
+  }
+  
 
   const [inviteStep, setInviteStep] = useState(1)
 
@@ -80,8 +93,8 @@ export const EmailInviteModal = props => {
   const onClo = () => {
     props.onDismiss()
     resetStep()
-    setForerr('');
-    setListEmail([]);
+    setForerr('')
+    setListEmail([])
   }
   const handleDelete = index => {
     const lists = listEmail
@@ -102,20 +115,20 @@ export const EmailInviteModal = props => {
     } else if (listEmail.length === 0) {
       setForerr('No email(s) to send invites to. ')
     } else {
-        nextIviteStep();
+      nextIviteStep()
       const finEmails = []
       listEmail.map(mail => finEmails.push(mail.mail))
       props.setInviteEmails(finEmails)
       props.inviteUserViaMail(finEmails)
       // console.log(finEmails, 'whatsapplost');
-    //   if (!props.sendLoading) {
-    //     nextIviteStep()
-    //   }
+      //   if (!props.sendLoading) {
+      //     nextIviteStep()
+      //   }
     }
   }
 
   function validateEmail(value) {
-    let error
+    let error;
     // console.log(props.orgvalEmails.some((em)=>em === value) , value,props.orgvalEmails )
     // if (listEmail.some((em)=>em.mail === value) ) {
     //   error = 'Email already exists - Remove Duplicates.'
@@ -125,72 +138,48 @@ export const EmailInviteModal = props => {
     //   error = 'Email already exists in the workspace - Remove Duplicates.'
     //   setForerr(error)
     // }
-    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
-      error = 'Invalid email address'
-      setForerr(error)
-    }
     if (!value) {
       error = 'Email is required'
       setForerr(error)
     }
+    else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
+      error = 'Invalid email address'
+      setForerr(error)
+    }else{
+      error = ''
+      setForerr(error)
+    }
 
-    // else if (value.toLowerCase() !== "naruto") {
-    //   error = "Jeez! You're not a fan 😱"
-    // }
     return error
   }
-  //    if (props.isOpen) {
-  //     // setSize(newSize)
-  //     onOpen()
-  //     }else{
-  //         onClose()
-  //     }
+
   //   useEffect(() => {}, [props.sendLoadin])
 
   return (
     <ChakraProvider>
       {/* <Button onClick={handleInviteClick}/> */}
 
-      {/* <Modal onClose={onClose} size={'xl'} isOpen={isOpen}>
-            <ModalOverlay />
-            <ModalContent>
-                <ModalHeader>Modal Title</ModalHeader>
-                <ModalCloseButton />
-                <ModalBody>
-                hgfjgcfjgfgc
-                </ModalBody>
-                <ModalFooter>
-                <Button onClick={onClose}>Close</Button>
-                </ModalFooter>
-            </ModalContent>
-        </Modal> */}
-      <Modal isCentered isOpen={props.isOpen} onClose={onClo} size="xl">
+      <Modal isCentered isOpen={props.isOpen} onClose={onClo} 
+      size="2xl" motionPreset="slideInRight"
+      >
         <ModalOverlay />
         {inviteStep === 1 ? (
           <ModalContent px="0.5rem" borderRadius="2px">
             <ModalHeader fontSize="20px">Invite People to HNGi8</ModalHeader>
             <ModalCloseButton onClick={onClo} />
             <ModalBody>
-              {/* <Text color="#8B8B8B" mb="1rem">
-            Channels are where your team communicates. They’re best when
-            organized around a topic — #marketing, for example.
-          </Text> */}
-
-              {/* <FormControl mb="1rem"> */}
+          
               <FormLabel fontWeight="bold">To:</FormLabel>
-
-              {/* <Stack direction={["column", "row"]} spacing={4}> */}
-
               <Container
                 border="1px"
                 spacing={4}
                 p="3"
                 borderRadius="2px"
-                borderColor={!forerr ? 'green.200' : 'red.200'}
+                borderColor={borderCol}
                 maxW="container.xl"
                 minH={120}
               >
-                {/* <Grid direction={["column", "row"]} spacing={4}> */}
+                
                 {listEmail.map((e_mail, index) => (
                   <Tag
                     boxShadow="md"
@@ -204,21 +193,12 @@ export const EmailInviteModal = props => {
                     <TagCloseButton onClick={() => handleDelete(index)} />
                   </Tag>
                 ))}
-                {/* </Grid> */}
-                {/* <Input
-                ref={initialRef}
-                //   onChange={(e) => setName(e.target.value)}
-                type="email"
-                variant="filled"
-                borderRadius="2px"
-                focusBorderColor="green.200"
-                // height="100px"
-            /> */}
+                
 
                 <Formik
                   initialValues={{ email: ' ' }}
                   onSubmit={(values, actions) => {
-                    //   alert(JSON.stringify(values, null, 2))
+                  
 
                     if (listEmail.some(em => em.mail === values.email)) {
                       setListEmail([
@@ -241,7 +221,7 @@ export const EmailInviteModal = props => {
                         ...listEmail,
                         { mail: values.email, error: false }
                       ])
-                      setForerr('');
+                      setForerr('')
                     }
                     //   console.log(values)
                     actions.setSubmitting(false)
@@ -253,35 +233,27 @@ export const EmailInviteModal = props => {
                         <FormControl
                           isInvalid={form.errors.email && form.touched.email}
                         >
-                          {/* <FormLabel htmlFor="name">First name</FormLabel> */}
-                          {/* <Input {...field} id="email" placeholder="email" type='email'/> */}
+                          
                           <Input
                             ref={initialRef}
-                            //   onChange={(e) => setName(e.target.value)}
+                            onChange={validateEmail}
                             variant="unstyled"
                             {...field}
                             id="email"
                             type="email"
                             borderRadius="2px"
-                            focusBorderColor="green.200"
+                            // focusBorderColor="green.200"
+                            onBlur={Blur}
+                            onFocus={Focus}
 
-                            // height="100px"
+
+                            width="50%"
                           />
-                          {/* <FormErrorMessage>
-                            <InfoOutlineIcon mr="1"/> {form.errors.email}
-                            {setForerr(form.errors.email)}
-                          </FormErrorMessage> */}
+                          
                         </FormControl>
                       )}
                     </Field>
-                    {/* <Button
-            mt={4}
-            colorScheme="teal"
-            isLoading={props.isSubmitting}
-            type="submit"
-          >
-            Submit
-          </Button> */}
+                  
                   </Form>
                 </Formik>
               </Container>
@@ -292,60 +264,12 @@ export const EmailInviteModal = props => {
                 </Text>
               ) : null}
 
-              {/* <InputGroup>
-                <InputLeftElement
-                pointerEvents="none"
-                color="gray.300"
-                fontSize="1.2em"
-                children="$"
-                />
-                <Input placeholder="Enter amount" />
-                <InputRightElement children={<CheckIcon color="green.500" />} />
-            </InputGroup> */}
-              {/* </Stack> */}
-              {/* </FormControl> */}
-              {/* 
-          <FormControl mb="1.5rem">
-            <FormLabel fontWeight="bold">
-              <HStack>
-                <Text>Description</Text>
-                <FormHelperText>(optional)</FormHelperText>
-              </HStack>
-            </FormLabel>
-            <Input borderRadius="2px" focusBorderColor="green.200" 
-            // onChange={(e) => setDescription(e.target.value)} 
-            />
-            <FormHelperText> What is this channel about?</FormHelperText>
-          </FormControl> */}
-              {/* <div className ='row'>
-          <Text as="h5" size="sm" color="green.300" fontSize="16px" fontWeight="bold" mb="0.5rem">
-            Copy invite link 
-          </Text>
-          <Text>- Edit link settings </Text>
-          </div> */}
-              {/* <HStack justifyContent="space-between">
-            <Text color="#8b8b8b" fontSize="0.9rem">
-              When a channel is set to private, <br />
-              it can only be viewed or joined by invitation.
-            </Text>
-            <Switch colorScheme="whatsapp" focusBorderColor="green.400" checked="false"
-            //  onChange={(e) => setPriva(e.target.checked)}
-             />
-          </HStack> */}
-
-              {/* <Button 
-               px="2rem"
-              py="1.2rem"
-              colorScheme="whatsapp"
-              borderRadius="md"
-            //   onClick={handleSubmit}
-              variant='outlined'
-              Create
-            /> */}
+              
+             
               <div
                 className={`mt-3 pt-3 d-flex my-auto justify-content-between`}
               >
-                <p
+                <span
                   onClick={() => {
                     window.navigator.clipboard.writeText(
                       `https://zuri.chat/invite?organization=${props.currentWorkspace}`
@@ -355,27 +279,23 @@ export const EmailInviteModal = props => {
                         `https://zuri.chat/invite?organization=${props.currentWorkspace}`
                     )
                   }}
-                  className={`mb-0 align-items-center`}
+                  className={` mt-2 align-items-center`}
                   style={{ color: '#00B87C', fontSize: '15px' }}
                 >
-                  {/* <img className={`pe-3`} src={linkIcon} /> */}
-                  <LinkIcon mr="1" />
+                  
+                  <LinkIcon mr="1" mb="2"/>
                   Copy invite link{' '}
                   <span style={{ color: 'black', fontSize: '15px' }}>
                     {' '}
                     - Edit link settings{' '}
                   </span>
-                </p>
+                </span>
                 <button
-                  // onClick={
-                  //     // () => inviteUser()
-
-                  //     }
                   onClick={sendButton}
                   style={{ color: 'white', backgroundColor: '#00B87C' }}
                   type="button"
-                  // disabled={inviteEmail === '' ? true : false}
-                  className={`btn my-auto `}
+                  disabled={listEmail.length === 0 ? true : false}
+                  className={`btn my-auto mb-1`}
                 >
                   Send
                 </button>
@@ -384,157 +304,244 @@ export const EmailInviteModal = props => {
           </ModalContent>
         ) : null}
 
-        {/* {inviteStep === 2  ? (
- 
-        ) : null} */}
+      
 
-        {inviteStep === 2 ? (<>
-            { props.sendLoadin ?
-            <ModalContent>
-            <ModalCloseButton onClick={onClo} />
-            <ModalBody>
-              <Container p={10} m={6} maxW="container.xl" centerContent>
-                <Spinner
-                  thickness="5px"
-                  speed="0.65s"
-                  emptyColor="green.100"
-                  color="green.500"
-                  size="xl"
-                />
-                <Text
-                  color="black.300"
-                  fontSize="lg"
-                  // onClick={loader}
-                >
-                  Sending Invites...
-                </Text>
-              </Container>
-            </ModalBody>
-          </ModalContent>
-
-            :
-          <ModalContent>
-            <ModalCloseButton onClick={onClo} />
-            <ModalBody>
-              {props.invSucc ? (
-                <>
-                  <Container m={5} centerContent>
-                    <CheckCircleIcon w={10} h={10} color="green.500" />
-                    <Text color="black.300" fontSize="2xl">
-                      Sent!
-                    </Text>
-                  </Container>
-                  <Container>
-                    <Icon as={FiUserPlus} />
-                    <div>
-                      <Container spacing={4}>
-                        {listEmail.map((e_mail, index) => (
-                          // {console.log(e_mail.mail)}
-                          <b key={index} color="green">
-                            {e_mail.mail},{' '}
-                          </b>
-                        ))}
-                      </Container>
-                      <Text color="black.300" fontSize="md">
-                        has been invited as a <b>member</b> of HNGi8. They will
-                        receive but not be <br />
-                        able to reply messages till they join
-                      </Text>
-                    </div>
-                  </Container>
-                </>
-              ) : (
-                <>
-                  <Container m={5} centerContent>
-                    <Icon
-                      as={AiFillCloseCircle}
-                      w={10}
-                      h={10}
-                      color="red.500"
+        {inviteStep === 2 ? (
+          <>
+            {props.sendLoadin ? (
+              <ModalContent>
+                <ModalCloseButton onClick={onClo} />
+                <ModalBody>
+                  <Container p={10} m={6} maxW="container.xl" centerContent>
+                    <Spinner
+                      thickness="5px"
+                      speed="0.65s"
+                      emptyColor="green.100"
+                      color="green.500"
+                      size="xl"
                     />
-                    <Text color="black.300" fontSize="2xl">
-                      Not Sent!
+                    <Text
+                      color="black.300"
+                      fontSize="lg"
+                      // onClick={loader}
+                    >
+                      Sending Invites...
                     </Text>
                   </Container>
-                  <Container>
-                    <Icon as={FiUserPlus} />
-                    <div>
-                      <Container spacing={4}>
-                        {listEmail.map((e_mail, index) => (
-                          // {console.log(e_mail.mail)}
-                          <b key={index} color="green">
-                            {e_mail.mail},{' '}
-                          </b>
-                        ))}
+                </ModalBody>
+              </ModalContent>
+            ) : (
+              <ModalContent>
+                <ModalCloseButton onClick={onClo} />
+                <ModalBody>
+                  {props.invSucc ? (
+                    <>
+                      <Container m={5} centerContent>
+                        <CheckCircleIcon w={10} h={10} color="green.500" />
+                        <Text color="black.300" fontSize="2xl">
+                          Sent!
+                        </Text>
                       </Container>
-                      <Text color="black.300" fontSize="md">
-                        has not been invited as a <b>member</b> of HNGi8.
-                      </Text>
+                      
+                      <div>
+                        <div className="list-group ">
+                          <a
+                            class="  d-flex gap-3 py-3 text-dark"
+                            style={{ textDecoration: 'none' }}
+                          >
+                            <Icon as={FiUserPlus} w={5} h={5} />
+
+                            <div className="d-flex gap-2 w-100 justify-content-between">
+                              <div>
+                              <div className="mx-0 ">
+                                
+                                  {listEmail.map((e_mail, index) => (
+                                    // {console.log(e_mail.mail)}
+                                    <b className = "fs-5" key={index} color="green">
+                                      {e_mail.mail},{' '}
+                                    </b>
+                                  ))}
+                                
+                                
+                              </div>
+                                <span className="mb-0 ">
+                                <Text className="text-muted " color="black.300" fontSize="md">
+                                  has been invited as a <b>member</b> of HNGi8. They
+                                  will receive but not be
+                                  able to reply messages till they join
+                                </Text>
+                                </span>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <Container m={5} centerContent>
+                        <Icon
+                          as={AiFillCloseCircle}
+                          w={10}
+                          h={10}
+                          color="red.500"
+                        />
+                        <Text color="black.300" fontSize="2xl">
+                          Not Sent!
+                        </Text>
+                      </Container>
+                      <div>
+                        <div className="list-group ">
+                          <a
+                            className="  d-flex gap-3 py-3 text-dark"
+                            style={{ textDecoration: 'none' }}
+                          >
+                            <Icon as={FiUserPlus} w={5} h={5} />
+
+                            <div className="d-flex gap-2 w-100 justify-content-between">
+                              <div>
+                                <div >
+                                  {listEmail.map((e_mail, index) => (
+                                    // {console.log(e_mail.mail)}
+                                    <b className = "fs-5" key={index} color="green">
+                                      {e_mail.mail},{' '}
+                                    </b>
+                                  ))}
+                                </div>
+                                <span className="mb-0 ">
+                                  <Text
+                                    className="text-muted"
+                                    color="black.100"
+                                    fontSize="md"
+                                  >
+                                    has not been invited as a <b>member</b> of
+                                    HNGi8.
+                                  </Text>
+                                </span>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </>
+                  )}
+
+                  <div
+                    className={`mt-2 mb-3 pt-3  d-flex justify-content-between my-auto `}
+                  >
+                    <span
+                      className={`mt-1 align-items-center`}
+                      style={{ fontSize: '15px' }}
+                    >
+                      <Icon mr="1" as={FiSend} />
+
+                      <span style={{ color: 'black', fontSize: '15px' }}>
+                        {' '}
+                        See previous invitations{' '}
+                      </span>
+                    </span>
+                    <div>
+                      <button
+                        onClick={resetStep}
+                        // style={{ color: 'white', backgroundColor: '#00B87C' }}
+                        type="button"
+                        // disabled={inviteEmail === '' ? true : false}
+                        className={`btn btn-outline-success `}
+                      >
+                        Send more invites
+                      </button>
+                      <button
+                        onClick={() => {
+                          props.onDismiss()
+                          resetStep()
+                        }}
+                        style={{ color: 'white', backgroundColor: '#00B87C' }}
+                        type="button"
+                        // disabled={inviteEmail === '' ? true : false}
+                        className={`btn mx-2`}
+                      >
+                        Done
+                      </button>
                     </div>
-                  </Container>
-                </>
-              )}
-              <div
-                className={`mt-5 mb-3 pt-3 d-flex my-auto justify-content-between`}
-              >
-                <p
-                  // onClick={() => {
-                  //   window.navigator.clipboard.writeText(
-                  //     `https://zuri.chat/invite?organization=${currentWorkspace}`
-                  //   )
-                  //   alert('link has been copied')
-                  // }}
-                  className={`mt-1 align-items-center`}
-                  style={{ fontSize: '15px' }}
-                >
-                  {/* <img className={`pe-3`} src={linkIcon} /> */}
-                  <Icon mr="1" as={FiSend} />
-
-                  <span style={{ color: 'black', fontSize: '15px' }}>
-                    {' '}
-                    See previous invitations{' '}
-                  </span>
-                </p>
-                <button
-                  // onClick={
-                  //     // () => inviteUser()
-
-                  //     }
-                  onClick={resetStep}
-                  // style={{ color: 'white', backgroundColor: '#00B87C' }}
-                  type="button"
-                  // disabled={inviteEmail === '' ? true : false}
-                  className={`btn btn-outline-success  `}
-                >
-                  Send more invites
-                </button>
-                <button
-                  // onClick={
-                  //     // () => inviteUser()
-
-                  //     }
-                  onClick={() => {
-                    props.onDismiss()
-                    resetStep()
-                  }}
-                  style={{ color: 'white', backgroundColor: '#00B87C' }}
-                  type="button"
-                  // disabled={inviteEmail === '' ? true : false}
-                  className={`btn my-auto `}
-                >
-                  Done
-                </button>
-              </div>
-            </ModalBody>
-          </ModalContent>
-         }  </>
-             ) : null}
+                  </div>
+                </ModalBody>
+              </ModalContent>
+            )}{' '}
+          </>
+        ) : null}
       </Modal>
     </ChakraProvider>
   )
 }
 
-export default EmailInviteModal
+export default EmailInviteModal;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // <ChakraProvider >
 //           <Overlay
