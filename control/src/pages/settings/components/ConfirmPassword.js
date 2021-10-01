@@ -11,7 +11,7 @@ import FormMessage from './FormMessage'
 import successIcon from '../assets/bx-success.svg'
 import errorIcon from '../assets/bx-error.svg'
 
-import { getToken, isLength, isMatch } from '../Utils/Common'
+import { getToken, getUser, isLength, isMatch } from '../Utils/Common'
 
 const initialState = {
   password: '',
