@@ -1,8 +1,10 @@
 import React from 'react'
 import axios from 'axios'
 import styles from './reports.module.css'
+import {Container} from 'react-bootstrap'
 
 export const Confirm = props => {
+
   const reportComplaint = async (token, complaint) => {
     // console.log(token,complaint)
     axios.defaults.xsrfHeaderName = 'X-CSRFTOKEN'
@@ -16,6 +18,7 @@ export const Confirm = props => {
       .then(res => {
         console.log(res)
         props.setPostSucc(true)
+        
       })
       .catch(err => {
         console.log(err.response.request.responseText)
@@ -24,29 +27,29 @@ export const Confirm = props => {
       })
   }
 
-  const reportLocalComplaint = complaint => {
+  const reportLocalComplaint = (complaint)=>{
     let date = new Date()
     const complant = {
-      id: Math.floor(Math.random() * 100) + 1,
-      email: complaint.offender_email,
-      offence: complaint.subject,
+      id:Math.floor(Math.random() * 100)+1,
+      email:complaint.offender_email,
+      offence:complaint.subject,
       description: complaint.description,
-      date: date.toLocaleDateString(),
-      anonymous: complaint.anonymous,
-      authorize: false
+      date:date.toLocaleDateString(),
+      anonymous:complaint.anonymous,
+      authorize:false
     }
     console.log(complant)
-    var lol = localStorage.getItem('zurimainComplaints')
+    var lol = localStorage.getItem("zurimainComplaints");
     console.log(lol)
-    if (lol) {
-      localStorage.removeItem('zurimainComplaints')
-      var lola = JSON.parse(lol)
-      lola.push(complant)
-      console.log(lola)
-      localStorage.setItem('zurimainComplaints', JSON.stringify(lola))
-    } else {
-      localStorage.setItem('zurimainComplaints', JSON.stringify([complant]))
-    }
+        if(lol){
+          localStorage.removeItem("zurimainComplaints");
+          var lola = JSON.parse(lol)
+          lola.push(complant)
+          console.log(lola)
+        localStorage.setItem("zurimainComplaints", JSON.stringify(lola));
+        }else{
+          localStorage.setItem("zurimainComplaints", JSON.stringify([complant]));
+        }
   }
 
   const Continue = e => {
@@ -59,9 +62,9 @@ export const Confirm = props => {
       anonymous
     }
 
-    reportComplaint(token, complaint)
+    reportComplaint(token, complaint);
 
-    reportLocalComplaint(complaint)
+    reportLocalComplaint(complaint);
 
     props.nextStep()
   }
@@ -76,17 +79,17 @@ export const Confirm = props => {
   } = props
 
   return (
-    <div className={styles.formcontainer}>
-      <h1 className={`mb-5 ${styles.head1}`}>Confirm</h1>
+    <Container className={styles.formcontainer}>
+      <h1 className={`mb-5 text-success ${styles.head1}`}>Confirm</h1>
       <ul className="list-group">
         <li className="list-group-item">
-          <b>Name</b>: {email}
+          <b>Name:</b> {email}
         </li>
         <li className="list-group-item">
-          <b>Offence</b>: {offence}
+          <b>Offence: </b> {offence}
         </li>
         <li className="list-group-item">
-          <b>Description</b>: {description}
+          <b>Description </b> {description}
         </li>
         <li className="list-group-item">
           <b>anonymous</b>: {anonymous.toString()}
@@ -104,27 +107,31 @@ export const Confirm = props => {
           <button
             className="btn btn-secondary"
             onClick={back}
-            style={{ color: 'white', borderRadius: '10%', padding: '12px' }}
+            style={{ 
+              color: 'white', 
+            // borderRadius: '10%', 
+            // padding: '12px' 
+          }}
           >
             Back
           </button>
         </div>
         <div className="col-6 text-right">
           <button
-            className="btn btn-primary"
+            className="btn btn-success"
             onClick={Continue}
             style={{
               color: 'white',
-              borderRadius: '10%',
+              // borderRadius: '10%',
               backgroundColor: ' #00B87C',
-              padding: '12px',
-              marginLeft: '150px'
+              // padding: '12px',
+              marginLeft: '50%'
             }}
           >
             Submit
           </button>
         </div>
       </div>
-    </div>
+    </Container>
   )
 }

@@ -10,8 +10,8 @@ import defaultAvatar from './assets/images/avatar_vct.svg'
 import HelpIcon from './assets/images/help-icon.svg'
 import TopbarModal from './components/TopbarModal'
 import HelpModal from './components/HelpModal'
-// import UserForm from '../../control/src/pages/ReportFeature/User/Form'
-// import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
+import UserForm from '../../control/src/pages/ReportFeature/User/Form'
+import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
 import { authAxios } from './utils/Api'
 import Profile from './components/Profile'
 import Loader from 'react-loader-spinner'
@@ -105,7 +105,6 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
       <UserForm />
       <AdminForm />
-
 
       <HelpContainer>
         <img
