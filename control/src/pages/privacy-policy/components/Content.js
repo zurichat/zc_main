@@ -13,7 +13,7 @@ import veryBigLock from '../assets/veryBigLock.svg'
 
 const Content = () => {
   return (
-    <React.Fragment>
+    <div className={Style.privacyAndTerms}>
       <div className={Style.content}>
         <h1 className={Style.headingOne}>Privacy & Terms</h1>
         <div className={Style.section}>
@@ -328,7 +328,7 @@ const Content = () => {
           </p>
         </div>
       </div>
-    </React.Fragment>
+    </div>
   )
 }
 
