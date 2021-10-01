@@ -52,6 +52,12 @@ const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
 
   return (
     <div className={styles.plansContainer}>
+      {/* <div className={styles.modal}>
+        <div className={styles.overlay} />
+        <div className={styles.modalContainer}>
+          <h5>hello</h5>
+        </div>
+      </div> */}
       <div className={styles.tokenAmount}>
         <span>{workspaceData.tokens} &nbsp;</span>
         tokens
