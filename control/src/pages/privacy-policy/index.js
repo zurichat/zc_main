@@ -9,7 +9,6 @@ const PrivacyPolicy = () => {
       <Helmet>
         <title> Privacy Policy - Zuri Chat</title>
       </Helmet>
-      <SearchSuggestion />
       <Header />
       <Content />
       <Footer />
