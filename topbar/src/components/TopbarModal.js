@@ -1,7 +1,8 @@
 import { useContext, useState, useEffect } from 'react'
 import { FaChevronRight } from 'react-icons/fa'
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
-import userAvatar from '../assets/images/user.svg'
+import axios from 'axios'
+import defaultAvatar from '../assets/images/avatar_vct.svg'
 
 import styles from '../styles/Topbar.module.css'
 import { TopbarContext } from '../context/Topbar'
@@ -38,6 +39,28 @@ const TopbarModal = ({ members }) => {
     setPresence
   } = state
 
+  const token = sessionStorage.getItem('token')
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+  const logout = () => {
+    axios({
+      method: 'post',
+      url: `https://api.zuri.chat/auth/logout`,
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+      .then(res => {
+        console.log(res)
+        window.location.href = '/signout'
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }
   const [pause, setPause] = useState(false)
   const [statusModal, setStatusModal] = useState(false)
 
@@ -108,7 +131,7 @@ const TopbarModal = ({ members }) => {
           <div className={styles.sectionOne}>
             <div className={styles.oneLeft}>
               <img
-                src={userProfileImage ? userProfileImage : userAvatar}
+                src={userProfileImage !== '' ? userProfileImage : defaultAvatar}
                 alt="profile-pic"
               />
             </div>
@@ -127,6 +150,7 @@ const TopbarModal = ({ members }) => {
 
           <div className={styles.sectionTwo}>
             <StatusBadgeModal />
+            <p className={styles.statusContent}>{user.status}</p>
           </div>
 
           <div className={styles.sectionThree}>
@@ -205,10 +229,7 @@ const TopbarModal = ({ members }) => {
           <hr className={styles.hr} />
 
           <div className={styles.sectionFive}>
-            <p>
-              {' '}
-              <a href="/signout">Sign out of Team Einstein workspace</a>{' '}
-            </p>
+            <p onClick={logout}>Sign out of Team Einstein workspace</p>
           </div>
         </section>
       ) : null}
