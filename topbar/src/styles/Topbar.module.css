@@ -50,6 +50,12 @@
   border-radius: 50%;
 }
 
+.statusContent {
+  text-align: left;
+  font-size: 1rem;
+  margin-left: 3.5rem;
+}
+
 .circles {
   background: green;
   height: 7px;
