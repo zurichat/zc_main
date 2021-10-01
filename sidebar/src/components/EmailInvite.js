@@ -80,6 +80,8 @@ export const EmailInviteModal = props => {
   const onClo = () => {
     props.onDismiss()
     resetStep()
+    setForerr('');
+    setListEmail([]);
   }
   const handleDelete = index => {
     const lists = listEmail
@@ -100,14 +102,15 @@ export const EmailInviteModal = props => {
     } else if (listEmail.length === 0) {
       setForerr('No email(s) to send invites to. ')
     } else {
+        nextIviteStep();
       const finEmails = []
       listEmail.map(mail => finEmails.push(mail.mail))
       props.setInviteEmails(finEmails)
       props.inviteUserViaMail(finEmails)
       // console.log(finEmails, 'whatsapplost');
-      if (!props.sendLoading) {
-        nextIviteStep()
-      }
+    //   if (!props.sendLoading) {
+    //     nextIviteStep()
+    //   }
     }
   }
 
@@ -238,6 +241,7 @@ export const EmailInviteModal = props => {
                         ...listEmail,
                         { mail: values.email, error: false }
                       ])
+                      setForerr('');
                     }
                     //   console.log(values)
                     actions.setSubmitting(false)
@@ -380,8 +384,13 @@ export const EmailInviteModal = props => {
           </ModalContent>
         ) : null}
 
-        {props.sendLoadin ? (
-          <ModalContent>
+        {/* {inviteStep === 2  ? (
+ 
+        ) : null} */}
+
+        {inviteStep === 2 ? (<>
+            { props.sendLoadin ?
+            <ModalContent>
             <ModalCloseButton onClick={onClo} />
             <ModalBody>
               <Container p={10} m={6} maxW="container.xl" centerContent>
@@ -402,9 +411,8 @@ export const EmailInviteModal = props => {
               </Container>
             </ModalBody>
           </ModalContent>
-        ) : null}
 
-        {inviteStep === 2 ? (
+            :
           <ModalContent>
             <ModalCloseButton onClick={onClo} />
             <ModalBody>
@@ -519,7 +527,8 @@ export const EmailInviteModal = props => {
               </div>
             </ModalBody>
           </ModalContent>
-        ) : null}
+         }  </>
+             ) : null}
       </Modal>
     </ChakraProvider>
   )
