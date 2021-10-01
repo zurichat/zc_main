@@ -9,7 +9,9 @@ const index = () => {
 
   useEffect(() => {
     setnoControl(
-      document.querySelectorAll(`div[id*='zuri/zuri-plugin']`).length > 0
+      document.querySelectorAll(
+        `[id*='zuri/zuri-plugin'],[id*='zuri/topbar'],[id*='zuri/sidebar']`
+      ).length > 0
     )
   }, [])
 
