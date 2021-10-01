@@ -14,7 +14,7 @@ const SectionOne = () => (
         remote-friendly and flexible team.
       </p>
       <Link to="/signup">
-        <a className={styles.JoinBtn}>Join us</a>
+        <a className={styles.JoinBtn}>Join Zuri Chat</a>
       </Link>
     </div>
     <img src={groupImage} alt="people" />
