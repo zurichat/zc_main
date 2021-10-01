@@ -16,6 +16,7 @@ import { authAxios } from './utils/Api'
 import Profile from './components/Profile'
 import Loader from 'react-loader-spinner'
 import { GetUserInfo } from '@zuri/control'
+import axios from 'axios'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { openModal, presence, setPresence } = useContext(TopbarContext)
@@ -24,9 +25,44 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const [organizations, setOrganizations] = useState([])
   const [search, setSearch] = useState('')
   const [helpModal, setHelpModal] = useState(false)
+  const [organization_id, setOrganization_id] = useState('');
+  const [member_id, setMember_id] = useState('');
+
+  // useEffect(() => {
+  //   const info = async () => {
+  //     await GetUserInfo().then((res) => {
+  //       setMember_id(res[0]._id);
+  //       setOrganization_id(res[0].org_id)
+  //     }
+  //     );
+  //   }
+  //   info()
+  // })
+
 
   useEffect(() => {
     const userdef = JSON.parse(sessionStorage.getItem('user'))
+
+    const searchFunction = async () => {
+      let organization_id = `614679ee1a5607b13c00bcb7`;
+      let member_id = `614732f4f41cb684cc531fc9`;
+
+      await axios
+        .get(`dm.zuri.chat/api/v1/org/${organization_id}/members/${member_id}/messages/search?keyword=Tes`)
+        .then(response => {
+          console.log(response)
+        })
+        .catch(err => {
+          console.log(err.response.data)
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
+
+    searchFunction();
+
+    getOrganizations()
 
     async function getOrganizations() {
       await authAxios
@@ -98,14 +134,14 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         border={'#99999933'}
       />
       <HelpContainer>
-      <img
-            src={HelpIcon}
-            role="button"
-            alt="user profile avatar"
-         onClick={() => setHelpModal(true)} />
+        <img
+          src={HelpIcon}
+          role="button"
+          alt="user profile avatar"
+          onClick={() => setHelpModal(true)} />
       </HelpContainer>
       {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''}
-      
+
       {/* <UserForm /> */}
       {/* <AdminForm /> */}
       <ProfileImageContainer>
