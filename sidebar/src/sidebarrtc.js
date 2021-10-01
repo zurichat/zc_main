@@ -1,25 +1,4 @@
 // import { useState, useEffect, useContext } from 'react'
-// import { plugindata } from '../plugindata'
-
-// // import { fetchUser } from './utils/fetchUserDetails'
-
-// const Sidebar = props => {
-//   // const user = fetchUser()
-//   const userdata = plugindata()
-//   // console.log(userInfo, 'sidebar new', organizationInfo)
-
-//   useEffect(() => {
-//     if (userdata.plugin) {
-//       console.log('user user data', userdata.sideBarData)
-//     }
-//   }, [userdata.plugin])
-
-//   return <div>Welcome</div>
-// }
-
-// export default Sidebar
-
-// import { useState, useEffect, useContext } from 'react'
 // import { fetchUser } from './utils/fetchUserDetails'
 
 // const Sidebar = props => {
@@ -39,7 +18,7 @@ import { Fragment, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './styles/Sidebar.module.css'
 import Dropdown from './components/Dropdown'
-import EmailInviteModal from './components/EmailInvite'
+import Modal from './components/InviteModal'
 import ModalComponent from './components/ModalComponent'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
 import styled from 'styled-components'
@@ -67,9 +46,6 @@ import axios from 'axios'
 import { GetUserInfo } from '@zuri/control'
 import { authAxios } from './utils/Api'
 import linkIcon from './assets/link.svg'
-
-import { ChakraProvider, Spinner } from '@chakra-ui/react'
-
 import { SubscribeToChannel } from '@zuri/control'
 import { filterUrl, trimUrl } from './utils/filterurl'
 
@@ -84,19 +60,15 @@ const Sidebar = props => {
   const [query, setQuery] = useState('')
   const [loading, setLoading] = useState(false)
   // const [error, setError] = useState('')
-  const [inviteEmail, setInviteEmail] = useState([])
-  const [orgEmails, setOrgEmails] = useState([])
+  const [inviteEmail, setInviteEmail] = useState('')
   const [owner, setOwner] = useState(false)
   const [InviteSuccess, setInviteSuccess] = useState(false)
   const [homeModal, toggleHomeModal] = useState(false)
   const toggle = () => toggleHomeModal(!homeModal)
-  const toggleOpenInvite = () => setOpenInvite(!openInvite)
-  const setInviteEmails = emails => setInviteEmail(emails)
-  const [sendLoading, setSendLoading] = useState(false)
 
   let currentWorkspace = localStorage.getItem('currentWorkspace')
   console.log(currentWorkspace)
-  // console.log(inviteEmail, 'whatsappout');
+
   const [userInfo, setUserInfo] = useState({
     userId: '',
     Organizations: [],
@@ -150,25 +122,17 @@ const Sidebar = props => {
     getOrgDetails().then(res => {
       const currentUser = res.data.data.find(user => user.email === userEmail)
       setOwner(currentUser?.role === 'owner' || currentUser?.role === 'admin')
-      const existingEmails = []
-      res.data.data.map(user => existingEmails.push(user.email))
-      // console.log(existingEmails);
-      setOrgEmails(existingEmails)
     })
   }
 
   // Invite Users
-  // 6150542f6dc33f65ab425403
-  // ${currentWorkspace}
-  const inviteUser = async emails => {
-    // console.log(currentWorkspace, token, emails)
-    console.log(...emails, 'pidoxy')
-    setSendLoading(true)
-    return await axios({
+
+  const inviteUser = async () => {
+    return axios({
       method: 'post',
       url: `https://api.zuri.chat/organizations/${currentWorkspace}/send-invite`,
       data: {
-        emails: [...emails]
+        emails: [inviteEmail]
       },
       headers: {
         Authorization: `Bearer ${token}`
@@ -176,12 +140,9 @@ const Sidebar = props => {
     })
       .then(res => {
         console.log('invite', res)
-        setSendLoading(false)
         setInviteSuccess(true)
       })
       .catch(err => {
-        setSendLoading(false)
-        setInviteSuccess(false)
         console.error(err)
       })
   }
@@ -299,10 +260,7 @@ const Sidebar = props => {
             </div>
           </div>
           <div className={`col-12 px-3 ${styles.odalContainer}`}>
-            <ModalComponent
-              isOpen={homeModal}
-              toggleOpenInvite={toggleOpenInvite}
-            />
+            <ModalComponent isOpen={homeModal} />
           </div>
 
           <Modall showDialog={showDialog} closeDialog={close} />
@@ -333,17 +291,66 @@ const Sidebar = props => {
               </Wrapper>
             </Content>
           </Overlay>
-
-          <EmailInviteModal
-            isOpen={openInvite}
-            onDismiss={closeInviteModal}
-            orgvalEmails={orgEmails}
-            setInviteEmails={setInviteEmails}
-            inviteUserViaMail={inviteUser}
-            sendLoadin={sendLoading}
-            currentWorkspace={currentWorkspace}
-            invSucc={InviteSuccess}
-          />
+          <Overlay isOpen={openInvite} onDismiss={closeInviteModal}>
+            <Content
+              style={{ width: '55%', height: '55%' }}
+              aria-label="room-list"
+            >
+              <CloseButton className="close-button" onClick={closeInviteModal}>
+                <Span aria-hidden>×</Span>
+              </CloseButton>
+              <div>
+                <h3>Invite people to The Workspace</h3>
+              </div>
+              {InviteSuccess && (
+                <div className={`alert alert-success`}>
+                  Invite was sent to {inviteEmail}
+                </div>
+              )}
+              <div>
+                <label for="email_invite">To:</label>
+              </div>
+              <Wrapper>
+                <div>
+                  <input
+                    type="email"
+                    placeholder="example@gmail.com"
+                    multiple
+                    value={inviteEmail}
+                    onChange={e => setInviteEmail(e.target.value)}
+                    name="email_invite"
+                    className={`pb-4 form-control`}
+                  />
+                </div>
+                <div
+                  className={`mt-5 pt-3 d-flex my-auto justify-content-between`}
+                >
+                  <p
+                    onClick={() => {
+                      window.navigator.clipboard.writeText(
+                        `https://zuri.chat/invite?organization=${currentWorkspace}`
+                      )
+                      alert('link has been copied')
+                    }}
+                    className={`mb-0 align-items-center`}
+                    style={{ color: '#00B87C', fontSize: '13px' }}
+                  >
+                    <img className={`pe-3`} src={linkIcon} />
+                    Copy invite link{' '}
+                  </p>
+                  <button
+                    onClick={() => inviteUser()}
+                    style={{ color: 'white', backgroundColor: '#00B87C' }}
+                    type="button"
+                    disabled={inviteEmail === '' ? true : false}
+                    className={`btn my-auto `}
+                  >
+                    Send
+                  </button>
+                </div>
+              </Wrapper>
+            </Content>
+          </Overlay>
         </div>
       </div>
       <div className={`${styles.subCon2}`}>
@@ -545,10 +552,8 @@ export const Overlay = styled(DialogOverlay)`
   justify-content: center;
   align-items: center;
   width: 100%;
-
   padding: 2rem;
   z-index: 5;
-  box-shadow: 0 15px 16px 0.17px rgba(0, 0, 0, 0.05);
 `
 export const Content = styled(DialogContent)`
   position: relative;
@@ -566,17 +571,16 @@ const Wrapper = styled.div`
 `
 const CloseButton = styled.button`
   position: absolute;
-  top: 25px;
-  right: 15px;
-  // padding: 1.2rem 1.2rem;
+  top: 0px;
+  right: 0;
+  padding: 0.5rem;
   width: 50px;
-  height: 50px;
-  color: black;
+  color: red;
   background-color: transparent;
   border: none;
 `
 const Span = styled.span`
-  font-size: 2.5rem;
+  font-size: 0.8rem;
 `
 const Item = styled.p`
 font-family: Lato;
