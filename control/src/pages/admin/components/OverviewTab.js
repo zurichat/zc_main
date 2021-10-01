@@ -1,15 +1,59 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import toast, { Toaster } from 'react-hot-toast'
+import Loader from 'react-loader-spinner'
 
 import styles from '../styles/adminOverview.module.css'
+import { authAxios } from '../Utils/Api'
 
+import { getToken, getUser, getCurrentWorkspace } from '../Utils/Common'
+
+// icons
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 import { FiCheck } from 'react-icons/fi'
 
 const OverviewTab = () => {
+
+  const currentWorkspace = getCurrentWorkspace()
+  const user = getUser()
+  const [workspaceData, setWorkspaceData] = React.useState({})
+  const [loading, setLoading] = React.useState(false)
+  console.log(workspaceData);
+
+  useEffect(() => {
+    if (currentWorkspace) {
+      authAxios.get(`/organizations/${currentWorkspace}`)
+        .then(res => {
+          setWorkspaceData(res.data.data)
+          console.log(res.data.data)
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
+  }, [currentWorkspace])
+
+  const handlePlan = () => {
+    setLoading(true)
+
+    authAxios.post(`/organizations/${currentWorkspace}/upgrade-to-pro`)
+      .then(res => {
+        setLoading(false)
+        console.log(res.data)
+        toast.success('Organisation Upgraded Successfully', {
+          position: 'top-center'})
+      })
+      .catch(err => {
+        setLoading(false)
+        console.log(err)
+        toast.error('Oops, something went wrong check and try again', {
+          position: 'top-center'})
+      })
+  }
+
   return (
     <div className={styles.plansContainer}>
       <div className={styles.tokenAmount}>
-        <span>0 &nbsp;</span>
+        <span>{workspaceData.tokens} &nbsp;</span>
         tokens
         <AiOutlineInfoCircle className={styles.infoIcon} />
       </div>
@@ -20,7 +64,11 @@ const OverviewTab = () => {
           <b className={styles.bold}>Free Plan</b>
         </h1>
         <div className={styles.buttonWrapper}>
-          <button className={styles.mainCta}>Subscribe to a plan</button>
+          <button onClick={handlePlan} className={styles.mainCta}>
+            {loading ? 
+              <Loader type="ThreeDots" color="#fff" height={40} width={40} /> : 
+              "Subscribe to a plan"}
+          </button>
         </div>
 
         <div className={styles.plansDetails}>
@@ -60,7 +108,9 @@ const OverviewTab = () => {
           <p className={styles.infoBody}>Do More. Anytime.</p>
         </div>
         <button className={styles.btnSecondary}>Learn More</button>
-        <button className={styles.btnPrimary}>Upgrade</button>
+        <button onClick={handlePlan} className={styles.btnPrimary}>{loading ? 
+              <Loader type="ThreeDots" color="#fff" height={40} width={40} /> : 
+              "Upgrade"}</button>
       </div>
 
       <div className={styles.footer}>
@@ -73,6 +123,7 @@ const OverviewTab = () => {
           <span className={styles.footerLinkSpan}>Enter it here</span>
         </p>
       </div>
+      <Toaster />
     </div>
   )
 }
