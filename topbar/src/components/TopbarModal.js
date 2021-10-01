@@ -39,7 +39,36 @@ const TopbarModal = ({ members }) => {
     setPresence
   } = state
 
-  const token = sessionStorage.getItem('token')
+
+  const currentWorkspace = localStorage.getItem('currentWorkspace')
+  let token = sessionStorage.getItem('token')
+  
+
+  useEffect(() => {
+    let user = JSON.parse(sessionStorage.getItem('user'))
+
+    if ((user && token) !== null) {
+      try {
+        axios
+          .get(`https://api.zuri.chat/organizations/${currentWorkspace}`, {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          })
+          .then(response => {
+            localStorage.setItem('orgName', response.data.data.name)
+            // let userData = { currentWorkspace, ...response.data.data }
+          })
+      } catch (err) {
+        console.log(err)
+      }
+    } else {
+      console.log('YOU ARE NOT LOGGED IN, PLEASE LOG IN')
+    }
+  }, [])
+
+
+
   const config = {
     headers: {
       Authorization: `Bearer ${token}`
