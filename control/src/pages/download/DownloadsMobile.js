@@ -14,7 +14,7 @@ const DownloadsMobile = () => {
   const [exe, setexe] = useState({ link: '', name: '' })
   React.useEffect(() => {
     if (isIOS) return setexe({ name: 'DOWNLOAD FOR IOS' })
-    return setexe({ name: 'DOWNLOAD FOR ANDROID' })
+    return setexe({ name: 'DOWNLOAD FOR ANDROID', link: 'https://drive.google.com/file/d/1C5s3Hm44shxtIJ6XElV3lqBk1XLAbrMm/view?usp=drivesdk' })
   }, [])
   return (
     <>
@@ -30,7 +30,6 @@ const DownloadsMobile = () => {
             </p>
             <a
               href={exe.link}
-              download={exe.name}
               className={downloadStyles.button1}
             >
               <img className={`px-2`} src={icon} alt="download icon"></img>
@@ -53,16 +52,14 @@ const DownloadsMobile = () => {
           </p>
           <div className={`${downloadStyles.downloadButtonContainer}`}>
             <a
-              href={exe.link}
-              download={exe.name}
+              href="/download-app"
               className={downloadStyles.downloadButton}
             >
               Windows
               <img className={`px-2`} src={windows} alt="download icon" />
             </a>
             <a
-              href={exe.link}
-              download={exe.name}
+              href="/download-app"
               className={downloadStyles.downloadButton}
             >
               macOS
@@ -72,15 +69,13 @@ const DownloadsMobile = () => {
           <div className={`${downloadStyles.downloadButtonContainer} mb-4`}>
             <a
               href={exe.link}
-              download={exe.name}
               className={downloadStyles.downloadButton}
             >
               Android
               <img className={`px-2`} src={android} alt="download icon" />
             </a>
             <a
-              href={exe.link}
-              download={exe.name}
+              href="/download-app"
               className={downloadStyles.downloadButton}
             >
               iOS
@@ -104,7 +99,6 @@ const DownloadsMobile = () => {
             </h1>
             <a
               href={exe.link}
-              download={exe.name}
               className={`${downloadStyles.button2} text-center`}
             >
               <img className={`px-2`} src={icon} alt="download icon"></img>
