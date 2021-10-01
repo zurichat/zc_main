@@ -10,12 +10,13 @@ import grid from '../assets/grid.svg'
 import bouy from '../assets/bouy.svg'
 import la_rocket from '../assets/la_rocket.svg'
 import { getCurrentWorkspace } from '../Utils/Common'
-import { getUser } from '../../settings/Utils/Common'
 import { authAxios } from '../Utils/Api'
 
-const AdminHeader = () => {
+// icon
+import { FiMenu } from 'react-icons/fi';
+
+const AdminHeader = ({ setModal, openModal }) => {
   const currentWorkspace = getCurrentWorkspace()
-  const user = getUser()
   const [workspaceData, setWorkspaceData] = React.useState({})
 
   useEffect(() => {
@@ -54,6 +55,10 @@ const AdminHeader = () => {
           <img className={styles.menuImg} src={zuriLogo} alt="zuri icon" />
           Launch
         </Link>
+      </div>
+
+      <div onClick={() => setModal(!openModal)} className={styles.mobileMenu}>
+        <FiMenu className={styles.headerMenu} />
       </div>
     </div>
   )
