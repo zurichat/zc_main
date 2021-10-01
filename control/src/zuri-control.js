@@ -15,7 +15,7 @@ const lifecycles = singleSpaReact({
   }
 })
 
-const currentWorkspace = localStorage.getItem('currentWorkspace')
+let currentWorkspace = localStorage.getItem('currentWorkspace')
 let token = sessionStorage.getItem('token')
 
 export const GetUserInfo = async () => {
