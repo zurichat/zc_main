@@ -10,91 +10,70 @@ import theme7 from '../assets/images/theme3.png'
 import theme8 from '../assets/images/theme3.png'
 import theme9 from '../assets/images/theme3.png'
 import theme10 from '../assets/images/theme3.png'
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { authAxios } from '../utils/Api'
 import { ProfileContext } from '../context/ProfileModal'
 
-import toast, { Toaster } from 'react-hot-toast'
-
 const Themes = () => {
-  const { user, orgId } = useContext(ProfileContext)
-  const [color, setColor] = useState('')
-  const [theme, setTheme] = useState('')
+  const [mode, setMode] = useState(() => localStorage.getItem('mode'))
 
-  // // handleSubmit function on the form
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-  //   console.log(isChecked)
-  // }
+  const [color, setColor] = useState('light')
 
-  // const { user, orgId } = useContext(ProfileContext)
-
-  // const [dataState, setDataState] = useState({
-  //   // channel_hurdle_notification: channel_hurdle,
-  //   sync_with_os: false,
-  //   direct_messages_mentions_and_network: ''
-  // })
-
-  // const setData = () => {
-  //   authAxios
-  //     .patch(`/organizations/${orgId}/members/${user._id}/settings`, {
-  //       settings: {
-  //         notifications: dataState
-  //       }
-  //     })
-  //     .then(res => {
-  //       console.log(res)
-  //       setState({ loading: false })
-  //     })
-  //     .catch(err => {
-  //       console.log(err?.response?.data)
-  //       setState({ loading: false })
-  //     })
-  // }
-  // const [state, setState] = useState({
-  //   name: 'React',
-  //   value: 'duration'
-  // })
-
-  // useEffect(() => {
-  //   setData()
-  //   console.log(dataState)
-  //   console.log(user)
-  // }, [dataState])
-
-  const [sync, setSync] = useState(false)
-  const [direct, setDirect] = useState(false)
-  const data = {
-    settings: {
-      themes: {
-        colors: 'light',
-        themes: 'theme'
-      }
+  useEffect(() => {
+    if (mode === 'dark') {
+      document.body.classList.add('darkmode')
+      localStorage.setItem('mode', 'dark')
+    } else {
+      document.body.classList.remove('darkmode')
+      localStorage.setItem('mode', 'light')
     }
-  }
+  }, [mode])
 
-  // handleSubmit function on the form
-  const handleSubmit = color => {
-    setColor(color)
+  const { user } = useContext(ProfileContext)
 
+  const [dataState, setDataState] = useState({
+    // channel_hurdle_notification: channel_hurdle,
+    sync_with_os: null,
+    direct_messages_mentions_and_network: ''
+  })
+
+  const setData = () => {
     authAxios
-      .patch(`/organizations/${orgId}/members/${user._id}/profile`, {
-        name: 'mike'
-      })
+      .patch(
+        `/organizations/6137d69b21d3c78fc9a84bdf/members/6137d69b21d3c78fc9a84bdf/settings`,
+        {
+          settings: {
+            themes: dataState
+          }
+        }
+      )
       .then(res => {
         console.log(res)
-        toast.success('Color succesfuly Set', {
-          position: 'bottom-center'
-        })
-        console.log(data)
+        setState({ loading: false })
       })
       .catch(err => {
         console.log(err?.response?.data)
-        toast.error(err?.message, {
-          position: 'bottom-center'
-        })
+        setState({ loading: false })
       })
   }
+  const [state, setState] = useState({
+    name: 'React',
+    value: 'duration'
+  })
+
+  useEffect(() => {
+    setData()
+    console.log(dataState)
+    console.log(user)
+  }, [dataState])
+
+  //const [isChecked, setIsChecked] = useState(false)
+
+  // handleSubmit function on the form
+  // const handleSubmit = e => {
+  //   e.preventDefault()
+  //   console.log(isChecked)
+  // }
 
   // React.useEffect(() => {
   //   fetch('https://api.zuri.chat/', {
@@ -110,105 +89,107 @@ const Themes = () => {
   // })
 
   return (
-    <div className={styles.themeCont}>
-      <div className={styles.title}>
-        <div className={styles.text}>
-          Change the appearance of Slack across all of your workspaces.
+    <body className={styles.darkmode}>
+      <div className={styles.themeCont}>
+        <div className={styles.title}>
+          <div className={styles.text}>
+            Change the appearance of Slack across all of your workspaces.
+          </div>
         </div>
-      </div>
-      <div className={styles.sync}>
-        <form>
+        <div className={styles.sync}>
           <div className={styles.checkbox}>
             <input
               type="checkbox"
               name="sync"
-              checked={sync}
-              onChange={e => setSync(sync)}
+              onClick={() => {
+                setDataState({ sync_with_os: 'yes' })
+                setData()
+              }}
             />
           </div>
-        </form>
-        <div className={styles.os}>Sync with OS setting</div>
-      </div>
-      <div className={styles.direct}>
-        <form>
+          <div className={styles.os}>Sync with OS setting</div>
+        </div>
+        <div className={styles.direct}>
           <div className={styles.radio}>
             <input
               type="checkbox"
-              name="direct"
-              checked={direct}
-              onChange={e => setDirect(!direct)}
+              name="sync"
+              onClick={() => {
+                setDataState({ direct_messages_mentions_and_network: 'yes' })
+                setData()
+              }}
             />
           </div>
-        </form>
-        <div className={styles.mention}>
-          Direct messages, mentions &amp; network
-        </div>
-      </div>
-      <div className={styles.text2}>
-        Automatically switch between light and dark themes
-      </div>
-      <div className={styles.text2b}>when your system does.</div>
-      <div
-        className={styles.img}
-        onClick={() => {
-          handleSubmit('light')
-        }}
-      >
-        <img src={theme1} alt="theme1" className={styles.theme1} />
-      </div>
-      <div className={styles.img2}>
-        <img src={theme2} alt="theme2" className={styles.theme2} />
-      </div>
-      <div className={styles.customize}>
-        <div className={styles.text3}>Colors</div>
-        <div className={styles.custom}>
-          Customize the look of your workspace. Feeling
-        </div>
-        <div className={styles.custom2}>adventurous?</div>
-        <div className={styles.create}>Create a custom theme</div>
-        <div className={styles.true}>Tried and true</div>
-      </div>
-      <div className={styles.set1}>
-        <div className={styles.img3}>
-          <img src={theme3} alt="theme3" className={styles.theme3} />
-        </div>
-        <div className={styles.img4}>
-          <img src={theme4} alt="theme4" className={styles.theme4} />
-        </div>
-      </div>
-      <div className={styles.all}>
-        <div className={styles.arrow}>↓</div>
-        <div className={styles.show}>Show all classic themes</div>
-      </div>
-      <div className={styles.clean}>Clean and minimal</div>
-      <div className={styles.set2}>
-        <div className={styles.img5}>
-          <img src={theme5} alt="theme5" className={styles.theme5} />
-        </div>
-        <div className={styles.img6}>
-          <img src={theme6} alt="theme6" className={styles.theme6} />
-        </div>
-      </div>
-      <div className={styles.set3}>
-        <div className={styles.img7}>
-          <img src={theme7} alt="theme7" className={styles.theme7} />
-        </div>
-        <div className={styles.img8}>
-          <img src={theme8} alt="theme8" className={styles.theme8} />
-        </div>
-      </div>
-      <div className={styles.set4}>
-        <div className={styles.bottom}>
-          <div className={styles.img9}>
-            <img src={theme9} alt="theme9" className={styles.theme9} />
-          </div>
-          <div className={styles.img10}>
-            <img src={theme10} alt="theme10" className={styles.theme10} />
+          <div className={styles.mention}>
+            Direct messages, mentions &amp; network
           </div>
         </div>
+        <div className={styles.text2}>
+          Automatically switch between light and dark themes
+        </div>
+        <div className={styles.text2b}>when your system does.</div>
+        <a
+          className="cursor-pointer"
+          onClick={() => setMode(mode => (mode === 'dark' ? 'light' : 'dark'))}
+        >
+          <small>{mode === 'dark' ? 'Light' : 'Dark'} Mode</small>
+        </a>
+        <div className={styles.img}>
+          <img src={theme1} alt="theme1" className={styles.theme1} />
+        </div>
+        <div className={styles.img2}>
+          <img src={theme2} alt="theme2" className={styles.theme2} />
+        </div>
+        <div className={styles.customize}>
+          <div className={styles.text3}>Colors</div>
+          <div className={styles.custom}>
+            Customize the look of your workspace. Feeling
+          </div>
+          <div className={styles.custom2}>adventurous?</div>
+          <div className={styles.create}>Create a custom theme</div>
+          <div className={styles.true}>Tried and true</div>
+        </div>
+        <div className={styles.set1}>
+          <div className={styles.img3}>
+            <img src={theme3} alt="theme3" className={styles.theme3} />
+          </div>
+          <div className={styles.img4}>
+            <img src={theme4} alt="theme4" className={styles.theme4} />
+          </div>
+        </div>
+        <div className={styles.all}>
+          <div className={styles.arrow}>↓</div>
+          <div className={styles.show}>Show all classic themes</div>
+        </div>
+        <div className={styles.clean}>Clean and minimal</div>
+        <div className={styles.set2}>
+          <div className={styles.img5}>
+            <img src={theme5} alt="theme5" className={styles.theme5} />
+          </div>
+          <div className={styles.img6}>
+            <img src={theme6} alt="theme6" className={styles.theme6} />
+          </div>
+        </div>
+        <div className={styles.set3}>
+          <div className={styles.img7}>
+            <img src={theme7} alt="theme7" className={styles.theme7} />
+          </div>
+          <div className={styles.img8}>
+            <img src={theme8} alt="theme8" className={styles.theme8} />
+          </div>
+        </div>
+        <div className={styles.set4}>
+          <div className={styles.bottom}>
+            <div className={styles.img9}>
+              <img src={theme9} alt="theme9" className={styles.theme9} />
+            </div>
+            <div className={styles.img10}>
+              <img src={theme10} alt="theme10" className={styles.theme10} />
+            </div>
+          </div>
+        </div>
       </div>
-      <Toaster />
-    </div>
+    </body>
   )
 }
 
