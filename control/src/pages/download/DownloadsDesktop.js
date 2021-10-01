@@ -3,9 +3,11 @@ import Footer from '../../components/Footer'
 import styles from './styles/download.module.css'
 import Header from '../../components/Header'
 import laptop from './assets/laptop.svg'
-import screen from './assets/screen.svg'
+import infolaptop from './assets/infolaptop.svg'
+import herolaptop from './assets/herolaptop.svg'
 import icon from './assets/icon.svg'
 import apple from './assets/apple.svg'
+import playstore from './assets/playstoreIcon.svg'
 import windows from './assets/windows.svg'
 import { isMacOs } from 'react-device-detect'
 
@@ -33,7 +35,7 @@ const DownloadsDesktop = () => {
         </div>
         <img
           className={`${styles.screenshot}`}
-          src={laptop}
+          src={herolaptop}
           alt="app screenshot"
         />
       </section>
@@ -73,13 +75,13 @@ const DownloadsDesktop = () => {
             className={styles.downloadButton}
           >
             Android
-            <img className={`px-2`} src={windows} alt="download icon" />
+            <img className={`px-2`} src={playstore} alt="download icon" />
           </a>
         </div>
         <div className={`d-flex justify-content-center`}>
           <img
             className={`${styles.screen}`}
-            src={screen}
+            src={infolaptop}
             alt="app screenshot"
           ></img>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import DownloadsAndroid from './DownloadsAndroid'
+import DownloadsMobile from './DownloadsMobile'
 import DownloadsDesktop from './DownloadsDesktop'
 
 const Download = () => {
@@ -13,7 +13,7 @@ const Download = () => {
     return () => window.removeEventListener('resize', handleWindowResize)
   }, [])
 
-  return width > breakpoint ? <DownloadsDesktop /> : <DownloadsAndroid />
+  return width > breakpoint ? <DownloadsDesktop /> : <DownloadsMobile />
 }
 
 export default Download
