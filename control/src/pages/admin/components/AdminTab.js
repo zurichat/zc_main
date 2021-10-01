@@ -10,7 +10,7 @@ import MembersTab from '../components/MembersTab'
 import HistoryTab from '../components/HistoryTab'
 import TokensTab from '../components/TokensTab'
 
-// icon
+// icons
 import { FiMenu } from 'react-icons/fi';
 
 const AdminTab = () => {
