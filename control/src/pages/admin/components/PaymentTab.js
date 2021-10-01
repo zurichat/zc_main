@@ -24,6 +24,10 @@ const PaymentTab = () => {
     }
   }, [cardName, cardNumber, expireDate, cvv])
 
+  const handleCardType = (type) => {
+    console.log(type)
+  }
+
   return (
   <>
   <CardList />
@@ -40,12 +44,17 @@ const PaymentTab = () => {
       </div>
       <div className={styles.paymentInputGroup}>
         <label className={styles.paymentInputLabel} htmlFor="number">Card Number* </label>
-        <Cleave placeholder="Enter your credit card number"
-          options={{creditCard: true}}
-          onChange={(e) => setCardNumber(e.target.value)} 
+        <Cleave placeholder="1234 1234 1234 1234"
+          options={{
+            creditCard: true,
+            onCreditCardTypeChanged: function(type) {
+              console.log(type)
+            }
+          }}
+          id="number"
+          onChange={(e) => setCardNumber(e.target.value)}
           className={styles.paymentInput}
         />
-        <input onChange={(e) => setCardNumber(e.target.value)} className={styles.paymentInput} type="number" id="number" placeholder="1234 1234 1234 1234" />
       </div>
 
       <div className={styles.twoGrid}>
