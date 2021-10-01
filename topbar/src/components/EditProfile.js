@@ -30,6 +30,7 @@ const EditProfile = () => {
     phone: user.phone,
     prefix: '',
     timezone: '',
+    // socials: '',
     // socials_url: user.socials_url,
     // facebook_url: user.facebook_url,
     loading: false
@@ -125,6 +126,8 @@ const EditProfile = () => {
       phone: state.phone,
       bio: state.bio,
       timeZone: state.timezone,
+      // socials: state.socials[0],
+      // socials: state.socials[1]
       // tag: state.tag,
       // text: state.text,
       // expiry_time: state.expiry_time,
@@ -394,7 +397,7 @@ const EditProfile = () => {
                 </label>
                 <div
                   role="button"
-                  className="rmvBtn"
+                  className={`rmvBtn fs-6`}
                   onClick={handleImageDelete}
                 >
                   Remove Image
