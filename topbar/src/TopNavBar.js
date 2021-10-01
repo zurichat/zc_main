@@ -61,7 +61,10 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   }, [setOrgId, user.image_url, setUser])
 
   useEffect(() => {
-    GetUserInfo().then(res => setUserProfileImage(res['0'].image_url))
+    GetUserInfo().then(res => {
+      setUserProfileImage(res['0'].image_url)
+      setUser(res['0'])
+    })
   })
 
   let toggleStatus = null
