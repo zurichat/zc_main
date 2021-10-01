@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from 'react'
 import { FaChevronRight } from 'react-icons/fa'
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
 import userAvatar from '../assets/images/avatar_vct.svg'
-
+import axios from 'axios'
 import styles from '../styles/Topbar.module.css'
 import { TopbarContext } from '../context/Topbar'
 import StatusBadgeModal from './StatusBadgeModal'
