@@ -77,7 +77,9 @@ const DownloadsDesktop = () => {
             <img className={`px-2`} src={android} alt="download icon" />
           </a>
         </div>
-        <div className={`d-flex justify-content-center ${styles.infoImageContainer}`}>
+        <div
+          className={`d-flex justify-content-center ${styles.infoImageContainer}`}
+        >
           <img
             className={`${styles.screen}`}
             src={device}

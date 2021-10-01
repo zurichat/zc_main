@@ -27,7 +27,6 @@ body {
   color: #333333;
 }
 
-
 .heroText {
   width: 40%;
 }
@@ -90,9 +89,9 @@ a:hover {
   color: #00b87c;
 }
 
-.infoImageContainer{
+.infoImageContainer {
   max-height: 500px;
-  overflow:hidden;
+  overflow: hidden;
 }
 .ctaContainer {
   display: flex;
@@ -106,7 +105,8 @@ a:hover {
     margin-top: 50px !important;
   }
 
-  .screenshot,.laptop {
+  .screenshot,
+  .laptop {
     width: 410px;
     top: 40px;
   }
@@ -114,7 +114,6 @@ a:hover {
     padding: 16px !important;
     margin-bottom: 24px !important;
   }
-
 }
 
 @media screen and (max-width: 1200px) {
@@ -134,7 +133,8 @@ a:hover {
     font-size: 30px;
     line-height: 30px;
   }
-  .screenshot, .laptop {
+  .screenshot,
+  .laptop {
     width: 360px;
   }
   .buttondiv {
@@ -166,7 +166,7 @@ a:hover {
 
   .hero {
     flex-direction: column;
-   }
+  }
 
   .heroText {
     text-align: center;
