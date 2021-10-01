@@ -1,25 +1,4 @@
 // import { useState, useEffect, useContext } from 'react'
-// import { plugindata } from '../plugindata'
-
-// // import { fetchUser } from './utils/fetchUserDetails'
-
-// const Sidebar = props => {
-//   // const user = fetchUser()
-//   const userdata = plugindata()
-//   // console.log(userInfo, 'sidebar new', organizationInfo)
-
-//   useEffect(() => {
-//     if (userdata.plugin) {
-//       console.log('user user data', userdata.sideBarData)
-//     }
-//   }, [userdata.plugin])
-
-//   return <div>Welcome</div>
-// }
-
-// export default Sidebar
-
-// import { useState, useEffect, useContext } from 'react'
 // import { fetchUser } from './utils/fetchUserDetails'
 
 // const Sidebar = props => {
