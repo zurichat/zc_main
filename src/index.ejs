@@ -133,6 +133,11 @@ document.title = title + appendZuri;
         width: calc(26.4rem * 0.9);
       }
     }
+    @media (max-width: 768px) {
+      div[id*='zuri/sidebar'] {
+        display: none;
+      }
+    }
 
     @media (max-width: 425px) {
       div[id*='zuri/sidebar'] {
