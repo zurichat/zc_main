@@ -79,12 +79,12 @@ const cookieStorage = {
       .reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: value }), {})
     return cookies[key]
   },
-  setItem: (key, value) => {
-    document.cookie = `${key}=${value}`
+  setItem: (key, value, age) => {
+    document.cookie = `${key}=${value}; max-age=${age}`
   }
 }
 const handleButtonClick = () => {
-  cookieStorage.setItem('Zuri Chat Accept', 'true')
+  cookieStorage.setItem('Zuri Chat Accept', 'true', '2592000')
   window.history.back()
 }
 
