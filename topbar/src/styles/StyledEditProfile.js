@@ -245,8 +245,8 @@ export const StyledProfileWrapper = styled.section`
       }
     }
     .rmvBtn {
-    font-size: 14px;
-    margin-top: 10px;
-}
+      font-size: 14px;
+      margin-top: 10px;
+    }
   }
 `

@@ -32,7 +32,7 @@ const EditProfile = () => {
     timezone: '',
     // socials_url: user.socials_url,
     // facebook_url: user.facebook_url,
-    loading: false,
+    loading: false
   })
 
   const addList = () => {
@@ -130,22 +130,22 @@ const EditProfile = () => {
       // expiry_time: state.expiry_time,
       socials: [
         {
-          "title": "twitter",
-          "url": state.url
+          title: 'twitter',
+          url: state.url
         },
         {
-          "title": "facebook",
-          "url": state.url
+          title: 'facebook',
+          url: state.url
         },
         {
-          "title": "linkedin",
-          "url": state.linkedin_url
+          title: 'linkedin',
+          url: state.linkedin_url
         },
         {
-          "title": "instagram",
-          "url": state.facebook_url
-        },
-      ],
+          title: 'instagram',
+          url: state.facebook_url
+        }
+      ]
     }
 
     authAxios
@@ -160,12 +160,12 @@ const EditProfile = () => {
       .then(
         setTimeout(() => {
           authAxios
-          .get(`/organizations/${orgId}/members/${user._id}`)
-          .then(res =>{
-            console.log(res, "get profile")
-            const profile_date = res.data.data
-            setUser(profile_date)
-          })
+            .get(`/organizations/${orgId}/members/${user._id}`)
+            .then(res => {
+              console.log(res, 'get profile')
+              const profile_date = res.data.data
+              setUser(profile_date)
+            })
         }, 500)
       )
       .catch(err => {
@@ -205,11 +205,13 @@ const EditProfile = () => {
                     className="input"
                     id="first_name"
                     defaultValue={state.first_name}
-                    onChange={e => setState({...state, first_name: e.target.value })}
+                    onChange={e =>
+                      setState({ ...state, first_name: e.target.value })
+                    }
                     name="first_name"
                   />
                 </div>
-                 <div className="input-group mal-4">
+                <div className="input-group mal-4">
                   <label htmlFor="name" className="inputLabel">
                     Last Name
                   </label>
@@ -218,7 +220,9 @@ const EditProfile = () => {
                     className="input"
                     id="last_name"
                     defaultValue={state.last_name}
-                    onChange={e => setState({...state, last_name: e.target.value })}
+                    onChange={e =>
+                      setState({ ...state, last_name: e.target.value })
+                    }
                     name="last_name"
                   />
                 </div>
@@ -233,7 +237,9 @@ const EditProfile = () => {
                     className="input"
                     id="dname"
                     defaultValue={state.display_name}
-                    onChange={e => setState({...state, display_name: e.target.value })}
+                    onChange={e =>
+                      setState({ ...state, display_name: e.target.value })
+                    }
                     name="dname"
                   />
                   <p className="para">
@@ -248,7 +254,9 @@ const EditProfile = () => {
                   <select
                     name="pronouns"
                     defaultValue={state.pronouns}
-                    onChange={e => setState({...state, pronouns: e.target.value })}
+                    onChange={e =>
+                      setState({ ...state, pronouns: e.target.value })
+                    }
                     className="select"
                     id="pronouns"
                   >
@@ -264,7 +272,7 @@ const EditProfile = () => {
                 </label>
                 <input
                   type="text"
-                  onChange={e => setState({...state, bio: e.target.value })}
+                  onChange={e => setState({ ...state, bio: e.target.value })}
                   defaultValue={state.bio}
                   className="input"
                   id="bio"
@@ -279,7 +287,7 @@ const EditProfile = () => {
                   Bio
                 </label>
                 <textarea
-                  onChange={e => setState({...state, bio: e.target.value })}
+                  onChange={e => setState({ ...state, bio: e.target.value })}
                   defaultValue={state.bio}
                   className="textarea"
                   name="bio"
@@ -328,7 +336,9 @@ const EditProfile = () => {
                   type="text"
                   className="input"
                   defaultValue={state.socials_url}
-                  onChange={e => setState({...state, socials_url: e.target.value })}
+                  onChange={e =>
+                    setState({ ...state, socials_url: e.target.value })
+                  }
                   id="twitter"
                   name="twitter"
                 />
@@ -339,7 +349,9 @@ const EditProfile = () => {
                 </label>
                 <input
                   defaultValue={state.socials_url}
-                  onChange={e => setState({...state, socials_url: e.target.value })}
+                  onChange={e =>
+                    setState({ ...state, socials_url: e.target.value })
+                  }
                   type="text"
                   className="input"
                   id="facebook"
