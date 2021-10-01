@@ -244,5 +244,9 @@ export const StyledProfileWrapper = styled.section`
         transition: all 0.3s ease-in-out;
       }
     }
+    .rmvBtn {
+    font-size: 14px;
+    margin-top: 10px;
+}
   }
 `

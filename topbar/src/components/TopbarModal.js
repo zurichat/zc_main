@@ -137,18 +137,20 @@ const TopbarModal = ({ members }) => {
 
             <div className={styles.oneRight}>
               <h4>
-                {user.user_name
-                  ? `${user.user_name
-                      .charAt(0)
-                      .toUpperCase()}${user.user_name.slice(1)}`
-                  : 'Anonymous'}
+                {user.display_name
+                  ? user.display_name
+                  : user.user_name}
               </h4>
               {toggleStatus}
             </div>
           </div>
 
           <div className={styles.sectionTwo}>
-            <StatusBadgeModal />
+            <p>
+             {user.status ? user.status: 'my status'}
+              <StatusBadgeModal />
+            </p>
+            
           </div>
 
           <div className={styles.sectionThree}>
