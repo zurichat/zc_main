@@ -21,7 +21,7 @@ const TopbarModal = ({ members }) => {
     useContext(ProfileContext)
 
   const state = useContext(TopbarContext)
-  const [showModal] = state.show
+  const [showModal, setShowModal] = state.show
   // const [username, setUsername] = state.username
   const [showStatus] = state.status
   const [showMembersModal] = state.modal
@@ -39,10 +39,8 @@ const TopbarModal = ({ members }) => {
     setPresence
   } = state
 
-
   const currentWorkspace = localStorage.getItem('currentWorkspace')
   let token = sessionStorage.getItem('token')
-  
 
   useEffect(() => {
     let user = JSON.parse(sessionStorage.getItem('user'))
@@ -66,8 +64,6 @@ const TopbarModal = ({ members }) => {
       console.log('YOU ARE NOT LOGGED IN, PLEASE LOG IN')
     }
   }, [])
-
-
 
   const config = {
     headers: {
@@ -157,6 +153,11 @@ const TopbarModal = ({ members }) => {
       {/* The section that shows the topbarprofile */}
       {showModal ? (
         <section className={styles.topbarModal}>
+          <div
+            id="overlay"
+            onClick={() => setShowModal(false)}
+            className={styles.membersModalOverlay}
+          />
           <div className={styles.sectionOne}>
             <div className={styles.oneLeft}>
               <img
