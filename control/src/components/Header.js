@@ -25,7 +25,7 @@ const HeaderSearchSuggestion = () => {
         <img
           src={searchIcon}
           alt="search-Icon"
-          className={`align-top ${headerStyles.searchImage1}`}
+          className={`d-block d-sm-none align-top ${headerStyles.searchImage1}`}
         />
       </Link>
       <button
