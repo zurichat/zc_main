@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from 'react'
 import { FaChevronRight } from 'react-icons/fa'
 import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
+import axios from 'axios'
 import defaultAvatar from '../assets/images/avatar_vct.svg'
 
 import styles from '../styles/Topbar.module.css'

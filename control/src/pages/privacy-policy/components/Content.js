@@ -9,6 +9,7 @@ import bigLock from '../assets/bigLock.svg'
 import yellowBulb from '../assets/yellowBulb.svg'
 import smallLock from '../assets/smallLock.svg'
 import handShake from '../assets/handShake.svg'
+import veryBigLock from '../assets/veryBigLock.svg'
 
 const Content = () => {
   return (
@@ -16,7 +17,7 @@ const Content = () => {
       <div className={Style.content}>
         <h1 className={Style.headingOne}>Privacy & Terms</h1>
         <div className={Style.section}>
-          <h5 className={Style.headingFive}>Introduction</h5>
+          <h5 className={Style.headingIntro}>Introduction</h5>
           <div className={Style.contentImage}>
             <img
               src={bulbiImage}
@@ -42,7 +43,14 @@ const Content = () => {
             and Switzerland.
           </p>
         </div>
-        <div className={Style.section}>
+        <div className={Style.bigLockImage}>
+          <img
+            src={veryBigLock}
+            className={Style.veryBigLock}
+            alt="very big lock"
+          />
+        </div>
+        <div className={Style.sectionServices}>
           <h5 className={Style.headingFive}>Services</h5>
           <div className={Style.contentImage}>
             <img src={shakeImage} />
@@ -68,7 +76,8 @@ const Content = () => {
             />
           </p>
         </div>
-        <div className={Style.section}>
+
+        <div className={Style.sectionServDev}>
           <h5 className={Style.headingFive}>Service Development</h5>
           <div className={Style.contentBox}>
             <div>
