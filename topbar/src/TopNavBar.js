@@ -57,6 +57,8 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         })
     }
 
+    setUserProfileImage(user.image_url)
+    
     getOrganizations()
   }, [setOrgId, user.image_url, setUser])
 
@@ -108,7 +110,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       {/* <AdminForm /> */}
       <ProfileImageContainer>
         {toggleStatus}
-        {typeof userProfileImage === 'string' ? (
+        { userProfileImage ? (
           <img
             src={userProfileImage !== '' ? userProfileImage : defaultAvatar}
             onClick={openModal}

@@ -15,6 +15,7 @@ import { TopbarContext } from '../context/Topbar'
 import EditProfile from './EditProfile'
 import Preferences from './Preferences'
 import { Dropdown } from './ProfileMore'
+import StatusBadgeModal from './StatusBadgeModal'
 
 const Profile = () => {
   const {
@@ -29,6 +30,7 @@ const Profile = () => {
   const [modal, setModal] = useState('')
 
   const currentTime = moment().format('h:mm a')
+
 
   return (
     <div
@@ -73,10 +75,12 @@ const Profile = () => {
         />
         <div className={styles.userDetails}>
           <h3>
-            {user.first_name ? user.first_name : 'Anonnymous'}{' '}
-            <span>{user.status === '' ? '0' : user.status}</span>
+            {user.first_name ? `${user.first_name} ${user.last_name} `: 'Anonnymous'}{' '}
+            {/* <span>{<StatusBadgeModal />  === '' ? <StatusBadgeModal />  :'0' }</span> */}
+             <StatusBadgeModal className={styles.profstatus}/>
           </h3>
-          <p>What you do</p>
+          <p>
+            {user.bio ? user.bio : 'What you do'}</p>
           <small>{user.pronouns ? user.pronouns : 'His/Her'}</small>
         </div>
 
@@ -128,18 +132,19 @@ const Profile = () => {
 
         <div className={`${styles.moreInfo} ${styles.mobile}`}>
           <div className={styles.infoTitle}>What i do</div>
-          <div className={styles.infoContent}>Design</div>
+          <div className={styles.infoContent}>
+            {user.bio ? user.bio : 'Design'}</div>
         </div>
         <div className={`${styles.moreInfo} ${styles.mobile}`}>
           <div className={styles.infoTitle}>Pronouns</div>
           <div className={styles.infoContent}>
-            {user.pronouns ? user.pronouns : 'null'}
+            {user.pronouns ? user.pronouns : 'His/Her'}
           </div>
         </div>
         <div className={styles.moreInfo}>
           <div className={styles.infoTitle}>Display name</div>
           <div className={styles.infoContent}>
-            {user.user_name ? user.user_name : 'His/Her'}
+            {user.display_name ? user.display_name : user.user_name}
           </div>
         </div>
         <div className={`${styles.moreInfo} ${styles.mobile}`}>
