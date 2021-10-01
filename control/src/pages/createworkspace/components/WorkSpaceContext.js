@@ -22,16 +22,16 @@ const CreateWorkSpaces = () => {
       <Route path={workspaceRoute} exact>
         <WorkspaceHome />
       </Route>
-      <Route path={`${workspaceRoute}/company-name`} exact>
+      <Route path={`${workspaceRoute}/step1`} exact>
         <CompanyName input={input} />
       </Route>
-      <Route path={`${workspaceRoute}/project-name`} exact>
+      <Route path={`${workspaceRoute}/step1/step2`} exact>
         <ProjectName value={input} inputChangeHandler={handleInputChange} />
       </Route>
-      <Route path={`${workspaceRoute}/teammates`} exact>
+      <Route path={`${workspaceRoute}/step1/step2/step3`} exact>
         <Step3 input={input} />
       </Route>
-      <Route path={`${workspaceRoute}/launch`}>
+      <Route path={`${workspaceRoute}/step1/step2/step3/launch`}>
         <LaunchPage />
       </Route>
     </div>
