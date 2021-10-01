@@ -10,91 +10,69 @@ import theme7 from '../assets/images/theme3.png'
 import theme8 from '../assets/images/theme3.png'
 import theme9 from '../assets/images/theme3.png'
 import theme10 from '../assets/images/theme3.png'
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { authAxios } from '../utils/Api'
 import { ProfileContext } from '../context/ProfileModal'
 
-import toast, { Toaster } from 'react-hot-toast'
 
 const Themes = () => {
-  const { user, orgId } = useContext(ProfileContext)
-  const [color, setColor] = useState('')
-  const [theme, setTheme] = useState('')
+  const [mode, setMode] = useState(() => localStorage.getItem("mode"));
 
-  // // handleSubmit function on the form
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-  //   console.log(isChecked)
-  // }
+  const [color, setColor] = useState('light')
 
-  // const { user, orgId } = useContext(ProfileContext)
+    useEffect(() => {
+       if(mode === "dark"){
+          document.body.classList.add("darkmode");
+          localStorage.setItem("mode", "dark");
+       }else{
+          document.body.classList.remove("darkmode");
+          localStorage.setItem("mode", "light");
+       }
+    }, [mode])
 
-  // const [dataState, setDataState] = useState({
-  //   // channel_hurdle_notification: channel_hurdle,
-  //   sync_with_os: false,
-  //   direct_messages_mentions_and_network: ''
-  // })
 
-  // const setData = () => {
-  //   authAxios
-  //     .patch(`/organizations/${orgId}/members/${user._id}/settings`, {
-  //       settings: {
-  //         notifications: dataState
-  //       }
-  //     })
-  //     .then(res => {
-  //       console.log(res)
-  //       setState({ loading: false })
-  //     })
-  //     .catch(err => {
-  //       console.log(err?.response?.data)
-  //       setState({ loading: false })
-  //     })
-  // }
-  // const [state, setState] = useState({
-  //   name: 'React',
-  //   value: 'duration'
-  // })
+  const { user} = useContext(ProfileContext)
 
-  // useEffect(() => {
-  //   setData()
-  //   console.log(dataState)
-  //   console.log(user)
-  // }, [dataState])
+  const [dataState, setDataState] = useState({
+    // channel_hurdle_notification: channel_hurdle,
+    sync_with_os: null,
+    direct_messages_mentions_and_network: ''
+  })
 
-  const [sync, setSync] = useState(false)
-  const [direct, setDirect] = useState(false)
-  const data = {
-    settings: {
-      themes: {
-        colors: 'light',
-        themes: 'theme'
-      }
-    }
-  }
-
-  // handleSubmit function on the form
-  const handleSubmit = color => {
-    setColor(color)
-
+  const setData = () => {
     authAxios
-      .patch(`/organizations/${orgId}/members/${user._id}/profile`, {
-        name: 'mike'
+      .patch(`/organizations/6137d69b21d3c78fc9a84bdf/members/6137d69b21d3c78fc9a84bdf/settings`, {
+        settings: {
+          themes: dataState
+        }
       })
       .then(res => {
         console.log(res)
-        toast.success('Color succesfuly Set', {
-          position: 'bottom-center'
-        })
-        console.log(data)
+        setState({ loading: false })
       })
       .catch(err => {
         console.log(err?.response?.data)
-        toast.error(err?.message, {
-          position: 'bottom-center'
-        })
+        setState({ loading: false })
       })
   }
+  const [state, setState] = useState({
+    name: 'React',
+    value: 'duration'
+  })
+
+  useEffect(() => {
+    setData()
+    console.log(dataState)
+    console.log(user)
+  }, [dataState])
+
+  //const [isChecked, setIsChecked] = useState(false)
+
+  // handleSubmit function on the form
+  // const handleSubmit = e => {
+  //   e.preventDefault()
+  //   console.log(isChecked)
+  // }
 
   // React.useEffect(() => {
   //   fetch('https://api.zuri.chat/', {
@@ -110,6 +88,7 @@ const Themes = () => {
   // })
 
   return (
+    <body className={styles.darkmode}>
     <div className={styles.themeCont}>
       <div className={styles.title}>
         <div className={styles.text}>
@@ -117,29 +96,29 @@ const Themes = () => {
         </div>
       </div>
       <div className={styles.sync}>
-        <form>
           <div className={styles.checkbox}>
             <input
               type="checkbox"
               name="sync"
-              checked={sync}
-              onChange={e => setSync(sync)}
+              onClick={() => {
+                setDataState({sync_with_os: 'yes'})
+                setData()
+              }}
             />
           </div>
-        </form>
         <div className={styles.os}>Sync with OS setting</div>
       </div>
       <div className={styles.direct}>
-        <form>
           <div className={styles.radio}>
             <input
               type="checkbox"
-              name="direct"
-              checked={direct}
-              onChange={e => setDirect(!direct)}
+              name="sync"
+              onClick={() => {
+                setDataState({direct_messages_mentions_and_network: 'yes'})
+                setData()
+              }}
             />
           </div>
-        </form>
         <div className={styles.mention}>
           Direct messages, mentions &amp; network
         </div>
@@ -148,14 +127,12 @@ const Themes = () => {
         Automatically switch between light and dark themes
       </div>
       <div className={styles.text2b}>when your system does.</div>
-      <div
-        className={styles.img}
-        onClick={() => {
-          handleSubmit('light')
-        }}
-      >
-        <img src={theme1} alt="theme1" className={styles.theme1} />
-      </div>
+        <a className="cursor-pointer" onClick={() => setMode(mode => (mode === "dark" ? "light" : "dark"))}>
+          <small>{mode === "dark" ? "Light" : "Dark"} Mode</small>
+        </a>
+        <div className={styles.img}>
+          <img src={theme1} alt="theme1" className={styles.theme1} />
+        </div>
       <div className={styles.img2}>
         <img src={theme2} alt="theme2" className={styles.theme2} />
       </div>
@@ -207,8 +184,8 @@ const Themes = () => {
           </div>
         </div>
       </div>
-      <Toaster />
     </div>
+    </body>
   )
 }
 
