@@ -92,8 +92,9 @@ const index = () => {
               the process.
             </p>
             <p>
-              <span>Careers</span> at Zurichat offer all kinds of opportunities
-              and a simpler, more pleasant, more productive working life.
+              <span className={styles.span}>Careers</span> at Zurichat offer all
+              kinds of opportunities and a simpler, more pleasant, more
+              productive working life.
             </p>
           </div>
         </div>
