@@ -8,9 +8,7 @@ const WorkspaceCard = () => {
 
   return (
     <>
-      {!organizations ? (
-        <div></div>
-      ) : (
+      {organizations && (
         <section className={`${styles.workspace_card}`}>
           <header
             className={`${styles.card_header}`}
