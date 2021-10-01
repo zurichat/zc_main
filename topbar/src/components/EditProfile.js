@@ -1,6 +1,5 @@
 import { useRef, useState, useEffect, useContext } from 'react'
 import ProfileModal from './ProfileModal'
-import defaultAvatar from '../assets/images/avatar_vct.svg'
 import { authAxios } from '../utils/Api'
 
 import { AiFillCamera } from 'react-icons/ai'
