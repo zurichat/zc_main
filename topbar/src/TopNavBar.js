@@ -15,7 +15,7 @@ import HelpModal from './components/HelpModal'
 import { authAxios } from './utils/Api'
 import Profile from './components/Profile'
 import Loader from 'react-loader-spinner'
-import { GetUserInfo } from '@zuri/control'
+import { GetUserInfo } from '../../control/src/zuri-control'
 import axios from 'axios'
 import toggleStyle from './styles/sidebartoggle.module.css'
 import { BsReverseLayoutTextSidebarReverse } from 'react-icons/bs'
@@ -27,40 +27,40 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const [organizations, setOrganizations] = useState([])
   const [search, setSearch] = useState('')
   const [helpModal, setHelpModal] = useState(false)
-  const [organizationId, setOrganizationId] = useState('');
-  const [memberId, setMemberId] = useState('');
+  // const [memberId, setMemberId] = useState('');
+  const [messages, setMessages] = useState('')
+
 
   useEffect(() => {
-    const info = async () => {
-      await GetUserInfo().then((res) => {
-        setMemberId(res[0]._id);
-        setOrganizationId(res[0].org_id)
-        console.log(memberId, "member")
-      }
-      );
-    }
-    info()
+
+    // const fetchUser = async () => {
+    //   const info = await GetUserInfo()
+    //   setMemberId(info[0]._id)
+    // }
+
+    // fetchUser();
+
+    let currentWorkspace = localStorage.getItem('currentWorkspace')
 
     const searchFunction = async () => {
 
-      // let organization_id = `614679ee1a5607b13c00bcb7`;
-      // let member_id = `614732f4f41cb684cc531fc9`;
-
-      await axios
-        .get(`https://dm.zuri.chat/api/v1/org/${organizationId}/members/${memberId}/messages/search?keyword=Tes`)
+      let organization_id = `614679ee1a5607b13c00bcb7`;
+      let member_id = `614732f4f41cb684cc531fc9`;
+      // console.log(member_id, organization_id, "pim");
+      // console.log(search)
+      axios
+        .get(`https://dm.zuri.chat/api/v1/org/${organization_id}/members/${member_id}/messages/search?keyword=${search}`)
         .then(response => {
-          console.log(response.data.results)
-        })
-        .catch(err => {
-          console.log(err.response.data)
+          console.log(response.data.results[0])
+           setMessages(response.data.results)
         })
         .catch(err => {
           console.log(err)
         })
     }
 
-    searchFunction();
-  })
+    searchFunction()
+  }, [search])
 
 
   useEffect(() => {
@@ -132,19 +132,19 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     sidebar_toggle.style.display = 'none'
   }
 
-  zc_spa_body.addEventListener('click', () => {
-    if (window.outerWidth <= 768) {
-      if (sidebar !== null) {
-        sidebar.style.display = 'none'
-        sidebar_toggle.style.display = 'block'
-      }
-    } else {
-      if (sidebar !== null) {
-        sidebar.style.display = 'block'
-        sidebar_toggle.style.display = 'none'
-      }
-    }
-  })
+  // zc_spa_body.addEventListener('click', () => {
+  //   if (window.outerWidth <= 768) {
+  //     if (sidebar !== null) {
+  //       sidebar.style.display = 'none'
+  //       sidebar_toggle.style.display = 'block'
+  //     }
+  //   } else {
+  //     if (sidebar !== null) {
+  //       sidebar.style.display = 'block'
+  //       sidebar_toggle.style.display = 'none'
+  //     }
+  //   }
+  // })
 
   return (
     <TopNavBarBase>
@@ -163,13 +163,24 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       </LogoDiv>
       <BaseInput
         value={search}
-        onChange={e => setSearch(e.target.value)}
+        onChange={e => { setSearch(e.target.value); console.log(search) }}
+        // onClick={() => searchFunction()}
         type="text"
         width={7}
         error
         placeholder="Search here"
         border={'#99999933'}
       />
+      {messages && messages.map((data, index) => {
+        if (data) {
+          return (
+            <div key={index}>
+              <p>{data.message}</p>
+            </div>
+          )
+        }
+        return null
+      })}
       <HelpContainer>
         <img
           src={HelpIcon}
@@ -184,16 +195,16 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       {/* <AdminForm /> */}
       <ProfileImageContainer>
         {toggleStatus}
-        
-          <img
-            src={userProfileImage  ? userProfileImage : defaultAvatar}
-            onClick={openModal}
-            role="button"
-            className="avatar-img"
-            alt="user profile avatar"
-          />
-        
-        
+
+        <img
+          src={userProfileImage ? userProfileImage : defaultAvatar}
+          onClick={openModal}
+          role="button"
+          className="avatar-img"
+          alt="user profile avatar"
+        />
+
+
       </ProfileImageContainer>
 
       <Profile />

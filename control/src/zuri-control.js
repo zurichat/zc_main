@@ -33,7 +33,7 @@ export const GetUserInfo = async () => {
       )
       let userData = { currentWorkspace, ...response.data.data }
       // console.log('getuserinfo', response.data.data)
-      console.log(userData)
+      // console.log(userData)
       return userData
     } catch (err) {
       console.log(err)
@@ -87,7 +87,7 @@ export const GetWorkspaceUsers = async () => {
     let user = res.data.data
     let workSpaceUsersData = { totalUsers: user.length, ...user.slice(0, 100) }
     // console.log(user.slice(0, 100))
-    console.log(workSpaceUsersData)
+    // console.log(workSpaceUsersData)
     return workSpaceUsersData
   } catch (err) {
     console.log(err)
@@ -102,9 +102,9 @@ const centrifuge = new Centrifuge(
 )
 
 centrifuge.connect()
-centrifuge.on('connect', function (connectCtx) {
-  console.log('connected', connectCtx)
-})
+// centrifuge.on('connect', function (connectCtx) {
+//   console.log('connected', connectCtx)
+// })
 
 export const SubscribeToChannel = (plugin_id, callback) => {
   centrifuge.subscribe(plugin_id, ctx => {
