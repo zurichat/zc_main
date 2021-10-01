@@ -6,9 +6,10 @@ import imageTut from '../assets/image1.png'
 import bulbiImage from '../assets/bulb.png'
 import shakeImage from '../assets/shake.png'
 import bigLock from '../assets/bigLock.svg'
-import yellowBulb from '../assets/yellowbulb.svg'
-import securityLock from '../assets/securityLock.svg'
-import handShake from '../assets/handshake.svg'
+import yellowBulb from '../assets/yellowBulb.svg'
+import smallLock from '../assets/smallLock.svg'
+import handShake from '../assets/handShake.svg'
+import veryBigLock from '../assets/veryBigLock.svg'
 
 const Content = () => {
   return (
@@ -16,7 +17,7 @@ const Content = () => {
       <div className={Style.content}>
         <h1 className={Style.headingOne}>Privacy & Terms</h1>
         <div className={Style.section}>
-          <h5 className={Style.headingFive}>Introduction</h5>
+          <h5 className={Style.headingIntro}>Introduction</h5>
           <div className={Style.contentImage}>
             <img
               src={bulbiImage}
@@ -42,7 +43,14 @@ const Content = () => {
             and Switzerland.
           </p>
         </div>
-        <div className={Style.section}>
+        <div className={Style.bigLockImage}>
+          <img
+            src={veryBigLock}
+            className={Style.veryBigLock}
+            alt="very big lock"
+          />
+        </div>
+        <div className={Style.sectionServices}>
           <h5 className={Style.headingFive}>Services</h5>
           <div className={Style.contentImage}>
             <img src={shakeImage} />
@@ -63,7 +71,8 @@ const Content = () => {
             found in our <Link title="Nigeria Privacy Disclosure." />
           </p>
         </div>
-        <div className={Style.section}>
+
+        <div className={Style.sectionServDev}>
           <h5 className={Style.headingFive}>Service Development</h5>
           <div className={Style.contentBox}>
             <div>
