@@ -46,39 +46,39 @@ const HeaderSearchSuggestion = () => {
         >
           <li className="nav-item">
             <Link
-              to="/features"
+              to="/pricing"
               className={`nav-link ${headerStyles.navLinkFeatures}`}
               aria-current="page"
-            >
-              <span className={`${headerStyles.item}`}>Features</span>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/pricing"
-              className={`nav-link ${headerStyles.navLinkPricing}`}
-              role="button"
-              aria-expanded="false"
             >
               <span className={`${headerStyles.item}`}>Pricing</span>
             </Link>
           </li>
           <li className="nav-item">
             <Link
-              to="/careers"
-              className={`nav-link ${headerStyles.navLinkComms}`}
+              to="/about"
+              className={`nav-link ${headerStyles.navLinkPricing}`}
+              role="button"
+              aria-expanded="false"
             >
-              <span className={`${headerStyles.item}`}>Careers</span>
+              <span className={`${headerStyles.item}`}>About Zurichat</span>
             </Link>
           </li>
           <li className="nav-item">
             <Link
-              to="/download-app"
+              to="/downloads"
+              className={`nav-link ${headerStyles.navLinkComms}`}
+            >
+              <span className={`${headerStyles.item}`}>Downloads</span>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/contact-us"
               className="nav-link"
               role="button"
               aria-expanded="false"
             >
-              <span className={`${headerStyles.item}`}>Downloads</span>
+              <span className={`${headerStyles.item}`}>Contact Us</span>
             </Link>
           </li>
         </ul>
