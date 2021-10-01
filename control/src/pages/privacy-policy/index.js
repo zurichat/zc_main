@@ -6,6 +6,9 @@ import Content from './components/Content'
 const PrivacyPolicy = () => {
   return (
     <div>
+      <Helmet>
+        <title> Privacy Policy - Zuri Chat</title>
+      </Helmet>
       <Header />
       <Content />
       <Footer />

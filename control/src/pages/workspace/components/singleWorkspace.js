@@ -44,7 +44,7 @@ const SingleWorkspace = ({
         <h5>{workspace_name}</h5>
         <section className={`${styles.workspace_details}`}>
           <div className={`${styles.members_photos}`}>
-            {member_imgs.map((img, index) => {
+            {member_imgs?.map((img, index) => {
               return (
                 <img
                   className={`${styles.member_img}`}

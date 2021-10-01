@@ -82,9 +82,11 @@
 }
 
 .addButton {
-  width: 2.5em;
-  margin-inline-start: auto;
-  padding-inline-end: 1.5em;
+  width: 24px;
+  /* margin-inline-start: auto; */
+  margin-left: auto;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
 }
 
 /* .orgHeader {
