@@ -33,6 +33,7 @@ import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation
 import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContext'
 import PrivacyPolicy from './pages/privacy-policy/index'
 import NotFoundPage from './pages/404'
+import About from './pages/about/index'
 import Billing from './pages/admin/Billing'
 
 // useEffect(() => {
@@ -101,6 +102,9 @@ const App = () => {
         </Route>
         <Route path="/privacy">
           <PrivacyPolicy />
+        </Route>
+        <Route path="/about">
+          <About />
         </Route>
         <Route path="/marketplace" exact>
           <MarketPlace />
