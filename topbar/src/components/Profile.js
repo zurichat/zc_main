@@ -31,7 +31,6 @@ const Profile = () => {
 
   const currentTime = moment().format('h:mm a')
 
-
   return (
     <div
       className={showProfile ? styles.ProfileContainer : styles.containerNone}
@@ -75,12 +74,13 @@ const Profile = () => {
         />
         <div className={styles.userDetails}>
           <h3>
-            {user.first_name ? `${user.first_name} ${user.last_name} `: 'Anonnymous'}{' '}
+            {user.first_name
+              ? `${user.first_name} ${user.last_name} `
+              : 'Anonnymous'}{' '}
             {/* <span>{<StatusBadgeModal />  === '' ? <StatusBadgeModal />  :'0' }</span> */}
-             <StatusBadgeModal className={styles.profstatus}/>
+            <StatusBadgeModal className={styles.profstatus} />
           </h3>
-          <p>
-            {user.bio ? user.bio : 'What you do'}</p>
+          <p>{user.bio ? user.bio : 'What you do'}</p>
           <small>{user.pronouns ? user.pronouns : 'His/Her'}</small>
         </div>
 
@@ -133,7 +133,8 @@ const Profile = () => {
         <div className={`${styles.moreInfo} ${styles.mobile}`}>
           <div className={styles.infoTitle}>What i do</div>
           <div className={styles.infoContent}>
-            {user.bio ? user.bio : 'Design'}</div>
+            {user.bio ? user.bio : 'Design'}
+          </div>
         </div>
         <div className={`${styles.moreInfo} ${styles.mobile}`}>
           <div className={styles.infoTitle}>Pronouns</div>

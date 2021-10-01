@@ -136,21 +136,16 @@ const TopbarModal = ({ members }) => {
             </div>
 
             <div className={styles.oneRight}>
-              <h4>
-                {user.display_name
-                  ? user.display_name
-                  : user.user_name}
-              </h4>
+              <h4>{user.display_name ? user.display_name : user.user_name}</h4>
               {toggleStatus}
             </div>
           </div>
 
           <div className={styles.sectionTwo}>
             <p>
-             {user.status ? user.status: 'my status'}
+              {user.status ? user.status : 'my status'}
               <StatusBadgeModal />
             </p>
-            
           </div>
 
           <div className={styles.sectionThree}>
