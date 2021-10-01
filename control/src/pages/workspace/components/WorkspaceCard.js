@@ -5,6 +5,7 @@ import { useWorkspaceContext } from './WorkspaceContext'
 
 const WorkspaceCard = () => {
   const { organizations, user, error } = useWorkspaceContext()
+  console.log('organizations: ', organizations)
   return (
     <section className={`${styles.workspace_card}`}>
       <header
@@ -20,7 +21,7 @@ const WorkspaceCard = () => {
         </h4>
       </header>
       <div className={`${styles.singleworkspace_wrapper}`}>
-        {organizations.map((org, id) => {
+        {organizations?.map((org, id) => {
           return (
             <SingleWorkspace
               key={org.id}
