@@ -140,10 +140,11 @@ const Sidebar = props => {
 
   const inviteUser = async emails => {
     // console.log(currentWorkspace, token, emails)
+    console.log(...emails,'pidoxy')
     setSendLoading(true)
     return await axios({
       method: 'post',
-      url: `https://api.zuri.chat/organizations/${currentWorkspace}/send-invite`,
+      url: `https://api.zuri.chat/organizations/6150542f6dc33f65ab425403/send-invite`,
       data: {
         emails: [...emails]
       },
