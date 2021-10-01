@@ -15,19 +15,20 @@
   margin: 85px 0 30px 0;
 }
 
-.headingFive {
+.headingIntro {
+  margin-bottom: 20px;
   font-size: 24px;
   font-weight: bold;
   letter-spacing: -2%;
   text-decoration: underline;
 }
 
-/* .headingSix {
-  font-size: 18px;
+.headingFive {
+  font-size: 24px;
   font-weight: bold;
-  line-height: 134%;
-  letter-spacing: 3%;
-} */
+  letter-spacing: -2%;
+  text-decoration: underline;
+}
 
 .bulbImage {
   position: relative;
@@ -55,6 +56,11 @@
   padding: 0 370px 0 0;
 }
 
+.sectionServices {
+  position: relative;
+  top: -400px;
+}
+
 .parservices {
   font-family: 'Lato', sans-serif;
   font-style: normal;
@@ -64,6 +70,10 @@
   letter-spacing: 0.03em;
   color: #000000;
   padding: 0 380px 0 0;
+}
+
+.sectionServDev {
+  margin-top: -380px;
 }
 
 .effectDate {
@@ -93,8 +103,11 @@
   font-family: 'Lato', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 134%;
+  margin-top: 25px;
+  letter-spacing: 0.03em;
+  color: #000000;
 }
 
 .referZuri {
@@ -105,8 +118,8 @@
   margin-left: 250px;
   padding: 0 200px 0 0;
   line-height: 192%;
-  /* letter-spacing: 0.03em; */
   color: #000000;
+  margin-top: 30px;
 }
 
 .datareq {
@@ -126,7 +139,7 @@
 .effectiveAll {
   position: absolute;
   left: 300px;
-  top: 705px;
+  top: 760px;
 }
 
 .compliance {
@@ -135,15 +148,13 @@
 }
 
 .privacy {
-  margin-top: 30px;
+  margin-top: 55px;
   margin-bottom: 0px;
 }
 
 .privacymat {
-  margin-top: 280px;
+  margin-top: 120px;
   text-decoration: underline;
-  position: absolute;
-  bottom: -650px;
 }
 
 .zurimission {
@@ -155,7 +166,7 @@
   letter-spacing: 0.03em;
   color: #000000;
   padding: 0 120px 0 0;
-  margin-top: 180px;
+  margin-top: 20px;
 }
 
 .privPol {
@@ -245,7 +256,6 @@
   font-size: 16px;
   line-height: 28px;
   letter-spacing: 0.01em;
-  /* padding: 0 0px 0 0; */
   color: #000000;
   border: none;
   width: auto;
@@ -299,7 +309,7 @@
 }
 
 .partners {
-  font-family: Lato;
+  font-family: 'Lato', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
@@ -310,7 +320,7 @@
 }
 
 .parPartners {
-  font-family: Lato;
+  font-family: 'Lato', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -322,7 +332,7 @@
 }
 
 .paraPriv1 {
-  font-family: Lato;
+  font-family: 'Lato', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -330,9 +340,6 @@
   letter-spacing: 0.01em;
   color: #000000;
   padding: 0 100px 0 0;
-}
-.contentBox {
-  /* display: inline-flex; */
 }
 
 .section {
@@ -344,4 +351,10 @@
   justify-content: center;
   align-items: center;
   margin: 20px 0;
+}
+
+.veryBigLock {
+  position: relative;
+  left: 840px;
+  bottom: 240px;
 }
