@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from 'react'
-import downloadStyles from './styles/DownloadsAndroid.module.css'
+import React, { useState } from 'react'
+import downloadStyles from './styles/DownloadsMobile.module.css'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import icon from './assets/icon.svg'
 import laptop from './assets/laptop.svg'
+import infolaptop from './assets/infolaptop.svg'
+import herolaptop from './assets/herolaptop.svg'
 import apple from './assets/apple.svg'
 import windows from './assets/windows.svg'
+import playstore from './assets/playstoreIcon.svg'
 import { isIOS } from 'react-device-detect'
 
-const DownloadsAndroid = () => {
+const DownloadsMobile = () => {
   const [exe, setexe] = useState({ link: '', name: '' })
   React.useEffect(() => {
     if (isIOS) return setexe({ name: 'DOWNLOAD FOR IOS' })
@@ -35,6 +38,11 @@ const DownloadsAndroid = () => {
               DOWNLOAD
             </a>
           </div>
+          <img
+            className={`${downloadStyles.screenshot}`}
+            src={herolaptop}
+            alt="app screenshot"
+          />
         </section>
         <section className={`${downloadStyles.info}`}>
           <p className={`h2 text-center font-weight-bold text-white mb-4`}>
@@ -65,7 +73,7 @@ const DownloadsAndroid = () => {
               className={downloadStyles.downloadButton}
             >
               Android
-              <img className={`px-2`} src={windows} alt="download icon" />
+              <img className={`px-2`} src={playstore} alt="download icon" />
             </a>
             <a
               href={exe.link}
@@ -79,7 +87,7 @@ const DownloadsAndroid = () => {
           <div className={`d-flex justify-content-center`}>
             <img
               className={`${downloadStyles.screen}`}
-              src={screen}
+              src={infolaptop}
               alt="app screenshot"
             ></img>
           </div>
@@ -112,4 +120,4 @@ const DownloadsAndroid = () => {
   )
 }
 
-export default DownloadsAndroid
+export default DownloadsMobile
