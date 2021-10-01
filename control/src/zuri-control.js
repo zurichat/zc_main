@@ -31,7 +31,7 @@ export const GetUserInfo = async () => {
           }
         }
       )
-      let userData = { currentWorkspace, token, ...response.data.data }
+      let userData = { currentWorkspace, ...response.data.data }
       // console.log('getuserinfo', response.data.data)
       console.log(userData)
       return userData
