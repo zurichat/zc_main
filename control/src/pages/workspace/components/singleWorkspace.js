@@ -41,7 +41,11 @@ const SingleWorkspace = ({
                 )
               })}
             </div>
-            <p>{member_number} members</p>
+            <p>
+              {member_number === 1
+                ? `${member_number} member`
+                : `${member_number} members`}
+            </p>
           </section>
         </div>
       </div>

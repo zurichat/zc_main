@@ -177,6 +177,20 @@
   transform: translateX(-50%);
 }
 
+@media only screen and (max-width: 425px) {
+  .header_extra {
+    position: unset;
+  }
+  .workspace_header {
+    display: unset;
+    position: unset;
+  }
+  .header_extra a {
+    position: absolute;
+    right: 0;
+  }
+}
+
 .header_extra p {
   text-align: right;
   font-size: calc(0.8125rem * var(--type-scale, 1));
@@ -343,6 +357,69 @@ button.workspace_btn:hover {
   object-fit: cover;
 }
 
+/* Join Workspace */
+
+.joinworkspace_wrapper {
+  width: 100%;
+  max-width: 42.25rem;
+  margin: 0 auto;
+  padding: 1.25rem 0;
+  border-radius: 8px;
+  background: rgba(225, 253, 244);
+}
+
+.joinworkspace_container {
+  display: flex;
+  padding: 0 1.6rem;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.joinworkspace_container button {
+  padding: 0.5rem 0.2rem;
+  font-size: 15px;
+  line-height: 19.5px;
+  background-color: #00b87c;
+  border-color: #00b87c;
+  color: #fff;
+  min-width: 150px;
+  padding: 0.8rem 0.2rem;
+  border-radius: 4px;
+  border-style: solid;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.joinworkspace_container button:hover {
+  opacity: 80%;
+  border-color: #333333;
+}
+
+.joinworkspace_container > p {
+  margin-bottom: unset;
+  font-size: 14px;
+  line-height: 18.2px;
+  padding: 0 0.5rem;
+}
+
+.sprite_container {
+  background-color: #58cca6;
+  border-radius: 4px;
+  width: 6%;
+}
+
+@media only screen and (max-width: 425px) {
+  .joinworkspace_container {
+    flex-direction: column;
+  }
+
+  .sprite_container {
+    width: 13%;
+  }
+}
+
 /* Workspace footer */
 
 .workspace_footer {
@@ -362,6 +439,12 @@ button.workspace_btn:hover {
   text-decoration: underline;
 }
 
+.workspace_footer p {
+  font-size: 13px;
+  margin-bottom: unset;
+  font-weight: 700;
+}
+
 @media only screen and (min-width: 600px) {
   .workspace_container {
     max-width: 97%;
@@ -372,7 +455,7 @@ button.workspace_btn:hover {
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 500px) {
   .page_header {
     align-self: center;
   }
