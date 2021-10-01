@@ -27,32 +27,29 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const [organizations, setOrganizations] = useState([])
   const [search, setSearch] = useState('')
   const [helpModal, setHelpModal] = useState(false)
-  const [organization_id, setOrganization_id] = useState('');
-  const [member_id, setMember_id] = useState('');
-
-  // useEffect(() => {
-  //   const info = async () => {
-  //     await GetUserInfo().then((res) => {
-  //       setMember_id(res[0]._id);
-  //       setOrganization_id(res[0].org_id)
-  //     }
-  //     );
-  //   }
-  //   info()
-  // })
-
+  const [organizationId, setOrganizationId] = useState('');
+  const [memberId, setMemberId] = useState('');
 
   useEffect(() => {
-    const userdef = JSON.parse(sessionStorage.getItem('user'))
+    const info = async () => {
+      await GetUserInfo().then((res) => {
+        setMemberId(res[0]._id);
+        setOrganizationId(res[0].org_id)
+        console.log(memberId, "member")
+      }
+      );
+    }
+    info()
 
     const searchFunction = async () => {
-      let organization_id = `614679ee1a5607b13c00bcb7`;
-      let member_id = `614732f4f41cb684cc531fc9`;
+
+      // let organization_id = `614679ee1a5607b13c00bcb7`;
+      // let member_id = `614732f4f41cb684cc531fc9`;
 
       await axios
-        .get(`dm.zuri.chat/api/v1/org/${organization_id}/members/${member_id}/messages/search?keyword=Tes`)
+        .get(`https://dm.zuri.chat/api/v1/org/${organizationId}/members/${memberId}/messages/search?keyword=Tes`)
         .then(response => {
-          console.log(response)
+          console.log(response.data.results)
         })
         .catch(err => {
           console.log(err.response.data)
@@ -63,6 +60,11 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     }
 
     searchFunction();
+  })
+
+
+  useEffect(() => {
+    const userdef = JSON.parse(sessionStorage.getItem('user'))
 
     getOrganizations()
 
