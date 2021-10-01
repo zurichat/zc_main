@@ -146,17 +146,16 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       {/* <AdminForm /> */}
       <ProfileImageContainer>
         {toggleStatus}
-        {typeof userProfileImage === 'string' ? (
+        
           <img
-            src={userProfileImage !== '' ? userProfileImage : defaultAvatar}
+            src={userProfileImage  ? userProfileImage : defaultAvatar}
             onClick={openModal}
             role="button"
             className="avatar-img"
             alt="user profile avatar"
           />
-        ) : (
-          <Loader type="ThreeDots" color="#00B87C" height={30} width={30} />
-        )}
+        
+        
       </ProfileImageContainer>
 
       <Profile />
