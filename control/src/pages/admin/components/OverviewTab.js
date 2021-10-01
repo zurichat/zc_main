@@ -3,7 +3,7 @@ import React from 'react'
 import styles from '../styles/adminOverview.module.css'
 
 import { AiOutlineInfoCircle } from 'react-icons/ai'
-import { FiCheck } from 'react-icons/fi';
+import { FiCheck } from 'react-icons/fi'
 
 const OverviewTab = () => {
   return (
@@ -45,12 +45,11 @@ const OverviewTab = () => {
               <FiCheck className={styles.checkIcon} />
               An unlimited number of songs and game time
             </li>
-            <li className={styles.listItemGreen}>
-              See all top features
-            </li>
+            <li className={styles.listItemGreen}>See all top features</li>
           </ul>
           <p className={styles.getToken}>
-            Don’t have enough tokens? <span className={styles.cta}>Buy now</span>
+            Don’t have enough tokens?{' '}
+            <span className={styles.cta}>Buy now</span>
           </p>
         </div>
       </div>
@@ -69,7 +68,10 @@ const OverviewTab = () => {
           Visit our Help Center to see if you qualify for a discounted plan.
         </p>
 
-        <p className={styles.footerLink}>Have a promo code? <span className={styles.footerLinkSpan}>Enter it here</span></p>
+        <p className={styles.footerLink}>
+          Have a promo code?{' '}
+          <span className={styles.footerLinkSpan}>Enter it here</span>
+        </p>
       </div>
     </div>
   )
