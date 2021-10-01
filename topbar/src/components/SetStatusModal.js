@@ -40,7 +40,7 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
           />
         </div>
         <div className={styles.modalcontent}>
-          <form action="" method="post">
+          <form>
             <div className={styles.addstatus}>
               <div className={styles.addstatusleft}>
                 <p
