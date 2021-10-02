@@ -6,7 +6,7 @@ import FormWrapper from '../../components/AuthFormWrapper'
 import LoginLoading from '../../components/LoginLoading'
 import styles from '../../component-styles/AuthFormElements.module.css'
 import axios from 'axios'
-import { GetUserInfo } from '../../zuri-control'
+import { GetUserInfo } from '@zuri/control'
 import $behaviorSubject from '../../../../globalState'
 import { Helmet } from 'react-helmet'
 // import { Link } from 'react-router-dom'
@@ -74,6 +74,8 @@ const Login = () => {
       .then(response => {
         const { data, message } = response.data
 
+        setLoading(true)
+
         //Store token in localstorage
         sessionStorage.setItem('token', data.user.token)
 
@@ -83,16 +85,45 @@ const Login = () => {
         //Store user copy in localstorage
         sessionStorage.setItem('user', JSON.stringify(data.user))
 
-        //Display message
-        // alert(message) //Change this when there is a design
-
         //Return the login data globally
         $behaviorSubject.next(response.data)
 
-        setLoading(true)
+        // Switch for redirects
+        axios
+          .get(`https://api.zuri.chat/users/${data.user.id}`, {
+            headers: {
+              Authorization: `Bearer ${data.user.token}`
+            }
+          })
+          .then(res => {
+            const orgs = res.data.data['Organizations'].length
+            console.log('reg orgs', orgs)
+            localStorage.setItem(
+              'currentWorkspace',
+              res.data.data['Organizations'][0]
+            )
+
+            switch (true) {
+              case orgs > 1:
+                history.push('/choose-workspace')
+                break
+              case orgs < 1:
+                history.push('/createworkspace')
+                break
+              default:
+                history.push('/home')
+            }
+          })
+          .catch(err => {
+            throw err
+          })
+
+        //Display message
+        // alert(message) //Change this when there is a design
 
         setTimeout(() => {
           //Redirect to some other page
+          GetUserInfo()
           history.push('/choose-workspace')
           setLoading(false)
         }, 2000)
