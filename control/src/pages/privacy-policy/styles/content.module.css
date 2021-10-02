@@ -12,7 +12,15 @@
   font-weight: bold;
   line-height: 130%;
   text-align: center;
-  margin: 25px 0 30px 0;
+  margin: 85px 0 30px 0;
+}
+
+.headingIntro {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: -2%;
+  text-decoration: underline;
 }
 
 .headingFive {
@@ -22,11 +30,11 @@
   text-decoration: underline;
 }
 
-.headingSix {
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 134%;
-  letter-spacing: 3%;
+.bulbImage {
+  position: relative;
+  top: -40px;
+  padding-top: 30px;
+  margin-left: 10px;
 }
 
 .paragraph {
@@ -34,11 +42,310 @@
   font-weight: 500;
   line-height: 157.5%;
   letter-spacing: 3%;
+  padding: 0 380px 0 0;
+  margin-left: 5px;
+}
+
+.parregistered {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 134%;
+  color: #000000;
+  padding: 0 370px 0 0;
+}
+
+.sectionServices {
+  position: relative;
+  top: -400px;
+}
+
+.parservices {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 157.5%;
+  letter-spacing: 0.03em;
+  color: #000000;
+  padding: 0 380px 0 0;
+}
+
+.sectionServDev {
+  margin-top: -380px;
+}
+
+.effectDate {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 134%;
+  letter-spacing: 0.03em;
+  color: #000000;
+  margin-left: 250px;
+}
+
+.parinfo {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 134%;
+  letter-spacing: 0.03em;
+  color: #000000;
+  margin-left: 250px;
+  padding: 0 150px 0 0;
+}
+
+.headingstarted {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 134%;
+  margin-top: 25px;
+  letter-spacing: 0.03em;
+  color: #000000;
+}
+
+.referZuri {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  margin-left: 250px;
+  padding: 0 200px 0 0;
+  line-height: 192%;
+  color: #000000;
+  margin-top: 30px;
+}
+
+.datareq {
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+.tableContents {
+  text-decoration: underline;
+  margin-left: 250px;
+}
+
+.tablelinks {
+  margin-left: 250px;
+}
+
+.effectiveAll {
+  position: absolute;
+  left: 300px;
+  top: 760px;
+}
+
+.compliance {
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.privacy {
+  margin-top: 55px;
+  margin-bottom: 0px;
+}
+
+.privacymat {
+  margin-top: 280px;
+  text-decoration: underline;
+  position: absolute;
+  bottom: -650px;
+}
+
+.zurimission {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 155%;
+  letter-spacing: 0.03em;
+  color: #000000;
+  padding: 0 120px 0 0;
+  margin-top: 180px;
+}
+
+.privPol {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 155%;
+  letter-spacing: 0.03em;
+  color: #000000;
+  padding: 0 120px 0 0;
+}
+
+.bigLock {
+  position: relative;
+  top: -40px;
+  padding-top: 30px;
+  margin-left: 10px;
+}
+
+.applicabilityImage {
+  display: flex;
+  margin-top: 20px;
+}
+
+.appPrivPol1 {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 23px;
+  margin-left: 25px;
+  color: #000000;
+  padding: 0 120px 0 0;
+}
+
+.appPrivPol2 {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 173%;
+  letter-spacing: 0.01em;
+  color: #000000;
+  padding: 0 100px 0 0;
+}
+
+.bulb {
+  position: relative;
+  top: -40px;
+  padding-top: 30px;
+  margin-left: 10px;
+}
+
+.infoImage {
+  display: flex;
+  margin-top: 20px;
+}
+
+.infoCollect {
+  margin-top: 40px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: -0.02em;
+  text-decoration-line: underline;
+  color: #000000;
+}
+
+.infopar1 {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  padding: 0 150px 0 0;
+  color: #000000;
+  margin-left: 25px;
+}
+
+.privbreakdown1 {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.01em;
+  padding: 0 0px 0 0;
+  color: #000000;
+  border: none;
+  width: auto;
+}
+
+.securityLock {
+  position: relative;
+  top: -40px;
+  padding-top: 30px;
+  margin-left: -15px;
+}
+
+.securityData {
+  display: flex;
+  margin-top: 30px;
+}
+
+.parOthers {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  color: #000000;
+  margin-bottom: 0px;
+}
+
+.parOthers2 {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 165%;
+  color: #000000;
+  padding: 0 110px 0 0;
+  position: relative;
+  top: -25px;
+}
+
+.imagePart {
+  display: flex;
+  margin-top: 30px;
+}
+
+.handShake {
+  position: relative;
+  top: -30px;
+  padding-top: 30px;
+  margin-left: -5px;
+}
+
+.partners {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 165%;
+  color: #000000;
+  margin-bottom: 0px;
+  margin-left: 10px;
+}
+
+.parPartners {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 169.5%;
+  color: #000000;
+  padding: 0 80px 0 0;
+  position: relative;
+  top: -25px;
 }
 
 .contentBox {
-  display: flex;
-  justify-content: space-between;
+  /* display: inline-flex; */
+}
+.paraPriv1 {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.01em;
+  color: #000000;
+  padding: 0 100px 0 0;
 }
 
 .section {
@@ -50,4 +357,10 @@
   justify-content: center;
   align-items: center;
   margin: 20px 0;
+}
+
+.veryBigLock {
+  position: relative;
+  left: 840px;
+  bottom: 240px;
 }
