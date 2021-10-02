@@ -11,12 +11,20 @@ import android from './assets/android.svg'
 import { isIOS } from 'react-device-detect'
 
 const DownloadsMobile = () => {
-  const [exe, setexe] = useState({ link: '', name: '' })
+  const [exe, setexe] = useState({ link: '', name: '', link2: '', name2: '' })
   React.useEffect(() => {
     if (isIOS) return setexe({ name: 'DOWNLOAD FOR IOS' })
     return setexe({
+
       name: 'DOWNLOAD FOR ANDROID',
       link: 'https://drive.google.com/file/d/1C5s3Hm44shxtIJ6XElV3lqBk1XLAbrMm/view?usp=drivesdk'
+
+      name: 'DOWNLOAD ZURI CHAT',
+      link: 'https://drive.google.com/file/d/1C5s3Hm44shxtIJ6XElV3lqBk1XLAbrMm/view?usp=drivesdk',
+      name2: 'DOWNLOAD DM AND CHANNELS',
+      link2:
+        'https://drive.google.com/file/d/1LRrWXjBFdns0RUD7zQapBuof8ole5XHI/view?usp=drivesdk'
+
     })
   }, [])
   return (
@@ -31,9 +39,17 @@ const DownloadsMobile = () => {
             <p className="mb-4">
               Connecting with your team has never been easier with Zuri Chat.
             </p>
+
+            {exe.link2 && (
+              <a href={exe.link2} className={`${downloadStyles.button1} mb-3`}>
+                <img className={`px-2`} src={icon} alt="download icon"></img>
+                {exe.name2}
+              </a>
+            )}
+
             <a href={exe.link} className={downloadStyles.button1}>
               <img className={`px-2`} src={icon} alt="download icon"></img>
-              DOWNLOAD
+              {exe.name}
             </a>
           </div>
           <div
@@ -92,6 +108,16 @@ const DownloadsMobile = () => {
               <img className={`px-2`} src={icon} alt="download icon"></img>
               {exe.name}
             </a>
+
+            {exe.link2 && (
+              <a
+                href={exe.link2}
+                className={`${downloadStyles.button2} text-center`}
+              >
+                <img className={`px-2`} src={icon} alt="download icon"></img>
+                {exe.name2}
+              </a>
+            )}
           </div>
           <div className={`d-flex justify-content-center `}>
             <img

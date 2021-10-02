@@ -72,6 +72,7 @@ const Login = () => {
         sessionStorage.setItem('user', JSON.stringify(data.user))
         //Display message
         // alert(message) //Change this when there is a design
+
         //Return the login data globally
         $behaviorSubject.next(response.data)
         setLoading(true)
@@ -81,6 +82,15 @@ const Login = () => {
         //  history.push('/choose-workspace')
         //  setLoading(false)
         //}, 2000)
+
+
+        // setTimeout(() => {
+          //Redirect to some other page
+        //   GetUserInfo()
+        //   history.push('/choose-workspace')
+        //   setLoading(false)
+        // }, 2000)
+
       })
       .catch(error => {
         const { data } = error.response
