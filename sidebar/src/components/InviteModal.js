@@ -3,7 +3,7 @@ import styles from '../styles/InviteModal.module.css'
 import { useTranslation } from 'react-i18next'
 
 const Modal = props => {
-  if (!props.show) {
+  if (!props.isOpen) {
     return null
   }
   const { t } = useTranslation()

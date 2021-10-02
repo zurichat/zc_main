@@ -8,7 +8,6 @@ const SearchBar = () => {
         placeholder="Search here"
       />
       <img src="/search-2-line.svg" className={styles.searchSvg} alt="search" />
-      
     </div>
   )
 }

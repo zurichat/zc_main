@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import headerStyles from '../component-styles/HeaderStyle.module.css'
 import zurichatlogo from '../component-assets/zurichatlogo.svg'
+import searchIcon from '../component-assets/searchIcon.svg'
 //import { Button } from '../pages/createworkspace/components/WorkspaceHome'
 
 const HeaderSearchSuggestion = () => {
@@ -20,7 +21,13 @@ const HeaderSearchSuggestion = () => {
         />
         <span className={`mb-2 ${headerStyles.zuriChat}`}>Zuri Chat</span>
       </Link>
-
+      <Link to="/search">
+        <img
+          src={searchIcon}
+          alt="search-Icon"
+          className={`d-block d-sm-none align-top ${headerStyles.searchImage1}`}
+        />
+      </Link>
       <button
         className={`navbar-toggler ${headerStyles.toggle}`}
         type="button"
@@ -46,42 +53,43 @@ const HeaderSearchSuggestion = () => {
         >
           <li className="nav-item">
             <Link
-              to="/features"
+              to="/pricing"
               className={`nav-link ${headerStyles.navLinkFeatures}`}
               aria-current="page"
-            >
-              <span className={`${headerStyles.item}`}>Features</span>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/pricing"
-              className={`nav-link ${headerStyles.navLinkPricing}`}
-              role="button"
-              aria-expanded="false"
             >
               <span className={`${headerStyles.item}`}>Pricing</span>
             </Link>
           </li>
           <li className="nav-item">
             <Link
-              to="/careers"
-              className={`nav-link ${headerStyles.navLinkComms}`}
+              to="/about"
+              className={`nav-link ${headerStyles.navLinkPricing}`}
+              role="button"
+              aria-expanded="false"
             >
-              <span className={`${headerStyles.item}`}>Careers</span>
+              <span className={`${headerStyles.item}`}>About Zurichat</span>
             </Link>
           </li>
           <li className="nav-item">
             <Link
-              to="/download-app"
-              className="nav-link"
-              role="button"
-              aria-expanded="false"
+              to="/downloads"
+              className={`nav-link ${headerStyles.navLinkComms}`}
             >
               <span className={`${headerStyles.item}`}>Downloads</span>
             </Link>
           </li>
+          <li className="nav-item">
+            <Link
+              to="/contact-us"
+              className="nav-link"
+              role="button"
+              aria-expanded="false"
+            >
+              <span className={`${headerStyles.item}`}>Contact Us</span>
+            </Link>
+          </li>
         </ul>
+
         <ul class={`d-lg-none navbar-nav-scroll ${headerStyles.signs}`}>
           <li className="nav-item">
             <Link
@@ -103,6 +111,13 @@ const HeaderSearchSuggestion = () => {
             </Link>
           </li>
         </ul>
+        <Link to="/search">
+          <img
+            src={searchIcon}
+            alt="search-Icon"
+            className={`d-inline-block align-top ${headerStyles.searchImage}`}
+          />
+        </Link>
       </div>
       <ul
         class={`navbar-nav d-none d-lg-flex me-auto my-2 my-lg-0 navbar-nav-scroll ${headerStyles.signs}`}
