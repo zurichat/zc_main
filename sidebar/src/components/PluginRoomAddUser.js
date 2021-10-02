@@ -178,7 +178,7 @@ export const Overlay = styled(DialogOverlay)`
   align-items: center;
   width: 100%;
   padding: 2rem;
-  z-index: 99999;
+  z-index: 999999;
   overflow-y: scroll;
 `
 
