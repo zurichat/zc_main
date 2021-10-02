@@ -109,58 +109,51 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   })
 
   return (
-    <TopNavBarBase>
-      <LogoDiv>
-        <a href="#">
-          <Logo src={zurichatlogo} alt="zuri chat logo" />
-        </a>
+    <>
+      <div className="ps-3" style={{ width: '20%' }}>
+        {/* <a href="/home"> */}
+        <Logo src={zurichatlogo} alt="zuri chat logo" />
+        {/* </a> */}
         <div
           onClick={openSidebar}
           id="sidebar_toggle"
           className={toggleStyle.sidebar_toggle_icon}
+          style={{
+            top: '7rem',
+          }}
         >
-          <BsReverseLayoutTextSidebarReverse size={18} fill="#fff" />
+          <BsReverseLayoutTextSidebarReverse
+            style={{
+              margin: '0.6rem 0.6rem'
+            }}
+            size={18}
+            fill="#fff" />
         </div>
-        {/* <LogoName>ZURI</LogoName> */}
-      </LogoDiv>
-      <BaseInput
-        value={search}
-        onChange={e => setSearch(e.target.value)}
-        type="text"
-        width={7}
-        error
-        placeholder="Search here"
-        border={'#99999933'}
-      />
-      <HelpContainer>
-        <img
-          src={HelpIcon}
-          role="button"
-          alt="user profile avatar"
-          onClick={() => setHelpModal(true)}
+      </div>
+      <div className="ms-4" style={{ width: '60%' }}>
+        <BaseInput
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          type="text"
+          width={12}
+          error
+          placeholder="Search here"
+          border={'#99999933'}
         />
-      </HelpContainer>
-      {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''}
-
-      {/* <UserForm /> */}
-      {/* <AdminForm /> */}
-      <ProfileImageContainer>
-        {toggleStatus}
-        
-          <img
-            src={userProfileImage  ? userProfileImage : defaultAvatar}
-            onClick={openModal}
-            role="button"
-            className="avatar-img"
-            alt="user profile avatar"
-          />
-        
-        
-      </ProfileImageContainer>
+      </div>
+      <div className="d-flex justify-content-end pe-3" style={{ width: '20%', marginRight: '' }}>
+        <ProfileImg
+          src={userProfileImage ? userProfileImage : defaultAvatar}
+          onClick={openModal}
+          role="button"
+          className="avatar-img"
+          alt="user profile avatar"
+        />
+      </div>
 
       <Profile />
       <TopbarModal />
-    </TopNavBarBase>
+    </>
   )
 }
 
@@ -197,11 +190,23 @@ const LogoDiv = styled.div`
   align-items: center;
 `
 const Logo = styled.img`
+@media (max-width: 1024px) {
+  width: 60%;
+}
   @media (max-width: 768px) {
-    width: 80%;
+    width: 70%;
   }
   @media (max-width: 425px) {
-    width: 70%;
+    width: 80%;
+  }
+`
+const ProfileImg = styled.img`
+height: '32px';
+  @media (max-width: 1024px) {
+    height: 25.6px;
+  }
+  @media (max-width: 425px) {
+    height: 22.4px;
   }
 `
 const ProfileImageContainer = styled.div`
@@ -215,6 +220,8 @@ const ProfileImageContainer = styled.div`
 `
 
 const HelpContainer = styled.div`
+display:none;
+
   > .MuiSvgIcon-root {
     opacity: 0.5;
   }
