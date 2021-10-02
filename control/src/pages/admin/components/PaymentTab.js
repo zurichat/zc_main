@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState } from 'react'
 
 // import Cleave from 'cleave.js/react';
 
@@ -9,17 +9,16 @@ import CardList from './CardLists'
 import toast, { Toaster } from 'react-hot-toast'
 import { ValidateCard } from '../Utils/Common'
 
-
-import { CardContext } from '../../../context/CardContext'; 
-
 const PaymentTab = () => {
-  const {cardLists ,setCardList} = useContext(CardContext);
-  const [formFilled, setFormFilled] = useState(true);
-  const [cardName, setCardName] = useState('');
-  const [cardNumber, setCardNumber] = useState('');
-  const [expireDate, setExpireDate] = useState('');
-  const [cvv, setCvv] = useState('');
-  const [cardType, setCardType] = useState('');
+  const [formFilled, setFormFilled] = useState(true)
+  const [cardName, setCardName] = useState('')
+  const [cardNumber, setCardNumber] = useState('')
+  const [expireDate, setExpireDate] = useState('')
+  const [cvv, setCvv] = useState('')
+  const [cardType, setCardType] = useState('')
+
+  const handleSubmit = e => {
+    e.preventDefault()
 
     const data = {
       cardName,
@@ -29,29 +28,29 @@ const PaymentTab = () => {
       cardType
     }
 
-    if(cardLists?.length > 0) {
-      const cardLists = JSON.parse(localStorage.getItem('cardList'));
-      if (cardLists.length > 0 && cardLists.filter(card => card.cardNumber !== data.cardNumber)) {
-        cardLists.push(data);
-        setCardList(cardLists);
-        localStorage.setItem('cardList', JSON.stringify(cardLists));
-        toast.success('Card Added Successfully');
+    if (localStorage.getItem('cardList')) {
+      const cardList = JSON.parse(localStorage.getItem('cardList'))
+      console.log(cardList)
+      if (
+        cardList.filter(card => card.cardNumber !== data.cardNumber).length > 0
+      ) {
+        cardList.push(data)
+        localStorage.setItem('cardList', JSON.stringify(cardList))
+        toast.success('Card Added Successfully')
       } else {
         toast.error('Card already exists')
       }
-    }
-    else {
-      const cardLists = [data];
-      setCardList(cardLists);
-      localStorage.setItem('cardList', JSON.stringify(cardLists));
-      toast.success('Card Added Successfully');
+    } else {
+      const cardList = [data]
+      localStorage.setItem('cardList', JSON.stringify(cardList))
+      toast.success('Card Added Successfully')
     }
 
     setCardName('')
     setCardNumber('')
     setExpireDate('')
     setCvv('')
-  
+  }
 
   useEffect(() => {
     if (
