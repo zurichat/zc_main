@@ -275,7 +275,6 @@ const Sidebar = props => {
               />
             </div>
           </div>
-
           <div className={`col-12 px-3 ${styles.odalContainer}`}>
             <ModalComponent
               isOpen={homeModal}
