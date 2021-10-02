@@ -18,7 +18,7 @@ function Pricing() {
   return (
     <div>
       <Helmet>
-        <title> Check Pricing - Zuri Chat</title>
+        <title> Pricing - Zuri Chat</title>
       </Helmet>
       <Header />
       <PricingPageSection1 />
