@@ -54,17 +54,34 @@ const Sidebar = props => {
   const [owner, setOwner] = useState(false)
   const [InviteSuccess, setInviteSuccess] = useState(false)
   const [homeModal, toggleHomeModal] = useState(false)
-  const toggle = () => toggleHomeModal(!homeModal)
+  const [org, setOrg] = useState({})
+  console.log('ORGGGG', org)
+  const toggle = () => {
+    toggleHomeModal(!homeModal)
+    document.removeEventListener('click', toggle)
+  }
+
+  useEffect(() => {
+    if (homeModal) {
+      document.addEventListener('click', toggle)
+    }
+  }, [homeModal])
+
+  document.removeEventListener('click', toggle)
+
+  let currentWorkspace = localStorage.getItem('currentWorkspace')
+
   const toggleOpenInvite = () => setOpenInvite(!openInvite)
   const setInviteEmails = emails => setInviteEmail(emails)
   const [sendLoading, setSendLoading] = useState(false)
 
-  let currentWorkspace = localStorage.getItem('currentWorkspace')
   const [userInfo, setUserInfo] = useState({
     userId: '',
     Organizations: [],
     token: ''
   })
+
+  console.log('userinfo', userInfo)
 
   const [nullValue, setnullValue] = useState(0)
 
@@ -75,6 +92,18 @@ const Sidebar = props => {
   let token = sessionStorage.getItem('token')
   let user_id_session = JSON.parse(sessionStorage.getItem('user'))
 
+  useEffect(() => {
+    axios({
+      method: 'get',
+      url: `https://api.zuri.chat/organizations/${currentWorkspace}`,
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    }).then(res => {
+      const org = res.data.data
+      setOrg(org)
+    })
+  })
   useEffect(() => {
     inviteVisibility()
 
@@ -217,8 +246,8 @@ const Sidebar = props => {
         <div className={`row ${styles.orgDiv}`}>
           <div className={`col-12 px-3 ${styles.orgInfo}`}>
             <div onClick={toggle} className={`row p-0 ${styles.orgHeader}`}>
-              <span className={`col-9 mb-0 ${styles.orgTitle}`}>HNGi8</span>
-              <span className={`col-3 p-0 ${styles.sidebar__header__arrow}`}>
+              <span className={`col-8 mb-0 ${styles.orgTitle}`}>{org.name}</span>
+              <span className={`col-4 p-0 ${styles.sidebar__header__arrow}`}>
                 <MdKeyboardArrowDown />
               </span>{' '}
               {/* <img
@@ -235,8 +264,10 @@ const Sidebar = props => {
               />
             </div>
           </div>
+          <div className={`col-12 px-3 ${styles.modalContainer}`}>
           <div className={`col-12 px-3 ${styles.odalContainer}`}>
             <ModalComponent
+             workSpace={org}
               isOpen={homeModal}
               toggleOpenInvite={toggleOpenInvite}
             />
@@ -282,6 +313,7 @@ const Sidebar = props => {
             invSucc={InviteSuccess}
           />
         </div>
+      </div>
       </div>
       <div className={`${styles.subCon2}`}>
         <div className={`row mt-2 ${styles.sb__item}`}>
