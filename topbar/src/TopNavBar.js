@@ -167,25 +167,6 @@ export default connect(mapStateToProps)(TopNavBar)
 
 //  TopNavBar
 
-const TopNavBarBase = styled.div`
-  padding-inline-start: 1.4rem;
-  padding-inline-end: 1.4rem;
-  background-color: var(--bg-2);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 5;
-  width: 100%;
-  font-size: 1.5rem;
-  @media (max-width: 768px) {
-    padding-inline-start: 0.3rem;
-    padding-inline-end: 0.8rem;
-  }
-  @media (max-width: 425px) {
-    padding-inline-start: 0rem;
-    padding-inline-end: 0.8rem;
-  }
-`
 const LogoDiv = styled.div`
   margin: auto 0;
   display: flex;
@@ -237,8 +218,8 @@ display:none;
 `
 const ToggleStatus = styled.div`
   position: absolute;
-  bottom: 0px;
-  // right: -18px;
+  bottom: -1px;
+  right: -1px;
   .user-active {
     background-color: green;
     height: 10px;
