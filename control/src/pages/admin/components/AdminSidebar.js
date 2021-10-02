@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import styles from '../styles/adminSidebar.module.css'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 // image
 import avatar from '../assets/avatar.svg'
@@ -104,14 +104,16 @@ const AdminSidebar = ({ setModal, openModal }) => {
             <FiCornerUpLeft className={styles.icon} />
             Back to Zuri Chat
           </Link>
-          <Link
+          <NavLink
+            exact
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/home"
+            activeClassName={styles.sidebarLinkActive}
+            to="/admin/settings"
           >
             <FiHome className={styles.icon} />
             Home
-          </Link>
+          </NavLink>
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
@@ -157,14 +159,16 @@ const AdminSidebar = ({ setModal, openModal }) => {
       <div className={styles.sidebarMenu}>
         <h6 className={styles.sidebarHeading}>ADMINISTRATION</h6>
         <div className={styles.sidebarMenuItems}>
-          <Link
+          <NavLink
+            exact
             onClick={() => setModal(!openModal)}
+            activeClassName={styles.sidebarLinkActive}
             className={styles.sidebarLink}
-            to="/"
+            to="/admin/settings/permission"
           >
             <FiSettings className={styles.icon} />
             Settings & permission
-          </Link>
+          </NavLink>
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
@@ -189,14 +193,16 @@ const AdminSidebar = ({ setModal, openModal }) => {
             <FiUserPlus className={styles.icon} />
             Invitations
           </Link>
-          <Link
+          <NavLink
+            exact
             onClick={() => setModal(!openModal)}
+            activeClassName={styles.sidebarLinkActive}
             className={styles.sidebarLink}
-            to="/"
+            to="/admin/settings/billings"
           >
             <FiCreditCard className={styles.icon} />
             Billings
-          </Link>
+          </NavLink>
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
