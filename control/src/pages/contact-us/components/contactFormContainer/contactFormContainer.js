@@ -348,6 +348,7 @@ function ContactFormContainer() {
           <button
             type="submit"
             className={`btn ${ContactFormStyle.btn_primary} fw-bold`}
+            style={{ height: '55px' }}
             disabled={values.subject === '' || values.loading}
           >
             {values.subject ? 'Send us a message' : 'GET HELP'}
@@ -374,15 +375,7 @@ function ContactFormContainer() {
             {values.success}
           </p>
         )}
-        <a
-          href="/privacy"
-          style={{
-            paddingTop: '24px',
-            textDecoration: 'underline',
-            display: 'block',
-            lineHeight: '19px'
-          }}
-        >
+        <a href="/privacy" className={ContactFormStyle.privacy}>
           Privacy Policy
         </a>
       </form>
