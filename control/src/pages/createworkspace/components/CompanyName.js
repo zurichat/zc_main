@@ -35,20 +35,22 @@ function CompanyName({ input }) {
         localStorage.clear('userUserPassword')
         localStorage.clear('newUserEmail')
 
-         axios.patch(`https://api.zuri.chat/organizations/${res.data.data.InsertedID}/name`,  {
-          "organization_name": orgName
-      },
-    { headers: {
-      Authorization: 'Bearer ' + user.token
-    }
-  })
+        axios.patch(
+          `https://api.zuri.chat/organizations/${res.data.data.InsertedID}/name`,
+          {
+            organization_name: orgName
+          },
+          {
+            headers: {
+              Authorization: 'Bearer ' + user.token
+            }
+          }
+        )
       })
       .catch(err => {
         console.log(err.message)
       })
   }
-
-  
 
   return (
     <div>
@@ -87,7 +89,6 @@ function CompanyName({ input }) {
               }
               onClick={createUserOrg}
             >
-             
               Continue
             </button>
           </Link>
