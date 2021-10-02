@@ -144,9 +144,10 @@ const Profile = () => {
         </div>
         <div className={`${styles.moreInfo} ${styles.mobile}`}>
           <div className={styles.infoTitle}>Status</div>
-          <div className={styles.infoContent}>
+          {/* Until status is implemented */}
+          {/* <div className={styles.infoContent}>
             <span>{user.status ? user.status : '0'}</span>
-          </div>
+          </div> */}
         </div>
         <div className={styles.moreInfo}>
           <div className={styles.infoTitle}>Email address</div>
