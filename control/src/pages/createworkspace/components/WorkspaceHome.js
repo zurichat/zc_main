@@ -12,19 +12,18 @@ import { Helmet } from 'react-helmet'
 const WorkspaceHome = () => {
   const { url } = useRouteMatch()
   const [organizations, setOrganizations] = useState([])
-  const [user, setUser] = useState(null)
   const [email, setNewUserEmail] = useState(null)
+  const [user, setUser] = useState(null)
   const [password, setNewUserPassword] = useState(null)
 
+   const currentUser = JSON.parse(sessionStorage.getItem('user'))
 //Generates User Password And Email and Aumatically log In User
   useEffect(() => {
-    //clears Formal user History
-    sessionStorage.clear()
 
     setNewUserEmail(JSON.parse(localStorage.getItem('newUserEmail')))
     setNewUserPassword(JSON.parse(localStorage.getItem('userUserPassword')))
     // Extracts User Email and Password from Local Storage To Fire Login Fuction
-   
+     
     const autoLogin = () => {
       axios
         .post('https://api.zuri.chat/auth/login', {
@@ -48,17 +47,18 @@ const WorkspaceHome = () => {
           console.log(err.message)
         })
     }
+   if(!currentUser){
+    autoLogin();
+   }
 
-    autoLogin()
   }, [email, password]);
 
   useEffect(() => {
-    const user = JSON.parse(sessionStorage.getItem('user'))
-    console.log(user)
-    if (user) {
-      setUser(user)
+    console.log(currentUser)
+    if (currentUser) {
+      setUser(currentUser)
       console.log(user)
-      const { email, id, token } = user
+      const { email, id, token } = currentUser
       const config = {
         headers: { Authorization: `Bearer ${token}` }
       }
