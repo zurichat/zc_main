@@ -222,7 +222,9 @@ const Logo = styled.img`
   // }
 `
 const ProfileImg = styled.img`
-height: '32px';
+border-radius: 4px;
+    width: 32px;
+  height: '32px';
   @media (max-width: 1024px) {
     height: 25.6px;
   }
