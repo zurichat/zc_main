@@ -17,7 +17,10 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
   const { user, orgId, setUser } = useContext(ProfileContext)
   const [emoji, setEmoji] = useState('')
   const [text, setText] = useState('')
+  const [tag, setTag] = useState('')
+  const [expiry_time, setExpiry_time] = useState('')
   const [status, setStatus] = useState([])
+  const [state, setState] = useState('')
   // const [timeOut, setTimeOut] = useState('')
   const onEmojiClick = (event, emojiObject) => {
     setChosenEmoji(emojiObject)
@@ -25,21 +28,35 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    const data = { emoji, text, choosePeriod }
+    const data = { tag, text, expiry_time }
 
     authAxios
-      .patch(`/organizations/${orgId}/members/${user._id}/status`, {
-        status: text
-      })
+      .patch(`/organizations/${orgId}/members/${user._id}/status`, data)
       .then(res => {
         console.log(res)
-        setUser({ ...user, status: text })
+        setState({ loading: false })
+        toast.success('User Profile Updated Successfully', {
+          position: 'bottom-center'
+        })
       })
-      .catch(err => console.log(err))
-
-    setStatus(status => {
-      return [...status, data]
-    })
+      .then(
+        setTimeout(() => {
+          authAxios
+            .get(`/organizations/${orgId}/members/${user._id}`)
+            .then(res => {
+              console.log(res, 'get status')
+              const newStatus = res.data.data
+              setUser(newStatus)
+            })
+        }, 500)
+      )
+      .catch(err => {
+        console.log(err)
+        setState({ loading: false })
+        toast.error(err?.message, {
+          position: 'bottom-center'
+        })
+      })
   }
 
   return (
@@ -60,8 +77,8 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
               <div className={styles.addstatusleft}>
                 <p
                   onClick={() => setChosenEmoji(!chosenEmoji)}
-                  value={emoji}
-                  onChange={e => setEmoji(e.target.value)}
+                  value={tag}
+                  onChange={e => setTag(e.target.value)}
                 >
                   {chosenEmoji ? chosenEmoji.emoji : 5}
                 </p>
@@ -106,8 +123,8 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
                   Clear after:
                   <span
                     className={styles.dropdowntopspan}
-                    value={choosePeriod}
-                    onChange={e => setChoosePeriod(e.target.value)}
+                    value={expiry_time}
+                    onChange={e => setExpiry_time(e.target.value)}
                   >
                     {choosePeriod}
                   </span>

@@ -200,30 +200,29 @@ button.react-time-picker__clear-button {
   width: 30px;
 }
 
-
-@media screen and (max-width:640px) {
-  .modalcontainer{
+@media screen and (max-width: 640px) {
+  .modalcontainer {
     height: 308px;
     width: 265px;
     border-radius: 0px;
     border: 1px solid #bebebe;
     background: white;
     position: relative;
-}
-.input {
+  }
+  .input {
     width: 195px;
     border: none;
     text-indent: 10px;
     font-size: 18px;
-}
-.statustop{
-  margin-left: 0;
-  font-size: 18px;
-}
-.clearaftertop{
-  margin-left: 15px;
-}
-.statuscta {
+  }
+  .statustop {
+    margin-left: 0;
+    font-size: 18px;
+  }
+  .clearaftertop {
+    margin-left: 15px;
+  }
+  .statuscta {
     margin-left: 140px;
     margin-top: 50px;
     width: 110px;
@@ -232,5 +231,5 @@ button.react-time-picker__clear-button {
     padding: 2px;
     float: left;
     font-size: 13px;
-}
+  }
 }
