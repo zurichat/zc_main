@@ -77,7 +77,7 @@ const Footer = () => {
             <h5>Know us</h5>
             <ul>
               <li>
-                <a href="/downloads">Downloads</a>{' '}
+                <a href="/download-app">Downloads</a>{' '}
               </li>
               <li>
                 <a href="/contact-us">Contact Us</a>{' '}
