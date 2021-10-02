@@ -69,7 +69,7 @@
   color: #333;
 }
 
-.sidebarLinkActive {
+.sidebarLinkActive, .sidebarLink:hover {
   color: #00b87c;
 }
 
