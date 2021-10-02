@@ -10,8 +10,8 @@ import defaultAvatar from './assets/images/avatar_vct.svg'
 import HelpIcon from './assets/images/help-icon.svg'
 import TopbarModal from './components/TopbarModal'
 import HelpModal from './components/HelpModal'
-// import UserForm from '../../control/src/pages/ReportFeature/User/Form'
-// import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
+import UserForm from '../../control/src/pages/ReportFeature/User/Form'
+import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
 import { authAxios } from './utils/Api'
 import Profile from './components/Profile'
 import Loader from 'react-loader-spinner'
@@ -119,6 +119,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         </ToggleStatus>
       )
   }
+
   //Handle sidebar on mobile
   const sidebar = document.getElementById(
     'single-spa-application:@zuri/sidebar'
@@ -147,69 +148,52 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   // })
 
   return (
-    <TopNavBarBase>
-      <LogoDiv>
-        <a href="#">
-          <Logo src={zurichatlogo} alt="zuri chat logo" />
-        </a>
+    <>
+      <div className="ps-3" style={{ width: '20%' }}>
+        {/* <a href="/home"> */}
+        <Logo src={zurichatlogo} alt="zuri chat logo" />
+        {/* </a> */}
         <div
           onClick={openSidebar}
           id="sidebar_toggle"
           className={toggleStyle.sidebar_toggle_icon}
+          style={{
+            top: '7rem',
+          }}
         >
-          <BsReverseLayoutTextSidebarReverse size={18} fill="#fff" />
+          <BsReverseLayoutTextSidebarReverse
+            style={{
+              margin: '0.6rem 0.6rem'
+            }}
+            size={18}
+            fill="#fff" />
         </div>
-        {/* <LogoName>ZURI</LogoName> */}
-      </LogoDiv>
-      <BaseInput
-        value={search}
-        onChange={e => { setSearch(e.target.value); console.log(search) }}
-        // onClick={() => searchFunction()}
-        type="text"
-        width={7}
-        error
-        placeholder="Search here"
-        border={'#99999933'}
-      />
-      {messages && messages.map((data, index) => {
-        if (data) {
-          return (
-            <div key={index}>
-              <p>{data.message}</p>
-            </div>
-          )
-        }
-        return null
-      })}
-      <HelpContainer>
-        <img
-          src={HelpIcon}
-          role="button"
-          alt="user profile avatar"
-          onClick={() => setHelpModal(true)}
+      </div>
+      <div className="ms-4" style={{ width: '60%' }}>
+        <BaseInput
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          type="text"
+          width={12}
+          error
+          placeholder="Search here"
+          border={'#99999933'}
         />
-      </HelpContainer>
-      {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''}
-
-      {/* <UserForm /> */}
-      {/* <AdminForm /> */}
-      <ProfileImageContainer>
-        {toggleStatus}
-
-        <img
+      </div>
+      <ProfileImageContainer className="d-flex justify-content-end pe-3" style={{ width: '20%' }}>
+      {toggleStatus}
+        <ProfileImg
           src={userProfileImage ? userProfileImage : defaultAvatar}
           onClick={openModal}
           role="button"
           className="avatar-img"
           alt="user profile avatar"
         />
-
-
       </ProfileImageContainer>
 
       <Profile />
       <TopbarModal />
-    </TopNavBarBase>
+    </>
   )
 }
 
@@ -221,36 +205,29 @@ export default connect(mapStateToProps)(TopNavBar)
 
 //  TopNavBar
 
-const TopNavBarBase = styled.div`
-  padding-inline-start: 1.4rem;
-  padding-inline-end: 1.4rem;
-  background-color: var(--bg-2);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 5;
-  width: 100%;
-  font-size: 1.5rem;
-  @media (max-width: 768px) {
-    padding-inline-start: 0.3rem;
-    padding-inline-end: 0.8rem;
-  }
-  @media (max-width: 425px) {
-    padding-inline-start: 0rem;
-    padding-inline-end: 0.8rem;
-  }
-`
 const LogoDiv = styled.div`
   margin: auto 0;
   display: flex;
   align-items: center;
 `
 const Logo = styled.img`
+@media (max-width: 1024px) {
+  width: 60%;
+}
   @media (max-width: 768px) {
-    width: 80%;
+    width: 70%;
   }
   @media (max-width: 425px) {
-    width: 70%;
+    width: 80%;
+  }
+`
+const ProfileImg = styled.img`
+height: '32px';
+  @media (max-width: 1024px) {
+    height: 25.6px;
+  }
+  @media (max-width: 425px) {
+    height: 22.4px;
   }
 `
 const ProfileImageContainer = styled.div`
@@ -264,6 +241,8 @@ const ProfileImageContainer = styled.div`
 `
 
 const HelpContainer = styled.div`
+display:none;
+
   > .MuiSvgIcon-root {
     opacity: 0.5;
   }
@@ -271,11 +250,14 @@ const HelpContainer = styled.div`
     cursor: pointer;
     opacity: 0.5;
   }
+  @media (max-width: 425px) {
+    display:none;
+  }
 `
 const ToggleStatus = styled.div`
   position: absolute;
-  top: 28px;
-  right: -18px;
+  bottom: -1px;
+  right: -1px;
   .user-active {
     background-color: green;
     height: 10px;
