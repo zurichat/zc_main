@@ -4,17 +4,17 @@
   background-color: #00b87c;
   color: #fff;
   box-sizing: border-box;
-  padding: 5px 20px;
+  padding: 5px 16px;
   display: flex !important;
   font-size: 10px;
   justify-content: space-between;
 }
 .plugin__header__title {
-  display: flex !important;
+  display: flex;
   align-items: center;
   cursor: pointer;
   border-radius: 0.5em;
-  padding: 1em;
+  /* padding: 1em; */
 }
 .plugin__header__title:hover {
   background: #01d892;
@@ -33,7 +33,7 @@
   font-size: 2.5em;
 }
 .plugin__header__thumbnail {
-  display: flex !important;
+  display: flex;
   align-items: center;
   background: #01d892;
   border-radius: 0.4em;

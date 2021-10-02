@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import styles from './reports.module.css'
+import { Container } from 'react-bootstrap'
 
 export const Confirm = props => {
   const reportComplaint = async (token, complaint) => {
@@ -76,17 +77,17 @@ export const Confirm = props => {
   } = props
 
   return (
-    <div className={styles.formcontainer}>
-      <h1 className={`mb-5 ${styles.head1}`}>Confirm</h1>
+    <Container className={styles.formcontainer}>
+      <h1 className={`mb-5 text-success ${styles.head1}`}>Confirm</h1>
       <ul className="list-group">
         <li className="list-group-item">
-          <b>Name</b>: {email}
+          <b>Name:</b> {email}
         </li>
         <li className="list-group-item">
-          <b>Offence</b>: {offence}
+          <b>Offence: </b> {offence}
         </li>
         <li className="list-group-item">
-          <b>Description</b>: {description}
+          <b>Description </b> {description}
         </li>
         <li className="list-group-item">
           <b>anonymous</b>: {anonymous.toString()}
@@ -104,27 +105,31 @@ export const Confirm = props => {
           <button
             className="btn btn-secondary"
             onClick={back}
-            style={{ color: 'white', borderRadius: '10%', padding: '12px' }}
+            style={{
+              color: 'white'
+              // borderRadius: '10%',
+              // padding: '12px'
+            }}
           >
             Back
           </button>
         </div>
         <div className="col-6 text-right">
           <button
-            className="btn btn-primary"
+            className="btn btn-success"
             onClick={Continue}
             style={{
               color: 'white',
-              borderRadius: '10%',
+              // borderRadius: '10%',
               backgroundColor: ' #00B87C',
-              padding: '12px',
-              marginLeft: '150px'
+              // padding: '12px',
+              marginLeft: '50%'
             }}
           >
             Submit
           </button>
         </div>
       </div>
-    </div>
+    </Container>
   )
 }
