@@ -24,6 +24,7 @@ const Profile = () => {
     toggleProfileState,
     user
   } = useContext(ProfileContext)
+  console.log('user status', user.status)
   const state = useContext(TopbarContext)
   const [dropdown, setDropdown] = useState(false)
   const [modal, setModal] = useState('')
@@ -67,16 +68,20 @@ const Profile = () => {
       </div>
       <div className={styles.content}>
         <img
-          className={styles.userAvatar}
+          className={`avatar ${styles.userAvatar}`}
           src={userProfileImage !== '' ? userProfileImage : defaultAvatar}
           alt="avatar"
         />
         <div className={styles.userDetails}>
-          <h3>
-            {user.first_name ? user.first_name : 'Anonnymous'}{' '}
-            <span>{user.status === '' ? '0' : user.status}</span>
+          <h3 className={styles.h3users}>
+            {user.first_name
+              ? `${user.first_name} ${user.last_name} `
+              : 'Anonnymous'}{' '}
+            {/* <span>{<StatusBadgeModal />  === '' ? <StatusBadgeModal />  :'0' }</span> */}
+            <ProfileStatusBadgeModal />
           </h3>
-          <p>What you do</p>
+
+          <p className={styles.myp}>{user.bio ? user.bio : 'What you do'}</p>
           <small>{user.pronouns ? user.pronouns : 'His/Her'}</small>
         </div>
 
@@ -139,13 +144,14 @@ const Profile = () => {
         <div className={styles.moreInfo}>
           <div className={styles.infoTitle}>Display name</div>
           <div className={styles.infoContent}>
-            {user.user_name ? user.user_name : 'His/Her'}
+            {user.display_name ? user.display_name : user.username}
+            {/* {user.display_name ? user.display_name : user.user_name} */}
           </div>
         </div>
         <div className={`${styles.moreInfo} ${styles.mobile}`}>
           <div className={styles.infoTitle}>Status</div>
           <div className={styles.infoContent}>
-            <span>{user.status ? user.status : '0'}</span>
+            <span>{user?.status?.text !== '' ? user?.status?.text : '0'}</span>
           </div>
         </div>
         <div className={styles.moreInfo}>
