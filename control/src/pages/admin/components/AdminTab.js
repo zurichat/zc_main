@@ -15,7 +15,7 @@ import { FiMenu } from 'react-icons/fi';
 import { CardProvider } from '../../../context/CardContext'
 
 const AdminTab = () => {
-  const [openTab, setOpenTab] = useState(false)
+  const [openTab, setOpenTab] = useState(false);
   const [active, setActive] = useState(1)
 
   return (
