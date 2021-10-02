@@ -51,7 +51,7 @@ const PaymentTab = () => {
     setCardNumber('')
     setExpireDate('')
     setCvv('')
-  }
+  
 
   useEffect(() => {
     if (
