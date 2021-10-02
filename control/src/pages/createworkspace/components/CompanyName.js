@@ -4,7 +4,6 @@ import { Link, useRouteMatch } from 'react-router-dom'
 import axios from 'axios'
 import { Helmet } from 'react-helmet'
 import { createDefaultChannel } from '../../../api/channels'
-
 function CompanyName({ input }) {
   const [user, setUser] = useState(null)
   const [orgId, setOrgId] = useState(null)
@@ -15,11 +14,10 @@ function CompanyName({ input }) {
 
     if (user) {
       setUser(user)
-      
+      // console.log(user)
     }
   }, [])
 
-//Function to Create A new Organization
   const createUserOrg = () => {
     axios
       .post(
@@ -32,16 +30,13 @@ function CompanyName({ input }) {
         }
       )
       .then(res => {
-        // Clears User Extracted Details from LS during Registraion
-      
+        // console.log(res)
         localStorage.clear('userUserPassword')
         localStorage.clear('newUserEmail')
-        setOrgId(res.data.data.organization_id)
+        setOrgId(res.data.data.InsertedID)
 
-    // Automatic Org Name Renaming From Default to new Org Name
-       setTimeout(() => {
-          axios.patch(
-          `https://api.zuri.chat/organizations/${res.data.data.organization_id}/name`,
+        axios.patch(
+          `https://api.zuri.chat/organizations/${orgId}/name`,
           {
             organization_name: orgName
           },
@@ -50,8 +45,7 @@ function CompanyName({ input }) {
               Authorization: 'Bearer ' + user.token
             }
           }
-        ).then(res => console.log(res))
-       }, 500);
+        )
 
         createDefaultChannel(orgId)
       })
@@ -90,11 +84,10 @@ function CompanyName({ input }) {
           <Link to={`${match.url}/step2`}>
             {' '}
             <button
-            disabled={orgName.length < 3 ? true : false}
               style={
-                orgName.length > 1
+                input.length > 1
                   ? { backgroundColor: '#00b87c', color: 'white' }
-                  : { backgroundColor: 'revert', cursor : 'not-allowed'  }
+                  : { backgroundColor: 'revert' }
               }
               onClick={createUserOrg}
             >
