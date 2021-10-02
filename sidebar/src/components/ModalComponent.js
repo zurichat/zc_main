@@ -6,23 +6,23 @@ import { RiArrowRightSLine as Arrow } from 'react-icons/ri'
 import { faClosedCaptioning } from '@fortawesome/free-solid-svg-icons'
 
 const ModalComponent = ({ isOpen, toggleOpenInvite }) => {
-  return (
-    <section className={`${isOpen ? styles.open : styles.topbarModal}`}>
-      <div className={styles.sectionOne}>The BrandHub</div>
+//   return (
+//     <section className={`${isOpen ? styles.open : styles.topbarModal}`}>
+//       <div className={styles.sectionOne}>The BrandHub</div>
 
-      <div className={styles.sectionOne} onClick={toggleOpenInvite}>
-        Invite people to HNGi8
-      </div>
+//       <div className={styles.sectionOne} onClick={toggleOpenInvite}>
+//         Invite people to HNGi8
+//       </div>
 
-      <div className={styles.sectionOne}>Create a new Workspace</div>
+//       <div className={styles.sectionOne}>Create a new Workspace</div>
 
-      <div className={styles.sectionOne}>
-        Prefrence <br />
-        Customize HNGi8
-      </div>
+//       <div className={styles.sectionOne}>
+//         Prefrence <br />
+//         Customize HNGi8
+//       </div>
 
     const handleMouseOut = () => setValue(false)
-
+    const ref = useRef()
     useEffect(
       () => {
         const node = ref.current
@@ -39,8 +39,8 @@ const ModalComponent = ({ isOpen, toggleOpenInvite }) => {
       [ref.current] // Recall only if ref changes
     )
 
-    return [ref, value]
-  }
+    // return [ref, value]
+  
 
   return (
     <section className={`${isOpen ? styles.open : styles.modalCon}`}>
