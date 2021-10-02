@@ -5,17 +5,17 @@ const myStyle = {
     fontWeight: '600',
     fontSize: '18px',
     padding: '5px',
-    color: '#E7E7E7',
+    color: '#E7E7E7'
   },
   inputfield: {
     margin: '5px 0',
     width: '70%',
-    color: '#E7E7E7',
+    color: '#E7E7E7'
   },
   smalltext: {
     fontWeight: '400',
     fontSize: '18px',
-    color: '#E7E7E7',
+    color: '#E7E7E7'
   },
   button: {
     backgroundColor: '#00B87C',
