@@ -10,8 +10,8 @@ import defaultAvatar from './assets/images/avatar_vct.svg'
 import HelpIcon from './assets/images/help-icon.svg'
 import TopbarModal from './components/TopbarModal'
 import HelpModal from './components/HelpModal'
-// import UserForm from '../../control/src/pages/ReportFeature/User/Form'
-// import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
+import UserForm from '../../control/src/pages/ReportFeature/User/Form'
+import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
 import { authAxios } from './utils/Api'
 import Profile from './components/Profile'
 import Loader from 'react-loader-spinner'
@@ -99,31 +99,39 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         placeholder="Search here"
         border={'#99999933'}
       />
+
+      {/* <HelpContainer>
+        <HelpIcons onClick={() => setHelpModal(true)} />
+      </HelpContainer> */}
+      {/* {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''} */}
+
+      <UserForm />
+      <AdminForm />
+
       <HelpContainer>
-        <img
-          src={HelpIcon}
-          role="button"
-          alt="user profile avatar"
-          onClick={() => setHelpModal(true)}
-        />
+      <img
+            src={HelpIcon}
+            role="button"
+            alt="user profile avatar"
+         onClick={() => setHelpModal(true)} />
       </HelpContainer>
       {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''}
-
+      
       {/* <UserForm /> */}
       {/* <AdminForm /> */}
+
       <ProfileImageContainer>
         {toggleStatus}
-        {userProfileImage ? (
+        
           <img
-            src={userProfileImage !== '' ? userProfileImage : defaultAvatar}
+            src={userProfileImage  ? userProfileImage : defaultAvatar}
             onClick={openModal}
             role="button"
             className="avatar-img"
             alt="user profile avatar"
           />
-        ) : (
-          <Loader type="ThreeDots" color="#00B87C" height={30} width={30} />
-        )}
+        
+        
       </ProfileImageContainer>
 
       <Profile />
@@ -189,6 +197,9 @@ const HelpContainer = styled.div`
   &:hover {
     cursor: pointer;
     opacity: 0.5;
+  }
+  @media (max-width: 425px) {
+    display:none;
   }
 `
 const ToggleStatus = styled.div`
