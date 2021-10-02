@@ -37,7 +37,7 @@ import NotFoundPage from './pages/404'
 import Billing from './pages/admin/Billing'
 import Homepage from './pages/home'
 import Permissions from './pages/admin/Permissions'
-import SettingsHome from './pages/admin/Home'
+import SettingsHome from './pages/admin/Settings/index'
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
