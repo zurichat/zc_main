@@ -1,13 +1,16 @@
-import React, { useEffect } from 'react'
+import React,{useEffect} from 'react'
 import styles from './reports.module.css'
-import { Container } from 'react-bootstrap'
+import {Container} from 'react-bootstrap'
 
 export const Success = props => {
+
   useEffect(() => {
+
     // return () =>{
     //   props.resetStep();
     //  };
-  })
+  }
+  )
 
   return (
     <Container className={styles.formcontainer}>

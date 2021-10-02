@@ -39,8 +39,10 @@ const TopbarModal = ({ members }) => {
     setPresence
   } = state
 
+
   const currentWorkspace = localStorage.getItem('currentWorkspace')
   let token = sessionStorage.getItem('token')
+  
 
   useEffect(() => {
     let user = JSON.parse(sessionStorage.getItem('user'))
@@ -64,6 +66,8 @@ const TopbarModal = ({ members }) => {
       console.log('YOU ARE NOT LOGGED IN, PLEASE LOG IN')
     }
   }, [])
+
+
 
   const config = {
     headers: {

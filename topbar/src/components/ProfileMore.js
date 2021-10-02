@@ -13,14 +13,13 @@ export const Dropdown = () => {
   const { toggleModalState } = useContext(ProfileContext)
   const [modal, setModal] = useState('')
 
-  const user = getUser()
+  const user = getUser();
   const currentWorkspace = getCurrentWorkspace()
   const [workspaceData, setWorkspaceData] = React.useState({})
 
   useEffect(() => {
     if (currentWorkspace) {
-      authAxios
-        .get(`/organizations/${currentWorkspace}`)
+      authAxios.get(`/organizations/${currentWorkspace}`)
         .then(res => {
           setWorkspaceData(res.data.data)
           console.log(res.data.data)
@@ -31,7 +30,7 @@ export const Dropdown = () => {
     }
   }, [currentWorkspace])
 
-  console.log('workspace==>', workspaceData)
+  console.log("workspace==>",workspaceData);
 
   const state = useContext(TopbarContext)
   const { presence, toggleUserPresence, reusableModal, setReusableModal } =
@@ -81,14 +80,7 @@ export const Dropdown = () => {
           <small className={styles.small} ref={getText}>
             U031203013
           </small>
-          <a
-            href={
-              workspaceData.creator_email === user.email
-                ? '/admin/settings'
-                : '/settings'
-            }
-            style={{ color: 'black', fontWeight: 'normal' }}
-          >
+          <a href={workspaceData.creator_email === user.email ? "/admin/settings" : "/settings"} style={{ color: 'black', fontWeight: 'normal' }}>
             <p className={styles.paragraphNull}>Account settings</p>
           </a>
         </div>
