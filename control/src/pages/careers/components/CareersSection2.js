@@ -1,15 +1,10 @@
-import React from 'react'
-
 import styles from '../styles/CareersSection2.module.css'
 
 function CareersSection2() {
   return (
     <div className={`${styles.Section2}`}>
-      <h2>Working and thriving</h2>
-      <p>
-        We provide benefits which give you the best work experience and push you
-        to do your best.
-      </p>
+      <h2>Working and Thriving</h2>
+      <p>We offer benefits that help you feel your best and do your best</p>
       <div className={`${styles.subSection2}`}>
         <div>
           <h3>Digital-First Office</h3>
