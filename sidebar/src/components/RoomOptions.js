@@ -11,22 +11,36 @@ const RoomOptions = ({ isClicked }) => {
       }`}
     >
       <div className={`d-flex flex-column  ${styles.modalSection}`}>
-        <p>Change notifications</p>
-        <p>Mute channel</p>
+       <div>
+       <p>Change notifications</p>
+       </div>
+       <div>
+       <p>Mute channel</p>
+       </div>
       </div>
       <hr className={styles.modalDivider} />
       <div className={`d-flex flex-column  ${styles.modalSection}`}>
+        <div>
         <p>Mute channel</p>
+        </div>
+        <div>
         <p>Copy link</p>
+        </div>
       </div>
       <hr className={styles.modalDivider} />
       <div className={`d-flex flex-column  ${styles.modalSection}`}>
+        <div>
         <p>Star channel</p>
+        </div>
       </div>
       <hr className={styles.modalDivider} />
       <div className={`d-flex flex-column ${styles.modalSection}`}>
+        <div>
         <p>Open conversation details</p>
+        </div>
+        <div>
         <p>Close conversation</p>
+        </div>
       </div>
     </section>
   )

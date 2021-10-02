@@ -37,6 +37,10 @@
   color: #fff;
 }
 
+.sidebar__header__arrow {
+  font-size: 2em;
+}
+
 .orgInfo {
   width: 100%;
   height: inherit;
@@ -57,14 +61,18 @@
   cursor: pointer;
 }
 
-.arrowDown {
+/* .arrowDown {
   width: 2.5em;
-}
+} */
 
 .sb__item {
   margin-bottom: 0.25em;
   margin-top: 0.1em;
   /* margin: 0.5em 0; */
+}
+.sb__item :hover{
+  background-color: #00b87c;
+  cursor: pointer;
 }
 
 .sb__col {
