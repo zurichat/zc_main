@@ -33,9 +33,10 @@ import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation
 import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContext'
 import PrivacyPolicy from './pages/privacy-policy/index'
 import NotFoundPage from './pages/404'
-import About from './pages/about/index'
 import Billing from './pages/admin/Billing'
 import Homepage from './pages/home'
+import Permissions from './pages/admin/Permissions'
+import SettingsHome from './pages/admin/Home'
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -107,9 +108,6 @@ const App = () => {
         <Route path="/privacy">
           <PrivacyPolicy />
         </Route>
-        <Route path="/about">
-          <About />
-        </Route>
         <Route path="/marketplace" exact>
           <MarketPlace />
         </Route>
@@ -130,7 +128,17 @@ const App = () => {
         />
         <PrivateRoute path="/session-signout" component={AllSessionSignOut} />
         <PrivateRoute path="/settings" exact component={Settings} />
-        <PrivateRoute path="/admin/settings" exact component={Billing} />
+        <PrivateRoute path="/admin/settings" exact component={SettingsHome} />
+        <PrivateRoute
+          path="/admin/settings/billings"
+          exact
+          component={Billing}
+        />
+        <PrivateRoute
+          path="/admin/settings/permission"
+          exact
+          component={Permissions}
+        />
         <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
         {/* ----------------settings routes closed----------------- */}
         <Route path="/reset-password">

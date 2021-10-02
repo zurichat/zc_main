@@ -71,6 +71,7 @@
     "@types/jest": "^27.0.1",
     "@types/systemjs": "^6.1.1",
     "centrifuge": "^2.8.2",
+    "cleave.js": "^1.6.0",
     "formik": "^2.2.9",
     "framer-motion": "^4.1.17",
     "moment": "^2.29.1",
@@ -82,7 +83,6 @@
     "react-router-dom": "^5.3.0",
     "react-timezone-select": "^1.0.8",
     "rxjs": "^7.3.0",
-    "single-spa": "^5.9.3",
-    "webpack-config-single-spa-react": "^4.0.2"
+    "single-spa": "^5.9.3"
   }
 }
