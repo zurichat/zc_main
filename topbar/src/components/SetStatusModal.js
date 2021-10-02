@@ -54,10 +54,7 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
   const [chosenEmoji, setChosenEmoji] = emoji
   const [emojiItem, setEmoji] = useState('')
   const [text, setText] = useState('')
-  const [tag, setTag] = useState('')
-  const [expiry_time, setExpiry_time] = useState('')
   const [status, setStatus] = useState([])
-  const [state, setState] = useState('')
   // const [timeOut, setTimeOut] = useState('')
   const onEmojiClick = (event, emojiObject) => {
     setChosenEmoji(emojiObject)
@@ -77,6 +74,11 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
       .then(res => {
         console.log(res)
       })
+      .catch(err => console.log(err))
+
+    setStatus(status => {
+      return [...status, data]
+    })
   }
 
   return (
@@ -92,7 +94,7 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
           />
         </div>
         <div className={styles.modalcontent}>
-          <form>
+          <form action="" method="post">
             <div className={styles.addstatus}>
               <div className={styles.addstatusleft}>
                 <p
@@ -100,7 +102,7 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
                   value={emojiItem}
                   // onChange={e => setEmoji(e.target.value)}
                 >
-                  {chosenEmoji ? chosenEmoji.setTag : 5}
+                  {chosenEmoji ? chosenEmoji.emoji : 5}
                 </p>
                 <div className={styles.emoji}>
                   <div>
@@ -143,8 +145,8 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
                   Clear after:
                   <span
                     className={styles.dropdowntopspan}
-                    value={expiry_time}
-                    onChange={e => setExpiry_time(e.target.value)}
+                    value={choosePeriod}
+                    onChange={e => setChoosePeriod(e.target.value)}
                   >
                     {choosePeriod}
                   </span>
@@ -210,6 +212,15 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
               Save changes
             </button>
           </form>
+          {/* {status.map((data)=>{
+                      const {text, emoji} = data;
+                      return(
+                          <div>
+                          <p>{text}</p>
+                          <p>{emoji}</p>
+                          </div>
+                      )
+                  })} */}
         </div>
       </div>
     </div>
