@@ -121,12 +121,12 @@ const Login = () => {
         //Display message
         // alert(message) //Change this when there is a design
 
-        setTimeout(() => {
+        // setTimeout(() => {
           //Redirect to some other page
-          GetUserInfo()
-          history.push('/choose-workspace')
-          setLoading(false)
-        }, 2000)
+        //   GetUserInfo()
+        //   history.push('/choose-workspace')
+        //   setLoading(false)
+        // }, 2000)
       })
       .catch(error => {
         const { data } = error.response
