@@ -1,9 +1,11 @@
 import { Provider } from 'react-redux'
+import React, { Suspense } from 'react'
 import { store } from './redux/index'
 import { TopbarProvider } from './context/Topbar'
 import { ProfileProvider } from './context/ProfileModal'
 import TopNavBar from './TopNavBar'
-// import Topbar from './Topbar'
+import { LanguageProvider } from './context/Language'
+import '../../settings/config'
 
 export default function Root() {
   return (

@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import singleSpaReact from 'single-spa-react'
 import Root from './root.component'
-
+import { useTranslation } from 'react-i18next'
 const lifecycles = singleSpaReact({
   React,
   ReactDOM,
@@ -15,6 +15,7 @@ const lifecycles = singleSpaReact({
 
 export const GetUserInfo = ({ userID, token }) => {
   const [userData, setUserData] = useState()
+  const { t } = useTranslation()
 
   useEffect(() => {
     axios
@@ -35,11 +36,18 @@ export const GetUserInfo = ({ userID, token }) => {
 
   return (
     <div>
-      <p>This is user...</p>
-      <div>This is the user id {userID}</div>
-      <div> this is the auth token {token}</div>
+      <p>{t('isUser')}</p>
+      <div>
+        {t('isUserId')} {userID}
+      </div>
+      <div>
+        {t('isAuthToken')}
+        {token}
+      </div>
       {userData && (
-        <div style={{ color: 'red' }}>user email {userData.email}</div>
+        <div style={{ color: 'red' }}>
+          {t('userEmail')} {userData.email}
+        </div>
       )}
     </div>
   )

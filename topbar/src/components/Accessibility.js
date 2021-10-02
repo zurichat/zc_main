@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import styles from '../styles/Accessibility.module.css'
-
+import { useTranslation } from 'react-i18next'
 function Accessibility() {
+  const { t } = useTranslation()
   return (
     <div>
       <div className={styles.containerAccessibility}>
         <div>
-          <h3 className={styles.animationH3}>Animation</h3>
+          <h3 className={styles.animationH3}>{t('animation')}</h3>
           <form action="">
             <div className={styles.imagesAndEmojis}>
               <input
@@ -17,7 +18,7 @@ function Accessibility() {
                 value="Allow animated images and emojis"
               />
               <label className={styles.accessibilityLabel}>
-                Allow animated images and emojis
+                {t('allowAnimate')}
               </label>
             </div>
           </form>
@@ -25,12 +26,11 @@ function Accessibility() {
         <hr className={styles.hrLine} />
 
         <div>
-          <h3 className={styles.directH3}>Direct message announcement</h3>
+          <h3 className={styles.directH3}>{t('DMAnnounce')}</h3>
           <p className={styles.accessibilityP}>
-            Choose which sounds and announcements you'd like to receive while
-            using a
+            {t('chooseSound')}
             <br />
-            screen reader inside a direct message.
+            {t('screenReader')}
           </p>
           <form action="">
             <div className={styles.imagesAndEmojis}>
@@ -41,7 +41,7 @@ function Accessibility() {
                 value="Play a sound when a message is received"
               />
               <label className={styles.accessibilityLabel}>
-                Play a sound when a message is received
+                {t('playSound')}
               </label>
             </div>
             <div className={styles.imagesAndEmojis}>
@@ -52,7 +52,7 @@ function Accessibility() {
                 value="Play a sound when a message is sent"
               />
               <label className={styles.accessibilityLabel}>
-                Play a sound when a message is sent
+                {t('playSoundSent')}
               </label>
             </div>
             <div className={styles.imagesAndEmojis}>
@@ -64,7 +64,7 @@ function Accessibility() {
                 value="Read incoming message out loud"
               />
               <label className={styles.accessibilityLabel}>
-                Read incoming message out loud
+                {t('readInComing')}
               </label>
             </div>
           </form>
@@ -72,17 +72,15 @@ function Accessibility() {
         <hr className={styles.hrLine} />
 
         <div>
-          <h3 className={styles.keyboardH3}>Keyboard</h3>
+          <h3 className={styles.keyboardH3}> {t('keyboard')}</h3>
           <p className={styles.accessibilityP}>
-            You can improve the way you use Zurichat by learning our{' '}
-            <span id={styles.handyKeyboard}>handy keyboard shortcuts.</span>
+            {t('improveZuri')}
+            <span id={styles.handyKeyboard}> {t('handyKeyBoard')}</span>
           </p>
 
           <hr className={styles.hrLine} />
 
-          <h3 className={styles.pressH3}>
-            Press in the empty message field to:
-          </h3>
+          <h3 className={styles.pressH3}>{t('pressEmpty')}</h3>
           <form action="">
             <div className={styles.imagesAndEmojis}>
               <input
@@ -93,10 +91,10 @@ function Accessibility() {
                 value="Move focus to the message list"
               />
               <label className={styles.accessibilityRadioLabel}>
-                Move focus to the message list
+                {t('moveFocus')}
               </label>
               <p className={styles.accessibilityP} id={styles.accessibilityPId}>
-                The last visible message in the list will be selected
+                {t('lastVisible')}
               </p>
             </div>
             <div className={styles.imagesAndEmojis}>
@@ -107,26 +105,25 @@ function Accessibility() {
                 value="Edit your last message"
               />
               <label className={styles.accessibilityRadioLabel}>
-                Edit your last message
+                {t('editMsg')}
               </label>
               <p
                 className={styles.accessibilityP}
                 id={styles.accessibilityPId2}
               >
-                The last visible message you sent will be selected and in the
-                editing mode
+                {t('lastVisibleMsg')}
               </p>
             </div>
           </form>
 
           <p className={styles.accessibilityP} id={styles.noteP}>
-            Note: press
-            <span className={styles.accessibilityEsc}> Ctrl </span>
+            {t('note')}
+            <span className={styles.accessibilityEsc}> {t('ctrl')} </span>
             <span className={styles.accessibilityEsc} id={styles.exclamation}>
               {' '}
               !{' '}
             </span>{' '}
-            to edit your last message, with either option.
+            {t('editWithOpt')}
           </p>
         </div>
       </div>

@@ -16,6 +16,10 @@ const DropDown = ({ itemName, items }) => {
   const handleItemClick = id => {
     selectedItem == id ? setSelectedItem(null) : setSelectedItem(id)
   }
+  let arr = []
+  let arrayVal = 
+  console.log(arr.concat(...itemName.split('\n')), 'Try your best')
+
   return (
     <div className={`row p-0 ${styles.dropDown} text-decoration-none`}>
       <div

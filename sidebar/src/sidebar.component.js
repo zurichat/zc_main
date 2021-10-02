@@ -48,6 +48,8 @@ import { authAxios } from './utils/Api'
 import linkIcon from './assets/link.svg'
 import { SubscribeToChannel } from '@zuri/control'
 import { filterUrl, trimUrl } from './utils/filterurl'
+import { Text } from '../../topbar/src/context/Language'
+import { useTranslation } from 'react-i18next'
 
 const Sidebar = props => {
   const [show, setShow] = useState(false)
@@ -79,8 +81,13 @@ const Sidebar = props => {
 
   const [organizationInfo, setOrganizationInfo] = useState(null)
   const [sidebarData, setSidebarData] = useState({})
+  const [channelData, setChannelData] = useState({})
+  const [pluginName, setPluginName] = useState([])
 
   // let user = JSON.parse(sessionStorage.getItem('user'))
+
+  console.log(pluginName, 'Plugin names')
+
   let token = sessionStorage.getItem('token')
   let user_id_session = JSON.parse(sessionStorage.getItem('user'))
 
@@ -237,6 +244,12 @@ const Sidebar = props => {
         })
     }
   }, [organizationInfo])
+  const { t, i18n } = useTranslation()
+  useEffect(() => {
+    setInterval(() => {
+      i18n.changeLanguage(localStorage.getItem('rcml-lang'))
+    }, 500)
+  }, [i18n.language])
 
   return (
     <div className={`container-fluid ${styles.sb__container}`}>
@@ -276,7 +289,7 @@ const Sidebar = props => {
                 placeholder="🔍 Search for plugins"
               />
               <Wrapper>
-                {loading && <p>Loading..</p>}
+                {loading && <p>{t('loading')}</p>}
                 <p>
                   {links.map((plugs, id) => {
                     return (
@@ -300,11 +313,11 @@ const Sidebar = props => {
                 <Span aria-hidden>×</Span>
               </CloseButton>
               <div>
-                <h3>Invite people to The Workspace</h3>
+                <h3>{t('invitePeople')}</h3>
               </div>
               {InviteSuccess && (
                 <div className={`alert alert-success`}>
-                  Invite was sent to {inviteEmail}
+                  {t('sent')} {inviteEmail}
                 </div>
               )}
               <div>
@@ -336,7 +349,7 @@ const Sidebar = props => {
                     style={{ color: '#00B87C', fontSize: '13px' }}
                   >
                     <img className={`pe-3`} src={linkIcon} />
-                    Copy invite link{' '}
+                    {t('CopyInvite')}
                   </p>
                   <button
                     onClick={() => inviteUser()}
@@ -345,7 +358,7 @@ const Sidebar = props => {
                     disabled={inviteEmail === '' ? true : false}
                     className={`btn my-auto `}
                   >
-                    Send
+                    {t('Send')}
                   </button>
                 </div>
               </Wrapper>
@@ -372,7 +385,7 @@ const Sidebar = props => {
                 onClick={openInviteModal}
                 className={`mb-0 ${styles.item_p}`}
               >
-                Invite people to workspace
+                {t('invitePeople')}
               </p>
             </div>
           )}
@@ -386,7 +399,7 @@ const Sidebar = props => {
               src={threadIcon}
               alt="icon"
             />
-            <p className={`mb-0 ${styles.item_p}`}>Threads</p>
+            <p className={`mb-0 ${styles.item_p}`}>{t('threads')}</p>
           </div>
         </div>
         <div className={`row ${styles.sb__item}`}>
@@ -394,7 +407,7 @@ const Sidebar = props => {
             className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
           >
             <img className={`${styles.item__img}`} src={dmIcon} alt="icon" />
-            <p className={`mb-0 ${styles.item_p}`}>All DMs</p>
+            <p className={`mb-0 ${styles.item_p}`}>{t('allDms')}</p>
           </div>
         </div>
         <div className={`row ${styles.sb__item}`}>
@@ -402,7 +415,7 @@ const Sidebar = props => {
             className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
           >
             <img className={`${styles.item__img}`} src={draftIcon} alt="icon" />
-            <p className={`mb-0 ${styles.item_p}`}>Drafts</p>
+            <p className={`mb-0 ${styles.item_p}`}>{t('drafts')}</p>
           </div>
         </div>
         <div className={`row ${styles.sb__item}`}>
@@ -410,7 +423,7 @@ const Sidebar = props => {
             className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
           >
             <img className={`${styles.item__img}`} src={filesIcon} alt="icon" />
-            <p className={`mb-0 ${styles.item_p}`}>Files</p>
+            <p className={`mb-0 ${styles.item_p}`}>{t('files')}</p>
           </div>
         </div>
         <div className={`row ${styles.sb__item}`}>
@@ -422,7 +435,7 @@ const Sidebar = props => {
               src={pluginIcon}
               alt="icon"
             />
-            <p className={`mb-0 ${styles.item_p}`}>Plugins</p>{' '}
+            <p className={`mb-0 ${styles.item_p}`}>{t('plugins')}</p>
             <img
               onClick={open}
               className={`${styles.addButton}`}
@@ -436,8 +449,12 @@ const Sidebar = props => {
         {/* <DropDown /> */}
 
         {/* SIDE BAR DATA */}
+
         {sidebarData &&
           Object.keys(sidebarData).map((plugin, index) => {
+            // console.log(sidebarData[plugin].name, 'Mwana wa Africa')
+            // t(sidebarData[plugin].name)
+            // setPluginName(sidebarData[plugin].name)
             return (
               <DropDown
                 itemName={sidebarData[plugin].name}
@@ -445,6 +462,7 @@ const Sidebar = props => {
                 key={index}
                 items={sidebarData[plugin]}
               />
+
               // console.log()
 
               // <div key={index}>

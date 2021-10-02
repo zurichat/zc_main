@@ -1,9 +1,13 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import styles from '../styles/LanguageAndRegion.module.css'
 // import TimeZones from '../constants/TimeZone'
 // import Languages from '../constants/Language'
 import { authAxios } from '../utils/Api'
 import { ProfileContext } from '../context/ProfileModal'
+import '../../../settings/config'
+import { Text, LanguageContext } from '../context/Language'
+import { languageOptions } from '../constants/translations'
+import { useTranslation } from 'react-i18next'
 
 const LanguageAndRegion = () => {
   //CHECKBOXES
@@ -11,6 +15,55 @@ const LanguageAndRegion = () => {
   const [tzChb, setTzChb] = useState(true)
 
   const { user, orgId } = useContext(ProfileContext)
+  const { language, setLanguage } = useState('')
+  // My implementation starts here
+  const selectOptions = ['English (UK)', 'Français (France)']
+
+  const { dictionary } = useContext(LanguageContext)
+
+  const { t, i18n } = useTranslation()
+  const languages = [
+    {
+      code: 'en',
+      name: 'English',
+      country_code: 'gb'
+    },
+    {
+      code: 'fr',
+      name: 'Français',
+      country_code: 'fr'
+    }
+  ]
+  const handleChange = e => {
+    const language = e.target.value
+    i18n.changeLanguage(language)
+    setLanguage(language)
+    // update the parent page when the language changes on the modal
+    console.log(language)
+  }
+
+  const LanguageSelector = () => {
+    return (
+      <select
+        className={styles.selectbox}
+        onChange={handleChange}
+        value={i18n.language}
+      >
+        {languages.map(language => (
+          <option key={language.code} value={language.code}>
+            {language.name}
+          </option>
+        ))}
+      </select>
+    )
+  }
+
+  useEffect(() => {
+    localStorage.setItem('rcml-lang', i18n.language)
+    setInterval(() => {
+      handleChange(i18n.language)
+    }, 500)
+  }, [i18n.language])
 
   const connectData = () => {
     authAxios
@@ -41,24 +94,20 @@ const LanguageAndRegion = () => {
         <form>
           <div className={styles.section}>
             <label className={styles.subhead} htmlFor="language">
-              Language
+              {t('language')}
             </label>
-            <select className={styles.selectbox} name="language" id="language">
-              <option value="english(uk)">English (UK)</option>
-            </select>
-            <p className={styles.note}>
-              Choose the language you want to use in Zurichat.
-            </p>
+            <LanguageSelector />
+            <p className={styles.note}>{t('langChoice')}</p>
           </div>
 
           <div className={styles.section}>
             <label className={styles.subhead} htmlFor="timezone">
-              Time zone
+              {t('timezone')}
             </label>
             <label className={styles.auto} htmlFor="">
               <input type="checkbox" onChange={handleTZ} checked={tzChb} />
               <span className={styles.checkmark}></span>
-              Set time zone automatically
+              {t('autoTZ')}
             </label>
 
             <select
@@ -70,15 +119,12 @@ const LanguageAndRegion = () => {
                 (UTC+01:00) West Central Africa
               </option>
             </select>
-            <p className={styles.note}>
-              Zurichat uses your time zone to send summary and notification
-              emails, for times in your activity feeds and for reminders.
-            </p>
+            <p className={styles.note}>{t('tzDesc')}</p>
           </div>
 
           <div className={styles.section}>
             <label className={styles.subhead} htmlFor="spell-check">
-              Spell Check
+              {t('spellCheck')}
             </label>
             <label
               className={styles.auto}
@@ -90,7 +136,7 @@ const LanguageAndRegion = () => {
                 checked={spellChb}
               />
               <span className={styles.checkmark}></span>
-              Enable spellcheck on your messages
+              {t('enableCheck')}
             </label>
 
             <div className={styles.choosed}>
@@ -101,10 +147,7 @@ const LanguageAndRegion = () => {
                 </span>
               </span>
             </div>
-            <p className={styles.note}>
-              Choose the languages you’d like Zurichat to spellcheck as you
-              type.
-            </p>
+            <p className={styles.note}>{t('keyboard')}</p>
           </div>
         </form>
       </div>

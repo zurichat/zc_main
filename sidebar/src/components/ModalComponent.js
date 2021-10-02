@@ -1,29 +1,33 @@
 import React, { useState } from 'react'
 import styles from '../styles/ModalComponentStyles.module.css'
+import { useTranslation } from 'react-i18next'
 
 const ModalComponent = ({ isOpen }) => {
+  const { t } = useTranslation()
   return (
     <section className={`${isOpen ? styles.open : styles.topbarModal}`}>
-      <div className={styles.sectionOne}>The BrandHub</div>
+      <div className={styles.sectionOne}>{t('hub')}</div>
 
       <div className={styles.sectionOne}>
-        Invite people to HNGi8 <br />
-        Create a new Workspace
+        {t('invitePeople')}
+        <br />
+        {t('CreateSpace')}
       </div>
 
       <div className={styles.sectionOne}>
-        Prefrence <br />
-        Customize HNGi8
+        {t('preference')}
+        <br />
+        {t('customize')}
       </div>
 
-      <div className={styles.sectionOne}>Tools</div>
-      <div className={styles.sectionOne}>Sign Out</div>
+      <div className={styles.sectionOne}>{t('tools')}</div>
+      <div className={styles.sectionOne}>{t('signout')}</div>
       <div
         className={` d-flex flex-column align-items-start ${styles.sectionOne}`}
       >
-        <span> Add workspace </span>
-        <span>Switch workspace</span>
-        <span>Open the Zuri Chat App </span>
+        <span> {t('addWorkspace')} </span>
+        <span>{t('SwitchWorkspace')}</span>
+        <span>{t('OpenZuri')}</span>
       </div>
     </section>
   )

@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useFetch } from '../utils/useFetch'
+import { useTranslation } from 'react-i18next'
 
 export const AddRoomModal = () => {
   const url = 'https://jsonplaceholder.typicode.com/comments'
@@ -7,7 +8,7 @@ export const AddRoomModal = () => {
   const [page, setPage] = useState(1)
   const { loading, error, list } = useFetch(query, page, url)
   const loader = useRef(null)
-
+  const { t } = useTranslation()
   const handleChange = e => setQuery(e.target.value)
 
   const handleObserver = useCallback(entries => {
@@ -35,16 +36,16 @@ export const AddRoomModal = () => {
         background: 'rgba(0,0,0,0.2)'
       }}
     >
-      <h1>Infinite Scroll</h1>
-      <h2>with IntersectionObserver</h2>
+      <h1>{t('infinit')}</h1>
+      <h2>{t('intersection')}</h2>
       <input type="text" value={query} onChange={handleChange} />
       <div>
         {list.map((item, i) => (
           <div key={i}>{item}</div>
         ))}
       </div>
-      {loading && <p>Loading...</p>}
-      {error && <p>Error!</p>}
+      {loading && <p>{t('loading')}</p>}
+      {error && <p>{t('error')}</p>}
       <div ref={loader} />
     </div>
   )

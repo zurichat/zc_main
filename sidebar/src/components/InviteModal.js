@@ -1,14 +1,12 @@
 import React from 'react'
 import styles from '../styles/InviteModal.module.css'
-// import InviteSuccess from './InvitationAcceptance'
-// import InviteFailed from './Modal'
-// import InviteLoading from './SendingInvite'
+import { useTranslation } from 'react-i18next'
 
 const Modal = props => {
   if (!props.show) {
     return null
   }
-
+  const { t } = useTranslation()
   return (
     <>
       <div className={styles.modal} onClick={props.onClose}>
@@ -82,9 +80,9 @@ const Modal = props => {
                     stroke-linejoin="round"
                   />
                 </svg>
-                <a href="/">Copy invite link </a>
+                <a href="/">{t('copyInvite')}</a>
                 <a className={styles.p} href="/">
-                  - Edit link settings
+                  {t('editLink')}
                 </a>
               </div>
               <div className={styles.send}>

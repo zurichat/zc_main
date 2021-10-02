@@ -4,11 +4,15 @@ import { AiOutlineQuestionCircle } from 'react-icons/ai'
 //import { TextInput } from './TextInput'
 import { authAxios } from '../utils/Api'
 import { ProfileContext } from '../context/ProfileModal'
+import { Text } from '../context/Language'
+import { useTranslation } from 'react-i18next'
 
 const NotificationPreference = () => {
   const [active, setActive] = useState(0)
   const [active1, setActive1] = useState(0)
   const { user, orgId } = useContext(ProfileContext)
+  const { t } = useTranslation()
+
   const [dataState, setDataState] = useState({
     // channel_hurdle_notification: channel_hurdle,
     email_notifications_for_mentions_and_dm: null,
@@ -66,10 +70,10 @@ const NotificationPreference = () => {
       {/*  THE SECTION OF THE CONTENT */}
       <div className={styles.notifyContent}>
         <div className={styles.itemTitle1}>
-          <h4 className={styles.titleLarge}>Notify me about </h4>{' '}
+          <h4 className={styles.titleLarge}>{t('notify')}</h4>
           <span className={styles.spanL}>
             <AiOutlineQuestionCircle className={styles.quest} />
-            Learn about notifications
+            {t('learn')}
           </span>
         </div>
         <form>
@@ -88,7 +92,7 @@ const NotificationPreference = () => {
                   setData()
                 }}
               />
-              <label htmlFor="all-messages">All messages</label>
+              <label htmlFor="all-messages">{t('allMsg')}</label>
             </div>
 
             <div className={styles.radio}>
@@ -105,7 +109,7 @@ const NotificationPreference = () => {
                   setData()
                 }}
               />
-              <label htmlFor="direct-messages">Direct messages</label>
+              <label htmlFor="direct-messages">{t('DM')}</label>
             </div>
             <div className={styles.radio}>
               <input
@@ -118,7 +122,7 @@ const NotificationPreference = () => {
                   setData()
                 }}
               />
-              <label htmlFor="none">Nothing</label>
+              <label htmlFor="none">{t('nothing')}</label>
             </div>
           </div>
           <div className={styles.markbox}>
@@ -142,7 +146,7 @@ const NotificationPreference = () => {
                   setData()
                 }}
               />
-              Use different settings for my mobile device
+              {t('diffSettings')}
             </label>
           </div>
           {/* <div className={styles.line} /> */}
@@ -154,7 +158,8 @@ const NotificationPreference = () => {
                 className={styles.check}
                 value="for-meeting"
               />
-              Notify me when a meeting is set
+
+              {t('notifyOnMeeting')}
             </label>
           </div>
           <div className={styles.markbox}>
@@ -167,26 +172,23 @@ const NotificationPreference = () => {
                   setData()
                 }}
               />
-              Notify me of replies to thread
+
+              {t('notifyOnReply')}
             </label>
           </div>
         </form>
         <div className={styles.itemTitle2}>
           <div className={styles.line}></div>
           <h4 class={styles.titleSmall}>Keywords</h4>{' '}
-          <span>
-            You will be notified anything, someone uses these keywords in a
-            thread
-          </span>
+          <span>{t('notifyAny')}</span>
           <textarea className={styles.textarea}></textarea>
         </div>
         <div className={styles.line} />
         <div className={styles.itemTitle2}>
-          <h4 class={styles.titleSmall}>Notification Schedule</h4>{' '}
+          <h4 class={styles.titleSmall}>{t('notSchedule')}</h4>{' '}
           <span className={styles.spanBlock}>
-            You'll only receive notifications in the hours that you choose.
-            Outside of those times, notifications will be paused.{' '}
-            <span className={styles.spanSmall}>Learn more</span>
+            {t('notifySchedule')}
+            <span className={styles.spanSmall}>{t('learnMore')}</span>
           </span>
         </div>
         <div className={styles.schedule}>
@@ -201,36 +203,30 @@ const NotificationPreference = () => {
                   onChange={handleChange}
                 >
                   <option selected value="duration">
-                    Duration
+                    {t('Duration')}
                   </option>
                 </select>
               </div>
             </li>
-            {/* <li className={styles.listChild}>
-              <TextInput label="From" />
-            </li>
-
-            <li className={styles.listChild}>
-              <TextInput label="to" />
-            </li> */}
           </ul>
         </div>
         <div className={styles.line} />
 
         {/* Michael's sound check code */}
         <div className={styles.itemTitle2}>
-          <h4 className={styles.titleSmall}>Sound &amp; appearance</h4>
-          <span className={styles.spanBlock}>
-            Choose your notification sound
-          </span>
-          <button className={styles.button}>Example Sound</button>
+          <h4 className={styles.titleSmall}>
+            {t('Sound')} &amp; {t('appearance')}
+          </h4>
+          <span className={styles.spanBlock}>{t('notifSound')}</span>
+          <button className={styles.button}>{t('exSound')}</button>
         </div>
 
         <div className={styles.mute}>
           <div className={styles.markbox}>
             <label htmlFor="for-includepreview">
               <input type="checkbox" />
-              Include preview message in notification
+
+              {t('previewMsg')}
             </label>
           </div>
           <div className={styles.markbox}>
@@ -242,7 +238,8 @@ const NotificationPreference = () => {
                   setData()
                 }}
               />
-              Mute all
+
+              {t('muteAll')}
             </label>
           </div>
         </div>
@@ -250,15 +247,13 @@ const NotificationPreference = () => {
         <div className={styles.picksound}>
           <div className={styles.share}>
             <div className={styles.sound}>
-              <div className={styles.msg3}>
-                Set your notifications right (Message)
-              </div>
+              <div className={styles.msg3}>{t('setNotification')}</div>
               <div className={styles.dropdown}>
                 <select className={styles.button2}>
                   <option value="rising-tune">Rising Tune</option>
                   <option value="ding-dong">Ding Dong</option>
                   <option selected value="pick-sound">
-                    Pick Sound
+                    {t('picSound')}
                   </option>
                   <option value="ring">Ring</option>
                 </select>
@@ -266,15 +261,13 @@ const NotificationPreference = () => {
             </div>
 
             <div className={styles.lounge}>
-              <div className={styles.msg3}>
-                Set your notifications right (Lounge)
-              </div>
+              <div className={styles.msg3}>{t('setNotification')}</div>
               <div className={styles.dropdown}>
                 <select className={styles.button2}>
                   <option value="evening-tune">Evening Tune</option>
                   <option value="top-hill">Top Hill</option>
                   <option selected value="pick-sound">
-                    Pick Sound
+                    {t('picSound')}
                   </option>
                   <option value="bells">Bells</option>
                 </select>
@@ -286,9 +279,7 @@ const NotificationPreference = () => {
 
         <div className={styles.section2}>
           <div className={styles.itemTitle2}>
-            <div className={styles.titleSmall}>
-              Flash window when notification comes
-            </div>
+            <div className={styles.titleSmall}>{t('flashWindow')}</div>
           </div>
           <form>
             <div className={styles.radio}>
@@ -302,7 +293,7 @@ const NotificationPreference = () => {
                   setData()
                 }}
               />
-              <label htmlFor="never">Never</label>
+              <label htmlFor="never">{t('never')}</label>
             </div>
             <div className={styles.radio}>
               <input
@@ -318,7 +309,7 @@ const NotificationPreference = () => {
                   setData()
                 }}
               />
-              <label htmlFor="direct-messages">When idle</label>
+              <label htmlFor="direct-messages">{t('iddle')}</label>
             </div>
             <div className={styles.radio}>
               <input
@@ -334,15 +325,15 @@ const NotificationPreference = () => {
                   setData()
                 }}
               />
-              <label htmlFor="direct-messages">Mute all</label>
+              <label htmlFor="direct-messages">{t('muteAll')}</label>
             </div>
           </form>
           <div className={styles.deliver}>
-            <div className={styles.when}>Deliver notifications via</div>
+            <div className={styles.when}>{t('deliver')}</div>
             <div className={styles.dropdown3}>
               <select className={styles.button4}>
                 <option selected value="pick-sound">
-                  Pick Sound
+                  {t('picSound')}
                 </option>
               </select>
             </div>
@@ -351,12 +342,10 @@ const NotificationPreference = () => {
         <div className={styles.line} />
         <div className={styles.section3}>
           <div className={styles.itemTitle2}>
-            <div className={styles.titleSmall}>
-              When I am not active on desktop
-            </div>
+            <div className={styles.titleSmall}>{t('notActiveDesktop')}</div>
           </div>
           <div className={styles.deliver}>
-            <div className={styles.when}>Send notifications to my mobile</div>
+            <div className={styles.when}>{t('sendToMobile')}</div>
             <div className={styles.dropdown3}>
               <select className={styles.button4}>
                 <option selected value="pick-sound">
@@ -374,8 +363,8 @@ const NotificationPreference = () => {
                 setDataState({ notify_me_about: 'all-messages' })
                 setData()
               }}
-            />{' '}
-            Send me email notifications for mentions{' '}
+            />
+            {t('sendMail')}
           </label>
         </div>
       </div>
