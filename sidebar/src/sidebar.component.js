@@ -103,16 +103,16 @@ const Sidebar = props => {
   const [isLoading, setIsLoading] = useState(true)
 
   const loaderFunc = () => {
-    setIsLoading(false);
+    setIsLoading(false)
   }
 
-  setTimeout(loaderFunc, 13000);
+  setTimeout(loaderFunc, 13000)
 
-  let sideBarDataSize = Object.keys(sidebarData).length;
+  let sideBarDataSize = Object.keys(sidebarData).length
 
-  console.log("SidebarData", sidebarData);
-  console.log("SidebarData Size:", sideBarDataSize);
-  console.log("ORG INFO:", organizationInfo);
+  console.log('SidebarData', sidebarData)
+  console.log('SidebarData Size:', sideBarDataSize)
+  console.log('ORG INFO:', organizationInfo)
 
   // let user = JSON.parse(sessionStorage.getItem('user'))
   let token = sessionStorage.getItem('token')
@@ -240,7 +240,7 @@ const Sidebar = props => {
         organizationInfo.map(pluginData => {
           const { plugin } = pluginData
 
-          console.log("Plugin:", plugin)
+          console.log('Plugin:', plugin)
 
           const sidebarUrl = plugin.sidebar_url
           const trimmedUrl = trimUrl(sidebarUrl)
@@ -258,7 +258,7 @@ const Sidebar = props => {
             .then(res => {
               try {
                 const validPlugin = res.data
-                
+
                 // console.log("Valid Plugin Array:", [validPlugin])
 
                 if (validPlugin.name !== undefined) {
@@ -418,111 +418,110 @@ const Sidebar = props => {
         </div>
 
         {/* Checks if sidebarData is fully loaded; if not it mounts the skeletonloader, if sidebarData is complete it mounts sidebar fully */}
-        {
-          (isLoading) ? (
-            <SkeletonLoader pluginNumber={sideBarDataSize}/>
-          ) : (
-            <>
-              <div className={`row mt-2 ${styles.sb__item}`}>
-                <div
-                  className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
-                >
-                  <img
-                    className={`${styles.item__img}`}
-                    src={threadIcon}
-                    alt="icon"
+        {isLoading ? (
+          <SkeletonLoader pluginNumber={sideBarDataSize} />
+        ) : (
+          <>
+            <div className={`row mt-2 ${styles.sb__item}`}>
+              <div
+                className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+              >
+                <img
+                  className={`${styles.item__img}`}
+                  src={threadIcon}
+                  alt="icon"
+                />
+                <p className={`mb-0 ${styles.item_p}`}>Threads</p>
+              </div>
+            </div>
+            <div className={`row ${styles.sb__item}`}>
+              <div
+                className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+              >
+                <img
+                  className={`${styles.item__img}`}
+                  src={draftIcon}
+                  alt="icon"
+                />
+                <p className={`mb-0 ${styles.item_p}`}>Drafts</p>
+              </div>
+            </div>
+            <div className={`row ${styles.sb__item}`}>
+              <div
+                className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+              >
+                <img
+                  className={`${styles.item__img}`}
+                  src={filesIcon}
+                  alt="icon"
+                />
+                <p className={`mb-0 ${styles.item_p}`}>Files</p>
+              </div>
+            </div>
+            <div className={`row ${styles.sb__item}`}>
+              <div
+                className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+              >
+                <img
+                  className={`${styles.item__img}`}
+                  src={pluginIcon}
+                  alt="icon"
+                />
+                <p className={`mb-0 ${styles.item_p}`}>Plugins</p>{' '}
+                <img
+                  onClick={open}
+                  className={`${styles.addButton}`}
+                  src={addIcon}
+                  alt="Add button"
+                  role="button"
+                />
+              </div>
+            </div>
+
+            {/* <DropDown /> */}
+
+            {/* SIDE BAR DATA */}
+            {sidebarData &&
+              Object.keys(sidebarData).map((plugin, index) => {
+                return (
+                  <DropDown
+                    itemName={sidebarData[plugin].name}
+                    id={sidebarData[plugin].name}
+                    key={index}
+                    items={sidebarData[plugin]}
                   />
-                  <p className={`mb-0 ${styles.item_p}`}>Threads</p>
-                </div>
-              </div>
-              <div className={`row ${styles.sb__item}`}>
-                <div
-                  className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
-                >
-                  <img className={`${styles.item__img}`} src={draftIcon} alt="icon" />
-                  <p className={`mb-0 ${styles.item_p}`}>Drafts</p>
-                </div>
-              </div>
-              <div className={`row ${styles.sb__item}`}>
-                <div
-                  className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
-                >
-                  <img className={`${styles.item__img}`} src={filesIcon} alt="icon" />
-                  <p className={`mb-0 ${styles.item_p}`}>Files</p>
-                </div>
-              </div>
-              <div className={`row ${styles.sb__item}`}>
-                <div
-                  className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
-                >
-                  <img
-                    className={`${styles.item__img}`}
-                    src={pluginIcon}
-                    alt="icon"
-                  />
-                  <p className={`mb-0 ${styles.item_p}`}>Plugins</p>{' '}
-                  <img
-                    onClick={open}
-                    className={`${styles.addButton}`}
-                    src={addIcon}
-                    alt="Add button"
-                    role="button"
-                  />
-                </div>
-              </div>
+                  // console.log()
 
-              {/* <DropDown /> */}
+                  // <div key={index}>
+                  //   <h5>{plugin.name}</h5>
 
-              {/* SIDE BAR DATA */}
-              {sidebarData &&
-                Object.keys(sidebarData).map((plugin, index) => {
-                  return (
-                    <DropDown
-                      itemName={sidebarData[plugin].name}
-                      id={sidebarData[plugin].name}
-                      key={index}
-                      items={sidebarData[plugin]}
-                    />
-                    // console.log()
+                  //   <ul>
+                  //     {plugin.joined_rooms &&
+                  //       plugin.joined_rooms.map((room, index) => {
+                  //         if (room.room_name !== undefined) {
+                  //           return (
+                  //             <li key={index}>
+                  //               <a
+                  //                 style={{
+                  //                   marginLeft: '5px',
+                  //                   color: 'red'
+                  //                 }}
+                  //                 href={room.room_url}
+                  //                 onClick={navigateToUrl}
+                  //               >
+                  //                 {room.room_name}
+                  //               </a>
+                  //             </li>
+                  //           )
+                  //         }
+                  //       })}
+                  //   </ul>
+                  // </div>
+                )
+              })}
+          </>
+        )}
 
-                    // <div key={index}>
-                    //   <h5>{plugin.name}</h5>
-
-                    //   <ul>
-                    //     {plugin.joined_rooms &&
-                    //       plugin.joined_rooms.map((room, index) => {
-                    //         if (room.room_name !== undefined) {
-                    //           return (
-                    //             <li key={index}>
-                    //               <a
-                    //                 style={{
-                    //                   marginLeft: '5px',
-                    //                   color: 'red'
-                    //                 }}
-                    //                 href={room.room_url}
-                    //                 onClick={navigateToUrl}
-                    //               >
-                    //                 {room.room_name}
-                    //               </a>
-                    //             </li>
-                    //           )
-                    //         }
-                    //       })}
-                    //   </ul>
-                    // </div>
-                  )
-                })}
-            </>
-          )
-        }
-        
-        
-        
-        
-        
-        
-
-        
         {/*
         {roomInfo.rooms !== undefined &&
                 roomInfo.rooms.map(room => {
