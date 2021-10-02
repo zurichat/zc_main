@@ -23,7 +23,7 @@
   overflow-y: scroll;
   height: 100%;
   width: unset;
-  -ms-overflow-style: none;
+  /* -ms-overflow-style: none; */
   scrollbar-width: none;
 }
 
@@ -53,13 +53,18 @@
 
 .orgTitle {
   font-weight: bold;
-  font-size: 1.125em;
-  line-height: 28px;
+  font-size: 15px
+  /* line-height: 28px; */
 }
 
 .orgHeader {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65%;
 }
+
 
 /* .arrowDown {
   width: 2.5em;
@@ -98,7 +103,7 @@
 }
 
 .modalContainer {
-  z-index: 10000;
+  z-index: 1000;
   position: relative;
 }
 
