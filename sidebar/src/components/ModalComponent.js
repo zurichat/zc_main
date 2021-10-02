@@ -28,16 +28,12 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
         if (node) {
           node.addEventListener('mouseover', handleMouseOver)
           node.addEventListener('mouseout', handleMouseOut)
+        }
         
-        return () => {
-          node.removeEventListener("mouseover", handleMouseOver);
-          node.removeEventListener("mouseout", handleMouseOut);
-        };
-      }
-    },[ref.current]
-  );
-   return [ref, value];
-  }
+      },[[ref.current]]
+      );
+      return [ref, value];
+    }
   return (
     <section className={`${isOpen ? styles.open : styles.modalCon}`}>
       <div
