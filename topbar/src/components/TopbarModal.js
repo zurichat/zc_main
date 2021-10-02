@@ -26,6 +26,7 @@ const TopbarModal = ({ members }) => {
   // const [username, setUsername] = state.username
   const [showStatus] = state.status
   const [showMembersModal] = state.modal
+
   const {
     onEmojiClick,
     openModal,
@@ -188,8 +189,9 @@ const TopbarModal = ({ members }) => {
           </div>
 
           <div className={styles.sectionTwo}>
-            <StatusBadgeModal />
-            <p className={styles.statusContent}>{user.status}</p>
+            {/* <StatusBadgeModal /> */}
+            <div className={styles.emoji}>{user?.status?.tag} </div>
+            <div className={styles.statusContent}>{user?.status?.text}</div>
           </div>
 
           <div className={styles.sectionThree}>
@@ -210,7 +212,11 @@ const TopbarModal = ({ members }) => {
               {userPresence}
             </p>
             <div className={styles.pause}>
-              <p onClick={() => setPause(!pause)}>Pause Notifications</p>
+              <p
+                onClick={() => setPause(!pause) }
+              >
+                Pause Notifications
+              </p>
               <FaChevronRight className={styles.chevron} />
             </div>
             {pause && <PauseNotification pause={pause} setPause={setPause} />}
