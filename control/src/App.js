@@ -34,9 +34,11 @@ import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContex
 import PrivacyPolicy from './pages/privacy-policy/index'
 import NotFoundPage from './pages/404'
 import Billing from './pages/admin/Billing'
+import Blog from './pages/blogs'
 import Homepage from './pages/home'
 import Permissions from './pages/admin/Permissions'
 import SettingsHome from './pages/admin/Home'
+
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -86,6 +88,9 @@ const App = () => {
         </Route>
         <Route path="/resources">
           <Resources />
+        </Route>
+        <Route path="/blog">
+          <Blog />
         </Route>
         <Route path="/pricing">
           <Pricing />
