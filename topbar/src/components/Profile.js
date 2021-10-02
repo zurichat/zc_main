@@ -30,7 +30,6 @@ const Profile = () => {
   const [modal, setModal] = useState('')
 
   const currentTime = moment().format('h:mm a')
-  
 
   return (
     <div
@@ -73,7 +72,7 @@ const Profile = () => {
           src={userProfileImage !== '' ? userProfileImage : defaultAvatar}
           alt="avatar"
         />
-        <div className={styles.userDetails}>
+        {/* <div className={styles.userDetails}>
           <h3>
             {user.first_name
               ? `${user.first_name} ${user.last_name} `
@@ -83,7 +82,7 @@ const Profile = () => {
           </h3>
           <p>{user.bio ? user.bio : 'What you do'}</p>
           <small>{user.pronouns ? user.pronouns : 'His/Her'}</small>
-        </div>
+        </div> */}
 
         <div className={styles.buttonGroupsMobile}>
           <button>Message</button>

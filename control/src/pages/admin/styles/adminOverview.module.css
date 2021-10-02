@@ -3,6 +3,64 @@
   height: 100%;
 }
 
+.modal, .modalActive {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalActive {
+  display: flex;
+}
+
+.overlay {
+  position: fixed;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalContainer {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 622px;
+  background: #fff;
+  padding: 1.5rem;
+  border: 1px solid #E7E7E7;
+  border-radius: 4px;
+}
+
+.modalSubHead {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #333;
+  text-align: right;
+  padding: 0;
+  margin: 0;
+}
+
+.modalHeading {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.modalParagraph {
+  font-size: 1rem;
+  text-align: center;
+  padding: 0 2rem;
+}
+
 .tokenAmount {
   display: flex;
   align-items: center;
