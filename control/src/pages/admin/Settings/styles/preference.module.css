@@ -1,0 +1,13 @@
+.settingleft {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: #1d1c1d;
+    width: 70%;
+  }
+  
+  .settingleft span {
+    font-size: 16px;
+    font-weight: 400;
+    color: #616061;
+  }
