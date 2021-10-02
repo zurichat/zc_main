@@ -12,6 +12,7 @@ import Calls from './components/Calls'
 import DisplayPronoun from './components/DisplayPronoun'
 import MessageRetention from './components/MessageRetention'
 import FileRetention from './components/FileRetention'
+import DisplayEmail from './components/DisplayEmail'
 
 const adminSettings = () => {
     return (
@@ -62,8 +63,7 @@ const adminSettings = () => {
                 title="Email display" 
                 text="Choose whether to display members email address in profile" 
                 btnText="expand">
-                {/* Password input goes uunder here */}
-                {/* <SavePassword /> */}
+                <DisplayEmail />
                 </PreferenceWrapper>
             </AnimateSharedLayout>
             <AnimateSharedLayout>
