@@ -1,5 +1,4 @@
-.sidebarWrapper,
-.sidebarWrapperActive {
+.sidebarWrapper, .sidebarWrapperActive {
   position: fixed;
   top: 64px;
   left: 0;
@@ -106,8 +105,7 @@
 }
 
 @media (max-width: 768px) {
-  .sidebarWrapper,
-  .sidebarWrapperActive {
+  .sidebarWrapper, .sidebarWrapperActive {
     position: fixed;
     display: none;
     top: 0;

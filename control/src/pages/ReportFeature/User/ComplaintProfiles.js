@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './reports.module.css'
-import { Container } from 'react-bootstrap'
+import {Container} from 'react-bootstrap'
 
 export const ComplaintProfiles = props => {
   const Continue = e => {
@@ -31,6 +31,7 @@ export const ComplaintProfiles = props => {
         </div>
         <div>
           {' '}
+        
           <label htmlFor="name">
             <b className="text-success">Offender's e-mail</b>
           </label>
@@ -53,11 +54,14 @@ export const ComplaintProfiles = props => {
         <div>
           <div className="form-group">
             <label htmlFor="text">
-              <b className="text-success">Offence</b>
+              <b  className="text-success">Offence</b>
             </label>
           </div>
 
-          <div className="form-group">
+          <div
+            className="form-group"
+            
+          >
             <select
               name="offence"
               style={{ width: '75%', padding: '12px' }}
@@ -93,6 +97,7 @@ export const ComplaintProfiles = props => {
             name="text"
             onChange={inputChange('description')}
             value={values.description}
+            
             style={{ width: '75%', height: '100px' }}
           />
         </div>
@@ -110,47 +115,51 @@ export const ComplaintProfiles = props => {
               checked={values.anonymous}
               backgroundColor="#00B87C"
               color="#00B87C"
+              
             />
           </label>
         </div>
         <br />
         <div
-          className="row"
-          style={{ display: 'flex', flexDirection: 'flex-end' }}
-        >
-          <div className="col-6">
-            <button
-              className="btn btn-secondary"
-              onClick={back}
-              style={{
-                color: 'white',
-                // backgroundColor: "#00B87C",
-                borderRadius: '5%'
-                // padding: '12px'
-              }}
-            >
-              Back
-            </button>
-          </div>
-          <div className="col-6 text-right">
-            <button
-              type="submit"
-              className="btn btn-success"
-              // onClick={Continue}
-              style={{
-                color: 'white',
-                backgroundColor: '#00B87C',
-                // padding: '12px',
-                borderRadius: '5%',
-                marginLeft: '45%'
-              }}
-            >
-              Next
-            </button>
-          </div>
+        className="row"
+        style={{ display: 'flex', flexDirection: 'flex-end' }}
+      >
+        <div className="col-6">
+          <button
+            className="btn btn-secondary"
+            onClick={back}
+            style={{
+              color: 'white',
+              // backgroundColor: "#00B87C",
+              borderRadius: '5%',
+              // padding: '12px'
+            }}
+          >
+            Back
+          </button>
         </div>
+        <div className="col-6 text-right">
+          <button
+          type="submit"
+            className="btn btn-success"
+            // onClick={Continue}
+            style={{
+              color: 'white',
+              backgroundColor: '#00B87C',
+              // padding: '12px',
+              borderRadius: '5%',
+              marginLeft: '45%'
+            }}
+          >
+            Next
+          </button>
+        </div>
+      </div>
       </form>
       <br />
+
+      
+      
     </Container>
   )
 }
