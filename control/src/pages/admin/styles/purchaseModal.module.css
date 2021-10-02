@@ -8,8 +8,8 @@
   line-height: 1.5;
 }
 
-input:active,
-input:focus {
+.form-control:active,
+.form-control:focus {
   box-shadow: none;
   border-color: none;
 }
