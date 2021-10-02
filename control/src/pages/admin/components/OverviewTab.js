@@ -1,18 +1,20 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import Loader from 'react-loader-spinner'
 
 import styles from '../styles/adminOverview.module.css'
 import { authAxios } from '../Utils/Api'
 
-import { getToken, getUser, getCurrentWorkspace } from '../Utils/Common'
+import { getUser, getCurrentWorkspace } from '../Utils/Common'
 
 // icons
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 import { FiCheck } from 'react-icons/fi'
+import { CardContext } from '../../../context/CardContext'
 
 const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
   const currentWorkspace = getCurrentWorkspace()
+  const { token, setToken } = useContext(CardContext)
   const user = getUser()
   const [workspaceData, setWorkspaceData] = React.useState({})
   const [loading, setLoading] = React.useState(false)
@@ -25,6 +27,7 @@ const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
         .get(`/organizations/${currentWorkspace}`)
         .then(res => {
           setWorkspaceData(res.data.data)
+          setToken(res.data.data.tokens)
         })
         .catch(err => {
           console.log(err)
@@ -72,9 +75,7 @@ const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
       <div className={modal ? styles.modalActive : styles.modal}>
         <div onClick={() => setModal(!modal)} className={styles.overlay} />
         <div className={styles.modalContainer}>
-          <h6 className={styles.modalSubHead}>
-            {workspaceData.tokens} Tokens left
-          </h6>
+          <h6 className={styles.modalSubHead}>{token} Tokens left</h6>
           <h3 className={styles.modalHeading}>
             {orgSize * 1} Tokens will be deducted from your wallet
           </h3>
@@ -96,7 +97,7 @@ const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
         </div>
       </div>
       <div className={styles.tokenAmount}>
-        <span>{workspaceData.tokens} &nbsp;</span>
+        <span>{token} &nbsp;</span>
         tokens
         <AiOutlineInfoCircle className={styles.infoIcon} />
       </div>
