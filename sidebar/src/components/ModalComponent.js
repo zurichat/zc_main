@@ -1,15 +1,18 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import styles from '../styles/ModalComponentStyles.module.css'
 import CompanyImage from '../assets/images/CompanyIcon.svg'
 import TotalMessages from '../assets/images/TotalMessages.svg'
+import axios from 'axios'
 import { RiArrowRightSLine as Arrow } from 'react-icons/ri'
 import { faClosedCaptioning } from '@fortawesome/free-solid-svg-icons'
+import Workspace from '../../../control/src/pages/workspace/components/Workspace'
 
-const ModalComponent = ({ isOpen }) => {
+const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
   // const isOpen = true;
 
   const [hoverRef, isHovered] = useHover()
   const [hoverRef2, isHovered2] = useHover()
+  const [hoverRef3, isHovered3] = useHover()
 
   function useHover() {
     const [value, setValue] = useState(false)
@@ -20,41 +23,33 @@ const ModalComponent = ({ isOpen }) => {
 
     const handleMouseOut = () => setValue(false)
 
-    useEffect(
-      () => {
+    useEffect(() => {
         const node = ref.current
         if (node) {
           node.addEventListener('mouseover', handleMouseOver)
           node.addEventListener('mouseout', handleMouseOut)
-
-          return () => {
-            node.removeEventListener('mouseover', handleMouseOver)
-            node.removeEventListener('mouseout', handleMouseOut)
-          }
         }
-      },
-      [ref.current] // Recall only if ref changes
-    )
-
-    return [ref, value]
-  }
-
+        
+      },[[ref.current]]
+      );
+      return [ref, value];
+    }
   return (
     <section className={`${isOpen ? styles.open : styles.modalCon}`}>
       <div
-        className={`d-flex align-items-center justify-content-between ${styles.modalSection}`}
+        className={`d-flex align-items-center justify-content-between ${styles.TopmodalSection}`}
       >
         <div className={`col-2 d-flex px-0 align-items-center ${styles.logo}`}>
           <img src={CompanyImage} alt="logo" />
         </div>
         <div className={`col-10 px-0  ${styles.header}`}>
-          <h5> The Brand hub</h5>
-          <span>thebrandhub.zurichat.com</span>
+          <h5> {workSpace.name}</h5>
+          <span>{workSpace.workspace_url}</span>
         </div>
       </div>
       <hr className={styles.modalDivider} />
       <div
-        className={`d-flex align-items-center justify-content-between ${styles.modalSection}`}
+        className={`d-flex align-items-center justify-content-between ${styles.TopmodalSection}`}
       >
         <div className={`${styles.info}`}>
           <p className={`${styles.infoHeader}`}>Total Messages </p> <br />
@@ -69,8 +64,14 @@ const ModalComponent = ({ isOpen }) => {
       </div>
       <hr className={styles.modalDivider} />
       <div className={` d-flex flex-column ${styles.modalSection}`}>
-        <p>Invite people to The Brand Hub</p>
-        <p>Create a new Workspace</p>
+        <div>
+          <p
+          onClick={toggleOpenInvite}
+          >Invite people to {workSpace.name}</p>
+        </div>
+        <div>
+          <p>Create a new Workspace</p>
+        </div>
       </div>
       <hr className={styles.modalDivider} />
       <div className={`d-flex flex-column ${styles.modalSection}`}>
@@ -80,49 +81,76 @@ const ModalComponent = ({ isOpen }) => {
         <div
           className={`d-flex align-items-center justify-content-between ${styles.popover}`}
         >
-          <p>Customize HNGi8</p>
+          <p>Customize {workSpace.name}</p>
           <div>
             <Arrow className={`${styles.arrow}`} />
           </div>
         </div>
       </div>
       <hr className={styles.modalDivider} />
-      <div
-        ref={hoverRef}
-        className={`d-flex align-items-center justify-content-between ${styles.modalSection}`}
-      >
-        <p>Tools</p>
-        <div>
-          <Arrow className={`${styles.arrow}`} />
-        </div>
+      <div ref={hoverRef} className={` ${styles.modalSection}`}>
         <div
-          className={`${
-            isHovered ? styles.openmodalSubCon : styles.modalSubCon
-          }`}
+          className={`d-flex align-items-center justify-content-between ${styles.modalSection}`}
         >
-          <div
-            ref={hoverRef}
-            className={`d-flex flex-column ${styles.modalSection}`}
-          >
-            <p>Plugins</p>
-            <hr className={styles.modalDivider} />
-            <p>Analytics</p>
+          <p>Tools</p>
+          <div>
+            <Arrow className={`${styles.arrow}`} />
           </div>
+
+          <section
+            className={`${
+              isHovered ? styles.openmodalSubCon : styles.modalSubCon
+            }`}
+          >
+            <section
+              ref={hoverRef}
+              className={`d-flex flex-column ${styles.submodalSection}`}
+            >
+              <div>
+                <p>Plugins</p>
+              </div>
+              <hr className={styles.modalDivider} />
+              <div>
+                <p>Analytics</p>
+              </div>
+            </section>
+          </section>
         </div>
       </div>
       <hr className={styles.modalDivider} />
       <div className={styles.modalSection}>
-        <p>Sign Out</p>
+        <div>
+          <p>Sign Out</p>
+        </div>
       </div>
       <hr className={styles.modalDivider} />
       <div className={` d-flex flex-column ${styles.modalSection}`}>
         <div
+          ref={hoverRef3}
           className={`d-flex align-items-center justify-content-between ${styles.modalSubSection} `}
         >
           <p> Add workspace </p>
           <div>
             <Arrow className={`${styles.arrow}`} />
           </div>
+          <section
+            className={`${
+              isHovered3 ? styles.openmodalSubCon : styles.modalSubCon
+            }`}
+          >
+            <section
+              ref={hoverRef3}
+              className={`d-flex flex-column ${styles.submodalSection}`}
+            >
+              <div>
+                <p>HNGi8</p>
+              </div>
+              <hr className={styles.modalDivider} />
+              <div>
+                <p>The BrandHub</p>
+              </div>
+            </section>
+          </section>
         </div>
         <div
           ref={hoverRef2}
@@ -130,20 +158,24 @@ const ModalComponent = ({ isOpen }) => {
         >
           <p>Switch workspace</p>
           <Arrow className={`${styles.arrow}`} />
-          <div
+          <section
             className={`${
               isHovered2 ? styles.openmodalSubCon : styles.modalSubCon
             }`}
           >
-            <div
+            <section
               ref={hoverRef2}
-              className={`d-flex flex-column ${styles.modalSection}`}
+              className={`d-flex flex-column ${styles.submodalSection}`}
             >
-              <p>HNGi8</p>
+              <div>
+                <p>HNGi8</p>
+              </div>
               <hr className={styles.modalDivider} />
-              <p>The BrandHub</p>
-            </div>
-          </div>
+              <div>
+                <p>The BrandHub</p>
+              </div>
+            </section>
+          </section>
         </div>
         <div className={`${styles.modalSubSection}`}>
           <p>Open the Zuri Chat App </p>

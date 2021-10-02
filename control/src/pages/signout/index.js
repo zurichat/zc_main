@@ -7,8 +7,7 @@ import logo from '../../component-assets/zuri.svg'
 import { Helmet } from 'react-helmet'
 
 const Signout = ({ history }) => {
-
-const orgName = localStorage.getItem('orgName')
+  const orgName = localStorage.getItem('orgName')
 
   return (
     <>
