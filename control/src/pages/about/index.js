@@ -3,13 +3,9 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 // styles import
 import styles from '../about/styles/about.module.css'
-import style from '../LandingPage/styles/LandingPage.module.css'
+import { Companies } from './component/Companies'
 // images
 import team from './asset/Collab-pana 2.svg'
-import logo_hng from '../LandingPage/assets/logo_hng.svg'
-import logo_i4g from '../LandingPage/assets/logo_i4g.svg'
-import logo_camphouse from '../LandingPage/assets/logo_camphouse.svg'
-import logo_zuri from '../LandingPage/assets/logo_zuri.svg'
 import user from './asset/user 2.svg'
 import group from './asset/Group.svg'
 import vector from './asset/Vector.svg'
@@ -19,6 +15,8 @@ import holiday from './asset/Group 35468.svg'
 import deadline from './asset/Group 35470.svg'
 import quick from './asset/Group 35471.svg'
 import todo from './asset/Group 35472.svg'
+import Carousel from './component/CarouselImg'
+import CarouselSecond from './component/SecondCarousel'
 // end of image import
 
 const index = () => {
@@ -64,17 +62,7 @@ const index = () => {
         </div>
       </div>
       {/* COMPANIES */}
-      <div className={`${style.company_banner_wrap}`}>
-        <div className={`${style.company_banner}`}>
-          <p className={`${style.cbp}`}>Trusted by top companies worldwide</p>
-          <div className={`${style.logos}`}>
-            <img src={logo_hng} alt="" className={`${style.logo}`} />
-            <img src={logo_i4g} alt="" className={`${style.logo}`} />
-            <img src={logo_camphouse} alt="" className={`${style.logo}`} />
-            <img src={logo_zuri} alt="" className={`${style.logo}`} />
-          </div>
-        </div>
-      </div>
+      <Companies />
       {/* Who we are and how to join us */}
       <div className={`container ${styles.to_join}`}>
         <div className={`row`}>
@@ -109,10 +97,12 @@ const index = () => {
             connect and interact with your team comfortably and efficiently.
           </p>
         </div>
-        <div className={`row`}>
+        {/* Carousel for mobile view  */}
+        <Carousel />
+        <div className={`row ${styles.desktop_carousel}`}>
           <div className={`col ${styles.working_remote_section}`}>
             <img src={channel} alt={'centralized space'} />
-            <h6>Channel</h6>
+            <h6>Channels</h6>
             <p>
               Increase level of organization in your team focused with <br />
               centralized spaces
@@ -164,7 +154,8 @@ const index = () => {
           easy access and increase Productivity{' '}
         </p>
       </div>
-      <div className={`container-fluid`}>
+      <CarouselSecond className={styles.carouselCaption} />
+      <div className={`container-fluid ${styles.second_carousel_block}`}>
         <div className={`row`}>
           <div className={`col ${styles.vector}`}>
             <img src={user} alt={'image of a user'} />
