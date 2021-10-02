@@ -7,7 +7,7 @@ function ContactUs() {
   return (
     <div>
       <Helmet>
-        <title>Contact Us - Zuri chat</title>
+        <title>Contact-us-Zuri Chat</title>
       </Helmet>
       <Header />
       <ContactMain />
