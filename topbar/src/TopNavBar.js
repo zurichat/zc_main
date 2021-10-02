@@ -107,29 +107,28 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       <AdminForm />
 
       <HelpContainer>
-      <img
-            src={HelpIcon}
-            role="button"
-            alt="user profile avatar"
-         onClick={() => setHelpModal(true)} />
+        <img
+          src={HelpIcon}
+          role="button"
+          alt="user profile avatar"
+          onClick={() => setHelpModal(true)}
+        />
       </HelpContainer>
       {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''}
-      
+
       {/* <UserForm /> */}
       {/* <AdminForm /> */}
 
       <ProfileImageContainer>
         {toggleStatus}
-        
-          <img
-            src={userProfileImage  ? userProfileImage : defaultAvatar}
-            onClick={openModal}
-            role="button"
-            className="avatar-img"
-            alt="user profile avatar"
-          />
-        
-        
+
+        <img
+          src={userProfileImage ? userProfileImage : defaultAvatar}
+          onClick={openModal}
+          role="button"
+          className="avatar-img"
+          alt="user profile avatar"
+        />
       </ProfileImageContainer>
 
       <Profile />
@@ -197,7 +196,7 @@ const HelpContainer = styled.div`
     opacity: 0.5;
   }
   @media (max-width: 425px) {
-    display:none;
+    display: none;
   }
 `
 const ToggleStatus = styled.div`
