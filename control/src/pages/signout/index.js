@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { withRouter } from 'react-router-dom'
 import axios from 'axios'
+// import {GetUserInfo} from '../../zuri-control'
 import { SignoutStyleWrapper } from '../../component-styles/SignoutStyle'
 import logo from '../../component-assets/zuri.svg'
 import { Helmet } from 'react-helmet'
 
 const Signout = ({ history }) => {
-  const orgName = localStorage.getItem('orgName')
 
+const orgName = localStorage.getItem('orgName')
 
-  const currentWorkspace = localStorage.getItem('currentWorkspace')
   let token = sessionStorage.getItem('token')
 
-  const logout = () => {
+useEffect( ()=> {
+   
     axios({
       method: 'post',
       url: `https://api.zuri.chat/auth/logout`,
@@ -22,24 +23,13 @@ const Signout = ({ history }) => {
     })
       .then(res => {
         console.log(res)
+      
       })
       .catch(err => {
         console.error(err)
       })
-  }
-  useEffect(() => {
-    let user = JSON.parse(sessionStorage.getItem('user'))
-
-    if ((user && token) !== null) {
-       logout();
-    
-    } else {
-      console.log('YOU ARE NOT LOGGED IN, PLEASE LOG IN')
-    }
-  }, [orgName])
-
- 
- 
+  
+})
 
   return (
     <>

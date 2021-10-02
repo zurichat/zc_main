@@ -44,34 +44,40 @@ const TopbarModal = ({ members }) => {
   let token = sessionStorage.getItem('token')
   
 
-  // useEffect(() => {
-  //   let user = JSON.parse(sessionStorage.getItem('user'))
+  useEffect(() => {
+    let user = JSON.parse(sessionStorage.getItem('user'))
 
-  //   if ((user && token) !== null) {
-  //     try {
-  //       axios
-  //         .get(`https://api.zuri.chat/organizations/${currentWorkspace}`, {
-  //           headers: {
-  //             Authorization: `Bearer ${token}`
-  //           }
-  //         })
-  //         .then(response => {
-  //           localStorage.setItem('orgName', response.data.data.name)
-  //           // let userData = { currentWorkspace, ...response.data.data }
-  //         })
-  //     } catch (err) {
-  //       console.log(err)
-  //     }
-  //   } else {
-  //     console.log('YOU ARE NOT LOGGED IN, PLEASE LOG IN')
-  //   }
-  // }, [])
+    if ((user && token) !== null) {
+      try {
+        axios
+          .get(`https://api.zuri.chat/organizations/${currentWorkspace}`, {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          })
+          .then(response => {
+            //Get Current Workspace Or Organization Name
+            localStorage.setItem('orgName', response.data.data.name)
+            // let userData = { currentWorkspace, ...response.data.data }
+          })
+      } catch (err) {
+        console.log(err)
+      }
+    } else {
+      console.log('YOU ARE NOT LOGGED IN, PLEASE LOG IN')
+    }
+  }, [])
 
 
- const logout = () => {
-   window.location.href = '/signout'  
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
   }
-
+  const logout = () => {
+    window.location.href = '/signout'
+  }
   const [pause, setPause] = useState(false)
   const [statusModal, setStatusModal] = useState(false)
 
@@ -182,11 +188,7 @@ const TopbarModal = ({ members }) => {
               {userPresence}
             </p>
             <div className={styles.pause}>
-              <p
-                onClick={() => setPause(!pause) }
-              >
-                Pause Notifications
-              </p>
+              <p onClick={() => setPause(!pause)}>Pause Notifications</p>
               <FaChevronRight className={styles.chevron} />
             </div>
             {pause && <PauseNotification pause={pause} setPause={setPause} />}
