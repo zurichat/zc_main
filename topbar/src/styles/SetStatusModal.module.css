@@ -192,10 +192,10 @@
   letter-spacing: 0em;
   text-align: center;
 }
-.dateSection{
+.dateSection {
   justify-content: left;
 }
-.dateLabel{
+.dateLabel {
   text-align: right;
   font-size: 13px;
   position: flex-end;
