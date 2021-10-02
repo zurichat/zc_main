@@ -80,6 +80,7 @@
   /* height: 39px; */
   width: 350px;
   border: none;
+  font-size: 16px;
 }
 ::placeholder {
   font-family: 'Lato', sans-serif;

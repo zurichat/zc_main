@@ -176,7 +176,6 @@ const ToggleStatus = styled.div`
     top: 42px;
     right: 10px;
   }
-
   .awayCircle {
     background-color: grey;
     height: 10px;
