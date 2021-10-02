@@ -4,14 +4,7 @@ import { GetUserInfo } from '@zuri/control'
 
 export const fetchUser = async () => {
   //Store user info in state
-  const [userInfo, setUserInfo] = useState({
-    userId: '',
-    token: '',
-    currentWorkspace: ''
-  })
-
-  //store organization info
-  const [organizationInfo, setOrganizationInfo] = useState(null)
+  const [userInfo, setUserInfo] = useState(null)
 
   //Get token from sessionStorage
   let token = sessionStorage.getItem('token')
@@ -20,35 +13,37 @@ export const fetchUser = async () => {
 
   //Get wrokspace info
   let currentWorkspace = localStorage.getItem('currentWorkspace')
+  let _id = JSON.parse(localStorage.getItem('user'))
 
   useEffect(() => {
     const getuser = async () => {
       const user = await GetUserInfo()
-
-      //Set user info in state
-      setUserInfo({
-        userId: user[0]._id,
-        token,
-        currentWorkspace
-      })
 
       //Check if user id is valid and get user organization
       if (user[0]._id !== '') {
         const org_url = `/organizations/${currentWorkspace}/plugins`
         authAxios
           .get(org_url)
-          .then(res => setOrganizationInfo(res.data.data))
+          .then(res => {
+            setUserInfo({
+              userId: user[0].org_id,
+              token: token,
+              currentWorkspace,
+              organizationInfo: res.data.data
+            })
+
+            // console.log('done getting')
+            // console.log(user)
+          })
           .catch(err => console.log(err))
       } else {
         console.log('Checking')
       }
-
-      console.log('done getting')
     }
     getuser()
   }, [])
 
-  console.log('before getting')
+  // console.log('before getting')
 
-  return { organizationInfo, userInfo }
+  return { userInfo }
 }
