@@ -24,7 +24,7 @@ const Profile = () => {
     toggleProfileState,
     user
   } = useContext(ProfileContext)
-  console.log("user status", user.status)
+  console.log('user status', user.status)
   const state = useContext(TopbarContext)
   const [dropdown, setDropdown] = useState(false)
   const [modal, setModal] = useState('')
@@ -146,7 +146,7 @@ const Profile = () => {
         <div className={`${styles.moreInfo} ${styles.mobile}`}>
           <div className={styles.infoTitle}>Status</div>
           <div className={styles.infoContent}>
-            <span>{user?.status?.text!== "" ? user?.status?.text : '0'}</span>
+            <span>{user?.status?.text !== '' ? user?.status?.text : '0'}</span>
           </div>
         </div>
         <div className={styles.moreInfo}>
