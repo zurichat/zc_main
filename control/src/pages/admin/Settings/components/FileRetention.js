@@ -2,7 +2,7 @@ import React from 'react'
 
 const myStyle = {
     text: {
-        color: "#1d1c1d",
+        color: "#E7E7E7",
         fontWeight: "600",
         fontSize: "18px",
         padding: "5px",
@@ -10,11 +10,6 @@ const myStyle = {
     inputfield: {
         margin: "10px 0",
         width:"70%",
-    },
-    smalltext: {
-        fontWeight:"400",
-        fontSize:"18px",
-        color: "#616061",
     },
     button: {
         backgroundColor:"#00B87C",
