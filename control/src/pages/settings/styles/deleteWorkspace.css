@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+*{
+    color:#1D1C1D;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18px;
+    font-family: 'Lato', sans-serif;
+    
+}
+
+
+.main .notice{
+    border-left:solid 0.5em red;
+}
+
+.main .cancel{
+    border:solid 0.15em #616061;
+}
+
+.main .submit{
+    background-color: #B0AFB0;
+}
+
+.main p,label,h4,h3{
+    font-weight: 700;
+}
+.main span{
+    color: #00B87C;
+}
