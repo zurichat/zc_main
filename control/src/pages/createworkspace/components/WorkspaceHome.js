@@ -12,8 +12,8 @@ import { Helmet } from 'react-helmet'
 const WorkspaceHome = () => {
   const { url } = useRouteMatch()
   const [organizations, setOrganizations] = useState([])
-  const [user, setUser] = useState(null)
   const [email, setNewUserEmail] = useState(null)
+  const [user, setUser] = useState(null)
   const [password, setNewUserPassword] = useState(null)
 
   const currentUser = JSON.parse(sessionStorage.getItem('user'))
@@ -43,7 +43,6 @@ const WorkspaceHome = () => {
           sessionStorage.setItem('user', JSON.stringify(data.user))
         })
         .catch(err => {
-          console.log(password)
           console.log(err.message)
         })
     }
@@ -55,12 +54,11 @@ const WorkspaceHome = () => {
   autoLogin()
 
   useEffect(() => {
-    const user = JSON.parse(sessionStorage.getItem('user'))
-    console.log(user)
-    if (user) {
-      setUser(user)
+    console.log(currentUser)
+    if (currentUser) {
+      setUser(currentUser)
       console.log(user)
-      const { email, id, token } = user
+      const { email, id, token } = currentUser
       const config = {
         headers: { Authorization: `Bearer ${token}` }
       }

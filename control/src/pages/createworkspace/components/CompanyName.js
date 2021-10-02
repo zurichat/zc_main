@@ -4,6 +4,7 @@ import { Link, useRouteMatch } from 'react-router-dom'
 import axios from 'axios'
 import { Helmet } from 'react-helmet'
 import { createDefaultChannel } from '../../../api/channels'
+
 function CompanyName({ input }) {
   const [user, setUser] = useState(null)
   const [orgId, setOrgId] = useState(null)
@@ -14,10 +15,10 @@ function CompanyName({ input }) {
 
     if (user) {
       setUser(user)
-      // console.log(user)
     }
   }, [])
 
+  //Function to Create A new Organization
   const createUserOrg = () => {
     axios
       .post(
@@ -34,7 +35,7 @@ function CompanyName({ input }) {
 
         localStorage.clear('userUserPassword')
         localStorage.clear('newUserEmail')
-        setOrgId(res.data.data.InsertedID)
+        setOrgId(res.data.data.organization_id)
 
         // Automatic Org Name Renaming From Default to new Org Name
         setTimeout(() => {
@@ -90,8 +91,9 @@ function CompanyName({ input }) {
           <Link to={`${match.url}/step2`}>
             {' '}
             <button
+              disabled={orgName.length < 3 ? true : false}
               style={
-                input.length > 1
+                orgName.length > 1
                   ? { backgroundColor: '#00b87c', color: 'white' }
                   : { backgroundColor: 'revert', cursor: 'not-allowed' }
               }
