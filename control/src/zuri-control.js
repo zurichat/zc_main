@@ -86,7 +86,8 @@ export const GetWorkspaceUsers = async () => {
       }
     )
     let user = res.data.data
-    let workSpaceUsersData = { totalUsers: user.length, ...user.slice(0, 100) }
+    // let workSpaceUsersData = { totalUsers: user.length, ...user.slice(0, 100) }
+    let workSpaceUsersData = { totalUsers: user.length, ...user }
     // console.log(user.slice(0, 100))
     console.log(workSpaceUsersData)
     return workSpaceUsersData
