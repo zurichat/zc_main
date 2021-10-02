@@ -16,6 +16,8 @@ import { authAxios } from './utils/Api'
 import Profile from './components/Profile'
 import Loader from 'react-loader-spinner'
 import { GetUserInfo } from '@zuri/control'
+import toggleStyle from './styles/sidebartoggle.module.css'
+import { BsReverseLayoutTextSidebarReverse } from 'react-icons/bs'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { openModal, presence, setPresence } = useContext(TopbarContext)
@@ -80,6 +82,33 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       )
   }
 
+  //Handle sidebar on mobile
+  const sidebar = document.getElementById(
+    'single-spa-application:@zuri/sidebar'
+  )
+  const zc_spa_body = document.querySelector('body')
+  const sidebar_toggle = document.querySelector('#sidebar_toggle')
+  const openSidebar = () => {
+    sidebar.style.display = 'block'
+    sidebar.style.left = '0'
+    sidebar.style.width = '200px'
+    sidebar_toggle.style.display = 'none'
+  }
+
+  zc_spa_body.addEventListener('click', () => {
+    if (window.outerWidth <= 768) {
+      if (sidebar !== null) {
+        sidebar.style.display = 'none'
+        sidebar_toggle.style.display = 'block'
+      }
+    } else {
+      if (sidebar !== null) {
+        sidebar.style.display = 'block'
+        sidebar_toggle.style.display = 'none'
+      }
+    }
+  })
+
   return (
     <>
       <div className="ps-3" style={{ width: '20%' }}>
@@ -113,7 +142,8 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           border={'#99999933'}
         />
       </div>
-      <div className="d-flex justify-content-end pe-3" style={{ width: '20%', marginRight: '' }}>
+      <ProfileImageContainer className="d-flex justify-content-end pe-3" style={{ width: '20%' }}>
+      {toggleStatus}
         <ProfileImg
           src={userProfileImage ? userProfileImage : defaultAvatar}
           onClick={openModal}
@@ -121,7 +151,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           className="avatar-img"
           alt="user profile avatar"
         />
-      </div>
+      </ProfileImageContainer>
 
       <Profile />
       <TopbarModal />
@@ -207,8 +237,8 @@ display:none;
 `
 const ToggleStatus = styled.div`
   position: absolute;
-  top: 28px;
-  right: -18px;
+  bottom: 0px;
+  // right: -18px;
   .user-active {
     background-color: green;
     height: 10px;
