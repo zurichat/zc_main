@@ -16,14 +16,13 @@ const WorkspaceHome = () => {
   const [user, setUser] = useState(null)
   const [password, setNewUserPassword] = useState(null)
 
-   const currentUser = JSON.parse(sessionStorage.getItem('user'))
-//Generates User Password And Email and Aumatically log In User
+  const currentUser = JSON.parse(sessionStorage.getItem('user'))
+  //Generates User Password And Email and Aumatically log In User
   useEffect(() => {
-
     setNewUserEmail(JSON.parse(localStorage.getItem('newUserEmail')))
     setNewUserPassword(JSON.parse(localStorage.getItem('userUserPassword')))
     // Extracts User Email and Password from Local Storage To Fire Login Fuction
-     
+
     const autoLogin = () => {
       axios
         .post('https://api.zuri.chat/auth/login', {
@@ -47,11 +46,10 @@ const WorkspaceHome = () => {
           console.log(err.message)
         })
     }
-   if(!currentUser){
-    autoLogin();
-   }
-
-  }, [email, password]);
+    if (!currentUser) {
+      autoLogin()
+    }
+  }, [email, password])
 
   useEffect(() => {
     console.log(currentUser)
