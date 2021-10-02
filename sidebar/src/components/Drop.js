@@ -5,15 +5,18 @@ import { TiArrowSortedDown } from 'react-icons/ti'
 import { navigateToUrl } from 'single-spa'
 import hash from '../assets/images/hash.svg'
 import { AiOutlinePlusCircle } from 'react-icons/ai'
+import PluginRoomAddUser from './PluginRoomAddUser'
 
 const DropDown = ({ itemName, items }) => {
+  const [addToRoom, setAddToRoom] = useState(false)
+  const [roomId, setRoomId] = useState(false)
   const [isOpen, setOpen] = useState(false)
   // const [items, setItems] = useState(data);
   const [selectedItem, setSelectedItem] = useState(null)
 
   const toggleDropdown = () => setOpen(!isOpen)
 
-  console.log(items)
+  // console.log(items)
   const handleItemClick = id => {
     selectedItem == id ? setSelectedItem(null) : setSelectedItem(id)
   }
@@ -72,15 +75,31 @@ const DropDown = ({ itemName, items }) => {
                       onError={e => (e.target.src = hash.toString())}
                       alt="img"
                     />
-                    <p className={`mb-0 ${styles.dropDown__name}`}>
+                    <div className={`mb-0 ${styles.dropDown__name}`}>
                       {room.room_name}
-                    </p>
+                      {/* Add to Room Button */}
+                      <AiOutlinePlusCircle
+                        className={`d-inline-flex align-items-center ms-2 ${styles.icon}`}
+                        onClick={() => {
+                          setAddToRoom(!addToRoom)
+                          setRoomId(room._id)
+                        }}
+                      />
+                    </div>
                   </a>
                 </li>
               )
             }
           })}
       </ul>
+      {/* Add to Room */}
+      {addToRoom && (
+        <PluginRoomAddUser
+          isOpen={addToRoom}
+          isClosed={setAddToRoom}
+          room_id={roomId}
+        />
+      )}
     </div>
   )
 }
