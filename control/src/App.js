@@ -141,7 +141,7 @@ const App = () => {
         <PrivateRoute
           path="/admin/settings/permission"
           exact
-          component={Permissions}
+          component={AdminSettingsTab}
         />
         <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
         {/* ----------------settings routes closed----------------- */}
