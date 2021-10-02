@@ -14,20 +14,21 @@ import { StyledProfileWrapper } from '../styles/StyledEditProfile'
 const EditProfile = () => {
   const imageRef = useRef(null)
   const avatarRef = useRef(null)
-  const { user, orgId, userProfileImage, setUserProfileImage } =
+  const { user, orgId, userProfileImage, setUser, setUserProfileImage } =
     useContext(ProfileContext)
   const [selectedTimezone, setSelectedTimezone] = useState({})
   const [links, setLinks] = useState([''])
   const [state, setState] = useState({
-    name: user.name,
+    first_name: user.first_name,
+    last_name: user.last_name,
     display_name: user.display_name,
     pronouns: user.pronouns,
     role: user.role,
     image_url: user.image_url,
-    bio: '',
+    bio: user.bio,
     phone: user.phone,
     prefix: '',
-    timezone: '',
+    timezone: user.timezone,
     twitter: '',
     facebook: '',
     loading: false,
@@ -119,22 +120,37 @@ const EditProfile = () => {
     setState({ ...state, loading: true })
 
     const data = {
-      name: state.name,
+      first_name: state.first_name,
+      last_name: state.last_name,
       display_name: state.display_name,
       pronouns: state.pronouns,
       phone: state.phone,
       bio: state.bio,
-      timeZone: state.timezone
+      timeZone: state.timezone,
+      // socials: state.socials[0],
+      twitter: state.twitter,
+      facebook: state.facebook,
+      // tag: state.tag,
+      // text: state.text,
+      // expiry_time: state.expiry_time,
       // socials: [
       //   {
-      //     "title": "twitter",
-      //     "url": state.twitter
+      //     title: 'twitter',
+      //     url: state.url
       //   },
       //   {
-      //     "title": "facebook",
-      //     "url": state.facebook
+      //     title: 'facebook',
+      //     url: state.url
       //   },
-      // ],
+      //   {
+      //     title: 'linkedin',
+      //     url: state.linkedin_url
+      //   },
+      //   {
+      //     title: 'instagram',
+      //     url: state.facebook_url
+      //   }
+      // ]
     }
 
     authAxios
@@ -146,6 +162,17 @@ const EditProfile = () => {
           position: 'top-center'
         })
       })
+      .then(
+        setTimeout(() => {
+          authAxios
+            .get(`/organizations/${orgId}/members/${user._id}`)
+            .then(res => {
+              console.log(res, 'get profile')
+              const profile_date = res.data.data
+              setUser(profile_date)
+            })
+        }, 500)
+      )
       .catch(err => {
         console.log(err)
         setState({ loading: false })
@@ -181,10 +208,27 @@ const EditProfile = () => {
                   <input
                     type="text"
                     className="input"
-                    id="name"
-                    defaultValue={state.name}
-                    onChange={e => setState({ name: e.target.value })}
-                    name="name"
+                    id="first_name"
+                    defaultValue={state.first_name}
+                    onChange={e =>
+                      setState({ ...state, first_name: e.target.value })
+                    }
+                    name="first_name"
+                  />
+                </div>
+                <div className="input-group mal-4">
+                  <label htmlFor="name" className="inputLabel">
+                    Last Name
+                  </label>
+                  <input
+                    type="text"
+                    className="input"
+                    id="last_name"
+                    defaultValue={state.last_name}
+                    onChange={e =>
+                      setState({ ...state, last_name: e.target.value })
+                    }
+                    name="last_name"
                   />
                 </div>
               </div>
@@ -198,7 +242,9 @@ const EditProfile = () => {
                     className="input"
                     id="dname"
                     defaultValue={state.display_name}
-                    onClick={e => setState({ display_name: e.target.value })}
+                    onChange={e =>
+                      setState({ ...state, display_name: e.target.value })
+                    }
                     name="dname"
                   />
                   <p className="para">
@@ -213,7 +259,9 @@ const EditProfile = () => {
                   <select
                     name="pronouns"
                     defaultValue={state.pronouns}
-                    onClick={e => setState({ pronouns: e.target.value })}
+                    onChange={e =>
+                      setState({ ...state, pronouns: e.target.value })
+                    }
                     className="select"
                     id="pronouns"
                   >
@@ -229,11 +277,11 @@ const EditProfile = () => {
                 </label>
                 <input
                   type="text"
-                  onClick={e => setState({ what: e.target.value })}
+                  onChange={e => setState({ ...state, what: e.target.value })}
                   defaultValue={state.what}
                   className="input"
-                  id="what"
-                  name="what"
+                  id="bio"
+                  name="bio"
                 />
                 <p className="para">
                   Let people know what you do at <b>ZURI</b>
@@ -244,7 +292,7 @@ const EditProfile = () => {
                   Bio
                 </label>
                 <textarea
-                  onClick={e => setState({ bio: e.target.value })}
+                  onChange={e => setState({ ...state, bio: e.target.value })}
                   defaultValue={state.bio}
                   className="textarea"
                   name="bio"
@@ -292,8 +340,10 @@ const EditProfile = () => {
                 <input
                   type="text"
                   className="input"
-                  defaultValue={state.twitter}
-                  onClick={e => setState({ twitter: e.target.value })}
+                  defaultValue={state.socials_url}
+                  onChange={e =>
+                    setState({ ...state, socials_url: e.target.value })
+                  }
                   id="twitter"
                   name="twitter"
                 />
@@ -303,8 +353,10 @@ const EditProfile = () => {
                   Facebook
                 </label>
                 <input
-                  defaultValue={state.facebook}
-                  onClick={e => setState({ facebook: e.target.value })}
+                  defaultValue={state.socials_url}
+                  onChange={e =>
+                    setState({ ...state, socials_url: e.target.value })
+                  }
                   type="text"
                   className="input"
                   id="facebook"
@@ -320,7 +372,7 @@ const EditProfile = () => {
                 ))}
 
                 {links.length !== 5 && (
-                  <p className="warning" onClick={addList}>
+                  <p className="warning" onChange={addList}>
                     Add new link
                   </p>
                 )}
@@ -354,20 +406,11 @@ const EditProfile = () => {
                   id="img"
                 />
                 <label htmlFor="img" className="btns chgBtn">
-                  {/* {state.loading ? (
-                    <Loader
-                      type="ThreeDots"
-                      color="#fff"
-                      height={40}
-                      width={40}
-                    />
-                  ) : ( */}
                   Upload Image
-                  {/* ) */}
                 </label>
                 <div
                   role="button"
-                  className="rmvBtn"
+                  className={`rmvBtn fs-6`}
                   onClick={handleImageDelete}
                 >
                   Remove Image
