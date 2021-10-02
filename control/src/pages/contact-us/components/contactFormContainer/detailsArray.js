@@ -30,10 +30,10 @@ const Topics = [
       }
     ],
     articles: [
-      {title: 'Related article 1'},
-      {title: 'Related article 2'},
-      {title: 'Related article 3'},
-      {title: 'Related article 4'}
+      { title: 'Related article 1' },
+      { title: 'Related article 2' },
+      { title: 'Related article 3' },
+      { title: 'Related article 4' }
     ]
   },
   {
@@ -56,10 +56,10 @@ const Topics = [
       }
     ],
     articles: [
-      {title: 'Related article 1'},
-      {title: 'Related article 2'},
-      {title: 'Related article 3'},
-      {title: 'Related article 4'}
+      { title: 'Related article 1' },
+      { title: 'Related article 2' },
+      { title: 'Related article 3' },
+      { title: 'Related article 4' }
     ]
   },
   {
@@ -83,10 +83,10 @@ const Topics = [
       }
     ],
     articles: [
-      {title: 'Related article 1'},
-      {title: 'Related article 2'},
-      {title: 'Related article 3'},
-      {title: 'Related article 4'}
+      { title: 'Related article 1' },
+      { title: 'Related article 2' },
+      { title: 'Related article 3' },
+      { title: 'Related article 4' }
     ]
   },
   {
@@ -119,10 +119,10 @@ const Topics = [
       }
     ],
     articles: [
-      {title: 'Related article 1'},
-      {title: 'Related article 2'},
-      {title: 'Related article 3'},
-      {title: 'Related article 4'}
+      { title: 'Related article 1' },
+      { title: 'Related article 2' },
+      { title: 'Related article 3' },
+      { title: 'Related article 4' }
     ]
   }
 ]
