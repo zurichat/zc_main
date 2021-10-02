@@ -11,10 +11,16 @@ import android from './assets/android.svg'
 import { isIOS } from 'react-device-detect'
 
 const DownloadsMobile = () => {
-  const [exe, setexe] = useState({ link: '', name: '' })
+  const [exe, setexe] = useState({ link: '', name: '', link2: '', name2: '' })
   React.useEffect(() => {
     if (isIOS) return setexe({ name: 'DOWNLOAD FOR IOS' })
-    return setexe({ name: 'DOWNLOAD FOR ANDROID', link: 'https://drive.google.com/file/d/1C5s3Hm44shxtIJ6XElV3lqBk1XLAbrMm/view?usp=drivesdk' })
+    return setexe({
+      name: 'DOWNLOAD ZURI CHAT',
+      link: 'https://drive.google.com/file/d/1C5s3Hm44shxtIJ6XElV3lqBk1XLAbrMm/view?usp=drivesdk',
+      name2: 'DOWNLOAD DM AND CHANNELS',
+      link2:
+        'https://drive.google.com/file/d/1LRrWXjBFdns0RUD7zQapBuof8ole5XHI/view?usp=drivesdk'
+    })
   }, [])
   return (
     <>
@@ -28,12 +34,15 @@ const DownloadsMobile = () => {
             <p className="mb-4">
               Connecting with your team has never been easier with Zuri Chat.
             </p>
-            <a
-              href={exe.link}
-              className={downloadStyles.button1}
-            >
+            {exe.link2 && (
+              <a href={exe.link2} className={`${downloadStyles.button1} mb-3`}>
+                <img className={`px-2`} src={icon} alt="download icon"></img>
+                {exe.name2}
+              </a>
+            )}
+            <a href={exe.link} className={downloadStyles.button1}>
               <img className={`px-2`} src={icon} alt="download icon"></img>
-              DOWNLOAD
+              {exe.name}
             </a>
           </div>
           <div
@@ -51,33 +60,21 @@ const DownloadsMobile = () => {
             Download and enjoy the Zuri Chat experience on any these devices
           </p>
           <div className={`${downloadStyles.downloadButtonContainer}`}>
-            <a
-              href="/download-app"
-              className={downloadStyles.downloadButton}
-            >
+            <a href="/download-app" className={downloadStyles.downloadButton}>
               Windows
               <img className={`px-2`} src={windows} alt="download icon" />
             </a>
-            <a
-              href="/download-app"
-              className={downloadStyles.downloadButton}
-            >
+            <a href="/download-app" className={downloadStyles.downloadButton}>
               macOS
               <img className={`px-2`} src={apple} alt="download icon" />
             </a>
           </div>
           <div className={`${downloadStyles.downloadButtonContainer} mb-4`}>
-            <a
-              href={exe.link}
-              className={downloadStyles.downloadButton}
-            >
+            <a href={exe.link} className={downloadStyles.downloadButton}>
               Android
               <img className={`px-2`} src={android} alt="download icon" />
             </a>
-            <a
-              href="/download-app"
-              className={downloadStyles.downloadButton}
-            >
+            <a href="/download-app" className={downloadStyles.downloadButton}>
               iOS
               <img className={`px-2`} src={apple} alt="download icon" />
             </a>
@@ -104,6 +101,16 @@ const DownloadsMobile = () => {
               <img className={`px-2`} src={icon} alt="download icon"></img>
               {exe.name}
             </a>
+
+            {exe.link2 && (
+              <a
+                href={exe.link2}
+                className={`${downloadStyles.button2} text-center`}
+              >
+                <img className={`px-2`} src={icon} alt="download icon"></img>
+                {exe.name2}
+              </a>
+            )}
           </div>
           <div className={`d-flex justify-content-center `}>
             <img
