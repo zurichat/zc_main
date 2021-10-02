@@ -2,7 +2,7 @@ import { createContext, useState, useEffect } from 'react'
 
 export const CardContext = createContext(null)
 export const CardProvider = ({ children }) => {
-  const [cardList, setCardList] = useState();
+  const [cardList, setCardList] = useState([]);
   const [token, setToken] = useState(0);
 
   useEffect(() => {
