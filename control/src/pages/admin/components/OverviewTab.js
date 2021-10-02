@@ -1,19 +1,21 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import Loader from 'react-loader-spinner'
 
 import styles from '../styles/adminOverview.module.css'
 import { authAxios } from '../Utils/Api'
 
-import { getToken, getUser, getCurrentWorkspace } from '../Utils/Common'
+import { getUser, getCurrentWorkspace } from '../Utils/Common'
 
 // icons
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 import { FiCheck } from 'react-icons/fi'
+import { CardContext } from '../../../context/CardContext'
 
 const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
 
   const currentWorkspace = getCurrentWorkspace()
+  const {token, setToken} = useContext(CardContext);
   const user = getUser()
   const [workspaceData, setWorkspaceData] = React.useState({})
   const [loading, setLoading] = React.useState(false)
@@ -53,7 +55,7 @@ const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
   return (
     <div className={styles.plansContainer}>
       <div className={styles.tokenAmount}>
-        <span>{workspaceData.tokens} &nbsp;</span>
+        <span>{token} &nbsp;</span>
         tokens
         <AiOutlineInfoCircle className={styles.infoIcon} />
       </div>

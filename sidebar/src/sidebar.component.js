@@ -1,19 +1,3 @@
-// import { useState, useEffect, useContext } from 'react'
-// import { fetchUser } from './utils/fetchUserDetails'
-
-// const Sidebar = props => {
-//   const nn = fetchUser()
-//   // console.log(userInfo, 'sidebar new', organizationInfo)
-
-//   useEffect(() => {
-//     console.log(nn, 'test test')
-//   })
-
-//   return <div>Welcome</div>
-// }
-
-// export default Sidebar
-
 import { Fragment, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './styles/Sidebar.module.css'

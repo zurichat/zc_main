@@ -80,7 +80,7 @@ const AdminTab = () => {
         {active === 5 && <TokensTab />}
         {active === 6 && <PaymentTab />}
       </div>
-    </div>
+    </CardProvider>
   )
 }
 
