@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
 import { Col, Row } from 'react-bootstrap'
 import styles from './styles/marketplace.module.css'
 import MarketPlaceContainer from './components/marketplace-container/MarketPlaceContainer'
@@ -11,44 +10,11 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 import MarketplaceHeader from './components/marketplace-container/MarketplaceHeader'
 import { MarketPlaceProvider } from '../../context/MarketPlace.context.js'
-import AuthNotifyBanner from './components/AuthNotifyBanner/'
-import { loggedInUser } from '../../../../globalState'
 import axios from 'axios'
 import { Helmet } from 'react-helmet'
 
 const MarketPlace = () => {
   const [userDetails, setUserDetails] = useState(null)
-  const [loadingUser, setLoadingUser] = useState(false)
-  const [err, setErr] = useState(null)
-
-  const fetchUserInformation = async () => {
-    const { token, id } = loggedInUser
-    setLoadingUser(true)
-    try {
-      const response = await axios.get(`https://api.zuri.chat/users/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      })
-      if (response.data.status === 200) {
-        setUserDetails(response.data.data)
-        setLoadingUser(false)
-      } else {
-        setErr('Network Error')
-        setLoadingUser(false)
-      }
-    } catch (err) {
-      console.log(err)
-      setErr('Something Went Wrong Fetching User Details')
-      setLoadingUser(false)
-    }
-  }
-
-  useEffect(() => {
-    if (loggedInUser.id) {
-      fetchUserInformation()
-    }
-  }, [userDetails])
   return (
     <MarketPlaceProvider>
       <Helmet>
@@ -58,32 +24,7 @@ const MarketPlace = () => {
         <div
           className={`w-100 d-flex flex-wrap justify-content-between align-items-baseline ${styles.marketplaceNavbar}`}
         >
-          <MarketplaceHeader user={loggedInUser} />
-          {!loggedInUser && !loadingUser ? (
-            <AuthNotifyBanner
-              text={
-                !loadingUser && !userDetails
-                  ? 'You are currently not logged in,'
-                  : 'You are currently not in an organization'
-              }
-              action={
-                !loadingUser && !userDetails
-                  ? { link: '/login', name: 'Login' }
-                  : {
-                      link: '/home/join/organization',
-                      name: 'Join An Organization'
-                    }
-              }
-            />
-          ) : loggedInUser && !userDetails ? (
-            <AuthNotifyBanner
-              text={'You are currently not in an organization'}
-              action={{
-                link: '/home/join/organization',
-                name: 'Join An Organization'
-              }}
-            />
-          ) : null}
+          <MarketplaceHeader />
         </div>
         <div className={styles.marketplaceHero}>
           <Row className={`align-items-center justify-content-center`}>
@@ -93,9 +34,24 @@ const MarketPlace = () => {
                 Integrate your favorite plugins and get more exciting experience
                 from the Zuri app. Collaborate, work smarter and better.{' '}
               </p>
-              <Link to="/marketplace" className={styles.marketplaceHeroButton}>
-                Learn More
-              </Link>
+              <div className="d-flex align-items-center">
+                <div className={styles.marketplaceSearchBar}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                  >
+                    <path fill="none" d="M0 0h24v24H0z" />
+                    <path
+                      d="M11 2c4.968 0 9 4.032 9 9s-4.032 9-9 9-9-4.032-9-9 4.032-9 9-9zm0 16c3.867 0 7-3.133 7-7 0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7zm8.485.071l2.829 2.828-1.415 1.415-2.828-2.829 1.414-1.414z"
+                      fill="rgba(190,190,190,1)"
+                    />
+                  </svg>
+                  <input type="text" placeholder="Search Plugins" />
+                </div>
+                <button className={styles.marketplaceHeroButton}>Search</button>
+              </div>
             </Col>
             <Col md={4}>
               <div className={styles.circleBackground}>
@@ -159,17 +115,26 @@ const MarketPlace = () => {
             className={styles.marketplaceTabs}
             selectedTabClassName={styles.marketplaceTabSelected}
           >
-            <TabList className={styles.marketplaceTabList}>
-              <Tab className={styles.marketplaceTab}>New plugin</Tab>
-              <Tab className={styles.marketplaceTab}>Recommended for you</Tab>
-              <Tab className={styles.marketplaceTab}>Popular Plugins</Tab>
-            </TabList>
+            <div
+              className={`d-flex justify-content-between w-100 ${styles.marketplaceContainerMain}`}
+            >
+              <div>
+                <h2 className={styles.marketplaceContainerTitle}>
+                  Marketplace for you
+                </h2>
+                <p className={styles.marketplaceContainerCaption}>
+                  Get Plugins that you would enjoy
+                </p>
+              </div>
+              <TabList className={styles.marketplaceTabList}>
+                <Tab className={styles.marketplaceTab}>New plugin</Tab>
+                <Tab className={styles.marketplaceTab}>Recommended for you</Tab>
+                <Tab className={styles.marketplaceTab}>Popular Plugins</Tab>
+              </TabList>
+            </div>
             <Row className={`mx-0`}>
               <TabPanel>
-                <MarketPlaceContainer
-                  user={loggedInUser}
-                  organizations={userDetails?.Organizations}
-                />
+                <MarketPlaceContainer />
               </TabPanel>
               <TabPanel>
                 <MarketPlaceContainer />
