@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import styles from '../styles/Profile.module.css'
-import userAvatar from '../assets/images/user.svg'
+import defaultAvatar from '../assets/images/avatar_vct.svg'
 import facebook from '../assets/images/facebook.svg'
 import twitter from '../assets/images/twitter.svg'
 import linkedin from '../assets/images/linkedin.svg'
@@ -30,6 +30,7 @@ const Profile = () => {
   const [modal, setModal] = useState('')
 
   const currentTime = moment().format('h:mm a')
+  
 
   return (
     <div
@@ -69,7 +70,7 @@ const Profile = () => {
       <div className={styles.content}>
         <img
           className={styles.userAvatar}
-          src={userProfileImage ? userProfileImage : userAvatar}
+          src={userProfileImage !== '' ? userProfileImage : defaultAvatar}
           alt="avatar"
         />
         <div className={styles.userDetails}>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import CompanyNameCSS from '../styles/CompanyName.module.css'
 import { Link, useRouteMatch } from 'react-router-dom'
 import axios from 'axios'
+import { Helmet } from 'react-helmet'
 function CompanyName({ input }) {
   const [user, setUser] = useState(null)
   const [orgId, setOrgId] = useState(null)
@@ -31,23 +32,29 @@ function CompanyName({ input }) {
       )
       .then(res => {
         console.log(res)
-        localStorage.clear()
+        localStorage.clear('userUserPassword')
+        localStorage.clear('newUserEmail')
+
+         axios.patch(`https://api.zuri.chat/organizations/${res.data.data.InsertedID}/name`,  {
+          "organization_name": orgName
+      },
+    { headers: {
+      Authorization: 'Bearer ' + user.token
+    }
+  })
       })
       .catch(err => {
         console.log(err.message)
       })
   }
 
-  //  return  axios.patch(`https://api.zuri.chat/organizations/${res.data.data.InsertedID}/Zuri Chat`,  {
-  //         "organization_name": orgName
-  //     },
-  //   { headers: {
-  //     Authorization: 'Bearer ' + user.token
-  //   }
-  // })
+  
 
   return (
     <div>
+      <Helmet>
+        <title>Choose Company Name - Zuri Chat</title>
+      </Helmet>
       <article className={CompanyNameCSS.wrapper}>
         <div className={CompanyNameCSS.email}>
           {user ? <span>Signed in as {user.email}</span> : null}
@@ -55,7 +62,7 @@ function CompanyName({ input }) {
 
         <div className={CompanyNameCSS.centerWrapper}>
           <h4> Step 1 of 3</h4>
-          <h1>What is the name of your company or team?</h1>
+          <h1>What is the name of your company or team ?</h1>
           <h4>
             This will be the name of your workspace. Choose something that your
             team will recognise
@@ -80,9 +87,9 @@ function CompanyName({ input }) {
               }
               onClick={createUserOrg}
             >
-              {' '}
+             
               Continue
-            </button>{' '}
+            </button>
           </Link>
         </div>
       </article>

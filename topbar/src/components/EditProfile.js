@@ -1,10 +1,9 @@
 import { useRef, useState, useEffect, useContext } from 'react'
 import ProfileModal from './ProfileModal'
-
 import { authAxios } from '../utils/Api'
 
 import { AiFillCamera } from 'react-icons/ai'
-import avatar from '../assets/images/user.svg'
+import defaultAvatar from '../assets/images/avatar_vct.svg'
 import { ProfileContext } from '../context/ProfileModal'
 import Loader from 'react-loader-spinner'
 import toast, { Toaster } from 'react-hot-toast'
@@ -33,8 +32,6 @@ const EditProfile = () => {
     facebook: '',
     loading: false
   })
-
-  console.log('country code', data)
 
   const addList = () => {
     if (links.length < 5) {
@@ -85,6 +82,30 @@ const EditProfile = () => {
           })
         })
     }
+  }
+
+  const handleImageDelete = () => {
+    setState({ imageLoading: true })
+
+    const formData = new FormData()
+    formData.append('image', defaultAvatar)
+
+    authAxios
+      .patch(`/organizations/${orgId}/members/${user._id}/photo`, formData)
+      .then(res => {
+        setUserProfileImage(defaultAvatar)
+        setState({ imageLoading: false })
+        toast.success('User Image Removed Successfully', {
+          position: 'top-center'
+        })
+      })
+      .catch(err => {
+        console.log(err)
+        setState({ imageLoading: false })
+        toast.error(err?.message, {
+          position: 'top-center'
+        })
+      })
   }
 
   useEffect(() => {
@@ -144,7 +165,7 @@ const EditProfile = () => {
                 <div className="mobileAvataeCon">
                   <img
                     ref={avatarRef}
-                    src={user.image_url ? user.image_url : avatar}
+                    src={user.image_url !== '' ? user.image_url : defaultAvatar}
                     alt="profile-pic"
                     className="avatar"
                   />
@@ -241,8 +262,8 @@ const EditProfile = () => {
                   >
                     {
                       // country code
-                      data.map(item => (
-                        <option key={item.dial_code} value={item.dial_code}>
+                      data.map((item, index) => (
+                        <option key={index} value={item.dial_code}>
                           {item.dial_code}
                         </option>
                       ))
@@ -310,7 +331,7 @@ const EditProfile = () => {
                 <img
                   ref={avatarRef}
                   className="img"
-                  src={userProfileImage ? userProfileImage : avatar}
+                  src={userProfileImage ? userProfileImage : defaultAvatar}
                   alt="profile-pic"
                 />
 
@@ -333,7 +354,13 @@ const EditProfile = () => {
                   Upload Image
                   {/* ) */}
                 </label>
-                <button className="btns rmvBtn">Delete image</button>
+                <div
+                  role="button"
+                  className="rmvBtn"
+                  onClick={handleImageDelete}
+                >
+                  Remove Image
+                </div>
               </div>
             </div>
           </div>
