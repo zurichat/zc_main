@@ -10,14 +10,12 @@ import defaultAvatar from './assets/images/avatar_vct.svg'
 import HelpIcon from './assets/images/help-icon.svg'
 import TopbarModal from './components/TopbarModal'
 import HelpModal from './components/HelpModal'
-// import UserForm from '../../control/src/pages/ReportFeature/User/Form'
-// import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
+import UserForm from '../../control/src/pages/ReportFeature/User/Form'
+import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
 import { authAxios } from './utils/Api'
 import Profile from './components/Profile'
 import Loader from 'react-loader-spinner'
 import { GetUserInfo } from '@zuri/control'
-import toggleStyle from './styles/sidebartoggle.module.css'
-import { BsReverseLayoutTextSidebarReverse } from 'react-icons/bs'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { openModal, presence, setPresence } = useContext(TopbarContext)
@@ -81,32 +79,6 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         </ToggleStatus>
       )
   }
-  //Handle sidebar on mobile
-  const sidebar = document.getElementById(
-    'single-spa-application:@zuri/sidebar'
-  )
-  const zc_spa_body = document.querySelector('body')
-  const sidebar_toggle = document.querySelector('#sidebar_toggle')
-  const openSidebar = () => {
-    sidebar.style.display = 'block'
-    sidebar.style.left = '0'
-    sidebar.style.width = '200px'
-    sidebar_toggle.style.display = 'none'
-  }
-
-  zc_spa_body.addEventListener('click', () => {
-    if (window.outerWidth <= 768) {
-      if (sidebar !== null) {
-        sidebar.style.display = 'none'
-        sidebar_toggle.style.display = 'block'
-      }
-    } else {
-      if (sidebar !== null) {
-        sidebar.style.display = 'block'
-        sidebar_toggle.style.display = 'none'
-      }
-    }
-  })
 
   return (
     <>
