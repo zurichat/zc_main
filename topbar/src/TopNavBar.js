@@ -21,9 +21,12 @@ import toggleStyle from './styles/sidebartoggle.module.css'
 import { BsReverseLayoutTextSidebarReverse } from 'react-icons/bs'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
-  const { openModal, presence, setPresence } = useContext(TopbarContext)
+  const { closeModal, openModal, presence, setPresence } =
+    useContext(TopbarContext)
   const { setUser, user, userProfileImage, setOrgId, setUserProfileImage } =
     useContext(ProfileContext)
+  const state = useContext(TopbarContext)
+  const [showModal] = state.show
   const [organizations, setOrganizations] = useState([])
   const [search, setSearch] = useState('')
   const [helpModal, setHelpModal] = useState(false)
@@ -125,6 +128,12 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const currentWorkspace = localStorage.getItem('currentWorkspace')
 
   SubscribeToChannel(currentWorkspace, callbackFn)
+
+  // useEffect(() => {
+  //   if (showModal===true) {
+  //     document.addEventListener('click', openModal)
+  //   }
+  // },[showModal])
 
   let toggleStatus = null
 
