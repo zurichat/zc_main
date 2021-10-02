@@ -33,8 +33,7 @@ import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation
 import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContext'
 import PrivacyPolicy from './pages/privacy-policy/index'
 import NotFoundPage from './pages/404'
-import Billing from './pages/admin/Billing';
-import InviteUserRequest from './pages/InviteFlow/components/InviteUserRequest';
+import Billing from './pages/admin/Billing'
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -80,6 +79,9 @@ const App = () => {
           <SendRequest />
         </Route>
         <Route path="/invite-user">
+          <InviteUserRequest />
+        </Route>
+        <Route path="/invite-user/1">
           <InviteUserRequest />
         </Route>
         <Route path="/resources">

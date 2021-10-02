@@ -15,11 +15,9 @@
   align-items: center;
   margin-left: 20px;
   padding: 3px;
-  margin-bottom: 22px;
+  margin-bottom: 0px;
   cursor: pointer;
-}
-.one:first-child {
-  padding-top: 15px;
+  font-size: 15px;
 }
 .icon {
   margin-right: 15px;
@@ -28,7 +26,7 @@
   color: #00b87c;
   font-size: 15px;
 }
-
+/* 
 .one,
 .active {
   display: flex;
@@ -39,7 +37,7 @@
   padding: 2px;
   margin-bottom: 22px;
   cursor: pointer;
-}
+} */
 .one:first-child {
   padding-top: 10px;
 }
