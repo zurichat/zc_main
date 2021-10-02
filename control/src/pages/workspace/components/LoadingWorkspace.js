@@ -3,27 +3,32 @@ import React from 'react'
 import WorkspaceHeader from './WorkspaceHeader'
 import { useWorkspaceContext } from './WorkspaceContext'
 import LoginLoading from '../../../components/LoginLoading'
+
 // Styles
 import styles from '../style/workspace.module.css'
 import WorkspaceCard from './WorkspaceCard'
 import WorkspaceFooter from './WorkspaceFooter'
-import SelectedWorkspace from './SelectedWorkspace'
+import JoinWorkspaceCard from './JoinWorkspaceCard'
+import WorkspaceError from './Error'
 
 const LoadingWorkspace = () => {
-  const { pageLoading } = useWorkspaceContext()
-
+  const { pageLoading, error } = useWorkspaceContext()
   return (
     <>
       {pageLoading ? (
         <LoginLoading />
+      ) : error ? (
+        <WorkspaceError error={error} />
       ) : (
         <div className={`${styles.workspace}`}>
           <main className={`${styles.workspace_container}`}>
             <WorkspaceHeader />
             <article className={`${styles.workspace_wrapper}`}>
-              <SelectedWorkspace />
               <WorkspaceCard />
             </article>
+            <section className={`${styles.joinworkspace_wrapper}`}>
+              <JoinWorkspaceCard />
+            </section>
           </main>
           <WorkspaceFooter />
         </div>

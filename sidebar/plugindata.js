@@ -31,7 +31,7 @@ export const plugindata = (state, dispatch, render) => {
       //Check for organization
       if (userInfo.organizationInfo !== null) {
         //Query organization info to get pluginData
-        
+
         for (let index = 0; index < userInfo.organizationInfo.length; index++) {
           const { plugin } = userInfo.organizationInfo[index]
 
@@ -71,9 +71,9 @@ export const plugindata = (state, dispatch, render) => {
               // console.log("finnalyyyyyyy", sideBarData);
               // console.log("Done setting dispatch");
               // if (userInfo.organizationInfo.length - 1 === index) {
-                // setPlugin(prev => {
-                //         return {...prev,sideBarData}
-                //     })
+              // setPlugin(prev => {
+              //         return {...prev,sideBarData}
+              //     })
               //   setrender(2)
               // }
               //   ref.current = sideBarData
@@ -88,11 +88,8 @@ export const plugindata = (state, dispatch, render) => {
 
   useEffect(() => {
     // fetchSidebar()
-    console.log("render");
-  },[render])
-  
-    
-  
+    console.log('render')
+  }, [render])
 
   return { plugininfo }
 }

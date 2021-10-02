@@ -87,6 +87,8 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './styles/Sidebar.module.css'
+import Dropdown from './components/Dropdown'
+import EmailInviteModal from './components/EmailInvite'
 import ModalComponent from './components/ModalComponent'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
 import styled from 'styled-components'
@@ -108,11 +110,15 @@ import axios from 'axios'
 import { GetUserInfo } from '@zuri/control'
 import { authAxios } from './utils/Api'
 import linkIcon from './assets/link.svg'
+
+import { ChakraProvider, Spinner } from '@chakra-ui/react'
+
 import { SubscribeToChannel } from '@zuri/control'
 import { filterUrl, trimUrl } from './utils/filterurl'
 
 const Sidebar = props => {
   const [show, setShow] = useState(false)
+  const [bg, setBg] = useState(1)
   const [openInvite, setOpenInvite] = useState(false)
   const [showDialog, setShowDialog] = useState(false)
   const open = () => setShowDialog(true)
@@ -122,15 +128,19 @@ const Sidebar = props => {
   const [query, setQuery] = useState('')
   const [loading, setLoading] = useState(false)
   // const [error, setError] = useState('')
-  const [inviteEmail, setInviteEmail] = useState('')
+  const [inviteEmail, setInviteEmail] = useState([])
+  const [orgEmails, setOrgEmails] = useState([])
   const [owner, setOwner] = useState(false)
   const [InviteSuccess, setInviteSuccess] = useState(false)
   const [homeModal, toggleHomeModal] = useState(false)
   const toggle = () => toggleHomeModal(!homeModal)
+  const toggleOpenInvite = () => setOpenInvite(!openInvite)
+  const setInviteEmails = emails => setInviteEmail(emails)
+  const [sendLoading, setSendLoading] = useState(false)
 
   let currentWorkspace = localStorage.getItem('currentWorkspace')
   console.log(currentWorkspace)
-
+  // console.log(inviteEmail, 'whatsappout');
   const [userInfo, setUserInfo] = useState({
     userId: '',
     Organizations: [],
@@ -184,17 +194,25 @@ const Sidebar = props => {
     getOrgDetails().then(res => {
       const currentUser = res.data.data.find(user => user.email === userEmail)
       setOwner(currentUser?.role === 'owner' || currentUser?.role === 'admin')
+      const existingEmails = []
+      res.data.data.map(user => existingEmails.push(user.email))
+      // console.log(existingEmails);
+      setOrgEmails(existingEmails)
     })
   }
 
   // Invite Users
-
-  const inviteUser = async () => {
-    return axios({
+  // 6150542f6dc33f65ab425403
+  // ${currentWorkspace}
+  const inviteUser = async emails => {
+    // console.log(currentWorkspace, token, emails)
+    console.log(...emails, 'pidoxy')
+    setSendLoading(true)
+    return await axios({
       method: 'post',
       url: `https://api.zuri.chat/organizations/${currentWorkspace}/send-invite`,
       data: {
-        emails: [inviteEmail]
+        emails: [...emails]
       },
       headers: {
         Authorization: `Bearer ${token}`
@@ -202,9 +220,12 @@ const Sidebar = props => {
     })
       .then(res => {
         console.log('invite', res)
+        setSendLoading(false)
         setInviteSuccess(true)
       })
       .catch(err => {
+        setSendLoading(false)
+        setInviteSuccess(false)
         console.error(err)
       })
   }
@@ -291,7 +312,10 @@ const Sidebar = props => {
             </div>
           </div>
           <div className={`col-12 px-3 ${styles.odalContainer}`}>
-            <ModalComponent isOpen={homeModal} />
+            <ModalComponent
+              isOpen={homeModal}
+              toggleOpenInvite={toggleOpenInvite}
+            />
           </div>
 
           <Modall showDialog={showDialog} closeDialog={close} />
@@ -322,66 +346,17 @@ const Sidebar = props => {
               </Wrapper>
             </Content>
           </Overlay>
-          <Overlay isOpen={openInvite} onDismiss={closeInviteModal}>
-            <Content
-              style={{ width: '55%', height: '55%' }}
-              aria-label="room-list"
-            >
-              <CloseButton className="close-button" onClick={closeInviteModal}>
-                <Span aria-hidden>×</Span>
-              </CloseButton>
-              <div>
-                <h3>Invite people to The Workspace</h3>
-              </div>
-              {InviteSuccess && (
-                <div className={`alert alert-success`}>
-                  Invite was sent to {inviteEmail}
-                </div>
-              )}
-              <div>
-                <label for="email_invite">To:</label>
-              </div>
-              <Wrapper>
-                <div>
-                  <input
-                    type="email"
-                    placeholder="example@gmail.com"
-                    multiple
-                    value={inviteEmail}
-                    onChange={e => setInviteEmail(e.target.value)}
-                    name="email_invite"
-                    className={`pb-4 form-control`}
-                  />
-                </div>
-                <div
-                  className={`mt-5 pt-3 d-flex my-auto justify-content-between`}
-                >
-                  <p
-                    onClick={() => {
-                      window.navigator.clipboard.writeText(
-                        `https://zuri.chat/invite?organization=${currentWorkspace}`
-                      )
-                      alert('link has been copied')
-                    }}
-                    className={`mb-0 align-items-center`}
-                    style={{ color: '#00B87C', fontSize: '13px' }}
-                  >
-                    <img className={`pe-3`} src={linkIcon} />
-                    Copy invite link{' '}
-                  </p>
-                  <button
-                    onClick={() => inviteUser()}
-                    style={{ color: 'white', backgroundColor: '#00B87C' }}
-                    type="button"
-                    disabled={inviteEmail === '' ? true : false}
-                    className={`btn my-auto `}
-                  >
-                    Send
-                  </button>
-                </div>
-              </Wrapper>
-            </Content>
-          </Overlay>
+
+          <EmailInviteModal
+            isOpen={openInvite}
+            onDismiss={closeInviteModal}
+            orgvalEmails={orgEmails}
+            setInviteEmails={setInviteEmails}
+            inviteUserViaMail={inviteUser}
+            sendLoadin={sendLoading}
+            currentWorkspace={currentWorkspace}
+            invSucc={InviteSuccess}
+          />
         </div>
       </div>
       <div className={`${styles.subCon2}`}>
@@ -408,43 +383,107 @@ const Sidebar = props => {
             </div>
           )}
         </div>
-        <div className={`row mt-2 ${styles.sb__item}`}>
+        <div
+          onClick={() => setBg(2)}
+          style={
+            bg === 2
+              ? { backgroundColor: '#00b87c' }
+              : { backgroundColor: 'revert' }
+          }
+          className={`row mt-2 ${styles.sb__item}`}
+        >
           <div
             className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
           >
             <img
               className={`${styles.item__img}`}
               src={threadIcon}
+              role="button"
               alt="icon"
             />
-            <p className={`mb-0 ${styles.item_p}`}>Threads</p>
+            <p className={`mb-0 ${styles.item_p}`} role="button">
+              Threads
+            </p>
           </div>
         </div>
-        <div className={`row ${styles.sb__item}`}>
+        <div
+          onClick={() => setBg(3)}
+          style={
+            bg === 3
+              ? { backgroundColor: '#00b87c' }
+              : { backgroundColor: 'revert' }
+          }
+          className={`row ${styles.sb__item}`}
+        >
           <div
             className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
           >
-            <img className={`${styles.item__img}`} src={dmIcon} alt="icon" />
-            <p className={`mb-0 ${styles.item_p}`}>All DMs</p>
+            <img
+              className={`${styles.item__img}`}
+              src={dmIcon}
+              alt="icon"
+              role="button"
+            />
+            <p className={`mb-0 ${styles.item_p}`} role="button">
+              All DMs
+            </p>
           </div>
         </div>
-        <div className={`row ${styles.sb__item}`}>
+        <div
+          onClick={() => setBg(4)}
+          style={
+            bg === 4
+              ? { backgroundColor: '#00b87c' }
+              : { backgroundColor: 'revert' }
+          }
+          className={`row ${styles.sb__item}`}
+        >
           <div
             className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
           >
-            <img className={`${styles.item__img}`} src={draftIcon} alt="icon" />
-            <p className={`mb-0 ${styles.item_p}`}>Drafts</p>
+            <img
+              className={`${styles.item__img}`}
+              src={draftIcon}
+              alt="icon"
+              role="button"
+            />
+            <p className={`mb-0 ${styles.item_p}`} role="button">
+              Drafts
+            </p>
           </div>
         </div>
-        <div className={`row ${styles.sb__item}`}>
+        <div
+          onClick={() => setBg(5)}
+          style={
+            bg === 5
+              ? { backgroundColor: '#00b87c' }
+              : { backgroundColor: 'revert' }
+          }
+          className={`row ${styles.sb__item}`}
+        >
           <div
             className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
           >
-            <img className={`${styles.item__img}`} src={filesIcon} alt="icon" />
-            <p className={`mb-0 ${styles.item_p}`}>Files</p>
+            <img
+              className={`${styles.item__img}`}
+              src={filesIcon}
+              alt="icon"
+              role="button"
+            />
+            <p className={`mb-0 ${styles.item_p}`} role="button">
+              Files
+            </p>
           </div>
         </div>
-        <div className={`row ${styles.sb__item}`}>
+        <div
+          onClick={() => setBg(6)}
+          style={
+            bg === 6
+              ? { backgroundColor: '#00b87c' }
+              : { backgroundColor: 'revert' }
+          }
+          className={`row ${styles.sb__item}`}
+        >
           <div
             className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
           >
@@ -452,8 +491,11 @@ const Sidebar = props => {
               className={`${styles.item__img}`}
               src={pluginIcon}
               alt="icon"
+              role="button"
             />
-            <p className={`mb-0 ${styles.item_p}`}>Plugins</p>{' '}
+            <p className={`mb-0 ${styles.item_p}`} role="button">
+              Plugins
+            </p>{' '}
             <img
               onClick={open}
               className={`${styles.addButton}`}
@@ -500,8 +542,10 @@ export const Overlay = styled(DialogOverlay)`
   justify-content: center;
   align-items: center;
   width: 100%;
+
   padding: 2rem;
   z-index: 5;
+  box-shadow: 0 15px 16px 0.17px rgba(0, 0, 0, 0.05);
 `
 export const Content = styled(DialogContent)`
   position: relative;
@@ -519,16 +563,17 @@ const Wrapper = styled.div`
 `
 const CloseButton = styled.button`
   position: absolute;
-  top: 0px;
-  right: 0;
-  padding: 0.5rem;
+  top: 25px;
+  right: 15px;
+  // padding: 1.2rem 1.2rem;
   width: 50px;
-  color: red;
+  height: 50px;
+  color: black;
   background-color: transparent;
   border: none;
 `
 const Span = styled.span`
-  font-size: 0.8rem;
+  font-size: 2.5rem;
 `
 const Item = styled.p`
 font-family: Lato;

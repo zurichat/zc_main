@@ -66,6 +66,10 @@
   margin-top: 0.1em;
   /* margin: 0.5em 0; */
 }
+.sb__item :hover {
+  background-color: #00b87c;
+  cursor: pointer;
+}
 
 .sb__col {
   height: inherit;
