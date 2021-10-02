@@ -10,21 +10,28 @@
 }
 
 
-.main .notice{
+
+.Notice{
     border-left:solid 0.5em red;
+    display: flex;
+    background-color: #fff;
+    border-radius: 4px;
+    margin-bottom: 1em;
+    padding:1.2em 0;
 }
 
-.main .cancel{
+.Cancel{
     border:solid 0.15em #616061;
+    background-color: #ffff;
+    padding:1em 1.4em;
+    margin-left:1em;
+    color:#1D1C1D;
 }
 
-.main .submit{
-    background-color: #B0AFB0;
-}
 
-.main p,label,h4,h3{
-    font-weight: 700;
-}
-.main span{
+
+
+.Span{
     color: #00B87C;
 }
+
