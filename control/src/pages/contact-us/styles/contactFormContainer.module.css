@@ -194,3 +194,12 @@
 .subHead {
   font-size: 16px;
 }
+.privacy {
+    padding-top: 24px;
+    text-decoration: underline;
+    display: inline-block;
+    line-height: 19px;
+}
+.privacy:hover {
+    color: #00b87c !important;
+}
