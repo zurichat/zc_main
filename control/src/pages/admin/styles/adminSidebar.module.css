@@ -1,4 +1,5 @@
-.sidebarWrapper {
+.sidebarWrapper,
+.sidebarWrapperActive {
   position: fixed;
   top: 64px;
   left: 0;
@@ -60,13 +61,19 @@
   align-items: flex-start;
 }
 
-.sidebarLink {
+.sidebarLink,
+.sidebarLinkActive {
   display: flex;
   align-items: flex-start;
   padding: 10px 0;
   font-size: 1.125rem;
   font-weight: 400;
   color: #333;
+}
+
+.sidebarLinkActive,
+.sidebarLink:hover {
+  color: #00b87c;
 }
 
 .sidebarLink .icon,
@@ -82,7 +89,9 @@
 }
 
 .sidebarLink:hover .icon,
-.sidebarLink:hover .iconRight {
+.sidebarLink:hover .iconRight,
+.sidebarLinkActive .icon,
+.sidebarLinkActive .iconRight {
   color: #00b87c;
 }
 
@@ -94,4 +103,61 @@
 
 .sidebarFooter .heartIcon {
   color: #616061;
+}
+
+.closeIcon {
+  display: none;
+}
+
+.mobileTopMenu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sidebarWrapper,
+  .sidebarWrapperActive {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background: #fff;
+    width: 100%;
+  }
+
+  .sidebarWrapperActive {
+    display: block;
+  }
+
+  .closeIcon {
+    position: fixed;
+    display: block;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+    color: #333;
+  }
+
+  .mobileTopMenu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    margin: 2.5rem 0;
+  }
+
+  .menuLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .menuImg {
+    width: 2rem;
+    height: auto;
+    margin-bottom: 1rem;
+  }
 }

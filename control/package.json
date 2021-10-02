@@ -44,6 +44,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@chakra-ui/react": "^1.6.8",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
