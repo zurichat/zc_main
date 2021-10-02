@@ -13,6 +13,7 @@ const DropDown = ({ itemName, items }) => {
 
   const toggleDropdown = () => setOpen(!isOpen)
 
+  console.log(items);
   const handleItemClick = id => {
     selectedItem == id ? setSelectedItem(null) : setSelectedItem(id)
   }
@@ -31,8 +32,21 @@ const DropDown = ({ itemName, items }) => {
           className={`w-100 d-flex align-items-center justify-content-between`}
         >
           <p className={`mb-0 ${styles.dropDown__title}`}> {itemName} </p>
-          {items.button_url ? (
-            <a href={items.button_url} onClick={navigateToUrl}>
+          {(items && items.group_name.toLowerCase() === 'dm') ||
+          (items && items.group_name.toLowerCase() === 'channel') || 
+          (items && items.group_name.toLowerCase() === 'company files') ||
+          (items && items.group_name.toLowerCase() === 'active todos')  ||
+          (items && items.group_name.toLowerCase() === 'chess games') ||
+          (items && items.group_name.toLowerCase() === 'music') ||
+          (items && items.group_name.toLowerCase() === 'goals')  ? (
+            <a
+              href={
+                items && items.group_name.toLowerCase() === 'dm'
+                  ? '/dm'
+                  : '/channels'
+              }
+              onClick={navigateToUrl}
+            >
               <AiOutlinePlusCircle className={`${styles.icon}`} />
             </a>
           ) : null}
@@ -51,7 +65,6 @@ const DropDown = ({ itemName, items }) => {
                     className={`col-12 d-flex align-items-center ${styles.item_name}`}
                     href={room.room_url}
                     onClick={navigateToUrl}
-                    style={{ textDecoration: 'none' }}
                   >
                     <img
                       className={`${styles.item__image}`}
