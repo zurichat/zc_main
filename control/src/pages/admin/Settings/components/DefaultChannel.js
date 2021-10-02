@@ -5,7 +5,7 @@ const myStyle = {
     margin: '5px 0',
     width: '50%'
   },
-  button: {
+  btn: {
     backgroundColor: '#00B87C',
     color: '#ffffff',
     border: 'none'
@@ -40,7 +40,7 @@ const DefaultChannels = () => {
       <button
         type="button"
         className="btn btn-primary"
-        style={myStyle.button}
+        style={myStyle.btn}
         onClick={modifyOrganizationSettings}
       >
         See Paid Plans
