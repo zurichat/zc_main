@@ -1,12 +1,8 @@
-import React from "react"
-import AdminSettings from ".";
+import React from 'react'
+import AdminSettings from '.'
 
 const SettingsHome = () => {
-    return (
-        <AdminSettings>
-            Hello
-        </AdminSettings>
-    )
+  return <AdminSettings>Hello</AdminSettings>
 }
 
-export default SettingsHome;
+export default SettingsHome
