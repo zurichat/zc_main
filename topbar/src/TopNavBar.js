@@ -182,17 +182,17 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   })
 
   //Handle sidebar on mobile
-  const sidebar = document.getElementById(
-    'single-spa-application:@zuri/sidebar'
-  )
-  const zc_spa_body = document.querySelector('body')
-  const sidebar_toggle = document.querySelector('#sidebar_toggle')
-  const openSidebar = () => {
-    sidebar.style.display = 'block'
-    sidebar.style.left = '0'
-    sidebar.style.width = '200px'
-    sidebar_toggle.style.display = 'none'
-  }
+  // const sidebar = document.getElementById(
+  //   'single-spa-application:@zuri/sidebar'
+  // // )
+  // const zc_spa_body = document.querySelector('body')
+  // const sidebar_toggle = document.querySelector('#sidebar_toggle')
+  // const openSidebar = () => {
+  //   sidebar.style.display = 'block'
+  //   sidebar.style.left = '0'
+  //   sidebar.style.width = '200px'
+  //   sidebar_toggle.style.display = 'none'
+  // }
 
   // zc_spa_body.addEventListener('click', () => {
   //   if (window.outerWidth <= 768) {
