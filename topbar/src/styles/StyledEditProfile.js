@@ -187,6 +187,8 @@ export const StyledProfileWrapper = styled.section`
       .avatar {
         width: 100%;
         height: 26rem;
+        display: flex;
+        flex-direction: column;
         .avatar-container {
           display: flex;
           align-items: center;
@@ -240,19 +242,29 @@ export const StyledProfileWrapper = styled.section`
       background: #00b87c;
       color: #fff;
       border-radius: 4px;
+      text-align: center;
+      width: 85%;
+      margin: 0 auto;
+      padding: 0.5rem 1rem;
       &:hover {
         background: #029765;
         color: #fff;
         transition: all 0.3s ease-in-out;
       }
     }
+    &.saveBtn {
+      background: #00b87c;
+      color: #fff;
+      border-radius: 4px;
+      text-align: center;
+    }
   }
   .rmvBtn {
     background: none;
     color: #999;
     font-size: 1rem;
-    margin-top: 0.3rem;
-    width: 100%;
+    margin-top: 0.5rem;
+    margin: 0 auto;
     &:hover {
       color: red;
       transition: all 0.3s ease-in-out;
