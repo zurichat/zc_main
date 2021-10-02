@@ -8,7 +8,7 @@ const [modal, setModal] = useState()
 setModal('true')
 
 const history = useHistory()
-history.push()
+history.push(../src/pages/landingPage/components)
 
 function subscribe() {
   axios
