@@ -80,7 +80,7 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
                   value={tag}
                   onChange={e => setTag(e.target.value)}
                 >
-                  {chosenEmoji ? chosenEmoji.emoji : 5}
+                  {chosenEmoji ? chosenEmoji.setTag : 5}
                 </p>
                 <div className={styles.emoji}>
                   <div>
@@ -189,15 +189,6 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
               Save changes
             </button>
           </form>
-          {/* {status.map((data)=>{
-                      const {text, emoji} = data;
-                      return(
-                          <div>
-                          <p>{text}</p>
-                          <p>{emoji}</p>
-                          </div>
-                      )
-                  })} */}
         </div>
       </div>
     </div>
