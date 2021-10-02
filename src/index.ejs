@@ -94,6 +94,7 @@ document.title = title + appendZuri;
 
     div[id*='zuri'] {
       width: 100%;
+      overflow: hidden;
     }
 
     div[id*='zuri/topbar'] {
@@ -125,6 +126,15 @@ document.title = title + appendZuri;
       position: fixed;
       top: 8vh;
       left: 0;
+    }
+    div[id*='zuri/commentSidebar']{
+      width:299px;
+     position:absolute;
+     background-color:#e5e5e5;
+     right:0;
+      top:8vh;
+      transform: translateX(-100%);
+      transform: translateY(90%);
     }
 
     div[id*='zuri-plugin'] {
@@ -232,7 +242,8 @@ document.title = title + appendZuri;
         "@zuri/topbar": "//localhost:8080/zuri-topbar.js",
         "@zuri/sidebar": "//localhost:8081/zuri-sidebar.js",
         "@zuri/control": "//localhost:8082/zuri-control.js",
-        "@zuri/plugin-header": "//localhost:8083/zuri-plugin-header.js"
+        "@zuri/plugin-header": "//localhost:8083/zuri-plugin-header.js",
+        "@zuri/comment-sidebar": "//localhost:8084/zuri-comment-sidebar.js"
       }
     }
   </script>
@@ -244,7 +255,8 @@ document.title = title + appendZuri;
           "@zuri/topbar": "/zuri-topbar.js",
           "@zuri/sidebar": "/zuri-sidebar.js",
           "@zuri/control": "/zuri-control.js",
-          "@zuri/plugin-header": "/zuri-plugin-header.js"
+          "@zuri/plugin-header": "/zuri-plugin-header.js",
+          "@zuri/comment-sidebar": "/zuri-comment-sidebar.js"
         }
       }
   </script>
