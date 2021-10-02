@@ -12,7 +12,7 @@ const myStyle = {
     fontSize: '14px',
     color: '#616061'
   },
-  button: {
+  btn: {
     backgroundColor: '#00B87C',
     color: '#ffffff',
     border: 'none'
@@ -48,7 +48,7 @@ const NotifyUsers = () => {
       <button
         type="button"
         className="btn btn-primary"
-        style={myStyle.button}
+        style={myStyle.btn}
         onClick={modifyOrganizationSettings}
       >
         Save

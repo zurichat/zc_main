@@ -1,0 +1,273 @@
+/* Auth Tab styles */
+.twoFactor p {
+  font-size: 16px;
+  font-weight: 600;
+  width: 60%;
+  margin-top: 10px;
+  line-height: 20px;
+  color: #3a3a3a;
+}
+
+.twoFactor p a {
+  color: #2f80ed;
+}
+
+.twoFactor button {
+  font-size: 13px;
+  font-weight: bold;
+  color: #1d1d1d;
+  padding: 10px;
+  height: 48px;
+  width: 385px;
+  background: #f8f8f8;
+  border: 1px solid #a1a1a1;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+.twoFactor button:hover {
+  color: #1d1d1d;
+}
+
+.twoFactor span {
+  font-size: 14px;
+  color: #b8003c;
+}
+
+.passwordsection {
+  margin-top: 10px;
+}
+
+.passwordsection button {
+  font-size: 13px;
+  padding: 10px 22px;
+  background: #00b87c;
+  outline: none !important;
+  color: #fff;
+  height: 43px;
+}
+
+.passwordsection div {
+  width: 739px;
+}
+
+.passwordsection p {
+  font-size: 16px;
+  width: 100%;
+}
+
+.passwordsection select {
+  width: 264px;
+}
+
+.passwordsection a:hover {
+  color: #00b87c;
+  text-decoration: underline;
+}
+
+.forcedPasswordBtn {
+  padding: 12px 10px;
+  background: #b8003c !important;
+  border-radius: 4px;
+  margin: 10px 0 7px 0;
+}
+
+.passwordsection button:hover {
+  background: #00b87c;
+}
+
+.settingsTab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  border-bottom: 1px solid #dedede;
+}
+
+.settingsTab:last-of-type {
+  border-bottom: none;
+}
+
+.settingsTab a:hover {
+  color: #00b87c;
+  text-decoration: underline;
+}
+
+.settingleft {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 15px;
+  color: #242424;
+  font-weight: bold;
+  width: 70%;
+}
+
+.settingleft span {
+  font-size: 16px;
+  font-weight: normal;
+  color: rgba(58, 58, 58, 0.9);
+}
+
+.emailLink {
+  color: #b8003c !important;
+  /* font-size: 12px; */
+  text-decoration: none;
+}
+
+.settingsright button {
+  background: #ffffff;
+  border: 1px solid rgba(0, 184, 124, 0.5);
+  color: rgba(0, 184, 124, 0.5);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 9px 18px !important;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 15px;
+  width: 100%;
+  height: 40px;
+}
+
+.settingsright button:disabled,
+.settingsright button:disabled:hover {
+  background: rgba(0, 184, 124, 0.5);
+  cursor: not-allowed;
+}
+
+.settingsright .signout {
+  font-size: 13px;
+  padding: 10px 22px;
+  background: #00b87c;
+  outline: none !important;
+  color: #fff;
+  height: 43px;
+}
+
+.configure {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.configureContainer {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  color: #242424;
+  font-weight: bold;
+  width: 100%;
+}
+
+.configureSpan {
+  font-size: 16px;
+  font-weight: normal;
+  color: rgba(58, 58, 58, 0.9);
+}
+
+.configureLeft {
+  display: flex;
+  max-width: 600px;
+}
+
+.configureTextContainer {
+  margin-left: 15px;
+}
+
+.configureTextContainer p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.configureTextContainer span {
+  font-weight: 400;
+}
+
+.configureTop {
+  display: flex;
+  align-items: center;
+}
+
+.configureHeader {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.feature {
+  display: inline-block;
+  padding: 2px 10px;
+  font-size: 10px !important;
+  font-weight: normal;
+  height: 20px;
+  background: #f8f8f8;
+  border: 1px solid #a1a1a1;
+}
+
+@media screen and (max-width: 868px) {
+  .twoFactor button {
+    width: 80% !important;
+  }
+
+  .configureHeader {
+    font-size: 20px;
+  }
+
+  .settingleft p {
+    font-size: 20px;
+  }
+
+  .feature {
+    width: 92px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .twoFactor button {
+    padding: 10px 25px;
+  }
+
+  .twoFactor p {
+    width: 95%;
+  }
+
+  .passwordsection p {
+    width: 95%;
+  }
+
+  .configure {
+    flex-direction: column;
+  }
+
+  .settingsright button {
+    margin-top: 10px;
+  }
+
+  .configureHeader {
+    margin-right: 0;
+    font-size: 20px;
+  }
+
+  .feature {
+    padding: 2px 14px;
+    width: 100px;
+    font-size: 10px !important;
+    margin-bottom: 15px;
+    height: 20px;
+    background: #f8f8f8;
+    border: 1px solid #a1a1a1;
+  }
+
+  .configureTop {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .settingleft p {
+    font-size: 20px;
+  }
+
+  .settingsTab {
+    align-items: flex-start;
+  }
+}
