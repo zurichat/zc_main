@@ -9,8 +9,7 @@ function PurchaseModal({ setHelpModal }) {
   const [workspaceData, setWorkspaceData] = useState({})
   const [loading, setLoading] = useState(false)
 
-
-   useEffect(() => {
+  useEffect(() => {
     if (currentWorkspace) {
       authAxios
         .get(`/organizations/${currentWorkspace}`)
@@ -23,20 +22,20 @@ function PurchaseModal({ setHelpModal }) {
     }
   }, [currentWorkspace])
 
-  const addToken = (number) => {
-    const token = {amount: number}
-      authAxios
-        .post(`/organizations/${currentWorkspace}/add-token`, token)
-        .then(res => {
-          setWorkspaceData(res.data.data)
-        })
-        .catch(err => {
-          console.log(err)
-        })
+  const addToken = number => {
+    const token = { amount: number }
+    authAxios
+      .post(`/organizations/${currentWorkspace}/add-token`, token)
+      .then(res => {
+        setWorkspaceData(res.data.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   const makePayment = () => {
-    const request = {amount: 50022};
+    const request = { amount: 50022 }
     setLoading(true)
     authAxios
       .post(`/organizations/${currentWorkspace}/checkout-session`, request)
@@ -55,13 +54,15 @@ function PurchaseModal({ setHelpModal }) {
         })
       })
   }
-  
+
   return (
     <div className={styles.backDrop}>
       <div className={styles.helpContainer}>
         <div className="d-flex">
           <h6 className={styles.heading}>Token Purchased </h6>
-          <p className={styles.token}>{workspaceData.tokens} &nbsp; Token left</p>
+          <p className={styles.token}>
+            {workspaceData.tokens} &nbsp; Token left
+          </p>
         </div>
 
         <p className={styles.para}>1 Token /$5</p>
@@ -69,7 +70,13 @@ function PurchaseModal({ setHelpModal }) {
           <div class="form-group ">
             <label for="token">Token</label>
             <div>
-              <input type="text" class="form-control" onInput={(evt) => { addToken(evt.target.value); }} />
+              <input
+                type="text"
+                class="form-control"
+                onInput={evt => {
+                  addToken(evt.target.value)
+                }}
+              />
             </div>
           </div>
 
