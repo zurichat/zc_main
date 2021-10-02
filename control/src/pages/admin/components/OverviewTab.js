@@ -16,20 +16,31 @@ const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
   const user = getUser()
   const [workspaceData, setWorkspaceData] = React.useState({})
   const [loading, setLoading] = React.useState(false)
-  console.log(workspaceData);
+  const [modal, setModal] = React.useState(false)
+  const [orgSize, setOrgSize] = React.useState(0)
 
   useEffect(() => {
     if (currentWorkspace) {
       authAxios.get(`/organizations/${currentWorkspace}`)
         .then(res => {
           setWorkspaceData(res.data.data)
-          console.log(res.data.data)
         })
         .catch(err => {
           console.log(err)
         })
     }
-  }, [currentWorkspace])
+  }, [currentWorkspace, modal])
+
+  const openModal = () => {
+    authAxios.get(`/organizations/${currentWorkspace}/members`)
+      .then(res => {
+        setOrgSize(res.data.data.length)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    setModal(!modal)
+  }
 
   const handlePlan = () => {
     setLoading(true)
@@ -40,6 +51,7 @@ const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
         console.log(res.data)
         toast.success(res.data.message, {
           position: 'top-center'})
+        setModal(false) 
       })
       .catch(err => {
         setLoading(false)
@@ -51,6 +63,22 @@ const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
 
   return (
     <div className={styles.plansContainer}>
+
+      {/* modal */}
+      <div className={modal ? styles.modalActive : styles.modal}>
+        <div onClick={() => setModal(!modal)} className={styles.overlay} />
+        <div className={styles.modalContainer}>
+          <h6 className={styles.modalSubHead}>{workspaceData.tokens} Tokens left</h6>
+          <h3 className={styles.modalHeading}>{orgSize * 1} Tokens will be deducted from your wallet</h3>
+          <p className={styles.modalParagraph}>
+            1 token will be deducted per every member in your organization, Are you sure you want to continue?
+          </p>
+          <div className={styles.buttonWrapper}>
+            <button onClick={() => setModal(!modal)} className={styles.btnSecondary}>Cancel</button>
+            <button onClick={handlePlan} className={styles.btnPrimary}>Upgrade</button>
+          </div>
+        </div>
+      </div>
       <div className={styles.tokenAmount}>
         <span>{workspaceData.tokens} &nbsp;</span>
         tokens
@@ -63,7 +91,7 @@ const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
           <b className={styles.bold}>{workspaceData.version === "pro" ? "Pro Plan" : "Free Plan"}</b>
         </h1>
         <div className={styles.buttonWrapper}>
-          <button onClick={handlePlan} disabled={workspaceData.version === "pro"} className={styles.mainCta}>
+          <button onClick={openModal} disabled={workspaceData.version === "pro"} className={styles.mainCta}>
             {loading ? 
               <Loader type="ThreeDots" color="#fff" height={40} width={40} /> : 
               "Subscribe to a plan"}
@@ -108,7 +136,7 @@ const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
         </div>
         <div className={styles.buttonCont}>
           <button className={styles.btnSecondary}>Learn More</button>
-          <button onClick={handlePlan} disabled={workspaceData.version === "pro"} className={styles.btnPrimary}>{loading ? 
+          <button onClick={openModal} disabled={workspaceData.version === "pro"} className={styles.btnPrimary}>{loading ? 
                 <Loader type="ThreeDots" color="#fff" height={40} width={40} /> : 
                 "Upgrade"}</button>
         </div>

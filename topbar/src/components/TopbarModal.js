@@ -14,6 +14,7 @@ import MembersModal from './MembersModal'
 import Downloads from './Downloads'
 import PauseNotification from './PauseNotification'
 import SetStatusModal from './SetStatusModal'
+import ProfilePicView from './ProfilePicView'
 // react icons
 
 const TopbarModal = ({ members }) => {
@@ -21,7 +22,7 @@ const TopbarModal = ({ members }) => {
     useContext(ProfileContext)
 
   const state = useContext(TopbarContext)
-  const [showModal] = state.show
+  const [showModal, setShowModal] = state.show
   // const [username, setUsername] = state.username
   const [showStatus] = state.status
   const [showMembersModal] = state.modal
@@ -36,13 +37,13 @@ const TopbarModal = ({ members }) => {
     reusableModal,
     setReusableModal,
     presence,
-    setPresence
+    setPresence,
+    profilePicView,
+    setProfilePicView
   } = state
-
 
   const currentWorkspace = localStorage.getItem('currentWorkspace')
   let token = sessionStorage.getItem('token')
-  
 
   useEffect(() => {
     let user = JSON.parse(sessionStorage.getItem('user'))
@@ -66,8 +67,6 @@ const TopbarModal = ({ members }) => {
       console.log('YOU ARE NOT LOGGED IN, PLEASE LOG IN')
     }
   }, [])
-
-
 
   const config = {
     headers: {
@@ -157,8 +156,19 @@ const TopbarModal = ({ members }) => {
       {/* The section that shows the topbarprofile */}
       {showModal ? (
         <section className={styles.topbarModal}>
+          <div
+            id="overlay"
+            onClick={() => setShowModal(false)}
+            className={styles.membersModalOverlay}
+          />
           <div className={styles.sectionOne}>
-            <div className={styles.oneLeft}>
+            <div
+              className={styles.oneLeft}
+              role="button"
+              onClick={() => {
+                userProfileImage !== '' && setProfilePicView(!profilePicView)
+              }}
+            >
               <img
                 src={userProfileImage !== '' ? userProfileImage : defaultAvatar}
                 alt="profile-pic"
@@ -256,6 +266,7 @@ const TopbarModal = ({ members }) => {
           <div className={styles.sectionFive}>
             <p onClick={logout}>Sign out of Team Einstein workspace</p>
           </div>
+          {profilePicView && <ProfilePicView />}
         </section>
       ) : null}
     </>
