@@ -4,6 +4,7 @@ import { Link, useRouteMatch } from 'react-router-dom'
 import axios from 'axios'
 import { Helmet } from 'react-helmet'
 import { createDefaultChannel } from '../../../api/channels'
+
 function CompanyName({ input }) {
   const [user, setUser] = useState(null)
   const [orgId, setOrgId] = useState(null)
@@ -14,10 +15,11 @@ function CompanyName({ input }) {
 
     if (user) {
       setUser(user)
-      // console.log(user)
+      
     }
   }, [])
 
+//Function to Create A new Organization
   const createUserOrg = () => {
     axios
       .post(
@@ -30,11 +32,13 @@ function CompanyName({ input }) {
         }
       )
       .then(res => {
-        // console.log(res)
+        // Clears User Extracted Details from LS during Registraion
+
         localStorage.clear('userUserPassword')
         localStorage.clear('newUserEmail')
         setOrgId(res.data.data.InsertedID)
 
+// Automatic Org Name Renaming From Default to new Org Name
         axios.patch(
           `https://api.zuri.chat/organizations/${orgId}/name`,
           {
