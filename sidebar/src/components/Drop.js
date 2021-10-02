@@ -15,7 +15,7 @@ const DropDown = ({ itemName, items }) => {
 
   const toggleDropdown = () => setOpen(!isOpen)
 
-  console.log(items);
+  console.log(items)
   const handleItemClick = id => {
     selectedItem == id ? setSelectedItem(null) : setSelectedItem(id)
   }
@@ -68,12 +68,12 @@ const DropDown = ({ itemName, items }) => {
         >
           <p className={`mb-0 ${styles.dropDown__title}`}> {itemName} </p>
           {(items && items.group_name.toLowerCase() === 'dm') ||
-          (items && items.group_name.toLowerCase() === 'channel') || 
+          (items && items.group_name.toLowerCase() === 'channel') ||
           (items && items.group_name.toLowerCase() === 'company files') ||
-          (items && items.group_name.toLowerCase() === 'active todos')  ||
+          (items && items.group_name.toLowerCase() === 'active todos') ||
           (items && items.group_name.toLowerCase() === 'chess games') ||
           (items && items.group_name.toLowerCase() === 'music') ||
-          (items && items.group_name.toLowerCase() === 'goals')  ? (
+          (items && items.group_name.toLowerCase() === 'goals') ? (
             <a
               href={
                 items && items.group_name.toLowerCase() === 'dm'
@@ -96,23 +96,25 @@ const DropDown = ({ itemName, items }) => {
               return (
                 // console.log(itemList)
                 <li key={index} className={`row ${styles.item__list}`}>
-                  <a
+                  <a 
                     className={`col-12 d-flex align-items-center ${styles.item_name}`}
                     href={room.room_url}
                     onClick={navigateToUrl}
+                    ref={click}
                   >
-                    <img
+                    <img ref={click}
                       className={`${styles.item__image}`}
                       src={room.room_image || hash.toString()}
                       onError={e => (e.target.src = hash.toString())}
                       alt="img"
                     />
-                    <p ref={click} className={`mb-0 ${styles.dropDown__name}`}>
+                    <p className={`mb-0 ${styles.dropDown__name}`}>
                       {room.room_name}
-                    </p>
-                    <div className={`${styles.optionsContainer}`}>
+                      <div className={`${styles.optionsContainer}`}>
                       <RoomOptions isClicked={isClicked} />
                     </div>
+                    </p>
+                    
                   </a>
                 </li>
               )
