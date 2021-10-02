@@ -256,10 +256,10 @@ const ProfileImg = styled.img`
   object-fit: cover;
 
   @media (max-width: 1024px) {
-    height: 25.6px;
+    height: 30px;
   }
   @media (max-width: 425px) {
-    height: 22.4px;
+    // height: 22.4px;
   }
 `
 const ProfileImageContainer = styled.div`
