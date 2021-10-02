@@ -7,11 +7,16 @@ const SettingsTab = () => {
   const [formValue, setFormValue] = useState({})
   const [select, setSelect] = useState('Select a country')
   const [notes, setNotes] = useState('')
-  const [organizationId, setOrganizatonId] = useState(localStorage.getItem('currentWorkspace') || '')
+  const [organizationId, setOrganizatonId] = useState(
+    localStorage.getItem('currentWorkspace') || ''
+  )
   const [token, setToken] = useState(sessionStorage.getItem('token') || '')
 
   useEffect(() => {
-    if(sessionStorage.getItem('token') && localStorage.getItem('currentWorkspace')) {
+    if (
+      sessionStorage.getItem('token') &&
+      localStorage.getItem('currentWorkspace')
+    ) {
       const userToken = sessionStorage.getItem('token')
       const orgId = localStorage.getItem('currentWorkspace')
 
@@ -20,27 +25,27 @@ const SettingsTab = () => {
     }
   }, [])
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     const name = e.target.name
     const value = e.target.value
-    setFormValue(values => ({...values, [name]: value}))
+    setFormValue(values => ({ ...values, [name]: value }))
   }
 
-  const handleSelection = (e) => {
+  const handleSelection = e => {
     setSelect(e.target.value)
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault()
-    const orgData = {...formValue, country: select}
-    
+    const orgData = { ...formValue, country: select }
+
     try {
       const response = await axios.patch(
         `https://api.zuri.chat/organizations/${organizationId}/billing`,
         {
           headers: {
             Authorization: `Bearer ${token}`
-          }, 
+          },
           body: JSON.stringify(orgData)
         }
       )
@@ -51,7 +56,6 @@ const SettingsTab = () => {
       }
       const { data } = await response.data
       console.log(data)
-      
     } catch (error) {
       console.log(error)
     }
@@ -64,40 +68,50 @@ const SettingsTab = () => {
     <section className={styles.setting_tab_container} onSubmit={handleSubmit}>
       <header>
         <h3>Company Name & Address</h3>
-        <p>The information, would be included on all billing invoices on your account</p>
+        <p>
+          The information, would be included on all billing invoices on your
+          account
+        </p>
       </header>
       <form className={styles.settings_tab_form}>
         <section>
           <div className={`${styles.admin_form_group}`}>
             <label htmlFor="countries">Country*</label>
             <div className={styles.form_select}>
-              <select 
-                value={select} 
-                onChange={handleSelection}
-                required
-              >
+              <select value={select} onChange={handleSelection} required>
                 <option disabled defaultValue>
                   Select a country
                 </option>
-                {
-                  countries.map((country, index) => {
+                {countries.map((country, index) => {
+                  const { name } = country
 
-                    const {name} = country
-
-                    return(
-                      <option key={index} value={name}>{name}</option>
-                    )
-                  })
-                }
+                  return (
+                    <option key={index} value={name}>
+                      {name}
+                    </option>
+                  )
+                })}
               </select>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="11" height="6" viewBox="0 0 11 6">
-                <path stroke="#333" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.23" d="m1.3.75 4.05 4.5L9.39.75"/>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                width="11"
+                height="6"
+                viewBox="0 0 11 6"
+              >
+                <path
+                  stroke="#333"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.23"
+                  d="m1.3.75 4.05 4.5L9.39.75"
+                />
               </svg>
             </div>
           </div>
           <div className={styles.admin_form_group}>
             <label htmlFor="company_name">Company name*</label>
-            <input 
+            <input
               type="text"
               placholder=""
               value={formValue.company_name || ''}
@@ -109,11 +123,11 @@ const SettingsTab = () => {
           </div>
           <div className={styles.admin_form_group}>
             <label htmlFor="street_address">Street address*</label>
-            <input 
+            <input
               type="text"
               placholder=""
               value={formValue.street_address || ''}
-              onChange={handleChange} 
+              onChange={handleChange}
               name="street_address"
               id="street_address"
               required
@@ -121,7 +135,7 @@ const SettingsTab = () => {
           </div>
           <div className={styles.admin_form_group}>
             <label htmlFor="suite">Suite/Unit</label>
-            <input 
+            <input
               type="text"
               placholder=""
               value={formValue.suite || ''}
@@ -133,7 +147,7 @@ const SettingsTab = () => {
           </div>
           <div className={styles.admin_form_group}>
             <label htmlFor="city">City*</label>
-            <input 
+            <input
               type="text"
               placholder=""
               value={formValue.city || ''}
@@ -145,7 +159,7 @@ const SettingsTab = () => {
           </div>
           <div className={styles.admin_form_group}>
             <label htmlFor="state">State/Province/Region</label>
-            <input 
+            <input
               type="text"
               placholder=""
               value={formValue.state || ''}
@@ -157,7 +171,7 @@ const SettingsTab = () => {
           </div>
           <div className={styles.admin_form_group}>
             <label htmlFor="postal_code">Postal code</label>
-            <input 
+            <input
               type="text"
               placholder=""
               value={formValue.postal_code || ''}
@@ -172,50 +186,57 @@ const SettingsTab = () => {
           <div className={styles.admin_form_group}>
             <label htmlFor="additional_notes">Additional Notes</label>
             <textarea
-              name="additional_notes" 
+              name="additional_notes"
               id="additional_notes"
               value={formValue.additional_notes || ''}
-              onChange={handleChange} 
-              cols="30" 
-              rows="5" 
+              onChange={handleChange}
+              cols="30"
+              rows="5"
               required
             ></textarea>
           </div>
-          <p>Use this field for additional information you would like to add on your billing statement</p>
+          <p>
+            Use this field for additional information you would like to add on
+            your billing statement
+          </p>
         </section>
         <div className={styles.btn_wrapper}>
           <p>* Indicates a required field</p>
-          <button type="submit" className={styles.save_btn}>Save Settings</button>
+          <button type="submit" className={styles.save_btn}>
+            Save Settings
+          </button>
         </div>
       </form>
 
       <section className={styles.upgrade_section}>
         <header>
           <h3>Upgrade & Purchasing</h3>
-          <p>Choose who can publish a  paid plan for your workspace</p>
+          <p>Choose who can publish a paid plan for your workspace</p>
         </header>
         <form>
           <h4>Who can purchase Zuri Chat</h4>
           <div className={styles.admin_input_group}>
             <input
-              type="radio" 
-              name="purchase" 
-              id="allMembers" 
+              type="radio"
+              name="purchase"
+              id="allMembers"
               defaultChecked
             />
             <label htmlFor="allMembers">All new member of this workspace</label>
           </div>
           <div className={styles.admin_input_group}>
             <input
-              type="radio" 
-              name="purchase" 
-              id="onlyOwners" 
+              type="radio"
+              name="purchase"
+              id="onlyOwners"
               defaultChecked
             />
             <label htmlFor="onlyOwners">Only workspace owners</label>
           </div>
           <div className={styles.btn_wrapper}>
-            <button type="submit" className={styles.save_btn}>Save Settings</button>
+            <button type="submit" className={styles.save_btn}>
+              Save Settings
+            </button>
           </div>
         </form>
       </section>
