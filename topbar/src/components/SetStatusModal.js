@@ -4,12 +4,12 @@ import DatePicker from 'react-datepicker'
 // import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import TimePicker from 'react-time-picker'
 import styles from '../styles/SetStatusModal.module.css'
-import "../timepicker.css";
-import {authAxios} from "../utils/Api";
+import '../timepicker.css'
+import { authAxios } from '../utils/Api'
 import blackx from '../assets/images/blackx.svg'
 import whitex from '../assets/images/whitex.svg'
 import down from '../assets/images/down.svg'
-import { ProfileContext } from "../context/ProfileModal";
+import { ProfileContext } from '../context/ProfileModal'
 import { TopbarContext } from '../context/Topbar'
 
 const SetDateAndTime = ({ dateTime, setDateTime }) => {
@@ -29,7 +29,7 @@ const SetDateAndTime = ({ dateTime, setDateTime }) => {
             />
           </div>
           <form>
-            <div className={styles.dateSection} >
+            <div className={styles.dateSection}>
               <label className={styles.dateLabel}>Date</label>
               <DatePicker onChange={onChange} value={value} />
             </div>
@@ -44,15 +44,14 @@ const SetDateAndTime = ({ dateTime, setDateTime }) => {
   )
 }
 
-
 const SetStatusModal = ({ statusModal, setStatusModal }) => {
   const [dropdown, setDropdown] = useState(false)
   const [openEmoji, setOpenEmoji] = useState(false)
   const [dateTime, setDateTime] = useState(false)
   const [choosePeriod, setChoosePeriod] = useState(`Don't clear`)
   const { user, orgId, setUser } = useContext(ProfileContext)
-  const { emoji } = useContext(TopbarContext);
-  const [chosenEmoji, setChosenEmoji] = emoji;
+  const { emoji } = useContext(TopbarContext)
+  const [chosenEmoji, setChosenEmoji] = emoji
   const [emojiItem, setEmoji] = useState('')
   const [text, setText] = useState('')
   const [tag, setTag] = useState('')
@@ -67,10 +66,15 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
   const handleSubmit = e => {
     e.preventDefault()
     setEmoji(chosenEmoji.emoji)
-    setUser({ ...user, status: {text, emojiItem} })
+    setUser({ ...user, status: { text, emojiItem } })
     const data = { emojiItem, text, choosePeriod }
-    authAxios.patch(`/organizations/${orgId}/members/${user._id}/status`,     {expiry_time:choosePeriod, tag:emojiItem, text:text})
-      .then (res => {
+    authAxios
+      .patch(`/organizations/${orgId}/members/${user._id}/status`, {
+        expiry_time: choosePeriod,
+        tag: emojiItem,
+        text: text
+      })
+      .then(res => {
         console.log(res)
       })
   }
@@ -147,7 +151,7 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
                 </label>
                 <img src={down} alt="" />
               </div>
-                      
+
               <div>
                 {dropdown && (
                   <ul className={styles.dropdown}>
@@ -163,7 +167,7 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
                     >
                       1 hour
                     </li>
-                  
+
                     <li
                       className={styles.dropdownoption}
                       onClick={() => setChoosePeriod('four_hours')}
