@@ -34,8 +34,9 @@ import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContex
 import PrivacyPolicy from './pages/privacy-policy/index'
 import NotFoundPage from './pages/404'
 import Billing from './pages/admin/Billing'
+import Homepage from './pages/home'
 import Permissions from './pages/admin/Permissions'
-import SettingsHome from './pages/admin/Home'
+import SettingsHome from './pages/admin/Settings/index'
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -50,6 +51,9 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
+        <Route path="/home">
+          <Homepage />
+        </Route>
         <Route path="/" exact>
           <LandingPage />
         </Route>

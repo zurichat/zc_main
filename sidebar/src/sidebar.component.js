@@ -1,19 +1,3 @@
-// import { useState, useEffect, useContext } from 'react'
-// import { fetchUser } from './utils/fetchUserDetails'
-
-// const Sidebar = props => {
-//   const nn = fetchUser()
-//   // console.log(userInfo, 'sidebar new', organizationInfo)
-
-//   useEffect(() => {
-//     console.log(nn, 'test test')
-//   })
-
-//   return <div>Welcome</div>
-// }
-
-// export default Sidebar
-
 import { Fragment, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './styles/Sidebar.module.css'
@@ -70,17 +54,34 @@ const Sidebar = props => {
   const [owner, setOwner] = useState(false)
   const [InviteSuccess, setInviteSuccess] = useState(false)
   const [homeModal, toggleHomeModal] = useState(false)
-  const toggle = () => toggleHomeModal(!homeModal)
+  const [org, setOrg] = useState({})
+  console.log('ORGGGG', org)
+  const toggle = () => {
+    toggleHomeModal(!homeModal)
+    document.removeEventListener('click', toggle)
+  }
+
+  useEffect(() => {
+    if (homeModal) {
+      document.addEventListener('click', toggle)
+    }
+  }, [homeModal])
+
+  document.removeEventListener('click', toggle)
+
+  let currentWorkspace = localStorage.getItem('currentWorkspace')
+
   const toggleOpenInvite = () => setOpenInvite(!openInvite)
   const setInviteEmails = emails => setInviteEmail(emails)
   const [sendLoading, setSendLoading] = useState(false)
 
-  let currentWorkspace = localStorage.getItem('currentWorkspace')
   const [userInfo, setUserInfo] = useState({
     userId: '',
     Organizations: [],
     token: ''
   })
+
+  console.log('userinfo', userInfo)
 
   const [nullValue, setnullValue] = useState(0)
 
@@ -91,6 +92,18 @@ const Sidebar = props => {
   let token = sessionStorage.getItem('token')
   let user_id_session = JSON.parse(sessionStorage.getItem('user'))
 
+  useEffect(() => {
+    axios({
+      method: 'get',
+      url: `https://api.zuri.chat/organizations/${currentWorkspace}`,
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    }).then(res => {
+      const org = res.data.data
+      setOrg(org)
+    })
+  })
   useEffect(() => {
     inviteVisibility()
 
@@ -154,6 +167,7 @@ const Sidebar = props => {
       }
     })
       .then(res => {
+        setSendLoading(false)
         setInviteSuccess(true)
       })
       .catch(err => {
@@ -178,39 +192,12 @@ const Sidebar = props => {
         `${currentWorkspace}_${userInfo.userId}_sidebar`,
         ctx => {
           const websocket = ctx.data
-          // console.log('Websocket', websocket)
+          console.log('Websocket', websocket)
           if (websocket.event === 'sidebar_update') {
-            // console.log('check', websocket.sidebar_url)
-
-            const sidebarUrl = websocket.sidebar_url
-
-            const trimmedUrl = trimUrl(sidebarUrl)
-            const pluginKey = filterUrl(sidebarUrl)
-
-            axios
-              .get(
-                `${trimmedUrl.includes('https://') ||
-                  trimmedUrl.includes('http://')
-                  ? trimmedUrl
-                  : `https://${trimmedUrl}`
-                }?org=${currentWorkspace}&user=${userInfo.userId}`
-              )
-              .then(res => {
-                try {
-                  const validPlugin = res.data
-                  if (validPlugin.name !== undefined) {
-                    if (typeof validPlugin === 'object') {
-                      setSidebarData({
-                        ...sidebarData,
-                        [pluginKey]: validPlugin
-                      })
-                    }
-                  }
-                } catch (err) {
-                  console.log(err, 'Invalid plugin')
-                }
-              })
-              .catch(console.log)
+            setSidebarData({
+              ...sidebarData,
+              [websocket.plugin_id]: websocket.data
+            })
           }
         }
       )
@@ -227,10 +214,11 @@ const Sidebar = props => {
 
           axios
             .get(
-              `${trimmedUrl.includes('https://') ||
+              `${
+                trimmedUrl.includes('https://') ||
                 trimmedUrl.includes('http://')
-                ? trimmedUrl
-                : `https://${trimmedUrl}`
+                  ? trimmedUrl
+                  : `https://${trimmedUrl}`
               }?org=${currentWorkspace}&user=${userInfo.userId}`
             )
             .then(res => {
@@ -258,10 +246,11 @@ const Sidebar = props => {
         <div className={`row ${styles.orgDiv}`}>
           <div className={`col-12 px-3 ${styles.orgInfo}`}>
             <div onClick={toggle} className={`row p-0 ${styles.orgHeader}`}>
-              <span className={`col-9 mb-0 ${styles.orgTitle}`}>HNGi8</span>
-              <span className={`col-3 p-0 ${styles.sidebar__header__arrow}`}>
-              <MdKeyboardArrowDown />
-            </span>              {/* <img
+              <span className={`col-8 mb-0 ${styles.orgTitle}`}>{org.name}</span>
+              <span className={`col-4 p-0 ${styles.sidebar__header__arrow}`}>
+                <MdKeyboardArrowDown />
+              </span>{' '}
+              {/* <img
                 className={`col-4 mx-auto ${styles.arrowDown}`}
                 src={shapekeyboardarrowdown}
                 alt="HNGi8"
@@ -275,8 +264,10 @@ const Sidebar = props => {
               />
             </div>
           </div>
+          <div className={`col-12 px-3 ${styles.modalContainer}`}>
           <div className={`col-12 px-3 ${styles.odalContainer}`}>
             <ModalComponent
+             workSpace={org}
               isOpen={homeModal}
               toggleOpenInvite={toggleOpenInvite}
             />
@@ -323,6 +314,7 @@ const Sidebar = props => {
           />
         </div>
       </div>
+      </div>
       <div className={`${styles.subCon2}`}>
         <div className={`row mt-2 ${styles.sb__item}`}>
           {owner && (
@@ -349,8 +341,13 @@ const Sidebar = props => {
         </div>
         <div
           onClick={() => setBg(2)}
-          style={bg === 2 ? { backgroundColor: "#00b87c" } : { backgroundColor: "revert" }}
-          className={`row mt-2 ${styles.sb__item}`}>
+          style={
+            bg === 2
+              ? { backgroundColor: '#00b87c' }
+              : { backgroundColor: 'revert' }
+          }
+          className={`row mt-2 ${styles.sb__item}`}
+        >
           <div
             className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
           >
@@ -360,16 +357,20 @@ const Sidebar = props => {
               role="button"
               alt="icon"
             />
-            <p
-              className={`mb-0 ${styles.item_p}`}
-              role="button"
-            >Threads</p>
+            <p className={`mb-0 ${styles.item_p}`} role="button">
+              Threads
+            </p>
           </div>
         </div>
         <div
           onClick={() => setBg(3)}
-          style={bg === 3 ? { backgroundColor: "#00b87c" } : { backgroundColor: "revert" }}
-          className={`row ${styles.sb__item}`}>
+          style={
+            bg === 3
+              ? { backgroundColor: '#00b87c' }
+              : { backgroundColor: 'revert' }
+          }
+          className={`row ${styles.sb__item}`}
+        >
           <div
             className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
           >
@@ -379,16 +380,20 @@ const Sidebar = props => {
               alt="icon"
               role="button"
             />
-            <p
-              className={`mb-0 ${styles.item_p}`}
-              role="button"
-            >All DMs</p>
+            <p className={`mb-0 ${styles.item_p}`} role="button">
+              All DMs
+            </p>
           </div>
         </div>
         <div
           onClick={() => setBg(4)}
-          style={bg === 4 ? { backgroundColor: "#00b87c" } : { backgroundColor: "revert" }}
-          className={`row ${styles.sb__item}`}>
+          style={
+            bg === 4
+              ? { backgroundColor: '#00b87c' }
+              : { backgroundColor: 'revert' }
+          }
+          className={`row ${styles.sb__item}`}
+        >
           <div
             className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
           >
@@ -398,34 +403,43 @@ const Sidebar = props => {
               alt="icon"
               role="button"
             />
-            <p
-              className={`mb-0 ${styles.item_p}`}
-              role="button"
-            >Drafts</p>
+            <p className={`mb-0 ${styles.item_p}`} role="button">
+              Drafts
+            </p>
           </div>
         </div>
         <div
           onClick={() => setBg(5)}
-          style={bg === 5 ? { backgroundColor: "#00b87c" } : { backgroundColor: "revert" }}
-          className={`row ${styles.sb__item}`}>
+          style={
+            bg === 5
+              ? { backgroundColor: '#00b87c' }
+              : { backgroundColor: 'revert' }
+          }
+          className={`row ${styles.sb__item}`}
+        >
           <div
             className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
           >
-            <img className={`${styles.item__img}`}
+            <img
+              className={`${styles.item__img}`}
               src={filesIcon}
               alt="icon"
               role="button"
             />
-            <p
-              className={`mb-0 ${styles.item_p}`}
-              role="button"
-            >Files</p>
+            <p className={`mb-0 ${styles.item_p}`} role="button">
+              Files
+            </p>
           </div>
         </div>
         <div
           onClick={() => setBg(6)}
-          style={bg === 6 ? { backgroundColor: "#00b87c" } : { backgroundColor: "revert" }}
-          className={`row ${styles.sb__item}`}>
+          style={
+            bg === 6
+              ? { backgroundColor: '#00b87c' }
+              : { backgroundColor: 'revert' }
+          }
+          className={`row ${styles.sb__item}`}
+        >
           <div
             className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
           >
@@ -435,9 +449,9 @@ const Sidebar = props => {
               alt="icon"
               role="button"
             />
-            <p className={`mb-0 ${styles.item_p}`}
-              role="button"
-            >Plugins</p>{' '}
+            <p className={`mb-0 ${styles.item_p}`} role="button">
+              Plugins
+            </p>{' '}
             <img
               onClick={open}
               className={`${styles.addButton}`}
