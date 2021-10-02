@@ -47,7 +47,7 @@ function CompanyName({ input }) {
           }
         )
 
-        createDefaultChannel()
+        createDefaultChannel(orgId)
       })
       .catch(err => {
         console.log(err.message)
