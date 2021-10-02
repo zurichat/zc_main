@@ -7,7 +7,7 @@
   font-size: calc(1.5rem * var(--type-scale, 1));
   line-height: calc(1.8rem * var(--height-scale, 1));
   font-weight: 700;
-  color: #1D1C1D;
+  color: #1d1c1d;
 }
 
 .setting_tab_container header p {
@@ -40,7 +40,7 @@
 
 .admin_form_group input,
 .form_select select {
-  border: 1px solid #A1A1A1;
+  border: 1px solid #a1a1a1;
   border-radius: 3px;
   padding: 0.5rem 0.75rem;
   -webkit-transition: all 0.3s ease-out;
@@ -61,7 +61,7 @@
 }
 
 .form_select option:hover {
-  background-color: #00B87C;
+  background-color: #00b87c;
 }
 
 .form_select svg {
@@ -74,7 +74,7 @@
 }
 
 .admin_form_group textarea {
-  border: 1px solid #A1A1A1;
+  border: 1px solid #a1a1a1;
   border-radius: 3px;
   padding: 0.2rem 0.75rem;
 }
@@ -82,13 +82,13 @@
 .right_field p {
   font-size: calc(0.875rem * var(--type-scale, 1));
   line-height: calc(1.1375rem * var(--height-scale, 1));
-  font-weight: normal; 
+  font-weight: normal;
 }
 
 .save_btn {
-  background-color: #00B87C;
+  background-color: #00b87c;
   border-radius: 3px;
-  border: 1px solid #00B87C;
+  border: 1px solid #00b87c;
   padding: 0.75rem 1rem;
   font-size: calc(0.94rem * var(--type-scale, 1));
   line-height: calc(1.5rem * var(--height-scale, 1));
@@ -122,7 +122,7 @@
 }
 
 .upgrade_section h4 {
-  color: #1D1C1D;
+  color: #1d1c1d;
   font-weight: 700;
   padding-top: 1rem;
 }

@@ -262,10 +262,10 @@
   background: none;
   transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.myp{
-  margin: 7px 1px 10px!important;
-    position: relative;
-    top: 25px;
+.myp {
+  margin: 7px 1px 10px !important;
+  position: relative;
+  top: 25px;
 }
 
 @media (max-width: 768px) {
