@@ -62,8 +62,7 @@ const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
       })
       .catch(err => {
         setLoading(false)
-        console.log(err)
-        toast.error('Oops, something went wrong check and try again', {
+        toast.error(err?.response?.data?.message, {
           position: 'top-center'
         })
       })
@@ -77,10 +76,10 @@ const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
         <div className={styles.modalContainer}>
           <h6 className={styles.modalSubHead}>{token} Tokens left</h6>
           <h3 className={styles.modalHeading}>
-            {orgSize * 1} Tokens will be deducted from your wallet
+            {orgSize * 10} Tokens will be deducted from your wallet
           </h3>
           <p className={styles.modalParagraph}>
-            1 token will be deducted per every member in your organization, Are
+            10 token will be deducted per every member in your organization, Are
             you sure you want to continue?
           </p>
           <div className={styles.buttonWrapper}>
