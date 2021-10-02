@@ -239,15 +239,15 @@ const LogoDiv = styled.div`
   align-items: center;
 `
 const Logo = styled.img`
-  @media (max-width: 1024px) {
-    width: 60%;
+  @media (min-width: 1023px) {
+    // width: 50%;
   }
-  @media (max-width: 768px) {
-    width: 70%;
-  }
-  @media (max-width: 425px) {
-    width: 80%;
-  }
+  // @media (max-width: 768px) {
+  //   width: 60%;
+  // }
+  // @media (max-width: 425px) {
+  //   width: 80%;
+  // }
 `
 const ProfileImg = styled.img`
   border-radius: 4px;

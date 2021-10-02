@@ -250,17 +250,17 @@
   height: 34px;
   position: relative;
   align-items: center;
-  display: flex;  
+  display: flex;
 }
- .sectionTwo .statusContent{
+.sectionTwo .statusContent {
   font-size: 13px;
   text-align: center;
   margin-left: 60px;
-} 
- 
-.sectionTwo .emoji{
+}
+
+.sectionTwo .emoji {
   float: left;
-} 
+}
 /* The section of the picker */
 
 .smileys {
