@@ -15,7 +15,7 @@ import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
 import { authAxios } from './utils/Api'
 import Profile from './components/Profile'
 import Loader from 'react-loader-spinner'
-import { GetUserInfo } from '@zuri/control'
+import { GetUserInfo, SubscribeToChannel } from '@zuri/control'
 import toggleStyle from './styles/sidebartoggle.module.css'
 import { BsReverseLayoutTextSidebarReverse } from 'react-icons/bs'
 
@@ -60,12 +60,35 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     getOrganizations()
   }, [setOrgId, user.image_url, setUser])
 
-  useEffect(() => {
+  const UpdateInfo = () => {
     GetUserInfo().then(res => {
       setUserProfileImage(res['0'].image_url)
       setUser(res['0'])
     })
-  })
+  }
+
+  useEffect(() => {
+    UpdateInfo()
+  }, [])
+
+  // RTC subscription
+  const callbackFn = event => {
+    const session_user = JSON.parse(sessionStorage.getItem('user'))
+    if (
+      event.event === 'UpdateOrganizationMemberPic' ||
+      'UpdateOrganizationMemberStatus' ||
+      'UpdateOrganizationMemberProfile' ||
+      'UpdateOrganizationMemberPresence'
+    ) {
+      if (event.id === session_user['id']) {
+        UpdateInfo()
+      } else return
+    } else return
+  }
+
+  const currentWorkspace = localStorage.getItem('currentWorkspace')
+
+  SubscribeToChannel(currentWorkspace, callbackFn)
 
   let toggleStatus = null
 
