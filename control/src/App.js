@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Login from './pages/login'
 import SignUp from './pages/signup'
-import PushNotificationDemo from './pages/browser-notifications/browserNotification2'
 import SignOut from './pages/signout/index'
 import Workspace from './pages/workspace/components/Workspace'
 import LandingPage from './pages/LandingPage'
@@ -64,9 +63,6 @@ const App = () => {
         </Route>
         <Route path="/signup">
           <SignUp />
-        </Route>
-        <Route path="/login">
-          <PushNotificationDemo />
         </Route>
         <Route path="/createworkspace">
           <CreateWorkSpaces />
