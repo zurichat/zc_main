@@ -33,7 +33,9 @@ import {
   Text,
   Center,
   ChakraProvider,
-  Spinner
+  Spinner,
+  Select,
+  Textarea,
 } from '@chakra-ui/react'
 import {
   PhoneIcon,
@@ -75,7 +77,7 @@ export const EmailInviteModal = props => {
   }
   
 
-  const [inviteStep, setInviteStep] = useState(1)
+  const [inviteStep, setInviteStep] = useState(3)
 
   const nextIviteStep = () => {
     const steps = inviteStep
@@ -469,6 +471,149 @@ export const EmailInviteModal = props => {
             )}{' '}
           </>
         ) : null}
+
+{inviteStep === 3 ? (
+          <ModalContent px="0.5rem" borderRadius="2px">
+            <ModalHeader fontSize="20px">Request Invitation to HNGi8</ModalHeader>
+            <ModalCloseButton onClick={onClo} />
+            <ModalBody>
+          
+              <FormLabel fontWeight="bold">To:</FormLabel>
+              <Container
+                border="1px"
+                spacing={4}
+                p="3"
+                borderRadius="2px"
+                borderColor={borderCol}
+                maxW="container.xl"
+                minH={120}
+              >
+                
+                {listEmail.map((e_mail, index) => (
+                  <Tag
+                    boxShadow="md"
+                    p="1"
+                    m="1"
+                    key={index}
+                    colorScheme={!e_mail.error ? 'green' : 'red'}
+                  >
+                    {e_mail.error ? <InfoOutlineIcon mr="1" /> : null}
+                    <TagLabel>{e_mail.mail}</TagLabel>
+                    <TagCloseButton onClick={() => handleDelete(index)} />
+                  </Tag>
+                ))}
+                
+
+                <Formik
+                  initialValues={{ email: ' ' }}
+                  onSubmit={(values, actions) => {
+                  
+
+                    if (listEmail.some(em => em.mail === values.email)) {
+                      setListEmail([
+                        ...listEmail,
+                        { mail: values.email, error: true }
+                      ])
+                      let eror = 'Email already included.'
+                      setForerr(eror)
+                    } else if (
+                      props.orgvalEmails.some(em => em === values.email)
+                    ) {
+                      setListEmail([
+                        ...listEmail,
+                        { mail: values.email, error: true }
+                      ])
+                      let eror = 'Email already exists in the workspace.'
+                      setForerr(eror)
+                    } else {
+                      setListEmail([
+                        ...listEmail,
+                        { mail: values.email, error: false }
+                      ])
+                      setForerr('')
+                    }
+                    //   console.log(values)
+                    actions.setSubmitting(false)
+                  }}
+                >
+                  <Form>
+                    <Field name="email" validate={validateEmail}>
+                      {({ field, form }) => (
+                        <FormControl
+                          isInvalid={form.errors.email && form.touched.email}
+                        >
+                          
+                          <Input
+                            ref={initialRef}
+                            onChange={validateEmail}
+                            variant="unstyled"
+                            {...field}
+                            id="email"
+                            type="email"
+                            borderRadius="2px"
+                            // focusBorderColor="green.200"
+                            onBlur={Blur}
+                            onFocus={Focus}
+
+
+                            width="50%"
+                          />
+                          
+                        </FormControl>
+                      )}
+                    </Field>
+                  
+                  </Form>
+                </Formik>
+              </Container>
+              {forerr ? (
+                <Text color="red.500" fontSize="sm">
+                  <InfoOutlineIcon mr="1" /> {forerr}
+                  {console.log(forerr)}
+                </Text>
+              ) : null}
+
+            <Select placeholder="Member" mt={4} mb={1} >
+              <option value="option1">Member</option>
+              {/* <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option> */}
+            </Select>
+              
+            <Text color="gray.500" fontSize="sm" mt={2} >
+                  Reason for request (optional)
+            </Text>
+
+            <Textarea placeholder="Here is a sample placeholder" mt={2} mb={1}/>
+
+            <Text color="gray.500" fontSize="sm" mt={2} >
+             Your request will be sent to your admins, and you’ll be notified when it has been approved or denied.
+            </Text>
+
+            <br/>
+
+            <Text color="gray.500" fontSize="sm"  mb={3}>
+            New members will authomatically join your workplace’s default channels.
+             <a  style={{textDecoration:'none',color:'#00B87C'}}> {'  '} Add more</a>
+            </Text>
+
+              <div
+                className={`mt-3 pt-3  my-auto `}
+              >
+                
+                <button
+                  onClick={sendButton}
+                  style={{ color: 'white', backgroundColor: '#00B87C' }}
+                  type="button"
+                  disabled={listEmail.length === 0 ? true : false}
+                  className={`btn my-auto mb-2 float-end`}
+                >
+                  Send Request
+                </button>
+              </div>
+            </ModalBody>
+          </ModalContent>
+        ) : null}
+
       </Modal>
     </ChakraProvider>
   )
