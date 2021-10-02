@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 
-import styles from "../styles/cardList.module.css";
+
+import styles from '../styles/cardList.module.css'
 
 import { ValidateCard } from "../Utils/Common";
 import toast from "react-hot-toast";
@@ -45,8 +46,8 @@ const CardList = () => {
                 </div>
             </div>
         }
-        </>
-    )
+    </>
+  )
 }
 
-export default CardList;
+export default CardList

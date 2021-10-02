@@ -1,12 +1,11 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import AdminSetup from './AdminSetup'
 import ComplaintProfiles from './ComplaintProfiles'
 import { Confirm } from './Confirm'
 import Success from './Success'
-import {Modal} from 'react-bootstrap'
+import { Modal } from 'react-bootstrap'
 import { BsFillExclamationDiamondFill } from 'react-icons/bs'
 import { AiOutlineClose } from 'react-icons/ai'
-
 
 export const UserForm = () => {
   const [step, setStep] = useState(1)
@@ -18,13 +17,8 @@ export const UserForm = () => {
 
   const [show, setShow] = useState(false)
 
-
-  useEffect(() => {
-
-    
-  }
-  )
-  const handleClose = () =>{ 
+  useEffect(() => {})
+  const handleClose = () => {
     setStep(1)
     setShow(false)
   }
@@ -81,7 +75,11 @@ export const UserForm = () => {
       >
         <Modal.Header>
           <Modal.Title className="text-success">ZuriChat Watches</Modal.Title>
-          <AiOutlineClose variant="primary" color="green" onClick={handleClose} />
+          <AiOutlineClose
+            variant="primary"
+            color="green"
+            onClick={handleClose}
+          />
         </Modal.Header>
         {step === 1 ? (
           <AdminSetup
@@ -106,7 +104,9 @@ export const UserForm = () => {
             values={values}
           />
         ) : null}
-        {step === 4 ? <Success postSucc={postSuccess} resetStep={resetStep} /> : null}
+        {step === 4 ? (
+          <Success postSucc={postSuccess} resetStep={resetStep} />
+        ) : null}
       </Modal>
     </>
   )
