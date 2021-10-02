@@ -9,21 +9,22 @@ import bigLock from '../assets/bigLock.svg'
 import yellowBulb from '../assets/yellowBulb.svg'
 import smallLock from '../assets/smallLock.svg'
 import handShake from '../assets/handShake.svg'
+import veryBigLock from '../assets/veryBigLock.svg'
 
 const Content = () => {
   return (
-    <React.Fragment>
+    <div className={Style.privacyAndTerms}>
       <div className={Style.content}>
         <h1 className={Style.headingOne}>Privacy & Terms</h1>
         <div className={Style.section}>
-          <h5 className={Style.headingFive}>Introduction</h5>
+          <h5 className={Style.headingIntro}>Introduction</h5>
           <div className={Style.contentImage}>
             <img
               src={bulbiImage}
               className={Style.bulbImage}
               alt="bulb image"
             />
-            <p className={Style.paragraph}>
+            <p className={Style.parplat}>
               We are a social network and online platform for professionals and
               beginners. People use our Services to find and be found for
               business opportunities, to connect with others and find
@@ -42,11 +43,18 @@ const Content = () => {
             and Switzerland.
           </p>
         </div>
-        <div className={Style.section}>
-          <h5 className={Style.headingFive}>Services</h5>
+        <div className={Style.bigLockImage}>
+          <img
+            src={veryBigLock}
+            className={Style.veryBigLock}
+            alt="very big lock"
+          />
+        </div>
+        <div className={Style.sectionServices}>
+          <h5 className={Style.headingServices}>Services</h5>
           <div className={Style.contentImage}>
-            <img src={shakeImage} />
-            <p className={Style.paragraph}>
+            <img src={shakeImage} className={Style.shakeImage} />
+            <p className={Style.paraPolicy}>
               {' '}
               This Privacy Policy, including our{' '}
               <Link to="/cookies-banner" title="Cookie Policy" /> applies to
@@ -68,7 +76,8 @@ const Content = () => {
             />
           </p>
         </div>
-        <div className={Style.section}>
+
+        <div className={Style.sectionServDev}>
           <h5 className={Style.headingFive}>Service Development</h5>
           <div className={Style.contentBox}>
             <div>
@@ -165,7 +174,7 @@ const Content = () => {
           </div>
         </div>
         <div>
-          <h5 className={Style.headingFive}>
+          <h5 className={Style.headingAppl}>
             Applicability Of This Privacy Policy
           </h5>
           <div className={Style.applicabilityImage}>
@@ -286,7 +295,7 @@ const Content = () => {
         </div>
 
         <div className={Style.DataOthers}>
-          <h5 className={Style.headingFive}>Data From Others</h5>
+          <h5 className={Style.headingDataOthers}>Data From Others</h5>
           <div className={Style.securityData}>
             <img
               className={Style.smallLock}
@@ -319,7 +328,7 @@ const Content = () => {
           </p>
         </div>
       </div>
-    </React.Fragment>
+    </div>
   )
 }
 
