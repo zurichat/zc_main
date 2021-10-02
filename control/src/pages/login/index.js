@@ -9,6 +9,7 @@ import axios from 'axios'
 import { GetUserInfo } from '@zuri/control'
 import $behaviorSubject from '../../../../globalState'
 import { Helmet } from 'react-helmet'
+import { goToDefaultChannel } from '../../api/channels'
 // import { Link } from 'react-router-dom'
 // import authBg1 from './assets/auth_bg1.svg'
 // import authBg2 from './assets/auth_bg2.svg'
@@ -111,7 +112,7 @@ const Login = () => {
                 history.push('/createworkspace')
                 break
               default:
-                history.push('/home')
+                goToDefaultChannel()
             }
           })
           .catch(err => {

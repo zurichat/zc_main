@@ -3,6 +3,7 @@ import CompanyNameCSS from '../styles/CompanyName.module.css'
 import { Link, useRouteMatch } from 'react-router-dom'
 import axios from 'axios'
 import { Helmet } from 'react-helmet'
+import { createDefaultChannel } from '../../../api/channels'
 function CompanyName({ input }) {
   const [user, setUser] = useState(null)
   const [orgId, setOrgId] = useState(null)
@@ -13,7 +14,7 @@ function CompanyName({ input }) {
 
     if (user) {
       setUser(user)
-      console.log(user)
+      // console.log(user)
     }
   }, [])
 
@@ -21,9 +22,7 @@ function CompanyName({ input }) {
     axios
       .post(
         'https://api.zuri.chat/organizations',
-        {
-          creator_email: user.email
-        },
+        { creator_email: user.email },
         {
           headers: {
             Authorization: 'Bearer ' + user.token
@@ -31,24 +30,29 @@ function CompanyName({ input }) {
         }
       )
       .then(res => {
-        console.log(res)
+        // console.log(res)
         localStorage.clear('userUserPassword')
         localStorage.clear('newUserEmail')
+        setOrgId(res.data.data.InsertedID)
 
-         axios.patch(`https://api.zuri.chat/organizations/${res.data.data.InsertedID}/name`,  {
-          "organization_name": orgName
-      },
-    { headers: {
-      Authorization: 'Bearer ' + user.token
-    }
-  })
+        axios.patch(
+          `https://api.zuri.chat/organizations/${orgId}/name`,
+          {
+            organization_name: orgName
+          },
+          {
+            headers: {
+              Authorization: 'Bearer ' + user.token
+            }
+          }
+        )
+
+        createDefaultChannel()
       })
       .catch(err => {
         console.log(err.message)
       })
   }
-
-  
 
   return (
     <div>
@@ -87,7 +91,6 @@ function CompanyName({ input }) {
               }
               onClick={createUserOrg}
             >
-             
               Continue
             </button>
           </Link>
