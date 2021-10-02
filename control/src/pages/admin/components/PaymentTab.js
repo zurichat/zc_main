@@ -6,6 +6,8 @@ import cardBack from "../assets/cardBack.svg";
 
 import styles from "../styles/paymentMethod.module.css";
 import CardList from './CardLists';
+import toast, { Toaster } from 'react-hot-toast';
+import { ValidateCard } from '../Utils/Common';
 
 const PaymentTab = () => {
 
@@ -14,6 +16,41 @@ const PaymentTab = () => {
   const [cardNumber, setCardNumber] = useState('');
   const [expireDate, setExpireDate] = useState('');
   const [cvv, setCvv] = useState('');
+  const [cardType, setCardType] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    const data = {
+      cardName,
+      cardNumber,
+      expireDate,
+      cvv,
+      cardType
+    }
+
+    if(localStorage.getItem('cardList')) {
+      const cardList = JSON.parse(localStorage.getItem('cardList'));
+      console.log(cardList);
+      if (cardList.filter(card => card.cardNumber !== data.cardNumber).length > 0) {
+        cardList.push(data);
+        localStorage.setItem('cardList', JSON.stringify(cardList));
+        toast.success('Card Added Successfully');
+      } else {
+        toast.error('Card already exists');
+      }
+    }
+    else {
+      const cardList = [data];
+      localStorage.setItem('cardList', JSON.stringify(cardList));
+      toast.success('Card Added Successfully');
+    }
+
+    setCardName('');
+    setCardNumber('');
+    setExpireDate('');
+    setCvv('');
+  }
 
   useEffect(() => {
     if(cardNumber !== "" && cardName !== "" && expireDate !== "" && cvv !== "") {
@@ -24,10 +61,6 @@ const PaymentTab = () => {
     }
   }, [cardName, cardNumber, expireDate, cvv])
 
-  const handleCardType = (type) => {
-    console.log(type)
-  }
-
   return (
   <>
   <CardList />
@@ -37,35 +70,55 @@ const PaymentTab = () => {
       Your card will not be charged at this time. It will be kept on file and will be used as the default for future charges.
     </p>
 
-    <form className={styles.paymentForm}>
+    <form onSubmit={handleSubmit} className={styles.paymentForm}>
       <div className={styles.paymentInputGroup}>
         <label className={styles.paymentInputLabel} htmlFor="name">Name on Card* </label>
-        <input onChange={(e) => setCardName(e.target.value)} className={styles.paymentInput} type="text" id="name" placeholder="John Doe" />
+        <input onChange={(e) => setCardName(e.target.value)} value={cardName} className={styles.paymentInput} type="text" id="name" placeholder="John Doe" />
       </div>
       <div className={styles.paymentInputGroup}>
         <label className={styles.paymentInputLabel} htmlFor="number">Card Number* </label>
-        <Cleave placeholder="1234 1234 1234 1234"
-          options={{
-            creditCard: true,
-            onCreditCardTypeChanged: function(type) {
-              console.log(type)
-            }
-          }}
-          id="number"
-          onChange={(e) => setCardNumber(e.target.value)}
-          className={styles.paymentInput}
-        />
+        <div className={styles.paymentInputContainer}>
+          <Cleave placeholder="1234 1234 1234 1234"
+            options={{
+              creditCard: true,
+              onCreditCardTypeChanged: function(type) {
+                setCardType(type)
+              }
+            }}
+            id="number"
+            value={cardNumber}
+            onChange={(e) => setCardNumber(e.target.value)}
+            className={styles.paymentInput}
+          />
+          {ValidateCard(cardType)}
+        </div>
       </div>
 
       <div className={styles.twoGrid}>
         <div className={styles.paymentInputGroup}>
           <label className={styles.paymentInputLabel} htmlFor="expiry">Expiry* </label>
-          <input onChange={(e) => setExpireDate(e.target.value)} className={styles.paymentInput} type="text" id="expiry" placeholder="MM/YY" />
+          <Cleave
+            placeholder="MM/YY"
+            value={expireDate}
+            options={{ date: true, datePattern: ["m", "d"] }}
+            onChange={(e) => setExpireDate(e.target.value)}
+            className={styles.paymentInput}
+            id="expiry"
+          />
         </div>
         <div className={styles.paymentInputGroup}>
           <label className={styles.paymentInputLabel} htmlFor="cvv">CVV* </label>
           <div className={styles.paymentInputContainer}>
-            <input onChange={(e) => setCvv(e.target.value)} className={styles.paymentInput} type="number" id="cvv" placeholder="" />
+            <Cleave
+              id="cvv" placeholder=""
+              value={cvv}
+              options={{
+                blocks: [3],
+                numericOnly: true
+              }}
+              onChange={(e) => setCvv(e.target.value)}
+              className={styles.paymentInput}
+            />
             <img className={styles.inputImg} src={cardBack} alt="card back icon" />
           </div>
           <p className={styles.inputInfo}>3 digits on back</p>
@@ -75,6 +128,7 @@ const PaymentTab = () => {
       <div className={styles.buttonWrapper}>
         <button type="submit" className={styles.paymentButton} disabled={formFilled}>Add Card</button>
       </div>
+      <Toaster />
     </form>
   </div>
   </>
