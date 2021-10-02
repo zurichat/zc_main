@@ -163,40 +163,12 @@ const Sidebar = props => {
         `${currentWorkspace}_${userInfo.userId}_sidebar`,
         ctx => {
           const websocket = ctx.data
-          // console.log('Websocket', websocket)
+          console.log('Websocket', websocket)
           if (websocket.event === 'sidebar_update') {
-            // console.log('check', websocket.sidebar_url)
-
-            const sidebarUrl = websocket.sidebar_url
-
-            const trimmedUrl = trimUrl(sidebarUrl)
-            const pluginKey = filterUrl(sidebarUrl)
-
-            axios
-              .get(
-                `${
-                  trimmedUrl.includes('https://') ||
-                  trimmedUrl.includes('http://')
-                    ? trimmedUrl
-                    : `https://${trimmedUrl}`
-                }?org=${currentWorkspace}&user=${userInfo.userId}`
-              )
-              .then(res => {
-                try {
-                  const validPlugin = res.data
-                  if (validPlugin.name !== undefined) {
-                    if (typeof validPlugin === 'object') {
-                      setSidebarData({
-                        ...sidebarData,
-                        [pluginKey]: validPlugin
-                      })
-                    }
-                  }
-                } catch (err) {
-                  console.log(err, 'Invalid plugin')
-                }
-              })
-              .catch(console.log)
+            setSidebarData({
+              ...sidebarData,
+              [websocket.plugin_id]: websocket.data
+            })
           }
         }
       )
