@@ -4,7 +4,7 @@
   background-color: #00b87c;
   color: #fff;
   box-sizing: border-box;
-  padding: 5px 20px;
+  padding: 5px 16px;
   display: flex !important;
   font-size: 10px;
   justify-content: space-between;
@@ -14,7 +14,7 @@
   align-items: center;
   cursor: pointer;
   border-radius: 0.5em;
-  padding: 1em;
+  /* padding: 1em; */
 }
 .plugin__header__title:hover {
   background: #01d892;
