@@ -18,9 +18,10 @@ import Loader from 'react-loader-spinner'
 import { GetUserInfo } from '@zuri/control'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
-  const { closeModal, openModal, presence, setPresence } = useContext(TopbarContext)
+  const { closeModal, openModal, presence, setPresence } =
+    useContext(TopbarContext)
   const { setUser, user, userProfileImage, setOrgId, setUserProfileImage } =
-  useContext(ProfileContext)
+    useContext(ProfileContext)
   const state = useContext(TopbarContext)
   const [showModal] = state.show
   const [organizations, setOrganizations] = useState([])
@@ -62,12 +63,11 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   useEffect(() => {
     GetUserInfo().then(res => setUserProfileImage(res['0'].image_url))
-
   })
 
-  useEffect(()=>{
-    if(showModal){
-      document.addEventListener("click", openModal)
+  useEffect(() => {
+    if (showModal) {
+      document.addEventListener('click', openModal)
     }
   })
 

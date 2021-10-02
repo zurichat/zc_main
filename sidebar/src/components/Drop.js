@@ -20,36 +20,36 @@ const DropDown = ({ itemName, items }) => {
   }
 
   const [click, isClicked] = useClick()
-  
+
   function useClick() {
-        const [value, setValue] = useState(false)
+    const [value, setValue] = useState(false)
 
-        const ref = useRef(null)
+    const ref = useRef(null)
 
-        const RightClick = (e) =>  {
-        e.preventDefault()
-        setValue(true)
-        }
-        const CloseClick= () => setValue(false)
-
-useEffect(
-  () => {
-    const node = ref.current
-    if (node) {
-      node.addEventListener('contextmenu', RightClick)
-      document.addEventListener('click', CloseClick)
-      
-      return () => {
-        node.removeEventListener('contextmenu', RightClick)
-        document.removeEventListener('click', CloseClick)
-      }
+    const RightClick = e => {
+      e.preventDefault()
+      setValue(true)
     }
-  },
-  [ref.current] // Recall only if ref changes
-)
+    const CloseClick = () => setValue(false)
 
-return [ref, value]
-}
+    useEffect(
+      () => {
+        const node = ref.current
+        if (node) {
+          node.addEventListener('contextmenu', RightClick)
+          document.addEventListener('click', CloseClick)
+
+          return () => {
+            node.removeEventListener('contextmenu', RightClick)
+            document.removeEventListener('click', CloseClick)
+          }
+        }
+      },
+      [ref.current] // Recall only if ref changes
+    )
+
+    return [ref, value]
+  }
 
   return (
     <div className={`row p-0 ${styles.dropDown} text-decoration-none`}>
@@ -106,15 +106,11 @@ return [ref, value]
                       onError={e => (e.target.src = hash.toString())}
                       alt="img"
                     />
-                    <p 
-                      ref={click}
-                      className={`mb-0 ${styles.dropDown__name}`}>
+                    <p ref={click} className={`mb-0 ${styles.dropDown__name}`}>
                       {room.room_name}
                     </p>
                     <div className={`${styles.optionsContainer}`}>
-                        <RoomOptions
-                          isClicked={isClicked}
-                        />
+                      <RoomOptions isClicked={isClicked} />
                     </div>
                   </a>
                 </li>

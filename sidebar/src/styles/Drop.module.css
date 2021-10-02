@@ -67,7 +67,7 @@
   margin-right: 0.5em;
 }
 
-.optionsContainer{
-position: relative;
-z-index: 9999999;
+.optionsContainer {
+  position: relative;
+  z-index: 9999999;
 }

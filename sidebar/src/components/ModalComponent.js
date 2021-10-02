@@ -7,19 +7,13 @@ import { RiArrowRightSLine as Arrow } from 'react-icons/ri'
 import { faClosedCaptioning } from '@fortawesome/free-solid-svg-icons'
 import Workspace from '../../../control/src/pages/workspace/components/Workspace'
 
-const ModalComponent = ({
-   workSpace,
-   isOpen
- }) => {
+const ModalComponent = ({ workSpace, isOpen }) => {
   // const isOpen = true;
-
-  
 
   const [hoverRef, isHovered] = useHover()
   const [hoverRef2, isHovered2] = useHover()
   const [hoverRef3, isHovered3] = useHover()
 
-  
   function useHover() {
     const [value, setValue] = useState(false)
 
@@ -79,10 +73,10 @@ const ModalComponent = ({
       <hr className={styles.modalDivider} />
       <div className={` d-flex flex-column ${styles.modalSection}`}>
         <div>
-        <p>Invite people to {workSpace.name}</p>
+          <p>Invite people to {workSpace.name}</p>
         </div>
         <div>
-        <p>Create a new Workspace</p>
+          <p>Create a new Workspace</p>
         </div>
       </div>
       <hr className={styles.modalDivider} />
@@ -100,46 +94,43 @@ const ModalComponent = ({
         </div>
       </div>
       <hr className={styles.modalDivider} />
-      <div
-        ref={hoverRef}
-        className={` ${styles.modalSection}`}
-      >
-        <div className={`d-flex align-items-center justify-content-between ${styles.modalSection}`}>
-        <p>Tools</p>
-        <div>
-          <Arrow className={`${styles.arrow}`} />
-        </div>
-      
-        <section
-          className={`${
-            isHovered ? styles.openmodalSubCon : styles.modalSubCon
-          }`}
+      <div ref={hoverRef} className={` ${styles.modalSection}`}>
+        <div
+          className={`d-flex align-items-center justify-content-between ${styles.modalSection}`}
         >
+          <p>Tools</p>
+          <div>
+            <Arrow className={`${styles.arrow}`} />
+          </div>
+
           <section
-            ref={hoverRef}
-            className={`d-flex flex-column ${styles.submodalSection}`}
+            className={`${
+              isHovered ? styles.openmodalSubCon : styles.modalSubCon
+            }`}
           >
-            <div>
-            <p>Plugins</p>
-            </div>
-            <hr className={styles.modalDivider} />
-            <div>
-            <p>Analytics</p>
-            </div>
+            <section
+              ref={hoverRef}
+              className={`d-flex flex-column ${styles.submodalSection}`}
+            >
+              <div>
+                <p>Plugins</p>
+              </div>
+              <hr className={styles.modalDivider} />
+              <div>
+                <p>Analytics</p>
+              </div>
+            </section>
           </section>
-        </section>
         </div>
       </div>
       <hr className={styles.modalDivider} />
       <div className={styles.modalSection}>
         <div>
-        <p>Sign Out</p>
+          <p>Sign Out</p>
         </div>
       </div>
       <hr className={styles.modalDivider} />
-      <div 
-        className={` d-flex flex-column ${styles.modalSection}`}
-      >
+      <div className={` d-flex flex-column ${styles.modalSection}`}>
         <div
           ref={hoverRef3}
           className={`d-flex align-items-center justify-content-between ${styles.modalSubSection} `}
@@ -158,12 +149,12 @@ const ModalComponent = ({
               className={`d-flex flex-column ${styles.submodalSection}`}
             >
               <div>
-              <p>HNGi8</p>
+                <p>HNGi8</p>
               </div>
               <hr className={styles.modalDivider} />
-             <div>
-             <p>The BrandHub</p>
-             </div>
+              <div>
+                <p>The BrandHub</p>
+              </div>
             </section>
           </section>
         </div>
@@ -183,12 +174,12 @@ const ModalComponent = ({
               className={`d-flex flex-column ${styles.submodalSection}`}
             >
               <div>
-              <p>HNGi8</p>
+                <p>HNGi8</p>
               </div>
               <hr className={styles.modalDivider} />
-             <div>
-             <p>The BrandHub</p>
-             </div>
+              <div>
+                <p>The BrandHub</p>
+              </div>
             </section>
           </section>
         </div>
