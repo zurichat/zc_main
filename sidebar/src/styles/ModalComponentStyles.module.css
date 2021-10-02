@@ -6,11 +6,11 @@
   top: 7.2%;
   left: 5%;
   width: 100%;
-  max-width: 281px;
+  max-width:300px;
   border: 1px solid #bebebe;
   border-radius: 5px;
   /* padding: 10px 0; */
-  z-index: 9999;
+  z-index: 99999999999999999999999999999999999;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 .open {
@@ -28,12 +28,32 @@
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
+.TopmodalSection {
+  display: flex;
+  padding: 5px auto;
+  width: 100%;
+  margin: 5px auto;
+  padding: 0 1rem;
+  font-size: 15px;
+  position: relative;
+  cursor: pointer;
+}
 .modalSection {
   display: flex;
   padding: 5px auto;
   width: 100%;
+  margin: 5px auto;
+  /* padding: 0 1rem; */
+  font-size: 15px;
+  position: relative;
+  cursor: pointer;
+}
+.submodalSection {
+  display: flex;
+  padding: 5px auto;
+  width: 100%;
   margin: 11px auto;
-  padding: 0 1rem;
+  /* padding: 0 1rem; */
   font-size: 15px;
   position: relative;
   cursor: pointer;
@@ -46,8 +66,31 @@
   font-weight: 400;
   line-height: 18px;
   margin: 0;
-  padding: 0.2rem 0;
+  padding: 0.2rem 1rem;
   cursor: pointer;
+}
+
+.submodalSection p {
+  color: #333333;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  margin: 0;
+  padding: 0.2rem 1rem;
+  cursor: pointer;
+}
+
+.modalSection div:hover {
+  background: #01d892;
+}
+
+/* .modalSection .openmodalSubCon {
+all:none;
+} */
+
+.submodalSection div:hover {
+  background: #01d892;
 }
 
 /* .modalSubSection{
@@ -69,7 +112,7 @@
 
 .header h5 {
   color: #333333;
-  font-size: 15px;
+  font-size: 14px;
   font-style: bold;
   font-weight: 700;
   margin: 0;
@@ -115,14 +158,15 @@
 }
 
 .infoChart img {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 }
 
 .arrow {
   color: #333333;
-  width: 0.7rem;
+  width: 1.2rem;
   cursor: pointer;
+  padding-right: 0.5rem;
 }
 
 /* .info .infoP{
@@ -145,9 +189,10 @@
   display: none;
   background: #ffffff;
   color: #000;
-  position: absolute;
-  top: 0%;
-  left: 110%;
+  position: fixed;
+  /* top: 60%; */
+  margin-top: 20px;
+  left: 20%;
   width: 100%;
   max-width: 281px;
   border: 1px solid #bebebe;
@@ -162,15 +207,52 @@
   display: block;
   background: #ffffff;
   color: #000;
-  position: absolute;
-  top: 30%;
-  left: 95%;
+  position: fixed;
+  /* top: 60%; */
+  margin-top: 50px;
+  left: 20%;
+  width: 100%;
+  max-width: 281px;
+  border: 1px solid #bebebe;
+  border-radius: 5px;
+  /* padding: 10px 0; */
+  z-index: 1010;
+  transition: all 5s ease-in 3s;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.modalOptionsCon {
+  display: none;
+  background: #ffffff;
+  color: #000;
+  position: fixed;
+  /* top: 60%; */
+  /* margin-top: 20px; */
+  /* left: 20%; */
   width: 100%;
   max-width: 281px;
   border: 1px solid #bebebe;
   border-radius: 5px;
   /* padding: 10px 0; */
   z-index: 9999;
+  transition: all 5s ease-in 3s;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.openmodalOptionsCon {
+  display: block;
+  background: #ffffff;
+  color: #000;
+  position: fixed;
+  /* top: 60%; */
+  /* margin-top: 0px; */
+  /* left: 20%; */
+  width: 100%;
+  max-width: 281px;
+  border: 1px solid #bebebe;
+  border-radius: 5px;
+  /* padding: 10px 0; */
+  z-index: 1010;
   transition: all 5s ease-in 3s;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
