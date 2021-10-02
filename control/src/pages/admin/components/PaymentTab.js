@@ -12,8 +12,7 @@ import { ValidateCard } from '../Utils/Common';
 import { CardContext } from '../../../context/CardContext'; 
 
 const PaymentTab = () => {
-  const {setCardList} = useContext(CardContext);
-  console.log("check", setCardList)
+  const {cardLists ,setCardList} = useContext(CardContext);
   const [formFilled, setFormFilled] = useState(true);
   const [cardName, setCardName] = useState('');
   const [cardNumber, setCardNumber] = useState('');
@@ -32,9 +31,9 @@ const PaymentTab = () => {
       cardType
     }
 
-    if(localStorage.getItem('cardList')) {
+    if(cardLists?.length > 0) {
       const cardLists = JSON.parse(localStorage.getItem('cardList'));
-      if (cardLists.filter(card => card.cardNumber !== data.cardNumber).length > 0) {
+      if (cardLists.length > 0 && cardLists.filter(card => card.cardNumber !== data.cardNumber)) {
         cardLists.push(data);
         setCardList(cardLists);
         localStorage.setItem('cardList', JSON.stringify(cardLists));
