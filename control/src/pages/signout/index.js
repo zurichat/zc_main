@@ -7,13 +7,11 @@ import logo from '../../component-assets/zuri.svg'
 import { Helmet } from 'react-helmet'
 
 const Signout = ({ history }) => {
-
-const orgName = localStorage.getItem('orgName')
+  const orgName = localStorage.getItem('orgName')
 
   let token = sessionStorage.getItem('token')
 
-useEffect( ()=> {
-   
+  useEffect(() => {
     axios({
       method: 'post',
       url: `https://api.zuri.chat/auth/logout`,
@@ -23,13 +21,11 @@ useEffect( ()=> {
     })
       .then(res => {
         console.log(res)
-      
       })
       .catch(err => {
         console.error(err)
       })
-  
-})
+  })
 
   return (
     <>

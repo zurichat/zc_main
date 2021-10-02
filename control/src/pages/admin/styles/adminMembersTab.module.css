@@ -3,8 +3,8 @@
   --height-scale: 0.85;
 }
 
-.members_tab_container > div{
-  border-bottom: 1px solid #E7E7E7;
+.members_tab_container > div {
+  border-bottom: 1px solid #e7e7e7;
 }
 
 .members_tab_container p {
