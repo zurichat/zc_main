@@ -11,7 +11,7 @@
     "dev:control": "npm run dev --prefix control",
     "dev:sidebar": "npm run dev --prefix sidebar",
     "dev:plugin-header": "npm run dev --prefix pluginHeader",
-    "dev": "npm-run-all --parallel \"dev:*\" \"open\"",
+    "dev": "npm-run-all --parallel \"dev:*\" ",
     "check-format": "prettier -c .",
     "format": "prettier -w .",
     "lint": "eslint src --ext js",
@@ -61,15 +61,22 @@
     "yarn-run-all": "^3.1.1"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.0.15",
+    "@chakra-ui/react": "^1.6.8",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@types/jest": "^27.0.1",
     "@types/systemjs": "^6.1.1",
     "centrifuge": "^2.8.2",
+    "cleave.js": "^1.6.0",
+    "formik": "^2.2.9",
+    "framer-motion": "^4.1.17",
+    "mdbreact": "^5.1.0",
     "moment": "^2.29.1",
     "react-google-login": "^5.2.2",
-    "moment": "^2.29.1",
     "react-helmet": "^6.1.0",
     "react-hot-toast": "^2.1.1",
     "react-loader-spinner": "^4.0.0",
@@ -77,7 +84,6 @@
     "react-router-dom": "^5.3.0",
     "react-timezone-select": "^1.0.8",
     "rxjs": "^7.3.0",
-    "single-spa": "^5.9.3",
-    "webpack-config-single-spa-react": "^4.0.2"
+    "single-spa": "^5.9.3"
   }
 }

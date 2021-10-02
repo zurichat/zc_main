@@ -16,19 +16,24 @@
 
 .tabHeaderItem,
 .tabHeaderItemActive {
-  padding: 0.875rem;
+  padding: 0.875rem 1.2rem;
   width: auto;
   border-radius: 4px 4px 0px 0px;
   font-size: 1.125rem;
   font-weight: 600;
   color: #333;
   cursor: pointer;
+  margin-bottom: -1px;
 }
 
 .tabHeaderItemActive,
 .tabHeaderItem:hover {
   background: #fff;
   border: 1px solid #dadada;
+<<<<<<< HEAD
+=======
+  border-bottom: none;
+>>>>>>> 65808fe165d1b20a5e9878ecdfbb3c427d590adf
   color: #00b87c;
 }
 
