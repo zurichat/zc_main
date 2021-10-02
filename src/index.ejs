@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="Zuri-Chat - Create your future with us, network, collaborate, educate and learn remotely. A messaging app that lets professionals collaborate through workspaces...">
+  <meta name="description"
+    content="Zuri-Chat -  For Organizations & Institutions. A fully Integrated way to connect and interact. Create your future with us, network, collaborate, educate and learn remotely.Invite your team to your workspace. Stay connected,stay in sync, and explore ideas together from anywhere" />
   <meta name="keywords" content="Zuri, Zuri Chat, hngi8, slack, workspace, collaborate">
   <meta name="author" content="HNGi8">
 
@@ -22,49 +23,62 @@
 
         <!-- Dynamic Title Tag for Plugins -->
 <script>
-  let getTitleOfPage = function(){
+let getTitleOfPage = function(){
     let test = location.pathname ;
-    return test
-};
 let appendZuri = `- Zuri Chat ` ;
-let title = getTitleOfPage();
-title = title.substr(1);
-title = title.charAt(0).toUpperCase() + title.slice(1);
-document.title = title + appendZuri;
+    
+test = test.substr(1);
+test = test.charAt(0).toUpperCase() + test.slice(1);
+document.title = test + appendZuri;
+};
+ setInterval(getTitleOfPage ,500) 
 </script>
 <!-- End -->
 
-<!-- Facebook , linkedin etc  -->
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.zuri.chat" />
-        <meta
-          property="og:title"
-          content="Zuri-Chat - For Organizations & Institutions. A fully Integrated way to connect and interact"
-        />
-        <meta
-          property="og:description"
-          content="Zuri-Chat - Create your future with us, network, collaborate, educate and learn remotely. A messaging app that lets professionals collaborate through workspaces..."
-        />
-        <meta
-          property="og:image"
-          content="../control/src/pages/createworkspace/assets/zuriicon.png"
-        />
-      <!--   Twiitter  -->
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://www.zuri.chat" />
-        <meta
-          property="twitter:title"
-          content="Zuri-Chat - For Organizations & Institutions. A fully Integrated way to connect and interact"
-        />
-        <meta
-          property="twitter:description"
-          content="Zuri-Chat - Create your future with us, network, collaborate, educate and learn remotely. A messaging app that lets professionals collaborate through workspaces..."
-        />
-        <meta
-          property="twitter:image"
-          content="../control/src/pages/createworkspace/assets/zuriicon.png"
-        />
 
+<!-- Google / Search Engine Tags -->
+    <meta
+      itemprop="name"
+      content="Zuri-Chat -Communicate and collaborate from wherever you are. A fully Integrated way to connect and interact"
+    />
+    <meta
+      itemprop="description"
+      content="Zuri-Chat -  For Organizations & Institutions. A fully Integrated way to connect and interact. Create your future with us, network, collaborate, educate and learn remotely.Invite your team to your workspace. Stay connected,stay in sync, and explore ideas together from anywhere."
+    />
+    <meta itemprop="image" content="https://i.ibb.co/SnK9MGt/ogzuri.png" />
+
+    <!-- Facebook , linkedin etc  -->
+
+    <meta name="type" property="og:type" content="website" />
+    <meta name="url" property="og:url" content="https://www.zuri.chat" />
+    <meta
+      name="title"
+      property="og:title"
+      content="Zuri-Chat -Communicate and collaborate from wherever you are. A fully Integrated way to connect and interact"
+    />
+    <meta
+      name="description"
+      property="og:description"
+      content="Zuri-Chat -  For Organizations & Institutions. A fully Integrated way to connect and interact. Create your future with us, network, collaborate, educate and learn remotely.Invite your team to your workspace. Stay connected,stay in sync, and explore ideas together from anywhere."
+    />
+    <meta
+      name="image"
+      property="og:image"
+      content="https://i.ibb.co/SnK9MGt/ogzuri.png"
+    />
+    <!--   Twitter  -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://www.zuri.chat" />
+    <meta
+      name="twitter:title"
+      content="Zuri-Chat - For Organizations & Institutions. A fully Integrated way to connect and interact"
+    />
+    <meta
+      name="twitter:description"
+      content="Zuri-Chat - Create your future with us, network, collaborate, educate and learn remotely. A messaging app that lets professionals collaborate through workspaces..."
+    />
+    <meta name="twitter:image" content="https://i.ibb.co/SnK9MGt/ogzuri.png" />
+ 
 
 
 
@@ -86,13 +100,13 @@ document.title = title + appendZuri;
     div[id*='zuri/topbar'] {
       z-index: 5;
       width: 100%;
-      height: 8vh;
+      height: 6vh;
       position: fixed;
       top: 0;
       left: 0;
-      text-align: center;
+      /* text-align: center; */
       display: flex;
-      justify-content: center;
+      /* justify-content: center; */
       align-items: center;
       background-color: #fff;
     }
@@ -103,28 +117,77 @@ document.title = title + appendZuri;
 
     div[id*='zuri/sidebar'] {
       width: 20%;
-      height: 92vh;  
+      /* margin-right: 2%; */
+      height: 94vh;
       /* overflow-y: scroll; */
       /* Hide scrollbar for IE and Edge */
       -ms-overflow-style: none;
       /* Hide scrollbar for Firefox */
       scrollbar-width: none;
       position: fixed;
-      top: 8vh;
+      top: 6vh;
       left: 0;
+      background-color: #fff;
+      /* z-index: 99999; */
+
     }
 
     div[id*='zuri-plugin'] {
       width: 80%;
       position: absolute;
-      top: 8vh;
+      top: 6vh;
       right: 0;
+    }
+
+    @media (min-width: 1441px) {
+      div[id*='zuri/topbar'] {
+        height: 3vh;
+        top: 0;
+        left: 0;
+      }
+
+      div[id*='zuri/sidebar']::-webkit-scrollbar {
+        display: none;
+      }
+
+      div[id*='zuri/sidebar'] {
+        height: 97vh;
+        top: 3vh;
+        left: 0;
+      }
+
+      div[id*='zuri-plugin'] {
+        top: 3vh;
+        right: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      div[id*='zuri/sidebar'] {
+        display: none;
+        width: 100%;
+      }
+
+      div[id*='zuri-plugin'] {
+        width: 100%;
+      }
     }
 
     /* CHESS STYLE */
     .app__container {
       padding: 0 !important;
       padding-block: 5rem;
+    }
+
+    @media (max-width: 425px) {
+      /* div[id*='zuri/sidebar'] {
+        width: 40%;
+      } */
+
+      div[id*='zuri-plugin'] {
+        width: 100%;
+        position: relative;
+      }
     }
 
     @media (max-width: 375px) {
@@ -134,16 +197,8 @@ document.title = title + appendZuri;
       }
     }
 
-    @media (max-width: 425px) {
-      div[id*='zuri/sidebar'] {
-        width: 40%;
-      }
 
-      div[id*='zuri-plugin'] {
-        width: 60%;
-        position: absolute;
-      }
-    }
+
 
     /* CHESS STYLE */
   </style>
@@ -212,7 +267,7 @@ document.title = title + appendZuri;
   </script>
 
   <% if (isLocal) { %>
-  <script type="systemjs-importmap">
+    <script type="systemjs-importmap">
     {
       "imports": {
         "@zuri/root-config": "//localhost:9000/zuri-root-config.js",
@@ -223,8 +278,8 @@ document.title = title + appendZuri;
       }
     }
   </script>
-  <% } else { %>
-  <script type="systemjs-importmap">
+    <% } else { %>
+      <script type="systemjs-importmap">
     {
       "imports": {
           "@zuri/root-config": "/zuri-root-config.js",
@@ -235,22 +290,22 @@ document.title = title + appendZuri;
         }
       }
   </script>
-  <% } %>
+      <% } %>
 
-  <!--
+        <!--
     If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
     Learn more about why at https://single-spa.js.org/docs/ecosystem-angular/#zonejs
   -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script> -->
 
-  <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
-  <% if (isLocal) { %>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
-  <% } else { %>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
-  <% } %>
+        <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
+        <% if (isLocal) { %>
+          <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
+          <% } else { %>
+            <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
+            <% } %>
 </head>
 
 <body>

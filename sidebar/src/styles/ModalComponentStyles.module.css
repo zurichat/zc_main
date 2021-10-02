@@ -6,7 +6,7 @@
   top: 7.2%;
   left: 5%;
   width: 100%;
-  max-width: 281px;
+  max-width:300px;
   border: 1px solid #bebebe;
   border-radius: 5px;
   /* padding: 10px 0; */
@@ -32,7 +32,7 @@
   display: flex;
   padding: 5px auto;
   width: 100%;
-  margin: 11px auto;
+  margin: 5px auto;
   padding: 0 1rem;
   font-size: 15px;
   position: relative;
@@ -42,7 +42,7 @@
   display: flex;
   padding: 5px auto;
   width: 100%;
-  margin: 11px auto;
+  margin: 5px auto;
   /* padding: 0 1rem; */
   font-size: 15px;
   position: relative;
@@ -158,8 +158,8 @@ all:none;
 }
 
 .infoChart img {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 }
 
 .arrow {
