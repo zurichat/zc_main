@@ -15,7 +15,7 @@ import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
 import { authAxios } from './utils/Api'
 import Profile from './components/Profile'
 import Loader from 'react-loader-spinner'
-import { GetUserInfo } from '../../control/src/zuri-control'
+import { GetUserInfo, SubscribeToChannel } from '@zuri/control'
 import axios from 'axios'
 import toggleStyle from './styles/sidebartoggle.module.css'
 import { BsReverseLayoutTextSidebarReverse } from 'react-icons/bs'
@@ -33,9 +33,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   // const [memberId, setMemberId] = useState('');
   const [messages, setMessages] = useState('')
 
-
   useEffect(() => {
-
     // const fetchUser = async () => {
     //   const info = await GetUserInfo()
     //   setMemberId(info[0]._id)
@@ -46,16 +44,17 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     let currentWorkspace = localStorage.getItem('currentWorkspace')
 
     const searchFunction = async () => {
-
-      let organization_id = `614679ee1a5607b13c00bcb7`;
-      let member_id = `614732f4f41cb684cc531fc9`;
+      let organization_id = `614679ee1a5607b13c00bcb7`
+      let member_id = `614732f4f41cb684cc531fc9`
       // console.log(member_id, organization_id, "pim");
       // console.log(search)
       axios
-        .get(`https://dm.zuri.chat/api/v1/org/${organization_id}/members/${member_id}/messages/search?keyword=${search}`)
+        .get(
+          `https://dm.zuri.chat/api/v1/org/${organization_id}/members/${member_id}/messages/search?keyword=${search}`
+        )
         .then(response => {
           console.log(response.data.results[0])
-           setMessages(response.data.results)
+          setMessages(response.data.results)
         })
         .catch(err => {
           console.log(err)
@@ -64,7 +63,6 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
     searchFunction()
   }, [search])
-
 
   useEffect(() => {
     const userdef = JSON.parse(sessionStorage.getItem('user'))
@@ -101,15 +99,41 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     getOrganizations()
   }, [setOrgId, user.image_url, setUser])
 
-  useEffect(() => {
-    GetUserInfo().then(res => setUserProfileImage(res['0'].image_url))
-  })
+  const UpdateInfo = () => {
+    GetUserInfo().then(res => {
+      setUserProfileImage(res['0'].image_url)
+      setUser(res['0'])
+    })
+  }
 
   useEffect(() => {
-    if (showModal) {
-      document.addEventListener('click', openModal)
-    }
-  })
+    UpdateInfo()
+  }, [])
+
+  // RTC subscription
+  const callbackFn = event => {
+    const session_user = JSON.parse(sessionStorage.getItem('user'))
+    if (
+      event.event === 'UpdateOrganizationMemberPic' ||
+      'UpdateOrganizationMemberStatus' ||
+      'UpdateOrganizationMemberProfile' ||
+      'UpdateOrganizationMemberPresence'
+    ) {
+      if (event.id === session_user['id']) {
+        UpdateInfo()
+      } else return
+    } else return
+  }
+
+  const currentWorkspace = localStorage.getItem('currentWorkspace')
+
+  SubscribeToChannel(currentWorkspace, callbackFn)
+
+  // useEffect(() => {
+  //   if (showModal===true) {
+  //     document.addEventListener('click', openModal)
+  //   }
+  // },[showModal])
 
   let toggleStatus = null
 
@@ -167,7 +191,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           id="sidebar_toggle"
           className={toggleStyle.sidebar_toggle_icon}
           style={{
-            top: '7rem',
+            top: '7rem'
           }}
         >
           <BsReverseLayoutTextSidebarReverse
@@ -175,7 +199,8 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
               margin: '0.6rem 0.6rem'
             }}
             size={18}
-            fill="#fff" />
+            fill="#fff"
+          />
         </div>
       </div>
       <div className="ms-4" style={{ width: '60%' }}>
@@ -189,8 +214,11 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           border={'#99999933'}
         />
       </div>
-      <ProfileImageContainer className="d-flex justify-content-end pe-3" style={{ width: '20%' }}>
-      {toggleStatus}
+      <ProfileImageContainer
+        className="d-flex justify-content-end pe-3"
+        style={{ width: '20%' }}
+      >
+        {toggleStatus}
         <ProfileImg
           src={userProfileImage ? userProfileImage : defaultAvatar}
           onClick={openModal}
@@ -220,18 +248,22 @@ const LogoDiv = styled.div`
   align-items: center;
 `
 const Logo = styled.img`
-@media (max-width: 1024px) {
-  width: 60%;
-}
-  @media (max-width: 768px) {
-    width: 70%;
+  @media (min-width: 1023px) {
+    // width: 50%;
   }
-  @media (max-width: 425px) {
-    width: 80%;
-  }
+  // @media (max-width: 768px) {
+  //   width: 60%;
+  // }
+  // @media (max-width: 425px) {
+  //   width: 80%;
+  // }
 `
 const ProfileImg = styled.img`
-height: '32px';
+  border-radius: 4px;
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+
   @media (max-width: 1024px) {
     height: 25.6px;
   }
@@ -242,15 +274,16 @@ height: '32px';
 const ProfileImageContainer = styled.div`
   position: relative;
 
-  img {
+  /* img {
+    object-fit: cover;
     border-radius: 4px;
     height: 30px;
     width: 30px;
-  }
+  } */
 `
 
 const HelpContainer = styled.div`
-display:none;
+  display: none;
 
   > .MuiSvgIcon-root {
     opacity: 0.5;
@@ -260,7 +293,7 @@ display:none;
     opacity: 0.5;
   }
   @media (max-width: 425px) {
-    display:none;
+    display: none;
   }
 `
 const ToggleStatus = styled.div`
