@@ -1,19 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 
-import styles from "../styles/cardList.module.css";
 
-// images
-import Mastercard from "../assets/Mastercard.svg";
-import { getUsersCard, ValidateCard } from "../Utils/Common";
+import styles from '../styles/cardList.module.css'
+
+import { ValidateCard } from "../Utils/Common";
 import toast from "react-hot-toast";
+import { CardContext } from "../../../context/CardContext";
 
 const CardList = () => {
-
-    const [cardList, setCardList] = React.useState([]);
-
-    useEffect(() => {
-        setCardList(getUsersCard());
-    }, [])
+    const {cardList, setCardList} = useContext(CardContext);
 
     const handleDelete = (cardNumber) => {
         setCardList(cardList.filter(card => card.cardNumber !== cardNumber));
@@ -36,8 +31,8 @@ const CardList = () => {
                                     {ValidateCard(card.cardType, styles.cardImg)}
 
                                     <div className={styles.cardInfo}>
-                                        <h6 className={styles.ownerName}>Chioma Folajomi</h6>
-                                        <p className={styles.otherInfo}>Mastercard ending with 7668•08.24</p>
+                                        <h6 className={styles.ownerName}>{card.cardName}</h6>
+                                        <p className={styles.otherInfo}>{card.cardType.charAt(0).toUpperCase() + card.cardType.slice(1)} ending with {card.cardNumber.slice(-4)}•{card.expireDate.replace("/", ".")}</p>
                                         <p className={styles.otherInfo}>Future payments will come from this card</p>
                                     </div>
                                 </div>
@@ -51,8 +46,8 @@ const CardList = () => {
                 </div>
             </div>
         }
-        </>
-    )
+    </>
+  )
 }
 
-export default CardList;
+export default CardList
