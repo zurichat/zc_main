@@ -33,14 +33,15 @@ function CompanyName({ input }) {
       )
       .then(res => {
         // Clears User Extracted Details from LS during Registraion
-
+      
         localStorage.clear('userUserPassword')
         localStorage.clear('newUserEmail')
-        setOrgId(res.data.data.InsertedID)
+        setOrgId(res.data.data.organization_id)
 
-// Automatic Org Name Renaming From Default to new Org Name
-        axios.patch(
-          `https://api.zuri.chat/organizations/${orgId}/name`,
+    // Automatic Org Name Renaming From Default to new Org Name
+       setTimeout(() => {
+          axios.patch(
+          `https://api.zuri.chat/organizations/${res.data.data.organization_id}/name`,
           {
             organization_name: orgName
           },
@@ -49,7 +50,8 @@ function CompanyName({ input }) {
               Authorization: 'Bearer ' + user.token
             }
           }
-        )
+        ).then(res => console.log(res))
+       }, 500);
 
         createDefaultChannel(orgId)
       })
@@ -88,10 +90,11 @@ function CompanyName({ input }) {
           <Link to={`${match.url}/step2`}>
             {' '}
             <button
+            disabled={orgName.length < 3 ? true : false}
               style={
-                input.length > 1
+                orgName.length > 1
                   ? { backgroundColor: '#00b87c', color: 'white' }
-                  : { backgroundColor: 'revert' }
+                  : { backgroundColor: 'revert', cursor : 'not-allowed'  }
               }
               onClick={createUserOrg}
             >
