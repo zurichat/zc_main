@@ -11,7 +11,7 @@
     "dev:control": "npm run dev --prefix control",
     "dev:sidebar": "npm run dev --prefix sidebar",
     "dev:plugin-header": "npm run dev --prefix pluginHeader",
-    "dev": "npm-run-all --parallel \"dev:*\" \"open\"",
+    "dev": "npm-run-all --parallel \"dev:*\" ",
     "check-format": "prettier -c .",
     "format": "prettier -w .",
     "lint": "eslint src --ext js",

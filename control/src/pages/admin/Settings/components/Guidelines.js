@@ -19,7 +19,7 @@ const myStyle = {
     fontSize: '14px',
     color: '#616061'
   },
-  button: {
+  btn: {
     backgroundColor: '#00B87C',
     color: '#ffffff',
     border: 'none'
@@ -44,7 +44,7 @@ const Guidelines = () => {
         rows="5"
         style={myStyle.inputfield}
       ></textarea>
-      <button type="button" className="btn btn-primary" style={myStyle.button}>
+      <button type="button" className="btn btn-primary" style={myStyle.btn}>
         Save
       </button>
     </>

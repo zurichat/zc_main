@@ -1,11 +1,9 @@
 import React from 'react'
 
 const myStyle = {
-  text: {
-    color: '#1d1c1d',
-    fontWeight: '600',
-    fontSize: '18px',
-    padding: '5px'
+  inputfield: {
+    margin: '5px 0',
+    width: '50%'
   },
   btn: {
     backgroundColor: '#00B87C',
@@ -16,7 +14,7 @@ const myStyle = {
 
 const modifyOrganizationSettings = () => {
   let organizationid = '6158c1ac3a1e49b1e5165df3'
-  let showDPr = false
+  let defaultchannels = ''
   let token = localStorage.getItem('token')
   axios.defaults.baseURL = 'https://api.zuri.chat'
   axios.defaults.headers.common = { Authorization: `bearer ${token}` }
@@ -24,27 +22,31 @@ const modifyOrganizationSettings = () => {
     method: 'patch',
     url: '/organizations/' + organizationid + '/settings',
     data: {
-      displaypronouns: showDPr
+      defaultchannels: defaultchannels
     }
   })
 }
 
-const DisplayPronoun = () => {
+const DefaultChannels = () => {
   return (
     <>
-      <input type="checkbox" name="displayname" id="" />
-      <label style={myStyle.text}>Show pronouns in profile</label>
-      <br />
+      <input
+        type="text"
+        class="form-control"
+        id=""
+        placeholder="keep all files"
+        style={myStyle.inputfield}
+      />
       <button
         type="button"
         className="btn btn-primary"
         style={myStyle.btn}
         onClick={modifyOrganizationSettings}
       >
-        Save
+        See Paid Plans
       </button>
     </>
   )
 }
 
-export default DisplayPronoun
+export default DefaultChannels
