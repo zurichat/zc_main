@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import userOrganizations from './data'
 import reducer from './workspaceReducer'
 import axios from 'axios'
+import { goToDefaultChannel } from '../../../api/channels'
 
 export const WorkspaceContext = React.createContext()
 
@@ -68,7 +69,8 @@ export const WorkspaceProvider = ({ children }) => {
 
     setTimeout(() => {
       dispatch({ type: 'PAGE_REDIRECT' })
-      history.push('/home')
+      goToDefaultChannel()
+      // history.push('/home')
     }, 1000)
   }
 
