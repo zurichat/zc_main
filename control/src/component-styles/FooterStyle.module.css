@@ -108,6 +108,10 @@ a {
     padding: 10px;
     padding-bottom: 0;
   }
+
+  .menu a:hover {
+    color: #00b87c;
+  }
   .social {
     padding-left: 10px;
   }
@@ -119,5 +123,9 @@ a {
   .menu {
     display: grid;
     grid-template-columns: 50% 50%;
+  }
+
+  .menu a:hover {
+    color: #00b87c;
   }
 }
