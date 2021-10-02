@@ -118,6 +118,7 @@
   top: 60%;
   right: 2.5%;
   width: 100%;
+  padding-bottom: 1rem;
   max-width: 300px;
   z-index: 9999;
   border: 1px solid #e5e5e5;
