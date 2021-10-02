@@ -5,7 +5,8 @@ import styles from '../style/workspace.module.css'
 const WorkspaceFooter = () => {
   return (
     <footer className={`${styles.workspace_footer}`}>
-      <Link to="/login">Or login to a new workspace here</Link>
+      <p>Not seeing your workspace?</p>
+      <Link to="/login">Try a different email</Link>
     </footer>
   )
 }
