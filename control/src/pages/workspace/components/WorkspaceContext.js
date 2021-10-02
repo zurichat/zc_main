@@ -31,12 +31,14 @@ export const WorkspaceProvider = ({ children }) => {
   }, [state.user.email])
 
   const getOrganizations = async () => {
+    const user = JSON.parse(sessionStorage.getItem('user'))
+
     try {
       const response = await axios.get(
-        `https://api.zuri.chat/users/${state.user.email}/organizations`,
+        `https://api.zuri.chat/users/${user.email}/organizations`,
         {
           headers: {
-            Authorization: `Bearer ${state.user.token}`
+            Authorization: `Bearer ${user.token}`
           }
         }
       )

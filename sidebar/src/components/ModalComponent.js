@@ -5,18 +5,21 @@ import TotalMessages from '../assets/images/TotalMessages.svg'
 import { RiArrowRightSLine as Arrow } from 'react-icons/ri'
 import { faClosedCaptioning } from '@fortawesome/free-solid-svg-icons'
 
-const ModalComponent = ({ isOpen }) => {
-  // const isOpen = true;
+const ModalComponent = ({ isOpen, toggleOpenInvite }) => {
+  return (
+    <section className={`${isOpen ? styles.open : styles.topbarModal}`}>
+      <div className={styles.sectionOne}>The BrandHub</div>
 
-  const [hoverRef, isHovered] = useHover()
-  const [hoverRef2, isHovered2] = useHover()
+      <div className={styles.sectionOne} onClick={toggleOpenInvite}>
+        Invite people to HNGi8
+      </div>
 
-  function useHover() {
-    const [value, setValue] = useState(false)
+      <div className={styles.sectionOne}>Create a new Workspace</div>
 
-    const ref = useRef(null)
-
-    const handleMouseOver = () => setValue(true)
+      <div className={styles.sectionOne}>
+        Prefrence <br />
+        Customize HNGi8
+      </div>
 
     const handleMouseOut = () => setValue(false)
 
