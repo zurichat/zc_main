@@ -1,22 +1,25 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import Loader from 'react-loader-spinner'
 
 import styles from '../styles/adminOverview.module.css'
 import { authAxios } from '../Utils/Api'
 
-import { getToken, getUser, getCurrentWorkspace } from '../Utils/Common'
+import { getUser, getCurrentWorkspace } from '../Utils/Common'
 
 // icons
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 import { FiCheck } from 'react-icons/fi'
+import { CardContext } from '../../../context/CardContext'
 
 const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
   const currentWorkspace = getCurrentWorkspace()
+  const { token, setToken } = useContext(CardContext)
   const user = getUser()
   const [workspaceData, setWorkspaceData] = React.useState({})
   const [loading, setLoading] = React.useState(false)
-  console.log(workspaceData)
+  const [modal, setModal] = React.useState(false)
+  const [orgSize, setOrgSize] = React.useState(0)
 
   useEffect(() => {
     if (currentWorkspace) {
@@ -24,13 +27,25 @@ const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
         .get(`/organizations/${currentWorkspace}`)
         .then(res => {
           setWorkspaceData(res.data.data)
-          console.log(res.data.data)
+          setToken(res.data.data.tokens)
         })
         .catch(err => {
           console.log(err)
         })
     }
-  }, [currentWorkspace])
+  }, [currentWorkspace, modal])
+
+  const openModal = () => {
+    authAxios
+      .get(`/organizations/${currentWorkspace}/members`)
+      .then(res => {
+        setOrgSize(res.data.data.length)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    setModal(!modal)
+  }
 
   const handlePlan = () => {
     setLoading(true)
@@ -43,11 +58,11 @@ const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
         toast.success(res.data.message, {
           position: 'top-center'
         })
+        setModal(false)
       })
       .catch(err => {
         setLoading(false)
-        console.log(err)
-        toast.error('Oops, something went wrong check and try again', {
+        toast.error(err?.response?.data?.message, {
           position: 'top-center'
         })
       })
@@ -55,8 +70,33 @@ const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
 
   return (
     <div className={styles.plansContainer}>
+      {/* modal */}
+      <div className={modal ? styles.modalActive : styles.modal}>
+        <div onClick={() => setModal(!modal)} className={styles.overlay} />
+        <div className={styles.modalContainer}>
+          <h6 className={styles.modalSubHead}>{token} Tokens left</h6>
+          <h3 className={styles.modalHeading}>
+            {orgSize * 10} Tokens will be deducted from your wallet
+          </h3>
+          <p className={styles.modalParagraph}>
+            10 token will be deducted per every member in your organization, Are
+            you sure you want to continue?
+          </p>
+          <div className={styles.buttonWrapper}>
+            <button
+              onClick={() => setModal(!modal)}
+              className={styles.btnSecondary}
+            >
+              Cancel
+            </button>
+            <button onClick={handlePlan} className={styles.btnPrimary}>
+              Upgrade
+            </button>
+          </div>
+        </div>
+      </div>
       <div className={styles.tokenAmount}>
-        <span>{workspaceData.tokens} &nbsp;</span>
+        <span>{token} &nbsp;</span>
         tokens
         <AiOutlineInfoCircle className={styles.infoIcon} />
       </div>
@@ -70,7 +110,7 @@ const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
         </h1>
         <div className={styles.buttonWrapper}>
           <button
-            onClick={handlePlan}
+            onClick={openModal}
             disabled={workspaceData.version === 'pro'}
             className={styles.mainCta}
           >
@@ -129,7 +169,7 @@ const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
         <div className={styles.buttonCont}>
           <button className={styles.btnSecondary}>Learn More</button>
           <button
-            onClick={handlePlan}
+            onClick={openModal}
             disabled={workspaceData.version === 'pro'}
             className={styles.btnPrimary}
           >

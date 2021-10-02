@@ -54,6 +54,7 @@ const TopbarModal = ({ members }) => {
             }
           })
           .then(response => {
+            //Get Current Workspace Or Organization Name
             localStorage.setItem('orgName', response.data.data.name)
             // let userData = { currentWorkspace, ...response.data.data }
           })
@@ -71,20 +72,7 @@ const TopbarModal = ({ members }) => {
     }
   }
   const logout = () => {
-    axios({
-      method: 'post',
-      url: `https://api.zuri.chat/auth/logout`,
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    })
-      .then(res => {
-        console.log(res)
-        window.location.href = '/signout'
-      })
-      .catch(err => {
-        console.error(err)
-      })
+    window.location.href = '/signout'
   }
   const [pause, setPause] = useState(false)
   const [statusModal, setStatusModal] = useState(false)
