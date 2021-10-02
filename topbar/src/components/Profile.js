@@ -68,7 +68,7 @@ const Profile = () => {
       </div>
       <div className={styles.content}>
         <img
-          className={styles.userAvatar}
+          className={`avatar ${styles.userAvatar}`}
           src={userProfileImage !== '' ? userProfileImage : defaultAvatar}
           alt="avatar"
         />
