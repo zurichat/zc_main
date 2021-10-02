@@ -10,12 +10,12 @@ import defaultAvatar from './assets/images/avatar_vct.svg'
 import HelpIcon from './assets/images/help-icon.svg'
 import TopbarModal from './components/TopbarModal'
 import HelpModal from './components/HelpModal'
-// import UserForm from '../../control/src/pages/ReportFeature/User/Form'
-// import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
+import UserForm from '../../control/src/pages/ReportFeature/User/Form'
+import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
 import { authAxios } from './utils/Api'
 import Profile from './components/Profile'
 import Loader from 'react-loader-spinner'
-import { GetUserInfo } from '@zuri/control'
+import { GetUserInfo, SubscribeToChannel } from '@zuri/control'
 import toggleStyle from './styles/sidebartoggle.module.css'
 import { BsReverseLayoutTextSidebarReverse } from 'react-icons/bs'
 
@@ -60,9 +60,35 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     getOrganizations()
   }, [setOrgId, user.image_url, setUser])
 
+  const UpdateInfo = () => {
+    GetUserInfo().then(res => {
+      setUserProfileImage(res['0'].image_url)
+      setUser(res['0'])
+    })
+  }
+
   useEffect(() => {
-    GetUserInfo().then(res => setUserProfileImage(res['0'].image_url))
-  })
+    UpdateInfo()
+  }, [])
+
+  // RTC subscription
+  const callbackFn = event => {
+    const session_user = JSON.parse(sessionStorage.getItem('user'))
+    if (
+      event.event === 'UpdateOrganizationMemberPic' ||
+      'UpdateOrganizationMemberStatus' ||
+      'UpdateOrganizationMemberProfile' ||
+      'UpdateOrganizationMemberPresence'
+    ) {
+      if (event.id === session_user['id']) {
+        UpdateInfo()
+      } else return
+    } else return
+  }
+
+  const currentWorkspace = localStorage.getItem('currentWorkspace')
+
+  SubscribeToChannel(currentWorkspace, callbackFn)
 
   let toggleStatus = null
 
@@ -81,32 +107,6 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         </ToggleStatus>
       )
   }
-  //Handle sidebar on mobile
-  const sidebar = document.getElementById(
-    'single-spa-application:@zuri/sidebar'
-  )
-  const zc_spa_body = document.querySelector('body')
-  const sidebar_toggle = document.querySelector('#sidebar_toggle')
-  const openSidebar = () => {
-    sidebar.style.display = 'block'
-    sidebar.style.left = '0'
-    sidebar.style.width = '200px'
-    sidebar_toggle.style.display = 'none'
-  }
-
-  zc_spa_body.addEventListener('click', () => {
-    if (window.outerWidth <= 768) {
-      if (sidebar !== null) {
-        sidebar.style.display = 'none'
-        sidebar_toggle.style.display = 'block'
-      }
-    } else {
-      if (sidebar !== null) {
-        sidebar.style.display = 'block'
-        sidebar_toggle.style.display = 'none'
-      }
-    }
-  })
 
   return (
     <TopNavBarBase>
@@ -114,13 +114,6 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         <a href="#">
           <Logo src={zurichatlogo} alt="zuri chat logo" />
         </a>
-        <div
-          onClick={openSidebar}
-          id="sidebar_toggle"
-          className={toggleStyle.sidebar_toggle_icon}
-        >
-          <BsReverseLayoutTextSidebarReverse size={18} fill="#fff" />
-        </div>
         {/* <LogoName>ZURI</LogoName> */}
       </LogoDiv>
       <BaseInput
@@ -132,6 +125,15 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         placeholder="Search here"
         border={'#99999933'}
       />
+
+      {/* <HelpContainer>
+        <HelpIcons onClick={() => setHelpModal(true)} />
+      </HelpContainer> */}
+      {/* {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''} */}
+
+      <UserForm />
+      <AdminForm />
+
       <HelpContainer>
         <img
           src={HelpIcon}
@@ -144,18 +146,17 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
       {/* <UserForm /> */}
       {/* <AdminForm /> */}
+
       <ProfileImageContainer>
         {toggleStatus}
-        
-          <img
-            src={userProfileImage  ? userProfileImage : defaultAvatar}
-            onClick={openModal}
-            role="button"
-            className="avatar-img"
-            alt="user profile avatar"
-          />
-        
-        
+
+        <img
+          src={userProfileImage ? userProfileImage : defaultAvatar}
+          onClick={openModal}
+          role="button"
+          className="avatar-img"
+          alt="user profile avatar"
+        />
       </ProfileImageContainer>
 
       <Profile />
@@ -211,6 +212,7 @@ const ProfileImageContainer = styled.div`
     border-radius: 4px;
     height: 30px;
     width: 30px;
+    object-fit: cover;
   }
 `
 
@@ -223,7 +225,7 @@ const HelpContainer = styled.div`
     opacity: 0.5;
   }
   @media (max-width: 425px) {
-    display:none;
+    display: none;
   }
 `
 const ToggleStatus = styled.div`
