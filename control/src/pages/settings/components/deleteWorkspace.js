@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import '../styles/deleteWorkspace.css';
+import '../styles/deleteWorkspace.module.css';
 import del from "../assets/delete.svg";
 
 const Delete = () => {

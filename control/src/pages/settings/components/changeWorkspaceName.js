@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/changeWoekspaceName.css";
+import "../styles/changeWoekspaceName.module.css";
 import logo from "../assets/default.svg";
 function App() {
 
