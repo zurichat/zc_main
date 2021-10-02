@@ -1,6 +1,7 @@
 import contactStyle from '../styles/contactMain.module.css'
 import ContactUs from './ContactUsImg.svg'
 import FAQselected from './FAQSelected.js'
+import DiscoverMore from './DiscoverMore'
 
 const contactTitle = () => {
   return (
@@ -20,6 +21,7 @@ const contactTitle = () => {
 
         <img className="d-none d-xl-flex" src={ContactUs} alt="contact us" />
       </div>
+      <DiscoverMore />
     </div>
   )
 }

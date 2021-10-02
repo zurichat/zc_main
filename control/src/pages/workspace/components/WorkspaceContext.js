@@ -9,7 +9,7 @@ export const WorkspaceContext = React.createContext()
 const initialState = {
   loading: false,
   user: JSON.parse(sessionStorage.getItem('user')) || {},
-  organizations: [],
+  organizations: null,
   error: '',
   pageLoading: false
 }
@@ -31,16 +31,22 @@ export const WorkspaceProvider = ({ children }) => {
   }, [state.user.email])
 
   const getOrganizations = async () => {
+    const user = JSON.parse(sessionStorage.getItem('user'))
+
     try {
       const response = await axios.get(
-        `https://api.zuri.chat/users/${state.user.email}/organizations`,
+        `https://api.zuri.chat/users/${user.email}/organizations`,
         {
           headers: {
-            Authorization: `Bearer ${state.user.token}`
+            Authorization: `Bearer ${user.token}`
           }
         }
       )
       if (response.status !== 200) {
+        dispatch({
+          type: 'ACTION_FAILED',
+          error: `Unable to fetch list of wokspaces, status code: ${response.status}`
+        })
         throw Error(
           `Unable to fetch list of wokspaces, status code: ${response.status}`
         )
@@ -63,7 +69,7 @@ export const WorkspaceProvider = ({ children }) => {
     setTimeout(() => {
       dispatch({ type: 'PAGE_REDIRECT' })
       history.push('/home')
-    }, 3000)
+    }, 1000)
   }
 
   return (
