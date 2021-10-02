@@ -1,30 +1,28 @@
-import React from "react";
-import usePushNotifications from "./browserNotification3";
-
-
+import React from 'react'
+import usePushNotifications from './browserNotification3'
 
 export default function PushNotificationDemo() {
   const {
     userConsent,
     pushNotificationSupported,
     // userSubscription,
-    onClickAskUserPermission,
+    onClickAskUserPermission
     // onClickSusbribeToPushNotification,
     // onClickSendSubscriptionToPushServer,
     // pushServerSubscriptionId,
     // onClickSendNotification
-  } = usePushNotifications();
+  } = usePushNotifications()
 
-  const isConsentGranted = userConsent === "granted";
+  const isConsentGranted = userConsent === 'granted'
 
   return (
     <main>
-
-      <button enabled={!pushNotificationSupported || isConsentGranted} onClick={onClickAskUserPermission}>
-        {isConsentGranted ? "Show Notifications" : "Show Notifications"} 
+      <button
+        enabled={!pushNotificationSupported || isConsentGranted}
+        onClick={onClickAskUserPermission}
+      >
+        {isConsentGranted ? 'Show Notifications' : 'Show Notifications'}
       </button>
-
-     
     </main>
-  );
+  )
 }

@@ -113,7 +113,6 @@ const DropDown = ({ itemName, items }) => {
                         <RoomOptions isClicked={isClicked} />
                       </div>
                     </div>
-                    
                   </a>
                 </li>
               )

@@ -24,16 +24,14 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
     const handleMouseOut = () => setValue(false)
 
     useEffect(() => {
-        const node = ref.current
-        if (node) {
-          node.addEventListener('mouseover', handleMouseOver)
-          node.addEventListener('mouseout', handleMouseOut)
-        }
-        
-      },[[ref.current]]
-      );
-      return [ref, value];
-    }
+      const node = ref.current
+      if (node) {
+        node.addEventListener('mouseover', handleMouseOver)
+        node.addEventListener('mouseout', handleMouseOut)
+      }
+    }, [[ref.current]])
+    return [ref, value]
+  }
   return (
     <section className={`${isOpen ? styles.open : styles.modalCon}`}>
       <div
@@ -65,12 +63,12 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
       <hr className={styles.modalDivider} />
       <div className={` d-flex flex-column ${styles.modalSection}`}>
         <div>
-          <p
-          onClick={toggleOpenInvite}
-          >Invite people to {workSpace.name}</p>
+          <p onClick={toggleOpenInvite}>Invite people to {workSpace.name}</p>
         </div>
         <div>
-        <p><a href='/createworkspace'>Create a new Workspace</a></p>
+          <p>
+            <a href="/createworkspace">Create a new Workspace</a>
+          </p>
         </div>
       </div>
       <hr className={styles.modalDivider} />
@@ -120,7 +118,10 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
       <hr className={styles.modalDivider} />
       <div className={styles.modalSection}>
         <div>
-         <p> <a href='/signout'>Sign Out</a></p>
+          <p>
+            {' '}
+            <a href="/signout">Sign Out</a>
+          </p>
         </div>
       </div>
       <hr className={styles.modalDivider} />

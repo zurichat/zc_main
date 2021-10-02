@@ -7,14 +7,14 @@
 }
 
 .history_btn {
-  border: 1px solid #A1A1A1;
+  border: 1px solid #a1a1a1;
   background-color: #fff;
   border-radius: 4px;
   padding: 0.75rem;
   font-size: calc(1.125rem * var(--type-scale, 1));
   line-height: calc(1.4625rem * var(--height-scale, 1));
   font-weight: 600;
-  color: #1D1C1D;
+  color: #1d1c1d;
 }
 
 .history_tab_container > form {
@@ -43,7 +43,7 @@
   font-size: calc(1.125rem * var(--type-scale, 1));
   line-height: calc(1.4625rem * var(--height-scale, 1));
   font-weight: bold;
-  color: #1D1C1D;
+  color: #1d1c1d;
 }
 
 .history_content {
