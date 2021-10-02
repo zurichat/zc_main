@@ -109,6 +109,7 @@ document.title = test + appendZuri;
       /* justify-content: center; */
       align-items: center;
       background-color: #fff;
+      z-index: 999999;
     }
 
     div[id*='zuri/sidebar']::-webkit-scrollbar {
@@ -119,7 +120,7 @@ document.title = test + appendZuri;
       width: 20%;
       /* margin-right: 2%; */
       height: 94vh;
-      overflow-y: scroll;
+      /* overflow-y: scroll; */
       /* Hide scrollbar for IE and Edge */
       -ms-overflow-style: none;
       /* Hide scrollbar for Firefox */
@@ -128,7 +129,7 @@ document.title = test + appendZuri;
       top: 6vh;
       left: 0;
       background-color: #fff;
-      /* z-index: 99999; */
+      z-index: 99999;
 
     }
 
@@ -137,6 +138,7 @@ document.title = test + appendZuri;
       position: absolute;
       top: 6vh;
       right: 0;
+      z-index: unset;
     }
 
     @media (min-width: 1441px) {
@@ -159,6 +161,7 @@ document.title = test + appendZuri;
       div[id*='zuri-plugin'] {
         top: 5vh;
         right: 0;
+        z-index: unset;
       }
     }
 
@@ -170,6 +173,7 @@ document.title = test + appendZuri;
 
       div[id*='zuri-plugin'] {
         width: 100%;
+        z-index: unset;
       }
     }
 
