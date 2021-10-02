@@ -243,6 +243,10 @@
   height: 30px;
   position: relative;
 }
+.pstatus{
+  margin-right: 60px;
+  font-size: 16px;
+}
 
 /* The section of the picker */
 

@@ -25,10 +25,10 @@ const EditProfile = () => {
     pronouns: user.pronouns,
     role: user.role,
     image_url: user.image_url,
-    bio: '',
+    bio: user.bio,
     phone: user.phone,
     prefix: '',
-    timezone: '',
+    timezone: user.timezone,
     twitter: '',
     facebook: '',
     loading: false,
@@ -128,28 +128,29 @@ const EditProfile = () => {
       bio: state.bio,
       timeZone: state.timezone,
       // socials: state.socials[0],
-      // socials: state.socials[1]
+      twitter: state.twitter,
+      facebook: state.facebook,
       // tag: state.tag,
       // text: state.text,
       // expiry_time: state.expiry_time,
-      socials: [
-        {
-          title: 'twitter',
-          url: state.url
-        },
-        {
-          title: 'facebook',
-          url: state.url
-        },
-        {
-          title: 'linkedin',
-          url: state.linkedin_url
-        },
-        {
-          title: 'instagram',
-          url: state.facebook_url
-        }
-      ]
+      // socials: [
+      //   {
+      //     title: 'twitter',
+      //     url: state.url
+      //   },
+      //   {
+      //     title: 'facebook',
+      //     url: state.url
+      //   },
+      //   {
+      //     title: 'linkedin',
+      //     url: state.linkedin_url
+      //   },
+      //   {
+      //     title: 'instagram',
+      //     url: state.facebook_url
+      //   }
+      // ]
     }
 
     authAxios
@@ -276,8 +277,8 @@ const EditProfile = () => {
                 </label>
                 <input
                   type="text"
-                  onChange={e => setState({ ...state, bio: e.target.value })}
-                  defaultValue={state.bio}
+                  onChange={e => setState({ ...state, what: e.target.value })}
+                  defaultValue={state.what}
                   className="input"
                   id="bio"
                   name="bio"
