@@ -49,11 +49,12 @@
 
 .orgTitle {
   font-weight: bold;
-  font-size: 1.125em;
-  line-height: 28px;
+  font-size: 15px;
+  /* line-height: 28px; */
 }
 
 .orgHeader {
+  
   cursor: pointer;
 }
 
@@ -90,7 +91,7 @@
 }
 
 .modalContainer {
-  z-index: 10000;
+  z-index: 1000;
   position: relative;
 }
 
