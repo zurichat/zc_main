@@ -5,7 +5,7 @@ import Confirm from './Confirm'
 import Success from './Success'
 import Modal from 'react-bootstrap/Modal'
 import { VscReport } from 'react-icons/vsc'
-import { BsFillXCircleFill } from 'react-icons/bs'
+import { AiOutlineClose } from 'react-icons/ai'
 
 export const AdminForm = props => {
   const statedic = {
@@ -47,7 +47,10 @@ export const AdminForm = props => {
   //   const [listComplaints, setListComplaints] = useState(JSON.parse(usersComplaints));
 
   const [show, setShow] = useState(false)
-  const handleClose = () => setShow(false)
+  const handleClose = () => {
+    setState({ ...state, step: 1 })
+    setShow(false)
+  }
   const handleShow = () => setShow(true)
 
   const [detailId, setDetailId] = useState(0)
@@ -114,7 +117,11 @@ export const AdminForm = props => {
       >
         <Modal.Header>
           <Modal.Title className="text-success">Zurichat Watches</Modal.Title>
-          <BsFillXCircleFill variant="secondary" onClick={handleClose} />
+          <AiOutlineClose
+            color="green"
+            variant="secondary"
+            onClick={handleClose}
+          />
         </Modal.Header>
         {step === 1 ? (
           <AdminPage
