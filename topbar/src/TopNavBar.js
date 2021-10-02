@@ -16,6 +16,8 @@ import { authAxios } from './utils/Api'
 import Profile from './components/Profile'
 import Loader from 'react-loader-spinner'
 import { GetUserInfo } from '@zuri/control'
+import toggleStyle from './styles/sidebartoggle.module.css'
+import { BsReverseLayoutTextSidebarReverse } from 'react-icons/bs'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { openModal, presence, setPresence } = useContext(TopbarContext)
@@ -81,6 +83,32 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         </ToggleStatus>
       )
   }
+  //Handle sidebar on mobile
+  const sidebar = document.getElementById(
+    'single-spa-application:@zuri/sidebar'
+  )
+  const zc_spa_body = document.querySelector('body')
+  const sidebar_toggle = document.querySelector('#sidebar_toggle')
+  const openSidebar = () => {
+    sidebar.style.display = 'block'
+    sidebar.style.left = '0'
+    sidebar.style.width = '200px'
+    sidebar_toggle.style.display = 'none'
+  }
+
+  zc_spa_body.addEventListener('click', () => {
+    if (window.outerWidth <= 768) {
+      if (sidebar !== null) {
+        sidebar.style.display = 'none'
+        sidebar_toggle.style.display = 'block'
+      }
+    } else {
+      if (sidebar !== null) {
+        sidebar.style.display = 'block'
+        sidebar_toggle.style.display = 'none'
+      }
+    }
+  })
 
   return (
     <TopNavBarBase>
@@ -88,6 +116,13 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         <a href="#">
           <Logo src={zurichatlogo} alt="zuri chat logo" />
         </a>
+        <div
+          onClick={openSidebar}
+          id="sidebar_toggle"
+          className={toggleStyle.sidebar_toggle_icon}
+        >
+          <BsReverseLayoutTextSidebarReverse size={18} fill="#fff" />
+        </div>
         {/* <LogoName>ZURI</LogoName> */}
       </LogoDiv>
       <BaseInput
@@ -109,29 +144,28 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       <AdminForm />
 
       <HelpContainer>
-      <img
-            src={HelpIcon}
-            role="button"
-            alt="user profile avatar"
-         onClick={() => setHelpModal(true)} />
+        <img
+          src={HelpIcon}
+          role="button"
+          alt="user profile avatar"
+          onClick={() => setHelpModal(true)}
+        />
       </HelpContainer>
       {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''}
-      
+
       {/* <UserForm /> */}
       {/* <AdminForm /> */}
 
       <ProfileImageContainer>
         {toggleStatus}
-        
-          <img
-            src={userProfileImage  ? userProfileImage : defaultAvatar}
-            onClick={openModal}
-            role="button"
-            className="avatar-img"
-            alt="user profile avatar"
-          />
-        
-        
+
+        <img
+          src={userProfileImage ? userProfileImage : defaultAvatar}
+          onClick={openModal}
+          role="button"
+          className="avatar-img"
+          alt="user profile avatar"
+        />
       </ProfileImageContainer>
 
       <Profile />
@@ -199,7 +233,7 @@ const HelpContainer = styled.div`
     opacity: 0.5;
   }
   @media (max-width: 425px) {
-    display:none;
+    display: none;
   }
 `
 const ToggleStatus = styled.div`
