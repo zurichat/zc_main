@@ -1,0 +1,290 @@
+.plansContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.modal,
+.modalActive {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalActive {
+  display: flex;
+}
+
+.overlay {
+  position: fixed;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalContainer {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 622px;
+  background: #fff;
+  padding: 1.5rem;
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+}
+
+.modalSubHead {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #333;
+  text-align: right;
+  padding: 0;
+  margin: 0;
+}
+
+.modalHeading {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.modalParagraph {
+  font-size: 1rem;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.tokenAmount {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: #333;
+}
+
+.tokenAmount span {
+  font-weight: 600;
+}
+
+.infoIcon {
+  font-size: 1.5rem;
+  color: #00b87c;
+  margin-left: 0.65rem;
+}
+
+.plansContent {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.plansHeader {
+  font-size: 1.375rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+  color: #333;
+  text-align: center;
+}
+
+.plansHeader .bold {
+  font-weight: 700;
+}
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonWrapper .mainCta {
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  background: #00b87c;
+  color: #fff;
+  padding: 0.75rem 1.375rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+}
+
+.buttonWrapper .mainCta:hover {
+  background: #029161;
+  transition: 0.3s ease-in-out all;
+}
+
+.plansDetails {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.subHeading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.planList {
+  width: 100%;
+}
+
+.listItem,
+.listItemGreen {
+  display: flex;
+  align-items: flex-start;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 0.75rem;
+}
+
+.listItemGreen {
+  color: #00b87c;
+  margin-left: 1.5rem;
+  cursor: pointer;
+}
+
+.listItem:last-child {
+  margin-bottom: 0.3rem;
+}
+
+.checkIcon {
+  font-size: 1.125rem;
+  color: #00b87c;
+  margin-right: 11px;
+}
+
+.getToken {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333;
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.getToken .cta {
+  color: #00b87c;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.planCta {
+  width: 100%;
+  max-width: 658px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.6rem 0;
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+  margin: 0 auto;
+  margin-top: 2.1rem;
+}
+
+.info {
+  margin-right: 1rem;
+}
+
+.infoHeader {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
+.infoBody {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.btnSecondary,
+.btnPrimary {
+  font-size: 1rem;
+  padding: 0.75rem 0.625rem;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background: none;
+}
+
+.btnSecondary {
+  border: 1px solid #00b87c;
+  color: #00b87c;
+  margin-right: 0.5rem;
+}
+
+.btnSecondary:hover {
+  background: #00b87c;
+  color: #fff;
+  transition: 0.3s ease-in-out all;
+}
+
+.btnPrimary {
+  background: #00b87c;
+  color: #fff;
+}
+
+.btnPrimary:hover {
+  background: #029161;
+  transition: 0.3s ease-in-out all;
+}
+
+.buttonWrapper .mainCta:disabled,
+.buttonWrapper .mainCta:disabled:hover,
+.buttonWrapper .mainCta:disabled:focus,
+.buttonWrapper .mainCta:disabled:active,
+.btnPrimary:disabled,
+.btnPrimary:disabled:hover,
+.btnPrimary:disabled:active,
+.btnPrimary:disabled:focus {
+  background: rgba(0, 184, 124, 0.5);
+}
+
+.footer {
+  margin-top: 2rem;
+}
+
+.footerText,
+.footerLink {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333;
+}
+
+.footerLinkSpan {
+  color: #00b87c;
+}
+
+@media (max-width: 768px) {
+  .planCta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .infoHeader {
+    text-align: center;
+  }
+
+  .infoBody {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}

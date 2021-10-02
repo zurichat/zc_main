@@ -1,22 +1,56 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import styles from '../styles/Drop.module.css'
 import { TiArrowSortedDown } from 'react-icons/ti'
 import { navigateToUrl } from 'single-spa'
 import hash from '../assets/images/hash.svg'
 import { AiOutlinePlusCircle } from 'react-icons/ai'
+import Options from './RoomOptions'
+import RoomOptions from './RoomOptions'
 
 const DropDown = ({ itemName, items }) => {
   const [isOpen, setOpen] = useState(false)
-  // const [items, setItems] = useState(data);
+  // const [items,   setItems] = useState(data);
   const [selectedItem, setSelectedItem] = useState(null)
 
   const toggleDropdown = () => setOpen(!isOpen)
 
-  console.log(items);
   const handleItemClick = id => {
     selectedItem == id ? setSelectedItem(null) : setSelectedItem(id)
   }
+
+  const [click, isClicked] = useClick()
+
+  function useClick() {
+    const [value, setValue] = useState(false)
+
+    const ref = useRef(null)
+
+    const RightClick = e => {
+      e.preventDefault()
+      setValue(true)
+    }
+    const CloseClick = () => setValue(false)
+
+    useEffect(
+      () => {
+        const node = ref.current
+        if (node) {
+          node.addEventListener('contextmenu', RightClick)
+          document.addEventListener('click', CloseClick)
+
+          return () => {
+            node.removeEventListener('contextmenu', RightClick)
+            document.removeEventListener('click', CloseClick)
+          }
+        }
+      },
+      [ref.current] // Recall only if ref changes
+    )
+
+    return [ref, value]
+  }
+
   return (
     <div className={`row p-0 ${styles.dropDown} text-decoration-none`}>
       <div
@@ -32,21 +66,8 @@ const DropDown = ({ itemName, items }) => {
           className={`w-100 d-flex align-items-center justify-content-between`}
         >
           <p className={`mb-0 ${styles.dropDown__title}`}> {itemName} </p>
-          {(items && items.group_name.toLowerCase() === 'dm') ||
-          (items && items.group_name.toLowerCase() === 'channel') || 
-          (items && items.group_name.toLowerCase() === 'company files') ||
-          (items && items.group_name.toLowerCase() === 'active todos')  ||
-          (items && items.group_name.toLowerCase() === 'chess games') ||
-          (items && items.group_name.toLowerCase() === 'music') ||
-          (items && items.group_name.toLowerCase() === 'goals')  ? (
-            <a
-              href={
-                items && items.group_name.toLowerCase() === 'dm'
-                  ? '/dm'
-                  : '/channels'
-              }
-              onClick={navigateToUrl}
-            >
+          {items.button_url ? (
+            <a href={items.button_url} onClick={navigateToUrl}>
               <AiOutlinePlusCircle className={`${styles.icon}`} />
             </a>
           ) : null}
@@ -65,8 +86,11 @@ const DropDown = ({ itemName, items }) => {
                     className={`col-12 d-flex align-items-center ${styles.item_name}`}
                     href={room.room_url}
                     onClick={navigateToUrl}
+                    ref={click}
+                    style={{ textDecoration: 'none' }}
                   >
                     <img
+                      ref={click}
                       className={`${styles.item__image}`}
                       src={room.room_image || hash.toString()}
                       onError={e => (e.target.src = hash.toString())}
@@ -74,6 +98,9 @@ const DropDown = ({ itemName, items }) => {
                     />
                     <p className={`mb-0 ${styles.dropDown__name}`}>
                       {room.room_name}
+                      <div className={`${styles.optionsContainer}`}>
+                        <RoomOptions isClicked={isClicked} />
+                      </div>
                     </p>
                   </a>
                 </li>

@@ -39,27 +39,44 @@ const TopbarModal = ({ members }) => {
     setPresence
   } = state
 
-  const token = sessionStorage.getItem('token')
+
+  const currentWorkspace = localStorage.getItem('currentWorkspace')
+  let token = sessionStorage.getItem('token')
+  
+
+  useEffect(() => {
+    let user = JSON.parse(sessionStorage.getItem('user'))
+
+    if ((user && token) !== null) {
+      try {
+        axios
+          .get(`https://api.zuri.chat/organizations/${currentWorkspace}`, {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          })
+          .then(response => {
+            //Get Current Workspace Or Organization Name
+            localStorage.setItem('orgName', response.data.data.name)
+            // let userData = { currentWorkspace, ...response.data.data }
+          })
+      } catch (err) {
+        console.log(err)
+      }
+    } else {
+      console.log('YOU ARE NOT LOGGED IN, PLEASE LOG IN')
+    }
+  }, [])
+
+
+
   const config = {
     headers: {
       Authorization: `Bearer ${token}`
     }
   }
   const logout = () => {
-    axios({
-      method: 'post',
-      url: `https://api.zuri.chat/auth/logout`,
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    })
-      .then(res => {
-        console.log(res)
-        window.location.href = '/signout'
-      })
-      .catch(err => {
-        console.error(err)
-      })
+    window.location.href = '/signout'
   }
   const [pause, setPause] = useState(false)
   const [statusModal, setStatusModal] = useState(false)
@@ -137,13 +154,7 @@ const TopbarModal = ({ members }) => {
             </div>
 
             <div className={styles.oneRight}>
-              <h4>
-                {user.user_name
-                  ? `${user.user_name
-                      .charAt(0)
-                      .toUpperCase()}${user.user_name.slice(1)}`
-                  : 'Anonymous'}
-              </h4>
+              <h4>{user.display_name ? user.display_name : user.user_name}</h4>
               {toggleStatus}
             </div>
           </div>
