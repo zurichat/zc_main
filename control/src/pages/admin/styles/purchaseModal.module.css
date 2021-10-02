@@ -1,3 +1,13 @@
+.heading {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.para {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
 input:active,
 input:focus {
   box-shadow: none;
@@ -35,5 +45,7 @@ input:focus {
 }
 
 .token {
+  font-size: 1rem;
+  line-height: 1.5;
   margin-left: 19rem;
 }

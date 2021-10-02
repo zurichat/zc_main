@@ -1,9 +1,9 @@
-h6 {
+.heading {
   font-size: 1.3rem;
   font-weight: bold;
 }
 
-p {
+.para {
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -79,5 +79,7 @@ p {
 }
 
 .paymentSelection {
+  font-size: 1rem;
+  line-height: 1.5;
   margin-left: 43rem;
 }

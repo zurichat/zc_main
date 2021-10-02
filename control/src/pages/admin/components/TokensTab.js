@@ -7,6 +7,7 @@ import { useState } from 'react'
 import PurchaseModal from './PurchaseModal'
 import { getToken, getUser, getCurrentWorkspace } from '../Utils/Common'
 
+
 const columns = [
   {
     name: 'Date',
@@ -103,6 +104,10 @@ const TokensTab = () => {
           console.log(err)
         })
     }
+
+    // const article = { amount: 9899 };
+    // axios.post(`https://api.zuri.chat/organizations/614679ee1a5607b13c00bcb7/checkout-session`, article)
+    //     .then(response => console.log(response.data.data, 'dummy content'));
   }, [currentWorkspace])
 
   return (
@@ -113,19 +118,19 @@ const TokensTab = () => {
         <AiOutlineInfoCircle className={styles.infoIcon} />
       </div>
       <div className="text-center mt-4">
-        <h6>Welcome to your token account</h6>
-        <p>Here you will be able to deposit funds and purchase Zuri token</p>
+        <h6 className={styles.heading}>Welcome to your token account</h6>
+        <p className={styles.para}>Here you will be able to deposit funds and purchase Zuri token</p>
       </div>
       <div className={styles.overview}>
-        <h6>Overview</h6>
+        <h6 className={styles.heading}>Overview</h6>
         <div className="d-flex justify-content-center">
-          <p>
+          <p className={styles.para}>
             MY ZURI TOKENS <span>{workspaceData.tokens}</span>
           </p>
-          <p>
+          <p className={styles.para}>
             MY ZURI REFERAL TOKENS <span>0</span>
           </p>
-          <p>
+          <p className={styles.para}>
             MY ZURI TOKENS PRICE<span>1.0 USD</span>
           </p>
         </div>
@@ -138,7 +143,7 @@ const TokensTab = () => {
       </div>
       {helpModal ? <PurchaseModal setHelpModal={setHelpModal} /> : ''}
       <div>
-        <h6>Your referal link</h6>
+        <h6 className={styles.heading}>Your referal link</h6>
         <div className={`${styles.referal} input-group`}>
           <input
             type="text"
@@ -153,7 +158,7 @@ const TokensTab = () => {
           </div>
         </div>
         <div className={styles.rInfo}>
-          <p>
+          <p className={styles.para}>
             This is your Zurichat referral link. You can use it to share the
             project with your friends and other interested parties. If any of
             them sign up with this link they will be added to your referral
@@ -162,7 +167,7 @@ const TokensTab = () => {
           </p>
         </div>
         <div>
-          <h6>Payments</h6>
+          <h6 className={styles.heading}>Payments</h6>
           <p className={styles.paymentSelection}>Select type of pament</p>
           <div>
             <DataTable columns={columns} data={data} />
