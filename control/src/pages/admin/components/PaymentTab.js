@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 
 import Cleave from 'cleave.js/react';
 
@@ -9,8 +9,11 @@ import CardList from './CardLists';
 import toast, { Toaster } from 'react-hot-toast';
 import { ValidateCard } from '../Utils/Common';
 
-const PaymentTab = () => {
+import { CardContext } from '../../../context/CardContext'; 
 
+const PaymentTab = () => {
+  const {setCardList} = useContext(CardContext);
+  console.log("check", setCardList)
   const [formFilled, setFormFilled] = useState(true);
   const [cardName, setCardName] = useState('');
   const [cardNumber, setCardNumber] = useState('');
@@ -30,19 +33,20 @@ const PaymentTab = () => {
     }
 
     if(localStorage.getItem('cardList')) {
-      const cardList = JSON.parse(localStorage.getItem('cardList'));
-      console.log(cardList);
-      if (cardList.filter(card => card.cardNumber !== data.cardNumber).length > 0) {
-        cardList.push(data);
-        localStorage.setItem('cardList', JSON.stringify(cardList));
+      const cardLists = JSON.parse(localStorage.getItem('cardList'));
+      if (cardLists.filter(card => card.cardNumber !== data.cardNumber).length > 0) {
+        cardLists.push(data);
+        setCardList(cardLists);
+        localStorage.setItem('cardList', JSON.stringify(cardLists));
         toast.success('Card Added Successfully');
       } else {
         toast.error('Card already exists');
       }
     }
     else {
-      const cardList = [data];
-      localStorage.setItem('cardList', JSON.stringify(cardList));
+      const cardLists = [data];
+      setCardList(cardLists);
+      localStorage.setItem('cardList', JSON.stringify(cardLists));
       toast.success('Card Added Successfully');
     }
 
