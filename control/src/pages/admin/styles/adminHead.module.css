@@ -43,6 +43,10 @@
   text-align: center;
 }
 
+.menuLink:hover {
+  color: #00b87c;
+}
+
 .menuImg {
   width: 1.5rem;
   height: auto;
@@ -52,7 +56,6 @@
 .mobileMenu {
   display: none;
 }
-
 
 @media (max-width: 768px) {
   .menu {
