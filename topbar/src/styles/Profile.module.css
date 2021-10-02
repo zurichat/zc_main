@@ -246,7 +246,7 @@
 .mobile {
   display: none;
 }
-h3.userDetails {
+.h3users {
   margin-right: -1em;
   margin-top: 7px;
   cursor: pointer;

@@ -74,7 +74,7 @@ const Profile = () => {
           alt="avatar"
         />
          <div className={styles.userDetails}>
-          <h3>
+          <h3 className={styles.h3users}>
             {user.first_name ? user.first_name : 'Anonnymous'}{' '}
             <span>{user?.status?.text === '' ? '0' : user?.status?.text}</span>
           </h3>
