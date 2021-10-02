@@ -34,8 +34,8 @@ import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContex
 import PrivacyPolicy from './pages/privacy-policy/index'
 import NotFoundPage from './pages/404'
 import Billing from './pages/admin/Billing'
-import Permissions from './pages/admin/Permissions'
 import SettingsHome from './pages/admin/Home'
+import AdminSettingsTab from './pages/admin/Settings/index'
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -133,7 +133,7 @@ const App = () => {
         <PrivateRoute
           path="/admin/settings/permission"
           exact
-          component={Permissions}
+          component={AdminSettingsTab}
         />
         <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
         {/* ----------------settings routes closed----------------- */}
