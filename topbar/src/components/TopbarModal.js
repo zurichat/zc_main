@@ -191,9 +191,7 @@ const TopbarModal = ({ members }) => {
           <div className={styles.sectionTwo}>
             {/* <StatusBadgeModal /> */}
             <div className={styles.emoji}>{user?.status?.tag} </div>
-            <div className={styles.statusContent}>{user?.status?.text}</div>  
-           
-              
+            <div className={styles.statusContent}>{user?.status?.text}</div>
           </div>
 
           <div className={styles.sectionThree}>
