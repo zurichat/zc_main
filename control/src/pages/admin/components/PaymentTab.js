@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-// import Cleave from 'cleave.js/react';
+import Cleave from 'cleave.js/react';
 
 import cardBack from '../assets/cardBack.svg'
 
