@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-*{
-    color:#1D1C1D;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 18px;
-    font-family: 'Lato', sans-serif;
-    
-}
-
-
 
 .Notice{
     border-left:solid 0.5em red;
