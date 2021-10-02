@@ -15,7 +15,7 @@ import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
 import { authAxios } from './utils/Api'
 import Profile from './components/Profile'
 import Loader from 'react-loader-spinner'
-import { GetUserInfo } from '../../control/src/zuri-control'
+import { GetUserInfo, SubscribeToChannel } from '@zuri/control'
 import axios from 'axios'
 import toggleStyle from './styles/sidebartoggle.module.css'
 import { BsReverseLayoutTextSidebarReverse } from 'react-icons/bs'
@@ -96,9 +96,35 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     getOrganizations()
   }, [setOrgId, user.image_url, setUser])
 
+  const UpdateInfo = () => {
+    GetUserInfo().then(res => {
+      setUserProfileImage(res['0'].image_url)
+      setUser(res['0'])
+    })
+  }
+
   useEffect(() => {
-    GetUserInfo().then(res => setUserProfileImage(res['0'].image_url))
-  })
+    UpdateInfo()
+  }, [])
+
+  // RTC subscription
+  const callbackFn = event => {
+    const session_user = JSON.parse(sessionStorage.getItem('user'))
+    if (
+      event.event === 'UpdateOrganizationMemberPic' ||
+      'UpdateOrganizationMemberStatus' ||
+      'UpdateOrganizationMemberProfile' ||
+      'UpdateOrganizationMemberPresence'
+    ) {
+      if (event.id === session_user['id']) {
+        UpdateInfo()
+      } else return
+    } else return
+  }
+
+  const currentWorkspace = localStorage.getItem('currentWorkspace')
+
+  SubscribeToChannel(currentWorkspace, callbackFn)
 
   let toggleStatus = null
 
@@ -226,7 +252,9 @@ const Logo = styled.img`
 const ProfileImg = styled.img`
   border-radius: 4px;
   width: 32px;
-  height: '32px';
+  height: 32px;
+  object-fit: cover;
+
   @media (max-width: 1024px) {
     height: 25.6px;
   }
@@ -237,11 +265,12 @@ const ProfileImg = styled.img`
 const ProfileImageContainer = styled.div`
   position: relative;
 
-  // img {
-  //   border-radius: 4px;
-  //   height: 30px;
-  //   width: 30px;
-  // }
+  /* img {
+    object-fit: cover;
+    border-radius: 4px;
+    height: 30px;
+    width: 30px;
+  } */
 `
 
 const HelpContainer = styled.div`
