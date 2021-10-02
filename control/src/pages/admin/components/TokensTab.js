@@ -98,7 +98,6 @@ const TokensTab = () => {
         .get(`/organizations/${currentWorkspace}`)
         .then(res => {
           setWorkspaceData(res.data.data)
-          console.log(res.data.data, 'yes daa')
         })
         .catch(err => {
           console.log(err)
