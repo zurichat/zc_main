@@ -14,7 +14,7 @@ import { CardContext } from '../../../context/CardContext'
 
 const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
   const currentWorkspace = getCurrentWorkspace()
-  const {token, setToken} = useContext(CardContext);
+  const { token, setToken } = useContext(CardContext)
   const user = getUser()
   const [workspaceData, setWorkspaceData] = React.useState({})
   const [loading, setLoading] = React.useState(false)
@@ -82,7 +82,9 @@ const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
         <div onClick={() => setModal(!modal)} className={styles.overlay} />
         <div className={styles.modalContainer}>
           <h6 className={styles.modalSubHead}>{token} Tokens left</h6>
-          <h3 className={styles.modalHeading}>{orgSize * 1} Tokens will be deducted from your wallet</h3>
+          <h3 className={styles.modalHeading}>
+            {orgSize * 1} Tokens will be deducted from your wallet
+          </h3>
           <p className={styles.modalParagraph}>
             1 token will be deducted per every member in your organization, Are
             you sure you want to continue?

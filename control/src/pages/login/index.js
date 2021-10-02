@@ -9,6 +9,7 @@ import axios from 'axios'
 import { GetUserInfo } from '../../zuri-control'
 import $behaviorSubject from '../../../../globalState'
 import { Helmet } from 'react-helmet'
+import { goToDefaultChannel } from '../../api/channels'
 // import { Link } from 'react-router-dom'
 // import authBg1 from './assets/auth_bg1.svg'
 // import authBg2 from './assets/auth_bg2.svg'
@@ -84,8 +85,42 @@ const Login = () => {
         //}, 2000)
 
 
+        // Switch for redirects
+        axios
+          .get(`https://api.zuri.chat/users/${data.user.id}`, {
+            headers: {
+              Authorization: `Bearer ${data.user.token}`
+            }
+          })
+          .then(res => {
+            const orgs = res.data.data['Organizations'].length
+            console.log('reg orgs', orgs)
+            localStorage.setItem(
+              'currentWorkspace',
+              res.data.data['Organizations'][0]
+            )
+
+            switch (true) {
+              case orgs > 1:
+                history.push('/choose-workspace')
+                break
+              case orgs < 1:
+                history.push('/createworkspace')
+                break
+              default:
+                goToDefaultChannel()
+            }
+          })
+          .catch(err => {
+            throw err
+          })
+
+        //Display message
+        // alert(message) //Change this when there is a design
+
+
         // setTimeout(() => {
-          //Redirect to some other page
+        //Redirect to some other page
         //   GetUserInfo()
         //   history.push('/choose-workspace')
         //   setLoading(false)

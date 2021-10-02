@@ -163,39 +163,12 @@ const Sidebar = props => {
         `${currentWorkspace}_${userInfo.userId}_sidebar`,
         ctx => {
           const websocket = ctx.data
-          // console.log('Websocket', websocket)
+          console.log('Websocket', websocket)
           if (websocket.event === 'sidebar_update') {
-            // console.log('check', websocket.sidebar_url)
-
-            const sidebarUrl = websocket.sidebar_url
-
-            const trimmedUrl = trimUrl(sidebarUrl)
-            const pluginKey = filterUrl(sidebarUrl)
-
-            axios
-              .get(
-                `${trimmedUrl.includes('https://') ||
-                  trimmedUrl.includes('http://')
-                  ? trimmedUrl
-                  : `https://${trimmedUrl}`
-                }?org=${currentWorkspace}&user=${userInfo.userId}`
-              )
-              .then(res => {
-                try {
-                  const validPlugin = res.data
-                  if (validPlugin.name !== undefined) {
-                    if (typeof validPlugin === 'object') {
-                      setSidebarData({
-                        ...sidebarData,
-                        [pluginKey]: validPlugin
-                      })
-                    }
-                  }
-                } catch (err) {
-                  console.log(err, 'Invalid plugin')
-                }
-              })
-              .catch(console.log)
+            setSidebarData({
+              ...sidebarData,
+              [websocket.plugin_id]: websocket.data
+            })
           }
         }
       )
@@ -212,10 +185,11 @@ const Sidebar = props => {
 
           axios
             .get(
-              `${trimmedUrl.includes('https://') ||
+              `${
+                trimmedUrl.includes('https://') ||
                 trimmedUrl.includes('http://')
-                ? trimmedUrl
-                : `https://${trimmedUrl}`
+                  ? trimmedUrl
+                  : `https://${trimmedUrl}`
               }?org=${currentWorkspace}&user=${userInfo.userId}`
             )
             .then(res => {
@@ -245,8 +219,9 @@ const Sidebar = props => {
             <div onClick={toggle} className={`row p-0 ${styles.orgHeader}`}>
               <span className={`col-9 mb-0 ${styles.orgTitle}`}>HNGi8</span>
               <span className={`col-3 p-0 ${styles.sidebar__header__arrow}`}>
-              <MdKeyboardArrowDown />
-            </span>              {/* <img
+                <MdKeyboardArrowDown />
+              </span>{' '}
+              {/* <img
                 className={`col-4 mx-auto ${styles.arrowDown}`}
                 src={shapekeyboardarrowdown}
                 alt="HNGi8"
@@ -341,9 +316,12 @@ const Sidebar = props => {
               : { backgroundColor: 'revert' }
           }
           className={`row mt-2 ${styles.sb__item}`}
+
  
           style={bg === 2 ? { backgroundColor: "#00b87c" } : { backgroundColor: "revert" }}
           className={`row mt-2 ${styles.sb__item}`}>
+
+        >
 
           <div
             className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
@@ -355,6 +333,7 @@ const Sidebar = props => {
               alt="icon"
             />
 
+
             <p className={`mb-0 ${styles.item_p}`} role="button">
               Threads
             </p>
@@ -363,6 +342,10 @@ const Sidebar = props => {
               className={`mb-0 ${styles.item_p}`}
               role="button"
             >Threads</p>
+
+            <p className={`mb-0 ${styles.item_p}`} role="button">
+              Threads
+            </p>
 
           </div>
         </div>
@@ -375,10 +358,11 @@ const Sidebar = props => {
               : { backgroundColor: 'revert' }
           }
           className={`row ${styles.sb__item}`}
-        >
+
 
           style={bg === 3 ? { backgroundColor: "#00b87c" } : { backgroundColor: "revert" }}
           className={`row ${styles.sb__item}`}>
+
 
           <div
             className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
@@ -390,6 +374,7 @@ const Sidebar = props => {
               role="button"
             />
 
+
             <p className={`mb-0 ${styles.item_p}`} role="button">
               All DMs
             </p>
@@ -399,10 +384,16 @@ const Sidebar = props => {
               role="button"
             >All DMs</p>
 
+
+            <p className={`mb-0 ${styles.item_p}`} role="button">
+              All DMs
+            </p>
+
           </div>
         </div>
         <div
           onClick={() => setBg(4)}
+
 
           style={
             bg === 4
@@ -412,8 +403,10 @@ const Sidebar = props => {
           className={`row ${styles.sb__item}`}
         >
 
+
           style={bg === 4 ? { backgroundColor: "#00b87c" } : { backgroundColor: "revert" }}
           className={`row ${styles.sb__item}`}>
+
 
           <div
             className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
@@ -425,6 +418,7 @@ const Sidebar = props => {
               role="button"
             />
 
+
             <p className={`mb-0 ${styles.item_p}`} role="button">
               Drafts
             </p>
@@ -433,6 +427,11 @@ const Sidebar = props => {
               className={`mb-0 ${styles.item_p}`}
               role="button"
             >Drafts</p>
+
+
+            <p className={`mb-0 ${styles.item_p}`} role="button">
+              Drafts
+            </p>
 
           </div>
         </div>
@@ -446,6 +445,7 @@ const Sidebar = props => {
           }
           className={`row ${styles.sb__item}`}
         >
+
           <div
             className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
           >
@@ -459,10 +459,17 @@ const Sidebar = props => {
           >
             <img className={`${styles.item__img}`}
 
+
+          <div
+            className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+          >
+            <img
+
               src={filesIcon}
               alt="icon"
               role="button"
             />
+
 
             <p className={`mb-0 ${styles.item_p}`} role="button">
               Files
@@ -472,6 +479,11 @@ const Sidebar = props => {
               className={`mb-0 ${styles.item_p}`}
               role="button"
             >Files</p>
+
+
+            <p className={`mb-0 ${styles.item_p}`} role="button">
+              Files
+            </p>
 
           </div>
         </div>
@@ -486,8 +498,10 @@ const Sidebar = props => {
           className={`row ${styles.sb__item}`}
         >
 
+
           style={bg === 6 ? { backgroundColor: "#00b87c" } : { backgroundColor: "revert" }}
           className={`row ${styles.sb__item}`}>
+
 
           <div
             className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
@@ -499,6 +513,7 @@ const Sidebar = props => {
               role="button"
             />
 
+
             <p className={`mb-0 ${styles.item_p}`} role="button">
               Plugins
             </p>{' '}
@@ -506,6 +521,10 @@ const Sidebar = props => {
             <p className={`mb-0 ${styles.item_p}`}
               role="button"
             >Plugins</p>{' '}
+
+            <p className={`mb-0 ${styles.item_p}`} role="button">
+              Plugins
+            </p>{' '}
 
             <img
               onClick={open}
