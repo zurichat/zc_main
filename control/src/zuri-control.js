@@ -108,9 +108,9 @@ const centrifuge = new Centrifuge(
 )
 
 centrifuge.connect()
-// centrifuge.on('connect', function (connectCtx) {
-//   console.log('connected', connectCtx)
-// })
+centrifuge.on('connect', function (connectCtx) {
+  console.log('connected', connectCtx)
+})
 
 export const SubscribeToChannel = (plugin_id, callback) => {
   centrifuge.subscribe(plugin_id, ctx => {
