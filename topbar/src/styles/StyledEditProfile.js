@@ -49,6 +49,7 @@ export const StyledProfileWrapper = styled.section`
               object-fit: cover;
               border-radius: 50%;
               width: 100%;
+              height: 45%;
             }
           }
         }
@@ -106,10 +107,10 @@ export const StyledProfileWrapper = styled.section`
         .PhoneInput,
         .css-2b097c-container {
           width: 100%;
-          height: 3.8125rem;
+          height: 2.8125rem;
           border: 1px solid #a1a1a1;
           padding: 0 1rem;
-          font-size: 1.4rem;
+          font-size: 1rem;
           outline: none;
           background: none;
           border-radius: 5px;
