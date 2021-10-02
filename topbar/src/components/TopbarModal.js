@@ -169,7 +169,13 @@ const TopbarModal = ({ members }) => {
               {userPresence}
             </p>
             <div className={styles.pause}>
-              <p onMouseOver={() => { pause ? setPause(!pause) : setPause(pause)}}>Pause Notifications</p>
+              <p
+                onMouseOver={() => {
+                  pause ? setPause(!pause) : setPause(pause)
+                }}
+              >
+                Pause Notifications
+              </p>
               <FaChevronRight className={styles.chevron} />
             </div>
             {pause && <PauseNotification pause={pause} setPause={setPause} />}
