@@ -246,6 +246,22 @@
 .mobile {
   display: none;
 }
+.h3users {
+  margin-right: -1em;
+  margin-top: 7px;
+  cursor: pointer;
+  outline: none;
+  font-size: 17px;
+  border: 0;
+  padding-left: 5px;
+  padding-bottom: 10px;
+  position: absolute;
+  /* left: 15px; */
+  right: 70px;
+  /* top: 108px; */
+  background: none;
+  transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 
 @media (max-width: 768px) {
   .ProfileContainer {
@@ -355,7 +371,7 @@
     align-self: center;
     margin: 0 auto;
     width: 80%;
-    height: 23rem;
+    height: 15rem;
     /* object-fit: contain; */
   }
 }

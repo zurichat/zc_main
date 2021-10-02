@@ -15,6 +15,7 @@ import { TopbarContext } from '../context/Topbar'
 import EditProfile from './EditProfile'
 import Preferences from './Preferences'
 import { Dropdown } from './ProfileMore'
+import ProfileStatusBadgeModal from './ProfileStatusBadge'
 
 const Profile = () => {
   const {
@@ -72,14 +73,14 @@ const Profile = () => {
           src={userProfileImage !== '' ? userProfileImage : defaultAvatar}
           alt="avatar"
         />
-        {/* <div className={styles.userDetails}>
-          <h3>
+         <div className={styles.userDetails}>
+          <h3 className={styles.h3users}>
             {user.first_name ? user.first_name : 'Anonnymous'}{' '}
             <span>{user?.status?.text === '' ? '0' : user?.status?.text}</span>
           </h3>
-          <p>What you do</p>
+          <p>{user.bio ? user.bio : 'What you do'}</p>
           <small>{user.pronouns ? user.pronouns : 'His/Her'}</small>
-        </div> */}
+        </div> 
 
         <div className={styles.buttonGroupsMobile}>
           <button>Message</button>
@@ -129,18 +130,20 @@ const Profile = () => {
 
         <div className={`${styles.moreInfo} ${styles.mobile}`}>
           <div className={styles.infoTitle}>What i do</div>
-          <div className={styles.infoContent}>Design</div>
+          <div className={styles.infoContent}>
+            {user.bio ? user.bio : 'Design'}
+          </div>
         </div>
         <div className={`${styles.moreInfo} ${styles.mobile}`}>
           <div className={styles.infoTitle}>Pronouns</div>
           <div className={styles.infoContent}>
-            {user.pronouns ? user.pronouns : 'null'}
+            {user.pronouns ? user.pronouns : 'His/Her'}
           </div>
         </div>
         <div className={styles.moreInfo}>
           <div className={styles.infoTitle}>Display name</div>
           <div className={styles.infoContent}>
-            {user.user_name ? user.user_name : 'His/Her'}
+            {user.display_name ? user.display_name : user.user_name}
           </div>
         </div>
         <div className={`${styles.moreInfo} ${styles.mobile}`}>
