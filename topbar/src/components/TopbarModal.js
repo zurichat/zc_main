@@ -26,6 +26,7 @@ const TopbarModal = ({ members }) => {
   // const [username, setUsername] = state.username
   const [showStatus] = state.status
   const [showMembersModal] = state.modal
+
   const {
     onEmojiClick,
     openModal,
@@ -188,8 +189,11 @@ const TopbarModal = ({ members }) => {
           </div>
 
           <div className={styles.sectionTwo}>
-            <StatusBadgeModal />
-            <p className={styles.statusContent}>{user.status}</p>
+            {/* <StatusBadgeModal /> */}
+            <div className={styles.emoji}>{user?.status?.tag} </div>
+            <div className={styles.statusContent}>{user?.status?.text}</div>  
+           
+              
           </div>
 
           <div className={styles.sectionThree}>
