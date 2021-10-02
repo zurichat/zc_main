@@ -37,6 +37,7 @@ import Billing from './pages/admin/Billing'
 import Homepage from './pages/home'
 import Permissions from './pages/admin/Permissions'
 import SettingsHome from './pages/admin/Settings/index'
+import About from './pages/about/index'
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -68,6 +69,9 @@ const App = () => {
         </Route>
         <Route path="/signout">
           <SignOut />
+        </Route>
+        <Route path="/about">
+          <About />
         </Route>
         <Route path="/choose-workspace">
           <Workspace />

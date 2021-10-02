@@ -72,18 +72,18 @@ const Profile = () => {
           src={userProfileImage !== '' ? userProfileImage : defaultAvatar}
           alt="avatar"
         />
-         <div className={styles.userDetails}>
+        <div className={styles.userDetails}>
           <h3 className={styles.h3users}>
-             {user.first_name
+            {user.first_name
               ? `${user.first_name} ${user.last_name} `
               : 'Anonnymous'}{' '}
             {/* <span>{<StatusBadgeModal />  === '' ? <StatusBadgeModal />  :'0' }</span> */}
             <ProfileStatusBadgeModal />
           </h3>
-          
+
           <p className={styles.myp}>{user.bio ? user.bio : 'What you do'}</p>
           <small>{user.pronouns ? user.pronouns : 'His/Her'}</small>
-        </div> 
+        </div>
 
         <div className={styles.buttonGroupsMobile}>
           <button>Message</button>
@@ -144,8 +144,8 @@ const Profile = () => {
         <div className={styles.moreInfo}>
           <div className={styles.infoTitle}>Display name</div>
           <div className={styles.infoContent}>
-             {user.display_name ? user.display_name : user.username}
-          {/* {user.display_name ? user.display_name : user.user_name} */}
+            {user.display_name ? user.display_name : user.username}
+            {/* {user.display_name ? user.display_name : user.user_name} */}
           </div>
         </div>
         <div className={`${styles.moreInfo} ${styles.mobile}`}>

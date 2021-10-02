@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const AdminFormInput = ({
   name,
@@ -9,17 +9,16 @@ const AdminFormInput = ({
   label,
   ...props
 }) => {
-
   return (
     <div className={className}>
       <label htmlFor={name}>{label}</label>
-      <input 
+      <input
         type={type}
         name={name}
         id={name}
         placeholder={placholder}
         className={className}
-        {...bind} 
+        {...bind}
       />
     </div>
   )
