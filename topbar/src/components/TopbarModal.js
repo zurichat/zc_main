@@ -14,6 +14,7 @@ import MembersModal from './MembersModal'
 import Downloads from './Downloads'
 import PauseNotification from './PauseNotification'
 import SetStatusModal from './SetStatusModal'
+import ProfilePicView from './ProfilePicView'
 // react icons
 
 const TopbarModal = ({ members }) => {
@@ -36,7 +37,9 @@ const TopbarModal = ({ members }) => {
     reusableModal,
     setReusableModal,
     presence,
-    setPresence
+    setPresence,
+    profilePicView,
+    setProfilePicView
   } = state
 
   const currentWorkspace = localStorage.getItem('currentWorkspace')
@@ -159,7 +162,13 @@ const TopbarModal = ({ members }) => {
             className={styles.membersModalOverlay}
           />
           <div className={styles.sectionOne}>
-            <div className={styles.oneLeft}>
+            <div
+              className={styles.oneLeft}
+              role="button"
+              onClick={() => {
+                userProfileImage !== '' && setProfilePicView(!profilePicView)
+              }}
+            >
               <img
                 src={userProfileImage !== '' ? userProfileImage : defaultAvatar}
                 alt="profile-pic"
@@ -261,6 +270,7 @@ const TopbarModal = ({ members }) => {
           <div className={styles.sectionFive}>
             <p onClick={logout}>Sign out of Team Einstein workspace</p>
           </div>
+          {profilePicView && <ProfilePicView />}
         </section>
       ) : null}
     </>
