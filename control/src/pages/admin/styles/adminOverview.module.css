@@ -3,7 +3,8 @@
   height: 100%;
 }
 
-.modal, .modalActive {
+.modal,
+.modalActive {
   position: fixed;
   top: 0;
   left: 0;
@@ -37,7 +38,7 @@
   max-width: 622px;
   background: #fff;
   padding: 1.5rem;
-  border: 1px solid #E7E7E7;
+  border: 1px solid #e7e7e7;
   border-radius: 4px;
 }
 
@@ -249,8 +250,7 @@
 .btnPrimary:disabled,
 .btnPrimary:disabled:hover,
 .btnPrimary:disabled:active,
-.btnPrimary:disabled:focus
- {
+.btnPrimary:disabled:focus {
   background: rgba(0, 184, 124, 0.5);
 }
 

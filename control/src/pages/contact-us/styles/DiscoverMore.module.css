@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   padding: 0 15px;
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 .container h3 {
   font-weight: 900;
@@ -28,22 +28,22 @@
   font-weight: bold;
   font-size: 18px;
   line-height: 22px;
-  color: #1D1C1D
+  color: #1d1c1d;
 }
 @media screen and (max-width: 700px) {
   .container h3 {
-      font-weight: 900;
-      font-size: 18px;
-      color: #f6f6f6;
-   }
-    .sub1 {
-      font-size: 15px;
-      line-height: 19px;
-    }
-    .sub2 {
-      font-size: 15px;
-      line-height: 19px;
-    }
+    font-weight: 900;
+    font-size: 18px;
+    color: #f6f6f6;
+  }
+  .sub1 {
+    font-size: 15px;
+    line-height: 19px;
+  }
+  .sub2 {
+    font-size: 15px;
+    line-height: 19px;
+  }
 }
 @media screen and (max-width: 500px) {
   .container {
