@@ -118,6 +118,7 @@
   top: 60%;
   right: 2.5%;
   width: 100%;
+  padding-bottom: 1rem;
   max-width: 300px;
   z-index: 9999;
   border: 1px solid #e5e5e5;
@@ -158,6 +159,7 @@
 }
 
 .oneLeft img {
+  object-fit: cover;
   width: 100%;
   height: 100%;
   border-radius: 10%;
@@ -248,8 +250,18 @@
   cursor: pointer;
   height: 34px;
   position: relative;
+  align-items: center;
+  display: flex;
+}
+.sectionTwo .statusContent {
+  font-size: 13px;
+  text-align: center;
+  margin-left: 60px;
 }
 
+.sectionTwo .emoji {
+  float: left;
+}
 /* The section of the picker */
 
 .smileys {
