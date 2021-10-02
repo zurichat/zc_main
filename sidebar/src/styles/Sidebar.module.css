@@ -37,6 +37,10 @@
   color: #fff;
 }
 
+.sidebar__header__arrow {
+  font-size: 2em;
+}
+
 .orgInfo {
   width: 100%;
   height: inherit;
@@ -57,9 +61,9 @@
   cursor: pointer;
 }
 
-.arrowDown {
+/* .arrowDown {
   width: 2.5em;
-}
+} */
 
 .sb__item {
   margin-bottom: 0.25em;
