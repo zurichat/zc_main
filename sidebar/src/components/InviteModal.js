@@ -5,7 +5,7 @@ import styles from '../styles/InviteModal.module.css'
 // import InviteLoading from './SendingInvite'
 
 const Modal = props => {
-  if (!props.show) {
+  if (!props.isOpen) {
     return null
   }
 
