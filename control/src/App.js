@@ -35,6 +35,7 @@ import PrivacyPolicy from './pages/privacy-policy/index'
 import NotFoundPage from './pages/404'
 import About from './pages/about/index'
 import Billing from './pages/admin/Billing'
+import Blog from './pages/blogs'
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -81,6 +82,9 @@ const App = () => {
         </Route>
         <Route path="/resources">
           <Resources />
+        </Route>
+        <Route path="/blog">
+          <Blog />
         </Route>
         <Route path="/pricing">
           <Pricing />
