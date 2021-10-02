@@ -96,6 +96,8 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         })
     }
 
+    setUserProfileImage(user.image_url)
+
     getOrganizations()
   }, [setOrgId, user.image_url, setUser])
 
@@ -152,7 +154,6 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         </ToggleStatus>
       )
   }
-
   //Handle sidebar on mobile
   const sidebar = document.getElementById(
     'single-spa-application:@zuri/sidebar'
@@ -165,6 +166,33 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     sidebar.style.width = '200px'
     sidebar_toggle.style.display = 'none'
   }
+
+  zc_spa_body.addEventListener('click', () => {
+    if (window.outerWidth <= 768) {
+      if (sidebar !== null) {
+        sidebar.style.display = 'none'
+        sidebar_toggle.style.display = 'block'
+      }
+    } else {
+      if (sidebar !== null) {
+        sidebar.style.display = 'block'
+        sidebar_toggle.style.display = 'none'
+      }
+    }
+  })
+
+  //Handle sidebar on mobile
+  // const sidebar = document.getElementById(
+  //   'single-spa-application:@zuri/sidebar'
+  // // )
+  // const zc_spa_body = document.querySelector('body')
+  // const sidebar_toggle = document.querySelector('#sidebar_toggle')
+  // const openSidebar = () => {
+  //   sidebar.style.display = 'block'
+  //   sidebar.style.left = '0'
+  //   sidebar.style.width = '200px'
+  //   sidebar_toggle.style.display = 'none'
+  // }
 
   // zc_spa_body.addEventListener('click', () => {
   //   if (window.outerWidth <= 768) {

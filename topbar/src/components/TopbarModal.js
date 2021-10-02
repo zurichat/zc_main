@@ -154,13 +154,7 @@ const TopbarModal = ({ members }) => {
             </div>
 
             <div className={styles.oneRight}>
-              <h4>
-                {user.user_name
-                  ? `${user.user_name
-                      .charAt(0)
-                      .toUpperCase()}${user.user_name.slice(1)}`
-                  : 'Anonymous'}
-              </h4>
+              <h4>{user.display_name ? user.display_name : user.user_name}</h4>
               {toggleStatus}
             </div>
           </div>
