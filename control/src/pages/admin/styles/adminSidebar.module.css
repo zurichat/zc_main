@@ -1,5 +1,4 @@
-.sidebarWrapper,
-.sidebarWrapperActive {
+.sidebarWrapper, .sidebarWrapperActive {
   position: fixed;
   top: 64px;
   left: 0;
@@ -61,8 +60,7 @@
   align-items: flex-start;
 }
 
-.sidebarLink,
-.sidebarLinkActive {
+.sidebarLink, .sidebarLinkActive {
   display: flex;
   align-items: flex-start;
   padding: 10px 0;
@@ -113,8 +111,7 @@
 }
 
 @media (max-width: 768px) {
-  .sidebarWrapper,
-  .sidebarWrapperActive {
+  .sidebarWrapper, .sidebarWrapperActive {
     position: fixed;
     display: none;
     top: 0;
