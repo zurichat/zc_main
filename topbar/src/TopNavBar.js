@@ -250,7 +250,11 @@ const Logo = styled.img`
   }
 `
 const ProfileImg = styled.img`
-  height: '32px';
+  border-radius: 4px;
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+
   @media (max-width: 1024px) {
     height: 25.6px;
   }
@@ -261,12 +265,12 @@ const ProfileImg = styled.img`
 const ProfileImageContainer = styled.div`
   position: relative;
 
-  img {
+  /* img {
     object-fit: cover;
     border-radius: 4px;
     height: 30px;
     width: 30px;
-  }
+  } */
 `
 
 const HelpContainer = styled.div`
