@@ -70,7 +70,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
           >Invite people to {workSpace.name}</p>
         </div>
         <div>
-        <p><a href='/createworkspace'>Create a new Workspace</a></p>
+          <p>Create a new Workspace</p>
         </div>
       </div>
       <hr className={styles.modalDivider} />
@@ -120,7 +120,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
       <hr className={styles.modalDivider} />
       <div className={styles.modalSection}>
         <div>
-         <p> <a href='/signout'>Sign Out</a></p>
+          <p>Sign Out</p>
         </div>
       </div>
       <hr className={styles.modalDivider} />
