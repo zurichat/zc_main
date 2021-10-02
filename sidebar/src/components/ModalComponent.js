@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
 import styles from '../styles/ModalComponentStyles.module.css'
 
-const ModalComponent = ({ isOpen }) => {
+const ModalComponent = ({ isOpen, toggleOpenInvite }) => {
   return (
     <section className={`${isOpen ? styles.open : styles.topbarModal}`}>
       <div className={styles.sectionOne}>The BrandHub</div>
 
-      <div className={styles.sectionOne}>
-        Invite people to HNGi8 <br />
-        Create a new Workspace
+      <div className={styles.sectionOne} onClick={toggleOpenInvite}>
+        Invite people to HNGi8
       </div>
+
+      <div className={styles.sectionOne}>Create a new Workspace</div>
 
       <div className={styles.sectionOne}>
         Prefrence <br />
