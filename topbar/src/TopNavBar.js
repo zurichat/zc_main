@@ -30,9 +30,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   // const [memberId, setMemberId] = useState('');
   const [messages, setMessages] = useState('')
 
-
   useEffect(() => {
-
     // const fetchUser = async () => {
     //   const info = await GetUserInfo()
     //   setMemberId(info[0]._id)
@@ -43,16 +41,17 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     let currentWorkspace = localStorage.getItem('currentWorkspace')
 
     const searchFunction = async () => {
-
-      let organization_id = `614679ee1a5607b13c00bcb7`;
-      let member_id = `614732f4f41cb684cc531fc9`;
+      let organization_id = `614679ee1a5607b13c00bcb7`
+      let member_id = `614732f4f41cb684cc531fc9`
       // console.log(member_id, organization_id, "pim");
       // console.log(search)
       axios
-        .get(`https://dm.zuri.chat/api/v1/org/${organization_id}/members/${member_id}/messages/search?keyword=${search}`)
+        .get(
+          `https://dm.zuri.chat/api/v1/org/${organization_id}/members/${member_id}/messages/search?keyword=${search}`
+        )
         .then(response => {
           console.log(response.data.results[0])
-           setMessages(response.data.results)
+          setMessages(response.data.results)
         })
         .catch(err => {
           console.log(err)
@@ -61,7 +60,6 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
     searchFunction()
   }, [search])
-
 
   useEffect(() => {
     const userdef = JSON.parse(sessionStorage.getItem('user'))
@@ -158,7 +156,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           id="sidebar_toggle"
           className={toggleStyle.sidebar_toggle_icon}
           style={{
-            top: '7rem',
+            top: '7rem'
           }}
         >
           <BsReverseLayoutTextSidebarReverse
@@ -166,7 +164,8 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
               margin: '0.6rem 0.6rem'
             }}
             size={18}
-            fill="#fff" />
+            fill="#fff"
+          />
         </div>
       </div>
       <div className="ms-4" style={{ width: '60%' }}>
@@ -180,8 +179,11 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           border={'#99999933'}
         />
       </div>
-      <ProfileImageContainer className="d-flex justify-content-end pe-3" style={{ width: '20%' }}>
-      {toggleStatus}
+      <ProfileImageContainer
+        className="d-flex justify-content-end pe-3"
+        style={{ width: '20%' }}
+      >
+        {toggleStatus}
         <ProfileImg
           src={userProfileImage ? userProfileImage : defaultAvatar}
           onClick={openModal}
@@ -211,9 +213,9 @@ const LogoDiv = styled.div`
   align-items: center;
 `
 const Logo = styled.img`
-@media (min-width: 1023px) {
-  // width: 50%;
-}
+  @media (min-width: 1023px) {
+    // width: 50%;
+  }
   // @media (max-width: 768px) {
   //   width: 60%;
   // }
@@ -222,8 +224,8 @@ const Logo = styled.img`
   // }
 `
 const ProfileImg = styled.img`
-border-radius: 4px;
-    width: 32px;
+  border-radius: 4px;
+  width: 32px;
   height: '32px';
   @media (max-width: 1024px) {
     height: 25.6px;
@@ -243,7 +245,7 @@ const ProfileImageContainer = styled.div`
 `
 
 const HelpContainer = styled.div`
-display:none;
+  display: none;
 
   > .MuiSvgIcon-root {
     opacity: 0.5;
@@ -253,7 +255,7 @@ display:none;
     opacity: 0.5;
   }
   @media (max-width: 425px) {
-    display:none;
+    display: none;
   }
 `
 const ToggleStatus = styled.div`
