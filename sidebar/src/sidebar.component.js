@@ -17,7 +17,7 @@
 import { Fragment, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './styles/Sidebar.module.css'
-import Dropdown from './components/Dropdown'
+// import Dropdown from './components/Dropdown'
 import Modal from './components/InviteModal'
 import ModalComponent from './components/ModalComponent'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
@@ -64,10 +64,24 @@ const Sidebar = props => {
   const [owner, setOwner] = useState(false)
   const [InviteSuccess, setInviteSuccess] = useState(false)
   const [homeModal, toggleHomeModal] = useState(false)
-  const toggle = () => toggleHomeModal(!homeModal)
+  const [org, setOrg] = useState({})
+  console.log("ORGGGG", org)
+  const toggle = () => {
+    
+    toggleHomeModal(!homeModal)
+    document.removeEventListener('click', toggle)
+  }
+ 
+  
+  useEffect(()=>{
+      if(homeModal){
+        document.addEventListener('click', toggle)
+      }  
+  },[homeModal])
+
+  document.removeEventListener('click', toggle)
 
   let currentWorkspace = localStorage.getItem('currentWorkspace')
-  console.log(currentWorkspace)
 
   const [userInfo, setUserInfo] = useState({
     userId: '',
@@ -75,15 +89,34 @@ const Sidebar = props => {
     token: ''
   })
 
+  console.log("userinfo", userInfo)
+
   const [nullValue, setnullValue] = useState(0)
 
   const [organizationInfo, setOrganizationInfo] = useState(null)
   const [sidebarData, setSidebarData] = useState({})
 
+  
   // let user = JSON.parse(sessionStorage.getItem('user'))
   let token = sessionStorage.getItem('token')
   let user_id_session = JSON.parse(sessionStorage.getItem('user'))
 
+  useEffect(()=>{
+    axios({
+    method: 'get',
+    url: `https://api.zuri.chat/organizations/${currentWorkspace}`,
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  
+  }).then( res =>{
+    const org = res.data.data
+    setOrg(org)
+  }
+
+  )
+ 
+})
   useEffect(() => {
     inviteVisibility()
 
@@ -122,6 +155,7 @@ const Sidebar = props => {
     getOrgDetails().then(res => {
       const currentUser = res.data.data.find(user => user.email === userEmail)
       setOwner(currentUser?.role === 'owner' || currentUser?.role === 'admin')
+      console.log("currentUser", currentUser)
     })
   }
 
@@ -201,7 +235,7 @@ const Sidebar = props => {
       )
   }
   useEffect(() => {
-    {
+    { 
       organizationInfo &&
         organizationInfo.map(pluginData => {
           const { plugin } = pluginData
@@ -244,9 +278,9 @@ const Sidebar = props => {
         <div className={`row ${styles.orgDiv}`}>
           <div className={`col-12 px-3 ${styles.orgInfo}`}>
             <div onClick={toggle} className={`row p-0 ${styles.orgHeader}`}>
-              <p className={`col-6 mb-0 ${styles.orgTitle}`}>HNGi8</p>
+              <p className={`col-6 mb-0 ${styles.orgTitle}`}>{org.name}</p>
               <img
-                className={`col-6 mx-auto ${styles.arrowDown}`}
+                className={`col-6  ${styles.arrowDown}`}
                 src={shapekeyboardarrowdown}
                 alt="HNGi8"
               />
@@ -260,7 +294,9 @@ const Sidebar = props => {
             </div>
           </div>
           <div className={`col-12 px-3 ${styles.modalContainer}`}>
-            <ModalComponent isOpen={homeModal} />
+            <ModalComponent 
+            workSpace={org}
+            isOpen={homeModal} />
           </div>
 
           <Modall showDialog={showDialog} closeDialog={close} />

@@ -1,22 +1,56 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import styles from '../styles/Drop.module.css'
 import { TiArrowSortedDown } from 'react-icons/ti'
 import { navigateToUrl } from 'single-spa'
 import hash from '../assets/images/hash.svg'
 import { AiOutlinePlusCircle } from 'react-icons/ai'
+import Options from './RoomOptions'
+import RoomOptions from './RoomOptions'
 
 const DropDown = ({ itemName, items }) => {
   const [isOpen, setOpen] = useState(false)
-  // const [items, setItems] = useState(data);
+  // const [items,   setItems] = useState(data);
   const [selectedItem, setSelectedItem] = useState(null)
 
   const toggleDropdown = () => setOpen(!isOpen)
-
   console.log(items)
   const handleItemClick = id => {
     selectedItem == id ? setSelectedItem(null) : setSelectedItem(id)
   }
+
+  const [click, isClicked] = useClick()
+  
+  function useClick() {
+        const [value, setValue] = useState(false)
+
+        const ref = useRef(null)
+
+        const RightClick = (e) =>  {
+        e.preventDefault()
+        setValue(true)
+        }
+        const CloseClick= () => setValue(false)
+
+useEffect(
+  () => {
+    const node = ref.current
+    if (node) {
+      node.addEventListener('contextmenu', RightClick)
+      document.addEventListener('click', CloseClick)
+      
+      return () => {
+        node.removeEventListener('contextmenu', RightClick)
+        document.removeEventListener('click', CloseClick)
+      }
+    }
+  },
+  [ref.current] // Recall only if ref changes
+)
+
+return [ref, value]
+}
+
   return (
     <div className={`row p-0 ${styles.dropDown} text-decoration-none`}>
       <div
@@ -72,9 +106,16 @@ const DropDown = ({ itemName, items }) => {
                       onError={e => (e.target.src = hash.toString())}
                       alt="img"
                     />
-                    <p className={`mb-0 ${styles.dropDown__name}`}>
+                    <p 
+                      ref={click}
+                      className={`mb-0 ${styles.dropDown__name}`}>
                       {room.room_name}
                     </p>
+                    <div className={`${styles.optionsContainer}`}>
+                        <RoomOptions
+                          isClicked={isClicked}
+                        />
+                    </div>
                   </a>
                 </li>
               )
