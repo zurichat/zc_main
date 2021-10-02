@@ -7934,14 +7934,7 @@ webpack-cli@^4.8.0:
     v8-compile-cache "^2.2.0"
     webpack-merge "^5.7.3"
 
-webpack-config-single-spa-react@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.npmjs.org/webpack-config-single-spa-react/-/webpack-config-single-spa-react-4.0.2.tgz"
-  integrity sha512-TSE/MZ5RhtG3qNJvCQnsFcHadL1fI2uw92sg2Ym7P9o/DgVuqJ931yrHVp5IMsTIoluioCrqlDx1OmLSEOGZhQ==
-  dependencies:
-    webpack-config-single-spa "5.1.1"
-
-webpack-config-single-spa@5.1.1, webpack-config-single-spa@^5.0.0:
+webpack-config-single-spa@^5.0.0:
   version "5.1.1"
   resolved "https://registry.npmjs.org/webpack-config-single-spa/-/webpack-config-single-spa-5.1.1.tgz"
   integrity sha512-i+j5PpxjcHbxnUXiR+VLjcRB6i4PfoiPERvGer27Q4BZcbICUiRJWORK+ur6KhcupZ5d0fnwge01cy8qA6DOJw==

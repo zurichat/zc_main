@@ -11,7 +11,7 @@ const index = () => {
     setnoControl(
       document.querySelectorAll(
         `[id*='zuri/zuri-plugin'],[id*='zuri/topbar'],[id*='zuri/sidebar']`
-      ).length > 0
+      ).length < 0
     )
   }, [])
 
