@@ -1,45 +1,92 @@
 // import { useState, useEffect, useContext } from 'react'
-// import { plugindata } from '../plugindata'
+// // import { fetchsidebar } from './utils/fetchsidebar'
+// // import { plugindata } from '../plugindata'
+// import { ACTION } from './root.component'
+// import axios from 'axios'
+// import { filterUrl, trimUrl } from './utils/filterurl'
 
-// // import { fetchUser } from './utils/fetchUserDetails'
-
-// const Sidebar = props => {
-//   // const user = fetchUser()
-//   const userdata = plugindata()
-//   // console.log(userInfo, 'sidebar new', organizationInfo)
-
-//   useEffect(() => {
-//     if (userdata.plugin) {
-//       console.log('user user data', userdata.sideBarData)
-//     }
-//   }, [userdata.plugin])
-
-//   return <div>Welcome</div>
-// }
-
-// export default Sidebar
-
-// import { useState, useEffect, useContext } from 'react'
 // import { fetchUser } from './utils/fetchUserDetails'
 
-// const Sidebar = props => {
-//   const nn = fetchUser()
+// const Sidebar = ({ state, dispatch }) => {
+//   const user = fetchUser()
+//   // const [render, setrender] = useState(0)
+
+//   // const userdata = plugindata(state, dispatch, render)
 //   // console.log(userInfo, 'sidebar new', organizationInfo)
 
+//   const [userInfo, setuserInfo] = useState({})
+
+//   const [organizationInfo, setOrganizationInfo] = useState(null)
+
 //   useEffect(() => {
-//     console.log(nn, 'test test')
-//   })
+//     user.then(res => {
+//       console.log(res)
+//       // setuserInfo(res.userInfo)
+//       // setOrganizationInfo(res.userInfo.organizationInfo)
+//       console.log('done setting')
+//     })
+//   }, [userInfo])
+
+//   useEffect(() => {
+//     if (organizationInfo !== null) {
+//       console.log('run am')
+//     }
+//   }, [organizationInfo])
+
+// if (userInfo !== null) {
+//   //Check for organization
+//   if (userInfo.organizationInfo !== null) {
+//     //Query organization info to get pluginData
+
+//     for (let index = 0; index < userInfo.organizationInfo.length; index++) {
+//       const { plugin } = userInfo.organizationInfo[index]
+
+//       const sidebarUrl = plugin.sidebar_url
+//       const trimmedUrl = trimUrl(sidebarUrl)
+//       const pluginKey = filterUrl(plugin.sidebar_url)
+
+//       axios
+//         .get(
+//           `${
+//             trimmedUrl.includes('https://') || trimmedUrl.includes('http://')
+//               ? trimmedUrl
+//               : `https://${trimmedUrl}`
+//           }?org=${userInfo.currentWorkspace}&user=${userInfo.userId}`
+//         )
+//         .then(res => {
+//           try {
+//             const validPlugin = res.data
+//             if (validPlugin.name !== undefined) {
+//               if (typeof validPlugin === 'object') {
+//                 if (userInfo.organizationInfo.length - 1 !== index) {
+//                   console.log('valid plug', validPlugin)
+//                   dispatch({
+//                     type: ACTION.ADD_SIDEBAR_DATA,
+//                     payload: validPlugin
+//                   })
+//                 }
+//               }
+//             }
+//           } catch (err) {
+//             return null
+//           }
+//         })
+//         .catch(console.log)
+//         .finally(() => {
+//           console.log('done')
+//         })
+//     }
+//   }
+// }
 
 //   return <div>Welcome</div>
 // }
 
 // export default Sidebar
 
-import { Fragment, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './styles/Sidebar.module.css'
-import Dropdown from './components/Dropdown'
-import Modal from './components/InviteModal'
 import ModalComponent from './components/ModalComponent'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
 import styled from 'styled-components'
@@ -54,15 +101,9 @@ import filesIcon from './verified-components/assets/icons/files-icon.svg'
 import pluginIcon from './verified-components/assets/icons/plugin-icon.svg'
 import addIcon from './verified-components/assets/icons/add-icon.svg'
 import shapekeyboardarrowdown from './verified-components/assets/icons/shapekeyboardarrowdown.svg'
-import newmessage from './verified-components/assets/icons/newmessage.svg'
 import { links } from './utils/links'
 import { navigateToUrl } from 'single-spa'
-import { Button } from '../../control/src/pages/createworkspace/components/WorkspaceHome'
-import Channels from './components/Channels'
 import { Modall } from './components/Modal'
-import SkeletonLoader from './components/SkeletonLoader'
-import Messages from './components/Messages'
-import fetcher from './utils/fetcher'
 import axios from 'axios'
 import { GetUserInfo } from '@zuri/control'
 import { authAxios } from './utils/Api'
@@ -168,9 +209,6 @@ const Sidebar = props => {
       })
   }
 
-  console.log(currentWorkspace, 'workspace')
-  console.log(userInfo.userId, 'user id')
-
   useEffect(() => {
     setnullValue(1)
   }, [])
@@ -185,38 +223,10 @@ const Sidebar = props => {
           const websocket = ctx.data
           console.log('Websocket', websocket)
           if (websocket.event === 'sidebar_update') {
-            console.log('check', websocket.sidebar_url)
-
-            const sidebarUrl = websocket.sidebar_url
-
-            const trimmedUrl = trimUrl(sidebarUrl)
-            const pluginKey = filterUrl(sidebarUrl)
-
-            axios
-              .get(
-                `${
-                  trimmedUrl.includes('https://') ||
-                  trimmedUrl.includes('http://')
-                    ? trimmedUrl
-                    : `https://${trimmedUrl}`
-                }?org=${currentWorkspace}&user=${userInfo.userId}`
-              )
-              .then(res => {
-                try {
-                  const validPlugin = res.data
-                  if (validPlugin.name !== undefined) {
-                    if (typeof validPlugin === 'object') {
-                      setSidebarData({
-                        ...sidebarData,
-                        [pluginKey]: validPlugin
-                      })
-                    }
-                  }
-                } catch (err) {
-                  console.log(err, 'Invalid plugin')
-                }
-              })
-              .catch(console.log)
+            setSidebarData({
+              ...sidebarData,
+              [websocket.plugin_id]: websocket.data
+            })
           }
         }
       )
@@ -466,91 +476,8 @@ const Sidebar = props => {
                 key={index}
                 items={sidebarData[plugin]}
               />
-              // console.log()
-
-              // <div key={index}>
-              //   <h5>{plugin.name}</h5>
-
-              //   <ul>
-              //     {plugin.joined_rooms &&
-              //       plugin.joined_rooms.map((room, index) => {
-              //         if (room.room_name !== undefined) {
-              //           return (
-              //             <li key={index}>
-              //               <a
-              //                 style={{
-              //                   marginLeft: '5px',
-              //                   color: 'red'
-              //                 }}
-              //                 href={room.room_url}
-              //                 onClick={navigateToUrl}
-              //               >
-              //                 {room.room_name}
-              //               </a>
-              //             </li>
-              //           )
-              //         }
-              //       })}
-              //   </ul>
-              // </div>
             )
           })}
-        {/*
-        {roomInfo.rooms !== undefined &&
-                roomInfo.rooms.map(room => {
-                  return (
-                    <Fragment>
-                      <a href={room.room_url} onClick={navigateToUrl}>
-                        {room.name}
-                      </a>
-                    </Fragment>
-                  )
-                })}
-        <Dropdown onAddButtonClick={open} showAddButton={true} title="Plugins">
-        {sidebarData &&
-          links.map((pluginLink, index) =>
-            sidebarData.map(pluginName => {
-              pluginLink.name === pluginName.group_name ? (
-                <Fragment key={index}>
-                  <a href={pluginLink.href} onClick={navigateToUrl}>
-                    {pluginLink.name}
-                  </a>
-                </Fragment>
-              ) : null
-            })
-          )}
-      </Dropdown>
-        <Dropdown onAddButtonClick={open} showAddButton={true} title="Channels">
-        {channelsData &&
-          channelsData.channels.map((channel, index) => (
-            <Fragment key={index}>
-              <span>#</span>
-              {channel.name}
-            </Fragment>
-          ))}
-          </Dropdown>
-          organization === '' ? (
-        <SkeletonLoader />
-      ) : (
-        <div>
-          <Channels organization={organization} userid={id} />
-          <Messages organization={organization} userid={id} />
-        </div>
-      )
-          */}
-
-        {/* button for adding invites */}
-
-        {/* <Button
-        style={{
-          width: '80%',
-          margin: '0 auto',
-          marginTop: '20px',
-          color: 'white'
-        }}
-      >
-        <LinkStyled to={'/createworkspace'}>Create Workspace</LinkStyled>{' '}
-      </Button> */}
       </div>
     </div>
   )
@@ -613,7 +540,7 @@ letter-spacing: 0em;
 text-align: left;
 display: flex;
 padding:0.25rem;
-& > img { 
+& > img {
   padding: 0 1rem;
 `
 

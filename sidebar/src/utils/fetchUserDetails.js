@@ -20,6 +20,7 @@ export const fetchUser = async () => {
       const user = await GetUserInfo()
 
       //Check if user id is valid and get user organization
+
       if (user[0]._id !== '') {
         const org_url = `/organizations/${currentWorkspace}/plugins`
         authAxios
@@ -43,7 +44,7 @@ export const fetchUser = async () => {
     getuser()
   }, [])
 
-  // console.log('before getting')
+  // // console.log('before getting')
 
   return { userInfo }
 }

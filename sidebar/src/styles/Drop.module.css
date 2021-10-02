@@ -60,6 +60,7 @@
 
 .item__name {
   padding-inline-start: 2rem;
+  text-decoration: none;
 }
 
 .item__image {
