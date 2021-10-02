@@ -249,8 +249,18 @@
   cursor: pointer;
   height: 34px;
   position: relative;
+  align-items: center;
+  display: flex;  
 }
-
+ .sectionTwo .statusContent{
+  font-size: 13px;
+  text-align: center;
+  margin-left: 60px;
+} 
+ 
+.sectionTwo .emoji{
+  float: left;
+} 
 /* The section of the picker */
 
 .smileys {
