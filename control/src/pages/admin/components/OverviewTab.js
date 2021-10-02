@@ -16,12 +16,11 @@ const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
   const user = getUser()
   const [workspaceData, setWorkspaceData] = React.useState({})
   const [loading, setLoading] = React.useState(false)
-  console.log(workspaceData)
+  console.log(workspaceData);
 
   useEffect(() => {
     if (currentWorkspace) {
-      authAxios
-        .get(`/organizations/${currentWorkspace}`)
+      authAxios.get(`/organizations/${currentWorkspace}`)
         .then(res => {
           setWorkspaceData(res.data.data)
           console.log(res.data.data)
@@ -35,21 +34,18 @@ const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
   const handlePlan = () => {
     setLoading(true)
 
-    authAxios
-      .post(`/organizations/${currentWorkspace}/upgrade-to-pro`)
+    authAxios.post(`/organizations/${currentWorkspace}/upgrade-to-pro`)
       .then(res => {
         setLoading(false)
         console.log(res.data)
         toast.success(res.data.message, {
-          position: 'top-center'
-        })
+          position: 'top-center'})
       })
       .catch(err => {
         setLoading(false)
         console.log(err)
         toast.error('Oops, something went wrong check and try again', {
-          position: 'top-center'
-        })
+          position: 'top-center'})
       })
   }
 
@@ -64,21 +60,13 @@ const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
       <div className={styles.plansContent}>
         <h1 className={styles.plansHeader}>
           Your workspace is currently on the{' '}
-          <b className={styles.bold}>
-            {workspaceData.version === 'pro' ? 'Pro Plan' : 'Free Plan'}
-          </b>
+          <b className={styles.bold}>{workspaceData.version === "pro" ? "Pro Plan" : "Free Plan"}</b>
         </h1>
         <div className={styles.buttonWrapper}>
-          <button
-            onClick={handlePlan}
-            disabled={workspaceData.version === 'pro'}
-            className={styles.mainCta}
-          >
-            {loading ? (
-              <Loader type="ThreeDots" color="#fff" height={40} width={40} />
-            ) : (
-              'Subscribe to a plan'
-            )}
+          <button onClick={handlePlan} disabled={workspaceData.version === "pro"} className={styles.mainCta}>
+            {loading ? 
+              <Loader type="ThreeDots" color="#fff" height={40} width={40} /> : 
+              "Subscribe to a plan"}
           </button>
         </div>
 
@@ -108,15 +96,7 @@ const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
           </ul>
           <p className={styles.getToken}>
             Don’t have enough tokens?{' '}
-            <span
-              onClick={() => {
-                setActive(5)
-                setOpenTab(!openTab)
-              }}
-              className={styles.cta}
-            >
-              Buy now
-            </span>
+            <span onClick={() => { setActive(5); setOpenTab(!openTab) }} className={styles.cta}>Buy now</span>
           </p>
         </div>
       </div>
@@ -128,17 +108,9 @@ const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
         </div>
         <div className={styles.buttonCont}>
           <button className={styles.btnSecondary}>Learn More</button>
-          <button
-            onClick={handlePlan}
-            disabled={workspaceData.version === 'pro'}
-            className={styles.btnPrimary}
-          >
-            {loading ? (
-              <Loader type="ThreeDots" color="#fff" height={40} width={40} />
-            ) : (
-              'Upgrade'
-            )}
-          </button>
+          <button onClick={handlePlan} disabled={workspaceData.version === "pro"} className={styles.btnPrimary}>{loading ? 
+                <Loader type="ThreeDots" color="#fff" height={40} width={40} /> : 
+                "Upgrade"}</button>
         </div>
       </div>
 

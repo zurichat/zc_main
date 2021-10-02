@@ -14,10 +14,7 @@ const DownloadsMobile = () => {
   const [exe, setexe] = useState({ link: '', name: '' })
   React.useEffect(() => {
     if (isIOS) return setexe({ name: 'DOWNLOAD FOR IOS' })
-    return setexe({
-      name: 'DOWNLOAD FOR ANDROID',
-      link: 'https://drive.google.com/file/d/1C5s3Hm44shxtIJ6XElV3lqBk1XLAbrMm/view?usp=drivesdk'
-    })
+    return setexe({ name: 'DOWNLOAD FOR ANDROID', link: 'https://drive.google.com/file/d/1C5s3Hm44shxtIJ6XElV3lqBk1XLAbrMm/view?usp=drivesdk' })
   }, [])
   return (
     <>
@@ -31,7 +28,10 @@ const DownloadsMobile = () => {
             <p className="mb-4">
               Connecting with your team has never been easier with Zuri Chat.
             </p>
-            <a href={exe.link} className={downloadStyles.button1}>
+            <a
+              href={exe.link}
+              className={downloadStyles.button1}
+            >
               <img className={`px-2`} src={icon} alt="download icon"></img>
               DOWNLOAD
             </a>
@@ -51,21 +51,33 @@ const DownloadsMobile = () => {
             Download and enjoy the Zuri Chat experience on any these devices
           </p>
           <div className={`${downloadStyles.downloadButtonContainer}`}>
-            <a href="/download-app" className={downloadStyles.downloadButton}>
+            <a
+              href="/download-app"
+              className={downloadStyles.downloadButton}
+            >
               Windows
               <img className={`px-2`} src={windows} alt="download icon" />
             </a>
-            <a href="/download-app" className={downloadStyles.downloadButton}>
+            <a
+              href="/download-app"
+              className={downloadStyles.downloadButton}
+            >
               macOS
               <img className={`px-2`} src={apple} alt="download icon" />
             </a>
           </div>
           <div className={`${downloadStyles.downloadButtonContainer} mb-4`}>
-            <a href={exe.link} className={downloadStyles.downloadButton}>
+            <a
+              href={exe.link}
+              className={downloadStyles.downloadButton}
+            >
               Android
               <img className={`px-2`} src={android} alt="download icon" />
             </a>
-            <a href="/download-app" className={downloadStyles.downloadButton}>
+            <a
+              href="/download-app"
+              className={downloadStyles.downloadButton}
+            >
               iOS
               <img className={`px-2`} src={apple} alt="download icon" />
             </a>

@@ -13,7 +13,7 @@ import { getCurrentWorkspace } from '../Utils/Common'
 import { authAxios } from '../Utils/Api'
 
 // icon
-import { FiMenu } from 'react-icons/fi'
+import { FiMenu } from 'react-icons/fi';
 
 const AdminHeader = ({ setModal, openModal }) => {
   const currentWorkspace = getCurrentWorkspace()
@@ -21,8 +21,7 @@ const AdminHeader = ({ setModal, openModal }) => {
 
   useEffect(() => {
     if (currentWorkspace) {
-      authAxios
-        .get(`/organizations/${currentWorkspace}`)
+      authAxios.get(`/organizations/${currentWorkspace}`)
         .then(res => {
           setWorkspaceData(res.data.data)
           console.log(res.data.data)

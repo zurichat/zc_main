@@ -53,25 +53,27 @@ export const EmailInviteModal = props => {
   const [listEmail, setListEmail] = useState([])
   const initialRef = useRef()
 
-  const [borderCol, setBorderCol] = useState('gray.300')
+  const [borderCol, setBorderCol] = useState("gray.300")
 
   const [forerr, setForerr] = useState('')
 
   const Focus = () => {
-    if (!forerr) {
+    if (!forerr ){
       setBorderCol('green.200')
-    } else {
+    }else{
       setBorderCol('red.200')
     }
   }
 
   const Blur = () => {
-    if (!forerr) {
-      setBorderCol('gray.300')
-    } else {
+    if (!forerr ){
+      setBorderCol("gray.300")
+    }else{
       setBorderCol('red.200')
     }
+    
   }
+  
 
   const [inviteStep, setInviteStep] = useState(1)
 
@@ -126,7 +128,7 @@ export const EmailInviteModal = props => {
   }
 
   function validateEmail(value) {
-    let error
+    let error;
     // console.log(props.orgvalEmails.some((em)=>em === value) , value,props.orgvalEmails )
     // if (listEmail.some((em)=>em.mail === value) ) {
     //   error = 'Email already exists - Remove Duplicates.'
@@ -139,10 +141,11 @@ export const EmailInviteModal = props => {
     if (!value) {
       error = 'Email is required'
       setForerr(error)
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
+    }
+    else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
       error = 'Invalid email address'
       setForerr(error)
-    } else {
+    }else{
       error = ''
       setForerr(error)
     }
@@ -156,12 +159,8 @@ export const EmailInviteModal = props => {
     <ChakraProvider>
       {/* <Button onClick={handleInviteClick}/> */}
 
-      <Modal
-        isCentered
-        isOpen={props.isOpen}
-        onClose={onClo}
-        size="2xl"
-        motionPreset="slideInRight"
+      <Modal isCentered isOpen={props.isOpen} onClose={onClo} 
+      size="2xl" motionPreset="slideInRight"
       >
         <ModalOverlay />
         {inviteStep === 1 ? (
@@ -169,6 +168,7 @@ export const EmailInviteModal = props => {
             <ModalHeader fontSize="20px">Invite People to HNGi8</ModalHeader>
             <ModalCloseButton onClick={onClo} />
             <ModalBody>
+          
               <FormLabel fontWeight="bold">To:</FormLabel>
               <Container
                 border="1px"
@@ -179,6 +179,7 @@ export const EmailInviteModal = props => {
                 maxW="container.xl"
                 minH={120}
               >
+                
                 {listEmail.map((e_mail, index) => (
                   <Tag
                     boxShadow="md"
@@ -192,10 +193,13 @@ export const EmailInviteModal = props => {
                     <TagCloseButton onClick={() => handleDelete(index)} />
                   </Tag>
                 ))}
+                
 
                 <Formik
                   initialValues={{ email: ' ' }}
                   onSubmit={(values, actions) => {
+                  
+
                     if (listEmail.some(em => em.mail === values.email)) {
                       setListEmail([
                         ...listEmail,
@@ -229,6 +233,7 @@ export const EmailInviteModal = props => {
                         <FormControl
                           isInvalid={form.errors.email && form.touched.email}
                         >
+                          
                           <Input
                             ref={initialRef}
                             onChange={validateEmail}
@@ -240,11 +245,15 @@ export const EmailInviteModal = props => {
                             // focusBorderColor="green.200"
                             onBlur={Blur}
                             onFocus={Focus}
+
+
                             width="50%"
                           />
+                          
                         </FormControl>
                       )}
                     </Field>
+                  
                   </Form>
                 </Formik>
               </Container>
@@ -255,6 +264,8 @@ export const EmailInviteModal = props => {
                 </Text>
               ) : null}
 
+              
+             
               <div
                 className={`mt-3 pt-3 d-flex my-auto justify-content-between`}
               >
@@ -271,7 +282,8 @@ export const EmailInviteModal = props => {
                   className={` mt-2 align-items-center`}
                   style={{ color: '#00B87C', fontSize: '15px' }}
                 >
-                  <LinkIcon mr="1" mb="2" />
+                  
+                  <LinkIcon mr="1" mb="2"/>
                   Copy invite link{' '}
                   <span style={{ color: 'black', fontSize: '15px' }}>
                     {' '}
@@ -291,6 +303,8 @@ export const EmailInviteModal = props => {
             </ModalBody>
           </ModalContent>
         ) : null}
+
+      
 
         {inviteStep === 2 ? (
           <>
@@ -328,7 +342,7 @@ export const EmailInviteModal = props => {
                           Sent!
                         </Text>
                       </Container>
-
+                      
                       <div>
                         <div className="list-group ">
                           <a
@@ -339,28 +353,23 @@ export const EmailInviteModal = props => {
 
                             <div className="d-flex gap-2 w-100 justify-content-between">
                               <div>
-                                <div className="mx-0 ">
+                              <div className="mx-0 ">
+                                
                                   {listEmail.map((e_mail, index) => (
                                     // {console.log(e_mail.mail)}
-                                    <b
-                                      className="fs-5"
-                                      key={index}
-                                      color="green"
-                                    >
+                                    <b className = "fs-5" key={index} color="green">
                                       {e_mail.mail},{' '}
                                     </b>
                                   ))}
-                                </div>
+                                
+                                
+                              </div>
                                 <span className="mb-0 ">
-                                  <Text
-                                    className="text-muted "
-                                    color="black.300"
-                                    fontSize="md"
-                                  >
-                                    has been invited as a <b>member</b> of
-                                    HNGi8. They will receive but not be able to
-                                    reply messages till they join
-                                  </Text>
+                                <Text className="text-muted " color="black.300" fontSize="md">
+                                  has been invited as a <b>member</b> of HNGi8. They
+                                  will receive but not be
+                                  able to reply messages till they join
+                                </Text>
                                 </span>
                               </div>
                             </div>
@@ -391,14 +400,10 @@ export const EmailInviteModal = props => {
 
                             <div className="d-flex gap-2 w-100 justify-content-between">
                               <div>
-                                <div>
+                                <div >
                                   {listEmail.map((e_mail, index) => (
                                     // {console.log(e_mail.mail)}
-                                    <b
-                                      className="fs-5"
-                                      key={index}
-                                      color="green"
-                                    >
+                                    <b className = "fs-5" key={index} color="green">
                                       {e_mail.mail},{' '}
                                     </b>
                                   ))}
@@ -469,7 +474,74 @@ export const EmailInviteModal = props => {
   )
 }
 
-export default EmailInviteModal
+export default EmailInviteModal;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // <ChakraProvider >
 //           <Overlay

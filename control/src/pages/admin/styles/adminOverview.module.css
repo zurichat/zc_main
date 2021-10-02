@@ -191,7 +191,8 @@
 .btnPrimary:disabled,
 .btnPrimary:disabled:hover,
 .btnPrimary:disabled:active,
-.btnPrimary:disabled:focus {
+.btnPrimary:disabled:focus
+ {
   background: rgba(0, 184, 124, 0.5);
 }
 
