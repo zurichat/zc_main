@@ -29,6 +29,7 @@ const PluginRoomAddUser = ({ isOpen, isClosed, room_id }) => {
 
   let token = sessionStorage.getItem('token')
   let currentWorkspace = localStorage.getItem('currentWorkspace')
+//   console.log('currentWorkspace', currentWorkspace);
   const headers = {
     Authorization: `Bearer ${token}`
   }
@@ -177,7 +178,7 @@ export const Overlay = styled(DialogOverlay)`
   align-items: center;
   width: 100%;
   padding: 2rem;
-  z-index: 5;
+  z-index: 99999;
   overflow-y: scroll;
 `
 
