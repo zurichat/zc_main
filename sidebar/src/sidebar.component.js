@@ -1,4 +1,25 @@
 // import { useState, useEffect, useContext } from 'react'
+// import { plugindata } from '../plugindata'
+
+// // import { fetchUser } from './utils/fetchUserDetails'
+
+// const Sidebar = props => {
+//   // const user = fetchUser()
+//   const userdata = plugindata()
+//   // console.log(userInfo, 'sidebar new', organizationInfo)
+
+//   useEffect(() => {
+//     if (userdata.plugin) {
+//       console.log('user user data', userdata.sideBarData)
+//     }
+//   }, [userdata.plugin])
+
+//   return <div>Welcome</div>
+// }
+
+// export default Sidebar
+
+// import { useState, useEffect, useContext } from 'react'
 // import { fetchUser } from './utils/fetchUserDetails'
 
 // const Sidebar = props => {
@@ -350,10 +371,15 @@ const Sidebar = props => {
             </div>
           )}
         </div>
-        <div 
-          onClick={() =>setBg(2)}
-          style={bg === 2 ? {backgroundColor : "#00b87c"} : {backgroundColor : "revert"}}
-          className={`row mt-2 ${styles.sb__item}`}>
+        <div
+          onClick={() => setBg(2)}
+          style={
+            bg === 2
+              ? { backgroundColor: '#00b87c' }
+              : { backgroundColor: 'revert' }
+          }
+          className={`row mt-2 ${styles.sb__item}`}
+        >
           <div
             className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
           >
@@ -363,72 +389,89 @@ const Sidebar = props => {
               role="button"
               alt="icon"
             />
-            <p 
-            className={`mb-0 ${styles.item_p}`}
-            role="button"
-            >Threads</p>
-          </div>
-        </div>
-        <div 
-         onClick={() =>setBg(3)}
-         style={bg === 3 ? {backgroundColor : "#00b87c"} : {backgroundColor : "revert"}}
-        className={`row ${styles.sb__item}`}>
-          <div
-            className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
-          >
-            <img 
-            className={`${styles.item__img}`} 
-            src={dmIcon} 
-            alt="icon" 
-            role="button"
-            />
-            <p 
-            className={`mb-0 ${styles.item_p}`}
-            role="button"
-            >All DMs</p>
-          </div>
-        </div>
-        <div 
-         onClick={() =>setBg(4)}
-         style={bg === 4 ? {backgroundColor : "#00b87c"} : {backgroundColor : "revert"}}
-        className={`row ${styles.sb__item}`}>
-          <div
-            className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
-          >
-            <img 
-            className={`${styles.item__img}`} 
-            src={draftIcon} 
-            alt="icon" 
-            role="button"
-            />
-            <p 
-            className={`mb-0 ${styles.item_p}`}
-            role="button"
-            >Drafts</p>
+            <p className={`mb-0 ${styles.item_p}`} role="button">
+              Threads
+            </p>
           </div>
         </div>
         <div
-         onClick={() =>setBg(5)}
-         style={bg === 5 ? {backgroundColor : "#00b87c"} : {backgroundColor : "revert"}} 
-        className={`row ${styles.sb__item}`}>
+          onClick={() => setBg(3)}
+          style={
+            bg === 3
+              ? { backgroundColor: '#00b87c' }
+              : { backgroundColor: 'revert' }
+          }
+          className={`row ${styles.sb__item}`}
+        >
           <div
             className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
           >
-            <img className={`${styles.item__img}`} 
-            src={filesIcon} 
-            alt="icon" 
-            role="button"
+            <img
+              className={`${styles.item__img}`}
+              src={dmIcon}
+              alt="icon"
+              role="button"
             />
-            <p 
-            className={`mb-0 ${styles.item_p}`}
-            role="button"
-            >Files</p>
+            <p className={`mb-0 ${styles.item_p}`} role="button">
+              All DMs
+            </p>
           </div>
         </div>
         <div
-         onClick={() =>setBg(6)}
-         style={bg === 6 ? {backgroundColor : "#00b87c"} : {backgroundColor : "revert"}} 
-        className={`row ${styles.sb__item}`}>
+          onClick={() => setBg(4)}
+          style={
+            bg === 4
+              ? { backgroundColor: '#00b87c' }
+              : { backgroundColor: 'revert' }
+          }
+          className={`row ${styles.sb__item}`}
+        >
+          <div
+            className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+          >
+            <img
+              className={`${styles.item__img}`}
+              src={draftIcon}
+              alt="icon"
+              role="button"
+            />
+            <p className={`mb-0 ${styles.item_p}`} role="button">
+              Drafts
+            </p>
+          </div>
+        </div>
+        <div
+          onClick={() => setBg(5)}
+          style={
+            bg === 5
+              ? { backgroundColor: '#00b87c' }
+              : { backgroundColor: 'revert' }
+          }
+          className={`row ${styles.sb__item}`}
+        >
+          <div
+            className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+          >
+            <img
+              className={`${styles.item__img}`}
+              src={filesIcon}
+              alt="icon"
+              role="button"
+            />
+            <p className={`mb-0 ${styles.item_p}`} role="button">
+              Files
+            </p>
+          </div>
+        </div>
+        <div
+          onClick={() => setBg(6)}
+          style={
+            bg === 6
+              ? { backgroundColor: '#00b87c' }
+              : { backgroundColor: 'revert' }
+          }
+          className={`row ${styles.sb__item}`}
+        >
           <div
             className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
           >
@@ -438,9 +481,9 @@ const Sidebar = props => {
               alt="icon"
               role="button"
             />
-            <p className={`mb-0 ${styles.item_p}`}
-            role="button"
-            >Plugins</p>{' '}
+            <p className={`mb-0 ${styles.item_p}`} role="button">
+              Plugins
+            </p>{' '}
             <img
               onClick={open}
               className={`${styles.addButton}`}
