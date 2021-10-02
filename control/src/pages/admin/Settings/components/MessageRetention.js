@@ -17,7 +17,7 @@ const myStyle = {
     fontSize: '18px',
     color: '#E7E7E7'
   },
-  button: {
+  btn: {
     backgroundColor: '#00B87C',
     color: '#ffffff',
     border: 'none'
@@ -61,7 +61,7 @@ const MessageRetention = () => {
         longer or shorter -<br />
         for private and direct channels
       </p>
-      <button type="button" className="btn btn-primary" style={myStyle.button}>
+      <button type="button" className="btn btn-primary" style={myStyle.btn}>
         See Paid Plans
       </button>
     </>
