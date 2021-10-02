@@ -65,19 +65,17 @@ const Sidebar = props => {
   const [InviteSuccess, setInviteSuccess] = useState(false)
   const [homeModal, toggleHomeModal] = useState(false)
   const [org, setOrg] = useState({})
-  console.log("ORGGGG", org)
+  console.log('ORGGGG', org)
   const toggle = () => {
-    
     toggleHomeModal(!homeModal)
     document.removeEventListener('click', toggle)
   }
- 
-  
-  useEffect(()=>{
-      if(homeModal){
-        document.addEventListener('click', toggle)
-      }  
-  },[homeModal])
+
+  useEffect(() => {
+    if (homeModal) {
+      document.addEventListener('click', toggle)
+    }
+  }, [homeModal])
 
   document.removeEventListener('click', toggle)
 
@@ -89,34 +87,29 @@ const Sidebar = props => {
     token: ''
   })
 
-  console.log("userinfo", userInfo)
+  console.log('userinfo', userInfo)
 
   const [nullValue, setnullValue] = useState(0)
 
   const [organizationInfo, setOrganizationInfo] = useState(null)
   const [sidebarData, setSidebarData] = useState({})
 
-  
   // let user = JSON.parse(sessionStorage.getItem('user'))
   let token = sessionStorage.getItem('token')
   let user_id_session = JSON.parse(sessionStorage.getItem('user'))
 
-  useEffect(()=>{
+  useEffect(() => {
     axios({
-    method: 'get',
-    url: `https://api.zuri.chat/organizations/${currentWorkspace}`,
-    headers: {
-      Authorization: `Bearer ${token}`
-    }
-  
-  }).then( res =>{
-    const org = res.data.data
-    setOrg(org)
-  }
-
-  )
- 
-})
+      method: 'get',
+      url: `https://api.zuri.chat/organizations/${currentWorkspace}`,
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    }).then(res => {
+      const org = res.data.data
+      setOrg(org)
+    })
+  })
   useEffect(() => {
     inviteVisibility()
 
@@ -155,7 +148,7 @@ const Sidebar = props => {
     getOrgDetails().then(res => {
       const currentUser = res.data.data.find(user => user.email === userEmail)
       setOwner(currentUser?.role === 'owner' || currentUser?.role === 'admin')
-      console.log("currentUser", currentUser)
+      console.log('currentUser', currentUser)
     })
   }
 
@@ -235,7 +228,7 @@ const Sidebar = props => {
       )
   }
   useEffect(() => {
-    { 
+    {
       organizationInfo &&
         organizationInfo.map(pluginData => {
           const { plugin } = pluginData
@@ -294,9 +287,7 @@ const Sidebar = props => {
             </div>
           </div>
           <div className={`col-12 px-3 ${styles.modalContainer}`}>
-            <ModalComponent 
-            workSpace={org}
-            isOpen={homeModal} />
+            <ModalComponent workSpace={org} isOpen={homeModal} />
           </div>
 
           <Modall showDialog={showDialog} closeDialog={close} />

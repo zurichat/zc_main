@@ -81,19 +81,17 @@
   cursor: pointer;
 }
 
-.modalSection div:hover{
-background: #01d892;
+.modalSection div:hover {
+  background: #01d892;
 }
-
 
 /* .modalSection .openmodalSubCon {
 all:none;
 } */
 
-.submodalSection div:hover{
+.submodalSection div:hover {
   background: #01d892;
 }
-
 
 /* .modalSubSection{
   position: relative;
@@ -213,7 +211,7 @@ all:none;
   /* top: 60%; */
   margin-top: 50px;
   left: 20%;
-  width: 100%; 
+  width: 100%;
   max-width: 281px;
   border: 1px solid #bebebe;
   border-radius: 5px;
@@ -249,7 +247,7 @@ all:none;
   /* top: 60%; */
   /* margin-top: 0px; */
   /* left: 20%; */
-  width: 100%; 
+  width: 100%;
   max-width: 281px;
   border: 1px solid #bebebe;
   border-radius: 5px;
