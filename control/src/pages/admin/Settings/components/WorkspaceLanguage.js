@@ -12,7 +12,7 @@ const myStyle = {
     },
 }
 
-const JoinWorkspace = () => {
+const WorkspaceLanguage = () => {
     return (
         <>
             <select class="form-select" style={myStyle.inputfield}>
@@ -25,4 +25,4 @@ const JoinWorkspace = () => {
     )
 }
 
-export default JoinWorkspace
+export default WorkspaceLanguage
