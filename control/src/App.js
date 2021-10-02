@@ -35,6 +35,7 @@ import PrivacyPolicy from './pages/privacy-policy/index'
 import NotFoundPage from './pages/404'
 import About from './pages/about/index'
 import Billing from './pages/admin/Billing'
+import Homepage from './pages/home'
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -49,6 +50,9 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
+        <Route path="/home">
+          <Homepage />
+        </Route>
         <Route path="/" exact>
           <LandingPage />
         </Route>
