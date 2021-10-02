@@ -123,7 +123,7 @@ const Login = () => {
         // alert(message) //Change this when there is a design
 
         // setTimeout(() => {
-          //Redirect to some other page
+        //Redirect to some other page
         //   GetUserInfo()
         //   history.push('/choose-workspace')
         //   setLoading(false)
