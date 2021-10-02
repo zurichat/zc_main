@@ -31,20 +31,7 @@ test = test.substr(1);
 test = test.charAt(0).toUpperCase() + test.slice(1);
 document.title = test + appendZuri;
 };
-
-let checkPage = function(){
-
-if(location.pathname === '/') {
-   let terminate = () => {
-     return;
-   }
-}else {
  setInterval(getTitleOfPage ,500) 
-}
-}
-
-setTimeout(checkPage, 1000);
-
 </script>
 <!-- End -->
 
