@@ -1,9 +1,9 @@
 h6 {
   font-size: 1.3rem;
-   font-weight: bold;
+  font-weight: bold;
 }
 
- p {
+p {
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -27,7 +27,6 @@ h6 {
   margin-left: 0.65rem;
 }
 
-
 .overview {
   width: 100%;
 }
@@ -35,11 +34,11 @@ h6 {
 .overview p {
   border: 2px solid #00b87c;
   padding: 2rem;
-  padding-left: .8rem;
+  padding-left: 0.8rem;
   padding-right: 4rem;
-  padding-top: .2rem;
+  padding-top: 0.2rem;
   margin: 1rem;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: bold;
 }
 
@@ -50,7 +49,7 @@ h6 {
 }
 
 .container button {
-  padding:.8rem 2.5rem;
+  padding: 0.8rem 2.5rem;
   margin: 2rem;
   color: #fff;
   background-color: #00b87c;
@@ -67,18 +66,16 @@ h6 {
 
 .referal {
   width: 70% !important;
-  
 }
 
 .referal:active,
 .referal:focus {
   box-shadow: none;
   border-color: none;
-
 }
 
 .rInfo > p {
-  margin-top: .8rem;
+  margin-top: 0.8rem;
 }
 
 .paymentSelection {
