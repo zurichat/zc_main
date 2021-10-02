@@ -107,10 +107,13 @@ const centrifuge = new Centrifuge(
   'wss://realtime.zuri.chat/connection/websocket'
 )
 
+centrifuge.setConnectData({"bearer": token});
+
 centrifuge.connect()
 centrifuge.on('connect', function (connectCtx) {
   console.log('connected', connectCtx)
 })
+
 
 export const SubscribeToChannel = (plugin_id, callback) => {
   centrifuge.subscribe(plugin_id, ctx => {
