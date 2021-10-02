@@ -8,29 +8,29 @@ function PurchaseModal({ setHelpModal }) {
   const currentWorkspace = getCurrentWorkspace()
   const [workspaceData, setWorkspaceData] = useState({})
   const [loading, setLoading] = useState(false)
+  
 
-  useEffect(() => {
+  const addToken = (number) => {
+    const token = {token: number}
     if (currentWorkspace) {
       authAxios
-        .get(`/organizations/${currentWorkspace}/checkout-session`)
+        .post(`/organizations/${currentWorkspace}/add-token, ${token}`)
         .then(res => {
           setWorkspaceData(res.data.data)
-          console.log(res.data.data, 'second')
         })
         .catch(err => {
           console.log(err)
         })
     }
-  }, [currentWorkspace])
+  }
 
   const makePayment = () => {
     setLoading(true)
-
     authAxios
       .post(`/organizations/${currentWorkspace}/checkout-session`)
       .then(res => {
         setLoading(false)
-        console.log(res.data)
+        // console.log(res.data)
         toast.success(res.data.message, {
           position: 'top-center'
         })
@@ -56,7 +56,7 @@ function PurchaseModal({ setHelpModal }) {
           <div class="form-group ">
             <label for="token">Token</label>
             <div>
-              <input type="text" class="form-control" />
+              <input type="text" class="form-control" onChange={(evt) => { addToken(evt.target.value); }} />
             </div>
           </div>
 
