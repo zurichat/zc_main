@@ -88,6 +88,8 @@
 
 .plansHeader {
   font-size: 1.375rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
   font-weight: 400;
   color: #333;
   text-align: center;
