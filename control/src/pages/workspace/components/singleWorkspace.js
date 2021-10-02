@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../style/workspace.module.css'
-import { useWorkspaceContext } from './WorkspaceContext'
+import WorkspaceOpen from './WorkspaceOpen'
+
 import HNG_icon from '../assets/HNG-icon.svg'
 import member1 from '../assets/member_image1.png'
 import member2 from '../assets/member_image2.png'
@@ -18,46 +19,37 @@ const SingleWorkspace = ({
   member_number,
   selected
 }) => {
-  const { toggleSelected } = useWorkspaceContext()
-
   console.log(member_imgs)
-  // console.log(id)
   return (
     <section className={`${styles.single_workspace}`}>
-      <div className={`${styles.single_workspace_inputgroup}`}>
-        <input
-          type="checkbox"
-          name={workspace_name}
-          defaultChecked={selected}
-          className={`${styles.workspace_input}`}
-          onChange={() => {
-            toggleSelected(id)
-            console.log(id)
-            localStorage.setItem('currentWorkspace', id)
-          }}
-        />
+      <div className={`${styles.singleworkspace_card}`}>
+        <div className={`${styles.workspace_image}`}>
+          <img src={icon || HNG_icon} alt={workspace_name} />
+        </div>
+        <div className={`${styles.workspace_info}`}>
+          <h5>{workspace_name}</h5>
+          <section className={`${styles.workspace_details}`}>
+            <div className={`${styles.members_photos}`}>
+              {member_imgs.map((img, index) => {
+                return (
+                  <img
+                    className={`${styles.member_img}`}
+                    src={img || imgs[index]}
+                    key={index}
+                    alt="Workspace members"
+                  />
+                )
+              })}
+            </div>
+            <p>
+              {member_number === 1
+                ? `${member_number} member`
+                : `${member_number} members`}
+            </p>
+          </section>
+        </div>
       </div>
-      <div className={`${styles.workspace_image}`}>
-        <img src={icon || HNG_icon} alt={workspace_name} />
-      </div>
-      <div className={`${styles.workspace_info}`}>
-        <h5>{workspace_name}</h5>
-        <section className={`${styles.workspace_details}`}>
-          <div className={`${styles.members_photos}`}>
-            {member_imgs.map((img, index) => {
-              return (
-                <img
-                  className={`${styles.member_img}`}
-                  src={img || imgs[index]}
-                  key={index}
-                  alt="Workspace members"
-                />
-              )
-            })}
-          </div>
-          <p>{member_number} members</p>
-        </section>
-      </div>
+      <WorkspaceOpen workspaceID={id} />
     </section>
   )
 }
