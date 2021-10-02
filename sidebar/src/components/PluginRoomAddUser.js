@@ -29,7 +29,7 @@ const PluginRoomAddUser = ({ isOpen, isClosed, room_id }) => {
 
   let token = sessionStorage.getItem('token')
   let currentWorkspace = localStorage.getItem('currentWorkspace')
-//   console.log('currentWorkspace', currentWorkspace);
+  //   console.log('currentWorkspace', currentWorkspace);
   const headers = {
     Authorization: `Bearer ${token}`
   }

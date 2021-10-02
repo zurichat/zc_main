@@ -52,8 +52,7 @@ const WorkspaceHome = () => {
     }
   }, [email, password])
 
-    autoLogin()
- 
+  autoLogin()
 
   useEffect(() => {
     const user = JSON.parse(sessionStorage.getItem('user'))
