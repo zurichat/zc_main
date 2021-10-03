@@ -60,7 +60,10 @@ const DownloadsMobile = () => {
             Download and enjoy the Zuri Chat experience on any these devices
           </p>
           <div className={`${downloadStyles.downloadButtonContainer}`}>
-            <a href="https://drive.google.com/file/d/1J1rl-_3QeG9H4rnn9EF0XW0kSGb_Wsl4/view?usp=sharing" className={downloadStyles.downloadButton}>
+            <a
+              href="https://drive.google.com/file/d/1J1rl-_3QeG9H4rnn9EF0XW0kSGb_Wsl4/view?usp=sharing"
+              className={downloadStyles.downloadButton}
+            >
               Windows
               <img className={`px-2`} src={windows} alt="download icon" />
             </a>
