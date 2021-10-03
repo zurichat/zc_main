@@ -55,7 +55,7 @@ const Sidebar = props => {
   const [InviteSuccess, setInviteSuccess] = useState(false)
   const [homeModal, toggleHomeModal] = useState(false)
   const [org, setOrg] = useState({})
-  console.log('ORGGGG', org)
+  // console.log('ORGGGG', org)
   const toggle = () => {
     toggleHomeModal(!homeModal)
     document.removeEventListener('click', toggle)
@@ -81,12 +81,25 @@ const Sidebar = props => {
     token: ''
   })
 
-  console.log('userinfo', userInfo)
+  // console.log('userinfo', userInfo)
 
   const [nullValue, setnullValue] = useState(0)
 
   const [organizationInfo, setOrganizationInfo] = useState(null)
   const [sidebarData, setSidebarData] = useState({})
+  const [isLoading, setIsLoading] = useState(true)
+
+  const loaderFunc = () => {
+    setIsLoading(false)
+  }
+
+  setTimeout(loaderFunc, 13000)
+
+  let sideBarDataSize = Object.keys(sidebarData).length
+
+  console.log('SidebarData', sidebarData)
+  console.log('SidebarData Size:', sideBarDataSize)
+  console.log('ORG INFO:', organizationInfo)
 
   // let user = JSON.parse(sessionStorage.getItem('user'))
   let token = sessionStorage.getItem('token')
@@ -154,7 +167,7 @@ const Sidebar = props => {
   // ${currentWorkspace}
   const inviteUser = async emails => {
     // console.log(currentWorkspace, token, emails)
-    console.log(...emails, 'pidoxy')
+    // console.log(...emails, 'pidoxy')
     setSendLoading(true)
     return await axios({
       method: 'post',
@@ -208,6 +221,8 @@ const Sidebar = props => {
         organizationInfo.map(pluginData => {
           const { plugin } = pluginData
 
+          console.log('Plugin:', plugin)
+
           const sidebarUrl = plugin.sidebar_url
           const trimmedUrl = trimUrl(sidebarUrl)
           const pluginKey = filterUrl(plugin.sidebar_url)
@@ -224,6 +239,9 @@ const Sidebar = props => {
             .then(res => {
               try {
                 const validPlugin = res.data
+
+                // console.log("Valid Plugin Array:", [validPlugin])
+
                 if (validPlugin.name !== undefined) {
                   if (typeof validPlugin === 'object') {
                     setSidebarData(prev => {
@@ -238,7 +256,9 @@ const Sidebar = props => {
             .catch(console.log)
         })
     }
+    console.log("organization",organizationInfo)
   }, [organizationInfo])
+
 
   return (
     <div className={`container-fluid ${styles.sb__container}`}>
@@ -246,7 +266,9 @@ const Sidebar = props => {
         <div className={`row ${styles.orgDiv}`}>
           <div className={`col-12 px-3 ${styles.orgInfo}`}>
             <div onClick={toggle} className={`row p-0 ${styles.orgHeader}`}>
-              <span className={`col-8 mb-0 ${styles.orgTitle}`}>{org.name}</span>
+              <span className={`col-8 mb-0 ${styles.orgTitle}`}>
+                {org.name}
+              </span>
               <span className={`col-4 p-0 ${styles.sidebar__header__arrow}`}>
                 <MdKeyboardArrowDown />
               </span>{' '}
@@ -265,55 +287,55 @@ const Sidebar = props => {
             </div>
           </div>
           <div className={`col-12 px-3 ${styles.modalContainer}`}>
-          <div className={`col-12 px-3 ${styles.odalContainer}`}>
-            <ModalComponent
-             workSpace={org}
-              isOpen={homeModal}
-              toggleOpenInvite={toggleOpenInvite}
+            <div className={`col-12 px-3 ${styles.odalContainer}`}>
+              <ModalComponent
+                workSpace={org}
+                isOpen={homeModal}
+                toggleOpenInvite={toggleOpenInvite}
+              />
+            </div>
+
+            <Modall showDialog={showDialog} closeDialog={close} />
+
+            <Overlay isOpen={showDialog} onDismiss={close}>
+              <Content aria-label="room-list">
+                <CloseButton className="close-button" onClick={close}>
+                  <Span aria-hidden>×</Span>
+                </CloseButton>
+                <AuthInputBox
+                  value={query}
+                  setValue={setQuery}
+                  placeholder="🔍 Search for plugins"
+                />
+                <Wrapper>
+                  {loading && <p>Loading..</p>}
+                  <p>
+                    {links.map((plugs, id) => {
+                      return (
+                        <div key={id}>
+                          <Link to={plugs.href} onClick={navigateToUrl}>
+                            <p>{plugs.name}</p>
+                          </Link>
+                        </div>
+                      )
+                    })}
+                  </p>
+                </Wrapper>
+              </Content>
+            </Overlay>
+
+            <EmailInviteModal
+              isOpen={openInvite}
+              onDismiss={closeInviteModal}
+              orgvalEmails={orgEmails}
+              setInviteEmails={setInviteEmails}
+              inviteUserViaMail={inviteUser}
+              sendLoadin={sendLoading}
+              currentWorkspace={currentWorkspace}
+              invSucc={InviteSuccess}
             />
           </div>
-
-          <Modall showDialog={showDialog} closeDialog={close} />
-
-          <Overlay isOpen={showDialog} onDismiss={close}>
-            <Content aria-label="room-list">
-              <CloseButton className="close-button" onClick={close}>
-                <Span aria-hidden>×</Span>
-              </CloseButton>
-              <AuthInputBox
-                value={query}
-                setValue={setQuery}
-                placeholder="🔍 Search for plugins"
-              />
-              <Wrapper>
-                {loading && <p>Loading..</p>}
-                <p>
-                  {links.map((plugs, id) => {
-                    return (
-                      <div key={id}>
-                        <Link to={plugs.href} onClick={navigateToUrl}>
-                          <p>{plugs.name}</p>
-                        </Link>
-                      </div>
-                    )
-                  })}
-                </p>
-              </Wrapper>
-            </Content>
-          </Overlay>
-
-          <EmailInviteModal
-            isOpen={openInvite}
-            onDismiss={closeInviteModal}
-            orgvalEmails={orgEmails}
-            setInviteEmails={setInviteEmails}
-            inviteUserViaMail={inviteUser}
-            sendLoadin={sendLoading}
-            currentWorkspace={currentWorkspace}
-            invSucc={InviteSuccess}
-          />
         </div>
-      </div>
       </div>
       <div className={`${styles.subCon2}`}>
         <div className={`row mt-2 ${styles.sb__item}`}>
@@ -462,47 +484,111 @@ const Sidebar = props => {
           </div>
         </div>
 
-        {/* <DropDown /> */}
+        {/* Checks if sidebarData is fully loaded; if not it mounts the skeletonloader, if sidebarData is complete it mounts sidebar fully */}
+        {isLoading ? (
+          <SkeletonLoader pluginNumber={sideBarDataSize} />
+        ) : (
+          <>
+            <div className={`row mt-2 ${styles.sb__item}`}>
+              <div
+                className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+              >
+                <img
+                  className={`${styles.item__img}`}
+                  src={threadIcon}
+                  alt="icon"
+                />
+                <p className={`mb-0 ${styles.item_p}`}>Threads</p>
+              </div>
+            </div>
+            <div className={`row ${styles.sb__item}`}>
+              <div
+                className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+              >
+                <img
+                  className={`${styles.item__img}`}
+                  src={draftIcon}
+                  alt="icon"
+                />
+                <p className={`mb-0 ${styles.item_p}`}>Drafts</p>
+              </div>
+            </div>
+            <div className={`row ${styles.sb__item}`}>
+              <div
+                className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+              >
+                <img
+                  className={`${styles.item__img}`}
+                  src={filesIcon}
+                  alt="icon"
+                />
+                <p className={`mb-0 ${styles.item_p}`}>Files</p>
+              </div>
+            </div>
+            <div className={`row ${styles.sb__item}`}>
+              <div
+                className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+              >
+                <img
+                  className={`${styles.item__img}`}
+                  src={pluginIcon}
+                  alt="icon"
+                />
+                <p className={`mb-0 ${styles.item_p}`}>Plugins</p>{' '}
+                <img
+                  onClick={open}
+                  className={`${styles.addButton}`}
+                  src={addIcon}
+                  alt="Add button"
+                  role="button"
+                />
+              </div>
+            </div>
 
-        {/* SIDE BAR DATA */}
-        {sidebarData &&
-          Object.keys(sidebarData).map((plugin, index) => {
-            return (
-              <DropDown
-                itemName={sidebarData[plugin].name}
-                id={sidebarData[plugin].name}
-                key={index}
-                items={sidebarData[plugin]}
-              />
-              // console.log()
+            {/* <DropDown /> */}
 
-              // <div key={index}>
-              //   <h5>{plugin.name}</h5>
+            {/* SIDE BAR DATA */}
+            {sidebarData &&
+              Object.keys(sidebarData).map((plugin, index) => {
+                return (
+                  <DropDown
+                    itemName={sidebarData[plugin].name}
+                    id={sidebarData[plugin].name}
+                    key={index}
+                    items={sidebarData[plugin]}
+                  />
+                  // console.log()
 
-              //   <ul>
-              //     {plugin.joined_rooms &&
-              //       plugin.joined_rooms.map((room, index) => {
-              //         if (room.room_name !== undefined) {
-              //           return (
-              //             <li key={index}>
-              //               <a
-              //                 style={{
-              //                   marginLeft: '5px',
-              //                   color: 'red'
-              //                 }}
-              //                 href={room.room_url}
-              //                 onClick={navigateToUrl}
-              //               >
-              //                 {room.room_name}
-              //               </a>
-              //             </li>
-              //           )
-              //         }
-              //       })}
-              //   </ul>
-              // </div>
-            )
-          })}
+                  // <div key={index}>
+                  //   <h5>{plugin.name}</h5>
+
+                  //   <ul>
+                  //     {plugin.joined_rooms &&
+                  //       plugin.joined_rooms.map((room, index) => {
+                  //         if (room.room_name !== undefined) {
+                  //           return (
+                  //             <li key={index}>
+                  //               <a
+                  //                 style={{
+                  //                   marginLeft: '5px',
+                  //                   color: 'red'
+                  //                 }}
+                  //                 href={room.room_url}
+                  //                 onClick={navigateToUrl}
+                  //               >
+                  //                 {room.room_name}
+                  //               </a>
+                  //             </li>
+                  //           )
+                  //         }
+                  //       })}
+                  //   </ul>
+                  // </div>
+                )
+              })}
+          </>
+        )}
+
         {/*
         {roomInfo.rooms !== undefined &&
                 roomInfo.rooms.map(room => {
