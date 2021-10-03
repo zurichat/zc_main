@@ -45,8 +45,8 @@ const DownloadsDesktop = () => {
         </p>
         <div className={`${styles.downloadButtonContainer}`}>
           <a
-            href={exe.link}
-            download={exe.name}
+            href={`https://drive.google.com/file/d/1J1rl-_3QeG9H4rnn9EF0XW0kSGb_Wsl4/view?usp=sharing`}
+            download={`zurichat`}
             className={styles.downloadButton}
           >
             Windows

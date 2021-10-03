@@ -13,13 +13,16 @@ export const TopbarProvider = ({ children }) => {
   const [showMembersModal, setShowMembersModal] = useState(false)
   const [chosenEmoji, setChosenEmoji] = useState({ emoji: '4️⃣' })
   const [reusableModal, setReusableModal] = useState('')
+  const [profilePicView, setProfilePicView] = useState(false)
   //get Profile content state
+
   const { orgId, user } = useContext(ProfileContext)
 
   // The function that opens the topbar profile modal
   const openModal = () => {
     setShowModal(!showModal)
     console.log('profile Open')
+    // document.removeEventListener('click', openModal)
   }
 
   // The function that closes the topbar profile modal
@@ -95,6 +98,8 @@ export const TopbarProvider = ({ children }) => {
     setPresence,
     reusableModal,
     setReusableModal,
+    profilePicView,
+    setProfilePicView,
     show: [showModal, setShowModal],
     status: [showStatus, setShowStatus],
     emoji: [chosenEmoji, setChosenEmoji],

@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
 .content {
   margin: 0 60px;
 }
@@ -15,6 +21,14 @@
   margin: 85px 0 30px 0;
 }
 
+.headingIntro {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: -2%;
+  text-decoration: underline;
+}
+
 .headingFive {
   font-size: 24px;
   font-weight: bold;
@@ -22,12 +36,26 @@
   text-decoration: underline;
 }
 
-/* .headingSix {
-  font-size: 18px;
+.headingAppl {
+  font-size: 24px;
   font-weight: bold;
-  line-height: 134%;
-  letter-spacing: 3%;
-} */
+  letter-spacing: -2%;
+  text-decoration: underline;
+}
+
+.headingServices {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: -2%;
+  text-decoration: underline;
+}
+
+.headingDataOthers {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: -2%;
+  text-decoration: underline;
+}
 
 .bulbImage {
   position: relative;
@@ -37,6 +65,24 @@
 }
 
 .paragraph {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 157.5%;
+  letter-spacing: 3%;
+  padding: 0 380px 0 0;
+  margin-left: 5px;
+}
+
+.paraPolicy {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 157.5%;
+  letter-spacing: 3%;
+  padding: 0 380px 0 0;
+  margin-left: 5px;
+}
+
+.parplat {
   font-size: 16px;
   font-weight: 500;
   line-height: 157.5%;
@@ -55,6 +101,11 @@
   padding: 0 370px 0 0;
 }
 
+.sectionServices {
+  position: relative;
+  top: -400px;
+}
+
 .parservices {
   font-family: 'Lato', sans-serif;
   font-style: normal;
@@ -64,6 +115,10 @@
   letter-spacing: 0.03em;
   color: #000000;
   padding: 0 380px 0 0;
+}
+
+.sectionServDev {
+  margin-top: -380px;
 }
 
 .effectDate {
@@ -93,8 +148,11 @@
   font-family: 'Lato', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 134%;
+  margin-top: 25px;
+  letter-spacing: 0.03em;
+  color: #000000;
 }
 
 .referZuri {
@@ -105,8 +163,8 @@
   margin-left: 250px;
   padding: 0 200px 0 0;
   line-height: 192%;
-  /* letter-spacing: 0.03em; */
   color: #000000;
+  margin-top: 30px;
 }
 
 .datareq {
@@ -126,7 +184,7 @@
 .effectiveAll {
   position: absolute;
   left: 300px;
-  top: 705px;
+  top: 760px;
 }
 
 .compliance {
@@ -135,15 +193,13 @@
 }
 
 .privacy {
-  margin-top: 30px;
+  margin-top: 55px;
   margin-bottom: 0px;
 }
 
 .privacymat {
-  margin-top: 280px;
+  margin-top: 120px;
   text-decoration: underline;
-  position: absolute;
-  bottom: -650px;
 }
 
 .zurimission {
@@ -155,7 +211,7 @@
   letter-spacing: 0.03em;
   color: #000000;
   padding: 0 120px 0 0;
-  margin-top: 180px;
+  margin-top: 20px;
 }
 
 .privPol {
@@ -245,7 +301,6 @@
   font-size: 16px;
   line-height: 28px;
   letter-spacing: 0.01em;
-  /* padding: 0 0px 0 0; */
   color: #000000;
   border: none;
   width: auto;
@@ -299,7 +354,7 @@
 }
 
 .partners {
-  font-family: Lato;
+  font-family: 'Lato', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
@@ -310,7 +365,7 @@
 }
 
 .parPartners {
-  font-family: Lato;
+  font-family: 'Lato', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -322,7 +377,7 @@
 }
 
 .paraPriv1 {
-  font-family: Lato;
+  font-family: 'Lato', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -330,9 +385,6 @@
   letter-spacing: 0.01em;
   color: #000000;
   padding: 0 100px 0 0;
-}
-.contentBox {
-  /* display: inline-flex; */
 }
 
 .section {
@@ -344,4 +396,189 @@
   justify-content: center;
   align-items: center;
   margin: 20px 0;
+}
+
+.veryBigLock {
+  position: relative;
+  left: 840px;
+  bottom: 240px;
+}
+
+@media screen and (max-width: 1085px) {
+}
+@media screen and (max-width: 850px) {
+}
+
+@media screen and (max-width: 500px) {
+  .headingOne {
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 130%;
+    text-align: center;
+    margin: 85px 0 30px 0;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .headingOne {
+    font-size: 38px;
+  }
+  .veryBigLock {
+    display: none;
+  }
+
+  .privacyAndTerms {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+
+  .parplat {
+    padding: 0 0px 0 0;
+  }
+
+  .parservices {
+    padding: 0 0px 0 0;
+  }
+
+  .headingServices {
+    margin-top: 460px;
+  }
+
+  .parregistered {
+    padding: 0 0px 0 0;
+  }
+
+  .effectiveAll {
+    position: relative;
+    left: -190px;
+    top: 40px;
+    width: 240%;
+  }
+
+  .imageBox {
+    width: 330px;
+  }
+
+  /* html,
+  body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  } */
+
+  .effectDate {
+    margin-left: 190px;
+  }
+
+  .tablelinks {
+    margin-left: 190px;
+  }
+  .bulbImage {
+    display: none;
+  }
+
+  .shakeImage {
+    display: none;
+  }
+
+  .paraPolicy {
+    padding: 0 0 0 0;
+  }
+
+  .parinfo {
+    margin-left: 190px;
+    width: 70%;
+  }
+
+  .privacy {
+    margin-top: 25px;
+  }
+
+  .referZuri {
+    margin-left: 190px;
+  }
+
+  .zurimission {
+    padding: 0 0 0 0;
+  }
+
+  .privPol {
+    padding: 0 0 0 0;
+  }
+
+  .headingAppl {
+    font-size: 18px;
+  }
+
+  .appPrivPol1,
+  .appPrivPol2 {
+    padding: 0 0px 0 0;
+    margin-left: 0px;
+  }
+
+  .bigLock {
+    display: none;
+  }
+
+  .infoCollect {
+    font-size: 18px;
+  }
+
+  .bulb {
+    display: none;
+  }
+
+  .infopar1 {
+    padding: 0 0px 0 0;
+
+    margin-left: 0px;
+  }
+  .paraPriv1 {
+    padding: 0 0px 0 0;
+  }
+
+  .smallLock {
+    display: none;
+  }
+
+  .parOthers2 {
+    padding: 0 0px 0 0;
+  }
+
+  .parOthers {
+    margin-bottom: 35px;
+    margin-top: 0px;
+  }
+
+  .headingDataOthers {
+    margin-bottom: -20px;
+  }
+
+  .handShake {
+    display: none;
+  }
+
+  .parPartners {
+    padding: 0 0px 0 0;
+  }
+
+  .partners {
+    margin-bottom: 30px;
+    margin-left: 0px;
+  }
+  .imagePart {
+    margin-top: 10px;
+  }
+
+  .privacymat {
+    margin-top: 70px;
+  }
 }
