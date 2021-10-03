@@ -77,7 +77,7 @@ export const EmailInviteModal = props => {
   }
   
 
-  const [inviteStep, setInviteStep] = useState(3)
+  const [inviteStep, setInviteStep] = useState(1)
 
   const nextIviteStep = () => {
     const steps = inviteStep
