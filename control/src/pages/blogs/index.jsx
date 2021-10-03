@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Style/style.module.css'
-import BlogContent from './components/BlogComments'
+import BlogContent from './components/blogContent'
 import NewsLetter from './components/newsLetterSection'
 import BlogComments from './components/BlogComments'
 import RelatedArticles from './components/relatedArticles'
