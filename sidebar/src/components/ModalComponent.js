@@ -7,32 +7,6 @@ import { RiArrowRightSLine as Arrow } from 'react-icons/ri'
 import { faClosedCaptioning } from '@fortawesome/free-solid-svg-icons'
 import Workspace from '../../../control/src/pages/workspace/components/Workspace'
 
-<<<<<<< HEAD
-const ModalComponent = ({ isOpen, toggleOpenInvite }) => {
-//   return (
-//     <section className={`${isOpen ? styles.open : styles.topbarModal}`}>
-//       <div className={styles.sectionOne}>The BrandHub</div>
-
-//       <div className={styles.sectionOne} onClick={toggleOpenInvite}>
-//         Invite people to HNGi8
-//       </div>
-
-//       <div className={styles.sectionOne}>Create a new Workspace</div>
-
-//       <div className={styles.sectionOne}>
-//         Prefrence <br />
-//         Customize HNGi8
-//       </div>
-
-    const handleMouseOut = () => setValue(false)
-    const ref = useRef()
-    useEffect(
-      () => {
-        const node = ref.current
-        if (node) {
-          node.addEventListener('mouseover', handleMouseOver)
-          node.addEventListener('mouseout', handleMouseOut)
-=======
 const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
   // const isOpen = true;
 
@@ -46,15 +20,9 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
     const ref = useRef(null)
 
     const handleMouseOver = () => setValue(true)
->>>>>>> 6d696288f1f4e0c4c003f7a3bd75a47a1a931146
 
     const handleMouseOut = () => setValue(false)
 
-<<<<<<< HEAD
-    // return [ref, value]
-  
-
-=======
     useEffect(() => {
       const node = ref.current
       if (node) {
@@ -64,7 +32,6 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
     }, [[ref.current]])
     return [ref, value]
   }
->>>>>>> 6d696288f1f4e0c4c003f7a3bd75a47a1a931146
   return (
     <section className={`${isOpen ? styles.open : styles.modalCon}`}>
       <div
@@ -119,28 +86,6 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
         </div>
       </div>
       <hr className={styles.modalDivider} />
-<<<<<<< HEAD
-      <div
-        // ref={hoverRef}
-        className={`d-flex align-items-center justify-content-between ${styles.modalSection}`}
-      >
-        <p>Tools</p>
-        <div>
-          <Arrow className={`${styles.arrow}`} />
-        </div>
-        <div
-          // className={`${
-          //   isHovered ? styles.openmodalSubCon : styles.modalSubCon
-          // }`}
-        >
-          <div
-            // ref={hoverRef}
-            className={`d-flex flex-column ${styles.modalSection}`}
-          >
-            <p>Plugins</p>
-            <hr className={styles.modalDivider} />
-            <p>Analytics</p>
-=======
       <div ref={hoverRef} className={` ${styles.modalSection}`}>
         <div
           className={`d-flex align-items-center justify-content-between ${styles.modalSection}`}
@@ -148,7 +93,6 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
           <p>Tools</p>
           <div>
             <Arrow className={`${styles.arrow}`} />
->>>>>>> 6d696288f1f4e0c4c003f7a3bd75a47a1a931146
           </div>
 
           <section
@@ -215,16 +159,6 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
         >
           <p>Switch workspace</p>
           <Arrow className={`${styles.arrow}`} />
-<<<<<<< HEAD
-          <div
-            // className={`${
-            //   isHovered2 ? styles.openmodalSubCon : styles.modalSubCon
-            // }`}
-          >
-            <div
-              // ref={hoverRef2}
-              className={`d-flex flex-column ${styles.modalSection}`}
-=======
           <section
             className={`${
               isHovered2 ? styles.openmodalSubCon : styles.modalSubCon
@@ -233,7 +167,6 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
             <section
               ref={hoverRef2}
               className={`d-flex flex-column ${styles.submodalSection}`}
->>>>>>> 6d696288f1f4e0c4c003f7a3bd75a47a1a931146
             >
               <div>
                 <p>HNGi8</p>

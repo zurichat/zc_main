@@ -128,6 +128,7 @@ export const EmailInviteModal = props => {
   }
 
   function validateEmail(value) {
+    
     let error
     // console.log(props.orgvalEmails.some((em)=>em === value) , value,props.orgvalEmails )
     // if (listEmail.some((em)=>em.mail === value) ) {
@@ -138,10 +139,10 @@ export const EmailInviteModal = props => {
     //   error = 'Email already exists in the workspace - Remove Duplicates.'
     //   setForerr(error)
     // }
-    if (!value) {
+    if (!value && !listEmail) {
       error = 'Email is required'
       setForerr(error)
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value) && value !== "") {
       error = 'Invalid email address'
       setForerr(error)
     } else {
@@ -240,9 +241,11 @@ export const EmailInviteModal = props => {
                             type="email"
                             borderRadius="2px"
                             // focusBorderColor="green.200"
+                            // variant="filled" 
+                            placeholder="type an e-mail and press Enter"
                             onBlur={Blur}
                             onFocus={Focus}
-                            width="50%"
+                            width="60%"
                           />
                         </FormControl>
                       )}
