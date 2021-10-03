@@ -5720,6 +5720,11 @@ lodash.mergewith@4.6.2:
   resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.2.tgz#617121f89ac55f59047c7aec1ccd6654c6590f55"
   integrity sha512-GK3g5RPZWTRSeLSpgP8Xhra+pnjBC56q9FZYe1d5RN3TJ35dbkGy3YqBSMbyCrlbi+CM9Z3Jk5yTL7RCsqboyQ==
 
+lodash.orderby@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.orderby/-/lodash.orderby-4.6.0.tgz#e697f04ce5d78522f54d9338b32b81a3393e4eb3"
+  integrity sha1-5pfwTOXXhSL1TZM4syuBozk+TrM=
+
 lodash.truncate@^4.4.2:
   version "4.4.2"
   resolved "https://registry.yarnpkg.com/lodash.truncate/-/lodash.truncate-4.4.2.tgz#5a350da0b1113b837ecfffd5812cbe58d6eae193"
@@ -6685,6 +6690,14 @@ react-clientside-effect@^1.2.2, react-clientside-effect@^1.2.5:
   dependencies:
     "@babel/runtime" "^7.12.13"
 
+react-data-table-component@^7.3.1:
+  version "7.3.1"
+  resolved "https://registry.yarnpkg.com/react-data-table-component/-/react-data-table-component-7.3.1.tgz#e37efc1db26a70c1c4bf2bd1c5b8af1592380783"
+  integrity sha512-wy0A/URVausHRJdPvWBjxn5e9fCNg1LAiuoi7mmcfm/DLC+gBtCc4/L5T5CBaFsJ1D/5E/SpmnQFMlrQZ6KrAw==
+  dependencies:
+    deepmerge "^4.2.2"
+    lodash.orderby "^4.6.0"
+
 react-device-detect@^1.17.0:
   version "1.17.0"
   resolved "https://registry.yarnpkg.com/react-device-detect/-/react-device-detect-1.17.0.tgz#a00b4fd6880cebfab3fd8a42a79dc0290cdddca9"
@@ -6766,10 +6779,10 @@ react-icon-library@^0.1.45:
     "@testing-library/react" "^10.0.2"
     bulma "^0.7.5"
 
-react-icons@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.3.0.tgz#c71b266a07a7e10e0c8ff7386e3e9c6727d33195"
-  integrity sha512-Rb0pqr5vp7RR8K6QLWjcjvhlxUhQTmnBxTcIdA/8YIsLqZn0BB2kCm1K/5T63Hx/G/omvntxAnMkvwv2a6ojRA==
+react-icons@4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.2.0.tgz#6dda80c8a8f338ff96a1851424d63083282630d0"
+  integrity sha512-rmzEDFt+AVXRzD7zDE21gcxyBizD/3NqjbX6cmViAgdqfJ2UiLer8927/QhhrXQV7dEj/1EGuOTPp7JnLYVJKQ==
 
 react-is@^16.13.1, react-is@^16.3.2, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"

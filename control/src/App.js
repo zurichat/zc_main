@@ -129,9 +129,6 @@ const App = () => {
         />
         <PrivateRoute path="/session-signout" component={AllSessionSignOut} />
         <PrivateRoute path="/settings" exact component={Settings} />
-<<<<<<< HEAD
-        <PrivateRoute path="/admin/settings" exact component={Billing} />
-=======
         <PrivateRoute path="/admin/settings" exact component={SettingsHome} />
         <PrivateRoute
           path="/admin/settings/billings"
@@ -143,7 +140,6 @@ const App = () => {
           exact
           component={AdminSettingsTab}
         />
->>>>>>> 65808fe165d1b20a5e9878ecdfbb3c427d590adf
         <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
         {/* ----------------settings routes closed----------------- */}
         <Route path="/reset-password">
