@@ -34,6 +34,10 @@ import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContex
 import PrivacyPolicy from './pages/privacy-policy/index'
 import NotFoundPage from './pages/404'
 import Billing from './pages/admin/Billing'
+import Homepage from './pages/home'
+import Permissions from './pages/admin/Permissions'
+import SettingsHome from './pages/admin/Settings/index'
+import About from './pages/about/index'
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -62,6 +66,9 @@ const App = () => {
         </Route>
         <Route path="/signout">
           <SignOut />
+        </Route>
+        <Route path="/about">
+          <About />
         </Route>
         <Route path="/choose-workspace">
           <Workspace />
@@ -122,7 +129,21 @@ const App = () => {
         />
         <PrivateRoute path="/session-signout" component={AllSessionSignOut} />
         <PrivateRoute path="/settings" exact component={Settings} />
+<<<<<<< HEAD
         <PrivateRoute path="/admin/settings" exact component={Billing} />
+=======
+        <PrivateRoute path="/admin/settings" exact component={SettingsHome} />
+        <PrivateRoute
+          path="/admin/settings/billings"
+          exact
+          component={Billing}
+        />
+        <PrivateRoute
+          path="/admin/settings/permission"
+          exact
+          component={AdminSettingsTab}
+        />
+>>>>>>> 65808fe165d1b20a5e9878ecdfbb3c427d590adf
         <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
         {/* ----------------settings routes closed----------------- */}
         <Route path="/reset-password">

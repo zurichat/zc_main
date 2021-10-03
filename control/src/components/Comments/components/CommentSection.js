@@ -17,6 +17,7 @@ const CommentSection = ({header="Comments"}) => {
     )
 
 }
+https://realtime.zuri.chat/api
 const Wrapper = styled.aside`
 display: grid;
 grid-template-rows:auto 1fr auto;
