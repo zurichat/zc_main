@@ -7,7 +7,6 @@ import { useState } from 'react'
 import PurchaseModal from './PurchaseModal'
 import { getToken, getUser, getCurrentWorkspace } from '../Utils/Common'
 
-
 const columns = [
   {
     name: 'Date',
@@ -119,7 +118,9 @@ const TokensTab = () => {
       </div>
       <div className="text-center mt-4">
         <h6 className={styles.heading}>Welcome to your token account</h6>
-        <p className={styles.para}>Here you will be able to deposit funds and purchase Zuri token</p>
+        <p className={styles.para}>
+          Here you will be able to deposit funds and purchase Zuri token
+        </p>
       </div>
       <div className={styles.overview}>
         <h6 className={styles.heading}>Overview</h6>
