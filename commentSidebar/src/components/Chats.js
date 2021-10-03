@@ -1,3 +1,4 @@
+
 import styled from 'styled-components'
 import ChatItem from './ChatItem.'
 const Chats = ({ chatInfo }) => {
@@ -11,6 +12,7 @@ const Chats = ({ chatInfo }) => {
       ))}
     </Wrapper>
   )
+
 }
 const Wrapper = styled.div`
   background-color: white;
