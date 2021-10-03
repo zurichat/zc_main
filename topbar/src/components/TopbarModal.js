@@ -14,7 +14,6 @@ import MembersModal from './MembersModal'
 import Downloads from './Downloads'
 import PauseNotification from './PauseNotification'
 import SetStatusModal from './SetStatusModal'
-import ProfilePicView from './ProfilePicView'
 // react icons
 
 const TopbarModal = ({ members }) => {
@@ -22,11 +21,10 @@ const TopbarModal = ({ members }) => {
     useContext(ProfileContext)
 
   const state = useContext(TopbarContext)
-  const [showModal, setShowModal] = state.show
+  const [showModal] = state.show
   // const [username, setUsername] = state.username
   const [showStatus] = state.status
   const [showMembersModal] = state.modal
-
   const {
     onEmojiClick,
     openModal,
@@ -38,9 +36,7 @@ const TopbarModal = ({ members }) => {
     reusableModal,
     setReusableModal,
     presence,
-    setPresence,
-    profilePicView,
-    setProfilePicView
+    setPresence
   } = state
 
   const currentWorkspace = localStorage.getItem('currentWorkspace')
@@ -58,6 +54,7 @@ const TopbarModal = ({ members }) => {
             }
           })
           .then(response => {
+            //Get Current Workspace Or Organization Name
             localStorage.setItem('orgName', response.data.data.name)
             // let userData = { currentWorkspace, ...response.data.data }
           })
@@ -75,20 +72,7 @@ const TopbarModal = ({ members }) => {
     }
   }
   const logout = () => {
-    axios({
-      method: 'post',
-      url: `https://api.zuri.chat/auth/logout`,
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    })
-      .then(res => {
-        console.log(res)
-        window.location.href = '/signout'
-      })
-      .catch(err => {
-        console.error(err)
-      })
+    window.location.href = '/signout'
   }
   const [pause, setPause] = useState(false)
   const [statusModal, setStatusModal] = useState(false)
@@ -157,19 +141,8 @@ const TopbarModal = ({ members }) => {
       {/* The section that shows the topbarprofile */}
       {showModal ? (
         <section className={styles.topbarModal}>
-          <div
-            id="overlay"
-            onClick={() => setShowModal(false)}
-            className={styles.membersModalOverlay}
-          />
           <div className={styles.sectionOne}>
-            <div
-              className={styles.oneLeft}
-              role="button"
-              onClick={() => {
-                userProfileImage !== '' && setProfilePicView(!profilePicView)
-              }}
-            >
+            <div className={styles.oneLeft}>
               <img
                 src={userProfileImage !== '' ? userProfileImage : defaultAvatar}
                 alt="profile-pic"
@@ -189,11 +162,8 @@ const TopbarModal = ({ members }) => {
           </div>
 
           <div className={styles.sectionTwo}>
-            {/* <StatusBadgeModal /> */}
             <div className={styles.emoji}>{user?.status?.tag} </div>
-            <div className={styles.statusContent}>{user?.status?.text}</div>  
-           
-              
+            <div className={styles.statusContent}>{user?.status?.text}</div>
           </div>
 
           <div className={styles.sectionThree}>
@@ -274,7 +244,6 @@ const TopbarModal = ({ members }) => {
           <div className={styles.sectionFive}>
             <p onClick={logout}>Sign out of Team Einstein workspace</p>
           </div>
-          {profilePicView && <ProfilePicView />}
         </section>
       ) : null}
     </>
