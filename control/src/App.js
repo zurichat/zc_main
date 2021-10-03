@@ -35,7 +35,7 @@ import PrivacyPolicy from './pages/privacy-policy/index'
 import NotFoundPage from './pages/404'
 import Billing from './pages/admin/Billing'
 import Homepage from './pages/home'
-import Permissions from './pages/admin/Permissions'
+// import Permissions from './pages/admin/Permissions'
 import SettingsHome from './pages/admin/Settings/index'
 import About from './pages/about/index'
 
@@ -138,11 +138,11 @@ const App = () => {
           exact
           component={Billing}
         />
-        <PrivateRoute
+        {/* <PrivateRoute
           path="/admin/settings/permission"
           exact
           component={AdminSettingsTab}
-        />
+        /> */}
         <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
         {/* ----------------settings routes closed----------------- */}
         <Route path="/reset-password">
