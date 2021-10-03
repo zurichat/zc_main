@@ -117,7 +117,6 @@ registerApplication({
 })
 //Bots go here
 
-
 start({
   urlRerouteOnly: true
 })
