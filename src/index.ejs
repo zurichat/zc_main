@@ -18,67 +18,49 @@
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
 
-<link rel="icon" href="favicon.ico" type="image/ico"/>
-<link rel="icon" href="favicon.png" type="image/ico">
+  <link rel="icon" href="favicon.ico" type="image/ico" />
+  <link rel="icon" href="favicon.png" type="image/ico">
 
-        <!-- Dynamic Title Tag for Plugins -->
-<script>
-let getTitleOfPage = function(){
-    let test = location.pathname ;
-let appendZuri = `- Zuri Chat ` ;
-    
-test = test.substr(1);
-test = test.charAt(0).toUpperCase() + test.slice(1);
-document.title = test + appendZuri;
-};
- setInterval(getTitleOfPage ,500) 
-</script>
-<!-- End -->
+  <!-- Dynamic Title Tag for Plugins -->
+  <script>
+    let getTitleOfPage = function () {
+      let test = location.pathname;
+      return test
+    };
+    let appendZuri = `- Zuri Chat `;
+    let title = getTitleOfPage();
+    title = title.substr(1);
+    title = title.charAt(0).toUpperCase() + title.slice(1);
+    document.title = title + appendZuri;
+  </script>
+  <!-- End -->
 
 
-<!-- Google / Search Engine Tags -->
-    <meta
-      itemprop="name"
-      content="Zuri-Chat -Communicate and collaborate from wherever you are. A fully Integrated way to connect and interact"
-    />
-    <meta
-      itemprop="description"
-      content="Zuri-Chat -  For Organizations & Institutions. A fully Integrated way to connect and interact. Create your future with us, network, collaborate, educate and learn remotely.Invite your team to your workspace. Stay connected,stay in sync, and explore ideas together from anywhere."
-    />
-    <meta itemprop="image" content="https://i.ibb.co/SnK9MGt/ogzuri.png" />
+  <!-- Google / Search Engine Tags -->
+  <meta itemprop="name"
+    content="Zuri-Chat -Communicate and collaborate from wherever you are. A fully Integrated way to connect and interact" />
+  <meta itemprop="description"
+    content="Zuri-Chat -  For Organizations & Institutions. A fully Integrated way to connect and interact. Create your future with us, network, collaborate, educate and learn remotely.Invite your team to your workspace. Stay connected,stay in sync, and explore ideas together from anywhere." />
+  <meta itemprop="image" content="https://i.ibb.co/SnK9MGt/ogzuri.png" />
 
-    <!-- Facebook , linkedin etc  -->
+  <!-- Facebook , linkedin etc  -->
 
-    <meta name="type" property="og:type" content="website" />
-    <meta name="url" property="og:url" content="https://www.zuri.chat" />
-    <meta
-      name="title"
-      property="og:title"
-      content="Zuri-Chat -Communicate and collaborate from wherever you are. A fully Integrated way to connect and interact"
-    />
-    <meta
-      name="description"
-      property="og:description"
-      content="Zuri-Chat -  For Organizations & Institutions. A fully Integrated way to connect and interact. Create your future with us, network, collaborate, educate and learn remotely.Invite your team to your workspace. Stay connected,stay in sync, and explore ideas together from anywhere."
-    />
-    <meta
-      name="image"
-      property="og:image"
-      content="https://i.ibb.co/SnK9MGt/ogzuri.png"
-    />
-    <!--   Twitter  -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://www.zuri.chat" />
-    <meta
-      name="twitter:title"
-      content="Zuri-Chat - For Organizations & Institutions. A fully Integrated way to connect and interact"
-    />
-    <meta
-      name="twitter:description"
-      content="Zuri-Chat - Create your future with us, network, collaborate, educate and learn remotely. A messaging app that lets professionals collaborate through workspaces..."
-    />
-    <meta name="twitter:image" content="https://i.ibb.co/SnK9MGt/ogzuri.png" />
- 
+  <meta name="type" property="og:type" content="website" />
+  <meta name="url" property="og:url" content="https://www.zuri.chat" />
+  <meta name="title" property="og:title"
+    content="Zuri-Chat -Communicate and collaborate from wherever you are. A fully Integrated way to connect and interact" />
+  <meta name="description" property="og:description"
+    content="Zuri-Chat -  For Organizations & Institutions. A fully Integrated way to connect and interact. Create your future with us, network, collaborate, educate and learn remotely.Invite your team to your workspace. Stay connected,stay in sync, and explore ideas together from anywhere." />
+  <meta name="image" property="og:image" content="https://i.ibb.co/SnK9MGt/ogzuri.png" />
+  <!--   Twitter  -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://www.zuri.chat" />
+  <meta name="twitter:title"
+    content="Zuri-Chat - For Organizations & Institutions. A fully Integrated way to connect and interact" />
+  <meta name="twitter:description"
+    content="Zuri-Chat - Create your future with us, network, collaborate, educate and learn remotely. A messaging app that lets professionals collaborate through workspaces..." />
+  <meta name="twitter:image" content="https://i.ibb.co/SnK9MGt/ogzuri.png" />
+
 
 
 
@@ -274,11 +256,11 @@ document.title = test + appendZuri;
     <script type="systemjs-importmap">
     {
       "imports": {
-        "@zuri/root-config": "//localhost:9000/zuri-root-config.js",
-        "@zuri/topbar": "//localhost:8080/zuri-topbar.js",
-        "@zuri/sidebar": "//localhost:8081/zuri-sidebar.js",
-        "@zuri/control": "//localhost:8082/zuri-control.js",
-        "@zuri/plugin-header": "//localhost:8083/zuri-plugin-header.js"
+        "@zuri/root-config": "http://localhost:9000//zuri-root-config.js",
+        "@zuri/topbar": "http://localhost:8080//zuri-topbar.js",
+        "@zuri/sidebar": "http://localhost:8081//zuri-sidebar.js",
+        "@zuri/control": "http://localhost:8082//zuri-control.js",
+        "@zuri/plugin-header": "http://localhost:8083//zuri-plugin-header.js"
       }
     }
   </script>
