@@ -115,6 +115,8 @@ registerApplication({
   app: () => System.import('@zuri/zuri-plugin-channels'),
   activeWhen: [location => location.pathname.startsWith('/channels')]
 })
+//Bots go here
+
 
 start({
   urlRerouteOnly: true

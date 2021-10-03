@@ -54,6 +54,7 @@
     "@reach/dialog": "^0.16.0",
     "axios": "^0.21.4",
     "centrifuge": "^2.8.2",
+    "cleave.js": "^1.6.0",
     "colorette": "^2.0.2",
     "core-js": "^3.18.0",
     "framer-motion": "^4.1.17",
