@@ -36,7 +36,9 @@ import NotFoundPage from './pages/404'
 import Billing from './pages/admin/Billing'
 import Homepage from './pages/home'
 import Permissions from './pages/admin/Permissions'
-import SettingsHome from './pages/admin/Home'
+import SettingsHome from './pages/admin/Settings/index'
+import About from './pages/about/index'
+import AdminSettingsTab from './pages/admin/Settings/components/AdminSettingsTab'
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -51,9 +53,6 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/home">
-          <Homepage />
-        </Route>
         <Route path="/" exact>
           <LandingPage />
         </Route>
@@ -68,6 +67,9 @@ const App = () => {
         </Route>
         <Route path="/signout">
           <SignOut />
+        </Route>
+        <Route path="/about">
+          <About />
         </Route>
         <Route path="/choose-workspace">
           <Workspace />
@@ -137,7 +139,7 @@ const App = () => {
         <PrivateRoute
           path="/admin/settings/permission"
           exact
-          component={Permissions}
+          component={AdminSettingsTab}
         />
         <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
         {/* ----------------settings routes closed----------------- */}
