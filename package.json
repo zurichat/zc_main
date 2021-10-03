@@ -11,6 +11,7 @@
     "dev:control": "npm run dev --prefix control",
     "dev:sidebar": "npm run dev --prefix sidebar",
     "dev:plugin-header": "npm run dev --prefix pluginHeader",
+    "dev:comment-sidebar": "npm run dev --prefix commentSidebar",
     "dev": "npm-run-all --parallel \"dev:*\" \"open\"",
     "check-format": "prettier -c .",
     "format": "prettier -w .",
@@ -20,6 +21,7 @@
     "setup:control": "cd control && yarn",
     "setup:sidebar": "cd sidebar && yarn",
     "setup:plugin-header": "cd pluginHeader && yarn",
+    "setup:comment-sidebar": "cd commentSidebar && yarn",
     "postinstall": "concurrently --kill-others-on-fail -m 1 \"yarn:setup:*\"",
     "clean": "rimraf dist",
     "clean:fresh": "rimraf node_modules yarn.lock topbar/node_modules topbar/yarn.lock sidebar/node_modules sidebar/yarn.lock control/node_modules control/yarn.lock",
@@ -28,6 +30,7 @@
     "build:topbar": "npm run build --prefix topbar",
     "build:control": "npm run build --prefix control",
     "build:sidebar": "npm run build --prefix sidebar",
+     "build:comment-sidebar": "npm run build --prefix comment-sidebar",
     "build:plugin-header": "npm run build --prefix pluginHeader"
   },
   "devDependencies": {
@@ -74,6 +77,7 @@
     "cleave.js": "^1.6.0",
     "formik": "^2.2.9",
     "framer-motion": "^4.1.17",
+    "mdbreact": "^5.1.0",
     "moment": "^2.29.1",
     "react-google-login": "^5.2.2",
     "react-helmet": "^6.1.0",
@@ -81,7 +85,7 @@
     "react-loader-spinner": "^4.0.0",
     "react-phone-number-input": "^3.1.27",
     "react-router-dom": "^5.3.0",
-    "react-timezone-select": "^1.0.8",
+    "react-timezone-select": "^1.1.11",
     "rxjs": "^7.3.0",
     "single-spa": "^5.9.3"
   }

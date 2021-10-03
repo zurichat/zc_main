@@ -44,6 +44,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@chakra-ui/react": "^1.6.8",
     "@reach/dialog": "^0.16.0",
     "axios": "^0.21.4",
     "cheerio": "^1.0.0-rc.10",
@@ -51,7 +52,7 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-icons": "^4.2.0",
+    "react-icons": "4.2.0",
     "react-router-dom": "^5.3.0",
     "single-spa-react": "^4.3.1",
     "styled-components": "^5.3.1",
