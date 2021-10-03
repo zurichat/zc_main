@@ -256,7 +256,9 @@ const Sidebar = props => {
             .catch(console.log)
         })
     }
+    console.log("organization",organizationInfo)
   }, [organizationInfo])
+
 
   return (
     <div className={`container-fluid ${styles.sb__container}`}>
