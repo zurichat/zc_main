@@ -135,11 +135,11 @@ const App = () => {
           exact
           component={Billing}
         />
-        <PrivateRoute
+        {/* <PrivateRoute
           path="/admin/settings/permission"
           exact
           component={AdminSettingsTab}
-        />
+        /> */}
         <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
         {/* ----------------settings routes closed----------------- */}
         <Route path="/reset-password">
