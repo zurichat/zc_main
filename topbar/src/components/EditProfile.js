@@ -1,15 +1,14 @@
 import { useRef, useState, useEffect, useContext } from 'react'
 import ProfileModal from './ProfileModal'
-
 import { authAxios } from '../utils/Api'
 
 import { AiFillCamera } from 'react-icons/ai'
-import avatar from '../assets/images/avatar_vct.svg'
+import defaultAvatar from '../assets/images/avatar_vct.svg'
 import { ProfileContext } from '../context/ProfileModal'
 import Loader from 'react-loader-spinner'
 import toast, { Toaster } from 'react-hot-toast'
 import { data } from '../utils/Countrycode'
-import TimezoneSelect from 'react-timezone-select'
+// import TimezoneSelect from 'react-timezone-select'
 import { StyledProfileWrapper } from '../styles/StyledEditProfile'
 
 const EditProfile = () => {
@@ -50,7 +49,7 @@ const EditProfile = () => {
   //Function handling Image Upload
 
   const handleImageChange = event => {
-    setState({ imageLoading: true })
+    setState({ ...state, imageLoading: true })
     if (imageRef.current.files[0]) {
       let fileReader = new FileReader()
 
@@ -62,30 +61,51 @@ const EditProfile = () => {
 
       const imageReader = event.target.files[0]
 
-      console.log('Gotten image', imageReader)
-
       const formData = new FormData()
       formData.append('image', imageReader)
 
       authAxios
-        .patch(`/organizations/${orgId}/members/${user._id}/photo`, formData)
+        .patch(
+          `/organizations/${orgId}/members/${user._id}/photo/upload`,
+          formData
+        )
         .then(res => {
-          console.log('image patch', res)
           const newUploadedImage = res.data.data
           setUserProfileImage(newUploadedImage)
-          setState({ imageLoading: false })
+          setState({ ...state, imageLoading: false })
           toast.success('User Image Updated Successfully', {
             position: 'top-center'
           })
         })
         .catch(err => {
           console.log(err)
-          setState({ imageLoading: false })
+          setState({ ...state, imageLoading: false })
           toast.error(err?.message, {
             position: 'top-center'
           })
         })
     }
+  }
+
+  const handleImageDelete = () => {
+    setState({ ...state, imageLoading: true })
+
+    authAxios
+      .patch(`/organizations/${orgId}/members/${user._id}/photo/delete`)
+      .then(res => {
+        setUserProfileImage(defaultAvatar)
+        setState({ ...state, imageLoading: false })
+        toast.success('User Image Removed Successfully', {
+          position: 'top-center'
+        })
+      })
+      .catch(err => {
+        console.log(err)
+        setState({ ...state, imageLoading: false })
+        toast.error(err?.message, {
+          position: 'top-center'
+        })
+      })
   }
 
   useEffect(() => {
@@ -96,7 +116,7 @@ const EditProfile = () => {
 
   const handleFormSubmit = e => {
     e.preventDefault()
-    setState({ loading: true })
+    setState({ ...state, loading: true })
 
     const data = {
       name: state.name,
@@ -123,14 +143,14 @@ const EditProfile = () => {
         console.log(res)
         setState({ loading: false })
         toast.success('User Profile Updated Successfully', {
-          position: 'bottom-center'
+          position: 'top-center'
         })
       })
       .catch(err => {
         console.log(err)
         setState({ loading: false })
         toast.error(err?.message, {
-          position: 'bottom-center'
+          position: 'top-center'
         })
       })
   }
@@ -145,7 +165,7 @@ const EditProfile = () => {
                 <div className="mobileAvataeCon">
                   <img
                     ref={avatarRef}
-                    src={user.image_url ? user.image_url : avatar}
+                    src={user.image_url !== '' ? user.image_url : defaultAvatar}
                     alt="profile-pic"
                     className="avatar"
                   />
@@ -320,7 +340,7 @@ const EditProfile = () => {
                     <img
                       ref={avatarRef}
                       className="img"
-                      src={userProfileImage ? userProfileImage : avatar}
+                      src={userProfileImage ? userProfileImage : defaultAvatar}
                       alt="profile-pic"
                     />
                   )}
@@ -345,7 +365,11 @@ const EditProfile = () => {
                   Upload Image
                   {/* ) */}
                 </label>
-                <div role="button" className="rmvBtn">
+                <div
+                  role="button"
+                  className="rmvBtn"
+                  onClick={handleImageDelete}
+                >
                   Remove Image
                 </div>
               </div>
@@ -361,7 +385,7 @@ const EditProfile = () => {
           </div>
           <div className="button-wrapper">
             <button className="btns cncBtn">Cancel</button>
-            <button onClick={handleFormSubmit} className="btns chgBtn">
+            <button onClick={handleFormSubmit} className="btns saveBtn">
               {state.loading ? (
                 <Loader type="ThreeDots" color="#fff" height={40} width={40} />
               ) : (

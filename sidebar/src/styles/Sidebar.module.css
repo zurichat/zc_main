@@ -23,7 +23,7 @@
   overflow-y: scroll;
   height: 100%;
   width: unset;
-  -ms-overflow-style: none;
+  /* -ms-overflow-style: none; */
   scrollbar-width: none;
 }
 
@@ -35,6 +35,10 @@
   height: 44px;
   background-color: #00b87c;
   color: #fff;
+}
+
+.sidebar__header__arrow {
+  font-size: 2em;
 }
 
 .orgInfo {
@@ -49,22 +53,30 @@
 
 .orgTitle {
   font-weight: bold;
-  font-size: 1.125em;
-  line-height: 28px;
+  font-size: 15px;
+  /* line-height: 28px; */
 }
 
 .orgHeader {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65%;
 }
 
-.arrowDown {
+/* .arrowDown {
   width: 2.5em;
-}
+} */
 
 .sb__item {
   margin-bottom: 0.25em;
   margin-top: 0.1em;
   /* margin: 0.5em 0; */
+}
+.sb__item :hover {
+  background-color: #00b87c;
+  cursor: pointer;
 }
 
 .sb__col {
@@ -82,9 +94,16 @@
 }
 
 .addButton {
-  width: 2.5em;
-  margin-inline-start: auto;
-  padding-inline-end: 1.5em;
+  width: 24px;
+  /* margin-inline-start: auto; */
+  margin-left: auto;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+}
+
+.modalContainer {
+  z-index: 1000;
+  position: relative;
 }
 
 /* .orgHeader {

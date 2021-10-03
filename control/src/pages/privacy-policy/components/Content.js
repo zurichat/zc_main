@@ -9,21 +9,22 @@ import bigLock from '../assets/bigLock.svg'
 import yellowBulb from '../assets/yellowBulb.svg'
 import smallLock from '../assets/smallLock.svg'
 import handShake from '../assets/handShake.svg'
+import veryBigLock from '../assets/veryBigLock.svg'
 
 const Content = () => {
   return (
-    <React.Fragment>
+    <div className={Style.privacyAndTerms}>
       <div className={Style.content}>
         <h1 className={Style.headingOne}>Privacy & Terms</h1>
         <div className={Style.section}>
-          <h5 className={Style.headingFive}>Introduction</h5>
+          <h5 className={Style.headingIntro}>Introduction</h5>
           <div className={Style.contentImage}>
             <img
               src={bulbiImage}
               className={Style.bulbImage}
               alt="bulb image"
             />
-            <p className={Style.paragraph}>
+            <p className={Style.parplat}>
               We are a social network and online platform for professionals and
               beginners. People use our Services to find and be found for
               business opportunities, to connect with others and find
@@ -42,14 +43,22 @@ const Content = () => {
             and Switzerland.
           </p>
         </div>
-        <div className={Style.section}>
-          <h5 className={Style.headingFive}>Services</h5>
+        <div className={Style.bigLockImage}>
+          <img
+            src={veryBigLock}
+            className={Style.veryBigLock}
+            alt="very big lock"
+          />
+        </div>
+        <div className={Style.sectionServices}>
+          <h5 className={Style.headingServices}>Services</h5>
           <div className={Style.contentImage}>
-            <img src={shakeImage} />
-            <p className={Style.paragraph}>
+            <img src={shakeImage} className={Style.shakeImage} />
+            <p className={Style.paraPolicy}>
               {' '}
-              This Privacy Policy, including our <Link title="Cookie Policy" />{' '}
-              applies to your use of our Services.
+              This Privacy Policy, including our{' '}
+              <Link to="/cookies-banner" title="Cookie Policy" /> applies to
+              your use of our Services.
             </p>
           </div>
           <p className={Style.parservices}>
@@ -60,10 +69,15 @@ const Content = () => {
             and “Share with LinkedIn” plugins, but excluding services that state
             that they are offered under a different privacy policy. For Nigeria
             residents, additional disclosures required by Nigerian law may be
-            found in our <Link title="Nigeria Privacy Disclosure." />
+            found in our{' '}
+            <Link
+              to="/nigeria-privacy-disclosure"
+              title="Nigeria Privacy Disclosure."
+            />
           </p>
         </div>
-        <div className={Style.section}>
+
+        <div className={Style.sectionServDev}>
           <h5 className={Style.headingFive}>Service Development</h5>
           <div className={Style.contentBox}>
             <div>
@@ -144,11 +158,12 @@ const Content = () => {
           </p>
           <p className={Style.privPol}>
             This Privacy Policy applies when you use our Services (described
-            below). We offer our users <Link title="choices" size /> about the
-            data we collect, use and share as described in this{' '}
-            <Link title="Privacy Policy," size />{' '}
-            <Link title="Cookie Policy," size /> Settings and our{' '}
-            <Link title="Help Center." size />{' '}
+            below). We offer our users{' '}
+            <Link to="/choices" title="choices" size /> about the data we
+            collect, use and share as described in this{' '}
+            <Link to="/privacy " title="Privacy Policy," size />{' '}
+            <Link to="/cookies-banner" title="Cookie Policy," size /> Settings
+            and our <Link to="/contact-us" title="Help Center." size />{' '}
           </p>
           <div className={Style.imageBox}>
             <img
@@ -159,7 +174,7 @@ const Content = () => {
           </div>
         </div>
         <div>
-          <h5 className={Style.headingFive}>
+          <h5 className={Style.headingAppl}>
             Applicability Of This Privacy Policy
           </h5>
           <div className={Style.applicabilityImage}>
@@ -168,12 +183,12 @@ const Content = () => {
               This Privacy Policy applies to Zurichat’s online workplace
               productivity tools and platform, including the associated
               Zurichat’s mobile and desktop applications (collectively, the
-              “Services”), <Link title="Zurichat.com" /> and other Zurichat
-              websites (collectively, the “Websites”) and other interactions
-              (e.g., customer service inquiries, user conferences, etc.) you may
-              have with Zuri. If you do not agree with the terms, do not access
-              or use the Services, Websites or any other aspect of Zurichat’s
-              business.
+              “Services”), <Link to="/" title="Zurichat.com" /> and other
+              Zurichat websites (collectively, the “Websites”) and other
+              interactions (e.g., customer service inquiries, user conferences,
+              etc.) you may have with Zuri. If you do not agree with the terms,
+              do not access or use the Services, Websites or any other aspect of
+              Zurichat’s business.
             </p>
           </div>
           <p className={Style.appPrivPol2}>
@@ -190,11 +205,12 @@ const Content = () => {
             and any associated Customer Data. If you have any questions about
             specific Workspace settings and privacy practices, please contact
             the Customer whose Workspace you use. If you have an account, you
-            can check http://Zurichat.com/account/team for contact information
-            of your Workspace owner(s) and administrator(s). If you have
-            received an invitation to join a Workspace but have not yet created
-            an account, you should request assistance from the Customer that
-            sent the invitation.
+            can check{' '}
+            <Link to="/pricing" title="http://Zurichat.com/account/team" />, for
+            contact information of your Workspace owner(s) and administrator(s).
+            If you have received an invitation to join a Workspace but have not
+            yet created an account, you should request assistance from the
+            Customer that sent the invitation.
           </p>
         </div>
         <div className={Style.infoCollected}>
@@ -220,10 +236,11 @@ const Content = () => {
               Workspace account, you or your Customer (e.g. your employer)
               supply Zurichat with an email address, phone number, password,
               domain and/or similar account details. For details on Workspace
-              creation, <Link title="click here" /> . In addition, Customers
-              that purchase a paid version of the Services provide Zurichat (or
-              its payment processors) with billing details such as credit card
-              information, banking information and/or a billing address.
+              creation, <Link to="/createworkspace" title="click here" /> . In
+              addition, Customers that purchase a paid version of the Services
+              provide Zurichat (or its payment processors) with billing details
+              such as credit card information, banking information and/or a
+              billing address.
             </p>{' '}
             <br />
             <p className={Style.paraPriv1}>
@@ -278,7 +295,7 @@ const Content = () => {
         </div>
 
         <div className={Style.DataOthers}>
-          <h5 className={Style.headingFive}>Data From Others</h5>
+          <h5 className={Style.headingDataOthers}>Data From Others</h5>
           <div className={Style.securityData}>
             <img
               className={Style.smallLock}
@@ -311,7 +328,7 @@ const Content = () => {
           </p>
         </div>
       </div>
-    </React.Fragment>
+    </div>
   )
 }
 
