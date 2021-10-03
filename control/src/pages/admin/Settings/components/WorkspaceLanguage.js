@@ -1,56 +1,50 @@
 import React from 'react'
 
 const myStyle = {
-  text: {
-    color: '#1d1c1d',
-    fontWeight: '600',
-    fontSize: '18px',
-    padding: '5px'
-  },
-  radio: {
-    backgroundColor: '#00B87C'
-  },
   inputfield: {
-    margin: '5px 0',
+    margin: '10px 0',
     width: '70%'
   },
-  smalltext: {
-    fontWeight: '400',
-    fontSize: '14px',
-    color: '#616061'
-  },
-  button: {
+  btn: {
     backgroundColor: '#00B87C',
     color: '#ffffff',
     border: 'none'
   }
 }
 
-const JoinWorkspace = () => {
+const modifyOrganizationSettings = () => {
+  let organizationid = '6158c1ac3a1e49b1e5165df3'
+  let workspacelanguage = ''
+  let token = localStorage.getItem('token')
+  axios.defaults.baseURL = 'https://api.zuri.chat'
+  axios.defaults.headers.common = { Authorization: `bearer ${token}` }
+  axios({
+    method: 'patch',
+    url: '/organizations/' + organizationid + '/settings',
+    data: {
+      workspacelanguage: workspacelanguage
+    }
+  })
+}
+
+const WorkspaceLanguage = () => {
   return (
     <>
-      <input type="radio" name="join" id="" style={myStyle.radio} />
-      <label style={myStyle.text}>Allow Invitation</label>
-      <br />
-      <input type="radio" name="join" id="" />
-      <label style={myStyle.text}>
-        Allow invitations, and approve invitations for any email from these
-        domains:
-      </label>
-      <textarea
-        className="form-control"
-        id=""
-        rows="5"
-        style={myStyle.inputfield}
-      ></textarea>
-      <p style={myStyle.smalltext}>
-        If you want to add more domains, seperate each one with a comma
-      </p>
-      <button type="button" className="btn btn-primary" style={myStyle.button}>
+      <select class="form-select" style={myStyle.inputfield}>
+        <option selected>English(US)</option>
+        <option value="1">Enlish(UK)</option>
+        <option value="2">French</option>
+      </select>
+      <button
+        type="button"
+        className="btn btn-primary"
+        style={myStyle.btn}
+        onClick={modifyOrganizationSettings}
+      >
         Save
       </button>
     </>
   )
 }
 
-export default JoinWorkspace
+export default WorkspaceLanguage

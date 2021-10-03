@@ -248,7 +248,9 @@ const Sidebar = props => {
         <div className={`row ${styles.orgDiv}`}>
           <div className={`col-12 px-3 ${styles.orgInfo}`}>
             <div onClick={toggle} className={`row p-0 ${styles.orgHeader}`}>
-              <span className={`col-8 mb-0 ${styles.orgTitle}`}>{org.name}</span>
+              <span className={`col-8 mb-0 ${styles.orgTitle}`}>
+                {org.name}
+              </span>
               <span className={`col-4 p-0 ${styles.sidebar__header__arrow}`}>
                 <MdKeyboardArrowDown />
               </span>{' '}
@@ -267,55 +269,55 @@ const Sidebar = props => {
             </div>
           </div>
           <div className={`col-12 px-3 ${styles.modalContainer}`}>
-          <div className={`col-12 px-3 ${styles.odalContainer}`}>
-            <ModalComponent
-             workSpace={org}
-              isOpen={homeModal}
-              toggleOpenInvite={toggleOpenInvite}
+            <div className={`col-12 px-3 ${styles.odalContainer}`}>
+              <ModalComponent
+                workSpace={org}
+                isOpen={homeModal}
+                toggleOpenInvite={toggleOpenInvite}
+              />
+            </div>
+
+            <Modall showDialog={showDialog} closeDialog={close} />
+
+            <Overlay isOpen={showDialog} onDismiss={close}>
+              <Content aria-label="room-list">
+                <CloseButton className="close-button" onClick={close}>
+                  <Span aria-hidden>×</Span>
+                </CloseButton>
+                <AuthInputBox
+                  value={query}
+                  setValue={setQuery}
+                  placeholder="🔍 Search for plugins"
+                />
+                <Wrapper>
+                  {loading && <p>Loading..</p>}
+                  <p>
+                    {links.map((plugs, id) => {
+                      return (
+                        <div key={id}>
+                          <Link to={plugs.href} onClick={navigateToUrl}>
+                            <p>{plugs.name}</p>
+                          </Link>
+                        </div>
+                      )
+                    })}
+                  </p>
+                </Wrapper>
+              </Content>
+            </Overlay>
+
+            <EmailInviteModal
+              isOpen={openInvite}
+              onDismiss={closeInviteModal}
+              orgvalEmails={orgEmails}
+              setInviteEmails={setInviteEmails}
+              inviteUserViaMail={inviteUser}
+              sendLoadin={sendLoading}
+              currentWorkspace={currentWorkspace}
+              invSucc={InviteSuccess}
             />
           </div>
-
-          <Modall showDialog={showDialog} closeDialog={close} />
-
-          <Overlay isOpen={showDialog} onDismiss={close}>
-            <Content aria-label="room-list">
-              <CloseButton className="close-button" onClick={close}>
-                <Span aria-hidden>×</Span>
-              </CloseButton>
-              <AuthInputBox
-                value={query}
-                setValue={setQuery}
-                placeholder="🔍 Search for plugins"
-              />
-              <Wrapper>
-                {loading && <p>Loading..</p>}
-                <p>
-                  {links.map((plugs, id) => {
-                    return (
-                      <div key={id}>
-                        <Link to={plugs.href} onClick={navigateToUrl}>
-                          <p>{plugs.name}</p>
-                        </Link>
-                      </div>
-                    )
-                  })}
-                </p>
-              </Wrapper>
-            </Content>
-          </Overlay>
-
-          <EmailInviteModal
-            isOpen={openInvite}
-            onDismiss={closeInviteModal}
-            orgvalEmails={orgEmails}
-            setInviteEmails={setInviteEmails}
-            inviteUserViaMail={inviteUser}
-            sendLoadin={sendLoading}
-            currentWorkspace={currentWorkspace}
-            invSucc={InviteSuccess}
-          />
         </div>
-      </div>
       </div>
       <div className={`${styles.subCon2}`}>
         <div className={`row mt-2 ${styles.sb__item}`}>

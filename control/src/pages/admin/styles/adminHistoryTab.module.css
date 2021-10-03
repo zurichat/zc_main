@@ -1,0 +1,76 @@
+.history_tab_container {
+  --type-scale: 0.8;
+  --height-scale: 0.85;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  grid-row-gap: 1.5rem;
+}
+
+.history_btn {
+  border: 1px solid #a1a1a1;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 0.75rem;
+  font-size: calc(1.125rem * var(--type-scale, 1));
+  line-height: calc(1.4625rem * var(--height-scale, 1));
+  font-weight: 600;
+  color: #1d1c1d;
+}
+
+.history_tab_container > form {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.history_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.history_btn_wrapper {
+  flex: 1 1 35%;
+}
+
+.history_header .history_btn {
+  display: flex;
+  align-items: center;
+}
+
+.history_header h3 {
+  align-self: flex-start;
+  flex: 2 1 50%;
+  font-size: calc(1.125rem * var(--type-scale, 1));
+  line-height: calc(1.4625rem * var(--height-scale, 1));
+  font-weight: bold;
+  color: #1d1c1d;
+}
+
+.history_content {
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.history_content p {
+  font-size: calc(1.125rem * var(--type-scale, 1));
+  line-height: calc(1.4625rem * var(--height-scale, 1));
+}
+
+@media only screen and (min-width: 600px) {
+  .history_tab_container {
+    --type-scale: 0.85;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .history_tab_container {
+    --type-scale: 0.9;
+  }
+}
+
+@media only screen and (min-width: 980px) {
+  .setting_tab_container {
+    --type-scale: 1;
+    --height-scale: 1;
+  }
+}
