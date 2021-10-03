@@ -35,7 +35,7 @@ const Themes = () => {
     }
   }, [mode])
 
-  const [mode, setMode] = useState(() => localStorage.getItem('mode'))
+  // const [mode, setMode] = useState(() => localStorage.getItem('mode'))
 
   // 
 
