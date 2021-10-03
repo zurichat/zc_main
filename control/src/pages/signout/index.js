@@ -4,39 +4,36 @@ import axios from 'axios'
 // import {GetUserInfo} from '../../zuri-control'
 import { SignoutStyleWrapper } from '../../component-styles/SignoutStyle'
 import logo from '../../component-assets/zuri.svg'
+import { Helmet } from 'react-helmet'
 
 const Signout = ({ history }) => {
-  const currentWorkspace = localStorage.getItem('currentWorkspace')
+  const orgName = localStorage.getItem('orgName')
+
   let token = sessionStorage.getItem('token')
-  const [orgName, SetOrgName] = useState('')
 
   useEffect(() => {
-    let user = JSON.parse(sessionStorage.getItem('user'))
-
-    if ((user && token) !== null) {
-      try {
-        axios
-          .get(`https://api.zuri.chat/organizations/${currentWorkspace}`, {
-            headers: {
-              Authorization: `Bearer ${token}`
-            }
-          })
-          .then(response => {
-            SetOrgName(response.data.data.name)
-            // let userData = { currentWorkspace, ...response.data.data }
-          })
-      } catch (err) {
-        console.log(err)
+    axios({
+      method: 'post',
+      url: `https://api.zuri.chat/auth/logout`,
+      headers: {
+        Authorization: `Bearer ${token}`
       }
-    } else {
-      console.log('YOU ARE NOT LOGGED IN, PLEASE LOG IN')
-    }
-  }, [orgName])
+    })
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  })
 
   return (
     <>
       <SignoutStyleWrapper>
         <div className="logo">
+          <Helmet>
+            <title>Sign Out - Zuri Chat</title>
+          </Helmet>
           <img src={logo} alt="zuri logo" />
         </div>
 
