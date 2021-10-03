@@ -78,12 +78,6 @@ const App = () => {
         <Route path="/send-request">
           <SendRequest />
         </Route>
-        <Route path="/invite-user">
-          <InviteUserRequest />
-        </Route>
-        <Route path="/invite-user/1">
-          <InviteUserRequest />
-        </Route>
         <Route path="/resources">
           <Resources />
         </Route>
