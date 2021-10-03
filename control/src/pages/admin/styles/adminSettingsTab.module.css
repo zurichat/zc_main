@@ -1,0 +1,158 @@
+.setting_tab_container {
+  --type-scale: 0.8;
+  --height-scale: 0.85;
+}
+
+.setting_tab_container h3 {
+  font-size: calc(1.5rem * var(--type-scale, 1));
+  line-height: calc(1.8rem * var(--height-scale, 1));
+  font-weight: 700;
+  color: #1d1c1d;
+}
+
+.setting_tab_container header p {
+  font-size: calc(1.125rem * var(--type-scale, 1));
+  line-height: calc(1.35rem * var(--height-scale, 1));
+  font-weight: 400;
+  color: #616061;
+}
+
+.settings_tab_form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 2rem;
+}
+
+.admin_form_group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+
+.admin_form_group label {
+  margin-bottom: 0.5rem;
+  color: #616061;
+  font-size: calc(0.94rem * var(--type-scale, 1));
+  line-height: calc(1.219rem * var(--height-scale, 1));
+  font-weight: 400;
+}
+
+.admin_form_group input,
+.form_select select {
+  border: 1px solid #a1a1a1;
+  border-radius: 3px;
+  padding: 0.5rem 0.75rem;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.form_select {
+  position: relative;
+}
+
+.form_select select {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  background: white;
+  cursor: pointer;
+}
+
+.form_select option:hover {
+  background-color: #00b87c;
+}
+
+.form_select svg {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+}
+
+.admin_form_group textarea {
+  border: 1px solid #a1a1a1;
+  border-radius: 3px;
+  padding: 0.2rem 0.75rem;
+}
+
+.right_field p {
+  font-size: calc(0.875rem * var(--type-scale, 1));
+  line-height: calc(1.1375rem * var(--height-scale, 1));
+  font-weight: normal;
+}
+
+.save_btn {
+  background-color: #00b87c;
+  border-radius: 3px;
+  border: 1px solid #00b87c;
+  padding: 0.75rem 1rem;
+  font-size: calc(0.94rem * var(--type-scale, 1));
+  line-height: calc(1.5rem * var(--height-scale, 1));
+  font-weight: normal;
+  color: #fff;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.save_btn:hover {
+  background-color: rgba(0, 184, 124, 0.8);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.btn_wrapper p {
+  font-size: calc(1.125rem * var(--type-scale, 1));
+  line-height: calc(1.4625rem * var(--height-scale, 1));
+  font-weight: 400;
+}
+
+.upgrade_section {
+  padding-top: 2rem;
+}
+
+.upgrade_section p,
+.upgrade_section h4 {
+  font-size: calc(1.125rem * var(--type-scale, 1));
+  line-height: calc(1.35rem * var(--height-scale, 1));
+  font-weight: 400;
+}
+
+.upgrade_section h4 {
+  color: #1d1c1d;
+  font-weight: 700;
+  padding-top: 1rem;
+}
+
+.admin_input_group {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr;
+  grid-column-gap: 1rem;
+}
+
+.upgrade_section .btn_wrapper {
+  margin-top: 2rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .setting_tab_container {
+    --type-scale: 0.85;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .setting_tab_container {
+    --type-scale: 0.9;
+  }
+}
+
+@media only screen and (min-width: 980px) {
+  .setting_tab_container {
+    --type-scale: 1;
+    --height-scale: 1;
+  }
+}
