@@ -2,10 +2,7 @@
 import CommentSection from './components/CommentSection';
 export default function Root() {
   return (
-    <CommentSection />
+    <CommentSection commentsConfig={props.commentsConfig} />
   )
 }
 
-// export default function Root(props) {
-//   return <section>{props.name} is mounted!</section>
-// }
