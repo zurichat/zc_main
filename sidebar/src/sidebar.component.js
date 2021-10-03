@@ -154,9 +154,9 @@ const Sidebar = props => {
       }
     })
       .then(res => {
-        setSendLoading(false)
-        setInviteSuccess(true)
         // setSendLoading(false)
+        setInviteSuccess(true)
+        setSendLoading(false)
       })
       .catch(err => {
         setSendLoading(false)
