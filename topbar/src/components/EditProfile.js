@@ -8,7 +8,7 @@ import { ProfileContext } from '../context/ProfileModal'
 import Loader from 'react-loader-spinner'
 import toast, { Toaster } from 'react-hot-toast'
 import { data } from '../utils/Countrycode'
-import TimezoneSelect from 'react-timezone-select'
+// import TimezoneSelect from 'react-timezone-select'
 import { StyledProfileWrapper } from '../styles/StyledEditProfile'
 
 const EditProfile = () => {
