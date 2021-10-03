@@ -12,7 +12,6 @@ import theme16 from '../assets/images/theme16.png'
 import theme17 from '../assets/images/theme17.png'
 import { useState, useEffect } from 'react'
 
-
 const Themes = () => {
   const [active1, setActive1] = useState(0)
   const [darkMode, setDarkMode] = useState(false)
@@ -37,7 +36,7 @@ const Themes = () => {
 
   // const [mode, setMode] = useState(() => localStorage.getItem('mode'))
 
-  // 
+  //
 
   //const [isChecked, setIsChecked] = useState(false)
 
@@ -69,71 +68,86 @@ const Themes = () => {
         </div>
       </div>
       <div className={styles.sync}>
-          <div className={styles.checkbox}>
-            <input
-              type="checkbox"
-              name="sync"
-              onClick={() => {
-                setDataState({sync_with_os: 'yes'})
-                setData()
-              }}
-            />
-          </div>
+        <div className={styles.checkbox}>
+          <input
+            type="checkbox"
+            name="sync"
+            onClick={() => {
+              setDataState({ sync_with_os: 'yes' })
+              setData()
+            }}
+          />
+        </div>
         <div className={styles.os}>Sync with OS setting</div>
       </div>
       <div className={styles.direct}>
-          <div className={styles.radio}>
-            <input
-              type="checkbox"
-              name="sync"
-              onClick={() => {
-                setDataState({direct_messages_mentions_and_network: 'yes'})
-                setData()
-              }}
-            />
-          </div>
+        <div className={styles.radio}>
+          <input
+            type="checkbox"
+            name="sync"
+            onClick={() => {
+              setDataState({ direct_messages_mentions_and_network: 'yes' })
+              setData()
+            }}
+          />
+        </div>
         <div className={styles.mention}>
           Direct messages, mentions &amp; network
         </div>
       </div>
       <div className={styles.text2}>
-        Automatically switch between light and dark themes when your system does.
+        Automatically switch between light and dark themes when your system
+        does.
       </div>
-        <div className={styles.img}>
-          <div className={styles.up}>
-            <div className={styles.upper}>
+      <div className={styles.img}>
+        <div className={styles.up}>
+          <div className={styles.upper}>
             <img src={theme16} alt="theme16" className={styles.theme16} />
             <div className={styles.bot}>Zuribot</div>
             <div className={styles.time}>9:25am</div>
-            </div>
-            <div className={styles.nice}>Look nice today.</div>
           </div>
-          <div className={styles.low}>
-            <div className={styles.lower}>
-              <div className={styles.radio6} onClick={toggleLightMode}>
-                <input type="radio" value="light" checked={active1 === 0} onClick={() => {setActive1(0)}} />
-              </div>
-              <div className={styles.light}>Light</div>
+          <div className={styles.nice}>Look nice today.</div>
+        </div>
+        <div className={styles.low}>
+          <div className={styles.lower}>
+            <div className={styles.radio6} onClick={toggleLightMode}>
+              <input
+                type="radio"
+                value="light"
+                checked={active1 === 0}
+                onClick={() => {
+                  setActive1(0)
+                }}
+              />
             </div>
+            <div className={styles.light}>Light</div>
           </div>
         </div>
-        <div className={styles.img2}>
-          <div className={styles.up2}>
-            <div className={styles.upper2}>
-              <img src={theme17} alt="theme17" className={styles.theme17} />
-              <div className={styles.bot2}>Zuribot</div>
-              <div className={styles.time2}>9:25am</div>
-            </div>
-            <div className={styles.nice2}>Look nice today.</div>
+      </div>
+      <div className={styles.img2}>
+        <div className={styles.up2}>
+          <div className={styles.upper2}>
+            <img src={theme17} alt="theme17" className={styles.theme17} />
+            <div className={styles.bot2}>Zuribot</div>
+            <div className={styles.time2}>9:25am</div>
           </div>
-          <div className={styles.low2}>
-            <div className={styles.lower2} onClick={toggleDarkMode}>
-              <div className={styles.radio7}>
-                <input type="radio" value="light" checked={active1 === 1} onClick={() => {setActive1(1)}} />
-              </div>
-              <div className={styles.light2}>Dark</div>
+          <div className={styles.nice2}>Look nice today.</div>
+        </div>
+        <div className={styles.low2}>
+          <div className={styles.lower2} onClick={toggleDarkMode}>
+            <div className={styles.radio7}>
+              <input
+                type="radio"
+                value="light"
+                checked={active1 === 1}
+                onClick={() => {
+                  setActive1(1)
+                }}
+              />
             </div>
+            <div className={styles.light2}>Dark</div>
           </div>
+        </div>
       </div>
       <div className={styles.customize}>
         <div className={styles.text3}>Colors</div>
