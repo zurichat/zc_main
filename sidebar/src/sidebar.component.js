@@ -55,7 +55,7 @@ const Sidebar = props => {
   const [InviteSuccess, setInviteSuccess] = useState(false)
   const [homeModal, toggleHomeModal] = useState(false)
   const [org, setOrg] = useState({})
-  console.log('ORGGGG', org)
+  // console.log('ORGGGG', org)
   const toggle = () => {
     toggleHomeModal(!homeModal)
     document.removeEventListener('click', toggle)
@@ -81,7 +81,7 @@ const Sidebar = props => {
     token: ''
   })
 
-  console.log('userinfo', userInfo)
+  // console.log('userinfo', userInfo)
 
   const [nullValue, setnullValue] = useState(0)
 
@@ -154,7 +154,7 @@ const Sidebar = props => {
   // ${currentWorkspace}
   const inviteUser = async emails => {
     // console.log(currentWorkspace, token, emails)
-    console.log(...emails, 'pidoxy')
+    // console.log(...emails, 'pidoxy')
     setSendLoading(true)
     return await axios({
       method: 'post',
