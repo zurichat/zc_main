@@ -1,4 +1,4 @@
-const ChatItem = ({ message, author, time }) => {
+const ChatItem = ({ message, author,time }) => {
   return (
     <div>
       {/* <h3>{author}</h3> */}
