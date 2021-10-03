@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding-left: 16px;
+  padding-left: 17px;
   margin-bottom: 9px;
 `
 const ChatItemWrapper = styled.div`
