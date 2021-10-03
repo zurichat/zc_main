@@ -14,7 +14,10 @@ const DownloadsDesktop = () => {
   const [exe, setexe] = useState({ link: '', name: '' })
   React.useEffect(() => {
     if (isMacOs) return setexe({ name: 'DOWNLOAD FOR MAC' })
-    return setexe({ name: 'DOWNLOAD FOR WINDOWS' })
+    return setexe({
+      name: 'DOWNLOAD FOR WINDOWS',
+      link: 'https://drive.google.com/file/d/1J1rl-_3QeG9H4rnn9EF0XW0kSGb_Wsl4/view?usp=sharing'
+    })
   }, [])
   return (
     <>
@@ -46,7 +49,6 @@ const DownloadsDesktop = () => {
         <div className={`${styles.downloadButtonContainer}`}>
           <a
             href={`https://drive.google.com/file/d/1J1rl-_3QeG9H4rnn9EF0XW0kSGb_Wsl4/view?usp=sharing`}
-            download={`zurichat`}
             className={styles.downloadButton}
           >
             Windows
