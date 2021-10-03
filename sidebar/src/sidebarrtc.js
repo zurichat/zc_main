@@ -67,7 +67,7 @@ const Sidebar = props => {
   const toggle = () => toggleHomeModal(!homeModal)
 
   let currentWorkspace = localStorage.getItem('currentWorkspace')
-  console.log(currentWorkspace)
+  // console.log(currentWorkspace)
 
   const [userInfo, setUserInfo] = useState({
     userId: '',
@@ -139,7 +139,7 @@ const Sidebar = props => {
       }
     })
       .then(res => {
-        console.log('invite', res)
+        // console.log('invite', res)
         setInviteSuccess(true)
       })
       .catch(err => {
@@ -147,8 +147,8 @@ const Sidebar = props => {
       })
   }
 
-  console.log(currentWorkspace, 'workspace')
-  console.log(userInfo.userId, 'user id')
+  // console.log(currentWorkspace, 'workspace')
+  // console.log(userInfo.userId, 'user id')
 
   useEffect(() => {
     setnullValue(1)

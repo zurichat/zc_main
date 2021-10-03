@@ -8,7 +8,7 @@ import { ProfileContext } from '../context/ProfileModal'
 import Loader from 'react-loader-spinner'
 import toast, { Toaster } from 'react-hot-toast'
 import { data } from '../utils/Countrycode'
-import TimezoneSelect from 'react-timezone-select'
+// import TimezoneSelect from 'react-timezone-select'
 import { StyledProfileWrapper } from '../styles/StyledEditProfile'
 
 const EditProfile = () => {
@@ -385,7 +385,7 @@ const EditProfile = () => {
           </div>
           <div className="button-wrapper">
             <button className="btns cncBtn">Cancel</button>
-            <button onClick={handleFormSubmit} className="btns chgBtn">
+            <button onClick={handleFormSubmit} className="btns saveBtn">
               {state.loading ? (
                 <Loader type="ThreeDots" color="#fff" height={40} width={40} />
               ) : (
