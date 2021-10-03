@@ -50,7 +50,7 @@ const DownloadsWindows = () => {
             <div
               className={`${styles.buttondiv} p-lg-5 m-lg-5 mb-lg-0 p-md-3 m-md-3`}
             >
-              <a href={exe.link} download={exe.name} className={styles.button1}>
+              <a href={`https://drive.google.com/file/d/1J1rl-_3QeG9H4rnn9EF0XW0kSGb_Wsl4/view?usp=sharing`} download={`zurichat`} className={styles.button1}>
                 <img className={`px-2`} src={icon} alt="download icon"></img>
                 DOWNLOAD
               </a>
