@@ -91,7 +91,7 @@ const ModalComponent = ({ isOpen, toggleOpenInvite }) => {
       </div>
       <hr className={styles.modalDivider} />
       <div
-        ref={hoverRef}
+        // ref={hoverRef}
         className={`d-flex align-items-center justify-content-between ${styles.modalSection}`}
       >
         <p>Tools</p>
@@ -99,12 +99,12 @@ const ModalComponent = ({ isOpen, toggleOpenInvite }) => {
           <Arrow className={`${styles.arrow}`} />
         </div>
         <div
-          className={`${
-            isHovered ? styles.openmodalSubCon : styles.modalSubCon
-          }`}
+          // className={`${
+          //   isHovered ? styles.openmodalSubCon : styles.modalSubCon
+          // }`}
         >
           <div
-            ref={hoverRef}
+            // ref={hoverRef}
             className={`d-flex flex-column ${styles.modalSection}`}
           >
             <p>Plugins</p>
@@ -128,18 +128,18 @@ const ModalComponent = ({ isOpen, toggleOpenInvite }) => {
           </div>
         </div>
         <div
-          ref={hoverRef2}
+          // ref={hoverRef2}
           className={`d-flex align-items-center justify-content-between ${styles.modalSubSection}`}
         >
           <p>Switch workspace</p>
           <Arrow className={`${styles.arrow}`} />
           <div
-            className={`${
-              isHovered2 ? styles.openmodalSubCon : styles.modalSubCon
-            }`}
+            // className={`${
+            //   isHovered2 ? styles.openmodalSubCon : styles.modalSubCon
+            // }`}
           >
             <div
-              ref={hoverRef2}
+              // ref={hoverRef2}
               className={`d-flex flex-column ${styles.modalSection}`}
             >
               <p>HNGi8</p>
