@@ -180,8 +180,9 @@ const Sidebar = props => {
       }
     })
       .then(res => {
-        setSendLoading(false)
+        // setSendLoading(false)
         setInviteSuccess(true)
+        setSendLoading(false)
       })
       .catch(err => {
         setSendLoading(false)
@@ -361,129 +362,7 @@ const Sidebar = props => {
             </div>
           )}
         </div>
-        <div
-          onClick={() => setBg(2)}
-          style={
-            bg === 2
-              ? { backgroundColor: '#00b87c' }
-              : { backgroundColor: 'revert' }
-          }
-          className={`row mt-2 ${styles.sb__item}`}
-        >
-          <div
-            className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
-          >
-            <img
-              className={`${styles.item__img}`}
-              src={threadIcon}
-              role="button"
-              alt="icon"
-            />
-            <p className={`mb-0 ${styles.item_p}`} role="button">
-              Threads
-            </p>
-          </div>
-        </div>
-        <div
-          onClick={() => setBg(3)}
-          style={
-            bg === 3
-              ? { backgroundColor: '#00b87c' }
-              : { backgroundColor: 'revert' }
-          }
-          className={`row ${styles.sb__item}`}
-        >
-          <div
-            className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
-          >
-            <img
-              className={`${styles.item__img}`}
-              src={dmIcon}
-              alt="icon"
-              role="button"
-            />
-            <p className={`mb-0 ${styles.item_p}`} role="button">
-              All DMs
-            </p>
-          </div>
-        </div>
-        <div
-          onClick={() => setBg(4)}
-          style={
-            bg === 4
-              ? { backgroundColor: '#00b87c' }
-              : { backgroundColor: 'revert' }
-          }
-          className={`row ${styles.sb__item}`}
-        >
-          <div
-            className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
-          >
-            <img
-              className={`${styles.item__img}`}
-              src={draftIcon}
-              alt="icon"
-              role="button"
-            />
-            <p className={`mb-0 ${styles.item_p}`} role="button">
-              Drafts
-            </p>
-          </div>
-        </div>
-        <div
-          onClick={() => setBg(5)}
-          style={
-            bg === 5
-              ? { backgroundColor: '#00b87c' }
-              : { backgroundColor: 'revert' }
-          }
-          className={`row ${styles.sb__item}`}
-        >
-          <div
-            className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
-          >
-            <img
-              className={`${styles.item__img}`}
-              src={filesIcon}
-              alt="icon"
-              role="button"
-            />
-            <p className={`mb-0 ${styles.item_p}`} role="button">
-              Files
-            </p>
-          </div>
-        </div>
-        <div
-          onClick={() => setBg(6)}
-          style={
-            bg === 6
-              ? { backgroundColor: '#00b87c' }
-              : { backgroundColor: 'revert' }
-          }
-          className={`row ${styles.sb__item}`}
-        >
-          <div
-            className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
-          >
-            <img
-              className={`${styles.item__img}`}
-              src={pluginIcon}
-              alt="icon"
-              role="button"
-            />
-            <p className={`mb-0 ${styles.item_p}`} role="button">
-              Plugins
-            </p>{' '}
-            <img
-              onClick={open}
-              className={`${styles.addButton}`}
-              src={addIcon}
-              alt="Add button"
-              role="button"
-            />
-          </div>
-        </div>
-
+        
         {/* Checks if sidebarData is fully loaded; if not it mounts the skeletonloader, if sidebarData is complete it mounts sidebar fully */}
         {isLoading ? (
           <SkeletonLoader pluginNumber={sideBarDataSize} />
