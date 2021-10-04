@@ -31,7 +31,8 @@ const Comments = () => {
     e.preventDefault()
 
     axios
-      .post('https://api.zuri.chat/posts/61464f251a5607b13c00bc48/comments', {
+      .post('https://api.zuri.chat/posts/6158cb453a1e49b1e5165f8e/comments', {
+        comment_auhtor: "Anonymous",
         comment_content: comment_content
       })
       .then(res => {
@@ -42,12 +43,13 @@ const Comments = () => {
   }
 
   useEffect(() => {
-    const url = 'https://api.zuri.chat/posts/61464f251a5607b13c00bc48/comments'
+    const url = 'https://api.zuri.chat/posts/6158cb453a1e49b1e5165f8e/comments'
 
     const fetchData = async () => {
       try {
         const response = await fetch(url)
         const json = await response.json()
+        console.log(json.data.comments)
         setComments(json.data.comments)
       } catch (error) {
         console.log('error', error)
@@ -110,7 +112,7 @@ const Comments = () => {
             <a href="">
               <img src={Like} alt="" />
             </a>
-            <span>20</span>
+            <span>0</span>
           </p>
           <p>
             <UitCommentDots style={{ marginRight: 7 }} />
@@ -163,10 +165,9 @@ const Comments = () => {
                     <img src={Avatar} />
                   </div>
                   <div className={style.comment_card}>
-                    <p class={style.comment_name}>Maurice Victor</p>
+                    <p class={style.comment_name}>{comm.comment_author}</p>
                     <p>
                       {comm.comment_content}
-                      {console.log(comm, 'Josue')}
                       <br />
                     </p>
                   </div>
