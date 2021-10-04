@@ -1,25 +1,47 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
+import css from './styles/EmailSubModal.module.css'
+import modal_img1 from './assets/modal-email-icon.svg'
+// import axios from 'axios'
 
-import Group2 from '../assets/Group59317.svg'
-import './EmailModal.css'
+const EmailSubModal  = ({ displayModal, setDisplayModal }) => {
+  // const modalRef = useRef()
 
-function EmailSucessModal() {
+  // const closeModal = event => {
+  //     if (modalRef.current !== event.target) {
+  //         setDisplayModal(false)
+  //     }
+  // }
+
   return (
-    <div className="emsucess Wrapper">
-      <div className="emsucess-content">
-        <div className="emailSubSucess-header">
-          <img src={Group2} className="emailSucess-container-logo" alt="logo" />
-          <h1 className="emailSubSucess-Title">Thank you for subscribing!</h1>
+    <>
+      {displayModal ? (
+        <div className={`col-sm-12 d-flex flex-column ${css.modalBox}`}>
+          <div className={`p-5 ${css.modalWrap}`}>
+            <div className={`row ${css.modalRow}`}>
+              <div
+                className={`col-sm-12 d-flex flex-column ${css.modalColumn}`}
+              >
+                <div className={`mx-auto ${css.modalIcon}`}>
+                  <img
+                    src={modal_img1}
+                    alt="email icon"
+                    className={`img-fluid`}
+                  />
+                </div>
+                <h3 className={`text-center my-4 ${css.modalHeading}`}>
+                  Thank you for subscribing!
+                </h3>
+                <p className={`text-center ${css.modalText}`}>
+                  Now, you'll be the first to receive updates and unique offers
+                  from the Zuri Chat team.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="emsucess-body">
-          <p>
-            Now you'll be the first to receive updates<br></br> and unique
-            offers from the<br></br> Zuri Chat Team.
-          </p>
-        </div>
-      </div>
-    </div>
+      ) : null}
+    </>
   )
 }
 
-export default EmailSucessModal
+export default EmailSubModal

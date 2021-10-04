@@ -1,70 +1,88 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
-import Group from '../assets/Group.svg'
-import './App.css'
-import EmailSucessModal from '../src/EmailModal'
+import css from './styles/EmailSubForm.module.css'
+import sub_img1 from './assets/email-sub-img.svg'
+import axios from 'axios'
+import EmailSubModal from './EmailSubModal'
 
-const [modal, setModal] = useState()
-setModal('true')
+const Subscribe = () => {
+  const [email, setEmail] = useState('')
 
-const history = useHistory()
-history.push()
+  const [displayModal, setDisplayModal] = useState(false)
 
-function subscribe() {
-  axios
-    .post('https://api.zuri.chat/external/send-mail?custom_mail=0', {
-      email: 'mailto:email@gmail.com',
-      subject: 'Hello World',
-      mail_type: 3,
-      data: {}
-    })
-    .then(response => {
-      setModal('true')
+  const handleSubmit = async event => {
+    event.preventDefault()
 
-      setTimeout(EmailSucessModal, 3000)
-    })
-    .catch(error => {})
-
-  function EmailSub() {
-    return (
-      <div className="EmailSub-Container-Wrapper">
-        <div className="EmailSub-Container-logo">
-          <img src={Group} className="EmailSub-Container-logo" alt="logo" />
-        </div>
-
-        <div className="Description-emailsub-container">
-          <h1 className="emailsub-title-text">
-            Be the First to get updates and<br></br> exclusive offers from Zuri
-            Chat
-          </h1>
-          <p>
-            {' '}
-            Enrich your Zuri Chat experience by signing up<br></br>
-            here to get the latest news and special deals<br></br>
-            on Zuri Chat!{' '}
-          </p>
-
-          <div className="emailsubform-container">
-            <form className="emailsubform">
-              <input
-                className="subForm"
-                type="text"
-                placeholder="jazeelandfriends@yes.com"
-                name="email"
-                required
-              />
-
-              <button
-                className="subButton"
-                typeName="subscribebutton"
-                onClick={subscribe}
-              />
-            </form>
+    await axios
+     
+    .post('https://api.zuri.chat/external/send-mail?custom_mail=0', { email })
+         
+   .then(response => {
+           const { data, message, status } = response.data
+           console.log(response.data)
+           // alert(message)
+           if (status == '200') {
+             setEmail('')
+            
+    setDisplayModal(true)
+             setTimeout(() => {
+               setDisplayModal(false)
+             }, 5000)
+           }
+         })
+        
+    .catch(error => {
+           const { data } = error.response
+         })
+     }
+   
+     const handleChange = event => setEmail(event.target.value)
+    
+  return (
+    <>
+      <EmailSubModal
+        displayModal={displayModal}
+        setDisplayModal={setDisplayModal}
+      />
+      <section className={`container my-5 ${css.sectionContainer}`}>
+        <div className={`row`}>
+          <div className={`col-md-6 col-sm-12 ${css.leftColumn}`}>
+            <div className={`mr-5 ${css.image}`}>
+              <img src={sub_img1} alt="Hero Top" className={`img-fluid`} />
+            </div>
+          </div>
+          <div
+            className={`col-md-6 col-sm-12 d-flex flex-column ${css.rightColumn}`}
+          >
+            <div className={` ${css.text}`}>
+              <h2 className={` ${css.heading2}`}>
+                Be the First to get updates and exclusive offers from Zuri Chat
+              </h2>
+              <p className={`py-4 mb-4 px-0 ${css.subtext}`}>
+                Enrich your Zuri Chat experience by signing up here to get the
+                latest news and special deals on Zuri Chat!
+              </p>
+              <div className={`${css.formContainer}`}>
+                <form onSubmit={handleSubmit}>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="leahandteam@yes.com"
+                    value={email}
+                    onChange={handleChange}
+                    required
+                    className={`mb-3 ${css.inputField}`}
+                  />
+                  <button type="submit" className={`${css.subscribeBtn}`}>
+                    Subscribe
+                  </button>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    )
-  }
+      </section>
+    </>
+  )
 }
 
-export default EmailSub
+export default Subscribe
