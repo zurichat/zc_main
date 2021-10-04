@@ -13,7 +13,7 @@ const Subscribe = () => {
     event.preventDefault()
 
     await axios
-      .post('https://api.zuri.chat/external/subscribe', { email })
+      .post('https://api.zuri.chat/external/send-mail?custom_mail=0', { email })
       .then(response => {
         const { data, message, status } = response.data
         console.log(response.data)
