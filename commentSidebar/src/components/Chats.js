@@ -1,3 +1,4 @@
+
 import styled from 'styled-components'
 import ChatItem from './ChatItem.'
 const Chats = ({ chatInfo }) => {
@@ -11,13 +12,14 @@ const Chats = ({ chatInfo }) => {
       ))}
     </Wrapper>
   )
+
 }
 const Wrapper = styled.div`
   background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding-left: 16px;
+  padding-left: 17px;
   margin-bottom: 9px;
 `
 const ChatItemWrapper = styled.div`
