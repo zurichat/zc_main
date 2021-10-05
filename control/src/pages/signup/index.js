@@ -105,6 +105,7 @@ const Signup = () => {
 
         setTimeout(() => {
           //Redirect to some other page
+          // history.push('/createworkspace');
         }, 2000)
       })
       .catch(error => {
