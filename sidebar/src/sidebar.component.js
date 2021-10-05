@@ -332,7 +332,7 @@ const Sidebar = props => {
             </div>
           )}
         </div>
-        
+
         {/* Checks if sidebarData is fully loaded; if not it mounts the skeletonloader, if sidebarData is complete it mounts sidebar fully */}
         {isLoading ? (
           <SkeletonLoader pluginNumber={sideBarDataSize} />
