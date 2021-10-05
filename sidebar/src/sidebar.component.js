@@ -1,3 +1,4 @@
+import { fetchUser } from './context/fetchUserDetails'
 import { Fragment, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './styles/Sidebar.module.css'
@@ -39,23 +40,48 @@ import { MdKeyboardArrowDown } from 'react-icons/md'
 
 const Sidebar = props => {
   const [show, setShow] = useState(false)
+
+  //for background
   const [bg, setBg] = useState(1)
+
+  //for invite
   const [openInvite, setOpenInvite] = useState(false)
+
+  //dialoag
   const [showDialog, setShowDialog] = useState(false)
+
+  //Function to open dialog
   const open = () => setShowDialog(true)
   const close = () => setShowDialog(false)
+
+  //Invite modal
   const openInviteModal = () => setOpenInvite(true)
   const closeInviteModal = () => setOpenInvite(false)
+
+  //Some type of query
   const [query, setQuery] = useState('')
   const [loading, setLoading] = useState(false)
-  // const [error, setError] = useState('')
+
+  //invite mail
   const [inviteEmail, setInviteEmail] = useState([])
+
+  //organization email
   const [orgEmails, setOrgEmails] = useState([])
+
+  //set owner
   const [owner, setOwner] = useState(false)
+
+  //invite modal
   const [InviteSuccess, setInviteSuccess] = useState(false)
+
+  //home modal
   const [homeModal, toggleHomeModal] = useState(false)
+
+  //organization
   const [org, setOrg] = useState({})
   // console.log('ORGGGG', org)
+
+  //toggle
   const toggle = () => {
     toggleHomeModal(!homeModal)
     document.removeEventListener('click', toggle)
@@ -71,6 +97,7 @@ const Sidebar = props => {
 
   let currentWorkspace = localStorage.getItem('currentWorkspace')
 
+  //open invite
   const toggleOpenInvite = () => setOpenInvite(!openInvite)
   const setInviteEmails = emails => setInviteEmail(emails)
   const [sendLoading, setSendLoading] = useState(false)
@@ -81,7 +108,7 @@ const Sidebar = props => {
     token: ''
   })
 
-  // console.log('userinfo', userInfo)
+  //   // console.log('userinfo', userInfo)
 
   const [nullValue, setnullValue] = useState(0)
 
@@ -97,15 +124,24 @@ const Sidebar = props => {
 
   let sideBarDataSize = Object.keys(sidebarData).length
 
+<<<<<<< HEAD
   // console.log('SidebarData', sidebarData)
   // console.log('SidebarData Size:', sideBarDataSize)
   // console.log('ORG INFO:', organizationInfo)
+=======
+  //   console.log('SidebarData', sidebarData)
+  //   console.log('SidebarData Size:', sideBarDataSize)
+  //   console.log('ORG INFO:', organizationInfo)
+>>>>>>> 557f8fa654a0f9879d93773253934b82bcfa46a3
 
   // let user = JSON.parse(sessionStorage.getItem('user'))
   let token = sessionStorage.getItem('token')
   let user_id_session = JSON.parse(sessionStorage.getItem('user'))
 
   useEffect(() => {
+    //Fetch sidebar when component mounts
+    fetchUser(props.dispatch)
+    setnullValue(1)
     axios({
       method: 'get',
       url: `https://api.zuri.chat/organizations/${currentWorkspace}`,
@@ -116,7 +152,8 @@ const Sidebar = props => {
       const org = res.data.data
       setOrg(org)
     })
-  })
+  }, [])
+
   useEffect(() => {
     inviteVisibility()
 
@@ -126,16 +163,6 @@ const Sidebar = props => {
         userId: user_id_session.id,
         token
       })
-
-      if (userInfo._userId !== '') {
-        const org_url = `/organizations/${currentWorkspace}/plugins`
-        authAxios
-          .get(org_url)
-          .then(res => setOrganizationInfo(res.data.data))
-          .catch(err => console.log(err))
-      } else {
-        console.log('Checking')
-      }
     }
     fetchUser()
   }, [])
@@ -162,9 +189,9 @@ const Sidebar = props => {
     })
   }
 
-  // Invite Users
-  // 6150542f6dc33f65ab425403
-  // ${currentWorkspace}
+  //   // Invite Users
+  //   // 6150542f6dc33f65ab425403
+  //   // ${currentWorkspace}
   const inviteUser = async emails => {
     // console.log(currentWorkspace, token, emails)
     // console.log(...emails, 'pidoxy')
@@ -191,13 +218,6 @@ const Sidebar = props => {
       })
   }
 
-  // console.log(currentWorkspace, 'workspace')
-  // console.log(userInfo.userId, 'user id')
-
-  useEffect(() => {
-    setnullValue(1)
-  }, [])
-
   {
     nullValue === 1 &&
       currentWorkspace &&
@@ -216,50 +236,6 @@ const Sidebar = props => {
         }
       )
   }
-  useEffect(() => {
-    {
-      organizationInfo &&
-        organizationInfo.map(pluginData => {
-          const { plugin } = pluginData
-
-          console.log('Plugin:', plugin)
-
-          const sidebarUrl = plugin.sidebar_url
-          const trimmedUrl = trimUrl(sidebarUrl)
-          const pluginKey = filterUrl(plugin.sidebar_url)
-
-          axios
-            .get(
-              `${
-                trimmedUrl.includes('https://') ||
-                trimmedUrl.includes('http://')
-                  ? trimmedUrl
-                  : `https://${trimmedUrl}`
-              }?org=${currentWorkspace}&user=${userInfo.userId}`
-            )
-            .then(res => {
-              try {
-                const validPlugin = res.data
-
-                // console.log("Valid Plugin Array:", [validPlugin])
-
-                if (validPlugin.name !== undefined) {
-                  if (typeof validPlugin === 'object') {
-                    setSidebarData(prev => {
-                      return { ...prev, [pluginKey]: validPlugin }
-                    })
-                  }
-                }
-              } catch (err) {
-                console.log(err, 'Invalid plugin')
-              }
-            })
-            .catch(console.log)
-        })
-    }
-    console.log("organization",organizationInfo)
-  }, [organizationInfo])
-
 
   return (
     <div className={`container-fluid ${styles.sb__container}`}>
@@ -427,14 +403,14 @@ const Sidebar = props => {
             {/* <DropDown /> */}
 
             {/* SIDE BAR DATA */}
-            {sidebarData &&
-              Object.keys(sidebarData).map((plugin, index) => {
+            {props.state.sidebar &&
+              Object.keys(props.state.sidebar).map((plugin, index) => {
                 return (
                   <DropDown
-                    itemName={sidebarData[plugin].name}
-                    id={sidebarData[plugin].name}
+                    itemName={props.state.sidebar[plugin].name}
+                    id={props.state.sidebar.name}
                     key={index}
-                    items={sidebarData[plugin]}
+                    items={props.state.sidebar[plugin]}
                   />
                   // console.log()
 
@@ -589,7 +565,7 @@ letter-spacing: 0em;
 text-align: left;
 display: flex;
 padding:0.25rem;
-& > img { 
+& > img {
   padding: 0 1rem;
 `
 
