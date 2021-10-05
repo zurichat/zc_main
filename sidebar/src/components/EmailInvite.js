@@ -35,7 +35,7 @@ import {
   ChakraProvider,
   Spinner,
   Select,
-  Textarea,
+  Textarea
 } from '@chakra-ui/react'
 import {
   PhoneIcon,
@@ -128,7 +128,6 @@ export const EmailInviteModal = props => {
   }
 
   function validateEmail(value) {
-    
     let error
     // console.log(props.orgvalEmails.some((em)=>em === value) , value,props.orgvalEmails )
     // if (listEmail.some((em)=>em.mail === value) ) {
@@ -142,7 +141,10 @@ export const EmailInviteModal = props => {
     if (!value && !listEmail) {
       error = 'Email is required'
       setForerr(error)
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value) && value !== "") {
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value) &&
+      value !== ''
+    ) {
       error = 'Invalid email address'
       setForerr(error)
     } else {
@@ -241,7 +243,7 @@ export const EmailInviteModal = props => {
                             type="email"
                             borderRadius="2px"
                             // focusBorderColor="green.200"
-                            // variant="filled" 
+                            // variant="filled"
                             placeholder="type an e-mail and press Enter"
                             onBlur={Blur}
                             onFocus={Focus}
@@ -470,12 +472,13 @@ export const EmailInviteModal = props => {
           </>
         ) : null}
 
-{inviteStep === 3 ? (
+        {inviteStep === 3 ? (
           <ModalContent px="0.5rem" borderRadius="2px">
-            <ModalHeader fontSize="20px">Request Invitation to HNGi8</ModalHeader>
+            <ModalHeader fontSize="20px">
+              Request Invitation to HNGi8
+            </ModalHeader>
             <ModalCloseButton onClick={onClo} />
             <ModalBody>
-          
               <FormLabel fontWeight="bold">To:</FormLabel>
               <Container
                 border="1px"
@@ -486,7 +489,6 @@ export const EmailInviteModal = props => {
                 maxW="container.xl"
                 minH={120}
               >
-                
                 {listEmail.map((e_mail, index) => (
                   <Tag
                     boxShadow="md"
@@ -500,13 +502,10 @@ export const EmailInviteModal = props => {
                     <TagCloseButton onClick={() => handleDelete(index)} />
                   </Tag>
                 ))}
-                
 
                 <Formik
                   initialValues={{ email: ' ' }}
                   onSubmit={(values, actions) => {
-                  
-
                     if (listEmail.some(em => em.mail === values.email)) {
                       setListEmail([
                         ...listEmail,
@@ -540,7 +539,6 @@ export const EmailInviteModal = props => {
                         <FormControl
                           isInvalid={form.errors.email && form.touched.email}
                         >
-                          
                           <Input
                             ref={initialRef}
                             onChange={validateEmail}
@@ -552,15 +550,11 @@ export const EmailInviteModal = props => {
                             // focusBorderColor="green.200"
                             onBlur={Blur}
                             onFocus={Focus}
-
-
                             width="50%"
                           />
-                          
                         </FormControl>
                       )}
                     </Field>
-                  
                   </Form>
                 </Formik>
               </Container>
@@ -571,33 +565,39 @@ export const EmailInviteModal = props => {
                 </Text>
               ) : null}
 
-            <Select placeholder="Member" mt={4} mb={1} >
-              <option value="option1">Member</option>
-              {/* <option value="option2">Option 2</option>
+              <Select placeholder="Member" mt={4} mb={1}>
+                <option value="option1">Member</option>
+                {/* <option value="option2">Option 2</option>
               <option value="option3">Option 3</option> */}
-            </Select>
-              
-            <Text color="gray.500" fontSize="sm" mt={2} >
-                  Reason for request (optional)
-            </Text>
+              </Select>
 
-            <Textarea placeholder="Here is a sample placeholder" mt={2} mb={1}/>
+              <Text color="gray.500" fontSize="sm" mt={2}>
+                Reason for request (optional)
+              </Text>
 
-            <Text color="gray.500" fontSize="sm" mt={2} >
-             Your request will be sent to your admins, and you’ll be notified when it has been approved or denied.
-            </Text>
+              <Textarea
+                placeholder="Here is a sample placeholder"
+                mt={2}
+                mb={1}
+              />
 
-            <br/>
+              <Text color="gray.500" fontSize="sm" mt={2}>
+                Your request will be sent to your admins, and you’ll be notified
+                when it has been approved or denied.
+              </Text>
 
-            <Text color="gray.500" fontSize="sm"  mb={3}>
-            New members will authomatically join your workplace’s default channels.
-             <a  style={{textDecoration:'none',color:'#00B87C'}}> {'  '} Add more</a>
-            </Text>
+              <br />
 
-              <div
-                className={`mt-3 pt-3  my-auto `}
-              >
-                
+              <Text color="gray.500" fontSize="sm" mb={3}>
+                New members will authomatically join your workplace’s default
+                channels.
+                <a style={{ textDecoration: 'none', color: '#00B87C' }}>
+                  {' '}
+                  {'  '} Add more
+                </a>
+              </Text>
+
+              <div className={`mt-3 pt-3  my-auto `}>
                 <button
                   onClick={sendButton}
                   style={{ color: 'white', backgroundColor: '#00B87C' }}
@@ -611,7 +611,6 @@ export const EmailInviteModal = props => {
             </ModalBody>
           </ModalContent>
         ) : null}
-
       </Modal>
     </ChakraProvider>
   )
