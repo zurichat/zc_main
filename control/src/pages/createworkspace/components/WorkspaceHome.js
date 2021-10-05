@@ -104,7 +104,7 @@ const WorkspaceHome = () => {
           <FadedText>
             By continuing, you’re agreeing to our Customer Terms of Service,
             Privacy Policy, and Cookie Policy.
-          </FadedText> 
+          </FadedText>
           <PushNotificationDemo />
         </TextSection>
         <ImageSection>
