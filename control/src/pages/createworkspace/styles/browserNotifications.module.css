@@ -1,9 +1,8 @@
 .push{
-    width: 150px;
+    width: 140px;
     font-size: 13px;
-    height: 30px;
+    height: 50px;
     font-weight: bolder;
-    margin-top: -500px;
-    margin-right: 400px;
-
+    margin-bottom: 15px;
+    margin-left: 0px;
 }
