@@ -66,19 +66,44 @@ const PluginRoomAddUser = ({ isOpen, isClosed, room_id }) => {
 
   // To Add User to a Room
   const addUser = () => {
-    const { user_name, _id } = input
-    // axios.post(`https://music.zuri.chat/music/api/v1/add_to_room`, {
-    axios
-      .post(
-        `http://${channelName}.${baseUrl}/v1/${workspace}/channels/${roomId}/members/`,
-        {
-          user_name,
-          _id
-        }
+    let obj = member.find(o => o.user_name === input);
+    // console.log(obj);
+
+    // Fetch User Data and Store in an Object
+    const userData = {
+      'user_name': obj.user_name,
+      '-id': obj._id
+    }
+    // console.log('OBJuserData', {userData});
+    // console.log('userData', userData);
+
+    // Send UserData to the Backend
+    axios.post(
+        `https://companyfiles.zuri.chat/api/v1/rooms/add_to_room`, 
+        userData, 
+        { headers }
       )
-      .then(response => {
-        addUser(response.data)
-      })
+    .then(
+        res => res.data = alert('User Added')
+    )
+    .catch(error => {
+        // element.parentElement.innerHTML = `Error: ${error.message}`;
+        console.error('There was an error!', error);
+    })
+
+    // const { user_name, _id } = input
+    // // axios.post(`https://music.zuri.chat/music/api/v1/add_to_room`, {
+    // axios
+    //   .post(
+    //     `http://${channelName}.${baseUrl}/v1/${workspace}/channels/${roomId}/members/`,
+    //     {
+    //       user_name,
+    //       _id
+    //     }
+    //   )
+    //   .then(response => {
+    //     addUser(response.data)
+    //   })
   }
 
   return (

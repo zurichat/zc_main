@@ -97,9 +97,9 @@ const Sidebar = props => {
 
   let sideBarDataSize = Object.keys(sidebarData).length
 
-  console.log('SidebarData', sidebarData)
-  console.log('SidebarData Size:', sideBarDataSize)
-  console.log('ORG INFO:', organizationInfo)
+  // console.log('SidebarData', sidebarData)
+  // console.log('SidebarData Size:', sideBarDataSize)
+  // console.log('ORG INFO:', organizationInfo)
 
   // let user = JSON.parse(sessionStorage.getItem('user'))
   let token = sessionStorage.getItem('token')
