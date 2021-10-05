@@ -36,9 +36,10 @@ import NotFoundPage from './pages/404'
 import Billing from './pages/admin/Billing'
 import Blog from './pages/blogs'
 import Homepage from './pages/home'
-// import Permissions from './pages/admin/Permissions'
+import Permissions from './pages/admin/Permissions'
 import SettingsHome from './pages/admin/Settings/index'
 import About from './pages/about/index'
+import AdminSettingsTab from './pages/admin/Settings/components/AdminSettingsTab'
 
 
 // useEffect(() => {
@@ -54,9 +55,6 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/home">
-          <Homepage />
-        </Route>
         <Route path="/" exact>
           <LandingPage />
         </Route>
