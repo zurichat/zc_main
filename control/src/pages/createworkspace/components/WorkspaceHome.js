@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import Active from '../assets/active.svg'
 import Pic from '../assets/pic.png'
 import Header from '../../../components/Header'
+import PushNotificationDemo from './browserNotification2'
 import { useRouteMatch, Link } from 'react-router-dom'
 import UserOrganization from './UserOrganization'
 import { Helmet } from 'react-helmet'
@@ -83,6 +84,7 @@ const WorkspaceHome = () => {
           user === true ? { paddingBottom: '0' } : { paddingBottom: '50px' }
         }
       >
+        <PushNotificationDemo /> 
         <TextSection>
           <Heading>Create a new workspace</Heading>
           <Text>
