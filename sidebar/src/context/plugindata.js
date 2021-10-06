@@ -1,6 +1,6 @@
-import { trimUrl, filterUrl } from '../utils/filterurl'
-import axios from 'axios'
-import { ACTIONS } from '../root.component'
+import { trimUrl, filterUrl } from "../utils/filterurl"
+import axios from "axios"
+import { ACTIONS } from "../root.component"
 
 export const plugindata = async (
   dispatch,
@@ -12,7 +12,7 @@ export const plugindata = async (
     organizationInfo.map(pluginInfo => {
       let { plugin } = pluginInfo
 
-      console.log('plugin info', pluginInfo)
+      // console.log('plugin info', pluginInfo)
 
       //Get sidebar url
       let sidebarUrl = plugin.sidebar_url
@@ -25,7 +25,7 @@ export const plugindata = async (
       axios
         .get(
           `${
-            trimmedUrl.includes('https://') || trimmedUrl.includes('http://')
+            trimmedUrl.includes("https://") || trimmedUrl.includes("http://")
               ? trimmedUrl
               : `https://${trimmedUrl}`
           }?org=${currentWorkspace}&user=${userId}`
@@ -34,7 +34,7 @@ export const plugindata = async (
           try {
             let validPlugin = res.data
             if (validPlugin.name !== undefined) {
-              if (typeof validPlugin === 'object') {
+              if (typeof validPlugin === "object") {
                 //Set plugin data to state
                 dispatch({
                   type: ACTIONS.ADD_ITEM,
@@ -43,9 +43,10 @@ export const plugindata = async (
               }
             }
           } catch (err) {
+            console.error(err)
             return null
           }
         })
-        .catch(console.log)
+        .catch(err => console.error(err))
     })
 }
