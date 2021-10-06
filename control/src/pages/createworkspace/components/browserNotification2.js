@@ -18,7 +18,8 @@ export default function PushNotificationDemo() {
 
   return (
     <main>
-      <button className={styles.push}
+      <button
+        className={styles.push}
         enabled={!pushNotificationSupported || isConsentGranted}
         onClick={onClickAskUserPermission}
       >
