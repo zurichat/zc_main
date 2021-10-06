@@ -52,6 +52,13 @@ module.exports = (webpackConfigEnv, argv) => {
           ]
         }
       ]
+    },
+    resolve: {
+      alias: {
+        "react/jsx-dev-runtime": "react/jsx-dev-runtime.js",
+        "react/jsx-runtime": "react/jsx-runtime.js",
+        "./timezone-list": "./timezone-list.js"
+      }
     }
   })
 }
