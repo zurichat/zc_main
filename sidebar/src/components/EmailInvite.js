@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from "react"
 import {
   Modal,
   ModalOverlay,
@@ -36,7 +36,7 @@ import {
   Spinner,
   Select,
   Textarea
-} from '@chakra-ui/react'
+} from "@chakra-ui/react"
 import {
   PhoneIcon,
   AddIcon,
@@ -45,33 +45,33 @@ import {
   CloseIcon,
   CheckCircleIcon,
   Icon
-} from '@chakra-ui/icons'
-import { Formik, Form, Field, ErrorMessage } from 'formik'
-import { FiUserPlus, FiSend } from 'react-icons/fi'
-import { AiFillCloseCircle } from 'react-icons/ai'
+} from "@chakra-ui/icons"
+import { Formik, Form, Field, ErrorMessage } from "formik"
+import { FiUserPlus, FiSend } from "react-icons/fi"
+import { AiFillCloseCircle } from "react-icons/ai"
 
 export const EmailInviteModal = props => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [listEmail, setListEmail] = useState([])
   const initialRef = useRef()
 
-  const [borderCol, setBorderCol] = useState('gray.300')
+  const [borderCol, setBorderCol] = useState("gray.300")
 
-  const [forerr, setForerr] = useState('')
+  const [forerr, setForerr] = useState("")
 
   const Focus = () => {
     if (!forerr) {
-      setBorderCol('green.200')
+      setBorderCol("green.200")
     } else {
-      setBorderCol('red.200')
+      setBorderCol("red.200")
     }
   }
 
   const Blur = () => {
     if (!forerr) {
-      setBorderCol('gray.300')
+      setBorderCol("gray.300")
     } else {
-      setBorderCol('red.200')
+      setBorderCol("red.200")
     }
   }
 
@@ -93,14 +93,14 @@ export const EmailInviteModal = props => {
   const onClo = () => {
     props.onDismiss()
     resetStep()
-    setForerr('')
+    setForerr("")
     setListEmail([])
   }
   const handleDelete = index => {
     const lists = listEmail
     setListEmail(lists.filter((_mail, idx) => idx !== index))
-    console.log(index)
-    setForerr('')
+    // console.log(index)
+    setForerr("")
   }
 
   const loader = () => {
@@ -111,9 +111,9 @@ export const EmailInviteModal = props => {
 
   const sendButton = () => {
     if (listEmail.some(em => em.error === true)) {
-      setForerr('Please clear all errors before proceeding.')
+      setForerr("Please clear all errors before proceeding.")
     } else if (listEmail.length === 0) {
-      setForerr('No email(s) to send invites to. ')
+      setForerr("No email(s) to send invites to. ")
     } else {
       nextIviteStep()
       const finEmails = []
@@ -139,16 +139,16 @@ export const EmailInviteModal = props => {
     //   setForerr(error)
     // }
     if (!value && !listEmail) {
-      error = 'Email is required'
+      error = "Email is required"
       setForerr(error)
     } else if (
       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value) &&
-      value !== ''
+      value !== ""
     ) {
-      error = 'Invalid email address'
+      error = "Invalid email address"
       setForerr(error)
     } else {
-      error = ''
+      error = ""
       setForerr(error)
     }
 
@@ -190,7 +190,7 @@ export const EmailInviteModal = props => {
                     p="1"
                     m="1"
                     key={index}
-                    colorScheme={!e_mail.error ? 'green' : 'red'}
+                    colorScheme={!e_mail.error ? "green" : "red"}
                   >
                     {e_mail.error ? <InfoOutlineIcon mr="1" /> : null}
                     <TagLabel>{e_mail.mail}</TagLabel>
@@ -199,14 +199,14 @@ export const EmailInviteModal = props => {
                 ))}
 
                 <Formik
-                  initialValues={{ email: ' ' }}
+                  initialValues={{ email: " " }}
                   onSubmit={(values, actions) => {
                     if (listEmail.some(em => em.mail === values.email)) {
                       setListEmail([
                         ...listEmail,
                         { mail: values.email, error: true }
                       ])
-                      let eror = 'Email already included.'
+                      let eror = "Email already included."
                       setForerr(eror)
                     } else if (
                       props.orgvalEmails.some(em => em === values.email)
@@ -215,14 +215,14 @@ export const EmailInviteModal = props => {
                         ...listEmail,
                         { mail: values.email, error: true }
                       ])
-                      let eror = 'Email already exists in the workspace.'
+                      let eror = "Email already exists in the workspace."
                       setForerr(eror)
                     } else {
                       setListEmail([
                         ...listEmail,
                         { mail: values.email, error: false }
                       ])
-                      setForerr('')
+                      setForerr("")
                     }
                     //   console.log(values)
                     actions.setSubmitting(false)
@@ -258,7 +258,7 @@ export const EmailInviteModal = props => {
               {forerr ? (
                 <Text color="red.500" fontSize="sm">
                   <InfoOutlineIcon mr="1" /> {forerr}
-                  {console.log(forerr)}
+                  {/* {console.log(forerr)} */}
                 </Text>
               ) : null}
 
@@ -271,23 +271,23 @@ export const EmailInviteModal = props => {
                       `https://zuri.chat/invite?organization=${props.currentWorkspace}`
                     )
                     alert(
-                      'link has been copied: ' +
+                      "link has been copied: " +
                         `https://zuri.chat/invite?organization=${props.currentWorkspace}`
                     )
                   }}
                   className={` mt-2 align-items-center`}
-                  style={{ color: '#00B87C', fontSize: '15px' }}
+                  style={{ color: "#00B87C", fontSize: "15px" }}
                 >
                   <LinkIcon mr="1" mb="2" />
-                  Copy invite link{' '}
-                  <span style={{ color: 'black', fontSize: '15px' }}>
-                    {' '}
-                    - Edit link settings{' '}
+                  Copy invite link{" "}
+                  <span style={{ color: "black", fontSize: "15px" }}>
+                    {" "}
+                    - Edit link settings{" "}
                   </span>
                 </span>
                 <button
                   onClick={sendButton}
-                  style={{ color: 'white', backgroundColor: '#00B87C' }}
+                  style={{ color: "white", backgroundColor: "#00B87C" }}
                   type="button"
                   disabled={listEmail.length === 0 ? true : false}
                   className={`btn my-auto mb-1`}
@@ -339,8 +339,8 @@ export const EmailInviteModal = props => {
                       <div>
                         <div className="list-group ">
                           <a
-                            class="  d-flex gap-3 py-3 text-dark"
-                            style={{ textDecoration: 'none' }}
+                            className="  d-flex gap-3 py-3 text-dark"
+                            style={{ textDecoration: "none" }}
                           >
                             <Icon as={FiUserPlus} w={5} h={5} />
 
@@ -354,7 +354,7 @@ export const EmailInviteModal = props => {
                                       key={index}
                                       color="green"
                                     >
-                                      {e_mail.mail},{' '}
+                                      {e_mail.mail},{" "}
                                     </b>
                                   ))}
                                 </div>
@@ -392,7 +392,7 @@ export const EmailInviteModal = props => {
                         <div className="list-group ">
                           <a
                             className="  d-flex gap-3 py-3 text-dark"
-                            style={{ textDecoration: 'none' }}
+                            style={{ textDecoration: "none" }}
                           >
                             <Icon as={FiUserPlus} w={5} h={5} />
 
@@ -406,7 +406,7 @@ export const EmailInviteModal = props => {
                                       key={index}
                                       color="green"
                                     >
-                                      {e_mail.mail},{' '}
+                                      {e_mail.mail},{" "}
                                     </b>
                                   ))}
                                 </div>
@@ -433,13 +433,13 @@ export const EmailInviteModal = props => {
                   >
                     <span
                       className={`mt-1 align-items-center`}
-                      style={{ fontSize: '15px' }}
+                      style={{ fontSize: "15px" }}
                     >
                       <Icon mr="1" as={FiSend} />
 
-                      <span style={{ color: 'black', fontSize: '15px' }}>
-                        {' '}
-                        See previous invitations{' '}
+                      <span style={{ color: "black", fontSize: "15px" }}>
+                        {" "}
+                        See previous invitations{" "}
                       </span>
                     </span>
                     <div>
@@ -457,7 +457,7 @@ export const EmailInviteModal = props => {
                           props.onDismiss()
                           resetStep()
                         }}
-                        style={{ color: 'white', backgroundColor: '#00B87C' }}
+                        style={{ color: "white", backgroundColor: "#00B87C" }}
                         type="button"
                         // disabled={inviteEmail === '' ? true : false}
                         className={`btn mx-2`}
@@ -468,7 +468,7 @@ export const EmailInviteModal = props => {
                   </div>
                 </ModalBody>
               </ModalContent>
-            )}{' '}
+            )}{" "}
           </>
         ) : null}
 
@@ -495,7 +495,7 @@ export const EmailInviteModal = props => {
                     p="1"
                     m="1"
                     key={index}
-                    colorScheme={!e_mail.error ? 'green' : 'red'}
+                    colorScheme={!e_mail.error ? "green" : "red"}
                   >
                     {e_mail.error ? <InfoOutlineIcon mr="1" /> : null}
                     <TagLabel>{e_mail.mail}</TagLabel>
@@ -504,14 +504,14 @@ export const EmailInviteModal = props => {
                 ))}
 
                 <Formik
-                  initialValues={{ email: ' ' }}
+                  initialValues={{ email: " " }}
                   onSubmit={(values, actions) => {
                     if (listEmail.some(em => em.mail === values.email)) {
                       setListEmail([
                         ...listEmail,
                         { mail: values.email, error: true }
                       ])
-                      let eror = 'Email already included.'
+                      let eror = "Email already included."
                       setForerr(eror)
                     } else if (
                       props.orgvalEmails.some(em => em === values.email)
@@ -520,14 +520,14 @@ export const EmailInviteModal = props => {
                         ...listEmail,
                         { mail: values.email, error: true }
                       ])
-                      let eror = 'Email already exists in the workspace.'
+                      let eror = "Email already exists in the workspace."
                       setForerr(eror)
                     } else {
                       setListEmail([
                         ...listEmail,
                         { mail: values.email, error: false }
                       ])
-                      setForerr('')
+                      setForerr("")
                     }
                     //   console.log(values)
                     actions.setSubmitting(false)
@@ -561,7 +561,7 @@ export const EmailInviteModal = props => {
               {forerr ? (
                 <Text color="red.500" fontSize="sm">
                   <InfoOutlineIcon mr="1" /> {forerr}
-                  {console.log(forerr)}
+                  {/* {console.log(forerr)} */}
                 </Text>
               ) : null}
 
@@ -591,16 +591,16 @@ export const EmailInviteModal = props => {
               <Text color="gray.500" fontSize="sm" mb={3}>
                 New members will authomatically join your workplace’s default
                 channels.
-                <a style={{ textDecoration: 'none', color: '#00B87C' }}>
-                  {' '}
-                  {'  '} Add more
+                <a style={{ textDecoration: "none", color: "#00B87C" }}>
+                  {" "}
+                  {"  "} Add more
                 </a>
               </Text>
 
               <div className={`mt-3 pt-3  my-auto `}>
                 <button
                   onClick={sendButton}
-                  style={{ color: 'white', backgroundColor: '#00B87C' }}
+                  style={{ color: "white", backgroundColor: "#00B87C" }}
                   type="button"
                   disabled={listEmail.length === 0 ? true : false}
                   className={`btn my-auto mb-2 float-end`}
