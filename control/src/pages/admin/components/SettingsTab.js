@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from 'react'
-import { countries } from '../data/countries'
-import styles from '../styles/adminSettingsTab.module.css'
-import axios from 'axios'
+import React, { useState, useEffect } from "react"
+import { countries } from "../data/countries"
+import styles from "../styles/adminSettingsTab.module.css"
+import axios from "axios"
 
 const SettingsTab = () => {
   const [formValue, setFormValue] = useState({})
-  const [select, setSelect] = useState('Select a country')
-  const [notes, setNotes] = useState('')
+  const [select, setSelect] = useState("Select a country")
+  const [notes, setNotes] = useState("")
   const [organizationId, setOrganizatonId] = useState(
-    localStorage.getItem('currentWorkspace') || ''
+    localStorage.getItem("currentWorkspace") || ""
   )
-  const [token, setToken] = useState(sessionStorage.getItem('token') || '')
+  const [token, setToken] = useState(sessionStorage.getItem("token") || "")
 
   useEffect(() => {
     if (
-      sessionStorage.getItem('token') &&
-      localStorage.getItem('currentWorkspace')
+      sessionStorage.getItem("token") &&
+      localStorage.getItem("currentWorkspace")
     ) {
-      const userToken = sessionStorage.getItem('token')
-      const orgId = localStorage.getItem('currentWorkspace')
+      const userToken = sessionStorage.getItem("token")
+      const orgId = localStorage.getItem("currentWorkspace")
 
       setToken(userToken)
       setOrganizatonId(orgId)
@@ -55,13 +55,13 @@ const SettingsTab = () => {
         )
       }
       const { data } = await response.data
-      console.log(data)
+      // console.log(data)
     } catch (error) {
-      console.log(error)
+      console.error(error)
     }
 
     setFormValue({})
-    setSelect('Select a country')
+    setSelect("Select a country")
   }
 
   return (
@@ -101,9 +101,9 @@ const SettingsTab = () => {
               >
                 <path
                   stroke="#333"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.23"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.23"
                   d="m1.3.75 4.05 4.5L9.39.75"
                 />
               </svg>
@@ -114,7 +114,7 @@ const SettingsTab = () => {
             <input
               type="text"
               placholder=""
-              value={formValue.company_name || ''}
+              value={formValue.company_name || ""}
               onChange={handleChange}
               name="company_name"
               id="company_name"
@@ -126,7 +126,7 @@ const SettingsTab = () => {
             <input
               type="text"
               placholder=""
-              value={formValue.street_address || ''}
+              value={formValue.street_address || ""}
               onChange={handleChange}
               name="street_address"
               id="street_address"
@@ -138,7 +138,7 @@ const SettingsTab = () => {
             <input
               type="text"
               placholder=""
-              value={formValue.suite || ''}
+              value={formValue.suite || ""}
               onChange={handleChange}
               name="suite"
               id="suite"
@@ -150,7 +150,7 @@ const SettingsTab = () => {
             <input
               type="text"
               placholder=""
-              value={formValue.city || ''}
+              value={formValue.city || ""}
               onChange={handleChange}
               name="city"
               id="city"
@@ -162,7 +162,7 @@ const SettingsTab = () => {
             <input
               type="text"
               placholder=""
-              value={formValue.state || ''}
+              value={formValue.state || ""}
               onChange={handleChange}
               name="state"
               id="state"
@@ -174,7 +174,7 @@ const SettingsTab = () => {
             <input
               type="text"
               placholder=""
-              value={formValue.postal_code || ''}
+              value={formValue.postal_code || ""}
               onChange={handleChange}
               name="postal_code"
               id="postal_code"
@@ -188,7 +188,7 @@ const SettingsTab = () => {
             <textarea
               name="additional_notes"
               id="additional_notes"
-              value={formValue.additional_notes || ''}
+              value={formValue.additional_notes || ""}
               onChange={handleChange}
               cols="30"
               rows="5"

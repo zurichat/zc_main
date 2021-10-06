@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react'
-import classes from '../styles/Categories.module.css'
-import { BiChevronRight, BiChevronLeft } from 'react-icons/bi'
-import { MdClose } from 'react-icons/md'
+import React, { useEffect, useState } from "react"
+import classes from "../styles/Categories.module.css"
+import { BiChevronRight, BiChevronLeft } from "react-icons/bi"
+import { MdClose } from "react-icons/md"
 
 const myArray = [
-  { name: 'Mailing' },
-  { name: 'notifications' },
-  { name: 'Socials and fun' },
-  { name: 'Travel' },
-  { name: 'Health and wellness' },
-  { name: 'Developer tools' },
-  { name: 'Productivity' },
-  { name: 'Meetings and calls' },
-  { name: 'Management and Structure' }
+  { name: "Mailing" },
+  { name: "notifications" },
+  { name: "Socials and fun" },
+  { name: "Travel" },
+  { name: "Health and wellness" },
+  { name: "Developer tools" },
+  { name: "Productivity" },
+  { name: "Meetings and calls" },
+  { name: "Management and Structure" }
 ]
 
 function shuffle(arra1) {
@@ -47,7 +47,7 @@ function Categories() {
   function handleShuffle() {
     const changes = shuffle([...list])
     setList(changes)
-    console.log('Shuffle', myArray, changes)
+    // console.log('Shuffle', myArray, changes)
   }
 
   return (
@@ -66,15 +66,15 @@ function Categories() {
               <BiChevronRight />
             </button>
             <button onClick={handleShuffle}>
-              <i class="bi bi-chevron-right"></i>
+              <i className="bi bi-chevron-right"></i>
             </button>
           </div>
         </div>
         <div className={classes.linkContainer}>
           {list.map((x, index) => (
             <div key={x.name + x.index}>
-              <a style={{ color: '#fff' }} className={classes.link} href="#">
-                {x.name}{' '}
+              <a style={{ color: "#fff" }} className={classes.link} href="#">
+                {x.name}{" "}
               </a>
             </div>
           ))}
@@ -91,8 +91,8 @@ function Categories() {
             <div className={classes.headerx}>
               <div className={classes.btn_close}>
                 <button className={classes.icons} onClick={closeModal}>
-                  {' '}
-                  <MdClose />{' '}
+                  {" "}
+                  <MdClose />{" "}
                 </button>
               </div>
             </div>

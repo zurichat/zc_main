@@ -3,11 +3,13 @@
 .github
 .gitignore
 .prettierignore
+.eslintignore
 yarn.lock
 yarn-error.log
 package-lock.json
 LICENSE
 *.ejs
-dist
 coverage
 pnpm-lock.yaml
+**/node_modules/
+**/dist/
