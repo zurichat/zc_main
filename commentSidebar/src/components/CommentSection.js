@@ -1,11 +1,10 @@
-import { useState } from 'react'
-import { useEffect } from 'react/cjs/react.development'
-import styled from 'styled-components'
-import Chats from './Chats'
-import CommentBox from './CommentBox'
-import UnstyledButton from './UnstyledButton'
+import { useState, useEffect } from "react"
+import styled from "styled-components"
+import Chats from "./Chats"
+import CommentBox from "./CommentBox"
+import UnstyledButton from "./UnstyledButton"
 
-const CommentSection = ({ header = 'Comments', commentsConfig }) => {
+const CommentSection = ({ header = "Comments", commentsConfig }) => {
   const [openSidebar, setOpenSidebar] = useState(
     commentsConfig.showCommentSideBar
   )
@@ -40,10 +39,10 @@ const CommentSection = ({ header = 'Comments', commentsConfig }) => {
 
   return (
     <Wrapper showSidebar={openSidebar}>
-      <div style={{ position: 'relative' }}>
+      <div style={{ position: "relative" }}>
         <Header>{header}</Header>
         <UnstyledButton
-          style={{ position: 'absolute', top: '10px', right: '10px' }}
+          style={{ position: "absolute", top: "10px", right: "10px" }}
           onClick={() => setOpenSidebar(false)}
         >
           X
@@ -57,7 +56,7 @@ const CommentSection = ({ header = 'Comments', commentsConfig }) => {
 }
 const Wrapper = styled.aside`
   /* width: 60%; */
-  display: ${props => (props.showSidebar ? 'grid' : 'none')};
+  display: ${props => (props.showSidebar ? "grid" : "none")};
   grid-template-rows: auto 1fr auto;
 
   width: 399px;
