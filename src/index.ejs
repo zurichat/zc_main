@@ -20,21 +20,22 @@
 
   <link rel="icon" href="favicon.ico" type="image/ico" />
   <link rel="icon" href="favicon.png" type="image/ico">
+  
+           <!-- Dynamic Title Tag for Plugins -->
+<script>
+let getTitleOfPage = function(){
+    let getURL = location.pathname ;
+    let appendZuri = `- Zuri Chat ` ;
 
-  <!-- Dynamic Title Tag for Plugins -->
-  <script>
-    let getTitleOfPage = function () {
-      let test = location.pathname;
-      return test
-    };
-    let appendZuri = `- Zuri Chat `;
-    let title = getTitleOfPage();
-    title = title.substr(1);
-    title = title.charAt(0).toUpperCase() + title.slice(1);
-    document.title = title + appendZuri;
-  </script>
-  <!-- End -->
-
+   if (getURL !== '/') {       
+   getURL = getURL.substr(1);
+   getURL = getURL.charAt(0).toUpperCase() + getURL.slice(1);
+   document.title = getURL + appendZuri;
+  };
+};
+ setInterval(getTitleOfPage ,500) 
+</script>
+<!-- End -->
 
   <!-- Google / Search Engine Tags -->
   <meta itemprop="name"
