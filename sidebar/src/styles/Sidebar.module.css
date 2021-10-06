@@ -67,7 +67,7 @@
   /* margin: 0.5em 0; */
 }
 .sb__item:hover {
-background-color: #999999;
+  background-color: #999999;
 }
 .sb__item::selection {
   background-color: rosybrown;
