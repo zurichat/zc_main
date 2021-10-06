@@ -24,7 +24,7 @@ const FileRetention = () => {
       <p style={myStyle.text}>File Retention</p>
       <input
         type="text"
-        class="form-control"
+        className="form-control"
         id=""
         placeholder="keep all files"
         style={myStyle.inputfield}
