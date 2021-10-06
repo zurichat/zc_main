@@ -30,7 +30,7 @@ const MessageRetention = () => {
       <p style={myStyle.text}>Public channels</p>
       <input
         type="text"
-        class="form-control"
+        className="form-control"
         id=""
         placeholder="keep all changes, but dont track revisions"
         style={myStyle.inputfield}
@@ -38,7 +38,7 @@ const MessageRetention = () => {
       <p style={myStyle.text}>Private channels</p>
       <input
         type="text"
-        class="form-control"
+        className="form-control"
         id=""
         placeholder="keep all changes, but dont track revisions"
         style={myStyle.inputfield}
@@ -46,7 +46,7 @@ const MessageRetention = () => {
       <p style={myStyle.text}>Direct channels</p>
       <input
         type="text"
-        class="form-control"
+        className="form-control"
         id=""
         placeholder="keep all changes, but dont track revisions"
         style={myStyle.inputfield}
