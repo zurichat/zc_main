@@ -8,8 +8,7 @@ import { DialogOverlay, DialogContent } from '@reach/dialog'
 import TopNavBar from './TopNavBar'
 import userAvatar from './assets/images/user.svg'
 import { ProfileProvider } from './context/ProfileModal'
-import { TopbarProvider } from './context/Topbar'
-import { TopbarContext } from './context/Topbar'
+import { TopbarProvider, TopbarContext } from './context/Topbar'
 
 // Input tag
 const Input = ({
