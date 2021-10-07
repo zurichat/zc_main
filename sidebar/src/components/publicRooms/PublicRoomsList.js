@@ -7,7 +7,7 @@ import {
   Span,
   BottomItems,
   Button
-} from '../joinedRooms/RoomStyles';
+} from '../joinedRooms/RoomStyles'
 const PublicRoomsList = ({ title, members, unread }) => {
   return (
     <ListWrapper>

@@ -135,7 +135,7 @@ function ContactFormContainer() {
       <form className="" onSubmit={handleSubmit}>
         <div
           className={`mb-3 ${
-            !!userAuth.email ? ContactFormStyle.is_hidden_animate : ''
+            userAuth.email ? ContactFormStyle.is_hidden_animate : ''
           }`}
         >
           <label htmlFor="email" className="form-label fw-bold">

@@ -1,11 +1,11 @@
-import React, { useState, forwardRef } from 'react'
+import React, { useState, forwardRef } from "react"
 
-import DatePicker from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
-import styles from '../styles/PauseNotification.module.css'
+import DatePicker from "react-datepicker"
+import "react-datepicker/dist/react-datepicker.css"
+import styles from "../styles/PauseNotification.module.css"
 
-import { AiOutlineClose } from 'react-icons/ai'
-import { BiChevronDown } from 'react-icons/bi'
+import { AiOutlineClose } from "react-icons/ai"
+import { BiChevronDown } from "react-icons/bi"
 
 const PauseNotificationModal = ({ setShowModal, modal }) => {
   const [startDate, setStartDate] = useState(new Date())

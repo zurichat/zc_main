@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
-import styles from '../styles/AuthenticationTab.module.css'
-import { getCurrentWorkspace } from '../../Utils/Common'
-import toast, { Toaster } from 'react-hot-toast'
-import { authAxios } from '../../Utils/Api'
+import React, { useState } from "react"
+import styles from "../styles/AuthenticationTab.module.css"
+import { getCurrentWorkspace } from "../../Utils/Common"
+import toast, { Toaster } from "react-hot-toast"
+import { authAxios } from "../../Utils/Api"
 
 const Session = () => {
   const currentWorkspace = getCurrentWorkspace()
-  console.log('currentworkspace', currentWorkspace)
+  // console.log('currentworkspace', currentWorkspace)
   const [value, setvalue] = useState(1)
 
   const handleChange = e => {
     setvalue(e.target.value)
-    console.log(e.target.value)
+    // console.log(e.target.value)
   }
 
   const setSessonDuration = e => {
@@ -25,15 +25,15 @@ const Session = () => {
         })
       )
       .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         toast.success(res.data.message, {
-          position: 'top-center'
+          position: "top-center"
         })
       })
       .catch(err => {
-        console.log(err)
-        toast.error('Oops, something went wrong check and try again', {
-          position: 'center'
+        console.error(err)
+        toast.error("Oops, something went wrong check and try again", {
+          position: "center"
         })
       })
   }

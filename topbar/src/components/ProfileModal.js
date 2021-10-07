@@ -31,9 +31,9 @@ const ProfileModal = ({ title, children, full }) => {
               <path
                 d="M17.9995 21L11.9995 15L17.9995 9"
                 stroke="#333"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           ) : (
