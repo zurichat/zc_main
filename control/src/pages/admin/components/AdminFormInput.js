@@ -1,4 +1,5 @@
-import React from 'react'
+import React from "react"
+import PropTypes from "prop-types"
 
 const AdminFormInput = ({
   name,
@@ -25,15 +26,15 @@ const AdminFormInput = ({
 }
 
 AdminFormInput.defaultProps = {
-  type: 'text',
-  className: ''
+  type: "text",
+  className: ""
 }
 
 AdminFormInput.propTypes = {
   name: PropTypes.string.isRequired,
-  type: PropTypes.string,
+  type: PropTypes.oneOf(["text", "number", "password"]),
   placeholder: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['text', 'number', 'password']),
+  // type: PropTypes.oneOf(['text', 'number', 'password']),
   className: PropTypes.string,
   value: PropTypes.any,
   onChange: PropTypes.func.isRequired

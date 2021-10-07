@@ -1,13 +1,13 @@
-import React from 'react'
-import styles from '../style/workspace.module.css'
-import WorkspaceOpen from './WorkspaceOpen'
+import React from "react"
+import styles from "../style/workspace.module.css"
+import WorkspaceOpen from "./WorkspaceOpen"
 
-import HNG_icon from '../assets/HNG-icon.svg'
-import member1 from '../assets/member_image1.png'
-import member2 from '../assets/member_image2.png'
-import member3 from '../assets/member_image3.png'
-import member4 from '../assets/member_image4.png'
-import member5 from '../assets/member_image5.png'
+import HNG_icon from "../assets/HNG-icon.svg"
+import member1 from "../assets/member_image1.png"
+import member2 from "../assets/member_image2.png"
+import member3 from "../assets/member_image3.png"
+import member4 from "../assets/member_image4.png"
+import member5 from "../assets/member_image5.png"
 
 const imgs = [member1, member2, member3, member4, member5]
 
@@ -19,7 +19,7 @@ const SingleWorkspace = ({
   member_number,
   selected
 }) => {
-  console.log(member_imgs)
+  // console.log(member_imgs)
   return (
     <section className={`${styles.single_workspace}`}>
       <div className={`${styles.singleworkspace_card}`}>
