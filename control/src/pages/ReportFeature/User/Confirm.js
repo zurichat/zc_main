@@ -1,25 +1,25 @@
-import React from 'react'
-import axios from 'axios'
-import styles from './reports.module.css'
-import { Container } from 'react-bootstrap'
+import React from "react"
+import axios from "axios"
+import styles from "./reports.module.css"
+import { Container } from "react-bootstrap"
 
 export const Confirm = props => {
   const reportComplaint = async (token, complaint) => {
     // console.log(token,complaint)
-    axios.defaults.xsrfHeaderName = 'X-CSRFTOKEN'
-    axios.defaults.xsrfCookieName = 'csrftoken'
+    axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
+    axios.defaults.xsrfCookieName = "csrftoken"
     axios.defaults.headers = {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
       //   Authorization: `Token ${token}`
     }
     await axios
       .post(`/api/report/`, complaint)
       .then(res => {
-        console.log(res)
+        // console.log(res)
         props.setPostSucc(true)
       })
       .catch(err => {
-        console.log(err.response.request.responseText)
+        console.error(err.response.request.responseText)
         props.setPostSucc(false)
         // console.log(true)
       })
@@ -36,23 +36,23 @@ export const Confirm = props => {
       anonymous: complaint.anonymous,
       authorize: false
     }
-    console.log(complant)
-    var lol = localStorage.getItem('zurimainComplaints')
-    console.log(lol)
+    // console.log(complant)
+    var lol = localStorage.getItem("zurimainComplaints")
+    // console.log(lol)
     if (lol) {
-      localStorage.removeItem('zurimainComplaints')
+      localStorage.removeItem("zurimainComplaints")
       var lola = JSON.parse(lol)
       lola.push(complant)
-      console.log(lola)
-      localStorage.setItem('zurimainComplaints', JSON.stringify(lola))
+      // console.log(lola)
+      localStorage.setItem("zurimainComplaints", JSON.stringify(lola))
     } else {
-      localStorage.setItem('zurimainComplaints', JSON.stringify([complant]))
+      localStorage.setItem("zurimainComplaints", JSON.stringify([complant]))
     }
   }
 
   const Continue = e => {
     e.preventDefault()
-    const token = ''
+    const token = ""
     const complaint = {
       offender_email: email,
       subject: offence,
@@ -99,14 +99,14 @@ export const Confirm = props => {
 
       <div
         className="row"
-        style={{ display: 'flex', flexDirection: 'flex-end' }}
+        style={{ display: "flex", flexDirection: "flex-end" }}
       >
         <div className="col-6">
           <button
             className="btn btn-secondary"
             onClick={back}
             style={{
-              color: 'white'
+              color: "white"
               // borderRadius: '10%',
               // padding: '12px'
             }}
@@ -119,11 +119,11 @@ export const Confirm = props => {
             className="btn btn-success"
             onClick={Continue}
             style={{
-              color: 'white',
+              color: "white",
               // borderRadius: '10%',
-              backgroundColor: ' #00B87C',
+              backgroundColor: " #00B87C",
               // padding: '12px',
-              marginLeft: '50%'
+              marginLeft: "50%"
             }}
           >
             Submit

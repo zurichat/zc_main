@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react'
-import styled from 'styled-components'
-import { GetUserInfo, GetWorkspaceUser } from '../../../zuri-control'
-import Chats from './Chats'
-import CommentBox from './CommentBox'
+import { useState, useEffect } from "react"
+import styled from "styled-components"
+import { GetUserInfo, GetWorkspaceUser } from "../../../zuri-control"
+import Chats from "./Chats"
+import CommentBox from "./CommentBox"
 
-const CommentSection = ({ header = 'Comments' }) => {
+const CommentSection = ({ header = "Comments" }) => {
   return (
     <Wrapper>
       <Header>{header}</Header>
-      <Chats chatInfo={comments} />
+      {/* <Chats chatInfo={comments} /> */}
       <CommentBox />
     </Wrapper>
   )

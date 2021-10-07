@@ -1,15 +1,16 @@
-const { merge } = require('webpack-merge')
-const singleSpaDefaults = require('webpack-config-single-spa')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const path = require('path')
+/* eslint-env node */
+const { merge } = require("webpack-merge")
+const singleSpaDefaults = require("webpack-config-single-spa")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const CopyWebpackPlugin = require("copy-webpack-plugin")
+const path = require("path")
 /* const FaviconsWebpackPlugin = require('favicons-webpack-plugin') */
 
 module.exports = (webpackConfigEnv, argv) => {
-  const orgName = 'zuri'
+  const orgName = "zuri"
   const defaultConfig = singleSpaDefaults({
     orgName,
-    projectName: 'root-config',
+    projectName: "root-config",
     webpackConfigEnv,
     argv,
     disableHtmlGeneration: true
@@ -18,7 +19,7 @@ module.exports = (webpackConfigEnv, argv) => {
   return merge(defaultConfig, {
     //
     externals: {
-      jquery: 'jQuery'
+      jquery: "jQuery"
     },
     // modify the webpack config however you'd like to by adding to this object
     output: {
@@ -32,11 +33,11 @@ module.exports = (webpackConfigEnv, argv) => {
         {
           test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
           use: {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
               importLoaders: 1,
               modules: {
-                name: '[name].[ext]'
+                name: "[name].[ext]"
               }
             }
           }
@@ -46,11 +47,11 @@ module.exports = (webpackConfigEnv, argv) => {
     },
     plugins: [
       new CopyWebpackPlugin({
-        patterns: [{ from: 'src/assets', to: 'assets' }]
+        patterns: [{ from: "src/assets", to: "assets" }]
       }),
       new HtmlWebpackPlugin({
         inject: false,
-        template: 'src/index.ejs',
+        template: "src/index.ejs",
         templateParameters: {
           isLocal: webpackConfigEnv && webpackConfigEnv.isLocal,
           orgName
