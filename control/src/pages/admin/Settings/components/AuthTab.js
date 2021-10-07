@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
-import styles from '../styles/AuthenticationTab.module.css'
-import { Link } from 'react-router-dom'
-import { AnimateSharedLayout } from 'framer-motion'
-import googleIcon from '../../assets/google-outlinedgoogle.svg'
-import samlIcon from '../../assets/regularsaml.svg'
-import TwoFactor from './TwoFactor'
-import Session from './Session'
-import PreferenceWrapper from '../PreferenceWrapper'
-import ForcedPasswordReset from './ForcedPasswordReset'
-import { getCurrentWorkspace } from '../../Utils/Common'
-import toast, { Toaster } from 'react-hot-toast'
-import { authAxios } from '../../Utils/Api'
+import React, { useEffect, useState } from "react"
+import { Link, NavLink } from "react-router-dom"
+import styles from "../styles/AuthenticationTab.module.css"
+// import { Link } from 'react-router-dom'
+import { AnimateSharedLayout } from "framer-motion"
+import googleIcon from "../../assets/google-outlinedgoogle.svg"
+import samlIcon from "../../assets/regularsaml.svg"
+import TwoFactor from "./TwoFactor"
+import Session from "./Session"
+import PreferenceWrapper from "../PreferenceWrapper"
+import ForcedPasswordReset from "./ForcedPasswordReset"
+import { getCurrentWorkspace } from "../../Utils/Common"
+import toast, { Toaster } from "react-hot-toast"
+import { authAxios } from "../../Utils/Api"
 
 const test = (
   <div className={styles.configureTop}>
@@ -32,7 +32,7 @@ const AuthTab = () => {
           setWorkspaceData(res.data.data)
         })
         .catch(err => {
-          console.log(err)
+          console.error(err)
         })
     }
   }, [currentWorkspaceId])
@@ -43,16 +43,16 @@ const AuthTab = () => {
     authAxios
       .post(`/organizations/${currentWorkspaceId}/upgrade-to-pro`)
       .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         toast.success(res.data.message, {
-          position: 'top-center'
+          position: "top-center"
         })
-        setModal(false)
+        // setModal(false)
       })
       .catch(err => {
-        console.log('error', err)
-        toast.error('Oops, something went wrong check and try again', {
-          position: 'top-center'
+        console.error("error", err)
+        toast.error("Oops, something went wrong check and try again", {
+          position: "top-center"
         })
       })
   }
@@ -63,9 +63,9 @@ const AuthTab = () => {
         <div className={styles.configureContainer}>
           <span className={styles.configureSpan}>
             Zuri supports a number of single sign-on (SSO) services. Get started
-            with setting up your workspace’s SSO below, or{' '}
+            with setting up your workspace’s SSO below, or{" "}
             <a href="#">learn about using single sign-on with Zurichat</a>
-          </span>{' '}
+          </span>{" "}
           <br />
           <div className={styles.configureTop}>
             <p className={`mb-2 mt-2 ${styles.configureHeader}`}>
@@ -86,7 +86,7 @@ const AuthTab = () => {
               </div>
               <div className={styles.settingsright}>
                 <button
-                  disabled={workspaceData.version === 'pro'}
+                  disabled={workspaceData.version === "pro"}
                   className={styles.signout}
                   onClick={e => handleUpgradePlan(e)}
                 >
@@ -109,7 +109,7 @@ const AuthTab = () => {
               <div className={styles.settingsright}>
                 <button
                   className={styles.signout}
-                  disabled={workspaceData.version === 'pro'}
+                  disabled={workspaceData.version === "pro"}
                 >
                   Upgrade
                 </button>
