@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import css from './styles/subscribe.module.css'
-import sub_img1 from './assets/email-sub-img.svg'
-import axios from 'axios'
-import ThankYouModal from './ThankYouModal'
+import React, { useState } from "react"
+import css from "./styles/subscribe.module.css"
+import sub_img1 from "./assets/email-sub-img.svg"
+import axios from "axios"
+import ThankYouModal from "./ThankYouModal"
 
 const Subscribe = () => {
-  const [email, setEmail] = useState('')
+  const [email, setEmail] = useState("")
 
   const [displayModal, setDisplayModal] = useState(false)
 
@@ -13,13 +13,13 @@ const Subscribe = () => {
     event.preventDefault()
 
     await axios
-      .post('https://api.zuri.chat/external/subscribe', { email })
+      .post("https://api.zuri.chat/external/subscribe", { email })
       .then(response => {
         const { data, message, status } = response.data
-        console.log(response.data)
+        // console.log(response.data)
         // alert(message)
-        if (status == '200') {
-          setEmail('')
+        if (status == "200") {
+          setEmail("")
           setDisplayModal(true)
           setTimeout(() => {
             setDisplayModal(false)

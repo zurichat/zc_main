@@ -1,52 +1,53 @@
-import React from 'react'
+import React from "react"
+import axios from "axios"
 
 const myStyle = {
   maindiv: {
-    display: 'flex',
-    borderRadius: '4px',
-    marginTop: '10px'
+    display: "flex",
+    borderRadius: "4px",
+    marginTop: "10px"
   },
   div1: {
-    width: '10px',
-    height: '48px',
-    backgroundColor: '#F44336',
-    borderRadius: '4px 0 0 4px'
+    width: "10px",
+    height: "48px",
+    backgroundColor: "#F44336",
+    borderRadius: "4px 0 0 4px"
   },
   div2: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingLeft: '10px'
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingLeft: "10px"
   },
   text: {
-    color: '#1d1c1d',
-    fontWeight: '600',
-    fontSize: '18px',
-    padding: '5px'
+    color: "#1d1c1d",
+    fontWeight: "600",
+    fontSize: "18px",
+    padding: "5px"
   },
   radio: {
-    backgroundColor: '#00B87C'
+    backgroundColor: "#00B87C"
   },
   inputfield: {
-    margin: '5px 0',
-    width: '70%'
+    margin: "5px 0",
+    width: "70%"
   },
   btn: {
-    backgroundColor: '#00B87C',
-    color: '#ffffff',
-    border: 'none'
+    backgroundColor: "#00B87C",
+    color: "#ffffff",
+    border: "none"
   }
 }
 
 const modifyOrganizationSettings = () => {
-  let organizationid = '6158c1ac3a1e49b1e5165df3'
+  let organizationid = "6158c1ac3a1e49b1e5165df3"
   let showDE = false
-  let token = localStorage.getItem('token')
-  axios.defaults.baseURL = 'https://api.zuri.chat'
+  let token = localStorage.getItem("token")
+  axios.defaults.baseURL = "https://api.zuri.chat"
   axios.defaults.headers.common = { Authorization: `bearer ${token}` }
   axios({
-    method: 'patch',
-    url: '/organizations/' + organizationid + '/settings',
+    method: "patch",
+    url: "/organizations/" + organizationid + "/settings",
     data: {
       displayemail: showDE
     }

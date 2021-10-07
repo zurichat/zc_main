@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import { PluginCard } from '../plugins-card/PluginCard'
-import styles from '../../styles/marketplace.module.css'
-import logo from '../../../../component-assets/zurichatlogo.svg'
-import SuccessMark from '../../../../component-assets/success-mark.svg'
+import React, { useState, useEffect } from "react"
+import axios from "axios"
+import { PluginCard } from "../plugins-card/PluginCard"
+import styles from "../../styles/marketplace.module.css"
+import logo from "../../../../component-assets/zurichatlogo.svg"
+import SuccessMark from "../../../../component-assets/success-mark.svg"
 //eslint-disable-next-line
-import { Modal, Spinner } from 'react-bootstrap'
-import { useMarketPlaceContext } from '../../../../context/MarketPlace.context'
+import { Modal, Spinner } from "react-bootstrap"
+import { useMarketPlaceContext } from "../../../../context/MarketPlace.context"
 import {
   setPluginId,
   loadPlugins,
   fetchPlugins
-} from '../../../../context/marketplace/marketplace.action'
+} from "../../../../context/marketplace/marketplace.action"
 
 const MarketPlaceContainer = ({ organizations, user }) => {
   const [plugin, setPlugin] = useState([])
@@ -24,24 +24,24 @@ const MarketPlaceContainer = ({ organizations, user }) => {
 
   const { state } = marketplace
 
-  let currentWorkspace = localStorage.getItem('currentWorkspace')
-  let token = sessionStorage.getItem('token')
+  let currentWorkspace = localStorage.getItem("currentWorkspace")
+  let token = sessionStorage.getItem("token")
 
   const retrievePlugins = async () => {
     setPluginsLoading(true)
     marketplace.dispatch(fetchPlugins())
     try {
       const response = await axios.get(
-        'https://api.zuri.chat/marketplace/plugins'
+        "https://api.zuri.chat/marketplace/plugins"
       )
       if (response.status === 200 && response.data) {
         const { data } = response.data
         marketplace.dispatch(loadPlugins(data))
         setPluginsLoading(false)
       }
-    } catch (e) {
+    } catch (err) {
       setPluginsLoading(false)
-      console.log(e)
+      console.error(err)
     }
   }
 
@@ -56,14 +56,14 @@ const MarketPlaceContainer = ({ organizations, user }) => {
         setPlugin(data)
         setisLoading(false)
       }
-    } catch (e) {
-      console.log(e)
+    } catch (error) {
+      console.error(error)
     }
   }
 
   const installPluginToOrganization = async () => {
     if (!currentWorkspace) {
-      alert('You are not logged into an Organization/workspace')
+      alert("You are not logged into an Organization/workspace")
     }
     setInstallLoading(true)
     setInstallErr(null)
@@ -85,14 +85,14 @@ const MarketPlaceContainer = ({ organizations, user }) => {
         setInstallLoading(false)
         setShowSuccess(true)
         setTimeout(() => {
-          window.location.replace('/home')
+          window.location.replace("/home")
         }, 5000)
       } else {
         alert(response.data.message)
         setInstallLoading(false)
       }
     } catch (err) {
-      console.log(err)
+      console.error(err)
       setInstallLoading(false)
     }
   }
@@ -180,7 +180,7 @@ const MarketPlaceContainer = ({ organizations, user }) => {
                               </Spinner>
                             </div>
                           ) : (
-                            'Install'
+                            "Install"
                           )}
                         </button>
                       </div>
