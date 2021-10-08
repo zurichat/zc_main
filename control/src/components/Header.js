@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import headerStyles from '../component-styles/HeaderStyle.module.css'
-import zurichatlogo from '../component-assets/zurichatlogo.svg'
-import searchIcon from '../component-assets/searchIcon.svg'
+import React from "react"
+import { Link } from "react-router-dom"
+import headerStyles from "../component-styles/HeaderStyle.module.css"
+import zurichatlogo from "../component-assets/zurichatlogo.svg"
+import searchIcon from "../component-assets/searchIcon.svg"
 //import { Button } from '../pages/createworkspace/components/WorkspaceHome'
 
 const HeaderSearchSuggestion = () => {
@@ -90,21 +90,16 @@ const HeaderSearchSuggestion = () => {
           </li>
         </ul>
 
-        <ul class={`d-lg-none navbar-nav-scroll ${headerStyles.signs}`}>
+        <ul className={`d-lg-none navbar-nav-scroll ${headerStyles.signs}`}>
           <li className="nav-item">
-            <Link
-              className="nav-link"
-              to="/signup"
-              className={`btn ${headerStyles.signU}`}
-            >
+            <Link to="/signup" className={`btn ${headerStyles.signU} nav-link`}>
               <span>Sign Up</span>
             </Link>
           </li>
           <li className="nav-item">
             <Link
-              className="nav-link"
               to="/login"
-              className={`btn ${headerStyles.signIn}`}
+              className={`btn ${headerStyles.signIn} nav-link`}
               role="button"
             >
               <span className="signin">Login</span>
@@ -120,7 +115,7 @@ const HeaderSearchSuggestion = () => {
         </Link>
       </div>
       <ul
-        class={`navbar-nav d-none d-lg-flex me-auto my-2 my-lg-0 navbar-nav-scroll ${headerStyles.signs}`}
+        className={`navbar-nav d-none d-lg-flex me-auto my-2 my-lg-0 navbar-nav-scroll ${headerStyles.signs}`}
       >
         <li className="nav-item">
           <Link to="/signup">

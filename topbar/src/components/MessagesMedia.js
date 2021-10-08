@@ -1,15 +1,14 @@
-import React from 'react'
-import styles from '../styles/MessagesMedia.module.css'
-import theme11 from '../assets/images/theme7.png'
-import theme12 from '../assets/images/theme8.png'
-import theme13 from '../assets/images/theme9.png'
-import theme14 from '../assets/images/theme10.png'
-import theme15 from '../assets/images/theme11.png'
-import theme16 from '../assets/images/theme12.png'
-import theme17 from '../assets/images/theme13.png'
-import theme18 from '../assets/images/theme14.png'
-import theme19 from '../assets/images/theme15.png'
-import { useState } from 'react'
+import React, { useState } from "react"
+import styles from "../styles/MessagesMedia.module.css"
+import theme11 from "../assets/images/theme7.png"
+import theme12 from "../assets/images/theme8.png"
+import theme13 from "../assets/images/theme9.png"
+import theme14 from "../assets/images/theme10.png"
+import theme15 from "../assets/images/theme11.png"
+import theme16 from "../assets/images/theme12.png"
+import theme17 from "../assets/images/theme13.png"
+import theme18 from "../assets/images/theme14.png"
+import theme19 from "../assets/images/theme15.png"
 
 const MessagesMedia = () => {
   const [isChecked, setIsChecked] = useState(false)
@@ -18,20 +17,22 @@ const MessagesMedia = () => {
   // handleSubmit function on the form
   const handleSubmit = e => {
     e.preventDefault()
-    console.log(isChecked)
+    // console.log(isChecked)
   }
 
   React.useEffect(() => {
-    fetch('https://api.zuri.chat/', {
-      method: 'POST',
+    fetch("https://api.zuri.chat/", {
+      method: "POST",
       headers: {
         // authorization if any
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(isChecked)
     })
-      .then(res => console.log(res))
-      .catch(error => console.log(error))
+      .then(res => {
+        // console.log(res)
+      })
+      .catch(error => console.error(error))
   })
 
   return (
@@ -99,13 +100,13 @@ const MessagesMedia = () => {
         <img src={theme12} alt="theme12" className={styles.theme12} />
       </div>
       <div className={styles.change}>
-        To change your full or display name, head to{' '}
-        <p style={{ color: '#00B87C' }}>your profile.</p>
+        To change your full or display name, head to{" "}
+        <p style={{ color: "#00B87C" }}>your profile.</p>
       </div>
       <div className={styles.bottom2}></div>
       <div className={styles.add}>Additional options</div>
       <div className={styles.info}>
-        <form onsubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className={styles.checkbox}>
             <input
               type="checkbox"
@@ -119,7 +120,7 @@ const MessagesMedia = () => {
         </div>
       </div>
       <div className={styles.time}>
-        <form onsubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className={styles.checkbox2}>
             <input
               type="checkbox"
@@ -131,7 +132,7 @@ const MessagesMedia = () => {
         <div className={styles.hour}>Show times with 24-hour clock</div>
       </div>
       <div className={styles.hexa}>
-        <form onsubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className={styles.checkbox3}>
             <input
               type="checkbox"
@@ -161,7 +162,7 @@ const MessagesMedia = () => {
         <img src={theme18} alt="theme18" className={styles.theme18} />
       </div>
       <div className={styles.plntxt}>
-        <form onsubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className={styles.checkbox4}>
             <input
               type="checkbox"
@@ -173,7 +174,7 @@ const MessagesMedia = () => {
         <div className={styles.plain}>Display emoji in plain text</div>
       </div>
       <div className={styles.jumb}>
-        <form onsubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className={styles.checkbox5}>
             <input
               type="checkbox"
@@ -193,7 +194,7 @@ const MessagesMedia = () => {
       <div className={styles.bottom4}></div>
       <div className={styles.media}>In-line media and links</div>
       <div className={styles.images}>
-        <form onsubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className={styles.checkbox6}>
             <input
               type="checkbox"
@@ -207,7 +208,7 @@ const MessagesMedia = () => {
         </div>
       </div>
       <div className={styles.websites}>
-        <form onsubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className={styles.checkbox7}>
             <input
               type="checkbox"
@@ -221,7 +222,7 @@ const MessagesMedia = () => {
         </div>
       </div>
       <div className={styles.larger}>
-        <form onsubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className={styles.checkbox8}>
             <input
               type="checkbox"
@@ -233,7 +234,7 @@ const MessagesMedia = () => {
         <div className={styles.than}>Even if they're larger than 2 MB</div>
       </div>
       <div className={styles.previews}>
-        <form onsubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className={styles.checkbox9}>
             <input
               type="checkbox"

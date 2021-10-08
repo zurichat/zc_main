@@ -1,17 +1,17 @@
-import React, { useContext, useState, useEffect, useRef } from 'react'
-import styles from '../styles/Profile.module.css'
+import React, { useContext, useState, useEffect, useRef } from "react"
+import styles from "../styles/Profile.module.css"
 
-import { ProfileContext } from '../context/ProfileModal'
-import { TopbarContext } from '../context/Topbar'
+import { ProfileContext } from "../context/ProfileModal"
+import { TopbarContext } from "../context/Topbar"
 // import 'react-notifications/lib/notifications.css'
-import toast, { Toaster } from 'react-hot-toast'
-import Preferences from './Preferences'
-import { getCurrentWorkspace, getUser } from '../utils/common'
-import { authAxios } from '../utils/Api'
+import toast, { Toaster } from "react-hot-toast"
+import Preferences from "./Preferences"
+import { getCurrentWorkspace, getUser } from "../utils/common"
+import { authAxios } from "../utils/Api"
 
 export const Dropdown = () => {
   const { toggleModalState } = useContext(ProfileContext)
-  const [modal, setModal] = useState('')
+  const [modal, setModal] = useState("")
 
   const user = getUser()
   const currentWorkspace = getCurrentWorkspace()
@@ -23,33 +23,33 @@ export const Dropdown = () => {
         .get(`/organizations/${currentWorkspace}`)
         .then(res => {
           setWorkspaceData(res.data.data)
-          console.log(res.data.data)
+          // console.log(res.data.data)
         })
         .catch(err => {
-          console.log(err)
+          console.error(err)
         })
     }
   }, [currentWorkspace])
 
-  console.log('workspace==>', workspaceData)
+  // console.log('workspace==>', workspaceData)
 
   const state = useContext(TopbarContext)
   const { presence, toggleUserPresence, reusableModal, setReusableModal } =
     state
 
-  const getText = useRef('')
+  const getText = useRef("")
 
   const CopyToClipBoard = () => {
     const copiedText = getText.current.innerHTML
     navigator.clipboard.writeText(copiedText).then(
       () => {
-        toast.success('Member ID Copied', {
-          position: 'bottom-center'
+        toast.success("Member ID Copied", {
+          position: "bottom-center"
         })
       },
       err => {
         toast.error(err?.message, {
-          position: 'bottom-center'
+          position: "bottom-center"
         })
       }
     )
@@ -61,9 +61,9 @@ export const Dropdown = () => {
         <div className={styles.topSection}>
           <p
             onClick={() => {
-              setReusableModal('preference')
+              setReusableModal("preference")
               toggleModalState()
-              console.log(reusableModal)
+              // console.log(reusableModal)
             }}
             className={styles.paragraph}
           >
@@ -71,7 +71,7 @@ export const Dropdown = () => {
           </p>
           <p className={styles.paragraph}>View your files</p>
           <p onClick={() => toggleUserPresence()} className={styles.paragraph}>
-            Set yourself {presence === 'true' ? 'away' : 'active'}
+            Set yourself {presence === "true" ? "away" : "active"}
           </p>
         </div>
         <div className={styles.bottomSection}>
@@ -84,16 +84,16 @@ export const Dropdown = () => {
           <a
             href={
               workspaceData.creator_email === user.email
-                ? '/admin/settings'
-                : '/settings'
+                ? "/admin/settings"
+                : "/settings"
             }
-            style={{ color: 'black', fontWeight: 'normal' }}
+            style={{ color: "black", fontWeight: "normal" }}
           >
             <p className={styles.paragraphNull}>Account settings</p>
           </a>
         </div>
       </div>
-      {reusableModal === 'preference' && <Preferences />}
+      {reusableModal === "preference" && <Preferences />}
       <Toaster />
     </>
   )
