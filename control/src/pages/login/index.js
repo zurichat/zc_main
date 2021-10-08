@@ -91,18 +91,15 @@ const Login = () => {
 
         // Switch for redirects
         axios
-          .get(`https://api.zuri.chat/users/${data.user.id}`, {
+          .get(`https://api.zuri.chat/users/${data.user.email}/organizations`, {
             headers: {
               Authorization: `Bearer ${data.user.token}`
             }
           })
           .then(res => {
-            const orgs = res.data.data["Organizations"].length
+            const orgs = res.data.data.length
+            // console.log(res.data.data.length)
             // console.log('reg orgs', orgs)
-            localStorage.setItem(
-              "currentWorkspace",
-              res.data.data["Organizations"][0]
-            )
 
             switch (true) {
               case orgs > 1:
