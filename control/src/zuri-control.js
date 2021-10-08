@@ -1,9 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import singleSpaReact from 'single-spa-react'
-import Root from './root.component'
-import axios from 'axios'
-import Centrifuge from 'centrifuge'
+import React from "react"
+import ReactDOM from "react-dom"
+import singleSpaReact from "single-spa-react"
+import Root from "./root.component"
+import axios from "axios"
+import Centrifuge from "centrifuge"
 
 const lifecycles = singleSpaReact({
   React,
@@ -15,13 +15,13 @@ const lifecycles = singleSpaReact({
   }
 })
 
-let currentWorkspace = localStorage.getItem('currentWorkspace')
-let token = sessionStorage.getItem('token')
+let currentWorkspace = localStorage.getItem("currentWorkspace")
+let token = sessionStorage.getItem("token")
 
 export const GetUserInfo = async () => {
-  let user = JSON.parse(sessionStorage.getItem('user'))
-  const currentWorkspace = localStorage.getItem('currentWorkspace')
-  let token = sessionStorage.getItem('token')
+  let user = JSON.parse(sessionStorage.getItem("user"))
+  const currentWorkspace = localStorage.getItem("currentWorkspace")
+  let token = sessionStorage.getItem("token")
 
   if ((user && token) !== null) {
     try {
@@ -38,25 +38,25 @@ export const GetUserInfo = async () => {
       // console.log(userData)
       return userData
     } catch (err) {
-      console.log(err)
+      console.error(err)
     }
   } else {
-    console.log('YOU ARE NOT LOGGED IN, PLEASE LOG IN')
+    console.warn("YOU ARE NOT LOGGED IN, PLEASE LOG IN")
   }
 }
 
 export const GetWorkspaceUser = async identifier => {
-  if (!identifier) return new Error('No workspace user identifier provided')
+  if (!identifier) return new Error("No workspace user identifier provided")
 
   // User identifier should be email address
   const emailRegex =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   if (!identifier.match(emailRegex))
-    throw Error('Workspace user identifier must be a valid email address.')
+    throw Error("Workspace user identifier must be a valid email address.")
 
-  let user = JSON.parse(sessionStorage.getItem('user'))
-  const currentWorkspace = localStorage.getItem('currentWorkspace')
-  const token = sessionStorage.getItem('token')
+  let user = JSON.parse(sessionStorage.getItem("user"))
+  const currentWorkspace = localStorage.getItem("currentWorkspace")
+  const token = sessionStorage.getItem("token")
 
   try {
     const response = await axios.get(
@@ -71,7 +71,7 @@ export const GetWorkspaceUser = async identifier => {
     if (response.data.data) {
       return response.data.data[0]
     } else {
-      throw Error('No users matching identifier found in workspace')
+      throw Error("No users matching identifier found in workspace")
     }
   } catch (error) {
     throw Error(error)
@@ -96,7 +96,7 @@ export const GetWorkspaceUsers = async () => {
     // console.log(workSpaceUsersData)
     return workSpaceUsersData
   } catch (err) {
-    console.log(err)
+    console.error(err)
   }
 
   // localStorage.setItem('WorkspaceUsers', JSON.stringify(res.data.data))
@@ -104,14 +104,14 @@ export const GetWorkspaceUsers = async () => {
 
 // Setup Centrifugo Route
 const centrifuge = new Centrifuge(
-  'wss://realtime.zuri.chat/connection/websocket'
+  "wss://realtime.zuri.chat/connection/websocket"
 )
 
 centrifuge.setConnectData({ bearer: token })
 
 centrifuge.connect()
-centrifuge.on('connect', function (connectCtx) {
-  console.log('connected', connectCtx)
+centrifuge.on("connect", function (connectCtx) {
+  console.warn("connected", connectCtx)
 })
 
 export const SubscribeToChannel = (plugin_id, callback) => {

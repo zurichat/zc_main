@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
-import styles from '../styles/purchaseModal.module.css'
-import { authAxios } from '../Utils/Api'
-import { useState } from 'react'
-import { getCurrentWorkspace } from '../Utils/Common'
+import React, { useEffect, useState } from "react"
+import styles from "../styles/purchaseModal.module.css"
+import { authAxios } from "../Utils/Api"
+import { getCurrentWorkspace } from "../Utils/Common"
+import toast from "react-hot-toast"
 
 function PurchaseModal({ setHelpModal }) {
   const currentWorkspace = getCurrentWorkspace()
@@ -17,7 +17,7 @@ function PurchaseModal({ setHelpModal }) {
           setWorkspaceData(res.data.data)
         })
         .catch(err => {
-          console.log(err)
+          console.error(err)
         })
     }
   }, [currentWorkspace])
@@ -30,7 +30,7 @@ function PurchaseModal({ setHelpModal }) {
         setWorkspaceData(res.data.data)
       })
       .catch(err => {
-        console.log(err)
+        console.error(err)
       })
   }
 
@@ -41,16 +41,16 @@ function PurchaseModal({ setHelpModal }) {
       .post(`/organizations/${currentWorkspace}/checkout-session`, request)
       .then(res => {
         setLoading(false)
-        console.log(res.data, 'to stripes')
+        // console.log(res.data, 'to stripes')
         toast.success(res.data.message, {
-          position: 'top-center'
+          position: "top-center"
         })
       })
       .catch(err => {
         setLoading(false)
-        console.log(err)
-        toast.error('Oops, something went wrong check and try again', {
-          position: 'top-center'
+        console.error(err)
+        toast.error("Oops, something went wrong check and try again", {
+          position: "top-center"
         })
       })
   }
@@ -67,12 +67,12 @@ function PurchaseModal({ setHelpModal }) {
 
         <p className={styles.para}>1 Token /$5</p>
         <form>
-          <div class="form-group ">
-            <label for="token">Token</label>
+          <div className="form-group ">
+            <label htmlFor="token">Token</label>
             <div>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 onInput={evt => {
                   addToken(evt.target.value)
                 }}
@@ -80,8 +80,8 @@ function PurchaseModal({ setHelpModal }) {
             </div>
           </div>
 
-          <div class="form-group ">
-            <label for="price">Price</label>
+          <div className="form-group ">
+            <label htmlFor="price">Price</label>
             <div>
               <input type="text" className="form-control" />
             </div>
