@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react"
 
 /*
  *a custom react hook to match media size according to query
@@ -9,15 +9,15 @@ const useMatchMedia = query => {
   useEffect(() => {
     const handler = () => {
       setMatches(testMatches.matches)
-      console.log('matches the query', testMatches.matches)
+      // console.log('matches the query', testMatches.matches)
     }
 
     const testMatches = window.matchMedia(query)
 
-    testMatches.addEventListener('change', handler)
+    testMatches.addEventListener("change", handler)
 
     return () => {
-      testMatches.removeEventListener('change', handler)
+      testMatches.removeEventListener("change", handler)
     }
   }, [query])
 

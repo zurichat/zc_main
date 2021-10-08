@@ -1,11 +1,10 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react"
 // import { useLocation } from 'react-router-dom';
-import { DialogOverlay, DialogContent } from '@reach/dialog'
-import { AiOutlineClose } from 'react-icons/ai'
-import styled from 'styled-components'
-import axios from 'axios'
-import styles from '../styles/PluginRoomAddUser.module.css'
+import { DialogOverlay, DialogContent } from "@reach/dialog"
+import { AiOutlineClose } from "react-icons/ai"
+import styled from "styled-components"
+import axios from "axios"
+import styles from "../styles/PluginRoomAddUser.module.css"
 // import { LOADING_SOURCE_CODE } from 'single-spa'
 
 const PluginRoomAddUser = ({ isOpen, isClosed, room_id }) => {
@@ -13,9 +12,9 @@ const PluginRoomAddUser = ({ isOpen, isClosed, room_id }) => {
   // console.log(window.location.href)
   const url = window.location.href
   // const channelName =url.split("https://zuri.chat/").pop())
-  const channelName = url.split('http://localhost:9000/').pop()
-  const baseUrl = 'zuri.chat'
-  const workspace = sessionStorage.getItem('currentWorkspace')
+  const channelName = url.split("http://localhost:9000/").pop()
+  const baseUrl = "zuri.chat"
+  const workspace = sessionStorage.getItem("currentWorkspace")
   // console.log("channelName" ,channelName.split("http://localhost:9000/").pop());
   // console.log("channelName" ,channelName.split("https://zuri.chat/").pop());
 
@@ -23,12 +22,12 @@ const PluginRoomAddUser = ({ isOpen, isClosed, room_id }) => {
   const [member, setMember] = useState([])
   const [displayMember, setDisplayMember] = useState([])
   // const [selectMember, setSelectMember] = useState([])
-  const [input, setInput] = useState('')
+  const [input, setInput] = useState("")
   const OpenAddUserModal = () => setOpenAddUser(true)
   const closeAddUserModal = () => setOpenAddUser(false)
 
-  let token = sessionStorage.getItem('token')
-  let currentWorkspace = localStorage.getItem('currentWorkspace')
+  let token = sessionStorage.getItem("token")
+  let currentWorkspace = localStorage.getItem("currentWorkspace")
   //   console.log('currentWorkspace', currentWorkspace);
   const headers = {
     Authorization: `Bearer ${token}`
@@ -37,7 +36,7 @@ const PluginRoomAddUser = ({ isOpen, isClosed, room_id }) => {
   const userNameHandler = e => {
     // e.tagret.value
     setInput(e.target.value)
-    const regex = new RegExp(`${input}`, 'i')
+    const regex = new RegExp(`${input}`, "i")
     setDisplayMember([
       ...member.filter(({ user_name }) => user_name.match(regex))
     ])
@@ -64,21 +63,45 @@ const PluginRoomAddUser = ({ isOpen, isClosed, room_id }) => {
   }, [])
   // console.log('member', member);
 
-  // To Add User to a Room
+  /// To Add User to a Room
   const addUser = () => {
-    const { user_name, _id } = input
-    // axios.post(`https://music.zuri.chat/music/api/v1/add_to_room`, {
+    let obj = member.find(o => o.user_name === input)
+    // console.log(obj);
+
+    // Fetch User Data and Store in an Object
+    const userData = {
+      user_name: obj.user_name,
+      "-id": obj._id
+    }
+    // console.log('OBJuserData', {userData});
+    // console.log('userData', userData);
+
+    // Send UserData to the Backend
     axios
       .post(
-        `http://${channelName}.${baseUrl}/v1/${workspace}/channels/${roomId}/members/`,
-        {
-          user_name,
-          _id
-        }
+        `https://companyfiles.zuri.chat/api/v1/rooms/add_to_room`,
+        userData,
+        { headers }
       )
-      .then(response => {
-        addUser(response.data)
+      .then(res => (res.data = alert("User Added")))
+      .catch(error => {
+        // element.parentElement.innerHTML = `Error: ${error.message}`;
+        console.error("There was an error!", error)
       })
+
+    // const { user_name, _id } = input
+    // // axios.post(`https://music.zuri.chat/music/api/v1/add_to_room`, {
+    // axios
+    //   .post(
+    //     `http://${channelName}.${baseUrl}/v1/${workspace}/channels/${roomId}/members/`,
+    //     {
+    //       user_name,
+    //       _id
+    //     }
+    //   )
+    //   .then(response => {
+    //     addUser(response.data)
+    //   })
   }
 
   return (
@@ -150,9 +173,9 @@ const PluginRoomAddUser = ({ isOpen, isClosed, room_id }) => {
               <button
                 onClick={addUser}
                 // onClick={() => setAddUser()}
-                style={{ color: 'white', backgroundColor: '#00B87C' }}
+                style={{ color: "white", backgroundColor: "#00B87C" }}
                 type="button"
-                disabled={input === '' ? true : false}
+                disabled={input === "" ? true : false}
                 className={`btn btn-green px-4 py-2 ms-auto `}
               >
                 Add User

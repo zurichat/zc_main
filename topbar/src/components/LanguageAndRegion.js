@@ -1,9 +1,9 @@
-import React, { useState, useContext } from 'react'
-import styles from '../styles/LanguageAndRegion.module.css'
+import React, { useState, useContext } from "react"
+import styles from "../styles/LanguageAndRegion.module.css"
 // import TimeZones from '../constants/TimeZone'
 // import Languages from '../constants/Language'
-import { authAxios } from '../utils/Api'
-import { ProfileContext } from '../context/ProfileModal'
+import { authAxios } from "../utils/Api"
+import { ProfileContext } from "../context/ProfileModal"
 
 const LanguageAndRegion = () => {
   //CHECKBOXES
@@ -20,10 +20,10 @@ const LanguageAndRegion = () => {
         }
       })
       .then(res => {
-        console.log(res)
+        // console.log(res)
       })
       .catch(err => {
-        console.log(err)
+        console.error(err)
       })
   }
 

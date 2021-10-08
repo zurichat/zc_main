@@ -67,7 +67,7 @@ const index = () => {
       <div className={`container ${styles.to_join}`}>
         <div className={`row`}>
           <div className={`col-lg-6 ${styles.team}`}>
-            <img src={team} alt={'image of teams'} srcset="" />
+            <img src={team} alt={'image of teams'} srcSet="" />
           </div>
           <div className={`col-lg-6 ${styles.join_us}`}>
             <h3>Who we are and how to join us</h3>
