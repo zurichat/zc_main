@@ -1,26 +1,26 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import style from '../Style/style.module.css'
-import { UitCommentDots } from '@iconscout/react-unicons-thinline'
-import Like from '../assets/thumbs-up-white.svg'
-import Avatar from '../assets/user.svg'
-import { TransitionGroup } from 'react-transition-group'
+import React, { useState, useEffect } from "react"
+import axios from "axios"
+import style from "../Style/style.module.css"
+import { UitCommentDots } from "@iconscout/react-unicons-thinline"
+import Like from "../assets/thumbs-up-white.svg"
+import Avatar from "../assets/user.svg"
+import { TransitionGroup } from "react-transition-group"
 
 import {
   UilFacebookF,
   UilTwitter,
   UilLinkedinAlt
-} from '@iconscout/react-unicons'
-import link from '../assets/link-black.svg'
+} from "@iconscout/react-unicons"
+import link from "../assets/link-black.svg"
 
 const Comments = () => {
   const [comments, setComments] = useState([])
-  const [comment_content, setComment] = useState('')
+  const [comment_content, setComment] = useState("")
   const [PostComment, setPostComment] = useState(0)
   const [show, setShow] = useState(false)
 
   const handleClear = () => {
-    setComment('')
+    setComment("")
   }
 
   const handleShow = () => {
@@ -31,8 +31,7 @@ const Comments = () => {
     e.preventDefault()
 
     axios
-      .post('https://api.zuri.chat/posts/6158cb453a1e49b1e5165f8e/comments', {
-        comment_auhtor: "Anonymous",
+      .post("https://api.zuri.chat/posts/61464f251a5607b13c00bc48/comments", {
         comment_content: comment_content
       })
       .then(res => {
@@ -43,16 +42,15 @@ const Comments = () => {
   }
 
   useEffect(() => {
-    const url = 'https://api.zuri.chat/posts/6158cb453a1e49b1e5165f8e/comments'
+    const url = "https://api.zuri.chat/posts/61464f251a5607b13c00bc48/comments"
 
     const fetchData = async () => {
       try {
         const response = await fetch(url)
         const json = await response.json()
-        console.log(json.data.comments)
         setComments(json.data.comments)
       } catch (error) {
-        console.log('error', error)
+        console.error("error", error)
       }
     }
     fetchData()
@@ -64,7 +62,7 @@ const Comments = () => {
   }, [])
 
   useEffect(() => {
-    const url = ' https://api.zuri.chat/posts'
+    const url = " https://api.zuri.chat/posts"
 
     const fetchPostComment = async () => {
       try {
@@ -74,7 +72,7 @@ const Comments = () => {
         // console.log(json.data[0].comments, 'Mwafrika Comment')
         setPostComment(json.data[0].comments)
       } catch (error) {
-        console.log('error', error)
+        console.error("error", error)
       }
     }
     fetchPostComment()
@@ -148,8 +146,8 @@ const Comments = () => {
             className={style.comment_content}
             id="comment-form"
             style={{
-              overflowY: 'scroll',
-              height: '25rem'
+              overflowY: "scroll",
+              height: "25rem"
             }}
           >
             <div>
@@ -165,9 +163,10 @@ const Comments = () => {
                     <img src={Avatar} />
                   </div>
                   <div className={style.comment_card}>
-                    <p class={style.comment_name}>{comm.comment_author}</p>
+                    <p className={style.comment_name}>Maurice Victor</p>
                     <p>
                       {comm.comment_content}
+                      {/* {console.log(comm, 'Josue')} */}
                       <br />
                     </p>
                   </div>

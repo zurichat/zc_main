@@ -1,42 +1,41 @@
-import { fetchUser } from './context/fetchUserDetails'
-import { Fragment, useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import styles from './styles/Sidebar.module.css'
-import Dropdown from './components/Dropdown'
-import EmailInviteModal from './components/EmailInvite'
-import ModalComponent from './components/ModalComponent'
-import { DialogOverlay, DialogContent } from '@reach/dialog'
-import styled from 'styled-components'
-import AuthInputBox from './components/AuthInputBox'
-import DropDown from './components/Drop'
+import { fetchUser } from "./context/fetchUserDetails"
+import { Fragment, useState, useEffect } from "react"
+import { Link } from "react-router-dom"
+import styles from "./styles/Sidebar.module.css"
+import Dropdown from "./components/Dropdown"
+import EmailInviteModal from "./components/EmailInvite"
+import ModalComponent from "./components/ModalComponent"
+import { DialogOverlay, DialogContent } from "@reach/dialog"
+import styled from "styled-components"
+import AuthInputBox from "./components/AuthInputBox"
+import DropDown from "./components/Drop"
 
-import newMsgIcon from './assets/images/newMsgIcon.svg'
-import threadIcon from './verified-components/assets/icons/thread-icon.svg'
-import dmIcon from './verified-components/assets/icons/dm-icon.svg'
-import draftIcon from './verified-components/assets/icons/draft-icon.svg'
-import filesIcon from './verified-components/assets/icons/files-icon.svg'
-import pluginIcon from './verified-components/assets/icons/plugin-icon.svg'
-import addIcon from './verified-components/assets/icons/add-icon.svg'
-import shapekeyboardarrowdown from './verified-components/assets/icons/shapekeyboardarrowdown.svg'
-import newmessage from './verified-components/assets/icons/newmessage.svg'
-import { links } from './utils/links'
-import { navigateToUrl } from 'single-spa'
-import { Button } from '../../control/src/pages/createworkspace/components/WorkspaceHome'
-import Channels from './components/Channels'
-import { Modall } from './components/Modal'
-import SkeletonLoader from './components/SkeletonLoader'
-import Messages from './components/Messages'
-import fetcher from './utils/fetcher'
-import axios from 'axios'
-import { GetUserInfo } from '@zuri/control'
-import { authAxios } from './utils/Api'
-import linkIcon from './assets/link.svg'
+import newMsgIcon from "./assets/images/newMsgIcon.svg"
+import threadIcon from "./verified-components/assets/icons/thread-icon.svg"
+import dmIcon from "./verified-components/assets/icons/dm-icon.svg"
+import draftIcon from "./verified-components/assets/icons/draft-icon.svg"
+import filesIcon from "./verified-components/assets/icons/files-icon.svg"
+import pluginIcon from "./verified-components/assets/icons/plugin-icon.svg"
+import addIcon from "./verified-components/assets/icons/add-icon.svg"
+import shapekeyboardarrowdown from "./verified-components/assets/icons/shapekeyboardarrowdown.svg"
+import newmessage from "./verified-components/assets/icons/newmessage.svg"
+import { links } from "./utils/links"
+import { navigateToUrl } from "single-spa"
+import { Button } from "../../control/src/pages/createworkspace/components/WorkspaceHome"
+import Channels from "./components/Channels"
+import { Modall } from "./components/Modal"
+import SkeletonLoader from "./components/SkeletonLoader"
+import Messages from "./components/Messages"
+import fetcher from "./utils/fetcher"
+import axios from "axios"
+import { GetUserInfo, SubscribeToChannel } from "@zuri/control"
+import { authAxios } from "./utils/Api"
+import linkIcon from "./assets/link.svg"
 
-import { ChakraProvider, Spinner } from '@chakra-ui/react'
+import { ChakraProvider, Spinner } from "@chakra-ui/react"
 
-import { SubscribeToChannel } from '@zuri/control'
-import { filterUrl, trimUrl } from './utils/filterurl'
-import { MdKeyboardArrowDown } from 'react-icons/md'
+import { filterUrl, trimUrl } from "./utils/filterurl"
+import { MdKeyboardArrowDown } from "react-icons/md"
 
 const Sidebar = props => {
   const [show, setShow] = useState(false)
@@ -47,7 +46,7 @@ const Sidebar = props => {
   const close = () => setShowDialog(false)
   const openInviteModal = () => setOpenInvite(true)
   const closeInviteModal = () => setOpenInvite(false)
-  const [query, setQuery] = useState('')
+  const [query, setQuery] = useState("")
   const [loading, setLoading] = useState(false)
   // const [error, setError] = useState('')
   const [inviteEmail, setInviteEmail] = useState([])
@@ -59,27 +58,27 @@ const Sidebar = props => {
   // console.log('ORGGGG', org)
   const toggle = () => {
     toggleHomeModal(!homeModal)
-    document.removeEventListener('click', toggle)
+    document.removeEventListener("click", toggle)
   }
 
   useEffect(() => {
     if (homeModal) {
-      document.addEventListener('click', toggle)
+      document.addEventListener("click", toggle)
     }
   }, [homeModal])
 
-  document.removeEventListener('click', toggle)
+  document.removeEventListener("click", toggle)
 
-  let currentWorkspace = localStorage.getItem('currentWorkspace')
+  let currentWorkspace = localStorage.getItem("currentWorkspace")
 
   const toggleOpenInvite = () => setOpenInvite(!openInvite)
   const setInviteEmails = emails => setInviteEmail(emails)
   const [sendLoading, setSendLoading] = useState(false)
 
   const [userInfo, setUserInfo] = useState({
-    userId: '',
+    userId: "",
     Organizations: [],
-    token: ''
+    token: ""
   })
 
   //   // console.log('userinfo', userInfo)
@@ -103,15 +102,15 @@ const Sidebar = props => {
   //   console.log('ORG INFO:', organizationInfo)
 
   // let user = JSON.parse(sessionStorage.getItem('user'))
-  let token = sessionStorage.getItem('token')
-  let user_id_session = JSON.parse(sessionStorage.getItem('user'))
+  let token = sessionStorage.getItem("token")
+  let user_id_session = JSON.parse(sessionStorage.getItem("user"))
 
   useEffect(() => {
     //Fetch sidebar when component mounts
     fetchUser(props.dispatch)
     setnullValue(1)
     axios({
-      method: 'get',
+      method: "get",
       url: `https://api.zuri.chat/organizations/${currentWorkspace}`,
       headers: {
         Authorization: `Bearer ${token}`
@@ -137,7 +136,7 @@ const Sidebar = props => {
 
   const getOrgDetails = () => {
     return axios({
-      method: 'get',
+      method: "get",
       url: `https://api.zuri.chat/organizations/${currentWorkspace}/members`,
       headers: {
         Authorization: `Bearer ${token}`
@@ -146,10 +145,10 @@ const Sidebar = props => {
   }
 
   const inviteVisibility = () => {
-    const userEmail = JSON.parse(sessionStorage.getItem('user')).email
+    const userEmail = JSON.parse(sessionStorage.getItem("user")).email
     getOrgDetails().then(res => {
       const currentUser = res.data.data.find(user => user.email === userEmail)
-      setOwner(currentUser?.role === 'owner' || currentUser?.role === 'admin')
+      setOwner(currentUser?.role === "owner" || currentUser?.role === "admin")
       const existingEmails = []
       res.data.data.map(user => existingEmails.push(user.email))
       // console.log(existingEmails);
@@ -165,7 +164,7 @@ const Sidebar = props => {
     // console.log(...emails, 'pidoxy')
     setSendLoading(true)
     return await axios({
-      method: 'post',
+      method: "post",
       url: `https://api.zuri.chat/organizations/${currentWorkspace}/send-invite`,
       data: {
         emails: [...emails]
@@ -193,8 +192,8 @@ const Sidebar = props => {
         `${currentWorkspace}_${userInfo.userId}_sidebar`,
         ctx => {
           const websocket = ctx.data
-          console.log('Websocket', websocket)
-          if (websocket.event === 'sidebar_update') {
+          // console.log('Websocket', websocket)
+          if (websocket.event === "sidebar_update") {
             setSidebarData({
               ...sidebarData,
               [websocket.plugin_id]: websocket.data
@@ -215,7 +214,7 @@ const Sidebar = props => {
               </span>
               <span className={`col-4 p-0 ${styles.sidebar__header__arrow}`}>
                 <MdKeyboardArrowDown />
-              </span>{' '}
+              </span>{" "}
               {/* <img
                 className={`col-4 mx-auto ${styles.arrowDown}`}
                 src={shapekeyboardarrowdown}
@@ -288,7 +287,7 @@ const Sidebar = props => {
               className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
             >
               <img
-                style={{ width: '10%' }}
+                style={{ width: "10%" }}
                 className={`${styles.item__img}`}
                 role="button"
                 onClick={openInviteModal}
@@ -309,8 +308,8 @@ const Sidebar = props => {
           onClick={() => setBg(2)}
           style={
             bg === 2
-              ? { backgroundColor: '#00b87c' }
-              : { backgroundColor: 'revert' }
+              ? { backgroundColor: "#00b87c" }
+              : { backgroundColor: "revert" }
           }
           className={`row mt-2 ${styles.sb__item}`}
         >
@@ -332,8 +331,8 @@ const Sidebar = props => {
           onClick={() => setBg(3)}
           style={
             bg === 3
-              ? { backgroundColor: '#00b87c' }
-              : { backgroundColor: 'revert' }
+              ? { backgroundColor: "#00b87c" }
+              : { backgroundColor: "revert" }
           }
           className={`row ${styles.sb__item}`}
         >
@@ -355,8 +354,8 @@ const Sidebar = props => {
           onClick={() => setBg(4)}
           style={
             bg === 4
-              ? { backgroundColor: '#00b87c' }
-              : { backgroundColor: 'revert' }
+              ? { backgroundColor: "#00b87c" }
+              : { backgroundColor: "revert" }
           }
           className={`row ${styles.sb__item}`}
         >
@@ -378,8 +377,8 @@ const Sidebar = props => {
           onClick={() => setBg(5)}
           style={
             bg === 5
-              ? { backgroundColor: '#00b87c' }
-              : { backgroundColor: 'revert' }
+              ? { backgroundColor: "#00b87c" }
+              : { backgroundColor: "revert" }
           }
           className={`row ${styles.sb__item}`}
         >
@@ -401,8 +400,8 @@ const Sidebar = props => {
           onClick={() => setBg(6)}
           style={
             bg === 6
-              ? { backgroundColor: '#00b87c' }
-              : { backgroundColor: 'revert' }
+              ? { backgroundColor: "#00b87c" }
+              : { backgroundColor: "revert" }
           }
           className={`row ${styles.sb__item}`}
         >
@@ -417,7 +416,7 @@ const Sidebar = props => {
             />
             <p className={`mb-0 ${styles.item_p}`} role="button">
               Plugins
-            </p>{' '}
+            </p>{" "}
             <img
               onClick={open}
               className={`${styles.addButton}`}
@@ -478,7 +477,7 @@ const Sidebar = props => {
                   src={pluginIcon}
                   alt="icon"
                 />
-                <p className={`mb-0 ${styles.item_p}`}>Plugins</p>{' '}
+                <p className={`mb-0 ${styles.item_p}`}>Plugins</p>{" "}
                 <img
                   onClick={open}
                   className={`${styles.addButton}`}
@@ -663,7 +662,7 @@ const ClickButton = styled.img`
 `
 
 const theme = {
-  bgcolor: '#00b87c'
+  bgcolor: "#00b87c"
 }
 
 export default Sidebar

@@ -1,43 +1,43 @@
-import React, { useState, useEffect } from 'react'
-import AdminPage from './AdminPage'
-import AuthorizePenalty from './AuthorizePenalty'
-import Confirm from './Confirm'
-import Success from './Success'
-import Modal from 'react-bootstrap/Modal'
-import { VscReport } from 'react-icons/vsc'
-import { AiOutlineClose } from 'react-icons/ai'
+import React, { useState, useEffect } from "react"
+import AdminPage from "./AdminPage"
+import AuthorizePenalty from "./AuthorizePenalty"
+import Confirm from "./Confirm"
+import Success from "./Success"
+import Modal from "react-bootstrap/Modal"
+import { VscReport } from "react-icons/vsc"
+import { AiOutlineClose } from "react-icons/ai"
 
 export const AdminForm = props => {
   const statedic = {
     step: 1,
-    name: '',
-    offence: '',
-    description: '',
-    password: '',
-    facebook: '',
-    twitter: '',
-    github: ''
+    name: "",
+    offence: "",
+    description: "",
+    password: "",
+    facebook: "",
+    twitter: "",
+    github: ""
   }
-  const localList = localStorage.getItem('zurimainComplaints')
+  const localList = localStorage.getItem("zurimainComplaints")
 
   const [state, setState] = useState(statedic)
 
   var usersComplaints = [
     {
       id: 1,
-      email: 'aascsask@wdw.dsd',
-      offence: 'hsfsdgsdg',
-      description: 'vsdvsfdfd',
-      date: 'vsvvsdgdv',
+      email: "aascsask@wdw.dsd",
+      offence: "hsfsdgsdg",
+      description: "vsdvsfdfd",
+      date: "vsvvsdgdv",
       anonymous: true,
       authorize: false
     },
     {
       id: 2,
-      email: 'a221231@wdw.dsd',
-      offence: 'h1qg23414sdg',
-      description: '656vsfdfd',
-      date: 'eqwrrvvsdgdv',
+      email: "a221231@wdw.dsd",
+      offence: "h1qg23414sdg",
+      description: "656vsfdfd",
+      date: "eqwrrvvsdgdv",
       anonymous: true,
       authorize: false
     }
@@ -86,7 +86,7 @@ export const AdminForm = props => {
       setListComplaints(JSON.parse(localList))
     }
 
-    console.log(localList)
+    // console.log(localList)
   }, [localList])
 
   const { step } = state

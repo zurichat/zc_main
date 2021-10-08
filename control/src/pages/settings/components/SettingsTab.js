@@ -1,15 +1,14 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import styles from '../styles/SettingsTab.module.css'
-import TimeZone from './TimeZone'
-import { Link } from 'react-router-dom'
-import PreferenceWrapper from './PreferenceWrapper'
-import { AnimateSharedLayout } from 'framer-motion'
-import SavePassword from './SavePassword'
-import TwoFactor from './TwoFactor'
-import ChangeEmail from './ChangeEmail'
-import Language from './Language'
-import UserName from './UserName'
+import React from "react"
+import { NavLink, Link } from "react-router-dom"
+import styles from "../styles/SettingsTab.module.css"
+import TimeZone from "./TimeZone"
+import PreferenceWrapper from "./PreferenceWrapper"
+import { AnimateSharedLayout } from "framer-motion"
+import SavePassword from "./SavePassword"
+import TwoFactor from "./TwoFactor"
+import ChangeEmail from "./ChangeEmail"
+import Language from "./Language"
+import UserName from "./UserName"
 
 const SettingsTab = () => {
   // const showTime = show ? <TimeZone /> : null
@@ -96,7 +95,7 @@ const SettingsTab = () => {
           <br />
           <span>
             <strong> Note:</strong> Don’t deactivate your account if you just
-            want to{' '}
+            want to{" "}
             <NavLink to="/" className={styles.emailLink}>
               change your email address.
             </NavLink>

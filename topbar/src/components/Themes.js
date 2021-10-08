@@ -1,36 +1,37 @@
-import React from 'react'
-import styles from '../styles/Themes.module.css'
-import theme3 from '../assets/images/theme3.png'
-import theme4 from '../assets/images/theme4.png'
-import theme5 from '../assets/images/theme5.png'
-import theme6 from '../assets/images/theme6.png'
-import theme7 from '../assets/images/theme3.png'
-import theme8 from '../assets/images/theme3.png'
-import theme9 from '../assets/images/theme3.png'
-import theme10 from '../assets/images/theme3.png'
-import theme16 from '../assets/images/theme16.png'
-import theme17 from '../assets/images/theme17.png'
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react"
+import styles from "../styles/Themes.module.css"
+import theme3 from "../assets/images/theme3.png"
+import theme4 from "../assets/images/theme4.png"
+import theme5 from "../assets/images/theme5.png"
+import theme6 from "../assets/images/theme6.png"
+import theme7 from "../assets/images/theme7.png"
+import theme8 from "../assets/images/theme8.png"
+import theme9 from "../assets/images/theme9.png"
+import theme10 from "../assets/images/theme10.png"
+import theme16 from "../assets/images/theme16.png"
+import theme17 from "../assets/images/theme17.png"
 
 const Themes = () => {
   const [active1, setActive1] = useState(0)
   const [darkMode, setDarkMode] = useState(false)
-  const [mode, setMode] = useState('light')
+  const [mode, setMode] = useState("light")
+  const [Data, setData] = useState(undefined)
+  const [DataState, setDataState] = useState({})
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode ? true : true)
-    setMode('dark')
+    setMode("dark")
   }
   const toggleLightMode = () => {
     setDarkMode(darkMode ? false : false)
-    setMode('light')
+    setMode("light")
   }
 
   useEffect(() => {
-    if (mode === 'dark') {
-      localStorage.setItem('mode', 'dark')
+    if (mode === "dark") {
+      localStorage.setItem("mode", "dark")
     } else {
-      localStorage.setItem('mode', 'light')
+      localStorage.setItem("mode", "light")
     }
   }, [mode])
 
@@ -60,7 +61,7 @@ const Themes = () => {
   // })
 
   return (
-    <div className={styles.themeCont} data-theme={darkMode ? 'dark' : 'light'}>
+    <div className={styles.themeCont} data-theme={darkMode ? "dark" : "light"}>
       <div className={styles.title}>
         <div className={styles.them}>Themes</div>
         <div className={styles.text}>
@@ -73,7 +74,7 @@ const Themes = () => {
             type="checkbox"
             name="sync"
             onClick={() => {
-              setDataState({ sync_with_os: 'yes' })
+              setDataState({ sync_with_os: "yes" })
               setData()
             }}
           />
@@ -86,7 +87,7 @@ const Themes = () => {
             type="checkbox"
             name="sync"
             onClick={() => {
-              setDataState({ direct_messages_mentions_and_network: 'yes' })
+              setDataState({ direct_messages_mentions_and_network: "yes" })
               setData()
             }}
           />

@@ -1,6 +1,6 @@
 .addUserModal {
-  width: 30%;
-  height: 40vh;
+  width: 35%;
+  /* height: 40vh; */
   position: relative;
   top: 5%;
   /* overflow-y: scroll; */
@@ -30,7 +30,7 @@
 @media only screen and (max-width: 768px) {
   .addUserModal {
     width: 80%;
-    height: 45vh;
+    /* height: 45vh; */
   }
 }
 

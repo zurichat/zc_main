@@ -1,25 +1,29 @@
-import { useState } from 'react'
-import { useHistory } from 'react-router-dom'
-import { DialogOverlay, DialogContent } from '@reach/dialog'
-import CodeInput from '../signup/email-verify/codeInput'
-import styled from 'styled-components'
+import { useState } from "react"
+import { useHistory } from "react-router-dom"
+import { DialogOverlay, DialogContent } from "@reach/dialog"
+import CodeInput from "../signup/email-verify/codeInput"
+import styled from "styled-components"
+import axios from "axios"
+import Button from "../../components/Button"
+import styles from "../../component-styles/ResetPassword.module.css"
+import okayimage from "../signup/email-verify/assets/okayimage.svg"
 
 export default function VerifyResetCode() {
   const [success, setsuccess] = useState(false)
-  const [code, setCode] = useState('')
+  const [code, setCode] = useState("")
   const history = useHistory()
 
   const handleSubmit = async code => {
     try {
       const res = await axios.post(
-        'https://api.zuri.chat/account/verify-reset-password',
+        "https://api.zuri.chat/account/verify-reset-password",
         {
           code
         }
       )
       setsuccess(true)
       setCode(code)
-      console.log(res.data)
+      // console.log(res.data)
     } catch (err) {
       console.error(err)
       setsuccess(false)
@@ -30,7 +34,7 @@ export default function VerifyResetCode() {
       <Content>
         {!success ? (
           <div>
-            <h1 style={{ textAlign: 'center' }}>
+            <h1 style={{ textAlign: "center" }}>
               Enter the reset code sent to your mail
             </h1>
             <CodeInput
@@ -41,7 +45,7 @@ export default function VerifyResetCode() {
             />
           </div>
         ) : (
-          <Successdiv style={{ textAlign: 'center' }}>
+          <Successdiv style={{ textAlign: "center" }}>
             <img src={okayimage} alt="zurichat logo" className={styles.img} />
             <h2>Reset Code Verification Successful!</h2>
             <p>Click on the Button to continue</p>
