@@ -1,21 +1,21 @@
-import React, { useContext, useState } from 'react'
-import styles from '../styles/Profile.module.css'
-import defaultAvatar from '../assets/images/avatar_vct.svg'
-import facebook from '../assets/images/facebook.svg'
-import twitter from '../assets/images/twitter.svg'
-import linkedin from '../assets/images/linkedin.svg'
-import instagram from '../assets/images/instagram.svg'
-import github from '../assets/images/github.svg'
-import { BiUser } from 'react-icons/bi'
-import { AiFillEdit } from 'react-icons/ai'
-import { FaEllipsisH } from 'react-icons/fa'
-import moment from 'moment'
-import { ProfileContext } from '../context/ProfileModal'
-import { TopbarContext } from '../context/Topbar'
-import EditProfile from './EditProfile'
-import Preferences from './Preferences'
-import { Dropdown } from './ProfileMore'
-import StatusBadgeModal from './StatusBadgeModal'
+import React, { useContext, useState } from "react"
+import styles from "../styles/Profile.module.css"
+import defaultAvatar from "../assets/images/avatar_vct.svg"
+import facebook from "../assets/images/facebook.svg"
+import twitter from "../assets/images/twitter.svg"
+import linkedin from "../assets/images/linkedin.svg"
+import instagram from "../assets/images/instagram.svg"
+import github from "../assets/images/github.svg"
+import { BiUser } from "react-icons/bi"
+import { AiFillEdit } from "react-icons/ai"
+import { FaEllipsisH } from "react-icons/fa"
+import moment from "moment"
+import { ProfileContext } from "../context/ProfileModal"
+import { TopbarContext } from "../context/Topbar"
+import EditProfile from "./EditProfile"
+import Preferences from "./Preferences"
+import { Dropdown } from "./ProfileMore"
+import StatusBadgeModal from "./StatusBadgeModal"
 
 const Profile = () => {
   const {
@@ -25,12 +25,12 @@ const Profile = () => {
     toggleProfileState,
     user
   } = useContext(ProfileContext)
-  console.log('user status', user.status)
+  // console.log('user status', user.status)
   const state = useContext(TopbarContext)
   const [dropdown, setDropdown] = useState(false)
-  const [modal, setModal] = useState('')
+  const [modal, setModal] = useState("")
 
-  const currentTime = moment().format('h:mm a')
+  const currentTime = moment().format("h:mm a")
 
   return (
     <div
@@ -70,21 +70,21 @@ const Profile = () => {
       <div className={styles.content}>
         <img
           className={`avatar ${styles.userAvatar}`}
-          src={userProfileImage !== '' ? userProfileImage : defaultAvatar}
+          src={userProfileImage !== "" ? userProfileImage : defaultAvatar}
           alt="avatar"
         />
         <div className={styles.userDetails}>
           <h3 className={styles.h3users}>
             {user.first_name
               ? `${user.first_name} ${user.last_name} `
-              : 'Anonnymous'}{' '}
+              : "Anonnymous"}{" "}
             {/* <span>{<StatusBadgeModal />  === '' ? <StatusBadgeModal />  :'0' }</span> */}
             {/* <ProfileStatusBadgeModal /> */}
             <StatusBadgeModal />
           </h3>
 
-          <p className={styles.myp}>{user.bio ? user.bio : 'What you do'}</p>
-          <small>{user.pronouns ? user.pronouns : 'His/Her'}</small>
+          <p className={styles.myp}>{user.bio ? user.bio : "What you do"}</p>
+          <small>{user.pronouns ? user.pronouns : "His/Her"}</small>
         </div>
 
         <div className={styles.buttonGroupsMobile}>
@@ -92,7 +92,7 @@ const Profile = () => {
           <button
             onClick={() => {
               toggleModalState()
-              setModal(() => 'edit profile')
+              setModal(() => "edit profile")
               toggleProfileState()
             }}
           >
@@ -104,7 +104,7 @@ const Profile = () => {
           <div>
             <button
               onClick={() => {
-                setModal(() => 'edit profile')
+                setModal(() => "edit profile")
                 toggleModalState()
               }}
               className={styles.ctaButton}
@@ -129,8 +129,8 @@ const Profile = () => {
             <h6 className={styles.ctaText}>More</h6>
           </div>
           {dropdown && <Dropdown />}
-          {modal === 'preference' && <Preferences />}
-          {modal === 'edit profile' && <EditProfile />}
+          {modal === "preference" && <Preferences />}
+          {modal === "edit profile" && <EditProfile />}
         </div>
 
         <div className={`${styles.moreInfo} ${styles.mobile}`}>
@@ -140,7 +140,7 @@ const Profile = () => {
         <div className={`${styles.moreInfo} ${styles.mobile}`}>
           <div className={styles.infoTitle}>Pronouns</div>
           <div className={styles.infoContent}>
-            {user.pronouns ? user.pronouns : 'null'}
+            {user.pronouns ? user.pronouns : "null"}
           </div>
         </div>
         <div className={styles.moreInfo}>
@@ -153,19 +153,19 @@ const Profile = () => {
         <div className={`${styles.moreInfo} ${styles.mobile}`}>
           <div className={styles.infoTitle}>Status</div>
           <div className={styles.infoContent}>
-            <span>{user?.status?.text !== '' ? user?.status?.text : '0'}</span>
+            <span>{user?.status?.text !== "" ? user?.status?.text : "0"}</span>
           </div>
         </div>
         <div className={styles.moreInfo}>
           <div className={styles.infoTitle}>Email address</div>
           <div className={styles.infoContent}>
-            {user.email ? user.email : 'null'}
+            {user.email ? user.email : "null"}
           </div>
         </div>
         <div className={styles.moreInfo}>
           <div className={styles.infoTitle}>Phone number</div>
           <div className={styles.infoContent}>
-            {user.phone ? user.phone : 'null'}
+            {user.phone ? user.phone : "null"}
           </div>
         </div>
         <div className={styles.moreInfo}>

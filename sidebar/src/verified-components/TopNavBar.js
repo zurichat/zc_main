@@ -1,17 +1,16 @@
-import { useContext } from 'react'
-import { TopbarContext } from '../context/Topbar'
-import { connect } from 'react-redux'
-import zurichatlogo from './assets/zurichatlogo.svg'
-import { useState } from 'react'
-import styled from 'styled-components'
-import { BaseInput } from '.'
-import userAvatar from './assets/user.svg'
-import TopbarModal from '../components/TopbarModal.js'
+import { useContext, useState } from "react"
+import { TopbarContext } from "../context/Topbar"
+import { connect } from "react-redux"
+import zurichatlogo from "./assets/zurichatlogo.svg"
+import styled from "styled-components"
+import { BaseInput } from "."
+import userAvatar from "./assets/user.svg"
+import TopbarModal from "../components/TopbarModal.js"
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const state = useContext(TopbarContext)
   const { openModal } = state
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState("")
 
   return (
     <TopNavBarBase>
@@ -26,7 +25,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         width={7}
         error
         placeholder="Search here"
-        border={'#99999933'}
+        border={"#99999933"}
       />
       <div>
         <img

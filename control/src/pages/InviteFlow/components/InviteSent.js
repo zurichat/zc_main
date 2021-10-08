@@ -1,5 +1,2 @@
-
-const InviteSent = () => {
-
-}
-export default InviteSent;
+const InviteSent = () => {}
+export default InviteSent
