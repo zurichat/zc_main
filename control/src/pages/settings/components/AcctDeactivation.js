@@ -1,8 +1,7 @@
-import { useHistory } from 'react-router-dom'
-import styles from '../styles/AcctDeactivation.module.css'
-import SettingsNav from './SettingsNav'
-import { Link } from 'react-router-dom'
-import alertTriangle from '../assets/alertTriangle.svg'
+import { useHistory, Link } from "react-router-dom"
+import styles from "../styles/AcctDeactivation.module.css"
+import SettingsNav from "./SettingsNav"
+import alertTriangle from "../assets/alertTriangle.svg"
 
 const AcctDeactivation = () => {
   const history = useHistory()
@@ -32,7 +31,7 @@ const AcctDeactivation = () => {
             want to change your
             <span className={styles.blue}>
               <Link to="/settings"> email address</Link>
-            </span>{' '}
+            </span>{" "}
             or
             <span className={styles.blue}>
               <Link to="/settings"> username</Link>

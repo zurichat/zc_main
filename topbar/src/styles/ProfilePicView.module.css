@@ -23,4 +23,5 @@
 .ppv_imgcontainer {
   max-width: 90%;
   max-height: 90%;
+  overflow: auto;
 }
