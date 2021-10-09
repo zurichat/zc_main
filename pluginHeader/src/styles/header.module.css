@@ -50,12 +50,12 @@
 }
 .plugin__thumbnail img:nth-child(1) {
   margin-right: -5px;
-  z-index: 5;
+  z-index: 2;
   position: relative;
 }
 .plugin__header img:nth-child(2) {
   margin-right: -5px;
-  z-index: 3;
+  z-index: 1;
   position: relative;
 }
 .plugin__header__count p {

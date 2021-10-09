@@ -152,7 +152,7 @@ const PricingPageSection1 = () => {
                 </td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -166,7 +166,7 @@ const PricingPageSection1 = () => {
 
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -180,7 +180,7 @@ const PricingPageSection1 = () => {
                 {/* <> */}
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -193,7 +193,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -258,7 +258,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -271,7 +271,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -284,7 +284,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -306,7 +306,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -319,7 +319,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -332,7 +332,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -382,7 +382,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -395,7 +395,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -408,7 +408,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -430,7 +430,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -443,7 +443,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -456,7 +456,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -504,7 +504,7 @@ const PricingPageSection1 = () => {
                 </td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -517,7 +517,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -530,7 +530,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -543,7 +543,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -563,7 +563,7 @@ const PricingPageSection1 = () => {
                 </td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -576,7 +576,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -589,7 +589,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -602,7 +602,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -624,7 +624,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -637,7 +637,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -663,7 +663,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -676,7 +676,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -717,7 +717,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -767,7 +767,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -780,7 +780,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -793,7 +793,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -817,7 +817,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -830,7 +830,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -856,7 +856,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -880,7 +880,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -893,7 +893,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -945,7 +945,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -958,7 +958,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -971,7 +971,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -996,7 +996,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -1009,7 +1009,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -1033,7 +1033,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -1046,7 +1046,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -1073,7 +1073,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -1099,7 +1099,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -1125,7 +1125,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -1177,7 +1177,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -1190,7 +1190,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -1203,7 +1203,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -1272,7 +1272,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -1285,7 +1285,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -1311,7 +1311,7 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
-                    class="c-check"
+                    className="c-check"
                     width="20"
                     height="20"
                     xmlns="http://www.w3.org/2000/svg"

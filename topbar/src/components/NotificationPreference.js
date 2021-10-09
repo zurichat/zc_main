@@ -1,9 +1,8 @@
-import React, { useState, useContext, useEffect } from 'react'
-import styles from '../styles/NotificationPreference.module.css'
-import { AiOutlineQuestionCircle } from 'react-icons/ai'
-//import { TextInput } from './TextInput'
-import { authAxios } from '../utils/Api'
-import { ProfileContext } from '../context/ProfileModal'
+import React, { useState, useContext, useEffect } from "react"
+import styles from "../styles/NotificationPreference.module.css"
+import { AiOutlineQuestionCircle } from "react-icons/ai"
+import { authAxios } from "../utils/Api"
+import { ProfileContext } from "../context/ProfileModal"
 
 const NotificationPreference = () => {
   const [active, setActive] = useState(0)
@@ -14,17 +13,17 @@ const NotificationPreference = () => {
     email_notifications_for_mentions_and_dm: null,
     message_preview_in_each_notification: false,
     mute_all_sounds: false,
-    my_keywords: '',
-    notification_schedule: '',
-    notify_me_about: '',
+    my_keywords: "",
+    notification_schedule: "",
+    notify_me_about: "",
     thread_replies_notification: false,
-    use_different_settings_mobile: '',
-    when_iam_not_active_on_desktop: ''
+    use_different_settings_mobile: "",
+    when_iam_not_active_on_desktop: ""
   })
 
   useEffect(() => {
-    if (localStorage.getItem('settings')) {
-      setDataState(JSON.parse(localStorage.getItem('settings')))
+    if (localStorage.getItem("settings")) {
+      setDataState(JSON.parse(localStorage.getItem("settings")))
     }
   }, [])
 
@@ -36,19 +35,19 @@ const NotificationPreference = () => {
         }
       })
       .then(res => {
-        console.log(res)
+        // console.log(res)
         setState({ loading: false })
       })
       .catch(err => {
-        console.log(err?.response?.data)
+        console.error(err?.response?.data)
         setState({ loading: false })
       })
 
-    localStorage.setItem('settings', JSON.stringify(dataState))
+    localStorage.setItem("settings", JSON.stringify(dataState))
   }
   const [state, setState] = useState({
-    name: 'React',
-    value: 'duration'
+    name: "React",
+    value: "duration"
   })
 
   const handleChange = event => {
@@ -57,8 +56,8 @@ const NotificationPreference = () => {
 
   useEffect(() => {
     setData()
-    console.log(dataState)
-    console.log(user)
+    // console.log(dataState)
+    // console.log(user)
   }, [dataState])
 
   return (
@@ -66,7 +65,7 @@ const NotificationPreference = () => {
       {/*  THE SECTION OF THE CONTENT */}
       <div className={styles.notifyContent}>
         <div className={styles.itemTitle1}>
-          <h4 className={styles.titleLarge}>Notify me about </h4>{' '}
+          <h4 className={styles.titleLarge}>Notify me about </h4>{" "}
           <span className={styles.spanL}>
             <AiOutlineQuestionCircle className={styles.quest} />
             Learn about notifications
@@ -78,12 +77,12 @@ const NotificationPreference = () => {
               <input
                 type="radio"
                 value="all-messages"
-                checked={dataState.notify_me_about === 'all-messages'}
+                checked={dataState.notify_me_about === "all-messages"}
                 onClick={() => {
-                  setActive1('all-messages')
+                  setActive1("all-messages")
                   setDataState({
                     ...dataState,
-                    notify_me_about: 'all-messages'
+                    notify_me_about: "all-messages"
                   })
                   setData()
                 }}
@@ -95,12 +94,12 @@ const NotificationPreference = () => {
               <input
                 type="radio"
                 value="direct-messages"
-                checked={dataState.notify_me_about === 'direct-message'}
+                checked={dataState.notify_me_about === "direct-message"}
                 onClick={() => {
-                  setActive1('direct-message')
+                  setActive1("direct-message")
                   setDataState({
                     ...dataState,
-                    notify_me_about: 'direct-message'
+                    notify_me_about: "direct-message"
                   })
                   setData()
                 }}
@@ -111,10 +110,10 @@ const NotificationPreference = () => {
               <input
                 type="radio"
                 value="none"
-                checked={dataState.notify_me_about === 'none'}
+                checked={dataState.notify_me_about === "none"}
                 onClick={() => {
-                  setActive1('none')
-                  setDataState({ ...dataState, notify_me_about: 'none' })
+                  setActive1("none")
+                  setDataState({ ...dataState, notify_me_about: "none" })
                   setData()
                 }}
               />
@@ -123,7 +122,7 @@ const NotificationPreference = () => {
           </div>
           <div className={styles.markbox}>
             <label htmlFor="for-mobile">
-              {' '}
+              {" "}
               <input
                 type="checkbox"
                 className={styles.check}
@@ -133,12 +132,12 @@ const NotificationPreference = () => {
                   setDataState({
                     ...dataState,
                     use_different_settings_mobile:
-                      !use_different_settings_mobile
+                      !dataState.use_different_settings_mobile
                   })
-                  console.log(
-                    'checking',
-                    dataState.use_different_settings_mobile
-                  )
+                  // console.log(
+                  //   'checking',
+                  //   dataState.use_different_settings_mobile
+                  // )
                   setData()
                 }}
               />
@@ -163,7 +162,7 @@ const NotificationPreference = () => {
                 type="checkbox"
                 value="for-thread"
                 onClick={() => {
-                  setDataState({ use_different_settings_mobile: 'yes' })
+                  setDataState({ use_different_settings_mobile: "yes" })
                   setData()
                 }}
               />
@@ -173,8 +172,8 @@ const NotificationPreference = () => {
         </form>
         <div className={styles.itemTitle2}>
           <div className={styles.line}></div>
-          <h4 class={styles.titleSmall}>Keywords</h4>{' '}
-          <span>
+          <h4 className={styles.titleSmall}>Keywords</h4>{" "}
+          <span className={styles.spanBlock}>
             You will be notified anything, someone uses these keywords in a
             thread
           </span>
@@ -182,10 +181,10 @@ const NotificationPreference = () => {
         </div>
         <div className={styles.line} />
         <div className={styles.itemTitle2}>
-          <h4 class={styles.titleSmall}>Notification Schedule</h4>{' '}
+          <h4 className={styles.titleSmall}>Notification Schedule</h4>{" "}
           <span className={styles.spanBlock}>
             You'll only receive notifications in the hours that you choose.
-            Outside of those times, notifications will be paused.{' '}
+            Outside of those times, notifications will be paused.{" "}
             <span className={styles.spanSmall}>Learn more</span>
           </span>
         </div>
@@ -206,13 +205,13 @@ const NotificationPreference = () => {
                 </select>
               </div>
             </li>
-            {/* <li className={styles.listChild}>
+            <li className={styles.listChild}>
               <TextInput label="From" />
             </li>
 
             <li className={styles.listChild}>
               <TextInput label="to" />
-            </li> */}
+            </li>
           </ul>
         </div>
         <div className={styles.line} />
@@ -238,7 +237,7 @@ const NotificationPreference = () => {
               <input
                 type="checkbox"
                 onClick={() => {
-                  setDataState({ mute_all_sounds: 'yes' })
+                  setDataState({ mute_all_sounds: "yes" })
                   setData()
                 }}
               />
@@ -295,10 +294,10 @@ const NotificationPreference = () => {
               <input
                 type="radio"
                 value="never"
-                checked={dataState.notification_schedule === 'never'}
+                checked={dataState.notification_schedule === "never"}
                 onClick={() => {
-                  setActive('never')
-                  setDataState({ ...dataState, notification_schedule: 'never' })
+                  setActive("never")
+                  setDataState({ ...dataState, notification_schedule: "never" })
                   setData()
                 }}
               />
@@ -308,12 +307,12 @@ const NotificationPreference = () => {
               <input
                 type="radio"
                 value="when-idle"
-                checked={dataState.notification_schedule === 'when-idle'}
+                checked={dataState.notification_schedule === "when-idle"}
                 onClick={() => {
-                  setActive('when-idle')
+                  setActive("when-idle")
                   setDataState({
                     ...dataState,
-                    notification_schedule: 'when-idle'
+                    notification_schedule: "when-idle"
                   })
                   setData()
                 }}
@@ -324,12 +323,12 @@ const NotificationPreference = () => {
               <input
                 type="radio"
                 value="mute-all"
-                checked={dataState.notification_schedule === 'mute-all'}
+                checked={dataState.notification_schedule === "mute-all"}
                 onClick={() => {
-                  setActive('mute-all')
+                  setActive("mute-all")
                   setDataState({
                     ...dataState,
-                    notification_schedule: 'mute-all'
+                    notification_schedule: "mute-all"
                   })
                   setData()
                 }}
@@ -366,16 +365,16 @@ const NotificationPreference = () => {
             </div>
           </div>
         </div>
-        <div className={styles.checkbox}>
+        <div className={styles.markbox}>
           <label>
             <input
               type="checkbox"
               onClick={() => {
-                setDataState({ notify_me_about: 'all-messages' })
+                setDataState({ notify_me_about: "all-messages" })
                 setData()
               }}
-            />{' '}
-            Send me email notifications for mentions{' '}
+            />{" "}
+            Send me email notifications for mentions{" "}
           </label>
         </div>
       </div>
@@ -385,8 +384,8 @@ const NotificationPreference = () => {
 
 export default NotificationPreference
 
-const TextInput = ({ type = 'text', label }) => {
-  const [value, setValue] = useState('')
+const TextInput = ({ type = "text", label }) => {
+  const [value, setValue] = useState("")
 
   function handleChange(e) {
     setValue(e.target.value)
@@ -399,7 +398,7 @@ const TextInput = ({ type = 'text', label }) => {
         value={value}
         onChange={handleChange}
       />
-      <label className={value && 'filled'}>{label}</label>
+      <label className={value && "filled"}>{label}</label>
     </div>
   )
 }
