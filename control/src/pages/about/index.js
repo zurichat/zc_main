@@ -72,12 +72,6 @@ const index = () => {
           <div className={`col-lg-6 ${styles.join_us}`}>
             <h3>Who we are and how to join us</h3>
             <p>
-              {/*  We live by our mission, and improving people’s working life starts
-              with our own company. We’re building a platform and products we
-              believe in — <br />
-              as well as a strong, diverse team of curious, creative people who
-              want to do the best work of their lives and support each other in
-              the process. */}
               Our mission is to improve people's working life by providing a
               platform that can host a strong diverse team , of creative
               professionals who want to do the best work of their lives
