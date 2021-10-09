@@ -90,49 +90,6 @@ const Login = () => {
         setLoading(true)
 
         getOrganizations(data.user)
-
-        // Switch for redirects
-        //axios
-        //  .get(`https://api.zuri.chat/users/${data.user.email}/organizations`, {
-        //    headers: {
-        //      Authorization: `Bearer ${data.user.token}`
-        //    }
-        //  })
-        //  .then(res => {
-        //    const orgs = res.data.data.length
-        //    // console.log(res.data.data.length)
-        //    // console.log('reg orgs', orgs)
-        //
-        //    switch (true) {
-        //      case orgs === 1:
-        //        goToDefaultChannel()
-        //        // setLoading(false)
-        //        break
-        //      case orgs > 1:
-        //        history.push("/choose-workspace")
-        //        // setLoading(false)
-        //        break
-        //      case orgs < 1:
-        //        history.push("/createworkspace")
-        //        // setLoading(false)
-        //        break
-        //      // default:
-        //      //   goToDefaultChannel()
-        //    }
-        //  })
-        //  .catch(err => {
-        //    console.error(err)
-        //  })
-        //
-        //Display message
-        // alert(message) //Change this when there is a design
-
-        // setTimeout(() => {
-        //Redirect to some other page
-        //   GetUserInfo()
-        //   history.push('/choose-workspace')
-        //   setLoading(false)
-        // }, 2000)
       })
       .catch(error => {
         const { data } = error.response
