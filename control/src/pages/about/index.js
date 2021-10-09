@@ -26,7 +26,7 @@ const index = () => {
       <div className={`container`}>
         <div className={`${styles.banner}`}>
           <h1>
-            Make life simple, pleasant and <br />
+            Make work simple, pleasant and <br />
             more productive.
           </h1>
           <p>
