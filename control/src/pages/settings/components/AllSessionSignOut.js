@@ -1,30 +1,31 @@
-import React, { useState, useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
-import styles from '../styles/AllSessionSignOut.module.css'
-import SignOutActionList from './SignOutActionList'
-import SettingsNav from './SettingsNav'
-import FormMessage from './FormMessage'
-import boxArrow from './../box-arrow-right.svg'
-import errorIcon from '../../../component-assets/icons/bx-error.svg'
+import React, { useState, useEffect } from "react"
+import { useHistory } from "react-router-dom"
+import styles from "../styles/AllSessionSignOut.module.css"
+import SignOutActionList from "./SignOutActionList"
+import SettingsNav from "./SettingsNav"
+import FormMessage from "./FormMessage"
+import boxArrow from "./../box-arrow-right.svg"
+import errorIcon from "../../../component-assets/icons/bx-error.svg"
+import axios from "axios"
 
 function AllSessionSignOut() {
-  const [error, setError] = useState('')
+  const [error, setError] = useState("")
   //const [userSession, setUserSession] = useState({})
   const [user, setUser] = useState()
-  const [currentPassword, setCurrentPassword] = useState('')
+  const [currentPassword, setCurrentPassword] = useState("")
 
   const history = useHistory()
 
   useEffect(() => {
     if (
-      sessionStorage.getItem('user') &&
-      sessionStorage.getItem('session_id')
+      sessionStorage.getItem("user") &&
+      sessionStorage.getItem("session_id")
     ) {
-      const userInfo = JSON.parse(sessionStorage.getItem('user'))
-      console.log(userInfo)
+      const userInfo = JSON.parse(sessionStorage.getItem("user"))
+      // console.log(userInfo)
       setUser(userInfo)
     } else {
-      history.push('./login')
+      history.push("./login")
     }
   }, [history])
 
@@ -32,7 +33,7 @@ function AllSessionSignOut() {
     let timerId
     if (error) {
       timerId = setTimeout(() => {
-        setError('')
+        setError("")
       }, 3000)
     }
 
@@ -48,7 +49,7 @@ function AllSessionSignOut() {
 
     try {
       const response = await axios.post(
-        'https://api.zuri.chat/auth/logout/othersessions',
+        "https://api.zuri.chat/auth/logout/othersessions",
         {
           body: JSON.stringify(passwordData)
         }
@@ -58,10 +59,10 @@ function AllSessionSignOut() {
       }
       const { data } = await response.data
       setUser(data)
-      console.log(data)
+      // console.log(data)
     } catch (error) {
-      console.log(error)
-      setError('That password is incorrect. Please try again')
+      console.error(error)
+      setError("That password is incorrect. Please try again")
     }
   }
 
