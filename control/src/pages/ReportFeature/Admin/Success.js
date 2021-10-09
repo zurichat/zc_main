@@ -1,15 +1,12 @@
 import React, { useEffect } from 'react'
 import styles from './reports.module.css'
+import { Container } from 'react-bootstrap'
 
 export const Success = props => {
-  useEffect(() => {
-    return () => {
-      props.resetStep()
-    }
-  })
+  useEffect(() => {})
 
   return (
-    <section className={`${styles.formcontainer}`}>
+    <Container className={`${styles.formcontainer}`}>
       {props.postSucc ? (
         <div>
           <h1 className={`text-success `}>
@@ -26,7 +23,7 @@ export const Success = props => {
           <p className="text-danger">Your complaint failed to be reported</p>
         </div>
       )}
-    </section>
+    </Container>
   )
 }
 

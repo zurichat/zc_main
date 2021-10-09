@@ -28,6 +28,12 @@ const Topics = [
         details:
           'Workspace Owners and Workspace Admins can deactivate members’ accounts from ZuriChat in either the desktop app or a browser. Members won’t be notified when their accounts are deactivated, but they’ll be signed out of your workspace on all devices and unable to sign back in. Their messages and files won’t be deleted from your workspace.'
       }
+    ],
+    articles: [
+      { title: 'Related article 1' },
+      { title: 'Related article 2' },
+      { title: 'Related article 3' },
+      { title: 'Related article 4' }
     ]
   },
   {
@@ -48,6 +54,12 @@ const Topics = [
         details:
           'We offer a Fair Billing Policy — this means you only pay for the members of your workspace that are using ZuriChat. Read more about our <a href="https://zuri.chat/">Fair Billing policy</a>, and check out <a href="https://zuri.chat/">our guide to billing</a> for more information.'
       }
+    ],
+    articles: [
+      { title: 'Related article 1' },
+      { title: 'Related article 2' },
+      { title: 'Related article 3' },
+      { title: 'Related article 4' }
     ]
   },
   {
@@ -69,6 +81,12 @@ const Topics = [
         details:
           'Visit <a href="#">ZuriChat Status</a> to see if ZuriChat is up and running and to see the status of our services.'
       }
+    ],
+    articles: [
+      { title: 'Related article 1' },
+      { title: 'Related article 2' },
+      { title: 'Related article 3' },
+      { title: 'Related article 4' }
     ]
   },
   {
@@ -99,6 +117,12 @@ const Topics = [
         details:
           'Depending on the permissions set by your Workspace Owners and Admins, you may not be able to remove people from channels. Contact a Workspace Owner or Admin for help.'
       }
+    ],
+    articles: [
+      { title: 'Related article 1' },
+      { title: 'Related article 2' },
+      { title: 'Related article 3' },
+      { title: 'Related article 4' }
     ]
   }
 ]

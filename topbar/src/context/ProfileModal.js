@@ -8,7 +8,7 @@ export const ProfileProvider = ({ children }) => {
   const [sideBar, setSideBar] = useState(1)
   const [user, setUser] = useState([])
   const [orgId, setOrgId] = useState('')
-  const [userProfileImage, setUserProfileImage] = useState(userAvatar)
+  const [userProfileImage, setUserProfileImage] = useState(null)
 
   const toggleModalState = () => {
     setModal(!modal)

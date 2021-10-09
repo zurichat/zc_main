@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './reports.module.css'
+import { Container } from 'react-bootstrap'
 
 export const Confirm = props => {
   const Continue = (index, val) => {
@@ -15,27 +16,28 @@ export const Confirm = props => {
   const detail = props.complaint
 
   return (
-    <div className={styles.formcontainer}>
-      <h1 className={`mb-5 ${styles.head1}`}>Offence Details</h1>
+    <Container className={styles.formcontainer}>
+      <h1 className={`mb-5 text-success ${styles.head1}`}>Offence Details</h1>
       <ul className="list-group">
         <li className="list-group-item" style={{ display: 'flex' }}>
-          <b>Email: </b> <p style={{ marginLeft: '25rem' }}>{detail.email}</p>
+          <b className="col-6">Email: </b>{' '}
+          <p className="col-6">{detail.email}</p>
         </li>
         <li className="list-group-item" style={{ display: 'flex' }}>
-          <b>Offence: </b>{' '}
-          <p style={{ marginLeft: '25rem' }}> {detail.offence} </p>
+          <b className="col-6">Offence: </b>{' '}
+          <p className="col-6"> {detail.offence} </p>
         </li>
         <li className="list-group-item" style={{ display: 'flex' }}>
-          <b>Description:</b>{' '}
-          <p style={{ marginLeft: '25rem' }}>{detail.description} </p>
+          <b className="col-6">Description:</b>{' '}
+          <p className="col-6">{detail.description} </p>
         </li>
         <li className="list-group-item" style={{ display: 'flex' }}>
-          <b>anonymous:</b>{' '}
-          <p style={{ marginLeft: '25rem' }}>{detail.anonymous.toString()} </p>
+          <b className="col-6">anonymous:</b>{' '}
+          <p className="col-6">{detail.anonymous.toString()} </p>
         </li>
         <li className="list-group-item" style={{ display: 'flex' }}>
-          <b>Confirmed:</b>{' '}
-          <p style={{ marginLeft: '25rem' }}>{detail.authorize.toString()} </p>
+          <b className="col-6">Confirmed:</b>{' '}
+          <p className="col-6">{detail.authorize.toString()} </p>
         </li>
       </ul>
 
@@ -50,7 +52,7 @@ export const Confirm = props => {
           <button
             className="btn btn-secondary"
             onClick={back}
-            style={{ color: 'white', borderRadius: '10%', padding: '12px' }}
+            style={{ color: 'white' }}
           >
             Back
           </button>
@@ -62,26 +64,20 @@ export const Confirm = props => {
               onClick={() => Continue(props.idx, true)}
               style={{
                 color: 'white',
-                // backgroundColor: " #00B87C",
-                padding: '12px',
-                borderRadius: '10%',
-                marginLeft: '150px'
+                marginLeft: '5%'
               }}
             >
               Confirm
             </button>
           </div>
         ) : (
-          <div className="col-6 text-right">
+          <div className="col-6 ">
             <button
               className="btn btn-danger"
               onClick={() => Continue(props.idx, false)}
               style={{
                 color: 'white',
-                // backgroundColor: " #00B87C",
-                padding: '12px',
-                borderRadius: '10%',
-                marginLeft: '150px'
+                marginLeft: '35%'
               }}
             >
               Unconfirm
@@ -89,7 +85,7 @@ export const Confirm = props => {
           </div>
         )}
       </div>
-    </div>
+    </Container>
   )
 }
 

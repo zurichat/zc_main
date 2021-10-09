@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './reports.module.css'
+import { Container } from 'react-bootstrap'
 
 export const ComplaintProfiles = props => {
   const Continue = e => {
@@ -15,9 +16,9 @@ export const ComplaintProfiles = props => {
   const { values, inputChange } = props
 
   return (
-    <div className={styles.formcontainer}>
+    <Container className={styles.formcontainer}>
       <form className="main-container" onSubmit={Continue}>
-        <h1 className="mb-5">Report Complaint</h1>
+        <h1 className="mb-5 text-success">Report Complaint</h1>
 
         <br />
 
@@ -31,7 +32,7 @@ export const ComplaintProfiles = props => {
         <div>
           {' '}
           <label htmlFor="name">
-            <b>Offender's e-mail</b>
+            <b className="text-success">Offender's e-mail</b>
           </label>
         </div>
         <div className="form-group">
@@ -43,7 +44,7 @@ export const ComplaintProfiles = props => {
             required
             onChange={inputChange('email')}
             value={values.email}
-            style={{ width: '19rem', padding: '12px' }}
+            style={{ width: '75%', padding: '12px' }}
           />
         </div>
 
@@ -52,17 +53,14 @@ export const ComplaintProfiles = props => {
         <div>
           <div className="form-group">
             <label htmlFor="text">
-              <b>Offence</b>
+              <b className="text-success">Offence</b>
             </label>
           </div>
 
-          <div
-            className="form-group"
-            style={{ width: '19rem', padding: '12px' }}
-          >
+          <div className="form-group">
             <select
               name="offence"
-              style={{ width: '19rem', padding: '12px' }}
+              style={{ width: '75%', padding: '12px' }}
               onChange={inputChange('offence')}
             >
               <option value="Anti Semitism">Anti Semitism </option>
@@ -85,7 +83,7 @@ export const ComplaintProfiles = props => {
 
         <div style={{ display: 'flex', flexDirection: 'space-inbetween' }}>
           <label htmlFor="text">
-            <b>Description</b>(Optional)
+            <b className="text-success">Description </b>(Optional)
           </label>
         </div>
         <div className="form-group">
@@ -95,44 +93,46 @@ export const ComplaintProfiles = props => {
             name="text"
             onChange={inputChange('description')}
             value={values.description}
-            style={{ width: '20.5rem', height: '3rem' }}
+            style={{ width: '75%', height: '100px' }}
           />
         </div>
 
         <br />
 
-        <div className="form-check form-switch">
+        <div className="form-check form-switch ">
           <label className="form-check-label" htmlFor="flexSwitchCheckChecked">
-            <b>Report as anonymous</b>
+            <b className="text-success">Report as anonymous</b>
             <input
               className="form-check-input"
               type="checkbox"
               id="flexSwitchCheckChecked"
               onChange={inputChange('anonymous')}
               checked={values.anonymous}
+              backgroundColor="#00B87C"
+              color="#00B87C"
             />
           </label>
         </div>
-
+        <br />
         <div
           className="row"
           style={{ display: 'flex', flexDirection: 'flex-end' }}
         >
-          <div className="col-2">
+          <div className="col-6">
             <button
               className="btn btn-secondary"
               onClick={back}
               style={{
                 color: 'white',
                 // backgroundColor: "#00B87C",
-                borderRadius: '10%',
-                padding: '12px'
+                borderRadius: '5%'
+                // padding: '12px'
               }}
             >
               Back
             </button>
           </div>
-          <div className="col-2">
+          <div className="col-6 text-right">
             <button
               type="submit"
               className="btn btn-success"
@@ -140,9 +140,9 @@ export const ComplaintProfiles = props => {
               style={{
                 color: 'white',
                 backgroundColor: '#00B87C',
-                padding: '12px',
-                borderRadius: '10%',
-                marginLeft: '290px'
+                // padding: '12px',
+                borderRadius: '5%',
+                marginLeft: '45%'
               }}
             >
               Next
@@ -151,7 +151,7 @@ export const ComplaintProfiles = props => {
         </div>
       </form>
       <br />
-    </div>
+    </Container>
   )
 }
 

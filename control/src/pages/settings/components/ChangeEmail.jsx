@@ -6,13 +6,13 @@ const ChangeEmail = () => {
     <div className={styles.passwordsection}>
       <form className="row d-flex flex-column">
         <div className="col-md-5">
-          <label for="firstname" className="form-label">
+          <label htmlFor="firstname" className="form-label">
             Current Email
           </label>
           <input type="text" className="form-control" required />
         </div>
         <div className="col-md-5">
-          <label for="lastname" className="form-label">
+          <label htmlFor="lastname" className="form-label">
             New email address
           </label>
           <input type="text" className="form-control" required />

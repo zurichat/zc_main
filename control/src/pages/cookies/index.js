@@ -1,46 +1,57 @@
 import React from 'react'
 import styles from './styles/Cookie.module.css'
-import hamburger from '../../component-assets/hamburger.png'
+import cookie from '../../component-assets/cookie.svg'
 import { Link } from 'react-router-dom'
+
+const cookieStorage = {
+  getItem: key => {
+    const cookies = document.cookie
+      .split(';')
+      .map(cookie => cookie.split('='))
+      .reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: value }), {})
+    return cookies[key]
+  },
+  setItem: (key, value, age) => {
+    document.cookie = `${key}=${value}; max-age=${age}`
+  }
+}
+
+const handleClickAllow = event => {
+  cookieStorage.setItem('Zuri Chat Accept', 'true', '2592000')
+  event.target.parentNode.parentNode.parentNode.parentNode.style.opacity = '0'
+}
+const handleClickDecline = event => {
+  cookieStorage.setItem('Zuri Chat Decline', 'true')
+  event.target.parentNode.parentNode.parentNode.parentNode.style.opacity = '0'
+}
 
 const Cookies = () => {
   return (
     <div className={styles.bannerContainer}>
-      <div className={styles.bannerBox}>
-        <div className={styles.bannerLogo}>
-          <img className={`mx-auto`} src={hamburger} alt="hamburger" />
-          <div className={styles.bannerTitle}>
-            <h1>OUR COOKIE POLICY</h1>
-          </div>
-          <div className={styles.bannerText}>
-            <p>
-              We use cookies to ensure that we give the best experience on our
-              website. By clicking "Allow", you agree Zuri Chat can store
-              cookies on your device.{' '}
-              <Link to="/cookies-settings">manage cookie settings </Link>
-              at anytime.
-            </p>
-          </div>
-        </div>
-        <div className={styles.bannerButtons}>
-          <button
-            className={`${styles.allowButton} ${styles.button}`}
-            onClick={handleClickAllow}
-          >
-            Allow
-          </button>
-          <button className={`${styles.settingsButton} ${styles.button}`}>
-            <Link to="/cookies-settings"> Settings </Link>
-          </button>
-        </div>
+      <img src={cookie} alt="cookies" title="cookies" />
+      <div className={styles.cookie_body}>
+        <span>
+          We use third-party{' '}
+          <Link to="/cookies-settings" className={styles.cookie}>
+            cookies
+          </Link>{' '}
+          in order to personalize your site experience.
+        </span>
+        <ul className={styles.buttons}>
+          <li>
+            <button onClick={handleClickAllow} className={styles.allow}>
+              Allow
+            </button>
+          </li>
+          <li>
+            <button onClick={handleClickDecline} className={styles.decline}>
+              Decline
+            </button>
+          </li>
+        </ul>
       </div>
     </div>
   )
-}
-
-const handleClickAllow = event => {
-  sessionStorage.setItem('cookies-allow', 'true')
-  event.target.parentNode.parentNode.parentNode.style.display = 'none'
 }
 
 export default Cookies

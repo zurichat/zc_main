@@ -1,32 +1,72 @@
-import { useContext, useEffect } from 'react'
-import { ProfileContext } from './context/ProfileModal'
-import { TopbarContext } from './context/Topbar'
-import { connect } from 'react-redux'
-import zurichatlogo from './assets/images/Logo.svg'
-import { useState } from 'react'
-import styled from 'styled-components'
-import { BaseInput } from './TopBarIndex'
-import userAvatar from './assets/images/user.svg'
-import HelpIcon from './assets/download_images/question.svg'
-import HelpIcons from '@material-ui/icons/HelpOutline'
-import TopbarModal from './components/TopbarModal'
-import HelpModal from './components/HelpModal'
-import UserForm from '../../control/src/pages/ReportFeature/User/Form'
-import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
-import { authAxios } from './utils/Api'
-import Profile from './components/Profile'
-import styles from './styles/Topbar.module.css'
+import { useState, useContext, useEffect } from "react"
+import { ProfileContext } from "./context/ProfileModal"
+import { TopbarContext } from "./context/Topbar"
+import { connect } from "react-redux"
+import zurichatlogo from "./assets/images/Logo.svg"
+import styled from "styled-components"
+import { BaseInput } from "./TopBarIndex"
+import defaultAvatar from "./assets/images/avatar_vct.svg"
+// import HelpIcon from './assets/images/help-icon.svg'
+import TopbarModal from "./components/TopbarModal"
+// import HelpModal from './components/HelpModal'
+// import UserForm from '../../control/src/pages/ReportFeature/User/Form'
+// import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
+import { authAxios } from "./utils/Api"
+import Profile from "./components/Profile"
+// import Loader from 'react-loader-spinner'
+import { GetUserInfo, SubscribeToChannel } from "@zuri/control"
+import axios from "axios"
+import toggleStyle from "./styles/sidebartoggle.module.css"
+import { BsReverseLayoutTextSidebarReverse } from "react-icons/bs"
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
-  const { openModal, presence, setPresence } = useContext(TopbarContext)
+  const { closeModal, openModal, presence, setPresence } =
+    useContext(TopbarContext)
   const { setUser, user, userProfileImage, setOrgId, setUserProfileImage } =
     useContext(ProfileContext)
+  const state = useContext(TopbarContext)
+  const [showModal] = state.show
   const [organizations, setOrganizations] = useState([])
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState("")
   const [helpModal, setHelpModal] = useState(false)
+  // const [memberId, setMemberId] = useState('');
+  const [messages, setMessages] = useState("")
 
   useEffect(() => {
-    const userdef = JSON.parse(sessionStorage.getItem('user'))
+    // const fetchUser = async () => {
+    //   const info = await GetUserInfo()
+    //   setMemberId(info[0]._id)
+    // }
+
+    // fetchUser();
+
+    let currentWorkspace = localStorage.getItem("currentWorkspace")
+
+    const searchFunction = async () => {
+      let organization_id = `614679ee1a5607b13c00bcb7`
+      let member_id = `614732f4f41cb684cc531fc9`
+      // console.log(member_id, organization_id, "pim");
+      // console.log(search)
+      axios
+        .get(
+          `https://dm.zuri.chat/api/v1/org/${organization_id}/members/${member_id}/messages/search?keyword=${search}`
+        )
+        .then(response => {
+          // console.log(response.data.results[0])
+          setMessages(response.data.results)
+        })
+        .catch(err => {
+          console.error(err)
+        })
+    }
+
+    searchFunction()
+  }, [search])
+
+  useEffect(() => {
+    const userdef = JSON.parse(sessionStorage.getItem("user"))
+
+    getOrganizations()
 
     async function getOrganizations() {
       await authAxios
@@ -47,75 +87,149 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
               )
             })
             .catch(err => {
-              console.log(err.response.data)
+              console.error(err.response.data)
             })
         })
         .catch(err => {
-          console.log(err)
+          console.error(err)
         })
     }
-
-    setUserProfileImage(user.image_url)
 
     getOrganizations()
   }, [setOrgId, user.image_url, setUser])
 
+  const UpdateInfo = () => {
+    GetUserInfo().then(res => {
+      setUserProfileImage(res["0"].image_url)
+      setUser(res["0"])
+    })
+  }
+
+  useEffect(() => {
+    UpdateInfo()
+  }, [])
+
+  // RTC subscription
+  const callbackFn = event => {
+    const session_user = JSON.parse(sessionStorage.getItem("user"))
+    if (
+      event.event === "UpdateOrganizationMemberPic" ||
+      event.event === "UpdateOrganizationMemberStatus" ||
+      event.event === "UpdateOrganizationMemberProfile" ||
+      event.event === "UpdateOrganizationMemberPresence"
+    ) {
+      if (event.id === session_user["id"]) {
+        UpdateInfo()
+      } else return
+    } else return
+  }
+
+  const currentWorkspace = localStorage.getItem("currentWorkspace")
+
+  SubscribeToChannel(currentWorkspace, callbackFn)
+
+  // useEffect(() => {
+  //   if (showModal===true) {
+  //     document.addEventListener('click', openModal)
+  //   }
+  // },[showModal])
+
   let toggleStatus = null
 
   switch (presence) {
-    case 'true':
+    case "true":
       toggleStatus = (
         <ToggleStatus>
-          <div className="activeCircle" />
+          <div className="user-active" />
         </ToggleStatus>
       )
       break
     default:
       toggleStatus = (
         <ToggleStatus>
-          <div className="awayCircle" />
+          <div className="user-away" />
         </ToggleStatus>
       )
   }
 
-  return (
-    <TopNavBarBase>
-      <div>
-        <a href="#">
-          <img src={zurichatlogo} alt="zuri chat logo" />
-        </a>
-        {/* <LogoName>ZURI</LogoName> */}
-      </div>
-      <BaseInput
-        value={search}
-        onChange={e => setSearch(e.target.value)}
-        type="text"
-        width={7}
-        error
-        placeholder="Search here"
-        border={'#99999933'}
-      />
-      {/* <HelpContainer>
-        <HelpIcons onClick={() => setHelpModal(true)} />
-      </HelpContainer> */}
-      {helpModal ? <HelpModal setHelpModal={setHelpModal} /> : ''}
+  //Handle sidebar on mobile
+  const sidebar = document.getElementById(
+    "single-spa-application:@zuri/sidebar"
+  )
+  const zc_spa_body = document.querySelector("body")
+  const sidebar_toggle = document.querySelector("#sidebar_toggle")
+  const openSidebar = () => {
+    sidebar.style.display = "block"
+    sidebar.style.left = "0"
+    sidebar.style.width = "200px"
+    sidebar_toggle.style.display = "none"
+  }
 
-      {/* <UserForm /> */}
-      {/* <AdminForm /> */}
-      <div>
-        {toggleStatus}
-        <img
-          style={{ height: '30px', width: '30px', borderRadius: '5px' }}
-          src={userProfileImage ? userProfileImage : userAvatar}
-          onClick={openModal}
-          role="button"
-          alt="user profile avatar"
+  // zc_spa_body.addEventListener('click', () => {
+  //   if (window.outerWidth <= 768) {
+  //     if (sidebar !== null) {
+  //       sidebar.style.display = 'none'
+  //       sidebar_toggle.style.display = 'block'
+  //     }
+  //   } else {
+  //     if (sidebar !== null) {
+  //       sidebar.style.display = 'block'
+  //       sidebar_toggle.style.display = 'none'
+  //     }
+  //   }
+  // })
+
+  return (
+    <>
+      <div className="ps-3" style={{ width: "20%" }}>
+        {/* <a href="/home"> */}
+        <Logo src={zurichatlogo} alt="zuri chat logo" />
+        {/* </a> */}
+        <div
+          onClick={openSidebar}
+          id="sidebar_toggle"
+          className={toggleStyle.sidebar_toggle_icon}
+          style={{
+            top: "7rem"
+          }}
+        >
+          <BsReverseLayoutTextSidebarReverse
+            style={{
+              margin: "0.6rem 0.6rem"
+            }}
+            size={18}
+            fill="#fff"
+          />
+        </div>
+      </div>
+      <div className="ms-4" style={{ width: "60%" }}>
+        <BaseInput
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          type="text"
+          width={12}
+          error
+          placeholder="Search here"
+          border={"#99999933"}
         />
       </div>
+      <ProfileImageContainer
+        className="d-flex justify-content-end pe-3"
+        style={{ width: "20%" }}
+      >
+        {toggleStatus}
+        <ProfileImg
+          src={userProfileImage ? userProfileImage : defaultAvatar}
+          onClick={openModal}
+          role="button"
+          className="avatar-img"
+          alt="user profile avatar"
+        />
+      </ProfileImageContainer>
 
       <Profile />
       <TopbarModal />
-    </TopNavBarBase>
+    </>
   )
 }
 
@@ -127,35 +241,49 @@ export default connect(mapStateToProps)(TopNavBar)
 
 //  TopNavBar
 
-const TopNavBarBase = styled.div`
-  padding-inline-start: 1.5rem;
-  padding-inline-end: 1.5rem;
-  background-color: var(--bg-2);
+const LogoDiv = styled.div`
+  margin: auto 0;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  z-index: 5;
-  width: 100%;
-  font-size: 1.5rem;
-  // position: fixed;
-  // padding: 1rem;
-  // margin: auto;
-  // margin-bottom: 3rem !important;
+`
+const Logo = styled.img`
+  @media (min-width: 1023px) {
+    // width: 50%;
+  }
+  // @media (max-width: 768px) {
+  //   width: 60%;
+  // }
+  // @media (max-width: 425px) {
+  //   width: 80%;
+  // }
+`
+const ProfileImg = styled.img`
+  border-radius: 4px;
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+
+  @media (max-width: 1024px) {
+    height: 30px;
+  }
+  @media (max-width: 425px) {
+    // height: 22.4px;
+  }
+`
+const ProfileImageContainer = styled.div`
+  position: relative;
+
+  /* img {
+    object-fit: cover;
+    border-radius: 4px;
+    height: 30px;
+    width: 30px;
+  } */
 `
 
-// const LogoName = styled.span`
-//   font-family: Lato;
-//   font-size: 20px;
-//   font-style: normal;
-//   font-weight: 700;
-//   line-height: 27px;
-//   letter-spacing: 0px;
-//   padding: 0.5rem;
-//   text-align: center;
-//   vertical-align: middle;
-// `
-
 const HelpContainer = styled.div`
+  display: none;
+
   > .MuiSvgIcon-root {
     opacity: 0.5;
   }
@@ -163,29 +291,29 @@ const HelpContainer = styled.div`
     cursor: pointer;
     opacity: 0.5;
   }
+  @media (max-width: 425px) {
+    display: none;
+  }
 `
 const ToggleStatus = styled.div`
-  .activeCircle {
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  .user-active {
     background-color: green;
     height: 10px;
     width: 10px;
     border-radius: 50%;
     border: 1px solid white;
     margin-right: 15px;
-    position: absolute;
-    top: 42px;
-    right: 10px;
   }
 
-  .awayCircle {
+  .user-away {
     background-color: grey;
     height: 10px;
     width: 10px;
     margin-right: 15px;
     border-radius: 50%;
     border: 1px solid white;
-    position: absolute;
-    top: 42px;
-    right: 10px;
   }
 `

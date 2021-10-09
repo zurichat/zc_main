@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './reports.module.css'
+import { Container } from 'react-bootstrap'
 
 export const ComplaintProfiles = props => {
   const Continue = e => {
@@ -15,9 +16,11 @@ export const ComplaintProfiles = props => {
   const { values, inputChange } = props
 
   return (
-    <div className={styles.formcontainer}>
+    <Container className={styles.formcontainer}>
       <div className="main-container">
-        <h1 className={`mb-5 ${styles.head1}`}>Report Complaint</h1>
+        <h1 className={`mb-5 text-success ${styles.head1}`}>
+          Report Complaint
+        </h1>
 
         <br />
 
@@ -147,7 +150,7 @@ export const ComplaintProfiles = props => {
           </button>
         </div>
       </div>
-    </div>
+    </Container>
   )
 }
 

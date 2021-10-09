@@ -9,9 +9,10 @@ export const StyledProfileWrapper = styled.section`
     align-items: flex-start;
     .input-cage {
       flex-grow: 1;
-      margin-right: 5rem;
+      padding: 0 2rem;
       @media (max-width: 768px) {
         margin-right: 0;
+        padding: 0 0;
       }
       .mobileCon {
         width: 100%;
@@ -26,14 +27,14 @@ export const StyledProfileWrapper = styled.section`
             position: relative;
             width: 10rem;
             height: 10rem;
-            border-radius: 50%;
+            border-radius: 4px;
             .icon-container {
               position: absolute;
               top: -0.2rem;
               left: -0.2rem;
               width: 2rem;
               height: 2rem;
-              border-radius: 50%;
+              border-radius: 4px;
               background: #f6f6f6;
               border: 1px solid #fff;
               display: flex;
@@ -185,11 +186,21 @@ export const StyledProfileWrapper = styled.section`
       .avatar {
         width: 100%;
         height: 26rem;
-        .img {
-          object-fit: cover;
-          width: 100%;
-          height: auto;
-          margin-bottom: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        .avatar-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 192px;
+          height: 192px;
+          margin-bottom: 1.2rem;
+          .img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+          }
         }
       }
     }
@@ -230,19 +241,42 @@ export const StyledProfileWrapper = styled.section`
       background: #00b87c;
       color: #fff;
       border-radius: 4px;
+      text-align: center;
+      width: 85%;
+      margin: 0 auto;
+      padding: 0.5rem 1rem;
       &:hover {
         background: #029765;
         color: #fff;
         transition: all 0.3s ease-in-out;
       }
     }
-    &.rmvBtn {
-      background: none;
-      color: #999;
-      &:hover {
-        color: red;
-        transition: all 0.3s ease-in-out;
-      }
+    &.saveBtn {
+      background: #00b87c;
+      color: #fff;
+      border-radius: 4px;
+      text-align: center;
+    }
+  }
+  .rmvBtn {
+    background: none;
+    color: #999;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    margin: 0 auto;
+    &:hover {
+      color: red;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  .cncBtn {
+    background: none;
+    color: #999;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+    &:hover {
+      color: red;
+      transition: all 0.3s ease-in-out;
     }
   }
 `

@@ -6,7 +6,7 @@
 .dropDown__name,
 .icon,
 .item__icon {
-  color: #454545;
+  color: #202020;
 }
 
 .plugin_name {
@@ -65,4 +65,9 @@
 .item__image {
   width: 24px;
   margin-right: 0.5em;
+}
+
+.optionsContainer {
+  position: relative;
+  z-index: 9999999;
 }

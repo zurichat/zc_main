@@ -1,0 +1,115 @@
+.cardWrapper {
+  width: 100%;
+  max-width: 685px;
+  margin: 0 auto;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 2rem;
+}
+
+.cardHeading {
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.cardLists {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 3rem;
+}
+
+.cardList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cardDetails {
+  display: flex;
+  align-items: flex-start;
+}
+
+.cardImg {
+  width: 1.5rem;
+  height: auto;
+  margin-right: 1.5rem;
+}
+
+.ownerName {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.3;
+}
+
+.otherInfo {
+  font-size: 0.8125rem;
+  color: #333;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.buttonPrimary,
+.buttonSecondary {
+  outline: none;
+  padding: 0.4rem 1.3125rem;
+  border-radius: 4px;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.buttonPrimary {
+  background: #00b87c;
+  color: #fff;
+}
+
+.buttonPrimary:hover {
+  background: #029766;
+  transition: 0.3s all ease-in-out;
+}
+
+.buttonSecondary {
+  border: 1px solid #00b87c;
+  color: #00b87c;
+  margin-left: 0.5rem;
+}
+
+.buttonSecondary:hover {
+  background: #00b87c;
+  transition: 0.3s all ease-in-out;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .cardLists {
+    padding: 1.5rem 0;
+  }
+
+  .cardList {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cardImg {
+    margin-right: 0.5rem;
+  }
+
+  .btnContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .buttonPrimary,
+  .buttonSecondary {
+    font-size: 0.8rem;
+  }
+}

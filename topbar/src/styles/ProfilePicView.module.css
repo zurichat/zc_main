@@ -1,0 +1,27 @@
+.ppv_wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(30, 36, 41, 0.5);
+  animation: 0.3s cubic-bezier(0.1, 0.82, 0.25, 1);
+}
+
+.ppv_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.ppv_imgcontainer {
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+}

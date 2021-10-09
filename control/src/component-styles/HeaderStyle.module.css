@@ -4,7 +4,7 @@
   top: 0;
   z-index: 100;
   position: fixed;
-  width: 100%;
+  width: 105%;
   background-color: white;
 }
 
@@ -22,19 +22,27 @@
 }
 
 .navLinkFeatures {
-  margin-right: 40px;
+  margin-right: 30px;
 }
 
 .navLinkPricing {
-  margin-right: 40px;
+  margin-right: 30px;
 }
 
 .navLinkComms {
-  margin-right: 40px;
+  margin-right: 30px;
 }
 
 .image {
   margin: auto;
+}
+
+.searchImage {
+  position: relative;
+  left: 100px;
+}
+.searchImage1 {
+  display: none;
 }
 .navbarBrand {
   padding-left: 55px;
@@ -119,6 +127,13 @@
     padding-left: 0;
   }
   .toggle {
-    margin-right: 0;
+    margin-right: 10px;
+  }
+  .searchImage1 {
+    position: relative;
+    left: 30px;
+  }
+  .searchImage {
+    display: none;
   }
 }

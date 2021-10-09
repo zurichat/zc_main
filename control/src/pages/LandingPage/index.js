@@ -18,13 +18,28 @@ import Footer from '../../components/Footer'
 import { Link } from 'react-router-dom'
 import Cookies from '../cookies'
 import Subscribe from './components/Subscribe'
+import { Helmet } from 'react-helmet'
 
 export default function Homepage() {
   const { useState, useEffect } = React
 
   const [loading, setLoading] = useState(true)
-  const allowCookie = sessionStorage.getItem('cookies-allow')
-  const declineCookie = sessionStorage.getItem('cookies-decline')
+
+  const cookieStorage = {
+    getItem: key => {
+      const cookies = document.cookie
+        .split(';')
+        .map(cookie => cookie.split('='))
+        .reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: value }), {})
+      return cookies[key]
+    },
+    setItem: (key, value) => {
+      document.cookie = `${key}=${value}`
+    }
+  }
+
+  const allowCookie = cookieStorage.getItem('Zuri Chat Accept')
+  const declineCookie = cookieStorage.getItem('Zuri Chat Decline')
 
   if (!allowCookie == true || declineCookie == true) {
     useEffect(() => {
@@ -39,6 +54,9 @@ export default function Homepage() {
   const FeatureRow = props => {
     return (
       <div className={`${style.ft_row} ${props.rowOrder}`}>
+        <Helmet>
+          <title>Zuri Chat - Connect and Interact</title>
+        </Helmet>
         <div className={`${style.ft_col}`}>
           <img src={props.src} alt={props.alt} className={`${style.ft_img}`} />
         </div>

@@ -1,10 +1,16 @@
-import React from 'react'
-import logo from './assets/logo.svg'
+import React from "react"
+import { Helmet } from "react-helmet"
+
+import styles from "./styles/weeklySummary.modules.css"
+import logo from "./assets/logo.svg"
 
 const WeeklySummary = () => {
   return (
     <>
       <article className={styles.summary_wrapper}>
+        <Helmet>
+          <title>Weekly Summary - Zuri Chat</title>
+        </Helmet>
         <header>
           <img src={logo} alt="Zuri logo" />
           <h3>Sunday, Sept 5th - Saturday, Sept 11th</h3>
@@ -40,7 +46,7 @@ const WeeklySummary = () => {
             uploaded 2 files ( that’s 1 more than the week before).
           </p>
           <p>
-            Looking for more stats? Check out{' '}
+            Looking for more stats? Check out{" "}
             <em>your workspace’s stats page</em>
           </p>
         </section>

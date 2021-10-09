@@ -8,8 +8,7 @@ import { DialogOverlay, DialogContent } from '@reach/dialog'
 import TopNavBar from './TopNavBar'
 import userAvatar from './assets/images/user.svg'
 import { ProfileProvider } from './context/ProfileModal'
-import { TopbarProvider } from './context/Topbar'
-import { TopbarContext } from './context/Topbar'
+import { TopbarProvider, TopbarContext } from './context/Topbar'
 
 // Input tag
 const Input = ({
@@ -290,21 +289,20 @@ export default Test
 
 const BaseInput = styled.input`
   border: 1px ${inActive} solid;
-  padding: 0.25rem 1rem;
+  padding: 0.2rem 1rem;
   font-weight: 400;
   margin: 0;
   font-family: inherit;
-  font-size: inherit;
+  font-size: 1rem;
   line-height: inherit;
   border-radius: 3px;
   background-color: transparent;
-  height: 3rem;
   width: ${props => (props.width / 12) * 100}%;
   box-sizing: border-box;
   &::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
-    color: #bebebe;
-    font-size: 1.2rem;
+    color: background: #616061;    ;
+    font-size: 13px;
   }
   &:hover {
     border: 1px ${active} solid;
@@ -314,6 +312,12 @@ const BaseInput = styled.input`
   }
   &:focus-visible {
     border: 1px ${active} solid !important;
+  }
+  @media (max-width: 768px) {
+    padding: 0.1rem 1rem;
+        }
+  @media (max-width: 425px) {
+display:none;
   }
 `
 const BaseLabel = styled.label`

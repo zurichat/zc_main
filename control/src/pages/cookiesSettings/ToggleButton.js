@@ -26,14 +26,14 @@ const Slider = styled.span`
   display: flex;
   align-items: center;
   justify-content: var(--justify-item);
-  height: 15.92px;
-  width: 35.22px;
+  height: 22px;
+  width: 45px;
   background-color: var(--background-color);
   border-radius: 15.2px;
   &:before {
     content: '';
-    width: 16.89px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     cursor: pointer;
     background: white;

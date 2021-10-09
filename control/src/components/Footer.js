@@ -1,13 +1,12 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react'
-import styles from '../component-styles/FooterStyle.module.css'
-import logo from '../component-assets/zurichatlogo.svg'
-import facebook from '../component-assets/facebook.svg'
-import twitter from '../component-assets/twitter.svg'
-import linkedin from '../component-assets/linkedin.svg'
-import instagram from '../component-assets/instagram.svg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import React, { useState } from "react"
+import styles from "../component-styles/FooterStyle.module.css"
+import logo from "../component-assets/zurichatlogo.svg"
+import facebook from "../component-assets/facebook.svg"
+import twitter from "../component-assets/twitter.svg"
+import linkedin from "../component-assets/linkedin.svg"
+import instagram from "../component-assets/instagram.svg"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons"
 
 const Footer = () => {
   const getYear = () => {
@@ -53,40 +52,22 @@ const Footer = () => {
             <h5>Company</h5>
             <ul>
               <li>
-                <a href="/events">Events</a>{' '}
+                <a href="/careers">Careers</a>{" "}
               </li>
               <li>
-                <a href="/blog">Blog posts</a>{' '}
-              </li>
-              <li>
-                <a href="/careers">Careers</a>{' '}
+                <a href="/about">About Zurichat</a>{" "}
               </li>
             </ul>
           </div>
 
           <div>
-            <h5>Explore</h5>
+            <h5>Info</h5>
             <ul>
               <li>
-                <a href="/download-app">Downloads</a>{' '}
+                <a href="/privacy">Privacy & Terms</a>{" "}
               </li>
               <li>
-                <a href="/features">Features</a>{' '}
-              </li>
-              <li>
-                <a href="/apps-integrations">Apps & Integration</a>{' '}
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h5>Policy</h5>
-            <ul>
-              <li>
-                <a href="/privacy">Privacy</a>{' '}
-              </li>
-              <li>
-                <a href="/terms">Terms</a>{' '}
+                <a href="/marketplace">Market Place</a>{" "}
               </li>
             </ul>
           </div>
@@ -95,13 +76,10 @@ const Footer = () => {
             <h5>Know us</h5>
             <ul>
               <li>
-                <a href="/about">About Zuri Chat</a>{' '}
+                <a href="/download-app">Downloads</a>{" "}
               </li>
               <li>
-                <a href="/contact-us">Contact Us</a>{' '}
-              </li>
-              <li>
-                <a href="/help">Help center</a>{' '}
+                <a href="/contact-us">Contact Us</a>{" "}
               </li>
             </ul>
           </div>
@@ -129,7 +107,7 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="/twitter">
+              <a href="https://twitter.com/zurichat">
                 <img
                   src={twitter}
                   alt="Twitter"
