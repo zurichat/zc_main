@@ -45,7 +45,7 @@ const CarouselPage = () => {
                 Company Files
               </h3>
               <p>
-                Access your files on google drive while <br /> on Zuri Chat.
+                Access your files on Zuri Files while <br /> on Zuri Chat.
               </p>
             </MDBCarouselCaption>
           </MDBCarouselItem>
@@ -57,7 +57,7 @@ const CarouselPage = () => {
             <MDBCarouselCaption className={styles.carouselCaption}>
               <h3 className="h3-responsive">Accessibility</h3>
               <p>
-                Be in control, Use zuri Chat as you will <br /> and have a
+                Be in control, Use Zuri Chat as you will <br /> and have a
                 pleasant experience.
               </p>
             </MDBCarouselCaption>

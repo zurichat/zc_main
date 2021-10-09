@@ -26,7 +26,7 @@ const index = () => {
       <div className={`container`}>
         <div className={`${styles.banner}`}>
           <h1>
-            Make more life simpler, more pleasant and <br />
+            Make life more simple, more pleasant and <br />
             more productive.
           </h1>
           <p>
@@ -72,8 +72,8 @@ const index = () => {
           <div className={`col-lg-6 ${styles.join_us}`}>
             <h3>Who we are and how to join us</h3>
             <p>
-              We live by our mission, and improving people’s working life starts
-              with our own company. We’re building a platform and products we
+              We live by our mission, and improving the working life of individuals starts
+              with our own Company. We’re building a platform and products we
               believe in — <br />
               as well as a strong, diverse team of curious, creative people who
               want to do the best work of their lives and support each other in
@@ -90,7 +90,7 @@ const index = () => {
       {/* work remotely more intriging than ever  */}
       <div className={`container`}>
         <div className={`col-lg-12 ${styles.working_remote}`}>
-          <h3>Working remotely more intriging than ever</h3>
+          <h3>Working remotely more intriguing than ever</h3>
           <p>
             Zuri Chat is where work meets fun. Activate body and mind, maintain
             high productivity levels, <br />
@@ -104,7 +104,7 @@ const index = () => {
             <img src={channel} alt={'centralized space'} />
             <h6>Channels</h6>
             <p>
-              Increase level of organization in your team focused with <br />
+              Increased level of organization in your team focused with <br />
               centralized spaces
             </p>
           </div>
@@ -112,7 +112,7 @@ const index = () => {
             <img src={holiday} alt={'image of calender'} />
             <h6>Holiday Calender</h6>
             <p>
-              Add holidays, set reminders <br />
+              Add Holidays, set reminders <br />
               and see all in one view
             </p>
           </div>
@@ -121,7 +121,7 @@ const index = () => {
             <h6>Company Deadline</h6>
             <p>
               Meet up with deadlines with <br />
-              the company deadline <br />
+              the Company Deadline <br />
               feature.
             </p>
           </div>
@@ -139,7 +139,7 @@ const index = () => {
             <h6>To do List</h6>
             <p>
               Organize tasks with the to-do <br />
-              list feature ensuring urgent <br />
+              list feature ensuring priortized <br />
               tasks are duly attended to.
             </p>
           </div>
@@ -151,7 +151,7 @@ const index = () => {
         <h3>Special Feature You Need</h3>
         <p>
           Get all your work tools and information assembled in one place for
-          easy access and increase Productivity{' '}
+          easy access and increased Productivity{' '}
         </p>
       </div>
       <CarouselSecond className={styles.carouselCaption} />
@@ -166,22 +166,22 @@ const index = () => {
             <img src={group} alt={'image of a company file'} />
             <h6 className={``}>Company Files</h6>
             <p>
-              Access your files on google drive while <br /> on Zuri Chat.
+              Access your files on Company Files while <br /> on Zuri Chat.
             </p>
           </div>
           <div className={`col ${styles.vector}`}>
             <img src={vector} alt={'accessibility image'} />
             <h6 className={``}>Accessibility</h6>
             <p>
-              Be in control, Use zuri Chat as you will <br /> and have a
-              pleasant experience.
+              Be in control, Use Zuri Chat as you will <br /> and have a
+              delightful experience.
             </p>
           </div>
           <div className={`col ${styles.vector}`}>
             <img src={user2} alt={'image of target board'} />
             <h6 className={``}>Company Goals</h6>
             <p>
-              Keep up with company goals to stay on <br /> track with your team.
+              Keep up with Company Goals to stay on <br /> track with your team.
             </p>
           </div>
         </div>
@@ -190,7 +190,7 @@ const index = () => {
       <div className={`container-fluid ${styles.zurichat}`}>
         <div className={`${styles.zurichat_section}`}>
           <h3 className={`${styles.zurichat_h3}`}>
-            Whatever work you do, you can do it in Zuri Chat
+            Whatever work you do, you can do it on Zuri Chat
           </h3>
           <div className={`styles.button`}>
             <button className={`btn ${styles.btn_sale}`}>Talk to sales</button>
