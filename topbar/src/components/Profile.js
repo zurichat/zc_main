@@ -126,6 +126,7 @@ const Profile = () => {
                 : "/settings"
             }><FiSettings className={styles.iconSettings} /></a>
         </div>
+        
 
         <div className={styles.buttonGroups}>
           <div>
