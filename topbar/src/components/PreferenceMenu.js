@@ -81,16 +81,6 @@ const PreferenceMenu = () => {
           </p>
         </div>
         <div
-          onClick={() => setSideBar(8)}
-          className={sideBar === 8 ? styles.active : styles.one}
-        >
-          <FiVideo className={styles.icon} /> 
-          <p>
-            {' '}
-            Audio & Video
-          </p>
-        </div>
-        <div
           onClick={() => setSideBar(9)}
           className={sideBar === 9 ? styles.active : styles.one}
         >
