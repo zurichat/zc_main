@@ -39,7 +39,7 @@ import Permissions from './pages/admin/Permissions'
 import SettingsHome from './pages/admin/Settings/index'
 import About from './pages/about/index'
 import AdminSettingsTab from './pages/admin/Settings/components/AdminSettingsTab'
-import TermsOfService from './pages/termsOfService
+import TermsOfService from './pages/termsOfService'
 import RedirectRoute from './pages/redirect'
 
 // useEffect(() => {
