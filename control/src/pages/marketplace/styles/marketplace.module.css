@@ -102,7 +102,7 @@
 
 .marketplaceHero h1 {
   font-weight: 800;
-  font-size: 33px;
+  font-size: 40px;
   width: 75%;
   text-align: left;
   text-transform: capitalize;
@@ -176,8 +176,8 @@
 }
 
 .circleBackground {
-  width: 400px;
-  height: 600px;
+  width: 305px;
+  height: 500px;
   position: relative;
 }
 
@@ -202,19 +202,19 @@
 
 .svgConnectionLineOne {
   position: absolute;
-  left: -92%;
-  top: 24%;
+  left: -69%;
+  top: 50%;
 }
 
 .svgConnectionLineTwo {
   position: absolute;
-  left: 15%;
+  left: 45%;
 }
 
 .svgConnectionLineThree {
   position: absolute;
-  top: -109%;
-  right: 33%;
+  top: -61%;
+  right: 5%;
 }
 
 .marketplaceTabs {
