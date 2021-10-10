@@ -7,7 +7,7 @@ import ThankYouModal from "./ThankYouModal"
 const Subscribe = () => {
   const [email, setEmail] = useState("")
 
-  const [displayModal, setDisplayModal] = useState(false)
+  const [displayModal, setDisplayModal] = useState(true)
 
   const handleSubmit = async event => {
     event.preventDefault()
@@ -23,7 +23,7 @@ const Subscribe = () => {
           setDisplayModal(true)
           setTimeout(() => {
             setDisplayModal(false)
-          }, 7000)
+          }, 3000)
         }
       })
       .catch(error => {
