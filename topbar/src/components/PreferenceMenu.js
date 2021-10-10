@@ -65,22 +65,13 @@ const PreferenceMenu = () => {
           </p>
         </div>
         <div
-          onClick={() => setSideBar(7)}
+          onClick={() => setSideBar(7)} 
           className={sideBar === 7 ? styles.active : styles.one}
         >
           <p>
             {' '}
             <BsCheckCircle className={styles.icon} />
             Mark as read
-          </p>
-        </div>
-        <div
-          onClick={() => setSideBar(8)}
-          className={sideBar === 8 ? styles.active : styles.one}
-        >
-          <p>
-            {' '}
-            <FiVideo className={styles.icon} /> Audio & Video
           </p>
         </div>
         <div
