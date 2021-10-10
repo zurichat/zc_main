@@ -39,6 +39,8 @@ import Permissions from './pages/admin/Permissions'
 import SettingsHome from './pages/admin/Settings/index'
 import About from './pages/about/index'
 import AdminSettingsTab from './pages/admin/Settings/components/AdminSettingsTab'
+import TermsOfService from './pages/termsOfService
+import RedirectRoute from './pages/redirect'
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -56,9 +58,9 @@ const App = () => {
         <Route path="/" exact>
           <LandingPage />
         </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
+        <RedirectRoute path="/login">
+         <Login />
+       </RedirectRoute>
         <Route path="/signup">
           <SignUp />
         </Route>
@@ -109,6 +111,9 @@ const App = () => {
         </Route>
         <Route path="/privacy">
           <PrivacyPolicy />
+        </Route>
+        <Route path="/terms">
+          <TermsOfService />
         </Route>
         <Route path="/marketplace" exact>
           <MarketPlace />
