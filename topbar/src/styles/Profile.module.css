@@ -9,6 +9,7 @@
   z-index: 10000;
   overflow-y: scroll;
 }
+
 .ProfileContainer::-webkit-scrollbar {
   display: none;
 }
@@ -29,7 +30,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
+
+  /* padding: 0 1rem; */
 }
 
 .title {
@@ -81,7 +83,7 @@
   font-family: "Lato", sans-serif;
 }
 
-.userDetails h3 span {
+/* .userDetails h3 span {
   width: 1rem;
   height: 1rem;
   display: flex;
@@ -93,7 +95,7 @@
   font-weight: 900;
   border-radius: 1px;
   margin-left: 0.5rem;
-}
+} */
 
 .mobileBackButton {
   display: none;
@@ -122,8 +124,10 @@
   align-items: center;
   margin-top: 1.5rem;
   margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
+
+  /* display: flex; */
+
+  /* align-items: center; */
   justify-content: space-between;
 }
 
@@ -135,22 +139,25 @@
   justify-content: center;
   width: 3rem;
   height: 3rem;
-
   border-radius: 50%;
   font-weight: 700;
   border: none;
 }
+
 .ctaText {
   font-size: 12px;
   color: rgb(128, 126, 126);
   text-align: center;
 }
+
 .buttonGroups button:hover {
   background: #00b87c;
 }
+
 .ctaButtonIcon {
   color: rgb(126, 123, 123);
 }
+
 .buttonGroups button:hover .ctaButtonIcon {
   color: #fff;
 }
@@ -167,9 +174,11 @@
   color: #3a3a3a;
   margin-bottom: 0.1rem;
 }
+
 .infoTitle a {
   margin: 0;
 }
+
 .infoContent,
 .infoLink {
   font-size: 1rem;
@@ -200,7 +209,7 @@
   top: 30%;
   right: 16px;
   width: 227px;
-  background: #ffffff;
+  background: #fff;
   border: 1px solid #bebebe;
   border-radius: 10px;
 }
@@ -246,6 +255,7 @@
 .mobile {
   display: none;
 }
+
 .h3users {
   margin-right: -1em;
   margin-top: 7px;
@@ -256,12 +266,15 @@
   padding-left: 5px;
   padding-bottom: 10px;
   position: absolute;
+
   /* left: 15px; */
   right: 70px;
+
   /* top: 108px; */
   background: none;
   transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+
 .myp {
   margin: 7px 1px 10px !important;
   position: relative;
@@ -278,7 +291,7 @@
     height: 100vh;
     margin-top: 5px;
     overflow-y: auto;
-    border-radius: 8px 8px 0px 0px;
+    border-radius: 8px 8px 0 0;
   }
 
   /* .header {
@@ -368,15 +381,18 @@
     stroke: #000;
     stroke-width: 2px;
   }
+
   .userDetails {
     display: none;
   }
+
   .userAvatar {
     display: flex;
     align-self: center;
     margin: 0 auto;
     width: 80%;
     height: 23rem;
+
     /* object-fit: contain; */
   }
 }
