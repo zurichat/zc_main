@@ -1,11 +1,17 @@
-.navbar {
-  border-bottom: 1px solid rgba(187, 186, 231, 0.15);
-  padding: 0.5rem 1rem;
+.pageHeader {
+  box-shadow: 0 0.5rem 1rem rgba(187, 186, 231, 0.15);
   top: 0;
   z-index: 100;
   position: fixed;
-  width: 105%;
+  width: 100%;
+}
+
+.navbar {
+  padding: 0.5rem 1rem;
   background-color: white;
+  max-width: 95%;
+  margin: 0 auto;
+  position: relative;
 }
 
 .navbar_toggle_icon span {
@@ -22,31 +28,29 @@
 }
 
 .navLinkFeatures {
-  margin-right: 30px;
+  _margin-right: 30px;
 }
 
 .navLinkPricing {
-  margin-right: 30px;
+  _margin-right: 30px;
 }
 
 .navLinkComms {
-  margin-right: 30px;
+  _margin-right: 30px;
 }
 
 .image {
   margin: auto;
 }
 
-.searchImage {
+.search_wrapper {
   position: relative;
-  left: 100px;
 }
-.searchImage1 {
-  display: none;
-}
+
 .navbarBrand {
-  padding-left: 55px;
+  _padding-left: 55px;
 }
+
 .navbarBrand span {
   padding: 0.5rem;
   font-size: 22px;
@@ -54,16 +58,18 @@
 }
 
 .signs {
-  padding-right: 6rem;
+  _padding-right: 6rem;
 }
+
 .signs li {
   padding: 8px 20px;
 }
+
 .signU {
   color: #00b87c;
   font-weight: 400;
   font-size: 18px;
-  padding: 8px 10px;
+  _padding: 8px 10px;
 }
 
 .signU:hover {
@@ -88,52 +94,95 @@
   color: black;
   font-size: 18px;
   font-weight: 400;
-  padding: 8px 5px;
+  _padding: 8px 5px;
 }
+
+.navbarNav {
+  flex-basis: 70%;
+}
+
 .navbarNav li span:hover {
   border-bottom: 0.2rem solid #00b87c;
 }
+
 .toggle {
-  margin-right: 12px;
+  _margin-right: 12px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .navbarNav {
+    flex-basis: 90%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .search_wrapper {
+    display: none;
+  }
+
+  .navbarNav {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .navbarNav li {
+    padding: 5px 0;
+  }
+
+  .signs {
+    display: grid;
+    padding: 10px 0;
+    margin: 0;
+  }
+
+  .signs li {
+    margin: 0.5rem 0;
+    list-style: none;
+    padding: 0;
+  }
+
+  .search_wrapper2 {
+    margin-right: -20%;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .navbarBrand {
     padding-left: 12px;
   }
+
   .navbarNav li {
     padding: 5px 0;
   }
+
   .navbarNav li span:hover {
     border-bottom: none;
   }
-  .signs {
-    display: inline-flex;
-    padding: 0 10px;
-  }
-  .signs li {
-    padding: 0 20px;
-  }
+
   .signU:hover {
     border-bottom: none;
     color: #00b87c;
   }
 }
-@media screen and (max-width: 414px) {
+
+@media screen and (max-width: 480px) {
   .navbarNav li span {
     padding-left: 0;
   }
+
   .navbarBrand {
     padding-left: 0;
   }
+
   .toggle {
     margin-right: 10px;
   }
-  .searchImage1 {
-    position: relative;
-    left: 30px;
-  }
+
   .searchImage {
     display: none;
+  }
+
+  .search_wrapper2 {
+    margin-right: -10%;
   }
 }
