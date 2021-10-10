@@ -1,0 +1,85 @@
+.heading {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.para {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.tokenAmount {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: #333;
+}
+
+.tokenAmount span {
+  font-weight: 600;
+}
+
+.infoIcon {
+  font-size: 1.5rem;
+  color: #00b87c;
+  margin-left: 0.65rem;
+}
+
+.overview {
+  width: 100%;
+}
+
+.overview p {
+  border: 2px solid #00b87c;
+  padding: 2rem;
+  padding-left: 0.8rem;
+  padding-right: 4rem;
+  padding-top: 0.2rem;
+  margin: 1rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.overview p span {
+  display: block;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.container button {
+  padding: 0.8rem 2.5rem;
+  margin: 2rem;
+  color: #fff;
+  background-color: #00b87c;
+}
+
+.container button:hover,
+.container button:active,
+.container button:focus {
+  color: #fff;
+  background: #029161;
+  transition: 0.3s ease-in-out all;
+  box-shadow: none;
+}
+
+.referal {
+  width: 70% !important;
+}
+
+.referal:active,
+.referal:focus {
+  box-shadow: none;
+  border-color: none;
+}
+
+.rInfo > p {
+  margin-top: 0.8rem;
+}
+
+.paymentSelection {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-left: 43rem;
+}

@@ -1,0 +1,42 @@
+.addUserModal {
+  width: 35%;
+  /* height: 40vh; */
+  position: relative;
+  top: 5%;
+  /* overflow-y: scroll; */
+}
+
+/* .displayMember::-webkit-scrollbar {
+    /* display: none; /* Hide scrollbar for IE, Edge and Firefox * *
+  } */
+
+.displayMember {
+  height: 10vh;
+  width: 100%;
+  /* -ms-overflow-style: none;  /* Hide scrollbar IE and Edge *
+    scrollbar-width: none;  /* Hide scrollbar Firefox * */
+  overflow-y: scroll;
+}
+
+.userDisplay {
+  cursor: pointer;
+}
+
+.userDisplay:hover {
+  /* cursor: pointer; */
+  color: #00b87c;
+}
+
+@media only screen and (max-width: 768px) {
+  .addUserModal {
+    width: 80%;
+    /* height: 45vh; */
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .addUserModal {
+    width: 100%;
+    /* height: 60vh; */
+  }
+}

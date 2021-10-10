@@ -117,8 +117,8 @@ export default function Homepage() {
         </div>
         {/* { COOKIES BANNER} */}
         <div>{loading ? '' : <Cookies />}</div>
-        {/* COMPANIES */}
-        <div className={`${style.company_banner_wrap}`}>
+         {/* COMPANIES */}
+        {/* <div className={`${style.company_banner_wrap}`}>
           <div className={`${style.company_banner}`}>
             <p className={`${style.cbp}`}>Trusted by top companies worldwide</p>
             <div className={`${style.logos}`}>
@@ -128,8 +128,7 @@ export default function Homepage() {
               <img src={logo_zuri} alt="" className={`${style.logo}`} />
             </div>
           </div>
-        </div>
-
+        </div> */}
         {/* FEATURES */}
         <div className={`${style.features_wrap}`}>
           <div className={`${style.features}`}>

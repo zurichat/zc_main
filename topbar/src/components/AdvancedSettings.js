@@ -10,18 +10,18 @@ const AdvancedSettings = () => {
           <div className={styles.checktype}>
             <input type="checkbox" name="" id="" />
             <div className={styles.typing}>
-              <span>When typing code with "", should send the message </span>
+              <h3>When typing code with "", should send the message </h3>
               <div className={styles.typingticket}>
                 With this ticket, use
-                <button className={styles.btn}>Shift</button> to send
+                <button className={styles.btn1}>Shift</button> to send
               </div>
             </div>
           </div>
           <div className={styles.checkformat}>
             <input type="checkbox" name="" id="" />
             <div className={styles.format}>
-              <span> Format messages with markup</span>
-              The text formatting toolbar won't show in the composer
+              <h3>Format messages with markup</h3>
+              <div className={styles.format2}><h3>The text formatting toolbar won't show in the composer</h3></div>
             </div>
           </div>
         </div>
@@ -35,8 +35,8 @@ const AdvancedSettings = () => {
             <input type="radio" name="" id="" />
             <div className={styles.start}>
               Start a new line (use
-              <button className={styles.btn}>Ctrl</button>
-              <button className={styles.btn}>Enter</button> to send )
+              <button className={styles.btn2}>Ctrl</button>
+              <button className={styles.btn3}>Enter</button> to send )
             </div>
           </div>
         </div>
@@ -44,34 +44,33 @@ const AdvancedSettings = () => {
       <div className={styles.line}></div>
       <div className={styles.search}>
         <h5 className={styles.head}>Search Options</h5>
-        <div className="check">
+        <div className={styles.check}>
           <div className={styles.checktype}>
             <input type="checkbox" name="" id="" />
             <div className={styles.behaviour}>
-              <span>
-                <button className={styles.btn}>Ctrl</button>
-                <button className={styles.btn}>F</button>
+              <div className={styles.up}>
+                <button className={styles.btn4}>Ctrl</button>
+                <button className={styles.btn5}>F</button>
                 Starts a Zurichat chat
-              </span>
-              Overrides normal behaviour in search behaviour
+              </div>
+              <div className={styles.over}>Overrides normal behaviour in search behaviour</div>
             </div>
           </div>
           <div className={styles.checkformat}>
             <input type="checkbox" name="" id="" />
             <div className={styles.browser}>
-              <span>
-                <button className={styles.btn}>Ctrl</button>
-                <button className={styles.btn}>K</button>
+              <div className={styles.quick}>
+                <button className={styles.btn6}>Ctrl</button>
+                <button className={styles.btn7}>K</button>
                 Starts the quick switcher
-              </span>
-              Overrides normal behaviour in some browsers
+              </div>
+              <div className={styles.ride}>Overrides normal behaviour in some browsers</div>
             </div>
           </div>
         </div>
-        <h5 className={styles.head}>
-          {' '}
-          Exclude these channels from search results:
-        </h5>
+        <div className={styles.exclude}>
+        <h5>Exclude these channels from search results:</h5>
+        </div>
         <div className={styles.barcontainer}>
           <div className={styles.bar}>
             <input
@@ -91,10 +90,10 @@ const AdvancedSettings = () => {
           <div className={styles.checkkeys}>
             <input type="checkbox" name="" id="" />
             <div className={styles.keys}>
-              <button className={styles.btn}>Page up</button>,
-              <button className={styles.btn}>Page Down</button>,
-              <button className={styles.btn}>Home</button> and
-              <button className={styles.btn}>End</button>
+              <button className={styles.btn8}>Page up</button>,
+              <button className={styles.btn9}>Page Down</button>,
+              <button className={styles.btn10}>Home</button> and
+              <button className={styles.btn11}>End</button>
               keys always scroll messages
             </div>
           </div>
@@ -107,11 +106,10 @@ const AdvancedSettings = () => {
           </div>
           <div className={styles.survey}>
             <input type="checkbox" name="" id="" />
-            <p>
-              <span>Send me occasional survey via Zurichat bot</span> We're
-              working to make Zurichat better. We'd always love to hear your
-              thoughts
-            </p>
+            <div className={styles.surveyin}>
+              <div className={styles.sendme}>Send me occasional survey via Zurichat bot</div> 
+              <div className={styles.working}>We're working to make Zurichat better. We'd always love to hear your thoughts</div>
+            </div>
           </div>
           <div className={styles.warn}>
             <input type="checkbox" name="" id="" />

@@ -1,13 +1,31 @@
-import React, { useEffect, useState } from 'react'
-import { withRouter } from 'react-router-dom'
-import axios from 'axios'
+import React, { useEffect, useState } from "react"
+import { withRouter } from "react-router-dom"
+import axios from "axios"
 // import {GetUserInfo} from '../../zuri-control'
-import { SignoutStyleWrapper } from '../../component-styles/SignoutStyle'
-import logo from '../../component-assets/zuri.svg'
-import { Helmet } from 'react-helmet'
+import { SignoutStyleWrapper } from "../../component-styles/SignoutStyle"
+import logo from "../../component-assets/zuri.svg"
+import { Helmet } from "react-helmet"
 
 const Signout = ({ history }) => {
-  const orgName = localStorage.getItem('orgName')
+  const orgName = localStorage.getItem("orgName")
+
+  let token = sessionStorage.getItem("token")
+
+  useEffect(() => {
+    axios({
+      method: "post",
+      url: `https://api.zuri.chat/auth/logout`,
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+      .then(res => {
+        // console.log(res)
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  })
 
   return (
     <>
@@ -25,7 +43,7 @@ const Signout = ({ history }) => {
             You have been signed out of Team {orgName} Workspace
           </signoutMessage>
 
-          <button className="push" onClick={() => history.push('/login')}>
+          <button className="push" onClick={() => history.push("/login")}>
             Login
           </button>
           <p className="login">

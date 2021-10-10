@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
-import styles from '../../styles/adminTab.module.css'
+import styles from '../styles/AdminSettingsTab.module.css'
 
 // components
 import AdminSettings from '../adminSettings'
-import SettingsTab from '../../components/SettingsTab'
+import AuthTab from './AuthTab'
 import MembersTab from '../../components/MembersTab'
 import HistoryTab from '../../components/HistoryTab'
 
@@ -16,7 +16,7 @@ const AdminSettingsTab = () => {
   const [active, setActive] = useState(1)
 
   return (
-    <div className={styles.tabWrapper}>
+    <div className={`${styles.tabWrapper} mt-4`}>
       <div onClick={() => setOpenTab(!openTab)} className={styles.mobileToggle}>
         <FiMenu className={styles.menuIcon} />
       </div>
@@ -75,7 +75,7 @@ const AdminSettingsTab = () => {
           />
         )}
         {active === 2 && <HistoryTab />}
-        {active === 3 && <SettingsTab />}
+        {active === 3 && <AuthTab />}
         {active === 4 && <MembersTab />}
       </div>
     </div>

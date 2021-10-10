@@ -164,7 +164,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
             onClick={() => setModal(!openModal)}
             activeClassName={styles.sidebarLinkActive}
             className={styles.sidebarLink}
-            to="/admin/settings/permission"
+            to="/admin/settings"
           >
             <FiSettings className={styles.icon} />
             Settings & permission
