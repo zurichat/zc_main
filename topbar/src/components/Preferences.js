@@ -31,7 +31,6 @@ const Preferences = () => {
           {sideBar === 5 && <LanguageAndRegion />}
           {sideBar === 6 && <Accessibility />}
           {sideBar === 7 && <MarkAsRead />}
-          {sideBar === 8 && <AudioVideo />}
           {sideBar === 9 && <AdvancedSettings />}
         </div>
       </div>
