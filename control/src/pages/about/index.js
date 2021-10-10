@@ -195,7 +195,7 @@ const index = () => {
             </Link>
             <Link to="/signup">
               <button className={`btn ${styles.btn_free}`}>
-                Try it for free
+                Try it for free 
               </button>
             </Link>
           </div>
