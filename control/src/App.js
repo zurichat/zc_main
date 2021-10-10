@@ -62,9 +62,6 @@ const App = () => {
        <SecureRoute path="/login">
          <Login />
        </SecureRoute>
-        <Route path="/login">
-          <Login />
-        </Route>
         <Route path="/signup">
           <SignUp />
         </Route>
