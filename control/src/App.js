@@ -40,6 +40,7 @@ import Permissions from './pages/admin/Permissions'
 import SettingsHome from './pages/admin/Settings/index'
 import About from './pages/about/index'
 import AdminSettingsTab from './pages/admin/Settings/components/AdminSettingsTab'
+import SecureRoute from './pages/redirect'
 
 
 // useEffect(() => {
@@ -58,6 +59,9 @@ const App = () => {
         <Route path="/" exact>
           <LandingPage />
         </Route>
+       <SecureRoute path="/login">
+         <Login />
+       </SecureRoute>
         <Route path="/login">
           <Login />
         </Route>
