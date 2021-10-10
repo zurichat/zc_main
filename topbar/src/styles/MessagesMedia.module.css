@@ -53,7 +53,6 @@
   font-weight: normal;
   margin-top: 6px;
   color: #3a3a3a;
-  margin-left: -440px;
 }
 
 .theme11 {
@@ -125,7 +124,6 @@
   font-weight: normal;
   font-style: normal;
   color: #999999;
-  margin-left: -298px;
 }
 
 .change p {
@@ -216,7 +214,6 @@
   line-height: 20px;
   font-style: normal;
   color: #333333;
-  margin-left: -510px;
 }
 
 .tone {
@@ -226,7 +223,6 @@
   line-height: 20px;
   font-weight: normal;
   font-style: normal;
-  margin-left: -448px;
 }
 
 .choose {
@@ -236,7 +232,6 @@
   line-height: 20px;
   font-weight: normal;
   font-style: normal;
-  margin-left: -90px;
 }
 
 .choose2 {
@@ -245,7 +240,6 @@
   line-height: 20px;
   font-weight: normal;
   font-style: normal;
-  margin-left: -408px;
 }
 
 .hands {
@@ -254,48 +248,72 @@
 }
 
 .theme13 {
-  width: 6.5%;
-  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7.5%;
+  width: 7.5%;
   cursor: pointer;
 }
 
 .theme14 {
-  width: 6.5%;
-  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7.5%;
+  width: 7.5%;
+  cursor: pointer;
   margin-left: 19px;
   cursor: pointer;
 }
 
 .theme15 {
-  width: 6.5%;
-  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7.5%;
+  width: 7.5%;
+  cursor: pointer;
   margin-left: 19px;
   cursor: pointer;
 }
 
 .theme16 {
-  width: 6.5%;
-  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7.5%;
+  width: 7.5%;
+  cursor: pointer;
   margin-left: 19px;
   cursor: pointer;
 }
 
 .theme17 {
-  width: 6.5%;
-  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7.5%;
+  width: 7.5%;
+  cursor: pointer;
   margin-left: 19px;
   cursor: pointer;
 }
 
 .theme18 {
-  width: 6.5%;
-  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7.5%;
+  width: 7.5%;
+  cursor: pointer;
   margin-left: 19px;
   cursor: pointer;
 }
 
 .plntxt {
   display: flex;
+  align-items: center;
   margin-top: 12px;
 }
 
@@ -303,13 +321,13 @@
   margin-left: -10px;
   font-size: 13px;
   color: #999999;
-  line-height: 20px;
   font-weight: normal;
   font-style: normal;
 }
 
 .jumb {
   display: flex;
+  align-items: center;
   margin-top: 8px;
 }
 
@@ -317,17 +335,14 @@
   margin-left: -10px;
   font-size: 13px;
   color: #999999;
-  line-height: 20px;
   font-weight: normal;
   font-style: normal;
 }
 
 .checkbox4 {
-  margin-top: -8px;
 }
 
 .checkbox5 {
-  margin-top: -8px;
 }
 
 .versions {
@@ -337,7 +352,6 @@
   line-height: 20px;
   font-weight: normal;
   font-style: normal;
-  margin-left: -90px;
 }
 
 .example {
@@ -347,11 +361,9 @@
   line-height: 20px;
   font-weight: normal;
   font-style: normal;
-  margin-left: -440px;
 }
 
 .theme19 {
-  width: 90%;
   margin-top: 15px;
   margin-left: 2px;
 }
@@ -360,7 +372,6 @@
   margin-top: 16px;
   margin-bottom: 20px;
   border-bottom: 1px solid rgba(214, 211, 211, 0.5);
-  width: 90%;
   margin-left: 3px;
 }
 
@@ -370,11 +381,11 @@
   line-height: 20px;
   font-style: normal;
   color: #333333;
-  margin-left: -393px;
 }
 
 .images {
   display: flex;
+  align-items: center;
   margin-top: 10px;
 }
 
@@ -382,13 +393,13 @@
   margin-left: -10px;
   font-size: 13px;
   color: #999999;
-  line-height: 20px;
   font-weight: normal;
   font-style: normal;
 }
 
 .websites {
   display: flex;
+  align-items: center;
   margin-top: 10px;
 }
 
@@ -396,23 +407,21 @@
   margin-left: -10px;
   font-size: 13px;
   color: #999999;
-  line-height: 20px;
   font-weight: normal;
   font-style: normal;
 }
 
 .checkbox6 {
-  margin-top: -8px;
   margin-left: 3px;
 }
 
 .checkbox7 {
-  margin-top: -8px;
   margin-left: 3px;
 }
 
 .larger {
   display: flex;
+  align-items: center;
   margin-top: 10px;
 }
 
@@ -420,18 +429,17 @@
   margin-left: -10px;
   font-size: 13px;
   color: #999999;
-  line-height: 20px;
   font-weight: normal;
   font-style: normal;
 }
 
 .checkbox8 {
-  margin-top: -8px;
   margin-left: 3px;
 }
 
 .previews {
   display: flex;
+  align-items: center;
   margin-top: 10px;
 }
 
@@ -439,13 +447,11 @@
   margin-left: -10px;
   font-size: 13px;
   color: #999999;
-  line-height: 20px;
   font-weight: normal;
   font-style: normal;
 }
 
 .checkbox9 {
-  margin-top: -8px;
   margin-left: 3px;
 }
 
@@ -463,7 +469,6 @@
   line-height: 20px;
   font-style: normal;
   color: #333333;
-  margin-left: -370px;
 }
 
 .upload {
@@ -473,7 +478,6 @@
   line-height: 20px;
   font-weight: normal;
   font-style: normal;
-  margin-left: -176px;
 }
 
 .upload2 {
@@ -482,7 +486,6 @@
   line-height: 20px;
   font-weight: normal;
   font-style: normal;
-  margin-left: -176px;
 }
 
 .upload3 {
@@ -491,7 +494,6 @@
   line-height: 20px;
   font-weight: normal;
   font-style: normal;
-  margin-left: -305px;
 }
 
 .button {
@@ -502,14 +504,10 @@
   margin-top: 24px;
   margin-bottom: 30px;
   cursor: pointer;
-  margin-left: -328px;
 }
 
 .forward {
-  margin-right: -30px;
-  margin-left: -30px;
-  margin-top: -15px;
-  margin-bottom: -35px;
   font-size: 13px;
   font-weight: 400;
+  padding: 4px 5px;
 }
