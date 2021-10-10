@@ -16,8 +16,8 @@ const PreferenceMenu = () => {
           onClick={() => setSideBar(1)}
           className={sideBar === 1 ? styles.active : styles.one}
         >
+          <AiOutlineBell className={styles.icon} />
           <p>
-            <AiOutlineBell className={styles.icon} />
             Notifications
           </p>
         </div>
@@ -25,8 +25,8 @@ const PreferenceMenu = () => {
           onClick={() => setSideBar(2)}
           className={sideBar === 2 ? styles.active : styles.one}
         >
-          <p>
-            <BsLayoutSidebar className={styles.icon} />
+          <BsLayoutSidebar className={styles.icon} />
+          <p> 
             Sidebar
           </p>
         </div>
@@ -34,33 +34,38 @@ const PreferenceMenu = () => {
           onClick={() => setSideBar(3)}
           className={sideBar === 3 ? styles.active : styles.one}
         >
+          <AiOutlineEye className={styles.icon} />
           <p>
-            {' '}
-            <AiOutlineEye className={styles.icon} /> Themes
+            {/* {' '} */}
+            
+             Themes
           </p>
         </div>
         <div
           onClick={() => setSideBar(4)}
           className={sideBar === 4 ? styles.active : styles.one}
         >
+          <FiMessageCircle className={styles.icon} />
           <p>
-            <FiMessageCircle className={styles.icon} /> Messages & Media
+             Messages & Media
           </p>
         </div>
         <div
           onClick={() => setSideBar(5)}
           className={sideBar === 5 ? styles.active : styles.one}
         >
+          <FiGlobe className={styles.icon} />
           <p>
-            <FiGlobe className={styles.icon} /> Languages & Region
+             Languages & Region
           </p>
         </div>
         <div
           onClick={() => setSideBar(6)}
           className={sideBar === 6 ? styles.active : styles.one}
         >
+          <CgScreen className={styles.icon} />
           <p>
-            <CgScreen className={styles.icon} />
+            
             Accessibility
           </p>
         </div>
@@ -68,9 +73,10 @@ const PreferenceMenu = () => {
           onClick={() => setSideBar(7)} 
           className={sideBar === 7 ? styles.active : styles.one}
         >
+          <BsCheckCircle className={styles.icon} />
           <p>
             {' '}
-            <BsCheckCircle className={styles.icon} />
+            
             Mark as read
           </p>
         </div>
@@ -78,8 +84,9 @@ const PreferenceMenu = () => {
           onClick={() => setSideBar(9)}
           className={sideBar === 9 ? styles.active : styles.one}
         >
+          <AiOutlineSetting className={styles.icon} />
           <p>
-            <AiOutlineSetting className={styles.icon} /> Advanced
+             Advanced
           </p>
         </div>
       </div>
