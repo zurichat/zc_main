@@ -1,51 +1,50 @@
-import React, { useEffect } from 'react'
-import styles from '../styles/adminToken.module.css'
-import DataTable from 'react-data-table-component'
-import { AiOutlineInfoCircle } from 'react-icons/ai'
-import { authAxios } from '../Utils/Api'
-import { useState } from 'react'
-import PurchaseModal from './PurchaseModal'
-import { getToken, getUser, getCurrentWorkspace } from '../Utils/Common'
+import React, { useEffect, useState } from "react"
+import styles from "../styles/adminToken.module.css"
+import DataTable from "react-data-table-component"
+import { AiOutlineInfoCircle } from "react-icons/ai"
+import { authAxios } from "../Utils/Api"
+import PurchaseModal from "./PurchaseModal"
+import { getToken, getUser, getCurrentWorkspace } from "../Utils/Common"
 
 const columns = [
   {
-    name: 'Date',
+    name: "Date",
     selector: row => row.date,
     sortable: true
   },
   {
-    name: 'Type',
+    name: "Type",
     selector: row => row.type,
     sortable: true
   },
   {
-    name: 'Amount',
+    name: "Amount",
     selector: row => row.amount,
     sortable: true
   },
   {
-    name: 'Currency',
+    name: "Currency",
     selector: row => row.currency,
     sortable: true
   },
   {
-    name: 'USD Amount',
+    name: "USD Amount",
     selector: row => row.usd,
     sortable: true
   },
 
   {
-    name: 'Token',
+    name: "Token",
     selector: row => row.token,
     sortable: true
   },
   {
-    name: 'Description',
+    name: "Description",
     selector: row => row.description
     // sortable: true,
   },
   {
-    name: 'Action',
+    name: "Action",
     selector: row => row.action
     // sortable: true,
   }
@@ -54,36 +53,36 @@ const columns = [
 const data = [
   {
     id: 1,
-    date: '29/6/202112:01',
-    type: 'Purchase',
-    amount: '100',
-    currency: 'USD',
-    usd: '100',
-    token: '100.00',
-    description: 'Tokens purchase',
-    action: ''
+    date: "29/6/202112:01",
+    type: "Purchase",
+    amount: "100",
+    currency: "USD",
+    usd: "100",
+    token: "100.00",
+    description: "Tokens purchase",
+    action: ""
   },
   {
     id: 1,
-    date: '29/6/2021 12:01',
-    type: 'Bonus',
-    amount: '-',
-    currency: '-',
-    usd: '-',
-    token: '15.00',
-    description: 'Referal bonus',
-    action: '-'
+    date: "29/6/2021 12:01",
+    type: "Bonus",
+    amount: "-",
+    currency: "-",
+    usd: "-",
+    token: "15.00",
+    description: "Referal bonus",
+    action: "-"
   },
   {
     id: 1,
-    date: '29/6/2021 12:01',
-    type: 'Deposit',
-    amount: '100',
-    currency: 'GBP',
-    usd: '100',
-    token: '100.00',
-    description: 'Deposit to your balance',
-    action: ''
+    date: "29/6/2021 12:01",
+    type: "Deposit",
+    amount: "100",
+    currency: "GBP",
+    usd: "100",
+    token: "100.00",
+    description: "Deposit to your balance",
+    action: ""
   }
 ]
 const TokensTab = () => {
@@ -100,7 +99,7 @@ const TokensTab = () => {
           setWorkspaceData(res.data.data)
         })
         .catch(err => {
-          console.log(err)
+          console.error(err)
         })
     }
 
@@ -142,7 +141,7 @@ const TokensTab = () => {
           <button className="btn">Deposit</button>
         </div>
       </div>
-      {helpModal ? <PurchaseModal setHelpModal={setHelpModal} /> : ''}
+      {helpModal ? <PurchaseModal setHelpModal={setHelpModal} /> : ""}
       <div>
         <h6 className={styles.heading}>Your referal link</h6>
         <div className={`${styles.referal} input-group`}>
@@ -152,8 +151,8 @@ const TokensTab = () => {
             placeholder="https://ico.zuri.chat/?ref=49eb37c78185"
             aria-describedby="basic-addon2"
           />
-          <div class="input-group-append">
-            <span class="input-group-text" id="basic-addon2">
+          <div className="input-group-append">
+            <span className="input-group-text" id="basic-addon2">
               Copy link
             </span>
           </div>

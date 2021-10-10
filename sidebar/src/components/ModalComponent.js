@@ -154,7 +154,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
           </section>
         </div>
         <div
-          ref={hoverRef2}
+          // ref={hoverRef2}
           className={`d-flex align-items-center justify-content-between ${styles.modalSubSection}`}
         >
           <p>Switch workspace</p>
