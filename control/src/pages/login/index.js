@@ -6,7 +6,7 @@ import FormWrapper from "../../components/AuthFormWrapper"
 import LoginLoading from "../../components/LoginLoading"
 import styles from "../../component-styles/AuthFormElements.module.css"
 import axios from "axios"
-import { GetUserInfo } from "@zuri/control"
+// import { GetUserInfo } from "@zuri/control"
 import $behaviorSubject from "../../../../globalState"
 import { Helmet } from "react-helmet"
 import { goToDefaultChannel } from "../../api/channels"
@@ -26,19 +26,6 @@ const Login = () => {
   const [passworderror, setpassworderror] = useState("")
   const [rememberMe, setRememberMe] = useState("")
   const [Loading, setLoading] = useState(false)
-
-  // Background Images
-  // const images = [authBg1, authBg2, authBg3, authBg4, authBg5]
-  // const [currentImage, setcurrentImage] = useState(
-  //   Math.floor(Math.random() * 4)
-  // )
-
-  // To Display Random Aside Background Image
-  // const displayImage = () => {
-  //   let i = currentImage
-  //   i >= images.length - 1 ? (i = 0) : i++
-  //   setcurrentImage(i)
-  // }
 
   let history = useHistory()
 
@@ -75,8 +62,6 @@ const Login = () => {
       .then(response => {
         const { data, message } = response.data
 
-        setLoading(true)
-
         //Store token in localstorage
         sessionStorage.setItem("token", data.user.token)
 
@@ -89,43 +74,9 @@ const Login = () => {
         //Return the login data globally
         $behaviorSubject.next(response.data)
 
-        // Switch for redirects
-        axios
-          .get(`https://api.zuri.chat/users/${data.user.email}/organizations`, {
-            headers: {
-              Authorization: `Bearer ${data.user.token}`
-            }
-          })
-          .then(res => {
-            const orgs = res.data.data.length
-            // console.log(res.data.data.length)
-            // console.log('reg orgs', orgs)
+        setLoading(true)
 
-            switch (true) {
-              case orgs > 1:
-                history.push("/choose-workspace")
-                break
-              case orgs < 1:
-                history.push("/createworkspace")
-                break
-              default:
-                goToDefaultChannel()
-            }
-          })
-          .catch(err => {
-            throw err
-          })
-
-        //Display message
-        // alert(message) //Change this when there is a design
-
-        // setTimeout(() => {
-        //Redirect to some other page
-        //   GetUserInfo()
-        //   history.push('/choose-workspace')
-        //   setLoading(false)
-        // }, 2000)
-      })
+    })
       .catch(error => {
         const { data } = error.response
         console.error(data)
@@ -144,17 +95,55 @@ const Login = () => {
       })
   }
 
+  // Switch to appropraite screen
+  const getOrganizations = async user => {
+    try {
+      const res = await axios.get(
+        `https://api.zuri.chat/users/${user.email}/organizations`,
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`
+          }
+        }
+      )
+
+      if (res.status !== 200) {
+        throw new Error(
+          `Unable to fetch list of wokspaces, status code: ${res.status}`
+        )
+      }
+
+      const orgs = await res.data.data.length
+
+      switch (true) {
+        case orgs === 1:
+          goToDefaultChannel()
+          // setLoading(false)
+          break
+        case orgs > 1:
+          history.push("/choose-workspace")
+          // setLoading(false)
+          break
+        case orgs < 1:
+          history.push("/createworkspace")
+          // setLoading(false)
+          break
+        // default:
+        //   goToDefaultChannel()
+        //   break
+      }
+    } catch (err) {
+      console.error(err)
+      setLoading(false)
+    }
+  }
+
   return (
     <main id={styles.authPageWrapper}>
       <Helmet>
         <title>Login - Zuri Chat</title>
       </Helmet>
       {Loading && <LoginLoading />}
-      {/* <aside id={styles.authAsideContainer} className={styles.display_none}>
-        <div id={styles.authImageWrapper}>
-          <img src={images[currentImage]} alt="backgroundImage" />
-        </div>
-      </aside> */}
       <section id={styles.authFormContainer}>
         <FormWrapper
           header="Login"
@@ -179,7 +168,7 @@ const Login = () => {
             value={email}
             setValue={setEmail}
             error={emailerror}
-            // onFocus={displayImage}
+          // onFocus={displayImage}
           />
           <AuthInputBox
             className={`${styles.inputElement}`}
@@ -190,7 +179,7 @@ const Login = () => {
             value={password}
             setValue={setPassword}
             error={passworderror}
-            // onFocus={displayImage}
+          // onFocus={displayImage}
           />
 
           <div className={`${styles.rememberMe}`}>
@@ -203,7 +192,7 @@ const Login = () => {
                 onClick={() => {
                   setRememberMe(!rememberMe)
                 }}
-                // onFocus={displayImage}
+              // onFocus={displayImage}
               />
               Remember me
             </div>
