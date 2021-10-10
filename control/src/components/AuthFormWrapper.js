@@ -105,10 +105,10 @@ const FormWrapper = ({
         <a href="/contact-us" className={`${styles.footer_a}`}>
           Contact Us
         </a>
-        <a href="/" className={`${styles.footer_a}`}>
+        <a href="/privacy" className={`${styles.footer_a}`}>
           Legal Policy
         </a>
-        <a href="/" className={`${styles.footer_a}`}>
+        <a href="/about" className={`${styles.footer_a}`}>
           About Zurichat
         </a>
       </div>
