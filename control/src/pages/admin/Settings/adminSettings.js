@@ -3,6 +3,7 @@ import { AnimateSharedLayout } from 'framer-motion'
 import PreferenceWrapper from './PreferenceWrapper'
 
 import JoinWorkspace from './components/JoinWorkspace'
+import WorkspaceLanguage from './components/WorkspaceLanguage'
 import Guidelines from './components/Guidelines'
 import DisplayName from './components/DisplayName'
 import JoinChannel from './components/JoinChannel'
@@ -10,6 +11,9 @@ import NotifyUsers from './components/NotifyUsers'
 import Calls from './components/Calls'
 import DisplayPronoun from './components/DisplayPronoun'
 import MessageRetention from './components/MessageRetention'
+import FileRetention from './components/FileRetention'
+import DisplayEmail from './components/DisplayEmail'
+import DefaultChannels from './components/DefaultChannel'
 
 const adminSettings = () => {
   return (
@@ -29,8 +33,7 @@ const adminSettings = () => {
           text="Set the language for your workspace. This affects system notifications, Zurichat messages and sign up emails. Your workspace language is currently English (US)"
           btnText="expand"
         >
-          {/* Password input goes uunder here */}
-          {/* <SavePassword /> */}
+          <WorkspaceLanguage />
         </PreferenceWrapper>
       </AnimateSharedLayout>
       <AnimateSharedLayout>
@@ -39,8 +42,7 @@ const adminSettings = () => {
           text="Choose the channels new members will automatically be added to in addition to #general"
           btnText="expand"
         >
-          {/* Password input goes uunder here */}
-          {/* <SavePassword /> */}
+          <DefaultChannels />
         </PreferenceWrapper>
       </AnimateSharedLayout>
       <AnimateSharedLayout>
@@ -67,8 +69,7 @@ const adminSettings = () => {
           text="Choose whether to display members email address in profile"
           btnText="expand"
         >
-          {/* Password input goes uunder here */}
-          {/* <SavePassword /> */}
+          <DisplayEmail />
         </PreferenceWrapper>
       </AnimateSharedLayout>
       <AnimateSharedLayout>
@@ -130,11 +131,10 @@ const adminSettings = () => {
       <AnimateSharedLayout>
         <PreferenceWrapper
           title="File Retention & Deletion"
-          text="By default, Zuri chat keeps all your messages for your lifetime of your workspace. If you’d like, you can have them delted after a selt amount of time.Note that this affects all files - including images, docs, Zuri chat posts and more"
+          text="By default, Zuri chat keeps all your messages for your lifetime of your workspace. If you’d like, you can have them deleted after a set amount of time.Note that this affects all files - including images, docs, Zuri chat posts and more"
           btnText="expand"
         >
-          {/* Password input goes uunder here */}
-          {/* <SavePassword /> */}
+          <FileRetention />
         </PreferenceWrapper>
       </AnimateSharedLayout>
       <AnimateSharedLayout>
