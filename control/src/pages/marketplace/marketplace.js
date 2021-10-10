@@ -26,7 +26,6 @@ const MarketPlace = () => {
         <div
           className={`w-100 d-flex flex-wrap justify-content-between align-items-baseline ${styles.marketplaceNavbar}`}
         >
-          <MarketplaceHeader />
           <Header />
         </div>
         <div className={styles.marketplaceHero}>
