@@ -9,7 +9,6 @@
   z-index: 10000;
   overflow-y: scroll;
 }
-
 .ProfileContainer::-webkit-scrollbar {
   display: none;
 }
@@ -30,8 +29,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  /* padding: 0 1rem; */
+  padding: 0 1rem;
 }
 
 .title {
@@ -69,7 +67,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 10px;
 }
 
 .userDetails h3 {
@@ -109,13 +106,14 @@
   text-align: center;
   padding: 0;
   margin: 0;
-  margin-top: -10px;
+  margin-top: -1rem;
 }
 
 .userDetails small {
   font-size: 0.8rem;
   font-weight: 400;
   color: #3a3a3a;
+  margin-top: 0.6rem;
 }
 
 .buttonGroups {
@@ -124,7 +122,9 @@
   align-items: center;
   margin-top: 1.5rem;
   margin-bottom: 2rem;
-  justify-content: space-evenly;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .buttonGroups button {
@@ -135,25 +135,22 @@
   justify-content: center;
   width: 3rem;
   height: 3rem;
+
   border-radius: 50%;
   font-weight: 700;
   border: none;
 }
-
 .ctaText {
   font-size: 12px;
   color: rgb(128, 126, 126);
   text-align: center;
 }
-
 .buttonGroups button:hover {
   background: #00b87c;
 }
-
 .ctaButtonIcon {
   color: rgb(126, 123, 123);
 }
-
 .buttonGroups button:hover .ctaButtonIcon {
   color: #fff;
 }
@@ -170,11 +167,9 @@
   color: #3a3a3a;
   margin-bottom: 0.1rem;
 }
-
 .infoTitle a {
   margin: 0;
 }
-
 .infoContent,
 .infoLink {
   font-size: 1rem;
@@ -205,7 +200,7 @@
   top: 30%;
   right: 16px;
   width: 227px;
-  background: #fff;
+  background: #ffffff;
   border: 1px solid #bebebe;
   border-radius: 10px;
 }
@@ -251,7 +246,6 @@
 .mobile {
   display: none;
 }
-
 .h3users {
   margin-right: -1em;
   margin-top: 7px;
@@ -262,39 +256,17 @@
   padding-left: 5px;
   padding-bottom: 10px;
   position: absolute;
-
   /* left: 15px; */
   right: 70px;
-
   /* top: 108px; */
   background: none;
   transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-
 .myp {
   margin: 7px 1px 10px !important;
   position: relative;
   top: 25px;
 }
-
-/* .statuscta {
-  margin-bottom: 33px;
-  height: 48px;
-  width: 125px;
-  border-radius: 3px;
-  padding: 12px 18px;
-  border: none;
-  background: #00b87c;
-  color: white;
-  float: right;
-  font-family: 'Lato', sans-serif;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0em;
-  text-align: center;
-} */
 
 @media (max-width: 768px) {
   .ProfileContainer {
@@ -306,7 +278,7 @@
     height: 100vh;
     margin-top: 5px;
     overflow-y: auto;
-    border-radius: 8px 8px 0 0;
+    border-radius: 8px 8px 0px 0px;
   }
 
   /* .header {
@@ -314,23 +286,23 @@
   } */
 
   .content {
-    padding: 35px;
+    padding: 10px;
   }
 
-  /* .buttonGroups {
+  .buttonGroups {
     display: none;
-  } */
+  }
 
-  /* .buttonGroupsMobile {
+  .buttonGroupsMobile {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
     padding: 2rem 0.6rem;
-  } */
+  }
 
   .buttonGroupsMobile button {
     width: 100%;
-    height: 2rem;
+    height: 3.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -396,18 +368,15 @@
     stroke: #000;
     stroke-width: 2px;
   }
-
   .userDetails {
     display: none;
   }
-
   .userAvatar {
     display: flex;
     align-self: center;
     margin: 0 auto;
     width: 80%;
-    height: 20rem;
-
+    height: 23rem;
     /* object-fit: contain; */
   }
 }
