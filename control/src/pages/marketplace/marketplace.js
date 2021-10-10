@@ -12,8 +12,6 @@ import MarketplaceHeader from './components/marketplace-container/MarketplaceHea
 import { MarketPlaceProvider } from '../../context/MarketPlace.context.js'
 import axios from 'axios'
 import { Helmet } from 'react-helmet'
-import Header from "../../components/Header"
-
 
 const MarketPlace = () => {
   const [userDetails, setUserDetails] = useState(null)
@@ -26,7 +24,7 @@ const MarketPlace = () => {
         <div
           className={`w-100 d-flex flex-wrap justify-content-between align-items-baseline ${styles.marketplaceNavbar}`}
         >
-          <Header />
+          <MarketplaceHeader />
         </div>
         <div className={styles.marketplaceHero}>
           <Row className={`align-items-center justify-content-center`}>
@@ -61,8 +59,8 @@ const MarketPlace = () => {
                   <DiscoverPluginSvg />
                   <div className={styles.svgConnectionLineOne}>
                     <svg
-                      width="160"
-                      height="120"
+                      width="179"
+                      height="205"
                       viewBox="0 0 179 255"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -78,8 +76,8 @@ const MarketPlace = () => {
                   <InstallPluginSvg />
                   <div className={styles.svgConnectionLineTwo}>
                     <svg
-                      width="290"
-                      height="80"
+                      width="516"
+                      height="108"
                       viewBox="0 0 516 138"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -95,8 +93,8 @@ const MarketPlace = () => {
                   <CollaborationSvg />
                   <div className={styles.svgConnectionLineThree}>
                     <svg
-                      width="160"
-                      height="120"
+                      width="184"
+                      height="205"
                       viewBox="0 0 184 255"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
