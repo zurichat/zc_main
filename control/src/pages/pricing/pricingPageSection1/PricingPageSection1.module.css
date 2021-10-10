@@ -44,12 +44,14 @@
 
 .topPricingPageColumns {
   display: flex;
-  flex: 1 1 1;
+  flex: 1;
   box-sizing: content-box;
   height: 100%;
   padding: 1.4rem;
 }
-
+.topPricingPageColumns > div {
+  width: 25%;
+}
 .topPricingStart {
   flex: 1;
   height: 100%;
@@ -142,6 +144,7 @@
   flex-direction: column;
   /* justify-content: space-between; */
   padding: 1.25rem;
+  padding-left: 0;
 }
 
 .topPricingBottomHead {
@@ -283,12 +286,14 @@
   .topPricingPageColumns {
     display: flex;
     flex-direction: column;
-    flex: 1 1 1;
+    flex: 1;
     box-sizing: content-box;
     height: 100%;
     padding: 1.4rem;
   }
-
+  .topPricingPageColumns > div {
+    width: 100%;
+  }
   .topPricingStart {
     flex: 1;
     height: 100%;
