@@ -6,6 +6,7 @@ import ThankYouModal from "./ThankYouModal"
 
 const Subscribe = () => {
   const [email, setEmail] = useState("")
+  const emailLength = email.length
 
   const [displayModal, setDisplayModal] = useState(false)
 
@@ -71,7 +72,7 @@ const Subscribe = () => {
                   <button
                     type="submit"
                     className={`${css.subscribeBtn}`}
-                    disabled={true}
+                    disabled={emailLength > 0 ? false : true}
                   >
                     Subscribe
                   </button>
