@@ -1,19 +1,20 @@
 import React from 'react'
 import DownloadsMobile from './DownloadsMobile'
 import DownloadsDesktop from './DownloadsDesktop'
+import useMediaQuery from '../../components/useMediaQuery'
 
 const Download = () => {
-  const [width, setWidth] = React.useState(window.innerWidth)
-  const breakpoint = 640
+  //const [width, setWidth] = React.useState(window.innerWidth)
+  const pageWidth = useMediaQuery('(max-width: 640px)');
 
-  React.useEffect(() => {
-    const handleWindowResize = () => setWidth(window.innerWidth)
-    window.addEventListener('resize', handleWindowResize)
+  //React.useEffect(() => {
+  //  const handleWindowResize = () => setWidth(window.innerWidth)
+  //  window.addEventListener('resize', handleWindowResize)
+//
+  //  return () => window.removeEventListener('resize', handleWindowResize)
+  //}, [])
 
-    return () => window.removeEventListener('resize', handleWindowResize)
-  }, [])
-
-  return width > breakpoint ? <DownloadsDesktop /> : <DownloadsMobile />
+  return pageWidth ? <DownloadsMobile /> : <DownloadsDesktop />
 }
 
 export default Download
