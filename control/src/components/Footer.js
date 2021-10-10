@@ -128,7 +128,7 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/company/zuri-chat/">
+              <a href="https://www.linkedin.com/company/zurichat/">
                 <img
                   src={linkedin}
                   alt="Linkedin"
