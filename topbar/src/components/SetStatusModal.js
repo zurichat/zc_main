@@ -6,8 +6,6 @@ import TimePicker from "react-time-picker"
 import styles from "../styles/SetStatusModal.module.css"
 import "../timepicker.css"
 import { authAxios } from "../utils/Api"
-import Loader from "react-loader-spinner"
-import toast, { Toaster } from "react-hot-toast"
 import blackx from "../assets/images/blackx.svg"
 import whitex from "../assets/images/whitex.svg"
 import down from "../assets/images/down.svg"
@@ -56,8 +54,8 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
   const [chosenEmoji, setChosenEmoji] = emoji
   const [emojiItem, setEmoji] = useState("")
   const [text, setText] = useState("")
-  const [status, setStatus] = useState([]) // const [timeOut, setTimeOut] = useState('')
-  const [state, setState] = useState([])
+  const [status, setStatus] = useState([])
+  // const [timeOut, setTimeOut] = useState('')
   const onEmojiClick = (event, emojiObject) => {
     setChosenEmoji(emojiObject)
   }
@@ -68,28 +66,15 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
     setUser({ ...user, status: { text, emojiItem } })
     const data = { emojiItem, text, choosePeriod }
     authAxios
-      .patch(`/organizations/${orgId}/members/${user._id}/status`, data
-      //   expiry_time: choosePeriod,
-      //   tag: emojiItem,
-      //   text: text
-      // })
-      )
+      .patch(`/organizations/${orgId}/members/${user._id}/status`, {
+        expiry_time: choosePeriod,
+        tag: emojiItem,
+        text: text
+      })
       .then(res => {
-        // console.log(res, 'getstatus')
-        const newStatus = res.data.data
-        setStatus(newStatus)
-        setState({ loading: false })
-        toast.success("User Profile Updated Successfully", {
-          position: "top-center"
-        })
+        // console.log(res)
       })
-      .catch(err => {
-         console.error(err)
-         setState({ loading: false })
-        toast.error(err?.message, {
-          position: "top-center"
-        })
-      })
+      .catch(err => console.error(err))
 
     setStatus(status => {
       return [...status, data]
@@ -115,7 +100,6 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
                 <p
                   onClick={() => setOpenEmoji(!openEmoji)}
                   value={emojiItem}
-                  className={styles.pemoji}
                   // onChange={e => setEmoji(e.target.value)}
                 >
                   {chosenEmoji ? chosenEmoji.emoji : 5}
@@ -181,16 +165,16 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
                     </li>
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod("thirty_minutes")}
+                      onClick={() => setChoosePeriod("one_hour")}
                     >
-                      30 minutes
+                      1 hour
                     </li>
 
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod("one_hour")}
+                      onClick={() => setChoosePeriod("four_hours")}
                     >
-                      1 hour
+                      4 hours
                     </li>
                     <li
                       className={styles.dropdownoption}
@@ -225,11 +209,6 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
               type="submit"
               onClick={handleSubmit}
             >
-                {/* {state.loading ? (
-                <Loader type="ThreeDots" color="#fff" height={40} width={40} />
-              ) : (
-                "Save Changes"
-              )} */}
               Save changes
             </button>
           </form>
