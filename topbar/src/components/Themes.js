@@ -10,6 +10,11 @@ import theme9 from "../assets/images/theme9.png"
 import theme10 from "../assets/images/theme10.png"
 import theme16 from "../assets/images/theme16.png"
 import theme17 from "../assets/images/theme17.png"
+import theme18 from "../assets/images/theme18.png"
+import theme19 from "../assets/images/theme19.png"
+import theme20 from "../assets/images/theme20.png"
+import theme21 from "../assets/images/theme21.png"
+
 
 const Themes = () => {
   const [active1, setActive1] = useState(0)
@@ -182,19 +187,19 @@ const Themes = () => {
       </div>
       <div className={styles.set3}>
         <div className={styles.img7}>
-          <img src={theme7} alt="theme7" className={styles.theme7} />
+          <img src={theme18} alt="theme18" className={styles.theme18} />
         </div>
         <div className={styles.img8}>
-          <img src={theme8} alt="theme8" className={styles.theme8} />
+          <img src={theme19} alt="theme19" className={styles.theme19} />
         </div>
       </div>
       <div className={styles.set4}>
         <div className={styles.bottom}>
           <div className={styles.img9}>
-            <img src={theme9} alt="theme9" className={styles.theme9} />
+            <img src={theme20} alt="theme20" className={styles.theme20} />
           </div>
           <div className={styles.img10}>
-            <img src={theme10} alt="theme10" className={styles.theme10} />
+            <img src={theme21} alt="theme21" className={styles.theme21} />
           </div>
         </div>
       </div>
