@@ -35,7 +35,7 @@ const Subscribe = () => {
 
   return (
     <>
-      <Emailmodal
+      <EmailModal
         displayModal={displayModal}
         setDisplayModal={setDisplayModal}
       />
