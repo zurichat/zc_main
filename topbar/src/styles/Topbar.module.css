@@ -115,8 +115,8 @@
 .topbarModal {
   background: #ffffff;
   position: absolute;
-  top: 60%;
-  right: 2.5%;
+  top: 105%;
+  right: 12px;
   width: 100%;
   padding-bottom: 1rem;
   max-width: 300px;

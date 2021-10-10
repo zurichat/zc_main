@@ -13,6 +13,7 @@
 .contentImage {
   display: flex;
 }
+
 .headingOne {
   font-size: 48px;
   font-weight: bold;
@@ -97,7 +98,7 @@
   font-weight: normal;
   font-size: 16px;
   line-height: 134%;
-  color: #000000;
+  color: #000;
   padding: 0 370px 0 0;
 }
 
@@ -113,7 +114,7 @@
   font-size: 16px;
   line-height: 157.5%;
   letter-spacing: 0.03em;
-  color: #000000;
+  color: #000;
   padding: 0 380px 0 0;
 }
 
@@ -128,7 +129,7 @@
   font-size: 18px;
   line-height: 134%;
   letter-spacing: 0.03em;
-  color: #000000;
+  color: #000;
   margin-left: 250px;
 }
 
@@ -139,7 +140,7 @@
   font-size: 16px;
   line-height: 134%;
   letter-spacing: 0.03em;
-  color: #000000;
+  color: #000;
   margin-left: 250px;
   padding: 0 150px 0 0;
 }
@@ -152,7 +153,7 @@
   line-height: 134%;
   margin-top: 25px;
   letter-spacing: 0.03em;
-  color: #000000;
+  color: #000;
 }
 
 .referZuri {
@@ -163,13 +164,13 @@
   margin-left: 250px;
   padding: 0 200px 0 0;
   line-height: 192%;
-  color: #000000;
+  color: #000;
   margin-top: 30px;
 }
 
 .datareq {
   margin-top: 15px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .tableContents {
@@ -189,12 +190,12 @@
 
 .compliance {
   margin-top: 20px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .privacy {
   margin-top: 55px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .privacymat {
@@ -209,7 +210,7 @@
   font-size: 18px;
   line-height: 155%;
   letter-spacing: 0.03em;
-  color: #000000;
+  color: #000;
   padding: 0 120px 0 0;
   margin-top: 20px;
 }
@@ -221,7 +222,7 @@
   font-size: 18px;
   line-height: 155%;
   letter-spacing: 0.03em;
-  color: #000000;
+  color: #000;
   padding: 0 120px 0 0;
 }
 
@@ -244,7 +245,7 @@
   font-size: 16px;
   line-height: 23px;
   margin-left: 25px;
-  color: #000000;
+  color: #000;
   padding: 0 120px 0 0;
 }
 
@@ -255,7 +256,7 @@
   font-size: 16px;
   line-height: 173%;
   letter-spacing: 0.01em;
-  color: #000000;
+  color: #000;
   padding: 0 100px 0 0;
 }
 
@@ -273,14 +274,14 @@
 
 .infoCollect {
   margin-top: 40px;
-  font-family: Lato;
+  font-family: 'Lato', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
   line-height: 29px;
   letter-spacing: -0.02em;
   text-decoration-line: underline;
-  color: #000000;
+  color: #000;
 }
 
 .infopar1 {
@@ -290,7 +291,7 @@
   font-size: 16px;
   line-height: 22px;
   padding: 0 150px 0 0;
-  color: #000000;
+  color: #000;
   margin-left: 20px;
 }
 
@@ -301,7 +302,7 @@
   font-size: 16px;
   line-height: 28px;
   letter-spacing: 0.01em;
-  color: #000000;
+  color: #000;
   border: none;
   width: auto;
 }
@@ -325,8 +326,8 @@
   font-size: 18px;
   line-height: 22px;
   letter-spacing: -0.02em;
-  color: #000000;
-  margin-bottom: 0px;
+  color: #000;
+  margin-bottom: 0;
 }
 
 .parOthers2 {
@@ -335,7 +336,7 @@
   font-weight: normal;
   font-size: 16px;
   line-height: 165%;
-  color: #000000;
+  color: #000;
   padding: 0 110px 0 0;
   position: relative;
   top: -25px;
@@ -359,8 +360,8 @@
   font-weight: bold;
   font-size: 18px;
   line-height: 165%;
-  color: #000000;
-  margin-bottom: 0px;
+  color: #000;
+  margin-bottom: 0;
   margin-left: 10px;
 }
 
@@ -370,7 +371,7 @@
   font-weight: normal;
   font-size: 16px;
   line-height: 169.5%;
-  color: #000000;
+  color: #000;
   padding: 0 80px 0 0;
   position: relative;
   top: -25px;
@@ -383,7 +384,7 @@
   font-size: 16px;
   line-height: 28px;
   letter-spacing: 0.01em;
-  color: #000000;
+  color: #000;
   padding: 0 100px 0 0;
 }
 
@@ -400,14 +401,19 @@
 
 .veryBigLock {
   position: relative;
-  left: 840px;
-  bottom: 240px;
+  margin-left: 200px;
+  margin-right: 50px;
+  left: 850px;
+  bottom: 220px;
 }
 
-@media screen and (max-width: 1085px) {
+/* @media screen and (max-width: 1085px) {
+
 }
+
 @media screen and (max-width: 850px) {
-}
+
+} */
 
 @media screen and (max-width: 500px) {
   .headingOne {
@@ -423,6 +429,7 @@
   .headingOne {
     font-size: 38px;
   }
+
   .veryBigLock {
     display: none;
   }
@@ -439,11 +446,11 @@
   }
 
   .parplat {
-    padding: 0 0px 0 0;
+    padding: 0 0 0 0;
   }
 
   .parservices {
-    padding: 0 0px 0 0;
+    padding: 0 0 0 0;
   }
 
   .headingServices {
@@ -451,7 +458,7 @@
   }
 
   .parregistered {
-    padding: 0 0px 0 0;
+    padding: 0 0 0 0;
   }
 
   .effectiveAll {
@@ -481,6 +488,7 @@
   .tablelinks {
     margin-left: 190px;
   }
+
   .bulbImage {
     display: none;
   }
@@ -520,8 +528,8 @@
 
   .appPrivPol1,
   .appPrivPol2 {
-    padding: 0 0px 0 0;
-    margin-left: 0px;
+    padding: 0 0 0 0;
+    margin-left: 0;
   }
 
   .bigLock {
@@ -537,12 +545,12 @@
   }
 
   .infopar1 {
-    padding: 0 0px 0 0;
-
-    margin-left: 0px;
+    padding: 0 0 0 0;
+    margin-left: 0;
   }
+
   .paraPriv1 {
-    padding: 0 0px 0 0;
+    padding: 0 0 0 0;
   }
 
   .smallLock {
@@ -550,12 +558,12 @@
   }
 
   .parOthers2 {
-    padding: 0 0px 0 0;
+    padding: 0 0 0 0;
   }
 
   .parOthers {
     margin-bottom: 35px;
-    margin-top: 0px;
+    margin-top: 0;
   }
 
   .headingDataOthers {
@@ -567,13 +575,14 @@
   }
 
   .parPartners {
-    padding: 0 0px 0 0;
+    padding: 0 0 0 0;
   }
 
   .partners {
     margin-bottom: 30px;
-    margin-left: 0px;
+    margin-left: 0;
   }
+
   .imagePart {
     margin-top: 10px;
   }

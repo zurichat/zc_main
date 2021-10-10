@@ -1,24 +1,24 @@
-import React from "react"
-import style from "./styles/LandingPage.module.css"
-import hero_img from "./assets/MacBookAir.svg"
-import logo_hng from "./assets/logo_hng.svg"
-import logo_i4g from "./assets/logo_i4g.svg"
-import logo_camphouse from "./assets/logo_camphouse.svg"
-import logo_zuri from "./assets/logo_zuri.svg"
-import ft_img1 from "./assets/ft_img1.svg"
-import ft_img2 from "./assets/ft_img2.svg"
-import ft_img3 from "./assets/ft_img3.svg"
-import ft_img4 from "./assets/ft_img4.svg"
-import sign_up_img from "./assets/sign_up_img.svg"
-import arrow_right from "./assets/ArrowRight.svg"
+import React from 'react'
+import style from './styles/LandingPage.module.css'
+import hero_img from './assets/MacBookAir.svg'
+import logo_hng from './assets/logo_hng.svg'
+import logo_i4g from './assets/logo_i4g.svg'
+import logo_camphouse from './assets/logo_camphouse.svg'
+import logo_zuri from './assets/logo_zuri.svg'
+import ft_img1 from './assets/ft_img1.svg'
+import ft_img2 from './assets/ft_img2.svg'
+import ft_img3 from './assets/ft_img3.svg'
+import ft_img4 from './assets/ft_img4.svg'
+import sign_up_img from './assets/sign_up_img.svg'
+import arrow_right from './assets/ArrowRight.svg'
 
-import Header from "../../components/Header"
-import Footer from "../../components/Footer"
+import Header from '../../components/Header'
+import Footer from '../../components/Footer'
 
-import { Link } from "react-router-dom"
-import Cookies from "../cookies"
-import Subscribe from "./components/Subscribe"
-import { Helmet } from "react-helmet"
+import { Link } from 'react-router-dom'
+import Cookies from '../cookies'
+import Subscribe from './components/Subscribe'
+import { Helmet } from 'react-helmet'
 
 export default function Homepage() {
   const { useState, useEffect } = React
@@ -28,8 +28,8 @@ export default function Homepage() {
   const cookieStorage = {
     getItem: key => {
       const cookies = document.cookie
-        .split(";")
-        .map(cookie => cookie.split("="))
+        .split(';')
+        .map(cookie => cookie.split('='))
         .reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: value }), {})
       return cookies[key]
     },
@@ -38,8 +38,8 @@ export default function Homepage() {
     }
   }
 
-  const allowCookie = cookieStorage.getItem("Zuri Chat Accept")
-  const declineCookie = cookieStorage.getItem("Zuri Chat Decline")
+  const allowCookie = cookieStorage.getItem('Zuri Chat Accept')
+  const declineCookie = cookieStorage.getItem('Zuri Chat Decline')
 
   if (!allowCookie == true || declineCookie == true) {
     useEffect(() => {
@@ -116,9 +116,9 @@ export default function Homepage() {
           </div>
         </div>
         {/* { COOKIES BANNER} */}
-        <div>{loading ? "" : <Cookies />}</div>
-        {/* COMPANIES */}
-        <div className={`${style.company_banner_wrap}`}>
+        <div>{loading ? '' : <Cookies />}</div>
+         {/* COMPANIES */}
+        {/* <div className={`${style.company_banner_wrap}`}>
           <div className={`${style.company_banner}`}>
             <p className={`${style.cbp}`}>Trusted by top companies worldwide</p>
             <div className={`${style.logos}`}>
@@ -128,8 +128,7 @@ export default function Homepage() {
               <img src={logo_zuri} alt="" className={`${style.logo}`} />
             </div>
           </div>
-        </div>
-
+        </div> */}
         {/* FEATURES */}
         <div className={`${style.features_wrap}`}>
           <div className={`${style.features}`}>

@@ -1,10 +1,10 @@
-import React from "react"
-//import { Link } from 'react-router-dom'
-import { RiErrorWarningLine } from "react-icons/ri"
-import styles from "../component-styles/AuthFormWrapper.module.css"
-import logo from "../component-assets/logo.svg"
-import google from "../component-assets/google.svg"
-import GoogleAuth from "./GoogleAuth"
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { RiErrorWarningLine } from 'react-icons/ri'
+import styles from '../component-styles/AuthFormWrapper.module.css'
+import logo from '../component-assets/logo.svg'
+import google from '../component-assets/google.svg'
+import GoogleAuth from './GoogleAuth'
 
 const FormWrapper = ({
   children,
@@ -78,13 +78,13 @@ const FormWrapper = ({
 
           <div
             className={`${styles.bottomLine}`}
-            style={{ paddingTop: "20px" }}
+            style={{ paddingTop: '20px' }}
           >
             <span>
               {bottomLine}
-              {""}
+              {''}
               <a className={`${styles.bottomLink}`} href={`/${bottomLinkHref}`}>
-                {""} {bottomLink}
+                {''} {bottomLink}
               </a>
             </span>
           </div>
@@ -102,15 +102,15 @@ const FormWrapper = ({
       </div>
 
       <div className={`${styles.footer}`}>
-        <a href="/contact-us" className={`${styles.footer_a}`}>
+        <Link to="/contact-us" className={`${styles.footer_a}`}>
           Contact Us
-        </a>
-        <a href="/" className={`${styles.footer_a}`}>
+        </Link>
+        <Link to="/legal" className={`${styles.footer_a}`}>
           Legal Policy
-        </a>
-        <a href="/" className={`${styles.footer_a}`}>
+        </Link>
+        <Link to="/about" className={`${styles.footer_a}`}>
           About Zurichat
-        </a>
+        </Link>
       </div>
     </section>
   )
