@@ -1,6 +1,6 @@
 import { Route, Redirect} from "react-router";
-const SecureRoute=({ children, ...rest })=>{
-    const isLoggedIn = sessionStorage.getItem("session_id");
+const RedirectRoute=({ children, ...rest })=>{
+    const isLoggedIn = sessionStorage.getItem("session_id")
   return(
      <Route {...rest} render={({location}) => isLoggedIn ? 
    (
@@ -15,7 +15,7 @@ const SecureRoute=({ children, ...rest })=>{
      } />
   )
     }
-    export default SecureRoute;
+    export default RedirectRoute;
 
 
 
