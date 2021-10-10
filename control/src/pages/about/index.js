@@ -1,22 +1,22 @@
-import React from 'react'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
+import React from "react"
+import Header from "../../components/Header"
+import Footer from "../../components/Footer"
 // styles import
-import styles from '../about/styles/about.module.css'
-import { Companies } from './component/Companies'
+import styles from "../about/styles/about.module.css"
+import { Companies } from "./component/Companies"
 // images
-import team from './asset/Collab-pana 2.svg'
-import user from './asset/user 2.svg'
-import group from './asset/Group.svg'
-import vector from './asset/Vector.svg'
-import user2 from './asset/user 2-1.svg'
-import channel from './asset/Group 35468-1.svg'
-import holiday from './asset/Group 35468.svg'
-import deadline from './asset/Group 35470.svg'
-import quick from './asset/Group 35471.svg'
-import todo from './asset/Group 35472.svg'
-import Carousel from './component/CarouselImg'
-import CarouselSecond from './component/SecondCarousel'
+import team from "./asset/Collab-pana 2.svg"
+import user from "./asset/user 2.svg"
+import group from "./asset/Group.svg"
+import vector from "./asset/Vector.svg"
+import user2 from "./asset/user 2-1.svg"
+import channel from "./asset/Group 35468-1.svg"
+import holiday from "./asset/Group 35468.svg"
+import deadline from "./asset/Group 35470.svg"
+import quick from "./asset/Group 35471.svg"
+import todo from "./asset/Group 35472.svg"
+import Carousel from "./component/CarouselImg"
+import CarouselSecond from "./component/SecondCarousel"
 // end of image import
 
 const index = () => {
@@ -67,7 +67,7 @@ const index = () => {
       <div className={`container ${styles.to_join}`}>
         <div className={`row`}>
           <div className={`col-lg-6 ${styles.team}`}>
-            <img src={team} alt={'image of teams'} srcSet="" />
+            <img src={team} alt={"image of teams"} srcSet="" />
           </div>
           <div className={`col-lg-6 ${styles.join_us}`}>
             <h3>Who we are and how to join us</h3>
@@ -101,7 +101,7 @@ const index = () => {
         <Carousel />
         <div className={`row ${styles.desktop_carousel}`}>
           <div className={`col ${styles.working_remote_section}`}>
-            <img src={channel} alt={'centralized space'} />
+            <img src={channel} alt={"centralized space"} />
             <h6>Channels</h6>
             <p>
               Increase level of organization in your team focused with <br />
@@ -109,7 +109,7 @@ const index = () => {
             </p>
           </div>
           <div className={`col ${styles.working_remote_section}`}>
-            <img src={holiday} alt={'image of calender'} />
+            <img src={holiday} alt={"image of calender"} />
             <h6>Holiday Calender</h6>
             <p>
               Add holidays, set reminders <br />
@@ -117,7 +117,7 @@ const index = () => {
             </p>
           </div>
           <div className={`col ${styles.working_remote_section}`}>
-            <img src={deadline} alt={'image of alarm clock'} />
+            <img src={deadline} alt={"image of alarm clock"} />
             <h6>Company Deadline</h6>
             <p>
               Meet up with deadlines with <br />
@@ -126,7 +126,7 @@ const index = () => {
             </p>
           </div>
           <div className={`col ${styles.working_remote_section}`}>
-            <img src={quick} alt={'image of quick reply app'} />
+            <img src={quick} alt={"image of quick reply app"} />
             <h6>Quick Reply App</h6>
             <p>
               Get swift replies to Direct <br />
@@ -135,7 +135,7 @@ const index = () => {
             </p>
           </div>
           <div className={`col ${styles.working_remote_section}`}>
-            <img src={todo} alt={'image to do list'} />
+            <img src={todo} alt={"image to do list"} />
             <h6>To do List</h6>
             <p>
               Organize tasks with the to-do <br />
@@ -151,26 +151,26 @@ const index = () => {
         <h3>Special Feature You Need</h3>
         <p>
           Get all your work tools and information assembled in one place for
-          easy access and increase Productivity{' '}
+          easy access and increase Productivity{" "}
         </p>
       </div>
       <CarouselSecond className={styles.carouselCaption} />
       <div className={`container-fluid ${styles.second_carousel_block}`}>
-        <div className={`row`}>
+        <div className={`row ${styles.row}`}>
           <div className={`col ${styles.vector}`}>
-            <img src={user} alt={'image of a user'} />
+            <img src={user} alt={"image of a user"} />
             <h6 className={``}>Animated Avatar Loungue</h6>
             <p>Create and animate your own avatar in the avatar lounge</p>
           </div>
           <div className={`col ${styles.vector}`}>
-            <img src={group} alt={'image of a company file'} />
+            <img src={group} alt={"image of a company file"} />
             <h6 className={``}>Company Files</h6>
             <p>
               Access your files on google drive while <br /> on Zuri Chat.
             </p>
           </div>
           <div className={`col ${styles.vector}`}>
-            <img src={vector} alt={'accessibility image'} />
+            <img src={vector} alt={"accessibility image"} />
             <h6 className={``}>Accessibility</h6>
             <p>
               Be in control, Use zuri Chat as you will <br /> and have a
@@ -178,7 +178,7 @@ const index = () => {
             </p>
           </div>
           <div className={`col ${styles.vector}`}>
-            <img src={user2} alt={'image of target board'} />
+            <img src={user2} alt={"image of target board"} />
             <h6 className={``}>Company Goals</h6>
             <p>
               Keep up with company goals to stay on <br /> track with your team.
