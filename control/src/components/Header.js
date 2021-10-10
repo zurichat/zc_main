@@ -21,13 +21,13 @@ const HeaderSearchSuggestion = () => {
         />
         <span className={`mb-2 ${headerStyles.zuriChat}`}>Zuri Chat</span>
       </Link>
-      {/*  <Link to="/search">
+      <Link to="/search">
         <img
           src={searchIcon}
           alt="search-Icon"
           className={`d-block d-lg-none align-top ${headerStyles.searchImage1}`}
         />
-      </Link> */}
+      </Link>
       <button
         className={`navbar-toggler ${headerStyles.toggle}`}
         type="button"
@@ -67,7 +67,7 @@ const HeaderSearchSuggestion = () => {
               role="button"
               aria-expanded="false"
             >
-              <span className={`${headerStyles.item}`}>About</span>
+              <span className={`${headerStyles.item}`}>About Zurichat</span>
             </Link>
           </li>
           <li className="nav-item">
@@ -85,7 +85,7 @@ const HeaderSearchSuggestion = () => {
               role="button"
               aria-expanded="false"
             >
-              <span className={`${headerStyles.item}`}>Contact</span>
+              <span className={`${headerStyles.item}`}>Contact Us</span>
             </Link>
           </li>
         </ul>
@@ -106,13 +106,13 @@ const HeaderSearchSuggestion = () => {
             </Link>
           </li>
         </ul>
-        {/*  <Link to="/search">
+        <Link to="/search">
           <img
             src={searchIcon}
             alt="search-Icon"
             className={`d-md-none d-lg-block align-top ${headerStyles.searchImage}`}
           />
-        </Link> */}
+        </Link>
       </div>
       <ul
         className={`navbar-nav d-none d-lg-flex me-auto my-2 my-lg-0 navbar-nav-scroll ${headerStyles.signs}`}
