@@ -4,8 +4,10 @@
   top: 0;
   z-index: 100;
   position: fixed;
-  width: 105%;
+  width: 100%;
   background-color: white;
+  display: flex;
+  justify-content: space-around;
 }
 
 .navbar_toggle_icon span {
@@ -41,12 +43,15 @@
   position: relative;
   left: 100px;
 }
+
 .searchImage1 {
   display: none;
 }
+
 .navbarBrand {
-  padding-left: 55px;
+  padding-left: 6rem;
 }
+
 .navbarBrand span {
   padding: 0.5rem;
   font-size: 22px;
@@ -56,9 +61,11 @@
 .signs {
   padding-right: 6rem;
 }
+
 .signs li {
   padding: 8px 20px;
 }
+
 .signU {
   color: #00b87c;
   font-weight: 400;
@@ -90,49 +97,71 @@
   font-weight: 400;
   padding: 8px 5px;
 }
+
 .navbarNav li span:hover {
   border-bottom: 0.2rem solid #00b87c;
 }
+
 .toggle {
   margin-right: 12px;
+}
+
+@media screen and (max-width: 1000px) {
+  .navbarBrand {
+    margin-right: auto !important;
+    margin-left: -4em;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .navbarBrand {
     padding-left: 12px;
+    margin-right: auto !important;
+    margin-left: 0;
   }
+
   .navbarNav li {
     padding: 5px 0;
   }
+
   .navbarNav li span:hover {
     border-bottom: none;
   }
+
   .signs {
     display: inline-flex;
     padding: 0 10px;
   }
+
   .signs li {
     padding: 0 20px;
   }
+
   .signU:hover {
     border-bottom: none;
     color: #00b87c;
   }
 }
+
 @media screen and (max-width: 414px) {
   .navbarNav li span {
     padding-left: 0;
   }
+
   .navbarBrand {
     padding-left: 0;
+    margin-right: auto !important;
   }
+
   .toggle {
     margin-right: 10px;
   }
+
   .searchImage1 {
     position: relative;
     left: 30px;
   }
+
   .searchImage {
     display: none;
   }
