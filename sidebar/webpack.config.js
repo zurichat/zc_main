@@ -1,35 +1,36 @@
-const { mergeWithRules } = require('webpack-merge')
-const singleSpaDefaults = require('webpack-config-single-spa-react')
-const path = require('path')
+/* eslint-env node */
+const { mergeWithRules } = require("webpack-merge")
+const singleSpaDefaults = require("webpack-config-single-spa-react")
+const path = require("path")
 
 const mergeRules = {
-  plugins: 'replace',
+  plugins: "replace",
   devServer: {
     static: {
-      directory: 'replace'
+      directory: "replace"
     }
   },
   module: {
     rules: {
-      test: 'match',
-      include: 'replace',
-      exclude: 'replace',
-      use: 'replace'
+      test: "match",
+      include: "replace",
+      exclude: "replace",
+      use: "replace"
     }
   }
 }
 
 module.exports = (webpackConfigEnv, argv) => {
   const defaultConfig = singleSpaDefaults({
-    orgName: 'zuri',
-    projectName: 'sidebar',
+    orgName: "zuri",
+    projectName: "sidebar",
     webpackConfigEnv,
     argv
   })
 
   return mergeWithRules(mergeRules)(defaultConfig, {
     output: {
-      path: path.join(__dirname, '..', 'dist') // string (default)
+      path: path.join(__dirname, "..", "dist") // string (default)
       // filename: "[name].js", // string (default)
       // publicPath: path.join(__dirname, '..', 'dist', 'assets') // string
     },
@@ -38,13 +39,13 @@ module.exports = (webpackConfigEnv, argv) => {
         {
           test: /\.css$/i,
           use: [
-            'style-loader',
+            "style-loader",
             {
-              loader: 'css-loader',
+              loader: "css-loader",
               options: {
                 importLoaders: 1,
                 modules: {
-                  localIdentName: '[local]--[hash:base64:5]__[name]'
+                  localIdentName: "[local]--[hash:base64:5]__[name]"
                 }
               }
             }

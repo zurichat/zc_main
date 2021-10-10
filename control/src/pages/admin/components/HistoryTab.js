@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 //import YearMonthPicker from 'react-year-month-picker'
-import styles from '../styles/adminHistoryTab.module.css'
+import styles from "../styles/adminHistoryTab.module.css"
 
 const HistoryTab = () => {
   const [scheduled, setScheduled] = useState(null)
 
   const handleChange = m => {
     setScheduled(m)
-    console.log(scheduled)
+    // console.log(scheduled)
   }
 
   const handleSubmit = () => {}
@@ -40,11 +40,11 @@ const HistoryTab = () => {
             >
               <path
                 stroke="#333"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M5 3H1M2.5 4.5 1 3l1.5-1.5"
               />
-            </svg>{' '}
+            </svg>{" "}
             &nbsp; August 2021
           </button>
         </div>

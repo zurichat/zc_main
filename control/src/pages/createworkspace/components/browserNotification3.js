@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import http from './browser-notifications/utils1/http'
+import http from './utils1/http'
 
 import {
   isPushNotificationSupported,
@@ -7,7 +7,7 @@ import {
   registerServiceWorker,
   createNotificationSubscription,
   getUserSubscription
-} from './brower-notifications/browserNotification1'
+} from './browserNotification1'
 
 const pushNotificationSupported = isPushNotificationSupported()
 
