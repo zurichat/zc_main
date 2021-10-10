@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
 
 * {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 body {
   margin: 0;
@@ -37,6 +37,11 @@ button:hover {
 .section3Cards div h3 {
   font-size: 20px;
 }
+.registerNow p {
+  margin-bottom: 10px;
+  font-size: 24px;
+  text-align: center;
+}
 .section3Cards div p {
   padding: 0;
   font-size: 16px;
@@ -65,11 +70,6 @@ button:hover {
   padding: 60px;
   text-align: center;
   margin-bottom: 5rem;
-}
-.registerNow p {
-  margin-bottom: 10px;
-  font-size: 24px;
-  text-align: center;
 }
 .registerNow .regbtn {
   display: inline-block;
@@ -107,16 +107,18 @@ button:hover {
     padding: 30px;
     grid-template-columns: auto;
   }
+
+  .registerNow p {
+    font-size: 22px;
+    text-align: center;
+  }
   .section3Cards div p {
     padding: 0;
     font-size: 14px;
     padding-right: 10px;
     text-align: left;
   }
-  .registerNow p {
-    font-size: 22px;
-    text-align: center;
-  }
+
   .registerNow .regbtn {
     padding: 18px 80px 18px 80px;
     font-size: 22px;
@@ -129,3 +131,4 @@ button:hover {
     font-size: 18px;
   }
 }
+
