@@ -6,7 +6,7 @@ import FormWrapper from "../../components/AuthFormWrapper"
 import LoginLoading from "../../components/LoginLoading"
 import styles from "../../component-styles/AuthFormElements.module.css"
 import axios from "axios"
-import { GetUserInfo } from "@zuri/control"
+// import { GetUserInfo } from "@zuri/control"
 import $behaviorSubject from "../../../../globalState"
 import { Helmet } from "react-helmet"
 import { goToDefaultChannel } from "../../api/channels"
@@ -62,8 +62,6 @@ const Login = () => {
       .then(response => {
         const { data, message } = response.data
 
-        setLoading(true)
-
         //Store token in localstorage
         sessionStorage.setItem("token", data.user.token)
 
@@ -76,34 +74,9 @@ const Login = () => {
         //Return the login data globally
         $behaviorSubject.next(response.data)
 
-        // Switch for redirects
-        axios
-          .get(`https://api.zuri.chat/users/${data.user.email}/organizations`, {
-            headers: {
-              Authorization: `Bearer ${data.user.token}`
-            }
-          })
-          .then(res => {
-            const orgs = res.data.data.length
-            // console.log(res.data.data)
-            sessionStorage.setItem('organisations', JSON.stringify(res.data.data))
-            // console.log('reg orgs', orgs)
+        setLoading(true)
 
-            switch (true) {
-              case orgs > 1:
-                history.push("/choose-workspace")
-                break
-              case orgs < 1:
-                history.push("/createworkspace")
-                break
-              default:
-                goToDefaultChannel()
-            }
-          })
-          .catch(err => {
-            throw err
-          })
-      })
+    })
       .catch(error => {
         const { data } = error.response
         console.error(data)
@@ -120,6 +93,49 @@ const Login = () => {
         //Render error message to the user
         seterror(data.message) //Change this when there is a design
       })
+  }
+
+  // Switch to appropraite screen
+  const getOrganizations = async user => {
+    try {
+      const res = await axios.get(
+        `https://api.zuri.chat/users/${user.email}/organizations`,
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`
+          }
+        }
+      )
+
+      if (res.status !== 200) {
+        throw new Error(
+          `Unable to fetch list of wokspaces, status code: ${res.status}`
+        )
+      }
+
+      const orgs = await res.data.data.length
+
+      switch (true) {
+        case orgs === 1:
+          goToDefaultChannel()
+          // setLoading(false)
+          break
+        case orgs > 1:
+          history.push("/choose-workspace")
+          // setLoading(false)
+          break
+        case orgs < 1:
+          history.push("/createworkspace")
+          // setLoading(false)
+          break
+        // default:
+        //   goToDefaultChannel()
+        //   break
+      }
+    } catch (err) {
+      console.error(err)
+      setLoading(false)
+    }
   }
 
   return (
@@ -152,7 +168,7 @@ const Login = () => {
             value={email}
             setValue={setEmail}
             error={emailerror}
-            // onFocus={displayImage}
+          // onFocus={displayImage}
           />
           <AuthInputBox
             className={`${styles.inputElement}`}
@@ -163,7 +179,7 @@ const Login = () => {
             value={password}
             setValue={setPassword}
             error={passworderror}
-            // onFocus={displayImage}
+          // onFocus={displayImage}
           />
 
           <div className={`${styles.rememberMe}`}>
@@ -176,7 +192,7 @@ const Login = () => {
                 onClick={() => {
                   setRememberMe(!rememberMe)
                 }}
-                // onFocus={displayImage}
+              // onFocus={displayImage}
               />
               Remember me
             </div>
