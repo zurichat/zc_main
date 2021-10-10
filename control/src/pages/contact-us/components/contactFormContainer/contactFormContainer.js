@@ -135,7 +135,7 @@ function ContactFormContainer() {
       <form className="" onSubmit={handleSubmit}>
         <div
           className={`mb-3 ${
-            !!userAuth.email ? ContactFormStyle.is_hidden_animate : ''
+            userAuth.email ? ContactFormStyle.is_hidden_animate : ''
           }`}
         >
           <label htmlFor="email" className="form-label fw-bold">
@@ -348,7 +348,7 @@ function ContactFormContainer() {
           <button
             type="submit"
             className={`btn ${ContactFormStyle.btn_primary} fw-bold`}
-            style={{height: '55px'}}
+            style={{ height: '55px' }}
             disabled={values.subject === '' || values.loading}
           >
             {values.subject ? 'Send us a message' : 'GET HELP'}
@@ -375,10 +375,7 @@ function ContactFormContainer() {
             {values.success}
           </p>
         )}
-        <a
-          href="/privacy"
-          className={ContactFormStyle.privacy}
-        >
+        <a href="/privacy" className={ContactFormStyle.privacy}>
           Privacy Policy
         </a>
       </form>

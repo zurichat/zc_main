@@ -1,15 +1,15 @@
-import { useRef, useState, useEffect, useContext } from 'react'
-import ProfileModal from './ProfileModal'
-import { authAxios } from '../utils/Api'
+import { useRef, useState, useEffect, useContext } from "react"
+import ProfileModal from "./ProfileModal"
+import { authAxios } from "../utils/Api"
 
-import { AiFillCamera } from 'react-icons/ai'
-import defaultAvatar from '../assets/images/avatar_vct.svg'
-import { ProfileContext } from '../context/ProfileModal'
-import Loader from 'react-loader-spinner'
-import toast, { Toaster } from 'react-hot-toast'
-import { data } from '../utils/Countrycode'
-import TimezoneSelect from 'react-timezone-select'
-import { StyledProfileWrapper } from '../styles/StyledEditProfile'
+import { AiFillCamera } from "react-icons/ai"
+import defaultAvatar from "../assets/images/avatar_vct.svg"
+import { ProfileContext } from "../context/ProfileModal"
+import Loader from "react-loader-spinner"
+import toast, { Toaster } from "react-hot-toast"
+import { data } from "../utils/Countrycode"
+import TimezoneSelect from "react-timezone-select"
+import { StyledProfileWrapper } from "../styles/StyledEditProfile"
 
 const EditProfile = () => {
   const imageRef = useRef(null)
@@ -17,26 +17,26 @@ const EditProfile = () => {
   const { user, orgId, userProfileImage, setUserProfileImage } =
     useContext(ProfileContext)
   const [selectedTimezone, setSelectedTimezone] = useState({})
-  const [links, setLinks] = useState([''])
+  const [links, setLinks] = useState([""])
   const [state, setState] = useState({
     name: user.name,
     display_name: user.display_name,
     pronouns: user.pronouns,
     role: user.role,
     image_url: user.image_url,
-    bio: '',
+    bio: "",
     phone: user.phone,
-    prefix: '',
-    timezone: '',
-    twitter: '',
-    facebook: '',
+    prefix: "",
+    timezone: "",
+    twitter: "",
+    facebook: "",
     loading: false,
     imageLoading: false
   })
 
   const addList = () => {
     if (links.length < 5) {
-      setLinks([...links, ''])
+      setLinks([...links, ""])
     }
   }
 
@@ -62,7 +62,7 @@ const EditProfile = () => {
       const imageReader = event.target.files[0]
 
       const formData = new FormData()
-      formData.append('image', imageReader)
+      formData.append("image", imageReader)
 
       authAxios
         .patch(
@@ -73,15 +73,15 @@ const EditProfile = () => {
           const newUploadedImage = res.data.data
           setUserProfileImage(newUploadedImage)
           setState({ ...state, imageLoading: false })
-          toast.success('User Image Updated Successfully', {
-            position: 'top-center'
+          toast.success("User Image Updated Successfully", {
+            position: "top-center"
           })
         })
         .catch(err => {
-          console.log(err)
+          console.error(err)
           setState({ ...state, imageLoading: false })
           toast.error(err?.message, {
-            position: 'top-center'
+            position: "top-center"
           })
         })
     }
@@ -95,15 +95,15 @@ const EditProfile = () => {
       .then(res => {
         setUserProfileImage(defaultAvatar)
         setState({ ...state, imageLoading: false })
-        toast.success('User Image Removed Successfully', {
-          position: 'top-center'
+        toast.success("User Image Removed Successfully", {
+          position: "top-center"
         })
       })
       .catch(err => {
-        console.log(err)
+        console.error(err)
         setState({ ...state, imageLoading: false })
         toast.error(err?.message, {
-          position: 'top-center'
+          position: "top-center"
         })
       })
   }
@@ -140,17 +140,17 @@ const EditProfile = () => {
     authAxios
       .patch(`/organizations/${orgId}/members/${user._id}/profile`, data)
       .then(res => {
-        console.log(res)
+        // console.log(res)
         setState({ loading: false })
-        toast.success('User Profile Updated Successfully', {
-          position: 'top-center'
+        toast.success("User Profile Updated Successfully", {
+          position: "top-center"
         })
       })
       .catch(err => {
-        console.log(err)
+        console.error(err)
         setState({ loading: false })
         toast.error(err?.message, {
-          position: 'top-center'
+          position: "top-center"
         })
       })
   }
@@ -165,7 +165,7 @@ const EditProfile = () => {
                 <div className="mobileAvataeCon">
                   <img
                     ref={avatarRef}
-                    src={user.image_url !== '' ? user.image_url : defaultAvatar}
+                    src={user.image_url !== "" ? user.image_url : defaultAvatar}
                     alt="profile-pic"
                     className="avatar"
                   />
@@ -380,7 +380,7 @@ const EditProfile = () => {
             {state.loading ? (
               <Loader type="ThreeDots" color="#00B87C" height={24} width={24} />
             ) : (
-              'Save'
+              "Save"
             )}
           </div>
           <div className="button-wrapper">
@@ -389,7 +389,7 @@ const EditProfile = () => {
               {state.loading ? (
                 <Loader type="ThreeDots" color="#fff" height={40} width={40} />
               ) : (
-                'Save Changes'
+                "Save Changes"
               )}
             </button>
           </div>

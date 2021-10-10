@@ -1,12 +1,12 @@
-import { Link } from 'react-router-dom'
-import headerStyles from '../../styles/Header.module.css'
-import styles from '../../styles/marketplace.module.css'
-import ZuriChatLogo from '../../../../component-assets/zurichatlogo.png'
+import { Link } from "react-router-dom"
+import headerStyles from "../../styles/Header.module.css"
+import styles from "../../styles/marketplace.module.css"
+import ZuriChatLogo from "../../../../component-assets/zurichatlogo.png"
 
 const MarketplaceHeader = () => {
-  let currentWorkspace = localStorage.getItem('currentWorkspace')
-  let user = JSON.parse(sessionStorage.getItem('user'))
-  console.log(user?.first_name.slice(0, 2))
+  let currentWorkspace = localStorage.getItem("currentWorkspace")
+  let user = JSON.parse(sessionStorage.getItem("user"))
+  // console.log(user?.first_name.slice(0, 2))
   return (
     <nav className={`navbar navbar-expand-lg navbar-light ${styles.navbar}`}>
       <Link to="/" className={`navbar-brand`}>

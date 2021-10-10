@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import styles from '../../settings/styles/SettingsTab.module.css'
-import PreferenceStyle from './styles/preference.module.css'
+import styles from './styles/preference.module.css'
+// import PreferenceStyle from './styles/preference.module.css'
 import { motion } from 'framer-motion'
 
 const PreferenceWrapper = ({ title, text, btnText, timeZone, children }) => {
@@ -9,8 +9,8 @@ const PreferenceWrapper = ({ title, text, btnText, timeZone, children }) => {
   return (
     <motion.div layout className={`${styles.settings_wrapper}`}>
       <motion.div layout className={styles.settingsTab}>
-        <div layout className={PreferenceStyle.settingleft}>
-          {title} <br />
+        <div layout className={styles.settingleft}>
+          {title}
           <span>{text}</span>
           {/* {timeZone} */}
         </div>

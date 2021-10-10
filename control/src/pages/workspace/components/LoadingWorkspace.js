@@ -15,11 +15,10 @@ const LoadingWorkspace = () => {
   const { pageLoading, error } = useWorkspaceContext()
   return (
     <>
-      {pageLoading ? (
-        <LoginLoading />
-      ) : error ? (
-        <WorkspaceError error={error} />
-      ) : (
+      {/* { pageLoading 
+      ?  (<LoginLoading />) 
+      : error ? (<WorkspaceError error={error} />) :  */}
+      {/* ( */}
         <div className={`${styles.workspace}`}>
           <main className={`${styles.workspace_container}`}>
             <WorkspaceHeader />
@@ -32,7 +31,8 @@ const LoadingWorkspace = () => {
           </main>
           <WorkspaceFooter />
         </div>
-      )}
+      {/* ) */}
+      {/* } */}
     </>
   )
 }

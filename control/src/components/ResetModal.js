@@ -1,7 +1,6 @@
-import React from 'react'
-import '@reach/dialog/styles.css'
-import { useState } from 'react'
-import { Dialog, DialogOverlay, DialogContent } from '@reach/dialog'
+import React, { useState } from "react"
+import "@reach/dialog/styles.css"
+import { Dialog, DialogOverlay, DialogContent } from "@reach/dialog"
 
 const ResetModal = props => {
   const [showDialog, setShowDialog] = useState(false)

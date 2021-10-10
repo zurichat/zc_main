@@ -1,11 +1,10 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
-import { FaCheck } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
-import { useHistory } from 'react-router-dom'
-import styles from '../styles/ConfirmDeactivation.module.css'
-import SettingsNav from './SettingsNav'
-import { getToken, getUser, removeUserSession } from '../Utils/Common'
+import { useState, useEffect } from "react"
+import axios from "axios"
+import { FaCheck } from "react-icons/fa"
+import { Link, useHistory } from "react-router-dom"
+import styles from "../styles/ConfirmDeactivation.module.css"
+import SettingsNav from "./SettingsNav"
+import { getToken, getUser, removeUserSession } from "../Utils/Common"
 
 const ConfirmDeactivation = () => {
   const [deactivate, setDeactivate] = useState(false)
@@ -24,16 +23,16 @@ const ConfirmDeactivation = () => {
             {
               headers: {
                 Authorization: `Bearer ${token}`,
-                Accept: 'application/json',
-                'Content-Type': 'application/json'
+                Accept: "application/json",
+                "Content-Type": "application/json"
               }
             }
           )
-          console.log(res.data)
+          // console.log(res.data)
           // setId(res.data.data._id)
           // setOrg(res.data.data.Organizations[0])
         } catch (error) {
-          console.log(error)
+          console.error(error)
         }
       }
       getUser()
@@ -49,17 +48,17 @@ const ConfirmDeactivation = () => {
           {
             headers: {
               Authorization: `Bearer ${token}`,
-              Accept: 'application/json',
-              'Content-Type': 'application/json'
+              Accept: "application/json",
+              "Content-Type": "application/json"
             }
           }
         )
-        console.log(res)
+        // console.log(res)
 
         removeUserSession()
-        history.push('/account-deactivated')
+        history.push("/account-deactivated")
       } catch (err) {
-        console.log(err)
+        console.error(err)
       }
     }
   }
