@@ -27,7 +27,7 @@ const ThankYouModal = ({ displayModal, setDisplayModal }) => {
                                         Thank you for subscribing!
                                     </h3>
                                     <p className={`text-center ${css.modalText}`}>
-                                        Now, you'll be the first to receive updates and unique offers from the Zuri Chat
+                                        Now, you'll be the first to receive updates <br /> and unique offers from the <br /> Zuri Chat
                                         team.
                                     </p>
                                 </div>
