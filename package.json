@@ -20,7 +20,6 @@
     "dev:comment-sidebar": "npm run dev --prefix commentSidebar",
     "dev": "npm-run-all --parallel \"dev:*\" \"open\"",
     "lint": "concurrently yarn:lint:*",
-    "lint:css": "stylelint '**/*.+(css|scss|sass)'",
     "lint:js": "eslint '**/*.+(js|jsx)'",
     "prettify": "prettier -w .",
     "prepare": "husky install",
