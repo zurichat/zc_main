@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 
 .sectionContainer {
   margin-top: 70.49px !important;
@@ -43,18 +43,17 @@
 input.inputField::placeholder {
   font-style: normal;
   font-weight: 500;
-  font-size: 1.5rempx;
+  font-size: 1.2rem;
   line-height: 29px;
 }
 
 .subscribeBtn {
   width: 30%;
-  /* padding: 1.35rem; */
-  padding: 1rem;
+  padding: 0.8rem;
   background-color: #00b87c;
   color: #ffffff;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 500;
   border: 2px solid #00b87c;
   border-radius: 4px;
   transition: 200ms;
@@ -69,21 +68,32 @@ input.inputField::placeholder {
 }
 
 /* tablet */
-@media (max-width: 769px) {
+@media (min-width: 770px) and (max-width: 991px) {
   .inputField {
-    width: 60%;
+    width: 55%;
+    margin-right: 10px;
+  }
+  .subscribeBtn {
+    width: 40%;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .inputField {
+    width: 80%;
     margin-right: 10px;
     font-size: 1rem;
   }
   .subscribeBtn {
-    width: 35%;
-    margin-left: 0px;
+    width: 50%;
+    margin: 0px auto;
     font-size: 1rem;
   }
 }
 
 /* smartphone */
-@media (max-width: 469px) {
+@media screen and (max-width: 469px) {
   .heading2 {
     font-size: 24px !important;
     margin-top: 2rem;

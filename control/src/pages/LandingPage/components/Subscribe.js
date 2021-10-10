@@ -49,13 +49,13 @@ const Subscribe = () => {
           <div
             className={`col-md-6 col-sm-12 d-flex flex-column ${css.rightColumn}`}
           >
-            <div className={` ${css.text}`}>
+            <div className={`py-sm-4 ${css.text}`}>
               <h2 className={` ${css.heading2}`}>
                 Be the First to get updates and exclusive offers from Zuri Chat
               </h2>
               <p className={`py-4 mb-4 px-0 ${css.subtext}`}>
-                Enrich your Zuri Chat experience by signing up here to get the
-                latest news and special deals on Zuri Chat
+                Enrich your Zuri Chat experience by signing up <br /> here to
+                get the latest news and special deals <br /> on Zuri Chat
               </p>
               <div className={`${css.formContainer}`}>
                 <form onSubmit={handleSubmit}>
@@ -68,7 +68,11 @@ const Subscribe = () => {
                     required
                     className={`mb-3 ${css.inputField}`}
                   />
-                  <button type="submit" className={`${css.subscribeBtn}`}>
+                  <button
+                    type="submit"
+                    className={`${css.subscribeBtn}`}
+                    disabled={true}
+                  >
                     Subscribe
                   </button>
                 </form>
