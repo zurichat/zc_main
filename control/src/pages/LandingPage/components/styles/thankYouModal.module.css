@@ -1,9 +1,9 @@
 .modalWrap {
   position: fixed;
-  top: 150px;
-  left: 350px;
+  top: 20%;
+  left: 20%;
   margin: 0px auto;
-  width: 70%;
+  width: 55%;
   max-width: 830px;
   max-height: 500px;
   border-radius: 10px;
@@ -15,8 +15,8 @@
 /* tablets */
 @media (max-width: 769px) {
   .modalWrap {
-    left: 130px;
-    margin: 0px auto;
+    left: 18%;
+    width: 70%;
   }
 }
 
