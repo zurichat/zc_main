@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react"
+import { useState, useContext, useCallback, useEffect } from "react"
 import { ProfileContext } from "./context/ProfileModal"
 import { TopbarContext } from "./context/Topbar"
 import { connect } from "react-redux"
@@ -16,8 +16,8 @@ import Profile from "./components/Profile"
 // import Loader from 'react-loader-spinner'
 import { GetUserInfo, SubscribeToChannel } from "@zuri/control"
 import axios from "axios"
-import toggleStyle from "./styles/sidebartoggle.module.css"
-import { BsReverseLayoutTextSidebarReverse } from "react-icons/bs"
+import { AiOutlineMenu } from "react-icons/ai"
+import styles from "../src/styles/TopNavBar.module.css"
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { closeModal, openModal, presence, setPresence } =
@@ -152,55 +152,45 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       )
   }
 
+  const [toggleSidebar, setToggleSidebar] = useState(false)
+
+  const handleToggleSidebar = useCallback(() => {
+    setToggleSidebar(!toggleSidebar)
+  }, [toggleSidebar])
+
   //Handle sidebar on mobile
   const sidebar = document.getElementById(
     "single-spa-application:@zuri/sidebar"
   )
-  const zc_spa_body = document.querySelector("body")
-  const sidebar_toggle = document.querySelector("#sidebar_toggle")
-  const openSidebar = () => {
-    sidebar.style.display = "block"
-    sidebar.style.left = "0"
-    sidebar.style.width = "200px"
-    sidebar_toggle.style.display = "none"
-  }
 
-  // zc_spa_body.addEventListener('click', () => {
-  //   if (window.outerWidth <= 768) {
-  //     if (sidebar !== null) {
-  //       sidebar.style.display = 'none'
-  //       sidebar_toggle.style.display = 'block'
-  //     }
-  //   } else {
-  //     if (sidebar !== null) {
-  //       sidebar.style.display = 'block'
-  //       sidebar_toggle.style.display = 'none'
-  //     }
-  //   }
-  // })
+  useEffect(() => {
+    if (toggleSidebar) {
+      sidebar.style.display = "block"
+    } else {
+      sidebar.style.display = "none"
+    }
+  }, [toggleSidebar, sidebar])
 
   return (
     <>
-      <div className="ps-3" style={{ width: "20%" }}>
+      <div className="ps-3" style={{ width: "10%" }}>
         {/* <a href="/home"> */}
-        <Logo src={zurichatlogo} alt="zuri chat logo" />
-        {/* </a> */}
-        <div
-          onClick={openSidebar}
-          id="sidebar_toggle"
-          className={toggleStyle.sidebar_toggle_icon}
-          style={{
-            top: "7rem"
-          }}
-        >
-          <BsReverseLayoutTextSidebarReverse
-            style={{
-              margin: "0.6rem 0.6rem"
-            }}
-            size={18}
-            fill="#fff"
-          />
+        <div className={styles["topNavBar__logo"]}>
+          <img src={zurichatlogo} alt="zuri chat logo" />
         </div>
+        {/* </a> */}
+      </div>
+      <div className="ps-3" style={{ width: "10%" }}>
+        <button
+          onClick={handleToggleSidebar}
+          type="button"
+          aria-label="hamburger-menu"
+          className={styles["hamburger__menu-button"]}
+        >
+          <AiOutlineMenu
+            style={{ fill: "#00b87c", width: "1.5em", height: "1.5em" }}
+          />
+        </button>
       </div>
       <div className="ms-4" style={{ width: "60%" }}>
         <BaseInput
@@ -246,17 +236,17 @@ const LogoDiv = styled.div`
   display: flex;
   align-items: center;
 `
-const Logo = styled.img`
-  @media (min-width: 1023px) {
-    // width: 50%;
-  }
-  // @media (max-width: 768px) {
-  //   width: 60%;
-  // }
-  // @media (max-width: 425px) {
-  //   width: 80%;
-  // }
-`
+// const Logo = styled.img`
+//   @media (min-width: 1023px) {
+//     // width: 50%;
+//   }
+//   // @media (max-width: 768px) {
+//   //   width: 60%;
+//   // }
+//   // @media (max-width: 425px) {
+//   //   width: 80%;
+//   // }
+// `
 const ProfileImg = styled.img`
   border-radius: 4px;
   width: 32px;
