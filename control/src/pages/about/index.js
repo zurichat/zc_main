@@ -156,7 +156,7 @@ const index = () => {
       </div>
       <CarouselSecond className={styles.carouselCaption} />
       <div className={`container-fluid ${styles.second_carousel_block}`}>
-        <div className={`row`}>
+        <div className={`row ${styles.row}`}>
           <div className={`col ${styles.vector}`}>
             <img src={user} alt={'image of a user'} />
             <h6 className={``}>Animated Avatar Loungue</h6>
