@@ -1,5 +1,5 @@
 import React from 'react'
-//import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { RiErrorWarningLine } from 'react-icons/ri'
 import styles from '../component-styles/AuthFormWrapper.module.css'
 import logo from '../component-assets/logo.svg'
@@ -102,15 +102,15 @@ const FormWrapper = ({
       </div>
 
       <div className={`${styles.footer}`}>
-        <a href="/contact-us" className={`${styles.footer_a}`}>
+        <Link to="/contact-us" className={`${styles.footer_a}`}>
           Contact Us
-        </a>
-        <a href="/legal" className={`${styles.footer_a}`}>
+        </Link>
+        <Link to="/legal" className={`${styles.footer_a}`}>
           Legal Policy
-        </a>
-        <a href="/about" className={`${styles.footer_a}`}>
+        </Link>
+        <Link to="/about" className={`${styles.footer_a}`}>
           About Zurichat
-        </a>
+        </Link>
       </div>
     </section>
   )
