@@ -16,6 +16,7 @@ import EditProfile from "./EditProfile"
 import Preferences from "./Preferences"
 import { Dropdown } from "./ProfileMore"
 import StatusBadgeModal from "./StatusBadgeModal"
+import SetStatusModal from "./SetStatusModal"
 
 const Profile = () => {
   const {
@@ -23,6 +24,7 @@ const Profile = () => {
     toggleModalState,
     showProfile,
     toggleProfileState,
+    setStatusModal,
     user
   } = useContext(ProfileContext)
   // console.log('user status', user.status)
@@ -74,21 +76,19 @@ const Profile = () => {
           alt="avatar"
         />
         <div className={styles.userDetails}>
-          <h3 className={styles.h3users}>
+          <h3 >
             {user.first_name
               ? `${user.first_name} ${user.last_name} `
               : "Anonnymous"}{" "}
-            {/* <span>{<StatusBadgeModal />  === '' ? <StatusBadgeModal />  :'0' }</span> */}
-            {/* <ProfileStatusBadgeModal /> */}
-            <StatusBadgeModal />
+            <span>{<StatusBadgeModal />  === '' ? <StatusBadgeModal />  :'0' }</span>
           </h3>
 
-          <p className={styles.myp}>{user.bio ? user.bio : "What you do"}</p>
+          <p>{user.bio ? user.bio : "What you do"}</p>
           <small>{user.pronouns ? user.pronouns : "His/Her"}</small>
         </div>
 
         <div className={styles.buttonGroupsMobile}>
-          <button>Message</button>
+          <button onClick={() => setDropdown(!dropdown)}>More</button>
           <button
             onClick={() => {
               toggleModalState()
@@ -113,8 +113,14 @@ const Profile = () => {
             </button>
             <h6 className={styles.ctaText}> Edit Profile</h6>
           </div>
+          
           <div>
-            <button onClick={state.openStatus} className={styles.ctaButton}>
+            <button 
+            className={styles.statuscta}
+            onClick={() => {
+                setModal(() => "edit status")
+                toggleModalState()
+              }}>
               <AiFillEdit className={styles.ctaButtonIcon} />
             </button>
             <h6 className={styles.ctaText}> Edit Status</h6>
@@ -131,6 +137,7 @@ const Profile = () => {
           {dropdown && <Dropdown />}
           {modal === "preference" && <Preferences />}
           {modal === "edit profile" && <EditProfile />}
+          {/* {modal === "edit status" && <SetStatusModal />} */}
         </div>
 
         <div className={`${styles.moreInfo} ${styles.mobile}`}>
