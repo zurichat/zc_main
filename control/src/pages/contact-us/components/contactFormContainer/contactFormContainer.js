@@ -7,6 +7,7 @@ import Alert from '../../assets/alert-circle.svg'
 import { GetUserInfo } from '../../../../zuri-control'
 import downIcon from '../../assets/chevron-down.svg'
 import arrowRight from '../../assets/arrow-right.svg'
+import useMediaQuery from '../../../../components/useMediaQuery'
 
 const activeStyle = {
   borderColor: '#2196f3'
@@ -31,6 +32,8 @@ function ContactFormContainer() {
     error: '',
     success: ''
   })
+
+  const pageWidth = useMediaQuery('(max-width: 600px)');
 
   useEffect(() => {
     let userInfo = GetUserInfo()
@@ -91,6 +94,7 @@ function ContactFormContainer() {
     // setValues(values => ({ ...values, [e.target.name]: e.target.value }))
     setValues({ ...values, [e.target.name]: e.target.value })
   }
+  
   const handleTopicChange = detail => e => {
     setCurrentDetails(detail)
     setValues(values => ({ ...values, subject: detail.topic }))
@@ -161,12 +165,15 @@ function ContactFormContainer() {
           }`}
         >
           <div className={`w-100`}>
-            <div className={`d-flex align-items-center mb-3`}>
-              <p className={`fw-bold ${ContactFormStyle.subHead}`}> Topic</p>
+            <div className={`d-flex align-items-center my-4`}>
+              <p className={`fw-bold mb-0 ${ContactFormStyle.subHead}`}> Topic</p>
 
               <p
-                className={`fw-bold ms-2 pt-1 ${ContactFormStyle.text_primary} ${ContactFormStyle.change}`}
-                style={{ fontSize: 12 }}
+                className={`fw-bold ms-2 mb-0 ${ContactFormStyle.text_primary} ${ContactFormStyle.change}`}
+                style={{
+                  fontSize: '12px',
+                  lineHeight: '14.4px'
+                }}
                 onClick={() => {
                   setValues(values => ({ ...values, subject: '' }))
                   setCurrentDetails({})
@@ -178,7 +185,7 @@ function ContactFormContainer() {
             <div className="d-grid">
               <button
                 type="button"
-                className={`btn ${ContactFormStyle.btn_primary} ${ContactFormStyle.btn_topic_select} shadow-none text-nowrap fw-bold mb-3 me-3`}
+                className={`btn ${ContactFormStyle.btn_primary} ${ContactFormStyle.btn_topic_select} shadow-none text-nowrap fw-bold mb-3`}
               >
                 {currentDetails.topic}
               </button>
@@ -226,18 +233,23 @@ function ContactFormContainer() {
             <p className={`fw-bold my-3`} style={{ fontSize: '14px' }}>
               Related articles
             </p>
-            <ul>
+            <ul 
+              style={{
+                paddingLeft: 0,
+              }}
+            >
               {currentDetails.articles &&
                 currentDetails.articles.map((article, index) => {
                   return (
                     <li
                       key={index}
                       style={{
-                        color: '#00B87C',
+                        color: 'rgb(0, 184, 124)',
                         fontWeight: 'bold',
                         lineHeight: '18px',
                         display: 'flex',
                         alignItems: 'center',
+                        padding: '4px 0',
                         cursor: 'pointer'
                       }}
                     >
@@ -245,7 +257,7 @@ function ContactFormContainer() {
                       <img
                         src={arrowRight}
                         alt=""
-                        style={{ paddingLeft: '4px' }}
+                        style={{ paddingLeft: '8px' }}
                       />
                     </li>
                   )
@@ -268,7 +280,7 @@ function ContactFormContainer() {
                 type="button"
                 key={detail.topic}
                 disabled={!(values.subject === '')}
-                className={`btn ${ContactFormStyle.btn_topic} text-nowrap fw-bold rounded-pill mb-3 me-3`}
+                className={`btn ${ContactFormStyle.btn_topic} text-nowrap fw-bold rounded-pill mb-3 me-md-3`}
                 onClick={handleTopicChange(detail)}
               >
                 {detail.topic}
