@@ -7,7 +7,7 @@ import ThankYouModal from "./ThankYouModal"
 const Subscribe = () => {
   const [email, setEmail] = useState("")
 
-  const [displayModal, setDisplayModal] = useState(true)
+  const [displayModal, setDisplayModal] = useState(false)
 
   const handleSubmit = async event => {
     event.preventDefault()
