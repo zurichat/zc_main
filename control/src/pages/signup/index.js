@@ -192,7 +192,7 @@ const Signup = () => {
             <span className={`${styles.tosText}`}>
               I agree to Zurichat's {''}
               <Link to="/terms">Terms of services{''} </Link>&
-              <a href="/"> {''}Privacy</a>
+              <Link to="/privacy"> {''}Privacy</Link>
             </span>
           </div>
         </FormWrapper>
