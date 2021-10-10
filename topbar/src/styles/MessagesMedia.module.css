@@ -10,12 +10,12 @@
   line-height: 20px;
   font-style: normal;
   color: #242424;
-  margin-left: -500px;
 }
 
 .clean {
   display: flex;
   margin-top: 8px;
+  align-items: center;
 }
 
 .cln {
@@ -23,7 +23,6 @@
   font-size: 13px;
   color: #3a3a3a;
   font-style: normal;
-  line-height: 14px;
 }
 
 .compt {
@@ -36,16 +35,15 @@
 }
 
 .radio {
-  margin-top: -10px;
 }
 
 .radio2 {
-  margin-top: -10px;
 }
 
 .compact {
   display: flex;
   margin-top: 3px;
+  align-items: center;
 }
 
 .text {
@@ -59,7 +57,7 @@
 }
 
 .theme11 {
-  width: 90%;
+  width: 100%;
   margin-top: 15px;
 }
 
@@ -67,7 +65,7 @@
   margin-top: 15px;
   margin-bottom: 20px;
   border-bottom: 1px solid rgba(214, 211, 211, 0.5);
-  width: 90%;
+  width: 100%;
 }
 
 .name {
@@ -76,11 +74,11 @@
   font-style: normal;
   line-height: 20px;
   color: #242424;
-  margin-left: -505px;
 }
 
 .full {
   display: flex;
+  align-items: center;
   margin-top: 8px;
   margin-left: 1px;
 }
@@ -90,7 +88,6 @@
   font-size: 13px;
   color: #3a3a3a;
   font-weight: normal;
-  line-height: 20px;
   font-style: normal;
 }
 
@@ -99,26 +96,24 @@
   font-size: 13px;
   color: #3a3a3a;
   font-weight: normal;
-  line-height: 20px;
   font-style: normal;
 }
 
 .radio3 {
-  margin-top: -8px;
 }
 
 .radio4 {
-  margin-top: -8px;
   margin-left: 1px;
 }
 
 .just {
   display: flex;
+  align-items: center;
   margin-top: 3px;
 }
 
 .theme12 {
-  width: 90%;
+  width: 100%;
   margin-top: 15px;
   margin-left: 3px;
 }
@@ -145,12 +140,13 @@
   margin-top: 15px;
   margin-bottom: 20px;
   border-bottom: 1px solid rgba(214, 211, 211, 0.5);
-  width: 90%;
+  width: 100%;
   margin-left: 3px;
 }
 
 .info {
   display: flex;
+  align-items: center;
   margin-top: 15px;
 }
 
@@ -158,13 +154,13 @@
   margin-left: -10px;
   font-size: 13px;
   color: #999999;
-  line-height: 20px;
   font-weight: normal;
   font-style: normal;
 }
 
 .time {
   display: flex;
+  align-items: center;
   margin-top: 15px;
 }
 
@@ -172,13 +168,13 @@
   margin-left: -10px;
   font-size: 13px;
   color: #999999;
-  line-height: 20px;
   font-weight: normal;
   font-style: normal;
 }
 
 .hexa {
   display: flex;
+  align-items: center;
   margin-top: 15px;
 }
 
@@ -186,7 +182,6 @@
   margin-left: -10px;
   font-size: 13px;
   color: #999999;
-  line-height: 20px;
   font-weight: normal;
   font-style: normal;
 }
@@ -197,26 +192,22 @@
   line-height: 20px;
   font-style: normal;
   color: #333333;
-  margin-left: -430px;
 }
 
 .checkbox {
-  margin-top: -8px;
 }
 
 .checkbox2 {
-  margin-top: -8px;
 }
 
 .checkbox3 {
-  margin-top: -8px;
 }
 
 .bottom3 {
   margin-top: 15px;
   margin-bottom: 20px;
   border-bottom: 1px solid rgba(214, 211, 211, 0.5);
-  width: 90%;
+  width: 100%;
 }
 
 .emoji {
