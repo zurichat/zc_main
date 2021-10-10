@@ -83,6 +83,7 @@
   font-size: 18px;
   padding: 8px 20px;
   border-radius: 3px;
+  margin-right: 80px;
 }
 
 .signIn:hover {
@@ -146,7 +147,52 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
+  .navbarNav li span {
+    padding-left: 0;
+  }
+
+  .navbarBrand {
+    padding-left: 0;
+  }
+
+  .toggle {
+    margin-right: 10px;
+  }
+
+  .searchImage1 {
+    position: relative;
+    left: 50px;
+  }
+
+  .searchImage {
+    display: none;
+  }
+
+  .signs {
+    display: inline-flex;
+    padding: 0 10px;
+  }
+
+  .signs li {
+    padding: 0 20px;
+  }
+
+  .signU {
+    color: #00b87c;
+    font-weight: 400;
+    font-size: 18px;
+    padding: 8px 0;
+  }
+
+  .signU:hover {
+    border-bottom: none;
+    color: #00b87c;
+  }
+
+}
+
+@media screen and (min-width: 480px) {
   .navbarBrand {
     padding-left: 12px;
   }
@@ -175,11 +221,7 @@
   }
 
   .toggle {
-    margin-right: 10px;
-  }
-
-  .searchImage {
-    display: none;
+    margin-right: 30px;
   }
 
   .search_wrapper2 {
