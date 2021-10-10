@@ -270,8 +270,8 @@ const EditProfile = () => {
                   onChange={setPhone}
                 />
               </div>
-              <div className="input-group">
-                <label className="inputLabel">Time Zone</label>
+              <div className="input-group1">
+                <label className="inputLabel1">Time Zone</label>
                 <TimezoneSelect
                   value={selectedTimezone}
                   onChange={setSelectedTimezone}
