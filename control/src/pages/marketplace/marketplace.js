@@ -59,8 +59,8 @@ const MarketPlace = () => {
                   <DiscoverPluginSvg />
                   <div className={styles.svgConnectionLineOne}>
                     <svg
-                      width="179"
-                      height="205"
+                      width="160"
+                      height="120"
                       viewBox="0 0 179 255"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -76,8 +76,8 @@ const MarketPlace = () => {
                   <InstallPluginSvg />
                   <div className={styles.svgConnectionLineTwo}>
                     <svg
-                      width="516"
-                      height="108"
+                      width="290"
+                      height="80"
                       viewBox="0 0 516 138"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -93,8 +93,8 @@ const MarketPlace = () => {
                   <CollaborationSvg />
                   <div className={styles.svgConnectionLineThree}>
                     <svg
-                      width="184"
-                      height="205"
+                      width="160"
+                      height="120"
                       viewBox="0 0 184 255"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
