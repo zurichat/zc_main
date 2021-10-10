@@ -4,10 +4,8 @@
   top: 0;
   z-index: 100;
   position: fixed;
-  width: 100%;
+  width: 105%;
   background-color: white;
-  display: flex;
-  justify-content: space-around;
 }
 
 .navbar_toggle_icon span {
@@ -41,17 +39,14 @@
 
 .searchImage {
   position: relative;
-  left: 100px;
+  left: 130px;
 }
-
 .searchImage1 {
   display: none;
 }
-
 .navbarBrand {
-  padding-left: 6rem;
+  padding-left: 55px;
 }
-
 .navbarBrand span {
   padding: 0.5rem;
   font-size: 22px;
@@ -59,13 +54,11 @@
 }
 
 .signs {
-  padding-right: 6rem;
+  padding-right: 8rem;
 }
-
 .signs li {
   padding: 8px 20px;
 }
-
 .signU {
   color: #00b87c;
   font-weight: 400;
@@ -84,6 +77,7 @@
   font-size: 18px;
   padding: 8px 20px;
   border-radius: 3px;
+  margin-right: 80px;
 }
 
 .signIn:hover {
@@ -97,72 +91,112 @@
   font-weight: 400;
   padding: 8px 5px;
 }
-
 .navbarNav li span:hover {
   border-bottom: 0.2rem solid #00b87c;
 }
-
 .toggle {
   margin-right: 12px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 480px) {
+  .navbarNav li span {
+    padding-left: 0;
+  }
   .navbarBrand {
-    margin-right: auto !important;
-    margin-left: -4em;
+    padding-left: 0;
   }
-}
-
-@media screen and (max-width: 768px) {
-  .navbarBrand {
-    padding-left: 12px;
-    margin-right: auto !important;
-    margin-left: 0;
+  .toggle {
+    margin-right: 10px;
   }
-
-  .navbarNav li {
-    padding: 5px 0;
+  .searchImage1 {
+    position: relative;
+    left: 50px;
   }
-
-  .navbarNav li span:hover {
-    border-bottom: none;
+  .searchImage {
+    display: none;
   }
-
   .signs {
     display: inline-flex;
     padding: 0 10px;
   }
-
   .signs li {
     padding: 0 20px;
   }
-
   .signU:hover {
     border-bottom: none;
     color: #00b87c;
   }
+  .signU {
+    color: #00b87c;
+    font-weight: 400;
+    font-size: 18px;
+    padding: 8px 0px;
+  }
 }
 
-@media screen and (max-width: 414px) {
-  .navbarNav li span {
-    padding-left: 0;
-  }
-
+@media screen and (min-width: 480px) {
   .navbarBrand {
-    padding-left: 0;
-    margin-right: auto !important;
+    padding-left: 12px;
   }
-
-  .toggle {
-    margin-right: 10px;
+  .navbarNav li {
+    padding: 5px 0;
   }
-
+  .navbarNav li span:hover {
+    border-bottom: none;
+  }
+  .signs {
+    display: inline-flex;
+    padding: 0 10px;
+  }
+  .signs li {
+    padding: 0 20px;
+  }
+  .signU:hover {
+    border-bottom: none;
+    color: #00b87c;
+  }
   .searchImage1 {
     position: relative;
-    left: 30px;
+    left: 100px;
   }
-
   .searchImage {
     display: none;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .searchImage1 {
+    position: relative;
+    left: 150px;
+  }
+  .toggle {
+    margin-right: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .searchImage1 {
+    position: relative;
+    left: 200px;
+  }
+  .toggle {
+    margin-right: 50px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .searchImage {
+    position: relative;
+    left: 40px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .searchImage {
+    position: relative;
+    left: 180px;
+  }
+  .signs {
+    padding-right: 2rem;
   }
 }
