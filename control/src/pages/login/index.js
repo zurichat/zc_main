@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react'
-import { withRouter, useHistory } from 'react-router-dom'
+import React, { useState, useEffect } from "react"
+import { withRouter, useHistory } from "react-router-dom"
 // import { BehaviorSubject } from 'rxjs'
-import AuthInputBox from '../../components/AuthInputBox'
-import FormWrapper from '../../components/AuthFormWrapper'
-import LoginLoading from '../../components/LoginLoading'
-import styles from '../../component-styles/AuthFormElements.module.css'
-import axios from 'axios'
-import { GetUserInfo } from '../../zuri-control'
-import $behaviorSubject from '../../../../globalState'
+import AuthInputBox from "../../components/AuthInputBox"
+import FormWrapper from "../../components/AuthFormWrapper"
+import LoginLoading from "../../components/LoginLoading"
+import styles from "../../component-styles/AuthFormElements.module.css"
+import axios from "axios"
+import { GetUserInfo } from "@zuri/control"
+import $behaviorSubject from "../../../../globalState"
+import { Helmet } from "react-helmet"
+import { goToDefaultChannel } from "../../api/channels"
 // import { Link } from 'react-router-dom'
 // import authBg1 from './assets/auth_bg1.svg'
 // import authBg2 from './assets/auth_bg2.svg'
@@ -17,26 +19,13 @@ import $behaviorSubject from '../../../../globalState'
 //import GoogleLogin from 'react-google-login'
 
 const Login = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [error, seterror] = useState('')
-  const [emailerror, setemailerror] = useState('')
-  const [passworderror, setpassworderror] = useState('')
-  const [rememberMe, setRememberMe] = useState('')
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [error, seterror] = useState("")
+  const [emailerror, setemailerror] = useState("")
+  const [passworderror, setpassworderror] = useState("")
+  const [rememberMe, setRememberMe] = useState("")
   const [Loading, setLoading] = useState(false)
-
-  // Background Images
-  // const images = [authBg1, authBg2, authBg3, authBg4, authBg5]
-  // const [currentImage, setcurrentImage] = useState(
-  //   Math.floor(Math.random() * 4)
-  // )
-
-  // To Display Random Aside Background Image
-  // const displayImage = () => {
-  //   let i = currentImage
-  //   i >= images.length - 1 ? (i = 0) : i++
-  //   setcurrentImage(i)
-  // }
 
   let history = useHistory()
 
@@ -52,8 +41,8 @@ const Login = () => {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    setemailerror('')
-    setpassworderror('')
+    setemailerror("")
+    setpassworderror("")
 
     if (!email) {
       setemailerror(`Enter an email address`)
@@ -66,7 +55,7 @@ const Login = () => {
     }
 
     await axios
-      .post('https://api.zuri.chat/auth/login', {
+      .post("https://api.zuri.chat/auth/login", {
         email,
         password
       })
@@ -74,42 +63,64 @@ const Login = () => {
         const { data, message } = response.data
         console.log(data)
         //Store token in localstorage
-        sessionStorage.setItem('token', data.user.token)
+        sessionStorage.setItem("token", data.user.token)
+
+        setLoading(true)
 
         //Store token in localstorage
-        sessionStorage.setItem('token', data.user.token)
+        sessionStorage.setItem("token", data.user.token)
 
         //Store token in localstorage
-        sessionStorage.setItem('session_id', data.session_id)
+        sessionStorage.setItem("session_id", data.session_id)
 
         //Store user copy in localstorage
-        sessionStorage.setItem('user', JSON.stringify(data.user))
-
-        //Display message
-        // alert(message) //Change this when there is a design
+        sessionStorage.setItem("user", JSON.stringify(data.user))
 
         //Return the login data globally
         $behaviorSubject.next(response.data)
 
-        setLoading(true)
+        // Switch for redirects
+        axios
+          .get(`https://api.zuri.chat/users/${data.user.email}/organizations`, {
+            headers: {
+              Authorization: `Bearer ${data.user.token}`
+            }
+          })
+          .then(res => {
+            const orgs = res.data.data.length
+            // console.log(res.data.data)
+            sessionStorage.setItem(
+              "organisations",
+              JSON.stringify(res.data.data)
+            )
+            // console.log('reg orgs', orgs)
 
-        setTimeout(() => {
-          //Redirect to some other page
-          history.push('/choose-workspace')
-          setLoading(false)
-        }, 2000)
+            switch (true) {
+              case orgs > 1:
+                history.push("/choose-workspace")
+                break
+              case orgs < 1:
+                history.push("/createworkspace")
+                break
+              default:
+                goToDefaultChannel()
+            }
+          })
+          .catch(err => {
+            throw err
+          })
       })
       .catch(error => {
         const { data } = error.response
-        console.log(data)
+        console.error(data)
 
-        RegExp('not found').test(data.message) &&
+        RegExp("not found").test(data.message) &&
           setemailerror(
-            'Sorry, this email is not registered, try again or click Create an Account.'
+            "Sorry, this email is not registered, try again or click Create an Account."
           )
         RegExp(/Invalid login/).test(data.message) &&
           setpassworderror(
-            'Sorry, you have entered the wrong password. Try again or click Get help signing in.'
+            "Sorry, you have entered the wrong password. Try again or click Get help signing in."
           )
 
         //Render error message to the user
@@ -119,12 +130,10 @@ const Login = () => {
 
   return (
     <main id={styles.authPageWrapper}>
+      <Helmet>
+        <title>Login - Zuri Chat</title>
+      </Helmet>
       {Loading && <LoginLoading />}
-      {/* <aside id={styles.authAsideContainer} className={styles.display_none}>
-        <div id={styles.authImageWrapper}>
-          <img src={images[currentImage]} alt="backgroundImage" />
-        </div>
-      </aside> */}
       <section id={styles.authFormContainer}>
         <FormWrapper
           header="Login"
@@ -178,7 +187,7 @@ const Login = () => {
               Remember me
             </div>
             <div className={`${styles.right}`}>
-              Forgot password?<a href="/"> {''}Get help signing in</a>
+              Forgot password?<a href="/"> {""}Get help signing in</a>
             </div>
           </div>
         </FormWrapper>

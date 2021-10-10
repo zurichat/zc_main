@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 
 export const CollaborationSvg = () => {
   return (
@@ -21,7 +21,7 @@ export const CollaborationSvg = () => {
         />
       </g>
       <circle opacity="0.4" cx="122" cy="76" r="31" fill="white" />
-      <g clip-path="url(#clip0)">
+      <g clipPath="url(#clip0)">
         <path
           d="M122.5 62C120.898 62 119.6 63.2984 119.6 64.9C119.6 66.5016 120.898 67.8 122.5 67.8C124.101 67.7984 125.398 66.501 125.4 64.9C125.4 63.2984 124.101 62 122.5 62ZM122.5 66.8333C121.432 66.8333 120.566 65.9677 120.566 64.9C120.566 63.8323 121.432 62.9667 122.5 62.9667C123.567 62.9667 124.433 63.8323 124.433 64.9C124.433 65.9677 123.567 66.8333 122.5 66.8333Z"
           fill="white"
@@ -71,9 +71,9 @@ export const CollaborationSvg = () => {
           width="243.132"
           height="243.132"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"

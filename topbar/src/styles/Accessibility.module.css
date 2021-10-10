@@ -1,17 +1,21 @@
 .containerAccessibility {
   width: 482px;
-  height: 453px;
+  height: 500px;
   left: 480px;
   top: 140px;
   margin: 30px 50px;
+  margin-bottom: 32px;
 }
 
 .hrLine {
   left: 23.19%;
   right: 7.03%;
-  top: 45.6%;
-  bottom: 54.4%;
-  border: 1px solid #f0eaea;
+  /* top: 55.6%; */
+  /* bottom: 34.4%; */
+  border: 1px solid #eeeeee;
+  margin-top: 12px;
+  width: 120%;
+  margin-bottom: 12px;
 }
 
 .animationH3,
@@ -19,12 +23,13 @@
 .keyboardH3,
 .pressH3 {
   font-family: Lato;
-  font-size: 16px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 700;
   line-height: 130%;
   letter-spacing: 0em;
   color: #242424;
+  margin-top: 13px;
 }
 
 .accessibilityCheckbox,
@@ -37,23 +42,30 @@
 
 .accessibilityLabel {
   margin-left: -13px;
+  margin-top: 10px;
+  color: #3a3a3a;
 }
 
 .accessibilityRadioLabel {
-  margin-left: 10px;
+  margin-left: 15px;
+  margin-top: 15px;
+  font-weight: bold;
 }
 
 #accessibilityPId {
-  margin-left: 18px;
+  margin-left: 25px;
+  margin-bottom: -5px;
 }
 
 #accessibilityPId2 {
-  margin-left: 18px;
+  margin-left: 25px;
+  margin-bottom: 55px;
 }
 
 .imagesAndEmojis {
   text-align: left;
   font-size: 13px;
+  margin-top: -5px;
 }
 
 .accessibilityCheckbox input:checked ~ .accessibilityLabel::after {
@@ -62,12 +74,15 @@
 
 .accessibilityP {
   font-family: Lato;
-  font-size: 12px;
+  font-size: 13px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
+  margin-top: 9px;
+  margin-bottom: 10px;
+  color: #3a3a3a;
 }
 
 .accessibilityEsc {
@@ -91,6 +106,14 @@
   border-radius: 3px;
 }
 
+.image1 {
+  width: 20px;
+  height: 15px;
+  display: inline;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
 #noteP {
   color: #b8003c;
   font-family: Lato;
@@ -98,6 +121,7 @@
   font-weight: normal;
   font-size: 13px;
   line-height: 130%;
+  margin-top: -44px;
 }
 
 #exclamation {

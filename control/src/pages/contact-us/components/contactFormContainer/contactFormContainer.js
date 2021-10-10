@@ -1,38 +1,39 @@
-import React, { useState, useMemo, useEffect } from 'react'
-import ContactFormStyle from '../../styles/contactFormContainer.module.css'
-import detailsData from './detailsArray'
-import axios from 'axios'
-import { useDropzone } from 'react-dropzone'
-import Alert from '../../assets/alert-circle.svg'
-import { GetUserInfo } from '../../../../zuri-control'
+import React, { useState, useMemo, useEffect } from "react"
+import ContactFormStyle from "../../styles/contactFormContainer.module.css"
+import detailsData from "./detailsArray"
+import axios from "axios"
+import { useDropzone } from "react-dropzone"
+import Alert from "../../assets/alert-circle.svg"
+import { GetUserInfo } from "../../../../zuri-control"
+import downIcon from "../../assets/chevron-down.svg"
+import arrowRight from "../../assets/arrow-right.svg"
 
 const activeStyle = {
-  borderColor: '#2196f3'
+  borderColor: "#2196f3"
 }
 
 const acceptStyle = {
-  borderColor: '#00e676'
+  borderColor: "#00e676"
 }
 
 const rejectStyle = {
-  borderColor: '#ff1744'
+  borderColor: "#ff1744"
 }
 
 function ContactFormContainer() {
   const [currentDetails, setCurrentDetails] = useState({})
   const [userAuth, setUserAuth] = useState({})
   const [values, setValues] = useState({
-    email: '',
-    subject: '',
-    content: '',
+    email: "",
+    subject: "",
+    content: "",
     loading: false,
-    error: '',
-    success: ''
+    error: "",
+    success: ""
   })
 
   useEffect(() => {
     let userInfo = GetUserInfo()
-    console.log('this is user info')
     setUserAuth(userInfo.email ? userInfo : {})
     setValues(values => ({
       ...values,
@@ -50,10 +51,9 @@ function ContactFormContainer() {
   } = useDropzone({
     maxSize: 1048576,
     maxFiles: 2,
-    accept: 'image/*,.xlsx,.xls,.doc, .docx,.ppt, .pptx,.txt,.pdf'
+    accept: "image/*,.xlsx,.xls,.doc, .docx,.ppt, .pptx,.txt,.pdf"
   })
   // .xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf
-  console.log(acceptedFiles)
 
   const handleFileDelete = index => () => {
     delete acceptedFiles[index]
@@ -100,21 +100,21 @@ function ContactFormContainer() {
     event.preventDefault()
     setValues(values => ({ ...values, loading: true }))
     let contactData = new FormData()
-    values.email && contactData.append('email', values.email)
-    values.subject && contactData.append('subject', values.subject)
-    values.content && contactData.append('content', values.content)
-    acceptedFiles[0] && contactData.append('file', acceptedFiles[0])
-    acceptedFiles[1] && contactData.append('file', acceptedFiles[1])
+    values.email && contactData.append("email", values.email)
+    values.subject && contactData.append("subject", values.subject)
+    values.content && contactData.append("content", values.content)
+    acceptedFiles[0] && contactData.append("file", acceptedFiles[0])
+    acceptedFiles[1] && contactData.append("file", acceptedFiles[1])
 
     axios
-      .post('https://api.zuri.chat/contact', contactData)
+      .post("https://api.zuri.chat/contact", contactData)
       .then(({ data }) => {
         setValues(values => ({
           ...values,
-          error: '',
-          subject: '',
-          content: '',
-          email: '',
+          error: "",
+          subject: "",
+          content: "",
+          email: "",
           success: data.message,
           loading: false
         }))
@@ -123,19 +123,19 @@ function ContactFormContainer() {
       .catch(e => {
         setValues(values => ({
           ...values,
-          error: 'error sending details pls try again',
-          success: '',
+          error: "error sending details pls try again",
+          success: "",
           loading: false
         }))
       })
   }
 
   return (
-    <div className={`mb-5 ${ContactFormStyle.contact_form_container}`}>
+    <div className={`${ContactFormStyle.contact_form_container}`}>
       <form className="" onSubmit={handleSubmit}>
         <div
           className={`mb-3 ${
-            !!userAuth.email ? ContactFormStyle.is_hidden_animate : ''
+            userAuth.email ? ContactFormStyle.is_hidden_animate : ""
           }`}
         >
           <label htmlFor="email" className="form-label fw-bold">
@@ -157,18 +157,18 @@ function ContactFormContainer() {
 
         <div
           className={`${ContactFormStyle.faqs_topic} ${
-            !currentDetails.topic ? ContactFormStyle.is_hidden_animate : ''
+            !currentDetails.topic ? ContactFormStyle.is_hidden_animate : ""
           }`}
         >
           <div className={`w-100`}>
             <div className={`d-flex align-items-center mb-3`}>
-              <p className="fw-bold"> Topic</p>
+              <p className={`fw-bold ${ContactFormStyle.subHead}`}> Topic</p>
 
               <p
                 className={`fw-bold ms-2 pt-1 ${ContactFormStyle.text_primary} ${ContactFormStyle.change}`}
                 style={{ fontSize: 12 }}
                 onClick={() => {
-                  setValues(values => ({ ...values, subject: '' }))
+                  setValues(values => ({ ...values, subject: "" }))
                   setCurrentDetails({})
                 }}
               >
@@ -178,12 +178,14 @@ function ContactFormContainer() {
             <div className="d-grid">
               <button
                 type="button"
-                className={`btn ${ContactFormStyle.btn_primary} ${ContactFormStyle.btn_topic_select} shadow-none text-nowrap fw-bold rounded-pill mb-3 me-3`}
+                className={`btn ${ContactFormStyle.btn_primary} ${ContactFormStyle.btn_topic_select} shadow-none text-nowrap fw-bold mb-3 me-3`}
               >
                 {currentDetails.topic}
               </button>
             </div>
-            <p className="fw-bold mb-3">Related questions</p>
+            <p className={`fw-bold mb-3`} style={{ fontSize: "14px" }}>
+              Related questions
+            </p>
             <div
               className={`accordion ${ContactFormStyle.accordion}`}
               id="faqs"
@@ -191,20 +193,24 @@ function ContactFormContainer() {
               {currentDetails.faqs &&
                 currentDetails.faqs.map(({ title, details }, index) => (
                   <div className="accordion-item" key={title}>
-                    <h2 className="accordion-header px-2 py-3" id="headingOne">
+                    <h2
+                      className="accordion-header px-2"
+                      style={{ height: "55px" }}
+                      id="headingOne"
+                    >
                       <button
-                        className={`accordion-button fw-bold ${ContactFormStyle.accordion_button} bg-white shadow-none p-0 px-2`}
+                        className={`fw-bold ${ContactFormStyle.accordion_button} bg-white shadow-none p-0 px-2`}
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target={'#collapse' + index}
+                        data-bs-target={"#collapse" + index}
                         aria-expanded="true"
                         aria-controls="collapseOne"
                       >
-                        {title}
+                        <span>{title}</span> <img src={downIcon} alt="down" />
                       </button>
                     </h2>
                     <div
-                      id={'collapse' + index}
+                      id={"collapse" + index}
                       className={`${ContactFormStyle.accordion_collapse} accordion-collapse collapse`}
                       aria-labelledby="headingOne"
                       data-bs-parent="#faqs"
@@ -217,21 +223,51 @@ function ContactFormContainer() {
                   </div>
                 ))}
             </div>
+            <p className={`fw-bold my-3`} style={{ fontSize: "14px" }}>
+              Related articles
+            </p>
+            <ul>
+              {currentDetails.articles &&
+                currentDetails.articles.map((article, index) => {
+                  return (
+                    <li
+                      key={index}
+                      style={{
+                        color: "#00B87C",
+                        fontWeight: "bold",
+                        lineHeight: "18px",
+                        display: "flex",
+                        alignItems: "center",
+                        cursor: "pointer"
+                      }}
+                    >
+                      <a style={{ fontSize: "15px" }}>{article.title}</a>
+                      <img
+                        src={arrowRight}
+                        alt=""
+                        style={{ paddingLeft: "4px" }}
+                      />
+                    </li>
+                  )
+                })}
+            </ul>
           </div>
         </div>
 
         <div
           className={`${ContactFormStyle.topic_tiles} ${
-            currentDetails.topic ? ContactFormStyle.is_hidden_animate : ''
+            currentDetails.topic ? ContactFormStyle.is_hidden_animate : ""
           } bg-white`}
         >
-          <p className="fw-bold mb-3">Select a Topic</p>
+          <p className="fw-bold mb-3" style={{ fontSize: "16px" }}>
+            Select a Topic
+          </p>
           <div className={`d-flex flex-column flex-md-row flex-md-wrap`}>
             {detailsData.map(detail => (
               <button
                 type="button"
                 key={detail.topic}
-                disabled={!(values.subject === '')}
+                disabled={!(values.subject === "")}
                 className={`btn ${ContactFormStyle.btn_topic} text-nowrap fw-bold rounded-pill mb-3 me-3`}
                 onClick={handleTopicChange(detail)}
               >
@@ -243,10 +279,10 @@ function ContactFormContainer() {
 
         <div
           className={`mb-3 ${
-            currentDetails.topic ? ContactFormStyle.is_hidden_animate : ''
+            currentDetails.topic ? ContactFormStyle.is_hidden_animate : ""
           }`}
         >
-          <label htmlFor="topic" className="form-label fw-bold">
+          <label htmlFor="topic" className="form-label fw-bold mt-2">
             Or tell us what you need help with:
           </label>
           <input
@@ -262,10 +298,14 @@ function ContactFormContainer() {
           />
         </div>
 
-        {!(values.subject === '') && (
+        {!(values.subject === "") && (
           <>
             <div className="mb-3">
-              <label htmlFor="content" className="form-label fw-bold">
+              <label
+                htmlFor="content"
+                className="form-label fw-bold"
+                style={{ fontSize: "14px !important" }}
+              >
                 Can you give us more details?
               </label>
               <textarea
@@ -288,35 +328,42 @@ function ContactFormContainer() {
                   className: `dropzone ${ContactFormStyle.drag_drop} text-center flex-column align-items-center`
                 })}
               >
-                <p
-                  style={{ textDecoration: 'underline' }}
-                  className="text-black"
-                >
-                  Accepted files
-                </p>
                 {acceptedFileItems}
                 <input {...getInputProps()} />
-                <p>Drag 'n' drop some files here, or click to select files</p>
-                <em>
-                  {`(Only 2 files(1mb max each) of the following type : images/jpg,jpeg,png doc,
-                  pdf, docx will be accepted)`}
-                </em>
+                <p>Drag and drop a file to attach it, or</p>
+                <a
+                  style={{
+                    color: "#00B87C",
+                    fontSize: "15px",
+                    cursor: "pointer"
+                  }}
+                >
+                  Browse for a file...
+                </a>
               </div>
             </div>
           </>
         )}
-        <div className="d-flex flex-column flex-lg-row">
+        <div className="d-flex flex-column flex-lg-row mt-4">
           <button
             type="submit"
             className={`btn ${ContactFormStyle.btn_primary} fw-bold`}
-            disabled={values.subject === '' || values.loading}
+            style={{ height: "55px" }}
+            disabled={values.subject === "" || values.loading}
           >
-            GET HELP
+            {values.subject ? "Send us a message" : "GET HELP"}
           </button>
-          <div className="d-flex align-items-center justify-content-center px-2 py-3">
-            <p className="text-nowrap mb-0">CHAT UNAVAILABLE</p>
-            <img className="ps-2" src={Alert} alt="alert circle" />
-          </div>
+          {values.subject && (
+            <div className="d-flex align-items-center justify-content-center px-4 py-3">
+              <p
+                className="text-nowrap mb-0"
+                style={{ fontWeight: "800px", fontSize: "13px" }}
+              >
+                Chat Unavailable
+              </p>
+              <img className="ps-2" src={Alert} alt="alert circle" />
+            </div>
+          )}
         </div>
         {values.error && (
           <p className="text-danger border p-2 mt-3 border-danger">
@@ -328,6 +375,9 @@ function ContactFormContainer() {
             {values.success}
           </p>
         )}
+        <a href="/privacy" className={ContactFormStyle.privacy}>
+          Privacy Policy
+        </a>
       </form>
     </div>
   )

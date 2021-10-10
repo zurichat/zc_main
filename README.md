@@ -49,6 +49,8 @@ Sidebar : [http://localhost:8081](http://localhost:8081)
 
 Control : [http://localhost:8082](http://localhost:8082)
 
+PluginHeader : [http://localhost:8083](http://localhost:8083)
+
 ### **Building**
 
 ```bash
@@ -75,7 +77,7 @@ yarn open
 
 ## Editor setup
 
-We're using eslint for linting and prettier for code formating, make sure you install eslint and prettier plugins in your editor so you can
+We're using eslint for js linting, stylelint for css linting and prettier for code formating, make sure you install eslint and prettier plugins in your editor so you can
 see linting errors as you code and have your code formatted on save by prettier. If formatOnSave doesn't work please google how to set up
 format on save for the eslint & prettier plugins in your editor 🙃
 
@@ -89,5 +91,11 @@ For detailed information on how to go about contributing to this project. Check 
 **Before send PR or making a merge make sure you code is properly formatted.** You can easily do that by running
 
 ```bash
-yarn format # in project directory
+yarn lint # to lint all files # in project directory
+yarn lint:js # to lint only js,jsx files # in project directory
+yarn lint:css # to lint only css files # in project directory
+
+yarn prettify # to prettify files # in project directory
 ```
+
+you can also lint for all files in the repo by running that command in the root folder

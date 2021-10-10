@@ -1,5 +1,6 @@
-import React from 'react'
-import styles from './reports.module.css'
+import React from "react"
+import styles from "./reports.module.css"
+import { Container } from "react-bootstrap"
 
 export const ComplaintProfiles = props => {
   const Continue = e => {
@@ -15,9 +16,11 @@ export const ComplaintProfiles = props => {
   const { values, inputChange } = props
 
   return (
-    <div className={styles.formcontainer}>
+    <Container className={styles.formcontainer}>
       <div className="main-container">
-        <h1 className={`mb-5 ${styles.head1}`}>Report Complaint</h1>
+        <h1 className={`mb-5 text-success ${styles.head1}`}>
+          Report Complaint
+        </h1>
 
         <br />
 
@@ -29,7 +32,7 @@ export const ComplaintProfiles = props => {
           <br />
         </div>
         <div>
-          {' '}
+          {" "}
           <label htmlFor="name">
             <b>Name</b>
           </label>
@@ -40,9 +43,9 @@ export const ComplaintProfiles = props => {
             placeholder="Input offender's name"
             className="form-control"
             name="name"
-            onChange={inputChange('name')}
+            onChange={inputChange("name")}
             value={values.name}
-            style={{ width: '19rem', padding: '12px' }}
+            style={{ width: "19rem", padding: "12px" }}
           />
         </div>
 
@@ -57,9 +60,9 @@ export const ComplaintProfiles = props => {
 
           <div
             className="form-group"
-            style={{ width: '19rem', padding: '12px' }}
+            style={{ width: "19rem", padding: "12px" }}
           >
-            <select name="offence" style={{ width: '19rem', padding: '12px' }}>
+            <select name="offence" style={{ width: "19rem", padding: "12px" }}>
               <option value="Anti Semitism">Anti Semitism </option>
               <option value="Racism">Racism </option>
               <option value="Hate Speech"> Hate Speech</option>
@@ -79,15 +82,15 @@ export const ComplaintProfiles = props => {
             type="text"
             className="form-control"
             name="text"
-            onChange={inputChange('text')}
+            onChange={inputChange("text")}
             value={values.text}
-            style={{ width: '20.5rem', height: '2.3rem' }}
+            style={{ width: "20.5rem", height: "2.3rem" }}
           />
         </div>
 
         <br />
 
-        <div style={{ display: 'flex', flexDirection: 'space-inbetween' }}>
+        <div style={{ display: "flex", flexDirection: "space-inbetween" }}>
           <label htmlFor="text">
             <b>Description</b>(Optional)
           </label>
@@ -97,9 +100,9 @@ export const ComplaintProfiles = props => {
             type="text"
             className="form-control"
             name="text"
-            onChange={inputChange('text')}
+            onChange={inputChange("text")}
             value={values.text}
-            style={{ width: '20.5rem', height: '3rem' }}
+            style={{ width: "20.5rem", height: "3rem" }}
           />
         </div>
 
@@ -115,17 +118,17 @@ export const ComplaintProfiles = props => {
 
       <div
         className="row"
-        style={{ display: 'flex', flexDirection: 'flex-end' }}
+        style={{ display: "flex", flexDirection: "flex-end" }}
       >
         <div className="col-6">
           <button
             className="btn btn-danger"
             onClick={back}
             style={{
-              color: 'white',
-              backgroundColor: '#00B87C',
-              borderRadius: '10%',
-              padding: '12px'
+              color: "white",
+              backgroundColor: "#00B87C",
+              borderRadius: "10%",
+              padding: "12px"
             }}
           >
             Back
@@ -136,18 +139,18 @@ export const ComplaintProfiles = props => {
             className="btn btn-primary"
             onClick={Continue}
             style={{
-              color: 'white',
-              backgroundColor: '#00B87C',
-              padding: '12px',
-              borderRadius: '10%',
-              marginLeft: '290px'
+              color: "white",
+              backgroundColor: "#00B87C",
+              padding: "12px",
+              borderRadius: "10%",
+              marginLeft: "290px"
             }}
           >
             Submit
           </button>
         </div>
       </div>
-    </div>
+    </Container>
   )
 }
 

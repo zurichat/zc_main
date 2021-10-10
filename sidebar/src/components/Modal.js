@@ -1,6 +1,6 @@
-import { DialogOverlay, DialogContent } from '@reach/dialog'
-import styled from 'styled-components'
-import AuthInputBox from './AuthInputBox'
+import { DialogOverlay, DialogContent } from "@reach/dialog"
+import styled from "styled-components"
+import AuthInputBox from "./AuthInputBox"
 
 export const Modall = props => {
   return (

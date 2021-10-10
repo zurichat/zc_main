@@ -1,14 +1,14 @@
-import React from 'react'
-import style from '../Style/style.module.css'
-import first from '../assets/ZuriChatBlogStater.png'
-import Clock from '../assets/clock-black.svg'
-import link from '../assets/link-black.svg'
+import React from "react"
+import style from "../Style/style.module.css"
+import first from "../assets/ZuriChatBlogStater.png"
+import Clock from "../assets/clock-black.svg"
+import link from "../assets/link-black.svg"
 
 import {
   UilFacebookF,
   UilTwitter,
   UilLinkedinAlt
-} from '@iconscout/react-unicons'
+} from "@iconscout/react-unicons"
 
 const container = () => {
   return (
@@ -31,7 +31,7 @@ const container = () => {
           <b>Illustration:</b> Swift
         </p>
         <p className={style.aut}>
-          <b>Date:</b> 27 August 2021{' '}
+          <b>Date:</b> 27 August 2021{" "}
         </p>
       </div>
       <div className={style.blogimage}>
@@ -67,7 +67,7 @@ const container = () => {
         <p>
           Connecting with coworkers over common goals and shared interests has
           always been one of the best
-          <br /> parts about office life. But in the{' '}
+          <br /> parts about office life. But in the{" "}
           <span>hybrid-remote workplace</span>, team lunches, happy hours,
           offsite events,
           <br /> and other opportunities to get to know colleagues are few and

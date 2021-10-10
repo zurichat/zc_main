@@ -1,11 +1,12 @@
-import styled from 'styled-components'
-import { Footer, FooterLink } from './UserOrganization'
-import { Button } from './WorkspaceHome'
-import LinkIcon from '../assets/link.svg'
-import Oval from '../assets/Oval.svg'
-import { Link, useRouteMatch } from 'react-router-dom'
-import Header from '../../../components/Header'
-import { useEffect, useState } from 'react'
+import styled from "styled-components"
+import { Footer, FooterLink } from "./UserOrganization"
+import { Button } from "./WorkspaceHome"
+import LinkIcon from "../assets/link.svg"
+import Oval from "../assets/Oval.svg"
+import { Link, useRouteMatch } from "react-router-dom"
+import Header from "../../../components/Header"
+import { useEffect, useState } from "react"
+import { Helmet } from "react-helmet"
 
 const Step3 = () => {
   let match = useRouteMatch()
@@ -15,10 +16,10 @@ const Step3 = () => {
   const [inputs, setInputs] = useState([input])
   const [user, setUser] = useState(null)
   const [projectname, setProjectname] = useState(
-    localStorage.getItem('input') || 'alpha'
+    localStorage.getItem("input") || "alpha"
   )
   useEffect(() => {
-    const user = JSON.parse(sessionStorage.getItem('user'))
+    const user = JSON.parse(sessionStorage.getItem("user"))
     if (user) {
       setUser(user)
     }
@@ -30,6 +31,9 @@ const Step3 = () => {
     <>
       <Header />
       <Wrapper>
+        <Helmet>
+          <title>Teammates - Zuri Chat</title>
+        </Helmet>
         <TopSpanWrapper>
           <TopSpans>
             {user ? <SignedInAs>Signed in as {user.email}</SignedInAs> : null}
@@ -60,7 +64,7 @@ const Step3 = () => {
               <SharableLink>
                 <img src={LinkIcon} alt="" />
                 <a
-                  style={{ color: '#00B87C', cursor: 'pointer' }}
+                  style={{ color: "#00B87C", cursor: "pointer" }}
                   onClick={() => {
                     navigator.clipboard.writeText(
                       `https://zuri.chat/invite?organization=${projectname}`
@@ -75,7 +79,7 @@ const Step3 = () => {
             </InputLinkSection>
           </InputSection>
           <ButtonSection>
-            <Button style={{ color: 'white' }}>
+            <Button style={{ color: "white" }}>
               <StyledLink to={`${match.url}/launch`}>Add Teammates</StyledLink>
             </Button>
             <Skip to={`${match.url}/launch`}>Skip this Step</Skip>
@@ -96,7 +100,7 @@ const Wrapper = styled.div`
   --color: #333333;
   --color-secondary: #00b87c;
 
-  --font-family: 'Lato', sans-serif;
+  --font-family: "Lato", sans-serif;
   padding-right: 61px;
   padding-top: 39.5px;
   padding-left: 283px;
@@ -204,7 +208,7 @@ export const Input = styled.input`
     font-weight: 500;
     font-size: ${24 / 16}rem;
     color: #c4c4c4;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
   }
   @media (max-width: 35rem) {
     width: 100%;

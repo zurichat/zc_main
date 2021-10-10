@@ -1,26 +1,26 @@
-import axios from 'axios'
-import { DialogOverlay, DialogContent } from '@reach/dialog'
-import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
+import axios from "axios"
+import { DialogOverlay, DialogContent } from "@reach/dialog"
+import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
+import styled from "styled-components"
 
-import paperplane from './assets/paperplane.svg'
-import okayimage from './assets/okayimage.svg'
-import styles from './styles/EmailVerification.module.css'
-import CodeInput from './codeInput'
-import { Button } from '../../../components/'
+import paperplane from "./assets/paperplane.svg"
+import okayimage from "./assets/okayimage.svg"
+import styles from "./styles/EmailVerification.module.css"
+import CodeInput from "./codeInput"
+import { Button } from "../../../components/"
 
 export default function EmailVerification({ email }) {
   const [success, setsuccess] = useState(false)
   const [errorMsg, seterrorMsg] = useState(false)
 
-  const handleSubmit = async usercode => {
+  const handleSubmit = async code => {
     await axios
       .post(`https://api.zuri.chat/account/verify-account`, { code })
       .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         if (res.status === 200) {
-          console.log('verify successfull')
+          // console.log('verify successfull')
 
           setsuccess(true)
         } else {
@@ -40,7 +40,7 @@ export default function EmailVerification({ email }) {
   }
 
   const goHome = () => {
-    window.location.href = '/createworkspace'
+    window.location.href = "/createworkspace"
   }
 
   return (
@@ -51,10 +51,10 @@ export default function EmailVerification({ email }) {
             <img src={paperplane} alt="paper plane" className={styles.img} />
             <h4>Check your email for your code !</h4>
             <p className={styles.enterCode}>
-              Enter the 6-digit code sent to you at{' '}
-              {/* <a href={`mailto:${email}`} className={styles.email}>
+              Enter the 6-digit code sent to you at{" "}
+              <a href={`mailto:${email}`} className={styles.email}>
                 {email}
-              </a> */}
+              </a>
               . This code expires shortly so be quick
             </p>
             <div>{errorMsg}</div>
@@ -67,8 +67,8 @@ export default function EmailVerification({ email }) {
               />
             </div>
 
-            <div style={{ marginBlock: '2rem' }}>
-              <p style={{ textAlign: 'center' }}>Code expired?</p>
+            <div style={{ marginBlock: "2rem" }}>
+              <p style={{ textAlign: "center" }}>Code expired?</p>
               <Link to="/home" className={styles.request} disabled>
                 Click here to request a new code!
               </Link>
@@ -82,7 +82,7 @@ export default function EmailVerification({ email }) {
             </p>
           </div>
         ) : (
-          <Successdiv style={{ textAlign: 'center' }}>
+          <Successdiv style={{ textAlign: "center" }}>
             <img src={okayimage} alt="zurichat logo" className={styles.img} />
             <h2>Email Verification Succesful!</h2>
             <p>Click on the Button to continue</p>

@@ -1,40 +1,44 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Login from './pages/login'
-import SignUp from './pages/signup'
-import SignOut from './pages/signout/index'
-import Workspace from './pages/workspace/components/Workspace'
-import LandingPage from './pages/LandingPage'
+import { BrowserRouter, Route, Switch } from "react-router-dom"
+import Login from "./pages/login"
+import SignUp from "./pages/signup"
+import SignOut from "./pages/signout/index"
+import Workspace from "./pages/workspace/components/Workspace"
+import LandingPage from "./pages/LandingPage"
 // password block
-import ResetPassword from './pages/passwordReset/index'
-import NewPassword from './pages/passwordReset/newPassword'
+import ResetPassword from "./pages/passwordReset/index"
+import NewPassword from "./pages/passwordReset/newPassword"
 // end password block
-import CookiesSetting from './pages/cookiesSettings'
-import Cookies from './pages/cookies'
-import Features from './pages/features'
-import Resources from './pages/resources'
-import Pricing from './pages/pricing'
-import Security from './pages/security'
-import Invite from './pages/inviteScreen'
-import Inviterequest from './pages/InviteRequest/InviteRequest'
-import SendRequest from './pages/InviteRequest/SendRequest'
-import ContactUs from './pages/contact-us'
-import AppsAndIntegrations from './pages/apps-integration'
-import Events from './pages/events/components/EventsMainWrapper'
-import Download from './pages/download'
-import DownloadsMac from './pages/download/DownloadsMac'
-import Careers from './pages/careers'
-import MarketPlace from './pages/marketplace/marketplace'
-import Blogs from './pages/blogs'
-import Settings from './pages/settings'
-import ConfirmPassword from './pages/settings/components/ConfirmPassword'
-import AccDeactivated from './pages/settings/components/AccDeactivated'
-import DeactivateAccount from './pages/settings/components/AcctDeactivation'
-import AllSessionSignOut from './pages/settings/components/AllSessionSignOut'
-import PrivateRoute from './pages/settings/Utils/PrivateRoute'
-import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation'
-import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContext'
-import PrivacyPolicy from './pages/privacy-policy/index'
-import NotFoundPage from './pages/404'
+import CookiesSetting from "./pages/cookiesSettings"
+import Cookies from "./pages/cookies"
+import Features from "./pages/features"
+import Resources from "./pages/resources"
+import Pricing from "./pages/pricing"
+import Security from "./pages/security"
+import Invite from "./pages/inviteScreen"
+import Inviterequest from "./pages/InviteRequest/InviteRequest"
+import SendRequest from "./pages/InviteRequest/SendRequest"
+import ContactUs from "./pages/contact-us"
+import AppsAndIntegrations from "./pages/apps-integration"
+import Download from "./pages/download"
+import DownloadsMac from "./pages/download/DownloadsMac"
+import Careers from "./pages/careers"
+import MarketPlace from "./pages/marketplace/marketplace"
+import Settings from "./pages/settings"
+import ConfirmPassword from "./pages/settings/components/ConfirmPassword"
+import AccDeactivated from "./pages/settings/components/AccDeactivated"
+import DeactivateAccount from "./pages/settings/components/AcctDeactivation"
+import AllSessionSignOut from "./pages/settings/components/AllSessionSignOut"
+import PrivateRoute from "./pages/settings/Utils/PrivateRoute"
+import ConfirmDeactivation from "./pages/settings/components/ConfirmDeactivation"
+import CreateWorkSpaces from "./pages/createworkspace/components/WorkSpaceContext"
+import PrivacyPolicy from "./pages/privacy-policy/index"
+import NotFoundPage from "./pages/404"
+import Billing from "./pages/admin/Billing"
+import Homepage from "./pages/home"
+import Permissions from "./pages/admin/Permissions"
+import SettingsHome from "./pages/admin/Settings/index"
+import About from "./pages/about/index"
+import AdminSettingsTab from "./pages/admin/Settings/components/AdminSettingsTab"
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -52,9 +56,6 @@ const App = () => {
         <Route path="/" exact>
           <LandingPage />
         </Route>
-        <Route path="/blog">
-          <Blogs />
-        </Route>
         <Route path="/login">
           <Login />
         </Route>
@@ -66,6 +67,9 @@ const App = () => {
         </Route>
         <Route path="/signout">
           <SignOut />
+        </Route>
+        <Route path="/about">
+          <About />
         </Route>
         <Route path="/choose-workspace">
           <Workspace />
@@ -90,9 +94,6 @@ const App = () => {
         </Route>
         <Route path="/security">
           <Security />
-        </Route>
-        <Route path="/events">
-          <Events />
         </Route>
         <Route path="/download-app">
           <Download />
@@ -129,6 +130,17 @@ const App = () => {
         />
         <PrivateRoute path="/session-signout" component={AllSessionSignOut} />
         <PrivateRoute path="/settings" exact component={Settings} />
+        <PrivateRoute path="/admin/settings" exact component={SettingsHome} />
+        <PrivateRoute
+          path="/admin/settings/billings"
+          exact
+          component={Billing}
+        />
+        {/* <PrivateRoute
+          path="/admin/settings/permission"
+          exact
+          component={AdminSettingsTab}
+        /> */}
         <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
         {/* ----------------settings routes closed----------------- */}
         <Route path="/reset-password">

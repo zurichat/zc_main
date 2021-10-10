@@ -1,6 +1,6 @@
-import styles from '../../styles/section5.module.css'
-import SpecialFeaturesCard from '../specialFeaturesCard/SpecialFeaturesCard'
-import { Features } from './featuresData'
+import styles from "../../styles/section5.module.css"
+import SpecialFeaturesCard from "../specialFeaturesCard/SpecialFeaturesCard"
+import { Features } from "./featuresData"
 function SpecialFeatures() {
   return (
     <div className={styles.section5}>

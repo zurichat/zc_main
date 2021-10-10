@@ -1,17 +1,17 @@
-import { useContext } from 'react'
-import { ProfileContext } from '../context/ProfileModal'
-import styles from '../styles/ProfileModal.module.css'
+import { useContext } from "react"
+import { ProfileContext } from "../context/ProfileModal"
+import styles from "../styles/ProfileModal.module.css"
 
 const ProfileModal = ({ title, children, full }) => {
   const { modal, toggleModalState } = useContext(ProfileContext)
 
-  const mql = window.matchMedia('(max-width: 768px)')
+  const mql = window.matchMedia("(max-width: 768px)")
   let mobileView = mql.matches
 
   return (
     <div
       className={styles.modalContainer}
-      style={modal ? { display: 'flex' } : { display: 'none' }}
+      style={modal ? { display: "flex" } : { display: "none" }}
     >
       <div
         className={full ? styles.overlayGreen : styles.overlay}
@@ -31,9 +31,9 @@ const ProfileModal = ({ title, children, full }) => {
               <path
                 d="M17.9995 21L11.9995 15L17.9995 9"
                 stroke="#333"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           ) : (

@@ -1,20 +1,19 @@
-import React, { useContext } from 'react'
-import ProfileModal from './ProfileModal'
-import NotificationPreference from '../components/NotificationPreference'
-import SidebarPreference from '../components/SidebarPreference'
-import Themes from '../components/Themes'
-import MessagesMedia from '../components/MessagesMedia'
-import PreferenceMenu from '../components/PreferenceMenu'
-import MarkAsRead from '../components/MarkAsRead'
-import LanguageAndRegion from '../components/LanguageAndRegion'
-import styles from '../styles/NotificationPreference.module.css'
+import React, { useContext } from "react"
+import ProfileModal from "./ProfileModal"
+import NotificationPreference from "../components/NotificationPreference"
+import SidebarPreference from "../components/SidebarPreference"
+import Themes from "../components/Themes"
+import MessagesMedia from "../components/MessagesMedia"
+import PreferenceMenu from "../components/PreferenceMenu"
+import MarkAsRead from "../components/MarkAsRead"
+import LanguageAndRegion from "../components/LanguageAndRegion"
+import styles from "../styles/NotificationPreference.module.css"
 
-import { ProfileContext } from '../context/ProfileModal'
+import { ProfileContext } from "../context/ProfileModal"
 
-import AudioVideo from './AudioVideo'
-import AdvancedSettings from './AdvancedSettings'
-import Accessibility from './Accessibility'
-import Accessibility from './Accessibility'
+import AudioVideo from "./AudioVideo"
+import AdvancedSettings from "./AdvancedSettings"
+import Accessibility from "./Accessibility"
 
 const Preferences = () => {
   const { sideBar } = useContext(ProfileContext)

@@ -1,6 +1,6 @@
-import React from 'react'
-import { Route, Redirect } from 'react-router-dom'
-import { getToken } from './Common'
+import React from "react"
+import { Route, Redirect } from "react-router-dom"
+import { getToken } from "./Common"
 
 // handle the private routes
 function PrivateRoute({ component: Component, ...rest }) {
@@ -12,7 +12,7 @@ function PrivateRoute({ component: Component, ...rest }) {
           <Component {...props} />
         ) : (
           <Redirect
-            to={{ pathname: '/login', state: { from: props.location } }}
+            to={{ pathname: "/login", state: { from: props.location } }}
           />
         )
       }

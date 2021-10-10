@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
 .containers {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   background: #f6f6f6;
   height: 100vh;
 }

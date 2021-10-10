@@ -1,0 +1,108 @@
+.paymentWrapper {
+  width: 100%;
+  max-width: 421px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.paymentHeader {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+}
+
+.paymentParagraph {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.5;
+}
+
+.paymentForm {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.twoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  align-items: flex-start;
+}
+
+.paymentInputGroup {
+  width: 100%;
+  margin-bottom: 0.75rem;
+}
+
+.paymentInputLabel {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.inputInfo {
+  font-size: 0.8125rem;
+  color: #b0afb0;
+  margin-top: 4px;
+}
+
+.paymentInputContainer {
+  position: relative;
+  height: 3.8125rem;
+  width: 100%;
+}
+
+.inputImg {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: auto;
+}
+
+.paymentInput {
+  width: 100%;
+  height: 3.8125rem;
+  background: none;
+  outline: none;
+  border: 1px solid #a1a1a1;
+  border-radius: 4px;
+  padding: 0 1rem;
+}
+
+.paymentInput:hover,
+.paymentInput:focus,
+.paymentInput:active {
+  border: 1px solid #00b87c;
+}
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paymentButton {
+  padding: 0.875rem 2.625rem;
+  background: #00b87c;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.paymentButton:disabled,
+.paymentButton:disabled:hover,
+.paymentButton:disabled:focus,
+.paymentButton:disabled:active {
+  background: rgba(0, 184, 124, 0.5);
+}

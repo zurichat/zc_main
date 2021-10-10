@@ -1,5 +1,5 @@
-import styles from '../component-styles/Security.module.css'
-import padlock from '../component-assets/padlock.png'
+import styles from "../component-styles/Security.module.css"
+import padlock from "../component-assets/padlock.png"
 
 function Security() {
   return (
@@ -17,7 +17,7 @@ function Security() {
           <button
             className={`btn btn-success ${styles.button} col-md-6 col-12`}
           >
-            {' '}
+            {" "}
             View Data Sheet
           </button>
         </div>

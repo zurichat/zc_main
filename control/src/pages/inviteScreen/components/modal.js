@@ -1,6 +1,6 @@
-import { DialogOverlay, DialogContent } from '@reach/dialog'
-import styled from 'styled-components'
-import AuthInputBox from '../../../components/AuthInputBox'
+import { DialogOverlay, DialogContent } from "@reach/dialog"
+import styled from "styled-components"
+import AuthInputBox from "../../../components/AuthInputBox"
 
 export const Modal = ({ show, close, password, setpassword }) => {
   return (

@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import { useParams } from 'react-router'
-import useSWR from 'swr'
+import { useState } from "react"
+import { useParams } from "react-router"
+import useSWR from "swr"
 
 const PluginDetails = () => {
   const [loading, setLoading] = useState(false)

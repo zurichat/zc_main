@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import { withRouter, useHistory } from 'react-router-dom'
-import AuthInputBox from '../../components/AuthInputBox'
-import FormWrapper from '../../components/AuthFormWrapper'
-import styles from '../../component-styles/AuthFormElements.module.css'
-import axios from 'axios'
-import EmailVerification from './email-verify'
+import React, { useState, useEffect } from "react"
+import { withRouter, useHistory } from "react-router-dom"
+import AuthInputBox from "../../components/AuthInputBox"
+import FormWrapper from "../../components/AuthFormWrapper"
+import styles from "../../component-styles/AuthFormElements.module.css"
+import axios from "axios"
+import EmailVerification from "./email-verify"
+import { Helmet } from "react-helmet"
 // import { Link } from 'react-router-dom'
 // import authBg1 from './assets/auth_bg1.svg'
 // import authBg2 from './assets/auth_bg2.svg'
@@ -13,14 +14,14 @@ import EmailVerification from './email-verify'
 // import authBg5 from './assets/auth_bg5.svg'
 
 const Signup = () => {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
   const [tos, setTos] = useState(false)
-  const [error, seterror] = useState('')
-  const [nameerror, setnameerror] = useState('')
-  const [passworderror, setpassworderror] = useState('')
-  const [emailerror, setemailerror] = useState('')
+  const [error, seterror] = useState("")
+  const [nameerror, setnameerror] = useState("")
+  const [passworderror, setpassworderror] = useState("")
+  const [emailerror, setemailerror] = useState("")
   const [showDialog, setShowDialog] = useState(false)
 
   // Background Images
@@ -71,9 +72,9 @@ const Signup = () => {
     }
 
     //Seperate user fullname
-    const seperateName = name.split(' ')
-    let first_name = '',
-      other_name = ''
+    const seperateName = name.split(" ")
+    let first_name = "",
+      other_name = ""
 
     seperateName.map((name, index) => {
       if (index === 0) {
@@ -83,7 +84,7 @@ const Signup = () => {
     })
 
     await axios
-      .post('https://api.zuri.chat/users', {
+      .post("https://api.zuri.chat/users", {
         first_name,
         last_name: other_name,
         email,
@@ -95,15 +96,16 @@ const Signup = () => {
         setShowDialog(true)
 
         //Store token in localstorage
-        sessionStorage.setItem('user_id', data.InsertedId)
-        localStorage.setItem('newUserEmail', JSON.stringify(email))
-        localStorage.setItem('userUserPassword', JSON.stringify(password))
+        sessionStorage.setItem("user_id", data.InsertedId)
+        localStorage.setItem("newUserEmail", JSON.stringify(email))
+        localStorage.setItem("userUserPassword", JSON.stringify(password))
 
         //Display message
         // alert(message) //Change this when there is a design
 
         setTimeout(() => {
           //Redirect to some other page
+          // history.push('/createworkspace');
         }, 2000)
       })
       .catch(error => {
@@ -111,9 +113,9 @@ const Signup = () => {
         setShowDialog(false)
 
         RegExp(/Users with email/).test(data.message) &&
-          setemailerror('This email is already in use')
+          setemailerror("This email is already in use")
 
-        !RegExp('Users with email').test(data.message) && seterror(data.message)
+        !RegExp("Users with email").test(data.message) && seterror(data.message)
       })
   }
 
@@ -125,6 +127,10 @@ const Signup = () => {
           <img src={images[currentImage]} alt="backgroundImage" />
         </div>
       </aside> */}
+
+      <Helmet>
+        <title>Sign Up - Zuri Chat</title>
+      </Helmet>
       <section id={styles.authFormContainer}>
         <FormWrapper
           header="Create Account"
@@ -184,9 +190,9 @@ const Signup = () => {
               // onFocus={displayImage}
             />
             <span className={`${styles.tosText}`}>
-              I agree to Zurichat's {''}
-              <a href="/">Terms of services{''} </a>&
-              <a href="/"> {''}Privacy</a>
+              I agree to Zurichat's {""}
+              <a href="/">Terms of services{""} </a>&
+              <a href="/"> {""}Privacy</a>
             </span>
           </div>
         </FormWrapper>

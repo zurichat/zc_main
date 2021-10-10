@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from '../styles/confirmPassword.module.css'
+import React from "react"
+import styles from "../styles/confirmPassword.module.css"
 
 const FormMessage = ({ message, color, icon }) => {
   const leftBorderColor = {

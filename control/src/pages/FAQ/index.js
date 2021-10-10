@@ -1,5 +1,6 @@
-import { useState } from 'react'
-import styles from './FAQ.module.css'
+import { useState } from "react"
+import styles from "./FAQ.module.css"
+import { Helmet } from "react-helmet"
 
 const Index = () => {
   const [selected, setSelected] = useState(null)
@@ -14,11 +15,14 @@ const Index = () => {
 
   return (
     <div className={styles.faqs}>
-      <h2 className={`{styles.h2} text-center`}>Commonly Asked Questions</h2>
+      <Helmet>
+        <title> FAQ - Zuri Chat</title>
+      </Helmet>
+      <h2 className={`${styles.h2} text-center`}>Commonly Asked Questions</h2>
       <div className={styles.wrapper}>
         <div className={styles.accordion}>
-          {data.map(i => (
-            <div className={styles.items}>
+          {data.map((i, index) => (
+            <div className={styles.items} key={index}>
               <div className={styles.title} onClick={() => toggle(i)}>
                 <h6 className={styles.h6}>{i.question}</h6>
                 <span className={styles.span}>
@@ -31,7 +35,7 @@ const Index = () => {
               </div>
               {selected === i && (
                 <div
-                  className={selected === i ? 'answer show' : 'answer'}
+                  className={selected === i ? "answer show" : "answer"}
                   onClick={() => toggle(i)}
                 >
                   {i.answer}
@@ -42,7 +46,7 @@ const Index = () => {
         </div>
       </div>
       <div className={styles.billing}>
-        Get more information on{' '}
+        Get more information on{" "}
         <a className={styles.info} href="/faq">
           billing at Zuri Chat.
         </a>
@@ -53,37 +57,37 @@ const Index = () => {
 
 const data = [
   {
-    question: 'What are my payment options - credit card and/or invoice?',
+    question: "What are my payment options - credit card and/or invoice?",
     answer:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias.'
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias."
   },
   {
     question:
       "Our team has several accounts which are not being actively used, but which we don't want to disable. Do we still have to pay for them?",
     answer:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias.'
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias."
   },
   {
-    question: 'My team has credits. How do we use them?',
+    question: "My team has credits. How do we use them?",
     answer:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias.'
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias."
   },
   {
-    question: 'We need to add new users to our team. How will that be billed?',
+    question: "We need to add new users to our team. How will that be billed?",
     answer:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias.'
-  },
-  {
-    question:
-      'My team wants to cancel its subscription. How do we do that? Can we get a refund?',
-    answer:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias.'
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias."
   },
   {
     question:
-      'Do you offer discounts for non-profit organizations or educational institutions?',
+      "My team wants to cancel its subscription. How do we do that? Can we get a refund?",
     answer:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias.'
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias."
+  },
+  {
+    question:
+      "Do you offer discounts for non-profit organizations or educational institutions?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias."
   }
 ]
 

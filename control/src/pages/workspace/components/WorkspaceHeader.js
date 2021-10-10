@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import ZuriLogo from './ZuriLogo'
-import styles from '../style/workspace.module.css'
+import React from "react"
+import { Link } from "react-router-dom"
+import ZuriLogo from "./ZuriLogo"
+import styles from "../style/workspace.module.css"
 
 const WorkspaceHeader = () => {
   return (
@@ -10,7 +10,7 @@ const WorkspaceHeader = () => {
         <ZuriLogo />
         <div>
           <h1>Choose a workspace</h1>
-          <p>We’ll add the workspaces you choose to your desktop app</p>
+          <p>Welcome back! Pick one to get back to working with your team</p>
         </div>
       </section>
       <section className={`${styles.header_extra}`}>

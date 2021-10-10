@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react'
-import { FixedSizeList as List } from 'react-window'
-import AutoSizer from 'react-virtualized-auto-sizer'
+import React, { useContext, useState } from "react"
+import { FixedSizeList as List } from "react-window"
+import AutoSizer from "react-virtualized-auto-sizer"
 
-import { IoMdClose, IoMdSearch } from 'react-icons/io'
-import { TopbarContext } from '../context/Topbar'
-import styles from '../styles/MembersModal.module.css'
-import faker from 'faker'
+import { IoMdClose, IoMdSearch } from "react-icons/io"
+import { TopbarContext } from "../context/Topbar"
+import styles from "../styles/MembersModal.module.css"
+import faker from "faker"
 
 const placeHolder = n => {
   const placeHolderMembersArray = []
@@ -31,7 +31,7 @@ const MembersModal = ({ channelTitle, members }) => {
   return (
     <div className={styles.modalWrapper}>
       <Header
-        channelTitle={channelTitle || 'announcement'}
+        channelTitle={channelTitle || "announcement"}
         memberNumber={faked.length}
       />
       <Search members={faked} setSearchFiltered={setSearchFiltered} />
@@ -54,7 +54,7 @@ const Header = ({ channelTitle, memberNumber }) => {
         <div>
           <IoMdClose
             onClick={closeMembersModal}
-            style={{ cursor: 'pointer', color: 'red' }}
+            style={{ cursor: "pointer", color: "red" }}
           />
         </div>
       </div>
@@ -71,9 +71,9 @@ const Search = ({ members, setSearchFiltered }) => {
         <input
           placeholder="Find members"
           onChange={e => {
-            if (e.target.value !== '') {
+            if (e.target.value !== "") {
               const filtered = members.filter(val => {
-                const regex = new RegExp(`${e.target.value}`, 'ig')
+                const regex = new RegExp(`${e.target.value}`, "ig")
                 return val.userName.match(regex) || val.fullName.match(regex)
               })
               setSearchFiltered(filtered)
@@ -96,7 +96,7 @@ const MemberList = ({ members }) => {
     <div
       id="member-list"
       className={styles.memberlist}
-      style={{ flex: '1 1 auto' }}
+      style={{ flex: "1 1 auto" }}
     >
       <AutoSizer>
         {({ height, width }) => (
@@ -135,7 +135,7 @@ const MemberCard = ({
       <div className={styles.membercardTextBlock}>
         <div className={styles.membercardUserDetails}>
           <b>{userName}</b>
-          {'-'}
+          {"-"}
           <p>{fullName}</p>
         </div>
         <p className={styles.membercardStatus}>{status}</p>

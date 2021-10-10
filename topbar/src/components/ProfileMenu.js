@@ -1,5 +1,5 @@
-import React from 'react'
-import style from '../styles/ProfileMenu.module.css'
+import React from "react"
+import style from "../styles/ProfileMenu.module.css"
 
 export const ProfileMenu = () => {
   return (

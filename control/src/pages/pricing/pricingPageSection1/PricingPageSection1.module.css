@@ -7,7 +7,7 @@
 
 .topPricingPageSection1 {
   display: flex;
-  font-family: 'Lato';
+  font-family: "Lato";
   flex-direction: column;
   align-items: center;
   margin-bottom: 1.25rem;
@@ -243,7 +243,7 @@
   .topPricingPageSection1 {
     display: flex;
     width: 100%;
-    font-family: 'Lato';
+    font-family: "Lato";
     flex-direction: column;
     align-items: center;
     /* justify-content: center; */

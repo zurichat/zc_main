@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from '../component-styles/LoginLoading.module.css'
+import React from "react"
+import styles from "../component-styles/LoginLoading.module.css"
 
 const LoginLoading = () => {
   //Redirect to dashboard

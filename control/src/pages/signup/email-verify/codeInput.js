@@ -1,8 +1,8 @@
-import { useState, useRef } from 'react'
-import styles from './styles/EmailVerification.module.css'
+import { useState, useRef } from "react"
+import styles from "./styles/EmailVerification.module.css"
 
 const CodeInput = ({ length, label, loading, onComplete }) => {
-  const [code, setCode] = useState([...Array(length)].map(() => ''))
+  const [code, setCode] = useState([...Array(length)].map(() => ""))
   const inputs = useRef([])
   // Typescript
   // useRef<(HTMLInputElement | null)[]>([])
@@ -16,15 +16,15 @@ const CodeInput = ({ length, label, loading, onComplete }) => {
     if (slot !== length - 1) {
       inputs.current[slot + 1].focus()
     }
-    if (newCode.every(num => num !== '')) {
-      onComplete(newCode.join(''))
+    if (newCode.every(num => num !== "")) {
+      onComplete(newCode.join(""))
     }
   }
 
   const onKeyUp = (e, slot) => {
     if (e.keyCode === 8 && !code[slot] && slot !== 0) {
       const newCode = [...code]
-      newCode[slot - 1] = ''
+      newCode[slot - 1] = ""
       setCode(newCode)
       inputs.current[slot - 1].focus()
     }

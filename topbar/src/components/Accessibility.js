@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import styles from '../styles/Accessibility.module.css'
+import React, { useState } from "react"
+import styles from "../styles/Accessibility.module.css"
+import image1 from "../assets/images/up_icon.jpeg"
 
 function Accessibility() {
   return (
@@ -74,14 +75,15 @@ function Accessibility() {
         <div>
           <h3 className={styles.keyboardH3}>Keyboard</h3>
           <p className={styles.accessibilityP}>
-            You can improve the way you use Zurichat by learning our{' '}
+            You can improve the way you use Zurichat by learning our{" "}
             <span id={styles.handyKeyboard}>handy keyboard shortcuts.</span>
           </p>
 
           <hr className={styles.hrLine} />
 
           <h3 className={styles.pressH3}>
-            Press in the empty message field to:
+            Press <img src={image1} alt="upicon" className={styles.image1} /> in
+            the empty message field to:
           </h3>
           <form action="">
             <div className={styles.imagesAndEmojis}>
@@ -119,13 +121,13 @@ function Accessibility() {
             </div>
           </form>
 
-          <p className={styles.accessibilityP} id={styles.noteP}>
+          <p className={styles.accessibilityQ} id={styles.noteP}>
             Note: press
             <span className={styles.accessibilityEsc}> Ctrl </span>
             <span className={styles.accessibilityEsc} id={styles.exclamation}>
-              {' '}
-              !{' '}
-            </span>{' '}
+              {" "}
+              !{" "}
+            </span>{" "}
             to edit your last message, with either option.
           </p>
         </div>

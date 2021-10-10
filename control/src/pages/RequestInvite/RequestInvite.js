@@ -1,20 +1,24 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Container, Form, Card } from 'react-bootstrap'
-import styles from './styles/RequestInvite.module.css'
+import React from "react"
+import { Link } from "react-router-dom"
+import { Container, Form, Card } from "react-bootstrap"
+import styles from "./styles/RequestInvite.module.css"
+import { Helmet } from "react-helmet"
 
 function RequestInvite() {
   return (
     <div>
+      <Helmet>
+        <title>Request Invite - Zuri Chat</title>
+      </Helmet>
       <Card
         className={styles.root}
-        style={{ alignItems: 'center', justifyContent: 'center' }}
+        style={{ alignItems: "center", justifyContent: "center" }}
       >
         <Card.Body>
           <div className={styles.title} gutterBottom align="left">
             <p className={styles.main}>Request Invitation to Zuri Chat</p>
             <form>
-              <div className={styles.first - input}>
+              <div className={styles.first}>
                 <p> To: </p>
                 <Container>
                   <Form.Control
@@ -24,7 +28,7 @@ function RequestInvite() {
                   />
                 </Container>
               </div>
-              <div className={styles.second - input}>
+              <div className={styles.second}>
                 <p> Invite as: </p>
                 <Container>
                   <Form.Control
@@ -34,7 +38,7 @@ function RequestInvite() {
                   />
                 </Container>
               </div>
-              <div className={styles.third - input}>
+              <div className={styles.third}>
                 <p> Reason for request(optional): </p>
                 <Container>
                   <Form.Control
@@ -50,13 +54,13 @@ function RequestInvite() {
           <div className={styles.submain} gutterBottom align="center">
             <div className={styles.firstsubmain}>
               <p>
-                {' '}
+                {" "}
                 Your request will be sent to the admin, and you will be notified
                 when it has been approved or denied
               </p>
               <p>
                 New member will automatically join your workspace's default
-                channel <a href="addmore"> Add more</a>{' '}
+                channel <a href="addmore"> Add more</a>{" "}
               </p>
             </div>
             <div className={styles.secondsubmain}>

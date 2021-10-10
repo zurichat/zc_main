@@ -1,4 +1,4 @@
-import styles from '../../styles/articlesCard.module.css'
+import styles from "../../styles/articlesCard.module.css"
 
 const articlesCard = ({ article }) => {
   return (
@@ -22,16 +22,16 @@ const articlesCard = ({ article }) => {
           <path
             d="M3.5 9.5H15.5"
             stroke="#00B87C"
-            stroke-width="1.22693"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.22693"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M11 5L15.5 9.5L11 14"
             stroke="#00B87C"
-            stroke-width="1.22693"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.22693"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       </div>

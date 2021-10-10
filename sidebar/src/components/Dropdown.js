@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types'
-import { useState } from 'react'
-import styles from '../styles/Dropdown.module.css'
-import dropdownIcon from '../verified-components/assets/icons/dropdown-icon.svg'
-import addIcon from '../verified-components/assets/icons/add-icon.svg'
+import PropTypes from "prop-types"
+import { useState } from "react"
+import styles from "../styles/Dropdown.module.css"
+import dropdownIcon from "../verified-components/assets/icons/dropdown-icon.svg"
+import addIcon from "../verified-components/assets/icons/add-icon.svg"
 
-import styled from 'styled-components'
+import styled from "styled-components"
 
 const Dropdown = ({
   children,
@@ -19,12 +19,12 @@ const Dropdown = ({
 
   return (
     <div
-      className={`${styles.container}${!isOpen ? ` ${styles.isClosed}` : ''}`}
+      className={`${styles.container}${!isOpen ? ` ${styles.isClosed}` : ""}`}
     >
       <div className="text-green-700">
         <img
           className={`${styles.dropDownButton}${
-            children ? '' : ` ${styles.hidden}`
+            children ? "" : ` ${styles.hidden}`
           }`}
           onClick={() => setIsOpen(!isOpen)}
           src={dropdownIcon}

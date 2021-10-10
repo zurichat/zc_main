@@ -1,23 +1,27 @@
-import React, { useState } from 'react'
-import AdminSetup from './AdminSetup'
-import ComplaintProfiles from './ComplaintProfiles'
-import { Confirm } from './Confirm'
-import Success from './Success'
-import Modal from 'react-bootstrap/Modal'
-import { BsFillExclamationDiamondFill } from 'react-icons/bs'
-import { BsFillXCircleFill } from 'react-icons/bs'
+import React, { useState, useEffect } from "react"
+import AdminSetup from "./AdminSetup"
+import ComplaintProfiles from "./ComplaintProfiles"
+import { Confirm } from "./Confirm"
+import Success from "./Success"
+import { Modal } from "react-bootstrap"
+import { BsFillExclamationDiamondFill } from "react-icons/bs"
+import { AiOutlineClose } from "react-icons/ai"
 
 export const UserForm = () => {
   const [step, setStep] = useState(1)
-  const [email, setEmail] = useState('')
-  const [offence, setOffence] = useState('Anti Semitism')
-  const [description, setDescription] = useState('')
+  const [email, setEmail] = useState("")
+  const [offence, setOffence] = useState("Anti Semitism")
+  const [description, setDescription] = useState("")
   const [anonymous, setAnonymous] = useState(false)
   const [postSuccess, setPostSuccess] = useState(true)
 
   const [show, setShow] = useState(false)
 
-  const handleClose = () => setShow(false)
+  useEffect(() => {})
+  const handleClose = () => {
+    setStep(1)
+    setShow(false)
+  }
   const handleShow = () => setShow(true)
 
   const nextStep = () => {
@@ -35,17 +39,17 @@ export const UserForm = () => {
   }
 
   const inputChange = input => e => {
-    if (input === 'anonymous') {
+    if (input === "anonymous") {
       setAnonymous(e.target.checked)
       // console.log(input, e.target.checked);
     }
-    if (input === 'email') {
+    if (input === "email") {
       setEmail(e.target.value)
     }
-    if (input === 'offence') {
+    if (input === "offence") {
       setOffence(e.target.value)
     }
-    if (input === 'description') {
+    if (input === "description") {
       setDescription(e.target.value)
     }
     // console.log(input, e.target.value);
@@ -70,8 +74,12 @@ export const UserForm = () => {
         keyboard={false}
       >
         <Modal.Header>
-          <Modal.Title className="text-success">Zurichat Watches</Modal.Title>
-          <BsFillXCircleFill variant="secondary" onClick={handleClose} />
+          <Modal.Title className="text-success">ZuriChat Watches</Modal.Title>
+          <AiOutlineClose
+            variant="primary"
+            color="green"
+            onClick={handleClose}
+          />
         </Modal.Header>
         {step === 1 ? (
           <AdminSetup

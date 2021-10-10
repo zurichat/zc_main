@@ -15,9 +15,9 @@
 
 // export default StatusBadgeModal
 
-import { useContext } from 'react'
-import { TopbarContext } from '../context/Topbar'
-import styles from '../styles/StatusBadgeModal.module.css'
+import { useContext } from "react"
+import { TopbarContext } from "../context/Topbar"
+import styles from "../styles/StatusBadgeModal.module.css"
 
 const StatusBadgeModal = () => {
   const {

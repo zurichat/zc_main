@@ -1,111 +1,168 @@
-import { Fragment, useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import styles from './styles/Sidebar.module.css'
-import Dropdown from './components/Dropdown'
-import Modal from './components/InviteModal'
-import ModalComponent from './components/ModalComponent'
-import { DialogOverlay, DialogContent } from '@reach/dialog'
-import styled from 'styled-components'
-import AuthInputBox from './components/AuthInputBox'
-import DropDown from './components/Drop'
+import { fetchUser } from "./context/fetchUserDetails"
+import { Fragment, useState, useEffect } from "react"
+import { Link } from "react-router-dom"
+import styles from "./styles/Sidebar.module.css"
+import Dropdown from "./components/Dropdown"
+import EmailInviteModal from "./components/EmailInvite"
+import ModalComponent from "./components/ModalComponent"
+import { DialogOverlay, DialogContent } from "@reach/dialog"
+import styled from "styled-components"
+import AuthInputBox from "./components/AuthInputBox"
+import DropDown from "./components/Drop"
 
-import newMsgIcon from './assets/images/newMsgIcon.svg'
-import threadIcon from './verified-components/assets/icons/thread-icon.svg'
-import dmIcon from './verified-components/assets/icons/dm-icon.svg'
-import draftIcon from './verified-components/assets/icons/draft-icon.svg'
-import filesIcon from './verified-components/assets/icons/files-icon.svg'
-import pluginIcon from './verified-components/assets/icons/plugin-icon.svg'
-import addIcon from './verified-components/assets/icons/add-icon.svg'
-import shapekeyboardarrowdown from './verified-components/assets/icons/shapekeyboardarrowdown.svg'
-import newmessage from './verified-components/assets/icons/newmessage.svg'
-import { links } from './utils/links'
-import { navigateToUrl } from 'single-spa'
-import { Button } from '../../control/src/pages/createworkspace/components/WorkspaceHome'
-import Channels from './components/Channels'
-import { Modall } from './components/Modal'
-import SkeletonLoader from './components/SkeletonLoader'
-import Messages from './components/Messages'
-import fetcher from './utils/fetcher'
-import axios from 'axios'
-import { GetUserInfo } from '@zuri/control'
-import { authAxios } from './utils/Api'
-import linkIcon from './assets/link.svg'
+import newMsgIcon from "./assets/images/newMsgIcon.svg"
+import threadIcon from "./verified-components/assets/icons/thread-icon.svg"
+import dmIcon from "./verified-components/assets/icons/dm-icon.svg"
+import draftIcon from "./verified-components/assets/icons/draft-icon.svg"
+import filesIcon from "./verified-components/assets/icons/files-icon.svg"
+import pluginIcon from "./verified-components/assets/icons/plugin-icon.svg"
+import addIcon from "./verified-components/assets/icons/add-icon.svg"
+import shapekeyboardarrowdown from "./verified-components/assets/icons/shapekeyboardarrowdown.svg"
+import newmessage from "./verified-components/assets/icons/newmessage.svg"
+import { links } from "./utils/links"
+import { navigateToUrl } from "single-spa"
+import { Button } from "../../control/src/pages/createworkspace/components/WorkspaceHome"
+import Channels from "./components/Channels"
+import { Modall } from "./components/Modal"
+import SkeletonLoader from "./components/SkeletonLoader"
+import Messages from "./components/Messages"
+import fetcher from "./utils/fetcher"
+import axios from "axios"
+import { GetUserInfo, SubscribeToChannel } from "@zuri/control"
+import { authAxios } from "./utils/Api"
+import linkIcon from "./assets/link.svg"
+
+import { ChakraProvider, Spinner } from "@chakra-ui/react"
+
+import { filterUrl, trimUrl } from "./utils/filterurl"
+import { MdKeyboardArrowDown } from "react-icons/md"
 
 const Sidebar = props => {
   const [show, setShow] = useState(false)
+
+  //for background
+  const [bg, setBg] = useState(1)
+
+  //for invite
   const [openInvite, setOpenInvite] = useState(false)
+
+  //dialoag
   const [showDialog, setShowDialog] = useState(false)
+
+  //Function to open dialog
   const open = () => setShowDialog(true)
   const close = () => setShowDialog(false)
+
+  //Invite modal
   const openInviteModal = () => setOpenInvite(true)
   const closeInviteModal = () => setOpenInvite(false)
-  const [query, setQuery] = useState('')
-  const [loading, setLoading] = useState(false)
-  // const [error, setError] = useState('')
-  const [inviteEmail, setInviteEmail] = useState('')
-  const [owner, setOwner] = useState(false)
-  const [InviteSuccess, setInviteSuccess] = useState(false)
-  const [homeModal, toggleHomeModal] = useState(false)
-  const toggle = () => toggleHomeModal(!homeModal)
 
-  let currentWorkspace = localStorage.getItem('currentWorkspace')
-  console.log(currentWorkspace)
+  //Some type of query
+  const [query, setQuery] = useState("")
+  const [loading, setLoading] = useState(false)
+
+  //invite mail
+  const [inviteEmail, setInviteEmail] = useState([])
+
+  //organization email
+  const [orgEmails, setOrgEmails] = useState([])
+
+  //set owner
+  const [owner, setOwner] = useState(false)
+
+  //invite modal
+  const [InviteSuccess, setInviteSuccess] = useState(false)
+
+  //home modal
+  const [homeModal, toggleHomeModal] = useState(false)
+
+  //organization
+  const [org, setOrg] = useState({})
+  // console.log('ORGGGG', org)
+
+  //toggle
+  const toggle = () => {
+    toggleHomeModal(!homeModal)
+    document.removeEventListener("click", toggle)
+  }
+
+  useEffect(() => {
+    if (homeModal) {
+      document.addEventListener("click", toggle)
+    }
+  }, [homeModal])
+
+  document.removeEventListener("click", toggle)
+
+  let currentWorkspace = localStorage.getItem("currentWorkspace")
+
+  //open invite
+  const toggleOpenInvite = () => setOpenInvite(!openInvite)
+  const setInviteEmails = emails => setInviteEmail(emails)
+  const [sendLoading, setSendLoading] = useState(false)
 
   const [userInfo, setUserInfo] = useState({
-    userId: '',
+    userId: "",
     Organizations: [],
-    token: ''
+    token: ""
   })
+
+  //   // console.log('userinfo', userInfo)
+
+  const [nullValue, setnullValue] = useState(0)
 
   const [organizationInfo, setOrganizationInfo] = useState(null)
   const [sidebarData, setSidebarData] = useState({})
+  const [isLoading, setIsLoading] = useState(true)
+
+  const loaderFunc = () => {
+    setIsLoading(false)
+  }
+
+  setTimeout(loaderFunc, 13000)
+
+  let sideBarDataSize = Object.keys(sidebarData).length
+
+  //   console.log('SidebarData', sidebarData)
+  //   console.log('SidebarData Size:', sideBarDataSize)
+  //   console.log('ORG INFO:', organizationInfo)
 
   // let user = JSON.parse(sessionStorage.getItem('user'))
-  let token = sessionStorage.getItem('token')
+  let token = sessionStorage.getItem("token")
+  let user_id_session = JSON.parse(sessionStorage.getItem("user"))
 
-  const trimUrl = url => {
-    if (url !== undefined) {
-      if (url.substr(-1) === '/') {
-        return url.substr(0, url.length - 1)
+  useEffect(() => {
+    //Fetch sidebar when component mounts
+    fetchUser(props.dispatch)
+    setnullValue(1)
+    axios({
+      method: "get",
+      url: `https://api.zuri.chat/organizations/${currentWorkspace}`,
+      headers: {
+        Authorization: `Bearer ${token}`
       }
-      return url
-    }
-  }
-
-  const filterUrl = url => {
-    if (url !== undefined) {
-      return url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('/')[0]
-    }
-  }
+    }).then(res => {
+      const org = res.data.data
+      setOrg(org)
+    })
+  }, [])
 
   useEffect(() => {
     inviteVisibility()
 
     const fetchUser = async () => {
-      const { _id, Organizations } = await GetUserInfo()
-      // console.log('sidebar organization', Organization)
+      const user = await GetUserInfo()
       setUserInfo({
-        userId: _id,
-        Organizations,
+        userId: user_id_session.id,
         token
       })
-
-      if (_id !== '') {
-        const org_url = `/organizations/${currentWorkspace}/plugins`
-        authAxios
-          .get(org_url)
-          .then(res => setOrganizationInfo(res.data.data))
-          .catch(err => console.log(err))
-      } else {
-        console.log('Checking')
-      }
     }
     fetchUser()
   }, [])
 
   const getOrgDetails = () => {
     return axios({
-      method: 'get',
+      method: "get",
       url: `https://api.zuri.chat/organizations/${currentWorkspace}/members`,
       headers: {
         Authorization: `Bearer ${token}`
@@ -114,80 +171,64 @@ const Sidebar = props => {
   }
 
   const inviteVisibility = () => {
-    const userEmail = JSON.parse(sessionStorage.getItem('user')).email
+    const userEmail = JSON.parse(sessionStorage.getItem("user")).email
     getOrgDetails().then(res => {
       const currentUser = res.data.data.find(user => user.email === userEmail)
-      setOwner(currentUser?.role === 'owner' || currentUser?.role === 'admin')
+      setOwner(currentUser?.role === "owner" || currentUser?.role === "admin")
+      const existingEmails = []
+      res.data.data.map(user => existingEmails.push(user.email))
+      // console.log(existingEmails);
+      setOrgEmails(existingEmails)
     })
   }
 
-  // Invite Users
-
-  const inviteUser = async () => {
-    return axios({
-      method: 'post',
+  //   // Invite Users
+  //   // 6150542f6dc33f65ab425403
+  //   // ${currentWorkspace}
+  const inviteUser = async emails => {
+    // console.log(currentWorkspace, token, emails)
+    // console.log(...emails, 'pidoxy')
+    setSendLoading(true)
+    return await axios({
+      method: "post",
       url: `https://api.zuri.chat/organizations/${currentWorkspace}/send-invite`,
       data: {
-        emails: [inviteEmail]
+        emails: [...emails]
       },
       headers: {
         Authorization: `Bearer ${token}`
       }
     })
       .then(res => {
-        console.log('invite', res)
+        // setSendLoading(false)
         setInviteSuccess(true)
+        setSendLoading(false)
       })
       .catch(err => {
+        setSendLoading(false)
+        setInviteSuccess(false)
         console.error(err)
       })
   }
 
-  // const validateEmail = (email) => {
-  //   return !!email.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
-  // }
-
-  useEffect(() => {
-    // console.log('sidebar plugins', organizationInfo)
-    {
-      organizationInfo &&
-        organizationInfo.map(pluginData => {
-          const { plugin } = pluginData
-
-          // console.log(plugin)
-
-          const sidebarUrl = plugin.sidebar_url
-          const trimmedUrl = trimUrl(sidebarUrl)
-          const pluginKey = filterUrl(plugin.sidebar_url)
-
-          axios
-            .get(
-              `${
-                trimmedUrl.includes('https://') ||
-                trimmedUrl.includes('http://')
-                  ? trimmedUrl
-                  : `https://${trimmedUrl}`
-              }?org=${currentWorkspace}&user=${userInfo.userId}`
-            )
-            .then(res => {
-              try {
-                const validPlugin = res.data
-                if (validPlugin.name !== undefined) {
-                  if (typeof validPlugin === 'object') {
-                    setSidebarData(prev => {
-                      return { ...prev, [pluginKey]: validPlugin }
-                    })
-                  }
-                }
-                // console.log(validPlugin)
-              } catch (err) {
-                console.log(err, 'Invalid plugin')
-              }
+  {
+    nullValue === 1 &&
+      currentWorkspace &&
+      userInfo.userId &&
+      SubscribeToChannel(
+        `${currentWorkspace}_${userInfo.userId}_sidebar`,
+        ctx => {
+          const websocket = ctx.data
+          // console.log('Websocket', websocket)
+          if (websocket.event === "sidebar_update") {
+            setSidebarData({
+              ...sidebarData,
+              [websocket.plugin_id]: websocket.data
             })
-            .catch(console.log)
-        })
-    }
-  }, [organizationInfo])
+          }
+        }
+      )
+  }
 
   return (
     <div className={`container-fluid ${styles.sb__container}`}>
@@ -195,12 +236,17 @@ const Sidebar = props => {
         <div className={`row ${styles.orgDiv}`}>
           <div className={`col-12 px-3 ${styles.orgInfo}`}>
             <div onClick={toggle} className={`row p-0 ${styles.orgHeader}`}>
-              <p className={`col-6 mb-0 ${styles.orgTitle}`}>HNGi8</p>
-              <img
-                className={`col-6 mx-auto ${styles.arrowDown}`}
+              <span className={`col-8 mb-0 ${styles.orgTitle}`}>
+                {org.name}
+              </span>
+              <span className={`col-4 p-0 ${styles.sidebar__header__arrow}`}>
+                <MdKeyboardArrowDown />
+              </span>{" "}
+              {/* <img
+                className={`col-4 mx-auto ${styles.arrowDown}`}
                 src={shapekeyboardarrowdown}
                 alt="HNGi8"
-              />
+              /> */}
             </div>
             <div className={`row ${styles.newMessage}`}>
               <img
@@ -210,98 +256,55 @@ const Sidebar = props => {
               />
             </div>
           </div>
-          <div className={`col-12 px-3 ${styles.odalContainer}`}>
-            <ModalComponent isOpen={homeModal} />
-          </div>
-
-          <Modall showDialog={showDialog} closeDialog={close} />
-
-          <Overlay isOpen={showDialog} onDismiss={close}>
-            <Content aria-label="room-list">
-              <CloseButton className="close-button" onClick={close}>
-                <Span aria-hidden>×</Span>
-              </CloseButton>
-              <AuthInputBox
-                value={query}
-                setValue={setQuery}
-                placeholder="🔍 Search for plugins"
+          <div className={`col-12 px-3 ${styles.modalContainer}`}>
+            <div className={`col-12 px-3 ${styles.odalContainer}`}>
+              <ModalComponent
+                workSpace={org}
+                isOpen={homeModal}
+                toggleOpenInvite={toggleOpenInvite}
               />
-              <Wrapper>
-                {loading && <p>Loading..</p>}
-                <p>
-                  {links.map((plugs, id) => {
-                    return (
-                      <div key={id}>
-                        <Link to={plugs.href} onClick={navigateToUrl}>
-                          <p>{plugs.name}</p>
-                        </Link>
-                      </div>
-                    )
-                  })}
-                </p>
-              </Wrapper>
-            </Content>
-          </Overlay>
-          <Overlay isOpen={openInvite} onDismiss={closeInviteModal}>
-            <Content
-              style={{ width: '55%', height: '55%' }}
-              aria-label="room-list"
-            >
-              <CloseButton className="close-button" onClick={closeInviteModal}>
-                <Span aria-hidden>×</Span>
-              </CloseButton>
-              <div>
-                <h3>Invite people to The Workspace</h3>
-              </div>
-              {InviteSuccess && (
-                <div className={`alert alert-success`}>
-                  Invite was sent to {inviteEmail}
-                </div>
-              )}
-              <div>
-                <label for="email_invite">To:</label>
-              </div>
-              <Wrapper>
-                <div>
-                  <input
-                    type="email"
-                    placeholder="example@gmail.com"
-                    multiple
-                    value={inviteEmail}
-                    onChange={e => setInviteEmail(e.target.value)}
-                    name="email_invite"
-                    className={`pb-4 form-control`}
-                  />
-                </div>
-                <div
-                  className={`mt-5 pt-3 d-flex my-auto justify-content-between`}
-                >
-                  <p
-                    onClick={() => {
-                      window.navigator.clipboard.writeText(
-                        `https://zuri.chat/invite?organization=${currentWorkspace}`
+            </div>
+
+            <Modall showDialog={showDialog} closeDialog={close} />
+
+            <Overlay isOpen={showDialog} onDismiss={close}>
+              <Content aria-label="room-list">
+                <CloseButton className="close-button" onClick={close}>
+                  <Span aria-hidden>×</Span>
+                </CloseButton>
+                <AuthInputBox
+                  value={query}
+                  setValue={setQuery}
+                  placeholder="🔍 Search for plugins"
+                />
+                <Wrapper>
+                  {loading && <p>Loading..</p>}
+                  <p>
+                    {links.map((plugs, id) => {
+                      return (
+                        <div key={id}>
+                          <Link to={plugs.href} onClick={navigateToUrl}>
+                            <p>{plugs.name}</p>
+                          </Link>
+                        </div>
                       )
-                      alert('link has been copied')
-                    }}
-                    className={`mb-0 align-items-center`}
-                    style={{ color: '#00B87C', fontSize: '13px' }}
-                  >
-                    <img className={`pe-3`} src={linkIcon} />
-                    Copy invite link{' '}
+                    })}
                   </p>
-                  <button
-                    onClick={() => inviteUser()}
-                    style={{ color: 'white', backgroundColor: '#00B87C' }}
-                    type="button"
-                    disabled={inviteEmail === '' ? true : false}
-                    className={`btn my-auto `}
-                  >
-                    Send
-                  </button>
-                </div>
-              </Wrapper>
-            </Content>
-          </Overlay>
+                </Wrapper>
+              </Content>
+            </Overlay>
+
+            <EmailInviteModal
+              isOpen={openInvite}
+              onDismiss={closeInviteModal}
+              orgvalEmails={orgEmails}
+              setInviteEmails={setInviteEmails}
+              inviteUserViaMail={inviteUser}
+              sendLoadin={sendLoading}
+              currentWorkspace={currentWorkspace}
+              invSucc={InviteSuccess}
+            />
+          </div>
         </div>
       </div>
       <div className={`${styles.subCon2}`}>
@@ -311,7 +314,7 @@ const Sidebar = props => {
               className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
             >
               <img
-                style={{ width: '10%' }}
+                style={{ width: "10%" }}
                 className={`${styles.item__img}`}
                 role="button"
                 onClick={openInviteModal}
@@ -328,103 +331,112 @@ const Sidebar = props => {
             </div>
           )}
         </div>
-        <div className={`row mt-2 ${styles.sb__item}`}>
-          <div
-            className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
-          >
-            <img
-              className={`${styles.item__img}`}
-              src={threadIcon}
-              alt="icon"
-            />
-            <p className={`mb-0 ${styles.item_p}`}>Threads</p>
-          </div>
-        </div>
-        <div className={`row ${styles.sb__item}`}>
-          <div
-            className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
-          >
-            <img className={`${styles.item__img}`} src={dmIcon} alt="icon" />
-            <p className={`mb-0 ${styles.item_p}`}>All DMs</p>
-          </div>
-        </div>
-        <div className={`row ${styles.sb__item}`}>
-          <div
-            className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
-          >
-            <img className={`${styles.item__img}`} src={draftIcon} alt="icon" />
-            <p className={`mb-0 ${styles.item_p}`}>Drafts</p>
-          </div>
-        </div>
-        <div className={`row ${styles.sb__item}`}>
-          <div
-            className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
-          >
-            <img className={`${styles.item__img}`} src={filesIcon} alt="icon" />
-            <p className={`mb-0 ${styles.item_p}`}>Files</p>
-          </div>
-        </div>
-        <div className={`row ${styles.sb__item}`}>
-          <div
-            className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
-          >
-            <img
-              className={`${styles.item__img}`}
-              src={pluginIcon}
-              alt="icon"
-            />
-            <p className={`mb-0 ${styles.item_p}`}>Plugins</p>{' '}
-            <img
-              onClick={open}
-              className={`${styles.addButton}`}
-              src={addIcon}
-              alt="Add button"
-              role="button"
-            />
-          </div>
-        </div>
 
-        {/* <DropDown /> */}
+        {/* Checks if sidebarData is fully loaded; if not it mounts the skeletonloader, if sidebarData is complete it mounts sidebar fully */}
+        {isLoading ? (
+          <SkeletonLoader pluginNumber={sideBarDataSize} />
+        ) : (
+          <>
+            <div className={`row mt-2 ${styles.sb__item}`}>
+              <div
+                className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+              >
+                <img
+                  className={`${styles.item__img}`}
+                  src={threadIcon}
+                  alt="icon"
+                />
+                <p className={`mb-0 ${styles.item_p}`}>Threads</p>
+              </div>
+            </div>
+            <div className={`row ${styles.sb__item}`}>
+              <div
+                className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+              >
+                <img
+                  className={`${styles.item__img}`}
+                  src={draftIcon}
+                  alt="icon"
+                />
+                <p className={`mb-0 ${styles.item_p}`}>Drafts</p>
+              </div>
+            </div>
+            <div className={`row ${styles.sb__item}`}>
+              <div
+                className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+              >
+                <img
+                  className={`${styles.item__img}`}
+                  src={filesIcon}
+                  alt="icon"
+                />
+                <p className={`mb-0 ${styles.item_p}`}>Files</p>
+              </div>
+            </div>
+            <div className={`row ${styles.sb__item}`}>
+              <div
+                className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
+              >
+                <img
+                  className={`${styles.item__img}`}
+                  src={pluginIcon}
+                  alt="icon"
+                />
+                <p className={`mb-0 ${styles.item_p}`}>Plugins</p>{" "}
+                <img
+                  onClick={open}
+                  className={`${styles.addButton}`}
+                  src={addIcon}
+                  alt="Add button"
+                  role="button"
+                />
+              </div>
+            </div>
 
-        {/* SIDE BAR DATA */}
-        {sidebarData &&
-          Object.keys(sidebarData).map((plugin, index) => {
-            return (
-              <DropDown
-                itemName={sidebarData[plugin].name}
-                id={sidebarData[plugin].name}
-                key={index}
-                items={sidebarData[plugin]}
-              />
-              // console.log()
+            {/* <DropDown /> */}
 
-              // <div key={index}>
-              //   <h5>{plugin.name}</h5>
+            {/* SIDE BAR DATA */}
+            {props.state.sidebar &&
+              Object.keys(props.state.sidebar).map((plugin, index) => {
+                return (
+                  <DropDown
+                    itemName={props.state.sidebar[plugin].name}
+                    id={props.state.sidebar.name}
+                    key={index}
+                    items={props.state.sidebar[plugin]}
+                  />
+                  // console.log()
 
-              //   <ul>
-              //     {plugin.joined_rooms &&
-              //       plugin.joined_rooms.map((room, index) => {
-              //         if (room.room_name !== undefined) {
-              //           return (
-              //             <li key={index}>
-              //               <a
-              //                 style={{
-              //                   marginLeft: '5px',
-              //                   color: 'red'
-              //                 }}
-              //                 href={room.room_url}
-              //                 onClick={navigateToUrl}
-              //               >
-              //                 {room.room_name}
-              //               </a>
-              //             </li>
-              //           )
-              //         }
-              //       })}
-              //   </ul>
-              // </div>
-            )
-          })}
+                  // <div key={index}>
+                  //   <h5>{plugin.name}</h5>
+
+                  //   <ul>
+                  //     {plugin.joined_rooms &&
+                  //       plugin.joined_rooms.map((room, index) => {
+                  //         if (room.room_name !== undefined) {
+                  //           return (
+                  //             <li key={index}>
+                  //               <a
+                  //                 style={{
+                  //                   marginLeft: '5px',
+                  //                   color: 'red'
+                  //                 }}
+                  //                 href={room.room_url}
+                  //                 onClick={navigateToUrl}
+                  //               >
+                  //                 {room.room_name}
+                  //               </a>
+                  //             </li>
+                  //           )
+                  //         }
+                  //       })}
+                  //   </ul>
+                  // </div>
+                )
+              })}
+          </>
+        )}
+
         {/*
         {roomInfo.rooms !== undefined &&
                 roomInfo.rooms.map(room => {
@@ -503,8 +515,10 @@ export const Overlay = styled(DialogOverlay)`
   justify-content: center;
   align-items: center;
   width: 100%;
+
   padding: 2rem;
   z-index: 5;
+  box-shadow: 0 15px 16px 0.17px rgba(0, 0, 0, 0.05);
 `
 export const Content = styled(DialogContent)`
   position: relative;
@@ -522,16 +536,17 @@ const Wrapper = styled.div`
 `
 const CloseButton = styled.button`
   position: absolute;
-  top: 0px;
-  right: 0;
-  padding: 0.5rem;
+  top: 25px;
+  right: 15px;
+  // padding: 1.2rem 1.2rem;
   width: 50px;
-  color: red;
+  height: 50px;
+  color: black;
   background-color: transparent;
   border: none;
 `
 const Span = styled.span`
-  font-size: 0.8rem;
+  font-size: 2.5rem;
 `
 const Item = styled.p`
 font-family: Lato;
@@ -543,7 +558,7 @@ letter-spacing: 0em;
 text-align: left;
 display: flex;
 padding:0.25rem;
-& > img { 
+& > img {
   padding: 0 1rem;
 `
 
@@ -552,7 +567,7 @@ const ClickButton = styled.img`
 `
 
 const theme = {
-  bgcolor: '#00b87c'
+  bgcolor: "#00b87c"
 }
 
 export default Sidebar

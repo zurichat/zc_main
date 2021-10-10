@@ -1,5 +1,5 @@
-import styles from '../../styles/Section1.module.css'
-import heroImage from '../../assets/feature_hero_image.svg'
+import styles from "../../styles/Section1.module.css"
+import heroImage from "../../assets/feature_hero_image.svg"
 
 const Section1 = () => {
   return (
@@ -19,7 +19,7 @@ const Section1 = () => {
                 className={`${styles.getStarted} ${styles.featuresSection1Buttons}`}
                 onClick={e => {
                   e.preventDefault()
-                  window.location.replace('https://zuri.chat/signup')
+                  window.location.replace("https://zuri.chat/signup")
                 }}
               >
                 Get Started
@@ -29,7 +29,7 @@ const Section1 = () => {
                 className={`${styles.features} ${styles.featuresSection1Buttons}`}
                 onClick={e => {
                   e.preventDefault()
-                  window.location.replace('#featuresSection')
+                  window.location.replace("#featuresSection")
                 }}
               >
                 See all Features

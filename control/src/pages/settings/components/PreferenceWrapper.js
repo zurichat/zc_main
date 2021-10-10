@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import styles from '../styles/SettingsTab.module.css'
-import { motion } from 'framer-motion'
+import React, { useState } from "react"
+import styles from "../styles/SettingsTab.module.css"
+import { motion } from "framer-motion"
 
 const PreferenceWrapper = ({ title, text, btnText, timeZone, children }) => {
   const [showContent, setShowContent] = useState(false)
@@ -15,7 +15,7 @@ const PreferenceWrapper = ({ title, text, btnText, timeZone, children }) => {
         </div>
         <div className={styles.settingsright}>
           <button onClick={() => setShowContent(prev => !prev)}>
-            {showContent ? 'close' : btnText}
+            {showContent ? "close" : btnText}
           </button>
         </div>
       </motion.div>

@@ -1,10 +1,10 @@
-import { BehaviorSubject } from 'rxjs'
+import { BehaviorSubject } from "rxjs"
 
-const $behaviorSubject = new BehaviorSubject('')
+const $behaviorSubject = new BehaviorSubject("")
 
 export default $behaviorSubject
 
-let loggedInUserInfo = JSON.parse(sessionStorage.getItem('user'))
+let loggedInUserInfo = JSON.parse(sessionStorage.getItem("user"))
 
 export let loggedInUser = {}
 

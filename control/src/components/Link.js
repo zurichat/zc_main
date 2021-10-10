@@ -1,4 +1,4 @@
-import style from '../component-styles/Link.module.css'
+import style from "../component-styles/Link.module.css"
 
 const Link = ({ title, to, color, underline }) => {
   return (

@@ -1,20 +1,20 @@
-import React, { useState } from 'react'
-import Logo from '../../component-assets/zuri.svg'
-import authBg from '../../component-assets/backg.svg'
-import { withRouter, useLocation } from 'react-router-dom'
-import AuthInputBox from '../../components/AuthInputBox'
-import styles from '../../component-styles/ResetPassword.module.css'
-import axios from 'axios'
-import Button from '../../components/Button'
+import React, { useState } from "react"
+import Logo from "../../component-assets/zuri.svg"
+import authBg from "../../component-assets/backg.svg"
+import { withRouter, useLocation } from "react-router-dom"
+import AuthInputBox from "../../components/AuthInputBox"
+import styles from "../../component-styles/ResetPassword.module.css"
+import axios from "axios"
+import Button from "../../components/Button"
 
 const NewPassword = () => {
   function useQuery() {
     return new URLSearchParams(useLocation().search)
   }
   let query = useQuery()
-  const resetCode = query.get('code')
+  const resetCode = query.get("code")
 
-  const [password, setPassword] = useState('')
+  const [password, setPassword] = useState("")
 
   const handleSubmit = async () => {
     try {
@@ -24,7 +24,7 @@ const NewPassword = () => {
           password
         }
       )
-      alert('password reset!', res.data)
+      alert("password reset!", res.data)
     } catch (err) {
       alert(err)
       console.error(err)

@@ -1,6 +1,6 @@
-import React from 'react'
-import styles from '../styles/SettingsTab.module.css'
-import TimeZones from '../constants/TimeZone'
+import React from "react"
+import styles from "../styles/SettingsTab.module.css"
+import TimeZones from "../constants/TimeZone"
 
 const TimeZone = () => {
   return (

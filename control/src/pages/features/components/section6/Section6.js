@@ -1,6 +1,6 @@
-import styles from '../../styles/section6.module.css'
-import ArticlesCard from '../articlesCard/articlesCard'
-import { Articles } from './articlesData'
+import styles from "../../styles/section6.module.css"
+import ArticlesCard from "../articlesCard/articlesCard"
+import { Articles } from "./articlesData"
 
 const Section6 = () => {
   return (

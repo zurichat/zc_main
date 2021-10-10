@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import styles from '../styles/MarkAsRead.module.css'
+import React, { useState } from "react"
+import styles from "../styles/MarkAsRead.module.css"
 
 const MarkAsRead = () => {
   const [prompt, SetPrompt] = useState(true)
@@ -86,8 +86,8 @@ const MarkAsRead = () => {
               </li>
               <li className={styles.shortcut}>
                 Mark all messages as read
-                <span className={styles.esc}>Shift</span>{' '}
-                <span className={styles.esc}>Esc</span>{' '}
+                <span className={styles.esc}>Shift</span>{" "}
+                <span className={styles.esc}>Esc</span>{" "}
               </li>
               <li className={styles.shortcut}>
                 Mark a message as unread

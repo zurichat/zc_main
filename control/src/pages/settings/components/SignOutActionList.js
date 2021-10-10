@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from '../styles/AllSessionSignOut.module.css'
+import React from "react"
+import styles from "../styles/AllSessionSignOut.module.css"
 
 const SignOutActionList = ({ text }) => {
   return (

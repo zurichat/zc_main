@@ -1,12 +1,28 @@
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-
-import Logo from '../../component-assets/logo.svg'
+import { Link } from "react-router-dom"
+import styled from "styled-components"
+import { useState, useEffect } from "react"
+/* import { Helmet } from 'react-helmet' */
+import Logo from "../../component-assets/logo.svg"
 
 const index = () => {
-  return (
-    <Errror404>
+  const [noControl, setnoControl] = useState(true)
+
+  useEffect(() => {
+    setnoControl(
+      document.querySelectorAll(
+        `[id*='zuri/zuri-plugin'],[id*='zuri/topbar'],[id*='zuri/sidebar']`
+      ).length < 0
+    )
+  }, [])
+
+  return noControl ? (
+    <></>
+  ) : (
+    <ErrorPage>
       <div className="LogoDiv">
+        {/*   <Helmet>
+          <title>Error 404 !</title>
+        </Helmet> */}
         <Link to="/">
           <img src={Logo} alt="Zuri Logo" />
         </Link>
@@ -18,13 +34,13 @@ const index = () => {
           Oops something is missing!! Go to <Link to="/">zuri.chat</Link>
         </p>
       </div>
-    </Errror404>
+    </ErrorPage>
   )
 }
 
 export default index
 
-const Errror404 = styled.div`
+const ErrorPage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,7 +54,7 @@ const Errror404 = styled.div`
 
   div {
     margin: 2rem;
-    &:not([class^='LogoDiv']) {
+    &:not([class^="LogoDiv"]) {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -46,7 +62,7 @@ const Errror404 = styled.div`
         font: inherit;
         border: none;
         transition: all 0.1s ease-in-out;
-        ${'' /* padding-inline: 0.5rem; */}
+        ${"" /* padding-inline: 0.5rem; */}
 
         &:hover {
           color: white;

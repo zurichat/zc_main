@@ -1,7 +1,7 @@
-import React from 'react'
-import styles from '../component-styles/Message.module.css'
+import React from "react"
+import styles from "../component-styles/Message.module.css"
 const Message = ({ type }) => {
-  if (type === 'contact') {
+  if (type === "contact") {
     return (
       <div className={styles.message_box}>
         <p className={styles.p}>Discover More.</p>

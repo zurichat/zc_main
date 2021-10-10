@@ -1,4 +1,4 @@
-import styles from '../../styles/specialFeaturesCard.module.css'
+import styles from "../../styles/specialFeaturesCard.module.css"
 
 const SpecialFeaturesCard = ({ feature }) => {
   return (

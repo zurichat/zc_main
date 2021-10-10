@@ -1,6 +1,6 @@
-import React from 'react'
-import eventsStyles from '../styles/events.module.css'
-import EventsBlock from './EventsBlock.js'
+import React from "react"
+import eventsStyles from "../styles/events.module.css"
+import EventsBlock from "./EventsBlock.js"
 const EventsUpcomingMeetsSection = () => {
   return (
     <div className={eventsStyles.eventsUpcomingMeetsSection}>

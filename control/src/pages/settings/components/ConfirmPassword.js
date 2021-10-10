@@ -1,27 +1,27 @@
-import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
-import axios from 'axios'
+import React, { useState } from "react"
+import { useHistory } from "react-router-dom"
+import axios from "axios"
 // Component
-import SettingsNav from './SettingsNav'
+import SettingsNav from "./SettingsNav"
 //Style
-import styles from '../styles/confirmPassword.module.css'
-import FormMessage from './FormMessage'
+import styles from "../styles/confirmPassword.module.css"
+import FormMessage from "./FormMessage"
 
 //Icons
-import successIcon from '../assets/bx-success.svg'
-import errorIcon from '../assets/bx-error.svg'
+import successIcon from "../assets/bx-success.svg"
+import errorIcon from "../assets/bx-error.svg"
 
-import { getToken, isLength, isMatch } from '../Utils/Common'
+import { getToken, getUser, isLength, isMatch } from "../Utils/Common"
 
 const initialState = {
-  password: '',
-  confirm_password: ''
+  password: "",
+  confirm_password: ""
 }
 
 const ConfirmPassword = () => {
   const [error, setError] = useState(false)
   const [data, setData] = useState(initialState)
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState("")
   const { password, confirm_password } = data
   const history = useHistory()
   const token = getToken()
@@ -41,19 +41,19 @@ const ConfirmPassword = () => {
       return setData(
         { ...data },
         setError(true),
-        setMessage('Your password should be more than 6 characters')
+        setMessage("Your password should be more than 6 characters")
       )
 
     if (!isMatch(password, confirm_password))
       return setData(
         { ...data },
         setError(true),
-        setMessage('password & confirm-password does not match')
+        setMessage("password & confirm-password does not match")
       )
 
     try {
       const res = await axios.post(
-        'https://api.zuri.chat/auth/confirm-password',
+        "https://api.zuri.chat/auth/confirm-password",
         { ...data },
         {
           headers: {
@@ -62,12 +62,11 @@ const ConfirmPassword = () => {
         }
       )
 
-      setData({ ...data }, console.log(res))
-      console.log(res)
-      history.push('/deactivate-account')
+      setData({ ...data }, res)
+      history.push("/deactivate-account")
     } catch (err) {
       setError(true)
-      setMessage('That password is incorrect. Please try again')
+      setMessage("That password is incorrect. Please try again")
     }
   }
 
@@ -84,7 +83,7 @@ const ConfirmPassword = () => {
         {error ? (
           <FormMessage message={message} icon={errorIcon} color="#ED2222" />
         ) : (
-          ''
+          ""
         )}
 
         <div className={`${styles.form_wrapper}`}>

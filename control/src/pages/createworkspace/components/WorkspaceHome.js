@@ -1,82 +1,88 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react'
-import styled from 'styled-components'
+import axios from "axios"
+import { useEffect, useState } from "react"
+import styled from "styled-components"
 
-import Active from '../assets/active.svg'
-import Pic from '../assets/pic.png'
-import Header from '../../../components/Header'
-import { useRouteMatch, Link } from 'react-router-dom'
-import UserOrganization from './UserOrganization'
+import Active from "../assets/active.svg"
+import Pic from "../assets/pic.png"
+import Header from "../../../components/Header"
+import PushNotificationDemo from "./browserNotification2"
+import { useRouteMatch, Link } from "react-router-dom"
+import UserOrganization from "./UserOrganization"
+import { Helmet } from "react-helmet"
 
 const WorkspaceHome = () => {
   const { url } = useRouteMatch()
   const [organizations, setOrganizations] = useState([])
-  const [user, setUser] = useState(null)
   const [email, setNewUserEmail] = useState(null)
+  const [user, setUser] = useState(null)
   const [password, setNewUserPassword] = useState(null)
 
+  const currentUser = JSON.parse(sessionStorage.getItem("user"))
+  //Generates User Password And Email and Aumatically log In User
   useEffect(() => {
-    sessionStorage.clear()
-    setNewUserEmail(JSON.parse(localStorage.getItem('newUserEmail')))
-    setNewUserPassword(JSON.parse(localStorage.getItem('userUserPassword')))
+    setNewUserEmail(JSON.parse(localStorage.getItem("newUserEmail")))
+    setNewUserPassword(JSON.parse(localStorage.getItem("userUserPassword")))
+    // Extracts User Email and Password from Local Storage To Fire Login Fuction
 
-    console.log(email)
-    console.log(password)
     const autoLogin = () => {
       axios
-        .post('https://api.zuri.chat/auth/login', {
+        .post("https://api.zuri.chat/auth/login", {
           email,
           password
         })
         .then(response => {
-          console.log(response.data)
+          // console.log(response.data)
           const { data, message } = response.data
 
           //Store token in localstorage
-          sessionStorage.setItem('token', data.user.token)
+          sessionStorage.setItem("token", data.user.token)
 
           //Store token in localstorage
-          sessionStorage.setItem('session_id', data.session_id)
+          sessionStorage.setItem("session_id", data.session_id)
 
           //Store user copy in localstorage
-          sessionStorage.setItem('user', JSON.stringify(data.user))
+          sessionStorage.setItem("user", JSON.stringify(data.user))
         })
         .catch(err => {
-          console.log(password)
-          console.log(err.message)
+          console.error(err.message)
         })
     }
-
-    autoLogin()
+    if (!currentUser) {
+      autoLogin()
+    }
   }, [email, password])
+
+  async function fetchData() {
+    const { email, id, token } = currentUser
+    const config = {
+      headers: { Authorization: `Bearer ${token}` }
+    }
+    const result = await axios.get(
+      `https://api.zuri.chat/users/${email}/organizations`,
+      config
+    )
+    const { data } = result.data
+    // console.log(data)
+    setOrganizations(data)
+  }
+
   useEffect(() => {
-    const user = JSON.parse(sessionStorage.getItem('user'))
-    console.log(user)
-    if (user) {
-      setUser(user)
-      console.log(user)
-      const { email, id, token } = user
-      const config = {
-        headers: { Authorization: `Bearer ${token}` }
-      }
-      async function fetchData() {
-        const result = await axios.get(
-          `https://api.zuri.chat/users/${email}/organizations`,
-          config
-        )
-        const { data } = result.data
-        console.log(data)
-        setOrganizations(data)
-      }
+    // console.log(currentUser)
+    if (currentUser) {
+      setUser(currentUser)
+      // console.log(user)
       fetchData()
     }
   }, [])
   return (
     <Wrapper>
       <Header />
+      <Helmet>
+        <title> Create-Workspace Zuri Chat</title>
+      </Helmet>
       <TopSection
         style={
-          user === true ? { paddingBottom: '0' } : { paddingBottom: '50px' }
+          user === true ? { paddingBottom: "0" } : { paddingBottom: "50px" }
         }
       >
         <TextSection>
@@ -86,7 +92,7 @@ const WorkspaceHome = () => {
             work together. To create a new workspace, click the button below
           </Text>
           <Link to={`${url}/step1`}>
-            <Button style={{ minWidth: '259px' }}>
+            <Button style={{ minWidth: "259px" }}>
               Create a new workspace
               <img src={Active} alt="" />
             </Button>
@@ -100,6 +106,7 @@ const WorkspaceHome = () => {
             By continuing, you’re agreeing to our Customer Terms of Service,
             Privacy Policy, and Cookie Policy.
           </FadedText>
+          <PushNotificationDemo />
         </TextSection>
         <ImageSection>
           <img src={Pic} alt="" />
@@ -131,7 +138,7 @@ const TopSection = styled.section`
 `
 const Heading = styled.h1`
   margin: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 700;
   font-size: 48px;
   width: 320px;
@@ -149,7 +156,7 @@ const Text = styled.p`
   margin: 0;
   max-width: 510px;
   font-weight: 400;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: ${18 / 16}rem;
   line-height: 26.91px;
   color: #333333;
@@ -169,7 +176,7 @@ export const Button = styled.button`
   font-weight: 600;
   color: white;
   font-size: ${18 / 16}rem;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   border-radius: 3px;
   transition: filter 600ms;
   cursor: pointer;
@@ -197,13 +204,13 @@ const CheckboxSide = styled.div`
     font-size: ${14 / 16}rem;
     color: #333333;
     font-weight: 400;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
   }
 `
 const FadedText = styled.p`
   color: hsla(0, 0%, 20%, 0.51);
   font-weight: 500;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: ${13 / 16}rem;
   max-width: 325px;
   line-height: 18.78px;

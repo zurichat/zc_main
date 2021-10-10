@@ -1,27 +1,28 @@
-import { withRouter, useParams, useHistory } from 'react-router-dom'
-import { useState, useEffect } from 'react'
-import styles from '../../component-styles/Signout.module.css'
-import logo from '../../component-assets/zuri.svg'
-import axios from 'axios'
+import { withRouter, useParams, useHistory } from "react-router-dom"
+import { useState, useEffect } from "react"
+import styles from "../../component-styles/Signout.module.css"
+import logo from "../../component-assets/zuri.svg"
+import axios from "axios"
+import { Helmet } from "react-helmet"
 
 const InvitePage = () => {
   const { id } = useParams()
 
   const [success, setsuccess] = useState(false)
-  const [error, seterror] = useState('')
+  const [error, seterror] = useState("")
 
-  console.log(id)
+  // console.log(id)
   window.location.hre
   const checkIfRegistered = async ({ id }) => {
     try {
       const res = await axios.get(
         `https://api.zuri.chat/organizations/invites/${id}`
       )
-      console.log(res.data.data)
-      console.log(uuid)
+      // console.log(res.data.data)
+      // console.log(uuid)
       return res.data
     } catch (err) {
-      console.log(err)
+      console.error(err)
     }
   }
 
@@ -48,6 +49,9 @@ const InvitePage = () => {
 
   return (
     <main id={styles.signout}>
+      <Helmet>
+        <title>InviteScreen - Zuri Chat</title>
+      </Helmet>
       <div className={styles.logo}>
         <img src={logo} alt="zuri" />
       </div>
