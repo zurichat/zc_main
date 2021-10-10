@@ -1,4 +1,3 @@
 {
-  "**.+(js|jsx|ts|tsx)": ["eslint --fix"],
-  "**.+(|scss|sass)": ["stylelint --fix"] 
+  "**.+(js|jsx|ts|tsx)": ["eslint --fix"]
 }
