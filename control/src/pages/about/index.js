@@ -62,7 +62,7 @@ const index = () => {
         </div>
       </div>
       {/* COMPANIES */}
-      <Companies />
+      {/* <Companies /> */}
       {/* Who we are and how to join us */}
       <div className={`container ${styles.to_join}`}>
         <div className={`row`}>
