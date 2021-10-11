@@ -4,10 +4,10 @@ import styles from '../style/workspace.module.css'
 import { useWorkspaceContext } from './WorkspaceContext'
 
 const WorkspaceCard = () => {
-  const { organizations, user, error } = useWorkspaceContext()
+  // const { organizations, user, error } = useWorkspaceContext()
   
-  // const user = sessionStorage.getItem('user');
-  // const organizations = JSON.parse(sessionStorage.getItem('organisations'))
+  const user = sessionStorage.getItem('user');
+  const organizations = JSON.parse(sessionStorage.getItem('organisations'))
   // console.log(organizations)
   // console.log(user)
   return (

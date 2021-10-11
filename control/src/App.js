@@ -166,7 +166,7 @@ const App = () => {
           <Cookies />
         </Route>
 
-        <Route component={NotFoundPage} />
+        {/* <Route component={NotFoundPage} /> */}
       </Switch>
     </BrowserRouter>
   )

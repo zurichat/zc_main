@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { useState, useEffect } from 'react'
-/* import { Helmet } from 'react-helmet' */
+import { Helmet } from 'react-helmet' 
 import Logo from '../../component-assets/logo.svg'
 
 const index = () => {
@@ -20,9 +20,9 @@ const index = () => {
   ) : (
     <ErrorPage>
       <div className="LogoDiv">
-        {/*   <Helmet>
+          <Helmet>
           <title>Error 404 !</title>
-        </Helmet> */}
+        </Helmet>
         <Link to="/">
           <img src={Logo} alt="Zuri Logo" />
         </Link>
