@@ -138,7 +138,7 @@ function ContactFormContainer() {
             userAuth.email ? ContactFormStyle.is_hidden_animate : ''
           }`}
         >
-          <label htmlFor="email" className="form-label fw-bold">
+          {/* <label htmlFor="email" className="form-label fw-bold">
             Your Email Address
           </label>
           <input
@@ -151,7 +151,7 @@ function ContactFormContainer() {
             placeholder="You@example.com"
             aria-describedby="email"
             required
-          />
+          /> */}
           {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
         </div>
 
