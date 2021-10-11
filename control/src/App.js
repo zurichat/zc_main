@@ -12,6 +12,7 @@ import CookiesSetting from './pages/cookiesSettings'
 import Cookies from './pages/cookies'
 import Features from './pages/features'
 import Resources from './pages/resources'
+import Help from './pages/Help'
 import Pricing from './pages/pricing'
 import Security from './pages/security'
 import Invite from './pages/inviteScreen'
@@ -74,6 +75,9 @@ const App = () => {
         </Route>
         <Route path="/about">
           <About />
+        </Route>
+        <Route path="/help">
+          <Help />
         </Route>
         <Route path="/choose-workspace">
           <Workspace />
