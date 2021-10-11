@@ -7,8 +7,13 @@ import { RiArrowRightSLine as Arrow } from 'react-icons/ri'
 import { faClosedCaptioning } from '@fortawesome/free-solid-svg-icons'
 import Workspace from '../../../control/src/pages/workspace/components/Workspace'
 
-const ModalComponent = ({ orgs, workSpace, isOpen, toggleOpenInvite }) => {
+const orgss = sessionStorage.getItem("organisations")
+const orgs = JSON.parse(orgss)
+
+const ModalComponent = ({  workSpace, isOpen, toggleOpenInvite }) => {
   // const isOpen = true;
+
+ 
 
   const [hoverRef, isHovered] = useHover()
   const [hoverRef2, isHovered2] = useHover()

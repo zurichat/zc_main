@@ -79,8 +79,6 @@ const Sidebar = props => {
   //organization
   const [org, setOrg] = useState({})
   
-  //set user worksapces
-  const [orgs, setOrgs] = useState([])
 
   //toggle
   const toggle = () => {
@@ -112,7 +110,7 @@ const Sidebar = props => {
   //   // console.log('userinfo', userInfo)
 
   const [nullValue, setnullValue] = useState(0)
-  const [nullValue2, setnullValue2] = useState(0)
+  
   
   const [organizationInfo, setOrganizationInfo] = useState(null)
   const [sidebarData, setSidebarData] = useState({})
@@ -150,22 +148,6 @@ const Sidebar = props => {
     })
   }, [])
 
-  //get all user workspaces
-  useEffect(()=>{
-
-    axios.get(
-      `https://api.zuri.chat/users/${user_id_session.email}/organizations`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      }
-    ).then(res => {
-      const orgs = res.data.data
-      setOrgs(orgs)
-    })   
-     setnullValue2(1)
-    },[])
 
 
   useEffect(() => {
@@ -234,7 +216,6 @@ const Sidebar = props => {
 
   {
     nullValue === 1 &&
-    nullValue2 === 1 &&
       currentWorkspace &&
       userInfo.userId &&
       SubscribeToChannel(
@@ -281,7 +262,6 @@ const Sidebar = props => {
           <div className={`col-12 px-3 ${styles.modalContainer}`}>
             <div className={`col-12 px-3 ${styles.odalContainer}`}>
               <ModalComponent
-                orgs={orgs}
                 workSpace={org}
                 isOpen={homeModal}
                 toggleOpenInvite={toggleOpenInvite}
@@ -406,13 +386,13 @@ const Sidebar = props => {
                   alt="icon"
                 />
                 <p className={`mb-0 ${styles.item_p}`}>Plugins</p>{" "}
-                <img
+                {/* <img
                   onClick={open}
                   className={`${styles.addButton}`}
                   src={addIcon}
                   alt="Add button"
                   role="button"
-                />
+                /> */}
               </div>
             </div>
 
