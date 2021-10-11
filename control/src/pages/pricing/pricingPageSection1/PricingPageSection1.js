@@ -1,21 +1,21 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import styles from './PricingPageSection1.module.css'
-import { Pricing } from './PricingDummyData'
+import React from "react"
+import { Link } from "react-router-dom"
+import styles from "./PricingPageSection1.module.css"
+import { Pricing } from "./PricingDummyData"
 
 const PricingPageSection1 = () => {
   return (
     <>
       <div className={styles.topPricingSectionContainer}>
         <div className={styles.topPricingPageSection1}>
-          <p className={styles.p}>Make teamwork more productive</p>
+          <p className={styles.ptopheader}>Make teamwork more productive</p>
 
           <div className={styles.topPricingPageBody}>
             <div className={styles.topPricingLine}></div>
             <div className={styles.topPricingPageColumns}>
               {Pricing.map((p, id) => {
                 return (
-                  <div key={id} className={`styles.${p.className}`}>
+                  <div key={id} className={styles.cards}>
                     <div className={styles.topPricingTop}>
                       <p
                         className={styles.topPricingTitle}
@@ -61,7 +61,7 @@ const PricingPageSection1 = () => {
 
                       <div className={styles.topPricingBottomFoot}>
                         <Link to="/">
-                          {' '}
+                          {" "}
                           <span className={styles.span}>Learn more</span>
                         </Link>
                       </div>
@@ -93,20 +93,20 @@ const PricingPageSection1 = () => {
               <tr className={styles.tr}>
                 <th
                   colSpan="2"
-                  className={`{styles.th1col} {styles.colStart}`}
+                  className={`{styles.th1col}  {styles.colStart}`}
                 ></th>
                 <th className={styles.th1col}>
                   <strong>Free</strong>
                 </th>
                 <th className={styles.pricingtableSpacer}></th>
-                <th className={styles.th1col}>
+                {/* <th className={styles.th1col}>
                   <strong>Pro</strong>
                 </th>
                 <th className={styles.pricingtableSpacer}></th>
                 <th className={styles.th1col}>
                   <strong>Business+</strong>
                 </th>
-                <th className={styles.pricingtableSpacer}></th>
+                <th className={styles.pricingtableSpacer}></th> */}
                 <th className={styles.th1col}>
                   <strong>Enterprise Grid</strong>
                   <th
@@ -121,10 +121,10 @@ const PricingPageSection1 = () => {
                   <strong>PRODUCTIVITY BASICS</strong>
                 </td>
                 <td></td>
-                <td className={styles.pricingtableSpacer}></td>
+                {/* <td className={styles.pricingtableSpacer}></td>
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td></td>
+                <td></td> */}
                 <td className={styles.pricingtableSpacer}></td>
                 <td></td>
                 <td
@@ -138,10 +138,10 @@ const PricingPageSection1 = () => {
                 <td>10K of your team's most recent messages</td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td>Unlimited</td>
-                <td className={styles.pricingtableSpacer}></td>
+                {/* <td className={styles.pricingtableSpacer}></td>
                 <td>Unlimited</td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td>Unlimited</td>
+                <td>Unlimited</td> */}
                 <td
                   className={`{stles.pricingtableSpacer} {styles.lastColumn}`}
                 ></td>
@@ -164,7 +164,7 @@ const PricingPageSection1 = () => {
                 </td>
                 <td className={styles.pricingtableSpacer}></td>
 
-                <td>
+                {/* <td>
                   <svg
                     className="c-check"
                     width="20"
@@ -177,7 +177,7 @@ const PricingPageSection1 = () => {
                   </svg>
                 </td>
                 <td className={styles.pricingtableSpacer}></td>
-                {/* <> */}
+              
                 <td>
                   <svg
                     className="c-check"
@@ -189,7 +189,7 @@ const PricingPageSection1 = () => {
                     <title></title>
                     <path d="M-217.1 431.8c-1 1.2-2.6 2.2-4 2.3-1.4.1-3-.8-4.3-1.9l-27.5-24.5 7.8-8.7 23.2 20.6 54.6-61.7 8.6 7.9-58.4 66z"></path>
                   </svg>
-                </td>
+                </td> */}
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
@@ -212,10 +212,10 @@ const PricingPageSection1 = () => {
                 <td>10</td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td>Unlimited</td>
-                <td className={styles.pricingtableSpacer}></td>
+                {/* <td className={styles.pricingtableSpacer}></td>
                 <td>Unlimited</td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td>Unlimited</td>
+                <td>Unlimited</td> */}
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
                 ></td>
@@ -228,12 +228,12 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>10 GB per team member</td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td>20 GB per team member</td>
+                {/* <td>20 GB per team member</td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td>1 TB per team member</td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
-                ></td>
+                ></td> */}
               </tr>
               <tr className={styles.pricingTableRowFeature}>
                 <td colSpan="2" className={styles.colStart}>
@@ -243,12 +243,12 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td>1</td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td>1</td>
+                {/* <td>1</td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td>Unlimited</td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
-                ></td>
+                ></td> */}
               </tr>
               <tr className={styles.pricingTableRowFeature}>
                 <td colSpan="2" className={styles.colStart}>
@@ -268,7 +268,7 @@ const PricingPageSection1 = () => {
                     <path d="M-217.1 431.8c-1 1.2-2.6 2.2-4 2.3-1.4.1-3-.8-4.3-1.9l-27.5-24.5 7.8-8.7 23.2 20.6 54.6-61.7 8.6 7.9-58.4 66z"></path>
                   </svg>
                 </td>
-                <td className={styles.pricingtableSpacer}></td>
+                {/* <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
                     className="c-check"
@@ -296,7 +296,7 @@ const PricingPageSection1 = () => {
                 </td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
-                ></td>
+                ></td> */}
               </tr>
               <tr className={styles.pricingTableRowFeature}>
                 <td colSpan="2" className={styles.colStart}>
@@ -317,7 +317,7 @@ const PricingPageSection1 = () => {
                   </svg>
                 </td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td>
+                {/* <td>
                   <svg
                     className="c-check"
                     width="20"
@@ -344,17 +344,17 @@ const PricingPageSection1 = () => {
                 </td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
-                ></td>
+                ></td> */}
               </tr>
               <tr className={styles.pricingTableRowFeature}>
                 <td colSpan="2" className={styles.colStart}></td>
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td></td>
-                <td className={styles.pricingtableSpacer}></td>
+                {/* <td className={styles.pricingtableSpacer}></td>
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td></td>
+                <td></td> */}
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
                 ></td>
@@ -367,12 +367,12 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td></td>
+                {/* <td></td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td></td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
-                ></td>
+                ></td> */}
               </tr>
               <tr className={styles.pricingTableRowFeature}>
                 <td colSpan="2" className={styles.colStart}>
@@ -393,7 +393,7 @@ const PricingPageSection1 = () => {
                   </svg>
                 </td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td>
+                {/* <td>
                   <svg
                     className="c-check"
                     width="20"
@@ -420,7 +420,7 @@ const PricingPageSection1 = () => {
                 </td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
-                ></td>
+                ></td> */}
               </tr>
               <tr className={styles.pricingTableRowFeature}>
                 <td colSpan="2" className={styles.colStart}>
@@ -441,7 +441,7 @@ const PricingPageSection1 = () => {
                   </svg>
                 </td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td>
+                {/* <td>
                   <svg
                     className="c-check"
                     width="20"
@@ -468,7 +468,7 @@ const PricingPageSection1 = () => {
                 </td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
-                ></td>
+                ></td> */}
               </tr>
               <tr className={styles.pricingTableRowFeature}>
                 <td colSpan="2" className={styles.colStart}></td>
@@ -476,12 +476,12 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td></td>
+                {/* <td></td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td></td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
-                ></td>
+                ></td> */}
               </tr>
               <tr className={styles.pricingTableRowFeature}>
                 <td colSpan="2" className={styles.colStart}>
@@ -491,12 +491,12 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td></td>
+                {/* <td></td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td></td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
-                ></td>
+                ></td> */}
               </tr>
               <tr className={styles.pricingTableRowFeature}>
                 <td colSpan="2" className={styles.colStart}>
@@ -528,7 +528,7 @@ const PricingPageSection1 = () => {
                   </svg>
                 </td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td>
+                {/* <td>
                   <svg
                     className="c-check"
                     width="20"
@@ -555,7 +555,7 @@ const PricingPageSection1 = () => {
                 </td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
-                ></td>
+                ></td> */}
               </tr>
               <tr className={styles.pricingTableRowFeature}>
                 <td colSpan="2" className={styles.colStart}>
@@ -587,7 +587,7 @@ const PricingPageSection1 = () => {
                   </svg>
                 </td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td>
+                {/* <td>
                   <svg
                     className="c-check"
                     width="20"
@@ -614,7 +614,7 @@ const PricingPageSection1 = () => {
                 </td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
-                ></td>
+                ></td> */}
               </tr>
               <tr className={styles.pricingTableRowFeature}>
                 <td colSpan="2" className={styles.colStart}>
@@ -635,7 +635,7 @@ const PricingPageSection1 = () => {
                   </svg>
                 </td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td>
+                {/* <td>
                   <svg
                     className="c-check"
                     width="20"
@@ -651,9 +651,9 @@ const PricingPageSection1 = () => {
                 <td></td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
-                ></td>
+                ></td> */}
               </tr>
-              <tr className={styles.pricingTableRowFeature}>
+              {/* <tr className={styles.pricingTableRowFeature}>
                 <td colSpan="2" className={styles.colStart}>
                   SAML-based single sign-on(SSO)
                 </td>
@@ -730,19 +730,19 @@ const PricingPageSection1 = () => {
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
                 ></td>
-              </tr>
+              </tr> */}
               <tr className={styles.pricingTableRowFeature}>
                 <td colSpan="2" className={styles.colStart}></td>
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td></td>
+                {/* <td></td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td></td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
-                ></td>
+                ></td> */}
               </tr>
               <tr className={styles.pricingTableRowFeature}>
                 <td colSpan="2" className={styles.colStart}>
@@ -752,12 +752,12 @@ const PricingPageSection1 = () => {
                 <td className={styles.pricingtableSpacer}></td>
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td></td>
+                {/* <td></td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td></td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
-                ></td>
+                ></td> */}
               </tr>
               <tr className={styles.pricingTableRowFeature}>
                 <td colSpan="2" className={styles.colStart}>
@@ -778,7 +778,7 @@ const PricingPageSection1 = () => {
                   </svg>
                 </td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td>
+                {/* <td>
                   <svg
                     className="c-check"
                     width="20"
@@ -805,7 +805,7 @@ const PricingPageSection1 = () => {
                 </td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
-                ></td>
+                ></td> */}
               </tr>
               <tr className={styles.pricingTableRowFeature}>
                 <td colSpan="2" className={styles.colStart}>
@@ -813,8 +813,7 @@ const PricingPageSection1 = () => {
                 </td>
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td></td>
-                <td className={styles.pricingtableSpacer}></td>
+
                 <td>
                   <svg
                     className="c-check"
@@ -828,7 +827,7 @@ const PricingPageSection1 = () => {
                   </svg>
                 </td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td>
+                {/* <td>
                   <svg
                     className="c-check"
                     width="20"
@@ -842,7 +841,7 @@ const PricingPageSection1 = () => {
                 </td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
-                ></td>
+                ></td> */}
               </tr>
               <tr className={styles.pricingTableRowFeature}>
                 <td colSpan="2" className={styles.colStart}>
@@ -850,10 +849,10 @@ const PricingPageSection1 = () => {
                 </td>
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td></td>
+                {/* <td></td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td></td>
-                <td className={styles.pricingtableSpacer}></td>
+                <td className={styles.pricingtableSpacer}></td> */}
                 <td>
                   <svg
                     className="c-check"
@@ -876,9 +875,9 @@ const PricingPageSection1 = () => {
                 </td>
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td></td>
-                <td className={styles.pricingtableSpacer}></td>
-                <td>
+                {/* <td></td>
+                <td className={styles.pricingtableSpacer}></td> */}
+                {/* <td>
                   <svg
                     className="c-check"
                     width="20"
@@ -890,7 +889,7 @@ const PricingPageSection1 = () => {
                     <path d="M-217.1 431.8c-1 1.2-2.6 2.2-4 2.3-1.4.1-3-.8-4.3-1.9l-27.5-24.5 7.8-8.7 23.2 20.6 54.6-61.7 8.6 7.9-58.4 66z"></path>
                   </svg>
                 </td>
-                <td className={styles.pricingtableSpacer}></td>
+                <td className={styles.pricingtableSpacer}></td> */}
                 <td>
                   <svg
                     className="c-check"
@@ -913,10 +912,10 @@ const PricingPageSection1 = () => {
                 </td>
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td></td>
+                {/* <td></td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td></td>
-                <td className={styles.pricingtableSpacer}></td>
+                <td className={styles.pricingtableSpacer}></td> */}
                 <td></td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
@@ -928,10 +927,10 @@ const PricingPageSection1 = () => {
                 </td>
                 <td>Limited to #general channel only</td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td>Limited to #general channel only</td>
+                {/* <td>Limited to #general channel only</td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td>Unlimited number of channels</td>
-                <td className={styles.pricingtableSpacer}></td>
+                <td className={styles.pricingtableSpacer}></td> */}
                 <td>Unlimited number of channels</td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
@@ -956,7 +955,7 @@ const PricingPageSection1 = () => {
                   </svg>
                 </td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td>
+                {/* <td>
                   <svg
                     className="c-check"
                     width="20"
@@ -983,18 +982,18 @@ const PricingPageSection1 = () => {
                 </td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
-                ></td>
+                ></td> */}
               </tr>
               <tr className={styles.pricingTableRowFeature}>
                 <td colSpan="2" className={styles.colStart}>
                   Real-time Active Directory Sync with OneLogin, Okte and Ping
                   Identity
                 </td>
+                {/* <td></td>
+                <td className={styles.pricingtableSpacer}></td> */}
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td></td>
-                <td className={styles.pricingtableSpacer}></td>
-                <td>
+                {/* <td>
                   <svg
                     className="c-check"
                     width="20"
@@ -1006,7 +1005,7 @@ const PricingPageSection1 = () => {
                     <path d="M-217.1 431.8c-1 1.2-2.6 2.2-4 2.3-1.4.1-3-.8-4.3-1.9l-27.5-24.5 7.8-8.7 23.2 20.6 54.6-61.7 8.6 7.9-58.4 66z"></path>
                   </svg>
                 </td>
-                <td className={styles.pricingtableSpacer}></td>
+                <td className={styles.pricingtableSpacer}></td> */}
                 <td>
                   <svg
                     className="c-check"
@@ -1029,8 +1028,8 @@ const PricingPageSection1 = () => {
                 </td>
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td></td>
-                <td className={styles.pricingtableSpacer}></td>
+                {/* <td></td>
+                <td className={styles.pricingtableSpacer}></td> */}
                 <td>
                   <svg
                     className="c-check"
@@ -1044,7 +1043,7 @@ const PricingPageSection1 = () => {
                   </svg>
                 </td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td>
+                {/* <td>
                   <svg
                     className="c-check"
                     width="20"
@@ -1058,7 +1057,7 @@ const PricingPageSection1 = () => {
                 </td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
-                ></td>
+                ></td> */}
               </tr>
               <tr className={styles.pricingTableRowFeature}>
                 <td colSpan="2" className={styles.colStart}>
@@ -1067,10 +1066,10 @@ const PricingPageSection1 = () => {
                 </td>
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td></td>
+                {/* <td></td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td></td>
-                <td className={styles.pricingtableSpacer}></td>
+                <td className={styles.pricingtableSpacer}></td> */}
                 <td>
                   <svg
                     className="c-check"
@@ -1093,10 +1092,10 @@ const PricingPageSection1 = () => {
                 </td>
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td></td>
+                {/* <td></td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td></td>
-                <td className={styles.pricingtableSpacer}></td>
+                <td className={styles.pricingtableSpacer}></td> */}
                 <td>
                   <svg
                     className="c-check"
@@ -1119,10 +1118,10 @@ const PricingPageSection1 = () => {
                 </td>
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td></td>
+                {/* <td></td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td></td>
-                <td className={styles.pricingtableSpacer}></td>
+                <td className={styles.pricingtableSpacer}></td> */}
                 <td>
                   <svg
                     className="c-check"
@@ -1145,10 +1144,10 @@ const PricingPageSection1 = () => {
                 </td>
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td></td>
+                {/* <td></td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td></td>
-                <td className={styles.pricingtableSpacer}></td>
+                <td className={styles.pricingtableSpacer}></td> */}
                 <td></td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
@@ -1160,10 +1159,10 @@ const PricingPageSection1 = () => {
                 </td>
                 <td>One-on-one only</td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td>Up to 15 participants</td>
+                {/* <td>Up to 15 participants</td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td>Up to 15 participants</td>
-                <td className={styles.pricingtableSpacer}></td>
+                <td className={styles.pricingtableSpacer}></td> */}
                 <td>Up to 15 participants</td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
@@ -1175,7 +1174,7 @@ const PricingPageSection1 = () => {
                 </td>
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td>
+                {/* <td>
                   <svg
                     className="c-check"
                     width="20"
@@ -1200,7 +1199,7 @@ const PricingPageSection1 = () => {
                     <path d="M-217.1 431.8c-1 1.2-2.6 2.2-4 2.3-1.4.1-3-.8-4.3-1.9l-27.5-24.5 7.8-8.7 23.2 20.6 54.6-61.7 8.6 7.9-58.4 66z"></path>
                   </svg>
                 </td>
-                <td className={styles.pricingtableSpacer}></td>
+                <td className={styles.pricingtableSpacer}></td> */}
                 <td>
                   <svg
                     className="c-check"
@@ -1221,10 +1220,10 @@ const PricingPageSection1 = () => {
                 <td colSpan="2" className={styles.colStart}></td>
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td></td>
+                {/* <td></td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td></td>
-                <td className={styles.pricingtableSpacer}></td>
+                <td className={styles.pricingtableSpacer}></td> */}
                 <td></td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
@@ -1236,10 +1235,10 @@ const PricingPageSection1 = () => {
                 </td>
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td></td>
+                {/* <td></td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td></td>
-                <td className={styles.pricingtableSpacer}></td>
+                <td className={styles.pricingtableSpacer}></td> */}
                 <td></td>
                 <td
                   className={`{styles.pricingtableSpacer} {styles.lastColumn}`}
@@ -1251,10 +1250,10 @@ const PricingPageSection1 = () => {
                 </td>
                 <td>Standard support</td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td>24/7 support</td>
+                {/* <td>24/7 support</td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td>24/7 support with four-hour first response time</td>
-                <td className={styles.pricingtableSpacer}></td>
+                <td className={styles.pricingtableSpacer}></td> */}
                 <td>
                   24/7 priority support with four-hour first response time
                 </td>
@@ -1268,7 +1267,7 @@ const PricingPageSection1 = () => {
                 </td>
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td></td>
+                {/* <td></td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td>
                   <svg
@@ -1282,7 +1281,7 @@ const PricingPageSection1 = () => {
                     <path d="M-217.1 431.8c-1 1.2-2.6 2.2-4 2.3-1.4.1-3-.8-4.3-1.9l-27.5-24.5 7.8-8.7 23.2 20.6 54.6-61.7 8.6 7.9-58.4 66z"></path>
                   </svg>
                 </td>
-                <td className={styles.pricingtableSpacer}></td>
+                <td className={styles.pricingtableSpacer}></td> */}
                 <td>
                   <svg
                     className="c-check"
@@ -1305,10 +1304,10 @@ const PricingPageSection1 = () => {
                 </td>
                 <td></td>
                 <td className={styles.pricingtableSpacer}></td>
-                <td></td>
+                {/* <td></td>
                 <td className={styles.pricingtableSpacer}></td>
                 <td></td>
-                <td className={styles.pricingtableSpacer}></td>
+                <td className={styles.pricingtableSpacer}></td> */}
                 <td>
                   <svg
                     className="c-check"
@@ -1333,10 +1332,10 @@ const PricingPageSection1 = () => {
                 <th></th>
                 <th></th>
                 <th></th>
+                {/* <th></th>
                 <th></th>
                 <th></th>
-                <th></th>
-                <th></th>
+                <th></th> */}
               </tr>
               <tr className={styles.pricingTableRowFooter}>
                 <th colSpan="2"></th>
@@ -1348,14 +1347,14 @@ const PricingPageSection1 = () => {
                   <a href="/login">Get started</a>
                 </th>
                 <th></th>
-                <th>
+                {/* <th>
                   <a href="/login">Get started</a>
                 </th>
                 <th></th>
                 <th>
                   <a href="/login">Get started</a>
                 </th>
-                <th></th>
+                <th></th> */}
               </tr>
             </tfoot>
           </table>
