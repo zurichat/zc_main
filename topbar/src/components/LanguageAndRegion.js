@@ -76,8 +76,8 @@ const LanguageAndRegion = () => {
               emails, for times in your activity feeds and for reminders.
             </p>
           </div>
-          {/* Spellcheck setting removed from here*/}
           
+          {/* Spellcheck setting removed from here*/}
         </form>
       </div>
     </div>
