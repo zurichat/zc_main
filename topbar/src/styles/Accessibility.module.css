@@ -35,14 +35,14 @@
 
 .accessibilityCheckbox,
 .accessibilityRadio {
-  margin: 0px;
-  height: 12px;
-  width: 10px;
+  /* margin: 0px; */
+  /* height: 25px; */
+  /* width: 20px; */
   color: green;
 }
 
 .accessibilityLabel {
-  margin-left: -13px;
+  margin-left: -5px;
   margin-top:10px;
   color: #3a3a3a;
 }
@@ -90,7 +90,7 @@
 .accessibilityEsc {
   background-color: #f9f9f9;
   padding: 2px 5px;
-  font-size: 12px;
+  font-size: 13px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
