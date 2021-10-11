@@ -241,7 +241,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         className="d-flex justify-content-end align-items-center pe-3"
         style={{ width: "20%" }}
       >
-        <IoLanguageOutline size={30} style={{ border: "1px #A1A1A1 solid", borderRadius: "50%", cursor: "pointer", padding: '.15rem', marginRight: "10%"}} />
+        <IoLanguageOutline size={30} style={{ border: "1px #A1A1A1 solid", borderRadius: "50%", cursor: "pointer", padding: '.15rem', marginRight: "10%", marginTop: ".1rem" }} />
         {toggleStatus}
         <ProfileImg
           src={userProfileImage ? userProfileImage : defaultAvatar}
