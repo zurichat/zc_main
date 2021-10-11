@@ -71,7 +71,7 @@ const DownloadsDesktop = () => {
             <img className={`px-2`} src={apple} alt="download icon" />
           </a>
           <a
-            href="https://drive.google.com/file/d/1C5s3Hm44shxtIJ6XElV3lqBk1XLAbrMm/view?usp=drivesdk"
+            href="https://drive.google.com/file/d/1dbQS1rQOVUI87AzdeljF6LM5iRNnaMzZ/view"
             download={exe.name}
             className={styles.downloadButton}
           >
