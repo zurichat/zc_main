@@ -136,9 +136,7 @@ const Login = () => {
       console.error(err)
       setLoading(false)
     }
-  }
-
-  return (
+ return(
     <main id={styles.authPageWrapper}>
       <Helmet>
         <title>Login - Zuri Chat</title>
@@ -197,7 +195,7 @@ const Login = () => {
               Remember me
             </div>
             <div className={`${styles.right}`}>
-              Forgot password?<a href="/"> {""}Get help signing in</a>
+              Forgot password?<a href="/help"> {""}Get help signing in</a>
             </div>
           </div>
         </FormWrapper>
@@ -205,5 +203,5 @@ const Login = () => {
     </main>
   )
 }
-
-export default withRouter(Login)
+}
+export default withRouter(Login);

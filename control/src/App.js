@@ -10,6 +10,7 @@ import NewPassword from './pages/passwordReset/newPassword'
 // end password block
 import CookiesSetting from './pages/cookiesSettings'
 import Cookies from './pages/cookies'
+import Help from './pages/Help'
 import Features from './pages/features'
 import Resources from './pages/resources'
 import Pricing from './pages/pricing'
@@ -72,6 +73,9 @@ const App = () => {
         </Route>
         <Route path="/about">
           <About />
+        </Route>
+        <Route path="/help">
+          <Help />
         </Route>
         <Route path="/choose-workspace">
           <Workspace />

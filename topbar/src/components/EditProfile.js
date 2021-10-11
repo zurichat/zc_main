@@ -285,12 +285,10 @@ const EditProfile = () => {
               </div>
               <div className="input-group">
                 <label className="inputLabel">Time Zone</label>
-                <div>
                 <TimezoneSelect
                   value={selectedTimezone}
                   onChange={setSelectedTimezone}
                 />
-                </div>
               </div>
               <div className="input-group">
                 <label htmlFor="twitter" className="inputLabel">
