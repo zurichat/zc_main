@@ -1,20 +1,20 @@
-import React, { useState, useContext } from "react"
-import Picker, { SKIN_TONE_MEDIUM_DARK } from "emoji-picker-react"
-import DatePicker from "react-datepicker"
+import React, { useState, useContext } from 'react'
+import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
+import DatePicker from 'react-datepicker'
 // import 'react-datepicker/dist/react-datepicker-cssmodules.css';
-import TimePicker from "react-time-picker"
-import styles from "../styles/SetStatusModal.module.css"
-import "../timepicker.css"
-import { authAxios } from "../utils/Api"
-import blackx from "../assets/images/blackx.svg"
-import whitex from "../assets/images/whitex.svg"
-import down from "../assets/images/down.svg"
-import { ProfileContext } from "../context/ProfileModal"
-import { TopbarContext } from "../context/Topbar"
+import TimePicker from 'react-time-picker'
+import styles from '../styles/SetStatusModal.module.css'
+import '../timepicker.css'
+import { authAxios } from '../utils/Api'
+import blackx from '../assets/images/blackx.svg'
+import whitex from '../assets/images/whitex.svg'
+import down from '../assets/images/down.svg'
+import { ProfileContext } from '../context/ProfileModal'
+import { TopbarContext } from '../context/Topbar'
 
 const SetDateAndTime = ({ dateTime, setDateTime }) => {
   const [value, onChange] = useState(new Date())
-  const [timevalue, timeChange] = useState("10:00")
+  const [timevalue, timeChange] = useState('10:00')
   return (
     <>
       <div className={styles.modal}>
@@ -23,7 +23,7 @@ const SetDateAndTime = ({ dateTime, setDateTime }) => {
             <p>Clear after</p>
             <img
               src={whitex}
-              alt=""
+              alt=''
               onClick={() => setDateTime(!dateTime)}
               className={styles.whitex}
             />
@@ -48,12 +48,12 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
   const [dropdown, setDropdown] = useState(false)
   const [openEmoji, setOpenEmoji] = useState(false)
   const [dateTime, setDateTime] = useState(false)
-  const [choosePeriod, setChoosePeriod] = useState(`Don't clear`)
+  const [choosePeriod, setChoosePeriod] = useState('Don\'t clear')
   const { user, orgId, setUser } = useContext(ProfileContext)
   const { emoji } = useContext(TopbarContext)
   const [chosenEmoji, setChosenEmoji] = emoji
-  const [emojiItem, setEmoji] = useState("")
-  const [text, setText] = useState("")
+  const [emojiItem, setEmoji] = useState('')
+  const [text, setText] = useState('')
   const [status, setStatus] = useState([])
   // const [timeOut, setTimeOut] = useState('')
   const onEmojiClick = (event, emojiObject) => {
@@ -89,13 +89,13 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
           <p>Set a status</p>
           <img
             src={whitex}
-            alt=""
+            alt=''
             onClick={() => setStatusModal(!statusModal)}
             className={styles.whitex}
           />
         </div>
         <div className={styles.modalcontent}>
-          <form action="" method="post">
+          <form action='' method='post'>
             <div className={styles.addstatus}>
               <div className={styles.addstatusleft}>
                 <p
@@ -107,42 +107,46 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
                 </p>
                 <div className={styles.emoji}>
                   <div>
-                    {openEmoji ? (
-                      <Picker
-                        onEmojiClick={onEmojiClick}
-                        skinTone={SKIN_TONE_MEDIUM_DARK}
-                        value={emojiItem}
-                        onChange={e => setEmoji(e.target.value)}
-                      />
-                    ) : null}
+                    {openEmoji
+                      ? (
+                        <Picker
+                          onEmojiClick={onEmojiClick}
+                          skinTone={SKIN_TONE_MEDIUM_DARK}
+                          value={emojiItem}
+                          onChange={e => setEmoji(e.target.value)}
+                        />
+                        )
+                      : null}
                   </div>
                   <div>
-                    {openEmoji ? (
-                      <img
-                        src={blackx}
-                        alt=""
-                        onClick={() => setOpenEmoji(!openEmoji)}
-                        className={styles.blackx}
-                      />
-                    ) : null}
+                    {openEmoji
+                      ? (
+                        <img
+                          src={blackx}
+                          alt=''
+                          onClick={() => setOpenEmoji(!openEmoji)}
+                          className={styles.blackx}
+                        />
+                        )
+                      : null}
                   </div>
                 </div>
                 <input
-                  type="text"
+                  type='text'
                   className={styles.input}
-                  placeholder="What is your status?"
+                  placeholder='What is your status?'
                   value={text}
                   onChange={e => setText(e.target.value)}
                 />
               </div>
-              <img src={blackx} alt="" className={styles.blackx} />
+              <img src={blackx} alt='' onClick={() => setText('')} className={styles.blackx} />
             </div>
             <div className={styles.clearafter}>
               <div
                 className={styles.clearaftertop}
                 onClick={() => setDropdown(!dropdown)}
               >
-                <label htmlFor="" className={styles.dropdowntop}>
+                <label htmlFor='' className={styles.dropdowntop}>
                   Clear after:
                   <span
                     className={styles.dropdowntopspan}
@@ -152,7 +156,7 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
                     {choosePeriod}
                   </span>
                 </label>
-                <img src={down} alt="" />
+                <img src={down} alt='' />
               </div>
 
               <div>
@@ -160,32 +164,32 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
                   <ul className={styles.dropdown}>
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod(`dont_clear`)}
+                      onClick={() => setChoosePeriod('dont_clear')}
                     >
                       Don't clear
                     </li>
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod("one_hour")}
+                      onClick={() => setChoosePeriod('one_hour')}
                     >
                       1 hour
                     </li>
 
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod("four_hours")}
+                      onClick={() => setChoosePeriod('four_hours')}
                     >
                       4 hours
                     </li>
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod("today")}
+                      onClick={() => setChoosePeriod('today')}
                     >
                       Today
                     </li>
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod("this_week")}
+                      onClick={() => setChoosePeriod('this_week')}
                     >
                       This week
                     </li>
@@ -207,7 +211,7 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
             </div>
             <button
               className={styles.statuscta}
-              type="submit"
+              type='submit'
               onClick={handleSubmit}
             >
               Save changes
