@@ -134,32 +134,34 @@ all:none;
 }
 
 .info .infoHeader {
-  color: #333333;
+  /* color: #333333;
   font-size: 13px;
   font-weight: 700;
   line-height: 13px;
-  margin: 0;
+  margin: 0; */
+  display: none;
 }
 
 .info p {
-  color: #616061;
+  /* color: #616061;
   font-size: 11px;
   font-style: mixed;
   line-height: 14px;
-  margin: 0;
-  display: inline;
+  margin: 0; */
+  display: none;
 }
 
 .info span {
-  font-size: 11px;
+  /* font-size: 11px;
   line-height: 14px;
-  color: #00b87c;
-  display: inline;
+  color: #00b87c; */
+  display: none;
 }
 
 .infoChart img {
-  width: 40px;
-  height: 40px;
+  /* width: 40px;
+  height: 40px; */
+  display: none;
 }
 
 .arrow {
