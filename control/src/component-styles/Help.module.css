@@ -1,0 +1,65 @@
+.help{
+    margin-top: 10%;
+  text-align: center;
+}
+
+.firstlayer{
+    margin-top: 3%;
+}
+
+.invalid > img{
+    width: 30vw;
+    position: relative;
+    top: -16%;
+}
+
+.firstcontent{
+    font-size: 17px;
+    line-height: 25px;
+    font-weight: 500;
+}
+
+.secondcontent{
+    font-size: 17px;
+    line-height: 25px;
+    font-weight: 500;
+}
+  
+.thirdcontent{
+    font-size: 17px;
+    line-height: 25px;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 600px) {
+      .thirdcontent{
+        text-align: center;
+      }
+      .thirdcontent > h3 {
+        font-size: 24px;
+      }
+      .thirdcontent > p {
+        padding: 0 4%;
+      }
+      .secondcontent{
+        text-align: center;
+      }
+      .secondcontent > h3 {
+        font-size: 24px;
+      }
+      .secondcontent > p {
+        padding: 0 4%;
+      }
+      .invalid > img {
+        width: 100%;
+      }
+      .firstcontent{
+        text-align: center;
+      }
+      .firstcontent > h3 {
+        font-size: 24px;
+      }
+      .firstcontent > p {
+        padding: 0 4%;
+      }
+}
