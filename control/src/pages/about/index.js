@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom"
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 // styles import
@@ -24,10 +24,10 @@ const index = () => {
   return (
     <div>
       <Header />
-      <div className={`container`}>
+      <div className={`container mb-5`}>
         <div className={`${styles.banner}`}>
         </div>
-        <div className={`row`}>
+        <div className={`row pt-3`}>
           <div className={`col-lg-4 ${styles.counter}`}>
             <h3>100k+</h3>
             <p>
@@ -54,8 +54,8 @@ const index = () => {
       {/* COMPANIES */}
       {/* <Companies /> */}
       {/* Who we are and how to join us */}
-      <div className={`container ${styles.to_join}`}>
-        <div className={`row`}>
+      <div className={`container mb-5 ${styles.to_join}`}>
+        <div className={`row pt-3`}>
           <div className={`col-lg-6 ${styles.team}`}>
             <img src={team} alt={"image of teams"} srcSet="" />
           </div>
@@ -75,7 +75,7 @@ const index = () => {
         </div>
       </div>
       {/* work remotely more intriging than ever  */}
-      <div className={`container`}>
+      <div className={`container mb-5`}>
         <div className={`col-lg-12 ${styles.working_remote}`}>
           <h3>Working remotely more intriguing than ever</h3>
           <p>
@@ -86,7 +86,7 @@ const index = () => {
         </div>
         {/* Carousel for mobile view  */}
         <Carousel />
-        <div className={`row ${styles.desktop_carousel}`}>
+        <div className={`row pt-3 ${styles.desktop_carousel}`}>
           <div className={`col ${styles.working_remote_section}`}>
             <img src={channel} alt={"centralized space"} />
             <h6>Channels</h6>
@@ -140,8 +140,10 @@ const index = () => {
         </p>
       </div>
       <CarouselSecond className={styles.carouselCaption} />
-      <div className={`container-fluid ${styles.second_carousel_block}`}>
-        <div className={`row ${styles.row}`}>
+      <div
+        className={`container-fluid ${styles.second_carousel_block} mb-5 container`}
+      >
+        <div className={`row pt-3`}>
           <div className={`col ${styles.vector}`}>
             <img src={user} alt={"image of a user"} />
             <h6 className={``}>Animated Avatar Loungue</h6>
@@ -180,11 +182,13 @@ const index = () => {
           </h3>
           <div className={`styles.button`}>
             <Link to="/contact-us">
-              <button className={`btn ${styles.btn_sale}`}>Talk to sales</button>
+              <button className={`btn ${styles.btn_sale} ${styles.btn}`}>
+                Talk to sales
+              </button>
             </Link>
             <Link to="/signup">
-              <button className={`btn ${styles.btn_free}`}>
-                Try it for free 
+              <button className={`btn ${styles.btn_free} ${styles.btn}`}>
+                Try it for free
               </button>
             </Link>
           </div>
