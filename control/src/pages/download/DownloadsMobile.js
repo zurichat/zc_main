@@ -61,7 +61,7 @@ const DownloadsMobile = () => {
           </p>
           <div className={`${downloadStyles.downloadButtonContainer}`}>
             <a
-              href="https://drive.google.com/file/d/1J1rl-_3QeG9H4rnn9EF0XW0kSGb_Wsl4/view?usp=sharing"
+              href="https://drive.google.com/file/d/1Wl4hYeHP1e1eogd6LYdt2Kohrkr9C1dg/view?usp=sharing"
               className={downloadStyles.downloadButton}
             >
               Windows
