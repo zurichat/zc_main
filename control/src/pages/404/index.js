@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet' 
-import Logo from '../../component-assets/zurichat-09.svg'
+import Logo from '../../component-assets/zurilogoandtitle.svg'
 
 const index = () => {
   const [noControl, setnoControl] = useState(true)
