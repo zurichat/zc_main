@@ -27,20 +27,20 @@ export default function Homepage() {
 
   // For create workspace redirect start
 
-  // let history = useHistory()
+  let history = useHistory()
   
-  // const createWorkspaceRedirect = () => {
-  //   useEffect(() => {
-  //     const userInfo = sessionStorage.getItem(`user`)
+  const createWorkspaceRedirect = () => {
+    useEffect(() => {
+      const userInfo = sessionStorage.getItem(`user`)
   
-  //     if (userInfo && userInfo !== null)
-  //      { 
-  //        history.push("/createworkspace")
-  //       } else {
-  //        history.push("/signup")
-  //      }
-  //     }, [history])
-  // }
+      if (userInfo && userInfo !== null)
+       { 
+         history.push("/createworkspace")
+        } else {
+         history.push("/signup")
+       }
+      }, [history])
+  }
 
   // create workspace redirect end
 
@@ -159,7 +159,7 @@ export default function Homepage() {
               pContent2="Invite your team to your workspace. Stay connected,stay in sync, and explore ideas together from anywhere."
               href="/createworkspace"
               aContent="Create your own workspace"
-              // onClick = { createWorkspaceRedirect }
+              onClick = { createWorkspaceRedirect }
             />
             <FeatureRow
               src={ft_img2}
