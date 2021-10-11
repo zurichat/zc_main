@@ -32,6 +32,9 @@
 .to_join {
   margin-top: 3%;
 }
+.join_us {
+  text-align: center;
+}
 .join_us > p {
   font-size: 17px;
   text-align: center;
