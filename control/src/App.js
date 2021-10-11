@@ -19,7 +19,7 @@ import Invite from './pages/inviteScreen'
 import Inviterequest from './pages/InviteRequest/InviteRequest'
 import SendRequest from './pages/InviteRequest/SendRequest'
 import ContactUs from './pages/contact-us'
-// import Search from './pages/search'
+import Search from './pages/search'
 import AppsAndIntegrations from './pages/apps-integration'
 import Download from './pages/download'
 import DownloadsMac from './pages/download/DownloadsMac'
@@ -98,9 +98,9 @@ const App = () => {
         <Route path="/resources">
           <Resources />
         </Route>
-        {/* <Route path="/search">
+        <Route path="/search">
           <Search />
-        </Route> */}
+        </Route>
         <Route path="/blog">
           <Blog />
         </Route>
