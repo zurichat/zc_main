@@ -21,6 +21,7 @@ const PreferenceMenu = () => {
             Notifications
           </p>
         </div>
+/*
         <div
           onClick={() => setSideBar(2)}
           className={sideBar === 2 ? styles.active : styles.one}
@@ -30,6 +31,8 @@ const PreferenceMenu = () => {
             Sidebar
           </p>
         </div>
+        */
+
         <div
           onClick={() => setSideBar(3)}
           className={sideBar === 3 ? styles.active : styles.one}
@@ -80,6 +83,7 @@ const PreferenceMenu = () => {
             Mark as read
           </p>
         </div>
+    {/*
         <div
           onClick={() => setSideBar(8)}
           className={sideBar === 8 ? styles.active : styles.one}
@@ -90,6 +94,7 @@ const PreferenceMenu = () => {
             Audio & Video
           </p>
         </div>
+     */}
         <div
           onClick={() => setSideBar(9)}
           className={sideBar === 9 ? styles.active : styles.one}
