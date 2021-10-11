@@ -3,11 +3,11 @@ import Header from '../../components/Header'
 import ContactMain from './components/ContactMain'
 import { Helmet } from 'react-helmet'
 
-function ContactUs() {
+function Search() {
   return (
     <div>
       <Helmet>
-        <title>Contact-us-Zuri Chat</title>
+        <title>Search Zuri Chat</title>
       </Helmet>
       <Header />
       <ContactMain />
@@ -16,4 +16,4 @@ function ContactUs() {
   )
 }
 
-export default ContactUs
+export default Search
