@@ -21,7 +21,7 @@ const PreferenceMenu = () => {
             Notifications
           </p>
         </div>
-/*
+      {/*
         <div
           onClick={() => setSideBar(2)}
           className={sideBar === 2 ? styles.active : styles.one}
@@ -31,7 +31,7 @@ const PreferenceMenu = () => {
             Sidebar
           </p>
         </div>
-        */
+       */}
 
         <div
           onClick={() => setSideBar(3)}
