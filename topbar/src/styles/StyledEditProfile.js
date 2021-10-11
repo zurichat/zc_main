@@ -71,7 +71,7 @@ export const StyledProfileWrapper = styled.section`
             }
             .pref,
             .phoneInput {
-              height: 3.8125rem;
+              height: 3rem;
               padding: 0 0.5rem;
               outline: none;
               border: none;
@@ -106,7 +106,7 @@ export const StyledProfileWrapper = styled.section`
         .PhoneInput,
         .css-2b097c-container {
           width: 100%;
-          height: 3.8125rem;
+          height: 3rem;
           border: 1px solid #a1a1a1;
           padding: 0 1rem;
           font-size: 1.4rem;

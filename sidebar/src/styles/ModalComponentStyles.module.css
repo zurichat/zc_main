@@ -2,8 +2,8 @@
   display: none;
   background: #ffffff;
   color: #000;
-  position: absolute;
-  top: 7.2%;
+  position: fixed;
+  top: inherit;
   left: 5%;
   width: 100%;
   max-width: 300px;
@@ -17,9 +17,9 @@
   display: block;
   background: #fff;
   color: #000;
-  position: absolute;
-  top: 7.2%;
-  left: 5%;
+  position: fixed;
+  top: inherit;
+  left: 1rem;
   width: 100%;
   max-width: 281px;
   border: 1px solid #bebebe;
