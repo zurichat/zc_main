@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import Logo from '../../../component-assets/zurichat-09.svg'
+import Logo from '../../../component-assets/zurilogoandtitle.svg'
 
 const WorkspaceError = ({ error }) => {
   const errorMessage = error.toString()
