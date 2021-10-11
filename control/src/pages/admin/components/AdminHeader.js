@@ -1,19 +1,18 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react"
 
-import styles from '../styles/adminHead.module.css'
-import { Link } from 'react-router-dom'
-import { FiHome } from 'react-icons/fi'
+import styles from "../styles/adminHead.module.css"
+import { Link } from "react-router-dom"
 
 // icons
-import zuriLogo from '../assets/zuriLogo.svg'
-import grid from '../assets/grid.svg'
-import bouy from '../assets/bouy.svg'
-import la_rocket from '../assets/la_rocket.svg'
-import { getCurrentWorkspace } from '../Utils/Common'
-import { authAxios } from '../Utils/Api'
+import zuriLogo from "../assets/zuriLogo.svg"
+import grid from "../assets/grid.svg"
+import bouy from "../assets/bouy.svg"
+import la_rocket from "../assets/la_rocket.svg"
+import { getCurrentWorkspace } from "../Utils/Common"
+import { authAxios } from "../Utils/Api"
 
 // icon
-import { FiMenu } from 'react-icons/fi'
+import { FiHome, FiMenu } from "react-icons/fi"
 
 const AdminHeader = ({ setModal, openModal }) => {
   const currentWorkspace = getCurrentWorkspace()
@@ -25,10 +24,10 @@ const AdminHeader = ({ setModal, openModal }) => {
         .get(`/organizations/${currentWorkspace}`)
         .then(res => {
           setWorkspaceData(res.data.data)
-          console.log(res.data.data)
+          // console.log(res.data.data)
         })
         .catch(err => {
-          console.log(err)
+          console.error(err)
         })
     }
   }, [currentWorkspace])

@@ -50,7 +50,7 @@ export const Pricing = [
     className: 'topPricingEnd',
     topPricingTitle: 'Enterprise Grid',
     topPricingSubtitle:
-      'Slack for the most demanding enterprises - all the flexibility to meet your regulatory requirementsand all the power to match your growth',
+      'ZuriChat for the most demanding enterprises - all the flexibility to meet your regulatory requirementsand all the power to match your growth',
     topPricingAmount: '',
     topPricingBottomHeadText: 'All the greatness of business+, and:',
     topPricingTick: checkmark,

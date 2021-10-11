@@ -1,13 +1,11 @@
-import React from 'react'
-import { useState, useEffect, useRef } from 'react'
-import styles from '../styles/Drop.module.css'
-import { TiArrowSortedDown } from 'react-icons/ti'
-import { navigateToUrl } from 'single-spa'
-import hash from '../assets/images/hash.svg'
-import { AiOutlinePlusCircle } from 'react-icons/ai'
-import PluginRoomAddUser from './PluginRoomAddUser'
-import Options from './RoomOptions'
-import RoomOptions from './RoomOptions'
+import React, { useState, useEffect, useRef } from "react"
+import styles from "../styles/Drop.module.css"
+import { TiArrowSortedDown } from "react-icons/ti"
+import { navigateToUrl } from "single-spa"
+import hash from "../assets/icons/hash.svg"
+import { AiOutlinePlusCircle } from "react-icons/ai"
+import PluginRoomAddUser from "./PluginRoomAddUser"
+import RoomOptions from "./RoomOptions"
 
 const DropDown = ({ itemName, items }) => {
   const [addToRoom, setAddToRoom] = useState(false)
@@ -39,12 +37,12 @@ const DropDown = ({ itemName, items }) => {
       () => {
         const node = ref.current
         if (node) {
-          node.addEventListener('contextmenu', RightClick)
-          document.addEventListener('click', CloseClick)
+          node.addEventListener("contextmenu", RightClick)
+          document.addEventListener("click", CloseClick)
 
           return () => {
-            node.removeEventListener('contextmenu', RightClick)
-            document.removeEventListener('click', CloseClick)
+            node.removeEventListener("contextmenu", RightClick)
+            document.removeEventListener("click", CloseClick)
           }
         }
       },
@@ -71,7 +69,7 @@ const DropDown = ({ itemName, items }) => {
           <p className={`mb-0 ${styles.dropDown__title}`}> {itemName} </p>
           {items.button_url ? (
             <a href={items.button_url} onClick={navigateToUrl}>
-              <AiOutlinePlusCircle className={`${styles.icon}`} />
+              {/* <AiOutlinePlusCircle className={`${styles.icon}`} /> */}
             </a>
           ) : null}
         </div>
@@ -90,7 +88,7 @@ const DropDown = ({ itemName, items }) => {
                     href={room.room_url}
                     onClick={navigateToUrl}
                     ref={click}
-                    style={{ textDecoration: 'none' }}
+                    style={{ textDecoration: "none" }}
                   >
                     <img
                       ref={click}
@@ -102,13 +100,13 @@ const DropDown = ({ itemName, items }) => {
                     <div className={`mb-0 ${styles.dropDown__name}`}>
                       {room.room_name}
                       {/* Add to Room Button */}
-                      <AiOutlinePlusCircle
+                      {/* <AiOutlinePlusCircle
                         className={`d-inline-flex align-items-center ms-2 ${styles.icon}`}
                         onClick={() => {
                           setAddToRoom(!addToRoom)
                           setRoomId(room._id)
                         }}
-                      />
+                      /> */}
                       <div className={`${styles.optionsContainer}`}>
                         <RoomOptions isClicked={isClicked} />
                       </div>

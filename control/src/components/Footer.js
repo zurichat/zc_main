@@ -1,13 +1,15 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react'
-import styles from '../component-styles/FooterStyle.module.css'
-import logo from '../component-assets/zurichatlogo.svg'
-import facebook from '../component-assets/facebook.svg'
-import twitter from '../component-assets/twitter.svg'
-import linkedin from '../component-assets/linkedin.svg'
-import instagram from '../component-assets/instagram.svg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import React, { useState } from "react"
+
+import styles from "../component-styles/FooterStyle.module.css"
+import logo from "../component-assets/zurichatlogo.svg"
+import facebook from "../component-assets/facebook.svg"
+import twitter from "../component-assets/twitter.svg"
+import linkedin from "../component-assets/linkedin.svg"
+import instagram from "../component-assets/instagram.svg"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons"
+import { Link } from 'react-router-dom'
+
 
 const Footer = () => {
   const getYear = () => {
@@ -36,7 +38,7 @@ const Footer = () => {
     <div className={styles.footer}>
       <div className={styles.top_footer}>
         <div className={styles.logo}>
-          <a href="/">
+          <Link to="/">
             <img
               className={styles.logo_img}
               src={logo}
@@ -45,7 +47,7 @@ const Footer = () => {
               height="30px"
             />
             <span className={styles.logo_name}>Zuri Chat</span>
-          </a>
+          </Link>
         </div>
 
         <div className={styles.menu}>
@@ -53,10 +55,10 @@ const Footer = () => {
             <h5>Company</h5>
             <ul>
               <li>
-                <a href="/careers">Careers</a>{' '}
+                <Link to="/careers">Careers</Link>{" "}
               </li>
               <li>
-                <a href="/about">About Zurichat</a>{' '}
+                <Link to="/about">About Zurichat</Link>{" "}
               </li>
             </ul>
           </div>
@@ -65,10 +67,15 @@ const Footer = () => {
             <h5>Info</h5>
             <ul>
               <li>
-                <a href="/privacy">Privacy & Terms</a>{' '}
+                <Link to="/privacy">
+                  <span>Privacy & Terms</span>{" "}
+                </Link>
               </li>
               <li>
-                <a href="/marketplace">Market Place</a>{' '}
+                <Link to="/marketplace">Market Place</Link>{" "}
+              </li>
+              <li>
+                <a href="https://docs.zuri.chat/">Web3/DAO</a>{" "}
               </li>
             </ul>
           </div>
@@ -77,10 +84,13 @@ const Footer = () => {
             <h5>Know us</h5>
             <ul>
               <li>
-                <a href="/download-app">Downloads</a>{' '}
+                <Link to="/download-app">Downloads</Link>{" "}
               </li>
               <li>
-                <a href="/contact-us">Contact Us</a>{' '}
+                <Link to="/contact-us">Contact Us</Link>{" "}
+              </li>
+              <li>
+                <a href="https://docs.zuri.chat/">Documentation</a>{" "}
               </li>
             </ul>
           </div>
@@ -90,7 +100,11 @@ const Footer = () => {
           <h5>Social Media</h5>
           <ul>
             <li>
-              <a href="/facebook">
+              <a
+                href="https://www.facebook.com/Zuri-Chat-101278805666628"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img
                   src={facebook}
                   alt="Facebook"
@@ -99,7 +113,11 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="/instagram">
+              <a
+                href="https://instagram.com/zurichathq"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img
                   src={instagram}
                   alt="Instagram"
@@ -108,7 +126,11 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/zurichat">
+              <a
+                href="https://twitter.com/zurichat"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img
                   src={twitter}
                   alt="Twitter"
@@ -117,7 +139,7 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="/linkedin">
+              <a href="https://www.linkedin.com/company/zuri-chat/">
                 <img
                   src={linkedin}
                   alt="Linkedin"

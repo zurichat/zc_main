@@ -1,11 +1,14 @@
-import React, { useState, useRef, useEffect } from 'react'
-import styles from '../styles/ModalComponentStyles.module.css'
-import CompanyImage from '../assets/images/CompanyIcon.svg'
-import TotalMessages from '../assets/images/TotalMessages.svg'
-import axios from 'axios'
-import { RiArrowRightSLine as Arrow } from 'react-icons/ri'
-import { faClosedCaptioning } from '@fortawesome/free-solid-svg-icons'
-import Workspace from '../../../control/src/pages/workspace/components/Workspace'
+import React, { useState, useRef, useEffect } from "react"
+import styles from "../styles/ModalComponentStyles.module.css"
+import CompanyImage from "../assets/icons/CompanyIcon.svg"
+import TotalMessages from "../assets/icons/TotalMessages.svg"
+// import axios from 'axios'
+import { RiArrowRightSLine as Arrow } from "react-icons/ri"
+// import { faClosedCaptioning } from '@fortawesome/free-solid-svg-icons'
+// import Workspace from '../../../control/src/pages/workspace/components/Workspace'
+
+const orgss = sessionStorage.getItem("organisations")
+const orgs = JSON.parse(orgss)
 
 const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
   // const isOpen = true;
@@ -26,8 +29,8 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
     useEffect(() => {
       const node = ref.current
       if (node) {
-        node.addEventListener('mouseover', handleMouseOver)
-        node.addEventListener('mouseout', handleMouseOut)
+        node.addEventListener("mouseover", handleMouseOver)
+        node.addEventListener("mouseout", handleMouseOut)
       }
     }, [[ref.current]])
     return [ref, value]
@@ -45,7 +48,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
           <span>{workSpace.workspace_url}</span>
         </div>
       </div>
-      <hr className={styles.modalDivider} />
+      {/* <hr className={styles.modalDivider} />
       <div
         className={`d-flex align-items-center justify-content-between ${styles.TopmodalSection}`}
       >
@@ -55,11 +58,11 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
             The workspace is currently on the free version of Zuri Chat.
           </p>
           <span> see plans</span>
-        </div>
+        </div> 
         <div className={`${styles.infoChart}`}>
           <img src={TotalMessages} alt="chart" />
         </div>
-      </div>
+      </div> */}
       <hr className={styles.modalDivider} />
       <div className={` d-flex flex-column ${styles.modalSection}`}>
         <div>
@@ -119,7 +122,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
       <div className={styles.modalSection}>
         <div>
           <p>
-            {' '}
+            {" "}
             <a href="/signout">Sign Out</a>
           </p>
         </div>
@@ -154,7 +157,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
           </section>
         </div>
         <div
-          // ref={hoverRef2}
+          ref={hoverRef2}
           className={`d-flex align-items-center justify-content-between ${styles.modalSubSection}`}
         >
           <p>Switch workspace</p>
@@ -168,13 +171,27 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
               ref={hoverRef2}
               className={`d-flex flex-column ${styles.submodalSection}`}
             >
-              <div>
-                <p>HNGi8</p>
+              {orgs &&
+                orgs.map((o, idx) => (
+                  <div
+                    key={idx}
+                    onClick={() => {
+                      localStorage.setItem("currentWorkspace", o.id)
+                      window.location.reload()
+                    }}
+                  >
+                    <p>{o.name}</p>
+                  </div>
+                  // <hr
+                  //  className={styles.modalDivider} />
+                ))}
+              {/* <div>
+              <p>HNGi8</p>
               </div>
               <hr className={styles.modalDivider} />
               <div>
-                <p>The BrandHub</p>
-              </div>
+              <p>The BrandHub</p>
+              </div> */}
             </section>
           </section>
         </div>
