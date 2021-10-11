@@ -4,10 +4,10 @@ import pdf from '../assets/download_images/file-earmark-pdf.svg'
 import open from '../assets/download_images/file-open.svg'
 import close from '../assets/download_images/file-close.svg'
 import pointy from '../assets/download_images/pointy.svg'
-import ios from '../assets/download_images/apple.svg'
-import windows from '../assets/download_images/windows.svg'
-import mac from '../assets/download_images/apple.svg'
-import android from '../assets/download_images/android.svg'
+import ios from '../assets/download_images/ios.png'
+import windows from '../assets/download_images/windows.png'
+import mac from '../assets/download_images/apple.png'
+import android from '../assets/download_images/android.png'
 
 const Downloads = ({ setModal }) => {
   //State For testing
@@ -26,25 +26,29 @@ const Downloads = ({ setModal }) => {
       name: 'Windows App',
       size: '',
       src: windows,
-      link: 'https://drive.google.com/file/d/1Wl4hYeHP1e1eogd6LYdt2Kohrkr9C1dg/view?usp=sharing'
+      link: 'https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing',
+      download: "Zurichat Android APK"
     },
     {
       name: 'macOS App',
       size: '',
       src: mac,
-      link: 'https://drive.google.com/file/d/1Wl4hYeHP1e1eogd6LYdt2Kohrkr9C1dg/view?usp=sharing'
+      link: 'https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing',
+      download: "Zurichat Android APK"
     },
     {
       name: 'iOS App',
       size: '',
       src: ios,
-      link: 'https://drive.google.com/file/d/1Wl4hYeHP1e1eogd6LYdt2Kohrkr9C1dg/view?usp=sharing'
+      link: 'https://drive.google.com/file/d/1Wl4hYeHP1e1eogd6LYdt2Kohrkr9C1dg/view?usp=sharing',
+      download: "Zurichat Android APK"
     },
     {
       name: 'Android App',
       size: '',
       src: android,
-      link: 'https://drive.google.com/file/d/1Wl4hYeHP1e1eogd6LYdt2Kohrkr9C1dg/view?usp=sharing'
+      link: './apk/Zurichat-Android.apk',
+      download: "Zurichat Android APK"
     },
   ])
   return (
@@ -146,6 +150,7 @@ const Downloads = ({ setModal }) => {
                           aria-label={file.size}
                           className={styles.content}
                           href={file.link}
+                          download={file.download}
                         ></a>
                       </div>
                     </button>
