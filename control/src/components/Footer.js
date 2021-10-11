@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import {Link} from 'react-router-dom'
 import styles from "../component-styles/FooterStyle.module.css"
-import logo from "../component-assets/zurichatlogo.svg"
+import logo from "../component-assets/zurilogo.svg"
 import facebook from "../component-assets/facebook.svg"
 import twitter from "../component-assets/twitter.svg"
 import linkedin from "../component-assets/linkedin.svg"
