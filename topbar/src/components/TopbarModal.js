@@ -245,7 +245,7 @@ const TopbarModal = ({ members }) => {
             <hr className={styles.hr} />
 
             <div className={styles.sectionFive}>
-              <p onClick={logout}>Sign out of Team Einstein workspace</p>
+              <p onClick={logout}>Sign out</p>
             </div>
           </section>
           <div className={styles.modalBackDrop} onClick={closeModal}></div>
