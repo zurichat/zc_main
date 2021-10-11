@@ -15,9 +15,6 @@ const EditProfile = () => {
   const imageRef = useRef(null)
   const avatarRef = useRef(null)
 
-  const { user, orgId, userProfileImage, setUserProfileImage,toggleModalState } =
-    useContext(ProfileContext)
-
   const {
     user,
     orgId,
