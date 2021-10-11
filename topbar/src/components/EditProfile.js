@@ -126,7 +126,6 @@ const EditProfile = () => {
     const data = {
       name: state.name,
       display_name: state.display_name,
-      pronouns: state.pronouns,
       phone: state.phone,
       bio: state.bio,
       timeZone: state.timezone
