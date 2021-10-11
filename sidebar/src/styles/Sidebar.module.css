@@ -52,12 +52,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: auto 0;
 }
 
 .orgTitle {
   font-weight: bold;
   font-size: 1.125em;
   line-height: 28px;
+  line-height: 1.2em;
 }
 
 .orgHeader {
@@ -65,7 +67,10 @@
 }
 
 .arrowDown {
-  width: 2.5em;
+  position: relative;
+  top: 0.2em;
+  width: 1em;
+  color: #fff;
 }
 
 .sb__item {
