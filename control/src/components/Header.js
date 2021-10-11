@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import headerStyles from "../component-styles/HeaderStyle.module.css"
-import zurichatlogo from "../component-assets/zurichatlogo.svg"
+import zurichatlogo from "../component-assets/zurichat-08.svg"
 import searchIcon from "../component-assets/searchIcon.svg"
 //import { Button } from '../pages/createworkspace/components/WorkspaceHome'
 
