@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import { Link, useRouteMatch } from 'react-router-dom'
-import ProjectNameCSS from '../styles/ProjectName.module.css'
-import { Button } from './WorkspaceHome'
-import { Helmet } from 'react-helmet'
+import React, { useState, useEffect } from "react"
+import { Link, useRouteMatch } from "react-router-dom"
+import ProjectNameCSS from "../styles/ProjectName.module.css"
+import { Button } from "./WorkspaceHome"
+import { Helmet } from "react-helmet"
+import StepsNavigator from "./StepsNavigator"
 
 const ProjectName = ({ inputChangeHandler, value }) => {
   let match = useRouteMatch()
 
   const [user, setUser] = useState(null)
   useEffect(() => {
-    const user = JSON.parse(sessionStorage.getItem('user'))
+    const user = JSON.parse(sessionStorage.getItem("user"))
     if (user) {
       setUser(user)
     }
@@ -26,7 +27,7 @@ const ProjectName = ({ inputChangeHandler, value }) => {
         </div>
 
         <div className={ProjectNameCSS.centerWrapper}>
-          <h4> Step 2 of 3</h4>
+          <StepsNavigator step={2} />
           <h1>What is your team working on right now ?</h1>
           <h4>
             This could be anything- a project, campiagn, event or the deal you
@@ -49,12 +50,12 @@ const ProjectName = ({ inputChangeHandler, value }) => {
               style={
                 value.length > 1
                   ? {
-                      backgroundColor: '#00b87c',
-                      color: 'white',
-                      display: 'flex',
-                      justifyContent: 'center'
+                      backgroundColor: "#00b87c",
+                      color: "white",
+                      display: "flex",
+                      justifyContent: "center"
                     }
-                  : { display: 'flex', justifyContent: 'center' }
+                  : { display: "flex", justifyContent: "center" }
               }
             >
               Continue

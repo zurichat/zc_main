@@ -3,21 +3,25 @@ import { Footer, FooterLink } from "./UserOrganization"
 import { Button } from "./WorkspaceHome"
 import LinkIcon from "../assets/link.svg"
 import Oval from "../assets/Oval.svg"
-import { Link, useRouteMatch } from "react-router-dom"
+import { Link, useRouteMatch, useHistory } from "react-router-dom"
 import Header from "../../../components/Header"
 import { useEffect, useState } from "react"
 import { Helmet } from "react-helmet"
+import StepsNavigator from "./StepsNavigator"
 
 const Step3 = () => {
   let match = useRouteMatch()
+
   const input = (
     <Input type="text" placeholder="Ex:adimchisylvester@yahoo.com" />
   )
+
   const [inputs, setInputs] = useState([input])
   const [user, setUser] = useState(null)
   const [projectname, setProjectname] = useState(
     localStorage.getItem("input") || "alpha"
   )
+
   useEffect(() => {
     const user = JSON.parse(sessionStorage.getItem("user"))
     if (user) {
@@ -41,7 +45,7 @@ const Step3 = () => {
           </TopSpans>
         </TopSpanWrapper>
         <MainSection>
-          <Step>Step 3 of 3</Step>
+          <StepsNavigator step={3} />
           <Heading>
             Who do you email most about <br />
             <span>{`${projectname}`}</span>?
@@ -156,21 +160,18 @@ const Marketing = styled.p`
     font-size: 1rem;
   }
 `
-const Step = styled.span`
-  font-weight: 600;
-  font-size: ${18 / 16}rem;
-  font-family: var(--font-family);
-  color: #808080;
-  @media (max-width: 35rem) {
-    font-size: 1rem;
-  }
-`
+
 const Skip = styled(Link)`
   font-weight: 600;
   font-size: ${18 / 16}rem;
   font-family: var(--font-family);
   color: #808080;
   cursor: pointer;
+
+  &:hover {
+    color: #808080;
+    opacity: 0.75;
+  }
 
   @media (max-width: 35rem) {
     font-size: 1rem;
@@ -262,7 +263,6 @@ const Another = styled.a`
   cursor: pointer;
   &:hover {
     text-decoration: underline;
-    color: #333333;
     opacity: 0.75;
   }
   @media (max-width: 35rem) {
