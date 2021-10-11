@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 // styles import
@@ -62,7 +63,7 @@ const index = () => {
         </div>
       </div>
       {/* COMPANIES */}
-      <Companies />
+      {/* <Companies /> */}
       {/* Who we are and how to join us */}
       <div className={`container ${styles.to_join}`}>
         <div className={`row`}>
@@ -150,7 +151,9 @@ const index = () => {
         </p>
       </div>
       <CarouselSecond className={styles.carouselCaption} />
-      <div className={`container-fluid ${styles.second_carousel_block}`}>
+      <div
+        className={`container-fluid ${styles.second_carousel_block}  container`}
+      >
         <div className={`row`}>
           <div className={`col ${styles.vector}`}>
             <img src={user} alt={"image of a user"} />
@@ -189,14 +192,22 @@ const index = () => {
             Whatever work you do, you can do it in Zuri Chat
           </h3>
           <div className={`styles.button`}>
-            <button className={`btn ${styles.btn_sale}`}>Talk to sales</button>
-            <button className={`btn ${styles.btn_free}`}>
-              Try it for free
-            </button>
+            <Link to="/contact-us">
+              <button className={`btn ${styles.btn_sale}`}>
+                Talk to sales
+              </button>
+            </Link>
+            <Link to="/signup">
+              <button className={`btn ${styles.btn_free}`}>
+                Try it for free
+              </button>
+            </Link>
           </div>
         </div>
       </div>
-      <Footer />
+      <div className={styles.row}>
+        <Footer />
+      </div>
     </div>
   )
 }

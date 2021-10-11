@@ -78,7 +78,7 @@ const Sidebar = props => {
 
   //organization
   const [org, setOrg] = useState({})
-  // console.log('ORGGGG', org)
+  
 
   //toggle
   const toggle = () => {
@@ -101,7 +101,7 @@ const Sidebar = props => {
   const setInviteEmails = emails => setInviteEmail(emails)
   const [sendLoading, setSendLoading] = useState(false)
 
-  const [userInfo, setUserInfo] = useState({
+  const [userInfo, setUserInfo] = useState({ 
     userId: "",
     Organizations: [],
     token: ""
@@ -110,7 +110,8 @@ const Sidebar = props => {
   //   // console.log('userinfo', userInfo)
 
   const [nullValue, setnullValue] = useState(0)
-
+  
+  
   const [organizationInfo, setOrganizationInfo] = useState(null)
   const [sidebarData, setSidebarData] = useState({})
   const [isLoading, setIsLoading] = useState(true)
@@ -146,6 +147,8 @@ const Sidebar = props => {
       setOrg(org)
     })
   }, [])
+
+
 
   useEffect(() => {
     inviteVisibility()
@@ -235,11 +238,11 @@ const Sidebar = props => {
       <div className={`${styles.subCon1}`}>
         <div className={`row ${styles.orgDiv}`}>
           <div className={`col-12 px-3 ${styles.orgInfo}`}>
-            <div onClick={toggle} className={`row p-0 ${styles.orgHeader}`}>
-              <span className={`col-8 mb-0 ${styles.orgTitle}`}>
+            <div onClick={toggle} className={` p-0 ${styles.orgHeader}`}>
+              <span className={`col-10 mb-0 ${styles.orgTitle}`}>
                 {org.name}
               </span>
-              <span className={`col-4 p-0 ${styles.sidebar__header__arrow}`}>
+              <span className={`col-2 p-0 ${styles.arrowDown}`}>
                 <MdKeyboardArrowDown />
               </span>{" "}
               {/* <img
@@ -383,13 +386,13 @@ const Sidebar = props => {
                   alt="icon"
                 />
                 <p className={`mb-0 ${styles.item_p}`}>Plugins</p>{" "}
-                <img
+                {/* <img
                   onClick={open}
                   className={`${styles.addButton}`}
                   src={addIcon}
                   alt="Add button"
                   role="button"
-                />
+                /> */}
               </div>
             </div>
 

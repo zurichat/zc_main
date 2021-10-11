@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { withRouter, useHistory } from 'react-router-dom'
+import { withRouter, useHistory, Link } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
 import FormWrapper from '../../components/AuthFormWrapper'
 import styles from '../../component-styles/AuthFormElements.module.css'
@@ -191,8 +191,8 @@ const Signup = () => {
             />
             <span className={`${styles.tosText}`}>
               I agree to Zurichat's {''}
-              <a href="/">Terms of services{''} </a>&
-              <a href="/"> {''}Privacy</a>
+              <Link to="/terms">Terms of services{''} </Link>&
+              <Link to="/privacy"> {''}Privacy</Link>
             </span>
           </div>
         </FormWrapper>
