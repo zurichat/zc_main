@@ -33,14 +33,14 @@ const Downloads = ({ setModal }) => {
       name: 'macOS App',
       size: '',
       src: mac,
-      link: 'https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing',
+      link: '',
       download: "Zurichat Android APK"
     },
     {
       name: 'iOS App',
       size: '',
       src: ios,
-      link: 'https://drive.google.com/file/d/1Wl4hYeHP1e1eogd6LYdt2Kohrkr9C1dg/view?usp=sharing',
+      link: '',
       download: "Zurichat Android APK"
     },
     {
