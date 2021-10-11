@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { withRouter, useHistory } from "react-router-dom"
+import { withRouter, useHistory, Link } from "react-router-dom"
 // import { BehaviorSubject } from 'rxjs'
 import AuthInputBox from "../../components/AuthInputBox"
 import FormWrapper from "../../components/AuthFormWrapper"
@@ -26,19 +26,6 @@ const Login = () => {
   const [passworderror, setpassworderror] = useState("")
   const [rememberMe, setRememberMe] = useState("")
   const [Loading, setLoading] = useState(false)
-
-  // Background Images
-  // const images = [authBg1, authBg2, authBg3, authBg4, authBg5]
-  // const [currentImage, setcurrentImage] = useState(
-  //   Math.floor(Math.random() * 4)
-  // )
-
-  // To Display Random Aside Background Image
-  // const displayImage = () => {
-  //   let i = currentImage
-  //   i >= images.length - 1 ? (i = 0) : i++
-  //   setcurrentImage(i)
-  // }
 
   let history = useHistory()
 
@@ -98,7 +85,11 @@ const Login = () => {
           })
           .then(res => {
             const orgs = res.data.data.length
-            // console.log(res.data.data.length)
+            // console.log(res.data.data)
+            sessionStorage.setItem(
+              "organisations",
+              JSON.stringify(res.data.data)
+            )
             // console.log('reg orgs', orgs)
 
             switch (true) {
@@ -115,16 +106,6 @@ const Login = () => {
           .catch(err => {
             throw err
           })
-
-        //Display message
-        // alert(message) //Change this when there is a design
-
-        // setTimeout(() => {
-        //Redirect to some other page
-        //   GetUserInfo()
-        //   history.push('/choose-workspace')
-        //   setLoading(false)
-        // }, 2000)
       })
       .catch(error => {
         const { data } = error.response
@@ -150,11 +131,6 @@ const Login = () => {
         <title>Login - Zuri Chat</title>
       </Helmet>
       {Loading && <LoginLoading />}
-      {/* <aside id={styles.authAsideContainer} className={styles.display_none}>
-        <div id={styles.authImageWrapper}>
-          <img src={images[currentImage]} alt="backgroundImage" />
-        </div>
-      </aside> */}
       <section id={styles.authFormContainer}>
         <FormWrapper
           header="Login"
@@ -208,7 +184,7 @@ const Login = () => {
               Remember me
             </div>
             <div className={`${styles.right}`}>
-              Forgot password?<a href="/"> {""}Get help signing in</a>
+              Forgot password?<Link to="/help"> {""}Get help signing in</Link>
             </div>
           </div>
         </FormWrapper>
