@@ -215,6 +215,7 @@
   color: #fff;
   font-weight: bold;
   font-size: 1.5em;
+  transition: all 0.2s;
   /* display: flex;
   align-items: center;
   justify-content: center; */
@@ -227,6 +228,11 @@
 
 .btnContainer .btn:hover:not(:disabled) {
   box-shadow: 0px 7px 20px #00000040;
+}
+
+.btnContainer .btn:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px #00000040;;
 }
 
 .btnContainer .btn:disabled {
