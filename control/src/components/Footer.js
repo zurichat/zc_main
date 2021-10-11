@@ -83,6 +83,9 @@ const Footer = () => {
                 <li>
                   <Link to="/contact-us">Contact</Link>{" "}
                 </li>
+                <li>
+                  <Link to="https://docs.zuri.chat/">Documentation</Link>{" "}
+                </li>
               </ul>
             </div>
     
