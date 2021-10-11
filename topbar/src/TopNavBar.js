@@ -18,7 +18,7 @@ import { GetUserInfo, SubscribeToChannel } from "@zuri/control"
 import axios from "axios"
 import toggleStyle from "./styles/sidebartoggle.module.css"
 import { BsReverseLayoutTextSidebarReverse } from "react-icons/bs"
-import * as singleSpa from 'single-spa';
+import {navigateToUrl} from 'single-spa';
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { closeModal, openModal, presence, setPresence } =
@@ -186,7 +186,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     console.log(window.location.href)
 
 
-    singleSpa.navigateToUrl("/search")
+    navigateToUrl("/search")
       // let s= window.location.href.split('/')
       // if(s[2].includes("local")){
       //   window.location.href="http://localhost:9000/search"
