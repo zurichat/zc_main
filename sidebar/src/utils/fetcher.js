@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
-import axios from 'axios'
+import { useEffect, useState } from "react"
+import axios from "axios"
 
-const endpoint = 'https://api.zuri.chat'
+const endpoint = "https://api.zuri.chat"
 
 const fetcher = (url, token) => {
   const [isloading, setLoading] = useState(true)

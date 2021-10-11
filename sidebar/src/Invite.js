@@ -1,4 +1,4 @@
-import { Overlay, Content } from './sidebar.component'
+import { Overlay, Content } from "./sidebar.component"
 
 const Invite = () => {
   return (

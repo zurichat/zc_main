@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { createContext, useState } from "react"
 
 export const PluginContext = createContext(null)
 export const PluginProvider = ({ children }) => {

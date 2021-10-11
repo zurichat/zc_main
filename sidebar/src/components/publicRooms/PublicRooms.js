@@ -1,4 +1,4 @@
-import PublicRoomsList from './PublicRoomsList'
+import PublicRoomsList from "./PublicRoomsList"
 
 const PublicRooms = ({ rooms }) => {
   return (
