@@ -80,9 +80,9 @@ const Step3 = () => {
           </InputSection>
           <ButtonSection>
             <Button style={{ color: 'white' }}>
-              <StyledLink to={`${match.url}/launch`}>Add Teammates</StyledLink>
+              <StyledLink to="https://zuri.chat/">Add Teammates</StyledLink>
             </Button>
-            <Skip to={`${match.url}/launch`}>Skip this Step</Skip>
+            <Skip to="https://zuri.chat/">Skip this Step</Skip>
           </ButtonSection>
         </MainSection>
         <InviteFooter>
