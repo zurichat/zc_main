@@ -6,6 +6,36 @@ import searchIcon from "../component-assets/searchIcon.svg"
 //import { Button } from '../pages/createworkspace/components/WorkspaceHome'
 
 const HeaderSearchSuggestion = () => {
+  //const ref = useRef()
+  //const toggleBgOverlay = () => {
+  //  document
+  //    .querySelector(`.${headerStyles.navContainer}`)
+  //    .classList.toggle(headerStyles.bg_overlay)
+  //}
+//
+  //useEffect(() => {
+  //  const checkIfClickedOutside = e => {
+  //    const element = document.getElementById("navbarText")
+//
+  //    if (
+  //      ref.current &&
+  //      !ref.current.contains(e.target) &&
+  //      element.classList.contains("show")
+  //    ) {
+  //      element.classList.remove("show")
+  //      toggleBgOverlay()
+  //    }
+  //  }
+//
+  //  document.addEventListener("mousedown", checkIfClickedOutside)
+//
+  //  return () => {
+  //    // Cleanup the event listener
+  //    document.removeEventListener("mousedown", checkIfClickedOutside)
+  //  }
+  //}, [])
+
+
   return (
     <header className={headerStyles.pageHeader}>
       <nav
