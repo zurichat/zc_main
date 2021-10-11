@@ -42,7 +42,6 @@ import About from './pages/about/index'
 import AdminSettingsTab from './pages/admin/Settings/components/AdminSettingsTab'
 import TermsOfService from './pages/termsOfService'
 
-
 // useEffect(() => {
 //     localStorage.setItem('input',input);
 // },[input]);
