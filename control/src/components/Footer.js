@@ -38,7 +38,7 @@ const Footer = () => {
     <div className={styles.footer}>
       <div className={styles.top_footer}>
         <div className={styles.logo}>
-          <a href="/">
+          <Link to="/">
             <img
               className={styles.logo_img}
               src={logo}
@@ -47,7 +47,7 @@ const Footer = () => {
               height="30px"
             />
             <span className={styles.logo_name}>Zuri Chat</span>
-          </a>
+          </Link>
         </div>
 
         <div className={styles.menu}>
