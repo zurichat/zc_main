@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+
 import styles from "../component-styles/FooterStyle.module.css"
 import logo from "../component-assets/zurichatlogo.svg"
 import facebook from "../component-assets/facebook.svg"
@@ -7,6 +8,7 @@ import linkedin from "../component-assets/linkedin.svg"
 import instagram from "../component-assets/instagram.svg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons"
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   const getYear = () => {
@@ -79,7 +81,7 @@ const Footer = () => {
                 <a href="/download-app">Downloads</a>{" "}
               </li>
               <li>
-                <a href="/contact-us">Contact Us</a>{" "}
+                <Link to="/contact-us">Contact Us</Link>{" "}
               </li>
               <li>
                 <a href="https://docs.zuri.chat/">Documentation</a>{" "}
