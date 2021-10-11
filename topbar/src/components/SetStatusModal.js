@@ -1,20 +1,20 @@
-import React, { useState, useContext } from 'react'
-import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
-import DatePicker from 'react-datepicker'
+import React, { useState, useContext } from "react"
+import Picker, { SKIN_TONE_MEDIUM_DARK } from "emoji-picker-react"
+import DatePicker from "react-datepicker"
 // import 'react-datepicker/dist/react-datepicker-cssmodules.css';
-import TimePicker from 'react-time-picker'
-import styles from '../styles/SetStatusModal.module.css'
-import '../timepicker.css'
-import { authAxios } from '../utils/Api'
-import blackx from '../assets/images/blackx.svg'
-import whitex from '../assets/images/whitex.svg'
-import down from '../assets/images/down.svg'
-import { ProfileContext } from '../context/ProfileModal'
-import { TopbarContext } from '../context/Topbar'
+import TimePicker from "react-time-picker"
+import styles from "../styles/SetStatusModal.module.css"
+import "../timepicker.css"
+import { authAxios } from "../utils/Api"
+import blackx from "../assets/images/blackx.svg"
+import whitex from "../assets/images/whitex.svg"
+import down from "../assets/images/down.svg"
+import { ProfileContext } from "../context/ProfileModal"
+import { TopbarContext } from "../context/Topbar"
 
 const SetDateAndTime = ({ dateTime, setDateTime }) => {
   const [value, onChange] = useState(new Date())
-  const [timevalue, timeChange] = useState('10:00')
+  const [timevalue, timeChange] = useState("10:00")
   return (
     <>
       <div className={styles.modal}>
@@ -52,8 +52,8 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
   const { user, orgId, setUser } = useContext(ProfileContext)
   const { emoji } = useContext(TopbarContext)
   const [chosenEmoji, setChosenEmoji] = emoji
-  const [emojiItem, setEmoji] = useState('')
-  const [text, setText] = useState('')
+  const [emojiItem, setEmoji] = useState("")
+  const [text, setText] = useState("")
   const [status, setStatus] = useState([])
   // const [timeOut, setTimeOut] = useState('')
   const onEmojiClick = (event, emojiObject) => {
@@ -72,13 +72,14 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
         text: text
       })
       .then(res => {
-        console.log(res)
+        // console.log(res)
       })
-      .catch(err => console.log(err))
+      .catch(err => console.error(err))
 
     setStatus(status => {
       return [...status, data]
     })
+    setStatusModal(!statusModal)
   }
 
   return (
@@ -134,7 +135,7 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
                   onChange={e => setText(e.target.value)}
                 />
               </div>
-              <img src={blackx} alt="" className={styles.blackx} />
+              <img src={blackx} onClick={() => setText('')} alt='clear status'  role='button' className={styles.blackx} />
             </div>
             <div className={styles.clearafter}>
               <div
@@ -165,26 +166,26 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
                     </li>
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod('one_hour')}
+                      onClick={() => setChoosePeriod("one_hour")}
                     >
                       1 hour
                     </li>
 
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod('four_hours')}
+                      onClick={() => setChoosePeriod("four_hours")}
                     >
                       4 hours
                     </li>
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod('today')}
+                      onClick={() => setChoosePeriod("today")}
                     >
                       Today
                     </li>
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod('this_week')}
+                      onClick={() => setChoosePeriod("this_week")}
                     >
                       This week
                     </li>

@@ -1,24 +1,23 @@
-import { useContext, useEffect } from 'react'
-import { ProfileContext } from './context/ProfileModal'
-import { TopbarContext } from './context/Topbar'
-import { connect } from 'react-redux'
-import zurichatlogo from './assets/images/Logo.svg'
-import { useState } from 'react'
-import styled from 'styled-components'
-import { BaseInput } from './TopBarIndex'
-import defaultAvatar from './assets/images/avatar_vct.svg'
+import { useState, useContext, useEffect } from "react"
+import { ProfileContext } from "./context/ProfileModal"
+import { TopbarContext } from "./context/Topbar"
+import { connect } from "react-redux"
+import zurichatlogo from "./assets/images/Logo.svg"
+import styled from "styled-components"
+import { BaseInput } from "./TopBarIndex"
+import defaultAvatar from "./assets/images/avatar_vct.svg"
 // import HelpIcon from './assets/images/help-icon.svg'
-import TopbarModal from './components/TopbarModal'
+import TopbarModal from "./components/TopbarModal"
 // import HelpModal from './components/HelpModal'
 // import UserForm from '../../control/src/pages/ReportFeature/User/Form'
 // import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
-import { authAxios } from './utils/Api'
-import Profile from './components/Profile'
+import { authAxios } from "./utils/Api"
+import Profile from "./components/Profile"
 // import Loader from 'react-loader-spinner'
-import { GetUserInfo, SubscribeToChannel } from '@zuri/control'
-import axios from 'axios'
-import toggleStyle from './styles/sidebartoggle.module.css'
-import { BsReverseLayoutTextSidebarReverse } from 'react-icons/bs'
+import { GetUserInfo, SubscribeToChannel } from "@zuri/control"
+import axios from "axios"
+import toggleStyle from "./styles/sidebartoggle.module.css"
+import { BsReverseLayoutTextSidebarReverse } from "react-icons/bs"
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { closeModal, openModal, presence, setPresence } =
@@ -28,10 +27,10 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const state = useContext(TopbarContext)
   const [showModal] = state.show
   const [organizations, setOrganizations] = useState([])
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState("")
   const [helpModal, setHelpModal] = useState(false)
   // const [memberId, setMemberId] = useState('');
-  const [messages, setMessages] = useState('')
+  const [messages, setMessages] = useState("")
 
   useEffect(() => {
     // const fetchUser = async () => {
@@ -41,7 +40,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
     // fetchUser();
 
-    let currentWorkspace = localStorage.getItem('currentWorkspace')
+    let currentWorkspace = localStorage.getItem("currentWorkspace")
 
     const searchFunction = async () => {
       let organization_id = `614679ee1a5607b13c00bcb7`
@@ -53,11 +52,11 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           `https://dm.zuri.chat/api/v1/org/${organization_id}/members/${member_id}/messages/search?keyword=${search}`
         )
         .then(response => {
-          console.log(response.data.results[0])
+          // console.log(response.data.results[0])
           setMessages(response.data.results)
         })
         .catch(err => {
-          console.log(err)
+          console.error(err)
         })
     }
 
@@ -65,7 +64,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   }, [search])
 
   useEffect(() => {
-    const userdef = JSON.parse(sessionStorage.getItem('user'))
+    const userdef = JSON.parse(sessionStorage.getItem("user"))
 
     getOrganizations()
 
@@ -88,11 +87,11 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
               )
             })
             .catch(err => {
-              console.log(err.response.data)
+              console.error(err.response.data)
             })
         })
         .catch(err => {
-          console.log(err)
+          console.error(err)
         })
     }
 
@@ -101,8 +100,8 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   const UpdateInfo = () => {
     GetUserInfo().then(res => {
-      setUserProfileImage(res['0'].image_url)
-      setUser(res['0'])
+      setUserProfileImage(res["0"].image_url)
+      setUser(res["0"])
     })
   }
 
@@ -112,20 +111,20 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   // RTC subscription
   const callbackFn = event => {
-    const session_user = JSON.parse(sessionStorage.getItem('user'))
+    const session_user = JSON.parse(sessionStorage.getItem("user"))
     if (
-      event.event === 'UpdateOrganizationMemberPic' ||
-      'UpdateOrganizationMemberStatus' ||
-      'UpdateOrganizationMemberProfile' ||
-      'UpdateOrganizationMemberPresence'
+      event.event === "UpdateOrganizationMemberPic" ||
+      event.event === "UpdateOrganizationMemberStatus" ||
+      event.event === "UpdateOrganizationMemberProfile" ||
+      event.event === "UpdateOrganizationMemberPresence"
     ) {
-      if (event.id === session_user['id']) {
+      if (event.id === session_user["id"]) {
         UpdateInfo()
       } else return
     } else return
   }
 
-  const currentWorkspace = localStorage.getItem('currentWorkspace')
+  const currentWorkspace = localStorage.getItem("currentWorkspace")
 
   SubscribeToChannel(currentWorkspace, callbackFn)
 
@@ -138,7 +137,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   let toggleStatus = null
 
   switch (presence) {
-    case 'true':
+    case "true":
       toggleStatus = (
         <ToggleStatus>
           <div className="user-active" />
@@ -155,15 +154,15 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   //Handle sidebar on mobile
   const sidebar = document.getElementById(
-    'single-spa-application:@zuri/sidebar'
+    "single-spa-application:@zuri/sidebar"
   )
-  const zc_spa_body = document.querySelector('body')
-  const sidebar_toggle = document.querySelector('#sidebar_toggle')
+  const zc_spa_body = document.querySelector("body")
+  const sidebar_toggle = document.querySelector("#sidebar_toggle")
   const openSidebar = () => {
-    sidebar.style.display = 'block'
-    sidebar.style.left = '0'
-    sidebar.style.width = '200px'
-    sidebar_toggle.style.display = 'none'
+    sidebar.style.display = "block"
+    sidebar.style.left = "0"
+    sidebar.style.width = "200px"
+    sidebar_toggle.style.display = "none"
   }
 
   // zc_spa_body.addEventListener('click', () => {
@@ -182,7 +181,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   return (
     <>
-      <div className="ps-3" style={{ width: '20%' }}>
+      <div className="ps-3" style={{ width: "20%" }}>
         {/* <a href="/home"> */}
         <Logo src={zurichatlogo} alt="zuri chat logo" />
         {/* </a> */}
@@ -191,19 +190,19 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           id="sidebar_toggle"
           className={toggleStyle.sidebar_toggle_icon}
           style={{
-            top: '7rem'
+            top: "7rem"
           }}
         >
           <BsReverseLayoutTextSidebarReverse
             style={{
-              margin: '0.6rem 0.6rem'
+              margin: "0.6rem 0.6rem"
             }}
             size={18}
             fill="#fff"
           />
         </div>
       </div>
-      <div className="ms-4" style={{ width: '60%' }}>
+      <div className="ms-4" style={{ width: "60%" }}>
         <BaseInput
           value={search}
           onChange={e => setSearch(e.target.value)}
@@ -211,12 +210,12 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           width={12}
           error
           placeholder="Search here"
-          border={'#99999933'}
+          border={"#99999933"}
         />
       </div>
       <ProfileImageContainer
         className="d-flex justify-content-end pe-3"
-        style={{ width: '20%' }}
+        style={{ width: "20%" }}
       >
         {toggleStatus}
         <ProfileImg
@@ -260,8 +259,8 @@ const Logo = styled.img`
 `
 const ProfileImg = styled.img`
   border-radius: 4px;
-  width: 32px;
-  height: 32px;
+  width: 45px;
+  height: 45px;
   object-fit: cover;
 
   @media (max-width: 1024px) {

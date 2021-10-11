@@ -18,8 +18,9 @@
   background: #404f4a80;
 }
 .modalcontainer {
-  height: 308px;
-  width: 583px;
+  height: 320px;
+  max-width: 583px;
+  width: 80%;
   border-radius: 0px;
   border: 1px solid #bebebe;
   background: white;
@@ -39,6 +40,7 @@
   margin-bottom: 54.6px;
   height: 49px;
   padding-right: 25px;
+  padding-top: 10px;
 }
 .statustop p {
   font-family: 'Lato', sans-serif;
@@ -53,12 +55,14 @@
 }
 .modalcontent {
   margin: 0 auto;
-  width: 534.25px;
+  padding: 0 20px;
+  /* width: 534.25px; */
 }
 .addstatus {
   display: flex;
   justify-content: space-between;
-  width: 534.25px;
+  width: 100%;
+  align-items: center;
   height: 39px;
   margin-bottom: 21.4px;
   border: 1px solid #bebebe;
@@ -66,6 +70,7 @@
 }
 .addstatusleft {
   display: flex;
+  width: 70%;
 }
 .emoji {
   display: flex;
@@ -78,7 +83,7 @@
 .input {
   /* margin-bottom: 21.4px; */
   /* height: 39px; */
-  width: 350px;
+  width: 80%;
   border: none;
   font-size: 16px;
 }
@@ -131,7 +136,6 @@
 }
 .dropdownoption {
   height: 32.35px;
-  color: black;
   font-family: 'lato', sans-serif;
   display: flex;
   padding-left: 34.5px;
@@ -147,7 +151,6 @@
 }
 .dropdownoption2 {
   height: 32.35px;
-  color: black;
   font-family: 'lato', sans-serif;
   display: flex;
   padding-left: 34.5px;
@@ -175,11 +178,11 @@
   cursor: pointer;
 }
 .statuscta {
-  margin-bottom: 33px;
+  margin-top: 20px;
   height: 48px;
-  width: 125px;
   border-radius: 3px;
   padding: 12px 18px;
+  margin-right: 10px;
   border: none;
   background: #00b87c;
   color: white;
@@ -191,6 +194,8 @@
   line-height: 24px;
   letter-spacing: 0em;
   text-align: center;
+  display: flex;
+  align-items: center;
 }
 .dateSection {
   justify-content: left;

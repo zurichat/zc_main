@@ -3,6 +3,9 @@
     "browser": true,
     "es2021": true
   },
+  "globals": {
+    "process": true
+  },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
@@ -24,9 +27,10 @@
     // "quotes": ["error", "double"],
     // "semi": ["error", "always"]
     "react/react-in-jsx-scope": [0, "off"],
+    "react/display-name": ["off"],
     "react/prop-types": [0, "off"],
     "react/no-unescaped-entities": ["off"],
-    "no-console": ["warn"]
+    "no-console": ["error", { "allow": ["warn", "error"] }]
   },
   "settings": {
     "react": {

@@ -1,21 +1,27 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap'); */
 
 .sb__container {
-  font-family: Lato;
+  font: "Lato", sans-serif;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
+  background-color: #fff;
   padding-block-end: 3em;
   height: 100%;
   width: unset;
   font-size: 16px;
+
   /* display: flex;
   flex-direction: column; */
+
   /* overflow: auto; */
+
   /* width: 100%; */
+
   /* overflow-y: scroll; */
+
   /* padding-top: 4.3rem; */
 }
-/* 
+
+/*
 .row {
 } */
 
@@ -30,6 +36,7 @@
 .subCon2::-webkit-scrollbar {
   display: none;
 }
+
 .orgDiv {
   width: inherit;
   height: 44px;
@@ -45,32 +52,45 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: auto 0;
 }
 
 .orgTitle {
   font-weight: bold;
   font-size: 1.125em;
   line-height: 28px;
+  width: auto;
+  padding-right: 8px;
+  line-height: 1.2em;
 }
 
 .orgHeader {
   cursor: pointer;
+  display: flex;
+  width: -webkit-fill-available;
 }
 
 .arrowDown {
-  width: 2.5em;
+  width: fit-content;
+  position: relative;
+  top: 0.2em;
+  width: 1em;
+  color: #fff;
 }
 
 .sb__item {
   margin-bottom: 0.25em;
   margin-top: 0.1em;
+
   /* margin: 0.5em 0; */
 }
+
 .sb__item:hover {
-  background-color: #999999;
+  background-color: #f1fffa;
 }
+
 .sb__item::selection {
-  background-color: rosybrown;
+  background-color: #f1fffa;
 }
 
 .sb__col {
@@ -100,21 +120,31 @@
 } */
 
 /* .newMessage { */
+
 /* border-radius: 50%; */
+
 /* width: auto; */
+
 /* background-color: #ffffff; */
+
 /* align-self: center; */
+
 /* margin-left: 6.6875em;
   margin-right: 1.25em; */
+
 /* display: flex;
   align-items: center;
   justify-content: center; */
+
 /* } */
 
 /* .newMsgIcon { */
+
 /* height: 100%;
   width: 4em; */
+
 /* z-index: 100; */
+
 /* } */
 
 /* .container ul {
@@ -169,6 +199,7 @@
   /* height: 3.125em; *
   height: 7vh;
   /* display: flex; */
+
 /* flex-direction: row; *
 } */
 
@@ -209,12 +240,12 @@
 }
 
 .channelHeader p {
-  font-family: Lato;
+  font: "Lato", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
   line-height: 18px;
-  color: #999999;
+  color: #999;
 }
 
 .channelDropdownIcon {
@@ -228,18 +259,19 @@
 
 .channelNames {
   margin-left: 3.5em;
-  font-family: Lato;
+  font: "Lato", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 15px;
   line-height: 18px;
-  color: #999999;
+  color: #999;
 }
 
 .channelNames p > span {
   margin-right: 0.5em;
 }
 
+/*
 .messagesContainer {
   margin-top: 0.5em;
 }
@@ -253,14 +285,15 @@
 }
 
 .messageHeader p {
-  font-family: Lato;
+   font: "Lato", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
   line-height: 18px;
   color: #999999;
-}
+} */
 
+/*
 .messageDropdownIcon {
   margin: 1em 1em 1em 0;
 }
@@ -272,17 +305,18 @@
 
 .messageNames {
   margin-left: 3.5em;
-  font-family: Lato;
+  font: "Lato", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 15px;
   line-height: 18px;
   color: #999999;
-}
+} */
 
+/*
 .messageNames p > span {
   margin-right: 0.5em;
-}
+} */
 
 .messagesContainer {
   margin-top: 0.5em;
@@ -297,12 +331,12 @@
 }
 
 .messageHeader p {
-  font-family: Lato;
+  font: "Lato", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
   line-height: 18px;
-  color: #999999;
+  color: #999;
 }
 
 .messageDropdownIcon {
@@ -316,12 +350,12 @@
 
 .messageNames {
   margin-left: 2.5em;
-  font-family: Lato;
+  font: "Lato", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
   line-height: 18px;
-  color: #999999;
+  color: #999;
 }
 
 .messageNames p {
