@@ -184,10 +184,10 @@ const TopbarModal = ({ members }) => {
               {userPresence}
             </p>
             {/* <div className={styles.pause}>
-              <p onClick={() => setPause(!pause)}>Pause Notifications</p>
-              <FaChevronRight className={styles.chevron} />
-            </div>
-            {pause && <PauseNotification pause={pause} setPause={setPause} />} */}
+               <p onClick={() => setPause(!pause)}>Pause Notifications</p>
+               <FaChevronRight className={styles.chevron} />
+              </div>
+            {pause && <PauseNotification pause={pause} setPause={setPause} />}*/}
           </div>
 
           <hr className={styles.hr} />
