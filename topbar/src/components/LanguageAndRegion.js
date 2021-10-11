@@ -77,7 +77,6 @@ const LanguageAndRegion = () => {
             </p>
           </div>
           {/* Spellcheck setting removed from here*/}
-          
         </form>
       </div>
     </div>
