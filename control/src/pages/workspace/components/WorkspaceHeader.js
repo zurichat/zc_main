@@ -2,17 +2,19 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import ZuriLogo from './ZuriLogo'
 import styles from '../style/workspace.module.css'
-
+import Logo from '../assets/zurichat-09.svg'
 const WorkspaceHeader = () => {
   return (
     <header className={`${styles.workspace_header}`}>
-      <section className={`${styles.page_header}`}>
-        <ZuriLogo />
-        <div>
-          <h1>Choose a workspace</h1>
-          <p>Welcome back! Pick one to get back to working with your team</p>
-        </div>
-      </section>
+      <div style={{marginBottom:'10px'}} className="ZuriLogo">
+        <img src={Logo} alt="Zuri Logo" />
+      </div>
+      <div className='ChooseWorkspaceHeaderDiv1'>
+        <h1 style={{fontSize:'28px'}}>Choose a workspace</h1>
+      </div>
+      <div className='ChooseWorkspaceHeaderDiv2'>
+        <p style={{fontSize:'15px'}}>Welcome back! Pick one to get back to working with your team</p>
+      </div>
     </header>
   )
 }
