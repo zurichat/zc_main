@@ -19,14 +19,14 @@ const PreferenceMenu = () => {
           <AiOutlineBell className={styles.icon} />
           <p>Notifications</p>
         </div>
-
+        {/* 
         <div
           onClick={() => setSideBar(2)}
           className={sideBar === 2 ? styles.active : styles.one}
         >
           <BsLayoutSidebar className={styles.icon} />
           <p>Sidebar</p>
-        </div>
+        </div> */}
 
         <div
           onClick={() => setSideBar(3)}
