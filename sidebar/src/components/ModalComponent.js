@@ -50,7 +50,7 @@ const ModalComponent = ({  workSpace, isOpen, toggleOpenInvite }) => {
           <span>{workSpace.workspace_url}</span>
         </div>
       </div>
-      <hr className={styles.modalDivider} />
+      {/* <hr className={styles.modalDivider} />
       <div
         className={`d-flex align-items-center justify-content-between ${styles.TopmodalSection}`}
       >
@@ -60,11 +60,11 @@ const ModalComponent = ({  workSpace, isOpen, toggleOpenInvite }) => {
             The workspace is currently on the free version of Zuri Chat.
           </p>
           <span> see plans</span>
-        </div>
+        </div> 
         <div className={`${styles.infoChart}`}>
           <img src={TotalMessages} alt="chart" />
         </div>
-      </div>
+      </div> */}
       <hr className={styles.modalDivider} />
       <div className={` d-flex flex-column ${styles.modalSection}`}>
         <div>
