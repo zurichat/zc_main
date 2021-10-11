@@ -49,7 +49,7 @@ const HeaderSearchSuggestion = () => {
         id="navbarText"
       >
         <ul
-          className={`navbar-nav d-flex justify-content-between align-items-start align-items-lg-center ${headerStyles.navbarNav}`}
+          className={`navbar-nav d-flex justify-content-between align-items-start align-items-md-center ${headerStyles.navbarNav}`}
         >
           <li className="nav-item">
             <Link
@@ -68,6 +68,14 @@ const HeaderSearchSuggestion = () => {
               aria-expanded="false"
             >
               <span className={`${headerStyles.item}`}>About</span>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/plugins"
+              className={`nav-link ${headerStyles.navLinkComms}`}
+            >
+              <span className={`${headerStyles.item}`}>Plugins</span>
             </Link>
           </li>
           <li className="nav-item">
