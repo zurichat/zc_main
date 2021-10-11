@@ -211,21 +211,6 @@ const EditProfile = () => {
                     uses your exact name, you should change it!
                   </p>
                 </div>
-                <div className="input-group">
-                  <label htmlFor="pronouns" className="inputLabel">
-                    Pronouns
-                  </label>
-                  <select
-                    name="pronouns"
-                    defaultValue={state.pronouns}
-                    onClick={e => setState({ pronouns: e.target.value })}
-                    className="select"
-                    id="pronouns"
-                  >
-                    <option value="He/him">He/him</option>
-                    <option value="She/her">She/her</option>
-                  </select>
-                </div>
               </div>
 
               <div className="input-group mb-0">
