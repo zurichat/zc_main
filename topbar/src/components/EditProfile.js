@@ -181,7 +181,7 @@ const EditProfile = () => {
                 </div>
                 <div className="input-group mal-4">
                   <label htmlFor="name" className="inputLabel">
-                    First Name
+                    Full Name
                   </label>
                   <input
                     type="text"
@@ -317,7 +317,7 @@ const EditProfile = () => {
                 />
               </div>
               <div className="input-group">
-                <label className="inputLabel">
+                {/* <label className="inputLabel">
                   Additional Links <span>(5 max)</span>
                 </label>
                 {links?.map((list, index) => (
@@ -328,7 +328,7 @@ const EditProfile = () => {
                   <p className="warning" onClick={addList}>
                     Add new link
                   </p>
-                )}
+                )} */}
               </div>
             </div>
             <div className="img-container">
@@ -383,7 +383,7 @@ const EditProfile = () => {
 
           <div onClick={handleFormSubmit} className="mobileButton">
             {state.loading ? (
-              <Loader type="ThreeDots" color="#00B87C" height={24} width={24} />
+              <Loader type="ThreeDots" color="#00B87C" height={24} width={24} /> && toggleModalState()
             ) : (
               "Save"
             )}
@@ -394,7 +394,7 @@ const EditProfile = () => {
             </button>
             <button onClick={handleFormSubmit} className="btns saveBtn">
               {state.loading ? (
-                <Loader type="ThreeDots" color="#fff" height={40} width={40} />
+                <Loader type="ThreeDots" color="#fff" height={40} width={40} /> && toggleModalState()
               ) : (
                 "Save Changes"
               )}
