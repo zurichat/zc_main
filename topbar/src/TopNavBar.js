@@ -18,8 +18,12 @@ import { GetUserInfo, SubscribeToChannel } from "@zuri/control"
 import axios from "axios"
 import toggleStyle from "./styles/sidebartoggle.module.css"
 import { BsReverseLayoutTextSidebarReverse } from "react-icons/bs"
+import { useHistory } from "react-router-dom";
+// import { Redirect } from "react-router";
 
-const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
+const TopNavBar = (props) => {
+
+  const { userProfile: { last_name, first_name } } = props;
   const { closeModal, openModal, presence, setPresence } =
     useContext(TopbarContext)
   const { setUser, user, userProfileImage, setOrgId, setUserProfileImage } =
@@ -178,6 +182,17 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   //     }
   //   }
   // })
+  const handleEnter=(e)=>{
+    if (e.key ==='Enter'){
+      const history = useHistory();
+      // eslint-disable-next-line no-console
+      console.log(history)
+      // return <Redirect to='/' />
+      // window.location.replace("http://localhost:9000/search");
+    }
+
+  }
+
 
   return (
     <>
@@ -211,8 +226,10 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           error
           placeholder="Search here"
           border={"#99999933"}
+          onKeyDown={handleEnter}
         />
       </div>
+      
       <ProfileImageContainer
         className="d-flex justify-content-end pe-3"
         style={{ width: "20%" }}
