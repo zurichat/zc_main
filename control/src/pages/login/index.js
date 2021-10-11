@@ -61,7 +61,7 @@ const Login = () => {
       })
       .then(response => {
         const { data, message } = response.data
-
+        
         //Store token in localstorage
         sessionStorage.setItem("token", data.user.token)
 
@@ -73,8 +73,9 @@ const Login = () => {
 
         //Return the login data globally
         $behaviorSubject.next(response.data)
-
         setLoading(true)
+        setTimeout( ()=>history.push("/choose-workspace") , 7000);
+        
 
     })
       .catch(error => {
@@ -93,50 +94,53 @@ const Login = () => {
         //Render error message to the user
         seterror(data.message) //Change this when there is a design
       })
+
+      
   }
 
   // Switch to appropraite screen
-  const getOrganizations = async user => {
-    try {
-      const res = await axios.get(
-        `https://api.zuri.chat/users/${user.email}/organizations`,
-        {
-          headers: {
-            Authorization: `Bearer ${user.token}`
-          }
-        }
-      )
+  // const getOrganizations = async user => {
+  //   try {
+  //     const res = await axios.get(
+  //       `https://api.zuri.chat/users/${user.email}/organizations`,
+  //       {
+  //         headers: {
+  //           Authorization: `Bearer ${user.token}`
+  //         }
+  //       }
+  //     )
+      
 
-      if (res.status !== 200) {
-        throw new Error(
-          `Unable to fetch list of wokspaces, status code: ${res.status}`
-        )
-      }
+  //     if (res.status !== 200) {
+  //       throw new Error(
+  //         `Unable to fetch list of wokspaces, status code: ${res.status}`
+  //       )
+  //     }
 
-      const orgs = await res.data.data.length
+  //     const orgs = await res.data.data.length
 
-      switch (true) {
-        case orgs === 1:
-          goToDefaultChannel()
-          // setLoading(false)
-          break
-        case orgs > 1:
-          history.push("/choose-workspace")
-          // setLoading(false)
-          break
-        case orgs < 1:
-          history.push("/createworkspace")
-          // setLoading(false)
-          break
-        // default:
-        //   goToDefaultChannel()
-        //   break
-      }
-    } catch (err) {
-      console.error(err)
-      setLoading(false)
-    }
-  }
+  //     switch (true) {
+  //       case orgs === 1:
+  //         goToDefaultChannel()
+  //         // setLoading(false)
+  //         break
+  //       case orgs > 1:
+  //         history.push("/choose-workspace")
+  //         // setLoading(false)
+  //         break
+  //       case orgs < 1:
+  //         history.push("/createworkspace")
+  //         // setLoading(false)
+  //         break
+  //       // default:
+  //       //   goToDefaultChannel()
+  //       //   break
+  //     }
+  //   } catch (err) {
+  //     console.error(err)
+  //     setLoading(false)
+  //   }
+  // }
 
   return (
     <main id={styles.authPageWrapper}>
