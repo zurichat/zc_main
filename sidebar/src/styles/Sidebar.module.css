@@ -267,7 +267,7 @@
   color: #999;
 }
 
-.channelNames p>span {
+.channelNames p > span {
   margin-right: 0.5em;
 }
 
@@ -364,7 +364,7 @@
   align-items: center;
 }
 
-.messageNames p>span {
+.messageNames p > span {
   margin-right: 0.5em;
 }
 
