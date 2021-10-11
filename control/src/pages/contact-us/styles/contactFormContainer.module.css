@@ -1,7 +1,8 @@
 .contact_form_container {
   box-sizing: border-box;
   color: #1d1c1d;
-  _margin-top: 30px;
+
+  /* margin-top: 30px; */
   padding: 25px 30px 25px;
   background: #fff;
 }
