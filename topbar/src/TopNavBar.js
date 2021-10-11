@@ -19,6 +19,8 @@ import axios from "axios"
 import toggleStyle from "./styles/sidebartoggle.module.css"
 import { BsReverseLayoutTextSidebarReverse } from "react-icons/bs"
 
+import SearchAutocomplete from "./components/SearchAutocomplete"
+
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { closeModal, openModal, presence, setPresence } =
     useContext(TopbarContext)
@@ -179,6 +181,45 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   //   }
   // })
 
+  // Search autocomplete
+
+  const [inputValue, setInputValue] = useState("")
+  const [filteredSuggestions, setFilteredSuggestions] = useState([])
+  const [selectedSuggestion, setSelectedSuggestion] = useState(0)
+  const [displaySuggestions, setDisplaySuggestions] = useState(false)
+
+  const suggestions = [
+    "Zuri Workspace",
+    "Squid Game",
+    "American Gods",
+    "A Game of Thrones",
+    "Prince of Thorns",
+    "Stephen Gbolagade",
+    "The Hero of Ages",
+    "Mark Essien"
+  ]
+
+  const onChange = event => {
+    const value = event.target.value
+    setInputValue(value)
+
+    const filteredSuggestions = suggestions.filter(suggestion =>
+      suggestion.toLowerCase().includes(value.toLowerCase())
+    )
+
+    setFilteredSuggestions(filteredSuggestions)
+    setDisplaySuggestions(true)
+  }
+
+  const onSelectSuggestion = index => {
+    setSelectedSuggestion(index)
+    setInputValue(filteredSuggestions[index])
+    setFilteredSuggestions([])
+    setDisplaySuggestions(false)
+  }
+
+  // end search
+
   return (
     <>
       <div className="ps-3" style={{ width: "20%" }}>
@@ -204,13 +245,21 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       </div>
       <div className="ms-4" style={{ width: "60%" }}>
         <BaseInput
-          value={search}
-          onChange={e => setSearch(e.target.value)}
+          style={{ zIndex: "1000" }}
+          onChange={onChange}
+          value={inputValue}
           type="text"
           width={12}
           error
-          placeholder="Search here"
+          placeholder="Search here for keyword"
           border={"#99999933"}
+        />
+        <SearchAutocomplete
+          inputValue={inputValue}
+          selectedSuggestion={selectedSuggestion}
+          onSelectSuggestion={onSelectSuggestion}
+          displaySuggestions={displaySuggestions}
+          suggestions={filteredSuggestions}
         />
       </div>
       <ProfileImageContainer
