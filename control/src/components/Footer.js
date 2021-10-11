@@ -54,10 +54,10 @@ const Footer = () => {
             <h5>Company</h5>
             <ul>
               <li>
-                <a href="/careers">Careers</a>{" "}
+                <Link to="/careers">Careers</Link>{" "}
               </li>
               <li>
-                <a href="/about">About Zurichat</a>{" "}
+                <Link to="/about">About Zurichat</Link>{" "}
               </li>
             </ul>
           </div>
@@ -66,10 +66,10 @@ const Footer = () => {
             <h5>Info</h5>
             <ul>
               <li>
-                <a href="/privacy">Privacy & Terms</a>{" "}
+                <Link to="/privacy">Privacy & Terms</Link>{" "}
               </li>
               <li>
-                <a href="/marketplace">Market Place</a>{" "}
+                <Link to="/marketplace">Market Place</Link>{" "}
               </li>
             </ul>
           </div>
@@ -78,7 +78,7 @@ const Footer = () => {
             <h5>Know us</h5>
             <ul>
               <li>
-                <a href="/download-app">Downloads</a>{" "}
+                <Link to="/download-app">Downloads</Link>{" "}
               </li>
               <li>
                 <Link to="/contact-us">Contact Us</Link>{" "}
