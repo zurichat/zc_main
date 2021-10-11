@@ -22,7 +22,6 @@ const EditProfile = () => {
     first_name: user.first_name,
     last_name: user.last_name,
     display_name: user.display_name,
-    pronouns: user.pronouns,
     role: user.role,
     image_url: user.image_url,
     bio: user.bio,
@@ -123,7 +122,6 @@ const EditProfile = () => {
       first_name: state.first_name,
       last_name: state.last_name,
       display_name: state.display_name,
-      pronouns: state.pronouns,
       phone: state.phone,
       bio: state.bio,
       timeZone: state.timezone
@@ -233,19 +231,6 @@ const EditProfile = () => {
                   </p>
                 </div>
                 <div className="input-group">
-                  <label htmlFor="pronouns" className="inputLabel">
-                    Pronouns
-                  </label>
-                  <select
-                    name="pronouns"
-                    defaultValue={state.pronouns}
-                    onClick={e => setState({...state, pronouns: e.target.value })}
-                    className="select"
-                    id="pronouns"
-                  >
-                    <option value="He/him">He/him</option>
-                    <option value="She/her">She/her</option>
-                  </select>
                 </div>
               </div>
 
