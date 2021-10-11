@@ -90,7 +90,11 @@ const Footer = () => {
               <h5>Social Media</h5>
               <ul>
                 <li>
-                  <a href="/facebook">
+                  <a
+                    href="https://www.facebook.com/Zuri-Chat-101278805666628"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <img
                       src={facebook}
                       alt="Facebook"
@@ -99,7 +103,11 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/instagram">
+                  <a
+                    href="https://instagram.com/zurichathq"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <img
                       src={instagram}
                       alt="Instagram"
@@ -108,7 +116,11 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="https://twitter.com/zurichat">
+                  <a
+                    href="https://twitter.com/zurichat"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <img
                       src={twitter}
                       alt="Twitter"
@@ -117,7 +129,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/linkedin">
+                  <a href="https://www.linkedin.com/company/zuri-chat/">
                     <img
                       src={linkedin}
                       alt="Linkedin"
