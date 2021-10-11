@@ -6,14 +6,7 @@
 .navbar {
   border-bottom: 1px solid rgba(187, 186, 231, 0.15);
   padding: 0.5rem 1rem;
-<<<<<<< HEAD
-  width: 105%;
-=======
-  top: 0;
-  z-index: 100;
-  position: fixed;
   width: 100%;
->>>>>>> bffa53d570c290a7384933efea609e9caf408d34
   background-color: white;
   display: flex;
   justify-content: space-around;
@@ -135,22 +128,21 @@
   margin-right: 12px;
 }
 
-<<<<<<< HEAD
 @media screen and (max-width: 992px) {
   .navContainer {
-     top: 0;
-  z-index: 100;
+    top: 0;
+    z-index: 100;
     width: 100vw;
     height: 100vh;
   }
 
-  .bg_overlay{
-background-color: rgba(11, 11, 12, 0.658);
-=======
+  .bg_overlay {
+    background-color: rgba(11, 11, 12, 0.658);
+  }
+}
 @media screen and (max-width: 1000px) {
   .navbarBrand {
     margin-right: auto !important;
->>>>>>> bffa53d570c290a7384933efea609e9caf408d34
   }
 }
 
