@@ -64,6 +64,7 @@
 
 .orgHeader {
   cursor: pointer;
+  display: flex;
 }
 
 .arrowDown {

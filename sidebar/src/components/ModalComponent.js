@@ -169,7 +169,7 @@ const ModalComponent = ({ orgs, workSpace, isOpen, toggleOpenInvite }) => {
               className={`d-flex flex-column ${styles.submodalSection}`}
             >
 
-              {/* {orgs && orgs.map((o, idx)=>(
+              {orgs && orgs.map((o, idx)=>(
 
               <div
               key={idx}
@@ -182,7 +182,7 @@ const ModalComponent = ({ orgs, workSpace, isOpen, toggleOpenInvite }) => {
               </div>
               // <hr
               //  className={styles.modalDivider} />
-              ))} */}
+              ))}
               {/* <div>
               <p>HNGi8</p>
               </div>

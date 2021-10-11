@@ -103,7 +103,7 @@ const Sidebar = props => {
   const setInviteEmails = emails => setInviteEmail(emails)
   const [sendLoading, setSendLoading] = useState(false)
 
-  const [userInfo, setUserInfo] = useState({
+  const [userInfo, setUserInfo] = useState({ 
     userId: "",
     Organizations: [],
     token: ""
