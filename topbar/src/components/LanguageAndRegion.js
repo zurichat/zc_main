@@ -60,7 +60,6 @@ const LanguageAndRegion = () => {
               <span className={styles.checkmark}></span>
               Set time zone automatically
             </label>
-
             <select
               className={styles.selectbox}
               name="time-zone"
