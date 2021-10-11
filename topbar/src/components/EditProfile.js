@@ -317,7 +317,7 @@ const EditProfile = () => {
                 />
               </div>
               <div className="input-group">
-                <label className="inputLabel">
+                {/* <label className="inputLabel">
                   Additional Links <span>(5 max)</span>
                 </label>
                 {links?.map((list, index) => (
@@ -328,7 +328,7 @@ const EditProfile = () => {
                   <p className="warning" onClick={addList}>
                     Add new link
                   </p>
-                )}
+                )} */}
               </div>
             </div>
             <div className="img-container">
