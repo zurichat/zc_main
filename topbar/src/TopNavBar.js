@@ -308,8 +308,8 @@ const Logo = styled.img`
 `
 const ProfileImg = styled.img`
   border-radius: 4px;
-  width: 32px;
-  height: 32px;
+  width: 45px;
+  height: 45px;
   object-fit: cover;
 
   @media (max-width: 1024px) {
