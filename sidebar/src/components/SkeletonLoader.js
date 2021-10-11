@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from '../styles/skeletonLoader.module.css'
+import React from "react"
+import styles from "../styles/skeletonLoader.module.css"
 
 export default function SkeletonLoader() {
   const COUNTER = 8

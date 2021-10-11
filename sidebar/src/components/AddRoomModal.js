@@ -1,9 +1,9 @@
-import { useState, useEffect, useCallback, useRef } from 'react'
-import { useFetch } from '../utils/useFetch'
+import { useState, useEffect, useCallback, useRef } from "react"
+import { useFetch } from "../utils/useFetch"
 
 export const AddRoomModal = () => {
-  const url = 'https://jsonplaceholder.typicode.com/comments'
-  const [query, setQuery] = useState('')
+  const url = "https://jsonplaceholder.typicode.com/comments"
+  const [query, setQuery] = useState("")
   const [page, setPage] = useState(1)
   const { loading, error, list } = useFetch(query, page, url)
   const loader = useRef(null)
@@ -18,7 +18,7 @@ export const AddRoomModal = () => {
   useEffect(() => {
     const option = {
       root: null,
-      rootMargin: '20px',
+      rootMargin: "20px",
       threshold: 0
     }
     const observer = new IntersectionObserver(handleObserver, option)
@@ -28,11 +28,11 @@ export const AddRoomModal = () => {
   return (
     <div
       style={{
-        position: 'fixed',
-        top: '0px',
-        height: '100vh',
-        width: '100vw',
-        background: 'rgba(0,0,0,0.2)'
+        position: "fixed",
+        top: "0px",
+        height: "100vh",
+        width: "100vw",
+        background: "rgba(0,0,0,0.2)"
       }}
     >
       <h1>Infinite Scroll</h1>

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 //if you still have eyes,complete it if not i will complete tomorrow bro
 // To be continued ....
 // const CheckMark = () => (

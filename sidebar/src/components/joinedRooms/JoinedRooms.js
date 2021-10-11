@@ -1,4 +1,4 @@
-import JoinedRoomsList from './JoinedRoomsList'
+import JoinedRoomsList from "./JoinedRoomsList"
 
 const JoinedRooms = ({ rooms }) => {
   return (
