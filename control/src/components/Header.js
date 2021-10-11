@@ -1,8 +1,8 @@
 import React from "react"
 import { Link, NavLink } from "react-router-dom"
 import headerStyles from "../component-styles/HeaderStyle.module.css"
-import zurichatlogo from "../component-assets/zurichatlogo.svg"
-import searchIcon from "../component-assets/searchIcon.svg"
+import zurichatlogo from "../component-assets/zurilogo.svg"
+// import searchIcon from "../component-assets/searchIcon.svg"
 //import { Button } from '../pages/createworkspace/components/WorkspaceHome'
 
 const HeaderSearchSuggestion = () => {
