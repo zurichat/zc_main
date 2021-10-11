@@ -22,13 +22,13 @@ const HeaderSearchSuggestion = () => {
           />
           <span className={`mb-2 ${headerStyles.zuriChat}`}>Zuri Chat</span>
         </Link>
-        <Link to="/search" className={`d-block d-lg-none ${headerStyles.search_wrapper2}`}>
+        {/*<Link to="/search" className={`d-block d-lg-none ${headerStyles.search_wrapper2}`}>
           <img
             src={searchIcon}
             alt="search-Icon"
             className={`align-top ${headerStyles.searchImage1}`}
           />
-        </Link>
+        </Link>*/}
         <button
           className={`navbar-toggler ${headerStyles.toggle}`}
           type="button"
@@ -107,13 +107,13 @@ const HeaderSearchSuggestion = () => {
               </Link>
             </li>
           </ul>
-          <Link to="/search" className={headerStyles.search_wrapper}>
+          {/*<Link to="/search" className={headerStyles.search_wrapper}>
             <img
               src={searchIcon}
               alt="search-Icon"
               className={`d-inline-block align-top ${headerStyles.searchImage}`}
             />
-          </Link>
+          </Link>*/}
         </div>
 
         <ul

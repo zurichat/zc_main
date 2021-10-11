@@ -28,7 +28,7 @@
   z-index: 1;
 }
 
-.navLinkFeatures {
+/* .navLinkFeatures {
   _margin-right: 30px;
 }
 
@@ -38,7 +38,7 @@
 
 .navLinkComms {
   _margin-right: 30px;
-}
+} */
 
 .image {
   margin: auto;
@@ -48,9 +48,9 @@
   position: relative;
 }
 
-.navbarBrand {
+/* .navbarBrand {
   _padding-left: 55px;
-}
+} */
 
 .navbarBrand span {
   padding: 0.5rem;
@@ -58,9 +58,9 @@
   margin: 0 !important;
 }
 
-.signs {
+/* .signs {
   _padding-right: 6rem;
-}
+} */
 
 .signs li {
   padding: 8px 20px;
@@ -70,7 +70,8 @@
   color: #00b87c;
   font-weight: 400;
   font-size: 18px;
-  _padding: 8px 10px;
+
+  /* _padding: 8px 10px; */
 }
 
 .signU:hover {
@@ -95,7 +96,8 @@
   color: black;
   font-size: 18px;
   font-weight: 400;
-  _padding: 8px 5px;
+
+  /* padding: 8px 5px; */
 }
 
 .navbarNav {
@@ -106,9 +108,9 @@
   border-bottom: 0.2rem solid #00b87c;
 }
 
-.toggle {
+/* .toggle {
   _margin-right: 12px;
-}
+} */
 
 @media only screen and (max-width: 1200px) {
   .navbarNav {
@@ -162,9 +164,9 @@
     padding-left: 0;
   }
 
-  .toggle {
+  /* .toggle {
     _margin-right: 30px;
-  }
+  } */
 
   .search_wrapper2 {
     margin-right: -10%;
