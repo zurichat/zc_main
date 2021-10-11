@@ -4,18 +4,48 @@ import pdf from '../assets/download_images/file-earmark-pdf.svg'
 import open from '../assets/download_images/file-open.svg'
 import close from '../assets/download_images/file-close.svg'
 import pointy from '../assets/download_images/pointy.svg'
+import ios from '../assets/download_images/apple.svg'
+import windows from '../assets/download_images/windows.svg'
+import mac from '../assets/download_images/apple.svg'
+import android from '../assets/download_images/android.svg'
 
 const Downloads = ({ setModal }) => {
   //State For testing
   const [files] = useState([
     {
       name: 'HNG Design Rules Book.pdf',
-      size: '5MB PDF'
+      size: '5MB PDF',
+      src: pdf
     },
     {
       name: 'HNG Entrepreneurship - Assignment 1.pdf',
-      size: '205KB PDF'
-    }
+      size: '205KB PDF',
+      src: pdf
+    },
+    {
+      name: 'Windows App',
+      size: '',
+      src: windows,
+      link: 'https://drive.google.com/file/d/1Wl4hYeHP1e1eogd6LYdt2Kohrkr9C1dg/view?usp=sharing'
+    },
+    {
+      name: 'macOS App',
+      size: '',
+      src: mac,
+      link: 'https://drive.google.com/file/d/1Wl4hYeHP1e1eogd6LYdt2Kohrkr9C1dg/view?usp=sharing'
+    },
+    {
+      name: 'iOS App',
+      size: '',
+      src: ios,
+      link: 'https://drive.google.com/file/d/1Wl4hYeHP1e1eogd6LYdt2Kohrkr9C1dg/view?usp=sharing'
+    },
+    {
+      name: 'Android App',
+      size: '',
+      src: android,
+      link: 'https://drive.google.com/file/d/1Wl4hYeHP1e1eogd6LYdt2Kohrkr9C1dg/view?usp=sharing'
+    },
   ])
   return (
     <>
@@ -108,14 +138,15 @@ const Downloads = ({ setModal }) => {
                       aria-label="Click to open file"
                       className={styles.filesLink}
                     >
-                      <img src={pdf} alt="" />
+                      <img src={file.src} alt="" />
                       <div className={styles.filesDetails}>
                         <h6 className={styles.heading}>{file.name}</h6>
-                        <p
+                        <a
                           data-text={file.size}
                           aria-label={file.size}
                           className={styles.content}
-                        ></p>
+                          href={file.link}
+                        ></a>
                       </div>
                     </button>
                     <div className={styles.more}>
