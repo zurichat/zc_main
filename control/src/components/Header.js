@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import React, { useEffect, useRef } from "react"
 import { Link } from "react-router-dom"
 import headerStyles from "../component-styles/HeaderStyle.module.css"
 import zurichatlogo from "../component-assets/zurichatlogo.svg"
