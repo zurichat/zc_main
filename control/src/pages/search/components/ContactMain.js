@@ -7,10 +7,9 @@ const contactTitle = () => {
   return (
     <div>
       <div className={`${contactStyle.contactHead} mt-5 mt-lg-3`}>
-        <h1>Contact Us</h1>
+        <h1>Search</h1>
         <p>
-          We are dedicated to making your online communication experience with
-          us a pleasure We’d like to hear from you.
+         Search for anything you want on ZuriChat  
         </p>
       </div>
 
