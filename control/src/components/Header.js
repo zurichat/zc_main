@@ -1,4 +1,5 @@
 import React from "react"
+import { useEffect, useRef } from "react"
 import { Link } from "react-router-dom"
 import headerStyles from "../component-styles/HeaderStyle.module.css"
 import zurichatlogo from "../component-assets/zurichatlogo.svg"
@@ -6,129 +7,166 @@ import searchIcon from "../component-assets/searchIcon.svg"
 //import { Button } from '../pages/createworkspace/components/WorkspaceHome'
 
 const HeaderSearchSuggestion = () => {
+  const ref = useRef()
+  const toggleBgOverlay = () => {
+    document
+      .querySelector(`.${headerStyles.navContainer}`)
+      .classList.toggle(headerStyles.bg_overlay)
+  }
+
+  useEffect(() => {
+    const checkIfClickedOutside = e => {
+      const element = document.getElementById("navbarText")
+
+      if (
+        ref.current &&
+        !ref.current.contains(e.target) &&
+        element.classList.contains("show")
+      ) {
+        element.classList.remove("show")
+        toggleBgOverlay()
+      }
+    }
+
+    document.addEventListener("mousedown", checkIfClickedOutside)
+
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener("mousedown", checkIfClickedOutside)
+    }
+  }, [])
+
+
   return (
-    <nav
-      className={`navbar navbar-expand-lg navbar-light ${headerStyles.navbar}`}
-    >
-      <Link
-        to="/"
-        className={`navbar-brand me-0 me-md-2 d-flex align-items-center ${headerStyles.navbarBrand}`}
+    <div className={headerStyles.navContainer}>
+      <nav
+        className={`navbar navbar-expand-lg navbar-light ${headerStyles.navbar}`}
+        ref={ref}
       >
-        <img
-          src={zurichatlogo}
-          alt="zuri-logo"
-          className={`d-inline-block align-top ${headerStyles.image}`}
-        />
-        <span className={`mb-2 ${headerStyles.zuriChat}`}>Zuri Chat</span>
-      </Link>
-      {/*  <Link to="/search">
-        <img
-          src={searchIcon}
-          alt="search-Icon"
-          className={`d-block d-sm-none align-top ${headerStyles.searchImage1}`}
-        />
-      </Link> */}
-      <button
-        className={`navbar-toggler ${headerStyles.toggle}`}
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarText"
-        aria-controls="navbarText"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className={headerStyles.navbar_toggle_icon}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-      </button>
-
-      <div
-        className={`collapse px-3 justify-content-center navbar-collapse ${headerStyles.collapse}`}
-        id="navbarText"
-      >
-        <ul
-          className={`navbar-nav d-flex justify-content-between align-items-start align-items-lg-center ${headerStyles.navbarNav}`}
+        <Link
+          to="/"
+          className={`navbar-brand me-0 me-md-2 d-flex align-items-center ${headerStyles.navbarBrand}`}
         >
-          <li className="nav-item">
-            <Link
-              to="/pricing"
-              className={`nav-link ${headerStyles.navLinkFeatures}`}
-              aria-current="page"
-            >
-              <span className={`${headerStyles.item}`}>Pricing</span>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/about"
-              className={`nav-link ${headerStyles.navLinkPricing}`}
-              role="button"
-              aria-expanded="false"
-            >
-              <span className={`${headerStyles.item}`}>About</span>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/downloads"
-              className={`nav-link ${headerStyles.navLinkComms}`}
-            >
-              <span className={`${headerStyles.item}`}>Downloads</span>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/contact-us"
-              className="nav-link"
-              role="button"
-              aria-expanded="false"
-            >
-              <span className={`${headerStyles.item}`}>Contact</span>
-            </Link>
-          </li>
-        </ul>
-
-        <ul className={`d-lg-none navbar-nav-scroll ${headerStyles.signs}`}>
-          <li className="nav-item">
-            <Link to="/signup" className={`btn ${headerStyles.signU} nav-link`}>
-              <span>Sign Up</span>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/login"
-              className={`btn ${headerStyles.signIn} nav-link`}
-              role="button"
-            >
-              <span className="signin">Login</span>
-            </Link>
-          </li>
-        </ul>
-        {/*  <Link to="/search">
+          <img
+            src={zurichatlogo}
+            alt="zuri-logo"
+            className={`d-inline-block align-top ${headerStyles.image}`}
+          />
+          <span className={`mb-2 ${headerStyles.zuriChat}`}>Zuri Chat</span>
+        </Link>
+        <Link to="/search">
           <img
             src={searchIcon}
             alt="search-Icon"
-            className={`d-inline-block align-top ${headerStyles.searchImage}`}
+            className={`d-block d-sm-none align-top ${headerStyles.searchImage1}`}
           />
-        </Link> */}
-      </div>
-      <ul
-        className={`navbar-nav d-none d-lg-flex me-auto my-2 my-lg-0 navbar-nav-scroll ${headerStyles.signs}`}
-      >
-        <li className="nav-item">
-          <Link to="/signup">
-            <span className={`${headerStyles.signU}`}>Sign Up</span>
+        </Link>
+        <button
+          className={`navbar-toggler ${headerStyles.toggle}`}
+          onClick={toggleBgOverlay}
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className={headerStyles.navbar_toggle_icon}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+
+        <div
+          className={`collapse px-3 justify-content-center navbar-collapse ${headerStyles.collapse}`}
+          id="navbarText"
+        >
+          <ul
+            className={`navbar-nav d-flex justify-content-between align-items-start align-items-lg-center ${headerStyles.navbarNav}`}
+          >
+            <li className="nav-item">
+              <Link
+                to="/pricing"
+                className={`nav-link ${headerStyles.navLinkFeatures}`}
+                aria-current="page"
+              >
+                <span className={`${headerStyles.item}`}>Pricing</span>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/about"
+                className={`nav-link ${headerStyles.navLinkPricing}`}
+                role="button"
+                aria-expanded="false"
+              >
+                <span className={`${headerStyles.item}`}>About Zurichat</span>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/downloads"
+                className={`nav-link ${headerStyles.navLinkComms}`}
+              >
+                <span className={`${headerStyles.item}`}>Downloads</span>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/contact-us"
+                className="nav-link"
+                role="button"
+                aria-expanded="false"
+              >
+                <span className={`${headerStyles.item}`}>Contact Us</span>
+              </Link>
+            </li>
+          </ul>
+
+          <ul className={`d-lg-none navbar-nav-scroll ${headerStyles.signs}`}>
+            <li className="nav-item">
+              <Link
+                to="/signup"
+                className={`btn ${headerStyles.signU} nav-link`}
+              >
+                <span>Sign Up</span>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/login"
+                className={`btn ${headerStyles.signIn} nav-link`}
+                role="button"
+              >
+                <span className="signin">Login</span>
+              </Link>
+            </li>
+          </ul>
+          <Link to="/search">
+            <img
+              src={searchIcon}
+              alt="search-Icon"
+              className={`d-inline-block align-top ${headerStyles.searchImage}`}
+            />
           </Link>
-        </li>
-        <li className="nav-item">
-          <Link to="/login">
-            <span className={`${headerStyles.signIn}`}>Login</span>
-          </Link>
-        </li>
-      </ul>
-    </nav>
+        </div>
+        <ul
+          className={`navbar-nav d-none d-lg-flex me-auto my-2 my-lg-0 navbar-nav-scroll ${headerStyles.signs}`}
+        >
+          <li className="nav-item">
+            <Link to="/signup">
+              <span className={`${headerStyles.signU}`}>Sign Up</span>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/login">
+              <span className={`${headerStyles.signIn}`}>Login</span>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
   )
 }
 export default HeaderSearchSuggestion
