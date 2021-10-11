@@ -105,7 +105,7 @@ const Profile = () => {
           </h3>
 
           <p className={styles.myp}>{user.bio ? user.bio : "What you do"}</p>
-          <small>{user.pronouns ? user.pronouns : "His/Her"}</small>
+          <small>{"His/Her"}</small>
         </div>
 
         <div className={styles.buttonGroupsMobile}>
