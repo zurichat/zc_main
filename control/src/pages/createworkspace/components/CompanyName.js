@@ -37,6 +37,9 @@ function CompanyName({ input }) {
         localStorage.clear("newUserEmail")
         setOrgId(res.data.data.organization_id)
 
+        // Used on the LaunchPage
+        localStorage.setItem("org-name", orgName)
+
         // Automatic Org Name Renaming From Default to new Org Name
         setTimeout(() => {
           axios.patch(

@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react'
-import LaunchPageCSS from '../styles/LaunchPage.module.css'
-import { Helmet } from 'react-helmet'
+import React, { useState, useEffect } from "react"
+import LaunchPageCSS from "../styles/LaunchPage.module.css"
+import { Helmet } from "react-helmet"
 
 function LaunchPage() {
   const [user, setUser] = useState(null)
   const [projectname, setProjectname] = useState(
-    localStorage.getItem('input') || 'alpha'
+    localStorage.getItem("org-name") || "alpha"
   )
   useEffect(() => {
-    const user = JSON.parse(sessionStorage.getItem('user'))
+    const user = JSON.parse(sessionStorage.getItem("user"))
     if (user) {
       setUser(user)
     }
@@ -20,7 +20,7 @@ function LaunchPage() {
       </Helmet>
       <article className={LaunchPageCSS.wrapper}>
         <div className={LaunchPageCSS.email}>
-          {' '}
+          {" "}
           {user ? <span>Signed in as {user.email}</span> : null}
         </div>
         <div className={LaunchPageCSS.centerWrapper}>
@@ -42,7 +42,7 @@ function LaunchPage() {
             Open Zuri Chat App
           </a>
           <p>
-            Don't have the app ? You can also{' '}
+            Don't have the app ? You can also{" "}
             <a href="/home" className={LaunchPageCSS.inBrowser}>
               use Zuri Chat in your browser
             </a>
