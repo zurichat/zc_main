@@ -368,7 +368,7 @@ const EditProfile = () => {
 
           <div onClick={handleFormSubmit} className="mobileButton">
             {state.loading ? (
-              <Loader type="ThreeDots" color="#00B87C" height={24} width={24} />
+              <Loader type="ThreeDots" color="#00B87C" height={24} width={24} /> && toggleModalState()
             ) : (
               "Save"
             )}
@@ -379,7 +379,7 @@ const EditProfile = () => {
             </button>
             <button onClick={handleFormSubmit} className="btns saveBtn">
               {state.loading ? (
-                <Loader type="ThreeDots" color="#fff" height={40} width={40} />
+                <Loader type="ThreeDots" color="#fff" height={40} width={40} /> && toggleModalState()
               ) : (
                 "Save Changes"
               )}
