@@ -228,7 +228,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           error
           placeholder="Search here"
           border={"#99999933"}
-          onKeyDown={handleEnter}
+          onSubmit={handleEnter}
         />
       </div>
       <ProfileImageContainer
@@ -277,8 +277,8 @@ const Logo = styled.img`
 `
 const ProfileImg = styled.img`
   border-radius: 4px;
-  width: 32px;
-  height: 32px;
+  width: 45px;
+  height: 45px;
   object-fit: cover;
 
   @media (max-width: 1024px) {
