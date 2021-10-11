@@ -62,7 +62,6 @@ const LanguageAndRegion = () => {
               Set time zone automatically
             </label>
 
-
             <select
               className={styles.selectbox}
               name="time-zone"
@@ -77,12 +76,12 @@ const LanguageAndRegion = () => {
               emails, for times in your activity feeds and for reminders.
             </p>
           </div>
+          {/* Spellcheck setting removed from here*/}
         </form>
       </div>
     </div>
   )
 }
-
 
 
 export default LanguageAndRegion
