@@ -78,7 +78,9 @@ const Sidebar = props => {
 
   //organization
   const [org, setOrg] = useState({})
-  // console.log('ORGGGG', org)
+  
+  //set user worksapces
+  const [orgs, setOrgs] = useState([])
 
   //toggle
   const toggle = () => {
@@ -101,7 +103,7 @@ const Sidebar = props => {
   const setInviteEmails = emails => setInviteEmail(emails)
   const [sendLoading, setSendLoading] = useState(false)
 
-  const [userInfo, setUserInfo] = useState({
+  const [userInfo, setUserInfo] = useState({ 
     userId: "",
     Organizations: [],
     token: ""
@@ -110,7 +112,8 @@ const Sidebar = props => {
   //   // console.log('userinfo', userInfo)
 
   const [nullValue, setnullValue] = useState(0)
-
+  const [nullValue2, setnullValue2] = useState(0)
+  
   const [organizationInfo, setOrganizationInfo] = useState(null)
   const [sidebarData, setSidebarData] = useState({})
   const [isLoading, setIsLoading] = useState(true)
@@ -146,6 +149,24 @@ const Sidebar = props => {
       setOrg(org)
     })
   }, [])
+
+  //get all user workspaces
+  useEffect(()=>{
+
+    axios.get(
+      `https://api.zuri.chat/users/${user_id_session.email}/organizations`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+    ).then(res => {
+      const orgs = res.data.data
+      setOrgs(orgs)
+    })   
+     setnullValue2(1)
+    },[])
+
 
   useEffect(() => {
     inviteVisibility()
@@ -213,6 +234,7 @@ const Sidebar = props => {
 
   {
     nullValue === 1 &&
+    nullValue2 === 1 &&
       currentWorkspace &&
       userInfo.userId &&
       SubscribeToChannel(
@@ -235,11 +257,11 @@ const Sidebar = props => {
       <div className={`${styles.subCon1}`}>
         <div className={`row ${styles.orgDiv}`}>
           <div className={`col-12 px-3 ${styles.orgInfo}`}>
-            <div onClick={toggle} className={`row p-0 ${styles.orgHeader}`}>
-              <span className={`col-8 mb-0 ${styles.orgTitle}`}>
+            <div onClick={toggle} className={` p-0 ${styles.orgHeader}`}>
+              <span className={`col-10 mb-0 ${styles.orgTitle}`}>
                 {org.name}
               </span>
-              <span className={`col-4 p-0 ${styles.sidebar__header__arrow}`}>
+              <span className={`col-2 p-0 ${styles.arrowDown}`}>
                 <MdKeyboardArrowDown />
               </span>{" "}
               {/* <img
@@ -259,6 +281,7 @@ const Sidebar = props => {
           <div className={`col-12 px-3 ${styles.modalContainer}`}>
             <div className={`col-12 px-3 ${styles.odalContainer}`}>
               <ModalComponent
+                orgs={orgs}
                 workSpace={org}
                 isOpen={homeModal}
                 toggleOpenInvite={toggleOpenInvite}
