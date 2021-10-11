@@ -78,7 +78,6 @@ const Sidebar = props => {
 
   //organization
   const [org, setOrg] = useState({})
-  
 
   //toggle
   const toggle = () => {
@@ -96,12 +95,14 @@ const Sidebar = props => {
 
   let currentWorkspace = localStorage.getItem("currentWorkspace")
 
+  const orgName = localStorage.getItem("org-name")
+
   //open invite
   const toggleOpenInvite = () => setOpenInvite(!openInvite)
   const setInviteEmails = emails => setInviteEmail(emails)
   const [sendLoading, setSendLoading] = useState(false)
 
-  const [userInfo, setUserInfo] = useState({ 
+  const [userInfo, setUserInfo] = useState({
     userId: "",
     Organizations: [],
     token: ""
@@ -110,8 +111,7 @@ const Sidebar = props => {
   //   // console.log('userinfo', userInfo)
 
   const [nullValue, setnullValue] = useState(0)
-  
-  
+
   const [organizationInfo, setOrganizationInfo] = useState(null)
   const [sidebarData, setSidebarData] = useState({})
   const [isLoading, setIsLoading] = useState(true)
@@ -147,8 +147,6 @@ const Sidebar = props => {
       setOrg(org)
     })
   }, [])
-
-
 
   useEffect(() => {
     inviteVisibility()
@@ -240,7 +238,7 @@ const Sidebar = props => {
           <div className={`col-12 px-3 ${styles.orgInfo}`}>
             <div onClick={toggle} className={` p-0 ${styles.orgHeader}`}>
               <span className={`col-10 mb-0 ${styles.orgTitle}`}>
-                {org.name}
+                {org.name || orgName}
               </span>
               <span className={`col-2 p-0 ${styles.arrowDown}`}>
                 <MdKeyboardArrowDown />

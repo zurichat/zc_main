@@ -62,12 +62,18 @@
   width: auto;
   padding-right: 8px;
   line-height: 1.2em;
+  /* Truncate title */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 70%;
 }
 
 .orgHeader {
   cursor: pointer;
   display: flex;
   width: -webkit-fill-available;
+  flex-grow: 1;
 }
 
 .arrowDown {
