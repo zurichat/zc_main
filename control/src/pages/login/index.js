@@ -120,6 +120,8 @@ const Login = () => {
         //Render error message to the user
         seterror(data.message) //Change this when there is a design
       })
+
+      
   }
 
   return (

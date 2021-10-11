@@ -97,7 +97,7 @@ const App = () => {
         <Route path="/security">
           <Security />
         </Route>
-        <Route path="/download-app">
+        <Route path="/downloads">
           <Download />
         </Route>
         <Route path="/downloadsMac">
