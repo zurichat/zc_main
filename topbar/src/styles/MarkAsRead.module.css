@@ -1,6 +1,7 @@
 .container {
   width: 100%;
-  margin: 62px 53px 20px;
+  margin: 28px 53px 20px;
+  height: 80vh;
 }
 
 .subhead {
@@ -143,4 +144,12 @@ left: 5px;
   letter-spacing: 0em;
   text-align: left;
   margin: 3px;
+}
+
+
+@media screen and (max-width: 500px) {
+  .container {
+    margin: 2em 0em;
+    padding: 0 1em;
+  }
 }
