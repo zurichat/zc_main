@@ -28,6 +28,7 @@ const Preferences = () => {
 {/*
 {sideBar === 2 && <SidebarPreference />}
 */}
+
           {sideBar === 3 && <Themes />}
           {sideBar === 4 && <MessagesMedia />}
           {sideBar === 5 && <LanguageAndRegion />}
