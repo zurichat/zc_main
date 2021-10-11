@@ -124,8 +124,8 @@ const Wrapper = styled.div``
 const TopSection = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding-top: 175px;
-  padding-left: 172px;
+  padding-top: 130px;
+    padding-left: 172px;
 
   @media (max-width: 35rem) {
     display: flex;
