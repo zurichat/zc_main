@@ -14,20 +14,24 @@ import { StyledProfileWrapper } from "../styles/StyledEditProfile"
 const EditProfile = () => {
   const imageRef = useRef(null)
   const avatarRef = useRef(null)
-  const { user, orgId, userProfileImage, setUser, setUserProfileImage } =
-    useContext(ProfileContext)
+  const {
+    user,
+    orgId,
+    userProfileImage,
+    setUserProfileImage,
+    toggleModalState
+  } = useContext(ProfileContext)
   const [selectedTimezone, setSelectedTimezone] = useState({})
   const [links, setLinks] = useState([""])
   const [state, setState] = useState({
-    first_name: user.first_name,
-    last_name: user.last_name,
+    name: user.name,
     display_name: user.display_name,
     role: user.role,
     image_url: user.image_url,
-    bio: user.bio,
+    bio: "",
     phone: user.phone,
     prefix: "",
-    timezone: user.timezone,
+    timezone: "",
     twitter: "",
     facebook: "",
     loading: false,
@@ -119,8 +123,7 @@ const EditProfile = () => {
     setState({ ...state, loading: true })
 
     const data = {
-      first_name: state.first_name,
-      last_name: state.last_name,
+      name: state.name,
       display_name: state.display_name,
       phone: state.phone,
       bio: state.bio,
@@ -146,17 +149,6 @@ const EditProfile = () => {
           position: "top-center"
         })
       })
-       .then(
-        setTimeout(() => {
-          authAxios
-            .get(`/organizations/${orgId}/members/${user._id}`)
-            .then(res => {
-              // console.log(res, 'get profile')
-              const profile_date = res.data.data
-              setUser(profile_date)
-            })
-        }, 500)
-      )
       .catch(err => {
         console.error(err)
         setState({ loading: false })
@@ -187,28 +179,15 @@ const EditProfile = () => {
                 </div>
                 <div className="input-group mal-4">
                   <label htmlFor="name" className="inputLabel">
-                    First Name
+                    Full Name
                   </label>
                   <input
                     type="text"
                     className="input"
-                    id="first_name"
-                    defaultValue={state.first_name}
-                    onChange={e => setState({...state, first_name: e.target.value })}
-                    name="first_name"
-                  />
-                </div>
-                <div className="input-group mal-4">
-                  <label htmlFor="name" className="inputLabel">
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    className="input"
-                    id="last_name"
-                    defaultValue={state.last_name}
-                    onChange={e => setState({...state, last_name: e.target.value })}
-                    name="last_name"
+                    id="name"
+                    defaultValue={state.name}
+                    onChange={e => setState({ name: e.target.value })}
+                    name="name"
                   />
                 </div>
               </div>
@@ -222,7 +201,7 @@ const EditProfile = () => {
                     className="input"
                     id="dname"
                     defaultValue={state.display_name}
-                    onClick={e => setState({...state, display_name: e.target.value })}
+                    onClick={e => setState({ display_name: e.target.value })}
                     name="dname"
                   />
                   <p className="para">
@@ -230,8 +209,7 @@ const EditProfile = () => {
                     uses your exact name, you should change it!
                   </p>
                 </div>
-                <div className="input-group">
-                </div>
+              
               </div>
 
               <div className="input-group mb-0">
@@ -240,7 +218,7 @@ const EditProfile = () => {
                 </label>
                 <input
                   type="text"
-                  onClick={e => setState({...state, what: e.target.value })}
+                  onClick={e => setState({ what: e.target.value })}
                   defaultValue={state.what}
                   className="input"
                   id="what"
@@ -255,7 +233,7 @@ const EditProfile = () => {
                   Bio
                 </label>
                 <textarea
-                  onClick={e => setState({...state, bio: e.target.value })}
+                  onClick={e => setState({ bio: e.target.value })}
                   defaultValue={state.bio}
                   className="textarea"
                   name="bio"
@@ -304,7 +282,7 @@ const EditProfile = () => {
                   type="text"
                   className="input"
                   defaultValue={state.twitter}
-                  onClick={e => setState({...state, twitter: e.target.value })}
+                  onClick={e => setState({ twitter: e.target.value })}
                   id="twitter"
                   name="twitter"
                 />
@@ -315,7 +293,7 @@ const EditProfile = () => {
                 </label>
                 <input
                   defaultValue={state.facebook}
-                  onClick={e => setState({...state, facebook: e.target.value })}
+                  onClick={e => setState({ facebook: e.target.value })}
                   type="text"
                   className="input"
                   id="facebook"
@@ -395,7 +373,9 @@ const EditProfile = () => {
             )}
           </div>
           <div className="button-wrapper">
-            <button className="btns cncBtn">Cancel</button>
+            <button className="btns cncBtn" onClick={toggleModalState}>
+              Cancel
+            </button>
             <button onClick={handleFormSubmit} className="btns saveBtn">
               {state.loading ? (
                 <Loader type="ThreeDots" color="#fff" height={40} width={40} />
