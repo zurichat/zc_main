@@ -16,7 +16,7 @@ const DownloadsDesktop = () => {
     if (isMacOs) return setexe({ name: 'DOWNLOAD FOR MAC' })
     return setexe({
       name: 'DOWNLOAD FOR WINDOWS',
-      link: 'https://drive.google.com/file/d/1J1rl-_3QeG9H4rnn9EF0XW0kSGb_Wsl4/view?usp=sharing'
+      link: 'https://drive.google.com/file/d/1Wl4hYeHP1e1eogd6LYdt2Kohrkr9C1dg/view?usp=sharing'
     })
   }, [])
   return (
@@ -48,7 +48,7 @@ const DownloadsDesktop = () => {
         </p>
         <div className={`${styles.downloadButtonContainer}`}>
           <a
-            href={`https://drive.google.com/file/d/1J1rl-_3QeG9H4rnn9EF0XW0kSGb_Wsl4/view?usp=sharing`}
+            href={`https://drive.google.com/file/d/1Wl4hYeHP1e1eogd6LYdt2Kohrkr9C1dg/view?usp=sharing`}
             className={styles.downloadButton}
           >
             Windows
@@ -71,7 +71,7 @@ const DownloadsDesktop = () => {
             <img className={`px-2`} src={apple} alt="download icon" />
           </a>
           <a
-            href="https://drive.google.com/file/d/1C5s3Hm44shxtIJ6XElV3lqBk1XLAbrMm/view?usp=drivesdk"
+            href="https://drive.google.com/file/d/1dbQS1rQOVUI87AzdeljF6LM5iRNnaMzZ/view"
             download={exe.name}
             className={styles.downloadButton}
           >
