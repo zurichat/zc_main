@@ -15,6 +15,7 @@ import threadIcon from "./verified-components/assets/icons/thread-icon.svg"
 import dmIcon from "./verified-components/assets/icons/dm-icon.svg"
 import draftIcon from "./verified-components/assets/icons/draft-icon.svg"
 import filesIcon from "./verified-components/assets/icons/files-icon.svg"
+import infoIcon from "./verified-components/assets/icons/info-icon.svg"
 import pluginIcon from "./verified-components/assets/icons/plugin-icon.svg"
 import addIcon from "./verified-components/assets/icons/add-icon.svg"
 import shapekeyboardarrowdown from "./verified-components/assets/icons/shapekeyboardarrowdown.svg"
@@ -350,6 +351,12 @@ const Sidebar = props => {
                   alt="icon"
                 />
                 <p className={`mb-0 ${styles.item_p}`}>Threads</p>
+                <img
+                  className={`${styles.addButton}`}
+                  src={infoIcon}
+                  alt="icon"
+                  role="button"
+                />
               </div>
             </div>
             <div className={`row ${styles.sb__item}`}>
@@ -362,6 +369,12 @@ const Sidebar = props => {
                   alt="icon"
                 />
                 <p className={`mb-0 ${styles.item_p}`}>Drafts</p>
+                <img
+                  className={`${styles.addButton}`}
+                  src={infoIcon}
+                  alt="icon"
+                  role="button"
+                />
               </div>
             </div>
             <div className={`row ${styles.sb__item}`}>
@@ -374,6 +387,12 @@ const Sidebar = props => {
                   alt="icon"
                 />
                 <p className={`mb-0 ${styles.item_p}`}>Files</p>
+                <img
+                  className={`${styles.addButton}`}
+                  src={infoIcon}
+                  alt="icon"
+                  role="button"
+                />
               </div>
             </div>
             <div className={`row ${styles.sb__item}`}>
@@ -393,6 +412,12 @@ const Sidebar = props => {
                   alt="Add button"
                   role="button"
                 /> */}
+                <img
+                  className={`${styles.addButton}`}
+                  src={infoIcon}
+                  alt="icon"
+                  role="button"
+                />
               </div>
             </div>
 
