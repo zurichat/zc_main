@@ -16,7 +16,7 @@ const DownloadsMobile = () => {
     if (isIOS) return setexe({ name: 'DOWNLOAD FOR IOS' })
     return setexe({
       name: 'DOWNLOAD ZURI CHAT',
-      link: 'https://drive.google.com/file/d/1C5s3Hm44shxtIJ6XElV3lqBk1XLAbrMm/view?usp=drivesdk',
+      link: 'https://drive.google.com/file/d/1dbQS1rQOVUI87AzdeljF6LM5iRNnaMzZ/view',
       name2: 'DOWNLOAD DM AND CHANNELS',
       link2:
         'https://drive.google.com/file/d/1LRrWXjBFdns0RUD7zQapBuof8ole5XHI/view?usp=drivesdk'
