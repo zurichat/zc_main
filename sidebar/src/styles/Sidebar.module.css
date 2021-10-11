@@ -58,10 +58,22 @@
   font-weight: bold;
   font-size: 1.125em;
   line-height: 28px;
+  width: auto;
+  padding-right: 8px;
 }
 
 .orgHeader {
   cursor: pointer;
+  align-items: center;
+  width: -webkit-fill-available;
+}
+
+.sidebar__header__arrow {
+  width: fit-content;
+}
+
+.sidebar__header__arrow svg {
+  color: #fff;
 }
 
 .arrowDown {
@@ -257,7 +269,7 @@
   color: #999;
 }
 
-.channelNames p > span {
+.channelNames p>span {
   margin-right: 0.5em;
 }
 
@@ -354,7 +366,7 @@
   align-items: center;
 }
 
-.messageNames p > span {
+.messageNames p>span {
   margin-right: 0.5em;
 }
 
