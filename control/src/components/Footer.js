@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+
 import styles from "../component-styles/FooterStyle.module.css"
 import logo from "../component-assets/zurichatlogo.svg"
 import facebook from "../component-assets/facebook.svg"
@@ -7,6 +8,8 @@ import linkedin from "../component-assets/linkedin.svg"
 import instagram from "../component-assets/instagram.svg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons"
+import { Link } from 'react-router-dom'
+
 
 const Footer = () => {
   const getYear = () => {
@@ -35,7 +38,7 @@ const Footer = () => {
     <div className={styles.footer}>
       <div className={styles.top_footer}>
         <div className={styles.logo}>
-          <a href="/">
+          <Link to="/">
             <img
               className={styles.logo_img}
               src={logo}
@@ -44,7 +47,7 @@ const Footer = () => {
               height="30px"
             />
             <span className={styles.logo_name}>Zuri Chat</span>
-          </a>
+          </Link>
         </div>
 
         <div className={styles.menu}>
@@ -52,10 +55,10 @@ const Footer = () => {
             <h5>Company</h5>
             <ul>
               <li>
-                <a href="/careers">Careers</a>{" "}
+                <Link to="/careers">Careers</Link>{" "}
               </li>
               <li>
-                <a href="/about">About Zurichat</a>{" "}
+                <Link to="/about">About Zurichat</Link>{" "}
               </li>
             </ul>
           </div>
@@ -64,10 +67,12 @@ const Footer = () => {
             <h5>Info</h5>
             <ul>
               <li>
-                <a href="/privacy">Privacy & Terms</a>{" "}
+                <Link to="/privacy">
+                  <span>Privacy & Terms</span>{" "}
+                </Link>
               </li>
               <li>
-                <a href="/marketplace">Market Place</a>{" "}
+                <Link to="/marketplace">Market Place</Link>{" "}
               </li>
             </ul>
           </div>
@@ -76,10 +81,13 @@ const Footer = () => {
             <h5>Know us</h5>
             <ul>
               <li>
-                <a href="/download-app">Downloads</a>{" "}
+                <Link to="/download-app">Downloads</Link>{" "}
               </li>
               <li>
-                <a href="/contact-us">Contact Us</a>{" "}
+                <Link to="/contact-us">Contact Us</Link>{" "}
+              </li>
+              <li>
+                <a href="https://docs.zuri.chat/">Documentation</a>{" "}
               </li>
             </ul>
           </div>

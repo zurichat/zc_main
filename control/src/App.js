@@ -102,7 +102,7 @@ const App = () => {
         <Route path="/security">
           <Security />
         </Route>
-        <Route path="/download-app">
+        <Route path="/downloads">
           <Download />
         </Route>
         <Route path="/downloadsMac">
@@ -166,7 +166,7 @@ const App = () => {
           <Cookies />
         </Route>
 
-        <Route component={NotFoundPage} />
+        {/* <Route component={NotFoundPage} /> */}
       </Switch>
     </BrowserRouter>
   )

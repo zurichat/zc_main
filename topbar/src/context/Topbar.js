@@ -20,16 +20,12 @@ export const TopbarProvider = ({ children }) => {
 
   // The function that opens the topbar profile modal
   const openModal = () => {
-    setShowModal(!showModal)
-    // console.log('profile Open')
-    // document.removeEventListener('click', openModal)
+    setShowModal(true)
   }
 
   // The function that closes the topbar profile modal
   const closeModal = e => {
-    if (modalRef.current === e.target) {
-      setShowModal(false)
-    }
+    setShowModal(false)
   }
 
   // The function that opens the topbar profile status modal
