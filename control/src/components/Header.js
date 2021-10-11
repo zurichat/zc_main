@@ -67,7 +67,7 @@ const HeaderSearchSuggestion = () => {
               role="button"
               aria-expanded="false"
             >
-              <span className={`${headerStyles.item}`}>About Zurichat</span>
+              <span className={`${headerStyles.item}`}>About</span>
             </Link>
           </li>
           <li className="nav-item">
@@ -85,7 +85,7 @@ const HeaderSearchSuggestion = () => {
               role="button"
               aria-expanded="false"
             >
-              <span className={`${headerStyles.item}`}>Contact Us</span>
+              <span className={`${headerStyles.item}`}>Contact</span>
             </Link>
           </li>
         </ul>
