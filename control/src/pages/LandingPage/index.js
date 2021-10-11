@@ -182,7 +182,7 @@ export default function Homepage() {
               </p>
               <a href="/signup">
                 <button className={`${style.sign_up_btn}`}>
-                  Sign up now for Free!!!
+                  Sign up now for Free
                 </button>
               </a>
             </div>
