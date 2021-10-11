@@ -16,6 +16,13 @@ const EditProfile = () => {
   const avatarRef = useRef(null)
   const { user, orgId, userProfileImage, setUserProfileImage,toggleModalState } =
     useContext(ProfileContext)
+  const {
+    user,
+    orgId,
+    userProfileImage,
+    setUserProfileImage,
+    toggleModalState
+  } = useContext(ProfileContext)
   const [selectedTimezone, setSelectedTimezone] = useState({})
   const [links, setLinks] = useState([""])
   const [state, setState] = useState({
@@ -176,7 +183,7 @@ const EditProfile = () => {
                 </div>
                 <div className="input-group mal-4">
                   <label htmlFor="name" className="inputLabel">
-                    First Name
+                    Full Name
                   </label>
                   <input
                     type="text"
@@ -378,16 +385,19 @@ const EditProfile = () => {
 
           <div onClick={handleFormSubmit} className="mobileButton">
             {state.loading ? (
-              <Loader type="ThreeDots" color="#00B87C" height={24} width={24} />
+              <Loader type="ThreeDots" color="#00B87C" height={24} width={24} /> && toggleModalState()
             ) : (
               "Save"
             )}
           </div>
           <div className="button-wrapper">
             <button onClick={toggleModalState} className="btns cncBtn">Cancel</button>
+            <button className="btns cncBtn" onClick={toggleModalState}>
+              Cancel
+            </button>
             <button onClick={handleFormSubmit} className="btns saveBtn">
               {state.loading ? (
-                <Loader type="ThreeDots" color="#fff" height={40} width={40} />
+                <Loader type="ThreeDots" color="#fff" height={40} width={40} /> && toggleModalState()
               ) : (
                 "Save Changes"
               )}

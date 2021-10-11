@@ -32,8 +32,12 @@
 .to_join {
   margin-top: 3%;
 }
+.join_us {
+  text-align: center;
+}
 .join_us > p {
-  font-size: 14px;
+  font-size: 17px;
+  text-align: center;
   line-height: 25px;
   font-weight: 500;
 }
@@ -106,7 +110,10 @@
 .carousel {
   display: none;
 }
-
+.row{
+  padding: 0.8rem;
+  margin: 0 3.2rem;
+}
 @media only screen and (max-width: 600px) {
   .banner {
     margin-top: 29%;
@@ -142,6 +149,7 @@
   }
   .join_us > p {
     padding: 0 4%;
+    font-size: 14px;
   }
   .span {
     text-decoration: none;
