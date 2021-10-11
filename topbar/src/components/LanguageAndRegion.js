@@ -25,6 +25,7 @@ const LanguageAndRegion = () => {
             </label>
             <select className={styles.selectbox} name="language" id="language">
               <option value="english(uk)">English (UK)</option>
+              <option value="english(uk)">French (FRA)</option>
             </select>
             <p className={styles.note}>
               Choose the language you want to use in Zurichat.
