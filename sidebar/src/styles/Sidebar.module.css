@@ -59,15 +59,19 @@
   font-weight: bold;
   font-size: 1.125em;
   line-height: 28px;
+  width: auto;
+  padding-right: 8px;
   line-height: 1.2em;
 }
 
 .orgHeader {
   cursor: pointer;
   display: flex;
+  width: -webkit-fill-available;
 }
 
 .arrowDown {
+  width: fit-content;
   position: relative;
   top: 0.2em;
   width: 1em;
