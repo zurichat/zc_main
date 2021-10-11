@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from 'react-router-dom'
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 // styles import
@@ -189,10 +190,14 @@ const index = () => {
             Whatever work you do, you can do it in Zuri Chat
           </h3>
           <div className={`styles.button`}>
-            <button className={`btn ${styles.btn_sale}`}>Talk to sales</button>
-            <button className={`btn ${styles.btn_free}`}>
-              Try it for free
-            </button>
+            <Link to="/contact-us">
+              <button className={`btn ${styles.btn_sale}`}>Talk to sales</button>
+            </Link>
+            <Link to="/signup">
+              <button className={`btn ${styles.btn_free}`}>
+                Try it for free 
+              </button>
+            </Link>
           </div>
         </div>
       </div>
