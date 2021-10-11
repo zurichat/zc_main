@@ -105,7 +105,6 @@ const Profile = () => {
           </h3>
 
           <p className={styles.myp}>{user.bio ? user.bio : "What you do"}</p>
-          <small>{"His/Her"}</small>
         </div>
 
         <div className={styles.buttonGroupsMobile}>
