@@ -386,13 +386,13 @@ const Sidebar = props => {
                   alt="icon"
                 />
                 <p className={`mb-0 ${styles.item_p}`}>Plugins</p>{" "}
-                <img
+                {/* <img
                   onClick={open}
                   className={`${styles.addButton}`}
                   src={addIcon}
                   alt="Add button"
                   role="button"
-                />
+                /> */}
               </div>
             </div>
 
