@@ -75,8 +75,7 @@ const LanguageAndRegion = () => {
               Zurichat uses your time zone to send summary and notification
               emails, for times in your activity feeds and for reminders.
             </p>
-          </div>
-          
+          </div>   
           {/* Spellcheck setting removed from here*/}
         </form>
       </div>
