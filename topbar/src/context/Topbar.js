@@ -1,4 +1,4 @@
-import { createContext, useState, useRef, useContext } from "react"
+import { createContext, useState, useRef, useContext, useEffect } from "react"
 import { authAxios } from "../utils/Api"
 import { ProfileContext } from "./ProfileModal"
 
@@ -20,16 +20,12 @@ export const TopbarProvider = ({ children }) => {
 
   // The function that opens the topbar profile modal
   const openModal = () => {
-    setShowModal(!showModal)
-    // console.log('profile Open')
-    // document.removeEventListener('click', openModal)
+    setShowModal(true)
   }
 
   // The function that closes the topbar profile modal
   const closeModal = e => {
-    if (modalRef.current === e.target) {
-      setShowModal(false)
-    }
+    setShowModal(false)
   }
 
   // The function that opens the topbar profile status modal
