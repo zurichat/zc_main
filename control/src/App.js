@@ -12,7 +12,6 @@ import CookiesSetting from './pages/cookiesSettings'
 import Cookies from './pages/cookies'
 import Features from './pages/features'
 import Resources from './pages/resources'
-import Help from './pages/Help'
 import Pricing from './pages/pricing'
 import Security from './pages/security'
 import Invite from './pages/inviteScreen'
@@ -20,10 +19,12 @@ import Inviterequest from './pages/InviteRequest/InviteRequest'
 import SendRequest from './pages/InviteRequest/SendRequest'
 import ContactUs from './pages/contact-us'
 import AppsAndIntegrations from './pages/apps-integration'
+import Events from './pages/events/components/EventsMainWrapper'
 import Download from './pages/download'
 import DownloadsMac from './pages/download/DownloadsMac'
 import Careers from './pages/careers'
 import MarketPlace from './pages/marketplace/marketplace'
+import Blogs from './pages/blogs'
 import Settings from './pages/settings'
 import ConfirmPassword from './pages/settings/components/ConfirmPassword'
 import AccDeactivated from './pages/settings/components/AccDeactivated'
@@ -33,16 +34,9 @@ import PrivateRoute from './pages/settings/Utils/PrivateRoute'
 import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation'
 import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContext'
 import PrivacyPolicy from './pages/privacy-policy/index'
-import NotFoundPage from './pages/404'
-import Billing from './pages/admin/Billing'
-import Blog from './pages/blogs'
-import Homepage from './pages/home'
-import Permissions from './pages/admin/Permissions'
-import SettingsHome from './pages/admin/Settings/index'
-import About from './pages/about/index'
-import AdminSettingsTab from './pages/admin/Settings/components/AdminSettingsTab'
-import TermsOfService from './pages/termsOfService'
-import RedirectRoute from './pages/redirect'
+import '../../topbar/src/styles/dark.css'
+
+
 
 
 // useEffect(() => {
@@ -61,9 +55,12 @@ const App = () => {
         <Route path="/" exact>
           <LandingPage />
         </Route>
-        <RedirectRoute path="/login">
-         <Login />
-       </RedirectRoute>
+        <Route path="/blog">
+          <Blogs />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
         <Route path="/signup">
           <SignUp />
         </Route>
@@ -72,12 +69,6 @@ const App = () => {
         </Route>
         <Route path="/signout">
           <SignOut />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/help">
-          <Help />
         </Route>
         <Route path="/choose-workspace">
           <Workspace />
@@ -97,16 +88,16 @@ const App = () => {
         <Route path="/resources">
           <Resources />
         </Route>
-        <Route path="/blog">
-          <Blog />
-        </Route>
         <Route path="/pricing">
           <Pricing />
         </Route>
         <Route path="/security">
           <Security />
         </Route>
-        <Route path="/downloads">
+        <Route path="/events">
+          <Events />
+        </Route>
+        <Route path="/download-app">
           <Download />
         </Route>
         <Route path="/downloadsMac">
@@ -120,9 +111,6 @@ const App = () => {
         </Route>
         <Route path="/privacy">
           <PrivacyPolicy />
-        </Route>
-        <Route path="/terms">
-          <TermsOfService />
         </Route>
         <Route path="/marketplace" exact>
           <MarketPlace />
@@ -144,17 +132,6 @@ const App = () => {
         />
         <PrivateRoute path="/session-signout" component={AllSessionSignOut} />
         <PrivateRoute path="/settings" exact component={Settings} />
-        <PrivateRoute path="/admin/settings" exact component={SettingsHome} />
-        <PrivateRoute
-          path="/admin/settings/billings"
-          exact
-          component={Billing}
-        />
-        {/* <PrivateRoute
-          path="/admin/settings/permission"
-          exact
-          component={AdminSettingsTab}
-        /> */}
         <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
         {/* ----------------settings routes closed----------------- */}
         <Route path="/reset-password">
@@ -170,9 +147,9 @@ const App = () => {
           <Cookies />
         </Route>
 
-        {/* <Route component={NotFoundPage} /> */}
+        <Route component={NotFoundPage} />
       </Switch>
-    </BrowserRouter>
+      </BrowserRouter>
   )
 }
 export default App

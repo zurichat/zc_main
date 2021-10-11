@@ -5,6 +5,8 @@
   --secondary-color: #1264a3;
   --body-color: #1d1c1d; /* Header color */
   --body-shade: #1d1c1d; /* Header shade && Icon Color */
+  --black: #121212;
+  --white: rgb(236, 236, 236);
 
   /* text colors */
   --inactive-text: #b0afb0;
@@ -27,7 +29,22 @@ body {
   margin: 0;
   font-family: inherit;
   margin-bottom: 4rem;
+  background: var(--background-color);
+  color: var(--text-clor);
+  transition: background-color 0.3s ease-in-out, color 0.6s ease-in-out;
   /* background-color: black; */
+}
+
+/* light-Mode */
+body.light {
+  --background-color: var(--white);
+  --text-clor: var(--black);
+}
+
+/* dark-Mode */
+body.dark-mode {
+  background: #1d2127;
+  color: #fff;
 }
 
 /* Typography  */
