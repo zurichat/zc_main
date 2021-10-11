@@ -18,6 +18,7 @@ import Invite from './pages/inviteScreen'
 import Inviterequest from './pages/InviteRequest/InviteRequest'
 import SendRequest from './pages/InviteRequest/SendRequest'
 import ContactUs from './pages/contact-us'
+import Search from './pages/search'
 import AppsAndIntegrations from './pages/apps-integration'
 import Events from './pages/events/components/EventsMainWrapper'
 import Download from './pages/download'
@@ -88,6 +89,13 @@ const App = () => {
         <Route path="/resources">
           <Resources />
         </Route>
+        <Route path="/search">
+          <Search />
+        </Route>
+        <Route path="/blog">
+          <Blog />
+        </Route>
+
         <Route path="/pricing">
           <Pricing />
         </Route>
