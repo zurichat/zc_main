@@ -1,4 +1,4 @@
-import styles from "../styles/SearchAutocomplete.module.css";
+import styles from "../styles/SearchAutocomplete.module.css"
 
 const searchAutocomplete = props => {
   const {
@@ -15,9 +15,10 @@ const searchAutocomplete = props => {
         <ul className={styles.suggestionsList}>
           {suggestions.map((suggestion, index) => {
             const isSelected = selectedSuggestion === index
-            const classname = `${styles.suggestion} ${isSelected ? "selected" : ""}`
+            const classname = `${styles.suggestion} ${
+              isSelected ? "selected" : ""
+            }`
             return (
-             
               <li
                 key={index}
                 className={classname}
@@ -25,12 +26,11 @@ const searchAutocomplete = props => {
               >
                 {suggestion}
               </li>
-              
             )
           })}
         </ul>
       )
-    } 
+    }
   }
 
   return <></>

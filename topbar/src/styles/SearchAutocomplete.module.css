@@ -1,21 +1,24 @@
 .suggestionsList {
   list-style: none;
   padding: 0;
+  border-radius: 4px;
+  position: absolute;
   max-width: auto;
+
 }
 .suggestion {
   background-color: #fff;
   padding: 10px;
-  color: #000;
+  color: #1d1d1d;
   cursor: pointer;
   font-size: 13px;
   line-height: 15.6px;
-  border-radius: 4px;
 }
 
 .suggestion:hover {
-  background-color: rgba(0, 184, 124, 0.902);
-}
+  color: rgba(0, 184, 124, 1);
+ 
+} 
 .selected {
   background-color: rgba(0, 184, 124, 1);
 }
