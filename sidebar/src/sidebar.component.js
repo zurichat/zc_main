@@ -42,43 +42,18 @@ const Sidebar = props => {
         }
       )
   }
-  const active = () => {
-    let heading = document.getElementById("side")
-    let row = heading.getElementsByClassName("row")
-
-    for (let i = 0; i < row.length; i++) {
-      row[i].addEventListener("click", function () {
-        var current = document.getElementsByClassName(`${styles.sb__active}`)
-        var highlight = document.getElementsByClassName(`${styles.sb__itemdisabled}`)
-   
-        current[0].className = current[0].className.replace(
-          ` ${styles.sb__active}`,
-          ""
-        )
-        this.className += ` ${styles.sb__active}`
-       
-        highlight[0].className = highlight[0].className.replace(
-          ` ${styles.sb__itemdisabled}`,
-          ""
-        )
-        this.className += ` ${styles.sb__itemdisabled}`
-      })
-
-      //  })
-    }
-  }
 
   return (
     <div className={`container-fluid ${styles.sb__container}`}>
       <Header state={props.state} />
       <div className={`${styles.subCon2}`}>
         <Fragment>
-          <Room name="Threads" image={threadIcon} />
-          <Room name="All DMs" image={dmIcon} />
-          <Room name="Drafts" image={draftIcon} />
-          <Room name="Files" image={filesIcon} />
+          <Room name="Threads" image={threadIcon} style={`row mt-2 ${styles.sb__item} ${styles.sb__active} ${styles.sb__itemdisabled}`} />
+          <Room name="All DMs" image={dmIcon} style={`row mt-2 ${styles.sb__item}`}/>
+          <Room name="Drafts" image={draftIcon} style={`row mt-2 ${styles.sb__item}`}/>
+          <Room name="Files" image={filesIcon} style={`row mt-2 ${styles.sb__item}`}/>
 
-          <Room name="Plugins" image={pluginIcon} />
+          <Room name="Plugins" image={pluginIcon} style={`row mt-2 ${styles.sb__item}`}/>
 
           {/* SIDE BAR DATA */}
           {props.state.sidebar &&
