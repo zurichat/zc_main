@@ -18,12 +18,9 @@ import { GetUserInfo, SubscribeToChannel } from "@zuri/control"
 import axios from "axios"
 import toggleStyle from "./styles/sidebartoggle.module.css"
 import { BsReverseLayoutTextSidebarReverse } from "react-icons/bs"
-import { useHistory } from "react-router-dom";
-// import { Redirect } from "react-router";
+// import RedirectRoute from '../../control/src/pages/redirect'
 
-const TopNavBar = (props) => {
-
-  const { userProfile: { last_name, first_name } } = props;
+const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { closeModal, openModal, presence, setPresence } =
     useContext(TopbarContext)
   const { setUser, user, userProfileImage, setOrgId, setUserProfileImage } =
@@ -184,13 +181,18 @@ const TopNavBar = (props) => {
   // })
   const handleEnter=(e)=>{
     if (e.key ==='Enter'){
-      const history = useHistory();
-      // eslint-disable-next-line no-console
-      console.log(history)
-      // return <Redirect to='/' />
-      // window.location.replace("http://localhost:9000/search");
-    }
 
+      let s= window.location.href.split('/')
+      if(s[2].includes("local")){
+        window.location.href="http://localhost:9000/search"
+      }else{
+        window.location.href="https://zuri.chat/search"
+      }
+      
+      // eslint-disable-next-line no-console
+      // console.log()
+
+    }
   }
 
 
@@ -229,7 +231,6 @@ const TopNavBar = (props) => {
           onKeyDown={handleEnter}
         />
       </div>
-      
       <ProfileImageContainer
         className="d-flex justify-content-end pe-3"
         style={{ width: "20%" }}
@@ -276,8 +277,8 @@ const Logo = styled.img`
 `
 const ProfileImg = styled.img`
   border-radius: 4px;
-  width: 45px;
-  height: 45px;
+  width: 32px;
+  height: 32px;
   object-fit: cover;
 
   @media (max-width: 1024px) {
