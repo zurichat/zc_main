@@ -12,7 +12,7 @@ import Preferences from "./Preferences"
 import EditProfile from "./EditProfile"
 import MembersModal from "./MembersModal"
 import Downloads from "./Downloads"
-import PauseNotification from "./PauseNotification"
+// import PauseNotification from "./PauseNotification"
 import SetStatusModal from "./SetStatusModal"
 // react icons
 
@@ -183,11 +183,11 @@ const TopbarModal = ({ members }) => {
             >
               {userPresence}
             </p>
-            <div className={styles.pause}>
+            {/* <div className={styles.pause}>
               <p onClick={() => setPause(!pause)}>Pause Notifications</p>
               <FaChevronRight className={styles.chevron} />
             </div>
-            {pause && <PauseNotification pause={pause} setPause={setPause} />}
+            {pause && <PauseNotification pause={pause} setPause={setPause} />} */}
           </div>
 
           <hr className={styles.hr} />
