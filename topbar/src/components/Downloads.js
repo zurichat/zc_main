@@ -26,7 +26,7 @@ const Downloads = ({ setModal }) => {
       name: 'Windows App',
       size: '',
       src: windows,
-      link: '/desktop/zuri desktop.exe',
+      link: 'https://store3.gofile.io/download/ded8a505-e87c-4c6e-8e6d-5142ecaac5ab/zuri%20desktop.exe',
       download: "Zurichat Android APK"
     },
     {
@@ -47,7 +47,7 @@ const Downloads = ({ setModal }) => {
       name: 'Android App',
       size: '',
       src: android,
-      link: './apk/Zurichat-Android.apk',
+      link: 'https://store3.gofile.io/download/b3202acf-3166-4892-8aa9-270397757a14/Zurichat-Android.apk',
       download: "Zurichat Android APK"
     },
   ])
