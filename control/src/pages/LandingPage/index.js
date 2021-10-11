@@ -15,7 +15,7 @@ import arrow_right from './assets/ArrowRight.svg'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import Cookies from '../cookies'
 import Subscribe from './components/Subscribe'
 import { Helmet } from 'react-helmet'
@@ -24,6 +24,25 @@ export default function Homepage() {
   const { useState, useEffect } = React
 
   const [loading, setLoading] = useState(true)
+
+  // For create workspace redirect start
+
+  let history = useHistory()
+  
+  const createWorkspaceRedirect = () => {
+    useEffect(() => {
+      const userInfo = sessionStorage.getItem(`user`)
+  
+      if (userInfo && userInfo !== null)
+       { 
+         history.push("/createworkspace")
+        } else {
+         history.push("/signup")
+       }
+      }, [history])
+  }
+
+  // create workspace redirect end
 
   const cookieStorage = {
     getItem: key => {
@@ -138,8 +157,9 @@ export default function Homepage() {
               pContent1="Seamless collaboration"
               h2Content="Communicate and collaborate from wherever you are"
               pContent2="Invite your team to your workspace. Stay connected,stay in sync, and explore ideas together from anywhere."
-              href="#"
+              href="/createworkspace"
               aContent="Create your own workspace"
+              onClick = { createWorkspaceRedirect }
             />
             <FeatureRow
               src={ft_img2}
