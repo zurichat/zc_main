@@ -79,6 +79,7 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
     setStatus(status => {
       return [...status, data]
     })
+    setStatusModal(!statusModal)
   }
 
   return (
