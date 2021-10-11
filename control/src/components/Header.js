@@ -72,7 +72,7 @@ const HeaderSearchSuggestion = () => {
           </li>
           <li className="nav-item">
             <Link
-              to="/downloads"
+              to="/download"
               className={`nav-link ${headerStyles.navLinkComms}`}
             >
               <span className={`${headerStyles.item}`}>Downloads</span>
