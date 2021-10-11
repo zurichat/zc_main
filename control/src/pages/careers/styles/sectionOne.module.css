@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
 
 * {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -13,11 +13,11 @@ button:hover {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-gap: 20px;
-  margin-bottom: 8rem;
+  margin-bottom: 4rem;
 }
 .Section1 img {
-  padding-top: 30px;
-  width: 100%;
+  padding-top: 65px;
+  width: 90%;
 }
 .section1Left {
   padding: 70px 40px 20px 0px;
@@ -29,18 +29,20 @@ button:hover {
 .section1Left p {
   font-size: 24px;
   line-height: 1.5;
+  padding: 0px 160px 0px 0px;
 }
 .section1Left .JoinBtn {
   display: inline-block;
   padding: 22px 34px 22px 34px;
-  font-size: 24px;
+  font-size: 18px;
   border-radius: 3px;
   color: white;
   background-color: #00b87c;
   border: none;
+  font-weight: 600;
 }
 
-@media screen and (max-width: 1085px) {
+@media screen and (max-width: 1024px) {
   .Section1 {
     grid-gap: 10px;
     margin-bottom: 1rem;
@@ -56,24 +58,40 @@ button:hover {
     font-size: 22px;
   }
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 768px) {
   .Section1 {
     grid-template-columns: auto;
     padding: 50px;
+    display: block;
+    justify-content: center;
   }
   .Section1 img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: -2rem;
     width: 90%;
     height: 80%;
-    margin-left: auto;
-    margin-right: 2.5%;
+  }
+
+  .section1Left .JoinBtn {
+    padding: 18px 70px 18px 70px;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 3px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .section1Left {
+    padding: 70px 40px 20px 40px;
   }
 }
 
 @media screen and (max-width: 500px) {
   .section1Left {
     text-align: center;
-    padding: 30px 00px 20px 0px;
+    padding: 30px 0px 20px 0px;
     position: relative;
     right: 15px;
   }
@@ -87,20 +105,31 @@ button:hover {
     text-align: center;
     font-size: 20px;
     line-height: 1.5;
-    width: 118%;
-    padding: 0 25px 0 25px;
+    width: 116%;
+    padding: 0 10px 0 10px;
   }
   .section1Left .JoinBtn {
-    padding: 30px 120px 30px 120px;
+    padding: 18px 70px 18px 70px;
     font-size: 15px;
     font-weight: 400;
     border-radius: 3px;
+    width: 115%;
+  }
+
+  .Section1 img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    margin-top: 0rem;
+    padding-top: 5px;
   }
 
   .Section1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    grid-template-columns: auto;
+    padding: 50px;
+    padding-bottom: 10px;
+    margin-bottom: 0px;
   }
 }
 
