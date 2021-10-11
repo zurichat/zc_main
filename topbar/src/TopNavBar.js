@@ -18,6 +18,7 @@ import { GetUserInfo, SubscribeToChannel } from "@zuri/control"
 import axios from "axios"
 import toggleStyle from "./styles/sidebartoggle.module.css"
 import { BsReverseLayoutTextSidebarReverse } from "react-icons/bs"
+import {navigateToUrl} from 'single-spa';
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { closeModal, openModal, presence, setPresence } =
@@ -178,6 +179,24 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   //     }
   //   }
   // })
+  const handleEnter=(e)=>{
+
+    e.preventDefault();
+    // eslint-disable-next-line no-console
+    console.log(window.location.href)
+
+
+    navigateToUrl("/search")
+      // let s= window.location.href.split('/')
+      // if(s[2].includes("local")){
+      //   window.location.href="http://localhost:9000/search"
+      // }else{
+      //   window.location.href="https://zuri.chat/search"
+      }
+      
+      
+      
+
 
   return (
     <>
@@ -203,6 +222,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         </div>
       </div>
       <div className="ms-4" style={{ width: "60%" }}>
+      <form  onSubmit={handleEnter}>
         <BaseInput
           value={search}
           onChange={e => setSearch(e.target.value)}
@@ -211,7 +231,10 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           error
           placeholder="Search here"
           border={"#99999933"}
+          
         />
+        </form>
+     
       </div>
       <ProfileImageContainer
         className="d-flex justify-content-end pe-3"
