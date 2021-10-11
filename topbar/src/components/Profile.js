@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import styles from "../styles/Profile.module.css"
 import defaultAvatar from "../assets/images/avatar_vct.svg"
 import facebook from "../assets/images/facebook.svg"
@@ -16,6 +16,9 @@ import EditProfile from "./EditProfile"
 import Preferences from "./Preferences"
 import { Dropdown } from "./ProfileMore"
 import StatusBadgeModal from "./StatusBadgeModal"
+import { FiSettings } from "react-icons/fi"
+import { authAxios } from "../utils/Api"
+import { getCurrentWorkspace, getUser } from "../utils/common"
 
 const Profile = () => {
   const {
@@ -31,6 +34,24 @@ const Profile = () => {
   const [modal, setModal] = useState("")
 
   const currentTime = moment().format("h:mm a")
+
+  const userData = getUser()
+  const currentWorkspace = getCurrentWorkspace()
+  const [workspaceData, setWorkspaceData] = React.useState({})
+
+  useEffect(() => {
+    if (currentWorkspace) {
+      authAxios
+        .get(`/organizations/${currentWorkspace}`)
+        .then(res => {
+          setWorkspaceData(res.data.data)
+        })
+        .catch(err => {
+          console.error(err)
+        })
+    }
+  }, [currentWorkspace])
+
 
   return (
     <div
@@ -99,6 +120,12 @@ const Profile = () => {
           >
             Edit Profile
           </button>
+          <a className={styles.settingsLink} 
+            href={
+              workspaceData.creator_email === userData.email
+                ? "/admin/settings"
+                : "/settings"
+            }><FiSettings className={styles.iconSettings} /></a>
         </div>
 
         <div className={styles.buttonGroups}>

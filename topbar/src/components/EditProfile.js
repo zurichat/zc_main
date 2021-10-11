@@ -181,7 +181,7 @@ const EditProfile = () => {
                 </div>
                 <div className="input-group mal-4">
                   <label htmlFor="name" className="inputLabel">
-                    First Name
+                    Full Name
                   </label>
                   <input
                     type="text"
