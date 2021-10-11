@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons"
 import { Link } from 'react-router-dom'
 
+
 const Footer = () => {
   const getYear = () => {
     return new Date().getFullYear()
@@ -66,7 +67,9 @@ const Footer = () => {
             <h5>Info</h5>
             <ul>
               <li>
-                <Link to="/privacy">Privacy & Terms</Link>{" "}
+                <Link to="/privacy">
+                  <span>Privacy & Terms</span>{" "}
+                </Link>
               </li>
               <li>
                 <Link to="/marketplace">Market Place</Link>{" "}
