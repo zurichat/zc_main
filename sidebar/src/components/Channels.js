@@ -1,8 +1,8 @@
-import { Fragment, useEffect, useState } from 'react'
-import fetcher from '../utils/fetcher'
-import Dropdown from './Dropdown'
-import SkeletonLoader from './SkeletonLoader'
-import { navigateToUrl } from 'single-spa'
+import { Fragment, useEffect, useState } from "react"
+import fetcher from "../utils/fetcher"
+import Dropdown from "./Dropdown"
+import SkeletonLoader from "./SkeletonLoader"
+import { navigateToUrl } from "single-spa"
 
 export default function Channels({ organization, userid }) {
   const [isLoading, , list] = fetcher(

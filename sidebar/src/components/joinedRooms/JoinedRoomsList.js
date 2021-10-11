@@ -9,7 +9,7 @@ import {
   Span,
   Button,
   Text
-} from './RoomStyles'
+} from "./RoomStyles"
 const JoinedRoomsList = ({ title, members, unread }) => {
   return (
     <ListWrapper>

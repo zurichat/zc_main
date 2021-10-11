@@ -78,7 +78,7 @@ const Sidebar = props => {
 
   //organization
   const [org, setOrg] = useState({})
-  
+
   //set user worksapces
   const [orgs, setOrgs] = useState([])
 
@@ -103,7 +103,7 @@ const Sidebar = props => {
   const setInviteEmails = emails => setInviteEmail(emails)
   const [sendLoading, setSendLoading] = useState(false)
 
-  const [userInfo, setUserInfo] = useState({ 
+  const [userInfo, setUserInfo] = useState({
     userId: "",
     Organizations: [],
     token: ""
@@ -113,7 +113,7 @@ const Sidebar = props => {
 
   const [nullValue, setnullValue] = useState(0)
   const [nullValue2, setnullValue2] = useState(0)
-  
+
   const [organizationInfo, setOrganizationInfo] = useState(null)
   const [sidebarData, setSidebarData] = useState({})
   const [isLoading, setIsLoading] = useState(true)
@@ -151,22 +151,22 @@ const Sidebar = props => {
   }, [])
 
   //get all user workspaces
-  useEffect(()=>{
-
-    axios.get(
-      `https://api.zuri.chat/users/${user_id_session.email}/organizations`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.zuri.chat/users/${user_id_session.email}/organizations`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
         }
-      }
-    ).then(res => {
-      const orgs = res.data.data
-      setOrgs(orgs)
-    })   
-     setnullValue2(1)
-    },[])
-
+      )
+      .then(res => {
+        const orgs = res.data.data
+        setOrgs(orgs)
+      })
+    setnullValue2(1)
+  }, [])
 
   useEffect(() => {
     inviteVisibility()
@@ -234,7 +234,7 @@ const Sidebar = props => {
 
   {
     nullValue === 1 &&
-    nullValue2 === 1 &&
+      nullValue2 === 1 &&
       currentWorkspace &&
       userInfo.userId &&
       SubscribeToChannel(

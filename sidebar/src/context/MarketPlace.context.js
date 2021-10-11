@@ -4,13 +4,13 @@ import {
   useEffect,
   useCallback,
   useReducer
-} from 'react'
+} from "react"
 
 import {
   INITIAL_STATE,
   marketplaceReducer
-} from './marketplace/marketplace.reducer'
-import { setModal } from './marketplace/marketplace.action'
+} from "./marketplace/marketplace.reducer"
+import { setModal } from "./marketplace/marketplace.action"
 
 export const MarketPlaceContext = createContext(null)
 

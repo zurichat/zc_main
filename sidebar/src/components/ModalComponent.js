@@ -1,11 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react'
-import styles from '../styles/ModalComponentStyles.module.css'
-import CompanyImage from '../assets/images/CompanyIcon.svg'
-import TotalMessages from '../assets/images/TotalMessages.svg'
-import axios from 'axios'
-import { RiArrowRightSLine as Arrow } from 'react-icons/ri'
-import { faClosedCaptioning } from '@fortawesome/free-solid-svg-icons'
-import Workspace from '../../../control/src/pages/workspace/components/Workspace'
+import React, { useState, useRef, useEffect } from "react"
+import styles from "../styles/ModalComponentStyles.module.css"
+import CompanyImage from "../assets/images/CompanyIcon.svg"
+import TotalMessages from "../assets/images/TotalMessages.svg"
+import axios from "axios"
+import { RiArrowRightSLine as Arrow } from "react-icons/ri"
+import { faClosedCaptioning } from "@fortawesome/free-solid-svg-icons"
+import Workspace from "../../../control/src/pages/workspace/components/Workspace"
 
 const ModalComponent = ({ orgs, workSpace, isOpen, toggleOpenInvite }) => {
   // const isOpen = true;
@@ -26,8 +26,8 @@ const ModalComponent = ({ orgs, workSpace, isOpen, toggleOpenInvite }) => {
     useEffect(() => {
       const node = ref.current
       if (node) {
-        node.addEventListener('mouseover', handleMouseOver)
-        node.addEventListener('mouseout', handleMouseOut)
+        node.addEventListener("mouseover", handleMouseOver)
+        node.addEventListener("mouseout", handleMouseOut)
       }
     }, [[ref.current]])
     return [ref, value]
@@ -119,7 +119,7 @@ const ModalComponent = ({ orgs, workSpace, isOpen, toggleOpenInvite }) => {
       <div className={styles.modalSection}>
         <div>
           <p>
-            {' '}
+            {" "}
             <a href="/signout">Sign Out</a>
           </p>
         </div>
@@ -168,21 +168,20 @@ const ModalComponent = ({ orgs, workSpace, isOpen, toggleOpenInvite }) => {
               ref={hoverRef2}
               className={`d-flex flex-column ${styles.submodalSection}`}
             >
-
-              {orgs && orgs.map((o, idx)=>(
-
-              <div
-              key={idx}
-              onClick={()=>{
-                localStorage.setItem('currentWorkspace', o.id)
-                window.location.reload();
-              }}
-              >
-              <p>{o.name}</p>
-              </div>
-              // <hr
-              //  className={styles.modalDivider} />
-              ))}
+              {orgs &&
+                orgs.map((o, idx) => (
+                  <div
+                    key={idx}
+                    onClick={() => {
+                      localStorage.setItem("currentWorkspace", o.id)
+                      window.location.reload()
+                    }}
+                  >
+                    <p>{o.name}</p>
+                  </div>
+                  // <hr
+                  //  className={styles.modalDivider} />
+                ))}
               {/* <div>
               <p>HNGi8</p>
               </div>
