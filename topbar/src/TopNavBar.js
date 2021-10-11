@@ -244,23 +244,29 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         </div>
       </div>
       <div className="ms-4" style={{ width: "60%" }}>
-        <BaseInput
-          onChange={handleSearchChange}
-          value={inputValue}
-          type="text"
-          width={12}
-          error
-          placeholder="Search here for keyword"
-          border={"#99999933"}
-        />
-        <SearchAutocomplete
-          inputValue={inputValue}
-          selectedSuggestion={selectedSuggestion}
-          onSelectSuggestion={onSelectSuggestion}
-          displaySuggestions={displaySuggestions}
-          suggestions={filteredSuggestions}
-        />
+        <div>
+          <BaseInput
+            onChange={handleSearchChange}
+            value={inputValue}
+            type="text"
+            width={12}
+            error
+            placeholder="Search here"
+            border={"#99999933"}
+          />
+        </div>
+
+        <div>
+          <SearchAutocomplete
+            inputValue={inputValue}
+            selectedSuggestion={selectedSuggestion}
+            onSelectSuggestion={onSelectSuggestion}
+            displaySuggestions={displaySuggestions}
+            suggestions={filteredSuggestions}
+          />
+        </div>
       </div>
+
       <ProfileImageContainer
         className="d-flex justify-content-end pe-3"
         style={{ width: "20%" }}
