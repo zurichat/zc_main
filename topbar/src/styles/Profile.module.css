@@ -71,15 +71,12 @@
   flex-direction: column;
 }
 
-.userDetails h3 {
-  margin-top: -0.5rem;
+.userDetails .h3user {
+  margin-top: 0.5rem;
   font-size: 1.3rem;
   font-weight: 700;
   color: #242424;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-family: 'Lato', sans-serif;
 }
 
@@ -107,15 +104,12 @@
   color: #3a3a3a;
   text-align: center;
   padding: 0;
-  margin: 0;
-  margin-top: -1rem;
 }
 
 .userDetails small {
   font-size: 0.8rem;
   font-weight: 400;
   color: #3a3a3a;
-  margin-top: 0.6rem;
 }
 
 .buttonGroups {
@@ -382,7 +376,7 @@
     stroke-width: 2px;
   }
 
-  .userDetails {
+  .userDetailed {
     display: none;
   }
 
