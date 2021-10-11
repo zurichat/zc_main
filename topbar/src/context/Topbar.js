@@ -1,4 +1,4 @@
-import { createContext, useState, useRef, useContext, useEffect } from "react"
+import { createContext, useState, useRef, useContext } from "react"
 import { authAxios } from "../utils/Api"
 import { ProfileContext } from "./ProfileModal"
 

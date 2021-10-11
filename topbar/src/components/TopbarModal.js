@@ -12,7 +12,7 @@ import Preferences from "./Preferences"
 import EditProfile from "./EditProfile"
 import MembersModal from "./MembersModal"
 import Downloads from "./Downloads"
-import PauseNotification from "./PauseNotification"
+// import PauseNotification from "./PauseNotification"
 import SetStatusModal from "./SetStatusModal"
 // react icons
 
@@ -142,7 +142,7 @@ const TopbarModal = ({ members }) => {
       {/* The section that shows the topbarprofile */}
       {showModal ? (
         <div>
-          <section className={styles.topbarModal} ref={modalRef}>
+          <section className={styles.topbarModal}>
             <div className={styles.sectionOne}>
               <div className={styles.oneLeft}>
                 <img
@@ -191,7 +191,7 @@ const TopbarModal = ({ members }) => {
                 <p onClick={() => setPause(!pause)}>Pause Notifications</p>
                 <FaChevronRight className={styles.chevron} />
               </div>
-              {pause && <PauseNotification pause={pause} setPause={setPause} />}
+              {/* {pause && <PauseNotification pause={pause} setPause={setPause} />} */}
             </div>
 
             <hr className={styles.hr} />
