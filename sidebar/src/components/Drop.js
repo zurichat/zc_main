@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react"
 import styles from "../styles/Drop.module.css"
 import { TiArrowSortedDown } from "react-icons/ti"
 import { navigateToUrl } from "single-spa"
-import hash from "../assets/images/hash.svg"
+// import hash from "../assets/images/hash.svg"
 import { AiOutlinePlusCircle } from "react-icons/ai"
 import PluginRoomAddUser from "./PluginRoomAddUser"
 import RoomOptions from "./RoomOptions"
@@ -93,8 +93,8 @@ const DropDown = ({ itemName, items }) => {
                     <img
                       ref={click}
                       className={`${styles.item__image}`}
-                      src={room.room_image || hash.toString()}
-                      onError={e => (e.target.src = hash.toString())}
+                      src={room.room_image || "#"}
+                      onError={e => (e.target.src = "#")}
                       alt="img"
                     />
                     <div className={`mb-0 ${styles.dropDown__name}`}>
