@@ -170,7 +170,6 @@ const TopbarModal = ({ members }) => {
             </div>
 
             <div className={styles.sectionThree}>
-              {/* <p onClick={openStatus}>Set a status</p> */}
               <p onClick={() => setStatusModal(!statusModal)}>Set a status</p>
               {statusModal && (
                 <SetStatusModal
