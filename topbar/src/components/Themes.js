@@ -10,6 +10,11 @@ import theme9 from "../assets/images/theme9.png"
 import theme10 from "../assets/images/theme10.png"
 import theme16 from "../assets/images/theme16.png"
 import theme17 from "../assets/images/theme17.png"
+import theme18 from "../assets/images/theme18.png"
+import theme19 from "../assets/images/theme19.png"
+import theme20 from "../assets/images/theme20.png"
+import theme21 from "../assets/images/theme21.png"
+
 
 const Themes = () => {
   const [active1, setActive1] = useState(0)
@@ -147,54 +152,6 @@ const Themes = () => {
               />
             </div>
             <div className={styles.light2}>Dark</div>
-          </div>
-        </div>
-      </div>
-      <div className={styles.customize}>
-        <div className={styles.text3}>Colors</div>
-        <div className={styles.custom}>
-          Customize the look of your workspace. Feeling
-        </div>
-        <div className={styles.custom2}>adventurous?</div>
-        <div className={styles.create}>Create a custom theme</div>
-        <div className={styles.true}>Tried and true</div>
-      </div>
-      <div className={styles.set1}>
-        <div className={styles.img3}>
-          <img src={theme3} alt="theme3" className={styles.theme3} />
-        </div>
-        <div className={styles.img4}>
-          <img src={theme4} alt="theme4" className={styles.theme4} />
-        </div>
-      </div>
-      <div className={styles.all}>
-        <div className={styles.arrow}>↓</div>
-        <div className={styles.show}>Show all classic themes</div>
-      </div>
-      <div className={styles.clean}>Clean and minimal</div>
-      <div className={styles.set2}>
-        <div className={styles.img5}>
-          <img src={theme5} alt="theme5" className={styles.theme5} />
-        </div>
-        <div className={styles.img6}>
-          <img src={theme6} alt="theme6" className={styles.theme6} />
-        </div>
-      </div>
-      <div className={styles.set3}>
-        <div className={styles.img7}>
-          <img src={theme7} alt="theme7" className={styles.theme7} />
-        </div>
-        <div className={styles.img8}>
-          <img src={theme8} alt="theme8" className={styles.theme8} />
-        </div>
-      </div>
-      <div className={styles.set4}>
-        <div className={styles.bottom}>
-          <div className={styles.img9}>
-            <img src={theme9} alt="theme9" className={styles.theme9} />
-          </div>
-          <div className={styles.img10}>
-            <img src={theme10} alt="theme10" className={styles.theme10} />
           </div>
         </div>
       </div>
