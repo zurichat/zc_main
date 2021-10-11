@@ -40,7 +40,7 @@
 
 .modalCont {
   overflow-y: scroll;
-  height: 80vh;
+  height: 100%;
 }
 
 .modalHeader,
@@ -102,10 +102,10 @@
   .modalContent {
     width: 100%;
     position: absolute;
-    top: 15vh;
+   
     left: 0;
     right: 0;
-    height: 85vh;
+    height: 100%;
     max-width: 100vw;
   }
 
@@ -119,19 +119,18 @@
     max-width: 100vw;
     background: #fff;
     border-radius: 0px;
-    margin-top: 1.5rem;
-    border-radius: 20px 20px 0px 0px;
+
   }
 
   .modalHeader {
     position: fixed;
-    top: 1.5rem;
+   
     width: 100%;
     height: 4rem;
     padding: 0 1.5rem;
     font-size: 1.2rem;
     background: none;
-    border-radius: 20px 20px 0px 0px;
+    
     border-bottom: 1px solid #dadada;
     justify-content: center;
     font-weight: 700;
@@ -140,7 +139,7 @@
   }
 
   .modalCont {
-    margin-top: 4rem;
+    margin-top: 1rem;
   }
 
   .mobile {
