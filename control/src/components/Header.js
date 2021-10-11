@@ -1,9 +1,8 @@
-import React from "react"
 import { useEffect, useRef } from "react"
 import { Link } from "react-router-dom"
 import headerStyles from "../component-styles/HeaderStyle.module.css"
 import zurichatlogo from "../component-assets/zurichatlogo.svg"
-import searchIcon from "../component-assets/searchIcon.svg"
+// import searchIcon from "../component-assets/searchIcon.svg"
 //import { Button } from '../pages/createworkspace/components/WorkspaceHome'
 
 const HeaderSearchSuggestion = () => {
@@ -54,13 +53,13 @@ const HeaderSearchSuggestion = () => {
           />
           <span className={`mb-2 ${headerStyles.zuriChat}`}>Zuri Chat</span>
         </Link>
-        <Link to="/search">
+        {/* <Link to="/search">
           <img
             src={searchIcon}
             alt="search-Icon"
             className={`d-block d-sm-none align-top ${headerStyles.searchImage1}`}
           />
-        </Link>
+        </Link> */}
         <button
           className={`navbar-toggler ${headerStyles.toggle}`}
           onClick={toggleBgOverlay}
@@ -143,13 +142,13 @@ const HeaderSearchSuggestion = () => {
               </Link>
             </li>
           </ul>
-          <Link to="/search">
+          {/* <Link to="/search">
             <img
               src={searchIcon}
               alt="search-Icon"
               className={`d-inline-block align-top ${headerStyles.searchImage}`}
             />
-          </Link>
+          </Link> */}
         </div>
         <ul
           className={`navbar-nav d-none d-lg-flex me-auto my-2 my-lg-0 navbar-nav-scroll ${headerStyles.signs}`}
