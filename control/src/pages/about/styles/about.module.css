@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 .banner {
   margin-top: 10%;
   text-align: center;
@@ -32,8 +32,12 @@
 .to_join {
   margin-top: 3%;
 }
+.join_us {
+  text-align: center;
+}
 .join_us > p {
-  font-size: 14px;
+  font-size: 17px;
+  text-align: center;
   line-height: 25px;
   font-weight: 500;
 }
@@ -106,7 +110,31 @@
 .carousel {
   display: none;
 }
+.row {
+  padding: 0.8rem 3.2rem;
+  background: #f8f8ff;
+}
+@media only screen and (max-width: 1040px) {
+  .row {
+    padding: 0.8rem 1.2rem;
+  }
+}
 
+@media only screen and (max-width: 970px) {
+  .row {
+    padding: 0.8rem 3.2rem;
+  }
+}
+@media only screen and (max-width: 760px) {
+  .row {
+    padding: 0.8rem 4.2rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .row {
+    padding: 0.8rem 1rem;
+  }
+}
 @media only screen and (max-width: 600px) {
   .banner {
     margin-top: 29%;
@@ -142,6 +170,7 @@
   }
   .join_us > p {
     padding: 0 4%;
+    font-size: 14px;
   }
   .span {
     text-decoration: none;
@@ -185,10 +214,17 @@
   }
   .carouselImage {
     position: relative;
-    left: 25%;
+    left: 35%;
   }
   .carouselCompany {
     position: relative;
-    left: 38%;
+    left: 45%;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .carouselImage {
+    position: relative;
+    left: 30%;
   }
 }

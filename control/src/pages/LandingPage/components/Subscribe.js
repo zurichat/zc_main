@@ -49,7 +49,7 @@ const Subscribe = () => {
           <div
             className={`col-md-6 col-sm-12 d-flex flex-column ${css.rightColumn}`}
           >
-            <div className={` ${css.text}`}>
+            <div className={`py-sm-4 ${css.text}`}>
               <h2 className={` ${css.heading2}`}>
                 Be the First to get updates and exclusive offers from Zuri Chat
               </h2>

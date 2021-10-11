@@ -13,10 +13,6 @@ const WorkspaceHeader = () => {
           <p>Welcome back! Pick one to get back to working with your team</p>
         </div>
       </section>
-      <section className={`${styles.header_extra}`}>
-        <p>New to zurichat?</p>
-        <Link to="./signup">Create an account</Link>
-      </section>
     </header>
   )
 }
