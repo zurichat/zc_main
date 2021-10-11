@@ -92,7 +92,7 @@
 }
 
 .marketplaceHero {
-  min-height: 80vh;
+  min-height: 50vh;
   display: flex;
   max-width: 95%;
   margin: 0 auto;
@@ -492,7 +492,7 @@
   .marketplaceHero {
     font-size: 16px;
     margin: 0;
-    padding-top: 2.5rem;
+    padding-top: 4.1rem;
   }
   .marketplaceHero h1 {
     font-size: 30px;
