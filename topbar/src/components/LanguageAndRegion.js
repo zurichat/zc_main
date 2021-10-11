@@ -62,6 +62,7 @@ const LanguageAndRegion = () => {
               Set time zone automatically
             </label>
 
+
             <select
               className={styles.selectbox}
               name="time-zone"
