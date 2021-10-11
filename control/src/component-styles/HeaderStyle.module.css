@@ -49,7 +49,7 @@
 }
 
 .navbarBrand {
-  padding-left: 6rem;
+  padding-left: 19px;
 }
 
 .navbarBrand span {
@@ -59,7 +59,7 @@
 }
 
 .signs {
-  padding-right: 6rem;
+  padding-right: 0px;
 }
 
 .signs li {
@@ -109,7 +109,6 @@
 @media screen and (max-width: 1000px) {
   .navbarBrand {
     margin-right: auto !important;
-    margin-left: -4em;
   }
 }
 
