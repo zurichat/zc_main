@@ -199,7 +199,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     "Mark Essien"
   ]
 
-  const onChange = event => {
+  const handleSearchChange = event => {
     const value = event.target.value
     setInputValue(value)
 
@@ -245,8 +245,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       </div>
       <div className="ms-4" style={{ width: "60%" }}>
         <BaseInput
-          style={{ zIndex: "1000" }}
-          onChange={onChange}
+          onChange={handleSearchChange}
           value={inputValue}
           type="text"
           width={12}
