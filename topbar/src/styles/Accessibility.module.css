@@ -4,7 +4,8 @@
   left: 480px;
   top: 140px;
   margin: 30px 50px;
-  margin-bottom: 32px;
+  margin-bottom:32px;
+
 }
 
 .hrLine {
@@ -13,9 +14,9 @@
   /* top: 55.6%; */
   /* bottom: 34.4%; */
   border: 1px solid #eeeeee;
-  margin-top: 12px;
+  margin-top:12px;
   width: 120%;
-  margin-bottom: 12px;
+  margin-bottom:12px;
 }
 
 .animationH3,
@@ -29,7 +30,7 @@
   line-height: 130%;
   letter-spacing: 0em;
   color: #242424;
-  margin-top: 13px;
+  margin-top:13px;
 }
 
 .accessibilityCheckbox,
@@ -42,8 +43,9 @@
 
 .accessibilityLabel {
   margin-left: -13px;
-  margin-top: 10px;
+  margin-top:10px;
   color: #3a3a3a;
+  font-size: 13px;
 }
 
 .accessibilityRadioLabel {
@@ -54,12 +56,13 @@
 
 #accessibilityPId {
   margin-left: 25px;
-  margin-bottom: -5px;
+  margin-bottom: -5px; 
+
 }
 
 #accessibilityPId2 {
   margin-left: 25px;
-  margin-bottom: 55px;
+ margin-bottom: 55px; 
 }
 
 .imagesAndEmojis {
@@ -81,14 +84,14 @@
   letter-spacing: 0em;
   text-align: left;
   margin-top: 9px;
-  margin-bottom: 10px;
+  margin-bottom: 10px ;
   color: #3a3a3a;
 }
 
 .accessibilityEsc {
   background-color: #f9f9f9;
   padding: 2px 5px;
-  font-size: 12px;
+  font-size: 13px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
@@ -106,9 +109,9 @@
   border-radius: 3px;
 }
 
-.image1 {
-  width: 20px;
-  height: 15px;
+.image1{
+  width:20px;
+  height:15px;
   display: inline;
   margin-left: 4px;
   margin-right: 4px;
@@ -120,8 +123,9 @@
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
-  line-height: 130%;
+  line-height: 130%; 
   margin-top: -44px;
+
 }
 
 #exclamation {

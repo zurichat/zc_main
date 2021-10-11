@@ -29,7 +29,7 @@
   flex-direction: column;
   border: 1px solid black;
   width: 70.375rem;
-  height: 36rem;
+  height: fit-content;
   box-shadow: 5px 15px 20px 5px rgba(0, 0, 0, 0.1);
   border: none;
 }
@@ -44,12 +44,14 @@
 
 .topPricingPageColumns {
   display: flex;
-  flex: 1 1 1;
+  flex: 1;
   box-sizing: content-box;
   height: 100%;
   padding: 1.4rem;
 }
-
+.topPricingPageColumns > div {
+  width: 25%;
+}
 .topPricingStart {
   flex: 1;
   height: 100%;
@@ -81,11 +83,10 @@
 .topPricingTop {
   display: flex;
   flex-direction: column;
-  height: 6.65rem;
-  max-height: fit-content;
+  height: 10rem;
+  /* max-height: fit-content; */
   width: 100%;
-  max-height: auto;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .topPricingTitle {
@@ -99,6 +100,7 @@
   font-weight: bold;
   font-size: 0.7rem;
   flex-wrap: wrap;
+  height: 4rem;
 }
 
 .topPricingAmount {
@@ -114,16 +116,18 @@
   background: #00b87c;
   border: none;
   border-radius: 0.25rem;
-  margin-top: 8%;
-  width: 12.5rem;
-  height: 2.56rem;
-  font-weight: 900;
+  /* margin-top: 8%; */
+  width: 13rem;
+  height: 3rem;
+  font-weight: normal;
   font-size: 1rem;
   color: #ffffff;
 }
-
+.topPricingButton a {
+  font-weight: 400;
+}
 .topPricingButton:hover {
-  transform: scale(1.05);
+  background: #156349;
 }
 
 .link {
@@ -135,11 +139,12 @@
 }
 
 .topPricingBottom {
-  height: calc(100% - 8.8rem);
+  height: 23rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 1.25rem;
+  padding-left: 0;
 }
 
 .topPricingBottomHead {
@@ -152,6 +157,7 @@
   font-style: normal;
   font-weight: 800;
   font-size: 0.8rem;
+  margin-bottom: 1.5rem;
 }
 
 .topPricingBottomBodyPart {
@@ -179,6 +185,7 @@
 .topPricingBottomFoot {
   display: flex;
   justify-content: center;
+  margin-top: auto;
 }
 
 .topPricingBottomFoot .span {
@@ -279,12 +286,14 @@
   .topPricingPageColumns {
     display: flex;
     flex-direction: column;
-    flex: 1 1 1;
+    flex: 1;
     box-sizing: content-box;
     height: 100%;
     padding: 1.4rem;
   }
-
+  .topPricingPageColumns > div {
+    width: 100%;
+  }
   .topPricingStart {
     flex: 1;
     height: 100%;
@@ -312,11 +321,10 @@
   .topPricingTop {
     display: flex;
     flex-direction: column;
-    height: 6.25rem;
-    max-height: fit-content;
+    height: 10rem;
     width: 100%;
     max-height: auto;
-    justify-content: space-between;
+    /* justify-content: space-between; */
   }
 
   .topPricingTitle {
@@ -330,6 +338,7 @@
     font-weight: bold;
     font-size: 0.7rem;
     flex-wrap: wrap;
+    height: 4rem;
   }
 
   .topPricingAmount {
