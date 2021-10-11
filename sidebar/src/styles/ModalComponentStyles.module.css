@@ -139,7 +139,6 @@ all:none;
   font-weight: 700;
   line-height: 13px;
   margin: 0;
-  display: none;
 }
 
 .info p {
@@ -148,20 +147,19 @@ all:none;
   font-style: mixed;
   line-height: 14px;
   margin: 0;
-  display: none;
+  display: inline;
 }
 
 .info span {
   font-size: 11px;
   line-height: 14px;
   color: #00b87c;
-  display: none;
+  display: inline;
 }
 
 .infoChart img {
   width: 40px;
   height: 40px;
-  display: none;
 }
 
 .arrow {
