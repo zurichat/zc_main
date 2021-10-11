@@ -69,7 +69,7 @@ const DropDown = ({ itemName, items }) => {
           <p className={`mb-0 ${styles.dropDown__title}`}> {itemName} </p>
           {items.button_url ? (
             <a href={items.button_url} onClick={navigateToUrl}>
-              <AiOutlinePlusCircle className={`${styles.icon}`} />
+              {/* <AiOutlinePlusCircle className={`${styles.icon}`} /> */}
             </a>
           ) : null}
         </div>
@@ -109,7 +109,7 @@ const DropDown = ({ itemName, items }) => {
                           setAddToRoom(!addToRoom)
                           setRoomId(room._id)
                         }}
-                      />
+                      /> 
                       <div className={`${styles.optionsContainer}`}>
                         <RoomOptions isClicked={isClicked} />
                       </div>
