@@ -14,8 +14,18 @@ import { StyledProfileWrapper } from "../styles/StyledEditProfile"
 const EditProfile = () => {
   const imageRef = useRef(null)
   const avatarRef = useRef(null)
+
   const { user, orgId, userProfileImage, setUserProfileImage,toggleModalState } =
     useContext(ProfileContext)
+
+  const {
+    user,
+    orgId,
+    userProfileImage,
+    setUserProfileImage,
+    toggleModalState
+  } = useContext(ProfileContext)
+
   const [selectedTimezone, setSelectedTimezone] = useState({})
   const [links, setLinks] = useState([""])
   const [state, setState] = useState({
@@ -384,7 +394,13 @@ const EditProfile = () => {
             )}
           </div>
           <div className="button-wrapper">
+
             <button onClick={toggleModalState} className="btns cncBtn">Cancel</button>
+
+            <button className="btns cncBtn" onClick={toggleModalState}>
+              Cancel
+            </button>
+
             <button onClick={handleFormSubmit} className="btns saveBtn">
               {state.loading ? (
                 <Loader type="ThreeDots" color="#fff" height={40} width={40} />
