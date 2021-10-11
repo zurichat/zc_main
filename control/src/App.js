@@ -12,6 +12,7 @@ import CookiesSetting from './pages/cookiesSettings'
 import Cookies from './pages/cookies'
 import Features from './pages/features'
 import Resources from './pages/resources'
+import Help from './pages/Help'
 import Pricing from './pages/pricing'
 import Security from './pages/security'
 import Invite from './pages/inviteScreen'
@@ -75,6 +76,9 @@ const App = () => {
         <Route path="/about">
           <About />
         </Route>
+        <Route path="/help">
+          <Help />
+        </Route>
         <Route path="/choose-workspace">
           <Workspace />
         </Route>
@@ -102,7 +106,7 @@ const App = () => {
         <Route path="/security">
           <Security />
         </Route>
-        <Route path="/download-app">
+        <Route path="/downloads">
           <Download />
         </Route>
         <Route path="/downloadsMac">
@@ -166,7 +170,7 @@ const App = () => {
           <Cookies />
         </Route>
 
-        <Route component={NotFoundPage} />
+        {/* <Route component={NotFoundPage} /> */}
       </Switch>
     </BrowserRouter>
   )
