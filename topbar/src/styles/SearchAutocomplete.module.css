@@ -1,0 +1,22 @@
+.suggestionsList {
+  list-style: none;
+  padding: 0;
+  overflow-y: auto;
+  max-width: auto;
+ 
+  margin-top: -32px;
+}
+.suggestion {
+  background-color: #00b87c;
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+ 
+.suggestion:hover {
+  color: whitesmoke;
+}
+.selected {
+  background-color: rgba(0, 184, 124, 0.902);
+  color: rgb(238, 223, 223);
+}
