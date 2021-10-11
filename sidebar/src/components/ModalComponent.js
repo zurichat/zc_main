@@ -54,13 +54,13 @@ const ModalComponent = ({  workSpace, isOpen, toggleOpenInvite }) => {
       <div
         className={`d-flex align-items-center justify-content-between ${styles.TopmodalSection}`}
       >
-        <div className={` d-none ${styles.info}`}>
+        {/* <div className={` d-none ${styles.info}`}>
           <p className={`${styles.infoHeader}`}>Total Messages </p> <br />
           <p className={`${styles.infoP}`}>
             The workspace is currently on the free version of Zuri Chat.
           </p>
           <span> see plans</span>
-        </div>
+        </div> */}
         <div className={`${styles.infoChart}`}>
           <img src={TotalMessages} alt="chart" />
         </div>
