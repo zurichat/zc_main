@@ -26,7 +26,7 @@ const Downloads = ({ setModal }) => {
       name: 'Windows App',
       size: '',
       src: windows,
-      link: './desktop/zuri desktop.exe',
+      link: '/desktop/zuri desktop.exe',
       download: "Zurichat Android APK"
     },
     {
