@@ -10,6 +10,9 @@
   background-color: white;
   display: flex;
   justify-content: space-around;
+  position: fixed;
+  top: 0;
+  z-index: 100;
 }
 
 .navbar_toggle_icon span {
