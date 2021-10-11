@@ -7,6 +7,7 @@ import linkedin from "../component-assets/linkedin.svg"
 import instagram from "../component-assets/instagram.svg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons"
+import { Link } from "react-router-dom"
 
 const Footer = () => {
   const getYear = () => {
@@ -64,7 +65,9 @@ const Footer = () => {
             <h5>Info</h5>
             <ul>
               <li>
-                <a href="/privacy">Privacy & Terms</a>{" "}
+                <Link to="/privacy">
+                  <span>Privacy & Terms</span>{" "}
+                </Link>
               </li>
               <li>
                 <a href="/marketplace">Market Place</a>{" "}
@@ -80,6 +83,9 @@ const Footer = () => {
               </li>
               <li>
                 <a href="/contact-us">Contact Us</a>{" "}
+              </li>
+              <li>
+                <a href="https://docs.zuri.chat/">Documentation</a>{" "}
               </li>
             </ul>
           </div>

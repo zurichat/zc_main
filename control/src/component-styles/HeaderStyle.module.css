@@ -84,11 +84,31 @@
   font-size: 18px;
   padding: 8px 20px;
   border-radius: 3px;
+  position: relative;
+}
+
+.signIn::after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.2s;
+  border-radius: 3px;
+  background-color: #00b87c;
 }
 
 .signIn:hover {
   background-color: #156349;
   color: white;
+}
+
+.signIn:active::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
 }
 
 .item {
