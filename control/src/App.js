@@ -34,11 +34,15 @@ import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContex
 import PrivacyPolicy from './pages/privacy-policy/index'
 import NotFoundPage from './pages/404'
 import Billing from './pages/admin/Billing'
+import Blog from './pages/blogs'
 import Homepage from './pages/home'
 import Permissions from './pages/admin/Permissions'
 import SettingsHome from './pages/admin/Settings/index'
 import About from './pages/about/index'
 import AdminSettingsTab from './pages/admin/Settings/components/AdminSettingsTab'
+import TermsOfService from './pages/termsOfService'
+import RedirectRoute from './pages/redirect'
+
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -56,9 +60,9 @@ const App = () => {
         <Route path="/" exact>
           <LandingPage />
         </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
+        <RedirectRoute path="/login">
+         <Login />
+       </RedirectRoute>
         <Route path="/signup">
           <SignUp />
         </Route>
@@ -89,13 +93,16 @@ const App = () => {
         <Route path="/resources">
           <Resources />
         </Route>
+        <Route path="/blog">
+          <Blog />
+        </Route>
         <Route path="/pricing">
           <Pricing />
         </Route>
         <Route path="/security">
           <Security />
         </Route>
-        <Route path="/download-app">
+        <Route path="/downloads">
           <Download />
         </Route>
         <Route path="/downloadsMac">
@@ -109,6 +116,9 @@ const App = () => {
         </Route>
         <Route path="/privacy">
           <PrivacyPolicy />
+        </Route>
+        <Route path="/terms">
+          <TermsOfService />
         </Route>
         <Route path="/marketplace" exact>
           <MarketPlace />
@@ -156,7 +166,7 @@ const App = () => {
           <Cookies />
         </Route>
 
-        <Route component={NotFoundPage} />
+        {/* <Route component={NotFoundPage} /> */}
       </Switch>
     </BrowserRouter>
   )

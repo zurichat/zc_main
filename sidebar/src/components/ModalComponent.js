@@ -7,8 +7,13 @@ import { RiArrowRightSLine as Arrow } from 'react-icons/ri'
 import { faClosedCaptioning } from '@fortawesome/free-solid-svg-icons'
 import Workspace from '../../../control/src/pages/workspace/components/Workspace'
 
-const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
+const orgss = sessionStorage.getItem("organisations")
+const orgs = JSON.parse(orgss)
+
+const ModalComponent = ({  workSpace, isOpen, toggleOpenInvite }) => {
   // const isOpen = true;
+
+ 
 
   const [hoverRef, isHovered] = useHover()
   const [hoverRef2, isHovered2] = useHover()
@@ -154,7 +159,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
           </section>
         </div>
         <div
-          // ref={hoverRef2}
+          ref={hoverRef2}
           className={`d-flex align-items-center justify-content-between ${styles.modalSubSection}`}
         >
           <p>Switch workspace</p>
@@ -168,13 +173,28 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
               ref={hoverRef2}
               className={`d-flex flex-column ${styles.submodalSection}`}
             >
-              <div>
-                <p>HNGi8</p>
+
+              {orgs && orgs.map((o, idx)=>(
+
+              <div
+              key={idx}
+              onClick={()=>{
+                localStorage.setItem('currentWorkspace', o.id)
+                window.location.reload();
+              }}
+              >
+              <p>{o.name}</p>
+              </div>
+              // <hr
+              //  className={styles.modalDivider} />
+              ))}
+              {/* <div>
+              <p>HNGi8</p>
               </div>
               <hr className={styles.modalDivider} />
               <div>
-                <p>The BrandHub</p>
-              </div>
+              <p>The BrandHub</p>
+              </div> */}
             </section>
           </section>
         </div>
