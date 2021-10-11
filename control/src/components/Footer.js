@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import {Link} from 'react-router-dom'
 import styles from "../component-styles/FooterStyle.module.css"
 import logo from "../component-assets/zurichatlogo.svg"
 import facebook from "../component-assets/facebook.svg"
@@ -32,121 +33,109 @@ const Footer = () => {
 
   return (
     /* laptop view*/
-    <div className={styles.footer}>
-      <div className={styles.top_footer}>
-        <div className={styles.logo}>
-          <a href="/">
-            <img
-              className={styles.logo_img}
-              src={logo}
-              alt="Logo"
-              width="30px"
-              height="30px"
-            />
-            <span className={styles.logo_name}>Zuri Chat</span>
-          </a>
+    <footer className={styles.footer_container}>
+      <div className={styles.footer}>
+        <div className={styles.top_footer}>
+          <div className={styles.logo_container}>
+            <Link to="/" className={styles.logo}>
+              <img
+                className={styles.logo_img}
+                src={logo}
+                alt="Logo"
+                width="30px"
+                height="30px"
+              />
+              <span className={styles.logo_name}>Zuri Chat</span>
+            </Link>
+          </div>
+    
+          <div className={styles.menu}>
+            <div>
+              <h5>Company</h5>
+              <ul>
+                <li>
+                  <Link to="/careers">Careers</Link>{" "}
+                </li>
+                <li>
+                  <Link to="/about">About</Link>{" "}
+                </li>
+              </ul>
+            </div>
+    
+            <div>
+              <h5>Info</h5>
+              <ul>
+                <li>
+                  <Link to="/privacy">Privacy & Terms</Link>{" "}
+                </li>
+                <li>
+                  <Link to="/marketplace">Market Place</Link>{" "}
+                </li>
+              </ul>
+            </div>
+    
+            <div>
+              <h5>Know us</h5>
+              <ul>
+                <li>
+                  <Link to="/download-app">Downloads</Link>{" "}
+                </li>
+                <li>
+                  <Link to="/contact-us">Contact</Link>{" "}
+                </li>
+              </ul>
+            </div>
+    
+            <div className={styles.social}>
+              <h5>Social Media</h5>
+              <ul>
+                <li>
+                  <a href="/facebook">
+                    <img
+                      src={facebook}
+                      alt="Facebook"
+                      title="Connect with us on Facebook"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="/instagram">
+                    <img
+                      src={instagram}
+                      alt="Instagram"
+                      title="Connect with us on Instagram"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/zurichat">
+                    <img
+                      src={twitter}
+                      alt="Twitter"
+                      title="Connect with us on Twitter"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="/linkedin">
+                    <img
+                      src={linkedin}
+                      alt="Linkedin"
+                      title="Connect with us on Linkedin"
+                    />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+    
         </div>
-
-        <div className={styles.menu}>
-          <div>
-            <h5>Company</h5>
-            <ul>
-              <li>
-                <a href="/careers">Careers</a>{" "}
-              </li>
-              <li>
-                <a href="/about">About Zurichat</a>{" "}
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h5>Info</h5>
-            <ul>
-              <li>
-                <a href="/privacy">Privacy & Terms</a>{" "}
-              </li>
-              <li>
-                <a href="/marketplace">Market Place</a>{" "}
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h5>Know us</h5>
-            <ul>
-              <li>
-                <a href="/download-app">Downloads</a>{" "}
-              </li>
-              <li>
-                <a href="/contact-us">Contact Us</a>{" "}
-              </li>
-              <li>
-                <a href="https://docs.zuri.chat/">Documentation</a>{" "}
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className={styles.social}>
-          <h5>Social Media</h5>
-          <ul>
-            <li>
-              <a
-                href="https://www.facebook.com/Zuri-Chat-101278805666628"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  src={facebook}
-                  alt="Facebook"
-                  title="Connect with us on Facebook"
-                />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://instagram.com/zurichathq"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  src={instagram}
-                  alt="Instagram"
-                  title="Connect with us on Instagram"
-                />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://twitter.com/zurichat"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  src={twitter}
-                  alt="Twitter"
-                  title="Connect with us on Twitter"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/company/zuri-chat/">
-                <img
-                  src={linkedin}
-                  alt="Linkedin"
-                  title="Connect with us on Linkedin"
-                />
-              </a>
-            </li>
-          </ul>
+    
+        <div className={styles.bottom_footer}>
+          <p> &copy; {getYear()} Zuri Chat. All Rights Reserved</p>
         </div>
       </div>
-
-      <div className={styles.bottom_footer}>
-        <p> &copy; {getYear()} Zuri Chat. All Rights Reserved</p>
-      </div>
-    </div>
+    </footer>
   )
 }
 
