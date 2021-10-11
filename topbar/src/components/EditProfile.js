@@ -155,14 +155,6 @@ const EditProfile = () => {
       })
   }
 
-// this.state = {
-//   "displayProfileModal": false
-// };
-
-//   const handleCancelClick = e => {
-//     this.setState((prevState) => ({"displayProfileModal": !prevState.displayProfileModal}));
-//   }
-
   return (
     <ProfileModal full title="Edit profile">
       <>
