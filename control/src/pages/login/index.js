@@ -3,6 +3,7 @@ import { withRouter, useHistory } from "react-router-dom"
 // import { BehaviorSubject } from 'rxjs'
 import AuthInputBox from "../../components/AuthInputBox"
 import FormWrapper from "../../components/AuthFormWrapper"
+import { Link } from "react-router-dom"
 import LoginLoading from "../../components/LoginLoading"
 import styles from "../../component-styles/AuthFormElements.module.css"
 import axios from "axios"
@@ -183,7 +184,10 @@ const Login = () => {
               Remember me
             </div>
             <div className={`${styles.right}`}>
-              Forgot password?<a href="/help"> {""}Get help signing in</a>
+              Forgot password?<a> <Link to="./help">
+                 {""}Get help signing in
+                 </Link>
+                 </a>
             </div>
           </div>
         </FormWrapper>
