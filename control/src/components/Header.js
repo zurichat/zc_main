@@ -36,11 +36,6 @@ const HeaderSearchSuggestion = () => {
     }
   }, [])
 
-/*   useEffect(() => {
-    document
-      .querySelector(".navbar-toggler")
-      .addEventListener(onclick, toggleBgOverlay)
-  }, []) */
 
   return (
     <div className={headerStyles.navContainer}>
@@ -68,7 +63,7 @@ const HeaderSearchSuggestion = () => {
         </Link>
         <button
           className={`navbar-toggler ${headerStyles.toggle}`}
-          onClick={()=>console.log(document)}
+          onClick={toggleBgOverlay}
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarText"
