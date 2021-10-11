@@ -1,6 +1,6 @@
-import { trimUrl, filterUrl } from "../utils/filterurl"
+import { trimUrl, filterUrl } from "./filterurl"
 import axios from "axios"
-import { ACTIONS } from "../root.component"
+import { ACTIONS } from "../App"
 
 export const plugindata = async (
   dispatch,
@@ -11,8 +11,6 @@ export const plugindata = async (
   organizationInfo &&
     organizationInfo.map(pluginInfo => {
       let { plugin } = pluginInfo
-
-      // console.log('plugin info', pluginInfo)
 
       //Get sidebar url
       let sidebarUrl = plugin.sidebar_url
@@ -43,10 +41,9 @@ export const plugindata = async (
               }
             }
           } catch (err) {
-            console.error(err)
             return null
           }
         })
-        .catch(err => console.error(err))
+        .catch(err => console.warn(err))
     })
 }
