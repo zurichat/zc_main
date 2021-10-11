@@ -31,7 +31,8 @@ const PreferenceMenu = () => {
             Sidebar
           </p>
         </div>
-        */}
+*/}
+
 
         <div
           onClick={() => setSideBar(3)}
