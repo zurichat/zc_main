@@ -69,6 +69,9 @@ const Footer = () => {
               <li>
                 <a href="/marketplace">Market Place</a>{" "}
               </li>
+              <li>
+                <a href="/marketplace">Web3/DAO</a>{" "}
+              </li>
             </ul>
           </div>
 
