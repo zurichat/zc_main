@@ -110,7 +110,7 @@ const Comments = () => {
             <a href="">
               <img src={Like} alt="" />
             </a>
-            <span>20</span>
+            <span>0</span>
           </p>
           <p>
             <UitCommentDots style={{ marginRight: 7 }} />
