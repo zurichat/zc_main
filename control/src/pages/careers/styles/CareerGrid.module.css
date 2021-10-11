@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+  font-family: 'Lato' sans-serif;
+}
+
+.headerContent {
+  max-width: 600px;
+  margin: auto;
+  padding: 1rem;
+}
+li {
+  list-style: none;
+}
+.py-5 {
+  padding: 5rem 0 2rem 0;
+}
+.btn-green {
+  background: #00b87c;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 3px;
+  color: #fff;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.flex li {
+  padding-top: 0.6rem;
+  margin: 0.3rem 1rem;
+}
+.text-center {
+  text-align: center;
+}
+.categories {
+  padding: 0.3rem;
+  margin: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
+.category {
+  padding: 0.5rem;
+  background: #fff;
+  box-shadow: 10px 10px 30px rgba(112, 113, 115, 0.15);
+  border-radius: 3px;
+}
+.sub-category {
+  padding: 1rem;
+  border-bottom: 1px solid #4d4d4d;
+}
+.sub-category p {
+  font-family: 12px;
+  color: #4d4d4d;
+}
+.register {
+  max-width: 150px;
+  padding-bottom: 4rem;
+  margin: auto;
+}
+@media screen and (max-width: 420px) {
+  .categories {
+    grid-template-columns: 1fr;
+  }
+}
