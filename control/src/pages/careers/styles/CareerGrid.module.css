@@ -15,7 +15,7 @@ li {
 .py-5 {
   padding: 5rem 0 2rem 0;
 }
-.btn-green {
+.btngreen {
   background: #00b87c;
   border: none;
   padding: 1rem 2rem;
@@ -30,7 +30,7 @@ li {
   padding-top: 0.6rem;
   margin: 0.3rem 1rem;
 }
-.text-center {
+.center {
   text-align: center;
 }
 .categories {
@@ -46,13 +46,17 @@ li {
   box-shadow: 10px 10px 30px rgba(112, 113, 115, 0.15);
   border-radius: 3px;
 }
-.sub-category {
+.subcategory {
   padding: 1rem;
   border-bottom: 1px solid #4d4d4d;
 }
-.sub-category p {
+.subcategory p {
   font-family: 12px;
   color: #4d4d4d;
+}
+.cohort {
+  text-align: center;
+  padding: 5rem 0 2rem 0;
 }
 .register {
   max-width: 150px;
