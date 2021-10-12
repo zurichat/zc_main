@@ -1,6 +1,8 @@
 import React from "react"
 import styles from "../../component-styles/Help.module.css"
  import invalid from "./assets/undraw_Mobile_app_re_catg.svg"
+ import tech from "./assets/undraw_online_payments_luau.svg"
+ import mono from "./assets/undraw_pay_online_b1hk.svg"
  import mylogo from './assets/Captures.JPG'
 
 const Help = () => {
@@ -35,11 +37,15 @@ const Help = () => {
             as best you can. <br />
             If you're having trouble, try the tips to complete account recovery
             steps. <br />
-            Reset your password when prompted. Choose a strong password that you
-            haven't already used with this account. <br />
+           Reset your password when prompted. Choose a strong password that you
+            haven't already used with this account.<br />
           </p>
         </div>
       </div>
+      <div className={`${styles.secondlayer}`}>
+      <div className={`col-lg-6 ${styles.tech}`}>
+           <img src={tech} alt={"tech"} srcSet="" /> 
+        </div>
       <div className={`${styles.secondcontent}`}>
         <h5>You forgot the email address you use to sign in.</h5>
         <p>
@@ -50,13 +56,18 @@ const Help = () => {
           <br />
         </p>
       </div>
+      </div>
+      <div className={`${styles.thirdlayer}`}>
+      <div className={`col-lg-6 ${styles.mono}`}>
+           <img src={mono} alt={"mono"} srcSet="" /> 
+        </div>
       <div className={`${styles.thirdcontent}`}>
         <h5>To reset your password:</h5>
         <p>
           To reset your password: Follow the steps to recover your Google
           Account or Gmail.
-          <br />
-          You'll be asked some questions to confirm it's your account. Answer as
+          <br /> 
+           You'll be asked some questions to confirm it's your account. Answer as
           best you can.
           <br />
           If you have trouble, try the tips to complete account recovery steps.
@@ -65,6 +76,7 @@ const Help = () => {
           haven't already used with this account.
           <br />
         </p>
+        </div>
       </div>
     </div>
   )
