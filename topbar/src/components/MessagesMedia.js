@@ -100,8 +100,8 @@ const MessagesMedia = () => {
         <img src={theme12} alt="theme12" className={styles.theme12} />
       </div>
       <div className={styles.change}>
-        To change your full or display name, head to{" "}
-        <p style={{ color: "#00B87C" }}>your profile.</p>
+        <p> To change your full or display name, head to{" "}
+        <span style={{ color: "#00B87C" }}>your profile.</span></p>
       </div>
       <div className={styles.bottom2}></div>
       <div className={styles.add}>Additional options</div>
@@ -148,11 +148,11 @@ const MessagesMedia = () => {
       <div className={styles.bottom3}></div>
       <div className={styles.emoji}>Emoji</div>
       <div className={styles.tone}>Default Skin Tone</div>
-      <div className={styles.choose}>
+      <p className={styles.choose}>
         Choose the default skin tone that will be used whenever you use certain
         emojis in
-      </div>
-      <div className={styles.choose2}>reactions and messages.</div>
+      </p>
+      <p className={styles.choose2}>reactions and messages.</p>
       <div className={styles.hands}>
         <img src={theme13} alt="theme13" className={styles.theme13} />
         <img src={theme14} alt="theme14" className={styles.theme14} />
@@ -185,11 +185,11 @@ const MessagesMedia = () => {
         </form>
         <div className={styles.jumbomoji}>Show JUMBOMOJI</div>
       </div>
-      <div className={styles.versions}>
+      <p className={styles.versions}>
         Display the jumbo versions of emoji (up to 23 at a time!) in messages
         without text.
-      </div>
-      <div className={styles.example}>Here is an example</div>
+      </p>
+      <p className={styles.example}>Here is an example</p>
       <img src={theme19} alt="theme19" className={styles.theme19} />
       <div className={styles.bottom4}></div>
       <div className={styles.media}>In-line media and links</div>
@@ -247,15 +247,15 @@ const MessagesMedia = () => {
       </div>
       <div className={styles.bottom5}></div>
       <div className={styles.emails}>Bring emails into Zurichat</div>
-      <div className={styles.upload}>
+      <p className={styles.upload}>
         You can upload any important email to Slack by forwarding it to a
-      </div>
-      <div className={styles.upload2}>
+      </p>
+      <p className={styles.upload2}>
         unique email address. Slackbot will deliver the email and you can
-      </div>
-      <div className={styles.upload3}>
+      </p>
+      <p className={styles.upload3}>
         keep it private or share it with your team.
-      </div>
+      </p>
       <button className={styles.button}>
         <div className={styles.forward}>Get a forwarding address</div>
       </button>
