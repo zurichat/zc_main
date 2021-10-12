@@ -1,14 +1,12 @@
 .notifySidebar {
   width: 200px;
   background: #f9f9f9;
-  height: 100%;
-  float: left;
-  position: fixed;
+  height: 104%;
   position: relative;
+  float: left;
 }
 .itemsContainer {
   margin-top: 15px;
-  position: fixed;
 }
 .one,
 .active {

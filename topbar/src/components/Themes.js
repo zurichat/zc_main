@@ -1,19 +1,48 @@
 import React, { useState, useEffect } from "react"
 import styles from "../styles/Themes.module.css"
-import theme3 from "../assets/images/theme3.png"
-import theme4 from "../assets/images/theme4.png"
-import theme5 from "../assets/images/theme5.png"
-import theme6 from "../assets/images/theme6.png"
-import theme7 from "../assets/images/theme7.png"
-import theme8 from "../assets/images/theme8.png"
-import theme9 from "../assets/images/theme9.png"
-import theme10 from "../assets/images/theme10.png"
 import theme16 from "../assets/images/theme16.png"
 import theme17 from "../assets/images/theme17.png"
-import theme18 from "../assets/images/theme18.png"
-import theme19 from "../assets/images/theme19.png"
-import theme20 from "../assets/images/theme20.png"
-import theme21 from "../assets/images/theme21.png"
+import large from "../assets/images/large-rec.png"
+import round from "../assets/images/ellipse.png"
+import thin from "../assets/images/thin-rec.png"
+import whitethin from "../assets/images/whitethin-rec.png"
+import small from "../assets/images/small-rec.png"
+import seclarge from "../assets/images/purplelgrec.png"
+import secround from "../assets/images/circlepurple.png"
+import secthin from "../assets/images/purplethinrec.png"
+import secwhitethin from "../assets/images/lightrec.png"
+import secsmall from "../assets/images/purplesmrec.png"
+import thdlarge from "../assets/images/greenlgrec.png"
+import thdround from "../assets/images/circlegreen.png"
+import thdthin from "../assets/images/greenthinrec.png"
+import thdwhitethin from "../assets/images/lightgreen.png"
+import thdsmall from "../assets/images/greensmrec.png"
+import forlarge from "../assets/images/darklgrec.png"
+import forround from "../assets/images/circledark.png"
+import forthin from "../assets/images/darkthinrec.png"
+import forwhitethin from "../assets/images/lightdark.png"
+import forsmall from "../assets/images/darksmrec.png"
+import fivlarge from "../assets/images/bluelgrec.png"
+import fivround from "../assets/images/circleblue.png"
+import fivthin from "../assets/images/bluethinrec.png"
+import fivwhitethin from "../assets/images/lightblue.png"
+import fivsmall from "../assets/images/bluesmrec.png"
+import sixlarge from "../assets/images/redlgrec.png"
+import sixround from "../assets/images/circlered.png"
+import sixthin from "../assets/images/redthinrec.png"
+import sixwhitethin from "../assets/images/lightred.png"
+import sixsmall from "../assets/images/redsmrec.png"
+import sevlarge from "../assets/images/orangelgrec.png"
+import sevround from "../assets/images/circleorange.png"
+import sevthin from "../assets/images/orangethinrec.png"
+import sevwhitethin from "../assets/images/lightorange.png"
+import sevsmall from "../assets/images/orangesmrec.png"
+import eiglarge from "../assets/images/yellowlgrec.png"
+import eiground from "../assets/images/circleyellow.png"
+import eigthin from "../assets/images/yellowthinrec.png"
+import eigwhitethin from "../assets/images/lightyellow.png"
+import eigsmall from "../assets/images/yellowsmrec.png"
+
 
 
 const Themes = () => {
@@ -166,11 +195,83 @@ const Themes = () => {
         <div className={styles.true}>Tried and true</div>
       </div>
       <div className={styles.set1}>
-        <div className={styles.img3}>
-          <img src={theme3} alt="theme3" className={styles.theme3} />
+        <div className={styles.activeAsh}>
+          <div className={styles.largeRec}>
+            <img src={large} alt="large-rectangle" className={styles.large} />
+          </div>
+          <div className={styles.line2}></div>
+          <div className={styles.roundPic}>
+            <img src={round} alt="circle" className={styles.round} />
+          </div>
+          <div className={styles.thinRec}>
+            <img src={thin} alt="thin-rectangle" className={styles.thin} />
+          </div>
+          <div className={styles.thinRec2}>
+            <div className={styles.hash}>#</div>
+            <img src={thin} alt="thin-rectangle" className={styles.thin2} />
+          </div>
+          <div className={styles.whiteThinRec}>
+            <div className={styles.hash2}>#</div>
+            <img src={whitethin} alt="white-thin-rectangle" className={styles.whiteThin} />
+          </div>
+          <div className={styles.thinRec3}>
+            <img src={thin} alt="thin-rectangle" className={styles.thin3} />
+          </div>
+          <div className={styles.smallRec}>
+            <img src={small} alt="small-rectangle" className={styles.small} />
+          </div>
+          <div className={styles.lowContent}>
+            <div className={styles.radio8}>
+              <input
+                type="radio"
+                value="activeAsh"
+                checked={active1 === 2}
+                onClick={() => {
+                  setActive1(2)
+                }}
+              />
+            </div>
+            <div className={styles.ash}>Active Ash</div>
+          </div>
         </div>
-        <div className={styles.img4}>
-          <img src={theme4} alt="theme4" className={styles.theme4} />
+        <div className={styles.activeAsh2}>
+          <div className={styles.largeRec2}>
+            <img src={seclarge} alt="large-rectangle" className={styles.large} />
+          </div>
+          <div className={styles.line3}></div>
+          <div className={styles.roundPic2}>
+            <img src={secround} alt="circle" className={styles.round} />
+          </div>
+          <div className={styles.thinRec4}>
+            <img src={secthin} alt="thin-rectangle" className={styles.thin4} />
+          </div>
+          <div className={styles.thinRec5}>
+            <div className={styles.hash3}>#</div>
+            <img src={secthin} alt="thin-rectangle" className={styles.thin5} />
+          </div>
+          <div className={styles.whiteThinRec2}>
+            <div className={styles.hash4}>#</div>
+            <img src={secwhitethin} alt="white-thin-rectangle" className={styles.whiteThin2} />
+          </div>
+          <div className={styles.thinRec6}>
+            <img src={secthin} alt="thin-rectangle" className={styles.thin6} />
+          </div>
+          <div className={styles.smallRec2}>
+            <img src={secsmall} alt="small-rectangle" className={styles.small} />
+          </div>
+          <div className={styles.lowContent2}>
+            <div className={styles.radio9}>
+              <input
+                type="radio"
+                value="activeAsh"
+                checked={active1 === 3}
+                onClick={() => {
+                  setActive1(3)
+                }}
+              />
+            </div>
+            <div className={styles.ash2}>Picky Purple</div>
+          </div>
         </div>
       </div>
       <div className={styles.all}>
@@ -178,32 +279,245 @@ const Themes = () => {
         <div className={styles.show}>Show all classic themes</div>
       </div>
       <div className={styles.clean}>Clean and minimal</div>
-      <div className={styles.set2}>
-        <div className={styles.img5}>
-          <img src={theme5} alt="theme5" className={styles.theme5} />
+      <div className={styles.set3}>
+      <div className={styles.activeAsh3}>
+          <div className={styles.largeRec3}>
+            <img src={thdlarge} alt="large-rectangle" className={styles.large} />
+          </div>
+          <div className={styles.line4}></div>
+          <div className={styles.roundPic3}>
+            <img src={thdround} alt="circle" className={styles.round} />
+          </div>
+          <div className={styles.thinRec7}>
+            <img src={thdthin} alt="thin-rectangle" className={styles.thin7} />
+          </div>
+          <div className={styles.thinRec8}>
+            <div className={styles.hash5}>#</div>
+            <img src={thdthin} alt="thin-rectangle" className={styles.thin8} />
+          </div>
+          <div className={styles.whiteThinRec3}>
+            <div className={styles.hash6}>#</div>
+            <img src={thdwhitethin} alt="white-thin-rectangle" className={styles.whiteThin3} />
+          </div>
+          <div className={styles.thinRec9}>
+            <img src={thdthin} alt="thin-rectangle" className={styles.thin9} />
+          </div>
+          <div className={styles.smallRec3}>
+            <img src={thdsmall} alt="small-rectangle" className={styles.small} />
+          </div>
+          <div className={styles.lowContent3}>
+            <div className={styles.radio10}>
+              <input
+                type="radio"
+                value="activeAsh"
+                checked={active1 === 4}
+                onClick={() => {
+                  setActive1(4)
+                }}
+              />
+            </div>
+            <div className={styles.ash3}>Leaf Green</div>
+          </div>
         </div>
-        <div className={styles.img6}>
-          <img src={theme6} alt="theme6" className={styles.theme6} />
+        <div className={styles.activeAsh4}>
+          <div className={styles.largeRec4}>
+            <img src={forlarge} alt="large-rectangle" className={styles.large} />
+          </div>
+          <div className={styles.line5}></div>
+          <div className={styles.roundPic4}>
+            <img src={forround} alt="circle" className={styles.round} />
+          </div>
+          <div className={styles.thinRec10}>
+            <img src={forthin} alt="thin-rectangle" className={styles.thin10} />
+          </div>
+          <div className={styles.thinRec11}>
+            <div className={styles.hash7}>#</div>
+            <img src={forthin} alt="thin-rectangle" className={styles.thin11} />
+          </div>
+          <div className={styles.whiteThinRec4}>
+            <div className={styles.hash8}>#</div>
+            <img src={forwhitethin} alt="white-thin-rectangle" className={styles.whiteThin4} />
+          </div>
+          <div className={styles.thinRec12}>
+            <img src={forthin} alt="thin-rectangle" className={styles.thin12} />
+          </div>
+          <div className={styles.smallRec4}>
+            <img src={forsmall} alt="small-rectangle" className={styles.small} />
+          </div>
+          <div className={styles.lowContent4}>
+            <div className={styles.radio11}>
+              <input
+                type="radio"
+                value="activeAsh"
+                checked={active1 === 5}
+                onClick={() => {
+                  setActive1(5)
+                }}
+              />
+            </div>
+            <div className={styles.ash4}>Dark Ash</div>
+          </div>
         </div>
       </div>
       <div className={styles.set3}>
-        <div className={styles.img7}>
-          <img src={theme18} alt="theme18" className={styles.theme18} />
+      <div className={styles.activeAsh5}>
+          <div className={styles.largeRec5}>
+            <img src={fivlarge} alt="large-rectangle" className={styles.large} />
+          </div>
+          <div className={styles.line6}></div>
+          <div className={styles.roundPic5}>
+            <img src={fivround} alt="circle" className={styles.round} />
+          </div>
+          <div className={styles.thinRec13}>
+            <img src={fivthin} alt="thin-rectangle" className={styles.thin13} />
+          </div>
+          <div className={styles.thinRec14}>
+            <div className={styles.hash9}>#</div>
+            <img src={fivthin} alt="thin-rectangle" className={styles.thin14} />
+          </div>
+          <div className={styles.whiteThinRec5}>
+            <div className={styles.hash10}>#</div>
+            <img src={fivwhitethin} alt="white-thin-rectangle" className={styles.whiteThin5} />
+          </div>
+          <div className={styles.thinRec15}>
+            <img src={fivthin} alt="thin-rectangle" className={styles.thin15} />
+          </div>
+          <div className={styles.smallRec5}>
+            <img src={fivsmall} alt="small-rectangle" className={styles.small} />
+          </div>
+          <div className={styles.lowContent5}>
+            <div className={styles.radio12}>
+              <input
+                type="radio"
+                value="activeAsh"
+                checked={active1 === 6}
+                onClick={() => {
+                  setActive1(6)
+                }}
+              />
+            </div>
+            <div className={styles.ash5}>Ocean Blue</div>
+          </div>
         </div>
-        <div className={styles.img8}>
-          <img src={theme19} alt="theme19" className={styles.theme19} />
+        <div className={styles.activeAsh6}>
+          <div className={styles.largeRec6}>
+            <img src={sixlarge} alt="large-rectangle" className={styles.large} />
+          </div>
+          <div className={styles.line7}></div>
+          <div className={styles.roundPic6}>
+            <img src={sixround} alt="circle" className={styles.round} />
+          </div>
+          <div className={styles.thinRec16}>
+            <img src={sixthin} alt="thin-rectangle" className={styles.thin16} />
+          </div>
+          <div className={styles.thinRec17}>
+            <div className={styles.hash11}>#</div>
+            <img src={sixthin} alt="thin-rectangle" className={styles.thin17} />
+          </div>
+          <div className={styles.whiteThinRec6}>
+            <div className={styles.hash12}>#</div>
+            <img src={sixwhitethin} alt="white-thin-rectangle" className={styles.whiteThin6} />
+          </div>
+          <div className={styles.thinRec18}>
+            <img src={sixthin} alt="thin-rectangle" className={styles.thin18} />
+          </div>
+          <div className={styles.smallRec6}>
+            <img src={sixsmall} alt="small-rectangle" className={styles.small} />
+          </div>
+          <div className={styles.lowContent6}>
+            <div className={styles.radio13}>
+              <input
+                type="radio"
+                value="activeAsh"
+                checked={active1 === 7}
+                onClick={() => {
+                  setActive1(7)
+                }}
+              />
+            </div>
+            <div className={styles.ash6}>Rose Red</div>
+          </div>
         </div>
       </div>
       <div className={styles.set4}>
-        <div className={styles.bottom}>
-          <div className={styles.img9}>
-            <img src={theme20} alt="theme20" className={styles.theme20} />
+      <div className={styles.activeAsh7}>
+          <div className={styles.largeRec7}>
+            <img src={sevlarge} alt="large-rectangle" className={styles.large} />
           </div>
-          <div className={styles.img10}>
-            <img src={theme21} alt="theme21" className={styles.theme21} />
+          <div className={styles.line8}></div>
+          <div className={styles.roundPic7}>
+            <img src={sevround} alt="circle" className={styles.round} />
+          </div>
+          <div className={styles.thinRec19}>
+            <img src={sevthin} alt="thin-rectangle" className={styles.thin19} />
+          </div>
+          <div className={styles.thinRec20}>
+            <div className={styles.hash13}>#</div>
+            <img src={sevthin} alt="thin-rectangle" className={styles.thin20} />
+          </div>
+          <div className={styles.whiteThinRec7}>
+            <div className={styles.hash14}>#</div>
+            <img src={sevwhitethin} alt="white-thin-rectangle" className={styles.whiteThin7} />
+          </div>
+          <div className={styles.thinRec21}>
+            <img src={sevthin} alt="thin-rectangle" className={styles.thin21} />
+          </div>
+          <div className={styles.smallRec7}>
+            <img src={sevsmall} alt="small-rectangle" className={styles.small} />
+          </div>
+          <div className={styles.lowContent7}>
+            <div className={styles.radio14}>
+              <input
+                type="radio"
+                value="activeAsh"
+                checked={active1 === 8}
+                onClick={() => {
+                  setActive1(8)
+                }}
+              />
+            </div>
+            <div className={styles.ash7}>Golden Melon</div>
           </div>
         </div>
-        <div className={styles.line2}></div>
+        <div className={styles.activeAsh8}>
+          <div className={styles.largeRec8}>
+            <img src={eiglarge} alt="large-rectangle" className={styles.large} />
+          </div>
+          <div className={styles.line9}></div>
+          <div className={styles.roundPic8}>
+            <img src={eiground} alt="circle" className={styles.round} />
+          </div>
+          <div className={styles.thinRec22}>
+            <img src={eigthin} alt="thin-rectangle" className={styles.thin22} />
+          </div>
+          <div className={styles.thinRec23}>
+            <div className={styles.hash15}>#</div>
+            <img src={eigthin} alt="thin-rectangle" className={styles.thin23} />
+          </div>
+          <div className={styles.whiteThinRec8}>
+            <div className={styles.hash16}>#</div>
+            <img src={eigwhitethin} alt="white-thin-rectangle" className={styles.whiteThin8} />
+          </div>
+          <div className={styles.thinRec24}>
+            <img src={eigthin} alt="thin-rectangle" className={styles.thin24} />
+          </div>
+          <div className={styles.smallRec8}>
+            <img src={eigsmall} alt="small-rectangle" className={styles.small} />
+          </div>
+          <div className={styles.lowContent8}>
+            <div className={styles.radio15}>
+              <input
+                type="radio"
+                value="activeAsh"
+                checked={active1 === 9}
+                onClick={() => {
+                  setActive1(9)
+                }}
+              />
+            </div>
+            <div className={styles.ash8}>Canary</div>
+          </div>
+        </div>
       </div>
     </div>
   )
