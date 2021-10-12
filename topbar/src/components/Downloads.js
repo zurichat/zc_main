@@ -16,28 +16,28 @@ const Downloads = ({ setModal }) => {
       size: '',
       src: windows,
       link: 'https://firebasestorage.googleapis.com/v0/b/zurichat-bfba1.appspot.com/o/zuri%20desktop.exe?alt=media&token=8cf41d4e-0d9d-408b-8eb9-4d98643bea00',
-      download: "Zurichat Android APK"
+      download: "Zurichat Windows"
     },
     {
       name: 'macOS App',
       size: '27MB',
       src: mac,
-      link: 'https://firebasestorage.googleapis.com/v0/b/zurichat-bfba1.appspot.com/o/zuri%20desktop.exe?alt=media&token=8cf41d4e-0d9d-408b-8eb9-4d98643bea00',
-      download: "Zurichat Android APK"
+      link: '',
+      download: "Zurichat Mac App"
     },
     {
       name: 'iOS App',
       size: '22.94MB',
       src: ios,
-      link: 'https://firebasestorage.googleapis.com/v0/b/zurichat-bfba1.appspot.com/o/Zuri%20Chat%20%2011-10-21.apk?alt=media&token=7ddfbdac-418b-46b7-9205-3007c751e91c',
-      download: "Zurichat Android APK"
+      link: '',
+      download: "Zurichat iOS App"
     },
     {
       name: 'Android App',
       size: '22.94MB',
       src: android,
       link: 'https://firebasestorage.googleapis.com/v0/b/zurichat-bfba1.appspot.com/o/Zuri%20Chat%20%2011-10-21.apk?alt=media&token=7ddfbdac-418b-46b7-9205-3007c751e91c',
-      download: "Zurichat Android APK"
+      download: "Zurichat Android"
     },
   ])
   return (
