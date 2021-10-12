@@ -1,32 +1,37 @@
 .help{
-    margin-top: 10%;
-  text-align: center;
+    margin-top: 5%;
+    text-align: center;
+  align-items: center;
+  font-size: 10px;
 }
 
 .firstlayer{
     margin-top: 3%;
+    position: relative;
 }
 
 .invalid > img{
     width: 30vw;
     position: relative;
     top: -16%;
+    margin-right: 16px
 }
 
 .firstcontent{
-    font-size: 17px;
+    font-size: 7px;
     line-height: 25px;
     font-weight: 500;
+    margin-left: 6px
 }
 
 .secondcontent{
-    font-size: 17px;
+    font-size: 7px;
     line-height: 25px;
     font-weight: 500;
 }
   
 .thirdcontent{
-    font-size: 17px;
+    font-size: 7px;
     line-height: 25px;
     font-weight: 500;
 }
