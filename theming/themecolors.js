@@ -9,3 +9,9 @@ const peakyPurple = {
   secondary: "#DC1AA3",
   textColor: "#E5B2D6"
 }
+
+const darkAsh = {
+  primary: "#464646",
+  secondary: "#242424",
+  textColor: "#645C5C",
+}
