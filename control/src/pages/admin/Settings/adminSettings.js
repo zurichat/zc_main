@@ -1,19 +1,19 @@
-import React from 'react'
-import { AnimateSharedLayout } from 'framer-motion'
-import PreferenceWrapper from './PreferenceWrapper'
+import React from "react"
+import { AnimateSharedLayout } from "framer-motion"
+import PreferenceWrapper from "./PreferenceWrapper"
 
-import JoinWorkspace from './components/JoinWorkspace'
-import WorkspaceLanguage from './components/WorkspaceLanguage'
-import Guidelines from './components/Guidelines'
-import DisplayName from './components/DisplayName'
-import JoinChannel from './components/JoinChannel'
-import NotifyUsers from './components/NotifyUsers'
-import Calls from './components/Calls'
-import DisplayPronoun from './components/DisplayPronoun'
-import MessageRetention from './components/MessageRetention'
-import FileRetention from './components/FileRetention'
-import DisplayEmail from './components/DisplayEmail'
-import DefaultChannels from './components/DefaultChannel'
+import JoinWorkspace from "./components/JoinWorkspace"
+import WorkspaceLanguage from "./components/WorkspaceLanguage"
+import Guidelines from "./components/Guidelines"
+import DisplayName from "./components/DisplayName"
+import JoinChannel from "./components/JoinChannel"
+import NotifyUsers from "./components/NotifyUsers"
+import Calls from "./components/Calls"
+import DisplayPronoun from "./components/DisplayPronoun"
+import MessageRetention from "./components/MessageRetention"
+import FileRetention from "./components/FileRetention"
+import DisplayEmail from "./components/DisplayEmail"
+import DefaultChannels from "./components/DefaultChannel"
 
 const adminSettings = () => {
   return (

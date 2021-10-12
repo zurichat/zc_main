@@ -1,22 +1,22 @@
-import React, { useState } from 'react'
-import Footer from '../../components/Footer'
-import styles from './styles/download.module.css'
-import Header from '../../components/Header'
-import laptop from './assets/laptop.svg'
-import device from './assets/device.svg'
-import icon from './assets/icon.svg'
-import apple from './assets/apple.svg'
-import android from './assets/android.svg'
-import windows from './assets/windows.svg'
-import { isMacOs } from 'react-device-detect'
+import React, { useState } from "react"
+import Footer from "../../components/Footer"
+import styles from "./styles/download.module.css"
+import Header from "../../components/Header"
+import laptop from "./assets/laptop.svg"
+import device from "./assets/device.svg"
+import icon from "./assets/icon.svg"
+import apple from "./assets/apple.svg"
+import android from "./assets/android.svg"
+import windows from "./assets/windows.svg"
+import { isMacOs } from "react-device-detect"
 
 const DownloadsDesktop = () => {
-  const [exe, setexe] = useState({ link: '', name: '' })
+  const [exe, setexe] = useState({ link: "", name: "" })
   React.useEffect(() => {
-    if (isMacOs) return setexe({ name: 'DOWNLOAD FOR MAC' })
+    if (isMacOs) return setexe({ name: "DOWNLOAD FOR MAC" })
     return setexe({
-      name: 'DOWNLOAD FOR WINDOWS',
-      link: 'https://drive.google.com/file/d/1Wl4hYeHP1e1eogd6LYdt2Kohrkr9C1dg/view?usp=sharing'
+      name: "DOWNLOAD FOR WINDOWS",
+      link: "https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing"
     })
   }, [])
   return (
@@ -48,25 +48,17 @@ const DownloadsDesktop = () => {
         </p>
         <div className={`${styles.downloadButtonContainer}`}>
           <a
-            href={`https://drive.google.com/file/d/1Wl4hYeHP1e1eogd6LYdt2Kohrkr9C1dg/view?usp=sharing`}
+            href={`https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing`}
             className={styles.downloadButton}
           >
             Windows
             <img className={`px-2`} src={windows} alt="download icon" />
           </a>
-          <a
-            href={exe.link}
-            download={exe.name}
-            className={styles.downloadButton}
-          >
+          <a href="/download-app" className={styles.downloadButton}>
             macOS
             <img className={`px-2`} src={apple} alt="download icon" />
           </a>
-          <a
-            href={exe.link}
-            download={exe.name}
-            className={styles.downloadButton}
-          >
+          <a href="/download-app" className={styles.downloadButton}>
             iOS
             <img className={`px-2`} src={apple} alt="download icon" />
           </a>

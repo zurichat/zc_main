@@ -125,7 +125,7 @@ const TopSection = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding-top: 132px;
-    padding-left: 171px;
+  padding-left: 171px;
 
   @media (max-width: 35rem) {
     display: flex;

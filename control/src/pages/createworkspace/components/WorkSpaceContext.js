@@ -1,22 +1,22 @@
-import { useState, useEffect } from 'react'
-import { Route } from 'react-router-dom'
-import CompanyName from './CompanyName'
-import WorkspaceHome from './WorkspaceHome'
-import LaunchPage from './LaunchPage'
-import Step3 from './Step3'
-import ProjectName from './ProjectName'
+import { useState, useEffect } from "react"
+import { Route } from "react-router-dom"
+import CompanyName from "./CompanyName"
+import WorkspaceHome from "./WorkspaceHome"
+import LaunchPage from "./LaunchPage"
+import Step3 from "./Step3"
+import ProjectName from "./ProjectName"
 
 const CreateWorkSpaces = () => {
-  const [input, setInput] = useState('')
+  const [input, setInput] = useState("")
 
   useEffect(() => {
-    localStorage.setItem('input', input)
+    localStorage.setItem("input", input)
   }, [input])
 
   const handleInputChange = event => {
     setInput(event.target.value)
   }
-  let workspaceRoute = '/createworkspace'
+  let workspaceRoute = "/createworkspace"
   return (
     <div>
       <Route path={workspaceRoute} exact>

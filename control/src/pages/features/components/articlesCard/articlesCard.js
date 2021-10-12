@@ -1,4 +1,4 @@
-import styles from '../../styles/articlesCard.module.css'
+import styles from "../../styles/articlesCard.module.css"
 
 const articlesCard = ({ article }) => {
   return (

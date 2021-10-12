@@ -1,21 +1,21 @@
-import React from 'react'
+import React from "react"
 
 const myStyle = {
   text: {
-    color: '#1d1c1d',
-    fontWeight: '600',
-    fontSize: '18px',
-    padding: '5px'
+    color: "#1d1c1d",
+    fontWeight: "600",
+    fontSize: "18px",
+    padding: "5px"
   },
   smalltext: {
-    fontWeight: '400',
-    fontSize: '14px',
-    color: '#616061'
+    fontWeight: "400",
+    fontSize: "14px",
+    color: "#616061"
   },
   btn: {
-    backgroundColor: '#00B87C',
-    color: '#ffffff',
-    border: 'none'
+    backgroundColor: "#00B87C",
+    color: "#ffffff",
+    border: "none"
   }
 }
 

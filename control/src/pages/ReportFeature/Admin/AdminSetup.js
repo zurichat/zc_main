@@ -1,6 +1,6 @@
-import React from 'react'
-import styles from './reports.module.css'
-import { Container } from 'react-bootstrap'
+import React from "react"
+import styles from "./reports.module.css"
+import { Container } from "react-bootstrap"
 
 export const AdminSetup = props => {
   const Continue = e => {
@@ -16,10 +16,10 @@ export const AdminSetup = props => {
           className="btn btn-primary"
           onClick={Continue}
           style={{
-            color: 'white',
-            backgroundColor: ' #00B87C',
-            padding: '12px',
-            borderRadius: '10%'
+            color: "white",
+            backgroundColor: " #00B87C",
+            padding: "12px",
+            borderRadius: "10%"
           }}
         >
           View Complaint

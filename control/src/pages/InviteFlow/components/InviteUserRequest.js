@@ -1,12 +1,12 @@
-import { useState } from 'react'
-import styled from 'styled-components'
-import { Overlay, Content } from '../../../components'
-import Close from '../assets/Close.svg'
-import Select from './Select'
-import UnstyledButton from './UnstyledButton'
+import { useState } from "react"
+import styled from "styled-components"
+import { Overlay, Content } from "../../../components"
+import Close from "../assets/Close.svg"
+import Select from "./Select"
+import UnstyledButton from "./UnstyledButton"
 const InviteUserRequest = () => {
-  const [value, setValue] = useState('Member')
-  const [text, setText] = useState('')
+  const [value, setValue] = useState("Member")
+  const [text, setText] = useState("")
 
   return (
     <OverlayWrapper>
@@ -15,9 +15,9 @@ const InviteUserRequest = () => {
           <Header>Request Invitation to HNGi8</Header>
           <UnstyledButton
             style={{
-              marginLeft: 'auto',
-              marginBottom: '8px',
-              padding: '4px 8px'
+              marginLeft: "auto",
+              marginBottom: "8px",
+              padding: "4px 8px"
             }}
           >
             <img src={Close} alt="" />
@@ -28,7 +28,7 @@ const InviteUserRequest = () => {
           To :
           <Input type="email" placeholder="name@gmail.com" />
         </Label>
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div style={{ display: "flex", flexDirection: "column" }}>
           <Select value={value} onChange={ev => setValue(ev.target.value)}>
             <option value="Member">Member</option>
             <option value="Organization">Organization</option>
@@ -45,17 +45,17 @@ const InviteUserRequest = () => {
             Your request will be sent to your admins, and you’ll be notified
             when it has been approved or denied.
           </p>
-          <p style={{ marginTop: '8px' }}>
+          <p style={{ marginTop: "8px" }}>
             New members will authomatically join your workplace’s default
-            channels.<span style={{ color: '#00b87c' }}> Add more </span>
+            channels.<span style={{ color: "#00b87c" }}> Add more </span>
           </p>
         </TextSection>
         <ButtonWrapper>
           <Button
             style={
-              text === ''
-                ? { opacity: '0.4', fontWeight: '400', padding: '12px 17px' }
-                : { opacity: 'revert' }
+              text === ""
+                ? { opacity: "0.4", fontWeight: "400", padding: "12px 17px" }
+                : { opacity: "revert" }
             }
           >
             Send Request

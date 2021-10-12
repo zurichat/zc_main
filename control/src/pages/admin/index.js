@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import AdminHeader from './components/AdminHeader'
-import AdminSidebar from './components/AdminSidebar'
-import styles from './styles/adminSettings.module.css'
+import React, { useState } from "react"
+import AdminHeader from "./components/AdminHeader"
+import AdminSidebar from "./components/AdminSidebar"
+import styles from "./styles/adminSettings.module.css"
 
 const AdminSettings = ({ children }) => {
   const [openModal, setModal] = useState(false)

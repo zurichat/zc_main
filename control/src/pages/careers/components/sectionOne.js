@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react"
 
-import { Link } from 'react-router-dom'
-import styles from '../styles/sectionOne.module.css'
+import { Link } from "react-router-dom"
+import styles from "../styles/sectionOne.module.css"
 // import image from '../assets/section_one_image.svg'
-import groupImage from '../assets/group_image_sectionOne.svg'
+import groupImage from "../assets/group_image_sectionOne.svg"
 
 const SectionOne = () => (
   <div className={`${styles.Section1}`}>

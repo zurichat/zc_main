@@ -1,7 +1,7 @@
-import { useMarketPlaceContext } from '../../../../context/MarketPlace.context'
-import { setPluginId } from '../../../../context/marketplace/marketplace.action'
-import style from '../../styles/marketplace.module.css'
-import logo from '../../../../component-assets/zurichatlogo.svg'
+import { useMarketPlaceContext } from "../../../../context/MarketPlace.context"
+import { setPluginId } from "../../../../context/marketplace/marketplace.action"
+import style from "../../styles/marketplace.module.css"
+import logo from "../../../../component-assets/zurichatlogo.svg"
 
 export const PluginCard = ({ name, id, status, icon_url, description }) => {
   const marketplace = useMarketPlaceContext()
@@ -11,7 +11,7 @@ export const PluginCard = ({ name, id, status, icon_url, description }) => {
 
   const trimString = (str, len) => {
     if (str.length <= len) return str
-    return str.slice(0, len) + '...'
+    return str.slice(0, len) + "..."
   }
 
   const getRandomNumber = maxNum => {

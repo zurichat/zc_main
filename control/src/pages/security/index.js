@@ -1,23 +1,23 @@
-import ComplianceCertification from './components/ComplianceCertification'
-import SecurityFeature from './components/SecurityFeature'
-import securityStyles from './styles/security.module.css'
-import securityFeatureStyles from './styles/security_features.module.css'
-import Footer from '../../components/Footer'
-import Section1 from '../../components/Security'
-import Header from '../../components/Header'
-import iso_27001 from '../../component-assets/iso_27001.png'
-import iso_27017 from '../../component-assets/iso_27017.png'
-import iso_27018 from '../../component-assets/iso_27018.png'
-import logo_soc2 from '../../component-assets/logo_soc2.png'
-import logo_soc3 from '../../component-assets/logo_soc3.png'
-import logo_csa from '../../component-assets/logo_csa.png'
-import SchellmanAPECProcessor2 from  '../../component-assets/Schellman-APEC-Processor2.png'
-import SchellmanAPECProcessor from  '../../component-assets/Schellman-APEC-Processor.png'
-import HIPAA from '../../component-assets/HIPAA.png'
-import FINRA from '../../component-assets/FINRA.png'
-import TISAX from '../../component-assets/TISAX.png'
-import FR from '../../component-assets/FR.png'
-import { Helmet } from 'react-helmet'
+import ComplianceCertification from "./components/ComplianceCertification"
+import SecurityFeature from "./components/SecurityFeature"
+import securityStyles from "./styles/security.module.css"
+import securityFeatureStyles from "./styles/security_features.module.css"
+import Footer from "../../components/Footer"
+import Section1 from "../../components/Security"
+import Header from "../../components/Header"
+import iso_27001 from "../../component-assets/iso_27001.png"
+import iso_27017 from "../../component-assets/iso_27017.png"
+import iso_27018 from "../../component-assets/iso_27018.png"
+import logo_soc2 from "../../component-assets/logo_soc2.png"
+import logo_soc3 from "../../component-assets/logo_soc3.png"
+import logo_csa from "../../component-assets/logo_csa.png"
+import SchellmanAPECProcessor2 from "../../component-assets/Schellman-APEC-Processor2.png"
+import SchellmanAPECProcessor from "../../component-assets/Schellman-APEC-Processor.png"
+import HIPAA from "../../component-assets/HIPAA.png"
+import FINRA from "../../component-assets/FINRA.png"
+import TISAX from "../../component-assets/TISAX.png"
+import FR from "../../component-assets/FR.png"
+import { Helmet } from "react-helmet"
 
 const Security = () => {
   return (

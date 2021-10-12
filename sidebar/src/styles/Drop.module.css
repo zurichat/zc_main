@@ -48,7 +48,10 @@
 .item__row {
   margin: 0.3em 0;
 }
-
+.openWrapper,
+.openWrapper * {
+  background-color: #00b87c;
+}
 .item__row {
   display: none;
 }

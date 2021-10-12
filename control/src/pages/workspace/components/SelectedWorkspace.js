@@ -1,6 +1,6 @@
-import React from 'react'
-import { useWorkspaceContext } from './WorkspaceContext'
-import styles from '../style/workspace.module.css'
+import React from "react"
+import { useWorkspaceContext } from "./WorkspaceContext"
+import styles from "../style/workspace.module.css"
 
 const SelectedWorkspace = () => {
   const { organizations, redirectPage } = useWorkspaceContext()
@@ -8,7 +8,7 @@ const SelectedWorkspace = () => {
   const numSelectedWorkspace = organizations.filter(org => org.selected)
 
   const numberOfSelected =
-    numSelectedWorkspace.length > 0 ? numSelectedWorkspace.length : 'None'
+    numSelectedWorkspace.length > 0 ? numSelectedWorkspace.length : "None"
 
   const handleNextPage = () => {
     if (!numSelectedWorkspace.length) {
@@ -23,9 +23,9 @@ const SelectedWorkspace = () => {
       <p>{numberOfSelected} selected</p>
       <button
         style={{
-          background: `${!numSelectedWorkspace.length ? '#BEBEBE' : '#00B87C'}`,
-          color: `${!numSelectedWorkspace.length ? '#242424' : '#ffffff'}`,
-          borderColor: `${!numSelectedWorkspace.length ? '#C4C4C4' : '#00B87C'}`
+          background: `${!numSelectedWorkspace.length ? "#BEBEBE" : "#00B87C"}`,
+          color: `${!numSelectedWorkspace.length ? "#242424" : "#ffffff"}`,
+          borderColor: `${!numSelectedWorkspace.length ? "#C4C4C4" : "#00B87C"}`
         }}
         type="button"
         className={`${styles.workspace_btn}`}
@@ -40,7 +40,7 @@ const SelectedWorkspace = () => {
           viewBox="0 0 17 16"
         >
           <path
-            stroke={`${!numSelectedWorkspace.length ? '#242424' : '#fff'}`}
+            stroke={`${!numSelectedWorkspace.length ? "#242424" : "#fff"}`}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="1.2"

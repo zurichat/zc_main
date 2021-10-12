@@ -1,10 +1,10 @@
-import styles from './styles/CookiesSettings.module.css'
-import lockButton from '../../component-assets/lock.svg'
-import ToggleButton from './ToggleButton'
-import { Link } from 'react-router-dom'
-import { Helmet } from 'react-helmet'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
+import styles from "./styles/CookiesSettings.module.css"
+import lockButton from "../../component-assets/lock.svg"
+import ToggleButton from "./ToggleButton"
+import { Link } from "react-router-dom"
+import { Helmet } from "react-helmet"
+import Header from "../../components/Header"
+import Footer from "../../components/Footer"
 
 function CookiesSettings() {
   return (
@@ -74,8 +74,8 @@ function CookiesSettings() {
 const cookieStorage = {
   getItem: key => {
     const cookies = document.cookie
-      .split(';')
-      .map(cookie => cookie.split('='))
+      .split(";")
+      .map(cookie => cookie.split("="))
       .reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: value }), {})
     return cookies[key]
   },
@@ -84,7 +84,7 @@ const cookieStorage = {
   }
 }
 const handleButtonClick = () => {
-  cookieStorage.setItem('Zuri Chat Accept', 'true', '2592000')
+  cookieStorage.setItem("Zuri Chat Accept", "true", "2592000")
   window.history.back()
 }
 

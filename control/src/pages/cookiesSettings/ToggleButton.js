@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import styled from 'styled-components'
+import { useState } from "react"
+import styled from "styled-components"
 
 const ToggleButton = () => {
   const [toggle, setToggle] = useState(false)
@@ -10,8 +10,8 @@ const ToggleButton = () => {
         <Slider
           onClick={() => setToggle(!toggle)}
           style={{
-            '--justify-item': toggle ? 'flex-end' : 'flex-start',
-            '--background-color': toggle ? '#00b87c' : '#d3d3d3'
+            "--justify-item": toggle ? "flex-end" : "flex-start",
+            "--background-color": toggle ? "#00b87c" : "#d3d3d3"
           }}
         />
       </InputWrapper>
@@ -31,7 +31,7 @@ const Slider = styled.span`
   background-color: var(--background-color);
   border-radius: 15.2px;
   &:before {
-    content: '';
+    content: "";
     width: 20px;
     height: 20px;
     border-radius: 50%;

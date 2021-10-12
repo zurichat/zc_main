@@ -1,44 +1,44 @@
-import React from 'react'
-import styles from '../styles/SectionFour.module.css'
-import logo from '../../../component-assets/zurichatlogo.svg'
-import divider from '../../../component-assets/divider.svg'
-import resource from '../../../component-assets/resourceimage4a.png'
-import getApp from '../../../component-assets/getApp.svg'
-import facebook from '../../../component-assets/facebook-icon.svg'
-import instagram from '../../../component-assets/instagram-icon.svg'
-import twitter from '../../../component-assets/twitter-icon.svg'
-import youtube from '../../../component-assets/youtube-icon.svg'
+import React from "react"
+import styles from "../styles/SectionFour.module.css"
+import logo from "../../../component-assets/zurichatlogo.svg"
+import divider from "../../../component-assets/divider.svg"
+import resource from "../../../component-assets/resourceimage4a.png"
+import getApp from "../../../component-assets/getApp.svg"
+import facebook from "../../../component-assets/facebook-icon.svg"
+import instagram from "../../../component-assets/instagram-icon.svg"
+import twitter from "../../../component-assets/twitter-icon.svg"
+import youtube from "../../../component-assets/youtube-icon.svg"
 
 function SectionFour() {
-  let productList = ['Features', 'Integrations', 'Enterprise', 'Solution']
+  let productList = ["Features", "Integrations", "Enterprise", "Solution"]
   let whySlackList = [
-    'Slack vs Email',
-    'Channels',
-    'Engagement',
-    'Scale',
-    'Watch the demo'
+    "Slack vs Email",
+    "Channels",
+    "Engagement",
+    "Scale",
+    "Watch the demo"
   ]
-  const pricingList = ['Plans', 'Paid vs Free']
-  const resourceList = ['Partners', 'Developers', 'Apps']
-  const partnerList = ['Blogs', 'Help Center', 'Events']
+  const pricingList = ["Plans", "Paid vs Free"]
+  const resourceList = ["Partners", "Developers", "Apps"]
+  const partnerList = ["Blogs", "Help Center", "Events"]
   const companyList = [
-    'About us',
-    'Leadership',
-    'Investor Relations',
-    'News',
-    'Career',
-    'Media Kit'
+    "About us",
+    "Leadership",
+    "Investor Relations",
+    "News",
+    "Career",
+    "Media Kit"
   ]
 
   const otherList = [
-    'Status',
-    'Privacy',
-    'Terms',
-    'Cookie',
-    'Preferences',
-    'Contact Us',
-    'Change',
-    'Region'
+    "Status",
+    "Privacy",
+    "Terms",
+    "Cookie",
+    "Preferences",
+    "Contact Us",
+    "Change",
+    "Region"
   ]
 
   const ProductList = ({ name, productArray }) => {

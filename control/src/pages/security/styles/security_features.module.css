@@ -20,7 +20,7 @@
 .feature p {
   text-align: center;
   font-weight: 600;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 .feature img {
@@ -44,7 +44,7 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  content: '';
+  content: "";
   background: #00b87c;
   height: 100%;
   width: 120%;

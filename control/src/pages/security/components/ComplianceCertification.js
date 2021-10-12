@@ -1,4 +1,4 @@
-import securityStyles from '../styles/security.module.css'
+import securityStyles from "../styles/security.module.css"
 const ComplianceCertification = props => {
   const img = props.img
   const title = props.title

@@ -1,7 +1,7 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import singleSpaReact from 'single-spa-react'
-import Root from './root.component'
+import React from "react"
+import ReactDOM from "react-dom"
+import singleSpaReact from "single-spa-react"
+import Root from "./root.component"
 
 let enhancedComponent = Root
 
@@ -15,7 +15,7 @@ export const commentSidebar = singleSpaReact({
 
 // }
 
-export const name = 'Comment sidebar'
+export const name = "Comment sidebar"
 
 export const bootstrap = [
   () => {

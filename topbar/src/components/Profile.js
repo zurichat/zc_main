@@ -52,7 +52,6 @@ const Profile = () => {
     }
   }, [currentWorkspace])
 
-
   return (
     <div
       className={showProfile ? styles.ProfileContainer : styles.containerNone}
@@ -95,15 +94,16 @@ const Profile = () => {
           alt="avatar"
         />
         <div className={styles.userDetails}>
-          <h3 className={styles.h3user}>
+          <h3 className={styles.h3users}>
             {user.first_name
               ? `${user.first_name} ${user.last_name} `
-              : "Anonymous"}
+              : "Anonnymous"}{" "}
+            {/* <span>{<StatusBadgeModal />  === '' ? <StatusBadgeModal />  :'0' }</span> */}
+            {/* <ProfileStatusBadgeModal /> */}
             <StatusBadgeModal />
           </h3>
-         
-          <p >{user.bio ? user.bio : "What you do"}</p>
-          <small>{user.pronouns ? user.pronouns : "His/Her"}</small>
+
+          <p className={styles.myp}>{user.bio ? user.bio : "What you do"}</p>
         </div>
 
         <div className={styles.buttonGroupsMobile}>
@@ -117,12 +117,16 @@ const Profile = () => {
           >
             Edit Profile
           </button>
-          <a className={styles.settingsLink} 
+          <a
+            className={styles.settingsLink}
             href={
               workspaceData.creator_email === userData.email
                 ? "/admin/settings"
                 : "/settings"
-            }><FiSettings className={styles.iconSettings} /></a>
+            }
+          >
+            <FiSettings className={styles.iconSettings} />
+          </a>
         </div>
 
         <div className={styles.buttonGroups}>

@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 
-import styles from '../styles/AdminSettingsTab.module.css'
+import styles from "../styles/AdminSettingsTab.module.css"
 
 // components
-import AdminSettings from '../adminSettings'
-import AuthTab from './AuthTab'
-import MembersTab from '../../components/MembersTab'
-import HistoryTab from '../../components/HistoryTab'
+import AdminSettings from "../adminSettings"
+import AuthTab from "./AuthTab"
+import MembersTab from "../../components/MembersTab"
+import HistoryTab from "../../components/HistoryTab"
 
 // icon
-import { FiMenu } from 'react-icons/fi'
+import { FiMenu } from "react-icons/fi"
 
 const AdminSettingsTab = () => {
   const [openTab, setOpenTab] = useState(false)

@@ -1,19 +1,19 @@
-import { useContext, useState } from 'react'
+import { useContext, useState } from "react"
 
 // react icons
-import { FaCircle, FaChevronRight } from 'react-icons/fa'
+import { FaCircle, FaChevronRight } from "react-icons/fa"
 
-import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react'
+import Picker, { SKIN_TONE_MEDIUM_DARK } from "emoji-picker-react"
 
-import styles from '../styles/Topbar.module.css'
-import { TopbarContext } from '../context/Topbar'
-import StatusBadgeModal from './StatusBadgeModal'
-import { ProfileContext } from '../context/ProfileModal'
-import Preferences from './Preferences'
-import EditProfile from './EditProfile'
-import MembersModal from './MembersModal'
-import Downloads from './Downloads'
-import PauseNotification from './PauseNotification'
+import styles from "../styles/Topbar.module.css"
+import { TopbarContext } from "../context/Topbar"
+import StatusBadgeModal from "./StatusBadgeModal"
+import { ProfileContext } from "../context/ProfileModal"
+import Preferences from "./Preferences"
+import EditProfile from "./EditProfile"
+import MembersModal from "./MembersModal"
+import Downloads from "./Downloads"
+import PauseNotification from "./PauseNotification"
 
 const TopbarModal = ({ members }) => {
   const { toggleModalState, toggleProfileState } = useContext(ProfileContext)
@@ -25,7 +25,7 @@ const TopbarModal = ({ members }) => {
   const [showMembersModal] = state.modal
   const { onEmojiClick, openStatus, closeStatus, modalRef, closeMembersModal } =
     state
-  const [modal, setModal] = useState('')
+  const [modal, setModal] = useState("")
   const [pause, setPause] = useState(false)
 
   return (
@@ -60,7 +60,7 @@ const TopbarModal = ({ members }) => {
             onClick={closeMembersModal}
             className={styles.membersModalOverlay}
           />
-          <MembersModal members={members} roomTitle={'announcements'} />
+          <MembersModal members={members} roomTitle={"announcements"} />
         </div>
       ) : null}
 
@@ -98,7 +98,7 @@ const TopbarModal = ({ members }) => {
           <div className={styles.sectionThree}>
             <p onClick={openStatus}>Set a status</p>
             <p onClick={() => setActive(!active)}>
-              {active ? 'Set yourself as away' : 'Set yourself as active'}
+              {active ? "Set yourself as away" : "Set yourself as active"}
             </p>
             <div className={styles.pause}>
               <p onClick={() => setPause(!pause)}>Pause Notifications</p>
@@ -112,7 +112,7 @@ const TopbarModal = ({ members }) => {
           <div className={styles.sectionFour}>
             <p
               onClick={() => {
-                setModal('edit profile')
+                setModal("edit profile")
                 toggleModalState()
               }}
             >
@@ -121,7 +121,7 @@ const TopbarModal = ({ members }) => {
             <p onClick={toggleProfileState}>View profile</p>
             <p
               onClick={() => {
-                setModal('preference')
+                setModal("preference")
                 toggleModalState()
               }}
             >
@@ -134,25 +134,25 @@ const TopbarModal = ({ members }) => {
           <div className={styles.sectionSix}>
             <p
               onClick={() => {
-                setModal('downloads')
+                setModal("downloads")
               }}
             >
               Downloads
             </p>
           </div>
 
-          {modal === 'edit profile' && <EditProfile />}
+          {modal === "edit profile" && <EditProfile />}
 
-          {modal === 'preference' && <Preferences />}
+          {modal === "preference" && <Preferences />}
 
-          {modal === 'downloads' && <Downloads setModal={setModal} />}
+          {modal === "downloads" && <Downloads setModal={setModal} />}
 
           <hr className={styles.hr} />
 
           <div className={styles.sectionFive}>
             <p>
-              {' '}
-              <a href="/signout">Sign out of Team Einstein workspace</a>{' '}
+              {" "}
+              <a href="/signout">Sign out of workspace</a>{" "}
             </p>
           </div>
         </section>

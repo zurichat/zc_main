@@ -1,5 +1,5 @@
-import React from 'react'
-import AdminSettings from '.'
+import React from "react"
+import AdminSettings from "."
 
 const SettingsHome = () => {
   return <AdminSettings>Hello</AdminSettings>

@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
-import { TopbarContext } from '../context/Topbar'
-import { ProfileContext } from '../context/ProfileModal'
+import React, { useContext } from "react"
+import { TopbarContext } from "../context/Topbar"
+import { ProfileContext } from "../context/ProfileModal"
 
-import styles from '../styles/ProfilePicView.module.css'
+import styles from "../styles/ProfilePicView.module.css"
 
 const ProfilePicView = () => {
   const { profilePicView, setProfilePicView } = useContext(TopbarContext)

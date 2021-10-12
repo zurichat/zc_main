@@ -1,4 +1,4 @@
-import securityFeatureStyles from '../styles/security_features.module.css'
+import securityFeatureStyles from "../styles/security_features.module.css"
 
 const SecurityFeature = ({ img, title }) => {
   return (

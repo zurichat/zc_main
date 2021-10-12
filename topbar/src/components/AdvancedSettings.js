@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from '../styles/AdvancedSettings.module.css'
+import React from "react"
+import styles from "../styles/AdvancedSettings.module.css"
 
 const AdvancedSettings = () => {
   return (
@@ -21,7 +21,9 @@ const AdvancedSettings = () => {
             <input type="checkbox" name="" id="" />
             <div className={styles.format}>
               <h3>Format messages with markup</h3>
-              <div className={styles.format2}><h3>The text formatting toolbar won't show in the composer</h3></div>
+              <div className={styles.format2}>
+                <h3>The text formatting toolbar won't show in the composer</h3>
+              </div>
             </div>
           </div>
         </div>
@@ -53,7 +55,9 @@ const AdvancedSettings = () => {
                 <button className={styles.btn5}>F</button>
                 Starts a Zurichat chat
               </div>
-              <div className={styles.over}>Overrides normal behaviour in search behaviour</div>
+              <div className={styles.over}>
+                Overrides normal behaviour in search behaviour
+              </div>
             </div>
           </div>
           <div className={styles.checkformat}>
@@ -64,12 +68,14 @@ const AdvancedSettings = () => {
                 <button className={styles.btn7}>K</button>
                 Starts the quick switcher
               </div>
-              <div className={styles.ride}>Overrides normal behaviour in some browsers</div>
+              <div className={styles.ride}>
+                Overrides normal behaviour in some browsers
+              </div>
             </div>
           </div>
         </div>
         <div className={styles.exclude}>
-        <h5>Exclude these channels from search results:</h5>
+          <h5>Exclude these channels from search results:</h5>
         </div>
         <div className={styles.barcontainer}>
           <div className={styles.bar}>
@@ -92,9 +98,9 @@ const AdvancedSettings = () => {
             <div className={styles.keys}>
               <button className={styles.btn8}>Page up</button>,
               <button className={styles.btn9}>Page Down</button>,
-              <button className={styles.btn10}>Home</button> and
-              <button className={styles.btn11}>End</button>
-              keys always scroll messages
+              <button className={styles.btn10}>Home</button> &nbsp;
+              <button className={styles.btn11}>End</button>&nbsp; keys always
+              scroll messages
             </div>
           </div>
           <div className={styles.ask}>
@@ -107,8 +113,13 @@ const AdvancedSettings = () => {
           <div className={styles.survey}>
             <input type="checkbox" name="" id="" />
             <div className={styles.surveyin}>
-              <div className={styles.sendme}>Send me occasional survey via Zurichat bot</div> 
-              <div className={styles.working}>We're working to make Zurichat better. We'd always love to hear your thoughts</div>
+              <div className={styles.sendme}>
+                Send me occasional survey via Zurichat bot
+              </div>
+              <div className={styles.working}>
+                We're working to make Zurichat better. We'd always love to hear
+                your thoughts
+              </div>
             </div>
           </div>
           <div className={styles.warn}>

@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import styles from '../styles/PauseNotification.module.css'
-import PauseNotificationModal from './PauseNotificationModal'
+import React, { useState } from "react"
+import styles from "../styles/PauseNotification.module.css"
+import PauseNotificationModal from "./PauseNotificationModal"
 
 const PauseNotification = ({ pause, setPause }) => {
   const [showModal, setShowModal] = useState(false)

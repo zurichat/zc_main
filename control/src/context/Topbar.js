@@ -1,4 +1,4 @@
-import { createContext, useState, useRef } from 'react'
+import { createContext, useState, useRef } from "react"
 
 export const TopbarContext = createContext(null)
 export const TopbarProvider = ({ children }) => {
@@ -9,7 +9,7 @@ export const TopbarProvider = ({ children }) => {
   const [showModal, setShowModal] = useState(false)
   const [showStatus, setShowStatus] = useState(false)
   const [showMembersModal, setShowMembersModal] = useState(false)
-  const [chosenEmoji, setChosenEmoji] = useState({ emoji: '4️⃣' })
+  const [chosenEmoji, setChosenEmoji] = useState({ emoji: "4️⃣" })
 
   // The function that opens the topbar profile modal
   const openModal = () => {

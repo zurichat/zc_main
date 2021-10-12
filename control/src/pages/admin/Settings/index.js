@@ -1,7 +1,7 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
-import AdminSettings from '..'
-import AdminSettingsTab from './components/AdminSettingsTab'
+import React from "react"
+import { Helmet } from "react-helmet"
+import AdminSettings from ".."
+import AdminSettingsTab from "./components/AdminSettingsTab"
 
 const index = () => {
   return (

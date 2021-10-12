@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 
 .sectionContainer {
   margin-top: 70.49px !important;
@@ -61,6 +61,9 @@ input.inputField::placeholder {
   background-color: #ffffff;
   color: #00b87c;
   border: 2px solid #00b87c;
+}
+.subscribeBtn:active {
+  transform: scale(0.95);
 }
 
 /* smaller than laptop, bigger than tablet */

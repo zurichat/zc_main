@@ -1,6 +1,6 @@
-import React from 'react'
-import styles from './styles/header.module.css'
-import { MdKeyboardArrowDown } from 'react-icons/md'
+import React from "react"
+import styles from "./styles/header.module.css"
+import { MdKeyboardArrowDown } from "react-icons/md"
 
 export default function Header(props) {
   return (
@@ -12,12 +12,12 @@ export default function Header(props) {
             className={styles.plugin__header__title}
           >
             <img
-              src={props.headerConfig.icon || ''}
+              src={props.headerConfig.icon || ""}
               alt=""
               className={styles.plugin__header__icon}
             />
             <span className={styles.plugin__header__text}>
-              {props.headerConfig.name || 'home'}
+              {props.headerConfig.name || "home"}
             </span>
             <span className={styles.plugin__header__arrow}>
               <MdKeyboardArrowDown />

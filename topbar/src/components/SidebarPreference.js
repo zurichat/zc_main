@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import styles from '../styles/NotificationPreference.module.css'
+import React, { useState } from "react"
+import styles from "../styles/NotificationPreference.module.css"
 
 const SidebarPreference = () => {
   const [state, setState] = useState({
-    name: 'React',
-    value: 'duration'
+    name: "React",
+    value: "duration"
   })
 
   const onValueChange = event => {
@@ -74,7 +74,7 @@ const SidebarPreference = () => {
           <input
             type="radio"
             value="all-conversations"
-            checked={state.selectedOption === 'all-conversations'}
+            checked={state.selectedOption === "all-conversations"}
             onChange={onValueChange}
           />
           <label htmlFor="all-messages">All Conversations</label>
@@ -83,7 +83,7 @@ const SidebarPreference = () => {
           <input
             type="radio"
             value="unread-messages"
-            checked={state.selectedOption === 'unread-messages'}
+            checked={state.selectedOption === "unread-messages"}
             onChange={onValueChange}
           />
           <label htmlFor="direct-messages">All unread messages</label>
@@ -92,7 +92,7 @@ const SidebarPreference = () => {
           <input
             type="radio"
             value="custom"
-            checked={state.selectedOption === 'custom'}
+            checked={state.selectedOption === "custom"}
             onChange={onValueChange}
           />
           <label htmlFor="custom">Custom</label>
@@ -104,7 +104,7 @@ const SidebarPreference = () => {
           <input
             type="radio"
             value="alphabet"
-            checked={state.selectedOptions === 'alphabet'}
+            checked={state.selectedOptions === "alphabet"}
             onChange={changeValue}
           />
           <label htmlFor="alphabet">Alphabet</label>
@@ -113,7 +113,7 @@ const SidebarPreference = () => {
           <input
             type="radio"
             value="most-recent"
-            checked={state.selectedOptions === 'most-recent'}
+            checked={state.selectedOptions === "most-recent"}
             onChange={changeValue}
           />
           <label htmlFor="most-recent">Most Recent</label>
@@ -122,7 +122,7 @@ const SidebarPreference = () => {
           <input
             type="radio"
             value="priority"
-            checked={state.selectedOptions === 'priority'}
+            checked={state.selectedOptions === "priority"}
             onChange={changeValue}
           />
           <label htmlFor="most-recent">Priority</label>

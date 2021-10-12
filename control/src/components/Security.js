@@ -1,8 +1,8 @@
-import styles from '../component-styles/Security.module.css'
-import padlock from '../component-assets/padlock.png'
-import padlockSvg from '../component-assets/padlock.svg'
-import dataProtectionIcon from '../component-assets/data-protection.svg'
-import approvedIcon from '../component-assets/approved.svg'
+import styles from "../component-styles/Security.module.css"
+import padlock from "../component-assets/padlock.png"
+import padlockSvg from "../component-assets/padlock.svg"
+import dataProtectionIcon from "../component-assets/data-protection.svg"
+import approvedIcon from "../component-assets/approved.svg"
 
 function Security() {
   return (
@@ -20,7 +20,7 @@ function Security() {
           <button
             className={`btn btn-success ${styles.button} col-md-6 col-12`}
           >
-            {' '}
+            {" "}
             View Data Sheet
           </button>
         </div>

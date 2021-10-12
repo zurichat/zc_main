@@ -1,23 +1,23 @@
-import React, { useEffect, useState } from 'react'
-import downloadStyles from './styles/DownloadsIOS.module.css'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
+import React, { useEffect, useState } from "react"
+import downloadStyles from "./styles/DownloadsIOS.module.css"
+import Header from "../../components/Header"
+import Footer from "../../components/Footer"
 
-import AppStorelogo from './assets/appstore.png'
+import AppStorelogo from "./assets/appstore.png"
 
-import PhoneDM from './assets/PhoneDM.png'
-import PhoneChannel from './assets/PhoneChannels.png'
-import fetchInstall from './utils/index'
+import PhoneDM from "./assets/PhoneDM.png"
+import PhoneChannel from "./assets/PhoneChannels.png"
+import fetchInstall from "./utils/index"
 
 // import Apk from './apk/appRelease.apk'
 
 const DownloadsIOS = () => {
-  const [exe, setexe] = useState({ link: '', name: '' })
+  const [exe, setexe] = useState({ link: "", name: "" })
   // const [msi, setmsi] = useState({ link: '', name: '' })
   // const [dmg, setdmg] = useState({ link: '', name: '' })
 
   useEffect(() => {
-    fetchInstall('exe').then(res => {
+    fetchInstall("exe").then(res => {
       setexe(res)
     })
     // fetchInstall('msi').then(res => {setmsi(res)})

@@ -1,6 +1,6 @@
-import React from 'react'
-import styles from './reports.module.css'
-import { Container } from 'react-bootstrap'
+import React from "react"
+import styles from "./reports.module.css"
+import { Container } from "react-bootstrap"
 
 export const ComplaintProfiles = props => {
   const Continue = e => {
@@ -30,7 +30,7 @@ export const ComplaintProfiles = props => {
           <br />
         </div>
         <div>
-          {' '}
+          {" "}
           <label htmlFor="name">
             <b className="text-success">Offender's e-mail</b>
           </label>
@@ -42,9 +42,9 @@ export const ComplaintProfiles = props => {
             className="form-control"
             name="email"
             required
-            onChange={inputChange('email')}
+            onChange={inputChange("email")}
             value={values.email}
-            style={{ width: '75%', padding: '12px' }}
+            style={{ width: "75%", padding: "12px" }}
           />
         </div>
 
@@ -60,8 +60,8 @@ export const ComplaintProfiles = props => {
           <div className="form-group">
             <select
               name="offence"
-              style={{ width: '75%', padding: '12px' }}
-              onChange={inputChange('offence')}
+              style={{ width: "75%", padding: "12px" }}
+              onChange={inputChange("offence")}
             >
               <option value="Anti Semitism">Anti Semitism </option>
               <option value="Racism">Racism </option>
@@ -81,7 +81,7 @@ export const ComplaintProfiles = props => {
 
         <br />
 
-        <div style={{ display: 'flex', flexDirection: 'space-inbetween' }}>
+        <div style={{ display: "flex", flexDirection: "space-inbetween" }}>
           <label htmlFor="text">
             <b className="text-success">Description </b>(Optional)
           </label>
@@ -91,9 +91,9 @@ export const ComplaintProfiles = props => {
             type="text"
             className="form-control"
             name="text"
-            onChange={inputChange('description')}
+            onChange={inputChange("description")}
             value={values.description}
-            style={{ width: '75%', height: '100px' }}
+            style={{ width: "75%", height: "100px" }}
           />
         </div>
 
@@ -106,7 +106,7 @@ export const ComplaintProfiles = props => {
               className="form-check-input"
               type="checkbox"
               id="flexSwitchCheckChecked"
-              onChange={inputChange('anonymous')}
+              onChange={inputChange("anonymous")}
               checked={values.anonymous}
               backgroundColor="#00B87C"
               color="#00B87C"
@@ -116,16 +116,16 @@ export const ComplaintProfiles = props => {
         <br />
         <div
           className="row"
-          style={{ display: 'flex', flexDirection: 'flex-end' }}
+          style={{ display: "flex", flexDirection: "flex-end" }}
         >
           <div className="col-6">
             <button
               className="btn btn-secondary"
               onClick={back}
               style={{
-                color: 'white',
+                color: "white",
                 // backgroundColor: "#00B87C",
-                borderRadius: '5%'
+                borderRadius: "5%"
                 // padding: '12px'
               }}
             >
@@ -138,11 +138,11 @@ export const ComplaintProfiles = props => {
               className="btn btn-success"
               // onClick={Continue}
               style={{
-                color: 'white',
-                backgroundColor: '#00B87C',
+                color: "white",
+                backgroundColor: "#00B87C",
                 // padding: '12px',
-                borderRadius: '5%',
-                marginLeft: '45%'
+                borderRadius: "5%",
+                marginLeft: "45%"
               }}
             >
               Next

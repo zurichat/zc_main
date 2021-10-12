@@ -1,6 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import styles from '../styles/adminMembersTab.module.css'
+import React from "react"
+import { Link } from "react-router-dom"
+import styles from "../styles/adminMembersTab.module.css"
 
 const JoiningMembers = ({ date, users, url }) => {
   return (
@@ -18,7 +18,7 @@ const JoiningMembers = ({ date, users, url }) => {
                 <img src={image} alt="" />
               </Link>
               <p>
-                <Link to={`${url}`}>{username}</Link> joined the workspace{' '}
+                <Link to={`${url}`}>{username}</Link> joined the workspace{" "}
                 <span>{accountType}</span>
               </p>
             </div>

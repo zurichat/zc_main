@@ -1,48 +1,50 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Login from './pages/login'
-import SignUp from './pages/signup'
-import SignOut from './pages/signout/index'
-import Workspace from './pages/workspace/components/Workspace'
-import LandingPage from './pages/LandingPage'
+import { BrowserRouter, Route, Switch } from "react-router-dom"
+import Login from "./pages/login"
+import SignUp from "./pages/signup"
+import SignOut from "./pages/signout/index"
+import Workspace from "./pages/workspace/components/Workspace"
+import LandingPage from "./pages/LandingPage"
+import DAO_Features from "./pages/DAO-Features"
 // password block
-import ResetPassword from './pages/passwordReset/index'
-import NewPassword from './pages/passwordReset/newPassword'
+import ResetPassword from "./pages/passwordReset/index"
+import NewPassword from "./pages/passwordReset/newPassword"
 // end password block
-import CookiesSetting from './pages/cookiesSettings'
-import Cookies from './pages/cookies'
-import Features from './pages/features'
-import Resources from './pages/resources'
-import Pricing from './pages/pricing'
-import Security from './pages/security'
-import Invite from './pages/inviteScreen'
-import Inviterequest from './pages/InviteRequest/InviteRequest'
-import SendRequest from './pages/InviteRequest/SendRequest'
-import ContactUs from './pages/contact-us'
-import AppsAndIntegrations from './pages/apps-integration'
-import Download from './pages/download'
-import DownloadsMac from './pages/download/DownloadsMac'
-import Careers from './pages/careers'
-import MarketPlace from './pages/marketplace/marketplace'
-import Settings from './pages/settings'
-import ConfirmPassword from './pages/settings/components/ConfirmPassword'
-import AccDeactivated from './pages/settings/components/AccDeactivated'
-import DeactivateAccount from './pages/settings/components/AcctDeactivation'
-import AllSessionSignOut from './pages/settings/components/AllSessionSignOut'
-import PrivateRoute from './pages/settings/Utils/PrivateRoute'
-import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation'
-import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContext'
-import PrivacyPolicy from './pages/privacy-policy/index'
-import NotFoundPage from './pages/404'
-import Billing from './pages/admin/Billing'
-import Blog from './pages/blogs'
-import Homepage from './pages/home'
-import Permissions from './pages/admin/Permissions'
-import SettingsHome from './pages/admin/Settings/index'
-import About from './pages/about/index'
-import AdminSettingsTab from './pages/admin/Settings/components/AdminSettingsTab'
-import TermsOfService from './pages/termsOfService'
-import RedirectRoute from './pages/redirect'
-
+import CookiesSetting from "./pages/cookiesSettings"
+import Cookies from "./pages/cookies"
+import Features from "./pages/features"
+import Resources from "./pages/resources"
+import Help from "./pages/Help"
+import Pricing from "./pages/pricing"
+import Security from "./pages/security"
+import Invite from "./pages/inviteScreen"
+import Inviterequest from "./pages/InviteRequest/InviteRequest"
+import SendRequest from "./pages/InviteRequest/SendRequest"
+import ContactUs from "./pages/contact-us"
+import Search from "./pages/search"
+import AppsAndIntegrations from "./pages/apps-integration"
+import Download from "./pages/download"
+import DownloadsMac from "./pages/download/DownloadsMac"
+import Careers from "./pages/careers"
+import MarketPlace from "./pages/marketplace/marketplace"
+import Settings from "./pages/settings"
+import ConfirmPassword from "./pages/settings/components/ConfirmPassword"
+import AccDeactivated from "./pages/settings/components/AccDeactivated"
+import DeactivateAccount from "./pages/settings/components/AcctDeactivation"
+import AllSessionSignOut from "./pages/settings/components/AllSessionSignOut"
+import PrivateRoute from "./pages/settings/Utils/PrivateRoute"
+import ConfirmDeactivation from "./pages/settings/components/ConfirmDeactivation"
+import CreateWorkSpaces from "./pages/createworkspace/components/WorkSpaceContext"
+import PrivacyPolicy from "./pages/privacy-policy/index"
+import NotFoundPage from "./pages/404"
+import Billing from "./pages/admin/Billing"
+import Blog from "./pages/blogs"
+import Homepage from "./pages/home"
+import Permissions from "./pages/admin/Permissions"
+import SettingsHome from "./pages/admin/Settings/index"
+import About from "./pages/about/index"
+import AdminSettingsTab from "./pages/admin/Settings/components/AdminSettingsTab"
+import TermsOfService from "./pages/termsOfService"
+import RedirectRoute from "./pages/redirect"
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -61,8 +63,8 @@ const App = () => {
           <LandingPage />
         </Route>
         <RedirectRoute path="/login">
-         <Login />
-       </RedirectRoute>
+          <Login />
+        </RedirectRoute>
         <Route path="/signup">
           <SignUp />
         </Route>
@@ -74,6 +76,9 @@ const App = () => {
         </Route>
         <Route path="/about">
           <About />
+        </Route>
+        <Route path="/help">
+          <Help />
         </Route>
         <Route path="/choose-workspace">
           <Workspace />
@@ -92,6 +97,9 @@ const App = () => {
         </Route>
         <Route path="/resources">
           <Resources />
+        </Route>
+        <Route path="/search">
+          <Search />
         </Route>
         <Route path="/blog">
           <Blog />
@@ -119,6 +127,9 @@ const App = () => {
         </Route>
         <Route path="/terms">
           <TermsOfService />
+        </Route>
+        <Route path="/dao-features">
+          <DAO_Features />
         </Route>
         <Route path="/marketplace" exact>
           <MarketPlace />

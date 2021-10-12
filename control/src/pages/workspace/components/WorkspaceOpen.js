@@ -1,12 +1,12 @@
-import React from 'react'
-import styles from '../style/workspace.module.css'
-import { useWorkspaceContext } from './WorkspaceContext'
+import React from "react"
+import styles from "../style/workspace.module.css"
+import { useWorkspaceContext } from "./WorkspaceContext"
 
 const WorkspaceOpen = ({ workspaceID }) => {
   const { redirectPage } = useWorkspaceContext()
 
   const handleNextPage = id => {
-    localStorage.setItem('currentWorkspace', id)
+    localStorage.setItem("currentWorkspace", id)
     redirectPage()
   }
 

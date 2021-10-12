@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from '../card_component/Card.module.css'
+import React from "react"
+import styles from "../card_component/Card.module.css"
 
 const Card = ({ image, highlighted_text, text }) => {
   return (

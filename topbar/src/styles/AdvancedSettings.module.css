@@ -1,16 +1,16 @@
 .container {
   width: 80%;
-  font-family: 'Lato';
+  font-family: "Lato";
+  padding-bottom: 4em;
 }
 
 .head {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-weight: bolder;
   display: flex;
   margin: 1rem 0;
   color: #000;
   font-size: 15px;
-  margin-top: 32px;
 }
 
 .borderbottomone {
@@ -77,7 +77,7 @@
 }
 
 .headpress {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-weight: bolder;
   display: flex;
   margin: 1rem 0;
@@ -141,7 +141,7 @@
   background: #fff;
   border: 1px solid rgba(0, 184, 124, 0.5);
   box-sizing: border-box;
-  border-radius: 3px; 
+  border-radius: 3px;
   padding: 0px 7px;
   margin-top: -2px;
   color: rgba(0, 184, 124, 0.5);
@@ -153,7 +153,7 @@
   background: #fff;
   border: 1px solid rgba(0, 184, 124, 0.5);
   box-sizing: border-box;
-  border-radius: 3px; 
+  border-radius: 3px;
   padding: 0px 7px;
   margin-top: -2px;
   color: rgba(0, 184, 124, 0.5);
@@ -165,7 +165,7 @@
   background: #fff;
   border: 1px solid rgba(0, 184, 124, 0.5);
   box-sizing: border-box;
-  border-radius: 3px; 
+  border-radius: 3px;
   padding: 0px 7px;
   margin-top: -2px;
   color: rgba(0, 184, 124, 0.5);
@@ -177,7 +177,7 @@
   background: #fff;
   border: 1px solid rgba(0, 184, 124, 0.5);
   box-sizing: border-box;
-  border-radius: 3px; 
+  border-radius: 3px;
   padding: 0px 7px;
   margin-top: -2px;
   color: rgba(0, 184, 124, 0.5);
@@ -189,7 +189,7 @@
   background: #fff;
   border: 1px solid rgba(0, 184, 124, 0.5);
   box-sizing: border-box;
-  border-radius: 3px; 
+  border-radius: 3px;
   padding: 0px 7px;
   margin-top: -2px;
   color: rgba(0, 184, 124, 0.5);
@@ -201,7 +201,7 @@
   background: #fff;
   border: 1px solid rgba(0, 184, 124, 0.5);
   box-sizing: border-box;
-  border-radius: 3px; 
+  border-radius: 3px;
   padding: 0px 7px;
   margin-top: -2px;
   color: rgba(0, 184, 124, 0.5);
@@ -213,7 +213,7 @@
   background: #fff;
   border: 1px solid rgba(0, 184, 124, 0.5);
   box-sizing: border-box;
-  border-radius: 3px; 
+  border-radius: 3px;
   padding: 0px 7px;
   margin-top: -2px;
   color: rgba(0, 184, 124, 0.5);
@@ -225,7 +225,7 @@
   background: #fff;
   border: 1px solid rgba(0, 184, 124, 0.5);
   box-sizing: border-box;
-  border-radius: 3px; 
+  border-radius: 3px;
   padding: 0px 7px;
   margin-top: -2px;
   color: rgba(0, 184, 124, 0.5);
@@ -237,7 +237,7 @@
   background: #fff;
   border: 1px solid rgba(0, 184, 124, 0.5);
   box-sizing: border-box;
-  border-radius: 3px; 
+  border-radius: 3px;
   padding: 0px 7px;
   margin-top: -2px;
   color: rgba(0, 184, 124, 0.5);
@@ -249,7 +249,7 @@
   background: #fff;
   border: 1px solid rgba(0, 184, 124, 0.5);
   box-sizing: border-box;
-  border-radius: 3px; 
+  border-radius: 3px;
   padding: 0px 7px;
   margin-top: -2px;
   color: rgba(0, 184, 124, 0.5);
@@ -261,7 +261,7 @@
   background: #fff;
   border: 1px solid rgba(0, 184, 124, 0.5);
   box-sizing: border-box;
-  border-radius: 3px; 
+  border-radius: 3px;
   padding: 0px 7px;
   margin-top: -2px;
   color: rgba(0, 184, 124, 0.5);
@@ -275,7 +275,7 @@
 }
 
 .bartype {
-  border: 1px solid #DADADA;
+  border: 1px solid #dadada;
   padding-left: 1.5rem;
   padding-right: 18rem;
   width: 500px;
@@ -382,7 +382,7 @@
 }
 
 .line {
-  border: 1px solid #F6F6F6;
+  border: 1px solid #f6f6f6;
   margin-top: 20px;
   margin-left: 48px;
   width: 130%;
@@ -423,4 +423,71 @@
   margin-top: 6px;
   font-size: 15px;
   font-weight: bolder;
+}
+
+/***** Mobile screen */
+
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+    padding-top: 1em;
+  }
+  .head {
+    margin-top: 5px;
+  }
+
+  .input,
+  .search,
+  .options {
+    width: 93%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+
+  .search {
+    margin-bottom: 2rem;
+  }
+
+  .bar {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .bartype {
+    width: 90%;
+    height: 30px;
+    padding: 1em;
+    font-size: 14px;
+  }
+
+  .options {
+    width: 93%;
+  }
+
+  .ask,
+  .survey,
+  .warn,
+  .checkkeys {
+    width: 100%;
+    margin: 12px auto 0 auto;
+  }
+
+  .checkkeyss {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .checkkeys input {
+    margin-left: 0;
+  }
+
+  .line {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .format2 h3,
+  .format h3 {
+    line-height: 42px;
+  }
 }

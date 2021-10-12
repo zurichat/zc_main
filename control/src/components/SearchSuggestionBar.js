@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
-import styles from '../component-styles/SearchSuggestionBar.module.css'
-import cancel from '../component-assets/closedark.svg'
+import React, { useState } from "react"
+import styles from "../component-styles/SearchSuggestionBar.module.css"
+import cancel from "../component-assets/closedark.svg"
 
 const sampleSuggestionArray = [
-  'frequently asked questions',
-  'frequently asked suggestions',
-  'FAQ',
-  'Understand Guest Roles in Zuri Chat'
+  "frequently asked questions",
+  "frequently asked suggestions",
+  "FAQ",
+  "Understand Guest Roles in Zuri Chat"
 ]
 
 const SearchSuggestionBar = ({ className, handleSearchBarClose }) => {
   const [suggestions, setSuggestions] = useState([])
-  const [value, setValue] = useState('')
+  const [value, setValue] = useState("")
 
   //  {`${(suggestions[0])?  suggestions[0] :"Search for anything here (ie. jobs,news and more)"}`}
 
@@ -26,10 +26,10 @@ const SearchSuggestionBar = ({ className, handleSearchBarClose }) => {
   return (
     <div className={`position-relative ${className}`}>
       <div className={`${styles.searchBar}`}>
-        {value !== '' && (
+        {value !== "" && (
           <p className={`position-absolute ${styles.suggested}`}>
-            {' '}
-            {`${suggestions[0] ? suggestions[0] : ''}`}{' '}
+            {" "}
+            {`${suggestions[0] ? suggestions[0] : ""}`}{" "}
           </p>
         )}
         <input

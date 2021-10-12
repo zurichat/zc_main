@@ -1,5 +1,5 @@
-import React from 'react'
-import AdminSettings from '.'
+import React from "react"
+import AdminSettings from "."
 
 const Permissions = () => {
   return <AdminSettings>Hello</AdminSettings>

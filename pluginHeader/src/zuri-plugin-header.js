@@ -1,7 +1,7 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import singleSpaReact from 'single-spa-react'
-import Root from './root.component'
+import React from "react"
+import ReactDOM from "react-dom"
+import singleSpaReact from "single-spa-react"
+import Root from "./root.component"
 
 let enhancedComponent = Root
 
@@ -11,7 +11,7 @@ export const pluginHeader = singleSpaReact({
   rootComponent: enhancedComponent
 })
 
-export const name = 'Plugin header'
+export const name = "Plugin header"
 
 export const bootstrap = [
   () => {

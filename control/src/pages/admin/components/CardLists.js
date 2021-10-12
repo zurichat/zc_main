@@ -1,10 +1,10 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect } from "react"
 
-import styles from '../styles/cardList.module.css'
+import styles from "../styles/cardList.module.css"
 
-import { ValidateCard } from '../Utils/Common'
-import toast from 'react-hot-toast'
-import { CardContext } from '../../../context/CardContext'
+import { ValidateCard } from "../Utils/Common"
+import toast from "react-hot-toast"
+import { CardContext } from "../../../context/CardContext"
 
 const CardList = () => {
   const { cardList, setCardList } = useContext(CardContext)
@@ -12,10 +12,10 @@ const CardList = () => {
   const handleDelete = cardNumber => {
     setCardList(cardList.filter(card => card.cardNumber !== cardNumber))
     localStorage.setItem(
-      'cardList',
+      "cardList",
       JSON.stringify(cardList.filter(card => card.cardNumber !== cardNumber))
     )
-    toast.success('Card deleted successfully')
+    toast.success("Card deleted successfully")
   }
 
   return (
@@ -34,9 +34,9 @@ const CardList = () => {
                     <h6 className={styles.ownerName}>{card.cardName}</h6>
                     <p className={styles.otherInfo}>
                       {card.cardType.charAt(0).toUpperCase() +
-                        card.cardType.slice(1)}{' '}
+                        card.cardType.slice(1)}{" "}
                       ending with {card.cardNumber.slice(-4)}•
-                      {card.expireDate.replace('/', '.')}
+                      {card.expireDate.replace("/", ".")}
                     </p>
                     <p className={styles.otherInfo}>
                       Future payments will come from this card

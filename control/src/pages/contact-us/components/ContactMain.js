@@ -1,7 +1,7 @@
-import contactStyle from '../styles/contactMain.module.css'
-import ContactUs from './ContactUsImg.svg'
-import FAQselected from './FAQSelected.js'
-import DiscoverMore from './DiscoverMore'
+import contactStyle from "../styles/contactMain.module.css"
+import ContactUs from "./ContactUsImg.svg"
+import FAQselected from "./FAQSelected.js"
+import DiscoverMore from "./DiscoverMore"
 
 const contactTitle = () => {
   return (
@@ -18,8 +18,9 @@ const contactTitle = () => {
         <div className={contactStyle.getHelpCard}>
           <FAQselected />
         </div>
-
-        <img className="d-none d-xl-flex" src={ContactUs} alt="contact us" />
+        <div className={`d-none d-xl-block ${contactStyle.groupImage}`}>
+          <img className="d-none d-xl-flex" src={ContactUs} alt="contact us" />
+        </div>
       </div>
       <DiscoverMore />
     </div>

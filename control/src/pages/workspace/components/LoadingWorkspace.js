@@ -1,15 +1,15 @@
-import React from 'react'
+import React from "react"
 // Components
-import WorkspaceHeader from './WorkspaceHeader'
-import { useWorkspaceContext } from './WorkspaceContext'
-import LoginLoading from '../../../components/LoginLoading'
+import WorkspaceHeader from "./WorkspaceHeader"
+import { useWorkspaceContext } from "./WorkspaceContext"
+import LoginLoading from "../../../components/LoginLoading"
 
 // Styles
-import styles from '../style/workspace.module.css'
-import WorkspaceCard from './WorkspaceCard'
-import WorkspaceFooter from './WorkspaceFooter'
-import JoinWorkspaceCard from './JoinWorkspaceCard'
-import WorkspaceError from './Error'
+import styles from "../style/workspace.module.css"
+import WorkspaceCard from "./WorkspaceCard"
+import WorkspaceFooter from "./WorkspaceFooter"
+import JoinWorkspaceCard from "./JoinWorkspaceCard"
+import WorkspaceError from "./Error"
 
 const LoadingWorkspace = () => {
   const { pageLoading, error } = useWorkspaceContext()
@@ -19,18 +19,18 @@ const LoadingWorkspace = () => {
       ?  (<LoginLoading />) 
       : error ? (<WorkspaceError error={error} />) :  */}
       {/* ( */}
-        <div className={`${styles.workspace}`}>
-          <main className={`${styles.workspace_container}`}>
-            <WorkspaceHeader />
-            <article className={`${styles.workspace_wrapper}`}>
-              <WorkspaceCard />
-            </article>
-            <section className={`${styles.joinworkspace_wrapper}`}>
-              <JoinWorkspaceCard />
-            </section>
-          </main>
-          <WorkspaceFooter />
-        </div>
+      <div className={`${styles.workspace}`}>
+        <main className={`${styles.workspace_container}`}>
+          <WorkspaceHeader />
+          <article className={`${styles.workspace_wrapper}`}>
+            <WorkspaceCard />
+          </article>
+          <section className={`${styles.joinworkspace_wrapper}`}>
+            <JoinWorkspaceCard />
+          </section>
+        </main>
+        <WorkspaceFooter />
+      </div>
       {/* ) */}
       {/* } */}
     </>

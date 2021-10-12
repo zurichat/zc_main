@@ -1,7 +1,7 @@
-import Footer from '../../components/Footer'
-import Header from '../../components/Header'
-import ContactMain from './components/ContactMain'
-import { Helmet } from 'react-helmet'
+import Footer from "../../components/Footer"
+import Header from "../../components/Header"
+import ContactMain from "./components/ContactMain"
+import { Helmet } from "react-helmet"
 
 function ContactUs() {
   return (

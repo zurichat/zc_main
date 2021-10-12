@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react"
 
-import Group2 from '../assets/Group59317.svg'
-import './EmailModal.css'
+import Group2 from "../assets/Group59317.svg"
+import "./EmailModal.css"
 
 function EmailSucessModal() {
   return (

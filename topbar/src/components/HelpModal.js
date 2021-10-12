@@ -1,15 +1,15 @@
-import React from 'react'
-import styled from 'styled-components'
-import keyboard from './../assets/images/keyboard.png'
-import gift from './../assets/images/gift.png'
-import cancel from './../assets/images/cancel.png'
-import externalLink from './../assets/images/externalLink.png'
-import bell from './../assets/images/bell.png'
-import groupIcon from './../assets/images/groupicon.png'
-import SearchIcon from '@material-ui/icons/Search'
-import AlarmIcon from './../assets/images/alarm.png'
-import smileHand from './../assets/images/smileHand.png'
-import video from './../assets/images/video.png'
+import React from "react"
+import styled from "styled-components"
+import keyboard from "./../assets/images/keyboard.png"
+import gift from "./../assets/images/gift.png"
+import cancel from "./../assets/images/cancel.png"
+import externalLink from "./../assets/images/externalLink.png"
+import bell from "./../assets/images/bell.png"
+import groupIcon from "./../assets/images/groupicon.png"
+import SearchIcon from "@material-ui/icons/Search"
+import AlarmIcon from "./../assets/images/alarm.png"
+import smileHand from "./../assets/images/smileHand.png"
+import video from "./../assets/images/video.png"
 
 const MiscComponent = ({ icon, word, altIcon }) => {
   return (
@@ -64,28 +64,28 @@ function HelpModal({ setHelpModal }) {
         <MiscContainer>
           <MiscComponent
             icon={bell}
-            word={'Configure your Zuri chat notification'}
-            altIcon={'bell'}
+            word={"Configure your Zuri chat notification"}
+            altIcon={"bell"}
           />
           <MiscComponent
             icon={groupIcon}
-            word={'Set your Zuri chat and availability'}
-            altIcon={'bell'}
+            word={"Set your Zuri chat and availability"}
+            altIcon={"bell"}
           />
           <MiscComponent
             icon={AlarmIcon}
-            word={'Set your reminder'}
-            altIcon={'alarm'}
+            word={"Set your reminder"}
+            altIcon={"alarm"}
           />
           <MiscComponent
             icon={smileHand}
-            word={'Use Emoji reactions'}
-            altIcon={'smileHand'}
+            word={"Use Emoji reactions"}
+            altIcon={"smileHand"}
           />
           <MiscComponent
             icon={video}
-            word={'Zuri chat video tutorials'}
-            altIcon={'video'}
+            word={"Zuri chat video tutorials"}
+            altIcon={"video"}
           />
         </MiscContainer>
 

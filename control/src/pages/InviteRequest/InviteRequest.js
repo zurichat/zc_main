@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Container, Form, Card } from 'react-bootstrap'
-import styles from './styles/InviteRequest.module.css'
-import { Helmet } from 'react-helmet'
+import React from "react"
+import { Link } from "react-router-dom"
+import { Container, Form, Card } from "react-bootstrap"
+import styles from "./styles/InviteRequest.module.css"
+import { Helmet } from "react-helmet"
 
 function Inviterequest() {
   return (
@@ -12,7 +12,7 @@ function Inviterequest() {
       </Helmet>
       <Card
         className={styles.root}
-        style={{ alignItems: 'center', justifyContent: 'center' }}
+        style={{ alignItems: "center", justifyContent: "center" }}
       >
         <Card.Body>
           <div className={styles.title} gutterBottom align="left">
@@ -54,13 +54,13 @@ function Inviterequest() {
           <div className={styles.submain} gutterBottom align="center">
             <div className={styles.firstsubmain}>
               <p>
-                {' '}
+                {" "}
                 Your request will be sent to the admin, and you will be notified
                 when it has been approved or denied
               </p>
               <p>
                 New member will automatically join your workspace's default
-                channel <a href="addmore"> Add more</a>{' '}
+                channel <a href="addmore"> Add more</a>{" "}
               </p>
             </div>
             <div className={styles.secondsubmain}>

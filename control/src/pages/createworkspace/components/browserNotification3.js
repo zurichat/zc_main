@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import http from './utils1/http'
+import { useState, useEffect } from "react"
+import http from "./utils1/http"
 
 import {
   isPushNotificationSupported,
@@ -7,7 +7,7 @@ import {
   registerServiceWorker,
   createNotificationSubscription,
   getUserSubscription
-} from './browserNotification1'
+} from "./browserNotification1"
 
 const pushNotificationSupported = isPushNotificationSupported()
 
@@ -43,10 +43,10 @@ export default function usePushNotifications() {
     setError(false)
     askUserPermission().then(consent => {
       setSuserConsent(consent)
-      if (consent !== 'granted') {
+      if (consent !== "granted") {
         setError({
-          name: 'Consent denied',
-          message: 'You denied the consent to receive notifications',
+          name: "Consent denied",
+          message: "You denied the consent to receive notifications",
           code: 0
         })
       }
@@ -66,11 +66,11 @@ export default function usePushNotifications() {
         console.error(
           "Couldn't create the notification subscription",
           err,
-          'name:',
+          "name:",
           err.name,
-          'message:',
+          "message:",
           err.message,
-          'code:',
+          "code:",
           err.code
         )
         setError(err)
@@ -82,7 +82,7 @@ export default function usePushNotifications() {
     setLoading(true)
     setError(false)
     http
-      .post('/subscription', userSubscription)
+      .post("/subscription", userSubscription)
       .then(function (response) {
         setPushServerSubscriptionId(response.id)
         setLoading(false)

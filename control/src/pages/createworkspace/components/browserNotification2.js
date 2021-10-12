@@ -1,6 +1,6 @@
-import React from 'react'
-import usePushNotifications from './browserNotification3'
-import styles from '../styles/browserNotifications.module.css'
+import React from "react"
+import usePushNotifications from "./browserNotification3"
+import styles from "../styles/browserNotifications.module.css"
 
 export default function PushNotificationDemo() {
   const {
@@ -14,7 +14,7 @@ export default function PushNotificationDemo() {
     // onClickSendNotification
   } = usePushNotifications()
 
-  const isConsentGranted = userConsent === 'granted'
+  const isConsentGranted = userConsent === "granted"
 
   return (
     <main>
@@ -23,7 +23,7 @@ export default function PushNotificationDemo() {
         enabled={!pushNotificationSupported || isConsentGranted}
         onClick={onClickAskUserPermission}
       >
-        {isConsentGranted ? 'Show Notifications' : 'Show Notifications'}
+        {isConsentGranted ? "Show Notifications" : "Show Notifications"}
       </button>
     </main>
   )

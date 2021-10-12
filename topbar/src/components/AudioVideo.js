@@ -1,7 +1,7 @@
-import React from 'react'
-import styles from '../styles/AudioVideo.module.css'
-import { MdPhone } from 'react-icons/md'
-import { FaHeadphones } from 'react-icons/fa'
+import React from "react"
+import styles from "../styles/AudioVideo.module.css"
+import { MdPhone } from "react-icons/md"
+import { FaHeadphones } from "react-icons/fa"
 
 const AudioVideo = () => {
   return (
@@ -95,10 +95,10 @@ const AudioVideo = () => {
               <input type="checkbox" name="" id="" />
               <div className={styles.status}>
                 <span className={styles.statushuddle}>
-                  {' '}
+                  {" "}
                   Set my status to " <FaHeadphones color="#00b87c" /> In a
                   huddle..."
-                </span>{' '}
+                </span>{" "}
                 If you already have a status set, ZuriChat won't change it.
               </div>
             </div>
@@ -117,11 +117,11 @@ const AudioVideo = () => {
           <div className={styles.head}>When Slack is in the background:</div>
           <div className={styles.allow}>
             <span className={styles.keyboard}>
-              {' '}
+              {" "}
               Allow keyboard shortcut to Mute
-            </span>{' '}
+            </span>{" "}
             <div className={styles.muteunmute}>
-              {' '}
+              {" "}
               Use &nbsp;
               <button className={styles.btn}>Ctrl</button> &nbsp;
               <button className={styles.btn}>Shift</button> &nbsp;

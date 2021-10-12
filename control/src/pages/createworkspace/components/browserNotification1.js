@@ -1,5 +1,5 @@
 function isPushNotificationSupported() {
-  return 'serviceWorker' in navigator && 'PushManager' in window
+  return "serviceWorker" in navigator && "PushManager" in window
 }
 
 async function askUserPermission() {
@@ -7,16 +7,16 @@ async function askUserPermission() {
 }
 
 function sendNotification() {
-  const img = ' '
-  const text = 'Welcome to Zuri Chat'
-  const title = 'Notification For Zuri Chat'
+  const img = " "
+  const text = "Welcome to Zuri Chat"
+  const title = "Notification For Zuri Chat"
   const options = {
     body: text,
-    icon: ' ',
+    icon: " ",
     vibrate: [200, 100, 200],
-    tag: 'Zuri Chat',
+    tag: "Zuri Chat",
     image: img,
-    actions: [{ action: 'Detail', title: 'View', icon: ' ' }]
+    actions: [{ action: "Detail", title: "View", icon: " " }]
   }
   navigator.serviceWorker.ready.then(function (serviceWorker) {
     serviceWorker.showNotification(title, options)
@@ -24,7 +24,7 @@ function sendNotification() {
 }
 
 function registerServiceWorker() {
-  return navigator.serviceWorker.register('/sw.js')
+  return navigator.serviceWorker.register("/sw.js")
 }
 
 async function createNotificationSubscription() {

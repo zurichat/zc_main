@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import styles from './reports.module.css'
-import Modal from 'react-bootstrap/Modal'
-import { AiOutlineClose } from 'react-icons/ai'
-import { TiTick } from 'react-icons/ti'
-import { Container, Card, Button } from 'react-bootstrap'
+import React, { useState } from "react"
+import styles from "./reports.module.css"
+import Modal from "react-bootstrap/Modal"
+import { AiOutlineClose } from "react-icons/ai"
+import { TiTick } from "react-icons/ti"
+import { Container, Card, Button } from "react-bootstrap"
 
 export const AuthorizePenalty = props => {
   const [check, setCheck] = useState(false)
@@ -13,8 +13,8 @@ export const AuthorizePenalty = props => {
 
   const authorize = e => {
     e.preventDefault()
-    localStorage.removeItem('zurimainComplaints')
-    localStorage.setItem('zurimainComplaints', JSON.stringify(props.complaints))
+    localStorage.removeItem("zurimainComplaints")
+    localStorage.setItem("zurimainComplaints", JSON.stringify(props.complaints))
     handleClose()
     props.putComplaints(true)
     props.nextStep(2)
@@ -41,10 +41,10 @@ export const AuthorizePenalty = props => {
 
         <span
           style={{
-            backgroundColor: 'rgb(53, 231, 142)',
-            display: 'flex',
+            backgroundColor: "rgb(53, 231, 142)",
+            display: "flex",
 
-            flexDirection: 'space-around'
+            flexDirection: "space-around"
             // borderBlock: "1px solid green",
           }}
         >
@@ -58,7 +58,7 @@ export const AuthorizePenalty = props => {
             {complaints.map((complain, idx) => (
               <Card key={idx}>
                 <Card.Body
-                  style={{ display: 'flex', flexDirection: 'space-inbetween' }}
+                  style={{ display: "flex", flexDirection: "space-inbetween" }}
                 >
                   <div className="col-7">
                     <Card.Title>{complain.email}</Card.Title>
@@ -77,8 +77,8 @@ export const AuthorizePenalty = props => {
                   onClick={e => view(idx, e)}
                   variant="outline-success"
                   style={{
-                    width: '30%',
-                    marginLeft: '45%'
+                    width: "30%",
+                    marginLeft: "45%"
                   }}
                 >
                   View Details
@@ -100,10 +100,10 @@ export const AuthorizePenalty = props => {
             className="btn btn-success"
             onClick={handleShow}
             style={{
-              color: 'white',
-              borderRadius: '5%',
+              color: "white",
+              borderRadius: "5%",
               // padding: "12px",
-              marginLeft: '50%'
+              marginLeft: "50%"
             }}
           >
             Authorize Penalty

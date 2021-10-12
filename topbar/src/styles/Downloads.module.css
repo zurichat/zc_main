@@ -30,7 +30,7 @@
   min-height: 296px;
   background: #fff;
   border-radius: 3px;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   overflow: visible;
 }
 .downloadsModal button {
@@ -130,7 +130,7 @@
 }
 
 .filesItem:hover .filesDetails .content:before {
-  content: 'Open file';
+  content: "Open file";
 }
 
 .filesDetails .content:before {
@@ -222,7 +222,7 @@
 }
 
 .toolTip p {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bold;
   font-size: 0.8125rem;
   line-height: 147%;

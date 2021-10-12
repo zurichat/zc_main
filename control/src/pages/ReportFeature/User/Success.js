@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
-import styles from './reports.module.css'
-import { Container } from 'react-bootstrap'
+import React, { useEffect } from "react"
+import styles from "./reports.module.css"
+import { Container } from "react-bootstrap"
 
 export const Success = props => {
   useEffect(() => {

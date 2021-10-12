@@ -1,6 +1,6 @@
-import styles from '../styles/Section1.module.css'
-import image1 from '../assests/Vectary texture.png'
-import image2 from '../assests/icons8-slider-50.png'
+import styles from "../styles/Section1.module.css"
+import image1 from "../assests/Vectary texture.png"
+import image2 from "../assests/icons8-slider-50.png"
 
 const Section1 = () => {
   return (
@@ -11,7 +11,7 @@ const Section1 = () => {
             Welcome to the Zurichat's <br /> Resources page.
           </h2>
           <span className={styles.filter}>
-            Filter content <img src={image2} alt="Filter icon" width="20px" />{' '}
+            Filter content <img src={image2} alt="Filter icon" width="20px" />{" "}
           </span>
           <h6 className="mb-2 pb-5">
             Browse resources tailored to your team, your needs and all the ways

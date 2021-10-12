@@ -1,12 +1,12 @@
-import React from 'react'
-import styles from './Style/style.module.css'
-import BlogContent from './components/blogContent'
-import NewsLetter from './components/newsLetterSection'
-import BlogComments from './components/BlogComments'
-import RelatedArticles from './components/relatedArticles'
-import Footer from '../../components/Footer'
-import Header from '../../components/Header'
-import { Helmet } from 'react-helmet'
+import React from "react"
+import styles from "./Style/style.module.css"
+import BlogContent from "./components/blogContent"
+import NewsLetter from "./components/newsLetterSection"
+import BlogComments from "./components/BlogComments"
+import RelatedArticles from "./components/relatedArticles"
+import Footer from "../../components/Footer"
+import Header from "../../components/Header"
+import { Helmet } from "react-helmet"
 const Blog = () => {
   return (
     <>

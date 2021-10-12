@@ -1,12 +1,12 @@
-import React from 'react'
-import LinkComponent from '../../../components/Link'
-import styles from '../styles/Section4.module.css'
+import React from "react"
+import LinkComponent from "../../../components/Link"
+import styles from "../styles/Section4.module.css"
 
 const DummyData = [
-  { ok: 'ok' },
-  { yeah: 'yeah' },
-  { now: 'now' },
-  { then: 'then' }
+  { ok: "ok" },
+  { yeah: "yeah" },
+  { now: "now" },
+  { then: "then" }
 ]
 
 const Section4PricingPage = () => {
@@ -36,7 +36,7 @@ const Section4PricingPage = () => {
                 className={`${styles.imgTop}`}
                 alt="light"
                 src={
-                  'https://res.cloudinary.com/ujuzi/image/upload/v1630463006/Cars%20Images%20project/pexels-kampus-production-8353777_wjgvrh.jpg'
+                  "https://res.cloudinary.com/ujuzi/image/upload/v1630463006/Cars%20Images%20project/pexels-kampus-production-8353777_wjgvrh.jpg"
                 }
               />
               <div className={styles.bottomCardSub1}>
@@ -67,7 +67,7 @@ const Section4PricingPage = () => {
                 className={`${styles.imgTop}`}
                 alt="light"
                 src={
-                  'https://res.cloudinary.com/ujuzi/image/upload/v1630463006/Cars%20Images%20project/pexels-kampus-production-8353777_wjgvrh.jpg'
+                  "https://res.cloudinary.com/ujuzi/image/upload/v1630463006/Cars%20Images%20project/pexels-kampus-production-8353777_wjgvrh.jpg"
                 }
               />
               <div className={styles.bottomCardSub1}>
@@ -98,7 +98,7 @@ const Section4PricingPage = () => {
                 className={`${styles.imgTop}`}
                 alt="light"
                 src={
-                  'https://res.cloudinary.com/ujuzi/image/upload/v1630463006/Cars%20Images%20project/pexels-kampus-production-8353777_wjgvrh.jpg'
+                  "https://res.cloudinary.com/ujuzi/image/upload/v1630463006/Cars%20Images%20project/pexels-kampus-production-8353777_wjgvrh.jpg"
                 }
               />
               <div className={styles.bottomCardSub1}>
@@ -129,7 +129,7 @@ const Section4PricingPage = () => {
                 className={`${styles.imgTop}`}
                 alt="light"
                 src={
-                  'https://res.cloudinary.com/ujuzi/image/upload/v1630463006/Cars%20Images%20project/pexels-kampus-production-8353777_wjgvrh.jpg'
+                  "https://res.cloudinary.com/ujuzi/image/upload/v1630463006/Cars%20Images%20project/pexels-kampus-production-8353777_wjgvrh.jpg"
                 }
               />
               <div className={styles.bottomCardSub1}>

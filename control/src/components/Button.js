@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 
 /**
  * Button Component
@@ -16,11 +16,11 @@ import styled from 'styled-components'
  * }}
  */
 const Button = ({
-  variant = 'primary',
-  id = '',
-  name = '',
-  className = '',
-  type = '',
+  variant = "primary",
+  id = "",
+  name = "",
+  className = "",
+  type = "",
   disabled = false,
   onClick,
   children
@@ -28,13 +28,13 @@ const Button = ({
   let Component
 
   switch (variant) {
-    case 'primary':
+    case "primary":
       Component = PrimaryButton
       break
-    case 'secondary':
+    case "secondary":
       Component = SecondaryButton
       break
-    case 'tertiary':
+    case "tertiary":
       Component = TertiaryButton
       break
     default:
@@ -62,7 +62,7 @@ const ButtonBase = styled.button`
 
   border: 1px solid var(--primary-color);
   border-radius: 2px;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   text-align: center;
   font-weight: 400;
   transition: filter 600ms;
@@ -79,7 +79,7 @@ const ButtonBase = styled.button`
 const PrimaryButton = styled(ButtonBase)`
   background-color: var(--primary-color);
   color: white;
-  ${'' /* &:hover {box-shadow: 5px 4px 20px 0px #C0C4C94D;} */}
+  ${"" /* &:hover {box-shadow: 5px 4px 20px 0px #C0C4C94D;} */}
 `
 const SecondaryButton = styled(ButtonBase)`
     background-color: transparent;

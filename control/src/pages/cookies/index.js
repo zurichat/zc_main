@@ -1,13 +1,13 @@
-import React from 'react'
-import styles from './styles/Cookie.module.css'
-import cookie from '../../component-assets/cookie.svg'
-import { Link } from 'react-router-dom'
+import React from "react"
+import styles from "./styles/Cookie.module.css"
+import cookie from "../../component-assets/cookie.svg"
+import { Link } from "react-router-dom"
 
 const cookieStorage = {
   getItem: key => {
     const cookies = document.cookie
-      .split(';')
-      .map(cookie => cookie.split('='))
+      .split(";")
+      .map(cookie => cookie.split("="))
       .reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: value }), {})
     return cookies[key]
   },
@@ -17,12 +17,12 @@ const cookieStorage = {
 }
 
 const handleClickAllow = event => {
-  cookieStorage.setItem('Zuri Chat Accept', 'true', '2592000')
-  event.target.parentNode.parentNode.parentNode.parentNode.style.opacity = '0'
+  cookieStorage.setItem("Zuri Chat Accept", "true", "2592000")
+  event.target.parentNode.parentNode.parentNode.parentNode.style.opacity = "0"
 }
 const handleClickDecline = event => {
-  cookieStorage.setItem('Zuri Chat Decline', 'true')
-  event.target.parentNode.parentNode.parentNode.parentNode.style.opacity = '0'
+  cookieStorage.setItem("Zuri Chat Decline", "true")
+  event.target.parentNode.parentNode.parentNode.parentNode.style.opacity = "0"
 }
 
 const Cookies = () => {
@@ -31,10 +31,10 @@ const Cookies = () => {
       <img src={cookie} alt="cookies" title="cookies" />
       <div className={styles.cookie_body}>
         <span>
-          We use third-party{' '}
+          We use third-party{" "}
           <Link to="/cookies-settings" className={styles.cookie}>
             cookies
-          </Link>{' '}
+          </Link>{" "}
           in order to personalize your site experience.
         </span>
         <ul className={styles.buttons}>

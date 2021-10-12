@@ -1,12 +1,12 @@
 /* Font */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
 
 /* using the mobile first approach */
 
 /* mobile first */
 .container {
   padding: 2em 1.5em;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 .divider {
@@ -24,7 +24,7 @@
   font-weight: bold;
   color: #000;
   text-decoration: underline;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 .section_one {

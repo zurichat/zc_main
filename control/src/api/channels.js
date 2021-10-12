@@ -1,12 +1,12 @@
-import axios from 'axios'
-import { GetUserInfo } from '../zuri-control'
+import axios from "axios"
+import { GetUserInfo } from "../zuri-control"
 
 const channelApi = `https://channels.zuri.chat/api/v1`
 
-export const createDefaultChannel = (org_id, title = 'General') => {
-  const user = JSON.parse(sessionStorage.getItem('user'))
+export const createDefaultChannel = (org_id, title = "General") => {
+  const user = JSON.parse(sessionStorage.getItem("user"))
 
-  if (!user) return 'NO USER LOGGED IN'
+  if (!user) return "NO USER LOGGED IN"
 
   GetUserInfo().then(res => {
     const memberId = res._id
@@ -21,14 +21,14 @@ export const createDefaultChannel = (org_id, title = 'General') => {
           owner: `${memberId}`,
           description: `Default channel`,
           private: false,
-          topic: 'General',
-          default: 'true'
+          topic: "General",
+          default: "true"
         },
         config
       )
       .then(res => {
         const channelID = res.data.InsertedID
-        sessionStorage.setItem('defaultChannel', channelID)
+        sessionStorage.setItem("defaultChannel", channelID)
         return channelID
       })
   })
@@ -40,7 +40,7 @@ export const findDefaultChannel = async org_id => {
   // const res = await axios.get(`${channelApi}/${org_id}/channels/?default=true`)
   const res = await axios.get(`${channelApi}/${org_id}/channels/`)
   const channelID = res.data[0]._id
-  sessionStorage.setItem('defaultChannel', channelID)
+  sessionStorage.setItem("defaultChannel", channelID)
   return channelID
 }
 
@@ -49,7 +49,7 @@ export const goToChannel = channelID => {
 }
 
 export const goToDefaultChannel = () => {
-  const channelID = sessionStorage.getItem('defaultChannel')
+  const channelID = sessionStorage.getItem("defaultChannel")
   if (!channelID) {
     findDefaultChannel().then(res => {
       goToChannel(res)

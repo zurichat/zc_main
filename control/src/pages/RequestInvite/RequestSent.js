@@ -1,10 +1,10 @@
-import React from 'react'
-import { Navbar } from 'react-bootstrap'
-import cancel from './assets/cancel.png'
-import shape from './assets/shape.png'
-import add from './assets/add.png'
-import styles from './styles/RequestSent.module.css'
-import { Helmet } from 'react-helmet'
+import React from "react"
+import { Navbar } from "react-bootstrap"
+import cancel from "./assets/cancel.png"
+import shape from "./assets/shape.png"
+import add from "./assets/add.png"
+import styles from "./styles/RequestSent.module.css"
+import { Helmet } from "react-helmet"
 
 function RequestSent() {
   return (
@@ -24,7 +24,7 @@ function RequestSent() {
         <div className={styles.info}>
           <h1 className={styles.descs}>Sent!</h1>
           <p className={styles.des}>
-            {' '}
+            {" "}
             <img className={styles.add} src={add} alt="add" />
             olaorosamson@yahoo.com
           </p>

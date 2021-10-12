@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react'
-import AdminSetup from './AdminSetup'
-import ComplaintProfiles from './ComplaintProfiles'
-import { Confirm } from './Confirm'
-import Success from './Success'
-import { Modal } from 'react-bootstrap'
-import { BsFillExclamationDiamondFill } from 'react-icons/bs'
-import { AiOutlineClose } from 'react-icons/ai'
+import React, { useState, useEffect } from "react"
+import AdminSetup from "./AdminSetup"
+import ComplaintProfiles from "./ComplaintProfiles"
+import { Confirm } from "./Confirm"
+import Success from "./Success"
+import { Modal } from "react-bootstrap"
+import { BsFillExclamationDiamondFill } from "react-icons/bs"
+import { AiOutlineClose } from "react-icons/ai"
 
 export const UserForm = () => {
   const [step, setStep] = useState(1)
-  const [email, setEmail] = useState('')
-  const [offence, setOffence] = useState('Anti Semitism')
-  const [description, setDescription] = useState('')
+  const [email, setEmail] = useState("")
+  const [offence, setOffence] = useState("Anti Semitism")
+  const [description, setDescription] = useState("")
   const [anonymous, setAnonymous] = useState(false)
   const [postSuccess, setPostSuccess] = useState(true)
 
@@ -39,17 +39,17 @@ export const UserForm = () => {
   }
 
   const inputChange = input => e => {
-    if (input === 'anonymous') {
+    if (input === "anonymous") {
       setAnonymous(e.target.checked)
       // console.log(input, e.target.checked);
     }
-    if (input === 'email') {
+    if (input === "email") {
       setEmail(e.target.value)
     }
-    if (input === 'offence') {
+    if (input === "offence") {
       setOffence(e.target.value)
     }
-    if (input === 'description') {
+    if (input === "description") {
       setDescription(e.target.value)
     }
     // console.log(input, e.target.value);

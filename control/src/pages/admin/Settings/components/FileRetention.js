@@ -1,20 +1,20 @@
-import React from 'react'
+import React from "react"
 
 const myStyle = {
   text: {
-    color: '#E7E7E7',
-    fontWeight: '600',
-    fontSize: '18px',
-    padding: '5px'
+    color: "#E7E7E7",
+    fontWeight: "600",
+    fontSize: "18px",
+    padding: "5px"
   },
   inputfield: {
-    margin: '10px 0',
-    width: '70%'
+    margin: "10px 0",
+    width: "70%"
   },
   btn: {
-    backgroundColor: '#00B87C',
-    color: '#ffffff',
-    border: 'none'
+    backgroundColor: "#00B87C",
+    color: "#ffffff",
+    border: "none"
   }
 }
 

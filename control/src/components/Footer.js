@@ -8,8 +8,7 @@ import linkedin from "../component-assets/linkedin.svg"
 import instagram from "../component-assets/instagram.svg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons"
-import { Link } from 'react-router-dom'
-
+import { Link } from "react-router-dom"
 
 const Footer = () => {
   const getYear = () => {
@@ -84,7 +83,7 @@ const Footer = () => {
             <h5>Know us</h5>
             <ul>
               <li>
-                <Link to="/download-app">Downloads</Link>{" "}
+                <Link to="/downloads">Downloads</Link>{" "}
               </li>
               <li>
                 <Link to="/contact-us">Contact Us</Link>{" "}

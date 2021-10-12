@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-import Logo from '../../../component-assets/logo.svg'
+import { Link } from "react-router-dom"
+import styled from "styled-components"
+import Logo from "../../../component-assets/zurilogoandtitle.svg"
 
 const WorkspaceError = ({ error }) => {
   const errorMessage = error.toString()
@@ -56,7 +56,7 @@ const ErrorPage = styled.div`
 
   div {
     margin: 2rem;
-    &:not([class^='LogoDiv']) {
+    &:not([class^="LogoDiv"]) {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -64,7 +64,7 @@ const ErrorPage = styled.div`
         font: inherit;
         border: none;
         transition: all 0.1s ease-in-out;
-        ${'' /* padding-inline: 0.5rem; */}
+        ${"" /* padding-inline: 0.5rem; */}
 
         &:hover {
           color: white;

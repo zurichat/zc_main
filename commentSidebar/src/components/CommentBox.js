@@ -1,22 +1,22 @@
-import styled from 'styled-components'
-import Lightning from '../assets/comments/lightning.svg'
-import Border from '../assets/comments/border.svg'
-import Bold from '../assets/comments/bold.svg'
-import Italic from '../assets/comments/italic.svg'
-import Link from '../assets/comments/link.svg'
-import List from '../assets/comments/list.svg'
-import AtSign from '../assets/comments/at-sign.svg'
-import Clip from '../assets/comments/clip.svg'
-import Bigborder from '../assets/comments/bigborder.svg'
-import Dropdown from '../assets/comments/dropdown.svg'
-import { useState } from 'react'
+import styled from "styled-components"
+import Lightning from "../assets/comments/lightning.svg"
+import Border from "../assets/comments/border.svg"
+import Bold from "../assets/comments/bold.svg"
+import Italic from "../assets/comments/italic.svg"
+import Link from "../assets/comments/link.svg"
+import List from "../assets/comments/list.svg"
+import AtSign from "../assets/comments/at-sign.svg"
+import Clip from "../assets/comments/clip.svg"
+import Bigborder from "../assets/comments/bigborder.svg"
+import Dropdown from "../assets/comments/dropdown.svg"
+import { useState } from "react"
 // import Send from "../assets/comments/goto.svg";
 const CommentBox = ({ addToMessage }) => {
-  const [text, setText] = useState('')
+  const [text, setText] = useState("")
   const handleAddToMessages = () => {
     if (text) {
       addToMessage(text)
-      setText('')
+      setText("")
     }
   }
 
@@ -31,18 +31,18 @@ const CommentBox = ({ addToMessage }) => {
         />
       </InputWrapper>
       <SendWrapper>
-        <div style={{ display: 'flex' }}>
-          <div style={{ display: 'flex', gap: '11px', alignItems: 'center' }}>
+        <div style={{ display: "flex" }}>
+          <div style={{ display: "flex", gap: "11px", alignItems: "center" }}>
             <img src={Lightning} alt="" />
             <img src={Border} alt="" />
             <img src={Bold} alt="" />
           </div>
           <div
             style={{
-              display: 'flex',
-              gap: '19px',
-              marginLeft: '22px',
-              alignItems: 'center'
+              display: "flex",
+              gap: "19px",
+              marginLeft: "22px",
+              alignItems: "center"
             }}
           >
             <img src={Italic} alt="" />
@@ -50,7 +50,7 @@ const CommentBox = ({ addToMessage }) => {
             <img src={List} alt="" />
           </div>
         </div>
-        <div style={{ display: 'flex', gap: '15px', marginLeft: 'auto' }}>
+        <div style={{ display: "flex", gap: "15px", marginLeft: "auto" }}>
           <img src={AtSign} alt="" />
           <img src={Clip} alt="" onClick={handleAddToMessages} />
           {/* <img src={Send} alt="" /> */}

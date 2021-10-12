@@ -1,4 +1,4 @@
-import CommentSection from './components/CommentSection'
+import CommentSection from "./components/CommentSection"
 export default function Root({ commentSidebarConfig }) {
   return <CommentSection commentsConfig={commentSidebarConfig} />
 }

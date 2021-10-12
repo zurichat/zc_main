@@ -1,5 +1,5 @@
-import { useEffect } from 'react'
-import { goToDefaultChannel } from '../../api/channels'
+import { useEffect } from "react"
+import { goToDefaultChannel } from "../../api/channels"
 
 const Homepage = () => {
   useEffect(() => {

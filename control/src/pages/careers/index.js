@@ -1,10 +1,10 @@
-import Footer from '../../components/Footer'
-import CareersSection2 from './components/CareersSection2'
-import CareerGrid from './components/CareerGrid'
+import Footer from "../../components/Footer"
+import CareersSection2 from "./components/CareersSection2"
+import CareerGrid from "./components/CareerGrid"
 // import Section3 from './components/Section3'
-import SectionOne from './components/sectionOne'
-import Header from '../../components/Header'
-import { Helmet } from 'react-helmet'
+import SectionOne from "./components/sectionOne"
+import Header from "../../components/Header"
+import { Helmet } from "react-helmet"
 
 function Careers() {
   return (

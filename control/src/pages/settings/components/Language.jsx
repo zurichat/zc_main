@@ -1,6 +1,6 @@
-import React from 'react'
-import Languages from '../constants/Language'
-import styles from '../styles/SettingsTab.module.css'
+import React from "react"
+import Languages from "../constants/Language"
+import styles from "../styles/SettingsTab.module.css"
 
 const Language = () => {
   return (

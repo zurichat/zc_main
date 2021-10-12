@@ -1,6 +1,6 @@
-import React from 'react'
-import styles from '../style/workspace.module.css'
-import { useWorkspaceContext } from './WorkspaceContext'
+import React from "react"
+import styles from "../style/workspace.module.css"
+import { useWorkspaceContext } from "./WorkspaceContext"
 
 const ZuriLogo = () => {
   // const { loading } = useWorkspaceContext()

@@ -1,25 +1,25 @@
-import React, { useState } from 'react'
-import downloadStyles from './styles/DownloadsMobile.module.css'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
-import icon from './assets/icon.svg'
-import laptop from './assets/laptop.svg'
-import device from './assets/device.svg'
-import apple from './assets/apple.svg'
-import windows from './assets/windows.svg'
-import android from './assets/android.svg'
-import { isIOS } from 'react-device-detect'
+import React, { useState } from "react"
+import downloadStyles from "./styles/DownloadsMobile.module.css"
+import Header from "../../components/Header"
+import Footer from "../../components/Footer"
+import icon from "./assets/icon.svg"
+import laptop from "./assets/laptop.svg"
+import device from "./assets/device.svg"
+import apple from "./assets/apple.svg"
+import windows from "./assets/windows.svg"
+import android from "./assets/android.svg"
+import { isIOS } from "react-device-detect"
 
 const DownloadsMobile = () => {
-  const [exe, setexe] = useState({ link: '', name: '', link2: '', name2: '' })
+  const [exe, setexe] = useState({ link: "", name: "", link2: "", name2: "" })
   React.useEffect(() => {
-    if (isIOS) return setexe({ name: 'DOWNLOAD FOR IOS' })
+    if (isIOS) return setexe({ name: "DOWNLOAD FOR IOS" })
     return setexe({
-      name: 'DOWNLOAD ZURI CHAT',
-      link: 'https://drive.google.com/file/d/1dbQS1rQOVUI87AzdeljF6LM5iRNnaMzZ/view',
-      name2: 'DOWNLOAD DM AND CHANNELS',
+      name: "DOWNLOAD ZURI CHAT",
+      link: "https://drive.google.com/file/d/1dbQS1rQOVUI87AzdeljF6LM5iRNnaMzZ/view",
+      name2: "DOWNLOAD DM AND CHANNELS",
       link2:
-        'https://drive.google.com/file/d/1LRrWXjBFdns0RUD7zQapBuof8ole5XHI/view?usp=drivesdk'
+        "https://drive.google.com/file/d/1LRrWXjBFdns0RUD7zQapBuof8ole5XHI/view?usp=drivesdk"
     })
   }, [])
   return (
@@ -61,7 +61,7 @@ const DownloadsMobile = () => {
           </p>
           <div className={`${downloadStyles.downloadButtonContainer}`}>
             <a
-              href="https://drive.google.com/file/d/1Wl4hYeHP1e1eogd6LYdt2Kohrkr9C1dg/view?usp=sharing"
+              href="https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing"
               className={downloadStyles.downloadButton}
             >
               Windows

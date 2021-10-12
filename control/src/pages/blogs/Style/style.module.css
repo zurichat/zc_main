@@ -1,5 +1,5 @@
 .Blog_container {
-  font-family: 'Gilroy', sans-serif;
+  font-family: "Gilroy", sans-serif;
   box-sizing: border-box;
   margin: 0;
   margin-top: 2rem;
@@ -121,14 +121,14 @@
 .comment_form textarea {
   width: 100%;
   padding: 10px;
-  font-family: 'Gilroy', sans-serif;
+  font-family: "Gilroy", sans-serif;
   border: 2px solid #4e4e4e;
   border-radius: 10px;
 }
 
 .comment_form button {
   padding: 8px;
-  font-family: 'Gilroy', sans-serif;
+  font-family: "Gilroy", sans-serif;
   background-color: #00b87c;
   border-radius: 5px;
   border: none;

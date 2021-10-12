@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from '../styles/AuthenticationTab.module.css'
+import React from "react"
+import styles from "../styles/AuthenticationTab.module.css"
 
 const ForcedPasswordReset = () => {
   return (

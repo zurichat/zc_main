@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
-import styles from '../styles/Section3.module.css'
+import { Link } from "react-router-dom"
+import styles from "../styles/Section3.module.css"
 
 function Section3() {
   return (

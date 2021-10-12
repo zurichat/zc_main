@@ -1,6 +1,6 @@
-import React from 'react'
-import styles from './reports.module.css'
-import { Container } from 'react-bootstrap'
+import React from "react"
+import styles from "./reports.module.css"
+import { Container } from "react-bootstrap"
 
 export const Confirm = props => {
   const Continue = (index, val) => {
@@ -19,24 +19,24 @@ export const Confirm = props => {
     <Container className={styles.formcontainer}>
       <h1 className={`mb-5 text-success ${styles.head1}`}>Offence Details</h1>
       <ul className="list-group">
-        <li className="list-group-item" style={{ display: 'flex' }}>
-          <b className="col-6">Email: </b>{' '}
+        <li className="list-group-item" style={{ display: "flex" }}>
+          <b className="col-6">Email: </b>{" "}
           <p className="col-6">{detail.email}</p>
         </li>
-        <li className="list-group-item" style={{ display: 'flex' }}>
-          <b className="col-6">Offence: </b>{' '}
+        <li className="list-group-item" style={{ display: "flex" }}>
+          <b className="col-6">Offence: </b>{" "}
           <p className="col-6"> {detail.offence} </p>
         </li>
-        <li className="list-group-item" style={{ display: 'flex' }}>
-          <b className="col-6">Description:</b>{' '}
+        <li className="list-group-item" style={{ display: "flex" }}>
+          <b className="col-6">Description:</b>{" "}
           <p className="col-6">{detail.description} </p>
         </li>
-        <li className="list-group-item" style={{ display: 'flex' }}>
-          <b className="col-6">anonymous:</b>{' '}
+        <li className="list-group-item" style={{ display: "flex" }}>
+          <b className="col-6">anonymous:</b>{" "}
           <p className="col-6">{detail.anonymous.toString()} </p>
         </li>
-        <li className="list-group-item" style={{ display: 'flex' }}>
-          <b className="col-6">Confirmed:</b>{' '}
+        <li className="list-group-item" style={{ display: "flex" }}>
+          <b className="col-6">Confirmed:</b>{" "}
           <p className="col-6">{detail.authorize.toString()} </p>
         </li>
       </ul>
@@ -46,13 +46,13 @@ export const Confirm = props => {
 
       <div
         className="row"
-        style={{ display: 'flex', flexDirection: 'flex-end' }}
+        style={{ display: "flex", flexDirection: "flex-end" }}
       >
         <div className="col-6">
           <button
             className="btn btn-secondary"
             onClick={back}
-            style={{ color: 'white' }}
+            style={{ color: "white" }}
           >
             Back
           </button>
@@ -63,8 +63,8 @@ export const Confirm = props => {
               className="btn btn-success"
               onClick={() => Continue(props.idx, true)}
               style={{
-                color: 'white',
-                marginLeft: '5%'
+                color: "white",
+                marginLeft: "5%"
               }}
             >
               Confirm
@@ -76,8 +76,8 @@ export const Confirm = props => {
               className="btn btn-danger"
               onClick={() => Continue(props.idx, false)}
               style={{
-                color: 'white',
-                marginLeft: '35%'
+                color: "white",
+                marginLeft: "35%"
               }}
             >
               Unconfirm

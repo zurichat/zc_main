@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from '../styles/SettingsTab.module.css'
+import React from "react"
+import styles from "../styles/SettingsTab.module.css"
 
 const SavePassword = () => {
   return (
@@ -23,7 +23,7 @@ const SavePassword = () => {
           </button>
           <br />
           <p>
-            Can’t remember your current password?{' '}
+            Can’t remember your current password?{" "}
             <span>Reset your password by email</span>
           </p>
         </div>

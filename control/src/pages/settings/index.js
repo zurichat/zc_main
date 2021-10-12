@@ -1,7 +1,7 @@
-import React from 'react'
-import SettingsNav from './components/SettingsNav'
-import Tab from './components/Tab'
-import { Helmet } from 'react-helmet'
+import React from "react"
+import SettingsNav from "./components/SettingsNav"
+import Tab from "./components/Tab"
+import { Helmet } from "react-helmet"
 
 const index = () => {
   return (
