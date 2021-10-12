@@ -228,7 +228,7 @@
   font-size: 0.8125rem;
   line-height: 147%;
   color: #000000;
-  width: max-content;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
