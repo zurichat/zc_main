@@ -152,7 +152,7 @@ const TopbarModal = ({ members }) => {
           <div className={styles.sectionFive}>
             <p>
               {' '}
-              <a href="/signout">Sign out of Team Einstein workspace</a>{' '}
+              <a href="/signout">Sign out of workspace</a>{' '}
             </p>
           </div>
         </section>

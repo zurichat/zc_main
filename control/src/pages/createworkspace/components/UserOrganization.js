@@ -152,6 +152,10 @@ export const FooterLink = styled.a`
   font-weight: 700;
   color: #6a6a6a;
   font-family: 'Lato', sans-serif;
+  &:hover{
+    color: #B0B0B0;
+    cursor: pointer;
+  }
   @media (max-width: 35rem) {
     font-size: ${14 / 16}rem;
   }

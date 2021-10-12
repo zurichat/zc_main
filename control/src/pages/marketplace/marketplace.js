@@ -12,8 +12,6 @@ import MarketplaceHeader from './components/marketplace-container/MarketplaceHea
 import { MarketPlaceProvider } from '../../context/MarketPlace.context.js'
 import axios from 'axios'
 import { Helmet } from 'react-helmet'
-import Header from "../../components/Header"
-
 
 const MarketPlace = () => {
   const [userDetails, setUserDetails] = useState(null)
@@ -27,7 +25,6 @@ const MarketPlace = () => {
           className={`w-100 d-flex flex-wrap justify-content-between align-items-baseline ${styles.marketplaceNavbar}`}
         >
           <MarketplaceHeader />
-          <Header />
         </div>
         <div className={styles.marketplaceHero}>
           <Row className={`align-items-center justify-content-center`}>
