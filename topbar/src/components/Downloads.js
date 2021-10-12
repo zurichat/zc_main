@@ -13,16 +13,6 @@ const Downloads = ({ setModal }) => {
   //State For testing
   const [files] = useState([
     {
-      name: 'HNG Design Rules Book.pdf',
-      size: '5MB PDF',
-      src: pdf
-    },
-    {
-      name: 'HNG Entrepreneurship - Assignment 1.pdf',
-      size: '205KB PDF',
-      src: pdf
-    },
-    {
       name: 'Windows App',
       size: '',
       src: windows,
@@ -169,6 +159,9 @@ const Downloads = ({ setModal }) => {
                       <button
                         aria-label={`Clear ${file.size} file `}
                         className={styles.closeBtn}
+                        onClick={() => {
+                          setModal('no')
+                        }}
                       >
                         <img src={close} alt="" />
                         <div role="tooltip" className={styles.toolTip}>
