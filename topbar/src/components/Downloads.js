@@ -10,7 +10,7 @@ import android from '../assets/download_images/android.png'
 
 const Downloads = ({ setModal }) => {
   //State For testing
-  const [files] = useState([
+  const [files,setFiles] = useState([
     {
       name: 'Windows App',
       size: '',
@@ -40,6 +40,7 @@ const Downloads = ({ setModal }) => {
       download: "Zurichat Android"
     },
   ])
+
   return (
     <>
       <section role="dialog" className={styles.downloadsContainer}>
@@ -63,9 +64,7 @@ const Downloads = ({ setModal }) => {
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      onClick={() => {
-                        files.length = 0
-                      }}
+                      onClick={setFiles([])}
                     >
                       <path
                         d="M5.25 7.5H6.75H18.75"
