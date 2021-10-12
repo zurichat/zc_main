@@ -47,6 +47,7 @@ import TermsOfService from './pages/termsOfService'
 import RedirectRoute from './pages/redirect'
 import Plugins from './pages/plugins'
 import Legal from './pages/legal'
+import Ebooks from './pages/ebooks'
 
 
 // useEffect(() => {
@@ -118,6 +119,9 @@ const App = () => {
         </Route>
         <Route path="/downloads">
           <Download />
+        </Route>
+        <Route path="/ebooks">
+          <Ebooks />
         </Route>
         <Route path="/downloadsMac">
           <DownloadsMac />
