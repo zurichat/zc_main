@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 .banner {
-  margin-top: 10%;
+  padding-top: 8%;
   text-align: center;
 }
 .banner > p {
@@ -25,15 +25,16 @@
 .working_remote_section > img {
   margin-left: 2rem;
 }
-.counter > h3,
-.counter > p {
-  margin-left: 2rem;
-}
+
 .to_join {
   margin-top: 3%;
 }
+.join_us {
+  text-align: center;
+}
 .join_us > p {
   font-size: 17px;
+  text-align: center;
   line-height: 25px;
   font-weight: 500;
 }
@@ -65,6 +66,9 @@
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
+}
+.btn {
+  margin: 0.3rem;
 }
 .btn_sale {
   background-color: #fff;
@@ -106,13 +110,16 @@
 .carousel {
   display: none;
 }
-.row{
-  padding: 0.8rem;
-  margin: 0 3.2rem;
+
+@media only screen and (max-width: 1040px) {
+  .banner {
+    padding-top: 10%;
+  }
 }
+
 @media only screen and (max-width: 600px) {
   .banner {
-    margin-top: 29%;
+    padding-top: 20%;
   }
   .banner > h1 {
     font-size: 17px;
@@ -145,6 +152,7 @@
   }
   .join_us > p {
     padding: 0 4%;
+    font-size: 14px;
   }
   .span {
     text-decoration: none;
@@ -188,10 +196,39 @@
   }
   .carouselImage {
     position: relative;
-    left: 25%;
+    left: 35%;
   }
   .carouselCompany {
     position: relative;
-    left: 38%;
+    left: 45%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .carouselImage {
+    position: relative;
+    left: 33%;
+  }
+}
+@media only screen and (max-width: 440px) {
+  .carouselImage {
+    position: relative;
+    left: 30%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .carouselImage {
+    position: relative;
+    left: 28%;
+  }
+  .carouselCompany {
+    position: relative;
+    left: 41%;
+  }
+}
+@media only screen and (max-width: 355px) {
+  .carouselImage {
+    position: relative;
+    left: 25%;
   }
 }
