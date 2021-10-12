@@ -31,7 +31,7 @@
   padding-top: 15px;
   text-align: center;
 }
-.topLeft {
+/* .topLeft {
   animation: zuriLoaderTopLeft 1s infinite;
 }
 .topRight {
@@ -85,6 +85,19 @@
   }
   100% {
     transform: translate(0, 0);
+  }
+} */
+.rotate {
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+    
   }
 }
 
