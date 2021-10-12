@@ -79,6 +79,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="https://zuri.chat/dao-featues">Web3/DAO</a>{" "}
+
               </li>
             </ul>
           </div>
