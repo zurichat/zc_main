@@ -224,21 +224,22 @@
 
 .activeCircle {
   background-color: #00b87c;
-  height: 6px;
-  width: 6px;
+  height: 7px;
+  width: 7px;
   border-radius: 50%;
-  margin-right: 15px;
+  margin-right: 14px;
   position: absolute;
-  top: 60px;
+  top: 58px;
 }
 
 .awayCircle {
   background-color: grey;
-  height: 6px;
-  width: 6px;
+  height: 7px;
+  width: 7px;
+  margin-right: 14px;
   border-radius: 50%;
   position: absolute;
-  top: 60px;
+  top: 58px;
 }
 
 .oneRight p {
