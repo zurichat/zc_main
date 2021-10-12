@@ -12,7 +12,6 @@ import Preferences from "./Preferences"
 import EditProfile from "./EditProfile"
 import MembersModal from "./MembersModal"
 import Downloads from "./Downloads"
-// import PauseNotification from "./PauseNotification"
 import SetStatusModal from "./SetStatusModal"
 // react icons
 
@@ -28,6 +27,7 @@ const TopbarModal = ({ members }) => {
   const {
     onEmojiClick,
     openModal,
+    closeModal,
     openStatus,
     closeStatus,
     modalRef,
@@ -140,32 +140,35 @@ const TopbarModal = ({ members }) => {
 
       {/* The section that shows the topbarprofile */}
       {showModal ? (
-        <section className={styles.topbarModal}>
-          <div className={styles.sectionOne}>
-            <div className={styles.oneLeft}>
-              <img
-                src={userProfileImage !== "" ? userProfileImage : defaultAvatar}
-                alt="profile-pic"
-              />
+        <div>
+          <section className={styles.topbarModal}>
+            <div className={styles.sectionOne}>
+              <div className={styles.oneLeft}>
+                <img
+                  src={
+                    userProfileImage !== "" ? userProfileImage : defaultAvatar
+                  }
+                  alt="profile-pic"
+                />
+              </div>
+
+              <div className={styles.oneRight}>
+                <h4>
+                  {user.user_name
+                    ? `${user.user_name
+                        .charAt(0)
+                        .toUpperCase()}${user.user_name.slice(1)}`
+                    : "Anonymous"}
+                </h4>
+                {toggleStatus}
+              </div>
             </div>
 
-            <div className={styles.oneRight}>
-              <h4>
-                {user.user_name
-                  ? `${user.user_name
-                      .charAt(0)
-                      .toUpperCase()}${user.user_name.slice(1)}`
-                  : "Anonymous"}
-              </h4>
-              {toggleStatus}
+            <div className={styles.sectionTwo}>
+              <div className={styles.emoji}>{user?.status?.tag} </div>
+              <div className={styles.statusContent}>{user?.status?.text}</div>
             </div>
-          </div>
-
-          <div className={styles.sectionTwo}>
-            <div className={styles.emoji}>{user?.status?.tag} </div>
-            <div className={styles.statusContent}>{user?.status?.text}</div>
-          </div>
-
+            
           <div className={styles.sectionThree}>
             {/* <p onClick={openStatus}>Set a status</p> */}
             <p onClick={() => setStatusModal(!statusModal)}>Set a status</p>
@@ -190,61 +193,63 @@ const TopbarModal = ({ members }) => {
             {pause && <PauseNotification pause={pause} setPause={setPause} />}*/}
           </div>
 
-          <hr className={styles.hr} />
+            <hr className={styles.hr} />
 
-          <div className={styles.sectionFour}>
-            <p
-              onClick={() => {
-                setReusableModal("edit profile")
-                toggleModalState()
-              }}
-            >
-              Edit profile
-            </p>
-            <p
-              onClick={() => {
-                toggleProfileState()
-                openModal()
-              }}
-            >
-              View profile
-            </p>
-            <p
-              onClick={() => {
-                setReusableModal("preference")
-                toggleModalState()
-              }}
-            >
-              Preferences
-            </p>
-          </div>
+            <div className={styles.sectionFour}>
+              <p
+                onClick={() => {
+                  setReusableModal("edit profile")
+                  toggleModalState()
+                }}
+              >
+                Edit profile
+              </p>
+              <p
+                onClick={() => {
+                  toggleProfileState()
+                  openModal()
+                }}
+              >
+                View profile
+              </p>
+              <p
+                onClick={() => {
+                  setReusableModal("preference")
+                  toggleModalState()
+                }}
+              >
+                Preferences
+              </p>
+            </div>
 
-          <hr className={styles.hr} />
+            <hr className={styles.hr} />
 
-          <div className={styles.sectionSix}>
-            <p
-              onClick={() => {
-                setReusableModal("downloads")
-              }}
-            >
-              Downloads
-            </p>
-          </div>
+            <div className={styles.sectionSix}>
+              <p
+                onClick={() => {
+                  setReusableModal("downloads")
+                }}
+              >
+                Downloads
+              </p>
+            </div>
 
-          {reusableModal === "edit profile" && <EditProfile />}
+            {reusableModal === "edit profile" && <EditProfile />}
 
-          {reusableModal === "preference" && <Preferences />}
+            {reusableModal === "preference" && <Preferences />}
 
-          {reusableModal === "downloads" && (
-            <Downloads setModal={setReusableModal} />
-          )}
+            {reusableModal === "downloads" && (
+              <Downloads setModal={setReusableModal} />
+            )}
 
-          <hr className={styles.hr} />
+            <hr className={styles.hr} />
 
-          <div className={styles.sectionFive}>
-            <p onClick={logout}>Sign out of Team Einstein workspace</p>
-          </div>
-        </section>
+            <div className={styles.sectionFive}>
+              <p onClick={logout}>Sign out</p>
+            </div>
+          </section>
+          <div className={styles.modalBackDrop} onClick={closeModal}></div>
+        </div>
       ) : null}
     </>
   )

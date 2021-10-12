@@ -1,7 +1,13 @@
 .msgCon {
   margin-top: 54px;
+  margin-bottom: 54px;
   margin-left: 50px;
   width: 80%;
+  line-height: 30px;
+}
+
+p{
+  line-height: 30px;
 }
 
 .title {
@@ -61,8 +67,8 @@
 }
 
 .bottom {
-  margin-top: 15px;
-  margin-bottom: 20px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   border-bottom: 1px solid rgba(214, 211, 211, 0.5);
   width: 100%;
 }
@@ -126,17 +132,17 @@
   color: #999999;
 }
 
-.change p {
+.change span {
   color: #00b87c;
   margin-top: -20px;
-  margin-left: 319px;
+   margin-left: 3px; 
   font-weight: normal;
   font-size: 13px;
 }
 
 .bottom2 {
-  margin-top: 15px;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 25px;
   border-bottom: 1px solid rgba(214, 211, 211, 0.5);
   width: 100%;
   margin-left: 3px;
@@ -202,8 +208,8 @@
 }
 
 .bottom3 {
-  margin-top: 15px;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 25px;
   border-bottom: 1px solid rgba(214, 211, 211, 0.5);
   width: 100%;
 }
@@ -229,7 +235,7 @@
   margin-top: 15px;
   font-size: 13px;
   color: #999999;
-  line-height: 20px;
+  line-height: 30px;
   font-weight: normal;
   font-style: normal;
 }
@@ -237,7 +243,7 @@
 .choose2 {
   font-size: 13px;
   color: #999999;
-  line-height: 20px;
+  line-height: 30px;
   font-weight: normal;
   font-style: normal;
 }
@@ -349,7 +355,7 @@
   margin-top: 10px;
   font-size: 13px;
   color: #999999;
-  line-height: 20px;
+  line-height: 30px;
   font-weight: normal;
   font-style: normal;
 }
@@ -369,8 +375,8 @@
 }
 
 .bottom4 {
-  margin-top: 16px;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 25px;
   border-bottom: 1px solid rgba(214, 211, 211, 0.5);
   margin-left: 3px;
 }
@@ -457,7 +463,7 @@
 
 .bottom5 {
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   border-bottom: 1px solid rgba(214, 211, 211, 0.5);
   width: 100%;
   margin-left: 3px;
@@ -475,7 +481,7 @@
   margin-top: 10px;
   font-size: 13px;
   color: #999999;
-  line-height: 20px;
+  line-height: 30px;
   font-weight: normal;
   font-style: normal;
 }
@@ -483,7 +489,7 @@
 .upload2 {
   font-size: 13px;
   color: #999999;
-  line-height: 20px;
+  line-height: 30px;
   font-weight: normal;
   font-style: normal;
 }
@@ -491,7 +497,7 @@
 .upload3 {
   font-size: 13px;
   color: #999999;
-  line-height: 20px;
+  line-height: 30px;
   font-weight: normal;
   font-style: normal;
 }
