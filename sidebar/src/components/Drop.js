@@ -63,7 +63,7 @@ const DropDown = ({ itemName, items }) => {
         className={`col-12 d-flex align-items-center ${styles.plugin__title}`}
         onClick={toggleDropdown}
       >
-        <div>
+        <div className={`d-flex align-items-center`}>
           <TiArrowSortedDown
             className={`${styles.icon} ${isOpen && styles.open}`}
           />
@@ -88,7 +88,7 @@ const DropDown = ({ itemName, items }) => {
             if (room.room_name !== undefined) {
               return (
                 // console.log(itemList)
-                <li key={index} className={`row ${styles.item__list}`}>
+                <li key={index} className={`row py-1 px-2 ${styles.item__list}`}>
                   <a
                     className={`col-12 d-flex align-items-center ${styles.item_name}`}
                     href={room.room_url}
@@ -103,11 +103,11 @@ const DropDown = ({ itemName, items }) => {
                       onError={e => (e.target.src = hash.toString())}
                       alt="img"
                     />
-                    <div className={`mb-0 ${styles.dropDown__name}`}>
+                    <div className={`mb-0 ms-1 d-inline-flex align-items-center ${styles.dropDown__name}`}>
                       {room.room_name}
                       {/* Add to Room Button */}
                       <AiOutlinePlusCircle
-                        className={`d-inline-flex align-items-center ms-2 ${styles.icon}`}
+                        className={`${styles.icon}`}
                         onClick={() => {
                           setAddToRoom(!addToRoom)
                           setRoomId(room._id)
