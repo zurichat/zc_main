@@ -267,11 +267,11 @@ const EditProfile = () => {
                   />
                 </div>
               </div>
-              <div className="input-group">
+              <div className="input-group d-flex align-items-baseline">
                 <label className="inputLabel">Time Zone</label>
                 <TimezoneSelect
                   value={selectedTimezone}
-                  onChange={setSelectedTimezone}
+                  onChange={setSelectedTimezone} className="mx-3"
                 />
               </div>
               <div className="input-group">
