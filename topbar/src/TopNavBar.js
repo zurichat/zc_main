@@ -173,6 +173,15 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       sidebar.style.display = "none"
     }
   }, [toggleSidebar, sidebar])
+
+  if (window.outerWidth <= 768) {
+      sidebar.style.display = 'none';
+  } 
+  else {
+      sidebar.style.display = 'block';
+  }
+
+
   const zc_spa_body = document.querySelector("body")
   // const sidebar_toggle = document.querySelector("#sidebar_toggle")
   // const openSidebar = () => {
