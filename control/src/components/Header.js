@@ -120,19 +120,6 @@ const HeaderSearchSuggestion = () => {
               </NavLink>
             </li>
 
-{/* Ebooks Section */}
-
-<li className="nav-item">
-              <Link
-                to="/ebooks"
-                className={`nav-link ${headerStyles.navLinkComms}`}
-                
-              >
-                <span className={`${headerStyles.item}`}>Ebooks</span>
-              </Link>
-            </li>
-
-            {/* Ebooks Section */}
 
             <li className="nav-item">
               <NavLink
