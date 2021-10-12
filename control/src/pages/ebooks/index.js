@@ -17,7 +17,7 @@ const index = () => {
 
             <div className="container my-5">
  {/* Wrapper 1  */}
-<div className="wrapper row g-3 flex align-items-center my-5 sm-flex-column">
+<div className="wrapper row g-3 flex align-items-center my-5 sm-flex-column bg-light p-2">
   <div className="left col-lg-4 col-sm-12 p-4">
      <img src={img1} alt="Ebook" className="img-fluid" />
   </div>
@@ -32,7 +32,7 @@ const index = () => {
 {/* <!-- End of Wrapper 1  --> */}
   
 {/* <!--  Wrapper 2  --> */}
-    <div className="wrapper2 row flex align-items-center my-5 sm-flex-column">
+    <div className="wrapper2 row flex align-items-center my-5 sm-flex-column bg-light p-2">
   
   <div className="left2 col-lg-8 col-sm-12 p-3">
     <h3 className="h3">Networking in Internship</h3>
@@ -41,14 +41,14 @@ const index = () => {
   </div>
  
     <div className="right2 col-lg-4 col-sm-12  p-4">
-     <img src={img2} alt="Ebook" />
+     <img src={img2} alt="Ebook"  className="img-fluid"/>
   </div>
  
 </div>
   {/* <!--  End of Wrapper 2  --> */}
   
   {/* <!-- Wrapper 3 --> */}
-  <div className="wrapper row flex align-items-center my-5 sm-flex-column ">
+  <div className="wrapper row flex align-items-center my-5 sm-flex-column bg-light p-2 ">
   <div className="left col-lg-4 col-sm-12 p-4">
      <img src={img1} alt="Ebook" className="img-fluid" />
   </div>
@@ -63,7 +63,7 @@ const index = () => {
  {/* End of Wrapper 3   */}
   
    {/* Wrapper 4   */}
-   <div className="wrapper2 row flex align-items-center my-5 sm-flex-column">
+   <div className="wrapper2 row flex align-items-center my-5 sm-flex-column bg-light p-2">
   
   <div className="left2 col-lg-8 col-sm-12 p-4">
     <h3 className="h3">Networking in Internship</h3>
@@ -71,8 +71,8 @@ const index = () => {
   <button className="btn btn-success">Get Ebook</button>
   </div>
  
-    <div className="right2 col-lg-4 col-sm-12">
-     <img src={img2} alt="Ebook" />
+    <div className="right2 col-lg-4 col-sm-12 p-4">
+     <img src={img2} alt="Ebook"   className="img-fluid"/>
   </div>
  
 </div>
