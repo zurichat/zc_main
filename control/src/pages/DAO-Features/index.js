@@ -1,7 +1,7 @@
 
 import style from "./styles/DAO_Features.module.css";
 import web3 from "./assets/web3.svg";
-import advantage from ".assets/advantage.svg";
+import advantage from "./assets/advantage.svg";
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import { Helmet } from "react-helmet"
@@ -14,21 +14,6 @@ const DAO_Features = () => {
       </Helmet>
       <Header />
       <div className={style.main_container}>
-        <div className={style.banner}>
-          <div className={style.banner_img}>
-            <img src={web3} alt="" />
-          </div>
-        </div>
-        <div className={style.sub_header}>
-          <div className={style.sub_header_content}>
-            <h3>
-              {" "}
-              <span>
-                <a href="#">Home </a>
-              </span>
-            </h3>
-          </div>
-        </div>
         <div className={style.container}>
           <div className={style.container_wrap}>
             <h1>What is Web 3.0?</h1>
