@@ -15,8 +15,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px 0 80px;
-  
+    padding: 20px 0 80px;
+    font-family: inherit;
   }
   /* .banner{
     height: 24.6rem;
@@ -59,6 +59,7 @@
     margin: 0;
     background-color: #E8ECEF;
   } */
+  
   .container{
     width: 80%;
     height: auto;
@@ -82,16 +83,56 @@
     height: auto;
     margin-bottom: 20px;
   }
-  .container .container_wrap h1{
-    font-size: 1.5rem;
+  .sub_heading{
+    font-size: 1.6rem;
+    margin-bottom: 20px;
     color: #2D2D2D;
     font-weight: 600;
-    margin-bottom: 20px;
     justify-content: flex-start;
-    font-family: 'Roboto', sans-serif;
+    font-family: inherit;
   }
-  .container .container_wrap p{
+  .sub_text{
     color: #2D2D2D;
+    margin-bottom: 40px;
     font-size: 1.2rem;
     word-wrap: break-word;
+  }
+
+  /* MEDIA QUERY STYLES */
+
+  @media only screen and (max-width: 480px) {
+    .sub_heading{
+      font-size: 1.3rem;
+      line-height: 2.5rem;
+    }
+    .sub_text{
+      font-size: 1.0rem;
+    }
+  }
+
+  @media only screen and (min-width: 481px) {
+    .sub_heading{
+      line-height: 2.5rem;
+    }
+    .sub_text{
+      font-size: 1.0rem;
+    }
+  }
+  @media only screen and (min-width: 768px){
+    .sub_heading{
+      font-size: 1.5rem;
+      line-height: 2.8rem;
+    }
+    .sub_text{
+      font-size: 1.1rem;
+    }
+  }
+  @media only screen and (min-width: 992px){
+    .sub_heading{
+      font-size: 1.6rem;
+      line-height: 2.0rem;
+    }
+    .sub_text{
+      font-size: 1.2rem;
+    }
   }
