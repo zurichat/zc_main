@@ -241,7 +241,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         className="d-flex justify-content-end align-items-center pe-3"
         style={{ width: "20%" }}
       >
-        <IoLanguageOutline size={30} style={{ border: "1px #A1A1A1 solid", borderRadius: "50%", cursor: "pointer", padding: '.15rem', marginRight: "10%", marginTop: ".1rem" }} />
+        <LanguageIcon size={30} className="lang-icon" />
         {toggleStatus}
         <ProfileImg
           src={userProfileImage ? userProfileImage : defaultAvatar}
@@ -305,7 +305,14 @@ const ProfileImageContainer = styled.div`
     width: 30px;
   } */
 `
-
+const LanguageIcon = styled(IoLanguageOutline)`
+  border: 1px #A1A1A1 solid;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: .15rem;
+  margin-right: 10%;
+  margin-top: .1rem;
+`;
 const HelpContainer = styled.div`
   display: none;
 
