@@ -108,6 +108,10 @@
   border-bottom: 0.2rem solid #00b87c;
 }
 
+.navbarNav li span:active {
+  opacity: 0.5;
+}
+
 /* .toggle {
   _margin-right: 12px;
 } */
@@ -176,4 +180,3 @@
     _margin-right: 30px;
   } */
 }
-

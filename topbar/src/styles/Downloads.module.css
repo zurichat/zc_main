@@ -52,7 +52,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 15px 24px;
-  position: sticky;
+  position: static;
   z-index: 100;
   top: 0;
   left: 0;
@@ -121,7 +121,7 @@
 .filesItem {
   padding: 14px;
   margin-bottom: 24px;
-  transition: background-color 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   position: relative;
 }
 
@@ -186,6 +186,7 @@
   height: 36px;
   border-radius: 6px;
   opacity: 0;
+  width: 100%;
   transform: translateY(10px);
   transition: all 0.3s ease-in-out;
 }
