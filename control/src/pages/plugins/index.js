@@ -9,6 +9,21 @@ import ft_img1 from './assets/ft_img1.svg'
 import ft_img2 from './assets/ft_img2.svg'
 import ft_img3 from './assets/ft_img3.svg'
 import ft_img4 from './assets/ft_img4.svg'
+import duty from './assets/compduty.png'
+import compShift from './assets/compshiftman.png'
+import deadline from './assets/deadline.png'
+import dm from './assets/dm.png'
+import expenses from './assets/expenses.png'
+import game from './assets/game.png'
+import goal from './assets/goal.png'
+import holiday from './assets/holiday.png'
+import music from './assets/music.png'
+import sales from './assets/sales.png'
+import todo from './assets/todo.png'
+import tools from './assets/tools.png'
+
+
+
 import sign_up_img from './assets/sign_up_img.svg'
 import arrow_right from './assets/ArrowRight.svg'
 
@@ -93,7 +108,7 @@ export default function Homepage() {
           <div className={`${style.features}`}>
             {/* dm plugin */}
             <FeatureRow
-              src={ft_img1}
+              src={dm}
               alt=""
               pContent1="Direct Message Plugin"
               h2Content="Sends Direct Messages"
@@ -115,7 +130,7 @@ export default function Homepage() {
             />
             {/* music plugin */}
             <FeatureRow
-              src={ft_img3}
+              src={music}
               alt=""
               pContent1="Music Plugin"
               h2Content="Access to music and music videos on the go!"
@@ -126,7 +141,7 @@ export default function Homepage() {
             />
             {/* games plugin */}
             <FeatureRow
-              src={ft_img4}
+              src={game}
               alt=""
               pContent1="Chess Plugin"
               h2Content="Make learning fun, stay engaged with the virtual games"
@@ -137,7 +152,7 @@ export default function Homepage() {
             />
             {/* company goal */}
              <FeatureRow
-              src={ft_img3}
+              src={goal}
               alt=""
               pContent1="Company Goal's Plugin"
               h2Content="Keep track of Goals"
@@ -147,7 +162,7 @@ export default function Homepage() {
             />
             {/* todo plugins */}
             <FeatureRow
-              src={ft_img4}
+              src={todo}
               alt=""
               pContent1="Todo Plugin"
               h2Content="Keeps track of important task"
@@ -159,7 +174,7 @@ export default function Homepage() {
             />
             {/* channels plugin */}
              <FeatureRow
-              src={ft_img3}
+              src={ft_img1}
               alt=""
               pContent1="Channels Plugin"
               h2Content="Organizes conversations into dedicated spaces"
@@ -169,7 +184,7 @@ export default function Homepage() {
             />
             {/* noticeboard plugin */}
             <FeatureRow
-              src={ft_img4}
+              src={ft_img3}
               alt=""
               pContent1="Noticeboard Plugin"
               h2Content="Share Information Effectively"
@@ -180,7 +195,7 @@ export default function Homepage() {
             />
             {/* company file plugin */}
              <FeatureRow
-              src={ft_img3}
+              src={ft_img4}
               alt=""
               pContent1="Company Files Plugin"
               h2Content="Access and Manages Company's Files Effectively"
@@ -190,7 +205,7 @@ export default function Homepage() {
             />
             {/* company sales plugin */}
             <FeatureRow
-              src={ft_img4}
+              src={sales}
               alt=""
               pContent1="Company Sales Plugin"
               h2Content="Keeps track of Sales record"
@@ -201,7 +216,7 @@ export default function Homepage() {
             />
             {/* deadline plugin */}
              <FeatureRow
-              src={ft_img3}
+              src={deadline}
               alt=""
               pContent1="Deadline Plugins"
               h2Content="Deadline Tracker"
@@ -211,7 +226,7 @@ export default function Homepage() {
             />
             {/* expenses plugin */}
             <FeatureRow
-              src={ft_img4}
+              src={expenses}
               alt=""
               pContent1="Expenses Plugin"
               h2Content="Keeps track of Expenses"
@@ -222,7 +237,7 @@ export default function Homepage() {
             />
             {/* duty shift plugin */}
              <FeatureRow
-              src={ft_img3}
+              src={duty}
               alt=""
               pContent1="Duty Shift Plugin"
               h2Content="Tracking your shifts has never been easier! "
@@ -232,7 +247,7 @@ export default function Homepage() {
             />
             {/* external tools plugin */}
             <FeatureRow
-              src={ft_img4}
+              src={tools}
               alt=""
               pContent1="External Tools Plugins"
               h2Content="Usage of 3rd Party Tools"
@@ -243,7 +258,7 @@ export default function Homepage() {
             />
             {/* whiteboard plugin */}
              <FeatureRow
-              src={ft_img3}
+              src={ft_img2}
               alt=""
               pContent1="Whiteboard Plugin"
               h2Content="Idea sharing and Team collaborations"
@@ -253,7 +268,7 @@ export default function Homepage() {
             />
             {/* holiday calender plugin */}
             <FeatureRow
-              src={ft_img4}
+              src={holiday}
               alt=""
               pContent1="Holiday Calender Plugin"
               h2Content="Schedules Events or holidays for staffs"
@@ -265,7 +280,7 @@ export default function Homepage() {
             />
             {/* company shift */}
              <FeatureRow
-              src={ft_img3}
+              src={compShift}
               alt=""
               pContent1="Company Shift Plugin"
               h2Content="Monitors a Company's Working Hours"
