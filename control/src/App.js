@@ -46,6 +46,7 @@ import AdminSettingsTab from './pages/admin/Settings/components/AdminSettingsTab
 import TermsOfService from './pages/termsOfService'
 import RedirectRoute from './pages/redirect'
 import Plugins from './pages/plugins'
+import Legal from './pages/legal'
 
 
 // useEffect(() => {
@@ -132,6 +133,9 @@ const App = () => {
         </Route>
         <Route path="/terms">
           <TermsOfService />
+        </Route>
+        <Route path="/legal">
+          <Legal />
         </Route>
         <Route path="/dao-features">
           <DAO_Features />
