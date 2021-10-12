@@ -42,6 +42,9 @@
   overflow-y: scroll;
   height: 100%;
 }
+.modalCont::-webkit-scrollbar {
+  display: none;
+}
 
 .modalHeader,
 .modalHeaderMobile {
@@ -102,7 +105,7 @@
   .modalContent {
     width: 100%;
     position: absolute;
-   
+
     left: 0;
     right: 0;
     height: 100%;
@@ -119,18 +122,17 @@
     max-width: 100vw;
     background: #fff;
     border-radius: 0px;
-
   }
 
   .modalHeader {
     position: fixed;
-   
+
     width: 100%;
     height: 4rem;
     padding: 0 1.5rem;
     font-size: 1.2rem;
     background: none;
-    
+
     border-bottom: 1px solid #dadada;
     justify-content: center;
     font-weight: 700;
