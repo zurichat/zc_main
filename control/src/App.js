@@ -46,7 +46,7 @@ import AdminSettingsTab from './pages/admin/Settings/components/AdminSettingsTab
 import TermsOfService from './pages/termsOfService'
 import RedirectRoute from './pages/redirect'
 import Plugins from './pages/plugins'
-
+import Legal from './pages/legal'
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -65,8 +65,8 @@ const App = () => {
           <LandingPage />
         </Route>
         <RedirectRoute path="/login">
-         <Login />
-       </RedirectRoute>
+          <Login />
+        </RedirectRoute>
         <Route path="/signup">
           <SignUp />
         </Route>
@@ -127,6 +127,11 @@ const App = () => {
         <Route path="/careers">
           <Careers />
         </Route>
+        
+        <Route path="/legal">
+          <Legal />
+        </Route>
+        
         <Route path="/privacy">
           <PrivacyPolicy />
         </Route>
