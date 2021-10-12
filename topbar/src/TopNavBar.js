@@ -16,17 +16,11 @@ import Profile from "./components/Profile"
 // import Loader from 'react-loader-spinner'
 import { GetUserInfo, SubscribeToChannel } from "@zuri/control"
 import axios from "axios"
-<<<<<<< HEAD
 import { AiOutlineMenu } from "react-icons/ai"
 import styles from "../src/styles/TopNavBar.module.css"
-=======
-import toggleStyle from "./styles/sidebartoggle.module.css"
-import { BsReverseLayoutTextSidebarReverse } from "react-icons/bs"
-
 import SearchAutocomplete from "./components/SearchAutocomplete"
 
 import { navigateToUrl } from "single-spa"
->>>>>>> d02c336c6c72348d95741829fae007b564ba1797
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { closeModal, openModal, presence, setPresence } =
@@ -171,7 +165,6 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const sidebar = document.getElementById(
     "single-spa-application:@zuri/sidebar"
   )
-<<<<<<< HEAD
 
   useEffect(() => {
     if (toggleSidebar) {
@@ -180,15 +173,14 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       sidebar.style.display = "none"
     }
   }, [toggleSidebar, sidebar])
-=======
   const zc_spa_body = document.querySelector("body")
-  const sidebar_toggle = document.querySelector("#sidebar_toggle")
-  const openSidebar = () => {
-    sidebar.style.display = "block"
-    sidebar.style.left = "0"
-    sidebar.style.width = "200px"
-    sidebar_toggle.style.display = "none"
-  }
+  // const sidebar_toggle = document.querySelector("#sidebar_toggle")
+  // const openSidebar = () => {
+  //   sidebar.style.display = "block"
+  //   sidebar.style.left = "0"
+  //   sidebar.style.width = "200px"
+  //   sidebar_toggle.style.display = "none"
+  // }
 
   // zc_spa_body.addEventListener('click', () => {
   //   if (window.outerWidth <= 768) {
@@ -255,7 +247,6 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     // }else{
     //   window.location.href="https://zuri.chat/search"
   }
->>>>>>> d02c336c6c72348d95741829fae007b564ba1797
 
   return (
     <>
