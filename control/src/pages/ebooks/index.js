@@ -22,7 +22,7 @@ const index = () => {
   <div className={`${styles.right}`}>
     <h3 className="h3">How to Code as a Programmer</h3>
      <p>Determine your path after exploring different careers in tech and hearing from real-life web developers, data scientists, and more.</p>
-  <button className={`${styles.button}`}>Get Ebook</button>
+  <a href="/#" className={`${styles.button}`}>Get Ebook</a>
   </div>
  
  
@@ -35,7 +35,7 @@ const index = () => {
   <div className={`${styles.left2}`}>
     <h3 className="h3">Networking in Internship</h3>
      <p>Whether you are part of a sports league, attending a conference, or in the queue to order a morning coffee, you can make a lifetime connection.</p>
-  <button className={`${styles.button}`}>Get Ebook</button>
+     <a href="/#" className={`${styles.button}`}>Get Ebook</a>
   </div>
  
     <div className={`${styles.right2}`}>
@@ -55,7 +55,7 @@ const index = () => {
   <div className={`${styles.right}`}>
     <h3 className="h3">How to Code as a Programmer</h3>
      <p>Determine your path after exploring different careers in tech and hearing from real-life web developers, data scientists, and more.</p>
-  <button className={`${styles.button}`}>Get Ebook</button>
+     <a href="/#" className={`${styles.button}`}>Get Ebook</a>
   </div>
  
  
@@ -68,7 +68,7 @@ const index = () => {
   <div className={`${styles.left2}`}>
     <h3 className="h3">Networking in Internship</h3>
      <p>Whether you are part of a sports league, attending a conference, or in the queue to order a morning coffee, you can make a lifetime connection.</p>
-  <button className={`${styles.button}`}>Get Ebook</button>
+     <a href="/#" className={`${styles.button}`}>Get Ebook</a>
   </div>
  
     <div className={`${styles.right2}`}>
