@@ -1,11 +1,13 @@
 import React from "react"
 import styles from "../../component-styles/Help.module.css"
  import invalid from "./assets/undraw_Mobile_app_re_catg.svg"
+ import mylogo from './assets/Captures.JPG'
 
 const Help = () => {
   return (
     <div>
       <div className={`${styles.help}`}>
+           <img src={mylogo} alt={"ylogo"} srcSet="" /> 
         <h1>Get help signing in to ZuriChat</h1>
       </div>
       <div className={`${styles.firstlayer}`}>
@@ -13,7 +15,7 @@ const Help = () => {
            <img src={invalid} alt={"invalid"} srcSet="" /> 
         </div>
         <div className={`${styles.firstcontent}`}>
-          <h3>Username or password is wrong, invalid, or unrecognized</h3>
+          <h5>Username or password is wrong, invalid, or unrecognized</h5>
           <p>
             Make sure that:
             <br />
@@ -39,7 +41,7 @@ const Help = () => {
         </div>
       </div>
       <div className={`${styles.secondcontent}`}>
-        <h3>You forgot the email address you use to sign in.</h3>
+        <h5>You forgot the email address you use to sign in.</h5>
         <p>
           Try other phone numbers or recovery email addresses you might have
           used. <br />
@@ -49,7 +51,7 @@ const Help = () => {
         </p>
       </div>
       <div className={`${styles.thirdcontent}`}>
-        <h3>To reset your password:</h3>
+        <h5>To reset your password:</h5>
         <p>
           To reset your password: Follow the steps to recover your Google
           Account or Gmail.
