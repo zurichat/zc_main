@@ -268,10 +268,10 @@ const EditProfile = () => {
                 </div>
               </div>
               <div className="input-group">
-                <label className="inputLabel">Time Zone</label>
+                <label className="inputLabel col-12">Time Zone</label>
                 <TimezoneSelect
                   value={selectedTimezone}
-                  onChange={setSelectedTimezone}
+                  onChange={setSelectedTimezone} className="col-12"
                 />
               </div>
               <div className="input-group">
