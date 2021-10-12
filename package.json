@@ -30,16 +30,18 @@
     "setup:sidebar": "cd sidebar && yarn",
     "setup:plugin-header": "cd pluginHeader && yarn",
     "setup:comment-sidebar": "cd commentSidebar && yarn",
+    "setup:manage-user-modal": "cd manageUserModal && yarn",
     "postinstall": "concurrently --kill-others-on-fail -m 1 \"yarn:setup:*\"",
     "clean": "rimraf dist",
-    "clean:fresh": "rimraf node_modules yarn.lock topbar/node_modules topbar/yarn.lock sidebar/node_modules sidebar/yarn.lock control/node_modules control/yarn.lock",
+    "clean:fresh": "rimraf node_modules yarn.lock topbar/node_modules topbar/yarn.lock sidebar/node_modules sidebar/yarn.lock control/node_modules control/yarn.lock pluginHeader/node_modules pluginHeader/yarn.lock manageUserModal/node_modules manageUserModal/yarn.lock ",
     "build": "concurrently --kill-others-on-fail -m 1 \"yarn run clean\" \"yarn:build:*\"",
     "build:webpack": "webpack --mode=production",
     "build:topbar": "npm run build --prefix topbar",
     "build:control": "npm run build --prefix control",
     "build:sidebar": "npm run build --prefix sidebar",
     "build:comment-sidebar": "npm run build --prefix commentSidebar",
-    "build:plugin-header": "npm run build --prefix pluginHeader"
+    "build:plugin-header": "npm run build --prefix pluginHeader",
+    "build:manage-user-modal": "npm run build --prefix manageUserModal"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
