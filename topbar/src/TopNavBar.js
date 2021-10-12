@@ -13,6 +13,7 @@ import TopbarModal from "./components/TopbarModal"
 // import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
 import { authAxios } from "./utils/Api"
 import Profile from "./components/Profile"
+import TopSearchBar from "./components/TopSearchBar"
 // import Loader from 'react-loader-spinner'
 import { GetUserInfo, SubscribeToChannel } from "@zuri/control"
 import axios from "axios"
@@ -203,7 +204,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         </div>
       </div>
       <div className="ms-4" style={{ width: "60%" }}>
-        <BaseInput
+        {/* <BaseInput
           value={search}
           onChange={e => setSearch(e.target.value)}
           type="text"
@@ -211,7 +212,8 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           error
           placeholder="Search here"
           border={"#99999933"}
-        />
+        /> */}
+          <TopSearchBar />
       </div>
       <ProfileImageContainer
         className="d-flex justify-content-end pe-3"
