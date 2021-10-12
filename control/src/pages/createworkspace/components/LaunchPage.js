@@ -34,19 +34,13 @@ function LaunchPage() {
           <h1 className={LaunchPageCSS.brandhub}> Launching {projectname}</h1>
 
           <div className={LaunchPageCSS.openZuriDesktop}>
-            Click <a href="/home"> "Open Zuri Chat"</a> to launch the desktop
+            Click <a href="/"> "Open Zuri Chat"</a> to launch the desktop
             app
           </div>
           {/* end */}
           <a href="" className={LaunchPageCSS.openZuri}>
             Open Zuri Chat App
           </a>
-          <p>
-            Don't have the app ? You can also{' '}
-            <a href="/home" className={LaunchPageCSS.inBrowser}>
-              use Zuri Chat in your browser
-            </a>
-          </p>
         </div>
       </article>
     </div>
