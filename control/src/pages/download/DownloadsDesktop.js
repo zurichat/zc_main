@@ -6,7 +6,11 @@ import laptop from "./assets/laptop.svg"
 import device from "./assets/device.svg"
 import icon from "./assets/icon.svg"
 import apple from "./assets/apple.svg"
+import apple1 from "./assets/Apple1.svg"
+import microsoft from "./assets/icons8-microsoft.svg"
+import googleplay from "./assets/googlePlay.svg"
 import android from "./assets/android.svg"
+import infolaptop from "./assets/infolaptop.svg"
 import windows from "./assets/windows.svg"
 import { isMacOs } from "react-device-detect"
 
@@ -31,38 +35,61 @@ const DownloadsDesktop = () => {
             Connecting with your team has never been easier with Zuri Chat.
           </p>
 
-          <img
-            className={`${styles.screenshot}`}
-            src={device}
-            alt="app screenshot"
-          />
-          <h2>Zuri for Desktop</h2>
+          <div className={styles.heroImages}>
+            <div className={styles.alignCenter}>
+              <img
+                className={`${styles.screenshot}`}
+                src={device}
+                alt="app screenshot"
+              />
+              <div>
+                <h2>Zuri for Desktop</h2>
+                <a href="/download-app" className={styles.downloadButton}>
+                  <img className={`px-1`} src={apple1} alt="download icon" />
+                  <span> Download on Mac App Store</span>
+                </a>
+                <a
+                  href={`https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing`}
+                  className={styles.downloadButton}
+                >
+                  <img className={`px-1`} src={microsoft} alt="download icon" />
+                  <span>Get it from Microsoft</span>
+                </a>
+              </div>
+            </div>
 
-          <div className={`${styles.downloadButtonContainer}`}>
-            <a
-              href={`https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing`}
-              className={styles.downloadButton}
-            >
-              Windows
-              <img className={`px-2`} src={windows} alt="download icon" />
-            </a>
-            <a href="/download-app" className={styles.downloadButton}>
-              macOS
-              <img className={`px-2`} src={apple} alt="download icon" />
-            </a>
-            {/* <a href="/download-app" className={styles.downloadButton}>
-              iOS
-              <img className={`px-2`} src={apple} alt="download icon" />
-            </a>
-            <a
-              href="https://drive.google.com/file/d/1dbQS1rQOVUI87AzdeljF6LM5iRNnaMzZ/view"
-              download={exe.name}
-              className={styles.downloadButton}
-            >
-              Android
-              <img className={`px-2`} src={android} alt="download icon" />
-            </a> */}
+            <div className={styles.alignCenter}>
+              <div className={styles.mobileImage}>
+                <img
+                  src={infolaptop}
+                  className={`${styles.screenshot}`}
+                  alt=""
+                />
+              </div>
+              <div>
+                <h2>Zuri for Mobile</h2>
+                <a href="/download-app" className={styles.downloadButton}>
+                  <img className={`px-1`} src={apple1} alt="download icon" />
+                  <span>Download on App Store</span>
+                </a>
+
+                <a
+                  href="https://drive.google.com/file/d/1dbQS1rQOVUI87AzdeljF6LM5iRNnaMzZ/view"
+                  download={exe.name}
+                  className={styles.downloadButton}
+                >
+                  <img
+                    className={`px-1`}
+                    src={googleplay}
+                    alt="download icon"
+                  />
+                  <span>GET IT ON Google Play</span>
+                </a>
+              </div>
+            </div>
           </div>
+
+          <div>{/*  */}</div>
 
           {/* <a href={exe.link} download={exe.name} className={styles.button1}>
             <img className={`px-2`} src={icon} alt="download icon"></img>
