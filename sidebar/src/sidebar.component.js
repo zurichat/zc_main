@@ -48,12 +48,12 @@ const Sidebar = props => {
       <Header state={props.state} />
       <div className={`${styles.subCon2}`}>
         <Fragment>
-          <Room name="Threads" image={threadIcon} />
-          <Room name="All DMs" image={dmIcon} />
-          <Room name="Drafts" image={draftIcon} />
-          <Room name="Files" image={filesIcon} />
+          <Room name="Threads" image={threadIcon} styling={`row side_item mt-2 ${styles.sb__item} ${styles.sb__active} ${styles.sb__itemchosen}`} />
+          <Room name="All DMs" image={dmIcon} styling={`row side_item mt-2 ${styles.sb__item}`}/>
+          <Room name="Drafts" image={draftIcon} styling={`row side_item mt-2 ${styles.sb__item}`}/>
+          <Room name="Files" image={filesIcon} styling={`row side_item mt-2 ${styles.sb__item}`}/>
 
-          <Room name="Plugins" image={pluginIcon} />
+          <Room name="Plugins" image={pluginIcon} styling={`row side_item mt-2 ${styles.sb__item}`}/>
 
           {/* SIDE BAR DATA */}
           {props.state.sidebar &&

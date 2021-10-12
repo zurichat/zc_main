@@ -87,10 +87,17 @@
 
 .sb__item:hover {
   background-color: #f1fffa;
+  cursor: pointer;
 }
 
 .sb__item::selection {
   background-color: #f1fffa;
+}
+.sb__active{
+  background-color: #00b87c;
+}
+.sb__itemchosen:hover{
+  background-color: #00b87c;
 }
 
 .sb__col {
