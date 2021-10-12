@@ -1,21 +1,21 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import styles from './PricingPageSection1.module.css'
-import { Pricing } from './PricingDummyData'
+import React from "react"
+import { Link } from "react-router-dom"
+import styles from "./PricingPageSection1.module.css"
+import { Pricing } from "./PricingDummyData"
 
 const PricingPageSection1 = () => {
   return (
     <>
       <div className={styles.topPricingSectionContainer}>
         <div className={styles.topPricingPageSection1}>
-          <p className={styles.p}>Make teamwork more productive</p>
+          <p className={styles.ptopheader}>Make teamwork more productive</p>
 
           <div className={styles.topPricingPageBody}>
             <div className={styles.topPricingLine}></div>
             <div className={styles.topPricingPageColumns}>
               {Pricing.map((p, id) => {
                 return (
-                  <div key={id} className={`styles.${p.className}`}>
+                  <div key={id} className={styles.cards}>
                     <div className={styles.topPricingTop}>
                       <p
                         className={styles.topPricingTitle}
@@ -61,7 +61,7 @@ const PricingPageSection1 = () => {
 
                       <div className={styles.topPricingBottomFoot}>
                         <Link to="/">
-                          {' '}
+                          {" "}
                           <span className={styles.span}>Learn more</span>
                         </Link>
                       </div>
@@ -73,11 +73,10 @@ const PricingPageSection1 = () => {
           </div>
         </div>
       </div>
-
       {/* Was instructed by Mark to take out the comparison section, Instead of deleting, I just commented out..... Please Leave this area commented out. T for thanks */}
       {/* Starts here from this sections line 77 at time of edit */}
 
-         {/* <table className={styles.tableMain}>
+      {/* <table className={styles.tableMain}>
        <section className={styles.section2}>
         <div className={styles.tableContainer}>
             <colgroup className={styles.colgroup}>
@@ -166,7 +165,6 @@ const PricingPageSection1 = () => {
                   </svg>
                 </td>
                 <td className={styles.pricingtableSpacer}></td>
-
                 <td>
                   <svg
                     className="c-check"
@@ -1364,7 +1362,6 @@ const PricingPageSection1 = () => {
           </table> 
         </div>
       </section> */}
-    
 
       {/* Ends here, the closing section line 1366 at time of edit */}
     </>
