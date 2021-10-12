@@ -53,7 +53,7 @@ const DropDown = ({ itemName, items }) => {
   }
 
   return (
-    <div className={`row p-0 ${styles.dropDown} text-decoration-none`}>
+    <div className={`row p-0 ${styles.dropDown} text-decoration-none ${isOpen && styles.openWrapper}`}>
       <div
         className={`col-12 d-flex align-items-center ${styles.plugin__title}`}
         onClick={toggleDropdown}
