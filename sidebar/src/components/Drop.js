@@ -94,7 +94,7 @@ const DropDown = ({ itemName, items }) => {
                     href={room.room_url}
                     onClick={navigateToUrl}
                     ref={click}
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: "none", marginLeft:15 }}
                   >
                     <img
                       ref={click}
