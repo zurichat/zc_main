@@ -7,6 +7,7 @@ import styles from "../../component-styles/ResetPassword.module.css"
 import axios from "axios"
 import VerifyResetCode from "./verifyCode"
 import { Helmet } from "react-helmet"
+import Footer from "../../components/Footer"
 
 const ResetDefault = () => {
   const [email, setEmail] = useState("")
@@ -37,48 +38,52 @@ const ResetDefault = () => {
 
   return (
     <>
-      <main id={styles.authPageWrapper}>
-        <Helmet>
-          <title>Reset Password - Zuri Chat</title>
-        </Helmet>
-        {showDialog && <VerifyResetCode />}
-        <aside id={styles.authAsideContainer} className={styles.display_none}>
-          <div id={styles.authImageWrapper}>
-            <img src={authBg} alt="backgroundImage" />
-            <div id={styles.asideText}></div>
-          </div>
-        </aside>
-        <section id={``}>
-          {/* logo div  */}
-          <div className={``}>
-            <img className={styles.logo} src={Logo} alt="" />
-          </div>
-          {/* header text  */}
-          <div className={``}>
-            <h4 className={styles.headerText}>Get a new password</h4>
-            <p>
-              Enter the email address you registered with and a reset code will
-              be sent to your email.
-            </p>
-          </div>
-          {/* form section  */}
-          <form action="">
-            <AuthInputBox
-              className={`${styles.inputElement}`}
-              id="email"
-              name="Email address"
-              type="email"
-              placeholder="Johndoe@example.com"
-              value={email}
-              setValue={setEmail}
-              error=""
-            />
-            <Button className={styles.button} onClick={handleSubmit}>
-              Continue
-            </Button>
-          </form>
-        </section>
-      </main>
+      <div>
+        <main id={styles.authPageWrapper}>
+          <Helmet>
+            <title>Reset Password - Zuri Chat</title>
+          </Helmet>
+          {showDialog && <VerifyResetCode />}
+
+          <aside id={styles.authAsideContainer} className={styles.display_none}>
+            <div id={styles.authImageWrapper}>
+              <img src={authBg} alt="backgroundImage" />
+              <div id={styles.asideText}></div>
+            </div>
+          </aside>
+          <section className={`${styles.getHelpSigninForm}`}>
+            {/* logo div  */}
+            <div className={`${styles.logoFormContainer}`}>
+              <img className={styles.logo} src={Logo} alt="" />
+            </div>
+            {/* header text  */}
+            <div className={``}>
+              <h4 className={styles.headerText}>Get a new password</h4>
+              <p className={`${styles.headerTextTitle}`}>
+                Enter the email address you registered with and a reset code
+                will be sent to your email.
+              </p>
+            </div>
+            {/* form section  */}
+            <form action="">
+              <AuthInputBox
+                className={`${styles.inputElement}`}
+                id="email"
+                name="Email address"
+                type="email"
+                placeholder="Johndoe@example.com"
+                value={email}
+                setValue={setEmail}
+                error=""
+              />
+              <Button className={styles.button} onClick={handleSubmit}>
+                Continue
+              </Button>
+            </form>
+          </section>
+        </main>
+        <Footer />
+      </div>
     </>
   )
 }
