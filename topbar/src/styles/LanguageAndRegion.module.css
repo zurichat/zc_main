@@ -1,5 +1,6 @@
 .container {
   width: 90%;
+  height: 100vh;
   margin-left: 55px;
   margin-top: 27px;
 }

@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .topPricingSectionContainer {
   padding: 0;
   margin: 0;
@@ -7,34 +11,33 @@
 
 .topPricingPageSection1 {
   display: flex;
-  font-family: 'Lato';
+  font-family: "Lato";
   flex-direction: column;
   align-items: center;
   margin-bottom: 1.25rem;
 }
 
-.topPricingPageSection1 > .p {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
+.ptopheader {
+  text-align: center;
   font-size: 2.25rem;
   font-weight: 700;
-  margin-top: 0.35rem;
+  margin-top: 85px;
   margin-bottom: 2.25rem;
+  font-family: Lato;
 }
 
 .topPricingPageBody {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
-  width: 70.375rem;
+  width: 90%;
+  max-width: 1000px;
   height: fit-content;
-  box-shadow: 5px 15px 20px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px 0 gainsboro, 0 6px 20px 0 gainsboro;
   border: none;
+  border-radius: 3px;
 }
 
-.topPricingLine {
+.to .topPricingLine {
   height: 0.31rem;
   width: 100%;
   background: #00b87c;
@@ -44,49 +47,31 @@
 
 .topPricingPageColumns {
   display: flex;
+  flex-wrap: wrap;
   flex: 1;
   box-sizing: content-box;
   height: 100%;
   padding: 1.4rem;
 }
-.topPricingPageColumns > div {
-  width: 25%;
-}
-.topPricingStart {
-  flex: 1;
-  height: 100%;
-  margin-top: 0.625rem;
-  margin-right: 1rem;
-  border-right: 1px solid rgba(122, 122, 122, 0.5);
-}
+/* .topPricingPageColumns > div {
+  width: 100%;
+} */
 
-.topPricingMiddle1 {
+.cards {
+  padding-top: 15px;
   flex: 1;
-  height: 100%;
-  margin-right: 1rem;
-  border-right: 1px solid rgba(122, 122, 122, 0.5);
 }
+.cards:nth-child(1) {
+  /* height: 100%; */
 
-.topPricingMiddle2 {
-  flex: 1;
-  height: 100%;
-  padding: 0 8px;
   margin-right: 1rem;
-  border-right: 1px solid rgba(122, 122, 122, 0.5);
-}
-
-.topPricingEnd {
-  flex: 1;
-  height: 100%;
+  border-right: 1px solid gainsboro;
 }
 
 .topPricingTop {
   display: flex;
   flex-direction: column;
-  height: 10rem;
-  /* max-height: fit-content; */
-  width: 100%;
-  /* justify-content: space-between; */
+  gap: 5px;
 }
 
 .topPricingTitle {
@@ -97,10 +82,10 @@
 
 .topPricingSubtitle {
   font-style: normal;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 0.7rem;
   flex-wrap: wrap;
-  height: 4rem;
+  height: 30px;
 }
 
 .topPricingAmount {
@@ -122,6 +107,7 @@
   font-weight: normal;
   font-size: 1rem;
   color: #ffffff;
+  transition: 1s ease-in-out;
 }
 .topPricingButton a {
   font-weight: 400;
@@ -139,11 +125,11 @@
 }
 
 .topPricingBottom {
-  height: 23rem;
   display: flex;
   flex-direction: column;
   /* justify-content: space-between; */
   padding: 1.25rem;
+  height: calc(100% - 10.8rem);
   padding-left: 0;
 }
 
@@ -177,7 +163,7 @@
   letter-spacing: normal;
   flex-direction: column;
   font-style: normal;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 0.75rem;
   color: #333333;
 }
@@ -194,7 +180,7 @@
   color: #00b87c;
   font-style: normal;
   font-weight: bold;
-  font-size: 0.65rem;
+  font-size: 0.7rem;
 }
 
 .topPricingBottomFoot .span:hover {
@@ -213,28 +199,20 @@
   .topPricingSectionContainer,
   .section2 {
     font-size: 10px;
-    background-color: white;
   }
 
   .topPricingPageBody {
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
-    width: 74.375rem;
-    height: 38rem;
+    /* border: 1px solid black; */
+    width: 90%;
+    /* height: 38rem; */
     box-shadow: 5px 15px 20px 5px rgba(0, 0, 0, 0.1);
     border: none;
   }
 }
 
-@media only screen and (max-width: 780px) {
-  .topPricingSectionContainer,
-  .section2 {
-    font-size: 8px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
   .topPricingSectionContainer,
   .section2 {
     font-size: 14px;
@@ -247,10 +225,22 @@
     color: #333333;
   }
 
+  .ptopheader {
+    font-size: 25px;
+  }
+  .cards:nth-child(1) {
+    border-right: none;
+    border-bottom: 1px solid gainsboro;
+  }
+
+  .cards:nth-child(2) {
+    padding-top: 25px;
+  }
+
   .topPricingPageSection1 {
     display: flex;
     width: 100%;
-    font-family: 'Lato';
+    font-family: "Lato";
     flex-direction: column;
     align-items: center;
     /* justify-content: center; */
@@ -271,8 +261,9 @@
   .topPricingPageBody {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
     height: 100%;
+    max-width: 450px;
   }
 
   .topPricingLine {
@@ -321,7 +312,7 @@
   .topPricingTop {
     display: flex;
     flex-direction: column;
-    height: 10rem;
+
     width: 100%;
     max-height: auto;
     /* justify-content: space-between; */
@@ -331,6 +322,8 @@
     font-style: normal;
     font-weight: 900;
     font-size: 1.3rem;
+    height: 0px;
+    margin-bottom: 35px;
   }
 
   .topPricingSubtitle {
@@ -338,7 +331,6 @@
     font-weight: bold;
     font-size: 0.7rem;
     flex-wrap: wrap;
-    height: 4rem;
   }
 
   .topPricingAmount {
@@ -417,6 +409,13 @@
     font-style: normal;
     font-weight: bold;
     font-size: 0.65rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .topPricingSectionContainer,
+  .section2 {
+    font-size: 8px;
   }
 }
 
@@ -522,8 +521,34 @@ tfoot th {
   text-align: start;
 }
 
-@media only screen and (max-width: 1200px) {
+.col {
+  width: 35%;
+}
+
+.tableMain,
+.tableContainer {
+  width: 100%;
+}
+.section2 {
+  width: 75%;
+  margin: 0px auto;
+}
+.th1col {
+  width: 30%;
+}
+
+@media only screen and (max-width: 992px) {
   .section2 {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .section2 {
+    width: 100%;
+  }
+
+  .tableMain {
     display: none;
   }
 }
