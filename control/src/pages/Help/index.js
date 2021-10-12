@@ -1,6 +1,6 @@
 import React from "react"
 import styles from "../../component-styles/Help.module.css"
-// import invalid from "./assets/undraw_Mobile_app_re_catg.svg"
+ import invalid from "./assets/undraw_Mobile_app_re_catg.svg"
 
 const Help = () => {
   return (
@@ -10,7 +10,7 @@ const Help = () => {
       </div>
       <div className={`${styles.firstlayer}`}>
         <div className={`col-lg-6 ${styles.invalid}`}>
-          {/* <img src={invalid} alt={"invalid"} srcSet="" /> */}
+           <img src={invalid} alt={"invalid"} srcSet="" /> 
         </div>
         <div className={`${styles.firstcontent}`}>
           <h3>Username or password is wrong, invalid, or unrecognized</h3>

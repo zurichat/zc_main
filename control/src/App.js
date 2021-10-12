@@ -4,6 +4,7 @@ import SignUp from './pages/signup'
 import SignOut from './pages/signout/index'
 import Workspace from './pages/workspace/components/Workspace'
 import LandingPage from './pages/LandingPage'
+import DAO_Features from './pages/DAO-Features'
 // password block
 import ResetPassword from './pages/passwordReset/index'
 import NewPassword from './pages/passwordReset/newPassword'
@@ -19,6 +20,7 @@ import Invite from './pages/inviteScreen'
 import Inviterequest from './pages/InviteRequest/InviteRequest'
 import SendRequest from './pages/InviteRequest/SendRequest'
 import ContactUs from './pages/contact-us'
+import Search from './pages/search'
 import AppsAndIntegrations from './pages/apps-integration'
 import Download from './pages/download'
 import DownloadsMac from './pages/download/DownloadsMac'
@@ -97,6 +99,9 @@ const App = () => {
         <Route path="/resources">
           <Resources />
         </Route>
+        <Route path="/search">
+          <Search />
+        </Route>
         <Route path="/blog">
           <Blog />
         </Route>
@@ -123,6 +128,9 @@ const App = () => {
         </Route>
         <Route path="/terms">
           <TermsOfService />
+        </Route>
+        <Route path="/dao-features">
+          <DAO_Features />
         </Route>
         <Route path="/marketplace" exact>
           <MarketPlace />
