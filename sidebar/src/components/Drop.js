@@ -82,7 +82,7 @@ const DropDown = ({ itemName, items }) => {
             if (room.room_name !== undefined) {
               return (
                 // console.log(itemList)
-                <li key={index} className={`row py-1 side_item ${styles.item__list}`}>
+                <li key={index} className={`row py-1 ${styles.side_item} ${styles.item__list}`}>
                   <a
                     className={`col-12 d-flex align-items-center ${styles.item_name}`}
                     href={room.room_url}

@@ -2,7 +2,7 @@ import React from "react"
 import styles from "../styles/Sidebar.module.css"
 
  const active = () => {
-    let row = document.getElementsByClassName("side_item")
+    let row = document.getElementsByClassName(`${styles.side_item}`)
  
     for (let i = 0; i < row.length; i++) {
       row[i].addEventListener("click", function () {
