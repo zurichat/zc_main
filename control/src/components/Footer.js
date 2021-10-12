@@ -84,7 +84,7 @@ const Footer = () => {
                   <Link to="/contact-us">Contact</Link>{" "}
                 </li>
                 <li>
-                  <Link to="https://docs.zuri.chat/">Documentation</Link>{" "}
+                  <a to="https://docs.zuri.chat/">Documentation</a>{" "}
                 </li>
               </ul>
             </div>
