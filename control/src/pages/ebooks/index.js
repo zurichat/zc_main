@@ -12,11 +12,12 @@ const index = () => {
         <div>
             <Header />
 
-            <div className={` container ${styles.content}`}>
+            <div className={`${styles.mycon}`}>
+            <div className="container">
  {/* Wrapper 1  */}
 <div className={`${styles.wrapper}`}>
-  <div className={`p-4 ${styles.left}`}>
-     <img src={img1} alt="Ebook" className="img-fluid" />
+  <div className={`${styles.left}`}>
+     <img src={img1} alt="Ebook" className={`img-fluid ${styles.leftImg}`} />
   </div>
   <div className={`${styles.right}`}>
     <h3 className="h3">How to Code as a Programmer</h3>
@@ -31,14 +32,14 @@ const index = () => {
 {/* <!--  Wrapper 2  --> */}
     <div className={`${styles.wrapper2}`}>
   
-  <div className={`p-4 ${styles.left2}`}>
+  <div className={`${styles.left2}`}>
     <h3 className="h3">Networking in Internship</h3>
      <p>Whether you are part of a sports league, attending a conference, or in the queue to order a morning coffee, you can make a lifetime connection.</p>
   <button className={`${styles.button}`}>Get Ebook</button>
   </div>
  
-    <div className="right2 col-lg-4 col-sm-12  p-4">
-     <img src={img2} alt="Ebook"  className="img-fluid"/>
+    <div className={`${styles.right2}`}>
+     <img src={img2} alt="Ebook"  className={`img-fluid ${styles.rightImg}`}/>
   </div>
  
 </div>
@@ -48,8 +49,8 @@ const index = () => {
                 
 {/* Wrapper 3  */}
 <div className={`${styles.wrapper}`}>
-  <div className={`p-4 ${styles.left}`}>
-     <img src={img1} alt="Ebook" className="img-fluid" />
+  <div className={`${styles.left}`}>
+     <img src={img1} alt="Ebook" className={`img-fluid ${styles.leftImg}`} />
   </div>
   <div className={`${styles.right}`}>
     <h3 className="h3">How to Code as a Programmer</h3>
@@ -64,14 +65,14 @@ const index = () => {
 {/* <!--  Wrapper 4  --> */}
     <div className={`${styles.wrapper2}`}>
   
-  <div className={`p-4 ${styles.left2}`}>
+  <div className={`${styles.left2}`}>
     <h3 className="h3">Networking in Internship</h3>
      <p>Whether you are part of a sports league, attending a conference, or in the queue to order a morning coffee, you can make a lifetime connection.</p>
   <button className={`${styles.button}`}>Get Ebook</button>
   </div>
  
-    <div className="right2 col-lg-4 col-sm-12  p-4">
-     <img src={img2} alt="Ebook"  className="img-fluid"/>
+    <div className={`${styles.right2}`}>
+     <img src={img2} alt="Ebook"  className={`img-fluid ${styles.rightImg}`}/>
   </div>
  
 </div>
@@ -85,6 +86,7 @@ const index = () => {
 
             <Footer />
             
+        </div>
         </div>
     )
 }
