@@ -72,7 +72,6 @@ const DropDown = ({ itemName, items }) => {
               src={infoIcon}
               alt="icon"
               role="button"
-              style={{width:'1.2em'}}
             />
           {/* {items.button_url ? (
             <a href={items.button_url} onClick={navigateToUrl}>
