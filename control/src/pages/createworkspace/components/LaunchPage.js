@@ -38,7 +38,7 @@ function LaunchPage() {
             app
           </div>
           {/* end */}
-          <a href="" className={LaunchPageCSS.openZuri}>
+          <a href="/home" className={LaunchPageCSS.openZuri}>
             Open Zuri Chat App
           </a>
         </div>
