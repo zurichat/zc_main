@@ -33,10 +33,11 @@
 
   .h1 {
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 600;
+    line-height: 40px;
   }
 }
 
 .container {
-  padding-top: 40px;
+  padding-top: 70px;
 }
