@@ -10,7 +10,7 @@ button:hover {
 }
 .Section2 {
   font-family: 'Lato', sans-serif;
-  margin-bottom: 0rem;
+  margin-bottom: 0.5rem;
 }
 .Section2 h2 {
   font-size: 36px;
@@ -45,7 +45,7 @@ button:hover {
   color: #ffffff;
 }
 
-@media screen and (max-width: 1085px) {
+/* @media screen and (max-width: 1085px) {
   .subSection2 {
     grid-gap: 80px;
   }
@@ -73,19 +73,23 @@ button:hover {
   .subSection2 p {
     padding: 0 50px 0px 0px;
   }
-}
+} */
 
 @media screen and (max-width: 480px) {
+  .subSection2 {
+    margin: 0.5rem 0rem;
+  }
   .Section2 h2 {
     font-size: 22px;
   }
   .Section2 p {
     font-size: 16px;
-    margin-bottom: -5px;
+    margin-bottom: 0.5rem;
   }
   .subSection2 {
-    grid-gap: 30px;
-    padding: 30px;
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+    padding: 20px;
   }
   .subSection2 h3 {
     font-size: 22px;
