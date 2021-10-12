@@ -5,8 +5,8 @@ import { authAxios } from "../utils/Api"
 import { ProfileContext } from "../context/ProfileModal"
 
 const NotificationPreference = () => {
-  const [active, setActive] = useState(0)
-  const [active1, setActive1] = useState(0)
+  const [active, setActive] = useState("")
+  const [active1, setActive1] = useState("")
   const { user, orgId } = useContext(ProfileContext)
   const [dataState, setDataState] = useState({
     // channel_hurdle_notification: channel_hurdle,
@@ -17,8 +17,9 @@ const NotificationPreference = () => {
     notification_schedule: "",
     notify_me_about: "",
     thread_replies_notification: false,
-    use_different_settings_mobile: "",
-    when_iam_not_active_on_desktop: ""
+    use_different_settings_mobile: false,
+    when_iam_not_active_on_desktop: "",
+    notify_me_meeting_set: false
   })
 
   useEffect(() => {
@@ -36,14 +37,14 @@ const NotificationPreference = () => {
       })
       .then(res => {
         // console.log(res)
-        setState({ loading: false })
+        // setState({ loading: false })
       })
       .catch(err => {
         console.error(err?.response?.data)
-        setState({ loading: false })
+        // setState({ loading: false })
       })
 
-    localStorage.setItem("settings", JSON.stringify(dataState))
+    // localStorage.setItem("settings", JSON.stringify(dataState))
   }
   const [state, setState] = useState({
     name: "React",
@@ -52,6 +53,53 @@ const NotificationPreference = () => {
 
   const handleChange = event => {
     setState({ value: event.target.value })
+  }
+
+  const handleAllMessages = e => {
+    setActive1(e.target.value)
+    setDataState({
+      ...dataState,
+      notify_me_about: "all-messages"
+    })
+    setData()
+  }
+  const handleDirectMessages = e => {
+    setActive1(e.target.value)
+    setDataState({
+      ...dataState,
+      notify_me_about: "direct-message"
+    })
+    setData()
+  }
+
+  const handleNothingChange = e => {
+    setActive1(e.target.value)
+    setDataState({ ...dataState, notify_me_about: "none" })
+    setData()
+  }
+
+  const handleMobileDeviceSettings = () => {
+    setDataState({
+      ...dataState,
+      use_different_settings_mobile: !dataState.use_different_settings_mobile
+    })
+    setData()
+  }
+
+  const handleNotifyMeeting = () => {
+    setDataState({
+      ...dataState,
+      notify_me_meeting_set: !dataState.notify_me_meeting_set
+    })
+    setData()
+  }
+
+  const handleThreadReplies = () => {
+    setDataState({
+      ...dataState,
+      thread_replies_notification: !dataState.thread_replies_notification
+    })
+    setData()
   }
 
   useEffect(() => {
@@ -74,19 +122,13 @@ const NotificationPreference = () => {
         <form>
           <div className={styles.radioBox}>
             <div className={styles.radio}>
+              {" "}
               <input
                 type="radio"
                 value="all-messages"
                 checked={dataState.notify_me_about === "all-messages"}
-                onClick={() => {
-                  setActive1("all-messages")
-                  setDataState({
-                    ...dataState,
-                    notify_me_about: "all-messages"
-                  })
-                  setData()
-                }}
-              />
+                onChange={handleAllMessages}
+              />{" "}
               <label htmlFor="all-messages">All messages</label>
             </div>
 
@@ -95,14 +137,7 @@ const NotificationPreference = () => {
                 type="radio"
                 value="direct-messages"
                 checked={dataState.notify_me_about === "direct-message"}
-                onClick={() => {
-                  setActive1("direct-message")
-                  setDataState({
-                    ...dataState,
-                    notify_me_about: "direct-message"
-                  })
-                  setData()
-                }}
+                onChange={handleDirectMessages}
               />
               <label htmlFor="direct-messages">Direct messages</label>
             </div>
@@ -111,67 +146,75 @@ const NotificationPreference = () => {
                 type="radio"
                 value="none"
                 checked={dataState.notify_me_about === "none"}
-                onClick={() => {
-                  setActive1("none")
-                  setDataState({ ...dataState, notify_me_about: "none" })
-                  setData()
-                }}
+                onChange={handleNothingChange}
               />
               <label htmlFor="none">Nothing</label>
             </div>
           </div>
           <div className={styles.markbox}>
+            <input
+              type="checkbox"
+              className={styles.check}
+              value="for-mobile"
+              checked={dataState.use_different_settings_mobile}
+              onClick={handleMobileDeviceSettings}
+            />
             <label htmlFor="for-mobile">
               {" "}
-              <input
-                type="checkbox"
-                className={styles.check}
-                value="for-mobile"
-                checked={dataState.use_different_settings_mobile === true}
-                onClick={() => {
-                  setDataState({
-                    ...dataState,
-                    use_different_settings_mobile:
-                      !dataState.use_different_settings_mobile
-                  })
-                  // console.log(
-                  //   'checking',
-                  //   dataState.use_different_settings_mobile
-                  // )
-                  setData()
-                }}
-              />
               Use different settings for my mobile device
             </label>
           </div>
           {/* <div className={styles.line} /> */}
-
+          <hr
+            style={{
+              border: "block",
+              marginTop: "1.5em",
+              marginBottom: "0.5em",
+              marginLeft: "15px",
+              marginRight: "auto",
+              borderStyle: "inset",
+              width: "800px",
+              borderWidth: "1px"
+            }}
+          />
           <div className={styles.markbox}>
-            <label htmlFor="for-meeting">
-              <input
-                type="checkbox"
-                className={styles.check}
-                value="for-meeting"
-              />
-              Notify me when a meeting is set
-            </label>
+            <input
+              type="checkbox"
+              className={styles.check}
+              value="for-meeting"
+              checked={dataState.notify_me_meeting_set}
+              onClick={handleNotifyMeeting}
+            />
+            <label htmlFor="for-meeting">Notify me when a meeting is set</label>
           </div>
           <div className={styles.markbox}>
-            <label htmlFor="for-thread">
-              <input
-                type="checkbox"
-                value="for-thread"
-                onClick={() => {
-                  setDataState({ use_different_settings_mobile: "yes" })
-                  setData()
-                }}
-              />
-              Notify me of replies to thread
-            </label>
+            <input
+              type="checkbox"
+              value="for-thread"
+              checked={dataState.thread_replies_notification}
+              onClick={handleThreadReplies}
+              // onClick={() => {
+              //   setDataState({ use_different_settings_mobile: "yes" })
+              //   setData()
+              // }}
+            />
+            <label htmlFor="for-thread">Notify me of replies to thread</label>
           </div>
         </form>
+        <hr
+          style={{
+            border: "block",
+            marginTop: "1.5em",
+            marginBottom: "0.5em",
+            marginLeft: "15px",
+            marginRight: "auto",
+            borderStyle: "inset",
+            width: "800px",
+            borderWidth: "1px"
+          }}
+        />
         <div className={styles.itemTitle2}>
-          <div className={styles.line}></div>
+          {/* <div className={styles.line}></div> */}
           <h4 className={styles.titleSmall}>Keywords</h4>{" "}
           <span className={styles.spanBlock}>
             You will be notified anything, someone uses these keywords in a
@@ -179,7 +222,19 @@ const NotificationPreference = () => {
           </span>
           <textarea className={styles.textarea}></textarea>
         </div>
-        <div className={styles.line} />
+        <hr
+          style={{
+            border: "block",
+            marginTop: "1.5em",
+            marginBottom: "0.5em",
+            marginLeft: "15px",
+            marginRight: "auto",
+            borderStyle: "inset",
+            width: "800px",
+            borderWidth: "1px"
+          }}
+        />
+        {/* <div className={styles.line} /> */}
         <div className={styles.itemTitle2}>
           <h4 className={styles.titleSmall}>Notification Schedule</h4>{" "}
           <span className={styles.spanBlock}>
