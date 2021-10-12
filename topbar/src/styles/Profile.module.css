@@ -21,7 +21,6 @@
   width: 100%;
   height: 44px;
   z-index: 40;
-  padding: 12px 8px 12px 8px;
   top: 0;
   left: 0;
   position: sticky;
@@ -69,15 +68,12 @@
   flex-direction: column;
 }
 
-.userDetails h3 {
-  margin-top: -0.5rem;
+.userDetails .h3user {
+  margin-top: 0.5rem;
   font-size: 1.3rem;
   font-weight: 700;
   color: #242424;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-family: 'Lato', sans-serif;
 }
 
@@ -105,8 +101,6 @@
   color: #3a3a3a;
   text-align: center;
   padding: 0;
-  margin: 0;
-  margin-top: -1rem;
 }
 
 .userDetails small {
@@ -118,8 +112,6 @@
 
 .buttonGroups {
   position: relative;
-  display: flex;
-  align-items: center;
   margin-top: 1.5rem;
   margin-bottom: 2rem;
   display: flex;
@@ -294,11 +286,11 @@
   }
 
   .buttonGroupsMobile {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 2rem 0.6rem;
-  }
+  } 
 
   .buttonGroupsMobile button {
     width: 100%;
@@ -312,6 +304,28 @@
     font-weight: 700;
     color: #00b87c;
     border-radius: 4px;
+  }
+
+  .settingsLink {
+    position: fixed;
+    bottom: 2rem;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    background: #00b87c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .iconSettings {
+    font-size: 2rem;
+    color: #fff;
+  }
+
+  .buttonGroupsMobile button.editProfileBtn {
+    margin: 0 1rem;
   }
 
   .buttonGroupsMobile button:hover {
@@ -368,7 +382,8 @@
     stroke: #000;
     stroke-width: 2px;
   }
-  .userDetails {
+
+  .userDetailed {
     display: none;
   }
   .userAvatar {
@@ -378,5 +393,10 @@
     width: 80%;
     height: 23rem;
     /* object-fit: contain; */
+  }
+
+  .editProfileBtn2 {
+    margin: 0;
+    margin-left: 1rem;
   }
 }

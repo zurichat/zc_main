@@ -25,13 +25,18 @@ const Preferences = () => {
 
         <div>
           {sideBar === 1 && <NotificationPreference />}
-          {sideBar === 2 && <SidebarPreference />}
+{/*
+{sideBar === 2 && <SidebarPreference />}
+*/}
+
           {sideBar === 3 && <Themes />}
           {sideBar === 4 && <MessagesMedia />}
           {sideBar === 5 && <LanguageAndRegion />}
           {sideBar === 6 && <Accessibility />}
           {sideBar === 7 && <MarkAsRead />}
-          {sideBar === 8 && <AudioVideo />}
+          {/*
+            {sideBar === 8 && <AudioVideo />}
+          */}
           {sideBar === 9 && <AdvancedSettings />}
         </div>
       </div>
