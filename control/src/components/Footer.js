@@ -60,6 +60,9 @@ const Footer = () => {
               <li>
                 <Link to="/about">About Zurichat</Link>{" "}
               </li>
+              <li>
+                <Link to="/ZurichatBlog">Blog</Link>{" "}
+              </li>
             </ul>
           </div>
 
