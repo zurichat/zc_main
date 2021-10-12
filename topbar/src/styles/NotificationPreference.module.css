@@ -1,6 +1,7 @@
 .body {
   display: flex;
   flex-direction: row;
+  overflow: hidden;
 }
 
 .body::-webkit-scrollbar {
@@ -76,7 +77,7 @@
   align-self: center;
 }
 
-input[type='checkbox'] {
+input[type="checkbox"] {
   margin-right: 19px;
   border-color: #00b87c;
   background-color: #00b87c;
