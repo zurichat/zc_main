@@ -62,6 +62,9 @@ input.inputField::placeholder {
   color: #00b87c;
   border: 2px solid #00b87c;
 }
+.subscribeBtn:active {
+  transform: scale(0.95);
+}
 
 /* smaller than laptop, bigger than tablet */
 @media (min-width: 770px) and (max-width: 991px) {
