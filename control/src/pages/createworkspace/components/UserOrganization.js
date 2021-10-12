@@ -153,7 +153,7 @@ export const FooterLink = styled.a`
   color: #6a6a6a;
   font-family: 'Lato', sans-serif;
   &:hover{
-    color: #6a6a6a;
+    color: #B0B0B0;
     cursor: pointer;
   }
   @media (max-width: 35rem) {

@@ -4,6 +4,7 @@ import SignUp from './pages/signup'
 import SignOut from './pages/signout/index'
 import Workspace from './pages/workspace/components/Workspace'
 import LandingPage from './pages/LandingPage'
+import DAO_Features from './pages/DAO-Features'
 // password block
 import ResetPassword from './pages/passwordReset/index'
 import NewPassword from './pages/passwordReset/newPassword'
@@ -44,6 +45,9 @@ import About from './pages/about/index'
 import AdminSettingsTab from './pages/admin/Settings/components/AdminSettingsTab'
 import TermsOfService from './pages/termsOfService'
 import RedirectRoute from './pages/redirect'
+import Plugins from './pages/plugins'
+import Legal from './pages/legal'
+import Ebooks from './pages/ebooks'
 
 
 // useEffect(() => {
@@ -107,11 +111,17 @@ const App = () => {
         <Route path="/pricing">
           <Pricing />
         </Route>
+        <Route path="/plugins">
+          <Plugins />
+        </Route>
         <Route path="/security">
           <Security />
         </Route>
         <Route path="/downloads">
           <Download />
+        </Route>
+        <Route path="/ebooks">
+          <Ebooks />
         </Route>
         <Route path="/downloadsMac">
           <DownloadsMac />
@@ -127,6 +137,12 @@ const App = () => {
         </Route>
         <Route path="/terms">
           <TermsOfService />
+        </Route>
+        <Route path="/legal">
+          <Legal />
+        </Route>
+        <Route path="/dao-features">
+          <DAO_Features />
         </Route>
         <Route path="/marketplace" exact>
           <MarketPlace />
