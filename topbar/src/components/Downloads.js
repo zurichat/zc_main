@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import styles from '../styles/Downloads.module.css'
-import pdf from '../assets/download_images/file-earmark-pdf.svg'
 import open from '../assets/download_images/file-open.svg'
 import close from '../assets/download_images/file-close.svg'
 import pointy from '../assets/download_images/pointy.svg'
@@ -77,7 +76,10 @@ const Downloads = ({ setModal }) => {
                         fill="white"
                       />
                     </svg>
-                    <div role="tooltip" className={styles.toolTip}>
+                    <div role="tooltip" className={styles.toolTip} 
+                    onClick={() => {
+                      files = []
+                    }}>
                       <p>Clear download</p>
                       <img src={pointy} alt="" />
                     </div>
@@ -160,6 +162,7 @@ const Downloads = ({ setModal }) => {
                         aria-label={`Clear ${file.size} file `}
                         className={styles.closeBtn}
                         onClick={() => {
+                          files.splice(index,1)
                           setModal('no')
                         }}
                       >
