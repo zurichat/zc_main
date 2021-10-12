@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react"
 import styles from "../styles/Drop.module.css"
 import { TiArrowSortedDown } from "react-icons/ti"
 import { navigateToUrl } from "single-spa"
-import hash from "../assets/images/hash.svg"
+import hash from "../assets/icons/hash.svg"
 import { AiOutlinePlusCircle } from "react-icons/ai"
 import PluginRoomAddUser from "./PluginRoomAddUser"
 import RoomOptions from "./RoomOptions"
@@ -72,11 +72,7 @@ const DropDown = ({ itemName, items }) => {
           className={`w-100 d-flex align-items-center justify-content-between`}
         >
           <p className={`mb-0 ${styles.dropDown__title}`}> {itemName}</p>
-            <img
-              src={infoIcon}
-              alt="icon"
-              role="button"
-            />
+          <img src={infoIcon} alt="icon" role="button" />
           {/* {items.button_url ? (
             <a href={items.button_url} onClick={navigateToUrl}>
               <AiOutlinePlusCircle className={`${styles.icon}`} />
