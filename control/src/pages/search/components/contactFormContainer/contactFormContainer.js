@@ -32,7 +32,6 @@ function ContactFormContainer() {
     success: ''
   })
 
-
   useEffect(() => {
     let userInfo = GetUserInfo()
     setUserAuth(userInfo.email ? userInfo : {})
@@ -92,7 +91,6 @@ function ContactFormContainer() {
     // setValues(values => ({ ...values, [e.target.name]: e.target.value }))
     setValues({ ...values, [e.target.name]: e.target.value })
   }
-  
   const handleTopicChange = detail => e => {
     setCurrentDetails(detail)
     setValues(values => ({ ...values, subject: detail.topic }))
@@ -140,7 +138,7 @@ function ContactFormContainer() {
             userAuth.email ? ContactFormStyle.is_hidden_animate : ''
           }`}
         >
-          <label htmlFor="email" className="form-label fw-bold">
+          {/* <label htmlFor="email" className="form-label fw-bold">
             Your Email Address
           </label>
           <input
@@ -153,7 +151,7 @@ function ContactFormContainer() {
             placeholder="You@example.com"
             aria-describedby="email"
             required
-          />
+          /> */}
           {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
         </div>
 
@@ -163,15 +161,12 @@ function ContactFormContainer() {
           }`}
         >
           <div className={`w-100`}>
-            <div className={`d-flex align-items-center my-4`}>
-              <p className={`fw-bold mb-0 ${ContactFormStyle.subHead}`}> Topic</p>
+            <div className={`d-flex align-items-center mb-3`}>
+              <p className={`fw-bold ${ContactFormStyle.subHead}`}> Topic</p>
 
               <p
-                className={`fw-bold ms-2 mb-0 ${ContactFormStyle.text_primary} ${ContactFormStyle.change}`}
-                style={{
-                  fontSize: '12px',
-                  lineHeight: '14.4px'
-                }}
+                className={`fw-bold ms-2 pt-1 ${ContactFormStyle.text_primary} ${ContactFormStyle.change}`}
+                style={{ fontSize: 12 }}
                 onClick={() => {
                   setValues(values => ({ ...values, subject: '' }))
                   setCurrentDetails({})
@@ -183,7 +178,7 @@ function ContactFormContainer() {
             <div className="d-grid">
               <button
                 type="button"
-                className={`btn ${ContactFormStyle.btn_primary} ${ContactFormStyle.btn_topic_select} shadow-none text-nowrap fw-bold mb-3`}
+                className={`btn ${ContactFormStyle.btn_primary} ${ContactFormStyle.btn_topic_select} shadow-none text-nowrap fw-bold mb-3 me-3`}
               >
                 {currentDetails.topic}
               </button>
@@ -204,14 +199,14 @@ function ContactFormContainer() {
                       id="headingOne"
                     >
                       <button
-                        className={`fw-bold ${ContactFormStyle.accordion_button} text-start bg-white shadow-none p-0 px-2`}
+                        className={`fw-bold ${ContactFormStyle.accordion_button} bg-white shadow-none p-0 px-2`}
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target={'#collapse' + index}
                         aria-expanded="true"
                         aria-controls="collapseOne"
                       >
-                        <span>{title}</span> <img src={downIcon} className={`ms-1`} alt="down" />
+                        <span>{title}</span> <img src={downIcon} alt="down" />
                       </button>
                     </h2>
                     <div
@@ -231,23 +226,18 @@ function ContactFormContainer() {
             <p className={`fw-bold my-3`} style={{ fontSize: '14px' }}>
               Related articles
             </p>
-            <ul 
-              style={{
-                paddingLeft: 0,
-              }}
-            >
+            <ul>
               {currentDetails.articles &&
                 currentDetails.articles.map((article, index) => {
                   return (
                     <li
                       key={index}
                       style={{
-                        color: 'rgb(0, 184, 124)',
+                        color: '#00B87C',
                         fontWeight: 'bold',
                         lineHeight: '18px',
                         display: 'flex',
                         alignItems: 'center',
-                        padding: '4px 0',
                         cursor: 'pointer'
                       }}
                     >
@@ -255,7 +245,7 @@ function ContactFormContainer() {
                       <img
                         src={arrowRight}
                         alt=""
-                        style={{ paddingLeft: '8px' }}
+                        style={{ paddingLeft: '4px' }}
                       />
                     </li>
                   )
@@ -270,7 +260,7 @@ function ContactFormContainer() {
           } bg-white`}
         >
           <p className="fw-bold mb-3" style={{ fontSize: '16px' }}>
-            Select a Topic
+            Select a Topic to search
           </p>
           <div className={`d-flex flex-column flex-md-row flex-md-wrap`}>
             {detailsData.map(detail => (
@@ -278,7 +268,7 @@ function ContactFormContainer() {
                 type="button"
                 key={detail.topic}
                 disabled={!(values.subject === '')}
-                className={`btn ${ContactFormStyle.btn_topic} text-nowrap fw-bold rounded-pill mb-3 me-md-3`}
+                className={`btn ${ContactFormStyle.btn_topic} text-nowrap fw-bold rounded-pill mb-3 me-3`}
                 onClick={handleTopicChange(detail)}
               >
                 {detail.topic}
@@ -293,7 +283,7 @@ function ContactFormContainer() {
           }`}
         >
           <label htmlFor="topic" className="form-label fw-bold mt-2">
-            Or tell us what you need help with:
+            Or tell us what you are looking for:
           </label>
           <input
             type="text"
@@ -316,7 +306,7 @@ function ContactFormContainer() {
                 className="form-label fw-bold"
                 style={{ fontSize: '14px !important' }}
               >
-                Can you give us more details?
+                Can you give us more search info?
               </label>
               <textarea
                 className={`form-control ${ContactFormStyle.form_control}`}
@@ -328,7 +318,7 @@ function ContactFormContainer() {
               ></textarea>
             </div>
 
-            <div className="my-3">
+            {/* <div className="my-3">
               <label htmlFor="attachments" className="form-label fw-bold">
                 Attach files (optional)
               </label>
@@ -343,7 +333,7 @@ function ContactFormContainer() {
                 <p>Drag and drop a file to attach it, or</p>
                 <a
                   style={{
-                    color: 'rgb(0, 184, 124)',
+                    color: '#00B87C',
                     fontSize: '15px',
                     cursor: 'pointer'
                   }}
@@ -351,10 +341,10 @@ function ContactFormContainer() {
                   Browse for a file...
                 </a>
               </div>
-            </div>
+            </div> */}
           </>
         )}
-        <div className="d-flex flex-column flex-lg-row mt-4">
+        {/* <div className="d-flex flex-column flex-lg-row mt-4">
           <button
             type="submit"
             className={`btn ${ContactFormStyle.btn_primary} fw-bold`}
@@ -374,20 +364,20 @@ function ContactFormContainer() {
               <img className="ps-2" src={Alert} alt="alert circle" />
             </div>
           )}
-        </div>
+        </div> */}
         {values.error && (
           <p className="text-danger border p-2 mt-3 border-danger">
             {values.error}
           </p>
         )}
-        {values.success && (
+        {/* {values.success && (
           <p className="text-success border p-2 mt-3 border-success">
             {values.success}
           </p>
         )}
         <a href="/privacy" className={ContactFormStyle.privacy}>
           Privacy Policy
-        </a>
+        </a> */}
       </form>
     </div>
   )
