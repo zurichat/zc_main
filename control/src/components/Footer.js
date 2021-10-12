@@ -76,7 +76,10 @@ const Footer = () => {
                 <Link to="/marketplace">Market Place</Link>{" "}
               </li>
               <li>
-                <a href="https://zuri.chat/dao-featues">Web3/DAO</a>{" "}
+                <Link to="/security">Security</Link>{" "}
+              </li>
+              <li>
+                <Link to="https://zuri.chat/dao-featues">Web3/DAO</Link>{" "}
               </li>
             </ul>
           </div>
