@@ -1,7 +1,6 @@
 import React, { Fragment } from "react"
 import Link from "../../../components/Link"
 import Style from "../styles/content.module.css"
-
 import imageTut from "../assets/image1.png"
 import bulbiImage from "../assets/bulb.png"
 import bigLock from "../assets/bigLock.svg"
@@ -41,7 +40,6 @@ const Content = () => {
                   </p>
                 </div>
                 <p className={Style.parregistered}>
-                  ..
                   We use the term
                   “Designated Countries” to refer to countries in the European
                   Union (EU), European Economic Area (EEA), and Switzerland.
@@ -229,7 +227,7 @@ const Content = () => {
               <p className={Style.parPartners}>
                 We receive personal data (e.g., your job title and work email
                 address) about you when you use the services of our customers
-                and partners, such as employers or prospective employers and
+                and partners, and
                 applicant tracking systems providing us job application data.
               </p>
             </div>
