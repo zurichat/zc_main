@@ -15,9 +15,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 40px 0 80px;
   
   }
-  .banner{
+  /* .banner{
     height: 24.6rem;
     width: 100%
   }
@@ -57,7 +58,7 @@
     width: 100%;
     margin: 0;
     background-color: #E8ECEF;
-  }
+  } */
   .container{
     width: 80%;
     height: auto;
@@ -77,7 +78,6 @@
     align-items: stretch;
   }
   .benefit img{
-  
     width: 100%;
     height: auto;
     margin-bottom: 20px;
