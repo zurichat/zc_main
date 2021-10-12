@@ -18,8 +18,9 @@ const contactTitle = () => {
         <div className={contactStyle.getHelpCard}>
           <FAQselected />
         </div>
-
-        <img className="d-none d-xl-flex" src={ContactUs} alt="contact us" />
+        <div className={`d-none d-xl-block ${contactStyle.groupImage}`}>
+          <img className="d-none d-xl-flex" src={ContactUs} alt="contact us" />
+        </div>
       </div>
       <DiscoverMore />
     </div>
