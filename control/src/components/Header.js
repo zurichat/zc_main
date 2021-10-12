@@ -8,7 +8,7 @@ import searchIcon from "../component-assets/searchIcon.svg"
 const HeaderSearchSuggestion = () => {
   return (
     <nav
-      className={`navbar navbar-expand-lg navbar-light ${headerStyles.navbar}`}
+      className={`navbar navbar-expand-lg navbar-light  ${headerStyles.navbar}`}
     >
       <Link
         to="/"
@@ -86,6 +86,16 @@ const HeaderSearchSuggestion = () => {
               aria-expanded="false"
             >
               <span className={`${headerStyles.item}`}>Contact</span>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/security"
+              className="nav-link"
+              role="button"
+              aria-expanded="false"
+            >
+              <span className={`${headerStyles.item}`}>Security</span>
             </Link>
           </li>
         </ul>

@@ -26,4 +26,17 @@
   .padlock_img {
     width: 100%;
   }
+
+  .container{
+    text-align: center;
+  }
+
+  .h1 {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+}
+
+.container{
+  padding-top: 40px;
 }

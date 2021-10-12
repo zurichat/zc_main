@@ -1,11 +1,14 @@
 import styles from '../component-styles/Security.module.css'
 import padlock from '../component-assets/padlock.png'
+import padlockSvg from '../component-assets/padlock.svg'
+import dataProtectionIcon from '../component-assets/data-protection.svg'
+import approvedIcon from '../component-assets/approved.svg'
 
 function Security() {
   return (
     <>
       <div
-        className={`${styles.container} my-3 d-flex flex-md-row flex-column m-auto container`}
+        className={`${styles.container}  my-5 d-flex  flex-md-row flex-column m-auto container`}
       >
         <div className={`col-md-6 col-12`}>
           <h6>SECURITY AT ZURI</h6>
@@ -41,7 +44,7 @@ function Security() {
           >
             <img
               className={`py-3 ${styles.image}`}
-              src={`/padlock.svg`}
+              src={padlockSvg}
               alt="padlock"
             />
             <h3 className={styles.h3}>Identity and device management</h3>
@@ -57,8 +60,8 @@ function Security() {
           >
             <img
               className={`py-3 ${styles.image}`}
-              src={`/data-protection.svg`}
-              alt="padlock"
+              src={dataProtectionIcon}
+              alt="data protection icon"
             />
             <h3 className={styles.h3}>Data protection</h3>
             <p className={`px-0 ${styles.p}`}>
@@ -73,8 +76,8 @@ function Security() {
           >
             <img
               className={`py-3 ${styles.image}`}
-              src={`/approved.svg`}
-              alt="padlock"
+              src={approvedIcon}
+              alt="approved icon"
             />
             <h3 className={styles.h3}>Information governance</h3>
             <p className={`px-0 ${styles.p}`}>
