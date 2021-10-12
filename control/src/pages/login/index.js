@@ -184,7 +184,10 @@ const Login = () => {
               Remember me
             </div>
             <div className={`${styles.right}`}>
-              Forgot password?<Link to="/help"> {""}Get help signing in</Link>
+              Forgot password? 
+                <Link to="/help"> 
+                {""}Get help signing in
+                </Link>
             </div>
           </div>
         </FormWrapper>
