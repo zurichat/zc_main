@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 
 /* * VARIABLES ----------------------------- */
 :root {
-  --font: 'Lato';
+  --font: "Lato";
   --page-pad-desk: 3rem;
   --page-pad-mid: 3rem;
   --page-pad-mob: 1rem;
@@ -71,7 +71,7 @@
   line-height: 32px;
 }
 .hero_left_btn {
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
   background-color: var(--primary-color);
   color: #ffffff;
   margin-top: 2rem;
@@ -85,7 +85,7 @@
   border-radius: var(--radius);
 }
 .hero_left_btn:hover {
-  box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.2);
+  background-color: #156349;
 }
 .hero_right {
   display: flex;
@@ -155,6 +155,7 @@
 .ft_row_reverse {
   flex-direction: row-reverse;
 }
+
 .ft_row_reverse .ft_col:first-child {
   margin-right: 0;
   margin-left: 3.75rem;
@@ -173,9 +174,8 @@
   font-weight: 700;
   line-height: 24px;
 }
-.ft_link:hover {
-  color: var(--primary-color);
-  text-decoration: underline;
+.ft_link_p:hover {
+  border-bottom: 0.1rem solid var(--primary-color);
 }
 .ft_link_div {
   display: flex;
@@ -202,6 +202,8 @@
 }
 .arrow_right {
   margin-left: 0.75rem;
+  width: 20px;
+  height: 20px;
 }
 
 /* * SIGN UP BANNER ----------------------------- */
@@ -234,7 +236,7 @@
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
   background-color: var(--bg-2);
   color: var(--primary-color);
   margin-top: 2rem;
