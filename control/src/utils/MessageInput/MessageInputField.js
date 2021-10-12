@@ -14,12 +14,27 @@ import UnstyledButton from "../UnstyledButton"
 
 import { useState } from "react"
 // import Send from "../assets/comments/goto.svg";
-const CommentBox = ({ addToMessage }) => {
+const CommentBox = ({ sendMessageHandler }) => {
   const [text, setText] = useState("")
-  const handleAddToMessages = () => {
+  const [textIsBold, setTextBold] = useState(false)
+  const [textIsItalic, setTextItalic] = useState(false)
+
+  const generateMessageFormatOptions = () => {
+    const options = []
+    if (textIsBold) options.push("bold")
+    if (textIsItalic) options.push("italic")
+  }
+
+  const handleClickSendMessage = () => {
     if (text) {
-      addToMessage(text)
+      const newMessage = {
+        message: text,
+        formatOptions: [...generateMessageFormatOptions()]
+      }
       setText("")
+      setTextBold(false)
+      setTextItalic(false)
+      sendMessageHandler(newMessage)
     }
   }
 
@@ -38,7 +53,7 @@ const CommentBox = ({ addToMessage }) => {
             <div style={{ display: "flex", gap: "11px", alignItems: "center" }}>
               <img src={Lightning} alt="" />
               <img src={Border} alt="" />
-              <img src={Bold} alt="" />
+              <img src={Bold} alt="" onClick={() => setTextBold(!textIsBold)} />
             </div>
             <div
               style={{
@@ -49,7 +64,11 @@ const CommentBox = ({ addToMessage }) => {
               }}
             >
               <UnstyledButton>
-                <img src={Italic} alt="" />
+                <img
+                  src={Italic}
+                  alt=""
+                  onClick={() => setTextItalic(!textIsItalic)}
+                />
               </UnstyledButton>
               <UnstyledButton>
                 <img src={Link} alt="" />
@@ -64,7 +83,7 @@ const CommentBox = ({ addToMessage }) => {
               <img src={AtSign} alt="" />
             </UnstyledButton>
             <UnstyledButton>
-              <img src={Clip} alt="" onClick={handleAddToMessages} />
+              <img src={Clip} alt="" onClick={handleClickSendMessage} />
             </UnstyledButton>
             <UnstyledButton>
               <img src={Send} alt="" />
