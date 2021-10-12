@@ -52,7 +52,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 15px 24px;
-  position: sticky;
+  position: static;
   z-index: 100;
   top: 0;
   left: 0;
@@ -127,6 +127,7 @@
 
 .filesItem:hover {
   background-color: #f6f6f6;
+  transition: transition .3s ease-in-out;
 }
 
 .filesItem:hover .filesDetails .content:before {
