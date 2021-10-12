@@ -1,7 +1,7 @@
 import { useState, useContext } from "react"
 import { TopbarContext } from "../context/Topbar"
 import { connect } from "react-redux"
-import zurichatlogo from "../component-assets/zurichatlogo.svg"
+import zurichatlogo from "../component-assets/zurilogo.svg"
 import styled from "styled-components"
 import { BaseInput } from "."
 import userAvatar from "../component-assets/user.svg"
