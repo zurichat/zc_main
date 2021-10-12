@@ -4,6 +4,7 @@ import SignUp from './pages/signup'
 import SignOut from './pages/signout/index'
 import Workspace from './pages/workspace/components/Workspace'
 import LandingPage from './pages/LandingPage'
+import DAO_Features from './pages/DAO-Features'
 // password block
 import ResetPassword from './pages/passwordReset/index'
 import NewPassword from './pages/passwordReset/newPassword'
@@ -123,6 +124,9 @@ const App = () => {
         </Route>
         <Route path="/terms">
           <TermsOfService />
+        </Route>
+        <Route path="/DAO_Features">
+          <DAO_Features />
         </Route>
         <Route path="/marketplace" exact>
           <MarketPlace />
