@@ -5,12 +5,14 @@ body {
 }
 
 .headerContent {
-  max-width: 600px;
+  max-width: 620px;
   margin: auto;
   padding: 1rem;
+  font-family: 'Lato' sans-serif;
 }
 li {
   list-style: none;
+  font-family: 'Lato' sans-serif;
 }
 .py-5 {
   padding: 5rem 0 2rem 0;
@@ -18,6 +20,9 @@ li {
 .btngreen {
   background: #00b87c;
   border: none;
+  display: block;
+  margin: auto;
+  width: 315px;
   padding: 1rem 2rem;
   border-radius: 3px;
   color: #fff;
@@ -29,9 +34,11 @@ li {
 .flex li {
   padding-top: 0.6rem;
   margin: 0.3rem 1rem;
+  font-family: 'Lato' sans-serif;
 }
 .center {
   text-align: center;
+  font-family: 'Lato' sans-serif;
 }
 .categories {
   padding: 0.3rem;
@@ -39,29 +46,35 @@ li {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1rem;
+  font-family: 'Lato' sans-serif;
 }
 .category {
   padding: 0.5rem;
   background: #fff;
   box-shadow: 10px 10px 30px rgba(112, 113, 115, 0.15);
   border-radius: 3px;
+  font-family: 'Lato' sans-serif;
 }
 .subcategory {
   padding: 1rem;
   border-bottom: 1px solid #4d4d4d;
+  font-family: 'Lato' sans-serif;
 }
 .subcategory p {
   font-family: 12px;
   color: #4d4d4d;
+  font-family: 'Lato' sans-serif;
 }
 .cohort {
   text-align: center;
   padding: 5rem 0 2rem 0;
+  font-family: 'Lato' sans-serif;
 }
 .register {
-  max-width: 150px;
+  max-width: 400px;
   padding-bottom: 4rem;
   margin: auto;
+  font-family: 'Lato' sans-serif;
 }
 @media screen and (max-width: 420px) {
   .categories {
