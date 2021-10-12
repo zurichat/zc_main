@@ -82,31 +82,34 @@ const DropDown = ({ itemName, items }) => {
             if (room.room_name !== undefined) {
               return (
                 // console.log(itemList)
-                <li key={index} className={`row ${styles.item__list}`}>
+                <li key={index} className={`row py-1 ${styles.item__list}`}>
                   <a
                     className={`col-12 d-flex align-items-center ${styles.item_name}`}
                     href={room.room_url}
                     onClick={navigateToUrl}
                     ref={click}
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: "none", marginLeft:15 }}
                   >
                     <img
                       ref={click}
-                      className={`${styles.item__image}`}
+                      className={`${styles.item__image} `}
                       src={room.room_image || hash.toString()}
                       onError={e => (e.target.src = hash.toString())}
                       alt="img"
                     />
-                    <div className={`mb-0 ${styles.dropDown__name}`}>
+                    
+                    <div className={`mb-0 d-inline-flex align-items-center ${styles.dropDown__name}`}>
                       {room.room_name}
                       {/* Add to Room Button */}
-                      {/* <AiOutlinePlusCircle
-                        className={`d-inline-flex align-items-center ms-2 ${styles.icon}`}
+                      &nbsp;
+                      &nbsp;
+                      <AiOutlinePlusCircle
+                        className={`mb-0 ${styles.icon}`}
                         onClick={() => {
                           setAddToRoom(!addToRoom)
                           setRoomId(room._id)
                         }}
-                      /> */}
+                      /> 
                       <div className={`${styles.optionsContainer}`}>
                         <RoomOptions isClicked={isClicked} />
                       </div>
