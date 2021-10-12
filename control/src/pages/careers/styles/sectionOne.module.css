@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
 
 * {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -9,18 +9,20 @@ button:hover {
   cursor: pointer;
 }
 .Section1 {
-  padding: 60px;
+  padding: 2rem;
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5rem;
   margin-bottom: 4rem;
 }
 .Section1 img {
-  padding-top: 65px;
-  width: 90%;
+  padding-top: 2rem;
+  width: 100%;
 }
 .section1Left {
-  padding: 70px 40px 20px 0px;
+  width: 60%;
+  margin-top: 0.5rem;
+  padding: 3rem;
 }
 .section1Left h1 {
   font-size: 40px;
@@ -29,7 +31,7 @@ button:hover {
 .section1Left p {
   font-size: 24px;
   line-height: 1.5;
-  padding: 0px 160px 0px 0px;
+  padding: 1rem 0 1rem 0;
 }
 .section1Left .JoinBtn {
   display: inline-block;
