@@ -163,8 +163,7 @@ const Downloads = ({ setModal }) => {
                         aria-label={`Clear ${file.size} file `}
                         className={styles.closeBtn}
                         onClick={() => {
-                          setFiles(files.splice(index,1));
-                          setModal('no')
+                          setFiles(files.filter(file => file.name !== files[index].name));
                         }}
                       >
                         <img src={close} alt="" />
