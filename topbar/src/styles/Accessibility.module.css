@@ -35,14 +35,14 @@
 
 .accessibilityCheckbox,
 .accessibilityRadio {
-  margin: 0px;
-  height: 12px;
-  width: 10px;
+  /* margin: 0px; */
+  /* height: 25px; */
+  /* width: 20px; */
   color: green;
 }
 
 .accessibilityLabel {
-  margin-left: -13px;
+  margin-left: -5px;
   margin-top:10px;
   color: #3a3a3a;
   font-size: 13px;
@@ -67,7 +67,7 @@
 
 .imagesAndEmojis {
   text-align: left;
-  font-size: 13px;
+  font-size: 15px;
   margin-top: -5px;
 }
 
@@ -77,7 +77,7 @@
 
 .accessibilityP {
   font-family: Lato;
-  font-size: 13px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
@@ -91,7 +91,7 @@
 .accessibilityEsc {
   background-color: #f9f9f9;
   padding: 2px 5px;
-  font-size: 13px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
@@ -122,8 +122,8 @@
   font-family: Lato;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
-  line-height: 130%; 
+  font-size: 15px;
+line-height: 130%; 
   margin-top: -44px;
 
 }

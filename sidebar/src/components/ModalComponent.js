@@ -1,13 +1,16 @@
 import React, { useState, useRef, useEffect } from "react"
 import styles from "../styles/ModalComponentStyles.module.css"
-import CompanyImage from "../assets/images/CompanyIcon.svg"
-import TotalMessages from "../assets/images/TotalMessages.svg"
-import axios from "axios"
+import CompanyImage from "../assets/icons/CompanyIcon.svg"
+import TotalMessages from "../assets/icons/TotalMessages.svg"
+// import axios from 'axios'
 import { RiArrowRightSLine as Arrow } from "react-icons/ri"
-import { faClosedCaptioning } from "@fortawesome/free-solid-svg-icons"
-import Workspace from "../../../control/src/pages/workspace/components/Workspace"
+// import { faClosedCaptioning } from '@fortawesome/free-solid-svg-icons'
+// import Workspace from '../../../control/src/pages/workspace/components/Workspace'
 
-const ModalComponent = ({ orgs, workSpace, isOpen, toggleOpenInvite }) => {
+const orgss = sessionStorage.getItem("organisations")
+const orgs = JSON.parse(orgss)
+
+const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
   // const isOpen = true;
 
   const [hoverRef, isHovered] = useHover()
@@ -45,7 +48,7 @@ const ModalComponent = ({ orgs, workSpace, isOpen, toggleOpenInvite }) => {
           <span>{workSpace.workspace_url}</span>
         </div>
       </div>
-      <hr className={styles.modalDivider} />
+      {/* <hr className={styles.modalDivider} />
       <div
         className={`d-flex align-items-center justify-content-between ${styles.TopmodalSection}`}
       >
@@ -55,11 +58,11 @@ const ModalComponent = ({ orgs, workSpace, isOpen, toggleOpenInvite }) => {
             The workspace is currently on the free version of Zuri Chat.
           </p>
           <span> see plans</span>
-        </div>
+        </div> 
         <div className={`${styles.infoChart}`}>
           <img src={TotalMessages} alt="chart" />
         </div>
-      </div>
+      </div> */}
       <hr className={styles.modalDivider} />
       <div className={` d-flex flex-column ${styles.modalSection}`}>
         <div>
