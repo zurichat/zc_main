@@ -32,6 +32,7 @@ function ContactFormContainer() {
     success: ''
   })
 
+
   useEffect(() => {
     let userInfo = GetUserInfo()
     setUserAuth(userInfo.email ? userInfo : {})
@@ -91,6 +92,7 @@ function ContactFormContainer() {
     // setValues(values => ({ ...values, [e.target.name]: e.target.value }))
     setValues({ ...values, [e.target.name]: e.target.value })
   }
+  
   const handleTopicChange = detail => e => {
     setCurrentDetails(detail)
     setValues(values => ({ ...values, subject: detail.topic }))
@@ -161,12 +163,15 @@ function ContactFormContainer() {
           }`}
         >
           <div className={`w-100`}>
-            <div className={`d-flex align-items-center mb-3`}>
-              <p className={`fw-bold ${ContactFormStyle.subHead}`}> Topic</p>
+            <div className={`d-flex align-items-center my-4`}>
+              <p className={`fw-bold mb-0 ${ContactFormStyle.subHead}`}> Topic</p>
 
               <p
-                className={`fw-bold ms-2 pt-1 ${ContactFormStyle.text_primary} ${ContactFormStyle.change}`}
-                style={{ fontSize: 12 }}
+                className={`fw-bold ms-2 mb-0 ${ContactFormStyle.text_primary} ${ContactFormStyle.change}`}
+                style={{
+                  fontSize: '12px',
+                  lineHeight: '14.4px'
+                }}
                 onClick={() => {
                   setValues(values => ({ ...values, subject: '' }))
                   setCurrentDetails({})
@@ -178,7 +183,7 @@ function ContactFormContainer() {
             <div className="d-grid">
               <button
                 type="button"
-                className={`btn ${ContactFormStyle.btn_primary} ${ContactFormStyle.btn_topic_select} shadow-none text-nowrap fw-bold mb-3 me-3`}
+                className={`btn ${ContactFormStyle.btn_primary} ${ContactFormStyle.btn_topic_select} shadow-none text-nowrap fw-bold mb-3`}
               >
                 {currentDetails.topic}
               </button>
@@ -199,14 +204,14 @@ function ContactFormContainer() {
                       id="headingOne"
                     >
                       <button
-                        className={`fw-bold ${ContactFormStyle.accordion_button} bg-white shadow-none p-0 px-2`}
+                        className={`fw-bold ${ContactFormStyle.accordion_button} text-start bg-white shadow-none p-0 px-2`}
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target={'#collapse' + index}
                         aria-expanded="true"
                         aria-controls="collapseOne"
                       >
-                        <span>{title}</span> <img src={downIcon} alt="down" />
+                        <span>{title}</span> <img src={downIcon} className={`ms-1`} alt="down" />
                       </button>
                     </h2>
                     <div
@@ -226,18 +231,23 @@ function ContactFormContainer() {
             <p className={`fw-bold my-3`} style={{ fontSize: '14px' }}>
               Related articles
             </p>
-            <ul>
+            <ul 
+              style={{
+                paddingLeft: 0,
+              }}
+            >
               {currentDetails.articles &&
                 currentDetails.articles.map((article, index) => {
                   return (
                     <li
                       key={index}
                       style={{
-                        color: '#00B87C',
+                        color: 'rgb(0, 184, 124)',
                         fontWeight: 'bold',
                         lineHeight: '18px',
                         display: 'flex',
                         alignItems: 'center',
+                        padding: '4px 0',
                         cursor: 'pointer'
                       }}
                     >
@@ -245,7 +255,7 @@ function ContactFormContainer() {
                       <img
                         src={arrowRight}
                         alt=""
-                        style={{ paddingLeft: '4px' }}
+                        style={{ paddingLeft: '8px' }}
                       />
                     </li>
                   )
@@ -268,7 +278,7 @@ function ContactFormContainer() {
                 type="button"
                 key={detail.topic}
                 disabled={!(values.subject === '')}
-                className={`btn ${ContactFormStyle.btn_topic} text-nowrap fw-bold rounded-pill mb-3 me-3`}
+                className={`btn ${ContactFormStyle.btn_topic} text-nowrap fw-bold rounded-pill mb-3 me-md-3`}
                 onClick={handleTopicChange(detail)}
               >
                 {detail.topic}
@@ -333,7 +343,7 @@ function ContactFormContainer() {
                 <p>Drag and drop a file to attach it, or</p>
                 <a
                   style={{
-                    color: '#00B87C',
+                    color: 'rgb(0, 184, 124)',
                     fontSize: '15px',
                     cursor: 'pointer'
                   }}
