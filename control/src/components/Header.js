@@ -116,6 +116,7 @@ const HeaderSearchSuggestion = () => {
               <Link
                 to="/ebooks"
                 className={`nav-link ${headerStyles.navLinkComms}`}
+                
               >
                 <span className={`${headerStyles.item}`}>Ebooks</span>
               </Link>
