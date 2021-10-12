@@ -186,6 +186,7 @@
   height: 36px;
   border-radius: 6px;
   opacity: 0;
+  width: 100%;
   transform: translateY(10px);
   transition: all 0.3s ease-in-out;
 }
