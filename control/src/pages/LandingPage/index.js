@@ -1,24 +1,25 @@
-import React from 'react'
-import style from './styles/LandingPage.module.css'
-import hero_img from './assets/MacBookAir.svg'
-import logo_hng from './assets/logo_hng.svg'
-import logo_i4g from './assets/logo_i4g.svg'
-import logo_camphouse from './assets/logo_camphouse.svg'
-import logo_zuri from './assets/logo_zuri.svg'
-import ft_img1 from './assets/ft_img1.svg'
-import ft_img2 from './assets/ft_img2.svg'
-import ft_img3 from './assets/ft_img3.svg'
-import ft_img4 from './assets/ft_img4.svg'
-import sign_up_img from './assets/sign_up_img.svg'
-import arrow_right from './assets/ArrowRight.svg'
+/* eslint-disable react/prop-types */
+import React from "react"
+import style from "./styles/LandingPage.module.css"
+import hero_img from "./assets/MacBookAir.svg"
+import logo_hng from "./assets/logo_hng.svg"
+import logo_i4g from "./assets/logo_i4g.svg"
+import logo_camphouse from "./assets/logo_camphouse.svg"
+import logo_zuri from "./assets/logo_zuri.svg"
+import ft_img1 from "./assets/ft_img1.svg"
+import ft_img2 from "./assets/ft_img2.svg"
+import ft_img3 from "./assets/ft_img3.svg"
+import ft_img4 from "./assets/ft_img4.svg"
+import sign_up_img from "./assets/sign_up_img.svg"
+import arrow_right from "./assets/ArrowRight.svg"
 
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
+import Header from "../../components/Header"
+import Footer from "../../components/Footer"
 
-import { Link, useHistory } from 'react-router-dom'
-import Cookies from '../cookies'
-import Subscribe from './components/Subscribe'
-import { Helmet } from 'react-helmet'
+import { Link, useHistory } from "react-router-dom"
+import Cookies from "../cookies"
+import Subscribe from "./components/Subscribe"
+import { Helmet } from "react-helmet"
 
 export default function Homepage() {
   const { useState, useEffect } = React
@@ -28,18 +29,17 @@ export default function Homepage() {
   // For create workspace redirect start
 
   let history = useHistory()
-  
+
   const createWorkspaceRedirect = () => {
     useEffect(() => {
       const userInfo = sessionStorage.getItem(`user`)
-  
-      if (userInfo && userInfo !== null)
-       { 
-         history.push("/createworkspace")
-        } else {
-         history.push("/signup")
-       }
-      }, [history])
+
+      if (userInfo && userInfo !== null) {
+        history.push("/createworkspace")
+      } else {
+        history.push("/signup")
+      }
+    }, [history])
   }
 
   // create workspace redirect end
@@ -47,8 +47,8 @@ export default function Homepage() {
   const cookieStorage = {
     getItem: key => {
       const cookies = document.cookie
-        .split(';')
-        .map(cookie => cookie.split('='))
+        .split(";")
+        .map(cookie => cookie.split("="))
         .reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: value }), {})
       return cookies[key]
     },
@@ -57,8 +57,8 @@ export default function Homepage() {
     }
   }
 
-  const allowCookie = cookieStorage.getItem('Zuri Chat Accept')
-  const declineCookie = cookieStorage.getItem('Zuri Chat Decline')
+  const allowCookie = cookieStorage.getItem("Zuri Chat Accept")
+  const declineCookie = cookieStorage.getItem("Zuri Chat Decline")
 
   if (!allowCookie == true || declineCookie == true) {
     useEffect(() => {
@@ -124,7 +124,7 @@ export default function Homepage() {
               <div className={`${style.hero_left_btn_wrap}`}>
                 <Link to="/signup">
                   <button className={`${style.hero_left_btn}`}>
-                    Try Zuri.chat for free
+                    Try Zuri Chat for free
                   </button>
                 </Link>
               </div>
@@ -135,8 +135,8 @@ export default function Homepage() {
           </div>
         </div>
         {/* { COOKIES BANNER} */}
-        <div>{loading ? '' : <Cookies />}</div>
-         {/* COMPANIES */}
+        <div>{loading ? "" : <Cookies />}</div>
+        {/* COMPANIES */}
         {/* <div className={`${style.company_banner_wrap}`}>
           <div className={`${style.company_banner}`}>
             <p className={`${style.cbp}`}>Trusted by top companies worldwide</p>
@@ -159,7 +159,7 @@ export default function Homepage() {
               pContent2="Invite your team to your workspace. Stay connected,stay in sync, and explore ideas together from anywhere."
               href="/createworkspace"
               aContent="Create your own workspace"
-              onClick = { createWorkspaceRedirect }
+              onClick={createWorkspaceRedirect}
             />
             <FeatureRow
               src={ft_img2}
@@ -167,7 +167,7 @@ export default function Homepage() {
               pContent1="Remote Education"
               h2Content="Learn on the Go"
               pContent2="Take your classroom everywhere, make learning fun, stay engaged and inspired with the virtual lounge and games."
-              href="#"
+              href="/features"
               aContent="Learn more about the virtual lounge"
               rowOrder={style.ft_row_reverse}
             />
@@ -177,7 +177,7 @@ export default function Homepage() {
               pContent1="All-in-one Workspace"
               h2Content="Customise your Workspace"
               pContent2="One tool, several plugins. Track company expenses, send information fast and smoothly, manage files and integrate tools all with Zuri.chat."
-              href="#"
+              href="/apps-integrations"
               aContent="Explore Plugins"
             />
             <FeatureRow
@@ -186,7 +186,7 @@ export default function Homepage() {
               pContent1="Advanced Search"
               h2Content="Access Files and Messages in your Workspace Effortlessly"
               pContent2="With the search tool, find previously shared messages, files and links with ease."
-              href="#"
+              href="/resources"
               aContent="Learn more about Search"
               rowOrder={style.ft_row_reverse}
             />
