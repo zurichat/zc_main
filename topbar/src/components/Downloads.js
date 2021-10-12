@@ -26,28 +26,28 @@ const Downloads = ({ setModal }) => {
       name: 'Windows App',
       size: '',
       src: windows,
-      link: 'https://store3.gofile.io/download/ded8a505-e87c-4c6e-8e6d-5142ecaac5ab/zuri%20desktop.exe',
+      link: 'https://firebasestorage.googleapis.com/v0/b/zurichat-bfba1.appspot.com/o/zuri%20desktop.exe?alt=media&token=8cf41d4e-0d9d-408b-8eb9-4d98643bea00',
       download: "Zurichat Android APK"
     },
     {
       name: 'macOS App',
-      size: '',
+      size: '27MB',
       src: mac,
-      link: '',
+      link: 'https://firebasestorage.googleapis.com/v0/b/zurichat-bfba1.appspot.com/o/zuri%20desktop.exe?alt=media&token=8cf41d4e-0d9d-408b-8eb9-4d98643bea00',
       download: "Zurichat Android APK"
     },
     {
       name: 'iOS App',
-      size: '',
+      size: '22.94MB',
       src: ios,
-      link: '',
+      link: 'https://firebasestorage.googleapis.com/v0/b/zurichat-bfba1.appspot.com/o/Zuri%20Chat%20%2011-10-21.apk?alt=media&token=7ddfbdac-418b-46b7-9205-3007c751e91c',
       download: "Zurichat Android APK"
     },
     {
       name: 'Android App',
-      size: '',
+      size: '22.94MB',
       src: android,
-      link: 'https://store3.gofile.io/download/b3202acf-3166-4892-8aa9-270397757a14/Zurichat-Android.apk',
+      link: 'https://firebasestorage.googleapis.com/v0/b/zurichat-bfba1.appspot.com/o/Zuri%20Chat%20%2011-10-21.apk?alt=media&token=7ddfbdac-418b-46b7-9205-3007c751e91c',
       download: "Zurichat Android APK"
     },
   ])
@@ -151,6 +151,7 @@ const Downloads = ({ setModal }) => {
                           className={styles.content}
                           href={file.link}
                           download={file.download}
+                          target="_blank"
                         ></a>
                       </div>
                     </button>
