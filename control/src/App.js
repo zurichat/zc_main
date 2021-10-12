@@ -12,12 +12,14 @@ import CookiesSetting from './pages/cookiesSettings'
 import Cookies from './pages/cookies'
 import Features from './pages/features'
 import Resources from './pages/resources'
+import Help from './pages/Help'
 import Pricing from './pages/pricing'
 import Security from './pages/security'
 import Invite from './pages/inviteScreen'
 import Inviterequest from './pages/InviteRequest/InviteRequest'
 import SendRequest from './pages/InviteRequest/SendRequest'
 import ContactUs from './pages/contact-us'
+import Search from './pages/search'
 import AppsAndIntegrations from './pages/apps-integration'
 import Download from './pages/download'
 import DownloadsMac from './pages/download/DownloadsMac'
@@ -34,6 +36,7 @@ import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContex
 import PrivacyPolicy from './pages/privacy-policy/index'
 import NotFoundPage from './pages/404'
 import Billing from './pages/admin/Billing'
+import Blog from './pages/blogs'
 import Homepage from './pages/home'
 import Permissions from './pages/admin/Permissions'
 import SettingsHome from './pages/admin/Settings/index'
@@ -41,6 +44,7 @@ import About from './pages/about/index'
 import AdminSettingsTab from './pages/admin/Settings/components/AdminSettingsTab'
 import TermsOfService from './pages/termsOfService'
 import RedirectRoute from './pages/redirect'
+
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -73,6 +77,9 @@ const App = () => {
         <Route path="/about">
           <About />
         </Route>
+        <Route path="/help">
+          <Help />
+        </Route>
         <Route path="/choose-workspace">
           <Workspace />
         </Route>
@@ -91,13 +98,19 @@ const App = () => {
         <Route path="/resources">
           <Resources />
         </Route>
+        <Route path="/search">
+          <Search />
+        </Route>
+        <Route path="/blog">
+          <Blog />
+        </Route>
         <Route path="/pricing">
           <Pricing />
         </Route>
         <Route path="/security">
           <Security />
         </Route>
-        <Route path="/download-app">
+        <Route path="/downloads">
           <Download />
         </Route>
         <Route path="/downloadsMac">
@@ -161,7 +174,7 @@ const App = () => {
           <Cookies />
         </Route>
 
-        <Route component={NotFoundPage} />
+        {/* <Route component={NotFoundPage} /> */}
       </Switch>
     </BrowserRouter>
   )

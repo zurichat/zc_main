@@ -43,6 +43,7 @@ export const WorkspaceProvider = ({ children }) => {
           }
         }
       )
+     
       if (response.status !== 200) {
         dispatch({
           type: "ACTION_FAILED",
