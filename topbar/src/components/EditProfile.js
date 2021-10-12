@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect, useContext } from "react"
 import ProfileModal from "./ProfileModal"
 import { authAxios } from "../utils/Api"
-
+import styles from '../styles/EditProfile.module.css'
 import { AiFillCamera } from "react-icons/ai"
 import defaultAvatar from "../assets/images/avatar_vct.svg"
 import { ProfileContext } from "../context/ProfileModal"
@@ -372,7 +372,7 @@ const EditProfile = () => {
               "Save"
             )}
           </div>
-          <div className="button-wrapper">
+          <div className={styles.button_wrapper}>
             <button className="btns cncBtn" onClick={toggleModalState}>
               Cancel
             </button>

@@ -1,0 +1,7 @@
+.button_wrapper {
+    position: fixed;
+    right: 10px;
+    margin-bottom: 3px;
+    border-top: .5px solid gray;
+    
+}
