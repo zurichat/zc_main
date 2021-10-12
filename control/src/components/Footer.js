@@ -60,6 +60,9 @@ const Footer = () => {
               <li>
                 <Link to="/about">About Zurichat</Link>{" "}
               </li>
+              <li>
+                <Link to="/ZurichatBlog">Blog</Link>{" "}
+              </li>
             </ul>
           </div>
 
@@ -73,6 +76,9 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/marketplace">Market Place</Link>{" "}
+              </li>
+              <li>
+                <Link to="/security">Security</Link>{" "}
               </li>
               <li>
                 <a href="https://zuri.chat/dao-featues">Web3/DAO</a>{" "}
@@ -89,8 +95,12 @@ const Footer = () => {
               <li>
                 <Link to="/contact-us">Contact Us</Link>{" "}
               </li>
+             
               <li>
                 <a href="https://docs.zuri.chat/">Documentation</a>{" "}
+              </li>
+              <li>
+                <Link to="/ebooks">Ebooks</Link>{" "}
               </li>
             </ul>
           </div>

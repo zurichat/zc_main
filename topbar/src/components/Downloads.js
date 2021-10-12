@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import styles from '../styles/Downloads.module.css'
-import pdf from '../assets/download_images/file-earmark-pdf.svg'
 import open from '../assets/download_images/file-open.svg'
 import close from '../assets/download_images/file-close.svg'
 import pointy from '../assets/download_images/pointy.svg'
@@ -11,46 +10,37 @@ import android from '../assets/download_images/android.png'
 
 const Downloads = ({ setModal }) => {
   //State For testing
-  const [files] = useState([
-    {
-      name: 'HNG Design Rules Book.pdf',
-      size: '5MB PDF',
-      src: pdf
-    },
-    {
-      name: 'HNG Entrepreneurship - Assignment 1.pdf',
-      size: '205KB PDF',
-      src: pdf
-    },
+  const [files, setFiles] = useState([
     {
       name: 'Windows App',
       size: '',
       src: windows,
-      link: 'https://store3.gofile.io/download/ded8a505-e87c-4c6e-8e6d-5142ecaac5ab/zuri%20desktop.exe',
-      download: "Zurichat Android APK"
+      link: 'https://firebasestorage.googleapis.com/v0/b/zurichat-bfba1.appspot.com/o/zuri%20desktop.exe?alt=media&token=8cf41d4e-0d9d-408b-8eb9-4d98643bea00',
+      download: "Zurichat Windows"
     },
     {
       name: 'macOS App',
-      size: '',
+      size: '27MB',
       src: mac,
       link: '',
-      download: "Zurichat Android APK"
+      download: "Zurichat Mac App"
     },
     {
       name: 'iOS App',
-      size: '',
+      size: '22.94MB',
       src: ios,
       link: '',
-      download: "Zurichat Android APK"
+      download: "Zurichat iOS App"
     },
     {
       name: 'Android App',
-      size: '',
+      size: '22.94MB',
       src: android,
-      link: 'https://store3.gofile.io/download/b3202acf-3166-4892-8aa9-270397757a14/Zurichat-Android.apk',
-      download: "Zurichat Android APK"
+      link: 'https://firebasestorage.googleapis.com/v0/b/zurichat-bfba1.appspot.com/o/Zuri%20Chat%20%2011-10-21.apk?alt=media&token=7ddfbdac-418b-46b7-9205-3007c751e91c',
+      download: "Zurichat Android"
     },
   ])
+
   return (
     <>
       <section role="dialog" className={styles.downloadsContainer}>
@@ -74,6 +64,9 @@ const Downloads = ({ setModal }) => {
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
+                      onClick={() => {
+                        setFiles([])
+                      }}
                     >
                       <path
                         d="M5.25 7.5H6.75H18.75"
@@ -151,6 +144,7 @@ const Downloads = ({ setModal }) => {
                           className={styles.content}
                           href={file.link}
                           download={file.download}
+                          target="_blank" rel="noreferrer"
                         ></a>
                       </div>
                     </button>
@@ -168,6 +162,10 @@ const Downloads = ({ setModal }) => {
                       <button
                         aria-label={`Clear ${file.size} file `}
                         className={styles.closeBtn}
+                        onClick={() => {
+                          setFiles(files.splice(index,1));
+                          setModal('no')
+                        }}
                       >
                         <img src={close} alt="" />
                         <div role="tooltip" className={styles.toolTip}>
