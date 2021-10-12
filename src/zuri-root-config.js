@@ -14,7 +14,10 @@ export const pluginRoutes = [
   location => location.pathname.startsWith("/expenses"),
   location => location.pathname.startsWith("/tools"),
   location => location.pathname.startsWith("/channels"),
-  location => location.pathname.startsWith("/contributions")
+  location => location.pathname.startsWith("/contributions"),
+
+  // MarketPlace Plugin
+  location => location.pathname.startsWith("/marketplace")
 ]
 
 registerApplication({
@@ -123,6 +126,13 @@ registerApplication({
   activeWhen: [location => location.pathname.startsWith("/contributions")]
 })
 //Bots go here
+
+// MarketPlace Plugin
+registerApplication({
+  name: "@zuri/marketplace",
+  app: () => System.import("@zuri/marketplace"),
+  activeWhen: [location => location.pathname.startsWith("/marketplace")]
+})
 
 start({
   urlRerouteOnly: true
