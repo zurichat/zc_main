@@ -3,11 +3,11 @@ import Content from './components/Content'
 import { Helmet } from 'react-helmet'
 import Header from '../../components/Header'
 
-const PrivacyPolicy = () => {
+const TermsCondition = () => {
   return (
     <div>
       <Helmet>
-        <title> Privacy Policy - Zuri Chat</title>
+        <title> Terms And Conditions - Zuri Chat</title>
       </Helmet>
       <Header />
       <Content />
@@ -16,4 +16,4 @@ const PrivacyPolicy = () => {
   )
 }
 
-export default PrivacyPolicy
+export default TermsCondition
