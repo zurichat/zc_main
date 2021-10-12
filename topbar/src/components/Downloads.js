@@ -64,7 +64,7 @@ const Downloads = ({ setModal }) => {
                       viewBox="0 0 24 24"
                       fill="none"
                       onClick={() => {
-                        files = []
+                        files.length = 0
                       }}
                     >
                       <path
