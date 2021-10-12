@@ -45,6 +45,7 @@ import About from './pages/about/index'
 import AdminSettingsTab from './pages/admin/Settings/components/AdminSettingsTab'
 import TermsOfService from './pages/termsOfService'
 import RedirectRoute from './pages/redirect'
+import Plugins from './pages/plugins'
 import Ebooks from './pages/ebooks'
 
 
@@ -108,6 +109,9 @@ const App = () => {
         </Route>
         <Route path="/pricing">
           <Pricing />
+        </Route>
+        <Route path="/plugins">
+          <Plugins />
         </Route>
         <Route path="/security">
           <Security />

@@ -6,6 +6,7 @@ import hash from "../assets/icons/hash.svg"
 import { AiOutlinePlusCircle } from "react-icons/ai"
 import PluginRoomAddUser from "./PluginRoomAddUser"
 import RoomOptions from "./RoomOptions"
+import infoIcon from "./../assets/icons/info-icon.svg"
 
 const DropDown = ({ itemName, items }) => {
   const [addToRoom, setAddToRoom] = useState(false)
@@ -53,7 +54,11 @@ const DropDown = ({ itemName, items }) => {
   }
 
   return (
-    <div className={`row p-0 ${styles.dropDown} text-decoration-none`}>
+    <div
+      className={`row p-0 ${styles.dropDown} text-decoration-none ${
+        isOpen && styles.openWrapper
+      }`}
+    >
       <div
         className={`col-12 d-flex align-items-center ${styles.plugin__title}`}
         onClick={toggleDropdown}
@@ -66,12 +71,13 @@ const DropDown = ({ itemName, items }) => {
         <div
           className={`w-100 d-flex align-items-center justify-content-between`}
         >
-          <p className={`mb-0 ${styles.dropDown__title}`}> {itemName} </p>
-          {items.button_url ? (
+          <p className={`mb-0 ${styles.dropDown__title}`}> {itemName}</p>
+          <img src={infoIcon} alt="icon" role="button" />
+          {/* {items.button_url ? (
             <a href={items.button_url} onClick={navigateToUrl}>
-              {/* <AiOutlinePlusCircle className={`${styles.icon}`} /> */}
+              <AiOutlinePlusCircle className={`${styles.icon}`} />
             </a>
-          ) : null}
+          ) : null} */}
         </div>
       </div>
       <ul
@@ -82,34 +88,31 @@ const DropDown = ({ itemName, items }) => {
             if (room.room_name !== undefined) {
               return (
                 // console.log(itemList)
-                <li key={index} className={`row py-1 ${styles.item__list}`}>
+                <li key={index} className={`row ${styles.item__list}`}>
                   <a
                     className={`col-12 d-flex align-items-center ${styles.item_name}`}
                     href={room.room_url}
                     onClick={navigateToUrl}
                     ref={click}
-                    style={{ textDecoration: "none", marginLeft:15 }}
+                    style={{ textDecoration: "none" }}
                   >
                     <img
                       ref={click}
-                      className={`${styles.item__image} `}
+                      className={`${styles.item__image}`}
                       src={room.room_image || hash.toString()}
                       onError={e => (e.target.src = hash.toString())}
                       alt="img"
                     />
-                    
-                    <div className={`mb-0 d-inline-flex align-items-center ${styles.dropDown__name}`}>
+                    <div className={`mb-0 ${styles.dropDown__name}`}>
                       {room.room_name}
                       {/* Add to Room Button */}
-                      &nbsp;
-                      &nbsp;
                       <AiOutlinePlusCircle
-                        className={`mb-0 ${styles.icon}`}
+                        className={`d-inline-flex align-items-center ms-2 ${styles.icon}`}
                         onClick={() => {
                           setAddToRoom(!addToRoom)
                           setRoomId(room._id)
                         }}
-                      /> 
+                      />
                       <div className={`${styles.optionsContainer}`}>
                         <RoomOptions isClicked={isClicked} />
                       </div>
