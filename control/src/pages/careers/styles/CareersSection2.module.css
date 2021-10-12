@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
 
 * {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -9,33 +9,39 @@ button:hover {
   cursor: pointer;
 }
 .Section2 {
+  font-family: 'Lato', sans-serif;
   margin-bottom: 0rem;
 }
 .Section2 h2 {
   font-size: 36px;
-  margin: 0;
+  margin: 1rem 0;
   text-align: center;
 }
 .Section2 p {
+  margin-bottom: 2.5rem;
   font-size: 20px;
   text-align: center;
 }
 .subSection2 {
   text-align: left;
-  padding: 69px 60px 69px 60px;
+  padding: 2rem 2.5rem;
   background-color: #00b87c;
-  display: flex;
-  flex-direction: row;
-  grid-gap: 100px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: baseline;
+  grid-gap: 2rem;
 }
+
 .subSection2 h3 {
+  margin: 1rem;
   font-size: 24px;
   color: #ffffff;
+  margin-bottom: 2rem;
 }
 .subSection2 p {
-  margin: 0;
+  margin: 1rem;
   text-align: left;
-  font-size: 20px;
+  font-size: 18px;
   color: #ffffff;
 }
 
@@ -68,7 +74,6 @@ button:hover {
     padding: 0 50px 0px 0px;
   }
 }
-
 
 @media screen and (max-width: 480px) {
   .Section2 h2 {
