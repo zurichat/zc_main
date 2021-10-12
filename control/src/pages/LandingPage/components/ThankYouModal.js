@@ -21,7 +21,7 @@ const ThankYouModal = ({ displayModal, setDisplayModal }) => {
           ref={modalRef}
         >
           <div className={`col-sm-12 d-flex flex-column }`}>
-            <div className={`p-5 ${css.modalWrap}`}>
+            <div className={`${css.modalWrap}`}>
               <div className={`row ${css.modalRow}`}>
                 <div
                   className={`col-sm-12 d-flex flex-column ${css.modalColumn}`}
