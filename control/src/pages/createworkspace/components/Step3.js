@@ -172,7 +172,7 @@ const Skip = styled(Link)`
   color: #808080;
   cursor: pointer;
   &:hover{
-    color: #808080;
+    color: #B0B0B0;
   }
 
   @media (max-width: 35rem) {
@@ -265,7 +265,7 @@ const Another = styled.a`
   cursor: pointer;
   &:hover {
     text-decoration: underline;
-    color: #333333;
+    color: #909090;
   }
   @media (max-width: 35rem) {
     font-size: ${14 / 16}rem;
