@@ -18,7 +18,7 @@ import { GetUserInfo, SubscribeToChannel } from "@zuri/control"
 import axios from "axios"
 import { AiOutlineMenu } from "react-icons/ai"
 import styles from "../src/styles/TopNavBar.module.css"
-import SearchAutocomplete from "./components/SearchAutocomplete"
+import SearchAutocomplete from "../src/components/SearchAutocomplete";
 
 import { navigateToUrl } from "single-spa"
 
@@ -165,21 +165,18 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const sidebar = document.getElementById(
     "single-spa-application:@zuri/sidebar"
   )
-
   useEffect(() => {
-    if (toggleSidebar) {
+    if (toggleSidebar && window.outerWidth <=768) {
       sidebar.style.display = "block"
-    } else {
+    } 
+    else if(window.outerWidth > 768){
+      sidebar.style.display = "block"
+    }
+    else {
       sidebar.style.display = "none"
     }
   }, [toggleSidebar, sidebar])
 
-  if (window.outerWidth <= 768) {
-      sidebar.style.display = 'none';
-  } 
-  else {
-      sidebar.style.display = 'block';
-  }
 
 
   const zc_spa_body = document.querySelector("body")
