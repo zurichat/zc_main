@@ -129,7 +129,7 @@ const App = () => {
         <Route path="/terms">
           <TermsOfService />
         </Route>
-        <Route path="/DAO_Features">
+        <Route path="/dao-features">
           <DAO_Features />
         </Route>
         <Route path="/marketplace" exact>
