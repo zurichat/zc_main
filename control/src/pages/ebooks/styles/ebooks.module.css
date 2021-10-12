@@ -114,11 +114,11 @@
       flex: 100%;
     }
     .right2 img{
-      width: calc(100% - 3rem);
+      width: calc(80% - 3rem);
     }
 
     .left img{
-      width: calc(100% - 3rem);
+      width: calc(80% - 3rem);
     }
     
 
