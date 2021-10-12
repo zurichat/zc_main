@@ -129,6 +129,16 @@ const HeaderSearchSuggestion = () => {
                 <span className={`${headerStyles.item}`}>Contact</span>
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink
+                to="/security"
+                className="nav-link"
+                role="button"
+                aria-expanded="false"
+              >
+                <span className={`${headerStyles.item}`}>Security</span>
+              </NavLink>
+            </li>
           </ul>
 
           <ul className={`d-lg-none navbar-nav-scroll ${headerStyles.signs}`}>
