@@ -31,11 +31,15 @@
 .modalContent,
 .modalFull {
   width: 90%;
-  max-width: 885px;
+  /* max-width: 885px; */
+  max-width: 700px;
   background: #fff;
   border-radius: 4px;
   overflow: hidden;
   padding-bottom: 20px;
+  height: 80vh;
+  margin-top: 90px;
+  margin-right: 40px;
 }
 
 .modalCont {
@@ -58,7 +62,7 @@
   font-family: "Lato", sans-serif;
   color: #fff;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   z-index: 999;
   position: sticky;
 
@@ -128,7 +132,7 @@
     position: fixed;
 
     width: 100%;
-    height: 4rem;
+    height: 6rem;
     padding: 0 1.5rem;
     font-size: 1.2rem;
     background: none;
