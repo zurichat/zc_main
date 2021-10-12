@@ -11,6 +11,8 @@ const TermsCondition = () => {
       </Helmet>
       <Header />
       <Content />
-
-
+      <Footer />
+    </div>
+  )
+}
 export default TermsCondition
