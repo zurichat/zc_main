@@ -26,6 +26,17 @@ const index = () => {
       <Header />
       <div className={`container mb-5`}>
         <div className={`${styles.banner}`}>
+        <h1>
+            Make work simple, pleasant and <br />
+            more productive.
+          </h1>
+          <p>
+            ZuriChat is a collaboration hub that brings the right people and
+            tools together to get work done. From Fortune 100 companies to
+            corner markets, millions of people around the world use ZuriChat to
+            connect their teams, unify their systems, and drive their business
+            forward.
+          </p>
         </div>
         <div className={`row pt-3`}>
           <div className={`col-lg-4 ${styles.counter}`}>
