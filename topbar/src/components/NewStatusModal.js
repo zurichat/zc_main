@@ -15,6 +15,7 @@ import { TopbarContext } from "../context/Topbar"
 const SetDateAndTime = ({ dateTime, setDateTime }) => {
   const [value, onChange] = useState(new Date())
   const [timevalue, timeChange] = useState("10:00")
+
   return (
     <>
       <div className={styles.modal}>
@@ -81,7 +82,6 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
     })
     setStatusModal(!statusModal)
   }
-
   return (
     <div className={styles.modal}>
       <div className={styles.modalcontainer}>
@@ -99,6 +99,7 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
             <div className={styles.addstatus}>
               <div className={styles.addstatusleft}>
                 <p
+                  className={styles.emojino}
                   onClick={() => setOpenEmoji(!openEmoji)}
                   value={emojiItem}
                   // onChange={e => setEmoji(e.target.value)}
@@ -130,8 +131,9 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
                 <input
                   type="text"
                   className={styles.input}
-                  placeholder="What is your status?"
-                  value={text}
+                  placeholder={user?.status?.text || "What is your status?"}
+                  // value={text}
+                  value={user?.status?.text || text}
                   onChange={e => setText(e.target.value)}
                 />
               </div>
@@ -216,7 +218,7 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
               type="submit"
               onClick={handleSubmit}
             >
-              Save changes
+              {user?.status?.text ? "Clear Status" : "Save Changes"}
             </button>
           </form>
           {/* {status.map((data)=>{
