@@ -121,13 +121,12 @@
 .filesItem {
   padding: 14px;
   margin-bottom: 24px;
-  transition: background-color 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   position: relative;
 }
 
 .filesItem:hover {
   background-color: #f6f6f6;
-  transition: transition .3s ease-in-out;
 }
 
 .filesItem:hover .filesDetails .content:before {
