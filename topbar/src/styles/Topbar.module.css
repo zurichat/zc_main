@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 .container {
   display: flex;
   align-items: center;
@@ -140,6 +140,17 @@
   justify-content: center;
   padding-top: 5.6875rem;
   padding-bottom: 2rem;
+  z-index: 2;
+}
+
+.modalBackDrop {
+  position: absolute;
+  z-index: 3;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 /* The section one */
@@ -241,10 +252,10 @@
 /* The section two */
 
 .sectionTwo {
-  background: #ffffff;
+  background: #F6F6F6;
   padding: 0px;
   border-radius: 4px;
-  border: 1px solid #a1a1a1;
+  /* border: 1px solid #a1a1a1; */
   width: 85%;
   margin: auto;
   cursor: pointer;
@@ -261,6 +272,8 @@
 
 .sectionTwo .emoji {
   float: left;
+  font-size: 18px;
+  padding: 0 0.3rem;
 }
 /* The section of the picker */
 
@@ -307,7 +320,7 @@
 
 .sectionThree p {
   font-family: Lato;
-  color: #333333;
+  color: #3A3A3A;
   font-size: 15px;
   font-weight: 400;
   line-height: 18px;
