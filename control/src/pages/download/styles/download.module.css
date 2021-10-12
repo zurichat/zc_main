@@ -9,10 +9,13 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 70px;
+  width: 90%;
+  margin: auto;
 }
 .screenshot {
-  width: 638px;
+  width: 350px;
 }
+
 .screen {
   height: 800px;
   width: 100%;
@@ -28,9 +31,28 @@ body {
 }
 
 .heroText {
-  width: 80%;
+  width: 90%;
+  margin: auto;
 }
 
+.heroImages {
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 2%;
+}
+
+.alignCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.mobileImage {
+  margin-bottom: 30px;
+}
 .button1 {
   display: inline-block;
   border-radius: 4px;
@@ -74,10 +96,10 @@ a:hover {
   display: inline-block;
   border-radius: 4px;
   color: white;
-  background-color: #00b87c;
-  padding: 16px 30px;
-  font-size: 18px;
-  line-height: 28px;
+  background-color: #000;
+  padding: 10px 15px;
+  padding-right: 20px;
+  font-size: 14px;
   font-weight: normal;
   text-decoration: none;
   margin: 15px;
@@ -177,6 +199,11 @@ a:hover {
   }
 
   .downloadButton {
+    padding: 11px 22px;
+    font-size: 13px;
+    margin: 15px;
+  }
+  .downloadButton1 {
     padding: 11px 22px;
     font-size: 13px;
     margin: 15px;
