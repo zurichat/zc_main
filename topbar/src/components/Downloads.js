@@ -143,7 +143,7 @@ const Downloads = ({ setModal }) => {
                           className={styles.content}
                           href={file.link}
                           download={file.download}
-                          target="_blank"
+                          target="_blank" rel="noreferrer"
                         ></a>
                       </div>
                     </button>
