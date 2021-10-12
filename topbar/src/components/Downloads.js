@@ -10,7 +10,7 @@ import android from '../assets/download_images/android.png'
 
 const Downloads = ({ setModal }) => {
   //State For testing
-  const [files] = useState([
+  const [files, setFiles] = useState([
     {
       name: 'Windows App',
       size: '',
@@ -65,7 +65,7 @@ const Downloads = ({ setModal }) => {
                       viewBox="0 0 24 24"
                       fill="none"
                       onClick={() => {
-                        files.length = 0
+                        setFiles([])
                       }}
                     >
                       <path
@@ -163,7 +163,7 @@ const Downloads = ({ setModal }) => {
                         aria-label={`Clear ${file.size} file `}
                         className={styles.closeBtn}
                         onClick={() => {
-                          files.splice(index,1)
+                          setFiles(files.splice(index,1));
                           setModal('no')
                         }}
                       >
