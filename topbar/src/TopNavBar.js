@@ -16,8 +16,17 @@ import Profile from "./components/Profile"
 // import Loader from 'react-loader-spinner'
 import { GetUserInfo, SubscribeToChannel } from "@zuri/control"
 import axios from "axios"
+<<<<<<< HEAD
 import { AiOutlineMenu } from "react-icons/ai"
 import styles from "../src/styles/TopNavBar.module.css"
+=======
+import toggleStyle from "./styles/sidebartoggle.module.css"
+import { BsReverseLayoutTextSidebarReverse } from "react-icons/bs"
+
+import SearchAutocomplete from "./components/SearchAutocomplete"
+
+import { navigateToUrl } from "single-spa"
+>>>>>>> d02c336c6c72348d95741829fae007b564ba1797
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { closeModal, openModal, presence, setPresence } =
@@ -162,6 +171,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const sidebar = document.getElementById(
     "single-spa-application:@zuri/sidebar"
   )
+<<<<<<< HEAD
 
   useEffect(() => {
     if (toggleSidebar) {
@@ -170,6 +180,82 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       sidebar.style.display = "none"
     }
   }, [toggleSidebar, sidebar])
+=======
+  const zc_spa_body = document.querySelector("body")
+  const sidebar_toggle = document.querySelector("#sidebar_toggle")
+  const openSidebar = () => {
+    sidebar.style.display = "block"
+    sidebar.style.left = "0"
+    sidebar.style.width = "200px"
+    sidebar_toggle.style.display = "none"
+  }
+
+  // zc_spa_body.addEventListener('click', () => {
+  //   if (window.outerWidth <= 768) {
+  //     if (sidebar !== null) {
+  //       sidebar.style.display = 'none'
+  //       sidebar_toggle.style.display = 'block'
+  //     }
+  //   } else {
+  //     if (sidebar !== null) {
+  //       sidebar.style.display = 'block'
+  //       sidebar_toggle.style.display = 'none'
+  //     }
+  //   }
+  // })
+
+  // Search autocomplete
+
+  const [inputValue, setInputValue] = useState("")
+  const [filteredSuggestions, setFilteredSuggestions] = useState([])
+  const [selectedSuggestion, setSelectedSuggestion] = useState(0)
+  const [displaySuggestions, setDisplaySuggestions] = useState(false)
+
+  const suggestions = [
+    "Zuri Workspace",
+    "Squid Game",
+    "American Gods",
+    "A Game of Thrones",
+    "Prince of Thorns",
+    "Stephen Gbolagade",
+    "The Hero of Ages",
+    "Mark Essien"
+  ]
+
+  const handleSearchChange = event => {
+    const value = event.target.value
+    setInputValue(value)
+
+    const filteredSuggestions = suggestions.filter(suggestion =>
+      suggestion.toLowerCase().includes(value.toLowerCase())
+    )
+
+    setFilteredSuggestions(filteredSuggestions)
+    setDisplaySuggestions(true)
+  }
+
+  const onSelectSuggestion = index => {
+    setSelectedSuggestion(index)
+    setInputValue(filteredSuggestions[index])
+    setFilteredSuggestions([])
+    setDisplaySuggestions(false)
+  }
+
+  // end search
+
+  const handleEnter = e => {
+    e.preventDefault()
+    // eslint-disable-next-line no-console
+    console.log(window.location.href)
+
+    navigateToUrl("/search")
+    // let s= window.location.href.split('/')
+    // if(s[2].includes("local")){
+    //   window.location.href="http://localhost:9000/search"
+    // }else{
+    //   window.location.href="https://zuri.chat/search"
+  }
+>>>>>>> d02c336c6c72348d95741829fae007b564ba1797
 
   return (
     <>
@@ -193,16 +279,31 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         </button>
       </div>
       <div className="ms-4" style={{ width: "60%" }}>
-        <BaseInput
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-          type="text"
-          width={12}
-          error
-          placeholder="Search here"
-          border={"#99999933"}
-        />
+        <div>
+          <form onSubmit={handleEnter}>
+            <BaseInput
+              onChange={handleSearchChange}
+              value={inputValue}
+              type="text"
+              width={12}
+              error
+              placeholder="Search here"
+              border={"#99999933"}
+            />
+          </form>
+        </div>
+
+        <div>
+          <SearchAutocomplete
+            inputValue={inputValue}
+            selectedSuggestion={selectedSuggestion}
+            onSelectSuggestion={onSelectSuggestion}
+            displaySuggestions={displaySuggestions}
+            suggestions={filteredSuggestions}
+          />
+        </div>
       </div>
+
       <ProfileImageContainer
         className="d-flex justify-content-end pe-3"
         style={{ width: "20%" }}
