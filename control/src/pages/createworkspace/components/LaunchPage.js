@@ -34,7 +34,7 @@ function LaunchPage() {
           <h1 className={LaunchPageCSS.brandhub}> Launching {projectname}</h1>
 
           <div className={LaunchPageCSS.openZuriDesktop}>
-            Click <a href="/"> "Open Zuri Chat"</a> to launch the desktop
+            Click <a href="/home"> "Open Zuri Chat"</a> to launch the desktop
             app
           </div>
           {/* end */}
