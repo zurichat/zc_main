@@ -1,22 +1,22 @@
-import React, { useState } from 'react'
-import Footer from '../../components/Footer'
-import styles from './styles/download.module.css'
-import Header from '../../components/Header'
-import laptop from './assets/laptop.svg'
-import device from './assets/device.svg'
-import icon from './assets/icon.svg'
-import apple from './assets/apple.svg'
-import android from './assets/android.svg'
-import windows from './assets/windows.svg'
-import { isMacOs } from 'react-device-detect'
+import React, { useState } from "react"
+import Footer from "../../components/Footer"
+import styles from "./styles/download.module.css"
+import Header from "../../components/Header"
+import laptop from "./assets/laptop.svg"
+import device from "./assets/device.svg"
+import icon from "./assets/icon.svg"
+import apple from "./assets/apple.svg"
+import android from "./assets/android.svg"
+import windows from "./assets/windows.svg"
+import { isMacOs } from "react-device-detect"
 
 const DownloadsDesktop = () => {
-  const [exe, setexe] = useState({ link: '', name: '' })
+  const [exe, setexe] = useState({ link: "", name: "" })
   React.useEffect(() => {
-    if (isMacOs) return setexe({ name: 'DOWNLOAD FOR MAC' })
+    if (isMacOs) return setexe({ name: "DOWNLOAD FOR MAC" })
     return setexe({
-      name: 'DOWNLOAD FOR WINDOWS',
-      link: 'https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing'
+      name: "DOWNLOAD FOR WINDOWS",
+      link: "https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing"
     })
   }, [])
   return (
@@ -30,16 +30,46 @@ const DownloadsDesktop = () => {
           <p className={`${styles.p} mb-4`}>
             Connecting with your team has never been easier with Zuri Chat.
           </p>
-          <a href={exe.link} download={exe.name} className={styles.button1}>
+
+          <img
+            className={`${styles.screenshot}`}
+            src={device}
+            alt="app screenshot"
+          />
+          <h2>Zuri for Desktop</h2>
+
+          <div className={`${styles.downloadButtonContainer}`}>
+            <a
+              href={`https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing`}
+              className={styles.downloadButton}
+            >
+              Windows
+              <img className={`px-2`} src={windows} alt="download icon" />
+            </a>
+            <a href="/download-app" className={styles.downloadButton}>
+              macOS
+              <img className={`px-2`} src={apple} alt="download icon" />
+            </a>
+            {/* <a href="/download-app" className={styles.downloadButton}>
+              iOS
+              <img className={`px-2`} src={apple} alt="download icon" />
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1dbQS1rQOVUI87AzdeljF6LM5iRNnaMzZ/view"
+              download={exe.name}
+              className={styles.downloadButton}
+            >
+              Android
+              <img className={`px-2`} src={android} alt="download icon" />
+            </a> */}
+          </div>
+
+          {/* <a href={exe.link} download={exe.name} className={styles.button1}>
             <img className={`px-2`} src={icon} alt="download icon"></img>
             {exe.name}
-          </a>
+          </a> */}
         </div>
-        <img
-          className={`${styles.screenshot}`}
-          src={device}
-          alt="app screenshot"
-        />
+        {/*  */}
       </section>
 
       <section className={`${styles.info}`}>
@@ -49,29 +79,23 @@ const DownloadsDesktop = () => {
         <div className={`${styles.downloadButtonContainer}`}>
           <a
             href={`https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing`}
-            className={styles.downloadButton}
+            className={styles.downloadButton1}
           >
             Windows
             <img className={`px-2`} src={windows} alt="download icon" />
           </a>
-          <a
-            href="/download-app"
-            className={styles.downloadButton}
-          >
+          <a href="/download-app" className={styles.downloadButton1}>
             macOS
             <img className={`px-2`} src={apple} alt="download icon" />
           </a>
-          <a
-            href="/download-app"
-            className={styles.downloadButton}
-          >
+          <a href="/download-app" className={styles.downloadButton1}>
             iOS
             <img className={`px-2`} src={apple} alt="download icon" />
           </a>
           <a
             href="https://drive.google.com/file/d/1dbQS1rQOVUI87AzdeljF6LM5iRNnaMzZ/view"
             download={exe.name}
-            className={styles.downloadButton}
+            className={styles.downloadButton1}
           >
             Android
             <img className={`px-2`} src={android} alt="download icon" />
