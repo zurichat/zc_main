@@ -195,7 +195,7 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
                     >
                       This week
                     </li>
-                    {/* <li
+                    <li
                       className={styles.dropdownoption2}
                       onClick={() => setDateTime(!dateTime)}
                     >
@@ -206,7 +206,7 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
                         setDateTime={setDateTime}
                         dateTime={dateTime}
                       />
-                    ) : null} */}
+                    ) : null}
                   </ul>
                 )}
               </div>
