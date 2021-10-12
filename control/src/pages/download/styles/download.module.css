@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap");
 
 body {
-  font-family: 'Lato', sans-serif !important;
+  font-family: "Lato", sans-serif !important;
 }
 .hero {
   margin-top: 100px !important;
@@ -28,7 +28,7 @@ body {
 }
 
 .heroText {
-  width: 40%;
+  width: 80%;
 }
 
 .button1 {
@@ -73,6 +73,19 @@ a:hover {
 .downloadButton {
   display: inline-block;
   border-radius: 4px;
+  color: white;
+  background-color: #00b87c;
+  padding: 16px 30px;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: normal;
+  text-decoration: none;
+  margin: 15px;
+}
+
+.downloadButton1 {
+  display: inline-block;
+  border-radius: 4px;
   color: #00b87c;
   background-color: white;
   padding: 16px 30px;
@@ -84,6 +97,11 @@ a:hover {
 }
 
 .downloadButton:hover {
+  background-color: #e5e5e5;
+  text-decoration: none;
+  color: #00b87c;
+}
+.downloadButton1:hover {
   background-color: #e5e5e5;
   text-decoration: none;
   color: #00b87c;
