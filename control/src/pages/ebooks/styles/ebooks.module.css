@@ -80,22 +80,7 @@
     align-items: center;
     justify-content: center;
   }
-  
-  .left2 button{
-    box-sizing: border-box;
-    background-color: #00b87c;
-    border-radius: 3px;
-    border: 0;
-    outline: 0;
-    cursor: pointer;
-    padding: 8px 14px;
-    color: #ffffff;
-  }
-  
-  .button:hover{
-    background-color: #156349;
-  }
-  
+   
   
   .rightImg{
     width: 100%;
@@ -127,9 +112,4 @@
 
   } 
 
-  /* @media(max-width: 500px){
-  .mobile-flex{
-    flex-direction: column-reverse !important;
-  }
-} */
   
