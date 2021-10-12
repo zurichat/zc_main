@@ -63,6 +63,9 @@ const Downloads = ({ setModal }) => {
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
+                      onClick={() => {
+                        files = []
+                      }}
                     >
                       <path
                         d="M5.25 7.5H6.75H18.75"
@@ -76,10 +79,8 @@ const Downloads = ({ setModal }) => {
                         fill="white"
                       />
                     </svg>
-                    <div role="tooltip" className={styles.toolTip} 
-                    onClick={() => {
-                      files = []
-                    }}>
+                    <div role="tooltip" className={styles.toolTip}>
+                    
                       <p>Clear download</p>
                       <img src={pointy} alt="" />
                     </div>
