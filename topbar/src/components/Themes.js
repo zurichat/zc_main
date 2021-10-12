@@ -155,6 +155,7 @@ const Themes = () => {
           </div>
         </div>
       </div>
+      <div className={styles.line}></div>
       <div className={styles.customize}>
         <div className={styles.text3}>Colors</div>
         <div className={styles.custom}>
@@ -202,6 +203,7 @@ const Themes = () => {
             <img src={theme21} alt="theme21" className={styles.theme21} />
           </div>
         </div>
+        <div className={styles.line2}></div>
       </div>
     </div>
   )

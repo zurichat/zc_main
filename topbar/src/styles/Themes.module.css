@@ -5,26 +5,30 @@
   --text-color: #000;
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --bg-color: #3f3f3f;
   --text-color: #fff;
 }
 
-[data-theme='light'] {
+[data-theme="light"] {
   --bg-color: #fff;
   --text-color: #3f3f3f;
 }
 
 .themeCont {
-  margin-top: 54px;
+  margin-top: 14px;
   margin-left: 50px;
-  width: 15%;
   font-family: sans-serif;
   text-align: center;
   background-color: var(--bg-color);
   color: var(--text-color);
   width: var(--width);
   height: var(--height);
+  overflow-x: hidden;
+}
+
+.themeCont::-webkit-scrollbar {
+  display: none;
 }
 
 .sync {
@@ -33,7 +37,7 @@
 }
 
 .checkbox {
-  margin-top: -11px;
+  margin-top: -2px;
   margin-left: 7px;
 }
 
@@ -47,26 +51,25 @@
   color: #999999;
 }
 
-.them {
+/* .them {
   color: #999999;
   font-size: 15px;
   font-weight: bold;
   margin-left: -466px;
   margin-top: 30px;
-}
+} */
 
 .them {
-  color: #242424;
+  color: #999999;
   font-size: 15px;
   font-weight: bold;
-  margin-left: -431px;
+  margin-left: -488px;
 }
 
 .text {
   font-size: 14px;
   margin-top: 8px;
-  margin-left: -143px;
-  margin-left: -108px;
+  margin-left: -164px;
   font-weight: 500;
   color: #999999;
   position: relative;
@@ -78,7 +81,7 @@
 }
 
 .radio {
-  margin-top: -11px;
+  margin-top: -2px;
   margin-left: 7px;
 }
 
@@ -93,8 +96,7 @@
 }
 
 .text2 {
-  margin-left: -54px;
-  margin-left: -19px;
+  margin-left: -72px;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
@@ -104,28 +106,28 @@
   margin-top: 10px;
 }
 
-.theme1 {
-  width: 90%;
-  margin-top: 25px;
-  margin-left: 32px;
-}
-
-.theme2 {
-  width: 90%;
-  margin-top: 25px;
-  margin-left: 32px;
-}
-
 .customize {
-  border-top: 1px solid rgba(153, 153, 153, 0.5);
   margin-top: 15px;
-  margin-left: 6px;
+  margin-left: -30px;
   width: 90%;
   width: 115%;
 }
 
+.line {
+  border: 1px solid rgba(153, 153, 153, 0.5);
+  margin-top: 18px;
+  margin-left: 5px;
+  width: 90%;
+}
+
+.line2 {
+  border: 1px solid rgba(153, 153, 153, 0.5);
+  margin-top: 18px;
+  width: 80%;
+}
+
 .text3 {
-  margin-top: 28px;
+  margin-top: 20px;
   margin-left: -430px;
   margin-left: -515px;
   font-weight: 750;
@@ -198,12 +200,12 @@
 .all {
   display: flex;
   margin-top: 13px;
-  margin-left: 10px;
-  margin-left: 4px;
+  margin-left: 15px;
 }
 
 .show {
-  margin-left: 10px;
+  margin-left: 8px;
+  margin-top: -5px;
   font-size: 13px;
   font-weight: 500;
   line-height: 20px;
@@ -212,24 +214,22 @@
 }
 
 .arrow {
-  margin-top: -13px;
+  margin-top: -11px;
 }
 
 .clean {
-  margin-top: 20px;
-  margin-left: 32px;
+  margin-top: 15px;
   font-size: 13px;
   font-weight: 500;
   line-height: 20px;
   font-style: normal;
   color: #999999;
-  margin-left: -400px;
+  margin-left: -424px;
 }
 
 .set2 {
   display: flex;
-  margin-left: 12px;
-  margin-left: 2px;
+  margin-left: 13px;
   margin-top: 15px;
 }
 
@@ -246,8 +246,7 @@
 
 .set3 {
   display: flex;
-  margin-left: 12px;
-  margin-left: 2px;
+  margin-left: 13px;
   margin-top: 20px;
 }
 
@@ -263,10 +262,8 @@
 }
 
 .set4 {
-  border-bottom: 1px solid rgba(153, 153, 153, 0.5);
-  margin-left: 12px;
-  width: 90%;
-  margin-left: 2px;
+  margin-left: 13px;
+  width: 50%;
   width: 115%;
 }
 
@@ -287,6 +284,28 @@
   margin-left: 27px;
 }
 
+.theme18 {
+  width: 100%;
+  height: 21vh;
+}
+
+.theme19 {
+  width: 86%;
+  height: 21vh;
+  margin-left: 27px;
+}
+
+.theme20 {
+  width: 100%;
+  height: 21vh;
+}
+
+.theme21 {
+  width: 86%;
+  height: 21vh;
+  margin-left: 27px;
+}
+
 .theme16 {
   width: 6%;
 }
@@ -294,7 +313,7 @@
 .img {
   border: 1px solid #00b87c;
   height: 125px;
-  width: 480px;
+  width: 300px;
   margin-top: 23px;
   margin-left: 5px;
   border-radius: 4px;
@@ -315,8 +334,9 @@
   font-size: 12px;
   font-weight: bold;
   margin-left: 15px;
-  width: 40px;
+  width: 60px;
   height: 20px;
+  color: #999999;
 }
 
 .time {
@@ -370,7 +390,7 @@
 .img2 {
   border: 1px solid #00b87c;
   height: 125px;
-  width: 480px;
+  width: 300px;
   margin-top: 23px;
   margin-left: 5px;
   border-radius: 4px;
@@ -392,8 +412,16 @@
   font-weight: bold;
   color: white;
   margin-left: 15px;
-  width: 40px;
-  height: 20px;
+  width: 85px;
+}
+
+.bot {
+  font-size: 12px;
+  margin-top: 15px;
+  font-weight: bold;
+  color: white;
+  margin-left: 35px;
+  width: 50%;
 }
 
 .time2 {
@@ -447,7 +475,7 @@
 .img {
   border: 1px solid #00b87c;
   height: 125px;
-  width: 556px;
+  width: 500px;
   margin-top: 23px;
   border-radius: 4px;
 }
@@ -521,7 +549,7 @@
 .img2 {
   border: 1px solid #00b87c;
   height: 125px;
-  width: 556px;
+  width: 500px;
   margin-top: 23px;
   border-radius: 4px;
 }
