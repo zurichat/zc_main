@@ -19,6 +19,10 @@ import axios from "axios"
 import toggleStyle from "./styles/sidebartoggle.module.css"
 import { BsReverseLayoutTextSidebarReverse } from "react-icons/bs"
 
+import SearchAutocomplete from "./components/SearchAutocomplete"
+
+import { navigateToUrl } from "single-spa"
+
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { closeModal, openModal, presence, setPresence } =
     useContext(TopbarContext)
@@ -179,6 +183,58 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   //   }
   // })
 
+  // Search autocomplete
+
+  const [inputValue, setInputValue] = useState("")
+  const [filteredSuggestions, setFilteredSuggestions] = useState([])
+  const [selectedSuggestion, setSelectedSuggestion] = useState(0)
+  const [displaySuggestions, setDisplaySuggestions] = useState(false)
+
+  const suggestions = [
+    "Zuri Workspace",
+    "Squid Game",
+    "American Gods",
+    "A Game of Thrones",
+    "Prince of Thorns",
+    "Stephen Gbolagade",
+    "The Hero of Ages",
+    "Mark Essien"
+  ]
+
+  const handleSearchChange = event => {
+    const value = event.target.value
+    setInputValue(value)
+
+    const filteredSuggestions = suggestions.filter(suggestion =>
+      suggestion.toLowerCase().includes(value.toLowerCase())
+    )
+
+    setFilteredSuggestions(filteredSuggestions)
+    setDisplaySuggestions(true)
+  }
+
+  const onSelectSuggestion = index => {
+    setSelectedSuggestion(index)
+    setInputValue(filteredSuggestions[index])
+    setFilteredSuggestions([])
+    setDisplaySuggestions(false)
+  }
+
+  // end search
+
+  const handleEnter = e => {
+    e.preventDefault()
+    // eslint-disable-next-line no-console
+    console.log(window.location.href)
+
+    navigateToUrl("/search")
+    // let s= window.location.href.split('/')
+    // if(s[2].includes("local")){
+    //   window.location.href="http://localhost:9000/search"
+    // }else{
+    //   window.location.href="https://zuri.chat/search"
+  }
+
   return (
     <>
       <div className="ps-3" style={{ width: "20%" }}>
@@ -203,16 +259,31 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         </div>
       </div>
       <div className="ms-4" style={{ width: "60%" }}>
-        <BaseInput
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-          type="text"
-          width={12}
-          error
-          placeholder="Search here"
-          border={"#99999933"}
-        />
+        <div>
+          <form onSubmit={handleEnter}>
+            <BaseInput
+              onChange={handleSearchChange}
+              value={inputValue}
+              type="text"
+              width={12}
+              error
+              placeholder="Search here"
+              border={"#99999933"}
+            />
+          </form>
+        </div>
+
+        <div>
+          <SearchAutocomplete
+            inputValue={inputValue}
+            selectedSuggestion={selectedSuggestion}
+            onSelectSuggestion={onSelectSuggestion}
+            displaySuggestions={displaySuggestions}
+            suggestions={filteredSuggestions}
+          />
+        </div>
       </div>
+
       <ProfileImageContainer
         className="d-flex justify-content-end pe-3"
         style={{ width: "20%" }}

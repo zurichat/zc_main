@@ -155,6 +155,56 @@ const Themes = () => {
           </div>
         </div>
       </div>
+      <div className={styles.line}></div>
+      <div className={styles.customize}>
+        <div className={styles.text3}>Colors</div>
+        <div className={styles.custom}>
+          Customize the look of your workspace. Feeling
+        </div>
+        <div className={styles.custom2}>adventurous?</div>
+        <div className={styles.create}>Create a custom theme</div>
+        <div className={styles.true}>Tried and true</div>
+      </div>
+      <div className={styles.set1}>
+        <div className={styles.img3}>
+          <img src={theme3} alt="theme3" className={styles.theme3} />
+        </div>
+        <div className={styles.img4}>
+          <img src={theme4} alt="theme4" className={styles.theme4} />
+        </div>
+      </div>
+      <div className={styles.all}>
+        <div className={styles.arrow}>↓</div>
+        <div className={styles.show}>Show all classic themes</div>
+      </div>
+      <div className={styles.clean}>Clean and minimal</div>
+      <div className={styles.set2}>
+        <div className={styles.img5}>
+          <img src={theme5} alt="theme5" className={styles.theme5} />
+        </div>
+        <div className={styles.img6}>
+          <img src={theme6} alt="theme6" className={styles.theme6} />
+        </div>
+      </div>
+      <div className={styles.set3}>
+        <div className={styles.img7}>
+          <img src={theme18} alt="theme18" className={styles.theme18} />
+        </div>
+        <div className={styles.img8}>
+          <img src={theme19} alt="theme19" className={styles.theme19} />
+        </div>
+      </div>
+      <div className={styles.set4}>
+        <div className={styles.bottom}>
+          <div className={styles.img9}>
+            <img src={theme20} alt="theme20" className={styles.theme20} />
+          </div>
+          <div className={styles.img10}>
+            <img src={theme21} alt="theme21" className={styles.theme21} />
+          </div>
+        </div>
+        <div className={styles.line2}></div>
+      </div>
     </div>
   )
 }
