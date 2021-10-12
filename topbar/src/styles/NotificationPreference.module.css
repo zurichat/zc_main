@@ -6,8 +6,6 @@
 
 .body::-webkit-scrollbar {
   display: none;
-  scrollbar-width: none;
-  overflow: hidden;
 }
 
 /* THE SECTION OF THE CONTENT */
