@@ -87,6 +87,10 @@
 .hero_left_btn:hover {
   box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.2);
 }
+.hero_left_btn:active {
+  transform: scale(0.95);
+  box-shadow: 0.5px 0.5px 8px 5px rgba(0, 0, 0, 0.2);
+}
 .hero_right {
   display: flex;
   justify-content: center;
@@ -177,6 +181,9 @@
   color: var(--primary-color);
   text-decoration: underline;
 }
+.ft_link:active {
+  opacity: 0.75;
+}
 .ft_link_div {
   display: flex;
   align-items: center;
@@ -249,6 +256,9 @@
   background-color: var(--primary-color);
   color: var(--bg-2);
   border: 2px solid var(--bg-2);
+}
+.sign_up_btn:active {
+  transform: scale(0.95);
 }
 .sign_up_right {
   display: flex;
