@@ -10,7 +10,7 @@ import android from '../assets/download_images/android.png'
 
 const Downloads = ({ setModal }) => {
   //State For testing
-  const [files,setFiles] = useState([
+  const [files, setFiles] = useState([
     {
       name: 'Windows App',
       size: '',
@@ -64,7 +64,9 @@ const Downloads = ({ setModal }) => {
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      onClick={setFiles([])}
+                      onClick={() => {
+                        setFiles([])
+                      }}
                     >
                       <path
                         d="M5.25 7.5H6.75H18.75"
@@ -79,7 +81,6 @@ const Downloads = ({ setModal }) => {
                       />
                     </svg>
                     <div role="tooltip" className={styles.toolTip}>
-                    
                       <p>Clear download</p>
                       <img src={pointy} alt="" />
                     </div>
@@ -143,7 +144,7 @@ const Downloads = ({ setModal }) => {
                           className={styles.content}
                           href={file.link}
                           download={file.download}
-                          target="_blank"
+                          target="_blank" rel="noreferrer"
                         ></a>
                       </div>
                     </button>
@@ -162,7 +163,7 @@ const Downloads = ({ setModal }) => {
                         aria-label={`Clear ${file.size} file `}
                         className={styles.closeBtn}
                         onClick={() => {
-                          files.splice(index,1)
+                          setFiles(files.splice(index,1));
                           setModal('no')
                         }}
                       >
