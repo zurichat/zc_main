@@ -18,6 +18,7 @@
     "dev:sidebar": "npm run dev --prefix sidebar",
     "dev:plugin-header": "npm run dev --prefix pluginHeader",
     "dev:comment-sidebar": "npm run dev --prefix commentSidebar",
+    "dev:manage-user-modal": "npm run dev --prefix manageUserModal",
     "dev": "npm-run-all --parallel \"dev:*\" \"open\"",
     "lint": "concurrently yarn:lint:*",
     "lint:css": "stylelint '**/*.+(css|scss|sass)'",
