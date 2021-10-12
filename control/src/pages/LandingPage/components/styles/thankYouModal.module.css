@@ -1,15 +1,17 @@
 .modalWrap {
-  position: fixed;
+  position: absolute;
   top: 20%;
-  left: 20%;
+  left: 50%;
   margin: 0px auto;
-  width: 55%;
-  max-width: 830px;
+  display: block;
+  transform: translateX(-50%);
+  width: 60%;
   max-height: 500px;
   border-radius: 10px;
   background: #fff;
   box-shadow: 0 4px 8px #0004;
   z-index: 10;
+  padding: 3rem 2rem;
 }
 
 .modalLayer {
@@ -22,20 +24,8 @@
   z-index: 444440;
 }
 
-/* tablets */
-@media (max-width: 769px) {
+@media (max-width: 500px) {
   .modalWrap {
-    left: 18%;
-    width: 70%;
-  }
-}
-
-/* mobile phone */
-@media screen and (max-width: 469px) {
-  .modalWrap {
-    top: 75px;
-    left: 10px;
-    margin: 10px auto;
     width: 90%;
   }
 }
