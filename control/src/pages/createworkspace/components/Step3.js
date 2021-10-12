@@ -82,7 +82,7 @@ const Step3 = () => {
             <Button style={{ color: 'white' }}>
               <StyledLink to={`${match.url}/launch`}>Add Teammates</StyledLink>
             </Button>
-            <Skip to="/">Skip this Step</Skip>
+            <Skip to={`${match.url}/launch`}>Skip this Step</Skip>
           </ButtonSection>
         </MainSection>
         <InviteFooter>
