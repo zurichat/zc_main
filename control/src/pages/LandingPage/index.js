@@ -1,45 +1,49 @@
-import React from 'react'
-import style from './styles/LandingPage.module.css'
-import hero_img from './assets/MacBookAir.svg'
-import logo_hng from './assets/logo_hng.svg'
-import logo_i4g from './assets/logo_i4g.svg'
-import logo_camphouse from './assets/logo_camphouse.svg'
-import logo_zuri from './assets/logo_zuri.svg'
-import ft_img1 from './assets/ft_img1.svg'
-import ft_img2 from './assets/ft_img2.svg'
-import ft_img3 from './assets/ft_img3.svg'
-import ft_img4 from './assets/ft_img4.svg'
-import sign_up_img from './assets/sign_up_img.svg'
-import arrow_right from './assets/ArrowRight.svg'
+import React from "react"
+import style from "./styles/LandingPage.module.css"
+import hero_img from "./assets/MacBookAir.svg"
+import logo_hng from "./assets/logo_hng.svg"
+import logo_i4g from "./assets/logo_i4g.svg"
+import logo_camphouse from "./assets/logo_camphouse.svg"
+import logo_zuri from "./assets/logo_zuri.svg"
+import ft_img1 from "./assets/ft_img1.svg"
+import ft_img2 from "./assets/ft_img2.svg"
+import ft_img3 from "./assets/ft_img3.svg"
+import ft_img4 from "./assets/ft_img4.svg"
+import sign_up_img from "./assets/sign_up_img.svg"
+import arrow_right from "./assets/ArrowRight.svg"
 
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
+import Header from "../../components/Header"
+import Footer from "../../components/Footer"
 
-import { Link, useHistory } from 'react-router-dom'
-import Cookies from '../cookies'
-import Subscribe from './components/Subscribe'
-import { Helmet } from 'react-helmet'
+import { Link, useHistory } from "react-router-dom"
+import Cookies from "../cookies"
+import Subscribe from "./components/Subscribe"
+import { Helmet } from "react-helmet"
+// import i18n (needs to be bundled ;))
+import "../../i18n"
+import { useTranslation} from "react-i18next"
 
 export default function Homepage() {
   const { useState, useEffect } = React
 
   const [loading, setLoading] = useState(true)
 
+  const { t } = useTranslation()
+
   // For create workspace redirect start
 
   let history = useHistory()
-  
+
   const createWorkspaceRedirect = () => {
     useEffect(() => {
       const userInfo = sessionStorage.getItem(`user`)
-  
-      if (userInfo && userInfo !== null)
-       { 
-         history.push("/createworkspace")
-        } else {
-         history.push("/signup")
-       }
-      }, [history])
+
+      if (userInfo && userInfo !== null) {
+        history.push("/createworkspace")
+      } else {
+        history.push("/signup")
+      }
+    }, [history])
   }
 
   // create workspace redirect end
@@ -47,8 +51,8 @@ export default function Homepage() {
   const cookieStorage = {
     getItem: key => {
       const cookies = document.cookie
-        .split(';')
-        .map(cookie => cookie.split('='))
+        .split(";")
+        .map(cookie => cookie.split("="))
         .reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: value }), {})
       return cookies[key]
     },
@@ -57,8 +61,8 @@ export default function Homepage() {
     }
   }
 
-  const allowCookie = cookieStorage.getItem('Zuri Chat Accept')
-  const declineCookie = cookieStorage.getItem('Zuri Chat Decline')
+  const allowCookie = cookieStorage.getItem("Zuri Chat Accept")
+  const declineCookie = cookieStorage.getItem("Zuri Chat Decline")
 
   if (!allowCookie == true || declineCookie == true) {
     useEffect(() => {
@@ -74,7 +78,7 @@ export default function Homepage() {
     return (
       <div className={`${style.ft_row} ${props.rowOrder}`}>
         <Helmet>
-          <title>Zuri Chat - Connect and Interact</title>
+          <title>Zuri Chat - {t("landing.title.landing")}</title>
         </Helmet>
         <div className={`${style.ft_col}`}>
           <img src={props.src} alt={props.alt} className={`${style.ft_img}`} />
@@ -111,20 +115,17 @@ export default function Homepage() {
             <div className={`${style.hero_left}`}>
               <div className={`${style.hero_left_texts}`}>
                 <p className={`${style.hero_text_one}`}>
-                  For Organizations &amp; Institutions
+                  {t("landing.hero.pre_headline")}
                 </p>
                 <h1 className={`${style.hero_heading}`}>
-                  A fully Integrated way to connect and interact
+                  {t("landing.hero.headline")}
                 </h1>
-                <p className={`${style.hero_p}`}>
-                  Create your future with us, network, collaborate, educate and
-                  learn remotely
-                </p>
+                <p className={`${style.hero_p}`}>{t("landing.hero.post_headline")}</p>
               </div>
               <div className={`${style.hero_left_btn_wrap}`}>
                 <Link to="/signup">
                   <button className={`${style.hero_left_btn}`}>
-                    Try Zuri.chat for free
+                    {t("landing.hero.call_to_action")}
                   </button>
                 </Link>
               </div>
@@ -135,8 +136,8 @@ export default function Homepage() {
           </div>
         </div>
         {/* { COOKIES BANNER} */}
-        <div>{loading ? '' : <Cookies />}</div>
-         {/* COMPANIES */}
+        <div>{loading ? "" : <Cookies />}</div>
+        {/* COMPANIES */}
         {/* <div className={`${style.company_banner_wrap}`}>
           <div className={`${style.company_banner}`}>
             <p className={`${style.cbp}`}>Trusted by top companies worldwide</p>
@@ -154,40 +155,40 @@ export default function Homepage() {
             <FeatureRow
               src={ft_img1}
               alt=""
-              pContent1="Seamless collaboration"
-              h2Content="Communicate and collaborate from wherever you are"
-              pContent2="Invite your team to your workspace. Stay connected,stay in sync, and explore ideas together from anywhere."
+              pContent1={t("landing.featureRowOne.title")}
+              h2Content={t("landing.featureRowOne.headline")}
+              pContent2={t("landing.featureRowOne.description")}
               href="/createworkspace"
-              aContent="Create your own workspace"
-              onClick = { createWorkspaceRedirect }
+              aContent={t("landing.featureRowOne.link")}
+              onClick={createWorkspaceRedirect}
             />
             <FeatureRow
               src={ft_img2}
               alt=""
-              pContent1="Remote Education"
-              h2Content="Learn on the Go"
-              pContent2="Take your classroom everywhere, make learning fun, stay engaged and inspired with the virtual lounge and games."
+              pContent1={t("landing.featureRowTwo.title")}
+              h2Content={t("landing.featureRowTwo.headline")}
+              pContent2={t("landing.featureRowTwo.description")}
               href="#"
-              aContent="Learn more about the virtual lounge"
+              aContent={t("landing.featureRowTwo.link")}
               rowOrder={style.ft_row_reverse}
             />
             <FeatureRow
               src={ft_img3}
               alt=""
-              pContent1="All-in-one Workspace"
-              h2Content="Customise your Workspace"
-              pContent2="One tool, several plugins. Track company expenses, send information fast and smoothly, manage files and integrate tools all with Zuri.chat."
+              pContent1={t("landing.featureRowThree.title")}
+              h2Content={t("landing.featureRowThree.headline")}
+              pContent2={t("landing.featureRowThree.description")}
               href="#"
-              aContent="Explore Plugins"
+              aContent={t("landing.featureRowThree.link")}
             />
             <FeatureRow
               src={ft_img4}
               alt=""
-              pContent1="Advanced Search"
-              h2Content="Access Files and Messages in your Workspace Effortlessly"
-              pContent2="With the search tool, find previously shared messages, files and links with ease."
+              pContent1={t("landing.featureRowFour.title")}
+              h2Content={t("landing.featureRowFour.headline")}
+              pContent2={t("landing.featureRowFour.description")}
               href="#"
-              aContent="Learn more about Search"
+              aContent={t("landing.featureRowFour.link")}
               rowOrder={style.ft_row_reverse}
             />
           </div>
@@ -197,12 +198,11 @@ export default function Homepage() {
           <div className={`${style.sign_up_banner}`}>
             <div className={`${style.sign_up_left}`}>
               <p className={`${style.sign_up_left_p}`}>
-                A flexible Way to Educate, Collaborate and Team Up From Wherever
-                You Are
+              {t("landing.cardOne.title")}
               </p>
               <a href="/signup">
                 <button className={`${style.sign_up_btn}`}>
-                  Sign up now for Free
+                {t("landing.cardOne.button")}
                 </button>
               </a>
             </div>

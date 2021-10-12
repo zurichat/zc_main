@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom"
 import styles from "../component-styles/FooterStyle.module.css"
 import logo from "../component-assets/zurilogo.svg"
 import facebook from "../component-assets/facebook.svg"
@@ -8,8 +8,11 @@ import linkedin from "../component-assets/linkedin.svg"
 import instagram from "../component-assets/instagram.svg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons"
+import { useTranslation } from "react-i18next"
 
 const Footer = () => {
+  const { t } = useTranslation()
+
   const getYear = () => {
     return new Date().getFullYear()
   }
@@ -48,49 +51,53 @@ const Footer = () => {
               <span className={styles.logo_name}>Zuri Chat</span>
             </Link>
           </div>
-    
+
           <div className={styles.menu}>
             <div>
-              <h5>Company</h5>
+              <h5>{t("landing.footer.company")}</h5>
               <ul>
                 <li>
-                  <Link to="/careers">Careers</Link>{" "}
+                  <Link to="/careers">{t("landing.footer.careers")}</Link>{" "}
                 </li>
                 <li>
-                  <Link to="/about">About</Link>{" "}
+                  <Link to="/about">{t("landing.footer.about")}</Link>{" "}
                 </li>
               </ul>
             </div>
-    
+
             <div>
-              <h5>Info</h5>
+              <h5>{t("landing.footer.info")}</h5>
               <ul>
                 <li>
-                  <Link to="/privacy">Privacy & Terms</Link>{" "}
+                  <Link to="/privacy">{t("landing.footer.privacy")}</Link>{" "}
                 </li>
                 <li>
-                  <Link to="/marketplace">Market Place</Link>{" "}
+                  <Link to="/marketplace">{t("landing.footer.market")}</Link>{" "}
                 </li>
               </ul>
             </div>
-    
+
             <div>
-              <h5>Know us</h5>
+              <h5>{t("landing.footer.knowUs")}</h5>
               <ul>
                 <li>
-                  <Link to="/download-app">Downloads</Link>{" "}
+                  <Link to="/download-app">
+                    {t("landing.footer.downloads")}
+                  </Link>{" "}
                 </li>
                 <li>
-                  <Link to="/contact-us">Contact</Link>{" "}
+                  <Link to="/contact-us">{t("landing.footer.contact")}</Link>{" "}
                 </li>
                 <li>
-                  <a href="https://docs.zuri.chat/">Documentation</a>{" "}
+                  <a href="https://docs.zuri.chat/">
+                    {t("landing.footer.documentation")}
+                  </a>{" "}
                 </li>
               </ul>
             </div>
-    
+
             <div className={styles.social}>
-              <h5>Social Media</h5>
+              <h5>{t("landing.footer.socialMedia")}</h5>
               <ul>
                 <li>
                   <a
@@ -143,11 +150,13 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-    
         </div>
-    
+
         <div className={styles.bottom_footer}>
-          <p> &copy; {getYear()} Zuri Chat. All Rights Reserved</p>
+          <p>
+            {" "}
+            &copy; {getYear()} Zuri Chat. {t("landing.footer.rights")}
+          </p>
         </div>
       </div>
     </footer>
