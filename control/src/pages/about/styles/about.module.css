@@ -25,10 +25,7 @@
 .working_remote_section > img {
   margin-left: 2rem;
 }
-.counter > h3,
-.counter > p {
-  margin-left: 2rem;
-}
+
 .to_join {
   margin-top: 3%;
 }
@@ -70,6 +67,9 @@
   flex-wrap: nowrap;
   flex-direction: row;
 }
+.btn {
+  margin: 0.3rem;
+}
 .btn_sale {
   background-color: #fff;
   text-transform: uppercase;
@@ -110,34 +110,13 @@
 .carousel {
   display: none;
 }
-.row {
-  padding: 0.8rem 3.2rem;
-  background: #f8f8ff;
-}
+
 @media only screen and (max-width: 1040px) {
   .banner {
     padding-top: 10%;
   }
-  .row {
-    padding: 0.8rem 1.2rem;
-  }
 }
 
-@media only screen and (max-width: 970px) {
-  .row {
-    padding: 0.8rem 3.2rem;
-  }
-}
-@media only screen and (max-width: 760px) {
-  .row {
-    padding: 0.8rem 4.2rem;
-  }
-}
-@media only screen and (max-width: 500px) {
-  .row {
-    padding: 0.8rem 1rem;
-  }
-}
 @media only screen and (max-width: 600px) {
   .banner {
     padding-top: 20%;
@@ -225,9 +204,31 @@
   }
 }
 
+@media only screen and (max-width: 500px) {
+  .carouselImage {
+    position: relative;
+    left: 33%;
+  }
+}
 @media only screen and (max-width: 440px) {
   .carouselImage {
     position: relative;
     left: 30%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .carouselImage {
+    position: relative;
+    left: 28%;
+  }
+  .carouselCompany {
+    position: relative;
+    left: 41%;
+  }
+}
+@media only screen and (max-width: 355px) {
+  .carouselImage {
+    position: relative;
+    left: 25%;
   }
 }
