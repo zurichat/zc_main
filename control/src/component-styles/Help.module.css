@@ -7,33 +7,51 @@
 
 .firstlayer{
     margin-top: 3%;
-    position: relative;
+    display: flex;
 }
 
 .invalid > img{
     width: 30vw;
     position: relative;
-    top: -16%;
-    margin-right: 16px
+  /* top: -16%; */  
 }
 
 .firstcontent{
-    font-size: 7px;
+    font-size: 4px;
     line-height: 25px;
     font-weight: 500;
-    margin-left: 6px
+}
+
+.secondlayer{
+  display: flex;
+  margin-top: 3%;
 }
 
 .secondcontent{
-    font-size: 7px;
+    font-size: 4px;
     line-height: 25px;
     font-weight: 500;
 }
   
+.tech > img{
+  width: 30vw;
+  position: relative;
+/* top: -16%; */  
+}
+.thirdlayer{
+  display: flex;
+  margin-top: 3%;
+}
 .thirdcontent{
-    font-size: 7px;
+    font-size: 4px;
     line-height: 25px;
     font-weight: 500;
+}
+   
+.mono > img{
+  width: 30vw;
+  position: relative;
+/* top: -16%; */  
 }
 
 @media only screen and (max-width: 600px) {
