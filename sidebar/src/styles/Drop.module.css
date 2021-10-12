@@ -15,14 +15,14 @@
 
 .plugin_name,
 .dropDown__name {
-  font-size: 1em;
+  font-size: 0.935em;
 }
 
 .plugin_name,
 .dropDown__title,
 .dropDown__name {
-  font-size: 1em;
-  _font-weight: bold;
+  font-size: 0.935em;
+  /* font-weight: bold; */
 }
 
 .dropDown__name {
@@ -32,8 +32,7 @@
 .icon,
 .item__icon {
   /* font-size: 1.2em; */
-  width: 1rem;
-  height: auto;
+  width: 24px;
 }
 
 .icon {
@@ -49,14 +48,16 @@
 .item__row {
   margin: 0.3em 0;
 }
-
+.openWrapper, .openWrapper * {
+  background-color: #00B87C;
+}
 .item__row {
   display: none;
 }
 
 .item__row.open {
   display: block;
-  _margin-inline-start: 0.5em;
+  /* margin-inline-start: 0.5em; */
 }
 
 .item__name {
@@ -64,10 +65,8 @@
 }
 
 .item__image {
-  width: 1.5rem;
-  height: 1rem;
-  font-size: 12px;
-  _margin-right: 0.5em;
+  width: 24px;
+  margin-right: 0.5em;
 }
 
 .optionsContainer {
