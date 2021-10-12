@@ -79,25 +79,26 @@ const TopbarModal = ({ members }) => {
   const [pause, setPause] = useState(false)
   const [statusModal, setStatusModal] = useState(false)
 
-  let userPresence = null
-  let toggleStatus = null
+  var userAppearance = null
+  var toggleAppearance = null
+  
 
   switch (presence) {
     case "true":
-      userPresence = "Set yourself as away"
-      toggleStatus = (
+      userAppearance = "Set yourself as away"
+      toggleAppearance = (
         <div className={styles.online}>
-          <div className={styles.activeCircle} />
-          <p className={styles.active}>Active</p>
+          <div className={styles.activeCircle}/>
+          <p className={styles.active}> Active </p>
         </div>
       )
       break
     default:
-      userPresence = "Set yourself as active"
-      toggleStatus = (
+      userAppearance = "Set yourself as active"
+      toggleAppearance = (
         <div className={styles.online}>
           <div className={styles.awayCircle} />
-          <p className={styles.away}>Away</p>
+          <p className={styles.away}>Away </p>
         </div>
       )
   }
@@ -162,7 +163,7 @@ const TopbarModal = ({ members }) => {
                         .toUpperCase()}${user.user_name.slice(1)}`
                     : "Anonymous"}
                 </h4>
-                {toggleStatus}
+                {toggleAppearance}
               </div>
             </div>
 
@@ -199,7 +200,7 @@ const TopbarModal = ({ members }) => {
                   toggleUserPresence()
                 }}
               >
-                {userPresence}
+                {userAppearance}
               </p>
               {/* <div className={styles.pause}>
                <p onClick={() => setPause(!pause)}>Pause Notifications</p>
