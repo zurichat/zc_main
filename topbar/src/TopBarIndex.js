@@ -1,14 +1,14 @@
-import styled from 'styled-components'
-import errImg from './assets/images/errImg.svg'
-import arrowDown from './assets/images/arrow-down.svg'
-import './styles/master.css'
-import Toggle from './components/Toggle'
-import { useContext, useState } from 'react'
-import { DialogOverlay, DialogContent } from '@reach/dialog'
-import TopNavBar from './TopNavBar'
-import userAvatar from './assets/images/user.svg'
-import { ProfileProvider } from './context/ProfileModal'
-import { TopbarProvider, TopbarContext } from './context/Topbar'
+import styled from "styled-components"
+import errImg from "./assets/images/errImg.svg"
+import arrowDown from "./assets/images/arrow-down.svg"
+import "./styles/master.css"
+import Toggle from "./components/Toggle"
+import { useContext, useState } from "react"
+import { DialogOverlay, DialogContent } from "@reach/dialog"
+import TopNavBar from "./TopNavBar"
+import userAvatar from "./assets/images/user.svg"
+import { ProfileProvider } from "./context/ProfileModal"
+import { TopbarProvider, TopbarContext } from "./context/Topbar"
 
 // Input tag
 const Input = ({
@@ -22,7 +22,7 @@ const Input = ({
   value,
   onChange
 }) => {
-  const err = { message: 'Error message Here' }
+  const err = { message: "Error message Here" }
   return (
     <>
       <BaseLabel border={border}>{label}</BaseLabel>
@@ -39,7 +39,7 @@ const Input = ({
       {error && (
         <ErrorMessage>
           <img
-            style={{ width: '1.5%', paddingBottom: '0.1rem' }}
+            style={{ width: "1.5%", paddingBottom: "0.1rem" }}
             src={errImg}
             alt="error icon"
           />
@@ -50,18 +50,18 @@ const Input = ({
   )
 }
 
-const active = '#00B87C'
-const error = '#F40101'
-const inActive = '#A1A1A1'
+const active = "#00B87C"
+const error = "#F40101"
+const inActive = "#A1A1A1"
 
 // Buttons
 
 const Button = ({
-  variant = 'primary',
-  id = '',
-  name = '',
-  className = '',
-  type = '',
+  variant = "primary",
+  id = "",
+  name = "",
+  className = "",
+  type = "",
   disabled = false,
   onClick,
   children
@@ -69,13 +69,13 @@ const Button = ({
   let Component
 
   switch (variant) {
-    case 'primary':
+    case "primary":
       Component = PrimaryButton
       break
-    case 'secondary':
+    case "secondary":
       Component = SecondaryButton
       break
-    case 'tertiary':
+    case "tertiary":
       Component = TertiaryButton
       break
     default:
@@ -97,10 +97,10 @@ const Button = ({
 }
 
 const FloatingButton = ({
-  id = '',
-  name = '',
-  className = '',
-  type = '',
+  id = "",
+  name = "",
+  className = "",
+  type = "",
   disabled = false,
   onClick
 }) => {
@@ -143,7 +143,7 @@ const PluginNavBar = () => {
         <PluginName> # </PluginName>
         <PluginName>Enter your plugin name here</PluginName>
         <PluginName>
-          {' '}
+          {" "}
           <img src={arrowDown} alt="user profile avatar" />
         </PluginName>
       </div>
@@ -158,8 +158,8 @@ const PluginNavBar = () => {
 }
 
 function Test() {
-  const [word, setWord] = useState('')
-  const [email, setEmail] = useState('')
+  const [word, setWord] = useState("")
+  const [email, setEmail] = useState("")
   const [selected, setSelected] = useState(false)
   const [checked, setChecked] = useState(false)
 
@@ -225,8 +225,8 @@ function Test() {
         <br />
 
         <h1>Tertiary Button</h1>
-        <Button variant={'tertiary'}>Medium Button</Button>
-        <Button variant={'tertiary'} className={'underline'}>
+        <Button variant={"tertiary"}>Medium Button</Button>
+        <Button variant={"tertiary"} className={"underline"}>
           Medium Button
         </Button>
         <br />
@@ -301,7 +301,7 @@ const BaseInput = styled.input`
   box-sizing: border-box;
   &::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
-    color: background: #616061;    ;
+    color: background: #616061;    
     font-size: 13px;
   }
   &:hover {
@@ -341,7 +341,7 @@ const ButtonBase = styled.button`
   // padding: 12px 18px;
   border: 1px solid var(--primary-color);
   border-radius: 2px;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   text-align: center;
   font-weight: 400;
   transition: filter 600ms;
@@ -357,7 +357,7 @@ const ButtonBase = styled.button`
 const PrimaryButton = styled(ButtonBase)`
   background-color: var(--primary-color);
   color: white;
-  ${'' /* &:hover {box-shadow: 5px 4px 20px 0px #C0C4C94D;} */}
+  ${"" /* &:hover {box-shadow: 5px 4px 20px 0px #C0C4C94D;} */}
 `
 const SecondaryButton = styled(ButtonBase)`
   background-color: transparent;
