@@ -15,14 +15,14 @@
 
 .plugin_name,
 .dropDown__name {
-  font-size: 0.935em;
+  font-size: 1em;
 }
 
 .plugin_name,
 .dropDown__title,
 .dropDown__name {
-  font-size: 0.935em;
-  /* font-weight: bold; */
+  font-size: 1em;
+  _font-weight: bold;
 }
 
 .dropDown__name {
@@ -32,7 +32,8 @@
 .icon,
 .item__icon {
   /* font-size: 1.2em; */
-  width: 24px;
+  width: 1rem;
+  height: auto;
 }
 
 .icon {
@@ -55,7 +56,7 @@
 
 .item__row.open {
   display: block;
-  /* margin-inline-start: 0.5em; */
+  _margin-inline-start: 0.5em;
 }
 
 .item__name {
@@ -63,8 +64,10 @@
 }
 
 .item__image {
-  width: 24px;
-  margin-right: 0.5em;
+  width: 1.5rem;
+  height: 1rem;
+  font-size: 12px;
+  _margin-right: 0.5em;
 }
 
 .optionsContainer {

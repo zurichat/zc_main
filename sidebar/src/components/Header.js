@@ -12,7 +12,6 @@ const SidebarHeader = props => {
     toggleHomeModal(!homeModal)
     document.removeEventListener("click", toggle)
   }
-
   return (
     <div className={`${styles.subCon1}`}>
       <div className={`row ${styles.orgDiv}`}>
