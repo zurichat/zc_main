@@ -201,7 +201,7 @@ const Themes = () => {
         <div className={styles.img5} onClick={()=>toggleTheme('ash')}>
           <img src={theme5} alt="theme5" className={styles.theme5} />
         </div>
-        <div className={styles.img6} onClick={()=>toggleTheme('ash')}>
+        <div className={styles.img6} onClick={()=>toggleTheme('darkAsh')}>
           <img src={theme6} alt="theme6" className={styles.theme6} />
         </div>
       </div>
