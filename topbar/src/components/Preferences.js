@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react"
+import React, { useState, useContext } from "react"
 import ProfileModal from "./ProfileModal"
 import NotificationPreference from "../components/NotificationPreference"
 import Themes from "../components/Themes"
@@ -23,31 +23,9 @@ const Preferences = () => {
   const closeMenu = () => {
     setNavbarOpen(false)
   }
-    const lightLocal = localStorage.getItem("light") &&  localStorage.getItem("light") || ""
-  const darkLocal = localStorage.getItem("dark") && localStorage.getItem("dark") || ""
 
-    const [check, setCheck] = useState({
-    light: lightLocal  || "",
-    dark: darkLocal || ""
-  })
-
-  const themeLocal = localStorage.getItem("mode") && localStorage.getItem("mode") || ""
-  const [mode, setMode] = useState(themeLocal)
-
-  useEffect(() => {
-    if (mode === "dark") {
-      localStorage.setItem("mode", "dark")
-      localStorage.setItem("dark", "checked")
-      localStorage.removeItem("light")
-    } else {
-      localStorage.setItem("mode", "light")
-    localStorage.setItem("light", "checked")
-    localStorage.removeItem("dark")
-    }
-  }, [mode, check])
-
-  return (
-    <ProfileModal data-theme={mode} title="Preference">
+  return ( 
+    <ProfileModal title="Preference">
       <div className={styles.body}>
         <div className={styles.buttonToggle}>
           <PreferenceMenu />
@@ -72,7 +50,7 @@ const Preferences = () => {
         <div className={styles.allPreferences}>
           {sideBar === 1 && <NotificationPreference />}
 
-          {sideBar === 3 && <Themes {...{check, setCheck, setMode}} />}
+          {sideBar === 3 && <Themes />}
           {sideBar === 4 && <MessagesMedia />}
           {sideBar === 5 && <LanguageAndRegion />}
           {sideBar === 6 && <Accessibility />}

@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { ProfileContext } from "../context/ProfileModal"
 import styles from "../styles/ProfileModal.module.css"
 
-const ProfileModal = ({ title, children, full, ...rest }) => {
+const ProfileModal = ({ title, children, full }) => {
   const { modal, toggleModalState } = useContext(ProfileContext)
 
  
@@ -11,7 +11,7 @@ const ProfileModal = ({ title, children, full, ...rest }) => {
   let mobileView = mql.matches
 
   return (
-    <div {...rest}
+    <div
       className={styles.modalContainer}
       style={
         modal

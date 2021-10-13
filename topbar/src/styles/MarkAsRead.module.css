@@ -11,7 +11,6 @@
   font-weight: 700;
   line-height: 20px;
   letter-spacing: 0em;
-  color: var(--text-color-gray-1);
   margin-top: 20px;
 }
 
@@ -35,7 +34,7 @@
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
-  color: var(--text-color-normal);
+  /* color: #999999; */
 }
 
 .option {
