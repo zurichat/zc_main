@@ -27,11 +27,11 @@ registerApplication({
   app: () => System.import("@zuri/sidebar"),
   activeWhen: ["/home", ...pluginRoutes]
 })
-registerApplication({
-  name: "@zuri/commentSidebar",
-  app: () => System.import("@zuri/comment-sidebar"),
-  activeWhen: ["/home", ...pluginRoutes]
-})
+// registerApplication({
+//   name: "@zuri/zuriUi",
+//   app: () => System.import("@zuri/zuri-ui"),
+//   activeWhen: ["/home", ...pluginRoutes]
+// })
 registerApplication({
   name: "@zuri/control",
   app: () => System.import("@zuri/control"),
