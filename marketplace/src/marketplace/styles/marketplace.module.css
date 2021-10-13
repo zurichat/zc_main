@@ -491,6 +491,30 @@
   width: 75%;
 }
 
+.errorMarkContainer {
+  height: 100px;
+  width: 100px;
+  background: #a10909c9;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.errorMarkText {
+  margin-top: 50px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 31px;
+  text-align: center;
+  color: #1d1c1d;
+  width: 75%;
+}
+
+.errorMark {
+  width: 42px;
+}
+
 .pluginCardContainer {
   max-height: fit-content;
 }
