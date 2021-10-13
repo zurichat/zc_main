@@ -1,5 +1,5 @@
 {
-  "name": "@zuri/comment-sidebar",
+  "name": "@zuri/zuri-ui",
   "license": "MIT",
   "scripts": {
     "start": "webpack serve",
