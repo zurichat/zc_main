@@ -31,14 +31,8 @@ const Preferences = () => {
     dark: darkLocal || ""
   })
 
-  const themeLocal = localStorage.getItem("mode") && localStorage.getItem("mode") || false
-  const [currentTheme, setCurrentTheme] = useState("")
+  const themeLocal = localStorage.getItem("mode") && localStorage.getItem("mode") || ""
   const [mode, setMode] = useState(themeLocal)
-
-
-useEffect(() => {
-  setCurrentTheme(themeLocal)
-}, [themeLocal])
 
   useEffect(() => {
     if (mode === "dark") {
