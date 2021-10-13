@@ -67,8 +67,26 @@ const SetStatusModal = ({
   const onEmojiClick = (event, emojiObject) => {
     setChosenEmoji(emojiObject)
   }
+  //
+  const getTime = () => {
+    let d = new Date()
+    let h = d.getHours(),
+      m = d.getMinutes()
+    if (h > 12) {
+      h = h - 12
+    }
+    if (h < 10) {
+      h = "0" + h
+    }
+    if (m < 10) {
+      m = "0" + m
+    }
 
-  const handleSubmit = async e => {
+    return h + ":" + m
+  }
+  const currentTime = getTime()
+  //
+  const handleSubmit = e => {
     e.preventDefault()
     setEmoji(chosenEmoji.emoji)
     setUser({ ...user, status: { text, emojiItem } })
@@ -93,7 +111,6 @@ const SetStatusModal = ({
     })
     setStatusModal(!statusModal)
   }
-
   return (
     <div className={styles.modal}>
       <div className={styles.modalcontainer}>
@@ -111,6 +128,7 @@ const SetStatusModal = ({
             <div className={styles.addstatus}>
               <div className={styles.addstatusleft}>
                 <p
+                  className={styles.emojino}
                   onClick={() => setOpenEmoji(!openEmoji)}
                   value={emojiItem}
                   // onChange={e => setEmoji(e.target.value)}
@@ -142,9 +160,12 @@ const SetStatusModal = ({
                 <input
                   type="text"
                   className={styles.input}
-                  placeholder="What is your status?"
+                  placeholder={"What is your status?"}
                   value={text}
-                  onChange={e => setText(e.target.value)}
+                  // value={user?.status?.text || text}
+                  onChange={e => {
+                    setText(e.target.value)
+                  }}
                 />
               </div>
               <img
@@ -172,10 +193,32 @@ const SetStatusModal = ({
                 </label>
                 <img src={down} alt="" />
               </div>
-
+              {dateTime ? (
+                // <SetDateAndTime
+                //   setDateTime={setDateTime}
+                //   dateTime={dateTime}
+                // />
+                <div className={styles.datetime}>
+                  <input
+                    type="date"
+                    className={styles.date}
+                    defaultValue={new Date().toISOString().slice(0, -14)}
+                    min={new Date().toISOString().slice(0, -14)}
+                  />
+                  <input
+                    type="time"
+                    className={styles.time}
+                    defaultValue={currentTime}
+                    min={currentTime}
+                  />
+                </div>
+              ) : null}
               <div>
                 {dropdown && (
-                  <ul className={styles.dropdown}>
+                  <ul
+                    className={styles.dropdown}
+                    onClick={() => setDropdown(!dropdown)}
+                  >
                     <li
                       className={styles.dropdownoption}
                       onClick={() => setChoosePeriod(`dont_clear`)}
@@ -213,12 +256,6 @@ const SetStatusModal = ({
                     >
                       Set date and time
                     </li>
-                    {dateTime ? (
-                      <SetDateAndTime
-                        setDateTime={setDateTime}
-                        dateTime={dateTime}
-                      />
-                    ) : null}
                   </ul>
                 )}
               </div>
@@ -228,7 +265,8 @@ const SetStatusModal = ({
               type="submit"
               onClick={handleSubmit}
             >
-              Save changes
+              {user?.status?.text ? "Clear Status" : "Save Changes"}
+              {/* {console.log(user?.status?.text)} */}
             </button>
           </form>
           {/* {status.map((data)=>{
