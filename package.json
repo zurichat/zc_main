@@ -77,6 +77,7 @@
   "dependencies": {
     "@types/jest": "^27.0.1",
     "@types/systemjs": "^6.1.1",
+    "react-select": "^5.1.0",
     "rxjs": "^7.3.0",
     "single-spa": "^5.9.3"
   }
