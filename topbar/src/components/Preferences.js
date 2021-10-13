@@ -44,11 +44,11 @@ useEffect(() => {
     if (mode === "dark") {
       localStorage.setItem("mode", "dark")
       localStorage.setItem("dark", "checked")
-      localStorage.setItem("light","")
+      localStorage.removeItem("light")
     } else {
       localStorage.setItem("mode", "light")
     localStorage.setItem("light", "checked")
-    localStorage.setItem("dark", "")
+    localStorage.removeItem("dark")
     }
   }, [mode, check])
 
