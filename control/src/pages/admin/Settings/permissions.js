@@ -2,170 +2,200 @@ import React from 'react'
 import { AnimateSharedLayout } from 'framer-motion'
 import PreferenceWrapper from './PreferenceWrapper'
 
-import JoinWorkspace from './components/JoinWorkspace'
-import WorkspaceLanguage from './components/WorkspaceLanguage'
-import Guidelines from './components/Guidelines'
-import DisplayName from './components/DisplayName'
-import JoinChannel from './components/JoinChannel'
+import Messaging from './Permissions/components/Messaging'
+import Invitation from './Permissions/components/Invitation'
+import ChannelManagement from './Permissions/components/ChannelManagement'
 import NotifyUsers from './components/NotifyUsers'
 import Calls from './components/Calls'
-import DisplayPronoun from './components/DisplayPronoun'
 import MessageRetention from './components/MessageRetention'
 import FileRetention from './components/FileRetention'
-import DisplayEmail from './components/DisplayEmail'
-import DefaultChannels from './components/DefaultChannel'
+import ZuriChannels from './Permissions/components/ZuriChannels'
+import FileUploads from './Permissions/components/FileUploads'
+import ZuriDM from './Permissions/components/ZuriDM'
+import UserGroups from './Permissions/components/UserGroups'
+import MessageEditing from './Permissions/components/MessageEditing'
+import ProfileCustomization from './Permissions/components/ProfileCustomization'
+import WorkspaceAnalytics from './Permissions/components/WorkspaceAnalytics'
+import CustomEmoji from './Permissions/components/CustomEmoji'
+import Zuribot from './Permissions/components/Zuribot'
+import FileSharing from './Permissions/components/FileSharing'
+import Workflow from './Permissions/components/Workflow'
+import Webhooks from './Permissions/components/Webhooks'
+import DownloadWorkflow from './Permissions/components/DownloadWorkflow'
+import WorkflowBuilder from './Permissions/components/WorkflowBuilder'
+import ChannelEmail from './Permissions/components/ChannelEmail'
 
 const permissions = () => {
   return (
     <>
       <AnimateSharedLayout>
         <PreferenceWrapper
-          title="Joining this workspace"
-          text="Choose how people join your workspace by accepting an email invitation or signing up with an email from an approved domain. If you enable the setting to let people with an email address on an approved domain join automatically. Zuri chat will generate a link that anyone with an approved email address can use to confirm their email and sign up"
+          title="Messaging"
+          text="See who can use @everyone, @channel, and @here."
           btnText="expand"
         >
-          <JoinWorkspace />
+          <Messaging />
         </PreferenceWrapper>
       </AnimateSharedLayout>
       <AnimateSharedLayout>
         <PreferenceWrapper
-          title="Workspace language"
-          text="Set the language for your workspace. This affects system notifications, Zurichat messages and sign up emails. Your workspace language is currently English (US)"
+          title="Invitations"
+          text="By default, any member can invite new people to your worspace. If you’d like, you can chnagethis so invitations require admins approval."
           btnText="expand"
         >
-          <WorkspaceLanguage />
+          <Invitation />
         </PreferenceWrapper>
       </AnimateSharedLayout>
       <AnimateSharedLayout>
         <PreferenceWrapper
-          title="Default channels"
-          text="Choose the channels new members will automatically be added to in addition to #general"
+          title="Channel Management"
+          text="Choose who can create, archive, remove members, and manage postig permissions in channels."
           btnText="expand"
         >
-          <DefaultChannels />
+          <ChannelManagement />
         </PreferenceWrapper>
       </AnimateSharedLayout>
       <AnimateSharedLayout>
         <PreferenceWrapper
-          title="Display new guidelines"
-          text="Explain the guidelines you want memebers to follow when they say display names"
+          title="Zuri Chat Connect Channels"
+          text="Zuri Chat Connect enables members of your organization to work with partners, vendors, and other third parties in the same channel. Learn more "
           btnText="expand"
         >
-          <Guidelines />
+          <ZuriChannels />
         </PreferenceWrapper>
       </AnimateSharedLayout>
       <AnimateSharedLayout>
         <PreferenceWrapper
-          title="Name display"
-          text="If you’d like, Zuri chat can show your members full name instead of their shorter display names."
+          title="File uploads for Zuri Chat Connect"
+          text="Choose whether people can upload files from their device - or share files already uploaded in Zurichat to channels and conversations that include people from outside Announcment. Learn more"
           btnText="expand"
         >
-          <DisplayName />
+          <FileUploads />
         </PreferenceWrapper>
       </AnimateSharedLayout>
       <AnimateSharedLayout>
         <PreferenceWrapper
-          title="Email display"
-          text="Choose whether to display members email address in profile"
+          title="Zuri Chat for direct messages"
+          text="Choose who can send and accept invitations to DM people outside your organization. Learn More"
           btnText="expand"
         >
-          <DisplayEmail />
+          <ZuriDM />
         </PreferenceWrapper>
       </AnimateSharedLayout>
       <AnimateSharedLayout>
         <PreferenceWrapper
-          title="Pronouns display"
-          text="Choose whether to display members pronouns (ex: they/them/theirs) in their zurichat profiles"
+          title="User Groups"
+          text="Set who can create and manage user groups."
           btnText="expand"
         >
-          <DisplayPronoun />
+          <UserGroups />
         </PreferenceWrapper>
       </AnimateSharedLayout>
       <AnimateSharedLayout>
         <PreferenceWrapper
-          title="Do not disturb"
-          text="Set default Do Not Disturb hours for members of your workspace."
+          title="Message Editing & Deletion"
+          text="Choose when to allow message editing and deletion."
           btnText="expand"
         >
-          {/* Password input goes uunder here */}
-          {/* <SavePassword /> */}
+          <MessageEditing />
         </PreferenceWrapper>
       </AnimateSharedLayout>
       <AnimateSharedLayout>
         <PreferenceWrapper
-          title="Channel join & Leave messages"
-          text="If you’d like, Zurichat can let everyone in the channel know when someone leaves"
+          title="Profile Customization"
+          text="Choose who can add new fields to your workspace’s profile."
           btnText="expand"
         >
-          <JoinChannel />
+          <ProfileCustomization />
         </PreferenceWrapper>
       </AnimateSharedLayout>
       <AnimateSharedLayout>
         <PreferenceWrapper
-          title="Notify of new users"
-          text="Choose whether your members are notified when new users come in"
+          title="Workspace Analytics"
+          text="Choose who can view the Analytics Page"
           btnText="expand"
         >
-          <NotifyUsers />
+          <WorkspaceAnalytics />
         </PreferenceWrapper>
       </AnimateSharedLayout>
       <AnimateSharedLayout>
         <PreferenceWrapper
-          title="Calls"
-          text="Choose how members make calls in ZuriChat. You can use Zuri Chat itself or a third-party calling app"
+          title="Custom Emoji"
+          text="Choose who can manage custom emoji ( )"
           btnText="expand"
         >
-          <Calls />
+          <CustomEmoji />
         </PreferenceWrapper>
       </AnimateSharedLayout>
       <AnimateSharedLayout>
         <PreferenceWrapper
-          title="Message Retention & Deletion"
-          text="By default, Zuri chat keeps all your messages for your lifetime of your wworkspace. If you’d like, you can have them delted after a selt amount of time. You can also configure this for specifiv channels.
-                In channels shared with other organisations, your retentionsettings will only apply to messages from members of your organisation. Learn more about retention in shared channels."
+          title="Zuribot Responses"
+          text="Choose who can manage Zuribot responses for your workspace."
           btnText="expand"
         >
-          <MessageRetention />
+          <Zuribot />
         </PreferenceWrapper>
       </AnimateSharedLayout>
       <AnimateSharedLayout>
         <PreferenceWrapper
-          title="File Retention & Deletion"
-          text="By default, Zuri chat keeps all your messages for your lifetime of your workspace. If you’d like, you can have them deleted after a set amount of time.Note that this affects all files - including images, docs, Zuri chat posts and more"
+          title="Public File Sharing"
+          text="Choose whether to allow members to share files externally by creating public URLS."
           btnText="expand"
         >
-          <FileRetention />
+          <FileSharing />
         </PreferenceWrapper>
       </AnimateSharedLayout>
       <AnimateSharedLayout>
         <PreferenceWrapper
-          title="Workspace icon"
-          text="Your workspace icon is used in the desktop an mobile apps, where it’s useful in helping you quickily identiy this workspace"
+          title="Workflow creation"
+          text="Choose who can create workflows with Workflow Builder in your workspace."
           btnText="expand"
         >
-          {/* Password input goes uunder here */}
-          {/* <SavePassword /> */}
+          <Workflow />
         </PreferenceWrapper>
       </AnimateSharedLayout>
       <AnimateSharedLayout>
         <PreferenceWrapper
-          title="Workspace name & URL"
-          text="Your workspace name is Zuri Chat and your URL is https://zuri.zuriChat.com"
+          title="Webhooks in Workflow Builder"
+          text="Allow external apps or services to start and send data workflows."
           btnText="expand"
         >
-          {/* Password input goes uunder here */}
-          {/* <SavePassword /> */}
+          <Webhooks />
         </PreferenceWrapper>
       </AnimateSharedLayout>
       <AnimateSharedLayout>
         <PreferenceWrapper
-          title="Delete workspace"
-          text="Deleting a Zuri Chat workspace can't be undone. All messages and files will irretrievable. Please use caution and consider exporting your data before deletion.
-                Note: Don’t delete  your worspce if you want to change worskspace’s URL or name. You also might want to export data before deleting workspace"
+          title="Downloads of workflow from responses"
+          text="Allow downloads of responses to Workflow Builder forms as CSV file."
           btnText="expand"
         >
-          {/* Password input goes uunder here */}
-          {/* <SavePassword /> */}
+          <DownloadWorkflow />
+        </PreferenceWrapper>
+      </AnimateSharedLayout>
+      <AnimateSharedLayout>
+        <PreferenceWrapper
+          title="Workflow Builder steps from apps."
+          text="Allow apps to add steps to Workflow Builder."
+          btnText="expand"
+        >
+          <WorkflowBuilder />
+        </PreferenceWrapper>
+      </AnimateSharedLayout>
+      <AnimateSharedLayout>
+        <PreferenceWrapper
+          title="Channel email addresses"
+          text="Choose who can get email addresses for channels in your workspace."
+          btnText="expand"
+        >
+          <ChannelEmail />
+        </PreferenceWrapper>
+      </AnimateSharedLayout>
+      <AnimateSharedLayout>
+        <PreferenceWrapper
+          title="Apps & Custom Integrations"
+          text="Manage permissions for apps and integrations in the App Directory >"
+          btnText="expand"
+        >
         </PreferenceWrapper>
       </AnimateSharedLayout>
     </>

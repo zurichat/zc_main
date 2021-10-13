@@ -4,7 +4,7 @@ import styles from '../styles/AdminSettingsTab.module.css'
 
 // components
 import AdminSettings from '../adminSettings'
-import PermissionsTab from '../Permissions'
+import PermissionsTab from '../permissions'
 import AuthTab from './AuthTab'
 import MembersTab from '../../components/MembersTab'
 
