@@ -80,6 +80,7 @@ function Uitest() {
 
   function handleOverlayClicked() {
     setShowMoreOptions(false)
+    
   }
 
   const handleShowMoreOptions = (id, event) => {
@@ -96,7 +97,7 @@ function Uitest() {
 
   return (
     <>
-      <EmojiReaction />
+     
       <MsgBoard>
         {MsgList.map((messageData, i) => (
           <MessageContainer
@@ -118,7 +119,7 @@ function Uitest() {
 
       {showEmoji ? (
         <div>
-          <MoreMenu top={top} right={right} />
+          <EmojiReaction top={top} right={right} />
           <Overlay handleOverlayClicked={handleOverlayClicked} />
         </div>
       ) : null}

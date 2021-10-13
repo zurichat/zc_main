@@ -51,7 +51,7 @@ import Legal from './pages/legal'
 import ZurichatBlog from './pages/blogs/components/zurichatBlog'
 
 import Ebooks from './pages/ebooks'
-import MsgBoard from './pages/UI/MsgBoard'
+import MsgBoard from '../../zuriUi/src/components/MessageBoard/MessageBoard'
 
 
 // useEffect(() => {
