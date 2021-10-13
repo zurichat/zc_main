@@ -17,3 +17,8 @@
 .MessageContainer .hoverItemsContainer {
   display: none;
 }
+
+.MessageContainer .emojiCardContainer{
+  margin-left: 53px;
+  display: flex;
+}
