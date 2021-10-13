@@ -15,6 +15,7 @@ import { TopbarContext } from "../context/Topbar"
 const SetDateAndTime = ({ dateTime, setDateTime }) => {
   const [value, onChange] = useState(new Date())
   const [timevalue, timeChange] = useState("10:00")
+
   return (
     <>
       <div className={styles.modal}>
@@ -44,7 +45,14 @@ const SetDateAndTime = ({ dateTime, setDateTime }) => {
   )
 }
 
-const SetStatusModal = ({ statusModal, setStatusModal }) => {
+const SetStatusModal = ({
+  statusModal,
+  setStatusModal,
+  emojiItem,
+  text,
+  setText,
+  setEmoji
+}) => {
   const [dropdown, setDropdown] = useState(false)
   const [openEmoji, setOpenEmoji] = useState(false)
   const [dateTime, setDateTime] = useState(false)
@@ -52,32 +60,36 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
   const { user, orgId, setUser } = useContext(ProfileContext)
   const { emoji } = useContext(TopbarContext)
   const [chosenEmoji, setChosenEmoji] = emoji
-  const [emojiItem, setEmoji] = useState("")
-  const [text, setText] = useState("")
+  // const [emojiItem, setEmoji] = useState("")
+  // const [text, setText] = useState("")
   const [status, setStatus] = useState([])
   // const [timeOut, setTimeOut] = useState('')
   const onEmojiClick = (event, emojiObject) => {
     setChosenEmoji(emojiObject)
   }
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
     setEmoji(chosenEmoji.emoji)
     setUser({ ...user, status: { text, emojiItem } })
-    const data = { emojiItem, text, choosePeriod }
-    authAxios
-      .patch(`/organizations/${orgId}/members/${user._id}/status`, {
-        expiry_time: choosePeriod,
-        tag: emojiItem,
-        text: text
-      })
-      .then(res => {
-        // console.log(res)
-      })
-      .catch(err => console.error(err))
+    const result = { emojiItem, text, choosePeriod }
+
+    try {
+      const res = await authAxios.patch(
+        `/organizations/${orgId}/members/${user._id}/status`,
+        {
+          expiry_time: "" || choosePeriod,
+          tag: emojiItem,
+          text: text
+        }
+      )
+      res.status == 200 && alert(res?.data?.message)
+    } catch (error) {
+      alert(error)
+    }
 
     setStatus(status => {
-      return [...status, data]
+      return [...status, result]
     })
     setStatusModal(!statusModal)
   }

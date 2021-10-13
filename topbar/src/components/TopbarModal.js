@@ -14,11 +14,38 @@ import MembersModal from "./MembersModal"
 import Downloads from "./Downloads"
 import SetStatusModal from "./SetStatusModal"
 import NewStatusModal from "./NewStatusModal"
+import { authAxios } from "./../utils/Api"
 // react icons
 
 const TopbarModal = ({ members }) => {
-  const { userProfileImage, toggleModalState, toggleProfileState, user } =
-    useContext(ProfileContext)
+  const {
+    userProfileImage,
+    orgId,
+    toggleModalState,
+    toggleProfileState,
+    user
+  } = useContext(ProfileContext)
+
+  const [emojiItem, setEmoji] = useState("")
+  const [text, setText] = useState("")
+
+  const handleClearStatus = async () => {
+    setEmoji("")
+    setText("")
+    try {
+      const res = await authAxios.patch(
+        `/organizations/${orgId}/members/${user._id}/status`,
+        {
+          expiry_time: "one_hour",
+          tag: emojiItem,
+          text: text
+        }
+      )
+      res.status == 200 && alert(res?.data?.message)
+    } catch (error) {
+      alert(error)
+    }
+  }
 
   const state = useContext(TopbarContext)
   const [showModal] = state.show
@@ -169,15 +196,25 @@ const TopbarModal = ({ members }) => {
               className={styles.sectionTwo}
               onClick={() => setStatusModal(!statusModal)}
             >
-              <div className={styles.emoji}>{user?.status?.tag} </div>
-              <div className={styles.statusContent}>{user?.status?.text}</div>
+              <div className={styles.emoji}>
+                {emojiItem.length > 0 && emojiItem}
+              </div>
+              <div className={styles.statusContent}>
+                {text.length > 0 ? text : "Update your Status"}
+              </div>
             </div>
 
             <div className={styles.sectionThree}>
               {/* <p onClick={openStatus}>Set a status</p> */}
-              <p>Clear status</p>
+              {text.length > 0 && emojiItem.length > 0 && (
+                <p onClick={handleClearStatus}>Clear status</p>
+              )}
               {statusModal && (
                 <NewStatusModal
+                  emojiItem={emojiItem}
+                  text={text}
+                  setEmoji={setEmoji}
+                  setText={setText}
                   statusModal={statusModal}
                   setStatusModal={setStatusModal}
                   openStatus={openStatus}
