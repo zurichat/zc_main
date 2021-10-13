@@ -1,7 +1,6 @@
 import React from 'react'
 import AdminSettings from '.'
 import CustomizeWorkspaceTab from './Settings/components/CustomizeWorkspaceTab'
-import AdminTab from './components/AdminTab'
 import styles from './styles/customizeWorkspace.module.css'
 
 function Customize() {
