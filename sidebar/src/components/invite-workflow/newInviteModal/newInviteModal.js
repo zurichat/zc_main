@@ -11,8 +11,7 @@ const Container = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.5;
-    background: grey !important;
+    background: rgba(64, 79, 74, 0.5); !important;
     z-index: 10;
   }
 
@@ -24,7 +23,6 @@ const Container = styled.div`
     min-width: 30%;
     padding: 1em;
     display: flex;
-    margin-bottom: 1em;
     background: white !important;
   }
 
@@ -39,8 +37,8 @@ const Container = styled.div`
   }
 
   &.invite-modal-sendBtn {
-    display: flex;
-    justify-content: flex-end;
+    display: flex!important;
+    justify-content: end;
   }
 
   &.invite-modal-textarea,
@@ -50,38 +48,45 @@ const Container = styled.div`
 `
 const Text = styled.h3`
   color: black !important;
-  font-weight: 800 !important;
+  font-weight: 700 !important;
   padding: 0 !important;
+  margin-top: 0 !important;
 `
 
 const TextArea = styled.textarea`
-  border: 1px solid black !important;
   min-height: 8em;
   width: 100%;
-  padding: 10px 0;
+  padding: 10px;
+  margin-bottom: 1em;
 
   &:focus {
-    color: black !important;
+    outline-color: #00b87c !important;
   }
 `
 
-const Label = styled.label``
+const Label = styled.label`
+  display: block;
+  margin-bottom: 10px;
+`
 
 const Image = styled.img``
 
 const Button = styled.button`
   outline: none;
   background: transparent;
+  border: none;
+  cursor: pointer;
 
   &.invite-sendBtn {
-    display: flex !important;
-    justify-content: flex-end;
     background: #00b87c !important;
     color: white !important;
+    padding: 0.8em 1.5em;
   }
 `
 
 function NewInviteModal({ openModal, setOpenModal }) {
+  const validateEmail = () => {}
+
   return (
     <Container className="invite-modal-main">
       <Container className="invite-modal-innerContainer">
@@ -93,12 +98,13 @@ function NewInviteModal({ openModal, setOpenModal }) {
         </Container>
 
         <Container className="invite-modal-textarea">
-          <Label for="emails"></Label>
+          <Label for="emails">To:</Label>
           <TextArea
             placeholder="name@gmail.com"
             name="emails"
             id="emails"
             required
+            onChange={() => validateEmail()}
           ></TextArea>
         </Container>
 
