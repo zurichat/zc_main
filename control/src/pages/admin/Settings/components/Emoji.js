@@ -1,8 +1,14 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import classes from "../styles/EmojiTab.module.css"
 
 const Emoji = () => {
   const [display, setDisplay] = useState(false)
+
+  useEffect(() => {
+    if (display) document.body.style.overflow = "hidden"
+    if (!display) document.body.style.overflow = "scroll"
+  }, [display])
+
   return (
     <div className={classes.container}>
       <div className={classes.top}>
