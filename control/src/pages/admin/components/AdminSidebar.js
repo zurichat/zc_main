@@ -141,7 +141,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
+            to="/admin/settings/customize"
           >
             <FiScissors className={styles.icon} />
             Customize

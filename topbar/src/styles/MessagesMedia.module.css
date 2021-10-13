@@ -1,7 +1,7 @@
 .msgCon {
-  margin-top: 54px;
-  margin-bottom: 54px;
-  margin-left: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
   width: 80%;
   line-height: 30px;
 }
@@ -15,7 +15,7 @@ p{
   font-size: 15px;
   line-height: 20px;
   font-style: normal;
-  color: #242424;
+  color: var(--text-color-gray-1);
 }
 
 .clean {
@@ -27,7 +27,7 @@ p{
 .cln {
   margin-left: 10px;
   font-size: 13px;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
   font-style: normal;
 }
 
@@ -37,7 +37,7 @@ p{
   font-weight: normal;
   font-style: normal;
   line-height: 15px;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
 }
 
 .radio {
@@ -58,7 +58,7 @@ p{
   font-style: normal;
   font-weight: normal;
   margin-top: 6px;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
 }
 
 .theme11 {
@@ -78,7 +78,7 @@ p{
   font-size: 15px;
   font-style: normal;
   line-height: 20px;
-  color: #242424;
+  color: var(--text-color-gray-1);
 }
 
 .full {
@@ -91,7 +91,7 @@ p{
 .display {
   margin-left: 10px;
   font-size: 13px;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
   font-weight: normal;
   font-style: normal;
 }
@@ -99,7 +99,7 @@ p{
 .jst {
   margin-left: 10px;
   font-size: 13px;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
   font-weight: normal;
   font-style: normal;
 }
@@ -129,7 +129,7 @@ p{
   line-height: 20px;
   font-weight: normal;
   font-style: normal;
-  color: #999999;
+  color: var(--text-color-normal);
 }
 
 .change span {
@@ -157,7 +157,7 @@ p{
 .current {
   margin-left: -10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   font-weight: normal;
   font-style: normal;
 }
@@ -171,7 +171,7 @@ p{
 .hour {
   margin-left: -10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   font-weight: normal;
   font-style: normal;
 }
@@ -185,7 +185,7 @@ p{
 .color {
   margin-left: -10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   font-weight: normal;
   font-style: normal;
 }
@@ -195,7 +195,7 @@ p{
   font-size: 13px;
   line-height: 20px;
   font-style: normal;
-  color: #333333;
+  color: var(--text-color-normal);
 }
 
 .checkbox {
@@ -219,13 +219,13 @@ p{
   font-size: 15px;
   line-height: 20px;
   font-style: normal;
-  color: #333333;
+  color: var(--text-color-gray-1);
 }
 
 .tone {
   margin-top: 10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   line-height: 20px;
   font-weight: normal;
   font-style: normal;
@@ -234,7 +234,7 @@ p{
 .choose {
   margin-top: 15px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   line-height: 30px;
   font-weight: normal;
   font-style: normal;
@@ -242,7 +242,7 @@ p{
 
 .choose2 {
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   line-height: 30px;
   font-weight: normal;
   font-style: normal;
@@ -326,7 +326,7 @@ p{
 .plain {
   margin-left: -10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   font-weight: normal;
   font-style: normal;
 }
@@ -340,7 +340,7 @@ p{
 .jumbomoji {
   margin-left: -10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   font-weight: normal;
   font-style: normal;
 }
@@ -354,7 +354,7 @@ p{
 .versions {
   margin-top: 10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   line-height: 30px;
   font-weight: normal;
   font-style: normal;
@@ -363,7 +363,7 @@ p{
 .example {
   margin-top: 10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-gray-1);
   line-height: 20px;
   font-weight: normal;
   font-style: normal;
@@ -386,7 +386,7 @@ p{
   font-size: 15px;
   line-height: 20px;
   font-style: normal;
-  color: #333333;
+  color: var(--text-color-normal);
 }
 
 .images {
@@ -398,7 +398,7 @@ p{
 .files {
   margin-left: -10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   font-weight: normal;
   font-style: normal;
 }
@@ -412,7 +412,7 @@ p{
 .linked {
   margin-left: -10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   font-weight: normal;
   font-style: normal;
 }
@@ -434,7 +434,7 @@ p{
 .than {
   margin-left: -10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   font-weight: normal;
   font-style: normal;
 }
@@ -452,7 +452,7 @@ p{
 .of {
   margin-left: -10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   font-weight: normal;
   font-style: normal;
 }
@@ -474,13 +474,13 @@ p{
   font-size: 15px;
   line-height: 20px;
   font-style: normal;
-  color: #333333;
+  color: var(--text-color-normal);
 }
 
 .upload {
   margin-top: 10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   line-height: 30px;
   font-weight: normal;
   font-style: normal;
@@ -488,7 +488,7 @@ p{
 
 .upload2 {
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   line-height: 30px;
   font-weight: normal;
   font-style: normal;
@@ -496,7 +496,7 @@ p{
 
 .upload3 {
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   line-height: 30px;
   font-weight: normal;
   font-style: normal;
