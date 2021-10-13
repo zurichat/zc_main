@@ -18,6 +18,8 @@ const MessageInputBox = ({ sendMessageHandler, addToMessages }) => {
   const [textIsBold, setTextBold] = useState(false)
   const [textIsItalic, setTextItalic] = useState(false)
   const [attachedFile, setAttachedFile] = useState(null)
+  const [inputKey, setInputKey] = useState('any-key-press')
+  const [showAttachInputBox, setshowAttachInputBox] = useState(false)
 
   const generateMessageFormatOptions = () => {
     const options = []
@@ -44,15 +46,16 @@ const MessageInputBox = ({ sendMessageHandler, addToMessages }) => {
     if (e.target.files && e.target.files[0]) {
       const fd = new FormData()
       fd.append('media',e.target.files[0],e.target.files[0].name )
-      setAttached(fd)
+      setAttachedFile(fd)
     }
 
   }
 
   // on click clear attached file
-  const clearAttached = (e) => {
+  const clearAttached = () => {
     setInputKey('reset-attached')
-    setAttached('')
+    setAttachedFile('')
+    setshowAttachInputBox(false)
   }
 
   return (
@@ -64,7 +67,21 @@ const MessageInputBox = ({ sendMessageHandler, addToMessages }) => {
           value={text}
           onChange={ev => setText(ev.target.value)}
         />
-
+        {/* Attached File Input field */}
+       { showAttachInputBox ?
+       <div>
+         <input 
+              onChange={attachedFile}
+              key={inputKey || ''}
+              type='file'
+            />
+          <button onClick={handleAttachMedia}>Send</button>
+          <button 
+            onClick={clearAttached}
+          >Clear Attached File</button>
+       </div>
+         :null
+          }
         <SendWrapper>
           <div style={{ display: "flex" }}>
             <div style={{ display: "flex", gap: "11px", alignItems: "center" }}>
@@ -106,11 +123,11 @@ const MessageInputBox = ({ sendMessageHandler, addToMessages }) => {
               <img src={AtSign} alt="" />
             </UnstyledButton>
             <UnstyledButton>
-              <img src={Clip} alt="" onClick={handleClickSendMessage} />
-            </UnstyledButton>
-            <UnstyledButton>
-              <img src={Send} alt="" onClick={handleAttachMedia}/>
+              <img src={Clip} alt="" onClick={()=>setshowAttachInputBox(true)}/>
             </UnstyledButton> 
+            <UnstyledButton>
+              <img src={Send} alt="" onClick={handleClickSendMessage} />
+            </UnstyledButton>
             <UnstyledButton>
               <img src={Bigborder} alt="" />
             </UnstyledButton>
