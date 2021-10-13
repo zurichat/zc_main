@@ -119,6 +119,16 @@ const HeaderSearchSuggestion = () => {
             </li>
             <li className="nav-item">
               <NavLink
+                to="/plugins"
+                className={`nav-link ${headerStyles.navLinkPricing}`}
+                role="button"
+                aria-expanded="false"
+              >
+                <span className={`${headerStyles.item}`}>Plugins</span>
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
                 to="/downloads"
                 className={`nav-link ${headerStyles.navLinkComms}`}
               >
@@ -127,6 +137,8 @@ const HeaderSearchSuggestion = () => {
                 </span>
               </NavLink>
             </li>
+
+
             <li className="nav-item">
               <NavLink
                 to="/contact-us"
