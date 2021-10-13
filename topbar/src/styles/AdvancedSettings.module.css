@@ -1,6 +1,7 @@
 .container {
   width: 80%;
   font-family: 'Lato';
+  padding-bottom: 4em;
 }
 
 .head {
@@ -10,7 +11,7 @@
   margin: 1rem 0;
   color: #000;
   font-size: 15px;
-  margin-top: 32px;
+  
 }
 
 .borderbottomone {
@@ -61,12 +62,19 @@
   margin-top: 3px;
 }
 
+.typing{
+  width: 100%;
+}
+.format{
+  width: 100%;
+}
 .format h3 {
   font-size: 13px;
   color: black;
   font-weight: 500;
   margin-top: -13px;
   margin-left: -10px;
+  width: 100%;
 }
 
 .format2 h3 {
@@ -154,7 +162,7 @@
   border: 1px solid rgba(0, 184, 124, 0.5);
   box-sizing: border-box;
   border-radius: 3px; 
-  padding: 0px 7px;
+  padding: 0px 7px; 
   margin-top: -2px;
   color: rgba(0, 184, 124, 0.5);
   margin-right: 3px;
@@ -322,7 +330,7 @@
 
 .ask input {
   display: flex;
-  margin-top: 2px;
+  margin-top: .5em;
 }
 
 .survey {
@@ -369,7 +377,7 @@
 
 .warn input {
   display: flex;
-  margin-top: 2px;
+  margin-top: .5em;
 }
 
 .options {
@@ -423,4 +431,69 @@
   margin-top: 6px;
   font-size: 15px;
   font-weight: bolder;
+}
+
+/***** Mobile screen */
+
+
+@media (max-width: 500px) {
+  .container{
+    width: 100%;
+    padding-top: 1em;
+  }
+  .head{
+    margin-top: 5px;
+  }
+
+  .input,.search, .options{
+    width: 93%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+
+  }
+
+  .search{
+    margin-bottom:2rem;
+  }
+
+  .bar{
+    width: 90%;
+    margin: 0 auto
+  }
+
+  .bartype{
+    width: 90%;
+    height: 30px;
+    padding: 1em;
+    font-size: 14px;
+  }
+
+  .options{
+    width: 93%;
+
+  }
+
+  .ask,.survey, .warn, .checkkeys{
+    width: 100%;
+    margin: 12px auto 0 auto;
+  }
+
+  .checkkeyss{
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .checkkeys input {
+    margin-left: 0;
+  }
+
+
+  .line{
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .format2 h3,.format h3{
+    line-height: 42px;
+  }
 }

@@ -1,0 +1,41 @@
+.modalWrap {
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  margin: 0px auto;
+  width: 55%;
+  max-width: 830px;
+  max-height: 500px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 8px #0004;
+  z-index: 10;
+}
+
+.modalLayer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #0009;
+  z-index: 444440;
+}
+
+/* tablets */
+@media (max-width: 769px) {
+  .modalWrap {
+    left: 18%;
+    width: 70%;
+  }
+}
+
+/* mobile phone */
+@media screen and (max-width: 469px) {
+  .modalWrap {
+    top: 75px;
+    left: 10px;
+    margin: 10px auto;
+    width: 90%;
+  }
+}
