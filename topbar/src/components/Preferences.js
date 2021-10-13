@@ -24,7 +24,7 @@ const Preferences = () => {
     setNavbarOpen(false)
   }
 
-  return (
+  return ( 
     <ProfileModal title="Preference">
       <div className={styles.body}>
         <div className={styles.buttonToggle}>
@@ -47,7 +47,7 @@ const Preferences = () => {
           />
         </div>
 
-        <div>
+        <div style={{width: "100%"}}>
           {sideBar === 1 && <NotificationPreference />}
 
           {sideBar === 3 && <Themes />}
