@@ -41,6 +41,12 @@ registerApplication({
   activeWhen: ["/"]
 })
 
+registerApplication({
+  name: "@zuri/utilities",
+  app: () => System.import("@zuri/utilities"),
+  activeWhen: ["/"]
+})
+
 // PLUGINS HERE
 registerApplication({
   name: "@zuri/zuri-plugin-chessboard",
