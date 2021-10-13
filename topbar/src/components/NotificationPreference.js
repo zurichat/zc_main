@@ -7,6 +7,7 @@ import { ProfileContext } from "../context/ProfileModal"
 const NotificationPreference = () => {
   const [active, setActive] = useState("")
   const [active1, setActive1] = useState("")
+  const [keywordInput, setKeywordInput] = useState("")
   const [durations] = useState([
     { name: "Duration" },
     { name: "Everyday" },
@@ -28,18 +29,46 @@ const NotificationPreference = () => {
   const [notificationSend, setNotificationSend] = useState("")
   const { user, orgId } = useContext(ProfileContext)
   const [dataState, setDataState] = useState({
-    // channel_hurdle_notification: channel_hurdle,
-    email_notifications_for_mentions_and_dm: false,
-    message_preview_in_each_notification: false,
-    mute_all_sounds: false,
-    my_keywords: "",
-    notification_schedule: "",
     notify_me_about: "",
-    thread_replies_notification: false,
     use_different_settings_mobile: false,
+    channel_hurdle_notification: false,
+    meeting_replies_notification: false,
+    thread_replies_notification: false,
+    my_keywords: [""],
+    notification_schedule: {
+      day: "",
+      from: "",
+      to: ""
+    },
+    custom_notification_schedule: [
+      {
+        day: "",
+        from: "",
+        to: ""
+      }
+    ],
+    message_preview_in_each_notification: false,
+    set_message_notifications_right: "",
+    set_lounge_notifications_right: "",
+    mute_all_sounds: false,
+    flash_window_when_notification_comes: "",
+    deliver_notifications_via: "",
     when_iam_not_active_on_desktop: "",
-    notify_me_meeting_set: false
+    email_notifications_for_mentions: false
   })
+  // const [dataState, setDataState] = useState({
+  //   // channel_hurdle_notification: channel_hurdle,
+  //   email_notifications_for_mentions_and_dm: false,
+  //   message_preview_in_each_notification: false,
+  //   mute_all_sounds: false,
+  //   my_keywords: "",
+  //   notification_schedule: "",
+  //   notify_me_about: "",
+  //   thread_replies_notification: false,
+  //   use_different_settings_mobile: false,
+  //   when_iam_not_active_on_desktop: "",
+  //   notify_me_meeting_set: false
+  // })
 
   useEffect(() => {
     if (sessionStorage.getItem("notificationSettings")) {
@@ -66,6 +95,23 @@ const NotificationPreference = () => {
       })
 
     // localStorage.setItem("settings", JSON.stringify(dataState))
+  }
+
+  const handleKeywordChange = e => {
+    setKeywordInput(e.target.value)
+    let newKeyword = keywordInput
+    sessionStorage.setItem(
+      "notificationSettings",
+      JSON.stringify({
+        ...dataState,
+        my_keywords: [newKeyword]
+      })
+    )
+    setDataState({
+      ...dataState,
+      my_keywords: [newKeyword]
+    })
+    setData()
   }
 
   const handleSelect = e => {
@@ -142,12 +188,12 @@ const NotificationPreference = () => {
       "notificationSettings",
       JSON.stringify({
         ...dataState,
-        notify_me_meeting_set: !dataState.notify_me_meeting_set
+        meeting_replies_notification: !dataState.meeting_replies_notification
       })
     )
     setDataState({
       ...dataState,
-      notify_me_meeting_set: !dataState.notify_me_meeting_set
+      meeting_replies_notification: !dataState.meeting_replies_notification
     })
     setData()
   }
@@ -345,7 +391,7 @@ const NotificationPreference = () => {
               type="checkbox"
               className={styles.check}
               value="for-meeting"
-              checked={dataState.notify_me_meeting_set}
+              checked={dataState.meeting_replies_notification}
               onClick={handleNotifyMeeting}
             />
             <label htmlFor="for-meeting">Notify me when a meeting is set</label>
@@ -384,7 +430,12 @@ const NotificationPreference = () => {
             You will be notified anything, someone uses these keywords in a
             thread
           </span>
-          <textarea className={styles.textarea}></textarea>
+          <textarea
+            type="text"
+            value={keywordInput}
+            onChange={handleKeywordChange}
+            className={styles.textarea}
+          />
         </div>
         <hr
           style={{
