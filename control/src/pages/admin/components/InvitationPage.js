@@ -1,17 +1,11 @@
-import { Link } from " react-router-dom"
 import AdminHeader from "./AdminHeader"
 import AdminSidebar from "./AdminSidebar"
 
 import styles from "../styles/InvitationPage.module.css"
+import { FiSidebar } from "react-icons/fi"
 
 const InvitationPage = () => {
-  return (
-    <>
-      <AdminHeader />
-      <AdminSidebar />
-      <div>Invite.js</div>
-    </>
-  )
+  return <div>Hello</div>
 }
 
 export default InvitationPage
