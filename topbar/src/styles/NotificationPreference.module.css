@@ -1,13 +1,45 @@
 .body {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: row;
   overflow: hidden;
 }
+.toggle{
+  display: none;
+}
+.hrLine{
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .buttonToggle{
+    background: #fff;
+    margin: 0px;
+    width: 100%;
+  }
+  .body{
+    flex-wrap: wrap;
+
+  }
+  .toggle{
+    display: flex;
+    font-size: 20px;
+    display: flex;
+    color: #666;
+    padding: 5px;
+    margin: 5px 15px;
+    position: relative;
+  }
+  .hrLine{
+    display: flex;
+    width: 100%;
+    position: relative;
+    color: #999999;
+  }
+}
 
 .body::-webkit-scrollbar {
   display: none;
-  scrollbar-width: none;
-  overflow: hidden;
 }
 
 /* THE SECTION OF THE CONTENT */

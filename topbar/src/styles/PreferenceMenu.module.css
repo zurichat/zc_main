@@ -2,11 +2,13 @@
   width: 200px;
   background: #f9f9f9;
   height: 100%;
-  position: relative;
   float: left;
+  position: fixed;
+  position: relative;
 }
 .itemsContainer {
   margin-top: 15px;
+  position: fixed;
 }
 .one,
 .active {
