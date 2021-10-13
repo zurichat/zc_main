@@ -8,7 +8,6 @@ import { ProfileContext } from "../context/ProfileModal"
 
 const LanguageAndRegion = () => {
   const { user, orgId } = useContext(ProfileContext)
-  // console.log(user);
   const [langreg, setLangreg] = useState(user.settings.languages_and_regions);
   const [selectedTimezone, setSelectedTimezone] = useState({})
   
@@ -24,11 +23,10 @@ const LanguageAndRegion = () => {
     setTzChb(!tzChb)
   }
 
-  const handleData = (languages) => {
-      
-      authAxios.patch(`organizations/${orgId}/members/${user._id}/settings/languages-and-region`, languages)
+  const handleData = (langreg) => {
+      authAxios.patch(`organizations/${user.org_id}/members/${user._id}/settings/languages-and-region`, langreg)
       .then(res => {
-        // console.log(res)
+      
       })
       .catch(err => {
         console.error(err)
@@ -85,7 +83,7 @@ const LanguageAndRegion = () => {
                     setLangreg({...langreg, time_zone: setSelectedTimezone})
                     handleData({...langreg, time_zone: setSelectedTimezone})
                     setSelectedTimezone
-                    // console.log(langreg)
+                   
                  }} 
             />
             <p className={styles.note}>
