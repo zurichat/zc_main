@@ -31,17 +31,21 @@
 .modalContent,
 .modalFull {
   width: 90%;
-  max-width: 885px;
+  /* max-width: 885px; */
+  max-width: 700px;
   background: #fff;
   border-radius: 4px;
   overflow: hidden;
   padding-bottom: 20px;
+  height: 90vh;
+  margin-top: 30px;
+  margin-right: 40px;
 }
 
-.modalCont {
+/* .modalCont {
   overflow-y: scroll;
   height: 100%;
-}
+} */
 .modalCont::-webkit-scrollbar {
   display: none;
 }
@@ -58,7 +62,7 @@
   font-family: "Lato", sans-serif;
   color: #fff;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   z-index: 999;
   position: sticky;
 
@@ -142,6 +146,8 @@
 
   .modalCont {
     margin-top: 1rem;
+    overflow-y: scroll;
+    height: 100%;
   }
 
   .mobile {
