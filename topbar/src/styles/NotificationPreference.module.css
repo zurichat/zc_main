@@ -259,6 +259,7 @@ input[type="radio"] {
   width: 520px;
   font-size: 13px;
   margin-bottom: 0px;
+  border-radius: 4px;
 }
 
 .list {
