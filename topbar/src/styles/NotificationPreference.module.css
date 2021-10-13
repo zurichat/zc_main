@@ -1,3 +1,37 @@
+:root {
+  --background: #f9f9f9;
+  --bg-color: #fff;
+  --width: 100%;
+  --height: 100%;
+  --text-color-bold: #000;
+  --text-color-normal: #333333;
+  --text-color-gray: #3a3a3a;
+  --text-color-gray-1: #242424;
+}
+
+[data-theme="dark"] {
+  --background: #333333;
+  --bg-color: #3f3f3f;
+  --text-color-bold: #fff;
+  --text-color-normal: #999999;
+  --text-color-gray: #cacaca;
+  --text-color-gray-1: #f4f4f4;
+}
+
+[data-theme="light"] {
+  --background: #f9f9f9;
+  --text-color-bold: #000;
+  --text-color-normal: #333;
+  --bg-color: #fff;
+  --text-color-gray: #3a3a3a;
+  --text-color-bold: #3f3f3f;
+  --text-color-gray-1: #242424;
+}
+
+
+.background {
+  background: var(--bg-color);
+}
 .body {
   width: 100vw;
   height: 100vh;
@@ -13,7 +47,7 @@
 }
 @media screen and (max-width: 768px) {
   .buttonToggle{
-    background: #fff;
+    background: var(--bg-color);
     margin: 0px;
     width: 100%;
   }
@@ -34,7 +68,7 @@
     display: flex;
     width: 100%;
     position: relative;
-    color: #999999;
+    color: var(--text-color-normal);
   }
 }
 
@@ -66,7 +100,7 @@
   font-style: normal;
   font-size: 15px;
   font-weight: 500;
-  color: #242424;
+  color: var(--text-color-gray-1);
   margin-left: 0px;
   line-height: 21px;
 }
@@ -75,7 +109,7 @@
   font-style: normal;
   font-size: 15px;
   font-weight: 500;
-  color: #242424;
+  color: var(--text-color-gray-1);
   margin-left: 0px;
   line-height: 21px;
 }
@@ -106,7 +140,7 @@
   font-family: Lato;
   font-weight: 400;
   font-size: 13px;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
   line-height: 21px;
   align-self: center;
 }
@@ -121,7 +155,7 @@ input[type="checkbox"] {
   position: relative;
   padding: 10px;
   font-size: 13px;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
   font-family: Lato;
   margin-top: -10px;
   margin-bottom: 20px;
@@ -136,7 +170,7 @@ input[type="checkbox"] {
   display: block;
   font-weight: 400;
   font-size: 13px;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
   overflow-wrap: break-word;
 }
 .line {
@@ -161,7 +195,7 @@ input[type="checkbox"] {
   margin-top: 10px;
 }
 .itemTitle2 .spanBlock {
-  color: #3a3a3a;
+  color: var(--text-color-gray);
   font-size: 13px;
   margin-right: auto;
   margin-bottom: 4px;
@@ -202,11 +236,11 @@ input[type="checkbox"] {
   font-family: lato;
   font-weight: normal;
   border: 1px solid #e0e0e0;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
   margin-top: 24px;
 }
 .listChild p {
-  color: #999999;
+  color: var(--text-color-normal);
   text-align: center;
   align-self: center;
   font-size: 12px;
@@ -229,7 +263,7 @@ input[type="checkbox"] {
   transform: translate(0, 9px) scale(1);
   transform-origin: top left;
   transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
   font-size: 13px;
   line-height: 1;
   left: 16px;
@@ -237,7 +271,7 @@ input[type="checkbox"] {
 
 .inputContainer:focus-within label {
   transform: translate(0, 5px) scale(0.8);
-  color: #3a3a3a;
+  color: var(--text-color-gray);
 }
 
 .textInput {
@@ -261,7 +295,7 @@ input[type="checkbox"] {
   border-radius: 4px;
   padding: 5px 5px 3px;
   margin-bottom: 16px;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
   border: 1px solid #e5e5e5;
   outline: none;
   font-style: normal;
@@ -285,7 +319,7 @@ input[type="checkbox"] {
   font-weight: 400;
   font-size: 13px;
   line-height: 21px;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
 }
 
 .mute {
@@ -336,7 +370,7 @@ input[type="checkbox"] {
   font-size: 12px;
   border: 1px solid rgb(218, 215, 215);
   border-radius: 4px;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
   outline: none;
 }
 
@@ -353,7 +387,7 @@ input[type="checkbox"] {
 
 .when {
   font-size: 13px;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
   font-family: Lato;
   font-style: normal;
   font-weight: 400;
@@ -376,7 +410,7 @@ input[type="checkbox"] {
   border: 1px solid rgb(218, 215, 215);
   border-radius: 4px;
   font-size: 13px;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
   outline: none;
   width: 273px;
   height: 39px;
