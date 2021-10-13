@@ -1,5 +1,6 @@
 import { useContext, useState, useEffect } from "react"
 import { FaChevronRight } from "react-icons/fa"
+import { BiSmile } from "react-icons/bi"
 import Picker, { SKIN_TONE_MEDIUM_DARK } from "emoji-picker-react"
 import axios from "axios"
 import defaultAvatar from "../assets/images/avatar_vct.svg"
@@ -46,7 +47,7 @@ const TopbarModal = ({ members }) => {
       alert(error)
     }
   }
-
+  const [hoverState, setHoverState] = useState(false)
   const state = useContext(TopbarContext)
   const [showModal] = state.show
   // const [username, setUsername] = state.username
@@ -105,25 +106,25 @@ const TopbarModal = ({ members }) => {
   const [pause, setPause] = useState(false)
   const [statusModal, setStatusModal] = useState(false)
 
-  let userPresence = null
-  let toggleStatus = null
+  var userAppearance = null
+  var toggleAppearance = null
 
   switch (presence) {
     case "true":
-      userPresence = "Set yourself as away"
-      toggleStatus = (
+      userAppearance = "Set yourself as away"
+      toggleAppearance = (
         <div className={styles.online}>
           <div className={styles.activeCircle} />
-          <p className={styles.active}>Active</p>
+          <p className={styles.active}> Active </p>
         </div>
       )
       break
     default:
-      userPresence = "Set yourself as active"
-      toggleStatus = (
+      userAppearance = "Set yourself as active"
+      toggleAppearance = (
         <div className={styles.online}>
           <div className={styles.awayCircle} />
-          <p className={styles.away}>Away</p>
+          <p className={styles.away}>Away </p>
         </div>
       )
   }
@@ -188,13 +189,15 @@ const TopbarModal = ({ members }) => {
                         .toUpperCase()}${user.user_name.slice(1)}`
                     : "Anonymous"}
                 </h4>
-                {toggleStatus}
+                {toggleAppearance}
               </div>
             </div>
 
             <div
               className={styles.sectionTwo}
               onClick={() => setStatusModal(!statusModal)}
+              onMouseEnter={() => setHoverState(true)}
+              onMouseLeave={() => setHoverState(false)}
             >
               <div className={styles.emoji}>
                 {emojiItem.length > 0 && emojiItem}
@@ -225,7 +228,7 @@ const TopbarModal = ({ members }) => {
                   toggleUserPresence()
                 }}
               >
-                {userPresence}
+                {userAppearance}
               </p>
               {/* <div className={styles.pause}>
                <p onClick={() => setPause(!pause)}>Pause Notifications</p>
