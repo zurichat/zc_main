@@ -9,12 +9,17 @@ import { useState } from "react"
 export default function MessageContainer({
   messageData,
   handleShowMoreOptions,
-  id
+  handleShowEmoji,
+  id,
 }) {
   return (
     <div className={styles.MessageContainer}>
       <div className={styles.hoverItemsContainer}>
-        <HoverItems id={id} handleShowMoreOptions={handleShowMoreOptions} />
+        <HoverItems 
+          id={id} handleShowMoreOptions={handleShowMoreOptions}
+          handleShowEmoji={handleShowEmoji}
+         
+         />
       </div>
       <div className={styles.messageCardContainer}>
         <MessageCard id={id} messageData={messageData} />

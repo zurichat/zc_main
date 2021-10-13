@@ -8,11 +8,14 @@ import share from "./assets/share.svg"
 
 import MoreMenu from "../MoreMenu/MoreMenu"
 
-export default function HoverItems({ id, handleShowMoreOptions }) {
+export default function HoverItems(props) {
+  const {id, handleShowMoreOptions, handleShowEmoji} = props;
+  
+
   return (
     <>
       <div className={styles.HoverItems}>
-        <div>
+        <div onClick={event => handleShowEmoji(id, event)}>
           <img src={emoji} alt="emoji imag" />
         </div>
         <div>

@@ -3,6 +3,9 @@ import { MsgBoard } from "./MsgBoardStyle"
 
 import MoreMenu from "./Subs/MessageContainer/MoreMenu/MoreMenu"
 import Overlay from "./Subs/MessageContainer/Overlay/Overlay"
+
+import EmojiReaction from '../EmojiReaction/EmojiReaction'
+
 import { useState } from "react"
 
 function Uitest() {
@@ -70,6 +73,8 @@ function Uitest() {
   ]
 
   const [showMoreOptions, setShowMoreOptions] = useState(false)
+  const [showEmoji, setShowEmoji] = useState(false)
+
   const [top, setTop] = useState(null)
   const [right, setRight] = useState(null)
 
@@ -83,12 +88,20 @@ function Uitest() {
     setRight(window.innerWidth - event.clientX)
   }
 
+  const handleShowEmoji = (id, event) => {
+    setShowEmoji(!showEmoji)
+    setTop(event.clientY)
+    setRight(window.innerWidth - event.clientX)
+  }
+
   return (
     <>
+      <EmojiReaction />
       <MsgBoard>
         {MsgList.map((messageData, i) => (
           <MessageContainer
             handleShowMoreOptions={handleShowMoreOptions}
+            handleShowEmoji={handleShowEmoji}
             key={i}
             id={i}
             messageData={messageData}
@@ -97,6 +110,13 @@ function Uitest() {
       </MsgBoard>
 
       {showMoreOptions ? (
+        <div>
+          <MoreMenu top={top} right={right} />
+          <Overlay handleOverlayClicked={handleOverlayClicked} />
+        </div>
+      ) : null}
+
+      {showEmoji ? (
         <div>
           <MoreMenu top={top} right={right} />
           <Overlay handleOverlayClicked={handleOverlayClicked} />
