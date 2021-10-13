@@ -13,8 +13,10 @@ const defaultConfig = {
       image:
         "https://www.kemhospitalpune.org/wp-content/uploads/2020/12/Profile_avatar_placeholder_large.png"
     }
-  ]
-  // callback: id => console.log("REMOVE >>", id)
+
+  ],
+  // eslint-disable-next-line no-console
+  callback: id => console.log("REMOVE >>", id)
 }
 
 const RemoveModal = ({ config = defaultConfig }) => {
@@ -57,11 +59,11 @@ const RemoveModal = ({ config = defaultConfig }) => {
                         placeholder="Add members to remove"
                     />
                     <div className="mb-2"></div> */}
-          {currentMembers.map((m, index) => (
-            <div
-              key={index}
-              className="container mb-2 d-flex justify-content-between"
-            >
+
+          {currentMembers.map(m => (
+            // eslint-disable-next-line react/jsx-key
+            <div className="container mb-2 d-flex justify-content-between">
+
               <div className="">
                 <img
                   src={m.image}
