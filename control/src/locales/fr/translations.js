@@ -63,7 +63,8 @@ export const TRANSLATIONS_FR = {
     cardTwo: {
       title:
         "Soyez le premier à recevoir des mises à jour et des offres exclusives de Zuri Chat",
-      description: "Enrichissez votre expérience Zuri Chat en vous inscrivant ici pour obtenir les dernières nouvelles et offres spéciales sur Zuri Chat",
+      description:
+        "Enrichissez votre expérience Zuri Chat en vous inscrivant ici pour obtenir les dernières nouvelles et offres spéciales sur Zuri Chat",
       button: "S'abonner"
     },
     footer: {
@@ -80,7 +81,7 @@ export const TRANSLATIONS_FR = {
       socialMedia: "Des médias sociaux",
       rights: "Tous les droits sont réservés"
     },
-    cookies:{
+    cookies: {
       textOne: "Nous utilisons des",
       textTwo: "cookies",
       textThree: "tiers afin de personnaliser votre expérience sur le site.",
