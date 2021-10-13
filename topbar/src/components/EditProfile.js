@@ -228,7 +228,7 @@ const EditProfile = () => {
                   Let people know what you do at <b>ZURI</b>
                 </p>
               </div>
-              <div className="input-group">
+              {/* <div className="input-group">
                 <label htmlFor="bio" className="inputLabel">
                   Bio
                 </label>
@@ -239,7 +239,7 @@ const EditProfile = () => {
                   name="bio"
                   id="bio"
                 ></textarea>
-              </div>
+              </div> */}
               <div className="input-group phone">
                 <label className="inputLabel">Phone Number</label>
                 <div className="phone-container">
@@ -274,7 +274,7 @@ const EditProfile = () => {
                   onChange={setSelectedTimezone} className="col-12"
                 />
               </div>
-              <div className="input-group">
+              {/* <div className="input-group">
                 <label htmlFor="twitter" className="inputLabel">
                   Twitter
                 </label>
@@ -286,8 +286,8 @@ const EditProfile = () => {
                   id="twitter"
                   name="twitter"
                 />
-              </div>
-              <div className="input-group">
+              </div> */}
+              {/* <div className="input-group">
                 <label htmlFor="facebook" className="inputLabel">
                   Facebook
                 </label>
@@ -299,7 +299,7 @@ const EditProfile = () => {
                   id="facebook"
                   name="facebook"
                 />
-              </div>
+              </div> */}
               <div className="input-group">
                 {/* <label className="inputLabel">
                   Additional Links <span>(5 max)</span>
@@ -314,6 +314,18 @@ const EditProfile = () => {
                   </p>
                 )} */}
               </div>
+              {/* <button onClick={handleFormSubmit} className="btns saveBtn">
+                {state.loading ? (
+                  <Loader
+                    type="ThreeDots"
+                    color="#fff"
+                    height={40}
+                    width={40}
+                  />
+                ) : (
+                  "Save Changes"
+                )}
+              </button> */}
             </div>
             <div className="img-container">
               <div className="avatar">

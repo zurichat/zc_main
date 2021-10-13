@@ -16,14 +16,14 @@ import Accessibility from './Accessibility'
 const Preferences = () => {
   const { sideBar } = useContext(ProfileContext)
 
-  return (
+  return ( 
     <ProfileModal title="Preference">
       <div className={styles.body}>
         <div>
           <PreferenceMenu />
         </div>
 
-        <div>
+        <div className={styles.allPreferences}>
           {sideBar === 1 && <NotificationPreference />}
 {/*
 {sideBar === 2 && <SidebarPreference />}
