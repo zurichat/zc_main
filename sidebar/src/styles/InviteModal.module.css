@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 .modal {
   position: fixed;
@@ -31,13 +31,13 @@
 
 .modaltitle {
   margin: 0;
-  font-family: 'Lato';
+  font-family: "Lato";
   color: rgba(36, 36, 36, 0.7);
 }
 
 .modalbody {
   padding: 0 22px 22px 22px;
-  font-family: 'Lato';
+  font-family: "Lato";
   font-size: 14px;
   color: rgba(0, 0, 0, 0.7);
 }
@@ -66,7 +66,7 @@
   justify-content: space-evenly;
 }
 .copy a {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: rgba(0, 139, 94, 1);
   margin-left: 10px;
   margin-right: 10px;
@@ -80,7 +80,7 @@
 }
 .send button {
   background-color: rgba(0, 139, 94, 1);
-  font-family: 'Lato';
+  font-family: "Lato";
   color: #ffffff;
   border-radius: 3px;
   padding: 10px 20px;
