@@ -1,32 +1,33 @@
 .faqs {
-  text-align: center;
   justify-content: center;
   align-items: center;
-  padding-top: 1.5rem;
   display: block;
+  margin-top: 5rem;
+  padding: 1rem;
+  background: #f9f9f9;
 }
-
-.faqs > .h2 {
+.h2 {
   display: flex;
-  text-align: center;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  font-size: 2rem;
 }
 .wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  padding: 3rem 0;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 .accordion {
-  padding: 1.1rem 2rem;
-  width: 62.5rem;
+  padding: 1rem 0;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
 }
+
 .items {
   padding: 10px 0;
-  border-bottom: 2px solid grey;
+  border-bottom: 1px solid grey;
   text-align: left;
+  max-height: max-content;
 }
 .title {
   display: flex;
@@ -35,7 +36,8 @@
 }
 .title .h6 {
   padding-right: 2rem;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 1.3rem;
   cursor: pointer;
   line-height: 1.5;
 }
@@ -47,19 +49,16 @@
   text-align: left;
   overflow: hidden;
   cursor: pointer;
-  font-weight: 500;
   font-size: 1rem;
   background: white;
-  color: #333333;
-  max-height: 0;
+  color: #555454;
+  height: 0;
   line-height: 2;
-  /* transition: all 0.5s cubic-bezier(0, 1, 0, 1); */
+  transition: all 5s ease-out;
 }
 .answer.show {
   height: auto;
   background: white;
-  max-height: 62.5rem;
-  /* transition: all 0.5s cubic-bezier(1, 0, 1, 0); */
 }
 .billing {
   font-weight: bold;
@@ -75,61 +74,14 @@
   text-decoration: underline;
 }
 
-@media (max-width: 576px) {
-  .faqs {
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    padding-top: 1.5rem;
-    background: rgb(230, 228, 228);
-    display: block;
-  }
-  .h2 {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-  .h6 {
-    font-size: 1rem;
+
+@media (max-width: 600px) {
+  .accordion {
+    grid-template-columns: 1fr;
   }
 
-  .answer {
-    text-align: left;
-    overflow: hidden;
-    cursor: pointer;
-    font-weight: 500;
+  .title .h6 {
     font-size: 1rem;
-    background: white;
-    color: #333333;
-    max-height: 0;
-    line-height: 2;
-    /* transition: all 0.5s cubic-bezier(0, 1, 0, 1); */
-  }
-  .show {
-    height: auto;
-    background: white;
-    max-height: 62.5rem;
-    /* transition: all 0.5s cubic-bezier(1, 0, 1, 0); */
-  }
-}
-
-@media (max-width: 768px) {
-  .faqs {
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    padding-top: 1.5rem;
-    background: rgb(230, 228, 228);
-    display: block;
-  }
-  .answer.show {
-    height: auto;
-    max-height: 62.5rem;
-    transition: all 0.5s cubic-bezier(1, 0, 1, 0);
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-    text-align: center;
+    font-weight: 600;
   }
 }
