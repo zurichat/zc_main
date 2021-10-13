@@ -37,6 +37,7 @@ import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContex
 import PrivacyPolicy from './pages/privacy-policy/index'
 import NotFoundPage from './pages/404'
 import Billing from './pages/admin/Billing'
+import Customize from './pages/admin/Customize'
 import Blog from './pages/blogs'
 import Homepage from './pages/home'
 import Permissions from './pages/admin/Permissions'
@@ -180,6 +181,11 @@ const App = () => {
           path="/admin/settings/billings"
           exact
           component={Billing}
+        />
+        <PrivateRoute
+          path="/admin/settings/customize"
+          exact
+          component={Customize}
         />
         {/* <PrivateRoute
           path="/admin/settings/permission"
