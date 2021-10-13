@@ -40,6 +40,23 @@
   _margin-right: 30px;
 } */
 
+.line{
+  height: 50px;
+  width: 2px;
+  background-color: #00b87c;
+}
+
+.select{
+  margin-left: 5px;
+  font-size: 18px;  
+}
+
+.select:active, .select:focus, .select:hover{
+  outline-color: #00b87c;
+  outline-style: auto;
+  outline-width: thick;
+}
+
 .image {
   margin: auto;
 }
@@ -106,10 +123,6 @@
 
 .navbarNav li span:hover {
   border-bottom: 0.2rem solid #00b87c;
-}
-
-.navbarNav li span:active {
-  opacity: 0.5;
 }
 
 /* .toggle {
