@@ -1,5 +1,6 @@
 import React from 'react'
-import styles from '../styles/Message.module.css'
+import styles from '../styles/Message.module.css';
+
 const Message = ({ type }) => {
   if (type === 'contact') {
     return (
@@ -22,7 +23,7 @@ const Message = ({ type }) => {
     <div className={styles.message_box}>
       <div className={styles.message}>
         <p className={styles.p}>
-          Whatever work you do,you can do it in Zuri Chat
+          Whatever work you do, you can do it in Zuri Chat
         </p>
         <div className={styles.buttonSection}>
           <button className={styles.buttonFilled}>
