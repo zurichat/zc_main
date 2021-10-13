@@ -6,10 +6,10 @@
   position: relative;
   margin-top: 0%;
 }
-.toggle{
+.toggle {
   display: none;
 }
-.hrLine{
+.hrLine {
   display: none;
 }
 /* THE SECTION OF THE CONTENT */
@@ -36,22 +36,35 @@
 .titleLarge {
   font-family: Lato;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: bold;
   color: #242424;
   padding: 0%;
   line-height: 21px;
+  margin-left: 5px;
 }
 .body::-webkit-scrollbar {
   display: none;
 }
 
+.hrNot {
+  border: block;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  margin-left: 0px;
+  margin-right: auto;
+  border-style: none;
+  width: 640px;
+  border-width: 1px;
+}
+
 .titleSmall {
   font-family: Lato;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: bold;
   color: #242424;
   padding: 0%;
   line-height: 21px;
+  margin-left: 2px;
 }
 .itemTitle1 .spanL {
   display: flex;
@@ -69,24 +82,21 @@
   margin-right: 9px;
 }
 
-
-
 @media screen and (max-width: 768px) {
-  .buttonToggle{
+  .buttonToggle {
     background: #fff;
     margin: 0px;
     width: 100%;
     position: fixed;
     z-index: 1000;
   }
-  .allPreferences{
+  .allPreferences {
     margin-top: 40px;
   }
-  .body{
+  .body {
     flex-wrap: wrap;
-
   }
-  .toggle{
+  .toggle {
     display: flex;
     font-size: 30px;
     display: flex;
@@ -95,27 +105,24 @@
     margin: 5px 15px;
     position: relative;
   }
-  .hrLine{
+  .hrLine {
     display: flex;
     width: 100%;
     position: relative;
     color: #999999;
   }
-  .notifyContent{
+  .notifyContent {
     width: 100%;
   }
-  .itemTitle1{
+  .itemTitle1 {
     margin-bottom: 46px;
   }
-  .spanL{
+  .spanL {
     margin-top: 3px;
   }
 }
 
 /* --------------- */
-
-
-
 
 .radio {
   padding: 15px 6px;
@@ -123,7 +130,7 @@
   display: flex;
   flex-direction: row;
   font-family: Lato;
-  margin-top: -5px;
+  margin-top: -15px;
   margin-bottom: -20px;
   accent-color: #00b87c;
 }
@@ -237,6 +244,7 @@ input[type="radio"] {
   margin-top: 5px;
   float: left;
   text-align: left;
+  margin-left: 2px;
 }
 .itemTitle2 .spanSmall {
   color: #00b87c;
@@ -369,7 +377,7 @@ input[type="radio"] {
 .picksound {
   display: flex;
   flex-direction: column;
-  margin-top: 5px ;
+  margin-top: 5px;
   margin-left: 0px;
   color: rgb(85, 84, 84);
 }
@@ -482,13 +490,12 @@ input[type="radio"] {
     align-items: left;
     left: 40%;
   }
-  .body{
+  .body {
     padding: 0%;
     margin: 0%;
     display: flex;
-
   }
-  .itemTitle1{
+  .itemTitle1 {
     margin-bottom: 12px;
   }
   .notifywrapper {
@@ -535,8 +542,6 @@ input[type="radio"] {
     width: 90%;
   }
 }
-
-
 
 /* Tuasegun's media query */
 @media (max-width: 450px) {

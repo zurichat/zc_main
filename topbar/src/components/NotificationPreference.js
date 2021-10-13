@@ -61,8 +61,7 @@ const NotificationPreference = () => {
   //   email_notifications_for_mentions: false
   // })
 
-  // console.log("notify", notificationSettings)
-  // console.log("user check =>", user)
+  
   const setData = notification => {
     authAxios
       .patch(
@@ -78,6 +77,7 @@ const NotificationPreference = () => {
         // setState({ loading: false })
       })
   }
+
 
   const handleKeywordChange = e => {
     setKeywordInput(e.target.value)
@@ -246,12 +246,6 @@ const NotificationPreference = () => {
     }
   }
 
-  // useEffect(() => {
-  //   setData()
-  //   // console.log(dataState)
-  //   // console.log(user)
-  // }, [dataState])
-
   return (
     <div>
       {/*  THE SECTION OF THE CONTENT */}
@@ -312,18 +306,7 @@ const NotificationPreference = () => {
               Use different settings for my mobile device
             </label>
           </div>
-          <hr
-            style={{
-              border: "block",
-              marginTop: "1.5em",
-              marginBottom: "0.5em",
-              marginLeft: "15px",
-              marginRight: "auto",
-              borderStyle: "inset",
-              width: "800px",
-              borderWidth: "1px"
-            }}
-          />
+          <hr className={styles.hrNot} />
           <div className={styles.markbox}>
             <input
               type="checkbox"
@@ -345,18 +328,7 @@ const NotificationPreference = () => {
             <label htmlFor="for-thread">Notify me of replies to thread</label>
           </div>
         </form>
-        <hr
-          style={{
-            border: "block",
-            marginTop: "1.5em",
-            marginBottom: "0.5em",
-            marginLeft: "15px",
-            marginRight: "auto",
-            borderStyle: "inset",
-            width: "800px",
-            borderWidth: "1px"
-          }}
-        />
+        <hr className={styles.hrNot} />
         <div className={styles.itemTitle2}>
           <h4 className={styles.titleSmall}>Keywords</h4>{" "}
           <span className={styles.spanBlock}>
@@ -370,18 +342,7 @@ const NotificationPreference = () => {
             className={styles.textarea}
           />
         </div>
-        <hr
-          style={{
-            border: "block",
-            marginTop: "1.5em",
-            marginBottom: "0.5em",
-            marginLeft: "15px",
-            marginRight: "auto",
-            borderStyle: "inset",
-            width: "800px",
-            borderWidth: "1px"
-          }}
-        />
+        <hr className={styles.hrNot} />
 
         <div className={styles.itemTitle2}>
           <h4 className={styles.titleSmall}>Schedule Notification </h4>{" "}
@@ -429,18 +390,7 @@ const NotificationPreference = () => {
           </ul>
         </div>
 
-        <hr
-          style={{
-            border: "block",
-            marginTop: "1.5em",
-            marginBottom: "0.5em",
-            marginLeft: "15px",
-            marginRight: "auto",
-            borderStyle: "inset",
-            width: "800px",
-            borderWidth: "1px"
-          }}
-        />
+        <hr className={styles.hrNot} />
 
         <div className={styles.itemTitle2}>
           <h4 className={styles.titleSmall}>Sound checks</h4>
@@ -510,18 +460,7 @@ const NotificationPreference = () => {
             </div>
           </div>
         </div>
-        <hr
-          style={{
-            border: "block",
-            marginTop: "1.5em",
-            marginBottom: "0.5em",
-            marginLeft: "15px",
-            marginRight: "auto",
-            borderStyle: "inset",
-            width: "800px",
-            borderWidth: "1px"
-          }}
-        />
+        <hr className={styles.hrNot} />
 
         <div className={styles.section2}>
           <div className={styles.itemTitle2}>
@@ -579,18 +518,7 @@ const NotificationPreference = () => {
           </div>
         </div>
 
-        <hr
-          style={{
-            border: "block",
-            marginTop: "1.5em",
-            marginBottom: "0.5em",
-            marginLeft: "15px",
-            marginRight: "auto",
-            borderStyle: "inset",
-            width: "800px",
-            borderWidth: "1px"
-          }}
-        />
+        <hr className={styles.hrNot} />
         <div className={styles.section3}>
           <div className={styles.itemTitle2}>
             <div className={styles.titleSmall}>
