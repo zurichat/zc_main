@@ -2,16 +2,24 @@ import React, { useState } from "react"
 import styles from "../styles/Sidebar.module.css"
 import { MdKeyboardArrowDown } from "react-icons/md"
 import newMsgIcon from "../assets/icons/newMsgIcon.svg"
+import NewInviteModal from "./invite-workflow/newInviteModal/newInviteModal"
 
 const SidebarHeader = props => {
   //home modal
   const [homeModal, toggleHomeModal] = useState(false)
+
+  const [openModal, setOpenModal] = useState(false)
 
   //toggle
   const toggle = () => {
     toggleHomeModal(!homeModal)
     document.removeEventListener("click", toggle)
   }
+
+  const showModal = () => {
+    setOpenModal(!openModal)
+  }
+
   return (
     <div className={`${styles.subCon1}`}>
       <div className={`row ${styles.orgDiv}`}>
@@ -24,9 +32,21 @@ const SidebarHeader = props => {
               {props.state.organization_info &&
                 props.state.organization_info.name}
             </span>
-            <span className={`col-4 p-0 ${styles.sidebar__header__arrow}`}>
-              <MdKeyboardArrowDown className={`my-auto`} style={{ color: `#fff` }} />
+            <span
+              className={`col-4 p-0 ${styles.sidebar__header__arrow}`}
+              onClick={() => showModal()}
+            >
+              <MdKeyboardArrowDown
+                className={`my-auto`}
+                style={{ color: `#fff` }}
+              />
             </span>{" "}
+            {openModal && (
+              <NewInviteModal
+                openModal={openModal}
+                setOpenModal={setOpenModal}
+              />
+            )}
           </div>
           <div className={`row ${styles.newMessage}`}>
             <img
