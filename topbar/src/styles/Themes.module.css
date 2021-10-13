@@ -18,13 +18,14 @@
 .themeCont {
   margin-top: 30px;
   margin-left: 20px;
+  padding: 12px;
   font-family: sans-serif;
   text-align: center;
   background-color: var(--bg-color);
   color: var(--text-color);
   width: var(--width);
   height: var(--height);
-  overflow-x: hidden;
+  text-align: left;
 }
 
 .sync {
