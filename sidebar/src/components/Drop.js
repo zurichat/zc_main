@@ -7,6 +7,7 @@ import { AiOutlinePlusCircle } from "react-icons/ai"
 import PluginRoomAddUser from "./PluginRoomAddUser"
 import RoomOptions from "./RoomOptions"
 import infoIcon from "./../assets/icons/info-icon.svg"
+import Badge from "./badge"
 
 const DropDown = ({ itemName, items }) => {
   const [addToRoom, setAddToRoom] = useState(false)
@@ -55,9 +56,8 @@ const DropDown = ({ itemName, items }) => {
 
   return (
     <div
-      className={`row p-0 ${styles.dropDown} text-decoration-none ${
-        isOpen && styles.openWrapper
-      }`}
+      className={`row p-0 ${styles.dropDown} text-decoration-none ${isOpen && styles.openWrapper
+        }`}
     >
       <div
         className={`col-12 d-flex align-items-center ${styles.plugin__title}`}
@@ -72,7 +72,7 @@ const DropDown = ({ itemName, items }) => {
           className={`w-100 d-flex align-items-center justify-content-between`}
         >
           <p className={`mb-0 ${styles.dropDown__title}`}> {itemName}</p>
-          <img src={infoIcon} alt="icon" role="button" />
+          {/* <img src={infoIcon} alt="icon" role="button" /> */}
           {/* {items.button_url ? (
             <a href={items.button_url} onClick={navigateToUrl}>
               <AiOutlinePlusCircle className={`${styles.icon}`} />
@@ -90,12 +90,13 @@ const DropDown = ({ itemName, items }) => {
                 // console.log(itemList)
                 <li key={index} className={`row py-1 px-2 ${styles.item__list}`}>
                   <a
-                    className={`col-12 d-flex align-items-center ${styles.item_name}`}
+                    className={`row ${styles.item_name}`}
                     href={room.room_url}
                     onClick={navigateToUrl}
                     ref={click}
                     style={{ textDecoration: "none" }}
                   >
+                    <div className={`col-10 d-flex align-items-center`}>
                     <img
                       ref={click}
                       className={`${styles.item__image}`}
@@ -103,20 +104,26 @@ const DropDown = ({ itemName, items }) => {
                       onError={e => (e.target.src = hash.toString())}
                       alt="img"
                     />
-                    <div className={`mb-0 ms-1 d-inline-flex align-items-center ${styles.dropDown__name}`}>
+                    <div className={`mb-0 d-inline-flex align-items-center ${styles.dropDown__name}`}>
                       {room.room_name}
                       {/* Add to Room Button */}
-                      <AiOutlinePlusCircle
+                      {/* <AiOutlinePlusCircle
                         className={`${styles.icon}`}
                         onClick={() => {
                           setAddToRoom(!addToRoom)
                           setRoomId(room._id)
                         }}
-                      />
+                      /> */}
                       <div className={`${styles.optionsContainer}`}>
-                        <RoomOptions isClicked={isClicked} />
+                        {/* <RoomOptions isClicked={isClicked} /> */}
                       </div>
                     </div>
+                    </div>
+                  <div className={`col-2 d-flex align-items-center`}>
+                  <Badge 
+                  number={room.unread}
+                  />
+                  </div>
                   </a>
                 </li>
               )
@@ -124,13 +131,13 @@ const DropDown = ({ itemName, items }) => {
           })}
       </ul>
       {/* Add to Room */}
-      {addToRoom && (
+      {/* {addToRoom && (
         <PluginRoomAddUser
           isOpen={addToRoom}
           isClosed={setAddToRoom}
           room_id={roomId}
         />
-      )}
+      )} */}
     </div>
   )
 }
