@@ -127,7 +127,8 @@
       z-index: 9999;
     }
 
-    div[id*='zuri-plugin'], div[id*='zuri/marketplace'] {
+    div[id*='zuri-plugin'],
+    div[id*='zuri/marketplace'] {
       width: 80%;
       position: absolute;
       top: 6vh;
@@ -148,24 +149,36 @@
 
       div[id*='zuri/sidebar'] {
         height: 95vh;
+        min-width: 20%;
         top: 5vh;
         left: 0;
       }
 
-      div[id*='zuri-plugin'], div[id*='zuri/marketplace'] {
+      div[id*='zuri-plugin'],
+      div[id*='zuri/marketplace'] {
         top: 5vh;
         right: 0;
         z-index: unset;
       }
     }
 
+    @media (min-width: 768px) {
+      div[id*='zuri/sidebar'] {
+        min-width: 20%;
+      }
+
+      div[id*='zuri/sidebar'] {
+        display: block;
+      }
+    }
+
     @media (max-width: 768px) {
       div[id*='zuri/sidebar'] {
         display: none;
-        width: 100%;
       }
 
-      div[id*='zuri-plugin'], div[id*='zuri/marketplace'] {
+      div[id*='zuri-plugin'],
+      div[id*='zuri/marketplace'] {
         width: 100%;
         z-index: unset;
       }
@@ -182,7 +195,8 @@
         width: 40%;
       } */
 
-      div[id*='zuri-plugin'], div[id*='zuri/marketplace'] {
+      div[id*='zuri-plugin'],
+      div[id*='zuri/marketplace'] {
         width: 100%;
         position: relative;
       }
@@ -194,6 +208,7 @@
         width: calc(26.4rem * 0.9);
       }
     }
+
     /* CHESS STYLE */
   </style>
 
@@ -279,21 +294,23 @@
         "@zuri/sidebar": "//localhost:8081/zuri-sidebar.js",
         "@zuri/control": "//localhost:8082/zuri-control.js",
         "@zuri/plugin-header": "//localhost:8083/zuri-plugin-header.js",
+        "@zuri/manage-user-modal": "//localhost:8087/zuri-manageUser.js",
         "@zuri/marketplace": "//localhost:8086/zuri-marketplace.js",
         "@zuri/zuri-ui": "//localhost:8084/zuri-zuri-ui.js",
         "@zuri/utilities": "//localhost:8085/zuri-utilities.js"
       }
     }
-  </script>
+    </script>
   <% } else { %>
   <script type="systemjs-importmap">
     {
-      "imports": {
+        "imports": {
           "@zuri/root-config": "/zuri-root-config.js",
           "@zuri/topbar": "/zuri-topbar.js",
           "@zuri/sidebar": "/zuri-sidebar.js",
           "@zuri/control": "/zuri-control.js",
           "@zuri/plugin-header": "/zuri-plugin-header.js",
+          "@zuri/manage-user-modal": "/zuri-manageUser.js",
           "@zuri/marketplace": "/zuri-marketplace.js",
           "@zuri/zuri-ui": "/zuri-zuri-ui.js",
           "@zuri/utilities": "/zuri-utilities.js"
