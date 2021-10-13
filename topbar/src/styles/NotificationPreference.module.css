@@ -88,6 +88,10 @@ input[type="radio"] {
   margin: 4px 0 0 -1px;
 }
 
+.check {
+  margin-left: 4.5px;
+}
+
 /* input[type="checkbox"]:before {
   position: relative;
   display: block;
@@ -114,13 +118,13 @@ input[type="radio"] {
   background-position: center;
 } */
 
-input[type="checkbox"] {
+/* input[type="checkbox"] {
   margin-left: 4.5px;
   border-color: #00b87c;
   background-color: #00b87c;
   margin-top: 4px;
   border: 1px solid #00b87c;
-}
+} */
 
 .markbox {
   position: relative;
@@ -201,11 +205,11 @@ input[type="checkbox"] {
   justify-content: center;
   list-style-type: none;
   width: 97%;
-  margin-left: 9px;
+  margin-left: 5px;
 }
 
 .selectButton {
-  width: 205px;
+  width: 180px;
   height: 38px;
   padding-left: 10px;
   border-radius: 5px;
@@ -218,10 +222,6 @@ input[type="checkbox"] {
   margin-top: 24px;
 }
 
-.selectButton option {
-  color: red;
-  font-weight: 40;
-}
 .listChild p {
   color: #999999;
   text-align: center;
@@ -385,7 +385,7 @@ input[type="checkbox"] {
 }
 
 .button4 {
-  padding-right: 100px;
+  padding-right: 0px;
   padding-left: 5px;
   padding-top: 8px;
   padding-bottom: 8px;

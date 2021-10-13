@@ -7,18 +7,29 @@ import { ProfileContext } from "../context/ProfileModal"
 const NotificationPreference = () => {
   const [active, setActive] = useState("")
   const [active1, setActive1] = useState("")
-  const [durations, setDurations] = useState([
+  const [durations] = useState([
     { name: "Duration" },
     { name: "Everyday" },
     { name: "Weekdays" },
     { name: "Custom" }
   ])
   const [durationPeriod, setDurationPeriod] = useState("")
-  const [state, setstate] = useState("")
+  const [notifications, setNotifications] = useState([
+    { name: "when i'm online" },
+    { name: "immediately, even if i'm active" },
+    { name: "after i've been inactive for 1 minute" },
+    { name: "after i've been inactive for 2 minute" },
+    { name: "after i've been inactive for 5 minute" },
+    { name: "after i've been inactive for 10 minute" },
+    { name: "after i've been inactive for 15 minute" },
+    { name: "after i've been inactive for 20 minute" },
+    { name: "after i've been inactive for 30 minute" }
+  ])
+  const [notificationSend, setNotificationSend] = useState("")
   const { user, orgId } = useContext(ProfileContext)
   const [dataState, setDataState] = useState({
     // channel_hurdle_notification: channel_hurdle,
-    email_notifications_for_mentions_and_dm: null,
+    email_notifications_for_mentions_and_dm: false,
     message_preview_in_each_notification: false,
     mute_all_sounds: false,
     my_keywords: "",
@@ -31,18 +42,20 @@ const NotificationPreference = () => {
   })
 
   useEffect(() => {
-    if (localStorage.getItem("settings")) {
-      setDataState(JSON.parse(localStorage.getItem("settings")))
+    if (sessionStorage.getItem("notificationSettings")) {
+      let settings = JSON.parse(sessionStorage.getItem("notificationSettings"))
+      setDataState(settings)
+    } else {
+      sessionStorage.setItem("notificationSettings", JSON.stringify(dataState))
     }
   }, [])
 
   const setData = () => {
     authAxios
-      .patch(`/organizations/${orgId}/members/${user._id}/settings`, {
-        settings: {
-          notifications: dataState
-        }
-      })
+      .patch(
+        `/organizations/${orgId}/members/${user._id}/settings/notifications`,
+        dataState
+      )
       .then(res => {
         // console.log(res)
         // setState({ loading: false })
@@ -54,23 +67,26 @@ const NotificationPreference = () => {
 
     // localStorage.setItem("settings", JSON.stringify(dataState))
   }
-  // const [state, setState] = useState({
-  //   name: "React",
-  //   value: "duration"
-  // })
-
-  // const handleChange = event => {
-  //   setState({ value: event.target.value })
-  // }
 
   const handleSelect = e => {
     setDurationPeriod(e.target.value)
+    setNotificationSend(e.target.value)
+    setDataState({
+      ...dataState,
+      when_iam_not_active_on_desktop: notificationSend
+    })
+    setData()
   }
-
-  // console.log(duration)
 
   const handleAllMessages = e => {
     setActive1(e.target.value)
+    sessionStorage.setItem(
+      "notificationSettings",
+      JSON.stringify({
+        ...dataState,
+        notify_me_about: "all-messages"
+      })
+    )
     setDataState({
       ...dataState,
       notify_me_about: "all-messages"
@@ -79,6 +95,13 @@ const NotificationPreference = () => {
   }
   const handleDirectMessages = e => {
     setActive1(e.target.value)
+    sessionStorage.setItem(
+      "notificationSettings",
+      JSON.stringify({
+        ...dataState,
+        notify_me_about: "direct-message"
+      })
+    )
     setDataState({
       ...dataState,
       notify_me_about: "direct-message"
@@ -88,11 +111,25 @@ const NotificationPreference = () => {
 
   const handleNothingChange = e => {
     setActive1(e.target.value)
+    sessionStorage.setItem(
+      "notificationSettings",
+      JSON.stringify({
+        ...dataState,
+        notify_me_about: "none"
+      })
+    )
     setDataState({ ...dataState, notify_me_about: "none" })
     setData()
   }
 
   const handleMobileDeviceSettings = () => {
+    sessionStorage.setItem(
+      "notificationSettings",
+      JSON.stringify({
+        ...dataState,
+        use_different_settings_mobile: !dataState.use_different_settings_mobile
+      })
+    )
     setDataState({
       ...dataState,
       use_different_settings_mobile: !dataState.use_different_settings_mobile
@@ -101,6 +138,13 @@ const NotificationPreference = () => {
   }
 
   const handleNotifyMeeting = () => {
+    sessionStorage.setItem(
+      "notificationSettings",
+      JSON.stringify({
+        ...dataState,
+        notify_me_meeting_set: !dataState.notify_me_meeting_set
+      })
+    )
     setDataState({
       ...dataState,
       notify_me_meeting_set: !dataState.notify_me_meeting_set
@@ -109,9 +153,115 @@ const NotificationPreference = () => {
   }
 
   const handleThreadReplies = () => {
+    sessionStorage.setItem(
+      "notificationSettings",
+      JSON.stringify({
+        ...dataState,
+        thread_replies_notification: !dataState.thread_replies_notification
+      })
+    )
     setDataState({
       ...dataState,
       thread_replies_notification: !dataState.thread_replies_notification
+    })
+    setData()
+  }
+
+  //Look at this with Samuel
+  const handleMessagePreview = () => {
+    sessionStorage.setItem(
+      "notificationSettings",
+      JSON.stringify({
+        ...dataState,
+        message_preview_in_each_notification:
+          !dataState.message_preview_in_each_notification
+      })
+    )
+    setDataState({
+      ...dataState,
+      message_preview_in_each_notification:
+        !dataState.message_preview_in_each_notification
+    })
+    setData()
+  }
+
+  // Look at this with Samuel
+  const handleMuteAll = () => {
+    sessionStorage.setItem(
+      "notificationSettings",
+      JSON.stringify({
+        ...dataState,
+        mute_all_sounds: !dataState.mute_all_sounds
+      })
+    )
+    setDataState({
+      ...dataState,
+      mute_all_sounds: !dataState.mute_all_sounds
+    })
+    setData()
+  }
+
+  const handleFlashNotificationNever = e => {
+    setActive(e.target.value)
+    sessionStorage.setItem(
+      "notificationSettings",
+      JSON.stringify({
+        ...dataState,
+        notification_schedule: "never"
+      })
+    )
+    setDataState({
+      ...dataState,
+      notification_schedule: "never"
+    })
+    setData()
+  }
+  const handleFlashNotificationIdle = e => {
+    setActive(e.target.value)
+    sessionStorage.setItem(
+      "notificationSettings",
+      JSON.stringify({
+        ...dataState,
+        notification_schedule: "when-idle"
+      })
+    )
+    setDataState({
+      ...dataState,
+      notification_schedule: "when-idle"
+    })
+    setData()
+  }
+  const handleFlashNotificationMute = e => {
+    setActive(e.target.value)
+    sessionStorage.setItem(
+      "notificationSettings",
+      JSON.stringify({
+        ...dataState,
+        notification_schedule: "mute-all"
+      })
+    )
+    setDataState({
+      ...dataState,
+      notification_schedule: "mute-all"
+    })
+    setData()
+  }
+
+  //Look at it with Samuel
+  const handleEmailNotifications = e => {
+    setActive1(e.target.value)
+    sessionStorage.setItem(
+      "notificationSettings",
+      JSON.stringify({
+        ...dataState,
+        email_notifications_for_mentions_and_dm:
+          !dataState.email_notifications_for_mentions_and_dm
+      })
+    )
+    setDataState({
+      ...dataState,
+      email_notifications_for_mentions_and_dm:
+        !dataState.email_notifications_for_mentions_and_dm
     })
     setData()
   }
@@ -178,7 +328,6 @@ const NotificationPreference = () => {
               Use different settings for my mobile device
             </label>
           </div>
-          {/* <div className={styles.line} /> */}
           <hr
             style={{
               border: "block",
@@ -204,6 +353,7 @@ const NotificationPreference = () => {
           <div className={styles.markbox}>
             <input
               type="checkbox"
+              className={styles.check}
               value="for-thread"
               checked={dataState.thread_replies_notification}
               onClick={handleThreadReplies}
@@ -250,7 +400,7 @@ const NotificationPreference = () => {
         />
         {/* <div className={styles.line} /> */}
         <div className={styles.itemTitle2}>
-          <h4 className={styles.titleSmall}>Notification Schedule</h4>{" "}
+          <h4 className={styles.titleSmall}>Schedule Notification </h4>{" "}
           <span className={styles.spanBlock}>
             You'll only receive notifications in the hours that you choose.
             Outside of those times, notifications will be paused.{" "}
@@ -266,8 +416,13 @@ const NotificationPreference = () => {
                   id=""
                   onChange={handleSelect}
                 >
+                  <option selected>Choose here</option>
                   {durations.map((item, index) => (
-                    <option key={index} value={item.name}>
+                    <option
+                      className={styles.optionDuration}
+                      key={index}
+                      value={item.name}
+                    >
                       {`${item.name}`}
                     </option>
                   ))}
@@ -308,7 +463,12 @@ const NotificationPreference = () => {
 
         <div className={styles.mute}>
           <div className={styles.markbox}>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              checked={dataState.message_preview_in_each_notification}
+              onClick={handleMessagePreview}
+              className={styles.check}
+            />
             <label htmlFor="for-includepreview">
               Include preview message in notification
             </label>
@@ -316,10 +476,9 @@ const NotificationPreference = () => {
           <div className={styles.markbox}>
             <input
               type="checkbox"
-              onClick={() => {
-                setDataState({ mute_all_sounds: "yes" })
-                setData()
-              }}
+              checked={dataState.mute_all_sounds}
+              onClick={handleMuteAll}
+              className={styles.check}
             />
             <label htmlFor="for-muteall">Mute all</label>
           </div>
@@ -385,11 +544,7 @@ const NotificationPreference = () => {
                 type="radio"
                 value="never"
                 checked={dataState.notification_schedule === "never"}
-                onClick={() => {
-                  setActive("never")
-                  setDataState({ ...dataState, notification_schedule: "never" })
-                  setData()
-                }}
+                onClick={handleFlashNotificationNever}
               />
               <label htmlFor="never">Never</label>
             </div>
@@ -398,14 +553,7 @@ const NotificationPreference = () => {
                 type="radio"
                 value="when-idle"
                 checked={dataState.notification_schedule === "when-idle"}
-                onClick={() => {
-                  setActive("when-idle")
-                  setDataState({
-                    ...dataState,
-                    notification_schedule: "when-idle"
-                  })
-                  setData()
-                }}
+                onClick={handleFlashNotificationIdle}
               />
               <label htmlFor="direct-messages">When idle</label>
             </div>
@@ -414,14 +562,7 @@ const NotificationPreference = () => {
                 type="radio"
                 value="mute-all"
                 checked={dataState.notification_schedule === "mute-all"}
-                onClick={() => {
-                  setActive("mute-all")
-                  setDataState({
-                    ...dataState,
-                    notification_schedule: "mute-all"
-                  })
-                  setData()
-                }}
+                onClick={handleFlashNotificationMute}
               />
               <label htmlFor="direct-messages">Mute all</label>
             </div>
@@ -430,7 +571,7 @@ const NotificationPreference = () => {
             <div className={styles.when}>Deliver notifications via</div>
             <div className={styles.dropdown3}>
               <select className={styles.button4}>
-                <option selected value="pick-sound">
+                <option selected disabled value="pick-sound">
                   Pick Sound
                 </option>
               </select>
@@ -459,10 +600,13 @@ const NotificationPreference = () => {
           <div className={styles.deliver}>
             <div className={styles.when}>Send notifications to my mobile</div>
             <div className={styles.dropdown3}>
-              <select className={styles.button4}>
-                <option selected value="pick-sound">
-                  When i am online
-                </option>
+              <select className={styles.button4} onChange={handleSelect}>
+                {notifications.map((item, index) => (
+                  <option
+                    key={index}
+                    value={item.name}
+                  >{`${item.name}`}</option>
+                ))}
               </select>
             </div>
           </div>
@@ -470,10 +614,9 @@ const NotificationPreference = () => {
         <div className={styles.markbox}>
           <input
             type="checkbox"
-            onClick={() => {
-              setDataState({ notify_me_about: "all-messages" })
-              setData()
-            }}
+            checked={dataState.email_notifications_for_mentions_and_dm}
+            onClick={handleEmailNotifications}
+            className={styles.check}
           />{" "}
           <label className="emailNot">
             Send me email notifications for mentions{" "}
@@ -500,7 +643,9 @@ const TextInput = ({ type = "text", label }) => {
         value={value}
         onChange={handleChange}
       />
-      <label className={value && "filled"}>{label}</label>
+      <label style={{ color: "#B0AFB0" }} className={value && "filled"}>
+        {label}
+      </label>
     </div>
   )
 }
