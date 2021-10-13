@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+// import React, { useState } from "react"
+import React from "react"
 import styles from "./styles/removemodal.module.css"
 import { Button, Modal } from "react-bootstrap"
 import { X } from 'react-feather'
@@ -13,16 +14,19 @@ const defaultConfig = {
             image: "https://www.kemhospitalpune.org/wp-content/uploads/2020/12/Profile_avatar_placeholder_large.png"
         },
     ],
-    callback: id => console.log("REMOVE >>", id)
+    removeFunction: id => console.log("REMOVE >>", id),
+    show:true,
+    handleClose: () => console.log("Close modal"),
+    title:"Remove users"
 }
 
 const RemoveModal = ({ config = defaultConfig }) => {
 
-    const { currentMembers, callback } = config
+    const { currentMembers, removeFunction, title, show, handleClose } = config
 
-    const [show, setShow] = useState(false)
-    const handleClose = () => setShow(false)
-    const handleShow = () => setShow(true)
+    // const [show, setShow] = useState(false)
+    // const handleClose = () => setShow(false)
+    // const handleShow = () => setShow(true)
     // const animatedComponents = makeAnimated()
 
 
@@ -35,9 +39,9 @@ const RemoveModal = ({ config = defaultConfig }) => {
 
     return (
         <div className={`${styles.wrapper}`}>
-            <Button variant="primary" onClick={handleShow}>
+            {/* <Button variant="primary" onClick={handleShow}>
                 Launch demo modal
-            </Button>
+            </Button> */}
             <Modal
                 show={show}
                 onHide={handleClose}
@@ -47,7 +51,7 @@ const RemoveModal = ({ config = defaultConfig }) => {
                 keyboard={false}
             >
                 <Modal.Header>
-                    <Modal.Title>Remove Members</Modal.Title>
+                    <Modal.Title>{title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     {/* <Select
@@ -64,7 +68,7 @@ const RemoveModal = ({ config = defaultConfig }) => {
                                 <img src={m.image} alt="" className="rounded" width="45px" height="45px" />
                                 <span className="mx-2">{m.name}</span>
                             </div>
-                            <Button size="sm" className="" variant="outline-danger" onClick={() => callback(m.id)}>
+                            <Button size="sm" className="" variant="outline-danger" onClick={() => removeFunction(m.id)}>
                                 <X strokeWidth={1}/>
                             </Button>
                         </div>
