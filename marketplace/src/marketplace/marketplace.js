@@ -8,7 +8,7 @@ import { CollaborationSvg } from './components/marketplace-container/Collaborati
 import { DiscoverPluginSvg } from './components/marketplace-container/DiscoverPluginSvg'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
-import MarketplaceHeader from './components/marketplace-container/MarketplaceHeader'
+// import MarketplaceHeader from './components/marketplace-container/MarketplaceHeader'
 import { MarketPlaceProvider } from '../context/MarketPlace.context.js'
 import { Helmet } from 'react-helmet'
 
@@ -128,19 +128,19 @@ const MarketPlace = () => {
               </div>
               <TabList className={styles.marketplaceTabList}>
                 <Tab className={styles.marketplaceTab}>All plugins</Tab>
-                <Tab className={styles.marketplaceTab}>Recommended for you</Tab>
+                <Tab className={styles.marketplaceTab}>Installed Plugins</Tab>
                 <Tab className={styles.marketplaceTab}>Popular Plugins</Tab>
               </TabList>
             </div>
             <Row className={`mx-0`}>
               <TabPanel>
-                <MarketPlaceContainer />
+                <MarketPlaceContainer type={"all"} />
               </TabPanel>
               <TabPanel>
-                <MarketPlaceContainer />
+                <MarketPlaceContainer type={"installed"} />
               </TabPanel>
               <TabPanel>
-                <MarketPlaceContainer />
+                <MarketPlaceContainer type={"popular"} />
               </TabPanel>
             </Row>
           </Tabs>
