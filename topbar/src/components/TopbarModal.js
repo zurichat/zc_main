@@ -1,5 +1,6 @@
 import { useContext, useState, useEffect } from "react"
 import { FaChevronRight } from "react-icons/fa"
+import { BiSmile } from "react-icons/bi"
 import Picker, { SKIN_TONE_MEDIUM_DARK } from "emoji-picker-react"
 import axios from "axios"
 import defaultAvatar from "../assets/images/avatar_vct.svg"
@@ -19,7 +20,7 @@ import NewStatusModal from "./NewStatusModal"
 const TopbarModal = ({ members }) => {
   const { userProfileImage, toggleModalState, toggleProfileState, user } =
     useContext(ProfileContext)
-
+  const [hoverState, setHoverState] = useState(false)
   const state = useContext(TopbarContext)
   const [showModal] = state.show
   // const [username, setUsername] = state.username
@@ -80,14 +81,13 @@ const TopbarModal = ({ members }) => {
 
   var userAppearance = null
   var toggleAppearance = null
-  
 
   switch (presence) {
     case "true":
       userAppearance = "Set yourself as away"
       toggleAppearance = (
         <div className={styles.online}>
-          <div className={styles.activeCircle}/>
+          <div className={styles.activeCircle} />
           <p className={styles.active}> Active </p>
         </div>
       )
@@ -169,9 +169,17 @@ const TopbarModal = ({ members }) => {
             <div
               className={styles.sectionTwo}
               onClick={() => setStatusModal(!statusModal)}
+              onMouseEnter={() => setHoverState(true)}
+              onMouseLeave={() => setHoverState(false)}
             >
-              <div className={styles.emoji}>{user?.status?.tag} </div>
-              <div className={styles.statusContent}>{user?.status?.text}</div>
+              {/* <div className={styles.emoji}>{user?.status?.tag} </div> */}
+              {hoverState ? (
+                <div>😃 </div>
+              ) : (
+                <BiSmile className={styles.fontStyles} />
+              )}
+
+              <div className={styles.statusContent}>{"Update your status"}</div>
             </div>
 
             <div className={styles.sectionThree}>
