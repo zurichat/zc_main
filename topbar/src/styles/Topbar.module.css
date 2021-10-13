@@ -274,6 +274,11 @@
   font-size: 18px;
   padding: 0 0.3rem;
 }
+
+.defalutEmoji{
+  height: 20px;
+  padding: 0px 2px;
+}
 /* The section of the picker */
 
 .smileys {
