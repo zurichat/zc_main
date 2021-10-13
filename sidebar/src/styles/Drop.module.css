@@ -55,6 +55,11 @@
   background-color: #00B87C;
 }
 
+.openWrapper_darkAsh, .openWrapper_darkAsh * {
+  background-color:  #242424;
+  color: #646464;
+}
+
 .item__row {
   display: none;
 }

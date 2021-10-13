@@ -21,6 +21,10 @@
   /* padding-top: 4.3rem; */
 }
 
+
+.sb__container__darkAsh {
+  background-color: #464646;
+}
 /*
 .row {
 } */
@@ -55,6 +59,11 @@
   padding: auto 0;
 }
 
+.orgInfo__darkAsh {
+  background: #242424;
+  color: #645C5C;
+}
+
 .orgTitle {
   font-weight: bold;
   font-size: 1.125em;
@@ -63,6 +72,7 @@
   padding-right: 8px;
   line-height: 1.2em;
 }
+
 
 .orgHeader {
   cursor: pointer;
@@ -93,6 +103,16 @@
   background-color: #f1fffa;
 }
 
+.sb__item__darkAsh:hover {
+  background-color: #242424;
+}
+
+.sb__item__darkAsh::selection {
+  background-color:  #242424;
+}
+
+
+
 .sb__col {
   height: inherit;
 }
@@ -105,6 +125,11 @@
   padding-inline-start: 0.5rem;
   font-size: 0.935em;
   line-height: 1.8em;
+}
+
+
+.item_p__darkAsh:hover {
+  color:  #646464;
 }
 
 .addButton {
