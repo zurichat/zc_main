@@ -61,7 +61,7 @@ const NotificationPreference = () => {
   }, [dataState])
 
   return (
-    <div>
+    <div className={styles.head}>
       {/*  THE SECTION OF THE CONTENT */}
       <div className={styles.notifyContent}>
         <div className={styles.itemTitle1}>
