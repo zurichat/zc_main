@@ -1,5 +1,8 @@
 import styles from '../component-styles/Security.module.css'
 import padlock from '../component-assets/padlock.png'
+import padlockSVG from "../component-assets/padlock.svg"
+import dataProtectionIcon from "../component-assets/data-protection.svg"
+import approvedIcon from "../component-assets/approved.svg"
 
 function Security() {
   return (
@@ -41,7 +44,7 @@ function Security() {
           >
             <img
               className={`py-3 ${styles.image}`}
-              src={`/padlock.svg`}
+              src={padlockSVG}
               alt="padlock"
             />
             <h3 className={styles.h3}>Identity and device management</h3>
@@ -57,7 +60,7 @@ function Security() {
           >
             <img
               className={`py-3 ${styles.image}`}
-              src={`/data-protection.svg`}
+              src={dataProtectionIcon}
               alt="padlock"
             />
             <h3 className={styles.h3}>Data protection</h3>
@@ -73,7 +76,7 @@ function Security() {
           >
             <img
               className={`py-3 ${styles.image}`}
-              src={`/approved.svg`}
+              src={approvedIcon}
               alt="padlock"
             />
             <h3 className={styles.h3}>Information governance</h3>
