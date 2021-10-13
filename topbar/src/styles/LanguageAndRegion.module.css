@@ -35,11 +35,13 @@
   letter-spacing: 0em;
   text-align: left;
   color: #4c4c4c;
+  
 }
 
 .selectbox:focus,
 .selectbox:active {
   color: #00b87c;
+  accent-color: #00B87C;
   border: 1px solid #00b87c;
   outline-color: #00b87c;
 }
@@ -68,6 +70,9 @@
   letter-spacing: 0em;
   text-align: left;
   color: #3a3a3a;
+}
+.cbox{
+  accent-color: #00B87C;
 }
 
 .choosed {
