@@ -281,6 +281,7 @@ const MarketPlaceContainer = ({ type }) => {
                     <hr/>
                     <div className="styles.marketplacePluginInfo">
                     <h3>Plugin info</h3>
+                    
                     <br />
                     <p>Downloads: {plugin.install_count}</p>
                     <p>Version: {plugin.version}</p>
