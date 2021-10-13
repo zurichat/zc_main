@@ -4,6 +4,8 @@ import { PluginCard } from "../plugins-card/PluginCard"
 import styles from "../../styles/marketplace.module.css"
 import logo from "../../../component-assets/zurichatlogo.svg"
 import SuccessMark from "../../../component-assets/success-mark.svg"
+import ErrorMark from "../../../component-assets/error-mark.svg"
+
 //eslint-disable-next-line
 import { Modal, Spinner } from "react-bootstrap"
 import { useMarketPlaceContext } from "../../../context/MarketPlace.context"
@@ -22,6 +24,7 @@ const MarketPlaceContainer = ({ type }) => {
   const [installLoading, setInstallLoading] = useState(false)
   const [installErr, setInstallErr] = useState(null)
   const [showSuccess, setShowSuccess] = useState(false)
+  const [showError, setShowError] = useState(false)
   const marketplace = useMarketPlaceContext()
 
   const { state } = marketplace
@@ -48,7 +51,8 @@ const MarketPlaceContainer = ({ type }) => {
   }
 
   const retrieveInstalledPlugin = async () => {
-    setisLoading(true)
+    setPluginsLoading(true)
+    marketplace.dispatch(fetchPlugins())
     try {
       const response = await axios.get(
         `https://api.zuri.chat/organizations/${currentWorkspace}/plugins`,
@@ -61,10 +65,10 @@ const MarketPlaceContainer = ({ type }) => {
       if (response.status === 200 && response.data) {
         const { data } = response.data
         marketplace.dispatch(loadPlugins(data.map(plugin => plugin.plugin)))
-        setisLoading(false)
+        setPluginsLoading(false)
       }
     } catch (err) {
-      setisLoading(false)
+      setPluginsLoading(false)
       console.error(err)
     }
   }
@@ -79,6 +83,8 @@ const MarketPlaceContainer = ({ type }) => {
         const { data } = response.data
         setPlugin(data)
         setisLoading(false)
+        setShowSuccess(false)
+        setShowError(false)
       }
     } catch (error) {
       console.error(error)
@@ -93,10 +99,10 @@ const MarketPlaceContainer = ({ type }) => {
     setInstallErr(null)
     try {
       const response = await axios.post(
-        `https://api.zuri.chat/organizations/${currentWorkspace}/plugins`,
+        plugin.install_url,
         {
-          plugin_id: plugin.id,
-          user_id: user[0]._id
+          user_id: user[0]?._id,
+          organisation_id: currentWorkspace
         },
         {
           headers: {
@@ -105,18 +111,21 @@ const MarketPlaceContainer = ({ type }) => {
         }
       )
       if (response.data.status === 200) {
-        //alert(response.data.message)
         setInstallLoading(false)
         setShowSuccess(true)
         setTimeout(() => {
           window.location.replace("/home")
         }, 5000)
       } else {
-        alert(response.data.message)
+        setInstallErr("Unable to Install this Plugin")
+        setShowError(true)
+        setisLoading(false)
         setInstallLoading(false)
       }
     } catch (err) {
-      console.error(err)
+      setInstallErr("Unable to Install this Plugin")
+      setShowError(true)
+      setisLoading(false)
       setInstallLoading(false)
     }
   }
@@ -141,16 +150,16 @@ const MarketPlaceContainer = ({ type }) => {
     switch (type) {
       case "all":
         retrievePlugins()
-        break;
+        break
       case "installed":
         retrieveInstalledPlugin()
-        break;
+        break
       case "popular":
         retrievePlugins()
-        break;
+        break
       default:
         retrievePlugins()
-        break;
+        break
     }
     getLoggedInUser()
   }, [])
@@ -193,7 +202,7 @@ const MarketPlaceContainer = ({ type }) => {
                   ></Spinner>
                 </div>
               )}
-              {!isLoading && plugin && !showSuccess && (
+              {!isLoading && plugin && !showSuccess && !showError && (
                 <div className="h-100">
                   <div
                     className={`d-flex flex-column justify-content-center ${styles.marketplaceModalTop}`}
@@ -265,6 +274,18 @@ const MarketPlaceContainer = ({ type }) => {
                   <p className={styles.successMarkText}>
                     Plugin installed successfully to organisation
                   </p>
+                </div>
+              )}
+              {!isLoading && showError && (
+                <div className="h-100 d-flex flex-column align-items-center justify-content-center">
+                  <figure className={styles.errorMarkContainer}>
+                    <img
+                      src={ErrorMark}
+                      className={styles.errorMark}
+                      alt="error icon"
+                    />
+                  </figure>
+                  <p className={styles.successMarkText}>{installErr}</p>
                 </div>
               )}
             </Modal>
