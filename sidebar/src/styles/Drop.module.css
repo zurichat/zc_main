@@ -16,8 +16,11 @@
 }
 
 .item__image {
-  width: 20px;
+  width: 30px;
   /* margin-inline-end: 0.1rem; */
+}
+.item__list {
+  white-space: nowrap;
 }
 
 .plugin_name,
@@ -34,6 +37,10 @@
 .plugin_name,
 .dropDown__name {
   font-size: 0.935em;
+}
+
+.dropDown__title {
+  text-transform: capitalize;
 }
 
 .plugin_name,
