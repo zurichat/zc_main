@@ -1,5 +1,33 @@
 import styles from '../styles/TopBarSearchModal.module.css'
+
 const TopBarSearchModal = () => {
+  const pluginName = window.location.href;
+  const newName = pluginName.split('/')
+  const plugins = [
+          {
+          name: 'todo',
+          baseUrl: 'todo.zuri.chat'
+        },
+        {
+          name: 'music',
+          baseUrl: 'music.zuri.chat'
+        },
+        {
+          name: 'channels',
+          baseUrl: 'channels.zuri.chat'
+        },
+        {
+          name: 'dm',
+          baseUrl: 'dm.zuri.chat'
+        },
+        {
+          name: 'files',
+          baseUrl: 'companyfiles.zuri.chat'
+        }
+  ]
+  const exactPlugin = plugins.find(plugin => plugin.name === newName[3] || newName[3]+'#')
+  // console.log(newName)
+  // console.log(exactPlugin)
   return (
     <div className={styles.topBarSearchModal}>
         <input type="text" className={styles._input} placeholder="Search Here"/>
