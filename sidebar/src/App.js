@@ -2,12 +2,16 @@ import Sidebar from "./sidebar.component"
 import { useEffect, useReducer } from "react"
 import SkeletonLoader from "./components/SkeletonLoader"
 import { fetchUser } from "./utils/fetchUserDetails"
+import NewInviteModal from "./components/invite-workflow/newInviteModal/newInviteModal"
+import InviteLoaderModal from "./components/invite-workflow/invite-loader/Loader"
+import InviteResponseModal from "./components/invite-workflow/response-modal/responseModal"
 
 export const ACTIONS = {
   ADD_USER_INFO: "add-user-info",
   ADD_ITEM: "add",
   UPDATE_PLUGINS: "update",
-  ADD_ORGANIZATION: "add-org-email"
+  ADD_ORGANIZATION: "add-org-email",
+  INVITE_MODAL_TYPE: "select-invite-modal"
 }
 
 function reducer(state, action) {
@@ -53,6 +57,12 @@ function reducer(state, action) {
           ...org_info
         }
       }
+    case ACTIONS.INVITE_MODAL_TYPE:
+      //set invite modal
+      return {
+        ...state,
+        inviteModalType: action.payload
+      }
     default:
       return state
   }
@@ -69,6 +79,11 @@ export default function App() {
   return !state.sidebar ? (
     <SkeletonLoader />
   ) : (
-    <Sidebar state={state} dispatch={dispatch} />
+    <>
+      <Sidebar state={state} dispatch={dispatch} />
+      <NewInviteModal state={state} dispatch={dispatch} />
+      <InviteLoaderModal state={state} dispatch={dispatch} />
+      <InviteResponseModal state={state} dispatch={dispatch} />
+    </>
   )
 }

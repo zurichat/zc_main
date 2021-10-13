@@ -1,6 +1,8 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
+import { ACTIONS } from "../../../App"
 import cancel from "./assets/cancel.svg"
+import { sendInviteAPI } from "./new-invite.utils"
 
 const Container = styled.div`
   display: block !important;
@@ -81,32 +83,64 @@ const Button = styled.button`
   }
 `
 
-function NewInviteModal({ openModal, setOpenModal }) {
+function NewInviteModal(props) {
+  const [emailField, setEmailField] = useState("")
+  const handleCloseInviteModal = () => {
+    props.dispatch({
+      type: ACTIONS.INVITE_MODAL_TYPE,
+      payload: ""
+    })
+  }
+
+  const handleSendInvite = async () => {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    if (emailField.length > 5) {
+      try {
+        const response = await sendInviteAPI(
+          emailField.trim().replaceAll(" ", "").split(",")
+        )
+        if (response.status === 200) {
+          setEmailField("")
+          handleCloseInviteModal()
+        }
+      } catch (err) {
+        setEmailField("")
+        handleCloseInviteModal()
+      }
+    }
+  }
   return (
-    <Container className="invite-modal-main">
-      <Container className="invite-modal-innerContainer">
-        <Container className="invite-modal-header">
-          <Text>Invite people to HNGi8</Text>
-          <Button onClick={() => setOpenModal(!openModal)}>
-            <Image src={cancel}></Image>
-          </Button>
-        </Container>
+    props.state.inviteModalType === "show-invite-modal" && (
+      <Container className="invite-modal-main">
+        <Container className="invite-modal-innerContainer">
+          <Container className="invite-modal-header">
+            <Text>Invite people to HNGi8</Text>
+            <Button onClick={handleCloseInviteModal}>
+              <Image src={cancel}></Image>
+            </Button>
+          </Container>
 
-        <Container className="invite-modal-textarea">
-          <Label for="emails"></Label>
-          <TextArea
-            placeholder="name@gmail.com"
-            name="emails"
-            id="emails"
-            required
-          ></TextArea>
-        </Container>
+          <Container className="invite-modal-textarea">
+            <Label for="emails"></Label>
+            <TextArea
+              placeholder="name@gmail.com"
+              name="emails"
+              id="emails"
+              value={emailField}
+              onChange={evt => setEmailField(evt.target.value)}
+              required
+            ></TextArea>
+          </Container>
 
-        <Container className="invite-modal-sendBtn">
-          <Button className="invite-sendBtn">Send</Button>
+          <Container className="invite-modal-sendBtn">
+            <Button className="invite-sendBtn" onClick={handleSendInvite}>
+              Send
+            </Button>
+          </Container>
         </Container>
       </Container>
-    </Container>
+    )
   )
 }
 
