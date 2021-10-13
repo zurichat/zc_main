@@ -37,6 +37,7 @@ import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContex
 import PrivacyPolicy from './pages/privacy-policy/index'
 import NotFoundPage from './pages/404'
 import Billing from './pages/admin/Billing'
+import Customize from './pages/admin/Customize'
 import Blog from './pages/blogs'
 import Homepage from './pages/home'
 import Permissions from './pages/admin/Permissions'
@@ -46,8 +47,10 @@ import AdminSettingsTab from './pages/admin/Settings/components/AdminSettingsTab
 import TermsOfService from './pages/termsOfService'
 import RedirectRoute from './pages/redirect'
 import Plugins from './pages/plugins'
-import ZurichatBlog from './pages/blogs/components/zurichatBlog'
+
 import Legal from './pages/legal'
+import ZurichatBlog from './pages/blogs/components/zurichatBlog'
+
 import Ebooks from './pages/ebooks'
 
 
@@ -68,8 +71,8 @@ const App = () => {
           <LandingPage />
         </Route>
         <RedirectRoute path="/login">
-         <Login />
-       </RedirectRoute>
+          <Login />
+        </RedirectRoute>
         <Route path="/signup">
           <SignUp />
         </Route>
@@ -133,6 +136,11 @@ const App = () => {
         <Route path="/careers">
           <Careers />
         </Route>
+
+        <Route path="/legal">
+          <Legal />
+        </Route>
+
         <Route path="/privacy">
           <PrivacyPolicy />
         </Route>
@@ -145,9 +153,9 @@ const App = () => {
         <Route path="/dao-features">
           <DAO_Features />
         </Route>
-        <Route path="/marketplace" exact>
+        {/* <Route path="/marketplace" exact>
           <MarketPlace />
-        </Route>
+        </Route> */}
         <Route path="/apps-integrations">
           <AppsAndIntegrations />
         </Route>
@@ -173,6 +181,11 @@ const App = () => {
           path="/admin/settings/billings"
           exact
           component={Billing}
+        />
+        <PrivateRoute
+          path="/admin/settings/customize"
+          exact
+          component={Customize}
         />
         {/* <PrivateRoute
           path="/admin/settings/permission"
