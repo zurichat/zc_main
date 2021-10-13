@@ -37,15 +37,15 @@
   border-radius: 4px;
   overflow: hidden;
   padding-bottom: 20px;
-  height: 80vh;
-  margin-top: 90px;
+  height: 90vh;
+  margin-top: 30px;
   margin-right: 40px;
 }
 
-.modalCont {
+/* .modalCont {
   overflow-y: scroll;
   height: 100%;
-}
+} */
 .modalCont::-webkit-scrollbar {
   display: none;
 }
@@ -132,7 +132,7 @@
     position: fixed;
 
     width: 100%;
-    height: 6rem;
+    height: 4rem;
     padding: 0 1.5rem;
     font-size: 1.2rem;
     background: none;
@@ -146,6 +146,8 @@
 
   .modalCont {
     margin-top: 1rem;
+    overflow-y: scroll;
+    height: 100%;
   }
 
   .mobile {
