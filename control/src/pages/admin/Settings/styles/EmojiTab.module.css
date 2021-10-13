@@ -1,3 +1,7 @@
+.container {
+    position: relative;
+}
+
 .text {
   font-size: 18px;
   line-height: 1.50001;
@@ -150,7 +154,7 @@
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

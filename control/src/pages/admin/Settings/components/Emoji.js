@@ -26,7 +26,9 @@ const Emoji = () => {
           <div className={classes.text}>Here’s an example:</div>
           <div className={classes.messageDialog}>
             <div className={classes.messageActions}>
-              <button></button>
+              <button>
+                  <img src="" alt="" />
+              </button>
               <button></button>
               <button></button>
               <button></button>
