@@ -93,7 +93,7 @@ const SetStatusModal = ({
     const result = { emojiItem, text, choosePeriod }
 
     try {
-      const res = await authAxios.patch(
+      const res = authAxios.patch(
         `/organizations/${orgId}/members/${user._id}/status`,
         {
           expiry_time: "" || choosePeriod,
@@ -110,6 +110,23 @@ const SetStatusModal = ({
       return [...status, result]
     })
     setStatusModal(!statusModal)
+  }
+  const handleClearStatus = async () => {
+    setEmoji("")
+    setText("")
+    try {
+      const res = await authAxios.patch(
+        `/organizations/${orgId}/members/${user._id}/status`,
+        {
+          expiry_time: "one_hour",
+          tag: emojiItem,
+          text: text
+        }
+      )
+      res.status == 200 && alert(res?.data?.message)
+    } catch (error) {
+      alert(error)
+    }
   }
   return (
     <div className={styles.modal}>
@@ -265,8 +282,11 @@ const SetStatusModal = ({
               type="submit"
               onClick={handleSubmit}
             >
-              {user?.status?.text ? "Clear Status" : "Save Changes"}
-              {/* {console.log(user?.status?.text)} */}
+              {text.length > 0 && emojiItem.length > 0 ? (
+                <span onClick={handleClearStatus}>Clear Status</span>
+              ) : (
+                "Save Changes"
+              )}
             </button>
           </form>
           {/* {status.map((data)=>{
