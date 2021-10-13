@@ -673,7 +673,6 @@
     flex-direction: row;
     flex-wrap: nowrap;
     overflow: scroll;
-    width: fit-content;
   }
   .marketplaceModalPluginImages img{
     width: 8rem;
