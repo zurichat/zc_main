@@ -41,6 +41,7 @@
 .modalCont {
   overflow-y: scroll;
   height: 100%;
+  background-color: var(--bg-color);
 }
 .modalCont::-webkit-scrollbar {
   display: none;
