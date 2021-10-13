@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+// import React, { useState } from "react"
+import React from "react"
 import styles from "./styles/removemodal.module.css"
 import { Button, Modal } from "react-bootstrap"
 import { X } from "react-feather"
@@ -14,16 +15,20 @@ const defaultConfig = {
         "https://www.kemhospitalpune.org/wp-content/uploads/2020/12/Profile_avatar_placeholder_large.png"
     }
   ],
-  // eslint-disable-next-line no-console
-  callback: id => console.log("REMOVE >>", id)
+  removeFunction: id => console.warn("REMOVE >>", id),
+  show: true,
+  handleClose: function () {
+    this.show = false
+  },
+  title: "Remove users"
 }
 
 const RemoveModal = ({ config = defaultConfig }) => {
-  const { currentMembers, callback } = config
+  const { currentMembers, removeFunction, title, show, handleClose } = config
 
-  const [show, setShow] = useState(false)
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
+  // const [show, setShow] = useState(false)
+  // const handleClose = () => setShow(false)
+  // const handleShow = () => setShow(true)
   // const animatedComponents = makeAnimated()
 
   // const options = currentMembers.map(m => {
@@ -35,9 +40,9 @@ const RemoveModal = ({ config = defaultConfig }) => {
 
   return (
     <div className={`${styles.wrapper}`}>
-      <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
-      </Button>
+      {/* <Button variant="primary" onClick={handleShow}>
+                Launch demo modal
+            </Button> */}
       <Modal
         show={show}
         onHide={handleClose}
@@ -47,7 +52,7 @@ const RemoveModal = ({ config = defaultConfig }) => {
         keyboard={false}
       >
         <Modal.Header>
-          <Modal.Title>Remove Members</Modal.Title>
+          <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {/* <Select
@@ -58,9 +63,11 @@ const RemoveModal = ({ config = defaultConfig }) => {
                         placeholder="Add members to remove"
                     />
                     <div className="mb-2"></div> */}
-          {currentMembers.map(m => (
-            // eslint-disable-next-line react/jsx-key
-            <div className="container mb-2 d-flex justify-content-between">
+          {currentMembers.map((m, index) => (
+            <div
+              className="container mb-2 d-flex justify-content-between"
+              key={m.id || index}
+            >
               <div className="">
                 <img
                   src={m.image}
@@ -75,7 +82,7 @@ const RemoveModal = ({ config = defaultConfig }) => {
                 size="sm"
                 className=""
                 variant="outline-danger"
-                onClick={() => callback(m.id)}
+                onClick={() => removeFunction(m.id)}
               >
                 <X strokeWidth={1} />
               </Button>
