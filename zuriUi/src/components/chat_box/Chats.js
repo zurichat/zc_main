@@ -1,12 +1,11 @@
 import styled from "styled-components"
-import ChatItem from "./ChatItem."
+import ChatItem from "./ChatItem"
 const Chats = ({ chatInfo }) => {
   return (
     <Wrapper>
-      {chatInfo.map(chat => (
-        <ChatItemWrapper key={chat.id}>
-          {/* <ChatItem {...chat} /> */}
-          <ChatItem message={chat} />
+      {chatInfo.map((chat, idx) => (
+        <ChatItemWrapper key={idx * (3 / 0.63)}>
+          <ChatItem messageConfig={chat} />
         </ChatItemWrapper>
       ))}
     </Wrapper>
