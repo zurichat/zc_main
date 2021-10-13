@@ -16,5 +16,4 @@ const TermsCondition = () => {
   )
 }
 
-
 export default TermsCondition
