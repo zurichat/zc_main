@@ -12,8 +12,10 @@ import {
   loadPlugins,
   fetchPlugins
 } from "../../../context/marketplace/marketplace.action"
+import { GetUserInfo } from "@zuri/control"
 
-const MarketPlaceContainer = ({ organizations, user }) => {
+const MarketPlaceContainer = ({ type }) => {
+  const [user, setUser] = useState({})
   const [plugin, setPlugin] = useState([])
   const [pluginsLoading, setPluginsLoading] = useState(false)
   const [isLoading, setisLoading] = useState(false)
@@ -45,6 +47,28 @@ const MarketPlaceContainer = ({ organizations, user }) => {
     }
   }
 
+  const retrieveInstalledPlugin = async () => {
+    setisLoading(true)
+    try {
+      const response = await axios.get(
+        `https://api.zuri.chat/organizations/${currentWorkspace}/plugins`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      )
+      if (response.status === 200 && response.data) {
+        const { data } = response.data
+        marketplace.dispatch(loadPlugins(data.map(plugin => plugin.plugin)))
+        setisLoading(false)
+      }
+    } catch (err) {
+      setisLoading(false)
+      console.error(err)
+    }
+  }
+
   const retrievePlugin = async () => {
     setisLoading(true)
     try {
@@ -72,7 +96,7 @@ const MarketPlaceContainer = ({ organizations, user }) => {
         `https://api.zuri.chat/organizations/${currentWorkspace}/plugins`,
         {
           plugin_id: plugin.id,
-          user_id: user.id
+          user_id: user[0]._id
         },
         {
           headers: {
@@ -101,9 +125,34 @@ const MarketPlaceContainer = ({ organizations, user }) => {
     e.target.src = logo
   }
 
+  const getLoggedInUser = async () => {
+    try {
+      const userInfo = await GetUserInfo()
+      //Check if user id is valid and get user organization
+      if (userInfo[0]._id !== "") {
+        setUser(userInfo)
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   useEffect(() => {
-    retrievePlugins()
-    //eslint-disable-next-line
+    switch (type) {
+      case "all":
+        retrievePlugins()
+        break;
+      case "installed":
+        retrieveInstalledPlugin()
+        break;
+      case "popular":
+        retrievePlugins()
+        break;
+      default:
+        retrievePlugins()
+        break;
+    }
+    getLoggedInUser()
   }, [])
 
   useEffect(() => {
