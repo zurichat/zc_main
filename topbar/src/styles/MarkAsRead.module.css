@@ -5,7 +5,7 @@
 }
 
 .subhead {
-  font-family: Lato;
+  font-family: "Lato";
   font-size: 15px;
   font-style: normal;
   font-weight: 700;
@@ -34,7 +34,13 @@
 
 .option {
   margin-bottom: 10px;
-  margin-left: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.option img {
+  padding-right: 8px;
+  height: 14px;
 }
 
 /* .markAll {
