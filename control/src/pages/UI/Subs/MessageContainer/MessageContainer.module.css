@@ -1,0 +1,19 @@
+.MessageContainer {
+  padding: 17px 16px;
+  position: relative;
+}
+
+.MessageContainer:hover {
+  background-color: #f1fffa;
+}
+
+.MessageContainer:hover .hoverItemsContainer {
+  display: flex;
+}
+
+.MessageContainer .messageCardContainer {
+}
+
+.MessageContainer .hoverItemsContainer {
+  display: none;
+}
