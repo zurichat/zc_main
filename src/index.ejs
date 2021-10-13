@@ -127,7 +127,8 @@
       z-index: 9999;
     }
 
-    div[id*='zuri-plugin'] {
+    div[id*='zuri-plugin'],
+    div[id*='zuri/marketplace'] {
       width: 80%;
       position: absolute;
       top: 6vh;
@@ -153,7 +154,8 @@
         left: 0;
       }
 
-      div[id*='zuri-plugin'] {
+      div[id*='zuri-plugin'],
+      div[id*='zuri/marketplace'] {
         top: 5vh;
         right: 0;
         z-index: unset;
@@ -175,7 +177,8 @@
         display: none;
       }
 
-      div[id*='zuri-plugin'] {
+      div[id*='zuri-plugin'],
+      div[id*='zuri/marketplace'] {
         width: 100%;
         z-index: unset;
       }
@@ -192,7 +195,8 @@
         width: 40%;
       } */
 
-      div[id*='zuri-plugin'] {
+      div[id*='zuri-plugin'],
+      div[id*='zuri/marketplace'] {
         width: 100%;
         position: relative;
       }
@@ -204,9 +208,6 @@
         width: calc(26.4rem * 0.9);
       }
     }
-
-
-
 
     /* CHESS STYLE */
   </style>
@@ -294,7 +295,10 @@
         "@zuri/control": "//localhost:8082/zuri-control.js",
         "@zuri/plugin-header": "//localhost:8083/zuri-plugin-header.js",
         "@zuri/comment-sidebar": "//localhost:8084/zuri-comment-sidebar.js",
-        "@zuri/manage-user-modal": "//localhost:8085/zuri-manageUser.js"
+        "@zuri/manage-user-modal": "//localhost:8087/zuri-manageUser.js",
+        "@zuri/marketplace": "//localhost:8086/zuri-marketplace.js",
+        "@zuri/zuri-ui": "//localhost:8084/zuri-zuri-ui.js",
+        "@zuri/utilities": "//localhost:8085/zuri-utilities.js"
       }
     }
     </script>
@@ -308,7 +312,10 @@
           "@zuri/control": "/zuri-control.js",
           "@zuri/plugin-header": "/zuri-plugin-header.js",
           "@zuri/comment-sidebar": "/zuri-comment-sidebar.js",
-          "@zuri/manage-user-modal": "/zuri-manageUser.js"
+          "@zuri/manage-user-modal": "/zuri-manageUser.js",
+          "@zuri/marketplace": "/zuri-marketplace.js",
+          "@zuri/zuri-ui": "/zuri-zuri-ui.js",
+          "@zuri/utilities": "/zuri-utilities.js"
         }
       }
   </script>

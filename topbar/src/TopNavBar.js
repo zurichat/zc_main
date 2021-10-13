@@ -13,6 +13,8 @@ import TopbarModal from "./components/TopbarModal"
 // import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
 import { authAxios } from "./utils/Api"
 import Profile from "./components/Profile"
+import TopSearchBar from "./components/TopSearchBar"
+import TopBarSearchModal from "./components/TopBarSearchModal"
 // import Loader from 'react-loader-spinner'
 import { GetUserInfo, SubscribeToChannel } from "@zuri/control"
 import axios from "axios"
@@ -34,7 +36,6 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const [helpModal, setHelpModal] = useState(false)
   // const [memberId, setMemberId] = useState('');
   const [messages, setMessages] = useState("")
-
   useEffect(() => {
     // const fetchUser = async () => {
     //   const info = await GetUserInfo()
@@ -270,18 +271,29 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         </button>
       </div>
       <div className="ms-4" style={{ width: "60%" }}>
-        <div>
-          <form onSubmit={handleEnter}>
-            <BaseInput
-              onChange={handleSearchChange}
-              value={inputValue}
-              type="text"
-              width={12}
-              error
-              placeholder="Search here"
-              border={"#99999933"}
-            />
-          </form>
+        {/* <BaseInput
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          type="text"
+          width={12}
+          error
+          placeholder="Search here"
+          border={"#99999933"}
+        /> */}
+          {/* <TopSearchBar onClick={() => setShowTopSearchModal(true)} /> */}
+          <TopBarSearchModal />
+        {/* <div>
+            <form onSubmit={handleEnter}>
+              <BaseInput
+                onChange={handleSearchChange}
+                value={inputValue}
+                type="text"
+                width={12}
+                error
+                placeholder="Search here"
+                border={"#99999933"}
+              />
+            </form>
         </div>
 
         <div>
@@ -292,7 +304,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
             displaySuggestions={displaySuggestions}
             suggestions={filteredSuggestions}
           />
-        </div>
+        </div> */}
       </div>
 
       <ProfileImageContainer
@@ -311,6 +323,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
       <Profile />
       <TopbarModal />
+       
     </>
   )
 }

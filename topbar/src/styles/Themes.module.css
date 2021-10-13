@@ -5,26 +5,29 @@
   --text-color: #000;
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --bg-color: #3f3f3f;
   --text-color: #fff;
 }
 
-[data-theme='light'] {
+[data-theme="light"] {
   --bg-color: #fff;
   --text-color: #3f3f3f;
 }
 
 .themeCont {
-  margin-top: 14px;
-  margin-left: 50px;
+  padding: 12px;
   font-family: sans-serif;
   text-align: center;
   background-color: var(--bg-color);
   color: var(--text-color);
   width: var(--width);
   height: var(--height);
-  overflow-x: hidden;
+  text-align: left;
+}
+
+.themeCont::-webkit-scrollbar {
+  display: none;
 }
 
 .sync {
@@ -34,7 +37,7 @@
 
 .checkbox {
   margin-top: -2px;
-  margin-left: 7px;
+  margin-left: 5px;
 }
 
 .os {
@@ -65,7 +68,6 @@
 .text {
   font-size: 14px;
   margin-top: 8px;
-  margin-left: -164px;
   font-weight: 500;
   color: #999999;
   position: relative;
@@ -78,7 +80,7 @@
 
 .radio {
   margin-top: -2px;
-  margin-left: 7px;
+  margin-left: 5px;
 }
 
 .mention {
@@ -92,7 +94,6 @@
 }
 
 .text2 {
-  margin-left: -72px;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
