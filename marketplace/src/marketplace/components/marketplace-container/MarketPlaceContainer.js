@@ -5,7 +5,7 @@ import styles from "../../styles/marketplace.module.css"
 import logo from "../../../component-assets/zurichatlogo.svg"
 import SuccessMark from "../../../component-assets/success-mark.svg"
 import ErrorMark from "../../../component-assets/error-mark.svg"
-
+import ReactPaginate from "react-paginate";
 //eslint-disable-next-line
 import { Modal, Spinner } from "react-bootstrap"
 import { useMarketPlaceContext } from "../../../context/MarketPlace.context"
@@ -25,6 +25,7 @@ const MarketPlaceContainer = ({ type }) => {
   const [installErr, setInstallErr] = useState(null)
   const [showSuccess, setShowSuccess] = useState(false)
   const [showError, setShowError] = useState(false)
+  const [pageNumber, setPageNumber] = useState(0)
   const marketplace = useMarketPlaceContext()
 
   const { state } = marketplace
@@ -171,6 +172,23 @@ const MarketPlaceContainer = ({ type }) => {
     //eslint-disable-next-line
   }, [marketplace.state.pluginId])
 
+
+  // const  indexOfLastPost = currentPage * pluginPerPage;
+  // const indexOfFirstPost = indexOfLastPost - pluginPerPage;
+  // const currentPlugins = plugin.slice(indexOfFirstPost, indexOfLastPost)
+  
+  // const paginate = (pageNumber) => setCurrentPage(pageNumber)
+  
+  //Logic  for Pagination
+  const pluginsPerPage = 6
+  const pagesVisited = pageNumber * pluginsPerPage
+
+  const pageCount = Math.ceil(state.plugins.length / pluginsPerPage)
+
+  const changePage = ({selected}) => {
+    setPageNumber(selected)
+  };
+
   return (
     <>
       {pluginsLoading && (
@@ -182,8 +200,9 @@ const MarketPlaceContainer = ({ type }) => {
       )}
       {!pluginsLoading && state.plugins.length > 0 && (
         <div className={styles.zuriMarketPlace__container}>
-          {state.plugins.map((plugin, i) => {
+          {state.plugins.slice(pagesVisited, pagesVisited + pluginsPerPage).map((plugin, i) => {
             return <PluginCard key={i} {...plugin} />
+
           })}
           {marketplace.state.isModal && marketplace.state.pluginId && (
             <Modal
@@ -290,6 +309,17 @@ const MarketPlaceContainer = ({ type }) => {
               )}
             </Modal>
           )}
+            <ReactPaginate 
+              previousLabel={"Previous"}
+              nextLabel={"Next"}
+              pageCount={pageCount}
+              onPageChange={changePage}
+              containerClassName={styles.paginationBttns}
+              previousClassName={styles.previousBttn}
+              nextClassName={styles.nextBttn}
+              disabledClassName={styles.paginationDisabled}
+              activeClassName={styles.paginationActive}
+            />
         </div>
       )}
     </>
