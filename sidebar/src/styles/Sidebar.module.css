@@ -97,12 +97,8 @@
 }
 
 .item__img {
-<<<<<<< HEAD
   width: 18px;
   margin-inline-end: 0.5rem;
-=======
-  width: 1.55em;
->>>>>>> b438e7da558021f7474f93e7118baf09ee0f8a07
 }
 
 .item_p {
@@ -113,18 +109,10 @@
   font-weight: 400;
 }
 
-<<<<<<< HEAD
 /* .addButton {
   width: 1.3em;
   margin-inline-start: auto;
 } */
-=======
-.addButton {
-  width: 2.5em;
-  margin-inline-start: auto;
-  padding-inline-end: 1.5em;
-}
->>>>>>> b438e7da558021f7474f93e7118baf09ee0f8a07
 
 /* .orgHeader {
   display: flex;
