@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import classes from "../styles/EmojiTab.module.css"
 
 const Emoji = () => {
-  const [display, setDisplay] = useState(false)
+  const [display, setDisplay] = useState(true)
 
   useEffect(() => {
     if (display) document.body.style.overflow = "hidden"
@@ -74,7 +74,7 @@ const Emoji = () => {
           ></div>
           <div className={classes.modal}>
             <div className={classes.container}>
-              <div className={classes.title}>Add custom emoji</div>
+              <h1 className={classes.title}>Add custom emoji</h1>
               <div className={classes.text}>
                 Your custom emoji will be available to everyone in your
                 workspace. You’ll find it in the custom tab of the emoji picker.
