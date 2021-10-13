@@ -30,16 +30,14 @@
 
 .modalContent,
 .modalFull {
-  width: 90%;
+  max-width: 100%;
   /* max-width: 885px; */
-  max-width: 700px;
+  max-width: 900px;
   background: #fff;
   border-radius: 4px;
   overflow: hidden;
   padding-bottom: 20px;
-  height: 80vh;
-  margin-top: 90px;
-  margin-right: 40px;
+  height: 90vh;
 }
 
 .modalCont {
@@ -132,7 +130,7 @@
     position: fixed;
 
     width: 100%;
-    height: 6rem;
+    height: 4rem;
     padding: 0 1.5rem;
     font-size: 1.2rem;
     background: none;
@@ -146,6 +144,8 @@
 
   .modalCont {
     margin-top: 1rem;
+    overflow-y: scroll;
+    height: 100%;
   }
 
   .mobile {
