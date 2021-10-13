@@ -22,11 +22,11 @@ const defaultConfig = {
 
 const RemoveModal = ({ config = defaultConfig }) => {
 
-    const { currentMembers, removeFunction, title, show } = config
+    const { currentMembers, removeFunction, title, show, handleClose } = config
 
     // const [show, setShow] = useState(false)
-    const handleClose = () => setShow(false)
-    const handleShow = () => setShow(true)
+    // const handleClose = () => setShow(false)
+    // const handleShow = () => setShow(true)
     // const animatedComponents = makeAnimated()
 
 
