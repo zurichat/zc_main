@@ -61,6 +61,16 @@ const HeaderSearchSuggestion = () => {
             className={`align-top ${headerStyles.searchImage1}`}
           />
         </Link>*/}
+      <div className={`line ${headerStyles.line}`}></div>
+
+        <select className={`btn btn-transparent  ${headerStyles.select}`} type="button">
+          <option value="english">English</option>
+          <option value="french">French</option>
+          <option value="chinese">Chinese</option>
+          <option value="arabic">Arabic</option>
+          <option value="deutsch">Deutsch</option>
+        </select>
+
         <button
           className={`navbar-toggler ${headerStyles.toggle}`}
           type="button"
