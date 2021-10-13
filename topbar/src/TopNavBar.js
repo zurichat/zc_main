@@ -13,6 +13,8 @@ import TopbarModal from "./components/TopbarModal"
 // import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
 import { authAxios } from "./utils/Api"
 import Profile from "./components/Profile"
+import TopSearchBar from "./components/TopSearchBar"
+import TopBarSearchModal from "./components/TopBarSearchModal"
 // import Loader from 'react-loader-spinner'
 import { GetUserInfo, SubscribeToChannel } from "@zuri/control"
 import axios from "axios"
@@ -161,27 +163,23 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   const [toggleSidebar, setToggleSidebar] = useState(false)
 
-  const handleToggleSidebar = useCallback(() => {
+  const handleToggleSidebar = () => {
     setToggleSidebar(!toggleSidebar)
-  }, [toggleSidebar])
+  }
 
-  //Handle sidebar on mobile
-  const sidebar = document.getElementById(
-    "single-spa-application:@zuri/sidebar"
-  )
   useEffect(() => {
-    if (toggleSidebar && window.outerWidth <=768) {
+    //Handle sidebar on mobile
+    const sidebar = document.getElementById(
+      "single-spa-application:@zuri/sidebar"
+    )
+    if (toggleSidebar && window.outerWidth <= 768) {
       sidebar.style.display = "block"
-    } 
-    else if(window.outerWidth > 768){
+    } else if (window.outerWidth > 768) {
       sidebar.style.display = "block"
-    }
-    else {
+    } else {
       sidebar.style.display = "none"
     }
-  }, [toggleSidebar, sidebar])
-
-
+  }, [toggleSidebar])
 
   const zc_spa_body = document.querySelector("body")
   // const sidebar_toggle = document.querySelector("#sidebar_toggle")
@@ -247,8 +245,6 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   const handleEnter = e => {
     e.preventDefault()
-    // eslint-disable-next-line no-console
-    console.log(window.location.href)
 
     navigateToUrl("/search")
     // let s= window.location.href.split('/')
@@ -280,18 +276,29 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         </button>
       </div>
       <div className="ms-4" style={{ width: "60%" }}>
-        <div>
-          <form onSubmit={handleEnter}>
-            <BaseInput
-              onChange={handleSearchChange}
-              value={inputValue}
-              type="text"
-              width={12}
-              error
-              placeholder="Search here"
-              border={"#99999933"}
-            />
-          </form>
+        {/* <BaseInput
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          type="text"
+          width={12}
+          error
+          placeholder="Search here"
+          border={"#99999933"}
+        /> */}
+          {/* <TopSearchBar onClick={() => setShowTopSearchModal(true)} /> */}
+          <TopBarSearchModal />
+        {/* <div>
+            <form onSubmit={handleEnter}>
+              <BaseInput
+                onChange={handleSearchChange}
+                value={inputValue}
+                type="text"
+                width={12}
+                error
+                placeholder="Search here"
+                border={"#99999933"}
+              />
+            </form>
         </div>
 
         <div>
@@ -302,7 +309,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
             displaySuggestions={displaySuggestions}
             suggestions={filteredSuggestions}
           />
-        </div>
+        </div> */}
       </div>
 
       <ProfileImageContainer
@@ -321,6 +328,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
       <Profile />
       <TopbarModal />
+       
     </div>
   )
 }
