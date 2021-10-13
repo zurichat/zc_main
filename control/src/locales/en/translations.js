@@ -1,91 +1,92 @@
 export const TRANSLATIONS_EN = {
   landing: {
     title: {
-      landing: "Connectez-vous et interagissez"
+      landing: ""
     },
 
     nav: {
-      pricing: "Prix",
-      about: "Sur",
-      downloads: "Téléchargements",
+      pricing: "Pricing",
+      about: "About",
+      downloads: "Downloads",
       contact: "Contact",
-      signup: "S'inscrire",
-      login: "Connexion"
+      signup: "Sign Up",
+      login: "Login"
     },
 
     hero: {
-      pre_headline: "Pour les organisations et institutions",
-      headline: "Un moyen entièrement intégré de se connecter et d'interagir",
+      pre_headline: "For Organizations & Institutions",
+      headline: "A fully integrated way to connect and interact",
       post_headline:
-        "Créez votre avenir avec nous, réseautez, collaborez, éduquez et apprenez à distance",
-      call_to_action: "Essayez Zuri.chat gratuitement"
+        "Create your future with us, network, collaborate, educate and learn remotely",
+      call_to_action: "Try Zuri.chat for free"
     },
 
     featureRowOne: {
-      title: "Collaboration transparente",
-      headline: "Communiquez et collaborez où que vous soyez",
+      title: "Seamless collaboration",
+      headline: "Communicate and collaborate from wherever you are",
       description:
-        "Invitez votre équipe dans votre espace de travail. Restez connecté, restez synchronisé et explorez des idées ensemble où que vous soyez.",
-      link: "Créez votre propre espace de travail"
+        "Invite your team to your workspace. Stay connected,stay in sync, and explore ideas together from anywhere.",
+      link: "Create your own workspace"
     },
 
     featureRowTwo: {
-      title: "Enseignement à distance",
-      headline: "Apprendre en déplacement",
+      title: "Remote Education",
+      headline: "Learn on the Go",
       description:
-        "Emmenez votre classe partout, rendez l'apprentissage amusant, restez engagé et inspiré avec le salon virtuel et les jeux.",
-      link: "En savoir plus sur le salon virtuel"
+        "Take your classroom everywhere, make learning fun, stay engaged and inspired with the virtual lounge and games.",
+      link: "Learn more about the virtual lounge"
     },
 
     featureRowThree: {
-      title: "Espace de travail tout-en-un",
-      headline: "Personnalisez votre espace de travail",
+      title: "All-in-one Workspace",
+      headline: "Customise your Workspace",
       description:
-        "Un outil, plusieurs plugins. Suivez les dépenses de l'entreprise, envoyez des informations rapidement et en douceur, gérez les fichiers et intégrez des outils à Zuri.chat.",
-      link: "Explorer les plugins"
+        "One tool, several plugins. Track company expenses, send information fast and smoothly, manage files and integrate tools all with Zuri.chat.",
+      link: "Explore Plugins"
     },
 
     featureRowFour: {
-      title: "Recherche Avancée",
+      title: "Advanced Search",
       headline:
-        "Accédez aux fichiers et aux messages de votre espace de travail sans effort",
+        "Access Files and Messages in your Workspace Effortlessly",
       description:
-        "Avec l'outil de recherche, trouvez facilement des messages, des fichiers et des liens précédemment partagés.",
-      link: "En savoir plus sur la recherche"
+        "With the search tool, find previously shared messages, files and links with ease.",
+      link: "Learn more about Search"
     },
 
     cardOne: {
       title:
-        "Un moyen flexible d'éduquer, de collaborer et de faire équipe où que vous soyez",
-      button: "Inscrivez-vous maintenant gratuitement"
+        "A flexible Way to Educate, Collaborate and Team Up From Wherever You Are",
+      button: "Sign up now for Free"
     },
 
     cardTwo: {
       title:
-        "Soyez le premier à recevoir des mises à jour et des offres exclusives de Zuri Chat",
-      description: "Enrichissez votre expérience Zuri Chat en vous inscrivant ici pour obtenir les dernières nouvelles et offres spéciales sur Zuri Chat",
-      button: "S'abonner"
+        "Be the First to get updates and exclusive offers from Zuri Chat",
+      description:
+        "Enrich your Zuri Chat experience by signing up here to get the latest news and special deals on Zuri Chat",
+      button: "Subscribe"
     },
     footer: {
-      company: "Société",
-      careers: "Carrières",
-      about: "Sur",
+      company: "Company",
+      careers: "Careers",
+      about: "About",
       info: "Info",
-      privacy: "Confidentialité et modalités",
-      market: "Place du marché",
-      knowUs: "Connaissez-nous",
-      downloads: "Téléchargements",
+      privacy: "Privacy & Terms",
+      market: "Market Place",
+      knowUs: "Know us",
+      downloads: "Downloads",
       contact: "Contact",
       documentation: "Documentation",
-      socialMedia: "Des médias sociaux",
-      rights: "Tous les droits sont réservés"
+      socialMedia: "Social Media",
+      rights: " All Rights Reserved"
     },
-    cookies:{
-      textOne: "Nous utilisons des",
+    cookies: {
+      textOne: "We use third-party",
       textTwo: "cookies",
-      textThree: "tiers afin de personnaliser votre expérience sur le site.",
-      accept: "Permettre",
-      decline: "Déclin"
+      textThree: "in order to personalize your site experience.",
+      accept: "Allow",
+      decline: "Decline"
     }
   }
 }
