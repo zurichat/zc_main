@@ -136,11 +136,11 @@ const App = () => {
         <Route path="/careers">
           <Careers />
         </Route>
-        
+
         <Route path="/legal">
           <Legal />
         </Route>
-        
+
         <Route path="/privacy">
           <PrivacyPolicy />
         </Route>
