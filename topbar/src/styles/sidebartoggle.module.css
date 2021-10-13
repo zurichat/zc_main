@@ -10,6 +10,8 @@
   cursor: pointer;
 }
 
+
+
 @media (max-width: 768px) {
   .sidebar_toggle_icon {
     display: block;

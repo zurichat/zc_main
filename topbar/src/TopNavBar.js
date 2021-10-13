@@ -18,8 +18,11 @@ import { GetUserInfo, SubscribeToChannel } from "@zuri/control"
 import axios from "axios"
 import toggleStyle from "./styles/sidebartoggle.module.css"
 import { BsReverseLayoutTextSidebarReverse } from "react-icons/bs"
+// import SearchModal from "../../control/src/components/SearchPage"
+import { useHistory } from "react-router-dom"
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
+  const history = useHistory();
   const { closeModal, openModal, presence, setPresence } =
     useContext(TopbarContext)
   const { setUser, user, userProfileImage, setOrgId, setUserProfileImage } =
@@ -29,6 +32,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const [organizations, setOrganizations] = useState([])
   const [search, setSearch] = useState("")
   const [helpModal, setHelpModal] = useState(false)
+  const [showSearchModal, setShowSearchModal] = useState(false);
   // const [memberId, setMemberId] = useState('');
   const [messages, setMessages] = useState("")
 
@@ -179,6 +183,19 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   //   }
   // })
 
+
+  //Search Modal 
+
+  const handleSearch = () => {
+    let path = `/search`;
+    history.push(path);
+  }
+
+  const openSearchModal = () => {
+    setShowSearchModal(prev => !prev);
+  };
+
+
   return (
     <>
       <div className="ps-3" style={{ width: "20%" }}>
@@ -202,16 +219,20 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           />
         </div>
       </div>
-      <div className="ms-4" style={{ width: "60%" }}>
-        <BaseInput
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-          type="text"
-          width={12}
-          error
-          placeholder="Search here"
-          border={"#99999933"}
-        />
+      <div className="ms-4" style={{ width: "60%" }} >
+        <a href="/search">
+          <BaseInput
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            type="text"
+            width={12}
+            error
+            placeholder="Search here"
+            border={"#99999933"}
+          />
+        </a>
+        <div>
+        </div>
       </div>
       <ProfileImageContainer
         className="d-flex justify-content-end pe-3"
@@ -226,9 +247,9 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           alt="user profile avatar"
         />
       </ProfileImageContainer>
-
       <Profile />
       <TopbarModal />
+      {/* <SearchModal showSearchModal={showSearchModal} setShowSearchModal={setShowSearchModal} /> */}
     </>
   )
 }

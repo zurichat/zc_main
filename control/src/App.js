@@ -13,6 +13,7 @@ import Cookies from './pages/cookies'
 import Features from './pages/features'
 import Resources from './pages/resources'
 import Pricing from './pages/pricing'
+import SearchPage from '../../topbar/src/SearchPage'
 import Security from './pages/security'
 import Invite from './pages/inviteScreen'
 import Inviterequest from './pages/InviteRequest/InviteRequest'
@@ -92,6 +93,9 @@ const App = () => {
         <Route path="/pricing">
           <Pricing />
         </Route>
+        <Route path="/search">
+          <SearchPage />
+        </Route>
         <Route path="/security">
           <Security />
         </Route>
@@ -155,6 +159,7 @@ const App = () => {
         <Route path="/cookies-banner">
           <Cookies />
         </Route>
+
 
         <Route component={NotFoundPage} />
       </Switch>

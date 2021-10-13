@@ -29,6 +29,7 @@
   fill: #bebebe;
 }
 
+
 @media screen and (max-width: 800px) {
   .searchBar {
     display: none;

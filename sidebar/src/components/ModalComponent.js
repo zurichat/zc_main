@@ -9,7 +9,7 @@ import Workspace from '../../../control/src/pages/workspace/components/Workspace
 
 const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
   // const isOpen = true;
-
+  66
   const [hoverRef, isHovered] = useHover()
   const [hoverRef2, isHovered2] = useHover()
   const [hoverRef3, isHovered3] = useHover()
@@ -96,9 +96,8 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
           </div>
 
           <section
-            className={`${
-              isHovered ? styles.openmodalSubCon : styles.modalSubCon
-            }`}
+            className={`${isHovered ? styles.openmodalSubCon : styles.modalSubCon
+              }`}
           >
             <section
               ref={hoverRef}
@@ -135,9 +134,8 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
             <Arrow className={`${styles.arrow}`} />
           </div>
           <section
-            className={`${
-              isHovered3 ? styles.openmodalSubCon : styles.modalSubCon
-            }`}
+            className={`${isHovered3 ? styles.openmodalSubCon : styles.modalSubCon
+              }`}
           >
             <section
               ref={hoverRef3}
@@ -160,9 +158,8 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
           <p>Switch workspace</p>
           <Arrow className={`${styles.arrow}`} />
           <section
-            className={`${
-              isHovered2 ? styles.openmodalSubCon : styles.modalSubCon
-            }`}
+            className={`${isHovered2 ? styles.openmodalSubCon : styles.modalSubCon
+              }`}
           >
             <section
               ref={hoverRef2}
