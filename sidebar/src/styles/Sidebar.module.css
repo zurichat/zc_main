@@ -98,7 +98,7 @@
 }
 
 .item__img {
-  width: 0.935em;
+  width: 1.65em;
 }
 
 .item_p {
@@ -108,8 +108,9 @@
 }
 
 .addButton {
-  width: 1.3em;
+  width: 2.5em;
   margin-inline-start: auto;
+  padding-inline-end: 1.5em;
 }
 
 /* .orgHeader {
