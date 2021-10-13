@@ -127,7 +127,7 @@ const MarketPlace = () => {
                 </p>
               </div>
               <TabList className={styles.marketplaceTabList}>
-                <Tab className={styles.marketplaceTab}>New plugin</Tab>
+                <Tab className={styles.marketplaceTab}>All plugins</Tab>
                 <Tab className={styles.marketplaceTab}>Recommended for you</Tab>
                 <Tab className={styles.marketplaceTab}>Popular Plugins</Tab>
               </TabList>
