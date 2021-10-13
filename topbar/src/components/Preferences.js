@@ -47,7 +47,7 @@ const Preferences = () => {
           />
         </div>
 
-        <div style={{width: "100%"}}>
+        <div className={styles.allPreferences}>
           {sideBar === 1 && <NotificationPreference />}
 
           {sideBar === 3 && <Themes />}

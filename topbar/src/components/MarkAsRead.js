@@ -79,7 +79,7 @@ const MarkAsRead = () => {
         <div>
           <h5 className={styles.subhead}>Keyboard shortcuts</h5>
           <div>
-            <ul>
+            <ul className={styles.subHeadUl}>
               <li className={styles.shortcut}>
                 Mark all messages in current channel as read
                 <span className={styles.esc}>Esc</span>
