@@ -1,9 +1,10 @@
-import Header from './pluginHeader.component'
+import { BrowserRouter } from "react-router-dom";
+import MarketPlace from './marketplace/marketplace'
 
-export default function Root(props) {
+export default function Root() {
   return (
-    <div>
-      <Header headerConfig={props.headerConfig} />
-    </div>
-  )
+    <BrowserRouter>
+      <MarketPlace />
+    </BrowserRouter>
+  );
 }
