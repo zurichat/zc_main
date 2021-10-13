@@ -58,7 +58,7 @@ const Home = () => {
           </div>
 
           <div className="mt-2">
-            <Link to="/admin/settings/home" className={classes.grid}>
+            <Link to="/admin/stats" className={classes.grid}>
               <img src={analytics} />
               <h3>Analytics </h3>
               <img src={right_caret} />
