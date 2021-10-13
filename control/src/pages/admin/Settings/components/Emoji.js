@@ -3,6 +3,9 @@ import classes from "../styles/EmojiTab.module.css"
 
 const Emoji = () => {
   const [display, setDisplay] = useState(true)
+  const [text, setText] = useState("")
+  const [image, setImage] = useState([])
+  const [btnName, setBtnName] = useState('')
 
   useEffect(() => {
     if (display) document.body.style.overflow = "hidden"
@@ -27,7 +30,7 @@ const Emoji = () => {
           <div className={classes.messageDialog}>
             <div className={classes.messageActions}>
               <button>
-                  <img src="" alt="" />
+                <img src="" alt="" />
               </button>
               <button></button>
               <button></button>
@@ -73,17 +76,20 @@ const Emoji = () => {
             className={classes.overlay}
           ></div>
           <div className={classes.modal}>
+            <div className={classes.close}>&times;</div>
             <div className={classes.container}>
-              <h1 className={classes.title}>Add custom emoji</h1>
+              <div className={classes.title}>Add custom emoji</div>
               <div className={classes.text}>
                 Your custom emoji will be available to everyone in your
                 workspace. You’ll find it in the custom tab of the emoji picker.
-                (Hint: it’s the one with the Slack icon!)
+                (Hint: it’s the one with the Zuri-chat icon!)
               </div>
               <div className={classes.list}>
-                <ul>
+                <ol>
                   <li>
-                    <div className={classes.title}>Upload an image</div>
+                    <div className={classes.title}>
+                      1.&nbsp; Upload an image
+                    </div>
                     <div className={classes.text}>
                       Square images under 128KB and with transparent backgrounds
                       work best. If your image is too large, we’ll try to resize
@@ -94,11 +100,15 @@ const Emoji = () => {
                         <div></div>
                         <div></div>
                       </div>
-                      <button>Upload an Image</button>
+                      <div>
+                        <p>Select an image</p>
+                        <button>Upload an Image</button>
+                      </div>
                     </div>
                   </li>
+                  <hr />
                   <li>
-                    <div className={classes.title}>Give it a name</div>
+                    <div className={classes.title}>2.&nbsp; Give it a name</div>
                     <div className={classes.text}>
                       This is also what you’ll type to add this emoji to your
                       messages.
@@ -107,7 +117,11 @@ const Emoji = () => {
                       <input type="text" />
                     </div>
                   </li>
-                </ul>
+                </ol>
+              </div>
+              <div className={classes.footer}>
+                <button onClick={() => setDisplay(false)}>Cancel</button>
+                <button>Save</button>
               </div>
             </div>
           </div>
