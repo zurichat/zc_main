@@ -110,7 +110,7 @@ const Sidebar = props => {
             })}
 
           {/* button for inviting users to workspace */}
-          <Invite state={props.state} />
+          <Invite state={props.state} dispatch={props.dispatch} />
         </Fragment>
       </div>
     </div>
