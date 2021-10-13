@@ -43,11 +43,9 @@ const SidebarHeader = props => {
               <ModalComponent
                 workSpace={org}
                 isOpen={homeModal}
-        //  toggleOpenInvite={toggleOpenInvite}
+                toggleOpenInvite={toggleOpenInvite}
               />
             </div>
-          {/*
-
 
             <Modall showDialog={showDialog} closeDialog={close} />
 

@@ -7,7 +7,6 @@ import { AiOutlinePlusCircle } from "react-icons/ai"
 import PluginRoomAddUser from "./PluginRoomAddUser"
 import RoomOptions from "./RoomOptions"
 import infoIcon from "./../assets/icons/info-icon.svg"
-import Badge from "./badge"
 
 const DropDown = ({ itemName, items }) => {
   const [addToRoom, setAddToRoom] = useState(false)
@@ -90,13 +89,12 @@ const DropDown = ({ itemName, items }) => {
                 // console.log(itemList)
                 <li key={index} className={`row py-1 px-2 ${styles.item__list}`}>
                   <a
-                    className={`row ${styles.item_name}`}
+                    className={`col-12 d-flex align-items-center ${styles.item_name}`}
                     href={room.room_url}
                     onClick={navigateToUrl}
                     ref={click}
                     style={{ textDecoration: "none" }}
                   >
-                    <div className={`col-10 d-flex align-items-center`}>
                     <img
                       ref={click}
                       className={`${styles.item__image}`}
@@ -115,15 +113,9 @@ const DropDown = ({ itemName, items }) => {
                         }}
                       /> */}
                       <div className={`${styles.optionsContainer}`}>
-                        {/* <RoomOptions isClicked={isClicked} /> */}
+                        <RoomOptions isClicked={isClicked} />
                       </div>
                     </div>
-                    </div>
-                  <div className={`col-2 d-flex align-items-center`}>
-                  <Badge 
-                  number={room.unread}
-                  />
-                  </div>
                   </a>
                 </li>
               )

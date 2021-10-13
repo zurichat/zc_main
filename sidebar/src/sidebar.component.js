@@ -16,8 +16,6 @@ import Header from "./components/Header"
 import Invite from "./components/Invite"
 import Room from "./components/Room"
 import SingleRoom from "./components/SingleRoom"
-import { dummySidebar } from "./components/dummySidebar"
-
 
 const Sidebar = props => {
   let currentWorkspace = localStorage.getItem("currentWorkspace")
@@ -31,7 +29,7 @@ const Sidebar = props => {
   {
     //Listening for sidebar update
     nullValue === 1 &&
-      dummySidebar &&
+      props.state.sidebar &&
       SubscribeToChannel(
         `${currentWorkspace}_${props.state.user[0].org_id}_sidebar`,
         ctx => {
@@ -63,50 +61,50 @@ const Sidebar = props => {
           <Room name="Plugins" image={pluginIcon} icon={addIcon} link="/marketplace" /> */}
 
           {/* company files plugin */}
-          {dummySidebar &&
-            Object.keys(dummySidebar).map((plugin, index) => {
-              return dummySidebar[plugin].name === "Company Files" ? (
+          {props.state.sidebar &&
+            Object.keys(props.state.sidebar).map((plugin, index) => {
+              return props.state.sidebar[plugin].name === "Company Files" ? (
                 <SingleRoom
-                  details={dummySidebar[plugin]}
+                  details={props.state.sidebar[plugin]}
                   key={Math.random()}
                 />
               ) : null
             })}
 
           {/* Chess plugin */}
-          {dummySidebar &&
-            Object.keys(dummySidebar).map((plugin, index) => {
-              return dummySidebar[plugin].name === "Chess Plugin" ? (
+          {props.state.sidebar &&
+            Object.keys(props.state.sidebar).map((plugin, index) => {
+              return props.state.sidebar[plugin].name === "Chess Plugin" ? (
                 <SingleRoom
-                  details={dummySidebar[plugin]}
+                  details={props.state.sidebar[plugin]}
                   key={Math.random()}
                 />
               ) : null
             })}
 
           {/* Noticeboard plugin */}
-          {dummySidebar &&
-            Object.keys(dummySidebar).map((plugin, index) => {
-              return dummySidebar[plugin].name ===
+          {props.state.sidebar &&
+            Object.keys(props.state.sidebar).map((plugin, index) => {
+              return props.state.sidebar[plugin].name ===
                 "Noticeboard Plugin" ? (
                 <SingleRoom
-                  details={dummySidebar[plugin]}
+                  details={props.state.sidebar[plugin]}
                   key={Math.random()}
                 />
               ) : null
             })}
 
           {/* SIDE BAR DATA */}
-          {dummySidebar &&
-            Object.keys(dummySidebar).map((plugin, index) => {
-              return dummySidebar[plugin].name !== "Chess Plugin" &&
-                dummySidebar[plugin].name !== "Company Files" &&
-                dummySidebar[plugin].name !== "Noticeboard Plugin" ? (
+          {props.state.sidebar &&
+            Object.keys(props.state.sidebar).map((plugin, index) => {
+              return props.state.sidebar[plugin].name !== "Chess Plugin" &&
+                props.state.sidebar[plugin].name !== "Company Files" &&
+                props.state.sidebar[plugin].name !== "Noticeboard Plugin" ? (
                 <DropDown
-                  itemName={dummySidebar[plugin].name}
-                  id={dummySidebar.name}
+                  itemName={props.state.sidebar[plugin].name}
+                  id={props.state.sidebar.name}
                   key={index}
-                  items={dummySidebar[plugin]}
+                  items={props.state.sidebar[plugin]}
                 />
               ) : null
             })}

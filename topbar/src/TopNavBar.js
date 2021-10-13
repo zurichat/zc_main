@@ -20,7 +20,7 @@ import { GetUserInfo, SubscribeToChannel } from "@zuri/control"
 import axios from "axios"
 import { AiOutlineMenu } from "react-icons/ai"
 import styles from "../src/styles/TopNavBar.module.css"
-import SearchAutocomplete from "../src/components/SearchAutocomplete"
+import SearchAutocomplete from "../src/components/SearchAutocomplete";
 
 import { navigateToUrl } from "single-spa"
 
@@ -158,23 +158,27 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   const [toggleSidebar, setToggleSidebar] = useState(false)
 
-  const handleToggleSidebar = () => {
+  const handleToggleSidebar = useCallback(() => {
     setToggleSidebar(!toggleSidebar)
-  }
+  }, [toggleSidebar])
 
+  //Handle sidebar on mobile
+  const sidebar = document.getElementById(
+    "single-spa-application:@zuri/sidebar"
+  )
   useEffect(() => {
-    //Handle sidebar on mobile
-    const sidebar = document.getElementById(
-      "single-spa-application:@zuri/sidebar"
-    )
-    if (toggleSidebar && window.outerWidth <= 768) {
+    if (toggleSidebar && window.outerWidth <=768) {
       sidebar.style.display = "block"
-    } else if (window.outerWidth > 768) {
+    } 
+    else if(window.outerWidth > 768){
       sidebar.style.display = "block"
-    } else {
+    }
+    else {
       sidebar.style.display = "none"
     }
-  }, [toggleSidebar])
+  }, [toggleSidebar, sidebar])
+
+
 
   const zc_spa_body = document.querySelector("body")
   // const sidebar_toggle = document.querySelector("#sidebar_toggle")
@@ -240,6 +244,8 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   const handleEnter = e => {
     e.preventDefault()
+    // eslint-disable-next-line no-console
+    console.log(window.location.href)
 
     navigateToUrl("/search")
     // let s= window.location.href.split('/')

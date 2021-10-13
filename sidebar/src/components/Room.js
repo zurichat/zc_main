@@ -1,14 +1,11 @@
 import React from "react"
 import { navigateToUrl } from "single-spa"
 import styles from "../styles/Sidebar.module.css"
-import Badge from "./badge"
 
 export default function Room({ name, image }) {
   return (
     <div className={`row mt-2 ${styles.sb__item}`}>
-      <div 
-        className={`col-10 d-flex align-items-center ${styles.sb__col}`}
-        >
+      <div className={`col-12 d-flex align-items-center ${styles.sb__col}`}>
         <img className={`${styles.item__img}`} src={image} alt="icon" />
         <p className={`mb-0 ${styles.item_p}`}>{name}</p>
 
@@ -31,13 +28,6 @@ export default function Room({ name, image }) {
             role="button"
           ></img>
         )} */}
-      </div>
-      <div 
-      className={`col-2 d-flex align-items-center`}
-      >
-      <Badge 
-      // className={`${styles.addButton}`}
-      />
       </div>
     </div>
   )
