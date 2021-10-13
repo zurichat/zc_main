@@ -39,6 +39,6 @@ i18n
     }
   })
 
-i18n.changeLanguage("en")
+i18n.changeLanguage("fr")
 
 export default i18n
