@@ -22,7 +22,7 @@
 }
 
 .itemTitle1 {
-  width: 630px;
+  max-width: 630px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -55,7 +55,7 @@
 .itemTitle1 .spanL {
   display: flex;
   flex-direction: row;
-  color: #1264A3;
+  color: #00b87c;
   font-size: 13px;
   font-size: 15px;
   font-weight: normal;
@@ -63,7 +63,7 @@
 }
 .itemTitle1 .spanL .quest {
   align-self: center;
-  color: #1264A3;
+  color: #00b87c;
   margin-right: 9px;
 }
 
@@ -74,6 +74,11 @@
     background: #fff;
     margin: 0px;
     width: 100%;
+    position: fixed;
+    z-index: 1000;
+  }
+  .allPreferences{
+    margin-top: 40px;
   }
   .body{
     flex-wrap: wrap;
@@ -454,7 +459,7 @@ input[type="checkbox"] {
   }
 
   .head {
-    width: 100%;
+    max-width: 100%;
     overflow-y: scroll;
   }
 
@@ -486,7 +491,6 @@ input[type="checkbox"] {
 /* Tuasegun's media query */
 @media (max-width: 450px) {
   .itemTitle1 {
-    width: 400px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
