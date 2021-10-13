@@ -41,11 +41,11 @@ registerApplication({
   activeWhen: ["/"]
 })
 
-registerApplication({
-  name: "@zuri/utilities",
-  app: () => System.import("@zuri/utilities"),
-  activeWhen: ["/"]
-})
+// registerApplication({
+//   name: "@zuri/utilities",
+//   app: () => System.import("@zuri/utilities"),
+//   activeWhen: ["/"]
+// })
 
 // PLUGINS HERE
 registerApplication({
