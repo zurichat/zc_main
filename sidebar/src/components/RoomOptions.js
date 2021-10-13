@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from '../styles/ModalComponentStyles.module.css'
+import React from "react"
+import styles from "../styles/ModalComponentStyles.module.css"
 
 const RoomOptions = ({ isClicked }) => {
   //   const isOpen = true;

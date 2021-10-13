@@ -34,13 +34,13 @@ const Overlay = styled(DialogOverlay)`
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 3rem 10rem;
+  padding: 3rem 1rem;
 `
 const Content = styled(DialogContent)`
   position: relative;
   background: white;
 //   width: 100%;
-  height: 100%;
+  height: 80%;
   padding: 2rem;
   display: flex;
   justify-content: center;
