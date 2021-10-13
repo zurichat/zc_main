@@ -20,7 +20,7 @@ function Section3() {
         </p>
 
         <Link className={styles.textLink} to="./security">
-          Learn more about security
+          Learn more about security...
         </Link>
       </div>
     </section>
