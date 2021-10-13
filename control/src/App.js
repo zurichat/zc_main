@@ -46,10 +46,7 @@ import AdminSettingsTab from './pages/admin/Settings/components/AdminSettingsTab
 import TermsOfService from './pages/termsOfService'
 import RedirectRoute from './pages/redirect'
 import Plugins from './pages/plugins'
-
 import Legal from './pages/legal'
-import ZurichatBlog from './pages/blogs/components/zurichatBlog'
-
 import Ebooks from './pages/ebooks'
 
 
@@ -70,8 +67,8 @@ const App = () => {
           <LandingPage />
         </Route>
         <RedirectRoute path="/login">
-          <Login />
-        </RedirectRoute>
+         <Login />
+       </RedirectRoute>
         <Route path="/signup">
           <SignUp />
         </Route>
@@ -135,11 +132,6 @@ const App = () => {
         <Route path="/careers">
           <Careers />
         </Route>
-        
-        <Route path="/legal">
-          <Legal />
-        </Route>
-        
         <Route path="/privacy">
           <PrivacyPolicy />
         </Route>
@@ -157,9 +149,6 @@ const App = () => {
         </Route>
         <Route path="/apps-integrations">
           <AppsAndIntegrations />
-        </Route>
-        <Route path="/ZurichatBlog">
-          <ZurichatBlog />
         </Route>
         {/* ----------------settings routes opened------------------------ */}
         <PrivateRoute

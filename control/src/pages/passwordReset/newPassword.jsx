@@ -6,7 +6,6 @@ import AuthInputBox from '../../components/AuthInputBox'
 import styles from '../../component-styles/ResetPassword.module.css'
 import axios from 'axios'
 import Button from '../../components/Button'
-import PasswordSuccesful from './passwordSuccesful'
 
 const NewPassword = () => {
   function useQuery() {
@@ -16,44 +15,30 @@ const NewPassword = () => {
   const resetCode = query.get('code')
 
   const [password, setPassword] = useState('')
-  const [confirm_password, setcPassword] = useState('')
-  const [showDialog, setShowDialog] = useState(false)
-  const open = () => setShowDialog(true)
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    updatepass()
-  }
-
-  const updatepass = async () => {
+  const handleSubmit = async () => {
     try {
       const res = await axios.post(
         `https://api.zuri.chat/account/update-password/${resetCode}`,
         {
-          password,
-          confirm_password
+          password
         }
       )
-    
-      // console.log(res.data)
-      // alert('password reset!', res.data)
-      open()
+      alert('password reset!', res.data)
     } catch (err) {
       alert(err)
       console.error(err)
     }
   }
 
-
   return (
     <main id={styles.authPageWrapper}>
-      {showDialog && <PasswordSuccesful/>}
-      {/* <aside id={styles.authAsideContainer} className={styles.display_none}>
+      <aside id={styles.authAsideContainer} className={styles.display_none}>
         <div id={styles.authImageWrapper}>
           <img src={authBg} alt="backgroundImage" />
           <div id={styles.asideText}></div>
         </div>
-      </aside> */}
+      </aside>
       <section id={``}>
         {/* logo div  */}
         <div className={``}>
@@ -61,9 +46,10 @@ const NewPassword = () => {
         </div>
         {/* header text  */}
         <div className={``}>
-          <h4 className={styles.headerText}>Recover Password</h4>
+          <h4 className={styles.headerText}>Change Password</h4>
           <p>
-            Create a new password for your account
+            Enter the email address you registered with, a reset link will be
+            sent to your email!
           </p>
         </div>
         {/* form section  */}
@@ -79,21 +65,7 @@ const NewPassword = () => {
             // error={error}
           />
 
-            <AuthInputBox
-            className={`${styles.inputElement}`}
-            id="confirm_password"
-            name="confirm Password"
-            type="password"
-            placeholder="confirm your new password"
-            value={ confirm_password}
-            setValue={setcPassword}
-            // error={error}
-          />
-          {/* <div style={{fontSize:"14px"}}>
-            {(password != confirm_password)? <div>sorry password dont match</div>:null}
-          </div> */}
-
-          <Button className={styles.button} onClick={ handleSubmit}  >
+          <Button className={styles.button} onClick={handleSubmit}>
             Continue
           </Button>
         </form>

@@ -209,6 +209,7 @@ const EditProfile = () => {
                     uses your exact name, you should change it!
                   </p>
                 </div>
+              
               </div>
 
               <div className="input-group mb-0">
@@ -270,8 +271,7 @@ const EditProfile = () => {
                 <label className="inputLabel col-12">Time Zone</label>
                 <TimezoneSelect
                   value={selectedTimezone}
-                  onChange={setSelectedTimezone}
-                  className="col-12"
+                  onChange={setSelectedTimezone} className="col-12"
                 />
               </div>
               <div className="input-group">
@@ -314,20 +314,7 @@ const EditProfile = () => {
                   </p>
                 )} */}
               </div>
-              <button onClick={handleFormSubmit} className="btns saveBtn">
-                {state.loading ? (
-                  <Loader
-                    type="ThreeDots"
-                    color="#fff"
-                    height={40}
-                    width={40}
-                  />
-                ) : (
-                  "Save Changes"
-                )}
-              </button>
             </div>
-
             <div className="img-container">
               <div className="avatar">
                 <div className="avatar-container">
@@ -389,13 +376,13 @@ const EditProfile = () => {
             <button className="btns cncBtn" onClick={toggleModalState}>
               Cancel
             </button>
-            {/* <button onClick={handleFormSubmit} className="btns saveBtn">
+            <button onClick={handleFormSubmit} className="btns saveBtn">
               {state.loading ? (
                 <Loader type="ThreeDots" color="#fff" height={40} width={40} />
               ) : (
                 "Save Changes"
               )}
-            </button> */}
+            </button>
           </div>
           <Toaster />
         </StyledProfileWrapper>

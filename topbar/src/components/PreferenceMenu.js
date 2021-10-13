@@ -21,6 +21,18 @@ const PreferenceMenu = () => {
             Notifications
           </p>
         </div>
+{/*
+        <div
+          onClick={() => setSideBar(2)}
+          className={sideBar === 2 ? styles.active : styles.one}
+        >
+          <BsLayoutSidebar className={styles.icon} />
+          <p> 
+            Sidebar
+          </p>
+        </div>
+*/}
+
 
         <div
           onClick={() => setSideBar(3)}
@@ -28,6 +40,8 @@ const PreferenceMenu = () => {
         >
           <AiOutlineEye className={styles.icon} />
           <p>
+            {/* {' '} */}
+            
              Themes
           </p>
         </div>
@@ -55,6 +69,7 @@ const PreferenceMenu = () => {
         >
           <CgScreen className={styles.icon} />
           <p>
+            
             Accessibility
           </p>
         </div>
@@ -64,10 +79,23 @@ const PreferenceMenu = () => {
         >
           <BsCheckCircle className={styles.icon} />
           <p>
+            {' '}
+            
             Mark as read
           </p>
         </div>
-
+    {/*
+        <div
+          onClick={() => setSideBar(8)}
+          className={sideBar === 8 ? styles.active : styles.one}
+        >
+          <FiVideo className={styles.icon} /> 
+          <p>
+            {' '}
+            Audio & Video
+          </p>
+        </div>
+     */}
         <div
           onClick={() => setSideBar(9)}
           className={sideBar === 9 ? styles.active : styles.one}

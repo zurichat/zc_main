@@ -7,6 +7,14 @@ import { ProfileContext } from "../context/ProfileModal"
 const NotificationPreference = () => {
   const [active, setActive] = useState("")
   const [active1, setActive1] = useState("")
+  const [durations, setDurations] = useState([
+    { name: "Duration" },
+    { name: "Everyday" },
+    { name: "Weekdays" },
+    { name: "Custom" }
+  ])
+  const [durationPeriod, setDurationPeriod] = useState("")
+  const [state, setstate] = useState("")
   const { user, orgId } = useContext(ProfileContext)
   const [dataState, setDataState] = useState({
     // channel_hurdle_notification: channel_hurdle,
@@ -46,14 +54,20 @@ const NotificationPreference = () => {
 
     // localStorage.setItem("settings", JSON.stringify(dataState))
   }
-  const [state, setState] = useState({
-    name: "React",
-    value: "duration"
-  })
+  // const [state, setState] = useState({
+  //   name: "React",
+  //   value: "duration"
+  // })
 
-  const handleChange = event => {
-    setState({ value: event.target.value })
+  // const handleChange = event => {
+  //   setState({ value: event.target.value })
+  // }
+
+  const handleSelect = e => {
+    setDurationPeriod(e.target.value)
   }
+
+  // console.log(duration)
 
   const handleAllMessages = e => {
     setActive1(e.target.value)
@@ -109,7 +123,7 @@ const NotificationPreference = () => {
   }, [dataState])
 
   return (
-    <div className={styles.head}>
+    <div>
       {/*  THE SECTION OF THE CONTENT */}
       <div className={styles.notifyContent}>
         <div className={styles.itemTitle1}>
@@ -248,15 +262,15 @@ const NotificationPreference = () => {
             <li className={styles.listChild}>
               <div className={styles.select}>
                 <select
-                  name="duration"
                   className={styles.selectButton}
                   id=""
-                  value={state.value}
-                  onChange={handleChange}
+                  onChange={handleSelect}
                 >
-                  <option selected value="duration">
-                    Duration
-                  </option>
+                  {durations.map((item, index) => (
+                    <option key={index} value={item.name}>
+                      {`${item.name}`}
+                    </option>
+                  ))}
                 </select>
               </div>
             </li>
@@ -461,7 +475,9 @@ const NotificationPreference = () => {
               setData()
             }}
           />{" "}
-          <label className="emailNot">Send me email notifications for mentions </label>
+          <label className="emailNot">
+            Send me email notifications for mentions{" "}
+          </label>
         </div>
       </div>
     </div>

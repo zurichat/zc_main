@@ -19,7 +19,6 @@ export const StyledProfileWrapper = styled.section`
         @media (max-width: 768px) {
           display: flex;
           align-items: flex-start;
-          flex-direction: column;
         }
         .mobileAvataeCon {
           display: none;
@@ -29,7 +28,6 @@ export const StyledProfileWrapper = styled.section`
             width: 10rem;
             height: 10rem;
             border-radius: 4px;
-            align-self: center;
             .icon-container {
               position: absolute;
               top: -0.2rem;
@@ -57,7 +55,7 @@ export const StyledProfileWrapper = styled.section`
       }
       .input-group {
         width: 100%;
-        margin-bottom: 2.5rem;
+        margin-bottom: 1.5rem;
         &.phone {
           flex-direction: column;
           align-items: flex-start;
@@ -92,13 +90,12 @@ export const StyledProfileWrapper = styled.section`
         &.mal-4 {
           margin-left: 0;
           @media (max-width: 768px) {
-            /* margin-left: 1rem; */
-            margin-top: 2rem;
+            margin-left: 1rem;
           }
         }
         .inputLabel {
-          font-size: 1.2rem;
-          font-weight: 600;
+          font-size: 1rem;
+          font-weight: 400;
           color: #1d1c1d;
           margin-bottom: 0.75rem;
           display: block;
@@ -110,7 +107,7 @@ export const StyledProfileWrapper = styled.section`
         .css-2b097c-container {
           width: 100%;
           height: 3rem;
-          border: 1.5px solid #a1a1a1;
+          border: 1px solid #a1a1a1;
           padding: 0 1rem;
           font-size: 1.4rem;
           outline: none;
@@ -158,17 +155,17 @@ export const StyledProfileWrapper = styled.section`
           cursor: pointer;
         }
         .para {
-          font-size: 0.9rem;
+          font-size: 0.75rem;
           font-weight: 400;
           color: #6a6a6a;
           line-height: 1.5;
-          /* max-width: 307px; */
+          max-width: 307px;
           text-align: left;
-          margin: 0.75rem 0;
+          margin-top: 0.75rem;
         }
       }
       .double-input {
-        /* display: grid; */
+        display: grid;
         grid-template-columns: 2fr 1fr;
         grid-gap: 1rem;
         align-items: flex-start;
@@ -218,7 +215,7 @@ export const StyledProfileWrapper = styled.section`
       font-weight: 700;
       color: #00b87c;
       position: fixed;
-      top: 2rem;
+      top: 2.5rem;
       right: 2.5rem;
       z-index: 40000;
     }

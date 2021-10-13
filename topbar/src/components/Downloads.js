@@ -10,7 +10,7 @@ import android from '../assets/download_images/android.png'
 
 const Downloads = ({ setModal }) => {
   //State For testing
-  const [files, setFiles] = useState([
+  const [files,setFiles] = useState([
     {
       name: 'Windows App',
       size: '',
@@ -64,9 +64,7 @@ const Downloads = ({ setModal }) => {
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      onClick={() => {
-                        setFiles([])
-                      }}
+                      onClick={setFiles([])}
                     >
                       <path
                         d="M5.25 7.5H6.75H18.75"
@@ -81,6 +79,7 @@ const Downloads = ({ setModal }) => {
                       />
                     </svg>
                     <div role="tooltip" className={styles.toolTip}>
+                    
                       <p>Clear download</p>
                       <img src={pointy} alt="" />
                     </div>
@@ -152,13 +151,10 @@ const Downloads = ({ setModal }) => {
                       <button
                         aria-label={`Open ${file.size} file`}
                         className={styles.openBtn}
-                        
                       >
                         <img src={open} alt="" />
                         <div role="tooltip" className={styles.toolTip}>
-                          <a href={file.link}
-                          download={file.download}
-                          target="_blank" rel="noreferrer">Open containing folder</a>
+                          <p>Open containing folder</p>
                           <img src={pointy} alt="" />
                         </div>
                       </button>
@@ -166,7 +162,8 @@ const Downloads = ({ setModal }) => {
                         aria-label={`Clear ${file.size} file `}
                         className={styles.closeBtn}
                         onClick={() => {
-                          setFiles(files.filter(file => file.name !== files[index].name));
+                          files.splice(index,1)
+                          setModal('no')
                         }}
                       >
                         <img src={close} alt="" />

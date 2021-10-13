@@ -25,7 +25,7 @@
 }
 .codeInputs {
   display: flex;
-  justify-content: center;
+  /* justify-content: start; */
   flex: start;
 }
 .codeInputs input {

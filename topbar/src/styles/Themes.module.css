@@ -5,12 +5,12 @@
   --text-color: #000;
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   --bg-color: #3f3f3f;
   --text-color: #fff;
 }
 
-[data-theme="light"] {
+[data-theme='light'] {
   --bg-color: #fff;
   --text-color: #3f3f3f;
 }
@@ -25,10 +25,6 @@
   width: var(--width);
   height: var(--height);
   overflow-x: hidden;
-}
-
-.themeCont::-webkit-scrollbar {
-  display: none;
 }
 
 .sync {
