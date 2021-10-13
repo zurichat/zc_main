@@ -39,7 +39,7 @@ import NotFoundPage from './pages/404'
 import Billing from './pages/admin/Billing'
 import Blog from './pages/blogs'
 import Homepage from './pages/home'
-import Permissions from './pages/admin/Permissions'
+import Permissions from './pages/admin/Settings/permissions'
 import SettingsHome from './pages/admin/Settings/index'
 import About from './pages/about/index'
 import AdminSettingsTab from './pages/admin/Settings/components/AdminSettingsTab'
@@ -152,9 +152,9 @@ const App = () => {
         <Route path="/dao-features">
           <DAO_Features />
         </Route>
-        <Route path="/marketplace" exact>
+        {/* <Route path="/marketplace" exact>
           <MarketPlace />
-        </Route>
+        </Route> */}
         <Route path="/apps-integrations">
           <AppsAndIntegrations />
         </Route>
@@ -176,7 +176,6 @@ const App = () => {
         <PrivateRoute path="/session-signout" component={AllSessionSignOut} />
         <PrivateRoute path="/settings" exact component={Settings} />
         <PrivateRoute path="/admin/settings" exact component={SettingsHome} />
-        <PrivateRoute path="/admin/settings/permissions" exact component={Permissions} />
         <PrivateRoute
           path="/admin/settings/billings"
           exact
