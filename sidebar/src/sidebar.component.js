@@ -8,6 +8,7 @@ import draftIcon from "./assets/icons/draft-icon.svg"
 import filesIcon from "./assets/icons/files-icon.svg"
 import pluginIcon from "./assets/icons/plugin-icon.svg"
 import infoIcon from "./assets/icons/info-icon.svg"
+import addIcon from "./assets/icons/add-icon.svg"
 
 import { SubscribeToChannel } from "@zuri/control"
 import { ACTIONS } from "./App"
@@ -54,7 +55,7 @@ const Sidebar = props => {
           <Room name="All DMs" image={dmIcon} icon={infoIcon} />
           <Room name="Drafts" image={draftIcon} icon={infoIcon} />
 
-          <Room name="Plugins" image={pluginIcon} icon={infoIcon}/>
+          <Room name="Plugins" image={pluginIcon} icon={addIcon} link="/marketplace"/>
 
     {/* company files plugin */}
     {props.state.sidebar &&
