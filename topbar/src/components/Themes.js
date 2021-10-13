@@ -15,6 +15,8 @@ import theme19 from "../assets/images/theme19.png"
 import theme20 from "../assets/images/theme20.png"
 import theme21 from "../assets/images/theme21.png"
 
+import useThemeMode from "../../customHooks/useThemeMode";
+
 
 const Themes = () => {
   const [active1, setActive1] = useState(0)
@@ -22,6 +24,10 @@ const Themes = () => {
   const [mode, setMode] = useState("light")
   const [Data, setData] = useState(undefined)
   const [DataState, setDataState] = useState({})
+
+  const {theme, toggleTheme} = useThemeMode();
+
+  // console.log('theme',theme)
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode ? true : true)
@@ -39,6 +45,14 @@ const Themes = () => {
       localStorage.setItem("mode", "light")
     }
   }, [mode])
+
+  // const value = localStorage.getItem('theme') 
+
+  // setTheme = (each) => {
+  //        localStorage.setItem('theme', id);
+  //        const themeName = data.filter(theme => theme.name == id)
+  //        console.lo
+  // }
 
   // const [mode, setMode] = useState(() => localStorage.getItem('mode'))
 
@@ -166,10 +180,10 @@ const Themes = () => {
         <div className={styles.true}>Tried and true</div>
       </div>
       <div className={styles.set1}>
-        <div className={styles.img3}>
+        <div className={styles.img3} onClick={()=>toggleTheme('ash')} >
           <img src={theme3} alt="theme3" className={styles.theme3} />
         </div>
-        <div className={styles.img4}>
+        <div className={styles.img4} onClick={()=>toggleTheme('purple')}>
           <img src={theme4} alt="theme4" className={styles.theme4} />
         </div>
       </div>
@@ -179,18 +193,18 @@ const Themes = () => {
       </div>
       <div className={styles.clean}>Clean and minimal</div>
       <div className={styles.set2}>
-        <div className={styles.img5}>
+        <div className={styles.img5} onClick={()=>toggleTheme('ash')}>
           <img src={theme5} alt="theme5" className={styles.theme5} />
         </div>
-        <div className={styles.img6}>
+        <div className={styles.img6} onClick={()=>toggleTheme('ash')}>
           <img src={theme6} alt="theme6" className={styles.theme6} />
         </div>
       </div>
       <div className={styles.set3}>
-        <div className={styles.img7}>
+        <div className={styles.img7} onClick={()=>toggleTheme('ash')}>
           <img src={theme18} alt="theme18" className={styles.theme18} />
         </div>
-        <div className={styles.img8}>
+        <div className={styles.img8} onClick={()=>toggleTheme('red')}> 
           <img src={theme19} alt="theme19" className={styles.theme19} />
         </div>
       </div>

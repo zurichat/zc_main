@@ -15,11 +15,13 @@ import Header from "./components/Header"
 import Invite from "./components/Invite"
 import Room from "./components/Room"
 import SingleRoom from "./components/SingleRoom"
+import useThemeMode from "../../topbar/customHooks/useThemeMode";
 
 const Sidebar = props => {
   let currentWorkspace = localStorage.getItem("currentWorkspace")
 
   const [nullValue, setnullValue] = useState(0)
+  const {theme} = useThemeMode();
 
   useEffect(() => {
     setnullValue(1)
@@ -46,7 +48,7 @@ const Sidebar = props => {
   }
 
   return (
-    <div className={`container-fluid ${styles.sb__container}`}>
+    <div className={`container-fluid ${styles.sb__container} ${theme} `}>
       <Header state={props.state} />
       <div className={`${styles.subCon2}`}>
         <Fragment>
@@ -55,6 +57,7 @@ const Sidebar = props => {
           <Room name="Drafts" image={draftIcon} icon={infoIcon} />
 
           <Room name="Plugins" image={pluginIcon} icon={infoIcon}/>
+
 
     {/* company files plugin */}
     {props.state.sidebar &&

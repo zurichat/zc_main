@@ -81,21 +81,7 @@
       overflow: hidden;
     }
 
-    div[id*='zuri/topbar'] {
-      z-index: 5;
-      width: 100%;
-      height: 6vh;
-      position: fixed;
-      top: 0;
-      left: 0;
-      /* text-align: center; */
-      display: flex;
-      /* justify-content: center; */
-      align-items: center;
-      background-color: #fff;
-      z-index: 999999;
-      overflow: unset;
-    }
+    
 
     div[id*='zuri/sidebar']::-webkit-scrollbar {
       display: none;
@@ -117,6 +103,22 @@
       z-index: 99999;
 
     }
+    #zuritopbar {
+    z-index: 5;
+    width: 100%;
+    height: 6vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* text-align: center; */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: white;
+    z-index: 999999;
+    overflow: unset;
+  }
+ 
 
     div[id*='zuri/commentSidebar'] {
       width: 299px;
@@ -195,12 +197,70 @@
       }
     }
 
-
-
-
     /* CHESS STYLE */
+
+
+
   </style>
 
+  <!-- THEME STYLES -->
+  <style>
+
+    /* roseRed Theme */
+    .red {
+      background-color:#450303 !important;
+      color: #C86868 !important;
+      border: .5px solid #C86868 !important;
+    }
+    .red > .red {
+      border: none !important;
+    }
+    .red > .red:hover {
+      background-color:#ED2222 !important ;
+    }
+    
+    .red > .orgTitle {
+      color: #C86868!important;
+    }
+    /* .red > .sb__item::selection {
+      color: #ED2222 !important;
+    } */
+
+  /* End of roseRed Theme */
+
+    /* ashleyash Theme */
+    .ash {
+      background-color: #C4C4C4 !important;
+      color: white!important;
+    }
+
+    .ash > .orgTitle {
+      color:white!important;
+    }
+    .ash > .sb__item::selection {
+      color: #999999 !important;
+    }
+
+  /* End of ashleyash Theme */
+
+    /* peakyPurple Theme */
+    .purple {
+      background-color:#4E2C44 !important;
+      color: #E5B2D6 !important;
+    }
+    .purple > .orgTitle {
+      color: #E5B2D6 !important;
+    }
+    .purple > .sb__item::selection {
+      color: #E5B2D6 !important;
+    }
+
+  /* End of peakyPurple Theme */
+  </style>
+
+
+
+<!-- END OF THEME STYLES -->
   <title>Zuri Chat</title>
   <!--
     Remove this if you only support browsers that support async/await.
@@ -292,7 +352,7 @@
     {
       "imports": {
           "@zuri/root-config": "/zuri-root-config.js",
-          "@zuri/topbar": "/zuri-topbar.js",
+          "": "/zuri-topbar.js",
           "@zuri/sidebar": "/zuri-sidebar.js",
           "@zuri/control": "/zuri-control.js",
           "@zuri/plugin-header": "/zuri-plugin-header.js",
@@ -322,7 +382,7 @@
   <noscript>
     You need to enable JavaScript to run this app.
   </noscript>
-
+  
   <script>
     System.import('@zuri/root-config');
   </script>

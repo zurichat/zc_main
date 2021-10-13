@@ -2,10 +2,13 @@ import React, { useState } from "react"
 import styles from "../styles/Sidebar.module.css"
 import { MdKeyboardArrowDown } from "react-icons/md"
 import newMsgIcon from "../assets/icons/newMsgIcon.svg"
+import useThemeMode from "../../../topbar/customHooks/useThemeMode"
 
 const SidebarHeader = props => {
   //home modal
   const [homeModal, toggleHomeModal] = useState(false)
+  const [nullValue, setnullValue] = useState(0)
+  const {theme} = useThemeMode();
 
   //toggle
   const toggle = () => {
@@ -14,8 +17,8 @@ const SidebarHeader = props => {
   }
   return (
     <div className={`${styles.subCon1}`}>
-      <div className={`row ${styles.orgDiv}`}>
-        <div className={`col-12 px-3 ${styles.orgInfo}`}>
+      <div className={`row  ${styles.orgDiv}`}>
+        <div className={`col-12 px-3  ${styles.orgInfo} ${theme} `}>
           <div
             onClick={() => toggle()}
             className={`row p-0 ${styles.orgHeader}`}

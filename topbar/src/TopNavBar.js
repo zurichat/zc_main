@@ -19,6 +19,7 @@ import axios from "axios"
 import { AiOutlineMenu } from "react-icons/ai"
 import styles from "../src/styles/TopNavBar.module.css"
 import SearchAutocomplete from "../src/components/SearchAutocomplete";
+import useThemeMode from "../customHooks/useThemeMode"
 
 import { navigateToUrl } from "single-spa"
 
@@ -34,6 +35,9 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const [helpModal, setHelpModal] = useState(false)
   // const [memberId, setMemberId] = useState('');
   const [messages, setMessages] = useState("")
+
+  const [nullValue, setnullValue] = useState(0)
+  const {theme} = useThemeMode();
 
   useEffect(() => {
     // const fetchUser = async () => {
@@ -255,7 +259,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   }
 
   return (
-    <>
+    <div className={`${theme}`} id="zuritopbar">
       <div className="ps-3" style={{ width: "10%" }}>
         {/* <a href="/home"> */}
         <div className={styles["topNavBar__logo"]}>
@@ -317,7 +321,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
       <Profile />
       <TopbarModal />
-    </>
+    </div>
   )
 }
 

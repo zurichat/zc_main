@@ -1,15 +1,22 @@
-import React from 'react'
+import  { React , useState} from 'react'
 import styles from './styles/header.module.css'
 import { MdKeyboardArrowDown } from 'react-icons/md'
+import useThemeMode from "../../topbar/customHooks/useThemeMode";
+
+
+
 
 export default function Header(props) {
+  const [nullValue, setnullValue] = useState(0)
+  const {theme} = useThemeMode();
   return (
+    
     <div>
       {props.headerConfig && (
-        <div className={styles.plugin__header}>
+        <div className={`${styles.plugin__header} ${theme}`}>
           <div
             onClick={props.headerConfig.eventTitle}
-            className={styles.plugin__header__title}
+            className={`${styles.plugin__header__title} ${theme}`}
           >
             <img
               src={props.headerConfig.icon || ''}
@@ -25,7 +32,7 @@ export default function Header(props) {
           </div>
           {props.headerConfig.hasThumbnail && (
             <div
-              className={styles.plugin__header__thumbnail}
+              className={`${styles.plugin__header__thumbnail} ${theme}`}
               onClick={props.headerConfig.eventThumbnail}
             >
               <div className={styles.plugin__thumbnail}>
