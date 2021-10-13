@@ -48,7 +48,8 @@ const MarketPlaceContainer = ({ type }) => {
   }
 
   const retrieveInstalledPlugin = async () => {
-    setisLoading(true)
+    setPluginsLoading(true)
+    marketplace.dispatch(fetchPlugins())
     try {
       const response = await axios.get(
         `https://api.zuri.chat/organizations/${currentWorkspace}/plugins`,
@@ -61,10 +62,10 @@ const MarketPlaceContainer = ({ type }) => {
       if (response.status === 200 && response.data) {
         const { data } = response.data
         marketplace.dispatch(loadPlugins(data.map(plugin => plugin.plugin)))
-        setisLoading(false)
+        setPluginsLoading(false)
       }
     } catch (err) {
-      setisLoading(false)
+      setPluginsLoading(false)
       console.error(err)
     }
   }
