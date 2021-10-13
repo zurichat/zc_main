@@ -7,29 +7,9 @@ import { ProfileContext } from "../context/ProfileModal"
 
 const LanguageAndRegion = () => {
   //CHECKBOXES
-  const [spellChb, setSpellChb] = useState(true)
   const [tzChb, setTzChb] = useState(true)
 
   const { user, orgId } = useContext(ProfileContext)
-
-  const connectData = () => {
-    authAxios
-      .patch(`/organizations/${orgId}/members/${user._id}/settings`, {
-        settings: {
-          spell_check: spellChb
-        }
-      })
-      .then(res => {
-        // console.log(res)
-      })
-      .catch(err => {
-        console.error(err)
-      })
-  }
-
-  const handleSpell = () => {
-    setSpellChb(connectData)
-  }
 
   const handleTZ = () => {
     setTzChb(!tzChb)
@@ -45,6 +25,7 @@ const LanguageAndRegion = () => {
             </label>
             <select className={styles.selectbox} name="language" id="language">
               <option value="english(uk)">English (UK)</option>
+              <option value="french(fra)">French (FRA)</option>
             </select>
             <p className={styles.note}>
               Choose the language you want to use in Zurichat.
@@ -73,37 +54,6 @@ const LanguageAndRegion = () => {
             <p className={styles.note}>
               Zurichat uses your time zone to send summary and notification
               emails, for times in your activity feeds and for reminders.
-            </p>
-          </div>
-
-          <div className={styles.section}>
-            <label className={styles.subhead} htmlFor="spell-check">
-              Spell Check
-            </label>
-            <label
-              className={styles.auto}
-              htmlFor="Enable spellcheck on your messages"
-            >
-              <input
-                type="checkbox"
-                onChange={handleSpell}
-                checked={spellChb}
-              />
-              <span className={styles.checkmark}></span>
-              Enable spellcheck on your messages
-            </label>
-
-            <div className={styles.choosed}>
-              <span className={styles.block}>
-                English
-                <span className={styles.closebtn}>
-                  <span aria-hidden="true">&times;</span>
-                </span>
-              </span>
-            </div>
-            <p className={styles.note}>
-              Choose the languages you’d like Zurichat to spellcheck as you
-              type.
             </p>
           </div>
         </form>

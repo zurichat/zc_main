@@ -95,18 +95,16 @@ const Profile = () => {
           alt="avatar"
         />
         <div className={styles.userDetails}>
-          <h3 className={styles.h3}>
+          <h3 className={styles.h3users}>
             {user.first_name
               ? `${user.first_name} ${user.last_name} `
-              : "Anonymous"}{" "}
+              : "Anonnymous"}{" "}
             {/* <span>{<StatusBadgeModal />  === '' ? <StatusBadgeModal />  :'0' }</span> */}
             {/* <ProfileStatusBadgeModal /> */}
+            <StatusBadgeModal />
           </h3>
 
-          <StatusBadgeModal />
-
           <p className={styles.myp}>{user.bio ? user.bio : "What you do"}</p>
-          <small>{user.pronouns ? user.pronouns : "His/Her"}</small>
         </div>
 
         <div className={styles.buttonGroupsMobile}>

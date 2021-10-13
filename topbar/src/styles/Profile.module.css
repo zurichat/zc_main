@@ -9,7 +9,6 @@
   z-index: 10000;
   overflow-y: scroll;
 }
-
 .ProfileContainer::-webkit-scrollbar {
   display: none;
 }
@@ -69,15 +68,12 @@
   flex-direction: column;
 }
 
-.userDetails h3 {
-  margin-top: -0.5rem;
+.userDetails .h3user {
+  margin-top: 0.5rem;
   font-size: 1.3rem;
   font-weight: 700;
   color: #242424;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-family: 'Lato', sans-serif;
 }
 
@@ -105,8 +101,6 @@
   color: #3a3a3a;
   text-align: center;
   padding: 0;
-  margin: 0;
-  margin-top: -1rem;
 }
 
 .userDetails small {
@@ -133,25 +127,22 @@
   justify-content: center;
   width: 3rem;
   height: 3rem;
+
   border-radius: 50%;
   font-weight: 700;
   border: none;
 }
-
 .ctaText {
   font-size: 12px;
   color: rgb(128, 126, 126);
   text-align: center;
 }
-
 .buttonGroups button:hover {
   background: #00b87c;
 }
-
 .ctaButtonIcon {
   color: rgb(126, 123, 123);
 }
-
 .buttonGroups button:hover .ctaButtonIcon {
   color: #fff;
 }
@@ -168,11 +159,9 @@
   color: #3a3a3a;
   margin-bottom: 0.1rem;
 }
-
 .infoTitle a {
   margin: 0;
 }
-
 .infoContent,
 .infoLink {
   font-size: 1rem;
@@ -203,7 +192,7 @@
   top: 30%;
   right: 16px;
   width: 227px;
-  background: #fff;
+  background: #ffffff;
   border: 1px solid #bebebe;
   border-radius: 10px;
 }
@@ -249,7 +238,6 @@
 .mobile {
   display: none;
 }
-
 .h3users {
   margin-right: -1em;
   margin-top: 7px;
@@ -260,15 +248,12 @@
   padding-left: 5px;
   padding-bottom: 10px;
   position: absolute;
-
   /* left: 15px; */
   right: 70px;
-
   /* top: 108px; */
   background: none;
   transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-
 .myp {
   margin: 7px 1px 10px !important;
   position: relative;
@@ -285,7 +270,7 @@
     height: 100vh;
     margin-top: 5px;
     overflow-y: auto;
-    border-radius: 8px 8px 0 0;
+    border-radius: 8px 8px 0px 0px;
   }
 
   /* .header {
@@ -305,7 +290,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 2rem 0.6rem;
-  }
+  } 
 
   .buttonGroupsMobile button {
     width: 100%;
@@ -398,17 +383,15 @@
     stroke-width: 2px;
   }
 
-  .userDetails {
+  .userDetailed {
     display: none;
   }
-
   .userAvatar {
     display: flex;
     align-self: center;
     margin: 0 auto;
     width: 80%;
     height: 23rem;
-
     /* object-fit: contain; */
   }
 
