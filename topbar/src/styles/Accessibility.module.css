@@ -29,7 +29,7 @@
   font-weight: 700;
   line-height: 130%;
   letter-spacing: 0em;
-  color: #242424;
+  color: var(--text-color-gray-1);
   margin-top:13px;
 }
 
@@ -44,7 +44,7 @@
 .accessibilityLabel {
   margin-left: -5px;
   margin-top:10px;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
   font-size: 13px;
 }
 
@@ -85,11 +85,11 @@
   text-align: left;
   margin-top: 9px;
   margin-bottom: 10px ;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
 }
 
 .accessibilityEsc {
-  background-color: #f9f9f9;
+  background-color: var(--background);
   padding: 2px 5px;
   font-size: 15px;
   font-style: normal;

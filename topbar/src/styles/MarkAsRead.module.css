@@ -12,6 +12,7 @@
   line-height: 20px;
   letter-spacing: 0em;
   margin-top: 10px;
+  color: var(--text-color-gray-1);
 }
 
 .section {
@@ -29,7 +30,7 @@
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
-  /* color: #999999; */
+  color: var(--text-color-normal);
 }
 
 .option {
