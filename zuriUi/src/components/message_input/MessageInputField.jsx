@@ -9,7 +9,7 @@ import AtSign from "../../assets/comments/at-sign.svg"
 import Clip from "../../assets/comments/clip.svg"
 import Bigborder from "../../assets/comments/bigborder.svg"
 import Dropdown from "../../assets/comments/dropdown.svg"
-// import Send from "../../assets/comments/send.svg"
+import Send from "../../assets/comments/send.svg"
 import UnstyledButton from "./UnstyledButton"
 
 import { useState } from "react"
@@ -17,6 +17,7 @@ const MessageInputBox = ({ sendMessageHandler, addToMessages }) => {
   const [text, setText] = useState("")
   const [textIsBold, setTextBold] = useState(false)
   const [textIsItalic, setTextItalic] = useState(false)
+  const [attachedFile, setAttachedFile] = useState(null)
 
   const generateMessageFormatOptions = () => {
     const options = []
@@ -37,6 +38,21 @@ const MessageInputBox = ({ sendMessageHandler, addToMessages }) => {
       addToMessages && addToMessages(newMessage)
       sendMessageHandler(newMessage)
     }
+  }
+
+  const handleAttachMedia=(e)=>{
+    if (e.target.files && e.target.files[0]) {
+      const fd = new FormData()
+      fd.append('media',e.target.files[0],e.target.files[0].name )
+      setAttached(fd)
+    }
+
+  }
+
+  // on click clear attached file
+  const clearAttached = (e) => {
+    setInputKey('reset-attached')
+    setAttached('')
   }
 
   return (
@@ -92,9 +108,9 @@ const MessageInputBox = ({ sendMessageHandler, addToMessages }) => {
             <UnstyledButton>
               <img src={Clip} alt="" onClick={handleClickSendMessage} />
             </UnstyledButton>
-            {/* <UnstyledButton>
-              <img src={Send} alt="" />
-            </UnstyledButton> */}
+            <UnstyledButton>
+              <img src={Send} alt="" onClick={handleAttachMedia}/>
+            </UnstyledButton> 
             <UnstyledButton>
               <img src={Bigborder} alt="" />
             </UnstyledButton>
