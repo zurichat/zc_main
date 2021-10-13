@@ -4,6 +4,7 @@ import { BiSmile } from "react-icons/bi"
 import Picker, { SKIN_TONE_MEDIUM_DARK } from "emoji-picker-react"
 import axios from "axios"
 import defaultAvatar from "../assets/images/avatar_vct.svg"
+import smile from "../assets/images/smile.png";
 
 import styles from "../styles/Topbar.module.css"
 import { TopbarContext } from "../context/Topbar"
@@ -24,29 +25,50 @@ const TopbarModal = ({ members }) => {
     orgId,
     toggleModalState,
     toggleProfileState,
-    user
+    user,
+    setUser
   } = useContext(ProfileContext)
 
-  const [emojiItem, setEmoji] = useState("")
-  const [text, setText] = useState("")
-
   const handleClearStatus = async () => {
-    setEmoji("")
-    setText("")
+    setUser({
+      ...user,
+      status: {
+        text: "",
+        tag: ""
+      }
+    })
     try {
       const res = await authAxios.patch(
         `/organizations/${orgId}/members/${user._id}/status`,
         {
           expiry_time: "one_hour",
-          tag: emojiItem,
-          text: text
+          tag: "",
+          text: ""
         }
       )
-      res.status == 200 && alert(res?.data?.message)
+      const response = res.status
     } catch (error) {
-      alert(error)
+      const errorResponse = error
     }
   }
+
+  // const handleClearStatus = async () => {
+  //   // setEmoji("")
+  //   // setText("")
+  //   try {
+  //     const res = await authAxios.patch(
+  //       `/organizations/${orgId}/members/${user._id}/status`,
+  //       {
+  //         expiry_time: "one_hour",
+  //         tag: "",
+  //         text: ""
+  //       }
+  //     )
+  //     res.status == 200 && alert(res?.data?.message)
+  //   } catch (error) {
+  //     alert(error)
+  //   }
+  // }
   const [hoverState, setHoverState] = useState(false)
   const state = useContext(TopbarContext)
   const [showModal] = state.show
@@ -136,7 +158,16 @@ const TopbarModal = ({ members }) => {
 
   return (
     <>
-      {/* The section that shows the status */}
+      {/* The section that shows the set status */}
+      {statusModal && (
+        <NewStatusModal
+          statusModal={statusModal}
+          setStatusModal={setStatusModal}
+          openStatus={openStatus}
+        />
+      )}
+      
+      {/* The section that shows the status picker*/}
       {showStatus ? (
         <div
           ref={modalRef}
@@ -195,34 +226,22 @@ const TopbarModal = ({ members }) => {
 
             <div
               className={styles.sectionTwo}
-              onClick={() => setStatusModal(!statusModal)}
+              onClick={() => {
+                setStatusModal(!statusModal)
+                closeModal()
+              }}
               onMouseEnter={() => setHoverState(true)}
               onMouseLeave={() => setHoverState(false)}
             >
-              <div className={styles.emoji}>
-                {emojiItem.length > 0 && emojiItem}
-              </div>
-              <div className={styles.statusContent}>
-                {text.length > 0 ? text : "Update your Status"}
-              </div>
+              <div className={styles.emoji}>{user?.status?.tag || <img src={smile} className={styles.defalutEmoji}/>}</div>
+              <div className={styles.statusContent}>{!(user?.status?.text || user?.status?.tag)? "Update your Status": user?.status?.text}</div>
             </div>
 
             <div className={styles.sectionThree}>
-              {/* <p onClick={openStatus}>Set a status</p> */}
-              {text.length > 0 && emojiItem.length > 0 && (
+              {
+                (user?.status?.text || user?.status?.tag)&&
                 <p onClick={handleClearStatus}>Clear status</p>
-              )}
-              {statusModal && (
-                <NewStatusModal
-                  emojiItem={emojiItem}
-                  text={text}
-                  setEmoji={setEmoji}
-                  setText={setText}
-                  statusModal={statusModal}
-                  setStatusModal={setStatusModal}
-                  openStatus={openStatus}
-                />
-              )}
+              }
               <p
                 onClick={() => {
                   toggleUserPresence()
