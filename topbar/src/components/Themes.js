@@ -18,10 +18,9 @@ import theme21 from "../assets/images/theme21.png"
 import useThemeMode from "../../customHooks/useThemeMode";
 
 
-const Themes = () => {
-  const [active1, setActive1] = useState(0)
-  const [darkMode, setDarkMode] = useState(false)
-  const [mode, setMode] = useState("light")
+const Themes = ({check, setCheck, setMode}) => {
+  
+  // const [active1, setActive1] = useState(0)
   const [Data, setData] = useState(undefined)
   const [DataState, setDataState] = useState({})
 
@@ -30,13 +29,17 @@ const Themes = () => {
   // console.log('theme',theme)
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode ? true : true)
     setMode("dark")
+    setCheck({
+      light: "",
+      dark: "checked"})
   }
+
   const toggleLightMode = () => {
-    setDarkMode(darkMode ? false : false)
     setMode("light")
+    setCheck({light:"checked", dark: ""})
   }
+
 
   useEffect(() => {
     if (mode === "dark") {
@@ -80,7 +83,7 @@ const Themes = () => {
   // })
 
   return (
-    <div className={styles.themeCont} data-theme={darkMode ? "dark" : "light"}>
+    <div className={styles.themeCont}>
       <div className={styles.title}>
         <div className={styles.them}>Themes</div>
         <div className={styles.text}>
@@ -128,16 +131,14 @@ const Themes = () => {
           </div>
           <div className={styles.nice}>Look nice today.</div>
         </div>
-        <div className={styles.low}>
+        <div className={styles.low} onClick={toggleLightMode}>
           <div className={styles.lower}>
-            <div className={styles.radio6} onClick={toggleLightMode}>
+            <div className={styles.radio6} >
               <input
                 type="radio"
                 value="light"
-                checked={active1 === 0}
-                onClick={() => {
-                  setActive1(0)
-                }}
+                checked={check.light}
+                onClick={toggleLightMode}
               />
             </div>
             <div className={styles.light}>Light</div>
@@ -158,11 +159,9 @@ const Themes = () => {
             <div className={styles.radio7}>
               <input
                 type="radio"
-                value="light"
-                checked={active1 === 1}
-                onClick={() => {
-                  setActive1(1)
-                }}
+                value="dark"
+                checked={check.dark}
+                onClick={toggleDarkMode}
               />
             </div>
             <div className={styles.light2}>Dark</div>
