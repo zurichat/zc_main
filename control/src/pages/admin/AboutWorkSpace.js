@@ -1,5 +1,5 @@
 import React from "react"
-import AdminSettings from "."
+import AdminSettings from "./index"
 import AboutWorkSpaceTabs from "./components/AboutWorkSpaceTabs"
 import styles from "./styles/aboutWorkspace.module.css"
 import { FiAlertOctagon } from "react-icons/fi"
