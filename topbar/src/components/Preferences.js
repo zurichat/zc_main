@@ -75,7 +75,7 @@ useEffect(() => {
           />
         </div>
 
-        <div className={styles.background}>
+        <div className={styles.allPreferences}>
           {sideBar === 1 && <NotificationPreference />}
 
           {sideBar === 3 && <Themes {...{check, setCheck, setMode}} />}
