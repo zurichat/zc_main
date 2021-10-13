@@ -4,22 +4,16 @@ import { Helmet } from "react-helmet"
 
 const Index = () => {
   const [selected, setSelected] = useState(null)
-
-  const toggle = i => {
-    if (selected === i) {
-      setSelected(null)
-    }
-
-    setSelected(i)
-  }
+  const toggle = item =>
+    selected === item ? setSelected(null) : setSelected(item)
 
   return (
     <div className={styles.faqs}>
       <Helmet>
         <title> FAQ - Zuri Chat</title>
       </Helmet>
-      <h2 className={`${styles.h2} text-center`}>Commonly Asked Questions</h2>
       <div className={styles.wrapper}>
+        <h2 className={`${styles.h2}`}>Commonly Asked Questions</h2>
         <div className={styles.accordion}>
           {data.map((i, index) => (
             <div className={styles.items} key={index}>
@@ -44,12 +38,12 @@ const Index = () => {
             </div>
           ))}
         </div>
-      </div>
-      <div className={styles.billing}>
-        Get more information on{" "}
-        <a className={styles.info} href="/faq">
-          billing at Zuri Chat.
-        </a>
+        <div className={styles.billing}>
+          Get more information on{" "}
+          <a className={styles.info} href="/faq">
+            billing at Zuri Chat.
+          </a>
+        </div>
       </div>
     </div>
   )
