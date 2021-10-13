@@ -1,7 +1,7 @@
 import React from "react"
 import styles from "../styles/Sidebar.module.css"
 
-export default function Room({ name, image, link }) {
+export default function Room({ name, image, link, icon }) {
   return (
     <div className={`row mt-2 ${styles.sb__item}`}>
       <div
@@ -9,6 +9,12 @@ export default function Room({ name, image, link }) {
       >
         <img className={`${styles.item__img}`} src={image} alt="icon" />
         <p className={`mb-0 ${styles.item_p}`}>{name}</p>
+        <img
+          className={`${styles.addButton}`}
+          src={icon}
+          alt="icon"
+          role="button"
+        />
       </div>
     </div>
   )
