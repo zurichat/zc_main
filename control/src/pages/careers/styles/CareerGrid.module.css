@@ -3,11 +3,28 @@
 body {
   font-family: 'Lato' sans-serif;
 }
-
+.grid{
+  display: grid;
+  grid-column: auto;
+  padding: 1.5rem;
+}
 .headerContent {
-  max-width: 600px;
+  max-width: 770px;
   margin: auto;
+  margin-top: 3rem;
   padding: 1rem;
+}
+.headerContent h2 {
+  font-size: 40px;
+  line-height: 130%;
+  text-align: center;
+  padding-bottom: 1.5rem;
+}
+.headerContent p {
+  font-size: 24px;
+  line-height: 130%;
+  text-align: center;
+  font-family: 'Lato' sans-serif;
 }
 li {
   list-style: none;
@@ -18,9 +35,13 @@ li {
 .btngreen {
   background: #00b87c;
   border: none;
-  padding: 1rem 2rem;
+  display: block;
+  margin: auto auto 7rem auto;
+  width: 315px;
+  padding: 20px 10px;
   border-radius: 3px;
   color: #fff;
+  font-size: 20px;
 }
 .flex {
   display: flex;
@@ -50,19 +71,20 @@ li {
   padding: 1rem;
   border-bottom: 1px solid #4d4d4d;
 }
+.subcategory h3 {
+  font-size: 24px;
+  padding: 1rem 0;
+}
 .subcategory p {
-  font-family: 12px;
+  font-size: 18px;
   color: #4d4d4d;
 }
 .cohort {
+  font-size: 24px;
   text-align: center;
   padding: 5rem 0 2rem 0;
 }
-.register {
-  max-width: 150px;
-  padding-bottom: 4rem;
-  margin: auto;
-}
+
 @media screen and (max-width: 420px) {
   .categories {
     grid-template-columns: 1fr;

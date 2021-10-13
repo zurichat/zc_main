@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
 
 * {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -9,18 +9,21 @@ button:hover {
   cursor: pointer;
 }
 .Section1 {
-  padding: 60px;
+  margin-top: 1rem;
+  padding: 2rem;
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5rem;
   margin-bottom: 4rem;
 }
 .Section1 img {
-  padding-top: 65px;
-  width: 90%;
+  padding-top: 4rem;
+  width: 100%;
 }
 .section1Left {
-  padding: 70px 40px 20px 0px;
+  width: 60%;
+  margin-top: 15%;
+  padding: 3rem;
 }
 .section1Left h1 {
   font-size: 40px;
@@ -29,19 +32,19 @@ button:hover {
 .section1Left p {
   font-size: 24px;
   line-height: 1.5;
-  padding: 0px 160px 0px 0px;
+  padding: 1rem 0 1rem 0;
 }
 .section1Left .JoinBtn {
-  display: inline-block;
-  padding: 22px 34px 22px 34px;
+  display: block;
+  margin: auto;
+  padding: 1.2rem 1.5rem;
   font-size: 18px;
   border-radius: 3px;
   color: white;
   background-color: #00b87c;
   border: none;
-  font-weight: 600;
 }
-
+/* 
 @media screen and (max-width: 1024px) {
   .Section1 {
     grid-gap: 10px;
@@ -86,56 +89,46 @@ button:hover {
   .section1Left {
     padding: 70px 40px 20px 40px;
   }
-}
+} */
 
 @media screen and (max-width: 500px) {
+  .Section1 {
+    grid-template-columns: 1fr;
+    margin-bottom: 2rem;
+  }
   .section1Left {
     text-align: center;
-    padding: 30px 0px 20px 0px;
-    position: relative;
-    right: 15px;
+    padding: 1rem;
+    margin: auto;
+    margin-top: 1rem;
+    padding: 1rem 1.5rem;
+    width: 100%;
   }
   .section1Left h1 {
-    text-align: center;
+    text-align: start;
     font-size: 30px;
-    position: relative;
-    left: 25px;
+    padding-bottom: 0.5rem;
   }
   .section1Left p {
-    text-align: center;
+    text-align: start;
     font-size: 20px;
     line-height: 1.5;
-    width: 116%;
-    padding: 0 10px 0 10px;
+    width: 90%;
   }
   .section1Left .JoinBtn {
-    padding: 18px 70px 18px 70px;
-    font-size: 15px;
-    font-weight: 400;
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
+    font-size: 18px;
     border-radius: 3px;
-    width: 115%;
+    /* width: 80%; */
+    text-align: center;
   }
 
   .Section1 img {
+    padding-top: 1.5rem;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    margin-top: 0rem;
-    padding-top: 5px;
-  }
-
-  .Section1 {
-    grid-template-columns: auto;
-    padding: 50px;
-    padding-bottom: 10px;
-    margin-bottom: 0px;
-  }
-}
-
-@media screen and (max-width: 410px) {
-  .section1Left .JoinBtn {
-    padding: 18px 70px 18px 70px;
-    width: 115%;
+    margin: auto;
+    margin-top: 1rem;
   }
 }
