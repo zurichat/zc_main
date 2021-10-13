@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+
+.workspace__container{
+padding: 1.5em 3em;
+width: 95%;
+
+}
+
+.workspace__text_container{
+    height: 80vh;
+    padding: 1em 3em;
+    border-radius: 0px 4px 4px 4px;
+
+}
+
+.workspace__top{
+   display: flex;
+   align-items: center;
+   text-align: center;
+   padding-bottom: 2.5em;
+   
+ 
+}
+
+.workspace__top img{
+    height: 27px;
+    width: 27px;
+ }
+
+.workspace__top h2{
+    font-size: 2.2em;
+    padding: 0.1em 0 0 0.3em;
+    font-weight: bold;
+ }
+
+ .workspace__text_container{
+     background-color: #fff;
+     padding: 1em 2em;
+     display: flex;
+     flex-direction: column;
+ }
+ 
+ .workspace__section{
+     display: flex;
+     flex-direction: column;
+     margin-bottom: 1.5em;
+    
+ }
+
+ .div1 h2{
+     font-size: 28px;
+     color:#1D1C1D
+ }
+
+ 
+
+.div2{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    
+}
+
+/* .orgname_text p{
+    font-size: 17px;
+     color:#1D1C1D;
+     padding-right: 1em;
+     width: 95%;
+     
+    
+} */
+
+.div2 p{
+    font-size: 17px;
+     color:#1D1C1D;
+     padding-right: 1em;
+     width: 95%;
+     
+    
+}
+
+/* .urlname_text{
+    font-size: 17px;
+     color:#1D1C1D;
+     padding-right: 1em;
+} */
+
+.div2 input{
+     padding-right: 1em;
+    border: 1px solid #A1A1A1;
+     height: 49px;
+     width: 90%;
+     padding:0.5em;
+     border-radius: 3px;  
+}
+
+
+.div3{
+    display: flex;
+     flex-direction: column;
+}
+
+.div4{
+    display: flex;
+    align-items: baseline;
+}
+
+.div4 input{
+    padding-right: 1em;
+   border: 1px solid #A1A1A1;
+    height: 49px;
+    width: 60%;
+    left: 0px;
+    top: 0px;
+    border-radius: 3px;  
+}
+
+.small_section{
+    display: flex;
+    align-items: flex-start;
+}
+
+.notes_div{
+    width:50%;
+   
+
+}
+
+
+
+
+
+
+.Button{
+  background: #00B87C;
+border-radius: 3px;
+font-weight: 600;
+border:none;
+color:#fff;
+padding:1em 2em;
+margin-left: 2em;
+font-size: 17px;
+}
+
+
+
+.small_text{
+    font-size: 14px !important;
+}
+
+
+.note{
+    color: #616061;
+    font-size: 13px !important;
+    width: 100%;
+
+}
+
+Input::placeholder{
+    font-weight:400;
+    color: #1D1C1D;
+}
+.Half{
+    width:50%;
+    padding:0.5em;
+}
+.Half::placeholder{
+    text-align: right;
+    
+}
+
