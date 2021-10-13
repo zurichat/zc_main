@@ -81,14 +81,13 @@ const TopbarModal = ({ members }) => {
 
   var userAppearance = null
   var toggleAppearance = null
-  
 
   switch (presence) {
     case "true":
       userAppearance = "Set yourself as away"
       toggleAppearance = (
         <div className={styles.online}>
-          <div className={styles.activeCircle}/>
+          <div className={styles.activeCircle} />
           <p className={styles.active}> Active </p>
         </div>
       )
@@ -180,9 +179,7 @@ const TopbarModal = ({ members }) => {
                 <BiSmile className={styles.fontStyles} />
               )}
 
-              <div className={styles.statusContent}>
-                {user?.status?.text || "Update your status"}
-              </div>
+              <div className={styles.statusContent}>{"Update your status"}</div>
             </div>
 
             <div className={styles.sectionThree}>

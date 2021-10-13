@@ -97,6 +97,18 @@
   font-size: 16px;
 }
 
+.datetime {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 1rem;
+}
+
+.datetime input {
+  border: 1px solid #e5e5e5;
+  padding: 0.5rem;
+  border-radius: 4px;
+  outline: none;
+}
 .input:focus {
   outline: none;
 }
