@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react"
 import style from "./styles/LandingPage.module.css"
 import hero_img from "./assets/MacBookAir.svg"

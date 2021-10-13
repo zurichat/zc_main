@@ -45,6 +45,12 @@ import About from './pages/about/index'
 import AdminSettingsTab from './pages/admin/Settings/components/AdminSettingsTab'
 import TermsOfService from './pages/termsOfService'
 import RedirectRoute from './pages/redirect'
+import Plugins from './pages/plugins'
+
+import Legal from './pages/legal'
+import ZurichatBlog from './pages/blogs/components/zurichatBlog'
+
+import Ebooks from './pages/ebooks'
 
 
 // useEffect(() => {
@@ -64,8 +70,8 @@ const App = () => {
           <LandingPage />
         </Route>
         <RedirectRoute path="/login">
-         <Login />
-       </RedirectRoute>
+          <Login />
+        </RedirectRoute>
         <Route path="/signup">
           <SignUp />
         </Route>
@@ -108,11 +114,17 @@ const App = () => {
         <Route path="/pricing">
           <Pricing />
         </Route>
+        <Route path="/plugins">
+          <Plugins />
+        </Route>
         <Route path="/security">
           <Security />
         </Route>
         <Route path="/downloads">
           <Download />
+        </Route>
+        <Route path="/ebooks">
+          <Ebooks />
         </Route>
         <Route path="/downloadsMac">
           <DownloadsMac />
@@ -123,20 +135,31 @@ const App = () => {
         <Route path="/careers">
           <Careers />
         </Route>
+        
+        <Route path="/legal">
+          <Legal />
+        </Route>
+        
         <Route path="/privacy">
           <PrivacyPolicy />
         </Route>
         <Route path="/terms">
           <TermsOfService />
         </Route>
+        <Route path="/legal">
+          <Legal />
+        </Route>
         <Route path="/dao-features">
           <DAO_Features />
         </Route>
-        <Route path="/marketplace" exact>
+        {/* <Route path="/marketplace" exact>
           <MarketPlace />
-        </Route>
+        </Route> */}
         <Route path="/apps-integrations">
           <AppsAndIntegrations />
+        </Route>
+        <Route path="/ZurichatBlog">
+          <ZurichatBlog />
         </Route>
         {/* ----------------settings routes opened------------------------ */}
         <PrivateRoute
