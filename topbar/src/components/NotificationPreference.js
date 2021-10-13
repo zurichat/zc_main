@@ -269,11 +269,23 @@ const NotificationPreference = () => {
             </li>
           </ul>
         </div>
-        <div className={styles.line} />
+        {/* <div className={styles.line} /> */}
+        <hr
+          style={{
+            border: "block",
+            marginTop: "1.5em",
+            marginBottom: "0.5em",
+            marginLeft: "15px",
+            marginRight: "auto",
+            borderStyle: "inset",
+            width: "800px",
+            borderWidth: "1px"
+          }}
+        />
 
         {/* Michael's sound check code */}
         <div className={styles.itemTitle2}>
-          <h4 className={styles.titleSmall}>Sound &amp; appearance</h4>
+          <h4 className={styles.titleSmall}>Sound checks</h4>
           <span className={styles.spanBlock}>
             Choose your notification sound
           </span>
@@ -282,22 +294,20 @@ const NotificationPreference = () => {
 
         <div className={styles.mute}>
           <div className={styles.markbox}>
+            <input type="checkbox" />
             <label htmlFor="for-includepreview">
-              <input type="checkbox" />
               Include preview message in notification
             </label>
           </div>
           <div className={styles.markbox}>
-            <label htmlFor="for-muteall">
-              <input
-                type="checkbox"
-                onClick={() => {
-                  setDataState({ mute_all_sounds: "yes" })
-                  setData()
-                }}
-              />
-              Mute all
-            </label>
+            <input
+              type="checkbox"
+              onClick={() => {
+                setDataState({ mute_all_sounds: "yes" })
+                setData()
+              }}
+            />
+            <label htmlFor="for-muteall">Mute all</label>
           </div>
         </div>
 
@@ -305,7 +315,7 @@ const NotificationPreference = () => {
           <div className={styles.share}>
             <div className={styles.sound}>
               <div className={styles.msg3}>
-                Set your notifications right (Message)
+                Set your notifications right (Messages)
               </div>
               <div className={styles.dropdown}>
                 <select className={styles.button2}>
@@ -335,8 +345,19 @@ const NotificationPreference = () => {
               </div>
             </div>
           </div>
-          {/* <hr/> */}
         </div>
+        <hr
+          style={{
+            border: "block",
+            marginTop: "1.5em",
+            marginBottom: "0.5em",
+            marginLeft: "15px",
+            marginRight: "auto",
+            borderStyle: "inset",
+            width: "800px",
+            borderWidth: "1px"
+          }}
+        />
 
         <div className={styles.section2}>
           <div className={styles.itemTitle2}>
@@ -402,7 +423,19 @@ const NotificationPreference = () => {
             </div>
           </div>
         </div>
-        <div className={styles.line} />
+        {/* <div className={styles.line} /> */}
+        <hr
+          style={{
+            border: "block",
+            marginTop: "1.5em",
+            marginBottom: "0.5em",
+            marginLeft: "15px",
+            marginRight: "auto",
+            borderStyle: "inset",
+            width: "800px",
+            borderWidth: "1px"
+          }}
+        />
         <div className={styles.section3}>
           <div className={styles.itemTitle2}>
             <div className={styles.titleSmall}>
@@ -421,16 +454,14 @@ const NotificationPreference = () => {
           </div>
         </div>
         <div className={styles.markbox}>
-          <label>
-            <input
-              type="checkbox"
-              onClick={() => {
-                setDataState({ notify_me_about: "all-messages" })
-                setData()
-              }}
-            />{" "}
-            Send me email notifications for mentions{" "}
-          </label>
+          <input
+            type="checkbox"
+            onClick={() => {
+              setDataState({ notify_me_about: "all-messages" })
+              setData()
+            }}
+          />{" "}
+          <label className="emailNot">Send me email notifications for mentions </label>
         </div>
       </div>
     </div>

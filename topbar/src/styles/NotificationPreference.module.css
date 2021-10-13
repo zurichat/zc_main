@@ -15,6 +15,7 @@
   padding-bottom: 70px;
   display: block;
   margin-top: 24px;
+  height: 100%;
 }
 
 .itemTitle1 {
@@ -87,11 +88,38 @@ input[type="radio"] {
   margin: 4px 0 0 -1px;
 }
 
-input[type="checkbox"] {
+/* input[type="checkbox"]:before {
+  position: relative;
+  display: block;
+  width: 13px;
+  height: 13px;
+  border: 1px solid #00b87c;
+  content: "";
+  background: #fff;
+} */
+
+/* input[type="checkbox"]:after {
+  position: relative;
+  display: block;
+  left: 2px;
+  top: -11px;
+  width: 7px;
+  height: 7px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #b3b3b3 #dcddde #dcddde #b3b3b3;
+  content: "";
+  background-image: linear-gradient(135deg, #b1b6be 0%, #fff 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
+input[type="checkbox"]::before {
   margin-left: 4px;
   border-color: #00b87c;
   background-color: #00b87c;
   margin-top: 4px;
+  border: 1px solid #00b87c;
 }
 
 .markbox {
@@ -100,7 +128,7 @@ input[type="checkbox"] {
   font-size: 13px;
   color: #3a3a3a;
   font-family: Lato;
-  margin-top: -10px;
+  margin-top: -5px;
   margin-bottom: 20px;
   height: 21px;
   text-align: left;
@@ -140,6 +168,7 @@ input[type="checkbox"] {
   padding-left: 16px;
   font-family: Lato;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 .itemTitle2 .spanBlock {
   color: #3a3a3a;
@@ -154,7 +183,8 @@ input[type="checkbox"] {
   color: #00b87c;
 }
 .textarea {
-  border-color: 1px #e5e5e5;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
   outline: none;
   resize: none;
   margin-top: 10px;
@@ -166,25 +196,31 @@ input[type="checkbox"] {
 }
 
 .list {
-  position: inherit;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   list-style-type: none;
   width: 97%;
-  margin-left: 19px;
+  margin-left: 9px;
 }
 
 .selectButton {
-  width: 115px;
-  height: 35px;
+  width: 205px;
+  height: 38px;
+  padding-left: 10px;
   border-radius: 5px;
   border-color: 2px #e5e5e5;
   font-size: 13px;
   font-family: lato;
   font-weight: normal;
   border: 1px solid #e0e0e0;
-  color: #3a3a3a;
+  /* color: #3a3a3a; */
   margin-top: 24px;
+}
+
+.selectButton option {
+  color: red;
+  font-weight: 40;
 }
 .listChild p {
   color: #999999;
@@ -237,13 +273,13 @@ input[type="checkbox"] {
 
 .button {
   margin-top: 8px;
-  background: whitesmoke;
+  background: none;
   cursor: pointer;
   border-radius: 4px;
   padding: 5px 5px 3px;
   margin-bottom: 16px;
-  color: #3a3a3a;
-  border: 1px solid #e5e5e5;
+  color: rgba(0, 184, 124, 0.5);
+  border: 1px solid rgba(0, 184, 124, 0.5);
   outline: none;
   font-style: normal;
   font-weight: 400;
