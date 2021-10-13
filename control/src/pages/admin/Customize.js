@@ -7,7 +7,7 @@ function Customize() {
     return (
         <div>
             <AdminSettings>
-                <div className={styles.billingContainer}>
+                <div className={styles.container}>
                     <div className={styles.contentWrapper}>
                     <h5 className={styles.contentHeading}>
                         Customize Your Workspace
