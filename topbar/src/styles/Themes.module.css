@@ -1,30 +1,36 @@
-:root {
+/* :root {
+  --background: #f9f9f9;
   --bg-color: #fff;
   --width: 100%;
   --height: 100%;
-  --text-color: #000;
+  --text-color-bold: #000;
+  --text-color-normal: #333;
 }
 
 [data-theme="dark"] {
+  --background: #333333;
   --bg-color: #3f3f3f;
-  --text-color: #fff;
+  --text-color-bold: #fff;
+  --text-color-normal: #999999;
 }
 
 [data-theme="light"] {
+  --background: #f9f9f9;
+  --text-color-bold: #000;
+  --text-color-normal: #333;
   --bg-color: #fff;
-  --text-color: #3f3f3f;
-}
+  --text-color-bold: #3f3f3f;
+} */
 
 .themeCont {
-  margin-top: 14px;
-  margin-left: 50px;
+  padding: 12px;
   font-family: sans-serif;
   text-align: center;
   background-color: var(--bg-color);
-  color: var(--text-color);
+  color: var(--text-color-bold);
   width: var(--width);
   height: var(--height);
-  overflow-x: hidden;
+  text-align: left;
 }
 
 .themeCont::-webkit-scrollbar {
@@ -38,7 +44,7 @@
 
 .checkbox {
   margin-top: -2px;
-  margin-left: 7px;
+  margin-left: 5px;
 }
 
 .os {
@@ -48,7 +54,7 @@
   position: relative;
   margin-left: -7px;
   line-height: 20px;
-  color: #999999;
+  color: var(--text-color-normal);
 }
 
 /* .them {
@@ -60,7 +66,7 @@
 } */
 
 .them {
-  color: #999999;
+  color: var(--text-color-normal);
   font-size: 15px;
   font-weight: bold;
   margin-left: -488px;
@@ -69,9 +75,8 @@
 .text {
   font-size: 14px;
   margin-top: 8px;
-  margin-left: -164px;
   font-weight: 500;
-  color: #999999;
+  color: var(--text-color-normal);
   position: relative;
 }
 
@@ -82,12 +87,12 @@
 
 .radio {
   margin-top: -2px;
-  margin-left: 7px;
+  margin-left: 5px;
 }
 
 .mention {
   font-size: 14px;
-  color: #999999;
+  color: var(--text-color-normal);
   font-weight: 500;
   margin-left: -7px;
   line-height: 20px;
@@ -96,11 +101,10 @@
 }
 
 .text2 {
-  margin-left: -72px;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
-  color: #999999;
+  color: var(--text-color-normal);
   font-style: normal;
   position: relative;
   margin-top: 10px;
@@ -133,12 +137,12 @@
   font-weight: 750;
   font-size: 14px;
   line-height: 20px;
-  color: #999999;
+  color: var(--text-color-normal);
 }
 
 .custom {
   font-size: 14px;
-  color: #999999;
+  color: var(--text-color-normal);
   margin-top: 12px;
   font-weight: 500;
   line-height: 20px;
@@ -149,7 +153,7 @@
 
 .custom2 {
   font-size: 14px;
-  color: #999999;
+  color: var(--text-color-normal);
   margin-top: -1px;
   font-weight: 500;
   line-height: 20px;
@@ -174,7 +178,7 @@
   font-weight: 500;
   line-height: 20px;
   font-style: normal;
-  color: #999999;
+  color: var(--text-color-normal);
   margin-top: 5px;
   margin-left: -385px;
   margin-left: -468px;
@@ -210,7 +214,7 @@
   font-weight: 500;
   line-height: 20px;
   font-style: normal;
-  color: #999999;
+  color: var(--text-color-normal);
 }
 
 .arrow {
@@ -223,7 +227,7 @@
   font-weight: 500;
   line-height: 20px;
   font-style: normal;
-  color: #999999;
+  color: var(--text-color-normal);
   margin-left: -424px;
 }
 
@@ -323,7 +327,7 @@
   display: flex;
   margin-left: 20px;
   margin-top: 15px;
-  color: white;
+  color: var(--bg-color);
 }
 
 .lower {
@@ -336,12 +340,12 @@
   margin-left: 15px;
   width: 60px;
   height: 20px;
-  color: #999999;
+  color: var(--text-color-normal);
 }
 
 .time {
   font-size: 10px;
-  color: #999999;
+  color: var(--text-color-normal);
   margin-top: 4px;
   margin-left: 10px;
   height: 15px;
@@ -350,7 +354,7 @@
 
 .nice {
   font-size: 12px;
-  color: #999999;
+  color: var(--text-color-normal);
   margin-top: -5px;
   margin-left: 64.1px;
   height: 20px;
@@ -410,7 +414,7 @@
   font-size: 12px;
   margin-top: 15px;
   font-weight: bold;
-  color: white;
+  color: var(--bg-color);
   margin-left: 15px;
   width: 85px;
 }
@@ -419,7 +423,7 @@
   font-size: 12px;
   margin-top: 15px;
   font-weight: bold;
-  color: white;
+  color: var(--text-color-gray-1);
   margin-left: 35px;
   width: 50%;
 }
@@ -427,7 +431,7 @@
 .time2 {
   font-size: 10px;
   margin-top: 19px;
-  color: white;
+  color: var(--bg-color);
   margin-left: 10px;
   height: 15px;
   width: 35px;
@@ -435,7 +439,7 @@
 
 .nice2 {
   font-size: 12px;
-  color: white;
+  color: var(--bg-color);
   margin-top: -5px;
   margin-left: 64.1px;
   height: 20px;
@@ -500,7 +504,7 @@
 
 .time {
   font-size: 10px;
-  color: #999999;
+  color: var(--text-color-normal);
   margin-top: 4px;
   margin-left: 10px;
   height: 15px;
@@ -509,7 +513,7 @@
 
 .nice {
   font-size: 12px;
-  color: #999999;
+  color: var(--text-color-normal);
   margin-top: -5px;
   margin-left: 64.1px;
   height: 20px;
@@ -568,7 +572,7 @@
   font-size: 12px;
   margin-top: 15px;
   font-weight: bold;
-  color: white;
+  color: var(--text-color-gray-1);
   margin-left: 15px;
   width: 40px;
   height: 20px;
@@ -577,7 +581,7 @@
 .time2 {
   font-size: 10px;
   margin-top: 19px;
-  color: white;
+  color: var(--text-color-normal);
   margin-left: 10px;
   height: 15px;
   width: 35px;
@@ -585,7 +589,7 @@
 
 .nice2 {
   font-size: 12px;
-  color: white;
+  color: var(--text-color-normal);
   margin-top: -5px;
   margin-left: 64.1px;
   height: 20px;
@@ -594,7 +598,7 @@
 
 .up2 {
   height: 68px;
-  background: #333333;
+  background: var(--background);
   margin-top: -15px;
 }
 
@@ -615,5 +619,5 @@
   margin-left: 25px;
   font-size: 12px;
   font-weight: bold;
-  color: #333333;
+  color: var(--text-color-normal);
 }
