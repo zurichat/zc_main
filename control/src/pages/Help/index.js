@@ -20,26 +20,14 @@ const Help = () => {
         </div>
         <div className={`${styles.firstcontent}`}>
           <h5>Username or password is wrong, invalid, or unrecognized</h5>
+          <br />
+          
           <p>
-    
             There isn't a typo in your username or password.
             You've entered your full email address. For example,
             "username@gmail.com" instead of "username@gmail." 
             Caps lock is turned off.
-            Your keyboard is in the right language.
-            <br />
-            <p>
-            Refresh your browser and try signing in again.
-            
-            If you're still getting the error message, follow the steps to
-            recover your account. 
-            You'll be asked some questions to confirm it's your account. Answer
-            as best you can. 
-            If you're having trouble, try the tips to complete account recovery
-            steps. 
-           Reset your password when prompted. Choose a strong password that you
-            haven't already used with this account.
-            </p>
+            Your keyboard is in the right language.  
           </p>
         </div>
       </div>
@@ -49,10 +37,11 @@ const Help = () => {
         </div>
       <div className={`${styles.secondcontent}`}>
         <h5>You forgot the email address you use to sign in.</h5>
+        <br />
+        
         <p>
           Try other phone numbers or recovery email addresses you might have
-          used. 
-          There might have been a typo in your username when you created your
+          used, there might have been a typo in your username when you created your
           account.
         </p>
       </div>
@@ -63,6 +52,8 @@ const Help = () => {
         </div>
       <div className={`${styles.thirdcontent}`}>
         <h5>To reset your password:</h5>
+        <br />
+       
         <p>
           To reset your password: Follow the steps to recover your Google
           Account or Gmail.
@@ -77,7 +68,8 @@ const Help = () => {
          
         </p>
         </div>
-      </div>
+  </div> 
+ 
     </div>
   )
 }
