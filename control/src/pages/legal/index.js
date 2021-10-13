@@ -15,4 +15,5 @@ const TermsCondition = () => {
     </div>
   )
 }
+
 export default TermsCondition
