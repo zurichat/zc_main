@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react"
 import classes from "../styles/EmojiTab.module.css"
 
 const Emoji = () => {
-  const [display, setDisplay] = useState(true)
+  const [display, setDisplay] = useState(false)
   const [text, setText] = useState("")
   const [image, setImage] = useState([])
-  const [btnName, setBtnName] = useState('')
+  const [btnName, setBtnName] = useState("")
 
   useEffect(() => {
     if (display) document.body.style.overflow = "hidden"
@@ -76,7 +76,9 @@ const Emoji = () => {
             className={classes.overlay}
           ></div>
           <div className={classes.modal}>
-            <div className={classes.close}>&times;</div>
+            <div className={classes.close} onClick={() => setDisplay(false)}>
+              &times;
+            </div>
             <div className={classes.container}>
               <div className={classes.title}>Add custom emoji</div>
               <div className={classes.text}>

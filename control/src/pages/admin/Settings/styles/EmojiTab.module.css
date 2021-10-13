@@ -33,7 +33,7 @@
 }
 
 .example {
-  width: 65%;
+  width: 75%;
 }
 
 .example .text {
@@ -85,6 +85,10 @@
   display: inline-block;
   margin-left: 5px;
   margin-right: 10px;
+}
+
+.avatar img {
+  width: 100%;
 }
 
 .messageInfo .name {
@@ -161,6 +165,7 @@
   font-size: 30px;
   color: rgba(29,28,29,.7);
   font-weight: 300;
+  z-index: 10;
 }
 
 .overlay {
