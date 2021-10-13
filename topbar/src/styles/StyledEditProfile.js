@@ -20,6 +20,8 @@ export const StyledProfileWrapper = styled.section`
           display: flex;
           align-items: flex-start;
           flex-direction: column;
+          margin-top: 50px;
+          margin-bottom: 30px;
         }
         .mobileAvataeCon {
           display: none;
@@ -57,7 +59,7 @@ export const StyledProfileWrapper = styled.section`
       }
       .input-group {
         width: 100%;
-        margin-bottom: 2.5rem;
+        margin-bottom: 1.5rem;
         &.phone {
           flex-direction: column;
           align-items: flex-start;
@@ -97,7 +99,7 @@ export const StyledProfileWrapper = styled.section`
           }
         }
         .inputLabel {
-          font-size: 1.2rem;
+          font-size: 1rem;
           font-weight: 600;
           color: #1d1c1d;
           margin-bottom: 0.75rem;
@@ -218,7 +220,7 @@ export const StyledProfileWrapper = styled.section`
       font-weight: 700;
       color: #00b87c;
       position: fixed;
-      top: 2rem;
+      top: 1rem;
       right: 2.5rem;
       z-index: 40000;
     }
@@ -227,8 +229,8 @@ export const StyledProfileWrapper = styled.section`
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-top: 2.5rem;
-    margin-bottom: 2rem;
+    /* margin-top: 2.5rem; */
+    margin-bottom: 1rem;
     @media (max-width: 768px) {
       display: none;
     }
