@@ -48,6 +48,17 @@ const Emoji = () => {
                       work best. If your image is too large, we’ll try to resize
                       it for you.
                     </div>
+                    <div className={classes.imageUpload}>
+                        <div className={classes.imageContainer}>
+                            <div>
+
+                            </div>
+                            <div>
+                                
+                            </div>
+                        </div>
+                        <button>Upload an Image</button>
+                    </div>
                   </li>
                   <li>
                     <div className={classes.title}>Give it a name</div>
