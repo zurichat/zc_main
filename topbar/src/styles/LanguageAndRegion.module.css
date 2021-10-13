@@ -12,7 +12,7 @@
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
-  color: #242424;
+  color: var(--text-color-gray-1);
 }
 
 .section {
@@ -54,7 +54,7 @@
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
   margin-bottom: 10px;
 }
 
@@ -68,7 +68,7 @@
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
 }
 .cbox{
   accent-color: #00B87C;
@@ -76,7 +76,7 @@
 
 .choosed {
   width: 80%;
-  color: #999;
+  color: var(--text-color-normal);
   font-size: 13px;
   border: 1px solid #dde5e9;
   height: 40px;
@@ -86,7 +86,7 @@
 
 .block {
   display: block;
-  background: #999;
+  background: var(--text-color-normal);
   /* width:20%; */
   padding: 3px;
   margin-top: -4px;
