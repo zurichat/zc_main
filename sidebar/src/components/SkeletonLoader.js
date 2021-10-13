@@ -1,9 +1,6 @@
 import React from "react"
 import styles from "../styles/skeletonLoader.module.css"
 
-export default function SkeletonLoader() {
-  const COUNTER = 8
-
 export default function SkeletonLoader({ COUNTER }) {
   const SideBarSkeleton = () => (
     <div className={styles.skeletonLoaderWrapper}>
