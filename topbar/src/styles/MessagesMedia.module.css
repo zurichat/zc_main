@@ -1,7 +1,7 @@
 .msgCon {
-  margin-top: 54px;
-  margin-bottom: 54px;
-  margin-left: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
   width: 80%;
   line-height: 30px;
 }
@@ -219,7 +219,7 @@ p{
   font-size: 15px;
   line-height: 20px;
   font-style: normal;
-  color: var(--text-color-normal);
+  color: var(--text-color-gray-1);
 }
 
 .tone {
@@ -363,7 +363,7 @@ p{
 .example {
   margin-top: 10px;
   font-size: 13px;
-  color: var(--text-color-normal);
+  color: var(--text-color-gray-1);
   line-height: 20px;
   font-weight: normal;
   font-style: normal;
