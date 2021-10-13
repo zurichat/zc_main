@@ -204,16 +204,16 @@ const Themes = () => {
         <div className={styles.img7} onClick={()=>toggleTheme('ash')}>
           <img src={theme18} alt="theme18" className={styles.theme18} />
         </div>
-        <div className={styles.img8} onClick={()=>toggleTheme('red')}> 
+        <div className={styles.img8} onClick={()=>toggleTheme('roseRed')}> 
           <img src={theme19} alt="theme19" className={styles.theme19} />
         </div>
       </div>
       <div className={styles.set4}>
         <div className={styles.bottom}>
-          <div className={styles.img9}>
+          <div className={styles.img9} onClick={()=>toggleTheme('roseRed')}>
             <img src={theme20} alt="theme20" className={styles.theme20} />
           </div>
-          <div className={styles.img10}>
+          <div className={styles.img10} onClick={()=>toggleTheme('roseRed')}>
             <img src={theme21} alt="theme21" className={styles.theme21} />
           </div>
         </div>
