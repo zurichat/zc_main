@@ -77,7 +77,7 @@ const Overlay = styled(DialogOverlay)`
 const Content = styled(DialogContent)`
   position: relative;
   background: white;
-  width: 100%;
+  // width: 100%;
   height: 100%;
   padding: 2rem;
   display: flex;

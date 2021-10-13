@@ -62,12 +62,19 @@
   margin-top: 3px;
 }
 
+.typing{
+  width: 100%;
+}
+.format{
+  width: 100%;
+}
 .format h3 {
   font-size: 13px;
   color: black;
   font-weight: 500;
   margin-top: -13px;
   margin-left: -10px;
+  width: 100%;
 }
 
 .format2 h3 {
@@ -323,7 +330,7 @@
 
 .ask input {
   display: flex;
-  margin-top: 2px;
+  margin-top: .5em;
 }
 
 .survey {
@@ -370,7 +377,7 @@
 
 .warn input {
   display: flex;
-  margin-top: 2px;
+  margin-top: .5em;
 }
 
 .options {
