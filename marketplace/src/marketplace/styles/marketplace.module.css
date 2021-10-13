@@ -324,15 +324,15 @@
 
 .pluginCardTop {
   display: grid;
-  grid-template-columns: 70px 1fr;
+  grid-template-columns: 2.7rem 1fr;
   align-items: flex-start;
   color: #1d1c1d;
   margin-bottom: 24px;
 }
 
 .pluginImage {
-  width: 60px;
-  height: 60px;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -354,7 +354,7 @@
 .pluginName {
   text-transform: capitalize;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1rem;
   line-height: 130%;
   color: #1d1c1d;
 }
@@ -362,7 +362,7 @@
 .pluginInstallCount{
   margin-top: 6px;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 10px;
   line-height: 150%;
   color: #1d1c1d;
 }
@@ -589,12 +589,29 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    height: fit-content;
+    padding: 10px 0;
   }
   .marketplaceSvg {
     position: relative;
-    top: 0 !important;
-    left: auto !important;
-    right: auto !important;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .marketplaceSvg:nth-child(1) {
+    top: 0;
+    left: 0;
+  }
+  
+  .marketplaceSvg:nth-child(2) {
+    top: 0;
+    left: 0;
+  }
+  
+  .marketplaceSvg:nth-child(3) {
+    top: 0;
+    left: 0;
   }
   .svgConnectionLineOne,
   .svgConnectionLineThree,
