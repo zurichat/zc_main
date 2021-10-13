@@ -36,9 +36,9 @@ const Home = () => {
         <div className={classes.card}>
           <div>
             <Link to="/admin/settings" className={classes.grid}>
-              <img src={settings} alt="Settings" className={classes.Settings}/>
+              <img src={settings} alt="Settings" className={classes.Settings} />
               <h3>Account Settings </h3>
-              <img src={right_caret} alt="go"/>
+              <img src={right_caret} alt="go" />
               <span className="mt-n2">
                 Edit your profile, update your username and password, and manage
                 other account settings.
@@ -49,7 +49,7 @@ const Home = () => {
 
         <div className={classes.card}>
           <div>
-            <Link to="/admin/settings/home" className={classes.grid}>
+            <Link to="/admin/customize" className={classes.grid}>
               <img src={customize} />
               <h3>Customize Zuri </h3>
               <img src={right_caret} />
@@ -72,39 +72,39 @@ const Home = () => {
 
         <nav>
           <li>
-            <a href="">Tour</a>
+            <Link to="/tour">Tour</Link>
           </li>
           <li>
-            <a href="">Download Apps</a>
+            <Link to="/download-apps">Download Apps</Link>
           </li>
           <li>
-            <a href="">Brand Guidelines</a>
+            <Link to="/legal">Brand Guidelines</Link>
           </li>
           <li>
-            <a href="">Help</a>
+            <Link to="/help">Help</Link>
           </li>
           <li>
-            <a href="" target="_blank">
+            <Link to="/confirm-deactivation" target="_blank">
               API
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="">Pricing</a>
+            <Link to="/pricing">Pricing</Link>
           </li>
           <div>
             <li>
-              <a href="">Contact</a>
+              <Link to="/contact-us">Contact</Link>
             </li>
             <li>
-              <a href="">Policies</a>
+              <Link to="/privacy">Policies</Link>
             </li>
             <li>
-              <a href="" target="_blank">
+              <Link to="/ZurichatBlog" target="_blank">
                 Our Blog
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="">Sign Out</a>
+              <Link to="/session-signout">Sign Out</Link>
             </li>
           </div>
         </nav>
