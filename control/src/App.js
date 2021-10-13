@@ -46,6 +46,7 @@ import AdminSettingsTab from './pages/admin/Settings/components/AdminSettingsTab
 import TermsOfService from './pages/termsOfService'
 import RedirectRoute from './pages/redirect'
 import Plugins from './pages/plugins'
+import Home from './pages/admin/Settings/components/SettingsHome'
 
 
 // useEffect(() => {
@@ -65,8 +66,8 @@ const App = () => {
           <LandingPage />
         </Route>
         <RedirectRoute path="/login">
-         <Login />
-       </RedirectRoute>
+          <Login />
+        </RedirectRoute>
         <Route path="/signup">
           <SignUp />
         </Route>
@@ -157,6 +158,11 @@ const App = () => {
         <PrivateRoute path="/session-signout" component={AllSessionSignOut} />
         <PrivateRoute path="/settings" exact component={Settings} />
         <PrivateRoute path="/admin/settings" exact component={SettingsHome} />
+        <PrivateRoute
+          path="/admin/settings/home"
+          exact
+          component={Home}
+        />
         <PrivateRoute
           path="/admin/settings/billings"
           exact
