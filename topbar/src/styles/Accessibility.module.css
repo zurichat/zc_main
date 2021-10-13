@@ -1,11 +1,7 @@
 .containerAccessibility {
-  width: 482px;
-  height: 500px;
-  left: 480px;
-  top: 140px;
-  margin: 30px 50px;
-  margin-bottom:32px;
-
+  max-width: 100%;
+  margin: 20px 20px;
+  height: 100vh;
 }
 
 .hrLine {
@@ -14,9 +10,9 @@
   /* top: 55.6%; */
   /* bottom: 34.4%; */
   border: 1px solid #eeeeee;
-  margin-top:12px;
-  width: 120%;
-  margin-bottom:12px;
+  margin-top:20px;
+  width: 100%;
+  margin-bottom:20px;
 }
 
 .animationH3,
@@ -25,12 +21,12 @@
 .pressH3 {
   font-family: Lato;
   font-size: 15px;
-  font-style: normal;
   font-weight: 700;
   line-height: 130%;
   letter-spacing: 0em;
+  padding: 0%;
   color: #242424;
-  margin-top:13px;
+  margin: 5px 0px;
 }
 
 .accessibilityCheckbox,
