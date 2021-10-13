@@ -44,7 +44,6 @@ import eigwhitethin from "../assets/images/lightyellow.svg"
 import eigsmall from "../assets/images/yellowsmrec.svg"
 
 
-
 const Themes = () => {
   const [active1, setActive1] = useState(0)
   const [darkMode, setDarkMode] = useState(false)
