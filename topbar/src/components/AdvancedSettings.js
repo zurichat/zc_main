@@ -92,8 +92,8 @@ const AdvancedSettings = () => {
             <div className={styles.keys}>
               <button className={styles.btn8}>Page up</button>,
               <button className={styles.btn9}>Page Down</button>,
-              <button className={styles.btn10}>Home</button> and
-              <button className={styles.btn11}>End</button>
+              <button className={styles.btn10}>Home</button> &nbsp;
+              <button className={styles.btn11}>End</button>&nbsp;
               keys always scroll messages
             </div>
           </div>
@@ -113,7 +113,7 @@ const AdvancedSettings = () => {
           </div>
           <div className={styles.warn}>
             <input type="checkbox" name="" id="" />
-            <p>Warn me about potential malicious links</p>
+            <p>Warn me about potential malicious links</p> 
           </div>
         </div>
       </div>
