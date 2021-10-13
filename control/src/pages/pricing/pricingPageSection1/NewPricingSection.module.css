@@ -185,7 +185,7 @@
 
 .desktop .pricingWrapper .pricing:first-child {
   height: 80%;
-  margin-top: 60px;
+  margin-top: 90px;
 }
 
 .desktop .pricingWrapper .pricing:first-child .benefit, .desktop .pricingWrapper .pricing:first-child .pricing__header{
@@ -195,7 +195,7 @@
 }
 .desktop .pricingWrapper .pricing:nth-child(2) {
   height: 90%;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   padding-top: 1rem;
   clip-path: inset(4% 0 0 0);
   position: relative;
@@ -217,7 +217,7 @@
 .desktop .pricingWrapper .pricing:nth-child(3) {
   max-height: 670px;
   height: 100%;
-  margin-top: 25px;
+  /* margin-top: 25px; */
 }
 
 .desktop .benefit, .desktop .pricing__header{
