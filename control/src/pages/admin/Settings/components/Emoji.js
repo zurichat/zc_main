@@ -6,13 +6,43 @@ const Emoji = () => {
   return (
     <div className={classes.container}>
       <div className={classes.top}>
-        <div className={classes.header}>One-click reactions</div>
+        <div className={classes.title}>One-click reactions</div>
         <div className={classes.text}>
           Choose the default emoji people will see when they enable one-click
           reactions
         </div>
-        <div className={classes.emojis}></div>
-        <div className={classes.example}></div>
+        <div className={classes.emojis}>
+          <button></button>
+          <button></button>
+          <button></button>
+        </div>
+        <div className={classes.example}>
+          <div className={classes.text}>Here’s an example:</div>
+          <div className={classes.messageDialog}>
+            <div className={classes.messageActions}>
+              <button></button>
+              <button></button>
+              <button></button>
+              <button></button>
+              <button></button>
+              <button></button>
+            </div>
+            <div className={classes.avatar}>
+              <img
+                src="https://a.slack-edge.com/bv1-9/avatar_marcel-37155b5.png"
+                alt="avatar"
+              />
+            </div>
+            <div className={classes.messageInfo}>
+              <div className={classes.name}>
+                Mark <span>1:12 PM</span>
+              </div>
+              <div className={classes.messageContent}>
+                HNG is just a game. Don't take it too seriously
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div className={classes.bottom}>
         <div className={classes.title}>
@@ -30,7 +60,10 @@ const Emoji = () => {
 
       {display && (
         <>
-          <div onClick={() => setDisplay(false)} className={classes.overlay}></div>
+          <div
+            onClick={() => setDisplay(false)}
+            className={classes.overlay}
+          ></div>
           <div className={classes.modal}>
             <div className={classes.container}>
               <div className={classes.title}>Add custom emoji</div>
@@ -49,15 +82,11 @@ const Emoji = () => {
                       it for you.
                     </div>
                     <div className={classes.imageUpload}>
-                        <div className={classes.imageContainer}>
-                            <div>
-
-                            </div>
-                            <div>
-                                
-                            </div>
-                        </div>
-                        <button>Upload an Image</button>
+                      <div className={classes.imageContainer}>
+                        <div></div>
+                        <div></div>
+                      </div>
+                      <button>Upload an Image</button>
                     </div>
                   </li>
                   <li>
