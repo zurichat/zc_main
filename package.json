@@ -19,7 +19,7 @@
     "dev:plugin-header": "npm run dev --prefix pluginHeader",
     "dev:comment-sidebar": "npm run dev --prefix commentSidebar",
     "dev:utilities": "npm run dev --prefix utilities",
-    "dev": "npm-run-all --parallel \"dev:*\" \"open\"",
+    "dev": "npm-run-all --parallel \"dev:*\"",
     "lint": "concurrently yarn:lint:*",
     "lint:css": "stylelint '**/*.+(css|scss|sass)'",
     "lint:js": "eslint '**/*.+(js|jsx)'",
