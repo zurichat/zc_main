@@ -19,7 +19,7 @@ import NewStatusModal from "./NewStatusModal"
 import { authAxios } from "./../utils/Api"
 // react icons
 
-const TopbarModal = ({ members }) => {
+const TopbarModal = ({ members, statusModal,setStatusModal }) => {
   const {
     userProfileImage,
     orgId,
@@ -126,7 +126,7 @@ const TopbarModal = ({ members }) => {
     window.location.href = "/signout"
   }
   const [pause, setPause] = useState(false)
-  const [statusModal, setStatusModal] = useState(false)
+  
 
   var userAppearance = null
   var toggleAppearance = null
