@@ -47,7 +47,7 @@ export const PluginCard = ({ name, id, status, icon_url, description, install_co
         </figure>
         <div className={style.pluginInfo}>
           <h2 className={`mb-0 ${style.pluginName}`}>{name}</h2>
-          <h5 className={`mb-0 ${style.pluginInstallCount}`}>Downloads:{install_count}</h5>
+          <h5 className={`mb-0 ${style.pluginInstallCount}`}>Downloads:    {install_count}</h5>
           <p className={`mb-0 ${style.pluginDescription}`}>
             {trimString(description, 100)}
           </p>
