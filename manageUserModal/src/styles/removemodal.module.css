@@ -1,0 +1,9 @@
+.wrapper {
+    display: block;
+    position: absolute;
+    top: auto;
+    background-color: red;
+  }
+.button{
+  background-color: #00b87c;
+}  
