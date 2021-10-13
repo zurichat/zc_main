@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.modalcontent {
+  width: 600px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+.inviteclose {
+  padding: 20px;
+}
+
+.modalbody {
+  padding: 0 22px 22px 22px;
+  font-family: "Lato";
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto 15px auto;
+}
+
+.icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.done {
+  padding: 10px;
+}
+.done button {
+  background-color: #00b87c;
+  font-family: "Lato";
+  color: #ffffff;
+  border-radius: 3px;
+  padding: 10px 20px;
+  border: none;
+}
+
+.done button:hover {
+  transform: scale(1.1);
+}
+
+.footer{
+    display:flex;
+    justify-content: flex-end;
+    margin:10px 3px;
+}
+
+.inviteclose button {
+  background-color: white;
+  border: none;
+}
+.inviteclose button:hover {
+  transform: scale(1.1);
+}
