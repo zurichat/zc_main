@@ -152,10 +152,13 @@ const Downloads = ({ setModal }) => {
                       <button
                         aria-label={`Open ${file.size} file`}
                         className={styles.openBtn}
+                        
                       >
                         <img src={open} alt="" />
                         <div role="tooltip" className={styles.toolTip}>
-                          <p>Open containing folder</p>
+                          <a href={file.link}
+                          download={file.download}
+                          target="_blank" rel="noreferrer">Open containing folder</a>
                           <img src={pointy} alt="" />
                         </div>
                       </button>
@@ -163,8 +166,7 @@ const Downloads = ({ setModal }) => {
                         aria-label={`Clear ${file.size} file `}
                         className={styles.closeBtn}
                         onClick={() => {
-                          setFiles(files.splice(index,1));
-                          setModal('no')
+                          setFiles(files.filter(file => file.name !== files[index].name));
                         }}
                       >
                         <img src={close} alt="" />
