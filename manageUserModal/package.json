@@ -4,7 +4,7 @@
   "scripts": {
     "start": "webpack serve",
     "start:standalone": "webpack serve --env standalone",
-    "dev": "yarn start --port=8085",
+    "dev": "yarn start --port=8087",
     "lint": "concurrently yarn:lint:*",
     "lint:css": "stylelint '**/*.+(css|scss|sass)'",
     "lint:js": "eslint '**/*.+(js|jsx)'",
