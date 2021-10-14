@@ -91,6 +91,95 @@ export const TRANSLATIONS_ZH = {
       decline: "衰退"
     }
   },
+
+  about: {
+    title: {
+      about: ""
+    },
+
+    banner: {
+      headline_one: "让工作变得简单、愉快和",
+      headline_two: "更有生产力。",
+      description:
+        "是一个协作中心，可将合适的人员和工具聚集在一起以完成工作。 从财富 100 强公司到角落市场，世界各地有数百万人使用 ZuriChat 连接他们的团队、统一他们的系统并推动他们的业务向前发展。",
+    },
+
+    counter: {
+      customers: "有薪酬的",
+      customers_: "顾客",
+      fortune_companies: "财富 100 强",
+      fortune_companies_: "用",
+      countries: "国家每天都有",
+      countries_: "活跃用户",
+    },
+
+    whoWeAre: {
+      title: "我们是谁以及如何加入我们",
+      description: "我们的使命是通过提供一个平台来改善人们的工作生活",
+      description_: "承诺提供各种机会和简单、愉快和更有成效的工作生活。",
+    },
+
+    highlights: {
+      title: "远程工作比以往任何时候都更有趣",
+      description: "ZuriChat 是工作与乐趣相结合的地方。",
+      description_: "从全球任何地方高效地与您的团队联系和互动",
+      channels: {
+        title: "频道",
+        description: "将对话组织成专门的",
+        description_: "称为通道的空间"
+      },
+      holidayCalender: {
+        title: "假期日历",
+        description: "添加假期，设置提醒",
+        description_: "并一目了然地查看所有事件"
+      },
+      companyDeadline: {
+        title: "公司截止日期",
+        description: "跟踪截止日期",
+        description_: "公司截止日期",
+        description__: "特征",
+      },
+      quickReply: {
+        title: "快速回复应用",
+        description: "获得对 Direct 的快速回复",
+        description_: "留言",
+      },
+      todoList: {
+        title: "待办事项清单",
+        description: "使用待办事项列表组织任务",
+        description_: "特征",
+      },
+    },
+
+    features: {
+      title: "特殊功能",
+      description: "通过将所有工作工具组装到一个地方来提高您的生产力",
+      avatar: {
+        title: "动画头像休息室",
+        description: "在头像休息室创建和动画你自己的头像",
+      },
+      files: {
+        title: "公司档案",
+        description: "在 ZuriChat 上访问您在 Google Drive 上的文件。",
+      },
+      accessibility: {
+        title: "无障碍",
+        description: "掌控一切，使用 ZuriChat 并享受",
+        description_: "最佳辅助功能"
+      },
+      goals: {
+        title: "Objectifs de l'entreprise",
+        description: "紧跟公司目标",
+        description_: "就在 ZuriChat 里面"
+      },
+    },
+
+    cta: {
+      title: "无论您做什么工作，您都可以在 Zuri Chat 中完成",
+      link_sales: "与销售人员交谈",
+      link_try: "免费试用"
+    },
+
   careers:{
     title: {
       careers: "职业"
