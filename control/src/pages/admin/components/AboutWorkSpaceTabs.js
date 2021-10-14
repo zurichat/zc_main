@@ -4,7 +4,7 @@ import styles from "../styles/aboutWorkspaceTab.module.css"
 
 // components
 import RetentionAndExports from "../components/RetentionAndExports"
-import AdminOwners from "../components/Admin&Owners"
+import AdminOwners from "./AdminOwners"
 import OverviewWorkspace from "../components/OverviewWorkspace"
 
 // icons

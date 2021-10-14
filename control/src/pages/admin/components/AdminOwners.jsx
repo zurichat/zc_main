@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "../styles/admin&owners.module.css"
+import styles from "../styles/adminowners.module.css"
 import { Link } from "react-router-dom"
 import { FiSearch } from "react-icons/fi"
 import { authAxios } from "../Utils/Api"
