@@ -16,7 +16,7 @@ import {
   UploadInput,
   ListItems,
   ListItem
-} from "../../styles/workSpaceIconChange.js"
+} from "../styles/workSpaceIconChange.js"
 
 const WorkSpaceIcon = () => {
   const [icon, setIcon] = useState(null)
