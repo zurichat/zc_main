@@ -56,7 +56,9 @@ import Legal from "./pages/legal"
 import ZurichatBlog from "./pages/blogs/components/zurichatBlog"
 
 import Ebooks from "./pages/ebooks"
-import Whyzurichat from './pages/WhyZuriChat/Whyzurichat'
+import Whyzurichat from "./pages/WhyZuriChat/Whyzurichat"
+
+import OnboardingHelp from "./pages/LoginSignUpHelp/index"
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -142,7 +144,7 @@ const App = () => {
         </Route>
         <Route path="/terms">
           <TermsOfService />
-          </Route>
+        </Route>
         <Route path="/legal">
           <Legal />
         </Route>
@@ -155,6 +157,11 @@ const App = () => {
         <Route path="/dao-features">
           <DAO_Features />
         </Route>
+
+        <Route path="/troubleshooting/onboarding-help">
+          <OnboardingHelp />
+        </Route>
+
         {/* <Route path="/marketplace" exact>
           <MarketPlace />
         </Route> */}
@@ -164,9 +171,11 @@ const App = () => {
         <Route path="/ZurichatBlog">
           <ZurichatBlog />
         </Route>
+
         <Route path="/whyzurichat">
           <Whyzurichat />
         </Route>
+
         {/* ----------------settings routes opened------------------------ */}
         <PrivateRoute
           path="/confirm-deactivation"
