@@ -26,7 +26,7 @@ const emojiPlugin = createEmojiPlugin({
 const { EmojiSuggestions, EmojiSelect } = emojiPlugin
 const plugins = [emojiPlugin]
 
-const mentionPlugin = createMentionPlugin()
+const mentionPlugin = createMentionPlugin({ mentionPrefix: "@" })
 
 const { Picker } = emojiPlugin
 const { MentionSuggestions } = mentionPlugin
