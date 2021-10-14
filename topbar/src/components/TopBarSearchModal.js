@@ -1,12 +1,68 @@
+
 import styles from "../styles/TopBarSearchModal.module.css"
 import { useState } from "react"
+import axios from "axios"
+import SearchModalResult from "./ModalAutoCompleteResult"
+
+const base_URL = "https://jsonplaceholder.typicode.com/todos"
 
 const TopBarSearchModal = ({ onSearchEnter, onChange }) => {
   const [value, setValue] = useState("")
+  const [items, setItems] = useState("")
+
   const onInputChange = e => {
     setValue(e.target.value)
     onChange(e.target.value)
+    getData()
   }
+  const setInputValue = e => {
+    setValue(e)
+    onChange(e)
+    getData()
+  }
+  function getData() {
+    axios.get(base_URL).then(res => {
+      const result = Object.values(res.data)
+        .map(item => {
+          return item
+        })
+        .filter(item => {
+          return item.title.includes(value)
+        })
+
+      const n = 10 //get the first 15 items
+      setItems(result.slice(0, n))
+    })
+  }
+
+  const pluginName = window.location.href;
+  const newName = pluginName.split('/')
+  const plugins = [
+          {
+          name: 'todo',
+          baseUrl: 'todo.zuri.chat'
+        },
+        {
+          name: 'music',
+          baseUrl: 'music.zuri.chat'
+        },
+        {
+          name: 'channels',
+          baseUrl: 'channels.zuri.chat'
+        },
+        {
+          name: 'dm',
+          baseUrl: 'dm.zuri.chat'
+        },
+        {
+          name: 'files',
+          baseUrl: 'companyfiles.zuri.chat'
+        }
+  ]
+  const exactPlugin = plugins.find(plugin => plugin.name === newName[3] || newName[3]+'#')
+  // console.log(newName)
+  // console.log(exactPlugin)
+
   return (
     <div className={styles.topBarSearchModal}>
       <input
@@ -51,6 +107,20 @@ const TopBarSearchModal = ({ onSearchEnter, onChange }) => {
             </div>
           </div>
         </div>
+        <div></div>
+        <ul className={styles.ListWrapper}>
+          {Array.isArray(items) ? (
+            items.map(item => (
+              <li key={item.id} className={styles.List} >
+                <SearchModalResult title={item.title} />
+              </li>
+            ))
+          ) : (
+            <li>
+              <SearchModalResult title="" />
+            </li>
+          )}
+        </ul>
       </div>
     </div>
   )
