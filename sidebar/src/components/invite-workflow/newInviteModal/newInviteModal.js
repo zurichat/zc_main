@@ -1,6 +1,7 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { ACTIONS } from "../../../App"
+import useClickOutside from "../customHooks/useClickOutside"
 import cancel from "./assets/cancel.svg"
 import { sendInviteAPI } from "./new-invite.utils"
 
@@ -80,19 +81,43 @@ const Button = styled.button`
     justify-content: flex-end;
     background: #00b87c !important;
     color: white !important;
+    padding: 0.5rem !important;
+    border-radius: 0.2rem !important;
   }
 `
 
 function NewInviteModal(props) {
   const [emailField, setEmailField] = useState("")
+  const [showInviteModal, setShowInviteModal] = useState(true)
   const handleCloseInviteModal = () => {
     props.dispatch({
       type: ACTIONS.INVITE_MODAL_TYPE,
       payload: ""
     })
   }
+
+  //Dom Node for the invite modal
+  const inviteModalNode = useClickOutside(() => {
+    setShowInviteModal(false)
+    handleCloseInviteModal()
+  })
+
+  const modalToShow = status => {
+    props.dispatch({
+      type: ACTIONS.MODAL_TO_SHOW,
+      payload: status
+    })
+  }
+
+  const showMessage = message => {
+    props.dispatch({
+      type: ACTIONS.SHOW_MESSAGE,
+      payload: message
+    })
+  }
+
   const isLoading= (visibililty) =>{
-props.dispatch({
+  props.dispatch({
   type: ACTIONS.IS_LOADING,
   payload: visibililty
 })
@@ -104,6 +129,7 @@ props.dispatch({
       payload: visibililty
     })
   }
+
   const handleSendInvite = async () => {
     handleCloseInviteModal()
     isLoading(true)
@@ -116,21 +142,38 @@ props.dispatch({
         )
         if (response.status === 200) {
           setEmailField("")
+          handleCloseInviteModal()
+          modalToShow("success")
           
           isLoading(false)
           isOpen(false)
         }
       } catch (err) {
         setEmailField("")
+        handleCloseInviteModal()
+        modalToShow("error")
         isLoading(false)
         isOpen(false)
       }
     }
+    else {
+      setEmailField("")
+      handleCloseInviteModal()
+      showMessage("Invalid Email")
+      modalToShow("error")
+      isOpen(false)
+    }
   }
+
+  useEffect(() => {
+    setShowInviteModal(true)
+  }, [props.state.inviteModalType])
+
+
   return (
-    props.state.inviteModalType === "show-invite-modal" && (
+    showInviteModal && props.state.inviteModalType === "show-invite-modal" && (
       <Container className="invite-modal-main">
-        <Container className="invite-modal-innerContainer">
+        <Container className="invite-modal-innerContainer" ref={inviteModalNode}>
           <Container className="invite-modal-header">
             <Text>Invite people to HNGi8</Text>
             <Button onClick={handleCloseInviteModal}>
