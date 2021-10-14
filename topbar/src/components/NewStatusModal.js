@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react"
-import Picker, { SKIN_TONE_MEDIUM_DARK } from "emoji-picker-react"
+import { Picker } from "emoji-mart"
+import ReactTooltip from "react-tooltip"
 import DatePicker from "react-datepicker"
 // import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import TimePicker from "react-time-picker"
@@ -9,12 +10,15 @@ import { authAxios } from "../utils/Api"
 import blackx from "../assets/images/blackx.svg"
 import whitex from "../assets/images/whitex.svg"
 import down from "../assets/images/down.svg"
+import smile from "../assets/images/smile.png"
 import { ProfileContext } from "../context/ProfileModal"
 import { TopbarContext } from "../context/Topbar"
+import { StyledEmojiWrapper } from "../styles/EmojiMartStyle"
 
 const SetDateAndTime = ({ dateTime, setDateTime }) => {
   const [value, onChange] = useState(new Date())
   const [timevalue, timeChange] = useState("10:00")
+
   return (
     <>
       <div className={styles.modal}>
@@ -44,44 +48,105 @@ const SetDateAndTime = ({ dateTime, setDateTime }) => {
   )
 }
 
-const SetStatusModal = ({ statusModal, setStatusModal }) => {
+const SetStatusModal = ({
+  statusModal,
+  setStatusModal,
+  emojiItem,
+  text,
+  setText,
+  setEmoji
+}) => {
   const [dropdown, setDropdown] = useState(false)
   const [openEmoji, setOpenEmoji] = useState(false)
   const [dateTime, setDateTime] = useState(false)
-  const [choosePeriod, setChoosePeriod] = useState(`Don't clear`)
+  const [choosePeriod, setChoosePeriod] = useState({
+    label: "Don't clear",
+    value: "dont_clear"
+  })
   const { user, orgId, setUser } = useContext(ProfileContext)
-  const { emoji } = useContext(TopbarContext)
-  const [chosenEmoji, setChosenEmoji] = emoji
-  const [emojiItem, setEmoji] = useState("")
-  const [text, setText] = useState("")
-  const [status, setStatus] = useState([])
-  // const [timeOut, setTimeOut] = useState('')
-  const onEmojiClick = (event, emojiObject) => {
-    setChosenEmoji(emojiObject)
-  }
+  const [statusEmoji, setStatusEmoji] = useState(user?.status?.tag)
+  const [statusText, setStatusText] = useState(user?.status?.text)
 
+  const onEmojiSelect = selectedEmoji => {
+    setStatusEmoji(selectedEmoji.native)
+    setOpenEmoji(!openEmoji)
+  }
+  //
+  const getTime = () => {
+    let d = new Date()
+    let h = d.getHours(),
+      m = d.getMinutes()
+    if (h > 12) {
+      h = h - 12
+    }
+    if (h < 10) {
+      h = "0" + h
+    }
+    if (m < 10) {
+      m = "0" + m
+    }
+
+    return h + ":" + m
+  }
+  const currentTime = getTime()
+  //
   const handleSubmit = e => {
     e.preventDefault()
-    setEmoji(chosenEmoji.emoji)
-    setUser({ ...user, status: { text, emojiItem } })
-    const data = { emojiItem, text, choosePeriod }
-    authAxios
-      .patch(`/organizations/${orgId}/members/${user._id}/status`, {
-        expiry_time: choosePeriod,
-        tag: emojiItem,
-        text: text
-      })
-      .then(res => {
-        // console.log(res)
-      })
-      .catch(err => console.error(err))
 
-    setStatus(status => {
-      return [...status, data]
+    setUser({
+      ...user,
+      status: {
+        text: statusText,
+        tag: statusEmoji,
+        expiry_time: choosePeriod.value
+      }
     })
+
+    try {
+      const res = authAxios.patch(
+        `/organizations/${user.org_id}/members/${user._id}/status`,
+        {
+          expiry_time: choosePeriod.value,
+          tag: statusEmoji,
+          text: statusText
+        }
+      )
+    } catch (error) {
+      const errorResponse = error
+    }
+
     setStatusModal(!statusModal)
   }
 
+  const handleClearStatus = async () => {
+    setUser({
+      ...user,
+      status: {
+        text: "",
+        tag: "",
+        expiry_time: ""
+      }
+    })
+
+    setStatusText("")
+    setStatusEmoji("")
+
+    try {
+      const res = await authAxios.patch(
+        `/organizations/${orgId}/members/${user._id}/status`,
+        {
+          expiry_time: "one_hour",
+          tag: "",
+          text: ""
+        }
+      )
+      const response = res.status
+    } catch (error) {
+      const errorResponse = error
+    }
+
+    setStatusModal(!statusModal)
+  }
   return (
     <div className={styles.modal}>
       <div className={styles.modalcontainer}>
@@ -99,49 +164,66 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
             <div className={styles.addstatus}>
               <div className={styles.addstatusleft}>
                 <p
+                  className={styles.chosenemoji}
                   onClick={() => setOpenEmoji(!openEmoji)}
-                  value={emojiItem}
-                  // onChange={e => setEmoji(e.target.value)}
                 >
-                  {chosenEmoji ? chosenEmoji.emoji : 5}
+                  {statusEmoji || (
+                    <img src={smile} className={styles.defalutEmoji} />
+                  )}
                 </p>
                 <div className={styles.emoji}>
-                  <div>
+                  <StyledEmojiWrapper>
                     {openEmoji ? (
                       <Picker
-                        onEmojiClick={onEmojiClick}
-                        skinTone={SKIN_TONE_MEDIUM_DARK}
-                        value={emojiItem}
-                        onChange={e => setEmoji(e.target.value)}
+                        set="google"
+                        title="pick an emoji..."
+                        emoji="point_up"
+                        onSelect={onEmojiSelect}
                       />
                     ) : null}
-                  </div>
+                  </StyledEmojiWrapper>
                   <div>
                     {openEmoji ? (
                       <img
                         src={blackx}
                         alt=""
-                        onClick={() => setOpenEmoji(!openEmoji)}
-                        className={styles.blackx}
+                        onClick={() => {
+                          setOpenEmoji(!openEmoji)
+                        }}
+                        className={styles.emojiclose}
                       />
                     ) : null}
                   </div>
+                  {openEmoji && (
+                    <div
+                      className={styles.emojiback}
+                      onClick={() => setOpenEmoji(!openEmoji)}
+                    ></div>
+                  )}
                 </div>
                 <input
                   type="text"
                   className={styles.input}
                   placeholder="What is your status?"
-                  value={text}
-                  onChange={e => setText(e.target.value)}
+                  value={statusText}
+                  onChange={e => setStatusText(e.target.value)}
                 />
               </div>
               <img
                 src={blackx}
-                onClick={() => setText("")}
+                onClick={() => {
+                  setStatusText("")
+                  setStatusEmoji("")
+                }}
                 alt="clear status"
                 role="button"
                 className={styles.blackx}
+                data-tip
+                data-for="clearstatus"
               />
+              <ReactTooltip id="clearstatus" type="dark" effect="solid">
+                <span>Clear all</span>
+              </ReactTooltip>
             </div>
             <div className={styles.clearafter}>
               <div
@@ -149,49 +231,86 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
                 onClick={() => setDropdown(!dropdown)}
               >
                 <label htmlFor="" className={styles.dropdowntop}>
-                  Clear after:
-                  <span
-                    className={styles.dropdowntopspan}
-                    value={choosePeriod}
-                    onChange={e => setChoosePeriod(e.target.value)}
-                  >
-                    {choosePeriod}
+                  Clear after: &nbsp;
+                  <span className={styles.dropdowntopspan}>
+                    {choosePeriod.label}
                   </span>
                 </label>
                 <img src={down} alt="" />
               </div>
-
+              {dateTime ? (
+                // <SetDateAndTime
+                //   setDateTime={setDateTime}
+                //   dateTime={dateTime}
+                // />
+                <div className={styles.datetime}>
+                  <input
+                    type="date"
+                    className={styles.date}
+                    defaultValue={new Date().toISOString().slice(0, -14)}
+                    min={new Date().toISOString().slice(0, -14)}
+                  />
+                  <input
+                    type="time"
+                    className={styles.time}
+                    defaultValue={currentTime}
+                    min={currentTime}
+                  />
+                </div>
+              ) : null}
               <div>
                 {dropdown && (
-                  <ul className={styles.dropdown}>
+                  <ul
+                    className={styles.dropdown}
+                    onClick={() => setDropdown(!dropdown)}
+                  >
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod(`dont_clear`)}
+                      onClick={() =>
+                        setChoosePeriod({
+                          label: "Don't clear",
+                          value: "dont_clear"
+                        })
+                      }
                     >
                       Don't clear
                     </li>
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod("one_hour")}
+                      onClick={() =>
+                        setChoosePeriod({ label: "1 hour", value: "one_hour" })
+                      }
                     >
                       1 hour
                     </li>
 
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod("four_hours")}
+                      onClick={() =>
+                        setChoosePeriod({
+                          label: "4 hours",
+                          value: "four_hours"
+                        })
+                      }
                     >
                       4 hours
                     </li>
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod("today")}
+                      onClick={() =>
+                        setChoosePeriod({ label: "Today", value: "today" })
+                      }
                     >
                       Today
                     </li>
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod("this_week")}
+                      onClick={() =>
+                        setChoosePeriod({
+                          label: "This week",
+                          value: "this_week"
+                        })
+                      }
                     >
                       This week
                     </li>
@@ -201,23 +320,36 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
                     >
                       Set date and time
                     </li>
-                    {dateTime ? (
-                      <SetDateAndTime
-                        setDateTime={setDateTime}
-                        dateTime={dateTime}
-                      />
-                    ) : null}
                   </ul>
                 )}
               </div>
             </div>
-            <button
-              className={styles.statuscta}
-              type="submit"
-              onClick={handleSubmit}
-            >
-              Save changes
-            </button>
+            {(user?.status?.tag !== statusEmoji ||
+              user?.status?.text !== statusText) && (
+              <button
+                className={styles.statuscta}
+                type="submit"
+                onClick={handleSubmit}
+              >
+                Save Changes
+              </button>
+            )}
+            {user?.status?.tag === statusEmoji &&
+              user?.status?.text === statusText &&
+              (statusEmoji !== "" || statusText !== "") && (
+                <span
+                  onClick={handleClearStatus}
+                  className={styles.clearstatus}
+                >
+                  Clear Status
+                </span>
+              )}
+            {user?.status?.tag === statusEmoji &&
+              statusEmoji === "" &&
+              user?.status?.text === statusText &&
+              statusText === "" && (
+                <span className={styles.inactivesave}>Save Changes</span>
+              )}
           </form>
           {/* {status.map((data)=>{
                       const {text, emoji} = data;
@@ -230,6 +362,10 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
                   })} */}
         </div>
       </div>
+      <div
+        className={styles.modalback}
+        onClick={() => setStatusModal(!statusModal)}
+      ></div>
     </div>
   )
 }

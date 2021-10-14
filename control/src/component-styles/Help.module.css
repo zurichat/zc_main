@@ -1,34 +1,57 @@
 .help{
-    margin-top: 10%;
-  text-align: center;
+    margin-top: 5%;
+    text-align: center;
+  align-items: center;
+  font-size: 10px;
 }
 
 .firstlayer{
     margin-top: 3%;
+    display: flex;
 }
 
 .invalid > img{
     width: 30vw;
     position: relative;
-    top: -16%;
+  /* top: -16%; */  
 }
 
 .firstcontent{
-    font-size: 17px;
+    font-size: 4px;
     line-height: 25px;
     font-weight: 500;
 }
 
+.secondlayer{
+  display: flex;
+  margin-top: 3%;
+}
+
 .secondcontent{
-    font-size: 17px;
+    font-size: 4px;
     line-height: 25px;
     font-weight: 500;
 }
   
+.tech > img{
+  width: 30vw;
+  position: relative;
+/* top: -16%; */  
+}
+.thirdlayer{
+  display: flex;
+  margin-top: 3%;
+}
 .thirdcontent{
-    font-size: 17px;
+    font-size: 4px;
     line-height: 25px;
     font-weight: 500;
+}
+   
+.mono > img{
+  width: 30vw;
+  position: relative;
+/* top: -16%; */  
 }
 
 @media only screen and (max-width: 600px) {

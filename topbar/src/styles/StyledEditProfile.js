@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 
 export const StyledProfileWrapper = styled.section`
   width: 100%;
@@ -19,6 +19,9 @@ export const StyledProfileWrapper = styled.section`
         @media (max-width: 768px) {
           display: flex;
           align-items: flex-start;
+          flex-direction: column;
+          margin-top: 50px;
+          margin-bottom: 30px;
         }
         .mobileAvataeCon {
           display: none;
@@ -28,6 +31,7 @@ export const StyledProfileWrapper = styled.section`
             width: 10rem;
             height: 10rem;
             border-radius: 4px;
+            align-self: center;
             .icon-container {
               position: absolute;
               top: -0.2rem;
@@ -47,7 +51,7 @@ export const StyledProfileWrapper = styled.section`
             }
             .avatar {
               object-fit: cover;
-              border-radius: 50%;
+              height: 100%;
               width: 100%;
             }
           }
@@ -90,12 +94,13 @@ export const StyledProfileWrapper = styled.section`
         &.mal-4 {
           margin-left: 0;
           @media (max-width: 768px) {
-            margin-left: 1rem;
+            /* margin-left: 1rem; */
+            margin-top: 2rem;
           }
         }
         .inputLabel {
           font-size: 1rem;
-          font-weight: 400;
+          font-weight: 600;
           color: #1d1c1d;
           margin-bottom: 0.75rem;
           display: block;
@@ -107,7 +112,7 @@ export const StyledProfileWrapper = styled.section`
         .css-2b097c-container {
           width: 100%;
           height: 3rem;
-          border: 1px solid #a1a1a1;
+          border: 1.5px solid #a1a1a1;
           padding: 0 1rem;
           font-size: 1.4rem;
           outline: none;
@@ -155,17 +160,17 @@ export const StyledProfileWrapper = styled.section`
           cursor: pointer;
         }
         .para {
-          font-size: 0.75rem;
+          font-size: 0.9rem;
           font-weight: 400;
           color: #6a6a6a;
           line-height: 1.5;
-          max-width: 307px;
+          /* max-width: 307px; */
           text-align: left;
-          margin-top: 0.75rem;
+          margin: 0.75rem 0;
         }
       }
       .double-input {
-        display: grid;
+        /* display: grid; */
         grid-template-columns: 2fr 1fr;
         grid-gap: 1rem;
         align-items: flex-start;
@@ -215,7 +220,7 @@ export const StyledProfileWrapper = styled.section`
       font-weight: 700;
       color: #00b87c;
       position: fixed;
-      top: 2.5rem;
+      top: 1rem;
       right: 2.5rem;
       z-index: 40000;
     }
@@ -224,8 +229,8 @@ export const StyledProfileWrapper = styled.section`
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-top: 2.5rem;
-    margin-bottom: 2rem;
+    /* margin-top: 2.5rem; */
+    margin-bottom: 1rem;
     @media (max-width: 768px) {
       display: none;
     }
@@ -280,3 +285,4 @@ export const StyledProfileWrapper = styled.section`
     }
   }
 `
+// border-radius: 50%;
