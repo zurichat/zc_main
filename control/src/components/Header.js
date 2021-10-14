@@ -4,19 +4,28 @@ import headerStyles from "../component-styles/HeaderStyle.module.css"
 import zurichatlogo from "../component-assets/zurilogo.svg"
 // import searchIcon from "../component-assets/searchIcon.svg"
 //import { Button } from '../pages/createworkspace/components/WorkspaceHome'
+import { useTranslation } from "react-i18next"
 
 const HeaderSearchSuggestion = () => {
+  const { t } = useTranslation()
+
+  const saveLang = lang => {
+    localStorage.setItem("myLanguage", lang)
+    //console.log(localStorage.getItem('myLanguage'))
+    location.reload()
+  }
+
   //const ref = useRef()
   //const toggleBgOverlay = () => {
   //  document
   //    .querySelector(`.${headerStyles.navContainer}`)
   //    .classList.toggle(headerStyles.bg_overlay)
   //}
-//
+  //
   //useEffect(() => {
   //  const checkIfClickedOutside = e => {
   //    const element = document.getElementById("navbarText")
-//
+  //
   //    if (
   //      ref.current &&
   //      !ref.current.contains(e.target) &&
@@ -26,15 +35,14 @@ const HeaderSearchSuggestion = () => {
   //      toggleBgOverlay()
   //    }
   //  }
-//
+  //
   //  document.addEventListener("mousedown", checkIfClickedOutside)
-//
+  //
   //  return () => {
   //    // Cleanup the event listener
   //    document.removeEventListener("mousedown", checkIfClickedOutside)
   //  }
   //}, [])
-
 
   return (
     <header className={headerStyles.pageHeader}>
@@ -59,6 +67,21 @@ const HeaderSearchSuggestion = () => {
             className={`align-top ${headerStyles.searchImage1}`}
           />
         </Link>*/}
+        <div className={`line ${headerStyles.line}`}></div>
+
+        <select
+          className={`btn btn-transparent  ${headerStyles.select}`}
+          type="button"
+          onChange={() => saveLang(event.target.value)}
+        >
+          <option>{t("header.language_select")}</option>
+          <option value="en">English</option>
+          <option value="fr">French</option>
+          <option value="zh">Chinese</option>
+          <option value="ar">Arabic</option>
+          <option value="de">Deutsch</option>
+        </select>
+
         <button
           className={`navbar-toggler ${headerStyles.toggle}`}
           type="button"
@@ -88,7 +111,9 @@ const HeaderSearchSuggestion = () => {
                 className={`nav-link ${headerStyles.navLinkFeatures}`}
                 aria-current="page"
               >
-                <span className={`${headerStyles.item}`}>Pricing</span>
+                <span className={`${headerStyles.item}`}>
+                  {t("landing.nav.pricing")}
+                </span>
               </NavLink>
             </li>
             <li className="nav-item">
@@ -98,7 +123,9 @@ const HeaderSearchSuggestion = () => {
                 role="button"
                 aria-expanded="false"
               >
-                <span className={`${headerStyles.item}`}>About</span>
+                <span className={`${headerStyles.item}`}>
+                  {t("landing.nav.about")}
+                </span>
               </NavLink>
             </li>
             <li className="nav-item">
@@ -116,10 +143,11 @@ const HeaderSearchSuggestion = () => {
                 to="/downloads"
                 className={`nav-link ${headerStyles.navLinkComms}`}
               >
-                <span className={`${headerStyles.item}`}>Downloads</span>
+                <span className={`${headerStyles.item}`}>
+                  {t("landing.nav.downloads")}
+                </span>
               </NavLink>
             </li>
-
 
             <li className="nav-item">
               <NavLink
@@ -128,15 +156,20 @@ const HeaderSearchSuggestion = () => {
                 role="button"
                 aria-expanded="false"
               >
-                <span className={`${headerStyles.item}`}>Contact</span>
+                <span className={`${headerStyles.item}`}>
+                  {t("landing.nav.contact")}
+                </span>
               </NavLink>
             </li>
           </ul>
 
           <ul className={`d-lg-none navbar-nav-scroll ${headerStyles.signs}`}>
             <li className="nav-item">
-              <Link to="/signup" className={`btn ${headerStyles.signU} nav-link`}>
-                <span>Sign Up</span>
+              <Link
+                to="/signup"
+                className={`btn ${headerStyles.signU} nav-link`}
+              >
+                <span>{t("landing.nav.signup")}</span>
               </Link>
             </li>
             <li className="nav-item">
@@ -145,7 +178,7 @@ const HeaderSearchSuggestion = () => {
                 className={`btn ${headerStyles.signIn} nav-link`}
                 role="button"
               >
-                <span className="signin">Login</span>
+                <span className="signin">{t("landing.nav.login")}</span>
               </Link>
             </li>
           </ul>
@@ -163,12 +196,16 @@ const HeaderSearchSuggestion = () => {
         >
           <li className="nav-item">
             <Link to="/signup">
-              <span className={`${headerStyles.signU}`}>Sign Up</span>
+              <span className={`${headerStyles.signU}`}>
+                {t("landing.nav.signup")}
+              </span>
             </Link>
           </li>
           <li className="nav-item">
             <Link to="/login">
-              <span className={`${headerStyles.signIn}`}>Login</span>
+              <span className={`${headerStyles.signIn}`}>
+                {t("landing.nav.login")}
+              </span>
             </Link>
           </li>
         </ul>
