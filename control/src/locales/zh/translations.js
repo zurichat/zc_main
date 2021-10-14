@@ -1,4 +1,7 @@
 export const TRANSLATIONS_ZH = {
+  header: {
+    language_select: "改变语言"
+  },
   landing: {
     title: {
       landing: ""

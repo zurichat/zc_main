@@ -1,4 +1,7 @@
 export const TRANSLATIONS_EN = {
+  header: {
+    language_select: "Change Language"
+  },
   landing: {
     title: {
       landing: ""
