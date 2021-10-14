@@ -1,7 +1,6 @@
 import { useRef, useState, useEffect, useContext } from "react"
 import ProfileModal from "./ProfileModal"
 import { authAxios } from "../utils/Api"
-
 import { AiFillCamera } from "react-icons/ai"
 import defaultAvatar from "../assets/images/avatar_vct.svg"
 import { ProfileContext } from "../context/ProfileModal"
@@ -10,6 +9,7 @@ import toast, { Toaster } from "react-hot-toast"
 import { data } from "../utils/Countrycode"
 import TimezoneSelect from "react-timezone-select"
 import { StyledProfileWrapper } from "../styles/StyledEditProfile"
+
 
 // necessary imports for dark mode
 // copy and paste in other components for dark mode to work
@@ -23,6 +23,10 @@ const EditProfile = () => {
   const store_dark_mode = useSelector(state => state.darkMode)
   
   const imageRef = useRef(null)
+
+const EditProfile = () => {
+  // const imageRef = useRef(null)
+
   const avatarRef = useRef(null)
   const {
     user,
@@ -48,37 +52,32 @@ const EditProfile = () => {
     loading: false,
     imageLoading: false
   })
-
   const addList = () => {
     if (links.length < 5) {
       setLinks([...links, ""])
     }
   }
-
   const handleLinks = (e, index) => {
     links[index] = e.target.value
-
     setLinks(links[index])
   }
 
   //Function handling Image Upload
-
   const handleImageChange = event => {
     setState({ ...state, imageLoading: true })
-    if (imageRef.current.files[0]) {
-      let fileReader = new FileReader()
+    const [file] = event.target.files
 
+    if (file) {
+      let fileReader = new FileReader()
       fileReader.onload = function (event) {
         avatarRef.current.src = event.target.result
       }
 
-      fileReader.readAsDataURL(imageRef.current.files[0])
-
-      const imageReader = event.target.files[0]
+      fileReader.readAsDataURL(file)
+      const imageReader = file
 
       const formData = new FormData()
       formData.append("image", imageReader)
-
       authAxios
         .patch(
           `/organizations/${orgId}/members/${user._id}/photo/upload`,
@@ -101,10 +100,8 @@ const EditProfile = () => {
         })
     }
   }
-
   const handleImageDelete = () => {
     setState({ ...state, imageLoading: true })
-
     authAxios
       .patch(`/organizations/${orgId}/members/${user._id}/photo/delete`)
       .then(res => {
@@ -122,17 +119,13 @@ const EditProfile = () => {
         })
       })
   }
-
   useEffect(() => {
     setUserProfileImage(user.image_url)
   }, [user])
-
   // This will handle the profile form submission
-
   const handleFormSubmit = e => {
     e.preventDefault()
     setState({ ...state, loading: true })
-
     const data = {
       name: state.name,
       display_name: state.display_name,
@@ -151,7 +144,6 @@ const EditProfile = () => {
       //   },
       // ],
     }
-
     authAxios
       .patch(`/organizations/${orgId}/members/${user._id}/profile`, data)
       .then(res => {
@@ -169,7 +161,6 @@ const EditProfile = () => {
         })
       })
   }
-
   return (
     <ProfileModal full title="Edit profile">
       <>
@@ -182,11 +173,10 @@ const EditProfile = () => {
                 <div className="mobileAvataeCon">
                   <img
                     ref={avatarRef}
-                    src={user.image_url !== "" ? user.image_url : defaultAvatar}
+                    src={userProfileImage ? userProfileImage : defaultAvatar}
                     alt="profile-pic"
                     className="avatar"
                   />
-
                   <label htmlFor="img" className="icon-container">
                     <AiFillCamera className="icon" />
                   </label>
@@ -239,7 +229,6 @@ const EditProfile = () => {
                   </select>
                 </div>
               </div>
-
               <div className="input-group mb-0">
                 <label htmlFor="what" className="inputLabel">
                   What you do
@@ -335,8 +324,9 @@ const EditProfile = () => {
                 {links?.map((list, index) => (
                   <input type="text" className="input mb-3" key={index} />
                 ))}
-
-                {links.length !== 5 && (
+               
+18:51
+{links.length !== 5 && (
                   <p className="warning" onClick={addList}>
                     Add new link
                   </p>
@@ -362,11 +352,12 @@ const EditProfile = () => {
                     />
                   )}
                 </div>
-
                 <input
-                  ref={imageRef}
+                  // ref={imageRef}
                   onChange={handleImageChange}
                   type="file"
+                  accept="image/*"
+                  multiple={false}
                   hidden
                   id="img"
                 />
@@ -392,7 +383,6 @@ const EditProfile = () => {
               </div>
             </div>
           </div>
-
           <div onClick={handleFormSubmit} className="mobileButton">
             {state.loading ? (
               <Loader type="ThreeDots" color="#00B87C" height={24} width={24} /> && toggleModalState()
@@ -418,5 +408,4 @@ const EditProfile = () => {
     </ProfileModal>
   )
 }
-
 export default EditProfile
