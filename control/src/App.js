@@ -47,6 +47,8 @@ import AdminSettingsTab from "./pages/admin/Settings/components/AdminSettingsTab
 import TermsOfService from "./pages/termsOfService"
 import RedirectRoute from "./pages/redirect"
 import Plugins from "./pages/plugins"
+import Home from "./pages/admin/Settings/components/SettingsHome"
+import AboutWorkSpace from "./pages/admin/AboutWorkSpace"
 
 import Legal from "./pages/legal"
 import ZurichatBlog from "./pages/blogs/components/zurichatBlog"
@@ -177,10 +179,21 @@ const App = () => {
         <PrivateRoute path="/session-signout" component={AllSessionSignOut} />
         <PrivateRoute path="/settings" exact component={Settings} />
         <PrivateRoute path="/admin/settings" exact component={SettingsHome} />
+        <PrivateRoute path="/admin/settings/home" exact component={Home} />
         <PrivateRoute
           path="/admin/settings/billings"
           exact
           component={Billing}
+        />
+        <PrivateRoute
+          path="/admin/settings/customize"
+          exact
+          component={Customize}
+        />
+        <PrivateRoute
+          path="/admin/settings/aboutworkspace"
+          exact
+          component={AboutWorkSpace}
         />
         {/* <PrivateRoute
           path="/admin/settings/permission"
