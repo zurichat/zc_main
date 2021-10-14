@@ -4,6 +4,9 @@ import { PluginCard } from "../plugins-card/PluginCard"
 import styles from "../../styles/marketplace.module.css"
 import logo from "../../../component-assets/zurichatlogo.svg"
 import SuccessMark from "../../../component-assets/success-mark.svg"
+import ErrorMark from "../../../component-assets/error-mark.svg"
+import { useHistory } from "react-router-dom"
+import ReactPaginate from "react-paginate";
 //eslint-disable-next-line
 import { Modal, Spinner } from "react-bootstrap"
 import { useMarketPlaceContext } from "../../../context/MarketPlace.context"
@@ -23,7 +26,11 @@ const MarketPlaceContainer = ({ type }) => {
   const [installLoading, setInstallLoading] = useState(false)
   const [installErr, setInstallErr] = useState(null)
   const [showSuccess, setShowSuccess] = useState(false)
+  const [showError, setShowError] = useState(false)
+  const [pageNumber, setPageNumber] = useState(0)
   const marketplace = useMarketPlaceContext()
+
+  const history = useHistory()
 
   const { state } = marketplace
 
@@ -47,9 +54,30 @@ const MarketPlaceContainer = ({ type }) => {
       console.error(err)
     }
   }
+  const retrievePopularPlugins = async () => {
+    setPluginsLoading(true)
+    marketplace.dispatch(fetchPlugins())
+    try {
+      const response = await axios.get(
+        "https://api.zuri.chat/marketplace/plugins"
+      )
+      if (response.status === 200 && response.data) {
+        const { data } = response.data
+        marketplace.dispatch(
+          loadPlugins(data.sort((a, b) => b.install_count - a.install_count))
+        )
+        
+        setPluginsLoading(false)
+      }
+    } catch (err) {
+      setPluginsLoading(false)
+      console.error(err)
+    }
+  }
 
   const retrieveInstalledPlugin = async () => {
-    setisLoading(true)
+    setPluginsLoading(true)
+    marketplace.dispatch(fetchPlugins())
     try {
       const response = await axios.get(
         `https://api.zuri.chat/organizations/${currentWorkspace}/plugins`,
@@ -62,10 +90,10 @@ const MarketPlaceContainer = ({ type }) => {
       if (response.status === 200 && response.data) {
         const { data } = response.data
         marketplace.dispatch(loadPlugins(data.map(plugin => plugin.plugin)))
-        setisLoading(false)
+        setPluginsLoading(false)
       }
     } catch (err) {
-      setisLoading(false)
+      setPluginsLoading(false)
       console.error(err)
     }
   }
@@ -80,6 +108,8 @@ const MarketPlaceContainer = ({ type }) => {
         const { data } = response.data
         setPlugin(data)
         setisLoading(false)
+        setShowSuccess(false)
+        setShowError(false)
       }
     } catch (error) {
       console.error(error)
@@ -87,6 +117,50 @@ const MarketPlaceContainer = ({ type }) => {
   }
 
 
+  const installPluginToOrganization = async () => {
+    if (!currentWorkspace) {
+      alert("You are not logged into an Organization/workspace")
+    }
+    setInstallLoading(true)
+    setInstallErr(null)
+    try {
+      const response = await axios.post(
+        plugin.install_url,
+        {
+          user_id: user[0]?._id,
+          organisation_id: currentWorkspace
+        },
+        {
+          timeout: 1000 * 5,
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      )
+      if (response.data.success === true) {
+        setInstallLoading(false)
+        setShowSuccess(true)
+        setTimeout(() => {
+          // Redirect to the plugin page, given redirect_url
+          history.push(response.data.data.redirect_url);
+        }, 5000)
+      } else {
+        throw new Error(response.data.message)
+      }
+    } catch (err) {
+      setInstallErr(err.message ? err.message : "Plugin could not be installed")
+      setShowError(true)
+      setisLoading(false)
+      setInstallLoading(false)
+    }
+  }
+
+
+
+  let emptyImageArray = [logo, logo, logo, logo, logo]
+  const addDefaultImageArray = e => {
+    e.target.src = emptyImageArray
+  }
 
   const getLoggedInUser = async () => {
     try {
@@ -104,16 +178,16 @@ const MarketPlaceContainer = ({ type }) => {
     switch (type) {
       case "all":
         retrievePlugins()
-        break;
+        break
       case "installed":
         retrieveInstalledPlugin()
-        break;
+        break
       case "popular":
-        retrievePlugins()
-        break;
+        retrievePopularPlugins()
+        break
       default:
         retrievePlugins()
-        break;
+        break
     }
     getLoggedInUser()
   }, [])
@@ -122,8 +196,24 @@ const MarketPlaceContainer = ({ type }) => {
     if (marketplace.state.pluginId) {
       retrievePlugin()
     }
-    //eslint-disable-next-line
   }, [marketplace.state.pluginId])
+
+
+  // const  indexOfLastPost = currentPage * pluginPerPage;
+  // const indexOfFirstPost = indexOfLastPost - pluginPerPage;
+  // const currentPlugins = plugin.slice(indexOfFirstPost, indexOfLastPost)
+  
+  // const paginate = (pageNumber) => setCurrentPage(pageNumber)
+  
+  //Logic  for Pagination
+  const pluginsPerPage = 6
+  const pagesVisited = pageNumber * pluginsPerPage
+
+  const pageCount = Math.ceil(state.plugins.length / pluginsPerPage)
+
+  const changePage = ({selected}) => {
+    setPageNumber(selected)
+  };
 
   return (
     <>
@@ -136,13 +226,27 @@ const MarketPlaceContainer = ({ type }) => {
       )}
       {!pluginsLoading && state.plugins.length > 0 && (
         <div className={styles.zuriMarketPlace__container}>
-          {state.plugins.map((plugin, i) => {
+          {state.plugins.slice(pagesVisited, pagesVisited + pluginsPerPage).map((plugin, i) => {
             return <PluginCard key={i} {...plugin} />
+
           })}
           {marketplace.state.isModal && marketplace.state.pluginId && (
 
+
             <MarketPlaceModal />
+
           )}
+            <ReactPaginate 
+              previousLabel={"Previous"}
+              nextLabel={"Next"}
+              pageCount={pageCount}
+              onPageChange={changePage}
+              containerClassName={styles.paginationBttns}
+              previousClassName={styles.previousBttn}
+              nextClassName={styles.nextBttn}
+              disabledClassName={styles.paginationDisabled}
+              activeClassName={styles.paginationActive}
+            />
         </div>
       )}
     </>
