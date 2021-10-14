@@ -59,10 +59,7 @@ const SetStatusModal = ({
   const [dropdown, setDropdown] = useState(false)
   const [openEmoji, setOpenEmoji] = useState(false)
   const [dateTime, setDateTime] = useState(false)
-  const [choosePeriod, setChoosePeriod] = useState({
-    label: "Don't clear",
-    value: "dont_clear"
-  })
+  const [choosePeriod, setChoosePeriod] = useState(user?.status?.expiry_time)
   const { user, orgId, setUser } = useContext(ProfileContext)
   const [statusEmoji, setStatusEmoji] = useState(user?.status?.tag)
   const [statusText, setStatusText] = useState(user?.status?.text)
@@ -98,7 +95,7 @@ const SetStatusModal = ({
       status: {
         text: statusText,
         tag: statusEmoji,
-        expiry_time: choosePeriod.value
+        expiry_time: choosePeriod
       }
     })
 
@@ -106,7 +103,7 @@ const SetStatusModal = ({
       const res = authAxios.patch(
         `/organizations/${user.org_id}/members/${user._id}/status`,
         {
-          expiry_time: choosePeriod.value,
+          expiry_time: choosePeriod,
           tag: statusEmoji,
           text: statusText
         }
@@ -146,6 +143,20 @@ const SetStatusModal = ({
     }
 
     setStatusModal(!statusModal)
+  }
+  const statusHistory = user?.status?.status_history
+    ?.reverse()
+    .filter(history => {
+      return history.text_history !== "" || history.tag_history !== ""
+    })
+  // console.log(statusHistory)
+  // console.log(user)
+  const expiryTimeLabel = {
+    dont_clear: "Don't clear",
+    one_hour: "1 Hour",
+    four_hours: "4 Hours",
+    today: "Today",
+    this_week: "This Week"
   }
   return (
     <div className={styles.modal}>
@@ -225,105 +236,155 @@ const SetStatusModal = ({
                 <span>Clear all</span>
               </ReactTooltip>
             </div>
-            <div className={styles.clearafter}>
-              <div
-                className={styles.clearaftertop}
-                onClick={() => setDropdown(!dropdown)}
-              >
-                <label htmlFor="" className={styles.dropdowntop}>
-                  Clear after: &nbsp;
-                  <span className={styles.dropdowntopspan}>
-                    {choosePeriod.label}
-                  </span>
-                </label>
-                <img src={down} alt="" />
-              </div>
-              {dateTime ? (
-                // <SetDateAndTime
-                //   setDateTime={setDateTime}
-                //   dateTime={dateTime}
-                // />
-                <div className={styles.datetime}>
-                  <input
-                    type="date"
-                    className={styles.date}
-                    defaultValue={new Date().toISOString().slice(0, -14)}
-                    min={new Date().toISOString().slice(0, -14)}
-                  />
-                  <input
-                    type="time"
-                    className={styles.time}
-                    defaultValue={currentTime}
-                    min={currentTime}
-                  />
-                </div>
-              ) : null}
+            {user?.status?.tag === statusEmoji &&
+            statusEmoji === "" &&
+            user?.status?.text === statusText &&
+            statusText === "" ? (
               <div>
-                {dropdown && (
-                  <ul
-                    className={styles.dropdown}
-                    onClick={() => setDropdown(!dropdown)}
-                  >
-                    <li
-                      className={styles.dropdownoption}
-                      onClick={() =>
-                        setChoosePeriod({
-                          label: "Don't clear",
-                          value: "dont_clear"
-                        })
-                      }
-                    >
-                      Don't clear
-                    </li>
-                    <li
-                      className={styles.dropdownoption}
-                      onClick={() =>
-                        setChoosePeriod({ label: "1 hour", value: "one_hour" })
-                      }
-                    >
-                      1 hour
-                    </li>
-
-                    <li
-                      className={styles.dropdownoption}
-                      onClick={() =>
-                        setChoosePeriod({
-                          label: "4 hours",
-                          value: "four_hours"
-                        })
-                      }
-                    >
-                      4 hours
-                    </li>
-                    <li
-                      className={styles.dropdownoption}
-                      onClick={() =>
-                        setChoosePeriod({ label: "Today", value: "today" })
-                      }
-                    >
-                      Today
-                    </li>
-                    <li
-                      className={styles.dropdownoption}
-                      onClick={() =>
-                        setChoosePeriod({
-                          label: "This week",
-                          value: "this_week"
-                        })
-                      }
-                    >
-                      This week
-                    </li>
-                    <li
-                      className={styles.dropdownoption2}
-                      onClick={() => setDateTime(!dateTime)}
-                    >
-                      Set date and time
-                    </li>
-                  </ul>
+                <p>Recent</p>
+                {statusHistory[0] && (
+                  <div>
+                    <span>{statusHistory[0].tag_history}</span>
+                    <span>{statusHistory[0].text_history}</span>
+                    <span>-</span>
+                    <span>
+                      {expiryTimeLabel[statusHistory[0].expiry_history]}
+                    </span>
+                  </div>
                 )}
+                {statusHistory[1] && (
+                  <div>
+                    <span>{statusHistory[1].tag_history}</span>
+                    <span>{statusHistory[1].text_history}</span>
+                    <span>-</span>
+                    <span>
+                      {expiryTimeLabel[statusHistory[1].expiry_history]}
+                    </span>
+                  </div>
+                )}
+                {statusHistory[2] && (
+                  <div>
+                    <span>{statusHistory[2].tag_history}</span>
+                    <span>{statusHistory[2].text_history}</span>
+                    <span>-</span>
+                    <span>
+                      {expiryTimeLabel[statusHistory[2].expiry_history]}
+                    </span>
+                  </div>
+                )}
+                {statusHistory[3] && (
+                  <div>
+                    <span>{statusHistory[3].tag_history}</span>
+                    <span>{statusHistory[3].text_history}</span>
+                    <span>-</span>
+                    <span>
+                      {expiryTimeLabel[statusHistory[3].expiry_history]}
+                    </span>
+                  </div>
+                )}
+                {statusHistory[4] && (
+                  <div>
+                    <span>{statusHistory[4].tag_history}</span>
+                    <span>{statusHistory[4].text_history}</span>
+                    <span>-</span>
+                    <span>
+                      {expiryTimeLabel[statusHistory[4].expiry_history]}
+                    </span>
+                  </div>
+                )}
+                {/* {statusHistory?.map(history => {
+                  return (
+                    <div>
+                      <span>{history.tag_history}</span>
+                      <span>{history.text_history}</span>
+                      <span>-</span>
+                      <span>{history.expiry_history}</span>
+                    </div>
+                  )
+                })} */}
               </div>
-            </div>
+            ) : (
+              <div className={styles.clearafter}>
+                <div
+                  className={styles.clearaftertop}
+                  onClick={() => setDropdown(!dropdown)}
+                >
+                  <label htmlFor="" className={styles.dropdowntop}>
+                    Clear after: &nbsp;
+                    <span className={styles.dropdowntopspan}>
+                      {expiryTimeLabel[choosePeriod]}
+                    </span>
+                  </label>
+                  <img src={down} alt="" />
+                </div>
+                {dateTime ? (
+                  // <SetDateAndTime
+                  //   setDateTime={setDateTime}
+                  //   dateTime={dateTime}
+                  // />
+                  <div className={styles.datetime}>
+                    <input
+                      type="date"
+                      className={styles.date}
+                      defaultValue={new Date().toISOString().slice(0, -14)}
+                      min={new Date().toISOString().slice(0, -14)}
+                    />
+                    <input
+                      type="time"
+                      className={styles.time}
+                      defaultValue={currentTime}
+                      min={currentTime}
+                    />
+                  </div>
+                ) : null}
+                <div>
+                  {dropdown && (
+                    <ul
+                      className={styles.dropdown}
+                      onClick={() => setDropdown(!dropdown)}
+                    >
+                      <li
+                        className={styles.dropdownoption}
+                        onClick={() => setChoosePeriod("dont_clear")}
+                      >
+                        Don't clear
+                      </li>
+                      <li
+                        className={styles.dropdownoption}
+                        onClick={() => setChoosePeriod("one_hour")}
+                      >
+                        1 hour
+                      </li>
+
+                      <li
+                        className={styles.dropdownoption}
+                        onClick={() => setChoosePeriod("four_hours")}
+                      >
+                        4 hours
+                      </li>
+                      <li
+                        className={styles.dropdownoption}
+                        onClick={() => setChoosePeriod("today")}
+                      >
+                        Today
+                      </li>
+                      <li
+                        className={styles.dropdownoption}
+                        onClick={() => setChoosePeriod("this_week")}
+                      >
+                        This week
+                      </li>
+                      <li
+                        className={styles.dropdownoption2}
+                        onClick={() => setDateTime(!dateTime)}
+                      >
+                        Set date and time
+                      </li>
+                    </ul>
+                  )}
+                </div>
+              </div>
+            )}
             {(user?.status?.tag !== statusEmoji ||
               user?.status?.text !== statusText) && (
               <button
@@ -348,7 +409,7 @@ const SetStatusModal = ({
               statusEmoji === "" &&
               user?.status?.text === statusText &&
               statusText === "" && (
-                <span className={styles.inactivesave}>Save Changes</span>
+                <span className={styles.inactivesave}>Save</span>
               )}
           </form>
           {/* {status.map((data)=>{
