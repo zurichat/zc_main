@@ -12,9 +12,11 @@ export const ACTIONS = {
   UPDATE_PLUGINS: "update",
   ADD_ORGANIZATION: "add-org-email",
   INVITE_MODAL_TYPE: "select-invite-modal",
+  MODAL_TO_SHOW: "",
+  SHOW_MESSAGE: "",
+  IS_OPEN: "is-open",
   IS_LOADING: "is-loading",
   RESPONSE_MODAL: "response-modal",
-  IS_OPEN: "is-open",
 }
 
 function reducer(state, action) {
@@ -66,6 +68,21 @@ function reducer(state, action) {
         ...state,
         inviteModalType: action.payload
       }
+    case ACTIONS.MODAL_TO_SHOW:
+      return {
+        ...state,
+        modalToShow: action.payload
+      }
+    case ACTIONS.SHOW_MESSAGE:
+      return {
+        ...state,
+        showMessage: action.payload
+      }
+    case ACTIONS.IS_OPEN:
+      return{
+        ...state,
+        isOpen: action.payload
+      }
       case ACTIONS.IS_LOADING:
       return {
         ...state, 
@@ -77,11 +94,6 @@ function reducer(state, action) {
         ...state,
         modalToShow: action.payload
       }
-      case ACTIONS.IS_OPEN:
-        return{
-...state,
-isOpen: action.payload
-        }
     default:
       return state
   }
