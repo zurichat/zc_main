@@ -11,19 +11,14 @@ import {
   ModalTopic,
 } from "./ModalStyles";
 
-const EditDescriptionModal = (props) => {
-  const closeFrm = (e) => {
-    props.closeFrm && props.closeFrm(e);
-  };
-  if (props.show) {
-    return null;
-  }
+const EditDescriptionModal = ({closeEdit}) => {
+ 
   return (
     <ModalContainer>
       <DescModal>
         <ModalTop>
           <ModalTopic>Description</ModalTopic>
-          <CloseBtn onClick={(e) => closeFrm(e)}> X </CloseBtn>
+          <CloseBtn onClick= { ()=>{closeEdit()}}> X </CloseBtn>
         </ModalTop>
         <Modalbody>
           <textarea placeholder="Add Description" />

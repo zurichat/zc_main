@@ -109,11 +109,11 @@ const CommentBox = ({ addToMessage, users }) => {
 export default CommentBox
 
 const Wrapper = styled.div`
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
   background-color: white;
+  width : 100%;
 `
 
 const InputWrapper = styled.section`
