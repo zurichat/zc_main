@@ -48,7 +48,7 @@ export const PluginCard = ({
 
   const isInstalled = installedPlugins.find(
     plugin => plugin._id === _id 
-    // BECAUSE retreivePlugins() OBJECT RETURN "id" KEY instead of "_id" KEY
+    // BECAUSE retreivePlugins() OBJECT RETURNS "id" KEY instead of "_id" KEY
     || plugin._id === id
   )
 

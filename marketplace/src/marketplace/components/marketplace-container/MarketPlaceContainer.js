@@ -45,7 +45,6 @@ const MarketPlaceContainer = ({ type }) => {
       )
       if (response.status === 200 && response.data) {
         const { data } = response.data
-        // eslint-disable-next-line no-console
         marketplace.dispatch(loadPlugins(data))
         setPluginsLoading(false)
       }
