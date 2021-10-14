@@ -6,9 +6,9 @@ import NewInviteModal from "./invite-workflow/newInviteModal/newInviteModal"
 
 const SidebarHeader = props => {
   //home modal
-  const [homeModal, toggleHomeModal] = useState(false)
+  const [homeModal, toggleHomeModal] = useState(true)
 
-  const [openModal, setOpenModal] = useState(false)
+  const [openModal, setOpenModal] = useState(true)
 
   //toggle
   const toggle = () => {
@@ -41,12 +41,12 @@ const SidebarHeader = props => {
                 style={{ color: `#fff` }}
               />
             </span>{" "}
-            {openModal && (
+            {/* {openModal && (
               <NewInviteModal
                 openModal={openModal}
                 setOpenModal={setOpenModal}
               />
-            )}
+            )} */}
           </div>
           <div className={`row ${styles.newMessage}`}>
             <img
@@ -63,9 +63,11 @@ const SidebarHeader = props => {
               <ModalComponent
                 workSpace={org}
                 isOpen={homeModal}
-                toggleOpenInvite={toggleOpenInvite}
+        //  toggleOpenInvite={toggleOpenInvite}
               />
             </div>
+          {/*
+
 
             <Modall showDialog={showDialog} closeDialog={close} />
 

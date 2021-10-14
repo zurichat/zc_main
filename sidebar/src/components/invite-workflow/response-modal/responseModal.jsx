@@ -1,29 +1,36 @@
-import React , { useState } from 'react'
-import styles from './styles/modal.module.css'
-import successPng from './images/success.png'
-import cancelPng from './images/cancel.png'
-
-
-const Modal = () => {
-
-  const [isOpen, setIsOpen] = useState(false);
+import React, { useState } from "react"
+import styles from "./styles/modal.module.css"
+import successPng from "./images/success.png"
+import cancelPng from "./images/cancel.png"
+import { ACTIONS } from "../../../App"
+const InviteResponseModal = props => {
+  const isOpen = visibililty => {
+    props.dispatch({
+      type: ACTIONS.IS_OPEN,
+      payload: visibililty
+    })
+  }
   const onClose = () => {
-    setIsOpen(true);
-  };
+    isOpen(true)
+  }
 
-  const status = 'success';
-
-  if (isOpen) {
+  if (props.state.isOpen) {
     return null
   }
 
+  //Send more invites
+  const openInviteModal = () => {
+    isOpen(true)
+    props.dispatch({
+      type: ACTIONS.INVITE_MODAL_TYPE,
+      payload: "show-invite-modal"
+    })
+  }
+
   return (
-    <>
+    props.state.isOpen === false && (
       <div className={styles.modal} onClick={onClose}>
-        <div
-          className={styles.modalcontent}
-          onClick={(e) => e.stopPropagation()}
-        >
+        <div className={styles.modalcontent} onClick={e => e.stopPropagation()}>
           <div className={styles.top}>
             <div className={styles.inviteclose}>
               <button onClick={onClose} className={styles.button}>
@@ -62,38 +69,48 @@ const Modal = () => {
             </div>
           </div>
           <div className={styles.modalbody}>
-            {status === 'success' 
-            ? <div className={styles.icon}>
-                <img 
-                    src={successPng}
-                    alt="Email sent successfully"
-                 />
-                <h1>Sent!</h1>  
-                <p>Invites were successfully sent</p>
-            </div>
-            : <div className={styles.icon}>
-                <img 
-                    src={cancelPng}
-                    alt="Sending Invites failed"
-                 />
-                <h1 style={{color:'red'}}>Unable to send Invites</h1>  
-            </div>
-            }
-            
+            {props.state.modalToShow === "success" ? (
+              <div className={styles.icon}>
+                <img src={successPng} alt="Email sent successfully" />
+                <h1>Sent!</h1>
+                <p>
+                  {props.state.showMessage
+                    ? props.state.showMessage
+                    : "Invites were successfully sent"}
+                </p>
+              </div>
+            ) : (
+              <div className={styles.icon}>
+                <img src={cancelPng} alt="Sending Invites failed" />
+                <h1 style={{ color: "red" }}>
+                  {props.state.showMessage
+                    ? props.state.showMessage
+                    : "Unable to send invites"}
+                </h1>
+              </div>
+            )}
           </div>
           <div className={styles.footer}>
             <div className={styles.done}>
-                <button style={{color:'#00b87c' , backgroundColor:'white' , border:'1px solid #00b87c'}}>Send more invites</button>
+              <button
+                onClick={openInviteModal}
+                style={{
+                  color: "#00b87c",
+                  backgroundColor: "white",
+                  border: "1px solid #00b87c"
+                }}
+              >
+                Send more invites
+              </button>
             </div>
             <div className={styles.done}>
-                <button onClick={onClose}>Done</button>
+              <button onClick={onClose}>Done</button>
             </div>
           </div>
-          
         </div>
       </div>
-    </>
+    )
   )
 }
 
-export default Modal
+export default InviteResponseModal
