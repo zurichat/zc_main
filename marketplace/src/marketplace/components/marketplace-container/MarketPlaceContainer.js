@@ -5,7 +5,8 @@ import styles from "../../styles/marketplace.module.css"
 import logo from "../../../component-assets/zurichatlogo.svg"
 import SuccessMark from "../../../component-assets/success-mark.svg"
 import ErrorMark from "../../../component-assets/error-mark.svg"
-
+import { useHistory } from "react-router-dom"
+import ReactPaginate from "react-paginate";
 //eslint-disable-next-line
 import { Modal, Spinner } from "react-bootstrap"
 import { useMarketPlaceContext } from "../../../context/MarketPlace.context"
@@ -25,7 +26,10 @@ const MarketPlaceContainer = ({ type }) => {
   const [installErr, setInstallErr] = useState(null)
   const [showSuccess, setShowSuccess] = useState(false)
   const [showError, setShowError] = useState(false)
+  const [pageNumber, setPageNumber] = useState(0)
   const marketplace = useMarketPlaceContext()
+
+  const history = useHistory()
 
   const { state } = marketplace
 
@@ -42,6 +46,26 @@ const MarketPlaceContainer = ({ type }) => {
       if (response.status === 200 && response.data) {
         const { data } = response.data
         marketplace.dispatch(loadPlugins(data))
+        setPluginsLoading(false)
+      }
+    } catch (err) {
+      setPluginsLoading(false)
+      console.error(err)
+    }
+  }
+  const retrievePopularPlugins = async () => {
+    setPluginsLoading(true)
+    marketplace.dispatch(fetchPlugins())
+    try {
+      const response = await axios.get(
+        "https://api.zuri.chat/marketplace/plugins"
+      )
+      if (response.status === 200 && response.data) {
+        const { data } = response.data
+        marketplace.dispatch(
+          loadPlugins(data.sort((a, b) => b.install_count - a.install_count))
+        )
+        
         setPluginsLoading(false)
       }
     } catch (err) {
@@ -105,25 +129,24 @@ const MarketPlaceContainer = ({ type }) => {
           organisation_id: currentWorkspace
         },
         {
+          timeout: 1000 * 5,
           headers: {
             Authorization: `Bearer ${token}`
           }
         }
       )
-      if (response.data.status === 200) {
+      if (response.data.success === true) {
         setInstallLoading(false)
         setShowSuccess(true)
         setTimeout(() => {
-          window.location.replace("/home")
+          // Redirect to the plugin page, given redirect_url
+          history.push(response.data.data.redirect_url);
         }, 5000)
       } else {
-        setInstallErr("Unable to Install this Plugin")
-        setShowError(true)
-        setisLoading(false)
-        setInstallLoading(false)
+        throw new Error(response.data.message)
       }
     } catch (err) {
-      setInstallErr("Unable to Install this Plugin")
+      setInstallErr(err.message ? err.message : "Plugin could not be installed")
       setShowError(true)
       setisLoading(false)
       setInstallLoading(false)
@@ -133,6 +156,7 @@ const MarketPlaceContainer = ({ type }) => {
   const addDefaultImage = e => {
     e.target.src = logo
   }
+
   let emptyImageArray = [logo, logo, logo, logo, logo]
   const addDefaultImageArray = e => {
     e.target.src = emptyImageArray
@@ -159,7 +183,7 @@ const MarketPlaceContainer = ({ type }) => {
         retrieveInstalledPlugin()
         break
       case "popular":
-        retrievePlugins()
+        retrievePopularPlugins()
         break
       default:
         retrievePlugins()
@@ -172,8 +196,24 @@ const MarketPlaceContainer = ({ type }) => {
     if (marketplace.state.pluginId) {
       retrievePlugin()
     }
-    //eslint-disable-next-line
   }, [marketplace.state.pluginId])
+
+
+  // const  indexOfLastPost = currentPage * pluginPerPage;
+  // const indexOfFirstPost = indexOfLastPost - pluginPerPage;
+  // const currentPlugins = plugin.slice(indexOfFirstPost, indexOfLastPost)
+  
+  // const paginate = (pageNumber) => setCurrentPage(pageNumber)
+  
+  //Logic  for Pagination
+  const pluginsPerPage = 6
+  const pagesVisited = pageNumber * pluginsPerPage
+
+  const pageCount = Math.ceil(state.plugins.length / pluginsPerPage)
+
+  const changePage = ({selected}) => {
+    setPageNumber(selected)
+  };
 
   return (
     <>
@@ -186,8 +226,9 @@ const MarketPlaceContainer = ({ type }) => {
       )}
       {!pluginsLoading && state.plugins.length > 0 && (
         <div className={styles.zuriMarketPlace__container}>
-          {state.plugins.map((plugin, i) => {
+          {state.plugins.slice(pagesVisited, pagesVisited + pluginsPerPage).map((plugin, i) => {
             return <PluginCard key={i} {...plugin} />
+
           })}
           {marketplace.state.isModal && marketplace.state.pluginId && (
             <Modal
@@ -261,34 +302,41 @@ const MarketPlaceContainer = ({ type }) => {
                   <div className={styles.marketplaceModalMain}>
                     <h3>About</h3>
                     <div className={styles.marketplaceModalPluginImages}>
-                      {
-                        plugin.images !== undefined
-                      ? plugin.images
-                      .filter((image, idx) => idx < 3)
-                      .map((image, idx)=>
-                        <img key={idx} src={image} 
-                        onError={addDefaultImageArray} alt={plugin.name} />
-                        )
-                      : emptyImageArray
-                      .filter((image, idx) => idx < 3)
-                      .map((image, idx)=>
-                        <img key={idx} src={image} 
-                        onError={addDefaultImageArray} alt={plugin.name} style={{display: "none"}}/>
-                        )
-                      }
+                      {plugin.images !== undefined
+                        ? plugin.images
+                            .filter((image, idx) => idx < 3)
+                            .map((image, idx) => (
+                              <img
+                                key={idx}
+                                src={image}
+                                onError={addDefaultImageArray}
+                                alt={plugin.name}
+                              />
+                            ))
+                        : emptyImageArray
+                            .filter((image, idx) => idx < 3)
+                            .map((image, idx) => (
+                              <img
+                                key={idx}
+                                src={image}
+                                onError={addDefaultImageArray}
+                                alt={plugin.name}
+                                style={{ display: "none" }}
+                              />
+                            ))}
                     </div>
                     <p className="px-0">{plugin.description}</p>
-                    <hr/>
+                    <hr />
                     <div className="styles.marketplacePluginInfo">
-                    <h3>Plugin info</h3>
-                    
-                    <br />
-                    <p>Downloads: {plugin.install_count}</p>
-                    <p>Version: {plugin.version}</p>
-                    <p>Created on: {plugin.created_at.slice(0,10)}</p>
-                    <p>Offered by: {plugin.developer_name}</p>
-                    <p>Updated on: {plugin.updated_at.slice(0,10)}</p>
-                    </div>  
+                      <h3>Plugin info</h3>
+
+                      <br />
+                      <p>Downloads: {plugin.install_count}</p>
+                      <p>Version: {plugin.version}</p>
+                      <p>Created on: {plugin.created_at.slice(0, 10)}</p>
+                      <p>Offered by: {plugin.developer_name}</p>
+                      <p>Updated on: {plugin.updated_at.slice(0, 10)}</p>
+                    </div>
                   </div>
                 </div>
               )}
@@ -320,6 +368,17 @@ const MarketPlaceContainer = ({ type }) => {
               )}
             </Modal>
           )}
+            <ReactPaginate 
+              previousLabel={"Previous"}
+              nextLabel={"Next"}
+              pageCount={pageCount}
+              onPageChange={changePage}
+              containerClassName={styles.paginationBttns}
+              previousClassName={styles.previousBttn}
+              nextClassName={styles.nextBttn}
+              disabledClassName={styles.paginationDisabled}
+              activeClassName={styles.paginationActive}
+            />
         </div>
       )}
     </>
