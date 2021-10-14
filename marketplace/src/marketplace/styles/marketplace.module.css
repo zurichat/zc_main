@@ -688,12 +688,15 @@
   padding-left: 0;
 }
 
+.paginationBttns {
+    color: #616061;
+}
+
 .paginationBttns a {
   padding: 10px;
   margin: 8px;
   border-radius: 5px;
   border: 1px solid #00b87c;
-  color: #616061 !important;
   cursor: pointer;
 
 }
@@ -703,8 +706,11 @@
   background-color: #00b87c;
 }
 
+.paginationActive {
+    color: white;
+}
+
 .paginationActive a {
-  color: white !important;
   background-color: #00b87c;
 }
 
