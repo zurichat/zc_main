@@ -143,7 +143,9 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   const currentWorkspace = localStorage.getItem("currentWorkspace")
 
-  SubscribeToChannel(currentWorkspace, callbackFn)
+  useEffect(() => {
+    SubscribeToChannel(currentWorkspace, callbackFn)
+  }, [])
 
   // useEffect(() => {
   //   if (showModal===true) {
