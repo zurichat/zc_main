@@ -23,9 +23,6 @@ const OverviewWorkspace = ({ organizationDetails, currentWorkspace }) => {
     "en-US",
     options
   )
-
-  //eslint-disable-next-line
-  console.log(date)
   return (
     <div>
       <div className={styles.details}>
