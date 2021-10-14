@@ -7,7 +7,8 @@ import styled from "styled-components"
 import { BaseInput } from "./TopBarIndex"
 import defaultAvatar from "./assets/images/avatar_vct.svg"
 // import HelpIcon from './assets/images/help-icon.svg'
-import TopbarModal from "./components/TopbarModal"
+import TopbarModal from "./components/TopbarModal";
+import themeColors from "../../theming/themecolors"
 // import HelpModal from './components/HelpModal'
 // import UserForm from '../../control/src/pages/ReportFeature/User/Form'
 // import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
@@ -36,6 +37,11 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const [helpModal, setHelpModal] = useState(false)
   // const [memberId, setMemberId] = useState('');
   const [messages, setMessages] = useState("")
+  const themeStyle= localStorage.getItem("customTheme")
+  const topBarDiv =document.getElementById("single-spa-application:@zuri/topbar")
+  topBarDiv.style.backgroundColor= themeColors[themeStyle]. primary
+  topBarDiv.style.color= themeColors[themeStyle].textColor
+
   useEffect(() => {
     // const fetchUser = async () => {
     //   const info = await GetUserInfo()
@@ -167,6 +173,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     "single-spa-application:@zuri/sidebar"
   )
   useEffect(() => {
+    
     if (toggleSidebar && window.outerWidth <=768) {
       sidebar.style.display = "block"
     } 
@@ -176,6 +183,8 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     else {
       sidebar.style.display = "none"
     }
+    
+    
   }, [toggleSidebar, sidebar])
 
 

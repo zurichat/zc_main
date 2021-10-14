@@ -19,7 +19,29 @@ const themeColors =
     primary: "#06083A",
     secondary: "1018DD",
     textColor: "8F92CE"
+  },
+
+  darkAsh:
+  {
+    primary:"#464646",
+    secondary:"#242424",
+    textColor:"#645c5c"
+  },
+
+  leafyGreen:
+  {
+    primary:"#84be69",
+    secondary:"#2b7608",
+    textColor:"#99d07f"
+  },
+
+  roseRed:{
+    primary:"#450303",
+    secondary:"#ed2222",
+    textColor:"#c86868"
   }
+
+  
 };
 
 export default themeColors;
