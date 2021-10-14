@@ -231,10 +231,7 @@ const MarketPlaceContainer = ({ type }) => {
 
           })}
           {marketplace.state.isModal && marketplace.state.pluginId && (
-
-
-            <MarketPlaceModal />
-
+           <MarketPlaceModal />
           )}
             <ReactPaginate 
               previousLabel={"Previous"}
