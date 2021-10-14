@@ -1,49 +1,65 @@
 .msgCon {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 20px;
+  margin-top: 26px;
+  margin-left: 50px;
   width: 80%;
+  line-height: 19px;
+}
+p {
   line-height: 30px;
 }
-
-p{
-  line-height: 30px;
-}
-
 .title {
   font-weight: bold;
   font-size: 15px;
-  line-height: 20px;
+  line-height: 19px;
   font-style: normal;
-  color: var(--text-color-gray-1);
+  color: #242424;
 }
-
 .clean {
   display: flex;
   margin-top: 8px;
   align-items: center;
 }
-
 .cln {
   margin-left: 10px;
   font-size: 13px;
-  color: var(--text-color-gray);
+  color: #3a3a3a;
   font-style: normal;
 }
-
 .compt {
   margin-left: 10px;
   font-size: 13px;
   font-weight: normal;
   font-style: normal;
   line-height: 15px;
-  color: var(--text-color-gray);
+  color: #3a3a3a;
 }
 
-.radio {
+.radioInput {
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  width: 12px;
+  height: 12px;
+  border-radius: 10px;
+  border: 1px solid #bebebe;
 }
-
-.radio2 {
+.radioInput::before {
+  display: block;
+  position: absolute;
+  content: " ";
+  width: 8px;
+  height: 8px;
+  top: -2px;
+  left: -2px;
+  border-radius: 4px;
+  background: #00b87c;
+  transform: translate(3px, 3px) scale(0);
+  transform-origin: center;
+  transition: all 0.3s ease-in;
+}
+.radioInput:checked::before {
+  transform: translate(3px, 3px) scale(1);
+  transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2);
 }
 
 .compact {
@@ -51,95 +67,139 @@ p{
   margin-top: 3px;
   align-items: center;
 }
-
 .text {
   font-size: 13px;
   line-height: 15px;
   font-style: normal;
   font-weight: normal;
   margin-top: 6px;
-  color: var(--text-color-gray);
+  color: #3a3a3a;
 }
-
 .theme11 {
   width: 100%;
   margin-top: 15px;
 }
-
+.previewCard {
+  width: 100%;
+  border: 1px solid rgba(58, 58, 58, 0.5);
+  box-sizing: border-box;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  margin-top: 11px;
+}
+.previewCard1 {
+  display: flex;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid rgba(58, 58, 58, 0.5);
+  padding: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 11px;
+}
+.previewCard1 * {
+  margin-left: 8px;
+}
+.previewCard1 .time {
+  margin-top: 0;
+}
+.previewInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 15px;
+}
+.message {
+  font-size: 13px;
+  line-height: 13px;
+  color: #3a3a3a;
+}
+.previewName {
+  display: flex;
+  margin-bottom: 11px;
+  align-items: center;
+  justify-content: flex-start;
+}
+.name {
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 17px;
+  color: #242424;
+}
+.time {
+  font-weight: 500;
+  margin-left: 14px;
+  margin-top: 0px !important;
+  font-size: 10px;
+  line-height: 13px;
+  color: #c1c1c1;
+}
 .bottom {
   margin-top: 25px;
   margin-bottom: 25px;
   border-bottom: 1px solid rgba(214, 211, 211, 0.5);
   width: 100%;
 }
-
 .name {
   font-weight: bold;
   font-size: 15px;
   font-style: normal;
   line-height: 20px;
-  color: var(--text-color-gray-1);
+  color: #242424;
 }
-
 .full {
   display: flex;
   align-items: center;
   margin-top: 8px;
   margin-left: 1px;
 }
-
 .display {
   margin-left: 10px;
   font-size: 13px;
-  color: var(--text-color-gray);
+  color: #3a3a3a;
   font-weight: normal;
   font-style: normal;
 }
-
 .jst {
   margin-left: 10px;
   font-size: 13px;
-  color: var(--text-color-gray);
+  color: #3a3a3a;
   font-weight: normal;
   font-style: normal;
-}
-
-.radio3 {
 }
 
 .radio4 {
   margin-left: 1px;
 }
-
 .just {
   display: flex;
   align-items: center;
   margin-top: 3px;
 }
-
 .theme12 {
   width: 100%;
   margin-top: 15px;
   margin-left: 3px;
 }
-
 .change {
   margin-top: 10px;
   font-size: 13px;
   line-height: 20px;
   font-weight: normal;
   font-style: normal;
-  color: var(--text-color-normal);
+  color: #999999;
 }
-
 .change span {
   color: #00b87c;
   margin-top: -20px;
-   margin-left: 3px; 
+  margin-left: 3px;
   font-weight: normal;
   font-size: 13px;
 }
-
 .bottom2 {
   margin-top: 20px;
   margin-bottom: 25px;
@@ -147,64 +207,78 @@ p{
   width: 100%;
   margin-left: 3px;
 }
-
+.inputCheckBox {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 12px;
+  width: 12px;
+  position: relative;
+  border: 1.5px solid #3e3e3e;
+  border-radius: 2px;
+  margin-right: 20px;
+}
+.inputCheckBox::before {
+  content: "\2713";
+  display: block;
+  text-align: center;
+  color: white;
+  width: 6px;
+  height: 4px;
+  position: absolute;
+  left: 0.15rem;
+  top: -0.1rem;
+  font-size: 0.7rem;
+  visibility: hidden;
+}
+.inputCheckBox:checked::before {
+  visibility: visible;
+}
+.inputCheckBox:checked {
+  background-color: #00b87c;
+  border: #00b87c;
+}
 .info {
   display: flex;
   align-items: center;
   margin-top: 15px;
 }
-
 .current {
   margin-left: -10px;
   font-size: 13px;
-  color: var(--text-color-normal);
+  color: #999999;
   font-weight: normal;
   font-style: normal;
 }
-
-.time {
+.timed {
   display: flex;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 16px;
 }
-
 .hour {
   margin-left: -10px;
   font-size: 13px;
-  color: var(--text-color-normal);
+  color: #999999;
   font-weight: normal;
   font-style: normal;
 }
-
 .hexa {
   display: flex;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 16px;
 }
-
 .color {
   margin-left: -10px;
   font-size: 13px;
-  color: var(--text-color-normal);
+  color: #999999;
   font-weight: normal;
   font-style: normal;
 }
-
 .add {
   font-weight: 600;
   font-size: 13px;
   line-height: 20px;
   font-style: normal;
-  color: var(--text-color-normal);
-}
-
-.checkbox {
-}
-
-.checkbox2 {
-}
-
-.checkbox3 {
+  color: #333333;
 }
 
 .bottom3 {
@@ -213,47 +287,58 @@ p{
   border-bottom: 1px solid rgba(214, 211, 211, 0.5);
   width: 100%;
 }
-
 .emoji {
   font-weight: bold;
   font-size: 15px;
   line-height: 20px;
   font-style: normal;
-  color: var(--text-color-gray-1);
+  color: #333333;
 }
-
 .tone {
   margin-top: 10px;
   font-size: 13px;
-  color: var(--text-color-normal);
+  color: #999999;
   line-height: 20px;
   font-weight: normal;
   font-style: normal;
 }
-
 .choose {
   margin-top: 15px;
   font-size: 13px;
-  color: var(--text-color-normal);
+  color: #999999;
   line-height: 30px;
   font-weight: normal;
   font-style: normal;
 }
-
 .choose2 {
   font-size: 13px;
-  color: var(--text-color-normal);
+  color: #999999;
   line-height: 30px;
   font-weight: normal;
   font-style: normal;
 }
-
 .hands {
   display: flex;
   margin-top: 16px;
 }
-
-.theme13 {
+.emojiBox {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(153, 153, 153, 0.5);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.emojiBox:focus {
+  border: 1px solid rgba(0, 184, 124, 0.5);
+}
+/* .emoji img{
+  width: ;
+} */
+/* .theme13 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -261,7 +346,6 @@ p{
   width: 7.5%;
   cursor: pointer;
 }
-
 .theme14 {
   display: flex;
   align-items: center;
@@ -272,7 +356,6 @@ p{
   margin-left: 19px;
   cursor: pointer;
 }
-
 .theme15 {
   display: flex;
   align-items: center;
@@ -283,7 +366,6 @@ p{
   margin-left: 19px;
   cursor: pointer;
 }
-
 .theme16 {
   display: flex;
   align-items: center;
@@ -294,7 +376,6 @@ p{
   margin-left: 19px;
   cursor: pointer;
 }
-
 .theme17 {
   display: flex;
   align-items: center;
@@ -305,7 +386,6 @@ p{
   margin-left: 19px;
   cursor: pointer;
 }
-
 .theme18 {
   display: flex;
   align-items: center;
@@ -315,152 +395,125 @@ p{
   cursor: pointer;
   margin-left: 19px;
   cursor: pointer;
-}
-
+} */
 .plntxt {
   display: flex;
   align-items: center;
   margin-top: 12px;
 }
-
 .plain {
   margin-left: -10px;
   font-size: 13px;
-  color: var(--text-color-normal);
+  color: #999999;
   font-weight: normal;
   font-style: normal;
 }
-
 .jumb {
   display: flex;
   align-items: center;
   margin-top: 8px;
 }
-
 .jumbomoji {
   margin-left: -10px;
   font-size: 13px;
-  color: var(--text-color-normal);
+  color: #999999;
   font-weight: normal;
   font-style: normal;
-}
-
-.checkbox4 {
-}
-
-.checkbox5 {
 }
 
 .versions {
   margin-top: 10px;
   font-size: 13px;
-  color: var(--text-color-normal);
+  color: #999999;
   line-height: 30px;
   font-weight: normal;
   font-style: normal;
 }
-
 .example {
   margin-top: 10px;
   font-size: 13px;
-  color: var(--text-color-gray-1);
+  color: #999999;
   line-height: 20px;
   font-weight: normal;
   font-style: normal;
 }
-
 .theme19 {
   margin-top: 15px;
   margin-left: 2px;
 }
-
 .bottom4 {
   margin-top: 20px;
   margin-bottom: 25px;
   border-bottom: 1px solid rgba(214, 211, 211, 0.5);
   margin-left: 3px;
 }
-
 .media {
   font-weight: bold;
   font-size: 15px;
   line-height: 20px;
   font-style: normal;
-  color: var(--text-color-normal);
+  color: #333333;
 }
-
 .images {
   display: flex;
   align-items: center;
   margin-top: 10px;
 }
-
 .files {
   margin-left: -10px;
   font-size: 13px;
-  color: var(--text-color-normal);
+  color: #999999;
   font-weight: normal;
   font-style: normal;
 }
-
 .websites {
   display: flex;
   align-items: center;
   margin-top: 10px;
 }
-
 .linked {
   margin-left: -10px;
   font-size: 13px;
-  color: var(--text-color-normal);
+  color: #999999;
   font-weight: normal;
   font-style: normal;
 }
-
 .checkbox6 {
   margin-left: 3px;
 }
-
 .checkbox7 {
   margin-left: 3px;
 }
-
 .larger {
   display: flex;
   align-items: center;
   margin-top: 10px;
 }
-
 .than {
   margin-left: -10px;
   font-size: 13px;
-  color: var(--text-color-normal);
+  color: #999999;
   font-weight: normal;
   font-style: normal;
 }
-
 .checkbox8 {
   margin-left: 3px;
 }
-
 .previews {
   display: flex;
   align-items: center;
   margin-top: 10px;
 }
-
 .of {
   margin-left: -10px;
   font-size: 13px;
-  color: var(--text-color-normal);
+  color: #999999;
   font-weight: normal;
   font-style: normal;
 }
-
 .checkbox9 {
   margin-left: 3px;
 }
-
 .bottom5 {
   margin-top: 20px;
   margin-bottom: 25px;
@@ -468,50 +521,35 @@ p{
   width: 100%;
   margin-left: 3px;
 }
-
 .emails {
   font-weight: bold;
   font-size: 15px;
   line-height: 20px;
   font-style: normal;
-  color: var(--text-color-normal);
+  color: #333333;
 }
-
 .upload {
   margin-top: 10px;
   font-size: 13px;
-  color: var(--text-color-normal);
+  color: #999999;
   line-height: 30px;
   font-weight: normal;
   font-style: normal;
 }
-
 .upload2 {
   font-size: 13px;
-  color: var(--text-color-normal);
+  color: #999999;
   line-height: 30px;
   font-weight: normal;
   font-style: normal;
 }
-
 .upload3 {
   font-size: 13px;
-  color: var(--text-color-normal);
+  color: #999999;
   line-height: 30px;
   font-weight: normal;
   font-style: normal;
 }
-
-.button {
-  border-radius: 6px;
-  background-color: white;
-  color: #00b87c;
-  border: 1px solid #00b87c;
-  margin-top: 24px;
-  margin-bottom: 30px;
-  cursor: pointer;
-}
-
 .forward {
   font-size: 13px;
   font-weight: 400;

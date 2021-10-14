@@ -205,9 +205,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
             <div className={styles.sectionOne}>
               <div className={styles.oneLeft}>
                 <img
-                  src={
-                    userProfileImage !== "" ? userProfileImage : defaultAvatar
-                  }
+                  src={userProfileImage ? userProfileImage : defaultAvatar}
                   alt="profile-pic"
                 />
               </div>
@@ -223,7 +221,6 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
                 {toggleAppearance}
               </div>
             </div>
-
             <div
               className={styles.sectionTwo}
               onClick={() => {
