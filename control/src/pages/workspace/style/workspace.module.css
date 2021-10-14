@@ -137,11 +137,29 @@
 /* Workspace header */
 
 .workspace_header {
+  /* margin-left: 20%; */
   padding: 1rem;
-  display: grid;
-  grid-template-columns: 1fr auto;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  flex-direction: column;
+  /* font-size: medium; */
+  /* grid-template-columns: 1fr auto; */
   position: relative;
   min-height: 45vh;
+}
+
+.ChooseWorkspaceHeaderDiv1 {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.ZuriLogo {
+  align-self: center;
 }
 
 .page_header {

@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
 
 * {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -9,37 +9,43 @@ button:hover {
   cursor: pointer;
 }
 .Section2 {
-  margin-bottom: 0rem;
+  font-family: 'Lato', sans-serif;
+  margin-bottom: 0.5rem;
 }
 .Section2 h2 {
   font-size: 36px;
-  margin: 0;
+  margin: 1rem 0;
   text-align: center;
 }
 .Section2 p {
+  margin-bottom: 2.5rem;
   font-size: 20px;
   text-align: center;
 }
 .subSection2 {
   text-align: left;
-  padding: 69px 60px 69px 60px;
+  padding: 2rem 2.5rem;
   background-color: #00b87c;
-  display: flex;
-  flex-direction: row;
-  grid-gap: 100px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: baseline;
+  grid-gap: 2rem;
 }
+
 .subSection2 h3 {
+  margin: 1rem;
   font-size: 24px;
   color: #ffffff;
+  margin-bottom: 2rem;
 }
 .subSection2 p {
-  margin: 0;
+  margin: 1rem;
   text-align: left;
-  font-size: 20px;
+  font-size: 18px;
   color: #ffffff;
 }
 
-@media screen and (max-width: 1085px) {
+/* @media screen and (max-width: 1085px) {
   .subSection2 {
     grid-gap: 80px;
   }
@@ -67,20 +73,23 @@ button:hover {
   .subSection2 p {
     padding: 0 50px 0px 0px;
   }
-}
-
+} */
 
 @media screen and (max-width: 480px) {
+  .subSection2 {
+    margin: 0.5rem 0rem;
+  }
   .Section2 h2 {
     font-size: 22px;
   }
   .Section2 p {
     font-size: 16px;
-    margin-bottom: -5px;
+    margin-bottom: 0.5rem;
   }
   .subSection2 {
-    grid-gap: 30px;
-    padding: 30px;
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+    padding: 20px;
   }
   .subSection2 h3 {
     font-size: 22px;
