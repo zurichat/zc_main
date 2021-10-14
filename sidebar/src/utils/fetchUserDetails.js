@@ -6,7 +6,7 @@ export const fetchUser = async dispatch => {
   try {
     const user = await GetUserInfo()
 
-    //Get wrokspace info
+    //Get workspace info
     let currentWorkspace = localStorage.getItem("currentWorkspace")
 
     //Check if user id is valid and get user organization

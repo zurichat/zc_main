@@ -2,21 +2,36 @@ import React, { useState } from "react"
 import styles from "./styles/modal.module.css"
 import successPng from "./images/success.png"
 import cancelPng from "./images/cancel.png"
+import { ACTIONS } from "../../../App"
 
-const InviteResponseModal = () => {
-  const [isOpen, setIsOpen] = useState(true)
-  const onClose = () => {
-    setIsOpen(true)
+const InviteResponseModal = (props) => {
+
+  const isOpen = visibililty => {
+    props.dispatch({
+      type: ACTIONS.IS_OPEN,
+      payload: visibililty
+    })
   }
 
-  const status = "success"
+  const onClose = () => {
+    isOpen(true)
+  }
 
-  if (isOpen) {
+  if (props.state.isOpen) {
     return null
   }
 
+  //Send more invites
+  const openInviteModal = () => {
+    isOpen(true)
+    props.dispatch({
+      type: ACTIONS.INVITE_MODAL_TYPE,
+      payload: "show-invite-modal"
+    })
+  }
+
   return (
-    <>
+    props.state.isOpen === false && (
       <div className={styles.modal} onClick={onClose}>
         <div className={styles.modalcontent} onClick={e => e.stopPropagation()}>
           <div className={styles.top}>
@@ -57,7 +72,7 @@ const InviteResponseModal = () => {
             </div>
           </div>
           <div className={styles.modalbody}>
-            {status === "success" ? (
+            {props.state.modalToShow === "success" ? (
               <div className={styles.icon}>
                 <img src={successPng} alt="Email sent successfully" />
                 <h1>Sent!</h1>
@@ -73,6 +88,7 @@ const InviteResponseModal = () => {
           <div className={styles.footer}>
             <div className={styles.done}>
               <button
+                onClick={openInviteModal}
                 style={{
                   color: "#00b87c",
                   backgroundColor: "white",
@@ -88,7 +104,7 @@ const InviteResponseModal = () => {
           </div>
         </div>
       </div>
-    </>
+    )
   )
 }
 
