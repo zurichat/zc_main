@@ -88,7 +88,7 @@ const MessageInputBox = ({ sendMessageHandler, addToMessages,org_id,room_id }) =
       {
             preview?
             <Preview>
-              <img src={preview} style={{ position: "relative" }} alt="Image Preview"/>
+              <img src={preview} style={{ position: "relative",height:'100px', weight:'100px' }} alt="Image Preview"/>
               <button style={{ position: "absolute", top: '-12px', left:'8', height:'30px', width:'30px', borderRadius:'50%'  }} onClick={clearAttached}>X</button>
             </Preview>
             :null
@@ -122,9 +122,6 @@ const MessageInputBox = ({ sendMessageHandler, addToMessages,org_id,room_id }) =
               />
            </label>
          </div>
-         
-         
-          <button onClick={handleAttachMedia} >Send</button>
        </AttachFile>
          :null
           }
@@ -252,7 +249,7 @@ const AttachFile = styled.div`
 `
 const Preview = styled.div`
   width:100px;
-  height: 100px
+  height: 100px;
   border-radius: 2px;
 `
 
