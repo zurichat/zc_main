@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import styled from "styled-components"
 import Chats from "./Chats"
-import UnstyledButton from "../message_input/UnstyledButton"
+import UnstyledButton from "../message_input2/UnstyledButton"
 import MessageInputBox from "../message_input/MessageInputField"
 
 const CommentSection = ({ chatsConfig }) => {

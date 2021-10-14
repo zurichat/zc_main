@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { RichUtils } from "draft-js"
+import { convertToRaw, EditorState, RichUtils } from "draft-js"
 import UnstyledButton from "./UnstyledButton"
 import Italic from "./assets/comments/italic.svg"
 import styled from "styled-components"
@@ -30,9 +30,21 @@ const inlineStyles = [
 
 const blockStyles = [{ type: "ordered-list-item", label: <ListIcon /> }]
 const Toolbar = props => {
-  const { editorState, setEditorState, emojiSelect } = props
+  const {
+    editorState,
+    setEditorState,
+    emojiSelect,
+    sendMessageHandler,
+    addToMessages
+  } = props
   const [focus, setFocus] = useState(false)
   const toggleFocus = () => setFocus(!false)
+  const handleClickSendMessage = () => {
+    addToMessages &&
+      addToMessages(convertToRaw(editorState.getCurrentContent()))
+    setEditorState(EditorState.createEmpty())
+    // sendMessageHandler(convertToRaw(editorState.getCurrentContent()))
+  }
   const handleInlineStyle = (event, style) => {
     event.preventDefault()
     setEditorState(RichUtils.toggleInlineStyle(editorState, style))
@@ -107,7 +119,7 @@ const Toolbar = props => {
         <UnstyledButton>
           <ClipIcon />
         </UnstyledButton>
-        <UnstyledButton>
+        <UnstyledButton onClick={handleClickSendMessage}>
           <SendIcon />
         </UnstyledButton>
       </SendContainer>
