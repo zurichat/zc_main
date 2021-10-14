@@ -1,10 +1,10 @@
 import MessageContainer from "./Subs/MessageContainer/MessageContainer"
-import { MsgBoard } from "./MsgBoardStyle"
-
+import { ChatContainer } from "./MsgBoardStyle"
+import CommentBox from './../../InputBox/Input'
 import MoreMenu from "./Subs/MessageContainer/MoreMenu/MoreMenu"
 import Overlay from "./Subs/MessageContainer/Overlay/Overlay"
 
-import EmojiReaction from "../EmojiReaction/EmojiReaction"
+import EmojiReaction from "../../EmojiReaction/EmojiReaction/EmojiReaction"
 
 import { useState } from "react"
 
@@ -176,7 +176,8 @@ function Uitest() {
 
   return (
     <>
-      <MsgBoard>
+    <ChatContainer>
+        <div className="MsgBoard">
         {messageList &&
           messageList.map((messageData, i) => (
             <MessageContainer
@@ -186,7 +187,11 @@ function Uitest() {
               messageData={messageData}
             />
           ))}
-      </MsgBoard>
+      </div>
+        <div className='input-text'>
+          <CommentBox />
+        </div>
+      </ChatContainer>
 
       {showMoreOptions ? (
         <div>
