@@ -12,19 +12,19 @@ const MembersTab = () => {
   const currentWorkspace = getCurrentWorkspace()
   const [items, setItems] = useState([])
 
-  useEffect(() => {
-    setInterval(() => {
-      fetch(
-        "https://api.zuri.chat/organizations/614679ee1a5607b13c00bcb7/members"
-      )
-        .then(res => res.json())
-        .then(data => {
-          setItems(data.data)
-          console.log(data.data, "why null")
+useEffect(() => {
+    if (currentWorkspace) {
+      authAxios
+        .get(`/organizations/${currentWorkspace}/members`)
+        .then(res => {
+          setItems(res?.data?.data)
+          console.log(data?.data?.data, "check data")
         })
-        .catch(err => console.log(err.message))
-    }, 1000)
-  }, [])
+        .catch(err => {
+          console.error(err)
+        })
+    }
+  }, [currentWorkspace])
   const columns = [
     {
       name: "Account created",
