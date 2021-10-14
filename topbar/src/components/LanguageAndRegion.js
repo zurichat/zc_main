@@ -2,7 +2,6 @@ import React, { useState, useContext, useEffect } from "react"
 import styles from "../styles/LanguageAndRegion.module.css"
 import TimezoneSelect from "react-timezone-select"
 import  Select from "react-select"
-import autoComplete from '@material-ui/core/TextField'
 import { authAxios } from "../utils/Api"
 import { ProfileContext } from "../context/ProfileModal"
 
@@ -82,10 +81,9 @@ const LanguageAndRegion = () => {
           </div>
 
           <div className={styles.section}>
-            <div className={styles.subhead} htmlFor="timezone">
+            <div className={styles.subhead}>
               Time zone
-             </div>
-             <label className={styles.checkmark}>
+            </div>
               <input 
                 type="checkbox" className={styles.cbox} 
                 checked={langreg.set_time_zone_automatically}
@@ -96,8 +94,9 @@ const LanguageAndRegion = () => {
                    }
                 }}  
               />
-             Set time zone automatically</label>
-             
+              <span className={styles.checkmark}>
+              Set time zone automatically
+              </span>
             
 
             <TimezoneSelect
@@ -114,11 +113,10 @@ const LanguageAndRegion = () => {
             </p>
           </div>
           <div className={styles.section}>
-          <div className={styles.subhead} htmlFor="spell-check">
+          <label className={styles.subhead} htmlFor="spell-check">
               Spell check
-            </div>
-              <div className={styles.checkP}>
-              <label className={styles.checkmark}> 
+            </label>
+            <label className={styles.auto} htmlFor="">
               <input type="checkbox" className={styles.cbox}  
               checked={langreg.spell_check } 
               onClick={() => {
@@ -127,9 +125,11 @@ const LanguageAndRegion = () => {
                  handleData({...langreg, spell_check: !langreg.spell_check})
                 }}
               }
-              />Enable spellcheck on your message
-             </label>
-              </div>
+              />
+              <span className={styles.checkmark}>
+              Enable spellcheck on your message
+              </span>
+            </label>
             <Select
           isMulti
           name="colors"
@@ -142,7 +142,6 @@ const LanguageAndRegion = () => {
             handleSelect(selectedOptions)
           }}
         />
-            {/* <SelectOption/>  */}
           </div>
         </form>
       </div>
@@ -158,11 +157,12 @@ const customStyles = {
     ...base,
     height: "2.5rem",
     width: "60%",
+    maxWidth: "60%",
+    minWidth:"60%",
     minHeight: "2.5rem",
     border: "1px solid #DADADA",
     borderRadius: "4px",
     marginTop:"10px",
-    marginBottom: "10px",
     fontSize: ".75rem",
     "&:hover": {
       borderColor: "#00B87C"
