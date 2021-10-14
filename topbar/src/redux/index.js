@@ -8,7 +8,6 @@ const store = configureStore({
   reducer: {
     rootReducer: userReducer,
   },
-
   preloadedState: persistedState,
 });
 

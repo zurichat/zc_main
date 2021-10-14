@@ -2,8 +2,9 @@ import { useMarketPlaceContext } from '../../../context/MarketPlace.context'
 import { setPluginId } from '../../../context/marketplace/marketplace.action'
 import style from '../../styles/marketplace.module.css'
 import logo from '../../../component-assets/zurichatlogo.svg'
+import DownloadIcon from '../../../component-assets/DownloadIcon.svg'
 
-export const PluginCard = ({ name, id, status, icon_url, description }) => {
+export const PluginCard = ({ name, id, status, icon_url, description, install_count }) => {
   const marketplace = useMarketPlaceContext()
   const renderPluginData = () => {
     marketplace.dispatch(setPluginId(id))
@@ -47,8 +48,9 @@ export const PluginCard = ({ name, id, status, icon_url, description }) => {
         </figure>
         <div className={style.pluginInfo}>
           <h2 className={`mb-0 ${style.pluginName}`}>{name}</h2>
+          <h5 className={`mb-0 ${style.pluginInstallCount}`}><img src={DownloadIcon} alt="Downloads:" style={{width: "10px"}}/>Downloads: {install_count}</h5>
           <p className={`mb-0 ${style.pluginDescription}`}>
-            {trimString(description, 150)}
+            {trimString(description, 50)}
           </p>
         </div>
       </section>
