@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
-import { PluginCard } from "../plugins-card/PluginCard"
 import styles from "../../styles/marketplace.module.css"
 import logo from "../../../component-assets/zurichatlogo.svg"
 import SuccessMark from "../../../component-assets/success-mark.svg"

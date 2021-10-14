@@ -3,12 +3,10 @@ import axios from "axios"
 import { PluginCard } from "../plugins-card/PluginCard"
 import styles from "../../styles/marketplace.module.css"
 import logo from "../../../component-assets/zurichatlogo.svg"
-import SuccessMark from "../../../component-assets/success-mark.svg"
-import ErrorMark from "../../../component-assets/error-mark.svg"
 import { useHistory } from "react-router-dom"
 import ReactPaginate from "react-paginate";
 //eslint-disable-next-line
-import { Modal, Spinner } from "react-bootstrap"
+import { Spinner } from "react-bootstrap"
 import { useMarketPlaceContext } from "../../../context/MarketPlace.context"
 import {
   setPluginId,

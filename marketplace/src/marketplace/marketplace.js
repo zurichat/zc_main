@@ -9,7 +9,7 @@ import { DiscoverPluginSvg } from './components/marketplace-container/DiscoverPl
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 // import MarketplaceHeader from './components/marketplace-container/MarketplaceHeader'
-import { MarketPlaceProvider, useMarketPlaceContext } from '../context/MarketPlace.context.js'
+import { MarketPlaceProvider} from '../context/MarketPlace.context.js'
 import { Helmet } from 'react-helmet'
 import axios from 'axios'
 
