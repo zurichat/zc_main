@@ -5,10 +5,6 @@
     cursor: pointer;
 }
 
-p {
-    font-size: 18px
-}
-
 .resultCard {
     border: 1px solid #1d1c1d21;
     border-radius: .6em;
