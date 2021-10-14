@@ -109,6 +109,13 @@ function NewInviteModal(props) {
     })
   }
 
+  const showMessage = message => {
+    props.dispatch({
+      type: ACTIONS.SHOW_MESSAGE,
+      payload: message
+    })
+  }
+
   const isOpen = visibililty => {
     props.dispatch({
       type: ACTIONS.IS_OPEN,
@@ -136,6 +143,13 @@ function NewInviteModal(props) {
         modalToShow("error")
         isOpen(false)
       }
+    }
+    else {
+      setEmailField("")
+      handleCloseInviteModal()
+      showMessage("Invalid Email")
+      modalToShow("error")
+      isOpen(false)
     }
   }
 
