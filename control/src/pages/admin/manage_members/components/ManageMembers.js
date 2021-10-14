@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
-import OptionsIcon from '../icons/three-dots.svg';
-import '../styles/Members.css'
+import styles from '../styles/Members.module.css'
 import OptionsPopUp from './OptionsPopUp';
 import { Route } from 'react-router';
 // import { GetWorkspaceUsers } from '../../../../../../utilities/src/zuri-utilities';
 import { GetWorkspaceUsers } from '../../../../zuri-control';
+import Table from './Table';
 
 
 const ManageMembers = () => {
@@ -86,46 +86,33 @@ const ManageMembers = () => {
     }, [showModal])
 
     return (
-        <div className='members-wrap'>
+        <div className={styles.membersWrap}>
 
 
 
-            <div className='banner'>
+            <div className={styles.banner}>
                 Looking to use Slack with people outside your organization? Give external teams or individuals restricted access to your workspace. Learn more
             </div>
 
-            <div className='header'>
+            <div className={styles.header}>
                 <h1 style={{ fontFamily: 'sans-serif' }}> Manage Members</h1>
-                <div className='header-sub'>
+                <div className={styles.headerSub}>
                     <button className='btn-1'>Export Member List </button>
                     <button className='btn-2'>Invite People</button>
                 </div>
             </div>
 
-            <div className='list-contacts-top'>
+            <div className={styles.listTop}>
                 <input
-                    className='search-contacts'
+                    className={styles.searchMembers}
                     type='text'
                     placeholder='Search'
                     value={query}
                     onChange={(event) => updateQuery(event.target.value)}
                 />
-                <button className='filter' onClick=''>Filter</button>
+                <button className={styles.filter}onClick=''>Filter</button>
             </div>
-            {/*
-            <Header />
-            <ul className='members-list'>
-                {showingMembers.map((user) => (
-
-                    <Member
-                        memberId={user.id}
-                        memberName={user.name}
-                        memberDate={user.date}
-                    // optionsPopupAction={toggleModal}
-                    />
-
-                ))}
-            </ul> */}
+            
             {showModal ?
                 <OptionsPopUp
                     ref={ref}
@@ -142,54 +129,5 @@ const ManageMembers = () => {
 
 
 
-const Table = (props) => {
-    return (
-        <div>
-            <thead>
-                <tr>
-                    <th className='heading' style={{color:'blue'}}>Name</th>
-                    <th className='heading'>Account type</th>
-                    <th className='heading'>Billing status</th>
-                    <th className='heading'>Authentication</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {props.showingContacts.map((user) => (
-                    <tr className='' key={user._id}>
-                        <td className='member' key=''>
-                        <MemberDetails 
-                            userFirstName = {user.first_name}
-                            userLastName = {user.last_name}
-                            imageUrl = {user.image_url}
-                            email = {user.email}
-                            userName = {user.display_name}
-                        /></td>
-                        <td className='member' key=''>{user.role}</td>
-                        <td className='member' key=''>Active</td>
-                        <td className='member' key=''>Default</td>
-                        <td className='member' key='' 
-                        // onClick={props.toggleModal} 
-                        onMouseLeave={props.toggleModal}><button className='options-btn' onMouseOut={props.toggleModal}><img src={OptionsIcon} alt='options' className='options-icon' onClick='' /></button></td>
-                    </tr>))}
-            </tbody>
-        </div>
-    )
-}
-
-const MemberDetails = (props) => {
-    return (
-        <div className='mem-row-2'>
-            <img src={props.imageUrl} alt='' />
-            <div className='mem-col'>
-                <div className='memName'>{props.userFirstName}{props.userLastName}</div>
-                <div className='mem-row'>
-                    <div>{props.userFirstName}{props.userLastName}</div>
-                    <div>{props.email}</div>
-                </div>
-            </div>
-        </div>
-    )
-}
 
 export default ManageMembers
