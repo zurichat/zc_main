@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import avatar from "./profile.svg"
 import { ChatContainer } from "./MsgBoardStyle"
-import MessageInputField from '../../../../zuriUi/src/components/message_input/MessageInputField'
+import Input from '../../../../zuriUi/src/components/InputBox/Input'
 import PluginModal from '../../../../zuriUi/src/components/PluginModal/PluginModal'
 
 function Uitest() {
@@ -91,7 +91,7 @@ const [message, setMessage] = useState('')
           ))}
         </div>
         <div className='input-text'>
-          <MessageInputField />
+          <Input />
         </div>
       </ChatContainer>
   
