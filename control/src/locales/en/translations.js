@@ -94,9 +94,9 @@ export const TRANSLATIONS_EN = {
       careers: "Careers"
     },
     section_one: {
-      headline: "Careers at",
+      headline: "Careers at Zuri Chat",
       post_headline: "Passionate about making work life simpler, and more productive? Join our remote-friendly and flexible team.",
-      join_link: "Join"
+      join_link: "Join Zuri Chat"
     },
     career_grid: {
       headline: "Join Our Internship",
