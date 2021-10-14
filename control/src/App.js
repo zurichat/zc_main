@@ -176,9 +176,11 @@ const App = () => {
         <Route path="/ZurichatBlog">
           <ZurichatBlog />
         </Route>
+
         <Route path="/whyzurichat">
           <Whyzurichat />
         </Route>
+
         {/* ----------------settings routes opened------------------------ */}
         <PrivateRoute
           path="/confirm-deactivation"
