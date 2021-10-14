@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { withRouter, useHistory } from "react-router-dom"
+import { withRouter, useHistory, Link } from "react-router-dom"
 // import { BehaviorSubject } from 'rxjs'
 import AuthInputBox from "../../components/AuthInputBox"
 import FormWrapper from "../../components/AuthFormWrapper"
@@ -86,7 +86,10 @@ const Login = () => {
           .then(res => {
             const orgs = res.data.data.length
             // console.log(res.data.data)
-            sessionStorage.setItem('organisations', JSON.stringify(res.data.data))
+            sessionStorage.setItem(
+              "organisations",
+              JSON.stringify(res.data.data)
+            )
             // console.log('reg orgs', orgs)
 
             switch (true) {
@@ -120,8 +123,6 @@ const Login = () => {
         //Render error message to the user
         seterror(data.message) //Change this when there is a design
       })
-
-      
   }
 
   return (
@@ -183,7 +184,14 @@ const Login = () => {
               Remember me
             </div>
             <div className={`${styles.right}`}>
-              Forgot password?<a href="/"> {""}Get help signing in</a>
+              <Link
+                to="/reset-password"
+                className={`${styles.resetPasswordLink}`}
+              >
+                Forgot password?
+              </Link>
+              <Link to="/help"> {""}Get help signing in</Link>
+
             </div>
           </div>
         </FormWrapper>
