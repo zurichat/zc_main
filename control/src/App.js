@@ -52,6 +52,8 @@ import Plugins from "./pages/plugins"
 import Home from "./pages/admin/Settings/components/SettingsHome"
 import AboutWorkSpace from "./pages/admin/AboutWorkSpace"
 import adminNalytics from "./pages/admin/Settings/Member"
+import AccountProfile from "./pages/admin/AccountProfile"
+
 import Legal from "./pages/legal"
 import ZurichatBlog from "./pages/blogs/components/zurichatBlog"
 
@@ -208,6 +210,7 @@ const App = () => {
           exact
           component={AboutWorkSpace}
         />
+        <PrivateRoute path="/admin/settings/accountsProfile" exact component={AccountProfile}/>
         {/* <PrivateRoute
           path="/admin/settings/permission"
           exact
