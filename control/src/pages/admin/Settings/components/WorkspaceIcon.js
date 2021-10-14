@@ -97,7 +97,7 @@ const WorkSpaceIcon = () => {
           <UploadInput onChange={e => setUpdateLogo(e.target.files[0])} />
           <Button onClick={handleSelectFile}>Submit</Button>
         </UploadSection>
-      </> : <LogoCrop logo={updateLogo} /> }
+      </> : <LogoCrop logo={updateLogo} setToggle={setToggle} /> }
       
     </WorkSPaceLogoContainer>
   )

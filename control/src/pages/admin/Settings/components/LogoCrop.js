@@ -3,7 +3,7 @@ import ReactCrop from "react-image-crop"
 import "react-image-crop/dist/ReactCrop.css"
 import { WorkSPaceLogoContainer, WorkSpaceName, CropButtons, Button } from "../../styles/workSpaceIconChange"
 
-const LogoCrop = ({ logo }) => {
+const LogoCrop = ({ logo, setToggle }) => {
   const [crop, setCrop] = useState({ unit: "%", width: 30, aspect: 16 / 9 })
 
   const organisation_id = localStorage.getItem("currentWorkspace")
@@ -24,6 +24,10 @@ const LogoCrop = ({ logo }) => {
       })
   }
 
+  const cancelUpload = () => {
+    setToggle(false)
+  }
+
   <WorkSPaceLogoContainer>
     <WorkSpaceName>Crop Workspace Icon</WorkSpaceName>
     <ReactCrop
@@ -35,7 +39,7 @@ const LogoCrop = ({ logo }) => {
     />
     <CropButtons>
       <Button onClick={handleIconUpload}>Crop Icon</Button>
-      <Button>Cancel</Button>
+      <Button onClick={cancelUpload}>Cancel</Button>
     </CropButtons>
   </WorkSPaceLogoContainer>
 }
