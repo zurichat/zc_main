@@ -1,6 +1,6 @@
 .container {
-  width: 100%;
-  margin: 28px 53px 20px;
+  max-width: 100%;
+  margin: 10px 20px;
   height: 80vh;
 }
 
@@ -11,11 +11,17 @@
   font-weight: 700;
   line-height: 20px;
   letter-spacing: 0em;
-  margin-top: 10px;
+  color: var(--text-color-gray-1);
+  margin-top: 20px;
 }
 
+.subHeadUl{
+  margin: 10px 0px;
+}
 .section {
   text-align: left;
+  display: flex;
+  margin: 10px 0px;
 }
 
 .option,
@@ -29,7 +35,7 @@
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
-  /* color: #999999; */
+  color: var(--text-color-normal);
 }
 
 .option {
@@ -155,7 +161,7 @@ left: 5px;
 
 @media screen and (max-width: 500px) {
   .container {
-    margin: 2em 0em;
-    padding: 0 1em;
+    margin: 20px ;
+    margin-right: 20px;
   }
 }
