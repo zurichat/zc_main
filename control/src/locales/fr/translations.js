@@ -1,4 +1,7 @@
 export const TRANSLATIONS_FR = {
+  header: {
+    language_select: "Changer de langue"
+  },
   landing: {
     title: {
       landing: "Connectez-vous et interagissez"
