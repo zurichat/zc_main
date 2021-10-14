@@ -26,21 +26,25 @@ const emojiPlugin = createEmojiPlugin({
 const { EmojiSuggestions, EmojiSelect } = emojiPlugin
 const plugins = [emojiPlugin]
 
-const mentionPlugin = createMentionPlugin()
+const mentionPlugin = createMentionPlugin({ mentionPrefix: "@" })
 
 const { Picker } = emojiPlugin
 const { MentionSuggestions } = mentionPlugin
 
-const CommentBox = ({ addToMessage, users }) => {
+const MessageInputBox = ({
+  sendMessageHandler,
+  addToMessages,
+  currentUserData,
+  users
+}) => {
   const [data, setData] = useState("")
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty()
   )
   const [showEmoji, setShowEmoji] = useState(false)
-
   const [suggestions, setSuggestions] = useState(users || mentions)
   const [suggestionsOpen, setSuggestionsOpen] = useState(false)
-
+  // console.log("field", editorState)
   // Mention helpers
   const onOpenChange = useCallback(_open => {
     setSuggestionsOpen(_open)
@@ -95,6 +99,9 @@ const CommentBox = ({ addToMessage, users }) => {
           editorState={editorState}
           setEditorState={setEditorState}
           emojiSelect={<EmojiSelect />}
+          sendMessageHandler={sendMessageHandler}
+          addToMessages={addToMessages}
+          currentUserData={currentUserData}
         />
         {/* <div>
           {showEmoji && (
@@ -106,14 +113,14 @@ const CommentBox = ({ addToMessage, users }) => {
   )
 }
 
-export default CommentBox
+export default MessageInputBox
 
 const Wrapper = styled.div`
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
   background-color: white;
+  width: 100%;
 `
 
 const InputWrapper = styled.section`
