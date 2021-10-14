@@ -4,6 +4,7 @@ import styles from "../styles/aboutWorkspaceTab.module.css"
 
 // components
 import RetentionAndExports from "../components/RetentionAndExports"
+import AdminOwners from "./AdminOwners"
 import OverviewWorkspace from "../components/OverviewWorkspace"
 
 // icons
@@ -46,6 +47,7 @@ const AboutWorkSpaceTabs = () => {
           >
             Admins & Owners
           </div>
+
           <div
             onClick={() => {
               setActive(3)
@@ -60,6 +62,13 @@ const AboutWorkSpaceTabs = () => {
         </div>
 
         <div className={styles.tabContent}>
+          {active === 2 && (
+            <AdminOwners
+              setActive={setActive}
+              setOpenTab={setOpenTab}
+              openTab={openTab}
+            />
+          )}
           {active === 3 && (
             <RetentionAndExports
               setActive={setActive}
@@ -67,7 +76,7 @@ const AboutWorkSpaceTabs = () => {
               openTab={openTab}
             />
           )}
-            {active === 1 && (
+          {active === 1 && (
             <OverviewWorkspace
               setActive={setActive}
               setOpenTab={setOpenTab}
