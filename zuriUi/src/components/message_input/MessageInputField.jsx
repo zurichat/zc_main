@@ -144,19 +144,18 @@ const MessageInputBox = ({ sendMessageHandler, addToMessages }) => {
 export default MessageInputBox
 
 const Wrapper = styled.div`
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 0 2px;
+  margin-bottom : 10px; 
   display: flex;
   flex-direction: column;
   background-color: white;
+  width : 100%;
 `
 const InputWrapper = styled.section`
   border: 1px solid hsla(0, 0%, 92%, 1);
   border-radius: 3px;
-  /* padding-left: 8px;
-padding-top: 8px;
-padding-bottom: 8px; */
-  /* border-bottom: 1px solid hsl(160, 100%, 86%); */
+  margin : 0;
+
 `
 const SendWrapper = styled.section`
   padding: 10px 18px 15px 18px;

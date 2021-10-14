@@ -1,4 +1,4 @@
-import React from "react";
+import { useState} from "react";
 import {
   ModalContainer,
   TopicModal,
@@ -12,18 +12,16 @@ import {
 } from "./ModalStyles";
 
 const EditTopicModal = (props) => {
-  const closeFrm = (e) => {
-    props.closeFrm && props.closeFrm(e);
-  };
-  if (props.show) {
-    return null;
-  }
-  return (
-    <ModalContainer>
+const [openModal, setOpenModal] = useState(true)
+const onClose = () => setOpenModal(props.closeEdit)
+  
+  if (openModal) {
+    return (
+      <ModalContainer>
       <TopicModal>
         <ModalTop>
           <ModalTopic>Topic</ModalTopic>
-          <CloseBtn onClick={(e) => closeFrm(e)}> X </CloseBtn>
+          <CloseBtn onClick=  { ()=>{props.closeEdit()}}> X </CloseBtn>
         </ModalTop>
         <Modalbody>
           <input type="text" placeholder="Add Topic" />
@@ -38,6 +36,7 @@ const EditTopicModal = (props) => {
       </TopicModal>
     </ModalContainer>
   );
+}
 };
 
 export default EditTopicModal;
