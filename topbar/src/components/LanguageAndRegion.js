@@ -7,7 +7,7 @@ import { ProfileContext } from "../context/ProfileModal"
 
 
 const options = [
-  { value: 'eng', label: 'English' },
+  { value: 'en', label: 'English' },
   { value: 'fr', label: 'French' },
   { value: 'du', label: 'Deutch' },
 ];
@@ -17,15 +17,12 @@ const LanguageAndRegion = () => {
   const [langreg, setLangreg] = useState(user.settings.languages_and_regions);
   const [selectedTimezone, setSelectedTimezone] = useState({})
   //CHECKBOXES
-  const [tzChb, setTzChb] = useState(false)
   const [spellCheck, setSpellCheck] = useState(true);
   const handleSpellCheck = () => {
     setSpellCheck(!spellCheck)
   }
 
-  const handleTZ = () => {
-    setTzChb(!tzChb)
-  }
+
 
   const handleData = (langreg) => {
       authAxios.patch(`organizations/${user.org_id}/members/${user._id}/settings/languages-and-region`, langreg)
@@ -55,8 +52,10 @@ const LanguageAndRegion = () => {
     handleData(timeZone)
   }, [selectedTimezone])
 
+  const langSpellCheck = langreg.languages_zuri_should_spell_check;
+   const defVal = langSpellCheck.map(i=> i )
   
-  
+   
   return (
     <div className={styles.container}>
       <div>
@@ -83,7 +82,7 @@ const LanguageAndRegion = () => {
           <div className={styles.section}>
             <div className={styles.subhead}>
               Time zone
-            </div>
+            </div>        
               <input 
                 type="checkbox" className={styles.cbox} 
                 checked={langreg.set_time_zone_automatically}
@@ -101,10 +100,10 @@ const LanguageAndRegion = () => {
 
             <TimezoneSelect
                   styles = {customStyles}
+                  className={styles.optSelect}
                   placeholder="Select Timezone"
                   value={selectedTimezone}
-                  isSearchable={langreg.set_time_zone_automatically}
-                  defaultValue={user.settings.languages_and_regions.time_zone}
+                  defaultValue="badbitches"
                   onChange={setSelectedTimezone} 
             />
             <p className={styles.note}>
@@ -131,9 +130,10 @@ const LanguageAndRegion = () => {
               </span>
             </label>
             <Select
+            className={styles.optSelect}
           isMulti
           name="colors"
-          defaultValue={langreg.languages_zuri_should_spell_check}
+          defaultValue= {defVal[0]}
           styles={customStyles}
           options={options}
           classNamePrefix="select"
@@ -156,14 +156,11 @@ const customStyles = {
   control: base => ({
     ...base,
     height: "2.5rem",
-    width: "60%",
-    maxWidth: "60%",
-    minWidth:"60%",
     minHeight: "2.5rem",
     border: "1px solid #DADADA",
     borderRadius: "4px",
     marginTop:"10px",
-    fontSize: ".75rem",
+    fontSize: "15px",
     "&:hover": {
       borderColor: "#00B87C"
     },

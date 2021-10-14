@@ -1,5 +1,5 @@
 .container {
-  width: 50%;
+  width: 70%;
   margin-left: 20px;
   margin-top: 20px;
   height: 150%;
@@ -119,4 +119,7 @@
   margin-bottom: 5px;
   justify-content: center;
   color: var(--text-color-gray);
+}
+.optSelect{
+  width: 60%;
 }
