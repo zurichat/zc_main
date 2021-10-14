@@ -104,10 +104,10 @@ export const GetWorkspaceUsers = async () => {
 
 // Setup Centrifugo Route
 const centrifuge = new Centrifuge(
-  "wss://realtime.zuri.chat/connection/websocket"
+  "wss://realtime.zuri.chat/connection/websocket", { debug: true }
 )
 
-// centrifuge.setConnectData({ bearer: token }) 
+centrifuge.setConnectData({ bearer: token }) 
 
 centrifuge.connect()
 centrifuge.on("connect", function (connectCtx) {
