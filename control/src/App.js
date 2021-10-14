@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Login from './pages/login'
-import Uitest from './pages/UI/MsgBoard'
 import SignUp from './pages/signup'
 import SignOut from './pages/signout/index'
 import Workspace from './pages/workspace/components/Workspace'
@@ -147,12 +146,8 @@ const App = () => {
         <Route path="/legal">
           <Legal />
         </Route>
-
         <Route path="/privacy">
           <PrivacyPolicy />
-        </Route>
-        <Route path="/uitest">
-          <Uitest />
         </Route>
         <Route path="/open-marketplace" exact>
           <MarketPlace />

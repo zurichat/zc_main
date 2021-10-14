@@ -181,63 +181,64 @@ export const TRANSLATIONS_FR = {
       link_try: "Essayez-le gratuitement"
     },
 
-   careers:{
-    title: {
-      careers: "Carrières"
-    },
-    section_one: {
-      headline: "Carrières chez Zuri Chat",
-      post_headline: "Passionné de rendre la vie au travail plus simple et plus productive ? Rejoignez notre équipe conviviale et flexible.",
-      join_link: "Rejoignez Zuri Chat"
-    },
-    career_grid: {
-      headline: "Rejoignez notre stage",
-      post_headline: 
-        "Zuri Internship est une formation 100% gratuite, à distance et rapide pour les jeunes professionnels cherchant à perfectionner leurs compétences techniques et à booster leur CV.",
-      categories:{
-        category_frontend: {
-          headline: "Développement Front-end",
-          post_headline: "Cette piste traite de l'aspect de votre application avec lequel les utilisateurs interagissent. Un développeur front-end sera capable d'interpréter correctement une conception donnée à l'interface utilisateur."
-        },
-        category_backend: {
-          headline: "Développement Back-end",
-          post_headline: "Cette piste traite de l'aspect de l'application avec lequel l'utilisateur n'interagit pas directement. Il permet la fonction frontale soit en exécutant du code back-end, soit en se connectant à la base de données."
-        },
-        category_design: {
-          headline: "Concevoir",
-          post_headline: "Cette piste traite de la création d'un plan graphique pour une application. Vous apprendrez à convertir la documentation du projet en une conception graphique visible et compréhensible pour les développeurs."
-        },
-        category_mobile: {
-          headline: "Développement Mobile",
-          post_headline: "La piste mobile contient une liste d'outils et de langages nécessaires à un développeur pour créer des applications mobiles. Une application mobile peut être IOS ou Android."
-        },
-        category_digital_marketing: {
-          headline: "Le marketing numérique",
-          post_headline: "Il comprend l'utilisation de moyens et d'utilitaires numériques pour augmenter la découvrabilité des produits, des services et des marques."
-        },
-        category_frameworks: {
-          headline: "Cadres",
-          post_headline: "Au cours du programme, nous explorerons plusieurs frameworks utiles pour vous donner un avantage dans l'industrie et vous aider à développer des applications complexes beaucoup plus rapidement."
-        }       
-        
+    careers: {
+      title: {
+        careers: "Carrières"
       },
-      join_cohort: "Faites partie de notre prochaine cohorte à partir de l'été 2022",
-      register_now: "S'inscrire maintenant"
-    },
-    section_two: {
-      headline: "Travailler et s'épanouir",
-      post_headline: "Nous offrons des avantages qui vous aident à vous sentir mieux et à faire de votre mieux.",
-      digital_wellness: {
-        headline: "Bureau d'abord numérique",
-        post_headline: "Avec des rôles à distance, une intégration sans bureau et des pratiques de travail flexibles, nous sommes prêts pour des réalités, des horaires et des responsabilités en constante évolution."
+      section_one: {
+        headline: "Carrières chez Zuri Chat",
+        post_headline: "Passionné de rendre la vie au travail plus simple et plus productive ? Rejoignez notre équipe conviviale et flexible.",
+        join_link: "Rejoignez Zuri Chat"
       },
-      just_for_you: {
-        headline: "Juste pour toi",
-        post_headline: "Recevez une allocation annuelle pour le développement professionnel, plus une allocation mensuelle pour couvrir vos besoins; Un nouveau look de travail, un animal de compagnie, tout ce qui compte le plus pour vous."
+      career_grid: {
+        headline: "Rejoignez notre stage",
+        post_headline:
+          "Zuri Internship est une formation 100% gratuite, à distance et rapide pour les jeunes professionnels cherchant à perfectionner leurs compétences techniques et à booster leur CV.",
+        categories: {
+          category_frontend: {
+            headline: "Développement Front-end",
+            post_headline: "Cette piste traite de l'aspect de votre application avec lequel les utilisateurs interagissent. Un développeur front-end sera capable d'interpréter correctement une conception donnée à l'interface utilisateur."
+          },
+          category_backend: {
+            headline: "Développement Back-end",
+            post_headline: "Cette piste traite de l'aspect de l'application avec lequel l'utilisateur n'interagit pas directement. Il permet la fonction frontale soit en exécutant du code back-end, soit en se connectant à la base de données."
+          },
+          category_design: {
+            headline: "Concevoir",
+            post_headline: "Cette piste traite de la création d'un plan graphique pour une application. Vous apprendrez à convertir la documentation du projet en une conception graphique visible et compréhensible pour les développeurs."
+          },
+          category_mobile: {
+            headline: "Développement Mobile",
+            post_headline: "La piste mobile contient une liste d'outils et de langages nécessaires à un développeur pour créer des applications mobiles. Une application mobile peut être IOS ou Android."
+          },
+          category_digital_marketing: {
+            headline: "Le marketing numérique",
+            post_headline: "Il comprend l'utilisation de moyens et d'utilitaires numériques pour augmenter la découvrabilité des produits, des services et des marques."
+          },
+          category_frameworks: {
+            headline: "Cadres",
+            post_headline: "Au cours du programme, nous explorerons plusieurs frameworks utiles pour vous donner un avantage dans l'industrie et vous aider à développer des applications complexes beaucoup plus rapidement."
+          }
+
+        },
+        join_cohort: "Faites partie de notre prochaine cohorte à partir de l'été 2022",
+        register_now: "S'inscrire maintenant"
       },
-      health_and_wellness: {
-        headline: "Santé et bien-être",
-        post_headline: "Zuri paie 100 % de vos primes. Nous offrons également l'accès à une gamme de ressources gratuites sur la santé mentale et le bien-être."
+      section_two: {
+        headline: "Travailler et s'épanouir",
+        post_headline: "Nous offrons des avantages qui vous aident à vous sentir mieux et à faire de votre mieux.",
+        digital_wellness: {
+          headline: "Bureau d'abord numérique",
+          post_headline: "Avec des rôles à distance, une intégration sans bureau et des pratiques de travail flexibles, nous sommes prêts pour des réalités, des horaires et des responsabilités en constante évolution."
+        },
+        just_for_you: {
+          headline: "Juste pour toi",
+          post_headline: "Recevez une allocation annuelle pour le développement professionnel, plus une allocation mensuelle pour couvrir vos besoins; Un nouveau look de travail, un animal de compagnie, tout ce qui compte le plus pour vous."
+        },
+        health_and_wellness: {
+          headline: "Santé et bien-être",
+          post_headline: "Zuri paie 100 % de vos primes. Nous offrons également l'accès à une gamme de ressources gratuites sur la santé mentale et le bien-être."
+        }
       }
     }
   }
