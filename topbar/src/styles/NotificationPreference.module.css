@@ -33,12 +33,13 @@
   background: var(--bg-color);
 }
 .body {
-  width: 100vw;
+  width: 95vw;
   display: flex;
   flex-direction: row;
-  overflow: hidden;
-  position: relative;
+  overflow-y: scroll;
+  /* position: relative; */
   margin-top: 0%;
+  height: 78vh !important; 
 }
 .toggle{
   display: none;
