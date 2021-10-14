@@ -16,7 +16,7 @@ import UnstyledButton from "./UnstyledButton"
 import axios from 'axios'
 import React,{ useState,useEffect } from "react"
 
-const MessageInputBox = ({ sendMessageHandler, addToMessages,org_id,room_id,attachedFileApi }) => {
+const MessageInputBox = ({ sendMessageHandler, addToMessages,org_id,room_id }) => {
   const [text, setText] = useState("")
   const [textIsBold, setTextBold] = useState(false)
   const [textIsItalic, setTextItalic] = useState(false)
@@ -50,7 +50,7 @@ const MessageInputBox = ({ sendMessageHandler, addToMessages,org_id,room_id,atta
   const handleAttachMedia=(e)=>{{ 
       e.preventDefault()
       //const data = attachedFile
-      axios.post(`${attachedFileApi}${org_id}/rooms/${room_id}/messagemedia`,attachedFile).then((res)=>{
+      axios.post(`https://dm.zuri.chat/api/v1/${org_id}/rooms/${room_id}/messagemedia`,attachedFile).then((res)=>{
         alert(res)
         }
       )
