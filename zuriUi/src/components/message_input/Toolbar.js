@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { RichUtils } from "draft-js"
+import { convertToRaw, EditorState, RichUtils } from "draft-js"
 import UnstyledButton from "./UnstyledButton"
 import Italic from "./assets/comments/italic.svg"
 import styled from "styled-components"
@@ -30,9 +30,56 @@ const inlineStyles = [
 
 const blockStyles = [{ type: "ordered-list-item", label: <ListIcon /> }]
 const Toolbar = props => {
-  const { editorState, setEditorState, emojiSelect } = props
+  const {
+    editorState,
+    setEditorState,
+    emojiSelect,
+    sendMessageHandler,
+    addToMessages,
+    currentUserData
+  } = props
   const [focus, setFocus] = useState(false)
   const toggleFocus = () => setFocus(!false)
+  const [attachedFile, setAttachedFile] = useState(null)
+  const [inputKey, setInputKey] = useState("any-key-press")
+  const [showAttachInputBox, setshowAttachInputBox] = useState(false)
+
+  const handleAttachMedia = e => {
+    if (e.target.files && e.target.files[0]) {
+      const fd = new FormData()
+      fd.append("media", e.target.files[0], e.target.files[0].name)
+      setAttachedFile(fd)
+    }
+  }
+
+  // on click clear attached file
+  const clearAttached = () => {
+    setInputKey("reset-attached")
+    setAttachedFile("")
+    setshowAttachInputBox(false)
+  }
+
+  const handleClickSendMessage = () => {
+    const currentDate = new Date()
+    const newMessageData = {
+      message_id: Date.now().toString(),
+      username: currentUserData.username || "John Doe",
+      time: `${
+        currentDate.getHours() < 12
+          ? currentDate.getHours()
+          : currentDate.getHours() - 12
+      }:${currentDate.getMinutes()}${
+        currentDate.getHours() < 12 ? "AM" : "PM"
+      }`,
+      emojis: [],
+      richUiData: convertToRaw(editorState.getCurrentContent())
+    }
+    // console.log("submit-msg", newMessageData)
+    // console.log("submit-editor", convertToRaw(editorState.getCurrentContent()))
+    addToMessages && addToMessages(newMessageData)
+    setEditorState(EditorState.createEmpty())
+    // sendMessageHandler(convertToRaw(editorState.getCurrentContent()))
+  }
   const handleInlineStyle = (event, style) => {
     event.preventDefault()
     setEditorState(RichUtils.toggleInlineStyle(editorState, style))
@@ -84,6 +131,14 @@ const Toolbar = props => {
 
   return (
     <Wrapper>
+      {/* Attached File Input field */}
+      {showAttachInputBox ? (
+        <div>
+          <input onChange={attachedFile} key={inputKey || ""} type="file" />
+          <button onClick={handleAttachMedia}>Send</button>
+          <button onClick={clearAttached}>Clear Attached File</button>
+        </div>
+      ) : null}
       <FormatContainer>
         <LightningIcon />
 
@@ -104,10 +159,10 @@ const Toolbar = props => {
           <AtIcon />
         </UnstyledButton>
         {emojiSelect}
-        <UnstyledButton>
+        <UnstyledButton onClick={() => setshowAttachInputBox(true)}>
           <ClipIcon />
         </UnstyledButton>
-        <UnstyledButton>
+        <UnstyledButton onClick={handleClickSendMessage}>
           <SendIcon />
         </UnstyledButton>
       </SendContainer>
