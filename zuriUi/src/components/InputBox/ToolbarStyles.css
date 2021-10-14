@@ -1,0 +1,13 @@
+.toolbar-button-selected {
+  background-color: lightgray;
+  padding: 3px;
+  border-radius: 2px;
+}
+.RichEditor-root {
+  background: "red";
+  border: 1px solid #ddd;
+  font-family: "Georgia", serif;
+  font-size: 14px;
+  padding: 15px;
+  overflow-x: auto;
+}
