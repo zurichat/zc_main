@@ -4,6 +4,7 @@ import styles from "../styles/aboutWorkspaceTab.module.css"
 
 // components
 import RetentionAndExports from "../components/RetentionAndExports"
+import AdminOwners from "../components/Admin&Owners"
 
 // icons
 import { FiMenu } from "react-icons/fi"
@@ -45,6 +46,7 @@ const AboutWorkSpaceTabs = () => {
           >
             Admins & Owners
           </div>
+
           <div
             onClick={() => {
               setActive(3)
@@ -59,6 +61,13 @@ const AboutWorkSpaceTabs = () => {
         </div>
 
         <div className={styles.tabContent}>
+          {active === 2 && (
+            <AdminOwners
+              setActive={setActive}
+              setOpenTab={setOpenTab}
+              openTab={openTab}
+            />
+          )}
           {active === 3 && (
             <RetentionAndExports
               setActive={setActive}
