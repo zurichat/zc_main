@@ -1,18 +1,22 @@
 import styled from "styled-components"
 
 export const WorkSPaceLogoContainer = styled.div`
-  padding: 1em;
   font-size: 18px;
   font-family: "Lato";
-  border-radius: 0 0 .25rem .25rem;
-  box-shadow: 0 1px 0 rgb(0 0 0 / 25%);
-  margin: 0 auto 3rem;
-  border: 1px solid #ddd;
+
+  img{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 5px;
+    background: #007a5a;
+    margin-right: .75rem;
+  }
 `
 
 export const WorkSpaceDetailContainer = styled.div`
   display: flex;
   flex-direction: row;
+  padding-bottom: .75rem;
 `
 
 export const WorkSpaceDetail = styled.div`
@@ -24,6 +28,8 @@ export const WorkSpaceName = styled.h3`
   font-size: 2rem;
   font-family: "Lato";
   font-weight: 600;
+  margin-bottom: .75rem;
+  padding: 0;
 `
 
 export const WorkSpaceDescription = styled.div``
@@ -31,11 +37,15 @@ export const WorkSpaceDescription = styled.div``
 export const GuidelinesContainer = styled.div`
   display: flex;
   flex-direction: row;
+  padding-bottom: .75rem;
+  justify-content: space-between;
+  align-items: center;
 `
 
 export const Guidelines = styled.div`
   display: flex;
   flex-direction: column;
+  padding-right: 2rem;
 `
 
 export const Text = styled.p`
@@ -45,17 +55,24 @@ export const Text = styled.p`
 export const UploadSection = styled.div``
 
 export const Button = styled.button`
-  font-size: 1em;
-  padding: 0.25em 1em;
-  background: palevioletred;
-  border-radius: .25rem;
+  margin-right: 12px;
+  font-size: 15px;
+  height: 36px;
+  min-width: 80px;
+  padding: 0 12px 1px;
+  border-radius: 5px;
+  background: #007a5a;
+  color: #fff;
+  font-family: "Lato";
 `
 
 export const UploadInput = styled.input.attrs({
-  type: "submit",
+  type: "file",
   accept: "image/*",
   multiple: "false"
-})``
+})`
+  margin-bottom: .75rem;
+`
 
 export const ListItems = styled.ul``
 

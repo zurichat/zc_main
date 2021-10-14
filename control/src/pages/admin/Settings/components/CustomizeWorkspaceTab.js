@@ -81,7 +81,7 @@ const CustomizeWorkspaceTab = () => {
       <div className={styles.tabContent}>
         {active === 1 && <Emoji />}
         {active === 2 && <Zuribot />}
-        {active === 3 && <WorkspaceIcon />}
+        {active === 3 && <WorkSpaceIcon />}
         {active === 4 && <Statuses />}
         {active === 5 && <ChannelPrefixes />}
       </div>

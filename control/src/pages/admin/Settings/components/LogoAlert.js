@@ -11,6 +11,10 @@ const LogoAlert = () => {
   )
 }
 const Alert = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
   padding: 0.75rem 1rem 0.75rem 3rem;
   border: 1px solid #ddd;
   background: #fff;
@@ -21,6 +25,7 @@ const Alert = styled.div`
 
 const Text = styled.p`
   font-size: 18px;
+  margin-left: .2rem;
 `
 
 export default LogoAlert
