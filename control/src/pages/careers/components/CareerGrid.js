@@ -11,7 +11,7 @@ const CareerGrid = () => {
          <div className={`${styles.categories}`}>
             <div className={`${styles.category}`}>
                <div className={`${styles.subcategory}`}>
-                  <h3 className={`${styles.center}`}>Frontend Development</h3>
+                  <h3>Frontend Development</h3>
                   <p>This track deals with the aspect of your application that the users interact with. A front-end developer will be able to correctly interpret a given design to the user interface.</p>
                </div>
                <div className={`${styles.flex}`}>
@@ -22,7 +22,7 @@ const CareerGrid = () => {
             </div>
             <div className={`${styles.category}`}>
                <div className={`${styles.subcategory}`}>
-                  <h3 className={`${styles.center}`}>Backend Development</h3>
+                  <h3>Backend Development</h3>
                   <p>This track deals with the aspect of the application the user does not directly interact with. It allows the frontend function either by running some back-end code or connecting to the database.</p>
                </div>
                <div className={`${styles.flex}`}>
@@ -34,7 +34,7 @@ const CareerGrid = () => {
             </div>
             <div className={`${styles.category}`}>
                <div className={`${styles.subcategory}`}>
-                  <h3 className={`${styles.center}`}>Design</h3>
+                  <h3>Design</h3>
                   <p>This track deals with creating a graphic plan for an application. You will learn to convert project documentation into viewable and understandable graphic design for the developers to work with</p>
                </div>
                <div className={`${styles.flex}`}>
@@ -43,7 +43,7 @@ const CareerGrid = () => {
             </div>
             <div className={`${styles.category}`}>
                <div className={`${styles.subcategory}`}>
-                  <h3 className={`${styles.center}`}>Mobile Development</h3>
+                  <h3>Mobile Development</h3>
                   <p>The mobile track contains a list of tools and languages needed for a developer to create mobile applications. A mobile application can be IOS or Android.</p>
                </div>
                <div className={`${styles.flex}`}>
@@ -53,7 +53,7 @@ const CareerGrid = () => {
             </div>
             <div className={`${styles.category}`}>
                <div className={`${styles.subcategory}`}>
-                  <h3 className={`${styles.center}`}>Digital Marketing</h3>
+                  <h3>Digital Marketing</h3>
                   <p>It encomprises the use of digital means and utilities to boost discoverability of products, services and brands.</p>
                </div>
                <div className={`${styles.flex}`}>
@@ -62,7 +62,7 @@ const CareerGrid = () => {
             </div>
             <div className={`${styles.category}`}>
                <div className={`${styles.subcategory}`}>
-                  <h3 className={`${styles.center}`}>Frameworks</h3>
+                  <h3>Frameworks</h3>
                   <p>During the program we will be exploring several useful frameworks to give you an edge in the industry and help you develop complex applications much faster</p>
                </div>
                <div className={`${styles.flex}`}>
