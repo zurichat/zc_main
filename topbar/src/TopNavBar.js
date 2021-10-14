@@ -124,7 +124,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   useEffect(() => {
     UpdateInfo()
-  }, [])
+  }, [userProfileImage]) //A temporary fix for profileImg to persist
 
   // RTC subscription
   const callbackFn = event => {
