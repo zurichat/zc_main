@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 import React, { useState, useEffect, useRef } from "react"
 import styles from "../styles/ChannelsTab.modules.css"
 import { Table } from "react-bootstrap"
@@ -106,7 +105,7 @@ const ChannelsTab = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isColumnModalOpen, setIsColumnModalOpen] = useState(false)
   const [selectedOption, setSelectedOption] = useState(null)
-  const node = useRef(null);
+  const node = useRef(null)
   const toggle = () => setIsOpen(!isOpen)
   const toggleColumnModal = () => setIsColumnModalOpen(!isColumnModalOpen)
   const [tableHeaderStateData, setTableHeaderStateData] = useState(tableData)
@@ -136,11 +135,11 @@ const ChannelsTab = () => {
   const handleClick = e => {
     if (node.current.contains(e.target)) {
       // inside click
-      return;
+      return
     }
-    // outside click 
+    // outside click
     setIsColumnModalOpen(false)
-  };
+  }
 
   const onOptionClicked = value => () => {
     setSelectedOption(value)
@@ -223,13 +222,13 @@ const ChannelsTab = () => {
     setTableHeaderStateData([...tableHeaderStateData])
   }
 
-//   const handleOutsideClickCloseModdal = e => {
-//     if (node.contains(e.target)) {
-//       return
-//     }
+  //   const handleOutsideClickCloseModdal = e => {
+  //     if (node.contains(e.target)) {
+  //       return
+  //     }
 
-//     setIsColumnModalOpen(false)
-//   }
+  //     setIsColumnModalOpen(false)
+  //   }
 
   return (
     <div className={styles.container}>
