@@ -61,8 +61,7 @@ const MarketPlaceContainer = ({ type }) => {
         marketplace.dispatch(
           loadPlugins(data.sort((a, b) => b.install_count - a.install_count))
         )
-        // eslint-disable-next-line no-console
-        console.log(data)
+        
         setPluginsLoading(false)
       }
     } catch (err) {
