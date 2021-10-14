@@ -49,6 +49,7 @@ import RedirectRoute from "./pages/redirect"
 import Plugins from "./pages/plugins"
 import Home from "./pages/admin/Settings/components/SettingsHome"
 import AboutWorkSpace from "./pages/admin/AboutWorkSpace"
+import AccountProfile from "./pages/admin/AccountProfile"
 
 import Legal from "./pages/legal"
 import ZurichatBlog from "./pages/blogs/components/zurichatBlog"
@@ -194,6 +195,7 @@ const App = () => {
           exact
           component={AboutWorkSpace}
         />
+        <PrivateRoute path="/admin/settings/accounts&profile" exact component={AccountProfile}/>
         {/* <PrivateRoute
           path="/admin/settings/permission"
           exact
