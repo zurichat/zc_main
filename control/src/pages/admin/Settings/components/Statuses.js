@@ -1,5 +1,6 @@
 import React from "react"
 import styles from "../styles/Statuses.module.css"
+import ClearTime from "./ClearTIme"
 const Statuses = () => {
   return (
     <>
@@ -7,7 +8,7 @@ const Statuses = () => {
         <div className={styles.status__container}>
           <h2>Suggested statuses</h2>
           <p>
-            Anyone can write their own status, and Slack offers a few
+            Anyone can write their own status, and Zurichat offers a few
             suggestions to get you started. If you’d like, you can customize
             these suggestions for your workspace.
           </p>
@@ -15,7 +16,15 @@ const Statuses = () => {
             <div className={styles.set_status}>
               <p>Status</p>
               <div className={styles.set_status_text}>
-                <button>😂</button>
+                <button>🗓</button>
+                <input
+                  type="text"
+                  defaultValue="In a meeting"
+                  placeholder="What's your status?"
+                />
+              </div>
+              <div className={styles.set_status_text}>
+                <button>🚎</button>
                 <input
                   type="text"
                   defaultValue="Commuting"
@@ -23,44 +32,41 @@ const Statuses = () => {
                 />
               </div>
               <div className={styles.set_status_text}>
-                <button>😂</button>
+                <button>🤒</button>
                 <input
                   type="text"
-                  defaultValue="Commuting"
+                  defaultValue="Out sick"
                   placeholder="What's your status?"
                 />
               </div>
               <div className={styles.set_status_text}>
-                <button>😂</button>
+                <button>🌴</button>
                 <input
                   type="text"
-                  defaultValue="Commuting"
+                  defaultValue="Vacationing"
                   placeholder="What's your status?"
                 />
               </div>
               <div className={styles.set_status_text}>
-                <button>😂</button>
+                <button>🏡</button>
                 <input
                   type="text"
-                  defaultValue="Commuting"
-                  placeholder="What's your status?"
-                />
-              </div>
-              <div className={styles.set_status_text}>
-                <button>😂</button>
-                <input
-                  type="text"
-                  defaultValue="Commuting"
+                  defaultValue="Working remotely"
                   placeholder="What's your status?"
                 />
               </div>
             </div>
             <div className={styles.status_clear_time}>
               <p>By default, clear after:</p>
+              <ClearTime />
+              <ClearTime />
+              <ClearTime />
+              <ClearTime />
+              <ClearTime />
             </div>
           </div>
           <div style={{ display: "flex", flexDirection: "row-reverse" }}>
-            <button>Save</button>
+            <button className={styles.btn_save_status}>Save</button>
           </div>
           <div>
             <h2>Tips for statuses:</h2>
