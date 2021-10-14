@@ -2,6 +2,7 @@ import Sidebar from "./sidebar.component"
 import { useEffect, useReducer } from "react"
 import SkeletonLoader from "./components/SkeletonLoader"
 import { fetchUser } from "./utils/fetchUserDetails"
+import themeColors from "../../theming/themecolors"
 
 export const ACTIONS = {
   ADD_USER_INFO: "add-user-info",
@@ -60,6 +61,10 @@ function reducer(state, action) {
 
 export default function App() {
   const [state, dispatch] = useReducer(reducer, {})
+  const themeStyle= localStorage.getItem("customTheme");
+  const sideBarDiv =document.getElementById("single-spa-application:@zuri/sidebar")
+  sideBarDiv.style.backgroundColor= themeColors[themeStyle]. primary
+  sideBarDiv.style.color= themeColors[themeStyle].textColor
 
   useEffect(() => {
     //Load user related information when component mounts
