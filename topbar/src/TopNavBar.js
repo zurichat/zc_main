@@ -351,12 +351,12 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
               style={{
                 position: "absolute",
                 top: "0px",
-                right: "60px",
+                right: "50px",
                 display: "flex",
                 alignItems: "center",
                 height: "100%",
-                backgroundColor: "#f0f0f0",
-                padding: "0px 10px",
+                backgroundColor: "#fafafa",
+                padding: "0px 4px",
                 cursor: "pointer",
                 borderTopLeftRadius: "5px",
                 borderBottomLeftRadius: "5px"
@@ -365,11 +365,11 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
               data-for="StatusHover"
               onClick={() => setStatusModal(!statusModal)}
             >
-              <span style={{ fontSize: "25px" }}>{user?.status?.tag}</span>
+              <span style={{ fontSize: "16px" }}>{user?.status?.tag}</span>
             </div>
             <ReactTooltip id="StatusHover" type="dark" effect="solid">
               <span>
-                {user?.status?.tag} &nbsp;&nbsp; {user?.status?.text}
+                {user?.status?.tag}&nbsp;&nbsp;{user?.status?.text}
               </span>
             </ReactTooltip>
           </>

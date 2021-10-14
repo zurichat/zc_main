@@ -100,8 +100,11 @@ const MessagesMedia = () => {
         <img src={theme12} alt="theme12" className={styles.theme12} />
       </div>
       <div className={styles.change}>
-        <p> To change your full or display name, head to{" "}
-        <span style={{ color: "#00B87C" }}>your profile.</span></p>
+        <p>
+          {" "}
+          To change your full or display name, head to{" "}
+          <span style={{ color: "#00B87C" }}>your profile.</span>
+        </p>
       </div>
       <div className={styles.bottom2}></div>
       <div className={styles.add}>Additional options</div>

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react"
 import { Picker } from "emoji-mart"
-import ReactTooltip from 'react-tooltip';
+import ReactTooltip from "react-tooltip"
 import DatePicker from "react-datepicker"
 // import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import TimePicker from "react-time-picker"
@@ -59,12 +59,15 @@ const SetStatusModal = ({
   const [dropdown, setDropdown] = useState(false)
   const [openEmoji, setOpenEmoji] = useState(false)
   const [dateTime, setDateTime] = useState(false)
-  const [choosePeriod, setChoosePeriod] = useState({label: "Don't clear", value: "dont_clear"})
+  const [choosePeriod, setChoosePeriod] = useState({
+    label: "Don't clear",
+    value: "dont_clear"
+  })
   const { user, orgId, setUser } = useContext(ProfileContext)
   const [statusEmoji, setStatusEmoji] = useState(user?.status?.tag)
   const [statusText, setStatusText] = useState(user?.status?.text)
-  
-  const onEmojiSelect = (selectedEmoji) => {
+
+  const onEmojiSelect = selectedEmoji => {
     setStatusEmoji(selectedEmoji.native)
     setOpenEmoji(!openEmoji)
   }
@@ -94,7 +97,8 @@ const SetStatusModal = ({
       ...user,
       status: {
         text: statusText,
-        tag: statusEmoji
+        tag: statusEmoji,
+        expiry_time: choosePeriod.value
       }
     })
 
@@ -119,7 +123,8 @@ const SetStatusModal = ({
       ...user,
       status: {
         text: "",
-        tag: ""
+        tag: "",
+        expiry_time: ""
       }
     })
 
@@ -143,7 +148,7 @@ const SetStatusModal = ({
     setStatusModal(!statusModal)
   }
   return (
-    <div className={styles.modal} >
+    <div className={styles.modal}>
       <div className={styles.modalcontainer}>
         <div className={styles.statustop}>
           <p>Set a status</p>
@@ -162,15 +167,17 @@ const SetStatusModal = ({
                   className={styles.chosenemoji}
                   onClick={() => setOpenEmoji(!openEmoji)}
                 >
-                  {statusEmoji || <img src={smile} className={styles.defalutEmoji}/>}
+                  {statusEmoji || (
+                    <img src={smile} className={styles.defalutEmoji} />
+                  )}
                 </p>
                 <div className={styles.emoji}>
                   <StyledEmojiWrapper>
                     {openEmoji ? (
                       <Picker
-                        set='google'
-                        title='pick an emoji...'
-                        emoji='point_up'
+                        set="google"
+                        title="pick an emoji..."
+                        emoji="point_up"
                         onSelect={onEmojiSelect}
                       />
                     ) : null}
@@ -180,14 +187,19 @@ const SetStatusModal = ({
                       <img
                         src={blackx}
                         alt=""
-                        onClick={() =>{
+                        onClick={() => {
                           setOpenEmoji(!openEmoji)
                         }}
                         className={styles.emojiclose}
                       />
                     ) : null}
                   </div>
-                  {openEmoji && <div className={styles.emojiback} onClick={() => setOpenEmoji(!openEmoji)}></div>}
+                  {openEmoji && (
+                    <div
+                      className={styles.emojiback}
+                      onClick={() => setOpenEmoji(!openEmoji)}
+                    ></div>
+                  )}
                 </div>
                 <input
                   type="text"
@@ -206,9 +218,10 @@ const SetStatusModal = ({
                 alt="clear status"
                 role="button"
                 className={styles.blackx}
-                data-tip data-for='clearstatus'
+                data-tip
+                data-for="clearstatus"
               />
-              <ReactTooltip id='clearstatus' type='dark' effect='solid'>
+              <ReactTooltip id="clearstatus" type="dark" effect="solid">
                 <span>Clear all</span>
               </ReactTooltip>
             </div>
@@ -219,9 +232,7 @@ const SetStatusModal = ({
               >
                 <label htmlFor="" className={styles.dropdowntop}>
                   Clear after: &nbsp;
-                  <span
-                    className={styles.dropdowntopspan}
-                  >
+                  <span className={styles.dropdowntopspan}>
                     {choosePeriod.label}
                   </span>
                 </label>
@@ -255,32 +266,51 @@ const SetStatusModal = ({
                   >
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod({label: "Don't clear", value: "dont_clear"})}
+                      onClick={() =>
+                        setChoosePeriod({
+                          label: "Don't clear",
+                          value: "dont_clear"
+                        })
+                      }
                     >
                       Don't clear
                     </li>
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod({label: "1 hour", value: "one_hour"})}
+                      onClick={() =>
+                        setChoosePeriod({ label: "1 hour", value: "one_hour" })
+                      }
                     >
                       1 hour
                     </li>
 
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod({label: "4 hours", value: "four_hours"})}
+                      onClick={() =>
+                        setChoosePeriod({
+                          label: "4 hours",
+                          value: "four_hours"
+                        })
+                      }
                     >
                       4 hours
                     </li>
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod({label: "Today", value: "today"})}
+                      onClick={() =>
+                        setChoosePeriod({ label: "Today", value: "today" })
+                      }
                     >
                       Today
                     </li>
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod({label: "This week", value: "this_week"})}
+                      onClick={() =>
+                        setChoosePeriod({
+                          label: "This week",
+                          value: "this_week"
+                        })
+                      }
                     >
                       This week
                     </li>
@@ -294,23 +324,32 @@ const SetStatusModal = ({
                 )}
               </div>
             </div>
-              {((user?.status?.tag !== statusEmoji) || (user?.status?.text !== statusText)) &&
-                <button
-                  className={styles.statuscta}
-                  type="submit"
-                  onClick={handleSubmit}
-                >Save Changes</button>
-              }
-              {
-                ((user?.status?.tag === statusEmoji && user?.status?.text === statusText) &&
-                (statusEmoji !== "" || statusText !== "")) &&
-                <span onClick={handleClearStatus} className={styles.clearstatus}>Clear Status</span>
-              }
-              {
-                ((user?.status?.tag === statusEmoji && statusEmoji === "") && 
-                (user?.status?.text === statusText && statusText === "")) && 
+            {(user?.status?.tag !== statusEmoji ||
+              user?.status?.text !== statusText) && (
+              <button
+                className={styles.statuscta}
+                type="submit"
+                onClick={handleSubmit}
+              >
+                Save Changes
+              </button>
+            )}
+            {user?.status?.tag === statusEmoji &&
+              user?.status?.text === statusText &&
+              (statusEmoji !== "" || statusText !== "") && (
+                <span
+                  onClick={handleClearStatus}
+                  className={styles.clearstatus}
+                >
+                  Clear Status
+                </span>
+              )}
+            {user?.status?.tag === statusEmoji &&
+              statusEmoji === "" &&
+              user?.status?.text === statusText &&
+              statusText === "" && (
                 <span className={styles.inactivesave}>Save Changes</span>
-              }
+              )}
           </form>
           {/* {status.map((data)=>{
                       const {text, emoji} = data;
@@ -323,7 +362,10 @@ const SetStatusModal = ({
                   })} */}
         </div>
       </div>
-      <div className={styles.modalback} onClick={() => setStatusModal(!statusModal)}></div>
+      <div
+        className={styles.modalback}
+        onClick={() => setStatusModal(!statusModal)}
+      ></div>
     </div>
   )
 }
