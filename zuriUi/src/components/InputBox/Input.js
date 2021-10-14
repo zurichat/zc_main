@@ -1,38 +1,61 @@
+import { useState, useCallback } from "react"
 import styled from "styled-components"
-import UnstyledButton from "./UnstyledButton"
-import { EditorState, RichUtils, convertToRaw } from "draft-js"
-import { useState } from "react"
-// import Send from "../assets/comments/goto.svg";
-import "draft-js-emoji-plugin/lib/plugin.css"
-import Toolbar from "./Toolbar"
-import createEmojiMartPlugin from "draft-js-emoji-mart-plugin"
-import data from "emoji-mart/data/apple.json"
 
-import "emoji-mart/css/emoji-mart.css"
+import { EditorState, RichUtils, convertToRaw } from "draft-js"
+import createEmojiMartPlugin from "draft-js-emoji-mart-plugin"
 import Editor from "@draft-js-plugins/editor"
-import createEmojiPlugin from "@draft-js-plugins/emoji"
+import createMentionPlugin, {
+  defaultSuggestionsFilter
+} from "@draft-js-plugins/mention"
+
+import data from "emoji-mart/data/apple.json"
+import "emoji-mart/css/emoji-mart.css"
+import "draft-js-emoji-plugin/lib/plugin.css"
+import "@draft-js-plugins/mention/lib/plugin.css"
+import "!style-loader!css-loader!@draft-js-plugins/mention/lib/plugin.css"
+// import suggestionStyles from "./suggestions.module.css"
+
+import Toolbar from "./Toolbar"
+import mentions from "./mentions"
+
+// import UnstyledButton from "./UnstyledButton"
+// // import Send from "../assets/comments/goto.svg";
+// import createEmojiPlugin from "@draft-js-plugins/emoji"
 
 // const emojiPlugin = createEmojiPlugin({
 //   useNativeArt: true,
 // });
 // const { EmojiSuggestions, EmojiSelect } = emojiPlugin;
 // const plugins = [emojiPlugin];
+
 const emojiPlugin = createEmojiMartPlugin({
   data,
   set: "apple"
 })
+
+const mentionPlugin = createMentionPlugin()
+
 const { Picker } = emojiPlugin
-const CommentBox = ({ addToMessage }) => {
+const { MentionSuggestions } = mentionPlugin
+
+const CommentBox = ({ addToMessage, users }) => {
   const [data, setData] = useState("")
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty()
   )
   const [showEmoji, setShowEmoji] = useState(false)
-  // const handleAddToMessages = () => {
-  //   if (text) {
-  //     addToMessage(text);
-  //     setText("");
-  //   }
+
+  const [suggestions, setSuggestions] = useState(users || mentions)
+  const [suggestionsOpen, setSuggestionsOpen] = useState(false)
+
+  // Mention helpers
+  const onOpenChange = useCallback(_open => {
+    setSuggestionsOpen(_open)
+  }, [])
+
+  const onSearchChange = useCallback(({ value }) => {
+    setSuggestions(defaultSuggestionsFilter(value, mentions))
+  }, [])
 
   const editorStates = editorState => {
     setEditorState(editorState)
@@ -42,6 +65,7 @@ const CommentBox = ({ addToMessage }) => {
       .join("\n")
     setData(value)
   }
+
   const onChange = editorState => {
     editorStates(editorState)
   }
@@ -66,7 +90,14 @@ const CommentBox = ({ addToMessage }) => {
           editorState={editorState}
           onChange={onChange}
           handleKeyCommand={handleKeyCommand}
-          plugins={[emojiPlugin]}
+          plugins={[emojiPlugin, mentionPlugin]}
+        />
+        <MentionSuggestions
+          open={suggestionsOpen}
+          onOpenChange={onOpenChange}
+          onSearchChange={onSearchChange}
+          suggestions={suggestions}
+          // onAddMention={m => console.log(m)}
         />
         <Toolbar
           editorState={editorState}
@@ -82,7 +113,8 @@ const CommentBox = ({ addToMessage }) => {
     </Wrapper>
   )
 }
-export default Input
+
+export default CommentBox
 
 const Wrapper = styled.div`
   padding-left: 16px;
@@ -91,6 +123,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   background-color: white;
 `
+
 const InputWrapper = styled.section`
   border: 1px solid hsla(0, 0%, 92%, 1);
   border-radius: 3px;
