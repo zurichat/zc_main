@@ -1,16 +1,82 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import classes from "../styles/EmojiTab.module.css"
+import { authAxios } from "../../Utils/Api"
+import toast from "react-hot-toast"
+import Picker from "emoji-picker-react"
 
 const Emoji = () => {
+  const imageRef = useRef(null)
+  const avatarRef = useRef(null)
   const [display, setDisplay] = useState(false)
   const [text, setText] = useState("")
   const [image, setImage] = useState([])
   const [btnName, setBtnName] = useState("")
+  const [emojiImage, setEmojiImage] = useState(null)
+  const [state, setState] = useState(null)
+  const [formData, setformData] = useState(new FormData())
+  const [emojiOne, setEmojiObjectOne] = useState("\u2705")
+  const [emojiTwo, setEmojiObjectTwo] = useState("\u{1F60A}")
+  const [emojiThree, setEmojiObjectThree] = useState("\u{1F923}")
+  const [isOpen, setIsOpen] = useState(false)
+  const [number, setNumber] = useState(null)
+  const ref = useRef(null)
+
+  const onEmojiClick = (event, emojiObject) => {
+    if (number === "1") {
+      setEmojiObjectOne(emojiObject.emoji)
+    } else if (number === "2") {
+      setEmojiObjectTwo(emojiObject.emoji)
+    } else {
+      setEmojiObjectThree(emojiObject.emoji)
+    }
+  }
 
   useEffect(() => {
     if (display) document.body.style.overflow = "hidden"
     if (!display) document.body.style.overflow = "scroll"
   }, [display])
+
+  const handleImageChange = e => {
+    if (imageRef.current.files[0]) {
+      let fileReader = new FileReader()
+
+      fileReader.onload = function (e) {
+        avatarRef.current.src = e.target.result
+      }
+
+      fileReader.readAsDataURL(imageRef.current.files[0])
+      const imageReader = e.target.files[0]
+
+      // const formData = new FormData()
+      setformData(formData.append("image", imageReader))
+    }
+  }
+
+  const handleSave = e => {
+    //dummy endpoint
+    setDisplay(false)
+
+    let orgId = ""
+
+    authAxios
+      .patch(`/organizations/${orgId}/settings`, {
+        formData,
+        state
+      })
+      .then(res => {
+        const newUploadedImage = res.data.data
+        setEmojiImage(newUploadedImage)
+        toast.success("Custom Emoji Updated Successfully", {
+          position: "top-center"
+        })
+      })
+      .catch(err => {
+        console.error(err)
+        toast.error(err?.message, {
+          position: "top-center"
+        })
+      })
+  }
 
   return (
     <div className={classes.container}>
@@ -20,20 +86,40 @@ const Emoji = () => {
           Choose the default emoji people will see when they enable one-click
           reactions
         </div>
+        {isOpen ? <Picker onEmojiClick={onEmojiClick} /> : null}
         <div className={classes.emojis}>
-          <button></button>
-          <button></button>
-          <button></button>
+          <button
+            onClick={() => {
+              setNumber("1"), setIsOpen(!isOpen)
+            }}
+          >
+            {emojiOne}
+          </button>
+          <button
+            onClick={() => {
+              setNumber("2"), setIsOpen(!isOpen)
+            }}
+          >
+            {emojiTwo}
+          </button>
+          <button
+            onClick={() => {
+              setNumber("3"), setIsOpen(!isOpen)
+            }}
+          >
+            {emojiThree}
+          </button>
         </div>
         <div className={classes.example}>
           <div className={classes.text}>Here’s an example:</div>
           <div className={classes.messageDialog}>
             <div className={classes.messageActions}>
               <button>
-                <img src="" alt="" />
+                {/* <img src="" alt="" /> */}
+                {emojiOne}
               </button>
-              <button></button>
-              <button></button>
+              <button> {emojiTwo}</button>
+              <button> {emojiThree}</button>
               <button></button>
               <button></button>
               <button></button>
@@ -100,11 +186,21 @@ const Emoji = () => {
                     <div className={classes.imageUpload}>
                       <div className={classes.imageContainer}>
                         <div></div>
-                        <div></div>
+                        <div>
+                          <img ref={avatarRef} src="" alt="sticker pic" />
+                        </div>
                       </div>
                       <div>
                         <p>Select an image</p>
-                        <button>Upload an Image</button>
+                        <input
+                          ref={imageRef}
+                          onChange={handleImageChange}
+                          type="file"
+                          hidden
+                          id="image"
+                        />
+                        <label htmlFor="image">Upload an Image</label>
+                        {/* <button>Upload an Image</button> */}
                       </div>
                     </div>
                   </li>
@@ -116,14 +212,17 @@ const Emoji = () => {
                       messages.
                     </div>
                     <div className={classes.input}>
-                      <input type="text" />
+                      <input
+                        type="text"
+                        onChange={e => setState({ name: e.target.value })}
+                      />
                     </div>
                   </li>
                 </ol>
               </div>
               <div className={classes.footer}>
                 <button onClick={() => setDisplay(false)}>Cancel</button>
-                <button>Save</button>
+                <button onClick={handleSave}>Save</button>
               </div>
             </div>
           </div>
