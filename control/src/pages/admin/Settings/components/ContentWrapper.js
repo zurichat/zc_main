@@ -6,6 +6,7 @@ import classes from "../styles/ContentWrapper.module.css"
 const ContentWrapper = ({
   title,
   text,
+  span,
   tab1,
   tab2,
   tab3,
@@ -25,8 +26,8 @@ const ContentWrapper = ({
       <AdminSettings>
         <div className={classes.container}>
           <div className={classes.contentHeading}>
-            <h5>{title}</h5>
-            <p>{text}</p>
+            <h1>{title}</h1>
+            <p>{text} <span>{span}</span></p>
           </div>
           <div className={classes.contentWrapper}>
             <div className={classes.tabWrapper}>
