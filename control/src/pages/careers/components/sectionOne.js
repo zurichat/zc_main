@@ -13,10 +13,10 @@ const SectionOne = () => {
   return (  
     <div className={`${styles.Section1}`}>
       <div className={`${styles.section1Left}`}>
-        <h1>{t("careers.section_one.headline")} Zuri Chat</h1>
+        <h1>{t("careers.section_one.headline")}</h1>
         <p>{t("careers.section_one.post_headline")}</p>
         <Link to="/signup">
-          <a className={styles.JoinBtn}>{t("careers.section_one.join_link")} Zuri Chat</a>
+          <a className={styles.JoinBtn}>{t("careers.section_one.join_link")}</a>
         </Link>
       </div>
       <img src={groupImage} alt="people" />
