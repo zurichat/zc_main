@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Col, Row } from 'react-bootstrap'
 import styles from './styles/marketplace.module.css'
 import MarketPlaceContainer from './components/marketplace-container/MarketPlaceContainer'
@@ -9,10 +9,50 @@ import { DiscoverPluginSvg } from './components/marketplace-container/DiscoverPl
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 // import MarketplaceHeader from './components/marketplace-container/MarketplaceHeader'
-import { MarketPlaceProvider } from '../context/MarketPlace.context.js'
+import { MarketPlaceProvider, useMarketPlaceContext } from '../context/MarketPlace.context.js'
 import { Helmet } from 'react-helmet'
+import axios from 'axios'
 
 const MarketPlace = () => {
+     const [filteredPlugin, setFilteredPlugin] = useState([])
+     const [searchInput, setSearchInput] = useState('')
+     const [pluginData, setPluginData] = useState([])
+    //  const marketplace = useMarketPlaceContext()
+    //  const { state } = marketplace
+
+
+    useEffect(() => {
+      axios.get(`https://api.zuri.chat/marketplace/plugins`)
+           .then((response) => {
+            setPluginData(response.data.data[0].name);
+            console.error(pluginData, response.data.data[0].name)
+            
+          })
+          
+    }, [])
+
+     const searchedPlugins = (searchValue) => {
+       
+       setSearchInput(searchValue)
+      
+       if (searchInput !== '') {
+         const filteredPlugin = pluginData.data.filter((item) => {
+           return Object.values(item).join('').toLocaleLowerCase().includes(searchInput.toLowerCase())
+         })
+         setFilteredPlugin(filteredPlugin)
+       } else {
+         setFilteredPlugin(pluginData)
+       }
+     }
+
+  //    const updateInput = async (input) => {
+  //     const filtered = countryListDefault.filter(country => {
+  //      return country.name.toLowerCase().includes(input.toLowerCase())
+  //     })
+  //     setInput(input);
+  //     setCountryList(filtered);
+  //  }
+
   const [userDetails, setUserDetails] = useState(null)
   return (
     <MarketPlaceProvider>
@@ -48,10 +88,44 @@ const MarketPlace = () => {
                       fill="rgba(190,190,190,1)"
                     />
                   </svg>
-                  <input type="text" placeholder="Search Plugins" />
+                  <input 
+                  onChange={(e) => searchedPlugins(e.target.value)}
+                  type="text" placeholder="Search Plugins" />
+                 
                 </div>
                 <button className={styles.marketplaceHeroButton}>Search</button>
-              </div>
+               </div>
+               <div className={styles.pluginList}>
+                 { searchInput.length > 1 ? (
+                   Object.keys(filteredPlugin).map((item, id) => {
+                   return (
+                     <div key={id} >
+                     <li className={styles.pluginHover}>
+                       <span  >
+                         {filteredPlugin[item]}
+                       </span>
+                     </li>
+                     </div>
+                   )
+                   
+                 })
+                 ) : (
+                   Object.keys(pluginData).map((item, id) => {
+                     return (
+                      <div key={id} >
+                      {/* <li>
+                        <span className={styles.pluginHover} >
+                          {filteredPlugin[item]}
+                        </span>
+                      </li> */}
+                      </div>
+                     )
+                   })
+                 )
+                 }
+                    
+                    
+                  </div>
             </Col>
             <Col md={4}>
               <div className={styles.circleBackground}>

@@ -495,6 +495,35 @@
   max-height: fit-content;
 }
 
+.pluginList {
+  display: flex;
+  height: 15px;
+  width: 50%;
+  margin-left: 5px;
+  color: #000;
+  font-size: 14px;
+  /* display: table-cell; */
+  display: flex;
+  background-color: #fff;
+  padding: 10px 0px 22px 25px;
+  font-weight: 600;
+}
+
+.pluginList:hover {
+  background-color: #00b87c;
+  color: #fff;
+}
+
+/* .pluginHover {
+  color: #000;
+  margin-bottom: -40px;
+  cursor: pointer
+}
+
+.pluginHover:hover {
+   color: #fff;
+} */
+
 @media (max-width: 800px) {
   .pluginCardContainer {
     width: 100%;
