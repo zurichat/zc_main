@@ -1,25 +1,51 @@
 import React from "react"
 import styles from "../styles/overviewWorkspace.module.css"
+import avatar from "../assets/avatar.svg"
 import { Link } from "react-router-dom"
-const OverviewWorkspace = () => {
+const OverviewWorkspace = ({ organizationDetails, currentWorkspace }) => {
+  if (!organizationDetails) {
+    return null
+  }
+  const {
+    name,
+    workspace_url,
+    version,
+    created_at,
+    logo_url
+  } = organizationDetails
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  }
+  const date = new Date(Date.parse(created_at)).toLocaleDateString(
+    "en-US",
+    options
+  )
+
+  //eslint-disable-next-line
+  console.log(date)
   return (
     <div>
       <div className={styles.details}>
-        <div className={styles.imgContainer}>WM</div>
+        <div className={styles.imgContainer}>
+          <img src={logo_url === "" ? avatar : logo_url} alt="" />
+        </div>
         <div className={styles.name}>
-          <h3 className={styles.h3}>Web Mekanic</h3>
+          <h3 className={styles.h3}>{name}</h3>
           <Link to="/" className={styles.link}>
-            webmekanic.slack.com
+            {workspace_url}
           </Link>
         </div>
       </div>
       <div className={styles.workspacePlan}>
         <h3 className={styles.workspaceHeader}>Plan type</h3>
-        <p className={styles.workspacePara}>Free</p>
+        <p className={styles.workspacePara}>{version}</p>
       </div>
       <div className={styles.workspaceDate}>
         <h3 className={styles.workspaceDateHeader}>Date created</h3>
-        <h4 className={styles.workspaceDatePara}>October 13th,2021</h4>
+        <h4 className={styles.workspaceDatePara}>{date}</h4>
       </div>
       <div className={styles.workspaceTerms}>
         <h3 className={styles.workspaceTermHeader}>Terms of service</h3>
@@ -30,4 +56,4 @@ const OverviewWorkspace = () => {
     </div>
   )
 }
-export default OverviewWorkspace;
+export default OverviewWorkspace
