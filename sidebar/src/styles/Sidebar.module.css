@@ -52,20 +52,30 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: auto 0;
 }
 
 .orgTitle {
   font-weight: bold;
   font-size: 1.125em;
   line-height: 28px;
+  width: auto;
+  padding-right: 8px;
+  line-height: 1.2em;
 }
 
 .orgHeader {
   cursor: pointer;
+  display: flex;
+  width: -webkit-fill-available;
 }
 
 .arrowDown {
-  width: 2.5em;
+  width: fit-content;
+  position: relative;
+  top: 0.2em;
+  width: 1em;
+  color: #fff;
 }
 
 .sb__item {
@@ -88,7 +98,7 @@
 }
 
 .item__img {
-  width: 0.935em;
+  width: 1.55em;
 }
 
 .item_p {

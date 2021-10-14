@@ -12,12 +12,9 @@ const SearchPage = () => {
     const [search, setSearch] = useState('');
     const [showSearchModal, setShowSearchModal] = useState(false);
 
-
     const openModal = () => {
         setShowSearchModal(prev => !prev);
     };
-
-
 
     const ContSection = styled.div`
     display: flex;
@@ -35,7 +32,6 @@ const SearchPage = () => {
     margin-left: 8%;
    
 `;
-
 
     const Chip = styled.p`
     display: inline-block;
@@ -165,7 +161,6 @@ margin-left: 4px;
                 />
                 <Border />
             </FirstSection>
-
             <Result>Search results for "mark"</Result>
             <hr></hr>
             <ContSection>

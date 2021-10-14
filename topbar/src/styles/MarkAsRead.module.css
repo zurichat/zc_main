@@ -1,20 +1,26 @@
 .container {
-  width: 100%;
-  margin: 62px 53px 20px;
+  max-width: 100%;
+  margin: 10px 20px;
+  height: 80vh;
 }
 
 .subhead {
-  font-family: Lato;
-  font-size: 16px;
+  font-family: "Lato";
+  font-size: 15px;
   font-style: normal;
   font-weight: 700;
   line-height: 20px;
   letter-spacing: 0em;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
+.subHeadUl{
+  margin: 10px 0px;
+}
 .section {
   text-align: left;
+  display: flex;
+  margin: 10px 0px;
 }
 
 .option,
@@ -22,18 +28,24 @@
 .shortcut,
 .shortcutP {
   font-family: Lato;
-  font-size: 12px;
+  font-size: 13px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
-  color: #999999;
+  /* color: #999999; */
 }
 
 .option {
   margin-bottom: 10px;
-  margin-left: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.option img {
+  padding-right: 8px;
+  height: 14px;
 }
 
 /* .markAll {
@@ -143,4 +155,12 @@ left: 5px;
   letter-spacing: 0em;
   text-align: left;
   margin: 3px;
+}
+
+
+@media screen and (max-width: 500px) {
+  .container {
+    margin: 20px ;
+    margin-right: 20px;
+  }
 }
