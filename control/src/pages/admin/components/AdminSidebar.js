@@ -264,7 +264,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
+            to="/components/gateways"
           >
             Gateways
           </Link>
