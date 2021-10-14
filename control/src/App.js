@@ -200,7 +200,7 @@ const App = () => {
           exact
           component={AdminSettingsTab}
         /> */}
-         <PrivateRoute
+         <Route
           path="/admin/manage_members"
           exact
           component={ManageMembers}
