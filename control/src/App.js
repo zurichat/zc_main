@@ -40,6 +40,7 @@ import Billing from './pages/admin/Billing'
 import Blog from './pages/blogs'
 import Homepage from './pages/home'
 import Permissions from './pages/admin/Permissions'
+import Customize from './pages/admin/customize-workspace/index'
 import SettingsHome from './pages/admin/Settings/index'
 import About from './pages/about/index'
 import AdminSettingsTab from './pages/admin/Settings/components/AdminSettingsTab'
@@ -169,6 +170,7 @@ const App = () => {
         <PrivateRoute path="/session-signout" component={AllSessionSignOut} />
         <PrivateRoute path="/settings" exact component={Settings} />
         <PrivateRoute path="/admin/settings" exact component={SettingsHome} />
+        <PrivateRoute path="/admin/settings/customize" exact component={Customize} />
         <PrivateRoute
           path="/admin/settings/billings"
           exact
