@@ -74,7 +74,7 @@ const HeaderSearchSuggestion = () => {
           type="button"
           onChange={() => saveLang(event.target.value)}
         >
-          <option>Change Language</option>
+          <option>{t("header.language_select")}</option>
           <option value="en">English</option>
           <option value="fr">French</option>
           <option value="zh">Chinese</option>
