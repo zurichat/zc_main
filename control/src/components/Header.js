@@ -9,6 +9,12 @@ import { useTranslation } from "react-i18next"
 const HeaderSearchSuggestion = () => {
   const { t } = useTranslation()
 
+  const saveLang = lang => {
+    localStorage.setItem("myLanguage", lang)
+    //console.log(localStorage.getItem('myLanguage'))
+    location.reload()
+  }
+
   //const ref = useRef()
   //const toggleBgOverlay = () => {
   //  document
@@ -61,14 +67,19 @@ const HeaderSearchSuggestion = () => {
             className={`align-top ${headerStyles.searchImage1}`}
           />
         </Link>*/}
-      <div className={`line ${headerStyles.line}`}></div>
+        <div className={`line ${headerStyles.line}`}></div>
 
-        <select className={`btn btn-transparent  ${headerStyles.select}`} type="button">
-          <option value="english">English</option>
-          <option value="french">French</option>
-          <option value="chinese">Chinese</option>
-          <option value="arabic">Arabic</option>
-          <option value="deutsch">Deutsch</option>
+        <select
+          className={`btn btn-transparent  ${headerStyles.select}`}
+          type="button"
+          onChange={() => saveLang(event.target.value)}
+        >
+          <option>Change Language</option>
+          <option value="en">English</option>
+          <option value="fr">French</option>
+          <option value="zh">Chinese</option>
+          <option value="ar">Arabic</option>
+          <option value="de">Deutsch</option>
         </select>
 
         <button
@@ -137,7 +148,6 @@ const HeaderSearchSuggestion = () => {
                 </span>
               </NavLink>
             </li>
-
 
             <li className="nav-item">
               <NavLink

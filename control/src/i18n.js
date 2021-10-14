@@ -39,6 +39,9 @@ i18n
     }
   })
 
-i18n.changeLanguage("en")
+const lang = localStorage.getItem('myLanguage') ? localStorage.getItem('myLanguage') : 'zh'
+i18n.changeLanguage(lang)
+//console.log(lang)
+
 
 export default i18n
