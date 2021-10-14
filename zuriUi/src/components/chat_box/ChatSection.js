@@ -6,9 +6,10 @@ import MessageInputBox from "../message_input/MessageInputField"
 
 const CommentSection = ({ chatsConfig }) => {
   const [openSidebar, setOpenSidebar] = useState(chatsConfig.showChatSideBar)
-  const [messages, setMessages] = useState(chatsConfig.messages)
+  const [messages, setMessages] = useState([])
 
   const addToMessages = message => {
+    // console.log("mes", message)
     setMessages(messages => [...messages, message])
   }
 
