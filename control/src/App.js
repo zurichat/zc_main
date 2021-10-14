@@ -1,4 +1,3 @@
- 
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Login from './pages/login'
 import Uitest from './pages/UI/MsgBoard'
@@ -7,7 +6,6 @@ import SignOut from './pages/signout/index'
 import Workspace from './pages/workspace/components/Workspace'
 import LandingPage from './pages/LandingPage'
 import DAO_Features from './pages/DAO-Features'
-
 // password block
 import ResetPassword from "./pages/passwordReset/index"
 import NewPassword from "./pages/passwordReset/newPassword"
