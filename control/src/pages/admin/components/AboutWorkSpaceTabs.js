@@ -4,13 +4,13 @@ import styles from "../styles/aboutWorkspaceTab.module.css"
 
 // components
 import RetentionAndExports from "../components/RetentionAndExports"
-import OverviewWorkspace from "../components/OverviewWorkspace"
+import OverviewWorkspace from "./OverviewWorkspace"
 
 // icons
 import { FiMenu } from "react-icons/fi"
 import { CardProvider } from "../../../context/CardContext"
 
-const AboutWorkSpaceTabs = () => {
+const AboutWorkSpaceTabs = ({ organizationDetails, currentWorkspace }) => {
   const [openTab, setOpenTab] = useState(false)
   const [active, setActive] = useState(1)
 
@@ -60,15 +60,17 @@ const AboutWorkSpaceTabs = () => {
         </div>
 
         <div className={styles.tabContent}>
-          {active === 3 && (
-            <RetentionAndExports
+          {active === 1 && (
+            <OverviewWorkspace
               setActive={setActive}
               setOpenTab={setOpenTab}
               openTab={openTab}
+              organizationDetails={organizationDetails}
+              currentWorkspace={currentWorkspace}
             />
           )}
-            {active === 1 && (
-            <OverviewWorkspace
+          {active === 3 && (
+            <RetentionAndExports
               setActive={setActive}
               setOpenTab={setOpenTab}
               openTab={openTab}
