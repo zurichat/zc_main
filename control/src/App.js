@@ -51,7 +51,7 @@ import Legal from "./pages/legal"
 import ZurichatBlog from "./pages/blogs/components/zurichatBlog"
 
 import Ebooks from "./pages/ebooks"
-import InvitationPage from "./pages/admin/components/InvitationPage"
+import Invitation from "./pages/admin/Invitation"
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -187,11 +187,11 @@ const App = () => {
           component={AdminSettingsTab}
         /> */}
 
-        <Route path="/invitation">
-          <InvitationPage />
-        </Route>
         <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
         {/* ----------------settings routes closed----------------- */}
+        <Route path="/invitation">
+          <Invitation />
+        </Route>
         <Route path="/reset-password">
           <ResetPassword />
         </Route>
