@@ -4,7 +4,7 @@ import { BiSmile } from "react-icons/bi"
 import Picker, { SKIN_TONE_MEDIUM_DARK } from "emoji-picker-react"
 import axios from "axios"
 import defaultAvatar from "../assets/images/avatar_vct.svg"
-import smile from "../assets/images/smile.png";
+import smile from "../assets/images/smile.png"
 
 import styles from "../styles/Topbar.module.css"
 import { TopbarContext } from "../context/Topbar"
@@ -19,7 +19,7 @@ import NewStatusModal from "./NewStatusModal"
 import { authAxios } from "./../utils/Api"
 // react icons
 
-const TopbarModal = ({ members, statusModal,setStatusModal }) => {
+const TopbarModal = ({ members, statusModal, setStatusModal }) => {
   const {
     userProfileImage,
     orgId,
@@ -126,7 +126,7 @@ const TopbarModal = ({ members, statusModal,setStatusModal }) => {
     window.location.href = "/signout"
   }
   const [pause, setPause] = useState(false)
-  
+  // console.log(user)
 
   var userAppearance = null
   var toggleAppearance = null
@@ -166,7 +166,7 @@ const TopbarModal = ({ members, statusModal,setStatusModal }) => {
           openStatus={openStatus}
         />
       )}
-      
+
       {/* The section that shows the status picker*/}
       {showStatus ? (
         <div
@@ -205,9 +205,7 @@ const TopbarModal = ({ members, statusModal,setStatusModal }) => {
             <div className={styles.sectionOne}>
               <div className={styles.oneLeft}>
                 <img
-                  src={
-                    userProfileImage !== "" ? userProfileImage : defaultAvatar
-                  }
+                  src={userProfileImage ? userProfileImage : defaultAvatar}
                   alt="profile-pic"
                 />
               </div>
@@ -223,7 +221,6 @@ const TopbarModal = ({ members, statusModal,setStatusModal }) => {
                 {toggleAppearance}
               </div>
             </div>
-
             <div
               className={styles.sectionTwo}
               onClick={() => {
@@ -233,15 +230,22 @@ const TopbarModal = ({ members, statusModal,setStatusModal }) => {
               onMouseEnter={() => setHoverState(true)}
               onMouseLeave={() => setHoverState(false)}
             >
-              <div className={styles.emoji}>{user?.status?.tag || <img src={smile} className={styles.defalutEmoji}/>}</div>
-              <div className={styles.statusContent}>{!(user?.status?.text || user?.status?.tag)? "Update your Status": user?.status?.text}</div>
+              <div className={styles.emoji}>
+                {user?.status?.tag || (
+                  <img src={smile} className={styles.defalutEmoji} />
+                )}
+              </div>
+              <div className={styles.statusContent}>
+                {!(user?.status?.text || user?.status?.tag)
+                  ? "Update your Status"
+                  : user?.status?.text}
+              </div>
             </div>
 
             <div className={styles.sectionThree}>
-              {
-                (user?.status?.text || user?.status?.tag)&&
+              {(user?.status?.text || user?.status?.tag) && (
                 <p onClick={handleClearStatus}>Clear status</p>
-              }
+              )}
               <p
                 onClick={() => {
                   toggleUserPresence()
