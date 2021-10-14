@@ -77,7 +77,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/marketplace">Market Place</Link>{" "}
+                <Link to="/open-marketplace">Market Place</Link>{" "}
               </li>
               <li>
                 <Link to="/security">Security</Link>{" "}
