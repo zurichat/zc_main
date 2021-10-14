@@ -63,6 +63,9 @@ const Footer = () => {
                 <Link to="/about">About Zurichat</Link>{" "}
               </li>
               <li>
+                <Link to="/whyzurichat">Why Zurichat?</Link>{" "}
+              </li>
+              <li>
                 <Link to="/ZurichatBlog">Blog</Link>{" "}
               </li>
             </ul>
@@ -77,7 +80,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/marketplace">Market Place</Link>{" "}
+                <Link to="/open-marketplace">Market Place</Link>{" "}
               </li>
               <li>
                 <Link to="/security">Security</Link>{" "}
