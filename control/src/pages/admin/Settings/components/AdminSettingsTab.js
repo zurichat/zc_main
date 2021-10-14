@@ -1,15 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 
-import styles from '../styles/AdminSettingsTab.module.css'
+import styles from "../styles/AdminSettingsTab.module.css"
 
 // components
-import AdminSettings from '../adminSettings'
-import AuthTab from './AuthTab'
-import MembersTab from '../../components/MembersTab'
-import HistoryTab from '../../components/HistoryTab'
+import AdminSettings from "../adminSettings"
+import AuthTab from "./AuthTab"
+//import MembersTab from "../../components/MembersTab"
+import HistoryTab from "../../components/HistoryTab"
 
 // icon
-import { FiMenu } from 'react-icons/fi'
+import { FiMenu } from "react-icons/fi"
+import AttachmentTab from "../../components/AttachmentTab"
 
 const AdminSettingsTab = () => {
   const [openTab, setOpenTab] = useState(false)
@@ -76,7 +77,7 @@ const AdminSettingsTab = () => {
         )}
         {active === 2 && <HistoryTab />}
         {active === 3 && <AuthTab />}
-        {active === 4 && <MembersTab />}
+        {active === 4 && <AttachmentTab />}
       </div>
     </div>
   )

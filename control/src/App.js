@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import Login from "./pages/login"
+import Uitest from "./pages/UI/MsgBoard"
 import SignUp from "./pages/signup"
 import SignOut from "./pages/signout/index"
 import Workspace from "./pages/workspace/components/Workspace"
@@ -37,6 +38,7 @@ import CreateWorkSpaces from "./pages/createworkspace/components/WorkSpaceContex
 import PrivacyPolicy from "./pages/privacy-policy/index"
 import NotFoundPage from "./pages/404"
 import Billing from "./pages/admin/Billing"
+import Customize from "./pages/admin/Customize"
 import Blog from "./pages/blogs"
 import Homepage from "./pages/home"
 import Permissions from "./pages/admin/Permissions"
@@ -46,12 +48,13 @@ import AdminSettingsTab from "./pages/admin/Settings/components/AdminSettingsTab
 import TermsOfService from "./pages/termsOfService"
 import RedirectRoute from "./pages/redirect"
 import Plugins from "./pages/plugins"
-
+import Home from "./pages/admin/Settings/components/SettingsHome"
+import AboutWorkSpace from "./pages/admin/AboutWorkSpace"
+import Invitation from "./pages/admin/Invitation"
 import Legal from "./pages/legal"
 import ZurichatBlog from "./pages/blogs/components/zurichatBlog"
 
 import Ebooks from "./pages/ebooks"
-import Invitation from "./pages/admin/Invitation"
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -135,7 +138,9 @@ const App = () => {
         <Route path="/careers">
           <Careers />
         </Route>
-
+        <Route path="/terms">
+          <TermsOfService />
+        </Route>
         <Route path="/legal">
           <Legal />
         </Route>
@@ -143,11 +148,11 @@ const App = () => {
         <Route path="/privacy">
           <PrivacyPolicy />
         </Route>
-        <Route path="/terms">
-          <TermsOfService />
+        <Route path="/uitest">
+          <Uitest />
         </Route>
-        <Route path="/legal">
-          <Legal />
+        <Route path="/marketplace" exact>
+          <MarketPlace />
         </Route>
         <Route path="/dao-features">
           <DAO_Features />
@@ -176,10 +181,21 @@ const App = () => {
         <PrivateRoute path="/session-signout" component={AllSessionSignOut} />
         <PrivateRoute path="/settings" exact component={Settings} />
         <PrivateRoute path="/admin/settings" exact component={SettingsHome} />
+        <PrivateRoute path="/admin/settings/home" exact component={Home} />
         <PrivateRoute
           path="/admin/settings/billings"
           exact
           component={Billing}
+        />
+        <PrivateRoute
+          path="/admin/settings/customize"
+          exact
+          component={Customize}
+        />
+        <PrivateRoute
+          path="/admin/settings/aboutworkspace"
+          exact
+          component={AboutWorkSpace}
         />
         {/* <PrivateRoute
           path="/admin/settings/permission"
