@@ -20,9 +20,10 @@ import { GetUserInfo, SubscribeToChannel } from "@zuri/control"
 import axios from "axios"
 import { AiOutlineMenu } from "react-icons/ai"
 import styles from "../src/styles/TopNavBar.module.css"
-import SearchAutocomplete from "../src/components/SearchAutocomplete";
+import SearchAutocomplete from "../src/components/SearchAutocomplete"
 
 import { navigateToUrl } from "single-spa"
+import { BigModal } from "./components/bigModal"
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { closeModal, openModal, presence, setPresence } =
@@ -36,6 +37,18 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const [helpModal, setHelpModal] = useState(false)
   // const [memberId, setMemberId] = useState('');
   const [messages, setMessages] = useState("")
+  const [isSearchOpen, setOpenSearch] = useState(false)
+  const [searchValue, setSearchValue] = useState("")
+
+  const onSearchSubmit = e => {
+    if (e.keyCode === 13 && searchValue.length >= 1) {
+      setOpenSearch(true)
+    }
+  }
+  const onSearchChange = value => {
+    setSearchValue(value)
+  }
+
   useEffect(() => {
     // const fetchUser = async () => {
     //   const info = await GetUserInfo()
@@ -111,7 +124,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   useEffect(() => {
     UpdateInfo()
-  }, [])
+  }, [userProfileImage]) //A temporary fix for profileImg to persist
 
   // RTC subscription
   const callbackFn = event => {
@@ -158,27 +171,23 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   const [toggleSidebar, setToggleSidebar] = useState(false)
 
-  const handleToggleSidebar = useCallback(() => {
+  const handleToggleSidebar = () => {
     setToggleSidebar(!toggleSidebar)
-  }, [toggleSidebar])
+  }
 
-  //Handle sidebar on mobile
-  const sidebar = document.getElementById(
-    "single-spa-application:@zuri/sidebar"
-  )
   useEffect(() => {
-    if (toggleSidebar && window.outerWidth <=768) {
+    //Handle sidebar on mobile
+    const sidebar = document.getElementById(
+      "single-spa-application:@zuri/sidebar"
+    )
+    if (toggleSidebar && window.outerWidth <= 768) {
       sidebar.style.display = "block"
-    } 
-    else if(window.outerWidth > 768){
+    } else if (window.outerWidth > 768) {
       sidebar.style.display = "block"
-    }
-    else {
+    } else {
       sidebar.style.display = "none"
     }
-  }, [toggleSidebar, sidebar])
-
-
+  }, [toggleSidebar])
 
   const zc_spa_body = document.querySelector("body")
   // const sidebar_toggle = document.querySelector("#sidebar_toggle")
@@ -244,8 +253,6 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   const handleEnter = e => {
     e.preventDefault()
-    // eslint-disable-next-line no-console
-    console.log(window.location.href)
 
     navigateToUrl("/search")
     // let s= window.location.href.split('/')
@@ -286,8 +293,11 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           placeholder="Search here"
           border={"#99999933"}
         /> */}
-          {/* <TopSearchBar onClick={() => setShowTopSearchModal(true)} /> */}
-          <TopBarSearchModal />
+        {/* <TopSearchBar onClick={() => setShowTopSearchModal(true)} /> */}
+        <TopBarSearchModal
+          onSearchEnter={onSearchSubmit}
+          onChange={onSearchChange}
+        />
         {/* <div>
             <form onSubmit={handleEnter}>
               <BaseInput
@@ -311,8 +321,16 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
             suggestions={filteredSuggestions}
           />
         </div> */}
-      </div>
 
+        {isSearchOpen ? (
+          <BigModal
+            onClose={() => {
+              setOpenSearch(false)
+            }}
+            inputValue={searchValue}
+          />
+        ) : null}
+      </div>
       <ProfileImageContainer
         className="d-flex justify-content-end pe-3"
         style={{ width: "20%" }}
@@ -329,7 +347,6 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
       <Profile />
       <TopbarModal />
-       
     </>
   )
 }
