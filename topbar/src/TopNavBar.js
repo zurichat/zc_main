@@ -124,7 +124,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   useEffect(() => {
     UpdateInfo()
-  }, [])
+  }, [userProfileImage]) //A temporary fix for profileImg to persist
 
   // RTC subscription
   const callbackFn = event => {
@@ -143,7 +143,9 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   const currentWorkspace = localStorage.getItem("currentWorkspace")
 
-  SubscribeToChannel(currentWorkspace, callbackFn)
+  useEffect(() => {
+    SubscribeToChannel(currentWorkspace, callbackFn)
+  }, [])
 
   // useEffect(() => {
   //   if (showModal===true) {
