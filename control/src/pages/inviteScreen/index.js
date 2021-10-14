@@ -31,15 +31,21 @@ const InvitePage = () => {
   const history = useHistory()
 
   const handleJoin = () => {
-    if (sessionStorage.getItem(`user`) === null) {
-      sessionStorage.setItem(`workSpaceInviteRedirect`, `invites/${id}`)
-      history.push(`/signup`)
-      return
-    }
+    // if (sessionStorage.getItem(`user`) === null) {
+    //   sessionStorage.setItem(`workSpaceInviteRedirect`, `invites/${id}`)
+    //   history.push(`/login`)
+    //   return
+    // }
 
     checkIfRegistered({ uuid: id }).then(res => {
-      if (res.statusCode === `200`) setsuccess(true)
-      else seterror(res.message)
+      if (res.statusCode === `200`) {
+        setsuccess(true)
+        history.push(`/choose-workspace`)
+      } else {
+        history.push(`/signup`)
+
+        seterror(res.message)
+      }
     })
   }
 
