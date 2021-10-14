@@ -11,7 +11,17 @@ import { data } from "../utils/Countrycode"
 import TimezoneSelect from "react-timezone-select"
 import { StyledProfileWrapper } from "../styles/StyledEditProfile"
 
+// necessary imports for dark mode
+// copy and paste in other components for dark mode to work
+import styles from "../styles/Themes.module.css"
+import { useSelector } from "react-redux"
+
+
 const EditProfile = () => {
+  // create store dark mode variable from state value in redux store
+  // copy and paste in other components for dark mode to work
+  const store_dark_mode = useSelector(state => state.darkMode)
+  
   const imageRef = useRef(null)
   const avatarRef = useRef(null)
   const {
@@ -26,6 +36,7 @@ const EditProfile = () => {
   const [state, setState] = useState({
     name: user.name,
     display_name: user.display_name,
+    pronouns: user.pronouns,
     role: user.role,
     image_url: user.image_url,
     bio: "",
@@ -125,6 +136,7 @@ const EditProfile = () => {
     const data = {
       name: state.name,
       display_name: state.display_name,
+      pronouns: state.pronouns,
       phone: state.phone,
       bio: state.bio,
       timeZone: state.timezone
@@ -162,7 +174,9 @@ const EditProfile = () => {
     <ProfileModal full title="Edit profile">
       <>
         <StyledProfileWrapper>
-          <div className="grid-container">
+          {/* switch class name on toggle dark mode */}
+          {/* copy and paste className and data-theme to implement dark mode on other components */}
+          <div className={`${styles.themeCont} grid-container`} data-theme={store_dark_mode ? "dark" : "light"}>
             <div className="input-cage">
               <div className="mobileCon">
                 <div className="mobileAvataeCon">
@@ -209,6 +223,21 @@ const EditProfile = () => {
                     uses your exact name, you should change it!
                   </p>
                 </div>
+                <div className="input-group">
+                  <label htmlFor="pronouns" className="inputLabel">
+                    Pronouns
+                  </label>
+                  <select
+                    name="pronouns"
+                    defaultValue={state.pronouns}
+                    onClick={e => setState({ pronouns: e.target.value })}
+                    className="select"
+                    id="pronouns"
+                  >
+                    <option value="He/him">He/him</option>
+                    <option value="She/her">She/her</option>
+                  </select>
+                </div>
               </div>
 
               <div className="input-group mb-0">
@@ -227,7 +256,7 @@ const EditProfile = () => {
                   Let people know what you do at <b>ZURI</b>
                 </p>
               </div>
-              {/* <div className="input-group">
+              <div className="input-group">
                 <label htmlFor="bio" className="inputLabel">
                   Bio
                 </label>
@@ -238,7 +267,7 @@ const EditProfile = () => {
                   name="bio"
                   id="bio"
                 ></textarea>
-              </div> */}
+              </div>
               <div className="input-group phone">
                 <label className="inputLabel">Phone Number</label>
                 <div className="phone-container">
@@ -267,14 +296,13 @@ const EditProfile = () => {
                 </div>
               </div>
               <div className="input-group">
-                <label className="inputLabel col-12">Time Zone</label>
+                <label className="inputLabel">Time Zone</label>
                 <TimezoneSelect
                   value={selectedTimezone}
                   onChange={setSelectedTimezone}
-                  className="col-12"
                 />
               </div>
-              {/* <div className="input-group">
+              <div className="input-group">
                 <label htmlFor="twitter" className="inputLabel">
                   Twitter
                 </label>
@@ -286,8 +314,8 @@ const EditProfile = () => {
                   id="twitter"
                   name="twitter"
                 />
-              </div> */}
-              {/* <div className="input-group">
+              </div>
+              <div className="input-group">
                 <label htmlFor="facebook" className="inputLabel">
                   Facebook
                 </label>
@@ -299,9 +327,9 @@ const EditProfile = () => {
                   id="facebook"
                   name="facebook"
                 />
-              </div> */}
+              </div>
               <div className="input-group">
-                {/* <label className="inputLabel">
+                <label className="inputLabel">
                   Additional Links <span>(5 max)</span>
                 </label>
                 {links?.map((list, index) => (
@@ -312,22 +340,9 @@ const EditProfile = () => {
                   <p className="warning" onClick={addList}>
                     Add new link
                   </p>
-                )} */}
-              </div>
-              {/* <button onClick={handleFormSubmit} className="btns saveBtn">
-                {state.loading ? (
-                  <Loader
-                    type="ThreeDots"
-                    color="#fff"
-                    height={40}
-                    width={40}
-                  />
-                ) : (
-                  "Save Changes"
                 )}
-              </button> */}
+              </div>
             </div>
-
             <div className="img-container">
               <div className="avatar">
                 <div className="avatar-container">
@@ -380,7 +395,7 @@ const EditProfile = () => {
 
           <div onClick={handleFormSubmit} className="mobileButton">
             {state.loading ? (
-              <Loader type="ThreeDots" color="#00B87C" height={24} width={24} />
+              <Loader type="ThreeDots" color="#00B87C" height={24} width={24} /> && toggleModalState()
             ) : (
               "Save"
             )}
@@ -391,7 +406,7 @@ const EditProfile = () => {
             </button>
             <button onClick={handleFormSubmit} className="btns saveBtn">
               {state.loading ? (
-                <Loader type="ThreeDots" color="#fff" height={40} width={40} />
+                <Loader type="ThreeDots" color="#fff" height={40} width={40} /> && toggleModalState()
               ) : (
                 "Save Changes"
               )}

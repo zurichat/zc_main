@@ -14,53 +14,42 @@ import theme18 from "../assets/images/theme18.png"
 import theme19 from "../assets/images/theme19.png"
 import theme20 from "../assets/images/theme20.png"
 import theme21 from "../assets/images/theme21.png"
+// import dispath and selector values for store
+import { useSelector, useDispatch } from "react-redux"
+import { toggleDarkMode as toggle_dark_mode } from "../redux/userAction/userActions"
 
+const Themes = () => {
+  // store useSelector and dispatcher
+  const store_dark_mode = useSelector(state => state.darkMode)
+  const dispatch = useDispatch()
 
-const Themes = ({check, setCheck, setMode}) => {
-  
-  // const [active1, setActive1] = useState(0)
+  const [active1, setActive1] = useState(0)
+  const [mode, setMode] = useState("light")
   const [Data, setData] = useState(undefined)
   const [DataState, setDataState] = useState({})
 
-  const toggleDarkMode = () => {
-    setMode("dark")
-    setCheck({
-      light: "",
-      dark: "checked"})
+  // toggle dark mode on/off on store
+  const handleToggle = (value) => {
+    dispatch(toggle_dark_mode(value == 1 ? true : false))
+    setMode(value == 1 ? "dark" : "light")
+    setActive1(value)
+    // eslint-disable-next-line no-console
+    console.log(store_dark_mode);
   }
 
-  const toggleLightMode = () => {
-    setMode("light")
-    setCheck({light:"checked", dark: ""})
-  }
+  useEffect(() => {
+    if (mode === "dark") {
+      localStorage.setItem("mode", "dark")
+    } else {
+      localStorage.setItem("mode", "light")
+    }
+  }, [mode])
 
-  // const [mode, setMode] = useState(() => localStorage.getItem('mode'))
-
-  //
-
-  //const [isChecked, setIsChecked] = useState(false)
-
-  // handleSubmit function on the form
-  // const handleSubmit = e => {
-  //   e.preventDefault()
-  //   console.log(isChecked)
-  // }
-
-  // React.useEffect(() => {
-  //   fetch('https://api.zuri.chat/', {
-  //     method: 'POST',
-  //     headers: {
-  //       // authorization if any
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(isChecked)
-  //   })
-  //     .then(res => console.log(res))
-  //     .catch(error => console.log(error))
-  // })
+  
 
   return (
-    <div className={styles.themeCont}>
+    // switch dark mode on toggle
+    <div className={styles.themeCont} data-theme={store_dark_mode ? "dark" : "light"}>
       <div className={styles.title}>
         <div className={styles.them}>Themes</div>
         <div className={styles.text}>
@@ -108,14 +97,17 @@ const Themes = ({check, setCheck, setMode}) => {
           </div>
           <div className={styles.nice}>Look nice today.</div>
         </div>
-        <div className={styles.low} onClick={toggleLightMode}>
+        <div className={styles.low}>
           <div className={styles.lower}>
-            <div className={styles.radio6} >
+            {/* toggle light/dark mode */}
+            <div className={styles.radio6} onClick={() => {handleToggle(0)}}>
               <input
                 type="radio"
                 value="light"
-                checked={check.light}
-                onClick={toggleLightMode}
+                checked={active1 === 0}
+                onClick={() => {
+                  setActive1(0)
+                }}
               />
             </div>
             <div className={styles.light}>Light</div>
@@ -132,68 +124,20 @@ const Themes = ({check, setCheck, setMode}) => {
           <div className={styles.nice2}>Look nice today.</div>
         </div>
         <div className={styles.low2}>
-          <div className={styles.lower2} onClick={toggleDarkMode}>
+          <div className={styles.lower2} onClick={() => {handleToggle(1)}}>
             <div className={styles.radio7}>
               <input
                 type="radio"
-                value="dark"
-                checked={check.dark}
-                onClick={toggleDarkMode}
+                value="light"
+                checked={active1 === 1}
+                onClick={() => {
+                  setActive1(1)
+                }}
               />
             </div>
             <div className={styles.light2}>Dark</div>
           </div>
         </div>
-      </div>
-      <div className={styles.line}></div>
-      <div className={styles.customize}>
-        <div className={styles.text3}>Colors</div>
-        <div className={styles.custom}>
-          Customize the look of your workspace. Feeling
-        </div>
-        <div className={styles.custom2}>adventurous?</div>
-        <div className={styles.create}>Create a custom theme</div>
-        <div className={styles.true}>Tried and true</div>
-      </div>
-      <div className={styles.set1}>
-        <div className={styles.img3}>
-          <img src={theme3} alt="theme3" className={styles.theme3} />
-        </div>
-        <div className={styles.img4}>
-          <img src={theme4} alt="theme4" className={styles.theme4} />
-        </div>
-      </div>
-      <div className={styles.all}>
-        <div className={styles.arrow}>↓</div>
-        <div className={styles.show}>Show all classic themes</div>
-      </div>
-      <div className={styles.clean}>Clean and minimal</div>
-      <div className={styles.set2}>
-        <div className={styles.img5}>
-          <img src={theme5} alt="theme5" className={styles.theme5} />
-        </div>
-        <div className={styles.img6}>
-          <img src={theme6} alt="theme6" className={styles.theme6} />
-        </div>
-      </div>
-      <div className={styles.set3}>
-        <div className={styles.img7}>
-          <img src={theme18} alt="theme18" className={styles.theme18} />
-        </div>
-        <div className={styles.img8}>
-          <img src={theme19} alt="theme19" className={styles.theme19} />
-        </div>
-      </div>
-      <div className={styles.set4}>
-        <div className={styles.bottom}>
-          <div className={styles.img9}>
-            <img src={theme20} alt="theme20" className={styles.theme20} />
-          </div>
-          <div className={styles.img10}>
-            <img src={theme21} alt="theme21" className={styles.theme21} />
-          </div>
-        </div>
-        <div className={styles.line2}></div>
       </div>
     </div>
   )

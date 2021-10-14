@@ -1,3 +1,5 @@
 export const initialState = {
-  userProfile: {}
+  userProfile: {},
+  // dark mode
+  darkMode: false
 }
