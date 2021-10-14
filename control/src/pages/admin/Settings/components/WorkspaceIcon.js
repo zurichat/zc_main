@@ -33,9 +33,9 @@ const WorkSpaceIcon = () => {
 
   const handleIconUpload = () => {
     const formData = new FormData()
-    formData.append("file", updateLogo)
-    axios
-      .patch(
+    formData.append("url", updateLogo)
+    console.log(updateLogo)
+    axios.patch(
         `https://api.zuri.chat/organisations/${organisation_id}/logo`,
         formData,
         {
