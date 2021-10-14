@@ -59,11 +59,19 @@ const SetStatusModal = ({
   const [dropdown, setDropdown] = useState(false)
   const [openEmoji, setOpenEmoji] = useState(false)
   const [dateTime, setDateTime] = useState(false)
-  const [choosePeriod, setChoosePeriod] = useState({label: "Don't clear", value: "dont_clear"})
+  const [choosePeriod, setChoosePeriod] = useState(user?.status?.expiry_time)
   const { user, orgId, setUser } = useContext(ProfileContext)
   const [statusEmoji, setStatusEmoji] = useState(user?.status?.tag)
   const [statusText, setStatusText] = useState(user?.status?.text)
   
+  const expiryTimeLabel = {
+    dont_clear: "Don't Clear",
+    one_hour: "1 hour",
+    four_hours: "4 hours",
+    today: "Today",
+    this_week: "This week"
+  }
+
   const onEmojiSelect = (selectedEmoji) => {
     setStatusEmoji(selectedEmoji.native)
     setOpenEmoji(!openEmoji)
@@ -93,6 +101,7 @@ const SetStatusModal = ({
     setUser({
       ...user,
       status: {
+        expiry_time: choosePeriod,
         text: statusText,
         tag: statusEmoji
       }
@@ -102,7 +111,7 @@ const SetStatusModal = ({
       const res = authAxios.patch(
         `/organizations/${user.org_id}/members/${user._id}/status`,
         {
-          expiry_time: choosePeriod.value,
+          expiry_time: choosePeriod,
           tag: statusEmoji,
           text: statusText
         }
@@ -118,6 +127,7 @@ const SetStatusModal = ({
     setUser({
       ...user,
       status: {
+        expiry_time: "",
         text: "",
         tag: ""
       }
@@ -222,7 +232,7 @@ const SetStatusModal = ({
                   <span
                     className={styles.dropdowntopspan}
                   >
-                    {choosePeriod.label}
+                    {expiryTimeLabel[choosePeriod]}
                   </span>
                 </label>
                 <img src={down} alt="" />
@@ -255,32 +265,32 @@ const SetStatusModal = ({
                   >
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod({label: "Don't clear", value: "dont_clear"})}
+                      onClick={() => setChoosePeriod("dont_clear")}
                     >
                       Don't clear
                     </li>
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod({label: "1 hour", value: "one_hour"})}
+                      onClick={() => setChoosePeriod("one_hour")}
                     >
                       1 hour
                     </li>
 
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod({label: "4 hours", value: "four_hours"})}
+                      onClick={() => setChoosePeriod("four_hours")}
                     >
                       4 hours
                     </li>
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod({label: "Today", value: "today"})}
+                      onClick={() => setChoosePeriod("today")}
                     >
                       Today
                     </li>
                     <li
                       className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod({label: "This week", value: "this_week"})}
+                      onClick={() => setChoosePeriod("this_week")}
                     >
                       This week
                     </li>
@@ -309,7 +319,7 @@ const SetStatusModal = ({
               {
                 ((user?.status?.tag === statusEmoji && statusEmoji === "") && 
                 (user?.status?.text === statusText && statusText === "")) && 
-                <span className={styles.inactivesave}>Save Changes</span>
+                <span className={styles.inactivesave}>Save</span>
               }
           </form>
           {/* {status.map((data)=>{

@@ -356,7 +356,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
                 alignItems: "center",
                 height: "100%",
                 backgroundColor: "#f0f0f0",
-                padding: "0px 10px",
+                padding: "0px 20px",
                 cursor: "pointer",
                 borderTopLeftRadius: "5px",
                 borderBottomLeftRadius: "5px"
