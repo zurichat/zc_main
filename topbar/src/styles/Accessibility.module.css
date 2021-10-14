@@ -3,6 +3,7 @@
   top: 140px;
   margin: 30px 50px;
   padding-bottom: 32px;
+  max-width: 100%;
 }
 
 .hrLine {
@@ -12,7 +13,6 @@
   /* bottom: 34.4%; */
   border: 1px solid #f6f6f6;
   margin-top: 12px;
-  width: 120%;
   margin-bottom: 12px;
 }
 
@@ -22,10 +22,10 @@
 .pressH3 {
   font-family: Lato;
   font-size: 15px;
-  font-style: normal;
   font-weight: 700;
   line-height: 130%;
   letter-spacing: 0em;
+  padding: 0%;
   color: #242424;
   margin-top: 13px;
 }
@@ -35,6 +35,9 @@
   color: green;
   background-color: var(--primary-color);
   align-self: center;
+  visibility: hidden;
+  position: absolute;
+  left: 9999px;
 }
 
 .customCheckbox {
@@ -69,7 +72,7 @@ input:checked ~ .customCheckbox::after {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  content: "\2713"
+  content: "\2713";
 }
 
 .accessibilityRadio {
@@ -78,14 +81,18 @@ input:checked ~ .customCheckbox::after {
 }
 
 .accessibilityLabel {
-  margin-left: -5px;
   color: #3a3a3a;
   font-size: 13px;
+  display: flex;
 }
 
 .accessibilityRadioLabel {
-  margin-left: 15px;
   font-weight: bold;
+  display: flex;
+}
+
+.imageStyle {
+  margin-right: 10px;
 }
 
 #accessibilityPId {
@@ -111,7 +118,7 @@ input:checked ~ .customCheckbox::after {
 
 .accessibilityP {
   font-family: Lato;
-  font-size: 15px;
+  font-size: 13px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;

@@ -20,6 +20,18 @@ const userReducer = (state = initialState, action) => {
         accessibility: "",
         error: action.payload
       }
+    case "GET_USER_INFO_SUCCESS":
+      return {
+        ...state,
+        error: null,
+        userSettings: action.payload,
+      }
+    case "GET_USER_INFO_FAILURE": 
+    return {
+      ...state,
+      error: action.payload,
+      userSettings: {},
+    }
     default:
       return state
   }
