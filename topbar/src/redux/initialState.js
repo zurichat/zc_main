@@ -1,3 +1,6 @@
 export const initialState = {
-  userProfile: {}
+  userProfile: {},
+  accessibility: "",
+  userSettings: {},
+  error: null
 }
