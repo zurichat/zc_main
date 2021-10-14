@@ -166,6 +166,12 @@
   color: rgba(29,28,29,.7);
   font-weight: 300;
   z-index: 10;
+  /* padding: 8px; */
+  transition: all .2s;
+}
+
+.modal .close:hover {
+  /* background-color: #616061; */
 }
 
 .overlay {
