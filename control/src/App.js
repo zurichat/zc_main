@@ -52,7 +52,7 @@ import ZurichatBlog from './pages/blogs/components/zurichatBlog'
 
 import Ebooks from './pages/ebooks'
 
-
+import ManageMembers from './pages/admin/manage_members/components/ManageMembers'
 // useEffect(() => {
 //     localStorage.setItem('input',input);
 // },[input]);
@@ -186,6 +186,11 @@ const App = () => {
           exact
           component={AdminSettingsTab}
         /> */}
+         <PrivateRoute
+          path="/admin/manage_members"
+          exact
+          component={ManageMembers}
+        />
         <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
         {/* ----------------settings routes closed----------------- */}
         <Route path="/reset-password">
