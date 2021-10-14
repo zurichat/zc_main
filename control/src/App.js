@@ -195,7 +195,7 @@ const App = () => {
           exact
           component={AboutWorkSpace}
         />
-        <PrivateRoute path="/admin/settings/accounts&profile" exact component={AccountProfile}/>
+        <PrivateRoute path="/admin/settings/accountsProfile" exact component={AccountProfile}/>
         {/* <PrivateRoute
           path="/admin/settings/permission"
           exact
