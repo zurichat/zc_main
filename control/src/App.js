@@ -1,11 +1,11 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Login from './pages/login'
-import Uitest from './pages/UI/MsgBoard'
-import SignUp from './pages/signup'
-import SignOut from './pages/signout/index'
-import Workspace from './pages/workspace/components/Workspace'
-import LandingPage from './pages/LandingPage'
-import DAO_Features from './pages/DAO-Features'
+import { BrowserRouter, Route, Switch } from "react-router-dom"
+import Login from "./pages/login"
+import Uitest from "./pages/UI/MsgBoard"
+import SignUp from "./pages/signup"
+import SignOut from "./pages/signout/index"
+import Workspace from "./pages/workspace/components/Workspace"
+import LandingPage from "./pages/LandingPage"
+import DAO_Features from "./pages/DAO-Features"
 // password block
 import ResetPassword from "./pages/passwordReset/index"
 import NewPassword from "./pages/passwordReset/newPassword"
@@ -56,7 +56,9 @@ import Legal from "./pages/legal"
 import ZurichatBlog from "./pages/blogs/components/zurichatBlog"
 
 import Ebooks from "./pages/ebooks"
-import Whyzurichat from './pages/WhyZuriChat/Whyzurichat'
+import Whyzurichat from "./pages/WhyZuriChat/Whyzurichat"
+
+import OnboardingHelp from "./pages/LoginSignUpHelp/index"
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -142,7 +144,7 @@ const App = () => {
         </Route>
         <Route path="/terms">
           <TermsOfService />
-          </Route>
+        </Route>
         <Route path="/legal">
           <Legal />
         </Route>
@@ -159,6 +161,11 @@ const App = () => {
         <Route path="/dao-features">
           <DAO_Features />
         </Route>
+
+        <Route path="/troubleshooting/onboarding-help">
+          <OnboardingHelp />
+        </Route>
+
         {/* <Route path="/marketplace" exact>
           <MarketPlace />
         </Route> */}
