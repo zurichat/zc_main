@@ -32,7 +32,6 @@
   background: var(--bg-color);
 }
 .body {
-  width: 95vw;
   display: flex;
   flex-direction: row;
   overflow-y: scroll;
