@@ -18,6 +18,7 @@ import { StyledEmojiWrapper } from "../styles/EmojiMartStyle"
 const SetDateAndTime = ({ dateTime, setDateTime }) => {
   const [value, onChange] = useState(new Date())
   const [timevalue, timeChange] = useState("10:00")
+  //
 
   return (
     <>
@@ -66,6 +67,10 @@ const SetStatusModal = ({
   const { user, orgId, setUser } = useContext(ProfileContext)
   const [statusEmoji, setStatusEmoji] = useState(user?.status?.tag)
   const [statusText, setStatusText] = useState(user?.status?.text)
+  const [dateState, setDateState] = useState(
+    new Date().toISOString().slice(0, -14)
+  )
+  const [timeState, setTimeState] = useState(getTime())
 
   const onEmojiSelect = selectedEmoji => {
     setStatusEmoji(selectedEmoji.native)
@@ -89,6 +94,9 @@ const SetStatusModal = ({
     return h + ":" + m
   }
   const currentTime = getTime()
+  //
+  const changeDateHandler = () => {}
+  const changeTimeHandler = () => {}
   //
   const handleSubmit = e => {
     e.preventDefault()
@@ -247,14 +255,16 @@ const SetStatusModal = ({
                   <input
                     type="date"
                     className={styles.date}
-                    defaultValue={new Date().toISOString().slice(0, -14)}
-                    min={new Date().toISOString().slice(0, -14)}
+                    defaultValue={dateState}
+                    min={dateState}
+                    onChange={changeDateHandler}
                   />
                   <input
                     type="time"
                     className={styles.time}
-                    defaultValue={currentTime}
-                    min={currentTime}
+                    defaultValue={timeState}
+                    min={timeState}
+                    onChange={changeTimeHandler}
                   />
                 </div>
               ) : null}
