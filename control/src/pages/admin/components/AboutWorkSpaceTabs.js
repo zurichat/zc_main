@@ -4,7 +4,7 @@ import styles from "../styles/aboutWorkspaceTab.module.css"
 
 // components
 import RetentionAndExports from "../components/RetentionAndExports"
-import OverviewWorkspace from "../components/overviewWorkspace"
+import OverviewWorkspace from "../components/OverviewWorkspace"
 
 // icons
 import { FiMenu } from "react-icons/fi"
