@@ -89,9 +89,9 @@ const Themes = () => {
         </div>
       </div>
       <div className={styles.text2}>
-        Automatically switch between light and dark themes when your system
-        does.
+        Automatically switch between light and dark themes when
       </div>
+      <div className={styles.texti2}>your system does.</div>
       <div className={styles.img}>
         <div className={styles.up}>
           <div className={styles.upper}>
