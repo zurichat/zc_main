@@ -11,9 +11,18 @@
 }
 
 .contentHeading p {
+  font-size: 18px;
 }
 
 .contentHeading span {
+  cursor: pointer;
+  color: #00b87c;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.contentHeading span:hover {
+  border-bottom: 1px solid #00b87c;
 }
 
 .tabWrapper {

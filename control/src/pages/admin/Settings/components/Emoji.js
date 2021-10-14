@@ -216,6 +216,7 @@ const Emoji = () => {
           </div>
         </div>
       </div>
+      <hr />
       <div className={classes.bottom}>
         <div className={classes.title}>
           There aren’t any custom emoji in your workspace yet
