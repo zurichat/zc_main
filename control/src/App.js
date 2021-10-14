@@ -56,6 +56,7 @@ import Legal from "./pages/legal"
 import ZurichatBlog from "./pages/blogs/components/zurichatBlog"
 
 import Ebooks from "./pages/ebooks"
+import Whyzurichat from './pages/WhyZuriChat/Whyzurichat'
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -166,6 +167,9 @@ const App = () => {
         </Route>
         <Route path="/ZurichatBlog">
           <ZurichatBlog />
+        </Route>
+        <Route path="/whyzurichat">
+          <Whyzurichat />
         </Route>
         {/* ----------------settings routes opened------------------------ */}
         <PrivateRoute
