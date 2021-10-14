@@ -173,6 +173,19 @@ a:link {
   color: #1d1c1d;
 }
 
+.adminInviteContainer {
+  background: #fff;
+}
+
+.adminInviteRes {
+  background-color: #fff;
+  padding: 80px;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 400;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .inviteContainer {
     max-width: 700px;
