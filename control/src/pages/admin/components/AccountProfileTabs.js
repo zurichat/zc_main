@@ -9,7 +9,7 @@ import SettingsTab from "../../settings/components/SettingsTab"
 import { FiMenu } from "react-icons/fi"
 import { CardProvider } from "../../../context/CardContext"
 
-const AboutWorkSpaceTabs = () => {
+const AccountsProfileTabs = () => {
   const [openTab, setOpenTab] = useState(false)
   const [active, setActive] = useState(1)
 
@@ -73,4 +73,4 @@ const AboutWorkSpaceTabs = () => {
   )
 }
 
-export default AboutWorkSpaceTabs
+export default AccountsProfileTabs
