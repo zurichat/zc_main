@@ -167,11 +167,37 @@
   padding: 12px 18px;
   background: #00b87c;
 }
+.pluginUninstallButton {
+  border: 0;
+  outline: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 40px;
+  border-radius: 4px;
+  font-family: "Lato";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 15px;
+  padding: 12px 18px;
+  background: rgba(197, 17, 17, 0.74);
+}
 
 .pluginButton:hover,
 .pluginButton:focus {
   border: 1px solid #00b87c;
   color: #00b87c;
+  background: transparent;
+}
+.pluginUninstallButton:hover,
+.pluginUninstallButton:focus {
+  border: 1px solid rgba(197, 17, 17, 0.74);
+  color: rgba(197, 17, 17, 0.74);
   background: transparent;
 }
 

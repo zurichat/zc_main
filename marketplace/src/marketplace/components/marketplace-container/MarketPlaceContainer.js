@@ -6,7 +6,7 @@ import logo from "../../../component-assets/zurichatlogo.svg"
 import SuccessMark from "../../../component-assets/success-mark.svg"
 import ErrorMark from "../../../component-assets/error-mark.svg"
 import { useHistory } from "react-router-dom"
-import ReactPaginate from "react-paginate";
+import ReactPaginate from "react-paginate"
 //eslint-disable-next-line
 import { Modal, Spinner } from "react-bootstrap"
 import { useMarketPlaceContext } from "../../../context/MarketPlace.context"
@@ -45,6 +45,7 @@ const MarketPlaceContainer = ({ type }) => {
       )
       if (response.status === 200 && response.data) {
         const { data } = response.data
+        // eslint-disable-next-line no-console
         marketplace.dispatch(loadPlugins(data))
         setPluginsLoading(false)
       }
@@ -65,7 +66,6 @@ const MarketPlaceContainer = ({ type }) => {
         marketplace.dispatch(
           loadPlugins(data.sort((a, b) => b.install_count - a.install_count))
         )
-        
         setPluginsLoading(false)
       }
     } catch (err) {
@@ -140,7 +140,7 @@ const MarketPlaceContainer = ({ type }) => {
         setShowSuccess(true)
         setTimeout(() => {
           // Redirect to the plugin page, given redirect_url
-          history.push(response.data.data.redirect_url);
+          history.push(response.data.data.redirect_url)
         }, 5000)
       } else {
         throw new Error(response.data.message)
@@ -198,22 +198,21 @@ const MarketPlaceContainer = ({ type }) => {
     }
   }, [marketplace.state.pluginId])
 
-
   // const  indexOfLastPost = currentPage * pluginPerPage;
   // const indexOfFirstPost = indexOfLastPost - pluginPerPage;
   // const currentPlugins = plugin.slice(indexOfFirstPost, indexOfLastPost)
-  
+
   // const paginate = (pageNumber) => setCurrentPage(pageNumber)
-  
+
   //Logic  for Pagination
   const pluginsPerPage = 6
   const pagesVisited = pageNumber * pluginsPerPage
 
   const pageCount = Math.ceil(state.plugins.length / pluginsPerPage)
 
-  const changePage = ({selected}) => {
+  const changePage = ({ selected }) => {
     setPageNumber(selected)
-  };
+  }
 
   return (
     <>
@@ -226,10 +225,11 @@ const MarketPlaceContainer = ({ type }) => {
       )}
       {!pluginsLoading && state.plugins.length > 0 && (
         <div className={styles.zuriMarketPlace__container}>
-          {state.plugins.slice(pagesVisited, pagesVisited + pluginsPerPage).map((plugin, i) => {
-            return <PluginCard key={i} {...plugin} />
-
-          })}
+          {state.plugins
+            .slice(pagesVisited, pagesVisited + pluginsPerPage)
+            .map((plugin, i) => {
+              return <PluginCard key={i} {...plugin} />
+            })}
           {marketplace.state.isModal && marketplace.state.pluginId && (
             <Modal
               show={marketplace.state.isModal}
@@ -368,17 +368,17 @@ const MarketPlaceContainer = ({ type }) => {
               )}
             </Modal>
           )}
-            <ReactPaginate 
-              previousLabel={"Previous"}
-              nextLabel={"Next"}
-              pageCount={pageCount}
-              onPageChange={changePage}
-              containerClassName={styles.paginationBttns}
-              previousClassName={styles.previousBttn}
-              nextClassName={styles.nextBttn}
-              disabledClassName={styles.paginationDisabled}
-              activeClassName={styles.paginationActive}
-            />
+          <ReactPaginate
+            previousLabel={"Previous"}
+            nextLabel={"Next"}
+            pageCount={pageCount}
+            onPageChange={changePage}
+            containerClassName={styles.paginationBttns}
+            previousClassName={styles.previousBttn}
+            nextClassName={styles.nextBttn}
+            disabledClassName={styles.paginationDisabled}
+            activeClassName={styles.paginationActive}
+          />
         </div>
       )}
     </>
