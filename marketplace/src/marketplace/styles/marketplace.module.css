@@ -511,6 +511,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
 }
 
 .successMarkText {
@@ -531,6 +532,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
 }
 
 .errorMarkText {
@@ -677,4 +679,48 @@
   .marketplaceModalPluginImages img{
     width: 8rem;
   }
+}
+.paginationBttns {
+  width: 100%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  padding-left: 0;
+}
+
+.paginationBttns {
+    color: #616061;
+}
+
+.paginationBttns a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid #00b87c;
+  cursor: pointer;
+
+}
+
+.paginationBttns a:hover {
+  color: white;
+  background-color: #00b87c;
+}
+
+.paginationActive {
+    color: white;
+}
+
+.paginationActive a {
+  background-color: #00b87c;
+}
+
+.previousBttn {
+  padding-right: 2rem;
+}
+
+.nextBttn {
+  padding-left: 2em;
+  justify-content: end;
 }
