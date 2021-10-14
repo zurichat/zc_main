@@ -112,15 +112,7 @@ const ChannelsTab = () => {
   const [apiStateData, setApiStateData] = useState(apiData)
 
   useEffect(() => {
-    setTableHeaderStateData([
-      ...tableHeaderStateData,
-      {
-        title: "new Header",
-        default: false,
-        active: false,
-        code: "new_header"
-      }
-    ])
+    setTableHeaderStateData(tableHeaderStateData)
   }, [])
 
   useEffect(() => {
@@ -188,14 +180,14 @@ const ChannelsTab = () => {
     setTableHeaderStateData([...tableHeaderStateData])
   }
   const getHeaderBoxes = () => {
-    return tableHeaderStateData.map((x, i) => (
-      <div key={"column_header_" + i} className={styles.radioFields}>
+    return tableHeaderStateData.slice(1).map((x, i) => (
+      <div key={"column_header_" + (i + 1)} className={styles.radioFields}>
         <label htmlFor={x.code}>
           <input
             type="checkbox"
             id={x.code}
             checked={x.active}
-            onChange={() => toggleHeaderColumns(i)}
+            onChange={() => toggleHeaderColumns(i + 1)}
           />{" "}
           {x.title}
         </label>
@@ -221,14 +213,6 @@ const ChannelsTab = () => {
 
     setTableHeaderStateData([...tableHeaderStateData])
   }
-
-  //   const handleOutsideClickCloseModdal = e => {
-  //     if (node.contains(e.target)) {
-  //       return
-  //     }
-
-  //     setIsColumnModalOpen(false)
-  //   }
 
   return (
     <div className={styles.container}>
@@ -299,8 +283,9 @@ const ChannelsTab = () => {
             <div className={styles.activity}>
               <p>Activity</p>
               <div className={styles.radioFields}>
-                <input type="checkbox" id="posted" />
-                <label htmlFor="posted">Messages posted</label>
+                <label>
+                  <input type="checkbox" /> Messages posted
+                </label>
               </div>
             </div>
             <div className={styles.horizontalDivider}>
@@ -309,43 +294,52 @@ const ChannelsTab = () => {
             <div className={styles.basicsContainer}>
               <p>Available on Paid Plans</p>
               <div className={styles.radioFields}>
-                <input
-                  type="checkbox"
-                  name="fullMembers"
-                  id="fullMembers"
-                  disabled
-                />
-                <label htmlFor="fullMembers">Full Members</label>
-              </div>
-              <div className={styles.radioFields}>
-                <input type="checkbox" id="guests" />
-                <label htmlFor="guests">Guests</label>
-              </div>
-              <div className={styles.radioFields}>
-                <input type="checkbox" id="messagesPosted" />
-                <label htmlFor="messagesPosted">
-                  Messages posted by members
+                <label>
+                  <input type="checkbox" disabled /> Full Members
                 </label>
               </div>
+
               <div className={styles.radioFields}>
-                <input type="checkbox" id="whoPosted" />
-                <label htmlFor="whoPosted">Members who posted</label>
+                <label>
+                  <input type="checkbox" disabled /> Guests
+                </label>
               </div>
+
               <div className={styles.radioFields}>
-                <input type="checkbox" id="whoViewed" />
-                <label htmlFor="whoViewed">Members who viewed</label>
+                <label>
+                  <input type="checkbox" disabled /> Messages posted by members
+                </label>
               </div>
+
               <div className={styles.radioFields}>
-                <input type="checkbox" id="change" />
-                <label htmlFor="change">Change in members who posted</label>
+                <label>
+                  <input type="checkbox" disabled /> Members who posted
+                </label>
               </div>
+
               <div className={styles.radioFields}>
-                <input type="checkbox" id="reactions" />
-                <label htmlFor="reactions">Reactions added</label>
+                <label>
+                  <input type="checkbox" disabled /> Members who viewed
+                </label>
               </div>
+
               <div className={styles.radioFields}>
-                <input type="checkbox" id="whoReacted" />
-                <label htmlFor="whoReacted">Members who reacted</label>
+                <label>
+                  <input type="checkbox" disabled /> Change in members who
+                  posted
+                </label>
+              </div>
+
+              <div className={styles.radioFields}>
+                <label>
+                  <input type="checkbox" disabled /> Reactions added
+                </label>
+              </div>
+
+              <div className={styles.radioFields}>
+                <label>
+                  <input type="checkbox" disabled /> Members who reacted
+                </label>
               </div>
             </div>
           </div>
