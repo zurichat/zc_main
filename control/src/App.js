@@ -47,6 +47,7 @@ import About from "./pages/about/index"
 import AdminSettingsTab from "./pages/admin/Settings/components/AdminSettingsTab"
 import TermsOfService from "./pages/termsOfService"
 import RedirectRoute from "./pages/redirect"
+import AnayticsHome from "./pages/admin/Analytics/index"
 import Plugins from "./pages/plugins"
 import Home from "./pages/admin/Settings/components/SettingsHome"
 import AboutWorkSpace from "./pages/admin/AboutWorkSpace"
@@ -54,6 +55,8 @@ import Legal from "./pages/legal"
 import ZurichatBlog from "./pages/blogs/components/zurichatBlog"
 import Ebooks from "./pages/ebooks"
 import Invitation from "./pages/admin/Invitation"
+import Whyzurichat from './pages/WhyZuriChat/Whyzurichat'
+
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -165,6 +168,9 @@ const App = () => {
         <Route path="/ZurichatBlog">
           <ZurichatBlog />
         </Route>
+        <Route path="/whyzurichat">
+          <Whyzurichat />
+        </Route>
         {/* ----------------settings routes opened------------------------ */}
         <PrivateRoute
           path="/confirm-deactivation"
@@ -186,6 +192,7 @@ const App = () => {
           exact
           component={Billing}
         />
+        <PrivateRoute path="/admin/stats" exact component={AnayticsHome} />
         <PrivateRoute
           path="/admin/settings/customize"
           exact
