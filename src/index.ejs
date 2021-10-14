@@ -27,10 +27,7 @@
       let getURL = location.pathname;
       let appendZuri = `- Zuri Chat `;
 
-      if(getURL === "/choose-workspace") {
-        document.title = "Workspace - Zuri Chat";
-      }
-      else if (getURL !== '/') {
+      if (getURL !== '/') {
         getURL = getURL.substr(1);
         getURL = getURL.charAt(0).toUpperCase() + getURL.slice(1);
         document.title = getURL + appendZuri;
