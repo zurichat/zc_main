@@ -17,8 +17,8 @@ const MarketPlace = () => {
      const [filteredPlugin, setFilteredPlugin] = useState([])
      const [searchInput, setSearchInput] = useState('')
      const [pluginData, setPluginData] = useState([])
-    //  const marketplace = useMarketPlaceContext()
-    //  const { state } = marketplace
+     const [userDetails, setUserDetails] = useState(null)
+   
 
 
     useEffect(() => {
@@ -45,15 +45,9 @@ const MarketPlace = () => {
        }
      }
 
-  //    const updateInput = async (input) => {
-  //     const filtered = countryListDefault.filter(country => {
-  //      return country.name.toLowerCase().includes(input.toLowerCase())
-  //     })
-  //     setInput(input);
-  //     setCountryList(filtered);
-  //  }
 
-  const [userDetails, setUserDetails] = useState(null)
+
+ 
   return (
     <MarketPlaceProvider>
       <Helmet>
