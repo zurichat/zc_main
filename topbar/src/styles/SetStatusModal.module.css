@@ -125,7 +125,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: -1;
+  z-index: -2
 }
 .input {
   /* margin-bottom: 21.4px; */
@@ -313,3 +313,35 @@
   display: flex;
   align-items: center;
 }
+.recentstatustitle{
+  font-size: 14px;
+}
+.recentstatustile{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 4px 30px 4px 10px;
+  border-radius: 5px;
+}
+.recentstatustile:hover{
+ background: #00b87c;
+ color: #fff;
+ cursor: pointer;
+}
+.recentstatustileleft{
+  width: 80%;
+}
+.recentstatustileiconwrapper{
+  color: #fff;
+  display: none;
+}
+.recentstatustileicon{
+  color: #fff;
+}
+.recentstatustile:hover .recentstatustileiconwrapper{
+  display: flex;
+  align-items: center;
+ }
+ .recentstatustext{
+   font-weight: bold;
+ }
