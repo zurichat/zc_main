@@ -212,7 +212,7 @@ function NewInviteModal(props) {
           </Container>
 
           <Container className="invite-modal-textarea">
-            <Label for="emails"></Label>
+            <Label for="emails">To:</Label>
             <TextArea
               placeholder="name@gmail.com"
               name="emails"
