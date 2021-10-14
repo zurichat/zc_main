@@ -71,3 +71,10 @@
     outline: none;
     padding: .3em .5em;
 }
+.Clear {
+    display: flex;
+    align-self: flex-end;
+    margin-right: 10px;
+    padding: 2px 8px;
+    border-radius: 5px;
+}
