@@ -748,8 +748,8 @@
 :root {
   --background: #f9f9f9;
   --bg-color: #fff;
-  /* --width: 100%;
-  --height: 100%; */
+  --width: 100%;
+  --height: 100%;
   --text-color-bold: #000;
   --text-color-normal: #333333;
   --text-color-gray: #3a3a3a;
