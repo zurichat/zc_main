@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap");
+* {
+  /* max-width: 100%; */ /*Commented out by EL'TANA Pls dont Use 8 in your styling it will affect all files in the App*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+  font-family: "lato";
+}
+.main_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0 80px;
+  font-family: inherit;
+}
+/* .banner{
+    height: 24.6rem;
+    width: 100%
+  }
+  .banner-img img {
+    width: 100%;
+    height: 24.6rem;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: -1;
+  }
+  .banner-img{
+    height: 40rem;
+    width: 100%;
+   
+  }
+  .sub_header{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .sub_header_content span{
+  color: #00B1E1;
+  margin-right: 10px;
+  
+  }
+  .sub_header_content{
+  
+    width: 80%;
+  }
+  
+  .sub_header{
+    height: 5rem;
+    width: 100%;
+    margin: 0;
+    background-color: #E8ECEF;
+  } */
+
+.container {
+  width: 80%;
+  height: auto;
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container_wrap {
+  width: 80%;
+  height: auto;
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.benefit img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+.sub_heading {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #2d2d2d;
+  font-weight: 600;
+  justify-content: flex-start;
+  font-family: inherit;
+}
+.sub_text {
+  color: #2d2d2d;
+  margin-bottom: 40px;
+  font-size: 1.2rem;
+  word-wrap: break-word;
+}
+
+/* MEDIA QUERY STYLES */
+
+@media only screen and (max-width: 480px) {
+  .sub_heading {
+    font-size: 1.3rem;
+    line-height: 2.5rem;
+  }
+  .sub_text {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 481px) {
+  .sub_heading {
+    line-height: 2.5rem;
+  }
+  .sub_text {
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .sub_heading {
+    font-size: 1.5rem;
+    line-height: 2.8rem;
+  }
+  .sub_text {
+    font-size: 1.1rem;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .sub_heading {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+  .sub_text {
+    font-size: 1.2rem;
+  }
+}
