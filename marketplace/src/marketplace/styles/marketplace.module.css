@@ -565,6 +565,7 @@
   background-color: #fff;
   padding: 10px 0px 22px 25px;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .pluginList:hover {

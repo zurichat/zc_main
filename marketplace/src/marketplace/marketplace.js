@@ -9,11 +9,12 @@ import { DiscoverPluginSvg } from './components/marketplace-container/DiscoverPl
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 // import MarketplaceHeader from './components/marketplace-container/MarketplaceHeader'
-import { MarketPlaceProvider} from '../context/MarketPlace.context.js'
+import { MarketPlaceProvider, useMarketPlaceContext} from '../context/MarketPlace.context.js'
 import { Helmet } from 'react-helmet'
 import axios from 'axios'
+import { setPluginId } from '../context/marketplace/marketplace.action'
 
-const MarketPlace = () => {
+const MarketPlace = ({id}) => {
      const [filteredPlugin, setFilteredPlugin] = useState([])
      const [searchInput, setSearchInput] = useState('')
      const [pluginData, setPluginData] = useState([])
@@ -44,6 +45,11 @@ const MarketPlace = () => {
          setFilteredPlugin(pluginData)
        }
      }
+
+     const marketplace = useMarketPlaceContext()
+     const renderPluginData = () => {
+      marketplace.dispatch(setPluginId(id))
+    }
 
 
 
@@ -94,7 +100,7 @@ const MarketPlace = () => {
                    Object.keys(filteredPlugin).map((item, id) => {
                    return (
                      <div key={id} >
-                     <li className={styles.pluginHover}>
+                     <li className={styles.pluginHover} onClick={renderPluginData}>
                        <span  >
                          {filteredPlugin[item]}
                        </span>

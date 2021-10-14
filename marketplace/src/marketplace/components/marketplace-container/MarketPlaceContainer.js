@@ -114,48 +114,7 @@ const MarketPlaceContainer = ({ type }) => {
     }
   }
 
-
-  const installPluginToOrganization = async () => {
-    if (!currentWorkspace) {
-      alert("You are not logged into an Organization/workspace")
-    }
-    setInstallLoading(true)
-    setInstallErr(null)
-    try {
-      const response = await axios.post(
-        plugin.install_url,
-        {
-          user_id: user[0]?._id,
-          organisation_id: currentWorkspace
-        },
-        {
-          timeout: 1000 * 5,
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }
-      )
-      if (response.data.success === true) {
-        setInstallLoading(false)
-        setShowSuccess(true)
-        setTimeout(() => {
-          // Redirect to the plugin page, given redirect_url
-          history.push(response.data.data.redirect_url);
-        }, 5000)
-      } else {
-        throw new Error(response.data.message)
-      }
-    } catch (err) {
-      setInstallErr(err.message ? err.message : "Plugin could not be installed")
-      setShowError(true)
-      setisLoading(false)
-      setInstallLoading(false)
-    }
-  }
-
-
-
-  let emptyImageArray = [logo, logo, logo, logo, logo]
+let emptyImageArray = [logo, logo, logo, logo, logo]
   const addDefaultImageArray = e => {
     e.target.src = emptyImageArray
   }
