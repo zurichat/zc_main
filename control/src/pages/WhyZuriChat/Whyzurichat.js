@@ -25,9 +25,9 @@ function Whyzurichat() {
                 If you are searching for the perfect Slack alternative, look no
                 further.
                 <br />
-                ZuriChat is on a mission to simplify individuals work life and
-                productivity
-                <br /> with an intruiging collaborative hub powered by Web3/DAO.{" "}
+                Zurichat is on a mission to simplify individual work life and
+                increase productivity with an intriguing collaborative hub
+                powered by Artificial Intelligence and sustained by DAO..
               </p>
             </div>
             <div className={style.blog_img}>
