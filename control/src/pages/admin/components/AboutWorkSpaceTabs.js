@@ -4,7 +4,8 @@ import styles from "../styles/aboutWorkspaceTab.module.css"
 
 // components
 import RetentionAndExports from "../components/RetentionAndExports"
-import OverviewWorkspace from "./OverviewWorkspace"
+import AdminOwners from "./AdminOwners"
+import OverviewWorkspace from "../components/OverviewWorkspace"
 
 // icons
 import { FiMenu } from "react-icons/fi"
@@ -46,6 +47,7 @@ const AboutWorkSpaceTabs = ({ organizationDetails, currentWorkspace }) => {
           >
             Admins & Owners
           </div>
+
           <div
             onClick={() => {
               setActive(3)
@@ -60,8 +62,15 @@ const AboutWorkSpaceTabs = ({ organizationDetails, currentWorkspace }) => {
         </div>
 
         <div className={styles.tabContent}>
-          {active === 1 && (
-            <OverviewWorkspace
+          {active === 2 && (
+            <AdminOwners
+              setActive={setActive}
+              setOpenTab={setOpenTab}
+              openTab={openTab}
+            />
+          )}
+          {active === 3 && (
+            <RetentionAndExports
               setActive={setActive}
               setOpenTab={setOpenTab}
               openTab={openTab}
@@ -69,8 +78,8 @@ const AboutWorkSpaceTabs = ({ organizationDetails, currentWorkspace }) => {
               currentWorkspace={currentWorkspace}
             />
           )}
-          {active === 3 && (
-            <RetentionAndExports
+          {active === 1 && (
+            <OverviewWorkspace
               setActive={setActive}
               setOpenTab={setOpenTab}
               openTab={openTab}
@@ -83,3 +92,4 @@ const AboutWorkSpaceTabs = ({ organizationDetails, currentWorkspace }) => {
 }
 
 export default AboutWorkSpaceTabs
+
