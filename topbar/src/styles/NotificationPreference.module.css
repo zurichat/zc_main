@@ -33,7 +33,7 @@
   background: var(--bg-color);
 }
 .body {
-  width: 100vw;
+  width: 64vw;
   display: flex;
   flex-direction: row;
   overflow: hidden;
