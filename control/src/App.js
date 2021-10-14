@@ -49,7 +49,7 @@ import RedirectRoute from "./pages/redirect"
 import Plugins from "./pages/plugins"
 import Home from "./pages/admin/Settings/components/SettingsHome"
 import AboutWorkSpace from "./pages/admin/AboutWorkSpace"
-
+import adminNalytics from "./pages/admin/Settings/Member"
 import Legal from "./pages/legal"
 import ZurichatBlog from "./pages/blogs/components/zurichatBlog"
 
@@ -179,6 +179,11 @@ const App = () => {
         <PrivateRoute path="/settings" exact component={Settings} />
         <PrivateRoute path="/admin/settings" exact component={SettingsHome} />
         <PrivateRoute path="/admin/settings/home" exact component={Home} />
+        <PrivateRoute
+          path="/admin/settings/analytics/memmber"
+          exact
+          component={adminNalytics}
+        />
         <PrivateRoute
           path="/admin/settings/billings"
           exact
