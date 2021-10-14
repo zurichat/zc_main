@@ -52,7 +52,6 @@ const Profile = () => {
     }
   }, [currentWorkspace])
 
-
   return (
     <div
       className={showProfile ? styles.ProfileContainer : styles.containerNone}
@@ -91,7 +90,7 @@ const Profile = () => {
       <div className={styles.content}>
         <img
           className={`avatar ${styles.userAvatar}`}
-          src={userProfileImage !== "" ? userProfileImage : defaultAvatar}
+          src={userProfileImage ? userProfileImage : defaultAvatar}
           alt="avatar"
         />
         <div className={styles.userDetails}>
@@ -118,12 +117,16 @@ const Profile = () => {
           >
             Edit Profile
           </button>
-          <a className={styles.settingsLink} 
+          <a
+            className={styles.settingsLink}
             href={
               workspaceData.creator_email === userData.email
                 ? "/admin/settings"
                 : "/settings"
-            }><FiSettings className={styles.iconSettings} /></a>
+            }
+          >
+            <FiSettings className={styles.iconSettings} />
+          </a>
         </div>
 
         <div className={styles.buttonGroups}>
