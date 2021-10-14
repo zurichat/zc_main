@@ -40,41 +40,6 @@
   left: 9999px;
 }
 
-.customCheckbox {
-  width: 14px;
-  height: 14px;
-  border: 1.5px solid #3e3e3e;
-  border-radius: 2px;
-  background-color: white;
-}
-
-input:checked ~ .customCheckbox {
-  background-color: green;
-}
-
-.customCheckbox::after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-input:checked ~ .customCheckbox::after {
-  display: block;
-}
-
-.customCheckbox::after {
-  left: 8px;
-  bottom: 5px;
-  width: 6px;
-  height: 12px;
-  border: solid white;
-  border-width: 0 4px 4px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  content: "\2713";
-}
-
 .accessibilityRadio {
   align-self: flex-start;
   margin-top: 8px;
@@ -137,7 +102,7 @@ input:checked ~ .customCheckbox::after {
 }
 
 .accessibilityEsc {
-  background-color: #f9f9f9;
+  background-color: var(--background);
   padding: 2px 5px;
   font-size: 15px;
   font-style: normal;
