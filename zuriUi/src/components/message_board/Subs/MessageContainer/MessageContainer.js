@@ -8,34 +8,33 @@ import { useState } from "react"
 export default function MessageContainer({
   messageData,
   handleShowMoreOptions,
-  handleShowEmoji,
-
+  handleShowEmoji
 }) {
   return (
     <div className={styles.MessageContainer}>
       <div className={styles.hoverItemsContainer}>
         <HoverItems
-          id={messageData.id}
+          id={messageData.message_id}
           handleShowMoreOptions={handleShowMoreOptions}
           handleShowEmoji={handleShowEmoji}
         />
       </div>
       <div className={styles.messageCardContainer}>
-        <MessageCard id={messageData.id} messageData={messageData} />
+        <MessageCard id={messageData.message_id} messageData={messageData} />
       </div>
       <div className={styles.emojiCardContainer}>
-        {messageData.emojis && messageData.emojis.map((emoji,i) => ( 
-          <EmojiCard key={i} emojiObject={emoji}  />
-        ))}
+        {messageData.emojis &&
+          messageData.emojis.map((emoji, i) => (
+            <EmojiCard key={i} emojiObject={emoji} />
+          ))}
 
-        {messageData.emojis.length>1 ? 
-          <div onClick={event => handleShowEmoji(messageData.id, event)}>
+        {messageData.emojis.length > 1 ? (
+          <div
+            onClick={event => handleShowEmoji(messageData.message_id, event)}
+          >
             <EmojiCard emojiSvg={true} />
           </div>
-          
-          : 
-          null}
-
+        ) : null}
       </div>
     </div>
   )
