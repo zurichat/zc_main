@@ -1,0 +1,93 @@
+.retention {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.h3 {
+  padding: 0;
+  margin: 0 0 1.7rem 0;
+}
+.h4 {
+  padding: 0;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.upgradeDisplay {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  text-align: justify;
+}
+
+.triangle {
+  color: rgb(232, 145, 45);
+  font-size: 1.5rem;
+}
+.circle {
+  color: rgb(97, 212, 174);
+  font-size: 3rem;
+}
+
+.upgrade {
+  border: 1px solid rgb(244, 204, 158);
+  background-color: rgb(253, 244, 234);
+  border-radius: 0.4rem;
+  padding: 0.7rem 1.5rem;
+  margin: 1rem 0;
+}
+
+.faq {
+  border: 1px solid rgb(97, 212, 174);
+  background-color: rgb(242, 255, 251);
+  border-radius: 0.4rem;
+  padding: 0.7rem 1.5rem;
+  margin: 1rem 0;
+}
+
+.faqDisplay {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: justify;
+}
+
+.upgradeText,
+.faqText {
+  padding: 0;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.link,
+.link:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.borderBottom {
+  width: 100%;
+  height: 0.1px;
+  border-top: 1px solid rgb(186, 186, 186);
+  margin: 2rem 0;
+}
+.adminAccessContentText {
+  font-size: 1rem;
+}
+
+@media (max-width: 1000px) {
+  .triangle {
+    display: none;
+  }
+  .circle {
+    display: none;
+  }
+}
