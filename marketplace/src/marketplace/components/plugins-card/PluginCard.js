@@ -59,7 +59,7 @@ export const PluginCard = ({ name, id, status, icon_url, description, install_co
       >
         {/*<span className={style.pluginInstallRate}>2.5k Installs</p>*/}
         <button onClick={renderPluginData} className={style.pluginButton}>
-          Install
+          View
         </button>
       </section>
     </div>

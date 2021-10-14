@@ -20,10 +20,15 @@ import { GetUserInfo } from "@zuri/control"
 const MarketPlaceContainer = ({ type }) => {
   const [user, setUser] = useState({})
   const [plugin, setPlugin] = useState([])
+  const [installedPlugins, setInstalledPlugins] = useState([])
+  const [loggedIn, setLoggedIn] = useState(false)
   const [pluginsLoading, setPluginsLoading] = useState(false)
   const [isLoading, setisLoading] = useState(false)
   const [installLoading, setInstallLoading] = useState(false)
+  const [uninstallLoading, setUninstallLoading] = useState(false)
+  const [uninstalled, setUninstalled] = useState(false)
   const [installErr, setInstallErr] = useState(null)
+  const [uninstallErr, setUninstallErr] = useState(null)
   const [showSuccess, setShowSuccess] = useState(false)
   const [showError, setShowError] = useState(false)
   const [pageNumber, setPageNumber] = useState(0)
@@ -75,8 +80,7 @@ const MarketPlaceContainer = ({ type }) => {
   }
 
   const retrieveInstalledPlugin = async () => {
-    setPluginsLoading(true)
-    marketplace.dispatch(fetchPlugins())
+    setisLoading(true)
     try {
       const response = await axios.get(
         `https://api.zuri.chat/organizations/${currentWorkspace}/plugins`,
@@ -88,14 +92,19 @@ const MarketPlaceContainer = ({ type }) => {
       )
       if (response.status === 200 && response.data) {
         const { data } = response.data
+        const extraDataVariable = data
+        // console.log("Installed Plugins:", extraDataVariable) //added this
         marketplace.dispatch(loadPlugins(data.map(plugin => plugin.plugin)))
-        setPluginsLoading(false)
+        setInstalledPlugins(data)
+        setisLoading(false)
       }
     } catch (err) {
-      setPluginsLoading(false)
+      setisLoading(false)
       console.error(err)
     }
   }
+
+  // console.log('Installed PLUGINS!!!!!: ', installedPlugins)
 
   const retrievePlugin = async () => {
     setisLoading(true)
@@ -107,8 +116,6 @@ const MarketPlaceContainer = ({ type }) => {
         const { data } = response.data
         setPlugin(data)
         setisLoading(false)
-        setShowSuccess(false)
-        setShowError(false)
       }
     } catch (error) {
       console.error(error)
@@ -153,6 +160,54 @@ const MarketPlaceContainer = ({ type }) => {
     }
   }
 
+  // console.log('user: ', user)
+  // console.log('orgID: ', currentWorkspace)
+
+  const UninstallPluginFromOrganization = async () => {
+    if (!currentWorkspace) {
+      setLoggedIn(false)
+      alert("You are not logged into an Organization/workspace")
+    }
+    setLoggedIn(true)
+    setUninstallLoading(true)
+    setUninstallErr(null)
+    try {
+      const response = await axios.delete(
+        `https://api.zuri.chat/organisations/${currentWorkspace}/plugins/${marketplace.state.pluginId}`,
+        {
+          user_id: user[0]?._id
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      )
+      if (response.data.status === 200) {
+        setUninstallLoading(false)
+        setUninstalled(true)
+        setShowSuccess(true)
+        setTimeout(() => {
+          window.location.replace("/home")
+        }, 5000)
+      } else {
+        setUninstallErr("Unable to Remove this Plugin")
+        setUninstalled(false)
+        setShowError(true)
+        setisLoading(false)
+        setUninstallLoading(false)
+      }
+    } catch (err) {
+      setInstallErr( "Unable to Remove this Plugin")
+      setUninstalled(false)
+      setShowError(true)
+      setisLoading(false)
+      setUninstallLoading(false)
+    }
+  }
+
+
+
   const addDefaultImage = e => {
     e.target.src = logo
   }
@@ -178,16 +233,16 @@ const MarketPlaceContainer = ({ type }) => {
     switch (type) {
       case "all":
         retrievePlugins()
-        break
+        break;
       case "installed":
         retrieveInstalledPlugin()
-        break
+        break;
       case "popular":
         retrievePopularPlugins()
         break
       default:
         retrievePlugins()
-        break
+        break;
     }
     getLoggedInUser()
   }, [])
@@ -195,6 +250,7 @@ const MarketPlaceContainer = ({ type }) => {
   useEffect(() => {
     if (marketplace.state.pluginId) {
       retrievePlugin()
+      setShowError(false)
     }
   }, [marketplace.state.pluginId])
 
@@ -284,6 +340,28 @@ const MarketPlaceContainer = ({ type }) => {
                             "Install"
                           )}
                         </button>
+                        {(!currentWorkspace) ? '' : (<button
+                          onClick={() => UninstallPluginFromOrganization()}
+                          className={styles.modalUninstallBtn}
+                          disabled={uninstallLoading}
+                        >
+                          {(uninstallLoading) ? (
+                            <div className="d-flex flex-row align-items-center">
+                              <Spinner
+                                animation="border"
+                                variant="light"
+                                role="status"
+                              >
+                                <span className="visually-hidden text-capitalize">
+                                  Loading...
+                                </span>
+                              </Spinner>
+                            </div>
+                          ) : (
+                            "Uninstall"
+                          )}
+                        </button>
+                        )}
                       </div>
                     </div>
                     {/**
@@ -350,7 +428,14 @@ const MarketPlaceContainer = ({ type }) => {
                     />
                   </figure>
                   <p className={styles.successMarkText}>
-                    Plugin installed successfully to organisation
+                  {
+                    (uninstalled) ? (
+                      "Plugin successfully Uninstalled from organisation"
+                    ) : (
+                      "Plugin installed successfully to organisation"
+                    )
+                  }
+                    {/* Plugin installed successfully to organisation */}
                   </p>
                 </div>
               )}
@@ -363,7 +448,8 @@ const MarketPlaceContainer = ({ type }) => {
                       alt="error icon"
                     />
                   </figure>
-                  <p className={styles.successMarkText}>{installErr}</p>
+                  <p className={styles.successMarkText}>{!uninstallErr ? 
+                  installErr : uninstallErr}</p>
                 </div>
               )}
             </Modal>
