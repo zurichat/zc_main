@@ -174,6 +174,8 @@ const AdminSidebar = ({ setModal, openModal }) => {
             className={styles.sidebarLink}
             to="/home"
           >
+          {/* /admin/manage_members */}
+
             <FiBook className={styles.icon} />
             Manage members
           </Link>
@@ -244,6 +246,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
             className={styles.sidebarLink}
             to="/home"
           >
+          {/* /admin/manage_members */}
             Manage members
           </Link>
           <Link
