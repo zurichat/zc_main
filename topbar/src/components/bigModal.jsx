@@ -3,9 +3,7 @@ import { useState } from "react"
 import cancel from "../assets/images/cancel.svg"
 import SearchValue from "./searchValueComponent"
 import Styled from "styled-components"
-import theme1 from "../assets/images/theme1.png"
-import theme2 from "../assets/images/theme2.png"
-import theme3 from "../assets/images/theme3.png"
+import user from "../assets/images/avatar_vct.svg"
 
 export const BigModal = ({ onClose, inputValue }) => {
   const [value, setValue] = useState(inputValue)
@@ -54,34 +52,34 @@ export const BigModal = ({ onClose, inputValue }) => {
         }}
       />
       <SearchValue
-        src={theme1}
+        src={user}
         title="the main title"
         description="please work for me i beg of you i want to check bla bla please be this i want to do somwthing i want you to work please work for daddy og work for daydy just work for me  ohhhh lala la la oh la ble bla bla sheep black black black sheeep"
       />
       <SearchValue
-        src={theme2}
+        src={user}
         title="small small oh"
         description="please work for me i beg of you i want to check"
       />
       <SearchValue
-        src={theme3}
+        src={user}
         title="its being going"
         description="please work for me i beg of you i want to check"
       />
       <SearchValue
-        src={theme3}
-        title="its being going"
-        description="please work for me i beg of you i want to check"
-      />
-
-      <SearchValue
-        src={theme3}
+        src={user}
         title="its being going"
         description="please work for me i beg of you i want to check"
       />
 
       <SearchValue
-        src={theme3}
+        src={user}
+        title="its being going"
+        description="please work for me i beg of you i want to check"
+      />
+
+      <SearchValue
+        src={user}
         title="its being going"
         description="please work for me i beg of you i want to check"
       />
