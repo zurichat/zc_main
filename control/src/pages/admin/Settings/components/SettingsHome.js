@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Container, Nav, Navbar } from "react-bootstrap"
+import { Container } from "react-bootstrap"
 import AdminSettings from '../../.'
 import settings from '../../assets/cog.svg'
 import analytics from '../../assets/dashboard.svg'
@@ -49,7 +49,7 @@ const Home = () => {
 
         <div className={classes.card}>
           <div>
-            <Link to="/admin/customize" className={classes.grid}>
+            <Link to="/admin/settings/customize" className={classes.grid}>
               <img src={customize} />
               <h3>Customize Zuri </h3>
               <img src={right_caret} />
