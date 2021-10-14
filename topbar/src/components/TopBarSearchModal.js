@@ -1,8 +1,22 @@
 import styles from "../styles/TopBarSearchModal.module.css"
-const TopBarSearchModal = () => {
+import { useState } from "react"
+
+const TopBarSearchModal = ({ onSearchEnter, onChange }) => {
+  const [value, setValue] = useState("")
+  const onInputChange = e => {
+    setValue(e.target.value)
+    onChange(e.target.value)
+  }
   return (
     <div className={styles.topBarSearchModal}>
-      <input type="text" className={styles._input} placeholder="Search Here" />
+      <input
+        type="text"
+        className={styles._input}
+        placeholder="Search Here"
+        value={value}
+        onChange={onInputChange}
+        onKeyUp={onSearchEnter}
+      />
       <div className={styles.MainBox}>
         <div>
           <div className={styles.input_box}>
@@ -21,6 +35,9 @@ const TopBarSearchModal = () => {
                 type="text"
                 className={styles._MainInput}
                 placeholder="Search Here"
+                value={value}
+                onChange={onInputChange}
+                onKeyUp={onSearchEnter}
               />
             </div>
             <div className={styles.close_icon}>
