@@ -20,7 +20,7 @@ import { GetUserInfo, SubscribeToChannel } from "@zuri/control"
 import axios from "axios"
 import { AiOutlineMenu } from "react-icons/ai"
 import styles from "../src/styles/TopNavBar.module.css"
-import SearchAutocomplete from "../src/components/SearchAutocomplete";
+import SearchAutocomplete from "../src/components/SearchAutocomplete"
 
 import { navigateToUrl } from "single-spa"
 
@@ -36,6 +36,8 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const [helpModal, setHelpModal] = useState(false)
   // const [memberId, setMemberId] = useState('');
   const [messages, setMessages] = useState("")
+  const [getProfileImg, setGetProfileImg] = useState("")
+
   useEffect(() => {
     // const fetchUser = async () => {
     //   const info = await GetUserInfo()
@@ -111,7 +113,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   useEffect(() => {
     UpdateInfo()
-  }, [])
+  }, [userProfileImage]) //A temporary fix for profileImg to persist
 
   // RTC subscription
   const callbackFn = event => {
@@ -167,18 +169,14 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     "single-spa-application:@zuri/sidebar"
   )
   useEffect(() => {
-    if (toggleSidebar && window.outerWidth <=768) {
+    if (toggleSidebar && window.outerWidth <= 768) {
       sidebar.style.display = "block"
-    } 
-    else if(window.outerWidth > 768){
+    } else if (window.outerWidth > 768) {
       sidebar.style.display = "block"
-    }
-    else {
+    } else {
       sidebar.style.display = "none"
     }
   }, [toggleSidebar, sidebar])
-
-
 
   const zc_spa_body = document.querySelector("body")
   // const sidebar_toggle = document.querySelector("#sidebar_toggle")
@@ -286,8 +284,8 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           placeholder="Search here"
           border={"#99999933"}
         /> */}
-          {/* <TopSearchBar onClick={() => setShowTopSearchModal(true)} /> */}
-          <TopBarSearchModal />
+        {/* <TopSearchBar onClick={() => setShowTopSearchModal(true)} /> */}
+        <TopBarSearchModal />
         {/* <div>
             <form onSubmit={handleEnter}>
               <BaseInput
@@ -329,7 +327,6 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
       <Profile />
       <TopbarModal />
-       
     </>
   )
 }
