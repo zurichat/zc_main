@@ -10,9 +10,8 @@ const AboutWorkSpace = () => {
   const currentWorkspace = localStorage.getItem("currentWorkspace")
 
   if (!currentWorkspace) {
-    //eslint-disable-next-line
-    console.log("error")
-    return <h1>Error</h1>
+    return null
+
   }
 
   const getOrgDetails = async () => {
@@ -20,8 +19,6 @@ const AboutWorkSpace = () => {
       `/organizations/${currentWorkspace}`
     )
     setOrgdetails(organization.data.data)
-    //eslint-disable-next-line
-    console.log(organization.data.data)
   }
 
   useEffect(async () => {
