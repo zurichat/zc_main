@@ -155,7 +155,7 @@ const App = () => {
         <Route path="/uitest">
           <Uitest />
         </Route>
-        <Route path="/marketplace" exact>
+        <Route path="/open-marketplace" exact>
           <MarketPlace />
         </Route>
         <Route path="/dao-features">
