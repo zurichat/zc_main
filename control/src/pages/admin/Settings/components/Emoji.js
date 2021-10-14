@@ -13,7 +13,7 @@ const Emoji = () => {
   const [btnName, setBtnName] = useState("")
   const [emojiImage, setEmojiImage] = useState(null)
   const [state, setState] = useState(null)
-  const [formData, setformData] = useState(new FormData())
+  const [formData, setFormData] = useState(new FormData())
   const [emojiOne, setEmojiObjectOne] = useState("\u2705")
   const [emojiTwo, setEmojiObjectTwo] = useState("\u{1F60A}")
   const [emojiThree, setEmojiObjectThree] = useState("\u{1F923}")
@@ -63,7 +63,7 @@ const Emoji = () => {
       const imageReader = e.target.files[0]
 
       // const formData = new FormData()
-      setformData(formData.append("image", imageReader))
+      setFormData(formData.append("image", imageReader))
     }
   }
 
@@ -101,7 +101,7 @@ const Emoji = () => {
           Choose the default emoji people will see when they enable one-click
           reactions
         </div>
-        {isOpen ? <Picker onEmojiClick={onEmojiClick} /> : null}
+        {isOpen ? <div><Picker onEmojiClick={onEmojiClick} /></div> : null}
         <div className={classes.emojis}>
           <button
             onClick={() => {
@@ -129,10 +129,7 @@ const Emoji = () => {
           <div className={classes.text}>Here’s an example:</div>
           <div className={classes.messageDialog}>
             <div className={classes.messageActions}>
-              <button>
-                {/* <img src="" alt="" /> */}
-                {emojiOne}
-              </button>
+              <button>{emojiOne}</button>
               <button> {emojiTwo}</button>
               <button> {emojiThree}</button>
               <button></button>
