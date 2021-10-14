@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap");
 
 body {
-  font-family: 'Lato', sans-serif !important;
+  font-family: "Lato", sans-serif !important;
 }
 .hero {
   margin-top: 100px !important;
@@ -9,10 +9,14 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 70px;
+  width: 90%;
+  margin: auto;
+  text-align: center;
 }
 .screenshot {
-  width: 638px;
+  width: 350px;
 }
+
 .screen {
   height: 800px;
   width: 100%;
@@ -28,9 +32,28 @@ body {
 }
 
 .heroText {
-  width: 40%;
+  width: 90%;
+  margin: auto;
 }
 
+.heroImages {
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 2%;
+}
+
+.alignCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.mobileImage {
+  margin-bottom: 30px;
+}
 .button1 {
   display: inline-block;
   border-radius: 4px;
@@ -73,6 +96,19 @@ a:hover {
 .downloadButton {
   display: inline-block;
   border-radius: 4px;
+  color: white;
+  background-color: #000;
+  padding: 10px 15px;
+  padding-right: 20px;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  margin: 15px;
+}
+
+.downloadButton1 {
+  display: inline-block;
+  border-radius: 4px;
   color: #00b87c;
   background-color: white;
   padding: 16px 30px;
@@ -84,6 +120,11 @@ a:hover {
 }
 
 .downloadButton:hover {
+  background-color: #e5e5e5;
+  text-decoration: none;
+  color: #00b87c;
+}
+.downloadButton1:hover {
   background-color: #e5e5e5;
   text-decoration: none;
   color: #00b87c;
@@ -159,6 +200,11 @@ a:hover {
   }
 
   .downloadButton {
+    padding: 11px 22px;
+    font-size: 13px;
+    margin: 15px;
+  }
+  .downloadButton1 {
     padding: 11px 22px;
     font-size: 13px;
     margin: 15px;
