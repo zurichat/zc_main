@@ -145,9 +145,7 @@ const TopbarModal = ({ members }) => {
             <div className={styles.sectionOne}>
               <div className={styles.oneLeft}>
                 <img
-                  src={
-                    userProfileImage !== "" ? userProfileImage : defaultAvatar
-                  }
+                  src={userProfileImage ? userProfileImage : defaultAvatar}
                   alt="profile-pic"
                 />
               </div>
@@ -168,30 +166,30 @@ const TopbarModal = ({ members }) => {
               <div className={styles.emoji}>{user?.status?.tag} </div>
               <div className={styles.statusContent}>{user?.status?.text}</div>
             </div>
-            
-          <div className={styles.sectionThree}>
-            {/* <p onClick={openStatus}>Set a status</p> */}
-            <p onClick={() => setStatusModal(!statusModal)}>Set a status</p>
-            {statusModal && (
-              <SetStatusModal
-                statusModal={statusModal}
-                setStatusModal={setStatusModal}
-                openStatus={openStatus}
-              />
-            )}
-            <p
-              onClick={() => {
-                toggleUserPresence()
-              }}
-            >
-              {userPresence}
-            </p>
-            {/* <div className={styles.pause}>
+
+            <div className={styles.sectionThree}>
+              {/* <p onClick={openStatus}>Set a status</p> */}
+              <p onClick={() => setStatusModal(!statusModal)}>Set a status</p>
+              {statusModal && (
+                <SetStatusModal
+                  statusModal={statusModal}
+                  setStatusModal={setStatusModal}
+                  openStatus={openStatus}
+                />
+              )}
+              <p
+                onClick={() => {
+                  toggleUserPresence()
+                }}
+              >
+                {userPresence}
+              </p>
+              {/* <div className={styles.pause}>
                <p onClick={() => setPause(!pause)}>Pause Notifications</p>
                <FaChevronRight className={styles.chevron} />
               </div>
             {pause && <PauseNotification pause={pause} setPause={setPause} />}*/}
-          </div>
+            </div>
 
             <hr className={styles.hr} />
 
