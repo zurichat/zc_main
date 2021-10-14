@@ -4,28 +4,40 @@ import Select from "react-select"
 import makeAnimated from "react-select/animated"
 import styles from "./styles/addmodal.module.css"
 
-const AddModal = ({ config }) => {
-  const [show, setShow] = useState(false)
+const defaultConfig = {
+  title: "Add users",
+  type: "addmodal",
+  userList: [
+    { value: "chocolate", label: "Chocolate" },
+    { value: "strawberry", label: "Strawberry" },
+    { value: "vanilla", label: "Vanilla" }
+  ],
+  addMembersEvent: users => {
+    // console.warn(users)
+  },
+  show: true,
+  handleClose: function () {
+    this.show = false
+  }
+}
+
+const AddModal = ({ config = defaultConfig }) => {
+  // const [show, setShow] = useState(false)
+  // const handleClose = () => setShow(false)
+  // const handleShow = () => setShow(true)
+
   const [selectedMembers, setselectedMembers] = useState([])
-
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
-  const animatedComponents = makeAnimated()
-
   const addMemberHandler = () => {
     config.addMembersEvent(selectedMembers)
-
-    handleShow()
+    // handleShow()
   }
+  const animatedComponents = makeAnimated()
 
   return (
     <div className={`${styles.wrapper}`}>
-      {/* <Button variant="primary" onClick={handleShow}>
-        Add User
-      </Button> */}
       <Modal
-        show={show || config.showModal}
-        onHide={handleClose}
+        show={config.show}
+        onHide={config.handleClose}
         aria-labelledby="contained-modal-title-vcenter"
         centered
         backdrop="static"
