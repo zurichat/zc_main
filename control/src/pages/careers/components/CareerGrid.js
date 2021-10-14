@@ -4,8 +4,7 @@ import { useTranslation} from "react-i18next";
 
 const CareerGrid = () => {
   const { t } = useTranslation();
-
-
+  
    return (
       <div>
          <div className={`${styles.headerContent}`}>
