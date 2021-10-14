@@ -118,7 +118,7 @@
 }
 
 .bottom {
-  margin-top: 32px;
+  margin-top: 42px;
 }
 
 .title {
@@ -138,6 +138,7 @@
   color: #fff;
   padding: 0 12px 1px;
   border-radius: 4px;
+  transition: all 0.2s;
 }
 
 .btn button:nth-child(1) {
@@ -150,9 +151,19 @@
   color: #1d1c1d;
 }
 
+.btn button:nth-child(1):hover {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 8%);
+  background: #f8f8f8;
+}
+
 .btn button:nth-child(2) {
   background: #007a5a;
   margin-left: 12px;
+}
+
+.btn button:nth-child(2):hover {
+  background: #148567;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 30%);
 }
 
 .modal {
