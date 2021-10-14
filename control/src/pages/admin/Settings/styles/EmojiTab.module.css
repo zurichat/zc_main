@@ -26,10 +26,15 @@
   box-shadow: 0 1px 3px rgb(0 0 0 / 15%);
   border: 1px solid #acacac;
   background: none;
+  transition: all .2s;
 }
 
 .emojis > button:hover {
   background-color: rgba(29, 28, 29, 0.04);
+}
+
+.emojis > button:active {
+  background-color: rgb(226 226 226);
 }
 
 .example {
@@ -41,7 +46,7 @@
   line-height: 1.38463;
   font-weight: 400;
   color: rgba(29, 28, 29, 0.7);
-  margin: 16px 0 12px;
+  margin: 16px 0 22px;
 }
 
 .messageDialog {
@@ -60,23 +65,29 @@
   top: 0%;
   right: 2%;
   transform: translateY(-50%);
-  height: 32px;
-  width: calc(32px * 8);
   background: #fff;
   box-shadow: 0 0 0 1px rgb(29 28 29 / 13%), 0 1px 3px 0 rgb(0 0 0 / 8%);
   display: flex;
   align-items: center;
-  padding: 2px;
+  justify-content: center;
   border-radius: 0.375em;
 }
 
 .messageActions > button {
+  padding: 3px;
   width: 32px;
   cursor: pointer;
+  background-color: transparent;
+  transition: all 0.2s;
+  border-radius: 2px;
 }
 
 .messageActions > button:hover {
-  background: rgba(29, 28, 29, 0.13);
+  background: rgb(246 246 246);
+}
+
+.messageActions > button:active {
+  background: rgb(226 226 226);
 }
 
 .avatar {
@@ -163,11 +174,11 @@
   top: 14px;
   cursor: pointer;
   font-size: 30px;
-  color: rgba(29,28,29,.7);
+  color: rgba(29, 28, 29, 0.7);
   font-weight: 300;
   z-index: 10;
   /* padding: 8px; */
-  transition: all .2s;
+  transition: all 0.2s;
 }
 
 .modal .close:hover {
@@ -271,7 +282,7 @@
   width: 100%;
   font-size: 15px;
   line-height: normal;
-  transition: all .1s;
+  transition: all 0.1s;
 }
 
 .input input:hover {
@@ -301,7 +312,7 @@
   height: 36px;
   min-width: 80px;
   padding: 0 12px 1px;
-  border: 1px solid rgba(29,28,29,.3);
+  border: 1px solid rgba(29, 28, 29, 0.3);
   background: transparent;
 }
 
