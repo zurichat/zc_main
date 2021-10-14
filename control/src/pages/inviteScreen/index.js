@@ -7,22 +7,22 @@ import { Helmet } from "react-helmet"
 
 const InvitePage = () => {
   const { id } = useParams()
-
   const [success, setsuccess] = useState(false)
   const [error, seterror] = useState("")
 
   // console.log(id)
-  window.location.hre
-  const checkIfRegistered = async ({ id }) => {
+  // window.location.hre'
+
+  const checkIfRegistered = async guestId => {
     try {
-      const res = await axios.get(
+      const { data } = await axios.get(
         `https://api.zuri.chat/organizations/invites/${id}`
       )
-      // console.log(res.data.data)
-      // console.log(uuid)
-      return res.data
-    } catch (err) {
-      console.error(err)
+
+      let validUser = data
+      return validUser
+    } catch ({ message }) {
+      history.push("/signup")
     }
   }
 
@@ -30,23 +30,21 @@ const InvitePage = () => {
 
   const history = useHistory()
 
-  const handleJoin = () => {
+  const handleJoin = id => {
     // if (sessionStorage.getItem(`user`) === null) {
     //   sessionStorage.setItem(`workSpaceInviteRedirect`, `invites/${id}`)
     //   history.push(`/login`)
     //   return
     // }
 
-    checkIfRegistered({ uuid: id }).then(res => {
-      if (res.statusCode === `200`) {
-        setsuccess(true)
-        history.push(`/choose-workspace`)
-      } else {
-        history.push(`/signup`)
-
-        seterror(res.message)
-      }
-    })
+    checkIfRegistered(id)
+      .then(res => {
+        if (res) {
+          setsuccess(true)
+          history.push("/login")
+        }
+      })
+      .catch(err => err & history.push("/signup"))
   }
 
   const handleGoToHome = () => {
@@ -73,7 +71,7 @@ const InvitePage = () => {
                 You have been invited to a Workspace
               </h5>
               <button
-                onClick={handleJoin}
+                onClick={() => handleJoin(id)}
                 // onClick={() => history.push('/signup')}
                 className={styles.button}
               >
