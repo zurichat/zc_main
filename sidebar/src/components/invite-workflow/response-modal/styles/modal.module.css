@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
+  z-index: 9999999999;
 }
 .modalcontent {
   width: 600px;
@@ -24,6 +24,7 @@
 }
 .inviteclose {
   padding: 20px;
+  display:none;
 }
 
 .modalbody {
