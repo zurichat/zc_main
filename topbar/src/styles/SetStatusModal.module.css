@@ -27,7 +27,7 @@
   right: 0;
 }
 .modalcontainer {
-  height: 320px;
+  min-height: 320px;
   max-width: 583px;
   width: 80%;
   border-radius: 5px;
@@ -35,6 +35,7 @@
   background: white;
   position: relative;
   z-index: -1;
+  padding-bottom: 20px;
 }
 .emojino {
   padding: 0 !important;
@@ -92,12 +93,12 @@
   justify-content: space-between;
   align-items: center;
 }
-.chosenemoji{
+.chosenemoji {
   cursor: pointer;
   display: flex;
   align-items: center;
 }
-.defalutEmoji{
+.defalutEmoji {
   height: 20px;
   width: 25px;
   padding: 0px 2px;
@@ -110,21 +111,21 @@
   top: -30px;
   left: -100px;
 }
-.emojiclose{
+.emojiclose {
   cursor: pointer;
   border: 1px solid #bebebe;
   border-radius: 5px;
   border-left: none;
   z-index: 10;
 }
-.emojiback{
+.emojiback {
   position: fixed;
   height: 100vh;
   width: 100%;
   top: 0;
   left: 0;
   right: 0;
-  z-index: -1;
+  z-index: -2
 }
 .input {
   /* margin-bottom: 21.4px; */
@@ -132,7 +133,7 @@
   width: 100%;
   border: none;
   font-size: 16px;
-  margin-left: 8px 
+  margin-left: 8px;
 }
 
 .datetime {
@@ -271,14 +272,14 @@
   font-size: 13px;
   position: flex-end;
 }
-.clearstatus{
+.clearstatus {
   margin-top: 20px;
   height: 48px;
   border-radius: 3px;
   padding: 12px 18px;
   margin-right: 10px;
   border: 1px solid #bebebe;
-  background: #FFF;
+  background: #fff;
   color: #000;
   float: right;
   font-family: "Lato", sans-serif;
@@ -292,7 +293,7 @@
   align-items: center;
   cursor: pointer;
 }
-.inactivesave{
+.inactivesave {
   margin-top: 20px;
   height: 48px;
   border-radius: 3px;
@@ -312,3 +313,35 @@
   display: flex;
   align-items: center;
 }
+.recentstatustitle{
+  font-size: 14px;
+}
+.recentstatustile{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 4px 30px 4px 10px;
+  border-radius: 5px;
+}
+.recentstatustile:hover{
+ background: #00b87c;
+ color: #fff;
+ cursor: pointer;
+}
+.recentstatustileleft{
+  width: 80%;
+}
+.recentstatustileiconwrapper{
+  color: #fff;
+  display: none;
+}
+.recentstatustileicon{
+  color: #fff;
+}
+.recentstatustile:hover .recentstatustileiconwrapper{
+  display: flex;
+  align-items: center;
+ }
+ .recentstatustext{
+   font-weight: bold;
+ }

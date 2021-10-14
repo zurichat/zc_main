@@ -28,15 +28,24 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
     user,
     setUser
   } = useContext(ProfileContext)
+  const [statusText, setStatusText] = useState(user?.status?.text)
+  const [statusEmoji, setStatusEmoji] = useState(user?.status?.tag)
 
   const handleClearStatus = async () => {
     setUser({
       ...user,
       status: {
+        ...user.status,
+        expiry_time: "",
         text: "",
-        tag: ""
+        tag: "",
+        status_history: [...user.status.status_history]
       }
     })
+
+    setStatusText("")
+    setStatusEmoji("")
+
     try {
       const res = await authAxios.patch(
         `/organizations/${orgId}/members/${user._id}/status`,
@@ -50,6 +59,8 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
     } catch (error) {
       const errorResponse = error
     }
+
+    // setStatusModal(!statusModal)
   }
 
   // const handleClearStatus = async () => {
@@ -164,6 +175,10 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
           statusModal={statusModal}
           setStatusModal={setStatusModal}
           openStatus={openStatus}
+          setStatusText={setStatusText}
+          statusText={statusText}
+          setStatusEmoji={setStatusEmoji}
+          statusEmoji={statusEmoji}
         />
       )}
 
