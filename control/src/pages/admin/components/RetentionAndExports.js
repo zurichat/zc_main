@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import styles from "../styles/retention.module.css"
 import { Link } from "react-router-dom"
 import { FiAlertTriangle, FiAlertCircle } from "react-icons/fi"
