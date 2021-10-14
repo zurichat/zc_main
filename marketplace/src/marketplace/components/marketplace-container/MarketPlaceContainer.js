@@ -49,6 +49,27 @@ const MarketPlaceContainer = ({ type }) => {
       console.error(err)
     }
   }
+  const retrievePopularPlugins = async () => {
+    setPluginsLoading(true)
+    marketplace.dispatch(fetchPlugins())
+    try {
+      const response = await axios.get(
+        "https://api.zuri.chat/marketplace/plugins"
+      )
+      if (response.status === 200 && response.data) {
+        const { data } = response.data
+        marketplace.dispatch(
+          loadPlugins(data.sort((a, b) => b.install_count - a.install_count))
+        )
+        // eslint-disable-next-line no-console
+        console.log(data)
+        setPluginsLoading(false)
+      }
+    } catch (err) {
+      setPluginsLoading(false)
+      console.error(err)
+    }
+  }
 
   const retrieveInstalledPlugin = async () => {
     setPluginsLoading(true)
@@ -155,7 +176,7 @@ const MarketPlaceContainer = ({ type }) => {
         retrieveInstalledPlugin()
         break
       case "popular":
-        retrievePlugins()
+        retrievePopularPlugins()
         break
       default:
         retrievePlugins()
