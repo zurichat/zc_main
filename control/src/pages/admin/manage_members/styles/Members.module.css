@@ -1,6 +1,6 @@
 /** @format */
 
-.members-wrap {
+.membersWrap {
   padding: 0;
   margin: 0 auto;
   padding: 1rem;
@@ -23,14 +23,14 @@
   font-weight: bold;
 }
 
-.btn-1 {
+.btn1 {
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 12px;
   margin-right: 20px;
 }
 
-.btn-2 {
+.btn2 {
   border-radius: 8px;
   border: none;
   padding: 12px;
@@ -38,7 +38,7 @@
   background-color: #215c15;
 }
 
-.list-contacts-top {
+.listTop {
   /* position: ; */
   width: 100%;
 
@@ -47,7 +47,7 @@
   column-gap: 1rem;
 }
 
-.search-contacts {
+.searchMembers {
   width: 100%;
   margin-top: 20px;
   padding: 8px 20px 8px 60px;
@@ -71,7 +71,7 @@
   border-radius: 8px;
 }
 
-.heading-list {
+.headingList {
   list-style-type: none;
   display: flex;
   flex-direction: row;
@@ -86,26 +86,26 @@
   color: #333333;
 }
 
-.members-list {
+.membersList {
   list-style-type: none;
   padding-left: 0;
 }
 
 /* member details */
 
-.mem-row-2 {
+.memRow2 {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.mem-row-2 img {
+.memRow2 img {
   height: 24px;
   width: 24px;
   border-radius: 4px;
 }
 
-.mem-col {
+.memCol {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -116,7 +116,7 @@
   font-weight: 600;
 }
 
-.mem-row {
+.memRow {
   display: flex;
   display: flex;
   flex-direction: row;
@@ -130,25 +130,12 @@
   padding: 1rem;
 }
 
-.contact-details {
-  display: flex;
-  column-gap: 2rem;
-  padding: 1rem;
-}
-
-.contact-details:hover {
-  background-color: #aca7a7;
-}
-
-tr:first-child {
-}
-
-.options-icon {
+.optionsIcon {
   height: 24px;
   width: 24px;
 }
 
-.options-btn {
+.optionsBtn {
   /* border-radius: 50%; */
 
   /* padding: 8px; */
@@ -159,9 +146,8 @@ tr:first-child {
   position: relative;
 }
 
-.options-btn:hover {
+/* .optionsBtn:hover {
   /* background-color: #8a7e7e; */
-}
 
 /**
  *
