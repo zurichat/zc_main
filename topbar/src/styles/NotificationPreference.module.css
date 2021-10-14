@@ -33,7 +33,7 @@
   background: var(--bg-color);
 }
 .body {
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: row;
   overflow: hidden;
@@ -48,8 +48,8 @@
 }
 /* THE SECTION OF THE CONTENT */
 .notifyContent {
-  max-width: 95%;
-  padding: 0 20px;
+  max-width: 100%;
+  padding: 0 15px;
   padding-bottom: 70px;
   display: block;
   margin-top: 24px;
@@ -60,11 +60,11 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
   padding-right: 0px;
   height: 20px;
   margin-top: 24px;
   margin-bottom: 16px;
+  justify-content: space-between;
 }
 .titleLarge {
   font-family: Lato;
@@ -73,6 +73,7 @@
   color: var(--text-color-gray-1);
   padding: 0%;
   line-height: 21px;
+  margin-right: 30px;
 }
 .body::-webkit-scrollbar {
   display: none;
@@ -101,7 +102,9 @@
   margin-right: 9px;
 }
 
-
+.allPreferences{
+  width: 100%;
+}
 
 @media screen and (max-width: 768px) {
   .buttonToggle{
@@ -113,6 +116,7 @@
   }
   .allPreferences{
     margin-top: 40px;
+    width: 100%;
   }
   .body{
     flex-wrap: wrap;
@@ -134,10 +138,14 @@
     color: #999999;
   }
   .notifyContent{
-    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
   }
   .itemTitle1{
     margin-bottom: 46px;
+    display: flex;
+    flex-wrap: wrap;
   }
   .spanL{
     margin-top: 3px;
@@ -361,7 +369,7 @@ input[type="checkbox"] {
 .share {
   display: flex;
   justify-content: space-between;
-  width: 488px;
+  width: 100%;
   margin-top: 5px;
   flex-direction: row;
   flex-wrap: wrap;
@@ -466,6 +474,7 @@ input[type="checkbox"] {
     align-items: left;
     left: 40%;
   }
+  
   .body{
     padding: 0%;
     margin: 0%;
@@ -527,7 +536,7 @@ input[type="checkbox"] {
   .itemTitle1 {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
     padding: 5px;
     align-items: center;
     margin-bottom: 16px;

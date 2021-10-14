@@ -30,9 +30,9 @@
 
 .modalContent,
 .modalFull {
-  width: 90%;
-  /* max-width: 885px; */
-  max-width: 700px;
+  width: 100%;
+  max-width: 900px;
+  /* max-width: 700px; */
   background: var(--bg-color);
   border-radius: 4px;
   overflow: hidden;
@@ -46,10 +46,10 @@
   background-color: var(--bg-color);
 }
 
-/* .modalCont {
+.modalCont {
   overflow-y: scroll;
   height: 100%;
-} */
+}
 .modalCont::-webkit-scrollbar {
   display: none;
 }

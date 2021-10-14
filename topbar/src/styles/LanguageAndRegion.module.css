@@ -21,7 +21,8 @@
 
 .selectbox {
   display: block;
-  width: 80%;
+  min-width: 90%;
+  max-width: 100%;
   margin: 10px 0;
   padding: 10px;
   border: 1px solid #dde5e9;
