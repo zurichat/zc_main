@@ -20,9 +20,10 @@ const InvitePage = () => {
       )
 
       let validUser = data
-      return validUser
+      return { validUser, guestId }
     } catch ({ message }) {
-      history.push("/signup")
+      //  put code to redirect to where user would set Password
+      // console.log("take me to where i need to put my password")
     }
   }
 
@@ -30,21 +31,31 @@ const InvitePage = () => {
 
   const history = useHistory()
 
-  const handleJoin = id => {
+  const handleJoin = async id => {
     // if (sessionStorage.getItem(`user`) === null) {
     //   sessionStorage.setItem(`workSpaceInviteRedirect`, `invites/${id}`)
     //   history.push(`/login`)
     //   return
     // }
 
-    checkIfRegistered(id)
-      .then(res => {
-        if (res) {
-          setsuccess(true)
-          history.push("/login")
-        }
-      })
-      .catch(err => err & history.push("/signup"))
+    // function to add user to organization
+    const addUserToOrg = async guestId => {
+      let { data } = await axios.get(
+        `https://api.zuri.chat/organizations/invites/${id}`,
+        {}
+      )
+
+      return data
+    }
+    // check user validity and if valid add to ord
+    checkIfRegistered(id).then(res => {
+      if (res) {
+        setsuccess(true)
+        // add user to oasyrganizations
+        addUserToOrg(res.guestId)
+        history.push("/login")
+      }
+    })
   }
 
   const handleGoToHome = () => {
