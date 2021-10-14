@@ -224,21 +224,22 @@
 
 .activeCircle {
   background-color: #00b87c;
-  height: 6px;
-  width: 6px;
+  height: 7px;
+  width: 7px;
   border-radius: 50%;
-  margin-right: 15px;
+  margin-right: 14px;
   position: absolute;
-  top: 60px;
+  top: 58px;
 }
 
 .awayCircle {
   background-color: grey;
-  height: 6px;
-  width: 6px;
+  height: 7px;
+  width: 7px;
+  margin-right: 14px;
   border-radius: 50%;
   position: absolute;
-  top: 60px;
+  top: 58px;
 }
 
 .oneRight p {
@@ -252,10 +253,10 @@
 /* The section two */
 
 .sectionTwo {
-  background: #ffffff;
+  background: #F6F6F6;
   padding: 0px;
   border-radius: 4px;
-  border: 1px solid #a1a1a1;
+  /* border: 1px solid #a1a1a1; */
   width: 85%;
   margin: auto;
   cursor: pointer;
@@ -272,6 +273,8 @@
 
 .sectionTwo .emoji {
   float: left;
+  font-size: 18px;
+  padding: 0 0.3rem;
 }
 /* The section of the picker */
 
@@ -318,7 +321,7 @@
 
 .sectionThree p {
   font-family: Lato;
-  color: #333333;
+  color: #3A3A3A;
   font-size: 15px;
   font-weight: 400;
   line-height: 18px;
