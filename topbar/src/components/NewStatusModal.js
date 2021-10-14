@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react"
 import { Picker } from "emoji-mart"
-import ReactTooltip from 'react-tooltip';
+import ReactTooltip from "react-tooltip"
 import DatePicker from "react-datepicker"
 // import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import TimePicker from "react-time-picker"
@@ -63,16 +63,8 @@ const SetStatusModal = ({
   const { user, orgId, setUser } = useContext(ProfileContext)
   const [statusEmoji, setStatusEmoji] = useState(user?.status?.tag)
   const [statusText, setStatusText] = useState(user?.status?.text)
-  
-  const expiryTimeLabel = {
-    dont_clear: "Don't Clear",
-    one_hour: "1 hour",
-    four_hours: "4 hours",
-    today: "Today",
-    this_week: "This week"
-  }
 
-  const onEmojiSelect = (selectedEmoji) => {
+  const onEmojiSelect = selectedEmoji => {
     setStatusEmoji(selectedEmoji.native)
     setOpenEmoji(!openEmoji)
   }
@@ -103,7 +95,7 @@ const SetStatusModal = ({
       status: {
         expiry_time: choosePeriod,
         text: statusText,
-        tag: statusEmoji
+        tag: statusEmoji,
       }
     })
 
@@ -129,7 +121,7 @@ const SetStatusModal = ({
       status: {
         expiry_time: "",
         text: "",
-        tag: ""
+        tag: "",
       }
     })
 
@@ -152,8 +144,22 @@ const SetStatusModal = ({
 
     setStatusModal(!statusModal)
   }
+  const statusHistory = user?.status?.status_history
+    ?.reverse()
+    .filter(history => {
+      return history.text_history !== "" || history.tag_history !== ""
+    })
+  // console.log(statusHistory)
+  // console.log(user)
+  const expiryTimeLabel = {
+    dont_clear: "Don't clear",
+    one_hour: "1 Hour",
+    four_hours: "4 Hours",
+    today: "Today",
+    this_week: "This Week"
+  }
   return (
-    <div className={styles.modal} >
+    <div className={styles.modal}>
       <div className={styles.modalcontainer}>
         <div className={styles.statustop}>
           <p>Set a status</p>
@@ -172,15 +178,17 @@ const SetStatusModal = ({
                   className={styles.chosenemoji}
                   onClick={() => setOpenEmoji(!openEmoji)}
                 >
-                  {statusEmoji || <img src={smile} className={styles.defalutEmoji}/>}
+                  {statusEmoji || (
+                    <img src={smile} className={styles.defalutEmoji} />
+                  )}
                 </p>
                 <div className={styles.emoji}>
                   <StyledEmojiWrapper>
                     {openEmoji ? (
                       <Picker
-                        set='google'
-                        title='pick an emoji...'
-                        emoji='point_up'
+                        set="google"
+                        title="pick an emoji..."
+                        emoji="point_up"
                         onSelect={onEmojiSelect}
                       />
                     ) : null}
@@ -190,14 +198,19 @@ const SetStatusModal = ({
                       <img
                         src={blackx}
                         alt=""
-                        onClick={() =>{
+                        onClick={() => {
                           setOpenEmoji(!openEmoji)
                         }}
                         className={styles.emojiclose}
                       />
                     ) : null}
                   </div>
-                  {openEmoji && <div className={styles.emojiback} onClick={() => setOpenEmoji(!openEmoji)}></div>}
+                  {openEmoji && (
+                    <div
+                      className={styles.emojiback}
+                      onClick={() => setOpenEmoji(!openEmoji)}
+                    ></div>
+                  )}
                 </div>
                 <input
                   type="text"
@@ -216,111 +229,177 @@ const SetStatusModal = ({
                 alt="clear status"
                 role="button"
                 className={styles.blackx}
-                data-tip data-for='clearstatus'
+                data-tip
+                data-for="clearstatus"
               />
-              <ReactTooltip id='clearstatus' type='dark' effect='solid'>
+              <ReactTooltip id="clearstatus" type="dark" effect="solid">
                 <span>Clear all</span>
               </ReactTooltip>
             </div>
-            <div className={styles.clearafter}>
-              <div
-                className={styles.clearaftertop}
-                onClick={() => setDropdown(!dropdown)}
-              >
-                <label htmlFor="" className={styles.dropdowntop}>
-                  Clear after: &nbsp;
-                  <span
-                    className={styles.dropdowntopspan}
-                  >
-                    {expiryTimeLabel[choosePeriod]}
-                  </span>
-                </label>
-                <img src={down} alt="" />
-              </div>
-              {dateTime ? (
-                // <SetDateAndTime
-                //   setDateTime={setDateTime}
-                //   dateTime={dateTime}
-                // />
-                <div className={styles.datetime}>
-                  <input
-                    type="date"
-                    className={styles.date}
-                    defaultValue={new Date().toISOString().slice(0, -14)}
-                    min={new Date().toISOString().slice(0, -14)}
-                  />
-                  <input
-                    type="time"
-                    className={styles.time}
-                    defaultValue={currentTime}
-                    min={currentTime}
-                  />
-                </div>
-              ) : null}
+            {user?.status?.tag === statusEmoji &&
+            statusEmoji === "" &&
+            user?.status?.text === statusText &&
+            statusText === "" ? (
               <div>
-                {dropdown && (
-                  <ul
-                    className={styles.dropdown}
-                    onClick={() => setDropdown(!dropdown)}
-                  >
-                    <li
-                      className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod("dont_clear")}
-                    >
-                      Don't clear
-                    </li>
-                    <li
-                      className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod("one_hour")}
-                    >
-                      1 hour
-                    </li>
-
-                    <li
-                      className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod("four_hours")}
-                    >
-                      4 hours
-                    </li>
-                    <li
-                      className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod("today")}
-                    >
-                      Today
-                    </li>
-                    <li
-                      className={styles.dropdownoption}
-                      onClick={() => setChoosePeriod("this_week")}
-                    >
-                      This week
-                    </li>
-                    <li
-                      className={styles.dropdownoption2}
-                      onClick={() => setDateTime(!dateTime)}
-                    >
-                      Set date and time
-                    </li>
-                  </ul>
+                <p>Recent</p>
+                {statusHistory[0] && (
+                  <div>
+                    <span>{statusHistory[0].tag_history}</span>
+                    <span>{statusHistory[0].text_history}</span>
+                    <span>-</span>
+                    <span>
+                      {expiryTimeLabel[statusHistory[0].expiry_history]}
+                    </span>
+                  </div>
+                )}
+                {statusHistory[1] && (
+                  <div>
+                    <span>{statusHistory[1].tag_history}</span>
+                    <span>{statusHistory[1].text_history}</span>
+                    <span>-</span>
+                    <span>
+                      {expiryTimeLabel[statusHistory[1].expiry_history]}
+                    </span>
+                  </div>
+                )}
+                {statusHistory[2] && (
+                  <div>
+                    <span>{statusHistory[2].tag_history}</span>
+                    <span>{statusHistory[2].text_history}</span>
+                    <span>-</span>
+                    <span>
+                      {expiryTimeLabel[statusHistory[2].expiry_history]}
+                    </span>
+                  </div>
+                )}
+                {statusHistory[3] && (
+                  <div>
+                    <span>{statusHistory[3].tag_history}</span>
+                    <span>{statusHistory[3].text_history}</span>
+                    <span>-</span>
+                    <span>
+                      {expiryTimeLabel[statusHistory[3].expiry_history]}
+                    </span>
+                  </div>
+                )}
+                {statusHistory[4] && (
+                  <div>
+                    <span>{statusHistory[4].tag_history}</span>
+                    <span>{statusHistory[4].text_history}</span>
+                    <span>-</span>
+                    <span>
+                      {expiryTimeLabel[statusHistory[4].expiry_history]}
+                    </span>
+                  </div>
                 )}
               </div>
-            </div>
-              {((user?.status?.tag !== statusEmoji) || (user?.status?.text !== statusText)) &&
-                <button
-                  className={styles.statuscta}
-                  type="submit"
-                  onClick={handleSubmit}
-                >Save Changes</button>
-              }
-              {
-                ((user?.status?.tag === statusEmoji && user?.status?.text === statusText) &&
-                (statusEmoji !== "" || statusText !== "")) &&
-                <span onClick={handleClearStatus} className={styles.clearstatus}>Clear Status</span>
-              }
-              {
-                ((user?.status?.tag === statusEmoji && statusEmoji === "") && 
-                (user?.status?.text === statusText && statusText === "")) && 
+            ) : (
+              <div className={styles.clearafter}>
+                <div
+                  className={styles.clearaftertop}
+                  onClick={() => setDropdown(!dropdown)}
+                >
+                  <label htmlFor="" className={styles.dropdowntop}>
+                    Clear after: &nbsp;
+                    <span className={styles.dropdowntopspan}>
+                      {expiryTimeLabel[choosePeriod]}
+                    </span>
+                  </label>
+                  <img src={down} alt="" />
+                </div>
+                {dateTime ? (
+                  // <SetDateAndTime
+                  //   setDateTime={setDateTime}
+                  //   dateTime={dateTime}
+                  // />
+                  <div className={styles.datetime}>
+                    <input
+                      type="date"
+                      className={styles.date}
+                      defaultValue={new Date().toISOString().slice(0, -14)}
+                      min={new Date().toISOString().slice(0, -14)}
+                    />
+                    <input
+                      type="time"
+                      className={styles.time}
+                      defaultValue={currentTime}
+                      min={currentTime}
+                    />
+                  </div>
+                ) : null}
+                <div>
+                  {dropdown && (
+                    <ul
+                      className={styles.dropdown}
+                      onClick={() => setDropdown(!dropdown)}
+                    >
+                      <li
+                        className={styles.dropdownoption}
+                        onClick={() => setChoosePeriod("dont_clear")}
+                      >
+                        Don't clear
+                      </li>
+                      <li
+                        className={styles.dropdownoption}
+                        onClick={() => setChoosePeriod("one_hour")}
+                      >
+                        1 hour
+                      </li>
+                      <li
+                        className={styles.dropdownoption}
+                        onClick={() => setChoosePeriod("four_hours")}
+                      >
+                        4 hours
+                      </li>
+                      <li
+                        className={styles.dropdownoption}
+                        onClick={() => setChoosePeriod("today")}
+                      >
+                        Today
+                      </li>
+                      <li
+                        className={styles.dropdownoption}
+                        onClick={() => setChoosePeriod("this_week")}
+                      >
+                        This week
+                      </li>
+                      <li
+                        className={styles.dropdownoption2}
+                        onClick={() => setDateTime(!dateTime)}
+                      >
+                        Set date and time
+                      </li>
+                    </ul>
+                  )}
+                </div>
+              </div>
+            )}
+            {(user?.status?.tag !== statusEmoji ||
+              user?.status?.text !== statusText) && (
+              <button
+                className={styles.statuscta}
+                type="submit"
+                onClick={handleSubmit}
+              >
+                Save Changes
+              </button>
+            )}
+            {user?.status?.tag === statusEmoji &&
+              user?.status?.text === statusText &&
+              (statusEmoji !== "" || statusText !== "") && (
+                <span
+                  onClick={handleClearStatus}
+                  className={styles.clearstatus}
+                >
+                  Clear Status
+                </span>
+              )}
+            {user?.status?.tag === statusEmoji &&
+              statusEmoji === "" &&
+              user?.status?.text === statusText &&
+              statusText === "" && (
                 <span className={styles.inactivesave}>Save</span>
-              }
+              )}
           </form>
           {/* {status.map((data)=>{
                       const {text, emoji} = data;
@@ -333,7 +412,10 @@ const SetStatusModal = ({
                   })} */}
         </div>
       </div>
-      <div className={styles.modalback} onClick={() => setStatusModal(!statusModal)}></div>
+      <div
+        className={styles.modalback}
+        onClick={() => setStatusModal(!statusModal)}
+      ></div>
     </div>
   )
 }
