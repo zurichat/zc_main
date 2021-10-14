@@ -6,9 +6,11 @@ import Styled from "styled-components"
 import theme1 from "../assets/images/theme1.png"
 import theme2 from "../assets/images/theme2.png"
 import theme3 from "../assets/images/theme3.png"
+import { NoResult } from "./searchNotFound"
 
 export const BigModal = ({ onClose, inputValue }) => {
   const [value, setValue] = useState(inputValue)
+  const failed = inputValue.length;
 
   const sidebar = document.getElementById(
     "single-spa-application:@zuri/sidebar"
@@ -33,6 +35,11 @@ export const BigModal = ({ onClose, inputValue }) => {
   border-bottom: 2px solid #00B87C;
   `
 
+  const Container = Styled.div`
+  margin: 0px;
+  padding: 0px;
+  `
+
   return (
     <SearchContainer className="bigModal">
       <button
@@ -53,6 +60,8 @@ export const BigModal = ({ onClose, inputValue }) => {
           setValue(e.target.value)
         }}
       />
+      {(failed <= 12) ? 
+      (<Container>
       <SearchValue
         src={theme1}
         title="the main title"
@@ -85,6 +94,10 @@ export const BigModal = ({ onClose, inputValue }) => {
         title="its being going"
         description="please work for me i beg of you i want to check"
       />
+      </Container>) : null}
+      {(failed > 12) ? (
+     <NoResult />
+      ) : null}
     </SearchContainer>
   )
 }
