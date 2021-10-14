@@ -76,12 +76,20 @@ const InviteResponseModal = (props) => {
               <div className={styles.icon}>
                 <img src={successPng} alt="Email sent successfully" />
                 <h1>Sent!</h1>
-                <p>Invites were successfully sent</p>
+                <p>
+                  {props.state.showMessage
+                    ? props.state.showMessage
+                    : "Invites sent out succesfuly"}
+                </p>
               </div>
             ) : (
               <div className={styles.icon}>
                 <img src={cancelPng} alt="Sending Invites failed" />
-                <h1 style={{ color: "red" }}>Unable to send Invites</h1>
+                <h1 style={{ color: "red" }}>
+                  {props.state.showMessage
+                    ? props.state.showMessage
+                    : "Unable to send invites"}
+                </h1>
               </div>
             )}
           </div>
