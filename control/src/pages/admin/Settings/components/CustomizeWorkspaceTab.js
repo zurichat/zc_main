@@ -5,7 +5,7 @@ import styles from "../styles/CustomizeWorkspaceTab.module.css"
 // components
 import Emoji from "./Emoji"
 import Zuribot from "./Zuribot"
-import WorkspaceIcon from "./WorkspaceIcon"
+import WorkSpaceIcon from "./WorkSpaceIcon"
 import Statuses from "./Statuses"
 import ChannelPrefixes from "./ChannelPrefixes"
 

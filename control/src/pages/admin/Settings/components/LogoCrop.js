@@ -1,7 +1,7 @@
 import React from "react"
-import ReactCrop from "react-crop-image"
+import ReactCrop from "react-image-crop"
 import "react-image-crop/dist/ReactCrop.css"
-import { WorkSPaceLogoContainer, WorkSpaceName, CropButtons, Button } from "../styles/workSpaceIconChange.js"
+import { WorkSPaceLogoContainer, WorkSpaceName, CropButtons, Button } from "../../styles/workSpaceIconChange"
 
 const LogoCrop = ({ logo }) => {
   const [crop, setCrop] = useState({ unit: "%", width: 30, aspect: 16 / 9 })
