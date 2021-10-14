@@ -21,7 +21,7 @@
 
 .selectbox {
   display: block;
-  width: 80%;
+  width:60%;
   margin: 10px 0;
   padding: 10px;
   border: 1px solid #dde5e9;
@@ -34,18 +34,20 @@
   letter-spacing: 0em;
   text-align: left;
   color: #4c4c4c;
+  
 }
 
 .selectbox:focus,
 .selectbox:active {
   color: #00b87c;
+  accent-color: #00B87C;
   border: 1px solid #00b87c;
   outline-color: #00b87c;
 }
 
 .note {
   font-family: Lato;
-  width: 75%;
+  width: 60%;
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
@@ -67,6 +69,9 @@
   letter-spacing: 0em;
   text-align: left;
   color: var(--text-color-gray);
+}
+.cbox{
+  accent-color: #00B87C;
 }
 
 .choosed {
@@ -96,65 +101,3 @@
   margin-left: 5px;
   cursor: pointer;
 }
-
-/* .none {
-  display: none;
-}  */
-
-/* .choosed span{
-    background:var(--text-color-normal);
-    padding:3px;
-    margin-top:-4px;
-    color:#fff;
-    padding:3px 10px;
-} */
-
-/* CHECKBOX */
-/* .markAll {
-  margin-bottom: 20px;
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.markAll .prompt {
-  position: absolute;
-  cursor: pointer;
-  opacity: 0;
-  height: 0;
-  width: 0;
-}
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 17px;
-  width: 17px;
-  background-color: #eee;
-}
-.markAll .prompt:checked ~ .checkmark {
-  background-color: #00b87c;
-}
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-.markAll .prompt:checked ~ .checkmark:after {
-  display: block;
-}
-.markAll .checkmark:after {
-left: 5px;
-  top: 3px;
-  width: 6px;
-  height: 9px;
-  border: solid white;
-  border-width: 0 2px 2px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-} */
