@@ -1,14 +1,25 @@
 import React from "react"
 import styles from "../styles/ModalComponentStyles.module.css"
 
-const RoomOptions = ({ isClicked }) => {
-  //   const isOpen = true;
+const RoomOptions = (
+  { isClicked,
+    position
+  }
+  ) => {
+    // const isClicked = true;
+
+  let screenHeight = window.innerHeight;
+  let menuPosition ={
+    "top": `${position.y}px`,
+    "left": `${position.x+5}px`
+  }
 
   return (
     <section
       className={`${
         isClicked ? styles.openmodalOptionsCon : styles.modalOptionsCon
       }`}
+      style={menuPosition}
     >
       <div className={`d-flex flex-column  ${styles.modalSection}`}>
         <div>

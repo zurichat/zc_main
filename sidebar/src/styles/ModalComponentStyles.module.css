@@ -228,7 +228,7 @@ all:none;
   position: fixed;
   /* top: 60%; */
   /* margin-top: 20px; */
-  /* left: 20%; */
+  /* left: 10%; */
   width: 100%;
   max-width: 281px;
   border: 1px solid #bebebe;
@@ -246,7 +246,7 @@ all:none;
   position: fixed;
   /* top: 60%; */
   /* margin-top: 0px; */
-  /* left: 20%; */
+  /* left: 10%; */
   width: 100%;
   max-width: 281px;
   border: 1px solid #bebebe;
