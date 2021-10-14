@@ -3,12 +3,12 @@ import React, { useState } from 'react'
 import styles from '../styles/adminTab.module.css'
 
 // components
-import OverviewTab from '../components/OverviewTab'
-import SettingsTab from '../components/SettingsTab'
-import PaymentTab from '../components/PaymentTab'
-import MembersTab from '../components/MembersTab'
-import HistoryTab from '../components/HistoryTab'
-import TokensTab from '../components/TokensTab'
+import OverviewTab from './OverviewTab'
+import SettingsTab from './SettingsTab'
+import PaymentTab from './PaymentTab'
+import MembersTab from './MembersTab'
+import HistoryTab from './HistoryTab'
+import TokensTab from './TokensTab'
 
 // icons
 import { FiMenu } from 'react-icons/fi'

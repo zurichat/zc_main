@@ -51,6 +51,7 @@ import Legal from './pages/legal'
 import ZurichatBlog from './pages/blogs/components/zurichatBlog'
 
 import Ebooks from './pages/ebooks'
+import Gateways from './pages/admin/gateways/components/gateways'
 
 
 // useEffect(() => {
@@ -181,6 +182,7 @@ const App = () => {
           exact
           component={Billing}
         />
+        <PrivateRoute path="/components/gateways" component={Gateways} />
         {/* <PrivateRoute
           path="/admin/settings/permission"
           exact
