@@ -3,15 +3,18 @@ import { useEffect, useReducer } from "react"
 import SkeletonLoader from "./components/SkeletonLoader"
 import { fetchUser } from "./utils/fetchUserDetails"
 import NewInviteModal from "./components/invite-workflow/newInviteModal/newInviteModal"
-import InviteLoaderModal from "./components/invite-workflow/invite-loader/Loader"
 import InviteResponseModal from "./components/invite-workflow/response-modal/responseModal"
+import InviteLoaderModal from "./components/invite-workflow/loader/loader"
 
 export const ACTIONS = {
   ADD_USER_INFO: "add-user-info",
   ADD_ITEM: "add",
   UPDATE_PLUGINS: "update",
   ADD_ORGANIZATION: "add-org-email",
-  INVITE_MODAL_TYPE: "select-invite-modal"
+  INVITE_MODAL_TYPE: "select-invite-modal",
+  IS_LOADING: "is-loading",
+  RESPONSE_MODAL: "response-modal",
+  IS_OPEN: "is-open",
 }
 
 function reducer(state, action) {
@@ -63,6 +66,22 @@ function reducer(state, action) {
         ...state,
         inviteModalType: action.payload
       }
+      case ACTIONS.IS_LOADING:
+      return {
+        ...state, 
+        isLoading: action.payload
+      }
+      case ACTIONS.RESPONSE_MODAL:
+      //set the modal to show(whether success or error modal)
+      return {
+        ...state,
+        modalToShow: action.payload
+      }
+      case ACTIONS.IS_OPEN:
+        return{
+...state,
+isOpen: action.payload
+        }
     default:
       return state
   }
