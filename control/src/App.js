@@ -50,11 +50,10 @@ import RedirectRoute from "./pages/redirect"
 import Plugins from "./pages/plugins"
 import Home from "./pages/admin/Settings/components/SettingsHome"
 import AboutWorkSpace from "./pages/admin/AboutWorkSpace"
-import Invitation from "./pages/admin/Invitation"
 import Legal from "./pages/legal"
 import ZurichatBlog from "./pages/blogs/components/zurichatBlog"
-
 import Ebooks from "./pages/ebooks"
+import Invitation from "./pages/admin/Invitation"
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
