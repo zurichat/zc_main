@@ -133,7 +133,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
+            to="/admin/stats"
           >
             <FiPieChart className={styles.icon} />
             Analytics
@@ -172,9 +172,8 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/home"
+            to="/admin/manage_members "
           >
-          {/* /admin/manage_members */}
 
             <FiBook className={styles.icon} />
             Manage members
@@ -244,9 +243,9 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/home"
+            to="//admin/manage_members "
           >
-          {/* /admin/manage_members */}
+          
             Manage members
           </Link>
           <Link
