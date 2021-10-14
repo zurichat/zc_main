@@ -22,7 +22,7 @@ function reducer(state, action) {
           ...sidebar_data
         }
       }
-    case ACTIONS.UPDATE_ITEM:
+    case ACTIONS.UPDATE_PLUGINS:
       //Update sidebar
       var sidebar_update = action.payload
       return {
@@ -66,8 +66,8 @@ export default function App() {
     fetchUser(dispatch)
   }, [])
 
-  return !state.sidebar ? (
-    <SkeletonLoader />
+  return !state.user ? (
+    <SkeletonLoader COUNTER={12}/>
   ) : (
     <Sidebar state={state} dispatch={dispatch} />
   )

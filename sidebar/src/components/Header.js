@@ -12,7 +12,6 @@ const SidebarHeader = props => {
     toggleHomeModal(!homeModal)
     document.removeEventListener("click", toggle)
   }
-
   return (
     <div className={`${styles.subCon1}`}>
       <div className={`row ${styles.orgDiv}`}>
@@ -26,7 +25,7 @@ const SidebarHeader = props => {
                 props.state.organization_info.name}
             </span>
             <span className={`col-4 p-0 ${styles.sidebar__header__arrow}`}>
-              <MdKeyboardArrowDown />
+              <MdKeyboardArrowDown className={`my-auto`} style={{ color: `#fff` }} />
             </span>{" "}
           </div>
           <div className={`row ${styles.newMessage}`}>
@@ -44,9 +43,11 @@ const SidebarHeader = props => {
               <ModalComponent
                 workSpace={org}
                 isOpen={homeModal}
-                toggleOpenInvite={toggleOpenInvite}
+        //  toggleOpenInvite={toggleOpenInvite}
               />
             </div>
+          {/*
+
 
             <Modall showDialog={showDialog} closeDialog={close} />
 
