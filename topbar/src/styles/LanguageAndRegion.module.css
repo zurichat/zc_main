@@ -21,7 +21,7 @@
 
 .selectbox {
   display: block;
-  width: 80%;
+  width:60%;
   margin: 10px 0;
   padding: 10px;
   border: 1px solid #dde5e9;
@@ -47,7 +47,7 @@
 
 .note {
   font-family: Lato;
-  width: 75%;
+  width: 60%;
   font-size: 13px;
   font-style: normal;
   font-weight: 500;

@@ -157,7 +157,7 @@ const customStyles = {
   control: base => ({
     ...base,
     height: "2.5rem",
-    width: "80%",
+    width: "60%",
     minHeight: "2.5rem",
     border: "1px solid #DADADA",
     borderRadius: "4px",
