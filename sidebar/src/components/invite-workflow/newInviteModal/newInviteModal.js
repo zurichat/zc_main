@@ -116,7 +116,14 @@ function NewInviteModal(props) {
     })
   }
 
-  const isOpen = visibililty => {
+  const isLoading= (visibililty) =>{
+  props.dispatch({
+  type: ACTIONS.IS_LOADING,
+  payload: visibililty
+})
+  }
+  const isOpen = (visibililty) => {
+    isLoading(false)
     props.dispatch({
       type: ACTIONS.IS_OPEN,
       payload: visibililty
@@ -124,6 +131,8 @@ function NewInviteModal(props) {
   }
 
   const handleSendInvite = async () => {
+    handleCloseInviteModal()
+    isLoading(true)
     const re =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     if (emailField.length > 5) {
@@ -135,12 +144,15 @@ function NewInviteModal(props) {
           setEmailField("")
           handleCloseInviteModal()
           modalToShow("success")
+          
+          isLoading(false)
           isOpen(false)
         }
       } catch (err) {
         setEmailField("")
         handleCloseInviteModal()
         modalToShow("error")
+        isLoading(false)
         isOpen(false)
       }
     }
