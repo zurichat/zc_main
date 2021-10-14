@@ -31,13 +31,12 @@ const mentionPlugin = createMentionPlugin()
 const { Picker } = emojiPlugin
 const { MentionSuggestions } = mentionPlugin
 
-const CommentBox = ({ addToMessage, users }) => {
+const MessageInputBox = ({ sendMessageHandler, addToMessages, users }) => {
   const [data, setData] = useState("")
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty()
   )
   const [showEmoji, setShowEmoji] = useState(false)
-
   const [suggestions, setSuggestions] = useState(users || mentions)
   const [suggestionsOpen, setSuggestionsOpen] = useState(false)
 
@@ -95,6 +94,8 @@ const CommentBox = ({ addToMessage, users }) => {
           editorState={editorState}
           setEditorState={setEditorState}
           emojiSelect={<EmojiSelect />}
+          sendMessageHandler={sendMessageHandler}
+          addToMessages={addToMessages}
         />
         {/* <div>
           {showEmoji && (
@@ -106,7 +107,7 @@ const CommentBox = ({ addToMessage, users }) => {
   )
 }
 
-export default CommentBox
+export default MessageInputBox
 
 const Wrapper = styled.div`
   padding-left: 16px;
