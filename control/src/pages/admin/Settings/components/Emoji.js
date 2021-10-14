@@ -19,6 +19,7 @@ const Emoji = () => {
   const [emojiThree, setEmojiObjectThree] = useState("\u{1F923}")
   const [isOpen, setIsOpen] = useState(false)
   const [number, setNumber] = useState(null)
+  const [hover, setHover] = useState(false)
   const ref = useRef(null)
 
   const onEmojiClick = (event, emojiObject) => {
@@ -50,6 +51,12 @@ const Emoji = () => {
     if (display) document.body.style.overflow = "hidden"
     if (!display) document.body.style.overflow = "scroll"
   }, [display])
+
+  useEffect(() => {
+    if (!isOpen) {
+      setNumber(null)
+    }
+  }, [isOpen])
 
   const handleImageChange = e => {
     if (imageRef.current.files[0]) {
@@ -101,37 +108,93 @@ const Emoji = () => {
           Choose the default emoji people will see when they enable one-click
           reactions
         </div>
-        {isOpen ? <div><Picker onEmojiClick={onEmojiClick} /></div> : null}
+
         <div className={classes.emojis}>
           <button
+            onMouseEnter={() => {
+              setHover(true), setNumber("1")
+            }}
+            onMouseLeave={() => {
+              setHover(false), setNumber(null)
+            }}
             onClick={() => {
               setNumber("1"), setIsOpen(!isOpen)
             }}
+            style={number == 1 ? { position: "relative" } : null}
           >
             {emojiOne}
           </button>
           <button
+            onMouseEnter={() => {
+              setHover(true), setNumber("2")
+            }}
+            onMouseLeave={() => {
+              setHover(false), setNumber(null)
+            }}
             onClick={() => {
               setNumber("2"), setIsOpen(!isOpen)
             }}
+            style={number == 2 ? { position: "relative" } : null}
           >
             {emojiTwo}
           </button>
           <button
+            onMouseEnter={() => {
+              setHover(true), setNumber("3")
+            }}
+            onMouseLeave={() => {
+              setHover(false), setNumber(null)
+            }}
             onClick={() => {
               setNumber("3"), setIsOpen(!isOpen)
             }}
+            style={number == 3 ? { position: "relative" } : null}
           >
             {emojiThree}
           </button>
+          {isOpen ? (
+            <div style={{ position: "absolute", bottom: "61%", left: "0" }}>
+              <div
+                onClick={() => setIsOpen(false)}
+                className={classes.pickerBackdrop}
+              ></div>
+              <div className={classes.picker}>
+                <Picker onEmojiClick={onEmojiClick} />
+              </div>
+            </div>
+          ) : null}
         </div>
         <div className={classes.example}>
           <div className={classes.text}>Here’s an example:</div>
           <div className={classes.messageDialog}>
             <div className={classes.messageActions}>
-              <button>{emojiOne}</button>
-              <button> {emojiTwo}</button>
-              <button> {emojiThree}</button>
+              <button
+                style={
+                  number == 1 && hover === true
+                    ? { background: "#fcf4da" }
+                    : null
+                }
+              >
+                {emojiOne}
+              </button>
+              <button
+                style={
+                  number == 2 && hover === true
+                    ? { background: "#fcf4da" }
+                    : null
+                }
+              >
+                {emojiTwo}
+              </button>
+              <button
+                style={
+                  number == 3 && hover === true
+                    ? { background: "#fcf4da" }
+                    : null
+                }
+              >
+                {emojiThree}
+              </button>
               <button></button>
               <button></button>
               <button></button>
@@ -169,7 +232,7 @@ const Emoji = () => {
 
       {display && (
         <>
-          <div onClick={closeModal} className={classes.overlay}></div>
+          <div onClick={closeModal} className={classes.modalBackdrop}></div>
           <div className={classes.modal}>
             <div className={classes.close} onClick={closeModal}>
               &times;
@@ -238,7 +301,44 @@ const Emoji = () => {
                     <button onClick={handleSave}>Save</button>
                   </div>
                 </>
-              ) : null}
+              ) : (
+                <>
+                  <div className={classes.title}>
+                    Add alias for an existing emoji
+                  </div>
+                  <hr />
+                  <div className={classes.text}>
+                    Emoji aliases will be available to everyone in your
+                    workspace. You’ll find them alongside the original emoji in
+                    the emoji picker.
+                  </div>
+                  <div className={classes.list}>
+                    <ol>
+                      <li>
+                        <div className={classes.title}>
+                          1.&nbsp; Choose an existing emoji
+                        </div>
+                      </li>
+                      <hr />
+                      <li>
+                        <div className={classes.title}>
+                          2.&nbsp; Enter an alias
+                        </div>
+                        <div className={classes.text}>
+                          This is also what you’ll type to add this emoji to
+                          your messages.
+                        </div>
+                        <div className={classes.input}>
+                          <input
+                            type="text"
+                            onChange={e => setState({ name: e.target.value })}
+                          />
+                        </div>
+                      </li>
+                    </ol>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </>

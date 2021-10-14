@@ -12,7 +12,8 @@ function Customize() {
     <div>
       <ContentWrapper
         title="Customize Your Workspace"
-        text="Use these settings to make Slack your own. Let your imagination run wild and free! As an admin, you can prevent members from editing these on the Permissions page."
+        text="Use these settings to make Slack your own. Let your imagination run wild and free! As an admin, you can prevent members from editing these on the"
+        span='Permissions page.'
         tab1="Emoji"
         tab2='Zuri-bot'
         tab3='Workspace Icon'
