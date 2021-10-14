@@ -39,9 +39,21 @@ const themeColors =
     primary:"#450303",
     secondary:"#ed2222",
     textColor:"#c86868"
+  },
+
+  goldenMelon:{
+    primary:"#eaed49",
+    secondary:"#676410",
+    textColor:"#aeaeae"
+  },
+
+  canary:{
+    primary:"#eb751f",
+    secondary:"#884310",
+    textColor:"#e3ccbb"
   }
 
-  
+
 };
 
 export default themeColors;

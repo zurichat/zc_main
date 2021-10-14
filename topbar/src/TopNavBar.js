@@ -38,9 +38,12 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   // const [memberId, setMemberId] = useState('');
   const [messages, setMessages] = useState("")
   const themeStyle= localStorage.getItem("customTheme")
-  const topBarDiv =document.getElementById("single-spa-application:@zuri/topbar")
-  topBarDiv.style.backgroundColor= themeColors[themeStyle]. primary
-  topBarDiv.style.color= themeColors[themeStyle].textColor
+  if(themeStyle!==null || themeStyle!==""){
+    const topBarDiv =document.getElementById("single-spa-application:@zuri/topbar")
+  topBarDiv.style.backgroundColor= themeColors[themeStyle]?.primary
+  topBarDiv.style.color= themeColors[themeStyle]?.textColor
+  }
+  
 
   useEffect(() => {
     // const fetchUser = async () => {
