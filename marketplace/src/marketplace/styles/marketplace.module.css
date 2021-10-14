@@ -324,15 +324,15 @@
 
 .pluginCardTop {
   display: grid;
-  grid-template-columns: 70px 1fr;
+  grid-template-columns: 2.7rem 1fr;
   align-items: flex-start;
   color: #1d1c1d;
   margin-bottom: 24px;
 }
 
 .pluginImage {
-  width: 60px;
-  height: 60px;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -354,8 +354,16 @@
 .pluginName {
   text-transform: capitalize;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1rem;
   line-height: 130%;
+  color: #1d1c1d;
+}
+
+.pluginInstallCount{
+  margin-top: 6px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 150%;
   color: #1d1c1d;
 }
 
@@ -369,10 +377,18 @@
 
 .marketplaceModal {
   max-width: 600px;
+  margin-top: 5%;
+  overflow-y: scroll;
+  -ms-overflow-style: none;  
+  scrollbar-width: none;
+}
+.marketplaceModal::-webkit-scrollbar {
+  display: none;
 }
 
+
 .modalContent {
-  height: 430px;
+  height: fit-content;
   border-radius: 8px;
 }
 
@@ -450,6 +466,21 @@
   align-items: center;
 }
 
+.marketplacePluginInfo p{
+  text-transform: capitalize;
+}
+
+.marketplaceModalPluginImages{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  overflow: hidden;
+  gap: 10px;
+  height: fit-content;
+}
+.marketplaceModalPluginImages img {
+  height: 10rem;
+}
+
 .marketplaceModalMain {
   padding: 0px 38px 10px;
   margin-top: 22px;
@@ -461,6 +492,7 @@
   font-size: 18px;
   line-height: 22px;
   color: #000000;
+  padding: 0;
   text-transform: capitalize;
 }
 
@@ -519,6 +551,7 @@
   max-height: fit-content;
 }
 
+
 @media (max-width: 800px) {
   .pluginCardContainer {
     width: 100%;
@@ -556,12 +589,29 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    height: fit-content;
+    padding: 10px 0;
   }
   .marketplaceSvg {
     position: relative;
-    top: 0 !important;
-    left: auto !important;
-    right: auto !important;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .marketplaceSvg:nth-child(1) {
+    top: 0;
+    left: 0;
+  }
+  
+  .marketplaceSvg:nth-child(2) {
+    top: 0;
+    left: 0;
+  }
+  
+  .marketplaceSvg:nth-child(3) {
+    top: 0;
+    left: 0;
   }
   .svgConnectionLineOne,
   .svgConnectionLineThree,
@@ -592,6 +642,7 @@
   }
   .marketplaceModal {
     padding: 10px 18px;
+    margin-top: 13%;
   }
   .marketplaceModalTop {
     padding: 10px 18px 20px;
@@ -616,4 +667,58 @@
     font-size: 16px;
     line-height: 28px;
   }
+  .marketplaceModalPluginImages{
+    display: flex;
+    grid-template-columns: 0;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: scroll;
+  }
+  .marketplaceModalPluginImages img{
+    width: 8rem;
+  }
+}
+.paginationBttns {
+  width: 100%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  padding-left: 0;
+}
+
+.paginationBttns {
+    color: #616061;
+}
+
+.paginationBttns a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid #00b87c;
+  cursor: pointer;
+
+}
+
+.paginationBttns a:hover {
+  color: white;
+  background-color: #00b87c;
+}
+
+.paginationActive {
+    color: white;
+}
+
+.paginationActive a {
+  background-color: #00b87c;
+}
+
+.previousBttn {
+  padding-right: 2rem;
+}
+
+.nextBttn {
+  padding-left: 2em;
+  justify-content: end;
 }
