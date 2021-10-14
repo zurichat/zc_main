@@ -34,11 +34,15 @@ export const createDefaultChannel = (org_id, title = 'General') => {
   })
 }
 
-export const findDefaultChannel = async org_id => {
+export const findDefaultChannel = async (org_id) => {
   // TODO
   // change back to default
   // const res = await axios.get(`${channelApi}/${org_id}/channels/?default=true`)
-  const res = await axios.get(`${channelApi}/${org_id}/channels/`)
+  if(!org_id){
+    org_id =  localStorage.getItem('currentWorkspace')
+  }
+  const res = await axios.get(`${channelApi}/${org_id}/channels/?default=true`)
+  // console.log("this is res: ", res);
   const channelID = res.data[0]._id
   sessionStorage.setItem('defaultChannel', channelID)
   return channelID
