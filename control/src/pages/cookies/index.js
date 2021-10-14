@@ -1,14 +1,13 @@
-import React from "react"
-import styles from "./styles/Cookie.module.css"
-import cookie from "../../component-assets/cookie.svg"
-import { Link } from "react-router-dom"
-import { useTranslation } from "react-i18next"
+import React from 'react'
+import styles from './styles/Cookie.module.css'
+import cookie from '../../component-assets/cookie.svg'
+import { Link } from 'react-router-dom'
 
 const cookieStorage = {
   getItem: key => {
     const cookies = document.cookie
-      .split(";")
-      .map(cookie => cookie.split("="))
+      .split(';')
+      .map(cookie => cookie.split('='))
       .reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: value }), {})
     return cookies[key]
   },
@@ -18,37 +17,35 @@ const cookieStorage = {
 }
 
 const handleClickAllow = event => {
-  cookieStorage.setItem("Zuri Chat Accept", "true", "2592000")
-  event.target.parentNode.parentNode.parentNode.parentNode.style.opacity = "0"
+  cookieStorage.setItem('Zuri Chat Accept', 'true', '2592000')
+  event.target.parentNode.parentNode.parentNode.parentNode.style.opacity = '0'
 }
 const handleClickDecline = event => {
-  cookieStorage.setItem("Zuri Chat Decline", "true")
-  event.target.parentNode.parentNode.parentNode.parentNode.style.opacity = "0"
+  cookieStorage.setItem('Zuri Chat Decline', 'true')
+  event.target.parentNode.parentNode.parentNode.parentNode.style.opacity = '0'
 }
 
 const Cookies = () => {
-  const { t } = useTranslation()
-
   return (
     <div className={styles.bannerContainer}>
       <img src={cookie} alt="cookies" title="cookies" />
       <div className={styles.cookie_body}>
         <span>
-          {t("landing.cookies.textOne")}{" "}
+          We use third-party{' '}
           <Link to="/cookies-settings" className={styles.cookie}>
-            {t("landing.cookies.textTwo")}
-          </Link>{" "}
-          {t("landing.cookies.textThree")}
+            cookies
+          </Link>{' '}
+          in order to personalize your site experience.
         </span>
         <ul className={styles.buttons}>
           <li>
             <button onClick={handleClickAllow} className={styles.allow}>
-              {t("landing.cookies.accept")}
+              Allow
             </button>
           </li>
           <li>
             <button onClick={handleClickDecline} className={styles.decline}>
-              {t("landing.cookies.decline")}
+              Decline
             </button>
           </li>
         </ul>

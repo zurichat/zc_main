@@ -23,7 +23,6 @@ import styles from "../src/styles/TopNavBar.module.css"
 import SearchAutocomplete from "../src/components/SearchAutocomplete"
 
 import { navigateToUrl } from "single-spa"
-import { BigModal } from "./components/bigModal"
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { closeModal, openModal, presence, setPresence } =
@@ -37,18 +36,6 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const [helpModal, setHelpModal] = useState(false)
   // const [memberId, setMemberId] = useState('');
   const [messages, setMessages] = useState("")
-  const [isSearchOpen, setOpenSearch] = useState(false)
-  const [searchValue, setSearchValue] = useState("")
-
-  const onSearchSubmit = e => {
-    if (e.keyCode === 13 && searchValue.length >= 1) {
-      setOpenSearch(true)
-    }
-  }
-  const onSearchChange = value => {
-    setSearchValue(value)
-  }
-
   useEffect(() => {
     // const fetchUser = async () => {
     //   const info = await GetUserInfo()
@@ -293,11 +280,8 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           placeholder="Search here"
           border={"#99999933"}
         /> */}
-        {/* <TopSearchBar onClick={() => setShowTopSearchModal(true)} /> */}
-        <TopBarSearchModal
-          onSearchEnter={onSearchSubmit}
-          onChange={onSearchChange}
-        />
+          {/* <TopSearchBar onClick={() => setShowTopSearchModal(true)} /> */}
+          <TopBarSearchModal />
         {/* <div>
             <form onSubmit={handleEnter}>
               <BaseInput
@@ -321,16 +305,8 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
             suggestions={filteredSuggestions}
           />
         </div> */}
-
-        {isSearchOpen ? (
-          <BigModal
-            onClose={() => {
-              setOpenSearch(false)
-            }}
-            inputValue={searchValue}
-          />
-        ) : null}
       </div>
+
       <ProfileImageContainer
         className="d-flex justify-content-end pe-3"
         style={{ width: "20%" }}
@@ -347,6 +323,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
       <Profile />
       <TopbarModal />
+       
     </>
   )
 }

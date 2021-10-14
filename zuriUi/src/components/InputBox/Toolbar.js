@@ -1,5 +1,6 @@
-import React, { useState } from "react"
+import React from "react"
 import { RichUtils } from "draft-js"
+import { GrEmoji } from "react-icons/gr"
 import UnstyledButton from "./UnstyledButton"
 import Italic from "./assets/comments/italic.svg"
 import styled from "styled-components"
@@ -29,10 +30,10 @@ const inlineStyles = [
 ]
 
 const blockStyles = [{ type: "ordered-list-item", label: <ListIcon /> }]
+
 const Toolbar = props => {
-  const { editorState, setEditorState, emojiSelect } = props
-  const [focus, setFocus] = useState(false)
-  const toggleFocus = () => setFocus(!false)
+  const { editorState, setEditorState, showEmoji } = props
+
   const handleInlineStyle = (event, style) => {
     event.preventDefault()
     setEditorState(RichUtils.toggleInlineStyle(editorState, style))
@@ -86,15 +87,11 @@ const Toolbar = props => {
     <Wrapper>
       <FormatContainer>
         <LightningIcon />
-
         <BorderIcon />
-
         {inlineStyles.map((style, index) => {
           return renderInlineStyleButton(style, index)
         })}
-        <UnstyledButton>
-          <LinkIcon />
-        </UnstyledButton>
+        <LinkIcon />
         {blockStyles.map((block, index) => {
           return renderBlockStyleButton(block, index)
         })}
@@ -103,7 +100,9 @@ const Toolbar = props => {
         <UnstyledButton>
           <AtIcon />
         </UnstyledButton>
-        {emojiSelect}
+        <UnstyledButton onClick={showEmoji}>
+          <GrEmoji />
+        </UnstyledButton>
         <UnstyledButton>
           <ClipIcon />
         </UnstyledButton>

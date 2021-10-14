@@ -1,7 +1,7 @@
 
 .notifySidebar {
   width: 200px;
-  background: var(--background);
+  background: #f9f9f9;
   height: 100%;
   float: left;
   position: fixed;
@@ -58,7 +58,7 @@
 }
 
 .one .icon {
-  color: var(--text-color-normal);
+  color: #999999;
 }
 
 @media screen and (max-width: 768px) {

@@ -25,7 +25,7 @@
   line-height: 130%;
   letter-spacing: 0em;
   padding: 0%;
-  color: var(--text-color-gray-1);
+  color: #242424;
   margin: 5px 0px;
 }
 
@@ -40,7 +40,7 @@
 .accessibilityLabel {
   margin-left: -5px;
   margin-top:10px;
-  color: var(--text-color-gray);
+  color: #3a3a3a;
   font-size: 13px;
 }
 
@@ -48,7 +48,6 @@
   margin-left: 15px;
   margin-top: 15px;
   font-weight: bold;
-  color: var(--text-color-normal)
 }
 
 #accessibilityPId {
@@ -82,11 +81,11 @@
   text-align: left;
   margin-top: 9px;
   margin-bottom: 10px ;
-  color: var(--text-color-gray);
+  color: #3a3a3a;
 }
 
 .accessibilityEsc {
-  background-color: var(--background);
+  background-color: #f9f9f9;
   padding: 2px 5px;
   font-size: 15px;
   font-style: normal;

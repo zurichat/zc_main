@@ -1,30 +1,37 @@
 import { useState, useCallback } from "react"
 import styled from "styled-components"
+
 import { EditorState, RichUtils, convertToRaw } from "draft-js"
 import createEmojiMartPlugin from "draft-js-emoji-mart-plugin"
 import Editor from "@draft-js-plugins/editor"
 import createMentionPlugin, {
   defaultSuggestionsFilter
 } from "@draft-js-plugins/mention"
+
+import data from "emoji-mart/data/apple.json"
 import "emoji-mart/css/emoji-mart.css"
-import "!style-loader!css-loader!draft-js-emoji-plugin/lib/plugin.css"
+import "draft-js-emoji-plugin/lib/plugin.css"
 import "@draft-js-plugins/mention/lib/plugin.css"
-import "!style-loader!css-loader!@draft-js-plugins/emoji/lib/plugin.css"
 import "!style-loader!css-loader!@draft-js-plugins/mention/lib/plugin.css"
 // import suggestionStyles from "./suggestions.module.css"
-import "../App.css"
+
 import Toolbar from "./Toolbar"
 import mentions from "./mentions"
 
 // import UnstyledButton from "./UnstyledButton"
 // // import Send from "../assets/comments/goto.svg";
-import createEmojiPlugin from "@draft-js-plugins/emoji"
+// import createEmojiPlugin from "@draft-js-plugins/emoji"
 
-const emojiPlugin = createEmojiPlugin({
-  useNativeArt: true
+// const emojiPlugin = createEmojiPlugin({
+//   useNativeArt: true,
+// });
+// const { EmojiSuggestions, EmojiSelect } = emojiPlugin;
+// const plugins = [emojiPlugin];
+
+const emojiPlugin = createEmojiMartPlugin({
+  data,
+  set: "apple"
 })
-const { EmojiSuggestions, EmojiSelect } = emojiPlugin
-const plugins = [emojiPlugin]
 
 const mentionPlugin = createMentionPlugin()
 
@@ -72,18 +79,19 @@ const CommentBox = ({ addToMessage, users }) => {
     }
     return "not handled"
   }
+  const emojiHandler = () => {
+    setShowEmoji(!showEmoji)
+  }
+
   return (
     <Wrapper>
       <InputWrapper>
-        <div className="RichEditor-root">
-          <Editor
-            editorState={editorState}
-            onChange={onChange}
-            handleKeyCommand={handleKeyCommand}
-            plugins={[emojiPlugin, mentionPlugin]}
-          />
-        </div>
-
+        <Editor
+          editorState={editorState}
+          onChange={onChange}
+          handleKeyCommand={handleKeyCommand}
+          plugins={[emojiPlugin, mentionPlugin]}
+        />
         <MentionSuggestions
           open={suggestionsOpen}
           onOpenChange={onOpenChange}
@@ -94,7 +102,7 @@ const CommentBox = ({ addToMessage, users }) => {
         <Toolbar
           editorState={editorState}
           setEditorState={setEditorState}
-          emojiSelect={<EmojiSelect />}
+          showEmoji={emojiHandler}
         />
         {/* <div>
           {showEmoji && (
@@ -120,7 +128,6 @@ const InputWrapper = styled.section`
   border: 1px solid hsla(0, 0%, 92%, 1);
   border-radius: 3px;
   padding: 10px 18px 15px 18px;
-  width: calc(100% - 24px);
   /* padding-left: 8px;
 padding-top: 8px;
 padding-bottom: 8px; */

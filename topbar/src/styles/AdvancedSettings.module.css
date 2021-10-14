@@ -14,7 +14,7 @@
   font-family: 'Lato';
   font-weight: 700;
   margin: 1rem 0;
-  color: var(--text-color-gray-1);
+  color: #242424;
   font-size: 1rem;
 }
 
@@ -31,7 +31,7 @@
 .chekedInput {
   width: .875rem;
   height: .875rem;
-  background: var(--bg-color);
+  background: #FFFFFF;
   border: 1px solid #999;
   border-radius: 2px;
   margin-right: .438rem !important;
@@ -54,7 +54,7 @@
 .inputParagraph, .inputParagraph60, .inputParagraph40{
   font-size: .8125rem;
   font-weight: 400;
-  color: var( --text-color-gray);
+  color: #1D1C1D;
   line-height: 0;
   padding: 0;
   margin: 0;
@@ -62,7 +62,7 @@
 }
 
 .inputParagraph60, .inputParagraph40 {
-  color: var( --text-color-normal);
+  color: #616061;
   margin-left: 4px;
 }
 
@@ -94,7 +94,7 @@
 .radioInfo {
   flex-grow: 1;
   font-size: .8125rem;
-  color: var( --text-color-gray); 
+  color: #1D1C1D; 
   margin-left: .625rem;
 }
 
