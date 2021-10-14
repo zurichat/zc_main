@@ -1,16 +1,17 @@
-import { React, useState, useEffect } from "react"
-import axios from "axios"
 import styles from "../styles/TopBarSearchModal.module.css"
+import { useState } from "react"
+import axios from "axios"
 import SearchModalResult from "./SearchModalResults"
 
 const base_URL = "https://jsonplaceholder.typicode.com/todos"
 
-const TopBarSearchModal = () => {
+const TopBarSearchModal = ({ onSearchEnter, onChange }) => {
+  const [value, setValue] = useState("")
   const [items, setItems] = useState("")
-  const [query, setQuery] = useState("")
 
-  const handleChange = e => {
-    setQuery(e.target.value) //set query to input value as it changes
+  const onInputChange = e => {
+    setValue(e.target.value)
+    onChange(e.target.value)
     getData()
   }
 
@@ -21,17 +22,23 @@ const TopBarSearchModal = () => {
           return item
         })
         .filter(item => {
-          return item.title.includes(query)
+          return item.title.includes(value)
         })
 
       const n = 10 //get the first 15 items
       setItems(result.slice(0, n))
     })
   }
-
   return (
     <div className={styles.topBarSearchModal}>
-      <input type="text" className={styles._input} placeholder="Search Here" />
+      <input
+        type="text"
+        className={styles._input}
+        placeholder="Search Here"
+        value={value}
+        onChange={onInputChange}
+        onKeyUp={onSearchEnter}
+      />
       <div className={styles.MainBox}>
         <div>
           <div className={styles.input_box}>
@@ -50,8 +57,9 @@ const TopBarSearchModal = () => {
                 type="text"
                 className={styles._MainInput}
                 placeholder="Search Here"
-                value={query}
-                onChange={e => handleChange(e)}
+                value={value}
+                onChange={onInputChange}
+                onKeyUp={onSearchEnter}
               />
             </div>
             <div className={styles.close_icon}>

@@ -14,6 +14,11 @@ export default styled.button`
   &:focus {
     outline-offset: 2px;
   }
+  &:hover {
+    background-color: #e6e6e6;
+    padding: 3px;
+    border-radius: 3px;
+  }
 
   &:focus:not(:focus-visible) {
     outline: none;
