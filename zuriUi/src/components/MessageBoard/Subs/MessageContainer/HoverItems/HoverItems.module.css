@@ -1,0 +1,16 @@
+.HoverItems {
+  background-color: white;
+  border: 1px solid #8c8c8c;
+  width: 195px;
+  height: 40px;
+  border-radius: 10px;
+  position: absolute;
+  top: -20px;
+  right: 26px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  cursor: pointer;
+}

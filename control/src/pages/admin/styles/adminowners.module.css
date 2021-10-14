@@ -1,0 +1,29 @@
+.adminowners {
+  width: 100%;
+  height: 50vh;
+  margin: 0;
+  padding: 0;
+}
+
+.heading {
+  font-size: 0.8rem;
+}
+.rolesearch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search {
+  width: 40%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.7rem;
+  border-radius: 0.6rem;
+}
+
+.input {
+  width: 100%;
+}
