@@ -160,15 +160,15 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   const [toggleSidebar, setToggleSidebar] = useState(false)
 
-  const handleToggleSidebar = useCallback(() => {
+  const handleToggleSidebar = () => {
     setToggleSidebar(!toggleSidebar)
-  }, [toggleSidebar])
+  }
 
-  //Handle sidebar on mobile
-  const sidebar = document.getElementById(
-    "single-spa-application:@zuri/sidebar"
-  )
   useEffect(() => {
+    //Handle sidebar on mobile
+    const sidebar = document.getElementById(
+      "single-spa-application:@zuri/sidebar"
+    )
     if (toggleSidebar && window.outerWidth <= 768) {
       sidebar.style.display = "block"
     } else if (window.outerWidth > 768) {
@@ -176,7 +176,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     } else {
       sidebar.style.display = "none"
     }
-  }, [toggleSidebar, sidebar])
+  }, [toggleSidebar])
 
   const zc_spa_body = document.querySelector("body")
   // const sidebar_toggle = document.querySelector("#sidebar_toggle")
@@ -242,8 +242,6 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   const handleEnter = e => {
     e.preventDefault()
-    // eslint-disable-next-line no-console
-    console.log(window.location.href)
 
     navigateToUrl("/search")
     // let s= window.location.href.split('/')
