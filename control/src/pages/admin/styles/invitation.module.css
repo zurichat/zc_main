@@ -180,6 +180,7 @@ a:link {
 .adminInviteRes {
   background-color: #fff;
   padding: 80px;
+  height: 100vh;
   font-size: 18px;
   line-height: 1.5;
   font-weight: 400;
@@ -222,7 +223,7 @@ a:link {
     font-weight: 400;
   }
 
-  invitesBtn {
+  .invitesBtn {
     font-family: "lato", sans-serif;
     font-size: 13px;
   }
