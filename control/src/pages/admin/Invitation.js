@@ -42,6 +42,11 @@ const Invitation = () => {
                   />
                 </div>
               </div>
+              <div className={styles.adminInvitesContainer}>
+                <p className={styles.adminInviteRes}>
+                  There are currently no pending invitation
+                </p>
+              </div>
             </div>
           </div>
         </div>
