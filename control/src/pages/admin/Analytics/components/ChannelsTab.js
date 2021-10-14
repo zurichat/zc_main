@@ -258,11 +258,11 @@ const ChannelsTab = () => {
       {isOpen && (
         <div className={styles.dropdownListContainer} ref={node}>
           <ul className={styles.dropdownList}>
-            {options.map(option => (
+            {options.map((option, i) => (
               <li
                 className={styles.listItem}
                 onClick={onOptionClicked(option)}
-                key={Math.random()}
+                key={i}
               >
                 {option}
               </li>
