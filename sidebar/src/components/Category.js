@@ -21,7 +21,8 @@ export default function Category(props) {
         props.name &&
         Object.keys(props.state.sidebar).map((plugin, index) => {
           let category = props.state.sidebar[plugin].category
-
+          let starred = props.state.sidebar[plugin].starred
+          
           return category && category === props.name ? (
             <Room
               isOpen={isOpen}

@@ -18,10 +18,12 @@ import Room from "./components/Room"
 import SingleRoom from "./components/SingleRoom"
 import Category from "./components/Category"
 import { dummySidebar } from "./components/dummySidebar"
+import Starred from "./components/starred"
 
 const Sidebar = props => {
   let currentWorkspace = localStorage.getItem("currentWorkspace")
 
+  console.error("wow", dummySidebar)
   const [nullValue, setnullValue] = useState(0)
 
   useEffect(() => {
@@ -31,9 +33,9 @@ const Sidebar = props => {
   {
     //Listening for sidebar update
     nullValue === 1 &&
-      dummySidebar &&
+      dummySidebar.sidebar &&
       SubscribeToChannel(
-        `${currentWorkspace}_${props.state.user[0]._id}_sidebar`,
+        `${currentWorkspace}_${dummySidebar.user[0]._id}_sidebar`,
         ctx => {
           const websocket = ctx.data
           // console.log("websocket", websocket)
@@ -51,7 +53,7 @@ const Sidebar = props => {
 
   return (
     <div className={`container-fluid ${styles.sb__container}`}>
-      <Header state={props.state} />
+      <Header state={dummySidebar} />
       <div className={`${styles.subCon2}`}>
         <Fragment>
           {/* <Room name="Threads" image={threadIcon} />
@@ -66,15 +68,16 @@ const Sidebar = props => {
 
           <SingleRoom name="Plugins" image={pluginIcon} link="/marketplace" />
 
-          <Category name="games" state={props.state} />
-          <Category name="utility" state={props.state} />
-          <Category name="tools" state={props.state} />
-          <Category name="productivity" state={props.state} />
+          <Starred state={dummySidebar} />
+          <Category name="games" state={dummySidebar} />
+          <Category name="utility" state={dummySidebar} />
+          <Category name="tools" state={dummySidebar} />
+          <Category name="productivity" state={dummySidebar} />
 
-          <Category name="channels" state={props.state} />
-          <Category name="direct messages" state={props.state} />
+          <Category name="channels" state={dummySidebar} />
+          <Category name="direct messages" state={dummySidebar} />
           {/* button for inviting users to workspace */}
-          <Invite state={props.state} />
+          <Invite state={dummySidebar} />
         </Fragment>
       </div>
     </div>
