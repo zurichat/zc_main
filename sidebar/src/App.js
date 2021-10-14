@@ -13,6 +13,7 @@ export const ACTIONS = {
   ADD_ORGANIZATION: "add-org-email",
   INVITE_MODAL_TYPE: "select-invite-modal",
   MODAL_TO_SHOW: "",
+  SHOW_MESSAGE: "",
   IS_OPEN: "is-open"
 }
 
@@ -69,6 +70,11 @@ function reducer(state, action) {
       return {
         ...state,
         modalToShow: action.payload
+      }
+    case ACTIONS.SHOW_MESSAGE:
+      return {
+        ...state,
+        showMessage: action.payload
       }
     case ACTIONS.IS_OPEN:
       return{
