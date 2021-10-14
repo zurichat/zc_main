@@ -59,6 +59,21 @@ const HeaderSearchSuggestion = () => {
             className={`align-top ${headerStyles.searchImage1}`}
           />
         </Link>*/}
+        <div className={`line ${headerStyles.line}`}></div>
+
+        <select
+          className={`btn btn-transparent  ${headerStyles.select}`}
+          type="button"
+          onChange={() => saveLang(event.target.value)}
+        >
+          <option>{t("header.language_select")}</option>
+          <option value="en">English</option>
+          <option value="fr">French</option>
+          <option value="zh">Chinese</option>
+          <option value="ar">Arabic</option>
+          <option value="de">Deutsch</option>
+        </select>
+
         <button
           className={`navbar-toggler ${headerStyles.toggle}`}
           type="button"
