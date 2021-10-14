@@ -18,7 +18,6 @@ useEffect(() => {
         .get(`/organizations/${currentWorkspace}/members`)
         .then(res => {
           setItems(res?.data?.data)
-          console.log(data?.data?.data, "check data")
         })
         .catch(err => {
           console.error(err)
