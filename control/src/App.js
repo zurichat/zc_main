@@ -43,7 +43,7 @@ import About from './pages/about/index'
 import AdminSettingsTab from './pages/admin/Settings/components/AdminSettingsTab'
 import TermsOfService from './pages/termsOfService'
 import RedirectRoute from './pages/redirect'
-
+import ManageMembers from './pages/admin/manage_members/components/ManageMembers'
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -154,6 +154,11 @@ const App = () => {
           path="/admin/settings/permission"
           exact
           component={AdminSettingsTab}
+        /> */}
+        {/* <PrivateRoute
+          path="/admin/manage_members"
+          exact
+          component={ManageMembers}
         /> */}
         <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
         {/* ----------------settings routes closed----------------- */}
