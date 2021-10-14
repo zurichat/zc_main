@@ -1,10 +1,11 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom"
-import Login from "./pages/login"
-import SignUp from "./pages/signup"
-import SignOut from "./pages/signout/index"
-import Workspace from "./pages/workspace/components/Workspace"
-import LandingPage from "./pages/LandingPage"
-import DAO_Features from "./pages/DAO-Features"
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Login from './pages/login'
+import Uitest from './pages/UI/MsgBoard'
+import SignUp from './pages/signup'
+import SignOut from './pages/signout/index'
+import Workspace from './pages/workspace/components/Workspace'
+import LandingPage from './pages/LandingPage'
+import DAO_Features from './pages/DAO-Features'
 // password block
 import ResetPassword from "./pages/passwordReset/index"
 import NewPassword from "./pages/passwordReset/newPassword"
@@ -137,7 +138,9 @@ const App = () => {
         <Route path="/careers">
           <Careers />
         </Route>
-
+        <Route path="/terms">
+          <TermsOfService />
+          </Route>
         <Route path="/legal">
           <Legal />
         </Route>
@@ -145,11 +148,11 @@ const App = () => {
         <Route path="/privacy">
           <PrivacyPolicy />
         </Route>
-        <Route path="/terms">
-          <TermsOfService />
+        <Route path="/uitest">
+          <Uitest />
         </Route>
-        <Route path="/legal">
-          <Legal />
+        <Route path="/marketplace" exact>
+          <MarketPlace />
         </Route>
         <Route path="/dao-features">
           <DAO_Features />
