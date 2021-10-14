@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Login from './pages/login'
-import Uitest from '../../zuriUi/src/components/MessageBoard/MessageBoard/MessageBoard'
 import SignUp from './pages/signup'
 import SignOut from './pages/signout/index'
 import Workspace from './pages/workspace/components/Workspace'
@@ -148,9 +147,7 @@ const App = () => {
         <Route path="/privacy">
           <PrivacyPolicy />
         </Route>
-        <Route path="/uitest">
-          <Uitest />
-        </Route>
+        
         <Route path="/marketplace" exact>
           <MarketPlace />
         </Route>
