@@ -7,13 +7,11 @@ import TopNavBar from "./TopNavBar"
 
 export default function Root() {
   return (
-    <Provider store={store}>
       <ProfileProvider>
         <TopbarProvider>
           <TopNavBar />
         </TopbarProvider>
       </ProfileProvider>
-    </Provider>
   )
 }
 
