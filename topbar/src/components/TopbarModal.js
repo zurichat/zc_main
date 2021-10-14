@@ -1,8 +1,10 @@
 import { useContext, useState, useEffect } from "react"
 import { FaChevronRight } from "react-icons/fa"
+import { BiSmile } from "react-icons/bi"
 import Picker, { SKIN_TONE_MEDIUM_DARK } from "emoji-picker-react"
 import axios from "axios"
 import defaultAvatar from "../assets/images/avatar_vct.svg"
+import smile from "../assets/images/smile.png"
 
 import styles from "../styles/Topbar.module.css"
 import { TopbarContext } from "../context/Topbar"
@@ -14,12 +16,60 @@ import MembersModal from "./MembersModal"
 import Downloads from "./Downloads"
 import SetStatusModal from "./SetStatusModal"
 import NewStatusModal from "./NewStatusModal"
+import { authAxios } from "./../utils/Api"
 // react icons
 
-const TopbarModal = ({ members }) => {
-  const { userProfileImage, toggleModalState, toggleProfileState, user } =
-    useContext(ProfileContext)
+const TopbarModal = ({ members, statusModal, setStatusModal }) => {
+  const {
+    userProfileImage,
+    orgId,
+    toggleModalState,
+    toggleProfileState,
+    user,
+    setUser
+  } = useContext(ProfileContext)
 
+  const handleClearStatus = async () => {
+    setUser({
+      ...user,
+      status: {
+        text: "",
+        tag: ""
+      }
+    })
+    try {
+      const res = await authAxios.patch(
+        `/organizations/${orgId}/members/${user._id}/status`,
+        {
+          expiry_time: "one_hour",
+          tag: "",
+          text: ""
+        }
+      )
+      const response = res.status
+    } catch (error) {
+      const errorResponse = error
+    }
+  }
+
+  // const handleClearStatus = async () => {
+  //   // setEmoji("")
+  //   // setText("")
+  //   try {
+  //     const res = await authAxios.patch(
+  //       `/organizations/${orgId}/members/${user._id}/status`,
+  //       {
+  //         expiry_time: "one_hour",
+  //         tag: "",
+  //         text: ""
+  //       }
+  //     )
+  //     res.status == 200 && alert(res?.data?.message)
+  //   } catch (error) {
+  //     alert(error)
+  //   }
+  // }
+  const [hoverState, setHoverState] = useState(false)
   const state = useContext(TopbarContext)
   const [showModal] = state.show
   // const [username, setUsername] = state.username
@@ -76,18 +126,17 @@ const TopbarModal = ({ members }) => {
     window.location.href = "/signout"
   }
   const [pause, setPause] = useState(false)
-  const [statusModal, setStatusModal] = useState(false)
+  // console.log(user)
 
   var userAppearance = null
   var toggleAppearance = null
-  
 
   switch (presence) {
     case "true":
       userAppearance = "Set yourself as away"
       toggleAppearance = (
         <div className={styles.online}>
-          <div className={styles.activeCircle}/>
+          <div className={styles.activeCircle} />
           <p className={styles.active}> Active </p>
         </div>
       )
@@ -109,7 +158,16 @@ const TopbarModal = ({ members }) => {
 
   return (
     <>
-      {/* The section that shows the status */}
+      {/* The section that shows the set status */}
+      {statusModal && (
+        <NewStatusModal
+          statusModal={statusModal}
+          setStatusModal={setStatusModal}
+          openStatus={openStatus}
+        />
+      )}
+
+      {/* The section that shows the status picker*/}
       {showStatus ? (
         <div
           ref={modalRef}
@@ -147,9 +205,7 @@ const TopbarModal = ({ members }) => {
             <div className={styles.sectionOne}>
               <div className={styles.oneLeft}>
                 <img
-                  src={
-                    userProfileImage !== "" ? userProfileImage : defaultAvatar
-                  }
+                  src={userProfileImage ? userProfileImage : defaultAvatar}
                   alt="profile-pic"
                 />
               </div>
@@ -165,24 +221,30 @@ const TopbarModal = ({ members }) => {
                 {toggleAppearance}
               </div>
             </div>
-
             <div
               className={styles.sectionTwo}
-              onClick={() => setStatusModal(!statusModal)}
+              onClick={() => {
+                setStatusModal(!statusModal)
+                closeModal()
+              }}
+              onMouseEnter={() => setHoverState(true)}
+              onMouseLeave={() => setHoverState(false)}
             >
-              <div className={styles.emoji}>{user?.status?.tag} </div>
-              <div className={styles.statusContent}>{user?.status?.text}</div>
+              <div className={styles.emoji}>
+                {user?.status?.tag || (
+                  <img src={smile} className={styles.defalutEmoji} />
+                )}
+              </div>
+              <div className={styles.statusContent}>
+                {!(user?.status?.text || user?.status?.tag)
+                  ? "Update your Status"
+                  : user?.status?.text}
+              </div>
             </div>
 
             <div className={styles.sectionThree}>
-              {/* <p onClick={openStatus}>Set a status</p> */}
-              <p>Clear status</p>
-              {statusModal && (
-                <NewStatusModal
-                  statusModal={statusModal}
-                  setStatusModal={setStatusModal}
-                  openStatus={openStatus}
-                />
+              {(user?.status?.text || user?.status?.tag) && (
+                <p onClick={handleClearStatus}>Clear status</p>
               )}
               <p
                 onClick={() => {

@@ -15,6 +15,9 @@
     justify-content: flex-end;
   }
 }
+.fontStyles {
+  font-size: 1.3rem;
+}
 
 .membersModalOverlay {
   position: fixed;
@@ -52,8 +55,8 @@
 
 .statusContent {
   text-align: left;
-  font-size: 1rem;
-  margin-left: 3.5rem;
+  font-size: 0.9rem;
+  margin-left: 1rem;
 }
 
 .circles {
@@ -253,8 +256,8 @@
 /* The section two */
 
 .sectionTwo {
-  background: #F6F6F6;
-  padding: 0px;
+  background: #f6f6f6;
+  padding: 0 0.5rem;
   border-radius: 4px;
   /* border: 1px solid #a1a1a1; */
   width: 85%;
@@ -265,16 +268,16 @@
   align-items: center;
   display: flex;
 }
-.sectionTwo .statusContent {
-  font-size: 13px;
-  text-align: center;
-  margin-left: 60px;
-}
 
 .sectionTwo .emoji {
   float: left;
   font-size: 18px;
   padding: 0 0.3rem;
+}
+
+.defalutEmoji{
+  height: 20px;
+  padding: 0px 2px;
 }
 /* The section of the picker */
 
@@ -321,7 +324,7 @@
 
 .sectionThree p {
   font-family: Lato;
-  color: #3A3A3A;
+  color: #3a3a3a;
   font-size: 15px;
   font-weight: 400;
   line-height: 18px;
