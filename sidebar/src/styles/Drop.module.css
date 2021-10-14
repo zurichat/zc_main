@@ -46,7 +46,7 @@
 .plugin_name,
 .dropDown__title,
 .dropDown__name {
-  color: #454545;
+  /* color: #454545; */
   padding-inline-start: 0.5rem;
   font-size: 18px;
   line-height: 28px;

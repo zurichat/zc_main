@@ -15,24 +15,51 @@ import theme19 from "../assets/images/theme19.png"
 import theme20 from "../assets/images/theme20.png"
 import theme21 from "../assets/images/theme21.png"
 
+import useThemeMode from "../../customHooks/useThemeMode";
 
-const Themes = ({check, setCheck, setMode}) => {
+
+const Themes = (/*{check, setCheck, setMode}*/) => {
   
-  // const [active1, setActive1] = useState(0)
+  const [active1, setActive1] = useState(0)
+  const [darkMode, setDarkMode] = useState(false);
+  const [mode, setMode] = useState("light");
   const [Data, setData] = useState(undefined)
   const [DataState, setDataState] = useState({})
 
+  const {theme, toggleTheme} = useThemeMode();
+
   const toggleDarkMode = () => {
+    setDarkMode(!darkMode ? true: true);
     setMode("dark")
-    setCheck({
-      light: "",
-      dark: "checked"})
+    // setCheck({
+    //   light: "",
+    //   dark: "checked"})
   }
 
   const toggleLightMode = () => {
+    setDarkMode(darkMode ? false : false);
     setMode("light")
-    setCheck({light:"checked", dark: ""})
+    // setCheck({light:"checked", dark: ""})
   }
+
+  useEffect(() => {
+    if (mode === "dark") {
+      localStorage.setItem("mode", "dark")
+    } else {
+      localStorage.setItem("mode", "light")
+    }
+  }, [mode])
+
+  const value = localStorage.getItem('theme') 
+
+
+  useEffect(() => {
+    if (mode === "dark") {
+      localStorage.setItem("mode", "dark")
+    } else {
+      localStorage.setItem("mode", "light")
+    }
+  }, [mode])
 
   // const [mode, setMode] = useState(() => localStorage.getItem('mode'))
 
@@ -60,7 +87,7 @@ const Themes = ({check, setCheck, setMode}) => {
   // })
 
   return (
-    <div className={styles.themeCont}>
+    <div className={styles.themeCont} data-theme={darkMode ? "dark" : "light"}>
       <div className={styles.title}>
         <div className={styles.them}>Themes</div>
         <div className={styles.text}>
@@ -108,14 +135,18 @@ const Themes = ({check, setCheck, setMode}) => {
           </div>
           <div className={styles.nice}>Look nice today.</div>
         </div>
-        <div className={styles.low} onClick={toggleLightMode}>
+        <div className={styles.low} /* onClick={toggleLightMode} */>
           <div className={styles.lower}>
-            <div className={styles.radio6} >
+            <div className={styles.radio6} onClick={toggleLightMode}>
               <input
                 type="radio"
                 value="light"
-                checked={check.light}
-                onClick={toggleLightMode}
+                // checked={check.light}
+                // onClick={toggleLightMode}
+                checked = {active1 === 0}
+                onClick = {() => {
+                  setActive1(0)
+                }}
               />
             </div>
             <div className={styles.light}>Light</div>
@@ -136,9 +167,13 @@ const Themes = ({check, setCheck, setMode}) => {
             <div className={styles.radio7}>
               <input
                 type="radio"
-                value="dark"
-                checked={check.dark}
-                onClick={toggleDarkMode}
+                value="light"
+                // checked={check.dark}
+                // onClick={toggleDarkMode}
+                checked = {active1 === 1}
+                onClick = {() => {
+                  setActive1(1)
+                }}
               />
             </div>
             <div className={styles.light2}>Dark</div>
@@ -156,10 +191,10 @@ const Themes = ({check, setCheck, setMode}) => {
         <div className={styles.true}>Tried and true</div>
       </div>
       <div className={styles.set1}>
-        <div className={styles.img3}>
+        <div className={styles.img3} onClick={()=>toggleTheme('ash')}>
           <img src={theme3} alt="theme3" className={styles.theme3} />
         </div>
-        <div className={styles.img4}>
+        <div className={styles.img4} onClick={()=>toggleTheme('purple')}>
           <img src={theme4} alt="theme4" className={styles.theme4} />
         </div>
       </div>
@@ -169,27 +204,27 @@ const Themes = ({check, setCheck, setMode}) => {
       </div>
       <div className={styles.clean}>Clean and minimal</div>
       <div className={styles.set2}>
-        <div className={styles.img5}>
+        <div className={styles.img5} onClick={()=>toggleTheme('ash')}>
           <img src={theme5} alt="theme5" className={styles.theme5} />
         </div>
-        <div className={styles.img6}>
+        <div className={styles.img6} onClick={()=>toggleTheme('ash')}>
           <img src={theme6} alt="theme6" className={styles.theme6} />
         </div>
       </div>
       <div className={styles.set3}>
-        <div className={styles.img7}>
+        <div className={styles.img7} onClick={()=>toggleTheme('ash')}>
           <img src={theme18} alt="theme18" className={styles.theme18} />
         </div>
-        <div className={styles.img8}>
+        <div className={styles.img8} onClick={()=>toggleTheme('roseRed')}>
           <img src={theme19} alt="theme19" className={styles.theme19} />
         </div>
       </div>
       <div className={styles.set4}>
         <div className={styles.bottom}>
-          <div className={styles.img9}>
+          <div className={styles.img9} onClick={()=>toggleTheme('roseRed')}>
             <img src={theme20} alt="theme20" className={styles.theme20} />
           </div>
-          <div className={styles.img10}>
+          <div className={styles.img10} onClick={()=>toggleTheme('ash')}>
             <img src={theme21} alt="theme21" className={styles.theme21} />
           </div>
         </div>
