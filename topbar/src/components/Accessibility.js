@@ -20,13 +20,13 @@ function Accessibility() {
   // initialstate is the accessibilty settings from GetUserInfo
   const [errorAccessibility, setErrorAccessibility] = useState()
   const [accessbilitySettings, setAccessibilitySettings] = useState({
-    animation: userSettings.accessibility.animation,
-    receivedSound: userSettings.accessibility.receive_sound,
-    sentSound: userSettings.accessibility.send_sound,
-    readOutLoud: userSettings.accessibility.read_message,
+    animation: true,
+    receivedSound: false,
+    sentSound: false,
+    readOutLoud: true,
     messageControl: {
       bool: true,
-      message: userSettings.accessibility.press_empty_message_field
+      message: "focus_on_last_message"
     }
   })
 
@@ -108,7 +108,7 @@ function Accessibility() {
             </div>
           </form>
         </div>
-        <hr className={styles.hrLine} style={{height: "0.5px"}} />
+        <hr className={styles.hrLine} style={{ height: "0.5px" }} />
 
         <div>
           <h3 className={styles.directH3}>Direct message announcement</h3>
@@ -221,7 +221,7 @@ function Accessibility() {
             </div>
           </form>
         </div>
-        <hr className={styles.hrLine} style={{height: "0.5px"}} />
+        <hr className={styles.hrLine} style={{ height: "0.5px" }} />
 
         <div>
           <h3 className={styles.keyboardH3}>Keyboard</h3>
@@ -230,7 +230,7 @@ function Accessibility() {
             <span id={styles.handyKeyboard}>handy keyboard shortcuts.</span>
           </p>
 
-          <hr className={styles.hrLine} style={{height: "0.5px"}} />
+          <hr className={styles.hrLine} style={{ height: "0.5px" }} />
 
           <h3 className={styles.pressH3}>
             Press <img src={image1} alt="upicon" className={styles.image1} /> in
