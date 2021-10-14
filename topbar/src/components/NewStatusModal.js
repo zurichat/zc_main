@@ -55,15 +55,17 @@ const SetStatusModal = ({
   emojiItem,
   text,
   setText,
-  setEmoji
+  setEmoji,
+  statusText,
+  statusEmoji,
+  setStatusText,
+  setStatusEmoji
 }) => {
   const [dropdown, setDropdown] = useState(false)
   const [openEmoji, setOpenEmoji] = useState(false)
   const [dateTime, setDateTime] = useState(false)
   const [choosePeriod, setChoosePeriod] = useState(user?.status?.expiry_time)
   const { user, orgId, setUser } = useContext(ProfileContext)
-  const [statusEmoji, setStatusEmoji] = useState(user?.status?.tag)
-  const [statusText, setStatusText] = useState(user?.status?.text)
 
   const onEmojiSelect = selectedEmoji => {
     setStatusEmoji(selectedEmoji.native)
@@ -98,14 +100,14 @@ const SetStatusModal = ({
         status_history: [
           ...user.status.status_history,
           {
-            tag_history: statusEmoji, 
-            text_history: statusText, 
+            tag_history: statusEmoji,
+            text_history: statusText,
             expiry_history: choosePeriod
           }
         ],
         expiry_time: choosePeriod,
         text: statusText,
-        tag: statusEmoji,
+        tag: statusEmoji
       }
     })
 
@@ -133,6 +135,7 @@ const SetStatusModal = ({
         expiry_time: "",
         text: "",
         tag: "",
+        status_history: [...user.status.status_history]
       }
     })
 
@@ -156,30 +159,28 @@ const SetStatusModal = ({
     setStatusModal(!statusModal)
   }
 
-  const onSelectRecent = (selectedRecent)=>{
+  const onSelectRecent = selectedRecent => {
     setStatusEmoji(selectedRecent.tag_history)
     setStatusText(selectedRecent.text_history)
     setChoosePeriod(selectedRecent.expiry_history)
   }
 
-  const onRemoveRecent = (recentText)=>{
+  const onRemoveRecent = recentText => {
     setUser({
       ...user,
       status: {
         ...user.status,
-        status_history: user.status.status_history.reverse()
-        .filter(history => {
+        status_history: user.status.status_history.reverse().filter(history => {
           return history.text_history !== recentText
         })
       }
     })
   }
 
-  const statusHistory = user?.status?.status_history
-    ?.reverse()
-    .filter(history => {
+  const statusHistory =
+    user?.status?.status_history?.reverse().filter(history => {
       return history.text_history !== "" || history.tag_history !== ""
-    })
+    }) || []
   // console.log(statusHistory)
   // console.log(user)
   const expiryTimeLabel = {
@@ -269,27 +270,38 @@ const SetStatusModal = ({
                 <span>Clear all</span>
               </ReactTooltip>
             </div>
-            {statusEmoji === "" &&
-            statusText === "" ? (
+            {statusEmoji === "" && statusText === "" ? (
               <div>
                 <p className={styles.recentstatustitle}>Recent</p>
                 {statusHistory[0] && (
                   <div className={styles.recentstatustile}>
-                    <div onClick={()=>{onSelectRecent(statusHistory[0])}} className={styles.recentstatustileleft}>
+                    <div
+                      onClick={() => {
+                        onSelectRecent(statusHistory[0])
+                      }}
+                      className={styles.recentstatustileleft}
+                    >
                       <span>{statusHistory[0].tag_history}</span>&nbsp;&nbsp;
-                      <span className={styles.recentstatustext}>{statusHistory[0].text_history}</span>&nbsp;&nbsp;
+                      <span className={styles.recentstatustext}>
+                        {statusHistory[0].text_history}
+                      </span>
+                      &nbsp;&nbsp;
                       <span>-</span>&nbsp;&nbsp;
                       <span>
                         {expiryTimeLabel[statusHistory[0].expiry_history]}
                       </span>
                     </div>
-                    <div 
-                      data-tip 
-                      data-for="deleteRecent" 
-                      className={styles.recentstatustileiconwrapper} 
-                      onClick={()=>{onRemoveRecent(statusHistory[0].text_history)}}
+                    <div
+                      data-tip
+                      data-for="deleteRecent"
+                      className={styles.recentstatustileiconwrapper}
+                      onClick={() => {
+                        onRemoveRecent(statusHistory[0].text_history)
+                      }}
                     >
-                      <FaRegTimesCircle className={styles.recentstatustileicon}/>
+                      <FaRegTimesCircle
+                        className={styles.recentstatustileicon}
+                      />
                     </div>
                     <ReactTooltip id="deleteRecent" type="dark" effect="solid">
                       <span>Delete</span>
@@ -298,16 +310,30 @@ const SetStatusModal = ({
                 )}
                 {statusHistory[1] && (
                   <div className={styles.recentstatustile}>
-                    <div onClick={()=>{onSelectRecent(statusHistory[1])}} className={styles.recentstatustileleft}>
+                    <div
+                      onClick={() => {
+                        onSelectRecent(statusHistory[1])
+                      }}
+                      className={styles.recentstatustileleft}
+                    >
                       <span>{statusHistory[1].tag_history}</span>&nbsp;&nbsp;
-                      <span className={styles.recentstatustext}>{statusHistory[1].text_history}</span>&nbsp;&nbsp;
+                      <span className={styles.recentstatustext}>
+                        {statusHistory[1].text_history}
+                      </span>
+                      &nbsp;&nbsp;
                       <span>-</span>&nbsp;&nbsp;
                       <span>
                         {expiryTimeLabel[statusHistory[1].expiry_history]}
                       </span>
                     </div>
-                    <div data-tip data-for="deleteRecent" className={styles.recentstatustileiconwrapper}>
-                      <FaRegTimesCircle className={styles.recentstatustileicon}/>
+                    <div
+                      data-tip
+                      data-for="deleteRecent"
+                      className={styles.recentstatustileiconwrapper}
+                    >
+                      <FaRegTimesCircle
+                        className={styles.recentstatustileicon}
+                      />
                     </div>
                     <ReactTooltip id="deleteRecent" type="dark" effect="solid">
                       <span>Delete</span>
@@ -316,16 +342,30 @@ const SetStatusModal = ({
                 )}
                 {statusHistory[2] && (
                   <div className={styles.recentstatustile}>
-                    <div onClick={()=>{onSelectRecent(statusHistory[2])}} className={styles.recentstatustileleft}>
+                    <div
+                      onClick={() => {
+                        onSelectRecent(statusHistory[2])
+                      }}
+                      className={styles.recentstatustileleft}
+                    >
                       <span>{statusHistory[2].tag_history}</span>&nbsp;&nbsp;
-                      <span className={styles.recentstatustext}>{statusHistory[2].text_history}</span>&nbsp;&nbsp;
+                      <span className={styles.recentstatustext}>
+                        {statusHistory[2].text_history}
+                      </span>
+                      &nbsp;&nbsp;
                       <span>-</span>&nbsp;&nbsp;
                       <span>
                         {expiryTimeLabel[statusHistory[2].expiry_history]}
                       </span>
                     </div>
-                    <div data-tip data-for="deleteRecent" className={styles.recentstatustileiconwrapper}>
-                      <FaRegTimesCircle className={styles.recentstatustileicon}/>
+                    <div
+                      data-tip
+                      data-for="deleteRecent"
+                      className={styles.recentstatustileiconwrapper}
+                    >
+                      <FaRegTimesCircle
+                        className={styles.recentstatustileicon}
+                      />
                     </div>
                     <ReactTooltip id="deleteRecent" type="dark" effect="solid">
                       <span>Delete</span>
@@ -334,16 +374,30 @@ const SetStatusModal = ({
                 )}
                 {statusHistory[3] && (
                   <div className={styles.recentstatustile}>
-                    <div onClick={()=>{onSelectRecent(statusHistory[3])}} className={styles.recentstatustileleft}>
+                    <div
+                      onClick={() => {
+                        onSelectRecent(statusHistory[3])
+                      }}
+                      className={styles.recentstatustileleft}
+                    >
                       <span>{statusHistory[3].tag_history}</span>&nbsp;&nbsp;
-                      <span className={styles.recentstatustext}>{statusHistory[3].text_history}</span>&nbsp;&nbsp;
+                      <span className={styles.recentstatustext}>
+                        {statusHistory[3].text_history}
+                      </span>
+                      &nbsp;&nbsp;
                       <span>-</span>&nbsp;&nbsp;
                       <span>
                         {expiryTimeLabel[statusHistory[3].expiry_history]}
                       </span>
                     </div>
-                    <div data-tip data-for="deleteRecent" className={styles.recentstatustileiconwrapper}>
-                      <FaRegTimesCircle className={styles.recentstatustileicon}/>
+                    <div
+                      data-tip
+                      data-for="deleteRecent"
+                      className={styles.recentstatustileiconwrapper}
+                    >
+                      <FaRegTimesCircle
+                        className={styles.recentstatustileicon}
+                      />
                     </div>
                     <ReactTooltip id="deleteRecent" type="dark" effect="solid">
                       <span>Delete</span>
@@ -352,16 +406,30 @@ const SetStatusModal = ({
                 )}
                 {statusHistory[4] && (
                   <div className={styles.recentstatustile}>
-                    <div onClick={()=>{onSelectRecent(statusHistory[4])}} className={styles.recentstatustileleft}>
+                    <div
+                      onClick={() => {
+                        onSelectRecent(statusHistory[4])
+                      }}
+                      className={styles.recentstatustileleft}
+                    >
                       <span>{statusHistory[4].tag_history}</span>&nbsp;&nbsp;
-                      <span className={styles.recentstatustext}>{statusHistory[4].text_history}</span>&nbsp;&nbsp;
+                      <span className={styles.recentstatustext}>
+                        {statusHistory[4].text_history}
+                      </span>
+                      &nbsp;&nbsp;
                       <span>-</span>&nbsp;&nbsp;
                       <span>
                         {expiryTimeLabel[statusHistory[4].expiry_history]}
                       </span>
                     </div>
-                    <div data-tip data-for="deleteRecent" className={styles.recentstatustileiconwrapper}>
-                      <FaRegTimesCircle className={styles.recentstatustileicon}/>
+                    <div
+                      data-tip
+                      data-for="deleteRecent"
+                      className={styles.recentstatustileiconwrapper}
+                    >
+                      <FaRegTimesCircle
+                        className={styles.recentstatustileicon}
+                      />
                     </div>
                     <ReactTooltip id="deleteRecent" type="dark" effect="solid">
                       <span>Delete</span>
