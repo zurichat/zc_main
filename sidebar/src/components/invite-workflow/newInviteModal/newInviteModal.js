@@ -6,7 +6,9 @@ import cancel from "./assets/cancel.svg"
 import { sendInviteAPI } from "./new-invite.utils"
 
 const Container = styled.div`
+  @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
   display: block !important;
+  font-size: 16px !important;
 
   &.invite-modal-main {
     position: fixed;
@@ -14,8 +16,7 @@ const Container = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.5;
-    background: grey !important;
+    background: rgba(64, 79, 74, 0.5) !important;
     z-index: 10;
   }
 
@@ -24,11 +25,13 @@ const Container = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    min-width: 30%;
-    padding: 1em;
+    min-width: 90%;
+    padding: 1.5em;
     display: flex;
-    margin-bottom: 1em;
     background: white !important;
+    border: 1px solid #e7e7e7;
+    box-shadow: 1px 1px 44px rgba(64, 64, 64, 0.5);
+    border-radius: 4px;
   }
 
   &.invite-modal-header {
@@ -42,47 +45,72 @@ const Container = styled.div`
   }
 
   &.invite-modal-sendBtn {
-    display: flex;
-    justify-content: flex-end;
+    display: flex !important;
+    justify-content: end;
+    margin-top: 1em !important;
   }
 
   &.invite-modal-textarea,
   &.invite-modal-sendBtn {
     width: 100%;
   }
+
+  @media (min-width: 768px) {
+    font-size: 18px !important;
+
+    &.invite-modal-innerContainer {
+      min-width: 35%;
+    }
+  }
 `
 const Text = styled.h3`
   color: black !important;
-  font-weight: 800 !important;
+  font-weight: 700 !important;
+  font-size: 1.3em !important;
   padding: 0 !important;
-`
+  margin-top: 0 !important;
 
-const TextArea = styled.textarea`
-  border: 1px solid black !important;
-  min-height: 8em;
-  width: 100%;
-  padding: 10px 0;
-
-  &:focus {
-    color: black !important;
+  @media (min-width: 768px) {
+    font-size: 1.7em !important;
   }
 `
 
-const Label = styled.label``
+const TextArea = styled.textarea`
+  min-height: 8em;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #a1a1a1;
+  color: black !important;
+  border-radius: 3px !important;
+
+  &:focus {
+    outline-color: #00b87c !important;
+  }
+
+  &::placeholder {
+    font-family: "Lato", san-serif !important;
+  }
+`
+
+const Label = styled.label`
+  display: block;
+  margin: 2em 0 1em !important;
+  color: black !important;
+`
 
 const Image = styled.img``
 
 const Button = styled.button`
   outline: none;
   background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px !important;
 
   &.invite-sendBtn {
-    display: flex !important;
-    justify-content: flex-end;
     background: #00b87c !important;
     color: white !important;
-    padding: 0.5rem !important;
-    border-radius: 0.2rem !important;
+    padding: 0.8em 1.8em;
   }
 `
 
@@ -116,13 +144,13 @@ function NewInviteModal(props) {
     })
   }
 
-  const isLoading= (visibililty) =>{
-  props.dispatch({
-  type: ACTIONS.IS_LOADING,
-  payload: visibililty
-})
+  const isLoading = visibililty => {
+    props.dispatch({
+      type: ACTIONS.IS_LOADING,
+      payload: visibililty
+    })
   }
-  const isOpen = (visibililty) => {
+  const isOpen = visibililty => {
     isLoading(false)
     props.dispatch({
       type: ACTIONS.IS_OPEN,
@@ -144,7 +172,7 @@ function NewInviteModal(props) {
           setEmailField("")
           handleCloseInviteModal()
           modalToShow("success")
-          
+
           isLoading(false)
           isOpen(false)
         }
@@ -155,8 +183,7 @@ function NewInviteModal(props) {
         isLoading(false)
         isOpen(false)
       }
-    }
-    else {
+    } else {
       setEmailField("")
       handleCloseInviteModal()
       showMessage("Invalid Email")
@@ -169,11 +196,14 @@ function NewInviteModal(props) {
     setShowInviteModal(true)
   }, [props.state.inviteModalType])
 
-
   return (
-    showInviteModal && props.state.inviteModalType === "show-invite-modal" && (
+    showInviteModal &&
+    props.state.inviteModalType === "show-invite-modal" && (
       <Container className="invite-modal-main">
-        <Container className="invite-modal-innerContainer" ref={inviteModalNode}>
+        <Container
+          className="invite-modal-innerContainer"
+          ref={inviteModalNode}
+        >
           <Container className="invite-modal-header">
             <Text>Invite people to HNGi8</Text>
             <Button onClick={handleCloseInviteModal}>
