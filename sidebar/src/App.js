@@ -62,10 +62,17 @@ function reducer(state, action) {
 export default function App() {
   const [state, dispatch] = useReducer(reducer, {})
   const themeStyle= localStorage.getItem("customTheme");
-  const sideBarDiv =document.getElementById("single-spa-application:@zuri/sidebar")
-  sideBarDiv.style.backgroundColor= themeColors[themeStyle]. primary
-  sideBarDiv.style.color= themeColors[themeStyle].textColor
-
+  if(themeStyle!==null|| themeStyle!=="") {
+    const sideBarDiv = document.getElementById("single-spa-application:@zuri/sidebar")
+  sideBarDiv.style.backgroundColor= themeColors[themeStyle]?.primary
+  sideBarDiv.style.color= themeColors[themeStyle]?.textColor;
+  } else{
+    const newClass= document.getElementsByClassName("sb__container--pk_Ve__Sidebar-module")
+    newClass[0].style.backgroundColor="#fff"
+  }
+  
+  //const newClass= document.getElementsByClassName("sb__container--pk_Ve__Sidebar-module")
+  //newClass[0].style.backgroundColor="inherit"
   useEffect(() => {
     //Load user related information when component mounts
     fetchUser(dispatch)
