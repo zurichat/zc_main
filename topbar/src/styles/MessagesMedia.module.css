@@ -602,7 +602,7 @@ p {
   margin-top: 15px;
 }
 .previewCard {
-  width: 100%;
+  width: 70%;
   border: 1px solid rgba(58, 58, 58, 0.5);
   box-sizing: border-box;
   border-radius: 4px;
@@ -664,7 +664,7 @@ p {
   margin-top: 25px;
   margin-bottom: 25px;
   border-bottom: 1px solid rgba(214, 211, 211, 0.5);
-  width: 100%;
+  width: 75%;
 }
 .name {
   font-weight: bold;
@@ -727,7 +727,7 @@ p {
   margin-top: 20px;
   margin-bottom: 25px;
   border-bottom: 1px solid rgba(214, 211, 211, 0.5);
-  width: 100%;
+  width: 70%;
   margin-left: 3px;
 }
 .inputCheckBox {
@@ -813,7 +813,7 @@ p {
   margin-top: 20px;
   margin-bottom: 25px;
   border-bottom: 1px solid rgba(214, 211, 211, 0.5);
-  width: 100%;
+  width: 70%;
 }
 .emoji {
   font-weight: bold;
@@ -971,12 +971,14 @@ p {
 .theme19 {
   margin-top: 15px;
   margin-left: 2px;
+  width: 70%;
 }
 .bottom4 {
   margin-top: 20px;
   margin-bottom: 25px;
   border-bottom: 1px solid rgba(214, 211, 211, 0.5);
   margin-left: 3px;
+  width: 70%;
 }
 .media {
   font-weight: bold;
