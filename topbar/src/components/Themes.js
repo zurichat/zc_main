@@ -14,7 +14,7 @@ import theme18 from "../assets/images/theme18.png"
 import theme19 from "../assets/images/theme19.png"
 import theme20 from "../assets/images/theme20.png"
 import theme21 from "../assets/images/theme21.png"
-
+import themeColors from "../../../theming/themecolors"
 
 const Themes = () => {
   const [active1, setActive1] = useState(0)
@@ -30,6 +30,17 @@ const Themes = () => {
   const toggleLightMode = () => {
     setDarkMode(darkMode ? false : false)
     setMode("light")
+  }
+
+  const handleCustomTheme = (themeStyle) => {
+    localStorage.removeItem("customTheme");
+    localStorage.setItem("customTheme", themeStyle)
+    const topBarDiv =document.getElementById("single-spa-application:@zuri/topbar")
+    const sideBarDiv =document.getElementById("single-spa-application:@zuri/sidebar")
+    sideBarDiv.style.backgroundColor= themeColors[themeStyle]. primary
+    sideBarDiv.style.color= themeColors[themeStyle].textColor
+    topBarDiv.style.backgroundColor= themeColors[themeStyle]. primary
+    topBarDiv.style.color= themeColors[themeStyle].textColor
   }
 
   useEffect(() => {
@@ -166,10 +177,10 @@ const Themes = () => {
         <div className={styles.true}>Tried and true</div>
       </div>
       <div className={styles.set1}>
-        <div className={styles.img3}>
+        <div className={styles.img3} onClick={handleCustomTheme.bind(this,"activeAsh")} >
           <img src={theme3} alt="theme3" className={styles.theme3} />
         </div>
-        <div className={styles.img4}>
+        <div className={styles.img4} onClick={handleCustomTheme.bind(this,"peakyPurple")}>
           <img src={theme4} alt="theme4" className={styles.theme4} />
         </div>
       </div>
@@ -179,27 +190,27 @@ const Themes = () => {
       </div>
       <div className={styles.clean}>Clean and minimal</div>
       <div className={styles.set2}>
-        <div className={styles.img5}>
+        <div className={styles.img5} onClick={handleCustomTheme.bind(this,"leafyGreen")}>
           <img src={theme5} alt="theme5" className={styles.theme5} />
         </div>
-        <div className={styles.img6}>
+        <div className={styles.img6} onClick={handleCustomTheme.bind(this,"darkAsh")}>
           <img src={theme6} alt="theme6" className={styles.theme6} />
         </div>
       </div>
       <div className={styles.set3}>
-        <div className={styles.img7}>
+        <div className={styles.img7} onClick={handleCustomTheme.bind(this,"oceanBlue")}>
           <img src={theme18} alt="theme18" className={styles.theme18} />
         </div>
-        <div className={styles.img8}>
+        <div className={styles.img8} onClick={handleCustomTheme.bind(this,"roseRed")}>
           <img src={theme19} alt="theme19" className={styles.theme19} />
         </div>
       </div>
       <div className={styles.set4}>
         <div className={styles.bottom}>
-          <div className={styles.img9}>
+          <div className={styles.img9} onClick={handleCustomTheme.bind(this,"canary")}>
             <img src={theme20} alt="theme20" className={styles.theme20} />
           </div>
-          <div className={styles.img10}>
+          <div className={styles.img10} onClick={handleCustomTheme.bind(this,"goldenMelon")}>
             <img src={theme21} alt="theme21" className={styles.theme21} />
           </div>
         </div>
