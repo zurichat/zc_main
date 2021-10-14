@@ -73,6 +73,82 @@ export const TRANSLATIONS_DE = {
       info: "Die Info",
       privacy: "Datenschutz",
       market: "Marktplatz",
+      blog: "Blog",
+      security: "Sicherheit",
+      web3: "Web3/DAO",
+      knowUs: "Kenne uns",
+      downloads: "Downloads",
+      contact: "Kontakt",
+      documentation: "Dokumentation",
+      socialMedia: "Sozialen Medien",
+      rights: "Alle Rechte vorbehalten"
+    },
+    cookies:{
+      textOne: "Wir verwenden",
+      textTwo: "Cookies",
+      textThree: "von Drittanbietern, um Ihre Website-Erfahrung zu personalisieren.",
+      accept: "Erlauben",
+      decline: "Ablehnen"
+    }
+  },
+
+
+  pricing: 
+  {
+    title: {
+      pricing: "Preise - Zuri Chat"
+    },
+
+    nav: {
+      pricing: "Preisgestaltung",
+      about: "Über",
+      downloads: "Downloads",
+      contact: "Kontakt",
+      signup: "Anmelden",
+      login: "Anmeldung"
+    },
+
+    cardOne: {
+      headline: "Merkmale",
+      post_headline:
+        "Gestalten Sie mit uns Ihre Zukunft, vernetzen Sie sich, arbeiten Sie zusammen, bilden Sie sich aus und lernen Sie aus der Ferne",
+      call_to_action: "Testen Sie Zuri.chat kostenlos"
+    },
+
+    cardThree: {
+      duration_one: "Jährlich",
+      duration_two: "Monatlich",
+      button: "Loslegen",
+    },
+
+    sectionThree: {
+      headline: "Führend in der Unternehmenssicherheit",
+      description: "Neben der Verschlüsselung während der Übertragung und im Ruhezustand betreiben wir umfassende Compliance- und Assurance-Programme.",
+      link: "Erfahren Sie mehr über Sicherheit..."
+    },
+
+    sectionFour: {
+      headline: "Was auch immer Sie tun, Sie können es im Zuri Chat tun",
+      button_one: "Sprechen Sie mit dem Vertrieb",
+      button_two: "VERSUCHEN SIE ES KOSTENLOS"
+    },
+
+    FAQ: {
+      headline: "Häufig gestellte Fragen",
+      link_info: "Erfahren Sie mehr über",
+      link: "Abrechnung bei Zuri Chat."
+    },
+
+    footer: {
+      company: "Gesellschaft",
+      careers: "Karriere",
+      about: "Über",
+      info: "Die Info",
+      privacy: "Datenschutz",
+      market: "Marktplatz",
+      blog: "Blog",
+      security: "Sicherheit",
+      web3: "Web3/DAO",
       knowUs: "Kenne uns",
       downloads: "Downloads",
       contact: "Kontakt",

@@ -39,7 +39,7 @@ i18n
     }
   })
 
-const lang = localStorage.getItem('myLanguage') ? localStorage.getItem('myLanguage') : 'zh'
+const lang = localStorage.getItem('myLanguage') ? localStorage.getItem('myLanguage') : 'en'
 i18n.changeLanguage(lang)
 //console.log(lang)
 
