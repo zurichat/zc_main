@@ -90,6 +90,36 @@ const Topics = [
     ]
   },
   {
+    topic: 'Notifications',
+    faqs: [
+      {
+        title: 'How do notifications work?',
+        details: 'Notifications in Slack keep you informed about work you care about. You can configure your notifications to adjust which messages you’ll be notified of. To keep up with activity while you’re on the move, you’ll receive notifications on your mobile device when you’re inactive on your desktop. '
+      },
+      {
+        title: 'How do notifications work?',
+        details: 'Notifications in Slack keep you informed about work you care about. You can configure your notifications to adjust which messages you’ll be notified of. To keep up with activity while you’re on the move, you’ll receive notifications on your mobile device when you’re inactive on your desktop. '
+      },
+      {
+        title: 'How do notifications work?',
+        details: 'Notifications in Slack keep you informed about work you care about. You can configure your notifications to adjust which messages you’ll be notified of. To keep up with activity while you’re on the move, you’ll receive notifications on your mobile device when you’re inactive on your desktop. '
+      },
+      {
+        title: 'How do notifications work?',
+        details: 'Notifications in Slack keep you informed about work you care about. You can configure your notifications to adjust which messages you’ll be notified of. To keep up with activity while you’re on the move, you’ll receive notifications on your mobile device when you’re inactive on your desktop. '
+      },
+      {
+        title: 'How do notifications work?',
+        details: 'Notifications in Slack keep you informed about work you care about. You can configure your notifications to adjust which messages you’ll be notified of. To keep up with activity while you’re on the move, you’ll receive notifications on your mobile device when you’re inactive on your desktop. '
+      }
+    ],
+    articles: [
+      { title: 'Configure your Zuri notifications' },
+      { title: 'Configure your Zuri notifications' },
+      { title: 'Configure your Zuri notifications' }
+    ]
+  },
+  {
     topic: 'Manage channels',
     faqs: [
       {
@@ -123,6 +153,96 @@ const Topics = [
       { title: 'Related article 2' },
       { title: 'Related article 3' },
       { title: 'Related article 4' }
+    ]
+  },
+  {
+    topic: 'Signing in',
+    faqs: [
+      {
+        title: 'How do notifications work?',
+        details: 'Notifications in Slack keep you informed about work you care about. You can configure your notifications to adjust which messages you’ll be notified of. To keep up with activity while you’re on the move, you’ll receive notifications on your mobile device when you’re inactive on your desktop. '
+      },
+      {
+        title: 'How do notifications work?',
+        details: 'Notifications in Slack keep you informed about work you care about. You can configure your notifications to adjust which messages you’ll be notified of. To keep up with activity while you’re on the move, you’ll receive notifications on your mobile device when you’re inactive on your desktop. '
+      },
+      {
+        title: 'How do notifications work?',
+        details: 'Notifications in Slack keep you informed about work you care about. You can configure your notifications to adjust which messages you’ll be notified of. To keep up with activity while you’re on the move, you’ll receive notifications on your mobile device when you’re inactive on your desktop. '
+      },
+      {
+        title: 'How do notifications work?',
+        details: 'Notifications in Slack keep you informed about work you care about. You can configure your notifications to adjust which messages you’ll be notified of. To keep up with activity while you’re on the move, you’ll receive notifications on your mobile device when you’re inactive on your desktop. '
+      },
+      {
+        title: 'How do notifications work?',
+        details: 'Notifications in Slack keep you informed about work you care about. You can configure your notifications to adjust which messages you’ll be notified of. To keep up with activity while you’re on the move, you’ll receive notifications on your mobile device when you’re inactive on your desktop. '
+      }
+    ],
+    articles: [
+      { title: 'Configure your Zuri notifications' },
+      { title: 'Configure your Zuri notifications' },
+      { title: 'Configure your Zuri notifications' }
+    ]
+  },
+  {
+    topic: 'New design feedback',
+    faqs: [
+      {
+        title: 'How do notifications work?',
+        details: 'Notifications in Slack keep you informed about work you care about. You can configure your notifications to adjust which messages you’ll be notified of. To keep up with activity while you’re on the move, you’ll receive notifications on your mobile device when you’re inactive on your desktop. '
+      },
+      {
+        title: 'How do notifications work?',
+        details: 'Notifications in Slack keep you informed about work you care about. You can configure your notifications to adjust which messages you’ll be notified of. To keep up with activity while you’re on the move, you’ll receive notifications on your mobile device when you’re inactive on your desktop. '
+      },
+      {
+        title: 'How do notifications work?',
+        details: 'Notifications in Slack keep you informed about work you care about. You can configure your notifications to adjust which messages you’ll be notified of. To keep up with activity while you’re on the move, you’ll receive notifications on your mobile device when you’re inactive on your desktop. '
+      },
+      {
+        title: 'How do notifications work?',
+        details: 'Notifications in Slack keep you informed about work you care about. You can configure your notifications to adjust which messages you’ll be notified of. To keep up with activity while you’re on the move, you’ll receive notifications on your mobile device when you’re inactive on your desktop. '
+      },
+      {
+        title: 'How do notifications work?',
+        details: 'Notifications in Slack keep you informed about work you care about. You can configure your notifications to adjust which messages you’ll be notified of. To keep up with activity while you’re on the move, you’ll receive notifications on your mobile device when you’re inactive on your desktop. '
+      }
+    ],
+    articles: [
+      { title: 'Configure your Zuri notifications' },
+      { title: 'Configure your Zuri notifications' },
+      { title: 'Configure your Zuri notifications' }
+    ]
+  },
+  {
+    topic: 'Trial of paid plan',
+    faqs: [
+      {
+        title: 'How do notifications work?',
+        details: 'Notifications in Slack keep you informed about work you care about. You can configure your notifications  to   adjust which messages you’ll be notified of. To keep up with activity while you’re on the move, you’ll receive    notifications on your mobile device when you’re inactive on your desktop. '
+      },
+      {
+        title: 'How do notifications work?',
+        details: 'Notifications in Slack keep you informed about work you care about. You can configure your notifications  to   adjust which messages you’ll be notified of. To keep up with activity while you’re on the move, you’ll receive    notifications on your mobile device when you’re inactive on your desktop. '
+      },
+      {
+        title: 'How do notifications work?',
+        details: 'Notifications in Slack keep you informed about work you care about. You can configure your notifications  to   adjust which messages you’ll be notified of. To keep up with activity while you’re on the move, you’ll receive    notifications on your mobile device when you’re inactive on your desktop. '
+      },
+      {
+        title: 'How do notifications work?',
+        details: 'Notifications in Slack keep you informed about work you care about. You can configure your notifications  to   adjust which messages you’ll be notified of. To keep up with activity while you’re on the move, you’ll receive    notifications on your mobile device when you’re inactive on your desktop. '
+      },
+      {
+        title: 'How do notifications work?',
+        details: 'Notifications in Slack keep you informed about work you care about. You can configure your notifications  to   adjust which messages you’ll be notified of. To keep up with activity while you’re on the move, you’ll receive    notifications on your mobile device when you’re inactive on your desktop. '
+      }
+    ],
+    articles: [
+      { title: 'Configure your Zuri notifications' },
+      { title: 'Configure your Zuri notifications' },
+      { title: 'Configure your Zuri notifications' }
     ]
   }
 ]

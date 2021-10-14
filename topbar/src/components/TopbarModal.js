@@ -13,6 +13,7 @@ import EditProfile from "./EditProfile"
 import MembersModal from "./MembersModal"
 import Downloads from "./Downloads"
 import SetStatusModal from "./SetStatusModal"
+import NewStatusModal from "./NewStatusModal"
 // react icons
 
 const TopbarModal = ({ members }) => {
@@ -77,25 +78,26 @@ const TopbarModal = ({ members }) => {
   const [pause, setPause] = useState(false)
   const [statusModal, setStatusModal] = useState(false)
 
-  let userPresence = null
-  let toggleStatus = null
+  var userAppearance = null
+  var toggleAppearance = null
+  
 
   switch (presence) {
     case "true":
-      userPresence = "Set yourself as away"
-      toggleStatus = (
+      userAppearance = "Set yourself as away"
+      toggleAppearance = (
         <div className={styles.online}>
-          <div className={styles.activeCircle} />
-          <p className={styles.active}>Active</p>
+          <div className={styles.activeCircle}/>
+          <p className={styles.active}> Active </p>
         </div>
       )
       break
     default:
-      userPresence = "Set yourself as active"
-      toggleStatus = (
+      userAppearance = "Set yourself as active"
+      toggleAppearance = (
         <div className={styles.online}>
           <div className={styles.awayCircle} />
-          <p className={styles.away}>Away</p>
+          <p className={styles.away}>Away </p>
         </div>
       )
   }
@@ -160,38 +162,41 @@ const TopbarModal = ({ members }) => {
                         .toUpperCase()}${user.user_name.slice(1)}`
                     : "Anonymous"}
                 </h4>
-                {toggleStatus}
+                {toggleAppearance}
               </div>
             </div>
 
-            <div className={styles.sectionTwo}>
+            <div
+              className={styles.sectionTwo}
+              onClick={() => setStatusModal(!statusModal)}
+            >
               <div className={styles.emoji}>{user?.status?.tag} </div>
               <div className={styles.statusContent}>{user?.status?.text}</div>
             </div>
-            
-          <div className={styles.sectionThree}>
-            {/* <p onClick={openStatus}>Set a status</p> */}
-            <p onClick={() => setStatusModal(!statusModal)}>Set a status</p>
-            {statusModal && (
-              <SetStatusModal
-                statusModal={statusModal}
-                setStatusModal={setStatusModal}
-                openStatus={openStatus}
-              />
-            )}
-            <p
-              onClick={() => {
-                toggleUserPresence()
-              }}
-            >
-              {userPresence}
-            </p>
-            {/* <div className={styles.pause}>
+
+            <div className={styles.sectionThree}>
+              {/* <p onClick={openStatus}>Set a status</p> */}
+              <p>Clear status</p>
+              {statusModal && (
+                <NewStatusModal
+                  statusModal={statusModal}
+                  setStatusModal={setStatusModal}
+                  openStatus={openStatus}
+                />
+              )}
+              <p
+                onClick={() => {
+                  toggleUserPresence()
+                }}
+              >
+                {userAppearance}
+              </p>
+              {/* <div className={styles.pause}>
                <p onClick={() => setPause(!pause)}>Pause Notifications</p>
                <FaChevronRight className={styles.chevron} />
               </div>
             {pause && <PauseNotification pause={pause} setPause={setPause} />}*/}
-          </div>
+            </div>
 
             <hr className={styles.hr} />
 
@@ -245,7 +250,7 @@ const TopbarModal = ({ members }) => {
             <hr className={styles.hr} />
 
             <div className={styles.sectionFive}>
-              <p onClick={logout}>Sign out of Team Einstein workspace</p>
+              <p onClick={logout}>Sign out</p>
             </div>
           </section>
           <div className={styles.modalBackDrop} onClick={closeModal}></div>
