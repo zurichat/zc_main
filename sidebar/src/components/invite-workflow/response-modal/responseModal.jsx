@@ -3,31 +3,19 @@ import styles from "./styles/modal.module.css"
 import successPng from "./images/success.png"
 import cancelPng from "./images/cancel.png"
 import { ACTIONS } from "../../../App"
-
-const InviteResponseModal = (props) => {
-
+const InviteResponseModal = props => {
   const isOpen = visibililty => {
     props.dispatch({
       type: ACTIONS.IS_OPEN,
       payload: visibililty
     })
   }
-
   const onClose = () => {
     isOpen(true)
   }
 
   if (props.state.isOpen) {
     return null
-  }
-
-  //Send more invites
-  const openInviteModal = () => {
-    isOpen(true)
-    props.dispatch({
-      type: ACTIONS.INVITE_MODAL_TYPE,
-      payload: "show-invite-modal"
-    })
   }
 
   return (
@@ -72,31 +60,22 @@ const InviteResponseModal = (props) => {
             </div>
           </div>
           <div className={styles.modalbody}>
-            {props.state.modalToShow === "success" ? (
+            {status === "success" ? (
               <div className={styles.icon}>
                 <img src={successPng} alt="Email sent successfully" />
                 <h1>Sent!</h1>
-                <p>
-                  {props.state.showMessage
-                    ? props.state.showMessage
-                    : "Invites sent out succesfuly"}
-                </p>
+                <p>Invites were successfully sent</p>
               </div>
             ) : (
               <div className={styles.icon}>
                 <img src={cancelPng} alt="Sending Invites failed" />
-                <h1 style={{ color: "red" }}>
-                  {props.state.showMessage
-                    ? props.state.showMessage
-                    : "Unable to send invites"}
-                </h1>
+                <h1 style={{ color: "red" }}>Unable to send Invites</h1>
               </div>
             )}
           </div>
           <div className={styles.footer}>
             <div className={styles.done}>
               <button
-                onClick={openInviteModal}
                 style={{
                   color: "#00b87c",
                   backgroundColor: "white",
