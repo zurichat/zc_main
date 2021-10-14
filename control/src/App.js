@@ -123,7 +123,7 @@ const App = () => {
         <Route path="/security">
           <Security />
         </Route>
-        <Route path="/download">
+        <Route path="/downloads">
           <Download />
         </Route>
         <Route path="/ebooks">

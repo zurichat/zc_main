@@ -1,6 +1,6 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-import AdminSettings from ".."
+import AdminSettings from "../index"
 import AnalyticsTab from "./components/AnalyticsTab"
 
 const index = () => {
