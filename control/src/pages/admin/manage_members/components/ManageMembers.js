@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import styles from '../styles/Members.module.css'
 import OptionsPopUp from './OptionsPopUp';
 import { Route } from 'react-router';
+import { Link } from 'react-router-dom';
 // import { GetWorkspaceUsers } from '../../../../../../utilities/src/zuri-utilities';
 import { GetWorkspaceUsers } from '../../../../zuri-control';
 import Table from './Table';
@@ -91,7 +92,7 @@ const ManageMembers = () => {
 
 
             <div className={styles.banner}>
-                Looking to use Slack with people outside your organization? Give external teams or individuals restricted access to your workspace. Learn more
+                Looking to use Slack with people outside your organization? Give external teams or individuals restricted access to your workspace. <Link to={{pathname: "/"}}>Learn more</Link>
             </div>
 
             <div className={styles.header}>
