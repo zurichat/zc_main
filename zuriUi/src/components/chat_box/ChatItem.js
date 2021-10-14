@@ -1,16 +1,21 @@
+import Editor from "@draft-js-plugins/editor"
+import { convertFromRaw, EditorState } from "draft-js"
+import { useState } from "react"
 import styled from "styled-components"
 
 const ChatItem = ({ messageConfig }) => {
+  const [editorState, setEditorState] = useState(() =>
+    EditorState.createWithContent(convertFromRaw(messageConfig))
+  )
   return (
     <div>
-      {/* <h3>{author}</h3> */}
-      <Message
-        isBold={messageConfig.formatOptions.includes("bold")}
-        isItalic={messageConfig.formatOptions.includes("italic")}
-      >
-        {messageConfig.message}
-      </Message>
-      {/* <span>{time}</span> */}
+      <Editor
+        readOnly={true}
+        editorState={EditorState.createWithContent(
+          convertFromRaw(messageConfig)
+        )}
+        onChange={setEditorState}
+      />
     </div>
   )
 }
