@@ -49,7 +49,7 @@ const PreferenceMenu = () => {
              Languages & Region
           </p>
         </div>
-        <div
+        {/* <div
           onClick={() => setSideBar(6)}
           className={sideBar === 6 ? styles.active : styles.one}
         >
@@ -57,8 +57,8 @@ const PreferenceMenu = () => {
           <p>
             Accessibility
           </p>
-        </div>
-        <div
+        </div> */}
+        {/* <div
           onClick={() => setSideBar(7)}
           className={sideBar === 7 ? styles.active : styles.one}
         >
@@ -66,7 +66,7 @@ const PreferenceMenu = () => {
           <p>
             Mark as read
           </p>
-        </div>
+        </div> */}
 
         <div
           onClick={() => setSideBar(9)}
