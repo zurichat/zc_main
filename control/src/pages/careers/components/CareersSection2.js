@@ -1,33 +1,27 @@
 import styles from '../styles/CareersSection2.module.css'
+import { useTranslation} from "react-i18next";
+
 
 function CareersSection2() {
+
+  const { t } = useTranslation();
+
   return (
     <div className={`${styles.Section2}`}>
-      <h2>Working and Thriving</h2>
-      <p>We offer benefits that help you feel your best and do your best</p>
+      <h2>{t("careers.section_two.headline")}</h2>
+      <p>{t("careers.section_two.post_headline")}</p>
       <div className={`${styles.subSection2}`}>
         <div>
-          <h3>Digital-First Office</h3>
-          <p>
-            With remote roles, office-free onboarding and flexible working
-            practices, we are set up for ever-changing realities, schedules and
-            responsibilities.
-          </p>
+          <h3>{t("careers.section_two.digital_wellness.headline")}</h3>
+          <p>{t("careers.section_two.digital_wellness.post_headline")}</p>
         </div>
         <div>
-          <h3>Just For You</h3>
-          <p>
-            Receive an annual allowance for professional development, plus a
-            monthly stipend to cover your needs; A new work look, a pet,
-            whatever matters most to you.
-          </p>
+          <h3>{t("careers.section_two.just_for_you.headline")}</h3>
+          <p>{t("careers.section_two.just_for_you.post_headline")}</p>
         </div>
         <div>
-          <h3>Health and Wellness</h3>
-          <p>
-            Zuri Pays 100% of your premiums. We also offer access to a range of
-            free mental health and well-being resources.
-          </p>
+          <h3>{t("careers.section_two.health_and_wellness.headline")}</h3>
+          <p>{t("careers.section_two.health_and_wellness.post_headline")}</p>
         </div>
       </div>
     </div>
