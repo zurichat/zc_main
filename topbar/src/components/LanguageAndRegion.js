@@ -82,10 +82,10 @@ const LanguageAndRegion = () => {
           </div>
 
           <div className={styles.section}>
-            <label className={styles.subhead} htmlFor="timezone">
+            <div className={styles.subhead} htmlFor="timezone">
               Time zone
-            <label className={styles.auto} htmlFor="">
-            </label>
+             </div>
+             <label className={styles.checkmark}>
               <input 
                 type="checkbox" className={styles.cbox} 
                 checked={langreg.set_time_zone_automatically}
@@ -96,9 +96,9 @@ const LanguageAndRegion = () => {
                    }
                 }}  
               />
-              <span className={styles.checkmark}></span>
-              Set time zone automatically
-            </label>
+             Set time zone automatically</label>
+             
+            
 
             <TimezoneSelect
                   styles = {customStyles}
@@ -114,10 +114,11 @@ const LanguageAndRegion = () => {
             </p>
           </div>
           <div className={styles.section}>
-          <label className={styles.subhead} htmlFor="spell-check">
+          <div className={styles.subhead} htmlFor="spell-check">
               Spell check
-            </label>
-            <label className={styles.auto} htmlFor="">
+            </div>
+              <div className={styles.checkP}>
+              <label className={styles.checkmark}> 
               <input type="checkbox" className={styles.cbox}  
               checked={langreg.spell_check } 
               onClick={() => {
@@ -126,10 +127,9 @@ const LanguageAndRegion = () => {
                  handleData({...langreg, spell_check: !langreg.spell_check})
                 }}
               }
-              />
-              <span className={styles.checkmark}></span>
-              Enable spellcheck on your message
-            </label>
+              />Enable spellcheck on your message
+             </label>
+              </div>
             <Select
           isMulti
           name="colors"
@@ -162,6 +162,7 @@ const customStyles = {
     border: "1px solid #DADADA",
     borderRadius: "4px",
     marginTop:"10px",
+    marginBottom: "10px",
     fontSize: ".75rem",
     "&:hover": {
       borderColor: "#00B87C"
