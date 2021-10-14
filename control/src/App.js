@@ -56,8 +56,6 @@ import ZurichatBlog from "./pages/blogs/components/zurichatBlog"
 
 import Ebooks from "./pages/ebooks"
 
-import MessageBoard from "../../ZuriUi/src/components/MessageBoard/MessageBoard"
-
 // useEffect(() => {
 //     localStorage.setItem('input',input);
 // },[input]);
@@ -73,9 +71,6 @@ const App = () => {
       <Switch>
         <Route path="/" exact>
           <LandingPage />
-        </Route>
-        <Route path="/message-board" exact>
-          <MessageBoard />
         </Route>
         <RedirectRoute path="/login">
           <Login />

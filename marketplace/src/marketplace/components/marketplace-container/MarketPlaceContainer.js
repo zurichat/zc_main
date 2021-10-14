@@ -5,6 +5,7 @@ import styles from "../../styles/marketplace.module.css"
 import logo from "../../../component-assets/zurichatlogo.svg"
 import SuccessMark from "../../../component-assets/success-mark.svg"
 import ErrorMark from "../../../component-assets/error-mark.svg"
+import { useHistory } from "react-router-dom"
 import ReactPaginate from "react-paginate";
 //eslint-disable-next-line
 import { Modal, Spinner } from "react-bootstrap"
@@ -27,6 +28,8 @@ const MarketPlaceContainer = ({ type }) => {
   const [showError, setShowError] = useState(false)
   const [pageNumber, setPageNumber] = useState(0)
   const marketplace = useMarketPlaceContext()
+
+  const history = useHistory()
 
   const { state } = marketplace
 
@@ -126,25 +129,24 @@ const MarketPlaceContainer = ({ type }) => {
           organisation_id: currentWorkspace
         },
         {
+          timeout: 1000 * 5,
           headers: {
             Authorization: `Bearer ${token}`
           }
         }
       )
-      if (response.data.status === 200) {
+      if (response.data.success === true) {
         setInstallLoading(false)
         setShowSuccess(true)
         setTimeout(() => {
-          window.location.replace("/home")
+          // Redirect to the plugin page, given redirect_url
+          history.push(response.data.data.redirect_url);
         }, 5000)
       } else {
-        setInstallErr("Unable to Install this Plugin")
-        setShowError(true)
-        setisLoading(false)
-        setInstallLoading(false)
+        throw new Error(response.data.message)
       }
     } catch (err) {
-      setInstallErr("Unable to Install this Plugin")
+      setInstallErr(err.message ? err.message : "Plugin could not be installed")
       setShowError(true)
       setisLoading(false)
       setInstallLoading(false)
@@ -154,6 +156,7 @@ const MarketPlaceContainer = ({ type }) => {
   const addDefaultImage = e => {
     e.target.src = logo
   }
+
   let emptyImageArray = [logo, logo, logo, logo, logo]
   const addDefaultImageArray = e => {
     e.target.src = emptyImageArray
@@ -193,7 +196,6 @@ const MarketPlaceContainer = ({ type }) => {
     if (marketplace.state.pluginId) {
       retrievePlugin()
     }
-    //eslint-disable-next-line
   }, [marketplace.state.pluginId])
 
 
@@ -300,34 +302,41 @@ const MarketPlaceContainer = ({ type }) => {
                   <div className={styles.marketplaceModalMain}>
                     <h3>About</h3>
                     <div className={styles.marketplaceModalPluginImages}>
-                      {
-                        plugin.images !== undefined
-                      ? plugin.images
-                      .filter((image, idx) => idx < 3)
-                      .map((image, idx)=>
-                        <img key={idx} src={image} 
-                        onError={addDefaultImageArray} alt={plugin.name} />
-                        )
-                      : emptyImageArray
-                      .filter((image, idx) => idx < 3)
-                      .map((image, idx)=>
-                        <img key={idx} src={image} 
-                        onError={addDefaultImageArray} alt={plugin.name} style={{display: "none"}}/>
-                        )
-                      }
+                      {plugin.images !== undefined
+                        ? plugin.images
+                            .filter((image, idx) => idx < 3)
+                            .map((image, idx) => (
+                              <img
+                                key={idx}
+                                src={image}
+                                onError={addDefaultImageArray}
+                                alt={plugin.name}
+                              />
+                            ))
+                        : emptyImageArray
+                            .filter((image, idx) => idx < 3)
+                            .map((image, idx) => (
+                              <img
+                                key={idx}
+                                src={image}
+                                onError={addDefaultImageArray}
+                                alt={plugin.name}
+                                style={{ display: "none" }}
+                              />
+                            ))}
                     </div>
                     <p className="px-0">{plugin.description}</p>
-                    <hr/>
+                    <hr />
                     <div className="styles.marketplacePluginInfo">
-                    <h3>Plugin info</h3>
-                    
-                    <br />
-                    <p>Downloads: {plugin.install_count}</p>
-                    <p>Version: {plugin.version}</p>
-                    <p>Created on: {plugin.created_at.slice(0,10)}</p>
-                    <p>Offered by: {plugin.developer_name}</p>
-                    <p>Updated on: {plugin.updated_at.slice(0,10)}</p>
-                    </div>  
+                      <h3>Plugin info</h3>
+
+                      <br />
+                      <p>Downloads: {plugin.install_count}</p>
+                      <p>Version: {plugin.version}</p>
+                      <p>Created on: {plugin.created_at.slice(0, 10)}</p>
+                      <p>Offered by: {plugin.developer_name}</p>
+                      <p>Updated on: {plugin.updated_at.slice(0, 10)}</p>
+                    </div>
                   </div>
                 </div>
               )}
