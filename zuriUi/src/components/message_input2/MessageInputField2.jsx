@@ -13,12 +13,12 @@ import Send from "../../assets/comments/send.svg"
 import UnstyledButton from "./UnstyledButton"
 
 import { useState } from "react"
-const MessageInputBox = ({ sendMessageHandler, addToMessages }) => {
+const MessageInputBox2 = ({ sendMessageHandler, addToMessages }) => {
   const [text, setText] = useState("")
   const [textIsBold, setTextBold] = useState(false)
   const [textIsItalic, setTextItalic] = useState(false)
   const [attachedFile, setAttachedFile] = useState(null)
-  const [inputKey, setInputKey] = useState('any-key-press')
+  const [inputKey, setInputKey] = useState("any-key-press")
   const [showAttachInputBox, setshowAttachInputBox] = useState(false)
 
   const generateMessageFormatOptions = () => {
@@ -42,19 +42,18 @@ const MessageInputBox = ({ sendMessageHandler, addToMessages }) => {
     }
   }
 
-  const handleAttachMedia=(e)=>{
+  const handleAttachMedia = e => {
     if (e.target.files && e.target.files[0]) {
       const fd = new FormData()
-      fd.append('media',e.target.files[0],e.target.files[0].name )
+      fd.append("media", e.target.files[0], e.target.files[0].name)
       setAttachedFile(fd)
     }
-
   }
 
   // on click clear attached file
   const clearAttached = () => {
-    setInputKey('reset-attached')
-    setAttachedFile('')
+    setInputKey("reset-attached")
+    setAttachedFile("")
     setshowAttachInputBox(false)
   }
 
@@ -68,20 +67,13 @@ const MessageInputBox = ({ sendMessageHandler, addToMessages }) => {
           onChange={ev => setText(ev.target.value)}
         />
         {/* Attached File Input field */}
-       { showAttachInputBox ?
-       <div>
-         <input 
-              onChange={attachedFile}
-              key={inputKey || ''}
-              type='file'
-            />
-          <button onClick={handleAttachMedia}>Send</button>
-          <button 
-            onClick={clearAttached}
-          >Clear Attached File</button>
-       </div>
-         :null
-          }
+        {showAttachInputBox ? (
+          <div>
+            <input onChange={attachedFile} key={inputKey || ""} type="file" />
+            <button onClick={handleAttachMedia}>Send</button>
+            <button onClick={clearAttached}>Clear Attached File</button>
+          </div>
+        ) : null}
         <SendWrapper>
           <div style={{ display: "flex" }}>
             <div style={{ display: "flex", gap: "11px", alignItems: "center" }}>
@@ -123,8 +115,12 @@ const MessageInputBox = ({ sendMessageHandler, addToMessages }) => {
               <img src={AtSign} alt="" />
             </UnstyledButton>
             <UnstyledButton>
-              <img src={Clip} alt="" onClick={()=>setshowAttachInputBox(true)}/>
-            </UnstyledButton> 
+              <img
+                src={Clip}
+                alt=""
+                onClick={() => setshowAttachInputBox(true)}
+              />
+            </UnstyledButton>
             <UnstyledButton>
               <img src={Send} alt="" onClick={handleClickSendMessage} />
             </UnstyledButton>
@@ -141,21 +137,20 @@ const MessageInputBox = ({ sendMessageHandler, addToMessages }) => {
     </Wrapper>
   )
 }
-export default MessageInputBox
+export default MessageInputBox2
 
 const Wrapper = styled.div`
   padding: 0 2px;
-  margin-bottom : 10px; 
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   background-color: white;
-  width : 100%;
+  width: 100%;
 `
 const InputWrapper = styled.section`
   border: 1px solid hsla(0, 0%, 92%, 1);
   border-radius: 3px;
-  margin : 0;
-
+  margin: 0;
 `
 const SendWrapper = styled.section`
   padding: 10px 18px 15px 18px;
