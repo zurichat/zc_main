@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
+import LogoCrop from "./LogoCrop"
+import LogoAlert from "./LogoAlert"
 import {
   WorkSPaceLogoContainer,
   WorkSpaceDetailContainer,
@@ -10,7 +12,7 @@ import {
   Guidelines,
   Text,
   UploadSection,
-  UploadButton,
+  Button,
   UploadInput,
   ListItems,
   ListItem
@@ -21,6 +23,12 @@ const WorkSpaceIcon = () => {
   const [updateLogo, setUpdateLogo] = useState(null)
 
   const organisation_id = localStorage.getItem("currentWorkspace")
+
+  const handleSelectFile = () => {
+    const reader = new FileReader()
+    reader.addEventListener("load", () => setUpdateLogo(reader.result))
+    reader.readAsDataURL(updateLogo)
+  }
 
   const handleIconUpload = () => {
     const formData = new formData()
@@ -51,6 +59,7 @@ const WorkSpaceIcon = () => {
 
   return (
     <WorkSPaceLogoContainer>
+      {alert ? <LogoAlert /> : null}
       <WorkSpaceDetailContainer>
         <img src={icon} alt="Workspace" />
         <WorkSpaceDetail>
@@ -80,12 +89,8 @@ const WorkSpaceIcon = () => {
       </GuidelinesContainer>
       <UploadSection>
         <WorkSpaceName>Upload a New Icon</WorkSpaceName>
-        <form onSubmit={handleIconUpload}>
-          <UploadInput onChange={e => setUpdateLogo(e.target.files[0])} />
-          <UploadButton type="submit" disabled>
-            Submit
-          </UploadButton>
-        </form>
+        <UploadInput onChange={e => setUpdateLogo(e.target.files[0])} />
+        <Button onClick={handleSelectFile}>Submit</Button>
       </UploadSection>
     </WorkSPaceLogoContainer>
   )

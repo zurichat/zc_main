@@ -4,6 +4,10 @@ export const WorkSPaceLogoContainer = styled.div`
   padding: 1em;
   font-size: 18px;
   font-family: "Lato";
+  border-radius: 0 0 .25rem .25rem;
+  box-shadow: 0 1px 0 rgb(0 0 0 / 25%);
+  margin: 0 auto 3rem;
+  border: 1px solid #ddd;
 `
 
 export const WorkSpaceDetailContainer = styled.div`
@@ -40,11 +44,11 @@ export const Text = styled.p`
 
 export const UploadSection = styled.div``
 
-export const UploadButton = styled.button`
+export const Button = styled.button`
   font-size: 1em;
   padding: 0.25em 1em;
   background: palevioletred;
-  border-radius: 5px;
+  border-radius: .25rem;
 `
 
 export const UploadInput = styled.input.attrs({
@@ -56,3 +60,7 @@ export const UploadInput = styled.input.attrs({
 export const ListItems = styled.ul``
 
 export const ListItem = styled.li``
+
+export const CropButtons = styled.div`
+  display: flex;
+`;
