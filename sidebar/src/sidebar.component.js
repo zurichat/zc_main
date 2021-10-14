@@ -7,6 +7,8 @@ import dmIcon from "./assets/icons/dm-icon.svg"
 import draftIcon from "./assets/icons/draft-icon.svg"
 import filesIcon from "./assets/icons/files-icon.svg"
 import pluginIcon from "./assets/icons/plugin-icon.svg"
+import infoIcon from "./assets/icons/info-icon.svg"
+import addIcon from "./assets/icons/add-icon.svg"
 
 import { SubscribeToChannel } from "@zuri/control"
 import { ACTIONS } from "./App"
@@ -14,6 +16,8 @@ import Header from "./components/Header"
 import Invite from "./components/Invite"
 import Room from "./components/Room"
 import SingleRoom from "./components/SingleRoom"
+import Category from "./components/Category"
+import { dummySidebar } from "./components/dummySidebar"
 
 const Sidebar = props => {
   let currentWorkspace = localStorage.getItem("currentWorkspace")
@@ -27,11 +31,12 @@ const Sidebar = props => {
   {
     //Listening for sidebar update
     nullValue === 1 &&
-      props.state.sidebar &&
+      dummySidebar &&
       SubscribeToChannel(
-        `${currentWorkspace}_${props.state.user[0].org_id}_sidebar`,
+        `${currentWorkspace}_${props.state.user[0]._id}_sidebar`,
         ctx => {
           const websocket = ctx.data
+          // console.log("websocket", websocket)
           if (websocket.event === "sidebar_update") {
             let sidebar_update = { [websocket.plugin_id]: websocket.data }
             //Update sidebar with recent changes
@@ -49,61 +54,25 @@ const Sidebar = props => {
       <Header state={props.state} />
       <div className={`${styles.subCon2}`}>
         <Fragment>
-          <Room name="Threads" image={threadIcon} />
+          {/* <Room name="Threads" image={threadIcon} />
           <Room name="All DMs" image={dmIcon} />
           <Room name="Drafts" image={draftIcon} />
+  <Room name="Plugins" image={pluginIcon} />*/}
 
-          <Room name="Plugins" image={pluginIcon} />
+          {/* SIDE BAR DATA */}
+          <SingleRoom name="Threads" image={threadIcon} />
+          <SingleRoom name="All Dms" image={dmIcon} />
+          <SingleRoom name="Drafts" image={draftIcon} />
 
-    {/* company files plugin */}
-    {props.state.sidebar &&
-      Object.keys(props.state.sidebar).map((plugin, index) => {
-        return props.state.sidebar[plugin].name === "Company Files" ? (
-          <SingleRoom
-            details={props.state.sidebar[plugin]}
-            key={Math.random()}
-          />
-        ) : null
-      })}
+          <SingleRoom name="Plugins" image={pluginIcon} link="/marketplace" />
 
-    {/* Chess plugin */}
-    {props.state.sidebar &&
-      Object.keys(props.state.sidebar).map((plugin, index) => {
-        return props.state.sidebar[plugin].name === "Chess Plugin" ? (
-          <SingleRoom
-            details={props.state.sidebar[plugin]}
-            key={Math.random()}
-          />
-        ) : null
-      })}
+          <Category name="games" state={props.state} />
+          <Category name="utility" state={props.state} />
+          <Category name="tools" state={props.state} />
+          <Category name="productivity" state={props.state} />
 
-    {/* Noticeboard plugin */}
-    {props.state.sidebar &&
-      Object.keys(props.state.sidebar).map((plugin, index) => {
-        return props.state.sidebar[plugin].name ===
-          "Noticeboard Plugin" ? (
-          <SingleRoom
-            details={props.state.sidebar[plugin]}
-            key={Math.random()}
-          />
-        ) : null
-      })}
-
-      {/* SIDE BAR DATA */}
-      {props.state.sidebar &&
-        Object.keys(props.state.sidebar).map((plugin, index) => {
-          return props.state.sidebar[plugin].name !== "Chess Plugin" &&
-            props.state.sidebar[plugin].name !== "Company Files" &&
-            props.state.sidebar[plugin].name !== "Noticeboard Plugin" ? (
-            <DropDown
-              itemName={props.state.sidebar[plugin].name}
-              id={props.state.sidebar.name}
-              key={index}
-              items={props.state.sidebar[plugin]}
-            />
-          ) : null
-        })}
-
+          <Category name="channels" state={props.state} />
+          <Category name="direct messages" state={props.state} />
           {/* button for inviting users to workspace */}
           <Invite state={props.state} />
         </Fragment>
@@ -112,3 +81,8 @@ const Sidebar = props => {
   )
 }
 export default Sidebar
+
+/*
+  create a category file
+  accept props and populate the data
+*/
