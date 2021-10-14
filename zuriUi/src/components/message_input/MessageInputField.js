@@ -31,7 +31,12 @@ const mentionPlugin = createMentionPlugin()
 const { Picker } = emojiPlugin
 const { MentionSuggestions } = mentionPlugin
 
-const MessageInputBox = ({ sendMessageHandler, addToMessages, users }) => {
+const MessageInputBox = ({
+  sendMessageHandler,
+  addToMessages,
+  currentUserData,
+  users
+}) => {
   const [data, setData] = useState("")
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty()
@@ -39,7 +44,7 @@ const MessageInputBox = ({ sendMessageHandler, addToMessages, users }) => {
   const [showEmoji, setShowEmoji] = useState(false)
   const [suggestions, setSuggestions] = useState(users || mentions)
   const [suggestionsOpen, setSuggestionsOpen] = useState(false)
-
+  // console.log("field", editorState)
   // Mention helpers
   const onOpenChange = useCallback(_open => {
     setSuggestionsOpen(_open)
@@ -96,6 +101,7 @@ const MessageInputBox = ({ sendMessageHandler, addToMessages, users }) => {
           emojiSelect={<EmojiSelect />}
           sendMessageHandler={sendMessageHandler}
           addToMessages={addToMessages}
+          currentUserData={currentUserData}
         />
         {/* <div>
           {showEmoji && (
@@ -110,11 +116,11 @@ const MessageInputBox = ({ sendMessageHandler, addToMessages, users }) => {
 export default MessageInputBox
 
 const Wrapper = styled.div`
-padding: 0 10px;
-display: flex;
-flex-direction: column;
-background-color: white;
-width : 100%;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
 `
 
 const InputWrapper = styled.section`
