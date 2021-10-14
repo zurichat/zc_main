@@ -87,11 +87,11 @@ const Emoji = () => {
       {display && (
         <>
           <div
-            onClick={() => setDisplay(false)}
+            onClick={closeModal}
             className={classes.overlay}
           ></div>
           <div className={classes.modal}>
-            <div className={classes.close} onClick={() => setDisplay(false)}>
+            <div className={classes.close} onClick={closeModal}>
               &times;
             </div>
             <div className={classes.container}>
