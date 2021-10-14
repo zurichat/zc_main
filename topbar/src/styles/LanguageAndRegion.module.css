@@ -1,9 +1,9 @@
 .container {
-  width: 100%;
+  width: 70%;
   margin-left: 20px;
   margin-top: 20px;
+  height: 150%;
 }
-
 .subhead {
   font-family: Lato;
   font-size: 15px;
@@ -12,19 +12,20 @@
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
+  margin-bottom: 10px;
   color: var(--text-color-gray-1);
 }
-
 .section {
   text-align: left;
 }
-
 .selectbox {
   display: block;
   width:60%;
+  max-width: 60%;
+  min-width: 60%;
   margin: 10px 0;
   padding: 10px;
-  border: 1px solid #dde5e9;
+  border: 1px solid #DDE5E9;
   border-radius: 5px;
   font-family: Lato;
   font-size: 13px;
@@ -33,18 +34,15 @@
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
-  color: #4c4c4c;
-  
+  color: #4C4C4C;
 }
-
 .selectbox:focus,
 .selectbox:active {
-  color: #00b87c;
+  color: #00B87C;
   accent-color: #00B87C;
-  border: 1px solid #00b87c;
-  outline-color: #00b87c;
+  border: 1px solid #00B87C;
+  outline-color: #00B87C;
 }
-
 .note {
   font-family: Lato;
   width: 60%;
@@ -57,7 +55,6 @@
   color: var(--text-color-gray);
   margin-bottom: 10px;
 }
-
 .auto {
   display: block;
   padding: 10px 0;
@@ -72,18 +69,24 @@
 }
 .cbox{
   accent-color: #00B87C;
+  width: .875rem;
+  height: .875rem;
+  background: var(--bg-color);
+  border: 1px solid #999;
+  border-radius: 2px;
+  margin-right: .700rem !important;
+  accent-color: #00B87C;
+  outline: none;
 }
-
 .choosed {
   width: 80%;
   color: var(--text-color-normal);
   font-size: 13px;
-  border: 1px solid #dde5e9;
+  border: 1px solid #DDE5E9;
   height: 40px;
   border-radius: 3px;
   padding: 10px;
 }
-
 .block {
   display: block;
   background: var(--text-color-normal);
@@ -94,10 +97,16 @@
   padding: 3px 10px;
   display: inline-block;
 }
-
 .closebtn {
   color: #fff !important;
   font-size: 15px;
   margin-left: 5px;
   cursor: pointer;
+}
+.checkmark{
+  font-size: .8125rem;
+  margin-top: .3rem;
+  margin-bottom: 5px;
+  justify-content: center;
+  color: var(--text-color-gray);
 }
