@@ -56,9 +56,14 @@
   display: flex;
 }
 
+.imageStyle {
+  margin-right: 10px;
+}
+
 
 #accessibilityPId {
   margin-left: 25px;
+  margin-bottom: -5px;
 }
 
 #accessibilityPId2 {
