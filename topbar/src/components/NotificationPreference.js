@@ -77,6 +77,8 @@ const NotificationPreference = () => {
       })
   }
 
+  // console.log("show user =>", user)
+  // console.log("notify =>", notificationSettings)
   const handleKeywordChange = e => {
     setKeywordInput(e.target.value)
     let newKeyword = keywordInput
@@ -347,7 +349,7 @@ const NotificationPreference = () => {
           <span className={styles.spanBlock}>
             You'll only receive notifications in the hours that you choose.
             Outside of those times, notifications will be paused.{" "}
-            <span className={styles.spanSmall}>Learn more</span>
+           <br/> <span className={styles.spanSmall}>Learn more</span>
           </span>
         </div>
         <div className={styles.schedule}>
