@@ -231,6 +231,7 @@ all:none;
   /* left: 10%; */
   width: 100%;
   max-width: 281px;
+  height: 250px;
   border: 1px solid #bebebe;
   border-radius: 5px;
   /* padding: 10px 0; */
@@ -248,6 +249,7 @@ all:none;
   /* margin-top: 0px; */
   /* left: 10%; */
   width: 100%;
+  height: 250px;
   max-width: 281px;
   border: 1px solid #bebebe;
   border-radius: 5px;
