@@ -30,7 +30,7 @@
       if (getURL !== '/') {
         getURL = getURL.substr(1);
         getURL = getURL.charAt(0).toUpperCase() + getURL.slice(1);
-        document.title = getURL + appendZuri;
+        document.title = getURL + ' ' + appendZuri;
       };
     };
     setInterval(getTitleOfPage, 500)
@@ -224,7 +224,7 @@
     Learn more about CSP policies at https://content-security-policy.com/#directive
   -->
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' 'unsafe-eval' https: localhost:*; connect-src https: localhost:* ws://localhost:* wss://realtime.zuri.chat:*; style-src 'unsafe-inline' https:; object-src 'none';">
+    content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' 'unsafe-eval' https: localhost:*; connect-src https: localhost:* ws://localhost:* wss://realtime.zuri.chat:*; style-src 'unsafe-inline' https:; img-src * data: blob:; object-src 'none';">
   <meta name="importmap-type" content="systemjs-importmap" />
   <!-- If you wish to turn off import-map-overrides for specific environments (prod), uncomment the line below -->
   <!-- More info at https://github.com/joeldenning/import-map-overrides/blob/master/docs/configuration.md#domain-list -->
@@ -304,21 +304,37 @@
 
   <% if (isLocal) { %>
   <script type="systemjs-importmap">
-    { 
-              "imports": { 
-                "@zuri/root-config": "//localhost:9000/zuri-root-config.js", "@zuri/topbar": "//localhost:8080/zuri-topbar.js", "@zuri/sidebar": "//localhost:8081/zuri-sidebar.js", "@zuri/control": "//localhost:8082/zuri-control.js", "@zuri/plugin-header":
-            "//localhost:8083/zuri-plugin-header.js", "@zuri/manage-user-modal": "//localhost:8087/zuri-manageUser.js", "@zuri/marketplace": "//localhost:8086/zuri-marketplace.js", "@zuri/zuri-ui": "//localhost:8084/zuri-zuri-ui.js", "@zuri/utilities":
-            "//localhost:8085/zuri-utilities.js",
-            "@zuri/zuri-plugin-channels": "//localhost:8088/zuri-zuri-plugin-channels.js"
-
-          } 
-        }
-        </script>
+    {
+        "imports":
+          {
+            "@zuri/root-config": "//localhost:9000/zuri-root-config.js",
+            "@zuri/topbar": "//localhost:8080/zuri-topbar.js",
+            "@zuri/sidebar": "//localhost:8081/zuri-sidebar.js",
+            "@zuri/control": "//localhost:8082/zuri-control.js",
+            "@zuri/plugin-header": "//localhost:8083/zuri-plugin-header.js",
+            "@zuri/zuri-ui": "//localhost:8084/zuri-zuri-ui.js",
+            "@zuri/utilities": "//localhost:8085/zuri-utilities.js",
+            "@zuri/marketplace": "//localhost:8086/zuri-marketplace.js",
+            "@zuri/manage-user-modal": "//localhost:8087/zuri-manageUser.js"
+          }
+      }
+    </script>
   <% } else { %>
   <script type="systemjs-importmap">
-    { "imports": { "@zuri/root-config": "/zuri-root-config.js", "@zuri/topbar": "/zuri-topbar.js", "@zuri/sidebar": "/zuri-sidebar.js", "@zuri/control": "/zuri-control.js", "@zuri/plugin-header": "/zuri-plugin-header.js", "@zuri/manage-user-modal": "/zuri-manageUser.js",
-                "@zuri/marketplace": "/zuri-marketplace.js", "@zuri/zuri-ui": "/zuri-zuri-ui.js", "@zuri/utilities": "/zuri-utilities.js" } }
-            </script>
+    {
+        "imports": {
+          "@zuri/root-config": "/zuri-root-config.js",
+          "@zuri/topbar": "/zuri-topbar.js",
+          "@zuri/sidebar": "/zuri-sidebar.js",
+          "@zuri/control": "/zuri-control.js",
+          "@zuri/plugin-header": "/zuri-plugin-header.js",
+          "@zuri/zuri-ui": "/zuri-zuri-ui.js",
+          "@zuri/utilities": "/zuri-utilities.js",
+          "@zuri/marketplace": "/zuri-marketplace.js",
+          "@zuri/manage-user-modal": "/zuri-manageUser.js"
+        }
+      }
+    </script>
   <% } %>
 
   <!--

@@ -468,6 +468,10 @@
   align-items: center;
 }
 
+.modalUninstallBtn {
+  background: #cc0000;
+}
+
 .marketplacePluginInfo p {
   text-transform: capitalize;
 }
