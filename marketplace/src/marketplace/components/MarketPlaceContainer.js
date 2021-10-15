@@ -94,6 +94,12 @@ const MarketPlaceContainer = ({
       alert("You are not logged into an Organization/workspace")
     }
 
+    setIsInstallButtonLoading(true)
+    setInstallModalStatus({
+      isSuccess: null,
+      message: ""
+    })
+
     try {
       const response = await axios.post(
         plugin.install_url,
@@ -102,7 +108,7 @@ const MarketPlaceContainer = ({
           organisation_id: currentWorkspace
         },
         {
-          timeout: 1000 * 5,
+          timeout: 2000 * 5,
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -137,20 +143,26 @@ const MarketPlaceContainer = ({
       alert("You are not logged into an Organization/workspace")
     }
 
+    setIsInstallButtonLoading(true)
+    setInstallModalStatus({
+      isSuccess: null,
+      message: ""
+    })
+
     try {
       const response = await axios.delete(
         `https://api.zuri.chat/organizations/${currentWorkspace}/plugins/${marketplaceContext.state.pluginId}`,
         {
-          user_id: user[0]?._id,
-        },
-        {
           headers: {
             Authorization: `Bearer ${token}`
+          },
+          data: {
+            user_id: user[0]?._id
           }
         }
       )
 
-      if (response.data.success === true) {
+      if (response.data.status === 200) {
         setIsInstallButtonLoading(false)
         setInstallModalStatus({
           isSuccess: true,
@@ -262,9 +274,13 @@ const MarketPlaceContainer = ({
 
               <button
                 onClick={() => {
-                  isUninstall ? unInstallPluginFromOrganization() : installPluginToOrganization()
+                  isUninstall
+                    ? unInstallPluginFromOrganization()
+                    : installPluginToOrganization()
                 }}
-                className={`${styles.modalInstallBtn} ${isUninstall && styles.modalUninstallBtn}`}
+                className={`${styles.modalInstallBtn} ${
+                  isUninstall && styles.modalUninstallBtn
+                }`}
                 disabled={isInstallButtonLoading}
               >
                 {isInstallButtonLoading ? (
@@ -275,8 +291,10 @@ const MarketPlaceContainer = ({
                       </span>
                     </Spinner>
                   </div>
+                ) : isUninstall ? (
+                  "Uninstall"
                 ) : (
-                  isUninstall ? "Uninstall" : "Install"
+                  "Install"
                 )}
               </button>
             </div>
