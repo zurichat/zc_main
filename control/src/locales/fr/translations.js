@@ -10,6 +10,7 @@ export const TRANSLATIONS_FR = {
     nav: {
       pricing: "Prix",
       about: "Sur",
+      plugin: "Brancher",
       downloads: "Téléchargements",
       contact: "Contact",
       signup: "S'inscrire",
@@ -77,6 +78,9 @@ export const TRANSLATIONS_FR = {
       info: "Info",
       privacy: "Confidentialité et modalités",
       market: "Place du marché",
+      security: "Sécurité",
+      web3: "Web3/DAO",
+      blog: "Blog",
       knowUs: "Connaissez-nous",
       downloads: "Téléchargements",
       contact: "Contact",
@@ -84,6 +88,7 @@ export const TRANSLATIONS_FR = {
       socialMedia: "Des médias sociaux",
       rights: "Tous les droits sont réservés"
     },
+
     cookies: {
       textOne: "Nous utilisons des",
       textTwo: "cookies",
@@ -93,6 +98,218 @@ export const TRANSLATIONS_FR = {
     }
   },
 
+  
+  pricing: 
+  {
+    title: {
+      pricing: "Tarification - Zuri Chat"
+    },
+
+    cardOne: {
+      headline: "Caractéristiques",
+      post_headline:
+        "Créez votre avenir avec nous, réseautez, collaborez, éduquez et apprenez à distance",
+      call_to_action: "Essayez Zuri.chat gratuitement"
+    },
+
+    cardThree: {
+      duration_one: "Annuel",
+      duration_two: "Mensuel",
+      button: "Commencer",
+    },
+
+    sectionThree: {
+      headline: "Ouvrir la voie en matière de sécurité d'entreprise",
+      description: "En plus du cryptage en transit et au repos, nous appliquons des programmes complets de conformité et d'assurance.",
+      link: "En savoir plus sur la sécurité..."
+    },
+
+    sectionFour: {
+      headline: "Quel que soit le travail que vous faites, vous pouvez le faire dans Zuri Chat",
+      button_one: "Parlez aux ventes",
+      button_two: "ESSAI GRATUIT"
+    },
+
+    FAQ: {
+      headline: "Questions fréquemment posées",
+      link_info: "Obtenez plus d'informations sur",
+      link: "facturation sur Zuri Chat."
+    },
+  },
+
+
+  plugin: {
+    title: {
+      plugin: "Connectez-vous et interagissez"
+    },
+
+    dm: {
+      title: "Plugin de messagerie directe",
+      headline: "Envoie des messages directs",
+      description:
+        "Un plugin qui facilite l'envoi de messages entre collaborateurs",
+      link: "Explorer le plugin DM "
+    },
+
+    tracker: {
+      title: "Plugin de suivi des contributions",
+      headline: "Suivre les contributions des personnes et les points saillants des problèmes urgents",
+      description:
+        "Un plugin qui vous permet de suivre la contribution des personnes aux projets open source et de mettre en évidence les problèmes les plus urgents",
+      link: "Explorer le plugin de suivi des contributions"
+    },
+
+    music: {
+      title: "Plugin Musique",
+      headline: "Accès à la musique et aux vidéos musicales en déplacement !",
+      description:
+        "Music Plugin permet aux membres d'une organisation d'ajouter des liens musicaux et vidéo de YouTube à une liste de lecture partagée.",
+      link: "Explorer les plugins musicaux"
+    },
+
+    games: {
+      title: "Plugin d'échecs",
+      headline:
+        "Rendez l'apprentissage amusant, restez engagé avec les jeux virtuels",
+      description:
+        "Le plugin d'échecs Zuri est un jeu de société récréatif et compétitif basé sur le Web joué entre deux joueurs.",
+      link: "Explorer le plug-in de jeux"
+    },
+
+    goal: {
+      title: "Plugin de l'objectif de l'entreprise",
+      headline:
+        "Gardez une trace des objectifs",
+      description:
+        "Un plugin qui vous permet de suivre les objectifs et les réalisations de l'entreprise",
+      link: "Explorez le plugin d'objectif de l'entreprise"
+    },
+
+    todo: {
+      title: "Plugin à faire",
+      headline:
+        "Garde une trace des tâches importantes",
+      description:
+        "Un plugin qui vous permet de lister tout ce que vous avez à faire et de vous assurer que vos tâches sont écrites au même endroit afin de ne rien oublier d'important.",
+      link: "Explorez le plugin de Todo"
+    },
+
+    channels: {
+      title: "Plugin de canaux",
+      headline:
+        "Organise les conversations dans des espaces dédiés",
+      description:
+        "Un plugin qui permet à un groupe d'individus dans un canal de connaître des informations pertinentes et opportunes afin d'atteindre un certain objectif",
+      link: "Explorer le plug-in des chaînes"
+    },
+
+    noticeboard: {
+      title: "Plugin de tableau d'affichage",
+      headline:
+        "Partagez efficacement les informations",
+      description:
+        "C'est un plugin efficace pour afficher des informations et communiquer avec les collaborateurs",
+      link: "Explorer le plugin de tableau d'affichage"
+    },
+
+    company_files: {
+      title: "Plugin de fichiers d'entreprise",
+      headline:
+        "Accéder et gérer efficacement les fichiers de l'entreprise",
+      description:
+        "Un système de gestion de fichiers efficace qui améliore le flux de travail de l'entreprise, organise les données importantes et fournit une base de données consultable pour une récupération rapide.",
+      link: "Explorer les plugins de fichiers d'entreprise"
+    },
+
+    company_sales: {
+      title: "Plugin de vente d'entreprise",
+      headline:
+        "Garde une trace de l'enregistrement des ventes",
+      description:
+        "Un système de vente efficace qui assure le suivi des dossiers de vente de l'entreprise.",
+      link: "Explorer les plugins de vente de l'entreprise"
+    },
+    
+    deadline: {
+      title: "Plugins de date limite",
+      headline:
+        "Suivi des délais",
+      description:
+        "Un plugin qui garde une trace des échéances des tâches, des événements, des projets assignés aux membres d'une organisation",
+      link: "Explorez les plugins de date limite"
+    },
+
+    expenses: {
+      title: "Plugins de dépenses",
+      headline:
+        "Garde une trace des dépenses",
+      description:
+        "Un plugin qui aide à garder un enregistrement précis des dépenses d'une entreprise",
+      link: "Explorer les plugins de dépenses"
+    },
+
+    duty_shift: {
+      title: "Plugin Duty Shift",
+      headline:
+        "Le suivi de vos quarts de travail n'a jamais été aussi simple!",
+      description:
+        "Un plugin qui aide les individus à suivre leurs heures de travail et à communiquer avec d'autres employés.",
+      link: "Explorer le plugin Duty Shift"
+    },
+
+    external_tools: {
+      title: "Plugins d'outils externes",
+      headline:
+        "Utilisation d'outils tiers",
+      description:
+        "Le plugin External Tools est une fonctionnalité qui permet aux utilisateurs d'interagir avec des outils tiers tels que Google Drive, Figma, Github, etc. pour rendre le flux de travail pour eux-mêmes ou leur équipe plus rapide et plus facile.",
+      link: "Explorer le plug-in d'outils"
+    },
+    
+    whiteboard: {
+      title: "Plugin de tableau blanc",
+      headline:
+        "Partage d'idées et collaborations d'équipe",
+      description:
+        "Le plugin de tableau blanc est utilisé pour visualiser des pensées, des concepts, écrire des idées, expliquer et enseigner, planifier et créer au sein d'un certain groupe d'individus",
+      link: "Explorer les plugins de tableau blanc"
+    },
+
+    holiday: {
+      title: "Plugin Calendrier des Fêtes",
+      headline:
+        "Horaires Événements ou jours fériés pour le personnel",
+      description:
+        "Company Holiday Calendar Plugin est un plugin qui permet aux fonctions de calendrier principalement d'organiser ou de programmer des vacances ou des événements pour une entreprise",
+      link: "Explorez le plugin de calendrier de l'entreprise"
+    },
+
+    company_shift: {
+      title: "Plugin de changement d'entreprise",
+      headline:
+        "Surveille les heures de travail d'une entreprise",
+      description:
+        "Un plugin qui garde une trace des heures de travail d'une entreprise et de la façon dont elles sont réparties entre les employés de l'entreprise.",
+      link: "Explorez le plug-in de changement d'entreprise"
+    },
+
+    signup: {
+      headline: "Obtenez des plugins que vous aimeriez",
+      description: "Intégrez vos plugins préférés et obtenez une expérience plus excitante",
+      link: "Découvrir plus",
+    },
+
+    subscribe: {
+      headline: "Soyez le premier à recevoir des mises à jour",
+      headline_br: "sur les derniers plugins de Zuri Chat",
+      description: "Enrichissez votre expérience Zuri Chat en vous abonnant",
+      description_br: "ici pour obtenir les derniers plugins via e-mails",
+      description_brr: "sur Zuri Chat !",
+      button: "S'abonner"
+    }
+  },
+
+  
   about: {
     title: {
       about: ""
@@ -102,7 +319,7 @@ export const TRANSLATIONS_FR = {
       headline_one: "Rendre le travail simple, agréable et",
       headline_two: "plus productif.",
       description:
-        "est un centre de collaboration qui rassemble les bonnes personnes et les bons outils pour accomplir le travail. Des entreprises Fortune 100 aux marchés de proximité, des millions de personnes dans le monde utilisent ZuriChat pour connecter leurs équipes, unifier leurs systèmes et faire avancer leur entreprise.",
+        "est un centre de collaboration qui rassemble les bonnes personnes et les bons outils pour accomplir le travail. Des entreprises Fortune 100 aux marchés de proximité, des millions de personnes dans le monde utilisent ZuriChat pour connecter leurs équipes, unifier leurs systèmes et faire avancer leur entreprise."
     },
 
     counter: {
@@ -111,19 +328,22 @@ export const TRANSLATIONS_FR = {
       fortune_companies: "du Fortune 100",
       fortune_companies_: "utilisation",
       countries: "les pays ont quotidiennement",
-      countries_: "utilisateurs actifs dans",
+      countries_: "utilisateurs actifs dans"
     },
 
     whoWeAre: {
       title: "Qui sommes-nous et comment nous rejoindre",
-      description: "Notre mission est d'améliorer la vie professionnelle des gens en fournissant une plate-forme pouvant accueillir une équipe solide et diversifiée, de professionnels créatifs qui souhaitent faire le meilleur travail de leur vie.",
-      description_: "promet toutes sortes d'opportunités et une vie professionnelle simple, agréable et plus productive.",
+      description:
+        "Notre mission est d'améliorer la vie professionnelle des gens en fournissant une plate-forme pouvant accueillir une équipe solide et diversifiée, de professionnels créatifs qui souhaitent faire le meilleur travail de leur vie.",
+      description_:
+        "promet toutes sortes d'opportunités et une vie professionnelle simple, agréable et plus productive."
     },
 
     highlights: {
       title: "Le télétravail plus intrigant que jamais",
       description: "ZuriChat est l'endroit où le travail rencontre le plaisir.",
-      description_: "Connectez-vous et interagissez avec votre équipe efficacement depuis n'importe où dans le monde",
+      description_:
+        "Connectez-vous et interagissez avec votre équipe efficacement depuis n'importe où dans le monde",
       channels: {
         title: "Canaux",
         description: "Organisez les conversations en",
@@ -138,30 +358,32 @@ export const TRANSLATIONS_FR = {
         title: "Date limite de l'entreprise",
         description: "Gardez une trace des délais avec",
         description_: "la date limite de l'entreprise",
-        description__: "caractéristique",
+        description__: "caractéristique"
       },
       quickReply: {
         title: "Application de réponse rapide",
         description: "Obtenez des réponses rapides à Direct",
-        description_: "messages",
+        description_: "messages"
       },
       todoList: {
         title: "Liste de choses à faire",
         description: "Organiser les tâches avec la liste de tâches",
-        description_: "caractéristique",
-      },
+        description_: "caractéristique"
+      }
     },
 
     features: {
       title: "Caractéristiques spéciales",
-      description: "Augmentez votre productivité en assemblant tous vos outils de travail en un seul endroit",
+      description:
+        "Augmentez votre productivité en assemblant tous vos outils de travail en un seul endroit",
       avatar: {
         title: "Salon Avatar animé",
-        description: "Créez et animez votre propre avatar dans le salon avatar",
+        description: "Créez et animez votre propre avatar dans le salon avatar"
       },
       files: {
         title: "Fichiers d'entreprise",
-        description: "Accédez à vos fichiers sur Google Drive pendant que vous êtes sur ZuriChat.",
+        description:
+          "Accédez à vos fichiers sur Google Drive pendant que vous êtes sur ZuriChat."
       },
       accessibility: {
         title: "Accessibilité",
@@ -172,11 +394,12 @@ export const TRANSLATIONS_FR = {
         title: "Objectifs de l'entreprise",
         description: "Suivre les objectifs de l'entreprise",
         description_: "directement dans ZuriChat"
-      },
+      }
     },
 
     cta: {
-      title: "Quel que soit le travail que vous faites, vous pouvez le faire dans Zuri Chat",
+      title:
+        "Quel que soit le travail que vous faites, vous pouvez le faire dans Zuri Chat",
       link_sales: "Parlez aux ventes",
       link_try: "Essayez-le gratuitement"
     },
@@ -240,6 +463,32 @@ export const TRANSLATIONS_FR = {
           post_headline: "Zuri paie 100 % de vos primes. Nous offrons également l'accès à une gamme de ressources gratuites sur la santé mentale et le bien-être."
         }
       }
+    }
+  },
+  login:{
+    title: "Connexion - Zuri Chat",
+    form: {
+      header: "Connexion",
+      sub_header: "Connectez-vous avec les données que vous avez saisies lors de votre inscription",
+      google_header: "Connectez-vous avec Google",
+      topline_text: "OU",
+      submitButtonName: "Connexion",
+      bottomLine: "Nouveau chez nous ?",
+      bottomLink: "Create an Account",
+      signUp: "Inscrivez-vous",
+      authInputBox: {
+        emailInputName: "Email address",
+        passwordInputName: "Mot de passe",
+        passwordInputPlaceHolder: "Entrer un mot de passe",
+        rememberMe: "Souviens-toi de moi",
+        forgotPassword: "Mot de passe oublié?",
+        getHelp: "Obtenez de l'aide pour vous connecter"
+      }
+    },
+    footer: {
+      contactUs: "Nous contacter",
+      legacyPolicy: "Politique juridique",
+      aboutZuri: "À propos de Zurichat"
     }
   }
 }

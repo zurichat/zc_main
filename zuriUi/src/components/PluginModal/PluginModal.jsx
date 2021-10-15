@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@reach/tabs"
 import "@reach/tabs/styles.css"
 import { DialogOverlay, DialogContent } from "@reach/dialog"
@@ -7,19 +7,21 @@ import styled from "styled-components"
 import EditTopicModal from "../Edit_Leave_Modals/EditTopicModal"
 import EditDescriptionModal from "../Edit_Leave_Modals/EditDescriptionModal"
 import LeaveChannelModal from "../Edit_Leave_Modals/LeaveChannelModal"
+import AddMemberModal from "./AddMemberModal"
+import RemoveMemberModal from "./RemoveMemberModal"
 import DeleteChannel from "../delete_archive_channel/DeleteChannel"
 import ArchiveChannel from "../delete_archive_channel/ArchiveChannel"
 import { RiDeleteBinLine, RiDeleteBin7Fill } from "react-icons/ri"
 import {
   AiOutlineUserAdd,
-  AiOutlineBell,
+  AiOutlineSearch,
   AiOutlineClose,
   AiOutlineStar,
   AiOutlineLock
 } from "react-icons/ai"
+import { ListGroup } from "react-bootstrap"
 
-function PluginModal({ close, showDialog, tabIndex }) {
-
+function PluginModal({ close, showDialog, tabIndex, config }) {
   const [showEditTopicModal, setShowEditTopicModal] = useState(false)
   const [showEditDescriptionModal, setEditDescriptionModal] = useState(false)
   const [showLeaveChannelModal, setShowLeaveChannelModal] = useState(false)
@@ -27,14 +29,15 @@ function PluginModal({ close, showDialog, tabIndex }) {
   const [showArchiveChannel, setShowArchiveChannel] = useState(false)
 
   const toggleEditTopicModal = () => setShowEditTopicModal(!showEditTopicModal)
-  const toggleEditDescriptionModal = () => setEditDescriptionModal(!showEditDescriptionModal)
+  const toggleEditDescriptionModal = () =>
+    setEditDescriptionModal(!showEditDescriptionModal)
   const toggleDeleteChannel = () => setShowDeleteChannel(!showDeleteChannel)
-  const toggleLeaveChannelModal = () => setShowLeaveChannelModal(!showLeaveChannelModal)
+  const toggleLeaveChannelModal = () =>
+    setShowLeaveChannelModal(!showLeaveChannelModal)
   const toggleArchiveChannel = () => setShowArchiveChannel(!showArchiveChannel)
 
   return (
     <div className="App">
-
       <DialogOverlays isOpen={showDialog} onDismiss={close}>
         <DialogContents>
           <Tabs defaultIndex={tabIndex}>
@@ -54,7 +57,7 @@ function PluginModal({ close, showDialog, tabIndex }) {
             </div>
             <TabLists>
               <Tab>About</Tab>
-              <Tab >Members</Tab>
+              <Tab>Members</Tab>
               <Tab>Integrations</Tab>
               <Tab>Settings</Tab>
             </TabLists>
@@ -70,7 +73,7 @@ function PluginModal({ close, showDialog, tabIndex }) {
                 />
               </TabPanel>
               <TabPanel>
-                <MembersPanel />
+                <MembersPanel config={config} />
               </TabPanel>
               <TabPanel>
                 <Integration />
@@ -86,30 +89,45 @@ function PluginModal({ close, showDialog, tabIndex }) {
           </Tabs>
         </DialogContents>
       </DialogOverlays>
-      {showEditTopicModal && <EditTopicModal closeEdit={toggleEditTopicModal} />}
-      {showEditDescriptionModal && <EditDescriptionModal closeEdit={toggleEditDescriptionModal} />}
-      {showLeaveChannelModal && <LeaveChannelModal closeEdit={toggleLeaveChannelModal} />}
+      {showEditTopicModal && (
+        <EditTopicModal closeEdit={toggleEditTopicModal} />
+      )}
+      {showEditDescriptionModal && (
+        <EditDescriptionModal closeEdit={toggleEditDescriptionModal} />
+      )}
+      {showLeaveChannelModal && (
+        <LeaveChannelModal closeEdit={toggleLeaveChannelModal} />
+      )}
       {showDeleteChannel && <DeleteChannel closeEdit={toggleDeleteChannel} />}
-      {showArchiveChannel && <ArchiveChannel closeEdit={toggleArchiveChannel} />}
+      {showArchiveChannel && (
+        <ArchiveChannel closeEdit={toggleArchiveChannel} />
+      )}
     </div>
   )
 }
 
-function AboutPanel({ closeModal, toggleEditTopicModal, toggleEditDescriptionModal, toggleLeaveChannelModal }) {
+function AboutPanel({
+  closeModal,
+  toggleEditTopicModal,
+  toggleEditDescriptionModal,
+  toggleLeaveChannelModal
+}) {
   return (
     <div style={{ margin: "0 5px" }}>
       <OverallWrapper>
         <EachSegment>
-          <Label>Topic</Label>
+          <Topic>
+            <Label>Topic</Label>
+            <EditLabel
+              onClick={() => {
+                closeModal()
+                toggleEditTopicModal()
+              }}
+            >
+              Edit
+            </EditLabel>
+          </Topic>
           <Input type="text" placeholder="Add a topic" />
-          <EditLabel
-            onClick={() => {
-              closeModal()
-              toggleEditTopicModal()
-            }}
-          >
-            Edit
-          </EditLabel>
         </EachSegment>
         <EachSegment>
           <Description>
@@ -124,10 +142,7 @@ function AboutPanel({ closeModal, toggleEditTopicModal, toggleEditDescriptionMod
               Edit
             </EditLabel>
           </Description>
-          <EditContent>
-            This channel is for passing major announcements on tasks and
-            important information. Stay updated by always checking here.
-          </EditContent>
+          <EditContent>Add description.</EditContent>
         </EachSegment>
         <EachSegment>
           <Label>Created By</Label>
@@ -139,7 +154,9 @@ function AboutPanel({ closeModal, toggleEditTopicModal, toggleEditDescriptionMod
               closeModal()
               toggleLeaveChannelModal()
             }}
-          >Leave Channel</Typography>
+          >
+            Leave Channel
+          </Typography>
         </EachSegment>
       </OverallWrapper>
       <FileWrapper>
@@ -151,7 +168,6 @@ function AboutPanel({ closeModal, toggleEditTopicModal, toggleEditDescriptionMod
         </EditContent>
       </FileWrapper>
       <h6>ChannelID:CD1QT4B9PGW</h6>
-
     </div>
   )
 }
@@ -168,25 +184,90 @@ function AboutPanel({ closeModal, toggleEditTopicModal, toggleEditDescriptionMod
 //         {...props}/>
 //       )
 //   }
-function MembersPanel() {
+function MembersPanel({ config }) {
+  const { membersList, addmembersevent, removememberevent } = config.roomInfo
+  const [addModalShow, setaddModalShow] = useState(false)
+  const [removeModalShow, setremoveModalShow] = useState(false)
+  const [selectedMember, setSelectedMember] = useState(null)
+  const [isLoading, setisLoading] = useState(false)
+  const [userList, setuserList] = useState([])
+  const handleClose = () => {
+    setaddModalShow(false)
+    setremoveModalShow(false)
+  }
+  const handleaddModalShow = () => setaddModalShow(true)
+  const handleremoveModalShow = () => setremoveModalShow(true)
+  const addMembersEvent = values => {
+    addmembersevent(values)
+  }
+  const removeMemberEvent = id => {
+    removememberevent(id)
+  }
+
+  const removeMemberHandler = member => {
+    setSelectedMember(member)
+    handleremoveModalShow()
+  }
+  useEffect(() => {
+    setuserList(
+      membersList.map(item => {
+        return { value: item._id, label: item.email }
+      })
+    )
+    setisLoading(true)
+  }, [])
   return (
     <div>
-      <Selection>
-        <AiOutlineBell
-          style={{
-            position: "absolute",
-            marginLeft: "10px",
-            marginBottom: "10px"
-          }}
+      <AddMemberModal
+        show={addModalShow}
+        isLoading={isLoading}
+        handleShow={handleaddModalShow}
+        handleClose={handleClose}
+        addMembersEvent={addMembersEvent}
+        userList={userList}
+      />
+
+      {selectedMember && (
+        <RemoveMemberModal
+          show={removeModalShow}
+          handleShow={handleremoveModalShow}
+          handleClose={handleClose}
+          removeMemberEvent={removeMemberEvent}
+          member={selectedMember}
         />
-        <MembersInput type="text" placeholder="Find members" />
-      </Selection>
-      <AddPeopleIcons>
-        <UserIcon>
-          <AiOutlineUserAdd size="30px" />
-        </UserIcon>
-        Add People
-      </AddPeopleIcons>
+      )}
+      {/* <Card> */}
+      <ListGroup variant="flush">
+        <ListGroup.Item>
+          <Selection>
+            <AiOutlineSearch
+              style={{
+                position: "absolute",
+                marginLeft: "10px"
+              }}
+            />
+            <MembersInput type="text" placeholder="Find members" />
+          </Selection>
+        </ListGroup.Item>
+        <ListGroup.Item>
+          <AddPeopleIcons onClick={handleaddModalShow}>
+            <UserIcon className="me-3">
+              <AiOutlineUserAdd size="30px" />
+            </UserIcon>
+            Add People
+          </AddPeopleIcons>
+        </ListGroup.Item>
+        {membersList.map(member => (
+          <ListGroup.Item key={member._id} className="d-flex w-100">
+            <div>{member.email}</div>
+            <div className="ms-auto" onClick={handleaddModalShow}>
+              <RemoveLink onClick={() => removeMemberHandler(member)}>
+                Remove
+              </RemoveLink>
+            </div>
+          </ListGroup.Item>
+        ))}
+      </ListGroup>
     </div>
   )
 }
@@ -212,7 +293,11 @@ function Integration() {
     </div>
   )
 }
-function SettingPanel({ closeModal, toggleDeleteChannel, toggleArchiveChannel }) {
+function SettingPanel({
+  closeModal,
+  toggleDeleteChannel,
+  toggleArchiveChannel
+}) {
   return (
     <div>
       <FileWrapper>
@@ -228,37 +313,45 @@ function SettingPanel({ closeModal, toggleDeleteChannel, toggleArchiveChannel })
       <ChannelWrapper>
         <Channels>
           <RiDeleteBin7Fill color="red" />
-          <Typography onClick={() => {
-            closeModal()
-            toggleArchiveChannel()
-          }} >Archive this Channel</Typography>
+          <Typography
+            onClick={() => {
+              closeModal()
+              toggleArchiveChannel()
+            }}
+          >
+            Archive this Channel
+          </Typography>
         </Channels>
       </ChannelWrapper>
       <ChannelWrapper>
         <Channels>
           <RiDeleteBinLine color="red" />
-          <Typography onClick={() => {
-            closeModal()
-            toggleDeleteChannel()
-          }} >Delete this Channel</Typography>
+          <Typography
+            onClick={() => {
+              closeModal()
+              toggleDeleteChannel()
+            }}
+          >
+            Delete this Channel
+          </Typography>
         </Channels>
       </ChannelWrapper>
     </div>
   )
 }
 const OverallWrapper = styled.div`
-  border: 1px solid gray;
-  border-bottom: none;
-  border-radius: 5px;
+  color: #b0afb0;
 `
 const EachSegment = styled.div`
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid gray;
+  border: 2px solid #f6f6f6;
+  margin-bottom: 1.11rem;
 `
 const Label = styled.label`
   margin-left: 20px;
   padding-top: 10px;
+  color: #1d1d1d;
 `
 const Input = styled.input`
   outline: none;
@@ -272,7 +365,7 @@ const Typography = styled.p`
   font-weight: 500;
 `
 const FileWrapper = styled.div`
-  border: 1px solid gray;
+  border: 2px solid #f6f6f6;
   margin-top: 20px;
 `
 const FileContent = styled.h4`
@@ -283,7 +376,7 @@ const MembersInput = styled.input`
   outline: none;
   width: 70%;
   padding: 10px;
-  margin-bottom: 10px;
+  ${"" /* margin-bottom: 10px; */}
   display: flex;
   align-items: center;
   justify-content: center;
@@ -305,7 +398,7 @@ const ChannelName = styled.div`
   align-items: center;
   font-size: 20px;
   color: black;
-  font-weight:700;
+  font-weight: 700;
 `
 const Select = styled.select`
   padding: 10px;
@@ -327,7 +420,7 @@ const TabLists = styled(TabList)`
 //   border-bottom:1px solid gray;
 // `;
 const AddPeopleIcons = styled.div`
-  margin-top: 10px;
+  ${"" /* margin-top: 10px; */}
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -353,11 +446,17 @@ const DialogContents = styled(DialogContent)`
   // background-color:#F9F9F9;
   &::-webkit-scrollbar {
     width: 5px;
-    background-color: gray;
+    background-color: #f6f6f6;
     height: 5px;
   }
 `
 const Description = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
+const Topic = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -371,7 +470,7 @@ const EditContent = styled.h4`
   max-width: 70%;
   margin-top: -5px;
   margin-left: 20px;
-  color: gray;
+  color: #8b8b8b;
 `
 const Selection = styled.div`
   display: flex;
@@ -380,7 +479,7 @@ const Selection = styled.div`
 const ChannelWrapper = styled.div`
   display: flex;
   align-items: center;
-  border: 1px solid gray;
+  border: 2px solid #f6f6f6;
   margin-top: 20px;
 `
 const ChannelContent = styled.h5`
@@ -392,7 +491,7 @@ const Channels = styled.div`
   margin-left: 20px;
 `
 const Options = styled.div`
-  border: 1px solid #575757;
+  border: 2px solid #575757;
   padding: 10px;
   width: 80%;
 `
@@ -414,7 +513,14 @@ const Subheader = styled.h4`
 `
 const Buttons = styled.button`
   padding: 5px;
-  border: 1px solid gray;
+  border: 2px solid #f6f6f6;
   border-radius: 5px;
+`
+const RemoveLink = styled.p`
+  color: blue;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `
 export default PluginModal
