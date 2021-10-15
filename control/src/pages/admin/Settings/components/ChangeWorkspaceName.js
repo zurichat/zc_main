@@ -12,16 +12,17 @@ import { Link } from "react-router-dom"
 const ChangeWorkspaceName = () => {
 
     const [user, setUser] = useState(null)
+    const [orgId, setOrgId] = useState(null)
     const [orgUrl, setOrgUrl] = useState(null)
-    const [orgName, setOrgName] = useState("")
+    const [orgName, setOrgName] = useState('')
   
 
     let currentWorkspace = localStorage.getItem("currentWorkspace")
+
     
+
     useEffect(() => {
 
-
-      
     
       const user = JSON.parse(sessionStorage.getItem("user"))
       
@@ -49,14 +50,14 @@ const ChangeWorkspaceName = () => {
           )
           .then(res => {
             // Clears User Extracted Details from LS during Registraion
-    
             
+            setOrgId(res.data.data.organization_id)
             // setOrgId(res.data.data.organization_id)
     
             // Automatic Org Name Renaming From Default to new Org Name
             setTimeout(() => {
               axios.patch(
-                `https://api.zuri.chat/organizations/${currentWorkspace}/url`,
+                `https://api.zuri.chat/organizations/${res.data.data.organization_id}/url`,
                 {
                   url: orgUrl
                 },
