@@ -10,7 +10,7 @@ export const TRANSLATIONS_DE = {
     nav: {
       pricing: "Preisgestaltung",
       about: "Über",
-      plugins: "Inpluggen",
+      plugin: "Inpluggen",
       downloads: "Downloads",
       contact: "Kontakt",
       signup: "Anmeldung",
