@@ -77,6 +77,9 @@ export const TRANSLATIONS_FR = {
       info: "Info",
       privacy: "Confidentialité et modalités",
       market: "Place du marché",
+      security: "Sécurité",
+      web3: "Web3/DAO",
+      blog: "Blog",
       knowUs: "Connaissez-nous",
       downloads: "Téléchargements",
       contact: "Contact",
@@ -93,6 +96,78 @@ export const TRANSLATIONS_FR = {
     }
   },
 
+  
+  pricing: 
+  {
+    title: {
+      pricing: "Tarification - Zuri Chat"
+    },
+
+    nav: {
+      pricing: "Prix",
+      about: "Sur",
+      downloads: "Téléchargements",
+      contact: "Contact",
+      signup: "S'inscrire",
+      login: "Connexion"
+    },
+
+    cardOne: {
+      headline: "Caractéristiques",
+      post_headline:
+        "Créez votre avenir avec nous, réseautez, collaborez, éduquez et apprenez à distance",
+      call_to_action: "Essayez Zuri.chat gratuitement"
+    },
+
+    cardThree: {
+      duration_one: "Annuel",
+      duration_two: "Mensuel",
+      button: "Commencer",
+    },
+
+    sectionThree: {
+      headline: "Ouvrir la voie en matière de sécurité d'entreprise",
+      description: "En plus du cryptage en transit et au repos, nous appliquons des programmes complets de conformité et d'assurance.",
+      link: "En savoir plus sur la sécurité..."
+    },
+
+    sectionFour: {
+      headline: "Quel que soit le travail que vous faites, vous pouvez le faire dans Zuri Chat",
+      button_one: "Parlez aux ventes",
+      button_two: "ESSAI GRATUIT"
+    },
+
+    FAQ: {
+      headline: "Questions fréquemment posées",
+      link_info: "Obtenez plus d'informations sur",
+      link: "facturation sur Zuri Chat."
+    },
+
+    footer: {
+      company: "Société",
+      careers: "Carrières",
+      about: "Sur",
+      info: "Info",
+      privacy: "Confidentialité et modalités",
+      market: "Place du marché",
+      security: "Sécurité",
+      web3: "Web3/DAO",
+      blog: "Blog",
+      knowUs: "Connaissez-nous",
+      downloads: "Téléchargements",
+      contact: "Contact",
+      documentation: "Documentation",
+      socialMedia: "Des médias sociaux",
+      rights: "Tous les droits sont réservés"
+    },
+    cookies: {
+      textOne: "Nous utilisons des",
+      textTwo: "cookies",
+      textThree: "tiers afin de personnaliser votre expérience sur le site.",
+      accept: "Permettre",
+      decline: "Déclin"
+    }
+  },
   about: {
     title: {
       about: ""
@@ -102,7 +177,7 @@ export const TRANSLATIONS_FR = {
       headline_one: "Rendre le travail simple, agréable et",
       headline_two: "plus productif.",
       description:
-        "est un centre de collaboration qui rassemble les bonnes personnes et les bons outils pour accomplir le travail. Des entreprises Fortune 100 aux marchés de proximité, des millions de personnes dans le monde utilisent ZuriChat pour connecter leurs équipes, unifier leurs systèmes et faire avancer leur entreprise.",
+        "est un centre de collaboration qui rassemble les bonnes personnes et les bons outils pour accomplir le travail. Des entreprises Fortune 100 aux marchés de proximité, des millions de personnes dans le monde utilisent ZuriChat pour connecter leurs équipes, unifier leurs systèmes et faire avancer leur entreprise."
     },
 
     counter: {
@@ -111,19 +186,22 @@ export const TRANSLATIONS_FR = {
       fortune_companies: "du Fortune 100",
       fortune_companies_: "utilisation",
       countries: "les pays ont quotidiennement",
-      countries_: "utilisateurs actifs dans",
+      countries_: "utilisateurs actifs dans"
     },
 
     whoWeAre: {
       title: "Qui sommes-nous et comment nous rejoindre",
-      description: "Notre mission est d'améliorer la vie professionnelle des gens en fournissant une plate-forme pouvant accueillir une équipe solide et diversifiée, de professionnels créatifs qui souhaitent faire le meilleur travail de leur vie.",
-      description_: "promet toutes sortes d'opportunités et une vie professionnelle simple, agréable et plus productive.",
+      description:
+        "Notre mission est d'améliorer la vie professionnelle des gens en fournissant une plate-forme pouvant accueillir une équipe solide et diversifiée, de professionnels créatifs qui souhaitent faire le meilleur travail de leur vie.",
+      description_:
+        "promet toutes sortes d'opportunités et une vie professionnelle simple, agréable et plus productive."
     },
 
     highlights: {
       title: "Le télétravail plus intrigant que jamais",
       description: "ZuriChat est l'endroit où le travail rencontre le plaisir.",
-      description_: "Connectez-vous et interagissez avec votre équipe efficacement depuis n'importe où dans le monde",
+      description_:
+        "Connectez-vous et interagissez avec votre équipe efficacement depuis n'importe où dans le monde",
       channels: {
         title: "Canaux",
         description: "Organisez les conversations en",
@@ -138,30 +216,32 @@ export const TRANSLATIONS_FR = {
         title: "Date limite de l'entreprise",
         description: "Gardez une trace des délais avec",
         description_: "la date limite de l'entreprise",
-        description__: "caractéristique",
+        description__: "caractéristique"
       },
       quickReply: {
         title: "Application de réponse rapide",
         description: "Obtenez des réponses rapides à Direct",
-        description_: "messages",
+        description_: "messages"
       },
       todoList: {
         title: "Liste de choses à faire",
         description: "Organiser les tâches avec la liste de tâches",
-        description_: "caractéristique",
-      },
+        description_: "caractéristique"
+      }
     },
 
     features: {
       title: "Caractéristiques spéciales",
-      description: "Augmentez votre productivité en assemblant tous vos outils de travail en un seul endroit",
+      description:
+        "Augmentez votre productivité en assemblant tous vos outils de travail en un seul endroit",
       avatar: {
         title: "Salon Avatar animé",
-        description: "Créez et animez votre propre avatar dans le salon avatar",
+        description: "Créez et animez votre propre avatar dans le salon avatar"
       },
       files: {
         title: "Fichiers d'entreprise",
-        description: "Accédez à vos fichiers sur Google Drive pendant que vous êtes sur ZuriChat.",
+        description:
+          "Accédez à vos fichiers sur Google Drive pendant que vous êtes sur ZuriChat."
       },
       accessibility: {
         title: "Accessibilité",
@@ -172,11 +252,12 @@ export const TRANSLATIONS_FR = {
         title: "Objectifs de l'entreprise",
         description: "Suivre les objectifs de l'entreprise",
         description_: "directement dans ZuriChat"
-      },
+      }
     },
 
     cta: {
-      title: "Quel que soit le travail que vous faites, vous pouvez le faire dans Zuri Chat",
+      title:
+        "Quel que soit le travail que vous faites, vous pouvez le faire dans Zuri Chat",
       link_sales: "Parlez aux ventes",
       link_try: "Essayez-le gratuitement"
     },
@@ -240,6 +321,32 @@ export const TRANSLATIONS_FR = {
           post_headline: "Zuri paie 100 % de vos primes. Nous offrons également l'accès à une gamme de ressources gratuites sur la santé mentale et le bien-être."
         }
       }
+    }
+  },
+  login:{
+    title: "Connexion - Zuri Chat",
+    form: {
+      header: "Connexion",
+      sub_header: "Connectez-vous avec les données que vous avez saisies lors de votre inscription",
+      google_header: "Connectez-vous avec Google",
+      topline_text: "OU",
+      submitButtonName: "Connexion",
+      bottomLine: "Nouveau chez nous ?",
+      bottomLink: "Create an Account",
+      signUp: "Inscrivez-vous",
+      authInputBox: {
+        emailInputName: "Email address",
+        passwordInputName: "Mot de passe",
+        passwordInputPlaceHolder: "Entrer un mot de passe",
+        rememberMe: "Souviens-toi de moi",
+        forgotPassword: "Mot de passe oublié?",
+        getHelp: "Obtenez de l'aide pour vous connecter"
+      }
+    },
+    footer: {
+      contactUs: "Nous contacter",
+      legacyPolicy: "Politique juridique",
+      aboutZuri: "À propos de Zurichat"
     }
   }
 }

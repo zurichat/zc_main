@@ -2,21 +2,27 @@ import React, { useState } from "react"
 
 import styles from "../styles/AdminAnalyticsTab.module.css"
 
+import { IoSpeedometerOutline} from "react-icons/io5"
+
 // components
 // import AuthTab from './AuthTab'
-// import MembersTab from '../../components/MembersTab'
+import MemberTab from "../../components/MembersTab"
 // import HistoryTab from '../../components/HistoryTab'
 
 // icon
 import { FiMenu } from "react-icons/fi"
 import ChannelsTab from "./ChannelsTab"
+import AnalyticsOverview from "./AnalyticsOverview"
 
 const AdminSettingsTab = () => {
   const [openTab, setOpenTab] = useState(false)
-  const [active, setActive] = useState(2)
+  const [active, setActive] = useState(1)
 
   return (
+    <>
+    
     <div className={`${styles.tabWrapper} mt-4`}>
+    <h2 className={`mb-2 pt-3 ${styles.analytics_title}`}><IoSpeedometerOutline color="#489379" /> {""} Analytics</h2>
       <div onClick={() => setOpenTab(!openTab)} className={styles.mobileToggle}>
         <FiMenu className={styles.menuIcon} />
       </div>
@@ -30,7 +36,7 @@ const AdminSettingsTab = () => {
             active === 1 ? styles.tabHeaderItemActive : styles.tabHeaderItem
           }
         >
-          OverView
+          Overview
         </div>
         <div
           onClick={() => {
@@ -63,10 +69,13 @@ const AdminSettingsTab = () => {
             openTab={openTab}
           />
         )} */}
+
+        {active === 1 && <AnalyticsOverview />}
         {active === 2 && <ChannelsTab />}
-        {/* {active === 3 && <AuthTab />} */}
+        {active === 3 && <MemberTab />} 
       </div>
     </div>
+    </>
   )
 }
 
