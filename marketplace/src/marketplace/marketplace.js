@@ -43,7 +43,7 @@ const MarketPlace = () => {
       let pluginData = plugins
 
       const get_all_plugins = await axios.get(
-        "https://api.zuri.chat/marketplace/plugins"
+        "https://api.zuri.chat/marketplace/plugins?limit=10000"
       )
       const get_popular_plugins = await axios.get(
         "https://api.zuri.chat/marketplace/plugins/popular"
@@ -58,7 +58,7 @@ const MarketPlace = () => {
       )
 
       if (get_all_plugins.status === 200) {
-        pluginData["all"] = get_all_plugins.data.data
+        pluginData["all"] = get_all_plugins.data.data.plugins
       }
 
       if (get_popular_plugins.status === 200) {

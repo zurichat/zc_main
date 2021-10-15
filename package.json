@@ -60,7 +60,6 @@
     "copy-webpack-plugin": "^9.0.1",
     "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
-    "eslint": "^7.32.0",
     "eslint-config-important-stuff": "^1.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-css-modules": "^2.11.0",
@@ -89,6 +88,7 @@
     "@types/systemjs": "^6.1.1",
     "draft-js": "^0.11.7",
     "emoji-picker-react": "^3.4.8",
+    "eslint": "^8.0.1",
     "rxjs": "^7.3.0",
     "single-spa": "^5.9.3",
     "webpack-config-single-spa-react": "^4.0.2"
