@@ -74,8 +74,6 @@ const AboutWorkSpaceTabs = ({ organizationDetails, currentWorkspace }) => {
               setActive={setActive}
               setOpenTab={setOpenTab}
               openTab={openTab}
-              organizationDetails={organizationDetails}
-              currentWorkspace={currentWorkspace}
             />
           )}
           {active === 1 && (
@@ -83,6 +81,8 @@ const AboutWorkSpaceTabs = ({ organizationDetails, currentWorkspace }) => {
               setActive={setActive}
               setOpenTab={setOpenTab}
               openTab={openTab}
+              organizationDetails={organizationDetails}
+              currentWorkspace={currentWorkspace}
             />
           )}
         </div>
@@ -92,4 +92,3 @@ const AboutWorkSpaceTabs = ({ organizationDetails, currentWorkspace }) => {
 }
 
 export default AboutWorkSpaceTabs
-
