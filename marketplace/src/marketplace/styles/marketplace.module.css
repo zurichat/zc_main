@@ -359,7 +359,7 @@
   color: #1d1c1d;
 }
 
-.pluginInstallCount{
+.pluginInstallCount {
   margin-top: 6px;
   font-weight: 400;
   font-size: 10px;
@@ -379,13 +379,12 @@
   max-width: 600px;
   margin-top: 5%;
   overflow-y: scroll;
-  -ms-overflow-style: none;  
+  -ms-overflow-style: none;
   scrollbar-width: none;
 }
 .marketplaceModal::-webkit-scrollbar {
   display: none;
 }
-
 
 .modalContent {
   height: fit-content;
@@ -466,11 +465,11 @@
   align-items: center;
 }
 
-.marketplacePluginInfo p{
+.marketplacePluginInfo p {
   text-transform: capitalize;
 }
 
-.marketplaceModalPluginImages{
+.marketplaceModalPluginImages {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   overflow: hidden;
@@ -573,6 +572,13 @@
   color: #fff;
 }
 
+.pluginBackground {
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06);
+  height: 200px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 /* .pluginHover {
   color: #000;
   margin-bottom: -40px;
@@ -582,7 +588,6 @@
 .pluginHover:hover {
    color: #fff;
 } */
-
 
 @media (max-width: 800px) {
   .pluginCardContainer {
@@ -635,12 +640,12 @@
     top: 0;
     left: 0;
   }
-  
+
   .marketplaceSvg:nth-child(2) {
     top: 0;
     left: 0;
   }
-  
+
   .marketplaceSvg:nth-child(3) {
     top: 0;
     left: 0;
@@ -699,14 +704,14 @@
     font-size: 16px;
     line-height: 28px;
   }
-  .marketplaceModalPluginImages{
+  .marketplaceModalPluginImages {
     display: flex;
     grid-template-columns: 0;
     flex-direction: row;
     flex-wrap: nowrap;
     overflow: scroll;
   }
-  .marketplaceModalPluginImages img{
+  .marketplaceModalPluginImages img {
     width: 8rem;
   }
 }
@@ -721,7 +726,7 @@
 }
 
 .paginationBttns {
-    color: #616061;
+  color: #616061;
 }
 
 .paginationBttns a {
@@ -730,7 +735,6 @@
   border-radius: 5px;
   border: 1px solid #00b87c;
   cursor: pointer;
-
 }
 
 .paginationBttns a:hover {
@@ -739,7 +743,7 @@
 }
 
 .paginationActive {
-    color: white;
+  color: white;
 }
 
 .paginationActive a {

@@ -96,7 +96,7 @@ const MarketPlace = ({id}) => {
                 </div>
                 <button className={styles.marketplaceHeroButton}>Search</button>
                </div>
-               <div className={styles.pluginBackground} >
+               <div >
                  { searchInput.length !== 0 ? 
                    filteredPlugin.map((item, id) => {
                    return (
