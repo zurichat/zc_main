@@ -117,7 +117,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
+            to="/admin/settings/accountsProfile"
           >
             <FiUser className={styles.icon} />
             Account & Profile
@@ -133,8 +133,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/admin/stats"
-          >
+            to="/admin/stats" >
             <FiPieChart className={styles.icon} />
             Analytics
           </Link>
@@ -172,7 +171,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/admin/manage_members "
+            to="/admin/settings/managemembers "
           >
 
             <FiBook className={styles.icon} />
@@ -189,7 +188,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
+            to="/invitation"
           >
             <FiUserPlus className={styles.icon} />
             Invitations
@@ -243,7 +242,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/admin/manage_members "
+            to="/admin/settings/managemembers "
           >
           
             Manage members
@@ -266,7 +265,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
+            to="/components/gateways"
           >
             Gateways
           </Link>

@@ -15,6 +15,7 @@
 }
 .ul {
     margin: 10px;
+    padding-left: 0;
 }
 .checkdiv {
     margin: 40px 10px 10px;
@@ -26,6 +27,7 @@
 .button1{
     color: #FF0000;
     border: 1px solid #FF0000;
+    background-color: white;
     border-radius: 4px;
     width: 20%;
     font-size: 12px;
@@ -55,6 +57,7 @@ padding: 5px;
 .button4 {
     color: #FF0000;
     border: 1px solid #FF0000;
+    background-color: white;
     border-radius: 4px;
     width: 20%;
     font-size: 12px;
@@ -66,6 +69,9 @@ padding: 5px;
 }
 .a{
     color: blue;
+}
+.check{
+    padding-left: 10px;
 }
 
 @media screen and (min-width: 768px) {
@@ -87,9 +93,10 @@ padding: 5px;
     }
     .button2 {
     margin: 10px 0;
-    font-size: 12px;
+    font-size: 11px;
     line-height: 22px;
     padding: 5px;
+    width: 97px;
     }
      .button3 {
       width: 30%;
@@ -97,6 +104,8 @@ padding: 5px;
      .button4{
         margin-top: 10px;
         margin-bottom: 10px;
+            width: 75px;
+            font-size: 11px;
      }
 }
 
@@ -113,6 +122,7 @@ padding: 5px;
     padding: 10px;
 }
 .button2 {
+    width: 130px;
     font-size: 14px;
     line-height: 24px;
     padding: 10px;
@@ -121,14 +131,21 @@ padding: 5px;
 
 @media screen and (max-width: 640px) {
     .content{
-        margin: 65px 20px 20px;
+        margin: 85px 20px 20px;
         font-size: 13px;
     }
     .p {
-        font-size: 13px;
+        font-size: 14px;
+        margin: 15px;
     }
     .checkdiv{
         font-size: 13px;
         margin: 30px 10px 10px;
+    }
+    .button {
+        margin-top: 45px;
+    }
+    .li{
+        margin-top: 15px;
     }
 }

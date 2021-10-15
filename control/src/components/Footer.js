@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom"
 
 import styles from "../component-styles/FooterStyle.module.css"
-import logo from "../component-assets/zurichatlogo.svg"
+import logo from "../component-assets/zurilogo.svg"
 import facebook from "../component-assets/facebook.svg"
 import twitter from "../component-assets/twitter.svg"
 import linkedin from "../component-assets/linkedin.svg"
@@ -54,153 +54,135 @@ const Footer = () => {
 
         <div className={styles.menu}>
           <div>
-            <h5>Company</h5>
+            <h5>{t("landing.footer.company")}</h5>
             <ul>
               <li>
-                <Link to="/careers">Careers</Link>{" "}
+                <Link to="/careers">{t("landing.footer.careers")}</Link>{" "}
               </li>
               <li>
-                <Link to="/about">About Zurichat</Link>{" "}
+                <Link to="/about">{t("landing.footer.about")}</Link>{" "}
               </li>
               <li>
                 <Link to="/whyzurichat">Why Zurichat?</Link>{" "}
               </li>
               <li>
-                <Link to="/ZurichatBlog">Blog</Link>{" "}
+                <Link to="/ZurichatBlog">{t("landing.footer.blog")}</Link>{" "}
               </li>
             </ul>
           </div>
 
           <div>
-            <h5>Info</h5>
+            <h5>{t("landing.footer.info")}</h5>
             <ul>
               <li>
                 <Link to="/privacy">
-                  <span>Privacy & Terms</span>{" "}
+                  <span>{t("landing.footer.privacy")}</span>{" "}
+                </Link>
+              </li>
+              <li>
+                <Link to="/legal">
+                  <span>Legal</span>{" "}
                 </Link>
               </li>
               <li>
                 <Link to="/open-marketplace">Market Place</Link>{" "}
+                <Link to="/marketplace">{t("landing.footer.market")}</Link>{" "}
               </li>
               <li>
-                <Link to="/security">Security</Link>{" "}
+                <Link to="/security">{t("landing.footer.security")}</Link>{" "}
               </li>
               <li>
-                <a href="https://zuri.chat/dao-featues">Web3/DAO</a>{" "}
+                <a href="https://zuri.chat/dao-featues">
+                  {t("landing.footer.web3")}
+                </a>{" "}
               </li>
             </ul>
           </div>
 
-          <div className={styles.menu}>
-            <div>
-              <h5>{t("landing.footer.company")}</h5>
-              <ul>
-                <li>
-                  <Link to="/careers">{t("landing.footer.careers")}</Link>{" "}
-                </li>
-                <li>
-                  <Link to="/about">{t("landing.footer.about")}</Link>{" "}
-                </li>
-              </ul>
-            </div>
+          <div>
+            <h5>{t("landing.footer.knowUs")}</h5>
+            <ul>
+              <li>
+                <Link to="/downloads">{t("landing.footer.downloads")}</Link>{" "}
+              </li>
+              <li>
+                <Link to="/contact-us">{t("landing.footer.contact")}</Link>{" "}
+              </li>
+              <li>
+                <a href="https://docs.zuri.chat/">
+                  {t("landing.footer.documentation")}
+                </a>{" "}
+              </li>
+            </ul>
+          </div>
 
-            <div>
-              <h5>{t("landing.footer.info")}</h5>
-              <ul>
-                <li>
-                  <Link to="/privacy">{t("landing.footer.privacy")}</Link>{" "}
-                </li>
-                <li>
-                  <Link to="/marketplace">{t("landing.footer.market")}</Link>{" "}
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h5>{t("landing.footer.knowUs")}</h5>
-              <ul>
-                <li>
-                  <Link to="/download-app">
-                    {t("landing.footer.downloads")}
-                  </Link>{" "}
-                </li>
-                <li>
-                  <Link to="/contact-us">{t("landing.footer.contact")}</Link>{" "}
-                </li>
-                <li>
-                  <a href="https://docs.zuri.chat/">
-                    {t("landing.footer.documentation")}
-                  </a>{" "}
-                </li>
-              </ul>
-            </div>
-
-            <div className={styles.social}>
-              <h5>{t("landing.footer.socialMedia")}</h5>
-              <ul>
-                <li>
-                  <a
-                    href="https://www.facebook.com/Zuri-Chat-101278805666628"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src={facebook}
-                      alt="Facebook"
-                      title="Connect with us on Facebook"
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://instagram.com/zurichathq"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src={instagram}
-                      alt="Instagram"
-                      title="Connect with us on Instagram"
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://twitter.com/zurichat"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src={twitter}
-                      alt="Twitter"
-                      title="Connect with us on Twitter"
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/company/zuri-chat/">
-                    <img
-                      src={linkedin}
-                      alt="Linkedin"
-                      title="Connect with us on Linkedin"
-                    />
-                  </a>
-                </li>
-              </ul>
-            </div>
+          <div className={styles.social}>
+            <h5>{t("landing.footer.socialMedia")}</h5>
+            <ul>
+              <li>
+                <a
+                  href="https://www.facebook.com/Zuri-Chat-101278805666628"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={facebook}
+                    alt="Facebook"
+                    title="Connect with us on Facebook"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com/zurichathq"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={instagram}
+                    alt="Instagram"
+                    title="Connect with us on Instagram"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://twitter.com/zurichat"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={twitter}
+                    alt="Twitter"
+                    title="Connect with us on Twitter"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/zuri-chat/">
+                  <img
+                    src={linkedin}
+                    alt="Linkedin"
+                    title="Connect with us on Linkedin"
+                  />
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div className={styles.bottom_footer}>
+        {/* <div className={styles.bottom_footer}>
           <p>
             {" "}
             &copy; {getYear()} Zuri Chat. {t("landing.footer.rights")}
           </p>
-        </div>
+        </div> */}
       </div>
-
       <div className={styles.bottom_footer}>
-        <p> &copy; {getYear()} Zuri Chat. All Rights Reserved</p>
+        <p>
+          {" "}
+          &copy; {getYear()} Zuri Chat. {t("landing.footer.rights")}
+        </p>
       </div>
     </div>
   )
