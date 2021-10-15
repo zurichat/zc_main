@@ -60,6 +60,8 @@ import Whyzurichat from "./pages/WhyZuriChat/Whyzurichat"
 
 import OnboardingHelp from "./pages/LoginSignUpHelp/index"
 
+import MessageBoard from '../../zuriUi/src/components/message_board/MessageBoard'
+
 // useEffect(() => {
 //     localStorage.setItem('input',input);
 // },[input]);
@@ -75,6 +77,9 @@ const App = () => {
       <Switch>
         <Route path="/" exact>
           <LandingPage />
+        </Route>
+        <Route path="/message-board" exact>
+          <MessageBoard />
         </Route>
         <RedirectRoute path="/login">
           <Login />
