@@ -192,7 +192,9 @@ const HeaderSearchSuggestion = () => {
                 role="button"
                 aria-expanded="false"
               >
-                <span className={`${headerStyles.item}`}>Plugins</span>
+                <span className={`${headerStyles.item}`}>
+                {t("landing.nav.plugin")}
+                </span>
               </NavLink>
             </li>
             <li className="nav-item">
