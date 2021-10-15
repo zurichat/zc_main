@@ -37,7 +37,7 @@
   overflow-y: scroll;
   /* position: relative; */
   margin-top: 0%;
-  height: 78vh !important; 
+  height: 78vh !important;
 }
 .toggle {
   display: none;
@@ -188,6 +188,11 @@
   color: var(--text-color-gray);
   line-height: 21px;
   align-self: center;
+}
+
+.radioBox {
+  display: flex;
+  flex-direction: row;
 }
 
 input[type="radio"] {
