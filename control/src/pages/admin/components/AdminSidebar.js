@@ -172,7 +172,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/admin/manage_members "
+            to="/admin/settings/managemembers "
           >
 
             <FiBook className={styles.icon} />
@@ -243,7 +243,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/admin/manage_members "
+            to="/admin/settings/managemembers "
           >
           
             Manage members
