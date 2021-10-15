@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react"
 import Select from "react-select"
 import { ProfileContext } from "../context/ProfileModal"
 import styles from "../styles/AdvancedSettings.module.css"
+import standardStyles from "../styles/UserPreference.module.css"
 
 import { authAxios } from "../utils/Api"
 
@@ -211,7 +212,7 @@ const AdvancedSettings = () => {
 
       {/* <div className={styles.line}></div> */}
 
-      <div className={styles.spacingLeft}>
+      <div className={standardStyles.modalContent}>
         <h5 className={styles.head}>Input Options</h5>
 
         {/* <div className={styles.checkInputGroup2}>
