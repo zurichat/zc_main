@@ -14,9 +14,9 @@
   z-index: 1;
 }
 .modalcontent {
-  width: 25%;
+  width: 50%;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   text-align: center;
   display: flex;
   flex-direction: column;
