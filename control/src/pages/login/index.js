@@ -10,6 +10,8 @@ import { GetUserInfo } from "@zuri/control"
 import $behaviorSubject from "../../../../globalState"
 import { Helmet } from "react-helmet"
 import { goToDefaultChannel } from "../../api/channels"
+import "../../i18n"
+import { useTranslation } from "react-i18next"
 // import { Link } from 'react-router-dom'
 // import authBg1 from './assets/auth_bg1.svg'
 // import authBg2 from './assets/auth_bg2.svg'
@@ -136,31 +138,33 @@ const Login = () => {
       })
   }
 
+  const { t } = useTranslation()
+
   return (
     <main id={styles.authPageWrapper}>
       <Helmet>
-        <title>Login - Zuri Chat</title>
+        <title>{t("login.title")}</title>
       </Helmet>
       {Loading && <LoginLoading />}
       <section id={styles.authFormContainer}>
         <FormWrapper
-          header="Login"
-          subHeader="Login with the data you entered during your registration"
-          googleHeader="Login with Google"
-          topLineText="OR"
-          submitButtonName={
+          header={t("login.form.header")}
+          subHeader={t("login.form.sub_header")}
+          googleHeader={t("login.form.google_header")}
+          topLineText={t("login.form.topline_text")}
+          submitButtonName={t(
             loggingIn ? (
               <Loader type="TailSpin" color="#FFFFFF" height={40} width={40} />
             ) : (
-              "Log in"
+              "login.form.submitButtonName"
             )
-          }
+          )}
           disabled={email && password && !loggingIn}
           error={error}
           handleSubmit={handleSubmit}
-          bottomLine="New to us?"
-          bottomLink="Create an Account"
-          bottomLinkHref="Signup"
+          bottomLine={t("login.form.bottomLine")}
+          bottomLink={t("login.form.bottomLink")}
+          bottomLinkHref={t("login.form.signUp")}
           setLoading={setLoading}
         >
           <AuthInputBox
@@ -179,7 +183,7 @@ const Login = () => {
             id="password"
             name="Password"
             type="password"
-            placeholder="Enter a password"
+            placeholder={t("login.form.authInputBox.passwordInputPlaceHolder")}
             value={password}
             setValue={setPassword}
             error={passworderror}
@@ -198,17 +202,19 @@ const Login = () => {
                 }}
                 // onFocus={displayImage}
               />
-              Remember me
+              {t("login.form.authInputBox.rememberMe")}
             </div>
             <div className={`${styles.right}`}>
               <Link
                 to="/reset-password"
                 className={`${styles.resetPasswordLink}`}
               >
-                Forgot password?
+                {t("login.form.authInputBox.forgotPassword")}
               </Link>
               <Link to="/troubleshooting/onboarding-help">
-                Get help signing in
+                {" "}
+                {""}
+                {t("login.form.authInputBox.getHelp")}
               </Link>
             </div>
           </div>
