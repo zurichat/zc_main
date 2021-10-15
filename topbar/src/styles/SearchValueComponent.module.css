@@ -12,32 +12,44 @@
     margin: .5em 0;
 }
 
+.resultCard:hover {
+    box-shadow: 0px 5px 20px -10px lightgrey
+}
+
 .result_plugin {
     font-weight: 700;
     color: rgba(0, 184, 124, 1);
+    font-size: 1em;
 }
 
 .card_desc {
-    padding: 0 .5em;
+    padding: 0 .8em;
     max-width: 500px;
 }
 
 .created_date {
-    font-weight: 400;
     color: #1D1C1D;
     padding: 0 .5em;
+    font-size: .8em;
 }
 
 .result_card_title {
     font-size: 15px;
     color: #1a1a1a;
     line-height: 1.46668;
-    font-weight: 400;
     font-weight: 900;
+    text-transform: capitalize;
+    letter-spacing: .5px;
 }
 
 .result_card_time {
-    font-weight: 400;
-    font-size: .7em;
-    padding: .3em 0;
+    font-weight: 900;
+    font-size: .75em;
+    letter-spacing: 0;
+    padding: .3em .5em;
+    color: rgb(87, 87, 87)
+}
+
+.result_card_desc {
+    font-size: 1.1em;
 }
