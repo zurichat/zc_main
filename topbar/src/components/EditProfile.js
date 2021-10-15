@@ -102,6 +102,7 @@ const EditProfile = () => {
         })
       })
   }
+
   useEffect(() => {
     setUserProfileImage(user.image_url)
   }, [user])
@@ -167,7 +168,7 @@ const EditProfile = () => {
                   </label>
                   <input
                     type="text"
-                    className="input my-0"
+                    className="input"
                     id="name"
                     defaultValue={state.name}
                     onChange={e => setState({ name: e.target.value })}
@@ -254,7 +255,7 @@ const EditProfile = () => {
                 <TimezoneSelect
                   value={selectedTimezone}
                   onChange={setSelectedTimezone}
-                  className="col-12"
+                  className="col-12 time__zone"
                 />
               </div>
               {/* <div className="input-group">
@@ -322,12 +323,17 @@ const EditProfile = () => {
                       width={24}
                     />
                   ) : (
-                    <img
-                      ref={avatarRef}
-                      className="img"
-                      src={userProfileImage ? userProfileImage : defaultAvatar}
-                      alt="profile-pic"
-                    />
+                    <div className="profile__img-wrapper">
+                      <span className="pictureHeading">Profile photo</span>
+                      <img
+                        ref={avatarRef}
+                        className="img"
+                        src={
+                          userProfileImage ? userProfileImage : defaultAvatar
+                        }
+                        alt="profile-pic"
+                      />
+                    </div>
                   )}
                 </div>
                 <input
@@ -348,15 +354,15 @@ const EditProfile = () => {
                       width={40}
                     />
                   ) : ( */}
-                  Upload Image
+                  Upload an Image
                   {/* ) */}
                 </label>
                 <div
                   role="button"
-                  className="rmvBtn mt-2"
+                  className="rmvBtn"
                   onClick={handleImageDelete}
                 >
-                  Remove Image
+                  Remove photo
                 </div>
               </div>
             </div>
@@ -383,7 +389,6 @@ const EditProfile = () => {
           <Toaster />
         </StyledProfileWrapper>
       </>
-      
     </ProfileModal>
   )
 }

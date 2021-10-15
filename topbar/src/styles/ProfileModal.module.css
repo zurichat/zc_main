@@ -31,13 +31,15 @@
 .modalContent,
 .modalFull {
   width: 90%; */
-  /* max-width: 885px; */
-  /* max-width: 700px;
+/* max-width: 885px; */
+/* max-width: 700px;
   background: var(--bg-color);
   border-radius: 4px;
   overflow: hidden;
   padding-bottom: 20px;
   height: 90vh;
+  margin-top: 30px;
+  margin-right: 40px;
 }
 
 .modalCont{
@@ -118,10 +120,6 @@
     max-width: 100vw;
   }
 
-  .modalCont {
-    max-height: 100vh;
-  }
-
   .modalFull {
     position: absolute;
     top: 0;
@@ -197,7 +195,6 @@
     background: #00b87c;
   }
 } */
-
 
 .modalContainer {
   height: 100vh;
