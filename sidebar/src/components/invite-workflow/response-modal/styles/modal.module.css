@@ -11,7 +11,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999999999;
 }
 .modalcontent {
   width: 50%;
@@ -24,7 +23,7 @@
 }
 .inviteclose {
   padding: 1.25rem;
-  display:none;
+  display: none;
 }
 
 .modalbody {
@@ -38,7 +37,7 @@
   margin: 1.875rem auto 0.95rem auto;
 }
 
-.icon{
+.icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,17 +54,17 @@
   border-radius: 0.188rem;
   padding: 0.625rem 1.25rem;
   border: none;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .done button:hover {
   transform: scale(1.1);
 }
 
-.footer{
-    display:flex;
-    justify-content: flex-end;
-    margin:0.625rem 0.188rem;
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0.625rem 0.188rem;
 }
 
 .inviteclose button {
