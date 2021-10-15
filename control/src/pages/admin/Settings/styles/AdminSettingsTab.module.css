@@ -1,5 +1,6 @@
 .tabWrapper {
-  width: 100%;
+  width: calc(100% - 10%);
+  margin: 0 auto;
 }
 
 .tabHeader,
