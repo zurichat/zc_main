@@ -215,6 +215,14 @@ const AdminSidebar = ({ setModal, openModal }) => {
             className={styles.sidebarLink}
             to="/"
           >
+            <FiScissors className={styles.icon} />
+            Deprecation
+          </Link>
+          <Link
+            onClick={() => setModal(!openModal)}
+            className={styles.sidebarLink}
+            to="/"
+          >
             <FiCheckSquare className={styles.icon} />
             About this workspace
           </Link>
