@@ -50,7 +50,6 @@ const Sidebar = props => {
         }
       )
   }
-  // let category = props.state.sidebar[plugin].category
   const categories=[
       "games",
       "utility",
@@ -59,13 +58,18 @@ const Sidebar = props => {
       "sales",
       "productivity",
       "channels",
-      "direct messages"
+      "direct messages",
+      "others"
   ]
 
   var singleItems =[]
   var categorizedItems=[]
   for (let key in props.state.sidebar) {
-    if(key == "others"){
+    if (!categories.includes(key)){
+      continue;
+    }
+    
+    else if(key == "others"){
       singleItems = Object.keys(props.state.sidebar[key]).map((k, idx)=>{
         var data = props.state.sidebar[key][k]
         return(
@@ -81,13 +85,15 @@ const Sidebar = props => {
       const categoryData = Object.keys(props.state.sidebar[key]).map(
         k => props.state.sidebar[key][k]
       )
-      // categories.push(<Category key={key} name={key} data={categoryData} />)
-       categorizedItems = Object.keys(props.state.sidebar).map((p, idx)=>{
-        return (categories.includes(p) ? 
-        <Category key={idx} name={p} data={props.state} />
-        : null)
-    }
-   )}
+
+      categorizedItems.push(<Category key={key} name={key} data={categoryData} />)
+    //    Object.keys(props.state.sidebar).map((p, idx)=>{
+    //     return (categories.includes(p) ? 
+    //     <Category key={idx} name={p} data={categoryData} />
+    //     : null)
+    
+    // }
+   }
   }
 
   return (

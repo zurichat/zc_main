@@ -46,6 +46,8 @@ const RoomItem = ({room}) => {
 
     return [ref, value]
   }
+   
+   
 
 
     return (
@@ -53,12 +55,13 @@ const RoomItem = ({room}) => {
         ref={click}
         className={`row py-1 px-2 ${styles.item__list}`}>
           <a
-            className={`row ${styles.item_name}`}
             href={room.room_url}
-            onClick={navigateToUrl}
+            className={`row ${styles.item_name}`}
             style={{ textDecoration: "none" }}
+            onClick={navigateToUrl}
           >
-            <div className={`col-10 d-flex align-items-center`}>
+            <div 
+            className={`col-10 d-flex align-items-center`}>
               <img
                 // ref={click}
                 className={`${styles.item__image}`}
@@ -88,13 +91,14 @@ const RoomItem = ({room}) => {
           )} */}
               <Badge number={room.unread} />
             </div>
-            <div className={`${styles.optionsContainer}`}>
-                  <RoomOptions 
+          </a>
+          <div className={`${styles.optionsContainer}`}>
+                  <RoomOptions
+                  room={room}
                   isClicked={isClicked}
                   position={position}
                    />
               </div>
-          </a>
         </li>
     )
 }

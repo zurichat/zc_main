@@ -9,7 +9,7 @@ export default function Category(props) {
 
   const toggleDropdown = () => setOpen(!isOpen)
 
-  return props.data ? (
+  return props.name ? (
     <Fragment>
       {props.name && (
         <DropDown
@@ -21,11 +21,11 @@ export default function Category(props) {
        {props.data &&
         props.data.length > 0 &&
         props.data.map(plugin => {
-          console.error("showwwwmw", plugin)
+          // console.error("showwwwmw", plugin)
           if (plugin.show_group) {
             return (
               <SubCategory
-                isOpen={isOpen}
+               isOpened={isOpen}
                 key={plugin.name}
                 name={plugin.group_name}
                 state={plugin}
@@ -37,7 +37,7 @@ export default function Category(props) {
                 isOpen={isOpen}
                 key={plugin.name}
                 id={plugin.group_name}
-                isDirect={true}
+                // isDirect={true}
                 items={plugin}
               />
             )
