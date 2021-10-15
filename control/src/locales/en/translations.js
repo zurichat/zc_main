@@ -257,9 +257,9 @@ export const TRANSLATIONS_EN = {
       title: "Whatever work you do, you can do it in Zuri Chat",
       link_sales: "Talk to sales",
       link_try: "Try it for free"
-    },
-
-    careers: {
+    }   
+  },
+  careers: {
       title: {
         careers: "Careers"
       },
@@ -318,7 +318,6 @@ export const TRANSLATIONS_EN = {
           post_headline: "Zuri Pays 100% of your premiums. We also offer access to a range of free mental health and well-being resources."
         }
       }
-    }
   },
   login:{
     title: "Login - Zuri Chat",

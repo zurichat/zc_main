@@ -260,9 +260,9 @@ export const TRANSLATIONS_FR = {
         "Quel que soit le travail que vous faites, vous pouvez le faire dans Zuri Chat",
       link_sales: "Parlez aux ventes",
       link_try: "Essayez-le gratuitement"
-    },
-
-    careers: {
+    }    
+  },
+  careers: {
       title: {
         careers: "Carrières"
       },
@@ -321,7 +321,6 @@ export const TRANSLATIONS_FR = {
           post_headline: "Zuri paie 100 % de vos primes. Nous offrons également l'accès à une gamme de ressources gratuites sur la santé mentale et le bien-être."
         }
       }
-    }
   },
   login:{
     title: "Connexion - Zuri Chat",

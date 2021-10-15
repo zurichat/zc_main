@@ -247,9 +247,9 @@ export const TRANSLATIONS_ZH = {
       title: "无论您做什么工作，您都可以在 Zuri Chat 中完成",
       link_sales: "与销售人员交谈",
       link_try: "免费试用"
-    },
-
-    careers: {
+    },   
+  },
+   careers: {
       title: {
         careers: "职业"
       },
@@ -317,8 +317,7 @@ export const TRANSLATIONS_ZH = {
             "Zuri 支付 100% 的保费。我们还提供一系列免费的心理健康和福祉资源。"
         }
       }
-    }
-  },
+    },
   login:{
     title: "登录 - Zuri 聊天",
     form: {
