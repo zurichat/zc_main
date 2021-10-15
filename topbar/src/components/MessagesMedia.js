@@ -15,8 +15,6 @@ import theme19 from "../assets/images/theme15.png"
 
 const MessagesMedia = () => {
   const [isChecked, setIsChecked] = useState(false)
-  const [active1, setActive1] = useState(0)
-  const [active2, setActive2] = useState(1)
 
   const { user } = useContext(ProfileContext)
   // console.log("user", user.settings.messages_and_media)
@@ -67,14 +65,13 @@ const MessagesMedia = () => {
             className={styles.radioInput}
             type="radio"
             value="cln"
-            checked={(message.theme === "clean", active1 === 0)}
+            checked={message.theme === "clean"}
             onClick={() => {
               if (message !== undefined) {
                 const newMessage = {
                   ...message,
                   theme: "clean"
                 }
-                setActive1(0)
                 setMessage(newMessage)
                 updateMessageSettings(newMessage)
               }
@@ -89,14 +86,13 @@ const MessagesMedia = () => {
             className={styles.radioInput}
             type="radio"
             value="com"
-            checked={(message.theme === "compact", active1 === 1)}
+            checked={message.theme === "compact"}
             onClick={() => {
               if (message !== undefined) {
                 const newMessage = {
                   ...message,
                   theme: "compact"
                 }
-                setActive1(1)
                 setMessage(newMessage)
                 updateMessageSettings(newMessage)
               }
@@ -104,30 +100,6 @@ const MessagesMedia = () => {
           />
         </div>
         <div className={styles.compt}>Compact</div>
-      </div>
-      <div className={styles.text}>Here is an example</div>
-      <div className={styles.img11}>
-        {/* <img src={theme11} alt="theme11" className={styles.theme11} /> */}
-        {active1 == 0 && (
-          <div className={styles.previewCard}>
-            <img src={zuriBot} alt="bot" />
-            <div className={styles.previewInfo}>
-              <div className={styles.previewName}>
-                <p className={styles.name}>ZuriBot</p>
-                <p className={styles.time}>9:25pm</p>
-              </div>
-              <p className={styles.message}>Feeling great</p>
-            </div>
-          </div>
-        )}
-
-        {active1 == 1 && (
-          <div className={styles.previewCard1}>
-            <p className={styles.time}>9:25pm</p>
-            <p className={styles.name}>ZuriBot</p>
-            <p className={styles.message}>Feeling great</p>
-          </div>
-        )}
       </div>
       <div className={styles.bottom}></div>
       <div className={styles.name}>Name</div>
@@ -137,14 +109,13 @@ const MessagesMedia = () => {
             className={styles.radioInput}
             type="radio"
             value="ful"
-            checked={(message.names === "Zuri Ananda", active2 === 0)}
+            checked={message.names === "Zuri Ananda"}
             onClick={() => {
               if (message !== undefined) {
                 const newMessage = {
                   ...message,
                   names: "Zuri Ananda"
                 }
-                setActive2(0)
                 setMessage(newMessage)
                 updateMessageSettings(newMessage)
               }
@@ -159,14 +130,13 @@ const MessagesMedia = () => {
             className={styles.radioInput}
             type="radio"
             value="jst"
-            checked={(message.names === "Zuri", active2 === 1)}
+            checked={message.names === "Zuri"}
             onClick={() => {
               if (message !== undefined) {
                 const newMessage = {
                   ...message,
                   names: "Zuri"
                 }
-                setActive2(1)
                 setMessage(newMessage)
                 updateMessageSettings(newMessage)
               }
@@ -175,122 +145,11 @@ const MessagesMedia = () => {
         </div>
         <div className={styles.jst}>Just display names</div>
       </div>
-      <div className={styles.img12}>
-        {/* <img src={theme12} alt="theme12" className={styles.theme12} /> */}
-        {active1 == 0 && (
-          <div className={styles.previewCard}>
-            <img src={zuriPerson} alt="bot" />
-            <div className={styles.previewInfo}>
-              <div className={styles.previewName}>
-                {active2 == 0 && <p className={styles.name}>Zuri Ananda</p>}
-                {active2 == 1 && <p className={styles.name}>Zuri</p>}
-                <p className={styles.time}>9:25pm</p>
-              </div>
-              <p className={styles.message}>👋 Hi I'm Zuri</p>
-            </div>
-          </div>
-        )}
-
-        {active1 == 1 && (
-          <div className={styles.previewCard1}>
-            <p className={styles.time}>9:25pm</p>
-            {active2 == 0 && <p className={styles.name}>Zuri Ananda</p>}
-            {active2 == 1 && <p className={styles.name}>Zuri</p>}
-            <p className={styles.message}>👋 Hi I'm Zuri</p>
-          </div>
-        )}
-      </div>
       <div className={styles.change}>
         To change your full or display name, head to
         <span style={{ color: "#00B87C" }}> your profile.</span>
       </div>
-      <div className={styles.bottom2}></div>
-      <div className={styles.add}>Additional options</div>
-      <div className={styles.info}>
-        <form onSubmit={handleSubmit}>
-          <div className={styles.checkbox}>
-            <input
-              type="checkbox"
-              className={styles.inputCheckBox}
-              name="add"
-              onChange={e => setIsChecked(e.target.checked)}
-              checked={message.additional_options.currently_typing}
-              onClick={() => {
-                if (message !== undefined) {
-                  const newMessage = {
-                    ...message,
-                    additional_options: {
-                      ...message.additional_options,
-                      currently_typing: !currently_typing
-                    }
-                  }
-                  setMessage(newMessage)
-                  updateMessageSettings(newMessage)
-                }
-              }}
-            />
-          </div>
-        </form>
-        <div className={styles.current}>
-          Display information about who is currently typing a message
-        </div>
-      </div>
-      <div className={styles.timed}>
-        <form onSubmit={handleSubmit}>
-          <div className={styles.checkbox2}>
-            <input
-              type="checkbox"
-              className={styles.inputCheckBox}
-              name="time"
-              onChange={e => setIsChecked(e.target.checked)}
-              checked={message.additional_options.clock}
-              onClick={() => {
-                if (message !== undefined) {
-                  const newMessage = {
-                    ...message,
-                    additional_options: {
-                      ...message.additional_options,
-                      clock: !clock
-                    }
-                  }
-                  setMessage(newMessage)
-                  updateMessageSettings(newMessage)
-                }
-              }}
-            />
-          </div>
-        </form>
-        <div className={styles.hour}>Show times with 24-hour clock</div>
-      </div>
-      <div className={styles.hexa}>
-        <form onSubmit={handleSubmit}>
-          <div className={styles.checkbox3}>
-            <input
-              type="checkbox"
-              className={styles.inputCheckBox}
-              name="hex"
-              onChange={e => setIsChecked(e.target.checked)}
-              checked={message.additional_options.color_swatches}
-              onClick={() => {
-                if (message !== undefined) {
-                  const newMessage = {
-                    ...message,
-                    additional_options: {
-                      ...message.additional_options,
-                      color_swatches: !color_swatches
-                    }
-                  }
-                  setMessage(newMessage)
-                  updateMessageSettings(newMessage)
-                }
-              }}
-            />
-          </div>
-        </form>
-        <div className={styles.color}>
-          Display color swatches next to hexadecimal values
-        </div>
-      </div>
+      {/* <div className={styles.bottom2}></div> */}
       <div className={styles.bottom3}></div>
       <div className={styles.emoji}>Emoji</div>
       <div className={styles.tone}>Default Skin Tone</div>
@@ -318,11 +177,6 @@ const MessagesMedia = () => {
         <div tabIndex="-1" className={styles.emojiBox}>
           <img src={theme18} alt="theme18" className={styles.theme18} />
         </div>
-        {/* <img src={theme14} alt="theme14" className={styles.theme14} />
-        <img src={theme15} alt="theme15" className={styles.theme15} />
-        <img src={theme16} alt="theme16" className={styles.theme16} />
-        <img src={theme17} alt="theme17" className={styles.theme17} />
-        <img src={theme18} alt="theme18" className={styles.theme18} /> */}
       </div>
       <div className={styles.plntxt}>
         <form onSubmit={handleSubmit}>
@@ -347,162 +201,6 @@ const MessagesMedia = () => {
           </div>
         </form>
         <div className={styles.plain}>Display emoji in plain text</div>
-      </div>
-      <div className={styles.jumb}>
-        <form onSubmit={handleSubmit}>
-          <div className={styles.checkbox5}>
-            <input
-              type="checkbox"
-              className={styles.inputCheckBox}
-              checked={message.show_jumbomoji}
-              name="jum"
-              onChange={e => setIsChecked(e.target.checked)}
-              onClick={() => {
-                if (message !== undefined) {
-                  const newMessage = {
-                    ...message,
-                    show_jumbomoji: !show_jumbomoji
-                  }
-                  setMessage(newMessage)
-                  updateMessageSettings(newMessage)
-                }
-              }}
-            />
-          </div>
-        </form>
-        <div className={styles.jumbomoji}>Show JUMBOMOJI</div>
-      </div>
-      <p className={styles.versions}>
-        Display the jumbo versions of emoji (up to 23 at a time!) in messages
-        without text.
-      </p>
-      <p className={styles.example}>Here is an example</p>
-      <img src={theme19} alt="theme19" className={styles.theme19} />
-      <div className={styles.bottom4}></div>
-      <div className={styles.media}>In-line media and links</div>
-      <div className={styles.images}>
-        <form onSubmit={handleSubmit}>
-          <div className={styles.checkbox6}>
-            <input
-              type="checkbox"
-              className={styles.inputCheckBox}
-              checked={
-                message.inline_media_and_links
-                  .show_images_and_files_uploaded_to_zurichat
-              }
-              name="img"
-              onChange={e => setIsChecked(e.target.checked)}
-              onClick={() => {
-                if (message !== undefined) {
-                  const newMessage = {
-                    ...message,
-                    inline_media_and_links: {
-                      ...message.inline_media_and_links,
-                      show_images_and_files_uploaded_to_zurichat:
-                        !show_images_and_files_uploaded_to_zurichat
-                    }
-                  }
-                  setMessage(newMessage)
-                  updateMessageSettings(newMessage)
-                }
-              }}
-            />
-          </div>
-        </form>
-        <div className={styles.files}>
-          Show images and files uploaded to Zurichat
-        </div>
-      </div>
-      <div className={styles.websites}>
-        <form onSubmit={handleSubmit}>
-          <div className={styles.checkbox7}>
-            <input
-              type="checkbox"
-              className={styles.inputCheckBox}
-              name="web"
-              onChange={e => setIsChecked(e.target.checked)}
-              checked={
-                message.inline_media_and_links
-                  .show_images_and_files_from_linked_websites
-              }
-              onClick={() => {
-                if (message !== undefined) {
-                  const newMessage = {
-                    ...message,
-                    inline_media_and_links: {
-                      ...message.inline_media_and_links,
-                      show_images_and_files_from_linked_websites:
-                        !show_images_and_files_from_linked_websites
-                    }
-                  }
-                  setMessage(newMessage)
-                  updateMessageSettings(newMessage)
-                }
-              }}
-            />
-          </div>
-        </form>
-        <div className={styles.linked}>
-          Show images and files from linked websites
-        </div>
-      </div>
-      <div className={styles.larger}>
-        <form onSubmit={handleSubmit}>
-          <div className={styles.checkbox8}>
-            <input
-              type="checkbox"
-              className={styles.inputCheckBox}
-              name="lrg"
-              onChange={e => setIsChecked(e.target.checked)}
-              checked={message.inline_media_and_links.larger_than_2_mb}
-              onClick={() => {
-                if (message !== undefined) {
-                  const newMessage = {
-                    ...message,
-                    inline_media_and_links: {
-                      ...message.inline_media_and_links,
-                      larger_than_2_mb: !larger_than_2_mb
-                    }
-                  }
-                  setMessage(newMessage)
-                  updateMessageSettings(newMessage)
-                }
-              }}
-            />
-          </div>
-        </form>
-        <div className={styles.than}>Even if they're larger than 2 MB</div>
-      </div>
-      <div className={styles.previews}>
-        <form onSubmit={handleSubmit}>
-          <div className={styles.checkbox9}>
-            <input
-              type="checkbox"
-              className={styles.inputCheckBox}
-              name="pre"
-              onChange={e => setIsChecked(e.target.checked)}
-              checked={
-                message.inline_media_and_links
-                  .show_text_previews_of_linked_websites
-              }
-              onClick={() => {
-                if (message !== undefined) {
-                  const newMessage = {
-                    ...message,
-                    inline_media_and_links: {
-                      ...message.inline_media_and_links,
-                      show_text_previews_of_linked_websites:
-                        !show_text_previews_of_linked_websites
-                    }
-                  }
-                  setMessage(newMessage)
-                  updateMessageSettings(newMessage)
-                }
-              }}
-            />
-          </div>
-        </form>
-        <div className={styles.of}>Show text previews of linked websites</div>
       </div>
     </div>
   )
