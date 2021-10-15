@@ -97,7 +97,7 @@ const Footer = () => {
             <h5>{t("landing.footer.knowUs")}</h5>
             <ul>
               <li>
-                <Link to="/download-app">{t("landing.footer.downloads")}</Link>{" "}
+                <Link to="/downloads">{t("landing.footer.downloads")}</Link>{" "}
               </li>
               <li>
                 <Link to="/contact-us">{t("landing.footer.contact")}</Link>{" "}
