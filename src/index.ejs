@@ -30,7 +30,7 @@
       if (getURL !== '/') {
         getURL = getURL.substr(1);
         getURL = getURL.charAt(0).toUpperCase() + getURL.slice(1);
-        document.title = getURL + appendZuri;
+        document.title = getURL +  ' '  +   appendZuri;
       };
     };
     setInterval(getTitleOfPage, 500)
@@ -287,7 +287,7 @@
         "@zuri/zuri-plugin-calendar": "https://calendar.zuri.chat/static/zuri-zuri-plugin-holiday-calendar.js",
         "@zuri/zuri-plugin-expenses": "https://expenses.zuri.chat/js/zuri-zuri-plugin-expenses.js",
         "@zuri/zuri-plugin-tools": "https://externaltools.zuri.chat/zuri-zuri-plugin-tools.js",
-        "@zuri/zuri-plugin-channels": "//localhost:8090/zuri-zuri-plugin-channels.js",
+        "@zuri/zuri-plugin-channels": "https://channels.zuri.chat/static/main/dist/zuri-zuri-plugin-channels.js",
         "@zuri/zuri-plugin-contributions": "https://ct.zuri.chat/js/app.js"
       }
     }
