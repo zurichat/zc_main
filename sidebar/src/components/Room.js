@@ -8,7 +8,7 @@ import PluginRoomAddUser from "./PluginRoomAddUser"
 import RoomOptions from "./RoomOptions"
 import infoIcon from "./../assets/icons/info-icon.svg"
 
-export default function Room({ items, isOpen }) {
+export default function Room({ items, isDirect }) {
   const [click, isClicked] = useClick()
 
   function useClick() {
@@ -42,13 +42,16 @@ export default function Room({ items, isOpen }) {
   }
 
   return (
-    <ul className={`col-12 ps-4 ${styles.item__row} ${isOpen && styles.open}`}>
+    <ul style={isDirect ? { paddingLeft: "0.6rem" } : {}}>
       {items.joined_rooms &&
         items.joined_rooms.map((room, index) => {
           if (room.room_name !== undefined) {
             return (
               // console.log(itemList)
-              <li key={index} className={`row py-1 px-2 ${styles.item__list}`}>
+              <li
+                key={`${room.room_name}_${index}`}
+                className={`row py-1 px-2 ${styles.item__list}`}
+              >
                 <a
                   className={`row ${styles.item_name}`}
                   href={room.room_url}
