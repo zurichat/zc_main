@@ -168,7 +168,6 @@ export const TRANSLATIONS_FR = {
       decline: "Déclin"
     }
   },
-
   about: {
     title: {
       about: ""
@@ -178,7 +177,7 @@ export const TRANSLATIONS_FR = {
       headline_one: "Rendre le travail simple, agréable et",
       headline_two: "plus productif.",
       description:
-        "est un centre de collaboration qui rassemble les bonnes personnes et les bons outils pour accomplir le travail. Des entreprises Fortune 100 aux marchés de proximité, des millions de personnes dans le monde utilisent ZuriChat pour connecter leurs équipes, unifier leurs systèmes et faire avancer leur entreprise.",
+        "est un centre de collaboration qui rassemble les bonnes personnes et les bons outils pour accomplir le travail. Des entreprises Fortune 100 aux marchés de proximité, des millions de personnes dans le monde utilisent ZuriChat pour connecter leurs équipes, unifier leurs systèmes et faire avancer leur entreprise."
     },
 
     counter: {
@@ -187,19 +186,22 @@ export const TRANSLATIONS_FR = {
       fortune_companies: "du Fortune 100",
       fortune_companies_: "utilisation",
       countries: "les pays ont quotidiennement",
-      countries_: "utilisateurs actifs dans",
+      countries_: "utilisateurs actifs dans"
     },
 
     whoWeAre: {
       title: "Qui sommes-nous et comment nous rejoindre",
-      description: "Notre mission est d'améliorer la vie professionnelle des gens en fournissant une plate-forme pouvant accueillir une équipe solide et diversifiée, de professionnels créatifs qui souhaitent faire le meilleur travail de leur vie.",
-      description_: "promet toutes sortes d'opportunités et une vie professionnelle simple, agréable et plus productive.",
+      description:
+        "Notre mission est d'améliorer la vie professionnelle des gens en fournissant une plate-forme pouvant accueillir une équipe solide et diversifiée, de professionnels créatifs qui souhaitent faire le meilleur travail de leur vie.",
+      description_:
+        "promet toutes sortes d'opportunités et une vie professionnelle simple, agréable et plus productive."
     },
 
     highlights: {
       title: "Le télétravail plus intrigant que jamais",
       description: "ZuriChat est l'endroit où le travail rencontre le plaisir.",
-      description_: "Connectez-vous et interagissez avec votre équipe efficacement depuis n'importe où dans le monde",
+      description_:
+        "Connectez-vous et interagissez avec votre équipe efficacement depuis n'importe où dans le monde",
       channels: {
         title: "Canaux",
         description: "Organisez les conversations en",
@@ -214,30 +216,32 @@ export const TRANSLATIONS_FR = {
         title: "Date limite de l'entreprise",
         description: "Gardez une trace des délais avec",
         description_: "la date limite de l'entreprise",
-        description__: "caractéristique",
+        description__: "caractéristique"
       },
       quickReply: {
         title: "Application de réponse rapide",
         description: "Obtenez des réponses rapides à Direct",
-        description_: "messages",
+        description_: "messages"
       },
       todoList: {
         title: "Liste de choses à faire",
         description: "Organiser les tâches avec la liste de tâches",
-        description_: "caractéristique",
-      },
+        description_: "caractéristique"
+      }
     },
 
     features: {
       title: "Caractéristiques spéciales",
-      description: "Augmentez votre productivité en assemblant tous vos outils de travail en un seul endroit",
+      description:
+        "Augmentez votre productivité en assemblant tous vos outils de travail en un seul endroit",
       avatar: {
         title: "Salon Avatar animé",
-        description: "Créez et animez votre propre avatar dans le salon avatar",
+        description: "Créez et animez votre propre avatar dans le salon avatar"
       },
       files: {
         title: "Fichiers d'entreprise",
-        description: "Accédez à vos fichiers sur Google Drive pendant que vous êtes sur ZuriChat.",
+        description:
+          "Accédez à vos fichiers sur Google Drive pendant que vous êtes sur ZuriChat."
       },
       accessibility: {
         title: "Accessibilité",
@@ -248,11 +252,12 @@ export const TRANSLATIONS_FR = {
         title: "Objectifs de l'entreprise",
         description: "Suivre les objectifs de l'entreprise",
         description_: "directement dans ZuriChat"
-      },
+      }
     },
 
     cta: {
-      title: "Quel que soit le travail que vous faites, vous pouvez le faire dans Zuri Chat",
+      title:
+        "Quel que soit le travail que vous faites, vous pouvez le faire dans Zuri Chat",
       link_sales: "Parlez aux ventes",
       link_try: "Essayez-le gratuitement"
     },
