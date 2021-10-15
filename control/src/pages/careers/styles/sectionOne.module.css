@@ -6,8 +6,9 @@ button:hover {
 .Section1 {
   margin: 10rem auto 4rem;
   padding: 2rem 1rem;
-  min-height: 90vh;
-  max-width: 92%;
+  min-height: 60vh;
+  max-width: 1390px;
+  width: 95%;
 }
 
 .Section1 img {
@@ -126,7 +127,6 @@ section.section1Left {
     margin-bottom: 2rem;
     padding: 0 1.1rem 2rem;
     min-height: 70vh;
-    max-width: 95%;
   }
 
   section.section1Left {

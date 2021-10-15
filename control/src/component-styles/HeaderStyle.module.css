@@ -10,7 +10,8 @@
 .navbar {
   padding: 0.5rem 1rem;
   background-color: white;
-  max-width: 95%;
+  max-width: 1440px;
+  width: 95%;
   margin: 0 auto;
   position: relative;
 }
