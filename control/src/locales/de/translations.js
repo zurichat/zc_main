@@ -10,6 +10,7 @@ export const TRANSLATIONS_DE = {
     nav: {
       pricing: "Preisgestaltung",
       about: "Über",
+      plugins: "Inpluggen",
       downloads: "Downloads",
       contact: "Kontakt",
       signup: "Anmeldung",
@@ -22,7 +23,7 @@ export const TRANSLATIONS_DE = {
         "Eine vollständig integrierte Möglichkeit, sich zu verbinden und zu interagieren",
       post_headline:
         "Gestalten Sie mit uns Ihre Zukunft, vernetzen Sie sich, arbeiten Sie zusammen, bilden Sie sich aus und lernen Sie aus der Ferne",
-      call_to_action: "Testen Sie Zuri.chat kostenlos"
+      call_to_action: "Testen Sie Zuri Chat kostenlos"
     },
 
     featureRowOne: {
@@ -75,6 +76,7 @@ export const TRANSLATIONS_DE = {
       company: "Gesellschaft",
       careers: "Karriere",
       about: "Über",
+      why_zuri_chat: "Waarom Zuri Chat?",
       info: "Die Info",
       privacy: "Datenschutz",
       market: "Marktplatz",
@@ -98,9 +100,7 @@ export const TRANSLATIONS_DE = {
     }
   },
 
-
-  pricing: 
-  {
+  pricing: {
     title: {
       pricing: "Preise - Zuri Chat"
     },
@@ -124,12 +124,13 @@ export const TRANSLATIONS_DE = {
     cardThree: {
       duration_one: "Jährlich",
       duration_two: "Monatlich",
-      button: "Loslegen",
+      button: "Loslegen"
     },
 
     sectionThree: {
       headline: "Führend in der Unternehmenssicherheit",
-      description: "Neben der Verschlüsselung während der Übertragung und im Ruhezustand betreiben wir umfassende Compliance- und Assurance-Programme.",
+      description:
+        "Neben der Verschlüsselung während der Übertragung und im Ruhezustand betreiben wir umfassende Compliance- und Assurance-Programme.",
       link: "Erfahren Sie mehr über Sicherheit..."
     },
 
@@ -165,7 +166,8 @@ export const TRANSLATIONS_DE = {
     cookies: {
       textOne: "Wir verwenden",
       textTwo: "Cookies",
-      textThree: "von Drittanbietern, um Ihre Website-Erfahrung zu personalisieren.",
+      textThree:
+        "von Drittanbietern, um Ihre Website-Erfahrung zu personalisieren.",
       accept: "Erlauben",
       decline: "Ablehnen"
     }
@@ -272,7 +274,8 @@ export const TRANSLATIONS_DE = {
       },
       section_one: {
         headline: "Karriere bei Zuri Chat",
-        post_headline: "Sie möchten das Arbeitsleben einfacher und produktiver gestalten? Werden Sie Teil unseres remote-freundlichen und flexiblen Teams.",
+        post_headline:
+          "Sie möchten das Arbeitsleben einfacher und produktiver gestalten? Werden Sie Teil unseres remote-freundlichen und flexiblen Teams.",
         join_link: "Treten Sie dem Zuri-Chat bei"
       },
       career_grid: {
@@ -282,49 +285,91 @@ export const TRANSLATIONS_DE = {
         categories: {
           category_frontend: {
             headline: "Frontend-Entwicklung",
-            post_headline: "Dieser Track befasst sich mit dem Aspekt Ihrer Anwendung, mit dem die Benutzer interagieren. Ein Frontend-Entwickler wird in der Lage sein, ein gegebenes Design korrekt auf die Benutzeroberfläche zu interpretieren."
+            post_headline:
+              "Dieser Track befasst sich mit dem Aspekt Ihrer Anwendung, mit dem die Benutzer interagieren. Ein Frontend-Entwickler wird in der Lage sein, ein gegebenes Design korrekt auf die Benutzeroberfläche zu interpretieren."
           },
           category_backend: {
             headline: "Backend-Entwicklung",
-            post_headline: "Dieser Track behandelt den Aspekt der Anwendung, mit dem der Benutzer nicht direkt interagiert. Es ermöglicht die Frontend-Funktion, indem entweder Back-End-Code ausgeführt oder eine Verbindung zur Datenbank hergestellt wird."
+            post_headline:
+              "Dieser Track behandelt den Aspekt der Anwendung, mit dem der Benutzer nicht direkt interagiert. Es ermöglicht die Frontend-Funktion, indem entweder Back-End-Code ausgeführt oder eine Verbindung zur Datenbank hergestellt wird."
           },
           category_design: {
             headline: "Entwurf",
-            post_headline: "Dieser Track befasst sich mit der Erstellung eines grafischen Plans für eine Anwendung. Sie lernen, die Projektdokumentation in ein sichtbares und verständliches Grafikdesign umzuwandeln, mit dem die Entwickler arbeiten können."
+            post_headline:
+              "Dieser Track befasst sich mit der Erstellung eines grafischen Plans für eine Anwendung. Sie lernen, die Projektdokumentation in ein sichtbares und verständliches Grafikdesign umzuwandeln, mit dem die Entwickler arbeiten können."
           },
           category_mobile: {
             headline: "Mobile Entwicklung",
-            post_headline: "Der mobile Track enthält eine Liste von Tools und Sprachen, die ein Entwickler benötigt, um mobile Anwendungen zu erstellen. Eine mobile Anwendung kann IOS oder Android sein."
+            post_headline:
+              "Der mobile Track enthält eine Liste von Tools und Sprachen, die ein Entwickler benötigt, um mobile Anwendungen zu erstellen. Eine mobile Anwendung kann IOS oder Android sein."
           },
           category_digital_marketing: {
             headline: "Digitales Marketing",
-            post_headline: "Es umfasst den Einsatz digitaler Mittel und Hilfsmittel, um die Auffindbarkeit von Produkten, Dienstleistungen und Marken zu steigern."
+            post_headline:
+              "Es umfasst den Einsatz digitaler Mittel und Hilfsmittel, um die Auffindbarkeit von Produkten, Dienstleistungen und Marken zu steigern."
           },
           category_frameworks: {
             headline: "Frameworks",
-            post_headline: "Während des Programms werden wir verschiedene nützliche Frameworks erkunden, die Ihnen einen Vorsprung in der Branche verschaffen und Ihnen helfen, komplexe Anwendungen viel schneller zu entwickeln."
+            post_headline:
+              "Während des Programms werden wir verschiedene nützliche Frameworks erkunden, die Ihnen einen Vorsprung in der Branche verschaffen und Ihnen helfen, komplexe Anwendungen viel schneller zu entwickeln."
           }
-
         },
-        join_cohort: "Seien Sie ein Teil unserer nächsten Kohorte ab Sommer 2022",
+        join_cohort:
+          "Seien Sie ein Teil unserer nächsten Kohorte ab Sommer 2022",
         register_now: "Jetzt registrieren"
       },
       section_two: {
         headline: "Arbeiten und Gedeihen",
-        post_headline: "Wir bieten Vorteile, die Ihnen helfen, sich gut zu fühlen und Ihr Bestes zu geben.",
+        post_headline:
+          "Wir bieten Vorteile, die Ihnen helfen, sich gut zu fühlen und Ihr Bestes zu geben.",
         digital_wellness: {
           headline: "Digital-First-Office",
-          post_headline: "Mit Remote-Rollen, bürofreiem Onboarding und flexiblen Arbeitspraktiken sind wir für sich ständig ändernde Realitäten, Zeitpläne und Verantwortlichkeiten gerüstet."
+          post_headline:
+            "Mit Remote-Rollen, bürofreiem Onboarding und flexiblen Arbeitspraktiken sind wir für sich ständig ändernde Realitäten, Zeitpläne und Verantwortlichkeiten gerüstet."
         },
         just_for_you: {
           headline: "Nur für dich",
-          post_headline: "Erhalten Sie eine jährliche Beihilfe für die berufliche Entwicklung sowie ein monatliches Stipendium zur Deckung Ihres Bedarfs; Ein neuer Arbeitslook, ein Haustier, was dir am wichtigsten ist."
+          post_headline:
+            "Erhalten Sie eine jährliche Beihilfe für die berufliche Entwicklung sowie ein monatliches Stipendium zur Deckung Ihres Bedarfs; Ein neuer Arbeitslook, ein Haustier, was dir am wichtigsten ist."
         },
         health_and_wellness: {
           headline: "Gesundheit und Wellness",
-          post_headline: "Zuri zahlt 100 % Ihrer Prämien. Wir bieten auch Zugang zu einer Reihe von kostenlosen Ressourcen für psychische Gesundheit und Wohlbefinden."
+          post_headline:
+            "Zuri zahlt 100 % Ihrer Prämien. Wir bieten auch Zugang zu einer Reihe von kostenlosen Ressourcen für psychische Gesundheit und Wohlbefinden."
         }
       }
     }
+  },
+
+  why_zuri_chat: {
+    title: "Maak kennis met Zuri Chat - een betaalbaar alternatief voor Slack",
+    hero_paragraph1:
+      "Als u op zoek bent naar het perfecte Slack-alternatief, hoeft u niet verder te zoeken.",
+    hero_paragraph2:
+      "Zuri Chat heeft als missie om het individuele werkleven te vereenvoudigen en de productiviteit te verhogen met een intrigerende samenwerkingshub aangedreven door kunstmatige intelligentie en ondersteund door DAO.",
+    blog_content_header: "Waarom Zuri Chat?",
+    text_wrap1: "Helderheid",
+    text_wrap1_p:
+      "Een vakkundige taakuitvoering is essentieel om uw bedrijf vooruit te helpen, en ZuriChat helpt u meer gedaan te krijgen. Onze Company Deadline-plug-in maakt taakbeheer eenvoudig voor samenwerkingen van elke omvang, van startups tot internationale bedrijven. Optimaliseer uw workflows door de status bij te houden, de voortgang te bewaken en problemen te bespreken.",
+    text_wrap2: "Snelheid",
+    text_wrap2_p:
+      "Zuri Chat begrijpt dat tijd geld is in de zakelijke sfeer. Onze ZuriChat Dm Reply-plug-in bespaart u tijd die u kwijt bent aan communicatie. Aan die behoefte aan snelheid wordt voldaan door optimalisatie van Realtime communicatie, tweemaal sneller delen van bestanden en aangepaste notificaties, zodat je nooit meer iets mist; aankondigingen, taakstatusupdates, oproepen, enz.",
+    text_wrap3: "Retentiecapaciteit",
+    text_wrap3_p:
+      "Elk bedrijf of team heeft ruimte nodig om te groeien. Als het gaat om bestandsopslag, is het beste Slack-alternatief te vinden in Zuri Company Files, omdat we al onze klanten twee keer meer opslagruimte bieden, waardoor het voor jou dubbel handig is om meerdere bestanden op te slaan en te delen wanneer je binnen je team samenwerkt.",
+    text_wrap4: "Geoptimaliseerde productiviteit",
+    text_wrap4_p:
+      "Verbeter de prestaties van uw team en bouw moreel op met een op tokens gebaseerd beloningssysteem. Zuri Chat-plug-ins zijn ontworpen om de samenwerking te stimuleren en de tijd die wordt besteed aan vergaderingen, e-mails en interacties tussen collega's te verminderen en teamvooruitgang in de richting van gedeelde zakelijke doelen met beloningen aan te moedigen.",
+    text_wrap5: "Uitstekend gemak",
+    text_wrap5_p:
+      "We zullen u niet overladen met verwarrende of afleidende functies. Zuri Chat is een eenvoudig te starten en gebruiksvriendelijke teamhub met een intuïtieve en kristalheldere gebruikersinterface.",
+    text_wrap6: "Onbeperkt berichten bewaren",
+    text_wrap6_p:
+      "Mis nooit meer een enkel bericht. Zuri Chat Dm Reply is toegankelijk vanaf het allereerste bericht, want alles wat in Zuri Chat is geschreven, blijft in Zuri Chat. Geen verborgen kosten. Geen grenzen.",
+    text_wrap7: "Altijd beschikbaar om te helpen",
+    text_wrap7_p:
+      "Een addertje onder het gras? Heb je een vraag? Ons 24/7 Help Team zal extra stappen nemen en extra kilometers lopen om ervoor te zorgen dat je een gemakkelijke en prettige ervaring hebt met Zuri Chat.",
+    bottom_card: "Je team zou er zeker dol op zijn",
+    bottom_link: "Meld u nu aan!"
   }
 }

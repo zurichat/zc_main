@@ -26,6 +26,34 @@ const HeaderSearchSuggestion = () => {
   }
 
   const [lgShow, setLgShow] = useState(false)
+  //const ref = useRef()
+  //const toggleBgOverlay = () => {
+  //  document
+  //    .querySelector(`.${headerStyles.navContainer}`)
+  //    .classList.toggle(headerStyles.bg_overlay)
+  //}
+  //
+  //useEffect(() => {
+  //  const checkIfClickedOutside = e => {
+  //    const element = document.getElementById("navbarText")
+  //
+  //    if (
+  //      ref.current &&
+  //      !ref.current.contains(e.target) &&
+  //      element.classList.contains("show")
+  //    ) {
+  //      element.classList.remove("show")
+  //      toggleBgOverlay()
+  //    }
+  //  }
+  //
+  //  document.addEventListener("mousedown", checkIfClickedOutside)
+  //
+  //  return () => {
+  //    // Cleanup the event listener
+  //    document.removeEventListener("mousedown", checkIfClickedOutside)
+  //  }
+  //}, [])
 
   return (
     <header className={headerStyles.pageHeader}>
@@ -44,7 +72,7 @@ const HeaderSearchSuggestion = () => {
           <span className={`mb-2 ${headerStyles.zuriChat}`}>Zuri Chat</span>
         </Link>
 
-        <div className={`d-lg-none navbar-nav-scroll ${headerStyles.language}`}>
+        <div className={`d-lg-none ${headerStyles.language}`}>
           <button
             onClick={() => setLgShow(true)}
             className={headerStyles.world}
@@ -108,7 +136,7 @@ const HeaderSearchSuggestion = () => {
                   alt="Chinese"
                   title="Chinese"
                 />{" "}
-                <span>Chinese</span>
+                <span>普通话</span>
               </button>
               <button
                 className={`btn ${headerStyles.select}`}
@@ -121,7 +149,7 @@ const HeaderSearchSuggestion = () => {
                   alt="Arabic"
                   title="Arabic"
                 />{" "}
-                <span>Arabic</span>
+                <span>العربية</span>
               </button>
               <button
                 className={`btn ${headerStyles.select}`}
@@ -192,7 +220,9 @@ const HeaderSearchSuggestion = () => {
                 role="button"
                 aria-expanded="false"
               >
-                <span className={`${headerStyles.item}`}>Plugins</span>
+                <span className={`${headerStyles.item}`}>
+                  {t("landing.nav.plugins")}
+                </span>
               </NavLink>
             </li>
             <li className="nav-item">
@@ -222,20 +252,17 @@ const HeaderSearchSuggestion = () => {
 
           <ul className={`d-lg-none navbar-nav-scroll ${headerStyles.signs}`}>
             <li className="nav-item">
-              <Link
-                to="/signup"
-                className={`btn ${headerStyles.signU} nav-link`}
-              >
-                <span>{t("landing.nav.signup")}</span>
+              <Link to="/signup" className={`btn nav-link`}>
+                <span className={`${headerStyles.signU}`}>
+                  {t("landing.nav.signup")}
+                </span>
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                to="/login"
-                className={`btn ${headerStyles.signIn} nav-link`}
-                role="button"
-              >
-                <span className="signin">{t("landing.nav.login")}</span>
+              <Link to="/login" className={`btn nav-link`} role="button">
+                <span className={`${headerStyles.signIn}`}>
+                  {t("landing.nav.login")}
+                </span>
               </Link>
             </li>
           </ul>
@@ -305,9 +332,9 @@ const HeaderSearchSuggestion = () => {
                   className={headerStyles.country_logo}
                   src={zh}
                   alt="Chinese"
-                  title="Chinese"
+                  title="sse"
                 />{" "}
-                <span>Chinese</span>
+                <span>普通话</span>
               </button>
               <button
                 className={`btn ${headerStyles.select}`}
@@ -320,7 +347,7 @@ const HeaderSearchSuggestion = () => {
                   alt="Arabic"
                   title="Arabic"
                 />{" "}
-                <span>Arabic</span>
+                <span>العربية</span>
               </button>
               <button
                 className={`btn ${headerStyles.select}`}

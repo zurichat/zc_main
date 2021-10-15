@@ -40,15 +40,13 @@ const Footer = () => {
     <div className={styles.footer}>
       <div className={styles.top_footer}>
         <div className={styles.logo}>
-          <Link to="/">
+          <Link to="/" className={`me-0 me-md-2 ${styles.link}`}>
             <img
-              className={styles.logo_img}
+              className={`d-inline-block align-top ${styles.logo_img}`}
               src={logo}
-              alt="Logo"
-              width="30px"
-              height="30px"
+              alt="zuri-logo"
             />
-            <span className={styles.logo_name}>Zuri Chat</span>
+            <span className={`mb-2 ${styles.zuriChat}`}>Zuri Chat</span>
           </Link>
         </div>
 
@@ -63,7 +61,9 @@ const Footer = () => {
                 <Link to="/about">{t("landing.footer.about")}</Link>{" "}
               </li>
               <li>
-                <Link to="/whyzurichat">Why Zurichat?</Link>{" "}
+                <Link to="/whyzurichat">
+                  {t("landing.footer.why_zuri_chat")}
+                </Link>{" "}
               </li>
               <li>
                 <Link to="/ZurichatBlog">{t("landing.footer.blog")}</Link>{" "}
@@ -80,12 +80,6 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/legal">
-                  <span>Legal</span>{" "}
-                </Link>
-              </li>
-              <li>
-                <Link to="/open-marketplace">Market Place</Link>{" "}
                 <Link to="/marketplace">{t("landing.footer.market")}</Link>{" "}
               </li>
               <li>
@@ -103,7 +97,7 @@ const Footer = () => {
             <h5>{t("landing.footer.knowUs")}</h5>
             <ul>
               <li>
-                <Link to="/downloads">{t("landing.footer.downloads")}</Link>{" "}
+                <Link to="/download-app">{t("landing.footer.downloads")}</Link>{" "}
               </li>
               <li>
                 <Link to="/contact-us">{t("landing.footer.contact")}</Link>{" "}
@@ -178,6 +172,7 @@ const Footer = () => {
           </p>
         </div> */}
       </div>
+
       <div className={styles.bottom_footer}>
         <p>
           {" "}

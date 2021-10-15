@@ -10,6 +10,7 @@ export const TRANSLATIONS_FR = {
     nav: {
       pricing: "Prix",
       about: "Sur",
+      plugins: "Brancher",
       downloads: "Téléchargements",
       contact: "Contact",
       signup: "S'inscrire",
@@ -74,6 +75,7 @@ export const TRANSLATIONS_FR = {
       company: "Société",
       careers: "Carrières",
       about: "Sur",
+      why_zuri_chat: "Pourquoi Zuri Chat?",
       info: "Info",
       privacy: "Confidentialité et modalités",
       market: "Place du marché",
@@ -96,9 +98,7 @@ export const TRANSLATIONS_FR = {
     }
   },
 
-  
-  pricing: 
-  {
+  pricing: {
     title: {
       pricing: "Tarification - Zuri Chat"
     },
@@ -122,17 +122,19 @@ export const TRANSLATIONS_FR = {
     cardThree: {
       duration_one: "Annuel",
       duration_two: "Mensuel",
-      button: "Commencer",
+      button: "Commencer"
     },
 
     sectionThree: {
       headline: "Ouvrir la voie en matière de sécurité d'entreprise",
-      description: "En plus du cryptage en transit et au repos, nous appliquons des programmes complets de conformité et d'assurance.",
+      description:
+        "En plus du cryptage en transit et au repos, nous appliquons des programmes complets de conformité et d'assurance.",
       link: "En savoir plus sur la sécurité..."
     },
 
     sectionFour: {
-      headline: "Quel que soit le travail que vous faites, vous pouvez le faire dans Zuri Chat",
+      headline:
+        "Quel que soit le travail que vous faites, vous pouvez le faire dans Zuri Chat",
       button_one: "Parlez aux ventes",
       button_two: "ESSAI GRATUIT"
     },
@@ -268,7 +270,8 @@ export const TRANSLATIONS_FR = {
       },
       section_one: {
         headline: "Carrières chez Zuri Chat",
-        post_headline: "Passionné de rendre la vie au travail plus simple et plus productive ? Rejoignez notre équipe conviviale et flexible.",
+        post_headline:
+          "Passionné de rendre la vie au travail plus simple et plus productive ? Rejoignez notre équipe conviviale et flexible.",
         join_link: "Rejoignez Zuri Chat"
       },
       career_grid: {
@@ -278,49 +281,91 @@ export const TRANSLATIONS_FR = {
         categories: {
           category_frontend: {
             headline: "Développement Front-end",
-            post_headline: "Cette piste traite de l'aspect de votre application avec lequel les utilisateurs interagissent. Un développeur front-end sera capable d'interpréter correctement une conception donnée à l'interface utilisateur."
+            post_headline:
+              "Cette piste traite de l'aspect de votre application avec lequel les utilisateurs interagissent. Un développeur front-end sera capable d'interpréter correctement une conception donnée à l'interface utilisateur."
           },
           category_backend: {
             headline: "Développement Back-end",
-            post_headline: "Cette piste traite de l'aspect de l'application avec lequel l'utilisateur n'interagit pas directement. Il permet la fonction frontale soit en exécutant du code back-end, soit en se connectant à la base de données."
+            post_headline:
+              "Cette piste traite de l'aspect de l'application avec lequel l'utilisateur n'interagit pas directement. Il permet la fonction frontale soit en exécutant du code back-end, soit en se connectant à la base de données."
           },
           category_design: {
             headline: "Concevoir",
-            post_headline: "Cette piste traite de la création d'un plan graphique pour une application. Vous apprendrez à convertir la documentation du projet en une conception graphique visible et compréhensible pour les développeurs."
+            post_headline:
+              "Cette piste traite de la création d'un plan graphique pour une application. Vous apprendrez à convertir la documentation du projet en une conception graphique visible et compréhensible pour les développeurs."
           },
           category_mobile: {
             headline: "Développement Mobile",
-            post_headline: "La piste mobile contient une liste d'outils et de langages nécessaires à un développeur pour créer des applications mobiles. Une application mobile peut être IOS ou Android."
+            post_headline:
+              "La piste mobile contient une liste d'outils et de langages nécessaires à un développeur pour créer des applications mobiles. Une application mobile peut être IOS ou Android."
           },
           category_digital_marketing: {
             headline: "Le marketing numérique",
-            post_headline: "Il comprend l'utilisation de moyens et d'utilitaires numériques pour augmenter la découvrabilité des produits, des services et des marques."
+            post_headline:
+              "Il comprend l'utilisation de moyens et d'utilitaires numériques pour augmenter la découvrabilité des produits, des services et des marques."
           },
           category_frameworks: {
             headline: "Cadres",
-            post_headline: "Au cours du programme, nous explorerons plusieurs frameworks utiles pour vous donner un avantage dans l'industrie et vous aider à développer des applications complexes beaucoup plus rapidement."
+            post_headline:
+              "Au cours du programme, nous explorerons plusieurs frameworks utiles pour vous donner un avantage dans l'industrie et vous aider à développer des applications complexes beaucoup plus rapidement."
           }
-
         },
-        join_cohort: "Faites partie de notre prochaine cohorte à partir de l'été 2022",
+        join_cohort:
+          "Faites partie de notre prochaine cohorte à partir de l'été 2022",
         register_now: "S'inscrire maintenant"
       },
       section_two: {
         headline: "Travailler et s'épanouir",
-        post_headline: "Nous offrons des avantages qui vous aident à vous sentir mieux et à faire de votre mieux.",
+        post_headline:
+          "Nous offrons des avantages qui vous aident à vous sentir mieux et à faire de votre mieux.",
         digital_wellness: {
           headline: "Bureau d'abord numérique",
-          post_headline: "Avec des rôles à distance, une intégration sans bureau et des pratiques de travail flexibles, nous sommes prêts pour des réalités, des horaires et des responsabilités en constante évolution."
+          post_headline:
+            "Avec des rôles à distance, une intégration sans bureau et des pratiques de travail flexibles, nous sommes prêts pour des réalités, des horaires et des responsabilités en constante évolution."
         },
         just_for_you: {
           headline: "Juste pour toi",
-          post_headline: "Recevez une allocation annuelle pour le développement professionnel, plus une allocation mensuelle pour couvrir vos besoins; Un nouveau look de travail, un animal de compagnie, tout ce qui compte le plus pour vous."
+          post_headline:
+            "Recevez une allocation annuelle pour le développement professionnel, plus une allocation mensuelle pour couvrir vos besoins; Un nouveau look de travail, un animal de compagnie, tout ce qui compte le plus pour vous."
         },
         health_and_wellness: {
           headline: "Santé et bien-être",
-          post_headline: "Zuri paie 100 % de vos primes. Nous offrons également l'accès à une gamme de ressources gratuites sur la santé mentale et le bien-être."
+          post_headline:
+            "Zuri paie 100 % de vos primes. Nous offrons également l'accès à une gamme de ressources gratuites sur la santé mentale et le bien-être."
         }
       }
     }
+  },
+
+  why_zuri_chat: {
+    title: "Rencontrez Zuri Chat - une alternative Slack abordable",
+    hero_paragraph1:
+      "Si vous recherchez l'alternative parfaite à Slack, ne cherchez pas plus loin.",
+    hero_paragraph2:
+      "Zuri Chat a pour mission de simplifier la vie professionnelle individuelle et d'augmenter la productivité avec un hub collaboratif intrigant alimenté par l'intelligence artificielle et soutenu par DAO.",
+    blog_content_header: "Pourquoi Zuri Chat?",
+    text_wrap1: "Clarté",
+    text_wrap1_p:
+      "Une exécution efficace des tâches est essentielle pour faire avancer votre entreprise, et Zuri Chat vous aide à en faire plus. Notre plugin Company Deadline facilite la gestion des tâches pour les collaborations de toutes tailles, des startups aux entreprises mondiales. Optimisez vos flux de travail en suivant l'état, en surveillant les progrès et en discutant des problèmes.",
+    text_wrap2: "La vitesse",
+    text_wrap2_p:
+      "Zuri Chat comprend que le temps c'est de l'argent dans la sphère des affaires. Notre plugin Zuri Chat Dm Reply vous fait gagner du temps en communication. Ce besoin de vitesse est satisfait par l'optimisation de la communication en temps réel, un partage de fichiers deux fois plus rapide et des notifications personnalisées, pour que vous ne manquiez jamais rien ; annonces, mises à jour de l'état des tâches, appels, etc.",
+    text_wrap3: "Capacité de rétention",
+    text_wrap3_p:
+      "Chaque entreprise ou équipe a besoin d'espace pour se développer. En ce qui concerne le stockage de fichiers, la meilleure alternative à Slack se trouve dans Zuri Company Files, car nous offrons à tous nos clients deux fois plus d'espace de stockage, ce qui vous permet de stocker et de partager plusieurs fichiers lorsque vous collaborez au sein de votre équipe.",
+    text_wrap4: "Productivité optimisée",
+    text_wrap4_p:
+      "Améliorez les performances de votre équipe et renforcez le moral avec un système de rémunération basé sur des jetons. Les plugins Zuri Chat sont conçus pour stimuler la collaboration et réduire le temps passé sur les réunions, les e-mails et les interactions entre collègues et encourager la progression de l'équipe vers des objectifs commerciaux partagés avec des récompenses.",
+    text_wrap5: "Superbe facilité",
+    text_wrap5_p:
+      "Nous ne vous surchargerons pas de fonctionnalités déroutantes ou distrayantes. Zuri Chat est un centre d'équipe facile à démarrer et à utiliser avec une interface utilisateur intuitive et claire comme du cristal.",
+    text_wrap6: "Rétention illimitée des messages",
+    text_wrap6_p:
+      "Ne manquez jamais un seul message. Zuri Chat Dm Reply est accessible dès le premier message car tout ce qui est écrit dans Zuri Chat reste dans Zuri Chat. Pas de frais cachés. Pas de limites.",
+    text_wrap7: "Toujours disponible pour aider",
+    text_wrap7_p:
+      "Rencontrer un obstacle? tu as une question? Notre équipe d'assistance 24h/24 et 7j/7 fera des pas supplémentaires et parcourra des kilomètres supplémentaires pour vous garantir une expérience simple et agréable avec Zuri Chat.",
+    bottom_card: "Votre équipe aimerait certainement",
+    bottom_link: "S'inscrire maintenant!"
   }
 }
