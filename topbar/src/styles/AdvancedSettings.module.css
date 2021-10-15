@@ -122,4 +122,14 @@
     line-height: 1.5;
     margin-top: -.6rem;
   }
+  .chekedInput {
+    width: 20px;
+    height: .875rem;
+    background: var(--bg-color);
+    border: 1px solid #999;
+    border-radius: 2px;
+    margin-right: .438rem !important;
+    accent-color: #00B87C;
+    outline: none;
+  }
 }

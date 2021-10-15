@@ -12,7 +12,7 @@
         width: 100%;
         position: absolute;
         float: left;
-        z-index: 100;
+        z-index: 1000;
       }
       .itemsContainer {
         margin-top: 15px;

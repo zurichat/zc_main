@@ -23,14 +23,14 @@ const PreferenceMenu = ({navbarOpen, closeMenu}) => {
               <AiOutlineBell  className={styles.icon} />
               <p>Notifications</p>
             </div>
-
+{/* 
             <div
               onClick={() => setSideBar(3)}
               className={sideBar === 3 ? styles.active : styles.one}
             >
               <AiOutlineEye className={styles.icon} />
               <p>Themes</p>
-            </div>
+            </div> */}
             <div
               onClick={() => setSideBar(4)}
               className={sideBar === 4 ? styles.active : styles.one}

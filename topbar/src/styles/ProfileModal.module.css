@@ -286,6 +286,7 @@
 @media (max-width: 768px) {
   .modalContainer {
     padding-top: 3rem;
+    z-index: 1000;
   }
   .modalContent {
     width: 100%;
