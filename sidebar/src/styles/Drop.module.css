@@ -21,6 +21,7 @@
 }
 .item__list {
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .plugin_name,
