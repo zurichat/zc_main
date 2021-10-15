@@ -1,11 +1,11 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Login from './pages/login'
-import Uitest from './pages/UI/MsgBoard'
-import SignUp from './pages/signup'
-import SignOut from './pages/signout/index'
-import Workspace from './pages/workspace/components/Workspace'
-import LandingPage from './pages/LandingPage'
-import DAO_Features from './pages/DAO-Features'
+import { BrowserRouter, Route, Switch } from "react-router-dom"
+import Login from "./pages/login"
+import Uitest from "./pages/UI/MsgBoard"
+import SignUp from "./pages/signup"
+import SignOut from "./pages/signout/index"
+import Workspace from "./pages/workspace/components/Workspace"
+import LandingPage from "./pages/LandingPage"
+import DAO_Features from "./pages/DAO-Features"
 // password block
 import ResetPassword from "./pages/passwordReset/index"
 import NewPassword from "./pages/passwordReset/newPassword"
@@ -47,14 +47,19 @@ import About from "./pages/about/index"
 import AdminSettingsTab from "./pages/admin/Settings/components/AdminSettingsTab"
 import TermsOfService from "./pages/termsOfService"
 import RedirectRoute from "./pages/redirect"
+import AnayticsHome from "./pages/admin/Analytics/index"
 import Plugins from "./pages/plugins"
 import Home from "./pages/admin/Settings/components/SettingsHome"
 import AboutWorkSpace from "./pages/admin/AboutWorkSpace"
+import AccountProfile from "./pages/admin/AccountProfile"
 
 import Legal from "./pages/legal"
 import ZurichatBlog from "./pages/blogs/components/zurichatBlog"
 
 import Ebooks from "./pages/ebooks"
+import Whyzurichat from "./pages/WhyZuriChat/Whyzurichat"
+
+import OnboardingHelp from "./pages/LoginSignUpHelp/index"
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -140,7 +145,7 @@ const App = () => {
         </Route>
         <Route path="/terms">
           <TermsOfService />
-          </Route>
+        </Route>
         <Route path="/legal">
           <Legal />
         </Route>
@@ -151,12 +156,17 @@ const App = () => {
         <Route path="/uitest">
           <Uitest />
         </Route>
-        <Route path="/marketplace" exact>
+        <Route path="/open-marketplace" exact>
           <MarketPlace />
         </Route>
         <Route path="/dao-features">
           <DAO_Features />
         </Route>
+
+        <Route path="/troubleshooting/onboarding-help">
+          <OnboardingHelp />
+        </Route>
+
         {/* <Route path="/marketplace" exact>
           <MarketPlace />
         </Route> */}
@@ -166,6 +176,11 @@ const App = () => {
         <Route path="/ZurichatBlog">
           <ZurichatBlog />
         </Route>
+
+        <Route path="/whyzurichat">
+          <Whyzurichat />
+        </Route>
+
         {/* ----------------settings routes opened------------------------ */}
         <PrivateRoute
           path="/confirm-deactivation"
@@ -187,6 +202,7 @@ const App = () => {
           exact
           component={Billing}
         />
+        <PrivateRoute path="/admin/stats" exact component={AnayticsHome} />
         <PrivateRoute
           path="/admin/settings/customize"
           exact
@@ -197,6 +213,7 @@ const App = () => {
           exact
           component={AboutWorkSpace}
         />
+        <PrivateRoute path="/admin/settings/accountsProfile" exact component={AccountProfile}/>
         {/* <PrivateRoute
           path="/admin/settings/permission"
           exact
