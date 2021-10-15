@@ -2,12 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 4rem;
+  margin-top: 3.1rem;
 }
 
 .contentWrapper {
-  width: 100%;
-  max-width: 914px;
+  width: calc(100% - 10%);
+  margin: 0 auto;
 }
 
 .icon {
@@ -15,7 +15,7 @@
 }
 
 .contentHeading {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #333;
   margin-bottom: 1.5rem;
