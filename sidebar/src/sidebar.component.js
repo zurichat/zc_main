@@ -23,7 +23,7 @@ import Starred from "./components/starred"
 const Sidebar = props => {
   let currentWorkspace = localStorage.getItem("currentWorkspace")
 
-  console.error("wow", dummySidebar)
+  console.error("wow", props.state)
   const [nullValue, setnullValue] = useState(0)
 
   useEffect(() => {
@@ -33,9 +33,9 @@ const Sidebar = props => {
   {
     //Listening for sidebar update
     nullValue === 1 &&
-      dummySidebar.sidebar &&
+      props.state.sidebar &&
       SubscribeToChannel(
-        `${currentWorkspace}_${dummySidebar.user[0]._id}_sidebar`,
+        `${currentWorkspace}_${props.state.user[0]._id}_sidebar`,
         ctx => {
           const websocket = ctx.data
           // console.log("websocket", websocket)
@@ -50,10 +50,49 @@ const Sidebar = props => {
         }
       )
   }
+  // let category = props.state.sidebar[plugin].category
+  const categories=[
+      "games",
+      "utility",
+      "tools",
+      "entertainment",
+      "sales",
+      "productivity",
+      "channels",
+      "direct messages"
+  ]
+
+  var singleItems =[]
+  var categorizedItems=[]
+  for (let key in props.state.sidebar) {
+    if(key == "others"){
+      singleItems = Object.keys(props.state.sidebar[key]).map((k, idx)=>{
+        var data = props.state.sidebar[key][k]
+        return(
+          <SingleRoom
+          key={data.name}
+          name={data.joined_rooms[0].room_name}
+          image={data.joined_rooms[0].room_image}
+          link={data.joined_rooms[0].room_url}
+          />
+        )
+      })
+    }else{
+      const categoryData = Object.keys(props.state.sidebar[key]).map(
+        k => props.state.sidebar[key][k]
+      )
+      // categories.push(<Category key={key} name={key} data={categoryData} />)
+       categorizedItems = Object.keys(props.state.sidebar).map((p, idx)=>{
+        return (categories.includes(p) ? 
+        <Category key={idx} name={p} data={props.state} />
+        : null)
+    }
+   )}
+  }
 
   return (
     <div className={`container-fluid ${styles.sb__container}`}>
-      <Header state={dummySidebar} />
+      <Header state={props.state} />
       <div className={`${styles.subCon2}`}>
         <Fragment>
           {/* <Room name="Threads" image={threadIcon} />
@@ -67,17 +106,29 @@ const Sidebar = props => {
           <SingleRoom name="Drafts" image={draftIcon} />
 
           <SingleRoom name="Plugins" image={pluginIcon} link="/marketplace" />
+          <Starred state={props.state} />
+          {singleItems}
+          {categorizedItems}
 
-          <Starred state={dummySidebar} />
-          <Category name="games" state={dummySidebar} />
-          <Category name="utility" state={dummySidebar} />
-          <Category name="tools" state={dummySidebar} />
-          <Category name="productivity" state={dummySidebar} />
 
-          <Category name="channels" state={dummySidebar} />
-          <Category name="direct messages" state={dummySidebar} />
+          {/* {props.state.sidebar && Object.keys(props.state.sidebar).map((p, idx)=>{
+                return categories.includes(p) ? 
+                <Category key={idx} name={p} state={props.state} />
+                : null
+              })
+          } */}
+
+          
+          {/* <Category name="games" state={props.state} />
+          <Category name="utility" state={props.state} />
+          <Category name="tools" state={props.state} />
+          <Category name="entertainment" state={props.state} />
+          <Category name="sales" state={props.state} />
+          <Category name="productivity" state={props.state} />
+          <Category name="channels" state={props.state} />
+          <Category name="direct messages" state={props.state} /> */}
           {/* button for inviting users to workspace */}
-          <Invite state={dummySidebar} />
+          <Invite state={props.state} />
         </Fragment>
       </div>
     </div>

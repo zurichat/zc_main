@@ -8,11 +8,19 @@ const RoomOptions = (
   ) => {
     // const isClicked = true;
 
-  let screenHeight = window.innerHeight;
-  let menuPosition ={
+  let screenHeight = window.innerHeight/2;
+
+  let menuPosition =
+  position.y > screenHeight ? 
+  {
+    "top": `${position.y-250}px`,
+    "left": `${position.x+5}px`
+  } 
+  :
+  {
     "top": `${position.y}px`,
     "left": `${position.x+5}px`
-  }
+  } 
 
   return (
     <section
