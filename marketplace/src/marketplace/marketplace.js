@@ -100,7 +100,7 @@ const MarketPlace = ({id}) => {
                  { searchInput.length !== 0 ? 
                    filteredPlugin.map((item, id) => {
                    return (
-                     <div key={id} className={styles.pluginList} >
+                     <div key={id}  >
                      <li className={styles.pluginHover} onClick={renderPluginData}>
                        <span  >
                          {item}
