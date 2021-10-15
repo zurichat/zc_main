@@ -1,5 +1,10 @@
 .tabWrapper {
-  width: 100%;
+  width: calc(100% - 10%);
+  margin: 0 auto;
+}
+
+.analytics_title{
+  font-size: 1.8rem;
 }
 
 .tabHeader,
@@ -15,7 +20,7 @@
 
 .tabHeaderItem,
 .tabHeaderItemActive {
-  padding: 0.875rem 2.5rem;
+  padding: 0.5rem 2.5rem;
   width: auto;
   border-radius: 4px 4px 0px 0px;
   font-size: 1.125rem;
@@ -25,12 +30,16 @@
   margin-bottom: -1px;
 }
 
-.tabHeaderItemActive,
-.tabHeaderItem:hover {
+.tabHeaderItemActive{
   background: #fff;
   border: 1px solid #dadada;
   border-bottom: none;
   color: #00b87c;
+}
+
+.tabHeaderItem:hover {
+  text-decoration-color: #000;
+  text-decoration-line: underline;
 }
 
 .tabContent {
@@ -40,7 +49,7 @@
   background: #fff;
   border-radius: 0px 4px 4px 4px;
   border: 1px solid #dadada;
-  padding: 2.5rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   margin-bottom: 5rem;
 }
 
