@@ -1,5 +1,3 @@
-import { Provider } from "react-redux"
-import store from "./redux/index"
 import { TopbarProvider } from "./context/Topbar"
 import { ProfileProvider } from "./context/ProfileModal"
 import TopNavBar from "./TopNavBar"

@@ -334,6 +334,7 @@
 .sectionThree p:hover {
   background: #01d892;
   color: #fff;
+  padding: 5px;
 }
 
 .pause {
