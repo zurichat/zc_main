@@ -7,22 +7,23 @@ import { Helmet } from "react-helmet"
 
 const InvitePage = () => {
   const { id } = useParams()
-
   const [success, setsuccess] = useState(false)
   const [error, seterror] = useState("")
 
   // console.log(id)
-  window.location.hre
-  const checkIfRegistered = async ({ id }) => {
+  // window.location.hre'
+
+  const checkIfRegistered = async guestId => {
     try {
-      const res = await axios.get(
+      const { data } = await axios.get(
         `https://api.zuri.chat/organizations/invites/${id}`
       )
-      // console.log(res.data.data)
-      // console.log(uuid)
-      return res.data
-    } catch (err) {
-      console.error(err)
+
+      let validUser = data
+      return { validUser, guestId }
+    } catch ({ message }) {
+      //  put code to redirect to where user would set Password
+      // console.log("take me to where i need to put my password")
     }
   }
 
@@ -30,16 +31,30 @@ const InvitePage = () => {
 
   const history = useHistory()
 
-  const handleJoin = () => {
-    if (sessionStorage.getItem(`user`) === null) {
-      sessionStorage.setItem(`workSpaceInviteRedirect`, `invites/${id}`)
-      history.push(`/signup`)
-      return
-    }
+  const handleJoin = async id => {
+    // if (sessionStorage.getItem(`user`) === null) {
+    //   sessionStorage.setItem(`workSpaceInviteRedirect`, `invites/${id}`)
+    //   history.push(`/login`)
+    //   return
+    // }
 
-    checkIfRegistered({ uuid: id }).then(res => {
-      if (res.statusCode === `200`) setsuccess(true)
-      else seterror(res.message)
+    // function to add user to organization
+    const addUserToOrg = async guestId => {
+      let { data } = await axios.get(
+        `https://api.zuri.chat/organizations/invites/${id}`,
+        {}
+      )
+
+      return data
+    }
+    // check user validity and if valid add to ord
+    checkIfRegistered(id).then(res => {
+      if (res) {
+        setsuccess(true)
+        // add user to oasyrganizations
+        addUserToOrg(res.guestId)
+        history.push("/login")
+      }
     })
   }
 
@@ -67,7 +82,7 @@ const InvitePage = () => {
                 You have been invited to a Workspace
               </h5>
               <button
-                onClick={handleJoin}
+                onClick={() => handleJoin(id)}
                 // onClick={() => history.push('/signup')}
                 className={styles.button}
               >
