@@ -3,6 +3,7 @@ import React, { useState, useContext } from "react"
 import { ProfileContext } from "../context/ProfileModal"
 import { authAxios } from "../utils/Api"
 import styles from "../styles/MessagesMedia.module.css"
+import standardStyles from "../styles/UserPreference.module.css"
 import zuriBot from "../assets/images/zuribot.png"
 import zuriPerson from "../assets/images/zuriperson.png"
 import theme13 from "../assets/images/theme9.png"
@@ -53,7 +54,7 @@ const MessagesMedia = () => {
       .catch(error => console.error(error))
   })
   return (
-    <div className={styles.msgCon}>
+    <div className={standardStyles.modalContent}>
       <div className={styles.title}>Messages</div>
       {/* <div className={styles.clean}> */}
       {/* <div className={styles.radio}>
