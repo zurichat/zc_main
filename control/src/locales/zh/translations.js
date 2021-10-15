@@ -85,7 +85,7 @@ export const TRANSLATIONS_ZH = {
     },
     cookies: {
       textOne: "我们使用第三方",
-      textTwo: "cookie",
+      textTwo: "曲奇饼",
       textThree: "来个性化您的网站体验。",
       accept: "允许",
       decline: "衰退"
