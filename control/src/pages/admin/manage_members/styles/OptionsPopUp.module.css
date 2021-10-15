@@ -23,7 +23,7 @@
 	margin: auto;
 	background-color: rgba(0, 0, 0, 0.1);
 }
-.popup_inner {
+.popupInner {
 	position: absolute;
 	padding: 4px;
 	left: 75%;

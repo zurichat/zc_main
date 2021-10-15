@@ -4,23 +4,32 @@
   padding: 0;
   margin: 0 auto;
   padding: 1rem;
+  font-size: 0.9rem;
+  font-family: "sans-serif";
 }
 
 .banner {
   background-color: rgba(48, 127, 174, 0.3);
-  padding: 1rem;
+  padding: 1rem 2rem;
   border-radius: 8px;
-  font-size: 0.8rem;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  margin-bottom: 2rem;
+  font-family: "sans-serif";
 }
 
 .header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  row-gap: 1rem;
 }
 
 .header button {
   font-weight: bold;
+  font-size: 1rem;
 }
 
 .btn1 {
@@ -28,6 +37,7 @@
   border-radius: 8px;
   padding: 12px;
   margin-right: 20px;
+  background-color: #ffffff;
 }
 
 .btn2 {
@@ -38,18 +48,21 @@
   background-color: #215c15;
 }
 
+.btn2:hover {
+  box-shadow: 0.6px 1px 7px -2px #464545;
+}
+
 .listTop {
   /* position: ; */
   width: 100%;
-
-  border-bottom: 1px solid #d5d8df;
   display: flex;
   column-gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .searchMembers {
-  width: 100%;
   margin-top: 20px;
+  width: 75%;
   padding: 8px 20px 8px 60px;
   background-image: url("../icons/search.svg");
   background-repeat: no-repeat;
@@ -61,17 +74,76 @@
   outline: none;
 }
 
+.searchMembers:hover {
+  border-color: #464545;
+}
+
+.searchMembers:focus {
+  border: 1px solid rgb(101, 151, 208);
+  box-shadow: 0.1px -0.5px 0px 4px rgba(146, 186, 233, 0.5);
+}
+
 .filter {
-  width: 100px;
   width: 25%;
+  width: 100px;
   margin-top: 20px;
   padding: 8px;
   background-color: #ffffff;
   border: 1px solid #ccc;
   border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.btn1:hover,
+.filter:hover {
+  background-color: rgba(235, 231, 231, 0.3);
+}
+
+.emptySearch {
+  display: absolute;
+  padding: 8rem;
+  /* left: 50%; */
+  text-align: center;
+  color: #464545;
+}
+
+.table table {
+  width: 100vw;
+  margin: auto;
+  table-layout: fixed;
+}
+
+.table thead,
+.table tbody tr {
+  width: 100%;
+}
+
+.table thead th:hover,
+.table tbody tr:hover {
+  background-color: rgba(235, 231, 231, 0.3);
+}
+
+.table {
+  display: block;
+  overflow: auto;
+  /* height:200px; */
+  width: 100%;
+}
+
+.table table,
+thead,
+tbody,
+tr {
+  width: 100%;
+}
+
+th {
+  width: 20%;
 }
 
 .headingList {
+  margin-top: 2rem;
   list-style-type: none;
   display: flex;
   flex-direction: row;
@@ -97,23 +169,30 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  column-gap: 1rem;
+  text-align: left;
+  font-family: "sans-serif";
 }
 
 .memRow2 img {
-  height: 24px;
-  width: 24px;
+  height: 36px;
+  width: 36px;
   border-radius: 4px;
+  align-self: flex-end;
 }
 
 .memCol {
   display: flex;
   flex-direction: column;
   align-items: center;
+  row-gap: 0.3rem;
 }
 
 .memName {
   font-size: 0.9rem;
   font-weight: 600;
+  align-self: flex-start;
+  font-family: "sans-serif";
 }
 
 .memRow {
@@ -123,6 +202,7 @@
   align-items: center;
   color: #333;
   font-size: 0.8rem;
+  column-gap: 1rem;
 }
 
 .member {
