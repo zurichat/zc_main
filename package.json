@@ -87,7 +87,6 @@
   "dependencies": {
     "@types/jest": "^27.0.1",
     "@types/systemjs": "^6.1.1",
-    "axios": "^0.23.0",
     "babel-eslint": "^10.1.0",
     "draft-js": "^0.11.7",
     "emoji-picker-react": "^3.4.8",
