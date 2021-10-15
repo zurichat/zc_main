@@ -311,7 +311,7 @@
 
 .sectionThree {
   position: relative;
-  line-height: 25px;
+  line-height: 20px;
   font-style: normal;
   font-weight: normal;
   margin: auto;
@@ -372,7 +372,7 @@
 /* The section four */
 
 .sectionFour {
-  line-height: 22px;
+  line-height: 20px;
   font-style: normal;
   font-weight: normal;
   margin: auto;
@@ -400,7 +400,7 @@
 /* The section five */
 
 .sectionFive {
-  line-height: 22px;
+  line-height: 20px;
   font-style: normal;
   font-weight: normal;
   margin-top: -5px;
@@ -439,7 +439,7 @@
 /* The section Six */
 
 .sectionSix {
-  line-height: 22px;
+  line-height: 20px;
   font-style: normal;
   font-weight: normal;
   margin: auto;
