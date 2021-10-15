@@ -4,7 +4,7 @@ button:hover {
 }
 
 .Section1 {
-  margin: 6.25rem auto 4rem;
+  margin: 10rem auto 4rem;
   padding: 2rem 1rem;
   min-height: 90vh;
   max-width: 92%;
@@ -19,7 +19,6 @@ div.section1_content {
   grid-template-columns: 450px 50%;
   justify-content: space-between;
   grid-gap: 1rem;
-  padding: ;
 }
 
 .section1_content .group_images {
@@ -53,6 +52,7 @@ div.section1_content {
 
 section.section1Left {
   padding: 0 0 3rem;
+  margin: 0.5rem 0 0;
 }
 
 .section1_info {
@@ -86,8 +86,7 @@ section.section1Left {
   float: left;
 }
 
-/* 
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
   .Section1 {
     grid-gap: 10px;
     margin-bottom: 1rem;
@@ -138,6 +137,10 @@ section.section1Left {
     grid-template-columns: 1fr;
   }
 
+  .section1_info {
+    margin: 0 auto;
+  }
+
   .section1Left {
     text-align: center;
   }
@@ -165,6 +168,7 @@ section.section1Left {
 @media screen and (max-width: 600px) {
   section.Section1 {
     grid-template-columns: 1fr;
+    margin-top: 6rem;
     margin-bottom: 2rem;
     padding: 0 1.1rem 2rem;
     min-height: 70vh;
@@ -179,7 +183,6 @@ section.section1Left {
 
   .section1Left h1 {
     font-size: 30px;
-    padding-bottom: 0.5rem;
   }
 
   .section1Left p {
