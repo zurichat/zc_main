@@ -154,16 +154,12 @@
 }
 
 .navbarNav {
-  flex-basis: 80%;
+  flex-basis: 85%;
 }
 
 .navbarNav li span:hover {
   border-bottom: 0.2rem solid #787a7a;
 }
-
-/* .toggle {
-  _margin-right: 12px;
-} */
 
 @media only screen and (max-width: 1200px) {
   .navbarNav {
