@@ -6,19 +6,27 @@ import { FiAlertOctagon } from "react-icons/fi"
 import { authAxios } from "./Utils/Api"
 
 const AboutWorkSpace = () => {
-  const [orgDetails, setOrgdetails] = useState(null)
+  const [orgDetails, setOrgdetails] = useState({})
   const currentWorkspace = localStorage.getItem("currentWorkspace")
 
   if (!currentWorkspace) {
     return null
-
   }
 
   const getOrgDetails = async () => {
-    const organization = await authAxios.get(
-      `/organizations/${currentWorkspace}`
-    )
-    setOrgdetails(organization.data.data)
+    try {
+      const organization = await authAxios.get(
+        `/organizations/${currentWorkspace}`
+      )
+      if (!organization) {
+        return null
+      }
+
+      setOrgdetails(organization.data.data)
+    } catch (err) {
+      if (err) throw err
+
+    }
   }
 
   useEffect(async () => {

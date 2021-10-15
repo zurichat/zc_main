@@ -48,12 +48,7 @@ const NewPassword = () => {
   return (
     <main id={styles.authPageWrapper}>
       {showDialog && <PasswordSuccesful/>}
-      {/* <aside id={styles.authAsideContainer} className={styles.display_none}>
-        <div id={styles.authImageWrapper}>
-          <img src={authBg} alt="backgroundImage" />
-          <div id={styles.asideText}></div>
-        </div>
-      </aside> */}
+     
       <section id={``}>
         {/* logo div  */}
         <div className={``}>
