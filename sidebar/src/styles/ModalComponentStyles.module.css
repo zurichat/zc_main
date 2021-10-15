@@ -228,9 +228,10 @@ all:none;
   position: fixed;
   /* top: 60%; */
   /* margin-top: 20px; */
-  /* left: 20%; */
+  /* left: 10%; */
   width: 100%;
   max-width: 281px;
+  height: 250px;
   border: 1px solid #bebebe;
   border-radius: 5px;
   /* padding: 10px 0; */
@@ -246,8 +247,9 @@ all:none;
   position: fixed;
   /* top: 60%; */
   /* margin-top: 0px; */
-  /* left: 20%; */
+  /* left: 10%; */
   width: 100%;
+  height: 250px;
   max-width: 281px;
   border: 1px solid #bebebe;
   border-radius: 5px;
