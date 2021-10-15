@@ -160,7 +160,6 @@ export const TRANSLATIONS_ZH = {
       decline: "衰退"
     }
   },
-
   about: {
     title: {
       about: ""
