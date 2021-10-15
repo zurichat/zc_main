@@ -72,6 +72,9 @@ export const TRANSLATIONS_ZH = {
       info: "信息",
       privacy: "隐私权和条款",
       market: "市场",
+      security: "安全",
+      web3: "Web3/DAO",
+      blog: "博客",
       knowUs: "了解我们",
       downloads: "下载",
       contact: "接触",
@@ -82,6 +85,76 @@ export const TRANSLATIONS_ZH = {
     cookies: {
       textOne: "我们使用第三方",
       textTwo: "cookie",
+      textThree: "来个性化您的网站体验。",
+      accept: "允许",
+      decline: "衰退"
+    }
+  },
+
+  pricing: {
+    title: {
+      pricing: "定价 - Zuri Chat"
+    },
+
+    nav: {
+      pricing: "价钱",
+      about: "关于",
+      downloads: "下载",
+      contact: "接触",
+      signup: "报名",
+      login: "登录"
+    },
+
+    cardOne: {
+      headline: "特征",
+      post_headline: "与我们一起创造您的未来、网络、协作、教育和远程学习",
+      call_to_action: "免费试用 Zuri.chat"
+    },
+
+    cardThree: {
+      duration_one: "年度的",
+      duration_two: "每月",
+      button: "开始"
+    },
+
+    sectionThree: {
+      headline: "引领企业安全之路",
+      description: "除了传输和静态加密之外，我们还运营全面的合规性和保证计划。",
+      link: "了解有关安全性的更多信息..."
+    },
+
+    sectionFour: {
+      headline: "无论您做什么工作，您都可以在 Zuri Chat 中完成",
+      button_one: "与销售人员交谈",
+      button_two: "免费尝试"
+    },
+
+    FAQ: {
+      headline: "常见问题",
+      link_info: "获取更多信息",
+      link: "在 Zuri Chat 计费。"
+    },
+
+    footer: {
+      company: "公司",
+      careers: "职业",
+      about: "关于",
+      info: "信息",
+      privacy: "隐私权和条款",
+      market: "市场",
+      security: "安全",
+      web3: "Web3/DAO",
+      blog: "博客",
+      knowUs: "了解我们",
+      downloads: "下载",
+      contact: "接触",
+      documentation: "文档",
+      socialMedia: "社交媒体",
+      rights: "聊天。版权所有"
+    },
+    cookies: {
+      textOne: "我们使用第三方",
+      textTwo: "曲奇饼",
       textThree: "来个性化您的网站体验。",
       accept: "允许",
       decline: "衰退"
