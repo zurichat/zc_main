@@ -319,6 +319,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   background-color: white;
+  max-width : 100%; 
 `
 const InputWrapper = styled.section`
   border: 1px solid hsla(0, 0%, 92%, 1);

@@ -51,7 +51,7 @@ export const StyledProfileWrapper = styled.section`
             }
             .avatar {
               object-fit: cover;
-              border-radius: 50%;
+              height: 100%;
               width: 100%;
             }
           }
@@ -285,3 +285,4 @@ export const StyledProfileWrapper = styled.section`
     }
   }
 `
+// border-radius: 50%;

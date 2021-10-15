@@ -1,8 +1,10 @@
 import React, { useState } from "react"
 import Picker, { SKIN_TONE_MEDIUM_DARK } from "emoji-picker-react"
 
+import styles from "./EmojiReaction.module.css"
+
 import "./EmojiReaction.css"
-const EmojiReaction = () => {
+const EmojiReaction = ({ handleEmojiClicked }) => {
   const [chosenEmoji, setChosenEmoji] = useState(null)
 
   const onEmojiClick = (event, emojiObject) => {
@@ -12,10 +14,14 @@ const EmojiReaction = () => {
   const resetEmoji = () => {
     setChosenEmoji(null)
   }
+
   return (
     <>
-      <div style={{ textAlign: "center", marginLeft: "810px" }}>
-        <Picker onEmojiClick={onEmojiClick} skinTone={SKIN_TONE_MEDIUM_DARK} />
+      <div className={styles.EmojiReaction}>
+        <Picker
+          onEmojiClick={handleEmojiClicked}
+          skinTone={SKIN_TONE_MEDIUM_DARK}
+        />
         {chosenEmoji && (
           <div
             onClick={() => {

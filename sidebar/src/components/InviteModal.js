@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from '../styles/InviteModal.module.css'
+import React from "react"
+import styles from "../styles/InviteModal.module.css"
 // import InviteSuccess from './InvitationAcceptance'
 // import InviteFailed from './Modal'
 // import InviteLoading from './SendingInvite'

@@ -1,18 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 
-import styles from '../styles/adminTab.module.css'
+import styles from "../styles/adminTab.module.css"
 
 // components
-import OverviewTab from '../components/OverviewTab'
-import SettingsTab from '../components/SettingsTab'
-import PaymentTab from '../components/PaymentTab'
-import MembersTab from '../components/MembersTab'
-import HistoryTab from '../components/HistoryTab'
-import TokensTab from '../components/TokensTab'
+import OverviewTab from "../components/OverviewTab"
+import SettingsTab from "../components/SettingsTab"
+import PaymentTab from "../components/PaymentTab"
+import MembersTab from "../components/MembersTab"
+import HistoryTab from "../components/HistoryTab"
+import TokensTab from "../components/TokensTab"
+import ContactTab from "./ContactTab"
 
 // icons
-import { FiMenu } from 'react-icons/fi'
-import { CardProvider } from '../../../context/CardContext'
+import { FiMenu } from "react-icons/fi"
+import { CardProvider } from "../../../context/CardContext"
 
 const AdminTab = () => {
   const [openTab, setOpenTab] = useState(false)
@@ -70,7 +71,7 @@ const AdminTab = () => {
               active === 4 ? styles.tabHeaderItemActive : styles.tabHeaderItem
             }
           >
-            Member changes
+            Contact
           </div>
           <div
             onClick={() => {
@@ -81,7 +82,7 @@ const AdminTab = () => {
               active === 5 ? styles.tabHeaderItemActive : styles.tabHeaderItem
             }
           >
-            Tokens
+            Member changes
           </div>
           <div
             onClick={() => {
@@ -90,6 +91,17 @@ const AdminTab = () => {
             }}
             className={
               active === 6 ? styles.tabHeaderItemActive : styles.tabHeaderItem
+            }
+          >
+            Tokens
+          </div>
+          <div
+            onClick={() => {
+              setActive(7)
+              setOpenTab(!openTab)
+            }}
+            className={
+              active === 7 ? styles.tabHeaderItemActive : styles.tabHeaderItem
             }
           >
             Payment method
@@ -105,9 +117,10 @@ const AdminTab = () => {
           )}
           {active === 2 && <HistoryTab />}
           {active === 3 && <SettingsTab />}
-          {active === 4 && <MembersTab />}
-          {active === 5 && <TokensTab />}
-          {active === 6 && <PaymentTab />}
+          {active === 4 && <ContactTab />}
+          {active === 5 && <MembersTab />}
+          {active === 6 && <TokensTab />}
+          {active === 7 && <PaymentTab />}
         </div>
       </div>
     </CardProvider>
