@@ -18,6 +18,11 @@ import { goToDefaultChannel } from "../../api/channels"
 // import authBg5 from './assets/auth_bg5.svg'
 //import GoogleLogin from 'react-google-login'
 
+import Loader from "react-loader-spinner"
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+
+// import styles from "../../component-styles/Spinner.module.css"
+
 const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -26,6 +31,7 @@ const Login = () => {
   const [passworderror, setpassworderror] = useState("")
   const [rememberMe, setRememberMe] = useState("")
   const [Loading, setLoading] = useState(false)
+  const [loggingIn, setLoggingIn] = useState(false)
 
   let history = useHistory()
 
@@ -43,14 +49,17 @@ const Login = () => {
     e.preventDefault()
     setemailerror("")
     setpassworderror("")
+    setLoggingIn(true)
 
     if (!email) {
       setemailerror(`Enter an email address`)
+      setLoggingIn(false)
       return
     }
 
     if (!password) {
       setpassworderror(`Enter a Password`)
+      setLoggingIn(false)
       return
     }
 
@@ -63,6 +72,7 @@ const Login = () => {
         const { data, message } = response.data
 
         setLoading(true)
+        setLoggingIn(false)
 
         //Store token in localstorage
         sessionStorage.setItem("token", data.user.token)
@@ -122,6 +132,7 @@ const Login = () => {
 
         //Render error message to the user
         seterror(data.message) //Change this when there is a design
+        setLoggingIn(false)
       })
   }
 
@@ -137,8 +148,14 @@ const Login = () => {
           subHeader="Login with the data you entered during your registration"
           googleHeader="Login with Google"
           topLineText="OR"
-          submitButtonName="Log in"
-          disabled={email && password}
+          submitButtonName={
+            loggingIn ? (
+              <Loader type="TailSpin" color="#FFFFFF" height={40} width={40} />
+            ) : (
+              "Log in"
+            )
+          }
+          disabled={email && password && !loggingIn}
           error={error}
           handleSubmit={handleSubmit}
           bottomLine="New to us?"
@@ -190,8 +207,9 @@ const Login = () => {
               >
                 Forgot password?
               </Link>
-              <Link to="/troubleshooting/onboarding-help"> {""}Get help signing in</Link>
-
+              <Link to="/troubleshooting/onboarding-help">
+                Get help signing in
+              </Link>
             </div>
           </div>
         </FormWrapper>
