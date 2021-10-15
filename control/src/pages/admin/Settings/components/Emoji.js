@@ -173,6 +173,20 @@ const Emoji = () => {
     </svg>
   )
 
+  const searchIcon = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      id="Layer_1"
+      version="1.1"
+      viewBox="0 0 100 100"
+    >
+      <path
+        d="M64.5,44.6c0-11.6-9.4-20.9-20.9-20.9c-11.6,0-20.9,9.4-20.9,20.9  c0,11.6,9.4,20.9,20.9,20.9C55.1,65.6,64.5,56.2,64.5,44.6z M80,79.3l-1.8,1.8l-19-19c-4.2,3.7-9.6,6-15.7,6  c-13,0-23.5-10.5-23.5-23.5c0-13,10.5-23.5,23.5-23.5c13,0,23.5,10.5,23.5,23.5c0,6-2.3,11.5-6,15.7L80,79.3z"
+        fill="#231F20"
+      />
+    </svg>
+  )
+
   useEffect(() => {
     if (display) document.body.style.overflow = "hidden"
     if (!display) document.body.style.overflow = "scroll"
@@ -321,7 +335,7 @@ const Emoji = () => {
               >
                 {emojiThree}
               </button>
-              <button>{emojiIcon}</button>
+              {/* <button>{emojiIcon}</button> */}
               <button>{commentIcon}</button>
               <button>
                 <img src={ForwardIcon} alt="" />
@@ -357,7 +371,11 @@ const Emoji = () => {
         </div>
         <div className={classes.btn}>
           {customEmoji && <div className={classes.title}>{1} custom emoji</div>}
-          <button  style={customEmoji ? {marginLeft: 'auto'} : null} className={classes.addAlias} onClick={addAlias}>
+          <button
+            style={customEmoji ? { marginLeft: "auto" } : null}
+            className={classes.addAlias}
+            onClick={addAlias}
+          >
             Add Alias
           </button>
           <button className={classes.addCustomEmoji} onClick={addCustomEmoji}>
@@ -367,8 +385,25 @@ const Emoji = () => {
         <div className={classes.search}>
           <input
             type="text"
+            placeholder="Search"
             onChange={e => setState({ name: e.target.value })}
           />
+          <div className={classes.searchIcon}>{searchIcon}</div>
+        </div>
+        <div className={classes.table}>
+          <div className={classes.tableHeader}>
+            <div className={classes.columnTitle1}>Image</div>
+            <div className={classes.columnTitle2}>Name <span>&uarr;</span></div>
+            <div className={classes.columnTitle3}>Date added <span>&uarr;</span></div>
+            <div className={classes.columnTitle4}>Added by</div>
+          </div>
+          <hr />
+          <div className={classes.tableContent}>
+            <div className={classes.emojiImage}><img src="" alt="" /></div>
+            <div className={classes.emojiName}>:6074817fe0bf9:</div>
+            <div className={classes.emojiDate}>October 15th</div>
+            <div className={classes.addedBy}>Damilola Akinlade</div>
+          </div>
         </div>
       </div>
 
