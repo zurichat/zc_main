@@ -3,10 +3,14 @@ import styles from "../styles/ModalComponentStyles.module.css"
 
 const RoomOptions = (
   { isClicked,
-    position
+    position,
+    room
   }
   ) => {
     // const isClicked = true;
+  // const room_Id = room.room_url.split("/")[2]
+  // const org = localStorage.getItem("currentWorkspace")
+  // const orgs = sessionStorage.getItem
 
   let screenHeight = window.innerHeight/2;
 
