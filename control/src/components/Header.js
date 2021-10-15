@@ -1,10 +1,20 @@
-import React from "react"
+/* eslint-disable react/no-unknown-property */
+import React, { useState } from "react"
 import { Link, NavLink } from "react-router-dom"
 import headerStyles from "../component-styles/HeaderStyle.module.css"
 import zurichatlogo from "../component-assets/zurilogo.svg"
 // import searchIcon from "../component-assets/searchIcon.svg"
 //import { Button } from '../pages/createworkspace/components/WorkspaceHome'
 import { useTranslation } from "react-i18next"
+import Modal from "react-bootstrap/Modal"
+
+import world from "../component-assets/language/world.png"
+import uk from "../component-assets/language/uk.png"
+import ar from "../component-assets/language/ar.png"
+import de from "../component-assets/language/de.png"
+import fr from "../component-assets/language/fr.png"
+import us from "../component-assets/language/us.png"
+import zh from "../component-assets/language/zh.png"
 
 const HeaderSearchSuggestion = () => {
   const { t } = useTranslation()
@@ -15,6 +25,7 @@ const HeaderSearchSuggestion = () => {
     location.reload()
   }
 
+  const [lgShow, setLgShow] = useState(false)
   //const ref = useRef()
   //const toggleBgOverlay = () => {
   //  document
@@ -60,16 +71,8 @@ const HeaderSearchSuggestion = () => {
           />
           <span className={`mb-2 ${headerStyles.zuriChat}`}>Zuri Chat</span>
         </Link>
-        {/*<Link to="/search" className={`d-block d-lg-none ${headerStyles.search_wrapper2}`}>
-          <img
-            src={searchIcon}
-            alt="search-Icon"
-            className={`align-top ${headerStyles.searchImage1}`}
-          />
-        </Link>*/}
-        <div className={`line ${headerStyles.line}`}></div>
 
-        <select
+        {/* <select
           className={`btn btn-transparent  ${headerStyles.select}`}
           type="button"
           onChange={() => saveLang(event.target.value)}
@@ -80,7 +83,103 @@ const HeaderSearchSuggestion = () => {
           <option value="zh">Chinese</option>
           <option value="de">German</option>
           <option value="ar">Arabic</option>
-        </select>
+        </select> */}
+
+        <div className={`d-lg-none navbar-nav-scroll ${headerStyles.language}`}>
+          <button
+            onClick={() => setLgShow(true)}
+            className={headerStyles.world}
+          >
+            <img
+              src={world}
+              alt="Change Language"
+              title="Choose your Language"
+            />{" "}
+          </button>
+          <Modal
+            size="lg"
+            show={lgShow}
+            onHide={() => setLgShow(false)}
+            aria-labelledby="example-modal-sizes-title-lg"
+          >
+            <Modal.Header
+              className={headerStyles.modal_header}
+              closeButton
+              closeLabel
+            >
+              <Modal.Title id="example-modal-sizes-title-lg">
+                Select your language
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body className={headerStyles.country}>
+              <button
+                value="en"
+                onClick={() => saveLang(event.target.value)}
+                className={`btn ${headerStyles.select}`}
+              >
+                <img
+                  className={headerStyles.country_logo}
+                  src={uk}
+                  alt="English (UK)"
+                  title="English (UK)"
+                />{" "}
+                <span>English (UK)</span>
+              </button>
+              <button
+                className={`btn ${headerStyles.select}`}
+                value="fr"
+                onClick={() => saveLang(event.target.value)}
+              >
+                <img
+                  className={headerStyles.country_logo}
+                  src={fr}
+                  alt="French"
+                  title="French"
+                />{" "}
+                <span>French</span>
+              </button>
+              <button
+                className={`btn ${headerStyles.select}`}
+                value="zh"
+                onClick={() => saveLang(event.target.value)}
+              >
+                <img
+                  className={headerStyles.country_logo}
+                  src={zh}
+                  alt="Chinese"
+                  title="Chinese"
+                />{" "}
+                <span>Chinese</span>
+              </button>
+              <button
+                className={`btn ${headerStyles.select}`}
+                value="ar"
+                onClick={() => saveLang(event.target.value)}
+              >
+                <img
+                  className={headerStyles.country_logo}
+                  src={ar}
+                  alt="Arabic"
+                  title="Arabic"
+                />{" "}
+                <span>Arabic</span>
+              </button>
+              <button
+                className={`btn ${headerStyles.select}`}
+                value="de"
+                onClick={() => saveLang(event.target.value)}
+              >
+                <img
+                  className={headerStyles.country_logo}
+                  src={de}
+                  alt="Dutch"
+                  title="Dutch"
+                />{" "}
+                <span>Dutch</span>
+              </button>
+            </Modal.Body>
+          </Modal>
+        </div>
 
         <button
           className={`navbar-toggler ${headerStyles.toggle}`}
@@ -97,7 +196,6 @@ const HeaderSearchSuggestion = () => {
             <span></span>
           </span>
         </button>
-
         <div
           className={`collapse px-3 justify-content-center navbar-collapse ${headerStyles.collapse}`}
           id="navbarText"
@@ -184,13 +282,104 @@ const HeaderSearchSuggestion = () => {
               </Link>
             </li>
           </ul>
-          {/*<Link to="/search" className={headerStyles.search_wrapper}>
+        </div>
+
+        <div
+          className={`navbar-nav d-none d-lg-flex me-auto my-2 my-lg-0 navbar-nav-scroll ${headerStyles.signs}`}
+        >
+          <button
+            onClick={() => setLgShow(true)}
+            className={headerStyles.world}
+          >
             <img
-              src={searchIcon}
-              alt="search-Icon"
-              className={`d-inline-block align-top ${headerStyles.searchImage}`}
-            />
-          </Link>*/}
+              src={world}
+              alt="Change Language"
+              title="Choose your Language"
+            />{" "}
+          </button>
+          <Modal
+            size="lg"
+            show={lgShow}
+            onHide={() => setLgShow(false)}
+            aria-labelledby="example-modal-sizes-title-lg"
+          >
+            <Modal.Header
+              className={headerStyles.modal_header}
+              closeButton
+              closeLabel
+            >
+              <Modal.Title id="example-modal-sizes-title-lg">
+                Select your language
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body className={headerStyles.country}>
+              <button
+                value="en"
+                onClick={() => saveLang(event.target.value)}
+                className={`btn ${headerStyles.select}`}
+              >
+                <img
+                  className={headerStyles.country_logo}
+                  src={uk}
+                  alt="English (UK)"
+                  title="English (UK)"
+                />{" "}
+                <span>English (UK)</span>
+              </button>
+              <button
+                className={`btn ${headerStyles.select}`}
+                value="fr"
+                onClick={() => saveLang(event.target.value)}
+              >
+                <img
+                  className={headerStyles.country_logo}
+                  src={fr}
+                  alt="French"
+                  title="French"
+                />{" "}
+                <span>French</span>
+              </button>
+              <button
+                className={`btn ${headerStyles.select}`}
+                value="zh"
+                onClick={() => saveLang(event.target.value)}
+              >
+                <img
+                  className={headerStyles.country_logo}
+                  src={zh}
+                  alt="Chinese"
+                  title="Chinese"
+                />{" "}
+                <span>Chinese</span>
+              </button>
+              <button
+                className={`btn ${headerStyles.select}`}
+                value="ar"
+                onClick={() => saveLang(event.target.value)}
+              >
+                <img
+                  className={headerStyles.country_logo}
+                  src={ar}
+                  alt="Arabic"
+                  title="Arabic"
+                />{" "}
+                <span>Arabic</span>
+              </button>
+              <button
+                className={`btn ${headerStyles.select}`}
+                value="de"
+                onClick={() => saveLang(event.target.value)}
+              >
+                <img
+                  className={headerStyles.country_logo}
+                  src={de}
+                  alt="Dutch"
+                  title="Dutch"
+                />{" "}
+                <span>Dutch</span>
+              </button>
+            </Modal.Body>
+          </Modal>
         </div>
 
         <ul

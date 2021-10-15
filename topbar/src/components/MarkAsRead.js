@@ -1,20 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import radioFilled from '../assets/images/radio-fill.svg'
 import radioNotFilled from '../assets/images/radio-not-fill.svg'
 import checkFill from '../assets/images/check-fill.svg'
 import checkNotFill from '../assets/images/check-not-fill.svg'
 import styles from '../styles/MarkAsRead.module.css'
-// import { ProfileContext } from "../context/ProfileModal"
+import { ProfileContext } from "../context/ProfileModal"
 import { authAxios } from "../utils/Api"
 const MarkAsRead = () => {
   const [channelView, setChannelView] = useState("start me where i left off and mark the channel read")
   const [prompt, setPrompt] = useState(false)
   
-  // const { user, orgId } = useContext(ProfileContext)
-  // const userId = user._id
+  const { user, orgId } = useContext(ProfileContext)
+  const userId = user._id
+  const userEmail = JSON.parse(sessionStorage.getItem("user")).email
   const sessionKey = "mark-as-read-settings"
-  const userId = JSON.parse(sessionStorage.getItem("organisations"))[0].id
-  const orgId = JSON.parse(sessionStorage.getItem("organisations"))[0].member_id
   const handlePromptSelection = () => {
     const selection = !prompt
     setPrompt(selection)
@@ -70,14 +69,22 @@ const MarkAsRead = () => {
       setPrompt(settings.when_i_mark_everything_as_read)
     } else {
       // get saved settings from database
-        setChannelView(channelView)
-        setPrompt(prompt)
-        sessionStorage.setItem(sessionKey, 
-          JSON.stringify({ 
-            when_i_view_a_channel: channelView,
-            when_i_mark_everything_as_read: prompt
-          })
-        )
+        authAxios.get(`/organizations/${orgId}/members?query=${userEmail}`)
+        .then(res => {
+          const settings = res.data.data[0].settings.mark_as_read
+          setChannelView(settings.when_i_view_a_channel)
+          setPrompt(settings.when_i_mark_everything_as_read)
+          sessionStorage.setItem(sessionKey, 
+            JSON.stringify({ 
+              when_i_view_a_channel: settings.when_i_view_a_channel,
+              when_i_mark_everything_as_read: settings.when_i_mark_everything_as_read
+            })
+          )
+        })
+        .catch(e => {
+            //error
+        })
+       
     }
    
   }, [])

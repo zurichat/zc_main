@@ -6,12 +6,18 @@ import SectionOne from './components/sectionOne'
 import styles from './styles/CareerGrid.module.css'
 import Header from '../../components/Header'
 import { Helmet } from 'react-helmet'
+import "../../i18n";
+import { useTranslation} from "react-i18next";
 
-function Careers() {
+
+function Careers() { 
+  
+  const { t } = useTranslation();
+
   return (
     <div>
       <Helmet>
-        <title> Careers - Zuri Chat</title>
+        <title> {t("careers.title.careers")} - Zuri Chat</title>
       </Helmet>
       <Header />
       <div className={`${styles.grid}`}>

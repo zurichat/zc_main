@@ -1,4 +1,7 @@
 export const TRANSLATIONS_ZH = {
+  header: {
+    language_select: "改变语言"
+  },
   landing: {
     title: {
       landing: ""
@@ -17,8 +20,7 @@ export const TRANSLATIONS_ZH = {
     hero: {
       pre_headline: "对于组织和机构",
       headline: "一种完全集成的连接和交互方式",
-      post_headline:
-        "与我们一起创造您的未来、网络、协作、教育和远程学习",
+      post_headline: "与我们一起创造您的未来、网络、协作、教育和远程学习",
       call_to_action: "免费试用 Zuri.chat"
     },
 
@@ -48,23 +50,20 @@ export const TRANSLATIONS_ZH = {
 
     featureRowFour: {
       title: "高级搜索",
-      headline:
-        "轻松访问工作区中的文件和消息",
-      description:
-        "使用搜索工具，轻松查找以前共享的消息、文件和链接。",
+      headline: "轻松访问工作区中的文件和消息",
+      description: "使用搜索工具，轻松查找以前共享的消息、文件和链接。",
       link: "了解有关搜索的更多信息"
     },
 
     cardOne: {
-      title:
-        "随时随地进行教育、协作和团队合作的灵活方式",
+      title: "随时随地进行教育、协作和团队合作的灵活方式",
       button: "现在免费注册"
     },
 
     cardTwo: {
-      title:
-        "成为第一个从 Zuri Chat 获得更新和独家优惠的人",
-      description: "通过在此处注册以获取有关 Zuri Chat 的最新消息和特别优惠，丰富您的 Zuri Chat 体验",
+      title: "成为第一个从 Zuri Chat 获得更新和独家优惠的人",
+      description:
+        "通过在此处注册以获取有关 Zuri Chat 的最新消息和特别优惠，丰富您的 Zuri Chat 体验",
       button: "订阅"
     },
     footer: {
@@ -84,7 +83,7 @@ export const TRANSLATIONS_ZH = {
       socialMedia: "社交媒体",
       rights: "聊天。版权所有"
     },
-    cookies:{
+    cookies: {
       textOne: "我们使用第三方",
       textTwo: "cookie",
       textThree: "来个性化您的网站体验。",
@@ -93,24 +92,21 @@ export const TRANSLATIONS_ZH = {
     }
   },
 
-  
-  pricing: 
-  {
+  pricing: {
     title: {
       pricing: "定价 - Zuri Chat"
     },
 
     cardOne: {
       headline: "特征",
-      post_headline:
-        "与我们一起创造您的未来、网络、协作、教育和远程学习",
+      post_headline: "与我们一起创造您的未来、网络、协作、教育和远程学习",
       call_to_action: "免费试用 Zuri.chat"
     },
 
     cardThree: {
       duration_one: "年度的",
       duration_two: "每月",
-      button: "开始",
+      button: "开始"
     },
 
     sectionThree: {
@@ -301,6 +297,286 @@ export const TRANSLATIONS_ZH = {
       description_br: "在这里通过电子邮件获取最新的插件",
       description_brr: "在 Zuri 聊天！",
       button: "订阅"
+  },
+        
+
+  about: {
+    title: {
+      about: ""
+    },
+
+    banner: {
+      headline_one: "让工作变得简单、愉快和",
+      headline_two: "更有生产力。",
+      description:
+        "是一个协作中心，可将合适的人员和工具聚集在一起以完成工作。 从财富 100 强公司到角落市场，世界各地有数百万人使用 ZuriChat 连接他们的团队、统一他们的系统并推动他们的业务向前发展。"
+    },
+
+    counter: {
+      customers: "有薪酬的",
+      customers_: "顾客",
+      fortune_companies: "财富 100 强",
+      fortune_companies_: "用",
+      countries: "国家每天都有",
+      countries_: "活跃用户"
+    },
+
+    whoWeAre: {
+      title: "我们是谁以及如何加入我们",
+      description: "我们的使命是通过提供一个平台来改善人们的工作生活",
+      description_: "承诺提供各种机会和简单、愉快和更有成效的工作生活。"
+    },
+
+    highlights: {
+      title: "远程工作比以往任何时候都更有趣",
+      description: "ZuriChat 是工作与乐趣相结合的地方。",
+      description_: "从全球任何地方高效地与您的团队联系和互动",
+      channels: {
+        title: "频道",
+        description: "将对话组织成专门的",
+        description_: "称为通道的空间"
+      },
+      holidayCalender: {
+        title: "假期日历",
+        description: "添加假期，设置提醒",
+        description_: "并一目了然地查看所有事件"
+      },
+      companyDeadline: {
+        title: "公司截止日期",
+        description: "跟踪截止日期",
+        description_: "公司截止日期",
+        description__: "特征"
+      },
+      quickReply: {
+        title: "快速回复应用",
+        description: "获得对 Direct 的快速回复",
+        description_: "留言"
+      },
+      todoList: {
+        title: "待办事项清单",
+        description: "使用待办事项列表组织任务",
+        description_: "特征"
+      }
+    },
+
+    features: {
+      title: "特殊功能",
+      description: "通过将所有工作工具组装到一个地方来提高您的生产力",
+      avatar: {
+        title: "动画头像休息室",
+        description: "在头像休息室创建和动画你自己的头像"
+      },
+      files: {
+        title: "公司档案",
+        description: "在 ZuriChat 上访问您在 Google Drive 上的文件。"
+      },
+      accessibility: {
+        title: "无障碍",
+        description: "掌控一切，使用 ZuriChat 并享受",
+        description_: "最佳辅助功能"
+      },
+      goals: {
+        title: "Objectifs de l'entreprise",
+        description: "紧跟公司目标",
+        description_: "就在 ZuriChat 里面"
+      }
+    },
+
+    cta: {
+      title: "无论您做什么工作，您都可以在 Zuri Chat 中完成",
+      link_sales: "与销售人员交谈",
+      link_try: "免费试用"
+    },
+  },
+
+
+    careers: {
+      title: {
+        careers: "职业"
+      },
+      section_one: {
+        headline: "Zuri Chat 的职业",
+        post_headline:
+          "热衷于让工作生活更简单、更高效？加入我们远程友好且灵活的团队",
+        join_link: "加入 Zuri 聊天"
+      },
+      career_grid: {
+        headline: "加入我们的实习",
+        post_headline:
+          "Zuri Internship 是一项 100% 免费、远程和快节奏的培训，面向寻求磨练技术技能和提升简历的年轻专业人士",
+        categories: {
+          category_frontend: {
+            headline: "前端开发",
+            post_headline:
+              "此轨道处理用户与之交互的应用程序方面。前端开发人员将能够正确地将给定的设计解释为用户界面。"
+          },
+          category_backend: {
+            headline: "后端开发",
+            post_headline:
+              "该轨道处理用户不直接与之交互的应用程序方面。它通过运行一些后端代码或连接到数据库来允许前端功能。"
+          },
+          category_design: {
+            headline: "设计",
+            post_headline:
+              "此轨道处理为应用程序创建图形计划。您将学习将项目文档转换为可查看和可理解的图形设计，供开发人员使用。"
+          },
+          category_mobile: {
+            headline: "移动开发",
+            post_headline:
+              "移动轨道包含开发人员创建移动应用程序所需的工具和语言列表。移动应用程序可以是 IOS 或 Android。"
+          },
+          category_digital_marketing: {
+            headline: "数字营销",
+            post_headline:
+              "它包括使用数字手段和实用程序来提高产品、服务和品牌的可发现性。"
+          },
+          category_frameworks: {
+            headline: "构架",
+            post_headline:
+              "在该计划中，我们将探索几个有用的框架，让您在行业中占据优势，并帮助您更快地开发复杂的应用程序。"
+          }
+        },
+        join_cohort: "从 2022 年夏天开始，加入我们的下一个队列",
+        register_now: "现在注册"
+      },
+      section_two: {
+        headline: "工作和繁荣",
+        post_headline: "我们提供的福利可以帮助您感觉最好并做到最好。",
+        digital_wellness: {
+          headline: "数字优先办公室",
+          post_headline:
+            "凭借远程角色、免办公室入职和灵活的工作实践，我们为不断变化的现实、时间表和责任做好准备。"
+        },
+        just_for_you: {
+          headline: "只为你",
+          post_headline:
+            "获得专业发展的年度津贴，以及满足您需求的每月津贴；新的工作外观，宠物，无论对您来说最重要。"
+        },
+        health_and_wellness: {
+          headline: "健康与保健",
+          post_headline:
+            "Zuri 支付 100% 的保费。我们还提供一系列免费的心理健康和福祉资源。"
+        }
+      }
+    }
+  },
+
+
+  download_desktop: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "体验 Zuri Chat 的桌面和移动应用程序",
+      post_headline: "使用 Zuri Chat 与您的团队联系从未如此简单。",
+      desktop_line: "桌面版 Zuri",
+      desktop_app: "在 苹果应用商店 下载",
+      desktop_soft: "从微软获取",
+      mobile_line: "移动版 Zuri",
+      mobile_app: "在 应用商店 下载",
+      mobile_play: "在 谷歌播放 上获取"
+    },
+
+    section_two: {
+      headline: "在任何这些设备上下载并享受 Zuri Chat 体验",
+      windows: "视窗",
+      mac: "苹果系统",
+      ios: "iOS",
+      android: "安卓",
+    },
+
+    section_three: {
+      headline: "同样的感觉，同样的团队在 Zuri App 上！",
+    }
+  },
+  download_ios: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "下载适用于 iOS 的 Zuri Chat 测试版。",
+      post_headline: "获取 Zuri 聊天 DM 和频道",
+      mac_line: "我们也在 Mac 上",
+      mac_description: "与我们的 Mac、Windows 和 Linux 应用程序保持对话。我们可以通过电子邮件向您发送快速下载链接以帮助您入门！",
+      button: "获取下载链接",
+    }
+  },
+  download_mac: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "在 MacOS 上体验 Zuri Chat",
+      post_headline: "使用 Zuri Chat 与您的团队联系从未如此简单。",
+      download: "下载",
+      download_soft: "为 Windows 下载？"
+    },
+
+    section_two: {
+      headline: "为什么是 Zuri 聊天应用程序？",
+      post_headline: "即使在旅途中使用 zuri 聊天电脑，也不会错过无缝协作体验",
+      android: "安卓",
+      and_break: "和",
+      ios: "iOS",
+      apps_break: "应用。"
+    },
+
+    section_three: {
+      headline: "同样的感觉，同样的团队在 Zuri App 上！",
+      download: "下载 MAC",
+      download_soft: "为 Windows 下载？"
+    }
+  },
+  download_mobile: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "体验 Zuri Chat 的桌面和移动应用程序",
+      post_headline: "使用 Zuri Chat 与您的团队联系从未如此简单。",
+    },
+
+    section_two: {
+      headline: "在任何这些设备上下载并享受 Zuri Chat 体验",
+      windows: "视窗",
+      mac: "苹果系统",
+      android: "安卓",
+      ios: "iOS"
+    },
+
+    section_three: {
+      headline: "同样的感觉，同样的团队在 Zuri App 上！",
+    }
+  },
+  download_windows: {
+    title: {
+      download: "下载 Zuri 聊天"
+    },
+
+    section_one: {
+      headline: "在 Windows 上体验 Zuri Chat",
+      post_headline: "使用 Zuri Chat 与您的团队联系从未如此简单。",
+      download: "下载",
+      download_mac: "为 Mac 下载？"
+    },
+
+    section_two: {
+      headline: "为什么是 Zuri 聊天应用程序？",
+      post_headline: "即使在旅途中使用 zuri 聊天电脑，也不会错过无缝协作体验",
+      android: "安卓",
+      and_break: "和",
+      ios: "iOS",
+      apps_break: "应用。"
+    },
+
+    section_three: {
+      headline: "同样的感觉，同样的团队在 Zuri App 上！",
+      download: "下载适用于 WINDOWS",
+      download_ios: "为 Mac 下载？"
     }
   },
 }

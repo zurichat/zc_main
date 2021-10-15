@@ -1,29 +1,52 @@
-import { useState } from "react"
-
+import { useState, useEffect } from "react"
+import axios from "axios"
 import cancel from "../assets/images/cancel.svg"
 import SearchValue from "./searchValueComponent"
 import Styled from "styled-components"
-import theme1 from "../assets/images/theme1.png"
-import theme2 from "../assets/images/theme2.png"
-import theme3 from "../assets/images/theme3.png"
-
+import noImg from "../assets/images/avatar_vct.svg"
+import SearchModalResult from "./ModalAutoCompleteResult"
+import { NoResult } from "./SearchNotFound"
 export const BigModal = ({ onClose, inputValue }) => {
-  const [value, setValue] = useState(inputValue)
+  const [result, setResult] = useState([])
+  const base_URL = `https://todo.zuri.chat/api/v1/search/614679ee1a5607b13c00bcb7/614679ee1a5607b13c00bcb7?key=${inputValue}&member_id=6139a43559842c7444fb01ef&org_id=613a3ac959842c7444fb0240`
+
+  useEffect(() => {
+    axios
+      .get(base_URL)
+      .then(res => {
+        setResult(res.data.data)
+        //  console.log(result)
+      })
+      .catch(error => {
+        if (error.response) {
+          // The request was made and the server responded with a status code
+          // that falls out of the range of 2xx
+          setResult([])
+        }
+      })
+  }, [result[0]])
+  // console.log(result)
+  let i = 0
 
   const sidebar = document.getElementById(
     "single-spa-application:@zuri/sidebar"
   )
+
+  const tobBar = document.getElementById("single-spa-application:@zuri/topbar")
   const width = sidebar.clientWidth
+  const top = tobBar.clientHeight
 
   const SearchContainer = Styled.div`
   background-color: white;
   position: fixed;
+  top: ${top}px;
   left: ${width}px;
-  top: 0;
   right: 0;
+  overflow: auto;
   height: 100vh;
   z-index: 2000;
-  padding: 20px; `
+  padding: 40px 20px;
+  `
 
   const StyledInput = Styled.input`
   outline: none;
@@ -32,9 +55,17 @@ export const BigModal = ({ onClose, inputValue }) => {
   width: 100%;
   border-bottom: 2px solid #00B87C;
   `
-
+  let card = result.map((item, i) => (
+    <SearchValue
+      key={i}
+      src={noImg}
+      title={item.title}
+      description={item.description}
+    />
+  ))
   return (
     <SearchContainer className="bigModal">
+      <h2>{`Search result for ${inputValue}`}</h2>
       <button
         className="btn"
         style={{
@@ -46,45 +77,14 @@ export const BigModal = ({ onClose, inputValue }) => {
       >
         <img src={cancel} alt="close" />
       </button>
-      <StyledInput
+      {/* <StyledInput
         placeholder="Search"
         value={value}
         onChange={e => {
           setValue(e.target.value)
-        }}
-      />
-      <SearchValue
-        src={theme1}
-        title="the main title"
-        description="please work for me i beg of you i want to check bla bla please be this i want to do somwthing i want you to work please work for daddy og work for daydy just work for me  ohhhh lala la la oh la ble bla bla sheep black black black sheeep"
-      />
-      <SearchValue
-        src={theme2}
-        title="small small oh"
-        description="please work for me i beg of you i want to check"
-      />
-      <SearchValue
-        src={theme3}
-        title="its being going"
-        description="please work for me i beg of you i want to check"
-      />
-      <SearchValue
-        src={theme3}
-        title="its being going"
-        description="please work for me i beg of you i want to check"
-      />
-
-      <SearchValue
-        src={theme3}
-        title="its being going"
-        description="please work for me i beg of you i want to check"
-      />
-
-      <SearchValue
-        src={theme3}
-        title="its being going"
-        description="please work for me i beg of you i want to check"
-      />
+        }} 
+      />*/}
+      {result === [] ? <h1>nhjdjsjrgi nrv</h1> : card}
     </SearchContainer>
   )
 }

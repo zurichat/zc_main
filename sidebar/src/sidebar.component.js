@@ -28,26 +28,29 @@ const Sidebar = props => {
     setnullValue(1)
   }, [])
 
-  {
-    //Listening for sidebar update
-    nullValue === 1 &&
-      dummySidebar &&
-      SubscribeToChannel(
-        `${currentWorkspace}_${props.state.user[0]._id}_sidebar`,
-        ctx => {
-          const websocket = ctx.data
-          // console.log("websocket", websocket)
-          if (websocket.event === "sidebar_update") {
-            let sidebar_update = { [websocket.plugin_id]: websocket.data }
-            //Update sidebar with recent changes
-            props.dispatch({
-              type: ACTIONS.UPDATE_PLUGINS,
-              payload: sidebar_update
-            })
+  useEffect(() => {
+    {
+      //Listening for sidebar update
+      nullValue === 1 &&
+        dummySidebar &&
+        SubscribeToChannel(
+          `${currentWorkspace}_${props.state.user[0]._id}_sidebar`,
+          ctx => {
+            const websocket = ctx.data
+            // console.log("websocket", websocket)
+            if (websocket.event === "sidebar_update") {
+              let sidebar_update = { [websocket.plugin_id]: websocket.data }
+              //Update sidebar with recent changes
+              props.dispatch({
+                type: ACTIONS.UPDATE_PLUGINS,
+                payload: sidebar_update
+              })
+            }
           }
-        }
-      )
-  }
+        )
+    }
+  }, [])
+  
 
   return (
     <div className={`container-fluid ${styles.sb__container}`}>
