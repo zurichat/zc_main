@@ -6,12 +6,20 @@ import RoomItem from "./RoomItem"
 import SkeletonLoader from "./SkeletonLoader"
 
 export default function Starred(props) {
-  const [isOpen, setOpen] = useState(false)
+  const [isOpen, setOpen] = useState(true)
 
   const toggleDropdown = () => setOpen(!isOpen)
 
+  const [emptyRoom, setEmptyRoom] = useState(false)
+
+  console.warn("plugin", props)
+
   return props.state.sidebar ? (
-    <Fragment>
+    <div
+      style={{
+        display: !emptyRoom ? "block" : "none"
+      }}
+    >
       {props.state && (
         <DropDown
           categoryName="Starred"
@@ -21,48 +29,17 @@ export default function Starred(props) {
       )}
 
       {props.state.sidebar &&
-       Object.keys(props.state.sidebar).map((plugin, idx) =>{
-           return(
-            //    <h1 key={idx}>all good</h1>
-        <ul 
-        key={idx}
-        className={`col-12 ps-4 ${styles.item__row} ${isOpen && styles.open}`}
-        >
-        {props.state.sidebar[plugin].starred_rooms &&
-         props.state.sidebar[plugin].starred_rooms.map((room, idx) => {
-            if (room.room_name !== undefined) {
-              return (
-                  <RoomItem 
-                  room={room}
-                  key={idx}
-                  />
-              )
-            }
-          })}
-      </ul>
-      )
-    })
-
-      }
-      {/* {props.state.sidebar &&
-        props.name &&
-        Object.keys(props.state.sidebar).map((plugin, index) => {
-          
-            let category = props.state.sidebar[plugin].starred
-          
-          return category && category ===  "starred" ? (
-            <Room
-              isOpen={isOpen}
-              itemName={props.name}
-              id={props.state.sidebar.name}
-              key={index}
-              items={props.state.sidebar[plugin]}
-            >
-            <RoomItem />
-            </Room>
-          ) : null
-        })} */}
-    </Fragment>
+        Object.keys(props.state.sidebar).map((plugin, idx) => {
+          return (
+            props.state.sidebar[plugin].starred_rooms &&
+            props.state.sidebar[plugin].starred_rooms.map((room, idx) => {
+              if (room.room_name !== undefined) {
+                return <RoomItem room={room} key={idx} />
+              }
+            })
+          )
+        })}
+    </div>
   ) : (
     <SkeletonLoader />
   )

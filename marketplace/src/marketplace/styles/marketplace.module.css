@@ -548,6 +548,45 @@
   max-height: fit-content;
 }
 
+
+.pluginList {
+  display: flex;
+  height: 15px;
+  width: 50%;
+  margin-left: 5px;
+  color: #000;
+  font-size: 14px;
+  /* display: table-cell; */
+  display: flex;
+  background-color: #fff;
+  padding: 10px 0px 22px 25px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pluginList:hover {
+  background-color: #00b87c;
+  color: #fff;
+}
+
+.pluginBackground {
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06);
+  height: 200px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+/* .pluginHover {
+  color: #000;
+  margin-bottom: -40px;
+  cursor: pointer
+}
+
+.pluginHover:hover {
+   color: #fff;
+} */
+
+
 @media (max-width: 800px) {
   .pluginCardContainer {
     width: 100%;

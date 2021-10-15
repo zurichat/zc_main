@@ -486,5 +486,279 @@ export const TRANSLATIONS_EN = {
       legacyPolicy: "Legal Policy",
       aboutZuri: "About Zurichat"
     }
-  }
+  },
+
+  
+  about: {
+    title: {
+      about: ""
+    },
+
+    banner: {
+      headline_one: "Make work simple, pleasant and ",
+      headline_two: "more productive.",
+      description:
+        "is a collaboration hub that brings the right people and tools together to get work done. From Fortune 100 companies to corner markets, millions of people around the world use ZuriChat to connect their teams, unify their systems, and drive their business forward."
+    },
+
+    counter: {
+      customers: "Paid",
+      customers_: "Customers",
+      fortune_companies: "of the Fortune 100",
+      fortune_companies_: "use",
+      countries: "countries have daily",
+      countries_: "active users in"
+    },
+
+    whoWeAre: {
+      title: "Who we are and how to join us",
+      description:
+        "Our mission is to improve people's working life by providing a platform that can host a strong diverse team , of creative professionals who want to do the best work of their lives",
+      description_:
+        "promises all kinds of opportunities and a simple, pleasant and more productive working life."
+    },
+
+    highlights: {
+      title: "Working remotely more intriguing than ever",
+      description: "ZuriChat is where work meets fun.",
+      description_:
+        "Connect and interact with your team efficiently from anywhere around the globe",
+      channels: {
+        title: "Channels",
+        description: "Organize conversations into dedicated ",
+        description_: "spaces called channels"
+      },
+      holidayCalender: {
+        title: "Holiday Calender",
+        description: "Add holidays, set reminders ",
+        description_: "and see all events at a glance"
+      },
+      companyDeadline: {
+        title: "Company Deadline",
+        description: "Keep track of deadlines with ",
+        description_: "the company deadline ",
+        description__: "feature"
+      },
+      quickReply: {
+        title: "Quick Reply App",
+        description: "Get swift replies to Direct ",
+        description_: "Messages"
+      },
+      todoList: {
+        title: "To do List",
+        description: "Organize tasks with the to-do-list",
+        description_: "feature"
+      }
+    },
+
+    features: {
+      title: "Special Features",
+      description:
+        "Increase your productivity by assembling all your work tools into one place",
+      avatar: {
+        title: "Animated Avatar Loungue",
+        description: "Create and animate your own avatar in the avatar lounge"
+      },
+      files: {
+        title: "Company Files",
+        description: "Access your files on google drive while on ZuriChat."
+      },
+      accessibility: {
+        title: "Accessibility",
+        description: "Be in control, Use ZuriChat and enjoy",
+        description_: "the best accessibility features"
+      },
+      goals: {
+        title: "Company Goals",
+        description: "Keep up with company goals",
+        description_: "right inside ZuriChat"
+      }
+    },
+
+    cta: {
+      title: "Whatever work you do, you can do it in Zuri Chat",
+      link_sales: "Talk to sales",
+      link_try: "Try it for free"
+    },
+
+    careers: {
+      title: {
+        careers: "Careers"
+      },
+      section_one: {
+        headline: "Careers at Zuri Chat",
+        post_headline: "Passionate about making work life simpler, and more productive? Join our remote-friendly and flexible team.",
+        join_link: "Join Zuri Chat"
+      },
+      career_grid: {
+        headline: "Join Our Internship",
+        post_headline:
+          "Zuri Internship is a 100% free, remote and fast paced training for young professionals seeking to hon their tech skills and boost their resume.",
+        categories: {
+          category_frontend: {
+            headline: "Frontend Development",
+            post_headline: "This track deals with the aspect of your application that the users interact with. A front-end developer will be able to correctly interpret a given design to the user interface."
+          },
+          category_backend: {
+            headline: "Backend Development",
+            post_headline: "This track deals with the aspect of the application the user does not directly interact with. It allows the frontend function either by running some back-end code or connecting to the database."
+          },
+          category_design: {
+            headline: "Design",
+            post_headline: "This track deals with creating a graphic plan for an application. You will learn to convert project documentation into viewable and understandable graphic design for the developers to work with."
+          },
+          category_mobile: {
+            headline: "Mobile Development",
+            post_headline: "The mobile track contains a list of tools and languages needed for a developer to create mobile applications. A mobile application can be IOS or Android."
+          },
+          category_digital_marketing: {
+            headline: "Digital Marketing",
+            post_headline: "It encomprises the use of digital means and utilities to boost discoverability of products, services and brands."
+          },
+          category_frameworks: {
+            headline: "Frameworks",
+            post_headline: "During the program we will be exploring several useful frameworks to give you an edge in the industry and help you develop complex applications much faster."
+          }
+
+        },
+        join_cohort: "Be a part of our next cohort starting summer of 2022",
+        register_now: "Register Now"
+      },
+      section_two: {
+        headline: "Working and Thriving",
+        post_headline: "We offer benefits that help you feel your best and do your best.",
+        digital_wellness: {
+          headline: "Digital-First Office",
+          post_headline: "With remote roles, office-free onboarding and flexible working practices, we are set up for ever-changing realities, schedules and responsibilities."
+        },
+        just_for_you: {
+          headline: "Just For You",
+          post_headline: "Receive an annual allowance for professional development, plus a monthly stipend to cover your needs; A new work look, a pet, whatever matters most to you."
+        },
+        health_and_wellness: {
+          headline: "Health and Wellness",
+          post_headline: "Zuri Pays 100% of your premiums. We also offer access to a range of free mental health and well-being resources."
+        }
+      }
+    }
+  },
+
+
+  download_desktop: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "Experience the Zuri Chat’s desktop and mobile apps",
+      post_headline: "Connecting with your team has never been easier with Zuri Chat.",
+      desktop_line: "Zuri for Desktop",
+      desktop_app: "Download on Mac App Store",
+      desktop_soft: "Get it from Microsoft",
+      mobile_line: "Zuri for Mobile",
+      mobile_app: "Download on App Store",
+      mobile_play: "Get it on Google Play"
+    },
+
+    section_two: {
+      headline: "Download and enjoy the Zuri Chat experience on any these devices",
+      windows: "Windows",
+      mac: "macOS",
+      ios: "iOS",
+      android: "Android",
+    },
+
+    section_three: {
+      headline: "Same feel, same team on Zuri App!",
+    }
+  },
+  download_ios: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "Download Zuri Chat beta for iOS.",
+      post_headline: "Get Zuri Chat DM & Channel",
+      mac_line: "We’re on Mac, too",
+      mac_description: "Keep up with the conversation with our apps for Mac, Windows and Linux. We can email you a quick download link to get you started!",
+      button: "GET DOWNLOAD LINK",
+    }
+  },
+  download_mac: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "Experience Zuri Chat on MacOS",
+      post_headline: "Connecting with your team has never been easier with Zuri Chat.",
+      download: "DOWNLOAD",
+      download_soft: "Download for Windows?"
+    },
+
+    section_two: {
+      headline: "Why Zuri Chat App?",
+      post_headline: "Never miss the seamless collaboration experience even on the go with the zuri chat pc",
+      android: "Android",
+      and_break: "and",
+      ios: "iOS",
+      apps_break: "apps."
+    },
+
+    section_three: {
+      headline: "Same feel, same team on Zuri App!",
+      download: "DOWNLOAD FOR MAC",
+      download_soft: "Download for Windows?"
+    }
+  },
+  download_mobile: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "Experience the Zuri Chat’s desktop and mobile apps",
+      post_headline: "Connecting with your team has never been easier with Zuri Chat.",
+    },
+
+    section_two: {
+      headline: "Download and enjoy the Zuri Chat experience on any these devices",
+      windows: "Windows",
+      mac: "macOS",
+      android: "Android",
+      ios: "iOS"
+    },
+
+    section_three: {
+      headline: "Same feel, same team on Zuri App!",
+    }
+  },
+  download_windows: {
+    title: {
+      download: "Download Zuri Chat"
+    },
+
+    section_one: {
+      headline: "Experience Zuri Chat on Windows",
+      post_headline: "Connecting with your team has never been easier with Zuri Chat.",
+      download: "DOWNLOAD",
+      download_mac: "Download for Mac?"
+    },
+
+    section_two: {
+      headline: "Why Zuri Chat App?",
+      post_headline: "Never miss the seamless collaboration experience even on the go with the zuri chat pc",
+      android: "Android",
+      and_break: "and",
+      ios: "iOS",
+      apps_break: "apps."
+    },
+
+    section_three: {
+      headline: "Same feel, same team on Zuri App!",
+      download: "DOWNLOAD FOR WINDOWS",
+      download_ios: "Download for Mac?"
+    }
+  },
 }

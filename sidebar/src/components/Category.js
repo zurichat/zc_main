@@ -5,7 +5,8 @@ import SubCategory from "./subCategory"
 import SkeletonLoader from "./SkeletonLoader"
 
 export default function Category(props) {
-  const [isOpen, setOpen] = useState(false)
+  const [isOpen, setOpen] = useState(true)
+  const [button_url, setUrl] = useState(null)
 
   const toggleDropdown = () => setOpen(!isOpen)
 
@@ -16,16 +17,17 @@ export default function Category(props) {
           categoryName={props.name}
           isOpen={isOpen}
           toggleDropdown={toggleDropdown}
+          button_url={button_url}
         />
       )}
-       {props.data &&
+      {props.data &&
         props.data.length > 0 &&
         props.data.map(plugin => {
-          // console.error("showwwwmw", plugin)
+          plugin.button_url && setUrl(plugin.button_url)
           if (plugin.show_group) {
             return (
               <SubCategory
-               isOpened={isOpen}
+                isOpened={isOpen}
                 key={plugin.name}
                 name={plugin.group_name}
                 state={plugin}

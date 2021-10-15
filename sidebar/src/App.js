@@ -31,7 +31,7 @@ const insertSideBarData = (state, action) => {
   return state
 }
 
-function reducer(state={sidebar: {}}, action) {
+function reducer(state = { sidebar: {} }, action) {
   switch (action.type) {
     case ACTIONS.ADD_ITEM:
       //Add items to sidebar
@@ -44,7 +44,7 @@ function reducer(state={sidebar: {}}, action) {
       }
     case ACTIONS.UPDATE_PLUGINS:
       //Update sidebar
-      state= insertSideBarData(state, action)
+      state = insertSideBarData(state, action)
       return {
         ...state,
         sidebar: {
@@ -86,7 +86,7 @@ export default function App() {
   }, [])
 
   return !state.user ? (
-    <SkeletonLoader COUNTER={12}/>
+    <SkeletonLoader COUNTER={12} />
   ) : (
     <Sidebar state={state} dispatch={dispatch} />
   )
