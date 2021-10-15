@@ -18,7 +18,8 @@ export const TRANSLATIONS_DE = {
 
     hero: {
       pre_headline: "Für Organisationen & Institutionen",
-      headline: "Eine vollständig integrierte Möglichkeit, sich zu verbinden und zu interagieren",
+      headline:
+        "Eine vollständig integrierte Möglichkeit, sich zu verbinden und zu interagieren",
       post_headline:
         "Gestalten Sie mit uns Ihre Zukunft, vernetzen Sie sich, arbeiten Sie zusammen, bilden Sie sich aus und lernen Sie aus der Ferne",
       call_to_action: "Testen Sie Zuri.chat kostenlos"
@@ -66,7 +67,8 @@ export const TRANSLATIONS_DE = {
     cardTwo: {
       title:
         "Seien Sie der Erste, der Updates und exklusive Angebote von Zuri Chat erhält",
-      description: "Bereichern Sie Ihr Zuri Chat-Erlebnis, indem Sie sich hier anmelden, um die neuesten Nachrichten und Sonderangebote zu Zuri Chat zu erhalten",
+      description:
+        "Bereichern Sie Ihr Zuri Chat-Erlebnis, indem Sie sich hier anmelden, um die neuesten Nachrichten und Sonderangebote zu Zuri Chat zu erhalten",
       button: "Abonnieren"
     },
     footer: {
@@ -86,10 +88,11 @@ export const TRANSLATIONS_DE = {
       socialMedia: "Sozialen Medien",
       rights: "Alle Rechte vorbehalten"
     },
-    cookies:{
+    cookies: {
       textOne: "Wir verwenden",
       textTwo: "Cookies",
-      textThree: "von Drittanbietern, um Ihre Website-Erfahrung zu personalisieren.",
+      textThree:
+        "von Drittanbietern, um Ihre Website-Erfahrung zu personalisieren.",
       accept: "Erlauben",
       decline: "Ablehnen"
     }
@@ -177,7 +180,7 @@ export const TRANSLATIONS_DE = {
       headline_one: "Machen Sie die Arbeit einfach, angenehm und",
       headline_two: "produktiver.",
       description:
-        "ist ein Hub für Zusammenarbeit, der die richtigen Leute und Tools zusammenbringt, um die Arbeit zu erledigen. Von Fortune-100-Unternehmen bis hin zu Eckmärkten nutzen Millionen von Menschen auf der ganzen Welt ZuriChat, um ihre Teams zu vernetzen, ihre Systeme zu vereinheitlichen und ihr Geschäft voranzutreiben.",
+        "ist ein Hub für Zusammenarbeit, der die richtigen Leute und Tools zusammenbringt, um die Arbeit zu erledigen. Von Fortune-100-Unternehmen bis hin zu Eckmärkten nutzen Millionen von Menschen auf der ganzen Welt ZuriChat, um ihre Teams zu vernetzen, ihre Systeme zu vereinheitlichen und ihr Geschäft voranzutreiben."
     },
 
     counter: {
@@ -186,19 +189,22 @@ export const TRANSLATIONS_DE = {
       fortune_companies: "der Fortune 100",
       fortune_companies_: "verwenden",
       countries: "Länder haben täglich",
-      countries_: "aktive Benutzer in",
+      countries_: "aktive Benutzer in"
     },
 
     whoWeAre: {
       title: "Wer wir sind und wie Sie sich uns anschließen können",
-      description: "Unsere Mission ist es, das Arbeitsleben der Menschen zu verbessern, indem wir eine Plattform bieten, die ein starkes, vielfältiges Team von kreativen Fachleuten aufnehmen kann, die die beste Arbeit ihres Lebens leisten wollen",
-      description_: "verspricht vielfältige Möglichkeiten und ein einfaches, angenehmes und produktiveres Arbeitsleben.",
+      description:
+        "Unsere Mission ist es, das Arbeitsleben der Menschen zu verbessern, indem wir eine Plattform bieten, die ein starkes, vielfältiges Team von kreativen Fachleuten aufnehmen kann, die die beste Arbeit ihres Lebens leisten wollen",
+      description_:
+        "verspricht vielfältige Möglichkeiten und ein einfaches, angenehmes und produktiveres Arbeitsleben."
     },
 
     highlights: {
       title: "Arbeiten aus der Ferne faszinierender denn je",
       description: "Bei ZuriChat trifft Arbeit auf Spaß.",
-      description_: "Verbinden und interagieren Sie effizient mit Ihrem Team von überall auf der Welt",
+      description_:
+        "Verbinden und interagieren Sie effizient mit Ihrem Team von überall auf der Welt",
       channels: {
         title: "Kanäle",
         description: "Organisieren Sie Gespräche in dedizierten",
@@ -213,41 +219,45 @@ export const TRANSLATIONS_DE = {
         title: "Unternehmensschluss",
         description: "Keep track of deadlines with ",
         description_: "Behalten Sie die Fristen im Auge mit",
-        description__: "besonderheit",
+        description__: "besonderheit"
       },
       quickReply: {
         title: "Schnellantwort-App",
         description: "Erhalten Sie schnelle Antworten auf Direct",
-        description_: "mitteilungen",
+        description_: "mitteilungen"
       },
       todoList: {
         title: "Aufgabenliste",
         description: "Organisieren Sie Aufgaben mit der To-Do-Liste",
-        description_: "besonderheit",
-      },
+        description_: "besonderheit"
+      }
     },
 
     features: {
       title: "Besondere Merkmale",
-      description: "Steigern Sie Ihre Produktivität, indem Sie alle Ihre Arbeitswerkzeuge an einem Ort zusammenstellen",
+      description:
+        "Steigern Sie Ihre Produktivität, indem Sie alle Ihre Arbeitswerkzeuge an einem Ort zusammenstellen",
       avatar: {
         title: "Animierte Avatar Lounge",
-        description: "Erstellen und animieren Sie Ihren eigenen Avatar in der Avatar-Lounge",
+        description:
+          "Erstellen und animieren Sie Ihren eigenen Avatar in der Avatar-Lounge"
       },
       files: {
         title: "Unternehmensdateis",
-        description: "Greifen Sie bei ZuriChat auf Ihre Dateien auf Google Drive zu.",
+        description:
+          "Greifen Sie bei ZuriChat auf Ihre Dateien auf Google Drive zu."
       },
       accessibility: {
         title: "Barrierefreiheit",
-        description: "Behalten Sie die Kontrolle, verwenden Sie ZuriChat und genießen Sie",
+        description:
+          "Behalten Sie die Kontrolle, verwenden Sie ZuriChat und genießen Sie",
         description_: "die besten Zugänglichkeitsfunktionen"
       },
       goals: {
         title: "Unternehmensziele",
         description: "Bleiben Sie mit den Unternehmenszielen auf dem Laufenden",
         description_: "direkt in ZuriChat"
-      },
+      }
     },
 
     cta: {
