@@ -30,7 +30,7 @@
       if (getURL !== '/') {
         getURL = getURL.substr(1);
         getURL = getURL.charAt(0).toUpperCase() + getURL.slice(1);
-        document.title = getURL +  ' '  +   appendZuri;
+        document.title = getURL + ' ' + appendZuri;
       };
     };
     setInterval(getTitleOfPage, 500)
@@ -441,15 +441,21 @@
 
   <% if (isLocal) { %>
   <script type="systemjs-importmap">
-    { 
-              "imports": { 
-                "@zuri/root-config": "//localhost:9000/zuri-root-config.js", "@zuri/topbar": "//localhost:8080/zuri-topbar.js", "@zuri/sidebar": "//localhost:8081/zuri-sidebar.js", "@zuri/control": "//localhost:8082/zuri-control.js", "@zuri/plugin-header":
-            "//localhost:8083/zuri-plugin-header.js", "@zuri/manage-user-modal": "//localhost:8087/zuri-manageUser.js", "@zuri/marketplace": "//localhost:8086/zuri-marketplace.js", "@zuri/zuri-ui": "//localhost:8084/zuri-zuri-ui.js", "@zuri/utilities":
-            "//localhost:8085/zuri-utilities.js"
-
-          } 
-        }
-        </script>
+    {
+        "imports":
+          {
+            "@zuri/root-config": "//localhost:9000/zuri-root-config.js",
+            "@zuri/topbar": "//localhost:8080/zuri-topbar.js",
+            "@zuri/sidebar": "//localhost:8081/zuri-sidebar.js",
+            "@zuri/control": "//localhost:8082/zuri-control.js",
+            "@zuri/plugin-header": "//localhost:8083/zuri-plugin-header.js",
+            "@zuri/zuri-ui": "//localhost:8084/zuri-zuri-ui.js",
+            "@zuri/utilities": "//localhost:8085/zuri-utilities.js",
+            "@zuri/marketplace": "//localhost:8086/zuri-marketplace.js",
+            "@zuri/manage-user-modal": "//localhost:8087/zuri-manageUser.js"
+          }
+      }
+    </script>
   <% } else { %>
   <script type="systemjs-importmap">
     {
@@ -466,6 +472,7 @@
         }
       }
   </script>
+
   <% } %>
 
   <!--
