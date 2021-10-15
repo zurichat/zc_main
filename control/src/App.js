@@ -1,10 +1,10 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Login from './pages/login'
-import SignUp from './pages/signup'
-import SignOut from './pages/signout/index'
-import Workspace from './pages/workspace/components/Workspace'
-import LandingPage from './pages/LandingPage'
-import DAO_Features from './pages/DAO-Features'
+import { BrowserRouter, Route, Switch } from "react-router-dom"
+import Login from "./pages/login"
+import SignUp from "./pages/signup"
+import SignOut from "./pages/signout/index"
+import Workspace from "./pages/workspace/components/Workspace"
+import LandingPage from "./pages/LandingPage"
+import DAO_Features from "./pages/DAO-Features"
 // password block
 import ResetPassword from "./pages/passwordReset/index"
 import NewPassword from "./pages/passwordReset/newPassword"
@@ -13,7 +13,8 @@ import CookiesSetting from "./pages/cookiesSettings"
 import Cookies from "./pages/cookies"
 import Features from "./pages/features"
 import Resources from "./pages/resources"
-import Help from "./pages/Help"
+import Help from "./pages/Help/index"
+import Article from "./pages/Help/Article"
 import Pricing from "./pages/pricing"
 import Security from "./pages/security"
 import Invite from "./pages/inviteScreen"
@@ -91,9 +92,8 @@ const App = () => {
         <Route path="/about">
           <About />
         </Route>
-        <Route path="/help">
-          <Help />
-        </Route>
+        <Route path="/help" component={Help} />
+        <Route path="/article" component={Article} />
         <Route path="/choose-workspace">
           <Workspace />
         </Route>
@@ -208,7 +208,11 @@ const App = () => {
           exact
           component={AboutWorkSpace}
         />
-        <PrivateRoute path="/admin/settings/accountsProfile" exact component={AccountProfile}/>
+        <PrivateRoute
+          path="/admin/settings/accountsProfile"
+          exact
+          component={AccountProfile}
+        />
         {/* <PrivateRoute
           path="/admin/settings/permission"
           exact

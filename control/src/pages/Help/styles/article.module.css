@@ -1,0 +1,73 @@
+.parentContainer {
+  background-color: rgb(107, 9, 94);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.generalContainer {
+  background-color: red;
+  padding: 90px 30px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+div {
+  display: flex;
+  align-items: center;
+}
+
+.leftContainer {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  padding: 50px;
+}
+
+.topLink {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.mainHeader {
+  font-size: 35px;
+  color: #333;
+  font-weight: 600;
+}
+
+.normalText {
+  font-size: 20px;
+  color: #333;
+  margin-left: 0;
+  padding-left: 0;
+  font-weight: 500;
+}
+
+.iconText {
+  font-size: 20px;
+  color: white;
+  font-weight: 500;
+  background-color: rgb(10, 187, 10);
+  border-radius: 50%;
+  width: 15px;
+  line-height: 25px;
+}
+
+.rightContainer {
+  background-color: rgb(247, 205, 19);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}
+
+.recentArticlesTop {
+  background-color: rgb(19, 247, 38);
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-bottom: 20px;
+}
