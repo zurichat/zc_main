@@ -38,8 +38,6 @@
   overflow: hidden;
   padding-bottom: 20px;
   height: 90vh;
-  margin-top: 30px;
-  margin-right: 40px;
 }
 
 .modalCont{
@@ -118,6 +116,10 @@
     right: 0;
     height: 100%;
     max-width: 100vw;
+  }
+
+  .modalCont {
+    max-height: 100vh;
   }
 
   .modalFull {
@@ -226,9 +228,7 @@
 }
 .modalContent,
 .modalFull {
-  max-width: 100%;
-  /* max-width: 885px; */
-  max-width: 900px;
+  width: 80%;
   background: #fff;
   border-radius: 4px;
   overflow: hidden;
