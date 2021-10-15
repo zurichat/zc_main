@@ -1,38 +1,37 @@
-import React, { Fragment, useState } from "react"
-import DropDown from "./Drop"
-import Room from "./Room"
+import React from "react"
 import SkeletonLoader from "./SkeletonLoader"
+import SubCategory from "./SubCategory"
+import Room from "./Room"
 
 export default function Category(props) {
-  const [isOpen, setOpen] = useState(false)
-
-  const toggleDropdown = () => setOpen(!isOpen)
-
-  return props.state.sidebar ? (
-    <Fragment>
+  return props.name ? (
+    <div>
       {props.name && (
-        <DropDown
-          categoryName={props.name}
-          isOpen={isOpen}
-          toggleDropdown={toggleDropdown}
-        />
+        <span style={{ textTransform: "capitalize" }}>{props.name}</span>
       )}
-      {props.state.sidebar &&
-        props.name &&
-        Object.keys(props.state.sidebar).map((plugin, index) => {
-          let category = props.state.sidebar[plugin].category
-
-          return category && category === props.name ? (
-            <Room
-              isOpen={isOpen}
-              itemName={props.name}
-              id={props.state.sidebar.name}
-              key={index}
-              items={props.state.sidebar[plugin]}
-            />
-          ) : null
+      {props.data &&
+        props.data.length > 0 &&
+        props.data.map(plugin => {
+          if (plugin.show_group) {
+            return (
+              <SubCategory
+                key={plugin.name}
+                name={plugin.group_name}
+                state={plugin}
+              />
+            )
+          } else {
+            return (
+              <Room
+                key={plugin.name}
+                id={plugin.group_name}
+                isDirect={true}
+                items={plugin}
+              />
+            )
+          }
         })}
-    </Fragment>
+    </div>
   ) : (
     <SkeletonLoader />
   )
