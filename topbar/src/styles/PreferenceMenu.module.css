@@ -46,7 +46,7 @@
 }
 .icon {
   margin-right: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
 }
 .active p,
 .icon {
@@ -60,7 +60,7 @@
 
 .one .icon {
   color: var(--text-color-normal);
-  margin-bottom: 15px;
+  margin-bottom: 1px;
 }
 
 @media screen and (max-width: 768px) {
