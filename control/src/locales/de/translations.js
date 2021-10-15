@@ -1,5 +1,5 @@
 export const TRANSLATIONS_DE = {
- header: {
+  header: {
     language_select: "Sprache ändern"
   },
   landing: {
@@ -83,7 +83,7 @@ export const TRANSLATIONS_DE = {
       socialMedia: "Sozialen Medien",
       rights: "Alle Rechte vorbehalten"
     },
-    cookies:{
+    cookies: {
       textOne: "Wir verwenden",
       textTwo: "Cookies",
       textThree: "von Drittanbietern, um Ihre Website-Erfahrung zu personalisieren.",
@@ -179,64 +179,65 @@ export const TRANSLATIONS_DE = {
       link_sales: "Sprechen Sie mit dem Vertrieb",
       link_try: "Kostenlos ausprobieren"
     },
-    
-  careers:{
-    title: {
-      careers: "Karriere"
-    },
-    section_one: {
-      headline: "Karriere bei Zuri Chat",
-      post_headline: "Sie möchten das Arbeitsleben einfacher und produktiver gestalten? Werden Sie Teil unseres remote-freundlichen und flexiblen Teams.",
-      join_link: "Treten Sie dem Zuri-Chat bei"
-    },
-    career_grid: {
-      headline: "Mach mit bei unserem Praktikum",
-      post_headline: 
-        "Zuri Internship ist eine 100% kostenlose, Remote- und schnelle Ausbildung für junge Berufstätige, die ihre technischen Fähigkeiten verbessern und ihren Lebenslauf verbessern möchten.",
-      categories:{
-        category_frontend: {
-          headline: "Frontend-Entwicklung",
-          post_headline: "Dieser Track befasst sich mit dem Aspekt Ihrer Anwendung, mit dem die Benutzer interagieren. Ein Frontend-Entwickler wird in der Lage sein, ein gegebenes Design korrekt auf die Benutzeroberfläche zu interpretieren."
-        },
-        category_backend: {
-          headline: "Backend-Entwicklung",
-          post_headline: "Dieser Track behandelt den Aspekt der Anwendung, mit dem der Benutzer nicht direkt interagiert. Es ermöglicht die Frontend-Funktion, indem entweder Back-End-Code ausgeführt oder eine Verbindung zur Datenbank hergestellt wird."
-        },
-        category_design: {
-          headline: "Entwurf",
-          post_headline: "Dieser Track befasst sich mit der Erstellung eines grafischen Plans für eine Anwendung. Sie lernen, die Projektdokumentation in ein sichtbares und verständliches Grafikdesign umzuwandeln, mit dem die Entwickler arbeiten können."
-        },
-        category_mobile: {
-          headline: "Mobile Entwicklung",
-          post_headline: "Der mobile Track enthält eine Liste von Tools und Sprachen, die ein Entwickler benötigt, um mobile Anwendungen zu erstellen. Eine mobile Anwendung kann IOS oder Android sein."
-        },
-        category_digital_marketing: {
-          headline: "Digitales Marketing",
-          post_headline: "Es umfasst den Einsatz digitaler Mittel und Hilfsmittel, um die Auffindbarkeit von Produkten, Dienstleistungen und Marken zu steigern."
-        },
-        category_frameworks: {
-          headline: "Frameworks",
-          post_headline: "Während des Programms werden wir verschiedene nützliche Frameworks erkunden, die Ihnen einen Vorsprung in der Branche verschaffen und Ihnen helfen, komplexe Anwendungen viel schneller zu entwickeln."
-        }       
-        
+
+    careers: {
+      title: {
+        careers: "Karriere"
       },
-      join_cohort: "Seien Sie ein Teil unserer nächsten Kohorte ab Sommer 2022",
-      register_now: "Jetzt registrieren"
-    },
-    section_two: {
-      headline: "Arbeiten und Gedeihen",
-      post_headline: "Wir bieten Vorteile, die Ihnen helfen, sich gut zu fühlen und Ihr Bestes zu geben.",
-      digital_wellness: {
-        headline: "Digital-First-Office",
-        post_headline: "Mit Remote-Rollen, bürofreiem Onboarding und flexiblen Arbeitspraktiken sind wir für sich ständig ändernde Realitäten, Zeitpläne und Verantwortlichkeiten gerüstet."
+      section_one: {
+        headline: "Karriere bei Zuri Chat",
+        post_headline: "Sie möchten das Arbeitsleben einfacher und produktiver gestalten? Werden Sie Teil unseres remote-freundlichen und flexiblen Teams.",
+        join_link: "Treten Sie dem Zuri-Chat bei"
       },
-      just_for_you: {
-        headline: "Nur für dich",
-        post_headline: "Erhalten Sie eine jährliche Beihilfe für die berufliche Entwicklung sowie ein monatliches Stipendium zur Deckung Ihres Bedarfs; Ein neuer Arbeitslook, ein Haustier, was dir am wichtigsten ist."
+      career_grid: {
+        headline: "Mach mit bei unserem Praktikum",
+        post_headline:
+          "Zuri Internship ist eine 100% kostenlose, Remote- und schnelle Ausbildung für junge Berufstätige, die ihre technischen Fähigkeiten verbessern und ihren Lebenslauf verbessern möchten.",
+        categories: {
+          category_frontend: {
+            headline: "Frontend-Entwicklung",
+            post_headline: "Dieser Track befasst sich mit dem Aspekt Ihrer Anwendung, mit dem die Benutzer interagieren. Ein Frontend-Entwickler wird in der Lage sein, ein gegebenes Design korrekt auf die Benutzeroberfläche zu interpretieren."
+          },
+          category_backend: {
+            headline: "Backend-Entwicklung",
+            post_headline: "Dieser Track behandelt den Aspekt der Anwendung, mit dem der Benutzer nicht direkt interagiert. Es ermöglicht die Frontend-Funktion, indem entweder Back-End-Code ausgeführt oder eine Verbindung zur Datenbank hergestellt wird."
+          },
+          category_design: {
+            headline: "Entwurf",
+            post_headline: "Dieser Track befasst sich mit der Erstellung eines grafischen Plans für eine Anwendung. Sie lernen, die Projektdokumentation in ein sichtbares und verständliches Grafikdesign umzuwandeln, mit dem die Entwickler arbeiten können."
+          },
+          category_mobile: {
+            headline: "Mobile Entwicklung",
+            post_headline: "Der mobile Track enthält eine Liste von Tools und Sprachen, die ein Entwickler benötigt, um mobile Anwendungen zu erstellen. Eine mobile Anwendung kann IOS oder Android sein."
+          },
+          category_digital_marketing: {
+            headline: "Digitales Marketing",
+            post_headline: "Es umfasst den Einsatz digitaler Mittel und Hilfsmittel, um die Auffindbarkeit von Produkten, Dienstleistungen und Marken zu steigern."
+          },
+          category_frameworks: {
+            headline: "Frameworks",
+            post_headline: "Während des Programms werden wir verschiedene nützliche Frameworks erkunden, die Ihnen einen Vorsprung in der Branche verschaffen und Ihnen helfen, komplexe Anwendungen viel schneller zu entwickeln."
+          }
+
+        },
+        join_cohort: "Seien Sie ein Teil unserer nächsten Kohorte ab Sommer 2022",
+        register_now: "Jetzt registrieren"
       },
-      health_and_wellness: {
-        headline: "Gesundheit und Wellness",
-        post_headline: "Zuri zahlt 100 % Ihrer Prämien. Wir bieten auch Zugang zu einer Reihe von kostenlosen Ressourcen für psychische Gesundheit und Wohlbefinden."
+      section_two: {
+        headline: "Arbeiten und Gedeihen",
+        post_headline: "Wir bieten Vorteile, die Ihnen helfen, sich gut zu fühlen und Ihr Bestes zu geben.",
+        digital_wellness: {
+          headline: "Digital-First-Office",
+          post_headline: "Mit Remote-Rollen, bürofreiem Onboarding und flexiblen Arbeitspraktiken sind wir für sich ständig ändernde Realitäten, Zeitpläne und Verantwortlichkeiten gerüstet."
+        },
+        just_for_you: {
+          headline: "Nur für dich",
+          post_headline: "Erhalten Sie eine jährliche Beihilfe für die berufliche Entwicklung sowie ein monatliches Stipendium zur Deckung Ihres Bedarfs; Ein neuer Arbeitslook, ein Haustier, was dir am wichtigsten ist."
+        },
+        health_and_wellness: {
+          headline: "Gesundheit und Wellness",
+          post_headline: "Zuri zahlt 100 % Ihrer Prämien. Wir bieten auch Zugang zu einer Reihe von kostenlosen Ressourcen für psychische Gesundheit und Wohlbefinden."
+        }
       }
     }
   }
