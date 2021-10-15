@@ -291,7 +291,7 @@ const AdvancedSettings = () => {
         </div>
         <div className={standardStyles.labelContainer}>
           <div className={styles.alonetext}>
-            We’re working to make Zurichat better. We’d always love to hear your
+            We’re working to make Zurichat better. We’d love to hear your
             thoughts
           </div>
         </div>
