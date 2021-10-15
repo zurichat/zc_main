@@ -74,7 +74,7 @@ const DownloadsDesktop = () => {
                 </a>
 
                 <a
-                  href="https://drive.google.com/file/d/1dbQS1rQOVUI87AzdeljF6LM5iRNnaMzZ/view"
+                  href="https://play.google.com/store/apps/details?id=com.zurichat.app"
                   download={exe.name}
                   className={styles.downloadButton}
                 >
@@ -120,7 +120,7 @@ const DownloadsDesktop = () => {
             <img className={`px-2`} src={apple} alt="download icon" />
           </a>
           <a
-            href="https://drive.google.com/file/d/1dbQS1rQOVUI87AzdeljF6LM5iRNnaMzZ/view"
+            href="https://play.google.com/store/apps/details?id=com.zurichat.app"
             download={exe.name}
             className={styles.downloadButton1}
           >
