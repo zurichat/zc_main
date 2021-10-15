@@ -5,7 +5,7 @@ import PluginModal from '../../zuriUi/src/components/PluginModal/PluginModal'
 
 
 export default function Header(props) {
-  const [showDialog, setShowDialog] = useState(true);
+  const [showDialog, setShowDialog] = useState(false);
   const [tabIndex, setTabIndex] = useState(0)
 
   return (
