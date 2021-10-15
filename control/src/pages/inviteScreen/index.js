@@ -1,65 +1,59 @@
 import { withRouter, useParams, useHistory } from "react-router-dom"
-import { useState, useEffect } from "react"
+import { useState} from "react"
 import styles from "../../component-styles/Signout.module.css"
 import logo from "../../component-assets/zuri.svg"
 import axios from "axios"
 import { Helmet } from "react-helmet"
 
 const InvitePage = () => {
-  const { id } = useParams()
-  const [success, setsuccess] = useState(false)
-  const [error, seterror] = useState("")
+  const { id: inviteId } = useParams()
+  const history = useHistory()
+  const [registerNewUser, setRegisteNewrUser] = useState(false)
+  const [userPasswordValue, setUserPasswordValue] = useState("")
 
-  // console.log(id)
-  // window.location.hre'
-
-  const checkIfRegistered = async guestId => {
+  // check if user has a zuri account
+  const handleJoinWorkspace = async () => {
     try {
+      // user exist on zuri chat
       const { data } = await axios.get(
-        `https://api.zuri.chat/organizations/invites/${id}`
+        `https://api.zuri.chat/organizations/invites/${inviteId}`
       )
-
-      let validUser = data
-      return { validUser, guestId }
+      addUserToOrganization()
     } catch ({ message }) {
-      //  put code to redirect to where user would set Password
-      // console.log("take me to where i need to put my password")
+      // user does not exist on zuri chat
+      console.error("handleJoinWorkspace-err", message)
+      setRegisteNewrUser(true)
     }
   }
 
-  useEffect(() => {})
+  // create a new user
+  const registerNewUserHandler = async () => {
+    try {
+      const { data } = await axios.post("https://api.zuri.chat/guests/invite", {
+        uuid: inviteId,
+        password: userPasswordValue
+      })
+      addUserToOrganization()
 
-  const history = useHistory()
+    } catch ({ message }) {
+      console.error("registerNewUserHandler-err", message)
+    }
+  }
 
-  const handleJoin = async id => {
-    // if (sessionStorage.getItem(`user`) === null) {
-    //   sessionStorage.setItem(`workSpaceInviteRedirect`, `invites/${id}`)
-    //   history.push(`/login`)
-    //   return
-    // }
+  // add user to the organization
 
-    // function to add user to organization
-    const addUserToOrg = async guestId => {
-      let { data } = await axios.get(
-        `https://api.zuri.chat/organizations/invites/${id}`,
+  const addUserToOrganization = async () => {
+    try {
+      const { data } = await axios.post(
+        `https://api.zuri.chat/organizations/guests/${inviteId}`,
         {}
       )
-
-      return data
+      
+      history.replace("/login")
+    } catch ({ message }) {
+      console.error("addUserToOrganization-err", message)
+      history.replace("/login")
     }
-    // check user validity and if valid add to ord
-    checkIfRegistered(id).then(res => {
-      if (res) {
-        setsuccess(true)
-        // add user to oasyrganizations
-        addUserToOrg(res.guestId)
-        history.push("/login")
-      }
-    })
-  }
-
-  const handleGoToHome = () => {
-    history.push(`home`)
   }
 
   return (
@@ -72,30 +66,31 @@ const InvitePage = () => {
       </div>
       <div className={styles.write}>
         <div className={styles.wrapper}>
-          {error && (
-            <div className={`alert alert-danger ${styles.error}`}>{error}</div>
-          )}
-          {!success ? (
-            <>
-              <h1 className={styles.firstText}>Join</h1>
-              <h5 className={styles.secondText}>
-                You have been invited to a Workspace
-              </h5>
-              <button
-                onClick={() => handleJoin(id)}
-                // onClick={() => history.push('/signup')}
-                className={styles.button}
-              >
-                Join?
-              </button>
-            </>
-          ) : (
-            <>
-              {/* <h5 className={styles.secondText}>Welcome</h5> */}
-              <button onClick={handleGoToHome} className={styles.button}>
-                Go to the Workspace Homepage
-              </button>
-            </>
+          <>
+            <h1 className={styles.firstText}>Join</h1>
+            <h5 className={styles.secondText}>
+              You have been invited to a Workspace
+            </h5>
+            <button
+              onClick={() => {
+                if (registerNewUser) {
+                  registerNewUserHandler()
+                } else {
+                  handleJoinWorkspace()
+                }
+              }}
+              // onClick={() => history.push('/signup')}
+              className={styles.button}
+              disabled={registerNewUser && !userPasswordValue}
+            >
+              Join?
+            </button>
+          </>
+          {registerNewUser && (
+            <input
+              value={userPasswordValue}
+              onChange={evt => setUserPasswordValue(evt.target.value)}
+            />
           )}
         </div>
       </div>
