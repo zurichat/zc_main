@@ -186,6 +186,11 @@
   align-self: center;
 }
 
+.radioBox {
+  display: flex;
+  flex-direction: row;
+}
+
 input[type="radio"] {
   clear: none;
   margin: 4px 0 0 -1px;
