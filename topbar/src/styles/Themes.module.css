@@ -5,7 +5,7 @@
   font-family: sans-serif;
   text-align: center;
   overflow-x: hidden;
-  width: 55%;
+  width: 85%;
 }
 
 .sync {
@@ -16,6 +16,7 @@
 .checkbox {
   margin-top: -2px;
   margin-left: 5px;
+  margin-right: 15px;
 }
 
 .os {
@@ -40,13 +41,13 @@
   color: #999999;
   font-size: 15px;
   font-weight: bold;
-  margin-left: -370px;
+  margin-left: -698px;
 }
 
 .text {
   font-size: 14px;
   margin-top: 8px;
-  margin-left: -50px;
+  margin-left: -372px;
   font-weight: 500;
   color: #999999;
   position: relative;
@@ -60,6 +61,7 @@
 .radio {
   margin-top: -2px;
   margin-left: 5px;
+  margin-right: 15px;
 }
 
 .mention {
@@ -73,18 +75,7 @@
 }
 
 .text2 {
-  margin-left: -69px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 10px;
-  color: #999999;
-  font-style: normal;
-  position: relative;
-  margin-top: 10px;
-}
-
-.texti2 {
-  margin-left: -315px;
+  margin-left: -280px;
   font-size: 14px;
   font-weight: 500;
   line-height: 10px;
@@ -107,7 +98,7 @@
 
 .customize {
   margin-top: 15px;
-  margin-left: 90px;
+  margin-left: -91px;
   width: 90%;
   width: 115%;
 }
@@ -116,7 +107,7 @@
   border: 1px solid rgba(153, 153, 153, 0.5);
   margin-top: 18px;
   margin-left: 5px;
-  width: 93%;
+  width: 71%;
 }
 
 .text3 {
@@ -188,7 +179,7 @@
 .all {
   display: flex;
   margin-top: 13px;
-  margin-left: 7px;
+  margin-left: 14px;
 }
 
 .show {
@@ -212,7 +203,7 @@
   line-height: 20px;
   font-style: normal;
   color: #999999;
-  margin-left: -305px;
+  margin-left: -637px;
 }
 
 .set2 {
@@ -303,7 +294,7 @@
 .img {
   border: 1px solid #00b87c;
   height: 110px;
-  width: 418px;
+  width: 530px;
   margin-top: 23px;
   margin-left: 5px;
   border-radius: 4px;
@@ -380,7 +371,7 @@
 .img2 {
   border: 1px solid #00b87c;
   height: 110px;
-  width: 420px;
+  width: 530px;
   margin-top: 23px;
   margin-left: 5px;
   border-radius: 4px;
@@ -1537,4 +1528,3 @@
   font-weight: 500;
   margin-top: 3px;
 }
-
