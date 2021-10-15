@@ -17,7 +17,6 @@
     "dev:control": "npm run dev --prefix control",
     "dev:sidebar": "npm run dev --prefix sidebar",
     "dev:plugin-header": "npm run dev --prefix pluginHeader",
-    "dev:manage-user-modal": "npm run dev --prefix manageUserModal",
     "dev:zuri-ui": "npm run dev --prefix zuriUi",
     "dev:utilities": "npm run dev --prefix utilities",
     "dev:marketplace": "npm run dev --prefix marketplace",
