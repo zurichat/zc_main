@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const ChatContainer = styled.section`
+  // margin-top:2rem;
   height: 100vh;
   width: 100%;
   flex-direction: column;
