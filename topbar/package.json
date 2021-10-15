@@ -49,8 +49,8 @@
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@reach/dialog": "^0.16.0",
-    "@reduxjs/toolkit": "^1.6.2",
     "axios": "^0.21.4",
+    "emoji-mart": "^3.0.1",
     "emoji-picker-react": "^3.4.8",
     "faker": "^5.5.3",
     "jsx-runtime": "^1.2.0",
@@ -62,12 +62,11 @@
     "react-icons": "4.2.0",
     "react-loader-spinner": "^4.0.0",
     "react-notifications": "^1.7.2",
-    "react-redux": "^7.2.5",
     "react-time-picker": "^4.4.1",
     "react-timezone-select": "^1.1.11",
+    "react-tooltip": "^4.2.21",
     "react-virtualized-auto-sizer": "^1.0.6",
     "react-window": "^1.8.6",
-    "redux-thunk": "^2.3.0",
     "single-spa-react": "^4.3.1",
     "styled-components": "^5.3.1"
   }
