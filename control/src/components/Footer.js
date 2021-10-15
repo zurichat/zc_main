@@ -80,6 +80,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/legal">
+                  <span>Legal</span>{" "}
+                </Link>
+              </li>
+              <li>
                 <Link to="/open-marketplace">Market Place</Link>{" "}
               </li>
               <li>
@@ -120,9 +125,7 @@ const Footer = () => {
               <h5>{t("landing.footer.knowUs")}</h5>
               <ul>
                 <li>
-                  <Link to="/download-app">
-                    {t("landing.footer.downloads")}
-                  </Link>{" "}
+                  <Link to="/downloads">{t("landing.footer.downloads")}</Link>{" "}
                 </li>
                 <li>
                   <Link to="/contact-us">{t("landing.footer.contact")}</Link>{" "}
