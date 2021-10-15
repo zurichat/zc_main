@@ -1,28 +1,63 @@
 <template>
-<div>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <!-- {{user}} -->
+    <div
+      class="td-px-4 td-bg-green-500 td-flex td-justify-between td-items-center"
+      >
+      <div class="td-flex td-items-center">
+        <h1 class="td-px-2 td-py-2 td-text-white td-text-xl">
+          Search results for “Eric”
+        </h1>
+      </div>
+
+      <div class="td-flex td-items-center"></div>
+    </div>
+    <div >
+      <!-- <template v-if="results.length <= 0 ">
+        <div class="td-px-4">
+          <Empty />
+        </div>
+         
+      </template> -->
+      <template >
+        <div class="td-px-4 h-100">
+            <ResultCard v-for="i in 4" :key="i"/>
+        </div>
+      </template>
+  </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+ import ResultCard from './components/ResultCard.vue'
+// import
+// import Empty from './components/Empty.vue'
+import * as singleSpa from "single-spa"
+import { GetUserInfo } from 'zuricontrol'
 export default {
-  name: 'App',
+  name: "App",
+  data(){
+    return {
+      user : null,
+      results: []
+    }
+  },
   components: {
-    HelloWorld
+     ResultCard,
+    //  Empty
+  },
+  methods(){},
+  mounted() {
+    GetUserInfo().then(user => {
+            // console.log('user', user);
+            this.user = user
+        });
+    const appNames = singleSpa.getAppNames()
+    // console.log(appNames)
   }
 }
 </script>
 
 <style lang="css">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import "./assets/styles/main.css";
 </style>
