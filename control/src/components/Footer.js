@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom"
 
 import styles from "../component-styles/FooterStyle.module.css"
-import logo from "../component-assets/zurichatlogo.svg"
+import logo from "../component-assets/zurilogo.svg"
 import facebook from "../component-assets/facebook.svg"
 import twitter from "../component-assets/twitter.svg"
 import linkedin from "../component-assets/linkedin.svg"
@@ -91,7 +91,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className={styles.menu}>
+          {/* <div className={styles.menu}>
             <div>
               <h5>{t("landing.footer.company")}</h5>
               <ul>
@@ -114,7 +114,7 @@ const Footer = () => {
                   <Link to="/marketplace">{t("landing.footer.market")}</Link>{" "}
                 </li>
               </ul>
-            </div>
+            </div> */}
 
             <div>
               <h5>{t("landing.footer.knowUs")}</h5>
@@ -188,19 +188,13 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-          </div>
-        </div>
-
-        <div className={styles.bottom_footer}>
-          <p>
-            {" "}
-            &copy; {getYear()} Zuri Chat. {t("landing.footer.rights")}
-          </p>
         </div>
       </div>
-
       <div className={styles.bottom_footer}>
-        <p> &copy; {getYear()} Zuri Chat. All Rights Reserved</p>
+        <p>
+          {" "}
+          &copy; {getYear()} Zuri Chat. {t("landing.footer.rights")}
+        </p>
       </div>
     </div>
   )
