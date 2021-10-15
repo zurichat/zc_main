@@ -77,6 +77,9 @@ export const TRANSLATIONS_FR = {
       info: "Info",
       privacy: "Confidentialité et modalités",
       market: "Place du marché",
+      security: "Sécurité",
+      web3: "Web3/DAO",
+      blog: "Blog",
       knowUs: "Connaissez-nous",
       downloads: "Téléchargements",
       contact: "Contact",
@@ -93,6 +96,78 @@ export const TRANSLATIONS_FR = {
     }
   },
 
+  
+  pricing: 
+  {
+    title: {
+      pricing: "Tarification - Zuri Chat"
+    },
+
+    nav: {
+      pricing: "Prix",
+      about: "Sur",
+      downloads: "Téléchargements",
+      contact: "Contact",
+      signup: "S'inscrire",
+      login: "Connexion"
+    },
+
+    cardOne: {
+      headline: "Caractéristiques",
+      post_headline:
+        "Créez votre avenir avec nous, réseautez, collaborez, éduquez et apprenez à distance",
+      call_to_action: "Essayez Zuri.chat gratuitement"
+    },
+
+    cardThree: {
+      duration_one: "Annuel",
+      duration_two: "Mensuel",
+      button: "Commencer",
+    },
+
+    sectionThree: {
+      headline: "Ouvrir la voie en matière de sécurité d'entreprise",
+      description: "En plus du cryptage en transit et au repos, nous appliquons des programmes complets de conformité et d'assurance.",
+      link: "En savoir plus sur la sécurité..."
+    },
+
+    sectionFour: {
+      headline: "Quel que soit le travail que vous faites, vous pouvez le faire dans Zuri Chat",
+      button_one: "Parlez aux ventes",
+      button_two: "ESSAI GRATUIT"
+    },
+
+    FAQ: {
+      headline: "Questions fréquemment posées",
+      link_info: "Obtenez plus d'informations sur",
+      link: "facturation sur Zuri Chat."
+    },
+
+    footer: {
+      company: "Société",
+      careers: "Carrières",
+      about: "Sur",
+      info: "Info",
+      privacy: "Confidentialité et modalités",
+      market: "Place du marché",
+      security: "Sécurité",
+      web3: "Web3/DAO",
+      blog: "Blog",
+      knowUs: "Connaissez-nous",
+      downloads: "Téléchargements",
+      contact: "Contact",
+      documentation: "Documentation",
+      socialMedia: "Des médias sociaux",
+      rights: "Tous les droits sont réservés"
+    },
+    cookies: {
+      textOne: "Nous utilisons des",
+      textTwo: "cookies",
+      textThree: "tiers afin de personnaliser votre expérience sur le site.",
+      accept: "Permettre",
+      decline: "Déclin"
+    }
+  },
   about: {
     title: {
       about: ""
@@ -102,7 +177,7 @@ export const TRANSLATIONS_FR = {
       headline_one: "Rendre le travail simple, agréable et",
       headline_two: "plus productif.",
       description:
-        "est un centre de collaboration qui rassemble les bonnes personnes et les bons outils pour accomplir le travail. Des entreprises Fortune 100 aux marchés de proximité, des millions de personnes dans le monde utilisent ZuriChat pour connecter leurs équipes, unifier leurs systèmes et faire avancer leur entreprise.",
+        "est un centre de collaboration qui rassemble les bonnes personnes et les bons outils pour accomplir le travail. Des entreprises Fortune 100 aux marchés de proximité, des millions de personnes dans le monde utilisent ZuriChat pour connecter leurs équipes, unifier leurs systèmes et faire avancer leur entreprise."
     },
 
     counter: {
@@ -111,19 +186,22 @@ export const TRANSLATIONS_FR = {
       fortune_companies: "du Fortune 100",
       fortune_companies_: "utilisation",
       countries: "les pays ont quotidiennement",
-      countries_: "utilisateurs actifs dans",
+      countries_: "utilisateurs actifs dans"
     },
 
     whoWeAre: {
       title: "Qui sommes-nous et comment nous rejoindre",
-      description: "Notre mission est d'améliorer la vie professionnelle des gens en fournissant une plate-forme pouvant accueillir une équipe solide et diversifiée, de professionnels créatifs qui souhaitent faire le meilleur travail de leur vie.",
-      description_: "promet toutes sortes d'opportunités et une vie professionnelle simple, agréable et plus productive.",
+      description:
+        "Notre mission est d'améliorer la vie professionnelle des gens en fournissant une plate-forme pouvant accueillir une équipe solide et diversifiée, de professionnels créatifs qui souhaitent faire le meilleur travail de leur vie.",
+      description_:
+        "promet toutes sortes d'opportunités et une vie professionnelle simple, agréable et plus productive."
     },
 
     highlights: {
       title: "Le télétravail plus intrigant que jamais",
       description: "ZuriChat est l'endroit où le travail rencontre le plaisir.",
-      description_: "Connectez-vous et interagissez avec votre équipe efficacement depuis n'importe où dans le monde",
+      description_:
+        "Connectez-vous et interagissez avec votre équipe efficacement depuis n'importe où dans le monde",
       channels: {
         title: "Canaux",
         description: "Organisez les conversations en",
@@ -138,30 +216,32 @@ export const TRANSLATIONS_FR = {
         title: "Date limite de l'entreprise",
         description: "Gardez une trace des délais avec",
         description_: "la date limite de l'entreprise",
-        description__: "caractéristique",
+        description__: "caractéristique"
       },
       quickReply: {
         title: "Application de réponse rapide",
         description: "Obtenez des réponses rapides à Direct",
-        description_: "messages",
+        description_: "messages"
       },
       todoList: {
         title: "Liste de choses à faire",
         description: "Organiser les tâches avec la liste de tâches",
-        description_: "caractéristique",
-      },
+        description_: "caractéristique"
+      }
     },
 
     features: {
       title: "Caractéristiques spéciales",
-      description: "Augmentez votre productivité en assemblant tous vos outils de travail en un seul endroit",
+      description:
+        "Augmentez votre productivité en assemblant tous vos outils de travail en un seul endroit",
       avatar: {
         title: "Salon Avatar animé",
-        description: "Créez et animez votre propre avatar dans le salon avatar",
+        description: "Créez et animez votre propre avatar dans le salon avatar"
       },
       files: {
         title: "Fichiers d'entreprise",
-        description: "Accédez à vos fichiers sur Google Drive pendant que vous êtes sur ZuriChat.",
+        description:
+          "Accédez à vos fichiers sur Google Drive pendant que vous êtes sur ZuriChat."
       },
       accessibility: {
         title: "Accessibilité",
@@ -172,72 +252,74 @@ export const TRANSLATIONS_FR = {
         title: "Objectifs de l'entreprise",
         description: "Suivre les objectifs de l'entreprise",
         description_: "directement dans ZuriChat"
-      },
+      }
     },
 
     cta: {
-      title: "Quel que soit le travail que vous faites, vous pouvez le faire dans Zuri Chat",
+      title:
+        "Quel que soit le travail que vous faites, vous pouvez le faire dans Zuri Chat",
       link_sales: "Parlez aux ventes",
       link_try: "Essayez-le gratuitement"
     },
 
-   careers:{
-    title: {
-      careers: "Carrières"
-    },
-    section_one: {
-      headline: "Carrières chez Zuri Chat",
-      post_headline: "Passionné de rendre la vie au travail plus simple et plus productive ? Rejoignez notre équipe conviviale et flexible.",
-      join_link: "Rejoignez Zuri Chat"
-    },
-    career_grid: {
-      headline: "Rejoignez notre stage",
-      post_headline: 
-        "Zuri Internship est une formation 100% gratuite, à distance et rapide pour les jeunes professionnels cherchant à perfectionner leurs compétences techniques et à booster leur CV.",
-      categories:{
-        category_frontend: {
-          headline: "Développement Front-end",
-          post_headline: "Cette piste traite de l'aspect de votre application avec lequel les utilisateurs interagissent. Un développeur front-end sera capable d'interpréter correctement une conception donnée à l'interface utilisateur."
-        },
-        category_backend: {
-          headline: "Développement Back-end",
-          post_headline: "Cette piste traite de l'aspect de l'application avec lequel l'utilisateur n'interagit pas directement. Il permet la fonction frontale soit en exécutant du code back-end, soit en se connectant à la base de données."
-        },
-        category_design: {
-          headline: "Concevoir",
-          post_headline: "Cette piste traite de la création d'un plan graphique pour une application. Vous apprendrez à convertir la documentation du projet en une conception graphique visible et compréhensible pour les développeurs."
-        },
-        category_mobile: {
-          headline: "Développement Mobile",
-          post_headline: "La piste mobile contient une liste d'outils et de langages nécessaires à un développeur pour créer des applications mobiles. Une application mobile peut être IOS ou Android."
-        },
-        category_digital_marketing: {
-          headline: "Le marketing numérique",
-          post_headline: "Il comprend l'utilisation de moyens et d'utilitaires numériques pour augmenter la découvrabilité des produits, des services et des marques."
-        },
-        category_frameworks: {
-          headline: "Cadres",
-          post_headline: "Au cours du programme, nous explorerons plusieurs frameworks utiles pour vous donner un avantage dans l'industrie et vous aider à développer des applications complexes beaucoup plus rapidement."
-        }       
-        
+    careers: {
+      title: {
+        careers: "Carrières"
       },
-      join_cohort: "Faites partie de notre prochaine cohorte à partir de l'été 2022",
-      register_now: "S'inscrire maintenant"
-    },
-    section_two: {
-      headline: "Travailler et s'épanouir",
-      post_headline: "Nous offrons des avantages qui vous aident à vous sentir mieux et à faire de votre mieux.",
-      digital_wellness: {
-        headline: "Bureau d'abord numérique",
-        post_headline: "Avec des rôles à distance, une intégration sans bureau et des pratiques de travail flexibles, nous sommes prêts pour des réalités, des horaires et des responsabilités en constante évolution."
+      section_one: {
+        headline: "Carrières chez Zuri Chat",
+        post_headline: "Passionné de rendre la vie au travail plus simple et plus productive ? Rejoignez notre équipe conviviale et flexible.",
+        join_link: "Rejoignez Zuri Chat"
       },
-      just_for_you: {
-        headline: "Juste pour toi",
-        post_headline: "Recevez une allocation annuelle pour le développement professionnel, plus une allocation mensuelle pour couvrir vos besoins; Un nouveau look de travail, un animal de compagnie, tout ce qui compte le plus pour vous."
+      career_grid: {
+        headline: "Rejoignez notre stage",
+        post_headline:
+          "Zuri Internship est une formation 100% gratuite, à distance et rapide pour les jeunes professionnels cherchant à perfectionner leurs compétences techniques et à booster leur CV.",
+        categories: {
+          category_frontend: {
+            headline: "Développement Front-end",
+            post_headline: "Cette piste traite de l'aspect de votre application avec lequel les utilisateurs interagissent. Un développeur front-end sera capable d'interpréter correctement une conception donnée à l'interface utilisateur."
+          },
+          category_backend: {
+            headline: "Développement Back-end",
+            post_headline: "Cette piste traite de l'aspect de l'application avec lequel l'utilisateur n'interagit pas directement. Il permet la fonction frontale soit en exécutant du code back-end, soit en se connectant à la base de données."
+          },
+          category_design: {
+            headline: "Concevoir",
+            post_headline: "Cette piste traite de la création d'un plan graphique pour une application. Vous apprendrez à convertir la documentation du projet en une conception graphique visible et compréhensible pour les développeurs."
+          },
+          category_mobile: {
+            headline: "Développement Mobile",
+            post_headline: "La piste mobile contient une liste d'outils et de langages nécessaires à un développeur pour créer des applications mobiles. Une application mobile peut être IOS ou Android."
+          },
+          category_digital_marketing: {
+            headline: "Le marketing numérique",
+            post_headline: "Il comprend l'utilisation de moyens et d'utilitaires numériques pour augmenter la découvrabilité des produits, des services et des marques."
+          },
+          category_frameworks: {
+            headline: "Cadres",
+            post_headline: "Au cours du programme, nous explorerons plusieurs frameworks utiles pour vous donner un avantage dans l'industrie et vous aider à développer des applications complexes beaucoup plus rapidement."
+          }
+
+        },
+        join_cohort: "Faites partie de notre prochaine cohorte à partir de l'été 2022",
+        register_now: "S'inscrire maintenant"
       },
-      health_and_wellness: {
-        headline: "Santé et bien-être",
-        post_headline: "Zuri paie 100 % de vos primes. Nous offrons également l'accès à une gamme de ressources gratuites sur la santé mentale et le bien-être."
+      section_two: {
+        headline: "Travailler et s'épanouir",
+        post_headline: "Nous offrons des avantages qui vous aident à vous sentir mieux et à faire de votre mieux.",
+        digital_wellness: {
+          headline: "Bureau d'abord numérique",
+          post_headline: "Avec des rôles à distance, une intégration sans bureau et des pratiques de travail flexibles, nous sommes prêts pour des réalités, des horaires et des responsabilités en constante évolution."
+        },
+        just_for_you: {
+          headline: "Juste pour toi",
+          post_headline: "Recevez une allocation annuelle pour le développement professionnel, plus une allocation mensuelle pour couvrir vos besoins; Un nouveau look de travail, un animal de compagnie, tout ce qui compte le plus pour vous."
+        },
+        health_and_wellness: {
+          headline: "Santé et bien-être",
+          post_headline: "Zuri paie 100 % de vos primes. Nous offrons également l'accès à une gamme de ressources gratuites sur la santé mentale et le bien-être."
+        }
       }
     }
   }
