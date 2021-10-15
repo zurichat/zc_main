@@ -70,7 +70,7 @@
 .btn {
   margin: 0.3rem;
 }
-button .btn_sale{
+.btn_sale{
   background-color: #fff;
   text-transform: uppercase;
   color: #00b87c;
@@ -80,7 +80,7 @@ button .btn_sale{
   width: 7rem;
   height: 3rem;
 }
-button .btn_sale:hover {
+.btn_sale:hover {
   color: #00b87c;
   background-color: rgba(255, 255, 255, 0.7);
   border: 2px solid #fff;
@@ -92,7 +92,7 @@ button .btn_sale:hover {
   justify-content: center;
   align-items: center;
 }
-.signup-cta h3{
+.signup-cta .text{
   color: white;
 }
 .btn_free {
