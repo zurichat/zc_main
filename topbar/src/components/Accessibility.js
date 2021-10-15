@@ -2,21 +2,12 @@ import React, { useState, useEffect } from "react"
 import styles from "../styles/Accessibility.module.css"
 import image1 from "../assets/images/up_icon.jpeg"
 import { GetUserInfo } from "../../../control/src/zuri-control"
-import { useSelector, useDispatch } from "react-redux"
-import {
-  getUserInfo,
-  setUserAccessibilitySettings
-} from "../../src/redux/userAction/userActions"
 import checkFill from "../assets/images/check-fill.svg"
 import checkNotFill from "../assets/images/check-not-fill.svg"
 import radioFilled from "../assets/images/radio-fill.svg"
 import radioNotFilled from "../assets/images/radio-not-fill.svg"
 
 function Accessibility() {
-  const dispatch = useDispatch()
-  const { accessibility, error, userSettings } = useSelector(
-    state => state.rootReducer
-  )
   // initialstate is the accessibilty settings from GetUserInfo
   const [errorAccessibility, setErrorAccessibility] = useState()
   const [accessbilitySettings, setAccessibilitySettings] = useState({
@@ -52,14 +43,14 @@ function Accessibility() {
             Authorization: `Bearer ${userInfo.token}`
           }
         }
-        dispatch(
-          setUserAccessibilitySettings(
-            `https://api.zuri.chat/organizations/${orgId}/members/${memId}/settings/accessibility`,
-            userAccessibiltySettings,
-            userHeader
-          )
-        )
-        dispatch(getUserInfo())
+        // dispatch(
+        //   setUserAccessibilitySettings(
+        //     `https://api.zuri.chat/organizations/${orgId}/members/${memId}/settings/accessibility`,
+        //     userAccessibiltySettings,
+        //     userHeader
+        //   )
+        // )
+        // dispatch(getUserInfo())
       } catch (err) {
         setErrorAccessibility(err)
       }
