@@ -106,9 +106,9 @@ export const StyledProfileWrapper = styled.section`
           display: block;
         }
         .input,
-        .select,
+        select,
         .textarea,
-        .PhoneInput,
+        .phoneInput,
         .css-2b097c-container {
           width: 100%;
           border: 1.5px solid #a1a1a1;
@@ -179,7 +179,7 @@ export const StyledProfileWrapper = styled.section`
       }
     }
     .img-container {
-      width: 24rem;
+      padding-right: 1.5rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -192,6 +192,7 @@ export const StyledProfileWrapper = styled.section`
         height: 26rem;
         display: flex;
         flex-direction: column;
+        align-items: center;
         .avatar-container {
           display: flex;
           align-items: center;
@@ -199,11 +200,20 @@ export const StyledProfileWrapper = styled.section`
           width: 192px;
           height: 192px;
           margin-bottom: 1.2rem;
+          .profile__img-wrapper {
+            height: 100%;
+          }
+          .pictureHeading {
+            display: block;
+            padding-bottom: 0.3rem;
+            font-weight: bold;
+          }
           .img {
             object-fit: cover;
             width: 100%;
             height: 100%;
             border-radius: 4px;
+            margin: 0 auto;
           }
         }
       }
@@ -228,6 +238,7 @@ export const StyledProfileWrapper = styled.section`
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    padding-right: 1.75rem;
     /* margin-top: 2.5rem; */
     margin-bottom: 1rem;
     @media (max-width: 768px) {
@@ -246,9 +257,9 @@ export const StyledProfileWrapper = styled.section`
       color: #fff;
       border-radius: 4px;
       text-align: center;
-      width: 85%;
-      margin: 0 auto;
+      width: 192px;
       padding: 0.5rem 1rem;
+      margin-top: 1.3rem;
       &:hover {
         background: #029765;
         color: #fff;
@@ -267,7 +278,7 @@ export const StyledProfileWrapper = styled.section`
     color: #999;
     font-size: 1rem;
     margin-top: 0.5rem;
-    margin: 0 auto;
+    text-align: center;
     &:hover {
       color: red;
       transition: all 0.3s ease-in-out;
@@ -284,4 +295,4 @@ export const StyledProfileWrapper = styled.section`
     }
   }
 `
-// border-radius: 50%;
+// border-radius: 50%;  // margin: 0 auto;  width: 24rem;
