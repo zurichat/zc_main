@@ -17,34 +17,35 @@ import { setPluginId } from '../context/marketplace/marketplace.action'
 const MarketPlace = ({id}) => {
      const [filteredPlugin, setFilteredPlugin] = useState([])
      const [searchInput, setSearchInput] = useState('')
-     const [pluginData, setPluginData] = useState([])
      const [userDetails, setUserDetails] = useState(null)
+     const [pluginName, setPluginName] = useState([])
    
 
+     
 
     useEffect(() => {
       axios.get(`https://api.zuri.chat/marketplace/plugins`)
            .then((response) => {
-            setPluginData(response.data.data[0].name);
-            console.error(pluginData, response.data.data[0].name)
-            
+            setPluginName(response.data.data.map((info, id) => {
+              return info.name
+          }))
+          console.error(response.data.data)
           })
-          
     }, [])
-
-     const searchedPlugins = (searchValue) => {
-       
-       setSearchInput(searchValue)
-      
-       if (searchInput !== '') {
-         const filteredPlugin = pluginData.data.filter((item) => {
-           return Object.values(item).join('').toLocaleLowerCase().includes(searchInput.toLowerCase())
-         })
-         setFilteredPlugin(filteredPlugin)
-       } else {
-         setFilteredPlugin(pluginData)
-       }
-     }
+  
+  const searchedPlugins = (searchValue) => {
+  setSearchInput(searchValue)
+  // if (searchInput !== '') {
+      const filteredPlugin = (pluginName?.filter((data, id) => {
+      return Object.values(data).join('').toLocaleLowerCase().includes(searchInput.toLowerCase())
+      }))
+      setFilteredPlugin(filteredPlugin)
+      console.error(filteredPlugin)
+  // } else {
+  //     setFilteredPlugin(pluginName)
+  // }
+  }
+   
 
      const marketplace = useMarketPlaceContext()
      const renderPluginData = () => {
@@ -95,22 +96,22 @@ const MarketPlace = ({id}) => {
                 </div>
                 <button className={styles.marketplaceHeroButton}>Search</button>
                </div>
-               <div className={styles.pluginList}>
-                 { searchInput.length > 1 ? (
-                   Object.keys(filteredPlugin).map((item, id) => {
+               <div className={styles.pluginBackground} >
+                 { searchInput.length !== 0 ? 
+                   filteredPlugin.map((item, id) => {
                    return (
-                     <div key={id} >
+                     <div key={id} className={styles.pluginList} >
                      <li className={styles.pluginHover} onClick={renderPluginData}>
                        <span  >
-                         {filteredPlugin[item]}
+                         {item}
                        </span>
                      </li>
                      </div>
                    )
                    
                  })
-                 ) : (
-                   Object.keys(pluginData).map((item, id) => {
+                  : (
+                   pluginName.map((item, id) => {
                      return (
                       <div key={id} >
                       {/* <li>
