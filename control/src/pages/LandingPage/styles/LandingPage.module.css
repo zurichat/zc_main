@@ -107,7 +107,7 @@
   align-items: center;
   height: 4.5rem;
 }
-.hero_left_btn_wrap input{
+.hero_left_btn_wrap .input-tag{
   border: none;
   outline: none;
   font-size: 1rem;
