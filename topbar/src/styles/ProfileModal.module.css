@@ -226,6 +226,7 @@
 .modalContent,
 .modalFull {
   width: 80%;
+  max-width: 885px;
   background: #fff;
   border-radius: 4px;
   overflow: hidden;
