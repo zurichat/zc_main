@@ -70,21 +70,30 @@
 .btn {
   margin: 0.3rem;
 }
-.btn_sale {
+button .btn_sale{
   background-color: #fff;
   text-transform: uppercase;
   color: #00b87c;
   margin-top: 2rem;
   font-weight: 600;
   border-radius: .3rem;
+  width: 7rem;
+  height: 3rem;
 }
-.btn_sale:hover {
+button .btn_sale:hover {
   color: #00b87c;
   background-color: rgba(255, 255, 255, 0.7);
   border: 2px solid #fff;
 }
 .signup-cta{
   text-align: center;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.signup-cta h3{
+  color: white;
 }
 .btn_free {
   background-color: transparent;
