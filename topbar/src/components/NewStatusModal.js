@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react"
+import React, { useState, useContext, useEffect } from "react"
 import { Picker } from "emoji-mart"
 import ReactTooltip from "react-tooltip"
 import DatePicker from "react-datepicker"
@@ -65,6 +65,10 @@ const SetStatusModal = ({
   const [dropdown, setDropdown] = useState(false)
   const [openEmoji, setOpenEmoji] = useState(false)
   const [dateTime, setDateTime] = useState(false)
+  const [dateState, setDateState] = useState(
+    new Date().toISOString().slice(0, -14)
+  )
+  const [timeState, setTimeState] = useState(null)
   const [choosePeriod, setChoosePeriod] = useState(user?.status?.expiry_time)
   const { user, orgId, setUser } = useContext(ProfileContext)
 
@@ -73,6 +77,18 @@ const SetStatusModal = ({
     setOpenEmoji(!openEmoji)
   }
   //
+  const setDateHandler = event => {
+    // console.log(event.target.value)
+    setDateState(event.target.value)
+  }
+  const setTimeHandler = event => {
+    // console.log(event.target.value)
+    setTimeState(event.target.value)
+  }
+  //
+  useEffect(() => {
+    setTimeState(getTime())
+  }, [])
   const getTime = () => {
     let d = new Date()
     let h = d.getHours(),
@@ -90,7 +106,7 @@ const SetStatusModal = ({
     return h + ":" + m
   }
   const currentTime = getTime()
- 
+
   const handleSubmit = e => {
     e.preventDefault()
 
@@ -461,14 +477,16 @@ const SetStatusModal = ({
                     <input
                       type="date"
                       className={styles.date}
-                      defaultValue={new Date().toISOString().slice(0, -14)}
-                      min={new Date().toISOString().slice(0, -14)}
+                      defaultValue={dateState}
+                      min={dateState}
+                      onChange={setDateHandler}
                     />
                     <input
                       type="time"
                       className={styles.time}
-                      defaultValue={currentTime}
+                      defaultValue={timeState}
                       min={currentTime}
+                      onChange={setTimeHandler}
                     />
                   </div>
                 ) : null}
