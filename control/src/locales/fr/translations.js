@@ -322,5 +322,31 @@ export const TRANSLATIONS_FR = {
         }
       }
     }
+  },
+  login:{
+    title: "Connexion - Zuri Chat",
+    form: {
+      header: "Connexion",
+      sub_header: "Connectez-vous avec les données que vous avez saisies lors de votre inscription",
+      google_header: "Connectez-vous avec Google",
+      topline_text: "OU",
+      submitButtonName: "Connexion",
+      bottomLine: "Nouveau chez nous ?",
+      bottomLink: "Create an Account",
+      signUp: "Inscrivez-vous",
+      authInputBox: {
+        emailInputName: "Email address",
+        passwordInputName: "Mot de passe",
+        passwordInputPlaceHolder: "Entrer un mot de passe",
+        rememberMe: "Souviens-toi de moi",
+        forgotPassword: "Mot de passe oublié?",
+        getHelp: "Obtenez de l'aide pour vous connecter"
+      }
+    },
+    footer: {
+      contactUs: "Nous contacter",
+      legacyPolicy: "Politique juridique",
+      aboutZuri: "À propos de Zurichat"
+    }
   }
 }
