@@ -36,13 +36,13 @@ const DownloadsDesktop = () => {
           </p>
 
           <div className={styles.heroImages}>
-            <div className={styles.alignCenter}>
+            <div className={styles.alignForDesktop}>
               <img
                 className={`${styles.screenshot}`}
                 src={device}
                 alt="app screenshot"
               />
-              <div>
+              <div className={styles.desktop}>
                 <h2>Zuri for Desktop</h2>
                 <a href="/download-app" className={styles.downloadButton}>
                   <img className={`px-1`} src={apple1} alt="download icon" />
@@ -58,13 +58,9 @@ const DownloadsDesktop = () => {
               </div>
             </div>
 
-            <div className={styles.alignCenter}>
+            <div className={styles.alignForMobile}>
               <div className={styles.mobileImage}>
-                <img
-                  src={infolaptop}
-                  className={`${styles.screenshot}`}
-                  alt=""
-                />
+                <img src={infolaptop} className={`${styles.mobile}`} alt="" />
               </div>
               <div>
                 <h2>Zuri for Mobile</h2>
@@ -83,7 +79,7 @@ const DownloadsDesktop = () => {
                     src={googleplay}
                     alt="download icon"
                   />
-                  <span>GET IT ON Google Play</span>
+                  <span>Get it on Google Play</span>
                 </a>
               </div>
             </div>
