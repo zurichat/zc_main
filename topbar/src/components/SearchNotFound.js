@@ -1,6 +1,7 @@
 import React from 'react';
-import style from '../styles/searchNotFound.module.css';
+import style from '../styles/SearchNotFound.module.css';
 import emoji from '../assets/images/thinking.png';
+// import startNewSearch from '../topbar/src/components/StartNewSearchButton.jsx';
 
 export const NoResult = ( ) => {
     return(
@@ -17,6 +18,7 @@ export const NoResult = ( ) => {
                         checking for typos, or adjusting your filters.
                         <a> Learn how to search in Slack</a>
                         </div>
+                        <startNewSearch/>
                     </div>
                     <span className={style.feedback}>
                         <span className={style.feedback__text}>Not the results you expected? </span> 

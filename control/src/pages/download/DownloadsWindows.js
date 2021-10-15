@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from 'react'
-import Footer from '../../components/Footer'
-import styles from './styles/download.module.css'
-import Header from '../../components/Header'
-import Ellipse159 from './assets/Ellipse159.svg'
-import laptop from './assets/laptop.svg'
-import screen from './assets/screen.svg'
-import icon from './assets/icon.svg'
-import fetchInstall from './utils/index'
-import { Link } from 'react-router-dom'
-import { Helmet } from 'react-helmet'
+import React, { useEffect, useState } from "react"
+import Footer from "../../components/Footer"
+import styles from "./styles/download.module.css"
+import Header from "../../components/Header"
+import Ellipse159 from "./assets/Ellipse159.svg"
+import laptop from "./assets/laptop.svg"
+import screen from "./assets/screen.svg"
+import icon from "./assets/icon.svg"
+import fetchInstall from "./utils/index"
+import { Link } from "react-router-dom"
+import { Helmet } from "react-helmet"
 
 // const Apk = '../../apk/appRelease.apk'
 // import Apk from '../../apk/appRelease.apk'
 
 const DownloadsWindows = () => {
-  const [exe, setexe] = useState({ link: '', name: '' })
+  const [exe, setexe] = useState({ link: "", name: "" })
   // const [msi, setmsi] = useState({ link: '', name: '' })
   // const [dmg, setdmg] = useState({ link: '', name: '' })
 
   useEffect(() => {
-    fetchInstall('exe').then(res => {
+    fetchInstall("exe").then(res => {
       setexe(res)
     })
     // fetchInstall('msi').then(res => {setmsi(res)})
@@ -51,7 +51,7 @@ const DownloadsWindows = () => {
               className={`${styles.buttondiv} p-lg-5 m-lg-5 mb-lg-0 p-md-3 m-md-3`}
             >
               <a
-                href={`https://drive.google.com/file/d/1J1rl-_3QeG9H4rnn9EF0XW0kSGb_Wsl4/view?usp=sharing`}
+                href={`https://play.google.com/store/apps/details?id=com.zurichat.app`}
                 download={`zurichat`}
                 className={styles.button1}
               >
@@ -75,14 +75,14 @@ const DownloadsWindows = () => {
             <h6 className={`${styles.h6zuri}`}>Why Zuri Chat App?</h6>
             <p className={`${styles.p1}`}>
               Never miss the seamless collaboration experience even on the go
-              with the zuri chat pc,{' '}
+              with the zuri chat pc,{" "}
               <a href="#" className={`${styles.mobile}`}>
                 Android
-              </a>{' '}
-              and{' '}
+              </a>{" "}
+              and{" "}
               <a href="#" className={`${styles.mobile}`}>
                 iOS
-              </a>{' '}
+              </a>{" "}
               apps.
             </p>
           </div>

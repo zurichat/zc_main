@@ -50,8 +50,7 @@ export const TRANSLATIONS_EN = {
 
     featureRowFour: {
       title: "Advanced Search",
-      headline:
-        "Access Files and Messages in your Workspace Effortlessly",
+      headline: "Access Files and Messages in your Workspace Effortlessly",
       description:
         "With the search tool, find previously shared messages, files and links with ease.",
       link: "Learn more about Search"
@@ -64,12 +63,12 @@ export const TRANSLATIONS_EN = {
     },
 
     cardTwo: {
-      title:
-        "Be the First to get updates and exclusive offers from Zuri Chat",
+      title: "Be the First to get updates and exclusive offers from Zuri Chat",
       description:
         "Enrich your Zuri Chat experience by signing up here to get the latest news and special deals on Zuri Chat",
       button: "Subscribe"
     },
+
     footer: {
       company: "Company",
       careers: "Careers",
@@ -77,6 +76,9 @@ export const TRANSLATIONS_EN = {
       info: "Info",
       privacy: "Privacy & Terms",
       market: "Market Place",
+      blog: "Blog",
+      security: "Security",
+      web3: "Web3/DAO",
       knowUs: "Know us",
       downloads: "Downloads",
       contact: "Contact",
@@ -93,6 +95,78 @@ export const TRANSLATIONS_EN = {
     }
   },
 
+
+  pricing: 
+  {
+    title: {
+      pricing: "Pricing - Zuri Chat"
+    },
+
+    nav: {
+      pricing: "Pricing",
+      about: "About",
+      downloads: "Downloads",
+      contact: "Contact",
+      signup: "Sign Up",
+      login: "Login"
+    },
+
+    cardOne: {
+      headline: "Features",
+      post_headline:
+        "Create your future with us, network, collaborate, educate and learn remotely",
+      call_to_action: "Try Zuri.chat for free"
+    },
+
+    cardThree: {
+      duration_one: "Annual",
+      duration_two: "Monthly",
+      button: "Get Started",
+    },
+
+    sectionThree: {
+      headline: "Leading the way in enterprise security",
+      description: "In addition to encryption in transit and at rest, we operate comprehensive compliance ans assurance programs.",
+      link: "Learn more about security..."
+    },
+
+    sectionFour: {
+      headline: "Whatever work you do, you can do it in Zuri Chat",
+      button_one: "Talk to Sales",
+      button_two: "TRY IT FREE"
+    },
+
+    FAQ: {
+      headline: "Commonly Asked Questions",
+      link_info: "Get more information on",
+      link: "billing at Zuri Chat."
+    },
+
+    footer: {
+      company: "Company",
+      careers: "Careers",
+      about: "About",
+      info: "Info",
+      privacy: "Privacy & Terms",
+      market: "Market Place",
+      blog: "Blog",
+      security: "Security",
+      web3: "Web3/DAO",
+      knowUs: "Know us",
+      downloads: "Downloads",
+      contact: "Contact",
+      documentation: "Documentation",
+      socialMedia: "Social Media",
+      rights: " All Rights Reserved"
+    },
+    cookies: {
+      textOne: "We use third-party",
+      textTwo: "cookies",
+      textThree: "in order to personalize your site experience.",
+      accept: "Allow",
+      decline: "Decline"
+    }
+  },
   about: {
     title: {
       about: ""
@@ -102,7 +176,7 @@ export const TRANSLATIONS_EN = {
       headline_one: "Make work simple, pleasant and ",
       headline_two: "more productive.",
       description:
-        "is a collaboration hub that brings the right people and tools together to get work done. From Fortune 100 companies to corner markets, millions of people around the world use ZuriChat to connect their teams, unify their systems, and drive their business forward.",
+        "is a collaboration hub that brings the right people and tools together to get work done. From Fortune 100 companies to corner markets, millions of people around the world use ZuriChat to connect their teams, unify their systems, and drive their business forward."
     },
 
     counter: {
@@ -111,19 +185,22 @@ export const TRANSLATIONS_EN = {
       fortune_companies: "of the Fortune 100",
       fortune_companies_: "use",
       countries: "countries have daily",
-      countries_: "active users in",
+      countries_: "active users in"
     },
 
     whoWeAre: {
       title: "Who we are and how to join us",
-      description: "Our mission is to improve people's working life by providing a platform that can host a strong diverse team , of creative professionals who want to do the best work of their lives",
-      description_: "promises all kinds of opportunities and a simple, pleasant and more productive working life.",
+      description:
+        "Our mission is to improve people's working life by providing a platform that can host a strong diverse team , of creative professionals who want to do the best work of their lives",
+      description_:
+        "promises all kinds of opportunities and a simple, pleasant and more productive working life."
     },
 
     highlights: {
       title: "Working remotely more intriguing than ever",
       description: "ZuriChat is where work meets fun.",
-      description_: "Connect and interact with your team efficiently from anywhere around the globe",
+      description_:
+        "Connect and interact with your team efficiently from anywhere around the globe",
       channels: {
         title: "Channels",
         description: "Organize conversations into dedicated ",
@@ -138,30 +215,31 @@ export const TRANSLATIONS_EN = {
         title: "Company Deadline",
         description: "Keep track of deadlines with ",
         description_: "the company deadline ",
-        description__: "feature",
+        description__: "feature"
       },
       quickReply: {
         title: "Quick Reply App",
         description: "Get swift replies to Direct ",
-        description_: "Messages",
+        description_: "Messages"
       },
       todoList: {
         title: "To do List",
         description: "Organize tasks with the to-do-list",
-        description_: "feature",
-      },
+        description_: "feature"
+      }
     },
 
     features: {
       title: "Special Features",
-      description: "Increase your productivity by assembling all your work tools into one place",
+      description:
+        "Increase your productivity by assembling all your work tools into one place",
       avatar: {
         title: "Animated Avatar Loungue",
-        description: "Create and animate your own avatar in the avatar lounge",
+        description: "Create and animate your own avatar in the avatar lounge"
       },
       files: {
         title: "Company Files",
-        description: "Access your files on google drive while on ZuriChat.",
+        description: "Access your files on google drive while on ZuriChat."
       },
       accessibility: {
         title: "Accessibility",
@@ -172,7 +250,7 @@ export const TRANSLATIONS_EN = {
         title: "Company Goals",
         description: "Keep up with company goals",
         description_: "right inside ZuriChat"
-      },
+      }
     },
 
     cta: {
@@ -240,6 +318,32 @@ export const TRANSLATIONS_EN = {
           post_headline: "Zuri Pays 100% of your premiums. We also offer access to a range of free mental health and well-being resources."
         }
       }
+    }
+  },
+  login:{
+    title: "Login - Zuri Chat",
+    form: {
+      header: "Login",
+      sub_header: "Login with the data you entered during your registration",
+      google_header: "Login with Google",
+      topline_text: "OR",
+      submitButtonName: "Log in",
+      bottomLine: "New to us?",
+      bottomLink: "Create an Account",
+      signUp: "Signup",
+      authInputBox: {
+        emailInputName: "Email address",
+        passwordInputName: "Password",
+        passwordInputPlaceHolder: "Enter a password",
+        rememberMe: "Remember me",
+        forgotPassword: "Forgot password?",
+        getHelp: "Get help signing in"
+      }
+    },
+    footer: {
+      contactUs: "Contact Us",
+      legacyPolicy: "Legal Policy",
+      aboutZuri: "About Zurichat"
     }
   }
 }
