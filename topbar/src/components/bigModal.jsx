@@ -3,7 +3,7 @@ import axios from 'axios'
 import cancel from "../assets/images/cancel.svg"
 import SearchValue from "./searchValueComponent"
 import Styled from "styled-components"
-import noImg from "../assets/images/no-img.svg"
+import noImg from "../assets/images/no-Img.svg"
 import SearchModalResult from "./ModalAutoCompleteResult"
 import {NoResult} from './SearchNotFound'
 export const BigModal = ({ onClose, inputValue }) => {
