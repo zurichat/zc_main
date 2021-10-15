@@ -116,3 +116,12 @@ a {
     /* font-size: 18px; */
   }
 }
+
+
+@media screen and (max-width: 960px) {
+  .buttonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
