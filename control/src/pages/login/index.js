@@ -147,7 +147,7 @@ const Login = () => {
           handleSubmit={handleSubmit}
           bottomLine={t("login.form.bottomLine")}
           bottomLink={t("login.form.bottomLink")}
-          bottomLinkHref={t("login.form.signUp")}
+          bottomLinkHref="Signup"
           setLoading={setLoading}
         >
           <AuthInputBox
