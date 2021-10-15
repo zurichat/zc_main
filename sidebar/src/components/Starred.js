@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react"
+import React, {  useState } from "react"
 import DropDown from "./Drop"
 import styles from "../styles/Drop.module.css"
 import Room from "./Room"
@@ -10,8 +10,9 @@ export default function Starred(props) {
 
   const toggleDropdown = () => setOpen(!isOpen)
 
+  const checked = props.check.includes(true) ? true : false
   return props.state.sidebar ? (
-    <Fragment>
+    <div className={`${styles.item__row} ${checked && styles.open}`}>
       {props.state && (
         <DropDown
           categoryName="Starred"
@@ -22,6 +23,7 @@ export default function Starred(props) {
 
       {props.state.sidebar &&
        Object.keys(props.state.sidebar).map((plugin, idx) =>{
+           
            return(
             //    <h1 key={idx}>all good</h1>
         <ul 
@@ -62,7 +64,7 @@ export default function Starred(props) {
             </Room>
           ) : null
         })} */}
-    </Fragment>
+    </div>
   ) : (
     <SkeletonLoader />
   )
