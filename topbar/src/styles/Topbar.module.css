@@ -129,6 +129,12 @@
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
+@media (max-width: 768px) {
+  .topbarModal {
+    width: 84%;
+  }
+}
+
 .modalContainers {
   height: 100vh;
   width: 100vw;
@@ -206,20 +212,11 @@
 
 /* set yourself as away*/
 
-.away {
-  font-size: 11px;
-  line-height: 13.2px;
-  position: absolute;
-  right: 178px;
-  top: 55px;
-}
 
 /* set yourself as active*/
 
-.active {
-  font-size: 13px;
-  line-height: 13.2px;
-  margin-left: 9px;
+.active, .away {
+ padding: 5px 0 0 12px
 }
 
 .activeCircle {
@@ -366,6 +363,7 @@
   border: 1.2px solid #e5e1e1;
   width: 100%;
   margin-top: 5px;
+  height: 0px !important;
   margin-bottom: 15px;
 }
 
@@ -464,15 +462,4 @@
   color: #fff;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 768px) {
-  /* set yourself as away*/
-  .away {
-    position: absolute;
-    right: 183px;
-  }
-  /* set yourself as active*/
-  .active {
-    position: absolute;
-    right: 180px;
-  }
-}
+
