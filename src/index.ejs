@@ -30,7 +30,7 @@
       if (getURL !== '/') {
         getURL = getURL.substr(1);
         getURL = getURL.charAt(0).toUpperCase() + getURL.slice(1);
-        document.title = getURL + appendZuri;
+        document.title = getURL +  ' '  +   appendZuri;
       };
     };
     setInterval(getTitleOfPage, 500)
@@ -82,7 +82,7 @@
     }
 
     div[id*='zuri/topbar'] {
-      z-index: 5;
+      /* z-index: 5; */
       width: 100%;
       height: 6vh;
       position: fixed;
@@ -93,7 +93,7 @@
       /* justify-content: center; */
       align-items: center;
       background-color: #fff;
-      z-index: 9;
+      z-index: 1;
       overflow: unset;
     }
 
@@ -114,7 +114,7 @@
       top: 6vh;
       left: 0;
       background-color: #fff;
-      z-index: 99999;
+      /* z-index: 1; */
     }
 
     div[id*='zuri/commentSidebar'] {
@@ -123,7 +123,7 @@
       background-color: #e5e5e5;
       right: 0;
       top: 20vh;
-      z-index: 9999;
+      z-index: 2;
     }
 
     div[id*='zuri-plugin'],
@@ -287,7 +287,7 @@
         "@zuri/zuri-plugin-calendar": "https://calendar.zuri.chat/static/zuri-zuri-plugin-holiday-calendar.js",
         "@zuri/zuri-plugin-expenses": "https://expenses.zuri.chat/js/zuri-zuri-plugin-expenses.js",
         "@zuri/zuri-plugin-tools": "https://externaltools.zuri.chat/zuri-zuri-plugin-tools.js",
-        "@zuri/zuri-plugin-channels": "//localhost:8090/zuri-zuri-plugin-channels.js",
+        "@zuri/zuri-plugin-channels": "https://channels.zuri.chat/static/main/dist/zuri-zuri-plugin-channels.js",
         "@zuri/zuri-plugin-contributions": "https://ct.zuri.chat/js/app.js"
       }
     }
@@ -308,8 +308,7 @@
               "imports": { 
                 "@zuri/root-config": "//localhost:9000/zuri-root-config.js", "@zuri/topbar": "//localhost:8080/zuri-topbar.js", "@zuri/sidebar": "//localhost:8081/zuri-sidebar.js", "@zuri/control": "//localhost:8082/zuri-control.js", "@zuri/plugin-header":
             "//localhost:8083/zuri-plugin-header.js", "@zuri/manage-user-modal": "//localhost:8087/zuri-manageUser.js", "@zuri/marketplace": "//localhost:8086/zuri-marketplace.js", "@zuri/zuri-ui": "//localhost:8084/zuri-zuri-ui.js", "@zuri/utilities":
-            "//localhost:8085/zuri-utilities.js",
-            "@zuri/zuri-plugin-channels": "//localhost:8088/zuri-zuri-plugin-channels.js"
+            "//localhost:8085/zuri-utilities.js"
 
           } 
         }
