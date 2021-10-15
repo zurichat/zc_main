@@ -55,6 +55,10 @@ import ZurichatBlog from "./pages/blogs/components/zurichatBlog"
 
 import Ebooks from "./pages/ebooks"
 
+
+
+import ChangeWorkspaceName from "./pages/admin/Settings/components/ChangeWorkspaceName"
+
 // useEffect(() => {
 //     localStorage.setItem('input',input);
 // },[input]);
@@ -179,6 +183,7 @@ const App = () => {
         <PrivateRoute path="/settings" exact component={Settings} />
         <PrivateRoute path="/admin/settings" exact component={SettingsHome} />
         <PrivateRoute path="/admin/settings/home" exact component={Home} />
+        <PrivateRoute path="/admin/name" exact component={ChangeWorkspaceName} />
         <PrivateRoute
           path="/admin/settings/billings"
           exact
