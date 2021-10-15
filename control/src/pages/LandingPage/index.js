@@ -123,10 +123,10 @@ export default function Homepage() {
                 </h1>
                 <p className={`${style.hero_p}`}>{t("landing.hero.post_headline")}</p>
               </div>
-              <div className={`${style.hero_left_btn_wrap}`}>
+              <div>
                 <input className = "input-tag" type="email" name="" placeholder="Enter your email address" />
                 <Link to="/signup">
-                  <button className={`${style.hero_left_btn}`}>
+                  <button className={`me-5 ${style.hero_left_btn}`}>
                     {t("landing.hero.call_to_action")}
                   </button>
                 </Link>
