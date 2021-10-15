@@ -19,6 +19,7 @@ export default function Header(props) {
             className={`${styles.plugin__header__title}`}
             id="headerTitle"
           >
+            {/* Unnecessary shit */}
             <img
               src={props.headerConfig.icon || ''}
               alt=""

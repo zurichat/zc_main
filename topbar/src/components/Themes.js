@@ -34,7 +34,7 @@ const Themes = () => {
     }
   }, [mode])
 
-  const value = localStorage.getItem('theme') 
+  const value = localStorage.getItem('theme')
 
 
   // useEffect(() => {
