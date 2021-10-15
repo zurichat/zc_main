@@ -17,7 +17,10 @@ export const pluginRoutes = [
   location => location.pathname.startsWith("/contributions"),
 
   // MarketPlace Plugin
-  location => location.pathname.startsWith("/marketplace")
+  location => location.pathname.startsWith("/marketplace"),
+
+  // PluginSearch Plugin
+  location => location.pathname.startsWith("/plugin-search")
 ]
 
 registerApplication({
@@ -140,6 +143,12 @@ registerApplication({
   activeWhen: [location => location.pathname.startsWith("/marketplace")]
 })
 
+// PluginSearch Plugin
+registerApplication({
+  name: "@zuri/zuri-plugin-search",
+  app: () => System.import("@zuri/zuri-plugin-search"),
+  activeWhen: [location => location.pathname.startsWith("/plugin-search")]
+})
 start({
   urlRerouteOnly: true
 })
