@@ -81,21 +81,7 @@
       overflow: hidden;
     }
 
-    div[id*='zuri/topbar'] {
-      /* z-index: 5; */
-      width: 100%;
-      height: 6vh;
-      position: fixed;
-      top: 0;
-      left: 0;
-      /* text-align: center; */
-      display: flex;
-      /* justify-content: center; */
-      align-items: center;
-      background-color: #fff;
-      z-index: 1;
-      overflow: unset;
-    }
+    
 
     div[id*='zuri/sidebar']::-webkit-scrollbar {
       display: none;
@@ -116,6 +102,22 @@
       background-color: #fff;
       /* z-index: 1; */
     }
+    #zuritopbar {
+    z-index: 5;
+    width: 100%;
+    height: 6vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* text-align: center; */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: white;
+    z-index: 999999;
+    overflow: unset;
+  }
+ 
 
     div[id*='zuri/commentSidebar'] {
       width: 299px;
@@ -210,8 +212,143 @@
     }
 
     /* CHESS STYLE */
+
+
+
   </style>
 
+  <!-- THEME STYLES -->
+  <style>
+
+    /* roseRed Theme */
+    .roseRed {
+      background-color:#450303 !important;
+      color: #8F92CE !important;
+      border: .5px solid #C86868 !important;
+    }
+    .roseRed#pluginHeader {
+      background-color: #ED2222 !important;
+    }
+    .roseRed#pluginHeader > #headerTitle:hover {
+      background-color:#450303 !important;
+    }
+    .roseRed #orgInfo {
+      background-color:#ED2222 !important;
+      color: #C86868 !important;
+      border: .5px solid #C86868 !important;
+    }
+    .roseRed #sb--link {
+      color: #C86868 !important;
+    }
+    .roseRed #sb--link:hover {
+      color:#450303!important;
+    }
+    .roseRed#pluginHeader #plugin--thumbnail {
+      background-color:#450303 !important;
+    }
+    .roseRed > .orgTitle {
+      color: #C86868!important;
+    }
+    
+
+  /* End of roseRed Theme */
+
+    /* ashleyash Theme */
+    .ashleyAsh {
+      background-color: #C4C4C4 !important;
+      color: #fff!important;
+    }
+    .ashleyAsh#pluginHeader {
+     background-color: #999999 !important;
+    }
+    .ashleyAsh#pluginHeader > #headerTitle:hover {
+     background-color: #C4C4C4 !important;
+    }
+    .ashleyAsh #orgInfo {
+      background-color: #999999 !important;
+      color: #fff!important;
+    }
+    .ashleyash #sb--link {
+      color:#fff!important;
+    }
+    .ashleyAsh #sb--link:hover {
+      color: #C4C4C4 !important;
+    }
+    .ashleyAsh#pluginHeader #plugin--thumbnail{
+      background-color: #C4C4C4 !important;
+    }
+    .ashleyAsh > .orgTitle {
+      color:#fff!important;
+    }
+
+  /* End of ashleyash Theme */
+
+    /* peakyPurple Theme */
+    .purple {
+      background-color:#4E2C44 !important;
+      color: #E5B2D6 !important;
+    }
+    .purple#pluginHeader {
+      background-color:#DC1AA3 !important;
+    }
+    .purple#pluginHeader > #headerTitle:hover {
+      background-color: #4E2C44 !important;
+    }
+    .purple#pluginHeader #plugin--thumbnail {
+      background-color:#4E2C44 !important;
+    }
+    .purple #orgInfo {
+      background-color:#DC1AA3 !important;
+      color: #E5B2D6 !important;
+    }
+    .purple #sb--link {
+      color:#E5B2D6 !important;
+    }
+    .purple #sb--link:hover {
+      color:#4E2C44 !important;
+    }
+    .purple > .orgTitle {
+      color: #E5B2D6 !important;
+    }
+    
+  /* End of peakyPurple Theme */
+
+  /* oceanBlue Styles */
+  .oceanBlue {
+      background-color:#06083A !important;
+      color: #8F92CE !important;
+      border: .5px solid #8F92CE !important;
+    }
+    .oceanBlue#pluginHeader {
+      background-color:#1018DD !important;
+    }
+    .oceanBlue#pluginHeader > #headerTitle:hover {
+      background-color:#06083A !important;
+    }
+    .oceanBlue #orgInfo {
+      background-color:#1018DD  !important;
+      color: #8F92CE !important;
+      border: .5px solid #8F92CE !important;
+    }
+    .oceanBlue #sb--link {
+      color: #8F92CE !important;
+    }
+    .oceanBlue #sb--link:hover {
+      color:#06083A!important;
+    }
+    .oceanBlue#pluginHeader #plugin--thumbnail {
+      background-color:#06083A !important;
+    }
+    .oceanBlue > .orgTitle {
+      color: #8F92CE !important;
+    }
+    
+  /* End of oceanBlue Styles */
+  </style>
+
+
+
+<!-- END OF THEME STYLES -->
   <title>Zuri Chat</title>
   <!--
     Remove this if you only support browsers that support async/await.
@@ -316,9 +453,20 @@
         </script>
   <% } else { %>
   <script type="systemjs-importmap">
-    { "imports": { "@zuri/root-config": "/zuri-root-config.js", "@zuri/topbar": "/zuri-topbar.js", "@zuri/sidebar": "/zuri-sidebar.js", "@zuri/control": "/zuri-control.js", "@zuri/plugin-header": "/zuri-plugin-header.js", "@zuri/manage-user-modal": "/zuri-manageUser.js",
-                "@zuri/marketplace": "/zuri-marketplace.js", "@zuri/zuri-ui": "/zuri-zuri-ui.js", "@zuri/utilities": "/zuri-utilities.js" } }
-            </script>
+    {
+        "imports": {
+          "@zuri/root-config": "/zuri-root-config.js",
+          "@zuri/topbar"/zuri-topbar.js",
+          "@zuri/sidebar": "/zuri-sidebar.js",
+          "@zuri/control": "/zuri-control.js",
+          "@zuri/plugin-header": "/zuri-plugin-header.js",
+          "@zuri/manage-user-modal": "/zuri-manageUser.js",
+          "@zuri/marketplace": "/zuri-marketplace.js",
+          "@zuri/zuri-ui": "/zuri-zuri-ui.js",
+          "@zuri/utilities": "/zuri-utilities.js"
+        }
+      }
+  </script>
   <% } %>
 
   <!--
@@ -341,7 +489,7 @@
   <noscript>
     You need to enable JavaScript to run this app.
   </noscript>
-
+  
   <script>
     System.import('@zuri/root-config');
   </script>

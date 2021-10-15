@@ -5,15 +5,15 @@ import Badge from "./badge"
 
 export default function SingleRoom({ image, name, link }) {
   return (
-    <div className={`row mt-2 ${styles.sb__item}`}>
+    <div className={`row mt-2 ${styles.sb__item}`} id="sb--hover-div" >
       <a
-        className={`row mt-2 ${styles.sb__item}`}
+        className={`row mt-2 ${styles.sb__item}`} id="sb--hover-div"
         href={link && link}
         onClick={navigateToUrl}
       >
         <div className={`col-10 d-flex align-items-center ${styles.sb__col}`}>
           <img className={`${styles.item__img}`} src={image} alt="icon" />
-          <p className={`mb-0 ${styles.item_p}`}>{name}</p>
+          <p className={`mb-0 ${styles.item_p}`} id="sb--link">{name}</p>
         </div>
         <div className={`col-2 d-flex align-items-center`}>
           {}

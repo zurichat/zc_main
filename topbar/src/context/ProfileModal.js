@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { createContext, useState, useEffect } from 'react'
 import userAvatar from '../assets/images/user.svg'
 
 export const ProfileContext = createContext(null)
@@ -9,6 +9,25 @@ export const ProfileProvider = ({ children }) => {
   const [user, setUser] = useState([])
   const [orgId, setOrgId] = useState('')
   const [userProfileImage, setUserProfileImage] = useState(null)
+  const [theme, setTheme] = useState('light');
+
+  const toggleTheme = (arg) => {
+    const side = document.getElementById('single-spa-application:@zuri/sidebar')?.firstElementChild
+    const pluginHeader = document.getElementById('pluginHeader')
+    side.classList.remove(theme)
+    pluginHeader.classList.remove(theme)
+    side.classList.add(arg);
+    pluginHeader.classList.add(arg);
+    setTheme(arg);
+    localStorage.setItem('theme', arg);
+  }
+
+  useEffect(()=>{
+      const localTheme = localStorage.getItem('theme');
+      if(localTheme){
+          setTheme(localTheme)
+      }
+  },[theme])
 
   const toggleModalState = () => {
     setModal(!modal)
@@ -32,7 +51,9 @@ export const ProfileProvider = ({ children }) => {
         orgId,
         setOrgId,
         userProfileImage,
-        setUserProfileImage
+        setUserProfileImage,
+        theme,
+        toggleTheme
       }}
     >
       {children}

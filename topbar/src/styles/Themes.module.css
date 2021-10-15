@@ -1,31 +1,11 @@
-:root {
-  --bg-color: #fff;
-  --width: 100%;
-  --height: 100%;
-  --text-color: #000;
-}
-
-[data-theme='dark'] {
-  --bg-color: #3f3f3f;
-  --text-color: #fff;
-}
-
-[data-theme='light'] {
-  --bg-color: #fff;
-  --text-color: #3f3f3f;
-}
-
 .themeCont {
   margin-top: 30px;
   margin-bottom: 100px;
   margin-left: 40px;
   font-family: sans-serif;
   text-align: center;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  width: var(--width);
-  height: var(--height);
   overflow-x: hidden;
+  width: 55%;
 }
 
 .sync {
@@ -60,13 +40,13 @@
   color: #999999;
   font-size: 15px;
   font-weight: bold;
-  margin-left: -412px;
+  margin-left: -370px;
 }
 
 .text {
   font-size: 14px;
   margin-top: 8px;
-  margin-left: -90px;
+  margin-left: -50px;
   font-weight: 500;
   color: #999999;
   position: relative;
@@ -93,7 +73,7 @@
 }
 
 .text2 {
-  margin-left: -107px;
+  margin-left: -69px;
   font-size: 14px;
   font-weight: 500;
   line-height: 10px;
@@ -104,7 +84,7 @@
 }
 
 .texti2 {
-  margin-left: -350px;
+  margin-left: -315px;
   font-size: 14px;
   font-weight: 500;
   line-height: 10px;
@@ -127,7 +107,7 @@
 
 .customize {
   margin-top: 15px;
-  margin-left: 70px;
+  margin-left: 90px;
   width: 90%;
   width: 115%;
 }
@@ -232,7 +212,7 @@
   line-height: 20px;
   font-style: normal;
   color: #999999;
-  margin-left: -352px;
+  margin-left: -305px;
 }
 
 .set2 {
@@ -1557,5 +1537,4 @@
   font-weight: 500;
   margin-top: 3px;
 }
-
 

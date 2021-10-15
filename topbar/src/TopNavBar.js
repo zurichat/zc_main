@@ -21,15 +21,15 @@ import { GetUserInfo, SubscribeToChannel } from "@zuri/control"
 import axios from "axios"
 import { AiOutlineMenu } from "react-icons/ai"
 import styles from "../src/styles/TopNavBar.module.css"
-import SearchAutocomplete from "../src/components/SearchAutocomplete"
+import SearchAutocomplete from "../src/components/SearchAutocomplete";
+import useThemeMode from "../customHooks/useThemeMode"
 
 import { navigateToUrl } from "single-spa"
-import { BigModal } from "./components/bigModal"
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { closeModal, openModal, presence, setPresence } =
     useContext(TopbarContext)
-  const { setUser, user, userProfileImage, setOrgId, setUserProfileImage } =
+  const { setUser, user, userProfileImage, setOrgId, setUserProfileImage, theme } =
     useContext(ProfileContext)
   const state = useContext(TopbarContext)
   const [showModal] = state.show
@@ -38,17 +38,9 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const [helpModal, setHelpModal] = useState(false)
   // const [memberId, setMemberId] = useState('');
   const [messages, setMessages] = useState("")
-  const [isSearchOpen, setOpenSearch] = useState(false)
-  const [searchValue, setSearchValue] = useState("")
 
-  const onSearchSubmit = e => {
-    if (e.keyCode === 13 && searchValue.length >= 1) {
-      setOpenSearch(true)
-    }
-  }
-  const onSearchChange = value => {
-    setSearchValue(value)
-  }
+  const [nullValue, setnullValue] = useState(0)
+  // const {theme} = useThemeMode();
 
   useEffect(() => {
     // const fetchUser = async () => {
@@ -125,7 +117,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   useEffect(() => {
     UpdateInfo()
-  }, [userProfileImage]) //A temporary fix for profileImg to persist
+  }, [])
 
   // RTC subscription
   const callbackFn = event => {
@@ -267,7 +259,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   }
 
   return (
-    <>
+    <div className={`${theme}`} id="zuritopbar">
       <div className="ps-3" style={{ width: "10%" }}>
         {/* <a href="/home"> */}
         <div className={styles["topNavBar__logo"]}>
@@ -297,11 +289,8 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           placeholder="Search here"
           border={"#99999933"}
         /> */}
-        {/* <TopSearchBar onClick={() => setShowTopSearchModal(true)} /> */}
-        <TopBarSearchModal
-          onSearchEnter={onSearchSubmit}
-          onChange={onSearchChange}
-        />
+          {/* <TopSearchBar onClick={() => setShowTopSearchModal(true)} /> */}
+          <TopBarSearchModal />
         {/* <div>
             <form onSubmit={handleEnter}>
               <BaseInput
@@ -325,16 +314,8 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
             suggestions={filteredSuggestions}
           />
         </div> */}
-
-        {isSearchOpen ? (
-          <BigModal
-            onClose={() => {
-              setOpenSearch(false)
-            }}
-            inputValue={searchValue}
-          />
-        ) : null}
       </div>
+
       <ProfileImageContainer
         className="d-flex justify-content-end pe-3"
         style={{ width: "20%", position: "relative" }}
@@ -379,8 +360,9 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       </ProfileImageContainer>
 
       <Profile />
-      <TopbarModal statusModal={statusModal} setStatusModal={setStatusModal} />
-    </>
+      <TopbarModal />
+       
+    </div>
   )
 }
 

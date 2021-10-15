@@ -16,16 +16,20 @@ import Header from "./components/Header"
 import Invite from "./components/Invite"
 import Room from "./components/Room"
 import SingleRoom from "./components/SingleRoom"
+import useThemeMode from "../../topbar/customHooks/useThemeMode";
 import Category from "./components/Category"
 import { dummySidebar } from "./components/dummySidebar"
 
 const Sidebar = props => {
   let currentWorkspace = localStorage.getItem("currentWorkspace")
+  const [theme, setTheme] = useState('light')
 
   const [nullValue, setnullValue] = useState(0)
+  // const {theme} = useThemeMode();
 
   useEffect(() => {
     setnullValue(1)
+    setTheme(localStorage.getItem('theme'));
   }, [])
 
   useEffect(() => {
@@ -53,9 +57,9 @@ const Sidebar = props => {
   
 
   return (
-    <div className={`container-fluid ${styles.sb__container}`}>
+    <div className={`container-fluid ${styles.sb__container} ${theme} `}>
       <Header state={props.state} />
-      <div className={`${styles.subCon2}`}>
+      <div className={`${styles.subCon2} `} id="sb--hover" >
         <Fragment>
           {/* <Room name="Threads" image={threadIcon} />
           <Room name="All DMs" image={dmIcon} />
