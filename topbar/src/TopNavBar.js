@@ -255,6 +255,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   // end search
 
   const [statusModal, setStatusModal] = useState(false)
+  
   const handleEnter = e => {
     e.preventDefault()
 

@@ -15,6 +15,7 @@ import { ProfileContext } from "../context/ProfileModal"
 import { TopbarContext } from "../context/Topbar"
 import { StyledEmojiWrapper } from "../styles/EmojiMartStyle"
 import { FaRegTimesCircle } from "react-icons/fa"
+import DefaultStatus from "./DefaultStatus"
 
 const SetDateAndTime = ({ dateTime, setDateTime }) => {
   const [value, onChange] = useState(new Date())
@@ -61,11 +62,12 @@ const SetStatusModal = ({
   setStatusText,
   setStatusEmoji
 }) => {
+  const [chosenStatus, setChosenStatus] = useState({})
   const [dropdown, setDropdown] = useState(false)
   const [openEmoji, setOpenEmoji] = useState(false)
   const [dateTime, setDateTime] = useState(false)
-  const [choosePeriod, setChoosePeriod] = useState(user?.status?.expiry_time)
   const { user, orgId, setUser } = useContext(ProfileContext)
+  const [choosePeriod, setChoosePeriod] = useState(user?.status?.expiry_time)
 
   const onEmojiSelect = selectedEmoji => {
     setStatusEmoji(selectedEmoji.native)
@@ -123,7 +125,6 @@ const SetStatusModal = ({
     } catch (error) {
       const errorResponse = error
     }
-
     setStatusModal(!statusModal)
   }
 
@@ -436,6 +437,13 @@ const SetStatusModal = ({
                     </ReactTooltip>
                   </div>
                 )}
+                <DefaultStatus
+                  chosenStatus={chosenStatus}
+                  setChosenStatus={setChosenStatus}
+                  setStatusText={setStatusText}
+                  setStatusEmoji={setStatusEmoji}
+                  setChoosePeriod={setChoosePeriod}
+                />
               </div>
             ) : (
               <div className={styles.clearafter}>
@@ -452,10 +460,6 @@ const SetStatusModal = ({
                   <img src={down} alt="" />
                 </div>
                 {dateTime ? (
-                  // <SetDateAndTime
-                  //   setDateTime={setDateTime}
-                  //   dateTime={dateTime}
-                  // />
                   <div className={styles.datetime}>
                     <input
                       type="date"
@@ -545,15 +549,6 @@ const SetStatusModal = ({
                 <span className={styles.inactivesave}>Save</span>
               )}
           </form>
-          {/* {status.map((data)=>{
-                      const {text, emoji} = data;
-                      return(
-                          <div>
-                          <p>{text}</p>
-                          <p>{emoji}</p>
-                          </div>
-                      )
-                  })} */}
         </div>
       </div>
       <div
