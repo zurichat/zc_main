@@ -8,6 +8,7 @@ import EditTopicModal from "../Edit_Leave_Modals/EditTopicModal"
 import EditDescriptionModal from "../Edit_Leave_Modals/EditDescriptionModal"
 import LeaveChannelModal from "../Edit_Leave_Modals/LeaveChannelModal"
 import DeleteChannel from "../delete_archive_channel/DeleteChannel"
+import ArchiveChannel from "../delete_archive_channel/ArchiveChannel"
 import { RiDeleteBinLine, RiDeleteBin7Fill } from "react-icons/ri"
 import {
   AiOutlineUserAdd,
@@ -17,26 +18,26 @@ import {
   AiOutlineLock
 } from "react-icons/ai"
 
-function PluginModal() {
-  const [showDialog, setShowDialog] = useState(false)
-  const open = () => setShowDialog(true)
-  const close = () => setShowDialog(false)
+function PluginModal({ close, showDialog, tabIndex }) {
+
   const [showEditTopicModal, setShowEditTopicModal] = useState(false)
   const [showEditDescriptionModal, setEditDescriptionModal] = useState(false)
   const [showLeaveChannelModal, setShowLeaveChannelModal] = useState(false)
   const [showDeleteChannel, setShowDeleteChannel] = useState(false)
+  const [showArchiveChannel, setShowArchiveChannel] = useState(false)
 
   const toggleEditTopicModal = () => setShowEditTopicModal(!showEditTopicModal)
   const toggleEditDescriptionModal = () => setEditDescriptionModal(!showEditDescriptionModal)
   const toggleDeleteChannel = () => setShowDeleteChannel(!showDeleteChannel)
   const toggleLeaveChannelModal = () => setShowLeaveChannelModal(!showLeaveChannelModal)
+  const toggleArchiveChannel = () => setShowArchiveChannel(!showArchiveChannel)
 
   return (
     <div className="App">
-      <button onClick={open}>Show Dialog</button>
+
       <DialogOverlays isOpen={showDialog} onDismiss={close}>
         <DialogContents>
-          <Tabs>
+          <Tabs defaultIndex={tabIndex}>
             <div>
               <ModalTopic>
                 <ChannelName>
@@ -50,16 +51,10 @@ function PluginModal() {
                   <AiOutlineClose size="20px" color="gray" />
                 </Button>
               </ModalTopic>
-              <Select name="languages" id="lang">
-                <option>Get Notifications for @ mentions</option>
-                <option value="php">PHP</option>
-                <option value="java">Java</option>
-                <option value="golang">Golang</option>
-              </Select>
             </div>
             <TabLists>
               <Tab>About</Tab>
-              <Tab>Members</Tab>
+              <Tab >Members</Tab>
               <Tab>Integrations</Tab>
               <Tab>Settings</Tab>
             </TabLists>
@@ -81,15 +76,21 @@ function PluginModal() {
                 <Integration />
               </TabPanel>
               <TabPanel>
-                <SettingPanel />
+                <SettingPanel
+                  toggleDeleteChannel={toggleDeleteChannel}
+                  toggleArchiveChannel={toggleArchiveChannel}
+                  closeModal={close}
+                />
               </TabPanel>
             </TabPanels>
           </Tabs>
         </DialogContents>
       </DialogOverlays>
-      {showEditTopicModal && <EditTopicModal closeEdit={toggleEditTopicModal}  />}
-      {showEditDescriptionModal && <EditDescriptionModal   />}
-      {showLeaveChannelModal  && <LeaveChannelModal  />}
+      {showEditTopicModal && <EditTopicModal closeEdit={toggleEditTopicModal} />}
+      {showEditDescriptionModal && <EditDescriptionModal closeEdit={toggleEditDescriptionModal} />}
+      {showLeaveChannelModal && <LeaveChannelModal closeEdit={toggleLeaveChannelModal} />}
+      {showDeleteChannel && <DeleteChannel closeEdit={toggleDeleteChannel} />}
+      {showArchiveChannel && <ArchiveChannel closeEdit={toggleArchiveChannel} />}
     </div>
   )
 }
@@ -102,13 +103,13 @@ function AboutPanel({ closeModal, toggleEditTopicModal, toggleEditDescriptionMod
           <Label>Topic</Label>
           <Input type="text" placeholder="Add a topic" />
           <EditLabel
-              onClick={() => {
-                closeModal()
-                toggleEditTopicModal()
-              }}
-            >
-              Edit
-            </EditLabel>
+            onClick={() => {
+              closeModal()
+              toggleEditTopicModal()
+            }}
+          >
+            Edit
+          </EditLabel>
         </EachSegment>
         <EachSegment>
           <Description>
@@ -134,10 +135,10 @@ function AboutPanel({ closeModal, toggleEditTopicModal, toggleEditDescriptionMod
         </EachSegment>
         <EachSegment>
           <Typography
-           onClick={() => {
-            closeModal()
-            toggleLeaveChannelModal()
-          }}
+            onClick={() => {
+              closeModal()
+              toggleLeaveChannelModal()
+            }}
           >Leave Channel</Typography>
         </EachSegment>
       </OverallWrapper>
@@ -150,7 +151,7 @@ function AboutPanel({ closeModal, toggleEditTopicModal, toggleEditDescriptionMod
         </EditContent>
       </FileWrapper>
       <h6>ChannelID:CD1QT4B9PGW</h6>
-      
+
     </div>
   )
 }
@@ -211,7 +212,7 @@ function Integration() {
     </div>
   )
 }
-function SettingPanel() {
+function SettingPanel({ closeModal, toggleDeleteChannel, toggleArchiveChannel }) {
   return (
     <div>
       <FileWrapper>
@@ -227,13 +228,19 @@ function SettingPanel() {
       <ChannelWrapper>
         <Channels>
           <RiDeleteBin7Fill color="red" />
-          <Typography>Archive this Channel</Typography>
+          <Typography onClick={() => {
+            closeModal()
+            toggleArchiveChannel()
+          }} >Archive this Channel</Typography>
         </Channels>
       </ChannelWrapper>
       <ChannelWrapper>
         <Channels>
           <RiDeleteBinLine color="red" />
-          <Typography>Change to Private Channel</Typography>
+          <Typography onClick={() => {
+            closeModal()
+            toggleDeleteChannel()
+          }} >Delete this Channel</Typography>
         </Channels>
       </ChannelWrapper>
     </div>
@@ -297,7 +304,8 @@ const ChannelName = styled.div`
   display: flex;
   align-items: center;
   font-size: 20px;
-  font-weight: 500;
+  color: black;
+  font-weight:700;
 `
 const Select = styled.select`
   padding: 10px;
@@ -310,7 +318,7 @@ const TabLists = styled(TabList)`
   background-color: white;
   width: 80%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
 `
 // const BorderBottom=styled.div`
