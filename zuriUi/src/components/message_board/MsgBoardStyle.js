@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const ChatContainer = styled.section`
+  // margin-top:2rem;
   height: 100vh;
   width: 100%;
   flex-direction: column;
@@ -9,7 +10,7 @@ export const ChatContainer = styled.section`
     height: 85%;
     display: flex;
     
-    overflow-y: scroll;
+    // overflow-y: scroll;
     flex-direction: column;
     box-sizing: border-box;
     .msg-container {
@@ -29,6 +30,7 @@ export const ChatContainer = styled.section`
           .name {
             font-weight: 700;
             font-size: 15px;
+            margin-right:0.25rem;
           }
           .time {
             font-weight: 400;
@@ -46,9 +48,13 @@ export const ChatContainer = styled.section`
   .input-text{
       display: flex;
       flex : 1;
-      width: 100%;
+      width: 80%;
       height: 15%;
-      margin-bottom : 20px; 
-      
-  }
+      position: fixed;
+      bottom: 0;
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }   
+     }
 `
