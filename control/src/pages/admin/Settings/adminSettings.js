@@ -1,21 +1,36 @@
-import React from 'react'
-import { AnimateSharedLayout } from 'framer-motion'
-import PreferenceWrapper from './PreferenceWrapper'
+import React, { useEffect, useState } from "react"
+import { AnimateSharedLayout } from "framer-motion"
+import PreferenceWrapper from "./PreferenceWrapper"
 
-import JoinWorkspace from './components/JoinWorkspace'
-import WorkspaceLanguage from './components/WorkspaceLanguage'
-import Guidelines from './components/Guidelines'
-import DisplayName from './components/DisplayName'
-import JoinChannel from './components/JoinChannel'
-import NotifyUsers from './components/NotifyUsers'
-import Calls from './components/Calls'
-import DisplayPronoun from './components/DisplayPronoun'
-import MessageRetention from './components/MessageRetention'
-import FileRetention from './components/FileRetention'
-import DisplayEmail from './components/DisplayEmail'
-import DefaultChannels from './components/DefaultChannel'
+import JoinWorkspace from "./components/JoinWorkspace"
+import WorkspaceLanguage from "./components/WorkspaceLanguage"
+import Guidelines from "./components/Guidelines"
+import DisplayName from "./components/DisplayName"
+import JoinChannel from "./components/JoinChannel"
+import NotifyUsers from "./components/NotifyUsers"
+import Calls from "./components/Calls"
+import DisplayPronoun from "./components/DisplayPronoun"
+import MessageRetention from "./components/MessageRetention"
+import FileRetention from "./components/FileRetention"
+import DisplayEmail from "./components/DisplayEmail"
+import DefaultChannels from "./components/DefaultChannel"
+import { authAxios } from "../Utils/Api"
 
 const adminSettings = () => {
+  const [logoUrl, setLogoUrl] = useState({})
+  
+  useEffect(() => {
+    authAxios
+      .get(`organizations/url/zurichat-fsp1856.zurichat.com`)
+      .then(res => {
+        // console.log(res.data.data.logo_url)
+        setLogoUrl(res.data.data.logo_url)
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }, [logoUrl])
+
   return (
     <>
       <AnimateSharedLayout>
@@ -141,7 +156,9 @@ const adminSettings = () => {
         <PreferenceWrapper
           title="Workspace icon"
           text="Your workspace icon is used in the desktop an mobile apps, where it’s useful in helping you quickily identiy this workspace"
-          btnText="expand"
+          btnText="Set Workspace Icon"
+          imgsource={logoUrl}
+          // imgsource="https://user-images.githubusercontent.com/66237754/137007060-0fe55896-bd5f-4c7e-90bf-da12b527ed58.png"
         >
           {/* Password input goes uunder here */}
           {/* <SavePassword /> */}
