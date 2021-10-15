@@ -1,6 +1,5 @@
 import axios from "axios"
 import { useState, useContext, useCallback, useEffect } from "react"
-import { connect } from "react-redux"
 import styled from "styled-components"
 import ReactTooltip from "react-tooltip"
 import { AiOutlineMenu } from "react-icons/ai"
