@@ -52,8 +52,7 @@ const LanguageAndRegion = () => {
     handleData(timeZone)
   }, [selectedTimezone])
 
-  const langSpellCheck = langreg.languages_zuri_should_spell_check;
-   const defVal = langSpellCheck.map(i=> i )
+  
   
    
   return (
@@ -133,7 +132,6 @@ const LanguageAndRegion = () => {
             className={styles.optSelect}
           isMulti
           name="colors"
-          defaultValue= {defVal[0]}
           styles={customStyles}
           options={options}
           classNamePrefix="select"
