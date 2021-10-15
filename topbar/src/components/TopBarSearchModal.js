@@ -67,8 +67,7 @@ const TopBarSearchModal = ({ onSearchEnter, onChange }) => {
     <div className={styles.topBarSearchModal}>
         <input type="text" className={styles._input} placeholder="Search Here"/>
         <div className={styles.MainBox}>
-        <div>
-        <div className={styles.input_box}>
+                <div className={styles.input_box}>
             
             <div className={styles.grow}>
                 <div className={styles.close_icon}>
