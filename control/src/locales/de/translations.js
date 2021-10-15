@@ -165,7 +165,8 @@ export const TRANSLATIONS_DE = {
     cookies: {
       textOne: "Wir verwenden",
       textTwo: "Cookies",
-      textThree: "von Drittanbietern, um Ihre Website-Erfahrung zu personalisieren.",
+      textThree:
+        "von Drittanbietern, um Ihre Website-Erfahrung zu personalisieren.",
       accept: "Erlauben",
       decline: "Ablehnen"
     }
