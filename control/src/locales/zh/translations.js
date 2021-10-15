@@ -158,9 +158,9 @@ export const TRANSLATIONS_ZH = {
       textThree: "来个性化您的网站体验。",
       accept: "允许",
       decline: "衰退"
-    },
+    }
   },
-        
+
   about: {
     title: {
       about: ""
@@ -317,6 +317,32 @@ export const TRANSLATIONS_ZH = {
             "Zuri 支付 100% 的保费。我们还提供一系列免费的心理健康和福祉资源。"
         }
       }
+    }
+  },
+  login:{
+    title: "登录 - Zuri 聊天",
+    form: {
+      header: "登录",
+      sub_header: "使用您在注册时输入的数据登录",
+      google_header: "使用谷歌登录",
+      topline_text: "或者",
+      submitButtonName: "登录",
+      bottomLine: "对我们来说是新的吗？",
+      bottomLink: "创建一个帐户",
+      signUp: "注册",
+      authInputBox: {
+        emailInputName: "电子邮件地址",
+        passwordInputName: "密码",
+        passwordInputPlaceHolder: "输入密码",
+        rememberMe: "记住账号",
+        forgotPassword: "忘记密码？",
+        getHelp: "获取登录帮助"
+      }
+    },
+    footer: {
+      contactUs: "联系我们",
+      legacyPolicy: "法律政策",
+      aboutZuri: "关于 Zuri Chat"
     }
   }
 }
