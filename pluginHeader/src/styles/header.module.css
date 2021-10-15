@@ -1,5 +1,5 @@
 .plugin__header {
-  width: inherit;
+  /* width: inherit; */
   height: 44px;
   background-color: #00b87c;
   color: #fff;
@@ -8,6 +8,9 @@
   display: flex !important;
   font-size: 10px;
   justify-content: space-between;
+  position:fixed;
+  width:80%;
+  z-index: 1;
 }
 .plugin__header__title {
   display: flex;
@@ -61,4 +64,10 @@
 .plugin__header__count p {
   margin: 0;
   margin-left: 0.3em;
+}
+
+@media (max-width: 768px) {
+  .plugin__header {
+    width:100%;
+  }
 }
