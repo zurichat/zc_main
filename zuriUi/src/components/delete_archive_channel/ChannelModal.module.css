@@ -93,13 +93,13 @@
 
 @media screen and (min-width: 1024px) {
     .modalContainer {
-        padding: 8rem 13rem 14rem;
+        padding: 8rem 19rem 14rem;
     }
 }
 
 @media screen and (max-width: 768px) {
     .modalContainer{
-        padding: 5rem 10rem 4rem;
+        padding: 5rem 11rem 7rem;
     }
     .modalHeader,
     .modalHeaderMobile {
@@ -209,6 +209,6 @@
         background: rgba(0, 0, 0, 0.3);
         display: none;
         justify-content: center;
-        padding: 12rem 30rem 17rem;
+        padding: 8rem 32rem 17rem;
     }
 }
