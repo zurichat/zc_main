@@ -208,7 +208,7 @@ const HeaderSearchSuggestion = () => {
                 aria-expanded="false"
               >
                 <span className={`${headerStyles.item}`}>
-                  {t("landing.nav.plugins")}
+                  {t("landing.nav.plugin")}
                 </span>
               </NavLink>
             </li>
