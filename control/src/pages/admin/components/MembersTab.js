@@ -3,32 +3,26 @@ import { Link } from "react-router-dom"
 import { joiningPeriod } from "../data/membersData"
 import JoiningMembers from "./JoiningMembers"
 import { authAxios } from "../Utils/Api"
+import axios from "axios"
 import styles from "../styles/adminMembersTab.module.css"
-import { GetWorkspaceUsers } from "../../../zuri-control"
+// import { GetWorkspaceUsers } from "../../../zuri-control"
 import { getUser, getCurrentWorkspace } from "../Utils/Common"
-import DataTable from "react-data-table-component"
+import { GetWorkspaceUsers } from "@zuri/utilities"
+import DataTable, { createTheme } from "react-data-table-component"
 
 const MembersTab = () => {
-  const currentWorkspace = getCurrentWorkspace()
   const [items, setItems] = useState([])
 
-useEffect(() => {
-    if (currentWorkspace) {
-      authAxios
-        .get(`/organizations/${currentWorkspace}/members`)
-        .then(res => {
-          setItems(res?.data?.data)
-        })
-        .catch(err => {
-          console.error(err)
-        })
-    }
-  }, [currentWorkspace])
+  useEffect(() => {
+    GetWorkspaceUsers().then(res => {
+      setItems(Object.values(res))
+    })
+  })
   const columns = [
     {
-      name: "Account created",
-      selector: row => row.joined_at,
-      sortable: true
+      name: "Name",
+      selector: row => row.first_name,
+      sortable: true,
     },
     {
       name: "userID",
@@ -36,8 +30,18 @@ useEffect(() => {
       sortable: true
     },
     {
+      name: "Username",
+      selector: row => row.display_name,
+      sortable: true
+    },
+    {
       name: "Email",
       selector: row => row.email,
+      sortable: true
+    },
+    {
+      name: "Account created",
+      selector: row => row.joined_at,
       sortable: true
     }
   ]
