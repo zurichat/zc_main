@@ -1,8 +1,8 @@
 import { h, createApp } from 'vue';
 import singleSpaVue from 'single-spa-vue';
-
+// import "tailwindcss/tailwind.css";
+import "./assets/styles/main.css"
 import App from './App.vue';
-
 const vueLifecycles = singleSpaVue({
   createApp,
   appOptions: {
