@@ -86,52 +86,6 @@ section.section1Left {
   float: left;
 }
 
-/* @media screen and (max-width: 1024px) {
-  .Section1 {
-    grid-gap: 10px;
-    margin-bottom: 1rem;
-  }
-  .Section1 img {
-    margin-top: 5rem;
-  }
-  .section1Left p {
-    font-size: 22px;
-    line-height: 1.5;
-  }
-  .section1Left .JoinBtn {
-    font-size: 22px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .Section1 {
-    grid-template-columns: auto;
-    padding: 50px;
-    display: block;
-    justify-content: center;
-  }
-  .Section1 img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -2rem;
-    width: 90%;
-    height: 80%;
-  }
-
-  .section1Left .JoinBtn {
-    padding: 18px 70px 18px 70px;
-    font-size: 15px;
-    font-weight: 400;
-    border-radius: 3px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .section1Left {
-    padding: 70px 40px 20px 40px;
-  }
-} */
-
 @media only screen and (max-width: 989px) {
   div.section1_content {
     grid-template-columns: 1fr;
@@ -218,5 +172,11 @@ section.section1Left {
 
   .person4 {
     grid-row: 4 / 8;
+  }
+
+  .section1_content .JoinBtn {
+    font-size: 0.75rem;
+    line-height: 0.975rem;
+    padding: 0.625rem 0.875rem;
   }
 }
