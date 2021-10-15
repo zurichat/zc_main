@@ -4,9 +4,9 @@
 
 .features {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   justify-items: center;
-  max-width: 800px;
+  max-width: 1200px;
   margin: auto;
 }
 
@@ -15,6 +15,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 250px;
 }
 
 .feature p {
