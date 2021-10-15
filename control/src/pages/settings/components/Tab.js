@@ -48,7 +48,7 @@ const Tab = () => {
                 ? `${styles.tabs} ${styles.activetabs}`
                 : styles.tabs
             }
-            // onClick={() => toggleTab(2)}
+             onClick={() => toggleTab(2)}
           >
             Notification
           </button>
