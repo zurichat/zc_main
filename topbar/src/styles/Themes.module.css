@@ -17,7 +17,7 @@
 
 .themeCont {
   margin-top: 30px;
-  margin-bottom: 57px;
+  margin-bottom: 100px;
   margin-left: 40px;
   font-family: sans-serif;
   text-align: center;
@@ -60,13 +60,13 @@
   color: #999999;
   font-size: 15px;
   font-weight: bold;
-  margin-left: -472px;
+  margin-left: -412px;
 }
 
 .text {
   font-size: 14px;
   margin-top: 8px;
-  margin-left: -149px;
+  margin-left: -90px;
   font-weight: 500;
   color: #999999;
   position: relative;
@@ -93,7 +93,18 @@
 }
 
 .text2 {
-  margin-left: -56px;
+  margin-left: -107px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 10px;
+  color: #999999;
+  font-style: normal;
+  position: relative;
+  margin-top: 10px;
+}
+
+.texti2 {
+  margin-left: -350px;
   font-size: 14px;
   font-weight: 500;
   line-height: 10px;
@@ -116,7 +127,7 @@
 
 .customize {
   margin-top: 15px;
-  margin-left: 38px;
+  margin-left: 70px;
   width: 90%;
   width: 115%;
 }
@@ -221,7 +232,7 @@
   line-height: 20px;
   font-style: normal;
   color: #999999;
-  margin-left: -414px;
+  margin-left: -352px;
 }
 
 .set2 {
@@ -312,7 +323,7 @@
 .img {
   border: 1px solid #00b87c;
   height: 110px;
-  width: 490px;
+  width: 418px;
   margin-top: 23px;
   margin-left: 5px;
   border-radius: 4px;
@@ -389,7 +400,7 @@
 .img2 {
   border: 1px solid #00b87c;
   height: 110px;
-  width: 490px;
+  width: 420px;
   margin-top: 23px;
   margin-left: 5px;
   border-radius: 4px;
