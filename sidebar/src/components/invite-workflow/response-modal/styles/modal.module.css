@@ -14,28 +14,28 @@
   z-index: 9999999999;
 }
 .modalcontent {
-  width: 600px;
+  width: 50%;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 0.625rem;
 }
 .top {
   display: flex;
   justify-content: space-between;
 }
 .inviteclose {
-  padding: 20px;
+  padding: 1.25rem;
   display:none;
 }
 
 .modalbody {
-  padding: 0 22px 22px 22px;
+  padding: 0 1.31rem 1.31rem 1.31rem;
   font-family: "Lato";
-  font-size: 16px;
+  font-size: 1rem;
   color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 30px auto 15px auto;
+  margin: 1.875rem auto 0.95rem auto;
 }
 
 .icon{
@@ -46,14 +46,14 @@
 }
 
 .done {
-  padding: 10px;
+  padding: 0.625rem;
 }
 .done button {
   background-color: #00b87c;
   font-family: "Lato";
   color: #ffffff;
-  border-radius: 3px;
-  padding: 10px 20px;
+  border-radius: 0.188rem;
+  padding: 0.625rem 1.25rem;
   border: none;
   cursor:pointer;
 }
@@ -65,7 +65,7 @@
 .footer{
     display:flex;
     justify-content: flex-end;
-    margin:10px 3px;
+    margin:0.625rem 0.188rem;
 }
 
 .inviteclose button {
@@ -74,4 +74,11 @@
 }
 .inviteclose button:hover {
   transform: scale(1.1);
+}
+@media screen and (min-width: 480px) {
+  .modalcontent {
+    width: 50%;
+    background-color: #fff;
+    border-radius: 0.625rem;
+  }
 }
