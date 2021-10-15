@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react"
 import styled from "styled-components"
 import { EditorState, RichUtils, convertToRaw } from "draft-js"
-import createEmojiMartPlugin from "draft-js-emoji-mart-plugin"
+//import createEmojiMartPlugin from "draft-js-emoji-mart-plugin"
 import Editor from "@draft-js-plugins/editor"
 import createMentionPlugin, {
   defaultSuggestionsFilter

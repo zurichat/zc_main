@@ -7,11 +7,13 @@ import { useState } from "react"
 import MessageInputBox from "../message_input/MessageInputField"
 import messagesData from "./messages.data"
 import EmojiReaction from "../EmojiReaction/EmojiReaction"
+import Emoji from '../Emoji/Emoji'
 
 function MessageBoard({ chatsConfig }) {
   const [showMoreOptions, setShowMoreOptions] = useState(false)
   const [showEmoji, setShowEmoji] = useState(false)
-  const [messageList, setMessageList] = useState(chatsConfig.messages)
+  //const [messageList, setMessageList] = useState(chatsConfig.messages)
+  const [messageList, setMessageList] = useState(messagesData)
 
   const [top, setTop] = useState(null)
   const [right, setRight] = useState(null)
@@ -47,7 +49,7 @@ function MessageBoard({ chatsConfig }) {
     //copy the message
     const messageListCopy = [...messageList]
     const messageIndex = messageListCopy.findIndex(
-      message => message.id === currentMessageId
+      message => message.message_id === currentMessageId
     )
 
     if (messageIndex < 0) {
@@ -89,31 +91,33 @@ function MessageBoard({ chatsConfig }) {
               />
             ))}
         </div>
-        <div className="input-text">
+        {/* <div className="input-text">
           <MessageInputBox
             currentUserData={chatsConfig.currentUserData}
             addToMessages={addToMessages}
           />
-        </div>
+        </div> */}
       </ChatContainer>
 
-      {showMoreOptions ? (
+      {showMoreOptions && (
         <div>
-          <MoreMenu top={top} right={right} />
-          <Overlay handleOverlayClicked={handleOverlayClicked} />
+           <Overlay handleOverlayClicked={handleOverlayClicked} />
+           <MoreMenu top={top} right={right} />
+         
         </div>
-      ) : null}
+      ) }
 
-      {showEmoji ? (
+      {showEmoji && (
         <div>
+          <Overlay handleOverlayClicked={handleOverlayClicked} />
           <EmojiReaction
             top={top}
             right={right}
             handleEmojiClicked={handleEmojiClicked}
           />
-          <Overlay handleOverlayClicked={handleOverlayClicked} />
+          
         </div>
-      ) : null}
+      ) }
     </>
   )
 }

@@ -2719,14 +2719,6 @@ dot-case@^3.0.4:
     no-case "^3.0.4"
     tslib "^2.0.3"
 
-draft-js-emoji-mart-plugin@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/draft-js-emoji-mart-plugin/-/draft-js-emoji-mart-plugin-1.0.1.tgz#ea12120c2c1bb160affc669568b1c2f76480772a"
-  integrity sha512-HhL8F8jc9ILCcxVnKYgMFuQzIi/Cy0a6NPjFBJN4XgemcRzg4klek4utHX65N81rsmfPaGjXSxcU4a6/5Pz2rA==
-  dependencies:
-    emoji-regex "^7.0.3"
-    find-with-regex "^1.1.3"
-
 draft-js-emoji-plugin@^2.1.3:
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/draft-js-emoji-plugin/-/draft-js-emoji-plugin-2.1.3.tgz#c5fb2884c9bdbf4b07e51b1d49ec89a58aca54f4"
@@ -2801,11 +2793,6 @@ emoji-mart@^3.0.1:
   dependencies:
     "@babel/runtime" "^7.0.0"
     prop-types "^15.6.0"
-
-emoji-regex@^7.0.3:
-  version "7.0.3"
-  resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-7.0.3.tgz#933a04052860c85e83c122479c4748a8e4c72156"
-  integrity sha512-CwBLREIQ7LvYFB0WyRvwhq5N5qPhc6PMjD6bYggFlI5YyDgl+0vxq5VHbMOFqLg7hfWzmu8T5Z1QofhmTIhItA==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
