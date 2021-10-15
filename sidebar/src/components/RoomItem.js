@@ -33,9 +33,11 @@ const RoomItem = ({room}) => {
           node.addEventListener("contextmenu", RightClick)
           document.addEventListener("click", CloseClick)
           
+          
           return () => {
             node.removeEventListener("contextmenu", RightClick)
             document.removeEventListener("click", CloseClick)
+
           }
         }
       },
@@ -79,6 +81,11 @@ const RoomItem = ({room}) => {
               </div>  
             </div>
             <div className={`col-2 d-flex align-items-center`}>
+            {/* {room && room.unread &&
+         ( room.unread > 9 ? <Badge number="9+" /> : 
+         <Badge number={room.unread} />
+          
+          )} */}
               <Badge number={room.unread} />
             </div>
             <div className={`${styles.optionsContainer}`}>
