@@ -3,12 +3,12 @@ import { Link } from "react-router-dom"
 import { Container, Form, Card } from "react-bootstrap"
 import styles from "./styles/InviteRequest.module.css"
 import { Helmet } from "react-helmet"
-import CommentBox from "../../../../zuriUi/src/components/InputBox/Input"
+// import CommentBox from "../../../../zuriUi/src/components/InputBox/Input"
 
 function Inviterequest() {
   return (
     <div style={{ paddingTop: "450px" }}>
-      <CommentBox />
+      {/* <CommentBox /> */}
     </div>
     // <div>
     //   <Helmet>
