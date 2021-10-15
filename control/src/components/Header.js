@@ -72,6 +72,18 @@ const HeaderSearchSuggestion = () => {
           <span className={`mb-2 ${headerStyles.zuriChat}`}>Zuri Chat</span>
         </Link>
 
+        <select
+          className={`btn btn-transparent  ${headerStyles.select}`}
+          type="button"
+          onChange={() => saveLang(event.target.value)}
+        >
+          <option>Change Language</option>
+          <option value="en">English</option>
+          <option value="fr">French</option>
+          <option value="zh">Chinese</option>
+          <option value="de">German</option>
+          <option value="ar">Arabic</option>
+        </select>
         <div className={`d-lg-none navbar-nav-scroll ${headerStyles.language}`}>
           <button
             onClick={() => setLgShow(true)}
