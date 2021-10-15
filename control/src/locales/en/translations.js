@@ -68,6 +68,7 @@ export const TRANSLATIONS_EN = {
         "Enrich your Zuri Chat experience by signing up here to get the latest news and special deals on Zuri Chat",
       button: "Subscribe"
     },
+
     footer: {
       company: "Company",
       careers: "Careers",
@@ -75,6 +76,9 @@ export const TRANSLATIONS_EN = {
       info: "Info",
       privacy: "Privacy & Terms",
       market: "Market Place",
+      blog: "Blog",
+      security: "Security",
+      web3: "Web3/DAO",
       knowUs: "Know us",
       downloads: "Downloads",
       contact: "Contact",
@@ -91,6 +95,78 @@ export const TRANSLATIONS_EN = {
     }
   },
 
+
+  pricing: 
+  {
+    title: {
+      pricing: "Pricing - Zuri Chat"
+    },
+
+    nav: {
+      pricing: "Pricing",
+      about: "About",
+      downloads: "Downloads",
+      contact: "Contact",
+      signup: "Sign Up",
+      login: "Login"
+    },
+
+    cardOne: {
+      headline: "Features",
+      post_headline:
+        "Create your future with us, network, collaborate, educate and learn remotely",
+      call_to_action: "Try Zuri.chat for free"
+    },
+
+    cardThree: {
+      duration_one: "Annual",
+      duration_two: "Monthly",
+      button: "Get Started",
+    },
+
+    sectionThree: {
+      headline: "Leading the way in enterprise security",
+      description: "In addition to encryption in transit and at rest, we operate comprehensive compliance ans assurance programs.",
+      link: "Learn more about security..."
+    },
+
+    sectionFour: {
+      headline: "Whatever work you do, you can do it in Zuri Chat",
+      button_one: "Talk to Sales",
+      button_two: "TRY IT FREE"
+    },
+
+    FAQ: {
+      headline: "Commonly Asked Questions",
+      link_info: "Get more information on",
+      link: "billing at Zuri Chat."
+    },
+
+    footer: {
+      company: "Company",
+      careers: "Careers",
+      about: "About",
+      info: "Info",
+      privacy: "Privacy & Terms",
+      market: "Market Place",
+      blog: "Blog",
+      security: "Security",
+      web3: "Web3/DAO",
+      knowUs: "Know us",
+      downloads: "Downloads",
+      contact: "Contact",
+      documentation: "Documentation",
+      socialMedia: "Social Media",
+      rights: " All Rights Reserved"
+    },
+    cookies: {
+      textOne: "We use third-party",
+      textTwo: "cookies",
+      textThree: "in order to personalize your site experience.",
+      accept: "Allow",
+      decline: "Decline"
+    }
+  },
   about: {
     title: {
       about: ""
@@ -189,8 +265,7 @@ export const TRANSLATIONS_EN = {
       },
       section_one: {
         headline: "Careers at Zuri Chat",
-        post_headline:
-          "Passionate about making work life simpler, and more productive? Join our remote-friendly and flexible team.",
+        post_headline: "Passionate about making work life simpler, and more productive? Join our remote-friendly and flexible team.",
         join_link: "Join Zuri Chat"
       },
       career_grid: {
@@ -200,33 +275,27 @@ export const TRANSLATIONS_EN = {
         categories: {
           category_frontend: {
             headline: "Frontend Development",
-            post_headline:
-              "This track deals with the aspect of your application that the users interact with. A front-end developer will be able to correctly interpret a given design to the user interface."
+            post_headline: "This track deals with the aspect of your application that the users interact with. A front-end developer will be able to correctly interpret a given design to the user interface."
           },
           category_backend: {
             headline: "Backend Development",
-            post_headline:
-              "This track deals with the aspect of the application the user does not directly interact with. It allows the frontend function either by running some back-end code or connecting to the database."
+            post_headline: "This track deals with the aspect of the application the user does not directly interact with. It allows the frontend function either by running some back-end code or connecting to the database."
           },
           category_design: {
             headline: "Design",
-            post_headline:
-              "This track deals with creating a graphic plan for an application. You will learn to convert project documentation into viewable and understandable graphic design for the developers to work with."
+            post_headline: "This track deals with creating a graphic plan for an application. You will learn to convert project documentation into viewable and understandable graphic design for the developers to work with."
           },
           category_mobile: {
             headline: "Mobile Development",
-            post_headline:
-              "The mobile track contains a list of tools and languages needed for a developer to create mobile applications. A mobile application can be IOS or Android."
+            post_headline: "The mobile track contains a list of tools and languages needed for a developer to create mobile applications. A mobile application can be IOS or Android."
           },
           category_digital_marketing: {
             headline: "Digital Marketing",
-            post_headline:
-              "It encomprises the use of digital means and utilities to boost discoverability of products, services and brands."
+            post_headline: "It encomprises the use of digital means and utilities to boost discoverability of products, services and brands."
           },
           category_frameworks: {
             headline: "Frameworks",
-            post_headline:
-              "During the program we will be exploring several useful frameworks to give you an edge in the industry and help you develop complex applications much faster."
+            post_headline: "During the program we will be exploring several useful frameworks to give you an edge in the industry and help you develop complex applications much faster."
           }
         },
         join_cohort: "Be a part of our next cohort starting summer of 2022",
@@ -234,22 +303,18 @@ export const TRANSLATIONS_EN = {
       },
       section_two: {
         headline: "Working and Thriving",
-        post_headline:
-          "We offer benefits that help you feel your best and do your best.",
+        post_headline: "We offer benefits that help you feel your best and do your best.",
         digital_wellness: {
           headline: "Digital-First Office",
-          post_headline:
-            "With remote roles, office-free onboarding and flexible working practices, we are set up for ever-changing realities, schedules and responsibilities."
+          post_headline: "With remote roles, office-free onboarding and flexible working practices, we are set up for ever-changing realities, schedules and responsibilities."
         },
         just_for_you: {
           headline: "Just For You",
-          post_headline:
-            "Receive an annual allowance for professional development, plus a monthly stipend to cover your needs; A new work look, a pet, whatever matters most to you."
+          post_headline: "Receive an annual allowance for professional development, plus a monthly stipend to cover your needs; A new work look, a pet, whatever matters most to you."
         },
         health_and_wellness: {
           headline: "Health and Wellness",
-          post_headline:
-            "Zuri Pays 100% of your premiums. We also offer access to a range of free mental health and well-being resources."
+          post_headline: "Zuri Pays 100% of your premiums. We also offer access to a range of free mental health and well-being resources."
         }
       }
     }
