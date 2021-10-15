@@ -225,8 +225,12 @@ a:hover {
     width: 560px;
   }
 
-  /* .alignForMobile,
+  .alignForMobile,
   .desktop {
     display: none;
-  } */
+  }
+  .heroImages {
+    width: 80%;
+    margin: auto;
+  }
 }
