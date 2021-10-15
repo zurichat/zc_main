@@ -4,11 +4,12 @@ import styles from "../../component-styles/Signout.module.css"
 import logo from "../../component-assets/zuri.svg"
 import axios from "axios"
 import { Helmet } from "react-helmet"
+import AuthInputBox from "../../components/AuthInputBox"
 
 const InvitePage = () => {
   const { id: inviteId } = useParams()
   const history = useHistory()
-  const [registerNewUser, setRegisteNewrUser] = useState(false)
+  const [registerNewUser, setRegisterNewUser] = useState(false)
   const [userPasswordValue, setUserPasswordValue] = useState("")
 
   // check if user has a zuri account
@@ -22,7 +23,7 @@ const InvitePage = () => {
     } catch ({ message }) {
       // user does not exist on zuri chat
       console.error("handleJoinWorkspace-err", message)
-      setRegisteNewrUser(true)
+      setRegisterNewUser(true)
     }
   }
 
@@ -37,6 +38,9 @@ const InvitePage = () => {
 
     } catch ({ message }) {
       console.error("registerNewUserHandler-err", message)
+
+      //If the UUID does not tally with what was sent
+      setRegisterNewUser(true)
     }
   }
 
@@ -71,6 +75,18 @@ const InvitePage = () => {
             <h5 className={styles.secondText}>
               You have been invited to a Workspace
             </h5>
+            {registerNewUser && (
+              <AuthInputBox
+                className={`${styles.inputElement}`}
+                id="password"
+                name="Password"
+                type="password"
+                placeholder="Enter a password"
+                value={userPasswordValue}
+                setValue={setUserPasswordValue}
+                error={""}
+              />
+            )}
             <button
               onClick={() => {
                 if (registerNewUser) {
@@ -86,12 +102,6 @@ const InvitePage = () => {
               Join?
             </button>
           </>
-          {registerNewUser && (
-            <input
-              value={userPasswordValue}
-              onChange={evt => setUserPasswordValue(evt.target.value)}
-            />
-          )}
         </div>
       </div>
     </main>
