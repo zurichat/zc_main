@@ -18,10 +18,8 @@ import {
   AiOutlineLock
 } from "react-icons/ai"
 
-function PluginModal() {
-  const [showDialog, setShowDialog] = useState(false)
-  const open = () => setShowDialog(true)
-  const close = () => setShowDialog(false)
+function PluginModal({ close, showDialog, tabIndex }) {
+
   const [showEditTopicModal, setShowEditTopicModal] = useState(false)
   const [showEditDescriptionModal, setEditDescriptionModal] = useState(false)
   const [showLeaveChannelModal, setShowLeaveChannelModal] = useState(false)
@@ -36,10 +34,10 @@ function PluginModal() {
 
   return (
     <div className="App">
-      <button onClick={open}>Show Dialog</button>
+
       <DialogOverlays isOpen={showDialog} onDismiss={close}>
         <DialogContents>
-          <Tabs>
+          <Tabs defaultIndex={tabIndex}>
             <div>
               <ModalTopic>
                 <ChannelName>
@@ -53,16 +51,10 @@ function PluginModal() {
                   <AiOutlineClose size="20px" color="gray" />
                 </Button>
               </ModalTopic>
-              <Select name="languages" id="lang">
-                <option>Get Notifications for @ mentions</option>
-                <option value="php">PHP</option>
-                <option value="java">Java</option>
-                <option value="golang">Golang</option>
-              </Select>
             </div>
             <TabLists>
               <Tab>About</Tab>
-              <Tab>Members</Tab>
+              <Tab >Members</Tab>
               <Tab>Integrations</Tab>
               <Tab>Settings</Tab>
             </TabLists>
@@ -85,20 +77,20 @@ function PluginModal() {
               </TabPanel>
               <TabPanel>
                 <SettingPanel
-                    toggleDeleteChannel={toggleDeleteChannel}
-                    toggleArchiveChannel={toggleArchiveChannel}
-                    closeModal={close}
+                  toggleDeleteChannel={toggleDeleteChannel}
+                  toggleArchiveChannel={toggleArchiveChannel}
+                  closeModal={close}
                 />
               </TabPanel>
             </TabPanels>
           </Tabs>
         </DialogContents>
       </DialogOverlays>
-      {showEditTopicModal && <EditTopicModal closeEdit={toggleEditTopicModal}  />}
-      {showEditDescriptionModal && <EditDescriptionModal  closeEdit={toggleEditDescriptionModal}  />}
-      {showLeaveChannelModal  && <LeaveChannelModal closeEdit={toggleLeaveChannelModal}   />}
-      {showDeleteChannel && <DeleteChannel closeEdit={toggleDeleteChannel}   />}
-      {showArchiveChannel && <ArchiveChannel closeEdit={toggleArchiveChannel}   />}
+      {showEditTopicModal && <EditTopicModal closeEdit={toggleEditTopicModal} />}
+      {showEditDescriptionModal && <EditDescriptionModal closeEdit={toggleEditDescriptionModal} />}
+      {showLeaveChannelModal && <LeaveChannelModal closeEdit={toggleLeaveChannelModal} />}
+      {showDeleteChannel && <DeleteChannel closeEdit={toggleDeleteChannel} />}
+      {showArchiveChannel && <ArchiveChannel closeEdit={toggleArchiveChannel} />}
     </div>
   )
 }
@@ -111,13 +103,13 @@ function AboutPanel({ closeModal, toggleEditTopicModal, toggleEditDescriptionMod
           <Label>Topic</Label>
           <Input type="text" placeholder="Add a topic" />
           <EditLabel
-              onClick={() => {
-                closeModal()
-                toggleEditTopicModal()
-              }}
-            >
-              Edit
-            </EditLabel>
+            onClick={() => {
+              closeModal()
+              toggleEditTopicModal()
+            }}
+          >
+            Edit
+          </EditLabel>
         </EachSegment>
         <EachSegment>
           <Description>
@@ -143,10 +135,10 @@ function AboutPanel({ closeModal, toggleEditTopicModal, toggleEditDescriptionMod
         </EachSegment>
         <EachSegment>
           <Typography
-           onClick={() => {
-            closeModal()
-            toggleLeaveChannelModal()
-          }}
+            onClick={() => {
+              closeModal()
+              toggleLeaveChannelModal()
+            }}
           >Leave Channel</Typography>
         </EachSegment>
       </OverallWrapper>
@@ -159,7 +151,7 @@ function AboutPanel({ closeModal, toggleEditTopicModal, toggleEditDescriptionMod
         </EditContent>
       </FileWrapper>
       <h6>ChannelID:CD1QT4B9PGW</h6>
-      
+
     </div>
   )
 }
@@ -220,7 +212,7 @@ function Integration() {
     </div>
   )
 }
-function SettingPanel({closeModal, toggleDeleteChannel, toggleArchiveChannel}) {
+function SettingPanel({ closeModal, toggleDeleteChannel, toggleArchiveChannel }) {
   return (
     <div>
       <FileWrapper>
@@ -236,7 +228,7 @@ function SettingPanel({closeModal, toggleDeleteChannel, toggleArchiveChannel}) {
       <ChannelWrapper>
         <Channels>
           <RiDeleteBin7Fill color="red" />
-          <Typography   onClick={() => {
+          <Typography onClick={() => {
             closeModal()
             toggleArchiveChannel()
           }} >Archive this Channel</Typography>
@@ -245,7 +237,7 @@ function SettingPanel({closeModal, toggleDeleteChannel, toggleArchiveChannel}) {
       <ChannelWrapper>
         <Channels>
           <RiDeleteBinLine color="red" />
-          <Typography  onClick={() => {
+          <Typography onClick={() => {
             closeModal()
             toggleDeleteChannel()
           }} >Delete this Channel</Typography>
@@ -312,7 +304,8 @@ const ChannelName = styled.div`
   display: flex;
   align-items: center;
   font-size: 20px;
-  font-weight: 500;
+  color: black;
+  font-weight:700;
 `
 const Select = styled.select`
   padding: 10px;
@@ -325,7 +318,7 @@ const TabLists = styled(TabList)`
   background-color: white;
   width: 80%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
 `
 // const BorderBottom=styled.div`
