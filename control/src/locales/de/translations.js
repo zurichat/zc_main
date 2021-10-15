@@ -264,9 +264,9 @@ export const TRANSLATIONS_DE = {
       title: "Was auch immer Sie tun, Sie können es im Zuri Chat tun",
       link_sales: "Sprechen Sie mit dem Vertrieb",
       link_try: "Kostenlos ausprobieren"
-    },
-
-    careers: {
+    }   
+  },
+   careers: {
       title: {
         careers: "Karriere"
       },
@@ -325,7 +325,6 @@ export const TRANSLATIONS_DE = {
           post_headline: "Zuri zahlt 100 % Ihrer Prämien. Wir bieten auch Zugang zu einer Reihe von kostenlosen Ressourcen für psychische Gesundheit und Wohlbefinden."
         }
       }
-    }
   },
   login:{
     title: "Einloggen - Zuri Chat",
