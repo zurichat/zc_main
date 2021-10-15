@@ -1,5 +1,5 @@
 import styles from "../styles/SearchValueComponent.module.css"
-// import Styled from "styled-components"
+import * as singleSpa from 'single-spa';// import Styled from "styled-components"
 // const SearchValueStyled = Styled.div`
 //     margin-top: 20px;
 //     display: grid;
@@ -21,8 +21,12 @@ import styles from "../styles/SearchValueComponent.module.css"
 //     object-fit: cover;
 // `
 const SearchValue = ({ src, title, description }) => {
+    const redirect = () => {
+        // console.log('hi')
+        singleSpa.navigateToUrl("/music");
+    }
   return (
-    <div className={styles.resultCard}>
+    <div onClick={() => redirect()} className={styles.resultCard}>
     <p className={styles.result_plugin}>#todo plugin <span className={styles.created_date}>- Oct 12th</span></p>
     <div className={styles.card_cont}>
         <div className={styles.card_img}>
