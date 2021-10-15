@@ -348,11 +348,11 @@ const TopNavBar = () => {
   )
 }
 
-const mapStateToProps = state => ({
-  userProfile: state
-})
+// const mapStateToProps = state => ({
+//   userProfile: state
+// })
 
-export default connect(mapStateToProps)(TopNavBar)
+export default TopNavBar
 
 // Styled Components
 const LogoDiv = styled.div`
