@@ -1,10 +1,11 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
 import classes from '../styles/deleteWorkspace.module.css'
 import del from '../assets/delete.svg'
 
-const Delete = () => {
+const DeleteWorkspace = () => {
   const mainName = 'HNGi8'
 
+
+  // Delete Workspace Function 
   return (
     <div className=" bg-light Main" style={{ fontWeight: '700' }}>
       <div className="container py-4">
@@ -47,7 +48,7 @@ const Delete = () => {
         </div>
 
         <div className="row bg-white py-5 px-5">
-          <form action="post">
+          <form action="post" style={{marginTop:"10px"}}>
             <h3 className="pb-3" style={{ fontWeight: '700' }}>
               Confirm Deletion
             </h3>
@@ -80,7 +81,7 @@ const Delete = () => {
                 type="password"
                 name=""
                 id=""
-                className="d-block py-3 px-5"
+                className="d-block py-3 px-5 passwordInput"
               />
             </div>
 
@@ -119,4 +120,4 @@ const Delete = () => {
   )
 }
 
-export default Delete
+export default DeleteWorkspace;

@@ -1,7 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { AnimateSharedLayout } from 'framer-motion'
 import PreferenceWrapper from './PreferenceWrapper'
 
+import classes from './styles/AdminSettings.css'
 import JoinWorkspace from './components/JoinWorkspace'
 import WorkspaceLanguage from './components/WorkspaceLanguage'
 import Guidelines from './components/Guidelines'
@@ -14,6 +16,7 @@ import MessageRetention from './components/MessageRetention'
 import FileRetention from './components/FileRetention'
 import DisplayEmail from './components/DisplayEmail'
 import DefaultChannels from './components/DefaultChannel'
+import DeleteWorkspace from '../../settings/components/deleteWorkspace'
 
 const adminSettings = () => {
   return (
@@ -158,15 +161,23 @@ const adminSettings = () => {
         </PreferenceWrapper>
       </AnimateSharedLayout>
       <AnimateSharedLayout>
-        <PreferenceWrapper
-          title="Delete workspace"
-          text="Deleting a Zuri Chat workspace can't be undone. All messages and files will irretrievable. Please use caution and consider exporting your data before deletion.
-                Note: Don’t delete  your worspce if you want to change worskspace’s URL or name. You also might want to export data before deleting workspace"
-          btnText="expand"
-        >
-          {/* Password input goes uunder here */}
-          {/* <SavePassword /> */}
-        </PreferenceWrapper>
+        <div className={classes.deleteContainer}>
+          <div className={classes.deleteContainerTab}>
+            <div className={classes.floatleft}>
+              <div>Delete workspace</div>
+              <div>
+                <span>Deleting a Zuri Chat workspace can't be undone. All messages and files will irretrievable. Please use caution and consider exporting your data<br />before deletion.
+                    <br /> <br /> Note: Don’t delete  your workspace if you just want to change your<br />worskspace’s URL or name. You also might want to export data<br /> before deleting workspace
+                </span>
+              </div>
+            </div>
+            <div className={classes.floatright}>
+              <Link to="/admin/delete">
+              <button>Delete Workspace</button>
+              </Link>
+            </div>
+          </div>
+        </div>
       </AnimateSharedLayout>
     </>
   )
