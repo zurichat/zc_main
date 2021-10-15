@@ -6,6 +6,8 @@ import { authAxios } from "../utils/Api"
 import { ProfileContext } from "../context/ProfileModal"
 
 
+const ssKey = "language-and-region"
+
 const options = [
   { value: 'en', label: 'English' },
   { value: 'fr', label: 'French' },
@@ -27,10 +29,10 @@ const LanguageAndRegion = () => {
   const handleData = (langreg) => {
       authAxios.patch(`organizations/${user.org_id}/members/${user._id}/settings/languages-and-region`, langreg)
       .then(res => {
-      
+        sessionStorage.setItem(ssKey, langreg)
       })
       .catch(err => {
-        console.error(err)
+        // error
       })
   }
 
@@ -55,7 +57,11 @@ const LanguageAndRegion = () => {
   const langSpellCheck = langreg.languages_zuri_should_spell_check;
    const defVal = langSpellCheck.map(i=> i )
   
-   
+   useEffect(()=> {
+      if(langreg){
+        sessionStorage.setItem(ssKey, langreg)
+      }
+   }, [])
   return (
     <div className={styles.container}>
       <div>
@@ -64,15 +70,16 @@ const LanguageAndRegion = () => {
             <label className={styles.subhead} htmlFor="language">
               Language
             </label>
-            <select className={styles.selectbox} onChange={e => {
+            <select className={styles.selectbox} value={langreg.language} onChange={e => {
                setLangreg({...langreg, language: e.target.value})
                handleData({...langreg, language: e.target.value})
-            }} name="language" id="language">
+            }} name="language" id="language" >
               <option>{langreg.language}</option>
-              <option value="English(uk)">English (UK)</option>
-              <option value="English(us)">English (US)</option>
-              <option value="Deutsch(deu)">Deutsch(Deutschland)</option>
-              <option value="French(fra)">French (FRA)</option> 
+              <option value="en">English</option>
+              <option value="fr">French (FRA)</option>
+              <option value="de">Deutsch (DEU)</option>
+              <option value="zh">Chinese (CHN)</option> 
+              <option value="ar">Arabic</option> 
             </select>
             <p className={styles.note}>
               Choose the language you want to use in Zurichat.
