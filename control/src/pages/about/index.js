@@ -187,7 +187,7 @@ const index = () => {
             Zuri Chat is a modern world platform that makes communicating with your team or organization faster, easier and more fun.
             Want to explore?
             </h3>
-            <Link to = "/signup"><button className = "btn_sale">LET'S START</button></Link>
+            <Link to = "/signup"><button className = "btn_sale">GET STARTED</button></Link>
           </div>
           
         </div>
