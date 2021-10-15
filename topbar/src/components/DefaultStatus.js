@@ -1,5 +1,7 @@
-import React, { useState } from "react"
+import React, { useState, useContext, useEffect } from "react"
 import styled from "styled-components"
+import { ProfileContext } from "../context/ProfileModal"
+import { authAxios } from "./../utils/Api"
 
 const DefaultStatus = ({
   setStatusText,
@@ -49,10 +51,18 @@ const DefaultStatus = ({
       }
     }
   ])
-
+  const [Org_Info, setOrg_Info] = useState("")
+  const { orgId } = useContext(ProfileContext)
+  useEffect(() => {
+    const data = authAxios.get(`/organizations/${orgId}`).then(res => {
+      setOrg_Info(res.data.data.name)
+    })
+    // console.log(data)
+    // setOrg_Info(data?.name)
+  }, [orgId])
   return (
     <Status>
-      <h1>For HNGi8 x I4G</h1>
+      <h1>For {Org_Info}</h1>
       <>
         {defaultStatus.map((status, idx) => (
           <div
@@ -86,7 +96,7 @@ export default DefaultStatus
 const Status = styled.div`
   h1 {
     color: #999999;
-    font-weight: 600;
+    font-weight: normal;
     font-size: 1rem;
     padding-left: 0.5rem;
     margin-bottom: -0.6rem;

@@ -205,7 +205,42 @@ const SetStatusModal = ({
             className={styles.whitex}
           />
         </div>
-        <div className={styles.modalcontent}>
+        <div style={{ position: "relative" }}>
+          <div className={styles.emoji}>
+            <StyledEmojiWrapper>
+              {openEmoji ? (
+                <Picker
+                  set="google"
+                  title="pick an emoji..."
+                  emoji="point_up"
+                  onSelect={onEmojiSelect}
+                />
+              ) : null}
+            </StyledEmojiWrapper>
+            <div>
+              {openEmoji ? (
+                <img
+                  src={blackx}
+                  alt=""
+                  onClick={() => {
+                    setOpenEmoji(!openEmoji)
+                  }}
+                  className={styles.emojiclose}
+                />
+              ) : null}
+            </div>
+            {openEmoji && (
+              <div
+                className={styles.emojiback}
+                onClick={() => setOpenEmoji(!openEmoji)}
+              ></div>
+            )}
+          </div>
+        </div>
+        <div
+          className={styles.modalcontent}
+          style={{ maxHeight: "300px", overflowY: "scroll" }}
+        >
           <form action="" method="post">
             <div className={styles.addstatus}>
               <div className={styles.addstatusleft}>
@@ -217,36 +252,7 @@ const SetStatusModal = ({
                     <img src={smile} className={styles.defalutEmoji} />
                   )}
                 </p>
-                <div className={styles.emoji}>
-                  <StyledEmojiWrapper>
-                    {openEmoji ? (
-                      <Picker
-                        set="google"
-                        title="pick an emoji..."
-                        emoji="point_up"
-                        onSelect={onEmojiSelect}
-                      />
-                    ) : null}
-                  </StyledEmojiWrapper>
-                  <div>
-                    {openEmoji ? (
-                      <img
-                        src={blackx}
-                        alt=""
-                        onClick={() => {
-                          setOpenEmoji(!openEmoji)
-                        }}
-                        className={styles.emojiclose}
-                      />
-                    ) : null}
-                  </div>
-                  {openEmoji && (
-                    <div
-                      className={styles.emojiback}
-                      onClick={() => setOpenEmoji(!openEmoji)}
-                    ></div>
-                  )}
-                </div>
+
                 <input
                   type="text"
                   className={styles.input}
@@ -522,34 +528,32 @@ const SetStatusModal = ({
                 </div>
               </div>
             )}
-            {(user?.status?.tag !== statusEmoji ||
-              user?.status?.text !== statusText) && (
-              <button
-                className={styles.statuscta}
-                type="submit"
-                onClick={handleSubmit}
-              >
-                Save Changes
-              </button>
-            )}
-            {user?.status?.tag === statusEmoji &&
-              user?.status?.text === statusText &&
-              (statusEmoji !== "" || statusText !== "") && (
-                <span
-                  onClick={handleClearStatus}
-                  className={styles.clearstatus}
-                >
-                  Clear Status
-                </span>
-              )}
-            {user?.status?.tag === statusEmoji &&
-              statusEmoji === "" &&
-              user?.status?.text === statusText &&
-              statusText === "" && (
-                <span className={styles.inactivesave}>Save</span>
-              )}
           </form>
         </div>
+
+        {(user?.status?.tag !== statusEmoji ||
+          user?.status?.text !== statusText) && (
+          <button
+            className={styles.statuscta}
+            type="submit"
+            onClick={handleSubmit}
+          >
+            Save Changes
+          </button>
+        )}
+        {user?.status?.tag === statusEmoji &&
+          user?.status?.text === statusText &&
+          (statusEmoji !== "" || statusText !== "") && (
+            <span onClick={handleClearStatus} className={styles.clearstatus}>
+              Clear Status
+            </span>
+          )}
+        {user?.status?.tag === statusEmoji &&
+          statusEmoji === "" &&
+          user?.status?.text === statusText &&
+          statusText === "" && (
+            <span className={styles.inactivesave}>Save</span>
+          )}
       </div>
       <div
         className={styles.modalback}
