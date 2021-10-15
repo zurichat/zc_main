@@ -1,39 +1,37 @@
-import React from 'react'
-import style from './styles/plugin.css'
-import hero_img from './assets/MacBookAir.svg'
-import logo_hng from './assets/logo_hng.svg'
-import logo_i4g from './assets/logo_i4g.svg'
-import logo_camphouse from './assets/logo_camphouse.svg'
-import logo_zuri from './assets/logo_zuri.svg'
-import ft_img1 from './assets/ft_img1.svg'
-import ft_img2 from './assets/ft_img2.svg'
-import ft_img3 from './assets/ft_img3.svg'
-import ft_img4 from './assets/ft_img4.svg'
-import duty from './assets/compduty.png'
-import compShift from './assets/compshiftman.png'
-import deadline from './assets/deadline.png'
-import dm from './assets/dm.png'
-import expenses from './assets/expenses.png'
-import game from './assets/game.png'
-import goal from './assets/goal.png'
-import holiday from './assets/holiday.png'
-import music from './assets/music.png'
-import sales from './assets/sales.png'
-import todo from './assets/todo.png'
-import tools from './assets/tools.png'
+import React from "react"
+import style from "./styles/plugin.css"
+import hero_img from "./assets/MacBookAir.svg"
+import logo_hng from "./assets/logo_hng.svg"
+import logo_i4g from "./assets/logo_i4g.svg"
+import logo_camphouse from "./assets/logo_camphouse.svg"
+import logo_zuri from "./assets/logo_zuri.svg"
+import ft_img1 from "./assets/ft_img1.svg"
+import ft_img2 from "./assets/ft_img2.svg"
+import ft_img3 from "./assets/ft_img3.svg"
+import ft_img4 from "./assets/ft_img4.svg"
+import duty from "./assets/compduty.png"
+import compShift from "./assets/compshiftman.png"
+import deadline from "./assets/deadline.png"
+import dm from "./assets/dm.png"
+import expenses from "./assets/expenses.png"
+import game from "./assets/game.png"
+import goal from "./assets/goal.png"
+import holiday from "./assets/holiday.png"
+import music from "./assets/music.png"
+import sales from "./assets/sales.png"
+import todo from "./assets/todo.png"
+import tools from "./assets/tools.png"
 
+import sign_up_img from "./assets/sign_up_img.svg"
+import arrow_right from "./assets/ArrowRight.svg"
 
+import Header from "../../components/Header"
+import Footer from "../../components/Footer"
 
-import sign_up_img from './assets/sign_up_img.svg'
-import arrow_right from './assets/ArrowRight.svg'
-
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
-
-import { Link } from 'react-router-dom'
-import Cookies from '../cookies'
-import Subscribe from './components/Subscribe1'
-import { Helmet } from 'react-helmet'
+import { Link } from "react-router-dom"
+import Cookies from "../cookies"
+import Subscribe from "./components/Subscribe1"
+import { Helmet } from "react-helmet"
 
 export default function Homepage() {
   const { useState, useEffect } = React
@@ -43,8 +41,8 @@ export default function Homepage() {
   const cookieStorage = {
     getItem: key => {
       const cookies = document.cookie
-        .split(';')
-        .map(cookie => cookie.split('='))
+        .split(";")
+        .map(cookie => cookie.split("="))
         .reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: value }), {})
       return cookies[key]
     },
@@ -53,8 +51,8 @@ export default function Homepage() {
     }
   }
 
-  const allowCookie = cookieStorage.getItem('Zuri Chat Accept')
-  const declineCookie = cookieStorage.getItem('Zuri Chat Decline')
+  const allowCookie = cookieStorage.getItem("Zuri Chat Accept")
+  const declineCookie = cookieStorage.getItem("Zuri Chat Decline")
 
   if (!allowCookie == true || declineCookie == true) {
     useEffect(() => {
@@ -102,7 +100,7 @@ export default function Homepage() {
       <Header />
       <div className={`${style.homepage}`}>
         {/* { COOKIES BANNER} */}
-        <div>{loading ? '' : <Cookies />}</div>
+        <div>{loading ? "" : <Cookies />}</div>
         {/* FEATURES */}
         <div className={`${style.features_wrap}`}>
           <div className={`${style.features}`}>
@@ -113,7 +111,7 @@ export default function Homepage() {
               pContent1="Direct Message Plugin"
               h2Content="Sends Direct Messages"
               pContent2="A plugin that facilitates the sending of messages between collaborators"
-              href="#"
+              href="/signup"
               aContent="Explore DM Plugin "
             />
             {/* contribution tracker */}
@@ -124,7 +122,7 @@ export default function Homepage() {
               h2Content="Track peoples Contributions and Highlights Pressing Issues"
               pContent2="A plugin that allows you track peoples contribution to open 
               source projects, and highlight most pressing issues"
-              href="#"
+              href="/signup"
               aContent="Explore Contribution Tracker Plugin"
               rowOrder={style.ft_row_reverse}
             />
@@ -136,7 +134,7 @@ export default function Homepage() {
               h2Content="Access to music and music videos on the go!"
               pContent2="Music Plugin allows individuals 
               in an organization to add music and video links from YouTube to a shared playlist."
-              href="#"
+              href="/signup"
               aContent="Explore Music Plugin"
             />
             {/* games plugin */}
@@ -146,18 +144,18 @@ export default function Homepage() {
               pContent1="Chess Plugin"
               h2Content="Make learning fun, stay engaged with the virtual games"
               pContent2="Zuri chesss plugin is a web based recreational and competitive board game played between two players."
-              href="chess.zuri.chat/"
+              href="/signup"
               aContent="Explore Games Plugin"
               rowOrder={style.ft_row_reverse}
             />
             {/* company goal */}
-             <FeatureRow
+            <FeatureRow
               src={goal}
               alt=""
               pContent1="Company Goal's Plugin"
               h2Content="Keep track of Goals"
               pContent2="A plugin that allows you to keep track of company's goals and achievements"
-              href="#"
+              href="/signup"
               aContent="Explore Company's Goal Plugin"
             />
             {/* todo plugins */}
@@ -168,18 +166,18 @@ export default function Homepage() {
               h2Content="Keeps track of important task"
               pContent2="A plugin that allows you list everything that you have to do and 
               make sure that your tasks are written down all in one place so you don't forget anything important."
-              href="https://zuri.chat/todo/"
+              href="/signup"
               aContent="Explore Todo's plugin"
               rowOrder={style.ft_row_reverse}
             />
             {/* channels plugin */}
-             <FeatureRow
+            <FeatureRow
               src={ft_img1}
               alt=""
               pContent1="Channels Plugin"
               h2Content="Organizes conversations into dedicated spaces"
               pContent2="A plugin that lets a group of indivduals in a channel know about timely, relevant informations in order to achieve a certain goal"
-              href="https://zuri.chat/channels"
+              href="/signup"
               aContent="Explore Channels Plugins"
             />
             {/* noticeboard plugin */}
@@ -189,18 +187,18 @@ export default function Homepage() {
               pContent1="Noticeboard Plugin"
               h2Content="Share Information Effectively"
               pContent2="Its an Effective plugin for displaying information and communicating with collaborators"
-              href="https://zuri.chat/noticeboard"
+              href="/signup"
               aContent="Explore Noticeboard Plugin"
               rowOrder={style.ft_row_reverse}
             />
             {/* company file plugin */}
-             <FeatureRow
+            <FeatureRow
               src={ft_img4}
               alt=""
               pContent1="Company Files Plugin"
               h2Content="Access and Manages Company's Files Effectively"
               pContent2="An effective file management system that improves business workflow, organizes important data and provides a searchable database for quick retrieval."
-              href="#"
+              href="/signup"
               aContent="Explore Company Files Plugins"
             />
             {/* company sales plugin */}
@@ -210,18 +208,18 @@ export default function Homepage() {
               pContent1="Company Sales Plugin"
               h2Content="Keeps track of Sales record"
               pContent2="An effective sales system that keeps track of company's sales records."
-              href="https://zuri.chat/sales"
+              href="/signup"
               aContent="Explore Company Sales Plugin"
               rowOrder={style.ft_row_reverse}
             />
             {/* deadline plugin */}
-             <FeatureRow
+            <FeatureRow
               src={deadline}
               alt=""
               pContent1="Deadline Plugins"
               h2Content="Deadline Tracker"
               pContent2="A plugin that keeps track of deadlines of task, events, projects assigned to members of an organisation"
-              href="#"
+              href="/signup"
               aContent="Explore Deadline Plugin"
             />
             {/* expenses plugin */}
@@ -231,18 +229,18 @@ export default function Homepage() {
               pContent1="Expenses Plugin"
               h2Content="Keeps track of Expenses"
               pContent2="A plugin that helps to keep an accurate record of a company's expenses"
-              href="#"
+              href="/signup"
               aContent="Explore Expenses Plugin"
               rowOrder={style.ft_row_reverse}
             />
             {/* duty shift plugin */}
-             <FeatureRow
+            <FeatureRow
               src={duty}
               alt=""
               pContent1="Duty Shift Plugin"
               h2Content="Tracking your shifts has never been easier! "
               pContent2="A plugin that helps indiviuals track their working hours and communicate with other employees."
-              href="#"
+              href="/signup"
               aContent="Explore Duty Shift Plugin"
             />
             {/* external tools plugin */}
@@ -252,18 +250,18 @@ export default function Homepage() {
               pContent1="External Tools Plugins"
               h2Content="Usage of 3rd Party Tools"
               pContent2="The External Tools plugin is a feature which allows users to interact with third party tools like Google Drive, Figma, Github, etc. to make work flow for themselves or their team faster and easier"
-              href="externaltools.zuri.chat"
+              href="/signup"
               aContent="Explore Tools Plugin"
               rowOrder={style.ft_row_reverse}
             />
             {/* whiteboard plugin */}
-             <FeatureRow
+            <FeatureRow
               src={ft_img2}
               alt=""
               pContent1="Whiteboard Plugin"
               h2Content="Idea sharing and Team collaborations"
               pContent2="The whiteboard plugin is used for visualizing thoughts, concepts, write down ideas, explain and teach, to plan and create within a certain group of individuals"
-              href="#"
+              href="/signup"
               aContent="Explore Whiteboard Plugins"
             />
             {/* holiday calender plugin */}
@@ -274,18 +272,18 @@ export default function Homepage() {
               h2Content="Schedules Events or holidays for staffs"
               pContent2="Company Holiday Calendar Plugin is a plugin that enables calendar 
               functions mainly to organize or schedule holidays or events for a company"
-              href="#"
+              href="/signup"
               aContent="Explore Company's Calender Plugin"
               rowOrder={style.ft_row_reverse}
             />
             {/* company shift */}
-             <FeatureRow
+            <FeatureRow
               src={compShift}
               alt=""
               pContent1="Company Shift Plugin"
               h2Content="Monitors a Company's Working Hours"
               pContent2="A plugin that keeps track of a company's working hour and how it is distributed among employees of the company."
-              href="https://employeeshift.zuri.chat/"
+              href="/signup"
               aContent="Explore Company Shift Plugin"
             />
           </div>
@@ -298,7 +296,7 @@ export default function Homepage() {
                 Get plugins that you would enjoy
               </p>
               <p className={`${style.sign_up_right_p}`}>
-              Integrate your favorite plugins and get more exciting experience
+                Integrate your favorite plugins and get more exciting experience
               </p>
               <a href="/signup">
                 <button className={`${style.sign_up_btn}`}>
