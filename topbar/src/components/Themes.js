@@ -15,8 +15,6 @@ const Themes = () => {
   // const {theme, toggleTheme} = useThemeMode();
   const {theme,toggleTheme} = useContext(ProfileContext);
 
-  // console.log('theme',theme)
-
   const toggleDarkMode = () => {
     setDarkMode(!darkMode ? true : true)
     setMode("dark")
