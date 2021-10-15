@@ -8,8 +8,10 @@ import { useState } from "react"
 export default function MessageContainer({
   messageData,
   handleShowMoreOptions,
-  handleShowEmoji
+  handleShowEmoji,
+  handleEmojiClicked
 }) {
+
   return (
     <div className={styles.MessageContainer}>
       <div className={styles.hoverItemsContainer}>
@@ -25,7 +27,14 @@ export default function MessageContainer({
       <div className={styles.emojiCardContainer}>
         {messageData.emojis &&
           messageData.emojis.map((emoji, i) => (
-            <EmojiCard key={i} emojiObject={emoji} />
+            <div 
+              onClick={(event)=>handleEmojiClicked(event,emoji,messageData.message_id)}
+              key={i} >
+              <EmojiCard 
+                
+              emojiObject={emoji} />
+            </div>
+            
           ))}
 
         {messageData.emojis.length > 1 ? (

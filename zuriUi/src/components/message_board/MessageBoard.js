@@ -7,7 +7,7 @@ import { useState } from "react"
 import MessageInputBox from "../message_input/MessageInputField"
 import messagesData from "./messages.data"
 import EmojiReaction from "../EmojiReaction/EmojiReaction"
-import Emoji from '../Emoji/Emoji'
+import Emoji from "../Emoji/Emoji"
 
 function MessageBoard({ chatsConfig }) {
   const [showMoreOptions, setShowMoreOptions] = useState(false)
@@ -41,15 +41,21 @@ function MessageBoard({ chatsConfig }) {
     setRight(window.innerWidth - event.clientX)
   }
 
-  function handleEmojiClicked(event, emojiObject) {
-    // extract the data
-    const emoji = emojiObject.emoji
-    const newEmojiName = emojiObject.names[1]
-
+  function handleEmojiClicked(event, emojiObject, message_id) {
     //copy the message
     const messageListCopy = [...messageList]
+
+    //if message_id is not undefined then it's coming from already render emoji in
+    // the messgeContainer
+
+    // extract the data
+    const emoji = emojiObject.emoji
+    const newEmojiName = message_id ? emojiObject.name : emojiObject.names[1]
+    const realMessageId = message_id ? message_id : currentMessageId
+
+    //if message_id is undefined then it's coming frm emoji picker
     const messageIndex = messageListCopy.findIndex(
-      message => message.message_id === currentMessageId
+      message => message.message_id === realMessageId
     )
 
     if (messageIndex < 0) {
@@ -86,6 +92,7 @@ function MessageBoard({ chatsConfig }) {
               <MessageContainer
                 handleShowMoreOptions={handleShowMoreOptions}
                 handleShowEmoji={handleShowEmoji}
+                handleEmojiClicked={handleEmojiClicked}
                 key={i}
                 messageData={messageData}
               />
@@ -101,11 +108,10 @@ function MessageBoard({ chatsConfig }) {
 
       {showMoreOptions && (
         <div>
-           <Overlay handleOverlayClicked={handleOverlayClicked} />
-           <MoreMenu top={top} right={right} />
-         
+          <Overlay handleOverlayClicked={handleOverlayClicked} />
+          <MoreMenu top={top} right={right} />
         </div>
-      ) }
+      )}
 
       {showEmoji && (
         <div>
@@ -115,9 +121,8 @@ function MessageBoard({ chatsConfig }) {
             right={right}
             handleEmojiClicked={handleEmojiClicked}
           />
-          
         </div>
-      ) }
+      )}
     </>
   )
 }

@@ -18,7 +18,9 @@ const Em = ({ handleEmojiClicked }) => {
 
   return (
     <div style={{ display: 'inline-block' }}>
-      <Picker onSelect={(e) => handleEmojiClicked(e)} />
+      <Picker
+       style={{width: '340px', height: '400px'}}
+       onSelect={(e) => handleEmojiClicked(e)} />
     </div>
   );
 };

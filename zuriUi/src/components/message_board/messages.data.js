@@ -113,7 +113,7 @@ const messagesData = [
   },
   {
     username: "Pholajormy",
-    message_id: 7,
+    message_id: 8,
     time: "4:15PM",
     emojis: [
       { name: "angry", count: 4, emoji: "😡" },
@@ -136,7 +136,7 @@ const messagesData = [
   },
   {
     username: "Fortune",
-    message_id: 7,
+    message_id: 9,
     time: "9:35PM",
     emojis: [
       { name: "cool", count: 4, emoji: "😎" },
@@ -159,7 +159,7 @@ const messagesData = [
   },
   {
     username: "Detoun",
-    message_id: 7,
+    message_id: 11,
     time: "12:15PM",
     emojis: [
       { name: "cool", count: 9, emoji: "🥳" },
