@@ -6,7 +6,7 @@ import { IoSpeedometerOutline} from "react-icons/io5"
 
 // components
 // import AuthTab from './AuthTab'
-// import MembersTab from '../../components/MembersTab'
+import MemberTab from "../../components/MembersTab"
 // import HistoryTab from '../../components/HistoryTab'
 
 // icon
@@ -72,7 +72,7 @@ const AdminSettingsTab = () => {
 
         {active === 1 && <AnalyticsOverview />}
         {active === 2 && <ChannelsTab />}
-        {/* {active === 3 && <AuthTab />} */}
+        {active === 3 && <MemberTab />} 
       </div>
     </div>
     </>
