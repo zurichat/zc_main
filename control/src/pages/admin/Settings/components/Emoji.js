@@ -2,8 +2,6 @@ import React, { useState, useEffect, useRef } from "react"
 import { authAxios } from "../../Utils/Api"
 import toast from "react-hot-toast"
 import Picker from "emoji-picker-react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCoffee } from "@fortawesome/free-solid-svg-icons"
 import ForwardIcon from "../../../resources/assests/ForwardIcon.svg"
 import classes from "../styles/EmojiTab.module.css"
 
@@ -23,6 +21,7 @@ const Emoji = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [number, setNumber] = useState(null)
   const [hover, setHover] = useState(false)
+  const [customEmoji, setCustomEmoji] = useState(true)
   const ref = useRef(null)
 
   const onEmojiClick = (event, emojiObject) => {
@@ -357,8 +356,19 @@ const Emoji = () => {
           workspace your own with custom emoji that mean something to your team.
         </div>
         <div className={classes.btn}>
-          <button onClick={addAlias}>Add Alias</button>
-          <button onClick={addCustomEmoji}>Add Custom Emoji</button>
+          {customEmoji && <div className={classes.title}>{1} custom emoji</div>}
+          <button  style={customEmoji ? {marginLeft: 'auto'} : null} className={classes.addAlias} onClick={addAlias}>
+            Add Alias
+          </button>
+          <button className={classes.addCustomEmoji} onClick={addCustomEmoji}>
+            Add Custom Emoji
+          </button>
+        </div>
+        <div className={classes.search}>
+          <input
+            type="text"
+            onChange={e => setState({ name: e.target.value })}
+          />
         </div>
       </div>
 
