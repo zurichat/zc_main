@@ -5,6 +5,8 @@ import styles from '../component-styles/AuthFormWrapper.module.css'
 import logo from '../component-assets/logo.svg'
 import google from '../component-assets/google.svg'
 import GoogleAuth from './GoogleAuth'
+import "../i18n";
+import { useTranslation} from "react-i18next";
 
 const FormWrapper = ({
   children,
@@ -21,6 +23,8 @@ const FormWrapper = ({
   bottomLinkHref,
   setLoading
 }) => {
+
+  const { t } = useTranslation();
   return (
     <section className={`${styles.container}`}>
       <a href="/">
@@ -103,13 +107,13 @@ const FormWrapper = ({
 
       <div className={`${styles.footer}`}>
         <Link to="/contact-us" className={`${styles.footer_a}`}>
-          Contact Us
+          {t("login.footer.contactUs")}
         </Link>
         <Link to="/legal" className={`${styles.footer_a}`}>
-          Legal Policy
+            {t("login.footer.legacyPolicy")}
         </Link>
         <Link to="/about" className={`${styles.footer_a}`}>
-          About Zurichat
+          {t("login.footer.aboutZuri")}
         </Link>
       </div>
     </section>
