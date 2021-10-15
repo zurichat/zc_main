@@ -96,7 +96,7 @@ export const TRANSLATIONS_ZH = {
   },
 
   
-  pricing: 
+  pricing:
   {
     title: {
       pricing: "定价 - Zuri Chat"
@@ -159,13 +159,15 @@ export const TRANSLATIONS_ZH = {
       socialMedia: "社交媒体",
       rights: "聊天。版权所有"
     },
-    cookies:{
+    cookies: {
       textOne: "我们使用第三方",
       textTwo: "曲奇饼",
       textThree: "来个性化您的网站体验。",
       accept: "允许",
       decline: "衰退"
-
+    }
+  },
+    
         
   about: {
     title: {
