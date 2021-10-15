@@ -27,6 +27,7 @@ export const BigModal = ({ onClose, inputValue }) => {
   }, [result[0]])
   // console.log(result)
   let i = 0
+  const noResult = (result.length === 0);
 
   const sidebar = document.getElementById(
     "single-spa-application:@zuri/sidebar"
@@ -65,7 +66,7 @@ export const BigModal = ({ onClose, inputValue }) => {
   ))
   return (
     <SearchContainer className="bigModal">
-      <h2>{`Search result for ${inputValue}`}</h2>
+      {!noResult && <h2>{`Search result for ${inputValue}`}</h2>}
       <button
         className="btn"
         style={{
@@ -84,7 +85,7 @@ export const BigModal = ({ onClose, inputValue }) => {
           setValue(e.target.value)
         }} 
       />*/}
-      {result === [] ? <h1>nhjdjsjrgi nrv</h1> : card}
+      { noResult ? <NoResult /> : card}
     </SearchContainer>
   )
 }
