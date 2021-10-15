@@ -182,21 +182,14 @@ const index = () => {
       {/* whatever work you do, you can do it in zurichat  */}
       <div className={`container-fluid ${styles.zurichat}`}>
         <div className={`${styles.zurichat_section}`}>
-          <h3 className={`${styles.zurichat_h3}`}>
-           {t("about.cta.title")}
-          </h3>
-          <div className={`styles.button`}>
-            <Link to="/contact-us">
-              <button className={`btn ${styles.btn_sale} ${styles.btn}`}>
-                {t("about.cta.link_sales")}
-              </button>
-            </Link>
-            <Link to="/signup">
-              <button className={`btn ${styles.btn_free} ${styles.btn}`}>
-                 {t("about.cta.link_try")}
-              </button>
-            </Link>
+          <div className="signup-cta">
+            <h3>
+            Zuri Chat is a modern world platform that makes communicating with your team or organization faster, easier and more fun.
+            Want to explore?
+            </h3>
+            <Link to = "/signup"><button className = "btn_sale">LET'S START</button></Link>
           </div>
+          
         </div>
       </div>
       <Footer />
