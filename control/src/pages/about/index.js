@@ -182,21 +182,8 @@ const index = () => {
       {/* whatever work you do, you can do it in zurichat  */}
       <div className={`container-fluid ${styles.zurichat}`}>
         <div className={`${styles.zurichat_section}`}>
-          <h3 className={`${styles.zurichat_h3}`}>
-           {t("about.cta.title")}
-          </h3>
-          <div className={`styles.button`}>
-            <Link to="/contact-us">
-              <button className={`btn ${styles.btn_sale} ${styles.btn}`}>
-                {t("about.cta.link_sales")}
-              </button>
-            </Link>
-            <Link to="/signup">
-              <button className={`btn ${styles.btn_free} ${styles.btn}`}>
-                 {t("about.cta.link_try")}
-              </button>
-            </Link>
-          </div>
+          
+          
         </div>
       </div>
       <Footer />
