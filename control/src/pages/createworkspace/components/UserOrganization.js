@@ -1,15 +1,15 @@
-import styled from 'styled-components'
-import RightArrow from '../assets/right-arrow.png'
-import ZuriLogo from '../assets/zuri.png'
+import styled from "styled-components"
+import RightArrow from "../assets/right-arrow.png"
+import ZuriLogo from "../assets/zuri.png"
 const UserOrganization = ({ organizations, user }) => {
   return (
     <BottomSection>
       <Or>Or</Or>
       <Header2>Open a workspace</Header2>
       <SelectWorkSpace>
-        <p style={{ paddingLeft: '10px' }}>
-          Workspaces for{' '}
-          <strong style={{ fontWeight: '700' }}>{user.email}</strong>
+        <p style={{ paddingLeft: "10px" }}>
+          Workspaces for{" "}
+          <strong style={{ fontWeight: "700" }}>{user.email}</strong>
         </p>
 
         {organizations.map(organization => (
@@ -20,8 +20,8 @@ const UserOrganization = ({ organizations, user }) => {
                 <OrganizationName>{organization.name}</OrganizationName>
                 <Members>
                   {organization.no_of_members === 1
-                    ? organization.no_of_members + ' member'
-                    : organization.no_of_members + ' members'}
+                    ? organization.no_of_members + " member"
+                    : organization.no_of_members + " members"}
                 </Members>
               </Logo_Members>
             </Organization>
@@ -59,14 +59,14 @@ const BottomSection = styled.section`
 `
 const Or = styled.span`
   font-weight: 600;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: ${18 / 16}rem;
   color: #333333;
   margin-bottom: 14px;
 `
 const Header2 = styled.h2`
   color: #333333;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 700;
   font-size: ${24 / 16}rem;
   margin-bottom: 42px;
@@ -81,7 +81,7 @@ const SelectWorkSpace = styled.ul`
     font-size: ${18 / 16}rem;
     font-weight: 400;
     color: #333333;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
     margin-bottom: 16px;
     padding-right: 10px;
     text-align: center;
@@ -107,7 +107,7 @@ const OrganizationWrapper = styled.li`
 const OrganizationName = styled.span`
   font-weight: 600;
   font-size: ${20 / 16}rem;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   color: #333333;
 `
 const Members = styled(OrganizationName)`
@@ -135,12 +135,13 @@ const TryDifferentWrapper = styled.div`
 const TextBottom = styled.p`
   font-weight: 400;
   font-size: ${18 / 16}rem;
-  font-family: 'Lato' sans-serif;
+  font-family: "Lato" sans-serif;
 `
 const SecondText = styled(TextBottom)`
   color: #00b87c;
   font-weight: 600;
 `
+
 export const Footer = styled.footer`
   margin: 0;
   display: flex;
@@ -151,9 +152,9 @@ export const FooterLink = styled.a`
   text-decoration: none;
   font-weight: 700;
   color: #6a6a6a;
-  font-family: 'Lato', sans-serif;
-  &:hover{
-    color: #B0B0B0;
+  font-family: "Lato", sans-serif;
+  &:hover {
+    color: #b0b0b0;
     cursor: pointer;
   }
   @media (max-width: 35rem) {

@@ -8,7 +8,7 @@
     background: rgba(0, 0, 0, 0.3);
     display: none;
     justify-content: center;
-    padding: 12rem 24rem 17rem;
+    /* padding: 12rem 24rem 17rem; */
 }
 
 .overlay,
@@ -28,8 +28,8 @@
 
 .modalContent,
 .modalFull {
-    width: 89%;
-    max-width: 885px;
+    /* width: 89%; */
+    /* max-width: 885px; */
     background: #fff;
     border-radius: 4px;
     overflow: hidden;

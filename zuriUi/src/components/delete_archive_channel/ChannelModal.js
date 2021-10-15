@@ -2,11 +2,11 @@ import { useState } from 'react'
 // import { ProfileContext } from '../context/ProfileModal'
 import styles from './ChannelModal.module.css'
 
-const ChannelModal = ({ title, children, full }) => {
+const ChannelModal = ({ title, children, full, closeEdit }) => {
 //   const { modal, toggleModalState } = useContext(ProfileContext)
- const [modal, setModal] = useState(false)
+ const [modal, setModal] = useState(true)
  const toggleModalState = () => {
-    setModal(!modal)
+    closeEdit()
   }
 // const { modal, toggleModalState } = useContext
 
@@ -16,18 +16,18 @@ const ChannelModal = ({ title, children, full }) => {
   return (
     <div
       className={styles.modalContainer}
-      style={modal ? { display: 'flex' } : { display: 'none' }}
+      style={{ display: 'flex' } }
     >
       <div
         className={full ? styles.overlayGreen : styles.overlay}
-        onClick={toggleModalState}
+        onClick={() => {closeEdit() }}
       ></div>
       <div className={full ? styles.modalFull : styles.modalContent}>
         <div className={`${styles.modalHeader}`}>
           {title}
           {mobileView ? (
             <svg
-              onClick={toggleModalState}
+             onClick={() => {closeEdit() }}
               className={styles.backIcon}
               viewBox="0 0 30 30"
               fill="none"
@@ -43,7 +43,7 @@ const ChannelModal = ({ title, children, full }) => {
             </svg>
           ) : (
             <svg
-              onClick={toggleModalState}
+             onClick={() => {closeEdit() }}
               className={styles.closeIcon}
               viewBox="0 0 329.26933 329"
               xmlns="http://www.w3.org/2000/svg"

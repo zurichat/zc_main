@@ -87,6 +87,7 @@ function CompanyName({ input }) {
           <span className={CompanyNameCSS.charLimit}>
             Maximum 50 characters
           </span>
+          <div className={CompanyNameCSS.buttonContainer}>
           <Link to={`${match.url}/step2`}>
             {" "}
             <button
@@ -101,6 +102,15 @@ function CompanyName({ input }) {
               Continue
             </button>
           </Link>
+          <Link to='/createworkspace'>
+            {" "}
+            <button
+              style={{ backgroundColor: "#f40101", color: "white" }}
+            >
+              Cancel
+            </button>
+          </Link>
+          </div>
         </div>
       </article>
     </div>

@@ -293,7 +293,7 @@ const NotificationPreference = () => {
               <label htmlFor="none">Nothing</label>
             </div>
           </div>
-          <div className={styles.markbox}>
+          {/* <div className={styles.markbox}>
             <input
               type="checkbox"
               className={styles.check}
@@ -305,9 +305,9 @@ const NotificationPreference = () => {
               {" "}
               Use different settings for my mobile device
             </label>
-          </div>
-          <hr className={styles.hrNot} />
-          <div className={styles.markbox}>
+          </div> */}
+          {/* <hr className={styles.hrNot} /> */}
+          {/* <div className={styles.markbox}>
             <input
               type="checkbox"
               className={styles.check}
@@ -316,8 +316,8 @@ const NotificationPreference = () => {
               onClick={handleNotifyMeeting}
             />
             <label htmlFor="for-meeting">Notify me when a meeting is set</label>
-          </div>
-          <div className={styles.markbox}>
+          </div> */}
+          {/* <div className={styles.markbox}>
             <input
               type="checkbox"
               className={styles.check}
@@ -326,10 +326,10 @@ const NotificationPreference = () => {
               onClick={handleThreadReplies}
             />
             <label htmlFor="for-thread">Notify me of replies to thread</label>
-          </div>
+          </div> */}
         </form>
         <hr className={styles.hrNot} />
-        <div className={styles.itemTitle2}>
+        {/* <div className={styles.itemTitle2}>
           <h4 className={styles.titleSmall}>Keywords</h4>{" "}
           <span className={styles.spanBlock}>
             You will be notified anything, someone uses these keywords in a
@@ -341,15 +341,15 @@ const NotificationPreference = () => {
             onChange={handleKeywordChange}
             className={styles.textarea}
           />
-        </div>
-        <hr className={styles.hrNot} />
+        </div> */}
+        {/* <hr className={styles.hrNot} /> */}
 
         <div className={styles.itemTitle2}>
           <h4 className={styles.titleSmall}>Schedule Notification </h4>{" "}
           <span className={styles.spanBlock}>
             You'll only receive notifications in the hours that you choose.
-            Outside of those times, notifications will be paused.{" "}
-           <br/> <span className={styles.spanSmall}>Learn more</span>
+            Outside of those times, notifications will be paused. <br />{" "}
+            <span className={styles.spanSmall}>Learn more</span>
           </span>
         </div>
         <div className={styles.schedule}>
@@ -390,17 +390,17 @@ const NotificationPreference = () => {
           </ul>
         </div>
 
-        <hr className={styles.hrNot} />
+        {/* <hr className={styles.hrNot} /> */}
 
-        <div className={styles.itemTitle2}>
+        {/* <div className={styles.itemTitle2}>
           <h4 className={styles.titleSmall}>Sound checks</h4>
           <span className={styles.spanBlock}>
             Choose your notification sound
           </span>
           <button className={styles.button}>Example Sound</button>
-        </div>
+        </div> */}
 
-        <div className={styles.mute}>
+        {/* <div className={styles.mute}>
           <div className={styles.markbox}>
             <input
               type="checkbox"
@@ -423,9 +423,9 @@ const NotificationPreference = () => {
             />
             <label htmlFor="for-muteall">Mute all</label>
           </div>
-        </div>
+        </div> */}
 
-        <div className={styles.picksound}>
+        {/* <div className={styles.picksound}>
           <div className={styles.share}>
             <div className={styles.sound}>
               <div className={styles.msg3}>
@@ -459,10 +459,10 @@ const NotificationPreference = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <hr className={styles.hrNot} />
 
-        <div className={styles.section2}>
+        {/* <div className={styles.section2}>
           <div className={styles.itemTitle2}>
             <div className={styles.titleSmall}>
               Flash window when notification comes
@@ -516,10 +516,10 @@ const NotificationPreference = () => {
               </select>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <hr className={styles.hrNot} />
-        <div className={styles.section3}>
+        {/* <hr className={styles.hrNot} /> */}
+        {/* <div className={styles.section3}>
           <div className={styles.itemTitle2}>
             <div className={styles.titleSmall}>
               When I am not active on desktop
@@ -538,8 +538,8 @@ const NotificationPreference = () => {
               </select>
             </div>
           </div>
-        </div>
-        <div className={styles.markbox}>
+        </div> */}
+        {/* <div className={styles.markbox}>
           <input
             type="checkbox"
             checked={notificationSettings.email_notifications_for_mentions}
@@ -549,7 +549,7 @@ const NotificationPreference = () => {
           <label className="emailNot">
             Send me email notifications for mentions{" "}
           </label>
-        </div>
+        </div> */}
       </div>
     </div>
   )

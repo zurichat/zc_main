@@ -8,6 +8,7 @@ import EditTopicModal from "../Edit_Leave_Modals/EditTopicModal"
 import EditDescriptionModal from "../Edit_Leave_Modals/EditDescriptionModal"
 import LeaveChannelModal from "../Edit_Leave_Modals/LeaveChannelModal"
 import DeleteChannel from "../delete_archive_channel/DeleteChannel"
+import ArchiveChannel from "../delete_archive_channel/ArchiveChannel"
 import { RiDeleteBinLine, RiDeleteBin7Fill } from "react-icons/ri"
 import {
   AiOutlineUserAdd,
@@ -25,11 +26,13 @@ function PluginModal() {
   const [showEditDescriptionModal, setEditDescriptionModal] = useState(false)
   const [showLeaveChannelModal, setShowLeaveChannelModal] = useState(false)
   const [showDeleteChannel, setShowDeleteChannel] = useState(false)
+  const [showArchiveChannel, setShowArchiveChannel] = useState(false)
 
   const toggleEditTopicModal = () => setShowEditTopicModal(!showEditTopicModal)
   const toggleEditDescriptionModal = () => setEditDescriptionModal(!showEditDescriptionModal)
   const toggleDeleteChannel = () => setShowDeleteChannel(!showDeleteChannel)
   const toggleLeaveChannelModal = () => setShowLeaveChannelModal(!showLeaveChannelModal)
+  const toggleArchiveChannel = () => setShowArchiveChannel(!showArchiveChannel)
 
   return (
     <div className="App">
@@ -81,15 +84,21 @@ function PluginModal() {
                 <Integration />
               </TabPanel>
               <TabPanel>
-                <SettingPanel />
+                <SettingPanel
+                    toggleDeleteChannel={toggleDeleteChannel}
+                    toggleArchiveChannel={toggleArchiveChannel}
+                    closeModal={close}
+                />
               </TabPanel>
             </TabPanels>
           </Tabs>
         </DialogContents>
       </DialogOverlays>
       {showEditTopicModal && <EditTopicModal closeEdit={toggleEditTopicModal}  />}
-      {showEditDescriptionModal && <EditDescriptionModal   />}
-      {showLeaveChannelModal  && <LeaveChannelModal  />}
+      {showEditDescriptionModal && <EditDescriptionModal  closeEdit={toggleEditDescriptionModal}  />}
+      {showLeaveChannelModal  && <LeaveChannelModal closeEdit={toggleLeaveChannelModal}   />}
+      {showDeleteChannel && <DeleteChannel closeEdit={toggleDeleteChannel}   />}
+      {showArchiveChannel && <ArchiveChannel closeEdit={toggleArchiveChannel}   />}
     </div>
   )
 }
@@ -211,7 +220,7 @@ function Integration() {
     </div>
   )
 }
-function SettingPanel() {
+function SettingPanel({closeModal, toggleDeleteChannel, toggleArchiveChannel}) {
   return (
     <div>
       <FileWrapper>
@@ -227,13 +236,19 @@ function SettingPanel() {
       <ChannelWrapper>
         <Channels>
           <RiDeleteBin7Fill color="red" />
-          <Typography>Archive this Channel</Typography>
+          <Typography   onClick={() => {
+            closeModal()
+            toggleArchiveChannel()
+          }} >Archive this Channel</Typography>
         </Channels>
       </ChannelWrapper>
       <ChannelWrapper>
         <Channels>
           <RiDeleteBinLine color="red" />
-          <Typography>Change to Private Channel</Typography>
+          <Typography  onClick={() => {
+            closeModal()
+            toggleDeleteChannel()
+          }} >Delete this Channel</Typography>
         </Channels>
       </ChannelWrapper>
     </div>

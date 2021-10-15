@@ -9,8 +9,12 @@ import {
   AiOutlineBell,
   AiOutlineClose,
   AiOutlineStar,
-  AiOutlineLock
+  AiOutlineLock,
+  AiOutlineSearch
 } from "react-icons/ai"
+import {
+  BsPersonCircle
+} from 'react-icons/bs'
 import {
   AddPeopleIcons,
   Button,
@@ -40,11 +44,22 @@ import {
   TabLists,
   Tag,
   Typography,
-  UserIcon
-} from "./ChannelDetails.styled"
+  UserIcon,
+  Option,
+  StyledTabs,
+  Segment,
+  DataWrap,
+  Details,
+  DetailLabel,
+  StackLabel
+} from "./ChannelDetails.styled";
+import { sample } from "./sample"
 
-function ChannelDetails({ channelDetailsConfig, handleCloseChannelDetails }) {
+function ChannelDetails({initialTabIndex=0, channelDetailsConfig, handleCloseChannelDetails }) {
+
+  var samples=sample.map(sample=>sample)
   const { showChannelDetails = false } = channelDetailsConfig
+  const [tabIndex,setTabIndex]=useState(initialTabIndex)
   const [showDialog, setShowDialog] = useState(showChannelDetails)
   const close = () => {
     handleCloseChannelDetails && handleCloseChannelDetails()
@@ -52,44 +67,47 @@ function ChannelDetails({ channelDetailsConfig, handleCloseChannelDetails }) {
   useEffect(() => {
     setShowDialog(showChannelDetails)
   }, [showChannelDetails])
+
   return (
-    <div className="App">
+    <div>
       <DialogOverlays isOpen={showDialog} onDismiss={close}>
         <DialogContents>
-          <Tabs>
-            <div>
-              <ModalTopic>
-                <ChannelName>
-                  # Announcements{" "}
-                  <AiOutlineStar
-                    size="24px"
-                    style={{ marginLeft: "10px", cursor: "pointer" }}
-                  />
-                </ChannelName>
-                <Button onClick={close}>
-                  <AiOutlineClose size="20px" color="gray" />
-                </Button>
-              </ModalTopic>
-              <Select name="languages" id="lang">
-                <option>Get Notifications for @ mentions</option>
-                <option value="php">PHP</option>
-                <option value="java">Java</option>
-                <option value="golang">Golang</option>
-              </Select>
-            </div>
-            <TabLists>
-              <Tab>About</Tab>
-              <Tab>Members</Tab>
-              <Tab>Integrations</Tab>
-              <Tab>Settings</Tab>
-            </TabLists>
-            {/* <BorderBottom/> */}
+          <StyledTabs index={tabIndex}
+            onChange={(index)=>setTabIndex(index)}>
+            <Segment>
+              <div>
+                <ModalTopic>
+                  <ChannelName>
+                    # Announcements{" "}
+                    <AiOutlineStar
+                      size="24px"
+                      style={{ marginLeft: "10px", cursor: "pointer"}}
+                    />
+                  </ChannelName>
+                  <Button onClick={close}>
+                    <AiOutlineClose size="20px" color="gray" />
+                  </Button>
+                </ModalTopic>
+                <Select name="languages" id="lang">
+                  <Option value="" disabled selected>Get Notifications for @ mentions</Option>
+                  <Option value="php">PHP</Option>
+                  <Option value="java">Java</Option>
+                  <Option value="golang">Golang</Option>
+                </Select>
+              </div>
+              <TabLists>
+                <Tab>About</Tab>
+                <Tab>Members</Tab>
+                <Tab>Integrations</Tab>
+                <Tab>Settings</Tab>
+              </TabLists>
+            </Segment>
             <TabPanels>
               <TabPanel>
                 <AboutPanel />
               </TabPanel>
               <TabPanel>
-                <MembersPanel />
+                <MembersPanel samples={samples}/>
               </TabPanel>
               <TabPanel>
                 <Integration />
@@ -98,7 +116,7 @@ function ChannelDetails({ channelDetailsConfig, handleCloseChannelDetails }) {
                 <SettingPanel />
               </TabPanel>
             </TabPanels>
-          </Tabs>
+          </StyledTabs>
         </DialogContents>
       </DialogOverlays>
     </div>
@@ -132,35 +150,23 @@ function AboutPanel() {
         </EachSegment>
       </OverallWrapper>
       <FileWrapper>
-        <FileContent>Files</FileContent>
+        <FileContent style={{color:"black"}}>Files</FileContent>
         <EditContent>
           There aren't any files to be see here right now. But there could be -
           drag and drop any file into the message pane to add it to this
           conversation.
         </EditContent>
       </FileWrapper>
-      <h6>ChannelID:CD1QT4B9PGW</h6>
+      <h6 style={{fontSize:'15px'}}>ChannelID:CD1QT4B9PGW</h6>
     </div>
   )
 }
-// function useTabsContext():{
-//   focusedIndex:number; id:string; selectedIndex:number
-// }
-//   function CustomTab({index,...props}){
-//       const {selectedIndex,focusedIndex}=useTabsContext();
-//       return(
-//         <Tab style={{
-//           borderBottom:`4px solid ${selectedIndex === index
-//           ?"red" : focusedIndex === index ? "blue" : "black"}`,
-//         }}
-//         {...props}/>
-//       )
-//   }
-function MembersPanel() {
+
+function MembersPanel({samples}) {
   return (
     <div>
       <Selection>
-        <AiOutlineBell
+        <AiOutlineSearch
           style={{
             position: "absolute",
             marginLeft: "10px",
@@ -171,10 +177,29 @@ function MembersPanel() {
       </Selection>
       <AddPeopleIcons>
         <UserIcon>
-          <AiOutlineUserAdd size="30px" />
+          <AiOutlineUserAdd size="20px" />
         </UserIcon>
         Add People
       </AddPeopleIcons>
+      <div style={{marginTop:'30px'}}>
+        {
+          samples.map(sample=>(
+            <DataWrap key={sample.name}>
+              <BsPersonCircle size="30px" style={{marginTop:'10px'}}/>
+              <Details>
+                <DetailLabel>
+                  <div style={{display:'flex',alignItems:'flex-start',marginRight:'20px'}}>{sample.username}</div>
+                  <div>{sample.name}</div>
+                </DetailLabel>
+                <StackLabel>
+                    <div style={{marginLeft:'15px'}}>{sample.stack}</div>
+                    <EditLabel>Remove</EditLabel>
+                </StackLabel>
+              </Details>
+            </DataWrap>
+          ))
+        }
+      </div>
     </div>
   )
 }
@@ -184,9 +209,30 @@ function Integration() {
       style={{
         display: "flex",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        flexDirection:'column'
       }}
     >
+      <Options>
+        <Heading>
+          WorkFlows <Tag>PAID FEATURE</Tag>
+        </Heading>
+        <Subheader>
+          Automate the tasks and processes unique to your team, no coding
+          required.
+        </Subheader>
+        <Buttons>See Upgrade Options</Buttons>
+      </Options>
+      <Options>
+        <Heading>
+          WorkFlows <Tag>PAID FEATURE</Tag>
+        </Heading>
+        <Subheader>
+          Automate the tasks and processes unique to your team, no coding
+          required.
+        </Subheader>
+        <Buttons>See Upgrade Options</Buttons>
+      </Options>
       <Options>
         <Heading>
           WorkFlows <Tag>PAID FEATURE</Tag>
@@ -229,4 +275,4 @@ function SettingPanel() {
   )
 }
 
-export default ChannelDetails
+export default ChannelDetails;

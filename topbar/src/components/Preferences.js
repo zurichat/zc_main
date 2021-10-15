@@ -23,15 +23,18 @@ const Preferences = () => {
   const closeMenu = () => {
     setNavbarOpen(false)
   }
-    const lightLocal = localStorage.getItem("light") &&  localStorage.getItem("light") || ""
-  const darkLocal = localStorage.getItem("dark") && localStorage.getItem("dark") || ""
+  const lightLocal =
+    (localStorage.getItem("light") && localStorage.getItem("light")) || ""
+  const darkLocal =
+    (localStorage.getItem("dark") && localStorage.getItem("dark")) || ""
 
-    const [check, setCheck] = useState({
-    light: lightLocal  || "",
+  const [check, setCheck] = useState({
+    light: lightLocal || "",
     dark: darkLocal || ""
   })
 
-  const themeLocal = localStorage.getItem("mode") && localStorage.getItem("mode") || ""
+  const themeLocal =
+    (localStorage.getItem("mode") && localStorage.getItem("mode")) || ""
   const [mode, setMode] = useState(themeLocal)
 
   useEffect(() => {
@@ -41,8 +44,8 @@ const Preferences = () => {
       localStorage.removeItem("light")
     } else {
       localStorage.setItem("mode", "light")
-    localStorage.setItem("light", "checked")
-    localStorage.removeItem("dark")
+      localStorage.setItem("light", "checked")
+      localStorage.removeItem("dark")
     }
   }, [mode, check])
 
@@ -72,11 +75,11 @@ const Preferences = () => {
         <div className={styles.allPreferences}>
           {sideBar === 1 && <NotificationPreference />}
 
-          {sideBar === 3 && <Themes {...{check, setCheck, setMode}} />}
+          {sideBar === 3 && <Themes {...{ check, setCheck, setMode }} />}
           {sideBar === 4 && <MessagesMedia />}
           {sideBar === 5 && <LanguageAndRegion />}
-          {sideBar === 6 && <Accessibility />}
-          {sideBar === 7 && <MarkAsRead />}
+          {/* {sideBar === 6 && <Accessibility />} */}
+          {/* {sideBar === 7 && <MarkAsRead />} */}
 
           {sideBar === 9 && <AdvancedSettings />}
         </div>

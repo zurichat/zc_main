@@ -94,6 +94,11 @@ a {
   color: #333333;
 }
 
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
 @media screen and (min-width: 765px) {
   .centerWrapper {
     width: 50vw;
