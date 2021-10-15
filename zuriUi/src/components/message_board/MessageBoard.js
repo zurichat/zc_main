@@ -12,8 +12,8 @@ import Emoji from "../Emoji/Emoji"
 function MessageBoard({ chatsConfig }) {
   const [showMoreOptions, setShowMoreOptions] = useState(false)
   const [showEmoji, setShowEmoji] = useState(false)
-  //const [messageList, setMessageList] = useState(chatsConfig.messages)
-  const [messageList, setMessageList] = useState(messagesData)
+  const [messageList, setMessageList] = useState(chatsConfig.messages)
+  //const [messageList, setMessageList] = useState(messagesData)
 
   const [top, setTop] = useState(null)
   const [right, setRight] = useState(null)
@@ -98,12 +98,12 @@ function MessageBoard({ chatsConfig }) {
               />
             ))}
         </div>
-        {/* <div className="input-text">
+        <div className="input-text">
           <MessageInputBox
             currentUserData={chatsConfig.currentUserData}
             addToMessages={addToMessages}
           />
-        </div> */}
+        </div>
       </ChatContainer>
 
       {showMoreOptions && (
