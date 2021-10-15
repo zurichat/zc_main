@@ -15,7 +15,9 @@ p {
   font-style: normal;
   color: var(--text-color-gray-1);
 }
-
+.radioContainer {
+  display: flex;
+}
 .clean {
   display: flex;
   margin-top: 8px;
@@ -255,7 +257,7 @@ p {
   display: flex;
   margin-top: 16px;
 }
-
+/* 
 .theme13 {
   display: flex;
   align-items: center;
@@ -318,7 +320,7 @@ p {
   cursor: pointer;
   margin-left: 19px;
   cursor: pointer;
-}
+} */
 
 .plntxt {
   display: flex;

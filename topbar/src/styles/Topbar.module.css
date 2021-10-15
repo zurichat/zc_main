@@ -125,7 +125,7 @@
   z-index: 9999;
   border: 1px solid #e5e5e5;
   border-radius: 8px;
-  /* padding: 20px 0; */
+  padding: 6px 0 9px 0;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
@@ -229,7 +229,6 @@
   border-radius: 50%;
   margin-right: 14px;
   position: absolute;
-  top: 58px;
 }
 
 .awayCircle {
@@ -272,7 +271,7 @@
   padding: 0 0.3rem;
 }
 
-.defalutEmoji{
+.defalutEmoji {
   height: 20px;
   padding: 0px 2px;
 }
@@ -364,7 +363,7 @@
 /* hr */
 
 .hr {
-  border: 1.2px solid #E5E1E1;
+  border: 1.2px solid #e5e1e1;
   width: 100%;
   margin-top: 5px;
   margin-bottom: 15px;

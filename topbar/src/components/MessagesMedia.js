@@ -2,8 +2,8 @@
 import React, { useState, useContext } from "react"
 import { ProfileContext } from "../context/ProfileModal"
 import { authAxios } from "../utils/Api"
-import styles from "../styles/UserPreference.module.css"
-// import generalStyled from "../styles/MessagesMedia.module.css"
+import styles from "../styles/MessagesMedia.module.css"
+import standardStyles from "../styles/UserPreference.module.css"
 import zuriBot from "../assets/images/zuribot.png"
 import zuriPerson from "../assets/images/zuriperson.png"
 import theme13 from "../assets/images/theme9.png"
@@ -54,7 +54,7 @@ const MessagesMedia = () => {
       .catch(error => console.error(error))
   })
   return (
-    <div className={styles.msgCon}>
+    <div className={standardStyles.modalContent}>
       <div className={styles.title}>Messages</div>
       {/* <div className={styles.clean}> */}
       {/* <div className={styles.radio}>
@@ -121,11 +121,11 @@ const MessagesMedia = () => {
         )}
       </div> */}
       {/* <div className={styles.bottom}></div> */}
-      <div className={styles.name}>Name</div>
-      <div className={styles.full}>
-        <div className={styles.radio2}>
+      <div className={standardStyles.labelTextHeader}>Name</div>
+      <div className={standardStyles.labelContainer}>
+        <div>
           <input
-            className={styles.label_radio_button}
+            className={standardStyles.labelRadioButton}
             type="radio"
             value="ful"
             checked={message.names === "Zuri Ananda"}
@@ -141,12 +141,12 @@ const MessagesMedia = () => {
             }}
           />
         </div>
-        <div className={styles.label_text_header}>Full & display names</div>
+        <div className={standardStyles.labelSubtext}>Full & display names</div>
       </div>
-      <div className={styles.radio_checkbox_container}>
-        <div className={styles.label_radio_button}>
+      <div className={standardStyles.labelContainer}>
+        <div>
           <input
-            className={styles.radioInput}
+            className={standardStyles.labelRadioButton}
             type="radio"
             value="jst"
             checked={message.names === "Zuri"}
@@ -162,7 +162,7 @@ const MessagesMedia = () => {
             }}
           />
         </div>
-        <div className={styles.jst}>Just display names</div>
+        <div className={standardStyles.labelSubtext}>Just display names</div>
       </div>
       {/* <div className={styles.img12}>
         {active1 == 0 && (
@@ -189,9 +189,12 @@ const MessagesMedia = () => {
       </div> */}
       <div className={styles.change}>
         To change your full or display name, go to
-        <span style={{ color: "#00B87C" }}> your profile.</span>
+        <span style={{ color: "#00B87C", cursor: "pointer" }}>
+          {" "}
+          your profile.
+        </span>
       </div>
-      <div className={styles.bottom2}></div>
+      <div className={standardStyles.hrLine}></div>
       {/* <div className={styles.add}>Additional options</div> */}
       {/* <div className={styles.info}>
         <form onSubmit={handleSubmit}>
@@ -279,13 +282,13 @@ const MessagesMedia = () => {
         </div>
       </div> */}
       {/* <div className={styles.bottom3}></div> */}
-      <div className={styles.emoji}>Emoji</div>
+      <div className={standardStyles.labelTextHeader}>Emoji</div>
       <div className={styles.tone}>Default Skin Tone</div>
       <p className={styles.choose}>
         Choose the default skin tone that will be used whenever you use certain
         emojis in
       </p>
-      <p className={styles.choose2}>reactions and messages.</p>
+      <p className={standardStyles.labelTextHeader}>Reactions and messages.</p>
       <div className={styles.hands}>
         <div autoFocus tabIndex="-1" className={styles.emojiBox}>
           <img src={theme13} alt="theme13" className={styles.theme13} />
