@@ -188,7 +188,7 @@ const MessagesMedia = () => {
         )}
       </div> */}
       <div className={styles.change}>
-        To change your full or display name, head to
+        To change your full or display name, go to
         <span style={{ color: "#00B87C" }}> your profile.</span>
       </div>
       <div className={styles.bottom2}></div>
@@ -490,4 +490,3 @@ const MessagesMedia = () => {
   )
 }
 export default MessagesMedia
-
