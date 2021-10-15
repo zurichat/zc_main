@@ -355,7 +355,7 @@ const NotificationPreference = () => {
           </span>
         </div>
         <div className={styles.schedule}>
-          <ul className={styles.list} style={{paddingLeft: "-2rem"}}>
+          <ul className={styles.list} style={{ paddingLeft: "0" }}>
             <li className={standardStyles.spacingRight}>
               <div className={styles.select}>
                 <select
