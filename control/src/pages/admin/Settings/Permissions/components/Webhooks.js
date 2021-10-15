@@ -15,23 +15,6 @@ const myStyle = {
   }
 }
 
-// let displayName = document.getElementById("displayname").value
-
-const modifyOrganizationSettings = () => {
-  let organizationid = '6158c1ac3a1e49b1e5165df3'
-  let showDN = true
-  let token = localStorage.getItem('token')
-  axios.defaults.baseURL = 'https://api.zuri.chat'
-  axios.defaults.headers.common = { Authorization: `bearer ${token}` }
-  axios({
-    method: 'patch',
-    url: '/organizations/' + organizationid + '/settings',
-    data: {
-      showdisplayname: showDN
-    }
-  })
-}
-
 const Webhooks = () => {
   return (
     <>
@@ -42,7 +25,6 @@ const Webhooks = () => {
         type="button"
         className="btn btn-primary"
         style={myStyle.btn}
-        onClick={modifyOrganizationSettings}
       >
         Save
       </button>
