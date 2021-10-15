@@ -1,23 +1,20 @@
-import styled from "styled-components"
+import Editor from "@draft-js-plugins/editor"
+import { convertFromRaw, EditorState } from "draft-js"
+import { useState } from "react"
 
-const ChatItem = ({ messageConfig }) => {
+const ChatItem = ({ richUiMessageConfig }) => {
+  // console.log("chatItem", richUiMessageConfig)
+  const [editorState, setEditorState] = useState(() =>
+    EditorState.createWithContent(convertFromRaw(richUiMessageConfig))
+  )
   return (
-    <div>
-      {/* <h3>{author}</h3> */}
-      <Message
-        isBold={messageConfig.formatOptions.includes("bold")}
-        isItalic={messageConfig.formatOptions.includes("italic")}
-      >
-        {messageConfig.message}
-      </Message>
-      {/* <span>{time}</span> */}
-    </div>
+    <Editor
+      readOnly={true}
+      editorState={EditorState.createWithContent(
+        convertFromRaw(richUiMessageConfig)
+      )}
+      onChange={setEditorState}
+    />
   )
 }
 export default ChatItem
-
-const Message = styled.p`
-  font-family: "Lato";
-  font-style: ${props => (props.isItalic ? "italic" : "normal")};
-  font-weight: ${props => (props.isBold ? "bolder" : "normal")};
-`
