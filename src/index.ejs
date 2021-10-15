@@ -30,7 +30,7 @@
       if (getURL !== '/') {
         getURL = getURL.substr(1);
         getURL = getURL.charAt(0).toUpperCase() + getURL.slice(1);
-        document.title = getURL + appendZuri;
+        document.title = getURL +  ' '  +   appendZuri;
       };
     };
     setInterval(getTitleOfPage, 500)
