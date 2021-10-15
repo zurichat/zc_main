@@ -21,7 +21,7 @@ const PreferenceMenu = ({navbarOpen, closeMenu}) => {
               className={sideBar === 1 ? styles.active : styles.one}
             >
               <AiOutlineBell  className={styles.icon} />
-              <p>Notifications</p>
+              <p style={{marginBottom: 0}}>Notifications</p>
             </div>
 
             {/* <div
@@ -36,14 +36,14 @@ const PreferenceMenu = ({navbarOpen, closeMenu}) => {
               className={sideBar === 4 ? styles.active : styles.one}
             >
               <FiMessageCircle className={styles.icon} />
-              <p>Messages & Media</p>
+              <p style={{marginBottom: 0}}>Messages & Media</p>
             </div>
             <div
               onClick={() => setSideBar(5)}
               className={sideBar === 5 ? styles.active : styles.one}
             >
               <FiGlobe className={styles.icon} />
-              <p>Languages & Region</p>
+              <p style={{marginBottom: 0}}>Languages & Region</p>
             </div>
             {/* <div
               onClick={() => setSideBar(6)}
@@ -65,7 +65,7 @@ const PreferenceMenu = ({navbarOpen, closeMenu}) => {
               className={sideBar === 9 ? styles.active : styles.one}
             >
               <AiOutlineSetting className={styles.icon} />
-              <p>Advanced</p>
+              <p style={{marginBottom: 0}}>Advanced</p>
             </div>
           </div>
         </div>
