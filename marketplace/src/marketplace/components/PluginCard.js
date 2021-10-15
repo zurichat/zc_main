@@ -7,7 +7,7 @@ import DownloadIcon from "../../component-assets/DownloadIcon.svg"
 import { useMarketPlaceContext } from "../../context/MarketPlace.context"
 import { setPluginId } from "../../context/marketplace/marketplace.action"
 
-const PluginCard = ({ pluginData, installed }) => {
+const PluginCard = ({ pluginData, installed, setIsUninstall }) => {
   // MarketPlace Context
   const marketplaceContext = useMarketPlaceContext()
 
@@ -55,22 +55,24 @@ const PluginCard = ({ pluginData, installed }) => {
       <section className={`px-2 d-flex`}>
         {installed ? (
           <button
-            onClick={() =>
-              alert(
-                `unistall ${pluginData.id ? pluginData.id : pluginData._id}`
+            onClick={() => {
+              setIsUninstall(true)
+              marketplaceContext.dispatch(
+                setPluginId(pluginData.id ? pluginData.id : pluginData._id)
               )
-            }
+            }}
             className={`${styles.pluginButton} ${styles.uninstallPluginBtn}`}
           >
             Uninstall
           </button>
         ) : (
           <button
-            onClick={() =>
+            onClick={() => {
+              setIsUninstall(false)
               marketplaceContext.dispatch(
                 setPluginId(pluginData.id ? pluginData.id : pluginData._id)
               )
-            }
+            }}
             className={styles.pluginButton}
           >
             View

@@ -133,8 +133,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/admin/stats"
-          >
+            to="/admin/stats" >
             <FiPieChart className={styles.icon} />
             Analytics
           </Link>
@@ -189,7 +188,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
+            to="/invitation"
           >
             <FiUserPlus className={styles.icon} />
             Invitations
