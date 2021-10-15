@@ -19,8 +19,11 @@ import SingleRoom from "./components/SingleRoom"
 import Category from "./components/Category"
 import { dummySidebar } from "./components/dummySidebar"
 
+const categories = []
+
 const Sidebar = props => {
   let currentWorkspace = localStorage.getItem("currentWorkspace")
+  console.error("haba", props.state)
 
   const [nullValue, setnullValue] = useState(0)
 
@@ -50,7 +53,38 @@ const Sidebar = props => {
         )
     }
   }, [])
-  
+
+  var singleItems = []
+  var categories = []
+  for (let key in props.state.sidebar) {
+    if (key == "others") {
+      singleItems = Object.keys(props.state.sidebar[key]).map(k => {
+        var data = props.state.sidebar[key][k]
+        return (
+          <SingleRoom
+            key={data.name}
+            name={data.joined_rooms[0].room_name}
+            image={data.joined_rooms[0].room_image}
+            link={data.joined_rooms[0].room_url}
+          />
+        )
+      })
+    } else {
+      const categoryData = Object.keys(props.state.sidebar[key]).map(
+        k => props.state.sidebar[key][k]
+      )
+      categories.push(<Category key={key} name={key} data={categoryData} />)
+      //console.error(key, categoryData)
+    }
+  }
+  // {
+  //   props.state.sidebar &&
+  //     Object.keys(props.state.sidebar).map((p, idx) => {
+  //       return categories.includes(p) ? (
+  //         <Category key={idx} name={p} state={props.state} />
+  //       ) : null
+  //     })
+  // }
 
   return (
     <div className={`container-fluid ${styles.sb__container}`}>
@@ -68,14 +102,8 @@ const Sidebar = props => {
           <SingleRoom name="Drafts" image={draftIcon} />
 
           <SingleRoom name="Plugins" image={pluginIcon} link="/marketplace" />
-
-          <Category name="games" state={props.state} />
-          <Category name="utility" state={props.state} />
-          <Category name="tools" state={props.state} />
-          <Category name="productivity" state={props.state} />
-
-          <Category name="channels" state={props.state} />
-          <Category name="direct messages" state={props.state} />
+          {singleItems}
+          {categories}
           {/* button for inviting users to workspace */}
           <Invite state={props.state} />
         </Fragment>
