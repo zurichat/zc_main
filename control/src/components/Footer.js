@@ -63,6 +63,9 @@ const Footer = () => {
                 <Link to="/about">{t("landing.footer.about")}</Link>{" "}
               </li>
               <li>
+                <Link to="/whyzurichat">Why Zurichat?</Link>{" "}
+              </li>
+              <li>
                 <Link to="/ZurichatBlog">{t("landing.footer.blog")}</Link>{" "}
               </li>
             </ul>
