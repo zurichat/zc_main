@@ -45,7 +45,7 @@ const PreferenceMenu = ({navbarOpen, closeMenu}) => {
               <FiGlobe className={styles.icon} />
               <p>Languages & Region</p>
             </div>
-            <div
+            {/* <div
               onClick={() => setSideBar(6)}
               className={sideBar === 6 ? styles.active : styles.one}
             >
@@ -58,7 +58,7 @@ const PreferenceMenu = ({navbarOpen, closeMenu}) => {
             >
               <BsCheckCircle className={styles.icon} />
               <p>Mark as read</p>
-            </div>
+            </div> */}
 
             <div
               onClick={() => setSideBar(9)}
