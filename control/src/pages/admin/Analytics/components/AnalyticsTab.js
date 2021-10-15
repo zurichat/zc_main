@@ -4,7 +4,7 @@ import styles from "../styles/AdminAnalyticsTab.module.css"
 
 // components
 // import AuthTab from './AuthTab'
-// import MembersTab from '../../components/MembersTab'
+import MemberTab from "../../components/MembersTab"
 // import HistoryTab from '../../components/HistoryTab'
 
 // icon
@@ -64,7 +64,7 @@ const AdminSettingsTab = () => {
           />
         )} */}
         {active === 2 && <ChannelsTab />}
-        {/* {active === 3 && <AuthTab />} */}
+        {active === 3 && <MemberTab />} 
       </div>
     </div>
   )
