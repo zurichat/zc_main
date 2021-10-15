@@ -94,6 +94,11 @@ a {
   color: #333333;
 }
 
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
 @media screen and (min-width: 765px) {
   .centerWrapper {
     width: 50vw;
@@ -109,5 +114,14 @@ a {
   }
   .centerWrapper h4 {
     /* font-size: 18px; */
+  }
+}
+
+
+@media screen and (max-width: 960px) {
+  .buttonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

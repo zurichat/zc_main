@@ -1,69 +1,256 @@
 import React, { useState, useContext, useEffect } from "react"
 import styles from "../styles/NotificationPreference.module.css"
+import standardStyles from "../styles/UserPreference.module.css"
 import { AiOutlineQuestionCircle } from "react-icons/ai"
 import { authAxios } from "../utils/Api"
 import { ProfileContext } from "../context/ProfileModal"
 
 const NotificationPreference = () => {
-  const [active, setActive] = useState(0)
-  const [active1, setActive1] = useState(0)
   const { user, orgId } = useContext(ProfileContext)
-  const [dataState, setDataState] = useState({
-    // channel_hurdle_notification: channel_hurdle,
-    email_notifications_for_mentions_and_dm: null,
-    message_preview_in_each_notification: false,
-    mute_all_sounds: false,
-    my_keywords: "",
-    notification_schedule: "",
-    notify_me_about: "",
-    thread_replies_notification: false,
-    use_different_settings_mobile: "",
-    when_iam_not_active_on_desktop: ""
-  })
+  const [active, setActive] = useState("")
+  const [active1, setActive1] = useState("")
+  const [notificationSettings, setNotificationSettings] = useState(
+    user.settings.notifications
+  )
+  const [keywordInput, setKeywordInput] = useState("")
+  const [durationInput, setDurationInput] = useState("")
+  const [durations] = useState([
+    { name: "Duration" },
+    { name: "Everyday" },
+    { name: "Weekdays" },
+    { name: "Custom" }
+  ])
+  const [durationPeriod, setDurationPeriod] = useState("")
+  const [notifications, setNotifications] = useState([
+    { name: "when i'm online" },
+    { name: "immediately, even if i'm active" },
+    { name: "after i've been inactive for 1 minute" },
+    { name: "after i've been inactive for 2 minute" },
+    { name: "after i've been inactive for 5 minute" },
+    { name: "after i've been inactive for 10 minute" },
+    { name: "after i've been inactive for 15 minute" },
+    { name: "after i've been inactive for 20 minute" },
+    { name: "after i've been inactive for 30 minute" }
+  ])
+  const [notificationSend, setNotificationSend] = useState("")
+  // const [dataState, setDataState] = useState({
+  //   notify_me_about: "",
+  //   use_different_settings_mobile: false,
+  //   channel_hurdle_notification: false,
+  //   meeting_replies_notification: false,
+  //   thread_replies_notification: false,
+  //   my_keywords: [""],
+  //   notification_schedule: {
+  //     day: "",
+  //     from: "",
+  //     to: ""
+  //   },
+  //   custom_notification_schedule: [
+  //     {
+  //       day: "",
+  //       from: "",
+  //       to: ""
+  //     }
+  //   ],
+  //   message_preview_in_each_notification: false,
+  //   set_message_notifications_right: "",
+  //   set_lounge_notifications_right: "",
+  //   mute_all_sounds: false,
+  //   flash_window_when_notification_comes: "",
+  //   deliver_notifications_via: "",
+  //   when_iam_not_active_on_desktop: "",
+  //   email_notifications_for_mentions: false
+  // })
 
-  useEffect(() => {
-    if (localStorage.getItem("settings")) {
-      setDataState(JSON.parse(localStorage.getItem("settings")))
-    }
-  }, [])
-
-  const setData = () => {
+  const setData = notification => {
     authAxios
-      .patch(`/organizations/${orgId}/members/${user._id}/settings`, {
-        settings: {
-          notifications: dataState
-        }
-      })
+      .patch(
+        `/organizations/${user.org_id}/members/${user._id}/settings/notification`,
+        notification
+      )
       .then(res => {
-        // console.log(res)
-        setState({ loading: false })
+        // console.log("save data res =>", res.data)
+        // setState({ loading: false })
       })
       .catch(err => {
-        console.error(err?.response?.data)
-        setState({ loading: false })
+        // console.error(err?.response?.data)
+        // setState({ loading: false })
       })
-
-    localStorage.setItem("settings", JSON.stringify(dataState))
-  }
-  const [state, setState] = useState({
-    name: "React",
-    value: "duration"
-  })
-
-  const handleChange = event => {
-    setState({ value: event.target.value })
   }
 
-  useEffect(() => {
-    setData()
-    // console.log(dataState)
-    // console.log(user)
-  }, [dataState])
+  // console.log("show user =>", user)
+  // console.log("notify =>", notificationSettings)
+  const handleKeywordChange = e => {
+    setKeywordInput(e.target.value)
+    let newKeyword = keywordInput
+    if (notificationSettings !== undefined) {
+      let newNotification = {
+        ...notificationSettings,
+        my_keywords: [newKeyword]
+      }
+      setNotificationSettings(newNotification)
+      setData(newNotification)
+    }
+  }
+
+  const handleSelect = e => {
+    setDurationPeriod(e.target.value)
+    setNotificationSend(e.target.value)
+    setNotificationSettings({
+      ...notificationSettings,
+      when_iam_not_active_on_desktop: notificationSend
+    })
+  }
+
+  const handleDurationChange = e => {
+    setDurationInput(e.target.value)
+  }
+
+  const handleAllMessages = e => {
+    setActive1(e.target.value)
+    if (notificationSettings !== undefined) {
+      let newNotification = {
+        ...notificationSettings,
+        notify_me_about: "all-messages"
+      }
+      setNotificationSettings(newNotification)
+      setData(newNotification)
+    }
+  }
+  const handleDirectMessages = e => {
+    setActive1(e.target.value)
+    if (notificationSettings !== undefined) {
+      let newNotification = {
+        ...notificationSettings,
+        notify_me_about: "direct-message"
+      }
+      setNotificationSettings(newNotification)
+      setData(newNotification)
+    }
+  }
+
+  const handleNothingChange = e => {
+    setActive1(e.target.value)
+    if (notificationSettings !== undefined) {
+      let newNotification = {
+        ...notificationSettings,
+        notify_me_about: "none"
+      }
+      setNotificationSettings(newNotification)
+      setData(newNotification)
+    }
+  }
+
+  const handleMobileDeviceSettings = () => {
+    if (notificationSettings !== undefined) {
+      let newNotification = {
+        ...notificationSettings,
+        use_different_settings_mobile:
+          !notificationSettings.use_different_settings_mobile
+      }
+      setNotificationSettings(newNotification)
+      setData(newNotification)
+    }
+  }
+
+  const handleNotifyMeeting = () => {
+    if (notificationSettings !== undefined) {
+      let newNotification = {
+        ...notificationSettings,
+        meeting_replies_notification:
+          !notificationSettings.meeting_replies_notification
+      }
+      setNotificationSettings(newNotification)
+      setData(newNotification)
+    }
+  }
+
+  const handleThreadReplies = () => {
+    if (notificationSettings !== undefined) {
+      let newNotification = {
+        ...notificationSettings,
+        thread_replies_notification:
+          !notificationSettings.thread_replies_notification
+      }
+      setNotificationSettings(newNotification)
+      setData(newNotification)
+    }
+  }
+
+  const handleMessagePreview = () => {
+    if (notificationSettings !== undefined) {
+      let newNotification = {
+        ...notificationSettings,
+        message_preview_in_each_notification:
+          !notificationSettings.message_preview_in_each_notification
+      }
+      setNotificationSettings(newNotification)
+      setData(newNotification)
+    }
+  }
+
+  const handleMuteAll = () => {
+    if (notificationSettings !== undefined) {
+      let newNotification = {
+        ...notificationSettings,
+        mute_all_sounds: !notificationSettings.mute_all_sounds
+      }
+      setNotificationSettings(newNotification)
+      setData(newNotification)
+    }
+  }
+
+  const handleFlashNotificationNever = e => {
+    setActive(e.target.value)
+    if (notificationSettings !== undefined) {
+      let newNotification = {
+        ...notificationSettings,
+        flash_window_when_notification_comes: "never"
+      }
+      setNotificationSettings(newNotification)
+      setData(newNotification)
+    }
+  }
+  const handleFlashNotificationIdle = e => {
+    setActive(e.target.value)
+    if (notificationSettings !== undefined) {
+      let newNotification = {
+        ...notificationSettings,
+        flash_window_when_notification_comes: "when-idle"
+      }
+      setNotificationSettings(newNotification)
+      setData(newNotification)
+    }
+  }
+  const handleFlashNotificationMute = e => {
+    setActive(e.target.value)
+    if (notificationSettings !== undefined) {
+      let newNotification = {
+        ...notificationSettings,
+        flash_window_when_notification_comes: "mute-all"
+      }
+      setNotificationSettings(newNotification)
+      setData(newNotification)
+    }
+  }
+
+  const handleEmailNotifications = e => {
+    setActive1(e.target.value)
+    if (notificationSettings !== undefined) {
+      let newNotification = {
+        ...notificationSettings,
+        email_notifications_for_mentions:
+          !notificationSettings.email_notifications_for_mentions
+      }
+      setNotificationSettings(newNotification)
+      setData(newNotification)
+    }
+  }
 
   return (
-    <div className={styles.head}>
+    <div className={styles.notifications}>
       {/*  THE SECTION OF THE CONTENT */}
-      <div className={styles.notifyContent}>
+      <div className={standardStyles.modalContent}>
         <div className={styles.itemTitle1}>
           <h4 className={styles.titleLarge}>Notify me about </h4>{" "}
           <span className={styles.spanL}>
@@ -74,19 +261,15 @@ const NotificationPreference = () => {
         <form>
           <div className={styles.radioBox}>
             <div className={styles.radio}>
+              {" "}
               <input
                 type="radio"
                 value="all-messages"
-                checked={dataState.notify_me_about === "all-messages"}
-                onClick={() => {
-                  setActive1("all-messages")
-                  setDataState({
-                    ...dataState,
-                    notify_me_about: "all-messages"
-                  })
-                  setData()
-                }}
-              />
+                checked={
+                  notificationSettings.notify_me_about === "all-messages"
+                }
+                onChange={handleAllMessages}
+              />{" "}
               <label htmlFor="all-messages">All messages</label>
             </div>
 
@@ -94,15 +277,10 @@ const NotificationPreference = () => {
               <input
                 type="radio"
                 value="direct-messages"
-                checked={dataState.notify_me_about === "direct-message"}
-                onClick={() => {
-                  setActive1("direct-message")
-                  setDataState({
-                    ...dataState,
-                    notify_me_about: "direct-message"
-                  })
-                  setData()
-                }}
+                checked={
+                  notificationSettings.notify_me_about === "direct-message"
+                }
+                onChange={handleDirectMessages}
               />
               <label htmlFor="direct-messages">Direct messages</label>
             </div>
@@ -110,147 +288,149 @@ const NotificationPreference = () => {
               <input
                 type="radio"
                 value="none"
-                checked={dataState.notify_me_about === "none"}
-                onClick={() => {
-                  setActive1("none")
-                  setDataState({ ...dataState, notify_me_about: "none" })
-                  setData()
-                }}
+                checked={notificationSettings.notify_me_about === "none"}
+                onChange={handleNothingChange}
               />
               <label htmlFor="none">Nothing</label>
             </div>
           </div>
-          <div className={styles.markbox}>
+          {/* <div className={styles.markbox}>
+            <input
+              type="checkbox"
+              className={styles.check}
+              value="for-mobile"
+              checked={notificationSettings.use_different_settings_mobile}
+              onClick={handleMobileDeviceSettings}
+            />
             <label htmlFor="for-mobile">
               {" "}
-              <input
-                type="checkbox"
-                className={styles.check}
-                value="for-mobile"
-                checked={dataState.use_different_settings_mobile === true}
-                onClick={() => {
-                  setDataState({
-                    ...dataState,
-                    use_different_settings_mobile:
-                      !dataState.use_different_settings_mobile
-                  })
-                  // console.log(
-                  //   'checking',
-                  //   dataState.use_different_settings_mobile
-                  // )
-                  setData()
-                }}
-              />
               Use different settings for my mobile device
             </label>
-          </div>
-          {/* <div className={styles.line} /> */}
-
-          <div className={styles.markbox}>
-            <label htmlFor="for-meeting">
-              <input
-                type="checkbox"
-                className={styles.check}
-                value="for-meeting"
-              />
-              Notify me when a meeting is set
-            </label>
-          </div>
-          <div className={styles.markbox}>
-            <label htmlFor="for-thread">
-              <input
-                type="checkbox"
-                value="for-thread"
-                onClick={() => {
-                  setDataState({ use_different_settings_mobile: "yes" })
-                  setData()
-                }}
-              />
-              Notify me of replies to thread
-            </label>
-          </div>
+          </div> */}
+          {/* <hr className={styles.hrNot} /> */}
+          {/* <div className={styles.markbox}>
+            <input
+              type="checkbox"
+              className={styles.check}
+              value="for-meeting"
+              checked={notificationSettings.meeting_replies_notification}
+              onClick={handleNotifyMeeting}
+            />
+            <label htmlFor="for-meeting">Notify me when a meeting is set</label>
+          </div> */}
+          {/* <div className={styles.markbox}>
+            <input
+              type="checkbox"
+              className={styles.check}
+              value="for-thread"
+              checked={notificationSettings.thread_replies_notification}
+              onClick={handleThreadReplies}
+            />
+            <label htmlFor="for-thread">Notify me of replies to thread</label>
+          </div> */}
         </form>
-        <div className={styles.itemTitle2}>
-          <div className={styles.line}></div>
+        <hr className={standardStyles.hrLine} />
+        {/* <div className={styles.itemTitle2}>
           <h4 className={styles.titleSmall}>Keywords</h4>{" "}
           <span className={styles.spanBlock}>
             You will be notified anything, someone uses these keywords in a
             thread
           </span>
-          <textarea className={styles.textarea}></textarea>
-        </div>
-        <div className={styles.line} />
+          <textarea
+            type="text"
+            value={keywordInput}
+            onChange={handleKeywordChange}
+            className={styles.textarea}
+          />
+        </div> */}
+        {/* <hr className={styles.hrNot} /> */}
+
         <div className={styles.itemTitle2}>
-          <h4 className={styles.titleSmall}>Notification Schedule</h4>{" "}
+          <h4 className={styles.titleSmall}>Schedule Notification </h4>{" "}
           <span className={styles.spanBlock}>
             You'll only receive notifications in the hours that you choose.
-            Outside of those times, notifications will be paused.{" "}
+            Outside of those times, notifications will be paused. <br />{" "}
             <span className={styles.spanSmall}>Learn more</span>
           </span>
         </div>
         <div className={styles.schedule}>
           <ul className={styles.list}>
-            <li className={styles.listChild}>
+            <li className={standardStyles.spacingRight}>
               <div className={styles.select}>
                 <select
-                  name="duration"
                   className={styles.selectButton}
                   id=""
-                  value={state.value}
-                  onChange={handleChange}
+                  onChange={handleSelect}
                 >
-                  <option selected value="duration">
-                    Duration
-                  </option>
+                  <option selected>Choose here</option>
+                  {durations.map((item, index) => (
+                    <option
+                      className={styles.optionDuration}
+                      key={index}
+                      value={item.name}
+                    >
+                      {`${item.name}`}
+                    </option>
+                  ))}
                 </select>
               </div>
             </li>
-            <li className={styles.listChild}>
-              <TextInput label="From" />
+            <li className={standardStyles.spacingRight}>
+              <TextInput
+                type="text"
+                label="From"
+                value={durationInput}
+                placeholder="From"
+                onChange={handleDurationChange}
+              />
             </li>
 
-            <li className={styles.listChild}>
+            <li className={standardStyles.spacingRight}>
               <TextInput label="to" />
             </li>
           </ul>
         </div>
-        <div className={styles.line} />
 
-        {/* Michael's sound check code */}
-        <div className={styles.itemTitle2}>
-          <h4 className={styles.titleSmall}>Sound &amp; appearance</h4>
+        {/* <hr className={styles.hrNot} /> */}
+
+        {/* <div className={styles.itemTitle2}>
+          <h4 className={styles.titleSmall}>Sound checks</h4>
           <span className={styles.spanBlock}>
             Choose your notification sound
           </span>
           <button className={styles.button}>Example Sound</button>
-        </div>
+        </div> */}
 
-        <div className={styles.mute}>
+        {/* <div className={styles.mute}>
           <div className={styles.markbox}>
+            <input
+              type="checkbox"
+              checked={
+                notificationSettings.message_preview_in_each_notification
+              }
+              onClick={handleMessagePreview}
+              className={styles.check}
+            />
             <label htmlFor="for-includepreview">
-              <input type="checkbox" />
               Include preview message in notification
             </label>
           </div>
           <div className={styles.markbox}>
-            <label htmlFor="for-muteall">
-              <input
-                type="checkbox"
-                onClick={() => {
-                  setDataState({ mute_all_sounds: "yes" })
-                  setData()
-                }}
-              />
-              Mute all
-            </label>
+            <input
+              type="checkbox"
+              checked={notificationSettings.mute_all_sounds}
+              onClick={handleMuteAll}
+              className={styles.check}
+            />
+            <label htmlFor="for-muteall">Mute all</label>
           </div>
-        </div>
+        </div> */}
 
-        <div className={styles.picksound}>
+        {/* <div className={styles.picksound}>
           <div className={styles.share}>
             <div className={styles.sound}>
               <div className={styles.msg3}>
-                Set your notifications right (Message)
+                Set your notifications right (Messages)
               </div>
               <div className={styles.dropdown}>
                 <select className={styles.button2}>
@@ -280,10 +460,10 @@ const NotificationPreference = () => {
               </div>
             </div>
           </div>
-          {/* <hr/> */}
-        </div>
+        </div> */}
+        <hr className={standardStyles.hrLine} />
 
-        <div className={styles.section2}>
+        {/* <div className={styles.section2}>
           <div className={styles.itemTitle2}>
             <div className={styles.titleSmall}>
               Flash window when notification comes
@@ -294,12 +474,11 @@ const NotificationPreference = () => {
               <input
                 type="radio"
                 value="never"
-                checked={dataState.notification_schedule === "never"}
-                onClick={() => {
-                  setActive("never")
-                  setDataState({ ...dataState, notification_schedule: "never" })
-                  setData()
-                }}
+                checked={
+                  notificationSettings.flash_window_when_notification_comes ===
+                  "never"
+                }
+                onClick={handleFlashNotificationNever}
               />
               <label htmlFor="never">Never</label>
             </div>
@@ -307,15 +486,11 @@ const NotificationPreference = () => {
               <input
                 type="radio"
                 value="when-idle"
-                checked={dataState.notification_schedule === "when-idle"}
-                onClick={() => {
-                  setActive("when-idle")
-                  setDataState({
-                    ...dataState,
-                    notification_schedule: "when-idle"
-                  })
-                  setData()
-                }}
+                checked={
+                  notificationSettings.flash_window_when_notification_comes ===
+                  "when-idle"
+                }
+                onClick={handleFlashNotificationIdle}
               />
               <label htmlFor="direct-messages">When idle</label>
             </div>
@@ -323,15 +498,11 @@ const NotificationPreference = () => {
               <input
                 type="radio"
                 value="mute-all"
-                checked={dataState.notification_schedule === "mute-all"}
-                onClick={() => {
-                  setActive("mute-all")
-                  setDataState({
-                    ...dataState,
-                    notification_schedule: "mute-all"
-                  })
-                  setData()
-                }}
+                checked={
+                  notificationSettings.flash_window_when_notification_comes ===
+                  "mute-all"
+                }
+                onClick={handleFlashNotificationMute}
               />
               <label htmlFor="direct-messages">Mute all</label>
             </div>
@@ -340,15 +511,16 @@ const NotificationPreference = () => {
             <div className={styles.when}>Deliver notifications via</div>
             <div className={styles.dropdown3}>
               <select className={styles.button4}>
-                <option selected value="pick-sound">
+                <option selected disabled value="pick-sound">
                   Pick Sound
                 </option>
               </select>
             </div>
           </div>
-        </div>
-        <div className={styles.line} />
-        <div className={styles.section3}>
+        </div> */}
+
+        {/* <hr className={styles.hrNot} /> */}
+        {/* <div className={styles.section3}>
           <div className={styles.itemTitle2}>
             <div className={styles.titleSmall}>
               When I am not active on desktop
@@ -357,26 +529,28 @@ const NotificationPreference = () => {
           <div className={styles.deliver}>
             <div className={styles.when}>Send notifications to my mobile</div>
             <div className={styles.dropdown3}>
-              <select className={styles.button4}>
-                <option selected value="pick-sound">
-                  When i am online
-                </option>
+              <select className={styles.button4} onChange={handleSelect}>
+                {notifications.map((item, index) => (
+                  <option
+                    key={index}
+                    value={item.name}
+                  >{`${item.name}`}</option>
+                ))}
               </select>
             </div>
           </div>
-        </div>
-        <div className={styles.markbox}>
-          <label>
-            <input
-              type="checkbox"
-              onClick={() => {
-                setDataState({ notify_me_about: "all-messages" })
-                setData()
-              }}
-            />{" "}
+        </div> */}
+        {/* <div className={styles.markbox}>
+          <input
+            type="checkbox"
+            checked={notificationSettings.email_notifications_for_mentions}
+            onClick={handleEmailNotifications}
+            className={styles.check}
+          />{" "}
+          <label className="emailNot">
             Send me email notifications for mentions{" "}
           </label>
-        </div>
+        </div> */}
       </div>
     </div>
   )
@@ -398,7 +572,9 @@ const TextInput = ({ type = "text", label }) => {
         value={value}
         onChange={handleChange}
       />
-      <label className={value && "filled"}>{label}</label>
+      <label style={{ color: "#B0AFB0" }} className={value && "filled"}>
+        {label}
+      </label>
     </div>
   )
 }

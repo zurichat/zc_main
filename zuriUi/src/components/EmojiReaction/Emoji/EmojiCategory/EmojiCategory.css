@@ -1,0 +1,14 @@
+.emc-emojicat {
+  padding: 0 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  color: #777;
+}
+.emc-emojicatitems {
+  cursor: pointer;
+}
+.emc-active {
+  color: #00b87c;
+}
