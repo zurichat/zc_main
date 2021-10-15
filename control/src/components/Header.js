@@ -140,19 +140,6 @@ const HeaderSearchSuggestion = () => {
               </button>
               <button
                 className={`btn ${headerStyles.select}`}
-                value="ar"
-                onClick={() => saveLang(event.target.value)}
-              >
-                <img
-                  className={headerStyles.country_logo}
-                  src={ar}
-                  alt="Arabic"
-                  title="Arabic"
-                />{" "}
-                <span>العربية</span>
-              </button>
-              <button
-                className={`btn ${headerStyles.select}`}
                 value="de"
                 onClick={() => saveLang(event.target.value)}
               >
@@ -336,19 +323,7 @@ const HeaderSearchSuggestion = () => {
                 />{" "}
                 <span>普通话</span>
               </button>
-              <button
-                className={`btn ${headerStyles.select}`}
-                value="ar"
-                onClick={() => saveLang(event.target.value)}
-              >
-                <img
-                  className={headerStyles.country_logo}
-                  src={ar}
-                  alt="Arabic"
-                  title="Arabic"
-                />{" "}
-                <span>العربية</span>
-              </button>
+              
               <button
                 className={`btn ${headerStyles.select}`}
                 value="de"
@@ -389,3 +364,4 @@ const HeaderSearchSuggestion = () => {
   )
 }
 export default HeaderSearchSuggestion
+
