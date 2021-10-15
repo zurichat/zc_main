@@ -1,6 +1,7 @@
 .sidebarWrapper,
 .sidebarWrapperActive {
   position: fixed;
+  margin-top: 15px;
   top: 64px;
   left: 0;
   width: 300px;
@@ -8,6 +9,7 @@
   height: 100%;
   max-height: calc(100vh-64px);
   overflow-y: scroll;
+  border-right: 2px solid #f5f5f5;
 }
 
 .userDetails {
