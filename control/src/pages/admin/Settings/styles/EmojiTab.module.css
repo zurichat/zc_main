@@ -81,8 +81,27 @@
   cursor: pointer;
   background-color: transparent;
   transition: all 0.2s;
-  border-radius: 2px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.messageActions > button svg {
+  height: 18px;
+  fill: #6A6A6A;
+  transition: all .2s;
+}
+
+.messageActions button:nth-child(6) svg {
+  /* width: 13px; */
+}
+
+.messageActions > button:hover svg {
+  fill: #1D1C1D;
+}
+
+
 
 .messageActions > button:hover {
   background: rgb(246 246 246);
@@ -171,14 +190,17 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 500px;
-  min-height: 550px;
+  max-width: 450px;
+  /* min-height: 550px; */
   background-color: white;
-  padding: 20px;
   border-radius: 9px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   z-index: 10;
   display: flex;
+}
+
+.modal .container {
+  margin: 20px;
 }
 
 .modal .close {
@@ -226,6 +248,11 @@
   font-size: 15px;
   line-height: 1.46668;
   font-weight: 400;
+}
+
+.overflow {
+  max-height: 360px;
+  /* overflow-y: scroll; */
 }
 
 .list ol {
