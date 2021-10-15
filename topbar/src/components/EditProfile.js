@@ -19,6 +19,7 @@ const EditProfile = () => {
     setUserProfileImage,
     toggleModalState
   } = useContext(ProfileContext)
+  const [deletePic, setDeletePic] = useState(false)
   const [selectedTimezone, setSelectedTimezone] = useState({})
   const [links, setLinks] = useState([""])
   const [state, setState] = useState({
@@ -93,6 +94,7 @@ const EditProfile = () => {
         toast.success("User Image Removed Successfully", {
           position: "top-center"
         })
+        setDeletePic(true)
       })
       .catch(err => {
         console.error(err)
@@ -101,6 +103,7 @@ const EditProfile = () => {
           position: "top-center"
         })
       })
+    setDeletePic(false)
   }
 
   useEffect(() => {

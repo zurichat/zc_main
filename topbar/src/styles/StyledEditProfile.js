@@ -111,7 +111,7 @@ export const StyledProfileWrapper = styled.section`
         .phoneInput,
         .css-2b097c-container {
           width: 100%;
-          border: 1.5px solid #a1a1a1;
+          border: 1px solid #a1a1a1;
           padding: 0 1rem;
           font-size: 1.4rem;
           outline: none;
@@ -165,7 +165,7 @@ export const StyledProfileWrapper = styled.section`
           line-height: 1.5;
           /* max-width: 307px; */
           text-align: left;
-          margin: 0.75rem 0;
+          margin: 0.25rem 0 0.8rem 0;
         }
       }
       .double-input {
@@ -179,7 +179,7 @@ export const StyledProfileWrapper = styled.section`
       }
     }
     .img-container {
-      padding-right: 1.5rem;
+      /* padding-right: 0.5rem; */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -238,7 +238,7 @@ export const StyledProfileWrapper = styled.section`
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-right: 1.75rem;
+    /* padding-right: 1.75rem; */
     /* margin-top: 2.5rem; */
     margin-bottom: 1rem;
     @media (max-width: 768px) {
