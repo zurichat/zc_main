@@ -20,11 +20,16 @@ import { Link, useHistory } from "react-router-dom"
 import Cookies from "../cookies"
 import Subscribe from "./components/Subscribe"
 import { Helmet } from "react-helmet"
+// import i18n (needs to be bundled ;))
+import "../../i18n"
+import { useTranslation} from "react-i18next"
 
 export default function Homepage() {
   const { useState, useEffect } = React
 
   const [loading, setLoading] = useState(true)
+
+  const { t } = useTranslation()
 
   // For create workspace redirect start
 
@@ -74,7 +79,7 @@ export default function Homepage() {
     return (
       <div className={`${style.ft_row} ${props.rowOrder}`}>
         <Helmet>
-          <title>Zuri Chat - Connect and Interact</title>
+          <title>Zuri Chat - {t("landing.title.landing")}</title>
         </Helmet>
         <div className={`${style.ft_col}`}>
           <img src={props.src} alt={props.alt} className={`${style.ft_img}`} />
@@ -111,20 +116,18 @@ export default function Homepage() {
             <div className={`${style.hero_left}`}>
               <div className={`${style.hero_left_texts}`}>
                 <p className={`${style.hero_text_one}`}>
-                  For Organizations &amp; Institutions
+                  {t("landing.hero.pre_headline")}
                 </p>
                 <h1 className={`${style.hero_heading}`}>
-                  A fully Integrated way to connect and interact
+                  {t("landing.hero.headline")}
                 </h1>
-                <p className={`${style.hero_p}`}>
-                  Create your future with us, network, collaborate, educate and
-                  learn remotely
-                </p>
+                <p className={`${style.hero_p}`}>{t("landing.hero.post_headline")}</p>
               </div>
               <div className={`${style.hero_left_btn_wrap}`}>
+                <input type="email" name="" placeholder="Enter your email address" />
                 <Link to="/signup">
                   <button className={`${style.hero_left_btn}`}>
-                    Try Zuri Chat for free
+                    {t("landing.hero.call_to_action")}
                   </button>
                 </Link>
               </div>
@@ -154,40 +157,40 @@ export default function Homepage() {
             <FeatureRow
               src={ft_img1}
               alt=""
-              pContent1="Seamless collaboration"
-              h2Content="Communicate and collaborate from wherever you are"
-              pContent2="Invite your team to your workspace. Stay connected,stay in sync, and explore ideas together from anywhere."
+              pContent1={t("landing.featureRowOne.title")}
+              h2Content={t("landing.featureRowOne.headline")}
+              pContent2={t("landing.featureRowOne.description")}
               href="/createworkspace"
-              aContent="Create your own workspace"
+              aContent={t("landing.featureRowOne.link")}
               onClick={createWorkspaceRedirect}
             />
             <FeatureRow
               src={ft_img2}
               alt=""
-              pContent1="Remote Education"
-              h2Content="Learn on the Go"
-              pContent2="Take your classroom everywhere, make learning fun, stay engaged and inspired with the virtual lounge and games."
-              href="/features"
-              aContent="Learn more about the virtual lounge"
+              pContent1={t("landing.featureRowTwo.title")}
+              h2Content={t("landing.featureRowTwo.headline")}
+              pContent2={t("landing.featureRowTwo.description")}
+              href="#"
+              aContent={t("landing.featureRowTwo.link")}
               rowOrder={style.ft_row_reverse}
             />
             <FeatureRow
               src={ft_img3}
               alt=""
-              pContent1="All-in-one Workspace"
-              h2Content="Customise your Workspace"
-              pContent2="One tool, several plugins. Track company expenses, send information fast and smoothly, manage files and integrate tools all with Zuri.chat."
-              href="/apps-integrations"
-              aContent="Explore Plugins"
+              pContent1={t("landing.featureRowThree.title")}
+              h2Content={t("landing.featureRowThree.headline")}
+              pContent2={t("landing.featureRowThree.description")}
+              href="#"
+              aContent={t("landing.featureRowThree.link")}
             />
             <FeatureRow
               src={ft_img4}
               alt=""
-              pContent1="Advanced Search"
-              h2Content="Access Files and Messages in your Workspace Effortlessly"
-              pContent2="With the search tool, find previously shared messages, files and links with ease."
-              href="/resources"
-              aContent="Learn more about Search"
+              pContent1={t("landing.featureRowFour.title")}
+              h2Content={t("landing.featureRowFour.headline")}
+              pContent2={t("landing.featureRowFour.description")}
+              href="#"
+              aContent={t("landing.featureRowFour.link")}
               rowOrder={style.ft_row_reverse}
             />
           </div>
@@ -197,12 +200,11 @@ export default function Homepage() {
           <div className={`${style.sign_up_banner}`}>
             <div className={`${style.sign_up_left}`}>
               <p className={`${style.sign_up_left_p}`}>
-                A flexible Way to Educate, Collaborate and Team Up From Wherever
-                You Are
+              {t("landing.cardOne.title")}
               </p>
               <a href="/signup">
                 <button className={`${style.sign_up_btn}`}>
-                  Sign up now for Free
+                {t("landing.cardOne.button")}
                 </button>
               </a>
             </div>

@@ -62,6 +62,7 @@ const RoomOptions = (
           <p>Open conversation details</p>
         </div>
         <div>
+          
           <p>Close conversation</p>
         </div>
       </div>
