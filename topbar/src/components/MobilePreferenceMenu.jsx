@@ -24,13 +24,13 @@ const PreferenceMenu = ({navbarOpen, closeMenu}) => {
               <p>Notifications</p>
             </div>
 
-            <div
+            {/* <div
               onClick={() => setSideBar(3)}
               className={sideBar === 3 ? styles.active : styles.one}
             >
               <AiOutlineEye className={styles.icon} />
               <p>Themes</p>
-            </div>
+            </div> */}
             <div
               onClick={() => setSideBar(4)}
               className={sideBar === 4 ? styles.active : styles.one}
@@ -45,7 +45,7 @@ const PreferenceMenu = ({navbarOpen, closeMenu}) => {
               <FiGlobe className={styles.icon} />
               <p>Languages & Region</p>
             </div>
-            <div
+            {/* <div
               onClick={() => setSideBar(6)}
               className={sideBar === 6 ? styles.active : styles.one}
             >
@@ -58,7 +58,7 @@ const PreferenceMenu = ({navbarOpen, closeMenu}) => {
             >
               <BsCheckCircle className={styles.icon} />
               <p>Mark as read</p>
-            </div>
+            </div> */}
 
             <div
               onClick={() => setSideBar(9)}
