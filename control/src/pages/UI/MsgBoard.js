@@ -1,7 +1,7 @@
 import { useState } from "react"
 import avatar from "./profile.svg"
 import { ChatContainer } from "./MsgBoardStyle"
-import Input from "../../../../zuriUi/src/components/InputBox/Input"
+// import Input from "../../../../zuriUi/src/components/InputBox/Input"
 import PluginModal from "../../../../zuriUi/src/components/PluginModal/PluginModal"
 
 function Uitest() {
@@ -90,7 +90,7 @@ function Uitest() {
         ))}
       </div>
       <div className="input-text">
-        <Input />
+        {/* <Input /> */}
       </div>
     </ChatContainer>
   )
