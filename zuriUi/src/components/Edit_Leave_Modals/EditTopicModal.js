@@ -12,10 +12,8 @@ import {
 } from "./ModalStyles";
 
 const EditTopicModal = (props) => {
-const [openModal, setOpenModal] = useState(true)
-const onClose = () => setOpenModal(props.closeEdit)
-  
-  if (openModal) {
+
+
     return (
       <ModalContainer>
       <TopicModal>
@@ -36,7 +34,7 @@ const onClose = () => setOpenModal(props.closeEdit)
       </TopicModal>
     </ModalContainer>
   );
-}
+
 };
 
 export default EditTopicModal;

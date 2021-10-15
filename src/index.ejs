@@ -30,7 +30,7 @@
       if (getURL !== '/') {
         getURL = getURL.substr(1);
         getURL = getURL.charAt(0).toUpperCase() + getURL.slice(1);
-        document.title = getURL + appendZuri;
+        document.title = getURL +  ' '  +   appendZuri;
       };
     };
     setInterval(getTitleOfPage, 500)
@@ -69,8 +69,8 @@
   <style>
     html,
     body {
-      height: 100%;
-      width: 100%;
+      /* height: 100%; */
+      /* width: 100%; */
       margin: 0;
       padding: 0;
       /* font-size: 100% !important; */
@@ -82,7 +82,7 @@
     }
 
     div[id*='zuri/topbar'] {
-      z-index: 5;
+      /* z-index: 5; */
       width: 100%;
       height: 6vh;
       position: fixed;
@@ -93,7 +93,7 @@
       /* justify-content: center; */
       align-items: center;
       background-color: #fff;
-      z-index: 999999;
+      z-index: 1;
       overflow: unset;
     }
 
@@ -114,8 +114,7 @@
       top: 6vh;
       left: 0;
       background-color: #fff;
-      z-index: 99999;
-
+      /* z-index: 1; */
     }
 
     div[id*='zuri/commentSidebar'] {
@@ -124,7 +123,7 @@
       background-color: #e5e5e5;
       right: 0;
       top: 20vh;
-      z-index: 9999;
+      z-index: 2;
     }
 
     div[id*='zuri-plugin'],
@@ -185,16 +184,17 @@
     }
 
     /* CHESS STYLE */
+
     .app__container {
       padding: 0 !important;
       padding-block: 5rem;
     }
 
     @media (max-width: 425px) {
+
       /* div[id*='zuri/sidebar'] {
         width: 40%;
       } */
-
       div[id*='zuri-plugin'],
       div[id*='zuri/marketplace'] {
         width: 100%;
@@ -242,13 +242,30 @@
     {
       "imports": {
         "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
-        "react": "https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.production.min.js",
-        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.production.min.js",
         "vue": "https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js",
         "vue-router": "https://cdn.jsdelivr.net/npm/vue-router@3.1.6/dist/vue-router.min.js"
       }
     }
   </script>
+  <% if (isLocal) { %>
+  <script type="systemjs-importmap">
+    {
+      "imports": {
+        "react": "https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.development.js",
+        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.development.js"
+      }
+    }
+  </script>
+  <% } else { %>
+  <script type="systemjs-importmap">
+    {
+        "imports": {
+          "react": "https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.production.min.js",
+          "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.production.min.js"
+        }
+      }
+  </script>
+  <% } %>
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js" as="script">
 
   <!-- Add your organization's prod import map URL to this script's src  -->
@@ -287,36 +304,20 @@
 
   <% if (isLocal) { %>
   <script type="systemjs-importmap">
-    {
-      "imports": {
-        "@zuri/root-config": "//localhost:9000/zuri-root-config.js",
-        "@zuri/topbar": "//localhost:8080/zuri-topbar.js",
-        "@zuri/sidebar": "//localhost:8081/zuri-sidebar.js",
-        "@zuri/control": "//localhost:8082/zuri-control.js",
-        "@zuri/plugin-header": "//localhost:8083/zuri-plugin-header.js",
-        "@zuri/manage-user-modal": "//localhost:8087/zuri-manageUser.js",
-        "@zuri/marketplace": "//localhost:8086/zuri-marketplace.js",
-        "@zuri/zuri-ui": "//localhost:8084/zuri-zuri-ui.js",
-        "@zuri/utilities": "//localhost:8085/zuri-utilities.js"
-      }
-    }
-    </script>
+    { 
+              "imports": { 
+                "@zuri/root-config": "//localhost:9000/zuri-root-config.js", "@zuri/topbar": "//localhost:8080/zuri-topbar.js", "@zuri/sidebar": "//localhost:8081/zuri-sidebar.js", "@zuri/control": "//localhost:8082/zuri-control.js", "@zuri/plugin-header":
+            "//localhost:8083/zuri-plugin-header.js", "@zuri/manage-user-modal": "//localhost:8087/zuri-manageUser.js", "@zuri/marketplace": "//localhost:8086/zuri-marketplace.js", "@zuri/zuri-ui": "//localhost:8084/zuri-zuri-ui.js", "@zuri/utilities":
+            "//localhost:8085/zuri-utilities.js"
+
+          } 
+        }
+        </script>
   <% } else { %>
   <script type="systemjs-importmap">
-    {
-        "imports": {
-          "@zuri/root-config": "/zuri-root-config.js",
-          "@zuri/topbar": "/zuri-topbar.js",
-          "@zuri/sidebar": "/zuri-sidebar.js",
-          "@zuri/control": "/zuri-control.js",
-          "@zuri/plugin-header": "/zuri-plugin-header.js",
-          "@zuri/manage-user-modal": "/zuri-manageUser.js",
-          "@zuri/marketplace": "/zuri-marketplace.js",
-          "@zuri/zuri-ui": "/zuri-zuri-ui.js",
-          "@zuri/utilities": "/zuri-utilities.js"
-        }
-      }
-  </script>
+    { "imports": { "@zuri/root-config": "/zuri-root-config.js", "@zuri/topbar": "/zuri-topbar.js", "@zuri/sidebar": "/zuri-sidebar.js", "@zuri/control": "/zuri-control.js", "@zuri/plugin-header": "/zuri-plugin-header.js", "@zuri/manage-user-modal": "/zuri-manageUser.js",
+                "@zuri/marketplace": "/zuri-marketplace.js", "@zuri/zuri-ui": "/zuri-zuri-ui.js", "@zuri/utilities": "/zuri-utilities.js" } }
+            </script>
   <% } %>
 
   <!--

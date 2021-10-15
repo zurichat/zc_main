@@ -54,64 +54,42 @@ const Footer = () => {
 
         <div className={styles.menu}>
           <div>
-            <h5>Company</h5>
+            <h5>{t("landing.footer.company")}</h5>
             <ul>
               <li>
-                <Link to="/careers">Careers</Link>{" "}
+                <Link to="/careers">{t("landing.footer.careers")}</Link>{" "}
               </li>
               <li>
-                <Link to="/about">About Zurichat</Link>{" "}
+                <Link to="/about">{t("landing.footer.about")}</Link>{" "}
               </li>
               <li>
-                <Link to="/ZurichatBlog">Blog</Link>{" "}
+                <Link to="/whyzurichat">Why Zurichat?</Link>{" "}
+              </li>
+              <li>
+                <Link to="/ZurichatBlog">{t("landing.footer.blog")}</Link>{" "}
               </li>
             </ul>
           </div>
 
           <div>
-            <h5>Info</h5>
+            <h5>{t("landing.footer.info")}</h5>
             <ul>
               <li>
                 <Link to="/privacy">
-                  <span>Privacy & Terms</span>{" "}
+                  <span>{t("landing.footer.privacy")}</span>{" "}
                 </Link>
               </li>
               <li>
-                <Link to="/marketplace">Market Place</Link>{" "}
+                <Link to="/marketplace">{t("landing.footer.market")}</Link>{" "}
               </li>
               <li>
-                <Link to="/security">Security</Link>{" "}
+                <Link to="/security">{t("landing.footer.security")}</Link>{" "}
               </li>
               <li>
-                <a href="https://zuri.chat/dao-featues">Web3/DAO</a>{" "}
+                <a href="https://zuri.chat/dao-featues">{t("landing.footer.web3")}</a>{" "}
               </li>
             </ul>
           </div>
-
-          <div className={styles.menu}>
-            <div>
-              <h5>{t("landing.footer.company")}</h5>
-              <ul>
-                <li>
-                  <Link to="/careers">{t("landing.footer.careers")}</Link>{" "}
-                </li>
-                <li>
-                  <Link to="/about">{t("landing.footer.about")}</Link>{" "}
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h5>{t("landing.footer.info")}</h5>
-              <ul>
-                <li>
-                  <Link to="/privacy">{t("landing.footer.privacy")}</Link>{" "}
-                </li>
-                <li>
-                  <Link to="/marketplace">{t("landing.footer.market")}</Link>{" "}
-                </li>
-              </ul>
-            </div>
 
             <div>
               <h5>{t("landing.footer.knowUs")}</h5>
@@ -185,19 +163,18 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-          </div>
         </div>
 
-        <div className={styles.bottom_footer}>
+        {/* <div className={styles.bottom_footer}>
           <p>
             {" "}
             &copy; {getYear()} Zuri Chat. {t("landing.footer.rights")}
           </p>
-        </div>
+        </div> */}
       </div>
 
       <div className={styles.bottom_footer}>
-        <p> &copy; {getYear()} Zuri Chat. All Rights Reserved</p>
+        <p> &copy; {getYear()} Zuri Chat. {t("landing.footer.rights")}</p>
       </div>
     </div>
   )
