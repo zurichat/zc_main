@@ -121,6 +121,7 @@ const TokensTab = () => {
           Here you will be able to deposit funds and purchase Zuri token
         </p>
       </div>
+
       <div className={styles.overview}>
         <h6 className={styles.heading}>Overview</h6>
         <div className="d-flex justify-content-center">
@@ -142,6 +143,7 @@ const TokensTab = () => {
         </div>
       </div>
       {helpModal ? <PurchaseModal setHelpModal={setHelpModal} /> : ""}
+
       <div>
         <h6 className={styles.heading}>Your referal link</h6>
         <div className={`${styles.referal} input-group`}>

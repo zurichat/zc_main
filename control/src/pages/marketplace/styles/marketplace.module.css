@@ -73,7 +73,7 @@
   width: 170px;
   height: 40px;
   border-radius: 4px;
-  font-family: 'Lato';
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
@@ -131,7 +131,7 @@
   height: 45px;
   background: #00b87c;
   border-radius: 4px;
-  font-family: Lato;
+  font-family: Lato, sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
@@ -157,7 +157,7 @@
   width: 120px;
   height: 40px;
   border-radius: 4px;
-  font-family: 'Lato';
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
@@ -222,11 +222,11 @@
   justify-content: center;
   flex-direction: column;
   color: #c4c4c4;
-  font-family: 'Lato';
+  font-family: 'Lato', sans-serif;
 }
 
 .marketplaceTabSelected {
-  font-family: 'Lato';
+  font-family: 'Lato', sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
@@ -252,7 +252,7 @@
 }
 
 .marketplaceTab {
-  font-family: 'Lato';
+  font-family: 'Lato', sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
@@ -304,7 +304,7 @@
   background: white;
   border-radius: 8px;
   max-height: 200px;
-  font-family: 'Lato';
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-size: 14px;
   position: relative;
@@ -435,7 +435,7 @@
   height: 48px;
   background: #2f80ed;
   border-radius: 3px;
-  font-family: 'Lato';
+  font-family: 'Lato', sans-serif;
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
@@ -453,7 +453,7 @@
 }
 
 .marketplaceModalMain h3 {
-  font-family: 'Lato';
+  font-family: 'Lato', sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;

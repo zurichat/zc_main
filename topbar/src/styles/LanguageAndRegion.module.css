@@ -1,7 +1,8 @@
 .container {
-  width: 100%;
+  width: 70%;
   margin-left: 20px;
   margin-top: 20px;
+  height: 150%;
 }
 
 .subhead {
@@ -12,7 +13,8 @@
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
-  color: #242424;
+  margin-bottom: 10px;
+  color: var(--text-color-gray-1);
 }
 
 .section {
@@ -21,7 +23,9 @@
 
 .selectbox {
   display: block;
-  width: 80%;
+  width:60%;
+  max-width: 60%;
+  min-width: 60%;
   margin: 10px 0;
   padding: 10px;
   border: 1px solid #dde5e9;
@@ -34,25 +38,27 @@
   letter-spacing: 0em;
   text-align: left;
   color: #4c4c4c;
+  
 }
 
 .selectbox:focus,
 .selectbox:active {
   color: #00b87c;
+  accent-color: #00B87C;
   border: 1px solid #00b87c;
   outline-color: #00b87c;
 }
 
 .note {
   font-family: Lato;
-  width: 75%;
+  width: 60%;
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
   margin-bottom: 10px;
 }
 
@@ -66,12 +72,23 @@
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
+}
+.cbox{
+  accent-color: #00B87C;
+  width: .875rem;
+  height: .875rem;
+  background: var(--bg-color);
+  border: 1px solid #999;
+  border-radius: 2px;
+  margin-right: .700rem !important;
+  accent-color: #00B87C;
+  outline: none;
 }
 
 .choosed {
   width: 80%;
-  color: #999;
+  color: var(--text-color-normal);
   font-size: 13px;
   border: 1px solid #dde5e9;
   height: 40px;
@@ -81,7 +98,7 @@
 
 .block {
   display: block;
-  background: #999;
+  background: var(--text-color-normal);
   /* width:20%; */
   padding: 3px;
   margin-top: -4px;
@@ -96,65 +113,13 @@
   margin-left: 5px;
   cursor: pointer;
 }
-
-/* .none {
-  display: none;
-}  */
-
-/* .choosed span{
-    background:#999;
-    padding:3px;
-    margin-top:-4px;
-    color:#fff;
-    padding:3px 10px;
-} */
-
-/* CHECKBOX */
-/* .markAll {
-  margin-bottom: 20px;
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+.checkmark{
+  font-size: .8125rem;
+  margin-top: .3rem;
+  margin-bottom: 5px;
+  justify-content: center;
+  color: var(--text-color-gray);
 }
-.markAll .prompt {
-  position: absolute;
-  cursor: pointer;
-  opacity: 0;
-  height: 0;
-  width: 0;
+.optSelect{
+  width: 60%;
 }
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 17px;
-  width: 17px;
-  background-color: #eee;
-}
-.markAll .prompt:checked ~ .checkmark {
-  background-color: #00b87c;
-}
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-.markAll .prompt:checked ~ .checkmark:after {
-  display: block;
-}
-.markAll .checkmark:after {
-left: 5px;
-  top: 3px;
-  width: 6px;
-  height: 9px;
-  border: solid white;
-  border-width: 0 2px 2px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-} */
