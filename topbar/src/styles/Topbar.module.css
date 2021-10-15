@@ -121,8 +121,7 @@
   top: 105%;
   right: 12px;
   width: 100%;
-  padding-bottom: 1rem;
-  max-width: 300px;
+  max-width: 326px;
   z-index: 9999;
   border: 1px solid #e5e5e5;
   border-radius: 8px;
@@ -218,11 +217,9 @@
 /* set yourself as active*/
 
 .active {
-  font-size: 11px;
+  font-size: 13px;
   line-height: 13.2px;
-  position: absolute;
-  right: 178px;
-  top: 55px;
+  margin-left: 9px;
 }
 
 .activeCircle {
@@ -332,7 +329,7 @@
   margin-bottom: 10px;
   display: flex;
   flex-direction: row;
-  padding: 2px 25px 2px 25px;
+  padding: 7px 25px;
 }
 
 .sectionThree p:hover {
@@ -367,8 +364,7 @@
 /* hr */
 
 .hr {
-  height: 15px;
-  background: #e7e7e7;
+  border: 1.2px solid #E5E1E1;
   width: 100%;
   margin-top: 5px;
   margin-bottom: 15px;
@@ -394,7 +390,7 @@
   line-height: 18px;
   cursor: pointer;
   margin-bottom: 10px;
-  padding: 2px 25px 2px 25px;
+  padding: 7px 25px;
 }
 
 .sectionFour p:hover {
@@ -415,12 +411,12 @@
 .sectionFive p {
   font-family: Lato;
   color: #242424;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   cursor: pointer;
   display: flex;
   flex-direction: row;
-  padding: 2px 25px 2px 25px;
+  padding: 2px 25px;
 }
 
 .sectionFive a {
@@ -461,7 +457,7 @@
   margin-bottom: 10px;
   display: flex;
   flex-direction: row;
-  padding: 2px 25px 2px 25px;
+  padding: 7px 25px;
 }
 
 .sectionSix p:hover {
