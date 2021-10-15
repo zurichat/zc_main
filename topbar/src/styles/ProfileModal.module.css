@@ -118,6 +118,10 @@
     max-width: 100vw;
   }
 
+  .modalCont {
+    max-height: 100vh;
+  }
+
   .modalFull {
     position: absolute;
     top: 0;

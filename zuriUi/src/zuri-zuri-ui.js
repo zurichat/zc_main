@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import ChatSection from "./components/chat_box/ChatSection"
-import MessageInputBox from "./components/message_input/MessageInputField"
-import CommentBox from "./components/InputBox/Input"
+import MessageBoard from "./components/message_board/MessageBoard"
+import CommentBox from "./components/message_input/MessageInputField"
 
-export { MessageInputBox, ChatSection, CommentBox }
+export { ChatSection, ChannelDetails, CommentBox, MessageBoard }
