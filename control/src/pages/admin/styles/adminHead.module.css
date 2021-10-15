@@ -14,59 +14,59 @@
 }
 
 .organizationLogo {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #333;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  cursor: pointer;
 }
 
 .icons {
-    font-size: 1.5rem;
-    color: #333;
-    margin-right: 1.2rem;
+  font-size: 1.5rem;
+  color: #333;
+  margin-right: 1.2rem;
 }
 
 .menu {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .menuLink {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-left: 3.5rem;
-    font-size: 1rem;
-    color: #333;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 3.5rem;
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
 }
 
 .menuLink:hover {
-    color: #00b87c;
+  color: #00b87c;
 }
 
 .menuImg {
-    width: 1.5rem;
-    height: auto;
-    margin-top: 6px;
+  width: 1.5rem;
+  height: auto;
+  margin-top: 6px;
 }
 
 .mobileMenu {
-    display: none;
+  display: none;
 }
 
 @media (max-width: 768px) {
-    .menu {
-        display: none;
-    }
-    .mobileMenu {
-        display: block;
-    }
-    .headerMenu {
-        font-size: 1.5rem;
-        color: #333;
-    }
+  .menu {
+    display: none;
+  }
+  .mobileMenu {
+    display: block;
+  }
+  .headerMenu {
+    font-size: 1.5rem;
+    color: #333;
+  }
 }
