@@ -11,18 +11,13 @@ import {
   ModalTopic,
 } from "./ModalStyles";
 const LeaveChannelModal = (props) => {
-  const closeFrm = (e) => {
-    props.closeFrm && props.closeFrm(e);
-  };
-  if (props.show) {
-    return null;
-  }
+ 
   return (
     <ModalContainer>
       <LeaveModal>
         <ModalTop>
           <ModalTopic>Leave Channel</ModalTopic>
-          <CloseBtn onClick={(e) => closeFrm(e)}> X </CloseBtn>
+          <CloseBtn onClick= { ()=>{props.closeEdit()}}> X </CloseBtn>
         </ModalTop>
         <Modalbody>
           <p>

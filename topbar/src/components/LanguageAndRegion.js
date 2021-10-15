@@ -2,13 +2,12 @@ import React, { useState, useContext, useEffect } from "react"
 import styles from "../styles/LanguageAndRegion.module.css"
 import TimezoneSelect from "react-timezone-select"
 import  Select from "react-select"
-import autoComplete from '@material-ui/core/TextField'
 import { authAxios } from "../utils/Api"
 import { ProfileContext } from "../context/ProfileModal"
 
 
 const options = [
-  { value: 'eng', label: 'English' },
+  { value: 'en', label: 'English' },
   { value: 'fr', label: 'French' },
   { value: 'du', label: 'Deutch' },
 ];
@@ -18,15 +17,12 @@ const LanguageAndRegion = () => {
   const [langreg, setLangreg] = useState(user.settings.languages_and_regions);
   const [selectedTimezone, setSelectedTimezone] = useState({})
   //CHECKBOXES
-  const [tzChb, setTzChb] = useState(false)
   const [spellCheck, setSpellCheck] = useState(true);
   const handleSpellCheck = () => {
     setSpellCheck(!spellCheck)
   }
 
-  const handleTZ = () => {
-    setTzChb(!tzChb)
-  }
+
 
   const handleData = (langreg) => {
       authAxios.patch(`organizations/${user.org_id}/members/${user._id}/settings/languages-and-region`, langreg)
@@ -56,8 +52,10 @@ const LanguageAndRegion = () => {
     handleData(timeZone)
   }, [selectedTimezone])
 
+  const langSpellCheck = langreg.languages_zuri_should_spell_check;
+   const defVal = langSpellCheck.map(i=> i )
   
-  
+   
   return (
     <div className={styles.container}>
       <div>
@@ -82,10 +80,9 @@ const LanguageAndRegion = () => {
           </div>
 
           <div className={styles.section}>
-            <label className={styles.subhead} htmlFor="timezone">
+            <div className={styles.subhead}>
               Time zone
-            <label className={styles.auto} htmlFor="">
-            </label>
+            </div>        
               <input 
                 type="checkbox" className={styles.cbox} 
                 checked={langreg.set_time_zone_automatically}
@@ -96,16 +93,17 @@ const LanguageAndRegion = () => {
                    }
                 }}  
               />
-              <span className={styles.checkmark}></span>
+              <span className={styles.checkmark}>
               Set time zone automatically
-            </label>
+              </span>
+            
 
             <TimezoneSelect
                   styles = {customStyles}
+                  className={styles.optSelect}
                   placeholder="Select Timezone"
                   value={selectedTimezone}
-                  isSearchable={langreg.set_time_zone_automatically}
-                  defaultValue={user.settings.languages_and_regions.time_zone}
+                  defaultValue="badbitches"
                   onChange={setSelectedTimezone} 
             />
             <p className={styles.note}>
@@ -127,13 +125,15 @@ const LanguageAndRegion = () => {
                 }}
               }
               />
-              <span className={styles.checkmark}></span>
+              <span className={styles.checkmark}>
               Enable spellcheck on your message
+              </span>
             </label>
             <Select
+            className={styles.optSelect}
           isMulti
           name="colors"
-          defaultValue={langreg.languages_zuri_should_spell_check}
+          defaultValue= {defVal[0]}
           styles={customStyles}
           options={options}
           classNamePrefix="select"
@@ -142,7 +142,6 @@ const LanguageAndRegion = () => {
             handleSelect(selectedOptions)
           }}
         />
-            {/* <SelectOption/>  */}
           </div>
         </form>
       </div>
@@ -157,12 +156,11 @@ const customStyles = {
   control: base => ({
     ...base,
     height: "2.5rem",
-    width: "60%",
     minHeight: "2.5rem",
     border: "1px solid #DADADA",
     borderRadius: "4px",
     marginTop:"10px",
-    fontSize: ".75rem",
+    fontSize: "15px",
     "&:hover": {
       borderColor: "#00B87C"
     },
