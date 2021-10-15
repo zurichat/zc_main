@@ -19,17 +19,12 @@ import {
 } from "./workSpaceIconChange.js"
 
 const WorkSpaceIcon = () => {
-  const [icon, setIcon] = useState(null)
+  const [orgData, setOrgData] = useState({})
   const [updateLogo, setUpdateLogo] = useState(null)
   const [toggle, setToggle] = useState(false)
+
   const organisation_id = localStorage.getItem("currentWorkspace")
   let token = sessionStorage.getItem("token")
-
-  const handleSelectFile = () => {
-    const formData = new FormData()
-    formData.append("file", updateLogo)
-    setToggle(false)
-  }
 
   const handleIconUpload = () => {
     const formData = new FormData()
@@ -62,7 +57,7 @@ const WorkSpaceIcon = () => {
     })
       .then(res => {
         console.log(res.data)
-        setIcon(res.data.data.logo_url)
+        setOrgData(res.data.data)
       })
       .catch(err => {
         console.error(err)
@@ -75,9 +70,9 @@ const WorkSpaceIcon = () => {
       {alert ? (
         <>
           <WorkSpaceDetailContainer>
-            <img src={icon} alt="NV" />
+            <img src={orgData.logo_url} alt="NV" />
             <WorkSpaceDetail>
-              <WorkSpaceName>NerdsVille</WorkSpaceName>
+              <WorkSpaceName>{orgData.name}</WorkSpaceName>
               <WorkSpaceDescription>
                 This icon will be used to identify your workspace in zuri chat
               </WorkSpaceDescription>
@@ -88,7 +83,7 @@ const WorkSpaceIcon = () => {
               <WorkSpaceName>Workspace Icon Guidelines</WorkSpaceName>
               <Text>
                 Your workspace icon is a way for you to visually identify the{" "}
-                <strong>NerdsVille</strong> workspace. It is used in the desktop
+                <strong>{orgData.name}</strong> workspace. It is used in the desktop
                 and mobile apps, and on your workspace admin site. It’s most
                 helpful when you’re on multiple Slack workspaces.
               </Text>
