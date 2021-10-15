@@ -10,7 +10,6 @@ export const TRANSLATIONS_ZH = {
     nav: {
       pricing: "价钱",
       about: "关于",
-      plugins: "插件",
       downloads: "下载",
       contact: "接触",
       signup: "报名",
@@ -70,7 +69,6 @@ export const TRANSLATIONS_ZH = {
       company: "公司",
       careers: "职业",
       about: "关于",
-      why_zuri_chat: "为什么选择 Zuri 聊天？",
       info: "信息",
       privacy: "隐私权和条款",
       market: "市场",
@@ -321,7 +319,33 @@ export const TRANSLATIONS_ZH = {
       }
     }
   },
-
+  login:{
+    title: "登录 - Zuri 聊天",
+    form: {
+      header: "登录",
+      sub_header: "使用您在注册时输入的数据登录",
+      google_header: "使用谷歌登录",
+      topline_text: "或者",
+      submitButtonName: "登录",
+      bottomLine: "对我们来说是新的吗？",
+      bottomLink: "创建一个帐户",
+      signUp: "注册",
+      authInputBox: {
+        emailInputName: "电子邮件地址",
+        passwordInputName: "密码",
+        passwordInputPlaceHolder: "输入密码",
+        rememberMe: "记住账号",
+        forgotPassword: "忘记密码？",
+        getHelp: "获取登录帮助"
+      }
+    },
+    footer: {
+      contactUs: "联系我们",
+      legacyPolicy: "法律政策",
+      aboutZuri: "关于 Zuri Chat"
+    }
+  },
+  
   why_zuri_chat: {
     title: "认识 Zuri Chat - 经济实惠的 Slack 替代品",
     hero_paragraph1: "如果您正在寻找完美的 Slack 替代品，那就别无所求。",
@@ -353,3 +377,4 @@ export const TRANSLATIONS_ZH = {
     bottom_link: "立即注册！"
   }
 }
+
