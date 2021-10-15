@@ -40,21 +40,48 @@
   _margin-right: 30px;
 } */
 
-.line{
-  height: 50px;
-  width: 2px;
+.modal_header button {
+  font-size: 1.5rem;
+  background-color: white;
+}
+.select {
+  font-size: 18px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.select span {
+  padding-left: 10px;
+}
+.select:hover {
+  outline-style: none;
   background-color: #00b87c;
 }
-
-.select{
-  margin-left: 5px;
-  font-size: 18px;  
+.country {
+  padding-right: 40px;
+  padding-left: 40px;
 }
-
-.select:active, .select:focus, .select:hover{
-  outline-color: #00b87c;
-  outline-style: auto;
-  outline-width: thick;
+.world {
+  padding: 5px;
+  background-color: white;
+}
+.world img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.world:hover {
+  background-color: rgb(128, 126, 126);
+}
+.country_logo {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.language {
+  position: absolute;
+  display: flex;
+  left: 85%;
 }
 
 .image {
@@ -166,15 +193,31 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 810px) {
   .navbar {
     padding: 0.5rem;
   }
+  .language {
+    left: 80vw;
+  }
+}
+@media only screen and (max-width: 680px) {
+  .language {
+    left: 78vw;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .language {
+    left: 76vw;
+  }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 500px) {
   .navbarNav li span {
     padding-left: 0;
+  }
+  .language {
+    left: 72vw;
   }
 
   .navbarBrand {
@@ -192,4 +235,14 @@
   /* .toggle {
     _margin-right: 30px;
   } */
+}
+@media only screen and (max-width: 414px) {
+  .language {
+    left: 68vw;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .language {
+    left: 65vw;
+  }
 }
