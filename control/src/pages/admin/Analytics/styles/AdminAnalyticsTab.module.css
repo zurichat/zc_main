@@ -15,7 +15,7 @@
 
 .tabHeaderItem,
 .tabHeaderItemActive {
-  padding: 0.875rem 2.5rem;
+  padding: 0.5rem 2.5rem;
   width: auto;
   border-radius: 4px 4px 0px 0px;
   font-size: 1.125rem;
@@ -40,7 +40,7 @@
   background: #fff;
   border-radius: 0px 4px 4px 4px;
   border: 1px solid #dadada;
-  padding: 2.5rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   margin-bottom: 5rem;
 }
 
