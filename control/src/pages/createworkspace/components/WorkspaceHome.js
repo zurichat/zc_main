@@ -9,6 +9,7 @@ import PushNotificationDemo from "./browserNotification2"
 import { useRouteMatch, Link } from "react-router-dom"
 import UserOrganization from "./UserOrganization"
 import { Helmet } from "react-helmet"
+import homestyle from "../styles/workspacehome.module.css"
 
 const WorkspaceHome = () => {
   const { url } = useRouteMatch()
@@ -75,7 +76,7 @@ const WorkspaceHome = () => {
     }
   }, [])
   return (
-    <Wrapper>
+    <Wrapper className={homestyle.wrapper}>
       <Header />
       <Helmet>
         <title> Create-Workspace Zuri Chat</title>
@@ -84,6 +85,7 @@ const WorkspaceHome = () => {
         style={
           user === true ? { paddingBottom: "0" } : { paddingBottom: "50px" }
         }
+        className={homestyle.top}
       >
         <TextSection>
           <Heading>Create a new workspace</Heading>
@@ -112,9 +114,9 @@ const WorkspaceHome = () => {
           <img src={Pic} alt="" />
         </ImageSection>
       </TopSection>
-      {user ? (
+      {/*  {user ? (
         <UserOrganization user={user} organizations={organizations} />
-      ) : null}
+      ) : null} */}
     </Wrapper>
   )
 }
@@ -125,15 +127,16 @@ const TopSection = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding-top: 132px;
-    padding-left: 171px;
+  padding-left: 55px;
 
-  @media (max-width: 35rem) {
+  @media (max-width: 1000px) {
     display: flex;
     flex-direction: column-reverse;
     grid-template-columns: 1fr;
     padding-top: 105px;
     padding-left: 24px;
     padding-right: 24px;
+    align-items: center;
   }
 `
 const Heading = styled.h1`
@@ -145,6 +148,7 @@ const Heading = styled.h1`
   margin-bottom: 14px;
   color: #333333;
   line-height: 56px;
+
   @media (max-width: 35rem) {
     font-size: 28px;
     line-height: 33.6px;
