@@ -319,5 +319,31 @@ export const TRANSLATIONS_EN = {
         }
       }
     }
+  },
+  login:{
+    title: "Login - Zuri Chat",
+    form: {
+      header: "Login",
+      sub_header: "Login with the data you entered during your registration",
+      google_header: "Login with Google",
+      topline_text: "OR",
+      submitButtonName: "Log in",
+      bottomLine: "New to us?",
+      bottomLink: "Create an Account",
+      signUp: "Signup",
+      authInputBox: {
+        emailInputName: "Email address",
+        passwordInputName: "Password",
+        passwordInputPlaceHolder: "Enter a password",
+        rememberMe: "Remember me",
+        forgotPassword: "Forgot password?",
+        getHelp: "Get help signing in"
+      }
+    },
+    footer: {
+      contactUs: "Contact Us",
+      legacyPolicy: "Legal Policy",
+      aboutZuri: "About Zurichat"
+    }
   }
 }
