@@ -8,16 +8,18 @@ import { sendInviteAPI } from "./new-invite.utils"
 const Container = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
   display: block !important;
-  font-size: 16px !important;
 
   &.invite-modal-main {
     position: fixed;
-    top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(64, 79, 74, 0.5) !important;
-    z-index: 10;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999999999;
   }
 
   &.invite-modal-innerContainer {
@@ -25,77 +27,74 @@ const Container = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    min-width: 90%;
-    padding: 1.5em;
+    padding: 0.65em 1em;
     display: flex;
+    margin-bottom: 1em;
     background: white !important;
-    border: 1px solid #e7e7e7;
-    box-shadow: 1px 1px 44px rgba(64, 64, 64, 0.5);
-    border-radius: 4px;
+    width: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+
+    @media (max-width: 600px){
+      width: 95%;
+    }
   }
 
   &.invite-modal-header {
     display: flex !important;
     justify-content: space-between !important;
+    margin:1em 0.65em;
   }
 
-  &.invite-modal-textarea,
+  &.invite-modal-textarea{
+    width:100%;
+    display: flex !important;
+    justify-content:center;
+    flex-direction:column;
+    align-items:center;
+    margin:1em 0;
+  }
   &.invite-modal-btnContainer {
     display: block !important;
+    margin:1em 0.65em;
   }
 
   &.invite-modal-sendBtn {
-    display: flex !important;
-    justify-content: end;
-    margin-top: 1em !important;
+    display: flex;
+    justify-content: flex-end;
   }
 
   &.invite-modal-textarea,
   &.invite-modal-sendBtn {
     width: 100%;
   }
-
-  @media (min-width: 768px) {
-    font-size: 18px !important;
-
-    &.invite-modal-innerContainer {
-      min-width: 35%;
-    }
-  }
 `
 const Text = styled.h3`
-  color: black !important;
   font-weight: 700 !important;
-  font-size: 1.3em !important;
   padding: 0 !important;
-  margin-top: 0 !important;
-
-  @media (min-width: 768px) {
-    font-size: 1.7em !important;
-  }
+  margin: 10px 0;
+  font-size:2rem;
+  font-family:"Lato";
+  color:black;
 `
 
 const TextArea = styled.textarea`
+  border: 1px solid black !important;
   min-height: 8em;
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #a1a1a1;
-  color: black !important;
-  border-radius: 3px !important;
+  width: 85%;
+  padding: 15px 20px;
 
   &:focus {
-    outline-color: #00b87c !important;
-  }
-
-  &::placeholder {
-    font-family: "Lato", san-serif !important;
+    color: black !important;
   }
 `
 
 const Label = styled.label`
-  display: block;
-  margin: 2em 0 1em !important;
-  color: black !important;
+  font-family:Lato;
+  font-weight:700;
+  font-size:17px;
+  margin:10px 20px;
+  align-self:flex-start;
 `
 
 const Image = styled.img``
@@ -103,14 +102,24 @@ const Image = styled.img``
 const Button = styled.button`
   outline: none;
   background: transparent;
-  border: none;
-  cursor: pointer;
-  border-radius: 3px !important;
+  border:none;
 
   &.invite-sendBtn {
-    background: #00b87c !important;
+    float:right;
     color: white !important;
-    padding: 0.8em 1.8em;
+    background-color: #00b87c;
+    color: #ffffff;
+    font-size:17px;
+    font-family:Lato;
+    border-radius: 3px;
+    padding: 10px 18px;
+    border: none;
+    margin:15px 0;
+    cursor:pointer;
+
+    &:hover {
+      transform: scale(1.1)
+    }
   }
 `
 
@@ -205,14 +214,14 @@ function NewInviteModal(props) {
           ref={inviteModalNode}
         >
           <Container className="invite-modal-header">
-            <Text>Invite people to HNGi8</Text>
+            <Text>Invite People to Zurichat</Text>
             <Button onClick={handleCloseInviteModal}>
               <Image src={cancel}></Image>
             </Button>
           </Container>
 
           <Container className="invite-modal-textarea">
-            <Label for="emails">To:</Label>
+            <Label for="emails">To :</Label>
             <TextArea
               placeholder="name@gmail.com"
               name="emails"

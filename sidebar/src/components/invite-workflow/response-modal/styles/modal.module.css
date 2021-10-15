@@ -55,6 +55,7 @@
   border-radius: 3px;
   padding: 10px 20px;
   border: none;
+  cursor:pointer;
 }
 
 .done button:hover {
