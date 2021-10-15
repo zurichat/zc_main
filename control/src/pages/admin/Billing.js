@@ -1,7 +1,7 @@
-import React from 'react'
-import AdminSettings from '.'
-import AdminTab from './components/AdminTab'
-import styles from './styles/adminBilling.module.css'
+import React from "react"
+import AdminSettings from "."
+import AdminTab from "./components/AdminTab"
+import styles from "./styles/adminBilling.module.css"
 
 const Billing = () => {
   return (
