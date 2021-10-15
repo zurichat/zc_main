@@ -41,15 +41,6 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const [isSearchOpen, setOpenSearch] = useState(false)
   const [searchValue, setSearchValue] = useState("")
 
-  const onSearchSubmit = e => {
-    if (e.keyCode === 13 && searchValue.length >= 1) {
-      setOpenSearch(true)
-    }
-  }
-  const onSearchChange = value => {
-    setSearchValue(value)
-  }
-
   useEffect(() => {
     // const fetchUser = async () => {
     //   const info = await GetUserInfo()
@@ -298,10 +289,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           border={"#99999933"}
         /> */}
         {/* <TopSearchBar onClick={() => setShowTopSearchModal(true)} /> */}
-        <TopBarSearchModal
-          onSearchEnter={onSearchSubmit}
-          onChange={onSearchChange}
-        />
+        <TopBarSearchModal />
         {/* <div>
             <form onSubmit={handleEnter}>
               <BaseInput
