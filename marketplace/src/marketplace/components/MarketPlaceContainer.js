@@ -18,32 +18,31 @@ import {
   loadPlugins,
   fetchPlugins
 } from "../../context/marketplace/marketplace.action"
-import { GetUserInfo } from "@zuri/utilities"
 
-const MarketPlaceContainer = ({ type }) => {
+const MarketPlaceContainer = ({
+  type,
+  plugins,
+  isMarketPlaceLoading,
+  user
+}) => {
   let currentWorkspace = localStorage.getItem("currentWorkspace")
   let token = sessionStorage.getItem("token")
 
   const history = useHistory()
 
   // MarketPlace states
-  const [user, setUser] = useState({})
   const [plugin, setPlugin] = useState(null)
-  const [plugins, setPlugins] = useState({
-    all: [],
-    installed: [],
-    popular: []
-  })
 
   // MarketPlace context
   const marketplaceContext = useMarketPlaceContext()
 
   // Loaders states
+  const [isModalOpen, setIsModalOpen] = useState(null)
   const [isModalLoading, setIsModalLoading] = useState(false)
   const [isInstallButtonLoading, setIsInstallButtonLoading] = useState(false)
-  const [isMarketPlaceLoading, setIsMarketPlaceLoading] = useState(false)
 
   // Modal Data States
+  const [isUninstall, setIsUninstall] = useState(false)
   const [installModalStatus, setInstallModalStatus] = useState({
     isSuccess: null,
     message: ""
@@ -63,63 +62,10 @@ const MarketPlaceContainer = ({ type }) => {
   }
 
   useEffect(() => {
-    getPlugins()
-    getLoggedInUser()
-  }, [])
-
-  useEffect(() => {
     if (marketplaceContext.state.pluginId) {
       getSinglePluginData()
     }
   }, [marketplaceContext.state.pluginId])
-
-  const getPlugins = async () => {
-    setIsMarketPlaceLoading(true)
-    try {
-      let pluginData = plugins
-
-      const get_all_plugins = await axios.get(
-        "https://api.zuri.chat/marketplace/plugins"
-      )
-      const get_popular_plugins = await axios.get(
-        "https://api.zuri.chat/marketplace/plugins/popular"
-      )
-      const get_installed_plugins = await axios.get(
-        `https://api.zuri.chat/organizations/${currentWorkspace}/plugins`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }
-      )
-
-      if (get_all_plugins.status === 200) {
-        pluginData["all"] = get_all_plugins.data.data
-      }
-
-      if (get_popular_plugins.status === 200) {
-        pluginData["popular"] = get_popular_plugins.data.data.filter(
-          plugin => plugin.install_count > 10
-        )
-      }
-
-      if (
-        get_installed_plugins.status === 200 &&
-        get_installed_plugins.data.data !== null
-      ) {
-        pluginData["installed"] = get_installed_plugins.data.data.map(
-          plugin => plugin.plugin
-        )
-      }
-
-      // marketplaceContext.dispatch(loadPlugins(data))
-      setPlugins(pluginData)
-      setIsMarketPlaceLoading(false)
-    } catch (err) {
-      setIsMarketPlaceLoading(false)
-      console.error(err)
-    }
-  }
 
   const getSinglePluginData = async () => {
     setIsModalLoading(true)
@@ -162,14 +108,14 @@ const MarketPlaceContainer = ({ type }) => {
           organisation_id: currentWorkspace
         },
         {
-          timeout: 1000 * 5,
+          timeout: 2000 * 5,
           headers: {
             Authorization: `Bearer ${token}`
           }
         }
       )
 
-      if (response.data.success === true) {
+      if (String(response.data.success).toLowerCase() === "true") {
         setIsInstallButtonLoading(false)
         setInstallModalStatus({
           isSuccess: true,
@@ -192,15 +138,50 @@ const MarketPlaceContainer = ({ type }) => {
     }
   }
 
-  const getLoggedInUser = async () => {
+  const unInstallPluginFromOrganization = async () => {
+    if (!currentWorkspace) {
+      alert("You are not logged into an Organization/workspace")
+    }
+
+    setIsInstallButtonLoading(true)
+    setInstallModalStatus({
+      isSuccess: null,
+      message: ""
+    })
+
     try {
-      const userInfo = await GetUserInfo()
-      //Check if user id is valid and get user organization
-      if (userInfo[0]._id !== "") {
-        setUser(userInfo)
+      const response = await axios.delete(
+        `https://api.zuri.chat/organizations/${currentWorkspace}/plugins/${marketplaceContext.state.pluginId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          },
+          data: {
+            user_id: user[0]?._id
+          }
+        }
+      )
+
+      if (response.data.status === 200) {
+        setIsInstallButtonLoading(false)
+        setInstallModalStatus({
+          isSuccess: true,
+          message: "Plugin Uninstalled Successfully."
+        })
+        setTimeout(() => {
+          // Reload the modal
+          marketplaceContext.dispatch(setPluginId(null))
+        }, 3000)
+      } else {
+        throw new Error(response.data.message)
       }
-    } catch (error) {
-      console.error(error)
+    } catch (err) {
+      setInstallModalStatus({
+        isSuccess: false,
+        message: err.message ? err.message : "Plugin could not be uninstalled"
+      })
+      setIsModalLoading(false)
+      setIsInstallButtonLoading(false)
     }
   }
 
@@ -225,14 +206,17 @@ const MarketPlaceContainer = ({ type }) => {
               let isInstalled = false
               let plugin_id = plugin.id ? plugin.id : plugin._id
 
-              if (plugins.all.indexOf({ id: plugin_id }) !== -1)
+              // Render installed btn if the plugin ID is in the installedPlugins array
+              if (plugins.installed.find(item => item._id === plugin_id)) {
                 isInstalled = true
+              }
 
               return (
                 <PluginCard
                   key={plugin_id}
                   pluginData={plugin}
                   installed={isInstalled}
+                  setIsUninstall={setIsUninstall}
                 />
               )
             })}
@@ -241,7 +225,7 @@ const MarketPlaceContainer = ({ type }) => {
 
       {/* {!isMarketPlaceLoading && marketplaceContext.state.plugins[`${type}`].length > 0 && ( */}
       {!isMarketPlaceLoading && plugins[`${type}`].length == 0 && (
-        <h2 className="text-center">No {type} plugins found.</h2>
+        <h2 className="text-center">No {type} plugins yet.</h2>
       )}
 
       <ReactPaginate
@@ -258,7 +242,7 @@ const MarketPlaceContainer = ({ type }) => {
 
       {/* {marketplaceContext.state.isModal && marketplaceContext.state.pluginId && ( */}
       <Modal
-        show={marketplaceContext.state.isModal}
+        show={isModalOpen || marketplaceContext.state.isModal}
         onHide={() => marketplaceContext.dispatch(setPluginId(null))}
         dialogClassName={styles.marketplaceModal}
         contentClassName={styles.modalContent}
@@ -289,8 +273,14 @@ const MarketPlaceContainer = ({ type }) => {
               <h2 className="text-center">{plugin.name}</h2>
 
               <button
-                onClick={() => installPluginToOrganization()}
-                className={styles.modalInstallBtn}
+                onClick={() => {
+                  isUninstall
+                    ? unInstallPluginFromOrganization()
+                    : installPluginToOrganization()
+                }}
+                className={`${styles.modalInstallBtn} ${
+                  isUninstall && styles.modalUninstallBtn
+                }`}
                 disabled={isInstallButtonLoading}
               >
                 {isInstallButtonLoading ? (
@@ -301,6 +291,8 @@ const MarketPlaceContainer = ({ type }) => {
                       </span>
                     </Spinner>
                   </div>
+                ) : isUninstall ? (
+                  "Uninstall"
                 ) : (
                   "Install"
                 )}

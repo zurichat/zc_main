@@ -1,11 +1,10 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom"
-import Login from "./pages/login"
-import Uitest from "./pages/UI/MsgBoard"
-import SignUp from "./pages/signup"
-import SignOut from "./pages/signout/index"
-import Workspace from "./pages/workspace/components/Workspace"
-import LandingPage from "./pages/LandingPage"
-import DAO_Features from "./pages/DAO-Features"
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Login from './pages/login'
+import SignUp from './pages/signup'
+import SignOut from './pages/signout/index'
+import Workspace from './pages/workspace/components/Workspace'
+import LandingPage from './pages/LandingPage'
+import DAO_Features from './pages/DAO-Features'
 // password block
 import ResetPassword from "./pages/passwordReset/index"
 import NewPassword from "./pages/passwordReset/newPassword"
@@ -52,14 +51,17 @@ import Plugins from "./pages/plugins"
 import Home from "./pages/admin/Settings/components/SettingsHome"
 import AboutWorkSpace from "./pages/admin/AboutWorkSpace"
 import AccountProfile from "./pages/admin/AccountProfile"
-
 import Legal from "./pages/legal"
 import ZurichatBlog from "./pages/blogs/components/zurichatBlog"
-
 import Ebooks from "./pages/ebooks"
+import Invitation from "./pages/admin/Invitation"
 import Whyzurichat from "./pages/WhyZuriChat/Whyzurichat"
 
 import OnboardingHelp from "./pages/LoginSignUpHelp/index"
+
+
+
+import ChangeWorkspaceName from "./pages/admin/Settings/components/ChangeWorkspaceName"
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -149,12 +151,8 @@ const App = () => {
         <Route path="/legal">
           <Legal />
         </Route>
-
         <Route path="/privacy">
           <PrivacyPolicy />
-        </Route>
-        <Route path="/uitest">
-          <Uitest />
         </Route>
         <Route path="/open-marketplace" exact>
           <MarketPlace />
@@ -197,6 +195,7 @@ const App = () => {
         <PrivateRoute path="/settings" exact component={Settings} />
         <PrivateRoute path="/admin/settings" exact component={SettingsHome} />
         <PrivateRoute path="/admin/settings/home" exact component={Home} />
+        <PrivateRoute path="/admin/name" exact component={ChangeWorkspaceName} />
         <PrivateRoute
           path="/admin/settings/billings"
           exact
@@ -219,8 +218,12 @@ const App = () => {
           exact
           component={AdminSettingsTab}
         /> */}
+
         <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
         {/* ----------------settings routes closed----------------- */}
+        <Route path="/invitation">
+          <Invitation />
+        </Route>
         <Route path="/reset-password">
           <ResetPassword />
         </Route>

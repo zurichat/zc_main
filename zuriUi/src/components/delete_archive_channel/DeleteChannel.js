@@ -22,7 +22,7 @@ const DeleteChannel = ({closeEdit}) => {
                 id="check"
                 // value={deleteChannel} 
                 />
-                <label htmlFor="check">Yes, permanently delete the channel</label>
+                <span className={styles.check}>Yes, permanently delete the channel</span>
             </div>
             <div className={styles.button}>
                 <button className={styles.button1}>Cancel</button>

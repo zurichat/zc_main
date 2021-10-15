@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '../styles/searchNotFound.module.css';
+import style from '../styles/SearchNotFound.module.css';
 import emoji from '../assets/images/thinking.png';
 
 export const NoResult = ( ) => {
