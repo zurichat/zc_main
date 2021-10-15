@@ -115,7 +115,7 @@ const MarketPlaceContainer = ({
         }
       )
 
-      if (response.data.success === true) {
+      if (String(response.data.success).toLowerCase() === "true") {
         setIsInstallButtonLoading(false)
         setInstallModalStatus({
           isSuccess: true,
