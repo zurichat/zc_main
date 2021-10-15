@@ -116,7 +116,7 @@ const MessageInputBox = ({
 export default MessageInputBox
 
 const Wrapper = styled.div`
-  padding: 0 10px;
+  // padding: 0 10px;
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -143,7 +143,7 @@ const SendWrapper = styled.section`
 const Input = styled.input`
   display: block;
   border: none;
-  padding: 18px 0 18px 12px;
+  // padding: 18px 0 18px 12px;
   background-color: inherit;
   width: 100%;
   &:focus {
