@@ -4,6 +4,7 @@ import { TopbarContext } from "./context/Topbar"
 import { connect } from "react-redux"
 import zurichatlogo from "./assets/images/zurilogo.svg"
 import styled from "styled-components"
+import ReactTooltip from "react-tooltip"
 import { BaseInput } from "./TopBarIndex"
 import defaultAvatar from "./assets/images/avatar_vct.svg"
 // import HelpIcon from './assets/images/help-icon.svg'
@@ -143,7 +144,9 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   const currentWorkspace = localStorage.getItem("currentWorkspace")
 
-  SubscribeToChannel(currentWorkspace, callbackFn)
+  useEffect(() => {
+    SubscribeToChannel(currentWorkspace, callbackFn)
+  }, [])
 
   // useEffect(() => {
   //   if (showModal===true) {
@@ -251,6 +254,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   // end search
 
+  const [statusModal, setStatusModal] = useState(false)
   const handleEnter = e => {
     e.preventDefault()
 
@@ -333,7 +337,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       </div>
       <ProfileImageContainer
         className="d-flex justify-content-end pe-3"
-        style={{ width: "20%" }}
+        style={{ width: "20%", position: "relative" }}
       >
         {toggleStatus}
         <ProfileImg
@@ -343,10 +347,39 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           className="avatar-img"
           alt="user profile avatar"
         />
+        {user?.status?.tag && (
+          <>
+            <div
+              style={{
+                position: "absolute",
+                top: "0px",
+                right: "50px",
+                display: "flex",
+                alignItems: "center",
+                height: "100%",
+                backgroundColor: "#fafafa",
+                padding: "0px 4px",
+                cursor: "pointer",
+                borderTopLeftRadius: "5px",
+                borderBottomLeftRadius: "5px"
+              }}
+              data-tip
+              data-for="StatusHover"
+              onClick={() => setStatusModal(!statusModal)}
+            >
+              <span style={{ fontSize: "16px" }}>{user?.status?.tag}</span>
+            </div>
+            <ReactTooltip id="StatusHover" type="dark" effect="solid">
+              <span>
+                {user?.status?.tag}&nbsp;&nbsp;{user?.status?.text}
+              </span>
+            </ReactTooltip>
+          </>
+        )}
       </ProfileImageContainer>
 
       <Profile />
-      <TopbarModal />
+      <TopbarModal statusModal={statusModal} setStatusModal={setStatusModal} />
     </>
   )
 }
