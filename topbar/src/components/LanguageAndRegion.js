@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react"
 import styles from "../styles/LanguageAndRegion.module.css"
+import standardStyles from "../styles/UserPreference.module.css"
 import TimezoneSelect from "react-timezone-select"
 import  Select from "react-select"
 import { authAxios } from "../utils/Api"
@@ -9,15 +10,17 @@ import { ProfileContext } from "../context/ProfileModal"
 const ssKey = "language-and-region"
 
 const options = [
-  { value: 'en', label: 'English' },
-  { value: 'fr', label: 'French' },
-  { value: 'du', label: 'Deutch' },
+  { value: 'en', label: 'English (US)' },
+  { value: 'fr', label: 'French (FR)' },
+  { value: 'du', label: 'Deutch (DU)' },
+  { value: 'zh', label: 'Chinese (ZH)'},
+  { value: 'ar', label: 'Arabic (AR)'}
 ];
 
 const LanguageAndRegion = () => {
   const { user, orgId } = useContext(ProfileContext)
   const [langreg, setLangreg] = useState(user.settings.languages_and_regions);
-  const [selectedTimezone, setSelectedTimezone] = useState({})
+  const [selectedTimezone, setSelectedTimezone] = useState(user.settings.languages_and_regions.time_zone ? JSON.parse(user.settings.languages_and_regions.time_zone) : user.settings.languages_and_regions.time_zone)
   //CHECKBOXES
   const [spellCheck, setSpellCheck] = useState(true);
   const handleSpellCheck = () => {
@@ -29,7 +32,7 @@ const LanguageAndRegion = () => {
   const handleData = (langreg) => {
       authAxios.patch(`organizations/${user.org_id}/members/${user._id}/settings/languages-and-region`, langreg)
       .then(res => {
-        sessionStorage.setItem(ssKey, langreg)
+        sessionStorage.setItem(ssKey, JSON.stringify(langreg))
       })
       .catch(err => {
         // error
@@ -49,21 +52,42 @@ const LanguageAndRegion = () => {
   }
 
   useEffect(() => {
-    let timeZone = {...langreg, time_zone: selectedTimezone.label}
+    let timeZone = {...langreg, time_zone: JSON.stringify(selectedTimezone)}
     setLangreg(timeZone)
     handleData(timeZone)
   }, [selectedTimezone])
 
-  const langSpellCheck = langreg.languages_zuri_should_spell_check;
-   const defVal = langSpellCheck.map(i=> i )
+  //  const langSpellCheck = user.settings.languages_and_regions.languages_zuri_should_spell_check;
+  //  const defVal = langSpellCheck.map(i => i )
+  const langSpellCheck = langreg.languages_zuri_should_spell_check || [];
+  
+  const checkLang = (lang) => {
+    switch(lang) {
+      case "en":
+        return "English"
+      case "fr":
+        return "French"
+      case "du":
+        return "Deutch"
+      default:
+        return "English"
+    }
+  }
+  const defaultValue = [];
+  const defVal = langSpellCheck.forEach(i => {
+    defaultValue.push({ value: i, label: checkLang(i) })
+  })
+
   
    useEffect(()=> {
-      if(langreg){
-        sessionStorage.setItem(ssKey, langreg)
+      if(sessionStorage.getItem(ssKey)){
+        setLangreg(JSON.parse(sessionStorage.getItem(ssKey)))
+      } else {
+        sessionStorage.setItem(ssKey, JSON.stringify(user.settings.languages_and_regions))
       }
    }, [])
   return (
-    <div className={styles.container}>
+    <div className={standardStyles.modalContent}>
       <div>
         <form>
           <div className={styles.section}>
@@ -74,12 +98,11 @@ const LanguageAndRegion = () => {
                setLangreg({...langreg, language: e.target.value})
                handleData({...langreg, language: e.target.value})
             }} name="language" id="language" >
-              <option>{langreg.language}</option>
-              <option value="en">English</option>
-              <option value="fr">French (FRA)</option>
-              <option value="de">Deutsch (DEU)</option>
-              <option value="zh">Chinese (CHN)</option> 
-              <option value="ar">Arabic</option> 
+              {
+                options.map((option, index) => {
+                  return <option value={option.value} key={index}>{option.label}</option>
+                })
+              }
             </select>
             <p className={styles.note}>
               Choose the language you want to use in Zurichat.
@@ -119,28 +142,34 @@ const LanguageAndRegion = () => {
             </p>
           </div>
           <div className={styles.section}>
-          <label className={styles.subhead} htmlFor="spell-check">
+            <div className={styles.subhead} htmlFor="spell-check">
               Spell check
-            </label>
-            <label className={styles.auto} htmlFor="">
-              <input type="checkbox" className={styles.cbox}  
-              checked={langreg.spell_check } 
-              onClick={() => {
-                if(langreg !== undefined) {
-                  setLangreg({...langreg, spell_check: !langreg.spell_check})
-                 handleData({...langreg, spell_check: !langreg.spell_check})
+            </div>
+              <input
+                type="checkbox"
+                className={styles.cbox}
+                checked={langreg.spell_check}
+                onClick={() => {
+                  if (langreg !== undefined) {
+                    setLangreg({
+                      ...langreg,
+                      spell_check: !langreg.spell_check
+                    })
+                    handleData({
+                      ...langreg,
+                      spell_check: !langreg.spell_check
+                    })
+                  }
                 }}
-              }
               />
               <span className={styles.checkmark}>
-              Enable spellcheck on your message
+                Enable spellcheck on your message
               </span>
-            </label>
             <Select
             className={styles.optSelect}
           isMulti
           name="colors"
-          defaultValue= {defVal[0]}
+          defaultValue= {defaultValue}
           styles={customStyles}
           options={options}
           classNamePrefix="select"
@@ -149,6 +178,7 @@ const LanguageAndRegion = () => {
             handleSelect(selectedOptions)
           }}
         />
+        <p className={styles.note}>Choose the languages you’d like Zurichat to spellcheck as you type.</p>
           </div>
         </form>
       </div>
