@@ -10,10 +10,11 @@ import styles from "../styles/AdminAnalyticsTab.module.css"
 // icon
 import { FiMenu } from "react-icons/fi"
 import ChannelsTab from "./ChannelsTab"
+import AnalyticsOverview from "./AnalyticsOverview"
 
 const AdminSettingsTab = () => {
   const [openTab, setOpenTab] = useState(false)
-  const [active, setActive] = useState(2)
+  const [active, setActive] = useState(1)
 
   return (
     <div className={`${styles.tabWrapper} mt-4`}>
@@ -30,7 +31,7 @@ const AdminSettingsTab = () => {
             active === 1 ? styles.tabHeaderItemActive : styles.tabHeaderItem
           }
         >
-          OverView
+          Overview
         </div>
         <div
           onClick={() => {
@@ -63,6 +64,8 @@ const AdminSettingsTab = () => {
             openTab={openTab}
           />
         )} */}
+
+        {active === 1 && <AnalyticsOverview />}
         {active === 2 && <ChannelsTab />}
         {/* {active === 3 && <AuthTab />} */}
       </div>
