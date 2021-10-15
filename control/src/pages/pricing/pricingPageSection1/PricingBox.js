@@ -1,11 +1,16 @@
 import React, { useState } from "react"
 import styles from "./NewPricingSection.module.css"
 import checkMark from "../assets/checkmark.svg"
-import { Pricing, plans, features } from "./PricingDummyData"
+// import { Pricing, plans, features } from "./PricingDummyData"
 import { Link } from "react-router-dom"
+import { useTranslation} from "react-i18next"
+
 
 const PricingBox = ({ pricing }) => {
   const [toggle, setToggle] = useState(false);
+
+  const { t } = useTranslation()
+
   return (
     <section className={styles.pricing}>
       <header className={styles.pricing__header}>
@@ -21,9 +26,9 @@ const PricingBox = ({ pricing }) => {
             </div>
           )}
         </div>
-        {pricing.title == "Enterprise" && (
+        {pricing.toggle == "Toggle"  && (
           <div className={styles.pricing__control}>
-            <span>Annual</span>
+            <span>{t("pricing.cardThree.duration_one")}</span>
             <div className={styles.toggle} onClick={() => setToggle(!toggle)}>
               <div
                 className={`${styles.toggle__circle} ${
@@ -31,7 +36,7 @@ const PricingBox = ({ pricing }) => {
                 } `}
               ></div>
             </div>
-            <span>Monthly</span>
+            <span>{t("pricing.cardThree.duration_two")}</span>
           </div>
         )}
       </header>
@@ -63,7 +68,7 @@ const PricingBox = ({ pricing }) => {
         <div className={styles.cta}>
           <button className={styles.button}>
             <Link to="/login" className={styles.link}>
-              Get Started
+            {t("pricing.cardThree.button")}
             </Link>
           </button>
         </div>
