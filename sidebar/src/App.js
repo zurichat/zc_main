@@ -19,26 +19,45 @@ export const ACTIONS = {
   RESPONSE_MODAL: "response-modal",
 }
 
-function reducer(state, action) {
+const insertSideBarData = (state, action) => {
+  var sidebar_data = action.payload
+  var category = sidebar_data[Object.keys(sidebar_data)[0]].category
+  var categoryData = state.sidebar
+    ? state.sidebar[category ? category : "others"]
+    : null
+  if (categoryData) {
+    categoryData = {
+      ...categoryData,
+      ...sidebar_data
+    }
+    state.sidebar[category] = categoryData
+  } else {
+    if (!state.sidebar) state.sidebar = {}
+    state.sidebar[category ? category : "others"] = {
+      ...sidebar_data
+    }
+  }
+  return state
+}
+
+function reducer(state={sidebar: {}}, action) {
   switch (action.type) {
     case ACTIONS.ADD_ITEM:
       //Add items to sidebar
-      var sidebar_data = action.payload
+      state = insertSideBarData(state, action)
       return {
         ...state,
         sidebar: {
-          ...state.sidebar,
-          ...sidebar_data
+          ...state.sidebar
         }
       }
     case ACTIONS.UPDATE_PLUGINS:
       //Update sidebar
-      var sidebar_update = action.payload
+      state= insertSideBarData(state, action)
       return {
         ...state,
         sidebar: {
-          ...state.sidebar,
-          ...sidebar_update
+          ...state.sidebar
         }
       }
 

@@ -1,13 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
-body {
-  font-family: 'Lato' sans-serif;
-}
-.grid{
-  display: grid;
-  grid-column: auto;
-  padding: 1.5rem;
-}
 .headerContent {
   max-width: 770px;
   margin: auto;
