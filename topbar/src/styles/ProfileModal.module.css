@@ -1,4 +1,4 @@
-.modalContainer {
+/* .modalContainer {
   height: 100vh;
   width: 100vw;
   position: fixed;
@@ -30,21 +30,25 @@
 
 .modalContent,
 .modalFull {
-  max-width: 100%;
+  width: 90%; */
   /* max-width: 885px; */
-  max-width: 900px;
-  background: #fff;
+  /* max-width: 700px;
+  background: var(--bg-color);
   border-radius: 4px;
   overflow: hidden;
   padding-bottom: 20px;
   height: 90vh;
 }
 
-.modalCont {
+.modalCont{
+  background-color: var(--bg-color);
+} */
+
+/* .modalCont {
   overflow-y: scroll;
   height: 100%;
-}
-.modalCont::-webkit-scrollbar {
+} */
+/* .modalCont::-webkit-scrollbar {
   display: none;
 }
 
@@ -75,21 +79,21 @@
   width: 0.7rem;
   width: 0.7rem;
   cursor: pointer;
-}
+} */
 
 /* .closeIconPath {
   path: #333;
 } */
 
-.closeIcon path {
+/* .closeIcon path {
   fill: #fff;
-}
+} */
 
 /* .closeIcon:hover path {
   fill: red;
 } */
 
-.modalInnerContainer {
+/* .modalInnerContainer {
   width: 100%;
   height: 100%;
   padding: 2.375rem 2.8125rem;
@@ -112,6 +116,10 @@
     right: 0;
     height: 100%;
     max-width: 100vw;
+  }
+
+  .modalCont {
+    max-height: 100vh;
   }
 
   .modalFull {
@@ -185,6 +193,172 @@
     padding: 2.375rem 1.5rem;
   }
 
+  .overlayGreen {
+    background: #00b87c;
+  }
+} */
+
+
+.modalContainer {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+  justify-content: center;
+  padding-top: 1.6875rem;
+  padding-bottom: 2rem;
+}
+.overlay,
+.overlayGreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  cursor: pointer;
+}
+.modalActive {
+  display: flex;
+}
+.modalContent,
+.modalFull {
+  width: 80%;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  padding-bottom: 20px;
+  height: 90vh;
+}
+.modalCont {
+  overflow-y: auto;
+  height: 100%;
+  /* max-height: 83vh; */
+}
+.modalHeader,
+.modalHeaderMobile {
+  width: 100%;
+  height: auto;
+  background: #00b87c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 1.5rem;
+  font-family: "Lato", sans-serif;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.4rem;
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.closeIcon,
+.closeIconPath,
+.backIcon {
+  width: 0.7rem;
+  width: 0.7rem;
+  cursor: pointer;
+}
+/* .closeIconPath {
+  path: #333;
+} */
+.closeIcon path {
+  fill: #fff;
+}
+/* .closeIcon:hover path {
+  fill: red;
+} */
+.modalInnerContainer {
+  width: 100%;
+  height: 100%;
+  padding: 2.375rem 2.8125rem;
+}
+.mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  .modalContainer {
+    padding-top: 3rem;
+  }
+  .modalContent {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    max-width: 100vw;
+  }
+  .modalCont {
+    max-height: 100vh;
+  }
+  .modalFull {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+    background: #fff;
+    border-radius: 0px;
+  }
+  .modalHeader {
+    position: fixed;
+    width: 100%;
+    height: 4rem;
+    padding: 0 1.5rem;
+    font-size: 1.2rem;
+    background: none;
+    border-bottom: 1px solid #dadada;
+    justify-content: center;
+    font-weight: 700;
+    color: #242424;
+    background: #fff;
+  }
+  .modalCont {
+    margin-top: 1rem;
+    overflow-y: scroll;
+    height: 100%;
+  }
+  .mobile {
+    background: #00b87c;
+    padding: 12px 20px;
+    display: block;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: sticky;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+  }
+  .closeIcon,
+  .closeIconPath,
+  .backIcon {
+    position: absolute;
+    left: 1rem;
+    width: 1rem;
+    height: 1rem;
+  }
+  .backIcon {
+    height: 2rem;
+    width: 2rem;
+  }
+  .closeIcon path {
+    fill: #242424;
+  }
+  .modalInnerContainer {
+    padding: 2.375rem 1.5rem;
+  }
   .overlayGreen {
     background: #00b87c;
   }

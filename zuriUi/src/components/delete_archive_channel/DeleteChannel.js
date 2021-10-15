@@ -2,10 +2,10 @@ import ChannelModal from './ChannelModal'
 import styles from './ArchiveChannel.module.css'
 
 
-const DeleteChannel = () => {
+const DeleteChannel = ({closeEdit}) => {
 
     return (
-        <ChannelModal full title = "Delete this Channel?">
+        <ChannelModal closeEdit={closeEdit} full title = "Delete this Channel?">
             <div className={styles.content}>
                     <p className={styles.p}>When you delete a channel, all messages from this channel will be removed from Zuri Chat immediately. This can't be undone.</p>
             <p className={styles.p}>Keep in mind that:</p>
@@ -22,7 +22,7 @@ const DeleteChannel = () => {
                 id="check"
                 // value={deleteChannel} 
                 />
-                <label htmlFor="check">Yes, permanently delete the channel</label>
+                <span className={styles.check}>Yes, permanently delete the channel</span>
             </div>
             <div className={styles.button}>
                 <button className={styles.button1}>Cancel</button>

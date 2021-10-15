@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react'
-import styles from '../styles/adminSidebar.module.css'
-import { Link, NavLink } from 'react-router-dom'
+import React, { useEffect } from "react"
+import styles from "../styles/adminSidebar.module.css"
+import { Link, NavLink } from "react-router-dom"
 
 // image
-import avatar from '../assets/avatar.svg'
+import avatar from "../assets/avatar.svg"
 
 // icons
 
-import zuriLogo from '../assets/zuriLogo.svg'
-import grid from '../assets/grid.svg'
-import bouy from '../assets/bouy.svg'
-import la_rocket from '../assets/la_rocket.svg'
+import zuriLogo from "../assets/zuriLogo.svg"
+import grid from "../assets/grid.svg"
+import bouy from "../assets/bouy.svg"
+import la_rocket from "../assets/la_rocket.svg"
 
 import {
   FiAlertCircle,
@@ -29,10 +29,10 @@ import {
   FiUser,
   FiUserPlus,
   FiUsers
-} from 'react-icons/fi'
-import { BsFillHeartFill } from 'react-icons/bs'
-import { GrFormClose } from 'react-icons/gr'
-import { getUser } from '../Utils/Common'
+} from "react-icons/fi"
+import { BsFillHeartFill } from "react-icons/bs"
+import { GrFormClose } from "react-icons/gr"
+import { getUser } from "../Utils/Common"
 
 const AdminSidebar = ({ setModal, openModal }) => {
   const user = getUser()
@@ -53,7 +53,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <h4 className={styles.info}>SIGNED IN AS</h4>
           <p className={styles.name}>
             {user.email.slice(0, 15)}
-            {user.email.length > 16 ? '...' : ''}
+            {user.email.length > 16 ? "..." : ""}
           </p>
         </div>
       </div>
@@ -109,7 +109,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
             activeClassName={styles.sidebarLinkActive}
-            to="/admin/settings"
+            to="/admin/settings/home"
           >
             <FiHome className={styles.icon} />
             Home
@@ -117,7 +117,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
+            to="/admin/settings/accountsProfile"
           >
             <FiUser className={styles.icon} />
             Account & Profile
@@ -133,7 +133,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
+            to="/admin/stats"
           >
             <FiPieChart className={styles.icon} />
             Analytics
@@ -141,7 +141,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
+            to="/admin/settings/customize"
           >
             <FiScissors className={styles.icon} />
             Customize
@@ -149,7 +149,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
+            to="/admin/settings/aboutworkspace"
           >
             <FiAlertOctagon className={styles.icon} />
             About this workspace
@@ -188,7 +188,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
+            to="/invitation"
           >
             <FiUserPlus className={styles.icon} />
             Invitations
@@ -264,7 +264,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
+            to="/components/gateways"
           >
             Gateways
           </Link>
