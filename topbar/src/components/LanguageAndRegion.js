@@ -2,6 +2,7 @@
 
 import React, { useState, useContext, useEffect } from "react"
 import styles from "../styles/LanguageAndRegion.module.css"
+import standardStyles from "../styles/UserPreference.module.css"
 import TimezoneSelect from "react-timezone-select"
 import Select from "react-select"
 import { authAxios } from "../utils/Api"
@@ -44,8 +45,13 @@ const LanguageAndRegion = () => {
     setLangreg(timeZone)
     handleData(timeZone)
   }, [selectedTimezone])
+
+  const langSpellCheck = langreg.languages_zuri_should_spell_check;
+  //  const defVal = langSpellCheck.map(i=> i )
+  
+   
   return (
-    <div className={styles.container}>
+    <div className={standardStyles.modalContent}>
       <div>
         <form>
           <div className={styles.section}>
@@ -135,17 +141,18 @@ const LanguageAndRegion = () => {
               </span>
             </label>
             <Select
-              className={styles.optSelect}
-              isMulti
-              name="colors"
-              styles={customStyles}
-              options={options}
-              classNamePrefix="select"
-              placeholder="Type a language..."
-              onChange={selectedOptions => {
-                handleSelect(selectedOptions)
-              }}
-            />
+            className={styles.optSelect}
+          isMulti
+          name="colors"
+          // defaultValue= {defVal[0]}
+          styles={customStyles}
+          options={options}
+          classNamePrefix="select"
+          placeholder="Type a language..."
+          onChange={(selectedOptions) => {
+            handleSelect(selectedOptions)
+          }}
+        />
           </div>
         </form>
       </div>
