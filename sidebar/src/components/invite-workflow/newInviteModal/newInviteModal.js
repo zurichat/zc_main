@@ -31,7 +31,7 @@ const Container = styled.div`
     display: flex;
     margin-bottom: 1em;
     background: white !important;
-    width: 600px;
+    width: 50%;
     background-color: #fff;
     border-radius: 10px;
 
@@ -92,7 +92,7 @@ const TextArea = styled.textarea`
 const Label = styled.label`
   font-family:Lato;
   font-weight:700;
-  font-size:17px;
+  font-size:1.05rem;
   margin:10px 20px;
   align-self:flex-start;
 `
