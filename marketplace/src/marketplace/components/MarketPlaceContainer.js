@@ -225,7 +225,7 @@ const MarketPlaceContainer = ({
 
       {/* {!isMarketPlaceLoading && marketplaceContext.state.plugins[`${type}`].length > 0 && ( */}
       {!isMarketPlaceLoading && plugins[`${type}`].length == 0 && (
-        <h2 className="text-center">No {type} plugins found.</h2>
+        <h2 className="text-center">No {type} plugins yet.</h2>
       )}
 
       <ReactPaginate
