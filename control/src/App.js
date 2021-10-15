@@ -216,7 +216,7 @@ const App = () => {
           component={AdminSettingsTab}
         /> */}
          <Route
-          path="/admin/manage_members"
+          path="/admin/settings/managemembers"
           exact
           component={ManageMembers}
         />
