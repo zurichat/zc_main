@@ -175,6 +175,17 @@
   background: transparent;
 }
 
+.uninstallPluginBtn {
+  background: #cc0000cc;
+}
+
+.uninstallPluginBtn:hover,
+.uninstallPluginBtn:focus {
+  border: 1px solid #cc0000cc;
+  color: inherit;
+  background: hsla(0, 100%, 40%, 0.8);
+}
+
 .circleBackground {
   width: 400px;
   height: 600px;
@@ -291,13 +302,11 @@
 
 .zuriMarketPlace__container {
   display: flex;
-  /* grid-template-columns: repeat(3, 400px); */
   flex-direction: row;
   flex-wrap: wrap;
   column-gap: 1rem;
   justify-content: center;
   margin-bottom: 95px;
-  /* padding: 0 6%; */
 }
 
 .pluginCardContainer {
@@ -306,13 +315,11 @@
   margin-bottom: 40px;
   background: white;
   border-radius: 8px;
-  max-height: 200px;
   font-family: "Lato";
   font-weight: 400;
   font-size: 14px;
   position: relative;
   padding: 14px;
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: all 250ms cubic-bezier(0.21, 0.45, 0.01, 0.2);
@@ -328,6 +335,7 @@
   align-items: flex-start;
   color: #1d1c1d;
   margin-bottom: 24px;
+  min-height: 5rem;
 }
 
 .pluginImage {
@@ -359,7 +367,7 @@
   color: #1d1c1d;
 }
 
-.pluginInstallCount{
+.pluginInstallCount {
   margin-top: 6px;
   font-weight: 400;
   font-size: 10px;
@@ -379,13 +387,12 @@
   max-width: 600px;
   margin-top: 5%;
   overflow-y: scroll;
-  -ms-overflow-style: none;  
+  -ms-overflow-style: none;
   scrollbar-width: none;
 }
 .marketplaceModal::-webkit-scrollbar {
   display: none;
 }
-
 
 .modalContent {
   height: fit-content;
@@ -405,11 +412,6 @@
   width: 60px;
   height: 60px;
   align-self: center;
-}
-
-.pluginMainContent {
-  padding-top: 12px;
-  margin-left: 50px;
 }
 
 .marketplaceModalTop h2 {
@@ -466,11 +468,15 @@
   align-items: center;
 }
 
-.marketplacePluginInfo p{
+.modalUninstallBtn {
+  background: #cc0000;
+}
+
+.marketplacePluginInfo p {
   text-transform: capitalize;
 }
 
-.marketplaceModalPluginImages{
+.marketplaceModalPluginImages {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   overflow: hidden;
@@ -482,7 +488,6 @@
 }
 
 .marketplaceModalMain {
-  padding: 0px 38px 10px;
   margin-top: 22px;
 }
 
@@ -506,28 +511,18 @@
 .successMarkContainer {
   height: 100px;
   width: 100px;
-  background: #c0feea;
+  background: #4bb543;
   border-radius: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
-}
-
-.successMarkText {
-  margin-top: 50px;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 31px;
-  text-align: center;
-  color: #1d1c1d;
-  width: 75%;
 }
 
 .errorMarkContainer {
   height: 100px;
   width: 100px;
-  background: #a10909c9;
+  background: #cc0000;
   border-radius: 100%;
   display: flex;
   justify-content: center;
@@ -535,7 +530,11 @@
   margin-top: 2rem;
 }
 
-.errorMarkText {
+.MarkIcon {
+  width: 42px;
+}
+
+.MarkText {
   margin-top: 50px;
   font-weight: 600;
   font-size: 24px;
@@ -543,21 +542,19 @@
   text-align: center;
   color: #1d1c1d;
   width: 75%;
-}
-
-.errorMark {
-  width: 42px;
 }
 
 .pluginCardContainer {
   max-height: fit-content;
 }
 
-
 @media (max-width: 800px) {
   .pluginCardContainer {
     width: 100%;
     max-height: fit-content;
+  }
+  .pluginCardTop {
+    height: inherit;
   }
   .marketplaceHero {
     font-size: 16px;
@@ -605,12 +602,12 @@
     top: 0;
     left: 0;
   }
-  
+
   .marketplaceSvg:nth-child(2) {
     top: 0;
     left: 0;
   }
-  
+
   .marketplaceSvg:nth-child(3) {
     top: 0;
     left: 0;
@@ -649,9 +646,6 @@
   .marketplaceModalTop {
     padding: 10px 18px 20px;
   }
-  .marketplaceModalMain {
-    padding: 0 18px 20px;
-  }
   .marketplaceContainerMain {
     flex-direction: column;
   }
@@ -662,21 +656,18 @@
   .marketplaceTab {
     font-size: 14px;
   }
-  .pluginMainContent {
-    margin-left: 15px;
-  }
   .marketplaceModalMain p {
     font-size: 16px;
     line-height: 28px;
   }
-  .marketplaceModalPluginImages{
+  .marketplaceModalPluginImages {
     display: flex;
     grid-template-columns: 0;
     flex-direction: row;
     flex-wrap: nowrap;
     overflow: scroll;
   }
-  .marketplaceModalPluginImages img{
+  .marketplaceModalPluginImages img {
     width: 8rem;
   }
 }
@@ -691,7 +682,7 @@
 }
 
 .paginationBttns {
-    color: #616061;
+  color: #616061;
 }
 
 .paginationBttns a {
@@ -700,7 +691,6 @@
   border-radius: 5px;
   border: 1px solid #00b87c;
   cursor: pointer;
-
 }
 
 .paginationBttns a:hover {
@@ -709,7 +699,7 @@
 }
 
 .paginationActive {
-    color: white;
+  color: white;
 }
 
 .paginationActive a {
