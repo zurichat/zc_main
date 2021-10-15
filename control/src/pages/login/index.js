@@ -190,7 +190,7 @@ const Login = () => {
               >
                 Forgot password?
               </Link>
-              <Link to="/help"> {""}Get help signing in</Link>
+              <Link to="/troubleshooting/onboarding-help"> {""}Get help signing in</Link>
 
             </div>
           </div>
