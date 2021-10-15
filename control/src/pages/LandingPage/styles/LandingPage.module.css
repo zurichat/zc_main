@@ -96,7 +96,18 @@
   width: 100%;
   max-width: 800px;
 }
-
+.hero_left_btn_wrap{
+  border: 1px solid grey;
+  border-radius: var(--radius);
+  padding: .2rem;
+}
+.hero_left_btn_wrap input{
+  border: none;
+  outline: none;
+  padding: .5rem 0;
+  font-size: 1rem;
+  line-height: 24px;
+}
 /* * COMPANY BANNER ----------------------------- */
 /* .company_banner_wrap {
   background-color: #f5f5fb;
