@@ -88,7 +88,6 @@
     "@types/systemjs": "^6.1.1",
     "draft-js": "^0.11.7",
     "emoji-picker-react": "^3.4.8",
-    "react-redux": "^7.2.5",
     "eslint": "^8.0.1",
     "rxjs": "^7.3.0",
     "single-spa": "^5.9.3",
