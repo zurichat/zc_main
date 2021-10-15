@@ -77,21 +77,21 @@
   outline: none;
 }
 
-@media screen and (max-width: 1350px) {
+@media (max-width: 1350px) {
   .features {
   grid-template-columns: repeat(3, 250px);
   
   }
 }
 
-@media screen and (max-width: 915px) {
+@media (max-width: 915px) {
   .features {
   grid-template-columns: repeat(2, 250px);
   
   }
 }
 
-@media screen and (max-width: 800px) {
+@media (max-width: 800px) {
   .features {
   grid-template-columns: repeat(2, 250px);
   
