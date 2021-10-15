@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 .banner {
-  padding-top: 8%;
+  padding-top: 11%;
   text-align: center;
 }
 .banner > p {
@@ -23,24 +23,29 @@
   text-align: center;
 }
 .working_remote_section > img {
-  margin-left: 2rem;
+ 
+  width: 50%;
 }
 
 .to_join {
   margin-top: 3%;
 }
 .join_us {
-  text-align: center;
+  text-align: left;
 }
 .join_us > p {
   font-size: 17px;
-  text-align: center;
+  text-align: left;
   line-height: 25px;
   font-weight: 500;
 }
 .zurichat {
   height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  color: #ffffff;
   background-color: #00b87c;
 }
 .zurichat_h3 {
@@ -65,17 +70,23 @@
 .button {
   display: flex;
   flex-wrap: nowrap;
+  
   flex-direction: row;
 }
 .btn {
   margin: 0.3rem;
 }
+.h3m{
+  padding:0;
+}
+
 .btn_sale {
-  background-color: #fff;
   text-transform: uppercase;
-  color: #00b87c;
+  color: #00ffaa;
   margin-top: 2rem;
   font-weight: 600;
+  padding: 10px 16px;
+  background-color: #ffffff;
   border-radius: .3rem;
 }
 .btn_sale:hover {
@@ -98,7 +109,11 @@
   font-weight: 600;
 }
 .working_remote_section {
+  display: flex;
   margin-top: 2%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -147,7 +162,7 @@
     font-size: 14px;
   }
   .counter {
-    text-align: center !important;
+    text-align: center;
     margin-top: 4%;
   }
   .counter > h3 {
@@ -222,6 +237,24 @@
   }
 }
 
+@media (max-width: 767px) {
+  .counter {
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .counter > h3 {
+    font-size: 35px;
+    line-height: 50px;
+    padding: 0;
+    font-weight: 700;
+  
+  }
+
+}
+
+
 @media only screen and (max-width: 500px) {
   .carouselImage {
     position: relative;
@@ -244,6 +277,7 @@
     left: 41%;
   }
 }
+
 @media only screen and (max-width: 355px) {
   .carouselImage {
     position: relative;
