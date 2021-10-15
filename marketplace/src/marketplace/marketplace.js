@@ -1,24 +1,28 @@
-import React, { useState } from 'react'
-import { Col, Row } from 'react-bootstrap'
-import styles from './styles/marketplace.module.css'
-import MarketPlaceContainer from './components/marketplace-container/MarketPlaceContainer'
-// import Footer from '../../components/Footer'
-import { InstallPluginSvg } from './components/marketplace-container/InstallPluginSvg'
-import { CollaborationSvg } from './components/marketplace-container/CollaborationSvg'
-import { DiscoverPluginSvg } from './components/marketplace-container/DiscoverPluginSvg'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-import 'react-tabs/style/react-tabs.css'
+import { useState } from "react"
+import { Helmet } from "react-helmet"
+import { Col, Row } from "react-bootstrap"
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
+
+// Styles and Assets
+import "react-tabs/style/react-tabs.css"
+import styles from "./styles/marketplace.module.css"
+import InstallPluginIcon from "../component-assets/InstallPluginIcon.svg"
+import CollaborationIcon from "../component-assets/CollaborationIcon.svg"
+import DiscoverPluginIcon from "../component-assets/DiscoverPluginIcon.svg"
+
+// Components
 // import MarketplaceHeader from './components/marketplace-container/MarketplaceHeader'
-import { MarketPlaceProvider } from '../context/MarketPlace.context.js'
-import { Helmet } from 'react-helmet'
+// import Footer from '../../components/Footer'
+import MarketPlaceContainer from "./components/MarketPlaceContainer"
+import { MarketPlaceProvider } from "../context/MarketPlace.context.js"
 
 const MarketPlace = () => {
-  const [userDetails, setUserDetails] = useState(null)
   return (
     <MarketPlaceProvider>
       <Helmet>
         <title>Market Place - Zuri Chat</title>
       </Helmet>
+
       <div className={styles.marketplace}>
         <div
           className={`w-100 d-flex flex-wrap justify-content-between align-items-baseline ${styles.marketplaceNavbar}`}
@@ -26,13 +30,14 @@ const MarketPlace = () => {
           {/* Mark doesn't want the header here anymore */}
           {/* <MarketplaceHeader /> */}
         </div>
+
         <div className={styles.marketplaceHero}>
           <Row className={`align-items-center justify-content-center`}>
             <Col md={8}>
               <h1>Your number one plugin hub created for better experience</h1>
               <p className="p-0">
                 Integrate your favorite plugins and get more exciting experience
-                from the Zuri app. Collaborate, work smarter and better.{' '}
+                from the Zuri app. Collaborate, work smarter and better.{" "}
               </p>
               <div className="d-flex align-items-center">
                 <div className={styles.marketplaceSearchBar}>
@@ -56,7 +61,7 @@ const MarketPlace = () => {
             <Col md={4}>
               <div className={styles.circleBackground}>
                 <div className={styles.marketplaceSvg}>
-                  <DiscoverPluginSvg />
+                  <img src={DiscoverPluginIcon} />
                   <div className={styles.svgConnectionLineOne}>
                     <svg
                       width="179"
@@ -73,7 +78,7 @@ const MarketPlace = () => {
                   </div>
                 </div>
                 <div className={styles.marketplaceSvg}>
-                  <InstallPluginSvg />
+                  <img src={InstallPluginIcon} />
                   <div className={styles.svgConnectionLineTwo}>
                     <svg
                       width="516"
@@ -90,7 +95,7 @@ const MarketPlace = () => {
                   </div>
                 </div>
                 <div className={styles.marketplaceSvg}>
-                  <CollaborationSvg />
+                  <img src={CollaborationIcon} />
                   <div className={styles.svgConnectionLineThree}>
                     <svg
                       width="184"
@@ -110,6 +115,7 @@ const MarketPlace = () => {
             </Col>
           </Row>
         </div>
+
         <div className={styles.marketPlaceContainer}>
           <Tabs
             className={styles.marketplaceTabs}
@@ -127,9 +133,9 @@ const MarketPlace = () => {
                 </p>
               </div>
               <TabList className={styles.marketplaceTabList}>
-                <Tab className={styles.marketplaceTab}>All plugins</Tab>
-                <Tab className={styles.marketplaceTab}>Installed Plugins</Tab>
+                <Tab className={styles.marketplaceTab}>Discover</Tab>
                 <Tab className={styles.marketplaceTab}>Popular Plugins</Tab>
+                <Tab className={styles.marketplaceTab}>Installed Plugins</Tab>
               </TabList>
             </div>
             <Row className={`mx-0`}>
@@ -137,14 +143,15 @@ const MarketPlace = () => {
                 <MarketPlaceContainer type={"all"} />
               </TabPanel>
               <TabPanel>
-                <MarketPlaceContainer type={"installed"} />
+                <MarketPlaceContainer type={"popular"} />
               </TabPanel>
               <TabPanel>
-                <MarketPlaceContainer type={"popular"} />
+                <MarketPlaceContainer type={"installed"} />
               </TabPanel>
             </Row>
           </Tabs>
         </div>
+
         {/* <Footer /> */}
       </div>
     </MarketPlaceProvider>

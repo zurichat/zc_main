@@ -91,6 +91,95 @@ export const TRANSLATIONS_DE = {
       decline: "Ablehnen"
     }
   },
+
+  about: {
+    title: {
+      about: ""
+    },
+
+    banner: {
+      headline_one: "Machen Sie die Arbeit einfach, angenehm und",
+      headline_two: "produktiver.",
+      description:
+        "ist ein Hub für Zusammenarbeit, der die richtigen Leute und Tools zusammenbringt, um die Arbeit zu erledigen. Von Fortune-100-Unternehmen bis hin zu Eckmärkten nutzen Millionen von Menschen auf der ganzen Welt ZuriChat, um ihre Teams zu vernetzen, ihre Systeme zu vereinheitlichen und ihr Geschäft voranzutreiben.",
+    },
+
+    counter: {
+      customers: "Bezahlt",
+      customers_: "Kunden",
+      fortune_companies: "der Fortune 100",
+      fortune_companies_: "verwenden",
+      countries: "Länder haben täglich",
+      countries_: "aktive Benutzer in",
+    },
+
+    whoWeAre: {
+      title: "Wer wir sind und wie Sie sich uns anschließen können",
+      description: "Unsere Mission ist es, das Arbeitsleben der Menschen zu verbessern, indem wir eine Plattform bieten, die ein starkes, vielfältiges Team von kreativen Fachleuten aufnehmen kann, die die beste Arbeit ihres Lebens leisten wollen",
+      description_: "verspricht vielfältige Möglichkeiten und ein einfaches, angenehmes und produktiveres Arbeitsleben.",
+    },
+
+    highlights: {
+      title: "Arbeiten aus der Ferne faszinierender denn je",
+      description: "Bei ZuriChat trifft Arbeit auf Spaß.",
+      description_: "Verbinden und interagieren Sie effizient mit Ihrem Team von überall auf der Welt",
+      channels: {
+        title: "Kanäle",
+        description: "Organisieren Sie Gespräche in dedizierten",
+        description_: "Räume, die Kanäle genannt werden"
+      },
+      holidayCalender: {
+        title: "Feiertagskalender",
+        description: "Feiertage hinzufügen, Erinnerungen festlegen",
+        description_: "und sehen Sie alle Events auf einen Blick"
+      },
+      companyDeadline: {
+        title: "Unternehmensschluss",
+        description: "Keep track of deadlines with ",
+        description_: "Behalten Sie die Fristen im Auge mit",
+        description__: "besonderheit",
+      },
+      quickReply: {
+        title: "Schnellantwort-App",
+        description: "Erhalten Sie schnelle Antworten auf Direct",
+        description_: "mitteilungen",
+      },
+      todoList: {
+        title: "Aufgabenliste",
+        description: "Organisieren Sie Aufgaben mit der To-Do-Liste",
+        description_: "besonderheit",
+      },
+    },
+
+    features: {
+      title: "Besondere Merkmale",
+      description: "Steigern Sie Ihre Produktivität, indem Sie alle Ihre Arbeitswerkzeuge an einem Ort zusammenstellen",
+      avatar: {
+        title: "Animierte Avatar Lounge",
+        description: "Erstellen und animieren Sie Ihren eigenen Avatar in der Avatar-Lounge",
+      },
+      files: {
+        title: "Unternehmensdateis",
+        description: "Greifen Sie bei ZuriChat auf Ihre Dateien auf Google Drive zu.",
+      },
+      accessibility: {
+        title: "Barrierefreiheit",
+        description: "Behalten Sie die Kontrolle, verwenden Sie ZuriChat und genießen Sie",
+        description_: "die besten Zugänglichkeitsfunktionen"
+      },
+      goals: {
+        title: "Unternehmensziele",
+        description: "Bleiben Sie mit den Unternehmenszielen auf dem Laufenden",
+        description_: "direkt in ZuriChat"
+      },
+    },
+
+    cta: {
+      title: "Was auch immer Sie tun, Sie können es im Zuri Chat tun",
+      link_sales: "Sprechen Sie mit dem Vertrieb",
+      link_try: "Kostenlos ausprobieren"
+    },
+    
   careers:{
     title: {
       careers: "Karriere"
