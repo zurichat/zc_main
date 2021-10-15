@@ -119,3 +119,21 @@
 .optSelect {
   width: 60%;
 }
+@media screen and (max-width: 768px) {
+  .selectbox{
+    width: 100%;
+    max-width: 100%;
+  }
+  .optSelect{
+    width: 100%;
+  }
+  .note{
+    width: 95%;
+  }
+  .optSelect{
+    margin-bottom: 10px;
+  }
+  .auto{
+    padding-bottom: 0%;
+  }
+}

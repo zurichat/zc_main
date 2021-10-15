@@ -153,9 +153,11 @@ export const StyledProfileWrapper = styled.section`
             height: 100%;
           }
         }
-        .css-7pwich-Input,
         .css-319lph-ValueContainer {
           padding: 0 1rem;
+        }
+        .css-7pwich-Input {
+          padding: 0;
         }
         .css-1s2u09g-control {
           font-size: 1rem;
