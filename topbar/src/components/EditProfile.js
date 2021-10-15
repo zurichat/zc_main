@@ -167,7 +167,7 @@ const EditProfile = () => {
                   </label>
                   <input
                     type="text"
-                    className="input"
+                    className="input my-0"
                     id="name"
                     defaultValue={state.name}
                     onChange={e => setState({ name: e.target.value })}
@@ -353,7 +353,7 @@ const EditProfile = () => {
                 </label>
                 <div
                   role="button"
-                  className="rmvBtn"
+                  className="rmvBtn mt-2"
                   onClick={handleImageDelete}
                 >
                   Remove Image
