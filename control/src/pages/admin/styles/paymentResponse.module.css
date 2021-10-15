@@ -1,0 +1,71 @@
+.backDrop {
+  display: block;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.successCard,
+.failedCard {
+  margin: 10% auto;
+  padding: 1em;
+  width: 40%;
+  position: relative;
+  z-index: 999;
+  background-color: white;
+  border-radius: 4px;
+}
+
+@media and screen (min-width: 325px) and (max-width: 800px) {
+  .successCard {
+    width: 320px;
+  }
+}
+
+.successCard img {
+  padding: 35px;
+
+  border-radius: 50%;
+  background: #e0fff5;
+}
+
+.failedCard img {
+  width: 74px;
+  height: 64px;
+}
+
+.successHead {
+  font-size: 18px;
+  font-weight: 21.6px;
+  color: #333333;
+  margin-top: 10px;
+}
+
+.successInfo {
+  font-size: 15px;
+  line-height: 19.5px;
+  color: #616061;
+  margin-top: 2px;
+}
+
+.successMore {
+  font-size: 16px;
+  color: #00b87c;
+  line-height: 19.5px;
+  cursor: pointer;
+  align-self: center;
+  margin-bottom: 0 !important;
+}
+
+.failedHead {
+  font-size: 18px;
+  font-weight: 21.6px;
+  color: #f40101;
+  margin-top: 10px;
+}

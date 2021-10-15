@@ -79,8 +79,7 @@ const Preferences = () => {
           {sideBar === 4 && <MessagesMedia />}
           {sideBar === 5 && <LanguageAndRegion />}
           {/* {sideBar === 6 && <Accessibility />} */}
-          {sideBar === 7 && <MarkAsRead />}
-
+          {/* {sideBar === 7 && <MarkAsRead />} */}
           {sideBar === 9 && <AdvancedSettings />}
         </div>
       </div>
