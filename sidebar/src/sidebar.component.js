@@ -16,8 +16,8 @@ import Header from "./components/Header"
 import Invite from "./components/Invite"
 import Room from "./components/Room"
 import SingleRoom from "./components/SingleRoom"
+import Category from "./components/Category"
 import { dummySidebar } from "./components/dummySidebar"
-
 
 const Sidebar = props => {
   let currentWorkspace = localStorage.getItem("currentWorkspace")
@@ -28,89 +28,54 @@ const Sidebar = props => {
     setnullValue(1)
   }, [])
 
-  {
-    //Listening for sidebar update
-    nullValue === 1 &&
-      dummySidebar &&
-      SubscribeToChannel(
-        `${currentWorkspace}_${props.state.user[0].org_id}_sidebar`,
-        ctx => {
-          const websocket = ctx.data
-          if (websocket.event === "sidebar_update") {
-            let sidebar_update = { [websocket.plugin_id]: websocket.data }
-            //Update sidebar with recent changes
-            props.dispatch({
-              type: ACTIONS.UPDATE_PLUGINS,
-              payload: sidebar_update
-            })
+  useEffect(() => {
+    {
+      //Listening for sidebar update
+      nullValue === 1 &&
+        dummySidebar &&
+        SubscribeToChannel(
+          `${currentWorkspace}_${props.state.user[0]._id}_sidebar`,
+          ctx => {
+            const websocket = ctx.data
+            // console.log("websocket", websocket)
+            if (websocket.event === "sidebar_update") {
+              let sidebar_update = { [websocket.plugin_id]: websocket.data }
+              //Update sidebar with recent changes
+              props.dispatch({
+                type: ACTIONS.UPDATE_PLUGINS,
+                payload: sidebar_update
+              })
+            }
           }
-        }
-      )
-  }
+        )
+    }
+  }, [])
+  
 
   return (
     <div className={`container-fluid ${styles.sb__container}`}>
       <Header state={props.state} />
       <div className={`${styles.subCon2}`}>
         <Fragment>
-          <Room name="Threads" image={threadIcon} />
+          {/* <Room name="Threads" image={threadIcon} />
           <Room name="All DMs" image={dmIcon} />
           <Room name="Drafts" image={draftIcon} />
-          <Room name="Plugins" image={pluginIcon} />
-          {/* <Room name="Threads" image={threadIcon} icon={infoIcon} />
-          <Room name="All DMs" image={dmIcon} icon={infoIcon} />
-          <Room name="Drafts" image={draftIcon} icon={infoIcon} />
-          <Room name="Plugins" image={pluginIcon} icon={addIcon} link="/marketplace" /> */}
-
-          {/* company files plugin */}
-          {dummySidebar &&
-            Object.keys(dummySidebar).map((plugin, index) => {
-              return dummySidebar[plugin].name === "Company Files" ? (
-                <SingleRoom
-                  details={dummySidebar[plugin]}
-                  key={Math.random()}
-                />
-              ) : null
-            })}
-
-          {/* Chess plugin */}
-          {dummySidebar &&
-            Object.keys(dummySidebar).map((plugin, index) => {
-              return dummySidebar[plugin].name === "Chess Plugin" ? (
-                <SingleRoom
-                  details={dummySidebar[plugin]}
-                  key={Math.random()}
-                />
-              ) : null
-            })}
-
-          {/* Noticeboard plugin */}
-          {dummySidebar &&
-            Object.keys(dummySidebar).map((plugin, index) => {
-              return dummySidebar[plugin].name ===
-                "Noticeboard Plugin" ? (
-                <SingleRoom
-                  details={dummySidebar[plugin]}
-                  key={Math.random()}
-                />
-              ) : null
-            })}
+  <Room name="Plugins" image={pluginIcon} />*/}
 
           {/* SIDE BAR DATA */}
-          {dummySidebar &&
-            Object.keys(dummySidebar).map((plugin, index) => {
-              return dummySidebar[plugin].name !== "Chess Plugin" &&
-                dummySidebar[plugin].name !== "Company Files" &&
-                dummySidebar[plugin].name !== "Noticeboard Plugin" ? (
-                <DropDown
-                  itemName={dummySidebar[plugin].name}
-                  id={dummySidebar.name}
-                  key={index}
-                  items={dummySidebar[plugin]}
-                />
-              ) : null
-            })}
+          <SingleRoom name="Threads" image={threadIcon} />
+          <SingleRoom name="All Dms" image={dmIcon} />
+          <SingleRoom name="Drafts" image={draftIcon} />
 
+          <SingleRoom name="Plugins" image={pluginIcon} link="/marketplace" />
+
+          <Category name="games" state={props.state} />
+          <Category name="utility" state={props.state} />
+          <Category name="tools" state={props.state} />
+          <Category name="productivity" state={props.state} />
+
+          <Category name="channels" state={props.state} />
+          <Category name="direct messages" state={props.state} />
           {/* button for inviting users to workspace */}
           <Invite state={props.state} />
         </Fragment>
@@ -119,3 +84,8 @@ const Sidebar = props => {
   )
 }
 export default Sidebar
+
+/*
+  create a category file
+  accept props and populate the data
+*/

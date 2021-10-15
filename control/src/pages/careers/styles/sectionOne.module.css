@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
 
 * {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -21,7 +21,7 @@ button:hover {
   width: 100%;
 }
 .section1Left {
-  width: 60%;
+  width: 80%;
   margin-top: 15%;
   padding: 3rem;
 }
@@ -43,6 +43,7 @@ button:hover {
   color: white;
   background-color: #00b87c;
   border: none;
+  float: left;
 }
 /* 
 @media screen and (max-width: 1024px) {

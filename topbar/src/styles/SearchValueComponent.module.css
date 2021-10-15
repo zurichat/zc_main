@@ -1,0 +1,43 @@
+.card_cont {
+    display: flex;
+    align-items: flex-start;
+    margin: .5em 0;
+    cursor: pointer;
+}
+
+.resultCard {
+    border: 1px solid #1d1c1d21;
+    border-radius: .6em;
+    padding: .5em 1em;
+    margin: .5em 0;
+}
+
+.result_plugin {
+    font-weight: 700;
+    color: rgba(0, 184, 124, 1);
+}
+
+.card_desc {
+    padding: 0 .5em;
+    max-width: 500px;
+}
+
+.created_date {
+    font-weight: 400;
+    color: #1D1C1D;
+    padding: 0 .5em;
+}
+
+.result_card_title {
+    font-size: 15px;
+    color: #1a1a1a;
+    line-height: 1.46668;
+    font-weight: 400;
+    font-weight: 900;
+}
+
+.result_card_time {
+    font-weight: 400;
+    font-size: .7em;
+    padding: .3em 0;
+}
