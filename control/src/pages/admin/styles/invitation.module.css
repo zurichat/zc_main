@@ -1,0 +1,230 @@
+.inviteContainer {
+  /* display: flex;
+  justify-content: center;
+  align-items: flex-start; */
+  margin-top: 4rem;
+  font-family: "lato", sans-serif;
+}
+
+/* .contentWrapper {
+  width: 100%;
+  max-width: 914px;
+} */
+
+.invitesHeader {
+  /* margin-left: 150px; */
+  padding: 0px 80px 0 80px;
+}
+
+.invitesHeaderContent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.invitesHeaderTxt {
+  width: 70%;
+}
+
+.invitesHeaderTitle {
+  font-family: "lato", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.invitesDescr {
+  font-family: "lato", sans-serif;
+  font-size: 16px;
+  line-height: 1.466;
+  font-weight: 400;
+}
+
+.invitesBtn {
+  font-family: "lato", sans-serif;
+  font-size: 15px;
+  height: 36px;
+  padding: 2px 12px 2px 12px;
+  min-width: 80px;
+  background: #07b87c;
+  font-weight: 900;
+  box-shadow: none;
+  color: #fff;
+  transition: all 80ms linear;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  white-space: nowrap;
+}
+
+a:link {
+  font-size: 15px;
+  line-height: 1.466;
+  font-weight: 400px;
+  padding-left: 4px;
+}
+
+.tabMenu {
+  display: block;
+  border-bottom: 1px solid #ddd;
+  box-shadow: inset 0 -1 0 0 #ddd;
+  position: relative;
+  z-index: 1;
+}
+
+.invitesTab .tabMenu {
+  margin: 0 80px;
+}
+
+.btnTab:not(:last-child) {
+  margin-right: 20px;
+}
+
+.btnTab {
+  font-family: "lato", sans-serif;
+  outline: 0;
+  color: #616061;
+  font-size: 13px;
+  line-height: 1.38;
+  font-weight: 700;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 0;
+  margin: 0 8px;
+  text-align: center;
+  transition: box-shadow 0.125s ease-out;
+}
+
+.btnTab:active {
+  outline: 0;
+  color: #1d1c1d;
+  box-shadow: inset 0 -2px 0 0 #07b87c;
+}
+.btnTab:hover {
+  outline: 0;
+  color: #1d1c1d;
+  box-shadow: inset 0 -2px 0 0 #07b87c;
+  transition: box-shadow 0.125s ease-out;
+}
+
+.tabPanel {
+  display: block;
+  outline: none;
+  width: 100%;
+}
+
+.invitesSearchCon {
+  display: block;
+  padding: 0 80px 20px 80px;
+  border-bottom: 3px solid #ddd;
+}
+
+.inputContainer {
+  margin-top: 16px;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #616061;
+  display: flex;
+  padding: 0 8px;
+  font-size: 15px;
+  line-height: 1.46;
+  font-weight: 400;
+  height: 46px;
+}
+
+.inputContainer:active {
+  box-shadow: 0 0 0 1px #07b87c, 0 0 0 5px rgba(29, 155, 209 / 30%);
+  border-radius: 4px;
+  border-color: #07b87c;
+}
+
+.inputBox[type="text"][placeholder] {
+  font-family: "lato", sans-serif;
+  text-overflow: ellipsis;
+  color: #1d1c1d;
+  background-color: #fff;
+  padding-left: 8px;
+}
+
+.inputBox[type="text"] {
+  font-family: "lato", sans-serif;
+  max-width: 100%;
+  line-height: normal;
+  width: 100%;
+  height: auto;
+  flex-grow: 1;
+  margin: 0;
+  padding: 0 8px;
+  border: none;
+  font-size: 13px;
+  outline: none;
+  font-weight: 400;
+  color: #1d1c1d;
+}
+
+.adminInviteContainer {
+  background: #fff;
+}
+
+.adminInviteRes {
+  background-color: #fff;
+  padding: 80px;
+  height: 100vh;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 400;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .inviteContainer {
+    max-width: 700px;
+  }
+
+  .invitesHeader {
+    padding: 10px 40px 0 40px;
+  }
+
+  .invitesSearchCon {
+    display: block;
+    padding: 0 40px 20px 40px;
+    border-bottom: 3px solid #ddd;
+  }
+
+  .invitesTab .tabMenu {
+    margin: 0 40px;
+  }
+}
+
+@media (max-width: 375px) {
+  invitesHeaderTitle {
+    font-family: "lato", sans-serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1.5rem;
+  }
+
+  .invitesDescr {
+    font-family: "lato", sans-serif;
+    font-size: 14px;
+    line-height: 1.466;
+    font-weight: 400;
+  }
+
+  .invitesBtn {
+    font-family: "lato", sans-serif;
+    font-size: 13px;
+  }
+}
