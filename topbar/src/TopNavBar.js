@@ -1,7 +1,7 @@
 import { useState, useContext, useCallback, useEffect } from "react"
 import { ProfileContext } from "./context/ProfileModal"
 import { TopbarContext } from "./context/Topbar"
-import { connect } from "react-redux"
+// import { connect } from "react-redux"
 import zurichatlogo from "./assets/images/zurilogo.svg"
 import styled from "styled-components"
 import ReactTooltip from "react-tooltip"
@@ -26,7 +26,7 @@ import SearchAutocomplete from "../src/components/SearchAutocomplete"
 import { navigateToUrl } from "single-spa"
 import { BigModal } from "./components/bigModal"
 
-const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
+const TopNavBar = () => {
   const { closeModal, openModal, presence, setPresence } =
     useContext(TopbarContext)
   const { setUser, user, userProfileImage, setOrgId, setUserProfileImage } =
@@ -40,15 +40,6 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const [messages, setMessages] = useState("")
   const [isSearchOpen, setOpenSearch] = useState(false)
   const [searchValue, setSearchValue] = useState("")
-
-  const onSearchSubmit = e => {
-    if (e.keyCode === 13 && searchValue.length >= 1) {
-      setOpenSearch(true)
-    }
-  }
-  const onSearchChange = value => {
-    setSearchValue(value)
-  }
 
   useEffect(() => {
     // const fetchUser = async () => {
@@ -298,10 +289,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           border={"#99999933"}
         /> */}
         {/* <TopSearchBar onClick={() => setShowTopSearchModal(true)} /> */}
-        <TopBarSearchModal
-          onSearchEnter={onSearchSubmit}
-          onChange={onSearchChange}
-        />
+        <TopBarSearchModal />
         {/* <div>
             <form onSubmit={handleEnter}>
               <BaseInput
@@ -384,11 +372,11 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   )
 }
 
-const mapStateToProps = state => ({
-  userProfile: state
-})
+// const mapStateToProps = state => ({
+//   userProfile: state
+// })
 
-export default connect(mapStateToProps)(TopNavBar)
+export default TopNavBar
 
 //  TopNavBar
 

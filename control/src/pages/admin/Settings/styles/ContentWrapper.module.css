@@ -1,3 +1,30 @@
+.container {
+  width: 80%;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.contentHeading h1 {
+  font-size: 32px;
+  line-height: 2.5rem;
+  letter-spacing: -1px;
+}
+
+.contentHeading p {
+  font-size: 18px;
+}
+
+.contentHeading span {
+  cursor: pointer;
+  color: #00b87c;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.contentHeading span:hover {
+  border-bottom: 1px solid #00b87c;
+}
+
 .tabWrapper {
   width: 100%;
 }
@@ -6,7 +33,7 @@
 .tabHeaderActive {
   display: flex;
   align-items: center;
-  width: 80%;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
@@ -17,14 +44,15 @@
 
 .tabHeaderItem,
 .tabHeaderItemActive {
-  padding: 2% 3%;
+  padding: 1.5% 2.5%;
   border-radius: 4px 4px 0px 0px;
   font-size: 1.125rem;
   font-weight: 600;
   color: #333;
   cursor: pointer;
   margin-bottom: -1px;
-  transition: all .2s;
+  border: 1px solid transparent;
+  transition: all 0.2s;
 }
 
 .tabHeaderItemActive {
@@ -39,13 +67,12 @@
   color: #00b87c;
 }
 
-.tabContent {
-  width: 90%;
-  /* height: 100%; */
+.tabContents {
   min-height: 300px;
   background: #fff;
   border-radius: 0px 4px 4px 4px;
   border: 1px solid #dadada;
+  border-top: none;
   padding: 2.5rem;
   margin-bottom: 5rem;
 }
@@ -71,8 +98,8 @@
     display: flex;
     margin: 0 1px;
   }
-  
-  .tabContent {
+
+  .tabContents {
     margin-top: 3px;
     width: 100%;
   }
