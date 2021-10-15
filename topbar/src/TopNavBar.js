@@ -1,7 +1,7 @@
 import { useState, useContext, useCallback, useEffect } from "react"
 import { ProfileContext } from "./context/ProfileModal"
 import { TopbarContext } from "./context/Topbar"
-import { connect } from "react-redux"
+// import { connect } from "react-redux"
 import zurichatlogo from "./assets/images/zurilogo.svg"
 import styled from "styled-components"
 import ReactTooltip from "react-tooltip"
@@ -26,7 +26,7 @@ import SearchAutocomplete from "../src/components/SearchAutocomplete"
 import { navigateToUrl } from "single-spa"
 import { BigModal } from "./components/bigModal"
 
-const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
+const TopNavBar = () => {
   const { closeModal, openModal, presence, setPresence } =
     useContext(TopbarContext)
   const { setUser, user, userProfileImage, setOrgId, setUserProfileImage } =
@@ -372,11 +372,11 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   )
 }
 
-const mapStateToProps = state => ({
-  userProfile: state
-})
+// const mapStateToProps = state => ({
+//   userProfile: state
+// })
 
-export default connect(mapStateToProps)(TopNavBar)
+export default TopNavBar
 
 //  TopNavBar
 
