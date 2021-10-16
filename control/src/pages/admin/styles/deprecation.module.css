@@ -1,0 +1,63 @@
+
+.App{
+    margin:auto;
+    background: #FAF9F6;
+    margin-top:none;
+    }
+    .caps{
+      font-family: lato;
+      margin-left: 180px;
+    }
+    
+    .deprecate{
+      margin-left: 25px;
+      margin-top:15px;
+      width:320px;
+      height: 30px;
+    }
+    
+    .app_type{
+      margin-left: 20px;
+      margin-top: 15px;
+      width:200px;
+      height: 30px;
+    }
+    
+    .export{
+      display: inline;
+      margin-left: 260px;
+      color: white;
+    }
+    
+    .upper_second{
+      border: 1px solid wheat;
+      height: 60px;
+      width: 900px;
+      margin-left: 185px;
+      opacity:0.9;
+    }
+    
+    .firstline{
+      margin-left:180px;
+    }
+    
+    .secondline{
+      margin-left: 180px;
+    }
+    
+    .secondbox{
+      width: 900px; 
+    }
+    
+    .first{
+      display: flex;
+    }
+    .list{
+      display: flex;
+      justify-content: space-around;
+      margin-left: 100px;
+    }
+    
+    .apps_found{
+      margin-left: 550px;
+    }
