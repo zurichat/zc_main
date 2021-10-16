@@ -7,6 +7,7 @@ import { authAxios } from "./Utils/Api"
 
 const AboutWorkSpace = () => {
   const [orgDetails, setOrgdetails] = useState({})
+  const [items, setItems] = useState(null)
   const currentWorkspace = localStorage.getItem("currentWorkspace")
 
   if (!currentWorkspace) {
@@ -25,12 +26,32 @@ const AboutWorkSpace = () => {
       setOrgdetails(organization.data.data)
     } catch (err) {
       if (err) throw err
-
     }
   }
 
-  useEffect(async () => {
+  const workspaceuser = async () => {
+    try {
+      const response = await authAxios.get(
+        `/organizations/${currentWorkspace}/members`
+      )
+
+      if (!response) {
+        return null
+      }
+
+      const users = response.data.data.filter(function (item) {
+        return item.role === "owner" || item.role === "admin"
+      })
+
+      setItems(users)
+    } catch (error) {
+      if (error) throw error
+    }
+  }
+
+  useEffect(() => {
     getOrgDetails()
+    workspaceuser()
     //eslint-disable-next-line
   }, [])
 
@@ -45,6 +66,7 @@ const AboutWorkSpace = () => {
           <AboutWorkSpaceTabs
             organizationDetails={orgDetails}
             currentWorkspace={currentWorkspace}
+            admins={items}
           />
         </div>
       </div>
