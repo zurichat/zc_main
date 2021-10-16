@@ -278,7 +278,6 @@ input[type="radio"] {
   flex-direction: row;
   flex-wrap: wrap;
   list-style-type: none;
-  width: 140%;
 }
 
 .selectButton {

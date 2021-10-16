@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import SearchBar from "...topbar/src/components/SearchBar"
+import SearchBar from "./SearchBar"
 
 const clearSearchBar = () => {
   SearchBar("")
@@ -13,7 +13,7 @@ const buttonStyle = styled.button`
   font-size: 1rem;
   font-weight: 600;
   line-height: 24px;
-  border: none;
+  border: 0;
   transition: 200ms;
   outline: none;
   cursor: pointer;
