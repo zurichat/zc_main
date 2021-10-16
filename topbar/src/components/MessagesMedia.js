@@ -62,14 +62,13 @@ const MessagesMedia = () => {
             className={styles.radioInput}
             type="radio"
             value="cln"
-            checked={(message.theme === "clean", active1 === 0)}
+            checked={message.theme === "clean"}
             onClick={() => {
               if (message !== undefined) {
                 const newMessage = {
                   ...message,
                   theme: "clean"
                 }
-                setActive1(0)
                 setMessage(newMessage)
                 updateMessageSettings(newMessage)
               }
@@ -84,14 +83,13 @@ const MessagesMedia = () => {
             className={styles.radioInput}
             type="radio"
             value="com"
-            checked={(message.theme === "compact", active1 === 1)}
+            checked={message.theme === "compact"}
             onClick={() => {
               if (message !== undefined) {
                 const newMessage = {
                   ...message,
                   theme: "compact"
                 }
-                setActive1(1)
                 setMessage(newMessage)
                 updateMessageSettings(newMessage)
               }
@@ -123,50 +121,48 @@ const MessagesMedia = () => {
         )}
       </div> */}
       {/* <div className={styles.bottom}></div> */}
-      <div className={styles.name}>Name</div>
-      <div className={styles.full}>
-        <div className={styles.radio2}>
+      <div className={standardStyles.labelTextHeader}>Name</div>
+      <div className={standardStyles.labelContainer}>
+        <div>
           <input
-            className={styles.radioInput}
+            className={standardStyles.labelRadioButton}
             type="radio"
             value="ful"
-            checked={(message.names === "Zuri Ananda", active2 === 0)}
+            checked={message.names === "Zuri Ananda"}
             onClick={() => {
               if (message !== undefined) {
                 const newMessage = {
                   ...message,
                   names: "Zuri Ananda"
                 }
-                setActive2(0)
                 setMessage(newMessage)
                 updateMessageSettings(newMessage)
               }
             }}
           />
         </div>
-        <div className={styles.display}>Full & display names</div>
+        <div className={standardStyles.labelSubtext}>Full & display names</div>
       </div>
-      <div className={styles.just}>
-        <div className={styles.radio3}>
+      <div className={standardStyles.labelContainer}>
+        <div>
           <input
-            className={styles.radioInput}
+            className={standardStyles.labelRadioButton}
             type="radio"
             value="jst"
-            checked={(message.names === "Zuri", active2 === 1)}
+            checked={message.names === "Zuri"}
             onClick={() => {
               if (message !== undefined) {
                 const newMessage = {
                   ...message,
                   names: "Zuri"
                 }
-                setActive2(1)
                 setMessage(newMessage)
                 updateMessageSettings(newMessage)
               }
             }}
           />
         </div>
-        <div className={styles.jst}>Just display names</div>
+        <div className={standardStyles.labelSubtext}>Just display names</div>
       </div>
       {/* <div className={styles.img12}>
         {active1 == 0 && (
@@ -192,10 +188,13 @@ const MessagesMedia = () => {
         )}
       </div> */}
       <div className={styles.change}>
-        To change your full or display name, head to
-        <span style={{ color: "#00B87C" }}> your profile.</span>
+        To change your full or display name, go to
+        <span style={{ color: "#00B87C", cursor: "pointer" }}>
+          {" "}
+          your profile.
+        </span>
       </div>
-      <div className={styles.bottom2}></div>
+      <div className={standardStyles.hrLine}></div>
       {/* <div className={styles.add}>Additional options</div> */}
       {/* <div className={styles.info}>
         <form onSubmit={handleSubmit}>
@@ -283,15 +282,15 @@ const MessagesMedia = () => {
         </div>
       </div> */}
       {/* <div className={styles.bottom3}></div> */}
-      <div className={styles.emoji}>Emoji</div>
+      <div className={standardStyles.labelTextHeader}>Emoji</div>
       <div className={styles.tone}>Default Skin Tone</div>
       <p className={styles.choose}>
         Choose the default skin tone that will be used whenever you use certain
         emojis in
       </p>
-      <p className={styles.choose2}>reactions and messages.</p>
+      <p className={standardStyles.labelTextHeader}>Reactions and messages.</p>
       <div className={styles.hands}>
-        <div autoFocus tabIndex="-1" className={styles.emojiBox}>
+        <div tabIndex="-1" className={styles.emojiBox}>
           <img src={theme13} alt="theme13" className={styles.theme13} />
         </div>
         <div tabIndex="-1" className={styles.emojiBox}>
@@ -494,4 +493,3 @@ const MessagesMedia = () => {
   )
 }
 export default MessagesMedia
-
