@@ -7,8 +7,8 @@ import style from "../Style/createBlog.module.css"
 import converter from "html-to-markdown"
 import * as Yup from "yup"
 import { Formik } from "formik"
-import { CKEditor } from "@ckeditor/ckeditor5-react"
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic"
+// import { CKEditor } from '@ckeditor/ckeditor5-react';
+// import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 // import Base64UploadAdapter from "@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter"
 import {
   Box,
@@ -246,14 +246,14 @@ const CreateBlog = () => {
               /> */}
               <Box sx={{ paddingTop: "30px" }}>
                 <FormControl isInvalid={errors.content}>
-                  <CKEditor
+                  {/* <CKEditor
                     id='content'
                     editor={ClassicEditor}
                     data=''
                     onChange={(event, editor) => {
                       setEditorContent(editor.getData())
                     }}
-                  />
+                  /> */}
                   <FormErrorMessage sx={{ color: "red" }}>
                     {errors.content}
                   </FormErrorMessage>
