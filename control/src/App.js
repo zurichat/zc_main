@@ -56,7 +56,7 @@ import ZurichatBlog from "./pages/blogs/components/zurichatBlog"
 import Ebooks from "./pages/ebooks"
 import Invitation from "./pages/admin/Invitation"
 import Whyzurichat from "./pages/WhyZuriChat/Whyzurichat"
-
+import Gateways from "./pages/admin/gateways/components/gateways"
 import OnboardingHelp from "./pages/LoginSignUpHelp/index"
 
 
@@ -192,6 +192,7 @@ const App = () => {
         <PrivateRoute path="/settings" exact component={Settings} />
         <PrivateRoute path="/admin/settings" exact component={SettingsHome} />
         <PrivateRoute path="/admin/settings/home" exact component={Home} />
+        <PrivateRoute path="/components/gateways" exact component={Gateways} />
         <PrivateRoute
           path="/admin/settings/billings"
           exact
