@@ -11,7 +11,7 @@
 }
 
 .icon {
-  color: #333;
+  color: #489379;
 }
 
 .contentHeading {
@@ -21,7 +21,7 @@
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.3rem;
 }
 
 @media (max-width: 500px) {
