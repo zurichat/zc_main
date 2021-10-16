@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import {ArrowDropDown, VolumeUp, CheckCircle} from "@material-ui/icons";
-import {Howler, Howl} from "Howler" 
-import { GetUserInfo, SubscribeToChannel } from "@zuri/utilities"
+import {Howl} from "howler" 
 
 //SoundArray
 const Sounds = [
@@ -40,10 +39,9 @@ const playSound = (src) => {
 //Notification tab
 const NotificationTab = ({ toggleState }) => {
   const [notify, setNotify] = useState("https://notificationsounds.com/storage/sounds/file-b8_discreet-song.mp3");
+
+  const userInfo = JSON.parse(sessionStorage.getItem('user'));
   
-
-  const userInfo = JSON.parse(sessionStorage.getItem('user'))
-
   const PreviewSound = (e)=> {
     e.preventDefault();
     playSound(notify)
