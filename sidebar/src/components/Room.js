@@ -15,7 +15,7 @@ export default function Room({ items, isOpen }) {
       {items.joined_rooms &&
         items.joined_rooms.map((room, idx) => {
           if (room.room_name !== undefined) {
-            return <RoomItem room={room} key={idx} />
+            return <RoomItem room={room} key={idx} baseUrl={items.baseUrl}/>
           }
         })}
     </ul>

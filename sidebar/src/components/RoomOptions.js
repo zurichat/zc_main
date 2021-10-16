@@ -2,10 +2,9 @@ import React, { useState } from "react"
 import styles from "../styles/ModalComponentStyles.module.css"
 import axios from "axios"
 
-const RoomOptions = ({ isClicked, position, room }) => {
+const RoomOptions = ({ isClicked, position, room, baseUrl }) => {
   // const isClicked = true;
   const room_Id = room.room_url.split("/")[2]
-  const baseUrl = room.room_url.split("/")[0]
   const org = localStorage.getItem("currentWorkspace")
   const orgs = sessionStorage.getItem("organisations")
   const member_id = orgs.filter(x => x.id == org)[0].member_id
@@ -30,7 +29,7 @@ const RoomOptions = ({ isClicked, position, room }) => {
         }
       : {
           top: `${position.y}px`,
-          
+
           left: `${position.x + 5}px`
         }
 
