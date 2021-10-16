@@ -62,6 +62,7 @@ const Tab = () => {
             // onClick={() => toggleTab(3)}
             onClick={() => {
               history.push("/home")
+  
             }}
           >
             Profile
