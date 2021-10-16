@@ -1,0 +1,239 @@
+/** @format */
+
+.membersWrap {
+  padding: 0;
+  margin: 0 auto;
+  padding: 1rem;
+  font-size: 0.9rem;
+  font-family: "sans-serif";
+}
+
+.banner {
+  background-color: rgba(48, 127, 174, 0.3);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  margin-bottom: 2rem;
+  font-family: "sans-serif";
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 1rem;
+}
+
+.mainHeading {
+  font-size: 2.4rem;
+}
+
+.header button {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.btn1 {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  margin-right: 20px;
+  background-color: #ffffff;
+}
+
+.btn2 {
+  border-radius: 8px;
+  border: none;
+  padding: 12px;
+  color: #ffffff;
+  background-color: #215c15;
+}
+
+.btn2:hover {
+  box-shadow: 0.6px 1px 7px -2px #464545;
+}
+
+.listTop {
+  /* position: ; */
+  width: 100%;
+  display: flex;
+  column-gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.searchMembers {
+  margin-top: 20px;
+  width: 80%;
+  padding: 8px 20px 8px 60px;
+  background-image: url("../icons/search.svg");
+  background-repeat: no-repeat;
+  background-position: 20px center;
+  background-size: 1.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
+.searchMembers:hover {
+  border-color: #464545;
+}
+
+.searchMembers:focus {
+  border: 1px solid rgb(101, 151, 208);
+  box-shadow: 0.1px -0.5px 0px 4px rgba(146, 186, 233, 0.5);
+}
+
+.filter {
+  width: 15%;
+  width: 100px;
+  margin-top: 20px;
+  padding: 8px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.btn1:hover,
+.filter:hover {
+  background-color: rgba(235, 231, 231, 0.3);
+}
+
+.emptySearch {
+  display: absolute;
+  padding: 8rem;
+  /* left: 50%; */
+  text-align: center;
+  color: #464545;
+}
+
+.table {
+  background-color: #ffffff;
+}
+
+.table .tableWrap {
+  width: 100vw;
+  margin: auto;
+  table-layout: fixed;
+  height: 400px;
+}
+
+.table .tableHead,
+.table .tableBody .tableRow {
+  width: 100%;
+}
+
+.table .tableHead .heading:hover,
+.table .tableBody .heading:hover {
+  background-color: rgba(235, 231, 231, 0.3);
+}
+
+.table {
+  display: block;
+  overflow: auto;
+  /* height:200px; */
+  width: 100%;
+}
+
+.table .tableWrap,
+.tableHead,
+.tableBody,
+.tableRow {
+  width: 100%;
+}
+
+.heading {
+  width: 25%;
+}
+
+.heading:last-child {
+  width: 5%;
+}
+
+.headingList {
+  margin-top: 2rem;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  column-gap: 2rem;
+}
+
+.heading {
+  font-weight: bold;
+  text-align: left;
+  font-size: 12px;
+  padding: 1rem;
+  color: #333333;
+}
+
+.membersList {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* member details */
+
+.memRow2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 1rem;
+  text-align: left;
+  font-family: "sans-serif";
+}
+
+.memRow2 img {
+  height: 36px;
+  width: 36px;
+  border-radius: 4px;
+  align-self: flex-end;
+}
+
+.memCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.3rem;
+}
+
+.memName {
+  font-size: 0.9rem;
+  font-weight: 600;
+  align-self: flex-start;
+  font-family: "sans-serif";
+}
+
+.memRow {
+  display: flex;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #333;
+  font-size: 0.7rem;
+  column-gap: 0.6rem;
+}
+
+.memName1 {
+  min-width: 60px;
+}
+
+.member {
+  border-top: 1px solid #ccc;
+  padding: 1.4rem;
+}
+
+/* .optionsBtn:hover {
+  /* background-color: #8a7e7e; */
+
+/**
+ *
+ * @format
+ * @media screen and (min-width: 868px) {
+ * @media screen and (max-width: 868px) and (min-width: 510px) {
+ * @media screen and (max-width: 510px) {
+ */
