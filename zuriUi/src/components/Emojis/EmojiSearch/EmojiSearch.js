@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from "react"
-
-import "./EmojiSearch.css"
+import styles from "./EmojiSearch.module.css"
 const SearchBar = ({ handleCategory, newcategory, handleChangeValue }) => {
   const searchBar = useRef()
   useEffect(() => {
@@ -19,7 +18,7 @@ const SearchBar = ({ handleCategory, newcategory, handleChangeValue }) => {
       ref={searchBar}
       type="text"
       placeholder="Search emoji..."
-      className="zc-ems-emojiinput"
+      className={styles.zcemsemojiinput}
       onChange={onChange}
     />
   )
