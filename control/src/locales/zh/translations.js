@@ -2,6 +2,9 @@ export const TRANSLATIONS_ZH = {
   header: {
     language_select: "改变语言"
   },
+
+
+  // Landing Page
   landing: {
     title: {
       landing: ""
@@ -92,6 +95,8 @@ export const TRANSLATIONS_ZH = {
     }
   },
 
+
+  // Pricing Page
   pricing: {
     title: {
       pricing: "定价 - Zuri Chat"
@@ -129,6 +134,7 @@ export const TRANSLATIONS_ZH = {
   },
 
 
+  // Plugin Page
   plugin: {
     title: {
       plugin: "连接和互动"
@@ -301,7 +307,7 @@ export const TRANSLATIONS_ZH = {
   },
         
 
-
+  // About Page
   about: {
     title: {
       about: ""
@@ -392,7 +398,7 @@ export const TRANSLATIONS_ZH = {
   },
 
 
-  
+  // career Page
   careers: {
       title: {
         careers: "职业"
@@ -461,8 +467,10 @@ export const TRANSLATIONS_ZH = {
             "Zuri 支付 100% 的保费。我们还提供一系列免费的心理健康和福祉资源。"
         }
       },
+  },
 
     
+  // Login Page    
   login:{
     title: "登录 - Zuri 聊天",
     form: {
@@ -491,6 +499,7 @@ export const TRANSLATIONS_ZH = {
   },
 
 
+  // All Download Pages
   download_desktop: {
     title: {
       download: ""
@@ -608,4 +617,29 @@ export const TRANSLATIONS_ZH = {
       download_ios: "为 Mac 下载？"
     }
   },
+
+
+  // Workspace Page
+  workspace:{
+    title: {
+      workspace :"工作区 - Zuri 聊天"
+    },
+
+    space:{
+      headline: "选择工作区",
+      post_headline: "欢迎回来！选择一个重新与您的团队合作",
+      join_line: "想与另一个小组合作吗？或负责并开始自己的团队",
+      joinbtn: "创建工作区",
+      foot_head: "没有看到您的工作区？",
+      foot_link: "尝试其他电子邮件",
+      open: "打开",
+      selected: "选中",
+      errno: "四百〇一",
+      errmsg: "您还没有登录！",
+      errlink: "这里登录。",
+      err_no: "四百〇四",
+      err_msg: "哎呀！出事了！去",
+      err_link: "zuri.chat"
+    }
+  }  
 }
