@@ -3,7 +3,7 @@
 .sb__container {
   font: "Lato", sans-serif;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: var(--bg-color);
+  background-color:inherit;
   padding-block-end: 3em;
   height: 100%;
   width: unset;
@@ -101,7 +101,7 @@
 }
 
 .item_p {
-  color: #454545;
+  color: var(--text-color-normal);
   padding-inline-start: 0.5rem;
   font-size: 18px;
   line-height: 28px;

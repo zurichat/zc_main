@@ -77,7 +77,7 @@ const WorkSpaceIconTab = () => {
       .catch(err => {
         console.error(err)
       })
-  }, [orgData])
+  }, [])
 
   const handleLogoDelete = () => {
     setLoader({ ...loader, removeLoader: true })
