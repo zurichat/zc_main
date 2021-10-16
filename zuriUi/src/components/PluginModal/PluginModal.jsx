@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@reach/tabs"
 import "@reach/tabs/styles.css"
 import { DialogOverlay, DialogContent } from "@reach/dialog"
@@ -7,18 +7,22 @@ import styled from "styled-components"
 import EditTopicModal from "../Edit_Leave_Modals/EditTopicModal"
 import EditDescriptionModal from "../Edit_Leave_Modals/EditDescriptionModal"
 import LeaveChannelModal from "../Edit_Leave_Modals/LeaveChannelModal"
+import AddMemberModal from "./AddMemberModal"
+import RemoveMemberModal from "./RemoveMemberModal"
 import DeleteChannel from "../delete_archive_channel/DeleteChannel"
 import ArchiveChannel from "../delete_archive_channel/ArchiveChannel"
 import { RiDeleteBinLine, RiDeleteBin7Fill } from "react-icons/ri"
 import {
   AiOutlineUserAdd,
-  AiOutlineBell,
+  AiOutlineSearch,
   AiOutlineClose,
   AiOutlineStar,
   AiOutlineLock
 } from "react-icons/ai"
+import { ListGroup } from "react-bootstrap"
+import axios from "axios"
 
-function PluginModal({ close, showDialog, tabIndex }) {
+function PluginModal({ close, showDialog, tabIndex, config }) {
   const [showEditTopicModal, setShowEditTopicModal] = useState(false)
   const [showEditDescriptionModal, setEditDescriptionModal] = useState(false)
   const [showLeaveChannelModal, setShowLeaveChannelModal] = useState(false)
@@ -70,7 +74,7 @@ function PluginModal({ close, showDialog, tabIndex }) {
                 />
               </TabPanel>
               <TabPanel>
-                <MembersPanel />
+                <MembersPanel config={config} />
               </TabPanel>
               <TabPanel>
                 <Integration />
@@ -181,25 +185,103 @@ function AboutPanel({
 //         {...props}/>
 //       )
 //   }
-function MembersPanel() {
+function MembersPanel({ config }) {
+  const { membersList, addmembersevent, removememberevent } = config.roomInfo
+  const [addModalShow, setaddModalShow] = useState(false)
+  const [removeModalShow, setremoveModalShow] = useState(false)
+  const [selectedMember, setSelectedMember] = useState(null)
+  const [isLoading, setisLoading] = useState(false)
+  const [userList, setUserList] = useState([])
+
+  const handleClose = () => {
+    setaddModalShow(false)
+    setremoveModalShow(false)
+  }
+
+  const handleaddModalShow = () => setaddModalShow(true)
+  const handleremoveModalShow = () => setremoveModalShow(true)
+
+  const addMembersEvent = values => {
+    addmembersevent(values)
+  }
+
+  const removeMemberEvent = id => {
+    removememberevent(id)
+  }
+
+  const removeMemberHandler = member => {
+    setSelectedMember(member)
+    handleremoveModalShow()
+  }
+
+  useEffect(() => {
+    const currentWorkspace = localStorage.getItem("currentWorkspace")
+    const token = sessionStorage.getItem("token")
+    axios.get(`https://api.zuri.chat/organizations/${currentWorkspace}/members`, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then(r => {
+        const users = r.data.data.map(item => {
+          return { value: item._id, label: item.email }
+        })
+        setUserList(users)
+      })
+      .catch(e => console.log("Organization not returning members", e))
+    setisLoading(true)
+  }, [])
+
   return (
     <div>
-      <Selection>
-        <AiOutlineBell
-          style={{
-            position: "absolute",
-            marginLeft: "10px",
-            marginBottom: "10px"
-          }}
+      <AddMemberModal
+        show={addModalShow}
+        isLoading={isLoading}
+        handleShow={handleaddModalShow}
+        handleClose={handleClose}
+        addMembersEvent={addMembersEvent}
+        userList={userList}
+      />
+
+      {selectedMember && (
+        <RemoveMemberModal
+          show={removeModalShow}
+          handleShow={handleremoveModalShow}
+          handleClose={handleClose}
+          removeMemberEvent={removeMemberEvent}
+          member={selectedMember}
         />
-        <MembersInput type="text" placeholder="Find members" />
-      </Selection>
-      <AddPeopleIcons>
-        <UserIcon>
-          <AiOutlineUserAdd size="30px" />
-        </UserIcon>
-        Add People
-      </AddPeopleIcons>
+      )}
+      {/* <Card> */}
+      <ListGroup variant="flush">
+        <ListGroup.Item>
+          <Selection>
+            <AiOutlineSearch
+              style={{
+                position: "absolute",
+                marginLeft: "10px"
+              }}
+            />
+            <MembersInput type="text" placeholder="Find members" />
+          </Selection>
+        </ListGroup.Item>
+        <ListGroup.Item>
+          <AddPeopleIcons onClick={handleaddModalShow}>
+            <UserIcon className="me-3">
+              <AiOutlineUserAdd size="30px" />
+            </UserIcon>
+            Add People
+          </AddPeopleIcons>
+        </ListGroup.Item>
+        {membersList.map(member => (
+          <ListGroup.Item key={member._id} className="d-flex w-100">
+            <div>{member.email}</div>
+            <div className="ms-auto" onClick={handleaddModalShow}>
+              <RemoveLink onClick={() => removeMemberHandler(member)}>
+                Remove
+              </RemoveLink>
+            </div>
+          </ListGroup.Item>
+        ))}
+      </ListGroup>
     </div>
   )
 }
@@ -308,7 +390,7 @@ const MembersInput = styled.input`
   outline: none;
   width: 70%;
   padding: 10px;
-  margin-bottom: 10px;
+  ${"" /* margin-bottom: 10px; */}
   display: flex;
   align-items: center;
   justify-content: center;
@@ -352,7 +434,7 @@ const TabLists = styled(TabList)`
 //   border-bottom:1px solid gray;
 // `;
 const AddPeopleIcons = styled.div`
-  margin-top: 10px;
+  ${"" /* margin-top: 10px; */}
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -447,5 +529,12 @@ const Buttons = styled.button`
   padding: 5px;
   border: 2px solid #f6f6f6;
   border-radius: 5px;
+`
+const RemoveLink = styled.p`
+  color: blue;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `
 export default PluginModal

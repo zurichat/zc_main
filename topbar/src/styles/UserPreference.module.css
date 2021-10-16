@@ -1,38 +1,57 @@
-.user_preference_modal {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
+.modalContent {
+  max-width: 95%;
+  padding: 0 20px;
+  display: block;
+  margin-top: 24px;
 }
 
-.label_text_header {
+.hrLine {
+  border: block;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  margin-left: 0px;
+  margin-right: auto;
+  border-style: none;
+  border-width: 1px;
+  width: 100%;
+}
+
+.labelTextHeader {
   font-style: normal;
   font-weight: bold;
   font-size: 15px;
+  color: "#242424";
 }
 
-.label_subtext {
+.labelSubtext {
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
+  color: "#1D1C1D";
+  margin-left: 10px;
+  margin-top: -15px;
+  margin-bottom: -20px;
+}
+.labelContainer {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
 }
 
-.label_radio_button {
-  border-radius: 2px;
-  margin-right: 10px;
+.labelRadioButton {
+  padding: 15px 6px;
+  font-size: 13px;
+  display: flex;
+  flex-direction: row;
+  font-family: Lato;
+  margin-top: -15px;
+  margin-bottom: -20px;
 }
 
 .label_select_dropdown {
-  border: 1px solid #DDE5E9;
-box-sizing: border-box;
-border-radius: 4px;
+  border: 1px solid #dde5e9;
+  box-sizing: border-box;
+  border-radius: 4px;
 }
 
 .label_checkbox_button {
@@ -44,4 +63,17 @@ border-radius: 4px;
   margin-top: 12px;
   margin-bottom: 12px;
   height: 0.5px;
+}
+
+.spacingRight {
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .modalContent {
+    max-width: 100%;
+  }
+  .spacingRight {
+    margin: 0;
+  }
 }
