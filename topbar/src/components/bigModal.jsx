@@ -95,8 +95,8 @@ export const BigModal = ({ onClose, inputValue, filter }) => {
     <p>loading...</p>
   ) : (
     <SearchContainer className="bigModal">
-      <div className={styles.Header}>
         <h2>{`Search result for "${inputValue}"`}</h2>
+
         <button
         className="btn"
         onClick={() => onClose()}
@@ -104,7 +104,7 @@ export const BigModal = ({ onClose, inputValue, filter }) => {
       >
         <img src={cancel} alt="close" />
       </button>
-      </div>
+      
       {result.length < 1 ? <NoResult onClosed={() => onClose()}/> : (
         card
       )}
