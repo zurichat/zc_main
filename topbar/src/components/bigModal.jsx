@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import styles from '../styles/bigModal.module.css'
 import axios from "axios"
 import cancel from "../assets/images/cancel.svg"
 import SearchValue from "./searchValueComponent"
@@ -9,7 +10,7 @@ import { NoResult } from "./SearchNotFound"
 export const BigModal = ({ onClose, inputValue }) => {
   const [result, setResult] = useState([])
   const base_URL = `https://todo.zuri.chat/api/v1/search/614679ee1a5607b13c00bcb7/614679ee1a5607b13c00bcb7?key=${inputValue}&member_id=6139a43559842c7444fb01ef&org_id=613a3ac959842c7444fb0240`
-
+  
   useEffect(() => {
     axios
       .get(base_URL)
@@ -27,7 +28,6 @@ export const BigModal = ({ onClose, inputValue }) => {
   }, [result[0]])
   // console.log(result)
   let i = 0
-  const noResult = (result.length === 0);
 
   const sidebar = document.getElementById(
     "single-spa-application:@zuri/sidebar"
@@ -40,13 +40,12 @@ export const BigModal = ({ onClose, inputValue }) => {
   const SearchContainer = Styled.div`
   background-color: white;
   position: fixed;
-  top: ${top}px;
+  top: 6vh;
   left: ${width}px;
   right: 0;
   overflow: auto;
   height: 100vh;
   z-index: 2000;
-  padding: 40px 20px;
   `
 
   const StyledInput = Styled.input`
@@ -66,18 +65,18 @@ export const BigModal = ({ onClose, inputValue }) => {
   ))
   return (
     <SearchContainer className="bigModal">
-      {!noResult && <h2>{`Search result for ${inputValue}`}</h2>}
-      <button
+      <div className={styles.Header}>
+        <p className={styles.header_p}>{`Search result for "${inputValue}"`}</p>
+        <button
         className="btn"
-        style={{
-          position: "absolute",
-          top: 10,
-          right: "20px"
-        }}
         onClick={() => onClose()}
-      >
-        <img src={cancel} alt="close" />
+        ><img src={cancel} alt="close" />
       </button>
+      </div>
+      {/* this is to return total counts */}
+      {/* <p className={styles.total}>Total Results Found - 12</p> */}
+      
+        
       {/* <StyledInput
         placeholder="Search"
         value={value}
@@ -85,7 +84,25 @@ export const BigModal = ({ onClose, inputValue }) => {
           setValue(e.target.value)
         }} 
       />*/}
-      { noResult ? <NoResult /> : card}
+      {/* this is the reult card */}
+      <div className={styles.resultCard}>
+          <SearchValue
+          
+                key={i}
+                src={noImg}
+                title={"title"}
+                description={"description"}
+              />
+      </div>
+      {/* if the response returns no result */}
+      <div className={styles.noResult}>
+        <p className={styles.no_result_title}>No Result Found</p>
+          <p className={styles.no_result_desc}>Looking for something? If it happened in zuri-chat,
+              <br /> you can find it in search.</p>
+        <button className={styles.startNewSearch}>Start A New Search</button>
+      </div>
+      
+      {card}
     </SearchContainer>
   )
 }
