@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -17,14 +17,29 @@
   height: 100%;
   background: #404f4a80;
 }
+.modalback {
+  position: absolute;
+  z-index: -2;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  right: 0;
+}
 .modalcontainer {
-  height: 320px;
+  min-height: 320px;
   max-width: 583px;
   width: 80%;
-  border-radius: 0px;
-  border: 1px solid #bebebe;
+  border-radius: 5px;
+  box-shadow: 1px 1px 44px rgba(64, 64, 64, 0.5);
   background: white;
   position: relative;
+  z-index: -1;
+  padding-bottom: 20px;
+}
+.emojino {
+  padding: 0 !important;
+  margin: 0 0.8rem !important;
 }
 .blackx:hover,
 .whitex:hover {
@@ -43,7 +58,7 @@
   padding-top: 10px;
 }
 .statustop p {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 21px;
   font-style: normal;
   font-weight: 700;
@@ -65,35 +80,80 @@
   align-items: center;
   height: 39px;
   margin-bottom: 21.4px;
-  border: 1px solid #bebebe;
+  border-radius: 4px;
+  /* border: 1px solid #bebebe; */
+  border: 1px solid #e5e5e5;
   position: relative;
+  padding: 0px 6px;
+  border-radius: 5px;
 }
 .addstatusleft {
   display: flex;
   width: 70%;
+  justify-content: space-between;
+  align-items: center;
+}
+.chosenemoji {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.defalutEmoji {
+  height: 20px;
+  width: 25px;
+  padding: 0px 2px;
 }
 .emoji {
   display: flex;
   align-items: flex-start;
-  gap: 3px;
   position: absolute;
   /* margin-top: 20px; */
-  top: 40px;
+  top: -30px;
+  left: -100px;
+}
+.emojiclose {
+  cursor: pointer;
+  border: 1px solid #bebebe;
+  border-radius: 5px;
+  border-left: none;
+  z-index: 10;
+}
+.emojiback {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -2
 }
 .input {
   /* margin-bottom: 21.4px; */
   /* height: 39px; */
-  width: 80%;
+  width: 100%;
   border: none;
   font-size: 16px;
+  margin-left: 8px;
 }
 
+.datetime {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 1rem;
+}
+
+.datetime input {
+  border: 1px solid #e5e5e5;
+  padding: 0.5rem;
+  border-radius: 4px;
+  outline: none;
+}
 .input:focus {
   outline: none;
 }
 
 ::placeholder {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -107,7 +167,7 @@
   /* justify-content: center; */
   align-content: baseline;
   gap: 2px;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -121,9 +181,11 @@
 .dropdowntop {
   margin-bottom: 19px;
   color: #3a3a3a;
+  cursor: pointer;
 }
 .dropdowntopspan {
   color: #858585;
+  margin-right: 8px;
 }
 .dropdown {
   /* height: 284px; */
@@ -136,12 +198,12 @@
   border-radius: 10px;
   background: white;
   border: 1px solid #bebebe;
-  padding-top: 23.83px;
+  padding-top: 13.83px;
   position: absolute;
 }
 .dropdownoption {
   height: 32.35px;
-  font-family: 'lato', sans-serif;
+  font-family: "lato", sans-serif;
   display: flex;
   padding-left: 34.5px;
   align-items: center;
@@ -156,7 +218,7 @@
 }
 .dropdownoption2 {
   height: 32.35px;
-  font-family: 'lato', sans-serif;
+  font-family: "lato", sans-serif;
   display: flex;
   padding-left: 34.5px;
   padding-top: 15px;
@@ -192,7 +254,7 @@
   background: #00b87c;
   color: white;
   float: right;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -210,3 +272,76 @@
   font-size: 13px;
   position: flex-end;
 }
+.clearstatus {
+  margin-top: 20px;
+  height: 48px;
+  border-radius: 3px;
+  padding: 12px 18px;
+  margin-right: 10px;
+  border: 1px solid #bebebe;
+  background: #fff;
+  color: #000;
+  float: right;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.inactivesave {
+  margin-top: 20px;
+  height: 48px;
+  border-radius: 3px;
+  padding: 12px 18px;
+  margin-right: 10px;
+  border: 1px solid #dedede;
+  background: #dedede;
+  color: #7e7e7e;
+  float: right;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+.recentstatustitle{
+  font-size: 14px;
+}
+.recentstatustile{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 4px 30px 4px 10px;
+  border-radius: 5px;
+}
+.recentstatustile:hover{
+ background: #00b87c;
+ color: #fff;
+ cursor: pointer;
+}
+.recentstatustileleft{
+  width: 80%;
+}
+.recentstatustileiconwrapper{
+  color: #fff;
+  display: none;
+}
+.recentstatustileicon{
+  color: #fff;
+}
+.recentstatustile:hover .recentstatustileiconwrapper{
+  display: flex;
+  align-items: center;
+ }
+ .recentstatustext{
+   font-weight: bold;
+ }

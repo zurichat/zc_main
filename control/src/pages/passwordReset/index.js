@@ -45,12 +45,12 @@ const ResetDefault = () => {
           </Helmet>
           {showDialog && <VerifyResetCode />}
 
-          <aside id={styles.authAsideContainer} className={styles.display_none}>
+          {/* <aside id={styles.authAsideContainer} className={styles.display_none}>
             <div id={styles.authImageWrapper}>
               <img src={authBg} alt="backgroundImage" />
               <div id={styles.asideText}></div>
             </div>
-          </aside>
+          </aside> */}
           <section className={`${styles.getHelpSigninForm}`}>
             {/* logo div  */}
             <div className={`${styles.logoFormContainer}`}>

@@ -1,0 +1,87 @@
+.admin_billing_owners_space {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  align-items: center;
+}
+.owner_informations {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.admin_billing_owners_space {
+  display: flex;
+}
+
+.owner_information_img_container {
+  width: 50px;
+  height: 50px;
+}
+.icon {
+  font-size: 2rem;
+  width: 100%;
+  height: 100%;
+  color: #00b87c;
+}
+
+.owner_information_details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+}
+
+.owner_email_information {
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.owner_email_information input[type="checkbox"] {
+  margin-right: 1rem;
+}
+
+.add_new_billing_container {
+  width: 100%;
+}
+
+.billingbuttonwrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.billingbuttonwrapper button {
+  padding: 10px;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.billingbuttonwrapper button:hover {
+  border: 1px solid black;
+}
+.forms_input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.inputCon {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.inputCon input {
+  padding: 10px;
+  border: 1px solid rgb(70, 65, 65);
+}
+
+.billing_contact {
+  background-color: #00b87c;
+  color: white;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 5px;
+}

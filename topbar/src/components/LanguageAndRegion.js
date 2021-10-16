@@ -1,187 +1,207 @@
-import React, { useState, useContext } from "react"
+
+
+import React, { useState, useContext, useEffect } from "react"
 import styles from "../styles/LanguageAndRegion.module.css"
-// import TimeZones from '../constants/TimeZone'
-// import Languages from '../constants/Language'
+import standardStyles from "../styles/UserPreference.module.css"
+import TimezoneSelect from "react-timezone-select"
+import Select from "react-select"
 import { authAxios } from "../utils/Api"
 import { ProfileContext } from "../context/ProfileModal"
 
+
+const ssKey = "language-and-region"
+
+const options = [
+  { value: 'en', label: 'English (US)' },
+  { value: 'fr', label: 'French (FR)' },
+  { value: 'du', label: 'Deutch (DU)' },
+  { value: 'zh', label: 'Chinese (ZH)'},
+  { value: 'ar', label: 'Arabic (AR)'}
+];
+
 const LanguageAndRegion = () => {
-  //CHECKBOXES
-  const [tzChb, setTzChb] = useState(true)
-
   const { user, orgId } = useContext(ProfileContext)
-
-  const handleTZ = () => {
-    setTzChb(!tzChb)
+  const [langreg, setLangreg] = useState(user.settings.languages_and_regions);
+  const [selectedTimezone, setSelectedTimezone] = useState(user.settings.languages_and_regions.time_zone ? JSON.parse(user.settings.languages_and_regions.time_zone) : user.settings.languages_and_regions.time_zone)
+  //CHECKBOXES
+  const [spellCheck, setSpellCheck] = useState(true)
+  const handleSpellCheck = () => {
+    setSpellCheck(!spellCheck)
   }
 
+
+
+  const handleData = (langreg) => {
+      authAxios.patch(`organizations/${user.org_id}/members/${user._id}/settings/languages-and-region`, langreg)
+      .then(res => {
+        sessionStorage.setItem(ssKey, JSON.stringify(langreg))
+      })
+      .catch(err => {
+        // error
+      })
+  }
+  const handleSelect = selectedOptions => {
+    let options = []
+    selectedOptions.forEach(option => {
+      options.push(option.value)
+    })
+    let newSpell = { ...langreg, languages_zuri_should_spell_check: options }
+    handleData(newSpell)
+  }
+  useEffect(() => {
+    let timeZone = {...langreg, time_zone: JSON.stringify(selectedTimezone)}
+    setLangreg(timeZone)
+    handleData(timeZone)
+  }, [selectedTimezone])
+
+  //  const langSpellCheck = user.settings.languages_and_regions.languages_zuri_should_spell_check;
+  //  const defVal = langSpellCheck.map(i => i )
+  const langSpellCheck = langreg.languages_zuri_should_spell_check || [];
+  
+  const checkLang = (lang) => {
+    switch(lang) {
+      case "en":
+        return "English"
+      case "fr":
+        return "French"
+      case "du":
+        return "Deutch"
+      default:
+        return "English"
+    }
+  }
+  const defaultValue = [];
+  const defVal = langSpellCheck.forEach(i => {
+    defaultValue.push({ value: i, label: checkLang(i) })
+  })
+
+  
+   useEffect(()=> {
+      if(sessionStorage.getItem(ssKey)){
+        setLangreg(JSON.parse(sessionStorage.getItem(ssKey)))
+        setSelectedTimezone(JSON.parse(sessionStorage.getItem(ssKey)).time_zone)
+      } else {
+        sessionStorage.setItem(ssKey, JSON.stringify(user.settings.languages_and_regions))
+      }
+   },[])
   return (
     <div className={styles.container}>
-      <div>
+      <div className={standardStyles.modalContent}>
         <form>
           <div className={styles.section}>
             <label className={styles.subhead} htmlFor="language">
               Language
             </label>
-            <select className={styles.selectbox} name="language" id="language">
-              <option value="english(uk)">English (UK)</option>
-              <option value="french(fra)">French (FRA)</option>
+            <select className={styles.selectbox} value={langreg.language} onChange={e => {
+               setLangreg({...langreg, language: e.target.value})
+               handleData({...langreg, language: e.target.value})
+            }} name="language" id="language" >
+              {
+                options.map((option, index) => {
+                  return <option value={option.value} key={index}>{option.label}</option>
+                })
+              }
             </select>
             <p className={styles.note}>
               Choose the language you want to use in Zurichat.
             </p>
           </div>
-
           <div className={styles.section}>
-            <label className={styles.subhead} htmlFor="timezone">
-              Time zone
-            </label>
-            <label className={styles.auto} htmlFor="">
-              <input type="checkbox" onChange={handleTZ} checked={tzChb} />
-              <span className={styles.checkmark}></span>
+            <div className={styles.subhead}>Time zone</div>
+            <input
+              type="checkbox"
+              className={styles.cbox}
+              checked={langreg.set_time_zone_automatically}
+              onClick={() => {
+                if (langreg !== undefined) {
+                  setLangreg({
+                    ...langreg,
+                    set_time_zone_automatically:
+                      !langreg.set_time_zone_automatically
+                  })
+                  handleData({
+                    ...langreg,
+                    set_time_zone_automatically:
+                      !langreg.set_time_zone_automatically
+                  })
+                }
+              }}
+            />
+            <span className={styles.checkmark}>
               Set time zone automatically
-            </label>
-
-            <select
-              className={styles.selectbox}
-              name="time-zone"
-              id="time-zone"
-            >
-              <option value="West Central Africa">
-                (UTC+01:00) West Central Africa
-              </option>
-            </select>
-            <p className={styles.note}>
+            </span>
+            <TimezoneSelect
+              styles={customStyles}
+              className={styles.optSelect}
+              placeholder="Select Timezone"
+              value={selectedTimezone}
+              defaultValue="badbitches"
+              onChange={setSelectedTimezone}
+            />
+            <p className={`${styles.note} my-2`}>
               Zurichat uses your time zone to send summary and notification
               emails, for times in your activity feeds and for reminders.
             </p>
+          </div>
+          <div className={styles.section}>
+            <div className={styles.subhead} htmlFor="spell-check">
+              Spell check
+            </div>
+              <input
+                type="checkbox"
+                className={styles.cbox}
+                checked={langreg.spell_check}
+                onClick={() => {
+                  if (langreg !== undefined) {
+                    setLangreg({
+                      ...langreg,
+                      spell_check: !langreg.spell_check
+                    })
+                    handleData({
+                      ...langreg,
+                      spell_check: !langreg.spell_check
+                    })
+                  }
+                }}
+              />
+              <span className={styles.checkmark}>
+                Enable spellcheck on your message
+              </span>
+            <Select
+            className={styles.optSelect}
+          isMulti
+          name="colors"
+          defaultValue= {defaultValue}
+          styles={customStyles}
+          options={options}
+          classNamePrefix="select"
+          placeholder="Type a language..."
+          onChange={(selectedOptions) => {
+            handleSelect(selectedOptions)
+          }}
+        />
+        <p className={styles.note}>Choose the languages you’d like Zurichat to spellcheck as you type.</p>
           </div>
         </form>
       </div>
     </div>
   )
 }
-
 export default LanguageAndRegion
-
-// const LanguageAndRegion = () => {
-//   // CHECKBOXES
-//   const [tzChecked, tzSetChecked] = useState(true)
-//   const [spellChecked, spellSetChecked] = useState(true)
-
-//   const [isTimezone, setIsTimezone] = useState(true)
-//   const [isSpell, setIsSpell] = useState(true)
-//   const [data, setData] = useState('')
-
-//   const { user, orgId } = useContext(ProfileContext)
-
-//   const connectData = () => {
-//     authAxios.patch(`/organizations/${orgId}/members/${user._id}/settings`, {
-//       settings: {
-//         spell_check: spellChecked
-//       }
-//     })
-//       .then(res => {
-//         console.log(res)
-//         // setState({ loading: false })
-//       })
-//       .catch(err => {
-//         console.log(err)
-//         // setState({ loading: false })
-//       }
-
-//       )
-//   }
-
-//   // THE SECTION OF HANDLECHECK
-//   const handleTimezone = () => {
-//     tzSetChecked(!tzChecked)
-//     setIsTimezone(!isTimezone)
-//   }
-
-//   const handleSpell = () => {
-//     spellSetChecked(connectData)
-//     setIsSpell(!isSpell)
-//   }
-//   const handleChange = e => {
-//     const { value } = e.target.value
-//     setData(value)
-//   }
-
-//   const result = Languages.map((item) => {
-//     if (item !== 'English (UK)') {
-//       return ''
-//     }
-//     else {
-//       return <option selected>{item}</option>;
-//     }
-//   }
-//     // <option>{item}</option>
-//   )
-
-//   const results = TimeZones.map(item => <option>{item}</option>)
-
-//   return (
-//     <div className={styles.region}>
-//       <form className="row d-flex flex-column">
-//         {/* THE SECTION OF LANGUAGE */}
-//         <div className="col-md-5 mt-2 w-100">
-//           <label for="inputState" class="form-label">
-//             Language
-//           </label>
-//           <select className="form-select" onChange={handleChange} required>
-//             {result}
-//           </select>
-//           <p>Choose the language you want to use in Zurichat</p>
-//         </div>
-
-//         {/* THE SECTION OF TIME ZONE */}
-//         <div className="col-md-5 mt-2 w-100 mt-4">
-//           <label for="inputState" class="form-label">
-//             Timezone
-//           </label>
-//           <br />
-
-//           <div className="d-flex align-items-center mb-2">
-//             <input type="checkbox" checked={tzChecked} onChange={handleTimezone} />
-//             <small>Set timezone automatically</small>
-//           </div>
-
-//           <select
-//             className="form-select"
-//             disabled={isTimezone && 'disabled'}
-//             required
-//           >
-//             {results}
-//           </select>
-//           <p>
-//             Zurichat uses your time zone to send summary and notification
-//             emails, for times in your activity feeds and for reminders.
-//           </p>
-//         </div>
-
-//         {/* THE SECTION OF THE SPELL CHECK */}
-//         <div className="col-md-5 mt-2 w-100 mt-4">
-//           <label for="inputState" class="form-label">
-//             Spellcheck
-//           </label>
-//           <br />
-
-//           <div className="d-flex align-items-center mb-2">
-//             <input type="checkbox" onChange={handleSpell} checked={spellChecked} />
-//             <small>Enable spell check on your messages</small>
-//           </div>
-
-//           <div className={styles.choosed}>
-//             <span className={isSpell ? styles.block : styles.none}>
-//               {isSpell && data}
-//             </span>
-//           </div>
-//           <p>
-//             Choose the languages you’d like Zurichat to spellcheck as you type.
-//           </p>
-//         </div>
-//       </form>
-//     </div>
-//   )
-// }
+const customStyles = {
+  control: base => ({
+    ...base,
+    height: "2.5rem",
+    minHeight: "2.5rem",
+    border: "1px solid #DADADA",
+    borderRadius: "4px",
+    marginTop: "10px",
+    fontSize: "15px",
+    "&:hover": {
+      borderColor: "#00B87C"
+    },
+    "&:active": {
+      borderColor: "#00B87C"
+    }
+  })
+}
