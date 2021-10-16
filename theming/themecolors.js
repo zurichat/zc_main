@@ -17,8 +17,8 @@ const themeColors =
   oceanBlue:
   {
     primary: "#06083A",
-    secondary: "1018DD",
-    textColor: "8F92CE"
+    secondary: "#1018DD",
+    textColor: "#8F92CE"
   },
 
   darkAsh:
