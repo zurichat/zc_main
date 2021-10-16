@@ -21,6 +21,7 @@ import {
 } from "react-icons/ai"
 import { ListGroup } from "react-bootstrap"
 import axios from "axios"
+import { membersList as DummyMembers } from "../sampleData/memberList"
 
 function PluginModal({ close, showDialog, tabIndex, config }) {
   const [showEditTopicModal, setShowEditTopicModal] = useState(false)
@@ -186,7 +187,21 @@ function AboutPanel({
 //       )
 //   }
 function MembersPanel({ config }) {
-  const { membersList, addmembersevent, removememberevent } = config.roomInfo
+  const dummyHeaderConfig = {
+    roomInfo: {
+      membersList: DummyMembers,
+      addmembersevent: values => {
+        console.warn("a plugin added ", values)
+      },
+      removememberevent: id => {
+        console.warn("a plugin deleted ", id)
+      }
+    }
+  }
+
+  const roomData =
+    "roomInfo" in config ? config.roomInfo : dummyHeaderConfig.roomInfo
+  const { membersList, addmembersevent, removememberevent } = roomData
   const [addModalShow, setaddModalShow] = useState(false)
   const [removeModalShow, setremoveModalShow] = useState(false)
   const [selectedMember, setSelectedMember] = useState(null)
