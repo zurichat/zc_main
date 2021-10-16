@@ -59,7 +59,7 @@ import Invitation from "./pages/admin/Invitation"
 import Whyzurichat from "./pages/WhyZuriChat/Whyzurichat"
 
 import OnboardingHelp from "./pages/LoginSignUpHelp/index"
-
+import DeleteWorkspace from "./pages/settings/components/DeleteWorkspace"
 
 
 import ChangeWorkspaceName from "./pages/admin/Settings/components/ChangeWorkspaceName"
@@ -197,6 +197,8 @@ const App = () => {
         <PrivateRoute path="/admin/settings" exact component={SettingsHome} />
         <PrivateRoute path="/admin/settings/home" exact component={Home} />
         <PrivateRoute path="/admin/name" exact component={ChangeWorkspaceName} />
+        <PrivateRoute path="/admin/delete" exact component={DeleteWorkspace} />
+        <PrivateRoute path="/homepage/profile" exact component={Homepage} />
         <PrivateRoute
           path="/admin/settings/analytics/memmber"
           exact
