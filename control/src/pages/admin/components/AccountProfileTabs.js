@@ -62,7 +62,6 @@ const AccountsProfileTabs = () => {
               active === 3 ? styles.tabHeaderItemActive : styles.tabHeaderItem
             }
           >
-            Profile
           </div>
         </div>
 
