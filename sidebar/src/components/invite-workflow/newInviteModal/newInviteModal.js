@@ -19,7 +19,6 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 99999999999;
   }
 
   &.invite-modal-innerContainer {
@@ -35,7 +34,7 @@ const Container = styled.div`
     background-color: #fff;
     border-radius: 10px;
 
-    @media (max-width: 600px){
+    @media (max-width: 600px) {
       width: 95%;
     }
   }
@@ -43,20 +42,20 @@ const Container = styled.div`
   &.invite-modal-header {
     display: flex !important;
     justify-content: space-between !important;
-    margin:1em 0.65em;
+    margin: 1em 0.65em;
   }
 
-  &.invite-modal-textarea{
-    width:100%;
+  &.invite-modal-textarea {
+    width: 100%;
     display: flex !important;
-    justify-content:center;
-    flex-direction:column;
-    align-items:center;
-    margin:1em 0;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em 0;
   }
   &.invite-modal-btnContainer {
     display: block !important;
-    margin:1em 0.65em;
+    margin: 1em 0.65em;
   }
 
   &.invite-modal-sendBtn {
@@ -73,9 +72,9 @@ const Text = styled.h3`
   font-weight: 700 !important;
   padding: 0 !important;
   margin: 10px 0;
-  font-size:2rem;
-  font-family:"Lato";
-  color:black;
+  font-size: 2rem;
+  font-family: "Lato";
+  color: black;
 `
 
 const TextArea = styled.textarea`
@@ -83,6 +82,7 @@ const TextArea = styled.textarea`
   min-height: 8em;
   width: 85%;
   padding: 15px 20px;
+  resize: none;
 
   &:focus {
     color: black !important;
@@ -90,11 +90,11 @@ const TextArea = styled.textarea`
 `
 
 const Label = styled.label`
-  font-family:Lato;
-  font-weight:700;
-  font-size:1.05rem;
-  margin:10px 20px;
-  align-self:flex-start;
+  font-family: Lato;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 10px 20px;
+  align-self: flex-start;
 `
 
 const Image = styled.img``
@@ -102,23 +102,23 @@ const Image = styled.img``
 const Button = styled.button`
   outline: none;
   background: transparent;
-  border:none;
+  border: none;
 
   &.invite-sendBtn {
-    float:right;
+    float: right;
     color: white !important;
     background-color: #00b87c;
     color: #ffffff;
-    font-size:17px;
-    font-family:Lato;
+    font-size: 17px;
+    font-family: Lato;
     border-radius: 3px;
     padding: 10px 18px;
     border: none;
-    margin:15px 0;
-    cursor:pointer;
+    margin: 15px 0;
+    cursor: pointer;
 
     &:hover {
-      transform: scale(1.1)
+      transform: scale(1.1);
     }
   }
 `
@@ -170,9 +170,16 @@ function NewInviteModal(props) {
   const handleSendInvite = async () => {
     handleCloseInviteModal()
     isLoading(true)
+    let emailsValidated = true
     const re =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    if (emailField.length > 5) {
+    const splitEmails = emailField.trim().replaceAll(" ", "").split(",")
+    splitEmails.forEach(email => {
+      if (!re.test(email)) {
+        emailsValidated = false
+      }
+    })
+    if (emailsValidated) {
       try {
         const response = await sendInviteAPI(
           emailField.trim().replaceAll(" ", "").split(",")
