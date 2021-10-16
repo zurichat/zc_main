@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react"
-import axios from "axios"
+import { authAxios } from "../../Utils/Api"
 import LogoCrop from "./LogoCrop"
 import LogoAlert from "./LogoAlert"
+import defaultAvatar from "../../assets/default.svg"
 import {
   WorkSPaceLogoContainer,
   WorkSpaceDetailContainer,
@@ -32,24 +33,19 @@ const WorkSpaceIconTab = () => {
     setToggle(true)
   }
 
-  const handleImageSelect = (e) => {
-      const reader = new FileReader()
-      reader.onload = () => {
-          if(reader.readyState == 2) {
-              setUpdateLogo(reader.result)
-          }
+  const handleImageSelect = e => {
+    const reader = new FileReader()
+    reader.onload = () => {
+      if (reader.readyState == 2) {
+        setUpdateLogo(reader.result)
       }
-      reader.readAsDataURL(e.target.files[0])
+    }
+    reader.readAsDataURL(e.target.files[0])
   }
 
   useEffect(() => {
-    axios({
-      method: "get",
-      url: `https://api.zuri.chat/organizations/${organisation_id}`,
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    })
+    authAxios
+      .get(`https://api.zuri.chat/organizations/${organisation_id}`)
       .then(res => {
         // eslint-disable-next-line no-console
         console.log(res.data)
@@ -60,18 +56,32 @@ const WorkSpaceIconTab = () => {
       })
   }, [])
 
+  const handleLogoDelete = () => {
+    authAxios
+      .patch(`/organizations/${organisation_id}/logo/delete`)
+      .then(res => {
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }
+
   return (
     <WorkSPaceLogoContainer>
       {alertToggle ? <LogoAlert /> : null}
       {!toggle ? (
         <>
           <WorkSpaceDetailContainer>
-            <img src={orgData.logo_url} alt="NV" />
+            <img
+              src={orgData.logo_url ? orgData.logo_url : defaultAvatar}
+              alt="NV"
+            />
             <WorkSpaceDetail>
-              <WorkSpaceName>{orgData.name}</WorkSpaceName>
+              <WorkSpaceName>NerdsVille</WorkSpaceName>
               <WorkSpaceDescription>
                 This icon will be used to identify your workspace in zuri chat
               </WorkSpaceDescription>
+              <Button onClick={handleLogoDelete}>Remove</Button>
             </WorkSpaceDetail>
           </WorkSpaceDetailContainer>
           <GuidelinesContainer>
@@ -103,7 +113,11 @@ const WorkSpaceIconTab = () => {
           </GuidelinesContainer>
         </>
       ) : (
-        <LogoCrop logo={updateLogo} setAlertToggle={setAlertToggle} setToggle={setToggle} />
+        <LogoCrop
+          logo={updateLogo}
+          setAlertToggle={setAlertToggle}
+          setToggle={setToggle}
+        />
       )}
     </WorkSPaceLogoContainer>
   )
