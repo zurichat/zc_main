@@ -1,4 +1,3 @@
-
 import axios from "axios"
 import { Helmet } from "react-helmet"
 import { Col, Row } from "react-bootstrap"
@@ -117,9 +116,8 @@ const MarketPlace = () => {
     setFilteredPlugins(result)
   }
 
-
   return (
-    <MarketPlaceProvider className={"market-place-custom-div"}>
+    <MarketPlaceProvider>
       <Helmet>
         <title>Market Place - Zuri Chat</title>
       </Helmet>
@@ -133,41 +131,20 @@ const MarketPlace = () => {
         </div>
 
         <div className={styles.marketplaceHero}>
-          <Row>
-            <Col md={8}>
-              <h1>Your number one plugin hub created for better experience</h1>
-              <p className="p-0">
-                Integrate your favorite plugins and get more exciting experience
-                from the Zuri app. Collaborate, work smarter and better.{" "}
-              </p>
-            </Col>
-          </Row>
+          <div className={styles.marketplaceSearchBar}>
+          <div><input
+          type="text"
+          placeholder="Search Plugins"
+          onChange={handleSearch}
+                  />
+          </div>
+          <div>
+          <button className={styles.marketplaceHeroButton}>Search</button>
+          </div>
+          </div>
         </div>
 
         <div className={styles.marketPlaceContainer}>
-          <div className={`d-flex mb-5 align-items-center ${styles.marketplaceSearchBox}`}>
-            <div className={styles.marketplaceSearchBar}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="18"
-                height="18"
-              >
-                <path fill="none" d="M0 0h24v24H0z" />
-                <path
-                  d="M11 2c4.968 0 9 4.032 9 9s-4.032 9-9 9-9-4.032-9-9 4.032-9 9-9zm0 16c3.867 0 7-3.133 7-7 0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7zm8.485.071l2.829 2.828-1.415 1.415-2.828-2.829 1.414-1.414z"
-                  fill="rgba(190,190,190,1)"
-                />
-              </svg>
-              <input
-                type="text"
-                placeholder="Search Plugins"
-                onChange={handleSearch}
-                id={styles.marketplaceSearchFocus}
-              />
-            </div>
-            <button className={styles.marketplaceHeroButton}>Search</button>
-          </div>
           <Tabs
             className={styles.marketplaceTabs}
             selectedTabClassName={styles.marketplaceTabSelected}
