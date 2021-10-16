@@ -62,6 +62,9 @@ const EditProfile = () => {
 
       const formData = new FormData()
       formData.append("image", imageReader)
+      formData.append("height", 512)
+      formData.append("width", 512)
+      
       authAxios
         .patch(
           `/organizations/${orgId}/members/${user._id}/photo/upload`,

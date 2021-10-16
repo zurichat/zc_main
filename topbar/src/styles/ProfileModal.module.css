@@ -233,6 +233,13 @@
   padding-bottom: 20px;
   height: 90vh;
 }
+
+@media only screen and (min-width: 1080px) {
+  .modalContent {
+    width: 65%;
+  }
+}
+
 .modalCont {
   overflow-y: auto;
   height: 100%;
