@@ -13,7 +13,6 @@ import pluginImage from "../assets/ZuriPlugin.jpg"
 import loadingStyle from "../../../component-styles/LoginLoading.module.css"
 import logo from "../../../component-assets/zurilogo.svg"
 import parse from "html-react-parser"
-import blogContentStyle from "../Style/blogContent.module.css"
 
 import {
   UilFacebookF,
@@ -132,14 +131,7 @@ const BlogDetails = () => {
           </div>
         </div> */}
           <div className={style.line} />
-          <div
-            className={`${blogContentStyle.contentImage} ${blogContentStyle.contentDisplay} 
-            ${blogContentStyle.contentHeading}
-             ${blogContentStyle.contentHeaderOneStyle} ${blogContentStyle.contentHeaderTwoStyle}
-              ${blogContentStyle.contentHeaderThreeStyle} ${blogContentStyle.contentHeaderFourStyle} 
-              ${blogContentStyle.contentHeaderFiveStyle} ${blogContentStyle.contentHeaderSixStyle}
-               ${blogContentStyle.contentParaStyle} `}
-          >
+          <div>
             {parse(post.content)}
             {/* <h3>ZURI CHAT</h3>
             <p>
