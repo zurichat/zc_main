@@ -19,6 +19,7 @@ const EditProfile = () => {
     setUserProfileImage,
     toggleModalState
   } = useContext(ProfileContext)
+  const [deletePic, setDeletePic] = useState(false)
   const [selectedTimezone, setSelectedTimezone] = useState({})
   const [links, setLinks] = useState([""])
   const [state, setState] = useState({
@@ -96,6 +97,7 @@ const EditProfile = () => {
         toast.success("User Image Removed Successfully", {
           position: "top-center"
         })
+        setDeletePic(true)
       })
       .catch(err => {
         console.error(err)
@@ -104,7 +106,9 @@ const EditProfile = () => {
           position: "top-center"
         })
       })
+    setDeletePic(false)
   }
+
   useEffect(() => {
     setUserProfileImage(user.image_url)
   }, [user])
@@ -170,7 +174,7 @@ const EditProfile = () => {
                   </label>
                   <input
                     type="text"
-                    className="input my-0"
+                    className="input"
                     id="name"
                     defaultValue={state.name}
                     onChange={e => setState({ name: e.target.value })}
@@ -325,12 +329,17 @@ const EditProfile = () => {
                       width={24}
                     />
                   ) : (
-                    <img
-                      ref={avatarRef}
-                      className="img"
-                      src={userProfileImage ? userProfileImage : defaultAvatar}
-                      alt="profile-pic"
-                    />
+                    <div className="profile__img-wrapper">
+                      <span className="pictureHeading">Profile photo</span>
+                      <img
+                        ref={avatarRef}
+                        className="img"
+                        src={
+                          userProfileImage ? userProfileImage : defaultAvatar
+                        }
+                        alt="profile-pic"
+                      />
+                    </div>
                   )}
                 </div>
                 <input
@@ -351,15 +360,15 @@ const EditProfile = () => {
                       width={40}
                     />
                   ) : ( */}
-                  Upload Image
+                  Upload an Image
                   {/* ) */}
                 </label>
                 <div
                   role="button"
-                  className="rmvBtn mt-2"
+                  className="rmvBtn"
                   onClick={handleImageDelete}
                 >
-                  Remove Image
+                  Remove photo
                 </div>
               </div>
             </div>
@@ -386,7 +395,6 @@ const EditProfile = () => {
           <Toaster />
         </StyledProfileWrapper>
       </>
-      
     </ProfileModal>
   )
 }
