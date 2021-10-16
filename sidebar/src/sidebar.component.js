@@ -91,7 +91,6 @@ const Sidebar = props => {
         //     return (categories.includes(p) ?
         //     <Category key={idx} name={p} data={categoryData} />
         //     : null)
-
         // }
       }
     }
@@ -115,8 +114,7 @@ const Sidebar = props => {
           <SingleRoom name="Drafts" image={draftIcon} />
 
           <SingleRoom name="Plugins" image={pluginIcon} link="/marketplace" />
-
-          <Starred check={check} state={props.state} />
+          {props.state.sidebar &&  <Starred check={check} state={props.state} />}
           {singleItems}
           {categorizedItems}
 
