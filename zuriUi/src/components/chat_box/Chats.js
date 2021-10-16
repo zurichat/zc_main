@@ -1,11 +1,12 @@
 import styled from "styled-components"
 import ChatItem from "./ChatItem"
 const Chats = ({ chatInfo }) => {
+  // console.log("chats", chatInfo)
   return (
     <Wrapper>
       {chatInfo.map((chat, idx) => (
         <ChatItemWrapper key={idx * (3 / 0.63)}>
-          <ChatItem messageConfig={chat} />
+          <ChatItem richUiMessageConfig={chat} />
         </ChatItemWrapper>
       ))}
     </Wrapper>
