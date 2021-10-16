@@ -2,12 +2,12 @@ import styled from "styled-components"
 
 export const ChatContainer = styled.section`
   // margin-top:2rem;
-  height: 100vh;
+  // height: 100vh;
   width: 100%;
   flex-direction: column;
   .MsgBoard {
     width: 100%;
-    height: 85%;
+    height: 75vh;
     display: flex;
     
     // overflow-y: scroll;
