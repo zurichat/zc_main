@@ -45,6 +45,7 @@ const Zuribot = () => {
       alert("textbox cannot be empty")
     } else {
       try {
+        setLoading(true)
         authAxios.patch(`/organizations/${id}/slackbotresponses`, {
           whensomeonesays: userSays,
           slackresponds: zuribotSays
@@ -53,6 +54,7 @@ const Zuribot = () => {
         {
           alert(`Zuribot will now look out for the word, ${userSays}`)
         }
+        setLoading(false)
       } catch (error) {
         throw Error(alert(error))
       }
@@ -154,8 +156,12 @@ const Zuribot = () => {
             <button onClick={cancel} className={styles.secondaryBtn}>
               Cancel
             </button>
-            <button onClick={submit} className={styles.primaryBtn}>
-              Save
+            <button
+              onClick={submit}
+              className={styles.primaryBtn}
+              disabled={loading}
+            >
+              {loading ? "Wait" : "Save"}
             </button>
           </div>
         </div>
