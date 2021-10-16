@@ -99,6 +99,7 @@ const TopBarSearchModal = () => {
                 onChange={onInputChange}
                 onKeyUp={onSearchSubmit}
               />
+              {value && <button className={styles.Clear} onClick={() => { setValue('') }}>Clear</button>}
             </div>
             <div className={styles.close_icon}>
               <svg
