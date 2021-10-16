@@ -20,7 +20,7 @@ export const BigModal = ({ onClose, inputValue, filter }) => {
   const newName = pluginName.split("/")
 
   const exactPlugin = plugins.find(
-    plugin => newName[3] === (plugin.name || plugin.name + "#")
+    plugin => newName[3] === plugin.name || newName[3] === plugin.name + "#"
   )
 
   useEffect(() => {
@@ -66,7 +66,7 @@ export const BigModal = ({ onClose, inputValue, filter }) => {
     overflow: auto;
     height: 100vh;
     z-index: 2000;
-    padding: 10px 20px;
+    
   `
   const StyledInput = Styled.input`
     outline: none;
@@ -93,7 +93,8 @@ export const BigModal = ({ onClose, inputValue, filter }) => {
     <p>loading...</p>
   ) : (
     <SearchContainer className="bigModal">
-      <h2>{`Search result for "${inputValue}"`}</h2>
+    <div className={styles.Header}>
+       <p className={styles.header_p}>{`Search result for "${inputValue}"`}</p>
 
       <button
         className="btn"
@@ -102,6 +103,8 @@ export const BigModal = ({ onClose, inputValue, filter }) => {
       >
         <img src={cancel} alt="close" />
       </button>
+    </div>
+     
       {result.length < 1 ? (
         <div className={styles.noResult}>
           <p className={styles.no_result_title}>No Result Found</p>
