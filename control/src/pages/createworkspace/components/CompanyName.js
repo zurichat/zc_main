@@ -3,7 +3,7 @@ import CompanyNameCSS from "../styles/CompanyName.module.css"
 import { Link, useRouteMatch } from "react-router-dom"
 import axios from "axios"
 import { Helmet } from "react-helmet"
-import { createDefaultChannel } from "../../../api/channels"
+import { createDefaultChannel, installDefaultPlugins } from "../../../api/channels"
 
 function CompanyName({ input }) {
   const [user, setUser] = useState(null)
@@ -56,7 +56,7 @@ function CompanyName({ input }) {
         }, 500)
 
         localStorage.setItem("currentWorkspace", newOrgId)
-        createDefaultChannel(newOrgId)
+        // createDefaultChannel(newOrgId)
       })
       .catch(err => {
         console.error(err.message)
