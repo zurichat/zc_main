@@ -5,19 +5,14 @@ import styles from "../styles/ProfileModal.module.css"
 const ProfileModal = ({ title, children, full, ...rest }) => {
   const { modal, toggleModalState } = useContext(ProfileContext)
 
- 
-
   const mql = window.matchMedia("(max-width: 768px)")
   let mobileView = mql.matches
 
   return (
-    <div {...rest}
+    <div
+      {...rest}
       className={styles.modalContainer}
-      style={
-        modal
-          ? { display: "flex" }
-          : { display: "none" }
-      }
+      style={modal ? { display: "flex" } : { display: "none" }}
     >
       <div
         className={full ? styles.overlayGreen : styles.overlay}

@@ -18,46 +18,46 @@ import quick from "./asset/Group 35471.svg"
 import todo from "./asset/Group 35472.svg"
 import Carousel from "./component/CarouselImg"
 import CarouselSecond from "./component/SecondCarousel"
-// end of image import
 
+// import i18n (needs to be bundled ;))
+import "../../i18n"
+import { useTranslation} from "react-i18next"
+// end of image import
 const index = () => {
+  const { t } = useTranslation()
   return (
     <div>
       <Header />
       <div className={`container mb-5`}>
         <div className={`${styles.banner}`}>
           <h1>
-            Make work simple, pleasant and <br />
-            more productive.
+            {t("about.banner.headline_one")} <br />
+            {t("about.banner.headline_two")}
           </h1>
           <p>
-            ZuriChat is a collaboration hub that brings the right people and
-            tools together to get work done. From Fortune 100 companies to
-            corner markets, millions of people around the world use ZuriChat to
-            connect their teams, unify their systems, and drive their business
-            forward.
+            ZuriChat {t("about.banner.description")}
           </p>
         </div>
         <div className={`row pt-3`}>
           <div className={`col-lg-4 ${styles.counter}`}>
             <h3>100k+</h3>
             <p>
-              Paid <br />
-              Customers
+              {t("about.counter.customers")} <br />
+              {t("about.counter.customers_")} 
             </p>
           </div>
           <div className={`col-lg-4 ${styles.counter}`}>
             <h3>50</h3>
             <p>
-              of the Fortune 100 <br />
-              use ZuriChat
+              {t("about.counter.fortune_companies")} <br />
+              {t("about.counter.fortune_companies_")} ZuriChat
             </p>
           </div>
           <div className={`col-lg-4 ${styles.counter}`}>
             <h3>50+</h3>
             <p>
-              countries have daily <br />
-              active users in ZuriChat
+              {t("about.counter.countries")} <br />
+              {t("about.counter.countries_")} ZuriChat
             </p>
           </div>
         </div>
@@ -71,16 +71,12 @@ const index = () => {
             <img src={team} alt={"image of teams"} srcSet="" />
           </div>
           <div className={`col-lg-6 ${styles.join_us}`}>
-            <h3>Who we are and how to join us</h3>
+            <h3>{t("about.whoWeAre.title")} <br /></h3>
             <p>
-              Our mission is to improve people's working life by providing a
-              platform that can host a strong diverse team , of creative
-              professionals who want to do the best work of their lives
+              {t("about.whoWeAre.description")} <br />
             </p>
             <p>
-              <span className={styles.span}>ZuriChat</span> promises all kinds
-              of opportunities and a simple, pleasant and more productive
-              working life.
+              <span className={styles.span}>ZuriChat</span> {t("about.whoWeAre.description_")}
             </p>
           </div>
         </div>
@@ -88,11 +84,10 @@ const index = () => {
       {/* work remotely more intriging than ever  */}
       <div className={`container mb-5`}>
         <div className={`col-lg-12 ${styles.working_remote}`}>
-          <h3>Working remotely more intriguing than ever</h3>
+          <h3>{t("about.highlights.title")}</h3>
           <p>
-            ZuriChat is where work meets fun. <br />
-            Connect and interact with your team efficiently from anywhere around
-            the globe
+            {t("about.highlights.description")} <br />
+            {t("about.highlights.description_")}
           </p>
         </div>
         {/* Carousel for mobile view  */}
@@ -100,43 +95,43 @@ const index = () => {
         <div className={`row pt-3 ${styles.desktop_carousel}`}>
           <div className={`col ${styles.working_remote_section}`}>
             <img src={channel} alt={"centralized space"} />
-            <h6>Channels</h6>
+            <h6>{t("about.highlights.channels.title")}</h6>
             <p>
-              Organize conversations into dedicated <br />
-              spaces called channels
+             {t("about.highlights.channels.description")} <br />
+              {t("about.highlights.channels.description_")}
             </p>
           </div>
           <div className={`col ${styles.working_remote_section}`}>
             <img src={holiday} alt={"image of calender"} />
-            <h6>Holiday Calender</h6>
+            <h6>{t("about.highlights.holidayCalender.title")}</h6>
             <p>
-              Add holidays, set reminders <br />
-              and see all events at a glance
+              {t("about.highlights.holidayCalender.description")} <br />
+               {t("about.highlights.holidayCalender.description_")}
             </p>
           </div>
           <div className={`col ${styles.working_remote_section}`}>
             <img src={deadline} alt={"image of alarm clock"} />
-            <h6>Company Deadline</h6>
+            <h6> {t("about.highlights.companyDeadline.title")}</h6>
             <p>
-              Keep track of deadlines with <br />
-              the company deadline <br />
+              {t("about.highlights.companyDeadline.description")}<br />
+              {t("about.highlights.companyDeadline.description_")}<br />
               feature.
             </p>
           </div>
           <div className={`col ${styles.working_remote_section}`}>
             <img src={quick} alt={"image of quick reply app"} />
-            <h6>Quick Reply App</h6>
+            <h6>{t("about.highlights.quickReply.title")}</h6>
             <p>
-              Get swift replies to Direct <br />
-              Messages <br />
+              {t("about.highlights.quickReply.description")}<br />
+              {t("about.highlights.quickReply.description_")} <br />
             </p>
           </div>
           <div className={`col ${styles.working_remote_section}`}>
             <img src={todo} alt={"image to do list"} />
-            <h6>To do List</h6>
+            <h6>{t("about.highlights.todoList.title")}</h6>
             <p>
-              Organize tasks with the to-do-list <br />
-              feature <br />
+              {t("about.highlights.todoList.description")}<br />
+              {t("about.highlights.todoList.description_")} <br />
             </p>
           </div>
         </div>
@@ -144,10 +139,9 @@ const index = () => {
 
       {/* special features you need  */}
       <div className={`${styles.working_remote}`}>
-        <h3>Special Features</h3>
+        <h3>{t("about.features.title")}</h3>
         <p>
-          Increase your productivity by assembling all your work tools into one
-          place
+          {t("about.features.description")}
         </p>
       </div>
       <CarouselSecond className={styles.carouselCaption} />
@@ -157,30 +151,30 @@ const index = () => {
         <div className={`row pt-3`}>
           <div className={`col ${styles.vector}`}>
             <img src={user} alt={"image of a user"} />
-            <h6 className={``}>Animated Avatar Loungue</h6>
-            <p>Create and animate your own avatar in the avatar lounge</p>
+            <h6 className={``}>{t("about.features.avatar.title")}</h6>
+            <p>{t("about.features.avatar.description")}</p>
           </div>
           <div className={`col ${styles.vector}`}>
             <img src={group} alt={"image of a company file"} />
-            <h6 className={``}>Company Files</h6>
+            <h6 className={``}>{t("about.features.files.title")}</h6>
             <p>
-              Access your files on google drive while <br /> on ZuriChat.
+              {t("about.features.files.description")}<br />.
             </p>
           </div>
           <div className={`col ${styles.vector}`}>
             <img src={vector} alt={"accessibility image"} />
-            <h6 className={``}>Accessibility</h6>
+            <h6 className={``}>{t("about.features.accessibility.title")}</h6>
             <p>
-              Be in control, Use ZuriChat and enjoy <br /> the best
-              accessibility features
+             {t("about.features.accessibility.description")} <br /> 
+             {t("about.features.accessibility.description_")}
             </p>
           </div>
           <div className={`col ${styles.vector}`}>
             <img src={user2} alt={"image of target board"} />
-            <h6 className={``}>Company Goals</h6>
+            <h6 className={``}>{t("about.features.goals.title")}</h6>
             <p>
-              Keep up with company goals <br />
-              right inside ZuriChat
+             {t("about.features.goals.description")} <br /> 
+             {t("about.features.goals.description_")}
             </p>
           </div>
         </div>
@@ -188,21 +182,14 @@ const index = () => {
       {/* whatever work you do, you can do it in zurichat  */}
       <div className={`container-fluid ${styles.zurichat}`}>
         <div className={`${styles.zurichat_section}`}>
-          <h3 className={`${styles.zurichat_h3}`}>
-            Whatever work you do, you can do it in Zuri Chat
-          </h3>
-          <div className={`styles.button`}>
-            <Link to="/contact-us">
-              <button className={`btn ${styles.btn_sale} ${styles.btn}`}>
-                Talk to sales
-              </button>
-            </Link>
-            <Link to="/signup">
-              <button className={`btn ${styles.btn_free} ${styles.btn}`}>
-                Try it for free
-              </button>
-            </Link>
+          <div className="signup-cta">
+            <h3 className = "text">
+            Zuri Chat is a modern world platform that makes communicating with your team or organization faster, easier and more fun.
+            Want to explore?
+            </h3>
+            <Link to = "/signup"><button className = "btn_sale">GET STARTED</button></Link>
           </div>
+          
         </div>
       </div>
       <Footer />
