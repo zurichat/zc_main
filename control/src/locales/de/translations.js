@@ -382,5 +382,16 @@ export const TRANSLATIONS_DE = {
       emailAddress: "E-Mail-Addresse",
       continueButton: "Weitermachen"
     }
+  },
+  newPassword: {
+    header: "Passwort wiederherstellen",
+    post_headline: "Erstellen Sie ein neues Passwort für Ihr Konto",
+    form: {
+      password: "Passwort",
+      passwordPlaceholder: "Gib dein neues Passwort ein",
+      confirmPassword: "Kennwort bestätigen",
+      confirmPasswordPlaceholder: "Bestätigen Sie Ihr neues Passwort",
+      continueButton: "Weitermachen"
+    }
   }
 }

@@ -373,6 +373,17 @@ export const TRANSLATIONS_EN = {
     form:{
       emailAddress: "Email Address",
       continueButton: "Continue"
+    }   
+  },
+  newPassword: {
+    header: "Recover Password",
+    post_headline: "Create a new password for your account",
+    form: {
+      password: "Password",
+      passwordPlaceholder: "Enter your new password",
+      confirmPassword: "Confirm Password",
+      confirmPasswordPlaceholder: "Confirm your new password",
+      continueButton: "Continue"
     }
   }
 }
