@@ -10,6 +10,7 @@ import ResetPassword from './pages/passwordReset/index'
 import NewPassword from './pages/passwordReset/newPassword'
 // end password block
 
+
 import CookiesSetting from './pages/cookiesSettings'
 import Cookies from './pages/cookies'
 import Features from './pages/features'
@@ -97,7 +98,7 @@ const App = () => {
         <Route path='/signout'>
           <SignOut />
         </Route>
-        <Route path='/about'>
+         <Route path="/about">
           <About />
         </Route>
         <Route path='/help'>
@@ -224,7 +225,12 @@ const App = () => {
         />
         <PrivateRoute path='/admin/stats' exact component={AnayticsHome} />
         <PrivateRoute
-          path='/admin/settings/customize'
+          path="/admin/settings/usergroups"
+          exact
+          component={UserGroups}
+        />
+        <PrivateRoute
+          path="/admin/settings/customize"
           exact
           component={Customize}
         />
