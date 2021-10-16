@@ -10,11 +10,9 @@ import { NoResult } from "./SearchNotFound"
 import { plugins } from "../utils/topbarApi"
 import { ProfileContext } from "../context/ProfileModal"
 
-export const BigModal = ({ onClose, inputValue, filter }) => {
-  const [result, setResult] = useState([])
-  const [isLoading, setLoading] = useState(false)
-
-  const { user } = useContext(ProfileContext)
+export const BigModal = ({ onClose, inputValue, result, isLoadingUp }) => {
+  const [results, setResult] = useState(result)
+  const [isLoading, setLoading] = useState(isLoadingUp)
 
   const pluginName = window.location.href
   const newName = pluginName.split("/")
@@ -24,29 +22,12 @@ export const BigModal = ({ onClose, inputValue, filter }) => {
   )
 
   useEffect(() => {
-    setLoading(true)
-    setLoading(true)
-    const getResult = async () => {
-      try {
-        let response = await exactPlugin.apiCall(
-          user.org_id,
-          user._id,
-          inputValue,
-          filter
-        )
-        if (response.status >= 200 || response.status <= 299) {
-          setResult(response.data.results.data)
-          setLoading(false)
-        }
-        setLoading(false)
-      } catch (e) {
-        console.error(e)
-        setLoading(false)
-      }
-    }
-    getResult()
-  }, [result[0]])
-  // console.log(result)
+    setResult(result)
+  }, [result])
+
+  useEffect(() => {
+    setLoading(isLoadingUp)
+  }, [isLoadingUp])
   let i = 0
 
   const sidebar = document.getElementById(
@@ -65,7 +46,7 @@ export const BigModal = ({ onClose, inputValue, filter }) => {
     right: 0;
     overflow: auto;
     height: 100vh;
-    z-index: 2000;
+    z-index: 5000;
     padding: 10px 20px;
   `
   const StyledInput = Styled.input`
@@ -76,7 +57,7 @@ export const BigModal = ({ onClose, inputValue, filter }) => {
     border-bottom: 2px solid #00b87c;
   `
 
-  let card = result.map((item, i) => (
+  let card = results.map((item, i) => (
     <div key={i} className={styles.resultCard}>
       <SearchValue
         destination_Url={item.destination_url}
@@ -89,9 +70,7 @@ export const BigModal = ({ onClose, inputValue, filter }) => {
       />
     </div>
   ))
-  const element = isLoading ? (
-    <p>loading...</p>
-  ) : (
+  const element = (
     <SearchContainer className="bigModal">
       <h2>{`Search result for "${inputValue}"`}</h2>
 
@@ -111,6 +90,18 @@ export const BigModal = ({ onClose, inputValue, filter }) => {
           </p>
           <button className={styles.startNewSearch}>Start A New Search</button>
         </div>
+      ) : isLoading ? (
+        <p
+          style={{
+            position: "absolute",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            top: `${top}`
+          }}
+        >
+          loading...
+        </p>
       ) : (
         card
       )}

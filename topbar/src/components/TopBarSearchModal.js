@@ -13,7 +13,8 @@ const TopBarSearchModal = () => {
   const [keys, setKeys] = useState("")
   const [filters, setFilters] = useState({})
   const [isSearchOpen, setOpenSearch] = useState(false)
-
+  const [result, setResult] = useState([])
+  const [isLoading, setLoading] = useState(false)
   const { user } = useContext(ProfileContext)
 
   let pluginName = window.location.href
@@ -26,6 +27,25 @@ const TopBarSearchModal = () => {
   const onSearchSubmit = async e => {
     if (e.keyCode === 13 && value.length >= 1) {
       setOpenSearch(true)
+      const getResult = async () => {
+        try {
+          setLoading(true)
+          let response = await exactPlugin.apiCall(
+            user.org_id,
+            user._id,
+            value,
+            keys
+          )
+          if (response.status >= 200 || response.status <= 299) {
+            setResult(response.data.results.data)
+          }
+          setLoading(false)
+        } catch (e) {
+          setLoading(false)
+          console.error(e)
+        }
+      }
+      getResult()
     }
   }
 
@@ -128,10 +148,11 @@ const TopBarSearchModal = () => {
       </div>
       {isSearchOpen ? (
         <BigModal
+          isLoadingUp={isLoading}
           onClose={() => {
             setOpenSearch(false)
           }}
-          filter={keys}
+          result={result}
           inputValue={value}
         />
       ) : null}
