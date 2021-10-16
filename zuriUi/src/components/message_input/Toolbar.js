@@ -1,4 +1,4 @@
-import React, { useState,useEffect   } from "react"
+import React, { useState, useEffect } from "react"
 import { convertToRaw, EditorState, RichUtils } from "draft-js"
 import UnstyledButton from "./UnstyledButton"
 import Italic from "./assets/comments/italic.svg"
@@ -11,9 +11,14 @@ import Clip from "./assets/comments/clip.svg"
 import Link from "./assets/comments/link.svg"
 import Send from "./assets/comments/send.svg"
 import AtSign from "./assets/comments/at-sign.svg"
-import Google from './assets/comments/google.svg'
-import Computer from './assets/comments/computer.svg'
-import "./ToolbarStyles.css"
+import Google from "./assets/comments/google.svg"
+import Computer from "./assets/comments/computer.svg"
+import "./emojiStyles.js"
+import {
+  GlobalStyleForEmojiSelect,
+  StyledEmojiSelectWrapper
+} from "./emojiStyles"
+
 
 const BoldIcon = () => <img src={Bold} alt="" />
 const ItalicIcon = () => <img src={Italic} alt="" />
@@ -193,7 +198,12 @@ const Toolbar = props => {
         <UnstyledButton>
           <AtIcon />
         </UnstyledButton>
-        {emojiSelect}
+        {
+          <StyledEmojiSelectWrapper>
+            <GlobalStyleForEmojiSelect />
+            {emojiSelect}
+          </StyledEmojiSelectWrapper>
+        }
         <UnstyledButton onClick={() => setshowAttachInputBox(true)}>
           <ClipIcon />
         </UnstyledButton>

@@ -40,7 +40,6 @@ import Billing from "./pages/admin/Billing"
 import Customize from "./pages/admin/Customize"
 import Blog from "./pages/blogs"
 import Homepage from "./pages/home"
-import Permissions from "./pages/admin/Permissions"
 import SettingsHome from "./pages/admin/Settings/index"
 import About from "./pages/about/index"
 import AdminSettingsTab from "./pages/admin/Settings/components/AdminSettingsTab"
@@ -58,7 +57,6 @@ import Invitation from "./pages/admin/Invitation"
 import Whyzurichat from "./pages/WhyZuriChat/Whyzurichat"
 
 import OnboardingHelp from "./pages/LoginSignUpHelp/index"
-
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
