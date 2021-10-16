@@ -22,7 +22,7 @@
     color: #fff;
 }
 
-input {
+.InputArea {
     border: 1px solid black;
     width: auto;
     border-radius: 5px;
