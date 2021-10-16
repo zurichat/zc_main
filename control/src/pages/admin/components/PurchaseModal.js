@@ -9,7 +9,8 @@ function PurchaseModal({ setHelpModal }) {
   const [workspaceData, setWorkspaceData] = useState({})
   const [loading, setLoading] = useState(false)
   const [tokenInput, setTokenInput] = useState(null)
-  const rate = 1;
+  const [successPayment, setSuccessPayment] = useState(false)
+  const rate = 1
 
   useEffect(() => {
     if (currentWorkspace) {
@@ -43,8 +44,8 @@ function PurchaseModal({ setHelpModal }) {
       .post(`/organizations/${currentWorkspace}/checkout-session`, request)
       .then(res => {
         setLoading(false)
-        location.href = res.data.data;
-        // console.log(res.data.data)
+        location.href = res.data.data
+         //console.log(res.data.data)
       })
       .catch(err => {
         setLoading(false)
@@ -54,6 +55,7 @@ function PurchaseModal({ setHelpModal }) {
         })
       })
   }
+
 
   return (
     <div className={styles.backDrop}>
@@ -78,7 +80,7 @@ function PurchaseModal({ setHelpModal }) {
                 }}
                 onChange={evt => {
                   // addToken(evt.target.value);
-                  setTokenInput(Number(evt.target.value));
+                  setTokenInput(Number(evt.target.value))
                 }}
               />
             </div>
@@ -87,7 +89,11 @@ function PurchaseModal({ setHelpModal }) {
           <div className="form-group ">
             <label htmlFor="price">Price</label>
             <div>
-              <input type="text" value={`$${tokenInput * rate}`} className="form-control" />
+              <input
+                type="text"
+                value={`$${tokenInput * rate}`}
+                className="form-control"
+              />
             </div>
           </div>
           <div className="d-flex justify-content-end">
