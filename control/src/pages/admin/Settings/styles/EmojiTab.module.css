@@ -184,6 +184,40 @@
   box-shadow: 0 1px 4px rgb(0 0 0 / 30%);
 }
 
+.chooseEmoji {
+  display: flex;
+  position: relative;
+}
+
+.chooseEmoji .emojiPreview {
+  height: 36px;
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(29, 28, 29, 0.13);
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+.chooseEmoji button {
+  transition: all 80ms linear;
+  background: #fff;
+  border: 1px solid rgba(29, 28, 29, 0.3);
+  background-clip: padding-box;
+  color: #1d1c1d;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 12px 1px;
+}
+
+.chooseEmoji .picker {
+  z-index: 1.8;
+  position: absolute;
+  bottom: 61%;
+  left: 0;
+}
+
 .search {
   position: relative;
   margin-top: 30px;
@@ -373,17 +407,17 @@
   cursor: pointer;
   font-size: 30px;
   color: rgba(29, 28, 29, 0.7);
-  font-weight: 300;
+  font-weight: 400;
   z-index: 10;
   /* padding: 8px; */
   transition: all 0.2s;
 }
 
 .modal .close:hover {
-  /* background-color: #616061; */
+  color: #616061;
 }
 
-.picker {
+.emojis .picker {
   z-index: 1.8;
   position: absolute;
   bottom: 61%;
@@ -420,14 +454,17 @@
 
 .list ol {
   padding-left: 0;
+  list-style: none;
 }
 
 .list li {
   margin-top: 20px;
+  /* border-bottom: .1px solid #6a6a6a; */
 }
 
 .list li *:not(:first-child) {
   margin-left: 16px;
+  margin-right: 16px;
 }
 
 .list .title {
@@ -530,6 +567,8 @@
   width: 50px;
   height: 36px;
   min-width: 80px;
+  border-radius: 4px;
+  transition: all 0.2s;
 }
 
 .footer button:first-child {
@@ -539,9 +578,17 @@
   background: transparent;
 }
 
+.footer button:first-child:hover {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 8%);
+}
+
 .footer button:last-child {
   transition: all 80ms linear;
   background: #007a5a;
   color: #fff;
   font-weight: 900;
+}
+
+.footer button:last-child:hover {
+  box-shadow: 0 1px 4px rgb(0 0 0 / 30%);
 }
