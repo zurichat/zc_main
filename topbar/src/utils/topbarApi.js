@@ -15,7 +15,11 @@ export const plugins = [
           !filter ? "" : `&filter=${filter}`
         }`
       )
-    }
+    },
+    filterCall: (org_id, member_id) =>
+      $http.get(
+        `todo.zuri.chat/api/v1/search-suggestions/${org_id}/${member_id}?org_id=${org_id}&member_id=${member_id}`
+      )
   },
   {
     name: "goals",
@@ -26,6 +30,7 @@ export const plugins = [
         }`
       )
     }
+
   },
 
   {
@@ -62,6 +67,7 @@ export const plugins = [
         }`
       )
     }
+   
   },
   {
     name: "dm",
@@ -74,6 +80,17 @@ export const plugins = [
     },
     filterCall: (org_id, member_id) =>
       $http.get(`dm.zuri.chat/api/v1/search-suggestions/${org_id}/${member_id}`)
+  },
+
+  {
+    name: "noticeboard",
+    apiCall: (org_id, member_id, query, filter = null) => {
+      return $http.get(
+        `noticeboard.zuri.chat/api/v1/search/${org_id}/${member_id}?q=${query}${
+          !filter ? "" : `&filter=${filter}`
+        }`
+      )
+    }
   },
   {
     name: "companyfiles",
