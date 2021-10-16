@@ -10,7 +10,7 @@ const PreferenceMenu = () => {
   const { sideBar, setSideBar } = useContext(ProfileContext)
 
   return (
-    <div className={styles.notifySidebar}>
+    <div className={styles.notifySidebar} id="preferences-menu-container">
       <div className={styles.itemsContainer}>
         <div
           onClick={() => setSideBar(1)}
