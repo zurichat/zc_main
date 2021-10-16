@@ -8,6 +8,9 @@ function PurchaseModal({ setHelpModal }) {
   const currentWorkspace = getCurrentWorkspace()
   const [workspaceData, setWorkspaceData] = useState({})
   const [loading, setLoading] = useState(false)
+  const [tokenInput, setTokenInput] = useState(null)
+  const [successPayment, setSuccessPayment] = useState(false)
+  const rate = 1
 
   useEffect(() => {
     if (currentWorkspace) {
@@ -35,16 +38,14 @@ function PurchaseModal({ setHelpModal }) {
   }
 
   const makePayment = () => {
-    const request = { amount: 50022 }
+    const request = { amount: tokenInput }
     setLoading(true)
     authAxios
       .post(`/organizations/${currentWorkspace}/checkout-session`, request)
       .then(res => {
         setLoading(false)
-        // console.log(res.data, 'to stripes')
-        toast.success(res.data.message, {
-          position: "top-center"
-        })
+        location.href = res.data.data
+         //console.log(res.data.data)
       })
       .catch(err => {
         setLoading(false)
@@ -54,6 +55,7 @@ function PurchaseModal({ setHelpModal }) {
         })
       })
   }
+
 
   return (
     <div className={styles.backDrop}>
@@ -71,10 +73,14 @@ function PurchaseModal({ setHelpModal }) {
             <label htmlFor="token">Token</label>
             <div>
               <input
-                type="text"
+                type="number"
                 className="form-control"
                 onInput={evt => {
-                  addToken(evt.target.value)
+                  // addToken(evt.target.value);
+                }}
+                onChange={evt => {
+                  // addToken(evt.target.value);
+                  setTokenInput(Number(evt.target.value))
                 }}
               />
             </div>
@@ -83,7 +89,11 @@ function PurchaseModal({ setHelpModal }) {
           <div className="form-group ">
             <label htmlFor="price">Price</label>
             <div>
-              <input type="text" className="form-control" />
+              <input
+                type="text"
+                value={`$${tokenInput * rate}`}
+                className="form-control"
+              />
             </div>
           </div>
           <div className="d-flex justify-content-end">
@@ -94,8 +104,8 @@ function PurchaseModal({ setHelpModal }) {
             >
               Cancel
             </button>
-            <button type="submit" className="btn" onClick={makePayment}>
-              Buy 12 token
+            <button type="button" className="btn" onClick={makePayment}>
+              Buy {tokenInput} token
             </button>
           </div>
         </form>

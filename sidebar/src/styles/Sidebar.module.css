@@ -3,34 +3,34 @@
 .sb__container {
   font: "Lato", sans-serif;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-color: var(--bg-color);
   padding-block-end: 3em;
   height: 100%;
   width: unset;
   font-size: 16px;
-
   /* display: flex;
   flex-direction: column; */
-
   /* overflow: auto; */
-
   /* width: 100%; */
-
-  /* overflow-y: scroll; */
-
   /* padding-top: 4.3rem; */
+
+  /*  Scroll for Over FLow Below  */
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/*
-.row {
-} */
+.sb__container::-webkit-scrollbar {
+  display: none;
+}
 
 .subCon2 {
   overflow-y: scroll;
   height: 100%;
   width: unset;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  /* -ms-overflow-style: none;
+  scrollbar-width: none; */
 }
 
 .subCon2::-webkit-scrollbar {
@@ -75,21 +75,19 @@
   position: relative;
   top: 0.2em;
   width: 1em;
-  color: #fff;
+  color: var(--text-color-bold);
 }
 
 .sb__item {
-  margin-bottom: 0.25em;
-  margin-top: 0.1em;
-
+  cursor: pointer;
+  margin-top: 30px;
   /* margin: 0.5em 0; */
 }
 
-.sb__item:hover {
-  background-color: #f1fffa;
-}
-
-.sb__item::selection {
+.sb__item:hover,
+.sb__item::selection,
+.item_p:hover,
+.item_p:hover {
   background-color: #f1fffa;
 }
 
@@ -98,20 +96,30 @@
 }
 
 .item__img {
-  width: 1.55em;
+  width: 18px;
+  /* margin-inline-end: 0.5rem; */
 }
 
 .item_p {
+  color: #454545;
   padding-inline-start: 0.5rem;
-  font-size: 0.935em;
-  line-height: 1.8em;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
 }
 
-.addButton {
-  width: 2.5em;
-  margin-inline-start: auto;
-  padding-inline-end: 1.5em;
+.invite__icon {
+  background-color: #f1fffa;
+  border-radius: 6px;
+  padding: 5px 10px;
 }
+.icon {
+  width: 24px;
+}
+/* .addButton {
+  width: 1.3em;
+  margin-inline-start: auto;
+} */
 
 /* .orgHeader {
   display: flex;
@@ -336,7 +344,7 @@
   font-weight: 500;
   font-size: 15px;
   line-height: 18px;
-  color: #999;
+  color: var(--sidebar-text-color-);
 }
 
 .messageDropdownIcon {
@@ -380,4 +388,12 @@
   align-items: center;
   justify-content: center;
   margin: auto;
+}
+
+.displayCategory {
+  display: none;
+}
+
+.displayCategory {
+  display: block;
 }

@@ -1,0 +1,22 @@
+.clearTime {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.2rem;
+}
+/* .clear_time_select select {
+  -webkit-appearance: menulist; 
+} */
+.clear_time_select select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.clear_time_select select:hover {
+  outline: none !important;
+  cursor: pointer;
+  box-shadow: none !important;
+}
+
+.clear_time_option {
+  outline: none;
+  border: none;
+}

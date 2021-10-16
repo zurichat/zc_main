@@ -10,7 +10,8 @@
 .navbar {
   padding: 0.5rem 1rem;
   background-color: white;
-  max-width: 95%;
+  max-width: 1440px;
+  width: 95%;
   margin: 0 auto;
   position: relative;
 }
@@ -39,6 +40,59 @@
 .navLinkComms {
   _margin-right: 30px;
 } */
+
+.modal_header button {
+  font-size: 1.5rem;
+  background-color: white;
+}
+
+.select {
+  font-size: 18px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.select span {
+  padding-left: 10px;
+}
+
+.select:hover {
+  outline-style: none;
+  background-color: #00b87c;
+}
+
+.country {
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.world {
+  padding: 5px;
+  background-color: white;
+}
+
+.world img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.world:hover {
+  background-color: rgb(128, 126, 126);
+}
+
+.country_logo {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.language {
+  position: absolute;
+  display: flex;
+  top: 1.2rem;
+  left: 85%;
+}
 
 .image {
   margin: auto;
@@ -101,24 +155,16 @@
 }
 
 .navbarNav {
-  flex-basis: 60%;
+  flex-basis: 85%;
 }
 
 .navbarNav li span:hover {
-  border-bottom: 0.2rem solid #00b87c;
+  border-bottom: 0.2rem solid #787a7a;
 }
-
-.navbarNav li span:active {
-  opacity: 0.5;
-}
-
-/* .toggle {
-  _margin-right: 12px;
-} */
 
 @media only screen and (max-width: 1200px) {
   .navbarNav {
-    flex-basis: 80%;
+    flex-basis: 90%;
   }
 }
 
@@ -153,15 +199,35 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 810px) {
   .navbar {
     padding: 0.5rem;
   }
+
+  .language {
+    left: 80vw;
+  }
 }
 
-@media screen and (max-width: 480px) {
+@media only screen and (max-width: 680px) {
+  .language {
+    left: 78vw;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .language {
+    left: 76vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
   .navbarNav li span {
     padding-left: 0;
+  }
+
+  .language {
+    left: 72vw;
   }
 
   .navbarBrand {
@@ -179,4 +245,22 @@
   /* .toggle {
     _margin-right: 30px;
   } */
+}
+
+@media only screen and (max-width: 418px) {
+  .language {
+    left: 68vw;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .language {
+    left: 65vw;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  .language {
+    left: 60vw;
+  }
 }
