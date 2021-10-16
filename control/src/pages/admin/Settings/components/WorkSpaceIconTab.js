@@ -18,34 +18,28 @@ import {
   ListItem
 } from "./workSpaceIconChange.js"
 
-const WorkSpaceIcon = () => {
+const WorkSpaceIconTab = () => {
   const [orgData, setOrgData] = useState({})
-  const [updateLogo, setUpdateLogo] = useState(null)
+  const [updateLogo, setUpdateLogo] = useState("")
+  const [alertToggle, setAlertToggle] = useState(false)
   const [toggle, setToggle] = useState(false)
   const organisation_id = localStorage.getItem("currentWorkspace")
   let token = sessionStorage.getItem("token")
 
   const handleIconUpload = () => {
-    const formData = new FormData()
-    formData.append("url", updateLogo)
-    console.log(selectImage)
-    axios.patch(
-        `https://api.zuri.chat/organisations/${organisation_id}/logo`,
-        formData,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "content-type": 'multipart/form-data'
+    // eslint-disable-next-line no-console
+    console.log(updateLogo)
+    setToggle(true)
+  }
+
+  const handleImageSelect = (e) => {
+      const reader = new FileReader()
+      reader.onload = () => {
+          if(reader.readyState == 2) {
+              setUpdateLogo(reader.result)
           }
-        }
-      )
-      .then(res => {
-        console.log(res.message)
-      })
-      .catch(error => {
-        console.log(error.message)
-      })
-      setToggle(true)
+      }
+      reader.readAsDataURL(e.target.files[0])
   }
 
   useEffect(() => {
@@ -57,6 +51,7 @@ const WorkSpaceIcon = () => {
       }
     })
       .then(res => {
+        // eslint-disable-next-line no-console
         console.log(res.data)
         setOrgData(res.data.data)
       })
@@ -67,7 +62,7 @@ const WorkSpaceIcon = () => {
 
   return (
     <WorkSPaceLogoContainer>
-      {alert ? <LogoAlert /> : null}
+      {alertToggle ? <LogoAlert /> : null}
       {!toggle ? (
         <>
           <WorkSpaceDetailContainer>
@@ -84,9 +79,9 @@ const WorkSpaceIcon = () => {
               <WorkSpaceName>Workspace Icon Guidelines</WorkSpaceName>
               <Text>
                 Your workspace icon is a way for you to visually identify the{" "}
-                <strong>{orgData.name}</strong> workspace. It is used in the desktop
-                and mobile apps, and on your workspace admin site. It’s most
-                helpful when you’re on multiple Slack workspaces.
+                <strong>{orgData.name}</strong> workspace. It is used in the
+                desktop and mobile apps, and on your workspace admin site. It’s
+                most helpful when you’re on multiple Slack workspaces.
               </Text>
               <Text>Some tips on choosing a good icon:</Text>
               <ListItems>
@@ -102,16 +97,16 @@ const WorkSpaceIcon = () => {
             </Guidelines>
             <UploadSection>
               <WorkSpaceName>Upload a New Icon</WorkSpaceName>
-              <UploadInput onChange={e => setUpdateLogo(e.target.files[0])} />
+              <UploadInput onChange={handleImageSelect} />
               <Button onClick={handleIconUpload}>Upload Icon</Button>
             </UploadSection>
           </GuidelinesContainer>
         </>
       ) : (
-        <LogoCrop logo={updateLogo} setToggle={setToggle} />
+        <LogoCrop logo={updateLogo} setAlertToggle={setAlertToggle} setToggle={setToggle} />
       )}
     </WorkSPaceLogoContainer>
   )
 }
 
-export default WorkSpaceIcon
+export default WorkSpaceIconTab
