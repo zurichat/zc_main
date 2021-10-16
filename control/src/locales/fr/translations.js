@@ -397,5 +397,10 @@ export const TRANSLATIONS_FR = {
       post_headline: "Cliquez sur le bouton pour continuer",
       continueButton: "Continuer"
     }
+  },
+  passwordResetSuccess: {
+    headline: "Réinitialisation du mot de passe réussie !",
+    post_headline: "La réinitialisation de votre mot de passe a réussi ! vous pouvez procéder à la connexion maintenant",
+    button: "Continuer à vous connecter"
   }
 }

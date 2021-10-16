@@ -393,5 +393,10 @@ export const TRANSLATIONS_ZH = {
       post_headline: "点击按钮继续",
       continueButton: "继续"
     }
+  },
+  passwordResetSuccess: {
+    headline: "密码重置成功！",
+    post_headline: "您的密码重置成功！您现在可以继续登录",
+    button: "继续登录"
   }
 }
