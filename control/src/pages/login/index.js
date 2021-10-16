@@ -152,13 +152,13 @@ const Login = () => {
           subHeader={t("login.form.sub_header")}
           googleHeader={t("login.form.google_header")}
           topLineText={t("login.form.topline_text")}
-          submitButtonName={t(
+          submitButtonName={
             loggingIn ? (
               <Loader type="TailSpin" color="#FFFFFF" height={40} width={40} />
             ) : (
-              "login.form.submitButtonName"
+              t("login.form.submitButtonName")
             )
-          )}
+          }
           disabled={email && password && !loggingIn}
           error={error}
           handleSubmit={handleSubmit}
