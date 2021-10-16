@@ -227,6 +227,11 @@ const App = () => {
           component={UserGroups}
         />
         <PrivateRoute
+          path="/admin/settings/usergroups"
+          exact
+          component={UserGroups}
+        />
+        <PrivateRoute
           path="/admin/settings/customize"
           exact
           component={Customize}
