@@ -5,7 +5,7 @@ const ArchiveChannel = ( {closeEdit} ) => {
     return (
         <ChannelModal 
         closeEdit={closeEdit}
-        full title = "Archive this Channel for everyone?">
+        full archiveTitle = "Archive this Channel for everyone?">
             <div className={styles.content}>
                 <p className={styles.p}>When you archive a channel, it's archived for everyone. That means...</p>
                 <p className={styles.p}>Keep in mind that:</p>
