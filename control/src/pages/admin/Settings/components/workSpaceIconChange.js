@@ -22,6 +22,7 @@ export const WorkSpaceDetailContainer = styled.div`
 export const WorkSpaceDetail = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: .35rem;
 `
 
 export const WorkSpaceName = styled.h3`
@@ -79,7 +80,7 @@ export const Button = styled.button`
   height: 36px;
   width: fit-content;
   padding: 0 12px 1px;
-  border-radius: 2px;
+  border-radius: 5px;
   background: #00b87c;
   color: #fff;
   font-family: "Lato";
