@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useCallback, useRef } from "react"
 import { authAxios } from "../../Utils/Api"
 import Loader from "react-loader-spinner"
+import ReactCrop from "react-image-crop"
+import "react-image-crop/dist/ReactCrop.css"
 import LogoCrop from "./LogoCrop"
 import LogoAlert from "./LogoAlert"
 import defaultAvatar from "../../assets/HNG-icon.svg"
@@ -17,13 +19,22 @@ import {
   Button,
   UploadInput,
   ListItems,
-  ListItem
+  ListItem,
+  CropButtons,
+  CancelButton,
+  Logo
 } from "./workSpaceIconChange.js"
 
 const WorkSpaceIconTab = () => {
+  const imgRef = useRef(null)
+  const previewCanvasRef = useRef(null)
+  const [completedCrop, setCompletedCrop] = useState(null);
+  const [crop, setCrop] = useState({ unit: '%', width: 30, aspect: 2 / 3 });
   const [orgData, setOrgData] = useState({})
   const [updateLogo, setUpdateLogo] = useState("")
   const [alertToggle, setAlertToggle] = useState(false)
+  const [cropData, setCropData] = useState("")
+  const [cropper, setCropper] = useState("")
   const [loader, setLoader] = useState({
     uploadLoader: false,
     removeLoader: false
@@ -84,13 +95,54 @@ const WorkSpaceIconTab = () => {
       })
   }
 
+  const handleCrop = () => {
+    setToggle(true)
+  }
+
+  const onLoad = useCallback(img => {
+    imgRef.current = img
+  }, [])
+
+  useEffect(() => {
+    if (!completedCrop || !previewCanvasRef.current || !imgRef.current) {
+      return
+    }
+
+    const image = imgRef.current
+    const canvas = previewCanvasRef.current
+    const crop = completedCrop
+
+    const scaleX = image.naturalWidth / image.width
+    const scaleY = image.naturalHeight / image.height
+    const ctx = canvas.getContext("2d")
+    const pixelRatio = window.devicePixelRatio
+
+    canvas.width = crop.width * pixelRatio * scaleX
+    canvas.height = crop.height * pixelRatio * scaleY
+
+    ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0)
+    ctx.imageSmoothingQuality = "high"
+
+    ctx.drawImage(
+      image,
+      crop.x * scaleX,
+      crop.y * scaleY,
+      crop.width * scaleX,
+      crop.height * scaleY,
+      0,
+      0,
+      crop.width * scaleX,
+      crop.height * scaleY
+    )
+  }, [completedCrop])
+
   return (
     <WorkSPaceLogoContainer>
       {alertToggle ? <LogoAlert /> : null}
       {!toggle ? (
         <>
           <WorkSpaceDetailContainer>
-            <img
+            <Logo
               src={orgData.logo_url ? orgData.logo_url : defaultAvatar}
               alt="NV"
             />
@@ -146,11 +198,23 @@ const WorkSpaceIconTab = () => {
           </GuidelinesContainer>
         </>
       ) : (
-        <LogoCrop
-          logo={updateLogo}
-          setAlertToggle={setAlertToggle}
-          setToggle={setToggle}
-        />
+        <>
+          <WorkSpaceName>Crop Workspace Icon</WorkSpaceName>
+          <ReactCrop
+            crop={crop}
+            Locked
+            disabled = {false}
+            src={updateLogo}
+            ref={imgRef}
+            onImageLoaded={onLoad}
+            onChange={c => setCrop(c)}
+            onComplete={c => setCompletedCrop(c)}
+          />
+          <CropButtons>
+            <Button>Crop Icon</Button>
+            <CancelButton>Cancel</CancelButton>
+          </CropButtons>
+        </>
       )}
     </WorkSPaceLogoContainer>
   )
