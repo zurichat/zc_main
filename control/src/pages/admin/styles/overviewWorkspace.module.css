@@ -1,0 +1,120 @@
+.details {
+  display: flex;
+  gap: 3rem;
+  border-bottom: 1px solid rgba(29, 28, 29, 0.13);
+  padding: 24px 12px;
+}
+.imgContainer {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 4px;
+  text-align: center;
+  border: 2px solid rgba(29, 28, 29, 0.13);
+  /* background-color: black; */
+}
+.imgContainer img {
+  width: 100%;
+  height: 100%;
+}
+.name {
+  margin: 0;
+  padding: 0;
+  margin-top: 1.7rem;
+}
+.h3 {
+  padding: 0;
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: black;
+  text-transform: capitalize;
+}
+.link {
+  color: #00b87c;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.link:hover {
+  text-decoration: underline;
+  color: #00b87c;
+}
+.workspacePlan {
+  display: flex;
+  padding: 20px 10px;
+  border-bottom: 1px solid rgba(29, 28, 29, 0.13);
+  align-items: center;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #1d1c1d;
+  text-align: center;
+}
+.workspaceHeader {
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  font-size: 16px;
+  padding-left: 8px;
+}
+.workspacePara {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 10rem;
+}
+.workspaceDate {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1.125rem;
+  color: #1d1c1d;
+  text-align: center;
+  margin: 0;
+  border-bottom: 1px solid rgba(29, 28, 29, 0.13);
+  padding: 20px 10px;
+}
+
+.workspaceDatePara {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 8rem;
+  border: none;
+}
+
+.workspaceDateHeader {
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  font-size: 16px;
+  padding-left: 8px;
+}
+.workspaceTerms {
+  display: flex;
+  padding: 20px 10px;
+  align-items: center;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #1d1c1d;
+  text-align: center;
+}
+.workspaceTermHeader {
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  font-size: 16px;
+  padding-left: 8px;
+}
+
+.review {
+  color: #00b87c;
+  font-weight: 400;
+  font-size: 1rem;
+  margin-left: 7rem;
+}
+.review:hover {
+  text-decoration: underline;
+  color: #00b87c;
+}

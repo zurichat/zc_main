@@ -78,6 +78,18 @@ input.inputField::placeholder {
   }
 }
 
+/* smaller than laptop, bigger than tablet */
+@media (min-width: 770px) and (max-width: 991px) {
+  .inputField {
+    width: 55%;
+    margin-right: 10px;
+  }
+  .subscribeBtn {
+    width: 40%;
+    font-size: 1.2rem;
+  }
+}
+
 /* tablet */
 @media (max-width: 769px) {
   .inputField {
