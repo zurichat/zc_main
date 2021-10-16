@@ -15,7 +15,7 @@ export const fetchUser = async dispatch => {
       dispatch({ type: ACTIONS.ADD_USER_INFO, payload: user })
 
       //set organization details
-      getOrgDetails(dispatch, currentWorkspace, user[0].email, user[0].org_id)
+      getOrgDetails(dispatch, currentWorkspace, user[0].email, user[0]._id)
     }
   } catch (err) {
     console.warn(err)
