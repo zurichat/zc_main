@@ -5,7 +5,7 @@ import Loader from "react-loader-spinner"
 import styles from "../styles/zuribot.module.css"
 import { authAxios } from "../../Utils/Api"
 
-import { getUser, getCurrentWorkspace } from "../../Utils/Common"
+import { getToken, getCurrentWorkspace } from "../../Utils/Common"
 
 // icons
 import { AiOutlinePlus, AiOutlineSearch, AiOutlineClose } from "react-icons/ai"
@@ -15,7 +15,55 @@ import { CardContext } from "../../../../context/CardContext"
 
 const Zuribot = () => {
   const [loading, setLoading] = React.useState(false)
+
+  // state management for modal and Modal POST request
   const [modal, setModal] = React.useState(false)
+  const [userSays, setUserSays] = React.useState()
+  const [zuribotSays, setZuribotSays] = React.useState()
+  const id = getCurrentWorkspace()
+
+  // clicking on the modal cancel button
+  const cancel = () => {
+    setModal(!modal)
+    setUserSays("")
+    setZuribotSays("")
+  }
+
+  // clicking on the modal submit button
+  const submit = () => {
+    if (!userSays || !zuribotSays) {
+      alert("textbox cannot be empty")
+    } else {
+      try {
+        authAxios.post(`/organizations/${id}/slackbotresponses`, {
+          whensomeonesays: userSays,
+          slackresponds: zuribotSays
+        })
+        setModal(!modal)
+        {
+          alert(`Zuribot will now look out for the word, ${userSays}`)
+        }
+      } catch (error) {
+        throw Error(alert(error))
+      }
+      setUserSays("")
+      setZuribotSays("")
+    }
+  }
+
+  // getting all the responses from the database
+  // const retrieve = async () => {
+  //   try {
+  //     const zuribotData = await authAxios.get(
+  //       `/organizations/${id}/slackbotresponses`
+  //     )
+  //     alert(zuribotData.data)
+  //     return zuribotData.data
+  //   } catch (error) {
+  //     throw Error(alert(error))
+  //   }
+  // }
+
   return (
     <div>
       {/* modal */}
@@ -36,9 +84,16 @@ const Zuribot = () => {
             </div>
 
             <div className={styles.textareaAndText}>
-              <textarea name="" id="" cols="25" rows="4"></textarea>
+              <textarea
+                name=""
+                id=""
+                cols="25"
+                rows="4"
+                value={userSays}
+                onChange={e => setUserSays(e.target.value)}
+              ></textarea>
               <h3 className={styles.normalText}>
-                Seperate multiple input phrases with commas. ie. hi, hello
+                Enter a phrase a phrase someone might type
               </h3>
             </div>
           </div>
@@ -50,24 +105,25 @@ const Zuribot = () => {
             </div>
 
             <div className={styles.textareaAndText}>
-              <textarea name="" id="" cols="25" rows="4"></textarea>
+              <textarea
+                name=""
+                id=""
+                cols="25"
+                rows="4"
+                value={zuribotSays}
+                onChange={e => setZuribotSays(e.target.value)}
+              ></textarea>
               <h3 className={styles.normalText}>
-                Seperate multiple input phrases with commas. ie. hi, hello
+                Enter what zuribot response should be
               </h3>
             </div>
           </div>
 
           <div className={styles.buttonWrapper}>
-            <button
-              onClick={() => setModal(!modal)}
-              className={styles.secondaryBtn}
-            >
+            <button onClick={cancel} className={styles.secondaryBtn}>
               Cancel
             </button>
-            <button
-              // onClick={handlePlan}
-              className={styles.primaryBtn}
-            >
+            <button onClick={submit} className={styles.primaryBtn}>
               Save
             </button>
           </div>
