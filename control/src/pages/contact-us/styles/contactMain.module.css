@@ -13,7 +13,7 @@
 
   /* height: 265px; */
   color: #242424;
-  padding: 100px 0 25px 164px;
+  padding: 100px 200px 25px 200px;
   text-align: left;
 }
 
@@ -33,8 +33,15 @@
 
 .contactBody {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
+}
+
+.contactBodyContent {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
 }
 
 .getHelpCard {
@@ -45,7 +52,7 @@
   box-shadow: 0 4px 12px rgba(97, 96, 97, 0.12);
 
   /* margin-top: -62px; */
-  margin-left: 172px;
+  margin-left: 10px;
   font-size: calc(16px * var(--type-scale));
   text-align: left;
   font-weight: 700;

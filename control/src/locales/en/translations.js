@@ -461,6 +461,7 @@ export const TRANSLATIONS_EN = {
       }
     }
   },
+  
   login:{
     title: "Login - Zuri Chat",
     form: {
@@ -486,5 +487,123 @@ export const TRANSLATIONS_EN = {
       legacyPolicy: "Legal Policy",
       aboutZuri: "About Zurichat"
     }
-  }
+  },
+
+  download_desktop: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "Experience the Zuri Chat’s desktop and mobile apps",
+      post_headline: "Connecting with your team has never been easier with Zuri Chat.",
+      desktop_line: "Zuri for Desktop",
+      desktop_app: "Download on Mac App Store",
+      desktop_soft: "Get it from Microsoft",
+      mobile_line: "Zuri for Mobile",
+      mobile_app: "Download on App Store",
+      mobile_play: "Get it on Google Play"
+    },
+
+    section_two: {
+      headline: "Download and enjoy the Zuri Chat experience on any these devices",
+      windows: "Windows",
+      mac: "macOS",
+      ios: "iOS",
+      android: "Android",
+    },
+
+    section_three: {
+      headline: "Same feel, same team on Zuri App!",
+    }
+  },
+  download_ios: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "Download Zuri Chat beta for iOS.",
+      post_headline: "Get Zuri Chat DM & Channel",
+      mac_line: "We’re on Mac, too",
+      mac_description: "Keep up with the conversation with our apps for Mac, Windows and Linux. We can email you a quick download link to get you started!",
+      button: "GET DOWNLOAD LINK",
+    }
+  },
+  download_mac: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "Experience Zuri Chat on MacOS",
+      post_headline: "Connecting with your team has never been easier with Zuri Chat.",
+      download: "DOWNLOAD",
+      download_soft: "Download for Windows?"
+    },
+
+    section_two: {
+      headline: "Why Zuri Chat App?",
+      post_headline: "Never miss the seamless collaboration experience even on the go with the zuri chat pc",
+      android: "Android",
+      and_break: "and",
+      ios: "iOS",
+      apps_break: "apps."
+    },
+
+    section_three: {
+      headline: "Same feel, same team on Zuri App!",
+      download: "DOWNLOAD FOR MAC",
+      download_soft: "Download for Windows?"
+    }
+  },
+  download_mobile: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "Experience the Zuri Chat’s desktop and mobile apps",
+      post_headline: "Connecting with your team has never been easier with Zuri Chat.",
+    },
+
+    section_two: {
+      headline: "Download and enjoy the Zuri Chat experience on any these devices",
+      windows: "Windows",
+      mac: "macOS",
+      android: "Android",
+      ios: "iOS"
+    },
+
+    section_three: {
+      headline: "Same feel, same team on Zuri App!",
+    }
+  },
+  download_windows: {
+    title: {
+      download: "Download Zuri Chat"
+    },
+
+    section_one: {
+      headline: "Experience Zuri Chat on Windows",
+      post_headline: "Connecting with your team has never been easier with Zuri Chat.",
+      download: "DOWNLOAD",
+      download_mac: "Download for Mac?"
+    },
+
+    section_two: {
+      headline: "Why Zuri Chat App?",
+      post_headline: "Never miss the seamless collaboration experience even on the go with the zuri chat pc",
+      android: "Android",
+      and_break: "and",
+      ios: "iOS",
+      apps_break: "apps."
+    },
+
+    section_three: {
+      headline: "Same feel, same team on Zuri App!",
+      download: "DOWNLOAD FOR WINDOWS",
+      download_ios: "Download for Mac?"
+    }
+  },
 }
