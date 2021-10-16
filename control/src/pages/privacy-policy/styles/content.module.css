@@ -43,8 +43,8 @@
 }
 
 .parplat {
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 16.5px;
+  font-weight: 700;
   line-height: 157.5%;
   letter-spacing: 3%;
 }
@@ -53,7 +53,7 @@
   font-family: "Lato", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 15.2px;
   line-height: 154%;
   color: #000;
 }
@@ -74,20 +74,20 @@
 }
 
 .paraPolicy {
-  font-size: 18px;
+  font-size: 17px;
   font-family: "Lato", sans-serif;
-  font-weight: 500;
-  line-height: 157.5%;
-  letter-spacing: 3%;
+  font-weight: 650;
+  line-height: 140%;
+  letter-spacing: 2%;
 }
 
 .parservices {
   font-family: "Lato", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
-  line-height: 157.5%;
-  letter-spacing: 0.03em;
+  font-size: 14px;
+  line-height: 158.5%;
+  letter-spacing: 0.01em;
   color: #000;
 }
 
@@ -165,7 +165,7 @@
   font-family: "Lato", sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 134%;
   letter-spacing: 0.03em;
   color: #000;
@@ -175,7 +175,7 @@
   font-family: "Lato", sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 134%;
   letter-spacing: 0.03em;
   color: #000;
@@ -185,7 +185,7 @@
   font-family: "Lato", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 134%;
   letter-spacing: 0.03em;
   color: #000;
@@ -195,7 +195,7 @@
   font-family: "Lato", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 192%;
   color: #000;
   margin-bottom: 24px;
@@ -203,7 +203,7 @@
 
 .tableContents {
   text-decoration: underline;
-  font-size: 22px;
+  font-size: 19px;
 }
 
 .tablelinks {
@@ -211,7 +211,7 @@
   font-style: normal;
   font-weight: 900;
   letter-spacing: 3%;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 35.12px;
   color: #000;
   margin-bottom: 24px;
@@ -219,7 +219,7 @@
 
 .privacymat {
   text-decoration: underline;
-  font-size: 22px;
+  font-size: 19px;
   font-weight: bold;
   letter-spacing: -2%;
   margin-bottom: 29px;
@@ -228,10 +228,10 @@
 .zurimission {
   font-family: "Lato", sans-serif;
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 450;
+  font-size: 15px;
   line-height: 155%;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   color: #000;
   margin-top: 20px;
 }
@@ -240,7 +240,7 @@
   font-family: "Lato", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 155%;
   letter-spacing: 0.03em;
   color: #000;
@@ -252,7 +252,7 @@
 }
 
 .headingAppl {
-  font-size: 22px;
+  font-size: 19px;
   font-weight: 700;
   letter-spacing: -2%;
   text-decoration: underline;
@@ -265,8 +265,8 @@
 .appPrivPol1 {
   font-family: "Lato", sans-serif;
   font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: 650;
+  font-size: 14.3px;
   line-height: 23px;
   color: #000;
 }
@@ -275,7 +275,7 @@
   font-family: "Lato", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 15.5px;
   line-height: 173%;
   letter-spacing: 0.01em;
   color: #000;
@@ -285,7 +285,7 @@
   font-family: "Lato", sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 19px;
   line-height: 29px;
   letter-spacing: -0.02em;
   text-decoration-line: underline;
@@ -299,8 +299,8 @@
 .infopar1 {
   font-family: "Lato", sans-serif;
   font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: 650;
+  font-size: 15px;
   line-height: 22px;
   color: #000;
 }
@@ -309,7 +309,7 @@
   font-family: "Lato", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 28px;
   letter-spacing: 0.01em;
   color: #000;
@@ -321,7 +321,7 @@
   font-family: "Lato", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 28px;
   letter-spacing: 0.01em;
   color: #000;
@@ -331,7 +331,7 @@
   font-family: "Lato", sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 19px;
   line-height: 29px;
   letter-spacing: -0.02em;
   text-decoration-line: underline;
@@ -346,7 +346,7 @@
   font-family: "Lato", sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 21.6px;
   letter-spacing: -2%;
   color: #000;
@@ -379,7 +379,7 @@
   font-family: "Lato", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 169.5%;
   color: #000;
   padding-bottom: 20px;
@@ -389,20 +389,20 @@
   .contentBox {
     display: flex;
     justify-content: space-between;
-    width: 70%;
+    width: 100%;
   }
   .contentBox_1 {
-    width: 25%;
+    width: 45%;
   }
 
   .effectiveAll {
-    width: 45%;
+    width: 55%;
     margin-top: 25px;
     margin-left: 10%;
   }
 
   .parOthers .parOthers2 {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
@@ -446,7 +446,7 @@
     margin-left: 10px;
     margin-right: 8px;
     max-width: 100%;
-    height: auto;
+    height: 100%;
   }
 
   .parplat .parregistered {
@@ -469,7 +469,7 @@
   }
 
   .paraPolicy .parservices {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .veryBigLock {
@@ -481,11 +481,11 @@
   }
 
   .headingFive .privacymat .headingAppl .infoCollect .headingDataOthers {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .partners {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .applicabilityImage {
@@ -494,7 +494,7 @@
   }
 
   .appPrivPol1 {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .bigLock {
@@ -540,7 +540,7 @@
   }
 
   .parOthers .parOthers2 {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .imagePart {
@@ -563,7 +563,7 @@
   }
 
   .parPartners {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
