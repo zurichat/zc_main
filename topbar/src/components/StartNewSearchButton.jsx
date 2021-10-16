@@ -19,12 +19,10 @@ const Button = styled.button`
     cursor: pointer;
     border-radius: var(--radius);
 `
-class StartNewSearch extends React.Component {
-   render () {  
+const StartNewSearch = () => {
        return (
     <Button /*onClick={clearSearchBar}*/ >Start New Search</Button>
     );
-    } 
 } 
   
 
