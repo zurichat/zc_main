@@ -2,49 +2,79 @@ import React, { useState, useEffect, useRef } from "react"
 import styles from "../styles/ChannelsTab.modules.css"
 import { Table } from "react-bootstrap"
 import { MdKeyboardArrowDown } from "react-icons/md"
+import { IoCalendarOutline } from "react-icons/io5"
+import { getCurrentWorkspace } from "../../Utils/Common"
+import { authAxios, analyticsAxios } from "../../Utils/Api"
+import ToolTip from "../utils/Tooltip"
 
 const date = new Date()
 
 const tableData = [
   {
     title: "Name",
-    default: true,
     active: true,
     code: "name"
   },
   {
     title: "Created",
-    default: true,
     active: true,
     code: "created"
   },
   {
     title: "Last active",
-    default: true,
     active: true,
     code: "last_active"
   },
   {
     title: "Total membership",
-    default: true,
     active: true,
     code: "total_members"
   },
   {
     title: "Messages Posted",
-    default: true,
     active: true,
     code: "posted_messages"
+  },
+  {
+    title: "TDummy",
+    active: true,
+    code: "t_dummy"
+  },
+  {
+    title: "TDummy1",
+    active: true,
+    code: "t_dummy1"
+  },
+  {
+    title: "TDummy2",
+    active: true,
+    code: "t_dummy2"
+  },
+  {
+    title: "TDummy3",
+    active: true,
+    code: "t_dummy3"
+  },
+  {
+    title: "Next Dummy",
+    active: true,
+    code: "next_dummy"
   }
 ]
+
+const FormatText = text => {
+  const arr = text.split(" ")
+  const result =
+    arr.length > 6 ? arr.slice(0, 5).join(" ") + "..." : arr.join(" ")
+  return result
+}
 
 const apiData = [
   {
     name: {
       value: "kingsley okoro",
       styles: styles.topic,
-      meta: "this channel is for... well",
-      metaStyles: [styles.description]
+      meta: "this channel is for... well"
     },
     created: { value: date.toLocaleString(), styles: "", meta: "" },
     last_active: { value: date.toLocaleString(), styles: "", meta: "" },
@@ -55,6 +85,31 @@ const apiData = [
     },
     posted_messages: {
       value: Math.floor(Math.random() * 30),
+      styles: "",
+      meta: ""
+    },
+    t_dummy: {
+      value: 20,
+      styles: "",
+      meta: ""
+    },
+    t_dummy1: {
+      value: 201,
+      styles: "",
+      meta: ""
+    },
+    t_dummy2: {
+      value: 202,
+      styles: "",
+      meta: ""
+    },
+    t_dummy3: {
+      value: 203,
+      styles: "",
+      meta: ""
+    },
+    next_dummy: {
+      value: 10,
       styles: "",
       meta: ""
     }
@@ -63,8 +118,7 @@ const apiData = [
     name: {
       value: "Favour chris",
       styles: styles.topic,
-      meta: "This channel is for... well",
-      metaStyles: [styles.description]
+      meta: "Dummy text to test what I'm doing and ensure life on earth is habitable for cockcroaches"
     },
     created: { value: date.toLocaleString(), styles: "", meta: "" },
     last_active: { value: date.toLocaleString(), styles: "", meta: "" },
@@ -75,6 +129,31 @@ const apiData = [
     },
     posted_messages: {
       value: Math.floor(Math.random() * 30),
+      styles: "",
+      meta: ""
+    },
+    t_dummy: {
+      value: 20,
+      styles: "",
+      meta: ""
+    },
+    t_dummy1: {
+      value: 201,
+      styles: "",
+      meta: ""
+    },
+    t_dummy2: {
+      value: 202,
+      styles: "",
+      meta: ""
+    },
+    t_dummy3: {
+      value: 203,
+      styles: "",
+      meta: ""
+    },
+    next_dummy: {
+      value: 10,
       styles: "",
       meta: ""
     }
@@ -83,8 +162,7 @@ const apiData = [
     name: {
       value: "Tessy Igwe",
       styles: styles.topic,
-      meta: "This channel is for... well",
-      metaStyles: [styles.description]
+      meta: "This channel is for... well"
     },
     created: { value: date.toLocaleString(), styles: "", meta: "" },
     last_active: { value: date.toLocaleString(), styles: "", meta: "" },
@@ -95,6 +173,31 @@ const apiData = [
     },
     posted_messages: {
       value: Math.floor(Math.random() * 30),
+      styles: "",
+      meta: ""
+    },
+    t_dummy: {
+      value: 20,
+      styles: "",
+      meta: ""
+    },
+    t_dummy1: {
+      value: 201,
+      styles: "",
+      meta: ""
+    },
+    t_dummy2: {
+      value: 202,
+      styles: "",
+      meta: ""
+    },
+    t_dummy3: {
+      value: 203,
+      styles: "",
+      meta: ""
+    },
+    next_dummy: {
+      value: 10,
       styles: "",
       meta: ""
     }
@@ -105,33 +208,78 @@ const ChannelsTab = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isColumnModalOpen, setIsColumnModalOpen] = useState(false)
   const [selectedOption, setSelectedOption] = useState(null)
-  const node = useRef(null)
+  const node = useRef()
+  const durationNode = useRef()
   const toggle = () => setIsOpen(!isOpen)
   const toggleColumnModal = () => setIsColumnModalOpen(!isColumnModalOpen)
   const [tableHeaderStateData, setTableHeaderStateData] = useState(tableData)
   const [apiStateData, setApiStateData] = useState(apiData)
+  const [workspaceData, setWorkspaceData] = useState({})
+  const currentWorkspace = getCurrentWorkspace()
+
+  useEffect(() => {
+    if (currentWorkspace) {
+      authAxios
+        .get(`/organizations/${currentWorkspace}`)
+        .then(res => {
+          setWorkspaceData(res.data.data)
+        })
+        .catch(err => {
+          console.error(err)
+        })
+    }
+  }, [currentWorkspace])
+
+  // Didn't use live data because I was getting CORS
+  // policy block and my back end guy couldn't fix it on time
+  // useEffect(() => {
+  //   analyticsAxios
+  //     .get(`${currentWorkspace}/channels`)
+  //     .then(res => {
+  //       console.log("res", res)
+  //     })
+  //     .catch(err => {
+  //       console.error(err)
+  //     })
+  // }, [])
 
   useEffect(() => {
     setTableHeaderStateData(tableHeaderStateData)
   }, [])
 
   useEffect(() => {
+    const handleClick = e => {
+      if (
+        !(node.current && node.current.contains(e.target)) &&
+        isColumnModalOpen
+      ) {
+        setIsColumnModalOpen(false)
+      }
+    }
     // add when mounted
-    document.addEventListener("mousedown", handleClick)
+    document.addEventListener("click", handleClick)
     // return function to be called when unmounted
     return () => {
-      document.removeEventListener("mousedown", handleClick)
+      document.removeEventListener("click", handleClick)
     }
-  }, [])
+  }, [isColumnModalOpen])
 
-  const handleClick = e => {
-    if (node.current.contains(e.target)) {
-      // inside click
-      return
+  useEffect(() => {
+    const handleClick = e => {
+      if (
+        !(durationNode.current && durationNode.current.contains(e.target)) &&
+        isOpen
+      ) {
+        setIsOpen(false)
+      }
     }
-    // outside click
-    setIsColumnModalOpen(false)
-  }
+    // add when mounted
+    document.addEventListener("click", handleClick)
+    // return function to be called when unmounted
+    return () => {
+      document.removeEventListener("click", handleClick)
+    }
+  }, [isOpen])
 
   const onOptionClicked = value => () => {
     setSelectedOption(value)
@@ -155,12 +303,13 @@ const ChannelsTab = () => {
               x => x.code === key
             )
             if (headerIndex > -1 && tableHeaderStateData[headerIndex].active) {
-              const { value, meta, styles, metaStyles } = x[key]
-              let data = meta ? (
+              const { value, meta, styles } = x[key]
+              const description = meta && FormatText(meta)
+              let data = description ? (
                 <td key={"td_body_" + index}>
                   <div>
                     <p className={styles}>{`${value}`}</p>
-                    <p className={metaStyles}>{`${meta}`}</p>
+                    <ToolTip toolTipText={meta}>{description}</ToolTip>
                   </div>
                 </td>
               ) : (
@@ -213,7 +362,6 @@ const ChannelsTab = () => {
 
     setTableHeaderStateData([...tableHeaderStateData])
   }
-
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -221,6 +369,7 @@ const ChannelsTab = () => {
         <div className={styles.right}>
           <p>Updated 3 days ago</p>
           <div className={styles.dropdownHeader} onClick={toggle}>
+            <IoCalendarOutline className={styles.calender} />
             {selectedOption || options[0]}
             <MdKeyboardArrowDown className={styles.arrowDown} />
           </div>
@@ -232,7 +381,7 @@ const ChannelsTab = () => {
         </div>
       </div>
 
-      <Table hover responsive="md" className={styles.table}>
+      <Table hover className={styles.channelsTable}>
         <thead>
           <tr>{generateTableHeader()}</tr>
         </thead>
@@ -240,7 +389,7 @@ const ChannelsTab = () => {
       </Table>
 
       {isOpen && (
-        <div className={styles.dropdownListContainer} ref={node}>
+        <div className={styles.dropdownListContainer} ref={durationNode}>
           <ul className={styles.dropdownList}>
             {options.map((option, i) => (
               <li
@@ -256,7 +405,7 @@ const ChannelsTab = () => {
       )}
 
       {isColumnModalOpen && (
-        <div className={styles.columnsModal}>
+        <div className={styles.columnsModal} ref={node}>
           <div className={styles.columnsModalHeader}>
             <p className={styles.title}>Edit Columns</p>
             <p className={styles.description}>
@@ -291,54 +440,119 @@ const ChannelsTab = () => {
             <div className={styles.horizontalDivider}>
               <hr />
             </div>
+
+            {/* paid plans functionality not yet implemented on zuri chat */}
             <div className={styles.basicsContainer}>
               <p>Available on Paid Plans</p>
               <div className={styles.radioFields}>
-                <label>
-                  <input type="checkbox" disabled /> Full Members
+                <label
+                  className={
+                    workspaceData.version == "pro" ? "" : `${styles.grey}`
+                  }
+                >
+                  <input
+                    type="checkbox"
+                    disabled={workspaceData.version != "pro"}
+                  />{" "}
+                  Full Members
                 </label>
               </div>
 
               <div className={styles.radioFields}>
-                <label>
-                  <input type="checkbox" disabled /> Guests
+                <label
+                  className={
+                    workspaceData.version == "pro" ? "" : `${styles.grey}`
+                  }
+                >
+                  <input
+                    type="checkbox"
+                    disabled={workspaceData.version != "pro"}
+                  />{" "}
+                  Guests
                 </label>
               </div>
 
               <div className={styles.radioFields}>
-                <label>
-                  <input type="checkbox" disabled /> Messages posted by members
+                <label
+                  className={
+                    workspaceData.version == "pro" ? "" : `${styles.grey}`
+                  }
+                >
+                  <input
+                    type="checkbox"
+                    disabled={workspaceData.version != "pro"}
+                  />{" "}
+                  Messages posted by members
                 </label>
               </div>
 
               <div className={styles.radioFields}>
-                <label>
-                  <input type="checkbox" disabled /> Members who posted
+                <label
+                  className={
+                    workspaceData.version == "pro" ? "" : `${styles.grey}`
+                  }
+                >
+                  <input
+                    type="checkbox"
+                    disabled={workspaceData.version != "pro"}
+                  />{" "}
+                  Members who posted
                 </label>
               </div>
 
               <div className={styles.radioFields}>
-                <label>
-                  <input type="checkbox" disabled /> Members who viewed
+                <label
+                  className={
+                    workspaceData.version == "pro" ? "" : `${styles.grey}`
+                  }
+                >
+                  <input
+                    type="checkbox"
+                    disabled={workspaceData.version != "pro"}
+                  />{" "}
+                  Members who viewed
                 </label>
               </div>
 
               <div className={styles.radioFields}>
-                <label>
-                  <input type="checkbox" disabled /> Change in members who
-                  posted
+                <label
+                  className={
+                    workspaceData.version == "pro" ? "" : `${styles.grey}`
+                  }
+                >
+                  <input
+                    type="checkbox"
+                    disabled={workspaceData.version != "pro"}
+                  />{" "}
+                  Change in members who posted
                 </label>
               </div>
 
               <div className={styles.radioFields}>
-                <label>
-                  <input type="checkbox" disabled /> Reactions added
+                <label
+                  className={
+                    workspaceData.version == "pro" ? "" : `${styles.grey}`
+                  }
+                >
+                  <input
+                    type="checkbox"
+                    disabled={workspaceData.version != "pro"}
+                  />{" "}
+                  Reactions added
                 </label>
               </div>
 
               <div className={styles.radioFields}>
-                <label>
-                  <input type="checkbox" disabled /> Members who reacted
+                <label
+                  className={
+                    workspaceData.version == "pro" ? "" : `${styles.grey}`
+                  }
+                >
+                  <input
+                    type="checkbox"
+                    disabled={workspaceData.version != "pro"}
+                  />{" "}
+                  Members who reacted
                 </label>
               </div>
             </div>

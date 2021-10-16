@@ -172,8 +172,9 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/home"
+            to="/admin/settings/managemembers "
           >
+
             <FiBook className={styles.icon} />
             Manage members
           </Link>
@@ -214,6 +215,14 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
+            to="/admin/settings/deprecation"
+          >
+            <FiScissors className={styles.icon} />
+            Deprecation
+          </Link>
+          <Link
+            onClick={() => setModal(!openModal)}
+            className={styles.sidebarLink}
             to="/"
           >
             <FiCheckSquare className={styles.icon} />
@@ -242,8 +251,9 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/home"
+            to="/admin/settings/managemembers "
           >
+          
             Manage members
           </Link>
           <Link
