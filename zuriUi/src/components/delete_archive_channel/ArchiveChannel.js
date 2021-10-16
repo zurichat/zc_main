@@ -1,9 +1,10 @@
 import ChannelModal from './ChannelModal'
 import styles from './ArchiveChannel.module.css'
 
-const ArchiveChannel = () => {
+const ArchiveChannel = ( {closeEdit} ) => {
     return (
         <ChannelModal 
+        closeEdit={closeEdit}
         full title = "Archive this Channel for everyone?">
             <div className={styles.content}>
                 <p className={styles.p}>When you archive a channel, it's archived for everyone. That means...</p>

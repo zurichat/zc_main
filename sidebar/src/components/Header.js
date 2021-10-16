@@ -2,6 +2,9 @@ import React, { useState } from "react"
 import styles from "../styles/Sidebar.module.css"
 import { MdKeyboardArrowDown } from "react-icons/md"
 import newMsgIcon from "../assets/icons/newMsgIcon.svg"
+import UserOrganization from "../../../control/src/pages/createworkspace/components/UserOrganization"
+import ModalComponent from "./ModalComponent"
+
 
 const SidebarHeader = props => {
   //home modal
@@ -25,7 +28,7 @@ const SidebarHeader = props => {
                 props.state.organization_info.name}
             </span>
             <span className={`col-4 p-0 ${styles.sidebar__header__arrow}`}>
-              <MdKeyboardArrowDown />
+              <MdKeyboardArrowDown className={`my-auto`} style={{ color: `#fff` }} />
             </span>{" "}
           </div>
           <div className={`row ${styles.newMessage}`}>
@@ -37,15 +40,17 @@ const SidebarHeader = props => {
           </div>
         </div>
         <div className={`col-12 px-3 ${styles.modalContainer}`}>
-          {/*
+          {
 
                  <div className={`col-12 px-3 ${styles.odalContainer}`}>
               <ModalComponent
-                workSpace={org}
+                workSpace={UserOrganization}
                 isOpen={homeModal}
-                toggleOpenInvite={toggleOpenInvite}
+                toggleHomeModal={toggleHomeModal}
               />
             </div>
+          /*
+
 
             <Modall showDialog={showDialog} closeDialog={close} />
 
