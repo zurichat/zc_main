@@ -201,12 +201,17 @@ function MembersPanel({ config }) {
 
   const roomData =
     "roomInfo" in config ? config.roomInfo : dummyHeaderConfig.roomInfo
-  const { membersList, addmembersevent, removememberevent } = roomData
+  const {
+    membersList: roomMembers,
+    addmembersevent,
+    removememberevent
+  } = roomData
   const [addModalShow, setaddModalShow] = useState(false)
   const [removeModalShow, setremoveModalShow] = useState(false)
   const [selectedMember, setSelectedMember] = useState(null)
   const [isLoading, setisLoading] = useState(false)
   const [userList, setUserList] = useState([])
+  const [membersList, setMembersList] = useState(roomMembers)
 
   const handleClose = () => {
     setaddModalShow(false)
@@ -217,6 +222,14 @@ function MembersPanel({ config }) {
   const handleremoveModalShow = () => setremoveModalShow(true)
 
   const addMembersEvent = values => {
+    const newEntries = [
+      ...membersList,
+      values.map(item => {
+        return { _id: item.value, email: item.label }
+      })
+    ]
+    setMembersList([newEntries])
+    // console.warn(membersList)
     addmembersevent(values)
   }
 
