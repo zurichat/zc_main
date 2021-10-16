@@ -136,7 +136,7 @@ export const TRANSLATIONS_DE = {
       link: "Abrechnung bei Zuri Chat."
     }
   },
-
+  
   plugin: {
     title: {
       plugin: "Verbinden und interagieren"

@@ -47,7 +47,8 @@ export const BigModal = ({ onClose, inputValue, filter }) => {
     getResult()
   }, [result[0]])
   // console.log(result)
-  let i = 0
+  let i = 0;
+  const showResult = (result.length === 0) ? false : true;
 
   const sidebar = document.getElementById(
     "single-spa-application:@zuri/sidebar"
@@ -88,34 +89,27 @@ export const BigModal = ({ onClose, inputValue, filter }) => {
         plugin_name={exactPlugin.name}
       />
     </div>
-  ))
+  ));
+
   const element = isLoading ? (
     <p>loading...</p>
   ) : (
     <SearchContainer className="bigModal">
-      <h2>{`Search result for "${inputValue}"`}</h2>
+        <h2>{`Search result for "${inputValue}"`}</h2>
 
-      <button
+        <button
         className="btn"
         onClick={() => onClose()}
         style={{ position: "absolute", top: "15px", right: "20px" }}
       >
         <img src={cancel} alt="close" />
       </button>
-      {result.length < 1 ? (
-        <div className={styles.noResult}>
-          <p className={styles.no_result_title}>No Result Found</p>
-          <p className={styles.no_result_desc}>
-            Looking for something? If it happened in zuri-chat,
-            <br /> you can find it in search.
-          </p>
-          <button className={styles.startNewSearch}>Start A New Search</button>
-        </div>
-      ) : (
+      
+      {result.length < 1 ? <NoResult onClosed={() => onClose()}/> : (
         card
       )}
     </SearchContainer>
-  )
+  );
 
   return element
 }
