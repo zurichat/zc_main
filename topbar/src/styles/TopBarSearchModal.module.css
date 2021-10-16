@@ -1,5 +1,10 @@
 .topBarSearchModal {
   position: relative;
+  border: none;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
   /* background: white;
     color: white;
     padding: .5em;
@@ -14,6 +19,16 @@
   width: 100%;
 }
 
+._input2 {
+  flex: 1;
+  padding: 2px;
+}
+
+.topBarSearchModal:focus-within > ._input > ._input2 {
+  outline: none;
+  border: none;
+}
+
 .close_icon {
   width: 1.2em;
   /* height: 1em; */
@@ -21,7 +36,6 @@
 
 .input_box {
   display: flex;
-  justify-between: space-between;
   align-items: center;
   border-bottom: 0.5px solid lightgrey;
   padding-bottom: 10px;
@@ -34,11 +48,11 @@
 }
 
 ._input {
+  display: flex;
   border: 1px solid rgb(161, 161, 161);
-  padding: 0.2rem 1rem;
   font-weight: 400;
   outline: none;
-  margin: 0px;
+  margin: 0;
   font-family: inherit;
   font-size: 1rem;
   line-height: inherit;
@@ -46,18 +60,24 @@
   background-color: transparent;
   width: 100%;
   box-sizing: border-box;
+  gap: 5px;
+  align-items: center;
+  justify-content: start;
+  z-index: 1000;
+  position: relative;
 }
 
 .MainBox {
   display: none;
-  width: 100%;
   position: absolute;
   top: 0;
+  width: 100%;
   /* background: red; */
   background: white;
   color: white;
   padding: 0.5em;
   width: 59%;
+  /* min-height: 15em; */
   border-radius: 0.3em;
   z-index: 2001;
   box-shadow: 0 0 0 1px white, 0 4px 12px 0 rgb(0 0 0 / 17%);
@@ -71,13 +91,7 @@
   outline: none;
   padding: 0.3em 0.5em;
 }
-.Clear {
-    display: flex;
-    align-self: flex-end;
-    margin-right: 10px;
-    padding: 2px 8px;
-    border-radius: 5px;
-}
+
 .List {
   color: #000;
   padding: 0.5rem 0 0.5rem 0.2rem;
@@ -91,6 +105,5 @@
 
 .ListWrapper {
   overflow: auto;
-  scroll-behavior: smooth;
   max-height: 20em;
 }
