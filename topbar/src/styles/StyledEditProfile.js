@@ -232,6 +232,7 @@ export const StyledProfileWrapper = styled.section`
       top: 1rem;
       right: 2.5rem;
       z-index: 40000;
+      cursor: pointer;
     }
   }
   .button-wrapper {
@@ -248,7 +249,7 @@ export const StyledProfileWrapper = styled.section`
   .btns {
     font-size: 1rem;
     font-weight: 400;
-    padding: 0.75rem 1.2rem;
+    padding: 0.5rem 1rem;
     outline: none;
     border: none;
     cursor: pointer;
@@ -271,6 +272,11 @@ export const StyledProfileWrapper = styled.section`
       color: #fff;
       border-radius: 4px;
       text-align: center;
+      &:hover {
+        background: #029765;
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+      }
     }
   }
   .rmvBtn {
