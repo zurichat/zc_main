@@ -62,8 +62,6 @@ import Whyzurichat from "./pages/WhyZuriChat/Whyzurichat"
 import OnboardingHelp from "./pages/LoginSignUpHelp/index"
 import BookDemo from "./pages/book-a-demo"
 
-
-
 import ChangeWorkspaceName from "./pages/admin/Settings/components/ChangeWorkspaceName"
 
 
@@ -199,7 +197,11 @@ const App = () => {
         <PrivateRoute path="/settings" exact component={Settings} />
         <PrivateRoute path="/admin/settings" exact component={SettingsHome} />
         <PrivateRoute path="/admin/settings/home" exact component={Home} />
-        <PrivateRoute path="/admin/name" exact component={ChangeWorkspaceName} />
+        <PrivateRoute
+          path="/admin/name"
+          exact
+          component={ChangeWorkspaceName}
+        />
         <PrivateRoute
           path="/admin/settings/analytics/memmber"
           exact
