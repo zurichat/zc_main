@@ -76,4 +76,7 @@
   .spacingRight {
     margin: 0;
   }
+  .labelContainer {
+    margin-bottom: 20px;
+  }
 }
