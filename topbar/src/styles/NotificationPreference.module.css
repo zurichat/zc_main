@@ -128,6 +128,7 @@
     width: 100%;
     position: fixed;
     z-index: 1000;
+    max-height: 70px;
   }
   .allPreferences {
     margin-top: 40px;
@@ -143,6 +144,7 @@
     padding: 5px;
     margin: 5px 15px;
     position: relative;
+    background: #fff;
   }
   .hrLine {
     display: flex;
