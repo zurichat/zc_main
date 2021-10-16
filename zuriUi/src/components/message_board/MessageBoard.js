@@ -7,7 +7,7 @@ import { useState } from "react"
 import MessageInputBox from "../message_input/MessageInputField"
 import messagesData from "./messages.data"
 import EmojiReaction from "../EmojiReaction/EmojiReaction"
-import Emoji from "../Emoji/Emoji"
+// import Emoji from "../Emoji/Emoji"
 
 function MessageBoard({ chatsConfig }) {
   const [showMoreOptions, setShowMoreOptions] = useState(false)
@@ -17,7 +17,7 @@ function MessageBoard({ chatsConfig }) {
   const [top, setTop] = useState(null)
   const [right, setRight] = useState(null)
   const [currentMessageId, setCurrentMessageId] = useState(null)
-  const currentUserId = 3;
+  const currentUserId = 3
 
   const addToMessages = newMessage => {
     setMessageList(prevMessages => [...prevMessages, newMessage])
@@ -69,36 +69,40 @@ function MessageBoard({ chatsConfig }) {
     if (emojiIndex >= 0) {
       //the emoji exist
       //now we check if the user has clicked on the emoji before
-      const reactedUsersId = message.emojis[emojiIndex].reactedUsersId;
-      const reactedUserIdIndex = reactedUsersId.findIndex( id => id === currentUserId)
-      if(reactedUserIdIndex >= 0){
+      const reactedUsersId = message.emojis[emojiIndex].reactedUsersId
+      const reactedUserIdIndex = reactedUsersId.findIndex(
+        id => id === currentUserId
+      )
+      if (reactedUserIdIndex >= 0) {
         // the current user has reacted with this emoji before, so we have
         //remove the user from the list and reduce the count by 1
 
         //now, if the user is the only person that has reacted, then the emoji
         //should be removed entirely.
-        if(message.emojis[emojiIndex].count <= 1){
-          message.emojis.splice(emojiIndex,1)
-        }else{
-          message.emojis[emojiIndex].reactedUsersId.splice(reactedUserIdIndex);
-          message.emojis[emojiIndex].count = message.emojis[emojiIndex].count -1;
-        }  
-
-      }
-      else{
+        if (message.emojis[emojiIndex].count <= 1) {
+          message.emojis.splice(emojiIndex, 1)
+        } else {
+          message.emojis[emojiIndex].reactedUsersId.splice(reactedUserIdIndex)
+          message.emojis[emojiIndex].count =
+            message.emojis[emojiIndex].count - 1
+        }
+      } else {
         //the user has not reacted and will now be added to the list and count incremented
         message.emojis[emojiIndex].reactedUsersId.push(currentUserId)
         message.emojis[emojiIndex].count = message.emojis[emojiIndex].count + 1
       }
-      
     } else {
       //the emoji does not exist
       //create the emoji object and push
-      const newEmojiObject = { name: newEmojiName, count: 1, emoji: emoji, reactedUsersId:[currentUserId] }
+      const newEmojiObject = {
+        name: newEmojiName,
+        count: 1,
+        emoji: emoji,
+        reactedUsersId: [currentUserId]
+      }
       message.emojis.push(newEmojiObject)
     }
 
-  
     //now we replace the message with the new one
     messageListCopy[messageIndex] = message
     setMessageList(messageListCopy)
