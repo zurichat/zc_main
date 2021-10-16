@@ -23,8 +23,6 @@ const MessageModal = () => {
         e => {
             if (e.key === 'Escape' && showMessageModal) {
                 setShowMessageModal(false);
-                // eslint-disable-next-line no-console
-                console.log('I pressed');
             }
         },
         [setShowMessageModal, showMessageModal]
@@ -100,7 +98,7 @@ background-color: white;
 
     return (
         <>
-            {showMessageModal ? (
+            {showMessageModal && 
                     <CardWrapper onClick={closeModal} showMesssageModal={showMessageModal} ref={modalRef}>
                     <strong>Person Id</strong> - Created at
                     <br />
@@ -115,7 +113,7 @@ background-color: white;
                         </TopText>
                     </IconWrapper>
                 </CardWrapper>
-            ) : null}
+           }
         </>
         )
 
