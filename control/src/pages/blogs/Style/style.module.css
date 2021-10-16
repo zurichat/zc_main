@@ -273,7 +273,7 @@ form textarea {
   -webkit-box-orient: vertical;
   display: block;
   display: -webkit-box;
-  overflow: hidden !important;
+  overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 3;
 }
@@ -392,6 +392,6 @@ form textarea {
   }
 }
 
-a:hover {
+.keep_reading_text a:hover {
   color: #00b87c;
 }

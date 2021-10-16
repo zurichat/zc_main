@@ -132,7 +132,14 @@ const BlogDetails = () => {
           </div>
         </div> */}
           <div className={style.line} />
-          <div className={blogContentStyle}>
+          <div
+            className={`${blogContentStyle.contentImage} ${blogContentStyle.contentDisplay} 
+            ${blogContentStyle.contentHeading}
+             ${blogContentStyle.contentHeaderOneStyle} ${blogContentStyle.contentHeaderTwoStyle}
+              ${blogContentStyle.contentHeaderThreeStyle} ${blogContentStyle.contentHeaderFourStyle} 
+              ${blogContentStyle.contentHeaderFiveStyle} ${blogContentStyle.contentHeaderSixStyle}
+               ${blogContentStyle.contentParaStyle} `}
+          >
             {parse(post.content)}
             {/* <h3>ZURI CHAT</h3>
             <p>
