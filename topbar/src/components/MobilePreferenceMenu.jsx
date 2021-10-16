@@ -24,13 +24,13 @@ const PreferenceMenu = ({navbarOpen, closeMenu}) => {
               <p style={{marginBottom: 0}}>Notifications</p>
             </div>
 
-            {/* <div
+            <div
               onClick={() => setSideBar(3)}
               className={sideBar === 3 ? styles.active : styles.one}
             >
               <AiOutlineEye className={styles.icon} />
               <p>Themes</p>
-            </div> */}
+            </div>
             <div
               onClick={() => setSideBar(4)}
               className={sideBar === 4 ? styles.active : styles.one}
