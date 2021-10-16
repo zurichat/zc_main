@@ -1,5 +1,6 @@
 .demoPage {
   margin: 5em auto 3em auto;
+  position: relative;
 }
 
 .demoPageContainer {
@@ -16,7 +17,7 @@
 
 .demoIntroduction {
   background: #00b87c;
-  height: 35vh;
+  height: 30vh;
   display: flex;
   align-items: center;
 }
@@ -43,18 +44,24 @@
 
 .demoFormRight h4 {
   margin: 2em 0 1em 0;
+  padding-left: 0;
 }
 
 .demoFormRight .learnHowToList {
   list-style: none;
+  padding-left: 0;
 }
 
 .demoFormRight .learnHowToList li,
 .otherInfoSection li {
+  margin: 10px 0;
+}
+.demoFormRight .learnHowToList li,
+.otherInfoSection li,
+.hereToHelp p {
   color: #3a3a3a;
   font-size: 1.1em;
   letter-spacing: 1px;
-  margin: 10px 0;
 }
 
 .demoFormRight .learnHowToList li:before {
@@ -77,19 +84,17 @@
 .hereToHelp {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  padding-bottom: 3em;
 }
 
 .hereToHelpText {
-  width: 45%;
+  width: 38%;
 }
 
 .hereToHelpImage {
-  width: 50%;
-  height: 50vh;
-  background-image: url("../assets/here\ to\ help.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  width: 55%;
+  z-index: 4;
 }
 
 .hereToHelp h3 {
@@ -97,13 +102,22 @@
   font-size: 2.2em;
   margin: 0 0 1rem 0;
 }
-.hereToHelp p {
-  font-size: 1.1em;
-  color: #3a3a3a;
-  letter-spacing: 1px;
+
+.helpBackgroundSlash {
+  position: absolute;
+  bottom: 0;
+  background: #00b87c;
+  z-index: 1;
+  height: 30vh;
+  width: 100%;
+  clip-path: polygon(0 39%, 100% 0, 100% 100%, 0% 100%);
 }
 
 @media only screen and (max-width: 768px) {
+  .demoFormMain {
+    margin-top: -20px;
+  }
+
   .demoFormLeft,
   .demoFormRight {
     width: 100%;
@@ -112,6 +126,10 @@
   .otherInfoSection,
   .hereToHelp {
     margin: 2rem 0;
+  }
+
+  .demoIntroduction {
+    height: 25vh;
   }
 
   .demoIntroduction h1 {
@@ -126,5 +144,16 @@
   .hereToHelpText,
   .hereToHelpImage {
     width: 100%;
+  }
+
+  .hereToHelp h3 {
+    font-size: 1.8em;
+  }
+
+  .demoFormRight .learnHowToList li,
+  .otherInfoSection li,
+  .hereToHelp p {
+    font-size: 0.9em;
+    letter-spacing: unset;
   }
 }
