@@ -112,14 +112,13 @@ const MessageInputBox = ({
           <Preview>
             <img
               src={preview}
-              style={{ position: "relative", height: "100px", weight: "100px" }}
               alt="Image Preview"
             />
             <button
               style={{
                 position: "absolute",
-                top: "-12px",
-                left: "8",
+                top: "9px",
+                left: "65px",
                 height: "30px",
                 width: "30px",
                 borderRadius: "50%"
@@ -220,7 +219,11 @@ const SendButton = styled.button`
   font-size: 1rem;
 `
 const Preview = styled.div`
-  width: 100px;
-  height: 100px;
+  width: 5%;
+  height: 0.05%;
   border-radius: 2px;
+
+  img{
+    object-fit: cover;
+  }
 `

@@ -7,8 +7,8 @@
     z-index: 1000;
     background: rgba(0, 0, 0, 0.3);
     display: none;
-    justify-content: center;
-    /* padding: 12rem 24rem 17rem; */
+    /* justify-content: center; */
+    height: 100%;
 }
 
 .overlay,
@@ -17,7 +17,7 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 20%;
     z-index: -1;
     cursor: pointer;
 }
@@ -28,11 +28,12 @@
 
 .modalContent,
 .modalFull {
-    /* width: 89%; */
-    /* max-width: 885px; */
     background: #fff;
     border-radius: 4px;
     overflow: hidden;
+    width: 50%;
+    height: 50%;
+    margin: auto;
 }
 
 .modalCont {
@@ -51,12 +52,7 @@
     padding: 15px 1.5rem;
     font-weight: 700;
     font-size: 1.2rem;
-    z-index: 999;
-    position: sticky;
-
-    top: 0;
-    left: 0;
-    right: 0;
+    color: #000;
 }
 
 .closeIcon,
@@ -67,17 +63,10 @@
     cursor: pointer;
 }
 
-/* .closeIconPath {
-  path: #333;
-} */
-
 .closeIcon path {
     fill: #616061;
 }
 
-/* .closeIcon:hover path {
-  fill: red;
-} */
 
 .modalInnerContainer {
     width: 100%;
@@ -89,18 +78,7 @@
     display: none;
 }
 
-
-
-@media screen and (min-width: 1024px) {
-    .modalContainer {
-        padding: 8rem 19rem 14rem;
-    }
-}
-
 @media screen and (max-width: 768px) {
-    .modalContainer{
-        padding: 5rem 11rem 7rem;
-    }
     .modalHeader,
     .modalHeaderMobile {
         margin-top: 5px;
@@ -110,9 +88,6 @@
 }
 
 @media (max-width: 640px) {
-    .modalContainer {
-        padding-top: 3rem;
-    }
 
     .modalContent {
         width: 100%;
@@ -209,6 +184,6 @@
         background: rgba(0, 0, 0, 0.3);
         display: none;
         justify-content: center;
-        padding: 8rem 32rem 17rem;
+        /* padding: 8rem 32rem 17rem; */
     }
 }
