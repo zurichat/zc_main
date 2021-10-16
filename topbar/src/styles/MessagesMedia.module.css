@@ -210,9 +210,6 @@ p {
   cursor: pointer;
   outline: none;
 }
-.emojiBox img {
-  border-radius: 35px;
-}
 .emojiBox:focus {
   border: 2px solid rgba(0, 184, 124, 0.5);
   outline: none;
