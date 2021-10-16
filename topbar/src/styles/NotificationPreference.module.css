@@ -39,7 +39,7 @@
   overflow-y: scroll;
   /* position: relative; */
   margin-top: 0%;
-  height: 100% !important; 
+  height: 100% !important;
 }
 .toggle {
   display: none;
@@ -117,6 +117,7 @@
   align-self: center;
   color: #00b87c;
   margin-right: 9px;
+  margin-bottom: 5px;
 }
 
 .allPreferences {
@@ -251,7 +252,7 @@ input[type="radio"] {
   color: var(--text-color-gray);
   font-size: 13px;
   margin-right: auto;
-  margin-bottom: 4px;
+  margin-bottom: -15px;
   margin-top: 5px;
   float: left;
   text-align: left;
@@ -278,7 +279,6 @@ input[type="radio"] {
   flex-direction: row;
   flex-wrap: wrap;
   list-style-type: none;
-  width: 140%;
 }
 
 .selectButton {
@@ -559,7 +559,7 @@ input[type="radio"] {
 @media (max-width: 450px) {
   .itemTitle1 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     padding: 5px;
     align-items: center;
@@ -597,24 +597,24 @@ input[type="radio"] {
     margin: 0px;
   }
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   .textInput {
     width: 100%;
     margin: 10px 0px;
     align-items: center;
     text-align: center;
   }
-  .selectButton{
+  .selectButton {
     width: 100%;
     margin: 10px 0px;
   }
-  .list{
+  .list {
     width: 100%;
   }
-  .titleLarge{
+  .titleLarge {
     margin-left: 0;
   }
-  .textInput label{
+  .textInput label {
     padding: 10px;
   }
 }
