@@ -45,7 +45,7 @@ const ResetDefault = () => {
       <div>
         <main id={styles.authPageWrapper}>
           <Helmet>
-            <title>{t("passwordreset.title")} - Zuri Chat</title>
+            <title>{t("auth.passwordreset.title")} - Zuri Chat</title>
           </Helmet>
           {showDialog && <VerifyResetCode />}
 
@@ -62,9 +62,9 @@ const ResetDefault = () => {
             </div>
             {/* header text  */}
             <div className={``}>
-              <h4 className={styles.headerText}>{t("passwordreset.headline")}</h4>
+              <h4 className={styles.headerText}>{t("auth.passwordreset.headline")}</h4>
               <p className={`${styles.headerTextTitle}`}>
-                {t("passwordreset.post_headline")}
+                {t("auth.passwordreset.post_headline")}
               </p>
             </div>
             {/* form section  */}
@@ -72,7 +72,7 @@ const ResetDefault = () => {
               <AuthInputBox
                 className={`${styles.inputElement}`}
                 id="email"
-                name={t("passwordreset.form.emailAddress")}
+                name={t("auth.passwordreset.form.emailAddress")}
                 type="email"
                 placeholder="Johndoe@example.com"
                 value={email}
@@ -80,7 +80,7 @@ const ResetDefault = () => {
                 error=""
               />
               <Button className={styles.button} onClick={handleSubmit}>
-                {t("passwordreset.form.continueButton")}
+                {t("auth.passwordreset.form.continueButton")}
               </Button>
             </form>
           </section>

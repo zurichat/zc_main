@@ -132,28 +132,28 @@ const Login = () => {
   return (
     <main id={styles.authPageWrapper}>
       <Helmet>
-        <title>{t("login.title")}</title>
+        <title>{t("auth.login.title")}</title>
       </Helmet>
       {Loading && <LoginLoading />}
       <section id={styles.authFormContainer}>
         <FormWrapper
-          header={t("login.form.header")}
-          subHeader={t("login.form.sub_header")}
-          googleHeader={t("login.form.google_header")}
-          topLineText={t("login.form.topline_text")}
-          submitButtonName={t("login.form.submitButtonName")}
+          header={t("auth.login.form.header")}
+          subHeader={t("auth.login.form.sub_header")}
+          googleHeader={t("auth.login.form.google_header")}
+          topLineText={t("auth.login.form.topline_text")}
+          submitButtonName={t("auth.login.form.submitButtonName")}
           disabled={email && password}
           error={error}
           handleSubmit={handleSubmit}
-          bottomLine={t("login.form.bottomLine")}
-          bottomLink={t("login.form.bottomLink")}
+          bottomLine={t("auth.login.form.bottomLine")}
+          bottomLink={t("auth.login.form.bottomLink")}
           bottomLinkHref="Signup"
           setLoading={setLoading}
         >
           <AuthInputBox
             className={`${styles.inputElement}`}
             id="email"
-            name="Email address"
+            name={t("auth.login.form.authInputBox.emailInputName")}
             type="email"
             placeholder="Johndoe@example.com"
             value={email}
@@ -164,9 +164,9 @@ const Login = () => {
           <AuthInputBox
             className={`${styles.inputElement}`}
             id="password"
-            name="Password"
+            name={t("auth.login.form.authInputBox.passwordInputName")}
             type="password"
-            placeholder={t("login.form.authInputBox.passwordInputPlaceHolder")}
+            placeholder={t("auth.login.form.authInputBox.passwordInputPlaceHolder")}
             value={password}
             setValue={setPassword}
             error={passworderror}
@@ -185,16 +185,16 @@ const Login = () => {
                 }}
                 // onFocus={displayImage}
               />
-                {t("login.form.authInputBox.rememberMe")}
+                {t("auth.login.form.authInputBox.rememberMe")}
             </div>
             <div className={`${styles.right}`}>
               <Link
                 to="/reset-password"
                 className={`${styles.resetPasswordLink}`}
               >
-                {t("login.form.authInputBox.forgotPassword")}
+                {t("auth.login.form.authInputBox.forgotPassword")}
               </Link>
-              <Link to="/troubleshooting/onboarding-help"> {""}{t("login.form.authInputBox.getHelp")}</Link>
+              <Link to="/troubleshooting/onboarding-help"> {""}{t("auth.login.form.authInputBox.getHelp")}</Link>
 
             </div>
           </div>

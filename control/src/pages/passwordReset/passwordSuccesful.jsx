@@ -15,9 +15,9 @@ function passwordSuccesful() {
             <Content>
               <Passdiv style={{ textAlign: "center" }}>
                 <img src={okayimage} alt="zurichat logo" className={styles.img} />
-                <h2>{ t("passwordResetSuccess.headline")}</h2>
-                <p>{ t("passwordResetSuccess.post_headline")}</p>
-                <Link to ="/login"><Button>{ t("passwordResetSuccess.button")}</Button></Link>
+                <h2>{ t("auth.passwordResetSuccess.headline")}</h2>
+                <p>{ t("auth.passwordResetSuccess.post_headline")}</p>
+                <Link to ="/login"><Button>{ t("auth.passwordResetSuccess.button")}</Button></Link>
               </Passdiv>
             </Content>
         </Overlay>
