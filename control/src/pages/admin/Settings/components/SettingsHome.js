@@ -13,6 +13,7 @@ import right_caret from "../../assets/cheveron-right.svg"
 import customize from "../../assets/magic-wand.svg"
 import classes from "../styles//SettingsHome.module.css"
 import { getUser } from "../../Utils/Common"
+
 const randomizedGreeting = ["Hey there", "Welcome,", "¡Hola,"]
 
 const generateRandomNumber = (min, max) => {
@@ -32,7 +33,7 @@ const Home = () => {
       <Container className={`p-4 ${classes.mtN3}`}>
         <div>
           {/* Picture of User */}
-          <h1 className="mb-4">{greeting} {user.first_name.}</h1>
+          <h1 className="mb-4">{greeting} {user.first_name}</h1>
         </div>
 
         <div className={classes.card}>
