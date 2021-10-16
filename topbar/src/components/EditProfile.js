@@ -153,7 +153,7 @@ const EditProfile = () => {
   return (
     <ProfileModal full title="Edit profile">
       <>
-        <StyledProfileWrapper>
+        <StyledProfileWrapper style={{backgroundColor: "var(--bg-color)"}}>
           <div className="grid-container">
             <div className="input-cage">
               <div className="mobileCon">
@@ -169,7 +169,7 @@ const EditProfile = () => {
                   </label>
                 </div>
                 <div className="input-group mal-4">
-                  <label htmlFor="name" className="inputLabel">
+                  <label htmlFor="name" className="inputLabel" style={{color: "var(--text-color-bold)"}}>
                     Full Name
                   </label>
                   <input
@@ -184,7 +184,7 @@ const EditProfile = () => {
               </div>
               <div className="double-input">
                 <div className="input-group mb-0">
-                  <label htmlFor="dname" className="inputLabel">
+                  <label htmlFor="dname" className="inputLabel" style={{color: "var(--text-color-bold)"}}>
                     Choose a Display Name
                   </label>
                   <input
@@ -195,14 +195,14 @@ const EditProfile = () => {
                     onClick={e => setState({ display_name: e.target.value })}
                     name="dname"
                   />
-                  <p className="para">
+                  <p className="para" style={{color: "var(--text-color-gray)"}}>
                     Please use a unique and permanent display name. If someone
                     uses your exact name, you should change it!
                   </p>
                 </div>
               </div>
               <div className="input-group mb-0">
-                <label htmlFor="what" className="inputLabel">
+                <label htmlFor="what" className="inputLabel" style={{color: "var(--text-color-bold)"}}>
                   What you do
                 </label>
                 <input
@@ -213,7 +213,7 @@ const EditProfile = () => {
                   id="what"
                   name="what"
                 />
-                <p className="para">
+                <p className="para" style={{color: "var(--text-color-gray)"}}>
                   Let people know what you do at <b>ZURI</b>
                 </p>
               </div>
@@ -230,7 +230,7 @@ const EditProfile = () => {
                 ></textarea>
               </div> */}
               <div className="input-group phone">
-                <label className="inputLabel">Phone Number</label>
+                <label className="inputLabel" style={{color: "var(--text-color-bold)"}}>Phone Number</label>
                 <div className="phone-container">
                   <select
                     onChange={e =>
@@ -257,7 +257,7 @@ const EditProfile = () => {
                 </div>
               </div>
               <div className="input-group">
-                <label className="inputLabel col-12">Time Zone</label>
+                <label className="inputLabel col-12" style={{color: "var(--text-color-bold)"}}>Time Zone</label>
                 <TimezoneSelect
                   value={selectedTimezone}
                   onChange={setSelectedTimezone}

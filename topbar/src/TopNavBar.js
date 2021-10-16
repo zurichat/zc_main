@@ -26,10 +26,15 @@ import SearchAutocomplete from "../src/components/SearchAutocomplete"
 import zurichatlogo from "./assets/images/zurilogo.svg"
 import defaultAvatar from "./assets/images/avatar_vct.svg"
 import TopbarModal from "./components/TopbarModal"
-
+import themeColors from "../../theming/themecolors"
 import styles from "../src/styles/TopNavBar.module.css"
 
 const TopNavBar = () => {
+  const theme = localStorage.getItem("theme")
+  if (theme !== null || theme !== "") {
+    const topBar = document.getElementById("single-spa-application:@zuri/topbar")
+    topBar.style.backgroundColor = themeColors[theme].primary
+  }
   const currentWorkspace = localStorage.getItem("currentWorkspace")
 
   const { closeModal, openModal, presence, setPresence } =
@@ -278,7 +283,6 @@ const TopNavBar = () => {
               />
             </form>
         </div>
-
         <div>
           <SearchAutocomplete
             inputValue={inputValue}
@@ -375,7 +379,6 @@ const ProfileImg = styled.img`
   width: 32px;
   height: 32px;
   object-fit: cover;
-
   @media (max-width: 1024px) {
     height: 30px;
   }
@@ -385,7 +388,6 @@ const ProfileImg = styled.img`
 `
 const ProfileImageContainer = styled.div`
   position: relative;
-
   /* img {
     object-fit: cover;
     border-radius: 4px;
@@ -396,7 +398,6 @@ const ProfileImageContainer = styled.div`
 
 const HelpContainer = styled.div`
   display: none;
-
   > .MuiSvgIcon-root {
     opacity: 0.5;
   }
@@ -420,7 +421,6 @@ const ToggleStatus = styled.div`
     border: 1px solid white;
     margin-right: 15px;
   }
-
   .user-away {
     background-color: grey;
     height: 10px;
