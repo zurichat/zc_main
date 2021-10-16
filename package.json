@@ -91,6 +91,7 @@
     "emoji-picker-react": "^3.4.8",
     "eslint": "^8.0.1",
     "react-loader-spinner": "^4.0.0",
+    "react-tooltip-controller": "^1.0.6",
     "rxjs": "^7.3.0",
     "single-spa": "^5.9.3",
     "webpack-config-single-spa-react": "^4.0.2"
