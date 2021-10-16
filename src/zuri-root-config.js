@@ -14,7 +14,11 @@ export const pluginRoutes = [
   location => location.pathname.startsWith("/expenses"),
   location => location.pathname.startsWith("/tools"),
   location => location.pathname.startsWith("/channels"),
-  location => location.pathname.startsWith("/contributions")
+  location => location.pathname.startsWith("/contributions"),
+
+  // MarketPlace Plugin
+  location => location.pathname.startsWith("/marketplace")
+
 ]
 
 registerApplication({
@@ -27,16 +31,22 @@ registerApplication({
   app: () => System.import("@zuri/sidebar"),
   activeWhen: ["/home", ...pluginRoutes]
 })
-registerApplication({
-  name: "@zuri/commentSidebar",
-  app: () => System.import("@zuri/comment-sidebar"),
-  activeWhen: ["/home", ...pluginRoutes]
-})
+// registerApplication({
+//   name: "@zuri/zuriUi",
+//   app: () => System.import("@zuri/zuri-ui"),
+//   activeWhen: ["/home", ...pluginRoutes]
+// })
 registerApplication({
   name: "@zuri/control",
   app: () => System.import("@zuri/control"),
   activeWhen: ["/"]
 })
+
+// registerApplication({
+//   name: "@zuri/utilities",
+//   app: () => System.import("@zuri/utilities"),
+//   activeWhen: ["/"]
+// })
 
 // PLUGINS HERE
 registerApplication({
@@ -123,6 +133,14 @@ registerApplication({
   activeWhen: [location => location.pathname.startsWith("/contributions")]
 })
 //Bots go here
+
+// MarketPlace Plugin
+registerApplication({
+  name: "@zuri/marketplace",
+  app: () => System.import("@zuri/marketplace"),
+  activeWhen: [location => location.pathname.startsWith("/marketplace")]
+})
+
 
 start({
   urlRerouteOnly: true
