@@ -8,7 +8,7 @@
 }
 
 .members_tab_container p {
-  font-size: calc(0.94rem * var(--type-scale, 1));
+  font-size: 15px;
   line-height: calc(1.125rem * var(--height-scale, 1));
   font-weight: normal;
 }
@@ -37,6 +37,10 @@
 
 .members:last-child {
   margin-bottom: 0;
+}
+
+.ddsJuX {
+  font-size: 15px !important;
 }
 
 @media only screen and (min-width: 600px) {

@@ -11,7 +11,7 @@ const NotificationPreference = () => {
   const [active, setActive] = useState("")
   const [active1, setActive1] = useState("")
   const [notificationSettings, setNotificationSettings] = useState(
-    user.settings.notifications
+    user.settings?.notifications
   )
   const [keywordInput, setKeywordInput] = useState("")
   const [durationInput, setDurationInput] = useState("")
@@ -267,7 +267,7 @@ const NotificationPreference = () => {
                 type="radio"
                 value="all-messages"
                 checked={
-                  notificationSettings.notify_me_about === "all-messages"
+                  notificationSettings?.notify_me_about === "all-messages"
                 }
                 onChange={handleAllMessages}
               />{" "}
@@ -279,7 +279,7 @@ const NotificationPreference = () => {
                 type="radio"
                 value="direct-messages"
                 checked={
-                  notificationSettings.notify_me_about === "direct-message"
+                  notificationSettings?.notify_me_about === "direct-message"
                 }
                 onChange={handleDirectMessages}
               />
@@ -289,7 +289,7 @@ const NotificationPreference = () => {
               <input
                 type="radio"
                 value="none"
-                checked={notificationSettings.notify_me_about === "none"}
+                checked={notificationSettings?.notify_me_about === "none"}
                 onChange={handleNothingChange}
               />
               <label htmlFor="none">Nothing</label>
@@ -574,7 +574,7 @@ const TextInput = ({ type = "text", label }) => {
         onChange={handleChange}
       />
       <label
-        style={{ color: "#B0AFB0", textAlign: "center", marginTop: "8px" }}
+        style={{ color: "#B0AFB0", textAlign: "center", marginTop: "4px" }}
         className={value && "filled"}
       >
         {label}
