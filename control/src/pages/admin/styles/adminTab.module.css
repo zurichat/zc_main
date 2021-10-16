@@ -26,12 +26,16 @@
   margin-bottom: -1px;
 }
 
-.tabHeaderItemActive,
-.tabHeaderItem:hover {
+.tabHeaderItemActive {
   background: #fff;
   border: 1px solid #dadada;
   border-bottom: none;
   color: #00b87c;
+}
+
+.tabHeaderItem:hover {
+  text-decoration: underline;
+  text-decoration-color: #333;
 }
 
 .tabContent {
