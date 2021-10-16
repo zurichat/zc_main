@@ -63,8 +63,8 @@ import OnboardingHelp from "./pages/LoginSignUpHelp/index"
 import BookDemo from "./pages/book-a-demo"
 
 import ChangeWorkspaceName from "./pages/admin/Settings/components/ChangeWorkspaceName"
-// import Blog from './pages/blogs'
 import BlogDetails from './pages/blogs/components/BlogDetails'
+import CreateBlog from './pages/blogs/components/CreateBlog.jsx'
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
