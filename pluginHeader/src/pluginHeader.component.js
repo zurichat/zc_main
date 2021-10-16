@@ -31,7 +31,6 @@ export default function Header(props) {
             onClick={props.headerConfig.eventTitle}
             className={`${styles.plugin__header__title} headerTitle`}
           >
-            {/* Unnecessary shit */}
             <img
               src={props.headerConfig.icon || ""}
               alt=""
