@@ -3,6 +3,7 @@ import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import styles from "./styles/demo-page.module.css"
 import DemoForm from "./components/book-demo-form"
+import BookDemoImg from "./assets/here-to-help.png"
 
 const BookDemo = () => {
   return (
@@ -69,9 +70,12 @@ const BookDemo = () => {
                 you can have easy and enjoyable experience with Chanty.
               </p>
             </div>
-            <div className={`${styles.hereToHelpImage}`}></div>
+            <div className={`${styles.hereToHelpImage}`}>
+              <img src={BookDemoImg} alt="help image" />
+            </div>
           </div>
         </section>
+        <section className={`${styles.helpBackgroundSlash}`}></section>
       </div>
 
       <Footer />
