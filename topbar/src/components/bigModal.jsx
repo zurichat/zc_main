@@ -5,7 +5,7 @@ import cancel from "../assets/images/cancel.svg"
 import SearchValue from "./searchValueComponent"
 import Styled from "styled-components"
 import noImg from "../assets/images/avatar_vct.svg"
-import SearchModalResult from "./ModalAutoCompleteResult"
+// import SearchModalResult from "./ModalAutoCompleteResult"
 import { NoResult } from "./SearchNotFound"
 import { plugins } from "../utils/topbarApi"
 import { ProfileContext } from "../context/ProfileModal"
@@ -61,7 +61,7 @@ export const BigModal = ({ onClose, inputValue, result, isLoadingUp }) => {
     <div key={i} className={styles.resultCard}>
       <SearchValue
         destination_Url={item?.destination_url}
-        src={item?.image_url[0]}
+        src={noImg}
         title={item?.title}
         onClose={onClose}
         content={item?.content}

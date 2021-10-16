@@ -56,6 +56,8 @@ import adminNalytics from "./pages/admin/Settings/Member"
 import AccountProfile from "./pages/admin/AccountProfile"
 import Legal from "./pages/legal"
 import ZurichatBlog from "./pages/blogs/components/zurichatBlog"
+
+import ManageMembers from './pages/admin/manage_members/components/ManageMembers'
 import Ebooks from "./pages/ebooks"
 import Invitation from "./pages/admin/Invitation"
 import Whyzurichat from "./pages/WhyZuriChat/Whyzurichat"
@@ -123,7 +125,7 @@ const App = () => {
           <Search />
         </Route>
         <Route path='/createBlog'>
-          {/* <CreateBlog /> */}
+          <CreateBlog />
         </Route>
         <Route path='/blog/:title'>
           <BlogDetails />
@@ -250,6 +252,11 @@ const App = () => {
           exact
           component={AdminSettingsTab}
         /> */}
+         <Route
+          path="/admin/settings/managemembers"
+          exact
+          component={ManageMembers}
+        />
 
        
 
