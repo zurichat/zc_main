@@ -1,19 +1,13 @@
 import axios from "axios"
 import { Helmet } from "react-helmet"
-import { Col, Row } from "react-bootstrap"
+import { Row } from "react-bootstrap"
 import { useState, useEffect } from "react"
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
 
 // Styles and Assets
 import "react-tabs/style/react-tabs.css"
 import styles from "./styles/marketplace.module.css"
-import InstallPluginIcon from "../component-assets/InstallPluginIcon.svg"
-import CollaborationIcon from "../component-assets/CollaborationIcon.svg"
-import DiscoverPluginIcon from "../component-assets/DiscoverPluginIcon.svg"
-
 // Components
-// import MarketplaceHeader from './components/marketplace-container/MarketplaceHeader'
-// import Footer from '../../components/Footer'
 import MarketPlaceContainer from "./components/MarketPlaceContainer"
 import { MarketPlaceProvider } from "../context/MarketPlace.context.js"
 import { GetUserInfo } from "@zuri/utilities"
@@ -123,13 +117,6 @@ const MarketPlace = () => {
       </Helmet>
 
       <div className={styles.marketplace}>
-        <div
-          className={`w-100 d-flex flex-wrap justify-content-between align-items-baseline ${styles.marketplaceNavbar}`}
-        >
-          {/* Mark doesn't want the header here anymore */}
-          {/* <MarketplaceHeader /> */}
-        </div>
-
         <div className={styles.marketplaceHero}>
           <div className={styles.marketplaceSearchBar}>
           <div><input
