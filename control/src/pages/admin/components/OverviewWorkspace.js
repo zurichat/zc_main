@@ -4,7 +4,7 @@ import avatar from "../assets/avatar.svg"
 import { Link } from "react-router-dom"
 const OverviewWorkspace = ({ organizationDetails, currentWorkspace }) => {
   if (!organizationDetails) {
-    return null
+    return "Loading..."
   }
   const {
     name,

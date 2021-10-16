@@ -1,7 +1,9 @@
 import React from 'react'
-import { AnimateSharedLayout } from 'framer-motion'
+import { AnimateSharedLayout, motion } from 'framer-motion'
 import PreferenceWrapper from './PreferenceWrapper'
 
+// syling for the delete workspace
+import classes from './styles/AdminSettings.css'
 import JoinWorkspace from './components/JoinWorkspace'
 import WorkspaceLanguage from './components/WorkspaceLanguage'
 import Guidelines from './components/Guidelines'
@@ -14,6 +16,10 @@ import MessageRetention from './components/MessageRetention'
 import FileRetention from './components/FileRetention'
 import DisplayEmail from './components/DisplayEmail'
 import DefaultChannels from './components/DefaultChannel'
+
+
+import styles from './styles/preference.module.css'
+import { Link } from 'react-router-dom'
 
 const adminSettings = () => {
   return (
@@ -147,26 +153,45 @@ const adminSettings = () => {
           {/* <SavePassword /> */}
         </PreferenceWrapper>
       </AnimateSharedLayout>
-      <AnimateSharedLayout>
-        <PreferenceWrapper
-          title="Workspace name & URL"
-          text="Your workspace name is Zuri Chat and your URL is https://zuri.zuriChat.com"
-          btnText="expand"
-        >
-          {/* Password input goes uunder here */}
-          {/* <SavePassword /> */}
-        </PreferenceWrapper>
+
+       <AnimateSharedLayout>
+       
+       <motion.div layout className={`${styles.settings_wrapper}`}>
+          <motion.div layout className={styles.settingsTab}>
+            <div layout className={styles.settingleft}>
+              {"Workspace name & URL"}
+              <span>{"Your workspace name is Zuri Chat and your URL is https://zuri.zuriChat.com"}</span>
+             
+            </div>
+            <div className={styles.settingsright}>
+             <Link to='/admin/name'> <button > Set workspace name & URL </button></Link> 
+                
+              
+            </div>
+          </motion.div>
+
+        </motion.div>
       </AnimateSharedLayout>
+
+
       <AnimateSharedLayout>
-        <PreferenceWrapper
-          title="Delete workspace"
-          text="Deleting a Zuri Chat workspace can't be undone. All messages and files will irretrievable. Please use caution and consider exporting your data before deletion.
-                Note: Don’t delete  your worspce if you want to change worskspace’s URL or name. You also might want to export data before deleting workspace"
-          btnText="expand"
-        >
-          {/* Password input goes uunder here */}
-          {/* <SavePassword /> */}
-        </PreferenceWrapper>
+        <div className={classes.deleteContainer}>
+          <div className={classes.deleteContainerTab}>
+            <div className={classes.floatleft}>
+              <div>Delete workspace</div>
+              <div>
+                <span>Deleting a Zuri Chat workspace can't be undone. All messages and files will irretrievable. Please use caution and consider exporting your data<br />before deletion.
+                    <br /> <br /> Note: Don’t delete  your workspace if you just want to change your<br />worskspace’s URL or name. You also might want to export data<br /> before deleting workspace
+                </span>
+              </div>
+            </div>
+            <div className={classes.floatright}>
+              <Link to="/admin/delete">
+              <button>Delete Workspace</button>
+              </Link>
+            </div>
+          </div>
+        </div>
       </AnimateSharedLayout>
     </>
   )

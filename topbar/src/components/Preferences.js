@@ -74,7 +74,6 @@ const Preferences = () => {
 
         <div className={styles.allPreferences} style={{ width: "100%" }}>
           {sideBar === 1 && <NotificationPreference />}
-
           {sideBar === 3 && <Themes {...{ check, setCheck, setMode }} />}
           {sideBar === 4 && <MessagesMedia />}
           {sideBar === 5 && <LanguageAndRegion />}

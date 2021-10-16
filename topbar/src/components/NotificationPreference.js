@@ -1,5 +1,7 @@
 import React, { useState, useContext, useEffect } from "react"
 import styles from "../styles/NotificationPreference.module.css"
+// import styles from "../styles/UserPreference.module.css"
+import standardStyles from "../styles/UserPreference.module.css"
 import { AiOutlineQuestionCircle } from "react-icons/ai"
 import { authAxios } from "../utils/Api"
 import { ProfileContext } from "../context/ProfileModal"
@@ -9,7 +11,7 @@ const NotificationPreference = () => {
   const [active, setActive] = useState("")
   const [active1, setActive1] = useState("")
   const [notificationSettings, setNotificationSettings] = useState(
-    user.settings.notifications
+    user.settings?.notifications
   )
   const [keywordInput, setKeywordInput] = useState("")
   const [durationInput, setDurationInput] = useState("")
@@ -249,7 +251,7 @@ const NotificationPreference = () => {
   return (
     <div className={styles.notifications}>
       {/*  THE SECTION OF THE CONTENT */}
-      <div className={styles.notifyContent}>
+      <div className={standardStyles.modalContent}>
         <div className={styles.itemTitle1}>
           <h4 className={styles.titleLarge}>Notify me about </h4>{" "}
           <span className={styles.spanL}>
@@ -265,7 +267,7 @@ const NotificationPreference = () => {
                 type="radio"
                 value="all-messages"
                 checked={
-                  notificationSettings.notify_me_about === "all-messages"
+                  notificationSettings?.notify_me_about === "all-messages"
                 }
                 onChange={handleAllMessages}
               />{" "}
@@ -277,7 +279,7 @@ const NotificationPreference = () => {
                 type="radio"
                 value="direct-messages"
                 checked={
-                  notificationSettings.notify_me_about === "direct-message"
+                  notificationSettings?.notify_me_about === "direct-message"
                 }
                 onChange={handleDirectMessages}
               />
@@ -287,7 +289,7 @@ const NotificationPreference = () => {
               <input
                 type="radio"
                 value="none"
-                checked={notificationSettings.notify_me_about === "none"}
+                checked={notificationSettings?.notify_me_about === "none"}
                 onChange={handleNothingChange}
               />
               <label htmlFor="none">Nothing</label>
@@ -328,7 +330,7 @@ const NotificationPreference = () => {
             <label htmlFor="for-thread">Notify me of replies to thread</label>
           </div> */}
         </form>
-        <hr className={styles.hrNot} />
+        <hr className={standardStyles.hrLine} />
         {/* <div className={styles.itemTitle2}>
           <h4 className={styles.titleSmall}>Keywords</h4>{" "}
           <span className={styles.spanBlock}>
@@ -353,8 +355,8 @@ const NotificationPreference = () => {
           </span>
         </div>
         <div className={styles.schedule}>
-          <ul className={styles.list}>
-            <li className={styles.listChild}>
+          <ul className={styles.list} style={{ paddingLeft: "0" }}>
+            <li className={standardStyles.spacingRight}>
               <div className={styles.select}>
                 <select
                   className={styles.selectButton}
@@ -374,7 +376,7 @@ const NotificationPreference = () => {
                 </select>
               </div>
             </li>
-            <li className={styles.listChild}>
+            <li className={standardStyles.spacingRight}>
               <TextInput
                 type="text"
                 label="From"
@@ -384,7 +386,7 @@ const NotificationPreference = () => {
               />
             </li>
 
-            <li className={styles.listChild}>
+            <li className={standardStyles.spacingRight}>
               <TextInput label="to" />
             </li>
           </ul>
@@ -460,7 +462,7 @@ const NotificationPreference = () => {
             </div>
           </div>
         </div> */}
-        <hr className={styles.hrNot} />
+        <hr className={standardStyles.hrLine} />
 
         {/* <div className={styles.section2}>
           <div className={styles.itemTitle2}>
@@ -571,7 +573,10 @@ const TextInput = ({ type = "text", label }) => {
         value={value}
         onChange={handleChange}
       />
-      <label style={{ color: "#B0AFB0" }} className={value && "filled"}>
+      <label
+        style={{ color: "#B0AFB0", textAlign: "center", marginTop: "8px" }}
+        className={value && "filled"}
+      >
         {label}
       </label>
     </div>
