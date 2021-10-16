@@ -1,8 +1,9 @@
 import React from 'react'
+
 import { Link } from 'react-router-dom';
 import { AnimateSharedLayout } from 'framer-motion'
+import { AnimateSharedLayout, motion } from 'framer-motion'
 import PreferenceWrapper from './PreferenceWrapper'
-
 import classes from './styles/AdminSettings.css'
 import JoinWorkspace from './components/JoinWorkspace'
 import WorkspaceLanguage from './components/WorkspaceLanguage'
@@ -17,6 +18,10 @@ import FileRetention from './components/FileRetention'
 import DisplayEmail from './components/DisplayEmail'
 import DefaultChannels from './components/DefaultChannel'
 import DeleteWorkspace from '../../settings/components/deleteWorkspace'
+
+
+import styles from './styles/preference.module.css'
+import { Link } from 'react-router-dom'
 
 const adminSettings = () => {
   return (
@@ -150,7 +155,11 @@ const adminSettings = () => {
           {/* <SavePassword /> */}
         </PreferenceWrapper>
       </AnimateSharedLayout>
-      <AnimateSharedLayout>
+      
+
+
+
+      {/* <AnimateSharedLayout>
         <PreferenceWrapper
           title="Workspace name & URL"
           text="Your workspace name is Zuri Chat and your URL is https://zuri.zuriChat.com"
@@ -158,8 +167,44 @@ const adminSettings = () => {
         >
           {/* Password input goes uunder here */}
           {/* <SavePassword /> */}
-        </PreferenceWrapper>
-      </AnimateSharedLayout>
+        {/* </PreferenceWrapper>
+      </AnimateSharedLayout> */}
+
+       <AnimateSharedLayout>
+       
+       <motion.div layout className={`${styles.settings_wrapper}`}>
+          <motion.div layout className={styles.settingsTab}>
+            <div layout className={styles.settingleft}>
+              {"Workspace name & URL"}
+              <span>{"Your workspace name is Zuri Chat and your URL is https://zuri.zuriChat.com"}</span>
+             
+            </div>
+            <div className={styles.settingsright}>
+             <Link to='/admin/name'> <button > Set workspace name & URL </button></Link> 
+                
+              
+            </div>
+          </motion.div>
+
+        </motion.div>
+      </AnimateSharedLayout> 
+
+
+
+      {/* <AnimateSharedLayout>
+        <PreferenceWrapper
+          title="Workspace name & URL"
+          text="Your workspace name is Zuri Chat and your URL is https://zuri.zuriChat.com"
+          btnText="expand"
+        >
+          {/* Password input goes uunder here */}
+          {/* <SavePassword /> */}
+        {/* </PreferenceWrapper>
+      </AnimateSharedLayout> */}
+
+
+ 
+
       <AnimateSharedLayout>
         <div className={classes.deleteContainer}>
           <div className={classes.deleteContainerTab}>
