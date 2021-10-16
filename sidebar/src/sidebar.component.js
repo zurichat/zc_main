@@ -18,12 +18,10 @@ import Room from "./components/Room"
 import SingleRoom from "./components/SingleRoom"
 import Category from "./components/Category"
 import { dummySidebar } from "./components/dummySidebar"
-import Starred from "./components/starred"
+import Starred from "./components/Starred"
 
 const Sidebar = props => {
   let currentWorkspace = localStorage.getItem("currentWorkspace")
-
-  console.error("wow", props.state)
   const [nullValue, setnullValue] = useState(0)
 
   useEffect(() => {
@@ -50,50 +48,53 @@ const Sidebar = props => {
         }
       )
   }
-  const categories=[
-      "games",
-      "utility",
-      "tools",
-      "entertainment",
-      "sales",
-      "productivity",
-      "channels",
-      "direct messages",
-      "others"
+
+  const categories = [
+    "games",
+    "utility",
+    "tools",
+    "entertainment",
+    "sales",
+    "productivity",
+    "channels",
+    "direct messages",
+    "others"
   ]
 
-  var singleItems =[]
-  var categorizedItems=[]
-  for (let key in props.state.sidebar) {
-    if (!categories.includes(key)){
-      continue;
-    }
-    
-    else if(key == "others"){
-      singleItems = Object.keys(props.state.sidebar[key]).map((k, idx)=>{
-        var data = props.state.sidebar[key][k]
-        return(
-          <SingleRoom
-          key={data.name}
-          name={data.joined_rooms[0].room_name}
-          image={data.joined_rooms[0].room_image}
-          link={data.joined_rooms[0].room_url}
-          />
+  var singleItems = []
+  var categorizedItems = []
+  if (props.state.sidebar && nullValue === 1) {
+    for (let key in props.state.sidebar) {
+      if (!categories.includes(key)) {
+        continue
+      } else if (key == "others") {
+        singleItems = Object.keys(props.state.sidebar[key]).map((k, idx) => {
+          var data = props.state.sidebar[key][k]
+          return (
+            <SingleRoom
+              key={data.name}
+              name={data.joined_rooms[0].room_name}
+              image={data.joined_rooms[0].room_image}
+              link={data.joined_rooms[0].room_url}
+            />
+          )
+        })
+      } else {
+        const categoryData = Object.keys(props.state.sidebar[key]).map(
+          k => props.state.sidebar[key][k]
         )
-      })
-    }else{
-      const categoryData = Object.keys(props.state.sidebar[key]).map(
-        k => props.state.sidebar[key][k]
-      )
 
-      categorizedItems.push(<Category key={key} name={key} data={categoryData} />)
-    //    Object.keys(props.state.sidebar).map((p, idx)=>{
-    //     return (categories.includes(p) ? 
-    //     <Category key={idx} name={p} data={categoryData} />
-    //     : null)
-    
-    // }
-   }
+        categorizedItems.push(
+          <Category key={key} name={key} data={categoryData} />
+        )
+        //    Object.keys(props.state.sidebar).map((p, idx)=>{
+        //     return (categories.includes(p) ?
+        //     <Category key={idx} name={p} data={categoryData} />
+        //     : null)
+
+        // }
+      }
+    }
   }
 
   return (
@@ -112,10 +113,10 @@ const Sidebar = props => {
           <SingleRoom name="Drafts" image={draftIcon} />
 
           <SingleRoom name="Plugins" image={pluginIcon} link="/marketplace" />
+
           <Starred state={props.state} />
           {singleItems}
           {categorizedItems}
-
 
           {/* {props.state.sidebar && Object.keys(props.state.sidebar).map((p, idx)=>{
                 return categories.includes(p) ? 
@@ -124,7 +125,6 @@ const Sidebar = props => {
               })
           } */}
 
-          
           {/* <Category name="games" state={props.state} />
           <Category name="utility" state={props.state} />
           <Category name="tools" state={props.state} />
@@ -134,7 +134,7 @@ const Sidebar = props => {
           <Category name="channels" state={props.state} />
           <Category name="direct messages" state={props.state} /> */}
           {/* button for inviting users to workspace */}
-          <Invite state={props.state} />
+          <Invite state={props.state} dispatch={props.dispatch} />
         </Fragment>
       </div>
     </div>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const myStyle = {
   text: {
-    color: '#E7E7E7',
+    color: '#c4c4c4',
     fontWeight: '600',
     fontSize: '18px',
     padding: '5px'
