@@ -290,7 +290,7 @@ const MessagesMedia = () => {
       </p>
       <p className={standardStyles.labelTextHeader}>Reactions and messages.</p>
       <div className={styles.hands}>
-        <div autoFocus tabIndex="-1" className={styles.emojiBox}>
+        <div tabIndex="-1" className={styles.emojiBox}>
           <img src={theme13} alt="theme13" className={styles.theme13} />
         </div>
         <div tabIndex="-1" className={styles.emojiBox}>
