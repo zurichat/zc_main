@@ -30,7 +30,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
   } = useContext(ProfileContext)
   const [statusText, setStatusText] = useState(user?.status?.text)
   const [statusEmoji, setStatusEmoji] = useState(user?.status?.tag)
-
+  // console.log(user)
   const handleClearStatus = async () => {
     setUser({
       ...user,
@@ -246,10 +246,17 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
               onMouseLeave={() => setHoverState(false)}
             >
               <div className={styles.emoji}>
-                {user?.status?.tag || (
-                  <img src={smile} className={styles.defalutEmoji} />
+                {hoverState ? (
+                  <div>😃</div>
+                ) : (
+                  <>
+                    {user?.status?.tag || (
+                      <img src={smile} className={styles.defalutEmoji} />
+                    )}
+                  </>
                 )}
               </div>
+
               <div className={styles.statusContent}>
                 {!(user?.status?.text || user?.status?.tag)
                   ? "Update your Status"
