@@ -40,7 +40,7 @@ export default function VerifyResetCode() {
         {!success ? (
           <div>
             <h1 style={{ textAlign: "center" }}>
-             {t("verifyCodeOnPasswordReset.header")}
+             {t("auth.verifyCodeOnPasswordReset.header")}
             </h1>
             <CodeInput
               length={6}
@@ -52,12 +52,12 @@ export default function VerifyResetCode() {
         ) : (
           <Successdiv style={{ textAlign: "center" }}>
             <img src={okayimage} alt="zurichat logo" className={styles.img} />
-            <h2>{t("verifyCodeOnPasswordReset.success.headline")}</h2>
-            <p>{t("verifyCodeOnPasswordReset.success.post_headline")}</p>
+            <h2>{t("auth.verifyCodeOnPasswordReset.success.headline")}</h2>
+            <p>{t("auth.verifyCodeOnPasswordReset.success.post_headline")}</p>
             <Button
               onClick={() => history.push(`/change-password?code=${code}`)}
             >
-              {t("verifyCodeOnPasswordReset.success.continueButton")}
+              {t("auth.verifyCodeOnPasswordReset.success.continueButton")}
             </Button>
           </Successdiv>
         )}

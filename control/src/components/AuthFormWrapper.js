@@ -107,13 +107,13 @@ const FormWrapper = ({
 
       <div className={`${styles.footer}`}>
         <Link to="/contact-us" className={`${styles.footer_a}`}>
-          {t("login.footer.contactUs")}
+          {t("auth.login.footer.contactUs")}
         </Link>
         <Link to="/legal" className={`${styles.footer_a}`}>
-            {t("login.footer.legacyPolicy")}
+            {t("auth.login.footer.legacyPolicy")}
         </Link>
         <Link to="/about" className={`${styles.footer_a}`}>
-          {t("login.footer.aboutZuri")}
+          {t("auth.login.footer.aboutZuri")}
         </Link>
       </div>
     </section>

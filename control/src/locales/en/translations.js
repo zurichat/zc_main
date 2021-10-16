@@ -318,7 +318,8 @@ export const TRANSLATIONS_EN = {
         }
       }
   },
-  login:{
+  auth:{
+    login:{
     title: "Login - Zuri Chat",
     form: {
       header: "Login",
@@ -343,71 +344,110 @@ export const TRANSLATIONS_EN = {
       legacyPolicy: "Legal Policy",
       aboutZuri: "About Zurichat"
     }
-  },
-  signup: {
-    title: "Sign Up",
-    form: {
-      header: "Create Account",
-      googleHeader: "Sign up with Google",
-      topLineText: "OR",
-      submitButtonName: "Sign up",
-      bottomLine: "Already have an account?",
-      bottomLink: "Log in",
-      input: {
-        fullName: "Full Name",
-        fullNamePlaceholder: "Enter your Name",
+    },
+    signup: {
+      title: "Sign Up",
+      form: {
+        header: "Create Account",
+        googleHeader: "Sign up with Google",
+        topLineText: "OR",
+        submitButtonName: "Sign up",
+        bottomLine: "Already have an account?",
+        bottomLink: "Log in",
+        input: {
+          fullName: "Full Name",
+          fullNamePlaceholder: "Enter your Name",
+          emailAddress: "Email Address",
+          emailAddressPlaceholder: "Enter you email address",
+          password: "Password",
+          passwordPlaceholder: "Enter a password",
+        }
+      },
+      privacyAgreement: "I agree to Zurichat's",
+      termsOfService: "Terms of services",
+      privacy: "Privacy"
+    },
+    passwordreset: {
+      title: "Reset Password",
+      headline: "Get a new password",
+      post_headline: "Enter the email address you registered with and a reset code will be sent to your email.",
+      form:{
         emailAddress: "Email Address",
-        emailAddressPlaceholder: "Enter you email address",
+        continueButton: "Continue"
+      }   
+    },
+    newPassword: {
+      header: "Recover Password",
+      post_headline: "Create a new password for your account",
+      form: {
         password: "Password",
-        passwordPlaceholder: "Enter a password",
+        passwordPlaceholder: "Enter your new password",
+        confirmPassword: "Confirm Password",
+        confirmPasswordPlaceholder: "Confirm your new password",
+        continueButton: "Continue"
       }
     },
-    privacyAgreement: "I agree to Zurichat's",
-    termsOfService: "Terms of services",
-    privacy: "Privacy"
-  },
-  passwordreset: {
-    title: "Reset Password",
-    headline: "Get a new password",
-    post_headline: "Enter the email address you registered with and a reset code will be sent to your email.",
-    form:{
-      emailAddress: "Email Address",
-      continueButton: "Continue"
-    }   
-  },
-  newPassword: {
-    header: "Recover Password",
-    post_headline: "Create a new password for your account",
-    form: {
-      password: "Password",
-      passwordPlaceholder: "Enter your new password",
-      confirmPassword: "Confirm Password",
-      confirmPasswordPlaceholder: "Confirm your new password",
-      continueButton: "Continue"
-    }
-  },
-  verifyCodeOnPasswordReset: {
-    header: "Enter the reset code sent to your mail",
-    success: {
-      headline: "Reset Code Verification Successful!",
-      post_headline: "Click on the Button to continue",
-      continueButton: "Continue"
-    }
-  },
-  passwordResetSuccess: {
-    headline: "Passwowrd Reset Successful!",
-    post_headline: "Your password reset was succesful! you can proceed to login now",
-    button: "Continue to login"
-  },
-  signout:{
-    title: "Sign Out",
-    preOrgText: "Signed out of Team",
-    workspace: "Workspace",
-    signoutMessage: {
-      preOrgText: "You have been signed out of Team"
+    verifyCodeOnPasswordReset: {
+      header: "Enter the reset code sent to your mail",
+      success: {
+        headline: "Reset Code Verification Successful!",
+        post_headline: "Click on the Button to continue",
+        continueButton: "Continue"
+      }
     },
-    loginText: "Login",
-    postLoginText: "to another workspace"
+    passwordResetSuccess: {
+      headline: "Passwowrd Reset Successful!",
+      post_headline: "Your password reset was succesful! you can proceed to login now",
+      button: "Continue to login"
+    },
+    signout:{
+      title: "Sign Out",
+      preOrgText: "Signed out of Team",
+      workspace: "Workspace",
+      signoutMessage: {
+        preOrgText: "You have been signed out of Team"
+      },
+      loginText: "Login",
+      postLoginText: "to another workspace"
+    },
+    onboardingHelp:{
+      title: "Troubleshooting Problems",
+      backToHome: "Back to Home",
+      loginHelp:{
+        headline: "Troubleshooting problems signing into ZuriChat",
+        post_headline: "If are having problem signing into your account, the following might help you.",
+        list: {
+          textOne: "Check if you're using correct email address and password to login. If you think your account might have been compromised",
+          linkOne: "click here to reset your password",
+          textTwo: "Are you using the latest version of ZuriChat mobile or desktop app? Kindly check the current version of your apps. If you're not sure of which version you're using, try",
+          linkTwo: "updating or downloading the app",
+          textThree: "If the same trouble still persists, kindly uninstall the app, clear your mobile phone's cache and install again.",
+          textFour: "If you're using a browser, you might have used a wrong password from autocomplete suggestions. We advise you type your ZuriChat email address and password manually again",
+          textFive: "If all methods above doesn't work, try a new browser or try signing in on incognito mode",
+          textSix: "Do you have an account with us? If you don't have an account here, you won't be able to login. Go to",
+          linkSix: "to create an account"
+        }    
+      },
+      signUpHelp: {
+        headline: "Unable to Create an Account?",
+        post_headline: "Okay, if you have problem creating an account, try the suggestions below",
+        list: {
+          preTextOne: "Ensure you're using a",
+          strongText: "Valid email address",
+          postTextOne: "and check your email inbox for the authentication code",
+          textTwo: "Use another device or browser to create your account. You can as well clear your browser's cache",
+          textThree: "Check the network in your area. If the network is good, reload the sign-up page",
+          textFour: "If you're not receiving authentication code, kindly wait for 30 minutes and try again",
+          textFive: "If you're using ZuriChat mobile or desktop app, update to the latest version or you can",
+          linkFive: "download here"
+        }
+      },
+      support: {
+        headline: "Do you still need help?",
+        preLinkText: "If you've tried all the suggestions above but to no avail, kindly",
+        linkText: "contact Zuri Customer Service",
+        postLinkText: "for help."
+      }
+    }
   }
-
 }

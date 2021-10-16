@@ -59,9 +59,9 @@ const NewPassword = () => {
         </div>
         {/* header text  */}
         <div className={``}>
-          <h4 className={styles.headerText}>{t("newPassword.headline")}</h4>
+          <h4 className={styles.headerText}>{t("auth.newPassword.headline")}</h4>
           <p>
-           {t("newPassword.post_headline")}
+           {t("auth.newPassword.post_headline")}
           </p>
         </div>
         {/* form section  */}
@@ -69,9 +69,9 @@ const NewPassword = () => {
           <AuthInputBox
             className={`${styles.inputElement}`}
             id="password"
-            name={t("newPassword.form.password")}
+            name={t("auth.newPassword.form.password")}
             type="password"
-            placeholder={t("newPassword.form.passwordPlaceholder")}
+            placeholder={t("auth.newPassword.form.passwordPlaceholder")}
             value={password}
             setValue={setPassword}
             // error={error}
@@ -80,9 +80,9 @@ const NewPassword = () => {
             <AuthInputBox
             className={`${styles.inputElement}`}
             id="confirm_password"
-            name={t("newPassword.form.confirmPassword")}
+            name={t("auth.newPassword.form.confirmPassword")}
             type="password"
-            placeholder={t("newPassword.form.confirmPasswordPlaceholder")}
+            placeholder={t("auth.newPassword.form.confirmPasswordPlaceholder")}
             value={ confirm_password}
             setValue={setcPassword}
             // error={error}
@@ -92,7 +92,7 @@ const NewPassword = () => {
           </div> */}
 
           <Button className={styles.button} onClick={ handleSubmit}  >
-            {t("newPassword.form.continueButton")}
+            {t("auth.newPassword.form.continueButton")}
           </Button>
         </form>
       </section>
