@@ -144,6 +144,15 @@ export const TRANSLATIONS_DE = {
       plugin: "Verbinden und interagieren"
     },
 
+    nav: {
+      pricing: "Preisgestaltung",
+      about: "Über",
+      downloads: "Downloads",
+      contact: "Kontakt",
+      signup: "Anmelden",
+      login: "Anmeldung"
+    },
+
     dm: {
       title: "Direktnachrichten-Plug-in",
       headline: "Sendet Direktnachrichten",
@@ -307,9 +316,8 @@ export const TRANSLATIONS_DE = {
       description_br: "hier, um die neuesten Plugins per E-Mail zu erhalten",
       description_brr: "auf Zuri-Chat!",
       button: "Abonnieren"
-    }
+    },
   },
-
   
   about: {
     title: {
@@ -465,6 +473,7 @@ export const TRANSLATIONS_DE = {
           post_headline: "Zuri zahlt 100 % Ihrer Prämien. Wir bieten auch Zugang zu einer Reihe von kostenlosen Ressourcen für psychische Gesundheit und Wohlbefinden."
         }
       }
+
     }
   },
   login:{
@@ -492,5 +501,124 @@ export const TRANSLATIONS_DE = {
       legacyPolicy: "Rechtliche Hinweise",
       aboutZuri: "Über Zurichat"
     }
-  }
+  },
+
+
+  download_desktop: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "Erleben Sie die Desktop- und Mobile-Apps von Zuri Chat",
+      post_headline: "Die Verbindung mit Ihrem Team war mit Zuri Chat noch nie so einfach.",
+      desktop_line: "Zuri für Desktop",
+      desktop_app: "Im Mac App Store herunterladen",
+      desktop_soft: "Holen Sie es von Microsoft",
+      mobile_line: "Zuri für Handys",
+      mobile_app: "Im App Store herunterladen",
+      mobile_play: "Bekomm es auf Google Play"
+    },
+
+    section_two: {
+      headline: "Laden Sie das Zuri-Chat-Erlebnis herunter und genießen Sie es auf einem dieser Geräte",
+      windows: "Fenster",
+      mac: "Mac OS",
+      ios: "iOS",
+      android: "Android",
+    },
+
+    section_three: {
+      headline: "Gleiches Gefühl, gleiches Team in der Zuri App!",
+    }
+  },
+  download_ios: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "Laden Sie die Beta-Version von Zuri Chat für iOS herunter.",
+      post_headline: "Holen Sie sich Zuri Chat DM & Kanal",
+      mac_line: "Wir sind auch auf dem Mac",
+      mac_description: "Bleiben Sie mit unseren Apps für Mac, Windows und Linux im Gespräch. Wir können Ihnen einen schnellen Download-Link per E-Mail senden, um Ihnen den Einstieg zu erleichtern!",
+      button: "DOWNLOAD-LINK ERHALTEN",
+    }
+  },
+  download_mac: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "Erlebe Zuri Chat auf MacOS",
+      post_headline: "Die Verbindung mit Ihrem Team war mit Zuri Chat noch nie so einfach.",
+      download: "HERUNTERLADEN",
+      download_soft: "Für Windows herunterladen?"
+    },
+
+    section_two: {
+      headline: "Warum Zuri-Chat-App?",
+      post_headline: "Verpassen Sie mit dem zuri Chat-PC auch unterwegs nie die nahtlose Zusammenarbeit",
+      android: "Android",
+      and_break: "und",
+      ios: "iOS",
+      apps_break: "Apps."
+    },
+
+    section_three: {
+      headline: "Gleiches Gefühl, gleiches Team in der Zuri App!",
+      download: "FÜR MAC HERUNTERLADEN",
+      download_soft: "Für Windows herunterladen?"
+    }
+  },
+  download_mobile: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "Erleben Sie die Desktop- und Mobile-Apps von Zuri Chat",
+      post_headline: "Die Verbindung mit Ihrem Team war mit Zuri Chat noch nie so einfach.",
+    },
+
+    section_two: {
+      headline: "Laden Sie das Zuri-Chat-Erlebnis herunter und genießen Sie es auf einem dieser Geräte",
+      windows: "Windows",
+      mac: "Mac OS",
+      android: "Android",
+      ios: "iOS"
+    },
+
+    section_three: {
+      headline: "Gleiches Gefühl, gleiches Team in der Zuri App!",
+    }
+  },
+  download_windows: {
+    title: {
+      download: "Zuri-Chat herunterladen"
+    },
+
+    section_one: {
+      headline: "Erleben Sie Zuri Chat unter Windows",
+      post_headline: "Die Verbindung mit Ihrem Team war mit Zuri Chat noch nie so einfach.",
+      download: "HERUNTERLADEN",
+      download_mac: "Für Mac herunterladen?"
+    },
+
+    section_two: {
+      headline: "Warum Zuri-Chat-App?",
+      post_headline: "Verpassen Sie mit dem zuri Chat-PC auch unterwegs nie die nahtlose Zusammenarbeit",
+      android: "Android",
+      and_break: "und",
+      ios: "iOS",
+      apps_break: "Apps."
+    },
+
+    section_three: {
+      headline: "Gleiches Gefühl, gleiches Team in der Zuri App!",
+      download: "FÜR WINDOWS HERUNTERLADEN",
+      download_ios: "Für Mac herunterladen?"
+    }
+  },
 }

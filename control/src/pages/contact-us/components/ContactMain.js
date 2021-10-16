@@ -15,12 +15,15 @@ const contactTitle = () => {
       </div>
 
       <div className={contactStyle.contactBody}>
-        <div className={contactStyle.getHelpCard}>
-          <FAQselected />
-        </div>
-        <div className={`d-none d-xl-block ${contactStyle.groupImage}`}>
-          <img className="d-none d-xl-flex" src={ContactUs} alt="contact us" />
-        </div>
+        <div className={contactStyle.contactBodyContent}>
+          <div className={contactStyle.getHelpCard}>
+              <FAQselected />
+            </div>
+            <div className={`d-none d-xl-block ${contactStyle.groupImage}`}>
+              <img className="d-none d-xl-flex" src={ContactUs} alt="contact us" />
+          </div>
+      </div>
+        
       </div>
       <DiscoverMore />
     </div>
