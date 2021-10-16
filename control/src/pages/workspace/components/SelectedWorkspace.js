@@ -1,8 +1,12 @@
 import React from 'react'
 import { useWorkspaceContext } from './WorkspaceContext'
 import styles from '../style/workspace.module.css'
+import { useTranslation} from "react-i18next"
+
 
 const SelectedWorkspace = () => {
+  const { t } = useTranslation()
+
   const { organizations, redirectPage } = useWorkspaceContext()
 
   const numSelectedWorkspace = organizations.filter(org => org.selected)
@@ -20,7 +24,7 @@ const SelectedWorkspace = () => {
 
   return (
     <div className={`${styles.workspace_section_intro}`}>
-      <p>{numberOfSelected} selected</p>
+      <p>{numberOfSelected} {t("workspace.space.selected")}</p>
       <button
         style={{
           background: `${!numSelectedWorkspace.length ? '#BEBEBE' : '#00B87C'}`,
@@ -31,7 +35,7 @@ const SelectedWorkspace = () => {
         className={`${styles.workspace_btn}`}
         onClick={handleNextPage}
       >
-        Open &nbsp; &nbsp;
+        {t("workspace.space.open")} &nbsp; &nbsp;
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

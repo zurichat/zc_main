@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import Logo from '../../../component-assets/zurilogoandtitle.svg'
+import { useTranslation} from "react-i18next"
 
+  
 const WorkspaceError = ({ error }) => {
   const errorMessage = error.toString()
+  const { t } = useTranslation()
 
   if (errorMessage.match(/401/)) {
     return (
@@ -15,9 +18,9 @@ const WorkspaceError = ({ error }) => {
         </div>
 
         <div>
-          <h1>401</h1>
+          <h1>{t("workspace.space.errno")}</h1>
           <p>
-            You're not logged in! <Link to="/login">Login here.</Link>
+            {t("workspace.space.errmsg")} <Link to="/login">{t("workspace.space.errlink")}</Link>
           </p>
         </div>
       </ErrorPage>
@@ -32,9 +35,9 @@ const WorkspaceError = ({ error }) => {
         </div>
 
         <div>
-          <h1>404</h1>
+          <h1>{t("workspace.space.err_no")}</h1>
           <p>
-            Oops something went wrong! Go to <Link to="/">zuri.chat</Link>
+            {t("workspace.space.err_msg")} <Link to="/">{t("workspace.space.err_link")}</Link>
           </p>
         </div>
       </ErrorPage>
