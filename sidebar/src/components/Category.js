@@ -20,14 +20,13 @@ export default function Category(props) {
           button_url={
             props.name == "direct messages" || props.name == "channels"
               ? props.data[0].button_url
-              : null
+              : false
           }
         />
       )}
       {props.data &&
         props.data.length > 0 &&
         props.data.map(plugin => {
-          //plugin.button_url && setUrl(plugin.button_url)
           if (plugin.show_group) {
             return (
               <SubCategory
@@ -49,6 +48,7 @@ export default function Category(props) {
             )
           }
         })}
+
       {/* {props.state.sidebar &&
         props.name &&
         Object.keys(props.state.sidebar).map((c, index) => {

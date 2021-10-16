@@ -4,6 +4,7 @@ import Footer from "../../components/Footer"
 import styles from "./styles/demo-page.module.css"
 import DemoForm from "./components/book-demo-form"
 import BookDemoImg from "./assets/here-to-help.png"
+import DemoSignUp from "./components/demo-signup"
 
 const BookDemo = () => {
   return (
@@ -12,13 +13,11 @@ const BookDemo = () => {
 
       <div className={`${styles.demoPage}`}>
         <section className={`${styles.demoIntroduction}`}>
-          <div className={`${styles.demoPageContainer}`}>
+          <div className={`container`}>
             <h1> Let us walk you through it</h1>
           </div>
         </section>
-        <section
-          className={`${styles.demoPageContainer} ${styles.demoFormMain}`}
-        >
+        <section className={`container ${styles.demoFormMain}`}>
           <div className={`${styles.demoFormSection}`}>
             <div className={`${styles.demoFormLeft}`}>
               <DemoForm />
@@ -46,7 +45,7 @@ const BookDemo = () => {
         </section>
 
         <section className={`${styles.otherInfoSection}`}>
-          <div className={`${styles.demoPageContainer}`}>
+          <div className={`container`}>
             <h3>Other information:</h3>
             <ul className={`${styles.otherInfoList}`}>
               <li>
@@ -63,21 +62,25 @@ const BookDemo = () => {
           </div>
         </section>
 
-        <section className={`${styles.demoPageContainer}`}>
-          <div className={`${styles.hereToHelp}`}>
-            <div className={`${styles.hereToHelpText}`}>
-              <h3>We are always ready to help</h3>
-              <p>
-                Got a question? Our 24/7 support team will go the extra mile so
-                you can have easy and enjoyable experience with Zuri.
-              </p>
-            </div>
-            <div className={`${styles.hereToHelpImage}`}>
-              <img src={BookDemoImg} alt="help image" />
+        <section className={`${styles.demoPageHereToHelpSection}`}>
+          <div className={`container`}>
+            <div className={`${styles.hereToHelp}`}>
+              <div className={`${styles.hereToHelpText}`}>
+                <h3>We are always ready to help</h3>
+                <p>
+                  Got a question? Our 24/7 support team will go the extra mile
+                  so you can have easy and enjoyable experience with Zuri.
+                </p>
+              </div>
+              <div className={`${styles.hereToHelpImage}`}>
+                <img src={BookDemoImg} alt="help image" />
+              </div>
             </div>
           </div>
+          <div className={`${styles.helpBackgroundSlash}`}>
+            <DemoSignUp />
+          </div>
         </section>
-        <section className={`${styles.helpBackgroundSlash}`}></section>
       </div>
 
       <Footer />
