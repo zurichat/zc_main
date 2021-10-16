@@ -1,12 +1,10 @@
 import styles from "../styles/TopBarSearchModal.module.css"
 import { useState, useEffect, useContext } from "react"
-import axios from "axios"
 import SearchModalResult from "./ModalAutoCompleteResult"
 import { BigModal } from "./bigModal"
 import { FilterItem } from "./filterItem"
 import { plugins } from "../utils/topbarApi"
 import { ProfileContext } from "../context/ProfileModal"
-import { CgEditStraight } from "react-icons/cg"
 
 const base_URL = "https://jsonplaceholder.typicode.com/todos"
 
@@ -15,7 +13,8 @@ const TopBarSearchModal = () => {
   const [keys, setKeys] = useState("")
   const [filters, setFilters] = useState({})
   const [isSearchOpen, setOpenSearch] = useState(false)
-
+  const [result, setResult] = useState([])
+  const [isLoading, setLoading] = useState(false)
   const { user } = useContext(ProfileContext)
 
   let pluginName = window.location.href
@@ -28,40 +27,65 @@ const TopBarSearchModal = () => {
   const onSearchSubmit = async e => {
     if (e.keyCode === 13 && value.length >= 1) {
       setOpenSearch(true)
+      const getResult = async () => {
+        try {
+          setLoading(true)
+          let response = await exactPlugin.apiCall(
+            user.org_id,
+            user._id,
+            value,
+            keys
+          )
+          if (response.status >= 200 || response.status <= 299) {
+            setResult(response.data.results.data)
+          }
+          setLoading(false)
+        } catch (e) {
+          setLoading(false)
+          console.error(e)
+        }
+      }
+      getResult()
     }
   }
 
   const onInputChange = e => {
     setValue(e.target.value)
-   
   }
   useEffect(() => {
     async function getData() {
-      if (!exactPlugin.filterCall) {
+      if (!exactPlugin?.filterCall) {
         return
       }
-      const response = await exactPlugin.filterCall(user.org_id, user._id)
+      try {
+        const response = await exactPlugin.filterCall(user.org_id, user._id)
 
-      if (response.status >= 200 || response.status <= 299) {
-        setFilters(response.data.data)
+        if (response.status >= 200 || response.status <= 299) {
+          setFilters(response.data.data)
+        }
+      } catch (e) {
+        setFilters({})
       }
     }
     getData()
-  }, [exactPlugin.name, user._id])
-
-  const FilterList = Object.keys(filters).map((item, i) => (
-    <li key={i} className={styles.List}>
-      <button
-        onClick={e => {
-          e.stopPropagation()
-          setKeys(item)
-        }}
-        style={{ width: "100%", textAlign: "left" }}
-      >
-        <SearchModalResult title={filters[item]} />
-      </button>
-    </li>
-  ))
+  }, [exactPlugin?.name, user._id])
+  
+  const FilterList =
+    (filters === {}|| !filters)
+      ? []
+      : Object.keys(filters).map((item, i) => (
+          <li key={i} className={styles.List}>
+            <button
+              onClick={e => {
+                e.stopPropagation()
+                setKeys(item)
+              }}
+              style={{ width: "100%", textAlign: "left" }}
+            >
+              <SearchModalResult title={filters[item]} />
+            </button>
+          </li>
+        ))
   return (
     <div className={styles.topBarSearchModal}>
       <div className={styles._input}>
@@ -107,7 +131,6 @@ const TopBarSearchModal = () => {
                 onChange={onInputChange}
                 onKeyUp={onSearchSubmit}
               />
-              {value && <button className={styles.Clear} onClick={() => { setValue('') }}>Clear</button>}
             </div>
             <div className={styles.close_icon}>
               <svg
@@ -128,15 +151,15 @@ const TopBarSearchModal = () => {
           ) : (
             FilterList
           )}
-
         </ul>
       </div>
       {isSearchOpen ? (
         <BigModal
+          isLoadingUp={isLoading}
           onClose={() => {
             setOpenSearch(false)
           }}
-          filter={keys}
+          result={result}
           inputValue={value}
         />
       ) : null}

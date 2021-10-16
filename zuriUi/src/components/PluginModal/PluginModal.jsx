@@ -21,6 +21,7 @@ import {
 } from "react-icons/ai"
 import { ListGroup } from "react-bootstrap"
 import axios from "axios"
+import { membersList as DummyMembers } from "../sampleData/memberList"
 
 function PluginModal({ close, showDialog, tabIndex, config }) {
   const [showEditTopicModal, setShowEditTopicModal] = useState(false)
@@ -186,12 +187,31 @@ function AboutPanel({
 //       )
 //   }
 function MembersPanel({ config }) {
-  const { membersList, addmembersevent, removememberevent } = config.roomInfo
+  const dummyHeaderConfig = {
+    roomInfo: {
+      membersList: DummyMembers,
+      addmembersevent: values => {
+        console.warn("a plugin added ", values)
+      },
+      removememberevent: id => {
+        console.warn("a plugin deleted ", id)
+      }
+    }
+  }
+
+  const roomData =
+    "roomInfo" in config ? config.roomInfo : dummyHeaderConfig.roomInfo
+  const {
+    membersList: roomMembers,
+    addmembersevent,
+    removememberevent
+  } = roomData
   const [addModalShow, setaddModalShow] = useState(false)
   const [removeModalShow, setremoveModalShow] = useState(false)
   const [selectedMember, setSelectedMember] = useState(null)
   const [isLoading, setisLoading] = useState(false)
   const [userList, setUserList] = useState([])
+  const [membersList, setMembersList] = useState(roomMembers)
 
   const handleClose = () => {
     setaddModalShow(false)
@@ -202,6 +222,14 @@ function MembersPanel({ config }) {
   const handleremoveModalShow = () => setremoveModalShow(true)
 
   const addMembersEvent = values => {
+    const newEntries = [
+      ...membersList,
+      values.map(item => {
+        return { _id: item.value, email: item.label }
+      })
+    ]
+    setMembersList([newEntries])
+    // console.warn(membersList)
     addmembersevent(values)
   }
 
@@ -217,18 +245,19 @@ function MembersPanel({ config }) {
   useEffect(() => {
     const currentWorkspace = localStorage.getItem("currentWorkspace")
     const token = sessionStorage.getItem("token")
-    axios.get(`https://api.zuri.chat/organizations/${currentWorkspace}/members`, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
+    axios
+      .get(`https://api.zuri.chat/organizations/${currentWorkspace}/members`, {
+        headers: { Authorization: `Bearer ${token}` }
+      })
       .then(r => {
         const users = r.data.data.map(item => {
           return { value: item._id, label: item.email }
         })
         setUserList(users)
       })
-      .catch(/*e => console.log("Organization not returning members", e)*/);
+      .catch(/*e => console.log("Organization not returning members", e)*/)
     setisLoading(true)
-  }, []);
+  }, [])
 
   return (
     <div>
@@ -271,16 +300,22 @@ function MembersPanel({ config }) {
             Add People
           </AddPeopleIcons>
         </ListGroup.Item>
-        {membersList.map(member => (
-          <ListGroup.Item key={member._id} className="d-flex w-100">
-            <div>{member.email}</div>
-            <div className="ms-auto" onClick={handleaddModalShow}>
-              <RemoveLink onClick={() => removeMemberHandler(member)}>
-                Remove
-              </RemoveLink>
-            </div>
+        {membersList && membersList.length > 0 ? (
+          membersList.map(member => (
+            <ListGroup.Item key={member._id} className="d-flex w-100">
+              <div>{member.email}</div>
+              <div className="ms-auto" onClick={handleaddModalShow}>
+                <RemoveLink onClick={() => removeMemberHandler(member)}>
+                  Remove
+                </RemoveLink>
+              </div>
+            </ListGroup.Item>
+          ))
+        ) : (
+          <ListGroup.Item className="d-flex w-100">
+            <div>No Members</div>
           </ListGroup.Item>
-        ))}
+        )}
       </ListGroup>
     </div>
   )
