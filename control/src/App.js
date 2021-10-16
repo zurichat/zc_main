@@ -38,9 +38,10 @@ import PrivacyPolicy from "./pages/privacy-policy/index"
 import NotFoundPage from "./pages/404"
 import Billing from "./pages/admin/Billing"
 import Customize from "./pages/admin/Customize"
+import UserGroups from "./pages/admin/UserGroups"
 import Blog from "./pages/blogs"
 import Homepage from "./pages/home"
-import Permissions from "./pages/admin/Permissions"
+import Permissions from "./pages/admin/Settings/permissions"
 import SettingsHome from "./pages/admin/Settings/index"
 import About from "./pages/about/index"
 import AdminSettingsTab from "./pages/admin/Settings/components/AdminSettingsTab"
@@ -61,9 +62,8 @@ import Whyzurichat from "./pages/WhyZuriChat/Whyzurichat"
 import OnboardingHelp from "./pages/LoginSignUpHelp/index"
 import BookDemo from "./pages/book-a-demo"
 
-
-
 import ChangeWorkspaceName from "./pages/admin/Settings/components/ChangeWorkspaceName"
+
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -93,7 +93,7 @@ const App = () => {
         <Route path="/signout">
           <SignOut />
         </Route>
-        <Route path="/about">
+         <Route path="/about">
           <About />
         </Route>
         <Route path="/help">
@@ -197,7 +197,11 @@ const App = () => {
         <PrivateRoute path="/settings" exact component={Settings} />
         <PrivateRoute path="/admin/settings" exact component={SettingsHome} />
         <PrivateRoute path="/admin/settings/home" exact component={Home} />
-        <PrivateRoute path="/admin/name" exact component={ChangeWorkspaceName} />
+        <PrivateRoute
+          path="/admin/name"
+          exact
+          component={ChangeWorkspaceName}
+        />
         <PrivateRoute
           path="/admin/settings/analytics/memmber"
           exact
@@ -209,6 +213,11 @@ const App = () => {
           component={Billing}
         />
         <PrivateRoute path="/admin/stats" exact component={AnayticsHome} />
+        <PrivateRoute
+          path="/admin/settings/usergroups"
+          exact
+          component={UserGroups}
+        />
         <PrivateRoute
           path="/admin/settings/customize"
           exact
