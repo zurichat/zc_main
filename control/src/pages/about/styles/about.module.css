@@ -76,8 +76,13 @@
 .btn {
   margin: 0.3rem;
 }
+
+.h3m{
+  padding:0;
+}
+
+
 .btn_sale{
-  background-color: #fff;
   text-transform: uppercase;
   color: #00ffaa;
   margin-top: 2rem;
