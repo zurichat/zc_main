@@ -17,12 +17,12 @@ const MembersTab = () => {
     GetWorkspaceUsers().then(res => {
       setItems(Object.values(res))
     })
-  })
+  }, [])
   const columns = [
     {
       name: "Name",
       selector: row => row.first_name,
-      sortable: true,
+      sortable: true
     },
     {
       name: "userID",
