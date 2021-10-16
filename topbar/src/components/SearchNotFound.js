@@ -1,7 +1,7 @@
-import React from "react"
-import style from "../styles/SearchNotFound.module.css"
-import emoji from "../assets/images/thinking.png"
-import StartNewSearch from "./StartNewSearchButton"
+import React from 'react';
+import style from '../styles/SearchNotFound.module.css';
+import emoji from '../assets/images/thinking.png';
+import StartNewSearch from './StartNewSearchButton.jsx';
 
 export const NoResult = ({ onClosed }) => {
   return (
