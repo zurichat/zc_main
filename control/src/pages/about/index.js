@@ -194,7 +194,6 @@ const index = () => {
               your team or organization faster, easier and more fun. Want to
               explore?
             </h3>
-
             <Link to="/signup">
               <button className={` ${styles.btn_sale}`}>GET STARTED</button>
             </Link>

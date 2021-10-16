@@ -165,6 +165,40 @@ export const TRANSLATIONS_DE = {
 
     tracker: {
       title: "Plugin von Contribution Tracker",
+      headline:
+        "Verfolgen Sie die Beiträge der Menschen und heben Sie dringende Probleme hervor",
+      description:
+        "Ein Plugin, mit dem Sie den Beitrag von Menschen zu Open-Source-Projekten verfolgen und die dringendsten Probleme hervorheben können",
+      link: "Beitragsverfolgungs-Plugin erkunden"
+    },
+
+    music: {
+      title: "Musik-Plugin",
+      headline: "Zugriff auf Musik und Musikvideos unterwegs!",
+      description:
+        "Mit dem Musik-Plug-in können Einzelpersonen in einer Organisation Musik- und Videolinks von YouTube zu einer freigegebenen Playlist hinzufügen.",
+      link: "Entdecken Sie Musik-Plugins"
+    },
+
+    games: {
+      title: "Schach-Plugin",
+      headline:
+        "Machen Sie das Lernen zum Spaß, bleiben Sie mit den virtuellen Spielen beschäftigt",
+      description:
+        "Zuri Schach-Plugin ist ein webbasiertes Freizeit- und Wettbewerbs-Brettspiel, das zwischen zwei Spielern gespielt wird.",
+      link: "Spiele-Plugin erkunden"
+    },
+
+    goal: {
+      title: "Plugin des Unternehmensziels",
+      headline: "Behalten Sie die Ziele im Auge",
+      description:
+        "Ein Plugin, mit dem Sie die Ziele und Leistungen des Unternehmens verfolgen können",
+      link: "Entdecken Sie das Ziel-Plugin des Unternehmens"
+    },
+
+    todo: {
+      title: "Todo-Plugin",
       headline: "Behält den Überblick über wichtige Aufgaben",
       description:
         "Ein Plugin, mit dem Sie alles, was Sie tun müssen, auflisten und sicherstellen können, dass Ihre Aufgaben an einem Ort aufgeschrieben werden, damit Sie nichts Wichtiges vergessen.",
@@ -443,6 +477,28 @@ export const TRANSLATIONS_DE = {
         post_headline:
           "Zuri zahlt 100 % Ihrer Prämien. Wir bieten auch Zugang zu einer Reihe von kostenlosen Ressourcen für psychische Gesundheit und Wohlbefinden."
       }
+    },
+    join_cohort: "Seien Sie ein Teil unserer nächsten Kohorte ab Sommer 2022",
+    register_now: "Jetzt registrieren"
+  },
+  section_two: {
+    headline: "Arbeiten und Gedeihen",
+    post_headline:
+      "Wir bieten Vorteile, die Ihnen helfen, sich gut zu fühlen und Ihr Bestes zu geben.",
+    digital_wellness: {
+      headline: "Digital-First-Office",
+      post_headline:
+        "Mit Remote-Rollen, bürofreiem Onboarding und flexiblen Arbeitspraktiken sind wir für sich ständig ändernde Realitäten, Zeitpläne und Verantwortlichkeiten gerüstet."
+    },
+    just_for_you: {
+      headline: "Nur für dich",
+      post_headline:
+        "Erhalten Sie eine jährliche Beihilfe für die berufliche Entwicklung sowie ein monatliches Stipendium zur Deckung Ihres Bedarfs; Ein neuer Arbeitslook, ein Haustier, was dir am wichtigsten ist."
+    },
+    health_and_wellness: {
+      headline: "Gesundheit und Wellness",
+      post_headline:
+        "Zuri zahlt 100 % Ihrer Prämien. Wir bieten auch Zugang zu einer Reihe von kostenlosen Ressourcen für psychische Gesundheit und Wohlbefinden."
     }
   },
 
