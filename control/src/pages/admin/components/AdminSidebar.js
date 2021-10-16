@@ -37,6 +37,7 @@ import { getUser } from "../Utils/Common"
 const AdminSidebar = ({ setModal, openModal }) => {
   const user = getUser()
 
+ 
   return (
     <div
       className={
@@ -263,6 +264,14 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
+            to="/help"
+          >
+            Help
+            
+          </Link>
+          <Link
+            onClick={() => setModal(!openModal)}
+            className={styles.sidebarLink}
             to="/"
           >
             API
@@ -278,21 +287,21 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
+            to="/pricing"
           >
             Pricing
           </Link>
           <Link
-            onClick={() => setModal(!openModal)}
+            
             className={styles.sidebarLink}
-            to="/"
+            to="/blog"
           >
             Our blog
           </Link>
           <Link
-            onClick={() => setModal(!openModal)}
+            
             className={styles.sidebarLink}
-            to="/"
+            to="/signout"
           >
             Sign out
             <FiLogOut className={styles.iconRight} />
