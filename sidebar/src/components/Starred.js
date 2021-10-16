@@ -10,8 +10,8 @@ export default function Starred(props) {
   const [checked, setChecked] = useState(false)
 
   const toggleDropdown = () => setOpen(!isOpen)
-
-  setChecked(props.check.includes(true) ? true : false)
+  // console.error("whhhhhh", props.check)
+  setChecked(props.check && props.check.includes(true) ? true : false)
   return props.state.sidebar ? (
     <div className={`${styles.item__row} ${checked && styles.open}`}>
       {props.state && (

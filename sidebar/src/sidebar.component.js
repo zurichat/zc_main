@@ -18,7 +18,7 @@ import Room from "./components/Room"
 import SingleRoom from "./components/SingleRoom"
 import Category from "./components/Category"
 import { dummySidebar } from "./components/dummySidebar"
-import Starred from "./components/starred"
+import Starred from "./components/Starred"
 
 const Sidebar = props => {
   let currentWorkspace = localStorage.getItem("currentWorkspace")
@@ -95,7 +95,7 @@ const Sidebar = props => {
     // }
    }
   }
-  const check= props.state.sidebar && Object.keys(props.state.sidebar).map((plugin, idx)=>{
+  const check = props.state.sidebar && Object.keys(props.state.sidebar).map((plugin, idx)=>{
     return (props.state.sidebar[plugin].starred_rooms ? true : false)
   })
 
