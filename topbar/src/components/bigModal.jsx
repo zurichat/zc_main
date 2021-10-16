@@ -82,16 +82,7 @@ export const BigModal = ({ onClose, inputValue, result, isLoadingUp }) => {
         <img src={cancel} alt="close" />
       </button>
       {result.length < 1 ? (
-        <div className={styles.noResult}>
-          <p className={styles.no_result_title}>No Result Found</p>
-          <p className={styles.no_result_desc}>
-            Looking for something? If it happened in zuri-chat,
-            <br /> you can find it in search.
-          </p>
-          <button className={styles.startNewSearch}>
-            Please Start A New Search
-          </button>
-        </div>
+        <NoResult onClosed={() => onClose()}/>
       ) : isLoading ? (
         <p
           style={{
