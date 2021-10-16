@@ -15,6 +15,7 @@ import { ProfileContext } from "../context/ProfileModal"
 import { TopbarContext } from "../context/Topbar"
 import { StyledEmojiWrapper } from "../styles/EmojiMartStyle"
 import { FaRegTimesCircle } from "react-icons/fa"
+import DefaultStatus from "./DefaultStatus"
 
 // const SetDateAndTime = ({ dateTime, setDateTime }) => {
 //   const [value, onChange] = useState(new Date())
@@ -62,6 +63,7 @@ const SetStatusModal = ({
   setStatusText,
   setStatusEmoji
 }) => {
+  const [chosenStatus, setChosenStatus] = useState({})
   const [dropdown, setDropdown] = useState(false)
   const [openEmoji, setOpenEmoji] = useState(false)
   const [dateTime, setDateTime] = useState(false)
@@ -72,8 +74,9 @@ const SetStatusModal = ({
   )
   const [timeState, setTimeState] = useState(null)
   const [timeError, setTimeError] = useState(false)
-  const [choosePeriod, setChoosePeriod] = useState(user?.status?.expiry_time)
+  // const [choosePeriod, setChoosePeriod] = useState(user?.status?.expiry_time)
   const { user, orgId, setUser } = useContext(ProfileContext)
+  const [choosePeriod, setChoosePeriod] = useState(user?.status?.expiry_time)
 
   const onEmojiSelect = selectedEmoji => {
     setStatusEmoji(selectedEmoji.native)
@@ -149,7 +152,6 @@ const SetStatusModal = ({
     } catch (error) {
       const errorResponse = error
     }
-
     setStatusModal(!statusModal)
   }
 
@@ -237,7 +239,42 @@ const SetStatusModal = ({
             className={styles.whitex}
           />
         </div>
-        <div className={styles.modalcontent}>
+        <div style={{ position: "relative" }}>
+          <div className={styles.emoji}>
+            <StyledEmojiWrapper>
+              {openEmoji ? (
+                <Picker
+                  set="google"
+                  title="pick an emoji..."
+                  emoji="point_up"
+                  onSelect={onEmojiSelect}
+                />
+              ) : null}
+            </StyledEmojiWrapper>
+            <div>
+              {openEmoji ? (
+                <img
+                  src={blackx}
+                  alt=""
+                  onClick={() => {
+                    setOpenEmoji(!openEmoji)
+                  }}
+                  className={styles.emojiclose}
+                />
+              ) : null}
+            </div>
+            {openEmoji && (
+              <div
+                className={styles.emojiback}
+                onClick={() => setOpenEmoji(!openEmoji)}
+              ></div>
+            )}
+          </div>
+        </div>
+        <div
+          className={styles.modalcontent}
+          style={{ maxHeight: "300px", overflowY: "scroll" }}
+        >
           <form action="" method="post">
             <div className={styles.addstatus}>
               <div className={styles.addstatusleft}>
@@ -249,36 +286,7 @@ const SetStatusModal = ({
                     <img src={smile} className={styles.defalutEmoji} />
                   )}
                 </p>
-                <div className={styles.emoji}>
-                  <StyledEmojiWrapper>
-                    {openEmoji ? (
-                      <Picker
-                        set="google"
-                        title="pick an emoji..."
-                        emoji="point_up"
-                        onSelect={onEmojiSelect}
-                      />
-                    ) : null}
-                  </StyledEmojiWrapper>
-                  <div>
-                    {openEmoji ? (
-                      <img
-                        src={blackx}
-                        alt=""
-                        onClick={() => {
-                          setOpenEmoji(!openEmoji)
-                        }}
-                        className={styles.emojiclose}
-                      />
-                    ) : null}
-                  </div>
-                  {openEmoji && (
-                    <div
-                      className={styles.emojiback}
-                      onClick={() => setOpenEmoji(!openEmoji)}
-                    ></div>
-                  )}
-                </div>
+
                 <input
                   type="text"
                   className={styles.input}
@@ -469,6 +477,13 @@ const SetStatusModal = ({
                     </ReactTooltip>
                   </div>
                 )}
+                <DefaultStatus
+                  chosenStatus={chosenStatus}
+                  setChosenStatus={setChosenStatus}
+                  setStatusText={setStatusText}
+                  setStatusEmoji={setStatusEmoji}
+                  setChoosePeriod={setChoosePeriod}
+                />
               </div>
             ) : (
               <div className={styles.clearafter}>
@@ -577,43 +592,32 @@ const SetStatusModal = ({
                 </div>
               </div>
             )}
-            {(user?.status?.tag !== statusEmoji ||
-              user?.status?.text !== statusText) && (
-              <button
-                className={styles.statuscta}
-                type="submit"
-                onClick={handleSubmit}
-              >
-                Save Changes
-              </button>
-            )}
-            {user?.status?.tag === statusEmoji &&
-              user?.status?.text === statusText &&
-              (statusEmoji !== "" || statusText !== "") && (
-                <span
-                  onClick={handleClearStatus}
-                  className={styles.clearstatus}
-                >
-                  Clear Status
-                </span>
-              )}
-            {user?.status?.tag === statusEmoji &&
-              statusEmoji === "" &&
-              user?.status?.text === statusText &&
-              statusText === "" && (
-                <span className={styles.inactivesave}>Save</span>
-              )}
           </form>
-          {/* {status.map((data)=>{
-                      const {text, emoji} = data;
-                      return(
-                          <div>
-                          <p>{text}</p>
-                          <p>{emoji}</p>
-                          </div>
-                      )
-                  })} */}
         </div>
+
+        {(user?.status?.tag !== statusEmoji ||
+          user?.status?.text !== statusText) && (
+          <button
+            className={styles.statuscta}
+            type="submit"
+            onClick={handleSubmit}
+          >
+            Save Changes
+          </button>
+        )}
+        {user?.status?.tag === statusEmoji &&
+          user?.status?.text === statusText &&
+          (statusEmoji !== "" || statusText !== "") && (
+            <span onClick={handleClearStatus} className={styles.clearstatus}>
+              Clear Status
+            </span>
+          )}
+        {user?.status?.tag === statusEmoji &&
+          statusEmoji === "" &&
+          user?.status?.text === statusText &&
+          statusText === "" && (
+            <span className={styles.inactivesave}>Save</span>
+          )}
       </div>
       <div
         className={styles.modalback}

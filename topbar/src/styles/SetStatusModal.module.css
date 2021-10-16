@@ -27,10 +27,10 @@
   right: 0;
 }
 .modalcontainer {
-  min-height: 320px;
-  max-width: 583px;
+  min-height: 250px;
+  max-width: 450px;
   width: 80%;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 1px 1px 44px rgba(64, 64, 64, 0.5);
   background: white;
   position: relative;
@@ -52,10 +52,12 @@
   align-content: center;
   background: #00b87c;
   color: white;
-  margin-bottom: 54.6px;
+  margin-bottom: 20px;
   height: 49px;
   padding-right: 25px;
   padding-top: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .statustop p {
   font-family: "Lato", sans-serif;
@@ -73,6 +75,14 @@
   padding: 0 20px;
   /* width: 534.25px; */
 }
+.modalcontent::-webkit-scrollbar {
+  width: 6px;
+}
+.modalcontent::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 20px;
+}
+
 .addstatus {
   display: flex;
   justify-content: space-between;
@@ -108,8 +118,9 @@
   align-items: flex-start;
   position: absolute;
   /* margin-top: 20px; */
-  top: -30px;
+  top: 45px;
   left: -100px;
+  z-index: 99;
 }
 .emojiclose {
   cursor: pointer;
@@ -326,7 +337,11 @@
   align-items: center;
 }
 .recentstatustitle {
-  font-size: 14px;
+  color: #999999;
+  font-weight: normal;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .recentstatustile {
   display: flex;
