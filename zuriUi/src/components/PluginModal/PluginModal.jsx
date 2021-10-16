@@ -230,7 +230,7 @@ function MembersPanel({ config }) {
         // console.log("Organization not returning members", e)
       })
     setisLoading(true)
-  }, [])
+  }, []);
 
   return (
     <div>
