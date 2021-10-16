@@ -490,5 +490,39 @@ export const TRANSLATIONS_FR = {
       legacyPolicy: "Politique juridique",
       aboutZuri: "À propos de Zurichat"
     }
+  },
+  download:{
+    title: {
+      download: "Téléchargements - Zuri Chat"
+    },
+
+    banner: {
+      headline: "Découvrez les applications de bureau et mobiles de Zuri Chat",
+      tagline: "Die Verbindung mit Ihrem Team war mit Zuri Chat noch nie so einfach."
+    },
+    hero: {
+      desktop: {
+        title: "Zuri pour le bureau",
+        mac_store_link: "Télécharger sur Mac App Store",
+        ms_store_link: "Obtenez-le de Microsoft"
+      },
+      mobile: {
+        title: "Zuri pour mobiles",
+        apple_store_link: "Téléchargement sur App Store",
+        play_store_link: "Obtenez le sur Google Play"
+      },
+    },
+    links: {
+      title: "Téléchargez et profitez de l'expérience Zuri Chat sur n'importe lequel de ces appareils",
+      windows_link: "Windows",
+      mac_link: "macOS",
+      ios_link: "iOS",
+      android_link: "Android",
+    },
+    highlight: {
+      title: "Même sensation, même équipe sur Zuri App !",
+      link: "TÉLÉCHARGER POUR",
+      link2: "TÉLÉCHARGER"
+    },
   }
 }

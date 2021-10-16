@@ -13,13 +13,16 @@ import android from "./assets/android.svg"
 import infolaptop from "./assets/infolaptop.svg"
 import windows from "./assets/windows.svg"
 import { isMacOs } from "react-device-detect"
+import "../../i18n"
+import { useTranslation} from "react-i18next"
 
 const DownloadsDesktop = () => {
   const [exe, setexe] = useState({ link: "", name: "" })
+  const { t } = useTranslation()
   React.useEffect(() => {
-    if (isMacOs) return setexe({ name: "DOWNLOAD FOR MAC" })
+    if (isMacOs) return setexe({ name: "MAC" })
     return setexe({
-      name: "DOWNLOAD FOR WINDOWS",
+      name: "WINDOWS",
       link: "https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing"
     })
   }, [])
@@ -29,10 +32,10 @@ const DownloadsDesktop = () => {
       <section className={`${styles.hero} `}>
         <div className={`${styles.heroText} `}>
           <p className={`${styles.heroheading}`}>
-            Experience the Zuri Chat’s desktop and mobile apps
+            {t("download.banner.headline")}
           </p>
           <p className={`${styles.p} mb-4`}>
-            Connecting with your team has never been easier with Zuri Chat.
+            {t("download.banner.tagline")}
           </p>
 
           <div className={styles.heroImages}>
@@ -43,17 +46,17 @@ const DownloadsDesktop = () => {
                 alt="app screenshot"
               />
               <div>
-                <h2>Zuri for Desktop</h2>
+                <h2>{t("download.hero.desktop.title")}</h2>
                 <a href="/download-app" className={styles.downloadButton}>
                   <img className={`px-1`} src={apple1} alt="download icon" />
-                  <span> Download on Mac App Store</span>
+                  <span> {t("download.hero.desktop.mac_store_link")}</span>
                 </a>
                 <a
                   href={`https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing`}
                   className={styles.downloadButton}
                 >
                   <img className={`px-1`} src={microsoft} alt="download icon" />
-                  <span>Get it from Microsoft</span>
+                  <span>{t("download.hero.desktop.ms_store_link")}</span>
                 </a>
               </div>
             </div>
@@ -67,10 +70,10 @@ const DownloadsDesktop = () => {
                 />
               </div>
               <div>
-                <h2>Zuri for Mobile</h2>
+                <h2>{t("download.hero.mobile.title")}</h2>
                 <a href="/download-app" className={styles.downloadButton}>
                   <img className={`px-1`} src={apple1} alt="download icon" />
-                  <span>Download on App Store</span>
+                  <span>{t("download.hero.desktop.apple_store_link")}</span>
                 </a>
 
                 <a
@@ -83,7 +86,7 @@ const DownloadsDesktop = () => {
                     src={googleplay}
                     alt="download icon"
                   />
-                  <span>GET IT ON Google Play</span>
+                  <span>{t("download.hero.desktop.play_store_link")}</span>
                 </a>
               </div>
             </div>
@@ -101,7 +104,7 @@ const DownloadsDesktop = () => {
 
       <section className={`${styles.info}`}>
         <p className="h2 text-center font-weight-normal text-white w-50 mb-4">
-          Download and enjoy the Zuri Chat experience on any these devices
+          {t("download.links.title")}
         </p>
         <div className={`${styles.downloadButtonContainer}`}>
           <a
@@ -142,11 +145,11 @@ const DownloadsDesktop = () => {
       <section className={` ${styles.ctaContainer}`}>
         <div>
           <h1 className={`${styles.heroheading} py-3 mb-4`}>
-            Same feel, same team on Zuri App!
+             {t("download.highlight.title")}
           </h1>
           <a href={exe.link} download={exe.name} className={styles.button1}>
             <img className={`px-2`} src={icon} alt="download icon"></img>
-            {exe.name}
+            {t("download.highlight.link")} {exe.name}
           </a>
         </div>
         <img

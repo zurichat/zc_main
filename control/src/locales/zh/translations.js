@@ -485,5 +485,40 @@ export const TRANSLATIONS_ZH = {
       legacyPolicy: "法律政策",
       aboutZuri: "关于 Zuri Chat"
     }
+  },
+
+  download: {
+    title: {
+      download: "下载 - Zuri Chat"
+    },
+
+    banner: {
+      headline: "体验 Zuri Chat 的桌面和移动应用程序",
+      tagline: "使用 Zuri Chat 与您的团队联系从未如此简单。"
+    },
+    hero: {
+      desktop: {
+        title: "Zuri 桌面版",
+        mac_store_link: "在 Mac App Store 下载",
+        ms_store_link: "从微软获取"
+      },
+      mobile: {
+        title: "Zuri 手机版",
+        apple_store_link: "在 App Store 下载",
+        play_store_link: "在 Google Play 上获取"
+      },
+    },
+    links: {
+      title: "在任何这些设备上下载并享受 Zuri Chat 体验",
+      windows_link: "Windows",
+      mac_link: "macOS",
+      ios_link: "iOS",
+      android_link: "Android",
+    },
+    highlight: {
+      title: "同样的感觉，同样的团队在 Zuri App 上！",
+      link: "下载适用于",
+      link2: "下载"
+    },
   }
 }

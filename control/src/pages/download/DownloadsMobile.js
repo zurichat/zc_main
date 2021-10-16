@@ -9,15 +9,18 @@ import apple from "./assets/apple.svg"
 import windows from "./assets/windows.svg"
 import android from "./assets/android.svg"
 import { isIOS } from "react-device-detect"
+import "../../i18n"
+import { useTranslation} from "react-i18next"
 
 const DownloadsMobile = () => {
   const [exe, setexe] = useState({ link: "", name: "", link2: "", name2: "" })
+  const { t } = useTranslation()
   React.useEffect(() => {
     if (isIOS) return setexe({ name: "DOWNLOAD FOR IOS" })
     return setexe({
       name: "DOWNLOAD ZURI CHAT",
       link: "https://play.google.com/store/apps/details?id=com.zurichat.app",
-      name2: "DOWNLOAD DM AND CHANNELS",
+      name2: "DM AND CHANNELS",
       link2:
         "https://drive.google.com/file/d/1LRrWXjBFdns0RUD7zQapBuof8ole5XHI/view?usp=drivesdk"
     })
@@ -29,10 +32,10 @@ const DownloadsMobile = () => {
         <section className={downloadStyles.hero}>
           <div className={downloadStyles.herotext}>
             <p className={downloadStyles.herotextHeader}>
-              Experience the Zuri Chat’s desktop and mobile apps
+              {t("download.banner.headline")}
             </p>
             <p className="mb-4">
-              Connecting with your team has never been easier with Zuri Chat.
+              {t("download.banner.tagline")}
             </p>
             {exe.link2 && (
               <a href={exe.link2} className={`${downloadStyles.button1} mb-3`}>
@@ -57,7 +60,7 @@ const DownloadsMobile = () => {
         </section>
         <section className={`${downloadStyles.info}`}>
           <p className={`h2 text-center font-weight-bold text-white mb-4`}>
-            Download and enjoy the Zuri Chat experience on any these devices
+            {t("download.links.title")}
           </p>
           <div className={`${downloadStyles.downloadButtonContainer}`}>
             <a
@@ -95,7 +98,7 @@ const DownloadsMobile = () => {
         <section>
           <div className={`d-flex flex-column justify-content-center`}>
             <h1 className={`${downloadStyles.ctaText}`}>
-              Same feel, same team on Zuri App!
+              {t("download.highlight.title")}
             </h1>
             <a
               href={exe.link}
@@ -111,7 +114,7 @@ const DownloadsMobile = () => {
                 className={`${downloadStyles.button2} text-center`}
               >
                 <img className={`px-2`} src={icon} alt="download icon"></img>
-                {exe.name2}
+                 {t("download.highlight.link2")} {exe.name2}
               </a>
             )}
           </div>

@@ -486,5 +486,40 @@ export const TRANSLATIONS_EN = {
       legacyPolicy: "Legal Policy",
       aboutZuri: "About Zurichat"
     }
+  },
+
+  download:{
+    title: {
+      download: "Downloads - Zuri Chat"
+    },
+
+    banner: {
+      headline: "Experience the Zuri Chat’s desktop and mobile apps",
+      tagline: "Connecting with your team has never been easier with Zuri Chat."
+    },
+    hero: {
+      desktop: {
+        title: "Zuri for Desktop",
+        mac_store_link: "Download on Mac App Store",
+        ms_store_link: "Get it from Microsoft"
+      },
+      mobile: {
+        title: "Zuri for Mobile",
+        apple_store_link: "Download on App Store",
+        play_store_link: "GET IT ON Google Play"
+      },
+    },
+    links: {
+      title: "Download and enjoy the Zuri Chat experience on any these devices",
+      windows_link: "Windows",
+      mac_link: "macOS",
+      ios_link: "iOS",
+      android_link: "Android",
+    },
+    highlight: {
+      title: "Same feel, same team on Zuri App!",
+      link: "DOWNLOAD FOR",
+      link2: "DOWNLOAD"
+    },
   }
 }
