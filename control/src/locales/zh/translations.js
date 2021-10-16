@@ -85,7 +85,7 @@ export const TRANSLATIONS_ZH = {
     },
     cookies: {
       textOne: "我们使用第三方",
-      textTwo: "cookie",
+      textTwo: "曲奇饼",
       textThree: "来个性化您的网站体验。",
       accept: "允许",
       decline: "衰退"
@@ -297,8 +297,10 @@ export const TRANSLATIONS_ZH = {
       description_br: "在这里通过电子邮件获取最新的插件",
       description_brr: "在 Zuri 聊天！",
       button: "订阅"
+    }
   },
         
+
 
   about: {
     title: {
@@ -386,11 +388,12 @@ export const TRANSLATIONS_ZH = {
       title: "无论您做什么工作，您都可以在 Zuri Chat 中完成",
       link_sales: "与销售人员交谈",
       link_try: "免费试用"
-    },
+    }
   },
 
 
-    careers: {
+  
+  careers: {
       title: {
         careers: "职业"
       },
@@ -457,7 +460,33 @@ export const TRANSLATIONS_ZH = {
           post_headline:
             "Zuri 支付 100% 的保费。我们还提供一系列免费的心理健康和福祉资源。"
         }
+      },
+
+    
+  login:{
+    title: "登录 - Zuri 聊天",
+    form: {
+      header: "登录",
+      sub_header: "使用您在注册时输入的数据登录",
+      google_header: "使用谷歌登录",
+      topline_text: "或者",
+      submitButtonName: "登录",
+      bottomLine: "对我们来说是新的吗？",
+      bottomLink: "创建一个帐户",
+      signUp: "注册",
+      authInputBox: {
+        emailInputName: "电子邮件地址",
+        passwordInputName: "密码",
+        passwordInputPlaceHolder: "输入密码",
+        rememberMe: "记住账号",
+        forgotPassword: "忘记密码？",
+        getHelp: "获取登录帮助"
       }
+    },
+    footer: {
+      contactUs: "联系我们",
+      legacyPolicy: "法律政策",
+      aboutZuri: "关于 Zuri Chat"
     }
   },
 

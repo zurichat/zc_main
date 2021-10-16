@@ -2,14 +2,14 @@ import styled from "styled-components"
 
 export const StyledProfileWrapper = styled.section`
   width: 100%;
-  height: 100%;
-  padding: 2rem;
+  padding: 2.5rem;
+  margin-bottom: 20px;
   .grid-container {
     display: flex;
     align-items: flex-start;
     .input-cage {
       flex-grow: 1;
-      padding: 0 2rem;
+      padding: 0 2rem 0 0;
       @media (max-width: 768px) {
         margin-right: 0;
         padding: 0 0;
@@ -51,7 +51,7 @@ export const StyledProfileWrapper = styled.section`
             }
             .avatar {
               object-fit: cover;
-              border-radius: 50%;
+              height: 100%;
               width: 100%;
             }
           }
@@ -75,7 +75,7 @@ export const StyledProfileWrapper = styled.section`
             }
             .pref,
             .phoneInput {
-              height: 3rem;
+              height: 2.4rem;
               padding: 0 0.5rem;
               outline: none;
               border: none;
@@ -111,7 +111,6 @@ export const StyledProfileWrapper = styled.section`
         .PhoneInput,
         .css-2b097c-container {
           width: 100%;
-          height: 3rem;
           border: 1.5px solid #a1a1a1;
           padding: 0 1rem;
           font-size: 1.4rem;
@@ -285,3 +284,4 @@ export const StyledProfileWrapper = styled.section`
     }
   }
 `
+// border-radius: 50%;

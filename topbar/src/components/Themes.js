@@ -1,38 +1,31 @@
 import React, { useState, useEffect } from "react"
 import styles from "../styles/Themes.module.css"
-import theme3 from "../assets/images/theme3.png"
-import theme4 from "../assets/images/theme4.png"
-import theme5 from "../assets/images/theme5.png"
-import theme6 from "../assets/images/theme6.png"
-import theme7 from "../assets/images/theme7.png"
-import theme8 from "../assets/images/theme8.png"
-import theme9 from "../assets/images/theme9.png"
-import theme10 from "../assets/images/theme10.png"
 import theme16 from "../assets/images/theme16.png"
 import theme17 from "../assets/images/theme17.png"
-import theme18 from "../assets/images/theme18.png"
-import theme19 from "../assets/images/theme19.png"
-import theme20 from "../assets/images/theme20.png"
-import theme21 from "../assets/images/theme21.png"
 
-
-const Themes = ({check, setCheck, setMode}) => {
-  
-  // const [active1, setActive1] = useState(0)
+const Themes = () => {
+  const [active1, setActive1] = useState(0)
+  const [darkMode, setDarkMode] = useState(false)
+  const [mode, setMode] = useState("light")
   const [Data, setData] = useState(undefined)
   const [DataState, setDataState] = useState({})
 
   const toggleDarkMode = () => {
+    setDarkMode(!darkMode ? true : true)
     setMode("dark")
-    setCheck({
-      light: "",
-      dark: "checked"})
+  }
+  const toggleLightMode = () => {
+    setDarkMode(darkMode ? false : false)
+    setMode("light")
   }
 
-  const toggleLightMode = () => {
-    setMode("light")
-    setCheck({light:"checked", dark: ""})
-  }
+  useEffect(() => {
+    if (mode === "dark") {
+      localStorage.setItem("mode", "dark")
+    } else {
+      localStorage.setItem("mode", "light")
+    }
+  }, [mode])
 
   // const [mode, setMode] = useState(() => localStorage.getItem('mode'))
 
@@ -60,7 +53,7 @@ const Themes = ({check, setCheck, setMode}) => {
   // })
 
   return (
-    <div className={styles.themeCont}>
+    <div className={styles.themeCont} data-theme={darkMode ? "dark" : "light"}>
       <div className={styles.title}>
         <div className={styles.them}>Themes</div>
         <div className={styles.text}>
@@ -96,9 +89,9 @@ const Themes = ({check, setCheck, setMode}) => {
         </div>
       </div>
       <div className={styles.text2}>
-        Automatically switch between light and dark themes when your system
-        does.
+        Automatically switch between light and dark themes when
       </div>
+      <div className={styles.texti2}>your system does.</div>
       <div className={styles.img}>
         <div className={styles.up}>
           <div className={styles.upper}>
@@ -108,14 +101,16 @@ const Themes = ({check, setCheck, setMode}) => {
           </div>
           <div className={styles.nice}>Look nice today.</div>
         </div>
-        <div className={styles.low} onClick={toggleLightMode}>
+        <div className={styles.low}>
           <div className={styles.lower}>
-            <div className={styles.radio6} >
+            <div className={styles.radio6} onClick={toggleLightMode}>
               <input
                 type="radio"
                 value="light"
-                checked={check.light}
-                onClick={toggleLightMode}
+                checked={active1 === 0}
+                onClick={() => {
+                  setActive1(0)
+                }}
               />
             </div>
             <div className={styles.light}>Light</div>
@@ -136,9 +131,11 @@ const Themes = ({check, setCheck, setMode}) => {
             <div className={styles.radio7}>
               <input
                 type="radio"
-                value="dark"
-                checked={check.dark}
-                onClick={toggleDarkMode}
+                value="light"
+                checked={active1 === 1}
+                onClick={() => {
+                  setActive1(1)
+                }}
               />
             </div>
             <div className={styles.light2}>Dark</div>
@@ -156,11 +153,83 @@ const Themes = ({check, setCheck, setMode}) => {
         <div className={styles.true}>Tried and true</div>
       </div>
       <div className={styles.set1}>
-        <div className={styles.img3}>
-          <img src={theme3} alt="theme3" className={styles.theme3} />
+        <div className={styles.activeAsh}>
+          <div className={styles.largeRec}>
+            <div className={styles.large}></div>
+          </div>
+          <div className={styles.line2}></div>
+          <div className={styles.roundPic}>
+            <div className={styles.round}></div>
+          </div>
+          <div className={styles.thinRec}>
+            <div className={styles.thin}></div>
+          </div>
+          <div className={styles.thinRec2}>
+            <div className={styles.hash}>#</div>
+            <div className={styles.thin2}></div>
+          </div>
+          <div className={styles.whiteThinRec}>
+            <div className={styles.hash2}>#</div>
+            <div className={styles.whiteThin}></div>
+          </div>
+          <div className={styles.thinRec3}>
+            <div className={styles.thin3}></div>
+          </div>
+          <div className={styles.smallRec}>
+            <div className={styles.small}></div>
+          </div>
+          <div className={styles.lowContent}>
+            <div className={styles.radio8}>
+              <input
+                type="radio"
+                value="activeAsh"
+                checked={active1 === 2}
+                onClick={() => {
+                  setActive1(2)
+                }}
+              />
+            </div>
+            <div className={styles.ash}>Active Ash</div>
+          </div>
         </div>
-        <div className={styles.img4}>
-          <img src={theme4} alt="theme4" className={styles.theme4} />
+        <div className={styles.activeAsh2}>
+          <div className={styles.largeRec2}>
+            <div className={styles.large}></div>
+          </div>
+          <div className={styles.line3}></div>
+          <div className={styles.roundPic2}>
+            <div className={styles.round}></div>
+          </div>
+          <div className={styles.thinRec4}>
+            <div className={styles.thin4}></div>
+          </div>
+          <div className={styles.thinRec5}>
+            <div className={styles.hash3}>#</div>
+            <div className={styles.thin5}></div>
+          </div>
+          <div className={styles.whiteThinRec2}>
+            <div className={styles.hash4}>#</div>
+            <div className={styles.whiteThin2}></div>
+          </div>
+          <div className={styles.thinRec6}>
+            <div className={styles.thin6}></div>
+          </div>
+          <div className={styles.smallRec2}>
+            <div className={styles.small}></div>
+          </div>
+          <div className={styles.lowContent2}>
+            <div className={styles.radio9}>
+              <input
+                type="radio"
+                value="activeAsh"
+                checked={active1 === 3}
+                onClick={() => {
+                  setActive1(3)
+                }}
+              />
+            </div>
+            <div className={styles.ash2}>Picky Purple</div>
+          </div>
         </div>
       </div>
       <div className={styles.all}>
@@ -168,32 +237,245 @@ const Themes = ({check, setCheck, setMode}) => {
         <div className={styles.show}>Show all classic themes</div>
       </div>
       <div className={styles.clean}>Clean and minimal</div>
-      <div className={styles.set2}>
-        <div className={styles.img5}>
-          <img src={theme5} alt="theme5" className={styles.theme5} />
+      <div className={styles.set3}>
+        <div className={styles.activeAsh3}>
+          <div className={styles.largeRec3}>
+            <div className={styles.large}></div>
+          </div>
+          <div className={styles.line4}></div>
+          <div className={styles.roundPic3}>
+            <div className={styles.round}></div>
+          </div>
+          <div className={styles.thinRec7}>
+            <div className={styles.thin7}></div>
+          </div>
+          <div className={styles.thinRec8}>
+            <div className={styles.hash5}>#</div>
+            <div className={styles.thin8}></div>
+          </div>
+          <div className={styles.whiteThinRec3}>
+            <div className={styles.hash6}>#</div>
+            <div className={styles.whiteThin3}></div>
+          </div>
+          <div className={styles.thinRec9}>
+            <div className={styles.thin9}></div>
+          </div>
+          <div className={styles.smallRec3}>
+            <div className={styles.small}></div>
+          </div>
+          <div className={styles.lowContent3}>
+            <div className={styles.radio10}>
+              <input
+                type="radio"
+                value="activeAsh"
+                checked={active1 === 4}
+                onClick={() => {
+                  setActive1(4)
+                }}
+              />
+            </div>
+            <div className={styles.ash3}>Leaf Green</div>
+          </div>
         </div>
-        <div className={styles.img6}>
-          <img src={theme6} alt="theme6" className={styles.theme6} />
+        <div className={styles.activeAsh4}>
+          <div className={styles.largeRec4}>
+            <div className={styles.large}></div>
+          </div>
+          <div className={styles.line5}></div>
+          <div className={styles.roundPic4}>
+            <div className={styles.round}></div>
+          </div>
+          <div className={styles.thinRec10}>
+            <div className={styles.thin10}></div>
+          </div>
+          <div className={styles.thinRec11}>
+            <div className={styles.hash7}>#</div>
+            <div className={styles.thin11}></div>
+          </div>
+          <div className={styles.whiteThinRec4}>
+            <div className={styles.hash8}>#</div>
+            <div className={styles.whiteThin4}></div>
+          </div>
+          <div className={styles.thinRec12}>
+            <div className={styles.thin12}></div>
+          </div>
+          <div className={styles.smallRec4}>
+            <div className={styles.small}></div>
+          </div>
+          <div className={styles.lowContent4}>
+            <div className={styles.radio11}>
+              <input
+                type="radio"
+                value="activeAsh"
+                checked={active1 === 5}
+                onClick={() => {
+                  setActive1(5)
+                }}
+              />
+            </div>
+            <div className={styles.ash4}>Dark Ash</div>
+          </div>
         </div>
       </div>
       <div className={styles.set3}>
-        <div className={styles.img7}>
-          <img src={theme18} alt="theme18" className={styles.theme18} />
+        <div className={styles.activeAsh5}>
+          <div className={styles.largeRec5}>
+            <div className={styles.large}></div>
+          </div>
+          <div className={styles.line6}></div>
+          <div className={styles.roundPic5}>
+            <div className={styles.round}></div>
+          </div>
+          <div className={styles.thinRec13}>
+            <div className={styles.thin13}></div>
+          </div>
+          <div className={styles.thinRec14}>
+            <div className={styles.hash9}>#</div>
+            <div className={styles.thin14}></div>
+          </div>
+          <div className={styles.whiteThinRec5}>
+            <div className={styles.hash10}>#</div>
+            <div className={styles.whiteThin5}></div>
+          </div>
+          <div className={styles.thinRec15}>
+            <div className={styles.thin15}></div>
+          </div>
+          <div className={styles.smallRec5}>
+            <div className={styles.small}></div>
+          </div>
+          <div className={styles.lowContent5}>
+            <div className={styles.radio12}>
+              <input
+                type="radio"
+                value="activeAsh"
+                checked={active1 === 6}
+                onClick={() => {
+                  setActive1(6)
+                }}
+              />
+            </div>
+            <div className={styles.ash5}>Ocean Blue</div>
+          </div>
         </div>
-        <div className={styles.img8}>
-          <img src={theme19} alt="theme19" className={styles.theme19} />
+        <div className={styles.activeAsh6}>
+          <div className={styles.largeRec6}>
+            <div className={styles.large}></div>
+          </div>
+          <div className={styles.line7}></div>
+          <div className={styles.roundPic6}>
+            <div className={styles.round}></div>
+          </div>
+          <div className={styles.thinRec16}>
+            <div className={styles.thin16}></div>
+          </div>
+          <div className={styles.thinRec17}>
+            <div className={styles.hash11}>#</div>
+            <div className={styles.thin17}></div>
+          </div>
+          <div className={styles.whiteThinRec6}>
+            <div className={styles.hash12}>#</div>
+            <div className={styles.whiteThin6}></div>
+          </div>
+          <div className={styles.thinRec18}>
+            <div className={styles.thin18}></div>
+          </div>
+          <div className={styles.smallRec6}>
+            <div className={styles.small}></div>
+          </div>
+          <div className={styles.lowContent6}>
+            <div className={styles.radio13}>
+              <input
+                type="radio"
+                value="activeAsh"
+                checked={active1 === 7}
+                onClick={() => {
+                  setActive1(7)
+                }}
+              />
+            </div>
+            <div className={styles.ash6}>Rose Red</div>
+          </div>
         </div>
       </div>
       <div className={styles.set4}>
-        <div className={styles.bottom}>
-          <div className={styles.img9}>
-            <img src={theme20} alt="theme20" className={styles.theme20} />
+        <div className={styles.activeAsh7}>
+          <div className={styles.largeRec7}>
+            <div className={styles.large}></div>
           </div>
-          <div className={styles.img10}>
-            <img src={theme21} alt="theme21" className={styles.theme21} />
+          <div className={styles.line8}></div>
+          <div className={styles.roundPic7}>
+            <div className={styles.round}></div>
+          </div>
+          <div className={styles.thinRec19}>
+            <div className={styles.thin19}></div>
+          </div>
+          <div className={styles.thinRec20}>
+            <div className={styles.hash13}>#</div>
+            <div className={styles.thin20}></div>
+          </div>
+          <div className={styles.whiteThinRec7}>
+            <div className={styles.hash14}>#</div>
+            <div className={styles.whiteThin7}></div>
+          </div>
+          <div className={styles.thinRec21}>
+            <div className={styles.thin21}></div>
+          </div>
+          <div className={styles.smallRec7}>
+            <div className={styles.small}></div>
+          </div>
+          <div className={styles.lowContent7}>
+            <div className={styles.radio14}>
+              <input
+                type="radio"
+                value="activeAsh"
+                checked={active1 === 8}
+                onClick={() => {
+                  setActive1(8)
+                }}
+              />
+            </div>
+            <div className={styles.ash7}>Golden Melon</div>
           </div>
         </div>
-        <div className={styles.line2}></div>
+        <div className={styles.activeAsh8}>
+          <div className={styles.largeRec8}>
+            <div className={styles.large}></div>
+          </div>
+          <div className={styles.line9}></div>
+          <div className={styles.roundPic8}>
+            <div className={styles.round}></div>
+          </div>
+          <div className={styles.thinRec22}>
+            <div className={styles.thin22}></div>
+          </div>
+          <div className={styles.thinRec23}>
+            <div className={styles.hash15}>#</div>
+            <div className={styles.thin23}></div>
+          </div>
+          <div className={styles.whiteThinRec8}>
+            <div className={styles.hash16}>#</div>
+            <div className={styles.whiteThin8}></div>
+          </div>
+          <div className={styles.thinRec24}>
+            <div className={styles.thin24}></div>
+          </div>
+          <div className={styles.smallRec8}>
+            <div className={styles.small}></div>
+          </div>
+          <div className={styles.lowContent8}>
+            <div className={styles.radio15}>
+              <input
+                type="radio"
+                value="activeAsh"
+                checked={active1 === 9}
+                onClick={() => {
+                  setActive1(9)
+                }}
+              />
+            </div>
+            <div className={styles.ash8}>Canary</div>
+          </div>
+        </div>
       </div>
     </div>
   )

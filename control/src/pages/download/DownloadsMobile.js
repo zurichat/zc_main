@@ -15,6 +15,7 @@ import { useTranslation} from "react-i18next"
 const DownloadsMobile = () => {
   const { t } = useTranslation()
 
+
   const [exe, setexe] = useState({ link: "", name: "", link2: "", name2: "" })
   React.useEffect(() => {
     if (isIOS) return setexe({ name: "DOWNLOAD FOR IOS" })

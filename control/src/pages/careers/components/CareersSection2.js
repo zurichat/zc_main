@@ -1,36 +1,34 @@
 import styles from '../styles/CareersSection2.module.css'
+import { useTranslation} from "react-i18next";
+
 
 function CareersSection2() {
+
+  const { t } = useTranslation();
+
   return (
-    <div className={`${styles.Section2}`}>
-      <h2>Working and Thriving</h2>
-      <p>We offer benefits that help you feel your best and do your best</p>
+    <section className={`${styles.Section2}`}>
+      <header className={styles.section2_header}>
+        <h2>{t("Working and Thriving")}</h2>
+        <p>{t("We offer benefits that help you feel your best and do your best")}</p>
+      </header>
       <div className={`${styles.subSection2}`}>
-        <div>
-          <h3>Digital-First Office</h3>
-          <p>
-            With remote roles, office-free onboarding and flexible working
-            practices, we are set up for ever-changing realities, schedules and
-            responsibilities.
-          </p>
-        </div>
-        <div>
-          <h3>Just For You</h3>
-          <p>
-            Receive an annual allowance for professional development, plus a
-            monthly stipend to cover your needs; A new work look, a pet,
-            whatever matters most to you.
-          </p>
-        </div>
-        <div>
-          <h3>Health and Wellness</h3>
-          <p>
-            Zuri Pays 100% of your premiums. We also offer access to a range of
-            free mental health and well-being resources.
-          </p>
-        </div>
+        <section className={styles.subsection2_content}>
+          <div>
+            <h3>{t("Digital-first office")}</h3>
+            <p>{t("With remote roles, office free onboarding and flexible working practices, we are set up for ever-changing  realities, schedules and responsibilities.")}</p>
+          </div>
+          <div>
+            <h3>{t("Just for you")}</h3>
+            <p>{t("Recieve an annual allowance for professional development, plus a monthly stipend you can use toward  anything. A new work look, a pet. Whatever matters most to you.")}</p>
+          </div>
+          <div>
+            <h3>{t("Health and Wellness")}</h3>
+            <p>{t("Zurichat pays 100% of your premiums. We also offer access to a range of free mental health and well-being  resources.")}</p>
+          </div>
+        </section>
       </div>
-    </div>
+    </section>
   )
 }
 
