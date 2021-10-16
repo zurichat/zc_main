@@ -22,7 +22,7 @@ const TopBarSearchModal = () => {
   let newName = pluginName.split("/")
 
   let exactPlugin = plugins.find(
-    plugin => newName[3] === (plugin.name || plugin.name + "#")
+    plugin => newName[3] === plugin.name || newName[3] === plugin.name + "#"
   )
 
   const onSearchSubmit = async e => {
