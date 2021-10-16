@@ -582,8 +582,4 @@ export const TRANSLATIONS_ZH = {
       }
     }
   }
-<<<<<<< HEAD
-=======
 }
->>>>>>> 07b34da11121660b1937e3d22434a9267e4d91cc
-

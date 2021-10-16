@@ -118,12 +118,7 @@ const Sidebar = props => {
           <SingleRoom name="Drafts" image={draftIcon} />
 
           <SingleRoom name="Plugins" image={pluginIcon} link="/marketplace" />
-<<<<<<< HEAD
-
-          <Starred state={props.state} />
-=======
           {props.state.sidebar &&  <Starred check={check} state={props.state} />}
->>>>>>> 07b34da11121660b1937e3d22434a9267e4d91cc
           {singleItems}
           {categorizedItems}
 

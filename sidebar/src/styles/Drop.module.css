@@ -55,11 +55,7 @@
 
 .dropDown__title {
   text-transform: capitalize;
-<<<<<<< HEAD
-  font-weight: 600;
-=======
   font-weight: bold;
->>>>>>> 07b34da11121660b1937e3d22434a9267e4d91cc
 }
 /* .dropDown__name {
   font-weight: normal;

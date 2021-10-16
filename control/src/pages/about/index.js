@@ -21,7 +21,7 @@ import CarouselSecond from "./component/SecondCarousel"
 
 // import i18n (needs to be bundled ;))
 import "../../i18n"
-import { useTranslation} from "react-i18next"
+import { useTranslation } from "react-i18next"
 // end of image import
 const index = () => {
   const { t } = useTranslation()
@@ -34,16 +34,16 @@ const index = () => {
             {t("about.banner.headline_one")} <br />
             {t("about.banner.headline_two")}
           </h1>
-          <p>
-            ZuriChat {t("about.banner.description")}
-          </p>
+          <p>ZuriChat {t("about.banner.description")}</p>
         </div>
-        <div className={`row flex align-items-center justify-content-center pt-3`}>
+        <div
+          className={`row flex align-items-center justify-content-center pt-3`}
+        >
           <div className={`col-lg-4 col-md-4 col-sm-4 ${styles.counter}`}>
             <h3>100k+</h3>
             <p>
               {t("about.counter.customers")} <br />
-              {t("about.counter.customers_")} 
+              {t("about.counter.customers_")}
             </p>
           </div>
           <div className={`col-lg-4 col-md-4 col-sm-4 ${styles.counter}`}>
@@ -71,12 +71,15 @@ const index = () => {
             <img src={team} alt={"image of teams"} srcSet="" />
           </div>
           <div className={`col-lg-6 text-start ${styles.join_us}`}>
-            <h3  className={`text-start ${styles.h3m}`}>{t("about.whoWeAre.title")} <br /></h3>
+            <h3 className={`text-start ${styles.h3m}`}>
+              {t("about.whoWeAre.title")} <br />
+            </h3>
             <p className="text-start">
               {t("about.whoWeAre.description")} <br />
             </p>
             <p>
-              <span className={`text-start ${styles.span}`}>ZuriChat</span> {t("about.whoWeAre.description_")}
+              <span className={`text-start ${styles.span}`}>ZuriChat</span>{" "}
+              {t("about.whoWeAre.description_")}
             </p>
           </div>
         </div>
@@ -97,7 +100,7 @@ const index = () => {
             <img src={channel} alt={"centralized space"} />
             <h6>{t("about.highlights.channels.title")}</h6>
             <p>
-             {t("about.highlights.channels.description")} <br />
+              {t("about.highlights.channels.description")} <br />
               {t("about.highlights.channels.description_")}
             </p>
           </div>
@@ -106,15 +109,17 @@ const index = () => {
             <h6>{t("about.highlights.holidayCalender.title")}</h6>
             <p>
               {t("about.highlights.holidayCalender.description")} <br />
-               {t("about.highlights.holidayCalender.description_")}
+              {t("about.highlights.holidayCalender.description_")}
             </p>
           </div>
           <div className={`col ${styles.working_remote_section}`}>
             <img src={deadline} alt={"image of alarm clock"} />
             <h6> {t("about.highlights.companyDeadline.title")}</h6>
             <p>
-              {t("about.highlights.companyDeadline.description")}<br />
-              {t("about.highlights.companyDeadline.description_")}<br />
+              {t("about.highlights.companyDeadline.description")}
+              <br />
+              {t("about.highlights.companyDeadline.description_")}
+              <br />
               feature.
             </p>
           </div>
@@ -122,7 +127,8 @@ const index = () => {
             <img src={quick} alt={"image of quick reply app"} />
             <h6>{t("about.highlights.quickReply.title")}</h6>
             <p>
-              {t("about.highlights.quickReply.description")}<br />
+              {t("about.highlights.quickReply.description")}
+              <br />
               {t("about.highlights.quickReply.description_")} <br />
             </p>
           </div>
@@ -130,7 +136,8 @@ const index = () => {
             <img src={todo} alt={"image to do list"} />
             <h6>{t("about.highlights.todoList.title")}</h6>
             <p>
-              {t("about.highlights.todoList.description")}<br />
+              {t("about.highlights.todoList.description")}
+              <br />
               {t("about.highlights.todoList.description_")} <br />
             </p>
           </div>
@@ -140,9 +147,7 @@ const index = () => {
       {/* special features you need  */}
       <div className={`${styles.working_remote}`}>
         <h3>{t("about.features.title")}</h3>
-        <p>
-          {t("about.features.description")}
-        </p>
+        <p>{t("about.features.description")}</p>
       </div>
       <CarouselSecond className={styles.carouselCaption} />
       <div
@@ -158,23 +163,24 @@ const index = () => {
             <img src={group} alt={"image of a company file"} />
             <h6 className={``}>{t("about.features.files.title")}</h6>
             <p>
-              {t("about.features.files.description")}<br />.
+              {t("about.features.files.description")}
+              <br />.
             </p>
           </div>
           <div className={`col ${styles.vector}`}>
             <img src={vector} alt={"accessibility image"} />
             <h6 className={``}>{t("about.features.accessibility.title")}</h6>
             <p>
-             {t("about.features.accessibility.description")} <br /> 
-             {t("about.features.accessibility.description_")}
+              {t("about.features.accessibility.description")} <br />
+              {t("about.features.accessibility.description_")}
             </p>
           </div>
           <div className={`col ${styles.vector}`}>
             <img src={user2} alt={"image of target board"} />
             <h6 className={``}>{t("about.features.goals.title")}</h6>
             <p>
-             {t("about.features.goals.description")} <br /> 
-             {t("about.features.goals.description_")}
+              {t("about.features.goals.description")} <br />
+              {t("about.features.goals.description_")}
             </p>
           </div>
         </div>
@@ -183,19 +189,16 @@ const index = () => {
       <div className={`container-fluid ${styles.zurichat}`}>
         <div className={`${styles.zurichat_section}`}>
           <div className="signup-cta">
-            <h3 className = "text">
-            Zuri Chat is a modern world platform that makes communicating with your team or organization faster, easier and more fun.
-            Want to explore?
+            <h3 className="text">
+              Zuri Chat is a modern world platform that makes communicating with
+              your team or organization faster, easier and more fun. Want to
+              explore?
             </h3>
 
-<<<<<<< HEAD
-            <Link to = "/signup"><button className={` ${styles.btn_sale}`}>>GET STARTED</button></Link>
-=======
-            <Link to = "/signup"><button className={` ${styles.btn_sale}`}>GET STARTED</button></Link>
->>>>>>> 07b34da11121660b1937e3d22434a9267e4d91cc
-
+            <Link to="/signup">
+              <button className={` ${styles.btn_sale}`}>GET STARTED</button>
+            </Link>
           </div>
-          
         </div>
       </div>
       <Footer />

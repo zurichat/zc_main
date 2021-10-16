@@ -28,8 +28,8 @@ import {
 const WorkSpaceIconTab = () => {
   const imgRef = useRef(null)
   const previewCanvasRef = useRef(null)
-  const [completedCrop, setCompletedCrop] = useState(null);
-  const [crop, setCrop] = useState({ unit: '%', width: 30, aspect: 2 / 3 });
+  const [completedCrop, setCompletedCrop] = useState(null)
+  const [crop, setCrop] = useState({ unit: "%", width: 30, aspect: 2 / 3 })
   const [orgData, setOrgData] = useState({})
   const [updateLogo, setUpdateLogo] = useState("")
   const [alertToggle, setAlertToggle] = useState(false)
@@ -77,11 +77,7 @@ const WorkSpaceIconTab = () => {
       .catch(err => {
         console.error(err)
       })
-<<<<<<< HEAD
-  }, [])
-=======
   }, [orgData])
->>>>>>> 07b34da11121660b1937e3d22434a9267e4d91cc
 
   const handleLogoDelete = () => {
     setLoader({ ...loader, removeLoader: true })
@@ -146,11 +142,7 @@ const WorkSpaceIconTab = () => {
             />
             <WorkSpaceDetail>
               <WorkSpaceName>
-<<<<<<< HEAD
-                {orgData.name ? orgData.name : "HNGi9 x I4G"}
-=======
                 {orgData.name ? orgData.name : "Loading....."}
->>>>>>> 07b34da11121660b1937e3d22434a9267e4d91cc
               </WorkSpaceName>
               <WorkSpaceDescription>
                 This icon will be used to identify your workspace in Zuri Chat.
@@ -169,11 +161,7 @@ const WorkSpaceIconTab = () => {
               <WorkSpaceName>Workspace Icon Guidelines</WorkSpaceName>
               <Text>
                 Your workspace icon is a way for you to visually identify the{" "}
-<<<<<<< HEAD
-                <strong>{orgData.name ? orgData.name : "HNGi9 x I4G"}</strong>{" "}
-=======
                 <strong>{orgData.name ? orgData.name : "Loading...."}</strong>{" "}
->>>>>>> 07b34da11121660b1937e3d22434a9267e4d91cc
                 workspace. It is used in the desktop and mobile apps, and on
                 your workspace admin site. It’s most helpful when you’re on
                 multiple Slack workspaces.
@@ -209,7 +197,7 @@ const WorkSpaceIconTab = () => {
           <ReactCrop
             crop={crop}
             Locked
-            disabled = {false}
+            disabled={false}
             src={updateLogo}
             ref={imgRef}
             onImageLoaded={onLoad}

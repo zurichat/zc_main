@@ -1,4 +1,4 @@
-import React, {  useState } from "react"
+import React, { useState } from "react"
 import DropDown from "./Drop"
 import styles from "../styles/Drop.module.css"
 import Room from "./Room"
@@ -15,16 +15,11 @@ export default function Starred(props) {
   console.warn("plugin", props)
 
   return props.state.sidebar ? (
-<<<<<<< HEAD
     <div
-      style={{
-        display: !emptyRoom ? "block" : "none"
-      }}
+      className={`${styles.item__row} ${
+        props.check && props.check.includes(true) && styles.open
+      }`}
     >
-=======
-   
-   <div className={`${styles.item__row} ${props.check && props.check.includes(true) && styles.open}`}>
->>>>>>> 07b34da11121660b1937e3d22434a9267e4d91cc
       {props.state && (
         <DropDown
           categoryName="Starred"
@@ -34,42 +29,24 @@ export default function Starred(props) {
       )}
 
       {props.state.sidebar &&
-<<<<<<< HEAD
         Object.keys(props.state.sidebar).map((plugin, idx) => {
           return (
-            props.state.sidebar[plugin].starred_rooms &&
-            props.state.sidebar[plugin].starred_rooms.map((room, idx) => {
-              if (room.room_name !== undefined) {
-                return <RoomItem room={room} key={idx} />
-              }
-            })
+            //    <h1 key={idx}>all good</h1>
+            <ul
+              key={idx}
+              className={`col-12 ps-4 ${styles.item__row} ${
+                isOpen && styles.open
+              }`}
+            >
+              {props.state.sidebar[plugin].starred_rooms &&
+                props.state.sidebar[plugin].starred_rooms.map((room, idx) => {
+                  if (room.room_name !== undefined) {
+                    return <RoomItem room={room} key={idx} />
+                  }
+                })}
+            </ul>
           )
         })}
-=======
-       Object.keys(props.state.sidebar).map((plugin, idx) =>{
-           
-           return(
-            //    <h1 key={idx}>all good</h1>
-        <ul 
-        key={idx}
-        className={`col-12 ps-4 ${styles.item__row} ${isOpen && styles.open}`}
-        >
-        {props.state.sidebar[plugin].starred_rooms &&
-         props.state.sidebar[plugin].starred_rooms.map((room, idx) => {
-            if (room.room_name !== undefined) {
-              return (
-                  <RoomItem 
-                  room={room}
-                  key={idx}
-                  />
-              )
-            }
-          })}
-      </ul>
-      )
-    })
-
-      }
       {/* {props.state.sidebar &&
         props.name &&
         Object.keys(props.state.sidebar).map((plugin, index) => {
@@ -88,7 +65,6 @@ export default function Starred(props) {
             </Room>
           ) : null
         })} */}
->>>>>>> 07b34da11121660b1937e3d22434a9267e4d91cc
     </div>
   ) : (
     <SkeletonLoader />

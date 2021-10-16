@@ -89,12 +89,8 @@ export const BigModal = ({ onClose, inputValue, filter }) => {
         plugin_name={exactPlugin.name}
       />
     </div>
-<<<<<<< HEAD
-  ))
-=======
   ));
 
->>>>>>> 07b34da11121660b1937e3d22434a9267e4d91cc
   const element = isLoading ? (
     <p>loading...</p>
   ) : (
@@ -103,15 +99,9 @@ export const BigModal = ({ onClose, inputValue, filter }) => {
       <h2>{`Search result for "${inputValue}"`}</h2>
 
       <button
-=======
-        <h2>{`Search result for "${inputValue}"`}</h2>
-
-        <button
->>>>>>> 07b34da11121660b1937e3d22434a9267e4d91cc
         className="btn"
         onClick={() => onClose()}
         style={{ position: "absolute", top: "15px", right: "20px" }}
-      >
         <img src={cancel} alt="close" />
       </button>
 <<<<<<< HEAD
