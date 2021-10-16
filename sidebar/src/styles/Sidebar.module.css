@@ -80,8 +80,7 @@
 
 .sb__item {
   cursor: pointer;
-  margin-bottom: 0.25em;
-  margin-top: 0.1em;
+  margin-top: 30px;
   /* margin: 0.5em 0; */
 }
 
@@ -98,7 +97,7 @@
 
 .item__img {
   width: 18px;
-  margin-inline-end: 0.5rem;
+  /* margin-inline-end: 0.5rem; */
 }
 
 .item_p {
@@ -109,6 +108,14 @@
   font-weight: 400;
 }
 
+.invite__icon {
+  background-color: #f1fffa;
+  border-radius: 6px;
+  padding: 5px 10px;
+}
+.icon {
+  width: 24px;
+}
 /* .addButton {
   width: 1.3em;
   margin-inline-start: auto;
@@ -383,10 +390,10 @@
   margin: auto;
 }
 
-.displayCategory{
+.displayCategory {
   display: none;
 }
 
-.displayCategory{
+.displayCategory {
   display: block;
 }
