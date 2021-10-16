@@ -55,7 +55,7 @@ const DeleteWorkspace = () => {
                 type="checkbox"
                 name="check"
                 id=""
-                className="InputArea"
+                className=""
                 style={{
                   height: '25px',
                   width: '25px'
