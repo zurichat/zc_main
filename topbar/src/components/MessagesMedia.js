@@ -19,7 +19,7 @@ const MessagesMedia = () => {
   const [active2, setActive2] = useState(1)
   const { user } = useContext(ProfileContext)
   // console.log("user", user.settings.messages_and_media)
-  const [message, setMessage] = useState(user.settings.messages_and_media)
+  const [message, setMessage] = useState(user?.settings.messages_and_media)
   // console.log(message.theme)
   // handleSubmit function on the form
   const handleSubmit = e => {

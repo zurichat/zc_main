@@ -2,6 +2,8 @@ export const TRANSLATIONS_DE = {
   header: {
     language_select: "Sprache ändern"
   },
+
+  // Landing Page
   landing: {
     title: {
       landing: ""
@@ -99,6 +101,7 @@ export const TRANSLATIONS_DE = {
     }
   },
 
+  // Pricing Page
   pricing: {
     title: {
       pricing: "Preise - Zuri Chat"
@@ -137,6 +140,7 @@ export const TRANSLATIONS_DE = {
     }
   },
 
+  // Plugins page
   plugin: {
     title: {
       plugin: "Verbinden und interagieren"
@@ -161,40 +165,6 @@ export const TRANSLATIONS_DE = {
 
     tracker: {
       title: "Plugin von Contribution Tracker",
-      headline:
-        "Verfolgen Sie die Beiträge der Menschen und heben Sie dringende Probleme hervor",
-      description:
-        "Ein Plugin, mit dem Sie den Beitrag von Menschen zu Open-Source-Projekten verfolgen und die dringendsten Probleme hervorheben können",
-      link: "Beitragsverfolgungs-Plugin erkunden"
-    },
-
-    music: {
-      title: "Musik-Plugin",
-      headline: "Zugriff auf Musik und Musikvideos unterwegs!",
-      description:
-        "Mit dem Musik-Plug-in können Einzelpersonen in einer Organisation Musik- und Videolinks von YouTube zu einer freigegebenen Playlist hinzufügen.",
-      link: "Entdecken Sie Musik-Plugins"
-    },
-
-    games: {
-      title: "Schach-Plugin",
-      headline:
-        "Machen Sie das Lernen zum Spaß, bleiben Sie mit den virtuellen Spielen beschäftigt",
-      description:
-        "Zuri Schach-Plugin ist ein webbasiertes Freizeit- und Wettbewerbs-Brettspiel, das zwischen zwei Spielern gespielt wird.",
-      link: "Spiele-Plugin erkunden"
-    },
-
-    goal: {
-      title: "Plugin des Unternehmensziels",
-      headline: "Behalten Sie die Ziele im Auge",
-      description:
-        "Ein Plugin, mit dem Sie die Ziele und Leistungen des Unternehmens verfolgen können",
-      link: "Entdecken Sie das Ziel-Plugin des Unternehmens"
-    },
-
-    todo: {
-      title: "Todo-Plugin",
       headline: "Behält den Überblick über wichtige Aufgaben",
       description:
         "Ein Plugin, mit dem Sie alles, was Sie tun müssen, auflisten und sicherstellen können, dass Ihre Aufgaben an einem Ort aufgeschrieben werden, damit Sie nichts Wichtiges vergessen.",
@@ -307,6 +277,7 @@ export const TRANSLATIONS_DE = {
     }
   },
 
+  // About Page
   about: {
     title: {
       about: ""
@@ -400,80 +371,82 @@ export const TRANSLATIONS_DE = {
       title: "Was auch immer Sie tun, Sie können es im Zuri Chat tun",
       link_sales: "Sprechen Sie mit dem Vertrieb",
       link_try: "Kostenlos ausprobieren"
-    },
+    }
+  },
 
-    careers: {
-      title: {
-        careers: "Karriere"
-      },
-      section_one: {
-        headline: "Karriere bei Zuri Chat",
-        post_headline:
-          "Sie möchten das Arbeitsleben einfacher und produktiver gestalten? Werden Sie Teil unseres remote-freundlichen und flexiblen Teams.",
-        join_link: "Treten Sie dem Zuri-Chat bei"
-      },
-      career_grid: {
-        headline: "Mach mit bei unserem Praktikum",
-        post_headline:
-          "Zuri Internship ist eine 100% kostenlose, Remote- und schnelle Ausbildung für junge Berufstätige, die ihre technischen Fähigkeiten verbessern und ihren Lebenslauf verbessern möchten.",
-        categories: {
-          category_frontend: {
-            headline: "Frontend-Entwicklung",
-            post_headline:
-              "Dieser Track befasst sich mit dem Aspekt Ihrer Anwendung, mit dem die Benutzer interagieren. Ein Frontend-Entwickler wird in der Lage sein, ein gegebenes Design korrekt auf die Benutzeroberfläche zu interpretieren."
-          },
-          category_backend: {
-            headline: "Backend-Entwicklung",
-            post_headline:
-              "Dieser Track behandelt den Aspekt der Anwendung, mit dem der Benutzer nicht direkt interagiert. Es ermöglicht die Frontend-Funktion, indem entweder Back-End-Code ausgeführt oder eine Verbindung zur Datenbank hergestellt wird."
-          },
-          category_design: {
-            headline: "Entwurf",
-            post_headline:
-              "Dieser Track befasst sich mit der Erstellung eines grafischen Plans für eine Anwendung. Sie lernen, die Projektdokumentation in ein sichtbares und verständliches Grafikdesign umzuwandeln, mit dem die Entwickler arbeiten können."
-          },
-          category_mobile: {
-            headline: "Mobile Entwicklung",
-            post_headline:
-              "Der mobile Track enthält eine Liste von Tools und Sprachen, die ein Entwickler benötigt, um mobile Anwendungen zu erstellen. Eine mobile Anwendung kann IOS oder Android sein."
-          },
-          category_digital_marketing: {
-            headline: "Digitales Marketing",
-            post_headline:
-              "Es umfasst den Einsatz digitaler Mittel und Hilfsmittel, um die Auffindbarkeit von Produkten, Dienstleistungen und Marken zu steigern."
-          },
-          category_frameworks: {
-            headline: "Frameworks",
-            post_headline:
-              "Während des Programms werden wir verschiedene nützliche Frameworks erkunden, die Ihnen einen Vorsprung in der Branche verschaffen und Ihnen helfen, komplexe Anwendungen viel schneller zu entwickeln."
-          }
-        },
-        join_cohort:
-          "Seien Sie ein Teil unserer nächsten Kohorte ab Sommer 2022",
-        register_now: "Jetzt registrieren"
-      },
-      section_two: {
-        headline: "Arbeiten und Gedeihen",
-        post_headline:
-          "Wir bieten Vorteile, die Ihnen helfen, sich gut zu fühlen und Ihr Bestes zu geben.",
-        digital_wellness: {
-          headline: "Digital-First-Office",
+  // Career Page
+  careers: {
+    title: {
+      careers: "Karriere"
+    },
+    section_one: {
+      headline: "Karriere bei Zuri Chat",
+      post_headline:
+        "Sie möchten das Arbeitsleben einfacher und produktiver gestalten? Werden Sie Teil unseres remote-freundlichen und flexiblen Teams.",
+      join_link: "Treten Sie dem Zuri-Chat bei"
+    },
+    career_grid: {
+      headline: "Mach mit bei unserem Praktikum",
+      post_headline:
+        "Zuri Internship ist eine 100% kostenlose, Remote- und schnelle Ausbildung für junge Berufstätige, die ihre technischen Fähigkeiten verbessern und ihren Lebenslauf verbessern möchten.",
+      categories: {
+        category_frontend: {
+          headline: "Frontend-Entwicklung",
           post_headline:
-            "Mit Remote-Rollen, bürofreiem Onboarding und flexiblen Arbeitspraktiken sind wir für sich ständig ändernde Realitäten, Zeitpläne und Verantwortlichkeiten gerüstet."
+            "Dieser Track befasst sich mit dem Aspekt Ihrer Anwendung, mit dem die Benutzer interagieren. Ein Frontend-Entwickler wird in der Lage sein, ein gegebenes Design korrekt auf die Benutzeroberfläche zu interpretieren."
         },
-        just_for_you: {
-          headline: "Nur für dich",
+        category_backend: {
+          headline: "Backend-Entwicklung",
           post_headline:
-            "Erhalten Sie eine jährliche Beihilfe für die berufliche Entwicklung sowie ein monatliches Stipendium zur Deckung Ihres Bedarfs; Ein neuer Arbeitslook, ein Haustier, was dir am wichtigsten ist."
+            "Dieser Track behandelt den Aspekt der Anwendung, mit dem der Benutzer nicht direkt interagiert. Es ermöglicht die Frontend-Funktion, indem entweder Back-End-Code ausgeführt oder eine Verbindung zur Datenbank hergestellt wird."
         },
-        health_and_wellness: {
-          headline: "Gesundheit und Wellness",
+        category_design: {
+          headline: "Entwurf",
           post_headline:
-            "Zuri zahlt 100 % Ihrer Prämien. Wir bieten auch Zugang zu einer Reihe von kostenlosen Ressourcen für psychische Gesundheit und Wohlbefinden."
+            "Dieser Track befasst sich mit der Erstellung eines grafischen Plans für eine Anwendung. Sie lernen, die Projektdokumentation in ein sichtbares und verständliches Grafikdesign umzuwandeln, mit dem die Entwickler arbeiten können."
+        },
+        category_mobile: {
+          headline: "Mobile Entwicklung",
+          post_headline:
+            "Der mobile Track enthält eine Liste von Tools und Sprachen, die ein Entwickler benötigt, um mobile Anwendungen zu erstellen. Eine mobile Anwendung kann IOS oder Android sein."
+        },
+        category_digital_marketing: {
+          headline: "Digitales Marketing",
+          post_headline:
+            "Es umfasst den Einsatz digitaler Mittel und Hilfsmittel, um die Auffindbarkeit von Produkten, Dienstleistungen und Marken zu steigern."
+        },
+        category_frameworks: {
+          headline: "Frameworks",
+          post_headline:
+            "Während des Programms werden wir verschiedene nützliche Frameworks erkunden, die Ihnen einen Vorsprung in der Branche verschaffen und Ihnen helfen, komplexe Anwendungen viel schneller zu entwickeln."
         }
+      },
+      join_cohort: "Seien Sie ein Teil unserer nächsten Kohorte ab Sommer 2022",
+      register_now: "Jetzt registrieren"
+    },
+    section_two: {
+      headline: "Arbeiten und Gedeihen",
+      post_headline:
+        "Wir bieten Vorteile, die Ihnen helfen, sich gut zu fühlen und Ihr Bestes zu geben.",
+      digital_wellness: {
+        headline: "Digital-First-Office",
+        post_headline:
+          "Mit Remote-Rollen, bürofreiem Onboarding und flexiblen Arbeitspraktiken sind wir für sich ständig ändernde Realitäten, Zeitpläne und Verantwortlichkeiten gerüstet."
+      },
+      just_for_you: {
+        headline: "Nur für dich",
+        post_headline:
+          "Erhalten Sie eine jährliche Beihilfe für die berufliche Entwicklung sowie ein monatliches Stipendium zur Deckung Ihres Bedarfs; Ein neuer Arbeitslook, ein Haustier, was dir am wichtigsten ist."
+      },
+      health_and_wellness: {
+        headline: "Gesundheit und Wellness",
+        post_headline:
+          "Zuri zahlt 100 % Ihrer Prämien. Wir bieten auch Zugang zu einer Reihe von kostenlosen Ressourcen für psychische Gesundheit und Wohlbefinden."
       }
     }
   },
+
+  // Login Page
   login: {
     title: "Einloggen - Zuri Chat",
     form: {
@@ -502,6 +475,7 @@ export const TRANSLATIONS_DE = {
     }
   },
 
+  // All Download Pages
   download_desktop: {
     title: {
       download: ""
@@ -626,6 +600,32 @@ export const TRANSLATIONS_DE = {
       headline: "Gleiches Gefühl, gleiches Team in der Zuri App!",
       download: "FÜR WINDOWS HERUNTERLADEN",
       download_ios: "Für Mac herunterladen?"
+    }
+  },
+
+  // Workspace flows
+  workspace: {
+    title: {
+      workspace: "Arbeitsbereich - Zuri Chat"
+    },
+
+    space: {
+      headline: "Wählen Sie einen Arbeitsbereich",
+      post_headline:
+        "Willkommen zurück! Wählen Sie eine aus, um wieder mit Ihrem Team zu arbeiten",
+      join_line:
+        "Möchten Sie mit einer anderen Gruppe arbeiten? oder Übernimm die Verantwortung und gründe dein eigenes Team",
+      joinbtn: "Erstellen Sie einen Arbeitsbereich",
+      foot_head: "Sie sehen Ihren Arbeitsbereich nicht?",
+      foot_link: "Versuchen Sie es mit einer anderen E-Mail",
+      open: "Offen",
+      selected: "ausgewählt",
+      errno: "vier­hundert­eins",
+      errmsg: "Sie sind nicht eingeloggt!",
+      errlink: "Hier anmelden.",
+      err_no: "vier­hundert­vier",
+      err_msg: "Ups! Irgendwas lief schief! Gehe zu",
+      err_link: "zuri.chat"
     }
   }
 }
