@@ -209,12 +209,17 @@ function MembersPanel({ config }) {
 
   const roomData =
     "roomInfo" in config ? config.roomInfo : dummyHeaderConfig.roomInfo
-  const { membersList, addmembersevent, removememberevent } = roomData
+  const {
+    membersList: roomMembers,
+    addmembersevent,
+    removememberevent
+  } = roomData
   const [addModalShow, setaddModalShow] = useState(false)
   const [removeModalShow, setremoveModalShow] = useState(false)
   const [selectedMember, setSelectedMember] = useState(null)
   const [isLoading, setisLoading] = useState(false)
   const [userList, setUserList] = useState([])
+  const [membersList, setMembersList] = useState(roomMembers)
 
   const handleClose = () => {
     setaddModalShow(false)
@@ -225,6 +230,14 @@ function MembersPanel({ config }) {
   const handleremoveModalShow = () => setremoveModalShow(true)
 
   const addMembersEvent = values => {
+    const newEntries = [
+      ...membersList,
+      values.map(item => {
+        return { _id: item.value, email: item.label }
+      })
+    ]
+    setMembersList([newEntries])
+    // console.warn(membersList)
     addmembersevent(values)
   }
 
@@ -295,34 +308,22 @@ function MembersPanel({ config }) {
             Add People
           </AddPeopleIcons>
         </ListGroup.Item>
-        {/* {
-          samples.map(sample=>(
-            <DataWrap key={sample.name}>
-              <BsPersonCircle size="30px" style={{marginTop:'10px'}}/>
-              <Details>
-                <DetailLabel>
-                  <div style={{display:'flex',alignItems:'flex-start',marginRight:'20px'}}>{sample.username}</div>
-                  <div>{sample.name}</div>
-                </DetailLabel>
-                <StackLabel>
-                    <div style={{marginLeft:'15px'}}>{sample.stack}</div>
-                    <div onClick={handleaddModalShow}><EditLabel onClick={() => removeMemberHandler(sample.name)}>Remove</EditLabel></div>
-                </StackLabel>
-              </Details>
-            </DataWrap>
+        {membersList && membersList.length > 0 ? (
+          membersList.map(member => (
+            <ListGroup.Item key={member._id} className="d-flex w-100">
+              <div>{member.email}</div>
+              <div className="ms-auto" onClick={handleaddModalShow}>
+                <RemoveLink onClick={() => removeMemberHandler(member)}>
+                  Remove
+                </RemoveLink>
+              </div>
+            </ListGroup.Item>
           ))
-        } */}
-        {membersList.map(member => (
-          <ListGroup.Item key={member._id} className="d-flex w-100">
-            <BsPersonCircle size="30px" style={{ marginTop: '10px' }} />
-            <div>{member.email}</div>
-            <div className="ms-auto" onClick={handleaddModalShow}>
-              <RemoveLink onClick={() => removeMemberHandler(member)}>
-                Remove
-              </RemoveLink>
-            </div>
+        ) : (
+          <ListGroup.Item className="d-flex w-100">
+            <div>No Members</div>
           </ListGroup.Item>
-        ))}
+        )}
       </ListGroup>
     </div>
   )
