@@ -37,7 +37,7 @@ const TopBarSearchModal = () => {
   }
   useEffect(() => {
     async function getData() {
-      if (!exactPlugin.filterCall) {
+      if (!exactPlugin?.filterCall) {
         return
       }
       const response = await exactPlugin.filterCall(user.org_id, user._id)
@@ -47,7 +47,7 @@ const TopBarSearchModal = () => {
       }
     }
     getData()
-  }, [exactPlugin.name, user._id])
+  }, [exactPlugin?.name, user._id])
 
   const FilterList = Object.keys(filters).map((item, i) => (
     <li key={i} className={styles.List}>
