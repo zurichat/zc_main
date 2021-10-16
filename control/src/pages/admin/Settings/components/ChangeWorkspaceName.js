@@ -12,16 +12,17 @@ import { Link } from "react-router-dom"
 const ChangeWorkspaceName = () => {
 
     const [user, setUser] = useState(null)
+    
     const [orgUrl, setOrgUrl] = useState(null)
-    const [orgName, setOrgName] = useState("")
+    const [orgName, setOrgName] = useState('')
   
 
     let currentWorkspace = localStorage.getItem("currentWorkspace")
+
     
+
     useEffect(() => {
 
-
-      
     
       const user = JSON.parse(sessionStorage.getItem("user"))
       
@@ -49,7 +50,7 @@ const ChangeWorkspaceName = () => {
           )
           .then(res => {
             // Clears User Extracted Details from LS during Registraion
-    
+            
             
             // setOrgId(res.data.data.organization_id)
     

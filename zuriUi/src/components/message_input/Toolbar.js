@@ -1,4 +1,4 @@
-import React, { useState,useEffect   } from "react"
+import React, { useState, useEffect } from "react"
 import { convertToRaw, EditorState, RichUtils } from "draft-js"
 import UnstyledButton from "./UnstyledButton"
 import Italic from "./assets/comments/italic.svg"
@@ -11,9 +11,14 @@ import Clip from "./assets/comments/clip.svg"
 import Link from "./assets/comments/link.svg"
 import Send from "./assets/comments/send.svg"
 import AtSign from "./assets/comments/at-sign.svg"
-import Google from './assets/comments/google.svg'
-import Computer from './assets/comments/computer.svg'
-import "./ToolbarStyles.css"
+import Google from "./assets/comments/google.svg"
+import Computer from "./assets/comments/computer.svg"
+import "./emojiStyles.js"
+import {
+  GlobalStyleForEmojiSelect,
+  StyledEmojiSelectWrapper
+} from "./emojiStyles"
+
 
 const BoldIcon = () => <img src={Bold} alt="" />
 const ItalicIcon = () => <img src={Italic} alt="" />
@@ -48,24 +53,24 @@ const Toolbar = props => {
   const [inputKey, setInputKey] = useState("any-key-press")
   const [showAttachInputBox, setshowAttachInputBox] = useState(false)
   //const [preview, setPreview] = useState('')
-  
 
   //Attachment ref
   const inputRef = React.createRef()
 
   //Handles sending of attachedfile
-  const handleAttachMedia=(e)=>{{ 
-    e.preventDefault()
-    //Post request is sent here 
-    sendMessageHandler(attachedFile)
+  const handleAttachMedia = e => {
+    {
+      e.preventDefault()
+      //Post request is sent here
+      sendMessageHandler(attachedFile)
 
-    //Then this is to clear the file from the state
-    props.sentAttachedFile(null)
+      //Then this is to clear the file from the state
+      props.sentAttachedFile(null)
       clearAttached()
     }
   }
-  
-  const handleSelectMedia=(e)=>{
+
+  const handleSelectMedia = e => {
     setAttachedFile(e.target.files[0])
     props.sentAttachedFile(e.target.files[0])
     setshowAttachInputBox(false)
@@ -73,8 +78,8 @@ const Toolbar = props => {
 
   // on click clear attached file
   const clearAttached = () => {
-    setInputKey('reset-attached')
-    setAttachedFile('')
+    setInputKey("reset-attached")
+    setAttachedFile("")
     setshowAttachInputBox(false)
   }
 
@@ -82,7 +87,7 @@ const Toolbar = props => {
     const currentDate = new Date()
     const newMessageData = {
       message_id: Date.now().toString(),
-      username: currentUserData.username || "John Doe",
+      username: currentUserData.username,
       time: `${
         currentDate.getHours() < 12
           ? currentDate.getHours()
@@ -96,8 +101,8 @@ const Toolbar = props => {
     // console.log("submit-msg", newMessageData)
     // console.log("submit-editor", convertToRaw(editorState.getCurrentContent()))
     addToMessages && addToMessages(newMessageData)
+    sendMessageHandler(newMessageData)
     setEditorState(EditorState.createEmpty())
-    // sendMessageHandler(convertToRaw(editorState.getCurrentContent()))
   }
   const handleInlineStyle = (event, style) => {
     event.preventDefault()
@@ -154,26 +159,26 @@ const Toolbar = props => {
         <AttachFile>
           <div>
             <div>
-            <img src={Google} alt="" />
+              <img src={Google} alt="" />
               Google Drive
             </div>
             <label>
-            <img src={Computer} alt=""  onClick={handleSelectMedia}/>
-            Upload from your computer
-            <input 
+              <img src={Computer} alt="" onClick={handleSelectMedia} />
+              Upload from your computer
+              <input
                 style={{
-                  display: "none",
+                  display: "none"
                 }}
                 onChange={handleSelectMedia}
-                key={inputKey || ''}
-                type='file'
-                ref= {inputRef}
+                key={inputKey || ""}
+                type="file"
+                ref={inputRef}
                 //onClick={handleAttachMedia}
               />
             </label>
           </div>
         </AttachFile>
-        ) : null}
+      ) : null}
       <FormatContainer>
         <LightningIcon />
 
@@ -193,7 +198,12 @@ const Toolbar = props => {
         <UnstyledButton>
           <AtIcon />
         </UnstyledButton>
-        {emojiSelect}
+        {
+          <StyledEmojiSelectWrapper>
+            <GlobalStyleForEmojiSelect />
+            {emojiSelect}
+          </StyledEmojiSelectWrapper>
+        }
         <UnstyledButton onClick={() => setshowAttachInputBox(true)}>
           <ClipIcon />
         </UnstyledButton>
@@ -223,7 +233,7 @@ const SendContainer = styled.div`
 const AttachFile = styled.div`
   width: 324px;
   border-radius: 8px;
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   padding: 15px 35px;
   position: absolute;
   right: 104px;
