@@ -266,7 +266,7 @@ export const TRANSLATIONS_DE = {
       link_try: "Kostenlos ausprobieren"
     }   
   },
-   careers: {
+  careers: {
       title: {
         careers: "Karriere"
       },
@@ -351,5 +351,27 @@ export const TRANSLATIONS_DE = {
       legacyPolicy: "Rechtliche Hinweise",
       aboutZuri: "Über Zurichat"
     }
+  },
+  signup: {
+    title: "Anmeldung",
+    form: {
+      header: "Benutzerkonto erstellen",
+      googleHeader: "Melden Sie sich bei Google an",
+      topLineText: "ODER",
+      submitButtonName: "Anmeldung",
+      bottomLine: "Sie haben bereits ein Konto?",
+      bottomLink: "Einloggen",
+      input: {
+        fullName: "Vollständiger Name",
+        fullNamePlaceholder: "Gib deinen Namen ein",
+        emailAddress: "E-Mail-Addresse",
+        emailAddressPlaceholder: "Geben Sie Ihre E-Mail-Adresse ein",
+        password: "Passwort",
+        passwordPlaceholder: "Geben Sie ein Passwort ein",
+      }
+    },
+    privacyAgreement: "Ich stimme Zurichats zu",
+    termsOfService: "Nutzungsbedingungen",
+    privacy: "Privatsphäre"
   }
 }

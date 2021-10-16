@@ -347,5 +347,27 @@ export const TRANSLATIONS_FR = {
       legacyPolicy: "Politique juridique",
       aboutZuri: "À propos de Zurichat"
     }
+  },
+  signup: {
+    title: "S'inscrire",
+    form: {
+      header: "Créer un compte",
+      googleHeader: "Inscrivez-vous avec Google",
+      topLineText: "OU",
+      submitButtonName: "S'inscrire",
+      bottomLine: "Vous avez déjà un compte?",
+      bottomLink: "Connexion",
+      input: {
+        fullName: "Nom et prénom",
+        fullNamePlaceholder: "Entrez votre nom",
+        emailAddress: "Adresse e-mail",
+        emailAddressPlaceholder: "Entrez votre adresse e-mail",
+        password: "Mot de passe",
+        passwordPlaceholder: "Entrer un mot de passe",
+      }
+    },
+    privacyAgreement: "Je suis d'accord avec Zurichat",
+    termsOfService: "Conditions de services",
+    privacy: "Intimité"
   }
 }

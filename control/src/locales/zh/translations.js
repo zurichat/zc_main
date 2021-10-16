@@ -249,7 +249,7 @@ export const TRANSLATIONS_ZH = {
       link_try: "免费试用"
     },   
   },
-   careers: {
+  careers: {
       title: {
         careers: "职业"
       },
@@ -343,5 +343,27 @@ export const TRANSLATIONS_ZH = {
       legacyPolicy: "法律政策",
       aboutZuri: "关于 Zuri Chat"
     }
+  },
+  signup: {
+    title: "报名",
+    form: {
+      header: "创建账户",
+      googleHeader: "使用谷歌注册",
+      topLineText: "或者",
+      submitButtonName: "注册",
+      bottomLine: "已经有账户？",
+      bottomLink: "登录",
+      input: {
+        fullName: "全名",
+        fullNamePlaceholder: "输入你的名字",
+        emailAddress: "电子邮件地址",
+        emailAddressPlaceholder: "输入您的电子邮件地址",
+        password: "密码",
+        passwordPlaceholder: "输入密码",
+      }
+    },
+    privacyAgreement: "我同意 ZuriChat 的",
+    termsOfService: "服务条款",
+    privacy: "隐私"
   }
 }
