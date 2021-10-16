@@ -147,13 +147,13 @@ const WorkSpaceIconTab = () => {
               <WorkSpaceDescription>
                 This icon will be used to identify your workspace in Zuri Chat.
               </WorkSpaceDescription>
-              <Button onClick={handleLogoDelete}>
+              {/* <Button onClick={handleLogoDelete}>
                 {loader.removeLoader ? (
                   <Loader type="Oval" color="#fff" height={24} width={80} />
                 ) : (
                   "Remove"
                 )}
-              </Button>
+              </Button> */}
             </WorkSpaceDetail>
           </WorkSpaceDetailContainer>
           <GuidelinesContainer>
