@@ -102,7 +102,7 @@
 }
 
 .item_p {
-  color: #454545;
+  color: var(--text-color-normal);
   padding-inline-start: 0.5rem;
   font-size: 18px;
   line-height: 28px;

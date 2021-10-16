@@ -4,6 +4,7 @@ import { MdKeyboardArrowDown } from "react-icons/md"
 import newMsgIcon from "../assets/icons/newMsgIcon.svg"
 import UserOrganization from "../../../control/src/pages/createworkspace/components/UserOrganization"
 import ModalComponent from "./ModalComponent"
+import themeColors from "../../../theming/themecolors"
 
 
 const SidebarHeader = props => {
@@ -15,10 +16,19 @@ const SidebarHeader = props => {
     toggleHomeModal(!homeModal)
     document.removeEventListener("click", toggle)
   }
+  
+  // const theme = localStorage.getItem("theme")
+  // if (theme !== null || theme !== "") {
+  //   const sideBarHeader = document.getElementsByClassName("sidebar-header-div")
+  //   sideBarHeader[0].style.backgroundColor = themeColors[theme].secondary
+  // } else {
+  //   const sideBarHeader = document.getElementsByClassName("sidebar-header-div")
+  //   sideBarHeader[0].style.backgroundColor = "#00b87c"
+  // }
   return (
-    <div className={`${styles.subCon1}`}>
+    <div className={` ${styles.subCon1}`}>
       <div className={`row ${styles.orgDiv}`}>
-        <div className={`col-12 px-3 ${styles.orgInfo}`}>
+        <div className={`col-12 px-3 sidebar-header-div ${styles.orgInfo}`}>
           <div
             onClick={() => toggle()}
             className={`row p-0 ${styles.orgHeader}`}
