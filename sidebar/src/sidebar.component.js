@@ -22,8 +22,6 @@ import Starred from "./components/Starred"
 
 const Sidebar = props => {
   let currentWorkspace = localStorage.getItem("currentWorkspace")
-
-  console.error("wow", props.state)
   const [nullValue, setnullValue] = useState(0)
 
   useEffect(() => {
@@ -50,50 +48,53 @@ const Sidebar = props => {
         }
       )
   }
-  const categories=[
-      "games",
-      "utility",
-      "tools",
-      "entertainment",
-      "sales",
-      "productivity",
-      "channels",
-      "direct messages",
-      "others"
+
+  const categories = [
+    "games",
+    "utility",
+    "tools",
+    "entertainment",
+    "sales",
+    "productivity",
+    "channels",
+    "direct messages",
+    "others"
   ]
 
-  var singleItems =[]
-  var categorizedItems=[]
-  for (let key in props.state.sidebar) {
-    if (!categories.includes(key)){
-      continue;
-    }
-    
-    else if(key == "others"){
-      singleItems = Object.keys(props.state.sidebar[key]).map((k, idx)=>{
-        var data = props.state.sidebar[key][k]
-        return(
-          <SingleRoom
-          key={data.name}
-          name={data.joined_rooms[0].room_name}
-          image={data.joined_rooms[0].room_image}
-          link={data.joined_rooms[0].room_url}
-          />
+  var singleItems = []
+  var categorizedItems = []
+  if (props.state.sidebar && nullValue === 1) {
+    for (let key in props.state.sidebar) {
+      if (!categories.includes(key)) {
+        continue
+      } else if (key == "others") {
+        singleItems = Object.keys(props.state.sidebar[key]).map((k, idx) => {
+          var data = props.state.sidebar[key][k]
+          return (
+            <SingleRoom
+              key={data.name}
+              name={data.joined_rooms[0].room_name}
+              image={data.joined_rooms[0].room_image}
+              link={data.joined_rooms[0].room_url}
+            />
+          )
+        })
+      } else {
+        const categoryData = Object.keys(props.state.sidebar[key]).map(
+          k => props.state.sidebar[key][k]
         )
-      })
-    }else{
-      const categoryData = Object.keys(props.state.sidebar[key]).map(
-        k => props.state.sidebar[key][k]
-      )
 
-      categorizedItems.push(<Category key={key} name={key} data={categoryData} />)
-    //    Object.keys(props.state.sidebar).map((p, idx)=>{
-    //     return (categories.includes(p) ? 
-    //     <Category key={idx} name={p} data={categoryData} />
-    //     : null)
-    
-    // }
-   }
+        categorizedItems.push(
+          <Category key={key} name={key} data={categoryData} />
+        )
+        //    Object.keys(props.state.sidebar).map((p, idx)=>{
+        //     return (categories.includes(p) ?
+        //     <Category key={idx} name={p} data={categoryData} />
+        //     : null)
+
+        // }
+      }
+    }
   }
   const check = props.state.sidebar && Object.keys(props.state.sidebar).map((plugin, idx)=>{
     return (props.state.sidebar[plugin].starred_rooms ? true : false)
@@ -114,10 +115,10 @@ const Sidebar = props => {
           <SingleRoom name="Drafts" image={draftIcon} />
 
           <SingleRoom name="Plugins" image={pluginIcon} link="/marketplace" />
+
           <Starred check={check} state={props.state} />
           {singleItems}
           {categorizedItems}
-
 
           {/* {props.state.sidebar && Object.keys(props.state.sidebar).map((p, idx)=>{
                 return categories.includes(p) ? 
@@ -126,7 +127,6 @@ const Sidebar = props => {
               })
           } */}
 
-          
           {/* <Category name="games" state={props.state} />
           <Category name="utility" state={props.state} />
           <Category name="tools" state={props.state} />
