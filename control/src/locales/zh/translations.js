@@ -299,9 +299,9 @@ export const TRANSLATIONS_ZH = {
       button: "订阅"
     }
   },
-    
-  
-  
+        
+
+
   about: {
     title: {
       about: ""
@@ -388,9 +388,12 @@ export const TRANSLATIONS_ZH = {
       title: "无论您做什么工作，您都可以在 Zuri Chat 中完成",
       link_sales: "与销售人员交谈",
       link_try: "免费试用"
-    },
+    }
+  },
 
-    careers: {
+
+  
+  careers: {
       title: {
         careers: "职业"
       },
@@ -457,9 +460,9 @@ export const TRANSLATIONS_ZH = {
           post_headline:
             "Zuri 支付 100% 的保费。我们还提供一系列免费的心理健康和福祉资源。"
         }
-      }
-    }
-  },
+      },
+
+    
   login:{
     title: "登录 - Zuri 聊天",
     form: {
@@ -485,5 +488,124 @@ export const TRANSLATIONS_ZH = {
       legacyPolicy: "法律政策",
       aboutZuri: "关于 Zuri Chat"
     }
-  }
+  },
+
+
+  download_desktop: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "体验 Zuri Chat 的桌面和移动应用程序",
+      post_headline: "使用 Zuri Chat 与您的团队联系从未如此简单。",
+      desktop_line: "桌面版 Zuri",
+      desktop_app: "在 苹果应用商店 下载",
+      desktop_soft: "从微软获取",
+      mobile_line: "移动版 Zuri",
+      mobile_app: "在 应用商店 下载",
+      mobile_play: "在 谷歌播放 上获取"
+    },
+
+    section_two: {
+      headline: "在任何这些设备上下载并享受 Zuri Chat 体验",
+      windows: "视窗",
+      mac: "苹果系统",
+      ios: "iOS",
+      android: "安卓",
+    },
+
+    section_three: {
+      headline: "同样的感觉，同样的团队在 Zuri App 上！",
+    }
+  },
+  download_ios: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "下载适用于 iOS 的 Zuri Chat 测试版。",
+      post_headline: "获取 Zuri 聊天 DM 和频道",
+      mac_line: "我们也在 Mac 上",
+      mac_description: "与我们的 Mac、Windows 和 Linux 应用程序保持对话。我们可以通过电子邮件向您发送快速下载链接以帮助您入门！",
+      button: "获取下载链接",
+    }
+  },
+  download_mac: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "在 MacOS 上体验 Zuri Chat",
+      post_headline: "使用 Zuri Chat 与您的团队联系从未如此简单。",
+      download: "下载",
+      download_soft: "为 Windows 下载？"
+    },
+
+    section_two: {
+      headline: "为什么是 Zuri 聊天应用程序？",
+      post_headline: "即使在旅途中使用 zuri 聊天电脑，也不会错过无缝协作体验",
+      android: "安卓",
+      and_break: "和",
+      ios: "iOS",
+      apps_break: "应用。"
+    },
+
+    section_three: {
+      headline: "同样的感觉，同样的团队在 Zuri App 上！",
+      download: "下载 MAC",
+      download_soft: "为 Windows 下载？"
+    }
+  },
+  download_mobile: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "体验 Zuri Chat 的桌面和移动应用程序",
+      post_headline: "使用 Zuri Chat 与您的团队联系从未如此简单。",
+    },
+
+    section_two: {
+      headline: "在任何这些设备上下载并享受 Zuri Chat 体验",
+      windows: "视窗",
+      mac: "苹果系统",
+      android: "安卓",
+      ios: "iOS"
+    },
+
+    section_three: {
+      headline: "同样的感觉，同样的团队在 Zuri App 上！",
+    }
+  },
+  download_windows: {
+    title: {
+      download: "下载 Zuri 聊天"
+    },
+
+    section_one: {
+      headline: "在 Windows 上体验 Zuri Chat",
+      post_headline: "使用 Zuri Chat 与您的团队联系从未如此简单。",
+      download: "下载",
+      download_mac: "为 Mac 下载？"
+    },
+
+    section_two: {
+      headline: "为什么是 Zuri 聊天应用程序？",
+      post_headline: "即使在旅途中使用 zuri 聊天电脑，也不会错过无缝协作体验",
+      android: "安卓",
+      and_break: "和",
+      ios: "iOS",
+      apps_break: "应用。"
+    },
+
+    section_three: {
+      headline: "同样的感觉，同样的团队在 Zuri App 上！",
+      download: "下载适用于 WINDOWS",
+      download_ios: "为 Mac 下载？"
+    }
+  },
 }
