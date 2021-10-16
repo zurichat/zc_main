@@ -6,6 +6,7 @@ import AdminOwnersItem from "./AdminOwnersItem"
 const AdminOwners = ({ admins }) => {
   const [adminObj, setAdminObj] = useState(admins)
   const [filtered, setFiltered] = useState(null)
+  const [selectValue, setSelectValue] = useState("role")
 
   const filterAdmins = text => {
     const filteredAdmins = adminObj.filter(eachObj => {
@@ -25,14 +26,29 @@ const AdminOwners = ({ admins }) => {
     console.log(e)
   }
 
-  // const handleSort = e => {
-  //   let sort
-  //   if (e.target.value === "Role") {
-  //     sort = adminObj.sort((a, b) => a.email - b.email)
-  //   } else if (e.target.value === "FullName") {
-  //     sort = adminObj.sort((a, b) => a.first_name - b.firstName)
-  //   }
-  // }
+  const handleSort = role => {
+    setSelectValue(role)
+
+    if (selectValue === "role") {
+      adminObj.sort(function (a, b) {
+        let nameA = a.first_name.toLowerCase()
+        let nameB = b.first_name.toLowerCase()
+        return nameA < nameB ? -1 : nameA > nameB ? 1 : 0
+      })
+      //eslint-disable-next-line
+      console.log(adminObj)
+    }
+
+    if (selectValue === "name") {
+      adminObj.sort(function (a, b) {
+        let roleA = a.role.toLowerCase()
+        let roleB = b.role.toLowerCase()
+        return roleA < roleB ? 1 : roleA > roleB ? -1 : 0
+      })
+      //eslint-disable-next-line
+      console.log(adminObj)
+    }
+  }
 
   return (
     <div className={styles.adminowners}>
@@ -40,11 +56,15 @@ const AdminOwners = ({ admins }) => {
 
       {/* role and search */}
       <div className={styles.rolesearch}>
-        <select>
-          <option value="Role">Role</option>
-          <option value="FullName">FullName</option>
-        </select>
-
+        <form>
+          <select
+            defaultValue={selectValue}
+            onChange={event => handleSort(event.target.value)}
+          >
+            <option value="role">Role</option>
+            <option value="name">FullName</option>
+          </select>
+        </form>
         <form className={styles.search}>
           <FiSearch className={styles.icon} />
           <input

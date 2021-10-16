@@ -14,7 +14,7 @@ const AdminOwnersItem = ({ user }) => {
         </div>
         <div className={styles.details}>
           <p className={styles.name}>
-            {user.first_name + " " + user.last_name} Hello
+            {user.first_name + " " + user.last_name}
           </p>
           <p className={styles.email}>{user.email}</p>
         </div>

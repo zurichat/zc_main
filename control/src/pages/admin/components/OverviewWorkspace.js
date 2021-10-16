@@ -31,7 +31,12 @@ const OverviewWorkspace = ({ organizationDetails, currentWorkspace }) => {
         </div>
         <div className={styles.name}>
           <h3 className={styles.h3}>{name}</h3>
-          <Link to="/" className={styles.link}>
+          <Link
+            href={workspace_url}
+            className={styles.link}
+            rel="noreferrer"
+            target="_blank"
+          >
             {workspace_url}
           </Link>
         </div>
@@ -46,7 +51,12 @@ const OverviewWorkspace = ({ organizationDetails, currentWorkspace }) => {
       </div>
       <div className={styles.workspaceTerms}>
         <h3 className={styles.workspaceTermHeader}>Terms of service</h3>
-        <Link to="/privacy" className={styles.review}>
+        <Link
+          to="/privacy"
+          rel="noreferrer"
+          target="_blank"
+          className={styles.review}
+        >
           Review
         </Link>
       </div>
