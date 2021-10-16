@@ -11,14 +11,15 @@ const AdminOwners = () => {
 
       {/* role and search */}
       <div className={styles.rolesearch}>
-        <select>
+        <select className={styles.select}>
           <option value="Role">Role</option>
           <option value="FullName">FullName</option>
         </select>
 
         <div className={styles.search}>
-          <FiSearch />
+          <FiSearch className={styles.searchIcon} />
           <input
+            type="text"
             placeholder="Search Admins and Owners"
             className={styles.input}
           />
