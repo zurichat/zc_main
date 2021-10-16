@@ -9,12 +9,12 @@ import DAO_Features from "./pages/DAO-Features"
 import ResetPassword from "./pages/passwordReset/index"
 import NewPassword from "./pages/passwordReset/newPassword"
 // end password block
+
 import CookiesSetting from "./pages/cookiesSettings"
 import Cookies from "./pages/cookies"
 import Features from "./pages/features"
 import Resources from "./pages/resources"
-import Help from "./pages/Help/index"
-import Article from "./pages/Help/Article"
+import Help from "./pages/Help"
 import Pricing from "./pages/pricing"
 import Security from "./pages/security"
 import Invite from "./pages/inviteScreen"
@@ -39,9 +39,9 @@ import PrivacyPolicy from "./pages/privacy-policy/index"
 import NotFoundPage from "./pages/404"
 import Billing from "./pages/admin/Billing"
 import Customize from "./pages/admin/Customize"
+import UserGroups from "./pages/admin/UserGroups"
 import Blog from "./pages/blogs"
 import Homepage from "./pages/home"
-import Permissions from "./pages/admin/Permissions"
 import SettingsHome from "./pages/admin/Settings/index"
 import About from "./pages/about/index"
 import AdminSettingsTab from "./pages/admin/Settings/components/AdminSettingsTab"
@@ -60,10 +60,11 @@ import Invitation from "./pages/admin/Invitation"
 import Whyzurichat from "./pages/WhyZuriChat/Whyzurichat"
 
 import OnboardingHelp from "./pages/LoginSignUpHelp/index"
-
-
+import BookDemo from "./pages/book-a-demo"
 
 import ChangeWorkspaceName from "./pages/admin/Settings/components/ChangeWorkspaceName"
+
+import BlogDetails from "./pages/blogs/components/BlogDetails"
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -96,8 +97,9 @@ const App = () => {
         <Route path="/about">
           <About />
         </Route>
-        <Route path="/help" component={Help} />
-        <Route path="/article" component={Article} />
+        <Route path="/help">
+          <Help />
+        </Route>
         <Route path="/choose-workspace">
           <Workspace />
         </Route>
@@ -118,6 +120,12 @@ const App = () => {
         </Route>
         <Route path="/search">
           <Search />
+        </Route>
+        {/* <Route path="/createBlog">
+          <CreateBlog />
+        </Route> */}
+        <Route path="/blog/:title">
+          <BlogDetails />
         </Route>
         <Route path="/blog">
           <Blog />
@@ -175,7 +183,6 @@ const App = () => {
         <Route path="/ZurichatBlog">
           <ZurichatBlog />
         </Route>
-
         <Route path="/whyzurichat">
           <Whyzurichat />
         </Route>
@@ -192,22 +199,33 @@ const App = () => {
           path="/deactivate-account"
           component={DeactivateAccount}
         />
+
         <PrivateRoute path="/session-signout" component={AllSessionSignOut} />
         <PrivateRoute path="/settings" exact component={Settings} />
         <PrivateRoute path="/admin/settings" exact component={SettingsHome} />
         <PrivateRoute path="/admin/settings/home" exact component={Home} />
-        <PrivateRoute path="/admin/name" exact component={ChangeWorkspaceName} />
+        <PrivateRoute
+          path="/admin/name"
+          exact
+          component={ChangeWorkspaceName}
+        />
         <PrivateRoute
           path="/admin/settings/analytics/memmber"
           exact
           component={adminNalytics}
         />
+
         <PrivateRoute
           path="/admin/settings/billings"
           exact
           component={Billing}
         />
         <PrivateRoute path="/admin/stats" exact component={AnayticsHome} />
+        <PrivateRoute
+          path="/admin/settings/usergroups"
+          exact
+          component={UserGroups}
+        />
         <PrivateRoute
           path="/admin/settings/customize"
           exact
@@ -245,6 +263,9 @@ const App = () => {
         </Route>
         <Route path="/cookies-banner">
           <Cookies />
+        </Route>
+        <Route path="/book-a-demo">
+          <BookDemo />
         </Route>
 
         {/* <Route component={NotFoundPage} /> */}
