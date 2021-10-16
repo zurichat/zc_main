@@ -29,13 +29,9 @@ const LogoCrop = ({ logo, setToggle, setAlertToggle }) => {
   const onCrop = () => {
     const imageCrop = cropperRef?.current
     const cropRef = imageCrop?.cropper
-    // eslint-disable-next-line no-console
-    console.log(cropRef.getCroppedCanvas().toDataURL())
   }
 
   const onCropComplete = useCallback((croppedArea, croppedAreaPixels) => {
-    // eslint-disable-next-line no-console
-    console.log(croppedArea, croppedAreaPixels)
   }, [])
 
   // const getCropData = () => {
