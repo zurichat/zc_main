@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import { useHistory } from "react-router-dom"
 import styles from "../styles/Tab.module.css"
 import SettingsTab from "./SettingsTab"
 import ProfileTab from "./ProfileTab"
 import NotificationTab from "./NotificationTab"
 import { FaBars } from "react-icons/fa"
+//import { TopbarContext } from './../../../../../topbar/src/context/Topbar'
 
 const Tab = () => {
   const [toggleState, setToggleState] = useState(1)
@@ -62,6 +63,8 @@ const Tab = () => {
             // onClick={() => toggleTab(3)}
             onClick={() => {
               history.push("/home")
+              //toggleProfileState();
+             // openModal()
             }}
           >
             Profile
