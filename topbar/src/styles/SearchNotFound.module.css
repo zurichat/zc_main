@@ -53,6 +53,7 @@
   color: #2f8ce6 !important;
   text-decoration: none;
   cursor: pointer;
+  font-size: 15px !important;
 }
 
 .state__description > a:hover {
