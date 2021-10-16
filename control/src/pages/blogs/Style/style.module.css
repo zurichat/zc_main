@@ -1,5 +1,5 @@
 .Blog_container {
-  font-family: 'Gilroy', sans-serif;
+  font-family: "Gilroy", sans-serif;
   box-sizing: border-box;
   margin: 0;
   margin-top: 5rem;
@@ -121,14 +121,14 @@
 .comment_form textarea {
   width: 100%;
   padding: 10px;
-  font-family: 'Gilroy', sans-serif;
+  font-family: "Gilroy", sans-serif;
   border: 2px solid #4e4e4e;
   border-radius: 10px;
 }
 
 .comment_form button {
   padding: 8px;
-  font-family: 'Gilroy', sans-serif;
+  font-family: "Gilroy", sans-serif;
   background-color: #00b87c;
   border-radius: 5px;
   border: none;
@@ -242,7 +242,7 @@ form textarea {
 
 .keep_reading_box .keep_reading_img img {
   width: 100%;
-  /* height: 200px; */
+  height: 200px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -252,7 +252,7 @@ form textarea {
   border-radius: 5px;
   margin: 10px;
   border: 1px solid rgb(223, 223, 223);
-  height: 600px;
+  height: 450px;
 }
 
 .keep_reading_text {
@@ -265,17 +265,17 @@ form textarea {
 }
 
 .keep_reading_text .getting_text {
-  font-size: 0.8rem;
+  font-size: 8px;
   padding-top: 10px;
-  overflow:hidden;
+  overflow: hidden;
   line-height: 20px;
-  max-height: 8rem;
+  max-height: 9rem;
   -webkit-box-orient: vertical;
   display: block;
   display: -webkit-box;
   overflow: hidden !important;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
 }
 
 .keep_reading_text .getting_text a {
@@ -292,6 +292,7 @@ form textarea {
 
 .date_min p {
   font-size: 0.8rem;
+  padding-top: 20px;
 }
 
 @media screen and (max-width: 600px) {
@@ -304,9 +305,8 @@ form textarea {
     font-size: 0.8rem;
   }
 
-  .blog_title p{
+  .blog_title p {
     font-size: 1.5rem;
-    
   }
 
   .blogimage {
@@ -359,7 +359,6 @@ form textarea {
     justify-content: space-between;
     margin-bottom: 20px;
   }
-  
 }
 
 .comment_card {
@@ -376,8 +375,8 @@ form textarea {
 
 .reading {
   display: grid;
-  grid-template-columns: auto auto auto;
-  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  /* grid-template-columns: auto auto auto; */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   /* grid-template-rows: repeat(auto-fit, minmax(auto, 1fr)); */
   gap: 15px;
 }
@@ -385,6 +384,7 @@ form textarea {
 @media screen and (max-width: 960px) {
   .reading {
     grid-template-columns: auto;
+    padding-top: 70px;
   }
 
   .Blog_container {
@@ -393,5 +393,5 @@ form textarea {
 }
 
 a:hover {
-  color : #00b87c
+  color: #00b87c;
 }
