@@ -7,6 +7,7 @@
   --text-color-normal: #333333;
   --text-color-gray: #3a3a3a;
   --text-color-gray-1: #242424;
+  --sidebar-text-color-: #999999;
 }
 
 [data-theme="dark"] {
@@ -16,6 +17,7 @@
   --text-color-normal: #999999;
   --text-color-gray: #cacaca;
   --text-color-gray-1: #f4f4f4;
+  --sidebar-text-color-: #cacaca;
 }
 
 [data-theme="light"] {
