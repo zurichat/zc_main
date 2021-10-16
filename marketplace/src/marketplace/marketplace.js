@@ -19,27 +19,27 @@ import { MarketPlaceProvider } from "../context/MarketPlace.context.js"
 import { GetUserInfo } from "@zuri/utilities"
 
 const MarketPlace = () => {
-
   let currentWorkspace = localStorage.getItem("currentWorkspace")
   let token = sessionStorage.getItem("token")
 
   // States
   const [user, setUser] = useState({})
   const [isMarketPlaceLoading, setIsMarketPlaceLoading] = useState(false)
-  const [filteredPlugin, setFilteredPlugin] = useState([])
-  const [searchInput, setSearchInput] = useState('')
-  const [userDetails, setUserDetails] = useState(null)
-  const [pluginName, setPluginName] = useState([])
   const [plugins, setPlugins] = useState({
     all: [],
     installed: [],
     popular: []
   })
+  const [filteredPlugins, setFilteredPlugins] = useState(plugins)
 
   useEffect(() => {
     getPlugins()
     getLoggedInUser()
   }, [])
+
+  useEffect(() => {
+    setFilteredPlugins(plugins)
+  }, [plugins])
 
   const getPlugins = async () => {
     setIsMarketPlaceLoading(true)
@@ -101,35 +101,20 @@ const MarketPlace = () => {
     }
   }
 
-  useEffect(() => {
-    axios.get(`https://api.zuri.chat/marketplace/plugins`)
-         .then((response) => {
-          setPluginName(response.data.data.map((info, id) => {
-            return info.name
-        }))
-        console.error(response.data.data)
-        })
-  }, [])
-
-          const searchedPlugins = (searchValue) => {
-          setSearchInput(searchValue)
-          // if (searchInput !== '') {
-              const filteredPlugin = (pluginName?.filter((data, id) => {
-              return Object.values(data).join('').toLocaleLowerCase().includes(searchInput.toLowerCase())
-              }))
-              setFilteredPlugin(filteredPlugin)
-              console.error(filteredPlugin)
-          // } else {
-          //     setFilteredPlugin(pluginName)
-          // }
-          }
-          
-
-            const marketplace = useMarketPlaceContext()
-            const renderPluginData = () => {
-              marketplace.dispatch(setPluginId(id))
-            }
-
+  const handleSearch = event => {
+    let value = event.target.value.toLowerCase()
+    let result = {};
+    result["all"] = plugins.all.filter(plugin => {
+      return plugin.name.toLowerCase().search(value) != -1 || plugin.description.toLowerCase().search(value) != -1
+    })
+    result["installed"] = plugins.installed.filter(plugin => {
+      return plugin.name.toLowerCase().search(value) != -1 || plugin.description.toLowerCase().search(value) != -1
+    })
+    result["popular"] = plugins.popular.filter(plugin => {
+      return plugin.name.toLowerCase().search(value) != -1 || plugin.description.toLowerCase().search(value) != -1
+    })
+    setFilteredPlugins(result)
+  }
 
   return (
     <MarketPlaceProvider>
@@ -167,41 +152,13 @@ const MarketPlace = () => {
                       fill="rgba(190,190,190,1)"
                     />
                   </svg>
-                  <input 
-                    onChange={(e) => searchedPlugins(e.target.value)}
-                    type="text" placeholder="Search Plugins" />
+                  <input
+                    type="text"
+                    placeholder="Search Plugins"
+                    onChange={handleSearch}
+                  />
                 </div>
                 <button className={styles.marketplaceHeroButton}>Search</button>
-              </div>
-              <div>
-              { searchInput.length !== 0 ? 
-                   filteredPlugin.map((item, id) => {
-                   return (
-                     <div key={id} className={styles.pluginList} >
-                     <li className={styles.pluginHover} onClick={renderPluginData}>
-                       <span  >
-                         {item}
-                       </span>
-                     </li>
-                     </div>
-                   )
-                   
-                 })
-                  : (
-                   pluginName.map((item, id) => {
-                     return (
-                      <div key={id} >
-                      {/* <li>
-                        <span className={styles.pluginHover} >
-                          {filteredPlugin[item]}
-                        </span>
-                      </li> */}
-                      </div>
-                     )
-                   })
-                 )
-                 }
-                    
               </div>
             </Col>
             <Col md={4}>
@@ -286,13 +243,31 @@ const MarketPlace = () => {
             </div>
             <Row className={`mx-0`}>
               <TabPanel>
-                <MarketPlaceContainer user={user} isMarketPlaceLoading={isMarketPlaceLoading} plugins={plugins} type={"all"} />
+                <MarketPlaceContainer
+                  user={user}
+                  isMarketPlaceLoading={isMarketPlaceLoading}
+                  setPlugins={setPlugins}
+                  plugins={filteredPlugins}
+                  type={"all"}
+                />
               </TabPanel>
               <TabPanel>
-                <MarketPlaceContainer user={user} isMarketPlaceLoading={isMarketPlaceLoading} plugins={plugins} type={"popular"} />
+                <MarketPlaceContainer
+                  user={user}
+                  isMarketPlaceLoading={isMarketPlaceLoading}
+                  setPlugins={setPlugins}
+                  plugins={filteredPlugins}
+                  type={"popular"}
+                />
               </TabPanel>
               <TabPanel>
-                <MarketPlaceContainer user={user} isMarketPlaceLoading={isMarketPlaceLoading} plugins={plugins} type={"installed"} />
+                <MarketPlaceContainer
+                  user={user}
+                  isMarketPlaceLoading={isMarketPlaceLoading}
+                  setPlugins={setPlugins}
+                  plugins={filteredPlugins}
+                  type={"installed"}
+                />
               </TabPanel>
             </Row>
           </Tabs>
