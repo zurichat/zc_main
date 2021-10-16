@@ -10,7 +10,6 @@ import ResetPassword from './pages/passwordReset/index'
 import NewPassword from './pages/passwordReset/newPassword'
 // end password block
 
-
 import CookiesSetting from './pages/cookiesSettings'
 import Cookies from './pages/cookies'
 import Features from './pages/features'
@@ -54,6 +53,8 @@ import AnayticsHome from './pages/admin/Analytics/index'
 import Plugins from './pages/plugins'
 import Home from './pages/admin/Settings/components/SettingsHome'
 import AboutWorkSpace from './pages/admin/AboutWorkSpace'
+
+
 import adminNalytics from "./pages/admin/Settings/Member"
 import AccountProfile from "./pages/admin/AccountProfile"
 import Legal from "./pages/legal"
@@ -64,8 +65,6 @@ import Whyzurichat from "./pages/WhyZuriChat/Whyzurichat"
 
 import OnboardingHelp from "./pages/LoginSignUpHelp/index"
 import BookDemo from "./pages/book-a-demo"
-
-
 
 import ChangeWorkspaceName from "./pages/admin/Settings/components/ChangeWorkspaceName"
 
@@ -211,7 +210,11 @@ const App = () => {
         <PrivateRoute path="/settings" exact component={Settings} />
         <PrivateRoute path="/admin/settings" exact component={SettingsHome} />
         <PrivateRoute path="/admin/settings/home" exact component={Home} />
-        <PrivateRoute path="/admin/name" exact component={ChangeWorkspaceName} />
+        <PrivateRoute
+          path="/admin/name"
+          exact
+          component={ChangeWorkspaceName}
+        />
         <PrivateRoute
           path="/admin/settings/analytics/memmber"
           exact
