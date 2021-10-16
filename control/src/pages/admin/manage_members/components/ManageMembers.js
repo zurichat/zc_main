@@ -41,8 +41,7 @@ useEffect(() => {
         .get(`/organizations/${organisationId}/members`)
         .then(res => {
           setUsers(res.data.data)
-          // eslint-disable-next-line no-console
-          console.log(res.data)
+        //   console.log(res.data)
         })
         .catch(err => {
           console.error(err)
