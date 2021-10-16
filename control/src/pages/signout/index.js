@@ -35,26 +35,26 @@ const Signout = ({ history }) => {
       <SignoutStyleWrapper>
         <div className="logo">
           <Helmet>
-            <title>{t("signout.title")} - Zuri Chat</title>
+            <title>{t("auth.signout.title")} - Zuri Chat</title>
           </Helmet>
           <img src={logo} alt="zuri logo" />
         </div>
 
         <div className="content-wrapper">
-          <h6 className="org-name">{t("signout.preOrgText")} {orgName} {t("signout.workspace")}</h6>
+          <h6 className="org-name">{t("auth.signout.preOrgText")} {orgName} {t("auth.signout.workspace")}</h6>
           <signoutMessage>
-            {t("signout.signoutMessage.preOrgText")} {orgName} {t("signout.workspace")}
+            {t("auth.signout.signoutMessage.preOrgText")} {orgName} {t("auth.signout.workspace")}
           </signoutMessage>
 
           <button className="push" onClick={() => history.push("/login")}>
-            {t("signout.loginText")}
+            {t("auth.signout.loginText")}
           </button>
           <p className="login">
             or
             <a href="/login" className="link">
-              {t("signout.loginText")}
+              {t("auth.signout.loginText")}
             </a>
-            {t("signout.postLoginText")}
+            {t("auth.signout.postLoginText")}
           </p>
         </div>
       </SignoutStyleWrapper>
