@@ -57,28 +57,35 @@ const TopBarSearchModal = () => {
       if (!exactPlugin?.filterCall) {
         return
       }
-      const response = await exactPlugin.filterCall(user.org_id, user._id)
+      try {
+        const response = await exactPlugin.filterCall(user.org_id, user._id)
 
-      if (response.status >= 200 || response.status <= 299) {
-        setFilters(response.data.data)
+        if (response.status >= 200 || response.status <= 299) {
+          setFilters(response.data.data)
+        }
+      } catch (e) {
+        setFilters({})
       }
     }
     getData()
   }, [exactPlugin?.name, user._id])
-
-  const FilterList = Object.keys(filters).map((item, i) => (
-    <li key={i} className={styles.List}>
-      <button
-        onClick={e => {
-          e.stopPropagation()
-          setKeys(item)
-        }}
-        style={{ width: "100%", textAlign: "left" }}
-      >
-        <SearchModalResult title={filters[item]} />
-      </button>
-    </li>
-  ))
+  
+  const FilterList =
+    (filters === {}|| !filters)
+      ? []
+      : Object.keys(filters).map((item, i) => (
+          <li key={i} className={styles.List}>
+            <button
+              onClick={e => {
+                e.stopPropagation()
+                setKeys(item)
+              }}
+              style={{ width: "100%", textAlign: "left" }}
+            >
+              <SearchModalResult title={filters[item]} />
+            </button>
+          </li>
+        ))
   return (
     <div className={styles.topBarSearchModal}>
       <div className={styles._input}>
