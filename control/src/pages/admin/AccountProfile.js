@@ -2,7 +2,7 @@ import React from "react"
 import AdminSettings from "./index"
 import AccountProfileTab from "./components/AccountProfileTabs"
 import styles from "./styles/aboutWorkspace.module.css"
-import { FiAlertOctagon } from "react-icons/fi"
+import { AiOutlineUser } from "react-icons/ai"
 
 const AccountProfile = () => {
   return (
@@ -11,7 +11,7 @@ const AccountProfile = () => {
         <div className={styles.contentWrapper}>
           <h5 className={styles.contentHeading}>
             {" "}
-            <FiAlertOctagon className={styles.icon} /> Account and profile
+            <AiOutlineUser className={styles.icon} /> Account and profile
           </h5>
           <AccountProfileTab />
         </div>
