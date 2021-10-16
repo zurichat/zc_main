@@ -3,7 +3,7 @@
 .sb__container {
   font: "Lato", sans-serif;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-color: var(--bg-color);
   padding-block-end: 3em;
   height: 100%;
   width: unset;
@@ -75,7 +75,7 @@
   position: relative;
   top: 0.2em;
   width: 1em;
-  color: #fff;
+  color: var(--text-color-bold);
 }
 
 .sb__item {
@@ -337,7 +337,7 @@
   font-weight: 500;
   font-size: 15px;
   line-height: 18px;
-  color: #999;
+  color: var(--sidebar-text-color-);
 }
 
 .messageDropdownIcon {
