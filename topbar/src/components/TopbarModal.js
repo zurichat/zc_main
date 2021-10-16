@@ -156,8 +156,8 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
       userAppearance = "Set yourself as active"
       toggleAppearance = (
         <div className={styles.online}>
-          <div className={styles.awayCircle} />
-          <p className={styles.away}>Away </p>
+          <span className={styles.awayCircle} />
+          <span className={styles.away}>Away </span>
         </div>
       )
   }
@@ -226,7 +226,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
               </div>
 
               <div className={styles.oneRight}>
-                <h4 style={{ paddingLeft: 0}}>
+                <h4 style={{ paddingLeft: 0 }}>
                   {user.user_name
                     ? `${user.user_name
                         .charAt(0)
@@ -275,7 +275,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
             {pause && <PauseNotification pause={pause} setPause={setPause} />}*/}
             </div>
 
-            <hr className={styles.hr} />
+            <hr className={styles.hr} style={{ height: "0.4px" }} />
 
             <div className={styles.sectionFour}>
               <p
@@ -304,7 +304,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
               </p>
             </div>
 
-            <hr className={styles.hr} />
+            <hr className={styles.hr} style={{ height: "0.4px" }} />
 
             <div className={styles.sectionSix}>
               <p
@@ -324,7 +324,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
               <Downloads setModal={setReusableModal} />
             )}
 
-            <hr className={styles.hr} />
+            <hr className={styles.hr} style={{ height: "0.4px" }} />
 
             <div className={styles.sectionFive}>
               <p onClick={logout}>Sign out</p>
