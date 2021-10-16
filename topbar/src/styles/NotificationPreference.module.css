@@ -279,7 +279,6 @@ input[type="radio"] {
   flex-direction: row;
   flex-wrap: wrap;
   list-style-type: none;
-  width: 140%;
 }
 
 .selectButton {
@@ -560,7 +559,7 @@ input[type="radio"] {
 @media (max-width: 450px) {
   .itemTitle1 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     padding: 5px;
     align-items: center;
