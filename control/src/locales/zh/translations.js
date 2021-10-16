@@ -365,5 +365,14 @@ export const TRANSLATIONS_ZH = {
     privacyAgreement: "我同意 ZuriChat 的",
     termsOfService: "服务条款",
     privacy: "隐私"
+  },
+  passwordreset: {
+    title: "重设密码",
+    headline: "获取新密码",
+    post_headline: "输入您注册时使用的电子邮件地址，重置代码将发送到您的电子邮件。",
+    form:{
+      emailAddress: "电子邮件地址",
+      continueButton: "继续"
+    }
   }
 }

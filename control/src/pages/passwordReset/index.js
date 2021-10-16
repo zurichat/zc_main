@@ -8,6 +8,8 @@ import axios from "axios"
 import VerifyResetCode from "./verifyCode"
 import { Helmet } from "react-helmet"
 import Footer from "../../components/Footer"
+import "../../i18n";
+import { useTranslation} from "react-i18next";
 
 const ResetDefault = () => {
   const [email, setEmail] = useState("")
@@ -36,12 +38,14 @@ const ResetDefault = () => {
     }
   }
 
+  const { t } = useTranslation();
+
   return (
     <>
       <div>
         <main id={styles.authPageWrapper}>
           <Helmet>
-            <title>Reset Password - Zuri Chat</title>
+            <title>{t("passwordreset.title")} - Zuri Chat</title>
           </Helmet>
           {showDialog && <VerifyResetCode />}
 
@@ -58,10 +62,9 @@ const ResetDefault = () => {
             </div>
             {/* header text  */}
             <div className={``}>
-              <h4 className={styles.headerText}>Get a new password</h4>
+              <h4 className={styles.headerText}>{t("passwordreset.headline")}</h4>
               <p className={`${styles.headerTextTitle}`}>
-                Enter the email address you registered with and a reset code
-                will be sent to your email.
+                {t("passwordreset.post_headline")}
               </p>
             </div>
             {/* form section  */}
@@ -69,7 +72,7 @@ const ResetDefault = () => {
               <AuthInputBox
                 className={`${styles.inputElement}`}
                 id="email"
-                name="Email address"
+                name={t("passwordreset.form.emailAddress")}
                 type="email"
                 placeholder="Johndoe@example.com"
                 value={email}
@@ -77,7 +80,7 @@ const ResetDefault = () => {
                 error=""
               />
               <Button className={styles.button} onClick={handleSubmit}>
-                Continue
+                {t("passwordreset.form.continueButton")}
               </Button>
             </form>
           </section>

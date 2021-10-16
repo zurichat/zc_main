@@ -373,5 +373,14 @@ export const TRANSLATIONS_DE = {
     privacyAgreement: "Ich stimme Zurichats zu",
     termsOfService: "Nutzungsbedingungen",
     privacy: "Privatsphäre"
+  },
+  passwordreset: {
+    title: "Passwort zurücksetzen",
+    headline: "Holen Sie sich ein neues Passwort",
+    post_headline: "Geben Sie die E-Mail-Adresse ein, mit der Sie sich registriert haben, und ein Reset-Code wird an Ihre E-Mail gesendet.",
+    form:{
+      emailAddress: "E-Mail-Addresse",
+      continueButton: "Weitermachen"
+    }
   }
 }

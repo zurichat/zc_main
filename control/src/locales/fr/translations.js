@@ -369,5 +369,14 @@ export const TRANSLATIONS_FR = {
     privacyAgreement: "Je suis d'accord avec Zurichat",
     termsOfService: "Conditions de services",
     privacy: "Intimité"
+  },
+  passwordreset: {
+    title: "Réinitialiser le mot de passe",
+    headline: "Obtenez un nouveau mot de passe",
+    post_headline: "Entrez l'adresse e-mail avec laquelle vous vous êtes inscrit et un code de réinitialisation vous sera envoyé par e-mail.",
+    form:{
+      emailAddress: "Adresse e-mail",
+      continueButton: "Continuer"
+    }
   }
 }
