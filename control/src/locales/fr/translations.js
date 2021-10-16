@@ -389,5 +389,13 @@ export const TRANSLATIONS_FR = {
       confirmPasswordPlaceholder: "Confirmez votre nouveau mot de passe",
       continueButton: "Continuer"
     }
+  },
+  verifyCodeOnPasswordReset: {
+    header: "Entrez le code de réinitialisation envoyé à votre courrier",
+    success: {
+      headline: "Réinitialisation de la vérification du code réussie!",
+      post_headline: "Cliquez sur le bouton pour continuer",
+      continueButton: "Continuer"
+    }
   }
 }

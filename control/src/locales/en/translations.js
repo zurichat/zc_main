@@ -385,5 +385,13 @@ export const TRANSLATIONS_EN = {
       confirmPasswordPlaceholder: "Confirm your new password",
       continueButton: "Continue"
     }
+  },
+  verifyCodeOnPasswordReset: {
+    header: "Enter the reset code sent to your mail",
+    success: {
+      headline: "Reset Code Verification Successful!",
+      post_headline: "Click on the Button to continue",
+      continueButton: "Continue"
+    }
   }
 }

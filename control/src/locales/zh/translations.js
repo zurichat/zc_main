@@ -385,5 +385,13 @@ export const TRANSLATIONS_ZH = {
       confirmPasswordPlaceholder: "确认您的新密码",
       continueButton: "继续"
     }
+  },
+  verifyCodeOnPasswordReset: {
+    header: "输入发送到您邮箱的重置代码",
+    success: {
+      headline: "重置码验证成功！",
+      post_headline: "点击按钮继续",
+      continueButton: "继续"
+    }
   }
 }
