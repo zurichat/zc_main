@@ -5,6 +5,7 @@ import Picker, { SKIN_TONE_MEDIUM_DARK } from "emoji-picker-react"
 import axios from "axios"
 import defaultAvatar from "../assets/images/avatar_vct.svg"
 import smile from "../assets/images/smile.png"
+import edit from "../assets/images/pen.png"
 
 import styles from "../styles/Topbar.module.css"
 import { TopbarContext } from "../context/Topbar"
@@ -44,6 +45,8 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
       }
     })
 
+    setShowModal(!showModal)
+
     try {
       const res = await authAxios.patch(
         `/organizations/${orgId}/members/${user._id}/status`,
@@ -57,8 +60,6 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
     } catch (error) {
       const errorResponse = error
     }
-
-    setShowModal(!showModal)
   }
 
   // const handleClearStatus = async () => {
@@ -240,7 +241,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
             >
               <div className={styles.emoji}>
                 {hoverState ? (
-                  <div>😃</div>
+                  user?.status?.tag? <img src={edit} className={styles.defalutEmoji} />: <div>😃</div>
                 ) : (
                   <>
                     {user?.status?.tag || (
