@@ -2,14 +2,15 @@ import React from 'react'
 
 const myStyle = {
   text: {
-    color: '#c4c4c4',
-    fontWeight: '600',
-    fontSize: '18px',
-    padding: '5px'
+    fontWeight: '700',
+    fontSize: '16px',
+    padding: '5px',
+    color: '#1D1C1D'
   },
   inputfield: {
-    margin: '10px 0',
-    width: '70%'
+    margin: '5px 0',
+    width: '70%',
+    color: '#1D1C1D'
   },
   btn: {
     backgroundColor: '#00B87C',
@@ -18,22 +19,22 @@ const myStyle = {
   }
 }
 
-const FileRetention = () => {
+const CustomEmoji = () => {
   return (
     <>
-      <p style={myStyle.text}>File Retention</p>
+      <p style={myStyle.text}>People who can manage custom emoji:</p>
       <input
         type="text"
         className="form-control"
         id=""
-        placeholder="keep all files"
+        placeholder="Everyone, except guests (default)"
         style={myStyle.inputfield}
       />
       <button type="button" className="btn btn-primary" style={myStyle.btn}>
-        See Paid Plans
+        Save
       </button>
     </>
   )
 }
 
-export default FileRetention
+export default CustomEmoji
