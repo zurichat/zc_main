@@ -32,7 +32,7 @@ const TopBarSearchModal = () => {
           return item.title.includes(value)
         })
 
-      const n = 10 //get the first 15 items
+      const n = 10 //get the first 10 items
       setItems(result.slice(0, n))
     })
   }
@@ -113,7 +113,8 @@ const TopBarSearchModal = () => {
         </div>
         <div></div>
         <ul className={styles.ListWrapper}>
-          {Array.isArray(items) ? (
+          {Array.isArray(items) &&
+            items.length > 0 &&
             items.map(item => (
               <li
                 key={item.id}
@@ -124,12 +125,7 @@ const TopBarSearchModal = () => {
               >
                 <SearchModalResult title={item.title} />
               </li>
-            ))
-          ) : (
-            <li>
-              <SearchModalResult title="" />
-            </li>
-          )}
+            ))}
         </ul>
       </div>
       {isSearchOpen ? (
