@@ -365,5 +365,14 @@ export const TRANSLATIONS_EN = {
     privacyAgreement: "I agree to Zurichat's",
     termsOfService: "Terms of services",
     privacy: "Privacy"
+  },
+  passwordreset: {
+    title: "Reset Password",
+    headline: "Get a new password",
+    post_headline: "Enter the email address you registered with and a reset code will be sent to your email.",
+    form:{
+      emailAddress: "Email Address",
+      continueButton: "Continue"
+    }
   }
 }
