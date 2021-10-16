@@ -1,10 +1,10 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Login from './pages/login'
-import SignUp from './pages/signup'
-import SignOut from './pages/signout/index'
-import Workspace from './pages/workspace/components/Workspace'
-import LandingPage from './pages/LandingPage'
-import DAO_Features from './pages/DAO-Features'
+import { BrowserRouter, Route, Switch } from "react-router-dom"
+import Login from "./pages/login"
+import SignUp from "./pages/signup"
+import SignOut from "./pages/signout/index"
+import Workspace from "./pages/workspace/components/Workspace"
+import LandingPage from "./pages/LandingPage"
+import DAO_Features from "./pages/DAO-Features"
 // password block
 import ResetPassword from "./pages/passwordReset/index"
 import NewPassword from "./pages/passwordReset/newPassword"
@@ -38,9 +38,9 @@ import PrivacyPolicy from "./pages/privacy-policy/index"
 import NotFoundPage from "./pages/404"
 import Billing from "./pages/admin/Billing"
 import Customize from "./pages/admin/Customize"
+import UserGroups from "./pages/admin/UserGroups"
 import Blog from "./pages/blogs"
 import Homepage from "./pages/home"
-import Permissions from "./pages/admin/Permissions"
 import SettingsHome from "./pages/admin/Settings/index"
 import About from "./pages/about/index"
 import AdminSettingsTab from "./pages/admin/Settings/components/AdminSettingsTab"
@@ -59,8 +59,7 @@ import Invitation from "./pages/admin/Invitation"
 import Whyzurichat from "./pages/WhyZuriChat/Whyzurichat"
 
 import OnboardingHelp from "./pages/LoginSignUpHelp/index"
-
-
+import BookDemo from "./pages/book-a-demo"
 
 import ChangeWorkspaceName from "./pages/admin/Settings/components/ChangeWorkspaceName"
 
@@ -196,7 +195,11 @@ const App = () => {
         <PrivateRoute path="/settings" exact component={Settings} />
         <PrivateRoute path="/admin/settings" exact component={SettingsHome} />
         <PrivateRoute path="/admin/settings/home" exact component={Home} />
-        <PrivateRoute path="/admin/name" exact component={ChangeWorkspaceName} />
+        <PrivateRoute
+          path="/admin/name"
+          exact
+          component={ChangeWorkspaceName}
+        />
         <PrivateRoute
           path="/admin/settings/analytics/memmber"
           exact
@@ -209,6 +212,11 @@ const App = () => {
         />
         <PrivateRoute path="/admin/stats" exact component={AnayticsHome} />
         <PrivateRoute
+          path="/admin/settings/usergroups"
+          exact
+          component={UserGroups}
+        />
+        <PrivateRoute
           path="/admin/settings/customize"
           exact
           component={Customize}
@@ -218,7 +226,11 @@ const App = () => {
           exact
           component={AboutWorkSpace}
         />
-        <PrivateRoute path="/admin/settings/accountsProfile" exact component={AccountProfile}/>
+        <PrivateRoute
+          path="/admin/settings/accountsProfile"
+          exact
+          component={AccountProfile}
+        />
         {/* <PrivateRoute
           path="/admin/settings/permission"
           exact
@@ -241,6 +253,9 @@ const App = () => {
         </Route>
         <Route path="/cookies-banner">
           <Cookies />
+        </Route>
+        <Route path="/book-a-demo">
+          <BookDemo />
         </Route>
 
         {/* <Route component={NotFoundPage} /> */}
