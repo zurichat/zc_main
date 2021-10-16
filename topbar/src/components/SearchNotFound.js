@@ -23,7 +23,7 @@ export const NoResult = ( {onClosed} ) => {
                         <span className={style.feedback__text}>Not the results you expected? </span> 
                         <button className={style.feedback__link}>Give feedback</button>
                     </span>
-                    <StartNewSearch onClick={() => onClosed()}/>
+                    <StartNewSearch onClear={() => onClosed()}/>
                  </div>
                 </div>
 
@@ -37,7 +37,7 @@ export const NoResult = ( {onClosed} ) => {
                     <div className={style.mobile__text}>
                         No message results found for "your search"
                     </div>
-                    <StartNewSearch onClick={() => onClosed()}/>
+                    <StartNewSearch onClear={() => onClosed()}/>
                 </div>
             </div>
         </div>
