@@ -5,6 +5,7 @@ import Picker, { SKIN_TONE_MEDIUM_DARK } from "emoji-picker-react"
 import axios from "axios"
 import defaultAvatar from "../assets/images/avatar_vct.svg"
 import smile from "../assets/images/smile.png"
+import edit from "../assets/images/pen.png"
 
 import styles from "../styles/Topbar.module.css"
 import { TopbarContext } from "../context/Topbar"
@@ -28,8 +29,9 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
     user,
     setUser
   } = useContext(ProfileContext)
-  const [statusText, setStatusText] = useState(user?.status?.text)
-  const [statusEmoji, setStatusEmoji] = useState(user?.status?.tag)
+
+  const state = useContext(TopbarContext)
+  const [showModal, setShowModal] = state.show
 
   const handleClearStatus = async () => {
     setUser({
@@ -43,8 +45,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
       }
     })
 
-    setStatusText("")
-    setStatusEmoji("")
+    setShowModal(!showModal)
 
     try {
       const res = await authAxios.patch(
@@ -59,8 +60,6 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
     } catch (error) {
       const errorResponse = error
     }
-
-    // setStatusModal(!statusModal)
   }
 
   // const handleClearStatus = async () => {
@@ -81,8 +80,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
   //   }
   // }
   const [hoverState, setHoverState] = useState(false)
-  const state = useContext(TopbarContext)
-  const [showModal] = state.show
+  
   // const [username, setUsername] = state.username
   const [showStatus] = state.status
   const [showMembersModal] = state.modal
@@ -175,10 +173,6 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
           statusModal={statusModal}
           setStatusModal={setStatusModal}
           openStatus={openStatus}
-          setStatusText={setStatusText}
-          statusText={statusText}
-          setStatusEmoji={setStatusEmoji}
-          statusEmoji={statusEmoji}
         />
       )}
 
@@ -246,10 +240,17 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
               onMouseLeave={() => setHoverState(false)}
             >
               <div className={styles.emoji}>
-                {user?.status?.tag || (
-                  <img src={smile} className={styles.defalutEmoji} />
+                {hoverState ? (
+                  user?.status?.tag? <img src={edit} className={styles.defalutEmoji} />: <div>😃</div>
+                ) : (
+                  <>
+                    {user?.status?.tag || (
+                      <img src={smile} className={styles.defalutEmoji} />
+                    )}
+                  </>
                 )}
               </div>
+
               <div className={styles.statusContent}>
                 {!(user?.status?.text || user?.status?.tag)
                   ? "Update your Status"
