@@ -2,13 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 // import classes from './gateways.module.css'
 import AdminSettings from '../../.'
+import {ImWarning} from 'react-icons/im'
+import {FiGlobe} from 'react-icons/fi'
 
 const Gateways = () => {
     return (
         <AdminSettings>
                 <GatewayCard>
                 <div className="gateways_contents">
-                <h1><i className="ts_icon ts_icon_globe clear_blue"></i>Gateways</h1>
+                <h1><FiGlobe className= "blue_icon"/>Gateways</h1>
                     <div className="content">
                         <h2>Saying goodbye to Zuri Chat's IRC and XMPP gateways</h2>
                         <p>
@@ -28,7 +30,7 @@ const Gateways = () => {
                             Thank you in advance for making this transition with us.
                         </p>
                         <div className="alert bottom_mg">
-                            <i className="ts_icon ts_icon_warning"></i>
+                            <ImWarning className= "red_icon"/>
                             <p>
                                 Please note that the gateways will be 
                                 closed according to the following schedule:
@@ -130,89 +132,107 @@ const GatewayCard = styled.div
     line-height: 2.5rem;
     letter-spacing: -1px;
     padding-left: 2rem
-}
-
-h2 {
-    font-size: 1.75rem;
-    line-height: 2rem;
-}
-
-h3 {
-    font-size: 1.5rem;
-    line-height: 1.75rem;
-}
-
-h1, h2, h3, h4, h5 {
-    font-weight: 700;
-    margin: 0 0 1rem;
-}
-
-p {
-    margin: 0 0 1rem;
-    font-size: 1rem;
-    line-height: 1.5rem
-}
-
-a, a:link, a:visited {
-    color: #1264a3;
-    text-decoration: none;
-    font-size: inherit;
-}
-
-ul {
-    margin: 0 0 1rem 2rem; 
-}
-
-li{
-    list-style: unset;
-}
-
-ol, ul {
-    padding-left: 0;
-    margin-left: 2rem;
-}
-
-
-@media only screen and (min-width: 1024px){
-    .gateways_contents {
-        width: 100%;
     }
-}
 
-.gateways_contents{
-    width: 100%;
-    height: 100%;
-    margin-top: 1rem;
-}
+    h2 {
+        font-size: 1.75rem;
+        line-height: 2rem;
+    }
 
-.content {
-    background-color: #ffff;
-    border-radius: .25rem;
-    box-shadow: 0 1px 0 rgb(0 0 0 / 25%);
-    padding: 2rem 2rem 1rem;
-    margin: 0 auto 2rem;
-    border: 1px solid #ddd;
-}
+    h3 {
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+    }
 
-.gateways_body_preline {
-    white-space: pre-line;
-}
+    h1, h2, h3, h4, h5 {
+        font-weight: 700;
+        margin: 0 0 1rem;
+    }
 
-.bottom_mg {
-    margin-bottom: 2rem!important;
-}
+    p {
+        margin: 0 0 1rem;
+        font-size: 1rem;
+        line-height: 1.5rem
+    }
 
-.alert {
-    padding: .75rem 1rem .75rem 3rem;
-    border: 1px solid #ddd;
-    background: #fff;
-    color: #1d1c1d;
-    border-left-width: 5px;
-    border-left-color: #de4e2b;
-    margin: 0 auto 1rem;
-    border-radius: .25rem;
-    position: static;
-}
+    a, a:link, a:visited {
+        color: #1264a3;
+        text-decoration: none;
+        font-size: inherit;
+    }
+
+    ul {
+        margin: 0 0 1rem 2rem; 
+    }
+
+    li{
+        list-style: unset;
+    }
+
+    ol, ul {
+        padding-left: 0;
+        margin-left: 2rem;
+    }
+
+
+    @media only screen and (min-width: 1024px){
+        .gateways_contents {
+            width: 100%;
+        }
+    }
+
+    .gateways_contents{
+        width: 100%;
+        height: 100%;
+        margin-top: 1rem;
+    }
+
+    .content {
+        background-color: #ffff;
+        border-radius: .25rem;
+        box-shadow: 0 1px 0 rgb(0 0 0 / 25%);
+        padding: 2rem 2rem 1rem;
+        margin: 0 auto 2rem;
+        border: 1px solid #ddd;
+    }
+
+    .gateways_body_preline {
+        white-space: pre-line;
+    }
+
+    .bottom_mg {
+        margin-bottom: 2rem!important;
+    }
+
+    .alert {
+        padding: .75rem 1rem .75rem 3rem;
+        border: 1px solid #ddd;
+        background: #fff;
+        color: #1d1c1d;
+        border-left-width: 5px;
+        border-left-color: #de4e2b;
+        margin: 0 auto 1rem;
+        border-radius: .25rem;
+        position: static;
+    }
+    
+    .red_icon{
+        color: #f40101;
+        margin-right: .5rem;
+        margin-left: -2rem;
+        margin-top: .3rem;
+        width: 1.25rem;
+        text-align: center;
+        float: left;
+    }
+
+    h1 .blue_icon{
+        color: #1264a3;
+        margin-right: .75rem;
+        margin-top: .35rem;
+        font-size: 30px;
+        float: left;
+    }
    `
   export default Gateways
 
