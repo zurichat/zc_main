@@ -282,6 +282,7 @@ export const DataWrap=styled.div`
   display:flex;
   flex-direction:row;
   alignItems:center;
+  margin-bottom:15px;
 `;
 export const Details=styled.div`
   display:flex

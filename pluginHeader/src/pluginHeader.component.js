@@ -63,7 +63,7 @@ export default function Header(props) {
                   showDialog={showDialog}
                   tabIndex={tabIndex}
                   close={() => setShowDialog(false)}
-                  config={props.headerConfig}
+                  config={dummyHeaderConfig}
                 />
               )}
               <div className={styles.plugin__header__count}>
