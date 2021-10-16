@@ -1,30 +1,25 @@
 import React from "react"
-import { AiOutlinePlus } from "react-icons/ai"
 import { navigateToUrl } from "single-spa"
-import styles from "../styles/Drop.module.css"
+import styles from "../styles/Sidebar.module.css"
 import Badge from "./badge"
 
 export default function SingleRoom({ image, name, link }) {
   return (
-    <div className={`row p-0 ${styles.dropDown} text-decoration-none `}>
-      <div
-        className={`col-12 d-flex align-items-center ${styles.plugin__title}`}
+    <div className={`row mt-2 ${styles.sb__item}`}>
+      <a
+        className={`row mt-2 ${styles.sb__item}`}
+        href={link && link}
+        onClick={navigateToUrl}
       >
-        <div className={`d-flex align-items-center`}>
+        <div className={`col-10 d-flex align-items-center ${styles.sb__col}`}>
           <img className={`${styles.item__img}`} src={image} alt="icon" />
+          <p className={`mb-0 ${styles.item_p}`}>{name}</p>
         </div>
-        <div
-          className={`w-100 d-flex align-items-center justify-content-between`}
-        >
-          <p className={`mb-0 ${styles.dropdown__room}`}> {name}</p>
-          {/* <img src={infoIcon} alt="icon" role="button" /> */}
-          {link ? (
-            <a href={link} onClick={navigateToUrl}>
-              <AiOutlinePlus className={`${styles.icon}`} />
-            </a>
-          ) : null}
+        <div className={`col-2 d-flex align-items-center`}>
+          {}
+          {/* <Badge number={ <Badge number={details.joined_rooms[0].unread} />} /> */}
         </div>
-      </div>
+      </a>
     </div>
   )
 }

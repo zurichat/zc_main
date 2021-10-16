@@ -1,12 +1,10 @@
-import React from "react"
-import { Link } from "react-router-dom"
-import { RiErrorWarningLine } from "react-icons/ri"
-import styles from "../component-styles/AuthFormWrapper.module.css"
-import logo from "../component-assets/logo.svg"
-import google from "../component-assets/google.svg"
-import GoogleAuth from "./GoogleAuth"
-import "../i18n"
-import { useTranslation } from "react-i18next"
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { RiErrorWarningLine } from 'react-icons/ri'
+import styles from '../component-styles/AuthFormWrapper.module.css'
+import logo from '../component-assets/logo.svg'
+import google from '../component-assets/google.svg'
+import GoogleAuth from './GoogleAuth'
 
 const FormWrapper = ({
   children,
@@ -23,7 +21,6 @@ const FormWrapper = ({
   bottomLinkHref,
   setLoading
 }) => {
-  const { t } = useTranslation()
   return (
     <section className={`${styles.container}`}>
       <a href="/">
@@ -71,24 +68,23 @@ const FormWrapper = ({
           <div className={`${styles.inputSection}`}>{children}</div>
 
           <div className={`${styles.btnContainer}`}>
-            <button
+            <input
               disabled={!disabled}
               className={`${styles.btn}`}
-              value="submit"
+              value={submitButtonName}
               type="submit"
-            >
-              {submitButtonName}
-            </button>
+            />
           </div>
 
           <div
             className={`${styles.bottomLine}`}
-            style={{ paddingTop: "20px" }}
+            style={{ paddingTop: '20px' }}
           >
             <span>
               {bottomLine}
+              {''}
               <a className={`${styles.bottomLink}`} href={`/${bottomLinkHref}`}>
-                {bottomLink}
+                {''} {bottomLink}
               </a>
             </span>
           </div>
@@ -107,13 +103,13 @@ const FormWrapper = ({
 
       <div className={`${styles.footer}`}>
         <Link to="/contact-us" className={`${styles.footer_a}`}>
-          {t("login.footer.contactUs")}
+          Contact Us
         </Link>
         <Link to="/legal" className={`${styles.footer_a}`}>
-          {t("login.footer.legacyPolicy")}
+          Legal Policy
         </Link>
         <Link to="/about" className={`${styles.footer_a}`}>
-          {t("login.footer.aboutZuri")}
+          About Zurichat
         </Link>
       </div>
     </section>

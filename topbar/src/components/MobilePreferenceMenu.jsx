@@ -21,31 +21,31 @@ const PreferenceMenu = ({navbarOpen, closeMenu}) => {
               className={sideBar === 1 ? styles.active : styles.one}
             >
               <AiOutlineBell  className={styles.icon} />
-              <p style={{marginBottom: 0}}>Notifications</p>
+              <p>Notifications</p>
             </div>
 
-            {/* <div
+            <div
               onClick={() => setSideBar(3)}
               className={sideBar === 3 ? styles.active : styles.one}
             >
               <AiOutlineEye className={styles.icon} />
               <p>Themes</p>
-            </div> */}
+            </div>
             <div
               onClick={() => setSideBar(4)}
               className={sideBar === 4 ? styles.active : styles.one}
             >
               <FiMessageCircle className={styles.icon} />
-              <p style={{marginBottom: 0}}>Messages & Media</p>
+              <p>Messages & Media</p>
             </div>
             <div
               onClick={() => setSideBar(5)}
               className={sideBar === 5 ? styles.active : styles.one}
             >
               <FiGlobe className={styles.icon} />
-              <p style={{marginBottom: 0}}>Languages & Region</p>
+              <p>Languages & Region</p>
             </div>
-            {/* <div
+            <div
               onClick={() => setSideBar(6)}
               className={sideBar === 6 ? styles.active : styles.one}
             >
@@ -58,14 +58,14 @@ const PreferenceMenu = ({navbarOpen, closeMenu}) => {
             >
               <BsCheckCircle className={styles.icon} />
               <p>Mark as read</p>
-            </div> */}
+            </div>
 
             <div
               onClick={() => setSideBar(9)}
               className={sideBar === 9 ? styles.active : styles.one}
             >
               <AiOutlineSetting className={styles.icon} />
-              <p style={{marginBottom: 0}}>Advanced</p>
+              <p>Advanced</p>
             </div>
           </div>
         </div>

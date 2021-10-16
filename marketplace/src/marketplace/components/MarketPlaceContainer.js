@@ -14,15 +14,14 @@ import ErrorMarkIcon from "../../component-assets/error-mark.svg"
 import PluginCard from "./PluginCard"
 import { useMarketPlaceContext } from "../../context/MarketPlace.context"
 import {
-  setPluginId
-  // loadPlugins,
-  // fetchPlugins
+  setPluginId,
+  loadPlugins,
+  fetchPlugins
 } from "../../context/marketplace/marketplace.action"
 
 const MarketPlaceContainer = ({
   type,
   plugins,
-  setPlugins,
   isMarketPlaceLoading,
   user
 }) => {
@@ -122,13 +121,6 @@ const MarketPlaceContainer = ({
           isSuccess: true,
           message: "Plugin Installed Successfully. Redirecting..."
         })
-
-        // Update Installed Plugins in realtime in marketplace
-        setPlugins({
-          ...plugins,
-          installed: [...plugins.installed, plugin]
-        })
-
         setTimeout(() => {
           // Redirect to redirect_url from plugins response
           history.push(response.data.data.redirect_url)
@@ -176,19 +168,10 @@ const MarketPlaceContainer = ({
           isSuccess: true,
           message: "Plugin Uninstalled Successfully."
         })
-
-        // Remove the plugin from installed Plugins in realtime in marketplace
-        setPlugins({
-          ...plugins,
-          installed: plugins.installed.filter(
-            plugin => plugin._id !== marketplaceContext.state.pluginId
-          )
-        })
-
         setTimeout(() => {
           // Reload the modal
           marketplaceContext.dispatch(setPluginId(null))
-        }, 2000)
+        }, 3000)
       } else {
         throw new Error(response.data.message)
       }
@@ -224,7 +207,7 @@ const MarketPlaceContainer = ({
               let plugin_id = plugin.id ? plugin.id : plugin._id
 
               // Render installed btn if the plugin ID is in the installedPlugins array
-              if (plugins.installed.find(item => item._id === plugin_id || item.id === plugin_id)) {
+              if (plugins.installed.find(item => item._id === plugin_id)) {
                 isInstalled = true
               }
 

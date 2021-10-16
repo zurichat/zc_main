@@ -9,8 +9,7 @@ const ProfileModal = ({ title, children, full, ...rest }) => {
   let mobileView = mql.matches
 
   return (
-    <div
-      {...rest}
+    <div {...rest}
       className={styles.modalContainer}
       style={modal ? { display: "flex" } : { display: "none" }}
     >

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import styles from "../styles/Overview.module.css"
+import styles from "./Analytics.module.css"
 import { Bar } from "react-chartjs-2"
 import { FaCircle } from "react-icons/fa"
 

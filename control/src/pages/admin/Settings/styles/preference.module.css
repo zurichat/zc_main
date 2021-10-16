@@ -70,8 +70,6 @@
   height: 40px;
 }
 
-
-
 .settingsright button:hover {
   color: rgba(0, 184, 123, 0.719);
 }
@@ -105,31 +103,6 @@
   font-weight: 400;
   color: #616061;
 }
-
-.settingsbutton button{
-  background: #FBFBFB;
-  border: 1px solid #DADADA;
-  color: #999999;
-  box-sizing: border-box;
-  border-radius: 4px;
-  padding: 9px 18px !important;
-  font-size: 13px;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -ms-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-  font-weight: 600;
-  line-height: 15px;
-  width: 100%;
-  height: 40px;
-}
-
-.settingsbutton button:hover{
-  color: #999999;
-}
-
-
 
 @media screen and (max-width: 868px) {
   #settingtab {

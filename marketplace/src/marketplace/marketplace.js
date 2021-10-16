@@ -1,4 +1,3 @@
-
 import axios from "axios"
 import { Helmet } from "react-helmet"
 import { Col, Row } from "react-bootstrap"
@@ -20,6 +19,7 @@ import { MarketPlaceProvider } from "../context/MarketPlace.context.js"
 import { GetUserInfo } from "@zuri/utilities"
 
 const MarketPlace = () => {
+
   let currentWorkspace = localStorage.getItem("currentWorkspace")
   let token = sessionStorage.getItem("token")
 
@@ -31,16 +31,11 @@ const MarketPlace = () => {
     installed: [],
     popular: []
   })
-  const [filteredPlugins, setFilteredPlugins] = useState(plugins)
 
   useEffect(() => {
     getPlugins()
     getLoggedInUser()
   }, [])
-
-  useEffect(() => {
-    setFilteredPlugins(plugins)
-  }, [plugins])
 
   const getPlugins = async () => {
     setIsMarketPlaceLoading(true)
@@ -102,21 +97,6 @@ const MarketPlace = () => {
     }
   }
 
-  const handleSearch = event => {
-    let value = event.target.value.toLowerCase()
-    let result = {};
-    result["all"] = plugins.all.filter(plugin => {
-      return plugin.name.toLowerCase().search(value) != -1 || plugin.description.toLowerCase().search(value) != -1
-    })
-    result["installed"] = plugins.installed.filter(plugin => {
-      return plugin.name.toLowerCase().search(value) != -1 || plugin.description.toLowerCase().search(value) != -1
-    })
-    result["popular"] = plugins.popular.filter(plugin => {
-      return plugin.name.toLowerCase().search(value) != -1 || plugin.description.toLowerCase().search(value) != -1
-    })
-    setFilteredPlugins(result)
-  }
-
   return (
     <MarketPlaceProvider>
       <Helmet>
@@ -153,11 +133,7 @@ const MarketPlace = () => {
                       fill="rgba(190,190,190,1)"
                     />
                   </svg>
-                  <input
-                    type="text"
-                    placeholder="Search Plugins"
-                    onChange={handleSearch}
-                  />
+                  <input type="text" placeholder="Search Plugins" />
                 </div>
                 <button className={styles.marketplaceHeroButton}>Search</button>
               </div>
@@ -244,31 +220,13 @@ const MarketPlace = () => {
             </div>
             <Row className={`mx-0`}>
               <TabPanel>
-                <MarketPlaceContainer
-                  user={user}
-                  isMarketPlaceLoading={isMarketPlaceLoading}
-                  setPlugins={setPlugins}
-                  plugins={filteredPlugins}
-                  type={"all"}
-                />
+                <MarketPlaceContainer user={user} isMarketPlaceLoading={isMarketPlaceLoading} plugins={plugins} type={"all"} />
               </TabPanel>
               <TabPanel>
-                <MarketPlaceContainer
-                  user={user}
-                  isMarketPlaceLoading={isMarketPlaceLoading}
-                  setPlugins={setPlugins}
-                  plugins={filteredPlugins}
-                  type={"popular"}
-                />
+                <MarketPlaceContainer user={user} isMarketPlaceLoading={isMarketPlaceLoading} plugins={plugins} type={"popular"} />
               </TabPanel>
               <TabPanel>
-                <MarketPlaceContainer
-                  user={user}
-                  isMarketPlaceLoading={isMarketPlaceLoading}
-                  setPlugins={setPlugins}
-                  plugins={filteredPlugins}
-                  type={"installed"}
-                />
+                <MarketPlaceContainer user={user} isMarketPlaceLoading={isMarketPlaceLoading} plugins={plugins} type={"installed"} />
               </TabPanel>
             </Row>
           </Tabs>

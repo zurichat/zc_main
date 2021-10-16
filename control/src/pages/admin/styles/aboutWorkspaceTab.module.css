@@ -23,15 +23,12 @@
   margin-bottom: -1px;
 }
 
-.tabHeaderItemActive{
+.tabHeaderItemActive,
+.tabHeaderItem:hover {
   background: #fff;
   border: 1px solid #dadada;
   border-bottom: none;
   color: #00b87c;
-}
-.tabHeaderItem:hover {
-  text-decoration-color: #000;
-  text-decoration-line: underline;
 }
 
 .tabContent {
@@ -43,7 +40,7 @@
   border: 1px solid #dadada;
   padding: 3rem 2rem 2rem 2rem;
   margin-bottom: 5rem;
-}
+} 
 
 .mobileToggle {
   display: none;

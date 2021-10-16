@@ -19,14 +19,10 @@ export const GetUserInfo = async () => {
           }
         }
       )
-      let userData = { currentWorkspace, token, ...response.data.data[0] }
-      let userDat = { currentWorkspace, token, ...response.data.data }
-
+      let userData = { currentWorkspace, token, ...response.data.data }
       // console.log('getuserinfo', response.data.data)
       // console.log(userData)
-      localStorage.setItem(`userData`, JSON.stringify(userData))
-
-      return userDat
+      return userData
     } catch (err) {
       console.error(err)
     }

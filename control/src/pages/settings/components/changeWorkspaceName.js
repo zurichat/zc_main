@@ -5,9 +5,7 @@ function App() {
 
 
     return (
-
-     
-         <div className="app bg-light pb-5">
+        <div className="app bg-light pb-5">
             <div className="container py-5 d-flex">
                 <img src={logo} alt="" />
                 <h2 className="px-3" styles={{ fontWeight: '700' }}>

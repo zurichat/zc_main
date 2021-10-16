@@ -2,11 +2,9 @@ import React, { useState } from "react"
 
 import styles from "../styles/AdminAnalyticsTab.module.css"
 
-import { IoSpeedometerOutline} from "react-icons/io5"
-
 // components
 // import AuthTab from './AuthTab'
-import MemberTab from "../../components/MembersTab"
+// import MembersTab from '../../components/MembersTab'
 // import HistoryTab from '../../components/HistoryTab'
 
 // icon
@@ -19,10 +17,7 @@ const AdminSettingsTab = () => {
   const [active, setActive] = useState(1)
 
   return (
-    <>
-    
     <div className={`${styles.tabWrapper} mt-4`}>
-    <h2 className={`mb-2 pt-3 ${styles.analytics_title}`}><IoSpeedometerOutline color="#489379" /> {""} Analytics</h2>
       <div onClick={() => setOpenTab(!openTab)} className={styles.mobileToggle}>
         <FiMenu className={styles.menuIcon} />
       </div>
@@ -72,10 +67,9 @@ const AdminSettingsTab = () => {
 
         {active === 1 && <AnalyticsOverview />}
         {active === 2 && <ChannelsTab />}
-        {active === 3 && <MemberTab />} 
+        {/* {active === 3 && <AuthTab />} */}
       </div>
     </div>
-    </>
   )
 }
 

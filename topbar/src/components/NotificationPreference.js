@@ -1,7 +1,5 @@
 import React, { useState, useContext, useEffect } from "react"
 import styles from "../styles/NotificationPreference.module.css"
-// import styles from "../styles/UserPreference.module.css"
-import standardStyles from "../styles/UserPreference.module.css"
 import { AiOutlineQuestionCircle } from "react-icons/ai"
 import { authAxios } from "../utils/Api"
 import { ProfileContext } from "../context/ProfileModal"
@@ -251,7 +249,7 @@ const NotificationPreference = () => {
   return (
     <div className={styles.notifications}>
       {/*  THE SECTION OF THE CONTENT */}
-      <div className={standardStyles.modalContent}>
+      <div className={styles.notifyContent}>
         <div className={styles.itemTitle1}>
           <h4 className={styles.titleLarge}>Notify me about </h4>{" "}
           <span className={styles.spanL}>
@@ -330,7 +328,7 @@ const NotificationPreference = () => {
             <label htmlFor="for-thread">Notify me of replies to thread</label>
           </div> */}
         </form>
-        <hr className={standardStyles.hrLine} />
+        <hr className={styles.hrNot} />
         {/* <div className={styles.itemTitle2}>
           <h4 className={styles.titleSmall}>Keywords</h4>{" "}
           <span className={styles.spanBlock}>
@@ -355,8 +353,8 @@ const NotificationPreference = () => {
           </span>
         </div>
         <div className={styles.schedule}>
-          <ul className={styles.list} style={{ paddingLeft: "0" }}>
-            <li className={standardStyles.spacingRight}>
+          <ul className={styles.list}>
+            <li className={styles.listChild}>
               <div className={styles.select}>
                 <select
                   className={styles.selectButton}
@@ -376,7 +374,7 @@ const NotificationPreference = () => {
                 </select>
               </div>
             </li>
-            <li className={standardStyles.spacingRight}>
+            <li className={styles.listChild}>
               <TextInput
                 type="text"
                 label="From"
@@ -386,7 +384,7 @@ const NotificationPreference = () => {
               />
             </li>
 
-            <li className={standardStyles.spacingRight}>
+            <li className={styles.listChild}>
               <TextInput label="to" />
             </li>
           </ul>
@@ -462,7 +460,7 @@ const NotificationPreference = () => {
             </div>
           </div>
         </div> */}
-        <hr className={standardStyles.hrLine} />
+        <hr className={styles.hrNot} />
 
         {/* <div className={styles.section2}>
           <div className={styles.itemTitle2}>

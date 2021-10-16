@@ -87,9 +87,6 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
             <Arrow className={`${styles.arrow}`} />
           </div>
         </div>
-        <div>
-          <p><a href="/admin/settings">Workspace Settings</a></p>
-          </div>
       </div>
       <hr className={styles.modalDivider} />
       <div ref={hoverRef} className={` ${styles.modalSection}`}>

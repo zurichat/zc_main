@@ -21,7 +21,6 @@
 }
 .item__list {
   white-space: nowrap;
-  cursor: pointer;
 }
 
 .plugin_name,
@@ -40,10 +39,13 @@
   font-size: 0.935em;
 }
 
+.dropDown__title {
+  text-transform: capitalize;
+}
+
 .plugin_name,
 .dropDown__title,
-.dropDown__name,
-.dropdown__room {
+.dropDown__name {
   color: #454545;
   padding-inline-start: 0.5rem;
   font-size: 18px;
@@ -53,10 +55,6 @@
   /* font-weight: bold; */
 }
 
-.dropDown__title {
-  text-transform: capitalize;
-  font-weight: 600;
-}
 /* .dropDown__name {
   font-weight: normal;
 } */
@@ -65,11 +63,12 @@
 .item__icon {
   /* font-size: 1.2em; */
   width: 24px;
+  height: 1rem;
 }
 
 .icon {
   transform: rotate(-90deg);
-  transition: all 0s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .icon.open {
@@ -100,7 +99,8 @@
 }
 
 .item__image {
-  width: 20px;
+  width: 0.75rem;
+  height: 0.75rem;
 }
 
 .optionsContainer {

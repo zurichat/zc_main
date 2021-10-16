@@ -1,11 +1,11 @@
 .container {
-  width: 90%;
+  width: 80%;
   margin-top: 50px;
   margin-left: 50px;
 }
 
 .contentHeading h1 {
-  font-size: 1.8rem;
+  font-size: 32px;
   line-height: 2.5rem;
   letter-spacing: -1px;
 }
@@ -64,8 +64,7 @@
 }
 
 .tabHeaderItem:hover {
-  text-decoration-color: #000;
-  text-decoration-line: underline;
+  color: #00b87c;
 }
 
 .tabContents {

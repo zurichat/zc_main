@@ -18,7 +18,6 @@ export const pluginRoutes = [
 
   // MarketPlace Plugin
   location => location.pathname.startsWith("/marketplace")
-
 ]
 
 registerApplication({
@@ -140,7 +139,6 @@ registerApplication({
   app: () => System.import("@zuri/marketplace"),
   activeWhen: [location => location.pathname.startsWith("/marketplace")]
 })
-
 
 start({
   urlRerouteOnly: true

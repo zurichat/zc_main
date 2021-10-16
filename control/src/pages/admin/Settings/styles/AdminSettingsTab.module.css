@@ -1,6 +1,5 @@
 .tabWrapper {
-  width: calc(100% - 10%);
-  margin: 0 auto;
+  width: 100%;
 }
 
 .tabHeader,
@@ -26,17 +25,14 @@
   margin-bottom: -1px;
 }
 
-.tabHeaderItemActive {
+.tabHeaderItemActive,
+.tabHeaderItem:hover {
   background: #fff;
   border: 1px solid #dadada;
   border-bottom: none;
   color: #00b87c;
 }
 
-.tabHeaderItem:hover {
-  text-decoration-color: #000;
-  text-decoration-line: underline;
-}
 .tabContent {
   width: 100%;
   height: 100%;

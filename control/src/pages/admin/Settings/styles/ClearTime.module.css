@@ -3,9 +3,6 @@
   align-items: center;
   margin-bottom: 0.2rem;
 }
-/* .clear_time_select select {
-  -webkit-appearance: menulist; 
-} */
 .clear_time_select select:focus {
   outline: none !important;
   box-shadow: none !important;

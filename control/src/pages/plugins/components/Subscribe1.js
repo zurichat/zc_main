@@ -3,11 +3,8 @@ import css from "./styles/subscribe.module1.css"
 import sub_img1 from "./assets/emails.jpg"
 import axios from "axios"
 import ThankYouModal from "./ThankYouModal1"
-import { useTranslation} from "react-i18next"
 
 const Subscribe = () => {
-  const { t } = useTranslation()
-
   const [email, setEmail] = useState("")
 
   const [displayModal, setDisplayModal] = useState(false)
@@ -54,12 +51,13 @@ const Subscribe = () => {
           >
             <div className={`py-sm-4 ${css.text}`}>
               <h2 className={` ${css.heading2}`}>
-              {t("plugin.subscribe.headline")}<br></br>{t("plugin.subscribe.headline_br")}
+              Be the First to get updates<br></br> on latest plugins from Zuri
+             Chat
               </h2>
               <p className={`py-4 mb-4 px-0 ${css.subtext}`}>
-              {t("plugin.subscribe.description")}<br></br>
-              {t("plugin.subscribe.description_br")}<br></br>
-              {t("plugin.subscribe.description_brr")}
+              Enrich your Zuri Chat experience by subscribing<br></br>
+              here to get the latest plugins via Emails<br></br>
+              on Zuri Chat!
               </p>
               <div className={`${css.formContainer}`}>
                 <form onSubmit={handleSubmit}>
@@ -73,7 +71,7 @@ const Subscribe = () => {
                     className={`mb-3 ${css.inputField}`}
                   />
                   <button type="submit" className={`${css.subscribeBtn}`}>
-                  {t("plugin.subscribe.button")}
+                    Subscribe
                   </button>
                 </form>
               </div>

@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import styles from "../styles/Sidebar.module.css"
 import addIcon from "../assets/icons/add-icon.svg"
-import { AiOutlinePlus } from "react-icons/ai"
 
 export default function Invite(props) {
   //for invite
@@ -16,11 +15,15 @@ export default function Invite(props) {
       {props.state.user && props.state.user[0].role === ("owner" || "admin") ? (
         <div
           className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
-          onClick={openInviteModal}
         >
-          <div className={styles.invite__icon}>
-            <AiOutlinePlus />
-          </div>
+          <img
+            style={{ width: "10%" }}
+            className={`${styles.item__img}`}
+            role="button"
+            onClick={openInviteModal}
+            src={addIcon}
+            alt="icon"
+          />
           <p
             role="button"
             onClick={openInviteModal}

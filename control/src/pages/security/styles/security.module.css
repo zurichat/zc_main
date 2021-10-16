@@ -2,14 +2,13 @@
 
 .compliancesection {
   padding: 20px;
-  margin-top: 10px ;
+  margin-top: 120px !important;
 }
-
 .compliancewrapper {
   display: flex;
   align-items: center;
   /* justify-content: start; */
-  flex-wrap: wrap;
+  flex-wrap: wrap !important;
   padding: 50px;
 }
 .complianceheading {
@@ -42,7 +41,7 @@
 }
 .titletext {
   font-size: 16px;
-  padding: 0 ;
+  padding: 0 !important;
   margin: 20px 0;
   font-weight: bold;
 }
@@ -91,7 +90,7 @@
   }
   .titletext {
     font-size: 16px;
-    padding: 0 ;
+    padding: 0 !important;
     margin: 20px 0;
     font-weight: bold;
   }
@@ -130,7 +129,7 @@
   .titletext {
     font-size: 14px;
     margin: 10px 0;
-    padding: 0;
+    padding: 0 !important;
   }
   .descriptiontext {
     max-width: 80%;
@@ -167,7 +166,7 @@
   .titletext {
     font-size: 14px;
     margin: 10px 0;
-    padding: 0 ;
+    padding: 0 !important;
   }
   .descriptiontext {
     max-width: 80%;
@@ -203,7 +202,7 @@
   .titletext {
     font-size: 14px;
     margin: 10px 0;
-    padding: 0 ;
+    padding: 0 !important;
   }
   .descriptiontext {
     max-width: 80%;
@@ -241,7 +240,7 @@
   .titletext {
     font-size: 14px;
     margin: 10px 0;
-    padding: 0 ;
+    padding: 0 !important;
   }
   .descriptiontext {
     max-width: 100%;

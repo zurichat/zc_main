@@ -38,7 +38,7 @@ const AdminHeader = ({ setModal, openModal }) => {
         <FiHome className={styles.icons} />
         {workspaceData.name}
       </div>
-      {/* <div className={styles.menu}>
+      <div className={styles.menu}>
         <Link className={styles.menuLink} to="/">
           <img className={styles.menuImg} src={la_rocket} alt="rocket icon" />
           Plans
@@ -55,7 +55,7 @@ const AdminHeader = ({ setModal, openModal }) => {
           <img className={styles.menuImg} src={zuriLogo} alt="zuri icon" />
           Launch
         </Link>
-      </div> */}
+      </div>
 
       <div onClick={() => setModal(!openModal)} className={styles.mobileMenu}>
         <FiMenu className={styles.headerMenu} />

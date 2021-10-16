@@ -61,7 +61,6 @@
     "react-router-dom": "^5.3.0",
     "single-spa-react": "^4.3.1",
     "styled-components": "^5.3.1",
-    "swr": "^1.0.1",
-    "uuid": "^8.3.2"
+    "swr": "^1.0.1"
   }
 }

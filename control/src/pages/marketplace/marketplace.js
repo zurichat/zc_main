@@ -1,18 +1,18 @@
-import React, { useState } from "react"
-import { Col, Row } from "react-bootstrap"
-import styles from "./styles/marketplace.module.css"
-import MarketPlaceContainer from "./components/marketplace-container/MarketPlaceContainer"
-import Footer from "../../components/Footer"
-import { InstallPluginSvg } from "./components/marketplace-container/InstallPluginSvg"
-import { CollaborationSvg } from "./components/marketplace-container/CollaborationSvg"
-import { DiscoverPluginSvg } from "./components/marketplace-container/DiscoverPluginSvg"
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
-import "react-tabs/style/react-tabs.css"
-import MarketplaceHeader from "./components/marketplace-container/MarketplaceHeader"
-import { MarketPlaceProvider } from "../../context/MarketPlace.context.js"
-import axios from "axios"
-import { Helmet } from "react-helmet"
-import Header from "../../components/Header"
+import React, { useState } from 'react'
+import { Col, Row } from 'react-bootstrap'
+import styles from './styles/marketplace.module.css'
+import MarketPlaceContainer from './components/marketplace-container/MarketPlaceContainer'
+import Footer from '../../components/Footer'
+import { InstallPluginSvg } from './components/marketplace-container/InstallPluginSvg'
+import { CollaborationSvg } from './components/marketplace-container/CollaborationSvg'
+import { DiscoverPluginSvg } from './components/marketplace-container/DiscoverPluginSvg'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
+import 'react-tabs/style/react-tabs.css'
+import MarketplaceHeader from './components/marketplace-container/MarketplaceHeader'
+import { MarketPlaceProvider } from '../../context/MarketPlace.context.js'
+import axios from 'axios'
+import { Helmet } from 'react-helmet'
+import Header from '../../components/Header'
 
 const MarketPlace = () => {
   const [userDetails, setUserDetails] = useState(null)
@@ -33,7 +33,7 @@ const MarketPlace = () => {
               <h1>Your number one plugin hub created for better experience</h1>
               <p className="p-0">
                 Integrate your favorite plugins and get more exciting experience
-                from the Zuri app. Collaborate, work smarter and better.{" "}
+                from the Zuri app. Collaborate, work smarter and better.{' '}
               </p>
               <div className="d-flex align-items-center">
                 <div className={styles.marketplaceSearchBar}>

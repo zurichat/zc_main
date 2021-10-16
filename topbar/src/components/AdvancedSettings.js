@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react"
 import Select from "react-select"
 import { ProfileContext } from "../context/ProfileModal"
 import styles from "../styles/AdvancedSettings.module.css"
-import standardStyles from "../styles/UserPreference.module.css"
 
 import { authAxios } from "../utils/Api"
 
@@ -62,7 +61,7 @@ const AdvancedSettings = () => {
   }
 
   return (
-    <div className={standardStyles.modalContent}>
+    <div className={styles.inputsContainer}>
       {/* <div className={styles.spacingLeft}> */}
       {/* <h5 className={styles.head}>Input options</h5> */}
 
@@ -212,7 +211,10 @@ const AdvancedSettings = () => {
 
       {/* <div className={styles.line}></div> */}
 
-      {/* <div className={styles.checkInputGroup2}>
+      <div className={styles.spacingLeft}>
+        <h5 className={styles.head}>Input Options</h5>
+
+        {/* <div className={styles.checkInputGroup2}>
           <input 
             type="checkbox" 
             name="" id="" 
@@ -236,14 +238,12 @@ const AdvancedSettings = () => {
             </p>
           </div>
         </div> */}
-      <div className={styles.container}>
-        <h5 className={standardStyles.labelTextHeader}>Input Options</h5>
-        <div className={standardStyles.labelContainer}>
+        <div className={styles.checkInputGroup2}>
           <input
             type="checkbox"
             name=""
             id=""
-            className={standardStyles.labelRadioButton}
+            className={styles.chekedInput}
             checked={advance.other_option.toggle_away_status}
             onClick={() => {
               if (advance !== undefined) {
@@ -259,17 +259,19 @@ const AdvancedSettings = () => {
               }
             }}
           />
-          <div className={standardStyles.labelSubtext}>
-            Ask if I want to toggle my away status when I log in after having
-            set myself away
+          <div className={styles.inputText}>
+            <p className={styles.inputParagraph}>
+              Ask if I want to toggle my away status when I log in after having
+              set myself away
+            </p>
           </div>
         </div>
-        <div className={standardStyles.labelContainer}>
+        <div className={styles.checkInputGroup2}>
           <input
             type="checkbox"
             name=""
             id=""
-            className={standardStyles.labelRadioButton}
+            className={styles.chekedInput}
             checked={advance.other_option.send_survey}
             onClick={() => {
               if (advance !== undefined) {
@@ -285,22 +287,22 @@ const AdvancedSettings = () => {
               }
             }}
           />
-          <div className={standardStyles.labelSubtext}>
-            Send me occassional survey via Zurichat bot
+          <div className={styles.inputText}>
+            <p className={styles.inputParagraph}>
+              Send me occassional survey via Zurichat bot
+            </p>
+            <p className={styles.inputParagraph40}>
+              We’re working to make Zurichat better. We’d always love to hear
+              your thoughts
+            </p>
           </div>
         </div>
-        <div className={standardStyles.labelContainer}>
-          <div className={styles.alonetext}>
-            We’re working to make Zurichat better. We’d love to hear your
-            thoughts
-          </div>
-        </div>
-        <div className={standardStyles.labelContainer}>
+        <div className={styles.checkInputGroup2}>
           <input
             type="checkbox"
             name=""
             id=""
-            className={standardStyles.labelRadioButton}
+            className={styles.chekedInput}
             checked={advance.other_option.warn_against_links}
             onClick={() => {
               if (advance !== undefined) {
@@ -316,8 +318,10 @@ const AdvancedSettings = () => {
               }
             }}
           />
-          <div className={standardStyles.labelSubtext}>
-            Warn me about potential malicious links
+          <div className={styles.inputText}>
+            <p className={styles.inputParagraph}>
+              Warn me about potential malicious links
+            </p>
           </div>
         </div>
       </div>

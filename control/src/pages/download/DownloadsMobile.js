@@ -9,13 +9,8 @@ import apple from "./assets/apple.svg"
 import windows from "./assets/windows.svg"
 import android from "./assets/android.svg"
 import { isIOS } from "react-device-detect"
-import { Link } from 'react-router-dom'
-import { useTranslation} from "react-i18next"
 
 const DownloadsMobile = () => {
-  const { t } = useTranslation()
-
-
   const [exe, setexe] = useState({ link: "", name: "", link2: "", name2: "" })
   React.useEffect(() => {
     if (isIOS) return setexe({ name: "DOWNLOAD FOR IOS" })
@@ -34,10 +29,10 @@ const DownloadsMobile = () => {
         <section className={downloadStyles.hero}>
           <div className={downloadStyles.herotext}>
             <p className={downloadStyles.herotextHeader}>
-              {t("download_mobile.section_one.headline")}
+              Experience the Zuri Chat’s desktop and mobile apps
             </p>
             <p className="mb-4">
-            {t("download_mobile.section_one.post_headline")}
+              Connecting with your team has never been easier with Zuri Chat.
             </p>
             {exe.link2 && (
               <a href={exe.link2} className={`${downloadStyles.button1} mb-3`}>
@@ -62,28 +57,28 @@ const DownloadsMobile = () => {
         </section>
         <section className={`${downloadStyles.info}`}>
           <p className={`h2 text-center font-weight-bold text-white mb-4`}>
-          {t("download_mobile.section_two.headline")}
+            Download and enjoy the Zuri Chat experience on any these devices
           </p>
           <div className={`${downloadStyles.downloadButtonContainer}`}>
             <a
               href="https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing"
               className={downloadStyles.downloadButton}
             >
-              {t("download_mobile.section_two.windows")}
+              Windows
               <img className={`px-2`} src={windows} alt="download icon" />
             </a>
             <a href="/download-app" className={downloadStyles.downloadButton}>
-            {t("download_mobile.section_two.mac")}
+              macOS
               <img className={`px-2`} src={apple} alt="download icon" />
             </a>
           </div>
           <div className={`${downloadStyles.downloadButtonContainer} mb-4`}>
             <a href={exe.link} className={downloadStyles.downloadButton}>
-            {t("download_mobile.section_two.android")}
+              Android
               <img className={`px-2`} src={android} alt="download icon" />
             </a>
             <a href="/download-app" className={downloadStyles.downloadButton}>
-            {t("download_mobile.section_two.ios")}
+              iOS
               <img className={`px-2`} src={apple} alt="download icon" />
             </a>
           </div>
@@ -100,7 +95,7 @@ const DownloadsMobile = () => {
         <section>
           <div className={`d-flex flex-column justify-content-center`}>
             <h1 className={`${downloadStyles.ctaText}`}>
-            {t("download_mobile.section_three.headline")}
+              Same feel, same team on Zuri App!
             </h1>
             <a
               href={exe.link}

@@ -10,45 +10,26 @@ export const ACTIONS = {
   ADD_ORGANIZATION: "add-org-email"
 }
 
-const insertSideBarData = (state, action) => {
-  var sidebar_data = action.payload
-  var category = sidebar_data[Object.keys(sidebar_data)[0]].category
-  var categoryData = state.sidebar
-    ? state.sidebar[category ? category : "others"]
-    : null
-  if (categoryData) {
-    categoryData = {
-      ...categoryData,
-      ...sidebar_data
-    }
-    state.sidebar[category] = categoryData
-  } else {
-    if (!state.sidebar) state.sidebar = {}
-    state.sidebar[category ? category : "others"] = {
-      ...sidebar_data
-    }
-  }
-  return state
-}
-
-function reducer(state = { sidebar: {} }, action) {
+function reducer(state, action) {
   switch (action.type) {
     case ACTIONS.ADD_ITEM:
       //Add items to sidebar
-      state = insertSideBarData(state, action)
+      var sidebar_data = action.payload
       return {
         ...state,
         sidebar: {
-          ...state.sidebar
+          ...state.sidebar,
+          ...sidebar_data
         }
       }
     case ACTIONS.UPDATE_PLUGINS:
       //Update sidebar
-      state = insertSideBarData(state, action)
+      var sidebar_update = action.payload
       return {
         ...state,
         sidebar: {
-          ...state.sidebar
+          ...state.sidebar,
+          ...sidebar_update
         }
       }
 
@@ -86,7 +67,7 @@ export default function App() {
   }, [])
 
   return !state.user ? (
-    <SkeletonLoader COUNTER={12} />
+    <SkeletonLoader COUNTER={12}/>
   ) : (
     <Sidebar state={state} dispatch={dispatch} />
   )

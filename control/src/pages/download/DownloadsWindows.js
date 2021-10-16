@@ -9,17 +9,11 @@ import icon from "./assets/icon.svg"
 import fetchInstall from "./utils/index"
 import { Link } from "react-router-dom"
 import { Helmet } from "react-helmet"
-import { useTranslation} from "react-i18next"
-
-
 
 // const Apk = '../../apk/appRelease.apk'
 // import Apk from '../../apk/appRelease.apk'
 
 const DownloadsWindows = () => {
-  const { t } = useTranslation()
-
-
   const [exe, setexe] = useState({ link: "", name: "" })
   // const [msi, setmsi] = useState({ link: '', name: '' })
   // const [dmg, setdmg] = useState({ link: '', name: '' })
@@ -38,12 +32,12 @@ const DownloadsWindows = () => {
       <section className={``}>
         <div className={`${styles.container} `}>
           <Helmet>
-            <title> {t("download_windows.title.download")}</title>
+            <title> Download Zuri Chat</title>
           </Helmet>
           <div className={`text-center p-lg-4`}>
-            <h1 className={`${styles.h1}`}>{t("download_windows.section_one.headline")}</h1>
+            <h1 className={`${styles.h1}`}>Experience Zuri Chat on Windows</h1>
             <p className={styles.p}>
-            {t("download_windows.section_one.post_headline")}
+              Connecting with your team has never been easier with Zuri Chat.
             </p>
           </div>
           <div className={`${styles.images} text-center p-lg-4 pb-lg-0`}>
@@ -62,13 +56,13 @@ const DownloadsWindows = () => {
                 className={styles.button1}
               >
                 <img className={`px-2`} src={icon} alt="download icon"></img>
-                {t("download_windows.section_one.download")}
+                DOWNLOAD
               </a>
               <Link
                 className={`${styles.plink} mt-lg-4 d-inline`}
                 to="./downloadsMac"
               >
-                {t("download_windows.section_one.download_mac")}
+                Download for Mac?
               </Link>
             </div>
           </div>
@@ -78,18 +72,18 @@ const DownloadsWindows = () => {
       <section className={`${styles.bg}`}>
         <div className={`row p-5 m-5 mt-0`}>
           <div className={` ${styles.zuri} col`}>
-            <h6 className={`${styles.h6zuri}`}>{t("download_windows.section_two.headline")}</h6>
+            <h6 className={`${styles.h6zuri}`}>Why Zuri Chat App?</h6>
             <p className={`${styles.p1}`}>
-            {t("download_windows.section_two.post_headline")},{" "}
+              Never miss the seamless collaboration experience even on the go
+              with the zuri chat pc,{" "}
               <a href="#" className={`${styles.mobile}`}>
-              {t("download_windows.section_two.android")}
+                Android
               </a>{" "}
-              {t("download_windows.section_two.and_break")}{" "}
+              and{" "}
               <a href="#" className={`${styles.mobile}`}>
-              {t("download_windows.section_two.ios")}
+                iOS
               </a>{" "}
-              {t("download_windows.section_two.apps_break")}
-
+              apps.
             </p>
           </div>
           <div className={`col`}>
@@ -105,17 +99,17 @@ const DownloadsWindows = () => {
       <section className={`row m-5 p-5`}>
         <div className={` ${styles.zuri} col container`}>
           <h1 className={`${styles.h1} py-3`}>
-          {t("download_windows.section_three.headline")}
+            Same feel, same team on Zuri App!
           </h1>
           <a href={exe.link} download={exe.name} className={styles.buttonW}>
             <img className={`px-2`} src={icon} alt="download icon"></img>
-            {t("download_windows.section_three.download")}
+            DOWNLOAD FOR WINDOWS
           </a>
           <Link
             className={`${styles.plink} mt-lg-4 d-inline`}
             to="./downloadsMac"
           >
-            {t("download_windows.section_three.download_ios")}
+            Download for Mac?
           </Link>
         </div>
         <div className={`col px-0`}>

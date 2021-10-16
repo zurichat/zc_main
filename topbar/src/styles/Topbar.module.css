@@ -125,14 +125,8 @@
   z-index: 9999;
   border: 1px solid #e5e5e5;
   border-radius: 8px;
-  padding: 6px 0 9px 0;
+  /* padding: 20px 0; */
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-}
-
-@media (max-width: 768px) {
-  .topbarModal {
-    width: 84%;
-  }
 }
 
 .modalContainers {
@@ -212,11 +206,20 @@
 
 /* set yourself as away*/
 
+.away {
+  font-size: 11px;
+  line-height: 13.2px;
+  position: absolute;
+  right: 178px;
+  top: 55px;
+}
 
 /* set yourself as active*/
 
-.active, .away {
- padding: 5px 0 0 12px
+.active {
+  font-size: 13px;
+  line-height: 13.2px;
+  margin-left: 9px;
 }
 
 .activeCircle {
@@ -226,6 +229,7 @@
   border-radius: 50%;
   margin-right: 14px;
   position: absolute;
+  top: 58px;
 }
 
 .awayCircle {
@@ -235,6 +239,7 @@
   margin-right: 14px;
   border-radius: 50%;
   position: absolute;
+  top: 58px;
 }
 
 .oneRight p {
@@ -267,7 +272,7 @@
   padding: 0 0.3rem;
 }
 
-.defalutEmoji {
+.defalutEmoji{
   height: 20px;
   padding: 0px 2px;
 }
@@ -307,7 +312,7 @@
 
 .sectionThree {
   position: relative;
-  line-height: 20px;
+  line-height: 25px;
   font-style: normal;
   font-weight: normal;
   margin: auto;
@@ -359,17 +364,16 @@
 /* hr */
 
 .hr {
-  /* border: 1.2px solid #e5e1e1; */
+  border: 1.2px solid #E5E1E1;
   width: 100%;
   margin-top: 5px;
-  height: 0px;
   margin-bottom: 15px;
 }
 
 /* The section four */
 
 .sectionFour {
-  line-height: 20px;
+  line-height: 22px;
   font-style: normal;
   font-weight: normal;
   margin: auto;
@@ -397,7 +401,7 @@
 /* The section five */
 
 .sectionFive {
-  line-height: 20px;
+  line-height: 22px;
   font-style: normal;
   font-weight: normal;
   margin-top: -5px;
@@ -436,7 +440,7 @@
 /* The section Six */
 
 .sectionSix {
-  line-height: 20px;
+  line-height: 22px;
   font-style: normal;
   font-weight: normal;
   margin: auto;
@@ -461,4 +465,15 @@
   color: #fff;
 }
 
-
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  /* set yourself as away*/
+  .away {
+    position: absolute;
+    right: 183px;
+  }
+  /* set yourself as active*/
+  .active {
+    position: absolute;
+    right: 180px;
+  }
+}

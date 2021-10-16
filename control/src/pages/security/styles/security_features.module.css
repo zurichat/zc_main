@@ -2,7 +2,6 @@
   margin-top: 20px;
 }
 
-
 .features {
   display: grid;
   grid-template-columns: repeat(4, 250px);
@@ -30,7 +29,7 @@
 }
 
 .feature img {
-  width: 80px;
+  width: 120px;
 }
 
 .banner {

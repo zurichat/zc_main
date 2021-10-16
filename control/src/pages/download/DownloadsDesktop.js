@@ -13,12 +13,8 @@ import android from "./assets/android.svg"
 import infolaptop from "./assets/infolaptop.svg"
 import windows from "./assets/windows.svg"
 import { isMacOs } from "react-device-detect"
-import "../../i18n"
-import { useTranslation} from "react-i18next"
 
 const DownloadsDesktop = () => {
-  const { t } = useTranslation()
-
   const [exe, setexe] = useState({ link: "", name: "" })
   React.useEffect(() => {
     if (isMacOs) return setexe({ name: "DOWNLOAD FOR MAC" })
@@ -33,10 +29,10 @@ const DownloadsDesktop = () => {
       <section className={`${styles.hero} `}>
         <div className={`${styles.heroText} `}>
           <p className={`${styles.heroheading}`}>
-          {t("download_desktop.section_one.headline")}
+            Experience the Zuri Chat’s desktop and mobile apps
           </p>
           <p className={`${styles.p} mb-4`}>
-          {t("download_desktop.section_one.post_headline")}
+            Connecting with your team has never been easier with Zuri Chat.
           </p>
 
           <div className={styles.heroImages}>
@@ -47,17 +43,17 @@ const DownloadsDesktop = () => {
                 alt="app screenshot"
               />
               <div>
-                <h2>{t("download_desktop.section_one.desktop_line")}</h2>
+                <h2>Zuri for Desktop</h2>
                 <a href="/download-app" className={styles.downloadButton}>
                   <img className={`px-1`} src={apple1} alt="download icon" />
-                  <span> {t("download_desktop.section_one.desktop_app")}</span>
+                  <span> Download on Mac App Store</span>
                 </a>
                 <a
                   href={`https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing`}
                   className={styles.downloadButton}
                 >
                   <img className={`px-1`} src={microsoft} alt="download icon" />
-                  <span>{t("download_desktop.section_one.desktop_soft")}</span>
+                  <span>Get it from Microsoft</span>
                 </a>
               </div>
             </div>
@@ -71,10 +67,10 @@ const DownloadsDesktop = () => {
                 />
               </div>
               <div>
-                <h2>{t("download_desktop.section_one.mobile_line")}</h2>
+                <h2>Zuri for Mobile</h2>
                 <a href="/download-app" className={styles.downloadButton}>
                   <img className={`px-1`} src={apple1} alt="download icon" />
-                  <span>{t("download_desktop.section_one.mobile_app")}</span>
+                  <span>Download on App Store</span>
                 </a>
 
                 <a
@@ -87,7 +83,7 @@ const DownloadsDesktop = () => {
                     src={googleplay}
                     alt="download icon"
                   />
-                  <span>{t("download_desktop.section_one.mobile_play")}</span>
+                  <span>GET IT ON Google Play</span>
                 </a>
               </div>
             </div>
@@ -105,22 +101,22 @@ const DownloadsDesktop = () => {
 
       <section className={`${styles.info}`}>
         <p className="h2 text-center font-weight-normal text-white w-50 mb-4">
-        {t("download_desktop.section_two.headline")}
+          Download and enjoy the Zuri Chat experience on any these devices
         </p>
         <div className={`${styles.downloadButtonContainer}`}>
           <a
             href={`https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing`}
             className={styles.downloadButton1}
           >
-            {t("download_desktop.section_two.windows")}
+            Windows
             <img className={`px-2`} src={windows} alt="download icon" />
           </a>
           <a href="/download-app" className={styles.downloadButton1}>
-          {t("download_desktop.section_two.mac")}
+            macOS
             <img className={`px-2`} src={apple} alt="download icon" />
           </a>
           <a href="/download-app" className={styles.downloadButton1}>
-          {t("download_desktop.section_two.ios")}
+            iOS
             <img className={`px-2`} src={apple} alt="download icon" />
           </a>
           <a
@@ -128,7 +124,7 @@ const DownloadsDesktop = () => {
             download={exe.name}
             className={styles.downloadButton1}
           >
-            {t("download_desktop.section_two.android")}
+            Android
             <img className={`px-2`} src={android} alt="download icon" />
           </a>
         </div>
@@ -146,7 +142,7 @@ const DownloadsDesktop = () => {
       <section className={` ${styles.ctaContainer}`}>
         <div>
           <h1 className={`${styles.heroheading} py-3 mb-4`}>
-          {t("download_desktop.section_three.headline")}
+            Same feel, same team on Zuri App!
           </h1>
           <a href={exe.link} download={exe.name} className={styles.button1}>
             <img className={`px-2`} src={icon} alt="download icon"></img>

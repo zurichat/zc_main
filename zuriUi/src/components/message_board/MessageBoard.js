@@ -93,7 +93,6 @@ function MessageBoard({ chatsConfig }) {
           <MessageInputBox
             currentUserData={chatsConfig.currentUserData}
             addToMessages={addToMessages}
-            sendMessageHandler={chatsConfig.sendChatMessageHandler}
           />
         </div>
       </ChatContainer>

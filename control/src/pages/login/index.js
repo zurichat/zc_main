@@ -10,8 +10,6 @@ import { GetUserInfo } from "@zuri/control"
 import $behaviorSubject from "../../../../globalState"
 import { Helmet } from "react-helmet"
 import { goToDefaultChannel } from "../../api/channels"
-import "../../i18n"
-import { useTranslation } from "react-i18next"
 // import { Link } from 'react-router-dom'
 // import authBg1 from './assets/auth_bg1.svg'
 // import authBg2 from './assets/auth_bg2.svg'
@@ -19,9 +17,6 @@ import { useTranslation } from "react-i18next"
 // import authBg4 from './assets/auth_bg4.svg'
 // import authBg5 from './assets/auth_bg5.svg'
 //import GoogleLogin from 'react-google-login'
-
-import Loader from "react-loader-spinner"
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 const Login = () => {
   const [email, setEmail] = useState("")
@@ -31,7 +26,6 @@ const Login = () => {
   const [passworderror, setpassworderror] = useState("")
   const [rememberMe, setRememberMe] = useState("")
   const [Loading, setLoading] = useState(false)
-  const [loggingIn, setLoggingIn] = useState(false)
 
   let history = useHistory()
 
@@ -49,17 +43,14 @@ const Login = () => {
     e.preventDefault()
     setemailerror("")
     setpassworderror("")
-    setLoggingIn(true)
 
     if (!email) {
       setemailerror(`Enter an email address`)
-      setLoggingIn(false)
       return
     }
 
     if (!password) {
       setpassworderror(`Enter a Password`)
-      setLoggingIn(false)
       return
     }
 
@@ -72,7 +63,6 @@ const Login = () => {
         const { data, message } = response.data
 
         setLoading(true)
-        setLoggingIn(false)
 
         //Store token in localstorage
         sessionStorage.setItem("token", data.user.token)
@@ -132,37 +122,28 @@ const Login = () => {
 
         //Render error message to the user
         seterror(data.message) //Change this when there is a design
-        setLoggingIn(false)
       })
   }
-
-  const { t } = useTranslation()
 
   return (
     <main id={styles.authPageWrapper}>
       <Helmet>
-        <title>{t("login.title")}</title>
+        <title>Login - Zuri Chat</title>
       </Helmet>
       {Loading && <LoginLoading />}
       <section id={styles.authFormContainer}>
         <FormWrapper
-          header={t("login.form.header")}
-          subHeader={t("login.form.sub_header")}
-          googleHeader={t("login.form.google_header")}
-          topLineText={t("login.form.topline_text")}
-          submitButtonName={
-            loggingIn ? (
-              <Loader type="TailSpin" color="#FFFFFF" height={40} width={40} />
-            ) : (
-              t("login.form.submitButtonName")
-            )
-          }
-          disabled={email && password && !loggingIn}
+          header="Login"
+          subHeader="Login with the data you entered during your registration"
+          googleHeader="Login with Google"
+          topLineText="OR"
+          submitButtonName="Log in"
+          disabled={email && password}
           error={error}
           handleSubmit={handleSubmit}
-          bottomLine={t("login.form.bottomLine")}
-          bottomLink={t("login.form.bottomLink")}
-          bottomLinkHref={t("login.form.signUp")}
+          bottomLine="New to us?"
+          bottomLink="Create an Account"
+          bottomLinkHref="Signup"
           setLoading={setLoading}
         >
           <AuthInputBox
@@ -181,7 +162,7 @@ const Login = () => {
             id="password"
             name="Password"
             type="password"
-            placeholder={t("login.form.authInputBox.passwordInputPlaceHolder")}
+            placeholder="Enter a password"
             value={password}
             setValue={setPassword}
             error={passworderror}
@@ -200,18 +181,17 @@ const Login = () => {
                 }}
                 // onFocus={displayImage}
               />
-              {t("login.form.authInputBox.rememberMe")}
+              Remember me
             </div>
             <div className={`${styles.right}`}>
               <Link
                 to="/reset-password"
                 className={`${styles.resetPasswordLink}`}
               >
-                {t("login.form.authInputBox.forgotPassword")}
+                Forgot password?
               </Link>
-              <Link to="/troubleshooting/onboarding-help">
-                {t("login.form.authInputBox.getHelp")}
-              </Link>
+              <Link to="/troubleshooting/onboarding-help"> {""}Get help signing in</Link>
+
             </div>
           </div>
         </FormWrapper>

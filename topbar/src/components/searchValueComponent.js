@@ -1,5 +1,5 @@
 import styles from "../styles/SearchValueComponent.module.css"
-import * as singleSpa from "single-spa" // import Styled from "styled-components"
+// import Styled from "styled-components"
 // const SearchValueStyled = Styled.div`
 //     margin-top: 20px;
 //     display: grid;
@@ -20,44 +20,24 @@ import * as singleSpa from "single-spa" // import Styled from "styled-components
 //     width: 100%;
 //     object-fit: cover;
 // `
-const SearchValue = ({
-  src,
-  title,
-  content,
-  onClose,
-  created_at,
-  plugin_name,
-  destination_Url
-}) => {
-  const redirect = () => {
-    if (!destination_Url) {
-      return
-    }
-    // console.log('hi')
-    singleSpa.navigateToUrl(destination_Url)
-    onClose()
-  }
-
-  const timeStamp = new Date(created_at).toDateString()
+const SearchValue = ({ src, title, description }) => {
   return (
-    <div onClick={() => redirect()} className={styles.resultCard}>
-      <p className={styles.result_plugin}>
-        {`#${plugin_name} plugin`}{" "}
-        <span className={styles.created_date}>{` - ${timeStamp}`}</span>
-      </p>
-      <div className={styles.card_cont}>
+    <div className={styles.resultCard}>
+    <p className={styles.result_plugin}>#todo plugin <span className={styles.created_date}>- Oct 12th</span></p>
+    <div className={styles.card_cont}>
         <div className={styles.card_img}>
-          <img src={src} />
+            <img src={src} />
+
         </div>
         <div className={styles.card_desc}>
-          <p className={styles.result_card_title}>
-            {title}
-            <span className={styles.result_card_time}>{timeStamp}</span>
-          </p>
-          <p className={styles.result_card_desc}>{content}</p>
+            <p className={styles.result_card_title}>{title}
+                <span className={styles.result_card_time}>12:04Am</span></p>
+            <p className={styles.result_card_desc}>{description}</p>
         </div>
-      </div>
+
     </div>
+
+</div>
     // <SearchValueStyled>
     //   <SearchImageCover>
     //     <SearchImg src={src} alt="photo" />
