@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react"
 import styles from "../styles/NotificationPreference.module.css"
+// import styles from "../styles/UserPreference.module.css"
 import standardStyles from "../styles/UserPreference.module.css"
 import { AiOutlineQuestionCircle } from "react-icons/ai"
 import { authAxios } from "../utils/Api"
@@ -354,7 +355,7 @@ const NotificationPreference = () => {
           </span>
         </div>
         <div className={styles.schedule}>
-          <ul className={styles.list}>
+          <ul className={styles.list} style={{ paddingLeft: "0" }}>
             <li className={standardStyles.spacingRight}>
               <div className={styles.select}>
                 <select
