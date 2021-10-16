@@ -7,6 +7,8 @@ import axios from "axios"
 import Button from "../../components/Button"
 import styles from "../../component-styles/ResetPassword.module.css"
 import okayimage from "../signup/email-verify/assets/okayimage.svg"
+import "../../i18n";
+import { useTranslation} from "react-i18next";
 
 export default function VerifyResetCode() {
   const [success, setsuccess] = useState(false)
@@ -29,6 +31,9 @@ export default function VerifyResetCode() {
       setsuccess(false)
     }
   }
+
+  const { t } = useTranslation();
+  
   return (
     <Overlay>
       <Content>

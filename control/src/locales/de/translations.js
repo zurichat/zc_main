@@ -393,5 +393,13 @@ export const TRANSLATIONS_DE = {
       confirmPasswordPlaceholder: "Bestätigen Sie Ihr neues Passwort",
       continueButton: "Weitermachen"
     }
+  },
+  verifyCodeOnPasswordReset: {
+    header: "Geben Sie den Reset-Code ein, der an Ihre E-Mail gesendet wurde",
+    success: {
+      headline: "Code-Verifizierung zurücksetzen erfolgreich!",
+      post_headline: "Klicken Sie auf den Button um fortzufahren",
+      continueButton: "Weitermachen"
+    }
   }
 }
