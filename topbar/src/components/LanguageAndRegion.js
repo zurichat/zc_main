@@ -109,7 +109,7 @@ const LanguageAndRegion = () => {
               defaultValue="badbitches"
               onChange={setSelectedTimezone}
             />
-            <p className={styles.note}>
+            <p className={`${styles.note} my-2`}>
               Zurichat uses your time zone to send summary and notification
               emails, for times in your activity feeds and for reminders.
             </p>
