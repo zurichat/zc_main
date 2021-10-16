@@ -30,7 +30,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
   } = useContext(ProfileContext)
   const [statusText, setStatusText] = useState(user?.status?.text)
   const [statusEmoji, setStatusEmoji] = useState(user?.status?.tag)
-
+  // console.log(user)
   const handleClearStatus = async () => {
     setUser({
       ...user,
@@ -226,7 +226,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
               </div>
 
               <div className={styles.oneRight}>
-                <h4 style={{ paddingLeft: 0}}>
+                <h4 style={{ paddingLeft: 0 }}>
                   {user.user_name
                     ? `${user.user_name
                         .charAt(0)
