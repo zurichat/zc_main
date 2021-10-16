@@ -66,7 +66,7 @@ const TopBarSearchModal = () => {
     getData()
   }, [exactPlugin?.name, user._id])
 
-  const FilterList = Object.keys(filters).map((item, i) => (
+  const FilterList = filters !== null && filters !== undefined && Object.keys(filters).map((item, i) => (
     <li key={i} className={styles.List}>
       <button
         onClick={e => {
