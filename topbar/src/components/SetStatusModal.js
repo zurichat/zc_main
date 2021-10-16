@@ -135,7 +135,13 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
                   onChange={e => setText(e.target.value)}
                 />
               </div>
-              <img src={blackx} onClick={() => setText('')} alt='clear status'  role='button' className={styles.blackx} />
+              <img
+                src={blackx}
+                onClick={() => setText("")}
+                alt="clear status"
+                role="button"
+                className={styles.blackx}
+              />
             </div>
             <div className={styles.clearafter}>
               <div

@@ -1,6 +1,6 @@
 .notifySidebar {
   width: 200px;
-  background: #f9f9f9;
+  background: var(--background);
   height: 100%;
   float: left;
   position: fixed;
@@ -20,6 +20,7 @@
   margin-bottom: 0px;
   cursor: pointer;
   font-size: 15px;
+  padding-bottom: 13px;
 }
 .icon {
   margin-right: 15px;
@@ -45,6 +46,7 @@
 }
 .icon {
   margin-right: 10px;
+  margin-bottom: 0px;
 }
 .active p,
 .icon {
@@ -57,7 +59,8 @@
 }
 
 .one .icon {
-  color: #999999;
+  color: var(--text-color-normal);
+  margin-bottom: 1px;
 }
 
 @media screen and (max-width: 768px) {

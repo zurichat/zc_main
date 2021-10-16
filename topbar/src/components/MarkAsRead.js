@@ -1,73 +1,90 @@
-import React, { useState, useEffect } from 'react'
-// import axios from 'axios'
+import React, { useState, useEffect, useContext } from 'react'
 import radioFilled from '../assets/images/radio-fill.svg'
 import radioNotFilled from '../assets/images/radio-not-fill.svg'
 import checkFill from '../assets/images/check-fill.svg'
 import checkNotFill from '../assets/images/check-not-fill.svg'
 import styles from '../styles/MarkAsRead.module.css'
-
+import { ProfileContext } from "../context/ProfileModal"
+import { authAxios } from "../utils/Api"
 const MarkAsRead = () => {
-  const [channelView, setChannelView] = useState(null)
+  const [channelView, setChannelView] = useState("start me where i left off and mark the channel read")
   const [prompt, setPrompt] = useState(false)
-  const [updatingSettings, setUpdatingSettings] = useState(false)
+  
+  const { user, orgId } = useContext(ProfileContext)
+  const userId = user._id
+  const userEmail = JSON.parse(sessionStorage.getItem("user")).email
   const sessionKey = "mark-as-read-settings"
-
   const handlePromptSelection = () => {
-    // setUpdatingSettings(true)
     const selection = !prompt
-    // axios.post('url', {
-    //   prompt: selection
-    // })
-    // .then(() => {
-    //   let settings = JSON.parse(sessionStorage.getItem(sessionKey))
-    //   settings = {...settings, prompt: selection}
-    //   sessionStorage.setItem(sessionKey, 
-    //     JSON.strigify(settings)
-    //   )
-    //   // updates the state of prompt
-    //   setPrompt()
-    //   setUpdatingSettings(false)
-    // })
-    let settings = JSON.parse(sessionStorage.getItem(sessionKey))
-    settings = {...settings, prompt: selection}
+    setPrompt(selection)
+    // update the DB
+    authAxios.patch(`/organizations/${orgId}/members/${userId}/settings/mark-as-read`, {
+      when_i_view_a_channel: channelView,
+      when_i_mark_everything_as_read: selection
+    })
+    .then(() => {
+      let settings = {
+        when_i_view_a_channel: channelView,
+        when_i_mark_everything_as_read: selection
+        }
+      // update the sessionStorage
       sessionStorage.setItem(sessionKey, 
         JSON.stringify(settings)
       )
-    setPrompt(selection)
+      
+      // allow other selections
+    })
+    .catch(e => {
+     // catch error
+    })
   }
   const handleChannelViewSelection = (option) => {
-        // logic for channel view selection goes here
-        let settings = JSON.parse(sessionStorage.getItem(sessionKey))
-        sessionStorage.setItem(sessionKey, JSON.stringify({...settings, channelView: option}))
         setChannelView(option)
+          // update the DB
+        authAxios.patch(`/organizations/${orgId}/members/${userId}/settings/mark-as-read`, {
+          when_i_view_a_channel: option,
+          when_i_mark_everything_as_read: prompt
+      })
+        .then(() => {
+          let settings = {
+            when_i_view_a_channel: option,
+            when_i_mark_everything_as_read: prompt
+          }
+          // update the sessionStorage
+          sessionStorage.setItem(sessionKey, 
+            JSON.stringify(settings)
+          )
+        })
+        .catch(e => {
+          // catch error
+        })
   }
 
-  // Checks if the settings is in session storage then it updates the settings
-  // else it fetches it from the backend
+  // Checks if the settings is in session storage then it updates the user saved settings
+  // else it fetches the saved settings from the DB
   useEffect(()=> {
     if(sessionStorage.getItem(sessionKey)){
       let settings = JSON.parse(sessionStorage.getItem(sessionKey))
-      setChannelView(settings.channelView)
-      setPrompt(settings.prompt)
+      setChannelView(settings.when_i_view_a_channel)
+      setPrompt(settings.when_i_mark_everything_as_read)
     } else {
-      // axios.get('url')
-      // .then(res => {
-      //   let response = res.data
-      //   let settings = {
-      //     channelView: response.channelView,
-      //     prompt: response.prompt
-      //   }
-      //   sessionStorage.setItem(sessionKey, JSON.stringify(settings))
-      //   setChannelView()
-      //   setPrompt()
-      // })
-      let settings = {
-            channelView: 1,
-            prompt: true
-          }
-      setPrompt(false)
-      setChannelView(1)
-      sessionStorage.setItem(sessionKey, JSON.stringify(settings))
+      // get saved settings from database
+        authAxios.get(`/organizations/${orgId}/members?query=${userEmail}`)
+        .then(res => {
+          const settings = res.data.data[0].settings.mark_as_read
+          setChannelView(settings.when_i_view_a_channel)
+          setPrompt(settings.when_i_mark_everything_as_read)
+          sessionStorage.setItem(sessionKey, 
+            JSON.stringify({ 
+              when_i_view_a_channel: settings.when_i_view_a_channel,
+              when_i_mark_everything_as_read: settings.when_i_mark_everything_as_read
+            })
+          )
+        })
+        .catch(e => {
+            //error
+        })
+       
     }
    
   }, [])
@@ -88,11 +105,10 @@ const MarkAsRead = () => {
                 type="radio"
                 id="view-channel-1"
                 name="view-channel"
-                disabled={updatingSettings}
-                checked={channelView === 1}
-                onClick={()=> handleChannelViewSelection(1)}
+                checked={channelView === "start me where i left off and mark the channel read"}
+                onClick={()=> handleChannelViewSelection("start me where i left off and mark the channel read")}
               />
-                {channelView === 1 ?
+                {channelView === "start me where i left off and mark the channel read" ?
                  <img src={radioFilled} alt=""/>: <img src={radioNotFilled} alt=""/>
                 }
                 <span>Start me where i left off and mark the channel read</span>
@@ -109,11 +125,10 @@ const MarkAsRead = () => {
                 type="radio"
                 id="view-channel-2"
                 name="view-channel"
-                disabled={updatingSettings}
-                checked={channelView === 2}
-                onClick={()=> handleChannelViewSelection(2)}
+                checked={channelView === "start me at the newest message and mark the channel read"}
+                onClick={()=> handleChannelViewSelection("start me at the newest message and mark the channel read")}
               />
-                {channelView === 2 ?
+                {channelView === "start me at the newest message and mark the channel read" ?
                   <img src={radioFilled} alt=""/>: <img src={radioNotFilled} alt=""/>
                 }
                 <span>Start me at the newest message and mark the channel read</span>
@@ -130,11 +145,10 @@ const MarkAsRead = () => {
                 type="radio"
                 id="view-channel-3"
                 name="view-channel"
-                disabled={updatingSettings}
-                checked={channelView === 3}
-                onClick={()=> handleChannelViewSelection(3)}
+                checked={channelView === "start me at the newest message but leave unseen messages unread"}
+                onClick={()=> handleChannelViewSelection("start me at the newest message but leave unseen messages unread")}
               />
-                {channelView === 3 ? 
+                {channelView === "start me at the newest message but leave unseen messages unread" ? 
                 <img src={radioFilled} alt=""/>: <img src={radioNotFilled} alt=""/>
                 }
                 <span>Start me at the newest message but leave unseen messages unread</span>
@@ -153,7 +167,6 @@ const MarkAsRead = () => {
                     className={styles.prompt}
                     id="prompt-to-confirm"
                     type="checkbox"
-                    disabled={updatingSettings}
                     onClick={handlePromptSelection}
                   />
                 </span>
@@ -166,7 +179,7 @@ const MarkAsRead = () => {
         <div>
           <h5 className={styles.subhead}>Keyboard shortcuts</h5>
           <div>
-            <ul style={{padding: '0'}}>
+            <ul className={styles.subHeadUl} style={{padding: '0'}}>
               <li className={styles.shortcut}>
                 Mark all messages in current channel as read
                 <span className={styles.esc}>Esc</span>
