@@ -573,3 +573,23 @@ input[type="checkbox"] {
     margin: 0px;
   }
 }
+@media screen and (max-width: 768px){
+  .textInput {
+    width: 100%;
+    padding: 10px 0px;
+  }
+  .selectButton{
+    width: 100%;
+    padding: 10px 0px;
+  }
+}
+@media screen and (max-width: 400px){
+  .textInput {
+    width: 100%;
+    padding: 10px 0px;
+  }
+  .selectButton{
+    width: 100%;
+    padding: 10px 0px;
+  }
+}
