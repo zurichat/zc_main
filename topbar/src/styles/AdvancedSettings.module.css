@@ -43,7 +43,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: .3rem;
 }
 
 .inputText2 {
@@ -54,10 +53,9 @@
   font-size: .8125rem;
   font-weight: 400;
   color: var( --text-color-gray);
-  line-height: 0;
+  line-height: 120%;
   padding: 0;
   margin: 0;
-  margin-bottom: .8rem;
 }
 
 .inputParagraph60, .inputParagraph40 {
@@ -66,7 +64,7 @@
 }
 
 .inputParagraph40 {
-  margin-top: .6rem;
+  margin-top: .4rem;
 }
 
 .highlights {
@@ -121,5 +119,27 @@
   .inputParagraph, .inputParagraph60, .inputParagraph40 {
     line-height: 1.5;
     margin-top: -.6rem;
+  }
+}
+@media (max-width: 768px) {
+  .spacingLeft {
+    margin-left: 0;
+    margin: 0 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .inputParagraph, .inputParagraph60, .inputParagraph40 {
+    line-height: 1.5;
+    margin-top: -.6rem;
+  }
+  .chekedInput {
+    width: 20px;
+    height: .875rem;
+    background: var(--bg-color);
+    border: 1px solid #999;
+    border-radius: 2px;
+    margin-right: .438rem;
+    accent-color: #00B87C;
+    outline: none;
   }
 }

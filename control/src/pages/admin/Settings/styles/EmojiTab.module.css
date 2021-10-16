@@ -89,8 +89,8 @@
 
 .messageActions > button svg {
   height: 18px;
-  fill: #6A6A6A;
-  transition: all .2s;
+  fill: #6a6a6a;
+  transition: all 0.2s;
 }
 
 .messageActions button:nth-child(6) svg {
@@ -98,10 +98,8 @@
 }
 
 .messageActions > button:hover svg {
-  fill: #1D1C1D;
+  fill: #1d1c1d;
 }
-
-
 
 .messageActions > button:hover {
   background: rgb(246 246 246);
@@ -186,18 +184,56 @@
   box-shadow: 0 1px 4px rgb(0 0 0 / 30%);
 }
 
+.chooseEmoji {
+  display: flex;
+  position: relative;
+}
+
+.chooseEmoji .emojiPreview {
+  height: 36px;
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(29, 28, 29, 0.13);
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+.chooseEmoji button {
+  transition: all 80ms linear;
+  background: #fff;
+  border: 1px solid rgba(29, 28, 29, 0.3);
+  background-clip: padding-box;
+  color: #1d1c1d;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 12px 1px;
+}
+
+.chooseEmoji .picker {
+  z-index: 1.8;
+  position: absolute;
+  bottom: 61%;
+  left: 0;
+}
+
+.search {
+  position: relative;
+  margin-top: 30px;
+}
+
 .search input {
   border-radius: 4px;
   border: 1px solid rgba(29, 28, 29, 0.3);
-  transition: border 80ms ease-out, box-shadow 80ms ease-out;
   box-sizing: border-box;
   margin: 0 0 20px;
-  padding: 3px 12px 5px;
+  padding: 3px 40px;
   height: 36px;
   width: 100%;
   font-size: 15px;
   line-height: normal;
-  transition: all 0.1s;
+  transition: all 80ms ease-out, box-shadow 80ms ease-out;
 }
 
 .search input:hover {
@@ -214,6 +250,136 @@
   border-radius: 4px;
   border-color: transparent;
   -webkit-appearance: none;
+}
+
+.searchIcon {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 1px;
+  left: 10px;
+}
+
+.tableHeader {
+  display: flex;
+  font-size: 13px;
+  font-weight: 700;
+  color: #616061;
+  margin-top: -20px;
+  /* margin-bottom: -15px; */
+  border-bottom: 1px solid #ddd;
+}
+
+.tableHeader > div {
+  padding: 20px 0 8px 16px;
+  transition: all 0.2s;
+  line-height: 1.5;
+}
+
+.columnTitle1 {
+  width: 15%;
+}
+
+.columnTitle2 {
+  position: relative;
+  cursor: pointer;
+  width: 25%;
+}
+
+.columnTitle2 span {
+  position: absolute;
+  font-size: 17px;
+  font-weight: bold;
+  bottom: 7px;
+  left: 55px;
+}
+
+.columnTitle2:hover {
+  background: #f8f8f8;
+  color: #148567;
+}
+
+.columnTitle3 {
+  position: relative;
+  width: 25%;
+  cursor: pointer;
+}
+
+.columnTitle3 span {
+  position: absolute;
+  font-size: 17px;
+  font-weight: bold;
+  bottom: 7px;
+  left: 88px;
+}
+
+.columnTitle3:hover {
+  background: #f8f8f8;
+  color: #148567;
+}
+
+.columnTitle4 {
+  width: 25%;
+}
+
+.columnTitle5 {
+  width: 10%;
+}
+
+.tableContent {
+  display: flex;
+  height: 64px;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 15px;
+}
+
+.tableContent:hover {
+  background: #f8f8f8;
+}
+
+.tableContent > div {
+  padding-left: 16px;
+}
+
+.emojiImage {
+  width: 15%;
+}
+.emojiImage img {
+  width: 32px;
+}
+.emojiName {
+  font-weight: 900;
+  color: #1d1c1d;
+  width: 25%;
+}
+.emojiDate {
+  width: 25%;
+}
+.addedBy {
+  width: 25%;
+}
+
+.addedBy img {
+  height: 24px;
+  width: 24px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.emojiDelete {
+  width: 10%;
+}
+
+.emojiDelete svg {
+  cursor: pointer;
+  height: 20px;
+  fill: #6a6a6a;
+  transition: all 0.2s;
+}
+
+.emojiDelete svg:hover {
+  fill: #e01e5a;
 }
 
 .modal {
@@ -241,17 +407,17 @@
   cursor: pointer;
   font-size: 30px;
   color: rgba(29, 28, 29, 0.7);
-  font-weight: 300;
+  font-weight: 400;
   z-index: 10;
   /* padding: 8px; */
   transition: all 0.2s;
 }
 
 .modal .close:hover {
-  /* background-color: #616061; */
+  color: #616061;
 }
 
-.picker {
+.emojis .picker {
   z-index: 1.8;
   position: absolute;
   bottom: 61%;
@@ -288,14 +454,17 @@
 
 .list ol {
   padding-left: 0;
+  list-style: none;
 }
 
 .list li {
   margin-top: 20px;
+  /* border-bottom: .1px solid #6a6a6a; */
 }
 
 .list li *:not(:first-child) {
   margin-left: 16px;
+  margin-right: 16px;
 }
 
 .list .title {
@@ -398,6 +567,8 @@
   width: 50px;
   height: 36px;
   min-width: 80px;
+  border-radius: 4px;
+  transition: all 0.2s;
 }
 
 .footer button:first-child {
@@ -407,9 +578,17 @@
   background: transparent;
 }
 
+.footer button:first-child:hover {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 8%);
+}
+
 .footer button:last-child {
   transition: all 80ms linear;
   background: #007a5a;
   color: #fff;
   font-weight: 900;
+}
+
+.footer button:last-child:hover {
+  box-shadow: 0 1px 4px rgb(0 0 0 / 30%);
 }
