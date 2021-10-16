@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react'
 // import { useState, useEffect } from "react"
 import { Col, Row } from 'react-bootstrap'
@@ -15,6 +16,7 @@ import { GetUserInfo } from "@zuri/utilities"
 import axios from 'axios'
 import { Helmet } from 'react-helmet'
 import Header from '../../components/Header'
+
 
 const MarketPlace = () => {
   // const [userDetails, setUserDetails] = useState(null)
@@ -113,7 +115,7 @@ const MarketPlace = () => {
               <h1>Your number one plugin hub created for better experience</h1>
               <p className="p-0">
                 Integrate your favorite plugins and get more exciting experience
-                from the Zuri app. Collaborate, work smarter and better.{' '}
+                from the Zuri app. Collaborate, work smarter and better.{" "}
               </p>
               <div className="d-flex align-items-center">
                 <div className={styles.marketplaceSearchBar}>
