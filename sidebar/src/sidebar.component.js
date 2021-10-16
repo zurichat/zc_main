@@ -77,7 +77,7 @@ const Sidebar = props => {
           <Category name="channels" state={props.state} />
           <Category name="direct messages" state={props.state} />
           {/* button for inviting users to workspace */}
-          <Invite state={props.state} />
+          <Invite state={props.state} dispatch={props.dispatch} />
         </Fragment>
       </div>
     </div>
