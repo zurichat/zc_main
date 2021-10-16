@@ -69,9 +69,9 @@ const TopBarSearchModal = () => {
     }
     getData()
   }, [exactPlugin?.name, user._id])
-
+  
   const FilterList =
-    filters === {}
+    (filters === {}|| !filters)
       ? []
       : Object.keys(filters).map((item, i) => (
           <li key={i} className={styles.List}>
