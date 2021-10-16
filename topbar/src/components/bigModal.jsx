@@ -5,16 +5,14 @@ import cancel from "../assets/images/cancel.svg"
 import SearchValue from "./searchValueComponent"
 import Styled from "styled-components"
 import noImg from "../assets/images/avatar_vct.svg"
-// import SearchModalResult from "./ModalAutoCompleteResult"
+import SearchModalResult from "./ModalAutoCompleteResult"
 import { NoResult } from "./SearchNotFound"
 import { plugins } from "../utils/topbarApi"
 import { ProfileContext } from "../context/ProfileModal"
 
-export const BigModal = ({ onClose, inputValue, filter }) => {
-  const [result, setResult] = useState([])
-  const [isLoading, setLoading] = useState(false)
-
-  const { user } = useContext(ProfileContext)
+export const BigModal = ({ onClose, inputValue, result, isLoadingUp }) => {
+  const [results, setResult] = useState(result)
+  const [isLoading, setLoading] = useState(isLoadingUp)
 
   const pluginName = window.location.href
   const newName = pluginName.split("/")
@@ -24,29 +22,12 @@ export const BigModal = ({ onClose, inputValue, filter }) => {
   )
 
   useEffect(() => {
-    setLoading(true)
-    setLoading(true)
-    const getResult = async () => {
-      try {
-        let response = await exactPlugin.apiCall(
-          user.org_id,
-          user._id,
-          inputValue,
-          filter
-        )
-        if (response.status >= 200 || response.status <= 299) {
-          setResult(response.data.results.data)
-          setLoading(false)
-        }
-        setLoading(false)
-      } catch (e) {
-        console.error(e)
-        setLoading(false)
-      }
-    }
-    getResult()
-  }, [result[0]])
-  // console.log(result)
+    setResult(result)
+  }, [result])
+
+  useEffect(() => {
+    setLoading(isLoadingUp)
+  }, [isLoadingUp])
   let i = 0
 
   const sidebar = document.getElementById(
@@ -76,22 +57,20 @@ export const BigModal = ({ onClose, inputValue, filter }) => {
     border-bottom: 2px solid #00b87c;
   `
 
-  let card = result.map((item, i) => (
+  let card = results.map((item, i) => (
     <div key={i} className={styles.resultCard}>
       <SearchValue
-        destination_Url={item.destination_url}
+        destination_Url={item?.destination_url}
         src={noImg}
-        title={item.title}
+        title={item?.title}
         onClose={onClose}
-        content={item.content}
-        created_at={item.created_at}
+        content={item?.content}
+        created_at={item?.created_at}
         plugin_name={exactPlugin.name}
       />
     </div>
   ))
-  const element = isLoading ? (
-    <p>loading...</p>
-  ) : (
+  const element = (
     <SearchContainer className="bigModal">
     <div className={styles.Header}>
        <p className={styles.header_p}>{`Search result for "${inputValue}"`}</p>
@@ -112,8 +91,22 @@ export const BigModal = ({ onClose, inputValue, filter }) => {
             Looking for something? If it happened in zuri-chat,
             <br /> you can find it in search.
           </p>
-          <button className={styles.startNewSearch}>Start A New Search</button>
+          <button className={styles.startNewSearch}>
+            Please Start A New Search
+          </button>
         </div>
+      ) : isLoading ? (
+        <p
+          style={{
+            position: "absolute",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            top: `${top}`
+          }}
+        >
+          loading...
+        </p>
       ) : (
         card
       )}

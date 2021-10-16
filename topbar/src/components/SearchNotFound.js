@@ -1,9 +1,9 @@
-import React from "react"
-import style from "../styles/SearchNotFound.module.css"
-import emoji from "../assets/images/thinking.png"
-// import startNewSearch from "../topbar/src/components/StartNewSearchButton.jsx"
+import React from 'react';
+import style from '../styles/SearchNotFound.module.css';
+import emoji from '../assets/images/thinking.png';
+import StartNewSearch from './StartNewSearchButton.js';
 
-export const NoResult = () => {
+export const NoResult = ({ onClosed }) => {
   return (
     <div className={style.main}>
       <div className={style.container}>
@@ -17,7 +17,6 @@ export const NoResult = () => {
                 typos, or adjusting your filters.
                 <a> Learn how to search in Slack</a>
               </div>
-              <startNewSearch />
             </div>
             <span className={style.feedback}>
               <span className={style.feedback__text}>
@@ -25,6 +24,7 @@ export const NoResult = () => {
               </span>
               <button className={style.feedback__link}>Give feedback</button>
             </span>
+            <StartNewSearch onClear={() => onClosed()} />
           </div>
         </div>
 
@@ -38,6 +38,7 @@ export const NoResult = () => {
           <div className={style.mobile__text}>
             No message results found for "your search"
           </div>
+          <StartNewSearch onClear={() => onClosed()} />
         </div>
       </div>
     </div>
