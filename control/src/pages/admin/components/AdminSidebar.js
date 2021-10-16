@@ -118,7 +118,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/admin/settings/accountsProfile"
+            to="/settings"
           >
             <FiUser className={styles.icon} />
             Account & Profile
