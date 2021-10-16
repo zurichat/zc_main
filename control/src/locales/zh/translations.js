@@ -318,7 +318,8 @@ export const TRANSLATIONS_ZH = {
         }
       }
     },
-  login:{
+ auth: {
+    login:{
     title: "登录 - Zuri 聊天",
     form: {
       header: "登录",
@@ -343,70 +344,110 @@ export const TRANSLATIONS_ZH = {
       legacyPolicy: "法律政策",
       aboutZuri: "关于 Zuri Chat"
     }
-  },
-  signup: {
-    title: "报名",
-    form: {
-      header: "创建账户",
-      googleHeader: "使用谷歌注册",
-      topLineText: "或者",
-      submitButtonName: "注册",
-      bottomLine: "已经有账户？",
-      bottomLink: "登录",
-      input: {
-        fullName: "全名",
-        fullNamePlaceholder: "输入你的名字",
+    },
+    signup: {
+      title: "报名",
+      form: {
+        header: "创建账户",
+        googleHeader: "使用谷歌注册",
+        topLineText: "或者",
+        submitButtonName: "注册",
+        bottomLine: "已经有账户？",
+        bottomLink: "登录",
+        input: {
+          fullName: "全名",
+          fullNamePlaceholder: "输入你的名字",
+          emailAddress: "电子邮件地址",
+          emailAddressPlaceholder: "输入您的电子邮件地址",
+          password: "密码",
+          passwordPlaceholder: "输入密码",
+        }
+      },
+      privacyAgreement: "我同意 ZuriChat 的",
+      termsOfService: "服务条款",
+      privacy: "隐私"
+    },
+    passwordreset: {
+      title: "重设密码",
+      headline: "获取新密码",
+      post_headline: "输入您注册时使用的电子邮件地址，重置代码将发送到您的电子邮件。",
+      form:{
         emailAddress: "电子邮件地址",
-        emailAddressPlaceholder: "输入您的电子邮件地址",
-        password: "密码",
-        passwordPlaceholder: "输入密码",
+        continueButton: "继续"
       }
     },
-    privacyAgreement: "我同意 ZuriChat 的",
-    termsOfService: "服务条款",
-    privacy: "隐私"
-  },
-  passwordreset: {
-    title: "重设密码",
-    headline: "获取新密码",
-    post_headline: "输入您注册时使用的电子邮件地址，重置代码将发送到您的电子邮件。",
-    form:{
-      emailAddress: "电子邮件地址",
-      continueButton: "继续"
-    }
-  },
-  newPassword: {
-    header: "恢复密码",
-    post_headline: "为您的帐户创建一个新密码",
-    form: {
-      password: "密码",
-      passwordPlaceholder: "Enter your new password",
-      confirmPassword: "确认密码",
-      confirmPasswordPlaceholder: "确认您的新密码",
-      continueButton: "继续"
-    }
-  },
-  verifyCodeOnPasswordReset: {
-    header: "输入发送到您邮箱的重置代码",
-    success: {
-      headline: "重置码验证成功！",
-      post_headline: "点击按钮继续",
-      continueButton: "继续"
-    }
-  },
-  passwordResetSuccess: {
-    headline: "密码重置成功！",
-    post_headline: "您的密码重置成功！您现在可以继续登录",
-    button: "继续登录"
-  },
-  signout:{
-    title: "登出",
-    preOrgText: "退出团队",
-    workspace: "工作区",
-    signoutMessage: {
-      preOrgText: "您已退出团队"
+    newPassword: {
+      header: "恢复密码",
+      post_headline: "为您的帐户创建一个新密码",
+      form: {
+        password: "密码",
+        passwordPlaceholder: "Enter your new password",
+        confirmPassword: "确认密码",
+        confirmPasswordPlaceholder: "确认您的新密码",
+        continueButton: "继续"
+      }
     },
-    loginText: "登录",
-    postLoginText: "到另一个工作区"
-  }
+    verifyCodeOnPasswordReset: {
+      header: "输入发送到您邮箱的重置代码",
+      success: {
+        headline: "重置码验证成功！",
+        post_headline: "点击按钮继续",
+        continueButton: "继续"
+      }
+    },
+    passwordResetSuccess: {
+      headline: "密码重置成功！",
+      post_headline: "您的密码重置成功！您现在可以继续登录",
+      button: "继续登录"
+    },
+    signout:{
+      title: "登出",
+      preOrgText: "退出团队",
+      workspace: "工作区",
+      signoutMessage: {
+        preOrgText: "您已退出团队"
+      },
+      loginText: "登录",
+      postLoginText: "到另一个工作区"
+    },
+    onboardingHelp:{
+      title: "故障排除问题",
+      backToHome: "返回首页",
+      loginHelp:{
+        headline: "对登录 ZuriChat 的问题进行故障排除",
+        post_headline: "如果在登录您的帐户时遇到问题，以下内容可能对您有所帮助。",
+        list: {
+          textOne: "检查您是否使用正确的电子邮件地址和密码登录。如果您认为您的帐户可能已被盗用",
+          linkOne: "单击此处重置您的密码",
+          textTwo: "您使用的是最新版本的 ZuriChat 移动或桌面应用程序吗？请检查您的应用程序的当前版本。如果您不确定您使用的是哪个版本，请尝试",
+          linkTwo: "更新或下载应用程序",
+          textThree: "如果同样的问题仍然存在，请卸载该应用程序，清除手机缓存并重新安装。",
+          textFour: "如果您使用的是浏览器，则您可能使用了自动完成建议中的错误密码。我们建议您再次手动输入您的 ZuriChat 电子邮件地址和密码",
+          textFive: "如果上述所有方法均无效，请尝试使用新浏览器或尝试以隐身模式登录",
+          textSix: "你有我们的帐户吗？如果您没有这里的帐户，您将无法登录。去",
+          linkSix: "创建一个帐户"
+        }    
+      },
+      signUpHelp: {
+        headline: "无法创建帐户？",
+        post_headline: "好的，如果您在创建帐户时遇到问题，请尝试以下建议",
+        list: {
+          preTextOne: "确保您使用的是",
+          strongText: "合法的邮件地址",
+          postTextOne: "并检查您的电子邮件收件箱以获取身份验证代码",
+          textTwo: "使用其他设备或浏览器创建您的帐户。您也可以清除浏览器的缓存",
+          textThree: "检查您所在地区的网络。如果网络好，重新加载注册页面",
+          textFour: "如果您没有收到验证码，请等待 30 分钟，然后重试",
+          textFive: "如果您使用的是 ZuriChat 移动或桌面应用程序，请更新到最新版本，或者您可以",
+          linkFive: "在这里下载"
+        }
+      },
+      support: {
+        headline: "你还需要帮助吗？",
+        preLinkText: "如果您已经尝试了以上所有建议但都无济于事，请",
+        linkText: "联系 Zuri 客户服务",
+        postLinkText: "求助。"
+      }
+    }
+ }
 }
