@@ -1,6 +1,6 @@
 .container {
-  width: 70%;
-  margin-left: 20px;
+  width: 100%;
+  /* margin-left: 20px; */
   margin-top: 20px;
   height: 150%;
 }
@@ -23,8 +23,8 @@
 
 .selectbox {
   display: block;
-  width: 60%;
-  max-width: 60%;
+  width: 100%;
+  max-width: 100%;
   min-width: 60%;
   margin: 10px 0;
   padding: 10px;
@@ -49,7 +49,7 @@
 
 .note {
   font-family: Lato;
-  width: 60%;
+  width: 100%;
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
@@ -117,23 +117,23 @@
   color: var(--text-color-gray);
 }
 .optSelect {
-  width: 60%;
+  width: 100%;
 }
 @media screen and (max-width: 768px) {
-  .selectbox{
+  .selectbox {
     width: 100%;
     max-width: 100%;
   }
-  .optSelect{
+  .optSelect {
     width: 100%;
   }
-  .note{
+  .note {
     width: 95%;
   }
-  .optSelect{
+  .optSelect {
     margin-bottom: 10px;
   }
-  .auto{
+  .auto {
     padding-bottom: 0%;
   }
 }
