@@ -79,13 +79,14 @@ const LanguageAndRegion = () => {
    useEffect(()=> {
       if(sessionStorage.getItem(ssKey)){
         setLangreg(JSON.parse(sessionStorage.getItem(ssKey)))
+        setSelectedTimezone(JSON.parse(sessionStorage.getItem(ssKey)).time_zone)
       } else {
         sessionStorage.setItem(ssKey, JSON.stringify(user.settings.languages_and_regions))
       }
-   }, [])
+   },[])
   return (
-    <div className={standardStyles.modalContent}>
-      <div>
+    <div className={styles.container}>
+      <div className={standardStyles.modalContent}>
         <form>
           <div className={styles.section}>
             <label className={styles.subhead} htmlFor="language">
