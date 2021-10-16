@@ -53,8 +53,6 @@ const WorkSpaceIconTab = () => {
         setAlertToggle(true)
       })
       .catch(error => {
-        // eslint-disable-next-line no-console
-        console.log(error.message)
         setLoader({ ...loader, uploadLoader: false })
       })
     setLoader({ ...loader, uploadLoader: true })
@@ -74,8 +72,6 @@ const WorkSpaceIconTab = () => {
     authAxios
       .get(`https://api.zuri.chat/organizations/${organisation_id}`)
       .then(res => {
-        // eslint-disable-next-line no-console
-        console.log(res.data)
         setOrgData(res.data.data)
       })
       .catch(err => {
@@ -84,8 +80,6 @@ const WorkSpaceIconTab = () => {
   }, [])
 
   const handleLogoDelete = () => {
-    // eslint-disable-next-line no-console
-    console.log(updateLogo)
     setLoader({ ...loader, removeLoader: true })
     authAxios
       .patch(`/organizations/${organisation_id}/logo/delete`)
