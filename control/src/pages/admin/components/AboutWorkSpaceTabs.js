@@ -15,6 +15,8 @@ const AboutWorkSpaceTabs = ({ organizationDetails, currentWorkspace }) => {
   const [openTab, setOpenTab] = useState(false)
   const [active, setActive] = useState(1)
 
+  
+
   return (
     <CardProvider>
       <div className={styles.tabWrapper}>

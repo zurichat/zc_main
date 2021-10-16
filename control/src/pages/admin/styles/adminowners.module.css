@@ -6,7 +6,7 @@
 }
 
 .heading {
-  font-size: 0.8rem;
+  font-size: 15px;
 }
 .rolesearch {
   display: flex;
@@ -14,16 +14,27 @@
   align-items: center;
 }
 
+.select {
+  border: 1px solid black;
+  border-radius: 0.2rem;
+  padding: 0.4rem;
+}
 .search {
-  width: 40%;
+  width: 400px;
   border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.7rem;
-  border-radius: 0.6rem;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+}
+.searchIcon {
+  font-size: 15px;
 }
 
 .input {
-  width: 100%;
+  width: 60%;
+  outline: none;
+  border: none;
+  margin-left: 1rem;
 }
