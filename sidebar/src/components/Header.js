@@ -8,9 +8,9 @@ import ModalComponent from "./ModalComponent"
 
 const SidebarHeader = props => {
   //home modal
-  const [homeModal, toggleHomeModal] = useState(true)
+  const [homeModal, toggleHomeModal] = useState(false)
 
-  const [openModal, setOpenModal] = useState(true)
+  const [openModal, setOpenModal] = useState(false)
 
   //toggle
   const toggle = () => {
