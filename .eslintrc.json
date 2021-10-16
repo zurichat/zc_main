@@ -30,6 +30,7 @@
     "react/display-name": ["off"],
     "react/prop-types": [0, "off"],
     "react/no-unescaped-entities": ["off"],
+
     "no-console": ["error", { "allow": ["warn", "error"] }]
   },
   "settings": {
