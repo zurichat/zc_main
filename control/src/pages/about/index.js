@@ -38,22 +38,22 @@ const index = () => {
             ZuriChat {t("about.banner.description")}
           </p>
         </div>
-        <div className={`row pt-3`}>
-          <div className={`col-lg-4 ${styles.counter}`}>
+        <div className={`row flex align-items-center justify-content-center pt-3`}>
+          <div className={`col-lg-4 col-md-4 col-sm-4 ${styles.counter}`}>
             <h3>100k+</h3>
             <p>
               {t("about.counter.customers")} <br />
               {t("about.counter.customers_")} 
             </p>
           </div>
-          <div className={`col-lg-4 ${styles.counter}`}>
+          <div className={`col-lg-4 col-md-4 col-sm-4 ${styles.counter}`}>
             <h3>50</h3>
             <p>
               {t("about.counter.fortune_companies")} <br />
               {t("about.counter.fortune_companies_")} ZuriChat
             </p>
           </div>
-          <div className={`col-lg-4 ${styles.counter}`}>
+          <div className={`col-lg-4 col-md-4 col-sm-4 ${styles.counter}`}>
             <h3>50+</h3>
             <p>
               {t("about.counter.countries")} <br />
@@ -67,16 +67,16 @@ const index = () => {
       {/* Who we are and how to join us */}
       <div className={`container mb-5 ${styles.to_join}`}>
         <div className={`row pt-3`}>
-          <div className={`col-lg-6 ${styles.team}`}>
+          <div className={`col-lg-6  ${styles.team}`}>
             <img src={team} alt={"image of teams"} srcSet="" />
           </div>
-          <div className={`col-lg-6 ${styles.join_us}`}>
-            <h3>{t("about.whoWeAre.title")} <br /></h3>
-            <p>
+          <div className={`col-lg-6 text-start ${styles.join_us}`}>
+            <h3  className={`text-start ${styles.h3m}`}>{t("about.whoWeAre.title")} <br /></h3>
+            <p className="text-start">
               {t("about.whoWeAre.description")} <br />
             </p>
             <p>
-              <span className={styles.span}>ZuriChat</span> {t("about.whoWeAre.description_")}
+              <span className={`text-start ${styles.span}`}>ZuriChat</span> {t("about.whoWeAre.description_")}
             </p>
           </div>
         </div>
@@ -182,21 +182,16 @@ const index = () => {
       {/* whatever work you do, you can do it in zurichat  */}
       <div className={`container-fluid ${styles.zurichat}`}>
         <div className={`${styles.zurichat_section}`}>
-          <h3 className={`${styles.zurichat_h3}`}>
-           {t("about.cta.title")}
-          </h3>
-          <div className={`styles.button`}>
-            <Link to="/contact-us">
-              <button className={`btn ${styles.btn_sale} ${styles.btn}`}>
-                {t("about.cta.link_sales")}
-              </button>
-            </Link>
-            <Link to="/signup">
-              <button className={`btn ${styles.btn_free} ${styles.btn}`}>
-                 {t("about.cta.link_try")}
-              </button>
-            </Link>
+          <div className="signup-cta">
+            <h3 className = "text">
+            Zuri Chat is a modern world platform that makes communicating with your team or organization faster, easier and more fun.
+            Want to explore?
+            </h3>
+
+            <Link to = "/signup"><button className={` ${styles.btn_sale}`}>>GET STARTED</button></Link>
+
           </div>
+          
         </div>
       </div>
       <Footer />

@@ -7,6 +7,7 @@
   --text-color-normal: #333333;
   --text-color-gray: #3a3a3a;
   --text-color-gray-1: #242424;
+  --sidebar-text-color-: #999999;
 }
 
 [data-theme="dark"] {
@@ -16,6 +17,7 @@
   --text-color-normal: #999999;
   --text-color-gray: #cacaca;
   --text-color-gray-1: #f4f4f4;
+  --sidebar-text-color-: #cacaca;
 }
 
 [data-theme="light"] {
@@ -37,7 +39,7 @@
   overflow-y: scroll;
   /* position: relative; */
   margin-top: 0%;
-  height: 78vh !important; 
+  height: 100% !important; 
 }
 .toggle {
   display: none;
@@ -47,14 +49,12 @@
 }
 
 .notifications {
-  height: 100%;
-  width: 200%;
+  width: 100%;
 }
 /* THE SECTION OF THE CONTENT */
 .notifyContent {
   max-width: 95%;
   padding: 0 20px;
-  padding-bottom: 70px;
   display: block;
   margin-top: 24px;
   height: 100%;
@@ -91,7 +91,6 @@
   margin-left: 0px;
   margin-right: auto;
   border-style: none;
-  width: 640px;
   border-width: 1px;
 }
 
@@ -131,6 +130,7 @@
     width: 100%;
     position: fixed;
     z-index: 1000;
+    max-height: 70px;
   }
   .allPreferences {
     margin-top: 40px;
@@ -146,6 +146,7 @@
     padding: 5px;
     margin: 5px 15px;
     position: relative;
+    background: #fff;
   }
   .hrLine {
     display: flex;
@@ -174,7 +175,6 @@
   font-family: Lato;
   margin-top: -15px;
   margin-bottom: -20px;
-  accent-color: #00b87c;
 }
 .radio label {
   display: block;
@@ -190,6 +190,11 @@
   align-self: center;
 }
 
+.radioBox {
+  display: flex;
+  flex-direction: row;
+}
+
 input[type="radio"] {
   clear: none;
   margin: 4px 0 0 -1px;
@@ -197,7 +202,6 @@ input[type="radio"] {
 
 .check {
   margin-left: 4.5px;
-  accent-color: #00b87c;
 }
 
 .markbox {
@@ -274,7 +278,7 @@ input[type="radio"] {
   flex-direction: row;
   flex-wrap: wrap;
   list-style-type: none;
-  width: 97%;
+  width: 140%;
 }
 
 .selectButton {
@@ -306,9 +310,9 @@ input[type="radio"] {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 20px;
   margin-top: 24px;
 }
+
 .inputContainer label {
   position: absolute;
   pointer-events: none;
@@ -591,5 +595,26 @@ input[type="radio"] {
     display: flex;
     flex-direction: column;
     margin: 0px;
+  }
+}
+@media screen and (max-width: 768px){
+  .textInput {
+    width: 100%;
+    margin: 10px 0px;
+    align-items: center;
+    text-align: center;
+  }
+  .selectButton{
+    width: 100%;
+    margin: 10px 0px;
+  }
+  .list{
+    width: 100%;
+  }
+  .titleLarge{
+    margin-left: 0;
+  }
+  .textInput label{
+    padding: 10px;
   }
 }
