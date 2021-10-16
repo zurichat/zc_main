@@ -31,7 +31,7 @@ const SearchValue = ({
 }) => {
   const redirect = () => {
     if (!destination_Url) {
-      return
+      onClose()
     }
     // console.log('hi')
     singleSpa.navigateToUrl(destination_Url)
