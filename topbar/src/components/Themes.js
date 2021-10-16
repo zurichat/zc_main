@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import styles from "../styles/Themes.module.css"
 import theme16 from "../assets/images/theme16.png"
 import theme17 from "../assets/images/theme17.png"
+import themeColors from "../../../theming/themecolors"
 
 const Themes = () => {
   const [active1, setActive1] = useState(0)
@@ -22,6 +23,8 @@ const Themes = () => {
     PrefMenu.setAttribute("data-theme", "dark")
     const PrefMainBox= document.getElementById("preferences-main-box")
     PrefMainBox.setAttribute("data-theme", "dark")
+    const MarketPlaceBox= document.getElementsByClassName("market-place-custom-div")
+    MarketPlaceBox.setAttribute("data-theme", "dark")
   }
   const toggleLightMode = () => {
     localStorage.setItem("mode", "light")
@@ -35,7 +38,25 @@ const Themes = () => {
     PrefMenu.setAttribute("data-theme", "light")
     const PrefMainBox= document.getElementById("preferences-main-box")
     PrefMainBox.setAttribute("data-theme", "light")
+    const MarketPlaceBox= document.getElementsByClassName("market-place-custom-div")
+    MarketPlaceBox.setAttribute("data-theme", "dark")
   }
+
+  const handleThemeToggle = (theme) => {
+    localStorage.removeItem("theme")
+    localStorage.setItem("theme", theme)
+    const sideBar =document.getElementById("single-spa-application:@zuri/sidebar")
+    sideBar.style.backgroundColor = themeColors[theme].primary
+    const topBar = document.getElementById("single-spa-application:@zuri/topbar")
+    topBar.style.backgroundColor = themeColors[theme].primary
+    // const sideBarHeader = document.getElementsByClassName("sidebar-header-div")
+    // sideBarHeader[0].style.backgroundColor = themeColors[theme].secondary
+  }
+
+  // useEffect(() => {
+  //   const themeLocal = localStorage.getItem("mode") && localStorage.getItem("mode") || "light"
+  //   setMode(themeLocal)
+  // }, [mode])
 
   // useEffect(() => {
   //   if (mode === "dark") {
@@ -171,7 +192,7 @@ const Themes = () => {
         <div className={styles.true}>Tried and true</div>
       </div>
       <div className={styles.set1}>
-        <div className={styles.activeAsh}>
+        <div className={styles.activeAsh} onClick={handleThemeToggle.bind(this, "activeAsh")}>
           <div className={styles.largeRec}>
             <div className={styles.large}></div>
           </div>
@@ -197,8 +218,9 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent}>
-            <div className={styles.radio8}>
+            <div className={styles.radio8} >
               <input
+                name="theme"
                 type="radio"
                 value="activeAsh"
                 checked={active1 === 2}
@@ -210,7 +232,7 @@ const Themes = () => {
             <div className={styles.ash}>Active Ash</div>
           </div>
         </div>
-        <div className={styles.activeAsh2}>
+        <div className={styles.activeAsh2} onClick={handleThemeToggle.bind(this, "peakyPurple")}>
           <div className={styles.largeRec2}>
             <div className={styles.large}></div>
           </div>
@@ -238,6 +260,7 @@ const Themes = () => {
           <div className={styles.lowContent2}>
             <div className={styles.radio9}>
               <input
+                name="theme"
                 type="radio"
                 value="activeAsh"
                 checked={active1 === 3}
@@ -282,8 +305,9 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent3}>
-            <div className={styles.radio10}>
+            <div className={styles.radio10} onClick={handleThemeToggle.bind(this, "leafyGreen")}>
               <input
+                name="theme"
                 type="radio"
                 value="activeAsh"
                 checked={active1 === 4}
@@ -321,8 +345,9 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent4}>
-            <div className={styles.radio11}>
+            <div className={styles.radio11} onClick={handleThemeToggle.bind(this, "darkAsh")}>
               <input
+                name="theme"
                 type="radio"
                 value="activeAsh"
                 checked={active1 === 5}
@@ -362,8 +387,9 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent5}>
-            <div className={styles.radio12}>
+            <div className={styles.radio12} onClick={handleThemeToggle.bind(this, "oceanBlue")}>
               <input
+                name="theme"
                 type="radio"
                 value="activeAsh"
                 checked={active1 === 6}
@@ -401,8 +427,9 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent6}>
-            <div className={styles.radio13}>
+            <div className={styles.radio13} onClick={handleThemeToggle.bind(this, "roseRed")}>
               <input
+                name="theme"
                 type="radio"
                 value="activeAsh"
                 checked={active1 === 7}
@@ -442,8 +469,9 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent7}>
-            <div className={styles.radio14}>
+            <div className={styles.radio14} onClick={handleThemeToggle.bind(this, "goldenMelon")}>
               <input
+                name="theme"
                 type="radio"
                 value="activeAsh"
                 checked={active1 === 8}
@@ -481,8 +509,9 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent8}>
-            <div className={styles.radio15}>
+            <div className={styles.radio15} onClick={handleThemeToggle.bind(this, "canary")}>
               <input
+                name="theme"
                 type="radio"
                 value="activeAsh"
                 checked={active1 === 9}
