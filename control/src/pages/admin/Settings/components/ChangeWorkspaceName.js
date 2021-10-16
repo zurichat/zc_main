@@ -51,7 +51,8 @@ const ChangeWorkspaceName = () => {
           .then(res => {
             // Clears User Extracted Details from LS during Registraion
             
-            
+           const data = res.data.data
+          
             // setOrgId(res.data.data.organization_id)
     
             // Automatic Org Name Renaming From Default to new Org Name
