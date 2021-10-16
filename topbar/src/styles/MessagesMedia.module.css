@@ -1,12 +1,10 @@
 .msgCon {
-  margin-top: 54px;
-  margin-bottom: 54px;
-  margin-left: 50px;
-  width: 80%;
+  margin: 20px;
+  max-width: 100%;
   line-height: 30px;
 }
 
-p{
+p {
   line-height: 30px;
 }
 
@@ -15,9 +13,11 @@ p{
   font-size: 15px;
   line-height: 20px;
   font-style: normal;
-  color: #242424;
+  color: var(--text-color-gray-1);
 }
-
+.radioContainer {
+  display: flex;
+}
 .clean {
   display: flex;
   margin-top: 8px;
@@ -27,7 +27,7 @@ p{
 .cln {
   margin-left: 10px;
   font-size: 13px;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
   font-style: normal;
 }
 
@@ -37,14 +37,14 @@ p{
   font-weight: normal;
   font-style: normal;
   line-height: 15px;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
 }
 
-.radio {
+/* .radio {
 }
 
 .radio2 {
-}
+} */
 
 .compact {
   display: flex;
@@ -58,7 +58,7 @@ p{
   font-style: normal;
   font-weight: normal;
   margin-top: 6px;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
 }
 
 .theme11 {
@@ -78,7 +78,7 @@ p{
   font-size: 15px;
   font-style: normal;
   line-height: 20px;
-  color: #242424;
+  color: var(--text-color-gray-1);
 }
 
 .full {
@@ -91,7 +91,7 @@ p{
 .display {
   margin-left: 10px;
   font-size: 13px;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
   font-weight: normal;
   font-style: normal;
 }
@@ -99,13 +99,13 @@ p{
 .jst {
   margin-left: 10px;
   font-size: 13px;
-  color: #3a3a3a;
+  color: var(--text-color-gray);
   font-weight: normal;
   font-style: normal;
 }
 
-.radio3 {
-}
+/* .radio3 {
+} */
 
 .radio4 {
   margin-left: 1px;
@@ -129,13 +129,13 @@ p{
   line-height: 20px;
   font-weight: normal;
   font-style: normal;
-  color: #999999;
+  color: var(--text-color-normal);
 }
 
 .change span {
   color: #00b87c;
   margin-top: -20px;
-   margin-left: 3px; 
+  margin-left: 3px;
   font-weight: normal;
   font-size: 13px;
 }
@@ -157,7 +157,7 @@ p{
 .current {
   margin-left: -10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   font-weight: normal;
   font-style: normal;
 }
@@ -171,7 +171,7 @@ p{
 .hour {
   margin-left: -10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   font-weight: normal;
   font-style: normal;
 }
@@ -185,7 +185,7 @@ p{
 .color {
   margin-left: -10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   font-weight: normal;
   font-style: normal;
 }
@@ -195,18 +195,25 @@ p{
   font-size: 13px;
   line-height: 20px;
   font-style: normal;
-  color: #333333;
+  color: var(--text-color-normal);
 }
 
-.checkbox {
+.emojiBox {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(153, 153, 153, 0.5);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  cursor: pointer;
+  outline: none;
 }
-
-.checkbox2 {
+.emojiBox:focus {
+  border: 2px solid rgba(0, 184, 124, 0.5);
+  outline: none;
 }
-
-.checkbox3 {
-}
-
 .bottom3 {
   margin-top: 20px;
   margin-bottom: 25px;
@@ -219,13 +226,13 @@ p{
   font-size: 15px;
   line-height: 20px;
   font-style: normal;
-  color: #333333;
+  color: var(--text-color-gray-1);
 }
 
 .tone {
   margin-top: 10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   line-height: 20px;
   font-weight: normal;
   font-style: normal;
@@ -234,7 +241,7 @@ p{
 .choose {
   margin-top: 15px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   line-height: 30px;
   font-weight: normal;
   font-style: normal;
@@ -242,7 +249,7 @@ p{
 
 .choose2 {
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   line-height: 30px;
   font-weight: normal;
   font-style: normal;
@@ -252,7 +259,7 @@ p{
   display: flex;
   margin-top: 16px;
 }
-
+/* 
 .theme13 {
   display: flex;
   align-items: center;
@@ -315,7 +322,7 @@ p{
   cursor: pointer;
   margin-left: 19px;
   cursor: pointer;
-}
+} */
 
 .plntxt {
   display: flex;
@@ -326,7 +333,7 @@ p{
 .plain {
   margin-left: -10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   font-weight: normal;
   font-style: normal;
 }
@@ -340,21 +347,21 @@ p{
 .jumbomoji {
   margin-left: -10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   font-weight: normal;
   font-style: normal;
 }
 
-.checkbox4 {
+/* .checkbox4 {
 }
 
 .checkbox5 {
-}
+} */
 
 .versions {
   margin-top: 10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   line-height: 30px;
   font-weight: normal;
   font-style: normal;
@@ -363,7 +370,7 @@ p{
 .example {
   margin-top: 10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-gray-1);
   line-height: 20px;
   font-weight: normal;
   font-style: normal;
@@ -386,7 +393,7 @@ p{
   font-size: 15px;
   line-height: 20px;
   font-style: normal;
-  color: #333333;
+  color: var(--text-color-normal);
 }
 
 .images {
@@ -398,7 +405,7 @@ p{
 .files {
   margin-left: -10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   font-weight: normal;
   font-style: normal;
 }
@@ -412,7 +419,7 @@ p{
 .linked {
   margin-left: -10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   font-weight: normal;
   font-style: normal;
 }
@@ -434,7 +441,7 @@ p{
 .than {
   margin-left: -10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   font-weight: normal;
   font-style: normal;
 }
@@ -452,7 +459,7 @@ p{
 .of {
   margin-left: -10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   font-weight: normal;
   font-style: normal;
 }
@@ -474,13 +481,13 @@ p{
   font-size: 15px;
   line-height: 20px;
   font-style: normal;
-  color: #333333;
+  color: var(--text-color-normal);
 }
 
 .upload {
   margin-top: 10px;
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   line-height: 30px;
   font-weight: normal;
   font-style: normal;
@@ -488,7 +495,7 @@ p{
 
 .upload2 {
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   line-height: 30px;
   font-weight: normal;
   font-style: normal;
@@ -496,7 +503,7 @@ p{
 
 .upload3 {
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color-normal);
   line-height: 30px;
   font-weight: normal;
   font-style: normal;

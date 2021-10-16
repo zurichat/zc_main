@@ -1,14 +1,17 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { Container, Form, Card } from "react-bootstrap"
+// import { Container, Form, Card } from "react-bootstrap"
 import styles from "./styles/InviteRequest.module.css"
 import { Helmet } from "react-helmet"
-import CommentBox from "../../utils/MessageInput/MessageInputField"
+import MessageInputBox from "../../../../zuriUi/src/components/message_input/MessageInputField"
+
+// import CommentBox from "../../../../zuriUi/src/components/InputBox/Input"
 
 function Inviterequest() {
   return (
-    <div style={{ paddingTop: "80px" }}>
-      <CommentBox />{" "}
+    <div style={{ paddingTop: "450px" }}>
+      {/* <MessageInputBox /> */}
+      {/* <CommentBox /> */}
     </div>
     // <div>
     //   <Helmet>

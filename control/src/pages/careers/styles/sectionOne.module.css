@@ -1,39 +1,80 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
 
-* {
-  font-family: 'Lato', sans-serif;
-  margin: 0;
-  padding: 0;
-}
 button:hover {
   cursor: pointer;
 }
+
 .Section1 {
-  margin-top: 1rem;
-  padding: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 0.5rem;
-  margin-bottom: 4rem;
+  margin: 10rem auto 4rem;
+  padding: 2rem 1rem;
+  min-height: 60vh;
+  max-width: 1390px;
+  width: 95%;
 }
+
 .Section1 img {
-  padding-top: 4rem;
   width: 100%;
 }
-.section1Left {
-  width: 60%;
-  margin-top: 15%;
-  padding: 3rem;
+
+div.section1_content {
+  display: grid;
+  grid-template-columns: 450px 50%;
+  justify-content: space-between;
+  grid-gap: 1rem;
 }
+
+.section1_content .group_images {
+  display: grid;
+  grid-template-columns: repeat(2, 45.69%);
+  grid-template-rows: repeat(15, 1.5625rem);
+  grid-gap: 1rem;
+}
+
+.section1_content .group_images img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.person1 {
+  grid-row: 1 / 6;
+}
+
+.person2 {
+  grid-row: 1 / 8;
+}
+
+.person3 {
+  grid-column: 1 / 2;
+  grid-row: 6 / 16;
+}
+
+.person4 {
+  grid-row: 8 / 16;
+}
+
+section.section1Left {
+  padding: 0 0 3rem;
+  margin: 0.5rem 0 0;
+}
+
+.section1_info {
+  max-width: 450px;
+  width: 100%;
+}
+
 .section1Left h1 {
-  font-size: 40px;
+  font-size: 3rem;
+  line-height: 3.9rem;
+  font-weight: 800;
   margin: 0;
 }
+
 .section1Left p {
-  font-size: 24px;
-  line-height: 1.5;
+  font-size: 1.875rem;
+  line-height: 2.4375rem;
+  font-weight: 400;
   padding: 1rem 0 1rem 0;
 }
+
 .section1Left .JoinBtn {
   display: block;
   margin: auto;
@@ -43,92 +84,99 @@ button:hover {
   color: white;
   background-color: #00b87c;
   border: none;
+  float: left;
 }
-/* 
-@media screen and (max-width: 1024px) {
-  .Section1 {
-    grid-gap: 10px;
-    margin-bottom: 1rem;
+
+@media only screen and (max-width: 989px) {
+  div.section1_content {
+    grid-template-columns: 1fr;
   }
-  .Section1 img {
-    margin-top: 5rem;
+
+  .section1_info {
+    margin: 0 auto;
   }
+
+  .section1Left {
+    text-align: center;
+  }
+
+  .section1Left h1 {
+    font-size: 2.55rem;
+    line-height: 3.51rem;
+  }
+
   .section1Left p {
-    font-size: 22px;
-    line-height: 1.5;
+    font-size: 1.594rem;
+    line-height: 2.194rem;
   }
-  .section1Left .JoinBtn {
-    font-size: 22px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .Section1 {
-    grid-template-columns: auto;
-    padding: 50px;
-    display: block;
+
+  .section1_btn {
+    display: flex;
     justify-content: center;
   }
-  .Section1 img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -2rem;
-    width: 90%;
-    height: 80%;
-  }
 
-  .section1Left .JoinBtn {
-    padding: 18px 70px 18px 70px;
-    font-size: 15px;
-    font-weight: 400;
-    border-radius: 3px;
-    width: 100%;
-    text-align: center;
+  .section1_content .group_images {
+    justify-content: center;
   }
+}
 
-  .section1Left {
-    padding: 70px 40px 20px 40px;
-  }
-} */
-
-@media screen and (max-width: 500px) {
-  .Section1 {
+@media screen and (max-width: 600px) {
+  section.Section1 {
     grid-template-columns: 1fr;
+    margin-top: 6rem;
     margin-bottom: 2rem;
+    padding: 0 1.1rem 2rem;
+    min-height: 70vh;
   }
-  .section1Left {
+
+  section.section1Left {
     text-align: center;
-    padding: 1rem;
-    margin: auto;
-    margin-top: 1rem;
-    padding: 1rem 1.5rem;
-    width: 100%;
+    padding: 1rem 0;
+    margin: 1rem auto 0;
   }
+
   .section1Left h1 {
-    text-align: start;
     font-size: 30px;
-    padding-bottom: 0.5rem;
   }
+
   .section1Left p {
-    text-align: start;
     font-size: 20px;
     line-height: 1.5;
-    width: 90%;
+    margin-block-end: 0;
   }
+
   .section1Left .JoinBtn {
     display: block;
-    margin: auto;
-    margin-top: 1rem;
     font-size: 18px;
     border-radius: 3px;
-    /* width: 80%; */
+    width: 100%;
     text-align: center;
   }
 
-  .Section1 img {
-    padding-top: 1.5rem;
-    display: block;
-    margin: auto;
-    margin-top: 1rem;
+  .section1_content .group_images {
+    grid-template-rows: repeat(7, 1.5625rem);
+    grid-gap: 0.6rem;
+  }  
+
+  .person1 {
+    grid-row: 1 / 3;
+  }
+
+  .person2 {
+    grid-row: 1 / 4;
+  }
+
+  .person3 {
+    grid-row: 3 / 8;
+  }
+
+  .person4 {
+    grid-row: 4 / 8;
+  }
+
+  .section1_content .JoinBtn {
+    font-size: 0.75rem;
+    line-height: 0.975rem;
+    padding: 0.625rem 0.875rem;
   }
 }
