@@ -215,6 +215,14 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
+            to="/admin/settings/deprecation"
+          >
+            <FiScissors className={styles.icon} />
+            Deprecation
+          </Link>
+          <Link
+            onClick={() => setModal(!openModal)}
+            className={styles.sidebarLink}
             to="/"
           >
             <FiCheckSquare className={styles.icon} />
