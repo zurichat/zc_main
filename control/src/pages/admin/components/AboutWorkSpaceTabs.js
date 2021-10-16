@@ -11,7 +11,11 @@ import OverviewWorkspace from "../components/OverviewWorkspace"
 import { FiMenu } from "react-icons/fi"
 import { CardProvider } from "../../../context/CardContext"
 
-const AboutWorkSpaceTabs = ({ organizationDetails, currentWorkspace }) => {
+const AboutWorkSpaceTabs = ({
+  organizationDetails,
+  currentWorkspace,
+  admins
+}) => {
   const [openTab, setOpenTab] = useState(false)
   const [active, setActive] = useState(1)
 
@@ -67,6 +71,7 @@ const AboutWorkSpaceTabs = ({ organizationDetails, currentWorkspace }) => {
               setActive={setActive}
               setOpenTab={setOpenTab}
               openTab={openTab}
+              admins={admins}
             />
           )}
           {active === 3 && (
