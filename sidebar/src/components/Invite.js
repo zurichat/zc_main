@@ -1,15 +1,17 @@
 import React, { useState } from "react"
 import styles from "../styles/Sidebar.module.css"
 import addIcon from "../assets/icons/add-icon.svg"
+import { ACTIONS } from "../App"
 import { AiOutlinePlus } from "react-icons/ai"
 
 export default function Invite(props) {
-  //for invite
-  const [openInvite, setOpenInvite] = useState(false)
-
   //Invite modal
-  const openInviteModal = () => setOpenInvite(true)
-  const closeInviteModal = () => setOpenInvite(false)
+  const openInviteModal = () => {
+    props.dispatch({
+      type: ACTIONS.INVITE_MODAL_TYPE,
+      payload: "show-invite-modal"
+    })
+  }
 
   return (
     <div className={`row mt-2 ${styles.sb__item}`}>
