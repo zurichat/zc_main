@@ -374,5 +374,16 @@ export const TRANSLATIONS_ZH = {
       emailAddress: "电子邮件地址",
       continueButton: "继续"
     }
+  },
+  newPassword: {
+    header: "恢复密码",
+    post_headline: "为您的帐户创建一个新密码",
+    form: {
+      password: "密码",
+      passwordPlaceholder: "Enter your new password",
+      confirmPassword: "确认密码",
+      confirmPasswordPlaceholder: "确认您的新密码",
+      continueButton: "继续"
+    }
   }
 }

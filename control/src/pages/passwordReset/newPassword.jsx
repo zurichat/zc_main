@@ -7,6 +7,8 @@ import styles from '../../component-styles/ResetPassword.module.css'
 import axios from 'axios'
 import Button from '../../components/Button'
 import PasswordSuccesful from './passwordSuccesful'
+import "../../i18n";
+import { useTranslation} from "react-i18next";
 
 const NewPassword = () => {
   function useQuery() {
@@ -45,6 +47,7 @@ const NewPassword = () => {
   }
 
 
+  const { t } = useTranslation();
   return (
     <main id={styles.authPageWrapper}>
       {showDialog && <PasswordSuccesful/>}
@@ -56,9 +59,9 @@ const NewPassword = () => {
         </div>
         {/* header text  */}
         <div className={``}>
-          <h4 className={styles.headerText}>Recover Password</h4>
+          <h4 className={styles.headerText}>{t("newPassword.headline")}</h4>
           <p>
-            Create a new password for your account
+           {t("newPassword.post_headline")}
           </p>
         </div>
         {/* form section  */}
@@ -66,9 +69,9 @@ const NewPassword = () => {
           <AuthInputBox
             className={`${styles.inputElement}`}
             id="password"
-            name="Password"
+            name={t("newPassword.form.password")}
             type="password"
-            placeholder="Enter your new password"
+            placeholder={t("newPassword.form.passwordPlaceholder")}
             value={password}
             setValue={setPassword}
             // error={error}
@@ -77,9 +80,9 @@ const NewPassword = () => {
             <AuthInputBox
             className={`${styles.inputElement}`}
             id="confirm_password"
-            name="confirm Password"
+            name={t("newPassword.form.confirmPassword")}
             type="password"
-            placeholder="confirm your new password"
+            placeholder={t("newPassword.form.confirmPasswordPlaceholder")}
             value={ confirm_password}
             setValue={setcPassword}
             // error={error}
@@ -89,7 +92,7 @@ const NewPassword = () => {
           </div> */}
 
           <Button className={styles.button} onClick={ handleSubmit}  >
-            Continue
+            {t("newPassword.form.continueButton")}
           </Button>
         </form>
       </section>

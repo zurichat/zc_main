@@ -378,5 +378,16 @@ export const TRANSLATIONS_FR = {
       emailAddress: "Adresse e-mail",
       continueButton: "Continuer"
     }
+  },
+  newPassword: {
+    header: "Récupérer mot de passe",
+    post_headline: "Créez un nouveau mot de passe pour votre compte",
+    form: {
+      password: "Mot de passe",
+      passwordPlaceholder: "Entrez votre nouveau mot de passe",
+      confirmPassword: "Confirmez le mot de passe",
+      confirmPasswordPlaceholder: "Confirmez votre nouveau mot de passe",
+      continueButton: "Continuer"
+    }
   }
 }
