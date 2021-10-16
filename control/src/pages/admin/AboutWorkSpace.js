@@ -9,7 +9,6 @@ const AboutWorkSpace = () => {
   const [orgDetails, setOrgdetails] = useState({})
   const [items, setItems] = useState(null)
   const currentWorkspace = localStorage.getItem("currentWorkspace")
-  const [filtered, setFiltered] = useState(null)
 
   if (!currentWorkspace) {
     return null
@@ -40,22 +39,14 @@ const AboutWorkSpace = () => {
         return null
       }
 
-      const users = response.data.data
+      const users = response.data.data.filter(function (item) {
+        return item.role === "owner" || item.role === "admin"
+      })
 
       setItems(users)
-
-      //eslint-disable-next-line
-      console.log(users)
     } catch (error) {
       if (error) throw error
     }
-  }
-
-  const filterOwner = () => {
-    const filter = items.filter(function (item) {
-      return item.role === "owner" || item.role === "member"
-    })
-    setFiltered(filter)
   }
 
   useEffect(() => {
@@ -70,16 +61,12 @@ const AboutWorkSpace = () => {
         <div className={styles.contentWrapper}>
           <h5 className={styles.contentHeading}>
             {" "}
-            <FiAlertOctagon
-              className={styles.icon}
-              onClick={filterOwner}
-            />{" "}
-            About This Workspace
+            <FiAlertOctagon className={styles.icon} /> About This Workspace
           </h5>
           <AboutWorkSpaceTabs
             organizationDetails={orgDetails}
             currentWorkspace={currentWorkspace}
-            admins={filtered}
+            admins={items}
           />
         </div>
       </div>
