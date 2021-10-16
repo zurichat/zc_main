@@ -6,6 +6,7 @@ import AuthInputBox from '../../components/AuthInputBox'
 import styles from '../../component-styles/ResetPassword.module.css'
 import axios from 'axios'
 import Button from '../../components/Button'
+import PasswordSuccesful from './passwordSuccesful'
 
 const NewPassword = () => {
   function useQuery() {
@@ -15,30 +16,39 @@ const NewPassword = () => {
   const resetCode = query.get('code')
 
   const [password, setPassword] = useState('')
+  const [confirm_password, setcPassword] = useState('')
+  const [showDialog, setShowDialog] = useState(false)
+  const open = () => setShowDialog(true)
 
-  const handleSubmit = async () => {
+  const handleSubmit = e => {
+    e.preventDefault()
+    updatepass()
+  }
+
+  const updatepass = async () => {
     try {
       const res = await axios.post(
         `https://api.zuri.chat/account/update-password/${resetCode}`,
         {
-          password
+          password,
+          confirm_password
         }
       )
-      alert('password reset!', res.data)
+    
+      // console.log(res.data)
+      // alert('password reset!', res.data)
+      open()
     } catch (err) {
       alert(err)
       console.error(err)
     }
   }
 
+
   return (
     <main id={styles.authPageWrapper}>
-      <aside id={styles.authAsideContainer} className={styles.display_none}>
-        <div id={styles.authImageWrapper}>
-          <img src={authBg} alt="backgroundImage" />
-          <div id={styles.asideText}></div>
-        </div>
-      </aside>
+      {showDialog && <PasswordSuccesful/>}
+     
       <section id={``}>
         {/* logo div  */}
         <div className={``}>
@@ -46,10 +56,9 @@ const NewPassword = () => {
         </div>
         {/* header text  */}
         <div className={``}>
-          <h4 className={styles.headerText}>Change Password</h4>
+          <h4 className={styles.headerText}>Recover Password</h4>
           <p>
-            Enter the email address you registered with, a reset link will be
-            sent to your email!
+            Create a new password for your account
           </p>
         </div>
         {/* form section  */}
@@ -65,7 +74,21 @@ const NewPassword = () => {
             // error={error}
           />
 
-          <Button className={styles.button} onClick={handleSubmit}>
+            <AuthInputBox
+            className={`${styles.inputElement}`}
+            id="confirm_password"
+            name="confirm Password"
+            type="password"
+            placeholder="confirm your new password"
+            value={ confirm_password}
+            setValue={setcPassword}
+            // error={error}
+          />
+          {/* <div style={{fontSize:"14px"}}>
+            {(password != confirm_password)? <div>sorry password dont match</div>:null}
+          </div> */}
+
+          <Button className={styles.button} onClick={ handleSubmit}  >
             Continue
           </Button>
         </form>

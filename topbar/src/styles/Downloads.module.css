@@ -222,13 +222,13 @@
   height: 8px;
 }
 
-.toolTip p {
+.toolTip a {
   font-family: 'Lato', sans-serif;
   font-weight: bold;
   font-size: 0.8125rem;
   line-height: 147%;
   color: #000000;
-  width: max-content;
+  width: 100%;
 }
 
 @media (max-width: 768px) {

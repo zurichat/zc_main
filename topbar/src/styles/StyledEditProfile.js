@@ -2,14 +2,14 @@ import styled from "styled-components"
 
 export const StyledProfileWrapper = styled.section`
   width: 100%;
-  height: 100%;
-  padding: 2rem;
+  padding: 2.5rem;
+  margin-bottom: 20px;
   .grid-container {
     display: flex;
     align-items: flex-start;
     .input-cage {
       flex-grow: 1;
-      padding: 0 2rem;
+      padding: 0 2rem 0 0;
       @media (max-width: 768px) {
         margin-right: 0;
         padding: 0 0;
@@ -20,6 +20,8 @@ export const StyledProfileWrapper = styled.section`
           display: flex;
           align-items: flex-start;
           flex-direction: column;
+          margin-top: 50px;
+          margin-bottom: 30px;
         }
         .mobileAvataeCon {
           display: none;
@@ -49,7 +51,7 @@ export const StyledProfileWrapper = styled.section`
             }
             .avatar {
               object-fit: cover;
-              border-radius: 50%;
+              height: 100%;
               width: 100%;
             }
           }
@@ -57,7 +59,7 @@ export const StyledProfileWrapper = styled.section`
       }
       .input-group {
         width: 100%;
-        margin-bottom: 2.5rem;
+        margin-bottom: 1.5rem;
         &.phone {
           flex-direction: column;
           align-items: flex-start;
@@ -73,7 +75,7 @@ export const StyledProfileWrapper = styled.section`
             }
             .pref,
             .phoneInput {
-              height: 3rem;
+              height: 2.4rem;
               padding: 0 0.5rem;
               outline: none;
               border: none;
@@ -97,20 +99,21 @@ export const StyledProfileWrapper = styled.section`
           }
         }
         .inputLabel {
-          font-size: 1.2rem;
+          font-size: 1rem;
           font-weight: 600;
           color: #1d1c1d;
           margin-bottom: 0.75rem;
           display: block;
         }
         .input,
-        .select,
+        /*select*/
+        .phone-container,
         .textarea,
-        .PhoneInput,
+        .phoneInput,
+        .css-1s2u09g-control,
         .css-2b097c-container {
           width: 100%;
-          height: 3rem;
-          border: 1.5px solid #a1a1a1;
+          border: 1px solid #a1a1a1;
           padding: 0 1rem;
           font-size: 1.4rem;
           outline: none;
@@ -119,7 +122,8 @@ export const StyledProfileWrapper = styled.section`
           border-top-left-radius: 5px !important;
           border-bottom-left-radius: 5px !important;
           &:hover,
-          &:focus {
+          &:focus,
+          &:active {
             border: 1px solid #00b87c;
             transition: border 0.25s ease-in-out;
           }
@@ -149,6 +153,15 @@ export const StyledProfileWrapper = styled.section`
             height: 100%;
           }
         }
+        .css-319lph-ValueContainer {
+          padding: 0 1rem;
+        }
+        .css-7pwich-Input {
+          padding: 0;
+        }
+        .css-1s2u09g-control {
+          font-size: 1rem;
+        }
         .textarea {
           height: 6.125rem;
         }
@@ -164,7 +177,7 @@ export const StyledProfileWrapper = styled.section`
           line-height: 1.5;
           /* max-width: 307px; */
           text-align: left;
-          margin: 0.75rem 0;
+          margin: 0.25rem 0 0.8rem 0;
         }
       }
       .double-input {
@@ -178,7 +191,7 @@ export const StyledProfileWrapper = styled.section`
       }
     }
     .img-container {
-      width: 24rem;
+      /* padding-right: 0.5rem; */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -191,6 +204,7 @@ export const StyledProfileWrapper = styled.section`
         height: 26rem;
         display: flex;
         flex-direction: column;
+        align-items: center;
         .avatar-container {
           display: flex;
           align-items: center;
@@ -198,11 +212,20 @@ export const StyledProfileWrapper = styled.section`
           width: 192px;
           height: 192px;
           margin-bottom: 1.2rem;
+          .profile__img-wrapper {
+            height: 100%;
+          }
+          .pictureHeading {
+            display: block;
+            padding-bottom: 0.3rem;
+            font-weight: bold;
+          }
           .img {
             object-fit: cover;
             width: 100%;
             height: 100%;
             border-radius: 4px;
+            margin: 0 auto;
           }
         }
       }
@@ -218,17 +241,19 @@ export const StyledProfileWrapper = styled.section`
       font-weight: 700;
       color: #00b87c;
       position: fixed;
-      top: 2rem;
+      top: 1rem;
       right: 2.5rem;
       z-index: 40000;
+      cursor: pointer;
     }
   }
   .button-wrapper {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-top: 2.5rem;
-    margin-bottom: 2rem;
+    /* padding-right: 1.75rem; */
+    /* margin-top: 2.5rem; */
+    margin-bottom: 1rem;
     @media (max-width: 768px) {
       display: none;
     }
@@ -236,7 +261,7 @@ export const StyledProfileWrapper = styled.section`
   .btns {
     font-size: 1rem;
     font-weight: 400;
-    padding: 0.75rem 1.2rem;
+    padding: 0.5rem 1rem;
     outline: none;
     border: none;
     cursor: pointer;
@@ -245,9 +270,9 @@ export const StyledProfileWrapper = styled.section`
       color: #fff;
       border-radius: 4px;
       text-align: center;
-      width: 85%;
-      margin: 0 auto;
+      width: 192px;
       padding: 0.5rem 1rem;
+      margin-top: 1.3rem;
       &:hover {
         background: #029765;
         color: #fff;
@@ -259,6 +284,11 @@ export const StyledProfileWrapper = styled.section`
       color: #fff;
       border-radius: 4px;
       text-align: center;
+      &:hover {
+        background: #029765;
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+      }
     }
   }
   .rmvBtn {
@@ -266,7 +296,7 @@ export const StyledProfileWrapper = styled.section`
     color: #999;
     font-size: 1rem;
     margin-top: 0.5rem;
-    margin: 0 auto;
+    text-align: center;
     &:hover {
       color: red;
       transition: all 0.3s ease-in-out;
@@ -283,3 +313,4 @@ export const StyledProfileWrapper = styled.section`
     }
   }
 `
+// border-radius: 50%;  // margin: 0 auto;  width: 24rem;

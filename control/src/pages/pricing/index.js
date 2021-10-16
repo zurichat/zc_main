@@ -1,12 +1,15 @@
 import React, { useEffect } from "react"
 import Header from "../../components/Header"
 import Section3 from "./components/Section3"
-import Section4PricingPage from "./components/Section4_pricing_page"
 import Footer from "../../components/Footer"
 import FAQ from "../FAQ"
-import PricingPageSection1 from "./pricingPageSection1/PricingPageSection1"
 import Message from "./components/Message"
 import { Helmet } from "react-helmet"
+import "../../i18n"
+import { useTranslation} from "react-i18next"
+import NewPricingSection from "./pricingPageSection1/NewPricingSection"
+// import Section4PricingPage from "./components/Section4_pricing_page"
+// import PricingPageSection1 from "./pricingPageSection1/PricingPageSection1"
 
 function Pricing() {
   useEffect(() => {
@@ -14,16 +17,19 @@ function Pricing() {
     const user = sessionStorage.getItem("token")
     // console.log(user)
   })
+
+  const { t } = useTranslation()
+
   return (
     <div>
       <Helmet>
-        <title> Pricing - Zuri Chat</title>
+        <title>{t("pricing.title.pricing")}</title>
       </Helmet>
       <Header />
-      <PricingPageSection1 />
+      <NewPricingSection />
       <Section3 />
-      {/* <FAQ /> */}
-      <Section4PricingPage />
+      <FAQ />
+      <Message />
       <Footer showMessage />
     </div>
   )
