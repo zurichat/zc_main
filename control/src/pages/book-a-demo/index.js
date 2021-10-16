@@ -3,6 +3,7 @@ import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import styles from "./styles/demo-page.module.css"
 import DemoForm from "./components/book-demo-form"
+import BookDemoImg from "./assets/here-to-help.png"
 
 const BookDemo = () => {
   return (
@@ -26,13 +27,15 @@ const BookDemo = () => {
             <div className={`${styles.demoFormRight}`}>
               <h4>You'll learn how to:</h4>
               <ul className={`${styles.learnHowToList}`}>
-                <li>
-                  Maximize the benefits your business can achieve from Chanty
-                </li>
                 <li>Organize communication in your team</li>
-                <li>Prevent communication overload and distraction</li>
+                <li>
+                  Prevent overload of communication and avoid distractions
+                </li>
+                <li>
+                  Maximize the benefits your business can achieve from Zuri
+                </li>
                 <li>Save up to 3 hours a day</li>
-                <li> Migrate from other messengers</li>
+                <li> Migrate from other messaging services</li>
                 <li>
                   Adopt smart use cases on managing integrations, tasks,
                   notifications and features for a deadline-driven team
@@ -66,12 +69,15 @@ const BookDemo = () => {
               <h3>We are always ready to help</h3>
               <p>
                 Got a question? Our 24/7 support team will go the extra mile so
-                you can have easy and enjoyable experience with Chanty.
+                you can have easy and enjoyable experience with Zuri.
               </p>
             </div>
-            <div className={`${styles.hereToHelpImage}`}></div>
+            <div className={`${styles.hereToHelpImage}`}>
+              <img src={BookDemoImg} alt="help image" />
+            </div>
           </div>
         </section>
+        <section className={`${styles.helpBackgroundSlash}`}></section>
       </div>
 
       <Footer />
