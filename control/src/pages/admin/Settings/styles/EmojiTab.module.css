@@ -38,7 +38,7 @@
 }
 
 .example {
-  width: 75%;
+  width: 85%;
 }
 
 .example .text {
@@ -283,7 +283,7 @@
 }
 
 .columnTitle1 {
-  width: 15%;
+  width: 10%;
 }
 
 .columnTitle2 {
@@ -307,7 +307,7 @@
 
 .columnTitle3 {
   position: relative;
-  width: 25%;
+  width: 20%;
   cursor: pointer;
 }
 
@@ -325,7 +325,7 @@
 }
 
 .columnTitle4 {
-  width: 25%;
+  width: 35%;
 }
 
 .columnTitle5 {
@@ -349,7 +349,7 @@
 }
 
 .emojiImage {
-  width: 15%;
+  width: 10%;
 }
 .emojiImage img {
   width: 32px;
@@ -360,10 +360,10 @@
   width: 25%;
 }
 .emojiDate {
-  width: 25%;
+  width: 20%;
 }
 .addedBy {
-  width: 25%;
+  width: 35%;
 }
 
 .addedBy img {
@@ -424,10 +424,6 @@
 }
 
 .emojis .picker {
-  z-index: 1.8;
-  position: absolute;
-  bottom: 61%;
-  left: 0;
 }
 
 .pickerBackdrop {
@@ -436,6 +432,7 @@
 
 .modalBackdrop {
   background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
 }
 
 .pickerBackdrop,
@@ -561,6 +558,22 @@
   -webkit-appearance: none;
 }
 
+.errorMessage {
+  padding: 8px 12px 10px;
+  border-radius: 4px;
+  background-color: rgba(224, 30, 90, 0.1);
+  border: 1px solid rgba(224, 30, 90, 0.4);
+  border-top: none;
+  margin-top: -15px;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+
+  color: #1d1c1d;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.38461538;
+}
+
 .footer {
   display: flex;
   justify-content: end;
@@ -597,4 +610,86 @@
 
 .footer button:last-child:hover {
   box-shadow: 0 1px 4px rgb(0 0 0 / 30%);
+}
+
+@media (max-width: 995px) {
+  .tableContent {
+    font-size: 13px;
+  }
+
+  .emojiDelete svg {
+    height: 15px;
+  }
+}
+
+@media (max-width: 975px) {
+  .example {
+    width: 85%;
+  }
+
+  .messageInfo .name {
+    font-size: 13px;
+  }
+
+  .messageInfo .name span {
+    font-size: 11px;
+  }
+
+  .messageContent {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 930px) {
+  .columnTitle3,
+  .emojiDate,
+  .addedBy img {
+    display: none;
+  }
+
+  .columnTitle1,
+  .emojiImage {
+    width: 15%;
+  }
+  .columnTitle2,
+  .emojiName {
+    width: 37.5%;
+  }
+  .columnTitle4,
+  .addedBy {
+    width: 37.5%;
+  }
+  .columnTitle5 {
+    width: 10%;
+  }
+
+  .tableContent {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 870px) {
+  .messageDialog {
+    height: 92px;
+  }
+
+  .columnTitle3 {
+    /* width: 250px; */
+  }
+}
+
+@media (max-width: 630px) {
+  .btn {
+    flex-direction: column-reverse;
+  }
+
+  .btn button {
+    margin-left: auto !important;
+    margin-bottom: 10px;
+    width: 150px;
+  }
+
+  .btn .title {
+    margin-bottom: 0;
+  }
 }

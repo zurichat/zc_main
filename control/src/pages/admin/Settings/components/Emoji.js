@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react"
 import { authAxios } from "../../Utils/Api"
 import toast from "react-hot-toast"
 import Picker from "emoji-picker-react"
+import Loader from "react-loader-spinner"
+
 import ForwardIcon from "../../../resources/assests/svg/ForwardIcon.svg"
 // import ForwardIcon from "../../../resources/assests/svg/ForwardIcon"
 import OptionsIcon from "../../../resources/assests/svg/OptionsIcon"
@@ -30,8 +32,13 @@ const Emoji = () => {
   const [number, setNumber] = useState(null)
   const [hover, setHover] = useState(false)
   const [customEmoji, setCustomEmoji] = useState(true)
-  const [chooseEmoji, setChooseEmoji] = useState(true)
+  const [chooseEmoji, setChooseEmoji] = useState(false)
+  const [duplicateName, setDuplicateName] = useState(false)
   const ref = useRef(null)
+  const [loader, setLoader] = useState({
+    uploadLoader: false,
+    removeLoader: false
+  })
 
   const onEmojiClick = (event, emojiObject) => {
     if (number === "1") {
@@ -111,13 +118,23 @@ const Emoji = () => {
                 type="text"
                 onChange={e => setState({ name: e.target.value })}
               />
+              {duplicateName && (
+                <div className={classes.errorMessage}>
+                  This name is already in use by another emoji.
+                </div>
+              )}
             </div>
           </li>
         </ol>
       </div>
       <div className={classes.footer}>
         <button onClick={closeModal}>Cancel</button>
-        <button onClick={handleSave}>Save</button>
+        <button onClick={handleSave}>
+          Save{" "}
+          {loader.uploadLoader && (
+            <Loader type="Oval" color="#fff" height={24} width={100} />
+          )}
+        </button>
       </div>
     </>
   )
@@ -144,9 +161,24 @@ const Emoji = () => {
                 <button onClick={() => setChooseEmoji(true)}>
                   Choose Emoji
                 </button>
-                <div className={classes.picker}>
-                  {/* <Picker onEmojiClick={onEmojiClick} /> */}
-                </div>
+                {chooseEmoji ? (
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "360px",
+                      left: "-34px",
+                      zIndex: "2"
+                    }}
+                  >
+                    <div
+                      onClick={(() => setIsOpen(false), setChooseEmoji(false))}
+                      className={classes.pickerBackdrop}
+                    ></div>
+                    <div className={classes.picker}>
+                      <Picker onEmojiClick={onEmojiClick} />
+                    </div>
+                  </div>
+                ) : null}
               </div>
             </li>
             <hr />
@@ -161,6 +193,11 @@ const Emoji = () => {
                   type="text"
                   onChange={e => setState({ name: e.target.value })}
                 />
+                {duplicateName && (
+                  <div className={classes.errorMessage}>
+                    This name is already in use by another emoji.
+                  </div>
+                )}
               </div>
             </li>
           </ol>
@@ -169,7 +206,12 @@ const Emoji = () => {
       <hr />
       <div className={classes.footer}>
         <button onClick={closeModal}>Cancel</button>
-        <button onClick={handleSave}>Save</button>
+        <button onClick={handleSave}>
+          Save{" "}
+          {loader.uploadLoader && (
+            <Loader type="Oval" color="#fff" height={24} width={100} />
+          )}
+        </button>
       </div>
     </>
   )
@@ -205,11 +247,11 @@ const Emoji = () => {
     if (!display) document.body.style.overflow = "scroll"
   }, [display])
 
-  useEffect(() => {
-    if (!isOpen) {
-      setNumber(null)
-    }
-  }, [isOpen])
+  // useEffect(() => {
+  //   if (!isOpen) {
+  //     setNumber(null)
+  //   }
+  // }, [isOpen])
 
   const handleImageChange = e => {
     if (imageRef.current.files[0]) {
@@ -306,7 +348,14 @@ const Emoji = () => {
             {emojiThree}
           </button>
           {isOpen && (
-            <div style={{ position: "absolute", bottom: "61%", left: "0" }}>
+            <div
+              style={{
+                position: "absolute",
+                bottom: "75%",
+                left: "0",
+                zIndex: "2"
+              }}
+            >
               <div
                 onClick={() => setIsOpen(false)}
                 className={classes.pickerBackdrop}
@@ -348,9 +397,9 @@ const Emoji = () => {
               >
                 {emojiThree}
               </button>
-              <button>
+              {/* <button>
                 <EmojiIcon />
-              </button>
+              </button> */}
               <button>
                 <CommentIcon />
               </button>
