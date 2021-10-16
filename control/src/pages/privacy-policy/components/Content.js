@@ -270,7 +270,7 @@ const Content = () => {
                 <br />
                 <p className={Style.paraPriv1}>
                   (2) Usage information. <br />
-                  <u>*Services metadata.</u> When an Authorized User interacts
+                  <u>*Services metadata</u>. When an Authorized User interacts
                   with the Services, metadata is generated that provides
                   additional context about the way Authorized Users work. For
                   example, Zurichat logs the Workspaces, channels, people,
@@ -279,7 +279,7 @@ const Content = () => {
                   (if any).
                 </p>
                 <p className={Style.paraPriv1}>
-                  <u>*Log data.</u> As with most websites and technology
+                  <u>*Log data</u>. As with most websites and technology
                   services delivered over the Internet, our servers
                   automatically collect information when you access or use our
                   Websites or Services and record it in log files. This log data
@@ -290,7 +290,7 @@ const Content = () => {
                   language preferences and cookie data.
                 </p>{" "}
                 <p className={Style.paraPriv1}>
-                  <u>*Device information.</u> Zurichat collects information
+                  <u>*Device information</u>. Zurichat collects information
                   about devices accessing the Services, including type of
                   device, what operating system is used, device settings,
                   application IDs, unique device identifiers and crash data.
@@ -298,7 +298,7 @@ const Content = () => {
                   depends on the type of device used and its settings.
                 </p>
                 <p className={Style.paraPriv1}>
-                  <u>*Location information.</u> We receive information from you,
+                  <u>*Location information</u>. We receive information from you,
                   your Customer and other third-parties that helps us
                   approximate your location. We may, for example, use a business
                   address submitted by your employer or an IP address received
