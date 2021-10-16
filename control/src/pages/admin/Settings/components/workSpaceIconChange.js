@@ -8,7 +8,7 @@ export const WorkSPaceLogoContainer = styled.div`
     width: 4rem;
     height: 4rem;
     border-radius: 5px;
-    background: #007a5a;
+    background: #00b87c;
     margin-right: .75rem;
   }
 `
@@ -60,8 +60,8 @@ export const Button = styled.button`
   height: 36px;
   min-width: 80px;
   padding: 0 12px 1px;
-  border-radius: 5px;
-  background: #007a5a;
+  border-radius: 2px;
+  background: #00b87c;
   color: #fff;
   font-family: "Lato";
 `

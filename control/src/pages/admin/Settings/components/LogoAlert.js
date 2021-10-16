@@ -19,13 +19,14 @@ const Alert = styled.div`
   border: 1px solid #007a5a;
   background: #fff;
   border-left-width: 5px;
-  margin: 0;
+  margin-bottom: .75rem;
   border-radius: 0.25rem;
 `
 
 const Text = styled.p`
   font-size: 18px;
   margin-left: 5px;
+  margin-bottom: 0;
 `
 
 export default LogoAlert
