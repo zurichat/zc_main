@@ -287,17 +287,17 @@ const AdvancedSettings = () => {
               }
             }}
           />
-          <div className={styles.inputText}>
-            <p className={styles.inputParagraph}>
-              Send me occassional survey via Zurichat bot
-            </p>
-            <p className={styles.inputParagraph40}>
-              We’re working to make Zurichat better. We’d always love to hear
-              your thoughts
-            </p>
+          <div className={standardStyles.labelSubtext}>
+            Send me occassional survey via Zurichat bot
           </div>
         </div>
-        <div className={styles.checkInputGroup2}>
+        {/* <div className={standardStyles.labelContainer}>
+          <div className={styles.alonetext}>
+            We’re working to make Zurichat better. We’d love to hear your
+            thoughts
+          </div>
+        </div> */}
+        <div className={standardStyles.labelContainer}>
           <input
             type="checkbox"
             name=""

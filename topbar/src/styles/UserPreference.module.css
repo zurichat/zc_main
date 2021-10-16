@@ -45,3 +45,19 @@ border-radius: 4px;
   margin-bottom: 12px;
   height: 0.5px;
 }
+
+.spacingRight {
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .modalContent {
+    max-width: 100%;
+  }
+  .spacingRight {
+    margin: 0;
+  }
+  .labelContainer {
+    margin-bottom: 20px;
+  }
+}
