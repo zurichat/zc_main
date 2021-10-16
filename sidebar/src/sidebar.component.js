@@ -83,12 +83,17 @@ const Sidebar = props => {
           )
         })
       } else {
+        console.warn(key)
         const categoryData = Object.keys(props.state.sidebar[key]).map(
           k => props.state.sidebar[key][k]
         )
 
         categorizedItems.push(
-          <Category key={key} name={key} data={categoryData} />
+          <Category
+            key={`${new Date().toISOString()}`}
+            name={key}
+            data={categoryData}
+          />
         )
         //    Object.keys(props.state.sidebar).map((p, idx)=>{
         //     return (categories.includes(p) ?
