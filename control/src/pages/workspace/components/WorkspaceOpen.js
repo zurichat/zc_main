@@ -1,8 +1,12 @@
 import React from 'react'
 import styles from '../style/workspace.module.css'
 import { useWorkspaceContext } from './WorkspaceContext'
+import { useTranslation} from "react-i18next"
+
 
 const WorkspaceOpen = ({ workspaceID }) => {
+  const { t } = useTranslation()
+
   const { redirectPage } = useWorkspaceContext()
 
   const handleNextPage = id => {
@@ -16,7 +20,7 @@ const WorkspaceOpen = ({ workspaceID }) => {
       className={`${styles.workspace_btn}`}
       onClick={() => handleNextPage(workspaceID)}
     >
-      <p>Open</p>
+      <p>{t("workspace.space.open")}</p>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
