@@ -246,10 +246,17 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
               onMouseLeave={() => setHoverState(false)}
             >
               <div className={styles.emoji}>
-                {user?.status?.tag || (
-                  <img src={smile} className={styles.defalutEmoji} />
+                {hoverState ? (
+                  <div>😃</div>
+                ) : (
+                  <>
+                    {user?.status?.tag || (
+                      <img src={smile} className={styles.defalutEmoji} />
+                    )}
+                  </>
                 )}
               </div>
+
               <div className={styles.statusContent}>
                 {!(user?.status?.text || user?.status?.tag)
                   ? "Update your Status"

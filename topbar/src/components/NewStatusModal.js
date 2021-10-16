@@ -131,7 +131,7 @@ const SetStatusModal = ({
           {
             tag_history: statusEmoji,
             text_history: statusText,
-            expiry_history: choosePeriod
+            expiry_history: dateTime ? dateData : choosePeriod
           }
         ],
         expiry_time: dateTime ? dateData : choosePeriod,
@@ -213,7 +213,8 @@ const SetStatusModal = ({
 
   statusHistory = statusHistory.map(ev => ({
     ...ev,
-    expiry_history: ev.expiry_history.length > 10 ? "Custom" : ev.expiry_history
+    expiry_history:
+      ev.expiry_history.length > 10 ? "date_time" : ev.expiry_history
   }))
   // console.log(statusHistory)
   // console.log(user)
@@ -494,7 +495,8 @@ const SetStatusModal = ({
                   <label htmlFor="" className={styles.dropdowntop}>
                     Clear after: &nbsp;
                     <span className={styles.dropdowntopspan}>
-                      {expiryTimeLabel[choosePeriod] === "Custom"
+                      {expiryTimeLabel[choosePeriod] === "Custom" ||
+                      choosePeriod.length > 10
                         ? "Choose Date and Time"
                         : expiryTimeLabel[choosePeriod]}
                     </span>
