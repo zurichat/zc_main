@@ -1,5 +1,5 @@
 .marketplace {
-  background: #ffffff;
+  /* background: var(--bg-color); */
   min-height: 100vh;
   font-size: 15px;
 }
@@ -276,7 +276,7 @@
 }
 
 .marketPlaceContainer {
-  background: #e5e5e5;
+  /* background: var(--bg-color); */
   padding-top: 50px;
 }
 
