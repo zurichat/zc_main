@@ -2,6 +2,9 @@ export const TRANSLATIONS_DE = {
   header: {
     language_select: "Sprache ändern"
   },
+
+
+  // Landing Page
   landing: {
     title: {
       landing: ""
@@ -100,6 +103,7 @@ export const TRANSLATIONS_DE = {
   },
 
 
+// Pricing Page
   pricing: 
   {
     title: {
@@ -139,6 +143,7 @@ export const TRANSLATIONS_DE = {
   },
 
 
+// Plugins page
   plugin: {
     title: {
       plugin: "Verbinden und interagieren"
@@ -319,6 +324,7 @@ export const TRANSLATIONS_DE = {
     },
   },
   
+  // About Page
   about: {
     title: {
       about: ""
@@ -412,8 +418,11 @@ export const TRANSLATIONS_DE = {
       title: "Was auch immer Sie tun, Sie können es im Zuri Chat tun",
       link_sales: "Sprechen Sie mit dem Vertrieb",
       link_try: "Kostenlos ausprobieren"
-    },
+    }
+  },
 
+
+// Career Page
     careers: {
       title: {
         careers: "Karriere"
@@ -473,9 +482,10 @@ export const TRANSLATIONS_DE = {
           post_headline: "Zuri zahlt 100 % Ihrer Prämien. Wir bieten auch Zugang zu einer Reihe von kostenlosen Ressourcen für psychische Gesundheit und Wohlbefinden."
         }
       }
+    },
 
-    }
-  },
+
+  // Login Page
   login:{
     title: "Einloggen - Zuri Chat",
     form: {
@@ -504,6 +514,7 @@ export const TRANSLATIONS_DE = {
   },
 
 
+// All Download Pages
   download_desktop: {
     title: {
       download: ""
@@ -621,4 +632,29 @@ export const TRANSLATIONS_DE = {
       download_ios: "Für Mac herunterladen?"
     }
   },
+
+
+// Workspace flows
+  workspace:{
+    title: {
+      workspace :"Arbeitsbereich - Zuri Chat"
+    },
+
+    space:{
+      headline: "Wählen Sie einen Arbeitsbereich",
+      post_headline: "Willkommen zurück! Wählen Sie eine aus, um wieder mit Ihrem Team zu arbeiten",
+      join_line: "Möchten Sie mit einer anderen Gruppe arbeiten? oder Übernimm die Verantwortung und gründe dein eigenes Team",
+      joinbtn: "Erstellen Sie einen Arbeitsbereich",
+      foot_head: "Sie sehen Ihren Arbeitsbereich nicht?",
+      foot_link: "Versuchen Sie es mit einer anderen E-Mail",
+      open: "Offen",
+      selected: "ausgewählt",
+      errno: "vier­hundert­eins",
+      errmsg: "Sie sind nicht eingeloggt!",
+      errlink: "Hier anmelden.",
+      err_no: "vier­hundert­vier",
+      err_msg: "Ups! Irgendwas lief schief! Gehe zu",
+      err_link: "zuri.chat"
+    }
+  }  
 }
