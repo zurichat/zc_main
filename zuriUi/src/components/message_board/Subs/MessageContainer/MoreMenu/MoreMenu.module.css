@@ -1,0 +1,60 @@
+.MoreMenuWrapper {
+  position: fixed;
+  /* bottom: 200px;
+    right: 100px; */
+  z-index: 10;
+
+  height: 358px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.MoreMenuWrapper .RemindOptions {
+  width: 219px;
+  height: 268px;
+  margin-top: auto;
+  margin-bottom: 0;
+  margin-right: 3px;
+  padding-top: 19px;
+
+  background-color: white;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  box-shadow: 1px 1px 5px #f0f0f0, -1px -1px 5px #f0f0f0;
+}
+
+.MoreMenuWrapper .MoreMenu {
+  width: 290px;
+  height: 268px;
+
+  background-color: white;
+  z-index: 10;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  box-shadow: 1px 1px 5px #f0f0f0, -1px -1px 5px #f0f0f0;
+}
+
+.MoreMenuWrapper .RemindOptions li {
+  padding-left: 42px;
+}
+
+.MoreMenuWrapper li {
+  padding-left: 24px;
+  height: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.MoreMenuWrapper li:hover {
+  background-color: #00b87c;
+  color: white;
+}

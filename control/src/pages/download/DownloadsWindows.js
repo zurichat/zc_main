@@ -12,11 +12,13 @@ import { Helmet } from "react-helmet"
 import { useTranslation} from "react-i18next"
 
 
+
 // const Apk = '../../apk/appRelease.apk'
 // import Apk from '../../apk/appRelease.apk'
 
 const DownloadsWindows = () => {
   const { t } = useTranslation()
+
 
   const [exe, setexe] = useState({ link: "", name: "" })
   // const [msi, setmsi] = useState({ link: '', name: '' })
@@ -87,6 +89,7 @@ const DownloadsWindows = () => {
               {t("download_windows.section_two.ios")}
               </a>{" "}
               {t("download_windows.section_two.apps_break")}
+
             </p>
           </div>
           <div className={`col`}>
