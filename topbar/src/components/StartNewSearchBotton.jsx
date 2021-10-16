@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components';
-import SearchBar from '...topbar/src/components/SearchBar'
+//import SearchBar from '...topbar/src/components/SearchBar'
 
-const clearSearchBar = () => {
+/*const clearSearchBar = () => {
       SearchBar("");
-    };
-const buttonStyle = styled.button`
+    };*/
+const Button = styled.button`
     padding: 1rem 1.5rem;
     background-color: var(--primary-color);
     color: #ffffff;
@@ -19,13 +19,13 @@ const buttonStyle = styled.button`
     cursor: pointer;
     border-radius: var(--radius);
 `
-class startNewSearch extends React.Component {
+class StartNewSearch extends React.Component {
    render () {  
        return (
-    <button onClick={clearSearchBar}>Start New Search</button>
+    <Button /*onClick={clearSearchBar}*/ >Start New Search</Button>
     );
     } 
 } 
   
 
-export default startNewSearch
+export default StartNewSearch

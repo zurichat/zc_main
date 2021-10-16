@@ -27,7 +27,8 @@ export const BigModal = ({ onClose, inputValue }) => {
       })
   }, [result[0]])
   // console.log(result)
-  let i = 0
+  let i = 0;
+  const showResult = (result.length === 0) ? false : true;
 
   const sidebar = document.getElementById(
     "single-spa-application:@zuri/sidebar"
@@ -65,14 +66,14 @@ export const BigModal = ({ onClose, inputValue }) => {
   ))
   return (
     <SearchContainer className="bigModal">
-      <div className={styles.Header}>
+      {showResult && <div className={styles.Header}>
         <p className={styles.header_p}>{`Search result for "${inputValue}"`}</p>
         <button
-        className="btn"
+        className={styles.button}
         onClick={() => onClose()}
         ><img src={cancel} alt="close" />
       </button>
-      </div>
+      </div> }
       {/* this is to return total counts */}
       {/* <p className={styles.total}>Total Results Found - 12</p> */}
       
@@ -85,7 +86,7 @@ export const BigModal = ({ onClose, inputValue }) => {
         }} 
       />*/}
       {/* this is the reult card */}
-      <div className={styles.resultCard}>
+      {showResult && <div className={styles.resultCard}>
           <SearchValue
           
                 key={i}
@@ -93,16 +94,16 @@ export const BigModal = ({ onClose, inputValue }) => {
                 title={"title"}
                 description={"description"}
               />
-      </div>
+      </div> }
+      {showResult && card}
       {/* if the response returns no result */}
-      <div className={styles.noResult}>
+      {/*<div className={styles.noResult}>
         <p className={styles.no_result_title}>No Result Found</p>
           <p className={styles.no_result_desc}>Looking for something? If it happened in zuri-chat,
               <br /> you can find it in search.</p>
         <button className={styles.startNewSearch}>Start A New Search</button>
-      </div>
-      
-      {card}
+    </div>*/}
+    {!showResult && <NoResult onClosed={() => onClose()}/>}
     </SearchContainer>
   )
 }
