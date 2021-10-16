@@ -1,6 +1,5 @@
 .inputsContainer {
   width: 100%;
-  height: 100%;
   font-family: 'Lato';
   padding-bottom: 3rem;
 }
@@ -44,7 +43,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: .3rem;
 }
 
 .inputText2 {
@@ -55,10 +53,9 @@
   font-size: .8125rem;
   font-weight: 400;
   color: var( --text-color-gray);
-  line-height: 0;
+  line-height: 120%;
   padding: 0;
   margin: 0;
-  margin-bottom: .8rem;
 }
 
 .inputParagraph60, .inputParagraph40 {
@@ -67,7 +64,7 @@
 }
 
 .inputParagraph40 {
-  margin-top: .6rem;
+  margin-top: .4rem;
 }
 
 .highlights {

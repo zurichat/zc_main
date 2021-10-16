@@ -37,7 +37,7 @@
   overflow-y: scroll;
   /* position: relative; */
   margin-top: 0%;
-  height: 78vh !important; 
+  height: 100% !important; 
 }
 .toggle {
   display: none;
@@ -47,14 +47,12 @@
 }
 
 .notifications {
-  height: 100%;
-  width: 200%;
+  width: 100%;
 }
 /* THE SECTION OF THE CONTENT */
 .notifyContent {
   max-width: 95%;
   padding: 0 20px;
-  padding-bottom: 70px;
   display: block;
   margin-top: 24px;
   height: 100%;
@@ -91,7 +89,6 @@
   margin-left: 0px;
   margin-right: auto;
   border-style: none;
-  width: 640px;
   border-width: 1px;
 }
 
@@ -174,7 +171,6 @@
   font-family: Lato;
   margin-top: -15px;
   margin-bottom: -20px;
-  accent-color: #00b87c;
 }
 .radio label {
   display: block;
@@ -188,6 +184,11 @@
   color: var(--text-color-gray);
   line-height: 21px;
   align-self: center;
+}
+
+.radioBox {
+  display: flex;
+  flex-direction: row;
 }
 
 input[type="radio"] {
@@ -306,9 +307,9 @@ input[type="radio"] {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 20px;
   margin-top: 24px;
 }
+
 .inputContainer label {
   position: absolute;
   pointer-events: none;
