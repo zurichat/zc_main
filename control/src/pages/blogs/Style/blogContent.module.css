@@ -1,4 +1,4 @@
-h1,
+.contentDisplay h1,
 h2,
 h3,
 h4,
@@ -11,7 +11,7 @@ p {
   margin-right: 0;
 }
 
-h1,
+.contentHeading h1,
 h2,
 h3,
 h4,
@@ -20,46 +20,46 @@ h6 {
   font-weight: bold;
 }
 
-h1 {
+.contentHeaderOneStyle h1 {
   font-size: 2em;
   margin-top: 0.67em;
   margin-bottom: 0.67em;
 }
 
-h2 {
+.contentHeaderTwoStyle h2 {
   font-size: 1.5em;
   margin-top: 0.83em;
   margin-bottom: 0.83em;
   line-height: 30px;
 }
 
-h3 {
+.contentHeaderThreeStyle h3 {
   font-size: 1.17em;
   margin-top: 1em;
   margin-bottom: 1em;
 }
 
-h4 {
+.contentHeaderFourStyle h4 {
   margin-top: 1.33em;
   margin-bottom: 1.33em;
 }
 
-h5 {
+.contentHeaderFiveStyle h5 {
   font-size: 0.83em;
   margin-top: 1.67em;
   margin-bottom: 1.67em;
 }
 
-h6 {
+.contentHeaderSixStyle h6 {
   font-size: 0.67em;
   margin-top: 2.33em;
   margin-bottom: 2.33em;
 }
 
-p {
+.contentParaStyle p {
   margin-bottom: 1em;
 }
 
-img {
+.contentImage img {
   width: 100%;
 }
