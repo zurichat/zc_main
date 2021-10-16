@@ -62,7 +62,7 @@ import ManageMembers from './pages/admin/manage_members/components/ManageMembers
 import Ebooks from "./pages/ebooks"
 import Invitation from "./pages/admin/Invitation"
 import Whyzurichat from "./pages/WhyZuriChat/Whyzurichat"
-
+import Gateways from "./pages/admin/gateways/components/gateways"
 import OnboardingHelp from "./pages/LoginSignUpHelp/index"
 import DeleteWorkspace from "./pages/settings/components/DeleteWorkspace"
 import BookDemo from "./pages/book-a-demo"
@@ -216,6 +216,7 @@ const App = () => {
         <PrivateRoute path="/admin/name" exact component={ChangeWorkspaceName} />
         <PrivateRoute path="/admin/delete" exact component={DeleteWorkspace} />
         <PrivateRoute path="/homepage/profile" exact component={Homepage} />
+        <PrivateRoute path="/components/gateways" exact component={Gateways} />
         <PrivateRoute
           path="/admin/name"
           exact
