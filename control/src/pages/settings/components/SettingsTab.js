@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import { NavLink, Link } from "react-router-dom"
 import styles from "../styles/SettingsTab.module.css"
 import TimeZone from "./TimeZone"
@@ -9,10 +9,11 @@ import TwoFactor from "./TwoFactor"
 import ChangeEmail from "./ChangeEmail"
 import Language from "./Language"
 import UserName from "./UserName"
+import {getUser} from "../Utils/Common"
 
 const SettingsTab = () => {
   // const showTime = show ? <TimeZone /> : null
-
+  const userData = getUser()
   return (
     <>
       <AnimateSharedLayout>
@@ -36,7 +37,7 @@ const SettingsTab = () => {
       <AnimateSharedLayout>
         <PreferenceWrapper
           title="Email Address"
-          text="Your email address is layobright@gmail.com"
+          text={`Your email address is ${userData.email}`}
           btnText="expand"
         >
           {/* Email address input field goes under here */}
@@ -47,7 +48,7 @@ const SettingsTab = () => {
       <AnimateSharedLayout>
         <PreferenceWrapper
           title="Time zone"
-          text="Zurichat uses your time zone to send summary and notification emails, for times in your activity feeds and for  reminders. Your time zone is currently set to: (UTC+01:00) West Central Africa."
+          text={`Zurichat uses your time zone to send summary and notification emails, for times in your activity feeds and for  reminders. Your time zone is currently set to: (UTC+01:00) West Central, ${userData.time_zone}.`}
           btnText="expand"
         >
           {/* TimeZone input field goes under here */}
