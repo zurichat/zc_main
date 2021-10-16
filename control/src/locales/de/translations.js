@@ -323,7 +323,6 @@ export const TRANSLATIONS_DE = {
       button: "Abonnieren"
     },
   },
-
   
   // About Page
   about: {
