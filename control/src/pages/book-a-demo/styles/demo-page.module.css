@@ -1,0 +1,130 @@
+.demoPage {
+  margin: 5em auto 3em auto;
+}
+
+.demoPageContainer {
+  width: 90%;
+  margin: auto;
+}
+
+.demoFormMain {
+  background: #ffffff;
+  margin-top: -50px;
+  padding: 1em 2em 2em 2em;
+  box-shadow: 0px 0 24px 0px rgb(0 0 0 / 20%);
+}
+
+.demoIntroduction {
+  background: #00b87c;
+  height: 35vh;
+  display: flex;
+  align-items: center;
+}
+
+.demoIntroduction h1 {
+  color: #ffffff;
+  font-size: 2.8em;
+  line-height: 1.1;
+}
+
+.demoFormSection {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.demoFormLeft {
+  width: 45%;
+}
+
+.demoFormRight {
+  width: 48%;
+}
+
+.demoFormRight h4 {
+  margin: 2em 0 1em 0;
+}
+
+.demoFormRight .learnHowToList {
+  list-style: none;
+}
+
+.demoFormRight .learnHowToList li,
+.otherInfoSection li {
+  color: #3a3a3a;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  margin: 10px 0;
+}
+
+.demoFormRight .learnHowToList li:before {
+  content: "✓";
+  margin-right: 15px;
+  font-weight: 600;
+  color: #00b87c;
+}
+
+.otherInfoSection,
+.hereToHelp {
+  margin: 4rem 0 2rem 0;
+}
+
+.otherInfoSection.otherInfoList {
+  list-style-type: disc !important;
+  list-style: disc !important;
+}
+
+.hereToHelp {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hereToHelpText {
+  width: 45%;
+}
+
+.hereToHelpImage {
+  width: 50%;
+  height: 50vh;
+  background-image: url("../assets/here\ to\ help.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.hereToHelp h3 {
+  padding: 0;
+  font-size: 2.2em;
+  margin: 0 0 1rem 0;
+}
+.hereToHelp p {
+  font-size: 1.1em;
+  color: #3a3a3a;
+  letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 768px) {
+  .demoFormLeft,
+  .demoFormRight {
+    width: 100%;
+  }
+
+  .otherInfoSection,
+  .hereToHelp {
+    margin: 2rem 0;
+  }
+
+  .demoIntroduction h1 {
+    font-size: 2em;
+  }
+
+  .demoFormMain {
+    margin-top: -50px;
+    padding: 1em;
+  }
+
+  .hereToHelpText,
+  .hereToHelpImage {
+    width: 100%;
+  }
+}
