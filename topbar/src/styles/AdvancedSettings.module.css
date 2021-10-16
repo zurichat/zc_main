@@ -2,6 +2,8 @@
   width: 100%;
   font-family: "Lato";
   padding-bottom: 3rem;
+  font-family: 'Lato';
+  height:100%;
 }
 .container {
   display: flex;
