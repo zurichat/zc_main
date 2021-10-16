@@ -2,6 +2,7 @@ import React from 'react';
 import OptionsIcon from '../icons/three-dots.svg';
 import styles from '../styles/Members.module.css'
 import AvatarIcon from '../icons/avatar.png'
+import ToolTipMenu from './ToolTipMenu';
 
 
 const imageShot = AvatarIcon;
@@ -9,8 +10,9 @@ const imageShot = AvatarIcon;
 const Table = (props) => {
     return (
         <div className={styles.table}>
-            <thead>
-                <tr>
+        <table className={styles.tableWrap}>
+            <thead className={styles.tableHead}>
+                <tr className={styles.tableRow}>
                     <th className={styles.heading} style={{ color: 'blue' }}>Name</th>
                     <th className={styles.heading}>Account type</th>
                     <th className={styles.heading}>Billing status</th>
@@ -18,9 +20,9 @@ const Table = (props) => {
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody className={styles.tableBody}>
                 {props.showingContacts.length > 0 ? props.showingContacts.map((user) => (
-                    <tr className='' key={user._id}>
+                    <tr className={styles.tableRow} key={user._id}>
                         <td className={styles.member} key=''>
                             <MemberDetails
                                 userFirstName={user.first_name}
@@ -31,16 +33,15 @@ const Table = (props) => {
                                 altImg={imageShot}
                             /></td>
                         <td className={styles.member} key=''>{user.account_role}</td>
-                        <td className={styles.member} key=''>{user.verify}</td>
+                        <td className={styles.member} key=''>{props.billing}</td>
                         <td className={styles.member} key=''>{user.account_type}</td>
                         <td className={styles.member} key=''>
                             {/* // onClick={props.toggleModal}
                             // onMouseLeave={props.toggleModal}> */}
-                            <button className={styles.optionsBtn}
-                            // onMouseOut={props.toggleModal}
-                            >
-                                <img src={OptionsIcon} alt='options' className={styles.optionsIcon} />
-                            </button></td>
+                            <ToolTipMenu />
+
+
+                        </td>
                     </tr>)
                 ) : (
                     <>
@@ -48,6 +49,7 @@ const Table = (props) => {
                         <td className={styles.emptySearch} colSpan='5'>No results to display</td></>
                 )}
             </tbody>
+            </table>
         </div >
     )
 }
@@ -62,7 +64,7 @@ const MemberDetails = (props) => {
             <div className={styles.memCol}>
                 <div className={styles.memName}>{props.userFirstName} {props.userLastName}</div>
                 <div className={styles.memRow}>
-                    <div>{props.userFirstName} {props.userLastName}</div>
+                    <div className={styles.memName1}>{props.userFirstName} {props.userLastName}</div>
                     <div>{props.email}</div>
                 </div>
             </div>

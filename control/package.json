@@ -102,6 +102,7 @@
     "react-redux": "^7.2.5",
     "react-router-dom": "^5.3.0",
     "react-tabs": "^3.2.2",
+    "react-tooltip-controller": "^1.0.6",
     "react-transition-group": "^4.4.2",
     "simple-react-cropper": "^1.0.10",
     "single-spa-react": "^4.3.1",
