@@ -9,35 +9,43 @@ export const createDefaultChannel = (org_id, title = 'General') => {
   if (!user) return 'NO USER LOGGED IN'
 
   GetUserInfo().then(res => {
-    const memberId = res._id
+    const memberId = res[0]._id
     const { token } = user
-    const config = { headers: { Authorization: `Bearer ${token}` } }
+    const config = { headers: { "Content-type": "application/json" , Authorization: `Bearer ${token}` } }
 
     axios
       .post(
-        `${channelApi}/${org_id}/channels/`,
+        `https://channels.zuri.chat/api/v1/install`,
         {
-          name: `${title}`,
-          owner: `${memberId}`,
-          description: `Default channel`,
-          private: false,
-          topic: 'General',
-          default: 'true'
+          title: `${title}`,
+          organization_id: `${org_id}`,
+          user_id: `${memberId}`
         },
         config
       )
       .then(res => {
-        const channelID = res.data.InsertedID
-        sessionStorage.setItem('defaultChannel', channelID)
-        return channelID
+        const redirectLink = res.data.data.redirect_url
+        sessionStorage.setItem('redirectLink', redirectLink)
+        return redirectLink
       })
+
+      axios
+      .post(`https://dm.zuri.chat/api/v1/install`, 
+      {
+        organisation_id: `${org_id}`,
+        user_id: `${memberId}`
+      },
+      config)
   })
 }
 
-export const findDefaultChannel = async org_id => {
+export const findDefaultChannel = async (org_id) => {
   // TODO
   // change back to default
   // const res = await axios.get(`${channelApi}/${org_id}/channels/?default=true`)
+  if(!org_id){
+    org_id =  localStorage.getItem('currentWorkspace')
+  }
   const res = await axios.get(`${channelApi}/${org_id}/channels/`)
   const channelID = res.data[0]._id
   sessionStorage.setItem('defaultChannel', channelID)
@@ -45,15 +53,37 @@ export const findDefaultChannel = async org_id => {
 }
 
 export const goToChannel = channelID => {
-  window.location.href = `/channels/message-board/${channelID}`
+  window.location.href = `${channelID}`
 }
 
 export const goToDefaultChannel = () => {
-  const channelID = sessionStorage.getItem('defaultChannel')
+  const channelID = sessionStorage.getItem('redirectLink')
   if (!channelID) {
     findDefaultChannel().then(res => {
       goToChannel(res)
     })
   }
-  goToChannel(channelID)
+  let redirect_link = sessionStorage.getItem('redirectLink')
+  goToChannel(redirect_link)
+}
+
+export const switchWorkSpace = (currentOrgId, title = "General") =>{
+  const user = JSON.parse(sessionStorage.getItem('user'))
+
+  if (!user) return 'NO USER LOGGED IN'
+
+  GetUserInfo().then(res => {
+    const memberId = res[0]._id
+    const { token } = user
+    const config = { headers: { "Content-type": "application/json" , Authorization: `Bearer ${token}` } }
+
+    axios
+      .get(
+        `${channelApi}/${currentOrgId}/channels/?default=true`,
+      )
+      .then(res => {
+        const redirectLink = `channels/message-board/${res.data[0]._id}`
+        goToChannel(redirectLink)
+      }).catch(err => alert(err.message))
+})
 }
