@@ -1,23 +1,32 @@
-import React from 'react'
-import AdminSettings from '.'
-import CustomizeWorkspaceTab from './Settings/components/CustomizeWorkspaceTab'
-import styles from './styles/customizeWorkspace.module.css'
+import React from "react"
+import Emoji from './Settings/components/Emoji.js'
+import Zuribot from "./Settings/components/Zuribot"
+import WorkspaceIcon from "./Settings/components/WorkspaceIcon"
+import Statuses from "./Settings/components/Statuses"
+import ChannelPrefixes from "./Settings/components/ChannelPrefixes"
+import ContentWrapper from "./Settings/components/ContentWrapper"
+import classes from "./styles/customizeWorkspace.module.css"
 
 function Customize() {
-    return (
-        <div>
-            <AdminSettings>
-                <div className={styles.container}>
-                    <div className={styles.contentWrapper}>
-                    <h5 className={styles.contentHeading}>
-                        Customize Your Workspace
-                    </h5>
-                    <CustomizeWorkspaceTab />
-                    </div>
-                </div>
-            </AdminSettings>
-        </div>
-    )
+  return (
+    <div>
+      <ContentWrapper
+        title="Customize Your Workspace"
+        text="Use these settings to make Slack your own. Let your imagination run wild and free! As an admin, you can prevent members from editing these on the"
+        span='Permissions page.'
+        tab1="Emoji"
+        tab2='Zuri-bot'
+        tab3='Workspace Icon'
+        tab4='Statuses'
+        tab5='Channel Prefixes'
+        tab1Content={<Emoji />}
+        tab2Content={<Zuribot />}
+        tab3Content={<WorkspaceIcon />}
+        tab4Content={<Statuses />}
+        tab5Content={<ChannelPrefixes />}
+      />
+    </div>
+  )
 }
 
 export default Customize
