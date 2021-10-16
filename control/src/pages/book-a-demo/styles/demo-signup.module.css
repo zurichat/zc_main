@@ -1,0 +1,127 @@
+.demoSignUpForm {
+  background: #00b87c;
+}
+
+.demoSignUpLeft,
+.demoSignUpRight {
+  width: 45%;
+}
+
+.demoSignUpLeft {
+  color: #ffffff;
+  font-weight: lighter;
+}
+
+.demoSignUpRight {
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 0.2em;
+  border-radius: 2px;
+}
+
+.btnContainer {
+  width: 40%;
+}
+
+.btnContainer .btn {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  padding-block: auto;
+  padding-inline: auto;
+  width: 100%;
+  height: 2.5em;
+  background: #00b87c;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2em;
+  transition: all 0.2s;
+}
+
+.btnContainer .btn:hover:not(:disabled) {
+  box-shadow: 0px 7px 20px #00000040;
+}
+
+.btnContainer .btn:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px #00000040;
+}
+
+.btnContainer .btn:disabled {
+  background: #00b87c80;
+}
+
+/* actual input element */
+.InputElement {
+  width: 55%;
+  color: #3a3a3a;
+  border: none;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  text-indent: 0.8em;
+}
+
+.InputElement::placeholder {
+  font-size: 1em;
+}
+
+.InputElement:invalid,
+.InputElement.is_invalid {
+  border-color: #ff0000;
+  color: #3a3a3a;
+}
+
+.InputElement:focus,
+.InputElement:focus-visible {
+  outline: none;
+}
+
+@media only screen and (max-width: 991px) {
+  .demoSignUpLeft {
+    width: 100%;
+    margin: 1em auto;
+  }
+  .demoSignUpRight {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .btnContainer {
+    width: 48%;
+  }
+  .btnContainer .btn {
+    font-size: 1em;
+  }
+
+  .demoSignUpLeft {
+    font-size: 1.5em;
+  }
+
+  /* input Label */
+  .InputLabel {
+    font-size: 1em;
+  }
+
+  .InputLabel em {
+    font-size: 0.8em;
+  }
+
+  /* Input wrapper */
+  .InputWrapper {
+    height: 3em;
+  }
+
+  /* actual input element */
+  .InputElement {
+    font-size: 1em;
+    width: 50%;
+  }
+
+  .InputElement::placeholder {
+    font-size: 0.8em;
+  }
+}

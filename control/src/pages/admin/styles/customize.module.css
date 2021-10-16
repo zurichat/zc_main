@@ -1,0 +1,32 @@
+.customizeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 4rem;
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: 914px;
+}
+
+.contentHeading {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.3rem;
+}
+
+.contentSubHeading {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: #00b87c;
+}
