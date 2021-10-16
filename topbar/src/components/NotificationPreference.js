@@ -573,7 +573,10 @@ const TextInput = ({ type = "text", label }) => {
         value={value}
         onChange={handleChange}
       />
-      <label style={{ color: "#B0AFB0" }} className={value && "filled"}>
+      <label
+        style={{ color: "#B0AFB0", textAlign: "center", marginTop: "8px" }}
+        className={value && "filled"}
+      >
         {label}
       </label>
     </div>
