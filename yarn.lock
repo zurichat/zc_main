@@ -967,12 +967,6 @@
   resolved "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@ckeditor/ckeditor5-react@^3.0.3":
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-react/-/ckeditor5-react-3.0.3.tgz#7b2d2634bd70a1efcb837dde5a9ac3ed2d839fbc"
-  integrity sha512-Zaazd9Brg64v1Q2qQNtbfryWeVLzXWlNbswLsOYwNgvHlxroa8+F7ZE33M2O8zxcL6sQHZ1vCNkQOPRUBG8pqA==
-  dependencies:
-    prop-types "^15.7.2"
 
 "@discoveryjs/json-ext@^0.5.0":
   version "0.5.5"
@@ -6193,10 +6187,6 @@ react-loader-spinner@^4.0.0:
   dependencies:
     prop-types "^15.7.2"
 
-react-tooltip-controller@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/react-tooltip-controller/-/react-tooltip-controller-1.0.6.tgz#3ab85204cfde5cd6d5d0bb2ab36b90ea3d68c459"
-  integrity sha512-XD/1WczICoV7HUGRfIlcrcP9jZ/87bHwVk9+buUQPYaSQPLh+V9mqcg4Ueha81wtLiM2ZikEOKylrEHgY6jhPA==
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
