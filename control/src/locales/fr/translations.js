@@ -402,5 +402,15 @@ export const TRANSLATIONS_FR = {
     headline: "Réinitialisation du mot de passe réussie !",
     post_headline: "La réinitialisation de votre mot de passe a réussi ! vous pouvez procéder à la connexion maintenant",
     button: "Continuer à vous connecter"
+  },
+  signout:{
+    title: "Se déconnecter",
+    preOrgText: "Déconnecté de l'équipe",
+    workspace: "Espace de travail",
+    signoutMessage: {
+      preOrgText: "Vous avez été déconnecté de l'équipe"
+    },
+    loginText: "Connexion",
+    postLoginText: "vers un autre espace de travail"
   }
 }

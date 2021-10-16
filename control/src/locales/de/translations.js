@@ -406,5 +406,15 @@ export const TRANSLATIONS_DE = {
     headline: "Passwort-Reset erfolgreich!",
     post_headline: "Ihr Passwort zurücksetzen war erfolgreich! Sie können sich jetzt anmelden",
     button: "Weiter zum Login"
+  },
+  signout:{
+    title: "Austragen",
+    preOrgText: "Vom Team abgemeldet",
+    workspace: "Arbeitsplatz",
+    signoutMessage: {
+      preOrgText: "Sie wurden vom Team abgemeldet"
+    },
+    loginText: "Einloggen",
+    postLoginText: "zu einem anderen Arbeitsbereich"
   }
 }

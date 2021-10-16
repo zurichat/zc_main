@@ -398,6 +398,16 @@ export const TRANSLATIONS_EN = {
     headline: "Passwowrd Reset Successful!",
     post_headline: "Your password reset was succesful! you can proceed to login now",
     button: "Continue to login"
+  },
+  signout:{
+    title: "Sign Out",
+    preOrgText: "Signed out of Team",
+    workspace: "Workspace",
+    signoutMessage: {
+      preOrgText: "You have been signed out of Team"
+    },
+    loginText: "Login",
+    postLoginText: "to another workspace"
   }
 
 }

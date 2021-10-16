@@ -5,6 +5,8 @@ import axios from "axios"
 import { SignoutStyleWrapper } from "../../component-styles/SignoutStyle"
 import logo from "../../component-assets/zuri.svg"
 import { Helmet } from "react-helmet"
+import "../../i18n";
+import { useTranslation} from "react-i18next";
 
 const Signout = ({ history }) => {
   const orgName = localStorage.getItem("orgName")
@@ -27,31 +29,32 @@ const Signout = ({ history }) => {
       })
   })
 
+  const { t } = useTranslation();
   return (
     <>
       <SignoutStyleWrapper>
         <div className="logo">
           <Helmet>
-            <title>Sign Out - Zuri Chat</title>
+            <title>{t("signout.title")} - Zuri Chat</title>
           </Helmet>
           <img src={logo} alt="zuri logo" />
         </div>
 
         <div className="content-wrapper">
-          <h6 className="org-name">Signed out of Team {orgName} Workspace</h6>
+          <h6 className="org-name">{t("signout.preOrgText")} {orgName} {t("signout.workspace")}</h6>
           <signoutMessage>
-            You have been signed out of Team {orgName} Workspace
+            {t("signout.signoutMessage.preOrgText")} {orgName} {t("signout.workspace")}
           </signoutMessage>
 
           <button className="push" onClick={() => history.push("/login")}>
-            Login
+            {t("signout.loginText")}
           </button>
           <p className="login">
             or
             <a href="/login" className="link">
-              Login
+              {t("signout.loginText")}
             </a>
-            to another workspace
+            {t("signout.postLoginText")}
           </p>
         </div>
       </SignoutStyleWrapper>
