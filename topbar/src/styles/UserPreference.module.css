@@ -60,3 +60,12 @@ border-radius: 4px;
 .spacingRight {
   margin-right: 20px;
 }
+
+@media screen and (max-width: 768px){
+  .modalContent{
+    max-width: 100%;
+  }
+  .spacingRight{
+    margin: 0;
+  }
+}
