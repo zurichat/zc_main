@@ -232,7 +232,8 @@
   font-weight: 700;
   color: #616061;
   margin-top: -20px;
-  margin-bottom: -15px;
+  /* margin-bottom: -15px; */
+  border-bottom: 1px solid #ddd;
 }
 
 .tableHeader > div {
@@ -242,13 +243,13 @@
 }
 
 .columnTitle1 {
-  width: 70px;
+  width: 15%;
 }
 
 .columnTitle2 {
   position: relative;
-  width: 30%;
   cursor: pointer;
+  width: 25%;
 }
 
 .columnTitle2 span {
@@ -266,7 +267,7 @@
 
 .columnTitle3 {
   position: relative;
-  width: 30%;
+  width: 25%;
   cursor: pointer;
 }
 
@@ -284,18 +285,68 @@
 }
 
 .columnTitle4 {
-  width: auto;
+  width: 25%;
+}
+
+.columnTitle5 {
+  width: 10%;
 }
 
 .tableContent {
   display: flex;
+  height: 64px;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 15px;
 }
 
-.emojiImage {}
-.emojiImage img {}
-.emojiName {}
-.emojiDate {}
-.addedBy {}
+.tableContent:hover {
+  background: #f8f8f8;
+}
+
+.tableContent > div {
+  padding-left: 16px;
+}
+
+.emojiImage {
+  width: 15%;
+}
+.emojiImage img {
+  width: 32px;
+}
+.emojiName {
+  font-weight: 900;
+  color: #1d1c1d;
+  width: 25%;
+}
+.emojiDate {
+  width: 25%;
+}
+.addedBy {
+  width: 25%;
+}
+
+.addedBy img {
+  height: 24px;
+  width: 24px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.emojiDelete {
+  width: 10%;
+}
+
+.emojiDelete svg {
+  cursor: pointer;
+  height: 20px;
+  fill: #6a6a6a;
+  transition: all 0.2s;
+}
+
+.emojiDelete svg:hover {
+  fill: #e01e5a;
+}
 
 .modal {
   position: fixed;
