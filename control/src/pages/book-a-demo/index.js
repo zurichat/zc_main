@@ -3,6 +3,8 @@ import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import styles from "./styles/demo-page.module.css"
 import DemoForm from "./components/book-demo-form"
+import BookDemoImg from "./assets/here-to-help.png"
+import DemoSignUp from "./components/demo-signup"
 
 const BookDemo = () => {
   return (
@@ -11,13 +13,11 @@ const BookDemo = () => {
 
       <div className={`${styles.demoPage}`}>
         <section className={`${styles.demoIntroduction}`}>
-          <div className={`${styles.demoPageContainer}`}>
+          <div className={`container`}>
             <h1> Let us walk you through it</h1>
           </div>
         </section>
-        <section
-          className={`${styles.demoPageContainer} ${styles.demoFormMain}`}
-        >
+        <section className={`container ${styles.demoFormMain}`}>
           <div className={`${styles.demoFormSection}`}>
             <div className={`${styles.demoFormLeft}`}>
               <DemoForm />
@@ -26,13 +26,15 @@ const BookDemo = () => {
             <div className={`${styles.demoFormRight}`}>
               <h4>You'll learn how to:</h4>
               <ul className={`${styles.learnHowToList}`}>
-                <li>
-                  Maximize the benefits your business can achieve from Chanty
-                </li>
                 <li>Organize communication in your team</li>
-                <li>Prevent communication overload and distraction</li>
+                <li>
+                  Prevent overload of communication and avoid distractions
+                </li>
+                <li>
+                  Maximize the benefits your business can achieve from Zuri
+                </li>
                 <li>Save up to 3 hours a day</li>
-                <li> Migrate from other messengers</li>
+                <li> Migrate from other messaging services</li>
                 <li>
                   Adopt smart use cases on managing integrations, tasks,
                   notifications and features for a deadline-driven team
@@ -43,7 +45,7 @@ const BookDemo = () => {
         </section>
 
         <section className={`${styles.otherInfoSection}`}>
-          <div className={`${styles.demoPageContainer}`}>
+          <div className={`container`}>
             <h3>Other information:</h3>
             <ul className={`${styles.otherInfoList}`}>
               <li>
@@ -60,16 +62,23 @@ const BookDemo = () => {
           </div>
         </section>
 
-        <section className={`${styles.demoPageContainer}`}>
-          <div className={`${styles.hereToHelp}`}>
-            <div className={`${styles.hereToHelpText}`}>
-              <h3>We are always ready to help</h3>
-              <p>
-                Got a question? Our 24/7 support team will go the extra mile so
-                you can have easy and enjoyable experience with Chanty.
-              </p>
+        <section className={`${styles.demoPageHereToHelpSection}`}>
+          <div className={`container`}>
+            <div className={`${styles.hereToHelp}`}>
+              <div className={`${styles.hereToHelpText}`}>
+                <h3>We are always ready to help</h3>
+                <p>
+                  Got a question? Our 24/7 support team will go the extra mile
+                  so you can have easy and enjoyable experience with Zuri.
+                </p>
+              </div>
+              <div className={`${styles.hereToHelpImage}`}>
+                <img src={BookDemoImg} alt="help image" />
+              </div>
             </div>
-            <div className={`${styles.hereToHelpImage}`}></div>
+          </div>
+          <div className={`${styles.helpBackgroundSlash}`}>
+            <DemoSignUp />
           </div>
         </section>
       </div>
