@@ -355,7 +355,7 @@ const NotificationPreference = () => {
           </span>
         </div>
         <div className={styles.schedule}>
-          <ul className={styles.list}>
+          <ul className={styles.list} style={{ paddingLeft: "0" }}>
             <li className={standardStyles.spacingRight}>
               <div className={styles.select}>
                 <select
@@ -573,7 +573,10 @@ const TextInput = ({ type = "text", label }) => {
         value={value}
         onChange={handleChange}
       />
-      <label style={{ color: "#B0AFB0" }} className={value && "filled"}>
+      <label
+        style={{ color: "#B0AFB0", textAlign: "center", marginTop: "8px" }}
+        className={value && "filled"}
+      >
         {label}
       </label>
     </div>
