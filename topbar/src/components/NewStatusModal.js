@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react"
+import React, { useState, useContext, useEffect } from "react"
 import { Picker } from "emoji-mart"
 import ReactTooltip from "react-tooltip"
 import DatePicker from "react-datepicker"
@@ -17,38 +17,39 @@ import { StyledEmojiWrapper } from "../styles/EmojiMartStyle"
 import { FaRegTimesCircle } from "react-icons/fa"
 import DefaultStatus from "./DefaultStatus"
 
-const SetDateAndTime = ({ dateTime, setDateTime }) => {
-  const [value, onChange] = useState(new Date())
-  const [timevalue, timeChange] = useState("10:00")
+// const SetDateAndTime = ({ dateTime, setDateTime }) => {
+//   const [value, onChange] = useState(new Date())
+//   const [timevalue, timeChange] = useState("10:00")
+//   //
 
-  return (
-    <>
-      <div className={styles.modal}>
-        <div className={styles.modalcontainer}>
-          <div className={styles.statustop}>
-            <p>Clear after</p>
-            <img
-              src={whitex}
-              alt=""
-              onClick={() => setDateTime(!dateTime)}
-              className={styles.whitex}
-            />
-          </div>
-          <form>
-            <div className={styles.dateSection}>
-              <label className={styles.dateLabel}>Date</label>
-              <DatePicker onChange={onChange} value={value} />
-            </div>
-            <div>
-              <label>Time</label>
-              <TimePicker onChange={timeChange} value={timevalue} />
-            </div>
-          </form>
-        </div>
-      </div>
-    </>
-  )
-}
+//   return (
+//     <>
+//       <div className={styles.modal}>
+//         <div className={styles.modalcontainer}>
+//           <div className={styles.statustop}>
+//             <p>Clear after</p>
+//             <img
+//               src={whitex}
+//               alt=""
+//               onClick={() => setDateTime(!dateTime)}
+//               className={styles.whitex}
+//             />
+//           </div>
+//           <form>
+//             <div className={styles.dateSection}>
+//               <label className={styles.dateLabel}>Date</label>
+//               <DatePicker onChange={onChange} value={value} />
+//             </div>
+//             <div>
+//               <label>Time</label>
+//               <TimePicker onChange={timeChange} value={timevalue} />
+//             </div>
+//           </form>
+//         </div>
+//       </div>
+//     </>
+//   )
+// }
 
 const SetStatusModal = ({
   statusModal,
@@ -62,6 +63,14 @@ const SetStatusModal = ({
   const [dropdown, setDropdown] = useState(false)
   const [openEmoji, setOpenEmoji] = useState(false)
   const [dateTime, setDateTime] = useState(false)
+  const [dateState, setDateState] = useState(
+    new Date(new Date().toString().split("GMT")[0] + " UTC")
+      .toISOString()
+      .split("T")[0]
+  )
+  const [timeState, setTimeState] = useState(null)
+  const [timeError, setTimeError] = useState(false)
+  // const [choosePeriod, setChoosePeriod] = useState(user?.status?.expiry_time)
   const { user, orgId, setUser } = useContext(ProfileContext)
   const [choosePeriod, setChoosePeriod] = useState(user?.status?.expiry_time)
   const [statusText, setStatusText] = useState(user?.status?.text)
@@ -72,6 +81,19 @@ const SetStatusModal = ({
     setOpenEmoji(!openEmoji)
   }
   //
+
+  const setDateHandler = event => {
+    setDateState(event.target.value)
+  }
+  const setTimeHandler = event => {
+    setTimeState(event.target.value)
+    const combineDateTime = dateState + " " + event.target.value
+    setTimeError(new Date(combineDateTime) < new Date().getTime())
+  }
+  //
+  useEffect(() => {
+    setTimeState(getTime())
+  }, [])
   const getTime = () => {
     let d = new Date()
     let h = d.getHours(),
@@ -88,11 +110,16 @@ const SetStatusModal = ({
 
     return h + ":" + m
   }
-  const currentTime = getTime()
-  //
+
   const handleSubmit = e => {
     e.preventDefault()
-
+    let dateData
+    if (dateTime) {
+      const combineDateTime = dateState + " " + timeState
+      dateData = new Date(new Date() - new Date(combineDateTime)).toISOString()
+      setTimeError(new Date(combineDateTime) < new Date().getTime())
+      if (new Date(combineDateTime) < new Date().getTime()) return
+    }
     setUser({
       ...user,
       status: {
@@ -102,10 +129,10 @@ const SetStatusModal = ({
           {
             tag_history: statusEmoji,
             text_history: statusText,
-            expiry_history: choosePeriod
+            expiry_history: dateTime ? dateData : choosePeriod
           }
         ],
-        expiry_time: choosePeriod,
+        expiry_time: dateTime ? dateData : choosePeriod,
         text: statusText,
         tag: statusEmoji
       }
@@ -115,7 +142,7 @@ const SetStatusModal = ({
       const res = authAxios.patch(
         `/organizations/${user.org_id}/members/${user._id}/status`,
         {
-          expiry_time: choosePeriod,
+          expiry_time: dateTime ? dateData : choosePeriod,
           tag: statusEmoji,
           text: statusText
         }
@@ -176,10 +203,17 @@ const SetStatusModal = ({
     })
   }
 
-  const statusHistory =
+  let statusHistory =
     user?.status?.status_history?.reverse().filter(history => {
       return history.text_history !== "" || history.tag_history !== ""
     }) || []
+  // console.log(statusHistory)
+
+  statusHistory = statusHistory.map(ev => ({
+    ...ev,
+    expiry_history:
+      ev.expiry_history.length > 10 ? "date_time" : ev.expiry_history
+  }))
   // console.log(statusHistory)
   // console.log(user)
   const expiryTimeLabel = {
@@ -187,7 +221,8 @@ const SetStatusModal = ({
     one_hour: "1 Hour",
     four_hours: "4 Hours",
     today: "Today",
-    this_week: "This Week"
+    this_week: "This Week",
+    date_time: "Custom"
   }
 
   // console.log(user?.status?.expiry_time, choosePeriod, expiryTimeLabel[choosePeriod])
@@ -471,7 +506,10 @@ const SetStatusModal = ({
                   <label htmlFor="" className={styles.dropdowntop}>
                     Clear after: &nbsp;
                     <span className={styles.dropdowntopspan}>
-                      {expiryTimeLabel[choosePeriod]}
+                      {expiryTimeLabel[choosePeriod] === "Custom" ||
+                      choosePeriod.length > 10
+                        ? "Choose Date and Time"
+                        : expiryTimeLabel[choosePeriod]}
                     </span>
                   </label>
                   <img src={down} alt="" />
@@ -481,15 +519,25 @@ const SetStatusModal = ({
                     <input
                       type="date"
                       className={styles.date}
-                      defaultValue={new Date().toISOString().slice(0, -14)}
-                      min={new Date().toISOString().slice(0, -14)}
+                      defaultValue={dateState}
+                      min={
+                        new Date(new Date().toString().split("GMT")[0] + " UTC")
+                          .toISOString()
+                          .split("T")[0]
+                      }
+                      onChange={setDateHandler}
                     />
                     <input
                       type="time"
-                      className={styles.time}
-                      defaultValue={currentTime}
-                      min={currentTime}
+                      className={timeError ? styles.timeError : styles.time}
+                      defaultValue={timeState}
+                      onChange={setTimeHandler}
                     />
+                    {timeError && (
+                      <div className={styles.errorMess}>
+                        Can't set time in the past
+                      </div>
+                    )}
                   </div>
                 ) : null}
                 <div>
@@ -500,37 +548,55 @@ const SetStatusModal = ({
                     >
                       <li
                         className={styles.dropdownoption}
-                        onClick={() => setChoosePeriod("dont_clear")}
+                        onClick={() => {
+                          setChoosePeriod("dont_clear")
+                          setDateTime(false)
+                        }}
                       >
                         Don't clear
                       </li>
                       <li
                         className={styles.dropdownoption}
-                        onClick={() => setChoosePeriod("one_hour")}
+                        onClick={() => {
+                          setChoosePeriod("one_hour")
+                          setDateTime(false)
+                        }}
                       >
                         1 hour
                       </li>
                       <li
                         className={styles.dropdownoption}
-                        onClick={() => setChoosePeriod("four_hours")}
+                        onClick={() => {
+                          setChoosePeriod("four_hours")
+                          setDateTime(false)
+                        }}
                       >
                         4 hours
                       </li>
                       <li
                         className={styles.dropdownoption}
-                        onClick={() => setChoosePeriod("today")}
+                        onClick={() => {
+                          setChoosePeriod("today")
+                          setDateTime(false)
+                        }}
                       >
                         Today
                       </li>
                       <li
                         className={styles.dropdownoption}
-                        onClick={() => setChoosePeriod("this_week")}
+                        onClick={() => {
+                          setChoosePeriod("this_week")
+                          setDateTime(false)
+                        }}
                       >
                         This week
                       </li>
                       <li
                         className={styles.dropdownoption2}
-                        onClick={() => setDateTime(!dateTime)}
+                        onClick={() => {
+                          setDateTime(true)
+                          setChoosePeriod("date_time")
+                        }}
                       >
                         Set date and time
                       </li>
