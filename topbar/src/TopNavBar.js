@@ -51,6 +51,17 @@ const TopNavBar = () => {
   const [search, setSearch] = useState("")
   const [helpModal, setHelpModal] = useState(false)
   const [messages, setMessages] = useState("")
+  const [isSearchOpen, setOpenSearch] = useState(false)
+  const [searchValue, setSearchValue] = useState("")
+  const onSearchSubmit = e => {
+    if (e.keyCode === 13 && searchValue.length >= 1) {
+      setOpenSearch(true)
+    }
+  }
+
+  const onSearchChange = value => {
+    setSearchValue(value)
+  }
 
   const [nullValue, setnullValue] = useState(0)
 
@@ -136,7 +147,7 @@ const TopNavBar = () => {
 
   useEffect(() => {
     UpdateInfo()
-  }, [])
+  }, [userProfileImage]) //A temporary fix for profileImg to persist])
 
   const UpdateInfo = () => {
     GetUserInfo().then(res => {
@@ -284,6 +295,15 @@ const TopNavBar = () => {
             suggestions={filteredSuggestions}
           />
         </div> */}
+
+        {isSearchOpen ? (
+          <BigModal
+            onClose={() => {
+              setOpenSearch(false)
+            }}
+            inputValue={searchValue}
+          />
+        ) : null}
       </div>
 
       <ProfileImageContainer
