@@ -32,6 +32,7 @@
   margin-top: -15px;
   margin-bottom: -20px;
 }
+
 .labelContainer {
   display: flex;
   align-items: center;
@@ -72,6 +73,7 @@
 @media screen and (max-width: 768px) {
   .modalContent {
     max-width: 100%;
+    padding-bottom: 65px;
   }
   .spacingRight {
     margin: 0;
