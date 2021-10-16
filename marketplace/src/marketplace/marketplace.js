@@ -220,13 +220,13 @@ const MarketPlace = () => {
             </div>
             <Row className={`mx-0`}>
               <TabPanel>
-                <MarketPlaceContainer user={user} isMarketPlaceLoading={isMarketPlaceLoading} plugins={plugins} type={"all"} />
+                <MarketPlaceContainer user={user} isMarketPlaceLoading={isMarketPlaceLoading} setPlugins={setPlugins} plugins={plugins} type={"all"} />
               </TabPanel>
               <TabPanel>
-                <MarketPlaceContainer user={user} isMarketPlaceLoading={isMarketPlaceLoading} plugins={plugins} type={"popular"} />
+                <MarketPlaceContainer user={user} isMarketPlaceLoading={isMarketPlaceLoading} setPlugins={setPlugins} plugins={plugins} type={"popular"} />
               </TabPanel>
               <TabPanel>
-                <MarketPlaceContainer user={user} isMarketPlaceLoading={isMarketPlaceLoading} plugins={plugins} type={"installed"} />
+                <MarketPlaceContainer user={user} isMarketPlaceLoading={isMarketPlaceLoading} setPlugins={setPlugins} plugins={plugins} type={"installed"} />
               </TabPanel>
             </Row>
           </Tabs>
