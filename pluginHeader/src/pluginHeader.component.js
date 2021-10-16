@@ -46,8 +46,8 @@ export default function Header(props) {
             <div
               className={styles.plugin__header__thumbnail}
               onClick={() => {
-                setShowDialog(!showDialog)
-                setTabIndex(1)
+                setShowDialog(!showDialog);
+                setTabIndex(1);
               }}
             >
               <div className={styles.plugin__thumbnail}>
@@ -63,7 +63,8 @@ export default function Header(props) {
                   showDialog={showDialog}
                   tabIndex={tabIndex}
                   close={() => setShowDialog(false)}
-                  config={props.headerConfig}
+                  config={dummyHeaderConfig}
+                  channelName={props.headerConfig.name}
                 />
               )}
               <div className={styles.plugin__header__count}>
