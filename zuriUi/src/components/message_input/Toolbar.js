@@ -19,6 +19,7 @@ import {
   StyledEmojiSelectWrapper
 } from "./emojiStyles"
 
+
 const BoldIcon = () => <img src={Bold} alt="" />
 const ItalicIcon = () => <img src={Italic} alt="" />
 const ListIcon = () => <img src={List} alt="" />
@@ -86,7 +87,7 @@ const Toolbar = props => {
     const currentDate = new Date()
     const newMessageData = {
       message_id: Date.now().toString(),
-      username: currentUserData.username || "John Doe",
+      username: currentUserData.username,
       time: `${
         currentDate.getHours() < 12
           ? currentDate.getHours()
@@ -100,8 +101,8 @@ const Toolbar = props => {
     // console.log("submit-msg", newMessageData)
     // console.log("submit-editor", convertToRaw(editorState.getCurrentContent()))
     addToMessages && addToMessages(newMessageData)
+    sendMessageHandler(newMessageData)
     setEditorState(EditorState.createEmpty())
-    // sendMessageHandler(convertToRaw(editorState.getCurrentContent()))
   }
   const handleInlineStyle = (event, style) => {
     event.preventDefault()
