@@ -1,8 +1,8 @@
 import React, { useState, useRef, useCallback } from "react"
 import { authAxios } from "../../Utils/Api"
-import axios from "axios"
 import ReactCrop from "react-image-crop"
-import Cropper from "react-easy-crop"
+import ImageCrop from "react-image-crop-component"
+import "react-image-crop-component/style.css"
 import "cropperjs/dist/cropper.css"
 import "react-image-crop/dist/ReactCrop.css"
 import {
@@ -14,30 +14,12 @@ import {
 } from "./workSpaceIconChange"
 
 const LogoCrop = ({ logo, setToggle, setAlertToggle }) => {
-  const [crop, setCrop] = useState({ x: 0, y: 0 })
+  const [crop, setCrop] = useState({ aspect: 1 / 1 })
   const [completedCrop, setCompletedCrop] = useState(null)
   const [cropData, setCropData] = useState("")
   const [cropper, setCropper] = useState("")
 
   const organisation_id = localStorage.getItem("currentWorkspace")
-  let token = sessionStorage.getItem("token")
-
-  const handleIconUpload = () => {
-    authAxios
-      .patch(
-        `https://api.zuri.chat/organisations/${organisation_id}/logo`, crop)
-      .then(res => {
-        // eslint-disable-next-line no-console
-        console.log(res.message)
-        setAlertToggle(true)
-      })
-      .catch(error => {
-        // eslint-disable-next-line no-console
-        console.log(error.message)
-      })
-    setAlertToggle(true)
-    setToggle(false)
-  }
 
   const cancelUpload = () => {
     setToggle(false)
@@ -82,7 +64,7 @@ const LogoCrop = ({ logo, setToggle, setAlertToggle }) => {
           }}
           guides={true}
         /> */}
-      <div className="crop-container">
+      {/* <div className="crop-container">
         <Cropper
           image="https://img.huffingtonpost.com/asset/5ab4d4ac2000007d06eb2c56.jpeg?cache=sih0jwle4e&ops=1910_1000"
           crop={crop}
@@ -90,9 +72,18 @@ const LogoCrop = ({ logo, setToggle, setAlertToggle }) => {
           onCropChange={setCrop}
           onCropComplete={onCropComplete}
         />
-      </div>
+      </div> */}
+      <ImageCrop
+        src={logo}
+        setWidth={300}
+        setHeight={300}
+        square={false}
+        resize={true}
+        border={"dashed #ffffff 2px"}
+        //onCrop={this.onCropped}
+      />
       <CropButtons>
-        <Button onClick={handleIconUpload}>Crop Icon</Button>
+        <Button>Crop Icon</Button>
         <CancelButton onClick={cancelUpload}>Cancel</CancelButton>
       </CropButtons>
     </WorkSPaceLogoContainer>

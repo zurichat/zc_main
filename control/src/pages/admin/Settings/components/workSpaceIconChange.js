@@ -3,15 +3,15 @@ import styled from "styled-components"
 export const WorkSPaceLogoContainer = styled.div`
   font-size: 18px;
   font-family: "Lato";
+`
 
-  img {
-    width: 3rem;
+export const Logo = styled.img`
+  width: 3rem;
     height: 3rem;
     border-radius: 5px;
     background: #00b87c;
     margin-right: 0.75rem;
-  }
-`
+`;
 
 export const WorkSpaceDetailContainer = styled.div`
   display: flex;
