@@ -217,7 +217,7 @@
 /* set yourself as active*/
 
 .active, .away {
-  padding: 5px 0 0 12px;
+  padding: 5px 0 0 12px; 
   font-size: 13px;
   line-height: 13.2px;
   margin-left: 9px;
