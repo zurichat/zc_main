@@ -401,5 +401,10 @@ export const TRANSLATIONS_DE = {
       post_headline: "Klicken Sie auf den Button um fortzufahren",
       continueButton: "Weitermachen"
     }
+  },
+  passwordResetSuccess: {
+    headline: "Passwort-Reset erfolgreich!",
+    post_headline: "Ihr Passwort zurücksetzen war erfolgreich! Sie können sich jetzt anmelden",
+    button: "Weiter zum Login"
   }
 }

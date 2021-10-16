@@ -393,5 +393,11 @@ export const TRANSLATIONS_EN = {
       post_headline: "Click on the Button to continue",
       continueButton: "Continue"
     }
+  },
+  passwordResetSuccess: {
+    headline: "Passwowrd Reset Successful!",
+    post_headline: "Your password reset was succesful! you can proceed to login now",
+    button: "Continue to login"
   }
+
 }
