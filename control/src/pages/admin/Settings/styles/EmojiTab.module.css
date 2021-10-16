@@ -93,6 +93,12 @@
   transition: all 0.2s;
 }
 
+.messageActions > button div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .messageActions button:nth-child(6) svg {
   /* width: 13px; */
 }
