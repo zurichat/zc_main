@@ -41,7 +41,7 @@ import Customize from "./pages/admin/Customize"
 import UserGroups from "./pages/admin/UserGroups"
 import Blog from "./pages/blogs"
 import Homepage from "./pages/home"
-import Permissions from "./pages/admin/Permissions"
+// import Permissions from "./pages/admin/Permissions"
 import SettingsHome from "./pages/admin/Settings/index"
 import About from "./pages/about/index"
 import AdminSettingsTab from "./pages/admin/Settings/components/AdminSettingsTab"
@@ -63,7 +63,6 @@ import OnboardingHelp from "./pages/LoginSignUpHelp/index"
 import BookDemo from "./pages/book-a-demo"
 
 import ChangeWorkspaceName from "./pages/admin/Settings/components/ChangeWorkspaceName"
-
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -93,7 +92,7 @@ const App = () => {
         <Route path="/signout">
           <SignOut />
         </Route>
-         <Route path="/about">
+        <Route path="/about">
           <About />
         </Route>
         <Route path="/help">
