@@ -1,0 +1,25 @@
+.workSpaceContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 3.1rem;
+}
+
+.contentWrapper {
+  width: calc(100% - 10%);
+  margin: 0 auto;
+}
+
+.icon {
+  color: #333;
+}
+
+.contentHeading {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
