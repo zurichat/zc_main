@@ -61,7 +61,7 @@ export const BigModal = ({ onClose, inputValue, result, isLoadingUp }) => {
     <div key={i} className={styles.resultCard}>
       <SearchValue
         destination_Url={item?.destination_url}
-        src={item?.image_url[0]}
+        src={noImg}
         title={item?.title}
         onClose={onClose}
         content={item?.content}

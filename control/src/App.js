@@ -56,11 +56,14 @@ import adminNalytics from "./pages/admin/Settings/Member"
 import AccountProfile from "./pages/admin/AccountProfile"
 import Legal from "./pages/legal"
 import ZurichatBlog from "./pages/blogs/components/zurichatBlog"
+
+import ManageMembers from './pages/admin/manage_members/components/ManageMembers'
 import Ebooks from "./pages/ebooks"
 import Invitation from "./pages/admin/Invitation"
 import Whyzurichat from "./pages/WhyZuriChat/Whyzurichat"
 
 import OnboardingHelp from "./pages/LoginSignUpHelp/index"
+import DeleteWorkspace from "./pages/settings/components/DeleteWorkspace"
 import BookDemo from "./pages/book-a-demo"
 
 import ChangeWorkspaceName from "./pages/admin/Settings/components/ChangeWorkspaceName"
@@ -125,7 +128,7 @@ const App = () => {
           <Search />
         </Route>
         <Route path='/createBlog'>
-          {/* <CreateBlog /> */}
+          <CreateBlog />
         </Route>
         <Route path='/blog/:title'>
           <BlogDetails />
@@ -210,6 +213,10 @@ const App = () => {
         <PrivateRoute path="/settings" exact component={Settings} />
         <PrivateRoute path="/admin/settings" exact component={SettingsHome} />
         <PrivateRoute path="/admin/settings/home" exact component={Home} />
+
+        <PrivateRoute path="/admin/name" exact component={ChangeWorkspaceName} />
+        <PrivateRoute path="/admin/delete" exact component={DeleteWorkspace} />
+        <PrivateRoute path="/homepage/profile" exact component={Homepage} />
         <PrivateRoute
           path="/admin/name"
           exact
@@ -262,6 +269,11 @@ const App = () => {
           exact
           component={AdminSettingsTab}
         /> */}
+         <Route
+          path="/admin/settings/managemembers"
+          exact
+          component={ManageMembers}
+        />
 
        
 
