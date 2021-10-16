@@ -1,55 +1,99 @@
-import React, { useState } from "react"
+import React, { useState, useRef, useCallback } from "react"
+import { authAxios } from "../../Utils/Api"
 import axios from "axios"
 import ReactCrop from "react-image-crop"
+import Cropper from "react-easy-crop"
+import "cropperjs/dist/cropper.css"
 import "react-image-crop/dist/ReactCrop.css"
 import {
   WorkSPaceLogoContainer,
   WorkSpaceName,
   CropButtons,
-  Button
+  Button,
+  CancelButton
 } from "./workSpaceIconChange"
 
 const LogoCrop = ({ logo, setToggle, setAlertToggle }) => {
-  const [crop, setCrop] = useState({ unit: "%", width: 100, aspect: 16 / 9 })
+  const [crop, setCrop] = useState({ x: 0, y: 0 })
+  const [completedCrop, setCompletedCrop] = useState(null)
+  const [cropData, setCropData] = useState("")
+  const [cropper, setCropper] = useState("")
 
   const organisation_id = localStorage.getItem("currentWorkspace")
   let token = sessionStorage.getItem("token")
 
   const handleIconUpload = () => {
-    // axios
-    //   .patch(
-    //     `https://api.zuri.chat/organisations/${organisation_id}/logo`,
-    //     crop,
-    //     {
-    //       headers: {
-    //         Authorization: `Bearer ${token}`,
-    //         "content-type": "multipart/form-data"
-    //       }
-    //     }
-    //   )
-    //   .then(res => {
-    //     // eslint-disable-next-line no-console
-    //     console.log(res.message)
-    //     setAlertToggle(true)
-    //   })
-    //   .catch(error => {
-    //     // eslint-disable-next-line no-console
-    //     console.log(error.message)
-    //   })
-      setAlertToggle(true)
-      setToggle(false)
+    authAxios
+      .patch(
+        `https://api.zuri.chat/organisations/${organisation_id}/logo`, crop)
+      .then(res => {
+        // eslint-disable-next-line no-console
+        console.log(res.message)
+        setAlertToggle(true)
+      })
+      .catch(error => {
+        // eslint-disable-next-line no-console
+        console.log(error.message)
+      })
+    setAlertToggle(true)
+    setToggle(false)
   }
 
   const cancelUpload = () => {
     setToggle(false)
   }
+
+  const cropperRef = useRef(null)
+  const onCrop = () => {
+    const imageCrop = cropperRef?.current
+    const cropRef = imageCrop?.cropper
+    // eslint-disable-next-line no-console
+    console.log(cropRef.getCroppedCanvas().toDataURL())
+  }
+
+  const onCropComplete = useCallback((croppedArea, croppedAreaPixels) => {
+    // eslint-disable-next-line no-console
+    console.log(croppedArea, croppedAreaPixels)
+  }, [])
+
+  // const getCropData = () => {
+  //   if (typeof cropper !== "undefined") {
+  //     setCropData(cropper.getCroppedCanvas().toDataURL());
+  //   }
+  // };
   return (
     <WorkSPaceLogoContainer>
       <WorkSpaceName>Crop Workspace Icon</WorkSpaceName>
-      <ReactCrop src={logo} crop={crop} onChange={newCrop => setCrop(newCrop)} />
+      {/* <ReactCrop src={logo} crop={crop} onChange={newCrop => setCrop(newCrop)} /> */}
+      {/* <Cropper
+          style={{ height: 200, width: "100%", objectFit: "contain", margin: "0 auto" }}
+          zoomTo={0.5}
+          initialAspectRatio={1}
+          src={logo}
+          viewMode={-2}
+          minCropBoxHeight={10}
+          minCropBoxWidth={10}
+          background={false}
+          responsive={true}
+          autoCropArea={1}
+          checkOrientation={false}
+          onInitialized={(instance) => {
+            setCropper(instance);
+          }}
+          guides={true}
+        /> */}
+      <div className="crop-container">
+        <Cropper
+          image="https://img.huffingtonpost.com/asset/5ab4d4ac2000007d06eb2c56.jpeg?cache=sih0jwle4e&ops=1910_1000"
+          crop={crop}
+          aspect={4 / 3}
+          onCropChange={setCrop}
+          onCropComplete={onCropComplete}
+        />
+      </div>
       <CropButtons>
         <Button onClick={handleIconUpload}>Crop Icon</Button>
-        <Button onClick={cancelUpload}>Cancel</Button>
+        <CancelButton onClick={cancelUpload}>Cancel</CancelButton>
       </CropButtons>
     </WorkSPaceLogoContainer>
   )
