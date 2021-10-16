@@ -10,51 +10,47 @@ import ResetPassword from './pages/passwordReset/index'
 import NewPassword from './pages/passwordReset/newPassword'
 // end password block
 
-import CookiesSetting from './pages/cookiesSettings'
-import Cookies from './pages/cookies'
-import Features from './pages/features'
-import Resources from './pages/resources'
-import Help from './pages/Help'
-import Pricing from './pages/pricing'
-import Security from './pages/security'
-import Invite from './pages/inviteScreen'
-import Inviterequest from './pages/InviteRequest/InviteRequest'
-import SendRequest from './pages/InviteRequest/SendRequest'
-import ContactUs from './pages/contact-us'
-import Search from './pages/search'
-import AppsAndIntegrations from './pages/apps-integration'
-import Download from './pages/download'
-import DownloadsMac from './pages/download/DownloadsMac'
-import Careers from './pages/careers'
-import MarketPlace from './pages/marketplace/marketplace'
-import Settings from './pages/settings'
-import ConfirmPassword from './pages/settings/components/ConfirmPassword'
-import AccDeactivated from './pages/settings/components/AccDeactivated'
-import DeactivateAccount from './pages/settings/components/AcctDeactivation'
-import AllSessionSignOut from './pages/settings/components/AllSessionSignOut'
-import PrivateRoute from './pages/settings/Utils/PrivateRoute'
-import ConfirmDeactivation from './pages/settings/components/ConfirmDeactivation'
-import CreateWorkSpaces from './pages/createworkspace/components/WorkSpaceContext'
-import PrivacyPolicy from './pages/privacy-policy/index'
-import NotFoundPage from './pages/404'
-import Billing from './pages/admin/Billing'
-import Customize from './pages/admin/Customize'
-import Blog from './pages/blogs'
-import BlogDetails from './pages/blogs/components/BlogDetails'
-import CreateBlog from './pages/blogs/components/CreateBlog'
-import Homepage from './pages/home'
-import Permissions from './pages/admin/Permissions'
-import SettingsHome from './pages/admin/Settings/index'
-import About from './pages/about/index'
-import AdminSettingsTab from './pages/admin/Settings/components/AdminSettingsTab'
-import TermsOfService from './pages/termsOfService'
-import RedirectRoute from './pages/redirect'
-import AnayticsHome from './pages/admin/Analytics/index'
-import Plugins from './pages/plugins'
-import Home from './pages/admin/Settings/components/SettingsHome'
-import AboutWorkSpace from './pages/admin/AboutWorkSpace'
-
-
+import CookiesSetting from "./pages/cookiesSettings"
+import Cookies from "./pages/cookies"
+import Features from "./pages/features"
+import Resources from "./pages/resources"
+import Help from "./pages/Help"
+import Pricing from "./pages/pricing"
+import Security from "./pages/security"
+import Invite from "./pages/inviteScreen"
+import Inviterequest from "./pages/InviteRequest/InviteRequest"
+import SendRequest from "./pages/InviteRequest/SendRequest"
+import ContactUs from "./pages/contact-us"
+import Search from "./pages/search"
+import AppsAndIntegrations from "./pages/apps-integration"
+import Download from "./pages/download"
+import DownloadsMac from "./pages/download/DownloadsMac"
+import Careers from "./pages/careers"
+import MarketPlace from "./pages/marketplace/marketplace"
+import Settings from "./pages/settings"
+import ConfirmPassword from "./pages/settings/components/ConfirmPassword"
+import AccDeactivated from "./pages/settings/components/AccDeactivated"
+import DeactivateAccount from "./pages/settings/components/AcctDeactivation"
+import AllSessionSignOut from "./pages/settings/components/AllSessionSignOut"
+import PrivateRoute from "./pages/settings/Utils/PrivateRoute"
+import ConfirmDeactivation from "./pages/settings/components/ConfirmDeactivation"
+import CreateWorkSpaces from "./pages/createworkspace/components/WorkSpaceContext"
+import PrivacyPolicy from "./pages/privacy-policy/index"
+import NotFoundPage from "./pages/404"
+import Billing from "./pages/admin/Billing"
+import Customize from "./pages/admin/Customize"
+import UserGroups from "./pages/admin/UserGroups"
+import Blog from "./pages/blogs"
+import Homepage from "./pages/home"
+import SettingsHome from "./pages/admin/Settings/index"
+import About from "./pages/about/index"
+import AdminSettingsTab from "./pages/admin/Settings/components/AdminSettingsTab"
+import TermsOfService from "./pages/termsOfService"
+import RedirectRoute from "./pages/redirect"
+import AnayticsHome from "./pages/admin/Analytics/index"
+import Plugins from "./pages/plugins"
+import Home from "./pages/admin/Settings/components/SettingsHome"
+import AboutWorkSpace from "./pages/admin/AboutWorkSpace"
 import adminNalytics from "./pages/admin/Settings/Member"
 import AccountProfile from "./pages/admin/AccountProfile"
 import Legal from "./pages/legal"
@@ -67,7 +63,8 @@ import OnboardingHelp from "./pages/LoginSignUpHelp/index"
 import BookDemo from "./pages/book-a-demo"
 
 import ChangeWorkspaceName from "./pages/admin/Settings/components/ChangeWorkspaceName"
-
+import Blog from './pages/blogs'
+import BlogDetails from './pages/blogs/components/BlogDetails'
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -97,7 +94,7 @@ const App = () => {
         <Route path='/signout'>
           <SignOut />
         </Route>
-         <Route path="/about">
+        <Route path="/about">
           <About />
         </Route>
         <Route path='/help'>
