@@ -1,29 +1,72 @@
 .adminowners {
   width: 100%;
-  height: 50vh;
+  height: auto;
   margin: 0;
-  padding: 0;
+  padding: 1rem;
 }
 
 .heading {
   font-size: 0.8rem;
+  padding: 0;
+  margin: 0;
 }
 .rolesearch {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0;
 }
 
 .search {
   width: 40%;
-  border: 1px solid black;
+  border: 1px solid rgb(112, 113, 112);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0.7rem;
-  border-radius: 0.6rem;
+  border-radius: 0.4rem;
 }
 
 .input {
+  width: 100%;
+  outline: none;
+  margin: 0 0 0 0.5rem;
+}
+.icon {
+  color: rgb(112, 113, 112);
+}
+
+.owner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(186, 186, 186);
+  margin: 1.5rem 0;
+  padding: 0.5rem;
+}
+
+.nameEmail {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: center;
+  gap: 1rem;
+}
+
+.name,
+.email,
+.roleText {
+  padding: 0;
+  margin: 0;
+}
+
+.name {
+  color: black;
+  font-weight: bold;
+}
+
+.img {
+  height: 100%;
   width: 100%;
 }

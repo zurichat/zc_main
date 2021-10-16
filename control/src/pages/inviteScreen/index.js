@@ -5,6 +5,7 @@ import logo from "../../component-assets/zuri.svg"
 import axios from "axios"
 import { Helmet } from "react-helmet"
 import AuthInputBox from "../../components/AuthInputBox"
+import { isMobile } from 'react-device-detect';
 
 const InvitePage = () => {
   const { id: inviteId } = useParams()
@@ -44,19 +45,31 @@ const InvitePage = () => {
     }
   }
 
-  // add user to the organization
+  //Function to continue to mobile app or not
+  const ContinueToMobile = () => {
+    if (confirm("Continue to Mobile")) {
+      history.replace("/mobile")
+    } else {
+      history.replace("/login")
+    }
+  }
 
+  // add user to the organization
   const addUserToOrganization = async () => {
     try {
       const { data } = await axios.post(
         `https://api.zuri.chat/organizations/guests/${inviteId}`,
         {}
       )
-      
-      history.replace("/login")
+      //Redirect to login if the user is not on mobile
+      if (!isMobile) {
+       history.replace("/login")
+       return
+      }
+      ContinueToMobile()
     } catch ({ message }) {
       console.error("addUserToOrganization-err", message)
-      history.replace("/login")
+        history.replace("/login")
     }
   }
 
@@ -71,7 +84,7 @@ const InvitePage = () => {
       <div className={styles.write}>
         <div className={styles.wrapper}>
           <>
-            <h1 className={styles.firstText}>Join</h1>
+
             <h5 className={styles.secondText}>
               You have been invited to a Workspace
             </h5>
