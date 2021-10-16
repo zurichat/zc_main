@@ -201,12 +201,17 @@ function MembersPanel({ config }) {
 
   const roomData =
     "roomInfo" in config ? config.roomInfo : dummyHeaderConfig.roomInfo
-  const { membersList, addmembersevent, removememberevent } = roomData
+  const {
+    membersList: roomMembers,
+    addmembersevent,
+    removememberevent
+  } = roomData
   const [addModalShow, setaddModalShow] = useState(false)
   const [removeModalShow, setremoveModalShow] = useState(false)
   const [selectedMember, setSelectedMember] = useState(null)
   const [isLoading, setisLoading] = useState(false)
   const [userList, setUserList] = useState([])
+  const [membersList, setMembersList] = useState(roomMembers)
 
   const handleClose = () => {
     setaddModalShow(false)
@@ -217,6 +222,14 @@ function MembersPanel({ config }) {
   const handleremoveModalShow = () => setremoveModalShow(true)
 
   const addMembersEvent = values => {
+    const newEntries = [
+      ...membersList,
+      values.map(item => {
+        return { _id: item.value, email: item.label }
+      })
+    ]
+    setMembersList([newEntries])
+    // console.warn(membersList)
     addmembersevent(values)
   }
 
@@ -287,16 +300,22 @@ function MembersPanel({ config }) {
             Add People
           </AddPeopleIcons>
         </ListGroup.Item>
-        {membersList.map(member => (
-          <ListGroup.Item key={member._id} className="d-flex w-100">
-            <div>{member.email}</div>
-            <div className="ms-auto" onClick={handleaddModalShow}>
-              <RemoveLink onClick={() => removeMemberHandler(member)}>
-                Remove
-              </RemoveLink>
-            </div>
+        {membersList && membersList.length > 0 ? (
+          membersList.map(member => (
+            <ListGroup.Item key={member._id} className="d-flex w-100">
+              <div>{member.email}</div>
+              <div className="ms-auto" onClick={handleaddModalShow}>
+                <RemoveLink onClick={() => removeMemberHandler(member)}>
+                  Remove
+                </RemoveLink>
+              </div>
+            </ListGroup.Item>
+          ))
+        ) : (
+          <ListGroup.Item className="d-flex w-100">
+            <div>No Members</div>
           </ListGroup.Item>
-        ))}
+        )}
       </ListGroup>
     </div>
   )
