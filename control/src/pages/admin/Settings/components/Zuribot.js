@@ -1,17 +1,26 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import toast, { Toaster } from "react-hot-toast"
 import Loader from "react-loader-spinner"
 
 import styles from "../styles/zuribot.module.css"
 import { authAxios } from "../../Utils/Api"
 
-import { getToken, getCurrentWorkspace } from "../../Utils/Common"
+import { getToken, getCurrentWorkspace, getUser } from "../../Utils/Common"
 
 // icons
 import { AiOutlinePlus, AiOutlineSearch, AiOutlineClose } from "react-icons/ai"
 import { BsPersonBoundingBox } from "react-icons/bs"
 import { FiCheck } from "react-icons/fi"
 import { CardContext } from "../../../../context/CardContext"
+
+// let //Zuribotdata =
+//   [
+//     {
+//       "whensomeonesays":"",
+//       "slackresponds":"",
+//       "lasteditedby": null
+//     }
+//   ]
 
 const Zuribot = () => {
   const [loading, setLoading] = React.useState(false)
@@ -21,6 +30,7 @@ const Zuribot = () => {
   const [userSays, setUserSays] = React.useState()
   const [zuribotSays, setZuribotSays] = React.useState()
   const id = getCurrentWorkspace()
+  const user = getUser()
 
   // clicking on the modal cancel button
   const cancel = () => {
@@ -63,6 +73,27 @@ const Zuribot = () => {
   //     throw Error(alert(error))
   //   }
   // }
+  const [input, setInput] = useState("")
+  const [error, setError] = useState(null)
+  const [items, setItems] = useState([])
+
+  useEffect(() => {
+    authAxios.get(`https://api.zuri.chat/organizations/${id}`).then(
+      result => {
+        setLoading(true)
+        setItems(result.data)
+      },
+
+      error => {
+        setLoading(true)
+        setError(error)
+      }
+    )
+  }, [])
+
+  const capitalize = search => {
+    return search.slice(0, 1).toUpperCase() + search.slice(1)
+  }
 
   return (
     <div>
@@ -134,11 +165,14 @@ const Zuribot = () => {
         <h3 className={styles.intro}>
           Zuribot can automatically respond to messages that members of your
           workspace send in channels.{" "}
+        </h3>
+        <h3>
           <a href="" className="link">
-            Get Inspired
+            Get inspired
           </a>{" "}
           with a few ideas. Right now,{" "}
-          <b>only admins can edit Zuribot responses.</b> You can change this in{" "}
+          <strong>only admins can edit Slackbot responses.</strong>
+          You can change this in{" "}
           <a href="" className="link">
             Admin Settings
           </a>
@@ -150,12 +184,15 @@ const Zuribot = () => {
         {/* search box with icon */}
         <div className={styles.searchItself}>
           <AiOutlineSearch className={styles.mainIcons} />
+
           <input
             type="search"
             className={styles.search}
             name=""
             id=""
             placeholder="Search custom responses"
+            value={input}
+            onChange={e => setInput(e.target.value)}
           />
         </div>
         <button
@@ -175,16 +212,15 @@ const Zuribot = () => {
           <th>Zuribot responds</th>
           <th>Last edited by</th>
         </tr>
-        <tr>
-          <td>Bitch</td>
-          <td>We don't say that here</td>
-          <td>@mark</td>
-        </tr>
-        <tr>
-          <td>Asshole</td>
-          <td>We don't say that here</td>
-          <td>@Naza</td>
-        </tr>
+        {items
+          .filter(inputs => inputs.whensomeonesays.includes(capitalize(input)))
+          .map((result, i) => (
+            <tr key={i} className={styles.head}>
+              <td>{result.whensomeonesays}</td>
+              <td>{result.slackresponds}</td>
+              <td>{user}</td>
+            </tr>
+          ))}
       </table>
     </div>
   )
