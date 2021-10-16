@@ -27,7 +27,15 @@
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
-  color: "#1D1C1D"
+  color: "#1D1C1D";
+  margin-left: 10px;
+  margin-top: -15px;
+  margin-bottom: -20px;
+}
+.labelContainer {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
 }
 
 .labelRadioButton {
@@ -41,9 +49,9 @@
 }
 
 .label_select_dropdown {
-  border: 1px solid #DDE5E9;
-box-sizing: border-box;
-border-radius: 4px;
+  border: 1px solid #dde5e9;
+  box-sizing: border-box;
+  border-radius: 4px;
 }
 
 .label_checkbox_button {
@@ -59,4 +67,13 @@ border-radius: 4px;
 
 .spacingRight {
   margin-right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .modalContent {
+    max-width: 100%;
+  }
+  .spacingRight {
+    margin: 0;
+  }
 }
