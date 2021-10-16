@@ -5950,6 +5950,13 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
+react-loader-spinner@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/react-loader-spinner/-/react-loader-spinner-4.0.0.tgz#43d9e71b0574219f64216933c28ef5faa12262f6"
+  integrity sha512-RU2vpEej6G4ECei0h3q6bgLU10of9Lw5O+4AwF/mtkrX5oY20Sh/AxoPJ7etbrs/7Q3u4jN5qwCwGLRKCHpk6g==
+  dependencies:
+    prop-types "^15.7.2"
+
 react-redux@^7.2.5:
   version "7.2.5"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.2.5.tgz#213c1b05aa1187d9c940ddfc0b29450957f6a3b8"
@@ -6029,6 +6036,11 @@ react-style-singleton@^2.1.0:
     get-nonce "^1.0.0"
     invariant "^2.2.4"
     tslib "^1.0.0"
+
+react-text@^3.2.4:
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/react-text/-/react-text-3.2.4.tgz#a373c736f3ad6f89203eec8adf69ed6c6fc6131d"
+  integrity sha512-GjHYqA/aKeEjaveLoEtGaxPfkCN6neNOYuAhDTi9kyUCWfy8KP1cXw+Jo6ZlCCOa6laFtYYC/qNpFSJXei8qpg==
 
 react@^17.0.2:
   version "17.0.2"
