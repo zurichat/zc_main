@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react"
+import { useState, useCallback, useEffect } from "react"
 import styled from "styled-components"
 import { EditorState, RichUtils, convertToRaw } from "draft-js"
 import createEmojiMartPlugin from "draft-js-emoji-mart-plugin"
@@ -11,6 +11,7 @@ import "!style-loader!css-loader!draft-js-emoji-plugin/lib/plugin.css"
 import "@draft-js-plugins/mention/lib/plugin.css"
 import "!style-loader!css-loader!@draft-js-plugins/emoji/lib/plugin.css"
 import "!style-loader!css-loader!@draft-js-plugins/mention/lib/plugin.css"
+
 // import suggestionStyles from "./suggestions.module.css"
 import "../App.css"
 import Toolbar from "./Toolbar"
@@ -19,9 +20,15 @@ import mentions from "./mentions"
 // import UnstyledButton from "./UnstyledButton"
 // // import Send from "../assets/comments/goto.svg";
 import createEmojiPlugin from "@draft-js-plugins/emoji"
+import {
+  theme,
+  StyledEmojiSelectWrapper,
+  GlobalStyleForEmojiSelect
+} from "./emojiStyles.js"
 
 const emojiPlugin = createEmojiPlugin({
-  useNativeArt: true
+  useNativeArt: true,
+  theme: theme
 })
 const { EmojiSuggestions, EmojiSelect } = emojiPlugin
 const plugins = [emojiPlugin]
@@ -35,7 +42,8 @@ const MessageInputBox = ({
   sendMessageHandler,
   addToMessages,
   currentUserData,
-  users
+  users,
+  sendAttachedFileHadler
 }) => {
   const [data, setData] = useState("")
   const [editorState, setEditorState] = useState(() =>
@@ -76,9 +84,52 @@ const MessageInputBox = ({
     }
     return "not handled"
   }
+  //Preview render
+  const [sentAttachedFile, setSentAttachedFile] = useState(null)
+  const [preview, setPreview] = useState("")
+
+  useEffect(() => {
+    if (sentAttachedFile) {
+      const reader = new FileReader()
+      reader.onloadend = () => {
+        setPreview(reader.result)
+      }
+      reader.readAsDataURL(sentAttachedFile)
+    } else {
+      setPreview("")
+    }
+  }, [sentAttachedFile])
+
+  // on click clear attached file
+  const clearAttached = () => {
+    setSentAttachedFile("")
+  }
+
   return (
     <Wrapper>
       <InputWrapper>
+        {preview ? (
+          <Preview>
+            <img
+              src={preview}
+              style={{ position: "relative", height: "100px", weight: "100px" }}
+              alt="Image Preview"
+            />
+            <button
+              style={{
+                position: "absolute",
+                top: "-12px",
+                left: "8",
+                height: "30px",
+                width: "30px",
+                borderRadius: "50%"
+              }}
+              onClick={clearAttached}
+            >
+              X
+            </button>
+          </Preview>
+        ) : null}
         <div className="RichEditor-root">
           <Editor
             editorState={editorState}
@@ -87,7 +138,6 @@ const MessageInputBox = ({
             plugins={[emojiPlugin, mentionPlugin]}
           />
         </div>
-
         <MentionSuggestions
           open={suggestionsOpen}
           onOpenChange={onOpenChange}
@@ -100,8 +150,12 @@ const MessageInputBox = ({
           setEditorState={setEditorState}
           emojiSelect={<EmojiSelect />}
           sendMessageHandler={sendMessageHandler}
+          sendAttachedFileHadler={sendAttachedFileHadler}
           addToMessages={addToMessages}
           currentUserData={currentUserData}
+          sentAttachedFile={sentAttachedFile =>
+            setSentAttachedFile(sentAttachedFile)
+          }
         />
         {/* <div>
           {showEmoji && (
@@ -164,4 +218,9 @@ const SendButton = styled.button`
   color: white;
   font-weight: 700;
   font-size: 1rem;
+`
+const Preview = styled.div`
+  width: 100px;
+  height: 100px;
+  border-radius: 2px;
 `

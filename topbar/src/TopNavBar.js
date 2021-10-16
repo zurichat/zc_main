@@ -1,42 +1,49 @@
+import axios from "axios"
 import { useState, useContext, useCallback, useEffect } from "react"
-import { ProfileContext } from "./context/ProfileModal"
-import { TopbarContext } from "./context/Topbar"
-import { connect } from "react-redux"
-import zurichatlogo from "./assets/images/zurilogo.svg"
 import styled from "styled-components"
 import ReactTooltip from "react-tooltip"
+import { AiOutlineMenu } from "react-icons/ai"
+import { navigateToUrl } from "single-spa"
+// import Loader from 'react-loader-spinner'
+
+// Components || Assets || Contexts
+import { ProfileContext } from "./context/ProfileModal"
+import { TopbarContext } from "./context/Topbar"
 import { BaseInput } from "./TopBarIndex"
-import defaultAvatar from "./assets/images/avatar_vct.svg"
+import { authAxios } from "./utils/Api"
+import { GetUserInfo, SubscribeToChannel } from "@zuri/utilities"
+
+import Profile from "./components/Profile"
+import { BigModal } from "./components/bigModal"
+import TopSearchBar from "./components/TopSearchBar"
+import TopBarSearchModal from "./components/TopBarSearchModal"
+import SearchAutocomplete from "../src/components/SearchAutocomplete"
 // import HelpIcon from './assets/images/help-icon.svg'
-import TopbarModal from "./components/TopbarModal"
 // import HelpModal from './components/HelpModal'
 // import UserForm from '../../control/src/pages/ReportFeature/User/Form'
 // import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
-import { authAxios } from "./utils/Api"
-import Profile from "./components/Profile"
-import TopSearchBar from "./components/TopSearchBar"
-import TopBarSearchModal from "./components/TopBarSearchModal"
-// import Loader from 'react-loader-spinner'
-import { GetUserInfo, SubscribeToChannel } from "@zuri/control"
-import axios from "axios"
-import { AiOutlineMenu } from "react-icons/ai"
+
+import zurichatlogo from "./assets/images/zurilogo.svg"
+import defaultAvatar from "./assets/images/avatar_vct.svg"
+import TopbarModal from "./components/TopbarModal"
+
 import styles from "../src/styles/TopNavBar.module.css"
-import SearchAutocomplete from "../src/components/SearchAutocomplete"
 
-import { navigateToUrl } from "single-spa"
-import { BigModal } from "./components/bigModal"
+const TopNavBar = () => {
+  const currentWorkspace = localStorage.getItem("currentWorkspace")
 
-const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { closeModal, openModal, presence, setPresence } =
     useContext(TopbarContext)
   const { setUser, user, userProfileImage, setOrgId, setUserProfileImage } =
     useContext(ProfileContext)
+
   const state = useContext(TopbarContext)
   const [showModal] = state.show
+
   const [organizations, setOrganizations] = useState([])
+
   const [search, setSearch] = useState("")
   const [helpModal, setHelpModal] = useState(false)
-  // const [memberId, setMemberId] = useState('');
   const [messages, setMessages] = useState("")
   const [isSearchOpen, setOpenSearch] = useState(false)
   const [searchValue, setSearchValue] = useState("")
@@ -46,45 +53,60 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
       setOpenSearch(true)
     }
   }
+
   const onSearchChange = value => {
     setSearchValue(value)
   }
 
+  const getLoggedInUser = async () => {
+    try {
+      const userInfo = await GetUserInfo()
+      //Check if user id is valid and get user organization
+      if (userInfo[0]._id !== "") {
+        setUser(userInfo)
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   useEffect(() => {
-    // const fetchUser = async () => {
-    //   const info = await GetUserInfo()
-    //   setMemberId(info[0]._id)
-    // }
+    getLoggedInUser()
+    SubscribeToChannel(currentWorkspace, event => {
+      const session_user = JSON.parse(sessionStorage.getItem("user"))
+      if (
+        event.event === "UpdateOrganizationMemberPic" ||
+        event.event === "UpdateOrganizationMemberStatus" ||
+        event.event === "UpdateOrganizationMemberProfile" ||
+        event.event === "UpdateOrganizationMemberPresence"
+      ) {
+        if (event.id === session_user["id"]) {
+          UpdateInfo()
+        } else return
+      } else return
+    })
+  }, [])
 
-    // fetchUser();
-
-    let currentWorkspace = localStorage.getItem("currentWorkspace")
-
+  useEffect(() => {
     const searchFunction = async () => {
-      let organization_id = `614679ee1a5607b13c00bcb7`
-      let member_id = `614732f4f41cb684cc531fc9`
-      // console.log(member_id, organization_id, "pim");
-      // console.log(search)
+      let organization_id = currentWorkspace
+      let member_id = user[0]?._id
       axios
         .get(
           `https://dm.zuri.chat/api/v1/org/${organization_id}/members/${member_id}/messages/search?keyword=${search}`
         )
         .then(response => {
-          // console.log(response.data.results[0])
           setMessages(response.data.results)
         })
         .catch(err => {
           console.error(err)
         })
     }
-
     searchFunction()
   }, [search])
 
   useEffect(() => {
     const userdef = JSON.parse(sessionStorage.getItem("user"))
-
-    getOrganizations()
 
     async function getOrganizations() {
       await authAxios
@@ -116,43 +138,16 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     getOrganizations()
   }, [setOrgId, user.image_url, setUser])
 
-  const UpdateInfo = () => {
-    GetUserInfo().then(res => {
-      setUserProfileImage(res["0"].image_url)
-      setUser(res["0"])
-    })
-  }
-
   useEffect(() => {
     UpdateInfo()
-  }, [userProfileImage]) //A temporary fix for profileImg to persist
+  }, [userProfileImage])
 
-  // RTC subscription
-  const callbackFn = event => {
-    const session_user = JSON.parse(sessionStorage.getItem("user"))
-    if (
-      event.event === "UpdateOrganizationMemberPic" ||
-      event.event === "UpdateOrganizationMemberStatus" ||
-      event.event === "UpdateOrganizationMemberProfile" ||
-      event.event === "UpdateOrganizationMemberPresence"
-    ) {
-      if (event.id === session_user["id"]) {
-        UpdateInfo()
-      } else return
-    } else return
+  const UpdateInfo = () => {
+    GetUserInfo().then(res => {
+      setUserProfileImage(res[0]?.image_url)
+      setUser(res[0])
+    })
   }
-
-  const currentWorkspace = localStorage.getItem("currentWorkspace")
-
-  useEffect(() => {
-    SubscribeToChannel(currentWorkspace, callbackFn)
-  }, [])
-
-  // useEffect(() => {
-  //   if (showModal===true) {
-  //     document.addEventListener('click', openModal)
-  //   }
-  // },[showModal])
 
   let toggleStatus = null
 
@@ -192,29 +187,6 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     }
   }, [toggleSidebar])
 
-  const zc_spa_body = document.querySelector("body")
-  // const sidebar_toggle = document.querySelector("#sidebar_toggle")
-  // const openSidebar = () => {
-  //   sidebar.style.display = "block"
-  //   sidebar.style.left = "0"
-  //   sidebar.style.width = "200px"
-  //   sidebar_toggle.style.display = "none"
-  // }
-
-  // zc_spa_body.addEventListener('click', () => {
-  //   if (window.outerWidth <= 768) {
-  //     if (sidebar !== null) {
-  //       sidebar.style.display = 'none'
-  //       sidebar_toggle.style.display = 'block'
-  //     }
-  //   } else {
-  //     if (sidebar !== null) {
-  //       sidebar.style.display = 'block'
-  //       sidebar_toggle.style.display = 'none'
-  //     }
-  //   }
-  // })
-
   // Search autocomplete
 
   const [inputValue, setInputValue] = useState("")
@@ -251,7 +223,6 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     setFilteredSuggestions([])
     setDisplaySuggestions(false)
   }
-
   // end search
 
   const [statusModal, setStatusModal] = useState(false)
@@ -259,11 +230,6 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     e.preventDefault()
 
     navigateToUrl("/search")
-    // let s= window.location.href.split('/')
-    // if(s[2].includes("local")){
-    //   window.location.href="http://localhost:9000/search"
-    // }else{
-    //   window.location.href="https://zuri.chat/search"
   }
 
   return (
@@ -298,10 +264,7 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           border={"#99999933"}
         /> */}
         {/* <TopSearchBar onClick={() => setShowTopSearchModal(true)} /> */}
-        <TopBarSearchModal
-          onSearchEnter={onSearchSubmit}
-          onChange={onSearchChange}
-        />
+        <TopBarSearchModal />
         {/* <div>
             <form onSubmit={handleEnter}>
               <BaseInput
@@ -384,14 +347,13 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   )
 }
 
-const mapStateToProps = state => ({
-  userProfile: state
-})
+// const mapStateToProps = state => ({
+//   userProfile: state
+// })
 
-export default connect(mapStateToProps)(TopNavBar)
+export default TopNavBar
 
-//  TopNavBar
-
+// Styled Components
 const LogoDiv = styled.div`
   margin: auto 0;
   display: flex;

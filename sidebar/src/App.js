@@ -31,7 +31,7 @@ const insertSideBarData = (state, action) => {
   return state
 }
 
-function reducer(state, action) {
+function reducer(state = { sidebar: {} }, action) {
   switch (action.type) {
     case ACTIONS.ADD_ITEM:
       //Add items to sidebar

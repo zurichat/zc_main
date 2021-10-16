@@ -1,79 +1,91 @@
-
 import styles from "../styles/TopBarSearchModal.module.css"
-import { useState } from "react"
+import { useState, useEffect, useContext } from "react"
 import axios from "axios"
 import SearchModalResult from "./ModalAutoCompleteResult"
+import { BigModal } from "./bigModal"
+import { FilterItem } from "./filterItem"
+import { plugins } from "../utils/topbarApi"
+import { ProfileContext } from "../context/ProfileModal"
+import { CgEditStraight } from "react-icons/cg"
 
 const base_URL = "https://jsonplaceholder.typicode.com/todos"
 
-const TopBarSearchModal = ({ onSearchEnter, onChange }) => {
+const TopBarSearchModal = () => {
   const [value, setValue] = useState("")
-  const [items, setItems] = useState("")
+  const [keys, setKeys] = useState("")
+  const [filters, setFilters] = useState({})
+  const [isSearchOpen, setOpenSearch] = useState(false)
+
+  const { user } = useContext(ProfileContext)
+
+  let pluginName = window.location.href
+  let newName = pluginName.split("/")
+
+  let exactPlugin = plugins.find(
+    plugin => newName[3] === plugin.name || newName[3] === plugin.name + "#"
+  )
+
+  const onSearchSubmit = async e => {
+    if (e.keyCode === 13 && value.length >= 1) {
+      setOpenSearch(true)
+    }
+  }
 
   const onInputChange = e => {
     setValue(e.target.value)
-    onChange(e.target.value)
+   
+  }
+  useEffect(() => {
+    async function getData() {
+      if (!exactPlugin.filterCall) {
+        return
+      }
+      const response = await exactPlugin.filterCall(user.org_id, user._id)
+
+      if (response.status >= 200 || response.status <= 299) {
+        setFilters(response.data.data)
+      }
+    }
     getData()
-  }
-  const setInputValue = e => {
-    setValue(e)
-    onChange(e)
-    getData()
-  }
-  function getData() {
-    axios.get(base_URL).then(res => {
-      const result = Object.values(res.data)
-        .map(item => {
-          return item
-        })
-        .filter(item => {
-          return item.title.includes(value)
-        })
+  }, [exactPlugin.name, user._id])
 
-      const n = 10 //get the first 15 items
-      setItems(result.slice(0, n))
-    })
-  }
-
-  const pluginName = window.location.href;
-  const newName = pluginName.split('/')
-  const plugins = [
-          {
-          name: 'todo',
-          baseUrl: 'todo.zuri.chat'
-        },
-        {
-          name: 'music',
-          baseUrl: 'music.zuri.chat'
-        },
-        {
-          name: 'channels',
-          baseUrl: 'channels.zuri.chat'
-        },
-        {
-          name: 'dm',
-          baseUrl: 'dm.zuri.chat'
-        },
-        {
-          name: 'files',
-          baseUrl: 'companyfiles.zuri.chat'
-        }
-  ]
-  const exactPlugin = plugins.find(plugin => plugin.name === newName[3] || newName[3]+'#')
-  // console.log(newName)
-  // console.log(exactPlugin)
-
+  const FilterList = Object.keys(filters).map((item, i) => (
+    <li key={i} className={styles.List}>
+      <button
+        onClick={e => {
+          e.stopPropagation()
+          setKeys(item)
+        }}
+        style={{ width: "100%", textAlign: "left" }}
+      >
+        <SearchModalResult title={filters[item]} />
+      </button>
+    </li>
+  ))
   return (
     <div className={styles.topBarSearchModal}>
-      <input
-        type="text"
-        className={styles._input}
-        placeholder="Search Here"
-        value={value}
-        onChange={onInputChange}
-        onKeyUp={onSearchEnter}
-      />
-      <div className={styles.MainBox}>
+      <div className={styles._input}>
+        {keys === "" ? null : (
+          <FilterItem
+            onRemove={() => {
+              setKeys("")
+            }}
+            filter={filters[keys]}
+          />
+        )}
+        <input
+          type="text"
+          placeholder="Search Here"
+          value={value}
+          onChange={onInputChange}
+          onKeyUp={onSearchSubmit}
+          className={styles._input2}
+        />
+      </div>
+      <div
+        className={styles.MainBox}
+        style={keys === "" ? {} : { display: "none" }}
+      >
         <div>
           <div className={styles.input_box}>
             <div className={styles.grow}>
@@ -93,8 +105,9 @@ const TopBarSearchModal = ({ onSearchEnter, onChange }) => {
                 placeholder="Search Here"
                 value={value}
                 onChange={onInputChange}
-                onKeyUp={onSearchEnter}
+                onKeyUp={onSearchSubmit}
               />
+              {value && <button className={styles.Clear} onClick={() => { setValue('') }}>Clear</button>}
             </div>
             <div className={styles.close_icon}>
               <svg
@@ -107,21 +120,26 @@ const TopBarSearchModal = ({ onSearchEnter, onChange }) => {
             </div>
           </div>
         </div>
-        <div></div>
         <ul className={styles.ListWrapper}>
-          {Array.isArray(items) ? (
-            items.map(item => (
-              <li key={item.id} className={styles.List} >
-                <SearchModalResult title={item.title} />
-              </li>
-            ))
-          ) : (
+          {filters === {} ? (
             <li>
               <SearchModalResult title="" />
             </li>
+          ) : (
+            FilterList
           )}
+
         </ul>
       </div>
+      {isSearchOpen ? (
+        <BigModal
+          onClose={() => {
+            setOpenSearch(false)
+          }}
+          filter={keys}
+          inputValue={value}
+        />
+      ) : null}
     </div>
   )
 }

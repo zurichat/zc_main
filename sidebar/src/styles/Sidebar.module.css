@@ -3,7 +3,7 @@
 .sb__container {
   font: "Lato", sans-serif;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-color: var(--bg-color);
   padding-block-end: 3em;
   height: 100%;
   width: unset;
@@ -75,13 +75,12 @@
   position: relative;
   top: 0.2em;
   width: 1em;
-  color: #fff;
+  color: var(--text-color-bold);
 }
 
 .sb__item {
   cursor: pointer;
-  margin-bottom: 0.25em;
-  margin-top: 0.1em;
+  margin-top: 30px;
   /* margin: 0.5em 0; */
 }
 
@@ -98,7 +97,7 @@
 
 .item__img {
   width: 18px;
-  margin-inline-end: 0.5rem;
+  /* margin-inline-end: 0.5rem; */
 }
 
 .item_p {
@@ -109,6 +108,14 @@
   font-weight: 400;
 }
 
+.invite__icon {
+  background-color: #f1fffa;
+  border-radius: 6px;
+  padding: 5px 10px;
+}
+.icon {
+  width: 24px;
+}
 /* .addButton {
   width: 1.3em;
   margin-inline-start: auto;
@@ -337,7 +344,7 @@
   font-weight: 500;
   font-size: 15px;
   line-height: 18px;
-  color: #999;
+  color: var(--sidebar-text-color-);
 }
 
 .messageDropdownIcon {
@@ -381,4 +388,12 @@
   align-items: center;
   justify-content: center;
   margin: auto;
+}
+
+.displayCategory {
+  display: none;
+}
+
+.displayCategory {
+  display: block;
 }

@@ -18,12 +18,12 @@ import Room from "./components/Room"
 import SingleRoom from "./components/SingleRoom"
 import Category from "./components/Category"
 import { dummySidebar } from "./components/dummySidebar"
+import Starred from "./components/Starred"
 
 const categories = []
 
 const Sidebar = props => {
   let currentWorkspace = localStorage.getItem("currentWorkspace")
-  console.error("haba", props.state)
 
   const [nullValue, setnullValue] = useState(0)
 
@@ -31,60 +31,74 @@ const Sidebar = props => {
     setnullValue(1)
   }, [])
 
-  useEffect(() => {
-    {
-      //Listening for sidebar update
-      nullValue === 1 &&
-        dummySidebar &&
-        SubscribeToChannel(
-          `${currentWorkspace}_${props.state.user[0]._id}_sidebar`,
-          ctx => {
-            const websocket = ctx.data
-            // console.log("websocket", websocket)
-            if (websocket.event === "sidebar_update") {
-              let sidebar_update = { [websocket.plugin_id]: websocket.data }
-              //Update sidebar with recent changes
-              props.dispatch({
-                type: ACTIONS.UPDATE_PLUGINS,
-                payload: sidebar_update
-              })
-            }
+  {
+    //Listening for sidebar update
+    nullValue === 1 &&
+      props.state.sidebar &&
+      SubscribeToChannel(
+        `${currentWorkspace}_${props.state.user[0]._id}_sidebar`,
+        ctx => {
+          const websocket = ctx.data
+          // console.log("websocket", websocket)
+          if (websocket.event === "sidebar_update") {
+            let sidebar_update = { [websocket.plugin_id]: websocket.data }
+            //Update sidebar with recent changes
+            props.dispatch({
+              type: ACTIONS.UPDATE_PLUGINS,
+              payload: sidebar_update
+            })
           }
-        )
-    }
-  }, [])
+        }
+      )
+  }
+
+  const categories = [
+    "games",
+    "utility",
+    "tools",
+    "entertainment",
+    "sales",
+    "productivity",
+    "channels",
+    "direct messages",
+    "others"
+  ]
 
   var singleItems = []
-  var categories = []
-  for (let key in props.state.sidebar) {
-    if (key == "others") {
-      singleItems = Object.keys(props.state.sidebar[key]).map(k => {
-        var data = props.state.sidebar[key][k]
-        return (
-          <SingleRoom
-            key={data.name}
-            name={data.joined_rooms[0].room_name}
-            image={data.joined_rooms[0].room_image}
-            link={data.joined_rooms[0].room_url}
-          />
+  var categorizedItems = []
+  if (props.state.sidebar && nullValue === 1) {
+    for (let key in props.state.sidebar) {
+      if (!categories.includes(key)) {
+        continue
+      } else if (key == "others") {
+        singleItems = Object.keys(props.state.sidebar[key]).map((k, idx) => {
+          var data = props.state.sidebar[key][k]
+          return (
+            <SingleRoom
+              key={data.name}
+              name={data.joined_rooms[0].room_name}
+              image={data.joined_rooms[0].room_image}
+              link={data.joined_rooms[0].room_url}
+            />
+          )
+        })
+      } else {
+        const categoryData = Object.keys(props.state.sidebar[key]).map(
+          k => props.state.sidebar[key][k]
         )
-      })
-    } else {
-      const categoryData = Object.keys(props.state.sidebar[key]).map(
-        k => props.state.sidebar[key][k]
-      )
-      categories.push(<Category key={key} name={key} data={categoryData} />)
-      //console.error(key, categoryData)
+
+        categorizedItems.push(
+          <Category key={key} name={key} data={categoryData} />
+        )
+        //    Object.keys(props.state.sidebar).map((p, idx)=>{
+        //     return (categories.includes(p) ?
+        //     <Category key={idx} name={p} data={categoryData} />
+        //     : null)
+
+        // }
+      }
     }
   }
-  // {
-  //   props.state.sidebar &&
-  //     Object.keys(props.state.sidebar).map((p, idx) => {
-  //       return categories.includes(p) ? (
-  //         <Category key={idx} name={p} state={props.state} />
-  //       ) : null
-  //     })
-  // }
 
   return (
     <div className={`container-fluid ${styles.sb__container}`}>
@@ -102,8 +116,26 @@ const Sidebar = props => {
           <SingleRoom name="Drafts" image={draftIcon} />
 
           <SingleRoom name="Plugins" image={pluginIcon} link="/marketplace" />
+
+          <Starred state={props.state} />
           {singleItems}
-          {categories}
+          {categorizedItems}
+
+          {/* {props.state.sidebar && Object.keys(props.state.sidebar).map((p, idx)=>{
+                return categories.includes(p) ? 
+                <Category key={idx} name={p} state={props.state} />
+                : null
+              })
+          } */}
+
+          {/* <Category name="games" state={props.state} />
+          <Category name="utility" state={props.state} />
+          <Category name="tools" state={props.state} />
+          <Category name="entertainment" state={props.state} />
+          <Category name="sales" state={props.state} />
+          <Category name="productivity" state={props.state} />
+          <Category name="channels" state={props.state} />
+          <Category name="direct messages" state={props.state} /> */}
           {/* button for inviting users to workspace */}
           <Invite state={props.state} />
         </Fragment>
