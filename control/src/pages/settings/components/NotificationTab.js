@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import {ArrowDropDown, VolumeUp, CheckCircle} from "@material-ui/icons";
-import {Howler, Howl} from "Howler" 
+import {Howl} from "howler" 
 
 //SoundArray
 const Sounds = [
@@ -40,10 +40,13 @@ const playSound = (src) => {
 const NotificationTab = ({ toggleState }) => {
   const [notify, setNotify] = useState("https://notificationsounds.com/storage/sounds/file-b8_discreet-song.mp3");
 
+  const userInfo = JSON.parse(sessionStorage.getItem('user'));
+  
   const PreviewSound = (e)=> {
     e.preventDefault();
     playSound(notify)
   }
+
   return (
     <Container>
       <Heading>Mobile push notifications</Heading>
@@ -87,8 +90,9 @@ const NotificationTab = ({ toggleState }) => {
                   )
                 })
               }
-              <ArrowDropDown />
+               
           </Select> 
+          <IconBox className="preview"> <ArrowDropDown /></IconBox> 
           <PreviewButton onClick={PreviewSound}>
           <VolumeUp />
             Preview
@@ -201,7 +205,7 @@ const NotificationTab = ({ toggleState }) => {
 
             <FormParagraph>If you opt out of the above, please note that we’ll still send you important administrative emails, such as password resets.</FormParagraph>
 
-            <FormParagraph> We will use this email address: <b>email@yahoo.com</b> (<Link href="/settings">Change address </Link>)</FormParagraph>
+            <FormParagraph> We will use this email address: <b>{userInfo.email}</b> (<Link href="/admin/settings/accountsProfile">Change address </Link>)</FormParagraph>
         </Form>
     </Container>
   )
@@ -220,12 +224,14 @@ const Heading = styled.h2`
   line-height: 1.75rem;
   width: 100%;
   font-weight: 700;
+  @media (max-width: ${500}px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const NotifyMeAndSoundContainer = styled.div`
   display: flex;
   justify-content: space-between;
-
     @media (max-width: ${500}px) {
       display: block;
     }
@@ -265,7 +271,9 @@ const IconBox = styled.span`
   position: absolute;
   right: .5rem;
   bottom: .5em;
-
+  &.preview{
+    right:8em;
+  }
   .MuiSvgIcon-root {
     font-size:2em;
   }
@@ -291,6 +299,11 @@ const PreviewButton = styled.button`
   display: flex;
   align-items: center;
   column-gap: .5em;
+  transition: all 200ms;
+  &:hover{
+    opacity:.5;
+    cursor:pointer;
+  }
 `;
 
 const NotifyInput = styled.div`
@@ -313,7 +326,6 @@ font-size: 14px;
     margin-top: 1.5em;
     font-size: 16px;
  }
-
  &.emailnotify{
    color: #1d1c1d;
     font-size: 14px;
@@ -329,7 +341,6 @@ const EmailNotify = styled.h2`
 `
 
 const Form = styled.form`
-
 `
 const Input = styled.input`
   position: relative;
@@ -343,7 +354,6 @@ const InputBox= styled.div`
   display: flex;
   align-items: baseline;
   margin-bottom:1em;
-
   &.signin{
     margin-bottom: 0;
   }
@@ -358,7 +368,6 @@ const Saved= styled.span`
   font-size: .9rem;
   font-weight: unset !important;
   opacity:0;
-
     .MuiSvgIcon-root {
     font-size:1em;
   }

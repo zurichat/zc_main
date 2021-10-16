@@ -2,6 +2,9 @@ export const TRANSLATIONS_FR = {
   header: {
     language_select: "Changer de langue"
   },
+
+
+  // Landing Page
   landing: {
     title: {
       landing: "Connectez-vous et interagissez"
@@ -99,6 +102,7 @@ export const TRANSLATIONS_FR = {
   },
 
   
+  // Pricing Page
   pricing: 
   {
     title: {
@@ -138,6 +142,7 @@ export const TRANSLATIONS_FR = {
   },
 
 
+  // Plugin Page
   plugin: {
     title: {
       plugin: "Connectez-vous et interagissez"
@@ -309,7 +314,8 @@ export const TRANSLATIONS_FR = {
     }
   },
 
-  
+
+  // About Page
   about: {
     title: {
       about: ""
@@ -403,8 +409,11 @@ export const TRANSLATIONS_FR = {
       link_sales: "Parlez aux ventes",
       link_try: "Essayez-le gratuitement"
     },
+  },
 
-    careers: {
+
+  // Career Page
+  careers: {
       title: {
         careers: "Carrières"
       },
@@ -463,8 +472,10 @@ export const TRANSLATIONS_FR = {
           post_headline: "Zuri paie 100 % de vos primes. Nous offrons également l'accès à une gamme de ressources gratuites sur la santé mentale et le bien-être."
         }
       }
-    }
-  },
+    },
+
+  
+  // Login
   login:{
     title: "Connexion - Zuri Chat",
     form: {
@@ -490,5 +501,150 @@ export const TRANSLATIONS_FR = {
       legacyPolicy: "Politique juridique",
       aboutZuri: "À propos de Zurichat"
     }
-  }
+  },
+
+
+  // All Download Pages
+  download_desktop: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "Découvrez les applications de bureau et mobiles de Zuri Chat",
+      post_headline: "Se connecter avec votre équipe n'a jamais été aussi facile avec Zuri Chat.",
+      desktop_line: "Zuri pour ordinateur de bureau",
+      desktop_app: "Télécharger sur Mac App Store",
+      desktop_soft: "Obtenez-le de Microsoft",
+      mobile_line: "Obtenez-le de Microsoft",
+      mobile_app: "Télécharger sur l'App Store",
+      mobile_play: "Obtenez le sur Google Play"
+    },
+
+    section_two: {
+      headline: "Téléchargez et profitez de l'expérience Zuri Chat sur n'importe lequel de ces appareils",
+      windows: "les fenêtres",
+      mac: "macOS",
+      ios: "iOS",
+      android: "Android",
+    },
+
+    section_three: {
+      headline: "Même sensation, même équipe sur Zuri App !",
+    }
+  },
+  download_ios: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "Téléchargez la version bêta de Zuri Chat pour iOS.",
+      post_headline: "Obtenez Zuri Chat DM et chaîne",
+      mac_line: "Nous sommes aussi sur Mac",
+      mac_description: "Suivez la conversation avec nos applications pour Mac, Windows et Linux. Nous pouvons vous envoyer par e-mail un lien de téléchargement rapide pour vous aider à démarrer !",
+      button: "OBTENIR LE LIEN DE TÉLÉCHARGEMENT",
+    }
+  },
+  download_mac: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "Découvrez Zuri Chat sur MacOS",
+      post_headline: "Se connecter avec votre équipe n'a jamais été aussi facile avec Zuri Chat.",
+      download: "TÉLÉCHARGER",
+      download_soft: "Télécharger pour Windows ?"
+    },
+
+    section_two: {
+      headline: "Pourquoi l'application de chat Zuri ?",
+      post_headline: "Ne manquez jamais l'expérience de collaboration transparente, même en déplacement, avec le chat pc zuri",
+      android: "Android",
+      and_break: "et",
+      ios: "iOS",
+      apps_break: "applications."
+    },
+
+    section_three: {
+      headline: "Même sensation, même équipe sur Zuri App !",
+      download: "TÉLÉCHARGER POUR MAC",
+      download_soft: "Télécharger pour Windows ?"
+    }
+  },
+  download_mobile: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "Découvrez les applications de bureau et mobiles de Zuri Chat",
+      post_headline: "Se connecter avec votre équipe n'a jamais été aussi facile avec Zuri Chat.",
+    },
+
+    section_two: {
+      headline: "Téléchargez et profitez de l'expérience Zuri Chat sur n'importe lequel de ces appareils",
+      windows: "les fenêtres",
+      mac: "macOS",
+      android: "Android",
+      ios: "iOS"
+    },
+
+    section_three: {
+      headline: "Même sensation, même équipe sur Zuri App !",
+    }
+  },
+  download_windows: {
+    title: {
+      download: "Télécharger Zuri Chat"
+    },
+
+    section_one: {
+      headline: "Découvrez Zuri Chat sur Windows",
+      post_headline: "Se connecter avec votre équipe n'a jamais été aussi facile avec Zuri Chat.",
+      download: "TÉLÉCHARGER",
+      download_mac: "Télécharger pour Mac ?"
+    },
+
+    section_two: {
+      headline: "Pourquoi l'application de chat Zuri ?",
+      post_headline: "Ne manquez jamais l'expérience de collaboration transparente, même en déplacement, avec le chat pc zuri",
+      android: "Android",
+      and_break: "et",
+      ios: "iOS",
+      apps_break: "applications."
+    },
+
+    section_three: {
+      headline: "Même sensation, même équipe sur Zuri App !",
+      download: "TÉLÉCHARGER POUR WINDOWS",
+      download_ios: "Télécharger pour Mac ?"
+    }
+  },
+
+
+  // Workspace Page
+  workspace:{
+    title: {
+      workspace :"Espace de travail - Zuri Chat"
+    },
+
+    space:{
+      headline: "Choisissez un espace de travail",
+      post_headline: "Content de te revoir! Choisissez-en un pour reprendre le travail avec votre équipe",
+      join_line: "Vous souhaitez travailler avec un autre groupe ? ou Prenez en charge et créez votre propre équipe",
+      joinbtn: "Créer un espace de travail",
+      foot_head: "Vous ne voyez pas votre espace de travail ?",
+      foot_link: "Essayez une autre adresse e-mail",
+      open: "Ouvert",
+      selected: "choisi",
+      errno: "quatre cent un",
+      errmsg: "Vous n'êtes pas connecté !",
+      errlink: "Connectez-vous ici.",
+      err_no: "quatre cent quatre",
+      err_msg: "Oups, quelque chose s'est mal passé ! Aller à",
+      err_link: "zuri.chat"
+    }
+  }  
 }
