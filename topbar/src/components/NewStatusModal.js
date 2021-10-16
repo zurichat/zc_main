@@ -58,10 +58,6 @@ const SetStatusModal = ({
   text,
   setText,
   setEmoji,
-  statusText,
-  statusEmoji,
-  setStatusText,
-  setStatusEmoji
 }) => {
   const [chosenStatus, setChosenStatus] = useState({})
   const [dropdown, setDropdown] = useState(false)
@@ -77,6 +73,8 @@ const SetStatusModal = ({
   // const [choosePeriod, setChoosePeriod] = useState(user?.status?.expiry_time)
   const { user, orgId, setUser } = useContext(ProfileContext)
   const [choosePeriod, setChoosePeriod] = useState(user?.status?.expiry_time)
+  const [statusText, setStatusText] = useState(user?.status?.text)
+  const [statusEmoji, setStatusEmoji] = useState(user?.status?.tag)
 
   const onEmojiSelect = selectedEmoji => {
     setStatusEmoji(selectedEmoji.native)
@@ -228,6 +226,7 @@ const SetStatusModal = ({
   }
 
   // console.log(user?.status?.expiry_time, choosePeriod, expiryTimeLabel[choosePeriod])
+  // console.log(statusText, statusEmoji, choosePeriod)
   return (
     <div className={styles.modal}>
       <div className={styles.modalcontainer}>
@@ -241,7 +240,7 @@ const SetStatusModal = ({
           />
         </div>
         <div style={{ position: "relative" }}>
-          <div className={styles.emoji}>
+          <div className={statusEmoji === "" && statusText === "" ? styles.emoji: styles.emojipush}>
             <StyledEmojiWrapper>
               {openEmoji ? (
                 <Picker
@@ -372,6 +371,9 @@ const SetStatusModal = ({
                       data-tip
                       data-for="deleteRecent"
                       className={styles.recentstatustileiconwrapper}
+                      onClick={() => {
+                        onRemoveRecent(statusHistory[1].text_history)
+                      }}
                     >
                       <FaRegTimesCircle
                         className={styles.recentstatustileicon}
@@ -404,6 +406,9 @@ const SetStatusModal = ({
                       data-tip
                       data-for="deleteRecent"
                       className={styles.recentstatustileiconwrapper}
+                      onClick={() => {
+                        onRemoveRecent(statusHistory[2].text_history)
+                      }}
                     >
                       <FaRegTimesCircle
                         className={styles.recentstatustileicon}
@@ -436,6 +441,9 @@ const SetStatusModal = ({
                       data-tip
                       data-for="deleteRecent"
                       className={styles.recentstatustileiconwrapper}
+                      onClick={() => {
+                        onRemoveRecent(statusHistory[3].text_history)
+                      }}
                     >
                       <FaRegTimesCircle
                         className={styles.recentstatustileicon}
@@ -468,6 +476,9 @@ const SetStatusModal = ({
                       data-tip
                       data-for="deleteRecent"
                       className={styles.recentstatustileiconwrapper}
+                      onClick={() => {
+                        onRemoveRecent(statusHistory[4].text_history)
+                      }}
                     >
                       <FaRegTimesCircle
                         className={styles.recentstatustileicon}
