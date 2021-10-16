@@ -1,0 +1,19 @@
+.zc-emc-emojicat {
+  /* padding: 0 15px; */
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  color: #777;
+  height: 2rem;
+  width: 18rem;
+  padding-top: 0.5rem;
+  background: #fff;
+}
+.zc-emc-emojicatitems {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.zc-emc-active {
+  color: #00b87c;
+}
