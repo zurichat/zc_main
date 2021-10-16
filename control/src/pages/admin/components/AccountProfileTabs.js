@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 import styles from "../styles/aboutWorkspaceTab.module.css"
-
+import {Link} from 'react-router-dom'
 // components
 import SettingsTab from "../../settings/components/SettingsTab"
 
@@ -46,15 +46,13 @@ const AccountsProfileTabs = () => {
            Notification
           </div>
           <div
-            onClick={() => {
-              setActive(3)
-              setOpenTab(!openTab)
-            }}
+            
             className={
               active === 3 ? styles.tabHeaderItemActive : styles.tabHeaderItem
             }
-          >
+          ><Link to="/homepage/profile" style={{color: "#333", fontSize:"1.125rem", fontWeight:"600", padding: "0.875rem 1.2rem"}}>
             Profile
+            </Link>
           </div>
         </div>
 
