@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import styles from "../styles/Sidebar.module.css"
 import { MdKeyboardArrowDown } from "react-icons/md"
 import newMsgIcon from "../assets/icons/newMsgIcon.svg"
+import UserOrganization from "../../../control/src/pages/createworkspace/components/UserOrganization"
+import ModalComponent from "./ModalComponent"
 import useThemeMode from "../../../topbar/customHooks/useThemeMode"
 
 const SidebarHeader = props => {
@@ -47,9 +49,9 @@ const SidebarHeader = props => {
 
                  <div className={`col-12 px-3 ${styles.odalContainer}`}>
               <ModalComponent
-                workSpace={org}
+                workSpace={UserOrganization}
                 isOpen={homeModal}
-        //  toggleOpenInvite={toggleOpenInvite}
+           toggleHomeModal={toggleHomeModal}
               />
             </div>
           {/*
