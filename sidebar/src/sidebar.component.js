@@ -18,6 +18,7 @@ import Room from "./components/Room"
 import SingleRoom from "./components/SingleRoom"
 import Category from "./components/Category"
 import { dummySidebar } from "./components/dummySidebar"
+
 import Starred from "./components/starred"
 import useThemeMode from "../../topbar/customHooks/useThemeMode"
 
@@ -68,35 +69,39 @@ const Sidebar = props => {
 
   var singleItems = []
   var categorizedItems = []
-  for (let key in props.state.sidebar) {
-    if (!categories.includes(key)) {
-      continue
-    } else if (key == "others") {
-      singleItems = Object.keys(props.state.sidebar[key]).map((k, idx) => {
-        var data = props.state.sidebar[key][k]
-        return (
-          <SingleRoom
-            key={data.name}
-            name={data.joined_rooms[0].room_name}
-            image={data.joined_rooms[0].room_image}
-            link={data.joined_rooms[0].room_url}
-          />
+
+  if (props.state.sidebar && nullValue === 1) {
+    for (let key in props.state.sidebar) {
+      if (!categories.includes(key)) {
+        continue
+      } else if (key == "others") {
+        singleItems = Object.keys(props.state.sidebar[key]).map((k, idx) => {
+          var data = props.state.sidebar[key][k]
+          return (
+            <SingleRoom
+              key={data.name}
+              name={data.joined_rooms[0].room_name}
+              image={data.joined_rooms[0].room_image}
+              link={data.joined_rooms[0].room_url}
+            />
+          )
+        })
+      } else {
+        const categoryData = Object.keys(props.state.sidebar[key]).map(
+          k => props.state.sidebar[key][k]
         )
-      })
-    } else {
-      const categoryData = Object.keys(props.state.sidebar[key]).map(
-        k => props.state.sidebar[key][k]
-      )
 
-      categorizedItems.push(
-        <Category key={key} name={key} data={categoryData} />
-      )
-      //    Object.keys(props.state.sidebar).map((p, idx)=>{
-      //     return (categories.includes(p) ?
-      //     <Category key={idx} name={p} data={categoryData} />
-      //     : null)
+        categorizedItems.push(
+          <Category key={key} name={key} data={categoryData} />
+        )
+        //    Object.keys(props.state.sidebar).map((p, idx)=>{
+        //     return (categories.includes(p) ?
+        //     <Category key={idx} name={p} data={categoryData} />
+        //     : null)
 
-      // }
+        // }
+      }
+
     }
   }
 
@@ -116,6 +121,7 @@ const Sidebar = props => {
           <SingleRoom name="Drafts" image={draftIcon} />
 
           <SingleRoom name="Plugins" image={pluginIcon} link="/marketplace" />
+
           <Starred state={props.state} />
           {singleItems}
           {categorizedItems}

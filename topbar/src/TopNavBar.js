@@ -147,7 +147,9 @@ const TopNavBar = () => {
 
   useEffect(() => {
     UpdateInfo()
+
   }, [userProfileImage]) //A temporary fix for profileImg to persist])
+
 
   const UpdateInfo = () => {
     GetUserInfo().then(res => {
