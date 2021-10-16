@@ -398,5 +398,15 @@ export const TRANSLATIONS_ZH = {
     headline: "密码重置成功！",
     post_headline: "您的密码重置成功！您现在可以继续登录",
     button: "继续登录"
+  },
+  signout:{
+    title: "登出",
+    preOrgText: "退出团队",
+    workspace: "工作区",
+    signoutMessage: {
+      preOrgText: "您已退出团队"
+    },
+    loginText: "登录",
+    postLoginText: "到另一个工作区"
   }
 }
