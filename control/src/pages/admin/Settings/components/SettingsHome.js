@@ -290,7 +290,8 @@ const Home = () => {
                 </div>
               </div>
             </Link>
-          </div>        
+          </div>       
+ </div>
       </Container>
     </AdminSettings>
 )
