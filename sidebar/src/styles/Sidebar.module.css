@@ -382,3 +382,11 @@
   justify-content: center;
   margin: auto;
 }
+
+.displayCategory{
+  display: none;
+}
+
+.displayCategory{
+  display: block;
+}
