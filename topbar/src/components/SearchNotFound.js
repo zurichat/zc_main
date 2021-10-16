@@ -1,7 +1,7 @@
 import React from "react"
 import style from "../styles/SearchNotFound.module.css"
 import emoji from "../assets/images/thinking.png"
-import startNewSearch from "../components/StartNewSearchBotton"
+import startNewSearch from "../components/StartNewSearchButton"
 
 export const NoResult = () => {
   return (

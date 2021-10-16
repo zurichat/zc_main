@@ -64,7 +64,6 @@ import BookDemo from "./pages/book-a-demo"
 
 import ChangeWorkspaceName from "./pages/admin/Settings/components/ChangeWorkspaceName"
 
-
 // useEffect(() => {
 //     localStorage.setItem('input',input);
 // },[input]);
@@ -93,7 +92,7 @@ const App = () => {
         <Route path="/signout">
           <SignOut />
         </Route>
-         <Route path="/about">
+        <Route path="/about">
           <About />
         </Route>
         <Route path="/help">
