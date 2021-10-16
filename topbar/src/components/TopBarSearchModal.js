@@ -33,6 +33,7 @@ const TopBarSearchModal = () => {
 
   const onInputChange = e => {
     setValue(e.target.value)
+   
   }
   useEffect(() => {
     async function getData() {
@@ -126,6 +127,7 @@ const TopBarSearchModal = () => {
           ) : (
             FilterList
           )}
+
         </ul>
       </div>
       {isSearchOpen ? (
