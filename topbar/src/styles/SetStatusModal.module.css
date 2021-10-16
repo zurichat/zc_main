@@ -125,7 +125,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: -2
+  z-index: -2;
 }
 .input {
   /* margin-bottom: 21.4px; */
@@ -139,14 +139,26 @@
 .datetime {
   display: grid;
   grid-template-columns: 1.7fr 1fr;
-  gap: 1rem;
+  column-gap: 1rem;
 }
 
-.datetime input {
+.date,
+.time {
   border: 1px solid #e5e5e5;
   padding: 0.5rem;
   border-radius: 4px;
   outline: none;
+}
+.timeError {
+  border: 1px solid red;
+  padding: 0.5rem;
+  border-radius: 4px;
+  outline: none;
+}
+.errorMess {
+  color: red;
+  grid-column: 2/-1;
+  font-size: 0.9rem;
 }
 .input:focus {
   outline: none;
@@ -313,35 +325,35 @@
   display: flex;
   align-items: center;
 }
-.recentstatustitle{
+.recentstatustitle {
   font-size: 14px;
 }
-.recentstatustile{
+.recentstatustile {
   display: flex;
   width: 100%;
   justify-content: space-between;
   padding: 4px 30px 4px 10px;
   border-radius: 5px;
 }
-.recentstatustile:hover{
- background: #00b87c;
- color: #fff;
- cursor: pointer;
+.recentstatustile:hover {
+  background: #00b87c;
+  color: #fff;
+  cursor: pointer;
 }
-.recentstatustileleft{
+.recentstatustileleft {
   width: 80%;
 }
-.recentstatustileiconwrapper{
+.recentstatustileiconwrapper {
   color: #fff;
   display: none;
 }
-.recentstatustileicon{
+.recentstatustileicon {
   color: #fff;
 }
-.recentstatustile:hover .recentstatustileiconwrapper{
+.recentstatustile:hover .recentstatustileiconwrapper {
   display: flex;
   align-items: center;
- }
- .recentstatustext{
-   font-weight: bold;
- }
+}
+.recentstatustext {
+  font-weight: bold;
+}
