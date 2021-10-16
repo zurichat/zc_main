@@ -140,7 +140,7 @@ const TopNavBar = () => {
 
   useEffect(() => {
     UpdateInfo()
-  }, [userProfileImage]) //A temporary fix for profileImg to persist
+  }, [userProfileImage])
 
   const UpdateInfo = () => {
     GetUserInfo().then(res => {
@@ -226,6 +226,7 @@ const TopNavBar = () => {
   // end search
 
   const [statusModal, setStatusModal] = useState(false)
+  
   const handleEnter = e => {
     e.preventDefault()
 
