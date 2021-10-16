@@ -91,11 +91,13 @@ const Sidebar = props => {
         //     return (categories.includes(p) ?
         //     <Category key={idx} name={p} data={categoryData} />
         //     : null)
-
         // }
       }
     }
   }
+  const check = props.state.sidebar && Object.keys(props.state.sidebar).map((plugin, idx)=>{
+    return (props.state.sidebar[plugin].starred_rooms ? true : false)
+  })
 
   return (
     <div className={`container-fluid ${styles.sb__container}`}>
@@ -105,16 +107,14 @@ const Sidebar = props => {
           {/* <Room name="Threads" image={threadIcon} />
           <Room name="All DMs" image={dmIcon} />
           <Room name="Drafts" image={draftIcon} />
-  <Room name="Plugins" image={pluginIcon} />*/}
-
+         <Room name="Plugins" image={pluginIcon} />*/}
           {/* SIDE BAR DATA */}
           <SingleRoom name="Threads" image={threadIcon} />
           <SingleRoom name="All Dms" image={dmIcon} />
           <SingleRoom name="Drafts" image={draftIcon} />
 
           <SingleRoom name="Plugins" image={pluginIcon} link="/marketplace" />
-
-          <Starred state={props.state} />
+          {props.state.sidebar &&  <Starred check={check} state={props.state} />}
           {singleItems}
           {categorizedItems}
 
@@ -134,7 +134,7 @@ const Sidebar = props => {
           <Category name="channels" state={props.state} />
           <Category name="direct messages" state={props.state} /> */}
           {/* button for inviting users to workspace */}
-          <Invite state={props.state} />
+          <Invite state={props.state} dispatch={props.dispatch} />
         </Fragment>
       </div>
     </div>
