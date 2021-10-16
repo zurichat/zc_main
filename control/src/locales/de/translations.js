@@ -10,6 +10,7 @@ export const TRANSLATIONS_DE = {
     nav: {
       pricing: "Preisgestaltung",
       about: "Über",
+      plugin: "Plugin",
       downloads: "Downloads",
       contact: "Kontakt",
       signup: "Anmeldung",
@@ -105,15 +106,6 @@ export const TRANSLATIONS_DE = {
       pricing: "Preise - Zuri Chat"
     },
 
-    nav: {
-      pricing: "Preisgestaltung",
-      about: "Über",
-      downloads: "Downloads",
-      contact: "Kontakt",
-      signup: "Anmelden",
-      login: "Anmeldung"
-    },
-
     cardOne: {
       headline: "Merkmale",
       post_headline:
@@ -143,34 +135,182 @@ export const TRANSLATIONS_DE = {
       headline: "Häufig gestellte Fragen",
       link_info: "Erfahren Sie mehr über",
       link: "Abrechnung bei Zuri Chat."
-    },
-
-    footer: {
-      company: "Gesellschaft",
-      careers: "Karriere",
-      about: "Über",
-      info: "Die Info",
-      privacy: "Datenschutz",
-      market: "Marktplatz",
-      blog: "Blog",
-      security: "Sicherheit",
-      web3: "Web3/DAO",
-      knowUs: "Kenne uns",
-      downloads: "Downloads",
-      contact: "Kontakt",
-      documentation: "Dokumentation",
-      socialMedia: "Sozialen Medien",
-      rights: "Alle Rechte vorbehalten"
-    },
-    cookies: {
-      textOne: "Wir verwenden",
-      textTwo: "Cookies",
-      textThree: "von Drittanbietern, um Ihre Website-Erfahrung zu personalisieren.",
-      accept: "Erlauben",
-      decline: "Ablehnen"
     }
   },
 
+
+  plugin: {
+    title: {
+      plugin: "Verbinden und interagieren"
+    },
+
+    dm: {
+      title: "Direktnachrichten-Plug-in",
+      headline: "Sendet Direktnachrichten",
+      description:
+        "Ein Plugin, das das Senden von Nachrichten zwischen Mitarbeitern erleichtert",
+      link: "DM-Plugin erkunden"
+    },
+
+    tracker: {
+      title: "Plugin von Contribution Tracker",
+      headline: "Verfolgen Sie die Beiträge der Menschen und heben Sie dringende Probleme hervor",
+      description:
+        "Ein Plugin, mit dem Sie den Beitrag von Menschen zu Open-Source-Projekten verfolgen und die dringendsten Probleme hervorheben können",
+      link: "Beitragsverfolgungs-Plugin erkunden"
+    },
+
+    music: {
+      title: "Musik-Plugin",
+      headline: "Zugriff auf Musik und Musikvideos unterwegs!",
+      description:
+        "Mit dem Musik-Plug-in können Einzelpersonen in einer Organisation Musik- und Videolinks von YouTube zu einer freigegebenen Playlist hinzufügen.",
+      link: "Entdecken Sie Musik-Plugins"
+    },
+
+    games: {
+      title: "Schach-Plugin",
+      headline:
+        "Machen Sie das Lernen zum Spaß, bleiben Sie mit den virtuellen Spielen beschäftigt",
+      description:
+        "Zuri Schach-Plugin ist ein webbasiertes Freizeit- und Wettbewerbs-Brettspiel, das zwischen zwei Spielern gespielt wird.",
+      link: "Spiele-Plugin erkunden"
+    },
+
+    goal: {
+      title: "Plugin des Unternehmensziels",
+      headline:
+        "Behalten Sie die Ziele im Auge",
+      description:
+        "Ein Plugin, mit dem Sie die Ziele und Leistungen des Unternehmens verfolgen können",
+      link: "Entdecken Sie das Ziel-Plugin des Unternehmens"
+    },
+
+    todo: {
+      title: "Todo-Plugin",
+      headline:
+        "Behält den Überblick über wichtige Aufgaben",
+      description:
+        "Ein Plugin, mit dem Sie alles, was Sie tun müssen, auflisten und sicherstellen können, dass Ihre Aufgaben an einem Ort aufgeschrieben werden, damit Sie nichts Wichtiges vergessen.",
+      link: "Entdecken Sie das Plugin von Todo"
+    },
+
+    channels: {
+      title: "Kanal-Plugin",
+      headline:
+        "Organisiert Gespräche in speziellen Räumen",
+      description:
+        "Ein Plugin, das eine Gruppe von Personen in einem Kanal über aktuelle, relevante Informationen informiert, um ein bestimmtes Ziel zu erreichen",
+      link: "Plugin „Kanäle erkunden“"
+    },
+
+    noticeboard: {
+      title: "Pinnwand-Plugin",
+      headline:
+        "Informationen effektiv teilen",
+      description:
+        "Es ist ein effektives Plugin zum Anzeigen von Informationen und zur Kommunikation mit Mitarbeitern",
+      link: "Entdecken Sie das Pinnwand-Plugin"
+    },
+
+    company_files: {
+      title: "Plugin für Unternehmensdateien",
+      headline:
+        "Access and Manages Company's Files Effectively",
+      description:
+        "Ein effektives Dateiverwaltungssystem, das den Geschäftsablauf verbessert, wichtige Daten organisiert und eine durchsuchbare Datenbank für den schnellen Abruf bereitstellt.",
+      link: "Entdecken Sie Plugins für Unternehmensdateien"
+    },
+
+    company_sales: {
+      title: "Plugin für Unternehmensverkäufe",
+      headline:
+        "Verfolgt Verkaufsaufzeichnungen",
+      description:
+        "Ein effektives Verkaufssystem, das die Verkaufsaufzeichnungen des Unternehmens verfolgt.",
+      link: "Entdecken Sie die Plugins für den Unternehmensverkauf"
+    },
+    
+    deadline: {
+      title: "Deadline-Plugins",
+      headline:
+        "Deadline-Tracker",
+      description:
+        "Ein Plugin, das die Fristen von Aufgaben, Ereignissen und Projekten verfolgt, die Mitgliedern einer Organisation zugewiesen sind",
+      link: "Entdecken Sie Deadline-Plugins"
+    },
+
+    expenses: {
+      title: "Ausgaben Plugins",
+      headline:
+        "Verfolgt die Ausgaben",
+      description:
+        "Ein Plugin, das hilft, die Ausgaben eines Unternehmens genau zu erfassen",
+      link: "Ausgaben-Plugins erkunden"
+    },
+
+    duty_shift: {
+      title: "Duty Shift-Plugin",
+      headline:
+        "Das Verfolgen Ihrer Schichten war noch nie so einfach!",
+      description:
+        "Ein Plugin, das Einzelpersonen hilft, ihre Arbeitszeiten zu verfolgen und mit anderen Mitarbeitern zu kommunizieren.",
+      link: "Erkunden Sie das Duty Shift-Plugin"
+    },
+
+    external_tools: {
+      title: "Plugins für externe Tools",
+      headline:
+        "Verwendung von Tools von Drittanbietern",
+      description:
+        "Das Plugin für externe Tools ist eine Funktion, die es Benutzern ermöglicht, mit Tools von Drittanbietern wie Google Drive, Figma, Github usw. zu interagieren, um den Arbeitsablauf für sich selbst oder ihr Team schneller und einfacher zu gestalten",
+      link: "Tools-Plugin erkunden"
+    },
+    
+    whiteboard: {
+      title: "Whiteboard-Plugin",
+      headline:
+        "Ideenaustausch und Teamzusammenarbeit",
+      description:
+        "Das Whiteboard-Plugin wird verwendet, um Gedanken, Konzepte zu visualisieren, Ideen aufzuschreiben, zu erklären und zu lehren, um innerhalb einer bestimmten Gruppe von Personen zu planen und zu erstellen",
+      link: "Whiteboard-Plugins erkunden"
+    },
+
+    holiday: {
+      title: "Urlaubskalender-Plugin",
+      headline:
+        "Termine Veranstaltungen oder Feiertage für Mitarbeiter",
+      description:
+        "Company Holiday Calendar Plugin ist ein Plugin, das Kalenderfunktionen hauptsächlich zum Organisieren oder Planen von Feiertagen oder Ereignissen für ein Unternehmen ermöglicht",
+      link: "Entdecken Sie das Kalender-Plugin des Unternehmens"
+    },
+
+    company_shift: {
+      title: "Firmenschicht-Plug-in",
+      headline:
+        "Überwacht die Arbeitszeiten eines Unternehmens",
+      description:
+        "Ein Plugin, das die Arbeitszeit eines Unternehmens verfolgt und wie sie unter den Mitarbeitern des Unternehmens verteilt wird.",
+      link: "Entdecken Sie das Company Shift-Plugin"
+    },
+
+    signup: {
+      headline: "Holen Sie sich Plugins, die Ihnen gefallen würden",
+      description: "Integrieren Sie Ihre Lieblings-Plugins und erhalten Sie mehr aufregende Erfahrungen",
+      link: "Entdecke mehr",
+    },
+
+    subscribe: {
+      headline: "Seien Sie der Erste, der Updates erhält",
+      headline_br: "zu den neuesten Plugins von Zuri Chat",
+      description: "Bereichern Sie Ihr Zuri Chat-Erlebnis, indem Sie sich abonnieren",
+      description_br: "hier, um die neuesten Plugins per E-Mail zu erhalten",
+      description_brr: "auf Zuri-Chat!",
+      button: "Abonnieren"
+    }
+  },
+
+  
   about: {
     title: {
       about: ""
@@ -325,6 +465,32 @@ export const TRANSLATIONS_DE = {
           post_headline: "Zuri zahlt 100 % Ihrer Prämien. Wir bieten auch Zugang zu einer Reihe von kostenlosen Ressourcen für psychische Gesundheit und Wohlbefinden."
         }
       }
+    }
+  },
+  login:{
+    title: "Einloggen - Zuri Chat",
+    form: {
+      header: "Einloggen",
+      sub_header: "Melden Sie sich mit den Daten an, die Sie bei Ihrer Registrierung eingegeben haben",
+      google_header: "Mit Google anmelden",
+      topline_text: "ODER",
+      submitButtonName: "Einloggen",
+      bottomLine: "Neu bei uns?",
+      bottomLink: "Ein Konto erstellen",
+      signUp: "Anmelden",
+      authInputBox: {
+        emailInputName: "E-Mail-Addresse",
+        passwordInputName: "Passwort",
+        passwordInputPlaceHolder: "Geben Sie ein Passwort ein",
+        rememberMe: "Erinnere dich an mich",
+        forgotPassword: "Passwort vergessen?",
+        getHelp: "Hilfe beim Anmelden erhalten"
+      }
+    },
+    footer: {
+      contactUs: "Kontaktiere uns",
+      legacyPolicy: "Rechtliche Hinweise",
+      aboutZuri: "Über Zurichat"
     }
   }
 }
