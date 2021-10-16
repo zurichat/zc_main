@@ -1,30 +1,38 @@
-import React from "react"
+import React, { useState } from "react"
 import styles from "../styles/ModalComponentStyles.module.css"
+import axios from "axios"
 
-const RoomOptions = (
-  { isClicked,
-    position,
-    room
+const RoomOptions = ({ isClicked, position, room }) => {
+  // const isClicked = true;
+  const room_Id = room.room_url.split("/")[2]
+  const baseUrl = room.room_url.split("/")[0]
+  const org = localStorage.getItem("currentWorkspace")
+  const orgs = sessionStorage.getItem("organisations")
+  const member_id = orgs.filter(x => x.id == org)[0].member_id
+
+  const [starred, setStarred] = useState(false)
+
+  //  axios
+  // .("https://api.zuri.chat/auth/login", {
+
+  // })
+  const starRoomClicked = () => {
+    console.warn(room_Id, baseUrl, org, member_id)
   }
-  ) => {
-    // const isClicked = true;
-  // const room_Id = room.room_url.split("/")[2]
-  // const org = localStorage.getItem("currentWorkspace")
-  // const orgs = sessionStorage.getItem
 
-  let screenHeight = window.innerHeight/2;
+  let screenHeight = window.innerHeight / 2
 
   let menuPosition =
-  position.y > screenHeight ? 
-  {
-    "top": `${position.y-250}px`,
-    "left": `${position.x+5}px`
-  } 
-  :
-  {
-    "top": `${position.y}px`,
-    "left": `${position.x+5}px`
-  } 
+    position.y > screenHeight
+      ? {
+          top: `${position.y - 250}px`,
+          left: `${position.x + 5}px`
+        }
+      : {
+          top: `${position.y}px`,
+          
+          left: `${position.x + 5}px`
+        }
 
   return (
     <section
@@ -53,7 +61,7 @@ const RoomOptions = (
       <hr className={styles.modalDivider} />
       <div className={`d-flex flex-column  ${styles.modalSection}`}>
         <div>
-          <p>Star room</p>
+          <p onClick={starRoomClicked}>Star room</p>
         </div>
       </div>
       <hr className={styles.modalDivider} />
@@ -62,7 +70,6 @@ const RoomOptions = (
           <p>Open conversation details</p>
         </div>
         <div>
-          
           <p>Close conversation</p>
         </div>
       </div>
