@@ -11,11 +11,15 @@ export const plugins = [
     name: "todo",
     apiCall: (org_id, member_id, query, filter = null) => {
       return $http.get(
-        `todo.zuri.chat/api/v1/search/${org_id}/${member_id}?q=${query}org_id=${org_id}member_id=${member_id}${
+        `todo.zuri.chat/api/v1/search/${org_id}/${member_id}?q=${query}&org_id=${org_id}&member_id=${member_id}${
           !filter ? "" : `&filter=${filter}`
         }`
       )
-    }
+    },
+    filterCall: (org_id, member_id) =>
+      $http.get(
+        `todo.zuri.chat/api/v1/search-suggestions/${org_id}/${member_id}?org_id=${org_id}&member_id=${member_id}`
+      )
   },
   {
     name: "goals",
