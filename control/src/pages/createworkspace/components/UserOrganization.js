@@ -4,8 +4,6 @@ import ZuriLogo from "../assets/zuri.png"
 const UserOrganization = ({ organizations, user }) => {
   return (
     <BottomSection>
-      <Or>Or</Or>
-      <Header2>Open a workspace</Header2>
       <SelectWorkSpace>
         <p style={{ paddingLeft: "10px" }}>
           Workspaces for{" "}

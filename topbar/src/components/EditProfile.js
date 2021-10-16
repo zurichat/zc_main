@@ -19,6 +19,7 @@ const EditProfile = () => {
     setUserProfileImage,
     toggleModalState
   } = useContext(ProfileContext)
+  const [deletePic, setDeletePic] = useState(false)
   const [selectedTimezone, setSelectedTimezone] = useState({})
   const [links, setLinks] = useState([""])
   const [state, setState] = useState({
@@ -61,6 +62,9 @@ const EditProfile = () => {
 
       const formData = new FormData()
       formData.append("image", imageReader)
+      formData.append("height", 512)
+      formData.append("width", 512)
+      
       authAxios
         .patch(
           `/organizations/${orgId}/members/${user._id}/photo/upload`,
@@ -93,6 +97,7 @@ const EditProfile = () => {
         toast.success("User Image Removed Successfully", {
           position: "top-center"
         })
+        setDeletePic(true)
       })
       .catch(err => {
         console.error(err)
@@ -100,8 +105,10 @@ const EditProfile = () => {
         toast.error(err?.message, {
           position: "top-center"
         })
+        setDeletePic(false)
       })
   }
+
   useEffect(() => {
     setUserProfileImage(user.image_url)
   }, [user])
@@ -322,12 +329,17 @@ const EditProfile = () => {
                       width={24}
                     />
                   ) : (
-                    <img
-                      ref={avatarRef}
-                      className="img"
-                      src={userProfileImage ? userProfileImage : defaultAvatar}
-                      alt="profile-pic"
-                    />
+                    <div className="profile__img-wrapper">
+                      <span className="pictureHeading">Profile photo</span>
+                      <img
+                        ref={avatarRef}
+                        className="img"
+                        src={
+                          userProfileImage ? userProfileImage : defaultAvatar
+                        }
+                        alt="profile-pic"
+                      />
+                    </div>
                   )}
                 </div>
                 <input
@@ -348,7 +360,7 @@ const EditProfile = () => {
                       width={40}
                     />
                   ) : ( */}
-                  Upload Image
+                  Upload an Image
                   {/* ) */}
                 </label>
                 <div
@@ -356,7 +368,7 @@ const EditProfile = () => {
                   className="rmvBtn"
                   onClick={handleImageDelete}
                 >
-                  Remove Image
+                  Remove photo
                 </div>
               </div>
             </div>
