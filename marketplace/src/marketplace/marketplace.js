@@ -119,7 +119,7 @@ const MarketPlace = () => {
 
 
   return (
-    <MarketPlaceProvider>
+    <MarketPlaceProvider className={"market-place-custom-div"}>
       <Helmet>
         <title>Market Place - Zuri Chat</title>
       </Helmet>

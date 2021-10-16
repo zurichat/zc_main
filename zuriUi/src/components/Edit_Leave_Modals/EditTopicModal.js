@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState } from "react";
 import {
   ModalContainer,
   TopicModal,
@@ -13,27 +13,30 @@ import {
 
 const EditTopicModal = (props) => {
 
-
+  if (!props.show) {
+    return null
+  } else {
     return (
       <ModalContainer>
-      <TopicModal>
-        <ModalTop>
-          <ModalTopic>Topic</ModalTopic>
-          <CloseBtn onClick=  { ()=>{props.closeEdit()}}> X </CloseBtn>
-        </ModalTop>
-        <Modalbody>
-          <input type="text" placeholder="Add Topic" />
+        <TopicModal>
+          <ModalTop>
+            <ModalTopic>Topic</ModalTopic>
+            {/* <CloseBtn onClick=  { () => {props.closeEdit()}}> X </CloseBtn> */}
+          </ModalTop>
+          <Modalbody>
+            <input type="text" placeholder="Add Topic" />
 
-          <p>Let people know what this channel is for.</p>
+            <p>Let people know what this channel is for.</p>
 
-          <ModalButtons>
-            <CancelBtn>Cancel</CancelBtn>
-            <AcceptBtn>Save</AcceptBtn>
-          </ModalButtons>
-        </Modalbody>
-      </TopicModal>
-    </ModalContainer>
-  );
+            <ModalButtons>
+              <CancelBtn>Cancel</CancelBtn>
+              <AcceptBtn>Save</AcceptBtn>
+            </ModalButtons>
+          </Modalbody>
+        </TopicModal>
+      </ModalContainer>
+    );
+  }
 
 };
 
