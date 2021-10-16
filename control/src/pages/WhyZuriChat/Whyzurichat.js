@@ -11,7 +11,7 @@ import HeaderSearchSuggestion from "../../components/Header"
 import Footer from "../../components/Footer"
 import { Link } from "react-router-dom"
 function Whyzurichat() {
-  const title = "Meet ZuriChat - affordable Slack alternative"
+  const title = "Meet ZuriChat - an affordable Slack alternative"
 
   return (
     <Fragment>
@@ -27,7 +27,7 @@ function Whyzurichat() {
                 <br />
                 Zurichat is on a mission to simplify individual work life and
                 increase productivity with an intriguing collaborative hub
-                powered by Artificial Intelligence and sustained by DAO..
+                powered by Artificial Intelligence and sustained by DAO.
               </p>
             </div>
             <div className={style.blog_img}>
@@ -46,12 +46,12 @@ function Whyzurichat() {
               <div className={style.text__wrap}>
                 <h2>Clarity</h2>
                 <p>
-                  Proicient task execution is key to driving your business
-                  forward, and ZuriChat helps you get more done. Our Company
-                  Deadline plugin makes Task Management easy for collaborations
-                  of all sizes, from startups to global firms. Optimize your
-                  workflows by tracking status, monitoring progress, and
-                  discussing issues.
+                  Proficient task execution is essential to driving your
+                  business forward, and ZuriChat helps you get more done. Our
+                  Company Deadline plugin makes Task Management easy for
+                  collaborations of all sizes, from startups to global firms.
+                  Optimize your workflows by tracking status, monitoring
+                  progress, and discussing issues.
                 </p>
               </div>
             </div>
@@ -74,9 +74,9 @@ function Whyzurichat() {
               <div className={style.text__wrap}>
                 <h2>Speed</h2>
                 <p>
-                  ZuriChat understands that time is money in the business world.
-                  Our ZuriChat Dm Reply plugin alternative saves you time spent
-                  on communication. That need for speed is satisfied by
+                  ZuriChat understands that time is money in the business
+                  sphere. Our ZuriChat Dm Reply plugin saves you time spent on
+                  communication. That need for speed is satisfied by
                   optimization of Real-time communication, twice faster file
                   sharing and customized notifications, so you never miss a
                   thing; announcements, task status updates, calls, etc.
@@ -93,11 +93,10 @@ function Whyzurichat() {
                 <h2>Retentive Capacity</h2>
                 <p>
                   Every company or a team needs room to grow. When it comes to
-                  file storage, the best Slack alternative for you is also
-                  ZuriChat as we provide all our customers with twice more room
-                  for file storage in Zuri Company Files making it twice doubly
-                  convenient for you to store and share multiple files when
-                  collaborating within your team.
+                  file storage, the best Slack alternative is found in Zuri
+                  Company Files, as we provide all our customers with twice more
+                  room for storage making doubly convenient for you to store and
+                  share multiple files when collaborating within your team.
                 </p>
               </div>
             </div>
@@ -120,10 +119,11 @@ function Whyzurichat() {
               <div className={style.text__wrap}>
                 <h2>Optimized Productivity</h2>
                 <p>
-                  Improve your team's performance. ZuriChat is designed to boost
-                  collaboration and <br />
-                  reduce the rtime spend on meetings, emails and communication
-                  between colleagues{" "}
+                  Improve your team's performance and build morale with a
+                  Token-based Remuneration system. ZuriChat plugins is designed
+                  to boost collaboration and reduce the time spent on meetings,
+                  emails and interactions between colleagues and encourage team
+                  progress towards shared business goals with rewards{" "}
                 </p>
               </div>
             </div>
@@ -162,8 +162,8 @@ function Whyzurichat() {
                 <h2>Unlimited Message Retention</h2>
                 <p>
                   Never miss a single message. ZuriChat Dm Reply is accessible
-                  from the first message Whatever's written in ZuriChat stays in
-                  ZuriChat. No hidden costs. No limits.
+                  from the very first message as whatever's written in ZuriChat
+                  stays in ZuriChat. No hidden costs. No limits.
                 </p>
               </div>
             </div>
@@ -177,8 +177,8 @@ function Whyzurichat() {
                 <h2>Always available to Help</h2>
                 <p>
                   Hit a snag? Got a question? Our 24/7 HelpTeam will take extra
-                  steps to ensure you have an easy and pleasurable experience
-                  with ZuriChat
+                  steps and walk extra miles to ensure you have an easy and
+                  pleasant experience with ZuriChat
                 </p>
               </div>
             </div>
@@ -194,7 +194,7 @@ function Whyzurichat() {
           <div className={style.max_width}>
             <div className={style.bottom_card}>
               <p>
-                Your Team will enjoy <strong>ZuriChat</strong>{" "}
+                Your Team would definitely love <strong>ZuriChat</strong>{" "}
               </p>
               <Link to="/signup" className={style.bottom_link}>
                 Sign up

@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react"
 import styled from "styled-components"
 import Chats from "./Chats"
-import UnstyledButton from "../message_input/UnstyledButton"
+import UnstyledButton from "../message_input2/UnstyledButton"
 import MessageInputBox from "../message_input/MessageInputField"
 
 const CommentSection = ({ chatsConfig }) => {
   const [openSidebar, setOpenSidebar] = useState(chatsConfig.showChatSideBar)
-  const [messages, setMessages] = useState(chatsConfig.messages)
+  const [messages, setMessages] = useState([])
 
   const addToMessages = message => {
+    // console.log("mes", message)
     setMessages(messages => [...messages, message])
   }
 

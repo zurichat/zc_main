@@ -3,6 +3,7 @@ import React, { useState, useContext } from "react"
 import { ProfileContext } from "../context/ProfileModal"
 import { authAxios } from "../utils/Api"
 import styles from "../styles/MessagesMedia.module.css"
+import standardStyles from "../styles/UserPreference.module.css"
 import zuriBot from "../assets/images/zuribot.png"
 import zuriPerson from "../assets/images/zuriperson.png"
 import theme13 from "../assets/images/theme9.png"
@@ -12,23 +13,19 @@ import theme16 from "../assets/images/theme12.png"
 import theme17 from "../assets/images/theme13.png"
 import theme18 from "../assets/images/theme14.png"
 import theme19 from "../assets/images/theme15.png"
-
 const MessagesMedia = () => {
   const [isChecked, setIsChecked] = useState(false)
   const [active1, setActive1] = useState(0)
   const [active2, setActive2] = useState(1)
-
   const { user } = useContext(ProfileContext)
   // console.log("user", user.settings.messages_and_media)
   const [message, setMessage] = useState(user.settings.messages_and_media)
   // console.log(message.theme)
-
   // handleSubmit function on the form
   const handleSubmit = e => {
     e.preventDefault()
     // console.log(isChecked)
   }
-
   const updateMessageSettings = message => {
     authAxios
       .patch(
@@ -42,7 +39,6 @@ const MessagesMedia = () => {
         // console.log(err)
       })
   }
-
   React.useEffect(() => {
     fetch("https://api.zuri.chat/", {
       method: "POST",
@@ -57,12 +53,11 @@ const MessagesMedia = () => {
       })
       .catch(error => console.error(error))
   })
-
   return (
-    <div className={styles.msgCon}>
+    <div className={standardStyles.modalContent}>
       <div className={styles.title}>Messages</div>
-      <div className={styles.clean}>
-        <div className={styles.radio}>
+      {/* <div className={styles.clean}> */}
+      {/* <div className={styles.radio}>
           <input
             className={styles.radioInput}
             type="radio"
@@ -80,10 +75,10 @@ const MessagesMedia = () => {
               }
             }}
           />
-        </div>
-        <div className={styles.cln}>Clean</div>
-      </div>
-      <div className={styles.compact}>
+        </div> */}
+      {/* <div className={styles.cln}>Clean</div> */}
+      {/* </div> */}
+      {/* <div className={styles.compact}>
         <div className={styles.radio1}>
           <input
             className={styles.radioInput}
@@ -104,10 +99,9 @@ const MessagesMedia = () => {
           />
         </div>
         <div className={styles.compt}>Compact</div>
-      </div>
-      <div className={styles.text}>Here is an example</div>
-      <div className={styles.img11}>
-        {/* <img src={theme11} alt="theme11" className={styles.theme11} /> */}
+      </div> */}
+      {/* <div className={styles.text}>Here is an example</div> */}
+      {/* <div className={styles.img11}>
         {active1 == 0 && (
           <div className={styles.previewCard}>
             <img src={zuriBot} alt="bot" />
@@ -120,7 +114,6 @@ const MessagesMedia = () => {
             </div>
           </div>
         )}
-
         {active1 == 1 && (
           <div className={styles.previewCard1}>
             <p className={styles.time}>9:25pm</p>
@@ -128,8 +121,8 @@ const MessagesMedia = () => {
             <p className={styles.message}>Feeling great</p>
           </div>
         )}
-      </div>
-      <div className={styles.bottom}></div>
+      </div> */}
+      {/* <div className={styles.bottom}></div> */}
       <div className={styles.name}>Name</div>
       <div className={styles.full}>
         <div className={styles.radio2}>
@@ -175,8 +168,7 @@ const MessagesMedia = () => {
         </div>
         <div className={styles.jst}>Just display names</div>
       </div>
-      <div className={styles.img12}>
-        {/* <img src={theme12} alt="theme12" className={styles.theme12} /> */}
+      {/* <div className={styles.img12}>
         {active1 == 0 && (
           <div className={styles.previewCard}>
             <img src={zuriPerson} alt="bot" />
@@ -190,7 +182,6 @@ const MessagesMedia = () => {
             </div>
           </div>
         )}
-
         {active1 == 1 && (
           <div className={styles.previewCard1}>
             <p className={styles.time}>9:25pm</p>
@@ -199,14 +190,14 @@ const MessagesMedia = () => {
             <p className={styles.message}>👋 Hi I'm Zuri</p>
           </div>
         )}
-      </div>
+      </div> */}
       <div className={styles.change}>
         To change your full or display name, head to
         <span style={{ color: "#00B87C" }}> your profile.</span>
       </div>
       <div className={styles.bottom2}></div>
-      <div className={styles.add}>Additional options</div>
-      <div className={styles.info}>
+      {/* <div className={styles.add}>Additional options</div> */}
+      {/* <div className={styles.info}>
         <form onSubmit={handleSubmit}>
           <div className={styles.checkbox}>
             <input
@@ -234,8 +225,8 @@ const MessagesMedia = () => {
         <div className={styles.current}>
           Display information about who is currently typing a message
         </div>
-      </div>
-      <div className={styles.timed}>
+      </div> */}
+      {/* <div className={styles.timed}>
         <form onSubmit={handleSubmit}>
           <div className={styles.checkbox2}>
             <input
@@ -261,8 +252,8 @@ const MessagesMedia = () => {
           </div>
         </form>
         <div className={styles.hour}>Show times with 24-hour clock</div>
-      </div>
-      <div className={styles.hexa}>
+      </div> */}
+      {/* <div className={styles.hexa}>
         <form onSubmit={handleSubmit}>
           <div className={styles.checkbox3}>
             <input
@@ -290,8 +281,8 @@ const MessagesMedia = () => {
         <div className={styles.color}>
           Display color swatches next to hexadecimal values
         </div>
-      </div>
-      <div className={styles.bottom3}></div>
+      </div> */}
+      {/* <div className={styles.bottom3}></div> */}
       <div className={styles.emoji}>Emoji</div>
       <div className={styles.tone}>Default Skin Tone</div>
       <p className={styles.choose}>
@@ -318,13 +309,8 @@ const MessagesMedia = () => {
         <div tabIndex="-1" className={styles.emojiBox}>
           <img src={theme18} alt="theme18" className={styles.theme18} />
         </div>
-        {/* <img src={theme14} alt="theme14" className={styles.theme14} />
-        <img src={theme15} alt="theme15" className={styles.theme15} />
-        <img src={theme16} alt="theme16" className={styles.theme16} />
-        <img src={theme17} alt="theme17" className={styles.theme17} />
-        <img src={theme18} alt="theme18" className={styles.theme18} /> */}
       </div>
-      <div className={styles.plntxt}>
+      {/* <div className={styles.plntxt}>
         <form onSubmit={handleSubmit}>
           <div className={styles.checkbox4}>
             <input
@@ -347,8 +333,8 @@ const MessagesMedia = () => {
           </div>
         </form>
         <div className={styles.plain}>Display emoji in plain text</div>
-      </div>
-      <div className={styles.jumb}>
+      </div> */}
+      {/* <div className={styles.jumb}>
         <form onSubmit={handleSubmit}>
           <div className={styles.checkbox5}>
             <input
@@ -371,17 +357,17 @@ const MessagesMedia = () => {
           </div>
         </form>
         <div className={styles.jumbomoji}>Show JUMBOMOJI</div>
-      </div>
-      <p className={styles.versions}>
+      </div> */}
+      {/* <p className={styles.versions}>
         Display the jumbo versions of emoji (up to 23 at a time!) in messages
         without text.
-      </p>
-      <p className={styles.example}>Here is an example</p>
-      <img src={theme19} alt="theme19" className={styles.theme19} />
-      <div className={styles.bottom4}></div>
-      <div className={styles.media}>In-line media and links</div>
-      <div className={styles.images}>
-        <form onSubmit={handleSubmit}>
+      </p> */}
+      {/* <p className={styles.example}>Here is an example</p> */}
+      {/* <img src={theme19} alt="theme19" className={styles.theme19} />
+      <div className={styles.bottom4}></div> */}
+      {/* <div className={styles.media}>In-line media and links</div> */}
+      {/* <div className={styles.images}> */}
+      {/* <form onSubmit={handleSubmit}>
           <div className={styles.checkbox6}>
             <input
               type="checkbox"
@@ -408,12 +394,12 @@ const MessagesMedia = () => {
               }}
             />
           </div>
-        </form>
-        <div className={styles.files}>
+        </form> */}
+      {/* <div className={styles.files}>
           Show images and files uploaded to Zurichat
-        </div>
-      </div>
-      <div className={styles.websites}>
+        </div> */}
+      {/* </div> */}
+      {/* <div className={styles.websites}>
         <form onSubmit={handleSubmit}>
           <div className={styles.checkbox7}>
             <input
@@ -445,8 +431,8 @@ const MessagesMedia = () => {
         <div className={styles.linked}>
           Show images and files from linked websites
         </div>
-      </div>
-      <div className={styles.larger}>
+      </div> */}
+      {/* <div className={styles.larger}>
         <form onSubmit={handleSubmit}>
           <div className={styles.checkbox8}>
             <input
@@ -472,8 +458,8 @@ const MessagesMedia = () => {
           </div>
         </form>
         <div className={styles.than}>Even if they're larger than 2 MB</div>
-      </div>
-      <div className={styles.previews}>
+      </div> */}
+      {/* <div className={styles.previews}>
         <form onSubmit={handleSubmit}>
           <div className={styles.checkbox9}>
             <input
@@ -503,9 +489,9 @@ const MessagesMedia = () => {
           </div>
         </form>
         <div className={styles.of}>Show text previews of linked websites</div>
-      </div>
+      </div> */}
     </div>
   )
 }
-
 export default MessagesMedia
+
