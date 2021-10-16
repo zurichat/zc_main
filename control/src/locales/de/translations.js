@@ -325,6 +325,15 @@ export const TRANSLATIONS_DE = {
       button: "Abonnieren"
     },
 
+    nav: {
+      pricing: "Preisgestaltung",
+      about: "Über",
+      downloads: "Downloads",
+      contact: "Kontakt",
+      signup: "Anmelden",
+      login: "Anmeldung"
+    },
+
     dm: {
       title: "Direktnachrichten-Plug-in",
       headline: "Sendet Direktnachrichten",
@@ -488,9 +497,8 @@ export const TRANSLATIONS_DE = {
       description_br: "hier, um die neuesten Plugins per E-Mail zu erhalten",
       description_brr: "auf Zuri-Chat!",
       button: "Abonnieren"
-    }
+    },
   },
-
   
   about: {
     title: {

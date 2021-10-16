@@ -91,11 +91,17 @@ const Sidebar = props => {
         //     return (categories.includes(p) ?
         //     <Category key={idx} name={p} data={categoryData} />
         //     : null)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 07b34da11121660b1937e3d22434a9267e4d91cc
         // }
       }
     }
   }
+  const check = props.state.sidebar && Object.keys(props.state.sidebar).map((plugin, idx)=>{
+    return (props.state.sidebar[plugin].starred_rooms ? true : false)
+  })
 
   return (
     <div className={`container-fluid ${styles.sb__container}`}>
@@ -105,16 +111,19 @@ const Sidebar = props => {
           {/* <Room name="Threads" image={threadIcon} />
           <Room name="All DMs" image={dmIcon} />
           <Room name="Drafts" image={draftIcon} />
-  <Room name="Plugins" image={pluginIcon} />*/}
-
+         <Room name="Plugins" image={pluginIcon} />*/}
           {/* SIDE BAR DATA */}
           <SingleRoom name="Threads" image={threadIcon} />
           <SingleRoom name="All Dms" image={dmIcon} />
           <SingleRoom name="Drafts" image={draftIcon} />
 
           <SingleRoom name="Plugins" image={pluginIcon} link="/marketplace" />
+<<<<<<< HEAD
 
           <Starred state={props.state} />
+=======
+          {props.state.sidebar &&  <Starred check={check} state={props.state} />}
+>>>>>>> 07b34da11121660b1937e3d22434a9267e4d91cc
           {singleItems}
           {categorizedItems}
 

@@ -188,7 +188,11 @@ const index = () => {
             Want to explore?
             </h3>
 
+<<<<<<< HEAD
             <Link to = "/signup"><button className={` ${styles.btn_sale}`}>>GET STARTED</button></Link>
+=======
+            <Link to = "/signup"><button className={` ${styles.btn_sale}`}>GET STARTED</button></Link>
+>>>>>>> 07b34da11121660b1937e3d22434a9267e4d91cc
 
           </div>
           

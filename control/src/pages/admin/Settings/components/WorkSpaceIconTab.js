@@ -77,7 +77,11 @@ const WorkSpaceIconTab = () => {
       .catch(err => {
         console.error(err)
       })
+<<<<<<< HEAD
   }, [])
+=======
+  }, [orgData])
+>>>>>>> 07b34da11121660b1937e3d22434a9267e4d91cc
 
   const handleLogoDelete = () => {
     setLoader({ ...loader, removeLoader: true })
@@ -142,7 +146,11 @@ const WorkSpaceIconTab = () => {
             />
             <WorkSpaceDetail>
               <WorkSpaceName>
+<<<<<<< HEAD
                 {orgData.name ? orgData.name : "HNGi9 x I4G"}
+=======
+                {orgData.name ? orgData.name : "Loading....."}
+>>>>>>> 07b34da11121660b1937e3d22434a9267e4d91cc
               </WorkSpaceName>
               <WorkSpaceDescription>
                 This icon will be used to identify your workspace in Zuri Chat.
@@ -161,7 +169,11 @@ const WorkSpaceIconTab = () => {
               <WorkSpaceName>Workspace Icon Guidelines</WorkSpaceName>
               <Text>
                 Your workspace icon is a way for you to visually identify the{" "}
+<<<<<<< HEAD
                 <strong>{orgData.name ? orgData.name : "HNGi9 x I4G"}</strong>{" "}
+=======
+                <strong>{orgData.name ? orgData.name : "Loading...."}</strong>{" "}
+>>>>>>> 07b34da11121660b1937e3d22434a9267e4d91cc
                 workspace. It is used in the desktop and mobile apps, and on
                 your workspace admin site. It’s most helpful when you’re on
                 multiple Slack workspaces.

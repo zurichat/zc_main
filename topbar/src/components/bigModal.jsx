@@ -47,7 +47,8 @@ export const BigModal = ({ onClose, inputValue, filter }) => {
     getResult()
   }, [result[0]])
   // console.log(result)
-  let i = 0
+  let i = 0;
+  const showResult = (result.length === 0) ? false : true;
 
   const sidebar = document.getElementById(
     "single-spa-application:@zuri/sidebar"
@@ -88,20 +89,32 @@ export const BigModal = ({ onClose, inputValue, filter }) => {
         plugin_name={exactPlugin.name}
       />
     </div>
+<<<<<<< HEAD
   ))
+=======
+  ));
+
+>>>>>>> 07b34da11121660b1937e3d22434a9267e4d91cc
   const element = isLoading ? (
     <p>loading...</p>
   ) : (
     <SearchContainer className="bigModal">
+<<<<<<< HEAD
       <h2>{`Search result for "${inputValue}"`}</h2>
 
       <button
+=======
+        <h2>{`Search result for "${inputValue}"`}</h2>
+
+        <button
+>>>>>>> 07b34da11121660b1937e3d22434a9267e4d91cc
         className="btn"
         onClick={() => onClose()}
         style={{ position: "absolute", top: "15px", right: "20px" }}
       >
         <img src={cancel} alt="close" />
       </button>
+<<<<<<< HEAD
       {result.length < 1 ? (
         <div className={styles.noResult}>
           <p className={styles.no_result_title}>No Result Found</p>
@@ -116,6 +129,14 @@ export const BigModal = ({ onClose, inputValue, filter }) => {
       )}
     </SearchContainer>
   )
+=======
+      
+      {result.length < 1 ? <NoResult onClosed={() => onClose()}/> : (
+        card
+      )}
+    </SearchContainer>
+  );
+>>>>>>> 07b34da11121660b1937e3d22434a9267e4d91cc
 
   return element
 }

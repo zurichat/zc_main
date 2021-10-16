@@ -12,6 +12,8 @@ const SidebarHeader = props => {
 
   const [openModal, setOpenModal] = useState(true)
 
+  const [openModal, setOpenModal] = useState(false)
+
   //toggle
   const toggle = () => {
     toggleHomeModal(!homeModal)

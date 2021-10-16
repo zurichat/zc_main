@@ -461,6 +461,7 @@ export const TRANSLATIONS_EN = {
       }
     }
   },
+  
   login:{
     title: "Login - Zuri Chat",
     form: {
@@ -488,6 +489,7 @@ export const TRANSLATIONS_EN = {
     }
   },
 
+<<<<<<< HEAD
   
   about: {
     title: {
@@ -644,6 +646,8 @@ export const TRANSLATIONS_EN = {
   },
 
 
+=======
+>>>>>>> 07b34da11121660b1937e3d22434a9267e4d91cc
   download_desktop: {
     title: {
       download: ""
