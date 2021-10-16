@@ -96,8 +96,7 @@ export const TRANSLATIONS_EN = {
   },
 
 
-  pricing: 
-  {
+  pricing: {
     title: {
       pricing: "Pricing - Zuri Chat"
     },
@@ -344,5 +343,27 @@ export const TRANSLATIONS_EN = {
       legacyPolicy: "Legal Policy",
       aboutZuri: "About Zurichat"
     }
+  },
+  signup: {
+    title: "Sign Up",
+    form: {
+      header: "Create Account",
+      googleHeader: "Sign up with Google",
+      topLineText: "OR",
+      submitButtonName: "Sign up",
+      bottomLine: "Already have an account?",
+      bottomLink: "Log in",
+      input: {
+        fullName: "Full Name",
+        fullNamePlaceholder: "Enter your Name",
+        emailAddress: "Email Address",
+        emailAddressPlaceholder: "Enter you email address",
+        password: "Password",
+        passwordPlaceholder: "Enter a password",
+      }
+    },
+    privacyAgreement: "I agree to Zurichat's",
+    termsOfService: "Terms of services",
+    privacy: "Privacy"
   }
 }
