@@ -156,8 +156,8 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
       userAppearance = "Set yourself as active"
       toggleAppearance = (
         <div className={styles.online}>
-          <div className={styles.awayCircle} />
-          <p className={styles.away}>Away </p>
+          <span className={styles.awayCircle} />
+          <span className={styles.away}>Away </span>
         </div>
       )
   }
