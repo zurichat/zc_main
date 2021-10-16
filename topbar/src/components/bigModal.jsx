@@ -46,7 +46,7 @@ export const BigModal = ({ onClose, inputValue, result, isLoadingUp }) => {
     right: 0;
     overflow: auto;
     height: 100vh;
-    z-index: 5000;
+    z-index: 2000;
     padding: 10px 20px;
   `
   const StyledInput = Styled.input`
@@ -60,12 +60,12 @@ export const BigModal = ({ onClose, inputValue, result, isLoadingUp }) => {
   let card = results.map((item, i) => (
     <div key={i} className={styles.resultCard}>
       <SearchValue
-        destination_Url={item.destination_url}
-        src={noImg}
-        title={item.title}
+        destination_Url={item?.destination_url}
+        src={item?.image_url[0]}
+        title={item?.title}
         onClose={onClose}
-        content={item.content}
-        created_at={item.created_at}
+        content={item?.content}
+        created_at={item?.created_at}
         plugin_name={exactPlugin.name}
       />
     </div>
@@ -88,7 +88,9 @@ export const BigModal = ({ onClose, inputValue, result, isLoadingUp }) => {
             Looking for something? If it happened in zuri-chat,
             <br /> you can find it in search.
           </p>
-          <button className={styles.startNewSearch}>Start A New Search</button>
+          <button className={styles.startNewSearch}>
+            Please Start A New Search
+          </button>
         </div>
       ) : isLoading ? (
         <p
