@@ -595,9 +595,10 @@ const Tag = styled.button`
   background-color: #E8F0FF;
   border: none;
   outline: none;
-  margin-left: 20px;
+  margin-left: 0.25rem;
+  padding: 0.5rem 1rem;
   border-radius: 5px;
-  font-size:14px;
+  font-size:8px;
 `
 const Subheader = styled.h4`
   font-weight: 400;
