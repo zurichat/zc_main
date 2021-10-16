@@ -102,3 +102,32 @@
     text-indent: 0.6em;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .btnContainer .btn {
+    font-size: 1em;
+  }
+
+  /* input Label */
+  .InputLabel {
+    font-size: 1em;
+  }
+
+  .InputLabel em {
+    font-size: 0.8em;
+  }
+
+  /* Input wrapper */
+  .InputWrapper {
+    height: 3em;
+  }
+
+  /* actual input element */
+  .InputElement {
+    font-size: 1em;
+  }
+
+  .InputElement::placeholder {
+    font-size: 0.8em;
+  }
+}
