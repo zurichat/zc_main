@@ -607,5 +607,6 @@ export const TRANSLATIONS_ZH = {
       download: "下载适用于 WINDOWS",
       download_ios: "为 Mac 下载？"
     }
-  },
+  }
 }
+
