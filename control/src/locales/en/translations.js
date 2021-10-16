@@ -3,7 +3,6 @@ export const TRANSLATIONS_EN = {
     language_select: "Change Language"
   },
 
-
   // Landing Page
   landing: {
     title: {
@@ -90,7 +89,7 @@ export const TRANSLATIONS_EN = {
       socialMedia: "Social Media",
       rights: " All Rights Reserved"
     },
-    
+
     cookies: {
       textOne: "We use third-party",
       textTwo: "cookies",
@@ -100,10 +99,8 @@ export const TRANSLATIONS_EN = {
     }
   },
 
-
-// Pricing Page
-  pricing: 
-  {
+  // Pricing Page
+  pricing: {
     title: {
       pricing: "Pricing - Zuri Chat"
     },
@@ -118,12 +115,13 @@ export const TRANSLATIONS_EN = {
     cardThree: {
       duration_one: "Annual",
       duration_two: "Monthly",
-      button: "Get Started",
+      button: "Get Started"
     },
 
     sectionThree: {
       headline: "Leading the way in enterprise security",
-      description: "In addition to encryption in transit and at rest, we operate comprehensive compliance ans assurance programs.",
+      description:
+        "In addition to encryption in transit and at rest, we operate comprehensive compliance ans assurance programs.",
       link: "Learn more about security..."
     },
 
@@ -140,8 +138,7 @@ export const TRANSLATIONS_EN = {
     }
   },
 
-
-// Plugin Page
+  // Plugin Page
   plugin: {
     title: {
       plugin: "Connect and Interact"
@@ -173,8 +170,7 @@ export const TRANSLATIONS_EN = {
 
     games: {
       title: "Chess Plugin",
-      headline:
-        "Make learning fun, stay engaged with the virtual games",
+      headline: "Make learning fun, stay engaged with the virtual games",
       description:
         "Zuri chesss plugin is a web based recreational and competitive board game played between two players.",
       link: "Explore Games Plugin"
@@ -182,8 +178,7 @@ export const TRANSLATIONS_EN = {
 
     goal: {
       title: "Company Goal's Plugin",
-      headline:
-        "Keep track of Goals",
+      headline: "Keep track of Goals",
       description:
         "A plugin that allows you to keep track of company's goals and achievements",
       link: "Explore Companys Goal Plugin"
@@ -191,8 +186,7 @@ export const TRANSLATIONS_EN = {
 
     todo: {
       title: "Todo Plugin",
-      headline:
-        "Keeps track of important task",
+      headline: "Keeps track of important task",
       description:
         "A plugin that allows you list everything that you have to do and make sure that your tasks are written down all in one place so you don't forget anything important.",
       link: "Explore Todo's plugin"
@@ -200,8 +194,7 @@ export const TRANSLATIONS_EN = {
 
     channels: {
       title: "Channels Plugin",
-      headline:
-        "Organizes conversations into dedicated spaces",
+      headline: "Organizes conversations into dedicated spaces",
       description:
         "A plugin that lets a group of indivduals in a channel know about timely, relevant informations in order to achieve a certain goal",
       link: "Explore Channels plugin"
@@ -209,8 +202,7 @@ export const TRANSLATIONS_EN = {
 
     noticeboard: {
       title: "Noticeboard Plugin",
-      headline:
-        "Share Information Effectively",
+      headline: "Share Information Effectively",
       description:
         "Its an Effective plugin for displaying information and communicating with collaborators",
       link: "Explore Noticeboard Plugin"
@@ -218,8 +210,7 @@ export const TRANSLATIONS_EN = {
 
     company_files: {
       title: "Company Files Plugin",
-      headline:
-        "Access and Manages Company's Files Effectively",
+      headline: "Access and Manages Company's Files Effectively",
       description:
         "An effective file management system that improves business workflow, organizes important data and provides a searchable database for quick retrieval.",
       link: "Explore Company Files Plugins"
@@ -227,17 +218,15 @@ export const TRANSLATIONS_EN = {
 
     company_sales: {
       title: "Company Sales Plugin",
-      headline:
-        "Keeps track of Sales record",
+      headline: "Keeps track of Sales record",
       description:
         "An effective sales system that keeps track of company's sales records.",
       link: "Explore Company Sales Plugins"
     },
-    
+
     deadline: {
       title: "Deadline Plugins",
-      headline:
-        "Deadline Tracker",
+      headline: "Deadline Tracker",
       description:
         "A plugin that keeps track of deadlines of task, events, projects assigned to members of an organisation",
       link: "Explore Deadline Plugins"
@@ -245,8 +234,7 @@ export const TRANSLATIONS_EN = {
 
     expenses: {
       title: "Expenses Plugins",
-      headline:
-        "Keeps track of Expenses",
+      headline: "Keeps track of Expenses",
       description:
         "A plugin that helps to keep an accurate record of a company's expenses",
       link: "Explore Expenses Plugins"
@@ -254,8 +242,7 @@ export const TRANSLATIONS_EN = {
 
     duty_shift: {
       title: "Duty Shift Plugin",
-      headline:
-        "Tracking your shifts has never been easier!",
+      headline: "Tracking your shifts has never been easier!",
       description:
         "A plugin that helps indiviuals track their working hours and communicate with other employees.",
       link: "Explore Duty Shift Plugin"
@@ -263,17 +250,15 @@ export const TRANSLATIONS_EN = {
 
     external_tools: {
       title: "External Tools Plugins",
-      headline:
-        "Usage of 3rd Party Tools",
+      headline: "Usage of 3rd Party Tools",
       description:
         "The External Tools plugin is a feature which allows users to interact with third party tools like Google Drive, Figma, Github, etc. to make work flow for themselves or their team faster and easier",
       link: "Explore Tools Plugin"
     },
-    
+
     whiteboard: {
       title: "Whiteboard Plugin",
-      headline:
-        "Idea sharing and Team collaborations",
+      headline: "Idea sharing and Team collaborations",
       description:
         "The whiteboard plugin is used for visualizing thoughts, concepts, write down ideas, explain and teach, to plan and create within a certain group of individuals",
       link: "Explore Whiteboard Plugins"
@@ -281,8 +266,7 @@ export const TRANSLATIONS_EN = {
 
     holiday: {
       title: "Holiday Calender Plugin",
-      headline:
-        "Schedules Events or holidays for staffs",
+      headline: "Schedules Events or holidays for staffs",
       description:
         "Company Holiday Calendar Plugin is a plugin that enables calendar functions mainly to organize or schedule holidays or events for a company",
       link: "Explore Company's Calender Plugin"
@@ -290,8 +274,7 @@ export const TRANSLATIONS_EN = {
 
     company_shift: {
       title: "Company Shift Plugin",
-      headline:
-        "Monitors a Company's Working Hours",
+      headline: "Monitors a Company's Working Hours",
       description:
         "A plugin that keeps track of a company's working hour and how it is distributed among employees of the company.",
       link: "Explore Company Shift Plugin"
@@ -299,8 +282,9 @@ export const TRANSLATIONS_EN = {
 
     signup: {
       headline: "Get plugins that you would enjoy",
-      description: "Integrate your favorite plugins and get more exciting experience",
-      link: "Discover more",
+      description:
+        "Integrate your favorite plugins and get more exciting experience",
+      link: "Discover more"
     },
 
     subscribe: {
@@ -313,7 +297,6 @@ export const TRANSLATIONS_EN = {
     }
   },
 
-  
   // About Page
   about: {
     title: {
@@ -600,8 +583,7 @@ export const TRANSLATIONS_EN = {
     }
   },
 
-
-// All download pages
+  // All download pages
   download_desktop: {
     title: {
       download: ""
@@ -609,7 +591,8 @@ export const TRANSLATIONS_EN = {
 
     section_one: {
       headline: "Experience the Zuri Chat’s desktop and mobile apps",
-      post_headline: "Connecting with your team has never been easier with Zuri Chat.",
+      post_headline:
+        "Connecting with your team has never been easier with Zuri Chat.",
       desktop_line: "Zuri for Desktop",
       desktop_app: "Download on Mac App Store",
       desktop_soft: "Get it from Microsoft",
@@ -619,15 +602,16 @@ export const TRANSLATIONS_EN = {
     },
 
     section_two: {
-      headline: "Download and enjoy the Zuri Chat experience on any these devices",
+      headline:
+        "Download and enjoy the Zuri Chat experience on any these devices",
       windows: "Windows",
       mac: "macOS",
       ios: "iOS",
-      android: "Android",
+      android: "Android"
     },
 
     section_three: {
-      headline: "Same feel, same team on Zuri App!",
+      headline: "Same feel, same team on Zuri App!"
     }
   },
   download_ios: {
@@ -639,8 +623,9 @@ export const TRANSLATIONS_EN = {
       headline: "Download Zuri Chat beta for iOS.",
       post_headline: "Get Zuri Chat DM & Channel",
       mac_line: "We’re on Mac, too",
-      mac_description: "Keep up with the conversation with our apps for Mac, Windows and Linux. We can email you a quick download link to get you started!",
-      button: "GET DOWNLOAD LINK",
+      mac_description:
+        "Keep up with the conversation with our apps for Mac, Windows and Linux. We can email you a quick download link to get you started!",
+      button: "GET DOWNLOAD LINK"
     }
   },
   download_mac: {
@@ -650,14 +635,16 @@ export const TRANSLATIONS_EN = {
 
     section_one: {
       headline: "Experience Zuri Chat on MacOS",
-      post_headline: "Connecting with your team has never been easier with Zuri Chat.",
+      post_headline:
+        "Connecting with your team has never been easier with Zuri Chat.",
       download: "DOWNLOAD",
       download_soft: "Download for Windows?"
     },
 
     section_two: {
       headline: "Why Zuri Chat App?",
-      post_headline: "Never miss the seamless collaboration experience even on the go with the zuri chat pc",
+      post_headline:
+        "Never miss the seamless collaboration experience even on the go with the zuri chat pc",
       android: "Android",
       and_break: "and",
       ios: "iOS",
@@ -677,11 +664,13 @@ export const TRANSLATIONS_EN = {
 
     section_one: {
       headline: "Experience the Zuri Chat’s desktop and mobile apps",
-      post_headline: "Connecting with your team has never been easier with Zuri Chat.",
+      post_headline:
+        "Connecting with your team has never been easier with Zuri Chat."
     },
 
     section_two: {
-      headline: "Download and enjoy the Zuri Chat experience on any these devices",
+      headline:
+        "Download and enjoy the Zuri Chat experience on any these devices",
       windows: "Windows",
       mac: "macOS",
       android: "Android",
@@ -689,7 +678,7 @@ export const TRANSLATIONS_EN = {
     },
 
     section_three: {
-      headline: "Same feel, same team on Zuri App!",
+      headline: "Same feel, same team on Zuri App!"
     }
   },
   download_windows: {
@@ -699,14 +688,16 @@ export const TRANSLATIONS_EN = {
 
     section_one: {
       headline: "Experience Zuri Chat on Windows",
-      post_headline: "Connecting with your team has never been easier with Zuri Chat.",
+      post_headline:
+        "Connecting with your team has never been easier with Zuri Chat.",
       download: "DOWNLOAD",
       download_mac: "Download for Mac?"
     },
 
     section_two: {
       headline: "Why Zuri Chat App?",
-      post_headline: "Never miss the seamless collaboration experience even on the go with the zuri chat pc",
+      post_headline:
+        "Never miss the seamless collaboration experience even on the go with the zuri chat pc",
       android: "Android",
       and_break: "and",
       ios: "iOS",
@@ -720,17 +711,18 @@ export const TRANSLATIONS_EN = {
     }
   },
 
-
-// Workspace Page
-  workspace:{
+  // Workspace Page
+  workspace: {
     title: {
-      workspace :"Workspace - Zuri Chat"
+      workspace: "Workspace - Zuri Chat"
     },
 
-    space:{
+    space: {
       headline: "Choose a workspace",
-      post_headline: "Welcome back! Pick one to get back to working with your team",
-      join_line: "Want to work with another group? or Take charge and start your own team",
+      post_headline:
+        "Welcome back! Pick one to get back to working with your team",
+      join_line:
+        "Want to work with another group? or Take charge and start your own team",
       joinbtn: "Create a workspace",
       foot_head: "Not seeing your workspace?",
       foot_link: "Try a different email",
