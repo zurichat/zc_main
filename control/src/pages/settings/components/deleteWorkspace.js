@@ -1,8 +1,7 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
 import classes from '../styles/deleteWorkspace.module.css'
 import del from '../assets/delete.svg'
-
-const Delete = () => {
+import { Link } from 'react-router-dom'
+const DeleteWorkspace = () => {
   const mainName = 'HNGi8'
 
   return (
@@ -20,7 +19,7 @@ const Delete = () => {
             <p style={{ fontWeight: '700' }}>
               If you just want to change your workspace’s name or URL, you can
               do that from{' '}
-              <span className={classes.Span}>your Settings page.</span> You also
+              <Link to="/admin/settings/home"><span className={classes.Span}>your Settings page.</span></Link> You also
               might want to{' '}
               <span className={classes.Span}>export your data</span> before
               deleting your workspace.{' '}
@@ -103,7 +102,8 @@ const Delete = () => {
                 className=" border-0 py-3 px-3  submit"
                 style={{
                   backgroundColor: ' #B0AFB0',
-                  color: '#1D1C1D'
+                  color: '#1D1C1D',
+                  borderRadius: '5px',
                 }}
               >
                 Yes, delete my workspace
@@ -119,4 +119,4 @@ const Delete = () => {
   )
 }
 
-export default Delete
+export default DeleteWorkspace;
