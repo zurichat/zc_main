@@ -276,7 +276,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
             {pause && <PauseNotification pause={pause} setPause={setPause} />}*/}
             </div>
 
-            <hr className={styles.hr} />
+            <hr className={styles.hr} style={{ height: "0.4px" }} />
 
             <div className={styles.sectionFour}>
               <p
@@ -305,7 +305,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
               </p>
             </div>
 
-            <hr className={styles.hr} />
+            <hr className={styles.hr} style={{ height: "0.4px" }} />
 
             <div className={styles.sectionSix}>
               <p
@@ -325,7 +325,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
               <Downloads setModal={setReusableModal} />
             )}
 
-            <hr className={styles.hr} />
+            <hr className={styles.hr} style={{ height: "0.4px" }} />
 
             <div className={styles.sectionFive}>
               <p onClick={logout}>Sign out</p>
