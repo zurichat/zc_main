@@ -9,7 +9,7 @@ const ClearTime = ({ defaultOptionValue }) => {
       </div>
       <div className={style.clear_time_select}>
         <select
-          className={`${"form-select"} ${"mb-3"} ${style.clear_time_option}`}
+          className={`${"form-select"} ${"mb-3"} ${"custom-select"} ${style.clear_time_option}`}
         >
           <option defaultValue>{defaultOptionValue}</option>
           <option value="">Don't clear</option>
