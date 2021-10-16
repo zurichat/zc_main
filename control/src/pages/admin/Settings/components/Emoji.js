@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from "react"
 import { authAxios } from "../../Utils/Api"
 import toast from "react-hot-toast"
 import Picker from "emoji-picker-react"
-import ForwardIcon from "../../../resources/assests/ForwardIcon.svg"
+import ForwardIcon from "../../../resources/assests/svg/ForwardIcon.svg"
+import DefaultEmojiIcon from "../../../resources/assests/svg/DefaultEmojiIcon"
 import classes from "../styles/EmojiTab.module.css"
 
 const Emoji = () => {
@@ -22,6 +23,7 @@ const Emoji = () => {
   const [number, setNumber] = useState(null)
   const [hover, setHover] = useState(false)
   const [customEmoji, setCustomEmoji] = useState(true)
+  const [chooseEmoji, setChooseEmoji] = useState(true)
   const ref = useRef(null)
 
   const onEmojiClick = (event, emojiObject) => {
@@ -198,6 +200,10 @@ const Emoji = () => {
     </svg>
   )
 
+  // const defaultEmojiIcon = (
+
+  // )
+
   const _addCustomEmoji = (
     <>
       <div className={classes.title}>Add custom emoji</div>
@@ -273,8 +279,15 @@ const Emoji = () => {
                 1.&nbsp; Choose an existing emoji
               </div>
               <div className={classes.chooseEmoji}>
-                <div className={classes.emojiPreview}></div>
-                <button>Choose Emoji</button>
+                <div className={classes.emojiPreview}>
+                  <DefaultEmojiIcon />
+                </div>
+                <button onClick={() => setChooseEmoji(true)}>
+                  Choose Emoji
+                </button>
+                <div className={classes.picker}>
+                  {/* <Picker onEmojiClick={onEmojiClick} /> */}
+                </div>
               </div>
             </li>
             <hr />
@@ -304,6 +317,27 @@ const Emoji = () => {
 
   const _deleteCustomEmoji = (
     <>
+      <div className={classes.title}>Delete this emoji?</div>
+      <div className={classes.text}>
+        This will delete the custom emoji{" "}
+        <span>
+          <img
+            style={{ width: "22px", height: "22px" }}
+            src="https://a.slack-edge.com/bv1-9/avatar_marcel-37155b5.png"
+            alt=""
+          />
+        </span>{" "}
+        <b>:6074817fe0bf9:</b> for all members in your workspace.
+      </div>
+      <div className={classes.footer} style={{ marginTop: "30px" }}>
+        <button onClick={closeModal}>Cancel</button>
+        <button
+          onClick={handleDel}
+          style={{ backgroundColor: "#e01e5a", minWidth: "115px" }}
+        >
+          Delete Emoji
+        </button>
+      </div>
     </>
   )
 
@@ -359,6 +393,8 @@ const Emoji = () => {
         })
       })
   }
+
+  const handleDel = () => {}
 
   return (
     <div className={classes.container}>
@@ -542,10 +578,7 @@ const Emoji = () => {
               />
               <span>Damilola Akinlade</span>
             </div>
-            <div
-              className={classes.emojiDelete}
-              onClick={deleteCustomEmoji}
-            >
+            <div className={classes.emojiDelete} onClick={deleteCustomEmoji}>
               {delIcon}
             </div>
           </div>
