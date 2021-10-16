@@ -39,6 +39,7 @@ import PrivacyPolicy from "./pages/privacy-policy/index"
 import NotFoundPage from "./pages/404"
 import Billing from "./pages/admin/Billing"
 import Customize from "./pages/admin/Customize"
+import Deprecation from "./pages/admin/Deprecation"
 import UserGroups from "./pages/admin/UserGroups"
 import Blog from "./pages/blogs"
 import Homepage from "./pages/home"
@@ -61,7 +62,7 @@ import ManageMembers from './pages/admin/manage_members/components/ManageMembers
 import Ebooks from "./pages/ebooks"
 import Invitation from "./pages/admin/Invitation"
 import Whyzurichat from "./pages/WhyZuriChat/Whyzurichat"
-
+import Gateways from "./pages/admin/gateways/components/gateways"
 import OnboardingHelp from "./pages/LoginSignUpHelp/index"
 import DeleteWorkspace from "./pages/settings/components/DeleteWorkspace"
 import BookDemo from "./pages/book-a-demo"
@@ -215,6 +216,7 @@ const App = () => {
         <PrivateRoute path="/admin/name" exact component={ChangeWorkspaceName} />
         <PrivateRoute path="/admin/delete" exact component={DeleteWorkspace} />
         <PrivateRoute path="/homepage/profile" exact component={Homepage} />
+        <PrivateRoute path="/components/gateways" exact component={Gateways} />
         <PrivateRoute
           path="/admin/name"
           exact
