@@ -73,7 +73,7 @@ const DownloadsDesktop = () => {
                 <h2>{t("download.hero.mobile.title")}</h2>
                 <a href="/download-app" className={styles.downloadButton}>
                   <img className={`px-1`} src={apple1} alt="download icon" />
-                  <span>{t("download.hero.desktop.apple_store_link")}</span>
+                  <span>{t("download.hero.mobile.apple_store_link")}</span>
                 </a>
 
                 <a
@@ -86,7 +86,7 @@ const DownloadsDesktop = () => {
                     src={googleplay}
                     alt="download icon"
                   />
-                  <span>{t("download.hero.desktop.play_store_link")}</span>
+                  <span>{t("download.hero.mobile.play_store_link")}</span>
                 </a>
               </div>
             </div>
