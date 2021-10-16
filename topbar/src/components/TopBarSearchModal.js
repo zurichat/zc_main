@@ -1,12 +1,10 @@
 import styles from "../styles/TopBarSearchModal.module.css"
 import { useState, useEffect, useContext } from "react"
-import axios from "axios"
 import SearchModalResult from "./ModalAutoCompleteResult"
 import { BigModal } from "./bigModal"
 import { FilterItem } from "./filterItem"
 import { plugins } from "../utils/topbarApi"
 import { ProfileContext } from "../context/ProfileModal"
-import { CgEditStraight } from "react-icons/cg"
 
 const base_URL = "https://jsonplaceholder.typicode.com/todos"
 
@@ -33,7 +31,6 @@ const TopBarSearchModal = () => {
 
   const onInputChange = e => {
     setValue(e.target.value)
-   
   }
   useEffect(() => {
     async function getData() {
@@ -107,7 +104,6 @@ const TopBarSearchModal = () => {
                 onChange={onInputChange}
                 onKeyUp={onSearchSubmit}
               />
-              {value && <button className={styles.Clear} onClick={() => { setValue('') }}>Clear</button>}
             </div>
             <div className={styles.close_icon}>
               <svg
@@ -128,7 +124,6 @@ const TopBarSearchModal = () => {
           ) : (
             FilterList
           )}
-
         </ul>
       </div>
       {isSearchOpen ? (
