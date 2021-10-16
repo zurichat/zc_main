@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useCallback, useState } from 'react';
 import styled from 'styled-components';
-import Theme from '../src/assets/images/theme1.png'
+
 
 
 const MessageModal = () => {
@@ -105,7 +105,7 @@ background-color: white;
                     <strong>Person Id</strong> - Created at
                     <br />
                     <IconWrapper>
-                        <img src={Theme} alt='image' width='50' height='50' />
+                        Image
                         <TopText>
                             <strong>Created by</strong>
                             <br />
