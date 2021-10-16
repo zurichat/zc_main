@@ -5,7 +5,7 @@ import cancel from "../assets/images/cancel.svg"
 import SearchValue from "./searchValueComponent"
 import Styled from "styled-components"
 import noImg from "../assets/images/avatar_vct.svg"
-// import SearchModalResult from "./ModalAutoCompleteResult"
+import SearchModalResult from "./ModalAutoCompleteResult"
 import { NoResult } from "./SearchNotFound"
 import { plugins } from "../utils/topbarApi"
 import { ProfileContext } from "../context/ProfileModal"
@@ -20,7 +20,7 @@ export const BigModal = ({ onClose, inputValue, filter }) => {
   const newName = pluginName.split("/")
 
   const exactPlugin = plugins.find(
-    plugin => newName[3] === (plugin.name || plugin.name + "#")
+    plugin => newName[3] === plugin.name || newName[3] === plugin.name + "#"
   )
 
   useEffect(() => {
