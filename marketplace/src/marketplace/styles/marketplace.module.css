@@ -14,6 +14,7 @@
 .marketplaceSearchBar {
   width: 50%;
   height: 45px;
+  margin-left: 4%;
   background: #fafafa;
   border: 1px solid rgba(187, 186, 231, 0.15);
   box-sizing: border-box;
@@ -752,4 +753,12 @@
 .nextBttn {
   padding-left: 2em;
   justify-content: end;
+}
+
+#marketplaceSearchFocus:focus {
+  border-color: #3cb371;
+}
+
+.marketplaceSearchBox{
+  margin-left: 5%;
 }
