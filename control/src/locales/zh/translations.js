@@ -10,6 +10,7 @@ export const TRANSLATIONS_ZH = {
     nav: {
       pricing: "价钱",
       about: "关于",
+      plugin: "插入",
       downloads: "下载",
       contact: "接触",
       signup: "报名",
@@ -84,7 +85,7 @@ export const TRANSLATIONS_ZH = {
     },
     cookies: {
       textOne: "我们使用第三方",
-      textTwo: "cookie",
+      textTwo: "曲奇饼",
       textThree: "来个性化您的网站体验。",
       accept: "允许",
       decline: "衰退"
@@ -94,15 +95,6 @@ export const TRANSLATIONS_ZH = {
   pricing: {
     title: {
       pricing: "定价 - Zuri Chat"
-    },
-
-    nav: {
-      pricing: "价钱",
-      about: "关于",
-      downloads: "下载",
-      contact: "接触",
-      signup: "报名",
-      login: "登录"
     },
 
     cardOne: {
@@ -133,33 +125,182 @@ export const TRANSLATIONS_ZH = {
       headline: "常见问题",
       link_info: "获取更多信息",
       link: "在 Zuri Chat 计费。"
-    },
-
-    footer: {
-      company: "公司",
-      careers: "职业",
-      about: "关于",
-      info: "信息",
-      privacy: "隐私权和条款",
-      market: "市场",
-      security: "安全",
-      web3: "Web3/DAO",
-      blog: "博客",
-      knowUs: "了解我们",
-      downloads: "下载",
-      contact: "接触",
-      documentation: "文档",
-      socialMedia: "社交媒体",
-      rights: "聊天。版权所有"
-    },
-    cookies: {
-      textOne: "我们使用第三方",
-      textTwo: "曲奇饼",
-      textThree: "来个性化您的网站体验。",
-      accept: "允许",
-      decline: "衰退"
     }
   },
+
+
+  plugin: {
+    title: {
+      plugin: "连接和互动"
+    },
+
+    dm: {
+      title: "直接消息插件",
+      headline: "发送直接消息",
+      description:
+        "一个有助于在协作者之间发送消息的插件",
+      link: "探索 DM 插件 "
+    },
+
+    tracker: {
+      title: "贡献跟踪器插件",
+      headline: "跟踪人们的贡献和突出紧迫问题",
+      description:
+        "一个插件，可让您跟踪人们对开源项目的贡献，并突出显示最紧迫的问题",
+      link: "探索贡献跟踪器插件"
+    },
+
+    music: {
+      title: "音乐插件",
+      headline: "随时随地访问音乐和音乐视频！",
+      description:
+        "音乐插件允许组织中的个人将来自 YouTube 的音乐和视频链接添加到共享播放列表。",
+      link: "探索音乐插件"
+    },
+
+    games: {
+      title: "国际象棋插件",
+      headline:
+        "让学习变得有趣，参与虚拟游戏",
+      description:
+        "Zuri 国际象棋插件是一种在两个玩家之间玩的基于网络的休闲和竞技棋盘游戏。",
+      link: "探索游戏插件"
+    },
+
+    goal: {
+      title: "公司目标的插件",
+      headline:
+        "跟踪目标",
+      description:
+        "一个插件，可让您跟踪公司的目标和成就",
+      link: "探索公司目标插件"
+    },
+
+    todo: {
+      title: "待办事项插件",
+      headline:
+        "跟踪重要任务",
+      description:
+        "一个插件，可让您列出您必须做的所有事情，并确保您的任务都写在一个地方，这样您就不会忘记任何重要的事情。",
+      link: "探索 去做 的插件"
+    },
+
+    channels: {
+      title: "频道插件",
+      headline:
+        "将对话组织到专用空间",
+      description:
+        "一个插件，可以让频道中的一群人及时了解相关信息，以实现某个目标",
+      link: "探索频道插件"
+    },
+
+    noticeboard: {
+      title: "公告板插件",
+      headline:
+        "有效地共享信息",
+      description:
+        "它是一个用于显示信息和与合作者交流的有效插件",
+      link: "探索公告板插件"
+    },
+
+    company_files: {
+      title: "公司文件插件",
+      headline:
+        "有效访问和管理公司文件",
+      description:
+        "一个有效的文件管理系统，可改善业务工作流程、组织重要数据并提供可搜索的数据库以进行快速检索。",
+      link: "探索公司文件插件"
+    },
+
+    company_sales: {
+      title: "公司销售插件",
+      headline:
+        "跟踪销售记录",
+      description:
+        "一个有效的销售系统，可以跟踪公司的销售记录。",
+      link: "探索公司销售插件"
+    },
+    
+    deadline: {
+      title: "截止日期插件",
+      headline:
+        "截止日期跟踪器r",
+      description:
+        "跟踪分配给组织成员的任务、事件、项目的截止日期的插件",
+      link: "探索截止日期插件"
+    },
+
+    expenses: {
+      title: "费用插件",
+      headline:
+        "跟踪费用",
+      description:
+        "一个有助于准确记录公司开支的插件",
+      link: "探索费用插件"
+    },
+
+    duty_shift: {
+      title: "值班插件",
+      headline:
+        "跟踪您的班次从未如此简单！",
+      description:
+        "一个帮助个人跟踪他们的工作时间并与其他员工交流的插件。",
+      link: "探索值班插件"
+    },
+
+    external_tools: {
+      title: "外部工具插件",
+      headline:
+        "第三方工具的使用",
+      description:
+        "外部工具插件是一项功能，允许用户与第三方工具（如 Google Drive、Figma、Github 等）进行交互，使他们自己或他们的团队的工作流程更快、更轻松",
+      link: "探索工具插件"
+    },
+    
+    whiteboard: {
+      title: "白板插件",
+      headline:
+        "想法分享和团队合作",
+      description:
+        "白板插件用于将想法、概念可视化、写下想法、解释和教学、在特定群体内进行计划和创建",
+      link: "探索白板插件"
+    },
+
+    holiday: {
+      title: "假日日历插件",
+      headline:
+        "为员工安排活动或假期",
+      description:
+        "公司假期日历插件是一个插件，它使日历功能主要用于组织或安排公司的假期或事件",
+      link: "探索公司的日历插件"
+    },
+
+    company_shift: {
+      title: "公司换班插件",
+      headline:
+        "监控公司的工作时间",
+      description:
+        "一个插件，用于跟踪公司的工作时间以及它如何在公司员工之间分配。",
+      link: "探索公司换班插件"
+    },
+
+    signup: {
+      headline: "获取您喜欢的插件",
+      description: "集成您喜爱的插件，获得更多精彩体验",
+      link: "发现更多",
+    },
+
+    subscribe: {
+      headline: "成为第一个获得更新的人",
+      headline_br: "关于 Zuri Chat 的最新插件",
+      description: "通过订阅丰富您的 Zuri Chat 体验",
+      description_br: "在这里通过电子邮件获取最新的插件",
+      description_brr: "在 Zuri 聊天！",
+      button: "订阅"
+    }
+  },
+        
+
 
   about: {
     title: {
@@ -247,9 +388,12 @@ export const TRANSLATIONS_ZH = {
       title: "无论您做什么工作，您都可以在 Zuri Chat 中完成",
       link_sales: "与销售人员交谈",
       link_try: "免费试用"
-    },
+    }
+  },
 
-    careers: {
+
+  
+  careers: {
       title: {
         careers: "职业"
       },
@@ -316,7 +460,152 @@ export const TRANSLATIONS_ZH = {
           post_headline:
             "Zuri 支付 100% 的保费。我们还提供一系列免费的心理健康和福祉资源。"
         }
+      },
+
+    
+  login:{
+    title: "登录 - Zuri 聊天",
+    form: {
+      header: "登录",
+      sub_header: "使用您在注册时输入的数据登录",
+      google_header: "使用谷歌登录",
+      topline_text: "或者",
+      submitButtonName: "登录",
+      bottomLine: "对我们来说是新的吗？",
+      bottomLink: "创建一个帐户",
+      signUp: "注册",
+      authInputBox: {
+        emailInputName: "电子邮件地址",
+        passwordInputName: "密码",
+        passwordInputPlaceHolder: "输入密码",
+        rememberMe: "记住账号",
+        forgotPassword: "忘记密码？",
+        getHelp: "获取登录帮助"
       }
+    },
+    footer: {
+      contactUs: "联系我们",
+      legacyPolicy: "法律政策",
+      aboutZuri: "关于 Zuri Chat"
     }
-  }
+  },
+
+
+  download_desktop: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "体验 Zuri Chat 的桌面和移动应用程序",
+      post_headline: "使用 Zuri Chat 与您的团队联系从未如此简单。",
+      desktop_line: "桌面版 Zuri",
+      desktop_app: "在 苹果应用商店 下载",
+      desktop_soft: "从微软获取",
+      mobile_line: "移动版 Zuri",
+      mobile_app: "在 应用商店 下载",
+      mobile_play: "在 谷歌播放 上获取"
+    },
+
+    section_two: {
+      headline: "在任何这些设备上下载并享受 Zuri Chat 体验",
+      windows: "视窗",
+      mac: "苹果系统",
+      ios: "iOS",
+      android: "安卓",
+    },
+
+    section_three: {
+      headline: "同样的感觉，同样的团队在 Zuri App 上！",
+    }
+  },
+  download_ios: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "下载适用于 iOS 的 Zuri Chat 测试版。",
+      post_headline: "获取 Zuri 聊天 DM 和频道",
+      mac_line: "我们也在 Mac 上",
+      mac_description: "与我们的 Mac、Windows 和 Linux 应用程序保持对话。我们可以通过电子邮件向您发送快速下载链接以帮助您入门！",
+      button: "获取下载链接",
+    }
+  },
+  download_mac: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "在 MacOS 上体验 Zuri Chat",
+      post_headline: "使用 Zuri Chat 与您的团队联系从未如此简单。",
+      download: "下载",
+      download_soft: "为 Windows 下载？"
+    },
+
+    section_two: {
+      headline: "为什么是 Zuri 聊天应用程序？",
+      post_headline: "即使在旅途中使用 zuri 聊天电脑，也不会错过无缝协作体验",
+      android: "安卓",
+      and_break: "和",
+      ios: "iOS",
+      apps_break: "应用。"
+    },
+
+    section_three: {
+      headline: "同样的感觉，同样的团队在 Zuri App 上！",
+      download: "下载 MAC",
+      download_soft: "为 Windows 下载？"
+    }
+  },
+  download_mobile: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "体验 Zuri Chat 的桌面和移动应用程序",
+      post_headline: "使用 Zuri Chat 与您的团队联系从未如此简单。",
+    },
+
+    section_two: {
+      headline: "在任何这些设备上下载并享受 Zuri Chat 体验",
+      windows: "视窗",
+      mac: "苹果系统",
+      android: "安卓",
+      ios: "iOS"
+    },
+
+    section_three: {
+      headline: "同样的感觉，同样的团队在 Zuri App 上！",
+    }
+  },
+  download_windows: {
+    title: {
+      download: "下载 Zuri 聊天"
+    },
+
+    section_one: {
+      headline: "在 Windows 上体验 Zuri Chat",
+      post_headline: "使用 Zuri Chat 与您的团队联系从未如此简单。",
+      download: "下载",
+      download_mac: "为 Mac 下载？"
+    },
+
+    section_two: {
+      headline: "为什么是 Zuri 聊天应用程序？",
+      post_headline: "即使在旅途中使用 zuri 聊天电脑，也不会错过无缝协作体验",
+      android: "安卓",
+      and_break: "和",
+      ios: "iOS",
+      apps_break: "应用。"
+    },
+
+    section_three: {
+      headline: "同样的感觉，同样的团队在 Zuri App 上！",
+      download: "下载适用于 WINDOWS",
+      download_ios: "为 Mac 下载？"
+    }
+  },
 }
