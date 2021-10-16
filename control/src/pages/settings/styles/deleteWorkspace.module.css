@@ -30,11 +30,6 @@
     padding: 10px;
 }
 
-button:hover {
-    color: red;
-    border: solid 1px red;
-}
-
 .Span {
     color: #00B87C;
 }
