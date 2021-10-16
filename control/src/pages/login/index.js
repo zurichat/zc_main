@@ -10,8 +10,8 @@ import { GetUserInfo } from "@zuri/control"
 import $behaviorSubject from "../../../../globalState"
 import { Helmet } from "react-helmet"
 import { goToDefaultChannel } from "../../api/channels"
-import "../../i18n";
-import { useTranslation} from "react-i18next";
+import "../../i18n"
+import { useTranslation } from "react-i18next"
 // import { Link } from 'react-router-dom'
 // import authBg1 from './assets/auth_bg1.svg'
 // import authBg2 from './assets/auth_bg2.svg'
@@ -19,6 +19,11 @@ import { useTranslation} from "react-i18next";
 // import authBg4 from './assets/auth_bg4.svg'
 // import authBg5 from './assets/auth_bg5.svg'
 //import GoogleLogin from 'react-google-login'
+
+import Loader from "react-loader-spinner"
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+
+// import styles from "../../component-styles/Spinner.module.css"
 
 const Login = () => {
   const [email, setEmail] = useState("")
@@ -28,6 +33,7 @@ const Login = () => {
   const [passworderror, setpassworderror] = useState("")
   const [rememberMe, setRememberMe] = useState("")
   const [Loading, setLoading] = useState(false)
+  const [loggingIn, setLoggingIn] = useState(false)
 
   let history = useHistory()
 
@@ -45,14 +51,17 @@ const Login = () => {
     e.preventDefault()
     setemailerror("")
     setpassworderror("")
+    setLoggingIn(true)
 
     if (!email) {
       setemailerror(`Enter an email address`)
+      setLoggingIn(false)
       return
     }
 
     if (!password) {
       setpassworderror(`Enter a Password`)
+      setLoggingIn(false)
       return
     }
 
@@ -65,6 +74,7 @@ const Login = () => {
         const { data, message } = response.data
 
         setLoading(true)
+        setLoggingIn(false)
 
         //Store token in localstorage
         sessionStorage.setItem("token", data.user.token)
@@ -124,10 +134,11 @@ const Login = () => {
 
         //Render error message to the user
         seterror(data.message) //Change this when there is a design
+        setLoggingIn(false)
       })
   }
 
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <main id={styles.authPageWrapper}>
@@ -141,8 +152,14 @@ const Login = () => {
           subHeader={t("login.form.sub_header")}
           googleHeader={t("login.form.google_header")}
           topLineText={t("login.form.topline_text")}
-          submitButtonName={t("login.form.submitButtonName")}
-          disabled={email && password}
+          submitButtonName={
+            loggingIn ? (
+              <Loader type="TailSpin" color="#FFFFFF" height={40} width={40} />
+            ) : (
+              t("login.form.submitButtonName")
+            )
+          }
+          disabled={email && password && !loggingIn}
           error={error}
           handleSubmit={handleSubmit}
           bottomLine={t("login.form.bottomLine")}
@@ -185,7 +202,7 @@ const Login = () => {
                 }}
                 // onFocus={displayImage}
               />
-                {t("login.form.authInputBox.rememberMe")}
+              {t("login.form.authInputBox.rememberMe")}
             </div>
             <div className={`${styles.right}`}>
               <Link
@@ -194,8 +211,11 @@ const Login = () => {
               >
                 {t("login.form.authInputBox.forgotPassword")}
               </Link>
-              <Link to="/troubleshooting/onboarding-help"> {""}{t("login.form.authInputBox.getHelp")}</Link>
-
+              <Link to="/troubleshooting/onboarding-help">
+                {" "}
+                {""}
+                {t("login.form.authInputBox.getHelp")}
+              </Link>
             </div>
           </div>
         </FormWrapper>
