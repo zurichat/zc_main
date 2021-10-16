@@ -37,7 +37,7 @@ const Home = () => {
         <div className={classes.card}>
           <div>
             <Link
-              to="/admin/accountsProfile"
+              to="/admin/settings/accountsProfile"
               className=""
               style={{ display: "flex" }}
             >
