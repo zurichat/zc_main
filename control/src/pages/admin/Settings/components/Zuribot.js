@@ -45,7 +45,7 @@ const Zuribot = () => {
       alert("textbox cannot be empty")
     } else {
       try {
-        authAxios.post(`/organizations/${id}/slackbotresponses`, {
+        authAxios.patch(`/organizations/${id}/slackbotresponses`, {
           whensomeonesays: userSays,
           slackresponds: zuribotSays
         })
@@ -81,7 +81,7 @@ const Zuribot = () => {
     authAxios.get(`https://api.zuri.chat/organizations/${id}`).then(
       result => {
         setLoading(true)
-        setItems(result.data)
+        setItems(result.data.customize.slackbot)
       },
 
       error => {
