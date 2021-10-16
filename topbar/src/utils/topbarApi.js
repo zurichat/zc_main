@@ -29,7 +29,12 @@ export const plugins = [
           !filter ? "" : `&filter=${filter}`
         }`
       )
-    }
+    },
+    filterCall: (org_id, member_id) =>
+    $http.get(
+      `goals.zuri.chat/api/v1/search-suggestions/${org_id}/${member_id}`
+    )
+
   },
 
   {
@@ -40,7 +45,11 @@ export const plugins = [
           !filter ? "" : `&filter=${filter}`
         }`
       )
-    }
+    },
+    filterCall: (org_id, member_id) =>
+      $http.get(
+        `chess.zuri.chat/api/v1/search-suggestions/${org_id}/${member_id}`
+      )
   },
 
   {
@@ -65,7 +74,11 @@ export const plugins = [
           !filter ? "" : `&filter=${filter}`
         }`
       )
-    }
+    },
+    filterCall: (org_id, member_id) =>
+      $http.get(
+        `channels.zuri.chat/api/v1/search-suggestions/${org_id}/${member_id}`
+      )
   },
   {
     name: "dm",
@@ -79,6 +92,21 @@ export const plugins = [
     filterCall: (org_id, member_id) =>
       $http.get(`dm.zuri.chat/api/v1/search-suggestions/${org_id}/${member_id}`)
   },
+
+  {
+    name: "noticeboard",
+    apiCall: (org_id, member_id, query, filter = null) => {
+      return $http.get(
+        `noticeboard.zuri.chat/api/v1/search/${org_id}/${member_id}?q=${query}${
+          !filter ? "" : `&filter=${filter}`
+        }`
+      )
+    },
+    filterCall: (org_id, member_id) =>
+      $http.get(
+        `noticeboard.zuri.chat/api/v1/search-suggestions/${org_id}/${member_id}`
+      )
+  },
   {
     name: "companyfiles",
     apiCall: (org_id, member_id, query, filter = null) => {
@@ -87,6 +115,10 @@ export const plugins = [
           !filter ? "" : `&filter=${filter}`
         }`
       )
-    }
+    },
+    filterCall: (org_id, member_id) =>
+      $http.get(
+        `companyfiles.zuri.chat/api/v1/search-suggestions/${org_id}/${member_id}`
+      )
   }
 ]
