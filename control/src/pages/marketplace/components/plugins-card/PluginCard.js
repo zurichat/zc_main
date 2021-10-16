@@ -1,64 +1,82 @@
 import { useMarketPlaceContext } from '../../../../context/MarketPlace.context'
 import { setPluginId } from '../../../../context/marketplace/marketplace.action'
-import style from '../../styles/marketplace.module.css'
-import logo from '../../../../component-assets/zurichatlogo.svg'
+import styles from '../../styles/marketplace.module.css'
+import zuriChatLogo from '../../../../component-assets/zurichatlogo.svg'
+import DownloadIcon from '../../../../component-assets/DownloadIcon.svg'
 
-export const PluginCard = ({ name, id, status, icon_url, description }) => {
-  const marketplace = useMarketPlaceContext()
-  const renderPluginData = () => {
-    marketplace.dispatch(setPluginId(id))
-  }
+export const PluginCard = ({ pluginData, installed, setIsUninstall }) => {
+  const marketplaceContext = useMarketPlaceContext()
+  // const renderPluginData = () => {
+  //   marketplace.dispatch(setPluginId(id))
+  // }
 
   const trimString = (str, len) => {
     if (str.length <= len) return str
-    return str.slice(0, len) + '...'
-  }
-
-  const getRandomNumber = maxNum => {
-    return Math.floor(Math.random() * maxNum)
+    return str.slice(0, len) + "..."
   }
 
   const generateRandomBackgroundHexValue = () => {
-    let hexValue
-    const h = getRandomNumber(360)
-    const s = getRandomNumber(100)
-    const l = getRandomNumber(100)
+    const h = Math.floor(Math.random() * 360)
+    const s = Math.floor(Math.random() * 100)
+    const l = Math.floor(Math.random() * 100)
 
-    hexValue = `hsla(${h}deg, ${s}%, ${l}%, 0.22)`
-    return hexValue
-  }
-
-  const addDefaultImage = e => {
-    e.target.src = logo
+    return `hsla(${h}deg, ${s}%, ${l}%, 0.3)`
   }
 
   return (
-    <div className={style.pluginCardContainer}>
-      <section className={style.pluginCardTop}>
+    <div className={styles.pluginCardContainer}>
+      <section className={styles.pluginCardTop}>
         <figure
           style={{ backgroundColor: generateRandomBackgroundHexValue() }}
-          className={style.pluginImage}
+          className={styles.pluginImage}
         >
           <img
-            src={icon_url}
-            onError={addDefaultImage}
-            alt={`resource of ${name}`}
+            src={pluginData.icon_url}
+            onError={e => (e.target.src = zuriChatLogo)}
+            alt={`${pluginData.name} icon`}
           />
         </figure>
-        <div className={style.pluginInfo}>
-          <h2 className={`mb-0 ${style.pluginName}`}>{name}</h2>
-          <p className={`mb-0 ${style.pluginDescription}`}>
-            {trimString(description, 150)}
+        <div className={styles.pluginInfo}>
+          <h2 className={`mb-0 ${styles.pluginName}`}>{pluginData.name}</h2>
+          <h5 className={`mb-0 ${styles.pluginInstallCount}`}>
+            <img
+              src={DownloadIcon}
+              alt="Downloads:"
+              style={{ width: "10px" }}
+            />
+            Downloads: {pluginData.install_count}
+          </h5>
+          <p className={`mb-0 ${styles.pluginDescription}`}>
+            {trimString(pluginData.description, 75)}
           </p>
         </div>
       </section>
-      <section
-        className={`px-2 d-flex justify-content-end ${style.pluginContent}`}
-      >
-        {/*<span className={style.pluginInstallRate}>2.5k Installs</p>*/}
-        <button onClick={renderPluginData} className={style.pluginButton}>
-          Install
-        </button>
+      <section className={`px-2 d-flex`}>
+        {installed ? (
+          <button
+            onClick={() => {
+              setIsUninstall(true)
+              marketplaceContext.dispatch(
+                setPluginId(pluginData.id ? pluginData.id : pluginData._id)
+              )
+            }}
+            className={`${styles.pluginButton} ${styles.uninstallPluginBtn}`}
+          >
+            Uninstall
+          </button>
+        ) : (
+          <button
+            onClick={() => {
+              setIsUninstall(false)
+              marketplaceContext.dispatch(
+                setPluginId(pluginData.id ? pluginData.id : pluginData._id)
+              )
+            }}
+            className={styles.pluginButton}
+          >
+            View
+          </button>
+        )}
       </section>
     </div>
   )

@@ -2,6 +2,9 @@ export const TRANSLATIONS_FR = {
   header: {
     language_select: "Changer de langue"
   },
+
+
+  // Landing Page
   landing: {
     title: {
       landing: "Connectez-vous et interagissez"
@@ -99,6 +102,7 @@ export const TRANSLATIONS_FR = {
   },
 
   
+  // Pricing Page
   pricing: 
   {
     title: {
@@ -138,6 +142,7 @@ export const TRANSLATIONS_FR = {
   },
 
 
+  // Plugin Page
   plugin: {
     title: {
       plugin: "Connectez-vous et interagissez"
@@ -310,6 +315,7 @@ export const TRANSLATIONS_FR = {
   },
 
 
+  // About Page
   about: {
     title: {
       about: ""
@@ -403,8 +409,11 @@ export const TRANSLATIONS_FR = {
       link_sales: "Parlez aux ventes",
       link_try: "Essayez-le gratuitement"
     },
+  },
 
-    careers: {
+
+  // Career Page
+  careers: {
       title: {
         careers: "Carrières"
       },
@@ -463,10 +472,10 @@ export const TRANSLATIONS_FR = {
           post_headline: "Zuri paie 100 % de vos primes. Nous offrons également l'accès à une gamme de ressources gratuites sur la santé mentale et le bien-être."
         }
       }
-    }
-  },
+    },
 
   
+  // Login
   login:{
     title: "Connexion - Zuri Chat",
     form: {
@@ -495,6 +504,7 @@ export const TRANSLATIONS_FR = {
   },
 
 
+  // All Download Pages
   download_desktop: {
     title: {
       download: ""
@@ -612,4 +622,29 @@ export const TRANSLATIONS_FR = {
       download_ios: "Télécharger pour Mac ?"
     }
   },
+
+
+  // Workspace Page
+  workspace:{
+    title: {
+      workspace :"Espace de travail - Zuri Chat"
+    },
+
+    space:{
+      headline: "Choisissez un espace de travail",
+      post_headline: "Content de te revoir! Choisissez-en un pour reprendre le travail avec votre équipe",
+      join_line: "Vous souhaitez travailler avec un autre groupe ? ou Prenez en charge et créez votre propre équipe",
+      joinbtn: "Créer un espace de travail",
+      foot_head: "Vous ne voyez pas votre espace de travail ?",
+      foot_link: "Essayez une autre adresse e-mail",
+      open: "Ouvert",
+      selected: "choisi",
+      errno: "quatre cent un",
+      errmsg: "Vous n'êtes pas connecté !",
+      errlink: "Connectez-vous ici.",
+      err_no: "quatre cent quatre",
+      err_msg: "Oups, quelque chose s'est mal passé ! Aller à",
+      err_link: "zuri.chat"
+    }
+  }  
 }
