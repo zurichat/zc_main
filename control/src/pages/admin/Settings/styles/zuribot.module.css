@@ -1,9 +1,10 @@
-.intro {
-  font-size: 1.1rem;
+h3  {
+  font-size: 1.1rem !important;
   font-weight: 400;
   width: 100%;
+  display: block !important;
   text-align: left;
-  padding: 0 0;
+  padding: 0 !important;
 }
 
 a {
