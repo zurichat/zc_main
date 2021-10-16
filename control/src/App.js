@@ -63,7 +63,7 @@ import OnboardingHelp from "./pages/LoginSignUpHelp/index"
 import BookDemo from "./pages/book-a-demo"
 
 import ChangeWorkspaceName from "./pages/admin/Settings/components/ChangeWorkspaceName"
-import Blog from './pages/blogs'
+// import Blog from './pages/blogs'
 import BlogDetails from './pages/blogs/components/BlogDetails'
 
 // useEffect(() => {
@@ -122,7 +122,7 @@ const App = () => {
           <Search />
         </Route>
         <Route path='/createBlog'>
-          <CreateBlog />
+          {/* <CreateBlog /> */}
         </Route>
         <Route path='/blog/:title'>
           <BlogDetails />
