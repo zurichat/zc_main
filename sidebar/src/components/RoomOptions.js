@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useState } from "react"
 import styles from "../styles/ModalComponentStyles.module.css"
+import axios from 'axios'
 
 const RoomOptions = (
   { isClicked,
@@ -8,9 +9,16 @@ const RoomOptions = (
   }
   ) => {
     // const isClicked = true;
-  // const room_Id = room.room_url.split("/")[2]
-  // const org = localStorage.getItem("currentWorkspace")
-  // const orgs = sessionStorage.getItem
+  const room_Id = room.room_url.split("/")[2]
+  const org = localStorage.getItem("currentWorkspace")
+  const orgs = sessionStorage.getItem("organisations")
+
+  const [starred, setStarred] = useState(false)
+  
+  //  axios
+  // .("https://api.zuri.chat/auth/login", {
+    
+  // })
 
   let screenHeight = window.innerHeight/2;
 
@@ -53,7 +61,9 @@ const RoomOptions = (
       <hr className={styles.modalDivider} />
       <div className={`d-flex flex-column  ${styles.modalSection}`}>
         <div>
-          <p>Star room</p>
+          <p 
+          onClick={()=>setStarred(true)}
+          >Star room</p>
         </div>
       </div>
       <hr className={styles.modalDivider} />

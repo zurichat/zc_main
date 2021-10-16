@@ -46,7 +46,7 @@
 .dropdown__room {
   color: #454545;
   padding-inline-start: 0.5rem;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 28px;
   font-weight: 400;
   /* font-size: 0.935em; */
@@ -55,7 +55,7 @@
 
 .dropDown__title {
   text-transform: capitalize;
-  font-weight: 600;
+  font-weight: bold;
 }
 /* .dropDown__name {
   font-weight: normal;
