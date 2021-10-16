@@ -11,8 +11,12 @@ import useThemeMode from "../../../topbar/customHooks/useThemeMode"
 const SidebarHeader = props => {
   //home modal
   const [homeModal, toggleHomeModal] = useState(false)
+
   const [nullValue, setnullValue] = useState(0)
   const { theme } = useThemeMode()
+
+
+  const [openModal, setOpenModal] = useState(false)
 
   //toggle
   const toggle = () => {

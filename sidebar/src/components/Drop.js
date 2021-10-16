@@ -38,7 +38,7 @@ const DropDown = ({ categoryName, isOpen, toggleDropdown, button_url }) => {
             <a href={button_url} onClick={navigateToUrl}>
               <AiOutlinePlus className={`${styles.icon}`} />
             </a>
-          ) : null}
+          ) : ""}
         </div>
       </div>
 
