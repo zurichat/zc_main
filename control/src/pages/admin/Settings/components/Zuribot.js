@@ -88,7 +88,7 @@ const Zuribot = () => {
                 name=""
                 id=""
                 cols="25"
-                rows="4"
+                rows="3"
                 value={userSays}
                 onChange={e => setUserSays(e.target.value)}
               ></textarea>
@@ -109,7 +109,7 @@ const Zuribot = () => {
                 name=""
                 id=""
                 cols="25"
-                rows="4"
+                rows="3"
                 value={zuribotSays}
                 onChange={e => setZuribotSays(e.target.value)}
               ></textarea>
