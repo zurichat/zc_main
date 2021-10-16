@@ -594,3 +594,24 @@ input[type="radio"] {
     margin: 0px;
   }
 }
+@media screen and (max-width: 768px){
+  .textInput {
+    width: 100%;
+    margin: 10px 0px;
+    align-items: center;
+    text-align: center;
+  }
+  .selectButton{
+    width: 100%;
+    margin: 10px 0px;
+  }
+  .list{
+    width: 100%;
+  }
+  .titleLarge{
+    margin-left: 0;
+  }
+  .textInput label{
+    padding: 10px;
+  }
+}
