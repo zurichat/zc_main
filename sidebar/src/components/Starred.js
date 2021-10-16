@@ -7,13 +7,12 @@ import SkeletonLoader from "./SkeletonLoader"
 
 export default function Starred(props) {
   const [isOpen, setOpen] = useState(false)
-  const [checked, setChecked] = useState(false)
 
   const toggleDropdown = () => setOpen(!isOpen)
-  // console.error("whhhhhh", props.check)
-  setChecked(props.check && props.check.includes(true) ? true : false)
+
   return props.state.sidebar ? (
-    <div className={`${styles.item__row} ${checked && styles.open}`}>
+   
+   <div className={`${styles.item__row} ${props.check && props.check.includes(true) && styles.open}`}>
       {props.state && (
         <DropDown
           categoryName="Starred"
