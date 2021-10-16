@@ -29,12 +29,11 @@ export const plugins = [
           !filter ? "" : `&filter=${filter}`
         }`
       )
-    },
-    filterCall: (org_id, member_id) =>
-    $http.get(
-      `goals.zuri.chat/api/v1/search-suggestions/${org_id}/${member_id}`
-    )
-
+    }
+    // filterCall: (org_id, member_id) =>
+    // $http.get(
+    //   `goals.zuri.chat/api/v1/search-suggestions/${org_id}/${member_id}`
+    // )
   },
 
   {
@@ -45,11 +44,11 @@ export const plugins = [
           !filter ? "" : `&filter=${filter}`
         }`
       )
-    },
-    filterCall: (org_id, member_id) =>
-      $http.get(
-        `chess.zuri.chat/api/v1/search-suggestions/${org_id}/${member_id}`
-      )
+    }
+    // filterCall: (org_id, member_id) =>
+    //   $http.get(
+    //     `chess.zuri.chat/api/v1/search-suggestions/${org_id}/${member_id}`
+    //   )
   },
 
   {
@@ -74,11 +73,11 @@ export const plugins = [
           !filter ? "" : `&filter=${filter}`
         }`
       )
-    },
-    filterCall: (org_id, member_id) =>
-      $http.get(
-        `channels.zuri.chat/api/v1/search-suggestions/${org_id}/${member_id}`
-      )
+    }
+    // filterCall: (org_id, member_id) =>
+    //   $http.get(
+    //     `channels.zuri.chat/api/v1/search-suggestions/${org_id}/${member_id}`
+    //   )
   },
   {
     name: "dm",
@@ -101,11 +100,11 @@ export const plugins = [
           !filter ? "" : `&filter=${filter}`
         }`
       )
-    },
-    filterCall: (org_id, member_id) =>
-      $http.get(
-        `noticeboard.zuri.chat/api/v1/search-suggestions/${org_id}/${member_id}`
-      )
+    }
+    // filterCall: (org_id, member_id) =>
+    //   $http.get(
+    //     `noticeboard.zuri.chat/api/v1/search-suggestions/${org_id}/${member_id}`
+    //   )
   },
   {
     name: "companyfiles",
@@ -115,10 +114,10 @@ export const plugins = [
           !filter ? "" : `&filter=${filter}`
         }`
       )
-    },
-    filterCall: (org_id, member_id) =>
-      $http.get(
-        `companyfiles.zuri.chat/api/v1/search-suggestions/${org_id}/${member_id}`
-      )
+    }
+    // filterCall: (org_id, member_id) =>
+    //   $http.get(
+    //     `companyfiles.zuri.chat/api/v1/search-suggestions/${org_id}/${member_id}`
+    //   )
   }
 ]
