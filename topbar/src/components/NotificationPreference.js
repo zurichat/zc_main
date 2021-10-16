@@ -574,7 +574,7 @@ const TextInput = ({ type = "text", label }) => {
         onChange={handleChange}
       />
       <label
-        style={{ color: "#B0AFB0", textAlign: "center", marginTop: "8px" }}
+        style={{ color: "#B0AFB0", textAlign: "center", marginTop: "4px" }}
         className={value && "filled"}
       >
         {label}
