@@ -105,8 +105,8 @@ const EditProfile = () => {
         toast.error(err?.message, {
           position: "top-center"
         })
+        setDeletePic(false)
       })
-    setDeletePic(false)
   }
 
   useEffect(() => {
