@@ -23,8 +23,6 @@ import { useTranslation } from "react-i18next"
 import Loader from "react-loader-spinner"
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
-// import styles from "../../component-styles/Spinner.module.css"
-
 const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -212,8 +210,6 @@ const Login = () => {
                 {t("login.form.authInputBox.forgotPassword")}
               </Link>
               <Link to="/troubleshooting/onboarding-help">
-                {" "}
-                {""}
                 {t("login.form.authInputBox.getHelp")}
               </Link>
             </div>
