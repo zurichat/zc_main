@@ -77,14 +77,14 @@ const AccountsProfileTabs = () => {
             
           )}
           {active === 2 && (
-              <NotificationTab
-                setActive={setActive}
-                setOpenTab={setOpenTab}
-                openTab={openTab}
-              />
-            )}
-            
+            <NotificationTab 
+              setActive={setActive}
+              setOpenTab={setOpenTab}
+              openTab={openTab}
+            />
+          )}
         </div>
+        
       </div>
     </CardProvider>
   )
