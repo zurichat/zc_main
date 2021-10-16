@@ -13,7 +13,7 @@ export default function SingleRoom({ image, name, link }) {
       >
         <div className={`col-10 d-flex align-items-center ${styles.sb__col}`}>
           <img className={`${styles.item__img}`} src={image} alt="icon" />
-          <p className={`mb-0 ${styles.item_p}`}>{name}</p>
+          <p className={`mb-0 ${styles.item_p} sb--link`}>{name}</p>
         </div>
         <div className={`col-2 d-flex align-items-center`}>
           {}

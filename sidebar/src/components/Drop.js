@@ -38,7 +38,10 @@ const DropDown = ({ categoryName, isOpen, toggleDropdown }) => {
         <div
           className={`w-100 d-flex align-items-center justify-content-between`}
         >
-          <p className={`mb-0 ${styles.dropDown__title}`}> {categoryName}</p>
+          <p className={`mb-0 ${styles.dropDown__title} sb--link`}>
+            {" "}
+            {categoryName}
+          </p>
           {/* <img src={infoIcon} alt="icon" role="button" /> */}
           {/* {items.button_url ? (
             <a href={items.button_url} onClick={navigateToUrl}>

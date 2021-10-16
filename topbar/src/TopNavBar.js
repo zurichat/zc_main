@@ -34,8 +34,14 @@ const TopNavBar = () => {
 
   const { closeModal, openModal, presence, setPresence } =
     useContext(TopbarContext)
-  const { setUser, user, userProfileImage, setOrgId, setUserProfileImage } =
-    useContext(ProfileContext)
+  const {
+    setUser,
+    user,
+    userProfileImage,
+    setOrgId,
+    setUserProfileImage,
+    theme
+  } = useContext(ProfileContext)
 
   const state = useContext(TopbarContext)
   const [showModal] = state.show
@@ -45,18 +51,8 @@ const TopNavBar = () => {
   const [search, setSearch] = useState("")
   const [helpModal, setHelpModal] = useState(false)
   const [messages, setMessages] = useState("")
-  const [isSearchOpen, setOpenSearch] = useState(false)
-  const [searchValue, setSearchValue] = useState("")
 
-  const onSearchSubmit = e => {
-    if (e.keyCode === 13 && searchValue.length >= 1) {
-      setOpenSearch(true)
-    }
-  }
-
-  const onSearchChange = value => {
-    setSearchValue(value)
-  }
+  const [nullValue, setnullValue] = useState(0)
 
   const getLoggedInUser = async () => {
     try {
@@ -140,7 +136,7 @@ const TopNavBar = () => {
 
   useEffect(() => {
     UpdateInfo()
-  }, [userProfileImage]) //A temporary fix for profileImg to persist
+  }, [])
 
   const UpdateInfo = () => {
     GetUserInfo().then(res => {
@@ -233,7 +229,7 @@ const TopNavBar = () => {
   }
 
   return (
-    <>
+    <div className={`${theme}`} id="zuritopbar">
       <div className="ps-3" style={{ width: "10%" }}>
         {/* <a href="/home"> */}
         <div className={styles["topNavBar__logo"]}>
@@ -288,16 +284,8 @@ const TopNavBar = () => {
             suggestions={filteredSuggestions}
           />
         </div> */}
-
-        {isSearchOpen ? (
-          <BigModal
-            onClose={() => {
-              setOpenSearch(false)
-            }}
-            inputValue={searchValue}
-          />
-        ) : null}
       </div>
+
       <ProfileImageContainer
         className="d-flex justify-content-end pe-3"
         style={{ width: "20%", position: "relative" }}
@@ -342,8 +330,8 @@ const TopNavBar = () => {
       </ProfileImageContainer>
 
       <Profile />
-      <TopbarModal statusModal={statusModal} setStatusModal={setStatusModal} />
-    </>
+      <TopbarModal />
+    </div>
   )
 }
 

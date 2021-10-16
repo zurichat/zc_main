@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import styles from "../styles/Themes.module.css"
 import theme16 from "../assets/images/theme16.png"
 import theme17 from "../assets/images/theme17.png"
+import { ProfileContext } from "../context/ProfileModal"
 
 const Themes = () => {
   const [active1, setActive1] = useState(0)
@@ -9,6 +10,9 @@ const Themes = () => {
   const [mode, setMode] = useState("light")
   const [Data, setData] = useState(undefined)
   const [DataState, setDataState] = useState({})
+
+  // const {theme, toggleTheme} = useThemeMode();
+  const { theme, toggleTheme } = useContext(ProfileContext)
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode ? true : true)
@@ -26,6 +30,16 @@ const Themes = () => {
       localStorage.setItem("mode", "light")
     }
   }, [mode])
+
+  const value = localStorage.getItem("theme")
+
+  // useEffect(() => {
+  //   if (mode === "dark") {
+  //     localStorage.setItem("mode", "dark")
+  //   } else {
+  //     localStorage.setItem("mode", "light")
+  //   }
+  // }, [mode])
 
   // const [mode, setMode] = useState(() => localStorage.getItem('mode'))
 
@@ -179,7 +193,10 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent}>
-            <div className={styles.radio8}>
+            <div
+              className={styles.radio8}
+              onClick={() => toggleTheme("ashleyAsh")}
+            >
               <input
                 type="radio"
                 value="activeAsh"
@@ -218,7 +235,10 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent2}>
-            <div className={styles.radio9}>
+            <div
+              className={styles.radio9}
+              onClick={() => toggleTheme("purple")}
+            >
               <input
                 type="radio"
                 value="activeAsh"
@@ -228,7 +248,7 @@ const Themes = () => {
                 }}
               />
             </div>
-            <div className={styles.ash2}>Picky Purple</div>
+            <div className={styles.ash2}>Peaky Purple</div>
           </div>
         </div>
       </div>
@@ -264,7 +284,10 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent3}>
-            <div className={styles.radio10}>
+            <div
+              className={styles.radio10}
+              onClick={() => toggleTheme("green")}
+            >
               <input
                 type="radio"
                 value="activeAsh"
@@ -303,7 +326,10 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent4}>
-            <div className={styles.radio11}>
+            <div
+              className={styles.radio11}
+              onClick={() => toggleTheme("darkash")}
+            >
               <input
                 type="radio"
                 value="activeAsh"
@@ -344,7 +370,10 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent5}>
-            <div className={styles.radio12}>
+            <div
+              className={styles.radio12}
+              onClick={() => toggleTheme("oceanBlue")}
+            >
               <input
                 type="radio"
                 value="activeAsh"
@@ -383,7 +412,10 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent6}>
-            <div className={styles.radio13}>
+            <div
+              className={styles.radio13}
+              onClick={() => toggleTheme("roseRed")}
+            >
               <input
                 type="radio"
                 value="activeAsh"
@@ -424,7 +456,10 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent7}>
-            <div className={styles.radio14}>
+            <div
+              className={styles.radio14}
+              onClick={() => toggleTheme("melon")}
+            >
               <input
                 type="radio"
                 value="activeAsh"
@@ -463,7 +498,10 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent8}>
-            <div className={styles.radio15}>
+            <div
+              className={styles.radio15}
+              onClick={() => toggleTheme("canary")}
+            >
               <input
                 type="radio"
                 value="activeAsh"
@@ -475,6 +513,46 @@ const Themes = () => {
             </div>
             <div className={styles.ash8}>Canary</div>
           </div>
+        </div>
+      </div>
+
+      <div className={styles.activeAsh}>
+        <div className={styles.largeRec}>
+          <div className={styles.large}></div>
+        </div>
+        <div className={styles.line2}></div>
+        <div className={styles.roundPic}>
+          <div className={styles.round}></div>
+        </div>
+        <div className={styles.thinRec}>
+          <div className={styles.thin}></div>
+        </div>
+        <div className={styles.thinRec2}>
+          <div className={styles.hash}>#</div>
+          <div className={styles.thin2}></div>
+        </div>
+        <div className={styles.whiteThinRec}>
+          <div className={styles.hash2}>#</div>
+          <div className={styles.whiteThin}></div>
+        </div>
+        <div className={styles.thinRec3}>
+          <div className={styles.thin3}></div>
+        </div>
+        <div className={styles.smallRec}>
+          <div className={styles.small}></div>
+        </div>
+        <div className={styles.lowContent}>
+          <div className={styles.radio8} onClick={() => toggleTheme("Default")}>
+            <input
+              type="radio"
+              value="activeAsh"
+              checked={active1 === 2}
+              onClick={() => {
+                setActive1(2)
+              }}
+            />
+          </div>
+          <div className={styles.ash}>Switch to Default</div>
         </div>
       </div>
     </div>

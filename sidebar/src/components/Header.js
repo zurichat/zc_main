@@ -2,13 +2,13 @@ import React, { useState } from "react"
 import styles from "../styles/Sidebar.module.css"
 import { MdKeyboardArrowDown } from "react-icons/md"
 import newMsgIcon from "../assets/icons/newMsgIcon.svg"
-import UserOrganization from "../../../control/src/pages/createworkspace/components/UserOrganization"
-import ModalComponent from "./ModalComponent"
-
+import useThemeMode from "../../../topbar/customHooks/useThemeMode"
 
 const SidebarHeader = props => {
   //home modal
   const [homeModal, toggleHomeModal] = useState(false)
+  const [nullValue, setnullValue] = useState(0)
+  const { theme } = useThemeMode()
 
   //toggle
   const toggle = () => {
@@ -17,8 +17,8 @@ const SidebarHeader = props => {
   }
   return (
     <div className={`${styles.subCon1}`}>
-      <div className={`row ${styles.orgDiv}`}>
-        <div className={`col-12 px-3 ${styles.orgInfo}`}>
+      <div className={`row  ${styles.orgDiv}`}>
+        <div className={`col-12 px-3  ${styles.orgInfo} org-Info`}>
           <div
             onClick={() => toggle()}
             className={`row p-0 ${styles.orgHeader}`}
@@ -28,7 +28,10 @@ const SidebarHeader = props => {
                 props.state.organization_info.name}
             </span>
             <span className={`col-4 p-0 ${styles.sidebar__header__arrow}`}>
-              <MdKeyboardArrowDown className={`my-auto`} style={{ color: `#fff` }} />
+              <MdKeyboardArrowDown
+                className={`my-auto`}
+                style={{ color: `#fff` }}
+              />
             </span>{" "}
           </div>
           <div className={`row ${styles.newMessage}`}>
@@ -40,16 +43,16 @@ const SidebarHeader = props => {
           </div>
         </div>
         <div className={`col-12 px-3 ${styles.modalContainer}`}>
-          {
+          {/*
 
                  <div className={`col-12 px-3 ${styles.odalContainer}`}>
               <ModalComponent
-                workSpace={UserOrganization}
+                workSpace={org}
                 isOpen={homeModal}
-                toggleHomeModal={toggleHomeModal}
+        //  toggleOpenInvite={toggleOpenInvite}
               />
             </div>
-          /*
+          {/*
 
 
             <Modall showDialog={showDialog} closeDialog={close} />
