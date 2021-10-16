@@ -1,20 +1,21 @@
-import React, { useState, useEffect } from 'react'
-import style from '../Style/style.module.css'
-import loadingStyle from '../../../component-styles/LoginLoading.module.css'
-import logo from '../../../component-assets/zurilogo.svg'
-import first from '../assets/Card1.png'
-import second from '../assets/Card2.png'
-import axios from 'axios'
-import { ErrorCode } from 'react-dropzone'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from "react"
+import style from "../Style/style.module.css"
+import loadingStyle from "../../../component-styles/LoginLoading.module.css"
+import logo from "../../../component-assets/zurilogo.svg"
+import first from "../assets/Card1.png"
+import second from "../assets/Card2.png"
+import axios from "axios"
+import parse from "html-react-parser"
+import { ErrorCode } from "react-dropzone"
+import { Link } from "react-router-dom"
 
 const BlogPosts = () => {
-  const [posts, setPosts] = useState('loading')
+  const [posts, setPosts] = useState("loading")
   const [error, setError] = useState(false)
 
   const getPosts = async () => {
     try {
-      const { data } = await axios.get('https://api.zuri.chat/posts')
+      const { data } = await axios.get("https://api.zuri.chat/posts")
       setPosts(data.data)
     } catch (error) {
       setError(true)
@@ -25,12 +26,17 @@ const BlogPosts = () => {
     getPosts()
   }, [])
 
-  if (posts === 'loading') {
+  if (posts === "loading") {
     return (
       <div className={loadingStyle.loadingContainer}>
         <div className={loadingStyle.loaderContainer}>
           <div>
-            <img width='100' height='100' className={loadingStyle.rotate} src={logo} />
+            <img
+              width='100'
+              height='100'
+              className={loadingStyle.rotate}
+              src={logo}
+            />
           </div>
           <div className={loadingStyle.loadingStatus} />
         </div>
@@ -50,7 +56,7 @@ const BlogPosts = () => {
     )
   }
 
-  if (posts.length < 0) {
+  if (posts === null) {
     return (
       <div className={loadingStyle.loadingContainer}>
         <div className={loadingStyle.loaderContainer}>
@@ -63,43 +69,56 @@ const BlogPosts = () => {
   }
 
   return (
-  // < className={style.reading}>
-  //   <h1>Keep reading</h1>
+    // < className={style.reading}>
+    //   <h1>Keep reading</h1>
 
     <div className={style.main_conainer}>
       <div className={style.reading}>
-        {posts !== undefined && posts !== null && posts.map(({ title, image_url, content, _id }) => (
-          <Link
-            to={{
-              pathname: `/blog/${title}`,
-              state: { postId: _id }
-            }}
-            // state={{ postId: _id }}
-            key={_id}
-          >
-            <div className={style.keep_reading_box} key={_id}>
-              <div className={style.keep_reading_img}>
-                <img src={image_url || logo} alt='post image' />
+        {posts !== undefined &&
+          posts !== null &&
+          posts.map(({ title, image_url, content, _id, created_at }) => (
+            <Link
+              to={{
+                pathname: `/blog/${title}`,
+                state: { postId: _id }
+              }}
+              // state={{ postId: _id }}
+              key={_id}
+            >
+              <div className={style.keep_reading_box} key={_id}>
+                <div className={style.keep_reading_img}>
+                  <img src={logo} alt='post image' />
+                </div>
+                <div className={style.keep_reading_text}>
+                  {/* <p className={style.getting}>Getting Started</p> */}
+                  <h4
+                    style={{
+                      fontSize: 18,
+                      padding: 0,
+                      margin: 0,
+                      lineHeight: "30px",
+                      fontWeight: 900
+                    }}
+                  >
+                    {title}
+                  </h4>
+                  <div className={style.getting_text}>{parse(content)}</div>
+                  <div className={style.date_min}>
+                    <p className={style.date}>
+                      {new Date(created_at).toLocaleString("en-US", {
+                        day: "numeric",
+                        month: "short",
+                        year: "numeric"
+                      })}
+                    </p>
+                    {/* <p className={style.min}>4 Mins Read</p> */}
+                  </div>
+                </div>
               </div>
-              <div className={style.keep_reading_text}>
-                <p className={style.getting}>Getting Started</p>
-                <h3 style={{ fontSize: 20, padding: 0, margin: 0 }}>
-                  {title}
-                </h3>
-                <p className={style.getting_text}>
-                  {content}
-                </p>
-                {/* <div className={style.date_min}>
-                <p className={style.date}>27 August 2021</p>
-                <p className={style.min}>4 Mins Read</p>
-              </div> */}
-              </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))}
       </div>
     </div>
-
   )
 }
 
