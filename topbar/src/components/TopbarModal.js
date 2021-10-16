@@ -28,8 +28,9 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
     user,
     setUser
   } = useContext(ProfileContext)
-  const [statusText, setStatusText] = useState(user?.status?.text)
-  const [statusEmoji, setStatusEmoji] = useState(user?.status?.tag)
+
+  const state = useContext(TopbarContext)
+  const [showModal, setShowModal] = state.show
 
   const handleClearStatus = async () => {
     setUser({
@@ -42,9 +43,6 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
         status_history: [...user.status.status_history]
       }
     })
-
-    setStatusText("")
-    setStatusEmoji("")
 
     try {
       const res = await authAxios.patch(
@@ -60,7 +58,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
       const errorResponse = error
     }
 
-    // setStatusModal(!statusModal)
+    setShowModal(!showModal)
   }
 
   // const handleClearStatus = async () => {
@@ -81,8 +79,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
   //   }
   // }
   const [hoverState, setHoverState] = useState(false)
-  const state = useContext(TopbarContext)
-  const [showModal] = state.show
+  
   // const [username, setUsername] = state.username
   const [showStatus] = state.status
   const [showMembersModal] = state.modal
@@ -175,10 +172,6 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
           statusModal={statusModal}
           setStatusModal={setStatusModal}
           openStatus={openStatus}
-          setStatusText={setStatusText}
-          statusText={statusText}
-          setStatusEmoji={setStatusEmoji}
-          statusEmoji={statusEmoji}
         />
       )}
 
