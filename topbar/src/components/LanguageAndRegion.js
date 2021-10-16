@@ -1,8 +1,10 @@
+
+
 import React, { useState, useContext, useEffect } from "react"
 import styles from "../styles/LanguageAndRegion.module.css"
 import standardStyles from "../styles/UserPreference.module.css"
 import TimezoneSelect from "react-timezone-select"
-import  Select from "react-select"
+import Select from "react-select"
 import { authAxios } from "../utils/Api"
 import { ProfileContext } from "../context/ProfileModal"
 
@@ -22,7 +24,7 @@ const LanguageAndRegion = () => {
   const [langreg, setLangreg] = useState(user.settings.languages_and_regions);
   const [selectedTimezone, setSelectedTimezone] = useState(user.settings.languages_and_regions.time_zone ? JSON.parse(user.settings.languages_and_regions.time_zone) : user.settings.languages_and_regions.time_zone)
   //CHECKBOXES
-  const [spellCheck, setSpellCheck] = useState(true);
+  const [spellCheck, setSpellCheck] = useState(true)
   const handleSpellCheck = () => {
     setSpellCheck(!spellCheck)
   }
@@ -38,19 +40,14 @@ const LanguageAndRegion = () => {
         // error
       })
   }
-
-  const handleSelect = (selectedOptions) => {
-    let options = [];
-
+  const handleSelect = selectedOptions => {
+    let options = []
     selectedOptions.forEach(option => {
       options.push(option.value)
     })
-
-    let newSpell = {...langreg, languages_zuri_should_spell_check: options}
-
+    let newSpell = { ...langreg, languages_zuri_should_spell_check: options }
     handleData(newSpell)
   }
-
   useEffect(() => {
     let timeZone = {...langreg, time_zone: JSON.stringify(selectedTimezone)}
     setLangreg(timeZone)
@@ -108,33 +105,37 @@ const LanguageAndRegion = () => {
               Choose the language you want to use in Zurichat.
             </p>
           </div>
-
           <div className={styles.section}>
-            <div className={styles.subhead}>
-              Time zone
-            </div>        
-              <input 
-                type="checkbox" className={styles.cbox} 
-                checked={langreg.set_time_zone_automatically}
-                 onClick={() => {
-                   if(langreg !== undefined) {
-                     setLangreg({...langreg, set_time_zone_automatically: !langreg.set_time_zone_automatically})
-                    handleData({...langreg, set_time_zone_automatically: !langreg.set_time_zone_automatically})
-                   }
-                }}  
-              />
-              <span className={styles.checkmark}>
+            <div className={styles.subhead}>Time zone</div>
+            <input
+              type="checkbox"
+              className={styles.cbox}
+              checked={langreg.set_time_zone_automatically}
+              onClick={() => {
+                if (langreg !== undefined) {
+                  setLangreg({
+                    ...langreg,
+                    set_time_zone_automatically:
+                      !langreg.set_time_zone_automatically
+                  })
+                  handleData({
+                    ...langreg,
+                    set_time_zone_automatically:
+                      !langreg.set_time_zone_automatically
+                  })
+                }
+              }}
+            />
+            <span className={styles.checkmark}>
               Set time zone automatically
-              </span>
-            
-
+            </span>
             <TimezoneSelect
-                  styles = {customStyles}
-                  className={styles.optSelect}
-                  placeholder="Select Timezone"
-                  value={selectedTimezone}
-                  defaultValue="badbitches"
-                  onChange={setSelectedTimezone} 
+              styles={customStyles}
+              className={styles.optSelect}
+              placeholder="Select Timezone"
+              value={selectedTimezone}
+              defaultValue="badbitches"
+              onChange={setSelectedTimezone}
             />
             <p className={styles.note}>
               Zurichat uses your time zone to send summary and notification
@@ -185,10 +186,7 @@ const LanguageAndRegion = () => {
     </div>
   )
 }
-
 export default LanguageAndRegion
-
-
 const customStyles = {
   control: base => ({
     ...base,
@@ -196,7 +194,7 @@ const customStyles = {
     minHeight: "2.5rem",
     border: "1px solid #DADADA",
     borderRadius: "4px",
-    marginTop:"10px",
+    marginTop: "10px",
     fontSize: "15px",
     "&:hover": {
       borderColor: "#00B87C"
