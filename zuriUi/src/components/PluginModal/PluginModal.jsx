@@ -287,16 +287,22 @@ function MembersPanel({ config }) {
             Add People
           </AddPeopleIcons>
         </ListGroup.Item>
-        {membersList.map(member => (
-          <ListGroup.Item key={member._id} className="d-flex w-100">
-            <div>{member.email}</div>
-            <div className="ms-auto" onClick={handleaddModalShow}>
-              <RemoveLink onClick={() => removeMemberHandler(member)}>
-                Remove
-              </RemoveLink>
-            </div>
+        {membersList && membersList.length > 0 ? (
+          membersList.map(member => (
+            <ListGroup.Item key={member._id} className="d-flex w-100">
+              <div>{member.email}</div>
+              <div className="ms-auto" onClick={handleaddModalShow}>
+                <RemoveLink onClick={() => removeMemberHandler(member)}>
+                  Remove
+                </RemoveLink>
+              </div>
+            </ListGroup.Item>
+          ))
+        ) : (
+          <ListGroup.Item className="d-flex w-100">
+            <div>No Members</div>
           </ListGroup.Item>
-        ))}
+        )}
       </ListGroup>
     </div>
   )
