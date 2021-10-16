@@ -5,12 +5,10 @@ import { BsCreditCard2Back } from "react-icons/bs"
 import { BiUser } from "react-icons/bi"
 import { IoSettingsOutline, IoSpeedometerOutline } from "react-icons/io5"
 import { FaMagic } from "react-icons/fa"
+import { getUser } from "../../Utils/Common"
 // import
 import AdminSettings from "../../."
-import settings from "../../assets/cog.svg"
-import analytics from "../../assets/dashboard.svg"
 import right_caret from "../../assets/cheveron-right.svg"
-import customize from "../../assets/magic-wand.svg"
 import classes from "../styles//SettingsHome.module.css"
 
 const randomizedGreeting = ["Hey there", "Welcome,", "¡Hola,"]
@@ -26,12 +24,14 @@ const Home = () => {
     const greetingProcedure = randomizedGreeting[newNumber]
     setGreeting(greetingProcedure)
   }, [])
+
+  const user = getUser();
   return (
     <AdminSettings>
       <Container className={`p-4 ${classes.mtN3}`}>
         <div>
           {/* Picture of User */}
-          <h1 className="mb-4">{greeting} Mark</h1>
+          <h1 className="mb-4">{greeting} {user.first_name}!</h1>
         </div>
 
         <div className={classes.card}>
