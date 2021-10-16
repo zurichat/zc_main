@@ -93,6 +93,7 @@
   height: 100%;
   position: relative;
   z-index: 110;
+  background-color: var(--bg-color);
 }
 
 .info {
@@ -104,7 +105,7 @@
   font-weight: bold;
   font-size: 0.9375rem;
   line-height: 147%;
-  color: #000000;
+  color: var(--text-color-bold);
   margin-bottom: 8px;
 }
 
@@ -116,6 +117,7 @@
 
 .files {
   padding: 22px 24px;
+  margin-bottom:0px;
 }
 
 .filesItem {
