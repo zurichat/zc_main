@@ -2,23 +2,11 @@ import { useState } from "react"
 import styles from "./styles/header.module.css"
 import { MdKeyboardArrowDown } from "react-icons/md"
 import PluginModal from "../../zuriUi/src/components/PluginModal/PluginModal"
-import { membersList } from "../../zuriUi/src/components/sampleData/memberList"
 
 export default function Header(props) {
   const [showDialog, setShowDialog] = useState(false)
   const [tabIndex, setTabIndex] = useState(0)
 
-  const dummyHeaderConfig = {
-    roomInfo: {
-      membersList: membersList,
-      addmembersevent: values => {
-        console.warn("a plugin added ", values)
-      },
-      removememberevent: id => {
-        console.warn("a plugin deleted ", id)
-      }
-    }
-  }
   return (
     <div>
       {props.headerConfig && (
@@ -63,7 +51,7 @@ export default function Header(props) {
                   showDialog={showDialog}
                   tabIndex={tabIndex}
                   close={() => setShowDialog(false)}
-                  config={dummyHeaderConfig}
+                  config={props.headerConfig}
                   channelName={props.headerConfig.name}
                 />
               )}

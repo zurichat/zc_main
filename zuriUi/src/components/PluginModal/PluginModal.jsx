@@ -24,6 +24,7 @@ import { ListGroup } from "react-bootstrap"
 import { StyledTabs, DataWrap, Details, DetailLabel, StackLabel } from "../channel_details/ChannelDetails.styled";
 import { sample } from '../channel_details/sample';
 import axios from "axios"
+import { membersList as DummyMembers } from "../sampleData/memberList"
 
 function PluginModal({ close, showDialog, config, tabIndex, channelName }) {
 
@@ -180,8 +181,35 @@ function AboutPanel({
     </div>
   )
 }
-function MembersPanel({ config, samples }) {
-  const { membersList, addmembersevent, removememberevent } = config.roomInfo
+// function useTabsContext():{
+//   focusedIndex:number; id:string; selectedIndex:number
+// }
+//   function CustomTab({index,...props}){
+//       const {selectedIndex,focusedIndex}=useTabsContext();
+//       return(
+//         <Tab style={{
+//           borderBottom:`4px solid ${selectedIndex === index
+//           ?"red" : focusedIndex === index ? "blue" : "black"}`,
+//         }}
+//         {...props}/>
+//       )
+//   }
+function MembersPanel({ config }) {
+  const dummyHeaderConfig = {
+    roomInfo: {
+      membersList: DummyMembers,
+      addmembersevent: values => {
+        console.warn("a plugin added ", values)
+      },
+      removememberevent: id => {
+        console.warn("a plugin deleted ", id)
+      }
+    }
+  }
+
+  const roomData =
+    "roomInfo" in config ? config.roomInfo : dummyHeaderConfig.roomInfo
+  const { membersList, addmembersevent, removememberevent } = roomData
   const [addModalShow, setaddModalShow] = useState(false)
   const [removeModalShow, setremoveModalShow] = useState(false)
   const [selectedMember, setSelectedMember] = useState(null)
@@ -212,16 +240,17 @@ function MembersPanel({ config, samples }) {
   useEffect(() => {
     const currentWorkspace = localStorage.getItem("currentWorkspace")
     const token = sessionStorage.getItem("token")
-    axios.get(`https://api.zuri.chat/organizations/${currentWorkspace}/members`, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
+    axios
+      .get(`https://api.zuri.chat/organizations/${currentWorkspace}/members`, {
+        headers: { Authorization: `Bearer ${token}` }
+      })
       .then(r => {
         const users = r.data.data.map(item => {
           return { value: item._id, label: item.email }
         })
         setUserList(users)
       })
-      .catch(e => console.error("Organization not returning members", e))
+      .catch(/*e => console.log("Organization not returning members", e)*/)
     setisLoading(true)
   }, [])
 
