@@ -11,7 +11,7 @@ const NotificationPreference = () => {
   const [active, setActive] = useState("")
   const [active1, setActive1] = useState("")
   const [notificationSettings, setNotificationSettings] = useState(
-    user.settings.notifications
+    user.settings?.notifications
   )
   const [keywordInput, setKeywordInput] = useState("")
   const [durationInput, setDurationInput] = useState("")
@@ -267,7 +267,7 @@ const NotificationPreference = () => {
                 type="radio"
                 value="all-messages"
                 checked={
-                  notificationSettings.notify_me_about === "all-messages"
+                  notificationSettings?.notify_me_about === "all-messages"
                 }
                 onChange={handleAllMessages}
               />{" "}
