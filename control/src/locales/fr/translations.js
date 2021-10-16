@@ -322,7 +322,8 @@ export const TRANSLATIONS_FR = {
         }
       }
   },
-  login:{
+  auth: {
+    login:{
     title: "Connexion - Zuri Chat",
     form: {
       header: "Connexion",
@@ -347,70 +348,110 @@ export const TRANSLATIONS_FR = {
       legacyPolicy: "Politique juridique",
       aboutZuri: "À propos de Zurichat"
     }
-  },
-  signup: {
-    title: "S'inscrire",
-    form: {
-      header: "Créer un compte",
-      googleHeader: "Inscrivez-vous avec Google",
-      topLineText: "OU",
-      submitButtonName: "S'inscrire",
-      bottomLine: "Vous avez déjà un compte?",
-      bottomLink: "Connexion",
-      input: {
-        fullName: "Nom et prénom",
-        fullNamePlaceholder: "Entrez votre nom",
+    },
+    signup: {
+      title: "S'inscrire",
+      form: {
+        header: "Créer un compte",
+        googleHeader: "Inscrivez-vous avec Google",
+        topLineText: "OU",
+        submitButtonName: "S'inscrire",
+        bottomLine: "Vous avez déjà un compte?",
+        bottomLink: "Connexion",
+        input: {
+          fullName: "Nom et prénom",
+          fullNamePlaceholder: "Entrez votre nom",
+          emailAddress: "Adresse e-mail",
+          emailAddressPlaceholder: "Entrez votre adresse e-mail",
+          password: "Mot de passe",
+          passwordPlaceholder: "Entrer un mot de passe",
+        }
+      },
+      privacyAgreement: "Je suis d'accord avec Zurichat",
+      termsOfService: "Conditions de services",
+      privacy: "Intimité"
+    },
+    passwordreset: {
+      title: "Réinitialiser le mot de passe",
+      headline: "Obtenez un nouveau mot de passe",
+      post_headline: "Entrez l'adresse e-mail avec laquelle vous vous êtes inscrit et un code de réinitialisation vous sera envoyé par e-mail.",
+      form:{
         emailAddress: "Adresse e-mail",
-        emailAddressPlaceholder: "Entrez votre adresse e-mail",
-        password: "Mot de passe",
-        passwordPlaceholder: "Entrer un mot de passe",
+        continueButton: "Continuer"
       }
     },
-    privacyAgreement: "Je suis d'accord avec Zurichat",
-    termsOfService: "Conditions de services",
-    privacy: "Intimité"
-  },
-  passwordreset: {
-    title: "Réinitialiser le mot de passe",
-    headline: "Obtenez un nouveau mot de passe",
-    post_headline: "Entrez l'adresse e-mail avec laquelle vous vous êtes inscrit et un code de réinitialisation vous sera envoyé par e-mail.",
-    form:{
-      emailAddress: "Adresse e-mail",
-      continueButton: "Continuer"
-    }
-  },
-  newPassword: {
-    header: "Récupérer mot de passe",
-    post_headline: "Créez un nouveau mot de passe pour votre compte",
-    form: {
-      password: "Mot de passe",
-      passwordPlaceholder: "Entrez votre nouveau mot de passe",
-      confirmPassword: "Confirmez le mot de passe",
-      confirmPasswordPlaceholder: "Confirmez votre nouveau mot de passe",
-      continueButton: "Continuer"
-    }
-  },
-  verifyCodeOnPasswordReset: {
-    header: "Entrez le code de réinitialisation envoyé à votre courrier",
-    success: {
-      headline: "Réinitialisation de la vérification du code réussie!",
-      post_headline: "Cliquez sur le bouton pour continuer",
-      continueButton: "Continuer"
-    }
-  },
-  passwordResetSuccess: {
-    headline: "Réinitialisation du mot de passe réussie !",
-    post_headline: "La réinitialisation de votre mot de passe a réussi ! vous pouvez procéder à la connexion maintenant",
-    button: "Continuer à vous connecter"
-  },
-  signout:{
-    title: "Se déconnecter",
-    preOrgText: "Déconnecté de l'équipe",
-    workspace: "Espace de travail",
-    signoutMessage: {
-      preOrgText: "Vous avez été déconnecté de l'équipe"
+    newPassword: {
+      header: "Récupérer mot de passe",
+      post_headline: "Créez un nouveau mot de passe pour votre compte",
+      form: {
+        password: "Mot de passe",
+        passwordPlaceholder: "Entrez votre nouveau mot de passe",
+        confirmPassword: "Confirmez le mot de passe",
+        confirmPasswordPlaceholder: "Confirmez votre nouveau mot de passe",
+        continueButton: "Continuer"
+      }
     },
-    loginText: "Connexion",
-    postLoginText: "vers un autre espace de travail"
+    verifyCodeOnPasswordReset: {
+      header: "Entrez le code de réinitialisation envoyé à votre courrier",
+      success: {
+        headline: "Réinitialisation de la vérification du code réussie!",
+        post_headline: "Cliquez sur le bouton pour continuer",
+        continueButton: "Continuer"
+      }
+    },
+    passwordResetSuccess: {
+      headline: "Réinitialisation du mot de passe réussie !",
+      post_headline: "La réinitialisation de votre mot de passe a réussi ! vous pouvez procéder à la connexion maintenant",
+      button: "Continuer à vous connecter"
+    },
+    signout:{
+      title: "Se déconnecter",
+      preOrgText: "Déconnecté de l'équipe",
+      workspace: "Espace de travail",
+      signoutMessage: {
+        preOrgText: "Vous avez été déconnecté de l'équipe"
+      },
+      loginText: "Connexion",
+      postLoginText: "vers un autre espace de travail"
+    },
+    onboardingHelp:{
+      title: "Dépannage des problèmes",
+      backToHome: "De retour à la maison",
+      loginHelp:{
+        headline: "Dépannage des problèmes de connexion à ZuriChat",
+        post_headline: "Si vous rencontrez des problèmes pour vous connecter à votre compte, les éléments suivants peuvent vous aider.",
+        list: {
+          textOne: "Vérifiez si vous utilisez une adresse e-mail et un mot de passe corrects pour vous connecter. Si vous pensez que votre compte a pu être compromis",
+          linkOne: "cliquez ici pour réinitialiser votre mot de passe",
+          textTwo: "Utilisez-vous la dernière version de l'application mobile ou de bureau ZuriChat ? Veuillez vérifier la version actuelle de vos applications. Si vous n'êtes pas sûr de la version que vous utilisez, essayez",
+          linkTwo: "mise à jour ou téléchargement de l'application",
+          textThree: "Si le même problème persiste, veuillez désinstaller l'application, vider le cache de votre téléphone portable et réinstaller.",
+          textFour: "Si vous utilisez un navigateur, vous avez peut-être utilisé un mauvais mot de passe à partir des suggestions de saisie semi-automatique. Nous vous conseillons de saisir à nouveau manuellement votre adresse e-mail et votre mot de passe ZuriChat",
+          textFive: "Si toutes les méthodes ci-dessus ne fonctionnent pas, essayez un nouveau navigateur ou essayez de vous connecter en mode navigation privée",
+          textSix: "Avez-vous un compte chez nous? Si vous n'avez pas de compte ici, vous ne pourrez pas vous connecter. Aller à",
+          linkSix: "créer un compte"
+        }    
+      },
+      signUpHelp: {
+        headline: "Impossible de créer un compte ?",
+        post_headline: "D'accord, si vous rencontrez des problèmes pour créer un compte, essayez les suggestions ci-dessous",
+        list: {
+          preTextOne: "Assurez-vous que vous utilisez un",
+          strongText: "Adresse e-mail valable",
+          postTextOne: "et vérifiez votre boîte de réception pour le code d'authentification",
+          textTwo: "Utilisez un autre appareil ou navigateur pour créer votre compte. Vous pouvez également vider le cache de votre navigateur",
+          textThree: "Vérifiez le réseau de votre région. Si le réseau est bon, rechargez la page d'inscription",
+          textFour: "Si vous ne recevez pas de code d'authentification, veuillez patienter 30 minutes et réessayer",
+          textFive: "Si vous utilisez l'application mobile ou de bureau ZuriChat, mettez à jour vers la dernière version ou vous pouvez",
+          linkFive: "télécharger ici"
+        }
+      },
+      support: {
+        headline: "Avez-vous encore besoin d'aide?",
+        preLinkText: "Si vous avez essayé toutes les suggestions ci-dessus mais en vain, veuillez",
+        linkText: "contacter le service client de Zuri",
+        postLinkText: "pour aider."
+      }
+    }
   }
 }

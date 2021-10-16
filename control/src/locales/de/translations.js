@@ -326,7 +326,8 @@ export const TRANSLATIONS_DE = {
         }
       }
   },
-  login:{
+  auth: {
+    login:{
     title: "Einloggen - Zuri Chat",
     form: {
       header: "Einloggen",
@@ -351,70 +352,110 @@ export const TRANSLATIONS_DE = {
       legacyPolicy: "Rechtliche Hinweise",
       aboutZuri: "Über Zurichat"
     }
-  },
-  signup: {
-    title: "Anmeldung",
-    form: {
-      header: "Benutzerkonto erstellen",
-      googleHeader: "Melden Sie sich bei Google an",
-      topLineText: "ODER",
-      submitButtonName: "Anmeldung",
-      bottomLine: "Sie haben bereits ein Konto?",
-      bottomLink: "Einloggen",
-      input: {
-        fullName: "Vollständiger Name",
-        fullNamePlaceholder: "Gib deinen Namen ein",
+    },
+    signup: {
+      title: "Anmeldung",
+      form: {
+        header: "Benutzerkonto erstellen",
+        googleHeader: "Melden Sie sich bei Google an",
+        topLineText: "ODER",
+        submitButtonName: "Anmeldung",
+        bottomLine: "Sie haben bereits ein Konto?",
+        bottomLink: "Einloggen",
+        input: {
+          fullName: "Vollständiger Name",
+          fullNamePlaceholder: "Gib deinen Namen ein",
+          emailAddress: "E-Mail-Addresse",
+          emailAddressPlaceholder: "Geben Sie Ihre E-Mail-Adresse ein",
+          password: "Passwort",
+          passwordPlaceholder: "Geben Sie ein Passwort ein",
+        }
+      },
+      privacyAgreement: "Ich stimme Zurichats zu",
+      termsOfService: "Nutzungsbedingungen",
+      privacy: "Privatsphäre"
+    },
+    passwordreset: {
+      title: "Passwort zurücksetzen",
+      headline: "Holen Sie sich ein neues Passwort",
+      post_headline: "Geben Sie die E-Mail-Adresse ein, mit der Sie sich registriert haben, und ein Reset-Code wird an Ihre E-Mail gesendet.",
+      form:{
         emailAddress: "E-Mail-Addresse",
-        emailAddressPlaceholder: "Geben Sie Ihre E-Mail-Adresse ein",
-        password: "Passwort",
-        passwordPlaceholder: "Geben Sie ein Passwort ein",
+        continueButton: "Weitermachen"
       }
     },
-    privacyAgreement: "Ich stimme Zurichats zu",
-    termsOfService: "Nutzungsbedingungen",
-    privacy: "Privatsphäre"
-  },
-  passwordreset: {
-    title: "Passwort zurücksetzen",
-    headline: "Holen Sie sich ein neues Passwort",
-    post_headline: "Geben Sie die E-Mail-Adresse ein, mit der Sie sich registriert haben, und ein Reset-Code wird an Ihre E-Mail gesendet.",
-    form:{
-      emailAddress: "E-Mail-Addresse",
-      continueButton: "Weitermachen"
-    }
-  },
-  newPassword: {
-    header: "Passwort wiederherstellen",
-    post_headline: "Erstellen Sie ein neues Passwort für Ihr Konto",
-    form: {
-      password: "Passwort",
-      passwordPlaceholder: "Gib dein neues Passwort ein",
-      confirmPassword: "Kennwort bestätigen",
-      confirmPasswordPlaceholder: "Bestätigen Sie Ihr neues Passwort",
-      continueButton: "Weitermachen"
-    }
-  },
-  verifyCodeOnPasswordReset: {
-    header: "Geben Sie den Reset-Code ein, der an Ihre E-Mail gesendet wurde",
-    success: {
-      headline: "Code-Verifizierung zurücksetzen erfolgreich!",
-      post_headline: "Klicken Sie auf den Button um fortzufahren",
-      continueButton: "Weitermachen"
-    }
-  },
-  passwordResetSuccess: {
-    headline: "Passwort-Reset erfolgreich!",
-    post_headline: "Ihr Passwort zurücksetzen war erfolgreich! Sie können sich jetzt anmelden",
-    button: "Weiter zum Login"
-  },
-  signout:{
-    title: "Austragen",
-    preOrgText: "Vom Team abgemeldet",
-    workspace: "Arbeitsplatz",
-    signoutMessage: {
-      preOrgText: "Sie wurden vom Team abgemeldet"
+    newPassword: {
+      header: "Passwort wiederherstellen",
+      post_headline: "Erstellen Sie ein neues Passwort für Ihr Konto",
+      form: {
+        password: "Passwort",
+        passwordPlaceholder: "Gib dein neues Passwort ein",
+        confirmPassword: "Kennwort bestätigen",
+        confirmPasswordPlaceholder: "Bestätigen Sie Ihr neues Passwort",
+        continueButton: "Weitermachen"
+      }
     },
-    loginText: "Einloggen",
-    postLoginText: "zu einem anderen Arbeitsbereich"
+    verifyCodeOnPasswordReset: {
+      header: "Geben Sie den Reset-Code ein, der an Ihre E-Mail gesendet wurde",
+      success: {
+        headline: "Code-Verifizierung zurücksetzen erfolgreich!",
+        post_headline: "Klicken Sie auf den Button um fortzufahren",
+        continueButton: "Weitermachen"
+      }
+    },
+    passwordResetSuccess: {
+      headline: "Passwort-Reset erfolgreich!",
+      post_headline: "Ihr Passwort zurücksetzen war erfolgreich! Sie können sich jetzt anmelden",
+      button: "Weiter zum Login"
+    },
+    signout:{
+      title: "Austragen",
+      preOrgText: "Vom Team abgemeldet",
+      workspace: "Arbeitsplatz",
+      signoutMessage: {
+        preOrgText: "Sie wurden vom Team abgemeldet"
+      },
+      loginText: "Einloggen",
+      postLoginText: "zu einem anderen Arbeitsbereich"
+    },
+    onboardingHelp:{
+      title: "Fehlerbehebung bei Problemen",
+      backToHome: "Zurück nach Hause",
+      loginHelp:{
+        headline: "Fehlerbehebung bei Problemen bei der Anmeldung bei ZuriChat",
+        post_headline: "Wenn Sie Probleme bei der Anmeldung bei Ihrem Konto haben, kann Ihnen Folgendes helfen.",
+        list: {
+          textOne: "Überprüfen Sie, ob Sie die richtige E-Mail-Adresse und das richtige Passwort für die Anmeldung verwenden. Wenn Sie glauben, dass Ihr Konto kompromittiert wurde",
+          linkOne: "Klicken Sie hier, um Ihr Passwort zurückzusetzen",
+          textTwo: "Verwenden Sie die neueste Version der ZuriChat-Mobil- oder Desktop-App? Bitte überprüfen Sie die aktuelle Version Ihrer Apps. Wenn Sie sich nicht sicher sind, welche Version Sie verwenden, versuchen Sie es mit",
+          linkTwo: "Aktualisieren oder Herunterladen der App",
+          textThree: "Wenn das Problem weiterhin besteht, deinstallieren Sie bitte die App, leeren Sie den Cache Ihres Mobiltelefons und installieren Sie es erneut.",
+          textFour: "Wenn Sie einen Browser verwenden, haben Sie möglicherweise ein falsches Passwort aus den Vorschlägen zur automatischen Vervollständigung verwendet. Wir empfehlen Ihnen, Ihre ZuriChat-E-Mail-Adresse und Ihr Passwort erneut manuell einzugeben",
+          textFive: "Wenn alle oben genannten Methoden nicht funktionieren, versuchen Sie es mit einem neuen Browser oder versuchen Sie, sich im Inkognito-Modus anzumelden",
+          textSix: "Haben Sie ein Konto bei uns? Wenn Sie hier kein Konto haben, können Sie sich nicht anmelden. Gehe zu",
+          linkSix: "ein Konto erstellen"
+        }    
+      },
+      signUpHelp: {
+        headline: "Sie können kein Konto erstellen?",
+        post_headline: "Okay, wenn Sie Probleme beim Erstellen eines Kontos haben, probieren Sie die folgenden Vorschläge aus",
+        list: {
+          preTextOne: "Stellen Sie sicher, dass Sie a . verwenden",
+          strongText: "Gültige E-Mail-Adresse",
+          postTextOne: "und überprüfen Sie Ihren E-Mail-Posteingang auf den Authentifizierungscode",
+          textTwo: "Verwenden Sie ein anderes Gerät oder einen anderen Browser, um Ihr Konto zu erstellen. Du kannst auch den Cache deines Browsers leeren",
+          textThree: "Überprüfen Sie das Netzwerk in Ihrer Nähe. Wenn das Netzwerk gut ist, laden Sie die Anmeldeseite neu",
+          textFour: "Wenn Sie keinen Authentifizierungscode erhalten, warten Sie bitte 30 Minuten und versuchen Sie es erneut",
+          textFive: "Wenn Sie die ZuriChat-Mobil- oder Desktop-App verwenden, aktualisieren Sie auf die neueste Version oder Sie können",
+          linkFive: "Hier herunterladen"
+        }
+      },
+      support: {
+        headline: "Brauchen Sie noch Hilfe?",
+        preLinkText: "Wenn Sie alle oben genannten Vorschläge ausprobiert haben, aber ohne Erfolg, bitte",
+        linkText: "Kontaktieren Sie den Zuri-Kundendienst",
+        postLinkText: "für Hilfe."
+      }
+    }
   }
 }
