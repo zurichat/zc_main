@@ -5,12 +5,13 @@ import newMsgIcon from "../assets/icons/newMsgIcon.svg"
 import NewInviteModal from "./invite-workflow/newInviteModal/newInviteModal"
 import UserOrganization from "../../../control/src/pages/createworkspace/components/UserOrganization"
 import ModalComponent from "./ModalComponent"
+import themeColors from "../../../theming/themecolors"
 
 const SidebarHeader = props => {
   //home modal
-  const [homeModal, toggleHomeModal] = useState(true)
+  const [homeModal, toggleHomeModal] = useState(false)
 
-  const [openModal, setOpenModal] = useState(true)
+  const [openModal, setOpenModal] = useState(false)
 
   //toggle
   const toggle = () => {
@@ -22,10 +23,19 @@ const SidebarHeader = props => {
     setOpenModal(!openModal)
   }
 
+  
+  // const theme = localStorage.getItem("theme")
+  // if (theme !== null || theme !== "") {
+  //   const sideBarHeader = document.getElementsByClassName("sidebar-header-div")
+  //   sideBarHeader[0].style.backgroundColor = themeColors[theme].secondary
+  // } else {
+  //   const sideBarHeader = document.getElementsByClassName("sidebar-header-div")
+  //   sideBarHeader[0].style.backgroundColor = "#00b87c"
+  // }
   return (
-    <div className={`${styles.subCon1}`}>
+    <div className={` ${styles.subCon1}`}>
       <div className={`row ${styles.orgDiv}`}>
-        <div className={`col-12 px-3 ${styles.orgInfo}`}>
+        <div className={`col-12 px-3 sidebar-header-div ${styles.orgInfo}`}>
           <div
             onClick={() => toggle()}
             className={`row p-0 ${styles.orgHeader}`}
