@@ -123,7 +123,7 @@ const App = () => {
           <Search />
         </Route>
         <Route path='/createBlog'>
-          {/* <CreateBlog /> */}
+          <CreateBlog />
         </Route>
         <Route path='/blog/:title'>
           <BlogDetails />
