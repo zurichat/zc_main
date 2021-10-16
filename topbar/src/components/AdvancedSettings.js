@@ -289,12 +289,12 @@ const AdvancedSettings = () => {
             Send me occassional survey via Zurichat bot
           </div>
         </div>
-        <div className={standardStyles.labelContainer}>
+        {/* <div className={standardStyles.labelContainer}>
           <div className={styles.alonetext}>
             We’re working to make Zurichat better. We’d love to hear your
             thoughts
           </div>
-        </div>
+        </div> */}
         <div className={standardStyles.labelContainer}>
           <input
             type="checkbox"

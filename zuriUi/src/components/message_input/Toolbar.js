@@ -13,7 +13,12 @@ import Send from "./assets/comments/send.svg"
 import AtSign from "./assets/comments/at-sign.svg"
 import Google from "./assets/comments/google.svg"
 import Computer from "./assets/comments/computer.svg"
-import "./ToolbarStyles.css"
+import "./emojiStyles.js"
+import {
+  GlobalStyleForEmojiSelect,
+  StyledEmojiSelectWrapper
+} from "./emojiStyles"
+
 
 const BoldIcon = () => <img src={Bold} alt="" />
 const ItalicIcon = () => <img src={Italic} alt="" />
@@ -193,7 +198,12 @@ const Toolbar = props => {
         <UnstyledButton>
           <AtIcon />
         </UnstyledButton>
-        {emojiSelect}
+        {
+          <StyledEmojiSelectWrapper>
+            <GlobalStyleForEmojiSelect />
+            {emojiSelect}
+          </StyledEmojiSelectWrapper>
+        }
         <UnstyledButton onClick={() => setshowAttachInputBox(true)}>
           <ClipIcon />
         </UnstyledButton>

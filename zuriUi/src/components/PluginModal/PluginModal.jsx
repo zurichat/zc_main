@@ -226,9 +226,9 @@ function MembersPanel({ config }) {
         })
         setUserList(users)
       })
-      .catch(e => console.log("Organization not returning members", e))
+      .catch(/*e => console.log("Organization not returning members", e)*/);
     setisLoading(true)
-  }, [])
+  }, []);
 
   return (
     <div>
