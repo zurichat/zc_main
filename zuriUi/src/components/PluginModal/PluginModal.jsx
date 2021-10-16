@@ -548,6 +548,7 @@ const Buttons = styled.button`
 `
 const RemoveLink = styled.p`
   color: blue;
+
   &:hover {
     text-decoration: underline;
   }
