@@ -11,21 +11,39 @@ const Themes = () => {
   const [DataState, setDataState] = useState({})
 
   const toggleDarkMode = () => {
+    localStorage.setItem("mode", "dark")
     setDarkMode(!darkMode ? true : true)
     setMode("dark")
+    const sideBar =document.getElementById("single-spa-application:@zuri/sidebar")
+    sideBar.setAttribute("data-theme", "dark")
+    const topBar = document.getElementById("single-spa-application:@zuri/topbar")
+    topBar.setAttribute("data-theme", "dark")
+    const PrefMenu= document.getElementById("preferences-menu-container")
+    PrefMenu.setAttribute("data-theme", "dark")
+    const PrefMainBox= document.getElementById("preferences-main-box")
+    PrefMainBox.setAttribute("data-theme", "dark")
   }
   const toggleLightMode = () => {
+    localStorage.setItem("mode", "light")
     setDarkMode(darkMode ? false : false)
     setMode("light")
+    const sideBar =document.getElementById("single-spa-application:@zuri/sidebar")
+    sideBar.setAttribute("data-theme", "light")
+    const topBar = document.getElementById("single-spa-application:@zuri/topbar")
+    topBar.setAttribute("data-theme", "light")
+    const PrefMenu= document.getElementById("preferences-menu-container")
+    PrefMenu.setAttribute("data-theme", "light")
+    const PrefMainBox= document.getElementById("preferences-main-box")
+    PrefMainBox.setAttribute("data-theme", "light")
   }
 
-  useEffect(() => {
-    if (mode === "dark") {
-      localStorage.setItem("mode", "dark")
-    } else {
-      localStorage.setItem("mode", "light")
-    }
-  }, [mode])
+  // useEffect(() => {
+  //   if (mode === "dark") {
+  //     localStorage.setItem("mode", "dark")
+  //   } else {
+  //     localStorage.setItem("mode", "light")
+  //   }
+  // }, [mode])
 
   // const [mode, setMode] = useState(() => localStorage.getItem('mode'))
 
@@ -53,7 +71,7 @@ const Themes = () => {
   // })
 
   return (
-    <div className={styles.themeCont} data-theme={darkMode ? "dark" : "light"}>
+    <div className={styles.themeCont} /*data-theme={darkMode ? "dark" : "light"}*/>
       <div className={styles.title}>
         <div className={styles.them}>Themes</div>
         <div className={styles.text}>
