@@ -1,5 +1,5 @@
 .marketplace {
-  /* background: var(--bg-color); */
+  background: #ffffff;
   min-height: 100vh;
   font-size: 15px;
 }
@@ -13,22 +13,22 @@
 
 .marketplaceSearchBar {
   width: 50%;
-  height: 45px;
-  background: #fafafa;
-  border: 1px solid rgba(187, 186, 231, 0.15);
+  height: 45px;    
+  background: #e5e5e5;
+  border: 1px solid #616061;
   box-sizing: border-box;
   border-radius: 2px;
   display: grid;
-  grid-template-columns: auto 1fr;
-  padding: 8px 5px 8px 15px;
+  grid-template-columns: 80% 20%;
   place-content: center;
+  margin-top: 10px;
 }
 
 .marketplaceSearchBar input {
   border: 0;
   background-color: transparent;
   outline: none;
-  width: calc(100% - 10px);
+  width: 95%;
   height: 100%;
   margin-left: 10px;
   font-size: 14px;
@@ -92,10 +92,12 @@
 }
 
 .marketplaceHero {
-  min-height: 50vh;
+  height: fit-content;
+  background: #e5e5e5;
   display: flex;
-  max-width: 95%;
-  margin: 0 auto;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
   padding-left: 1.5rem;
   font-family: "Lato", sans-serif;
 }
@@ -137,7 +139,6 @@
   line-height: 20px;
   color: #ffffff;
   text-decoration: none;
-  margin-left: 15px;
 }
 
 .marketplaceHeroButton:hover,
@@ -276,8 +277,8 @@
 }
 
 .marketPlaceContainer {
-  /* background: var(--bg-color); */
-  padding-top: 50px;
+  background: #e5e5e5;
+  padding-top: 20px;
 }
 
 .marketplaceContainerMain {
@@ -598,7 +599,6 @@
   .marketplaceHero {
     font-size: 16px;
     margin: 0;
-    padding-top: 4.1rem;
   }
   .marketplaceHero h1 {
     font-size: 30px;
@@ -612,7 +612,7 @@
     width: 95%;
   }
   .marketplaceHeroButton {
-    width: 20%;
+    width: 100%;
   }
   .zuriMarketPlace__container {
     display: flex;
@@ -670,7 +670,8 @@
     padding-left: 0;
   }
   .marketplaceSearchBar {
-    width: 70%;
+    width: 80%;
+    grid-template-columns: 70% 30%;
   }
   .accountOwnerAvatar {
     margin-top: 1rem;
