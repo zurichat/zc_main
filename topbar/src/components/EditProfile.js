@@ -258,7 +258,7 @@ const EditProfile = () => {
                 <TimezoneSelect
                   value={selectedTimezone}
                   onChange={setSelectedTimezone}
-                  className="col-12 time__zone"
+                  className="col-12"
                 />
               </div>
               {/* <div className="input-group">

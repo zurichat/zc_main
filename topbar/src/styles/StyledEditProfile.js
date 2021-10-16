@@ -106,9 +106,11 @@ export const StyledProfileWrapper = styled.section`
           display: block;
         }
         .input,
-        select,
+        /*select*/
+        .phone-container,
         .textarea,
         .phoneInput,
+        .css-1s2u09g-control,
         .css-2b097c-container {
           width: 100%;
           border: 1px solid #a1a1a1;
@@ -120,7 +122,8 @@ export const StyledProfileWrapper = styled.section`
           border-top-left-radius: 5px !important;
           border-bottom-left-radius: 5px !important;
           &:hover,
-          &:focus {
+          &:focus,
+          &:active {
             border: 1px solid #00b87c;
             transition: border 0.25s ease-in-out;
           }
@@ -149,6 +152,13 @@ export const StyledProfileWrapper = styled.section`
             border: none;
             height: 100%;
           }
+        }
+        .css-7pwich-Input,
+        .css-319lph-ValueContainer {
+          padding: 0 1rem;
+        }
+        .css-1s2u09g-control {
+          font-size: 1rem;
         }
         .textarea {
           height: 6.125rem;
