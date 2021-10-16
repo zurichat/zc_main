@@ -297,7 +297,6 @@ export const TRANSLATIONS_EN = {
             headline: "Frameworks",
             post_headline: "During the program we will be exploring several useful frameworks to give you an edge in the industry and help you develop complex applications much faster."
           }
-
         },
         join_cohort: "Be a part of our next cohort starting summer of 2022",
         register_now: "Register Now"
