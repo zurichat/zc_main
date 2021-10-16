@@ -84,7 +84,11 @@ const Sidebar = props => {
         })
       } else {
         const categoryData = Object.keys(props.state.sidebar[key]).map(
-          k => props.state.sidebar[key][k]
+          k => {
+            const data = props.state.sidebar[key][k]
+            data.baseUrl = `https://${k}`
+            return data
+          }
         )
 
         categorizedItems.push(
