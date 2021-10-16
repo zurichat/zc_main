@@ -33,14 +33,14 @@ export default function VerifyResetCode() {
   }
 
   const { t } = useTranslation();
-  
+
   return (
     <Overlay>
       <Content>
         {!success ? (
           <div>
             <h1 style={{ textAlign: "center" }}>
-              Enter the reset code sent to your mail
+             {t("verifyCodeOnPasswordReset.header")}
             </h1>
             <CodeInput
               length={6}
@@ -52,12 +52,12 @@ export default function VerifyResetCode() {
         ) : (
           <Successdiv style={{ textAlign: "center" }}>
             <img src={okayimage} alt="zurichat logo" className={styles.img} />
-            <h2>Reset Code Verification Successful!</h2>
-            <p>Click on the Button to continue</p>
+            <h2>{t("verifyCodeOnPasswordReset.success.headline")}</h2>
+            <p>{t("verifyCodeOnPasswordReset.success.post_headline")}</p>
             <Button
               onClick={() => history.push(`/change-password?code=${code}`)}
             >
-              Continue
+              {t("verifyCodeOnPasswordReset.success.continueButton")}
             </Button>
           </Successdiv>
         )}
