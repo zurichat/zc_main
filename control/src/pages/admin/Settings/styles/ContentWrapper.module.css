@@ -1,0 +1,136 @@
+.container {
+  width: 90%;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.contentHeading h1 {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  letter-spacing: -1px;
+}
+
+.contentHeading p {
+  font-size: 18px;
+}
+
+.contentHeading span {
+  cursor: pointer;
+  color: #00b87c;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.contentHeading span:hover {
+  border-bottom: 1px solid #00b87c;
+}
+
+.tabWrapper {
+  width: 100%;
+}
+
+.tabHeader,
+.tabHeaderActive {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.mobileToggle {
+  display: none;
+}
+
+.tabHeaderItem,
+.tabHeaderItemActive {
+  padding: 1.5% 2.5%;
+  border-radius: 4px 4px 0px 0px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  margin-bottom: -1px;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.tabHeaderItemActive {
+  background: #fff;
+  border: 1px solid #dadada;
+  border-bottom: none;
+  color: #00b87c;
+  transition: all 0.2s;
+}
+
+.tabHeaderItem:hover {
+  text-decoration-color: #000;
+  text-decoration-line: underline;
+}
+
+.tabContents {
+  min-height: 300px;
+  background: #fff;
+  border-radius: 0px 4px 4px 4px;
+  border: 1px solid #dadada;
+  border-top: none;
+  padding: 2.5rem;
+  margin-bottom: 5rem;
+}
+
+@media (max-width: 1246px) {
+  .tabHeaderItem,
+  .tabHeaderItemActive {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 910px) {
+  .tabHeader,
+  .tabHeaderActive {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    background: #fff;
+  }
+
+  .tabHeaderActive {
+    display: flex;
+    margin: 0 1px;
+  }
+
+  .tabContents {
+    margin-top: 3px;
+    width: 100%;
+  }
+
+  .tabHeaderItem,
+  .tabHeaderItemActive {
+    width: 100%;
+    text-align: left;
+    border: none;
+  }
+
+  .tabHeaderItem:hover,
+  .tabHeaderItemActive:hover {
+    border-bottom: none;
+    color: #00b87c;
+  }
+
+  .mobileToggle {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid #dadada;
+    border-radius: 4px 4px 0 0;
+    cursor: pointer;
+    margin-bottom: 2px;
+  }
+
+  .menuIcon {
+    font-size: 1.5rem;
+    color: #00b87c;
+  }
+}
