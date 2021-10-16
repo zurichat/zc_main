@@ -23,9 +23,3 @@
   align-items: center;
   gap: 1rem;
 }
-
-@media (max-width: 500px) {
-  .contentHeading{
-    font-size: 1.8rem;
-  }
-}

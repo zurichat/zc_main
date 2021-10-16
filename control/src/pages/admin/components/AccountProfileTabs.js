@@ -4,7 +4,6 @@ import styles from "../styles/aboutWorkspaceTab.module.css"
 
 // components
 import SettingsTab from "../../settings/components/SettingsTab"
-import NotificationTab from "../../settings/components/NotificationTab"
 
 // icons
 import { FiMenu } from "react-icons/fi"
@@ -68,15 +67,7 @@ const AccountsProfileTabs = () => {
               openTab={openTab}
             />
           )}
-          {active === 2 && (
-            <NotificationTab 
-              setActive={setActive}
-              setOpenTab={setOpenTab}
-              openTab={openTab}
-            />
-          )}
         </div>
-        
       </div>
     </CardProvider>
   )
