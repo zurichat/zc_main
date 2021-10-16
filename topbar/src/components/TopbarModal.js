@@ -153,8 +153,8 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
       userAppearance = "Set yourself as active"
       toggleAppearance = (
         <div className={styles.online}>
-          <div className={styles.awayCircle} />
-          <p className={styles.away}>Away </p>
+          <span className={styles.awayCircle} />
+          <span className={styles.away}>Away </span>
         </div>
       )
   }
@@ -239,10 +239,17 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
               onMouseLeave={() => setHoverState(false)}
             >
               <div className={styles.emoji}>
-                {user?.status?.tag || (
-                  <img src={smile} className={styles.defalutEmoji} />
+                {hoverState ? (
+                  <div>😃</div>
+                ) : (
+                  <>
+                    {user?.status?.tag || (
+                      <img src={smile} className={styles.defalutEmoji} />
+                    )}
+                  </>
                 )}
               </div>
+
               <div className={styles.statusContent}>
                 {!(user?.status?.text || user?.status?.tag)
                   ? "Update your Status"
