@@ -150,14 +150,26 @@
 .datetime {
   display: grid;
   grid-template-columns: 1.7fr 1fr;
-  gap: 1rem;
+  column-gap: 1rem;
 }
 
-.datetime input {
+.date,
+.time {
   border: 1px solid #e5e5e5;
   padding: 0.5rem;
   border-radius: 4px;
   outline: none;
+}
+.timeError {
+  border: 1px solid red;
+  padding: 0.5rem;
+  border-radius: 4px;
+  outline: none;
+}
+.errorMess {
+  color: red;
+  grid-column: 2/-1;
+  font-size: 0.9rem;
 }
 .input:focus {
   outline: none;
