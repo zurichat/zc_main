@@ -15,8 +15,8 @@ import { ProfileContext } from "../context/ProfileModal"
 import { TopbarContext } from "../context/Topbar"
 import { StyledEmojiWrapper } from "../styles/EmojiMartStyle"
 import { FaRegTimesCircle } from "react-icons/fa"
-import DefaultStatus from "./DefaultStatus"
 
+import DefaultStatus from "./DefaultStatus"
 // const SetDateAndTime = ({ dateTime, setDateTime }) => {
 //   const [value, onChange] = useState(new Date())
 //   const [timevalue, timeChange] = useState("10:00")
@@ -57,7 +57,7 @@ const SetStatusModal = ({
   emojiItem,
   text,
   setText,
-  setEmoji,
+  setEmoji
 }) => {
   const [chosenStatus, setChosenStatus] = useState({})
   const [dropdown, setDropdown] = useState(false)
@@ -240,7 +240,13 @@ const SetStatusModal = ({
           />
         </div>
         <div style={{ position: "relative" }}>
-          <div className={statusEmoji === "" && statusText === "" ? styles.emoji: styles.emojipush}>
+          <div
+            className={
+              statusEmoji === "" && statusText === ""
+                ? styles.emoji
+                : styles.emojipush
+            }
+          >
             <StyledEmojiWrapper>
               {openEmoji ? (
                 <Picker
