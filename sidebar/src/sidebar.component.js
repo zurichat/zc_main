@@ -121,7 +121,7 @@ const Sidebar = props => {
          <Room name="Plugins" image={pluginIcon} />*/}
           {/* SIDE BAR DATA */}
           <SingleRoom name="Threads" image={threadIcon} />
-          <SingleRoom name="All Dms" image={dmIcon} />
+          <SingleRoom name="All Dms" image={dmIcon} link="/dm" />
           <SingleRoom name="Drafts" image={draftIcon} />
 
           <SingleRoom name="Plugins" image={pluginIcon} link="/marketplace" />
