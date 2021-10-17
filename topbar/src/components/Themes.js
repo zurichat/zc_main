@@ -192,7 +192,7 @@ const Themes = () => {
         <div className={styles.true}>Tried and true</div>
       </div>
       <div className={styles.set1}>
-        <div className={styles.activeAsh} onClick={handleThemeToggle.bind(this, "activeAsh")}>
+        <div className={styles.activeAsh} >
           <div className={styles.largeRec}>
             <div className={styles.large}></div>
           </div>
@@ -218,7 +218,7 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent}>
-            <div className={styles.radio8} >
+            <div className={styles.radio8} onClick={handleThemeToggle.bind(this, "activeAsh")}>
               <input
                 name="theme"
                 type="radio"
@@ -232,7 +232,7 @@ const Themes = () => {
             <div className={styles.ash}>Active Ash</div>
           </div>
         </div>
-        <div className={styles.activeAsh2} onClick={handleThemeToggle.bind(this, "peakyPurple")}>
+        <div className={styles.activeAsh2} >
           <div className={styles.largeRec2}>
             <div className={styles.large}></div>
           </div>
@@ -258,7 +258,7 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent2}>
-            <div className={styles.radio9}>
+            <div className={styles.radio9} onClick={handleThemeToggle.bind(this, "peakyPurple")}>
               <input
                 name="theme"
                 type="radio"
@@ -523,6 +523,8 @@ const Themes = () => {
             <div className={styles.ash8}>Canary</div>
           </div>
         </div>
+        <p className={styles.create} onClick={handleThemeToggle.bind(this,"white")}>Restore theme to default(white)</p>
+        <br/>
       </div>
     </div>
   )
