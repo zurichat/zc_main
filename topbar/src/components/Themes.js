@@ -196,7 +196,7 @@ const Themes = () => {
         <div className={styles.defaultt} onClick={HandleDefault(this,"white")}>
           Restore theme to default(white)</div>
         <br/>
-        <div className={styles.custom2}>adventurous?</div>
+        <div className={styles.custom2}>Adventurous?</div>
         <div className={styles.create}>Select Your Custom Theme</div>
         <div className={styles.true}>Tried and true</div>
       </div>
