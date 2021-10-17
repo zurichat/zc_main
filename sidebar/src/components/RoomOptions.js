@@ -9,14 +9,18 @@ const RoomOptions = ({ isClicked, position, room, baseUrl }) => {
   const orgs = JSON.parse(sessionStorage.getItem("organisations"))
   const member_id = orgs.filter(x => x.id == org)[0].member_id
 
-  const [starred, setStarred] = useState(false)
-
   //  axios
   // .("https://api.zuri.chat/auth/login", {
 
   // })
   const starRoomClicked = () => {
     console.warn(room_Id, baseUrl, org, member_id)
+    axios
+      .put(
+        `${baseUrl}/api/v1/org/${org}/rooms/${room_Id}/members/${member_id}/star`
+      )
+      .then(res => console.warn(res, "started room"))
+      .catch(err => console.warn(err))
   }
 
   let screenHeight = window.innerHeight / 2
@@ -24,20 +28,19 @@ const RoomOptions = ({ isClicked, position, room, baseUrl }) => {
   let menuPosition =
     position.y > screenHeight
       ? {
-          top: `${position.y - 250}px`,
-          left: `${position.x + 5}px`
-        }
+        top: `${position.y - 250}px`,
+        left: `${position.x + 5}px`
+      }
       : {
-          top: `${position.y}px`,
+        top: `${position.y}px`,
 
-          left: `${position.x + 5}px`
-        }
+        left: `${position.x + 5}px`
+      }
 
   return (
     <section
-      className={`${
-        isClicked ? styles.openmodalOptionsCon : styles.modalOptionsCon
-      }`}
+      className={`${isClicked ? styles.openmodalOptionsCon : styles.modalOptionsCon
+        }`}
       style={menuPosition}
     >
       <div className={`d-flex flex-column  ${styles.modalSection}`}>
