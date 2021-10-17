@@ -146,15 +146,15 @@ const HeaderSearchSuggestion = () => {
               <button
                 className={`btn ${headerStyles.select}`}
                 value="zh"
-                onClick={() => saveLang("zh")}
+                onClick={() => saveLang("zh-CN")}
               >
                 <img
                   className={headerStyles.country_logo}
                   src={zh}
                   alt="Chinese"
-                  title="sse"
+                  title="Chinese"
                 />{" "}
-                <span>Chinese</span>
+                <span>简体中文</span>
               </button>
               <button
                 className={`btn ${headerStyles.select}`}
@@ -396,15 +396,15 @@ const HeaderSearchSuggestion = () => {
               <button
                 className={`btn ${headerStyles.select}`}
                 value="zh"
-                onClick={() => saveLang("zh")}
+                onClick={() => saveLang("zh-CN")}
               >
                 <img
                   className={headerStyles.country_logo}
                   src={zh}
                   alt="Chinese"
-                  title="sse"
+                  title="Chinese"
                 />{" "}
-                <span>Chinese</span>
+                <span>简体中文</span>
               </button>
               <button
                 className={`btn ${headerStyles.select}`}
