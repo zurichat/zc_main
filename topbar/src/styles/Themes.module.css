@@ -17,6 +17,7 @@
 
 .themeCont {
     padding-top: 30px;
+    padding-bottom: 50px;
     margin-bottom: 100px;
     padding-left: 40px;
     font-family: sans-serif;
@@ -24,7 +25,7 @@
     background-color: var(--bg-color);
     color: var(--text-color);
     width: var(--width);
-    height: var(--height);
+    /* height: var(--height); */
     overflow-x: hidden;
 }
 
@@ -36,6 +37,7 @@
 .checkbox {
   margin-top: -2px;
   margin-left: 5px;
+  margin-right: 15px;
 }
 
 .os {
@@ -60,13 +62,13 @@
   color: #999999;
   font-size: 15px;
   font-weight: bold;
-  margin-left: -412px;
+  margin-left: -575px;
 }
 
 .text {
   font-size: 14px;
   margin-top: 8px;
-  margin-left: -90px;
+  margin-left: -252px;
   font-weight: 500;
   color: #999999;
   position: relative;
@@ -80,6 +82,7 @@
 .radio {
   margin-top: -2px;
   margin-left: 5px;
+  margin-right: 15px;
 }
 
 .mention {
@@ -93,18 +96,7 @@
 }
 
 .text2 {
-  margin-left: -107px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 10px;
-  color: #999999;
-  font-style: normal;
-  position: relative;
-  margin-top: 10px;
-}
-
-.texti2 {
-  margin-left: -350px;
+  margin-left: -162px;
   font-size: 14px;
   font-weight: 500;
   line-height: 10px;
@@ -127,7 +119,7 @@
 
 .customize {
   margin-top: 15px;
-  margin-left: 70px;
+  margin-left: -26px;
   width: 90%;
   width: 115%;
 }
@@ -136,7 +128,7 @@
   border: 1px solid rgba(153, 153, 153, 0.5);
   margin-top: 18px;
   margin-left: 5px;
-  width: 93%;
+  width: 80%;
 }
 
 .text3 {
@@ -208,7 +200,7 @@
 .all {
   display: flex;
   margin-top: 13px;
-  margin-left: 7px;
+  margin-left: 14px;
 }
 
 .show {
@@ -232,7 +224,7 @@
   line-height: 20px;
   font-style: normal;
   color: #999999;
-  margin-left: -352px;
+  margin-left: -505px;
 }
 
 .set2 {
@@ -323,7 +315,7 @@
 .img {
   border: 1px solid #00b87c;
   height: 110px;
-  width: 418px;
+  width: 500px;
   margin-top: 23px;
   margin-left: 5px;
   border-radius: 4px;
@@ -400,7 +392,7 @@
 .img2 {
   border: 1px solid #00b87c;
   height: 110px;
-  width: 420px;
+  width: 500px;
   margin-top: 23px;
   margin-left: 5px;
   border-radius: 4px;
@@ -1559,16 +1551,3 @@
 }
 
 
-.defaultt{
-  font-size: 14px;
-  color: #00b87c;
-  font-weight: 600;
-  margin-top: 12px;
-  line-height: 20px;
-  font-style: normal;
-  margin-left: -528px;
-}
-
-.defaultt:hover{
-cursor: pointer;
-}
