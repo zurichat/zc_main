@@ -99,7 +99,7 @@ const Themes = () => {
           Change the appearance of Slack across all of your workspaces.
         </div>
       </div>
-      <div className={styles.sync}>
+      {/* <div className={styles.sync}>
         <div className={styles.checkbox}>
           <input
             type="checkbox"
@@ -126,11 +126,10 @@ const Themes = () => {
         <div className={styles.mention}>
           Direct messages, mentions &amp; network
         </div>
-      </div>
+      </div> */}
       <div className={styles.text2}>
-        Automatically switch between light and dark themes when
+        Automatically switch between light and dark themes when your system does.
       </div>
-      <div className={styles.texti2}>your system does.</div>
       <div className={styles.img}>
         <div className={styles.up}>
           <div className={styles.upper}>
@@ -192,7 +191,7 @@ const Themes = () => {
         <div className={styles.true}>Tried and true</div>
       </div>
       <div className={styles.set1}>
-        <div className={styles.activeAsh} onClick={handleThemeToggle.bind(this, "activeAsh")}>
+        <div className={styles.activeAsh} >
           <div className={styles.largeRec}>
             <div className={styles.large}></div>
           </div>
@@ -218,7 +217,7 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent}>
-            <div className={styles.radio8} >
+            <div className={styles.radio8} onClick={handleThemeToggle.bind(this, "activeAsh")}>
               <input
                 name="theme"
                 type="radio"
@@ -232,7 +231,7 @@ const Themes = () => {
             <div className={styles.ash}>Active Ash</div>
           </div>
         </div>
-        <div className={styles.activeAsh2} onClick={handleThemeToggle.bind(this, "peakyPurple")}>
+        <div className={styles.activeAsh2} >
           <div className={styles.largeRec2}>
             <div className={styles.large}></div>
           </div>
@@ -258,7 +257,7 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent2}>
-            <div className={styles.radio9}>
+            <div className={styles.radio9} onClick={handleThemeToggle.bind(this, "peakyPurple")}>
               <input
                 name="theme"
                 type="radio"

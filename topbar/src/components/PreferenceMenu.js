@@ -25,7 +25,7 @@ const PreferenceMenu = () => {
           className={sideBar === 3 ? styles.active : styles.one}
         >
           <AiOutlineEye className={styles.icon} />
-          <p style={{ marginBottom: 0, paddingBottom: 0 }}>Themes</p>
+          <p style={{ marginBottom: 0}}>Themes</p>
         </div>
         <div
           onClick={() => setSideBar(4)}

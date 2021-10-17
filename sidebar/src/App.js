@@ -122,10 +122,11 @@ function reducer(state = { sidebar: {} }, action) {
 export default function App() {
   const [state, dispatch] = useReducer(reducer, {})
   const theme = localStorage.getItem("theme")
-  if (theme !== null || theme !== "") {
+  if (theme !== null && theme !== ""){
     const sideBar = document.getElementById("single-spa-application:@zuri/sidebar")
-    sideBar.style.backgroundColor = themeColors[theme].primary
+    sideBar.style.backgroundColor = themeColors[theme]?.primary
   }
+  
   useEffect(() => {
     //Load user related information when component mounts
     fetchUser(dispatch)

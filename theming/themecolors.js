@@ -1,4 +1,10 @@
 const themeColors = {
+  white: {
+    primary: "#fff",
+    secondary: "#111111",
+    textColor: "#111111"
+  },
+
   activeAsh: {
     primary: "#C4C4C4",
     secondary: "#999999",
@@ -38,15 +44,15 @@ const themeColors = {
   },
 
   goldenMelon:{
-    primary:"#eaed49",
-    secondary:"#676410",
-    textColor:"#aeaeae"
+    primary:"#884310",
+    secondary:"#EB751F",
+    textColor:"#E3CCBB"
   },
 
   canary:{
-    primary:"#eb751f",
-    secondary:"#884310",
-    textColor:"#e3ccbb"
+    primary:"#676410",
+    secondary:"#EAED49",
+    textColor:"#AEAEAE"
   }
 
 

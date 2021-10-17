@@ -388,11 +388,70 @@ export const TRANSLATIONS_EN = {
       title: "Whatever work you do, you can do it in Zuri Chat",
       link_sales: "Talk to sales",
       link_try: "Try it for free"
-    }
+    }   
   },
+  careers: {
+      title: {
+        careers: "Careers"
+      },
+      section_one: {
+        headline: "Careers at Zuri Chat",
+        post_headline: "Passionate about making work life simpler, and more productive? Join our remote-friendly and flexible team.",
+        join_link: "Join Zuri Chat"
+      },
+      career_grid: {
+        headline: "Join Our Internship",
+        post_headline:
+          "Zuri Internship is a 100% free, remote and fast paced training for young professionals seeking to hon their tech skills and boost their resume.",
+        categories: {
+          category_frontend: {
+            headline: "Frontend Development",
+            post_headline: "This track deals with the aspect of your application that the users interact with. A front-end developer will be able to correctly interpret a given design to the user interface."
+          },
+          category_backend: {
+            headline: "Backend Development",
+            post_headline: "This track deals with the aspect of the application the user does not directly interact with. It allows the frontend function either by running some back-end code or connecting to the database."
+          },
+          category_design: {
+            headline: "Design",
+            post_headline: "This track deals with creating a graphic plan for an application. You will learn to convert project documentation into viewable and understandable graphic design for the developers to work with."
+          },
+          category_mobile: {
+            headline: "Mobile Development",
+            post_headline: "The mobile track contains a list of tools and languages needed for a developer to create mobile applications. A mobile application can be IOS or Android."
+          },
+          category_digital_marketing: {
+            headline: "Digital Marketing",
+            post_headline: "It encomprises the use of digital means and utilities to boost discoverability of products, services and brands."
+          },
+          category_frameworks: {
+            headline: "Frameworks",
+            post_headline: "During the program we will be exploring several useful frameworks to give you an edge in the industry and help you develop complex applications much faster."
+          }
 
-  // Login Page
-  login: {
+        },
+        join_cohort: "Be a part of our next cohort starting summer of 2022",
+        register_now: "Register Now"
+      },
+      section_two: {
+        headline: "Working and Thriving",
+        post_headline: "We offer benefits that help you feel your best and do your best.",
+        digital_wellness: {
+          headline: "Digital-First Office",
+          post_headline: "With remote roles, office-free onboarding and flexible working practices, we are set up for ever-changing realities, schedules and responsibilities."
+        },
+        just_for_you: {
+          headline: "Just For You",
+          post_headline: "Receive an annual allowance for professional development, plus a monthly stipend to cover your needs; A new work look, a pet, whatever matters most to you."
+        },
+        health_and_wellness: {
+          headline: "Health and Wellness",
+          post_headline: "Zuri Pays 100% of your premiums. We also offer access to a range of free mental health and well-being resources."
+        }
+      }
+  },
+  auth:{
+    login:{
     title: "Login - Zuri Chat",
     form: {
       header: "Login",
@@ -417,76 +476,109 @@ export const TRANSLATIONS_EN = {
       legacyPolicy: "Legal Policy",
       aboutZuri: "About Zurichat"
     }
-  },
-
-  // Career page
-  careers: {
-    title: {
-      careers: "Careers"
     },
-    section_one: {
-      headline: "Careers at Zuri Chat",
-      post_headline:
-        "Passionate about making work life simpler, and more productive? Join our remote-friendly and flexible team.",
-      join_link: "Join Zuri Chat"
-    },
-    career_grid: {
-      headline: "Join Our Internship",
-      post_headline:
-        "Zuri Internship is a 100% free, remote and fast paced training for young professionals seeking to hon their tech skills and boost their resume.",
-      categories: {
-        category_frontend: {
-          headline: "Frontend Development",
-          post_headline:
-            "This track deals with the aspect of your application that the users interact with. A front-end developer will be able to correctly interpret a given design to the user interface."
-        },
-        category_backend: {
-          headline: "Backend Development",
-          post_headline:
-            "This track deals with the aspect of the application the user does not directly interact with. It allows the frontend function either by running some back-end code or connecting to the database."
-        },
-        category_design: {
-          headline: "Design",
-          post_headline:
-            "This track deals with creating a graphic plan for an application. You will learn to convert project documentation into viewable and understandable graphic design for the developers to work with."
-        },
-        category_mobile: {
-          headline: "Mobile Development",
-          post_headline:
-            "The mobile track contains a list of tools and languages needed for a developer to create mobile applications. A mobile application can be IOS or Android."
-        },
-        category_digital_marketing: {
-          headline: "Digital Marketing",
-          post_headline:
-            "It encomprises the use of digital means and utilities to boost discoverability of products, services and brands."
-        },
-        category_frameworks: {
-          headline: "Frameworks",
-          post_headline:
-            "During the program we will be exploring several useful frameworks to give you an edge in the industry and help you develop complex applications much faster."
+    signup: {
+      title: "Sign Up",
+      form: {
+        header: "Create Account",
+        googleHeader: "Sign up with Google",
+        topLineText: "OR",
+        submitButtonName: "Sign up",
+        bottomLine: "Already have an account?",
+        bottomLink: "Log in",
+        input: {
+          fullName: "Full Name",
+          fullNamePlaceholder: "Enter your Name",
+          emailAddress: "Email Address",
+          emailAddressPlaceholder: "Enter you email address",
+          password: "Password",
+          passwordPlaceholder: "Enter a password",
         }
       },
-      join_cohort: "Be a part of our next cohort starting summer of 2022",
-      register_now: "Register Now"
+      privacyAgreement: "I agree to Zurichat's",
+      termsOfService: "Terms of services",
+      privacy: "Privacy"
     },
-    section_two: {
-      headline: "Working and Thriving",
-      post_headline:
-        "We offer benefits that help you feel your best and do your best.",
-      digital_wellness: {
-        headline: "Digital-First Office",
-        post_headline:
-          "With remote roles, office-free onboarding and flexible working practices, we are set up for ever-changing realities, schedules and responsibilities."
+    passwordreset: {
+      title: "Reset Password",
+      headline: "Get a new password",
+      post_headline: "Enter the email address you registered with and a reset code will be sent to your email.",
+      form:{
+        emailAddress: "Email Address",
+        continueButton: "Continue"
+      }   
+    },
+    newPassword: {
+      header: "Recover Password",
+      post_headline: "Create a new password for your account",
+      form: {
+        password: "Password",
+        passwordPlaceholder: "Enter your new password",
+        confirmPassword: "Confirm Password",
+        confirmPasswordPlaceholder: "Confirm your new password",
+        continueButton: "Continue"
+      }
+    },
+    verifyCodeOnPasswordReset: {
+      header: "Enter the reset code sent to your mail",
+      success: {
+        headline: "Reset Code Verification Successful!",
+        post_headline: "Click on the Button to continue",
+        continueButton: "Continue"
+      }
+    },
+    passwordResetSuccess: {
+      headline: "Passwowrd Reset Successful!",
+      post_headline: "Your password reset was succesful! you can proceed to login now",
+      button: "Continue to login"
+    },
+    signout:{
+      title: "Sign Out",
+      preOrgText: "Signed out of Team",
+      workspace: "Workspace",
+      signoutMessage: {
+        preOrgText: "You have been signed out of Team"
       },
-      just_for_you: {
-        headline: "Just For You",
-        post_headline:
-          "Receive an annual allowance for professional development, plus a monthly stipend to cover your needs; A new work look, a pet, whatever matters most to you."
+      loginText: "Login",
+      postLoginText: "to another workspace"
+    },
+    onboardingHelp:{
+      title: "Troubleshooting Problems",
+      backToHome: "Back to Home",
+      loginHelp:{
+        headline: "Troubleshooting problems signing into ZuriChat",
+        post_headline: "If are having problem signing into your account, the following might help you.",
+        list: {
+          textOne: "Check if you're using correct email address and password to login. If you think your account might have been compromised",
+          linkOne: "click here to reset your password",
+          textTwo: "Are you using the latest version of ZuriChat mobile or desktop app? Kindly check the current version of your apps. If you're not sure of which version you're using, try",
+          linkTwo: "updating or downloading the app",
+          textThree: "If the same trouble still persists, kindly uninstall the app, clear your mobile phone's cache and install again.",
+          textFour: "If you're using a browser, you might have used a wrong password from autocomplete suggestions. We advise you type your ZuriChat email address and password manually again",
+          textFive: "If all methods above doesn't work, try a new browser or try signing in on incognito mode",
+          textSix: "Do you have an account with us? If you don't have an account here, you won't be able to login. Go to",
+          linkSix: "to create an account"
+        }    
       },
-      health_and_wellness: {
-        headline: "Health and Wellness",
-        post_headline:
-          "Zuri Pays 100% of your premiums. We also offer access to a range of free mental health and well-being resources."
+      signUpHelp: {
+        headline: "Unable to Create an Account?",
+        post_headline: "Okay, if you have problem creating an account, try the suggestions below",
+        list: {
+          preTextOne: "Ensure you're using a",
+          strongText: "Valid email address",
+          postTextOne: "and check your email inbox for the authentication code",
+          textTwo: "Use another device or browser to create your account. You can as well clear your browser's cache",
+          textThree: "Check the network in your area. If the network is good, reload the sign-up page",
+          textFour: "If you're not receiving authentication code, kindly wait for 30 minutes and try again",
+          textFive: "If you're using ZuriChat mobile or desktop app, update to the latest version or you can",
+          linkFive: "download here"
+        }
+      },
+      support: {
+        headline: "Do you still need help?",
+        preLinkText: "If you've tried all the suggestions above but to no avail, kindly",
+        linkText: "contact Zuri Customer Service",
+        postLinkText: "for help."
       }
     }
   },
@@ -643,5 +735,5 @@ export const TRANSLATIONS_EN = {
       err_msg: "Oops something went wrong! Go to",
       err_link: "zuri.chat"
     }
-  }
+  }  
 }
