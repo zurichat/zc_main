@@ -1,0 +1,404 @@
+.ProfileContainer {
+    min-width: 16rem;
+    height: calc(100vh - 2.9em);
+    background: #fff;
+    position: fixed;
+    right: 0;
+    top: 2.9em;
+    border-left: #f6f6f6 1px solid;
+    z-index: 10000;
+    overflow-y: scroll;
+  }
+  .ProfileContainer::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .containerNone {
+    display: none;
+  }
+  
+  .header {
+    width: 100%;
+    height: 44px;
+    z-index: 40;
+    top: 0;
+    left: 0;
+    position: sticky;
+    background: #00b87c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+  
+  .title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  
+  .closeIcon {
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .closeIcon path {
+    fill: #fff;
+    cursor: pointer;
+  }
+  
+  .content {
+    padding: 20px;
+    background: var(--bg-color);
+  }
+  
+  .userAvatar {
+    display: flex;
+    align-self: center;
+    margin: 0 auto;
+    width: 18rem;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .userDetails {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .userDetails .h3user {
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #242424;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+  }
+  
+  .userDetails h3 span {
+    width: 1rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1692f1;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 900;
+    border-radius: 1px;
+    margin-left: 0.5rem;
+  }
+  
+  .mobileBackButton {
+    display: none;
+  }
+  
+  .userDetails p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #3a3a3a;
+    text-align: center;
+    padding: 0;
+  }
+  
+  .userDetails small {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #3a3a3a;
+    margin-top: 0.6rem;
+  }
+  
+  .buttonGroups {
+    position: relative;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .buttonGroups button {
+    background: #f6f6f6;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+  
+    border-radius: 50%;
+    font-weight: 700;
+    border: none;
+  }
+  .ctaText {
+    font-size: 12px;
+    color: rgb(128, 126, 126);
+    text-align: center;
+  }
+  .buttonGroups button:hover {
+    background: #00b87c;
+  }
+  .ctaButtonIcon {
+    color: rgb(126, 123, 123);
+  }
+  .buttonGroups button:hover .ctaButtonIcon {
+    color: #fff;
+  }
+  
+  .moreInfo {
+    text-align: left;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .infoTitle {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-color-normal);
+    margin-bottom: 0.1rem;
+  }
+  .infoTitle a {
+    margin: 0;
+  }
+  .infoContent,
+  .infoLink {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-color-gray-1);
+  }
+  
+  .social {
+    display: flex;
+    align-items: center;
+    margin-top: 1.4rem;
+    margin-bottom: 3rem;
+  }
+  
+  .icons {
+    cursor: pointer;
+    margin-right: 0.8rem;
+  }
+  
+  .icons img {
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  .profileDropDown {
+    text-align: left;
+    position: absolute;
+    top: 30%;
+    right: 16px;
+    width: 227px;
+    background: #ffffff;
+    border: 1px solid #bebebe;
+    border-radius: 10px;
+  }
+  
+  .topSection {
+    padding: 1.5rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0;
+  }
+  
+  .bottomSection {
+    border-top: 1px solid #bebebe;
+    padding: 1.5rem;
+    padding-bottom: 0.7rem;
+    padding-top: 1rem;
+  }
+  
+  .paragraph {
+    padding: 0;
+    margin: 0;
+    padding-bottom: 1rem;
+    cursor: pointer;
+  }
+  
+  .paragraphNull {
+    padding: 0;
+    margin: 0;
+    padding-bottom: 0.3rem;
+    cursor: pointer;
+  }
+  
+  .small {
+    font-size: 10px;
+    color: #999;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  
+  .buttonGroupsMobile {
+    display: none;
+  }
+  
+  .mobile {
+    display: none;
+  }
+  .h3users {
+    margin-right: -1em;
+    margin-top: 7px;
+    cursor: pointer;
+    outline: none;
+    color: var(--text-color-bold);
+    font-size: 17px;
+    border: 0;
+    padding-left: 5px;
+    padding-bottom: 10px;
+    position: absolute;
+    /* left: 15px; */
+    right: 70px;
+    /* top: 108px; */
+    background: none;
+    transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  .myp {
+    margin: 7px 1px 10px !important;
+    position: relative;
+    top: 25px;
+  }
+  
+  @media (max-width: 768px) {
+    .ProfileContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      height: 100vh;
+      margin-top: 5px;
+      overflow-y: auto;
+      border-radius: 8px 8px 0px 0px;
+    }
+  
+    /* .header {
+      display: none;
+    } */
+  
+    .content {
+      padding: 10px;
+    }
+  
+    .buttonGroups {
+      display: none;
+    }
+  
+    .buttonGroupsMobile {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem 0.6rem;
+    } 
+  
+    .buttonGroupsMobile button {
+      width: 100%;
+      height: 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid #00b87c;
+      background: none;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #00b87c;
+      border-radius: 4px;
+    }
+  
+    .settingsLink {
+      position: fixed;
+      bottom: 2rem;
+      right: 1rem;
+      width: 3rem;
+      height: 3rem;
+      background: #00b87c;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .iconSettings {
+      font-size: 2rem;
+      color: #fff;
+    }
+  
+    .buttonGroupsMobile button.editProfileBtn {
+      margin: 0 1rem;
+    }
+  
+    .buttonGroupsMobile button:hover {
+      background: #00b87c;
+      color: #fff;
+    }
+  
+    .moreInfo {
+      text-align: left;
+      margin: 0 0.6rem;
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #999;
+    }
+  
+    .mobile {
+      display: block;
+    }
+  
+    .infoTitle {
+      font-size: 15px;
+      margin-bottom: 0.2rem;
+      color: #999;
+    }
+  
+    .infoContent,
+    .infoLink {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+  
+    .infoContent span {
+      background: #2f80ed;
+      padding: 0.15rem 0.3rem;
+      color: #fff;
+      border-radius: 0.3rem;
+      font-size: 0.8rem;
+    }
+  
+    .social {
+      margin-left: 4px;
+    }
+  
+    .mobileBackButton {
+      position: fixed;
+      top: 1.5rem;
+      left: 1rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      z-index: 10001;
+    }
+  
+    .mobileBackButton path {
+      stroke: #000;
+      stroke-width: 2px;
+    }
+  
+    .userDetailed {
+      display: none;
+    }
+    .userAvatar {
+      display: flex;
+      align-self: center;
+      margin: 0 auto;
+      width: 80%;
+      height: 23rem;
+      /* object-fit: contain; */
+    }
+  
+    .editProfileBtn2 {
+      margin: 0;
+      margin-left: 1rem;
+    }
+  }
