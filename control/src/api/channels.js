@@ -3,25 +3,26 @@ import { GetUserInfo } from '../zuri-control'
 
 const channelApi = `https://channels.zuri.chat/api/v1`
 
-export const createDefaultChannel = (org_id, title = 'General') => {
+export const createDefaultChannel = (org_id, title = 'General', member_id) => {
   const user = JSON.parse(sessionStorage.getItem('user'))
 
   if (!user) return 'NO USER LOGGED IN'
 
   GetUserInfo().then(res => {
-    const userData = JSON.parse(localStorage.getItem('userData'))
-    const memberId = userData._id
+    // const memberId = res[0]._id
     const { token } = user
+    const userEmail = res[0].email
     const config = { headers: { "Content-type": "application/json" , Authorization: `Bearer ${token}` } }
-    
 
+
+    // const memberID = localStorage.getItem('member_id')
     axios
       .post(
         `https://channels.zuri.chat/api/v1/install`,
         {
           title: `${title}`,
           organization_id: `${org_id}`,
-          user_id: `${memberId}`
+          user_id: `${member_id}`
         },
         config
       )
@@ -35,7 +36,7 @@ export const createDefaultChannel = (org_id, title = 'General') => {
       .post(`https://dm.zuri.chat/api/v1/install`, 
       {
         organisation_id: `${org_id}`,
-        user_id: `${memberId}`
+        user_id: `${member_id}`
       },
       config)
   })
@@ -81,7 +82,7 @@ export const switchWorkSpace = (currentOrgId, title = "General") =>{
 
     axios
       .get(
-        `${channelApi}/${currentOrgId}/channels/?default=true`,
+        `${channelApi}/${currentOrgId}/channels/`,
       )
       .then(res => {
         const redirectLink = `channels/message-board/${res.data[0]._id}`
