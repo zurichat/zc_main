@@ -6,5 +6,4 @@
     "**/.husky/": "bash"
   },
   "javascript.format.enable": false,
-  "git.enabled": false,
 }
