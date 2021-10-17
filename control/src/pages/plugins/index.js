@@ -112,7 +112,7 @@ export default function Homepage() {
               pContent1={t("plugin.dm.title")}
               h2Content={t("plugin.dm.headline")}
               pContent2={t("plugin.dm.description")}
-              href="#"
+              href="/signup"
               aContent={t("plugin.dm.link")}
             />
             {/* contribution tracker */}
@@ -122,7 +122,7 @@ export default function Homepage() {
               pContent1={t("plugin.tracker.title")}
               h2Content={t("plugin.tracker.headline")}
               pContent2={t("plugin.tracker.description")}
-              href="#"
+              href="/signup"
               aContent={t("plugin.tracker.link")}
               rowOrder={style.ft_row_reverse}
             />
@@ -133,7 +133,7 @@ export default function Homepage() {
               pContent1={t("plugin.music.title")}
               h2Content={t("plugin.music.headline")}
               pContent2={t("plugin.music.description")}
-              href="#"
+              href="/signup"
               aContent={t("plugin.music.link")}
             />
             {/* games plugin */}
@@ -143,7 +143,7 @@ export default function Homepage() {
               pContent1={t("plugin.games.title")}
               h2Content={t("plugin.games.headline")}
               pContent2={t("plugin.games.description")}
-              href="chess.zuri.chat/"
+              href="/signup"
               aContent={t("plugin.games.link")}
               rowOrder={style.ft_row_reverse}
             />
@@ -154,7 +154,7 @@ export default function Homepage() {
               pContent1={t("plugin.goal.title")}
               h2Content={t("plugin.goal.headline")}
               pContent2={t("plugin.goal.description")}
-              href="#"
+              href="/signup"
               aContent={t("plugin.goal.link")}
             />
             {/* todo plugins */}
@@ -164,7 +164,7 @@ export default function Homepage() {
               pContent1={t("plugin.todo.title")}
               h2Content={t("plugin.todo.headline")}
               pContent2={t("plugin.todo.description")}
-              href="https://zuri.chat/todo/"
+              href="/signup"
               aContent={t("plugin.todo.link")}
               rowOrder={style.ft_row_reverse}
             />
@@ -175,7 +175,7 @@ export default function Homepage() {
               pContent1={t("plugin.channels.title")}
               h2Content={t("plugin.channels.headline")}
               pContent2={t("plugin.channels.description")}
-              href="https://zuri.chat/channels"
+              href="/signup"
               aContent={t("plugin.channels.link")}
             />
             {/* noticeboard plugin */}
@@ -185,7 +185,7 @@ export default function Homepage() {
               pContent1={t("plugin.noticeboard.title")}
               h2Content={t("plugin.noticeboard.headline")}
               pContent2={t("plugin.noticeboard.description")}
-              href="https://zuri.chat/noticeboard"
+              href="/signup"
               aContent={t("plugin.noticeboard.link")}
               rowOrder={style.ft_row_reverse}
             />
@@ -196,7 +196,7 @@ export default function Homepage() {
               pContent1={t("plugin.company_files.title")}
               h2Content={t("plugin.company_files.headline")}
               pContent2={t("plugin.company_files.description")}
-              href="#"
+              href="/signup"
               aContent={t("plugin.company_files.link")}
             />
             {/* company sales plugin */}
@@ -206,7 +206,7 @@ export default function Homepage() {
               pContent1={t("plugin.company_sales.title")}
               h2Content={t("plugin.company_sales.headline")}
               pContent2={t("plugin.company_sales.description")}
-              href="https://zuri.chat/sales"
+              href="/signup"
               aContent={t("plugin.company_sales.link")}
               rowOrder={style.ft_row_reverse}
             />
@@ -217,7 +217,7 @@ export default function Homepage() {
               pContent1={t("plugin.deadline.title")}
               h2Content={t("plugin.deadline.headline")}
               pContent2={t("plugin.deadline.description")}
-              href="#"
+              href="/signup"
               aContent={t("plugin.deadline.link")}
             />
             {/* expenses plugin */}
@@ -227,7 +227,7 @@ export default function Homepage() {
               pContent1={t("plugin.expenses.title")}
               h2Content={t("plugin.expenses.headline")}
               pContent2={t("plugin.expenses.description")}
-              href="#"
+              href="/signup"
               aContent={t("plugin.expenses.link")}
               rowOrder={style.ft_row_reverse}
             />
@@ -238,7 +238,7 @@ export default function Homepage() {
               pContent1={t("plugin.duty_shift.title")}
               h2Content={t("plugin.duty_shift.headline")}
               pContent2={t("plugin.duty_shift.description")}
-              href="#"
+              href="/signup"
               aContent={t("plugin.duty_shift.link")}
             />
             {/* external tools plugin */}
@@ -248,7 +248,7 @@ export default function Homepage() {
               pContent1={t("plugin.external_tools.title")}
               h2Content={t("plugin.external_tools.headline")}
               pContent2={t("plugin.external_tools.description")}
-              href="externaltools.zuri.chat"
+              href="/signup"
               aContent={t("plugin.external_tools.link")}
               rowOrder={style.ft_row_reverse}
             />
@@ -259,7 +259,7 @@ export default function Homepage() {
               pContent1={t("plugin.whiteboard.title")}
               h2Content={t("plugin.whiteboard.headline")}
               pContent2={t("plugin.whiteboard.description")}
-              href="#"
+              href="/signup"
               aContent={t("plugin.whiteboard.link")}
             />
             {/* holiday calender plugin */}
@@ -269,7 +269,7 @@ export default function Homepage() {
               pContent1={t("plugin.holiday.title")}
               h2Content={t("plugin.holiday.headline")}
               pContent2={t("plugin.holiday.description")}
-              href="#"
+              href="/signup"
               aContent={t("plugin.holiday.link")}
               rowOrder={style.ft_row_reverse}
             />
@@ -280,7 +280,7 @@ export default function Homepage() {
               pContent1={t("plugin.company_shift.link")}
               h2Content={t("plugin.company_shift.headline")}
               pContent2={t("plugin.company_shift.description")}
-              href="https://employeeshift.zuri.chat/"
+              href="/signup"
               aContent={t("plugin.company_shift.link")}
             />
           </div>
