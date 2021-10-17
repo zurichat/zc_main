@@ -19,8 +19,11 @@ const Button = styled.button`
   cursor: pointer;
   border-radius: var(--radius);
 `
-const StartNewSearch = () => {
-  return <Button>Start New Search</Button>
-}
+const StartNewSearch = ({ onClear }) => {
+       return (
+    <Button onClick={() => onClear()} >Start New Search</Button>
+    );
+} 
+  
 
 export default StartNewSearch

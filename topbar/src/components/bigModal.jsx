@@ -9,8 +9,9 @@ import noImg from "../assets/images/avatar_vct.svg"
 import { NoResult } from "./SearchNotFound"
 import { plugins } from "../utils/topbarApi"
 import { ProfileContext } from "../context/ProfileModal"
+import StartNewSearch from "./StartNewSearchButton"
 
-export const BigModal = ({ onClose, inputValue, result, isLoadingUp }) => {
+export const BigModal = ({ onClose, inputValue, result, isLoadingUp, clearSearch }) => {
   const [results, setResult] = useState(result)
   const [isLoading, setLoading] = useState(isLoadingUp)
 
@@ -85,7 +86,7 @@ export const BigModal = ({ onClose, inputValue, result, isLoadingUp }) => {
     </div>
      
       {result.length < 1 ? (
-        <NoResult onClosed={() => onClose()}/>
+        <NoResult onClean={() => clearSearch()} />
       ) : isLoading ? (
         <p
           style={{
