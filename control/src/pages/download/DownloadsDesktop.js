@@ -40,7 +40,7 @@ const DownloadsDesktop = () => {
           </p>
 
           <div className={styles.heroImages}>
-            <div className={styles.alignCenter}>
+            <div className={styles.alignForDesktop}>
               <img
                 className={`${styles.screenshot}`}
                 src={device}
@@ -62,13 +62,9 @@ const DownloadsDesktop = () => {
               </div>
             </div>
 
-            <div className={styles.alignCenter}>
+            <div className={styles.alignForMobile}>
               <div className={styles.mobileImage}>
-                <img
-                  src={infolaptop}
-                  className={`${styles.screenshot}`}
-                  alt=""
-                />
+                <img src={infolaptop} className={`${styles.mobile}`} alt="" />
               </div>
               <div>
                 <h2>{t("download_desktop.section_one.mobile_line")}</h2>
