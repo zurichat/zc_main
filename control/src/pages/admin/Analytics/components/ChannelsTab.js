@@ -2,136 +2,139 @@ import React, { useState, useEffect, useRef } from "react"
 import styles from "../styles/ChannelsTab.modules.css"
 import { Table } from "react-bootstrap"
 import { MdKeyboardArrowDown } from "react-icons/md"
+import { IoCalendarOutline } from "react-icons/io5"
+import { getCurrentWorkspace } from "../../Utils/Common"
+import { authAxios } from "../../Utils/Api"
+import ToolTip from "../utils/Tooltip"
+import axios from "axios"
 
-const date = new Date()
-
+// fixed default table headers needed by the view
 const tableData = [
   {
     title: "Name",
-    default: true,
     active: true,
     code: "name"
   },
   {
     title: "Created",
-    default: true,
     active: true,
-    code: "created"
+    code: "created_on"
   },
   {
     title: "Last active",
-    default: true,
     active: true,
     code: "last_active"
   },
   {
     title: "Total membership",
-    default: true,
     active: true,
-    code: "total_members"
+    code: "members"
   },
   {
     title: "Messages Posted",
-    default: true,
     active: true,
-    code: "posted_messages"
+    code: "message_count"
   }
 ]
 
-const apiData = [
-  {
-    name: {
-      value: "kingsley okoro",
-      styles: styles.topic,
-      meta: "this channel is for... well",
-      metaStyles: [styles.description]
-    },
-    created: { value: date.toLocaleString(), styles: "", meta: "" },
-    last_active: { value: date.toLocaleString(), styles: "", meta: "" },
-    total_members: {
-      value: Math.floor(Math.random() * 20),
-      styles: "",
-      meta: ""
-    },
-    posted_messages: {
-      value: Math.floor(Math.random() * 30),
-      styles: "",
-      meta: ""
-    }
-  },
-  {
-    name: {
-      value: "Favour chris",
-      styles: styles.topic,
-      meta: "This channel is for... well",
-      metaStyles: [styles.description]
-    },
-    created: { value: date.toLocaleString(), styles: "", meta: "" },
-    last_active: { value: date.toLocaleString(), styles: "", meta: "" },
-    total_members: {
-      value: Math.floor(Math.random() * 20),
-      styles: "",
-      meta: ""
-    },
-    posted_messages: {
-      value: Math.floor(Math.random() * 30),
-      styles: "",
-      meta: ""
-    }
-  },
-  {
-    name: {
-      value: "Tessy Igwe",
-      styles: styles.topic,
-      meta: "This channel is for... well",
-      metaStyles: [styles.description]
-    },
-    created: { value: date.toLocaleString(), styles: "", meta: "" },
-    last_active: { value: date.toLocaleString(), styles: "", meta: "" },
-    total_members: {
-      value: Math.floor(Math.random() * 20),
-      styles: "",
-      meta: ""
-    },
-    posted_messages: {
-      value: Math.floor(Math.random() * 30),
-      styles: "",
-      meta: ""
-    }
-  }
-]
+const FormatText = text => {
+  const arr = text.split(" ")
+  const result =
+    arr.length > 6 ? arr.slice(0, 5).join(" ") + "..." : arr.join(" ")
+  return result
+}
 
 const ChannelsTab = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isColumnModalOpen, setIsColumnModalOpen] = useState(false)
   const [selectedOption, setSelectedOption] = useState(null)
-  const node = useRef(null)
+  const node = useRef()
+  const durationNode = useRef()
   const toggle = () => setIsOpen(!isOpen)
   const toggleColumnModal = () => setIsColumnModalOpen(!isColumnModalOpen)
   const [tableHeaderStateData, setTableHeaderStateData] = useState(tableData)
-  const [apiStateData, setApiStateData] = useState(apiData)
+  const [apiStateData, setApiStateData] = useState([])
+  const [workspaceData, setWorkspaceData] = useState({})
+  const currentWorkspace = getCurrentWorkspace()
+
+  useEffect(() => {
+    if (currentWorkspace) {
+      authAxios
+        .get(`/organizations/${currentWorkspace}`)
+        .then(res => {
+          setWorkspaceData(res.data.data)
+        })
+        .catch(err => {
+          console.error(err)
+        })
+    }
+  }, [currentWorkspace])
+
+  useEffect(() => {
+    axios(
+      `https://channels.zuri.chat/api/v1/${currentWorkspace}/workspace_channel/`
+    )
+      .then(res => {
+        const formattedApiResult = res.data.map(x => {
+          let tempArray = {}
+          Object.keys(x).map(key => {
+            if (key != "description") {
+              tempArray = {
+                ...tempArray,
+                [key]: {
+                  value: x[key],
+                  styles: key === "name" ? styles.topic : "",
+                  meta: key === "name" ? x.description : ""
+                }
+              }
+            }
+          })
+          return tempArray
+        })
+        setApiStateData(formattedApiResult)
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }, [])
 
   useEffect(() => {
     setTableHeaderStateData(tableHeaderStateData)
   }, [])
 
   useEffect(() => {
+    const handleClick = e => {
+      if (
+        !(node.current && node.current.contains(e.target)) &&
+        isColumnModalOpen
+      ) {
+        setIsColumnModalOpen(false)
+      }
+    }
     // add when mounted
-    document.addEventListener("mousedown", handleClick)
+    document.addEventListener("click", handleClick)
     // return function to be called when unmounted
     return () => {
-      document.removeEventListener("mousedown", handleClick)
+      document.removeEventListener("click", handleClick)
     }
-  }, [])
+  }, [isColumnModalOpen])
 
-  const handleClick = e => {
-    if (node.current.contains(e.target)) {
-      // inside click
-      return
+  useEffect(() => {
+    const handleClick = e => {
+      if (
+        !(durationNode.current && durationNode.current.contains(e.target)) &&
+        isOpen
+      ) {
+        setIsOpen(false)
+      }
     }
-    // outside click
-    setIsColumnModalOpen(false)
-  }
+    // add when mounted
+    document.addEventListener("click", handleClick)
+    // return function to be called when unmounted
+    return () => {
+      document.removeEventListener("click", handleClick)
+    }
+  }, [isOpen])
 
   const onOptionClicked = value => () => {
     setSelectedOption(value)
@@ -146,33 +149,48 @@ const ChannelsTab = () => {
   }
 
   const generateTableBody = () => {
-    return apiStateData.map((x, i) => {
-      const tempInnerData = []
-      return (
-        <tr key={"tr_body_" + i}>
-          {Object.keys(x).forEach((key, index) => {
-            let headerIndex = tableHeaderStateData.findIndex(
-              x => x.code === key
+    let tableRowArray = []
+    if (apiStateData.length) {
+      let currentIndex = 0
+      while (currentIndex <= apiStateData.length) {
+        const tempInnerData = []
+
+        tableHeaderStateData.map((x, index) => {
+          if (
+            apiStateData[currentIndex] &&
+            apiStateData[currentIndex][x?.code] &&
+            x?.active
+          ) {
+            const { value, meta, styles } = apiStateData[currentIndex][x.code]
+
+            const description = meta && FormatText(meta)
+            let data = description ? (
+              <td key={"td_body_" + index + "_" + currentIndex}>
+                <div>
+                  <p className={styles}>{`${value}`}</p>
+                  <ToolTip toolTipText={meta}>{description}</ToolTip>
+                </div>
+              </td>
+            ) : (
+              <td key={"td_body_" + index + "_" + currentIndex}>
+                {value instanceof Date && !isNaN(value)
+                  ? `${value.toLocaleString}`
+                  : `${value}`}
+              </td>
             )
-            if (headerIndex > -1 && tableHeaderStateData[headerIndex].active) {
-              const { value, meta, styles, metaStyles } = x[key]
-              let data = meta ? (
-                <td key={"td_body_" + index}>
-                  <div>
-                    <p className={styles}>{`${value}`}</p>
-                    <p className={metaStyles}>{`${meta}`}</p>
-                  </div>
-                </td>
-              ) : (
-                <td key={"td_body_" + index}>{`${value}`}</td>
-              )
-              tempInnerData.push(data)
-            }
-          })}
-          {tempInnerData}
-        </tr>
-      )
-    })
+            tempInnerData.push(data)
+          }
+        })
+
+        tableRowArray.push(
+          <tr key={"tr_body_" + currentIndex}>{tempInnerData}</tr>
+        )
+        currentIndex++
+      }
+      return tableRowArray
+    } else {
+      return null
+    }
   }
 
   const toggleHeaderColumns = index => {
@@ -213,14 +231,14 @@ const ChannelsTab = () => {
 
     setTableHeaderStateData([...tableHeaderStateData])
   }
-
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <p className={styles.leftText}>3 public channels</p>
+        <p className={styles.leftText}>{apiStateData.length} public channels</p>
         <div className={styles.right}>
           <p>Updated 3 days ago</p>
           <div className={styles.dropdownHeader} onClick={toggle}>
+            <IoCalendarOutline className={styles.calender} />
             {selectedOption || options[0]}
             <MdKeyboardArrowDown className={styles.arrowDown} />
           </div>
@@ -232,15 +250,21 @@ const ChannelsTab = () => {
         </div>
       </div>
 
-      <Table hover responsive="md" className={styles.table}>
-        <thead>
-          <tr>{generateTableHeader()}</tr>
-        </thead>
-        <tbody>{generateTableBody()}</tbody>
-      </Table>
+      {generateTableBody() === null ? (
+        <p className={styles.emptyChannels}>
+          There are no channels in your workspace currently
+        </p>
+      ) : (
+        <Table hover className={styles.channelsTable}>
+          <thead>
+            <tr>{generateTableHeader()}</tr>
+          </thead>
+          <tbody>{generateTableBody()}</tbody>
+        </Table>
+      )}
 
       {isOpen && (
-        <div className={styles.dropdownListContainer} ref={node}>
+        <div className={styles.dropdownListContainer} ref={durationNode}>
           <ul className={styles.dropdownList}>
             {options.map((option, i) => (
               <li
@@ -256,7 +280,7 @@ const ChannelsTab = () => {
       )}
 
       {isColumnModalOpen && (
-        <div className={styles.columnsModal}>
+        <div className={styles.columnsModal} ref={node}>
           <div className={styles.columnsModalHeader}>
             <p className={styles.title}>Edit Columns</p>
             <p className={styles.description}>
@@ -280,65 +304,119 @@ const ChannelsTab = () => {
             <div className={styles.horizontalDivider}>
               <hr />
             </div>
-            <div className={styles.activity}>
-              <p>Activity</p>
-              <div className={styles.radioFields}>
-                <label>
-                  <input type="checkbox" /> Messages posted
-                </label>
-              </div>
-            </div>
-            <div className={styles.horizontalDivider}>
-              <hr />
-            </div>
+
+            {/* paid plans functionalities not yet implemented on zuri chat */}
             <div className={styles.basicsContainer}>
               <p>Available on Paid Plans</p>
               <div className={styles.radioFields}>
-                <label>
-                  <input type="checkbox" disabled /> Full Members
+                <label
+                  className={
+                    workspaceData.version == "pro" ? "" : `${styles.grey}`
+                  }
+                >
+                  <input
+                    type="checkbox"
+                    disabled={workspaceData.version != "pro"}
+                  />{" "}
+                  Full Members
                 </label>
               </div>
 
               <div className={styles.radioFields}>
-                <label>
-                  <input type="checkbox" disabled /> Guests
+                <label
+                  className={
+                    workspaceData.version == "pro" ? "" : `${styles.grey}`
+                  }
+                >
+                  <input
+                    type="checkbox"
+                    disabled={workspaceData.version != "pro"}
+                  />{" "}
+                  Guests
                 </label>
               </div>
 
               <div className={styles.radioFields}>
-                <label>
-                  <input type="checkbox" disabled /> Messages posted by members
+                <label
+                  className={
+                    workspaceData.version == "pro" ? "" : `${styles.grey}`
+                  }
+                >
+                  <input
+                    type="checkbox"
+                    disabled={workspaceData.version != "pro"}
+                  />{" "}
+                  Messages posted by members
                 </label>
               </div>
 
               <div className={styles.radioFields}>
-                <label>
-                  <input type="checkbox" disabled /> Members who posted
+                <label
+                  className={
+                    workspaceData.version == "pro" ? "" : `${styles.grey}`
+                  }
+                >
+                  <input
+                    type="checkbox"
+                    disabled={workspaceData.version != "pro"}
+                  />{" "}
+                  Members who posted
                 </label>
               </div>
 
               <div className={styles.radioFields}>
-                <label>
-                  <input type="checkbox" disabled /> Members who viewed
+                <label
+                  className={
+                    workspaceData.version == "pro" ? "" : `${styles.grey}`
+                  }
+                >
+                  <input
+                    type="checkbox"
+                    disabled={workspaceData.version != "pro"}
+                  />{" "}
+                  Members who viewed
                 </label>
               </div>
 
               <div className={styles.radioFields}>
-                <label>
-                  <input type="checkbox" disabled /> Change in members who
-                  posted
+                <label
+                  className={
+                    workspaceData.version == "pro" ? "" : `${styles.grey}`
+                  }
+                >
+                  <input
+                    type="checkbox"
+                    disabled={workspaceData.version != "pro"}
+                  />{" "}
+                  Change in members who posted
                 </label>
               </div>
 
               <div className={styles.radioFields}>
-                <label>
-                  <input type="checkbox" disabled /> Reactions added
+                <label
+                  className={
+                    workspaceData.version == "pro" ? "" : `${styles.grey}`
+                  }
+                >
+                  <input
+                    type="checkbox"
+                    disabled={workspaceData.version != "pro"}
+                  />{" "}
+                  Reactions added
                 </label>
               </div>
 
               <div className={styles.radioFields}>
-                <label>
-                  <input type="checkbox" disabled /> Members who reacted
+                <label
+                  className={
+                    workspaceData.version == "pro" ? "" : `${styles.grey}`
+                  }
+                >
+                  <input
+                    type="checkbox"
+                    disabled={workspaceData.version != "pro"}
+                  />{" "}
+                  Members who reacted
                 </label>
               </div>
             </div>
