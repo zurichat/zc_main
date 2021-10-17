@@ -6,7 +6,7 @@ import SkeletonLoader from "./SkeletonLoader"
 
 export default function Category(props) {
   const [isOpen, setOpen] = useState(true)
-  const [button_url, setUrl] = useState("")
+  //const [button_url, setUrl] = useState(null)
 
   const toggleDropdown = () => setOpen(!isOpen)
 
@@ -25,8 +25,7 @@ export default function Category(props) {
         />
       )}
       {props.data &&
-        props.data.length > 0 && props.name != "direct messages" && 
-        props.name != "channels" &&
+        props.data.length > 0 &&
         props.data.map(plugin => {
           if (plugin.show_group) {
             return (
