@@ -70,7 +70,6 @@ export const TRANSLATIONS_ZH = {
       company: "公司",
       careers: "职业",
       about: "关于",
-      why_zuri_chat: "为什么选择 Zuri 聊天？",
       info: "信息",
       privacy: "隐私权和条款",
       market: "市场",
@@ -365,9 +364,8 @@ export const TRANSLATIONS_ZH = {
       title: "无论您做什么工作，您都可以在 Zuri Chat 中完成",
       link_sales: "与销售人员交谈",
       link_try: "免费试用"
-    }
+    },   
   },
-
   careers: {
     title: {
       careers: "职业"
@@ -414,9 +412,10 @@ export const TRANSLATIONS_ZH = {
             "在该计划中，我们将探索几个有用的框架，让您在行业中占据优势，并帮助您更快地开发复杂的应用程序。"
         }
       },
-      join_cohort: "从 2022 年夏天开始，加入我们的下一个队列",
+       join_cohort: "从 2022 年夏天开始，加入我们的下一个队列",
       register_now: "现在注册"
     },
+    
     section_two: {
       headline: "工作和繁荣",
       post_headline: "我们提供的福利可以帮助您感觉最好并做到最好。",
@@ -436,8 +435,9 @@ export const TRANSLATIONS_ZH = {
           "Zuri 支付 100% 的保费。我们还提供一系列免费的心理健康和福祉资源。"
       }
     },
-
-    login: {
+  },
+  auth: {
+    login:{
       title: "登录 - Zuri 聊天",
       form: {
         header: "登录",
@@ -460,11 +460,116 @@ export const TRANSLATIONS_ZH = {
       footer: {
         contactUs: "联系我们",
         legacyPolicy: "法律政策",
-        aboutZuri: "关于 Zuri Chat"
+        aboutZuri: "关于 ZuriChat"
+      }
+    },     
+  
+    signup: {
+      title: "报名",
+      form: {
+        header: "创建账户",
+        googleHeader: "使用谷歌注册",
+        topLineText: "或者",
+        submitButtonName: "注册",
+        bottomLine: "已经有账户？",
+        bottomLink: "登录",
+        input: {
+          fullName: "全名",
+          fullNamePlaceholder: "输入你的名字",
+          emailAddress: "电子邮件地址",
+          emailAddressPlaceholder: "输入您的电子邮件地址",
+          password: "密码",
+          passwordPlaceholder: "输入密码",
+        }
+      },
+      privacyAgreement: "我同意 ZuriChat 的",
+      termsOfService: "服务条款",
+      privacy: "隐私"
+    },
+    passwordreset: {
+      title: "重设密码",
+      headline: "获取新密码",
+      post_headline: "输入您注册时使用的电子邮件地址，重置代码将发送到您的电子邮件。",
+      form:{
+        emailAddress: "电子邮件地址",
+        continueButton: "继续"
       }
     },
-
-    download_desktop: {
+    newPassword: {
+      header: "恢复密码",
+      post_headline: "为您的帐户创建一个新密码",
+      form: {
+        password: "密码",
+        passwordPlaceholder: "Enter your new password",
+        confirmPassword: "确认密码",
+        confirmPasswordPlaceholder: "确认您的新密码",
+        continueButton: "继续"
+      }
+    },
+    verifyCodeOnPasswordReset: {
+      header: "输入发送到您邮箱的重置代码",
+      success: {
+        headline: "重置码验证成功！",
+        post_headline: "点击按钮继续",
+        continueButton: "继续"
+      }
+    },
+    passwordResetSuccess: {
+      headline: "密码重置成功！",
+      post_headline: "您的密码重置成功！您现在可以继续登录",
+      button: "继续登录"
+    },
+    signout:{
+      title: "登出",
+      preOrgText: "退出团队",
+      workspace: "工作区",
+      signoutMessage: {
+        preOrgText: "您已退出团队"
+      },
+      loginText: "登录",
+      postLoginText: "到另一个工作区"
+    },
+    onboardingHelp:{
+      title: "故障排除问题",
+      backToHome: "返回首页",
+      loginHelp:{
+        headline: "对登录 ZuriChat 的问题进行故障排除",
+        post_headline: "如果在登录您的帐户时遇到问题，以下内容可能对您有所帮助。",
+        list: {
+          textOne: "检查您是否使用正确的电子邮件地址和密码登录。如果您认为您的帐户可能已被盗用",
+          linkOne: "单击此处重置您的密码",
+          textTwo: "您使用的是最新版本的 ZuriChat 移动或桌面应用程序吗？请检查您的应用程序的当前版本。如果您不确定您使用的是哪个版本，请尝试",
+          linkTwo: "更新或下载应用程序",
+          textThree: "如果同样的问题仍然存在，请卸载该应用程序，清除手机缓存并重新安装。",
+          textFour: "如果您使用的是浏览器，则您可能使用了自动完成建议中的错误密码。我们建议您再次手动输入您的 ZuriChat 电子邮件地址和密码",
+          textFive: "如果上述所有方法均无效，请尝试使用新浏览器或尝试以隐身模式登录",
+          textSix: "你有我们的帐户吗？如果您没有这里的帐户，您将无法登录。去",
+          linkSix: "创建一个帐户"
+        }    
+      },
+      signUpHelp: {
+        headline: "无法创建帐户？",
+        post_headline: "好的，如果您在创建帐户时遇到问题，请尝试以下建议",
+        list: {
+          preTextOne: "确保您使用的是",
+          strongText: "合法的邮件地址",
+          postTextOne: "并检查您的电子邮件收件箱以获取身份验证代码",
+          textTwo: "使用其他设备或浏览器创建您的帐户。您也可以清除浏览器的缓存",
+          textThree: "检查您所在地区的网络。如果网络好，重新加载注册页面",
+          textFour: "如果您没有收到验证码，请等待 30 分钟，然后重试",
+          textFive: "如果您使用的是 ZuriChat 移动或桌面应用程序，请更新到最新版本，或者您可以",
+          linkFive: "在这里下载"
+        }
+      },
+      support: {
+        headline: "你还需要帮助吗？",
+        preLinkText: "如果您已经尝试了以上所有建议但都无济于事，请",
+        linkText: "联系 Zuri 客户服务",
+        postLinkText: "求助。"
+      }
+    }
+  },
+  download_desktop: {
       title: {
         download: ""
       },
@@ -491,128 +596,96 @@ export const TRANSLATIONS_ZH = {
       section_three: {
         headline: "同样的感觉，同样的团队在 Zuri App 上！"
       }
+  },
+  download_ios: {
+    title: {
+      download: ""
     },
-    download_ios: {
-      title: {
-        download: ""
-      },
 
-      section_one: {
-        headline: "下载适用于 iOS 的 Zuri Chat 测试版。",
-        post_headline: "获取 Zuri 聊天 DM 和频道",
-        mac_line: "我们也在 Mac 上",
-        mac_description:
-          "与我们的 Mac、Windows 和 Linux 应用程序保持对话。我们可以通过电子邮件向您发送快速下载链接以帮助您入门！",
-        button: "获取下载链接"
-      }
-    },
-    download_mac: {
-      title: {
-        download: ""
-      },
-
-      section_one: {
-        headline: "在 MacOS 上体验 Zuri Chat",
-        post_headline: "使用 Zuri Chat 与您的团队联系从未如此简单。",
-        download: "下载",
-        download_soft: "为 Windows 下载？"
-      },
-
-      section_two: {
-        headline: "为什么是 Zuri 聊天应用程序？",
-        post_headline: "即使在旅途中使用 zuri 聊天电脑，也不会错过无缝协作体验",
-        android: "安卓",
-        and_break: "和",
-        ios: "iOS",
-        apps_break: "应用。"
-      },
-
-      section_three: {
-        headline: "同样的感觉，同样的团队在 Zuri App 上！",
-        download: "下载 MAC",
-        download_soft: "为 Windows 下载？"
-      }
-    },
-    download_mobile: {
-      title: {
-        download: ""
-      },
-
-      section_one: {
-        headline: "体验 Zuri Chat 的桌面和移动应用程序",
-        post_headline: "使用 Zuri Chat 与您的团队联系从未如此简单。"
-      },
-
-      section_two: {
-        headline: "在任何这些设备上下载并享受 Zuri Chat 体验",
-        windows: "视窗",
-        mac: "苹果系统",
-        android: "安卓",
-        ios: "iOS"
-      },
-
-      section_three: {
-        headline: "同样的感觉，同样的团队在 Zuri App 上！"
-      }
-    },
-    download_windows: {
-      title: {
-        download: "下载 Zuri 聊天"
-      },
-
-      section_one: {
-        headline: "在 Windows 上体验 Zuri Chat",
-        post_headline: "使用 Zuri Chat 与您的团队联系从未如此简单。",
-        download: "下载",
-        download_mac: "为 Mac 下载？"
-      },
-
-      section_two: {
-        headline: "为什么是 Zuri 聊天应用程序？",
-        post_headline: "即使在旅途中使用 zuri 聊天电脑，也不会错过无缝协作体验",
-        android: "安卓",
-        and_break: "和",
-        ios: "iOS",
-        apps_break: "应用。"
-      },
-
-      section_three: {
-        headline: "同样的感觉，同样的团队在 Zuri App 上！",
-        download: "下载适用于 WINDOWS",
-        download_ios: "为 Mac 下载？"
-      }
+    section_one: {
+      headline: "下载适用于 iOS 的 Zuri Chat 测试版。",
+      post_headline: "获取 Zuri 聊天 DM 和频道",
+      mac_line: "我们也在 Mac 上",
+      mac_description:
+        "与我们的 Mac、Windows 和 Linux 应用程序保持对话。我们可以通过电子邮件向您发送快速下载链接以帮助您入门！",
+      button: "获取下载链接"
     }
   },
+  download_mac: {
+    title: {
+      download: ""
+    },
 
-  //Why Zuri Page
-  why_zuri_chat: {
-    title: "认识 Zuri Chat - 经济实惠的 Slack 替代品",
-    hero_paragraph1: "如果您正在寻找完美的 Slack 替代品，那就别无所求。",
-    hero_paragraph2:
-      "Zuri Chat 的使命是通过由人工智能提供支持并由 DAO 支持的有趣协作中心来简化个人工作生活并提高生产力。",
-    blog_content_header: "为什么是 Zuri 聊天？",
-    text_wrap1: "明晰",
-    text_wrap1_p:
-      "熟练的任务执行对于推动您的业务向前发展至关重要，而 ZuriChat 可帮助您完成更多工作。我们的公司截止日期插件使任务管理变得容易，适用于从初创公司到全球公司的各种规模的协作。通过跟踪状态、监控进度和讨论问题来优化您的工作流程。",
-    text_wrap2: "速度",
-    text_wrap2_p:
-      "Zuri Chat 明白在商业领域时间就是金钱。我们的 ZuriChat Dm Reply 插件可以节省您花在交流上的时间。通过优化实时通信、两倍快的文件共享和自定义通知来满足对速度的需求，让您不会错过任何事情；公告、任务状态更新、通话等。",
-    text_wrap3: "保持能力",
-    text_wrap3_p:
-      "每个公司或团队都需要成长空间。在文件存储方面，最好的 Slack 替代方案是 Zuri Company Files，因为我们为所有客户提供了两倍以上的存储空间，使您在团队内协作时存储和共享多个文件更加方便。",
-    text_wrap4: "优化生产力",
-    text_wrap4_p:
-      "通过基于代币的薪酬系统提高团队的绩效并鼓舞士气。 Zuri Chat 插件旨在促进协作并减少同事之间在会议、电子邮件和互动上花费的时间，并鼓励团队通过奖励朝着共同的业务目标前进。",
-    text_wrap5: "超级轻松",
-    text_wrap5_p:
-      "我们不会用令人困惑或分散注意力的功能使您负担过重。 Zuri Chat 是一个易于启动且易于使用的团队中心，具有直观且清晰的用户界面。",
-    text_wrap6: "无限的消息保留",
-    text_wrap6_p:
-      "绝不会错过任何一条消息。 Zuri Chat Dm Reply 可以从第一条消息访问，因为 Zuri Chat 中写的任何内容都保留在 Zuri Chat 中。没有隐藏费用。无限。",
-    text_wrap7: "随时提供帮助",
-    text_wrap7_p:
-      "碰钉子？有问题吗？我们的 24/7 全天候帮助团队将采取额外的措施和步行额外的里程，以确保您在 Zuri Chat 中获得轻松愉快的体验。",
-    bottom_card: "您的团队肯定会喜欢",
-    bottom_link: "立即注册！",
+    section_one: {
+      headline: "在 MacOS 上体验 Zuri Chat",
+      post_headline: "使用 Zuri Chat 与您的团队联系从未如此简单。",
+      download: "下载",
+      download_soft: "为 Windows 下载？"
+    },
+
+    section_two: {
+      headline: "为什么是 Zuri 聊天应用程序？",
+      post_headline: "即使在旅途中使用 zuri 聊天电脑，也不会错过无缝协作体验",
+      android: "安卓",
+      and_break: "和",
+      ios: "iOS",
+      apps_break: "应用。"
+    },
+
+    section_three: {
+      headline: "同样的感觉，同样的团队在 Zuri App 上！",
+      download: "下载 MAC",
+      download_soft: "为 Windows 下载？"
+    }
+  },
+  download_mobile: {
+    title: {
+      download: ""
+    },
+
+    section_one: {
+      headline: "体验 Zuri Chat 的桌面和移动应用程序",
+      post_headline: "使用 Zuri Chat 与您的团队联系从未如此简单。"
+    },
+
+    section_two: {
+      headline: "在任何这些设备上下载并享受 Zuri Chat 体验",
+      windows: "视窗",
+      mac: "苹果系统",
+      android: "安卓",
+      ios: "iOS"
+    },
+
+    section_three: {
+      headline: "同样的感觉，同样的团队在 Zuri App 上！"
+    }
+  },
+  download_windows: {
+    title: {
+      download: "下载 Zuri 聊天"
+    },
+
+    section_one: {
+      headline: "在 Windows 上体验 Zuri Chat",
+      post_headline: "使用 Zuri Chat 与您的团队联系从未如此简单。",
+      download: "下载",
+      download_mac: "为 Mac 下载？"
+    },
+
+    section_two: {
+      headline: "为什么是 Zuri 聊天应用程序？",
+      post_headline: "即使在旅途中使用 zuri 聊天电脑，也不会错过无缝协作体验",
+      android: "安卓",
+      and_break: "和",
+      ios: "iOS",
+      apps_break: "应用。"
+    },
+
+    section_three: {
+      headline: "同样的感觉，同样的团队在 Zuri App 上！",
+      download: "下载适用于 WINDOWS",
+      download_ios: "为 Mac 下载？"
+    }
   }
+
 }
