@@ -45,7 +45,8 @@ const Zuribot = () => {
       alert("textbox cannot be empty")
     } else {
       try {
-        authAxios.post(`/organizations/${id}/slackbotresponses`, {
+        setLoading(true)
+        authAxios.patch(`/organizations/${id}/slackbotresponses`, {
           whensomeonesays: userSays,
           slackresponds: zuribotSays
         })
@@ -53,6 +54,7 @@ const Zuribot = () => {
         {
           alert(`Zuribot will now look out for the word, ${userSays}`)
         }
+        setLoading(false)
       } catch (error) {
         throw Error(alert(error))
       }
@@ -81,7 +83,7 @@ const Zuribot = () => {
     authAxios.get(`https://api.zuri.chat/organizations/${id}`).then(
       result => {
         setLoading(true)
-        setItems(result.data)
+        setItems(result.data.customize.slackbot)
       },
 
       error => {
@@ -119,7 +121,7 @@ const Zuribot = () => {
                 name=""
                 id=""
                 cols="25"
-                rows="3"
+                rows="2"
                 value={userSays}
                 onChange={e => setUserSays(e.target.value)}
               ></textarea>
@@ -140,7 +142,7 @@ const Zuribot = () => {
                 name=""
                 id=""
                 cols="25"
-                rows="3"
+                rows="2"
                 value={zuribotSays}
                 onChange={e => setZuribotSays(e.target.value)}
               ></textarea>
@@ -154,8 +156,12 @@ const Zuribot = () => {
             <button onClick={cancel} className={styles.secondaryBtn}>
               Cancel
             </button>
-            <button onClick={submit} className={styles.primaryBtn}>
-              Save
+            <button
+              onClick={submit}
+              className={styles.primaryBtn}
+              disabled={loading}
+            >
+              {loading ? "Wait" : "Save"}
             </button>
           </div>
         </div>
