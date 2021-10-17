@@ -41,25 +41,34 @@
 } */
 
 .modal_header button {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  padding-right: 0.5rem;
   background-color: white;
+}
+.modal_header button span {
+  padding: 0;
 }
 .select {
   font-size: 18px;
+  display: inline-flex;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.select span {
   padding-left: 20px;
-  padding-right: 20px;
+  padding-bottom: 0;
 }
 
-.select span {
-  padding-left: 10px;
-}
 .select:hover {
   outline-style: none;
   background-color: #00b87c;
+  color: white;
 }
 .country {
-  padding-right: 40px;
-  padding-left: 40px;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  padding: 20px;
 }
 .world {
   padding: 5px;
@@ -87,10 +96,6 @@
   position: relative;
 }
 
-/* .navbarBrand {
-  _padding-left: 55px;
-} */
-
 .navbarBrand span {
   padding: 0.5rem;
   font-size: 22px;
@@ -106,9 +111,11 @@
   font-weight: 400;
   font-size: 18px;
   padding-top: 8px;
+  padding-bottom: 0;
 }
 
 .signU:hover {
+  padding-bottom: 6px;
   border-bottom: 0.2rem solid #00b87c;
 }
 
@@ -133,12 +140,11 @@
 
   /* padding: 8px 5px; */
 }
-
-.navbarNav {
-  flex-basis: 60%;
+.navbarNav span {
+  padding-bottom: 0;
 }
-
 .navbarNav li span:hover {
+  padding-bottom: 2px;
   border-bottom: 0.2rem solid #00b87c;
 }
 
@@ -195,6 +201,21 @@
   }
   .language {
     left: 80vw;
+  }
+  .country {
+    padding: 5px;
+  }
+  .select {
+    font-size: 14px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .select span {
+    padding-left: 0;
+    padding-bottom: 0;
   }
 }
 @media only screen and (max-width: 680px) {
