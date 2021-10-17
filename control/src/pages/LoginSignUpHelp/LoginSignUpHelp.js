@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import styles from "./LoginSignUpHelp.module.css"
 
 const LoginSignUpHelp = () => {
@@ -7,13 +8,13 @@ const LoginSignUpHelp = () => {
       <div className="row">
         <div className="col-12 col-md-10 col-xl-8 col-lg-8">
           <div className={styles.LoginHelpMain}>
-            {/* Back to Home */}
-            {/* <div className={styles.firstRow}>
-            <a href="/" className={styles.helpLink}>
-              <img src="https://img.icons8.com/ios/40/00b87c/left.png" /> Back
-              to Home
-            </a>
-          </div> */}
+            {/* Back to Home  */}
+            <div className={styles.firstRow}>
+              <Link to="/" className={styles.helpLink}>
+                <img src="https://img.icons8.com/ios/40/00b87c/left.png" /> Back
+                to Home
+              </Link>
+            </div>
 
             {/* Login help */}
             <div className={`${styles.loginHelp} mt-2`} id="loginHelp">
@@ -30,18 +31,18 @@ const LoginSignUpHelp = () => {
                 <p>
                   Check if you're using correct email address and password to
                   login. If you think your account might have been compromised,{" "}
-                  <a href="/reset-password" className={styles.helpLink}>
+                  <Link to="/reset-password" className={styles.helpLink}>
                     click here to reset your password
-                  </a>{" "}
+                  </Link>{" "}
                   ASAP
                 </p>
                 <p>
                   Are you using the latest version of ZuriChat mobile or desktop
                   app? Kindly check the current version of your apps. If you're
                   not sure of which version you're using, try{" "}
-                  <a href="/downloads" className={styles.helpLink}>
+                  <Link to="/downloads" className={styles.helpLink}>
                     updating or downloading the app
-                  </a>
+                  </Link>
                 </p>
                 <p>
                   If the same trouble still persists, kindly uninstall the app,
@@ -59,9 +60,9 @@ const LoginSignUpHelp = () => {
                 <p>
                   Do you have an account with us? If you don't have an account
                   here, you won't be able to login. Go to{" "}
-                  <a href="/signup" className={styles.helpLink}>
+                  <Link to="/signup" className={styles.helpLink}>
                     https://zuri.chat/signup
-                  </a>{" "}
+                  </Link>{" "}
                   to create an account
                 </p>
               </span>
@@ -96,9 +97,9 @@ const LoginSignUpHelp = () => {
                 <p>
                   If you're using ZuriChat mobile or desktop app, update to the
                   latest version or you can{" "}
-                  <a href="/downloads" className={styles.helpLink}>
+                  <Link to="/downloads" className={styles.helpLink}>
                     download here
-                  </a>
+                  </Link>
                 </p>
               </span>
             </div>
@@ -110,12 +111,11 @@ const LoginSignUpHelp = () => {
               <p>
                 If you've tried all the suggestions above but to no avail,
                 kindly{" "}
-                <a href="/contact-us" className={styles.ChelpLink}>
+                <Link to="/contact-us" className={styles.ChelpLink}>
                   contact Zuri Customer Service
-                </a>{" "}
+                </Link>{" "}
                 for help.
               </p>
-            
             </div>
           </div>
 
