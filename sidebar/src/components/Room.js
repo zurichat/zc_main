@@ -10,21 +10,14 @@ import RoomOptions from "./RoomOptions"
 import infoIcon from "./../assets/icons/info-icon.svg"
 
 export default function Room({ items, isOpen }) {
-  
-
   return (
     <ul className={`col-12 ps-4 ${styles.item__row} ${isOpen && styles.open}`}>
       {items.joined_rooms &&
         items.joined_rooms.map((room, idx) => {
           if (room.room_name !== undefined) {
-            return (
-                <RoomItem 
-                room={room}
-                key={idx}
-                />
-            )
+            return <RoomItem room={room} key={idx} baseUrl={items.baseUrl}/>
           }
-        })} 
+        })}
     </ul>
   )
 }
