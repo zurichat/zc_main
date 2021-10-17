@@ -231,7 +231,7 @@ const TopNavBar = () => {
   // end search
 
   const [statusModal, setStatusModal] = useState(false)
-  
+
   const handleEnter = e => {
     e.preventDefault()
 
