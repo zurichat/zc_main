@@ -37,7 +37,6 @@ import { getUser } from "../Utils/Common"
 const AdminSidebar = ({ setModal, openModal }) => {
   const user = getUser()
 
- 
   return (
     <div
       className={
@@ -134,7 +133,8 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/admin/stats" >
+            to="/admin/stats"
+          >
             <FiPieChart className={styles.icon} />
             Analytics
           </Link>
@@ -172,7 +172,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/home"
+            to="/admin/settings/managemembers "
           >
             <FiBook className={styles.icon} />
             Manage members
@@ -188,7 +188,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/invitation"
+            to="/admin/invites"
           >
             <FiUserPlus className={styles.icon} />
             Invitations
@@ -210,6 +210,14 @@ const AdminSidebar = ({ setModal, openModal }) => {
           >
             <FiScissors className={styles.icon} />
             Authentication
+          </Link>
+          <Link
+            onClick={() => setModal(!openModal)}
+            className={styles.sidebarLink}
+            to="/admin/settings/deprecation"
+          >
+            <FiScissors className={styles.icon} />
+            Deprecation
           </Link>
           <Link
             onClick={() => setModal(!openModal)}
@@ -242,7 +250,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/home"
+            to="/admin/settings/managemembers "
           >
             Manage members
           </Link>
@@ -259,7 +267,6 @@ const AdminSidebar = ({ setModal, openModal }) => {
             to="/help"
           >
             Help
-            
           </Link>
           <Link
             onClick={() => setModal(!openModal)}
@@ -283,18 +290,10 @@ const AdminSidebar = ({ setModal, openModal }) => {
           >
             Pricing
           </Link>
-          <Link
-            
-            className={styles.sidebarLink}
-            to="/blog"
-          >
+          <Link className={styles.sidebarLink} to="/blog">
             Our blog
           </Link>
-          <Link
-            
-            className={styles.sidebarLink}
-            to="/signout"
-          >
+          <Link className={styles.sidebarLink} to="/signout">
             Sign out
             <FiLogOut className={styles.iconRight} />
           </Link>

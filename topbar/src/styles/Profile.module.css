@@ -49,6 +49,7 @@
 
 .content {
   padding: 20px;
+  background: var(--bg-color);
 }
 
 .userAvatar {
@@ -156,7 +157,7 @@
 .infoTitle {
   font-size: 12px;
   font-weight: 400;
-  color: #3a3a3a;
+  color: var(--text-color-normal);
   margin-bottom: 0.1rem;
 }
 .infoTitle a {
@@ -166,7 +167,7 @@
 .infoLink {
   font-size: 1rem;
   font-weight: 500;
-  color: #242424;
+  color: var(--text-color-gray-1);
 }
 
 .social {
@@ -243,6 +244,7 @@
   margin-top: 7px;
   cursor: pointer;
   outline: none;
+  color: var(--text-color-bold);
   font-size: 17px;
   border: 0;
   padding-left: 5px;
