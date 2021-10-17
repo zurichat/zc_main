@@ -24,7 +24,7 @@ import { CardContext } from "../../../../context/CardContext"
 
 const Zuribot = () => {
   const [loading, setLoading] = React.useState(false)
-
+  const [isLoading, setIsLoading] = React.useState(false)
   // state management for modal and Modal POST request
   const [modal, setModal] = React.useState(false)
   const [userSays, setUserSays] = React.useState()
@@ -45,7 +45,7 @@ const Zuribot = () => {
       alert("textbox cannot be empty")
     } else {
       try {
-        setLoading(true)
+        setIsLoading(true)
         authAxios.patch(`/organizations/${id}/slackbotresponses`, {
           whensomeonesays: userSays,
           slackresponds: zuribotSays
@@ -54,7 +54,7 @@ const Zuribot = () => {
         {
           alert(`Zuribot will now look out for the word, ${userSays}`)
         }
-        setLoading(false)
+        setIsLoading(false)
       } catch (error) {
         throw Error(alert(error))
       }
@@ -156,7 +156,11 @@ const Zuribot = () => {
             <button onClick={cancel} className={styles.secondaryBtn}>
               Cancel
             </button>
-            <button onClick={submit} className={styles.primaryBtn}>
+            <button
+              onClick={submit}
+              className={styles.primaryBtn}
+              disabled={isLoading}
+            >
               {loading ? "Wait" : "Save"}
             </button>
           </div>
