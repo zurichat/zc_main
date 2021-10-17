@@ -50,6 +50,9 @@
 
 .notifications {
   width: 100%;
+  background-color: var(--background);
+  height: 100%;
+  margin-top: -25px;
 }
 /* THE SECTION OF THE CONTENT */
 .notifyContent {
@@ -279,7 +282,6 @@ input[type="radio"] {
   flex-direction: row;
   flex-wrap: wrap;
   list-style-type: none;
-  width: 140%;
 }
 
 .selectButton {
@@ -335,7 +337,7 @@ input[type="radio"] {
   border: 1px solid #e5e5e5;
   box-sizing: border-box;
   border-radius: 5px;
-  width: 173px;
+  width: 143px;
   height: 39px;
   font-size: 13px;
   outline: none;
@@ -560,7 +562,7 @@ input[type="radio"] {
 @media (max-width: 450px) {
   .itemTitle1 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     padding: 5px;
     align-items: center;
