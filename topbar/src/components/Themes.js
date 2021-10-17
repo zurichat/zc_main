@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import styles from "../styles/Themes.module.css"
 import theme16 from "../assets/images/theme16.png"
 import theme17 from "../assets/images/theme17.png"
+import themeColors from "../../../theming/themecolors"
 
 const Themes = () => {
   const [active1, setActive1] = useState(0)
@@ -11,21 +12,59 @@ const Themes = () => {
   const [DataState, setDataState] = useState({})
 
   const toggleDarkMode = () => {
+    localStorage.setItem("mode", "dark")
     setDarkMode(!darkMode ? true : true)
     setMode("dark")
+    const sideBar =document.getElementById("single-spa-application:@zuri/sidebar")
+    sideBar.setAttribute("data-theme", "dark")
+    const topBar = document.getElementById("single-spa-application:@zuri/topbar")
+    topBar.setAttribute("data-theme", "dark")
+    const PrefMenu= document.getElementById("preferences-menu-container")
+    PrefMenu.setAttribute("data-theme", "dark")
+    const PrefMainBox= document.getElementById("preferences-main-box")
+    PrefMainBox.setAttribute("data-theme", "dark")
+    const MarketPlaceBox= document.getElementsByClassName("market-place-custom-div")
+    MarketPlaceBox.setAttribute("data-theme", "dark")
   }
   const toggleLightMode = () => {
+    localStorage.setItem("mode", "light")
     setDarkMode(darkMode ? false : false)
     setMode("light")
+    const sideBar =document.getElementById("single-spa-application:@zuri/sidebar")
+    sideBar.setAttribute("data-theme", "light")
+    const topBar = document.getElementById("single-spa-application:@zuri/topbar")
+    topBar.setAttribute("data-theme", "light")
+    const PrefMenu= document.getElementById("preferences-menu-container")
+    PrefMenu.setAttribute("data-theme", "light")
+    const PrefMainBox= document.getElementById("preferences-main-box")
+    PrefMainBox.setAttribute("data-theme", "light")
+    const MarketPlaceBox= document.getElementsByClassName("market-place-custom-div")
+    MarketPlaceBox.setAttribute("data-theme", "dark")
   }
 
-  useEffect(() => {
-    if (mode === "dark") {
-      localStorage.setItem("mode", "dark")
-    } else {
-      localStorage.setItem("mode", "light")
-    }
-  }, [mode])
+  const handleThemeToggle = (theme) => {
+    localStorage.removeItem("theme")
+    localStorage.setItem("theme", theme)
+    const sideBar =document.getElementById("single-spa-application:@zuri/sidebar")
+    sideBar.style.backgroundColor = themeColors[theme].primary
+    const topBar = document.getElementById("single-spa-application:@zuri/topbar")
+    topBar.style.backgroundColor = themeColors[theme].primary
+    // const sideBarHeader = document.getElementsByClassName("sidebar-header-div")
+    // sideBarHeader[0].style.backgroundColor = themeColors[theme].secondary
+  }
+
+  // useEffect(() => {
+  //   const themeLocal = localStorage.getItem("mode") && localStorage.getItem("mode") || "light"
+  //   setMode(themeLocal)
+  // }, [mode])
+
+  // useEffect(() => {
+  //   if (mode === "dark") {
+  //     localStorage.setItem("mode", "dark")
+  //   } else {
+  //     localStorage.setItem("mode", "light")
+  //   }
+  // }, [mode])
 
   // const [mode, setMode] = useState(() => localStorage.getItem('mode'))
 
@@ -53,14 +92,14 @@ const Themes = () => {
   // })
 
   return (
-    <div className={styles.themeCont} data-theme={darkMode ? "dark" : "light"}>
+    <div className={styles.themeCont} /*data-theme={darkMode ? "dark" : "light"}*/>
       <div className={styles.title}>
         <div className={styles.them}>Themes</div>
         <div className={styles.text}>
           Change the appearance of Slack across all of your workspaces.
         </div>
       </div>
-      <div className={styles.sync}>
+      {/* <div className={styles.sync}>
         <div className={styles.checkbox}>
           <input
             type="checkbox"
@@ -87,11 +126,10 @@ const Themes = () => {
         <div className={styles.mention}>
           Direct messages, mentions &amp; network
         </div>
-      </div>
+      </div> */}
       <div className={styles.text2}>
-        Automatically switch between light and dark themes when
+        Automatically switch between light and dark themes when your system does.
       </div>
-      <div className={styles.texti2}>your system does.</div>
       <div className={styles.img}>
         <div className={styles.up}>
           <div className={styles.upper}>
@@ -153,7 +191,7 @@ const Themes = () => {
         <div className={styles.true}>Tried and true</div>
       </div>
       <div className={styles.set1}>
-        <div className={styles.activeAsh}>
+        <div className={styles.activeAsh} >
           <div className={styles.largeRec}>
             <div className={styles.large}></div>
           </div>
@@ -179,8 +217,9 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent}>
-            <div className={styles.radio8}>
+            <div className={styles.radio8} onClick={handleThemeToggle.bind(this, "activeAsh")}>
               <input
+                name="theme"
                 type="radio"
                 value="activeAsh"
                 checked={active1 === 2}
@@ -192,7 +231,7 @@ const Themes = () => {
             <div className={styles.ash}>Active Ash</div>
           </div>
         </div>
-        <div className={styles.activeAsh2}>
+        <div className={styles.activeAsh2} >
           <div className={styles.largeRec2}>
             <div className={styles.large}></div>
           </div>
@@ -218,8 +257,9 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent2}>
-            <div className={styles.radio9}>
+            <div className={styles.radio9} onClick={handleThemeToggle.bind(this, "peakyPurple")}>
               <input
+                name="theme"
                 type="radio"
                 value="activeAsh"
                 checked={active1 === 3}
@@ -228,7 +268,7 @@ const Themes = () => {
                 }}
               />
             </div>
-            <div className={styles.ash2}>Picky Purple</div>
+            <div className={styles.ash2}>Peaky Purple</div>
           </div>
         </div>
       </div>
@@ -264,8 +304,9 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent3}>
-            <div className={styles.radio10}>
+            <div className={styles.radio10} onClick={handleThemeToggle.bind(this, "leafyGreen")}>
               <input
+                name="theme"
                 type="radio"
                 value="activeAsh"
                 checked={active1 === 4}
@@ -274,7 +315,7 @@ const Themes = () => {
                 }}
               />
             </div>
-            <div className={styles.ash3}>Leaf Green</div>
+            <div className={styles.ash3}>Leafy Green</div>
           </div>
         </div>
         <div className={styles.activeAsh4}>
@@ -303,8 +344,9 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent4}>
-            <div className={styles.radio11}>
+            <div className={styles.radio11} onClick={handleThemeToggle.bind(this, "darkAsh")}>
               <input
+                name="theme"
                 type="radio"
                 value="activeAsh"
                 checked={active1 === 5}
@@ -344,8 +386,9 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent5}>
-            <div className={styles.radio12}>
+            <div className={styles.radio12} onClick={handleThemeToggle.bind(this, "oceanBlue")}>
               <input
+                name="theme"
                 type="radio"
                 value="activeAsh"
                 checked={active1 === 6}
@@ -383,8 +426,9 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent6}>
-            <div className={styles.radio13}>
+            <div className={styles.radio13} onClick={handleThemeToggle.bind(this, "roseRed")}>
               <input
+                name="theme"
                 type="radio"
                 value="activeAsh"
                 checked={active1 === 7}
@@ -424,8 +468,9 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent7}>
-            <div className={styles.radio14}>
+            <div className={styles.radio14} onClick={handleThemeToggle.bind(this, "goldenMelon")}>
               <input
+                name="theme"
                 type="radio"
                 value="activeAsh"
                 checked={active1 === 8}
@@ -463,8 +508,9 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent8}>
-            <div className={styles.radio15}>
+            <div className={styles.radio15} onClick={handleThemeToggle.bind(this, "canary")}>
               <input
+                name="theme"
                 type="radio"
                 value="activeAsh"
                 checked={active1 === 9}

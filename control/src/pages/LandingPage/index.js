@@ -22,7 +22,7 @@ import Subscribe from "./components/Subscribe"
 import { Helmet } from "react-helmet"
 // import i18n (needs to be bundled ;))
 import "../../i18n"
-import { useTranslation} from "react-i18next"
+import { useTranslation } from "react-i18next"
 
 export default function Homepage() {
   const { useState, useEffect } = React
@@ -78,9 +78,12 @@ export default function Homepage() {
   const FeatureRow = props => {
     return (
       <div className={`${style.ft_row} ${props.rowOrder}`}>
-        <Helmet>
+        {/*  <Helmet>
           <title>Zuri Chat - {t("landing.title.landing")}</title>
-        </Helmet>
+        </Helmet> */}
+        <title>
+          Zuri Chat - Communicate and Collaborate from wherever you are
+        </title>
         <div className={`${style.ft_col}`}>
           <img src={props.src} alt={props.alt} className={`${style.ft_img}`} />
         </div>
@@ -121,10 +124,11 @@ export default function Homepage() {
                 <h1 className={`${style.hero_heading}`}>
                   {t("landing.hero.headline")}
                 </h1>
-                <p className={`${style.hero_p}`}>{t("landing.hero.post_headline")}</p>
+                <p className={`${style.hero_p}`}>
+                  {t("landing.hero.post_headline")}
+                </p>
               </div>
-              <div className={`${style.hero_left_btn_wrap}`}>
-                <input className = "input-tag" type="email" name="" placeholder="Enter your email address" />
+              <div className={style.hero_btn}>
                 <Link to="/signup">
                   <button className={`${style.hero_left_btn}`}>
                     {t("landing.hero.call_to_action")}
@@ -140,7 +144,7 @@ export default function Homepage() {
         {/* { COOKIES BANNER} */}
         <div>{loading ? "" : <Cookies />}</div>
         {/* COMPANIES */}
-        {/* <div className={`${style.company_banner_wrap}`}>
+        {/*<div className={`${style.company_banner_wrap}`}>
           <div className={`${style.company_banner}`}>
             <p className={`${style.cbp}`}>Trusted by top companies worldwide</p>
             <div className={`${style.logos}`}>
@@ -150,7 +154,7 @@ export default function Homepage() {
               <img src={logo_zuri} alt="" className={`${style.logo}`} />
             </div>
           </div>
-        </div> */}
+  </div>*/}
         {/* FEATURES */}
         <div className={`${style.features_wrap}`}>
           <div className={`${style.features}`}>
@@ -200,11 +204,11 @@ export default function Homepage() {
           <div className={`${style.sign_up_banner}`}>
             <div className={`${style.sign_up_left}`}>
               <p className={`${style.sign_up_left_p}`}>
-              {t("landing.cardOne.title")}
+                {t("landing.cardOne.title")}
               </p>
               <a href="/signup">
                 <button className={`${style.sign_up_btn}`}>
-                {t("landing.cardOne.button")}
+                  {t("landing.cardOne.button")}
                 </button>
               </a>
             </div>

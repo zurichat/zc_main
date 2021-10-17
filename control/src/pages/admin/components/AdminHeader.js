@@ -34,10 +34,13 @@ const AdminHeader = ({ setModal, openModal }) => {
 
   return (
     <div className={styles.adminHeader}>
+        <Link style={{}} to="/admin/settings/home">
       <div className={styles.organizationLogo}>
-        <FiHome className={styles.icons} />
-        {workspaceData.name}
+      
+          <FiHome className={styles.icons} />
+          {workspaceData.name}
       </div>
+        </Link>    
       {/* <div className={styles.menu}>
         <Link className={styles.menuLink} to="/">
           <img className={styles.menuImg} src={la_rocket} alt="rocket icon" />

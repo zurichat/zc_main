@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import LaunchPageCSS from '../styles/LaunchPage.module.css'
 import { Helmet } from 'react-helmet'
+import { goToDefaultChannel } from '../../../api/channels'
 
 function LaunchPage() {
   const [user, setUser] = useState(null)
@@ -12,6 +13,7 @@ function LaunchPage() {
     if (user) {
       setUser(user)
     }
+    goToDefaultChannel()
   }, [])
   return (
     <div>
