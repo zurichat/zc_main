@@ -9,6 +9,7 @@ export const createDefaultChannel = (org_id, title = 'General') => {
   if (!user) return 'NO USER LOGGED IN'
 
   GetUserInfo().then(res => {
+    console.log("This is res", res)
     const memberId = res[0]._id
     const { token } = user
     const config = { headers: { "Content-type": "application/json" , Authorization: `Bearer ${token}` } }
