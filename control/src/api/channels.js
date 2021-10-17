@@ -10,7 +10,8 @@ export const createDefaultChannel = (org_id, title = 'General') => {
 
   GetUserInfo().then(res => {
     console.log("This is res", res)
-    const memberId = res[0]._id
+    const userData = JSON.parse(localStorage.getItem('userData'))
+    const memberId = userData._id
     const { token } = user
     const config = { headers: { "Content-type": "application/json" , Authorization: `Bearer ${token}` } }
 
