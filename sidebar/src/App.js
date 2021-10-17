@@ -5,6 +5,7 @@ import { fetchUser } from "./utils/fetchUserDetails"
 import NewInviteModal from "./components/invite-workflow/newInviteModal/newInviteModal"
 import InviteResponseModal from "./components/invite-workflow/response-modal/responseModal"
 import InviteLoaderModal from "./components/invite-workflow/loader/loader"
+import themeColors from "../../theming/themecolors"
 
 export const ACTIONS = {
   ADD_USER_INFO: "add-user-info",
@@ -120,7 +121,12 @@ function reducer(state = { sidebar: {} }, action) {
 
 export default function App() {
   const [state, dispatch] = useReducer(reducer, {})
-
+  const theme = localStorage.getItem("theme")
+  if (theme !== null && theme !== ""){
+    const sideBar = document.getElementById("single-spa-application:@zuri/sidebar")
+    sideBar.style.backgroundColor = themeColors[theme]?.primary
+  }
+  
   useEffect(() => {
     //Load user related information when component mounts
     fetchUser(dispatch)

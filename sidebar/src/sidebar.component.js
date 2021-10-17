@@ -20,8 +20,11 @@ import Category from "./components/Category"
 import { dummySidebar } from "./components/dummySidebar"
 import Starred from "./components/Starred"
 
+const categories = []
+
 const Sidebar = props => {
   let currentWorkspace = localStorage.getItem("currentWorkspace")
+
   const [nullValue, setnullValue] = useState(0)
 
   useEffect(() => {
@@ -63,6 +66,7 @@ const Sidebar = props => {
 
   var singleItems = []
   var categorizedItems = []
+  var starredRooms = []
   if (props.state.sidebar && nullValue === 1) {
     for (let key in props.state.sidebar) {
       if (!categories.includes(key)) {
@@ -72,7 +76,7 @@ const Sidebar = props => {
           var data = props.state.sidebar[key][k]
           return (
             <SingleRoom
-              key={data.name}
+              key={`${data.name}${idx}`}
               name={data.joined_rooms[0].room_name}
               image={data.joined_rooms[0].room_image}
               link={data.joined_rooms[0].room_url}
@@ -81,12 +85,22 @@ const Sidebar = props => {
         })
       } else {
         const categoryData = Object.keys(props.state.sidebar[key]).map(
-          k => props.state.sidebar[key][k]
+          (k, id) => {
+            const data = props.state.sidebar[key][k]
+            data.baseUrl = `https://${k}`
+            data.id = id
+            return data
+          }
         )
 
         categorizedItems.push(
-          <Category key={key} name={key} data={categoryData} />
+          <Category key={categoryData.id} name={key} data={categoryData} />
         )
+
+        starredRooms = Object.keys(props.state.sidebar[key]).map(
+          (k, id) => props.state.sidebar[key][k].starred_rooms
+        )
+
         //    Object.keys(props.state.sidebar).map((p, idx)=>{
         //     return (categories.includes(p) ?
         //     <Category key={idx} name={p} data={categoryData} />
@@ -95,9 +109,11 @@ const Sidebar = props => {
       }
     }
   }
-  const check = props.state.sidebar && Object.keys(props.state.sidebar).map((plugin, idx)=>{
-    return (props.state.sidebar[plugin].starred_rooms ? true : false)
-  })
+  const check =
+    props.state.sidebar &&
+    Object.keys(props.state.sidebar).map((plugin, idx) => {
+      return props.state.sidebar[plugin].starred_rooms ? true : false
+    })
 
   return (
     <div className={`container-fluid ${styles.sb__container}`}>
@@ -110,11 +126,11 @@ const Sidebar = props => {
          <Room name="Plugins" image={pluginIcon} />*/}
           {/* SIDE BAR DATA */}
           <SingleRoom name="Threads" image={threadIcon} />
-          <SingleRoom name="All Dms" image={dmIcon} />
+          <SingleRoom name="All Dms" image={dmIcon} link="/dm" />
           <SingleRoom name="Drafts" image={draftIcon} />
 
           <SingleRoom name="Plugins" image={pluginIcon} link="/marketplace" />
-          {props.state.sidebar &&  <Starred check={check} state={props.state} />}
+          <Starred starredRooms={starredRooms} />
           {singleItems}
           {categorizedItems}
 

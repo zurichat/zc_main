@@ -1,5 +1,6 @@
 .container {
   width: 100%;
+  margin: 15px 0;
   border: 1px solid #ddd;
   background-color: #efefef;
 }
@@ -90,6 +91,8 @@ select:hover {
 }
 
 .dropdownHeader {
+  display: flex;
+  align-items: center;
   padding: 8px 14px 9px;
   font-size: 15px;
   background: #fff;
@@ -116,8 +119,8 @@ select:hover {
 
 .dropdownListContainer {
   position: absolute;
-  top: 256px;
-  left: 856.125px;
+  top: 303px;
+  right: 306px;
   z-index: 1042;
   display: inline-block;
   vertical-align: top;
@@ -162,26 +165,53 @@ select:hover {
   margin-bottom: 0.8em;
 }
 
+.calender {
+  width: 16px;
+  height: 20px;
+  margin-right: 0.5rem;
+}
+
 .arrowDown {
   margin-left: 7px;
 }
 
-.table {
+.channelsTable {
   background-color: #fff;
+  color: rgb(97, 96, 97);
   font-size: 15px;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
-.table th {
+.channelsTable th {
   padding: 1.2rem 1.5rem 0.5rem;
+  font-size: 13px;
 }
 
-.table td {
+.channelsTable th:first-of-type,
+.channelsTable td:first-of-type {
+  position: sticky;
+  left: 0;
+  background-color: #fff;
+  border-right-color: rgb(29 28 29 / 13%);
+  z-index: 2;
+}
+
+.channelsTable td {
   padding: 0.4rem 1.5rem;
+  font-weight: 500;
 }
 
-.table p {
+.channelsTable p {
   font-size: 15px;
   margin-bottom: 0;
+}
+
+.channelsTable p:first-of-type {
+  color: #1d1c1d;
 }
 
 .topic {
@@ -190,15 +220,15 @@ select:hover {
 }
 
 .description {
-  font-size: 13px;
+  font-size: 15px;
   color: #616061;
   margin-top: 2px;
 }
 
 .columnsModal {
   position: absolute;
-  top: 256px;
-  left: 915px;
+  top: 303px;
+  right: 161px;
   z-index: 1042;
   display: inline-block;
   vertical-align: top;
@@ -281,6 +311,10 @@ select:hover {
   margin-right: 3px;
 }
 
+.grey {
+  color: #616061;
+}
+
 .columnsModalContent label {
   font-weight: 700;
   margin: 0 0 0.25rem 0;
@@ -300,4 +334,11 @@ select:hover {
   margin: 0;
   border-top: 1px solid rgba(29, 28, 29, 0.13);
   border-bottom: 0;
+}
+
+.emptyChannels {
+  text-align: center;
+  font-size: 15px;
+  margin: 12px;
+  color: rgb(97, 96, 97);
 }
