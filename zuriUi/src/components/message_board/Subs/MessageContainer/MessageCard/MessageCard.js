@@ -22,9 +22,7 @@ export default function MessageCard({ messageData }) {
         <div className="msgParticulars">
           <div className="name-time">
             <span className="name">
-              <strong> {messageData.username} </strong>
-            </span>
-            <span className="time">{messageData.time}</span>
+              <strong> {messageData.username} </strong></span><span className="time">{messageData.time}</span>
           </div>
           <div className="message">
             <ChatItem richUiMessageConfig={messageData.richUiData} />
