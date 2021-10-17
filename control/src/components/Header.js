@@ -10,10 +10,8 @@ import Modal from "react-bootstrap/Modal"
 
 import world from "../component-assets/language/world.png"
 import uk from "../component-assets/language/uk.png"
-import ar from "../component-assets/language/ar.png"
 import de from "../component-assets/language/de.png"
 import fr from "../component-assets/language/fr.png"
-import us from "../component-assets/language/us.png"
 import zh from "../component-assets/language/zh.png"
 
 const HeaderSearchSuggestion = () => {
@@ -69,7 +67,7 @@ const HeaderSearchSuggestion = () => {
             alt="zuri-logo"
             className={`d-inline-block align-top ${headerStyles.image}`}
           />
-          <span translate="no" className={`mb-2 ${headerStyles.zuriChat}`}>Zuri Chat</span>
+          <span className={`mb-2 ${headerStyles.zuriChat}`}>Zuri Chat</span>
         </Link>
 
         <div className={`d-lg-none ${headerStyles.language}`}>
@@ -221,7 +219,7 @@ const HeaderSearchSuggestion = () => {
                 aria-expanded="false"
               >
                 <span className={`${headerStyles.item}`}>
-                  {t("landing.nav.plugins")}
+                  {t("landing.nav.plugin")}
                 </span>
               </NavLink>
             </li>
@@ -369,15 +367,15 @@ const HeaderSearchSuggestion = () => {
         <ul
           className={`navbar-nav d-none d-lg-flex me-auto my-2 my-lg-0 navbar-nav-scroll ${headerStyles.signs}`}
         >
-          <li className="nav-item">
-            <Link to="/signup">
+          <li>
+            <Link to="/signup" className={`nav-link`}>
               <span className={`${headerStyles.signU}`}>
                 {t("landing.nav.signup")}
               </span>
             </Link>
           </li>
-          <li className="nav-item">
-            <Link to="/login">
+          <li>
+            <Link to="/login" className={`nav-link`}>
               <span className={`${headerStyles.signIn}`}>
                 {t("landing.nav.login")}
               </span>

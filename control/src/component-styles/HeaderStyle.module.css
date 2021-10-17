@@ -15,17 +15,17 @@
   position: relative;
 }
 
+.navbar_toggle_icon {
+  padding-bottom: 0;
+}
 .navbar_toggle_icon span {
-  display: block;
+  line-height: 1;
   width: 30px;
-  height: 3px;
   margin: 5px 0;
-  position: relative;
   text-align: center;
   justify-content: center;
   background: rgb(85, 83, 83);
-  border-radius: 3px;
-  z-index: 1;
+  border-radius: 4px;
 }
 
 /* .navLinkFeatures {
@@ -97,20 +97,15 @@
   margin: 0 !important;
 }
 
-/* .signs {
-  _padding-right: 6rem;
-} */
-
 .signs li {
-  padding: 8px 20px;
+  padding: 0 20px;
 }
 
 .signU {
   color: #00b87c;
   font-weight: 400;
   font-size: 18px;
-
-  /* _padding: 8px 10px; */
+  padding-top: 8px;
 }
 
 .signU:hover {
@@ -119,11 +114,11 @@
 
 .signIn {
   background-color: #00b87c;
-  color: white !important;
+  color: white;
   font-weight: 400;
   font-size: 18px;
   padding: 8px 20px;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 .signIn:hover {
