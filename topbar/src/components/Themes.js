@@ -25,6 +25,8 @@ const Themes = () => {
     PrefMainBox.setAttribute("data-theme", "dark")
     const MarketPlaceBox= document.getElementsByClassName("market-place-custom-div")
     MarketPlaceBox.setAttribute("data-theme", "dark")
+    const zuriLogo = document.getElementById("zuritopbar__logo")
+    zuriLogo.style.color = "#fff"
   }
   const toggleLightMode = () => {
     localStorage.setItem("mode", "light")
@@ -40,6 +42,8 @@ const Themes = () => {
     PrefMainBox.setAttribute("data-theme", "light")
     const MarketPlaceBox= document.getElementsByClassName("market-place-custom-div")
     MarketPlaceBox.setAttribute("data-theme", "dark")
+    const zuriLogo = document.getElementById("zuritopbar__logo")
+    zuriLogo.style.color = "#000"
   }
 
   const handleThemeToggle = (theme) => {
@@ -49,6 +53,8 @@ const Themes = () => {
     sideBar.style.backgroundColor = themeColors[theme].primary
     const topBar = document.getElementById("single-spa-application:@zuri/topbar")
     topBar.style.backgroundColor = themeColors[theme].primary
+    const zuriLogo = document.getElementById("zuritopbar__logo")
+    zuriLogo.style.color = themeColors[theme].secondary
     // const sideBarHeader = document.getElementsByClassName("sidebar-header-div")
     // sideBarHeader[0].style.backgroundColor = themeColors[theme].secondary
   }
