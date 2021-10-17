@@ -34,8 +34,6 @@ const TopNavBar = () => {
   if (theme !== null || theme !== "") {
     const topBar = document.getElementById("single-spa-application:@zuri/topbar")
     topBar.style.backgroundColor = themeColors[theme]?.primary
-    const zuriLogo = document.getElementById("zuritopbar__logo")
-    // zuriLogo.style.color = themeColors[theme]?.secondary
   }
   const currentWorkspace = localStorage.getItem("currentWorkspace")
 
@@ -244,12 +242,9 @@ const TopNavBar = () => {
     <>
       <div className="ps-3" style={{ width: "10%" }}>
         {/* <a href="/home"> */}
-        <div style={ {display: "flex", justifyContent: "center", alignItems: "center"} }>
-      ` <div className={styles["topNavBar__logo"]}>
-            <img src={zurichatlogo} alt="zuri chat logo" />
-         </div>`
-            <h2 style={{fontStyle: "normal", fontFamily: "Lato", fontSize: "20px", fontWeight: "900", textDecoration: "uppercase"}} id="zuritopbar__logo">ZURI</h2>
-         </div>
+        <div className={styles["topNavBar__logo"]}>
+          <img style={{width: '40%'}} src={zurichatlogo} alt="zuri chat logo" />
+        </div>
         {/* </a> */}
       </div>
       <div className="ps-3" style={{ width: "10%" }}>
