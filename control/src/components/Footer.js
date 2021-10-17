@@ -8,8 +8,10 @@ import twitter from "../component-assets/twitter.svg"
 import linkedin from "../component-assets/linkedin.svg"
 import instagram from "../component-assets/instagram.svg"
 import { useTranslation } from "react-i18next"
+import { googleTranslateElementInit } from "../translator"
 
 const Footer = () => {
+  googleTranslateElementInit()
   const { t } = useTranslation()
 
   const getYear = () => {
@@ -44,7 +46,9 @@ const Footer = () => {
               src={logo}
               alt="zuri-logo"
             />
-            <span className={`mb-2 ${styles.zuriChat}`}>Zuri Chat</span>
+            <span translate="no" className={styles.logo_name}>
+              Zuri Chat
+            </span>
           </Link>
         </div>
 
