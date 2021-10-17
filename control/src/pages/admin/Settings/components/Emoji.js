@@ -350,6 +350,7 @@ const Emoji = () => {
               <button>{commentIcon}</button>
               <button>
                 {/* <img src={ForwardIcon} alt="" /> */}
+                <img src={forwardIcon} alt="" />
               </button>
               <button>{bookmarkIcon}</button>
               <button>{optionsIcon}</button>
