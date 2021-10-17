@@ -183,6 +183,7 @@ textarea {
   height: 100%;
   border: 1px solid rgba(128, 128, 128, 0.8);
   border-radius: 5px;
+  padding: 5px;
 }
 
 .normalText {
