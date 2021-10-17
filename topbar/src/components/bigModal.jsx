@@ -47,7 +47,7 @@ export const BigModal = ({ onClose, inputValue, result, isLoadingUp }) => {
     overflow: auto;
     height: 100vh;
     z-index: 2000;
-    padding: 10px 20px;
+    
   `
   const StyledInput = Styled.input`
     outline: none;
@@ -72,7 +72,8 @@ export const BigModal = ({ onClose, inputValue, result, isLoadingUp }) => {
   ))
   const element = (
     <SearchContainer className="bigModal">
-      <h2>{`Search result for "${inputValue}"`}</h2>
+    <div className={styles.Header}>
+       <p className={styles.header_p}>{`Search result for "${inputValue}"`}</p>
 
       <button
         className="btn"
@@ -81,6 +82,8 @@ export const BigModal = ({ onClose, inputValue, result, isLoadingUp }) => {
       >
         <img src={cancel} alt="close" />
       </button>
+    </div>
+     
       {result.length < 1 ? (
         <div className={styles.noResult}>
           <p className={styles.no_result_title}>No Result Found</p>
