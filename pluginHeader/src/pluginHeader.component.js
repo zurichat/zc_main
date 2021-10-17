@@ -13,7 +13,7 @@ export default function Header(props) {
         <div className={styles.plugin__header}>
           <div
             onClick={() => {
-              setShowDialog(!showDialog)
+              setShowDialog(!showDialog) 
               setTabIndex(0)
             }}
             className={styles.plugin__header__title}

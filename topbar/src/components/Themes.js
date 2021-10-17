@@ -7,7 +7,7 @@ import themeColors from "../../../theming/themecolors"
 const Themes = () => {
   const [active1, setActive1] = useState(0)
   const [darkMode, setDarkMode] = useState(false)
-  const [mode, setMode] = useState("light")
+  const [mode, setMde] = useState("light")
   const [Data, setData] = useState(undefined)
   const [DataState, setDataState] = useState({})
 
