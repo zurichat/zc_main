@@ -110,7 +110,7 @@ const HeaderSearchSuggestion = () => {
                 />{" "}
                 <span>Chinese</span>
               </button>
-              <button
+              {/* <button
                 className={`btn ${headerStyles.select}`}
                 value="ar"
                 onClick={() => saveLang(event.target.value)}
@@ -122,7 +122,7 @@ const HeaderSearchSuggestion = () => {
                   title="Arabic"
                 />{" "}
                 <span>Arabic</span>
-              </button>
+              </button> */}
               <button
                 className={`btn ${headerStyles.select}`}
                 value="de"
@@ -131,10 +131,10 @@ const HeaderSearchSuggestion = () => {
                 <img
                   className={headerStyles.country_logo}
                   src={de}
-                  alt="Dutch"
-                  title="Dutch"
+                  alt="Deutch"
+                  title="Deutch"
                 />{" "}
-                <span>Dutch</span>
+                <span>Deutch</span>
               </button>
             </Modal.Body>
           </Modal>
@@ -274,7 +274,7 @@ const HeaderSearchSuggestion = () => {
             <Modal.Body className={headerStyles.country}>
               <button
                 value="en"
-                onClick={() => saveLang(event.target.value)}
+                onClick={() => saveLang("en")}
                 className={`btn ${headerStyles.select}`}
               >
                 <img
@@ -288,7 +288,7 @@ const HeaderSearchSuggestion = () => {
               <button
                 className={`btn ${headerStyles.select}`}
                 value="fr"
-                onClick={() => saveLang(event.target.value)}
+                onClick={() => saveLang("fr")}
               >
                 <img
                   className={headerStyles.country_logo}
@@ -301,7 +301,7 @@ const HeaderSearchSuggestion = () => {
               <button
                 className={`btn ${headerStyles.select}`}
                 value="zh"
-                onClick={() => saveLang(event.target.value)}
+                onClick={() => saveLang("zh")}
               >
                 <img
                   className={headerStyles.country_logo}
@@ -311,7 +311,7 @@ const HeaderSearchSuggestion = () => {
                 />{" "}
                 <span>Chinese</span>
               </button>
-              <button
+              {/* <button
                 className={`btn ${headerStyles.select}`}
                 value="ar"
                 onClick={() => saveLang(event.target.value)}
@@ -323,19 +323,19 @@ const HeaderSearchSuggestion = () => {
                   title="Arabic"
                 />{" "}
                 <span>Arabic</span>
-              </button>
+              </button> */}
               <button
                 className={`btn ${headerStyles.select}`}
                 value="de"
-                onClick={() => saveLang(event.target.value)}
+                onClick={() => saveLang("de")}
               >
                 <img
                   className={headerStyles.country_logo}
                   src={de}
-                  alt="Dutch"
-                  title="Dutch"
+                  alt="Deutch"
+                  title="Deutch"
                 />{" "}
-                <span>Dutch</span>
+                <span>Deutch</span>
               </button>
             </Modal.Body>
           </Modal>
