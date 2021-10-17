@@ -33,7 +33,7 @@ const TopNavBar = () => {
   const theme = localStorage.getItem("theme")
   if (theme !== null || theme !== "") {
     const topBar = document.getElementById("single-spa-application:@zuri/topbar")
-    topBar.style.backgroundColor = themeColors[theme].primary
+    topBar.style.backgroundColor = themeColors[theme]?.primary
   }
   const currentWorkspace = localStorage.getItem("currentWorkspace")
 
