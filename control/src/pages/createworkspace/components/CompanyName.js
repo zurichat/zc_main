@@ -52,6 +52,13 @@ function CompanyName ({ input }) {
             }
           )
           // .then(res => console.log(res))
+          axios.get(`https://api.zuri.chat/organizations/${newOrgId}/members/?query=${user.email}`)
+          .then(res => {
+            console.log("this is res: ", res);
+          let member_id = res.data.data[0]._id 
+          console.log(member_id);
+          localStorage.setItem('member_id', member_id)
+        } )
         }, 500)
 
         localStorage.setItem("currentWorkspace", newOrgId)
