@@ -25,6 +25,8 @@ const Themes = () => {
     PrefMainBox.setAttribute("data-theme", "dark")
     const MarketPlaceBox= document.getElementsByClassName("market-place-custom-div")
     MarketPlaceBox.setAttribute("data-theme", "dark")
+    const zuriLogo = document.getElementById("zuritopbar__logo")
+    zuriLogo.style.color = "#fff"
   }
   const toggleLightMode = () => {
     localStorage.setItem("mode", "light")
@@ -40,6 +42,8 @@ const Themes = () => {
     PrefMainBox.setAttribute("data-theme", "light")
     const MarketPlaceBox= document.getElementsByClassName("market-place-custom-div")
     MarketPlaceBox.setAttribute("data-theme", "dark")
+    const zuriLogo = document.getElementById("zuritopbar__logo")
+    zuriLogo.style.color = "#000"
   }
 
   const handleThemeToggle = (theme) => {
@@ -49,14 +53,10 @@ const Themes = () => {
     sideBar.style.backgroundColor = themeColors[theme].primary
     const topBar = document.getElementById("single-spa-application:@zuri/topbar")
     topBar.style.backgroundColor = themeColors[theme].primary
+    const zuriLogo = document.getElementById("zuritopbar__logo")
+    zuriLogo.style.color = themeColors[theme].secondary
     // const sideBarHeader = document.getElementsByClassName("sidebar-header-div")
     // sideBarHeader[0].style.backgroundColor = themeColors[theme].secondary
-  }
-  const HandleDefault= ()=>{
-    const sideBar =document.getElementById("single-spa-application:@zuri/sidebar")
-    sideBar.setAttribute("data-theme", "light")
-    const topBar = document.getElementById("single-spa-application:@zuri/topbar")
-    topBar.setAttribute("data-theme", "light")
   }
 
   // useEffect(() => {
@@ -105,7 +105,7 @@ const Themes = () => {
           Change the appearance of Slack across all of your workspaces.
         </div>
       </div>
-      <div className={styles.sync}>
+      {/* <div className={styles.sync}>
         <div className={styles.checkbox}>
           <input
             type="checkbox"
@@ -132,11 +132,10 @@ const Themes = () => {
         <div className={styles.mention}>
           Direct messages, mentions &amp; network
         </div>
-      </div>
+      </div> */}
       <div className={styles.text2}>
-        Automatically switch between light and dark themes when
+        Automatically switch between light and dark themes when your system does.
       </div>
-      <div className={styles.texti2}>your system does.</div>
       <div className={styles.img}>
         <div className={styles.up}>
           <div className={styles.upper}>
@@ -193,11 +192,8 @@ const Themes = () => {
         <div className={styles.custom}>
           Customize the look of your workspace. Feeling
         </div>
-        <div className={styles.defaultt} onClick={HandleDefault(this,"white")}>
-          Restore theme to default(white)</div>
-        <br/>
-        <div className={styles.custom2}>Adventurous?</div>
-        <div className={styles.create}>Select Your Custom Theme</div>
+        <div className={styles.custom2}>adventurous?</div>
+        <div className={styles.create}>Create a custom theme</div>
         <div className={styles.true}>Tried and true</div>
       </div>
       <div className={styles.set1}>
@@ -532,9 +528,7 @@ const Themes = () => {
             <div className={styles.ash8}>Canary</div>
           </div>
         </div>
-       
       </div>
-
     </div>
   )
 }
