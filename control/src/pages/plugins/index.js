@@ -28,7 +28,6 @@ import Footer from "../../components/Footer"
 import { Link } from "react-router-dom"
 import Cookies from "../cookies"
 import Subscribe from "./components/Subscribe1"
-import { Helmet } from "react-helmet"
 import "../../i18n"
 import { useTranslation } from "react-i18next"
 
@@ -68,9 +67,6 @@ export default function Homepage() {
   const FeatureRow = props => {
     return (
       <div className={`${style.ft_row} ${props.rowOrder}`}>
-        <Helmet>
-          <title>Zuri Chat - {t("plugin.title.plugin")}</title>
-        </Helmet>
         <div className={`${style.ft_col}`}>
           <img src={props.src} alt={props.alt} className={`${style.ft_img}`} />
         </div>
