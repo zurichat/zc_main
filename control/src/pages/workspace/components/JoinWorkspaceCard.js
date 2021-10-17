@@ -18,7 +18,7 @@ const JoinWorkspaceCard = () => {
         {t("workspace.space.join_line")}
       </p>
       <Link to="/createworkspace">
-        <button>{t("workspace.space.join_btn")}</button>
+        <button>{t("workspace.space.joinbtn")}</button>
       </Link>
     </div>
   )
