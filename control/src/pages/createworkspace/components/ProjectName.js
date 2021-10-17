@@ -10,7 +10,7 @@ import { createDefaultChannel } from "../../../api/channels"
 const ProjectName = ({ inputChangeHandler, value }) => {
   let match = useRouteMatch()
 
-  let newOrgId, channelName
+  let newOrgId, channelName, member_id
 
   const [user, setUser] = useState(null)
   useEffect(() => {
@@ -25,7 +25,8 @@ const ProjectName = ({ inputChangeHandler, value }) => {
   const setChannelName = () =>{
     newOrgId = localStorage.getItem("currentWorkspace")
     channelName = localStorage.getItem("input")
-    createDefaultChannel(newOrgId, channelName)
+    member_id = localStorage.getItem("member_id")
+    createDefaultChannel(newOrgId, channelName, member_id)
   }
 
   return (
