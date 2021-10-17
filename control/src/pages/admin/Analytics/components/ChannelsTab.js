@@ -4,11 +4,11 @@ import { Table } from "react-bootstrap"
 import { MdKeyboardArrowDown } from "react-icons/md"
 import { IoCalendarOutline } from "react-icons/io5"
 import { getCurrentWorkspace } from "../../Utils/Common"
-import { authAxios, analyticsAxios } from "../../Utils/Api"
+import { authAxios } from "../../Utils/Api"
 import ToolTip from "../utils/Tooltip"
+import axios from "axios"
 
-const date = new Date()
-
+// fixed default table headers needed by the view
 const tableData = [
   {
     title: "Name",
@@ -18,7 +18,7 @@ const tableData = [
   {
     title: "Created",
     active: true,
-    code: "created"
+    code: "created_on"
   },
   {
     title: "Last active",
@@ -28,37 +28,12 @@ const tableData = [
   {
     title: "Total membership",
     active: true,
-    code: "total_members"
+    code: "members"
   },
   {
     title: "Messages Posted",
     active: true,
-    code: "posted_messages"
-  },
-  {
-    title: "TDummy",
-    active: true,
-    code: "t_dummy"
-  },
-  {
-    title: "TDummy1",
-    active: true,
-    code: "t_dummy1"
-  },
-  {
-    title: "TDummy2",
-    active: true,
-    code: "t_dummy2"
-  },
-  {
-    title: "TDummy3",
-    active: true,
-    code: "t_dummy3"
-  },
-  {
-    title: "Next Dummy",
-    active: true,
-    code: "next_dummy"
+    code: "message_count"
   }
 ]
 
@@ -69,141 +44,6 @@ const FormatText = text => {
   return result
 }
 
-const apiData = [
-  {
-    name: {
-      value: "kingsley okoro",
-      styles: styles.topic,
-      meta: "this channel is for... well"
-    },
-    created: { value: date.toLocaleString(), styles: "", meta: "" },
-    last_active: { value: date.toLocaleString(), styles: "", meta: "" },
-    total_members: {
-      value: Math.floor(Math.random() * 20),
-      styles: "",
-      meta: ""
-    },
-    posted_messages: {
-      value: Math.floor(Math.random() * 30),
-      styles: "",
-      meta: ""
-    },
-    t_dummy: {
-      value: 20,
-      styles: "",
-      meta: ""
-    },
-    t_dummy1: {
-      value: 201,
-      styles: "",
-      meta: ""
-    },
-    t_dummy2: {
-      value: 202,
-      styles: "",
-      meta: ""
-    },
-    t_dummy3: {
-      value: 203,
-      styles: "",
-      meta: ""
-    },
-    next_dummy: {
-      value: 10,
-      styles: "",
-      meta: ""
-    }
-  },
-  {
-    name: {
-      value: "Favour chris",
-      styles: styles.topic,
-      meta: "Dummy text to test what I'm doing and ensure life on earth is habitable for cockcroaches"
-    },
-    created: { value: date.toLocaleString(), styles: "", meta: "" },
-    last_active: { value: date.toLocaleString(), styles: "", meta: "" },
-    total_members: {
-      value: Math.floor(Math.random() * 20),
-      styles: "",
-      meta: ""
-    },
-    posted_messages: {
-      value: Math.floor(Math.random() * 30),
-      styles: "",
-      meta: ""
-    },
-    t_dummy: {
-      value: 20,
-      styles: "",
-      meta: ""
-    },
-    t_dummy1: {
-      value: 201,
-      styles: "",
-      meta: ""
-    },
-    t_dummy2: {
-      value: 202,
-      styles: "",
-      meta: ""
-    },
-    t_dummy3: {
-      value: 203,
-      styles: "",
-      meta: ""
-    },
-    next_dummy: {
-      value: 10,
-      styles: "",
-      meta: ""
-    }
-  },
-  {
-    name: {
-      value: "Tessy Igwe",
-      styles: styles.topic,
-      meta: "This channel is for... well"
-    },
-    created: { value: date.toLocaleString(), styles: "", meta: "" },
-    last_active: { value: date.toLocaleString(), styles: "", meta: "" },
-    total_members: {
-      value: Math.floor(Math.random() * 20),
-      styles: "",
-      meta: ""
-    },
-    posted_messages: {
-      value: Math.floor(Math.random() * 30),
-      styles: "",
-      meta: ""
-    },
-    t_dummy: {
-      value: 20,
-      styles: "",
-      meta: ""
-    },
-    t_dummy1: {
-      value: 201,
-      styles: "",
-      meta: ""
-    },
-    t_dummy2: {
-      value: 202,
-      styles: "",
-      meta: ""
-    },
-    t_dummy3: {
-      value: 203,
-      styles: "",
-      meta: ""
-    },
-    next_dummy: {
-      value: 10,
-      styles: "",
-      meta: ""
-    }
-  }
-]
-
 const ChannelsTab = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isColumnModalOpen, setIsColumnModalOpen] = useState(false)
@@ -213,7 +53,7 @@ const ChannelsTab = () => {
   const toggle = () => setIsOpen(!isOpen)
   const toggleColumnModal = () => setIsColumnModalOpen(!isColumnModalOpen)
   const [tableHeaderStateData, setTableHeaderStateData] = useState(tableData)
-  const [apiStateData, setApiStateData] = useState(apiData)
+  const [apiStateData, setApiStateData] = useState([])
   const [workspaceData, setWorkspaceData] = useState({})
   const currentWorkspace = getCurrentWorkspace()
 
@@ -230,18 +70,33 @@ const ChannelsTab = () => {
     }
   }, [currentWorkspace])
 
-  // Didn't use live data because I was getting CORS
-  // policy block and my back end guy couldn't fix it on time
-  // useEffect(() => {
-  //   analyticsAxios
-  //     .get(`${currentWorkspace}/channels`)
-  //     .then(res => {
-  //       console.log("res", res)
-  //     })
-  //     .catch(err => {
-  //       console.error(err)
-  //     })
-  // }, [])
+  useEffect(() => {
+    axios(
+      `https://channels.zuri.chat/api/v1/${currentWorkspace}/workspace_channel/`
+    )
+      .then(res => {
+        const formattedApiResult = res.data.map(x => {
+          let tempArray = {}
+          Object.keys(x).map(key => {
+            if (key != "description") {
+              tempArray = {
+                ...tempArray,
+                [key]: {
+                  value: x[key],
+                  styles: key === "name" ? styles.topic : "",
+                  meta: key === "name" ? x.description : ""
+                }
+              }
+            }
+          })
+          return tempArray
+        })
+        setApiStateData(formattedApiResult)
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }, [])
 
   useEffect(() => {
     setTableHeaderStateData(tableHeaderStateData)
@@ -294,34 +149,48 @@ const ChannelsTab = () => {
   }
 
   const generateTableBody = () => {
-    return apiStateData.map((x, i) => {
-      const tempInnerData = []
-      return (
-        <tr key={"tr_body_" + i}>
-          {Object.keys(x).forEach((key, index) => {
-            let headerIndex = tableHeaderStateData.findIndex(
-              x => x.code === key
+    let tableRowArray = []
+    if (apiStateData.length) {
+      let currentIndex = 0
+      while (currentIndex <= apiStateData.length) {
+        const tempInnerData = []
+
+        tableHeaderStateData.map((x, index) => {
+          if (
+            apiStateData[currentIndex] &&
+            apiStateData[currentIndex][x?.code] &&
+            x?.active
+          ) {
+            const { value, meta, styles } = apiStateData[currentIndex][x.code]
+
+            const description = meta && FormatText(meta)
+            let data = description ? (
+              <td key={"td_body_" + index + "_" + currentIndex}>
+                <div>
+                  <p className={styles}>{`${value}`}</p>
+                  <ToolTip toolTipText={meta}>{description}</ToolTip>
+                </div>
+              </td>
+            ) : (
+              <td key={"td_body_" + index + "_" + currentIndex}>
+                {value instanceof Date && !isNaN(value)
+                  ? `${value.toLocaleString}`
+                  : `${value}`}
+              </td>
             )
-            if (headerIndex > -1 && tableHeaderStateData[headerIndex].active) {
-              const { value, meta, styles } = x[key]
-              const description = meta && FormatText(meta)
-              let data = description ? (
-                <td key={"td_body_" + index}>
-                  <div>
-                    <p className={styles}>{`${value}`}</p>
-                    <ToolTip toolTipText={meta}>{description}</ToolTip>
-                  </div>
-                </td>
-              ) : (
-                <td key={"td_body_" + index}>{`${value}`}</td>
-              )
-              tempInnerData.push(data)
-            }
-          })}
-          {tempInnerData}
-        </tr>
-      )
-    })
+            tempInnerData.push(data)
+          }
+        })
+
+        tableRowArray.push(
+          <tr key={"tr_body_" + currentIndex}>{tempInnerData}</tr>
+        )
+        currentIndex++
+      }
+      return tableRowArray
+    } else {
+      return null
+    }
   }
 
   const toggleHeaderColumns = index => {
@@ -365,7 +234,7 @@ const ChannelsTab = () => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <p className={styles.leftText}>3 public channels</p>
+        <p className={styles.leftText}>{apiStateData.length} public channels</p>
         <div className={styles.right}>
           <p>Updated 3 days ago</p>
           <div className={styles.dropdownHeader} onClick={toggle}>
@@ -381,12 +250,18 @@ const ChannelsTab = () => {
         </div>
       </div>
 
-      <Table hover className={styles.channelsTable}>
-        <thead>
-          <tr>{generateTableHeader()}</tr>
-        </thead>
-        <tbody>{generateTableBody()}</tbody>
-      </Table>
+      {generateTableBody() === null ? (
+        <p className={styles.emptyChannels}>
+          There are no channels in your workspace currently
+        </p>
+      ) : (
+        <Table hover className={styles.channelsTable}>
+          <thead>
+            <tr>{generateTableHeader()}</tr>
+          </thead>
+          <tbody>{generateTableBody()}</tbody>
+        </Table>
+      )}
 
       {isOpen && (
         <div className={styles.dropdownListContainer} ref={durationNode}>
@@ -429,19 +304,8 @@ const ChannelsTab = () => {
             <div className={styles.horizontalDivider}>
               <hr />
             </div>
-            <div className={styles.activity}>
-              <p>Activity</p>
-              <div className={styles.radioFields}>
-                <label>
-                  <input type="checkbox" /> Messages posted
-                </label>
-              </div>
-            </div>
-            <div className={styles.horizontalDivider}>
-              <hr />
-            </div>
 
-            {/* paid plans functionality not yet implemented on zuri chat */}
+            {/* paid plans functionalities not yet implemented on zuri chat */}
             <div className={styles.basicsContainer}>
               <p>Available on Paid Plans</p>
               <div className={styles.radioFields}>
