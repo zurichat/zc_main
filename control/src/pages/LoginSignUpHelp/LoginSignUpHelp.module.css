@@ -10,9 +10,15 @@
   padding: 40px 60px;
 }
 
+@media screen and (min-width: 300px) and (max-width: 700px) {
+  .LoginHelpSideBar,
+  .LoginHelpMain {
+    padding: 4px 6px;
+  }
+}
 .helpLink,
 .ChelpLink {
-  font-size: 1.2rem!important;
+  font-size: 1.2rem !important;
 }
 
 /* .loginHelp p,
