@@ -4,12 +4,10 @@ import axios from "axios"
 
 const RoomOptions = ({ isClicked, position, room, baseUrl }) => {
   // const isClicked = true;
-  const room_Id = room.room_url.split("/")[2]
+  const room_Id = room?.room_url?.split("/")[2]
   const org = localStorage.getItem("currentWorkspace")
   const orgs = JSON.parse(sessionStorage.getItem("organisations"))
   const member_id = orgs.filter(x => x.id == org)[0].member_id
-
-  const [starred, setStarred] = useState(false)
 
   //  axios
   // .("https://api.zuri.chat/auth/login", {
@@ -17,6 +15,12 @@ const RoomOptions = ({ isClicked, position, room, baseUrl }) => {
   // })
   const starRoomClicked = () => {
     console.warn(room_Id, baseUrl, org, member_id)
+    axios
+      .put(
+        `${baseUrl}/api/v1/org/${org}/rooms/${room_Id}/members/${member_id}/star`
+      )
+      .then(res => console.warn(res, "started room"))
+      .catch(err => console.warn(err))
   }
 
   let screenHeight = window.innerHeight / 2

@@ -33,7 +33,7 @@
             document.title = getURL + ' ' + appendZuri;
         };
     };
-    setInterval(getTitleOfPage, 500)
+    setInterval(getTitleOfPage, 500);
 </script>
 <!-- End -->
 
@@ -214,9 +214,15 @@
     }
 
     /* CHESS STYLE */
+
+    /* Translator feature style */
+    .goog-te-banner-frame {
+      display: none
+    }
+
   </style>
 
-  <title>Zuri Chat</title>
+  <title>Zuri Chat - Communicate and Collaborate from wherever you are </title>
   <!--
     Remove this if you only support browsers that support async/await.
     This is needed by babel to share largeish helper code for compiling async/await in older
@@ -316,7 +322,9 @@
         "@zuri/zuri-ui": "//localhost:8084/zuri-zuri-ui.js",
         "@zuri/utilities": "//localhost:8085/zuri-utilities.js",
         "@zuri/marketplace": "//localhost:8086/zuri-marketplace.js",
-        "@zuri/manage-user-modal": "//localhost:8087/zuri-manageUser.js"
+        "@zuri/manage-user-modal": "//localhost:8087/zuri-manageUser.js",
+        "@zuri/zuri-plugin-channels": "//localhost:8088/zuri-zuri-plugin-channels.js"
+
       }
     }
   </script>
@@ -369,6 +377,10 @@
     integrity="sha512-ewfXo9Gq53e1q1+WDTjaHAGZ8UvCWq0eXONhwDuIoaH8xz2r96uoAYaQCm1oQhnBfRXrvJztNXFsTloJfgbL5Q=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
+
+
+    <!-- translator feature script -->
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>
