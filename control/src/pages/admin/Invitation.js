@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import AdminSettings from "."
-// import AdminTab from "./components/AdminTab"
 import { FiSearch } from "react-icons/fi"
 import styles from "./styles/invitation.module.css"
 import InviteModal from './InviteModal'
@@ -18,21 +17,14 @@ const getUserInfo = async() => {
 
     const useInfo = await GetUserInfo()
     setUserInfo(useInfo)
-        const respond1 = await axios.get(`https://api.zuri.chat/organizations/${userInfo?.currentWorkspace}`, {
-          headers: {
-              Authorization: `Bearer ${userInfo?.token}`
-          } 
-        }
-      )
-    setOrganizationName(respond1.data.data.name)
-      
 }
 
   useEffect(() => {
     getUserInfo()
    
   }, [userInfo.token])
-    useEffect(() => { 
+    useEffect(() => {
+   
   }, [pendingInvite])
 
   return (
