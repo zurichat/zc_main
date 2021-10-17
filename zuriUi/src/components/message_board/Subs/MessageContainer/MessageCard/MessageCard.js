@@ -12,7 +12,7 @@ export default function MessageCard({ messageData }) {
         />
       </div>
       {
-        (messageData.event.action === "join:channel") ? (<span className="name">
+        (messageData.event && messageData.event.action === "join:channel") ? (<span className="name">
           <span style={{fontStyle: 'italic', color:'grey'}}> {messageData.username} joined the channel </span>
         </span> ) :
 
@@ -27,7 +27,8 @@ export default function MessageCard({ messageData }) {
             <div className="message">
               <ChatItem richUiMessageConfig={messageData.richUiData} />
             </div>
-          </div>)
+          </div>
+          )
       }
     </div>
   )
