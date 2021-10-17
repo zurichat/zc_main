@@ -10,6 +10,7 @@ import { getUser } from "../../Utils/Common"
 import AdminSettings from "../../."
 import right_caret from "../../assets/cheveron-right.svg"
 import classes from "../styles//SettingsHome.module.css"
+import {GoPlug} from 'react-icons/go'
 
 const randomizedGreeting = ["Hey there", "Welcome,", "¡Hola,"]
 
@@ -99,7 +100,7 @@ const Home = () => {
                   <h3> Settings & Permissions </h3>
                   <span className={classes.span_text}>
                     Configure your workspace settings, permissions, and
-                    authentication prefrences.
+                    authentication preferences.
                   </span>
                 </div>
                 <div>
@@ -290,8 +291,195 @@ const Home = () => {
                 </div>
               </div>
             </Link>
-          </div>       
- </div>
+          </div>   
+          </div>
+
+           {/* Applications*/}
+        <div className={classes.card}>
+          {/* Settings and permissions*/}
+          <div className="mt-2">
+            <Link to="/admin/settings" className="" style={{ display: "flex" }}>
+              <div>
+                <span
+                  className={classes.settings_icon_holder}
+                  style={{ backgroundColor: "#1C9BD1" }}
+                >
+                  <GoPlug className={classes.settings_icon} />
+                </span>
+              </div>
+              <div
+                className=""
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginLeft: " 1em",
+                  justifyContent: "space-between",
+                  width: "100%"
+                }}
+              >
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <h3> Applications </h3>
+                  <span className={classes.span_text}>
+                    Applications automatically let you pull information and activity from outside tools into Slack in a way that's timely, relevant and searchable. Get started with some of our most popular applications:
+                  </span>
+                </div>
+                <div>
+                  <img src={right_caret} alt="go" />
+                </div>
+                <div>
+                  <p className={`${classes.services_promo} ${classes.align_center}`}>
+                            <Link to="/services/new/dropbox" data-toggle="tooltip" title="" data-original-title="Dropbox" style={{
+                  display: "inline-block",
+                  margin: "1rem"
+                }}>
+                              <img src="https://a.slack-edge.com/80588/img/services/dropbox_128.png" style={{
+                  width: "96px",
+                  height: "96px"
+                }}/>
+                            </Link> 
+                            <Link to="/services/new/trello" data-toggle="tooltip" title="" data-original-title="Trello" style={{
+                  display: "inline-block",
+                  margin: "1rem"
+                }}>
+                              <img src="https://a.slack-edge.com/80588/img/services/trello_128.png" style={{
+                  width: "96px",
+                  height: "96px"
+                }}/>
+                            </Link> 
+                            <Link to="/services/new/gdrive" data-toggle="tooltip" title="" data-original-title="Google Drive" style={{
+                  display: "inline-block",
+                  margin: "1rem"
+                }}>
+                              <img src="https://a.slack-edge.com/6ee36/img/services/gdrive_128.png" style={{
+                  width: "96px",
+                  height: "96px"
+                }}/>
+                            </Link>
+                            <Link to="/services/new/github" data-toggle="tooltip" title="" data-original-title="GitHub" style={{
+                  display: "inline-block",
+                  margin: "1rem"
+                }}>
+                              <img src="https://a.slack-edge.com/80588/img/services/github_128.png" style={{
+                  width: "96px",
+                  height: "96px"
+                }}/>
+                            </Link> 
+                            <Link to="/services/new/twitter" data-toggle="tooltip" title="" data-original-title="Twitter" style={{
+                  display: "inline-block",
+                  margin: "1rem"
+                }}>
+                              <img src="https://a.slack-edge.com/80588/img/services/twitter_128.png" style={{
+                  width: "96px",
+                  height: "96px"
+                }}/>
+                            </Link> 
+                            <Link to="/services/new/hangouts" data-toggle="tooltip" title="" data-original-title="Google Hangouts" style={{
+                  display: "inline-block",
+                  margin: "1rem"
+                }}>
+                              <img src="https://a.slack-edge.com/80588/img/services/hangouts_128.png" style={{
+                  width: "96px",
+                  height: "96px"
+                }}/>
+                            </Link>
+                          </p>
+                          <p className={classes.align_center}>
+                            <Link to="/" className={`${classes.btn} ${classes.btn_large} ${classes.hide_on_mobile} ${classes.large_bottom_margin}`} style={{
+                  display: "inline-block",
+                  margin: "1rem"
+                }}>
+                              <GoPlug/>
+                              View App Directory
+                            </Link>
+                            <Link to="/" className={`${classes.btn} ${classes.show_on_mobile}`} style={{
+                  display: "inline-block",
+                  margin: "1rem"
+                }}>
+                              <GoPlug/> 
+                              Browse Applications
+                            </Link>
+                          </p>
+                    <Link/>
+                    </div>
+                    <ul className={classes.settings_home_footer} style={{
+                      listStyle: "none",
+                      fontSize: "1rem",
+                      textAlign: "center",
+                      margin: "4rem auto",
+                      lineHeight: "2rem"
+                    }}>
+                      <li style={{
+                        display: "inline-block",
+                        margin: "0.75rem"
+                      }}>
+                        <Link to="/tour">Tour</Link>
+                      </li>
+                      <li style={{
+                        display: "inline-block",
+                        margin: "0.75rem"
+                      }}>
+                        <Link to="/download-apps">Download Apps</Link>
+                      </li>
+                      <li style={{
+                        display: "inline-block",
+                        margin: "0.75rem"
+                      }}>
+                        <Link to="/legal">Brand Guidelines</Link>
+                      </li>
+                      <li style={{
+                        display: "inline-block",
+                        margin: "0.75rem"
+                      }}>
+                        <Link to="/help">Help</Link>
+                      </li>
+                      <li style={{
+                        display: "inline-block",
+                        margin: "0.75rem"
+                      }}>
+                        <Link to="/confirm-deactivation" target="_blank">
+                          API
+                        </Link>
+                      </li>
+                      <li style={{
+                        display: "inline-block",
+                        margin: "0.75rem"
+                      }}>
+                        <Link to="/pricing">Pricing</Link>
+                      </li>
+                      <div>
+                        <li style={{
+                        display: "inline-block",
+                        margin: "0.75rem"
+                      }}>
+                          <Link to="/contact-us">Contact</Link>
+                        </li>
+                        <li style={{
+                        display: "inline-block",
+                        margin: "0.75rem"
+                      }}>
+                          <Link to="/privacy">Policies</Link>
+                        </li>
+                        <li style={{
+                        display: "inline-block",
+                        margin: "0.75rem"
+                      }}>
+                          <Link to="/ZurichatBlog" target="_blank">
+                            Our Blog
+                          </Link>
+                        </li>
+                        <li style={{
+                        display: "inline-block",
+                        margin: "0.75rem"
+                      }}>
+                          <Link to="/session-signout">Sign Out</Link>
+                        </li>
+                      </div>
+                    </ul>
+          </div>
+                <div className={classes.overlay}></div>
+            </Link>
+          </div>
+          </div>
       </Container>
     </AdminSettings>
 )
