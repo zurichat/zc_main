@@ -9,10 +9,9 @@ const AdminOwnersItem = ({ user }) => {
         <div className={styles.peopleAvatar}>
           <button className={styles.buttonAvatar}>
             <img
-              // src="https://www.entorm.com/blog/wp-content/uploads/2020/12/mark.jpg"
               src={user.image_url === "" ? avatar : user.image_url}
               alt="user"
-              className="imgAvatar"
+              className={styles.imgAvatar}
             />
           </button>
         </div>
@@ -21,7 +20,7 @@ const AdminOwnersItem = ({ user }) => {
             {user.first_name + " " + user.last_name}{" "}
           </p>
           <div className={styles.details}>
-            <span className={styles.spanName}>{user.first_name}</span>
+            <span className={styles.spanName}>{user.display_name}</span>
             <span className={styles.spanDot}>.</span>
             <span className={styles.spanEmail}>{user.email}</span>
           </div>

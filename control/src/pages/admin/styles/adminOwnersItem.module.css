@@ -24,7 +24,7 @@
   display: inline-block;
   outline: none;
 }
-.imgAvatar {
+/* .imgAvatar {
   background-size: 100%;
   background-repeat: no-repeat;
   display: inline-block;
@@ -39,6 +39,19 @@
   height: auto;
   vertical-align: middle;
   border: 0;
+} */
+.imgAvatar {
+  height: 36px;
+  width: 36px;
+  border-radius: 4px;
+  background-color: rgba(29, 28, 29, 0.13);
+  color: #1d1c1d;
+  vertical-align: middle;
+  flex-shrink: 0;
+  border: 0;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: inline-block;
 }
 .admin {
   display: flex;
@@ -76,6 +89,7 @@
   white-space: nowrap;
   margin-right: 4px;
   font-size: 1.125rem;
+  margin-left: 0.2rem;
 }
 .spanEmail {
   color: rgba(29, 28, 29, 0.7);
