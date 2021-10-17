@@ -49,6 +49,7 @@ const ChangeWorkspaceName = () => {
             }
           )
           .then(res => {
+
             // Clears User Extracted Details from LS during Registration
            const data = res.data.data
           
@@ -126,7 +127,7 @@ const ChangeWorkspaceName = () => {
                         <div className={styles["inputdiv"]}>
                         <input
                                 type="text"
-                               
+                                placeholder="New Workspace name"
                                 className={styles["change_workspace_input1"]}
                                 onChange={e => setOrgName(e.target.value)}
                             />
@@ -148,7 +149,7 @@ const ChangeWorkspaceName = () => {
                         </h2>
                         </div>
 
-                        <div  className={styles["change_workspace_cast"]}>
+                        <div  className={styles["change_workspace_text"]}>
 
                             <div>
                                 <p className={styles["change_workspace_p"]}>
@@ -165,7 +166,7 @@ const ChangeWorkspaceName = () => {
                                 type="text"
                                 name=""
                                 id=""
-                                placeholder="HNG"
+                                placeholder="New Url"
                                 className={styles["change_workspace_input2"]}
                                 onChange={e => setOrgUrl(e.target.value)}
                                 />
