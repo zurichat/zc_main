@@ -1,12 +1,12 @@
-.zc-ems-emojiinputbox {
+.zcemsemojiinputbox {
   margin-top: 2rem;
   height: 2rem;
   justify-content: center;
   background: #fff;
   position: fixed;
 }
-.zc-ems-emojiinput {
-  position: fixed;
+.zcemsemojiinput {
+  /* position: fixed; */
   width: 16rem;
   margin-left: 1rem;
   border: 1px solid #777;
@@ -18,7 +18,7 @@
   top: 2.5rem;
 }
 
-.zc-ems-emojiinput:focus {
+.zcemsemojiinput:focus {
   outline: none;
   border-color: #9ecaed;
   box-shadow: 0 0 10px #9ecaed;
