@@ -6,7 +6,7 @@ const RoomOptions = ({ isClicked, position, room, baseUrl }) => {
   // const isClicked = true;
   const room_Id = room.room_url.split("/")[2]
   const org = localStorage.getItem("currentWorkspace")
-  const orgs = sessionStorage.getItem("organisations")
+  const orgs = JSON.parse(sessionStorage.getItem("organisations"))
   const member_id = orgs.filter(x => x.id == org)[0].member_id
 
   const [starred, setStarred] = useState(false)
