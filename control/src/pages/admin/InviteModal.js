@@ -10,53 +10,92 @@ function InviteModal({setShowModal, userInfo, organizationName, setPendingInvite
     const [email, setEmail] = useState("")
     const [userInfos, setUserInfos] = useState("")
     const [loading, setLoading] = useState(false)
+    const [message, setMessage] = useState("");
+    const [type, setType] = useState("")
+    const orgName = localStorage.getItem("orgName") 
+    const [error, setError] = useState(false)
+    const [errorMessage, setErrorMessage] = useState("")
+
     const submitInvite =  async (e) => {
         e.preventDefault()
         setLoading(true)
         const {token, currentWorkspace} = userInfo;
-        const respond = await axios.post(`https://api.zuri.chat/organizations/${userInfo?.currentWorkspace}/send-invite`, 
-            {
-                emails: [email]
-            },
-            {
-                headers: {
-                    Authorization: `Bearer ${userInfo?.token}`
-                } 
+        try {
+            const respond = await axios.post(`https://api.zuri.chat/organizations/${userInfo?.currentWorkspace}/send-invite`, 
+                {
+                    emails: [email]
+                },
+                {
+                    headers: {
+                        Authorization: `Bearer ${userInfo?.token}`
+                    } 
+                }
+            )
+                setPendingInvite(arr=>[...arr, email] )
+                setLoading(false)
+                alert(`Invite has been sent to ${email} to join ${organizationName}`)
+                setTimeout(() => {
+                    setMessage(`Invite has been sent to ${email} to join ${orgName}`)
+                    }, 2000);
+                    setType("success")
             }
-        )
-            setPendingInvite(arr=>[...arr, email] )
-            setLoading(false)
-            alert(`Invite has been sent to ${email} to join ${organizationName}`)
-    }
+        catch (error) {
+              setLoading(false)
+                setTimeout(() => {
+                    setMessage("An error occur")
+                    }, 2000);
+                setType("error")
+        }
 
+    }
     
     const handleChange = (e) => {
         setEmail(e.target.value)
+    if (!/^[A-Z0-9._%]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)){
+            setError(true);
+            setErrorMessage("use a valid email");
+            return;
+        } else {
+            setError(false);
+            setErrorMessage("");
+        }
     }
 
+useEffect(() => {
+    setTimeout(() => {
+        setMessage("")
+    }, 2000);
+}, [message])
   return (
         <BackDrop>
         <NoticeContainer >
         <AddUserHeader>
-            <h2>Invite people {organizationName}</h2>
+            <h2>Invite people to {orgName}</h2>
             <span>
             <CloseIcon  onClick={()=> setShowModal(false)} />
             </span>
         </AddUserHeader> 
+
+        <MessageBox type={type}> 
+            <p>{message}</p>
+        </MessageBox>
 
         <AddUserForm>
         <ToFromBox>
             <To> To:</To>
             <From>Add from </From>
         </ToFromBox>
+
             <SearchUser>
             <input type="text" 
+            border={error&& "1px solid red"}
             placeholder="name@gmail.com"
             name={email}
             onChange={handleChange}
             value={email}
             />
-        
+            {error&& (<Text color="red">{errorMessage}</Text>
+                )}
             </SearchUser>
             <CopyLinkBox> 
                 <CopyLink> 
@@ -64,7 +103,7 @@ function InviteModal({setShowModal, userInfo, organizationName, setPendingInvite
                     <EditLink> Edit link setting</EditLink>
                 </CopyLink>
                 <ToFromBox> 
-                    <SendButton loading={loading} onClick={submitInvite} className="button">  Send { loading ? <Loader type="Oval" color="#07b87c" height={20} width={20}/> : ""} </SendButton>
+                    <SendButton disabled={!!errorMessage.length>0} loading={loading} onClick={submitInvite} className="button">  Send { loading ? <Loader type="Oval" color="#07b87c" height={20} width={20}/> : undefined} </SendButton>
                 
                 </ToFromBox>
             </CopyLinkBox>
@@ -138,7 +177,7 @@ const AddUserHeader = styled.div`
 
 const SearchUser = styled.div`
   position: relative;
-  display: flex;
+  display: grid;
   align-items: center;
   input {
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -209,14 +248,15 @@ const CopyLinkBox = styled.div`
     margin-top : 2em;
 `;
 
-const CopyLink = styled.div``;
+const CopyLink = styled.div`
+    display: flex;
+`;
 
 const SendButton = styled.button`
         color: black !important;
         background-color: #bdbdbda6 !important;
         padding: .3em .5em!important; 
         font-size: 15px ;
-        /* line-height: 24px; */
         border-radius: 2px !important;
         margin-top: 0em !important; 
         width: 5em !important;
@@ -249,4 +289,22 @@ const EditLink = styled.span`
 const ButtonBox = styled.span``
 const LoadBox = styled(Loader)`
     position: absolute;
+`;
+
+const MessageBox = styled.div`
+    width: 100%;
+    position: relative;
+    text-align: center;
+    color: ${({type})=> (type==="error"?"red" : "#07b87c")};
+`
+
+const Text = styled.p`
+  color: red;
+  position: relative;
+  left: 1em;
+  top: 0.5em;
+  font-size: 15px;
+  @media (max-width: ${500}px) {
+    font-size: 13px;
+  }
 `;
