@@ -35,7 +35,7 @@ const TopNavBar = () => {
     const topBar = document.getElementById("single-spa-application:@zuri/topbar")
     topBar.style.backgroundColor = themeColors[theme]?.primary
     const zuriLogo = document.getElementById("zuritopbar__logo")
-    zuriLogo.style.color = themeColors[theme]?.secondary
+    // zuriLogo.style.color = themeColors[theme]?.secondary
   }
   const currentWorkspace = localStorage.getItem("currentWorkspace")
 
