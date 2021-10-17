@@ -45,7 +45,7 @@ const WorkSpaceIconTab = () => {
   const handleIconUpload = () => {
     authAxios
       .patch(
-        `https://api.zuri.chat/organisations/${organisation_id}/logo`,
+        `/organisations/${organisation_id}/logo`,
         updateLogo
       )
       .then(res => {
@@ -70,14 +70,14 @@ const WorkSpaceIconTab = () => {
 
   useEffect(() => {
     authAxios
-      .get(`https://api.zuri.chat/organizations/${organisation_id}`)
+      .get(`/organizations/${organisation_id}`)
       .then(res => {
         setOrgData(res.data.data)
       })
       .catch(err => {
         console.error(err)
       })
-  }, [orgData])
+  }, [])
 
   const handleLogoDelete = () => {
     setLoader({ ...loader, removeLoader: true })

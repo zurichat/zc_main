@@ -1,8 +1,15 @@
-import React from 'react';
+import React from "react"
 
-import './../EmojiBox/EmojiBox.css';
-const EmojiItem = ({ emoji }) => {
-  return <li className='zc-emb-emojiboxItem'>{emoji.character}</li>;
-};
+import styles from "./../EmojiBox/EmojiBox.module.css"
+const EmojiItem = ({ emoji, handleEmojiClicked }) => {
+  return (
+    <li
+      className={styles.zcembemojiboxItem}
+      onClick={e => handleEmojiClicked(e, emoji)}
+    >
+      {emoji.character}
+    </li>
+  )
+}
 
-export default EmojiItem;
+export default EmojiItem
