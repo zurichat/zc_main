@@ -3,7 +3,6 @@ export const TRANSLATIONS_DE = {
     language_select: "Sprache ändern"
   },
 
-
   // Landing Page
   landing: {
     title: {
@@ -102,10 +101,8 @@ export const TRANSLATIONS_DE = {
     }
   },
 
-
-// Pricing Page
-  pricing: 
-  {
+  // Pricing Page
+  pricing: {
     title: {
       pricing: "Preise - Zuri Chat"
     },
@@ -120,12 +117,13 @@ export const TRANSLATIONS_DE = {
     cardThree: {
       duration_one: "Jährlich",
       duration_two: "Monatlich",
-      button: "Loslegen",
+      button: "Loslegen"
     },
 
     sectionThree: {
       headline: "Führend in der Unternehmenssicherheit",
-      description: "Neben der Verschlüsselung während der Übertragung und im Ruhezustand betreiben wir umfassende Compliance- und Assurance-Programme.",
+      description:
+        "Neben der Verschlüsselung während der Übertragung und im Ruhezustand betreiben wir umfassende Compliance- und Assurance-Programme.",
       link: "Erfahren Sie mehr über Sicherheit..."
     },
 
@@ -142,8 +140,7 @@ export const TRANSLATIONS_DE = {
     }
   },
 
-
-// Plugins page
+  // Plugins page
   plugin: {
     title: {
       plugin: "Verbinden und interagieren"
@@ -168,7 +165,8 @@ export const TRANSLATIONS_DE = {
 
     tracker: {
       title: "Plugin von Contribution Tracker",
-      headline: "Verfolgen Sie die Beiträge der Menschen und heben Sie dringende Probleme hervor",
+      headline:
+        "Verfolgen Sie die Beiträge der Menschen und heben Sie dringende Probleme hervor",
       description:
         "Ein Plugin, mit dem Sie den Beitrag von Menschen zu Open-Source-Projekten verfolgen und die dringendsten Probleme hervorheben können",
       link: "Beitragsverfolgungs-Plugin erkunden"
@@ -193,8 +191,7 @@ export const TRANSLATIONS_DE = {
 
     goal: {
       title: "Plugin des Unternehmensziels",
-      headline:
-        "Behalten Sie die Ziele im Auge",
+      headline: "Behalten Sie die Ziele im Auge",
       description:
         "Ein Plugin, mit dem Sie die Ziele und Leistungen des Unternehmens verfolgen können",
       link: "Entdecken Sie das Ziel-Plugin des Unternehmens"
@@ -202,8 +199,7 @@ export const TRANSLATIONS_DE = {
 
     todo: {
       title: "Todo-Plugin",
-      headline:
-        "Behält den Überblick über wichtige Aufgaben",
+      headline: "Behält den Überblick über wichtige Aufgaben",
       description:
         "Ein Plugin, mit dem Sie alles, was Sie tun müssen, auflisten und sicherstellen können, dass Ihre Aufgaben an einem Ort aufgeschrieben werden, damit Sie nichts Wichtiges vergessen.",
       link: "Entdecken Sie das Plugin von Todo"
@@ -211,8 +207,7 @@ export const TRANSLATIONS_DE = {
 
     channels: {
       title: "Kanal-Plugin",
-      headline:
-        "Organisiert Gespräche in speziellen Räumen",
+      headline: "Organisiert Gespräche in speziellen Räumen",
       description:
         "Ein Plugin, das eine Gruppe von Personen in einem Kanal über aktuelle, relevante Informationen informiert, um ein bestimmtes Ziel zu erreichen",
       link: "Plugin „Kanäle erkunden“"
@@ -220,8 +215,7 @@ export const TRANSLATIONS_DE = {
 
     noticeboard: {
       title: "Pinnwand-Plugin",
-      headline:
-        "Informationen effektiv teilen",
+      headline: "Informationen effektiv teilen",
       description:
         "Es ist ein effektives Plugin zum Anzeigen von Informationen und zur Kommunikation mit Mitarbeitern",
       link: "Entdecken Sie das Pinnwand-Plugin"
@@ -229,8 +223,7 @@ export const TRANSLATIONS_DE = {
 
     company_files: {
       title: "Plugin für Unternehmensdateien",
-      headline:
-        "Access and Manages Company's Files Effectively",
+      headline: "Access and Manages Company's Files Effectively",
       description:
         "Ein effektives Dateiverwaltungssystem, das den Geschäftsablauf verbessert, wichtige Daten organisiert und eine durchsuchbare Datenbank für den schnellen Abruf bereitstellt.",
       link: "Entdecken Sie Plugins für Unternehmensdateien"
@@ -238,17 +231,15 @@ export const TRANSLATIONS_DE = {
 
     company_sales: {
       title: "Plugin für Unternehmensverkäufe",
-      headline:
-        "Verfolgt Verkaufsaufzeichnungen",
+      headline: "Verfolgt Verkaufsaufzeichnungen",
       description:
         "Ein effektives Verkaufssystem, das die Verkaufsaufzeichnungen des Unternehmens verfolgt.",
       link: "Entdecken Sie die Plugins für den Unternehmensverkauf"
     },
-    
+
     deadline: {
       title: "Deadline-Plugins",
-      headline:
-        "Deadline-Tracker",
+      headline: "Deadline-Tracker",
       description:
         "Ein Plugin, das die Fristen von Aufgaben, Ereignissen und Projekten verfolgt, die Mitgliedern einer Organisation zugewiesen sind",
       link: "Entdecken Sie Deadline-Plugins"
@@ -256,8 +247,7 @@ export const TRANSLATIONS_DE = {
 
     expenses: {
       title: "Ausgaben Plugins",
-      headline:
-        "Verfolgt die Ausgaben",
+      headline: "Verfolgt die Ausgaben",
       description:
         "Ein Plugin, das hilft, die Ausgaben eines Unternehmens genau zu erfassen",
       link: "Ausgaben-Plugins erkunden"
@@ -265,8 +255,7 @@ export const TRANSLATIONS_DE = {
 
     duty_shift: {
       title: "Duty Shift-Plugin",
-      headline:
-        "Das Verfolgen Ihrer Schichten war noch nie so einfach!",
+      headline: "Das Verfolgen Ihrer Schichten war noch nie so einfach!",
       description:
         "Ein Plugin, das Einzelpersonen hilft, ihre Arbeitszeiten zu verfolgen und mit anderen Mitarbeitern zu kommunizieren.",
       link: "Erkunden Sie das Duty Shift-Plugin"
@@ -274,17 +263,15 @@ export const TRANSLATIONS_DE = {
 
     external_tools: {
       title: "Plugins für externe Tools",
-      headline:
-        "Verwendung von Tools von Drittanbietern",
+      headline: "Verwendung von Tools von Drittanbietern",
       description:
         "Das Plugin für externe Tools ist eine Funktion, die es Benutzern ermöglicht, mit Tools von Drittanbietern wie Google Drive, Figma, Github usw. zu interagieren, um den Arbeitsablauf für sich selbst oder ihr Team schneller und einfacher zu gestalten",
       link: "Tools-Plugin erkunden"
     },
-    
+
     whiteboard: {
       title: "Whiteboard-Plugin",
-      headline:
-        "Ideenaustausch und Teamzusammenarbeit",
+      headline: "Ideenaustausch und Teamzusammenarbeit",
       description:
         "Das Whiteboard-Plugin wird verwendet, um Gedanken, Konzepte zu visualisieren, Ideen aufzuschreiben, zu erklären und zu lehren, um innerhalb einer bestimmten Gruppe von Personen zu planen und zu erstellen",
       link: "Whiteboard-Plugins erkunden"
@@ -292,8 +279,7 @@ export const TRANSLATIONS_DE = {
 
     holiday: {
       title: "Urlaubskalender-Plugin",
-      headline:
-        "Termine Veranstaltungen oder Feiertage für Mitarbeiter",
+      headline: "Termine Veranstaltungen oder Feiertage für Mitarbeiter",
       description:
         "Company Holiday Calendar Plugin ist ein Plugin, das Kalenderfunktionen hauptsächlich zum Organisieren oder Planen von Feiertagen oder Ereignissen für ein Unternehmen ermöglicht",
       link: "Entdecken Sie das Kalender-Plugin des Unternehmens"
@@ -301,8 +287,7 @@ export const TRANSLATIONS_DE = {
 
     company_shift: {
       title: "Firmenschicht-Plug-in",
-      headline:
-        "Überwacht die Arbeitszeiten eines Unternehmens",
+      headline: "Überwacht die Arbeitszeiten eines Unternehmens",
       description:
         "Ein Plugin, das die Arbeitszeit eines Unternehmens verfolgt und wie sie unter den Mitarbeitern des Unternehmens verteilt wird.",
       link: "Entdecken Sie das Company Shift-Plugin"
@@ -310,20 +295,22 @@ export const TRANSLATIONS_DE = {
 
     signup: {
       headline: "Holen Sie sich Plugins, die Ihnen gefallen würden",
-      description: "Integrieren Sie Ihre Lieblings-Plugins und erhalten Sie mehr aufregende Erfahrungen",
-      link: "Entdecke mehr",
+      description:
+        "Integrieren Sie Ihre Lieblings-Plugins und erhalten Sie mehr aufregende Erfahrungen",
+      link: "Entdecke mehr"
     },
 
     subscribe: {
       headline: "Seien Sie der Erste, der Updates erhält",
       headline_br: "zu den neuesten Plugins von Zuri Chat",
-      description: "Bereichern Sie Ihr Zuri Chat-Erlebnis, indem Sie sich abonnieren",
+      description:
+        "Bereichern Sie Ihr Zuri Chat-Erlebnis, indem Sie sich abonnieren",
       description_br: "hier, um die neuesten Plugins per E-Mail zu erhalten",
       description_brr: "auf Zuri-Chat!",
       button: "Abonnieren"
-    },
+    }
   },
-  
+
   // About Page
   about: {
     title: {
@@ -418,12 +405,9 @@ export const TRANSLATIONS_DE = {
       title: "Was auch immer Sie tun, Sie können es im Zuri Chat tun",
       link_sales: "Sprechen Sie mit dem Vertrieb",
       link_try: "Kostenlos ausprobieren"
-    }
+    }   
   },
-
-
-// Career Page
-    careers: {
+  careers: {    
       title: {
         careers: "Karriere"
       },
@@ -468,29 +452,32 @@ export const TRANSLATIONS_DE = {
       },
       section_two: {
         headline: "Arbeiten und Gedeihen",
-        post_headline: "Wir bieten Vorteile, die Ihnen helfen, sich gut zu fühlen und Ihr Bestes zu geben.",
+        post_headline:
+          "Wir bieten Vorteile, die Ihnen helfen, sich gut zu fühlen und Ihr Bestes zu geben.",
         digital_wellness: {
           headline: "Digital-First-Office",
-          post_headline: "Mit Remote-Rollen, bürofreiem Onboarding und flexiblen Arbeitspraktiken sind wir für sich ständig ändernde Realitäten, Zeitpläne und Verantwortlichkeiten gerüstet."
+          post_headline:
+            "Mit Remote-Rollen, bürofreiem Onboarding und flexiblen Arbeitspraktiken sind wir für sich ständig ändernde Realitäten, Zeitpläne und Verantwortlichkeiten gerüstet."
         },
         just_for_you: {
           headline: "Nur für dich",
-          post_headline: "Erhalten Sie eine jährliche Beihilfe für die berufliche Entwicklung sowie ein monatliches Stipendium zur Deckung Ihres Bedarfs; Ein neuer Arbeitslook, ein Haustier, was dir am wichtigsten ist."
+          post_headline:
+            "Erhalten Sie eine jährliche Beihilfe für die berufliche Entwicklung sowie ein monatliches Stipendium zur Deckung Ihres Bedarfs; Ein neuer Arbeitslook, ein Haustier, was dir am wichtigsten ist."
         },
         health_and_wellness: {
           headline: "Gesundheit und Wellness",
-          post_headline: "Zuri zahlt 100 % Ihrer Prämien. Wir bieten auch Zugang zu einer Reihe von kostenlosen Ressourcen für psychische Gesundheit und Wohlbefinden."
+          post_headline:
+            "Zuri zahlt 100 % Ihrer Prämien. Wir bieten auch Zugang zu einer Reihe von kostenlosen Ressourcen für psychische Gesundheit und Wohlbefinden."
         }
       }
-    },
-
-
-  // Login Page
-  login:{
+  },
+  auth: {
+    login:{
     title: "Einloggen - Zuri Chat",
     form: {
       header: "Einloggen",
-      sub_header: "Melden Sie sich mit den Daten an, die Sie bei Ihrer Registrierung eingegeben haben",
+      sub_header:
+        "Melden Sie sich mit den Daten an, die Sie bei Ihrer Registrierung eingegeben haben",
       google_header: "Mit Google anmelden",
       topline_text: "ODER",
       submitButtonName: "Einloggen",
@@ -511,8 +498,112 @@ export const TRANSLATIONS_DE = {
       legacyPolicy: "Rechtliche Hinweise",
       aboutZuri: "Über Zurichat"
     }
+    },
+    signup: {
+      title: "Anmeldung",
+      form: {
+        header: "Benutzerkonto erstellen",
+        googleHeader: "Melden Sie sich bei Google an",
+        topLineText: "ODER",
+        submitButtonName: "Anmeldung",
+        bottomLine: "Sie haben bereits ein Konto?",
+        bottomLink: "Einloggen",
+        input: {
+          fullName: "Vollständiger Name",
+          fullNamePlaceholder: "Gib deinen Namen ein",
+          emailAddress: "E-Mail-Addresse",
+          emailAddressPlaceholder: "Geben Sie Ihre E-Mail-Adresse ein",
+          password: "Passwort",
+          passwordPlaceholder: "Geben Sie ein Passwort ein",
+        }
+      },
+      privacyAgreement: "Ich stimme Zurichats zu",
+      termsOfService: "Nutzungsbedingungen",
+      privacy: "Privatsphäre"
+    },
+    passwordreset: {
+      title: "Passwort zurücksetzen",
+      headline: "Holen Sie sich ein neues Passwort",
+      post_headline: "Geben Sie die E-Mail-Adresse ein, mit der Sie sich registriert haben, und ein Reset-Code wird an Ihre E-Mail gesendet.",
+      form:{
+        emailAddress: "E-Mail-Addresse",
+        continueButton: "Weitermachen"
+      }
+    },
+    newPassword: {
+      header: "Passwort wiederherstellen",
+      post_headline: "Erstellen Sie ein neues Passwort für Ihr Konto",
+      form: {
+        password: "Passwort",
+        passwordPlaceholder: "Gib dein neues Passwort ein",
+        confirmPassword: "Kennwort bestätigen",
+        confirmPasswordPlaceholder: "Bestätigen Sie Ihr neues Passwort",
+        continueButton: "Weitermachen"
+      }
+    },
+    verifyCodeOnPasswordReset: {
+      header: "Geben Sie den Reset-Code ein, der an Ihre E-Mail gesendet wurde",
+      success: {
+        headline: "Code-Verifizierung zurücksetzen erfolgreich!",
+        post_headline: "Klicken Sie auf den Button um fortzufahren",
+        continueButton: "Weitermachen"
+      }
+    },
+    passwordResetSuccess: {
+      headline: "Passwort-Reset erfolgreich!",
+      post_headline: "Ihr Passwort zurücksetzen war erfolgreich! Sie können sich jetzt anmelden",
+      button: "Weiter zum Login"
+    },
+    signout:{
+      title: "Austragen",
+      preOrgText: "Vom Team abgemeldet",
+      workspace: "Arbeitsplatz",
+      signoutMessage: {
+        preOrgText: "Sie wurden vom Team abgemeldet"
+      },
+      loginText: "Einloggen",
+      postLoginText: "zu einem anderen Arbeitsbereich"
+    },
+    onboardingHelp:{
+      title: "Fehlerbehebung bei Problemen",
+      backToHome: "Zurück nach Hause",
+      loginHelp:{
+        headline: "Fehlerbehebung bei Problemen bei der Anmeldung bei ZuriChat",
+        post_headline: "Wenn Sie Probleme bei der Anmeldung bei Ihrem Konto haben, kann Ihnen Folgendes helfen.",
+        list: {
+          textOne: "Überprüfen Sie, ob Sie die richtige E-Mail-Adresse und das richtige Passwort für die Anmeldung verwenden. Wenn Sie glauben, dass Ihr Konto kompromittiert wurde",
+          linkOne: "Klicken Sie hier, um Ihr Passwort zurückzusetzen",
+          textTwo: "Verwenden Sie die neueste Version der ZuriChat-Mobil- oder Desktop-App? Bitte überprüfen Sie die aktuelle Version Ihrer Apps. Wenn Sie sich nicht sicher sind, welche Version Sie verwenden, versuchen Sie es mit",
+          linkTwo: "Aktualisieren oder Herunterladen der App",
+          textThree: "Wenn das Problem weiterhin besteht, deinstallieren Sie bitte die App, leeren Sie den Cache Ihres Mobiltelefons und installieren Sie es erneut.",
+          textFour: "Wenn Sie einen Browser verwenden, haben Sie möglicherweise ein falsches Passwort aus den Vorschlägen zur automatischen Vervollständigung verwendet. Wir empfehlen Ihnen, Ihre ZuriChat-E-Mail-Adresse und Ihr Passwort erneut manuell einzugeben",
+          textFive: "Wenn alle oben genannten Methoden nicht funktionieren, versuchen Sie es mit einem neuen Browser oder versuchen Sie, sich im Inkognito-Modus anzumelden",
+          textSix: "Haben Sie ein Konto bei uns? Wenn Sie hier kein Konto haben, können Sie sich nicht anmelden. Gehe zu",
+          linkSix: "ein Konto erstellen"
+        }    
+      },
+      signUpHelp: {
+        headline: "Sie können kein Konto erstellen?",
+        post_headline: "Okay, wenn Sie Probleme beim Erstellen eines Kontos haben, probieren Sie die folgenden Vorschläge aus",
+        list: {
+          preTextOne: "Stellen Sie sicher, dass Sie a . verwenden",
+          strongText: "Gültige E-Mail-Adresse",
+          postTextOne: "und überprüfen Sie Ihren E-Mail-Posteingang auf den Authentifizierungscode",
+          textTwo: "Verwenden Sie ein anderes Gerät oder einen anderen Browser, um Ihr Konto zu erstellen. Du kannst auch den Cache deines Browsers leeren",
+          textThree: "Überprüfen Sie das Netzwerk in Ihrer Nähe. Wenn das Netzwerk gut ist, laden Sie die Anmeldeseite neu",
+          textFour: "Wenn Sie keinen Authentifizierungscode erhalten, warten Sie bitte 30 Minuten und versuchen Sie es erneut",
+          textFive: "Wenn Sie die ZuriChat-Mobil- oder Desktop-App verwenden, aktualisieren Sie auf die neueste Version oder Sie können",
+          linkFive: "Hier herunterladen"
+        }
+      },
+      support: {
+        headline: "Brauchen Sie noch Hilfe?",
+        preLinkText: "Wenn Sie alle oben genannten Vorschläge ausprobiert haben, aber ohne Erfolg, bitte",
+        linkText: "Kontaktieren Sie den Zuri-Kundendienst",
+        postLinkText: "für Hilfe."
+      }
+    }
   },
-
 
 // All Download Pages
   download_desktop: {
@@ -522,7 +613,8 @@ export const TRANSLATIONS_DE = {
 
     section_one: {
       headline: "Erleben Sie die Desktop- und Mobile-Apps von Zuri Chat",
-      post_headline: "Die Verbindung mit Ihrem Team war mit Zuri Chat noch nie so einfach.",
+      post_headline:
+        "Die Verbindung mit Ihrem Team war mit Zuri Chat noch nie so einfach.",
       desktop_line: "Zuri für Desktop",
       desktop_app: "Im Mac App Store herunterladen",
       desktop_soft: "Holen Sie es von Microsoft",
@@ -532,15 +624,16 @@ export const TRANSLATIONS_DE = {
     },
 
     section_two: {
-      headline: "Laden Sie das Zuri-Chat-Erlebnis herunter und genießen Sie es auf einem dieser Geräte",
+      headline:
+        "Laden Sie das Zuri-Chat-Erlebnis herunter und genießen Sie es auf einem dieser Geräte",
       windows: "Fenster",
       mac: "Mac OS",
       ios: "iOS",
-      android: "Android",
+      android: "Android"
     },
 
     section_three: {
-      headline: "Gleiches Gefühl, gleiches Team in der Zuri App!",
+      headline: "Gleiches Gefühl, gleiches Team in der Zuri App!"
     }
   },
   download_ios: {
@@ -552,8 +645,9 @@ export const TRANSLATIONS_DE = {
       headline: "Laden Sie die Beta-Version von Zuri Chat für iOS herunter.",
       post_headline: "Holen Sie sich Zuri Chat DM & Kanal",
       mac_line: "Wir sind auch auf dem Mac",
-      mac_description: "Bleiben Sie mit unseren Apps für Mac, Windows und Linux im Gespräch. Wir können Ihnen einen schnellen Download-Link per E-Mail senden, um Ihnen den Einstieg zu erleichtern!",
-      button: "DOWNLOAD-LINK ERHALTEN",
+      mac_description:
+        "Bleiben Sie mit unseren Apps für Mac, Windows und Linux im Gespräch. Wir können Ihnen einen schnellen Download-Link per E-Mail senden, um Ihnen den Einstieg zu erleichtern!",
+      button: "DOWNLOAD-LINK ERHALTEN"
     }
   },
   download_mac: {
@@ -563,14 +657,16 @@ export const TRANSLATIONS_DE = {
 
     section_one: {
       headline: "Erlebe Zuri Chat auf MacOS",
-      post_headline: "Die Verbindung mit Ihrem Team war mit Zuri Chat noch nie so einfach.",
+      post_headline:
+        "Die Verbindung mit Ihrem Team war mit Zuri Chat noch nie so einfach.",
       download: "HERUNTERLADEN",
       download_soft: "Für Windows herunterladen?"
     },
 
     section_two: {
       headline: "Warum Zuri-Chat-App?",
-      post_headline: "Verpassen Sie mit dem zuri Chat-PC auch unterwegs nie die nahtlose Zusammenarbeit",
+      post_headline:
+        "Verpassen Sie mit dem zuri Chat-PC auch unterwegs nie die nahtlose Zusammenarbeit",
       android: "Android",
       and_break: "und",
       ios: "iOS",
@@ -590,11 +686,13 @@ export const TRANSLATIONS_DE = {
 
     section_one: {
       headline: "Erleben Sie die Desktop- und Mobile-Apps von Zuri Chat",
-      post_headline: "Die Verbindung mit Ihrem Team war mit Zuri Chat noch nie so einfach.",
+      post_headline:
+        "Die Verbindung mit Ihrem Team war mit Zuri Chat noch nie so einfach."
     },
 
     section_two: {
-      headline: "Laden Sie das Zuri-Chat-Erlebnis herunter und genießen Sie es auf einem dieser Geräte",
+      headline:
+        "Laden Sie das Zuri-Chat-Erlebnis herunter und genießen Sie es auf einem dieser Geräte",
       windows: "Windows",
       mac: "Mac OS",
       android: "Android",
@@ -602,7 +700,7 @@ export const TRANSLATIONS_DE = {
     },
 
     section_three: {
-      headline: "Gleiches Gefühl, gleiches Team in der Zuri App!",
+      headline: "Gleiches Gefühl, gleiches Team in der Zuri App!"
     }
   },
   download_windows: {
@@ -612,14 +710,16 @@ export const TRANSLATIONS_DE = {
 
     section_one: {
       headline: "Erleben Sie Zuri Chat unter Windows",
-      post_headline: "Die Verbindung mit Ihrem Team war mit Zuri Chat noch nie so einfach.",
+      post_headline:
+        "Die Verbindung mit Ihrem Team war mit Zuri Chat noch nie so einfach.",
       download: "HERUNTERLADEN",
       download_mac: "Für Mac herunterladen?"
     },
 
     section_two: {
       headline: "Warum Zuri-Chat-App?",
-      post_headline: "Verpassen Sie mit dem zuri Chat-PC auch unterwegs nie die nahtlose Zusammenarbeit",
+      post_headline:
+        "Verpassen Sie mit dem zuri Chat-PC auch unterwegs nie die nahtlose Zusammenarbeit",
       android: "Android",
       and_break: "und",
       ios: "iOS",
@@ -633,17 +733,18 @@ export const TRANSLATIONS_DE = {
     }
   },
 
-
-// Workspace flows
-  workspace:{
+  // Workspace flows
+  workspace: {
     title: {
-      workspace :"Arbeitsbereich - Zuri Chat"
+      workspace: "Arbeitsbereich - Zuri Chat"
     },
 
-    space:{
+    space: {
       headline: "Wählen Sie einen Arbeitsbereich",
-      post_headline: "Willkommen zurück! Wählen Sie eine aus, um wieder mit Ihrem Team zu arbeiten",
-      join_line: "Möchten Sie mit einer anderen Gruppe arbeiten? oder Übernimm die Verantwortung und gründe dein eigenes Team",
+      post_headline:
+        "Willkommen zurück! Wählen Sie eine aus, um wieder mit Ihrem Team zu arbeiten",
+      join_line:
+        "Möchten Sie mit einer anderen Gruppe arbeiten? oder Übernimm die Verantwortung und gründe dein eigenes Team",
       joinbtn: "Erstellen Sie einen Arbeitsbereich",
       foot_head: "Sie sehen Ihren Arbeitsbereich nicht?",
       foot_link: "Versuchen Sie es mit einer anderen E-Mail",
@@ -656,5 +757,5 @@ export const TRANSLATIONS_DE = {
       err_msg: "Ups! Irgendwas lief schief! Gehe zu",
       err_link: "zuri.chat"
     }
-  }  
+  }
 }

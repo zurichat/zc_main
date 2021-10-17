@@ -5,13 +5,12 @@ import { BsCreditCard2Back } from "react-icons/bs"
 import { BiUser } from "react-icons/bi"
 import { IoSettingsOutline, IoSpeedometerOutline } from "react-icons/io5"
 import { FaMagic } from "react-icons/fa"
+import { getUser } from "../../Utils/Common"
 // import
 import AdminSettings from "../../."
-import settings from "../../assets/cog.svg"
-import analytics from "../../assets/dashboard.svg"
 import right_caret from "../../assets/cheveron-right.svg"
-import customize from "../../assets/magic-wand.svg"
 import classes from "../styles//SettingsHome.module.css"
+import {GoPlug} from 'react-icons/go'
 
 const randomizedGreeting = ["Hey there", "Welcome,", "¡Hola,"]
 
@@ -26,12 +25,16 @@ const Home = () => {
     const greetingProcedure = randomizedGreeting[newNumber]
     setGreeting(greetingProcedure)
   }, [])
+
+  const user = getUser();
   return (
     <AdminSettings>
       <Container className={`p-4 ${classes.mtN3}`}>
         <div>
           {/* Picture of User */}
-          <h1 className="mb-4">{greeting} Mark</h1>
+          <h1 className="mb-4">
+            {greeting} {user.first_name}!
+          </h1>
         </div>
 
         <div className={classes.card}>
@@ -99,7 +102,7 @@ const Home = () => {
                   <h3> Settings & Permissions </h3>
                   <span className={classes.span_text}>
                     Configure your workspace settings, permissions, and
-                    authentication prefrences.
+                    authentication preferences.
                   </span>
                 </div>
                 <div>
@@ -293,44 +296,273 @@ const Home = () => {
           </div>
         </div>
 
-        <nav>
-          <li>
-            <Link to="/tour">Tour</Link>
-          </li>
-          <li>
-            <Link to="/download-apps">Download Apps</Link>
-          </li>
-          <li>
-            <Link to="/legal">Brand Guidelines</Link>
-          </li>
-          <li>
-            <Link to="/help">Help</Link>
-          </li>
-          <li>
-            <Link to="/confirm-deactivation" target="_blank">
-              API
+        {/* Applications*/}
+        <div className={classes.card}>
+          {/* Settings and permissions*/}
+          <div className="mt-2">
+            <Link to="/admin/settings" className="" style={{ display: "flex" }}>
+              <div>
+                <span
+                  className={classes.settings_icon_holder}
+                  style={{ backgroundColor: "#1C9BD1" }}
+                >
+                  <GoPlug className={classes.settings_icon} />
+                </span>
+              </div>
+              <div
+                className=""
+                style={{
+                  alignItems: "center",
+                  marginLeft: " 1em",
+                  justifyContent: "space-between",
+                  width: "100%"
+                }}
+              >
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <h3> Applications </h3>
+                  <span className={classes.span_text}>
+                    Applications automatically let you pull information and
+                    activity from outside tools into Slack in a way that's
+                    timely, relevant and searchable. Get started with some of
+                    our most popular applications:
+                  </span>
+                </div>
+                <div>
+                  <p
+                    className={`${classes.services_promo} ${classes.align_center}`}
+                  >
+                    <Link
+                      to="/services/new/dropbox"
+                      data-toggle="tooltip"
+                      title=""
+                      data-original-title="Dropbox"
+                      style={{
+                        display: "inline-block",
+                        margin: "1rem"
+                      }}
+                    >
+                      <img
+                        src="https://a.slack-edge.com/80588/img/services/dropbox_128.png"
+                        style={{
+                          width: "56px",
+                          height: "56px"
+                        }}
+                      />
+                    </Link>
+                    <Link
+                      to="/services/new/trello"
+                      data-toggle="tooltip"
+                      title=""
+                      data-original-title="Trello"
+                      style={{
+                        display: "inline-block",
+                        margin: "1rem"
+                      }}
+                    >
+                      <img
+                        src="https://a.slack-edge.com/80588/img/services/trello_128.png"
+                        style={{
+                          width: "56px",
+                          height: "56px"
+                        }}
+                      />
+                    </Link>
+                    <Link
+                      to="/services/new/gdrive"
+                      data-toggle="tooltip"
+                      title=""
+                      data-original-title="Google Drive"
+                      style={{
+                        display: "inline-block",
+                        margin: "1rem"
+                      }}
+                    >
+                      <img
+                        src="https://a.slack-edge.com/6ee36/img/services/gdrive_128.png"
+                        style={{
+                          width: "56px",
+                          height: "56px"
+                        }}
+                      />
+                    </Link>
+                    <Link
+                      to="/services/new/github"
+                      data-toggle="tooltip"
+                      title=""
+                      data-original-title="GitHub"
+                      style={{
+                        display: "inline-block",
+                        margin: "1rem"
+                      }}
+                    >
+                      <img
+                        src="https://a.slack-edge.com/80588/img/services/github_128.png"
+                        style={{
+                          width: "56px",
+                          height: "56px"
+                        }}
+                      />
+                    </Link>
+                    <Link
+                      to="/services/new/twitter"
+                      data-toggle="tooltip"
+                      title=""
+                      data-original-title="Twitter"
+                      style={{
+                        display: "inline-block",
+                        margin: "1rem"
+                      }}
+                    >
+                      <img
+                        src="https://a.slack-edge.com/80588/img/services/twitter_128.png"
+                        style={{
+                          width: "56px",
+                          height: "56px"
+                        }}
+                      />
+                    </Link>
+                    <Link
+                      to="/services/new/hangouts"
+                      data-toggle="tooltip"
+                      title=""
+                      data-original-title="Google Hangouts"
+                      style={{
+                        display: "inline-block",
+                        margin: "1rem"
+                      }}
+                    >
+                      <img
+                        src="https://a.slack-edge.com/80588/img/services/hangouts_128.png"
+                        style={{
+                          width: "56px",
+                          height: "56px"
+                        }}
+                      />
+                    </Link>
+                  </p>
+                  <p className={classes.align_center} style={{
+                        textAlign: "center"
+                      }}>
+                    <Link
+                      to="/"
+                      className={`${classes.btn} ${classes.btn_large} ${classes.hide_on_mobile} ${classes.large_bottom_margin}`}
+                      style={{
+                        display: "inline-block",
+                        margin: "1em",
+                        background: "#00ba7c",
+                        padding: "1.2em",
+                        color: "#eee"
+                      }}
+                    >
+                      <GoPlug style={{
+                        marginRight: "1em"
+                      }}/>
+                      View App Directory
+                    </Link>
+                  </p>
+                </div>
+              </div>
+              <div className={classes.overlay}></div>
             </Link>
-          </li>
-          <li>
-            <Link to="/pricing">Pricing</Link>
-          </li>
-          <div>
-            <li>
-              <Link to="/contact-us">Contact</Link>
+          </div>
+          <ul
+            className={classes.settings_home_footer}
+            style={{
+              listStyle: "none",
+              fontSize: "1rem",
+              textAlign: "center",
+              margin: "4rem auto",
+              lineHeight: "2rem"
+            }}
+          >
+            <li
+              style={{
+                display: "inline-block",
+                margin: "0.75rem"
+              }}
+            >
+              <Link to="/tour">Tour</Link>
             </li>
-            <li>
-              <Link to="/privacy">Policies</Link>
+            <li
+              style={{
+                display: "inline-block",
+                margin: "0.75rem"
+              }}
+            >
+              <Link to="/download-apps">Download Apps</Link>
             </li>
-            <li>
-              <Link to="/ZurichatBlog" target="_blank">
-                Our Blog
+            <li
+              style={{
+                display: "inline-block",
+                margin: "0.75rem"
+              }}
+            >
+              <Link to="/legal">Brand Guidelines</Link>
+            </li>
+            <li
+              style={{
+                display: "inline-block",
+                margin: "0.75rem"
+              }}
+            >
+              <Link to="/help">Help</Link>
+            </li>
+            <li
+              style={{
+                display: "inline-block",
+                margin: "0.75rem"
+              }}
+            >
+              <Link to="/confirm-deactivation" target="_blank">
+                API
               </Link>
             </li>
-            <li>
-              <Link to="/session-signout">Sign Out</Link>
+            <li
+              style={{
+                display: "inline-block",
+                margin: "0.75rem"
+              }}
+            >
+              <Link to="/pricing">Pricing</Link>
             </li>
-          </div>
-        </nav>
+            <div>
+              <li
+                style={{
+                  display: "inline-block",
+                  margin: "0.75rem"
+                }}
+              >
+                <Link to="/contact-us">Contact</Link>
+              </li>
+              <li
+                style={{
+                  display: "inline-block",
+                  margin: "0.75rem"
+                }}
+              >
+                <Link to="/privacy">Policies</Link>
+              </li>
+              <li
+                style={{
+                  display: "inline-block",
+                  margin: "0.75rem"
+                }}
+              >
+                <Link to="/ZurichatBlog" target="_blank">
+                  Our Blog
+                </Link>
+              </li>
+              <li
+                style={{
+                  display: "inline-block",
+                  margin: "0.75rem"
+                }}
+              >
+                <Link to="/session-signout">Sign Out</Link>
+              </li>
+            </div>
+          </ul>
+        </div>
       </Container>
     </AdminSettings>
   )

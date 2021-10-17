@@ -18,6 +18,7 @@ import {
   GlobalStyleForEmojiSelect,
   StyledEmojiSelectWrapper
 } from "./emojiStyles"
+import ClickAwayListener from 'react-click-away-listener';
 
 
 const BoldIcon = () => <img src={Bold} alt="" />
@@ -70,6 +71,10 @@ const Toolbar = props => {
     }
   }
 
+  const handleClickAway = () => {
+    setshowAttachInputBox(false);
+  };
+
   const handleSelectMedia = e => {
     setAttachedFile(e.target.files[0])
     props.sentAttachedFile(e.target.files[0])
@@ -88,13 +93,11 @@ const Toolbar = props => {
     const newMessageData = {
       message_id: Date.now().toString(),
       username: currentUserData.username,
-      time: `${
-        currentDate.getHours() < 12
+      time: `${currentDate.getHours() < 12
           ? currentDate.getHours()
           : currentDate.getHours() - 12
-      }:${currentDate.getMinutes()}${
-        currentDate.getHours() < 12 ? "AM" : "PM"
-      }`,
+        }:${currentDate.getMinutes()}${currentDate.getHours() < 12 ? "AM" : "PM"
+        }`,
       emojis: [],
       richUiData: convertToRaw(editorState.getCurrentContent())
     }
@@ -154,64 +157,66 @@ const Toolbar = props => {
   }
 
   return (
-    <Wrapper>
-      {showAttachInputBox ? (
-        <AttachFile>
-          <div>
+    <ClickAwayListener onClickAway={handleClickAway}>
+      <Wrapper>
+        {showAttachInputBox ? (
+          <AttachFile>
             <div>
-              <img src={Google} alt="" />
-              Google Drive
-            </div>
-            <label>
-              <img src={Computer} alt="" onClick={handleSelectMedia} />
-              Upload from your computer
-              <input
-                style={{
-                  display: "none"
-                }}
-                onChange={handleSelectMedia}
-                key={inputKey || ""}
-                type="file"
-                ref={inputRef}
+              <div>
+                <img src={Google} alt="" />
+                Google Drive
+              </div>
+              <label>
+                <img src={Computer} alt="" onClick={handleSelectMedia} />
+                Upload from your computer
+                <input
+                  style={{
+                    display: "none"
+                  }}
+                  onChange={handleSelectMedia}
+                  key={inputKey || ""}
+                  type="file"
+                  ref={inputRef}
                 //onClick={handleAttachMedia}
-              />
-            </label>
-          </div>
-        </AttachFile>
-      ) : null}
-      <FormatContainer>
-        <LightningIcon />
+                />
+              </label>
+            </div>
+          </AttachFile>
+        ) : null}
+        <FormatContainer>
+          <LightningIcon />
 
-        <BorderIcon />
+          <BorderIcon />
 
-        {inlineStyles.map((style, index) => {
-          return renderInlineStyleButton(style, index)
-        })}
-        <UnstyledButton>
-          <LinkIcon />
-        </UnstyledButton>
-        {blockStyles.map((block, index) => {
-          return renderBlockStyleButton(block, index)
-        })}
-      </FormatContainer>
-      <SendContainer>
-        <UnstyledButton>
-          <AtIcon />
-        </UnstyledButton>
-        {
-          <StyledEmojiSelectWrapper>
-            <GlobalStyleForEmojiSelect />
-            {emojiSelect}
-          </StyledEmojiSelectWrapper>
-        }
-        <UnstyledButton onClick={() => setshowAttachInputBox(true)}>
-          <ClipIcon />
-        </UnstyledButton>
-        <UnstyledButton onClick={handleClickSendMessage || handleAttachMedia}>
-          <SendIcon />
-        </UnstyledButton>
-      </SendContainer>
-    </Wrapper>
+          {inlineStyles.map((style, index) => {
+            return renderInlineStyleButton(style, index)
+          })}
+          <UnstyledButton>
+            <LinkIcon />
+          </UnstyledButton>
+          {blockStyles.map((block, index) => {
+            return renderBlockStyleButton(block, index)
+          })}
+        </FormatContainer>
+        <SendContainer>
+          <UnstyledButton>
+            <AtIcon />
+          </UnstyledButton>
+          {
+            <StyledEmojiSelectWrapper>
+              <GlobalStyleForEmojiSelect />
+              {emojiSelect}
+            </StyledEmojiSelectWrapper>
+          }
+          <UnstyledButton onClick={() => setshowAttachInputBox(true)}>
+            <ClipIcon />
+          </UnstyledButton>
+          <UnstyledButton onClick={handleClickSendMessage || handleAttachMedia}>
+            <SendIcon />
+          </UnstyledButton>
+        </SendContainer>
+      </Wrapper>
+    </ClickAwayListener>
   )
 }
 

@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import CompanyNameCSS from '../styles/CompanyName.module.css'
-import { Link, useRouteMatch } from 'react-router-dom'
-import axios from 'axios'
-import { Helmet } from 'react-helmet'
-import { createDefaultChannel } from '../../../api/channels'
+import React, { useState, useEffect } from "react"
+import CompanyNameCSS from "../styles/CompanyName.module.css"
+import { Link, useRouteMatch } from "react-router-dom"
+import axios from "axios"
+import { Helmet } from "react-helmet"
+import { createDefaultChannel} from "../../../api/channels"
 
 function CompanyName ({ input }) {
   const [user, setUser] = useState(null)
   const [orgId, setOrgId] = useState(null)
-  const [orgName, setOrgName] = useState('')
-  const match = useRouteMatch()
+  const [orgName, setOrgName] = useState("")
+  let match = useRouteMatch()
+  let newOrgId 
   useEffect(() => {
     const user = JSON.parse(sessionStorage.getItem('user'))
 
@@ -33,10 +34,10 @@ function CompanyName ({ input }) {
       .then(res => {
         // Clears User Extracted Details from LS during Registraion
 
-        localStorage.clear('userUserPassword')
-        localStorage.clear('newUserEmail')
-        setOrgId(res.data.data.organization_id)
-
+        localStorage.removeItem("userUserPassword")
+        localStorage.removeItem("newUserEmail")
+        newOrgId = res.data.data.organization_id
+        
         // Automatic Org Name Renaming From Default to new Org Name
         setTimeout(() => {
           axios.patch(
@@ -51,9 +52,17 @@ function CompanyName ({ input }) {
             }
           )
           // .then(res => console.log(res))
+          axios.get(`https://api.zuri.chat/organizations/${newOrgId}/members/?query=${user.email}`)
+          .then(res => {
+            console.log("this is res: ", res);
+          let member_id = res.data.data[0]._id 
+          console.log(member_id);
+          localStorage.setItem('member_id', member_id)
+        } )
         }, 500)
 
-        createDefaultChannel(orgId)
+        localStorage.setItem("currentWorkspace", newOrgId)
+        // createDefaultChannel(newOrgId)
       })
       .catch(err => {
         console.error(err.message)
