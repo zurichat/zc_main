@@ -1,7 +1,19 @@
+:root {
+  --background-menu: #f9f9f9;
+}
+
+[data-theme="dark"] {
+  --background-menu: #2d2d2f;
+}
+
+[data-theme="light"] {
+  --background-menu: #f9f9f9;
+  
+}
 .notifySidebar {
   width: 200px;
-  background: var(--background);
-  height: 100%;
+  background: var(--background-menu);
+  height: 250%;
   float: left;
   position: fixed;
   position: relative;

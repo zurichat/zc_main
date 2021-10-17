@@ -1,21 +1,82 @@
-import React from 'react';
-import { FaSmile, FaPrayingHands, FaLeaf, FaHamburger, FaPlaneDeparture, FaFootballBall, FaLightbulb, FaFlag, FaClock, FaPeace } from 'react-icons/fa';
+import React from "react"
+import {
+  FaSmile,
+  FaPrayingHands,
+  FaLeaf,
+  FaHamburger,
+  FaPlaneDeparture,
+  FaFootballBall,
+  FaLightbulb,
+  FaFlag,
+  FaClock,
+  FaPeace
+} from "react-icons/fa"
 
-import './EmojiCategory.css';
+import styles from "./EmojiCategory.module.css"
 const EmojiCategory = ({ category, handleCategory }) => {
-  const allCategories = ['smileys-emotion', 'people-body', 'animals-nature', 'food-drink', 'travel-places', 'activities', 'objects', 'symbols', 'flags'];
+  const allCategories = [
+    "smileys-emotion",
+    "people-body",
+    "animals-nature",
+    "food-drink",
+    "travel-places",
+    "activities",
+    "objects",
+    "symbols",
+    "flags"
+  ]
   return (
-    <div className='zc-emc-emojicat'>
-      <FaSmile className={`zc-emc-emojicatitems ${category === 'smileys-emotion' ? 'zc-emc-active' : ''}`} onClick={() => handleCategory('smileys-emotion')} />
-      <FaPrayingHands className={`zc-emc-emojicatitems ${category === 'people-body' ? 'zc-emc-active' : ''}`} onClick={() => handleCategory('people-body')} />
-      <FaLeaf className={`zc-emc-emojicatitems ${category === 'animals-nature' ? 'zc-emc-active' : ''}`} onClick={() => handleCategory('animals-nature')} />
-      <FaHamburger className={`zc-emc-emojicatitems ${category === 'food-drink' ? 'zc-emc-active' : ''}`} onClick={() => handleCategory('food-drink')} />
-      <FaPlaneDeparture className={`zc-emc-emojicatitems ${category === 'travel-places' ? 'zc-emc-active' : ''}`} onClick={() => handleCategory('travel-places')} />
-      <FaFootballBall className={`zc-emc-emojicatitems ${category === 'activities' ? 'zc-emc-active' : ''}`} onClick={() => handleCategory('activities')} />
-      <FaLightbulb className={`zc-emc-emojicatitems ${category === 'objects' ? 'zc-emc-active' : ''}`} onClick={() => handleCategory('objects')} />
-      <FaPeace className={`zc-emc-emojicatitems ${category === 'symbols' ? 'zc-emc-active' : ''}`} onClick={() => handleCategory('symbols')} />
+    <div className={styles.zcemcemojicat}>
+      <FaSmile
+        className={`${styles.zcemcemojicatitems} ${
+          category === "smileys-emotion" ? styles.zcemcactive : ""
+        }`}
+        onClick={() => handleCategory("smileys-emotion")}
+      />
+      <FaPrayingHands
+        className={`${styles.zcemcemojicatitems} ${
+          category === "people-body" ? styles.zcemcactive : ""
+        }`}
+        onClick={() => handleCategory("people-body")}
+      />
+      <FaLeaf
+        className={`${styles.zcemcemojicatitems} ${
+          category === "animals-nature" ? styles.zcemcactive : ""
+        }`}
+        onClick={() => handleCategory("animals-nature")}
+      />
+      <FaHamburger
+        className={`${styles.zcemcemojicatitems} ${
+          category === "food-drink" ? styles.zcemcactive : ""
+        }`}
+        onClick={() => handleCategory("food-drink")}
+      />
+      <FaPlaneDeparture
+        className={`${styles.zcemcemojicatitems} ${
+          category === "travel-places" ? styles.zcemcactive : ""
+        }`}
+        onClick={() => handleCategory("travel-places")}
+      />
+      <FaFootballBall
+        className={`${styles.zcemcemojicatitems} ${
+          category === "activities" ? styles.zcemcactive : ""
+        }`}
+        onClick={() => handleCategory("activities")}
+      />
+      <FaLightbulb
+        className={`${styles.zcemcemojicatitems} ${
+          category === "objects" ? styles.zcemcactive : ""
+        }`}
+        onClick={() => handleCategory("objects")}
+      />
+      <FaPeace
+        className={`${styles.zcemcemojicatitems} ${
+          category === "symbols" ? styles.zcemcactive : ""
+        }`}
+        onClick={() => handleCategory("symbols")}
+      />
     </div>
-  );
-};
+  )
+}
 
-export default EmojiCategory;
+export default EmojiCategory

@@ -1,4 +1,4 @@
-import React, {  useState } from "react"
+import React, { useState } from "react"
 import DropDown from "./Drop"
 import styles from "../styles/Drop.module.css"
 import Room from "./Room"
@@ -10,10 +10,31 @@ export default function Starred(props) {
 
   const toggleDropdown = () => setOpen(!isOpen)
 
-  return props.state.sidebar ? (
-   
-   <div className={`${styles.item__row} ${props.check && props.check.includes(true) && styles.open}`}>
-      {props.state && (
+  // <div
+  //     className={`${styles.item__row} ${
+  //       props.check && props.check.includes(true) && styles.open
+  //     }`}
+  //   >
+
+  var roomItems = []
+
+  for (let items of props.starredRooms) {
+    if (items !== undefined) {
+      for (let rooms of items) {
+        if (rooms !== undefined) {
+          roomItems.push(
+            <RoomItem room={rooms} key={new Date().toISOString()} />
+          )
+        }
+      }
+    }
+  }
+
+  return props.starredRooms ? (
+    <div
+      className={`${styles.item__row} ${roomItems.length > 0 && styles.open}`}
+    >
+      {props.starredRooms && (
         <DropDown
           categoryName="Starred"
           isOpen={isOpen}
@@ -21,49 +42,11 @@ export default function Starred(props) {
         />
       )}
 
-      {props.state.sidebar &&
-       Object.keys(props.state.sidebar).map((plugin, idx) =>{
-           
-           return(
-            //    <h1 key={idx}>all good</h1>
-        <ul 
-        key={idx}
+      <ul
         className={`col-12 ps-4 ${styles.item__row} ${isOpen && styles.open}`}
-        >
-        {props.state.sidebar[plugin].starred_rooms &&
-         props.state.sidebar[plugin].starred_rooms.map((room, idx) => {
-            if (room.room_name !== undefined) {
-              return (
-                  <RoomItem 
-                  room={room}
-                  key={idx}
-                  />
-              )
-            }
-          })}
+      >
+        {roomItems}
       </ul>
-      )
-    })
-
-      }
-      {/* {props.state.sidebar &&
-        props.name &&
-        Object.keys(props.state.sidebar).map((plugin, index) => {
-          
-            let category = props.state.sidebar[plugin].starred
-          
-          return category && category ===  "starred" ? (
-            <Room
-              isOpen={isOpen}
-              itemName={props.name}
-              id={props.state.sidebar.name}
-              key={index}
-              items={props.state.sidebar[plugin]}
-            >
-            <RoomItem />
-            </Room>
-          ) : null
-        })} */}
     </div>
   ) : (
     <SkeletonLoader />
