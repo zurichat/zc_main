@@ -86,7 +86,6 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/open-marketplace">Market Place</Link>{" "}
-                <Link to="/marketplace">{t("landing.footer.market")}</Link>{" "}
               </li>
               <li>
                 <Link to="/security">{t("landing.footer.security")}</Link>{" "}
