@@ -2,14 +2,11 @@ import React, { useState } from "react"
 import styles from "../styles/ModalComponentStyles.module.css"
 import axios from 'axios'
 
-const RoomOptions = (
-  { isClicked,
-    position,
-    room
-  }
-  ) => {
-    // const isClicked = true;
-  const room_Id = room.room_url.split("/")[2]
+
+const RoomOptions = ({ isClicked, position, room, baseUrl }) => {
+  // const isClicked = true;
+  const room_Id = room?.room_url?.split("/")[2]
+
   const org = localStorage.getItem("currentWorkspace")
   const orgs = sessionStorage.getItem("organisations")
 
@@ -23,16 +20,18 @@ const RoomOptions = (
   let screenHeight = window.innerHeight/2;
 
   let menuPosition =
-  position.y > screenHeight ? 
-  {
-    "top": `${position.y-250}px`,
-    "left": `${position.x+5}px`
-  } 
-  :
-  {
-    "top": `${position.y}px`,
-    "left": `${position.x+5}px`
-  } 
+
+    position.y > screenHeight
+      ? {
+          top: `${position.y - 250}px`,
+          left: `${position.x + 5}px`
+        }
+      : {
+          top: `${position.y}px`,
+
+          left: `${position.x + 5}px`
+        }
+
 
   return (
     <section
