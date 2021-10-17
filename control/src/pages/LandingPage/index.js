@@ -79,7 +79,10 @@ export default function Homepage() {
     return (
       <div className={`${style.ft_row} ${props.rowOrder}`}>
         <Helmet>
-          <title>Zuri Chat - {t("landing.title.landing")}</title>
+          {/* <title>Zuri Chat - {t("landing.title.landing")}</title> */}
+          <title>
+            Zuri Chat - Communicate and Collaborate from wherever you are
+          </title>
         </Helmet>
         <div className={`${style.ft_col}`}>
           <img src={props.src} alt={props.alt} className={`${style.ft_img}`} />

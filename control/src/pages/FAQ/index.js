@@ -2,119 +2,122 @@ import { useState } from "react"
 import styles from "./FAQ.module.css"
 import { Helmet } from "react-helmet"
 import "../../i18n"
-import { useTranslation} from "react-i18next"
-
+import { useTranslation } from "react-i18next"
 
 const Index = () => {
   const [selected, setSelected] = useState(null)
   const toggle = item =>
     selected === item ? setSelected(null) : setSelected(item)
 
-    const data_lang = localStorage.getItem('myLanguage');
-    const { t } = useTranslation();
+  const data_lang = localStorage.getItem("myLanguage")
+  const { t } = useTranslation()
 
   return (
     <div className={styles.faqs}>
       <Helmet>
-        <title> FAQ - Zuri Chat {t("pricing.title.pricing")}</title>
+        {/*  <title> FAQ - Zuri Chat {t("pricing.title.pricing")}</title> */}
       </Helmet>
       <div className={styles.wrapper}>
         <h2 className={`${styles.h2}`}>{t("pricing.FAQ.headline")}</h2>
         <div className={styles.accordion}>
-
-              {
-                data_lang == 'en' ? en_data.map((i, index) => (
-                  <div className={styles.items} key={index}>
-                    <div className={styles.title} onClick={() => toggle(i)}>
-                      <h6 className={styles.h6}>{i.question}</h6>
-                      <span className={styles.span}>
-                        {selected === i ? (
-                          <i className="fas fa-angle-up"></i>
-                        ) : (
-                          <i className="fas fa-angle-down"></i>
-                        )}
-                      </span>
-                    </div>
-                    {selected === i && (
-                      <div
-                        className={selected === i ? "answer show" : "answer"}
-                        onClick={() => toggle(i)}
-                      >
-                        {i.answer}
-                      </div>
-                    )}
+          {data_lang == "en"
+            ? en_data.map((i, index) => (
+                <div className={styles.items} key={index}>
+                  <div className={styles.title} onClick={() => toggle(i)}>
+                    <h6 className={styles.h6}>{i.question}</h6>
+                    <span className={styles.span}>
+                      {selected === i ? (
+                        <i className="fas fa-angle-up"></i>
+                      ) : (
+                        <i className="fas fa-angle-down"></i>
+                      )}
+                    </span>
                   </div>
-                )) : data_lang == 'fr' ? fr_data.map((i, index) => (
-                  <div className={styles.items} key={index}>
-                    <div className={styles.title} onClick={() => toggle(i)}>
-                      <h6 className={styles.h6}>{i.question}</h6>
-                      <span className={styles.span}>
-                        {selected === i ? (
-                          <i className="fas fa-angle-up"></i>
-                        ) : (
-                          <i className="fas fa-angle-down"></i>
-                        )}
-                      </span>
+                  {selected === i && (
+                    <div
+                      className={selected === i ? "answer show" : "answer"}
+                      onClick={() => toggle(i)}
+                    >
+                      {i.answer}
                     </div>
-                    {selected === i && (
-                      <div
-                        className={selected === i ? "answer show" : "answer"}
-                        onClick={() => toggle(i)}
-                      >
-                        {i.answer}
-                      </div>
-                    )}
+                  )}
+                </div>
+              ))
+            : data_lang == "fr"
+            ? fr_data.map((i, index) => (
+                <div className={styles.items} key={index}>
+                  <div className={styles.title} onClick={() => toggle(i)}>
+                    <h6 className={styles.h6}>{i.question}</h6>
+                    <span className={styles.span}>
+                      {selected === i ? (
+                        <i className="fas fa-angle-up"></i>
+                      ) : (
+                        <i className="fas fa-angle-down"></i>
+                      )}
+                    </span>
                   </div>
-                )) : data_lang == 'zh' ? zh_data.map((i, index) => (
-                  <div className={styles.items} key={index}>
-                    <div className={styles.title} onClick={() => toggle(i)}>
-                      <h6 className={styles.h6}>{i.question}</h6>
-                      <span className={styles.span}>
-                        {selected === i ? (
-                          <i className="fas fa-angle-up"></i>
-                        ) : (
-                          <i className="fas fa-angle-down"></i>
-                        )}
-                      </span>
+                  {selected === i && (
+                    <div
+                      className={selected === i ? "answer show" : "answer"}
+                      onClick={() => toggle(i)}
+                    >
+                      {i.answer}
                     </div>
-                    {selected === i && (
-                      <div
-                        className={selected === i ? "answer show" : "answer"}
-                        onClick={() => toggle(i)}
-                      >
-                        {i.answer}
-                      </div>
-                    )}
+                  )}
+                </div>
+              ))
+            : data_lang == "zh"
+            ? zh_data.map((i, index) => (
+                <div className={styles.items} key={index}>
+                  <div className={styles.title} onClick={() => toggle(i)}>
+                    <h6 className={styles.h6}>{i.question}</h6>
+                    <span className={styles.span}>
+                      {selected === i ? (
+                        <i className="fas fa-angle-up"></i>
+                      ) : (
+                        <i className="fas fa-angle-down"></i>
+                      )}
+                    </span>
                   </div>
-                )) : data_lang == 'de' ? de_data.map((i, index) => (
-                  <div className={styles.items} key={index}>
-                    <div className={styles.title} onClick={() => toggle(i)}>
-                      <h6 className={styles.h6}>{i.question}</h6>
-                      <span className={styles.span}>
-                        {selected === i ? (
-                          <i className="fas fa-angle-up"></i>
-                        ) : (
-                          <i className="fas fa-angle-down"></i>
-                        )}
-                      </span>
+                  {selected === i && (
+                    <div
+                      className={selected === i ? "answer show" : "answer"}
+                      onClick={() => toggle(i)}
+                    >
+                      {i.answer}
                     </div>
-                    {selected === i && (
-                      <div
-                        className={selected === i ? "answer show" : "answer"}
-                        onClick={() => toggle(i)}
-                      >
-                        {i.answer}
-                      </div>
-                    )}
+                  )}
+                </div>
+              ))
+            : data_lang == "de"
+            ? de_data.map((i, index) => (
+                <div className={styles.items} key={index}>
+                  <div className={styles.title} onClick={() => toggle(i)}>
+                    <h6 className={styles.h6}>{i.question}</h6>
+                    <span className={styles.span}>
+                      {selected === i ? (
+                        <i className="fas fa-angle-up"></i>
+                      ) : (
+                        <i className="fas fa-angle-down"></i>
+                      )}
+                    </span>
                   </div>
-                )) : null
-              }
-
+                  {selected === i && (
+                    <div
+                      className={selected === i ? "answer show" : "answer"}
+                      onClick={() => toggle(i)}
+                    >
+                      {i.answer}
+                    </div>
+                  )}
+                </div>
+              ))
+            : null}
         </div>
         <div className={styles.billing}>
-        {t("pricing.FAQ.link_info")}{" "}
+          {t("pricing.FAQ.link_info")}{" "}
           <a className={styles.info} href="/faq">
-          {t("pricing.FAQ.link")}
+            {t("pricing.FAQ.link")}
           </a>
         </div>
       </div>
@@ -122,14 +125,12 @@ const Index = () => {
   )
 }
 
-
-
-const en_data = [ 
+const en_data = [
   {
     question: "What are my payment options - credit card and/or invoice?",
     answer:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias."
-  }, 
+  },
   {
     question:
       "Our team has several accounts which are not being actively used, but which we don't want to disable. Do we still have to pay for them?",
@@ -160,12 +161,13 @@ const en_data = [
   }
 ]
 
-const fr_data = [ 
+const fr_data = [
   {
-    question: "Quelles sont mes options de paiement - carte de crédit et/ou facture ?",
+    question:
+      "Quelles sont mes options de paiement - carte de crédit et/ou facture ?",
     answer:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias."
-  }, 
+  },
   {
     question:
       "Notre équipe a plusieurs comptes qui ne sont pas utilisés activement, mais que nous ne voulons pas désactiver. Doit-on encore les payer ?",
@@ -178,7 +180,8 @@ const fr_data = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias."
   },
   {
-    question: "Nous devons ajouter de nouveaux utilisateurs à notre équipe. Comment cela sera-t-il facturé ?",
+    question:
+      "Nous devons ajouter de nouveaux utilisateurs à notre équipe. Comment cela sera-t-il facturé ?",
     answer:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias."
   },
@@ -196,12 +199,12 @@ const fr_data = [
   }
 ]
 
-const zh_data = [ 
+const zh_data = [
   {
     question: "我的付款方式有哪些 - 信用卡和/或发票",
     answer:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias."
-  }, 
+  },
   {
     question:
       "我们的团队有几个帐户没有被积极使用，但我们不想禁用它们。我们还需要为他们付费吗？",
@@ -219,25 +222,24 @@ const zh_data = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias."
   },
   {
-    question:
-      "我的团队想取消订阅。我们怎么做？我们可以获得退款吗？",
+    question: "我的团队想取消订阅。我们怎么做？我们可以获得退款吗？",
     answer:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias."
   },
   {
-    question:
-      "你们为非营利组织或教育机构提供折扣吗？",
+    question: "你们为非营利组织或教育机构提供折扣吗？",
     answer:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias."
   }
 ]
 
-const de_data = [ 
+const de_data = [
   {
-    question: "Welche Zahlungsmöglichkeiten habe ich – Kreditkarte und/oder Rechnung?",
+    question:
+      "Welche Zahlungsmöglichkeiten habe ich – Kreditkarte und/oder Rechnung?",
     answer:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias."
-  }, 
+  },
   {
     question:
       "Unser Team hat mehrere Konten, die nicht aktiv genutzt werden, die wir aber nicht deaktivieren möchten. Müssen wir sie noch bezahlen?",
@@ -250,7 +252,8 @@ const de_data = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias."
   },
   {
-    question: "Wir müssen unserem Team neue Benutzer hinzufügen. Wie wird das abgerechnet?",
+    question:
+      "Wir müssen unserem Team neue Benutzer hinzufügen. Wie wird das abgerechnet?",
     answer:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo pariatur recusandae maiores molestias. Tempore nemo dolor debitis velit voluptate distinctio adipisci amet, laboriosam est dignissimos sequi expedita ab at molestias."
   },

@@ -6,7 +6,7 @@ import FAQ from "../FAQ"
 import Message from "./components/Message"
 import { Helmet } from "react-helmet"
 import "../../i18n"
-import { useTranslation} from "react-i18next"
+import { useTranslation } from "react-i18next"
 import NewPricingSection from "./pricingPageSection1/NewPricingSection"
 // import Section4PricingPage from "./components/Section4_pricing_page"
 // import PricingPageSection1 from "./pricingPageSection1/PricingPageSection1"
@@ -22,9 +22,7 @@ function Pricing() {
 
   return (
     <div>
-      <Helmet>
-        <title>{t("pricing.title.pricing")}</title>
-      </Helmet>
+      <Helmet>{/*  <title>{t("pricing.title.pricing")}</title> */}</Helmet> *
       <Header />
       <NewPricingSection />
       <Section3 />

@@ -1,36 +1,36 @@
-import React from 'react'
-import style from './styles/plugin.css'
-import hero_img from './assets/MacBookAir.svg'
-import logo_hng from './assets/logo_hng.svg'
-import logo_i4g from './assets/logo_i4g.svg'
-import logo_camphouse from './assets/logo_camphouse.svg'
-import logo_zuri from './assets/logo_zuri.svg'
-import ft_img1 from './assets/ft_img1.svg'
-import ft_img2 from './assets/ft_img2.svg'
-import ft_img3 from './assets/ft_img3.svg'
-import ft_img4 from './assets/ft_img4.svg'
-import duty from './assets/compduty.png'
-import compShift from './assets/compshiftman.png'
-import deadline from './assets/deadline.png'
-import dm from './assets/dm.png'
-import expenses from './assets/expenses.png'
-import game from './assets/game.png'
-import goal from './assets/goal.png'
-import holiday from './assets/holiday.png'
-import music from './assets/music.png'
-import sales from './assets/sales.png'
-import todo from './assets/todo.png'
-import tools from './assets/tools.png'
-import sign_up_img from './assets/sign_up_img.svg'
-import arrow_right from './assets/ArrowRight.svg'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
-import { Link } from 'react-router-dom'
-import Cookies from '../cookies'
-import Subscribe from './components/Subscribe1'
-import { Helmet } from 'react-helmet'
+import React from "react"
+import style from "./styles/plugin.css"
+import hero_img from "./assets/MacBookAir.svg"
+import logo_hng from "./assets/logo_hng.svg"
+import logo_i4g from "./assets/logo_i4g.svg"
+import logo_camphouse from "./assets/logo_camphouse.svg"
+import logo_zuri from "./assets/logo_zuri.svg"
+import ft_img1 from "./assets/ft_img1.svg"
+import ft_img2 from "./assets/ft_img2.svg"
+import ft_img3 from "./assets/ft_img3.svg"
+import ft_img4 from "./assets/ft_img4.svg"
+import duty from "./assets/compduty.png"
+import compShift from "./assets/compshiftman.png"
+import deadline from "./assets/deadline.png"
+import dm from "./assets/dm.png"
+import expenses from "./assets/expenses.png"
+import game from "./assets/game.png"
+import goal from "./assets/goal.png"
+import holiday from "./assets/holiday.png"
+import music from "./assets/music.png"
+import sales from "./assets/sales.png"
+import todo from "./assets/todo.png"
+import tools from "./assets/tools.png"
+import sign_up_img from "./assets/sign_up_img.svg"
+import arrow_right from "./assets/ArrowRight.svg"
+import Header from "../../components/Header"
+import Footer from "../../components/Footer"
+import { Link } from "react-router-dom"
+import Cookies from "../cookies"
+import Subscribe from "./components/Subscribe1"
+import { Helmet } from "react-helmet"
 import "../../i18n"
-import { useTranslation} from "react-i18next"
+import { useTranslation } from "react-i18next"
 
 export default function Homepage() {
   const { useState, useEffect } = React
@@ -42,8 +42,8 @@ export default function Homepage() {
   const cookieStorage = {
     getItem: key => {
       const cookies = document.cookie
-        .split(';')
-        .map(cookie => cookie.split('='))
+        .split(";")
+        .map(cookie => cookie.split("="))
         .reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: value }), {})
       return cookies[key]
     },
@@ -52,8 +52,8 @@ export default function Homepage() {
     }
   }
 
-  const allowCookie = cookieStorage.getItem('Zuri Chat Accept')
-  const declineCookie = cookieStorage.getItem('Zuri Chat Decline')
+  const allowCookie = cookieStorage.getItem("Zuri Chat Accept")
+  const declineCookie = cookieStorage.getItem("Zuri Chat Decline")
 
   if (!allowCookie == true || declineCookie == true) {
     useEffect(() => {
@@ -69,7 +69,7 @@ export default function Homepage() {
     return (
       <div className={`${style.ft_row} ${props.rowOrder}`}>
         <Helmet>
-          <title>Zuri Chat - {t("plugin.title.plugin")}</title>
+          {/*   <title>Zuri Chat - {t("plugin.title.plugin")}</title> */}
         </Helmet>
         <div className={`${style.ft_col}`}>
           <img src={props.src} alt={props.alt} className={`${style.ft_img}`} />
@@ -101,7 +101,7 @@ export default function Homepage() {
       <Header />
       <div className={`${style.homepage}`}>
         {/* { COOKIES BANNER} */}
-        <div>{loading ? '' : <Cookies />}</div>
+        <div>{loading ? "" : <Cookies />}</div>
         {/* FEATURES */}
         <div className={`${style.features_wrap}`}>
           <div className={`${style.features}`}>
@@ -148,7 +148,7 @@ export default function Homepage() {
               rowOrder={style.ft_row_reverse}
             />
             {/* company goal */}
-             <FeatureRow
+            <FeatureRow
               src={goal}
               alt=""
               pContent1={t("plugin.goal.title")}
@@ -169,7 +169,7 @@ export default function Homepage() {
               rowOrder={style.ft_row_reverse}
             />
             {/* channels plugin */}
-             <FeatureRow
+            <FeatureRow
               src={ft_img1}
               alt=""
               pContent1={t("plugin.channels.title")}
@@ -190,7 +190,7 @@ export default function Homepage() {
               rowOrder={style.ft_row_reverse}
             />
             {/* company file plugin */}
-             <FeatureRow
+            <FeatureRow
               src={ft_img4}
               alt=""
               pContent1={t("plugin.company_files.title")}
@@ -211,7 +211,7 @@ export default function Homepage() {
               rowOrder={style.ft_row_reverse}
             />
             {/* deadline plugin */}
-             <FeatureRow
+            <FeatureRow
               src={deadline}
               alt=""
               pContent1={t("plugin.deadline.title")}
@@ -232,7 +232,7 @@ export default function Homepage() {
               rowOrder={style.ft_row_reverse}
             />
             {/* duty shift plugin */}
-             <FeatureRow
+            <FeatureRow
               src={duty}
               alt=""
               pContent1={t("plugin.duty_shift.title")}
@@ -253,7 +253,7 @@ export default function Homepage() {
               rowOrder={style.ft_row_reverse}
             />
             {/* whiteboard plugin */}
-             <FeatureRow
+            <FeatureRow
               src={ft_img2}
               alt=""
               pContent1={t("plugin.whiteboard.title")}
@@ -274,7 +274,7 @@ export default function Homepage() {
               rowOrder={style.ft_row_reverse}
             />
             {/* company shift */}
-             <FeatureRow
+            <FeatureRow
               src={compShift}
               alt=""
               pContent1={t("plugin.company_shift.link")}
@@ -290,14 +290,14 @@ export default function Homepage() {
           <div className={`${style.sign_up_banner}`}>
             <div className={`${style.sign_up_left}`}>
               <p className={`${style.sign_up_left_p}`}>
-              {t("plugin.signup.headline")}
+                {t("plugin.signup.headline")}
               </p>
               <p className={`${style.sign_up_right_p}`}>
-              {t("plugin.signup.description")}
+                {t("plugin.signup.description")}
               </p>
               <a href="/signup">
                 <button className={`${style.sign_up_btn}`}>
-                {t("plugin.signup.link")}
+                  {t("plugin.signup.link")}
                 </button>
               </a>
             </div>
