@@ -178,19 +178,19 @@ const TopNavBar = () => {
     setToggleSidebar(!toggleSidebar)
   }
 
-  useEffect(() => {
-    //Handle sidebar on mobile
-    const sidebar = document.getElementById(
-      "single-spa-application:@zuri/sidebar"
-    )
-    if (toggleSidebar && window.outerWidth <= 768) {
-      sidebar.style.display = "block"
-    } else if (window.outerWidth > 768) {
-      sidebar.style.display = "block"
-    } else {
-      sidebar.style.display = "none"
-    }
-  }, [toggleSidebar])
+  // useEffect(() => {
+  //   //Handle sidebar on mobile
+  //   const sidebar = document.getElementById(
+  //     "single-spa-application:@zuri/sidebar"
+  //   )
+  //   if (toggleSidebar && window.outerWidth <= 768) {
+  //     sidebar.style.display = "block"
+  //   } else if (window.outerWidth > 768) {
+  //     sidebar.style.display = "block"
+  //   } else {
+  //     sidebar.style.display = "none"
+  //   }
+  // }, [toggleSidebar])
 
   // Search autocomplete
 
