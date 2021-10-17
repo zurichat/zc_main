@@ -56,6 +56,7 @@ const Zuribot = () => {
         }
         setIsLoading(false)
       } catch (error) {
+        setIsLoading(false)
         throw Error(alert(error))
       }
       setUserSays("")
