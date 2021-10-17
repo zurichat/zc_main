@@ -7406,6 +7406,13 @@ react-toastify@5.5.0:
     prop-types "^15.7.2"
     react-transition-group "^4"
 
+react-toastify@^8.0.3:
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-8.0.3.tgz#7fbf65f69ec357aab8dd03c1496f9177aa92409a"
+  integrity sha512-rv3koC7f9lKKSkdpYgo/TGzgWlrB/aaiUInF1DyV7BpiM4kyTs+uhu6/r8XDMtBY2FOIHK+FlK3Iv7OzpA/tCA==
+  dependencies:
+    clsx "^1.1.1"
+
 react-tooltip-controller@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/react-tooltip-controller/-/react-tooltip-controller-1.0.6.tgz#3ab85204cfde5cd6d5d0bb2ab36b90ea3d68c459"
