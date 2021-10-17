@@ -38,7 +38,7 @@ export default function MessageContainer({
             
           ))}
 
-        {messageData.emojis.length > 1 ? (
+        {messageData.emojis.length > 0 ? (
           <div
             onClick={event => handleShowEmoji(messageData.message_id, event)}
           >
