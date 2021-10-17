@@ -47,8 +47,12 @@ function MessageBoard({ chatsConfig }) {
     if (window.innerHeight - event.clientY < 320) {
       setTop(event.clientY - 320)
     }
-    if (event.clientX < 288) {
+     if (event.clientX < 288) {
       setRight(event.clientX + 300)
+    } if (window.innerWidth < 500){
+      setRight(20)
+      setTop(100)
+
     }
     // console.log(window.innerWidth - event.clientX)
   }
