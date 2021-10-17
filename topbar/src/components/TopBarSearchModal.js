@@ -23,7 +23,10 @@ const TopBarSearchModal = () => {
   let exactPlugin = plugins.find(
     plugin => newName[3] === plugin.name || newName[3] === plugin.name + "#"
   )
-
+const ClearSearch = () =>{
+  setKeys("") 
+  setValue("")
+}
   const onSearchSubmit = async e => {
     if (e.keyCode === 13 && value.length >= 1) {
       setOpenSearch(true)
@@ -55,6 +58,7 @@ const TopBarSearchModal = () => {
   useEffect(() => {
     async function getData() {
       if (!exactPlugin?.filterCall) {
+        setFilters({})
         return
       }
       try {
@@ -161,6 +165,8 @@ const TopBarSearchModal = () => {
           }}
           result={result}
           inputValue={value}
+          clearSearch = {ClearSearch}
+        
         />
       ) : null}
     </div>
