@@ -482,10 +482,10 @@ export const TRANSLATIONS_FR = {
       topline_text: "OU",
       submitButtonName: "Connexion",
       bottomLine: "Nouveau chez nous ?",
-      bottomLink: "Create an Account",
+      bottomLink: "Créer un compte",
       signUp: "Inscrivez-vous",
       authInputBox: {
-        emailInputName: "Email address",
+        emailInputName: "Adresse e-mail",
         passwordInputName: "Mot de passe",
         passwordInputPlaceHolder: "Entrer un mot de passe",
         rememberMe: "Souviens-toi de moi",
