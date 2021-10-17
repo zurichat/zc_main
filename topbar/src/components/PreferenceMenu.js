@@ -10,7 +10,7 @@ const PreferenceMenu = () => {
   const { sideBar, setSideBar } = useContext(ProfileContext)
 
   return (
-    <div className={styles.notifySidebar}>
+    <div className={styles.notifySidebar} id="preferences-menu-container">
       <div className={styles.itemsContainer}>
         <div
           onClick={() => setSideBar(1)}
@@ -20,13 +20,13 @@ const PreferenceMenu = () => {
           <p style={{ marginBottom: 0 }}>Notifications</p>
         </div>
 
-        {/* <div
+        <div
           onClick={() => setSideBar(3)}
           className={sideBar === 3 ? styles.active : styles.one}
         >
           <AiOutlineEye className={styles.icon} />
-          <p style={{ marginBottom: 0 }}>Themes</p>
-        </div> */}
+          <p style={{ marginBottom: 0, paddingBottom: 0 }}>Themes</p>
+        </div>
         <div
           onClick={() => setSideBar(4)}
           className={sideBar === 4 ? styles.active : styles.one}
