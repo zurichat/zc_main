@@ -1,292 +1,60 @@
-.navbar-expand-lg {
-  flex-wrap: wrap;
-  justify-content: start;
-  padding-left: 25px;
-}
-
-.navbar {
-  padding-left: 20px;
-  margin-top: 15px;
-}
-
-.navbarNav {
-  margin-left: 240px;
-}
-
-.searchLogo1 {
-  display: none;
-}
-
-.searchLogo {
-  position: relative;
-  right: 20px;
-  top: 5px;
-  margin-left: 150px;
-  margin-right: -10px;
-}
-
-.navLinkFeatures {
-  margin-right: 40px;
-}
-
-.navLinkPricing {
-  margin-right: 40px;
-}
-
-.navLinkComms {
-  margin-right: 40px;
-}
-
-.navLinkSignUp {
-  margin-right: 10px;
-}
-
-.zuriChat {
-  font-size: 18px;
-  color: black;
-  position: relative;
-  top: 5px;
-  font-weight: bold;
-  margin-left: 5px;
-  text-decoration: none;
-}
-
-.image {
-  position: relative;
-  top: 10px;
-}
-
-.navbarBrand {
-  text-decoration: none;
-  float: left;
-}
-
-.features {
-  color: black;
-  font-weight: 300;
-}
-
-.signU {
-  color: #1e88e5;
-  font-weight: 300;
-}
-
-.signI {
-  font-weight: 300;
-}
-
-.signIn {
+.marketplace__header {
+  /* width: inherit; */
+  height: 44px;
   background-color: #00b87c;
-  color: white;
-  border-radius: 0px;
+  color: #fff;
+  box-sizing: border-box;
+  padding: 5px 16px;
+  display: flex !important;
+  font-size: 10px;
+  justify-content: space-between;
+  position:fixed;
+  width:80%;
+  z-index: 1;
+}
+.marketplace__header__title {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 0.5em;
+  /* padding: 1em; */
+}
+.marketplace__header__text {
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+.marketplace__header__icon {
+  width: 2.5em;
+  margin-right: 1.5em;
+  border-radius: 0.5em;
+}
+.marketplace__header__arrow {
+  margin-left: 0.3em;
+  font-size: 2.5em;
+}
+.marketplace__header__thumbnail {
+  display: flex;
+  align-items: center;
+  background: #01d892;
+  border-radius: 0.4em;
+  padding: 1em;
+  cursor: pointer;
+}
+.marketplace__thumbnail {
+  display: flex;
+}
+.marketplace__thumbnail img {
+  width: 2.5em;
+  border-radius: 0.4em;
+  border: 1px solid #01d892;
+  margin-right: 10px;
+  z-index: 2;
+  position: relative;
 }
 
-.pricing {
-  color: black;
-  font-weight: 300;
-}
 
-.comms {
-  color: black;
-  font-weight: 300;
-}
-
-.download {
-  color: black;
-  font-weight: 300;
-}
-
-@media only screen and (min-width: 1440px) {
-  .collapse {
-    margin-left: 200px;
-  }
-
-  .image {
-    position: relative;
-    top: 10px;
-  }
-
-  .zuriChat {
-    font-size: 18px;
-    color: black;
-    position: relative;
-    top: 5px;
-    font-weight: bold;
-    margin-left: 5px;
-    text-decoration: none;
-  }
-
-  .navbar {
-    margin-top: 15px;
-  }
-
-  .navbarNav {
-    margin-left: 140px;
-  }
-
-  .navbarBrand {
-    text-decoration: none;
-    padding-left: 20px;
-  }
-
-  .navButton {
-    margin-left: 160px;
-  }
-
-  .navLinkFeatures {
-    margin-right: 50px;
-  }
-
-  .navLinkPricing {
-    margin-right: 50px;
-  }
-
-  .navLinkComms {
-    margin-right: 50px;
-  }
-
-  .navLinkSignUp {
-    margin-right: 10px;
-  }
-
-  .searchLogo {
-    position: relative;
-    right: 20px;
-    top: 5px;
-    margin-left: 200px;
-    margin-right: 15px;
-  }
-
-  .searchLogo1 {
-    display: none;
-  }
-
-  .signIn {
-    background-color: #00b87c;
-    color: white;
-    border-radius: 0px;
-  }
-
-  .signI {
-    font-weight: 300;
-  }
-
-  .signU {
-    color: #1e88e5;
-    font-weight: 300;
-  }
-
-  .download {
-    color: black;
-    font-weight: 300;
-  }
-
-  .comms {
-    color: black;
-    font-weight: 300;
-  }
-
-  .pricing {
-    color: black;
-    font-weight: 300;
-  }
-
-  .features {
-    color: black;
-    font-weight: 300;
-  }
-}
-
-@media only screen and (min-width: 320px) and (max-width: 768px) {
-  .collapse {
-    position: relative;
-    right: 120px;
-    padding: auto;
-  }
-
-  .image {
-    position: relative;
-    top: 10px;
-  }
-
-  .zuriChat {
-    font-size: 18px;
-    color: black;
-    position: relative;
-    top: 5px;
-    font-weight: bold;
-    margin-left: 5px;
-    text-decoration: none;
-  }
-
-  .navbar {
-    padding-left: 20px;
-    margin-top: 15px;
-  }
-
-  .navbarNav {
-    margin-left: 140px;
-  }
-
-  .navButton {
-    position: relative;
-    top: 10px;
-    right: 5px;
-  }
-
-  .navLink {
-    margin-right: 60px;
-  }
-
-  .navbarBrand {
-    text-decoration: none;
-    padding-left: 20px;
-  }
-
-  .searchLogo {
-    display: none;
-  }
-
-  .searchLogo1 {
-    display: inline;
-    position: relative;
-    left: 40px;
-    top: 5px;
-  }
-
-  .signIn {
-    background-color: #00b87c;
-    color: white;
-    border-radius: 0px;
-    font-weight: 300;
-  }
-
-  .signI {
-    font-weight: 300;
-  }
-
-  .signU {
-    color: #1e88e5;
-    font-weight: 300;
-  }
-
-  .download {
-    color: black;
-    font-weight: 300;
-  }
-
-  .comms {
-    color: black;
-    font-weight: 300;
-  }
-
-  .pricing {
-    color: black;
-    font-weight: 300;
-  }
-
-  .features {
-    color: black;
-    font-weight: 300;
+@media (max-width: 768px) {
+  .marketplace__header {
+    width:100%;
   }
 }
