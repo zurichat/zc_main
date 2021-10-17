@@ -9,8 +9,9 @@ import noImg from "../assets/images/avatar_vct.svg"
 import { NoResult } from "./SearchNotFound"
 import { plugins } from "../utils/topbarApi"
 import { ProfileContext } from "../context/ProfileModal"
+import StartNewSearch from "./StartNewSearchButton"
 
-export const BigModal = ({ onClose, inputValue, result, isLoadingUp }) => {
+export const BigModal = ({ onClose, inputValue, result, isLoadingUp, clearSearch }) => {
   const [results, setResult] = useState(result)
   const [isLoading, setLoading] = useState(isLoadingUp)
 
@@ -91,9 +92,10 @@ export const BigModal = ({ onClose, inputValue, result, isLoadingUp }) => {
             Looking for something? If it happened in zuri-chat,
             <br /> you can find it in search.
           </p>
-          <button className={styles.startNewSearch}>
-            Please Start A New Search
-          </button>
+          
+          <StartNewSearch 
+          onClear={() => clearSearch()}
+          />
         </div>
       ) : isLoading ? (
         <p
