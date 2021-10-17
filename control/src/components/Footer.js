@@ -48,7 +48,7 @@ const Footer = () => {
               width="30px"
               height="30px"
             />
-            <span className={styles.logo_name}>Zuri Chat</span>
+            <span translate="no" className={styles.logo_name}>Zuri Chat</span>
           </Link>
         </div>
 
