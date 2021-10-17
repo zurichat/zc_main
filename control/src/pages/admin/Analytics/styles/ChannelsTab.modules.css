@@ -335,3 +335,10 @@ select:hover {
   border-top: 1px solid rgba(29, 28, 29, 0.13);
   border-bottom: 0;
 }
+
+.emptyChannels {
+  text-align: center;
+  font-size: 15px;
+  margin: 12px;
+  color: rgb(97, 96, 97);
+}
