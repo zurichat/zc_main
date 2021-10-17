@@ -38,10 +38,9 @@ const ChannelPrefixes = () => {
     setModalOpen(state)
   }
 
-  
-
   const handleAddPrefix = data => {
-    if (prefixes.includes(data)) return alert("Prefix already exists")
+    if (prefixes.some(p => p.prefix === data.prefix))
+      return alert("Prefix already exists") 
     const newPrefixes = [data, ...prefixes]
     console.warn({ data })
     setPrefixes(newPrefixes)
