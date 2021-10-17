@@ -47,7 +47,18 @@ const themeColors = {
     primary:"#eaed49",
     secondary:"#676410",
     textColor:"#aeaeae"
+  },
+  canary:{
+
+    primary:"#eb751f",
+
+    secondary:"#884310",
+
+    textColor:"#e3ccbb"
+
   }
+
+};
 
   
 
