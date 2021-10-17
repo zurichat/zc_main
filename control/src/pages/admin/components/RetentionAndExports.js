@@ -12,7 +12,12 @@ const RetentionAndExports = () => {
         <p className={styles.upgradeText}>
           Your team is not on a paid tier and therefore cannot customize
           retention policies.{" "}
-          <Link to="/pricing" className={styles.link}>
+          <Link
+            to="/pricing"
+            rel="noreferrer"
+            target="_blank"
+            className={styles.link}
+          >
             Upgrade Today
           </Link>
         </p>
@@ -23,7 +28,12 @@ const RetentionAndExports = () => {
           By default, Zuri Chat will save your message data for the lifetime of
           your workspace. With this setting, Zuri Chat will not keep logs of
           users’ message edits and deletions. Please{" "}
-          <Link to="/pricing" className={styles.link}>
+          <Link
+            to="/pricing"
+            rel="noreferrer"
+            target="_blank"
+            className={styles.link}
+          >
             see our FAQ
           </Link>{" "}
           for questions about the specific retention policy types.
