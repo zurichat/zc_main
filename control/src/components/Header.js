@@ -69,7 +69,7 @@ const HeaderSearchSuggestion = () => {
             alt="zuri-logo"
             className={`d-inline-block align-top ${headerStyles.image}`}
           />
-          <span className={`mb-2 ${headerStyles.zuriChat}`}>Zuri Chat</span>
+          <span translate="no" className={`mb-2 ${headerStyles.zuriChat}`}>Zuri Chat</span>
         </Link>
 
         <div className={`d-lg-none ${headerStyles.language}`}>
