@@ -156,11 +156,7 @@ const Zuribot = () => {
             <button onClick={cancel} className={styles.secondaryBtn}>
               Cancel
             </button>
-            <button
-              onClick={submit}
-              className={styles.primaryBtn}
-              disabled={loading}
-            >
+            <button onClick={submit} className={styles.primaryBtn}>
               {loading ? "Wait" : "Save"}
             </button>
           </div>
