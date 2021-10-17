@@ -1,8 +1,12 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import styles from "./LoginSignUpHelp.module.css"
+import { useTranslation} from "react-i18next"; 
+
 
 const LoginSignUpHelp = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={`${styles.LoginSignUpHelpCard} container`}>
       <div className="row">
@@ -11,94 +15,78 @@ const LoginSignUpHelp = () => {
             {/* Back to Home  */}
             <div className={styles.firstRow}>
               <Link to="/" className={styles.helpLink}>
-                <img src="https://img.icons8.com/ios/40/00b87c/left.png" /> Back
-                to Home
+                <img src="https://img.icons8.com/ios/40/00b87c/left.png" /> { t("auth.onboardingHelp.backToHome") }
               </Link>
             </div>
 
             {/* Login help */}
             <div className={`${styles.loginHelp} mt-2`} id="loginHelp">
               <h3 className={styles.CSupport}>
-                Troubleshooting problems signing into ZuriChat
+                {t("auth.onboardingHelp.loginHelp.headline")}
               </h3>
 
               <p>
-                If are having problem signing into your account, the following
-                might help you.
+               {t("auth.onboardingHelp.loginHelp.post_headline")}
               </p>
 
               <span className={styles.ListItemsPara}>
                 <p>
-                  Check if you're using correct email address and password to
-                  login. If you think your account might have been compromised,{" "}
+                  {t("auth.onboardingHelp.loginHelp.list.textOne")},{" "}
                   <Link to="/reset-password" className={styles.helpLink}>
-                    click here to reset your password
+                    {t("auth.onboardingHelp.loginHelp.list.linkOne")}
                   </Link>{" "}
                   ASAP
                 </p>
                 <p>
-                  Are you using the latest version of ZuriChat mobile or desktop
-                  app? Kindly check the current version of your apps. If you're
-                  not sure of which version you're using, try{" "}
+                  {t("auth.onboardingHelp.loginHelp.list.textTwo")}{" "}
                   <Link to="/downloads" className={styles.helpLink}>
-                    updating or downloading the app
+                    {t("auth.onboardingHelp.loginHelp.list.linkTwo")}
                   </Link>
                 </p>
                 <p>
-                  If the same trouble still persists, kindly uninstall the app,
-                  clear your mobile phone's cache and install again.
+                  {t("auth.onboardingHelp.loginHelp.list.textThree")}
                 </p>
                 <p>
-                  If you're using a browser, you might have used a wrong
-                  password from autocomplete suggestions. We advise you type
-                  your ZuriChat email address and password manually again
+                 {t("auth.onboardingHelp.loginHelp.list.textFour")}
                 </p>
                 <p>
-                  If all methods above doesn't work, try a new browser or try
-                  signing in on incognito mode
+                  {t("auth.onboardingHelp.loginHelp.list.textFive")}
                 </p>
                 <p>
-                  Do you have an account with us? If you don't have an account
-                  here, you won't be able to login. Go to{" "}
+                  {t("auth.onboardingHelp.loginHelp.list.textSix")}{" "}
                   <Link to="/signup" className={styles.helpLink}>
                     https://zuri.chat/signup
                   </Link>{" "}
-                  to create an account
+                  {t("auth.onboardingHelp.loginHelp.list.linkSix")}
                 </p>
               </span>
             </div>
 
             {/* Sign-in help */}
             <div className={`${styles.loginHelp} mt-5`} id="SigninHelp">
-              <h3 className={styles.CSupport}>Unable to Create an Account?</h3>
+              <h3 className={styles.CSupport}>{t("auth.onboardingHelp.signUpHelp.headline")}</h3>
 
               <p>
-                Okay, if you have problem creating an account, try the
-                suggestions below{" "}
+                {t("auth.onboardingHelp.signUpHelp.post_headline")}{" "}
               </p>
 
               <span className={styles.ListItemsPara}>
                 <p>
-                  Ensure you're using a <strong>Valid email address</strong> and
-                  check your email inbox for the authentication code
+                  {t("auth.onboardingHelp.signUpHelp.list.preTextOne")} <strong>{t("auth.onboardingHelp.signUpHelp.list.strongText")}</strong> {t("auth.onboardingHelp.signUpHelp.list.postTextOne")}
                 </p>
                 <p>
-                  Use another device or browser to create your account. You can
-                  as well clear your browser's cache
+                  {t("auth.onboardingHelp.signUpHelp.list.textTwo")}
                 </p>
                 <p>
-                  Check the network in your area. If the network is good, reload
-                  the sign-up page
+                  {t("auth.onboardingHelp.signUpHelp.list.textThree")}
                 </p>
                 <p>
-                  If you're not receiving authentication code, kindly wait for
-                  30 minutes and try again
+                  {t("auth.onboardingHelp.signUpHelp.list.textFour")}
                 </p>
                 <p>
-                  If you're using ZuriChat mobile or desktop app, update to the
-                  latest version or you can{" "}
+                  {t("auth.onboardingHelp.signUpHelp.list.textFive")}{" "}
                   <Link to="/downloads" className={styles.helpLink}>
-                    download here
+                    {t("auth.onboardingHelp.signUpHelp.list.linkFive")}
                   </Link>
                 </p>
               </span>
@@ -107,14 +95,13 @@ const LoginSignUpHelp = () => {
             {/* Support  */}
             <div className={`${styles.loginHelp} mt-5`} id="SigninHelp">
               <hr />
-              <h3 className={styles.CSupport}>Do you still need help?</h3>
+              <h3 className={styles.CSupport}>{t("auth.onboardingHelp.support.headline")}</h3>
               <p>
-                If you've tried all the suggestions above but to no avail,
-                kindly{" "}
+                {t("auth.onboardingHelp.support.preLinkText")}{" "}
                 <Link to="/contact-us" className={styles.ChelpLink}>
-                  contact Zuri Customer Service
+                  {t("auth.onboardingHelp.support.linkText")}
                 </Link>{" "}
-                for help.
+                {t("auth.onboardingHelp.support.postLinkText")}
               </p>
             </div>
           </div>
