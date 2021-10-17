@@ -1,29 +1,36 @@
-.zc-emb-emojibox {
-  height: 20rem;
-  width: 18rem;
-  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 15%);
+.zcembemojibox {
   border-radius: 0.5rem;
-  overflow-y: scroll;
+  background-color: #fff;
   display: inline-block;
   position: relative;
+  z-index: 12;
+
   /* top: -90; */
 }
-
-.zc-emb-emojibox::-webkit-scrollbar-thumb {
+.zcembemojibox2 {
+  background-color: #fff;
+  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 15%);
+  height: 20rem;
+  width: 18rem;
+  position: fixed;
+}
+.zcembemojibox::-webkit-scrollbar-thumb {
   background-color: transparent;
   border-radius: 1rem;
   height: 50px;
   /* outline: 1px solid slategrey; */
 }
-.zc-emb-emojiboxtext {
-  padding-top: 3.5rem;
-  padding-left: 15px;
-  padding-right: 15px;
+.zcembemojiboxtext {
+  padding: 0.5rem 15px;
   text-transform: capitalize;
   color: #777;
   text-align: center;
+  margin: 0;
+  font-size: 1rem;
 }
-.zc-emb-emojiboxlist {
+.zcembemojiboxlist {
+  overflow-y: scroll;
+  max-height: 10rem;
   clear: both;
   padding: 0 15px;
   list-style: none;
@@ -33,21 +40,21 @@
   justify-content: space-between;
 }
 
-.zc-emb-emojiboxItem {
+.zcembemojiboxItem {
   padding: 0.2rem;
   cursor: pointer;
 }
 
-.zc-emb-emojibox::-webkit-scrollbar {
+.zcembemojiboxlist::-webkit-scrollbar {
   display: none;
 }
 
-.zc-emb-emojibox {
+.zcembemojiboxlist {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
 
-.zc-emb-emojihead {
+.zcembemojihead {
   background: #fff;
   position: fixed;
 }

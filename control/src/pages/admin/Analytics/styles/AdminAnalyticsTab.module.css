@@ -1,10 +1,7 @@
 .tabWrapper {
-  width: calc(100% - 10%);
-  margin: 0 auto;
-}
-
-.analytics_title{
-  font-size: 1.8rem;
+  margin-left: 20px;
+  width: 100%;
+  max-width: calc(100vw - 340px);
 }
 
 .tabHeader,
@@ -18,27 +15,32 @@
   display: none;
 }
 
-.tabHeaderItem,
-.tabHeaderItemActive {
+.analyticsTabHeaderItem,
+.analyticsTabHeaderItemActive {
   padding: 0.5rem 2.5rem;
   width: auto;
   border-radius: 4px 4px 0px 0px;
   font-size: 1.125rem;
   font-weight: 600;
-  color: #333;
+  color: #00b87c;
   cursor: pointer;
   margin-bottom: -1px;
 }
 
-.tabHeaderItemActive{
+.analyticsTabHeaderItemActive {
   background: #fff;
   border: 1px solid #dadada;
   border-bottom: none;
+  color: #333;
+}
+
+.analyticsTabHeaderItem:hover {
+  text-decoration: underline;
   color: #00b87c;
 }
 
-.tabHeaderItem:hover {
-  text-decoration-color: #000;
+.analyticsTabHeaderItem:hover {
+  text-decoration-color: #00b87c;
   text-decoration-line: underline;
 }
 
@@ -67,8 +69,8 @@
     display: flex;
   }
 
-  .tabHeaderItem,
-  .tabHeaderItemActive {
+  .analyticsTabHeaderItem,
+  .analyticsTabHeaderItemActive {
     /* width: 100%; */
     text-align: left;
     font-size: 1rem;

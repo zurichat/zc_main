@@ -70,6 +70,7 @@ export const TRANSLATIONS_ZH = {
       company: "公司",
       careers: "职业",
       about: "关于",
+      why_zuri_chat: "为什么选择 Zuri 聊天？",
       info: "信息",
       privacy: "隐私权和条款",
       market: "市场",
@@ -581,6 +582,37 @@ export const TRANSLATIONS_ZH = {
         download_ios: "为 Mac 下载？"
       }
     }
+  },
+
+  //Why Zuri Page
+  why_zuri_chat: {
+    title: "认识 Zuri Chat - 经济实惠的 Slack 替代品",
+    hero_paragraph1: "如果您正在寻找完美的 Slack 替代品，那就别无所求。",
+    hero_paragraph2:
+      "Zuri Chat 的使命是通过由人工智能提供支持并由 DAO 支持的有趣协作中心来简化个人工作生活并提高生产力。",
+    blog_content_header: "为什么是 Zuri 聊天？",
+    text_wrap1: "明晰",
+    text_wrap1_p:
+      "熟练的任务执行对于推动您的业务向前发展至关重要，而 ZuriChat 可帮助您完成更多工作。我们的公司截止日期插件使任务管理变得容易，适用于从初创公司到全球公司的各种规模的协作。通过跟踪状态、监控进度和讨论问题来优化您的工作流程。",
+    text_wrap2: "速度",
+    text_wrap2_p:
+      "Zuri Chat 明白在商业领域时间就是金钱。我们的 ZuriChat Dm Reply 插件可以节省您花在交流上的时间。通过优化实时通信、两倍快的文件共享和自定义通知来满足对速度的需求，让您不会错过任何事情；公告、任务状态更新、通话等。",
+    text_wrap3: "保持能力",
+    text_wrap3_p:
+      "每个公司或团队都需要成长空间。在文件存储方面，最好的 Slack 替代方案是 Zuri Company Files，因为我们为所有客户提供了两倍以上的存储空间，使您在团队内协作时存储和共享多个文件更加方便。",
+    text_wrap4: "优化生产力",
+    text_wrap4_p:
+      "通过基于代币的薪酬系统提高团队的绩效并鼓舞士气。 Zuri Chat 插件旨在促进协作并减少同事之间在会议、电子邮件和互动上花费的时间，并鼓励团队通过奖励朝着共同的业务目标前进。",
+    text_wrap5: "超级轻松",
+    text_wrap5_p:
+      "我们不会用令人困惑或分散注意力的功能使您负担过重。 Zuri Chat 是一个易于启动且易于使用的团队中心，具有直观且清晰的用户界面。",
+    text_wrap6: "无限的消息保留",
+    text_wrap6_p:
+      "绝不会错过任何一条消息。 Zuri Chat Dm Reply 可以从第一条消息访问，因为 Zuri Chat 中写的任何内容都保留在 Zuri Chat 中。没有隐藏费用。无限。",
+    text_wrap7: "随时提供帮助",
+    text_wrap7_p:
+      "碰钉子？有问题吗？我们的 24/7 全天候帮助团队将采取额外的措施和步行额外的里程，以确保您在 Zuri Chat 中获得轻松愉快的体验。",
+    bottom_card: "您的团队肯定会喜欢",
+    bottom_link: "立即注册！",
   }
 }
-

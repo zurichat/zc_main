@@ -18,18 +18,26 @@ import {
   AiOutlineClose,
   AiOutlineStar,
   AiOutlineLock
-} from "react-icons/ai"
+} from "react-icons/ai";
+import { BsPersonCircle } from 'react-icons/bs'
 import { ListGroup } from "react-bootstrap"
+import { StyledTabs, DataWrap, Details, DetailLabel, StackLabel } from "../channel_details/ChannelDetails.styled";
+import { sample } from '../channel_details/sample';
 import axios from "axios"
+import { membersList as DummyMembers } from "../sampleData/memberList"
 
-function PluginModal({ close, showDialog, tabIndex, config }) {
+function PluginModal({ close, showDialog, config, tabIndex, channelName }) {
+
+  var samples = sample.map(sample => sample)
+
   const [showEditTopicModal, setShowEditTopicModal] = useState(false)
+  const [activeIndex, setActiveIndex] = useState(0)
   const [showEditDescriptionModal, setEditDescriptionModal] = useState(false)
   const [showLeaveChannelModal, setShowLeaveChannelModal] = useState(false)
   const [showDeleteChannel, setShowDeleteChannel] = useState(false)
   const [showArchiveChannel, setShowArchiveChannel] = useState(false)
 
-  const toggleEditTopicModal = () => setShowEditTopicModal(!showEditTopicModal)
+  const toggleEditTopicModal = () => { setShowEditTopicModal(true) }
   const toggleEditDescriptionModal = () =>
     setEditDescriptionModal(!showEditDescriptionModal)
   const toggleDeleteChannel = () => setShowDeleteChannel(!showDeleteChannel)
@@ -41,11 +49,12 @@ function PluginModal({ close, showDialog, tabIndex, config }) {
     <div className="App">
       <DialogOverlays isOpen={showDialog} onDismiss={close}>
         <DialogContents>
-          <Tabs defaultIndex={tabIndex}>
+          <StyledTabs defaultIndex={tabIndex}
+            onChange={(activeIndex) => setActiveIndex(activeIndex)}>
             <div>
               <ModalTopic>
                 <ChannelName>
-                  # Announcements
+                  {channelName}
                   <AiOutlineStar
                     size="24px"
                     style={{ marginLeft: "10px", cursor: "pointer" }}
@@ -67,14 +76,14 @@ function PluginModal({ close, showDialog, tabIndex, config }) {
               <TabPanel>
                 <AboutPanel
                   showEditModal={showEditTopicModal}
-                  toggleEditTopicModal={toggleEditTopicModal}
+                  toggleEditTopicModal={() => { setShowEditTopicModal(true) }}
                   toggleEditDescriptionModal={toggleEditDescriptionModal}
                   toggleLeaveChannelModal={toggleLeaveChannelModal}
                   closeModal={close}
                 />
               </TabPanel>
               <TabPanel>
-                <MembersPanel config={config} />
+                <MembersPanel config={config} samples={samples} />
               </TabPanel>
               <TabPanel>
                 <Integration />
@@ -87,7 +96,7 @@ function PluginModal({ close, showDialog, tabIndex, config }) {
                 />
               </TabPanel>
             </TabPanels>
-          </Tabs>
+          </StyledTabs>
         </DialogContents>
       </DialogOverlays>
       {showEditTopicModal && (
@@ -121,8 +130,8 @@ function AboutPanel({
             <Label>Topic</Label>
             <EditLabel
               onClick={() => {
-                closeModal()
                 toggleEditTopicModal()
+                // closeModal()
               }}
             >
               Edit
@@ -136,7 +145,7 @@ function AboutPanel({
 
             <EditLabel
               onClick={() => {
-                closeModal()
+                // closeModal()
                 toggleEditDescriptionModal()
               }}
             >
@@ -152,7 +161,7 @@ function AboutPanel({
         <EachSegment>
           <Typography
             onClick={() => {
-              closeModal()
+              // closeModal()
               toggleLeaveChannelModal()
             }}
           >
@@ -168,7 +177,7 @@ function AboutPanel({
           conversation.
         </EditContent>
       </FileWrapper>
-      <h6>ChannelID:CD1QT4B9PGW</h6>
+      <h6 style={{ fontSize: '15px', fontWeight: '500' }}>ChannelID:CD1QT4B9PGW</h6>
     </div>
   )
 }
@@ -186,12 +195,31 @@ function AboutPanel({
 //       )
 //   }
 function MembersPanel({ config }) {
-  const { membersList, addmembersevent, removememberevent } = config.roomInfo
+  const dummyHeaderConfig = {
+    roomInfo: {
+      membersList: DummyMembers,
+      addmembersevent: values => {
+        console.warn("a plugin added ", values)
+      },
+      removememberevent: id => {
+        console.warn("a plugin deleted ", id)
+      }
+    }
+  }
+
+  const roomData =
+    "roomInfo" in config ? config.roomInfo : dummyHeaderConfig.roomInfo
+  const {
+    membersList: roomMembers,
+    addmembersevent,
+    removememberevent
+  } = roomData
   const [addModalShow, setaddModalShow] = useState(false)
   const [removeModalShow, setremoveModalShow] = useState(false)
   const [selectedMember, setSelectedMember] = useState(null)
   const [isLoading, setisLoading] = useState(false)
   const [userList, setUserList] = useState([])
+  const [membersList, setMembersList] = useState(roomMembers)
 
   const handleClose = () => {
     setaddModalShow(false)
@@ -202,6 +230,14 @@ function MembersPanel({ config }) {
   const handleremoveModalShow = () => setremoveModalShow(true)
 
   const addMembersEvent = values => {
+    const newEntries = [
+      ...membersList,
+      values.map(item => {
+        return { _id: item.value, email: item.label }
+      })
+    ]
+    setMembersList([newEntries])
+    // console.warn(membersList)
     addmembersevent(values)
   }
 
@@ -217,18 +253,19 @@ function MembersPanel({ config }) {
   useEffect(() => {
     const currentWorkspace = localStorage.getItem("currentWorkspace")
     const token = sessionStorage.getItem("token")
-    axios.get(`https://api.zuri.chat/organizations/${currentWorkspace}/members`, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
+    axios
+      .get(`https://api.zuri.chat/organizations/${currentWorkspace}/members`, {
+        headers: { Authorization: `Bearer ${token}` }
+      })
       .then(r => {
         const users = r.data.data.map(item => {
           return { value: item._id, label: item.email }
         })
         setUserList(users)
       })
-      .catch(/*e => console.log("Organization not returning members", e)*/);
+      .catch(/*e => console.log("Organization not returning members", e)*/)
     setisLoading(true)
-  }, []);
+  }, [])
 
   return (
     <div>
@@ -271,16 +308,22 @@ function MembersPanel({ config }) {
             Add People
           </AddPeopleIcons>
         </ListGroup.Item>
-        {membersList.map(member => (
-          <ListGroup.Item key={member._id} className="d-flex w-100">
-            <div>{member.email}</div>
-            <div className="ms-auto" onClick={handleaddModalShow}>
-              <RemoveLink onClick={() => removeMemberHandler(member)}>
-                Remove
-              </RemoveLink>
-            </div>
+        {membersList && membersList.length > 0 ? (
+          membersList.map(member => (
+            <ListGroup.Item key={member._id} className="d-flex w-100">
+              <div>{member.email}</div>
+              <div className="ms-auto" onClick={handleaddModalShow}>
+                <RemoveLink onClick={() => removeMemberHandler(member)}>
+                  Remove
+                </RemoveLink>
+              </div>
+            </ListGroup.Item>
+          ))
+        ) : (
+          <ListGroup.Item className="d-flex w-100">
+            <div>No Members</div>
           </ListGroup.Item>
-        ))}
+        )}
       </ListGroup>
     </div>
   )
@@ -291,7 +334,8 @@ function Integration() {
       style={{
         display: "flex",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        flexDirection: 'column'
       }}
     >
       <Options>
@@ -304,19 +348,39 @@ function Integration() {
         </Subheader>
         <Buttons>See Upgrade Options</Buttons>
       </Options>
+      <Options>
+        <Heading>
+          Apps
+        </Heading> 
+        <Subheader>
+          Bring the tools you need into this channel to pull reports, start calls,
+          file tickets and more.
+        </Subheader>
+        <Buttons>See Upgrade Options</Buttons>
+      </Options>
+      <Options>
+        <Heading>
+        Send emails to this channel  
+        </Heading> <Tag>PAID FEATURE</Tag>  
+        <Subheader>
+        Get an email address that posts incoming emails in this channel.
+        </Subheader>
+        <Buttons>See Upgrade Options</Buttons>
+      </Options>
     </div>
   )
 }
 function SettingPanel({
   closeModal,
   toggleDeleteChannel,
-  toggleArchiveChannel
+  toggleArchiveChannel,
+  channelName
 }) {
   return (
     <div>
       <FileWrapper>
         <FileContent>Channel name</FileContent>
-        <EditContent>#Announcement</EditContent>
+        <EditContent>{channelName}</EditContent>
       </FileWrapper>
       <ChannelWrapper>
         <Channels>
@@ -329,7 +393,7 @@ function SettingPanel({
           <RiDeleteBin7Fill color="red" />
           <Typography
             onClick={() => {
-              closeModal()
+              // closeModal()
               toggleArchiveChannel()
             }}
           >
@@ -342,7 +406,7 @@ function SettingPanel({
           <RiDeleteBinLine color="red" />
           <Typography
             onClick={() => {
-              closeModal()
+              // closeModal()
               toggleDeleteChannel()
             }}
           >
@@ -361,6 +425,7 @@ const EachSegment = styled.div`
   flex-direction: column;
   border: 2px solid #f6f6f6;
   margin-bottom: 1.11rem;
+  padding:10px 0;
 `
 const Label = styled.label`
   margin-left: 20px;
@@ -377,14 +442,16 @@ const Typography = styled.p`
   color: red;
   padding-left: 10px;
   font-weight: 500;
+  font-size:17px;
 `
 const FileWrapper = styled.div`
   border: 2px solid #f6f6f6;
   margin-top: 20px;
+  padding:15px;
 `
 const FileContent = styled.h4`
   font-weight: 500;
-  margin-left: 15px;
+  margin-left: 4px;
 `
 const MembersInput = styled.input`
   outline: none;
@@ -414,16 +481,16 @@ const ChannelName = styled.div`
   color: black;
   font-weight: 700;
 `
-const Select = styled.select`
-  padding: 10px;
-  border-radius: 5px;
-  outline: none;
-  cursor: pointer;
-`
+// const Select = styled.select`
+//   padding: 10px;
+//   border-radius: 5px;
+//   outline: none;
+//   cursor: pointer;
+// `
 const TabLists = styled(TabList)`
   margin: 20px 0;
   background-color: white;
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -479,11 +546,12 @@ const EditLabel = styled.h5`
   color: blue;
   margin-right: 10px;
   cursor: pointer;
+  font-weight:500;
+  font-size:14px;
 `
 const EditContent = styled.h4`
   max-width: 70%;
-  margin-top: -5px;
-  margin-left: 20px;
+  margin-top: 5px;
   color: #8b8b8b;
 `
 const Selection = styled.div`
@@ -495,6 +563,7 @@ const ChannelWrapper = styled.div`
   align-items: center;
   border: 2px solid #f6f6f6;
   margin-top: 20px;
+  padding:10px 0;
 `
 const ChannelContent = styled.h5`
   margin-left: 10px;
@@ -504,37 +573,53 @@ const Channels = styled.div`
   align-items: center;
   margin-left: 20px;
 `
-const Options = styled.div`
-  border: 2px solid #575757;
-  padding: 10px;
-  width: 80%;
+export const Options = styled.div`
+  border: 1px solid #F6F6F6;
+  padding: 15px;
+  width: 90%;
+  margin-top:10px;
+  @media (max-width: 350px) {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
 `
 const Heading = styled.div`
   display: flex;
   margin-top: 10px;
-  font-weight: 500;
+  font-weight: 700;
+  color: #1D1D1D;
+
 `
 const Tag = styled.button`
-  color: blue;
-  background-color: #00b87c7a;
+  color: #032B70;
+  background-color: #E8F0FF;
   border: none;
   outline: none;
-  margin-left: 20px;
+  margin-left: 0.25rem;
+  padding: 0.5rem 1rem;
   border-radius: 5px;
+  font-size:8px;
 `
 const Subheader = styled.h4`
   font-weight: 400;
+  color:#B0AFB0;
+
 `
 const Buttons = styled.button`
   padding: 5px;
-  border: 2px solid #f6f6f6;
+  border: 2px solid #B0AFB0;
+  color:#B0AFB0;
+  ;
   border-radius: 5px;
 `
 const RemoveLink = styled.p`
   color: blue;
+  font-weight:500;
+  font-size:14px;
 
   &:hover {
     text-decoration: underline;
   }
-`
+`;
 export default PluginModal

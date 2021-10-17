@@ -68,7 +68,7 @@ export const StyledEmojiSelectWrapper = styled.div`
     margin-top: 10px;
     padding: 0 0.3em;
     position: absolute;
-    top: 10px;
+    top: -400px;
     right: 20px;
     z-index: 1000;
     box-sizing: content-box;
