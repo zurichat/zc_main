@@ -5,7 +5,9 @@ import FormWrapper from '../../components/AuthFormWrapper'
 import styles from '../../component-styles/AuthFormElements.module.css'
 import axios from 'axios'
 import EmailVerification from './email-verify'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet';
+import "../../i18n";
+import { useTranslation} from "react-i18next";
 // import { Link } from 'react-router-dom'
 // import authBg1 from './assets/auth_bg1.svg'
 // import authBg2 from './assets/auth_bg2.svg'
@@ -119,6 +121,8 @@ const Signup = () => {
       })
   }
 
+  const { t } = useTranslation();
+
   return (
     <main id={styles.authPageWrapper}>
       {showDialog && <EmailVerification email={email} />}
@@ -129,28 +133,28 @@ const Signup = () => {
       </aside> */}
 
       <Helmet>
-        <title>Sign Up - Zuri Chat</title>
+        <title>{t("auth.signup.title")} - Zuri Chat</title>
       </Helmet>
       <section id={styles.authFormContainer}>
         <FormWrapper
-          header="Create Account"
+          header={t("auth.signup.form.header")}
           subHeader=""
-          googleHeader="Sign up with Google"
-          topLineText="OR"
-          submitButtonName="Sign up"
+          googleHeader={t("auth.signup.form.googleHeader")}
+          topLineText={t("auth.signup.form.topLineText")}
+          submitButtonName={t("auth.signup.form.submitButtonName")}
           disabled={name && email && password && tos}
           error={error}
           handleSubmit={handleSubmit}
-          bottomLine="Already have an account?"
-          bottomLink="Log in"
+          bottomLine={t("auth.signup.form.bottomLine")}
+          bottomLink={t("auth.signup.form.bottomLink")}
           bottomLinkHref="login"
         >
           <AuthInputBox
             className={`${styles.inputElement}`}
             id="name"
-            name="Full name"
+            name={t("auth.signup.form.input.fullName")}
             type="text"
-            placeholder="Enter your Name"
+            placeholder={t("auth.signup.form.input.fullNamePlaceholder")}
             value={name}
             setValue={setName}
             // onFocus={displayImage}
@@ -159,9 +163,9 @@ const Signup = () => {
           <AuthInputBox
             className={`${styles.inputElement}`}
             id="email"
-            name="Email address"
+            name={t("auth.signup.form.input.emailAddress")}
             type="email"
-            placeholder="Enter you email address"
+            placeholder={t("auth.signup.form.input.emailAddressPlaceholder")}
             value={email}
             setValue={setEmail}
             error={emailerror}
@@ -170,9 +174,9 @@ const Signup = () => {
           <AuthInputBox
             className={`${styles.inputElement}`}
             id="password"
-            name="Password"
+            name={t("auth.signup.form.input.password")}
             type="password"
-            placeholder="Enter a password"
+            placeholder={t("auth.signup.form.input.passwordPlaceholder")}
             value={password}
             setValue={setPassword}
             // onFocus={displayImage}
@@ -190,9 +194,9 @@ const Signup = () => {
               // onFocus={displayImage}
             />
             <span className={`${styles.tosText}`}>
-              I agree to Zurichat's {''}
-              <Link to="/terms">Terms of services{''} </Link>&
-              <Link to="/privacy"> {''}Privacy</Link>
+              {t("auth.signup.privacyAgreement")}{''}
+              <Link to="/terms">{t("auth.signup.termsOfService")}{''} </Link>&
+              <Link to="/privacy"> {''}{t("auth.signup.privacy")}</Link>
             </span>
           </div>
         </FormWrapper>

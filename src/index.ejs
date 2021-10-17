@@ -18,178 +18,185 @@
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
   </script>
 
-  <link rel="icon" href="favicon.ico" type="image/ico" />
-  <link rel="icon" href="assets/favicon1.ico" type="image/ico">
 
-  <!-- Dynamic Title Tag for Plugins -->
-  <script>
-    let getTitleOfPage = function () {
-      let getURL = location.pathname;
-      let appendZuri = `- Zuri Chat `;
-      if (getURL !== '/') {
-        getURL = getURL.substr(1);
-        getURL = getURL.charAt(0).toUpperCase() + getURL.slice(1);
-        document.title = getURL + ' ' + appendZuri;
-      };
+<link rel="icon" href="favicon.ico" type="image/ico" />
+<link rel="icon" href="assets/favicon1.ico" type="image/ico">
+
+<!-- Dynamic Title Tag for Plugins -->
+<script>
+    let getTitleOfPage = function() {
+        let getURL = location.pathname;
+        let appendZuri = `- Zuri Chat `;
+        if (getURL !== '/') {
+            getURL = getURL.substr(1);
+            getURL = getURL.charAt(0).toUpperCase() + getURL.slice(1);
+            document.title = getURL + ' ' + appendZuri;
+        };
     };
-    setInterval(getTitleOfPage, 500)
-  </script>
-  <!-- End -->
+    setInterval(getTitleOfPage, 500);
+</script>
+<!-- End -->
 
-  <!-- Google / Search Engine Tags -->
-  <meta itemprop="name"
-    content="Zuri-Chat -Communicate and collaborate from wherever you are. A fully Integrated way to connect and interact" />
-  <meta itemprop="description"
-    content="Zuri-Chat -  For Organizations & Institutions. A fully Integrated way to connect and interact. Create your future with us, network, collaborate, educate and learn remotely.Invite your team to your workspace. Stay connected,stay in sync, and explore ideas together from anywhere." />
-  <meta itemprop="image" content="https://i.ibb.co/SnK9MGt/ogzuri.png" />
+<!-- Google / Search Engine Tags -->
+<meta itemprop="name" content="Zuri-Chat -Communicate and collaborate from wherever you are. A fully Integrated way to connect and interact" />
+<meta itemprop="description" content="Zuri-Chat -  For Organizations & Institutions. A fully Integrated way to connect and interact. Create your future with us, network, collaborate, educate and learn remotely.Invite your team to your workspace. Stay connected,stay in sync, and explore ideas together from anywhere."
+/>
+<meta itemprop="image" content="https://i.ibb.co/SnK9MGt/ogzuri.png" />
 
-  <!-- Facebook , linkedin etc  -->
+<!-- Facebook , linkedin etc  -->
 
-  <meta name="type" property="og:type" content="website" />
-  <meta name="url" property="og:url" content="https://www.zuri.chat" />
-  <meta name="title" property="og:title"
-    content="Zuri-Chat -Communicate and collaborate from wherever you are. A fully Integrated way to connect and interact" />
-  <meta name="description" property="og:description"
-    content="Zuri-Chat -  For Organizations & Institutions. A fully Integrated way to connect and interact. Create your future with us, network, collaborate, educate and learn remotely.Invite your team to your workspace. Stay connected,stay in sync, and explore ideas together from anywhere." />
-  <meta name="image" property="og:image" content="https://i.ibb.co/SnK9MGt/ogzuri.png" />
-  <!--   Twitter  -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://www.zuri.chat" />
-  <meta name="twitter:title"
-    content="Zuri-Chat - For Organizations & Institutions. A fully Integrated way to connect and interact" />
-  <meta name="twitter:description"
-    content="Zuri-Chat - Create your future with us, network, collaborate, educate and learn remotely. A messaging app that lets professionals collaborate through workspaces..." />
-  <meta name="twitter:image" content="https://i.ibb.co/SnK9MGt/ogzuri.png" />
+<meta name="type" property="og:type" content="website" />
+<meta name="url" property="og:url" content="https://www.zuri.chat" />
+<meta name="title" property="og:title" content="Zuri-Chat -Communicate and collaborate from wherever you are. A fully Integrated way to connect and interact" />
+<meta name="description" property="og:description" content="Zuri-Chat -  For Organizations & Institutions. A fully Integrated way to connect and interact. Create your future with us, network, collaborate, educate and learn remotely.Invite your team to your workspace. Stay connected,stay in sync, and explore ideas together from anywhere."
+/>
+<meta name="image" property="og:image" content="https://i.ibb.co/SnK9MGt/ogzuri.png" />
+<!--   Twitter  -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content="https://www.zuri.chat" />
+<meta name="twitter:title" content="Zuri-Chat - For Organizations & Institutions. A fully Integrated way to connect and interact" />
+<meta name="twitter:description" content="Zuri-Chat - Create your future with us, network, collaborate, educate and learn remotely. A messaging app that lets professionals collaborate through workspaces..." />
+<meta name="twitter:image" content="https://i.ibb.co/SnK9MGt/ogzuri.png" />
 
   </script>
-  <style>
+</script>
+<style>
+  :root {
+    --bg-color: #fff;
+    --width: 100%;
+    --height: 100%;
+    --text-color: #000;
+  }
+  
+  [data-theme='dark'] {
+    --bg-color: #3f3f3f;
+    --text-color: #fff;
+  }
+  
+  [data-theme='light'] {
+    --bg-color: #fff;
+    --text-color: #3f3f3f;
+  }
     html,
     body {
-      /* height: 100%; */
-      /* width: 100%; */
-      margin: 0;
-      padding: 0;
-      /* font-size: 100% !important; */
+        /* height: 100%; */
+        /* width: 100%; */
+        margin: 0;
+        /* background-color: var(--bg-color);  */
+        padding: 0;
+        /* font-size: 100% !important; */
     }
-
+    
     div[id*='zuri'] {
-      width: 100%;
-      overflow: hidden;
+        width: 100%;
+        overflow: hidden;
     }
-
+    
     div[id*='zuri/topbar'] {
-      /* z-index: 5; */
-      width: 100%;
-      height: 6vh;
-      position: fixed;
-      top: 0;
-      left: 0;
-      /* text-align: center; */
-      display: flex;
-      /* justify-content: center; */
-      align-items: center;
-      background-color: #fff;
-      z-index: 1;
-      overflow: unset;
-    }
-
-    div[id*='zuri/sidebar']::-webkit-scrollbar {
-      display: none;
-    }
-
-    div[id*='zuri/sidebar'] {
-      width: 20%;
-      /* margin-right: 2%; */
-      height: 94vh;
-      /* overflow-y: scroll; */
-      /* Hide scrollbar for IE and Edge */
-      -ms-overflow-style: none;
-      /* Hide scrollbar for Firefox */
-      scrollbar-width: none;
-      position: fixed;
-      top: 6vh;
-      left: 0;
-      background-color: #fff;
-      /* z-index: 1; */
-    }
-
-    div[id*='zuri/commentSidebar'] {
-      width: 299px;
-      position: absolute;
-      background-color: #e5e5e5;
-      right: 0;
-      top: 20vh;
-      z-index: 2;
-    }
-
-    div[id*='zuri-plugin'],
-    div[id*='zuri/marketplace'] {
-      width: 80%;
-      position: absolute;
-      top: 6vh;
-      right: 0;
-      z-index: unset;
-    }
-
-    @media (min-width: 1441px) {
-      div[id*='zuri/topbar'] {
-        height: 5vh;
+        /* z-index: 5; */
+        width: 100%;
+        height: 6vh;
+        position: fixed;
         top: 0;
         left: 0;
-      }
-
-      div[id*='zuri/sidebar']::-webkit-scrollbar {
+        /* text-align: center; */
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        background-color: var(--bg-color);
+        z-index: 1;
+        overflow: unset;
+    }
+    
+    div[id*='zuri/sidebar']::-webkit-scrollbar {
         display: none;
-      }
-
-      div[id*='zuri/sidebar'] {
-        height: 95vh;
-        min-width: 20%;
-        top: 5vh;
+    }
+    
+    div[id*='zuri/sidebar'] {
+        width: 20%;
+        /* margin-right: 2%; */
+        height: 94vh;
+        /* overflow-y: scroll; */
+        /* Hide scrollbar for IE and Edge */
+        -ms-overflow-style: none;
+        /* Hide scrollbar for Firefox */
+        scrollbar-width: none;
+        position: fixed;
+        top: 6vh;
         left: 0;
-      }
-
-      div[id*='zuri-plugin'],
-      div[id*='zuri/marketplace'] {
-        top: 5vh;
+        background-color: var(--bg-color);
+        /* z-index: 1; */
+    }
+    
+    div[id*='zuri/commentSidebar'] {
+        width: 299px;
+        position: absolute;
+        background-color: #e5e5e5;
+        right: 0;
+        top: 20vh;
+        z-index: 2;
+    }
+    
+    div[id*='zuri-plugin'],
+    div[id*='zuri/marketplace'] {
+        width: 80%;
+        position: absolute;
+        top: 6vh;
         right: 0;
         z-index: unset;
-      }
     }
-
-    @media (min-width: 768px) {
-      div[id*='zuri/sidebar'] {
-        min-width: 20%;
-      }
-
-      div[id*='zuri/sidebar'] {
-        display: block;
-      }
+    
+    @media (min-width: 1441px) {
+        div[id*='zuri/topbar'] {
+            height: 5vh;
+            top: 0;
+            left: 0;
+        }
+        div[id*='zuri/sidebar']::-webkit-scrollbar {
+            display: none;
+        }
+        div[id*='zuri/sidebar'] {
+            height: 95vh;
+            min-width: 20%;
+            top: 5vh;
+            left: 0;
+        }
+        div[id*='zuri-plugin'],
+        div[id*='zuri/marketplace'] {
+            top: 5vh;
+            right: 0;
+            z-index: unset;
+        }
     }
-
-    @media (max-width: 768px) {
-      div[id*='zuri/sidebar'] {
-        display: none;
-      }
-
-      div[id*='zuri-plugin'],
-      div[id*='zuri/marketplace'] {
-        width: 100%;
-        z-index: unset;
-      }
-    }
-
-    /* CHESS STYLE */
-
-    .app__container {
-      padding: 0 !important;
-      padding-block: 5rem;
-    }
-
-    @media (max-width: 425px) {
-
-      /* div[id*='zuri/sidebar'] {
-
+        
+        @media (min-width: 768px) {
+            div[id*='zuri/sidebar'] {
+                min-width: 20%;
+            }
+            div[id*='zuri/sidebar'] {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            div[id*='zuri/sidebar'] {
+                display: none;
+            }
+            div[id*='zuri-plugin'],
+            div[id*='zuri/marketplace'] {
+                width: 100%;
+                z-index: unset;
+            }
+        }
+        /* CHESS STYLE */
+        
+        .app__container {
+            padding: 0 !important;
+            padding-block: 5rem;
+        }
+        
+        @media (max-width: 425px) {
+            /* div[id*='zuri/sidebar'] {
         width: 40%;
       } */
       div[id*='zuri-plugin'],
@@ -207,9 +214,15 @@
     }
 
     /* CHESS STYLE */
+
+    /* Translator feature style */
+    .goog-te-banner-frame {
+      display: none
+    }
+
   </style>
 
-  <title>Zuri Chat</title>
+  <title>Zuri Chat - Communicate and Collaborate from wherever you are </title>
   <!--
     Remove this if you only support browsers that support async/await.
     This is needed by babel to share largeish helper code for compiling async/await in older
@@ -309,7 +322,9 @@
         "@zuri/zuri-ui": "//localhost:8084/zuri-zuri-ui.js",
         "@zuri/utilities": "//localhost:8085/zuri-utilities.js",
         "@zuri/marketplace": "//localhost:8086/zuri-marketplace.js",
-        "@zuri/manage-user-modal": "//localhost:8087/zuri-manageUser.js"
+        "@zuri/manage-user-modal": "//localhost:8087/zuri-manageUser.js",
+        "@zuri/zuri-plugin-channels": "//localhost:8088/zuri-zuri-plugin-channels.js"
+
       }
     }
   </script>
@@ -348,7 +363,7 @@
 </head>
 
 <body>
-  <noscript>
+    <noscript>
     You need to enable JavaScript to run this app.
   </noscript>
 
@@ -362,6 +377,10 @@
     integrity="sha512-ewfXo9Gq53e1q1+WDTjaHAGZ8UvCWq0eXONhwDuIoaH8xz2r96uoAYaQCm1oQhnBfRXrvJztNXFsTloJfgbL5Q=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
+
+
+    <!-- translator feature script -->
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>
