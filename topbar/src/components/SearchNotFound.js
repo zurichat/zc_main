@@ -3,7 +3,7 @@ import style from "../styles/SearchNotFound.module.css"
 import emoji from "../assets/images/thinking.png"
 import StartNewSearch from "./StartNewSearchButton.js"
 
-export const NoResult = onClosed => {
+export const NoResult = ( onClosed ) => {
   return (
     <div className={style.main}>
       <div className={style.container}>
