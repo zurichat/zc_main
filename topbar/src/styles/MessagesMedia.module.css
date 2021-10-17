@@ -92,6 +92,7 @@ p {
   margin-left: 10px;
   font-size: 13px;
   color: var(--text-color-gray);
+  color: #999999;
   font-weight: normal;
   font-style: normal;
 }
@@ -100,6 +101,7 @@ p {
   margin-left: 10px;
   font-size: 13px;
   color: var(--text-color-gray);
+  color: #999999;
   font-weight: normal;
   font-style: normal;
 }
