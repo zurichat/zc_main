@@ -19,13 +19,11 @@ const SectionOne = () => {
       <div className={styles.section1_content}>
         <section className={`${styles.section1Left}`}>
           <div className={styles.section1_info}>
-            <h1>{t("Careers at Zuri Chat")}</h1>
-            <p>{t(
-              "Passionate about making work life simpler, and more productive? Join our remotely-friendly and flexible team."
-            )}</p>
+            <h1>{t("careers.section_one.headline")}</h1>
+            <p>{t("careers.section_one.post_headline")}</p>
             <div className={styles.section1_btn}>
               <Link to="/signup" className={styles.JoinBtn}>
-                {t("Join Zuri Chat")}
+                {t("careers.section_one.join_link")}
               </Link>
             </div>
           </div>
