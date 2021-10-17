@@ -6,8 +6,8 @@ import Workspace from "./pages/workspace/components/Workspace"
 import LandingPage from "./pages/LandingPage"
 import DAO_Features from "./pages/DAO-Features"
 // password block
-import ResetPassword from './pages/passwordReset/index'
-import NewPassword from './pages/passwordReset/newPassword'
+import ResetPassword from "./pages/passwordReset/index"
+import NewPassword from "./pages/passwordReset/newPassword"
 // end password block
 
 import CookiesSetting from "./pages/cookiesSettings"
@@ -58,18 +58,18 @@ import AccountProfile from "./pages/admin/AccountProfile"
 import Legal from "./pages/legal"
 import ZurichatBlog from "./pages/blogs/components/zurichatBlog"
 
-import ManageMembers from './pages/admin/manage_members/components/ManageMembers'
+import ManageMembers from "./pages/admin/manage_members/components/ManageMembers"
 import Ebooks from "./pages/ebooks"
 import Invitation from "./pages/admin/Invitation"
 import Whyzurichat from "./pages/WhyZuriChat/Whyzurichat"
 import Gateways from "./pages/admin/gateways/components/gateways"
 import OnboardingHelp from "./pages/LoginSignUpHelp/index"
-import DeleteWorkspace from "./pages/settings/components/DeleteWorkspace"
+import DeleteWorkspace from "./pages/settings/components/deleteWorkspace"
 import BookDemo from "./pages/book-a-demo"
 
 import ChangeWorkspaceName from "./pages/admin/Settings/components/ChangeWorkspaceName"
-import BlogDetails from './pages/blogs/components/BlogDetails'
-import CreateBlog from './pages/blogs/components/CreateBlog.jsx'
+import BlogDetails from "./pages/blogs/components/BlogDetails"
+import CreateBlog from "./pages/blogs/components/CreateBlog.jsx"
 
 // useEffect(() => {
 //     localStorage.setItem('input',input);
@@ -84,84 +84,84 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path='/' exact>
+        <Route path="/" exact>
           <LandingPage />
         </Route>
-        <RedirectRoute path='/login'>
+        <RedirectRoute path="/login">
           <Login />
         </RedirectRoute>
-        <Route path='/signup'>
+        <Route path="/signup">
           <SignUp />
         </Route>
-        <Route path='/createworkspace'>
+        <Route path="/createworkspace">
           <CreateWorkSpaces />
         </Route>
-        <Route path='/signout'>
+        <Route path="/signout">
           <SignOut />
         </Route>
         <Route path="/about">
           <About />
         </Route>
-        <Route path='/help'>
+        <Route path="/help">
           <Help />
         </Route>
-        <Route path='/choose-workspace'>
+        <Route path="/choose-workspace">
           <Workspace />
         </Route>
-        <Route path='/features'>
+        <Route path="/features">
           <Features />
         </Route>
-        <Route path='/invites/:id'>
+        <Route path="/invites/:id">
           <Invite />
         </Route>
-        <Route path='/invite-request'>
+        <Route path="/invite-request">
           <Inviterequest />
         </Route>
-        <Route path='/send-request'>
+        <Route path="/send-request">
           <SendRequest />
         </Route>
-        <Route path='/resources'>
+        <Route path="/resources">
           <Resources />
         </Route>
-        <Route path='/search'>
+        <Route path="/search">
           <Search />
         </Route>
-        <Route path='/createBlog'>
+        <Route path="/createBlog">
           <CreateBlog />
         </Route>
-        <Route path='/blog/:title'>
+        <Route path="/blog/:title">
           <BlogDetails />
         </Route>
-        <Route path='/blog'>
+        <Route path="/blog">
           <Blog />
         </Route>
-        <Route path='/pricing'>
+        <Route path="/pricing">
           <Pricing />
         </Route>
-        <Route path='/plugins'>
+        <Route path="/plugins">
           <Plugins />
         </Route>
-        <Route path='/security'>
+        <Route path="/security">
           <Security />
         </Route>
-        <Route path='/downloads'>
+        <Route path="/downloads">
           <Download />
         </Route>
-        <Route path='/ebooks'>
+        <Route path="/ebooks">
           <Ebooks />
         </Route>
-        <Route path='/downloadsMac'>
+        <Route path="/downloadsMac">
           <DownloadsMac />
         </Route>
-        <Route path='/contact-us'>
+        <Route path="/contact-us">
           <ContactUs />
         </Route>
-        <Route path='/careers'>
+        <Route path="/careers">
           <Careers />
         </Route>
-        <Route path='/terms'>
+        <Route path="/terms">
           <TermsOfService />
-        </Route>        
+        </Route>
         <Route path="/legal">
           <Legal />
         </Route>
@@ -169,10 +169,9 @@ const App = () => {
           <PrivacyPolicy />
         </Route>
         <Route path="/open-marketplace" exact>
-
           <MarketPlace />
         </Route>
-        <Route path='/dao-features'>
+        <Route path="/dao-features">
           <DAO_Features />
         </Route>
 
@@ -183,37 +182,39 @@ const App = () => {
         {/* <Route path="/marketplace" exact>
           <MarketPlace />
         </Route> */}
-        <Route path='/apps-integrations'>
+        <Route path="/apps-integrations">
           <AppsAndIntegrations />
         </Route>
-        <Route path='/ZurichatBlog'>
+        <Route path="/ZurichatBlog">
           <ZurichatBlog />
         </Route>
-        <Route path='/whyzurichat'>
+        <Route path="/whyzurichat">
           <Whyzurichat />
         </Route>
 
         {/* ----------------settings routes opened------------------------ */}
         <PrivateRoute
-          path='/confirm-deactivation'
+          path="/confirm-deactivation"
           component={ConfirmDeactivation}
         />
-        <Route path='/account-deactivated'>
+        <Route path="/account-deactivated">
           <AccDeactivated />
         </Route>
         <PrivateRoute
-          path='/deactivate-account'
+          path="/deactivate-account"
           component={DeactivateAccount}
         />
-
-    
 
         <PrivateRoute path="/session-signout" component={AllSessionSignOut} />
         <PrivateRoute path="/settings" exact component={Settings} />
         <PrivateRoute path="/admin/settings" exact component={SettingsHome} />
         <PrivateRoute path="/admin/settings/home" exact component={Home} />
 
-        <PrivateRoute path="/admin/name" exact component={ChangeWorkspaceName} />
+        <PrivateRoute
+          path="/admin/name"
+          exact
+          component={ChangeWorkspaceName}
+        />
         <PrivateRoute path="/admin/delete" exact component={DeleteWorkspace} />
         <PrivateRoute path="/homepage/profile" exact component={Homepage} />
         <PrivateRoute path="/components/gateways" exact component={Gateways} />
@@ -228,12 +229,12 @@ const App = () => {
           component={adminNalytics}
         />
 
-      <PrivateRoute
-          path='/admin/settings/billings'
+        <PrivateRoute
+          path="/admin/settings/billings"
           exact
           component={Billing}
         />
-        <PrivateRoute path='/admin/stats' exact component={AnayticsHome} />
+        <PrivateRoute path="/admin/stats" exact component={AnayticsHome} />
         <PrivateRoute
           path="/admin/settings/usergroups"
           exact
@@ -245,7 +246,7 @@ const App = () => {
           component={Customize}
         />
         <PrivateRoute
-          path='/admin/settings/aboutworkspace'
+          path="/admin/settings/aboutworkspace"
           exact
           component={AboutWorkSpace}
         />
@@ -259,29 +260,27 @@ const App = () => {
           exact
           component={AdminSettingsTab}
         /> */}
-         <Route
+        <Route
           path="/admin/settings/managemembers"
           exact
           component={ManageMembers}
         />
 
-       
-
         <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
         {/* ----------------settings routes closed----------------- */}
-        <Route path="/invitation">
+        <Route path="/admin/invites">
           <Invitation />
         </Route>
         <Route path="/reset-password">
           <ResetPassword />
         </Route>
-        <Route path='/change-password'>
+        <Route path="/change-password">
           <NewPassword />
         </Route>
-        <Route path='/cookies-settings'>
+        <Route path="/cookies-settings">
           <CookiesSetting />
         </Route>
-        <Route path='/cookies-banner'>
+        <Route path="/cookies-banner">
           <Cookies />
         </Route>
         <Route path="/book-a-demo">

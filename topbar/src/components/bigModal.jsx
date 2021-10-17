@@ -9,8 +9,9 @@ import noImg from "../assets/images/avatar_vct.svg"
 import { NoResult } from "./SearchNotFound"
 import { plugins } from "../utils/topbarApi"
 import { ProfileContext } from "../context/ProfileModal"
+import StartNewSearch from "./StartNewSearchButton"
 
-export const BigModal = ({ onClose, inputValue, result, isLoadingUp }) => {
+export const BigModal = ({ onClose, inputValue, result, isLoadingUp, clearSearch }) => {
   const [results, setResult] = useState(result)
   const [isLoading, setLoading] = useState(isLoadingUp)
 
@@ -47,7 +48,7 @@ export const BigModal = ({ onClose, inputValue, result, isLoadingUp }) => {
     overflow: auto;
     height: 100vh;
     z-index: 2000;
-    padding: 10px 20px;
+    
   `
   const StyledInput = Styled.input`
     outline: none;
@@ -72,7 +73,8 @@ export const BigModal = ({ onClose, inputValue, result, isLoadingUp }) => {
   ))
   const element = (
     <SearchContainer className="bigModal">
-      <h2>{`Search result for "${inputValue}"`}</h2>
+    <div className={styles.Header}>
+       <p className={styles.header_p}>{`Search result for "${inputValue}"`}</p>
 
       <button
         className="btn"
@@ -81,6 +83,8 @@ export const BigModal = ({ onClose, inputValue, result, isLoadingUp }) => {
       >
         <img src={cancel} alt="close" />
       </button>
+    </div>
+     
       {result.length < 1 ? (
         <div className={styles.noResult}>
           <p className={styles.no_result_title}>No Result Found</p>
@@ -88,9 +92,10 @@ export const BigModal = ({ onClose, inputValue, result, isLoadingUp }) => {
             Looking for something? If it happened in zuri-chat,
             <br /> you can find it in search.
           </p>
-          <button className={styles.startNewSearch}>
-            Please Start A New Search
-          </button>
+          
+          <StartNewSearch 
+          onClear={() => clearSearch()}
+          />
         </div>
       ) : isLoading ? (
         <p
