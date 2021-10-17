@@ -58,6 +58,12 @@ const Themes = () => {
     // const sideBarHeader = document.getElementsByClassName("sidebar-header-div")
     // sideBarHeader[0].style.backgroundColor = themeColors[theme].secondary
   }
+  const HandleDefault= ()=>{
+    const sideBar =document.getElementById("single-spa-application:@zuri/sidebar")
+    sideBar.setAttribute("data-theme", "light")
+    const topBar = document.getElementById("single-spa-application:@zuri/topbar")
+    topBar.setAttribute("data-theme", "light")
+  }
 
   // useEffect(() => {
   //   const themeLocal = localStorage.getItem("mode") && localStorage.getItem("mode") || "light"
@@ -193,8 +199,11 @@ const Themes = () => {
         <div className={styles.custom}>
           Customize the look of your workspace. Feeling
         </div>
-        <div className={styles.custom2}>adventurous?</div>
-        <div className={styles.create}>Create a custom theme</div>
+        <div className={styles.defaultt} onClick={HandleDefault(this,"white")}>
+          Restore theme to default(white)</div>
+        <br/>
+        <div className={styles.custom2}>Adventurous?</div>
+        <div className={styles.create}>Select Your Custom Theme</div>
         <div className={styles.true}>Tried and true</div>
       </div>
       <div className={styles.set1}>
@@ -529,9 +538,9 @@ const Themes = () => {
             <div className={styles.ash8}>Canary</div>
           </div>
         </div>
-        <p className={styles.create} onClick={handleThemeToggle.bind(this,"white")}>Restore theme to default(white)</p>
-        <br/>
+       
       </div>
+
     </div>
   )
 }
