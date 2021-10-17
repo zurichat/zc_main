@@ -156,6 +156,9 @@ const NoticeContainer = styled(AddUserContainer)`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+    @media (max-width: ${500}px) {
+    width: 90%;
+  }
 `;
 
 const AddUserHeader = styled.div`
@@ -221,9 +224,7 @@ const AddUserForm = styled.form`
     outline: none;
     border: 0;
     float: right;
-    @media (max-width: ${500}px) {
-      //width: 100%;
-    }
+
   }
 `;
 
@@ -246,6 +247,10 @@ const CopyLinkBox = styled.div`
     display: flex;
     justify-content: space-between;
     margin-top : 2em;
+    @media (max-width: ${500}px) {
+        font-size: 13px;
+    }
+    
 `;
 
 const CopyLink = styled.div`
