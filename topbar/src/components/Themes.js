@@ -25,6 +25,8 @@ const Themes = () => {
     PrefMainBox.setAttribute("data-theme", "dark")
     const MarketPlaceBox= document.getElementsByClassName("market-place-custom-div")
     MarketPlaceBox.setAttribute("data-theme", "dark")
+    const zuriLogo = document.getElementById("zuritopbar__logo")
+    zuriLogo.style.color = "#fff"
   }
   const toggleLightMode = () => {
     localStorage.setItem("mode", "light")
@@ -40,6 +42,8 @@ const Themes = () => {
     PrefMainBox.setAttribute("data-theme", "light")
     const MarketPlaceBox= document.getElementsByClassName("market-place-custom-div")
     MarketPlaceBox.setAttribute("data-theme", "dark")
+    const zuriLogo = document.getElementById("zuritopbar__logo")
+    zuriLogo.style.color = "#000"
   }
 
   const handleThemeToggle = (theme) => {
@@ -49,6 +53,8 @@ const Themes = () => {
     sideBar.style.backgroundColor = themeColors[theme].primary
     const topBar = document.getElementById("single-spa-application:@zuri/topbar")
     topBar.style.backgroundColor = themeColors[theme].primary
+    const zuriLogo = document.getElementById("zuritopbar__logo")
+    zuriLogo.style.color = themeColors[theme].secondary
     // const sideBarHeader = document.getElementsByClassName("sidebar-header-div")
     // sideBarHeader[0].style.backgroundColor = themeColors[theme].secondary
   }
@@ -99,7 +105,7 @@ const Themes = () => {
           Change the appearance of Slack across all of your workspaces.
         </div>
       </div>
-      <div className={styles.sync}>
+      {/* <div className={styles.sync}>
         <div className={styles.checkbox}>
           <input
             type="checkbox"
@@ -126,11 +132,10 @@ const Themes = () => {
         <div className={styles.mention}>
           Direct messages, mentions &amp; network
         </div>
-      </div>
+      </div> */}
       <div className={styles.text2}>
-        Automatically switch between light and dark themes when
+        Automatically switch between light and dark themes when your system does.
       </div>
-      <div className={styles.texti2}>your system does.</div>
       <div className={styles.img}>
         <div className={styles.up}>
           <div className={styles.upper}>
@@ -523,8 +528,6 @@ const Themes = () => {
             <div className={styles.ash8}>Canary</div>
           </div>
         </div>
-        <p className={styles.create} onClick={handleThemeToggle.bind(this,"white")}>Restore theme to default(white)</p>
-        <br/>
       </div>
     </div>
   )
