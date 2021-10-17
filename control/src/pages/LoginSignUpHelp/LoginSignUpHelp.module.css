@@ -1,28 +1,59 @@
-.helpLink:hover,
-.ChelpLink:hover {
-  color: #00b87c;
-  opacity: 0.5;
-}
-
-.helpLink {
-  font-size: 16px;
-}
-
-.ChelpLink {
-  font-size: 18px;
-}
-
-.helpList li {
-  list-style-type: "→  ";
-  list-style-color: #00b87c;
-  margin-bottom: 6px;
-}
-
 .LoginSignUpHelpCard {
   padding-top: 100px;
   margin-bottom: 30px;
+  font-family: "Lato" sans-serif;
+}
+
+.LoginHelpSideBar,
+.LoginHelpMain {
+  box-shadow: 0 3px 5px 0 rgb(0 1 1 / 10%);
+  padding: 40px 60px;
+}
+
+.helpLink, .ChelpLink {
+  font-size: 1.1em;
+  letter-spacing: 1px;
+}
+
+/* .loginHelp p,
+.ChelpLink {
+  color: #3a3a3a;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+} */
+
+.helpLink:hover,
+.ChelpLink:hover {
+  color: #00b87c;
+  text-decoration: underline;
+}
+
+.ListItemsPara p {
+  margin: 0 0 0.5rem 0;
+  counter-increment: my-awesome-counter;
+  position: relative;
+}
+
+.ListItemsPara p::before {
+  content: counter(my-awesome-counter);
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+  --size: 32px;
+  left: calc(-1 * var(--size) - 10px);
+  line-height: var(--size);
+  width: var(--size);
+  height: var(--size);
+  top: 0;
+  transform: rotate(-10deg);
+  background: #00b87c;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 1px 1px 0 #999;
 }
 
 .CSupport {
   padding: 0 !important;
+  font-weight: 900;
 }
