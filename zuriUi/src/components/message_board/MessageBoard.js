@@ -6,14 +6,15 @@ import Overlay from "./Subs/MessageContainer/Overlay/Overlay"
 import { useState } from "react"
 import MessageInputBox from "../message_input/MessageInputField"
 import messagesData from "./messages.data"
-import EmojiReaction from "../EmojiReaction/EmojiReaction"
-// import Emoji from "../Emoji/Emoji"
+// import EmojiReaction from "../EmojiReaction/EmojiReaction"
+import Emojis from "../Emojis/Emojis"
+// import Emojis from "../Emojis/Emojis"
 
 function MessageBoard({ chatsConfig }) {
   const [showMoreOptions, setShowMoreOptions] = useState(false)
   const [showEmoji, setShowEmoji] = useState(false)
   const [messageList, setMessageList] = useState(chatsConfig.messages)
-  //const [messageList, setMessageList] = useState(messagesData)
+  // const [messageList, setMessageList] = useState(messagesData)
   const [top, setTop] = useState(null)
   const [right, setRight] = useState(null)
   const [currentMessageId, setCurrentMessageId] = useState(null)
@@ -32,6 +33,9 @@ function MessageBoard({ chatsConfig }) {
     setShowMoreOptions(!showMoreOptions)
     setTop(event.clientY)
     setRight(window.innerWidth - event.clientX)
+    if (window.innerHeight - event.clientY < 320) {
+      setTop(event.clientY - 320)
+    }
   }
 
   const handleShowEmoji = (id, event) => {
@@ -39,6 +43,14 @@ function MessageBoard({ chatsConfig }) {
     setShowEmoji(!showEmoji)
     setTop(event.clientY)
     setRight(window.innerWidth - event.clientX)
+
+    if (window.innerHeight - event.clientY < 320) {
+      setTop(event.clientY - 320)
+    }
+    if (event.clientX < 288) {
+      setRight(event.clientX + 300)
+    }
+    // console.log(window.innerWidth - event.clientX)
   }
 
   function handleEmojiClicked(event, emojiObject, message_id) {
@@ -49,8 +61,8 @@ function MessageBoard({ chatsConfig }) {
     // the messgeContainer
 
     // extract the data
-    const emoji = emojiObject.emoji
-    const newEmojiName = message_id ? emojiObject.name : emojiObject.names[1]
+    const emoji = emojiObject.character
+    const newEmojiName = message_id ? emojiObject.name : emojiObject.unicodeName
     const realMessageId = message_id ? message_id : currentMessageId
 
     const messageIndex = messageListCopy.findIndex(
@@ -128,10 +140,10 @@ function MessageBoard({ chatsConfig }) {
           <MessageInputBox
             currentUserData={chatsConfig.currentUserData}
             addToMessages={addToMessages}
+            sendMessageHandler={chatsConfig.sendChatMessageHandler}
           />
         </div>
       </ChatContainer>
-
       {showMoreOptions && (
         <div>
           <Overlay handleOverlayClicked={handleOverlayClicked} />
@@ -142,7 +154,7 @@ function MessageBoard({ chatsConfig }) {
       {showEmoji && (
         <div>
           <Overlay handleOverlayClicked={handleOverlayClicked} />
-          <EmojiReaction
+          <Emojis
             top={top}
             right={right}
             handleEmojiClicked={handleEmojiClicked}
