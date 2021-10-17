@@ -7,8 +7,6 @@ import facebook from "../component-assets/facebook.svg"
 import twitter from "../component-assets/twitter.svg"
 import linkedin from "../component-assets/linkedin.svg"
 import instagram from "../component-assets/instagram.svg"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons"
 import { useTranslation } from "react-i18next"
 
 const Footer = () => {
@@ -40,15 +38,13 @@ const Footer = () => {
     <div className={styles.footer}>
       <div className={styles.top_footer}>
         <div className={styles.logo}>
-          <Link to="/">
+          <Link to="/" className={`me-0 me-md-2 ${styles.link}`}>
             <img
-              className={styles.logo_img}
+              className={`d-inline-block align-top ${styles.logo_img}`}
               src={logo}
-              alt="Logo"
-              width="30px"
-              height="30px"
+              alt="zuri-logo"
             />
-            <span translate="no" className={styles.logo_name}>Zuri Chat</span>
+            <span className={`mb-2 ${styles.zuriChat}`}>Zuri Chat</span>
           </Link>
         </div>
 
@@ -63,7 +59,9 @@ const Footer = () => {
                 <Link to="/about">{t("landing.footer.about")}</Link>{" "}
               </li>
               <li>
-                <Link to="/whyzurichat">Why Zurichat?</Link>{" "}
+                <Link to="/whyzurichat">
+                  {t("landing.footer.why_zuri_chat")}
+                </Link>{" "}
               </li>
               <li>
                 <Link to="/ZurichatBlog">{t("landing.footer.blog")}</Link>{" "}
@@ -75,17 +73,13 @@ const Footer = () => {
             <h5>{t("landing.footer.info")}</h5>
             <ul>
               <li>
-                <Link to="/privacy">
-                  <span>{t("landing.footer.privacy")}</span>{" "}
-                </Link>
+                <Link to="/privacy">{t("landing.footer.privacy")}</Link>
               </li>
               <li>
-                <Link to="/legal">
-                  <span>Legal</span>{" "}
-                </Link>
+                <Link to="/legal">{t("landing.footer.legal")}</Link>
               </li>
               <li>
-                <Link to="/open-marketplace">Market Place</Link>{" "}
+                <Link to="/open-marketplace">{t("landing.footer.market")}</Link>{" "}
               </li>
               <li>
                 <Link to="/security">{t("landing.footer.security")}</Link>{" "}
@@ -97,83 +91,85 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
-          <div className={styles.menu}>
-            <div>
-              <h5>{t("landing.footer.knowUs")}</h5>
-              <ul>
-                <li>
-                  <Link to="/download-app">
-                    {t("landing.footer.downloads")}
-                  </Link>{" "}
-                </li>
-                <li>
-                  <Link to="/contact-us">{t("landing.footer.contact")}</Link>{" "}
-                </li>
-                <li>
-                  <a href="https://docs.zuri.chat/">
-                    {t("landing.footer.documentation")}
-                  </a>{" "}
-                </li>
-              </ul>
-            </div>
+
+          <div>
+            <h5>{t("landing.footer.knowUs")}</h5>
+            <ul>
+              <li>
+                <Link to="/downloads">{t("landing.footer.downloads")}</Link>{" "}
+              </li>
+              <li>
+                <Link to="/contact-us">{t("landing.footer.contact")}</Link>{" "}
+              </li>
+              <li>
+                <a href="https://docs.zuri.chat/">
+                  {t("landing.footer.documentation")}
+                </a>{" "}
+              </li>
+            </ul>
           </div>
 
-          
-           <div className={styles.social}>
-              <h5>{t("landing.footer.socialMedia")}</h5>
-              <ul>
-                <li>
-                  <a
-                    href="https://www.facebook.com/Zuri-Chat-101278805666628"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src={facebook}
-                      alt="Facebook"
-                      title="Connect with us on Facebook"
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://instagram.com/zurichathq"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src={instagram}
-                      alt="Instagram"
-                      title="Connect with us on Instagram"
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://twitter.com/zurichat"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src={twitter}
-                      alt="Twitter"
-                      title="Connect with us on Twitter"
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/company/zuri-chat/">
-                    <img
-                      src={linkedin}
-                      alt="Linkedin"
-                      title="Connect with us on Linkedin"
-                    />
-                  </a>
-                </li>
-              </ul>
-            </div>
+          <div className={styles.social}>
+            <h5>{t("landing.footer.socialMedia")}</h5>
+            <ul>
+              <li>
+                <a
+                  href="https://www.facebook.com/Zuri-Chat-101278805666628"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={facebook}
+                    alt="Facebook"
+                    title="Connect with us on Facebook"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com/zurichathq"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={instagram}
+                    alt="Instagram"
+                    title="Connect with us on Instagram"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://twitter.com/zurichat"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={twitter}
+                    alt="Twitter"
+                    title="Connect with us on Twitter"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/zuri-chat/">
+                  <img
+                    src={linkedin}
+                    alt="Linkedin"
+                    title="Connect with us on Linkedin"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
+
+        {/* <div className={styles.bottom_footer}>
+          <p>
+            {" "}
+            &copy; {getYear()} Zuri Chat. {t("landing.footer.rights")}
+          </p>
+        </div> */}
       </div>
 
       <div className={styles.bottom_footer}>
