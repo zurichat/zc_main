@@ -20,8 +20,11 @@ import Category from "./components/Category"
 import { dummySidebar } from "./components/dummySidebar"
 import Starred from "./components/Starred"
 
+const categories = []
+
 const Sidebar = props => {
   let currentWorkspace = localStorage.getItem("currentWorkspace")
+
   const [nullValue, setnullValue] = useState(0)
 
   useEffect(() => {
@@ -72,7 +75,7 @@ const Sidebar = props => {
           var data = props.state.sidebar[key][k]
           return (
             <SingleRoom
-              key={data.name}
+              key={`${data.name}${idx}`}
               name={data.joined_rooms[0].room_name}
               image={data.joined_rooms[0].room_image}
               link={data.joined_rooms[0].room_url}
@@ -81,11 +84,20 @@ const Sidebar = props => {
         })
       } else {
         const categoryData = Object.keys(props.state.sidebar[key]).map(
-          k => props.state.sidebar[key][k]
+          (k, id) => {
+            const data = props.state.sidebar[key][k]
+            data.baseUrl = `https://${k}`
+            data.id = id
+            return data
+          }
         )
 
         categorizedItems.push(
-          <Category key={key} name={key} data={categoryData} />
+          <Category
+            key={categoryData.id}
+            name={key}
+            data={categoryData}
+          />
         )
         //    Object.keys(props.state.sidebar).map((p, idx)=>{
         //     return (categories.includes(p) ?
@@ -110,7 +122,7 @@ const Sidebar = props => {
          <Room name="Plugins" image={pluginIcon} />*/}
           {/* SIDE BAR DATA */}
           <SingleRoom name="Threads" image={threadIcon} />
-          <SingleRoom name="All Dms" image={dmIcon} />
+          <SingleRoom name="All Dms" image={dmIcon} link="/dm" />
           <SingleRoom name="Drafts" image={draftIcon} />
 
           <SingleRoom name="Plugins" image={pluginIcon} link="/marketplace" />

@@ -407,9 +407,7 @@ export const TRANSLATIONS_DE = {
       link_try: "Kostenlos ausprobieren"
     }   
   },
-  careers: {
-
-    
+  careers: {    
       title: {
         careers: "Karriere"
       },
@@ -449,53 +447,28 @@ export const TRANSLATIONS_DE = {
           }
 
         },
-        category_backend: {
-          headline: "Backend-Entwicklung",
+        join_cohort: "Seien Sie ein Teil unserer nächsten Kohorte ab Sommer 2022",
+        register_now: "Jetzt registrieren"
+      },
+      section_two: {
+        headline: "Arbeiten und Gedeihen",
+        post_headline:
+          "Wir bieten Vorteile, die Ihnen helfen, sich gut zu fühlen und Ihr Bestes zu geben.",
+        digital_wellness: {
+          headline: "Digital-First-Office",
           post_headline:
-            "Dieser Track behandelt den Aspekt der Anwendung, mit dem der Benutzer nicht direkt interagiert. Es ermöglicht die Frontend-Funktion, indem entweder Back-End-Code ausgeführt oder eine Verbindung zur Datenbank hergestellt wird."
+            "Mit Remote-Rollen, bürofreiem Onboarding und flexiblen Arbeitspraktiken sind wir für sich ständig ändernde Realitäten, Zeitpläne und Verantwortlichkeiten gerüstet."
         },
-        category_design: {
-          headline: "Entwurf",
+        just_for_you: {
+          headline: "Nur für dich",
           post_headline:
-            "Dieser Track befasst sich mit der Erstellung eines grafischen Plans für eine Anwendung. Sie lernen, die Projektdokumentation in ein sichtbares und verständliches Grafikdesign umzuwandeln, mit dem die Entwickler arbeiten können."
+            "Erhalten Sie eine jährliche Beihilfe für die berufliche Entwicklung sowie ein monatliches Stipendium zur Deckung Ihres Bedarfs; Ein neuer Arbeitslook, ein Haustier, was dir am wichtigsten ist."
         },
-        category_mobile: {
-          headline: "Mobile Entwicklung",
+        health_and_wellness: {
+          headline: "Gesundheit und Wellness",
           post_headline:
-            "Der mobile Track enthält eine Liste von Tools und Sprachen, die ein Entwickler benötigt, um mobile Anwendungen zu erstellen. Eine mobile Anwendung kann IOS oder Android sein."
-        },
-        category_digital_marketing: {
-          headline: "Digitales Marketing",
-          post_headline:
-            "Es umfasst den Einsatz digitaler Mittel und Hilfsmittel, um die Auffindbarkeit von Produkten, Dienstleistungen und Marken zu steigern."
-        },
-        category_frameworks: {
-          headline: "Frameworks",
-          post_headline:
-            "Während des Programms werden wir verschiedene nützliche Frameworks erkunden, die Ihnen einen Vorsprung in der Branche verschaffen und Ihnen helfen, komplexe Anwendungen viel schneller zu entwickeln."
+            "Zuri zahlt 100 % Ihrer Prämien. Wir bieten auch Zugang zu einer Reihe von kostenlosen Ressourcen für psychische Gesundheit und Wohlbefinden."
         }
-      },
-      join_cohort: "Seien Sie ein Teil unserer nächsten Kohorte ab Sommer 2022",
-      register_now: "Jetzt registrieren"
-    },
-    section_two: {
-      headline: "Arbeiten und Gedeihen",
-      post_headline:
-        "Wir bieten Vorteile, die Ihnen helfen, sich gut zu fühlen und Ihr Bestes zu geben.",
-      digital_wellness: {
-        headline: "Digital-First-Office",
-        post_headline:
-          "Mit Remote-Rollen, bürofreiem Onboarding und flexiblen Arbeitspraktiken sind wir für sich ständig ändernde Realitäten, Zeitpläne und Verantwortlichkeiten gerüstet."
-      },
-      just_for_you: {
-        headline: "Nur für dich",
-        post_headline:
-          "Erhalten Sie eine jährliche Beihilfe für die berufliche Entwicklung sowie ein monatliches Stipendium zur Deckung Ihres Bedarfs; Ein neuer Arbeitslook, ein Haustier, was dir am wichtigsten ist."
-      },
-      health_and_wellness: {
-        headline: "Gesundheit und Wellness",
-        post_headline:
-          "Zuri zahlt 100 % Ihrer Prämien. Wir bieten auch Zugang zu einer Reihe von kostenlosen Ressourcen für psychische Gesundheit und Wohlbefinden."
       }
   },
   auth: {

@@ -456,6 +456,11 @@ export const TRANSLATIONS_ZH = {
           forgotPassword: "忘记密码？",
           getHelp: "获取登录帮助"
         }
+      },
+      footer: {
+        contactUs: "联系我们",
+        legacyPolicy: "法律政策",
+        aboutZuri: "关于 ZuriChat"
       }
     },     
   
