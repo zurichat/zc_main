@@ -52,6 +52,12 @@ const Themes = () => {
     // const sideBarHeader = document.getElementsByClassName("sidebar-header-div")
     // sideBarHeader[0].style.backgroundColor = themeColors[theme].secondary
   }
+  const HandleDefault= ()=>{
+    const sideBar =document.getElementById("single-spa-application:@zuri/sidebar")
+    sideBar.setAttribute("data-theme", "light")
+    const topBar = document.getElementById("single-spa-application:@zuri/topbar")
+    topBar.setAttribute("data-theme", "light")
+  }
 
   // useEffect(() => {
   //   const themeLocal = localStorage.getItem("mode") && localStorage.getItem("mode") || "light"
@@ -187,12 +193,15 @@ const Themes = () => {
         <div className={styles.custom}>
           Customize the look of your workspace. Feeling
         </div>
-        <div className={styles.custom2}>adventurous?</div>
-        <div className={styles.create}>Create a custom theme</div>
+        <div className={styles.defaultt} onClick={HandleDefault(this,"white")}>
+          Restore theme to default(white)</div>
+        <br/>
+        <div className={styles.custom2}>Adventurous?</div>
+        <div className={styles.create}>Select Your Custom Theme</div>
         <div className={styles.true}>Tried and true</div>
       </div>
       <div className={styles.set1}>
-        <div className={styles.activeAsh} onClick={handleThemeToggle.bind(this, "activeAsh")}>
+        <div className={styles.activeAsh} >
           <div className={styles.largeRec}>
             <div className={styles.large}></div>
           </div>
@@ -218,7 +227,7 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent}>
-            <div className={styles.radio8} >
+            <div className={styles.radio8} onClick={handleThemeToggle.bind(this, "activeAsh")}>
               <input
                 name="theme"
                 type="radio"
@@ -232,7 +241,7 @@ const Themes = () => {
             <div className={styles.ash}>Active Ash</div>
           </div>
         </div>
-        <div className={styles.activeAsh2} onClick={handleThemeToggle.bind(this, "peakyPurple")}>
+        <div className={styles.activeAsh2} >
           <div className={styles.largeRec2}>
             <div className={styles.large}></div>
           </div>
@@ -258,7 +267,7 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent2}>
-            <div className={styles.radio9}>
+            <div className={styles.radio9} onClick={handleThemeToggle.bind(this, "peakyPurple")}>
               <input
                 name="theme"
                 type="radio"
@@ -523,7 +532,9 @@ const Themes = () => {
             <div className={styles.ash8}>Canary</div>
           </div>
         </div>
+       
       </div>
+
     </div>
   )
 }

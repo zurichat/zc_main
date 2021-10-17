@@ -2,13 +2,16 @@ import React, { useState } from "react"
 import EmojiCategory from "../EmojiCategory/EmojiCategory"
 import EmojiItem from "../EmojiItem/EmojiItem"
 import EmojiSearch from "../EmojiSearch/EmojiSearch" //////new
-import "./EmojiBox.css"
+import styles from "./EmojiBox.module.css"
 const EmojiBox = ({
   emojiList,
   category,
   handleCategory,
   changeValue,
-  handleChangeValue
+  handleChangeValue,
+  handleEmojiClicked,
+  top,
+  right
 }) => {
   let emojis
   if (category === "Search result") {
@@ -21,21 +24,29 @@ const EmojiBox = ({
   }
 
   return (
-    <div className="zc-emb-emojibox">
-      <EmojiCategory category={category} handleCategory={handleCategory} />
-      <EmojiSearch
-        category={category}
-        emojiList={emojiList}
-        handleCategory={handleCategory}
-        newcategory={category}
-        changeValue={changeValue}
-        handleChangeValue={handleChangeValue}
-      />
-      <p className="zc-emb-emojiboxtext">{category}</p>
-      <ul className="zc-emb-emojiboxlist">
-        {emojis &&
-          emojis.map(emoji => <EmojiItem key={emoji.slug} emoji={emoji} />)}
-      </ul>
+    <div className={styles.zcembemojibox}>
+      <div className={styles.zcembemojibox2} style={{ top, right }}>
+        <EmojiCategory category={category} handleCategory={handleCategory} />
+        <EmojiSearch
+          category={category}
+          emojiList={emojiList}
+          handleCategory={handleCategory}
+          newcategory={category}
+          changeValue={changeValue}
+          handleChangeValue={handleChangeValue}
+        />
+        <p className={styles.zcembemojiboxtext}>{category}</p>
+        <ul className={styles.zcembemojiboxlist}>
+          {emojis &&
+            emojis.map(emoji => (
+              <EmojiItem
+                key={emoji.slug}
+                emoji={emoji}
+                handleEmojiClicked={handleEmojiClicked}
+              />
+            ))}
+        </ul>
+      </div>
     </div>
   )
 }
