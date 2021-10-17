@@ -1,4 +1,10 @@
 const themeColors = {
+  white: {
+    primary: "#fff",
+    secondary: "#111111",
+    textColor: "#111111"
+  },
+
   activeAsh: {
     primary: "#C4C4C4",
     secondary: "#999999",
