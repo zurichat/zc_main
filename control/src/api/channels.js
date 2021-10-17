@@ -9,9 +9,11 @@ export const createDefaultChannel = (org_id, title = 'General') => {
   if (!user) return 'NO USER LOGGED IN'
 
   GetUserInfo().then(res => {
-    const memberId = res[0]._id
+    const userData = JSON.parse(localStorage.getItem('userData'))
+    const memberId = userData._id
     const { token } = user
     const config = { headers: { "Content-type": "application/json" , Authorization: `Bearer ${token}` } }
+    
 
     axios
       .post(
