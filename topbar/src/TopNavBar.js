@@ -31,8 +31,10 @@ import styles from "../src/styles/TopNavBar.module.css"
 
 const TopNavBar = () => {
   const theme = localStorage.getItem("theme")
-  if (theme !== null || theme !== "") {
-    const topBar = document.getElementById("single-spa-application:@zuri/topbar")
+  if (theme !== null && theme !== "") {
+    const topBar = document.getElementById(
+      "single-spa-application:@zuri/topbar"
+    )
     topBar.style.backgroundColor = themeColors[theme].primary
   }
   const currentWorkspace = localStorage.getItem("currentWorkspace")
@@ -231,7 +233,7 @@ const TopNavBar = () => {
   // end search
 
   const [statusModal, setStatusModal] = useState(false)
-  
+
   const handleEnter = e => {
     e.preventDefault()
 
