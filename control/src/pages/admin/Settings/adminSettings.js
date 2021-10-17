@@ -15,20 +15,25 @@ import FileRetention from "./components/FileRetention"
 import DisplayEmail from "./components/DisplayEmail"
 import DefaultChannels from "./components/DefaultChannel"
 import { authAxios } from "../Utils/Api"
+import { getCurrentWorkspace } from "../../Utils/Common"
+
 
 const adminSettings = () => {
   const [logoUrl, setLogoUrl] = useState({})
-  
+    
   useEffect(() => {
-    authAxios
-      .get(`organizations/url/zurichat-fsp1856.zurichat.com`)
-      .then(res => {
-        // console.log(res.data.data.logo_url)
-        setLogoUrl(res.data.data.logo_url)
-      })
-      .catch(err => {
-        console.error(err)
-      })
+          const currentWorkspaceId = getCurrentWorkspace()
+
+    if (currentWorkspaceId) {
+      authAxios
+        .get(`/organizations/${currentWorkspaceId}`)
+        .then(res => {
+          setLogoUrl(res.data.data.logo_url)
+        })
+        .catch(err => {
+          console.error(err)
+        })
+    }
   }, [logoUrl])
 
   return (
