@@ -44,7 +44,7 @@
 .dropDown__title,
 .dropDown__name,
 .dropdown__room {
-  color: #454545;
+  color: grey;
   padding-inline-start: 0.5rem;
   font-size: 17px;
   line-height: 28px;
