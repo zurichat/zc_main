@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styles from './ChannelModal.module.css'
 
-const ChannelModal = ({ title, children, full, closeEdit }) => {
+const ChannelModal = ({ archiveTitle, children, full, closeEdit }) => {
 
  const [modal, setModal] = useState(true)
  const toggleModalState = () => {
@@ -22,7 +22,7 @@ const ChannelModal = ({ title, children, full, closeEdit }) => {
       ></div>
       <div className={full ? styles.modalFull : styles.modalContent}>
         <div className={`${styles.modalHeader}`}>
-          {title}
+          {archiveTitle}
           {mobileView ? (
             <svg
              onClick={() => {closeEdit() }}
