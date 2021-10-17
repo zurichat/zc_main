@@ -76,6 +76,7 @@ export const TRANSLATIONS_EN = {
       company: "Company",
       careers: "Careers",
       about: "About",
+      why_zuri_chat: "Why Zuri Chat?",
       info: "Info",
       privacy: "Privacy & Terms",
       market: "Market Place",
@@ -643,5 +644,38 @@ export const TRANSLATIONS_EN = {
       err_msg: "Oops something went wrong! Go to",
       err_link: "zuri.chat"
     }
+  },
+
+  //Why Zuri Page
+  why_zuri_chat: {
+    title: "Meet Zuri Chat - an affordable Slack alternative",
+    hero_paragraph1:
+      "If you are searching for the perfect Slack alternative, look no further.",
+    hero_paragraph2:
+      "Zuri Chat is on a mission to simplify individual work life and increase productivity with an intriguing collaborative hub powered by Artificial Intelligence and sustained by DAO.",
+    blog_content_header: "Why Zuri Chat?",
+    text_wrap1: "Clarity",
+    text_wrap1_p:
+      "Proficient task execution is essential to driving your business forward, and ZuriChat helps you get more done. Our Company Deadline plugin makes Task Management easy for collaborations of all sizes, from startups to global firms. Optimize your workflows by tracking status, monitoring progress, and discussing issues.",
+    text_wrap2: "Speed",
+    text_wrap2_p:
+      "Zuri Chat understands that time is money in the business sphere. Our ZuriChat Dm Reply plugin saves you time spent on communication. That need for speed is satisfied by optimization of Real-time communication, twice faster file sharing and customized notifications, so you never miss a thing; announcements, task status updates, calls, etc.",
+    text_wrap3: "Retentive Capacity",
+    text_wrap3_p:
+      "Every company or a team needs room to grow. When it comes to file storage, the best Slack alternative is found in Zuri Company Files, as we provide all our customers with twice more room for storage making doubly convenient for you to store and share multiple files when collaborating within your team.",
+    text_wrap4: "Optimized Productivity",
+    text_wrap4_p:
+      "Improve your team's performance and build morale with a Token-based Remuneration system. Zuri Chat plugins is designed to boost collaboration and reduce the time spent on meetings, emails and interactions between colleagues and encourage team progress towards shared business goals with rewards.",
+    text_wrap5: "Superb Ease",
+    text_wrap5_p:
+      "We won’t overload you with confusing or distracting features. Zuri Chat is an easy to start and easy to use team-hub with intuitive and crystal clear user interface.",
+    text_wrap6: "Unlimited Message Retention",
+    text_wrap6_p:
+      "Never miss a single message. Zuri Chat Dm Reply is accessible from the very first message as whatever's written in Zuri Chat stays in Zuri Chat. No hidden costs. No limits.",
+    text_wrap7: "Always available to Help",
+    text_wrap7_p:
+      "Hit a snag? Got a question? Our 24/7 Help Team will take extra steps and walk extra miles to ensure you have an easy and pleasant experience with Zuri Chat.",
+    bottom_card: "Your Team would definitely love",
+    bottom_link: "Sign Up Now!",
   }
 }
