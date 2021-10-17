@@ -9,7 +9,8 @@ export const ChatContainer = styled.section`
     width: 100%;
     height: 75vh;
     display: flex;
-    
+    overflow-y: scroll;
+
     // overflow-y: scroll;
     flex-direction: column;
     box-sizing: border-box;
@@ -30,7 +31,7 @@ export const ChatContainer = styled.section`
           .name {
             font-weight: 700;
             font-size: 15px;
-            margin-right:0.25rem;
+            margin-right: 0.25rem;
           }
           .time {
             font-weight: 400;
@@ -43,18 +44,18 @@ export const ChatContainer = styled.section`
           }
         }
       }
-    }  
+    }
   }
-  .input-text{
-      display: flex;
-      flex : 1;
-      width: 80%;
-      height: 15%;
-      position: fixed;
-      bottom: 0;
+  .input-text {
+    display: flex;
+    flex: 1;
+    width: 80%;
+    height: 15%;
+    position: fixed;
+    bottom: 0;
 
-      @media (max-width: 768px) {
-        width: 100%;
-      }   
-     }
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
 `

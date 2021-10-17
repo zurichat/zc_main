@@ -75,7 +75,7 @@ const Sidebar = props => {
           var data = props.state.sidebar[key][k]
           return (
             <SingleRoom
-              key={data.name}
+              key={`${data.name}${idx}`}
               name={data.joined_rooms[0].room_name}
               image={data.joined_rooms[0].room_image}
               link={data.joined_rooms[0].room_url}
@@ -84,16 +84,17 @@ const Sidebar = props => {
         })
       } else {
         const categoryData = Object.keys(props.state.sidebar[key]).map(
-          k => {
+          (k, id) => {
             const data = props.state.sidebar[key][k]
             data.baseUrl = `https://${k}`
+            data.id = id
             return data
           }
         )
 
         categorizedItems.push(
           <Category
-            key={`${new Date().toISOString()}`}
+            key={categoryData.id}
             name={key}
             data={categoryData}
           />
@@ -121,7 +122,7 @@ const Sidebar = props => {
          <Room name="Plugins" image={pluginIcon} />*/}
           {/* SIDE BAR DATA */}
           <SingleRoom name="Threads" image={threadIcon} />
-          <SingleRoom name="All Dms" image={dmIcon} />
+          <SingleRoom name="All Dms" image={dmIcon} link="/dm" />
           <SingleRoom name="Drafts" image={draftIcon} />
 
           <SingleRoom name="Plugins" image={pluginIcon} link="/marketplace" />
