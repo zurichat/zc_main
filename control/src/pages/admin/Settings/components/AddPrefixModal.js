@@ -47,7 +47,6 @@ const AddPrefixModal = ({ closeModal, onAdd }) => {
               <strong className={styles.prefixStrong}>Prefix</strong>{" "}
               <span className={styles.prefixText}>(max 10 characters)</span>
             </label>
-            <br />
             <input
               className={styles.inputField}
               name="prefix"
@@ -68,7 +67,6 @@ const AddPrefixModal = ({ closeModal, onAdd }) => {
               <strong className={styles.prefixStrong}>Description</strong>{" "}
               <span className={styles.prefixText}>(max 80 characters)</span>
             </label>
-            <br />
             <input
               className={styles.inputField}
               name="description"
