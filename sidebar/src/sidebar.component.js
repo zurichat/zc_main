@@ -20,8 +20,11 @@ import Category from "./components/Category"
 import { dummySidebar } from "./components/dummySidebar"
 import Starred from "./components/Starred"
 
+const categories = []
+
 const Sidebar = props => {
   let currentWorkspace = localStorage.getItem("currentWorkspace")
+
   const [nullValue, setnullValue] = useState(0)
 
   useEffect(() => {
@@ -81,11 +84,19 @@ const Sidebar = props => {
         })
       } else {
         const categoryData = Object.keys(props.state.sidebar[key]).map(
-          k => props.state.sidebar[key][k]
+          k => {
+            const data = props.state.sidebar[key][k]
+            data.baseUrl = `https://${k}`
+            return data
+          }
         )
 
         categorizedItems.push(
-          <Category key={key} name={key} data={categoryData} />
+          <Category
+            key={`${new Date().toISOString()}`}
+            name={key}
+            data={categoryData}
+          />
         )
         //    Object.keys(props.state.sidebar).map((p, idx)=>{
         //     return (categories.includes(p) ?
