@@ -64,7 +64,7 @@ import Invitation from "./pages/admin/Invitation"
 import Whyzurichat from "./pages/WhyZuriChat/Whyzurichat"
 import Gateways from "./pages/admin/gateways/components/gateways"
 import OnboardingHelp from "./pages/LoginSignUpHelp/index"
-import DeleteWorkspace from "./pages/settings/components/DeleteWorkspace"
+import DeleteWorkspace from "./pages/settings/components/deleteWorkspace"
 import BookDemo from "./pages/book-a-demo"
 
 import ChangeWorkspaceName from "./pages/admin/Settings/components/ChangeWorkspaceName"
@@ -268,7 +268,7 @@ const App = () => {
 
         <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
         {/* ----------------settings routes closed----------------- */}
-        <Route path="/invitation">
+        <Route path="/admin/invites">
           <Invitation />
         </Route>
         <Route path="/reset-password">
