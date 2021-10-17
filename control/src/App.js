@@ -254,7 +254,7 @@ const App = () => {
 
         <PrivateRoute path="/settings/:id" component={ConfirmPassword} />
         {/* ----------------settings routes closed----------------- */}
-        <Route path="/invitation">
+        <Route path="/admin/invites">
           <Invitation />
         </Route>
         <Route path="/reset-password">
