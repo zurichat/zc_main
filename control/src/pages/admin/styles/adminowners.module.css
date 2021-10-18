@@ -117,7 +117,7 @@ label {
   font-weight: 700;
 }
 
-span {
+.sortBy {
   display: block;
   padding-bottom: 8px;
 }
