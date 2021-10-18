@@ -1,27 +1,58 @@
-import React from 'react'
-import { AnimateSharedLayout, motion } from 'framer-motion'
-import PreferenceWrapper from './PreferenceWrapper'
+import React, { useEffect, useState } from "react"
+import { AnimateSharedLayout } from "framer-motion"
+import PreferenceWrapper from "./PreferenceWrapper"
+
+// import JoinWorkspace from "./components/JoinWorkspace"
+import WorkspaceLanguage from "./components/WorkspaceLanguage"
+import Guidelines from "./components/Guidelines"
+import DisplayName from "./components/DisplayName"
+import JoinChannel from "./components/JoinChannel"
+import NotifyUsers from "./components/NotifyUsers"
+import Calls from "./components/Calls"
+import DisplayPronoun from "./components/DisplayPronoun"
+import MessageRetention from "./components/MessageRetention"
+import FileRetention from "./components/FileRetention"
+import DisplayEmail from "./components/DisplayEmail"
+import DefaultChannels from "./components/DefaultChannel"
+import { authAxios } from "../Utils/Api"
+import { getCurrentWorkspace } from "../../Utils/Common"
 
 // syling for the delete workspace
-import classes from './styles/AdminSettings.css'
-import JoinWorkspace from './components/JoinWorkspace'
-import WorkspaceLanguage from './components/WorkspaceLanguage'
-import Guidelines from './components/Guidelines'
-import DisplayName from './components/DisplayName'
-import JoinChannel from './components/JoinChannel'
-import NotifyUsers from './components/NotifyUsers'
-import Calls from './components/Calls'
-import DisplayPronoun from './components/DisplayPronoun'
-import MessageRetention from './components/MessageRetention'
-import FileRetention from './components/FileRetention'
-import DisplayEmail from './components/DisplayEmail'
-import DefaultChannels from './components/DefaultChannel'
+import classes from "./styles/AdminSettings.css"
+// import JoinWorkspace from "./components/JoinWorkspace"
+// import WorkspaceLanguage from "./components/WorkspaceLanguage"
+// import Guidelines from "./components/Guidelines"
+// import DisplayName from "./components/DisplayName"
+// import JoinChannel from "./components/JoinChannel"
+// import NotifyUsers from "./components/NotifyUsers"
+// import Calls from "./components/Calls"
+// import DisplayPronoun from "./components/DisplayPronoun"
+// import MessageRetention from "./components/MessageRetention"
+// import FileRetention from "./components/FileRetention"
+// import DisplayEmail from "./components/DisplayEmail"
+// import DefaultChannels from "./components/DefaultChannel"
 
-
-import styles from './styles/preference.module.css'
-import { Link } from 'react-router-dom'
+// import styles from "./styles/preference.module.css"
+import { Link } from "react-router-dom"
 
 const adminSettings = () => {
+  const [logoUrl, setLogoUrl] = useState({})
+
+  useEffect(() => {
+    const currentWorkspaceId = getCurrentWorkspace()
+
+    if (currentWorkspaceId) {
+      authAxios
+        .get(`/organizations/${currentWorkspaceId}`)
+        .then(res => {
+          setLogoUrl(res.data.data.logo_url)
+        })
+        .catch(err => {
+          console.error(err)
+        })
+    }
+  }, [logoUrl])
+
   return (
     <>
       <AnimateSharedLayout>
@@ -30,7 +61,7 @@ const adminSettings = () => {
           text="Choose how people join your workspace by accepting an email invitation or signing up with an email from an approved domain. If you enable the setting to let people with an email address on an approved domain join automatically. Zuri chat will generate a link that anyone with an approved email address can use to confirm their email and sign up"
           btnText="expand"
         >
-          <JoinWorkspace />
+          {/* <JoinWorkspace /> */}
         </PreferenceWrapper>
       </AnimateSharedLayout>
       <AnimateSharedLayout>
@@ -147,32 +178,35 @@ const adminSettings = () => {
         <PreferenceWrapper
           title="Workspace icon"
           text="Your workspace icon is used in the desktop an mobile apps, where it’s useful in helping you quickily identiy this workspace"
-          btnText="expand"
+          btnText="Set Workspace Icon"
+          imgsource={logoUrl}
+          // imgsource="https://user-images.githubusercontent.com/66237754/137007060-0fe55896-bd5f-4c7e-90bf-da12b527ed58.png"
         >
           {/* Password input goes uunder here */}
           {/* <SavePassword /> */}
         </PreferenceWrapper>
       </AnimateSharedLayout>
 
-       <AnimateSharedLayout>
-       
-       <motion.div layout className={`${styles.settings_wrapper}`}>
+      <AnimateSharedLayout>
+        {/* <motion.div layout className={`${styles.settings_wrapper}`}>
           <motion.div layout className={styles.settingsTab}>
             <div layout className={styles.settingleft}>
               {"Workspace name & URL"}
-              <span>{"Your workspace name is Zuri Chat and your URL is https://zuri.zuriChat.com"}</span>
-             
+              <span>
+                {
+                  "Your workspace name is Zuri Chat and your URL is https://zuri.zuriChat.com"
+                }
+              </span>
             </div>
             <div className={styles.settingsright}>
-             <Link to='/admin/name'> <button > Set workspace name & URL </button></Link> 
-                
-              
+              <Link to="/admin/name">
+                {" "}
+                <button> Set workspace name & URL </button>
+              </Link>
             </div>
           </motion.div>
-
-        </motion.div>
+        </motion.div> */}
       </AnimateSharedLayout>
-
 
       <AnimateSharedLayout>
         <div className={classes.deleteContainer}>
@@ -180,14 +214,23 @@ const adminSettings = () => {
             <div className={classes.floatleft}>
               <div>Delete workspace</div>
               <div>
-                <span>Deleting a Zuri Chat workspace can't be undone. All messages and files will irretrievable. Please use caution and consider exporting your data<br />before deletion.
-                    <br /> <br /> Note: Don’t delete  your workspace if you just want to change your<br />worskspace’s URL or name. You also might want to export data<br /> before deleting workspace
+                <span>
+                  Deleting a Zuri Chat workspace can't be undone. All messages
+                  and files will irretrievable. Please use caution and consider
+                  exporting your data
+                  <br />
+                  before deletion.
+                  <br /> <br /> Note: Don’t delete your workspace if you just
+                  want to change your
+                  <br />
+                  worskspace’s URL or name. You also might want to export data
+                  <br /> before deleting workspace
                 </span>
               </div>
             </div>
             <div className={classes.floatright}>
               <Link to="/admin/delete">
-              <button>Delete Workspace</button>
+                <button>Delete Workspace</button>
               </Link>
             </div>
           </div>

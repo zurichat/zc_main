@@ -50,6 +50,9 @@
 
 .notifications {
   width: 100%;
+  background-color: var(--background);
+  height: 100%;
+  margin-top: -25px;
 }
 /* THE SECTION OF THE CONTENT */
 .notifyContent {

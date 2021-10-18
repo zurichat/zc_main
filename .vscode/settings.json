@@ -4,7 +4,5 @@
     "**/src/**/*.js": "javascriptreact",
     "**/src/**/*.jsx": "javascriptreact",
     "**/.husky/": "bash"
-  },
-  "javascript.format.enable": false
-
+  }
 }

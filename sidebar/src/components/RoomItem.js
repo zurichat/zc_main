@@ -5,7 +5,7 @@ import { navigateToUrl } from "single-spa"
 import Badge from "./badge"
 import RoomOptions from "./RoomOptions"
 
-const RoomItem = ({ room }) => {
+const RoomItem = ({ room, baseUrl }) => {
   const [click, isClicked] = useClick()
   const [position, setPosition] = useState({ x: 0, y: 0 })
 
@@ -82,7 +82,7 @@ const RoomItem = ({ room }) => {
         </div>
       </a>
       <div className={`${styles.optionsContainer}`}>
-        <RoomOptions room={room} isClicked={isClicked} position={position} />
+        <RoomOptions room={room} baseUrl={baseUrl} isClicked={isClicked} position={position} />
       </div>
     </li>
   )

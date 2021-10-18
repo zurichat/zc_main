@@ -16,16 +16,16 @@
 }
 
 .themeCont {
-  margin-top: 30px;
-  margin-bottom: 100px;
-  margin-left: 40px;
-  font-family: sans-serif;
-  text-align: center;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  width: var(--width);
-  height: var(--height);
-  overflow-x: hidden;
+    padding-top: 30px;
+    margin-bottom: 100px;
+    padding-left: 40px;
+    font-family: sans-serif;
+    text-align: center;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    width: var(--width);
+    height: var(--height);
+    overflow-x: hidden;
 }
 
 .sync {
@@ -1559,3 +1559,16 @@
 }
 
 
+.defaultt{
+  font-size: 14px;
+  color: #00b87c;
+  font-weight: 600;
+  margin-top: 12px;
+  line-height: 20px;
+  font-style: normal;
+  margin-left: -528px;
+}
+
+.defaultt:hover{
+cursor: pointer;
+}

@@ -49,33 +49,38 @@ const AdminOwners = ({ admins }) => {
       console.log(adminObj)
     }
   }
-
   return (
-    <div className={styles.adminowners}>
-      <h3 className={styles.heading}>Sort By</h3>
+    <div className={styles.container}>
+      <div className={styles.tabContainer}>
+        <div className={styles.topContent}>
+          {/* part 1 */}
+          <label>
+            <span>Sort By</span>
+            <select
+              defaultValue={selectValue}
+              onChange={event => handleSort(event.target.value)}
+            >
+              <option value="Role">Role</option>
+              <option value="FullName">FullName</option>
+            </select>
+          </label>
+          {/* end of part 1 */}
 
-      {/* role and search */}
-      <div className={styles.rolesearch}>
-        <form>
-          <select
-            defaultValue={selectValue}
-            onChange={event => handleSort(event.target.value)}
-          >
-            <option value="role">Role</option>
-            <option value="name">FullName</option>
-          </select>
-        </form>
-        <form className={styles.search}>
-          <FiSearch className={styles.icon} />
-          <input
-            placeholder="Search Admins and Owners"
-            className={styles.input}
-            onChange={handleChange}
-            type="text"
-          />
-        </form>
+          {/* part 2 */}
+          <div className={styles.search}>
+            <div className={styles.searchContainer}>
+              <FiSearch className={styles.icon} />
+              <input
+                type="text"
+                placeholder="Search admins and owners"
+                className={styles.inputSearch}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+          {/* end of part 2 */}
+        </div>
       </div>
-      {/* end of role and search */}
       {filtered !== null
         ? filtered.map(person => (
             <AdminOwnersItem key={person._id} user={person} />

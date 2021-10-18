@@ -6,13 +6,8 @@ const OverviewWorkspace = ({ organizationDetails, currentWorkspace }) => {
   if (!organizationDetails) {
     return "Loading..."
   }
-  const {
-    name,
-    workspace_url,
-    version,
-    created_at,
-    logo_url
-  } = organizationDetails
+  const { name, workspace_url, version, created_at, logo_url } =
+    organizationDetails
   const options = {
     weekday: "long",
     year: "numeric",
