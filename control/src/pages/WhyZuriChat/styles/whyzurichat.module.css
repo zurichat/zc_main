@@ -1,5 +1,5 @@
 .blog_container {
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 .hero_blog {
   background: #00b87c;
@@ -126,7 +126,7 @@
 /* media queries */
 @media (max-width: 810px) {
   .blog_container {
-    margin-top: 5rem;
+    margin-top: 2rem;
   }
   .hero_section {
     display: flex;
