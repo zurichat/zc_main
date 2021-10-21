@@ -55,7 +55,7 @@ const AdminOwners = ({ admins }) => {
         <div className={styles.topContent}>
           {/* part 1 */}
           <label>
-            <span>Sort By</span>
+            <span className={styles.sortBy}>Sort By</span>
             <select
               defaultValue={selectValue}
               onChange={event => handleSort(event.target.value)}
