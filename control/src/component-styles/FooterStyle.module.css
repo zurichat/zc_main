@@ -33,20 +33,22 @@
 }
 
 .logo {
-  margin-top: 6px;
+  margin-top: 15px;
   display: flex;
-  align-items: center;
 }
 
-.logo a {
+.logo_img {
   display: inline-block;
+  margin: auto;
 }
 
 .logo span {
+  display: inline-block;
   color: black;
-  padding-left: 5px;
+  padding: 0.5rem;
   font-size: 22px;
   font-weight: bold;
+  margin: 0;
 }
 
 .menu {
@@ -129,7 +131,7 @@
   }
 
   .logo {
-    /* padding-left: 10px; */
+    padding-left: 10px;
   }
 
   .menu {
