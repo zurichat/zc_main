@@ -86,17 +86,7 @@ export const BigModal = ({ onClose, inputValue, result, isLoadingUp, clearSearch
     </div>
      
       {result.length < 1 ? (
-        <div className={styles.noResult}>
-          <p className={styles.no_result_title}>No Result Found</p>
-          <p className={styles.no_result_desc}>
-            Looking for something? If it happened in zuri-chat,
-            <br /> you can find it in search.
-          </p>
-          
-          <StartNewSearch 
-          onClear={() => clearSearch()}
-          />
-        </div>
+        <NoResult onClean={() => clearSearch()} />
       ) : isLoading ? (
         <p
           style={{

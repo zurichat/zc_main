@@ -2,6 +2,7 @@ import React from "react"
 import { Icon } from "@iconify/react"
 import styles from "../../styles/ChannelPrefixes.module.css"
 
+
 const ChannelPrefix = ({ prefix, description, creator, onDelete }) => {
   return (
     <div className={styles.prefix}>
@@ -16,7 +17,7 @@ const ChannelPrefix = ({ prefix, description, creator, onDelete }) => {
           icon="uil:times-circle"
           width="20"
           height="20"
-          onClick={onDelete}
+          onClick={() => onDelete(prefix)}
         />
       </div>
     </div>
