@@ -24,7 +24,7 @@ export const TRANSLATIONS_EN = {
       headline: "A fully integrated way to connect and interact",
       post_headline:
         "Create your future with us, network, collaborate, educate and learn remotely",
-      call_to_action: "Try Zuri.chat for free"
+      call_to_action: "Try Zuri Chat for free"
     },
 
     featureRowOne: {
@@ -76,8 +76,10 @@ export const TRANSLATIONS_EN = {
       company: "Company",
       careers: "Careers",
       about: "About",
+      why_zuri_chat: "Why Zuri Chat?",
       info: "Info",
       privacy: "Privacy & Terms",
+      legal: "Legal",
       market: "Market Place",
       blog: "Blog",
       security: "Security",
@@ -109,7 +111,7 @@ export const TRANSLATIONS_EN = {
       headline: "Features",
       post_headline:
         "Create your future with us, network, collaborate, educate and learn remotely",
-      call_to_action: "Try Zuri.chat for free"
+      call_to_action: "Try Zuri Chat for free"
     },
 
     cardThree: {
@@ -307,7 +309,7 @@ export const TRANSLATIONS_EN = {
       headline_one: "Make work simple, pleasant and ",
       headline_two: "more productive.",
       description:
-        "is a collaboration hub that brings the right people and tools together to get work done. From Fortune 100 companies to corner markets, millions of people around the world use ZuriChat to connect their teams, unify their systems, and drive their business forward."
+        "is a collaboration hub that brings the right people and tools together to get work done. From Fortune 100 companies to corner markets, millions of people around the world use Zuri Chat to connect their teams, unify their systems, and drive their business forward."
     },
 
     counter: {
@@ -329,7 +331,7 @@ export const TRANSLATIONS_EN = {
 
     highlights: {
       title: "Working remotely more intriguing than ever",
-      description: "ZuriChat is where work meets fun.",
+      description: "Zuri Chat is where work meets fun.",
       description_:
         "Connect and interact with your team efficiently from anywhere around the globe",
       channels: {
@@ -370,17 +372,17 @@ export const TRANSLATIONS_EN = {
       },
       files: {
         title: "Company Files",
-        description: "Access your files on google drive while on ZuriChat."
+        description: "Access your files on google drive while on Zuri Chat."
       },
       accessibility: {
         title: "Accessibility",
-        description: "Be in control, Use ZuriChat and enjoy",
+        description: "Be in control, Use Zuri Chat and enjoy",
         description_: "the best accessibility features"
       },
       goals: {
         title: "Company Goals",
         description: "Keep up with company goals",
-        description_: "right inside ZuriChat"
+        description_: "right inside Zuri Chat"
       }
     },
 
@@ -388,94 +390,104 @@ export const TRANSLATIONS_EN = {
       title: "Whatever work you do, you can do it in Zuri Chat",
       link_sales: "Talk to sales",
       link_try: "Try it for free"
-    }   
+    }
   },
   careers: {
-      title: {
-        careers: "Careers"
-      },
-      section_one: {
-        headline: "Careers at Zuri Chat",
-        post_headline: "Passionate about making work life simpler, and more productive? Join our remote-friendly and flexible team.",
-        join_link: "Join Zuri Chat"
-      },
-      career_grid: {
-        headline: "Join Our Internship",
-        post_headline:
-          "Zuri Internship is a 100% free, remote and fast paced training for young professionals seeking to hon their tech skills and boost their resume.",
-        categories: {
-          category_frontend: {
-            headline: "Frontend Development",
-            post_headline: "This track deals with the aspect of your application that the users interact with. A front-end developer will be able to correctly interpret a given design to the user interface."
-          },
-          category_backend: {
-            headline: "Backend Development",
-            post_headline: "This track deals with the aspect of the application the user does not directly interact with. It allows the frontend function either by running some back-end code or connecting to the database."
-          },
-          category_design: {
-            headline: "Design",
-            post_headline: "This track deals with creating a graphic plan for an application. You will learn to convert project documentation into viewable and understandable graphic design for the developers to work with."
-          },
-          category_mobile: {
-            headline: "Mobile Development",
-            post_headline: "The mobile track contains a list of tools and languages needed for a developer to create mobile applications. A mobile application can be IOS or Android."
-          },
-          category_digital_marketing: {
-            headline: "Digital Marketing",
-            post_headline: "It encomprises the use of digital means and utilities to boost discoverability of products, services and brands."
-          },
-          category_frameworks: {
-            headline: "Frameworks",
-            post_headline: "During the program we will be exploring several useful frameworks to give you an edge in the industry and help you develop complex applications much faster."
-          }
-
-        },
-        join_cohort: "Be a part of our next cohort starting summer of 2022",
-        register_now: "Register Now"
-      },
-      section_two: {
-        headline: "Working and Thriving",
-        post_headline: "We offer benefits that help you feel your best and do your best.",
-        digital_wellness: {
-          headline: "Digital-First Office",
-          post_headline: "With remote roles, office-free onboarding and flexible working practices, we are set up for ever-changing realities, schedules and responsibilities."
-        },
-        just_for_you: {
-          headline: "Just For You",
-          post_headline: "Receive an annual allowance for professional development, plus a monthly stipend to cover your needs; A new work look, a pet, whatever matters most to you."
-        },
-        health_and_wellness: {
-          headline: "Health and Wellness",
-          post_headline: "Zuri Pays 100% of your premiums. We also offer access to a range of free mental health and well-being resources."
-        }
-      }
-  },
-  auth:{
-    login:{
-    title: "Login - Zuri Chat",
-    form: {
-      header: "Login",
-      sub_header: "Login with the data you entered during your registration",
-      google_header: "Login with Google",
-      topline_text: "OR",
-      submitButtonName: "Log in",
-      bottomLine: "New to us?",
-      bottomLink: "Create an Account",
-      signUp: "Signup",
-      authInputBox: {
-        emailInputName: "Email address",
-        passwordInputName: "Password",
-        passwordInputPlaceHolder: "Enter a password",
-        rememberMe: "Remember me",
-        forgotPassword: "Forgot password?",
-        getHelp: "Get help signing in"
-      }
+    title: {
+      careers: "Careers"
     },
-    footer: {
-      contactUs: "Contact Us",
-      legacyPolicy: "Legal Policy",
-      aboutZuri: "About Zurichat"
+    section_one: {
+      headline: "Careers at Zuri Chat",
+      post_headline:
+        "Passionate about making work life simpler, and more productive? Join our remote-friendly and flexible team.",
+      join_link: "Join Zuri Chat"
+    },
+    career_grid: {
+      headline: "Join Our Internship",
+      post_headline:
+        "Zuri Internship is a 100% free, remote and fast paced training for young professionals seeking to hon their tech skills and boost their resume.",
+      categories: {
+        category_frontend: {
+          headline: "Frontend Development",
+          post_headline:
+            "This track deals with the aspect of your application that the users interact with. A front-end developer will be able to correctly interpret a given design to the user interface."
+        },
+        category_backend: {
+          headline: "Backend Development",
+          post_headline:
+            "This track deals with the aspect of the application the user does not directly interact with. It allows the frontend function either by running some back-end code or connecting to the database."
+        },
+        category_design: {
+          headline: "Design",
+          post_headline:
+            "This track deals with creating a graphic plan for an application. You will learn to convert project documentation into viewable and understandable graphic design for the developers to work with."
+        },
+        category_mobile: {
+          headline: "Mobile Development",
+          post_headline:
+            "The mobile track contains a list of tools and languages needed for a developer to create mobile applications. A mobile application can be IOS or Android."
+        },
+        category_digital_marketing: {
+          headline: "Digital Marketing",
+          post_headline:
+            "It encomprises the use of digital means and utilities to boost discoverability of products, services and brands."
+        },
+        category_frameworks: {
+          headline: "Frameworks",
+          post_headline:
+            "During the program we will be exploring several useful frameworks to give you an edge in the industry and help you develop complex applications much faster."
+        }
+      },
+      join_cohort: "Be a part of our next cohort starting summer of 2022",
+      register_now: "Register Now"
+    },
+    section_two: {
+      headline: "Working and Thriving",
+      post_headline:
+        "We offer benefits that help you feel your best and do your best.",
+      digital_wellness: {
+        headline: "Digital-First Office",
+        post_headline:
+          "With remote roles, office-free onboarding and flexible working practices, we are set up for ever-changing realities, schedules and responsibilities."
+      },
+      just_for_you: {
+        headline: "Just For You",
+        post_headline:
+          "Receive an annual allowance for professional development, plus a monthly stipend to cover your needs; A new work look, a pet, whatever matters most to you."
+      },
+      health_and_wellness: {
+        headline: "Health and Wellness",
+        post_headline:
+          "Zuri Pays 100% of your premiums. We also offer access to a range of free mental health and well-being resources."
+      }
     }
+  },
+  auth: {
+    login: {
+      title: "Login - Zuri Chat",
+      form: {
+        header: "Login",
+        sub_header: "Login with the data you entered during your registration",
+        google_header: "Login with Google",
+        topline_text: "OR",
+        submitButtonName: "Log in",
+        bottomLine: "New to us?",
+        bottomLink: "Create an Account",
+        signUp: "Signup",
+        authInputBox: {
+          emailInputName: "Email address",
+          passwordInputName: "Password",
+          passwordInputPlaceHolder: "Enter a password",
+          rememberMe: "Remember me",
+          forgotPassword: "Forgot password?",
+          getHelp: "Get help signing in"
+        }
+      },
+      footer: {
+        contactUs: "Contact Us",
+        legacyPolicy: "Legal Policy",
+        aboutZuri: "About Zuri Chat"
+      }
     },
     signup: {
       title: "Sign Up",
@@ -492,21 +504,22 @@ export const TRANSLATIONS_EN = {
           emailAddress: "Email Address",
           emailAddressPlaceholder: "Enter you email address",
           password: "Password",
-          passwordPlaceholder: "Enter a password",
+          passwordPlaceholder: "Enter a password"
         }
       },
-      privacyAgreement: "I agree to Zurichat's",
+      privacyAgreement: "I agree to Zuri Chat's",
       termsOfService: "Terms of services",
       privacy: "Privacy"
     },
     passwordreset: {
       title: "Reset Password",
       headline: "Get a new password",
-      post_headline: "Enter the email address you registered with and a reset code will be sent to your email.",
-      form:{
+      post_headline:
+        "Enter the email address you registered with and a reset code will be sent to your email.",
+      form: {
         emailAddress: "Email Address",
         continueButton: "Continue"
-      }   
+      }
     },
     newPassword: {
       header: "Recover Password",
@@ -529,10 +542,11 @@ export const TRANSLATIONS_EN = {
     },
     passwordResetSuccess: {
       headline: "Passwowrd Reset Successful!",
-      post_headline: "Your password reset was succesful! you can proceed to login now",
+      post_headline:
+        "Your password reset was succesful! you can proceed to login now",
       button: "Continue to login"
     },
-    signout:{
+    signout: {
       title: "Sign Out",
       preOrgText: "Signed out of Team",
       workspace: "Workspace",
@@ -542,41 +556,54 @@ export const TRANSLATIONS_EN = {
       loginText: "Login",
       postLoginText: "to another workspace"
     },
-    onboardingHelp:{
+    onboardingHelp: {
       title: "Troubleshooting Problems",
       backToHome: "Back to Home",
-      loginHelp:{
-        headline: "Troubleshooting problems signing into ZuriChat",
-        post_headline: "If are having problem signing into your account, the following might help you.",
+      loginHelp: {
+        headline: "Troubleshooting problems signing into Zuri Chat",
+        post_headline:
+          "If are having problem signing into your account, the following might help you.",
         list: {
-          textOne: "Check if you're using correct email address and password to login. If you think your account might have been compromised",
+          textOne:
+            "Check if you're using correct email address and password to login. If you think your account might have been compromised",
           linkOne: "click here to reset your password",
-          textTwo: "Are you using the latest version of ZuriChat mobile or desktop app? Kindly check the current version of your apps. If you're not sure of which version you're using, try",
+          textTwo:
+            "Are you using the latest version of Zuri Chat mobile or desktop app? Kindly check the current version of your apps. If you're not sure of which version you're using, try",
           linkTwo: "updating or downloading the app",
-          textThree: "If the same trouble still persists, kindly uninstall the app, clear your mobile phone's cache and install again.",
-          textFour: "If you're using a browser, you might have used a wrong password from autocomplete suggestions. We advise you type your ZuriChat email address and password manually again",
-          textFive: "If all methods above doesn't work, try a new browser or try signing in on incognito mode",
-          textSix: "Do you have an account with us? If you don't have an account here, you won't be able to login. Go to",
+          textThree:
+            "If the same trouble still persists, kindly uninstall the app, clear your mobile phone's cache and install again.",
+          textFour:
+            "If you're using a browser, you might have used a wrong password from autocomplete suggestions. We advise you type your ZuriChat email address and password manually again",
+          textFive:
+            "If all methods above doesn't work, try a new browser or try signing in on incognito mode",
+          textSix:
+            "Do you have an account with us? If you don't have an account here, you won't be able to login. Go to",
           linkSix: "to create an account"
-        }    
+        }
       },
       signUpHelp: {
         headline: "Unable to Create an Account?",
-        post_headline: "Okay, if you have problem creating an account, try the suggestions below",
+        post_headline:
+          "Okay, if you have problem creating an account, try the suggestions below",
         list: {
           preTextOne: "Ensure you're using a",
           strongText: "Valid email address",
           postTextOne: "and check your email inbox for the authentication code",
-          textTwo: "Use another device or browser to create your account. You can as well clear your browser's cache",
-          textThree: "Check the network in your area. If the network is good, reload the sign-up page",
-          textFour: "If you're not receiving authentication code, kindly wait for 30 minutes and try again",
-          textFive: "If you're using ZuriChat mobile or desktop app, update to the latest version or you can",
+          textTwo:
+            "Use another device or browser to create your account. You can as well clear your browser's cache",
+          textThree:
+            "Check the network in your area. If the network is good, reload the sign-up page",
+          textFour:
+            "If you're not receiving authentication code, kindly wait for 30 minutes and try again",
+          textFive:
+            "If you're using Zuri Chat mobile or desktop app, update to the latest version or you can",
           linkFive: "download here"
         }
       },
       support: {
         headline: "Do you still need help?",
-        preLinkText: "If you've tried all the suggestions above but to no avail, kindly",
+        preLinkText:
+          "If you've tried all the suggestions above but to no avail, kindly",
         linkText: "contact Zuri Customer Service",
         postLinkText: "for help."
       }
@@ -644,7 +671,7 @@ export const TRANSLATIONS_EN = {
     section_two: {
       headline: "Why Zuri Chat App?",
       post_headline:
-        "Never miss the seamless collaboration experience even on the go with the zuri chat pc",
+        "Never miss the seamless collaboration experience even on the go with the Zuri chat pc",
       android: "Android",
       and_break: "and",
       ios: "iOS",
@@ -697,7 +724,7 @@ export const TRANSLATIONS_EN = {
     section_two: {
       headline: "Why Zuri Chat App?",
       post_headline:
-        "Never miss the seamless collaboration experience even on the go with the zuri chat pc",
+        "Never miss the seamless collaboration experience even on the go with the Zuri Chat pc",
       android: "Android",
       and_break: "and",
       ios: "iOS",
@@ -735,5 +762,38 @@ export const TRANSLATIONS_EN = {
       err_msg: "Oops something went wrong! Go to",
       err_link: "zuri.chat"
     }
-  }  
+  },
+
+  //Why Zuri Page
+  why_zuri_chat: {
+    title: "Meet Zuri Chat - an affordable Slack alternative",
+    hero_paragraph1:
+      "If you are searching for the perfect Slack alternative, look no further.",
+    hero_paragraph2:
+      "Zuri Chat is on a mission to simplify individual work life and increase productivity with an intriguing collaborative hub powered by Artificial Intelligence and sustained by DAO.",
+    blog_content_header: "Why Zuri Chat?",
+    text_wrap1: "Clarity",
+    text_wrap1_p:
+      "Proficient task execution is essential to driving your business forward, and Zuri Chat helps you get more done. Our Company Deadline plugin makes Task Management easy for collaborations of all sizes, from startups to global firms. Optimize your workflows by tracking status, monitoring progress, and discussing issues.",
+    text_wrap2: "Speed",
+    text_wrap2_p:
+      "Zuri Chat understands that time is money in the business sphere. Our Zuri Chat Dm Reply plugin saves you time spent on communication. That need for speed is satisfied by optimization of Real-time communication, twice faster file sharing and customized notifications, so you never miss a thing; announcements, task status updates, calls, etc.",
+    text_wrap3: "Retentive Capacity",
+    text_wrap3_p:
+      "Every company or a team needs room to grow. When it comes to file storage, the best Slack alternative is found in Zuri Company Files, as we provide all our customers with twice more room for storage making doubly convenient for you to store and share multiple files when collaborating within your team.",
+    text_wrap4: "Optimized Productivity",
+    text_wrap4_p:
+      "Improve your team's performance and build morale with a Token-based Remuneration system. Zuri Chat plugins is designed to boost collaboration and reduce the time spent on meetings, emails and interactions between colleagues and encourage team progress towards shared business goals with rewards.",
+    text_wrap5: "Superb Ease",
+    text_wrap5_p:
+      "We won’t overload you with confusing or distracting features. Zuri Chat is an easy to start and easy to use team-hub with intuitive and crystal clear user interface.",
+    text_wrap6: "Unlimited Message Retention",
+    text_wrap6_p:
+      "Never miss a single message. Zuri Chat Dm Reply is accessible from the very first message as whatever's written in Zuri Chat stays in Zuri Chat. No hidden costs. No limits.",
+    text_wrap7: "Always available to Help",
+    text_wrap7_p:
+      "Hit a snag? Got a question? Our 24/7 Help Team will take extra steps and walk extra miles to ensure you have an easy and pleasant experience with Zuri Chat.",
+    bottom_card: "Your Team would definitely love",
+    bottom_link: "Sign Up Now!"
+  }
 }
