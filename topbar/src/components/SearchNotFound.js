@@ -3,7 +3,7 @@ import style from "../styles/SearchNotFound.module.css"
 import emoji from "../assets/images/thinking.png"
 import StartNewSearch from "./StartNewSearchButton.js"
 
-export const NoResult = ({ onClosed }) => {
+export const NoResult = ( onClean ) => {
   return (
     <div className={style.main}>
       <div className={style.container}>
@@ -24,7 +24,7 @@ export const NoResult = ({ onClosed }) => {
               </span>
               <button className={style.feedback__link}>Give feedback</button>
             </span>
-            <StartNewSearch onClear={() => onClosed()} />
+            <StartNewSearch onClear={() => onClean()} />
           </div>
         </div>
 
@@ -38,7 +38,7 @@ export const NoResult = ({ onClosed }) => {
           <div className={style.mobile__text}>
             No message results found for "your search"
           </div>
-          <StartNewSearch onClear={() => onClosed()} />
+          <StartNewSearch onClear={() => onClean()} />
         </div>
       </div>
     </div>
