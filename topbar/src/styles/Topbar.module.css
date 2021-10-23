@@ -15,6 +15,9 @@
     justify-content: flex-end;
   }
 }
+.fontStyles {
+  font-size: 1.3rem;
+}
 
 .membersModalOverlay {
   position: fixed;
@@ -52,8 +55,8 @@
 
 .statusContent {
   text-align: left;
-  font-size: 1rem;
-  margin-left: 3.5rem;
+  font-size: 0.9rem;
+  margin-left: 1rem;
 }
 
 .circles {
@@ -113,18 +116,23 @@
 /* THE SECTION OF THE TOP BAR MODAL */
 
 .topbarModal {
-  background: #ffffff;
+  background: var(--bg-color);
   position: absolute;
   top: 105%;
   right: 12px;
   width: 100%;
-  padding-bottom: 1rem;
-  max-width: 300px;
+  max-width: 326px;
   z-index: 9999;
   border: 1px solid #e5e5e5;
   border-radius: 8px;
-  /* padding: 20px 0; */
+  padding: 6px 0 9px 0;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+@media (max-width: 768px) {
+  .topbarModal {
+    width: 84%;
+  }
 }
 
 .modalContainers {
@@ -146,6 +154,7 @@
 .modalBackDrop {
   position: absolute;
   z-index: 3;
+  /* background: var(--bg-color); */
   height: 100vh;
   width: 100vw;
   top: 0;
@@ -189,7 +198,7 @@
   font-family: Lato;
   font-style: normal;
   font-weight: 600;
-  color: #333333;
+  color: #999999;
   /* line-height: 18px; */
   /* margin-top: 12px; */
   padding-top: 15px;
@@ -204,41 +213,33 @@
 
 /* set yourself as away*/
 
-.away {
-  font-size: 11px;
-  line-height: 13.2px;
-  position: absolute;
-  right: 178px;
-  top: 55px;
-}
 
 /* set yourself as active*/
 
-.active {
-  font-size: 11px;
+.active, .away {
+  padding: 5px 0 0 12px; 
+  font-size: 13px;
   line-height: 13.2px;
-  position: absolute;
-  right: 178px;
-  top: 55px;
+  margin-left: 9px;
+  color: #999999;
 }
 
 .activeCircle {
   background-color: #00b87c;
-  height: 6px;
-  width: 6px;
+  height: 7px;
+  width: 7px;
   border-radius: 50%;
-  margin-right: 15px;
+  margin-right: 14px;
   position: absolute;
-  top: 60px;
 }
 
 .awayCircle {
   background-color: grey;
-  height: 6px;
-  width: 6px;
+  height: 7px;
+  width: 7px;
+  margin-right: 14px;
   border-radius: 50%;
   position: absolute;
-  top: 60px;
 }
 
 .oneRight p {
@@ -246,14 +247,14 @@
   font-family: Lato;
   font-style: normal;
   font-weight: normal;
-  color: #3a3a3a;
+  color: var(--text-color-normal);
 }
 
 /* The section two */
 
 .sectionTwo {
-  background: #F6F6F6;
-  padding: 0px;
+  background: #f6f6f6;
+  padding: 0 0.5rem;
   border-radius: 4px;
   /* border: 1px solid #a1a1a1; */
   width: 85%;
@@ -264,16 +265,16 @@
   align-items: center;
   display: flex;
 }
-.sectionTwo .statusContent {
-  font-size: 13px;
-  text-align: center;
-  margin-left: 60px;
-}
 
 .sectionTwo .emoji {
   float: left;
   font-size: 18px;
   padding: 0 0.3rem;
+}
+
+.defalutEmoji {
+  height: 20px;
+  padding: 0px 2px;
 }
 /* The section of the picker */
 
@@ -311,7 +312,7 @@
 
 .sectionThree {
   position: relative;
-  line-height: 25px;
+  line-height: 20px;
   font-style: normal;
   font-weight: normal;
   margin: auto;
@@ -320,7 +321,7 @@
 
 .sectionThree p {
   font-family: Lato;
-  color: #3A3A3A;
+  color: #999999;
   font-size: 15px;
   font-weight: 400;
   line-height: 18px;
@@ -328,7 +329,7 @@
   margin-bottom: 10px;
   display: flex;
   flex-direction: row;
-  padding: 2px 25px 2px 25px;
+  padding: 7px 25px;
 }
 
 .sectionThree p:hover {
@@ -363,17 +364,17 @@
 /* hr */
 
 .hr {
-  height: 15px;
-  background: #e7e7e7;
+  /* border: 1.2px solid #e5e1e1; */
   width: 100%;
   margin-top: 5px;
+  height: 0px;
   margin-bottom: 15px;
 }
 
 /* The section four */
 
 .sectionFour {
-  line-height: 22px;
+  line-height: 20px;
   font-style: normal;
   font-weight: normal;
   margin: auto;
@@ -383,14 +384,14 @@
 .sectionFour p {
   display: flex;
   flex-direction: row;
-  color: #333333;
+  color: #999999;
   font-family: Lato;
   font-size: 15px;
   font-weight: 400;
   line-height: 18px;
   cursor: pointer;
   margin-bottom: 10px;
-  padding: 2px 25px 2px 25px;
+  padding: 7px 25px;
 }
 
 .sectionFour p:hover {
@@ -401,7 +402,7 @@
 /* The section five */
 
 .sectionFive {
-  line-height: 22px;
+  line-height: 20px;
   font-style: normal;
   font-weight: normal;
   margin-top: -5px;
@@ -410,13 +411,13 @@
 
 .sectionFive p {
   font-family: Lato;
-  color: #242424;
-  font-size: 14px;
+  color: #999999;
+  font-size: 15px;
   font-weight: 400;
   cursor: pointer;
   display: flex;
   flex-direction: row;
-  padding: 2px 25px 2px 25px;
+  padding: 2px 25px;
 }
 
 .sectionFive a {
@@ -440,7 +441,7 @@
 /* The section Six */
 
 .sectionSix {
-  line-height: 22px;
+  line-height: 20px;
   font-style: normal;
   font-weight: normal;
   margin: auto;
@@ -449,7 +450,7 @@
 
 .sectionSix p {
   font-family: Lato;
-  color: #333333;
+  color: #999999;
   font-size: 15px;
   font-weight: 400;
   line-height: 18px;
@@ -457,7 +458,7 @@
   margin-bottom: 10px;
   display: flex;
   flex-direction: row;
-  padding: 2px 25px 2px 25px;
+  padding: 7px 25px;
 }
 
 .sectionSix p:hover {
@@ -465,15 +466,4 @@
   color: #fff;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 768px) {
-  /* set yourself as away*/
-  .away {
-    position: absolute;
-    right: 183px;
-  }
-  /* set yourself as active*/
-  .active {
-    position: absolute;
-    right: 180px;
-  }
-}
+

@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+// import { useState, useEffect } from "react"
 import { Col, Row } from 'react-bootstrap'
 import styles from './styles/marketplace.module.css'
 import MarketPlaceContainer from './components/marketplace-container/MarketPlaceContainer'
@@ -10,11 +11,95 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 import MarketplaceHeader from './components/marketplace-container/MarketplaceHeader'
 import { MarketPlaceProvider } from '../../context/MarketPlace.context.js'
+import { GetUserInfo } from "@zuri/utilities"
 import axios from 'axios'
 import { Helmet } from 'react-helmet'
+import Header from '../../components/Header'
 
 const MarketPlace = () => {
-  const [userDetails, setUserDetails] = useState(null)
+  // const [userDetails, setUserDetails] = useState(null)
+
+  let currentWorkspace = localStorage.getItem("currentWorkspace")
+  let token = sessionStorage.getItem("token")
+
+  // States
+  const [user, setUser] = useState({})
+  const [isMarketPlaceLoading, setIsMarketPlaceLoading] = useState(false)
+  const [plugins, setPlugins] = useState({
+    all: [],
+    installed: [],
+    popular: []
+  })
+
+  useEffect(() => {
+    getPlugins()
+    getLoggedInUser()
+  }, [])
+
+  const getPlugins = async () => {
+    setIsMarketPlaceLoading(true)
+    try {
+      let pluginData = plugins
+
+      const get_all_plugins = await axios.get(
+        "https://api.zuri.chat/marketplace/plugins?limit=10000"
+      )
+      const get_popular_plugins = await axios.get(
+        "https://api.zuri.chat/marketplace/plugins/popular"
+      )
+      if(user && currentWorkspace) {
+        const get_installed_plugins = await axios.get(
+            `https://api.zuri.chat/organizations/${currentWorkspace}/plugins`,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`
+              }
+            }
+          )
+        
+          if (
+            get_installed_plugins.status === 200 &&
+            get_installed_plugins.data.data !== null
+          ) {
+            pluginData["installed"] = get_installed_plugins.data.data.map(
+              plugin => plugin.plugin
+            )
+          }
+      }
+
+      if (get_all_plugins.status === 200) {
+        pluginData["all"] = get_all_plugins.data.data.plugins
+      }
+
+      if (get_popular_plugins.status === 200) {
+        pluginData["popular"] = get_popular_plugins.data.data.filter(
+          plugin => plugin.install_count > 10
+        )
+      }
+      
+
+      
+
+      // marketplaceContext.dispatch(loadPlugins(data))
+      setPlugins(pluginData)
+      setIsMarketPlaceLoading(false)
+    } catch (err) {
+      setIsMarketPlaceLoading(false)
+      console.error(err)
+    }
+  }
+
+  const getLoggedInUser = async () => {
+    try {
+      const userInfo = await GetUserInfo()
+      //Check if user id is valid and get user organization
+      if (userInfo[0]._id !== "") {
+        setUser(userInfo)
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
   return (
     <MarketPlaceProvider>
       <Helmet>
@@ -24,7 +109,7 @@ const MarketPlace = () => {
         <div
           className={`w-100 d-flex flex-wrap justify-content-between align-items-baseline ${styles.marketplaceNavbar}`}
         >
-          <MarketplaceHeader />
+          <Header />
         </div>
         <div className={styles.marketplaceHero}>
           <Row className={`align-items-center justify-content-center`}>
@@ -32,7 +117,7 @@ const MarketPlace = () => {
               <h1>Your number one plugin hub created for better experience</h1>
               <p className="p-0">
                 Integrate your favorite plugins and get more exciting experience
-                from the Zuri app. Collaborate, work smarter and better.{' '}
+                from the Zuri app. Collaborate, work smarter and better.{" "}
               </p>
               <div className="d-flex align-items-center">
                 <div className={styles.marketplaceSearchBar}>
@@ -127,21 +212,21 @@ const MarketPlace = () => {
                 </p>
               </div>
               <TabList className={styles.marketplaceTabList}>
-                <Tab className={styles.marketplaceTab}>New plugin</Tab>
-                <Tab className={styles.marketplaceTab}>Recommended for you</Tab>
+                <Tab className={styles.marketplaceTab}>Discover</Tab>
                 <Tab className={styles.marketplaceTab}>Popular Plugins</Tab>
+                {user && currentWorkspace && (<Tab className={styles.marketplaceTab}>Installed Plugins</Tab>)}
               </TabList>
             </div>
             <Row className={`mx-0`}>
-              <TabPanel>
-                <MarketPlaceContainer />
+            <TabPanel>
+                <MarketPlaceContainer user={user} isMarketPlaceLoading={isMarketPlaceLoading} plugins={plugins} type={"all"} />
               </TabPanel>
               <TabPanel>
-                <MarketPlaceContainer />
+                <MarketPlaceContainer user={user} isMarketPlaceLoading={isMarketPlaceLoading} plugins={plugins} type={"popular"} />
               </TabPanel>
-              <TabPanel>
-                <MarketPlaceContainer />
-              </TabPanel>
+              {user && currentWorkspace && (<TabPanel>
+                <MarketPlaceContainer user={user} isMarketPlaceLoading={isMarketPlaceLoading} plugins={plugins} type={"installed"} />
+              </TabPanel>)}
             </Row>
           </Tabs>
         </div>

@@ -1,75 +1,117 @@
+import axios from "axios"
 import { useState, useContext, useCallback, useEffect } from "react"
+import styled from "styled-components"
+import ReactTooltip from "react-tooltip"
+import { AiOutlineMenu } from "react-icons/ai"
+import { navigateToUrl } from "single-spa"
+// import Loader from 'react-loader-spinner'
+
+// Components || Assets || Contexts
 import { ProfileContext } from "./context/ProfileModal"
 import { TopbarContext } from "./context/Topbar"
-import { connect } from "react-redux"
-import zurichatlogo from "./assets/images/zurilogo.svg"
-import styled from "styled-components"
 import { BaseInput } from "./TopBarIndex"
-import defaultAvatar from "./assets/images/avatar_vct.svg"
+import { authAxios } from "./utils/Api"
+import { GetUserInfo, SubscribeToChannel } from "@zuri/utilities"
+
+import Profile from "./components/Profile"
+import { BigModal } from "./components/bigModal"
+import TopSearchBar from "./components/TopSearchBar"
+import TopBarSearchModal from "./components/TopBarSearchModal"
+import SearchAutocomplete from "../src/components/SearchAutocomplete"
 // import HelpIcon from './assets/images/help-icon.svg'
-import TopbarModal from "./components/TopbarModal"
 // import HelpModal from './components/HelpModal'
 // import UserForm from '../../control/src/pages/ReportFeature/User/Form'
 // import AdminForm from '../../control/src/pages/ReportFeature/Admin/Form'
-import { authAxios } from "./utils/Api"
-import Profile from "./components/Profile"
-// import Loader from 'react-loader-spinner'
-import { GetUserInfo, SubscribeToChannel } from "@zuri/control"
-import axios from "axios"
-import { AiOutlineMenu } from "react-icons/ai"
+
+import zurichatlogo from "./assets/images/zurilogo.svg"
+import defaultAvatar from "./assets/images/avatar_vct.svg"
+import TopbarModal from "./components/TopbarModal"
+import themeColors from "../../theming/themecolors"
 import styles from "../src/styles/TopNavBar.module.css"
-import SearchAutocomplete from "../src/components/SearchAutocomplete";
 
-import { navigateToUrl } from "single-spa"
+const TopNavBar = () => {
+  const theme = localStorage.getItem("theme")
+  if (theme !== null || theme !== "") {
+    const topBar = document.getElementById("single-spa-application:@zuri/topbar")
+    topBar.style.backgroundColor = themeColors[theme]?.primary
+  }
+  const currentWorkspace = localStorage.getItem("currentWorkspace")
 
-const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
   const { closeModal, openModal, presence, setPresence } =
     useContext(TopbarContext)
   const { setUser, user, userProfileImage, setOrgId, setUserProfileImage } =
     useContext(ProfileContext)
+
   const state = useContext(TopbarContext)
   const [showModal] = state.show
+
   const [organizations, setOrganizations] = useState([])
+
   const [search, setSearch] = useState("")
   const [helpModal, setHelpModal] = useState(false)
-  // const [memberId, setMemberId] = useState('');
   const [messages, setMessages] = useState("")
+  const [isSearchOpen, setOpenSearch] = useState(false)
+  const [searchValue, setSearchValue] = useState("")
+
+  const onSearchSubmit = e => {
+    if (e.keyCode === 13 && searchValue.length >= 1) {
+      setOpenSearch(true)
+    }
+  }
+
+  const onSearchChange = value => {
+    setSearchValue(value)
+  }
+
+  const getLoggedInUser = async () => {
+    try {
+      const userInfo = await GetUserInfo()
+      //Check if user id is valid and get user organization
+      if (userInfo[0]._id !== "") {
+        setUser(userInfo)
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   useEffect(() => {
-    // const fetchUser = async () => {
-    //   const info = await GetUserInfo()
-    //   setMemberId(info[0]._id)
-    // }
+    getLoggedInUser()
+    SubscribeToChannel(currentWorkspace, event => {
+      const session_user = JSON.parse(sessionStorage.getItem("user"))
+      if (
+        event.event === "UpdateOrganizationMemberPic" ||
+        event.event === "UpdateOrganizationMemberStatus" ||
+        event.event === "UpdateOrganizationMemberProfile" ||
+        event.event === "UpdateOrganizationMemberPresence"
+      ) {
+        if (event.id === session_user["id"]) {
+          UpdateInfo()
+        } else return
+      } else return
+    })
+  }, [])
 
-    // fetchUser();
-
-    let currentWorkspace = localStorage.getItem("currentWorkspace")
-
+  useEffect(() => {
     const searchFunction = async () => {
-      let organization_id = `614679ee1a5607b13c00bcb7`
-      let member_id = `614732f4f41cb684cc531fc9`
-      // console.log(member_id, organization_id, "pim");
-      // console.log(search)
+      let organization_id = currentWorkspace
+      let member_id = user[0]?._id
       axios
         .get(
           `https://dm.zuri.chat/api/v1/org/${organization_id}/members/${member_id}/messages/search?keyword=${search}`
         )
         .then(response => {
-          // console.log(response.data.results[0])
           setMessages(response.data.results)
         })
         .catch(err => {
           console.error(err)
         })
     }
-
     searchFunction()
   }, [search])
 
   useEffect(() => {
     const userdef = JSON.parse(sessionStorage.getItem("user"))
-
-    getOrganizations()
 
     async function getOrganizations() {
       await authAxios
@@ -101,41 +143,16 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     getOrganizations()
   }, [setOrgId, user.image_url, setUser])
 
-  const UpdateInfo = () => {
-    GetUserInfo().then(res => {
-      setUserProfileImage(res["0"].image_url)
-      setUser(res["0"])
-    })
-  }
-
   useEffect(() => {
     UpdateInfo()
-  }, [])
+  }, [userProfileImage])
 
-  // RTC subscription
-  const callbackFn = event => {
-    const session_user = JSON.parse(sessionStorage.getItem("user"))
-    if (
-      event.event === "UpdateOrganizationMemberPic" ||
-      event.event === "UpdateOrganizationMemberStatus" ||
-      event.event === "UpdateOrganizationMemberProfile" ||
-      event.event === "UpdateOrganizationMemberPresence"
-    ) {
-      if (event.id === session_user["id"]) {
-        UpdateInfo()
-      } else return
-    } else return
+  const UpdateInfo = () => {
+    GetUserInfo().then(res => {
+      setUserProfileImage(res[0]?.image_url)
+      setUser(res[0])
+    })
   }
-
-  const currentWorkspace = localStorage.getItem("currentWorkspace")
-
-  SubscribeToChannel(currentWorkspace, callbackFn)
-
-  // useEffect(() => {
-  //   if (showModal===true) {
-  //     document.addEventListener('click', openModal)
-  //   }
-  // },[showModal])
 
   let toggleStatus = null
 
@@ -157,50 +174,23 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
 
   const [toggleSidebar, setToggleSidebar] = useState(false)
 
-  const handleToggleSidebar = useCallback(() => {
+  const handleToggleSidebar = () => {
     setToggleSidebar(!toggleSidebar)
-  }, [toggleSidebar])
+  }
 
-  //Handle sidebar on mobile
-  const sidebar = document.getElementById(
-    "single-spa-application:@zuri/sidebar"
-  )
-  useEffect(() => {
-    if (toggleSidebar && window.outerWidth <=768) {
-      sidebar.style.display = "block"
-    } 
-    else if(window.outerWidth > 768){
-      sidebar.style.display = "block"
-    }
-    else {
-      sidebar.style.display = "none"
-    }
-  }, [toggleSidebar, sidebar])
-
-
-
-  const zc_spa_body = document.querySelector("body")
-  // const sidebar_toggle = document.querySelector("#sidebar_toggle")
-  // const openSidebar = () => {
-  //   sidebar.style.display = "block"
-  //   sidebar.style.left = "0"
-  //   sidebar.style.width = "200px"
-  //   sidebar_toggle.style.display = "none"
-  // }
-
-  // zc_spa_body.addEventListener('click', () => {
-  //   if (window.outerWidth <= 768) {
-  //     if (sidebar !== null) {
-  //       sidebar.style.display = 'none'
-  //       sidebar_toggle.style.display = 'block'
-  //     }
+  // useEffect(() => {
+  //   //Handle sidebar on mobile
+  //   const sidebar = document.getElementById(
+  //     "single-spa-application:@zuri/sidebar"
+  //   )
+  //   if (toggleSidebar && window.outerWidth <= 768) {
+  //     sidebar.style.display = "block"
+  //   } else if (window.outerWidth > 768) {
+  //     sidebar.style.display = "block"
   //   } else {
-  //     if (sidebar !== null) {
-  //       sidebar.style.display = 'block'
-  //       sidebar_toggle.style.display = 'none'
-  //     }
+  //     sidebar.style.display = "none"
   //   }
-  // })
+  // }, [toggleSidebar])
 
   // Search autocomplete
 
@@ -238,20 +228,14 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
     setFilteredSuggestions([])
     setDisplaySuggestions(false)
   }
-
   // end search
+
+  const [statusModal, setStatusModal] = useState(false)
 
   const handleEnter = e => {
     e.preventDefault()
-    // eslint-disable-next-line no-console
-    console.log(window.location.href)
 
     navigateToUrl("/search")
-    // let s= window.location.href.split('/')
-    // if(s[2].includes("local")){
-    //   window.location.href="http://localhost:9000/search"
-    // }else{
-    //   window.location.href="https://zuri.chat/search"
   }
 
   return (
@@ -276,20 +260,30 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
         </button>
       </div>
       <div className="ms-4" style={{ width: "60%" }}>
-        <div>
-          <form onSubmit={handleEnter}>
-            <BaseInput
-              onChange={handleSearchChange}
-              value={inputValue}
-              type="text"
-              width={12}
-              error
-              placeholder="Search here"
-              border={"#99999933"}
-            />
-          </form>
+        {/* <BaseInput
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          type="text"
+          width={12}
+          error
+          placeholder="Search here"
+          border={"#99999933"}
+        /> */}
+        {/* <TopSearchBar onClick={() => setShowTopSearchModal(true)} /> */}
+        <TopBarSearchModal />
+        {/* <div>
+            <form onSubmit={handleEnter}>
+              <BaseInput
+                onChange={handleSearchChange}
+                value={inputValue}
+                type="text"
+                width={12}
+                error
+                placeholder="Search here"
+                border={"#99999933"}
+              />
+            </form>
         </div>
-
         <div>
           <SearchAutocomplete
             inputValue={inputValue}
@@ -298,12 +292,20 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
             displaySuggestions={displaySuggestions}
             suggestions={filteredSuggestions}
           />
-        </div>
-      </div>
+        </div> */}
 
+        {isSearchOpen ? (
+          <BigModal
+            onClose={() => {
+              setOpenSearch(false)
+            }}
+            inputValue={searchValue}
+          />
+        ) : null}
+      </div>
       <ProfileImageContainer
         className="d-flex justify-content-end pe-3"
-        style={{ width: "20%" }}
+        style={{ width: "20%", position: "relative" }}
       >
         {toggleStatus}
         <ProfileImg
@@ -313,22 +315,50 @@ const TopNavBar = ({ userProfile: { last_name, first_name } }) => {
           className="avatar-img"
           alt="user profile avatar"
         />
+        {user?.status?.tag && (
+          <>
+            <div
+              style={{
+                position: "absolute",
+                top: "0px",
+                right: "50px",
+                display: "flex",
+                alignItems: "center",
+                height: "100%",
+                backgroundColor: "#fafafa",
+                padding: "0px 4px",
+                cursor: "pointer",
+                borderTopLeftRadius: "5px",
+                borderBottomLeftRadius: "5px"
+              }}
+              data-tip
+              data-for="StatusHover"
+              onClick={() => setStatusModal(!statusModal)}
+            >
+              <span style={{ fontSize: "16px" }}>{user?.status?.tag}</span>
+            </div>
+            <ReactTooltip id="StatusHover" type="dark" effect="solid">
+              <span>
+                {user?.status?.tag}&nbsp;&nbsp;{user?.status?.text}
+              </span>
+            </ReactTooltip>
+          </>
+        )}
       </ProfileImageContainer>
 
       <Profile />
-      <TopbarModal />
+      <TopbarModal statusModal={statusModal} setStatusModal={setStatusModal} />
     </>
   )
 }
 
-const mapStateToProps = state => ({
-  userProfile: state
-})
+// const mapStateToProps = state => ({
+//   userProfile: state
+// })
 
-export default connect(mapStateToProps)(TopNavBar)
+export default TopNavBar
 
-//  TopNavBar
-
+// Styled Components
 const LogoDiv = styled.div`
   margin: auto 0;
   display: flex;
@@ -350,7 +380,6 @@ const ProfileImg = styled.img`
   width: 32px;
   height: 32px;
   object-fit: cover;
-
   @media (max-width: 1024px) {
     height: 30px;
   }
@@ -360,7 +389,6 @@ const ProfileImg = styled.img`
 `
 const ProfileImageContainer = styled.div`
   position: relative;
-
   /* img {
     object-fit: cover;
     border-radius: 4px;
@@ -371,7 +399,6 @@ const ProfileImageContainer = styled.div`
 
 const HelpContainer = styled.div`
   display: none;
-
   > .MuiSvgIcon-root {
     opacity: 0.5;
   }
@@ -395,7 +422,6 @@ const ToggleStatus = styled.div`
     border: 1px solid white;
     margin-right: 15px;
   }
-
   .user-away {
     background-color: grey;
     height: 10px;

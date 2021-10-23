@@ -1,5 +1,6 @@
 {
   "name": "@zuri/utilities",
+  "license": "MIT",
   "scripts": {
     "start": "webpack serve",
     "start:standalone": "webpack serve --env standalone",
@@ -11,11 +12,7 @@
     "lint:css": "stylelint '**/*.+(css|scss|sass)'",
     "lint:js": "eslint '**/*.+(js|jsx)'",
     "prettify": "prettier -w .",
-    "format": "prettier --write .",
-    "check-format": "prettier --check .",
-    "test": "cross-env BABEL_ENV=test jest",
-    "watch-tests": "cross-env BABEL_ENV=test jest --watch",
-    "coverage": "cross-env BABEL_ENV=test jest --coverage"
+    "format": "prettier --write ."
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
@@ -46,6 +43,8 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "axios": "^0.23.0",
+    "centrifuge": "^2.8.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "single-spa-react": "^4.3.1"

@@ -16,6 +16,11 @@ import Header from "./components/Header"
 import Invite from "./components/Invite"
 import Room from "./components/Room"
 import SingleRoom from "./components/SingleRoom"
+import Category from "./components/Category"
+import { dummySidebar } from "./components/dummySidebar"
+import Starred from "./components/Starred"
+
+const categories = []
 
 const Sidebar = props => {
   let currentWorkspace = localStorage.getItem("currentWorkspace")
@@ -31,9 +36,10 @@ const Sidebar = props => {
     nullValue === 1 &&
       props.state.sidebar &&
       SubscribeToChannel(
-        `${currentWorkspace}_${props.state.user[0].org_id}_sidebar`,
+        `${currentWorkspace}_${props.state.user[0]._id}_sidebar`,
         ctx => {
           const websocket = ctx.data
+          // console.log("websocket", websocket)
           if (websocket.event === "sidebar_update") {
             let sidebar_update = { [websocket.plugin_id]: websocket.data }
             //Update sidebar with recent changes
@@ -46,71 +52,113 @@ const Sidebar = props => {
       )
   }
 
+  const categories = [
+    "games",
+    "utility",
+    "tools",
+    "entertainment",
+    "sales",
+    "productivity",
+    "channels",
+    "direct messages",
+    "others"
+  ]
+
+  var singleItems = []
+  var categorizedItems = []
+  var starredRooms = []
+  if (props.state.sidebar && nullValue === 1) {
+    for (let key in props.state.sidebar) {
+      if (!categories.includes(key)) {
+        continue
+      } else if (key == "others") {
+        singleItems = Object.keys(props.state.sidebar[key]).map((k, idx) => {
+          var data = props.state.sidebar[key][k]
+          return (
+            <SingleRoom
+              key={`${data.name}${idx}`}
+              name={data.joined_rooms[0].room_name}
+              image={data.joined_rooms[0].room_image}
+              link={data.joined_rooms[0].room_url}
+            />
+          )
+        })
+      } else {
+        const categoryData = Object.keys(props.state.sidebar[key]).map(
+          (k, id) => {
+            const data = props.state.sidebar[key][k]
+            data.baseUrl = `https://${k}`
+            data.id = id
+            return data
+          }
+        )
+
+        categorizedItems.push(
+          <Category key={categoryData.id} name={key} data={categoryData} />
+        )
+
+        starredRooms = Object.keys(props.state.sidebar[key]).map(
+          (k, id) => props.state.sidebar[key][k].starred_rooms
+        )
+
+        //    Object.keys(props.state.sidebar).map((p, idx)=>{
+        //     return (categories.includes(p) ?
+        //     <Category key={idx} name={p} data={categoryData} />
+        //     : null)
+        // }
+      }
+    }
+  }
+  const check =
+    props.state.sidebar &&
+    Object.keys(props.state.sidebar).map((plugin, idx) => {
+      return props.state.sidebar[plugin].starred_rooms ? true : false
+    })
+
   return (
     <div className={`container-fluid ${styles.sb__container}`}>
       <Header state={props.state} />
       <div className={`${styles.subCon2}`}>
         <Fragment>
-          <Room name="Threads" image={threadIcon} icon={infoIcon} />
-          <Room name="All DMs" image={dmIcon} icon={infoIcon} />
-          <Room name="Drafts" image={draftIcon} icon={infoIcon} />
+          {/* <Room name="Threads" image={threadIcon} />
+          <Room name="All DMs" image={dmIcon} />
+          <Room name="Drafts" image={draftIcon} />
+         <Room name="Plugins" image={pluginIcon} />*/}
+          {/* SIDE BAR DATA */}
+          <SingleRoom name="Threads" image={threadIcon} />
+          <SingleRoom name="All Dms" image={dmIcon} link="/dm" />
+          <SingleRoom name="Drafts" image={draftIcon} />
 
-          <Room name="Plugins" image={pluginIcon} icon={addIcon} link="/marketplace"/>
+          <SingleRoom name="Plugins" image={pluginIcon} link="/marketplace" />
+          <Starred starredRooms={starredRooms} />
+          {singleItems}
+          {categorizedItems}
 
-    {/* company files plugin */}
-    {props.state.sidebar &&
-      Object.keys(props.state.sidebar).map((plugin, index) => {
-        return props.state.sidebar[plugin].name === "Company Files" ? (
-          <SingleRoom
-            details={props.state.sidebar[plugin]}
-            key={Math.random()}
-          />
-        ) : null
-      })}
+          {/* {props.state.sidebar && Object.keys(props.state.sidebar).map((p, idx)=>{
+                return categories.includes(p) ? 
+                <Category key={idx} name={p} state={props.state} />
+                : null
+              })
+          } */}
 
-    {/* Chess plugin */}
-    {props.state.sidebar &&
-      Object.keys(props.state.sidebar).map((plugin, index) => {
-        return props.state.sidebar[plugin].name === "Chess Plugin" ? (
-          <SingleRoom
-            details={props.state.sidebar[plugin]}
-            key={Math.random()}
-          />
-        ) : null
-      })}
-
-    {/* Noticeboard plugin */}
-    {props.state.sidebar &&
-      Object.keys(props.state.sidebar).map((plugin, index) => {
-        return props.state.sidebar[plugin].name ===
-          "Noticeboard Plugin" ? (
-          <SingleRoom
-            details={props.state.sidebar[plugin]}
-            key={Math.random()}
-          />
-        ) : null
-      })}
-
-      {/* SIDE BAR DATA */}
-      {props.state.sidebar &&
-        Object.keys(props.state.sidebar).map((plugin, index) => {
-          return props.state.sidebar[plugin].name !== "Chess Plugin" &&
-            props.state.sidebar[plugin].name !== "Company Files" &&
-            props.state.sidebar[plugin].name !== "Noticeboard Plugin" ? (
-            <DropDown
-              itemName={props.state.sidebar[plugin].name}
-              id={props.state.sidebar.name}
-              key={index}
-              items={props.state.sidebar[plugin]}
-            />
-          ) : null
-        })}
-
+          {/* <Category name="games" state={props.state} />
+          <Category name="utility" state={props.state} />
+          <Category name="tools" state={props.state} />
+          <Category name="entertainment" state={props.state} />
+          <Category name="sales" state={props.state} />
+          <Category name="productivity" state={props.state} />
+          <Category name="channels" state={props.state} />
+          <Category name="direct messages" state={props.state} /> */}
           {/* button for inviting users to workspace */}
-          <Invite state={props.state} />
+          <Invite state={props.state} dispatch={props.dispatch} />
         </Fragment>
       </div>
     </div>
   )
 }
 export default Sidebar
+
+/*
+  create a category file
+  accept props and populate the data
+*/
