@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react"
 import styled from "styled-components"
 import { ProfileContext } from "../context/ProfileModal"
-import { authAxios } from "./../utils/Api"
+import { authAxios } from "../utils/Api"
 
 const DefaultStatus = ({
   setStatusText,

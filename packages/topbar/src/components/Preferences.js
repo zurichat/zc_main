@@ -1,15 +1,15 @@
 import React, { useState, useContext, useEffect } from "react"
 import ProfileModal from "./ProfileModal"
-import NotificationPreference from "../components/NotificationPreference"
-import Themes from "../components/Themes"
-import MessagesMedia from "../components/MessagesMedia"
-import PreferenceMenu from "../components/PreferenceMenu"
-import MobilePreferenceMenu from "../components/MobilePreferenceMenu"
-import MarkAsRead from "../components/MarkAsRead"
-import LanguageAndRegion from "../components/LanguageAndRegion"
+import NotificationPreference from "./NotificationPreference"
+import Themes from "./Themes"
+import MessagesMedia from "./MessagesMedia"
+import PreferenceMenu from "./PreferenceMenu"
+import MobilePreferenceMenu from "./MobilePreferenceMenu"
+import MarkAsRead from "./MarkAsRead"
+import LanguageAndRegion from "./LanguageAndRegion"
 import styles from "../styles/NotificationPreference.module.css"
 import { ProfileContext } from "../context/ProfileModal"
-import AdvancedSettings from "../components/AdvancedSettings"
+import AdvancedSettings from "./AdvancedSettings"
 import Accessibility from "./Accessibility"
 import { HiMenuAlt2 } from "react-icons/hi"
 import { IoMdClose } from "react-icons/io"
@@ -72,7 +72,11 @@ const Preferences = () => {
           />
         </div>
 
-        <div className={styles.allPreferences} style={{ width: "100%" }} id="preferences-main-box">
+        <div
+          className={styles.allPreferences}
+          style={{ width: "100%" }}
+          id="preferences-main-box"
+        >
           {sideBar === 1 && <NotificationPreference />}
           {sideBar === 3 && <Themes /*{...{ check, setCheck, setMode }}*/ />}
           {sideBar === 4 && <MessagesMedia />}

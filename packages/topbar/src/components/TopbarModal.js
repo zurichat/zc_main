@@ -17,7 +17,7 @@ import MembersModal from "./MembersModal"
 import Downloads from "./Downloads"
 import SetStatusModal from "./SetStatusModal"
 import NewStatusModal from "./NewStatusModal"
-import { authAxios } from "./../utils/Api"
+import { authAxios } from "../utils/Api"
 // react icons
 
 const TopbarModal = ({ members, statusModal, setStatusModal }) => {
@@ -80,7 +80,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
   //   }
   // }
   const [hoverState, setHoverState] = useState(false)
-  
+
   // const [username, setUsername] = state.username
   const [showStatus] = state.status
   const [showMembersModal] = state.modal
@@ -241,7 +241,11 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
             >
               <div className={styles.emoji}>
                 {hoverState ? (
-                  user?.status?.tag? <img src={edit} className={styles.defalutEmoji} />: <div>😃</div>
+                  user?.status?.tag ? (
+                    <img src={edit} className={styles.defalutEmoji} />
+                  ) : (
+                    <div>😃</div>
+                  )
                 ) : (
                   <>
                     {user?.status?.tag || (
