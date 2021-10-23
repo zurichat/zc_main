@@ -5,18 +5,20 @@ import { DialogOverlay, DialogContent } from "@reach/dialog"
 
 import okayimage from "../signup/email-verify/assets/okayimage.svg"
 import Button from "../../components/Button"
-
+import "../../i18n";
+import { useTranslation} from "react-i18next";
 
 function passwordSuccesful() {
+  const { t } = useTranslation();
     return ( 
         <Overlay>
             <Content>
-            <Passdiv style={{ textAlign: "center" }}>
-            <img src={okayimage} alt="zurichat logo" className={styles.img} />
-            <h2>Passwowrd Reset Successful!</h2>
-            <p>Your password reset was succesful! you can preced to login now</p>
-            <Link to ="/login"><Button>Continue to login</Button></Link>
-        </Passdiv>
+              <Passdiv style={{ textAlign: "center" }}>
+                <img src={okayimage} alt="zurichat logo" className={styles.img} />
+                <h2>{ t("auth.passwordResetSuccess.headline")}</h2>
+                <p>{ t("auth.passwordResetSuccess.post_headline")}</p>
+                <Link to ="/login"><Button>{ t("auth.passwordResetSuccess.button")}</Button></Link>
+              </Passdiv>
             </Content>
         </Overlay>
      );
@@ -34,13 +36,13 @@ const Overlay = styled(DialogOverlay)`
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 3rem 10rem;
+  padding: 3rem 1rem;
 `
 const Content = styled(DialogContent)`
   position: relative;
   background: white;
 //   width: 100%;
-  height: 100%;
+  height: 80%;
   padding: 2rem;
   display: flex;
   justify-content: center;

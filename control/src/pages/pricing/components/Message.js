@@ -1,6 +1,11 @@
 import React from 'react'
-import styles from '../styles/Message.module.css'
+import styles from '../styles/Message.module.css';
+import { useTranslation} from "react-i18next"
+
+
 const Message = ({ type }) => {
+  const { t } = useTranslation()
+
   if (type === 'contact') {
     return (
       <div className={styles.message_box}>
@@ -22,17 +27,17 @@ const Message = ({ type }) => {
     <div className={styles.message_box}>
       <div className={styles.message}>
         <p className={styles.p}>
-          Whatever work you do,you can do it in Zuri Chat
+        {t("pricing.sectionFour.headline")}
         </p>
         <div className={styles.buttonSection}>
           <button className={styles.buttonFilled}>
             <a className={styles.a} href="/contact-us">
-              Talk to Sales
+            {t("pricing.sectionFour.button_one")}
             </a>
           </button>
           <button className={styles.buttonOutline}>
             <a className={styles.a} href="/login">
-              TRY IT FREE
+            {t("pricing.sectionFour.button_two")}
             </a>
           </button>
         </div>

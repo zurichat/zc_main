@@ -1,7 +1,19 @@
+:root {
+  --background-menu: #f9f9f9;
+}
+
+[data-theme="dark"] {
+  --background-menu: #2d2d2f;
+}
+
+[data-theme="light"] {
+  --background-menu: #f9f9f9;
+  
+}
 .notifySidebar {
   width: 200px;
-  background: #f9f9f9;
-  height: 100%;
+  background: var(--background-menu);
+  height: 250%;
   float: left;
   position: fixed;
   position: relative;
@@ -20,6 +32,7 @@
   margin-bottom: 0px;
   cursor: pointer;
   font-size: 15px;
+  padding-bottom: 13px;
 }
 .icon {
   margin-right: 15px;
@@ -45,6 +58,7 @@
 }
 .icon {
   margin-right: 10px;
+  margin-bottom: 0px;
 }
 .active p,
 .icon {
@@ -57,7 +71,8 @@
 }
 
 .one .icon {
-  color: #999999;
+  color: var(--text-color-normal);
+  margin-bottom: 1px;
 }
 
 @media screen and (max-width: 768px) {

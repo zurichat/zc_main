@@ -1,0 +1,152 @@
+.content{
+    margin: 0 20px 20px;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 19px;
+    color: #B0AFB0;
+    text-align: left;
+   
+}
+.p{
+    margin: 10px;
+}
+.li{
+    list-style: inside;
+    margin-top: 10px;
+}
+.ul {
+    margin: 10px;
+    padding-left: 0;
+}
+.checkdiv {
+    margin: 40px 10px 10px;
+}
+.button{
+    display: flex;
+    justify-content: end;
+}
+.button1{
+    color: #FF0000;
+    border: 1px solid #FF0000;
+    background-color: white;
+    border-radius: 4px;
+    width: 20%;
+    font-size: 12px;
+    line-height: 22px;
+    padding: 5px;
+    margin: 10px;
+}
+.button2{
+    background: #00B87C;
+    color: #fff;
+    border-radius: 4px;
+    width: 35%;
+font-size: 12px;
+line-height: 22px;
+padding: 5px;
+}
+.button3{
+    background: rgba(0, 184, 124, 0.48);
+     color: #fff;
+     border-radius: 4px;
+     width: 35%;
+         font-size: 12px;
+         line-height: 22px;
+         padding: 5px;
+         margin: 10px 0;
+}
+.button4 {
+    color: #FF0000;
+    border: 1px solid #FF0000;
+    background-color: white;
+    border-radius: 4px;
+    width: 20%;
+    font-size: 12px;
+    line-height: 22px;
+    margin-right: 10px;
+}
+.checkbox {
+    background-color: #00B87C;
+}
+.a{
+    color: blue;
+}
+.check{
+    padding-left: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    .content {
+        margin: 0 15px 15px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .p {
+        font-size: 13px;
+        line-height: 23px;
+    }
+    .button1 {
+        width: 20%;
+            font-size: 12px;
+            line-height: 22px;
+            padding: 5px;
+            margin: 10px;
+    }
+    .button2 {
+    margin: 10px 0;
+    font-size: 11px;
+    line-height: 22px;
+    padding: 5px;
+    width: 97px;
+    }
+     .button3 {
+      width: 30%;
+     }
+     .button4{
+        margin-top: 10px;
+        margin-bottom: 10px;
+            width: 75px;
+            font-size: 11px;
+     }
+}
+
+@media screen and (min-width:1440px) {
+.button3{
+    width: 35%;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 10px;
+}
+.button1{
+    font-size: 14px;
+    line-height: 24px;
+    padding: 10px;
+}
+.button2 {
+    width: 130px;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 10px;
+}
+}
+
+@media screen and (max-width: 640px) {
+    .content{
+        margin: 85px 20px 20px;
+        font-size: 13px;
+    }
+    .p {
+        font-size: 14px;
+        margin: 15px;
+    }
+    .checkdiv{
+        font-size: 13px;
+        margin: 30px 10px 10px;
+    }
+    .button {
+        margin-top: 45px;
+    }
+    .li{
+        margin-top: 15px;
+    }
+}

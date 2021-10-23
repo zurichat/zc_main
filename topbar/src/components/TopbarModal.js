@@ -1,8 +1,11 @@
 import { useContext, useState, useEffect } from "react"
 import { FaChevronRight } from "react-icons/fa"
+import { BiSmile } from "react-icons/bi"
 import Picker, { SKIN_TONE_MEDIUM_DARK } from "emoji-picker-react"
 import axios from "axios"
 import defaultAvatar from "../assets/images/avatar_vct.svg"
+import smile from "../assets/images/smile.png"
+import edit from "../assets/images/pen.png"
 
 import styles from "../styles/Topbar.module.css"
 import { TopbarContext } from "../context/Topbar"
@@ -13,14 +16,71 @@ import EditProfile from "./EditProfile"
 import MembersModal from "./MembersModal"
 import Downloads from "./Downloads"
 import SetStatusModal from "./SetStatusModal"
+import NewStatusModal from "./NewStatusModal"
+import { authAxios } from "./../utils/Api"
 // react icons
 
-const TopbarModal = ({ members }) => {
-  const { userProfileImage, toggleModalState, toggleProfileState, user } =
-    useContext(ProfileContext)
+const TopbarModal = ({ members, statusModal, setStatusModal }) => {
+  const {
+    userProfileImage,
+    orgId,
+    toggleModalState,
+    toggleProfileState,
+    user,
+    setUser
+  } = useContext(ProfileContext)
 
   const state = useContext(TopbarContext)
-  const [showModal] = state.show
+  const [showModal, setShowModal] = state.show
+
+  const handleClearStatus = async () => {
+    setUser({
+      ...user,
+      status: {
+        ...user.status,
+        expiry_time: "",
+        text: "",
+        tag: "",
+        status_history: [...user.status.status_history]
+      }
+    })
+
+    setShowModal(!showModal)
+
+    try {
+      const res = await authAxios.patch(
+        `/organizations/${orgId}/members/${user._id}/status`,
+        {
+          expiry_time: "one_hour",
+          tag: "",
+          text: ""
+        }
+      )
+      const response = res.status
+    } catch (error) {
+      const errorResponse = error
+    }
+  }
+
+  // const handleClearStatus = async () => {
+  //   // setEmoji("")
+  //   // setText("")
+  //   try {
+  //     const res = await authAxios.patch(
+  //       `/organizations/${orgId}/members/${user._id}/status`,
+  //       {
+  //         expiry_time: "one_hour",
+  //         tag: "",
+  //         text: ""
+  //       }
+  //     )
+  //     res.status == 200 && alert(res?.data?.message)
+  //   } catch (error) {
+  //     alert(error)
+  //   }
+  // }
+  const [hoverState, setHoverState] = useState(false)
+  
   // const [username, setUsername] = state.username
   const [showStatus] = state.status
   const [showMembersModal] = state.modal
@@ -75,27 +135,27 @@ const TopbarModal = ({ members }) => {
     window.location.href = "/signout"
   }
   const [pause, setPause] = useState(false)
-  const [statusModal, setStatusModal] = useState(false)
+  // console.log(user)
 
-  let userPresence = null
-  let toggleStatus = null
+  var userAppearance = null
+  var toggleAppearance = null
 
   switch (presence) {
     case "true":
-      userPresence = "Set yourself as away"
-      toggleStatus = (
+      userAppearance = "Set yourself as away"
+      toggleAppearance = (
         <div className={styles.online}>
-          <div className={styles.activeCircle} />
-          <p className={styles.active}>Active</p>
+          <span className={styles.activeCircle} />
+          <span className={styles.active}> Active </span>
         </div>
       )
       break
     default:
-      userPresence = "Set yourself as active"
-      toggleStatus = (
+      userAppearance = "Set yourself as active"
+      toggleAppearance = (
         <div className={styles.online}>
-          <div className={styles.awayCircle} />
-          <p className={styles.away}>Away</p>
+          <span className={styles.awayCircle} />
+          <span className={styles.away}>Away </span>
         </div>
       )
   }
@@ -107,7 +167,16 @@ const TopbarModal = ({ members }) => {
 
   return (
     <>
-      {/* The section that shows the status */}
+      {/* The section that shows the set status */}
+      {statusModal && (
+        <NewStatusModal
+          statusModal={statusModal}
+          setStatusModal={setStatusModal}
+          openStatus={openStatus}
+        />
+      )}
+
+      {/* The section that shows the status picker*/}
       {showStatus ? (
         <div
           ref={modalRef}
@@ -145,55 +214,69 @@ const TopbarModal = ({ members }) => {
             <div className={styles.sectionOne}>
               <div className={styles.oneLeft}>
                 <img
-                  src={
-                    userProfileImage !== "" ? userProfileImage : defaultAvatar
-                  }
+                  src={userProfileImage ? userProfileImage : defaultAvatar}
                   alt="profile-pic"
                 />
               </div>
 
               <div className={styles.oneRight}>
-                <h4>
+                <h4 style={{ paddingLeft: 0 }}>
                   {user.user_name
                     ? `${user.user_name
                         .charAt(0)
                         .toUpperCase()}${user.user_name.slice(1)}`
                     : "Anonymous"}
                 </h4>
-                {toggleStatus}
+                {toggleAppearance}
+              </div>
+            </div>
+            <div
+              className={styles.sectionTwo}
+              onClick={() => {
+                setStatusModal(!statusModal)
+                closeModal()
+              }}
+              onMouseEnter={() => setHoverState(true)}
+              onMouseLeave={() => setHoverState(false)}
+            >
+              <div className={styles.emoji}>
+                {hoverState ? (
+                  user?.status?.tag? <img src={edit} className={styles.defalutEmoji} />: <div>😃</div>
+                ) : (
+                  <>
+                    {user?.status?.tag || (
+                      <img src={smile} className={styles.defalutEmoji} />
+                    )}
+                  </>
+                )}
+              </div>
+
+              <div className={styles.statusContent}>
+                {!(user?.status?.text || user?.status?.tag)
+                  ? "Update your Status"
+                  : user?.status?.text}
               </div>
             </div>
 
-            <div className={styles.sectionTwo}>
-              <div className={styles.emoji}>{user?.status?.tag} </div>
-              <div className={styles.statusContent}>{user?.status?.text}</div>
-            </div>
-            
-          <div className={styles.sectionThree}>
-            {/* <p onClick={openStatus}>Set a status</p> */}
-            <p onClick={() => setStatusModal(!statusModal)}>Set a status</p>
-            {statusModal && (
-              <SetStatusModal
-                statusModal={statusModal}
-                setStatusModal={setStatusModal}
-                openStatus={openStatus}
-              />
-            )}
-            <p
-              onClick={() => {
-                toggleUserPresence()
-              }}
-            >
-              {userPresence}
-            </p>
-            {/* <div className={styles.pause}>
+            <div className={styles.sectionThree}>
+              {(user?.status?.text || user?.status?.tag) && (
+                <p onClick={handleClearStatus}>Clear status</p>
+              )}
+              <p
+                onClick={() => {
+                  toggleUserPresence()
+                }}
+              >
+                {userAppearance}
+              </p>
+              {/* <div className={styles.pause}>
                <p onClick={() => setPause(!pause)}>Pause Notifications</p>
                <FaChevronRight className={styles.chevron} />
               </div>
             {pause && <PauseNotification pause={pause} setPause={setPause} />}*/}
-          </div>
+            </div>
 
-            <hr className={styles.hr} />
+            <hr className={styles.hr} style={{ height: "0.4px" }} />
 
             <div className={styles.sectionFour}>
               <p
@@ -222,7 +305,7 @@ const TopbarModal = ({ members }) => {
               </p>
             </div>
 
-            <hr className={styles.hr} />
+            <hr className={styles.hr} style={{ height: "0.4px" }} />
 
             <div className={styles.sectionSix}>
               <p
@@ -242,7 +325,7 @@ const TopbarModal = ({ members }) => {
               <Downloads setModal={setReusableModal} />
             )}
 
-            <hr className={styles.hr} />
+            <hr className={styles.hr} style={{ height: "0.4px" }} />
 
             <div className={styles.sectionFive}>
               <p onClick={logout}>Sign out</p>

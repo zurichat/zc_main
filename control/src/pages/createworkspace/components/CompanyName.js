@@ -3,40 +3,41 @@ import CompanyNameCSS from "../styles/CompanyName.module.css"
 import { Link, useRouteMatch } from "react-router-dom"
 import axios from "axios"
 import { Helmet } from "react-helmet"
-import { createDefaultChannel } from "../../../api/channels"
+import { createDefaultChannel} from "../../../api/channels"
 
-function CompanyName({ input }) {
+function CompanyName ({ input }) {
   const [user, setUser] = useState(null)
   const [orgId, setOrgId] = useState(null)
   const [orgName, setOrgName] = useState("")
   let match = useRouteMatch()
+  let newOrgId 
   useEffect(() => {
-    const user = JSON.parse(sessionStorage.getItem("user"))
+    const user = JSON.parse(sessionStorage.getItem('user'))
 
     if (user) {
       setUser(user)
     }
   }, [])
 
-  //Function to Create A new Organization
+  // Function to Create A new Organization
   const createUserOrg = () => {
     axios
       .post(
-        "https://api.zuri.chat/organizations",
+        'https://api.zuri.chat/organizations',
         { creator_email: user.email },
         {
           headers: {
-            Authorization: "Bearer " + user.token
+            Authorization: 'Bearer ' + user.token
           }
         }
       )
       .then(res => {
         // Clears User Extracted Details from LS during Registraion
 
-        localStorage.clear("userUserPassword")
-        localStorage.clear("newUserEmail")
-        setOrgId(res.data.data.organization_id)
-
+        localStorage.removeItem("userUserPassword")
+        localStorage.removeItem("newUserEmail")
+        newOrgId = res.data.data.organization_id
+        
         // Automatic Org Name Renaming From Default to new Org Name
         setTimeout(() => {
           axios.patch(
@@ -46,14 +47,22 @@ function CompanyName({ input }) {
             },
             {
               headers: {
-                Authorization: "Bearer " + user.token
+                Authorization: 'Bearer ' + user.token
               }
             }
           )
           // .then(res => console.log(res))
+          axios.get(`https://api.zuri.chat/organizations/${newOrgId}/members/?query=${user.email}`)
+          .then(res => {
+            console.log("this is res: ", res);
+          let member_id = res.data.data[0]._id 
+          console.log(member_id);
+          localStorage.setItem('member_id', member_id)
+        } )
         }, 500)
 
-        createDefaultChannel(orgId)
+        localStorage.setItem("currentWorkspace", newOrgId)
+        // createDefaultChannel(newOrgId)
       })
       .catch(err => {
         console.error(err.message)
@@ -78,29 +87,39 @@ function CompanyName({ input }) {
             team will recognise
           </h4>
           <input
-            type="text"
-            placeholder="Ex: The Brand Hub"
-            maxLength="50"
+            type='text'
+            placeholder='Ex: The Brand Hub'
+            maxLength='50'
             onChange={e => setOrgName(e.target.value)}
             className={CompanyNameCSS.inputBox}
           />
           <span className={CompanyNameCSS.charLimit}>
             Maximum 50 characters
           </span>
-          <Link to={`${match.url}/step2`}>
-            {" "}
-            <button
-              disabled={orgName.length < 3 ? true : false}
-              style={
+          <div className={CompanyNameCSS.buttonContainer}>
+            <Link to={`${match.url}/step2`}>
+              {' '}
+              <button
+                disabled={orgName.length < 3}
+                style={
                 orgName.length > 1
-                  ? { backgroundColor: "#00b87c", color: "white" }
-                  : { backgroundColor: "revert", cursor: "not-allowed" }
+                  ? { backgroundColor: '#00b87c', color: 'white' }
+                  : { backgroundColor: 'revert', cursor: 'not-allowed' }
               }
-              onClick={createUserOrg}
-            >
-              Continue
-            </button>
-          </Link>
+                onClick={createUserOrg}
+              >
+                Continue
+              </button>
+            </Link>
+            <Link to='/createworkspace'>
+              {' '}
+              <button
+                style={{ backgroundColor: '#f40101', color: 'white' }}
+              >
+                Cancel
+              </button>
+            </Link>
+          </div>
         </div>
       </article>
     </div>

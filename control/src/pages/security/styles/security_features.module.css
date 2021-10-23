@@ -2,12 +2,16 @@
   margin-top: 20px;
 }
 
+
 .features {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 250px);
   justify-items: center;
-  max-width: 800px;
+  max-width: auto;
+  align-items: center;
+  justify-content: center;
   margin: auto;
+  grid-gap: 30px;
 }
 
 .feature {
@@ -15,16 +19,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 250px;
 }
 
 .feature p {
   text-align: center;
   font-weight: 600;
   font-family: 'Lato', sans-serif;
+  margin-top: 20px;
 }
 
 .feature img {
-  width: 120px;
+  width: 80px;
 }
 
 .banner {
@@ -54,7 +60,7 @@
 }
 
 .banner h2 {
-  font-size: 50px;
+  font-size: 40px;
   font-style: normal;
   font-weight: 700;
   line-height: 72px;
@@ -66,12 +72,34 @@
 .banner button {
   padding: 10px 40px;
   background: #fff;
-  font-size: 40px;
+  font-size: 20px;
   text-align: center;
   color: #00b87c;
   margin: auto;
   outline: none;
 }
+
+@media (max-width: 1350px) {
+  .features {
+  grid-template-columns: repeat(3, 250px);
+  
+  }
+}
+
+@media (max-width: 915px) {
+  .features {
+  grid-template-columns: repeat(2, 250px);
+  
+  }
+}
+
+@media (max-width: 800px) {
+  .features {
+  grid-template-columns: repeat(2, 250px);
+  
+  }
+}
+
 
 @media screen and (max-width: 660px) {
   .features {

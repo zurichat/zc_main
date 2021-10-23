@@ -43,6 +43,7 @@
 .hero {
   display: flex;
   padding: 7.5rem var(--page-pad-desk);
+  padding-bottom: 2rem;
 }
 .hero_left,
 .hero_right {
@@ -62,24 +63,24 @@
 .hero_heading {
   font-size: 2.5rem;
   font-weight: 700;
-  line-height: 62px;
+  line-height: 1;
   margin: 2rem 0 1rem 0;
 }
 .hero_p {
   font-size: 1.25rem;
   font-weight: 500;
-  line-height: 32px;
+  line-height: 2;
+}
+.hero_btn {
+  margin-top: 2rem;
 }
 .hero_left_btn {
   padding: 1rem 1.5rem;
   background-color: var(--primary-color);
   color: #ffffff;
-  margin-top: 2rem;
   font-size: 1rem;
   font-weight: 600;
-  line-height: 24px;
   border: none;
-  transition: 200ms;
   outline: none;
   cursor: pointer;
   border-radius: var(--radius);
@@ -133,12 +134,12 @@
 
 /* * FEATURES ----------------------------- */
 .features {
-  padding: 7.75rem var(--page-pad-desk);
+  padding: 2rem var(--page-pad-desk);
 }
 .ft_row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10rem;
+  margin-bottom: 4rem;
 }
 .ft_row:last-child {
   margin-bottom: 0;

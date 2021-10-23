@@ -1,0 +1,84 @@
+.modalContent {
+  padding: 30px 20px;
+  background-color: var(--bg-color);
+  display: block;
+  height: 100%;
+}
+
+.hrLine {
+  border: block;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  margin-left: 0px;
+  margin-right: auto;
+  border-style: none;
+  border-width: 1px;
+  width: 100%;
+}
+
+.labelTextHeader {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  color: "#242424";
+}
+
+.labelSubtext {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  color: "#1D1C1D";
+  margin-left: 10px;
+  margin-top: -15px;
+  margin-bottom: -20px;
+}
+
+.labelContainer {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.labelRadioButton {
+  padding: 15px 6px;
+  font-size: 13px;
+  display: flex;
+  flex-direction: row;
+  font-family: Lato;
+  margin-top: -15px;
+  margin-bottom: -20px;
+}
+
+.label_select_dropdown {
+  border: 1px solid #dde5e9;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.label_checkbox_button {
+  margin-right: 10px;
+}
+
+.hrLine {
+  border: 1px solid #f6f6f6;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  height: 0.5px;
+}
+
+.spacingRight {
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .modalContent {
+    max-width: 100%;
+    padding-bottom: 65px;
+  }
+  .spacingRight {
+    margin: 0;
+  }
+  .labelContainer {
+    margin-bottom: 20px;
+  }
+}

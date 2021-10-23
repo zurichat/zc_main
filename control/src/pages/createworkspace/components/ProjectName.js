@@ -4,8 +4,13 @@ import ProjectNameCSS from '../styles/ProjectName.module.css'
 import { Button } from './WorkspaceHome'
 import { Helmet } from 'react-helmet'
 
+import { createDefaultChannel } from "../../../api/channels"
+
+
 const ProjectName = ({ inputChangeHandler, value }) => {
   let match = useRouteMatch()
+
+  let newOrgId, channelName, member_id
 
   const [user, setUser] = useState(null)
   useEffect(() => {
@@ -13,7 +18,16 @@ const ProjectName = ({ inputChangeHandler, value }) => {
     if (user) {
       setUser(user)
     }
+    newOrgId = localStorage.getItem("currentWorkspace")
+    channelName = localStorage.getItem("input")
   }, [])
+
+  const setChannelName = () =>{
+    newOrgId = localStorage.getItem("currentWorkspace")
+    channelName = localStorage.getItem("input")
+    member_id = localStorage.getItem("member_id")
+    createDefaultChannel(newOrgId, channelName, member_id)
+  }
 
   return (
     <div>
@@ -46,6 +60,7 @@ const ProjectName = ({ inputChangeHandler, value }) => {
 
           <Link to={`${match.url}/step3`}>
             <Button
+              onClick={setChannelName}
               style={
                 value.length > 1
                   ? {

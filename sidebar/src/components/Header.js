@@ -2,20 +2,40 @@ import React, { useState } from "react"
 import styles from "../styles/Sidebar.module.css"
 import { MdKeyboardArrowDown } from "react-icons/md"
 import newMsgIcon from "../assets/icons/newMsgIcon.svg"
+import NewInviteModal from "./invite-workflow/newInviteModal/newInviteModal"
+import UserOrganization from "../../../control/src/pages/createworkspace/components/UserOrganization"
+import ModalComponent from "./ModalComponent"
+import themeColors from "../../../theming/themecolors"
 
 const SidebarHeader = props => {
   //home modal
   const [homeModal, toggleHomeModal] = useState(false)
+
+  const [openModal, setOpenModal] = useState(false)
 
   //toggle
   const toggle = () => {
     toggleHomeModal(!homeModal)
     document.removeEventListener("click", toggle)
   }
+
+  const showModal = () => {
+    setOpenModal(!openModal)
+  }
+
+  
+  // const theme = localStorage.getItem("theme")
+  // if (theme !== null || theme !== "") {
+  //   const sideBarHeader = document.getElementsByClassName("sidebar-header-div")
+  //   sideBarHeader[0].style.backgroundColor = themeColors[theme].secondary
+  // } else {
+  //   const sideBarHeader = document.getElementsByClassName("sidebar-header-div")
+  //   sideBarHeader[0].style.backgroundColor = "#00b87c"
+  // }
   return (
-    <div className={`${styles.subCon1}`}>
+    <div className={` ${styles.subCon1}`}>
       <div className={`row ${styles.orgDiv}`}>
-        <div className={`col-12 px-3 ${styles.orgInfo}`}>
+        <div className={`col-12 px-3 sidebar-header-div ${styles.orgInfo}`}>
           <div
             onClick={() => toggle()}
             className={`row p-0 ${styles.orgHeader}`}
@@ -24,9 +44,21 @@ const SidebarHeader = props => {
               {props.state.organization_info &&
                 props.state.organization_info.name}
             </span>
-            <span className={`col-4 p-0 ${styles.sidebar__header__arrow}`}>
-              <MdKeyboardArrowDown />
+            <span
+              className={`col-4 p-0 ${styles.sidebar__header__arrow}`}
+              onClick={() => showModal()}
+            >
+              <MdKeyboardArrowDown
+                className={`my-auto`}
+                style={{ color: `#fff` }}
+              />
             </span>{" "}
+            {/* {openModal && (
+              <NewInviteModal
+                openModal={openModal}
+                setOpenModal={setOpenModal}
+              />
+            )} */}
           </div>
           <div className={`row ${styles.newMessage}`}>
             <img
@@ -37,15 +69,16 @@ const SidebarHeader = props => {
           </div>
         </div>
         <div className={`col-12 px-3 ${styles.modalContainer}`}>
-          {/*
-
-                 <div className={`col-12 px-3 ${styles.odalContainer}`}>
+          {
+            <div className={`col-12 px-3 ${styles.odalContainer}`}>
               <ModalComponent
-                workSpace={org}
+                workSpace={UserOrganization}
                 isOpen={homeModal}
-                toggleOpenInvite={toggleOpenInvite}
+                toggleHomeModal={toggleHomeModal}
               />
             </div>
+            /*
+
 
             <Modall showDialog={showDialog} closeDialog={close} />
 
@@ -86,7 +119,8 @@ const SidebarHeader = props => {
               currentWorkspace={currentWorkspace}
               invSucc={InviteSuccess}
             />
-                  */}
+                  */
+          }
         </div>
       </div>
     </div>
