@@ -5,7 +5,7 @@ import { fetchUser } from "./utils/fetchUserDetails"
 import NewInviteModal from "./components/invite-workflow/newInviteModal/newInviteModal"
 import InviteResponseModal from "./components/invite-workflow/response-modal/responseModal"
 import InviteLoaderModal from "./components/invite-workflow/loader/loader"
-import themeColors from "../../theming/themecolors"
+import { themeColors } from "@zuri/utilities"
 
 export const ACTIONS = {
   ADD_USER_INFO: "add-user-info",
@@ -17,7 +17,7 @@ export const ACTIONS = {
   SHOW_MESSAGE: "",
   IS_OPEN: "is-open",
   IS_LOADING: "is-loading",
-  RESPONSE_MODAL: "response-modal",
+  RESPONSE_MODAL: "response-modal"
 }
 
 const insertSideBarData = (state, action) => {
@@ -99,16 +99,16 @@ function reducer(state = { sidebar: {} }, action) {
         showMessage: action.payload
       }
     case ACTIONS.IS_OPEN:
-      return{
+      return {
         ...state,
         isOpen: action.payload
       }
-      case ACTIONS.IS_LOADING:
+    case ACTIONS.IS_LOADING:
       return {
-        ...state, 
+        ...state,
         isLoading: action.payload
       }
-      case ACTIONS.RESPONSE_MODAL:
+    case ACTIONS.RESPONSE_MODAL:
       //set the modal to show(whether success or error modal)
       return {
         ...state,
@@ -122,11 +122,13 @@ function reducer(state = { sidebar: {} }, action) {
 export default function App() {
   const [state, dispatch] = useReducer(reducer, {})
   const theme = localStorage.getItem("theme")
-  if (theme !== null && theme !== ""){
-    const sideBar = document.getElementById("single-spa-application:@zuri/sidebar")
+  if (theme !== null && theme !== "") {
+    const sideBar = document.getElementById(
+      "single-spa-application:@zuri/sidebar"
+    )
     sideBar.style.backgroundColor = themeColors[theme]?.primary
   }
-  
+
   useEffect(() => {
     //Load user related information when component mounts
     fetchUser(dispatch)

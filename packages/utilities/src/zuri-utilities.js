@@ -1,5 +1,6 @@
 import axios from "axios"
 import Centrifuge from "centrifuge"
+import { themeColors as colors } from "./themecolors"
 
 let currentWorkspace = localStorage.getItem("currentWorkspace")
 let token = sessionStorage.getItem("token")
@@ -112,3 +113,5 @@ export const SubscribeToChannel = (plugin_id, callback) => {
 
 // Anything exported from this file is importable by other in-browser modules.
 export function publicApiFunction() {}
+
+export const themeColors = colors
