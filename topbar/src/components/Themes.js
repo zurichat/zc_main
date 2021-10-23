@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import styles from "../styles/Themes.module.css"
 import theme16 from "../assets/images/theme16.png"
 import theme17 from "../assets/images/theme17.png"
-import themeColors from "../../../theming/themecolors"
+import { themeColors } from "@zuri/utilities"
 
 const Themes = () => {
   const [active1, setActive1] = useState(0)
@@ -15,39 +15,55 @@ const Themes = () => {
     localStorage.setItem("mode", "dark")
     setDarkMode(!darkMode ? true : true)
     setMode("dark")
-    const sideBar =document.getElementById("single-spa-application:@zuri/sidebar")
+    const sideBar = document.getElementById(
+      "single-spa-application:@zuri/sidebar"
+    )
     sideBar.setAttribute("data-theme", "dark")
-    const topBar = document.getElementById("single-spa-application:@zuri/topbar")
+    const topBar = document.getElementById(
+      "single-spa-application:@zuri/topbar"
+    )
     topBar.setAttribute("data-theme", "dark")
-    const PrefMenu= document.getElementById("preferences-menu-container")
+    const PrefMenu = document.getElementById("preferences-menu-container")
     PrefMenu.setAttribute("data-theme", "dark")
-    const PrefMainBox= document.getElementById("preferences-main-box")
+    const PrefMainBox = document.getElementById("preferences-main-box")
     PrefMainBox.setAttribute("data-theme", "dark")
-    const MarketPlaceBox= document.getElementsByClassName("market-place-custom-div")
+    const MarketPlaceBox = document.getElementsByClassName(
+      "market-place-custom-div"
+    )
     MarketPlaceBox.setAttribute("data-theme", "dark")
   }
   const toggleLightMode = () => {
     localStorage.setItem("mode", "light")
     setDarkMode(darkMode ? false : false)
     setMode("light")
-    const sideBar =document.getElementById("single-spa-application:@zuri/sidebar")
+    const sideBar = document.getElementById(
+      "single-spa-application:@zuri/sidebar"
+    )
     sideBar.setAttribute("data-theme", "light")
-    const topBar = document.getElementById("single-spa-application:@zuri/topbar")
+    const topBar = document.getElementById(
+      "single-spa-application:@zuri/topbar"
+    )
     topBar.setAttribute("data-theme", "light")
-    const PrefMenu= document.getElementById("preferences-menu-container")
+    const PrefMenu = document.getElementById("preferences-menu-container")
     PrefMenu.setAttribute("data-theme", "light")
-    const PrefMainBox= document.getElementById("preferences-main-box")
+    const PrefMainBox = document.getElementById("preferences-main-box")
     PrefMainBox.setAttribute("data-theme", "light")
-    const MarketPlaceBox= document.getElementsByClassName("market-place-custom-div")
+    const MarketPlaceBox = document.getElementsByClassName(
+      "market-place-custom-div"
+    )
     MarketPlaceBox.setAttribute("data-theme", "dark")
   }
 
-  const handleThemeToggle = (theme) => {
+  const handleThemeToggle = theme => {
     localStorage.removeItem("theme")
     localStorage.setItem("theme", theme)
-    const sideBar =document.getElementById("single-spa-application:@zuri/sidebar")
+    const sideBar = document.getElementById(
+      "single-spa-application:@zuri/sidebar"
+    )
     sideBar.style.backgroundColor = themeColors[theme].primary
-    const topBar = document.getElementById("single-spa-application:@zuri/topbar")
+    const topBar = document.getElementById(
+      "single-spa-application:@zuri/topbar"
+    )
     topBar.style.backgroundColor = themeColors[theme].primary
     // const sideBarHeader = document.getElementsByClassName("sidebar-header-div")
     // sideBarHeader[0].style.backgroundColor = themeColors[theme].secondary
@@ -92,7 +108,9 @@ const Themes = () => {
   // })
 
   return (
-    <div className={styles.themeCont} /*data-theme={darkMode ? "dark" : "light"}*/>
+    <div
+      className={styles.themeCont} /*data-theme={darkMode ? "dark" : "light"}*/
+    >
       <div className={styles.title}>
         <div className={styles.them}>Themes</div>
         <div className={styles.text}>
@@ -128,7 +146,8 @@ const Themes = () => {
         </div>
       </div> */}
       <div className={styles.text2}>
-        Automatically switch between light and dark themes when your system does.
+        Automatically switch between light and dark themes when your system
+        does.
       </div>
       <div className={styles.img}>
         <div className={styles.up}>
@@ -191,7 +210,7 @@ const Themes = () => {
         <div className={styles.true}>Tried and true</div>
       </div>
       <div className={styles.set1}>
-        <div className={styles.activeAsh} >
+        <div className={styles.activeAsh}>
           <div className={styles.largeRec}>
             <div className={styles.large}></div>
           </div>
@@ -217,7 +236,10 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent}>
-            <div className={styles.radio8} onClick={handleThemeToggle.bind(this, "activeAsh")}>
+            <div
+              className={styles.radio8}
+              onClick={handleThemeToggle.bind(this, "activeAsh")}
+            >
               <input
                 name="theme"
                 type="radio"
@@ -231,7 +253,7 @@ const Themes = () => {
             <div className={styles.ash}>Active Ash</div>
           </div>
         </div>
-        <div className={styles.activeAsh2} >
+        <div className={styles.activeAsh2}>
           <div className={styles.largeRec2}>
             <div className={styles.large}></div>
           </div>
@@ -257,7 +279,10 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent2}>
-            <div className={styles.radio9} onClick={handleThemeToggle.bind(this, "peakyPurple")}>
+            <div
+              className={styles.radio9}
+              onClick={handleThemeToggle.bind(this, "peakyPurple")}
+            >
               <input
                 name="theme"
                 type="radio"
@@ -304,7 +329,10 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent3}>
-            <div className={styles.radio10} onClick={handleThemeToggle.bind(this, "leafyGreen")}>
+            <div
+              className={styles.radio10}
+              onClick={handleThemeToggle.bind(this, "leafyGreen")}
+            >
               <input
                 name="theme"
                 type="radio"
@@ -344,7 +372,10 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent4}>
-            <div className={styles.radio11} onClick={handleThemeToggle.bind(this, "darkAsh")}>
+            <div
+              className={styles.radio11}
+              onClick={handleThemeToggle.bind(this, "darkAsh")}
+            >
               <input
                 name="theme"
                 type="radio"
@@ -386,7 +417,10 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent5}>
-            <div className={styles.radio12} onClick={handleThemeToggle.bind(this, "oceanBlue")}>
+            <div
+              className={styles.radio12}
+              onClick={handleThemeToggle.bind(this, "oceanBlue")}
+            >
               <input
                 name="theme"
                 type="radio"
@@ -426,7 +460,10 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent6}>
-            <div className={styles.radio13} onClick={handleThemeToggle.bind(this, "roseRed")}>
+            <div
+              className={styles.radio13}
+              onClick={handleThemeToggle.bind(this, "roseRed")}
+            >
               <input
                 name="theme"
                 type="radio"
@@ -468,7 +505,10 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent7}>
-            <div className={styles.radio14} onClick={handleThemeToggle.bind(this, "goldenMelon")}>
+            <div
+              className={styles.radio14}
+              onClick={handleThemeToggle.bind(this, "goldenMelon")}
+            >
               <input
                 name="theme"
                 type="radio"
@@ -508,7 +548,10 @@ const Themes = () => {
             <div className={styles.small}></div>
           </div>
           <div className={styles.lowContent8}>
-            <div className={styles.radio15} onClick={handleThemeToggle.bind(this, "canary")}>
+            <div
+              className={styles.radio15}
+              onClick={handleThemeToggle.bind(this, "canary")}
+            >
               <input
                 name="theme"
                 type="radio"

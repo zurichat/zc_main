@@ -11,7 +11,7 @@ import { ProfileContext } from "./context/ProfileModal"
 import { TopbarContext } from "./context/Topbar"
 import { BaseInput } from "./TopBarIndex"
 import { authAxios } from "./utils/Api"
-import { GetUserInfo, SubscribeToChannel } from "@zuri/utilities"
+import { GetUserInfo, SubscribeToChannel, themeColors } from "@zuri/utilities"
 
 import Profile from "./components/Profile"
 import { BigModal } from "./components/bigModal"
@@ -26,13 +26,14 @@ import SearchAutocomplete from "../src/components/SearchAutocomplete"
 import zurichatlogo from "./assets/images/zurilogo.svg"
 import defaultAvatar from "./assets/images/avatar_vct.svg"
 import TopbarModal from "./components/TopbarModal"
-import themeColors from "../../theming/themecolors"
 import styles from "../src/styles/TopNavBar.module.css"
 
 const TopNavBar = () => {
   const theme = localStorage.getItem("theme")
   if (theme !== null || theme !== "") {
-    const topBar = document.getElementById("single-spa-application:@zuri/topbar")
+    const topBar = document.getElementById(
+      "single-spa-application:@zuri/topbar"
+    )
     topBar.style.backgroundColor = themeColors[theme]?.primary
   }
   const currentWorkspace = localStorage.getItem("currentWorkspace")
