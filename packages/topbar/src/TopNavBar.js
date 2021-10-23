@@ -17,7 +17,7 @@ import Profile from "./components/Profile"
 import { BigModal } from "./components/bigModal"
 import TopSearchBar from "./components/TopSearchBar"
 import TopBarSearchModal from "./components/TopBarSearchModal"
-import SearchAutocomplete from "../src/components/SearchAutocomplete"
+import SearchAutocomplete from "./components/SearchAutocomplete"
 // import HelpIcon from './assets/images/help-icon.svg'
 // import HelpModal from './components/HelpModal'
 // import UserForm from '../../control/src/pages/ReportFeature/User/Form'
@@ -26,7 +26,7 @@ import SearchAutocomplete from "../src/components/SearchAutocomplete"
 import zurichatlogo from "./assets/images/zurilogo.svg"
 import defaultAvatar from "./assets/images/avatar_vct.svg"
 import TopbarModal from "./components/TopbarModal"
-import styles from "../src/styles/TopNavBar.module.css"
+import styles from "./styles/TopNavBar.module.css"
 
 const TopNavBar = () => {
   const theme = localStorage.getItem("theme")
