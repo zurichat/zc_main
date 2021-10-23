@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import Logo from '../../../component-assets/zurilogoandtitle.svg'
+import Logo from '../../../assets/zurilogoandtitle.svg'
 import { useTranslation} from "react-i18next"
 
   

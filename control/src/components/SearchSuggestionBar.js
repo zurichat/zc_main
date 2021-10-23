@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styles from '../component-styles/SearchSuggestionBar.module.css'
-import cancel from '../component-assets/closedark.svg'
+import cancel from '../assets/closedark.svg'
 
 const sampleSuggestionArray = [
   'frequently asked questions',

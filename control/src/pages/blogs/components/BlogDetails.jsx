@@ -11,7 +11,7 @@ import axios from "axios"
 import archImage from "../assets/ZuriArch.jpg"
 import pluginImage from "../assets/ZuriPlugin.jpg"
 import loadingStyle from "../../../component-styles/LoginLoading.module.css"
-import logo from "../../../component-assets/zurilogo.svg"
+import logo from "../../../assets/zurilogo.svg"
 import parse from "html-react-parser"
 
 import {

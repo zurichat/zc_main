@@ -1,5 +1,5 @@
 import styles from './styles/CookiesSettings.module.css'
-import lockButton from '../../component-assets/lock.svg'
+import lockButton from '../../assets/lock.svg'
 import ToggleButton from './ToggleButton'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet'

@@ -2,22 +2,22 @@
 import React, { useState } from "react"
 import { Link, NavLink } from "react-router-dom"
 import headerStyles from "../component-styles/HeaderStyle.module.css"
-import zurichatlogo from "../component-assets/zurilogo.svg"
+import zurichatlogo from "../assets/zurilogo.svg"
 // import searchIcon from "../component-assets/searchIcon.svg"
 //import { Button } from '../pages/createworkspace/components/WorkspaceHome'
 import { useTranslation } from "react-i18next"
 import Modal from "react-bootstrap/Modal"
 
-import world from "../component-assets/language/world.png"
-import uk from "../component-assets/language/uk.png"
-import de from "../component-assets/language/de.png"
-import fr from "../component-assets/language/fr.png"
-import zh from "../component-assets/language/zh.png"
-import es from "../component-assets/language/es.png"
-import it from "../component-assets/language/it.png"
-import us from "../component-assets/language/us.png"
-import ar from "../component-assets/language/ar.png"
-import nl from "../component-assets/language/nl.png"
+import world from "../assets/language/world.png"
+import uk from "../assets/language/uk.png"
+import de from "../assets/language/de.png"
+import fr from "../assets/language/fr.png"
+import zh from "../assets/language/zh.png"
+import es from "../assets/language/es.png"
+import it from "../assets/language/it.png"
+import us from "../assets/language/us.png"
+import ar from "../assets/language/ar.png"
+import nl from "../assets/language/nl.png"
 
 const HeaderSearchSuggestion = () => {
   const { t } = useTranslation()

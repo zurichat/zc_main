@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom"
 import axios from "axios"
 // import {GetUserInfo} from '../../zuri-control'
 import { SignoutStyleWrapper } from "../../component-styles/SignoutStyle"
-import logo from "../../component-assets/zuri.svg"
+import logo from "../../assets/zuri.svg"
 import { Helmet } from "react-helmet"
 import "../../i18n";
 import { useTranslation} from "react-i18next";

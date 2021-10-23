@@ -1,13 +1,13 @@
 import React from 'react'
 import styles from '../styles/SectionFour.module.css'
-import logo from '../../../component-assets/zurichatlogo.svg'
-import divider from '../../../component-assets/divider.svg'
-import resource from '../../../component-assets/resourceimage4a.png'
-import getApp from '../../../component-assets/getApp.svg'
-import facebook from '../../../component-assets/facebook-icon.svg'
-import instagram from '../../../component-assets/instagram-icon.svg'
-import twitter from '../../../component-assets/twitter-icon.svg'
-import youtube from '../../../component-assets/youtube-icon.svg'
+import logo from '../../../assets/zurichatlogo.svg'
+import divider from '../../../assets/divider.svg'
+import resource from '../../../assets/resourceimage4a.png'
+import getApp from '../../../assets/getApp.svg'
+import facebook from '../../../assets/facebook-icon.svg'
+import instagram from '../../../assets/instagram-icon.svg'
+import twitter from '../../../assets/twitter-icon.svg'
+import youtube from '../../../assets/youtube-icon.svg'
 
 function SectionFour() {
   let productList = ['Features', 'Integrations', 'Enterprise', 'Solution']

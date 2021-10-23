@@ -1,7 +1,7 @@
 import { withRouter, useParams, useHistory } from "react-router-dom"
 import { useState} from "react"
 import styles from "../../component-styles/Signout.module.css"
-import logo from "../../component-assets/zuri.svg"
+import logo from "../../assets/zuri.svg"
 import axios from "axios"
 import { Helmet } from "react-helmet"
 import AuthInputBox from "../../components/AuthInputBox"

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import headerStyles from "../../styles/Header.module.css"
 import styles from "../../styles/marketplace.module.css"
-import ZuriChatLogo from "../../../../component-assets/zurichatlogo.png"
+import ZuriChatLogo from "../../../../assets/zurichatlogo.png"
 
 const MarketplaceHeader = () => {
   let currentWorkspace = localStorage.getItem("currentWorkspace")

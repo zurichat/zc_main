@@ -1,8 +1,8 @@
 import { useMarketPlaceContext } from '../../../../context/MarketPlace.context'
 import { setPluginId } from '../../../../context/marketplace/marketplace.action'
 import styles from '../../styles/marketplace.module.css'
-import zuriChatLogo from '../../../../component-assets/zurichatlogo.svg'
-import DownloadIcon from '../../../../component-assets/DownloadIcon.svg'
+import zuriChatLogo from '../../../../assets/zurichatlogo.svg'
+import DownloadIcon from '../../../../assets/DownloadIcon.svg'
 
 export const PluginCard = ({ pluginData, installed, setIsUninstall }) => {
   const marketplaceContext = useMarketPlaceContext()

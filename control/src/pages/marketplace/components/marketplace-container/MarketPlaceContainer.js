@@ -7,9 +7,9 @@ import { Modal, Spinner } from "react-bootstrap"
 
 import  { PluginCard } from "../plugins-card/PluginCard"
 import styles from "../../styles/marketplace.module.css"
-import zuriChatLogo from "../../../../component-assets/zurichatlogo.svg"
-import SuccessMarkIcon from "../../../../component-assets/success-mark.svg"
-import ErrorMarkIcon from "../../../../component-assets/error-mark.svg"
+import zuriChatLogo from "../../../../assets/zurichatlogo.svg"
+import SuccessMarkIcon from "../../../../assets/success-mark.svg"
+import ErrorMarkIcon from "../../../../assets/error-mark.svg"
 import { useMarketPlaceContext } from "../../../../context/MarketPlace.context"
 import {
   setPluginId,

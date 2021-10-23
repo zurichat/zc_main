@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Logo from '../../component-assets/zuri.svg'
-import authBg from '../../component-assets/backg.svg'
+import Logo from '../../assets/zuri.svg'
+import authBg from '../../assets/backg.svg'
 import { withRouter, useLocation } from 'react-router-dom'
 import AuthInputBox from '../../components/AuthInputBox'
 import styles from '../../component-styles/ResetPassword.module.css'

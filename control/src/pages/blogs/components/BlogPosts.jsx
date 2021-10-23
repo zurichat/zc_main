@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import style from "../Style/style.module.css"
 import loadingStyle from "../../../component-styles/LoginLoading.module.css"
-import logo from "../../../component-assets/zurilogo.svg"
+import logo from "../../../assets/zurilogo.svg"
 import first from "../assets/Card1.png"
 import second from "../assets/Card2.png"
 import axios from "axios"

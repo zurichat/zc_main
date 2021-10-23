@@ -1,6 +1,6 @@
 import { useState } from "react"
-import authBg from "../../component-assets/backg.svg"
-import Logo from "../../component-assets/zuri.svg"
+import authBg from "../../assets/backg.svg"
+import Logo from "../../assets/zuri.svg"
 import AuthInputBox from "../../components/AuthInputBox"
 import Button from "../../components/Button"
 import styles from "../../component-styles/ResetPassword.module.css"

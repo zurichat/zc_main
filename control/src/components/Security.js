@@ -1,8 +1,8 @@
 import styles from '../component-styles/Security.module.css'
-import padlock from '../component-assets/padlock.png'
-import padlockSVG from "../component-assets/padlock.svg"
-import dataProtectionIcon from "../component-assets/data-protection.svg"
-import approvedIcon from "../component-assets/approved.svg"
+import padlock from '../assets/padlock.png'
+import padlockSVG from "../assets/padlock.svg"
+import dataProtectionIcon from "../assets/data-protection.svg"
+import approvedIcon from "../assets/approved.svg"
 
 function Security() {
   return (

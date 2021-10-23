@@ -1,10 +1,10 @@
 import { useState, useContext } from "react"
 import { TopbarContext } from "../context/Topbar"
 import { connect } from "react-redux"
-import zurichatlogo from "../component-assets/zurilogo.svg"
+import zurichatlogo from "../assets/zurilogo.svg"
 import styled from "styled-components"
 import { BaseInput } from "."
-import userAvatar from "../component-assets/user.svg"
+import userAvatar from "../assets/user.svg"
 // import TopbarModal from '../components/TopbarModal.js'
 
 const TopNavBar = ({ userProfile: { last_name, first_name } }) => {

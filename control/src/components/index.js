@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import errImg from '../component-assets/errImg.svg'
-import arrowDown from '../component-assets/arrow-down.svg'
+import errImg from '../assets/errImg.svg'
+import arrowDown from '../assets/arrow-down.svg'
 import '../component-styles/master.css'
 // import Toggle from '../verified/toggle'
 import { useState } from 'react'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
 import TopNavBar from '../components/TopNavBar'
-import userAvatar from '../component-assets/user.svg'
+import userAvatar from '../assets/user.svg'
 
 // Input tag
 const Input = ({

@@ -1,6 +1,6 @@
 import React from "react"
 import styles from "./styles/Cookie.module.css"
-import cookie from "../../component-assets/cookie.svg"
+import cookie from "../../assets/cookie.svg"
 import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 
