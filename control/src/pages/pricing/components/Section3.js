@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom'
 import styles from '../styles/Section3.module.css'
+import "../../../i18n"
+import { useTranslation} from "react-i18next"
 
 function Section3() {
+  const { t } = useTranslation()
+
   return (
     <section
       id="security-assurance"
@@ -10,17 +14,16 @@ function Section3() {
       <div className={styles.container}>
         <header>
           <h2 className={`${styles.textHead}`}>
-            Leading the way in enterprise security
+          {t("pricing.sectionThree.headline")}
           </h2>
         </header>
 
         <p>
-          In addition to encryption in transit and at rest, we operate
-          comprehensive compliance ans assurance programs.
+        {t("pricing.sectionThree.description")}
         </p>
 
         <Link className={styles.textLink} to="./security">
-          Learn more about security
+        {t("pricing.sectionThree.link")}
         </Link>
       </div>
     </section>

@@ -56,11 +56,15 @@
   color: white;
 }
 .buttonFilled:hover {
-  transition: background 350ms;
+  transition: background .5s;
   background: #00b87c;
   color: white;
   outline: 1px solid white;
 }
+.buttonFilled:hover a {
+  color: white;
+}
+
 .buttonOutline {
   padding: 12px 18px;
   background: #00b87c;
@@ -71,6 +75,10 @@
 .buttonOutline:hover {
   transition: background 350ms;
   background: white;
+  color: #00b87c;
+}
+
+.buttonOutline:hover a {
   color: #00b87c;
 }
 .buttonSection > .button > .a {
@@ -109,6 +117,11 @@
   }
 }
 @media (max-width: 35rem) {
+
+  .message_box {
+    clip-path: ellipse(95% 100% at center top);
+  }
+
   .message_box {
     padding: 22px;
     height: 180px;

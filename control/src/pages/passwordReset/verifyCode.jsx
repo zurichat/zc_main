@@ -7,6 +7,8 @@ import axios from "axios"
 import Button from "../../components/Button"
 import styles from "../../component-styles/ResetPassword.module.css"
 import okayimage from "../signup/email-verify/assets/okayimage.svg"
+import "../../i18n";
+import { useTranslation} from "react-i18next";
 
 export default function VerifyResetCode() {
   const [success, setsuccess] = useState(false)
@@ -29,13 +31,16 @@ export default function VerifyResetCode() {
       setsuccess(false)
     }
   }
+
+  const { t } = useTranslation();
+
   return (
     <Overlay>
       <Content>
         {!success ? (
           <div>
             <h1 style={{ textAlign: "center" }}>
-              Enter the reset code sent to your mail
+             {t("auth.verifyCodeOnPasswordReset.header")}
             </h1>
             <CodeInput
               length={6}
@@ -47,12 +52,12 @@ export default function VerifyResetCode() {
         ) : (
           <Successdiv style={{ textAlign: "center" }}>
             <img src={okayimage} alt="zurichat logo" className={styles.img} />
-            <h2>Reset Code Verification Successful!</h2>
-            <p>Click on the Button to continue</p>
+            <h2>{t("auth.verifyCodeOnPasswordReset.success.headline")}</h2>
+            <p>{t("auth.verifyCodeOnPasswordReset.success.post_headline")}</p>
             <Button
               onClick={() => history.push(`/change-password?code=${code}`)}
             >
-              Continue
+              {t("auth.verifyCodeOnPasswordReset.success.continueButton")}
             </Button>
           </Successdiv>
         )}
@@ -72,13 +77,13 @@ const Overlay = styled(DialogOverlay)`
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 3rem 10rem;
+  padding: 3rem 2rem;
 `
 const Content = styled(DialogContent)`
   position: relative;
   background: white;
   // width: 100%;
-  height: 100%;
+  height: 80%;
   padding: 2rem;
   display: flex;
   justify-content: center;
