@@ -1,4 +1,4 @@
-import usergroupimg from '../admin/Settings/assets/usergroups.png'
+import usergroupimg from '../../assets/usergroups.png'
 import usergroups from '../admin/Settings/styles/usergroups.module.css'
 import {Link} from 'react-router-dom'
 import AdminSettings from '.'

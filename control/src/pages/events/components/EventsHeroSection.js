@@ -1,6 +1,6 @@
 import React from 'react'
 import eventsStyles from '../styles/events.module.css'
-import events_hero from '../assets/events-hero-img.png'
+import events_hero from '../../../assets/events-hero-img.png'
 const EventsHeroSection = () => {
   return (
     <div className={eventsStyles.heroSection}>

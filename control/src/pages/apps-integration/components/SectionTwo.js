@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../styles/SectionTwo.module.css'
 import Categories from './Categories'
-import TrelloImg from '../assets/trello.svg'
+import TrelloImg from '../../../assets/trello.svg'
 
 const SectionTwo = () => {
   const Card = () => {

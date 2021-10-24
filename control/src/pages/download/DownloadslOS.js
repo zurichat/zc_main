@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import downloadStyles from './styles/DownloadsIOS.module.css'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
-import AppStorelogo from './assets/appstore.png'
-import PhoneDM from './assets/PhoneDM.png'
-import PhoneChannel from './assets/PhoneChannels.png'
+import AppStorelogo from '../../assets/appstore.png'
+import PhoneDM from '../../assets/PhoneDM.png'
+import PhoneChannel from '../../assets/PhoneChannels.png'
 import fetchInstall from './utils/index'
 import { useTranslation} from "react-i18next"
 

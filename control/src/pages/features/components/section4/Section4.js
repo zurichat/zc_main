@@ -1,5 +1,5 @@
 import styles from '../../styles/Section4.module.css'
-import chessboard from '../../assets/chessboard_image.svg'
+import chessboard from '../../../../assets/chessboard_image.svg'
 const Section4 = () => {
   return (
     <div className={styles.section4}>

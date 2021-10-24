@@ -1,7 +1,7 @@
-import article from '../../assets/animated_avatar_icon.svg'
-import article2 from '../../assets/company_file_icon.svg'
-import article3 from '../../assets/accessibility_icon.svg'
-import article4 from '../../assets/company_goal_icon.svg'
+import article from '../../../../assets/animated_avatar_icon.svg'
+import article2 from '../../../../assets/company_file_icon.svg'
+import article3 from '../../../../assets/accessibility_icon.svg'
+import article4 from '../../../../assets/company_goal_icon.svg'
 
 export const Features = [
   {

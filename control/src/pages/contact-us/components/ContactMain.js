@@ -1,5 +1,5 @@
 import contactStyle from '../styles/contactMain.module.css'
-import ContactUs from './ContactUsImg.svg'
+import ContactUs from '../../../assets/ContactUsImg.svg'
 import FAQselected from './FAQSelected.js'
 import DiscoverMore from './DiscoverMore'
 

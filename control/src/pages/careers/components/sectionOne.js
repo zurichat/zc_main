@@ -3,11 +3,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from '../styles/sectionOne.module.css'
 // import image from '../assets/section_one_image.svg'
-import person1 from '../assets/person1.svg'
-import person2 from '../assets/person2.svg'
-import person3 from '../assets/person3.svg'
-import person4 from '../assets/person4.svg'
-import groupImage from '../assets/group_image_sectionOne.svg';
+import person1 from '../../../assets/person1 (2).svg'
+import person2 from '../../../assets/person2 (2).svg'
+import person3 from '../../../assets/person3.svg'
+import person4 from '../../../assets/person4.svg'
+import groupImage from '../../../assets/group_image_sectionOne.svg';
 import { useTranslation} from "react-i18next";
 
 

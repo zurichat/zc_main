@@ -3,7 +3,7 @@ import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import styles from "./styles/demo-page.module.css"
 import DemoForm from "./components/book-demo-form"
-import BookDemoImg from "./assets/here-to-help.png"
+import BookDemoImg from "../../assets/here-to-help.png"
 import DemoSignUp from "./components/demo-signup"
 
 const BookDemo = () => {

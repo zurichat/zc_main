@@ -1,11 +1,11 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import style from '../Style/style.module.css'
-import first from '../assets/ZuriChatBlogStater.png'
-import Clock from '../assets/clock-black.svg'
-import link from '../assets/link-black.svg'
-import archImage from '../assets/ZuriArch.jpg'
-import pluginImage from '../assets/ZuriPlugin.jpg'
+import first from '../../../assets/ZuriChatBlogStater.png'
+import Clock from '../../../assets/clock-black.svg'
+import link from '../../../assets/link-black.svg'
+import archImage from '../../../assets/ZuriArch.jpg'
+import pluginImage from '../../../assets/ZuriPlugin.jpg'
 
 import {
   UilFacebookF,

@@ -2,8 +2,8 @@ import React from 'react'
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import styles from "../ebooks/styles/ebooks.module.css"
-import img1 from './assets/img1.jpg'
-import img2 from './assets/img2.jpg'
+import img1 from '../../assets/img1.jpg'
+import img2 from '../../assets/img2.jpg'
 
 
 

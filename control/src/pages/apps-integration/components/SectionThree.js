@@ -1,5 +1,5 @@
 import React from 'react'
-import meet from '../assets/meet.svg'
+import meet from '../../../assets/meet.svg'
 import styles from '../styles/SectionThree.module.css'
 import { BiChevronRight, BiChevronLeft } from 'react-icons/bi'
 

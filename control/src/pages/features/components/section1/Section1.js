@@ -1,5 +1,5 @@
 import styles from '../../styles/Section1.module.css'
-import heroImage from '../../assets/feature_hero_image.svg'
+import heroImage from '../../../../assets/feature_hero_image.svg'
 
 const Section1 = () => {
   return (

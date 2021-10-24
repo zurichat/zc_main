@@ -2,12 +2,12 @@ import { authAxios } from "./Api"
 import styles from "../styles/paymentMethod.module.css"
 
 // images
-import mastercard from "../assets/Mastercard.svg"
-import jcb from "../assets/jcb.svg"
-import visa from "../assets/visa.svg"
-import amex from "../assets/american-express.svg"
-import dinner from "../assets/dinners-club.svg"
-import discover from "../assets/discover.svg"
+import mastercard from "../../../assets/Mastercard.svg"
+import jcb from "../../../assets/jcb.svg"
+import visa from "../../../assets/visa.svg"
+import amex from "../../../assets/american-express.svg"
+import dinner from "../../../assets/dinners-club.svg"
+import discover from "../../../assets/discover.svg"
 
 // return the token from the session storage
 export const getToken = () => {

@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import RightArrow from "../assets/right-arrow.png"
-import ZuriLogo from "../assets/zuri.png"
+import RightArrow from "../../../assets/right-arrow.png"
+import ZuriLogo from "../../../assets/zuri.png"
 const UserOrganization = ({ organizations, user }) => {
   return (
     <BottomSection>

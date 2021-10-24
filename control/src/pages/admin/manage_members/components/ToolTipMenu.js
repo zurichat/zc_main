@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../styles/OptionsPopUp.module.css'
-import OptionsIcon from '../icons/three-dots.svg';
+import OptionsIcon from '../../../../assets/three-dots.svg';
 import { ToolTipController, Select } from 'react-tooltip-controller'
 import OptionsPopUp from './OptionsPopUp';
 // import styles1 from '../styles/ToolTipComponent.module.css';

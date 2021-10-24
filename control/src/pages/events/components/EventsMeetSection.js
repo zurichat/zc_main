@@ -1,8 +1,8 @@
 import React from 'react'
 import eventsStyles from '../styles/events.module.css'
-import events_meet from '../assets/events-meet-display-img.jpg'
-import zurilogo from '../assets/zuri-logo.png'
-import arrow from '../assets/arrow-right.png'
+import events_meet from '../../../assets/events-meet-display-img.jpg'
+import zurilogo from '../../../assets/zuri-logo.png'
+import arrow from '../../../assets/arrow-right (2).png'
 
 const EventsMeetSection = () => {
   return (

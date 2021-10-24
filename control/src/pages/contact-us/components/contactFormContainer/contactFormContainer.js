@@ -3,10 +3,10 @@ import ContactFormStyle from '../../styles/contactFormContainer.module.css'
 import detailsData from './detailsArray'
 import axios from 'axios'
 import { useDropzone } from 'react-dropzone'
-import Alert from '../../assets/alert-circle.svg'
+import Alert from '../../../../assets/alert-circle.svg'
 import { GetUserInfo } from '../../../../zuri-control'
-import downIcon from '../../assets/chevron-down.svg'
-import arrowRight from '../../assets/arrow-right.svg'
+import downIcon from '../../../../assets/chevron-down.svg'
+import arrowRight from '../../../../assets/arrow-right.svg'
 
 const activeStyle = {
   borderColor: '#2196f3'

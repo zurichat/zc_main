@@ -1,7 +1,7 @@
 import React from 'react'
 import style from '../Style/style.module.css'
-import first from '../assets/Card1.png'
-import second from '../assets/Card2.png'
+import first from '../../../assets/Card1.png'
+import second from '../../../assets/Card2.png'
 
 const relatedArticles = () => {
   return (

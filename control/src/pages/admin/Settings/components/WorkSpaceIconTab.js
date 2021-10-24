@@ -5,7 +5,7 @@ import ReactCrop from "react-image-crop"
 import "react-image-crop/dist/ReactCrop.css"
 import LogoCrop from "./LogoCrop"
 import LogoAlert from "./LogoAlert"
-import defaultAvatar from "../../assets/HNG-icon.svg"
+import defaultAvatar from "../../../../assets/HNG-icon.svg"
 import {
   WorkSPaceLogoContainer,
   WorkSpaceDetailContainer,

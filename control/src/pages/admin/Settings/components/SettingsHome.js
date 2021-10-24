@@ -8,7 +8,7 @@ import { FaMagic } from "react-icons/fa"
 import { getUser } from "../../Utils/Common"
 // import
 import AdminSettings from "../../."
-import right_caret from "../../assets/cheveron-right.svg"
+import right_caret from "../../../../assets/cheveron-right.svg"
 import classes from "../styles//SettingsHome.module.css"
 import {GoPlug} from 'react-icons/go'
 

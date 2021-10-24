@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Helmet } from 'react-helmet'
 import AdminSettings from '../..'
 import styles from "../styles/changeworkspacename.module.css";
-import Logo  from '../../assets/default.svg'
+import Logo  from '../../../../assets/default.svg'
 import axios from 'axios'
 import { Link } from "react-router-dom"
 

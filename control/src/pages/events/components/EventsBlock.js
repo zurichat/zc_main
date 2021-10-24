@@ -1,5 +1,5 @@
 import eventsStyles from '../styles/events.module.css'
-import arrow_right from '../assets/arrow-right.png'
+import arrow_right from '../../../assets/arrow-right.png'
 const EventsBlock = props => {
   const eventsTitle = props.eventsTitle
   const eventsDuration = props.eventsDuration

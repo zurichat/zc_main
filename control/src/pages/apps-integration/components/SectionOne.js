@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import Circle from '../assets/circle.svg'
-import CircleDot from '../assets/circleDot.svg'
+import Circle from '../../../assets/circle.svg'
+import CircleDot from '../../../assets/circleDot.svg'
 import SectionOneStyles from '../styles/SectionOne.module.css'
 
 function App() {

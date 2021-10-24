@@ -4,10 +4,10 @@ import styles from "../styles/adminHead.module.css"
 import { Link } from "react-router-dom"
 
 // icons
-import zuriLogo from "../assets/zuriLogo.svg"
-import grid from "../assets/grid.svg"
-import bouy from "../assets/bouy.svg"
-import la_rocket from "../assets/la_rocket.svg"
+import zuriLogo from "../../../assets/zurilogo.svg"
+import grid from "../../../assets/grid.svg"
+import bouy from "../../../assets/bouy.svg"
+import la_rocket from "../../../assets/la_rocket.svg"
 import { getCurrentWorkspace } from "../Utils/Common"
 import { authAxios } from "../Utils/Api"
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import OptionsIcon from '../icons/three-dots.svg';
+import OptionsIcon from '../../../../assets/three-dots.svg';
 import styles from '../styles/Members.module.css'
-import AvatarIcon from '../icons/avatar.png'
+import AvatarIcon from '../../../../assets/avatar.png'
 import ToolTipMenu from './ToolTipMenu';
 
 

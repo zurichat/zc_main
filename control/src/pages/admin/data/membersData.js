@@ -1,5 +1,5 @@
-import person1 from '../assets/person1.png'
-import person2 from '../assets/person2.png'
+import person1 from '../../../assets/person1.png'
+import person2 from '../../../assets/person2.png'
 
 export const joiningPeriod = [
   {

@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react'
 
 import Cleave from 'cleave.js/react'
 
-import cardBack from '../assets/cardBack.svg'
+import cardBack from '../../../assets/cardBack.svg'
 
 import styles from '../styles/paymentMethod.module.css'
 import CardList from './CardLists'
