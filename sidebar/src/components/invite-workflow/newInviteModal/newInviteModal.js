@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { ACTIONS } from "../../../App"
 import useClickOutside from "../customHooks/useClickOutside"
-import cancel from "./assets/cancel.svg"
+import cancel from "../../../assets/cancel.svg"
 import { sendInviteAPI } from "./new-invite.utils"
 
 const Container = styled.div`
