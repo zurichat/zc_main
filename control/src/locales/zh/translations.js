@@ -697,6 +697,31 @@ export const TRANSLATIONS_ZH = {
       download_ios: "为 Mac 下载？"
     }
   },
+  
+  
+   // Workspace Page
+ workspace:{
+  title: {
+    workspace :"工作区 - Zuri 聊天"
+  },
+
+  space:{
+    headline: "选择工作区",
+    post_headline: "欢迎回来！选择一个重新与您的团队合作",
+    join_line: "想与另一个小组合作吗？或负责并开始自己的团队",
+    joinbtn: "创建工作区",
+    foot_head: "没有看到您的工作区？",
+    foot_link: "尝试其他电子邮件",
+    open: "打开",
+    selected: "选中",
+    errno: "四百〇一",
+    errmsg: "您还没有登录！",
+    errlink: "这里登录。",
+    err_no: "四百〇四",
+    err_msg: "哎呀！出事了！去",
+    err_link: "zuri.chat"
+  }
+},  
 
   //Why Zuri Page
   why_zuri_chat: {
