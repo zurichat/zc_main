@@ -1,5 +1,5 @@
 import styles from "./EmojiCard.module.css"
-import newEmoji from "../HoverItems/assets/new_emoji.svg"
+import newEmoji from "../../../../../assets/new_emoji.svg"
 
 export default function EmojiCard({ emojiObject, emojiSvg, currentUserId }) {
   let indexOfCurrentUser = -1

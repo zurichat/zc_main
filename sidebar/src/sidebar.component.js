@@ -1,14 +1,10 @@
 import { useState, useEffect, Fragment } from "react"
 import styles from "./styles/Sidebar.module.css"
-import DropDown from "./components/Drop"
 
-import threadIcon from "./assets/icons/thread-icon.svg"
-import dmIcon from "./assets/icons/dm-icon.svg"
-import draftIcon from "./assets/icons/draft-icon.svg"
-import filesIcon from "./assets/icons/files-icon.svg"
-import pluginIcon from "./assets/icons/plugin-icon.svg"
-import infoIcon from "./assets/icons/info-icon.svg"
-import addIcon from "./assets/icons/add-icon.svg"
+import threadIcon from "./assets/thread-icon.svg"
+import dmIcon from "./assets/dm-icon.svg"
+import draftIcon from "./assets/draft-icon.svg"
+import pluginIcon from "./assets/plugin-icon.svg"
 
 import { SubscribeToChannel } from "@zuri/control"
 import { ACTIONS } from "./App"
