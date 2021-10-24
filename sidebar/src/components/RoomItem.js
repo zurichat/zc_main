@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react"
 import styles from "../styles/Drop.module.css"
-import hash from "../assets/icons/hash.svg"
+import hash from "../assets/hash.svg"
 import { navigateToUrl } from "single-spa"
 import Badge from "./badge"
 import RoomOptions from "./RoomOptions"
@@ -82,7 +82,12 @@ const RoomItem = ({ room, baseUrl }) => {
         </div>
       </a>
       <div className={`${styles.optionsContainer}`}>
-        <RoomOptions room={room} baseUrl={baseUrl} isClicked={isClicked} position={position} />
+        <RoomOptions
+          room={room}
+          baseUrl={baseUrl}
+          isClicked={isClicked}
+          position={position}
+        />
       </div>
     </li>
   )

@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styles from "../styles/Sidebar.module.css"
-import addIcon from "../assets/icons/add-icon.svg"
+import addIcon from "../assets/add-icon.svg"
 import { ACTIONS } from "../App"
 import { AiOutlinePlus } from "react-icons/ai"
 
