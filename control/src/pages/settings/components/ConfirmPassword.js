@@ -8,8 +8,8 @@ import styles from "../styles/confirmPassword.module.css"
 import FormMessage from "./FormMessage"
 
 //Icons
-import successIcon from "../assets/bx-success.svg"
-import errorIcon from "../assets/bx-error.svg"
+import successIcon from "../../../assets/bx-success.svg"
+import errorIcon from "../../../assets/bx-error.svg"
 
 import { getToken, getUser, isLength, isMatch } from "../Utils/Common"
 

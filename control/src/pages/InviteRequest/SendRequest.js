@@ -1,8 +1,8 @@
 import React from 'react'
 import { Navbar } from 'react-bootstrap'
-import cancel from './assets/cancel.png'
-import shape from './assets/shape.png'
-import add from './assets/add.png'
+import cancel from '../../assets/cancel.png'
+import shape from '../../assets/shape.png'
+import add from '../../assets/add.png'
 import styles from './styles/SendRequest.module.css'
 import { Helmet } from 'react-helmet'
 

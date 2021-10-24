@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from '../style/workspace.module.css'
-import FemaleSprite from '../assets/jw_female.svg'
+import FemaleSprite from '../../../assets/jw_female.svg'
 
 import { useTranslation} from "react-i18next"
 

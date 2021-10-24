@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Dropdown from '../assets/dropdown.svg'
+import Dropdown from '../../../assets/dropdown (2).svg'
 
 const Select = ({ label, value, children, ...delegated }) => {
   const childArray = React.Children.toArray(children)

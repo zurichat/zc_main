@@ -4,7 +4,7 @@ import styles from "../styles/AllSessionSignOut.module.css"
 import SignOutActionList from "./SignOutActionList"
 import SettingsNav from "./SettingsNav"
 import FormMessage from "./FormMessage"
-import boxArrow from "./../box-arrow-right.svg"
+import boxArrow from "../../../assets/box-arrow-right.svg"
 import errorIcon from "../../../assets/icons/bx-error.svg"
 import axios from "axios"
 

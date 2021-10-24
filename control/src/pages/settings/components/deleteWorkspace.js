@@ -1,5 +1,5 @@
 import classes from '../styles/deleteWorkspace.module.css'
-import del from '../assets/delete.svg'
+import del from '../../../assets/delete.svg'
 import { Link } from 'react-router-dom'
 const DeleteWorkspace = () => {
   const mainName = 'HNGi8'

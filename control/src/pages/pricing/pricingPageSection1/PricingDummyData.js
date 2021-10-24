@@ -1,4 +1,4 @@
-import checkmark from "../assets/checkmark.svg"
+import checkmark from "../../../assets/checkmark (2).svg"
 
 export const en_Pricing = [
   {

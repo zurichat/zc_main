@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import { Overlay, Content } from '../../../components'
-import Close from '../assets/Close.svg'
+import Close from '../../../assets/Close.svg'
 import Select from './Select'
 import UnstyledButton from './UnstyledButton'
 const InviteUserRequest = () => {

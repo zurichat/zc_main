@@ -2,11 +2,11 @@ import React, { useState } from "react"
 import Style from "../styles/content.module.css"
 import Link from "../../../components/Link"
 // import CustomLinks from "./contentData"
-import UserTerms from "../assets/user-grid.png"
-import Security from "../assets/security1.png"
-import Overview from "../assets/hg.png"
-import Policy from "../assets/acceptable-use-policy.png"
-import Arrow from "../assets/arrow-right.svg"
+import UserTerms from "../../../assets/user-grid.png"
+import Security from "../../../assets/security1.png"
+import Overview from "../../../assets/hg.png"
+import Policy from "../../../assets/acceptable-use-policy.png"
+import Arrow from "../../../assets/arrow-right.svg"
 
 const Content = () => {
   const [openMenu, setOpenMenu] = useState(false)

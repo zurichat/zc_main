@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styles from "./NewPricingSection.module.css"
-import checkMark from "../assets/checkmark.svg"
+import checkMark from "../../../assets/checkmark (2).svg"
 // import { Pricing, plans, features } from "./PricingDummyData"
 import { Link } from "react-router-dom"
 import { useTranslation} from "react-i18next"

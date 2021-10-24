@@ -2,7 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 
 import styles from "./styles/weeklySummary.modules.css"
-import logo from "./assets/logo.svg"
+import logo from "../../assets/logo.svg"
 
 const WeeklySummary = () => {
   return (

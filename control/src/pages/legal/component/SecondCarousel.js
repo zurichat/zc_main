@@ -9,10 +9,10 @@ import {
   MDBContainer
 } from 'mdbreact'
 import styles from '../styles/about.module.css'
-import user from '../asset/user 2.svg'
-import group from '../asset/Group.svg'
-import vector from '../asset/Vector.svg'
-import user2 from '../asset/user 2-1.svg'
+import user from '../../../assets/user 2.svg'
+import group from '../../../assets/Group.svg'
+import vector from '../../../assets/Vector.svg'
+import user2 from '../../../assets/user 2-1.svg'
 
 const CarouselPage = () => {
   return (

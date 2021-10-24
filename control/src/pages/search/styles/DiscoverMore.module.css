@@ -1,6 +1,6 @@
 .container {
   height: 346px;
-  background: url('../assets/discover.svg');
+  background: url('../../../assets/discover.svg');
   width: 100%;
   background-size: contain;
   background-position: center;
@@ -47,7 +47,7 @@
 }
 @media screen and (max-width: 500px) {
   .container {
-    background: url('../assets/discover-mobile.svg');
+    background: url('../../../assets/discover-mobile.svg');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

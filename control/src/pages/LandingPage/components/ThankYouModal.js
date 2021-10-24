@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react"
 import css from "./styles/thankYouModal.module.css"
-import modal_img1 from "./assets/modal-email-icon.svg"
+import modal_img1 from "../../../assets/modal-email-icon.svg"
 // import axios from 'axios'
 
 const ThankYouModal = ({ displayModal, setDisplayModal }) => {

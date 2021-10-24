@@ -6,7 +6,7 @@ import styled from "styled-components"
 import axios from "axios"
 import Button from "../../components/Button"
 import styles from "../../component-styles/ResetPassword.module.css"
-import okayimage from "../signup/email-verify/assets/okayimage.svg"
+import okayimage from "../../assets/okayimage.svg"
 import "../../i18n";
 import { useTranslation} from "react-i18next";
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import ZuriLogo from './ZuriLogo'
 import styles from '../style/workspace.module.css'
-import Logo from '../assets/zurichat-09.svg'
+import Logo from '../../../assets/zurichat-09.svg'
 import { useTranslation} from "react-i18next"
 
 

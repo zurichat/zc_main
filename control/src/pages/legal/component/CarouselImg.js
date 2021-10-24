@@ -9,11 +9,11 @@ import {
   MDBContainer
 } from 'mdbreact'
 import styles from '../styles/about.module.css'
-import channel from '../asset/Group 35468-1.svg'
-import holiday from '../asset/Group 35468.svg'
-import deadline from '../asset/Group 35470.svg'
-import quick from '../asset/Group 35471.svg'
-import todo from '../asset/Group 35472.svg'
+import channel from '../../../assets/Group 35468-1.svg'
+import holiday from '../../../assets/Group 35468.svg'
+import deadline from '../../../assets/Group 35470.svg'
+import quick from '../../../assets/Group 35471.svg'
+import todo from '../../../assets/Group 35472.svg'
 
 const CarouselPage = () => {
   return (

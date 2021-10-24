@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Group2 from '../assets/Group59317.svg'
+import Group2 from '../../../assets/Group59317.svg'
 import './EmailModal.css'
 
 function EmailSucessModal() {

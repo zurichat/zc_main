@@ -264,7 +264,7 @@ img {
   right: 2rem;
   top: 0;
   content: "";
-  background-image: url("../assets/chevron_down.svg");
+  background-image: url("../../../assets/chevron_down.svg");
   width: 24px;
   height: 80px;
   background-size: 24px 24px;
@@ -281,7 +281,7 @@ img {
   top: 0;
   left: 2rem;
   content: "";
-  background-image: url("../assets/chevron_down.svg");
+  background-image: url("../../../assets/chevron_down.svg");
   width: 24px;
   height: 80px;
   background-size: 24px 24px;

@@ -2,14 +2,14 @@ import React, { Fragment } from "react"
 import Link from "../../../components/Link"
 import Style from "../styles/content.module.css"
 
-import imageTut from "../assets/image1.png"
-import bulbiImage from "../assets/bulb.png"
-import shakeImage from "../assets/shake.png"
-import bigLock from "../assets/bigLock.svg"
-import yellowBulb from "../assets/yellowBulb.svg"
-import smallLock from "../assets/smallLock.svg"
-import handShake from "../assets/handShake.svg"
-import veryBigLock from "../assets/veryBigLock.svg"
+import imageTut from "../../../assets/image1 (2).png"
+import bulbiImage from "../../../assets/bulb (2).png"
+import shakeImage from "../../../assets/shake (2).png"
+import bigLock from "../../../assets/bigLock (2).svg"
+import yellowBulb from "../../../assets/yellowBulb (2).svg"
+import smallLock from "../../../assets/smallLock (2).svg"
+import handShake from "../../../assets/handShake (2).svg"
+import veryBigLock from "../../../assets/veryBigLock (2).svg"
 
 const Content = () => {
   return (

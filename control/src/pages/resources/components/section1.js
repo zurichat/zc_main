@@ -1,6 +1,6 @@
 import styles from '../styles/Section1.module.css'
-import image1 from '../assests/Vectary texture.png'
-import image2 from '../assests/icons8-slider-50.png'
+import image1 from '../../../assets/Vectary texture.png'
+import image2 from '../../../assets/icons8-slider-50.png'
 
 const Section1 = () => {
   return (

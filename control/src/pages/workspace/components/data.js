@@ -1,10 +1,10 @@
-import HNG_icon from '../assets/HNG-icon.svg'
-import zuri_icon from '../assets/Zuri-icon.svg'
-import member1 from '../assets/member_image1.png'
-import member2 from '../assets/member_image2.png'
-import member3 from '../assets/member_image3.png'
-import member4 from '../assets/member_image4.png'
-import member5 from '../assets/member_image5.png'
+import HNG_icon from '../../../assets/HNG-icon.svg'
+import zuri_icon from '../../../assets/Zuri-icon.svg'
+import member1 from '../../../assets/member_image1.png'
+import member2 from '../../../assets/member_image2.png'
+import member3 from '../../../assets/member_image3.png'
+import member4 from '../../../assets/member_image4.png'
+import member5 from '../../../assets/member_image5.png'
 
 const userOrganizations = [
   {

@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import css from "./styles/subscribe.module1.css"
-import sub_img1 from "./assets/emails.jpg"
+import sub_img1 from "../../../assets/emails.jpg"
 import axios from "axios"
 import ThankYouModal from "./ThankYouModal1"
 import { useTranslation} from "react-i18next"

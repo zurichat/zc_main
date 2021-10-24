@@ -1,9 +1,9 @@
 import React from "react"
 import styles from "../../component-styles/Help.module.css"
- import invalid from "./assets/undraw_Mobile_app_re_catg.svg"
- import tech from "./assets/undraw_online_payments_luau.svg"
- import mono from "./assets/undraw_pay_online_b1hk.svg"
- import mylogo from './assets/Captures.JPG'
+ import invalid from "../../assets/undraw_Mobile_app_re_catg.svg"
+ import tech from "../../assets/undraw_online_payments_luau.svg"
+ import mono from "../../assets/undraw_pay_online_b1hk.svg"
+ import mylogo from '../../assets/Captures.JPG'
 
 const Help = () => {
   return (
