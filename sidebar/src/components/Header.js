@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styles from "../styles/Sidebar.module.css"
 import { MdKeyboardArrowDown } from "react-icons/md"
-import newMsgIcon from "../assets/icons/newMsgIcon.svg"
+import newMsgIcon from "../assets/newMsgIcon.svg"
 import NewInviteModal from "./invite-workflow/newInviteModal/newInviteModal"
 import UserOrganization from "../../../control/src/pages/createworkspace/components/UserOrganization"
 import ModalComponent from "./ModalComponent"
@@ -23,7 +23,6 @@ const SidebarHeader = props => {
     setOpenModal(!openModal)
   }
 
-  
   // const theme = localStorage.getItem("theme")
   // if (theme !== null || theme !== "") {
   //   const sideBarHeader = document.getElementsByClassName("sidebar-header-div")
