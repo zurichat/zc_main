@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react"
 import styles from "../styles/ModalComponentStyles.module.css"
-import CompanyImage from "../assets/icons/CompanyIcon.svg"
-import TotalMessages from "../assets/icons/TotalMessages.svg"
+import CompanyImage from "../assets/CompanyIcon.svg"
+
 // import axios from 'axios'
 import { RiArrowRightSLine as Arrow } from "react-icons/ri"
 // import { faClosedCaptioning } from '@fortawesome/free-solid-svg-icons'
@@ -88,8 +88,10 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
           </div>
         </div>
         <div>
-          <p><a href="/admin/settings">Workspace Settings</a></p>
-          </div>
+          <p>
+            <a href="/admin/settings">Workspace Settings</a>
+          </p>
+        </div>
       </div>
       <hr className={styles.modalDivider} />
       <div ref={hoverRef} className={` ${styles.modalSection}`}>
