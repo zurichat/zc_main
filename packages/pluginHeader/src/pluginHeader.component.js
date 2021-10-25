@@ -1,7 +1,7 @@
 import { useState } from "react"
 import styles from "./styles/header.module.css"
 import { MdKeyboardArrowDown } from "react-icons/md"
-import PluginModal from "../../../zuriUi/src/components/PluginModal/PluginModal"
+import PluginModal from "../../zuriUi/src/components/PluginModal/PluginModal"
 
 export default function Header(props) {
   const [showDialog, setShowDialog] = useState(false)
