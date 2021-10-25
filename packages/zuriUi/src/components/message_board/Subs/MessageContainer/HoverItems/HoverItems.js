@@ -1,16 +1,15 @@
 import styles from "./HoverItems.module.css"
 
-import emoji from "./assets/emoji.svg"
-import bookmark from "./assets/bookmark.svg"
-import more from "./assets/more.svg"
-import reply from "./assets/reply.svg"
-import share from "./assets/share.svg"
+import emoji from "../../../../../assets/new_emoji.svg"
+import bookmark from "../../../../../assets/bookmark.svg"
+import more from "../../../../../assets/more.svg"
+import reply from "../../../../../assets/reply.svg"
+import share from "../../../../../assets/share.svg"
 
 import MoreMenu from "../MoreMenu/MoreMenu"
 
 export default function HoverItems(props) {
-  const {id, handleShowMoreOptions, handleShowEmoji} = props;
-  
+  const { id, handleShowMoreOptions, handleShowEmoji } = props
 
   return (
     <>
