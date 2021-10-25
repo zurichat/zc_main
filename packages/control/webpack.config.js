@@ -2,7 +2,6 @@
 const { mergeWithRules } = require("webpack-merge")
 const singleSpaDefaults = require("webpack-config-single-spa-react")
 const path = require("path")
-/* const FaviconsWebpackPlugin = require('favicons-webpack-plugin') */
 
 const mergeRules = {
   externals: {
@@ -34,7 +33,7 @@ module.exports = (webpackConfigEnv, argv) => {
 
   return mergeWithRules(mergeRules)(defaultConfig, {
     output: {
-      path: path.join(__dirname, "..", "dist") // string (default)
+      path: path.join(__dirname, "..", "..", "dist") // string (default)
       // filename: "[name].js", // string (default)
       // publicPath: path.join(__dirname, '..', 'dist', 'assets') // string
     },
@@ -72,24 +71,3 @@ module.exports = (webpackConfigEnv, argv) => {
     }
   })
 }
-/* 
-plugins: [
-  new FaviconsWebpackPlugin({
-    logo: './src/favicon.png',
-    mode: 'webapp',
-    devMode: 'webapp',
-    favicons: {
-      appName: 'Zuri Chat',
-      appDescription: 'Zuri Chat - Connect and Interact',
-      developerName: 'Me',
-      developerURL: null,
-      background: '#ddd',
-      theme_color: '#333',
-      icons: {
-        coast: false,
-        yandex: false
-      }
-    }
-  })
-]
- */
