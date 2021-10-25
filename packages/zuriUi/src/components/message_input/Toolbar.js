@@ -1,25 +1,24 @@
 import React, { useState, useEffect } from "react"
 import { convertToRaw, EditorState, RichUtils } from "draft-js"
 import UnstyledButton from "./UnstyledButton"
-import Italic from "./assets/comments/italic.svg"
+import Italic from "../../assets/italic.svg"
 import styled from "styled-components"
-import Bold from "./assets/comments/bold.svg"
-import List from "./assets/comments/list.svg"
-import Border from "./assets/comments/border.svg"
-import Lightning from "./assets/comments/lightning.svg"
-import Clip from "./assets/comments/clip.svg"
-import Link from "./assets/comments/link.svg"
-import Send from "./assets/comments/send.svg"
-import AtSign from "./assets/comments/at-sign.svg"
-import Google from "./assets/comments/google.svg"
-import Computer from "./assets/comments/computer.svg"
+import Bold from "../../assets/bold.svg"
+import List from "../../assets/list.svg"
+import Border from "../../assets/border.svg"
+import Lightning from "../../assets/lightning.svg"
+import Clip from "../../assets/clip.svg"
+import Link from "../../assets/link.svg"
+import Send from "../../assets/send.svg"
+import AtSign from "../../assets/at-sign.svg"
+import Google from "../../assets/google.svg"
+import Computer from "../../assets/computer.svg"
 import "./emojiStyles.js"
 import {
   GlobalStyleForEmojiSelect,
   StyledEmojiSelectWrapper
 } from "./emojiStyles"
-import ClickAwayListener from 'react-click-away-listener';
-
+import ClickAwayListener from "react-click-away-listener"
 
 const BoldIcon = () => <img src={Bold} alt="" />
 const ItalicIcon = () => <img src={Italic} alt="" />
@@ -72,8 +71,8 @@ const Toolbar = props => {
   }
 
   const handleClickAway = () => {
-    setshowAttachInputBox(false);
-  };
+    setshowAttachInputBox(false)
+  }
 
   const handleSelectMedia = e => {
     setAttachedFile(e.target.files[0])
@@ -93,11 +92,13 @@ const Toolbar = props => {
     const newMessageData = {
       message_id: Date.now().toString(),
       username: currentUserData.username,
-      time: `${currentDate.getHours() < 12
+      time: `${
+        currentDate.getHours() < 12
           ? currentDate.getHours()
           : currentDate.getHours() - 12
-        }:${currentDate.getMinutes()}${currentDate.getHours() < 12 ? "AM" : "PM"
-        }`,
+      }:${currentDate.getMinutes()}${
+        currentDate.getHours() < 12 ? "AM" : "PM"
+      }`,
       emojis: [],
       richUiData: convertToRaw(editorState.getCurrentContent())
     }
@@ -177,7 +178,7 @@ const Toolbar = props => {
                   key={inputKey || ""}
                   type="file"
                   ref={inputRef}
-                //onClick={handleAttachMedia}
+                  //onClick={handleAttachMedia}
                 />
               </label>
             </div>
