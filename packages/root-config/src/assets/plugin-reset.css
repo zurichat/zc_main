@@ -14,7 +14,6 @@
   --bg-color: #fff;
   --text-color: #3f3f3f;
 }
-
 html,
 body {
   /* height: 100%; */
@@ -90,18 +89,15 @@ div[id*="zuri/marketplace"] {
     top: 0;
     left: 0;
   }
-
   div[id*="zuri/sidebar"]::-webkit-scrollbar {
     display: none;
   }
-
   div[id*="zuri/sidebar"] {
     height: 95vh;
     min-width: 20%;
     top: 5vh;
     left: 0;
   }
-
   div[id*="zuri-plugin"],
   div[id*="zuri/marketplace"] {
     top: 5vh;
@@ -114,7 +110,6 @@ div[id*="zuri/marketplace"] {
   div[id*="zuri/sidebar"] {
     min-width: 20%;
   }
-
   div[id*="zuri/sidebar"] {
     display: block;
   }
@@ -124,14 +119,12 @@ div[id*="zuri/marketplace"] {
   div[id*="zuri/sidebar"] {
     display: none;
   }
-
   div[id*="zuri-plugin"],
   div[id*="zuri/marketplace"] {
     width: 100%;
     z-index: unset;
   }
 }
-
 /* CHESS STYLE */
 
 .app__container {
@@ -168,11 +161,9 @@ div[id*="zuri/marketplace"] {
 .goog-tooltip {
   display: none !important;
 }
-
 .goog-tooltip:hover {
   display: none !important;
 }
-
 .goog-text-highlight {
   background-color: transparent !important;
   border: none !important;
