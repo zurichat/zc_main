@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styles from "./styles/modal.module.css"
-import successPng from "./images/success.png"
-import cancelPng from "./images/cancel.png"
+import successPng from "../../../assets/success.png"
+import cancelPng from "../../../assets/cancel.png"
 import { ACTIONS } from "../../../App"
 const InviteResponseModal = props => {
   const isOpen = visibililty => {
