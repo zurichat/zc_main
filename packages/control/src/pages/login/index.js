@@ -7,7 +7,7 @@ import LoginLoading from "../../components/LoginLoading"
 import styles from "../../component-styles/AuthFormElements.module.css"
 import axios from "axios"
 import { GetUserInfo } from "@zuri/control"
-import $behaviorSubject from "../../../../globalState"
+import $behaviorSubject from "../../../../root-config/globalState"
 import { Helmet } from "react-helmet"
 import { goToDefaultChannel } from "../../api/channels"
 import "../../i18n"
@@ -175,7 +175,9 @@ const Login = () => {
             id="password"
             name={t("auth.login.form.authInputBox.passwordInputName")}
             type="password"
-            placeholder={t("auth.login.form.authInputBox.passwordInputPlaceHolder")}
+            placeholder={t(
+              "auth.login.form.authInputBox.passwordInputPlaceHolder"
+            )}
             value={password}
             setValue={setPassword}
             error={passworderror}
@@ -194,7 +196,7 @@ const Login = () => {
                 }}
                 // onFocus={displayImage}
               />
-                {t("auth.login.form.authInputBox.rememberMe")}
+              {t("auth.login.form.authInputBox.rememberMe")}
             </div>
             <div className={`${styles.right}`}>
               <Link
@@ -203,8 +205,11 @@ const Login = () => {
               >
                 {t("auth.login.form.authInputBox.forgotPassword")}
               </Link>
-              <Link to="/troubleshooting/onboarding-help"> {""}{t("auth.login.form.authInputBox.getHelp")}</Link>
-
+              <Link to="/troubleshooting/onboarding-help">
+                {" "}
+                {""}
+                {t("auth.login.form.authInputBox.getHelp")}
+              </Link>
             </div>
           </div>
         </FormWrapper>
