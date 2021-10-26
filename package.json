@@ -26,7 +26,7 @@
     "prepare": "husky install",
     "clean": "yarn clean:build",
     "clean:build": "rimraf './dist'",
-    "clean-fresh": "rimraf './node_modules' && rimraf './packages/*/node_modules'"
+    "clean-fresh": "rimraf './node_modules' && lerna clean"
   },
   "devDependencies": {
     "concurrently": "^6.3.0",
