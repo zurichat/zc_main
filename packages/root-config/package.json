@@ -1,5 +1,6 @@
 {
   "name": "@zuri/root-config",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "dev": "webpack serve --port 9000 --env isLocal",
