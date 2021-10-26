@@ -1,5 +1,6 @@
 {
   "name": "@zuri/plugin-header",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "start": "webpack serve",
