@@ -1,0 +1,18 @@
+{
+  "imports": {
+    "@zuri/zuri-plugin-chessboard": "https://chess.zuri.chat/zuri-zuri-plugin-chessboard.js",
+    "@zuri/zuri-plugin-company-sales-prospects": "https://sales.zuri.chat/static/zuri-zuri-plugin-company-sales-prospects.js",
+    "@zuri/zuri-plugin-music": "https://music.zuri.chat/static/zuri-music-plugin.js",
+    "@zuri/zuri-plugin-deadlines": "https://reminders.zuri.chat/zuri-zuri-plugin-deadlines.js",
+    "@zuri/zuri-plugin-company-goals": "https://goals.zuri.chat/zuri-plugin-company-goals.js",
+    "@zuri/zuri-plugin-todo": "https://todo.zuri.chat/js/app.js",
+    "@zuri/zuri-plugin-dm": "https://dm.zuri.chat/static/zuri-zuri-plugin-dm.js",
+    "@zuri/zuri-plugin-noticeboard": "https://noticeboard.zuri.chat/static/zuri-zuri-plugin-noticeboard.js",
+    "@zuri/zuri-plugin-companyfiles": "https://companyfiles.zuri.chat/zuri-zuri-plugin-company-files.js",
+    "@zuri/zuri-plugin-calendar": "https://calendar.zuri.chat/static/zuri-zuri-plugin-holiday-calendar.js",
+    "@zuri/zuri-plugin-expenses": "https://expenses.zuri.chat/js/zuri-zuri-plugin-expenses.js",
+    "@zuri/zuri-plugin-tools": "https://externaltools.zuri.chat/zuri-zuri-plugin-tools.js",
+    "@zuri/zuri-plugin-channels": "https://channels.zuri.chat/static/main/dist/zuri-zuri-plugin-channels.js",
+    "@zuri/zuri-plugin-contributions": "https://ct.zuri.chat/js/app.js"
+  }
+}

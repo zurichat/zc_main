@@ -1,0 +1,82 @@
+:root {
+  --background-menu: #f9f9f9;
+}
+
+[data-theme="dark"] {
+  --background-menu: #2d2d2f;
+}
+
+[data-theme="light"] {
+  --background-menu: #f9f9f9;
+  
+}
+.notifySidebar {
+  width: 200px;
+  background: var(--background-menu);
+  height: 250%;
+  float: left;
+  position: fixed;
+  position: relative;
+}
+.itemsContainer {
+  margin-top: 15px;
+  position: fixed;
+}
+.one,
+.active {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 20px;
+  padding: 3px;
+  margin-bottom: 0px;
+  cursor: pointer;
+  font-size: 15px;
+  padding-bottom: 13px;
+}
+.icon {
+  margin-right: 15px;
+}
+.active p {
+  color: #00b87c;
+  font-size: 15px;
+}
+/* 
+.one,
+.active {
+  display: flex;
+  flex-direction: row;
+  font-size: 15px;
+  align-items: left;
+  margin-left: 20px;
+  padding: 2px;
+  margin-bottom: 22px;
+  cursor: pointer;
+} */
+.one:first-child {
+  padding-top: 10px;
+}
+.icon {
+  margin-right: 10px;
+  margin-bottom: 0px;
+}
+.active p,
+.icon {
+  color: #00b87c;
+}
+
+.one p {
+  color: #999999;
+  font-size: 15px;
+}
+
+.one .icon {
+  color: var(--text-color-normal);
+  margin-bottom: 1px;
+}
+
+@media screen and (max-width: 768px) {
+  .notifySidebar {
+    display: none;
+  }
+}
