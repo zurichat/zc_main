@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap");
+
+body {
+  font-family: "Lato", sans-serif !important;
+}
+.hero {
+  margin-top: 100px !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 70px;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+.screenshot,
+.mobile {
+  width: 350px;
+}
+
+.screen {
+  height: 800px;
+  width: 100%;
+}
+.laptop {
+  width: 510px;
+}
+.heroheading {
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 38px;
+  color: #333333;
+}
+
+.heroText {
+  width: 100%;
+  margin: auto;
+}
+
+.heroImages {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2%;
+  margin-bottom: 3%;
+}
+
+.alignForDesktop,
+.alignForMobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.mobileImage {
+  margin-bottom: 30px;
+}
+.button1 {
+  display: inline-block;
+  border-radius: 4px;
+  color: white;
+  background-color: #00b87c;
+  padding: 16px;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.button1:hover {
+  background-color: rgb(52, 179, 94);
+}
+
+.info {
+  background-color: #00b87c;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.p1 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 130%;
+  color: #ffffff;
+}
+a:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+.downloadButtonContainer {
+  margin-bottom: 30px;
+}
+
+.downloadButton {
+  display: inline-block;
+  border-radius: 4px;
+  color: white;
+  background-color: #000;
+  padding: 10px 0px;
+  /* padding-right: 20px; */
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  margin: 15px;
+  width: 250px;
+}
+
+.downloadButton1 {
+  display: inline-block;
+  border-radius: 4px;
+  color: #00b87c;
+  background-color: white;
+  padding: 16px 30px;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: normal;
+  text-decoration: none;
+  margin: 15px;
+}
+
+.downloadButton:hover {
+  background-color: #e5e5e5;
+  text-decoration: none;
+  color: #00b87c;
+}
+.downloadButton1:hover {
+  background-color: #e5e5e5;
+  text-decoration: none;
+  color: #00b87c;
+}
+
+.infoImageContainer {
+  max-height: 500px;
+  overflow: hidden;
+}
+.ctaContainer {
+  display: flex;
+  align-items: center;
+  padding: 100px 70px;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1325px) {
+  .container {
+    margin-top: 50px !important;
+  }
+
+  .screenshot,
+  .laptop {
+    width: 410px;
+    top: 40px;
+  }
+  .buttondiv {
+    padding: 16px !important;
+    margin-bottom: 24px !important;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .hero,
+  .ctaContainer {
+    padding: 100px 40px;
+  }
+  .heroText {
+    width: 80%;
+  }
+  .hero {
+    padding: 10px 40px;
+  }
+  .heroheading {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 30px;
+  }
+  .screenshot,
+  .laptop {
+    width: 360px;
+  }
+  .buttondiv {
+    padding: 30px 0 0 !important;
+  }
+  .p1 {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .laptop {
+    width: 300px;
+    top: 30px;
+  }
+  .buttondiv {
+    padding: 40px 0 0 !important;
+  }
+  .button1 {
+    font-size: 12px;
+    margin-bottom: 50px;
+  }
+
+  .downloadButton {
+    padding: 11px 22px;
+    font-size: 13px;
+    margin: 15px;
+  }
+  .downloadButton1 {
+    padding: 11px 22px;
+    font-size: 13px;
+    margin: 15px;
+  }
+
+  .hero {
+    flex-direction: column;
+  }
+
+  .heroText {
+    text-align: center;
+  }
+
+  .screenshot {
+    width: 560px;
+  }
+
+  .alignForMobile,
+  .desktop {
+    display: none;
+  }
+  .heroImages {
+    width: 80%;
+    margin: auto;
+  }
+}
