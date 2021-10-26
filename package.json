@@ -12,6 +12,9 @@
   },
   "homepage": "https://zuri.chat/",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "start": "serve -s dist/ -p 9001",
     "dev": "lerna run dev --parallel",
