@@ -3,11 +3,11 @@
   margin-block: 0;
   background-color: #fff;
   width: 100vw;
-  height: 100vh;
+  height: auto;
   font-size: 14px;
   font-style: normal;
   display: flex;
-  flex-direction: row;
+
   justify-content: center;
   align-items: center;
 }

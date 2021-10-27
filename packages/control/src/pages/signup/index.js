@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import { withRouter, useHistory, Link } from 'react-router-dom'
-import AuthInputBox from '../../components/AuthInputBox'
-import FormWrapper from '../../components/AuthFormWrapper'
-import styles from '../../component-styles/AuthFormElements.module.css'
-import axios from 'axios'
-import EmailVerification from './email-verify'
-import { Helmet } from 'react-helmet';
-import "../../i18n";
-import { useTranslation} from "react-i18next";
+import React, { useState, useEffect } from "react"
+import { withRouter, useHistory, Link } from "react-router-dom"
+import AuthInputBox from "../../components/AuthInputBox"
+import FormWrapper from "../../components/AuthFormWrapper"
+import styles from "../../component-styles/AuthFormElements.module.css"
+import axios from "axios"
+import EmailVerification from "./email-verify"
+import { Helmet } from "react-helmet"
+import "../../i18n"
+import { useTranslation } from "react-i18next"
 // import { Link } from 'react-router-dom'
 // import authBg1 from './assets/auth_bg1.svg'
 // import authBg2 from './assets/auth_bg2.svg'
@@ -16,15 +16,19 @@ import { useTranslation} from "react-i18next";
 // import authBg5 from './assets/auth_bg5.svg'
 
 const Signup = () => {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
   const [tos, setTos] = useState(false)
-  const [error, seterror] = useState('')
-  const [nameerror, setnameerror] = useState('')
-  const [passworderror, setpassworderror] = useState('')
-  const [emailerror, setemailerror] = useState('')
+  const [error, seterror] = useState({
+    type: false,
+    msg: ""
+  })
+  const [nameerror, setnameerror] = useState("")
+  const [passworderror, setpassworderror] = useState("")
+  const [emailerror, setemailerror] = useState("")
   const [showDialog, setShowDialog] = useState(false)
+  const [errorEmail, setErrorEmail] = useState(false)
 
   // Background Images
   // const images = [authBg1, authBg2, authBg3, authBg4, authBg5]
@@ -49,6 +53,13 @@ const Signup = () => {
     // if (userInfo && userInfo !== null) history.push(redirect)
   }, [history])
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      seterror({ ...error, type: false })
+    }, 3000)
+    return () => clearTimeout(timeout)
+  }, [error])
+
   const handleSubmit = async e => {
     e.preventDefault()
 
@@ -70,13 +81,16 @@ const Signup = () => {
       seterror(`You must agree to terms and conditions`)
       return
     } else {
-      seterror(``)
+      seterror({
+        type: "",
+        msg: ""
+      })
     }
 
     //Seperate user fullname
-    const seperateName = name.split(' ')
-    let first_name = '',
-      other_name = ''
+    const seperateName = name.split(" ")
+    let first_name = "",
+      other_name = ""
 
     seperateName.map((name, index) => {
       if (index === 0) {
@@ -86,7 +100,7 @@ const Signup = () => {
     })
 
     await axios
-      .post('https://api.zuri.chat/users', {
+      .post("https://api.zuri.chat/users", {
         first_name,
         last_name: other_name,
         email,
@@ -98,9 +112,9 @@ const Signup = () => {
         setShowDialog(true)
 
         //Store token in localstorage
-        sessionStorage.setItem('user_id', data.InsertedId)
-        localStorage.setItem('newUserEmail', JSON.stringify(email))
-        localStorage.setItem('userUserPassword', JSON.stringify(password))
+        sessionStorage.setItem("user_id", data.InsertedId)
+        localStorage.setItem("newUserEmail", JSON.stringify(email))
+        localStorage.setItem("userUserPassword", JSON.stringify(password))
 
         //Display message
         // alert(message) //Change this when there is a design
@@ -115,13 +129,17 @@ const Signup = () => {
         setShowDialog(false)
 
         RegExp(/Users with email/).test(data.message) &&
-          setemailerror('This email is already in use')
+          setemailerror("This email is already in use")
 
-        !RegExp('Users with email').test(data.message) && seterror(data.message)
+        !RegExp("Users with email").test(data.message) &&
+          seterror({
+            type: true,
+            msg: data.message
+          })
       })
   }
 
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <main id={styles.authPageWrapper}>
@@ -143,7 +161,7 @@ const Signup = () => {
           topLineText={t("auth.signup.form.topLineText")}
           submitButtonName={t("auth.signup.form.submitButtonName")}
           disabled={name && email && password && tos}
-          error={error}
+          // error={error}
           handleSubmit={handleSubmit}
           bottomLine={t("auth.signup.form.bottomLine")}
           bottomLink={t("auth.signup.form.bottomLink")}
@@ -168,11 +186,12 @@ const Signup = () => {
             placeholder={t("auth.signup.form.input.emailAddressPlaceholder")}
             value={email}
             setValue={setEmail}
-            error={emailerror}
+            error={error.type}
+            errorMsg={error.msg}
             // onFocus={displayImage}
           />
           <AuthInputBox
-            className={`${styles.inputElement}`}
+            // className={`${styles.inputElement}`}
             id="password"
             name={t("auth.signup.form.input.password")}
             type="password"
@@ -194,9 +213,18 @@ const Signup = () => {
               // onFocus={displayImage}
             />
             <span className={`${styles.tosText}`}>
-              {t("auth.signup.privacyAgreement")}{''}
-              <Link to="/terms">{t("auth.signup.termsOfService")}{''} </Link>&
-              <Link to="/privacy"> {''}{t("auth.signup.privacy")}</Link>
+              {t("auth.signup.privacyAgreement")}
+              {""}
+              <Link to="/terms">
+                {t("auth.signup.termsOfService")}
+                {""}{" "}
+              </Link>
+              &
+              <Link to="/privacy">
+                {" "}
+                {""}
+                {t("auth.signup.privacy")}
+              </Link>
             </span>
           </div>
         </FormWrapper>
