@@ -11,7 +11,6 @@ import { TRANSLATIONS_ZH } from "./locales/zh/translations"
 import { getTranslations } from "./translator"
 
 const resources  =  getTranslations()
-console.log( resources );
 
 i18n
   //.use(Backend)
