@@ -98,4 +98,4 @@ yarn lint:css # to lint only css files # in project directory
 yarn prettify # to prettify files # in project directory
 ```
 
-you can also lint for all files in the repo by running that command in the root folder
+you can also lint for all files in the repo by running that command in the root folder.
