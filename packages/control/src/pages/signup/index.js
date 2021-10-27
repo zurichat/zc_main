@@ -53,13 +53,6 @@ const Signup = () => {
     // if (userInfo && userInfo !== null) history.push(redirect)
   }, [history])
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      seterror({ ...error, type: false })
-    }, 3000)
-    return () => clearTimeout(timeout)
-  }, [error])
-
   const handleSubmit = async e => {
     e.preventDefault()
 
