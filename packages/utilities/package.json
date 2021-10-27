@@ -1,0 +1,53 @@
+{
+  "name": "@zuri/utilities",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack serve",
+    "start:standalone": "webpack serve --env standalone",
+    "dev": "yarn start --port=8085",
+    "build": "concurrently yarn:build:*",
+    "build:webpack": "webpack --mode=production",
+    "analyze": "webpack --mode=production --env analyze",
+    "lint": "concurrently yarn:lint:*",
+    "lint:css": "stylelint '**/*.+(css|scss|sass)'",
+    "lint:js": "eslint '**/*.+(js|jsx)'",
+    "prettify": "prettier -w .",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/eslint-parser": "^7.15.0",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/runtime": "^7.15.3",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "babel-jest": "^27.0.6",
+    "concurrently": "^6.2.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-react-important-stuff": "^3.0.0",
+    "eslint-plugin-prettier": "^3.4.1",
+    "husky": "^7.0.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.0.6",
+    "jest-cli": "^27.0.6",
+    "prettier": "^2.3.2",
+    "pretty-quick": "^3.1.1",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-config-single-spa-react": "^4.0.0",
+    "webpack-dev-server": "^4.0.0",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "axios": "^0.23.0",
+    "centrifuge": "^2.8.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "single-spa-react": "^4.3.1"
+  }
+}
