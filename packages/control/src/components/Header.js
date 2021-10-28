@@ -1,4 +1,3 @@
-
 /* eslint-disable react/no-unknown-property */
 import React, { useState, useEffect } from "react"
 import { Link, NavLink } from "react-router-dom"
@@ -489,17 +488,6 @@ const HeaderSearchSuggestion = () => {
         <ul
           className={`navbar-nav d-none d-lg-flex me-auto my-2 my-lg-0 navbar-nav-scroll ${headerStyles.signs}`}
         >
-          <li>
-            <Link to="/signup" className={`nav-link`}>
-              <span className={`${headerStyles.signU}`}>{t("nav_signup")}</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/login" className={`nav-link`}>
-              <span className={`${headerStyles.signIn}`}>{t("nav_login")}</span>
-            </Link>
-          </li>
-
           {!isUserLoggedIn ? (
             <>
               <li>
