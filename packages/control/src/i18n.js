@@ -8,9 +8,6 @@ import { TRANSLATIONS_EN } from "./locales/en/translations"
 import { TRANSLATIONS_DE } from "./locales/de/translations"
 import { TRANSLATIONS_FR } from "./locales/fr/translations"
 import { TRANSLATIONS_ZH } from "./locales/zh/translations"
-import { getTranslations } from "./translator"
-
-const resources = getTranslations()
 
 i18n
   //.use(Backend)
@@ -27,7 +24,20 @@ i18n
     interpolation: {
       escapeValue: false // not needed for react as it escapes by default
     },
-    resources: resources
+    resources: {
+      fr: {
+        translation: TRANSLATIONS_FR
+      },
+      de: {
+        translation: TRANSLATIONS_DE
+      },
+      en: {
+        translation: TRANSLATIONS_EN
+      },
+      zh: {
+        translation: TRANSLATIONS_ZH
+      }
+    }
   })
 
 const lang = localStorage.getItem("myLanguage")

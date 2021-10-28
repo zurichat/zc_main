@@ -119,19 +119,19 @@ export default function Homepage() {
             <div className={`${style.hero_left}`}>
               <div className={`${style.hero_left_texts}`}>
                 <p className={`${style.hero_text_one}`}>
-                  {t("landing_hero_pre_headline")}
+                  {t("landing.hero.pre_headline")}
                 </p>
                 <h1 className={`${style.hero_heading}`}>
-                  {t("landing_hero_headline")}
+                  {t("landing.hero.headline")}
                 </h1>
                 <p className={`${style.hero_p}`}>
-                  {t("landing_hero_post_headline")}
+                  {t("landing.hero.post_headline")}
                 </p>
               </div>
               <div className={style.hero_btn}>
                 <Link to="/signup">
                   <button className={`${style.hero_left_btn}`}>
-                    {t("landing_hero_call_to_action")}
+                    {t("landing.hero.call_to_action")}
                   </button>
                 </Link>
               </div>
@@ -161,40 +161,40 @@ export default function Homepage() {
             <FeatureRow
               src={ft_img1}
               alt=""
-              pContent1={t("landing_feature_row_one_title")}
-              h2Content={t("landing_feature_row_one_headline")}
-              pContent2={t("landing_feature_row_one_description ")}
+              pContent1={t("landing.featureRowOne.title")}
+              h2Content={t("landing.featureRowOne.headline")}
+              pContent2={t("landing.featureRowOne.description")}
               href="/createworkspace"
-              aContent={t("landing_feature_row_one_link")}
+              aContent={t("landing.featureRowOne.link")}
               onClick={createWorkspaceRedirect}
             />
             <FeatureRow
               src={ft_img2}
               alt=""
-              pContent1={t("landing_feature_row_two_title")}
-              h2Content={t("landing_feature_row_two_headline")}
-              pContent2={t("landing_feature_row_two_description")}
+              pContent1={t("landing.featureRowTwo.title")}
+              h2Content={t("landing.featureRowTwo.headline")}
+              pContent2={t("landing.featureRowTwo.description")}
               href="#"
-              aContent={t("landing_feature_row_two_link")}
+              aContent={t("landing.featureRowTwo.link")}
               rowOrder={style.ft_row_reverse}
             />
             <FeatureRow
               src={ft_img3}
               alt=""
-              pContent1={t("landing_feature_row_three_title")}
-              h2Content={t("landing_feature_row_three_headline")}
-              pContent2={t("landing_feature_row_three_description")}
+              pContent1={t("landing.featureRowThree.title")}
+              h2Content={t("landing.featureRowThree.headline")}
+              pContent2={t("landing.featureRowThree.description")}
               href="#"
-              aContent={t("landing_feature_row_three_link")}
+              aContent={t("landing.featureRowThree.link")}
             />
             <FeatureRow
               src={ft_img4}
               alt=""
-              pContent1={t("landing_feature_row_four_title")}
-              h2Content={t("landing_feature_row_four_headline")}
-              pContent2={t("landing_feature_row_four_description")}
+              pContent1={t("landing.featureRowFour.title")}
+              h2Content={t("landing.featureRowFour.headline")}
+              pContent2={t("landing.featureRowFour.description")}
               href="#"
-              aContent={t("landing_feature_row_four_link")}
+              aContent={t("landing.featureRowFour.link")}
               rowOrder={style.ft_row_reverse}
             />
           </div>
@@ -204,11 +204,11 @@ export default function Homepage() {
           <div className={`${style.sign_up_banner}`}>
             <div className={`${style.sign_up_left}`}>
               <p className={`${style.sign_up_left_p}`}>
-                {t("landing_card_one_title")}
+                {t("landing.cardOne.title")}
               </p>
               <a href="/signup">
                 <button className={`${style.sign_up_btn}`}>
-                  {t("landing_card_one_button")}
+                  {t("landing.cardOne.button")}
                 </button>
               </a>
             </div>

@@ -4,8 +4,6 @@
 .gitignore
 .prettierignore
 .eslintignore
-.yarn/
-.yarnrc
 yarn.lock
 yarn-error.log
 package-lock.json

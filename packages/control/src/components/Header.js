@@ -266,7 +266,7 @@ const HeaderSearchSuggestion = () => {
                 aria-current="page"
               >
                 <span className={`${headerStyles.item}`}>
-                  {t("nav_pricing")}
+                  {t("landing.nav.pricing")}
                 </span>
               </NavLink>
             </li>
@@ -277,7 +277,9 @@ const HeaderSearchSuggestion = () => {
                 role="button"
                 aria-expanded="false"
               >
-                <span className={`${headerStyles.item}`}>{t("nav_about")}</span>
+                <span className={`${headerStyles.item}`}>
+                  {t("landing.nav.about")}
+                </span>
               </NavLink>
             </li>
             <li className="nav-item">
@@ -288,7 +290,7 @@ const HeaderSearchSuggestion = () => {
                 aria-expanded="false"
               >
                 <span className={`${headerStyles.item}`}>
-                  {t("nav_plugin")}
+                  {t("landing.nav.plugin")}
                 </span>
               </NavLink>
             </li>
@@ -298,7 +300,7 @@ const HeaderSearchSuggestion = () => {
                 className={`nav-link ${headerStyles.navLinkComms}`}
               >
                 <span className={`${headerStyles.item}`}>
-                  {t("nav_downloads")}
+                  {t("landing.nav.downloads")}
                 </span>
               </NavLink>
             </li>
@@ -311,7 +313,7 @@ const HeaderSearchSuggestion = () => {
                 aria-expanded="false"
               >
                 <span className={`${headerStyles.item}`}>
-                  {t("nav_contact")}
+                  {t("landing.nav.contact")}
                 </span>
               </NavLink>
             </li>
@@ -321,14 +323,14 @@ const HeaderSearchSuggestion = () => {
             <li className="nav-item">
               <Link to="/signup" className={`btn nav-link`}>
                 <span className={`${headerStyles.signU}`}>
-                  {t("nav_signup")}
+                  {t("landing.nav.signup")}
                 </span>
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/login" className={`btn nav-link`} role="button">
                 <span className={`${headerStyles.signIn}`}>
-                  {t("nav_login")}
+                  {t("landing.nav.login")}
                 </span>
               </Link>
             </li>
@@ -488,32 +490,34 @@ const HeaderSearchSuggestion = () => {
         <ul
           className={`navbar-nav d-none d-lg-flex me-auto my-2 my-lg-0 navbar-nav-scroll ${headerStyles.signs}`}
         >
-          {!isUserLoggedIn ? (
-            <>
+          {
+            !isUserLoggedIn ? (
+              <>
+                <li>
+                  <Link to="/signup" className={`nav-link`}>
+                    <span className={`${headerStyles.signU}`}>
+                      {t("landing.nav.signup")}
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/login" className={`nav-link`}>
+                    <span className={`${headerStyles.signIn}`}>
+                      {t("landing.nav.login")}
+                    </span>
+                  </Link>
+                </li>
+              </>
+            ): (
               <li>
-                <Link to="/signup" className={`nav-link`}>
-                  <span className={`${headerStyles.signU}`}>
-                    {t("landing.nav.signup")}
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/login" className={`nav-link`}>
+                <Link to="/signout" className={`nav-link`}>
                   <span className={`${headerStyles.signIn}`}>
-                    {t("landing.nav.login")}
+                    {t("landing.nav.signout")}
                   </span>
                 </Link>
               </li>
-            </>
-          ) : (
-            <li>
-              <Link to="/signout" className={`nav-link`}>
-                <span className={`${headerStyles.signIn}`}>
-                  {t("landing.nav.signout")}
-                </span>
-              </Link>
-            </li>
-          )}
+            )
+          }
         </ul>
       </nav>
     </header>
