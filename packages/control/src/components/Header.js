@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Link, NavLink } from "react-router-dom"
 import headerStyles from "../component-styles/HeaderStyle.module.css"
 import zurichatlogo from "../component-assets/zurilogo.svg"
@@ -29,6 +29,12 @@ const HeaderSearchSuggestion = () => {
   }
 
   const [lgShow, setLgShow] = useState(false)
+  const [isUserLoggedIn, setUserLoggedIn] = useState(false)
+
+  useEffect(() => {
+    checkIfUserIsLogged()
+  }, [])
+
   //const ref = useRef()
   //const toggleBgOverlay = () => {
   //  document
@@ -57,6 +63,12 @@ const HeaderSearchSuggestion = () => {
   //    document.removeEventListener("mousedown", checkIfClickedOutside)
   //  }
   //}, [])
+
+  const checkIfUserIsLogged = () => {
+    let user = JSON.parse(sessionStorage.getItem("user"))
+    let token = sessionStorage.getItem("token")
+    setUserLoggedIn(user && token)
+  }
 
   return (
     <header className={headerStyles.pageHeader}>
@@ -476,6 +488,7 @@ const HeaderSearchSuggestion = () => {
         <ul
           className={`navbar-nav d-none d-lg-flex me-auto my-2 my-lg-0 navbar-nav-scroll ${headerStyles.signs}`}
         >
+
           <li>
             <Link to="/signup" className={`nav-link`}>
               <span className={`${headerStyles.signU}`}>{t("nav_signup")}</span>
@@ -486,6 +499,34 @@ const HeaderSearchSuggestion = () => {
               <span className={`${headerStyles.signIn}`}>{t("nav_login")}</span>
             </Link>
           </li>
+
+          {!isUserLoggedIn ? (
+            <>
+              <li>
+                <Link to="/signup" className={`nav-link`}>
+                  <span className={`${headerStyles.signU}`}>
+                    {t("landing.nav.signup")}
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/login" className={`nav-link`}>
+                  <span className={`${headerStyles.signIn}`}>
+                    {t("landing.nav.login")}
+                  </span>
+                </Link>
+              </li>
+            </>
+          ) : (
+            <li>
+              <Link to="/signout" className={`nav-link`}>
+                <span className={`${headerStyles.signIn}`}>
+                  {t("landing.nav.signout")}
+                </span>
+              </Link>
+            </li>
+          )}
+
         </ul>
       </nav>
     </header>
