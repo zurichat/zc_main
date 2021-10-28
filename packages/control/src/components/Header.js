@@ -1,10 +1,8 @@
 /* eslint-disable react/no-unknown-property */
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { Link, NavLink } from "react-router-dom"
 import headerStyles from "../component-styles/HeaderStyle.module.css"
 import zurichatlogo from "../component-assets/zurilogo.svg"
-// import searchIcon from "../component-assets/searchIcon.svg"
-//import { Button } from '../pages/createworkspace/components/WorkspaceHome'
 import { useTranslation } from "react-i18next"
 import Modal from "react-bootstrap/Modal"
 
@@ -17,58 +15,18 @@ import es from "../component-assets/language/es.png"
 import it from "../component-assets/language/it.png"
 import us from "../component-assets/language/us.png"
 import ar from "../component-assets/language/ar.png"
-import nl from "../component-assets/language/nl.png"
+import he from "../component-assets/language/he.png"
+import pt from "../component-assets/language/pt.png"
 
 const HeaderSearchSuggestion = () => {
   const { t } = useTranslation()
 
   const saveLang = lang => {
     localStorage.setItem("myLanguage", lang)
-    //console.log(localStorage.getItem('myLanguage'))
     location.reload()
   }
 
   const [lgShow, setLgShow] = useState(false)
-  const [isUserLoggedIn, setUserLoggedIn] = useState(false)
-
-  useEffect(() => {
-    checkIfUserIsLogged()
-  }, [])
-
-  //const ref = useRef()
-  //const toggleBgOverlay = () => {
-  //  document
-  //    .querySelector(`.${headerStyles.navContainer}`)
-  //    .classList.toggle(headerStyles.bg_overlay)
-  //}
-  //
-  //useEffect(() => {
-  //  const checkIfClickedOutside = e => {
-  //    const element = document.getElementById("navbarText")
-  //
-  //    if (
-  //      ref.current &&
-  //      !ref.current.contains(e.target) &&
-  //      element.classList.contains("show")
-  //    ) {
-  //      element.classList.remove("show")
-  //      toggleBgOverlay()
-  //    }
-  //  }
-  //
-  //  document.addEventListener("mousedown", checkIfClickedOutside)
-  //
-  //  return () => {
-  //    // Cleanup the event listener
-  //    document.removeEventListener("mousedown", checkIfClickedOutside)
-  //  }
-  //}, [])
-
-  const checkIfUserIsLogged = () => {
-    let user = JSON.parse(sessionStorage.getItem("user"))
-    let token = sessionStorage.getItem("token")
-    setUserLoggedIn(user && token)
-  }
 
   return (
     <header className={headerStyles.pageHeader}>
@@ -222,16 +180,29 @@ const HeaderSearchSuggestion = () => {
               </button>
               <button
                 className={`btn ${headerStyles.select}`}
-                value="nl"
-                onClick={() => saveLang("nl")}
+                value="he"
+                onClick={() => saveLang("he")}
               >
                 <img
                   className={headerStyles.country_logo}
-                  src={nl}
-                  alt="Nederlands"
-                  title="Nederlands"
+                  src={he}
+                  alt="Hebrew"
+                  title="Hebrew"
                 />{" "}
-                <span>Nederlands</span>
+                <span>עברית</span>
+              </button>
+              <button
+                className={`btn ${headerStyles.select}`}
+                value="pt"
+                onClick={() => saveLang("pt")}
+              >
+                <img
+                  className={headerStyles.country_logo}
+                  src={pt}
+                  alt="Português (PT)"
+                  title="Português (PT)"
+                />{" "}
+                <span>Português</span>
               </button>
             </Modal.Body>
           </Modal>
@@ -470,16 +441,29 @@ const HeaderSearchSuggestion = () => {
               </button>
               <button
                 className={`btn ${headerStyles.select}`}
-                value="nl"
-                onClick={() => saveLang("nl")}
+                value="he"
+                onClick={() => saveLang("he")}
               >
                 <img
                   className={headerStyles.country_logo}
-                  src={nl}
-                  alt="Nederlands"
-                  title="Nederlands"
+                  src={he}
+                  alt="Hebrew"
+                  title="Hebrew"
                 />{" "}
-                <span>Nederlands</span>
+                <span>עברית</span>
+              </button>
+              <button
+                className={`btn ${headerStyles.select}`}
+                value="pt"
+                onClick={() => saveLang("pt")}
+              >
+                <img
+                  className={headerStyles.country_logo}
+                  src={pt}
+                  alt="Português (PT)"
+                  title="Português (PT)"
+                />{" "}
+                <span>Português</span>
               </button>
             </Modal.Body>
           </Modal>
@@ -488,32 +472,16 @@ const HeaderSearchSuggestion = () => {
         <ul
           className={`navbar-nav d-none d-lg-flex me-auto my-2 my-lg-0 navbar-nav-scroll ${headerStyles.signs}`}
         >
-          {!isUserLoggedIn ? (
-            <>
-              <li>
-                <Link to="/signup" className={`nav-link`}>
-                  <span className={`${headerStyles.signU}`}>
-                    {t("landing.nav.signup")}
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/login" className={`nav-link`}>
-                  <span className={`${headerStyles.signIn}`}>
-                    {t("landing.nav.login")}
-                  </span>
-                </Link>
-              </li>
-            </>
-          ) : (
-            <li>
-              <Link to="/signout" className={`nav-link`}>
-                <span className={`${headerStyles.signIn}`}>
-                  {t("landing.nav.signout")}
-                </span>
-              </Link>
-            </li>
-          )}
+          <li>
+            <Link to="/signup" className={`nav-link`}>
+              <span className={`${headerStyles.signU}`}>{t("nav_signup")}</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/login" className={`nav-link`}>
+              <span className={`${headerStyles.signIn}`}>{t("nav_login")}</span>
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
