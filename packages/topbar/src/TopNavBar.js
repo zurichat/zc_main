@@ -244,7 +244,7 @@ const TopNavBar = () => {
       <div className="ps-3" style={{ width: "10%" }}>
         {/* <a href="/home"> */}
         <div className={styles["topNavBar__logo"]}>
-          <img src={zurichatlogo} alt="zuri chat logo" />
+          <img style={{width: '40%'}} src={zurichatlogo} alt="zuri chat logo" />
         </div>
         {/* </a> */}
       </div>
