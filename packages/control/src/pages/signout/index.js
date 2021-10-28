@@ -27,6 +27,9 @@ const Signout = ({ history }) => {
       .catch(err => {
         console.error(err)
       })
+      .finally(() => {
+        window.sessionStorage.clear()
+      })
   })
 
   const { t } = useTranslation();
