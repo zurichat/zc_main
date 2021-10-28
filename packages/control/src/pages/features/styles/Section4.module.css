@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
-
 .section4 {
   margin-top: 200px;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 .section4Wrapper {
@@ -48,11 +46,8 @@
   font-style: normal;
   font-weight: 500;
   font-size: 1.875rem;
-  /* line-height: 130%; */
   color: #3a3a3a;
 }
-
-/* Mediaquieries */
 
 @media (max-width: 1200px) {
   .rightSideTextWrapper h2 {
@@ -131,7 +126,7 @@
 
   .rightSideTextWrapper h2 {
     width: 100%;
-    font-size: 1.75rem;
+    font-size: 1.65rem;
   }
 
   .rightSideTextWrapper p {

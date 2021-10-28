@@ -1,13 +1,15 @@
-import React from 'react'
-import SingleWorkspace from './singleWorkspace'
-import styles from '../style/workspace.module.css'
-import { useWorkspaceContext } from './WorkspaceContext'
+import React from "react"
+import SingleWorkspace from "./singleWorkspace"
+import styles from "../style/workspace.module.css"
+import { useWorkspaceContext } from "./WorkspaceContext"
+import { getUser } from "../../settings/Utils/Common"
 
 const WorkspaceCard = () => {
   // const { organizations, user, error } = useWorkspaceContext()
-  
-  const user = sessionStorage.getItem('user');
-  const organizations = JSON.parse(sessionStorage.getItem('organisations'))
+
+  // const user = sessionStorage.getItem('user');
+  const user = getUser()
+  const organizations = JSON.parse(sessionStorage.getItem("organisations"))
   // console.log(organizations)
   // console.log(user)
   return (
@@ -16,15 +18,15 @@ const WorkspaceCard = () => {
         <section className={`${styles.workspace_card}`}>
           <header
             className={`${styles.card_header}`}
-            style={{ borderBottom: !organizations && 'none' }}
+            style={{ borderBottom: !organizations && "none" }}
           >
             <h4 className={`${styles.card_title}`}>
               {!user.email
-                ? 'Please login to view your workspaces'
+                ? "Please login to view your workspace"
                 : !organizations
-                ? 'Loading'
+                ? "Loading"
                 : !organizations.length
-                ? 'No workspace found or session expired'
+                ? "No workspace found or session expired"
                 : `Workspaces for ${user.email}`}
             </h4>
           </header>
