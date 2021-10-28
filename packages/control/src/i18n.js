@@ -10,7 +10,7 @@ import { TRANSLATIONS_FR } from "./locales/fr/translations"
 import { TRANSLATIONS_ZH } from "./locales/zh/translations"
 import { getTranslations } from "./translator"
 
-const resources  =  getTranslations()
+const resources = getTranslations()
 
 i18n
   //.use(Backend)
