@@ -1,0 +1,85 @@
+.help {
+  margin-top: 5%;
+  text-align: center;
+  align-items: center;
+  font-size: 10px;
+}
+
+.firstlayer {
+  margin-top: 3%;
+  display: flex;
+}
+
+.invalid > img {
+  width: 30vw;
+  position: relative;
+}
+
+.firstcontent {
+  font-size: 4px;
+  line-height: 25px;
+  font-weight: 500;
+}
+
+.secondlayer {
+  display: flex;
+  margin-top: 3%;
+}
+
+.secondcontent {
+  font-size: 4px;
+  line-height: 25px;
+  font-weight: 500;
+}
+
+.tech > img {
+  width: 30vw;
+  position: relative;
+}
+.thirdlayer {
+  display: flex;
+  margin-top: 3%;
+}
+.thirdcontent {
+  font-size: 4px;
+  line-height: 25px;
+  font-weight: 500;
+}
+
+.mono > img {
+  width: 30vw;
+  position: relative;
+}
+
+@media only screen and (max-width: 600px) {
+  .thirdcontent {
+    text-align: center;
+  }
+  .thirdcontent > h3 {
+    font-size: 24px;
+  }
+  .thirdcontent > p {
+    padding: 0 4%;
+  }
+  .secondcontent {
+    text-align: center;
+  }
+  .secondcontent > h3 {
+    font-size: 24px;
+  }
+  .secondcontent > p {
+    padding: 0 4%;
+  }
+  .invalid > img {
+    width: 100%;
+  }
+  .firstcontent {
+    text-align: center;
+  }
+  .firstcontent > h3 {
+    font-size: 24px;
+  }
+  .firstcontent > p {
+    padding: 0 4%;
+  }
+}

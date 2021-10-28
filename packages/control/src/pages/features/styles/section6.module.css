@@ -1,0 +1,53 @@
+.section6 {
+  margin: 180px 0;
+  background-color: #fff;
+}
+
+.section6Wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.section6TopTextWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.section6TopTextWrapper h2 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2.5rem;
+  line-height: 130%;
+  color: #242424;
+}
+
+.section6CardWrapper {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(31%, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 500px) {
+  .section6 {
+    margin: 80px 0;
+  }
+
+  .section6Wrapper {
+    padding: 0 24px;
+  }
+
+  .section6CardWrapper {
+    margin-top: 60px;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .section6TopTextWrapper h2 {
+    text-align: center;
+    font-size: 1.65rem;
+  }
+}
