@@ -55,12 +55,12 @@ const FormWrapper = ({
             <div>{topLineText}</div>
             <hr className={`${styles.hrRight}`} />
           </span>
-          {error && (
+          {/* {error && (
             <div className={`${styles.errWrapper}`}>
               <RiErrorWarningLine />
               <div>{error}</div>
             </div>
-          )}
+          )} */}
         </div>
         <form
           className={`${styles.form}`}
@@ -110,7 +110,7 @@ const FormWrapper = ({
           {t("auth.login.footer.contactUs")}
         </Link>
         <Link to="/legal" className={`${styles.footer_a}`}>
-            {t("auth.login.footer.legacyPolicy")}
+          {t("auth.login.footer.legacyPolicy")}
         </Link>
         <Link to="/about" className={`${styles.footer_a}`}>
           {t("auth.login.footer.aboutZuri")}

@@ -63,9 +63,7 @@ const Footer = () => {
                 <Link to="/about">{t("footer_about")}</Link>{" "}
               </li>
               <li>
-                <Link to="/whyzurichat">
-                  {t("footer_why_zuri_chat")}
-                </Link>{" "}
+                <Link to="/whyzurichat">{t("footer_why_zuri_chat")}</Link>{" "}
               </li>
               <li>
                 <Link to="/ZurichatBlog">{t("footer_blog")}</Link>{" "}
@@ -89,9 +87,7 @@ const Footer = () => {
                 <Link to="/security">{t("footer_security")}</Link>{" "}
               </li>
               <li>
-                <a href="https://zuri.chat/dao-featues">
-                  {t("footer_web3")}
-                </a>{" "}
+                <a href="https://zuri.chat/dao-featues">{t("footer_web3")}</a>{" "}
               </li>
             </ul>
           </div>
