@@ -39,8 +39,6 @@
   align-items: center;
 }
 
-/* Mediaquieries */
-
 @media (max-width: 1024px) {
   .section5CardWrapper {
     display: grid;
