@@ -54,67 +54,63 @@ const Footer = () => {
 
         <div className={styles.menu}>
           <div>
-            <h5>{t("landing.footer.company")}</h5>
+            <h5>{t("footer_company")}</h5>
             <ul>
               <li>
-                <Link to="/careers">{t("landing.footer.careers")}</Link>{" "}
+                <Link to="/careers">{t("footer_careers")}</Link>{" "}
               </li>
               <li>
-                <Link to="/about">{t("landing.footer.about")}</Link>{" "}
+                <Link to="/about">{t("footer_about")}</Link>{" "}
               </li>
               <li>
-                <Link to="/whyzurichat">
-                  {t("landing.footer.why_zuri_chat")}
-                </Link>{" "}
+                <Link to="/whyzurichat">{t("footer_why_zuri_chat")}</Link>{" "}
               </li>
               <li>
-                <Link to="/ZurichatBlog">{t("landing.footer.blog")}</Link>{" "}
+                <Link to="/ZurichatBlog">{t("footer_blog")}</Link>{" "}
               </li>
             </ul>
           </div>
 
           <div>
-            <h5>{t("landing.footer.info")}</h5>
+            <h5>{t("footer_info")}</h5>
             <ul>
               <li>
-                <Link to="/privacy">{t("landing.footer.privacy")}</Link>
+                <Link to="/privacy">{t("footer_privacy")}</Link>
               </li>
               <li>
-                <Link to="/legal">{t("landing.footer.legal")}</Link>
+                <Link to="/legal">{t("footer_legal")}</Link>
               </li>
               <li>
-                <Link to="/open-marketplace">{t("landing.footer.market")}</Link>{" "}
+                <Link to="/open-marketplace">{t("footer_market")}</Link>{" "}
               </li>
               <li>
-                <Link to="/security">{t("landing.footer.security")}</Link>{" "}
+                <Link to="/security">{t("footer_security")}</Link>{" "}
               </li>
               <li>
-                <a href="https://zuri.chat/dao-featues">
-                  {t("landing.footer.web3")}
-                </a>{" "}
+                <a href="https://zuri.chat/dao-featues">{t("footer_web3")}</a>{" "}
               </li>
             </ul>
           </div>
 
           <div>
-            <h5>{t("landing.footer.knowUs")}</h5>
+            <h5>{t("footer_know_us")}</h5>
             <ul>
               <li>
-                <Link to="/downloads">{t("landing.footer.downloads")}</Link>{" "}
+                <Link to="/downloads">{t("footer_downloads")}</Link>{" "}
               </li>
               <li>
-                <Link to="/contact-us">{t("landing.footer.contact")}</Link>{" "}
+                <Link to="/contact-us">{t("footer_contact")}</Link>{" "}
               </li>
               <li>
                 <a href="https://docs.zuri.chat/">
-                  {t("landing.footer.documentation")}
+                  {t("footer_documentation")}
                 </a>{" "}
               </li>
             </ul>
           </div>
 
           <div className={styles.social}>
-            <h5>{t("landing.footer.socialMedia")}</h5>
+            <h5>{t("footer_social_media")}</h5>
             <ul>
               <li>
                 <a
@@ -171,7 +167,7 @@ const Footer = () => {
         {/* <div className={styles.bottom_footer}>
           <p>
             {" "}
-            &copy; {getYear()} Zuri Chat. {t("landing.footer.rights")}
+            &copy; {getYear()} Zuri Chat. {t("footer_rights")}
           </p>
         </div> */}
       </div>
@@ -179,7 +175,7 @@ const Footer = () => {
       <div className={styles.bottom_footer}>
         <p>
           {" "}
-          &copy; {getYear()} Zuri Chat. {t("landing.footer.rights")}
+          &copy; {getYear()} Zuri Chat. {t("footer_rights")}
         </p>
       </div>
     </div>
