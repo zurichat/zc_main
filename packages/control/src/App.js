@@ -71,15 +71,6 @@ import ChangeWorkspaceName from "./pages/admin/Settings/components/ChangeWorkspa
 import BlogDetails from "./pages/blogs/components/BlogDetails"
 import CreateBlog from "./pages/blogs/components/CreateBlog.jsx"
 
-// useEffect(() => {
-//     localStorage.setItem('input',input);
-// },[input]);
-
-// const handleInputChange = (event) => {
-//     setInput(event.target.value);
-// }
-// let workspaceRoute = '/createworkspace';
-
 const App = () => {
   return (
     <BrowserRouter>

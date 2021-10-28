@@ -3,29 +3,24 @@ import { Link } from "react-router-dom"
 import AdminSettings from "."
 import { FiSearch } from "react-icons/fi"
 import styles from "./styles/invitation.module.css"
-import InviteModal from './InviteModal'
-import {GetUserInfo} from "@zuri/control"
-import axios from "axios";
-
+import InviteModal from "./InviteModal"
+import { GetUserInfo } from "@zuri/utilities"
+import axios from "axios"
 
 const Invitation = () => {
   const [showModal, setShowModal] = useState(false)
-  const [userInfo,setUserInfo ]= useState({})
-  const [organizationName, setOrganizationName] = useState("");
+  const [userInfo, setUserInfo] = useState({})
+  const [organizationName, setOrganizationName] = useState("")
   const [pendingInvite, setPendingInvite] = useState([])
-const getUserInfo = async() => {
-
+  const getUserInfo = async () => {
     const useInfo = await GetUserInfo()
     setUserInfo(useInfo)
-}
+  }
 
   useEffect(() => {
     getUserInfo()
-   
   }, [userInfo.token])
-    useEffect(() => {
-   
-  }, [pendingInvite])
+  useEffect(() => {}, [pendingInvite])
 
   return (
     <AdminSettings>
@@ -46,12 +41,23 @@ const getUserInfo = async() => {
                   </Link>
                 </p>
               </div>
-              <button onClick={()=> setShowModal(true)} className={styles.invitesBtn}>Invite People</button>
+              <button
+                onClick={() => setShowModal(true)}
+                className={styles.invitesBtn}
+              >
+                Invite People
+              </button>
             </div>
-            {
-              showModal ? <InviteModal setShowModal={setShowModal} userInfo={userInfo} organizationName={organizationName}
-              setPendingInvite={setPendingInvite}/> : ""
-            }
+            {showModal ? (
+              <InviteModal
+                setShowModal={setShowModal}
+                userInfo={userInfo}
+                organizationName={organizationName}
+                setPendingInvite={setPendingInvite}
+              />
+            ) : (
+              ""
+            )}
           </div>
           <div className={styles.invitesTab}>
             <div className={styles.tabMenu}>
@@ -71,11 +77,13 @@ const getUserInfo = async() => {
               </div>
               <div className={styles.adminInvitesContainer}>
                 <p className={styles.adminInviteRes}>
-                  {
-                    pendingInvite.length > 0? pendingInvite.map((user, id)=>{
-                        {user}
-                    }) : "There are currently no pending invitation"
-                  }
+                  {pendingInvite.length > 0
+                    ? pendingInvite.map((user, id) => {
+                        {
+                          user
+                        }
+                      })
+                    : "There are currently no pending invitation"}
                 </p>
               </div>
             </div>
@@ -83,7 +91,6 @@ const getUserInfo = async() => {
         </div>
         {/* </div> */}
       </div>
-
     </AdminSettings>
   )
 }

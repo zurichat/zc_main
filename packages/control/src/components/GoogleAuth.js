@@ -2,7 +2,7 @@ import React from "react"
 import axios from "axios"
 import { useHistory } from "react-router-dom"
 import { useGoogleLogin } from "react-google-login"
-import { GetUserInfo } from "../zuri-control"
+import { GetUserInfo } from "@zuri/utilities"
 import $behaviorSubject from "../../../root-config/globalState"
 const CLIENT_ID =
   "943002582641-ek6jakave3irmueaqfdoc0754v83qf6e.apps.googleusercontent.com"
