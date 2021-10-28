@@ -5,8 +5,8 @@ import axios from "axios"
 import { SignoutStyleWrapper } from "../../component-styles/SignoutStyle"
 import logo from "../../component-assets/zuri.svg"
 import { Helmet } from "react-helmet"
-import "../../i18n";
-import { useTranslation} from "react-i18next";
+import "../../i18n"
+import { useTranslation } from "react-i18next"
 
 const Signout = ({ history }) => {
   const orgName = localStorage.getItem("orgName")
@@ -27,9 +27,12 @@ const Signout = ({ history }) => {
       .catch(err => {
         console.error(err)
       })
+      .finally(() => {
+        window.sessionStorage.clear()
+      })
   })
 
-  const { t } = useTranslation();
+  const { t } = useTranslation()
   return (
     <>
       <SignoutStyleWrapper>
@@ -41,9 +44,13 @@ const Signout = ({ history }) => {
         </div>
 
         <div className="content-wrapper">
-          <h6 className="org-name">{t("auth.signout.preOrgText")} {orgName} {t("auth.signout.workspace")}</h6>
+          <h6 className="org-name">
+            {t("auth.signout.preOrgText")} {orgName}{" "}
+            {t("auth.signout.workspace")}
+          </h6>
           <signoutMessage>
-            {t("auth.signout.signoutMessage.preOrgText")} {orgName} {t("auth.signout.workspace")}
+            {t("auth.signout.signoutMessage.preOrgText")} {orgName}{" "}
+            {t("auth.signout.workspace")}
           </signoutMessage>
 
           <button className="push" onClick={() => history.push("/login")}>
