@@ -254,7 +254,7 @@ const HeaderSearchSuggestion = () => {
                 aria-current="page"
               >
                 <span className={`${headerStyles.item}`}>
-                  {t("landing.nav.pricing")}
+                  {t("nav_pricing")}
                 </span>
               </NavLink>
             </li>
@@ -265,9 +265,7 @@ const HeaderSearchSuggestion = () => {
                 role="button"
                 aria-expanded="false"
               >
-                <span className={`${headerStyles.item}`}>
-                  {t("landing.nav.about")}
-                </span>
+                <span className={`${headerStyles.item}`}>{t("nav_about")}</span>
               </NavLink>
             </li>
             <li className="nav-item">
@@ -278,7 +276,7 @@ const HeaderSearchSuggestion = () => {
                 aria-expanded="false"
               >
                 <span className={`${headerStyles.item}`}>
-                  {t("landing.nav.plugin")}
+                  {t("nav_plugin")}
                 </span>
               </NavLink>
             </li>
@@ -288,7 +286,7 @@ const HeaderSearchSuggestion = () => {
                 className={`nav-link ${headerStyles.navLinkComms}`}
               >
                 <span className={`${headerStyles.item}`}>
-                  {t("landing.nav.downloads")}
+                  {t("nav_downloads")}
                 </span>
               </NavLink>
             </li>
@@ -301,7 +299,7 @@ const HeaderSearchSuggestion = () => {
                 aria-expanded="false"
               >
                 <span className={`${headerStyles.item}`}>
-                  {t("landing.nav.contact")}
+                  {t("nav_contact")}
                 </span>
               </NavLink>
             </li>
@@ -311,14 +309,14 @@ const HeaderSearchSuggestion = () => {
             <li className="nav-item">
               <Link to="/signup" className={`btn nav-link`}>
                 <span className={`${headerStyles.signU}`}>
-                  {t("landing.nav.signup")}
+                  {t("nav_signup")}
                 </span>
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/login" className={`btn nav-link`} role="button">
                 <span className={`${headerStyles.signIn}`}>
-                  {t("landing.nav.login")}
+                  {t("nav_login")}
                 </span>
               </Link>
             </li>
@@ -480,16 +478,12 @@ const HeaderSearchSuggestion = () => {
         >
           <li>
             <Link to="/signup" className={`nav-link`}>
-              <span className={`${headerStyles.signU}`}>
-                {t("landing.nav.signup")}
-              </span>
+              <span className={`${headerStyles.signU}`}>{t("nav_signup")}</span>
             </Link>
           </li>
           <li>
             <Link to="/login" className={`nav-link`}>
-              <span className={`${headerStyles.signIn}`}>
-                {t("landing.nav.login")}
-              </span>
+              <span className={`${headerStyles.signIn}`}>{t("nav_login")}</span>
             </Link>
           </li>
         </ul>

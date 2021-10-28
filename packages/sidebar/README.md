@@ -1,11 +1,15 @@
-#Sidebar Documentation
+# Sidebar Documentation
+
 Documentation of the protocols for sidebar
 
-#####Adding plugin to the Sidebar
-Example url: 
+### Adding plugin to the Sidebar
+
+Example url:
+
 > https://example.zuri.chat/sidebar
 
-######Sample Response
+###### Sample Response
+
 ```
 {
    "name": "Plugin",
@@ -19,8 +23,8 @@ Example url:
 }
 ```
 
+##### Plugin categories
 
-#####Plugin categories
 ```
 "games"
 "utility"
@@ -28,15 +32,18 @@ Example url:
 "entertainment"
 "sales"
 "productivity"
-``` 
-#####Rules for grouping plugins
+```
+
+##### Rules for grouping plugins
+
 1. If your plugin is a single room that should show up on the top level, don't include the `category` key in your data.
 2. If your plugin is a single room that should show up under a `category`, set the `category` to any of the category options above, then set `show_group` to `false`.
-If your plugin need it's own group, set the `category` to any the category options above, then set `show_group` to `true` , then make sure you set a `group_name`
+   If your plugin need it's own group, set the `category` to any the category options above, then set `show_group` to `true` , then make sure you set a `group_name`
 
 > NB: If plugin is a single room don't add `category` to sidebar payload
 
-######Sample Response
+###### Sample Response
+
 ```
 {
    "name": "Plugin",
@@ -50,15 +57,16 @@ If your plugin need it's own group, set the `category` to any the category optio
 }
 ```
 
-####Update Sidebar Realtime
+### Update Sidebar Realtime
 
 `Subscribe to channel for sidebar update`
+
 > currentworkspace_memberid_sidebar
 
-
-####Update Room Realtime
+### Update Room Realtime
 
 Payload:
+
 ```
 {
     event: "sidebar_update",
@@ -76,8 +84,10 @@ Payload:
   }
 ```
 
-####Send Notification
+### Send Notification
+
 Payload:
+
 ```
 {
     event: "sidebar_update",
@@ -97,6 +107,7 @@ Payload:
                 room_image: "https://image.com"
                 unread: 10
             }
-       ] 
+       ]
     }
 }
+```
