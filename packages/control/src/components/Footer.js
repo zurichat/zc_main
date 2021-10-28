@@ -87,7 +87,7 @@ const Footer = () => {
                 <Link to="/security">{t("footer_security")}</Link>{" "}
               </li>
               <li>
-                <a href="https://zuri.chat/dao-featues">{t("footer_web3")}</a>{" "}
+                <a href="https://zuri.chat/dao-features">{t("footer_web3")}</a>{" "}
               </li>
             </ul>
           </div>
