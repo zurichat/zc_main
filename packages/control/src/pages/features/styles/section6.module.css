@@ -31,14 +31,6 @@
   gap: 20px;
 }
 
-/* Mediaqueries */
-
-/* @media (max-width: 1024px) {
-}
-
-@media (max-width: 800px) {
-} */
-
 @media (max-width: 500px) {
   .section6 {
     margin: 80px 0;
@@ -56,6 +48,6 @@
 
   .section6TopTextWrapper h2 {
     text-align: center;
-    font-size: 1.7rem;
+    font-size: 1.65rem;
   }
 }
