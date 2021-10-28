@@ -28,6 +28,10 @@
   color: #3a3a3a;
 }
 
+.InputLabelError {
+  color: #ff0000;
+}
+
 /* Input wrapper */
 .InputWrapper {
   border: 1px solid #bebebe;
