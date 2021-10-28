@@ -15,6 +15,13 @@
   justify-content: center;
   align-items: center;
 }
+.remote {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  color: #242424;
+  font-style: normal;
+}
 .section3TopTextsWrapper h3 {
   font-style: normal;
   font-weight: bold;
@@ -86,12 +93,6 @@
   width: 100%;
 }
 
-/* Mediaqueries */
-
-/* @media (max-width: 800px) {
-
-} */
-
 @media (max-width: 500px) {
   .section3TopContentWrapper {
     padding: 0 24px;
@@ -99,6 +100,10 @@
   .section3TopTextsWrapper {
     margin: 0;
     width: 100%;
+  }
+  .remote {
+    text-align: left;
+    font-size: 27px;
   }
   .section3TopTextsWrapper h3 {
     font-size: 1.75rem;
@@ -124,10 +129,6 @@
     justify-content: space-around;
     align-items: center;
   }
-  /* .toDoListCard {
-    grid-column: 1/-1 !important; 
-    justify-items: center;
-  } */
   .iconWrapper {
     width: 100px;
     height: 100px;

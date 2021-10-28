@@ -1,19 +1,19 @@
-import styles from '../../styles/section3.module.css'
-import channels from '../../assets/channels_icon.svg'
-import todo from '../../assets/to_do_interface_image.svg'
-import holiday from '../../assets/holiday_calender_icon.svg'
-import company from '../../assets/company_deadline_icon.svg'
-import quick from '../../assets/quick_reply_app_icon.svg'
-import list from '../../assets/to_do_list_icon.svg'
+import styles from "../../styles/section3.module.css"
+import channels from "../../assets/channels_icon.svg"
+import todo from "../../assets/to_do_interface_image.svg"
+import holiday from "../../assets/holiday_calender_icon.svg"
+import company from "../../assets/company_deadline_icon.svg"
+import quick from "../../assets/quick_reply_app_icon.svg"
+import list from "../../assets/to_do_list_icon.svg"
 
 const Section3 = () => {
   return (
     <div className={styles.section3}>
       <div className={styles.section3TopContentWrapper}>
         <div className={styles.section3TopTextsWrapper}>
-          <h3 className={styles.remote}>
+          <h2 className={styles.remote}>
             Working remotely, more intriguing than ever
-          </h3>
+          </h2>
           <p className={styles.work}>
             Zuri Chat is where work meets fun. Activate body and mind, maintain
             high productivity levels, connect and interact with your team
