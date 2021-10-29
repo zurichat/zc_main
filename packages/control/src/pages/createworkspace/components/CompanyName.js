@@ -100,8 +100,12 @@ function CompanyName({ input }) {
             Maximum 50 characters
           </span>
           <div className={CompanyNameCSS.buttonContainer}>
+            <Link to="/createworkspace">
+              <button style={{ backgroundColor: "#f40101", color: "white" }}>
+                Cancel
+              </button>
+            </Link>
             <Link to={`${match.url}/step2`}>
-              {" "}
               <button
                 disabled={orgName.length < 3}
                 style={
@@ -112,12 +116,6 @@ function CompanyName({ input }) {
                 onClick={createUserOrg}
               >
                 Continue
-              </button>
-            </Link>
-            <Link to="/createworkspace">
-              {" "}
-              <button style={{ backgroundColor: "#f40101", color: "white" }}>
-                Cancel
               </button>
             </Link>
           </div>
