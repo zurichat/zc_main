@@ -1,6 +1,6 @@
-# zc_main
+# ZC_MAIN
 
-This is the Zuri Chat frontend built with [ExpressJS](http://expressjs.com/) (Backend) and [React](https://reactjs.org/) (Frontend)
+This is the Zuri Chat Frontend built with [React](https://reactjs.org/) (Frontend)
 
 ## Getting Started.
 
@@ -19,12 +19,6 @@ if you have it then install the project's dependencies:
 yarn install
 ```
 
-to only install for one of the folders(topbar, sidebar, control)
-
-```bash
-yarn setup:<FOLDER-NAME>
-```
-
 ## STARTING THE SERVER
 
 To start the whole application server
@@ -33,23 +27,7 @@ To start the whole application server
 yarn dev
 ```
 
-To only start a single application server run the following command
-
-```bash
-yarn dev:<FOLDER-NAME>
-```
-
 Open [http://localhost:9000](http://localhost:9000) with your browser to see the result.
-
-### **The apllications are served at**
-
-Topbar : [http://localhost:8080](http://localhost:8080)
-
-Sidebar : [http://localhost:8081](http://localhost:8081)
-
-Control : [http://localhost:8082](http://localhost:8082)
-
-PluginHeader : [http://localhost:8083](http://localhost:8083)
 
 ### **Building**
 
@@ -57,27 +35,21 @@ PluginHeader : [http://localhost:8083](http://localhost:8083)
 yarn build
 ```
 
-To only build a single application server run the following command
+To remove dist folder
 
 ```bash
-yarn build:<FOLDER-NAME>
+yarn clean
 ```
 
-To remove all node_modules and yarn.lock
+To remove all node_modules
 
 ```bash
-yarn clean:fresh
-```
-
-To open [app](http://localhost:9000) in the browser
-
-```bash
-yarn open
+yarn clean-fresh
 ```
 
 ## Editor setup
 
-We're using eslint for js linting, stylelint for css linting and prettier for code formating, make sure you install eslint and prettier plugins in your editor so you can
+We're using eslint for js linting, and prettier for code formating, make sure you install eslint and prettier plugins in your editor so you can
 see linting errors as you code and have your code formatted on save by prettier. If formatOnSave doesn't work please google how to set up
 format on save for the eslint & prettier plugins in your editor 🙃
 
@@ -93,7 +65,6 @@ For detailed information on how to go about contributing to this project. Check 
 ```bash
 yarn lint # to lint all files # in project directory
 yarn lint:js # to lint only js,jsx files # in project directory
-yarn lint:css # to lint only css files # in project directory
 
 yarn prettify # to prettify files # in project directory
 ```

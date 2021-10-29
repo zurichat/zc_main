@@ -6,7 +6,7 @@ import dmIcon from "./assets/dm-icon.svg"
 import draftIcon from "./assets/draft-icon.svg"
 import pluginIcon from "./assets/plugin-icon.svg"
 
-import { SubscribeToChannel } from "@zuri/control"
+import { SubscribeToChannel } from "@zuri/utilities"
 import { ACTIONS } from "./App"
 import Header from "./components/Header"
 import Invite from "./components/Invite"

@@ -1,4 +1,4 @@
-import { GetUserInfo } from "@zuri/control"
+import { GetUserInfo } from "@zuri/utilities"
 import { getOrgDetails } from "./getOrgDetails"
 import { ACTIONS } from "../App"
 

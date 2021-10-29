@@ -1,9 +1,8 @@
-import styles from '../../styles/section2.module.css'
-import hotelsng from '../../assets/hotelsng_logo.svg'
-import ingressive4good from '../../assets/i4g_logo.svg'
-// import nucleio from '../../assets/nucle_logo.svg'
-import camphouse from '../../assets/camphouse_logo.svg'
-import zuritraining from '../../assets/zuri_training_logo.svg'
+import styles from "../../styles/section2.module.css"
+import hotelsng from "../../assets/hotelsng_logo.svg"
+import ingressive4good from "../../assets/i4g_logo.svg"
+import camphouse from "../../assets/camphouse_logo.svg"
+import zuritraining from "../../assets/zuri_training_logo.svg"
 
 const Section2 = () => {
   return (
@@ -19,9 +18,6 @@ const Section2 = () => {
           <div className={styles.imageWrapper}>
             <img src={ingressive4good} alt="ingressive4good logo" />
           </div>
-          {/* <div className={styles.imageWrapper}>
-            <img src={nucleio} alt="nucle.io logo" />
-          </div> */}
           <div className={styles.imageWrapper}>
             <img src={camphouse} alt="camphouse logo" />
           </div>

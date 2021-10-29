@@ -98,7 +98,7 @@ const centrifuge = new Centrifuge(
   "wss://realtime.zuri.chat/connection/websocket"
 )
 
-// centrifuge.setConnectData({ bearer: token })
+centrifuge.setConnectData({ bearer: token })
 
 centrifuge.connect()
 centrifuge.on("connect", function (connectCtx) {

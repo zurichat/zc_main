@@ -2,12 +2,10 @@
 import i18n from "i18next"
 import { initReactI18next } from "react-i18next"
 import LanguageDetector from "i18next-browser-languagedetector"
-//import Backend from "i18next-http-backend"
 
-import { TRANSLATIONS_EN } from "./locales/en/translations"
-import { TRANSLATIONS_DE } from "./locales/de/translations"
-import { TRANSLATIONS_FR } from "./locales/fr/translations"
-import { TRANSLATIONS_ZH } from "./locales/zh/translations"
+import { getTranslations } from "./translator"
+
+const resources = getTranslations()
 
 i18n
   //.use(Backend)
@@ -24,26 +22,13 @@ i18n
     interpolation: {
       escapeValue: false // not needed for react as it escapes by default
     },
-    resources: {
-      fr: {
-        translation: TRANSLATIONS_FR
-      },
-      de: {
-        translation: TRANSLATIONS_DE
-      },
-      en: {
-        translation: TRANSLATIONS_EN
-      },
-      zh: {
-        translation: TRANSLATIONS_ZH
-      }
-    }
+    resources: resources
   })
 
 const lang = localStorage.getItem("myLanguage")
   ? localStorage.getItem("myLanguage")
   : "en"
 i18n.changeLanguage(lang)
-//console.log(lang)
+console.log(lang)
 
 export default i18n

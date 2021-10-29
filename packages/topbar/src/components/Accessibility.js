@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import styles from "../styles/Accessibility.module.css"
 import image1 from "../assets/images/up_icon.jpeg"
-import { GetUserInfo } from "../../../control/src/zuri-control"
+import { GetUserInfo } from "@zuri/utilities"
 import checkFill from "../assets/images/check-fill.svg"
 import checkNotFill from "../assets/images/check-not-fill.svg"
 import radioFilled from "../assets/images/radio-fill.svg"

@@ -6,19 +6,12 @@ import FormWrapper from "../../components/AuthFormWrapper"
 import LoginLoading from "../../components/LoginLoading"
 import styles from "../../component-styles/AuthFormElements.module.css"
 import axios from "axios"
-import { GetUserInfo } from "@zuri/control"
+import { GetUserInfo } from "@zuri/utilities"
 import $behaviorSubject from "../../../../root-config/globalState"
 import { Helmet } from "react-helmet"
 import { goToDefaultChannel } from "../../api/channels"
 import "../../i18n"
 import { useTranslation } from "react-i18next"
-// import { Link } from 'react-router-dom'
-// import authBg1 from './assets/auth_bg1.svg'
-// import authBg2 from './assets/auth_bg2.svg'
-// import authBg3 from './assets/auth_bg3.svg'
-// import authBg4 from './assets/auth_bg4.svg'
-// import authBg5 from './assets/auth_bg5.svg'
-//import GoogleLogin from 'react-google-login'
 
 import Loader from "react-loader-spinner"
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
@@ -141,28 +134,28 @@ const Login = () => {
   return (
     <main id={styles.authPageWrapper}>
       <Helmet>
-        <title>{t("auth.login.title")}</title>
+        <title>{t("title")}</title>
       </Helmet>
       {Loading && <LoginLoading />}
       <section id={styles.authFormContainer}>
         <FormWrapper
-          header={t("auth.login.form.header")}
-          subHeader={t("auth.login.form.sub_header")}
-          googleHeader={t("auth.login.form.google_header")}
-          topLineText={t("auth.login.form.topline_text")}
-          submitButtonName={t("auth.login.form.submitButtonName")}
+          header={t("header")}
+          subHeader={t("sub_header")}
+          googleHeader={t("google_header")}
+          topLineText={t("topline_text")}
+          submitButtonName={t("submitButtonName")}
           disabled={email && password}
           error={error}
           handleSubmit={handleSubmit}
-          bottomLine={t("auth.login.form.bottomLine")}
-          bottomLink={t("auth.login.form.bottomLink")}
+          bottomLine={t("bottomLine")}
+          bottomLink={t("bottomLink")}
           bottomLinkHref="Signup"
           setLoading={setLoading}
         >
           <AuthInputBox
             className={`${styles.inputElement}`}
             id="email"
-            name={t("auth.login.form.authInputBox.emailInputName")}
+            name={t("emailInputName")}
             type="email"
             placeholder="Johndoe@example.com"
             value={email}
@@ -173,11 +166,9 @@ const Login = () => {
           <AuthInputBox
             className={`${styles.inputElement}`}
             id="password"
-            name={t("auth.login.form.authInputBox.passwordInputName")}
+            name={t("passwordInputName")}
             type="password"
-            placeholder={t(
-              "auth.login.form.authInputBox.passwordInputPlaceHolder"
-            )}
+            placeholder={t("passwordInputPlaceHolder")}
             value={password}
             setValue={setPassword}
             error={passworderror}
@@ -196,19 +187,19 @@ const Login = () => {
                 }}
                 // onFocus={displayImage}
               />
-              {t("auth.login.form.authInputBox.rememberMe")}
+              {t("rememberMe")}
             </div>
             <div className={`${styles.right}`}>
               <Link
                 to="/reset-password"
                 className={`${styles.resetPasswordLink}`}
               >
-                {t("auth.login.form.authInputBox.forgotPassword")}
+                {t("forgotPassword")}
               </Link>
               <Link to="/troubleshooting/onboarding-help">
                 {" "}
                 {""}
-                {t("auth.login.form.authInputBox.getHelp")}
+                {t("getHelp")}
               </Link>
             </div>
           </div>
