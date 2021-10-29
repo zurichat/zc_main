@@ -93,7 +93,7 @@ export const switchWorkSpace = (currentOrgId, title = "General") => {
     axios
       .get(`${channelApi}/${currentOrgId}/channels/`)
       .then(res => {
-        const redirectLink = `channels/message-board/${res.data[0]._id}`
+        const redirectLink = `channels/message-board/${res.data[0]?._id}`
         goToChannel(redirectLink)
       })
       .catch(err => alert(err.message))

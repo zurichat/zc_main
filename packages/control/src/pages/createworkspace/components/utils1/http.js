@@ -1,19 +1,19 @@
 const host =
-  process.env.NODE_ENV === 'production'
-    ? 'http://localhost:8080/realtime/publish-event'
-    : 'http://localhost:8080'
+  process.env.NODE_ENV === "production"
+    ? "http://localhost:8080/realtime/publish-event"
+    : "http://localhost:8080"
 
-// import { SubscribeToChannel } from '@zuri/control'
+// import { SubscribeToChannel } from '@zuri/utilities'
 function post(path, body) {
   return fetch(`${host}${path}`, {
-    credentials: 'omit',
+    credentials: "omit",
     headers: {
-      'content-type': 'application/json;charset=UTF-8',
-      'sec-fetch-mode': 'cors'
+      "content-type": "application/json;charset=UTF-8",
+      "sec-fetch-mode": "cors"
     },
     body: JSON.stringify(body),
-    method: 'POST',
-    mode: 'cors'
+    method: "POST",
+    mode: "cors"
   })
     .then(function (response) {
       return response.json()
@@ -25,13 +25,13 @@ function post(path, body) {
 
 function get(path) {
   return fetch(`${host}${path}`, {
-    credentials: 'omit',
+    credentials: "omit",
     headers: {
-      'content-type': 'application/json;charset=UTF-8',
-      'sec-fetch-mode': 'cors'
+      "content-type": "application/json;charset=UTF-8",
+      "sec-fetch-mode": "cors"
     },
-    method: 'GET',
-    mode: 'cors'
+    method: "GET",
+    mode: "cors"
   })
     .then(function (response) {
       return response.json()
