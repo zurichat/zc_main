@@ -1,7 +1,7 @@
-import React from 'react'
-import style from '../Style/style.module.css'
-import first from '../assets/Card1.png'
-import second from '../assets/Card2.png'
+import React from "react"
+import style from "../Style/style.module.css"
+import first from "../../../component-assets/Card1.png"
+import second from "../../../component-assets/Card2.png"
 
 const relatedArticles = () => {
   return (
@@ -55,7 +55,7 @@ const relatedArticles = () => {
           </div>
           <div className={style.keep_reading_text}>
             <p className={style.getting}>Getting Started</p>
-            <h3 style={{ fontSize: '1.7em', padding: 0, margin: 0 }}>
+            <h3 style={{ fontSize: "1.7em", padding: 0, margin: 0 }}>
               Getting Started with Zuri Chat
             </h3>
             <p className={style.getting_text}>

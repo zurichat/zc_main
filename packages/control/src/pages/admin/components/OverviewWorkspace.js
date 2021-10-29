@@ -1,6 +1,6 @@
 import React from "react"
 import styles from "../styles/overviewWorkspace.module.css"
-import avatar from "../assets/avatar.svg"
+import avatar from "../../../component-assets/avatar.svg"
 import { Link } from "react-router-dom"
 const OverviewWorkspace = ({ organizationDetails, currentWorkspace }) => {
   if (!organizationDetails) {

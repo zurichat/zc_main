@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import {
   MDBCarousel,
   MDBCarouselCaption,
@@ -7,12 +7,12 @@ import {
   MDBView,
   MDBMask,
   MDBContainer
-} from 'mdbreact'
-import styles from '../styles/about.module.css'
-import user from '../asset/user 2.svg'
-import group from '../asset/Group.svg'
-import vector from '../asset/Vector.svg'
-import user2 from '../asset/user 2-1.svg'
+} from "mdbreact"
+import styles from "../styles/about.module.css"
+import user from "../../../component-assets/user 2.svg"
+import group from "../../../component-assets/Group.svg"
+import vector from "../../../component-assets/Vector.svg"
+import user2 from "../../../component-assets/user 2-1.svg"
 
 const CarouselPage = () => {
   return (

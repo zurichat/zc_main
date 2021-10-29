@@ -1,24 +1,24 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState, useContext } from "react"
 
-import Cleave from 'cleave.js/react'
+import Cleave from "cleave.js/react"
 
-import cardBack from '../assets/cardBack.svg'
+import cardBack from "../../../component-assets/cardBack.svg"
 
-import styles from '../styles/paymentMethod.module.css'
-import CardList from './CardLists'
-import toast, { Toaster } from 'react-hot-toast'
-import { ValidateCard } from '../Utils/Common'
+import styles from "../styles/paymentMethod.module.css"
+import CardList from "./CardLists"
+import toast, { Toaster } from "react-hot-toast"
+import { ValidateCard } from "../Utils/Common"
 
-import { CardContext } from '../../../context/CardContext'
+import { CardContext } from "../../../context/CardContext"
 
 const PaymentTab = () => {
   const { cardLists, setCardList } = useContext(CardContext)
   const [formFilled, setFormFilled] = useState(true)
-  const [cardName, setCardName] = useState('')
-  const [cardNumber, setCardNumber] = useState('')
-  const [expireDate, setExpireDate] = useState('')
-  const [cvv, setCvv] = useState('')
-  const [cardType, setCardType] = useState('')
+  const [cardName, setCardName] = useState("")
+  const [cardNumber, setCardNumber] = useState("")
+  const [expireDate, setExpireDate] = useState("")
+  const [cvv, setCvv] = useState("")
+  const [cardType, setCardType] = useState("")
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -32,37 +32,37 @@ const PaymentTab = () => {
     }
 
     if (cardLists?.length > 0) {
-      const cardLists = JSON.parse(localStorage.getItem('cardList'))
+      const cardLists = JSON.parse(localStorage.getItem("cardList"))
       if (
         cardLists.length > 0 &&
         cardLists.filter(card => card.cardNumber !== data.cardNumber)
       ) {
         cardLists.push(data)
         setCardList(cardLists)
-        localStorage.setItem('cardList', JSON.stringify(cardLists))
-        toast.success('Card Added Successfully')
+        localStorage.setItem("cardList", JSON.stringify(cardLists))
+        toast.success("Card Added Successfully")
       } else {
-        toast.error('Card already exists')
+        toast.error("Card already exists")
       }
     } else {
       const cardLists = [data]
       setCardList(cardLists)
-      localStorage.setItem('cardList', JSON.stringify(cardLists))
-      toast.success('Card Added Successfully')
+      localStorage.setItem("cardList", JSON.stringify(cardLists))
+      toast.success("Card Added Successfully")
     }
 
-    setCardName('')
-    setCardNumber('')
-    setExpireDate('')
-    setCvv('')
+    setCardName("")
+    setCardNumber("")
+    setExpireDate("")
+    setCvv("")
   }
 
   useEffect(() => {
     if (
-      cardNumber !== '' &&
-      cardName !== '' &&
-      expireDate !== '' &&
-      cvv !== ''
+      cardNumber !== "" &&
+      cardName !== "" &&
+      expireDate !== "" &&
+      cvv !== ""
     ) {
       setFormFilled(false)
     } else {
@@ -83,7 +83,7 @@ const PaymentTab = () => {
         <form onSubmit={handleSubmit} className={styles.paymentForm}>
           <div className={styles.paymentInputGroup}>
             <label className={styles.paymentInputLabel} htmlFor="name">
-              Name on Card*{' '}
+              Name on Card*{" "}
             </label>
             <input
               onChange={e => setCardName(e.target.value)}
@@ -96,7 +96,7 @@ const PaymentTab = () => {
           </div>
           <div className={styles.paymentInputGroup}>
             <label className={styles.paymentInputLabel} htmlFor="number">
-              Card Number*{' '}
+              Card Number*{" "}
             </label>
             <div className={styles.paymentInputContainer}>
               <Cleave
@@ -119,12 +119,12 @@ const PaymentTab = () => {
           <div className={styles.twoGrid}>
             <div className={styles.paymentInputGroup}>
               <label className={styles.paymentInputLabel} htmlFor="expiry">
-                Expiry*{' '}
+                Expiry*{" "}
               </label>
               <Cleave
                 placeholder="MM/YY"
                 value={expireDate}
-                options={{ date: true, datePattern: ['m', 'd'] }}
+                options={{ date: true, datePattern: ["m", "d"] }}
                 onChange={e => setExpireDate(e.target.value)}
                 className={styles.paymentInput}
                 id="expiry"
@@ -132,7 +132,7 @@ const PaymentTab = () => {
             </div>
             <div className={styles.paymentInputGroup}>
               <label className={styles.paymentInputLabel} htmlFor="cvv">
-                CVV*{' '}
+                CVV*{" "}
               </label>
               <div className={styles.paymentInputContainer}>
                 <Cleave

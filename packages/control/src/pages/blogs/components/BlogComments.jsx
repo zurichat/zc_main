@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react"
 import axios from "axios"
 import style from "../Style/style.module.css"
 import { UitCommentDots } from "@iconscout/react-unicons-thinline"
-import Like from "../assets/thumbs-up-white.svg"
-import Avatar from "../assets/user.svg"
+import Like from "../../../component-assets/thumbs-up-white.svg"
+import Avatar from "../../../component-assets/user.svg"
 import { TransitionGroup } from "react-transition-group"
 
 import {
@@ -11,7 +11,7 @@ import {
   UilTwitter,
   UilLinkedinAlt
 } from "@iconscout/react-unicons"
-import link from "../assets/link-black.svg"
+import link from "../../../component-assets/link-black.svg"
 
 const Comments = () => {
   const [comments, setComments] = useState([])

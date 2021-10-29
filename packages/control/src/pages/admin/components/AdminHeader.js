@@ -4,10 +4,7 @@ import styles from "../styles/adminHead.module.css"
 import { Link } from "react-router-dom"
 
 // icons
-import zuriLogo from "../assets/zuriLogo.svg"
-import grid from "../assets/grid.svg"
-import bouy from "../assets/bouy.svg"
-import la_rocket from "../assets/la_rocket.svg"
+
 import { getCurrentWorkspace } from "../Utils/Common"
 import { authAxios } from "../Utils/Api"
 
@@ -34,13 +31,12 @@ const AdminHeader = ({ setModal, openModal }) => {
 
   return (
     <div className={styles.adminHeader}>
-        <Link style={{}} to="/admin/settings/home">
-      <div className={styles.organizationLogo}>
-      
+      <Link style={{}} to="/admin/settings/home">
+        <div className={styles.organizationLogo}>
           <FiHome className={styles.icons} />
           {workspaceData.name}
-      </div>
-        </Link>    
+        </div>
+      </Link>
       {/* <div className={styles.menu}>
         <Link className={styles.menuLink} to="/">
           <img className={styles.menuImg} src={la_rocket} alt="rocket icon" />

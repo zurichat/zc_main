@@ -1,6 +1,6 @@
-import React from 'react'
-import style from '../Style/style.module.css'
-import second from '../assets/SignUpNewsletter.png'
+import React from "react"
+import style from "../Style/style.module.css"
+import second from "../../../component-assets/SignUpNewsletter.png"
 const newsLetterSection = () => {
   return (
     <div className={style.blog_newletter}>

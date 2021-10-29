@@ -5,7 +5,7 @@ import ReactCrop from "react-image-crop"
 import "react-image-crop/dist/ReactCrop.css"
 import LogoCrop from "./LogoCrop"
 import LogoAlert from "./LogoAlert"
-import defaultAvatar from "../../assets/HNG-icon.svg"
+import defaultAvatar from "../../../../component-assets/HNG-icon.svg"
 import {
   WorkSPaceLogoContainer,
   WorkSpaceDetailContainer,
@@ -28,8 +28,8 @@ import {
 const WorkSpaceIconTab = () => {
   const imgRef = useRef(null)
   const previewCanvasRef = useRef(null)
-  const [completedCrop, setCompletedCrop] = useState(null);
-  const [crop, setCrop] = useState({ unit: '%', width: 30, aspect: 2 / 3 });
+  const [completedCrop, setCompletedCrop] = useState(null)
+  const [crop, setCrop] = useState({ unit: "%", width: 30, aspect: 2 / 3 })
   const [orgData, setOrgData] = useState({})
   const [updateLogo, setUpdateLogo] = useState("")
   const [alertToggle, setAlertToggle] = useState(false)
@@ -44,10 +44,7 @@ const WorkSpaceIconTab = () => {
 
   const handleIconUpload = () => {
     authAxios
-      .patch(
-        `/organisations/${organisation_id}/logo`,
-        updateLogo
-      )
+      .patch(`/organisations/${organisation_id}/logo`, updateLogo)
       .then(res => {
         setLoader({ ...loader, uploadLoader: true })
         setAlertToggle(true)
@@ -197,7 +194,7 @@ const WorkSpaceIconTab = () => {
           <ReactCrop
             crop={crop}
             Locked
-            disabled = {false}
+            disabled={false}
             src={updateLogo}
             ref={imgRef}
             onImageLoaded={onLoad}

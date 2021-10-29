@@ -8,9 +8,9 @@ import { FaMagic } from "react-icons/fa"
 import { getUser } from "../../Utils/Common"
 // import
 import AdminSettings from "../../."
-import right_caret from "../../assets/cheveron-right.svg"
+import right_caret from "../../../../component-assets/cheveron-right.svg"
 import classes from "../styles//SettingsHome.module.css"
-import {GoPlug} from 'react-icons/go'
+import { GoPlug } from "react-icons/go"
 
 const randomizedGreeting = ["Hey there", "Welcome,", "¡Hola,"]
 
@@ -26,7 +26,7 @@ const Home = () => {
     setGreeting(greetingProcedure)
   }, [])
 
-  const user = getUser();
+  const user = getUser()
   return (
     <AdminSettings>
       <Container className={`p-4 ${classes.mtN3}`}>
@@ -440,9 +440,12 @@ const Home = () => {
                       />
                     </Link>
                   </p>
-                  <p className={classes.align_center} style={{
-                        textAlign: "center"
-                      }}>
+                  <p
+                    className={classes.align_center}
+                    style={{
+                      textAlign: "center"
+                    }}
+                  >
                     <Link
                       to="/"
                       className={`${classes.btn} ${classes.btn_large} ${classes.hide_on_mobile} ${classes.large_bottom_margin}`}
@@ -454,9 +457,11 @@ const Home = () => {
                         color: "#eee"
                       }}
                     >
-                      <GoPlug style={{
-                        marginRight: "1em"
-                      }}/>
+                      <GoPlug
+                        style={{
+                          marginRight: "1em"
+                        }}
+                      />
                       View App Directory
                     </Link>
                   </p>

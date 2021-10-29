@@ -1,17 +1,17 @@
-import { useState } from 'react'
-import Circle from '../assets/circle.svg'
-import CircleDot from '../assets/circleDot.svg'
-import SectionOneStyles from '../styles/SectionOne.module.css'
+import { useState } from "react"
+import Circle from "../../../component-assets/circle.svg"
+import CircleDot from "../../../component-assets/circleDot.svg"
+import SectionOneStyles from "../styles/SectionOne.module.css"
 
 function App() {
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState("")
 
   return (
     <div className={SectionOneStyles.app}>
       <div className={SectionOneStyles.offer}>
         <h1>Collaborate faster on zuri with third-party apps</h1>
         <p>
-          <span>INTEGRATE</span> | <span>SET UP</span> |{' '}
+          <span>INTEGRATE</span> | <span>SET UP</span> |{" "}
           <span>COLLABORATE</span>
         </p>
         <button>Get Essentials Apps</button>

@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react"
 import style from "../Style/style.module.css"
 import loadingStyle from "../../../component-styles/LoginLoading.module.css"
 import logo from "../../../component-assets/zurilogo.svg"
-import first from "../assets/Card1.png"
-import second from "../assets/Card2.png"
 import axios from "axios"
 import parse from "html-react-parser"
 import { ErrorCode } from "react-dropzone"
@@ -32,8 +30,8 @@ const BlogPosts = () => {
         <div className={loadingStyle.loaderContainer}>
           <div>
             <img
-              width='100'
-              height='100'
+              width="100"
+              height="100"
               className={loadingStyle.rotate}
               src={logo}
             />
@@ -87,7 +85,7 @@ const BlogPosts = () => {
             >
               <div className={style.keep_reading_box} key={_id}>
                 <div className={style.keep_reading_img}>
-                  <img src={logo} alt='post image' />
+                  <img src={logo} alt="post image" />
                 </div>
                 <div className={style.keep_reading_text}>
                   {/* <p className={style.getting}>Getting Started</p> */}

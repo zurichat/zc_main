@@ -3,14 +3,14 @@ import styles from "../styles/adminSidebar.module.css"
 import { Link, NavLink } from "react-router-dom"
 
 // image
-import avatar from "../assets/avatar.svg"
+import avatar from "../../../component-assets/avatar.svg"
 
 // icons
 
-import zuriLogo from "../assets/zuriLogo.svg"
-import grid from "../assets/grid.svg"
-import bouy from "../assets/bouy.svg"
-import la_rocket from "../assets/la_rocket.svg"
+import zuriLogo from "../../../component-assets/zurilogo.svg"
+import grid from "../../../component-assets/grid.svg"
+import bouy from "../../../component-assets/bouy.svg"
+import la_rocket from "../../../component-assets/la_rocket.svg"
 
 import {
   FiAlertCircle,

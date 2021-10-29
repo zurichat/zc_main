@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import {
   MDBCarousel,
   MDBCarouselCaption,
@@ -7,13 +7,13 @@ import {
   MDBView,
   MDBMask,
   MDBContainer
-} from 'mdbreact'
-import styles from '../styles/about.module.css'
-import channel from '../asset/Group 35468-1.svg'
-import holiday from '../asset/Group 35468.svg'
-import deadline from '../asset/Group 35470.svg'
-import quick from '../asset/Group 35471.svg'
-import todo from '../asset/Group 35472.svg'
+} from "mdbreact"
+import styles from "../styles/about.module.css"
+import channel from "../../../component-assets/Group 35468-1.svg"
+import holiday from "../../../component-assets/Group 35468.svg"
+import deadline from "../../../component-assets/Group 35470.svg"
+import quick from "../../../component-assets/Group 35471.svg"
+import todo from "../../../component-assets/Group 35472.svg"
 
 const CarouselPage = () => {
   return (
