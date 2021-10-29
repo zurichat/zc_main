@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import LaunchPageCSS from '../styles/LaunchPage.module.css'
 import { Helmet } from 'react-helmet'
 import { goToDefaultChannel } from '../../../api/channels'
+import {Footer, FooterLink} from "./UserOrganization"
+import Header from "../../../components/Header"
 
 function LaunchPage() {
   const [user, setUser] = useState(null)
@@ -20,6 +22,7 @@ function LaunchPage() {
       <Helmet>
         <title>Launch workspace - Zuri Chat</title>
       </Helmet>
+      <Header />
       <article className={LaunchPageCSS.wrapper}>
         <div className={LaunchPageCSS.email}>
           {' '}
@@ -45,6 +48,12 @@ function LaunchPage() {
           </a>
         </div>
       </article>
+      <Footer fixBottom>
+        <FooterLink>Privacy</FooterLink>
+        <FooterLink>Terms</FooterLink>
+        <FooterLink>Help Centre</FooterLink>
+        <FooterLink>Contact Us</FooterLink>
+      </Footer>
     </div>
   )
 }

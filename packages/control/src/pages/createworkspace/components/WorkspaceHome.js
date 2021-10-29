@@ -4,12 +4,12 @@ import styled from "styled-components"
 
 import Active from "../assets/active.svg"
 import Pic from "../assets/pic.png"
+import PicDesktop from "../assets/pic-desktop.png"
 import Header from "../../../components/Header"
 import PushNotificationDemo from "./browserNotification2"
 import { useRouteMatch, Link } from "react-router-dom"
 import UserOrganization from "./UserOrganization"
 import { Helmet } from "react-helmet"
-import homestyle from "../styles/workspacehome.module.css"
 
 const WorkspaceHome = () => {
   const { url } = useRouteMatch()
@@ -32,7 +32,6 @@ const WorkspaceHome = () => {
           password
         })
         .then(response => {
-          // console.log(response.data)
           const { data, message } = response.data
 
           //Store token in localstorage
@@ -63,20 +62,17 @@ const WorkspaceHome = () => {
       config
     )
     const { data } = result.data
-    // console.log(data)
     setOrganizations(data)
   }
 
   useEffect(() => {
-    // console.log(currentUser)
     if (currentUser) {
       setUser(currentUser)
-      // console.log(user)
       fetchData()
     }
   }, [])
   return (
-    <Wrapper className={homestyle.wrapper}>
+    <Wrapper>
       <Header />
       <Helmet>
         <title> Create-Workspace Zuri Chat</title>
@@ -85,7 +81,6 @@ const WorkspaceHome = () => {
         style={
           user === true ? { paddingBottom: "0" } : { paddingBottom: "50px" }
         }
-        className={homestyle.top}
       >
         <TextSection>
           <Heading>Create a new workspace</Heading>
@@ -110,13 +105,20 @@ const WorkspaceHome = () => {
           </FadedText>
           <PushNotificationDemo />
         </TextSection>
-        <ImageSection>
+        <ImageSection mobile>
           <img src={Pic} alt="" />
         </ImageSection>
+        <ImageSection>
+          <img src={PicDesktop} alt="" />
+        </ImageSection>
       </TopSection>
-      {/*  {user ? (
+      <MiddleSection>
+        <p>Or</p>
+        <p className="description">Open a Workspace</p>
+      </MiddleSection>
+      {user ? (
         <UserOrganization user={user} organizations={organizations} />
-      ) : null} */}
+      ) : null}
     </Wrapper>
   )
 }
@@ -172,6 +174,7 @@ const Text = styled.p`
 `
 export const Button = styled.button`
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 13px;
   border: none;
@@ -193,6 +196,7 @@ export const Button = styled.button`
   }
   @media (max-width: 35rem) {
     font-size: 1rem;
+    height: 47px;
   }
 `
 const CheckboxSide = styled.div`
@@ -222,12 +226,46 @@ const FadedText = styled.p`
 `
 
 const ImageSection = styled.div`
+  display: ${props => (props.mobile ? `none` : `inline-block`)};
+
   @media (max-width: 35rem) {
+    display: ${props => (props.mobile ? `block` : `none`)};
     margin-bottom: 41px;
     & > img {
       width: 100%;
     }
   }
 `
+
+const MiddleSection = styled.div`
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+
+  & > p {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  & > .description {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 0px;
+  }
+
+  @media (max-width: 35rem) {
+    & > p {
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    & > .description {
+      font-weight: normal;
+      font-size: 20px;
+    }
+  }
+`
+
 const TextSection = styled.div``
 export default WorkspaceHome

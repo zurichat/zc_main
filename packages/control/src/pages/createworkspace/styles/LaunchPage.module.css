@@ -1,14 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
-* {
-  font-family: 'Lato', sans-serif;
-}
-
 .wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 70vh;
-  margin-bottom: 5em;
+  margin-top: 100px;
 }
 a,
 .email,

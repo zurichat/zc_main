@@ -1,12 +1,12 @@
-import styled from 'styled-components'
-import { Footer, FooterLink } from './UserOrganization'
-import { Button } from './WorkspaceHome'
-import LinkIcon from '../assets/link.svg'
-import Oval from '../assets/Oval.svg'
-import { Link, useRouteMatch } from 'react-router-dom'
-import Header from '../../../components/Header'
-import { useEffect, useState } from 'react'
-import { Helmet } from 'react-helmet'
+import styled from "styled-components"
+import { Footer, FooterLink } from "./UserOrganization"
+import { Button } from "./WorkspaceHome"
+import LinkIcon from "../assets/link.svg"
+import Oval from "../assets/Oval.svg"
+import { Link, useRouteMatch } from "react-router-dom"
+import Header from "../../../components/Header"
+import { useEffect, useState } from "react"
+import { Helmet } from "react-helmet"
 
 const Step3 = () => {
   let match = useRouteMatch()
@@ -16,10 +16,10 @@ const Step3 = () => {
   const [inputs, setInputs] = useState([input])
   const [user, setUser] = useState(null)
   const [projectname, setProjectname] = useState(
-    localStorage.getItem('input') || 'alpha'
+    localStorage.getItem("input") || "alpha"
   )
   useEffect(() => {
-    const user = JSON.parse(sessionStorage.getItem('user'))
+    const user = JSON.parse(sessionStorage.getItem("user"))
     if (user) {
       setUser(user)
     }
@@ -35,10 +35,12 @@ const Step3 = () => {
           <title>Teammates - Zuri Chat</title>
         </Helmet>
         <TopSpanWrapper>
-          <TopSpans>
-            {user ? <SignedInAs>Signed in as {user.email}</SignedInAs> : null}
-            <Change>Change</Change>
-          </TopSpans>
+          {user ? (
+            <TopSpans>
+              <SignedInAs>Signed in as {user.email}</SignedInAs>
+              <Change>Change</Change>
+            </TopSpans>
+          ) : null}
         </TopSpanWrapper>
         <MainSection>
           <Step>Step 3 of 3</Step>
@@ -64,7 +66,7 @@ const Step3 = () => {
               <SharableLink>
                 <img src={LinkIcon} alt="" />
                 <a
-                  style={{ color: '#00B87C', cursor: 'pointer' }}
+                  style={{ color: "#00B87C", cursor: "pointer" }}
                   onClick={() => {
                     navigator.clipboard.writeText(
                       `https://zuri.chat/invite?organization=${projectname}`
@@ -79,18 +81,19 @@ const Step3 = () => {
             </InputLinkSection>
           </InputSection>
           <ButtonSection>
-            <Button style={{ color: 'white' }}>
-              <StyledLink to={`${match.url}/launch`}>Add Teammates</StyledLink>
-            </Button>
+            <StyledLink to={`${match.url}/launch`}>
+              <Button style={{ color: "white" }}>Add Teammates</Button>
+            </StyledLink>
             <Skip to={`${match.url}/launch`}>Skip this Step</Skip>
           </ButtonSection>
         </MainSection>
-        <InviteFooter>
+
+        <Footer fixBottom>
           <FooterLink>Privacy</FooterLink>
           <FooterLink>Terms</FooterLink>
           <FooterLink>Help Centre</FooterLink>
           <FooterLink>Contact Us</FooterLink>
-        </InviteFooter>
+        </Footer>
       </Wrapper>
     </>
   )
@@ -100,13 +103,10 @@ const Wrapper = styled.div`
   --color: #333333;
   --color-secondary: #00b87c;
 
-  --font-family: 'Lato', sans-serif;
-  padding-right: 61px;
-  padding-top: 39.5px;
-  padding-left: 283px;
+  --font-family: "Lato", sans-serif;
+  padding-top: 98px;
   @media (max-width: 35rem) {
-    padding-right: 24px;
-    padding-left: 24px;
+    padding-top: 95px;
   }
 `
 export const StyledLink = styled(Link)`
@@ -114,13 +114,15 @@ export const StyledLink = styled(Link)`
   color: white;
   font-size: 18px;
   font-weight: 500;
+  &:link {
+    padding-left: 0px;
+  }
   &:hover {
     color: white;
   }
 `
 const TopSpanWrapper = styled.div`
   display: flex;
-  margin-bottom: 61px;
 `
 const SignedInAs = styled.span`
   font-weight: 400;
@@ -136,14 +138,24 @@ const Change = styled(SignedInAs)`
   font-weight: 600;
   color: var(--color-secondary);
   margin-right: revert;
+  cursor: pointer;
 `
 const TopSpans = styled.div`
   margin-left: auto;
+  margin-right: 15px;
   gap: 8px;
 `
 const MainSection = styled.section`
-  padding-bottom: 262.5px;
-  padding-bottom: 232px;
+  padding-bottom: 20px;
+  width: 50vw;
+  margin: auto;
+  padding: 2em;
+
+  @media (max-width: 35rem) {
+    padding: 1.3em;
+    width: 100%;
+    margin-top: 2em;
+  }
 `
 const Marketing = styled.p`
   font-weight: 600;
@@ -171,8 +183,8 @@ const Skip = styled(Link)`
   font-family: var(--font-family);
   color: #808080;
   cursor: pointer;
-  &:hover{
-    color: #B0B0B0;
+  &:hover {
+    color: #b0b0b0;
   }
 
   @media (max-width: 35rem) {
@@ -201,6 +213,7 @@ export const Heading = styled.h1`
 `
 export const Input = styled.input`
   width: 100%;
+  height: 46px;
   display: block;
   border: 1px solid #808080;
   border-radius: 3px;
@@ -211,7 +224,7 @@ export const Input = styled.input`
     font-weight: 500;
     font-size: ${24 / 16}rem;
     color: #c4c4c4;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
   }
   @media (max-width: 35rem) {
     width: 100%;
@@ -221,13 +234,13 @@ export const Input = styled.input`
   }
 `
 export const InputSection = styled.div`
-  width: 713px;
+  width: 100%;
   margin-top: 26px;
   @media (max-width: 35rem) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc(100% - 24px);
+    width: 100%;
   }
 `
 const InputLinkSection = styled.div`
@@ -237,8 +250,7 @@ const InputLinkSection = styled.div`
   @media (max-width: 35rem) {
     width: 100%;
     justify-content: space-between;
-
-    padding-bottom: 83px;
+    padding-bottom: 75px;
   }
 `
 const AddLinkWrapper = styled.div`
@@ -246,6 +258,12 @@ const AddLinkWrapper = styled.div`
   display: flex;
   align-items: center;
   margin-top: 0;
+
+  & > img {
+    width: 15px;
+    height: 18px;
+  }
+
   @media (max-width: 35rem) {
     margin-left: -10px;
   }
@@ -306,13 +324,6 @@ const ButtonSection = styled.div`
       padding-left: 13px;
     }
     gap: 21px;
-  }
-`
-const InviteFooter = styled(Footer)`
-  padding-bottom: 77px;
-  justify-content: center;
-  @media (max-width: 35rem) {
-    padding-bottom: 31px;
   }
 `
 

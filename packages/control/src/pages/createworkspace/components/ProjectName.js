@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import { Link, useRouteMatch } from 'react-router-dom'
-import ProjectNameCSS from '../styles/ProjectName.module.css'
-import { Button } from './WorkspaceHome'
-import { Helmet } from 'react-helmet'
-
+import React, { useState, useEffect } from "react"
+import { Link, useRouteMatch } from "react-router-dom"
+import ProjectNameCSS from "../styles/ProjectName.module.css"
+import { Button } from "./WorkspaceHome"
+import { Helmet } from "react-helmet"
+import { Footer, FooterLink } from "./UserOrganization"
 import { createDefaultChannel } from "../../../api/channels"
-
+import Header from "../../../components/Header"
 
 const ProjectName = ({ inputChangeHandler, value }) => {
   let match = useRouteMatch()
@@ -14,7 +14,7 @@ const ProjectName = ({ inputChangeHandler, value }) => {
 
   const [user, setUser] = useState(null)
   useEffect(() => {
-    const user = JSON.parse(sessionStorage.getItem('user'))
+    const user = JSON.parse(sessionStorage.getItem("user"))
     if (user) {
       setUser(user)
     }
@@ -22,7 +22,7 @@ const ProjectName = ({ inputChangeHandler, value }) => {
     channelName = localStorage.getItem("input")
   }, [])
 
-  const setChannelName = () =>{
+  const setChannelName = () => {
     newOrgId = localStorage.getItem("currentWorkspace")
     channelName = localStorage.getItem("input")
     member_id = localStorage.getItem("member_id")
@@ -34,10 +34,14 @@ const ProjectName = ({ inputChangeHandler, value }) => {
       <Helmet>
         <title>Choose Project Name - Zuri Chat</title>
       </Helmet>
+      <Header />
       <article className={ProjectNameCSS.wrapper}>
-        <div className={ProjectNameCSS.email}>
-          {user ? <span>Signed in as {user.email}</span> : null}
-        </div>
+        {user ? (
+          <div className={ProjectNameCSS.email}>
+            <span>Signed in as {user.email}</span>
+            <span className={ProjectNameCSS.change}>Change</span>
+          </div>
+        ) : null}
 
         <div className={ProjectNameCSS.centerWrapper}>
           <h4> Step 2 of 3</h4>
@@ -61,15 +65,19 @@ const ProjectName = ({ inputChangeHandler, value }) => {
           <Link to={`${match.url}/step3`}>
             <Button
               onClick={setChannelName}
+              disabled={value.length < 3}
               style={
-                value.length > 1
+                value.length > 2
                   ? {
-                      backgroundColor: '#00b87c',
-                      color: 'white',
-                      display: 'flex',
-                      justifyContent: 'center'
+                      backgroundColor: "#00b87c",
+                      color: "white",
+                      borderRadius: "3px"
                     }
-                  : { display: 'flex', justifyContent: 'center' }
+                  : {
+                      backgroundColor: "rgba(0, 184, 124, 0.48)",
+                      color: "white",
+                      cursor: "not-allowed"
+                    }
               }
             >
               Continue
@@ -77,6 +85,12 @@ const ProjectName = ({ inputChangeHandler, value }) => {
           </Link>
         </div>
       </article>
+      <Footer fixBottom>
+        <FooterLink>Privacy</FooterLink>
+        <FooterLink>Terms</FooterLink>
+        <FooterLink>Help Centre</FooterLink>
+        <FooterLink>Contact Us</FooterLink>
+      </Footer>
     </div>
   )
 }

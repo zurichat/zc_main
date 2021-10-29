@@ -45,15 +45,9 @@ const UserOrganization = ({ organizations, user }) => {
 }
 
 const BottomSection = styled.section`
-  padding-top: 133px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media (max-width: 35rem) {
-    padding-top: 101px;
-    padding-left: 24px;
-    padding-right: 24px;
-  }
 `
 const Or = styled.span`
   font-weight: 600;
@@ -73,6 +67,7 @@ const SelectWorkSpace = styled.ul`
   width: 538px;
   border: 1px solid hsla(0, 0%, 20%, 0.51);
   padding-top: 16px;
+  padding-left: 0px;
   margin-bottom: 28px;
 
   & > p {
@@ -85,7 +80,11 @@ const SelectWorkSpace = styled.ul`
     text-align: center;
   }
   @media (max-width: 35rem) {
-    width: 100%;
+    width: 85%;
+
+    & > p {
+      font-size: 14px;
+    }
   }
 `
 const Image = styled.img`
@@ -97,8 +96,9 @@ const OrganizationWrapper = styled.li`
   border-top: 1px solid hsla(0, 0%, 20%, 0.51);
   padding-top: 21px;
   padding-bottom: 21px;
-  padding-left: 10px;
+  padding-left: 15px;
   padding-right: 36px;
+  margin: auto;
   display: flex;
   gap: 19px;
 `
@@ -134,17 +134,32 @@ const TextBottom = styled.p`
   font-weight: 400;
   font-size: ${18 / 16}rem;
   font-family: "Lato" sans-serif;
+
+  @media (max-width: 35rem) {
+    & {
+      font-size: 16px;
+      margin-bottom: 0px;
+    }
+  }
 `
 const SecondText = styled(TextBottom)`
   color: #00b87c;
   font-weight: 600;
+
+  @media (max-width: 35rem) {
+    & {
+      font-size: 16px;
+    }
+  }
 `
 
 export const Footer = styled.footer`
   margin: 0;
   display: flex;
   gap: 28px;
-  padding-bottom: 35px;
+  padding: 10px 0;
+  justify-content: center;
+  margin-top: ${props => props.fixBottom && `110px`};
 `
 export const FooterLink = styled.a`
   text-decoration: none;

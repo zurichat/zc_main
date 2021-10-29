@@ -1,27 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
-* {
-  font-family: 'Lato', sans-serif;
-  font-style: normal;
-}
-
 a {
   color: #00b87c;
   text-decoration: none;
   font-size: 14px;
   line-height: 17px;
 }
+.buttonContainer a:link {
+  padding-left: 0;
+}
 .wrapper {
-  margin-bottom: 4em;
+  margin-top: 100px;
 }
 .email {
   height: 14px;
   width: 250px;
-  top: 82px;
   font-size: 12px;
   font-weight: 400;
   line-height: 14px;
   margin-left: auto;
   margin-top: 1.5em;
+}
+.email span:first-of-type {
+  margin-right: 8px;
+}
+
+.change {
+  font-size: 12px;
+  font-weight: 600;
+  color: #00B87C;
+  cursor: pointer;
 }
 
 .centerWrapper {
@@ -30,13 +36,14 @@ a {
   min-height: 25em;
   text-align: left;
   margin-top: 2em;
-  padding: 2em;
+  padding: 1.3em;
 }
 .centerWrapper h4 {
   margin-top: 24px;
   margin-bottom: 24px;
   color: #808080;
   line-height: 19px;
+  padding-left: 0px;
   font-weight: 600;
   font-family: Lato;
   font-size: 15px;
@@ -44,9 +51,6 @@ a {
 
 .centerWrapper h1 {
   color: #333333;
-  /* font-weight: bold;
-  font-size: 28px;
-  line-height: 34px; */
   font-weight: 700;
   font-size: 28px;
   line-height: 33.36px;
@@ -59,17 +63,15 @@ a {
   background: #e5e5e5;
   border-radius: 3px;
   border: none;
-  color: #999999;
-  margin-top: 2.5em;
+  color: #201b1b;
+  margin-top: 1.3rem;
 }
 
 .centerWrapper input {
   color: #c4c4c4;
   border: 2px solid #c4c4c4;
-  height: 35px;
-  /* margin-top: 1.5em; */
+  height: 46px;
   font-size: 16px;
-  /* padding: 0 0 0 1em; */
   padding: 20px 16px;
   border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -90,38 +92,31 @@ a {
 
 .charLimit {
   text-align: right;
-  font-size: 14px;
+  font-size: 12px;
   color: #333333;
-}
-
-.buttonContainer {
-  display: flex;
-  justify-content: space-between;
 }
 
 @media screen and (min-width: 765px) {
   .centerWrapper {
     width: 50vw;
     margin: auto;
+    padding: 2em;
   }
   .centerWrapper h1 {
     font-size: 48px;
     line-height: 54px;
   }
+  .centerWrapper button {
+    margin-top: 2.5em;
+  }
   .email {
     font-size: 16px;
     width: 350px;
   }
-  .centerWrapper h4 {
-    /* font-size: 18px; */
+  .change {
+    font-size: 16px;
   }
-}
-
-
-@media screen and (max-width: 960px) {
-  .buttonContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .charLimit {
+    font-size: 14px;
   }
 }

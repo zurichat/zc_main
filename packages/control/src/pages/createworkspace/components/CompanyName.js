@@ -3,6 +3,8 @@ import CompanyNameCSS from "../styles/CompanyName.module.css"
 import { Link, useRouteMatch } from "react-router-dom"
 import axios from "axios"
 import { Helmet } from "react-helmet"
+import { Footer, FooterLink } from "./UserOrganization"
+import Header from "../../../components/Header"
 import { createDefaultChannel } from "../../../api/channels"
 
 function CompanyName({ input }) {
@@ -77,10 +79,14 @@ function CompanyName({ input }) {
       <Helmet>
         <title>Choose Company Name - Zuri Chat</title>
       </Helmet>
+      <Header />
       <article className={CompanyNameCSS.wrapper}>
-        <div className={CompanyNameCSS.email}>
-          {user ? <span>Signed in as {user.email}</span> : null}
-        </div>
+        {user ? (
+          <div className={CompanyNameCSS.email}>
+            <span>Signed in as {user.email}</span>
+            <span className={CompanyNameCSS.change}>Change</span>
+          </div>
+        ) : null}
 
         <div className={CompanyNameCSS.centerWrapper}>
           <h4> Step 1 of 3</h4>
@@ -105,24 +111,32 @@ function CompanyName({ input }) {
               <button
                 disabled={orgName.length < 3}
                 style={
-                  orgName.length > 1
-                    ? { backgroundColor: "#00b87c", color: "white" }
-                    : { backgroundColor: "revert", cursor: "not-allowed" }
+                  orgName.length > 2
+                    ? {
+                        backgroundColor: "#00b87c",
+                        color: "white",
+                        borderRadius: "3px"
+                      }
+                    : {
+                        background: "rgba(0, 184, 124, 0.48)",
+                        color: "white",
+                        cursor: "not-allowed"
+                      }
                 }
                 onClick={createUserOrg}
               >
                 Continue
               </button>
             </Link>
-            <Link to="/createworkspace">
-              {" "}
-              <button style={{ backgroundColor: "#f40101", color: "white" }}>
-                Cancel
-              </button>
-            </Link>
           </div>
         </div>
       </article>
+      <Footer fixBottom>
+        <FooterLink>Privacy</FooterLink>
+        <FooterLink>Terms</FooterLink>
+        <FooterLink>Help Centre</FooterLink>
+        <FooterLink>Contact Us</FooterLink>
+      </Footer>
     </div>
   )
 }
