@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import styled from "styled-components"
-import { GetUserInfo, GetWorkspaceUser } from "../../../zuri-control"
+import { GetUserInfo, GetWorkspaceUser } from "@zuri/utilities"
 import Chats from "./Chats"
 import CommentBox from "./CommentBox"
 

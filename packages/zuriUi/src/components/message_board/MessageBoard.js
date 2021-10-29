@@ -3,7 +3,7 @@ import { ChatContainer } from "./MsgBoardStyle"
 import MoreMenu from "./Subs/MessageContainer/MoreMenu/MoreMenu"
 import Overlay from "./Subs/MessageContainer/Overlay/Overlay"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import MessageInputBox from "../message_input/MessageInputField"
 import messagesData from "./messages.data"
 // import EmojiReaction from "../EmojiReaction/EmojiReaction"
@@ -47,12 +47,12 @@ function MessageBoard({ chatsConfig }) {
     if (window.innerHeight - event.clientY < 320) {
       setTop(event.clientY - 320)
     }
-     if (event.clientX < 288) {
+    if (event.clientX < 288) {
       setRight(event.clientX + 300)
-    } if (window.innerWidth < 500){
+    }
+    if (window.innerWidth < 500) {
       setRight(20)
       setTop(100)
-
     }
     // console.log(window.innerWidth - event.clientX)
   }
@@ -124,6 +124,16 @@ function MessageBoard({ chatsConfig }) {
     setMessageList(messageListCopy)
   }
 
+  const messagesEndRef = useRef(null)
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
+
+  useEffect(() => {
+    scrollToBottom()
+  }, [messageList])
+
   return (
     <>
       <ChatContainer>
@@ -139,6 +149,7 @@ function MessageBoard({ chatsConfig }) {
                 currentUserId={currentUserId}
               />
             ))}
+          <div ref={messagesEndRef} />
         </div>
         <div className="input-text">
           <MessageInputBox

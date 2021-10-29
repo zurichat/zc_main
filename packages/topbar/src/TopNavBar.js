@@ -93,23 +93,23 @@ const TopNavBar = () => {
     })
   }, [])
 
-  useEffect(() => {
-    const searchFunction = async () => {
-      let organization_id = currentWorkspace
-      let member_id = user[0]?._id
-      axios
-        .get(
-          `https://dm.zuri.chat/api/v1/org/${organization_id}/members/${member_id}/messages/search?keyword=${search}`
-        )
-        .then(response => {
-          setMessages(response.data.results)
-        })
-        .catch(err => {
-          console.error(err)
-        })
-    }
-    searchFunction()
-  }, [search])
+  // useEffect(() => {
+  //   const searchFunction = async () => {
+  //     let organization_id = currentWorkspace
+  //     let member_id = user[0]?._id
+  //     axios
+  //       .get(
+  //         `https://dm.zuri.chat/api/v1/org/${organization_id}/members/${member_id}/messages/search?keyword=${search}`
+  //       )
+  //       .then(response => {
+  //         setMessages(response.data.results)
+  //       })
+  //       .catch(err => {
+  //         console.error(err)
+  //       })
+  //   }
+  //   searchFunction()
+  // }, [search])
 
   useEffect(() => {
     const userdef = JSON.parse(sessionStorage.getItem("user"))
@@ -244,7 +244,11 @@ const TopNavBar = () => {
       <div className="ps-3" style={{ width: "10%" }}>
         {/* <a href="/home"> */}
         <div className={styles["topNavBar__logo"]}>
-          <img style={{width: '40%'}} src={zurichatlogo} alt="zuri chat logo" />
+          <img
+            style={{ width: "40%" }}
+            src={zurichatlogo}
+            alt="zuri chat logo"
+          />
         </div>
         {/* </a> */}
       </div>
