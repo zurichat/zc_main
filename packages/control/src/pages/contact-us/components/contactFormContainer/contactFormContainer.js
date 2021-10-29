@@ -1,37 +1,36 @@
-import React, { useState, useMemo, useEffect } from 'react'
-import ContactFormStyle from '../../styles/contactFormContainer.module.css'
-import detailsData from './detailsArray'
-import axios from 'axios'
-import { useDropzone } from 'react-dropzone'
-import Alert from '../../assets/alert-circle.svg'
-import { GetUserInfo } from '../../../../zuri-control'
-import downIcon from '../../assets/chevron-down.svg'
-import arrowRight from '../../assets/arrow-right.svg'
+import React, { useState, useMemo, useEffect } from "react"
+import ContactFormStyle from "../../styles/contactFormContainer.module.css"
+import detailsData from "./detailsArray"
+import axios from "axios"
+import { useDropzone } from "react-dropzone"
+import Alert from "../../assets/alert-circle.svg"
+import { GetUserInfo } from "@zuri/utilities"
+import downIcon from "../../assets/chevron-down.svg"
+import arrowRight from "../../assets/arrow-right.svg"
 
 const activeStyle = {
-  borderColor: '#2196f3'
+  borderColor: "#2196f3"
 }
 
 const acceptStyle = {
-  borderColor: '#00e676'
+  borderColor: "#00e676"
 }
 
 const rejectStyle = {
-  borderColor: '#ff1744'
+  borderColor: "#ff1744"
 }
 
 function ContactFormContainer() {
   const [currentDetails, setCurrentDetails] = useState({})
   const [userAuth, setUserAuth] = useState({})
   const [values, setValues] = useState({
-    email: '',
-    subject: '',
-    content: '',
+    email: "",
+    subject: "",
+    content: "",
     loading: false,
-    error: '',
-    success: ''
+    error: "",
+    success: ""
   })
-
 
   useEffect(() => {
     let userInfo = GetUserInfo()
@@ -52,7 +51,7 @@ function ContactFormContainer() {
   } = useDropzone({
     maxSize: 1048576,
     maxFiles: 2,
-    accept: 'image/*,.xlsx,.xls,.doc, .docx,.ppt, .pptx,.txt,.pdf'
+    accept: "image/*,.xlsx,.xls,.doc, .docx,.ppt, .pptx,.txt,.pdf"
   })
   // .xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf
 
@@ -92,7 +91,7 @@ function ContactFormContainer() {
     // setValues(values => ({ ...values, [e.target.name]: e.target.value }))
     setValues({ ...values, [e.target.name]: e.target.value })
   }
-  
+
   const handleTopicChange = detail => e => {
     setCurrentDetails(detail)
     setValues(values => ({ ...values, subject: detail.topic }))
@@ -102,21 +101,21 @@ function ContactFormContainer() {
     event.preventDefault()
     setValues(values => ({ ...values, loading: true }))
     let contactData = new FormData()
-    values.email && contactData.append('email', values.email)
-    values.subject && contactData.append('subject', values.subject)
-    values.content && contactData.append('content', values.content)
-    acceptedFiles[0] && contactData.append('file', acceptedFiles[0])
-    acceptedFiles[1] && contactData.append('file', acceptedFiles[1])
+    values.email && contactData.append("email", values.email)
+    values.subject && contactData.append("subject", values.subject)
+    values.content && contactData.append("content", values.content)
+    acceptedFiles[0] && contactData.append("file", acceptedFiles[0])
+    acceptedFiles[1] && contactData.append("file", acceptedFiles[1])
 
     axios
-      .post('https://api.zuri.chat/contact', contactData)
+      .post("https://api.zuri.chat/contact", contactData)
       .then(({ data }) => {
         setValues(values => ({
           ...values,
-          error: '',
-          subject: '',
-          content: '',
-          email: '',
+          error: "",
+          subject: "",
+          content: "",
+          email: "",
           success: data.message,
           loading: false
         }))
@@ -125,8 +124,8 @@ function ContactFormContainer() {
       .catch(e => {
         setValues(values => ({
           ...values,
-          error: 'error sending details pls try again',
-          success: '',
+          error: "error sending details pls try again",
+          success: "",
           loading: false
         }))
       })
@@ -137,7 +136,7 @@ function ContactFormContainer() {
       <form className="" onSubmit={handleSubmit}>
         <div
           className={`mb-3 ${
-            userAuth.email ? ContactFormStyle.is_hidden_animate : ''
+            userAuth.email ? ContactFormStyle.is_hidden_animate : ""
           }`}
         >
           <label htmlFor="email" className="form-label fw-bold">
@@ -159,21 +158,24 @@ function ContactFormContainer() {
 
         <div
           className={`${ContactFormStyle.faqs_topic} ${
-            !currentDetails.topic ? ContactFormStyle.is_hidden_animate : ''
+            !currentDetails.topic ? ContactFormStyle.is_hidden_animate : ""
           }`}
         >
           <div className={`w-100`}>
             <div className={`d-flex align-items-center my-4`}>
-              <p className={`fw-bold mb-0 ${ContactFormStyle.subHead}`}> Topic</p>
+              <p className={`fw-bold mb-0 ${ContactFormStyle.subHead}`}>
+                {" "}
+                Topic
+              </p>
 
               <p
                 className={`fw-bold ms-2 mb-0 ${ContactFormStyle.text_primary} ${ContactFormStyle.change}`}
                 style={{
-                  fontSize: '12px',
-                  lineHeight: '14.4px'
+                  fontSize: "12px",
+                  lineHeight: "14.4px"
                 }}
                 onClick={() => {
-                  setValues(values => ({ ...values, subject: '' }))
+                  setValues(values => ({ ...values, subject: "" }))
                   setCurrentDetails({})
                 }}
               >
@@ -188,7 +190,7 @@ function ContactFormContainer() {
                 {currentDetails.topic}
               </button>
             </div>
-            <p className={`fw-bold mb-3`} style={{ fontSize: '14px' }}>
+            <p className={`fw-bold mb-3`} style={{ fontSize: "14px" }}>
               Related questions
             </p>
             <div
@@ -200,22 +202,23 @@ function ContactFormContainer() {
                   <div className="accordion-item" key={title}>
                     <h2
                       className="accordion-header px-2"
-                      style={{ height: '55px' }}
+                      style={{ height: "55px" }}
                       id="headingOne"
                     >
                       <button
                         className={`fw-bold ${ContactFormStyle.accordion_button} text-start bg-white shadow-none p-0 px-2`}
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target={'#collapse' + index}
+                        data-bs-target={"#collapse" + index}
                         aria-expanded="true"
                         aria-controls="collapseOne"
                       >
-                        <span>{title}</span> <img src={downIcon} className={`ms-1`} alt="down" />
+                        <span>{title}</span>{" "}
+                        <img src={downIcon} className={`ms-1`} alt="down" />
                       </button>
                     </h2>
                     <div
-                      id={'collapse' + index}
+                      id={"collapse" + index}
                       className={`${ContactFormStyle.accordion_collapse} accordion-collapse collapse`}
                       aria-labelledby="headingOne"
                       data-bs-parent="#faqs"
@@ -228,12 +231,12 @@ function ContactFormContainer() {
                   </div>
                 ))}
             </div>
-            <p className={`fw-bold my-3`} style={{ fontSize: '14px' }}>
+            <p className={`fw-bold my-3`} style={{ fontSize: "14px" }}>
               Related articles
             </p>
-            <ul 
+            <ul
               style={{
-                paddingLeft: 0,
+                paddingLeft: 0
               }}
             >
               {currentDetails.articles &&
@@ -242,20 +245,20 @@ function ContactFormContainer() {
                     <li
                       key={index}
                       style={{
-                        color: 'rgb(0, 184, 124)',
-                        fontWeight: 'bold',
-                        lineHeight: '18px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        padding: '4px 0',
-                        cursor: 'pointer'
+                        color: "rgb(0, 184, 124)",
+                        fontWeight: "bold",
+                        lineHeight: "18px",
+                        display: "flex",
+                        alignItems: "center",
+                        padding: "4px 0",
+                        cursor: "pointer"
                       }}
                     >
-                      <a style={{ fontSize: '15px' }}>{article.title}</a>
+                      <a style={{ fontSize: "15px" }}>{article.title}</a>
                       <img
                         src={arrowRight}
                         alt=""
-                        style={{ paddingLeft: '8px' }}
+                        style={{ paddingLeft: "8px" }}
                       />
                     </li>
                   )
@@ -266,10 +269,10 @@ function ContactFormContainer() {
 
         <div
           className={`${ContactFormStyle.topic_tiles} ${
-            currentDetails.topic ? ContactFormStyle.is_hidden_animate : ''
+            currentDetails.topic ? ContactFormStyle.is_hidden_animate : ""
           } bg-white`}
         >
-          <p className="fw-bold mb-3" style={{ fontSize: '16px' }}>
+          <p className="fw-bold mb-3" style={{ fontSize: "16px" }}>
             Select a Topic
           </p>
           <div className={`d-flex flex-column flex-md-row flex-md-wrap`}>
@@ -277,7 +280,7 @@ function ContactFormContainer() {
               <button
                 type="button"
                 key={detail.topic}
-                disabled={!(values.subject === '')}
+                disabled={!(values.subject === "")}
                 className={`btn ${ContactFormStyle.btn_topic} text-nowrap fw-bold rounded-pill mb-3 me-md-3`}
                 onClick={handleTopicChange(detail)}
               >
@@ -289,7 +292,7 @@ function ContactFormContainer() {
 
         <div
           className={`mb-3 ${
-            currentDetails.topic ? ContactFormStyle.is_hidden_animate : ''
+            currentDetails.topic ? ContactFormStyle.is_hidden_animate : ""
           }`}
         >
           <label htmlFor="topic" className="form-label fw-bold mt-2">
@@ -308,13 +311,13 @@ function ContactFormContainer() {
           />
         </div>
 
-        {!(values.subject === '') && (
+        {!(values.subject === "") && (
           <>
             <div className="mb-3">
               <label
                 htmlFor="content"
                 className="form-label fw-bold"
-                style={{ fontSize: '14px !important' }}
+                style={{ fontSize: "14px !important" }}
               >
                 Can you give us more details?
               </label>
@@ -343,9 +346,9 @@ function ContactFormContainer() {
                 <p>Drag and drop a file to attach it, or</p>
                 <a
                   style={{
-                    color: 'rgb(0, 184, 124)',
-                    fontSize: '15px',
-                    cursor: 'pointer'
+                    color: "rgb(0, 184, 124)",
+                    fontSize: "15px",
+                    cursor: "pointer"
                   }}
                 >
                   Browse for a file...
@@ -358,16 +361,16 @@ function ContactFormContainer() {
           <button
             type="submit"
             className={`btn ${ContactFormStyle.btn_primary} fw-bold`}
-            style={{ height: '55px' }}
-            disabled={values.subject === '' || values.loading}
+            style={{ height: "55px" }}
+            disabled={values.subject === "" || values.loading}
           >
-            {values.subject ? 'Send us a message' : 'GET HELP'}
+            {values.subject ? "Send us a message" : "GET HELP"}
           </button>
           {values.subject && (
             <div className="d-flex align-items-center justify-content-center px-4 py-3">
               <p
                 className="text-nowrap mb-0"
-                style={{ fontWeight: '800px', fontSize: '13px' }}
+                style={{ fontWeight: "800px", fontSize: "13px" }}
               >
                 Chat Unavailable
               </p>
