@@ -6,7 +6,7 @@ import imageTut from "../assets/image1.png"
 import bulbiImage from "../assets/bulb.png"
 import shakeImage from "../assets/shake.png"
 import bigLock from "../assets/bigLock.svg"
-import yellowBulb from "../assets/yellowBulb.svg"
+// import yellowBulb from "../assets/yellowBulb.svg"
 import smallLock from "../assets/smallLock.svg"
 import handShake from "../assets/handShake.svg"
 import veryBigLock from "../assets/veryBigLock.svg"
@@ -240,7 +240,7 @@ const Content = () => {
               <div className={Style.infoImage}>
                 <img
                   className={Style.bulb}
-                  src={yellowBulb}
+                  // src={yellowBulb}
                   alt="Yellow Bulb"
                 />
                 <p className={Style.infopar1}>
