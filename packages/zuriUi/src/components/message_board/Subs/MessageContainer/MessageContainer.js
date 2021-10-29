@@ -10,9 +10,7 @@ export default function MessageContainer({
   handleShowEmoji,
   handleEmojiClicked,
   currentUserId
-
 }) {
-
   return (
     <div className={styles.MessageContainer}>
       <div className={styles.hoverItemsContainer}>
@@ -28,14 +26,14 @@ export default function MessageContainer({
       <div className={styles.emojiCardContainer}>
         {messageData.emojis &&
           messageData.emojis.map((emoji, i) => (
-            <div 
-              onClick={(event)=>handleEmojiClicked(event,emoji,messageData.message_id)}
-              key={i} >
-              <EmojiCard 
-               currentUserId={currentUserId}
-               emojiObject={emoji} />
+            <div
+              onClick={event =>
+                handleEmojiClicked(event, emoji, messageData.message_id)
+              }
+              key={i}
+            >
+              <EmojiCard currentUserId={currentUserId} emojiObject={emoji} />
             </div>
-            
           ))}
 
         {messageData.emojis.length > 0 ? (
