@@ -5,7 +5,9 @@ import { useWorkspaceContext } from "./WorkspaceContext"
 import { getUser } from "../../settings/Utils/Common"
 
 const WorkspaceCard = () => {
-  const { organizations, user, error } = useWorkspaceContext()
+  // const { organizations, user, error } = useWorkspaceContext()
+  const user = getUser()
+  const organizations = JSON.parse(sessionStorage.getItem("organisations"))
   return (
     <>
       {organizations && (

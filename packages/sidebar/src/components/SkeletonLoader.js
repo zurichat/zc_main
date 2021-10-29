@@ -10,13 +10,5 @@ export default function SkeletonLoader({ COUNTER }) {
     </div>
   )
 
-  let Skeletons = []
-
-  for (let i = 0; i < COUNTER; i++) {
-    Skeletons = [...Skeletons, <SideBarSkeleton key={i} />]
-  }
-
-  return Skeletons
-
-  // return Array(COUNTER).fill(<SideBarSkeleton key={uuidv4()} />)
+  return Array(COUNTER).fill(<SideBarSkeleton />)
 }
