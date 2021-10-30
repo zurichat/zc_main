@@ -140,6 +140,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 4rem;
+  gap: 50px;
 }
 .ft_row:last-child {
   margin-bottom: 0;
