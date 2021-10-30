@@ -55,6 +55,12 @@ const FormWrapper = ({
             <div>{topLineText}</div>
             <hr className={`${styles.hrRight}`} />
           </span>
+          {/* {error && (
+            <div className={`${styles.errWrapper}`}>
+              <RiErrorWarningLine />
+              <div>{error}</div>
+            </div>
+          )} */}
         </div>
         <form
           className={`${styles.form}`}
