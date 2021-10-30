@@ -118,7 +118,8 @@ const Login = () => {
           setemailerror(
             "Sorry, this email is not registered, try again or click Create an Account."
           )
-        RegExp(/Invalid login/).test(data.message) &&
+        // RegExp(/Invalid login/).test(data.message) &&
+        RegExp("login credentials").test(data.message) &&
           setpassworderror(
             "Sorry, you have entered the wrong password. Try again or click Get help signing in."
           )
