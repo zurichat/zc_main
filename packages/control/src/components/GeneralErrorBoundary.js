@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "react-router-dom"
 import styled from "styled-components"
 import Logo from "../component-assets/zurilogoandtitle.svg"
 
@@ -22,15 +21,15 @@ class GeneralErrorBoundary extends React.Component {
       return (
         <ErrorPage>
           <div className="LogoDiv">
-            <Link to="/">
+            <a href="/">
               <img src={Logo} alt="Zuri Logo" />
-            </Link>
+            </a>
           </div>
 
           <div>
             <h1>Something went wrong.</h1>
             <p>
-              Go back to <Link to="/">Zuri.chat</Link>
+              Go back to <a href="/">Zuri.chat</a>
             </p>
           </div>
         </ErrorPage>
