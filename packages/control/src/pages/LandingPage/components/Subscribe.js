@@ -53,11 +53,9 @@ const Subscribe = () => {
             className={`col-md-6 col-sm-12 d-flex flex-column ${css.rightColumn}`}
           >
             <div className={`py-sm-4 ${css.text}`}>
-              <h2 className={` ${css.heading2}`}>
-                {t("landing.cardTwo.title")}
-              </h2>
+              <h2 className={` ${css.heading2}`}>{t("title")}</h2>
               <p className={`py-4 mb-4 px-0 ${css.subtext}`}>
-                {t("landing.cardTwo.description")}
+                {t("description")}
               </p>
               <div className={`${css.formContainer}`}>
                 <form onSubmit={handleSubmit}>
@@ -71,7 +69,7 @@ const Subscribe = () => {
                     className={`mb-3 ${css.inputField}`}
                   />
                   <button type="submit" className={`${css.subscribeBtn}`}>
-                    {t("landing.cardTwo.button")}
+                    {t("button")}
                   </button>
                 </form>
               </div>

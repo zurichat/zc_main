@@ -79,7 +79,7 @@ export const Login = [
   },
   {
     key: "bottomLine",
-    en: "New to us?",
+    en: "New to us? ",
     de: "Neu bei uns?",
     enus: "New to us?",
     fr: "Nouveau à nous?",

@@ -169,8 +169,10 @@
 .ft_link_wrap {
   margin-top: 1.5rem;
 }
-.ft_link_p {
+.ft_link_wrap a {
   text-decoration: none;
+}
+.ft_link_p {
   color: var(--primary-color);
   font-size: 1.125rem;
   font-weight: 700;

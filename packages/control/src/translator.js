@@ -3,6 +3,7 @@ import { NavBar } from "./translations/nav"
 import { Footer } from "./translations/footer"
 import { whyzurichat } from "./translations/pages/whyzurichat"
 import { Login } from "./translations/pages/login"
+import { Subscribe } from "./translations/pages/subscribe"
 
 export const googleTranslateElementInit = async () => {
   const lang = localStorage.getItem("myLanguage")
@@ -26,7 +27,8 @@ export const getTranslations = () => {
     ...NavBar,
     ...Footer,
     ...whyzurichat,
-    ...Login
+    ...Login,
+    ...Subscribe
   ]
   langData.forEach(o => {
     Object.keys(o).forEach(key => {

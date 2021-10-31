@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 
 .sectionContainer {
   margin-top: 70.49px !important;
@@ -27,25 +27,26 @@
 
 .inputField {
   width: 60%;
-  padding: 1rem;
+  padding: 0.7rem;
   background-color: #ffffff;
   color: #63636c;
   margin-right: 1rem;
   font-size: 1rem;
   border: 2px solid #63636c;
   border-radius: 4px;
+  outline: none;
 }
 
 input.inputField::placeholder {
   font-style: normal;
   font-weight: 500;
-  font-size: 1.5rempx;
-  line-height: 29px;
+  font-size: 1rem;
+  /* line-height: 10px; */
 }
 
 .subscribeBtn {
   width: 30%;
-  padding: 0.8rem;
+  padding: 0.7rem;
   background-color: #00b87c;
   color: #ffffff;
   font-size: 1rem;
@@ -69,7 +70,7 @@ input.inputField::placeholder {
 /* smaller than laptop, bigger than tablet */
 @media (min-width: 770px) and (max-width: 991px) {
   .inputField {
-    width: 55%;
+    width: 40%;
     margin-right: 10px;
   }
   .subscribeBtn {

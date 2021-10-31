@@ -20,13 +20,17 @@
   padding-bottom: 0;
 }
 .navbar_toggle_icon span {
-  line-height: 1;
+  display: block;
   width: 30px;
+  height: 3px;
   margin: 5px 0;
+  position: relative;
   text-align: center;
   justify-content: center;
   background: rgb(85, 83, 83);
-  border-radius: 4px;
+  border-radius: 3px;
+  z-index: 1;
+  outline: none;
 }
 
 /* .navLinkFeatures {
@@ -40,17 +44,25 @@
 .navLinkComms {
   _margin-right: 30px;
 } */
-
+.modal {
+  font-family: "Lato";
+}
 .modal_header button {
   font-size: 2rem;
   padding-right: 0.5rem;
   background-color: white;
+  border: none;
 }
 .modal_header button span {
   padding: 0;
+  border: none;
+}
+.modal_header button span:hover {
+  color: #00b87c;
 }
 .select {
   font-size: 18px;
+  font-family: "Lato";
   display: inline-flex;
   margin-bottom: 20px;
   padding-top: 10px;
@@ -74,6 +86,7 @@
 .world {
   padding: 5px;
   background-color: white;
+  border: none;
 }
 .world img {
   width: 25px;
@@ -193,6 +206,7 @@
     display: flex;
     left: 85%;
     top: 20px;
+    border: none;
   }
 }
 
@@ -217,6 +231,7 @@
   .select span {
     padding-left: 0;
     padding-bottom: 0;
+    font-family: "Lato";
   }
 }
 @media only screen and (max-width: 680px) {
