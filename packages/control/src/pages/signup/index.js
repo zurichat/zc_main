@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import { withRouter, useHistory, Link } from 'react-router-dom'
-import AuthInputBox from '../../components/AuthInputBox'
-import FormWrapper from '../../components/AuthFormWrapper'
-import styles from '../../component-styles/AuthFormElements.module.css'
-import axios from 'axios'
-import EmailVerification from './email-verify'
-import { Helmet } from 'react-helmet';
-import "../../i18n";
-import { useTranslation} from "react-i18next";
+import React, { useState, useEffect } from "react"
+import { withRouter, useHistory, Link } from "react-router-dom"
+import AuthInputBox from "../../components/AuthInputBox"
+import FormWrapper from "../../components/AuthFormWrapper"
+import styles from "../../component-styles/AuthFormElements.module.css"
+import axios from "axios"
+import EmailVerification from "./email-verify"
+import { Helmet } from "react-helmet"
+import "../../i18n"
+import { useTranslation } from "react-i18next"
 // import { Link } from 'react-router-dom'
 // import authBg1 from './assets/auth_bg1.svg'
 // import authBg2 from './assets/auth_bg2.svg'
@@ -16,14 +16,14 @@ import { useTranslation} from "react-i18next";
 // import authBg5 from './assets/auth_bg5.svg'
 
 const Signup = () => {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
   const [tos, setTos] = useState(false)
-  const [error, seterror] = useState('')
-  const [nameerror, setnameerror] = useState('')
-  const [passworderror, setpassworderror] = useState('')
-  const [emailerror, setemailerror] = useState('')
+  const [error, seterror] = useState("")
+  const [nameerror, setnameerror] = useState("")
+  const [passworderror, setpassworderror] = useState("")
+  const [emailerror, setemailerror] = useState("")
   const [showDialog, setShowDialog] = useState(false)
 
   // Background Images
@@ -74,9 +74,9 @@ const Signup = () => {
     }
 
     //Seperate user fullname
-    const seperateName = name.split(' ')
-    let first_name = '',
-      other_name = ''
+    const seperateName = name.split(" ")
+    let first_name = "",
+      other_name = ""
 
     seperateName.map((name, index) => {
       if (index === 0) {
@@ -86,7 +86,7 @@ const Signup = () => {
     })
 
     await axios
-      .post('https://api.zuri.chat/users', {
+      .post("https://api.zuri.chat/users", {
         first_name,
         last_name: other_name,
         email,
@@ -98,9 +98,9 @@ const Signup = () => {
         setShowDialog(true)
 
         //Store token in localstorage
-        sessionStorage.setItem('user_id', data.InsertedId)
-        localStorage.setItem('newUserEmail', JSON.stringify(email))
-        localStorage.setItem('userUserPassword', JSON.stringify(password))
+        sessionStorage.setItem("user_id", data.InsertedId)
+        localStorage.setItem("newUserEmail", JSON.stringify(email))
+        localStorage.setItem("userUserPassword", JSON.stringify(password))
 
         //Display message
         // alert(message) //Change this when there is a design
@@ -115,13 +115,13 @@ const Signup = () => {
         setShowDialog(false)
 
         RegExp(/Users with email/).test(data.message) &&
-          setemailerror('This email is already in use')
+          setemailerror("This email is already in use")
 
-        !RegExp('Users with email').test(data.message) && seterror(data.message)
+        !RegExp("Users with email").test(data.message) && seterror(data.message)
       })
   }
 
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <main id={styles.authPageWrapper}>
@@ -133,28 +133,28 @@ const Signup = () => {
       </aside> */}
 
       <Helmet>
-        <title>{t("auth.signup.title")} - Zuri Chat</title>
+        <title>{t("title")} - Zuri Chat</title>
       </Helmet>
       <section id={styles.authFormContainer}>
         <FormWrapper
-          header={t("auth.signup.form.header")}
+          header={t("header")}
           subHeader=""
-          googleHeader={t("auth.signup.form.googleHeader")}
-          topLineText={t("auth.signup.form.topLineText")}
-          submitButtonName={t("auth.signup.form.submitButtonName")}
+          googleHeader={t("googleHeader")}
+          topLineText={t("topLineText")}
+          submitButtonName={t("submitButtonName")}
           disabled={name && email && password && tos}
           error={error}
           handleSubmit={handleSubmit}
-          bottomLine={t("auth.signup.form.bottomLine")}
-          bottomLink={t("auth.signup.form.bottomLink")}
+          bottomLine={t("bottomLine")}
+          bottomLink={t("bottomLink")}
           bottomLinkHref="login"
         >
           <AuthInputBox
             className={`${styles.inputElement}`}
             id="name"
-            name={t("auth.signup.form.input.fullName")}
+            name={t("fullName")}
             type="text"
-            placeholder={t("auth.signup.form.input.fullNamePlaceholder")}
+            placeholder={t("fullNamePlaceholder")}
             value={name}
             setValue={setName}
             // onFocus={displayImage}
@@ -163,9 +163,9 @@ const Signup = () => {
           <AuthInputBox
             className={`${styles.inputElement}`}
             id="email"
-            name={t("auth.signup.form.input.emailAddress")}
+            name={t("emailAddress")}
             type="email"
-            placeholder={t("auth.signup.form.input.emailAddressPlaceholder")}
+            placeholder={t("emailAddressPlaceholder")}
             value={email}
             setValue={setEmail}
             error={emailerror}
@@ -174,9 +174,9 @@ const Signup = () => {
           <AuthInputBox
             className={`${styles.inputElement}`}
             id="password"
-            name={t("auth.signup.form.input.password")}
+            name={t("password")}
             type="password"
-            placeholder={t("auth.signup.form.input.passwordPlaceholder")}
+            placeholder={t("inputPassword")}
             value={password}
             setValue={setPassword}
             // onFocus={displayImage}
@@ -194,9 +194,18 @@ const Signup = () => {
               // onFocus={displayImage}
             />
             <span className={`${styles.tosText}`}>
-              {t("auth.signup.privacyAgreement")}{''}
-              <Link to="/terms">{t("auth.signup.termsOfService")}{''} </Link>&
-              <Link to="/privacy"> {''}{t("auth.signup.privacy")}</Link>
+              {t("privacyAgreement")}
+              {""}
+              <Link to="/terms">
+                {t("termsOfService")}
+                {""}{" "}
+              </Link>
+              &
+              <Link to="/privacy">
+                {" "}
+                {""}
+                {t("privacy")}
+              </Link>
             </span>
           </div>
         </FormWrapper>
