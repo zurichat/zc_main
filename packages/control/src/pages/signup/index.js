@@ -145,8 +145,8 @@ const Signup = () => {
           disabled={name && email && password && tos}
           error={error}
           handleSubmit={handleSubmit}
-          bottomLine={t("auth.signup.form.bottomLine")}
-          bottomLink={t("auth.signup.form.bottomLink")}
+          bottomLine={t("bottomLine")}
+          bottomLink={t("bottomLink")}
           bottomLinkHref="login"
         >
           <AuthInputBox
