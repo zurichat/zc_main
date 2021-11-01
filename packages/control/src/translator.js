@@ -3,6 +3,7 @@ import { NavBar } from "./translations/nav"
 import { Footer } from "./translations/footer"
 import { whyzurichat } from "./translations/pages/whyzurichat"
 import { Login } from "./translations/pages/login"
+import { Signup } from "./translations/pages/Signup"
 import { Subscribe } from "./translations/pages/subscribe"
 
 export const googleTranslateElementInit = async () => {
@@ -28,6 +29,7 @@ export const getTranslations = () => {
     ...Footer,
     ...whyzurichat,
     ...Login,
+    ...Signup,
     ...Subscribe
   ]
   langData.forEach(o => {
@@ -51,3 +53,4 @@ export const getTranslations = () => {
 
   return resources
 }
+

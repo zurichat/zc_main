@@ -504,7 +504,7 @@ export const TRANSLATIONS_EN = {
           emailAddress: "Email Address",
           emailAddressPlaceholder: "Enter you email address",
           password: "Password",
-          passwordPlaceholder: "Enter a password"
+          inputPassword: "Enter a password"
         }
       },
       privacyAgreement: "I agree to Zuri Chat's",
