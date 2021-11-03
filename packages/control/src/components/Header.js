@@ -80,7 +80,10 @@ const HeaderSearchSuggestion = () => {
               closeButton
               closeLabel
             >
-              <Modal.Title id="example-modal-sizes-title-lg">
+              <Modal.Title
+                className={headerStyles.modal}
+                id="example-modal-sizes-title-lg"
+              >
                 Select your language
               </Modal.Title>
             </Modal.Header>
@@ -488,14 +491,14 @@ const HeaderSearchSuggestion = () => {
               <li>
                 <Link to="/signup" className={`nav-link`}>
                   <span className={`${headerStyles.signU}`}>
-                    {t("landing.nav.signup")}
+                    {t("nav_signup")}
                   </span>
                 </Link>
               </li>
               <li>
                 <Link to="/login" className={`nav-link`}>
                   <span className={`${headerStyles.signIn}`}>
-                    {t("landing.nav.login")}
+                    {t("nav_login")}
                   </span>
                 </Link>
               </li>
@@ -504,7 +507,7 @@ const HeaderSearchSuggestion = () => {
             <li>
               <Link to="/signout" className={`nav-link`}>
                 <span className={`${headerStyles.signIn}`}>
-                  {t("landing.nav.signout")}
+                  {t("nav_signout")}
                 </span>
               </Link>
             </li>

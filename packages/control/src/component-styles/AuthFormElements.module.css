@@ -1,9 +1,9 @@
 #authPageWrapper {
   font-family: "Lato", sans-serif;
-  margin-block: 0;
+  /* margin-block: 0; */
   background-color: #fff;
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw; */
+  /* height: 100vh; */
   font-size: 14px;
   font-style: normal;
   display: flex;
@@ -56,8 +56,12 @@
   align-items: center;
   justify-content: center;
   width: 100vw;
-  overflow-y: scroll;
+  margin-bottom: 0;
+  /* overflow-y: scroll; */
   /* padding-right: 4em; */
+}
+#authFormContainer a {
+  text-decoration: none;
 }
 
 .tos {
