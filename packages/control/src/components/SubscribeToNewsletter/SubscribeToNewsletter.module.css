@@ -1,0 +1,142 @@
+.sectionContainer {
+  margin-top: 70.49px !important;
+  width: 100%;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 500;
+  color: #000000;
+}
+
+.heading2 {
+  text-align: left !important;
+  font-weight: bold !important;
+  font-size: 31.5px !important;
+  line-height: 130% !important;
+  color: #000000 !important;
+}
+
+.subtext {
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 21px !important;
+  line-height: 150% !important;
+  color: #000000 !important;
+}
+
+.inputField {
+  width: 60%;
+  padding: 1rem;
+  background-color: #ffffff;
+  color: #63636c;
+  margin-right: 1rem;
+  font-size: 1rem;
+  border: 2px solid #63636c;
+  border-radius: 4px;
+}
+
+input.inputField::placeholder {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rempx;
+  line-height: 29px;
+}
+
+.subscribeBtn {
+  width: 30%;
+  padding: 0.8rem;
+  background-color: #00b87c;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid #00b87c;
+  border-radius: 4px;
+  transition: 200ms;
+  outline: none;
+  cursor: pointer;
+}
+.subscribeBtn:hover {
+  text-decoration: none;
+  background-color: #ffffff;
+  color: #00b87c;
+  border: 2px solid #00b87c;
+}
+.subscribeBtn:active {
+  transform: scale(0.95);
+}
+
+/* smaller than laptop, bigger than tablet */
+@media (min-width: 770px) and (max-width: 991px) {
+  .inputField {
+    width: 55%;
+    margin-right: 10px;
+  }
+  .subscribeBtn {
+    width: 40%;
+    font-size: 1.2rem;
+  }
+}
+
+/* smaller than laptop, bigger than tablet */
+@media (min-width: 770px) and (max-width: 991px) {
+  .inputField {
+    width: 55%;
+    margin-right: 10px;
+  }
+  .subscribeBtn {
+    width: 40%;
+    font-size: 1.2rem;
+  }
+}
+
+/* tablet */
+@media (max-width: 769px) {
+  .inputField {
+    width: 80%;
+    margin-right: 10px;
+    font-size: 1rem;
+  }
+  .subscribeBtn {
+    width: 50%;
+    margin-left: 0px auto;
+    font-size: 1rem;
+  }
+}
+
+/* smartphone */
+@media (max-width: 469px) {
+  .heading2 {
+    font-size: 24px !important;
+    margin-top: 2rem;
+  }
+
+  .subtext {
+    font-size: 16px !important;
+  }
+
+  .inputField {
+    /* width: 400px; */
+    width: 98%;
+    padding: 1rem 1rem 1rem 0;
+    border: 1px solid #63636c;
+    border-radius: 4px;
+    line-height: 19px;
+  }
+
+  input.inputField::placeholder {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 29px;
+  }
+
+  .subscribeBtn {
+    padding: 1rem 4rem;
+    margin-left: 0px;
+    width: 191px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #ffffff;
+  }
+}

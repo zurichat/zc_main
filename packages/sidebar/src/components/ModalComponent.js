@@ -1,39 +1,39 @@
-import React, { useState, useRef, useEffect } from "react"
-import styles from "../styles/ModalComponentStyles.module.css"
-import CompanyImage from "../assets/CompanyIcon.svg"
+import React, { useState, useRef, useEffect } from "react";
+import styles from "../styles/ModalComponentStyles.module.css";
+import CompanyImage from "../assets/CompanyIcon.svg";
 
 // import axios from 'axios'
-import { RiArrowRightSLine as Arrow } from "react-icons/ri"
+import { RiArrowRightSLine as Arrow } from "react-icons/ri";
 // import { faClosedCaptioning } from '@fortawesome/free-solid-svg-icons'
 // import Workspace from '../../../control/src/pages/workspace/components/Workspace'
 
-const orgss = sessionStorage.getItem("organisations")
-const orgs = JSON.parse(orgss)
+const orgss = sessionStorage.getItem("organisations");
+const orgs = JSON.parse(orgss);
 
 const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
   // const isOpen = true;
 
-  const [hoverRef, isHovered] = useHover()
-  const [hoverRef2, isHovered2] = useHover()
-  const [hoverRef3, isHovered3] = useHover()
+  const [hoverRef, isHovered] = useHover();
+  const [hoverRef2, isHovered2] = useHover();
+  const [hoverRef3, isHovered3] = useHover();
 
   function useHover() {
-    const [value, setValue] = useState(false)
+    const [value, setValue] = useState(false);
 
-    const ref = useRef(null)
+    const ref = useRef(null);
 
-    const handleMouseOver = () => setValue(true)
+    const handleMouseOver = () => setValue(true);
 
-    const handleMouseOut = () => setValue(false)
+    const handleMouseOut = () => setValue(false);
 
     useEffect(() => {
-      const node = ref.current
+      const node = ref.current;
       if (node) {
-        node.addEventListener("mouseover", handleMouseOver)
-        node.addEventListener("mouseout", handleMouseOut)
+        node.addEventListener("mouseover", handleMouseOver);
+        node.addEventListener("mouseout", handleMouseOut);
       }
-    }, [[ref.current]])
-    return [ref, value]
+    }, [[ref.current]]);
+    return [ref, value];
   }
   return (
     <section className={`${isOpen ? styles.open : styles.modalCon}`}>
@@ -70,7 +70,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
         </div>
         <div>
           <p>
-            <a href="/createworkspace">Create a new Workspace</a>
+            <a href="/create-workspace">Create a new Workspace</a>
           </p>
         </div>
       </div>
@@ -181,8 +181,8 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
                   <div
                     key={idx}
                     onClick={() => {
-                      localStorage.setItem("currentWorkspace", o.id)
-                      window.location.reload()
+                      localStorage.setItem("currentWorkspace", o.id);
+                      window.location.reload();
                     }}
                   >
                     <p>{o.name}</p>
@@ -205,7 +205,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ModalComponent
+export default ModalComponent;

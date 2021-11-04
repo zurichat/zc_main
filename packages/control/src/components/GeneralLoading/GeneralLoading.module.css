@@ -1,0 +1,60 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.loadingContainer {
+  position: fixed;
+  background: #fff;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 999999999;
+}
+
+.loaderContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100px;
+}
+
+.loadingStatus h1 {
+  font-weight: 900;
+  font-family: "Lato", sans-serif;
+  font-size: 36px;
+  padding-top: 15px;
+  text-align: center;
+}
+
+.rotate {
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .loadingStatus h1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .loadingStatus h1 {
+    font-size: 24px;
+  }
+}

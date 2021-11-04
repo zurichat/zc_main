@@ -31,7 +31,7 @@
     "react/prop-types": [0, "off"],
     "react/no-unescaped-entities": ["off"],
 
-    "no-console": ["error", { "allow": ["warn", "error"] }]
+    "no-console": ["error", { "allow": ["warn", "error", "log"] }]
   },
   "settings": {
     "react": {

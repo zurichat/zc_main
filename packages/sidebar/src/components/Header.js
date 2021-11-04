@@ -1,27 +1,27 @@
-import React, { useState } from "react"
-import styles from "../styles/Sidebar.module.css"
-import { MdKeyboardArrowDown } from "react-icons/md"
-import newMsgIcon from "../assets/newMsgIcon.svg"
-import NewInviteModal from "./invite-workflow/newInviteModal/newInviteModal"
-import UserOrganization from "../../../control/src/pages/createworkspace/components/UserOrganization"
-import ModalComponent from "./ModalComponent"
-import { themeColors } from "@zuri/utilities"
+import React, { useState } from "react";
+import styles from "../styles/Sidebar.module.css";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import newMsgIcon from "../assets/newMsgIcon.svg";
+import NewInviteModal from "./invite-workflow/newInviteModal/newInviteModal";
+import UserOrganization from "../../../control/old_src/pages/createworkspace/components/UserOrganization";
+import ModalComponent from "./ModalComponent";
+import { themeColors } from "@zuri/utilities";
 
 const SidebarHeader = props => {
   //home modal
-  const [homeModal, toggleHomeModal] = useState(false)
+  const [homeModal, toggleHomeModal] = useState(false);
 
-  const [openModal, setOpenModal] = useState(false)
+  const [openModal, setOpenModal] = useState(false);
 
   //toggle
   const toggle = () => {
-    toggleHomeModal(!homeModal)
-    document.removeEventListener("click", toggle)
-  }
+    toggleHomeModal(!homeModal);
+    document.removeEventListener("click", toggle);
+  };
 
   const showModal = () => {
-    setOpenModal(!openModal)
-  }
+    setOpenModal(!openModal);
+  };
 
   // const theme = localStorage.getItem("theme")
   // if (theme !== null || theme !== "") {
@@ -123,7 +123,7 @@ const SidebarHeader = props => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SidebarHeader
+export default SidebarHeader;

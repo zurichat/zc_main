@@ -1,4 +1,4 @@
 {
   "**.+(js|jsx|ts|tsx)": ["eslint --fix"],
-  "**": ["prettier --w"]
+  "**.+(js|jsx|ts|tsk|svg)": ["prettier --w"]
 }
