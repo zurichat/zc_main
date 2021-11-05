@@ -1,6 +1,6 @@
-import React from 'react'
-import styles from './reports.module.css'
-import { Container } from 'react-bootstrap'
+import React from "react"
+import styles from "./reports.module.css"
+import { Container } from "react-bootstrap"
 
 export const ComplaintProfiles = props => {
   const Continue = e => {
@@ -32,7 +32,7 @@ export const ComplaintProfiles = props => {
           <br />
         </div>
         <div>
-          {' '}
+          {" "}
           <label htmlFor="name">
             <b>Name</b>
           </label>
@@ -41,11 +41,10 @@ export const ComplaintProfiles = props => {
           <input
             type="text"
             placeholder="Input offender's name"
-            className="form-control"
+            className={`form-control ${styles.inputFieldOffende}`}
             name="name"
-            onChange={inputChange('name')}
+            onChange={inputChange("name")}
             value={values.name}
-            style={{ width: '19rem', padding: '12px' }}
           />
         </div>
 
@@ -58,11 +57,8 @@ export const ComplaintProfiles = props => {
             </label>
           </div>
 
-          <div
-            className="form-group"
-            style={{ width: '19rem', padding: '12px' }}
-          >
-            <select name="offence" style={{ width: '19rem', padding: '12px' }}>
+          <div className={`form-group ${styles.FormGroup1}`}>
+            <select name="offence" className={styles.SelectBox}>
               <option value="Anti Semitism">Anti Semitism </option>
               <option value="Racism">Racism </option>
               <option value="Hate Speech"> Hate Speech</option>
@@ -80,17 +76,16 @@ export const ComplaintProfiles = props => {
         <div className="form-group">
           <input
             type="text"
-            className="form-control"
+            className={`form-control ${styles.inputFieldDate}`}
             name="text"
-            onChange={inputChange('text')}
+            onChange={inputChange("text")}
             value={values.text}
-            style={{ width: '20.5rem', height: '2.3rem' }}
           />
         </div>
 
         <br />
 
-        <div style={{ display: 'flex', flexDirection: 'space-inbetween' }}>
+        <div className={styles.DescriptionBox}>
           <label htmlFor="text">
             <b>Description</b>(Optional)
           </label>
@@ -98,11 +93,10 @@ export const ComplaintProfiles = props => {
         <div className="form-group">
           <textarea
             type="text"
-            className="form-control"
+            className={`form-control ${styles.TextareaField}`}
             name="text"
-            onChange={inputChange('text')}
+            onChange={inputChange("text")}
             value={values.text}
-            style={{ width: '20.5rem', height: '3rem' }}
           />
         </div>
 
@@ -116,35 +110,16 @@ export const ComplaintProfiles = props => {
       </div>
       <br />
 
-      <div
-        className="row"
-        style={{ display: 'flex', flexDirection: 'flex-end' }}
-      >
+      <div className={`row ${styles.BoxRow}`}>
         <div className="col-6">
-          <button
-            className="btn btn-danger"
-            onClick={back}
-            style={{
-              color: 'white',
-              backgroundColor: '#00B87C',
-              borderRadius: '10%',
-              padding: '12px'
-            }}
-          >
+          <button className={`btn btn-danger ${styles.btnBack}`} onClick={back}>
             Back
           </button>
         </div>
         <div className="col-6 text-right">
           <button
-            className="btn btn-primary"
+            className={`btn btn-primary ${styles.btnSubmit}`}
             onClick={Continue}
-            style={{
-              color: 'white',
-              backgroundColor: '#00B87C',
-              padding: '12px',
-              borderRadius: '10%',
-              marginLeft: '290px'
-            }}
           >
             Submit
           </button>

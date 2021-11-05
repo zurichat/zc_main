@@ -97,34 +97,19 @@ export const Confirm = props => {
       <br />
       <br />
 
-      <div
-        className="row"
-        style={{ display: "flex", flexDirection: "flex-end" }}
-      >
+      <div className={`row ${styles.BoxRow}`}>
         <div className="col-6">
           <button
-            className="btn btn-secondary"
+            className={`btn btn-secondary ${styles.btnBack1}`}
             onClick={back}
-            style={{
-              color: "white"
-              // borderRadius: '10%',
-              // padding: '12px'
-            }}
           >
             Back
           </button>
         </div>
         <div className="col-6 text-right">
           <button
-            className="btn btn-success"
+            className={`btn btn-success ${styles.btnSubmit}`}
             onClick={Continue}
-            style={{
-              color: "white",
-              // borderRadius: '10%',
-              backgroundColor: " #00B87C",
-              // padding: '12px',
-              marginLeft: "50%"
-            }}
           >
             Submit
           </button>
