@@ -4,150 +4,146 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { GeneralErrorBoundary, GeneralLoading } from "./components";
 
 // Priority imports
-import Login from "../old_src/pages/login";
-import SignUp from "../old_src/pages/signup";
-import LandingPage from "../old_src/pages/LandingPage";
-import RedirectRoute from "../old_src/pages/redirect";
-import PrivateRoute from "../old_src/pages/settings/Utils/PrivateRoute";
+import Login from "../ignore/pages/login";
+import SignUp from "../ignore/pages/signup";
+import LandingPage from "../ignore/pages/LandingPage";
+import RedirectRoute from "../ignore/pages/redirect";
+import PrivateRoute from "../ignore/pages/settings/Utils/PrivateRoute";
 
 // Loadables
-const SignOut = React.lazy(() => import("../old_src/pages/signout/index"));
+const SignOut = React.lazy(() => import("../ignore/pages/signout/index"));
 const Workspace = React.lazy(() =>
-  import("../old_src/pages/workspace/components/Workspace")
+  import("../ignore/pages/workspace/components/Workspace")
 );
 // password block
 const ResetPassword = React.lazy(() =>
-  import("../old_src/pages/passwordReset/index")
+  import("../ignore/pages/passwordReset/index")
 );
 const NewPassword = React.lazy(() =>
-  import("../old_src/pages/passwordReset/newPassword")
+  import("../ignore/pages/passwordReset/newPassword")
 );
 // end password block
 
 const CookiesSetting = React.lazy(() =>
-  import("../old_src/pages/cookiesSettings")
+  import("../ignore/pages/cookiesSettings")
 );
-const Cookies = React.lazy(() => import("../old_src/pages/cookies"));
-const Features = React.lazy(() => import("../old_src/pages/features"));
-const Resources = React.lazy(() => import("../old_src/pages/resources"));
-const Help = React.lazy(() => import("../old_src/pages/Help"));
-const Pricing = React.lazy(() => import("../old_src/pages/pricing"));
-const Security = React.lazy(() => import("../old_src/pages/security"));
-const Invite = React.lazy(() => import("../old_src/pages/inviteScreen"));
+const Cookies = React.lazy(() => import("../ignore/pages/cookies"));
+const Features = React.lazy(() => import("../ignore/pages/features"));
+const Resources = React.lazy(() => import("../ignore/pages/resources"));
+const Help = React.lazy(() => import("../ignore/pages/Help"));
+const Pricing = React.lazy(() => import("../ignore/pages/pricing"));
+const Security = React.lazy(() => import("../ignore/pages/security"));
+const Invite = React.lazy(() => import("../ignore/pages/inviteScreen"));
 const Inviterequest = React.lazy(() =>
-  import("../old_src/pages/InviteRequest/InviteRequest")
+  import("../ignore/pages/InviteRequest/InviteRequest")
 );
 const SendRequest = React.lazy(() =>
-  import("../old_src/pages/InviteRequest/SendRequest")
+  import("../ignore/pages/InviteRequest/SendRequest")
 );
-const DAO_Features = React.lazy(() => import("../old_src/pages/DAO-Features"));
-const ContactUs = React.lazy(() => import("../old_src/pages/contact-us"));
-const Search = React.lazy(() => import("../old_src/pages/search"));
+const DAO_Features = React.lazy(() => import("../ignore/pages/DAO-Features"));
+const ContactUs = React.lazy(() => import("../ignore/pages/contact-us"));
+const Search = React.lazy(() => import("../ignore/pages/search"));
 const AppsAndIntegrations = React.lazy(() =>
-  import("../old_src/pages/apps-integration")
+  import("../ignore/pages/apps-integration")
 );
-const Download = React.lazy(() => import("../old_src/pages/download"));
+const Download = React.lazy(() => import("../ignore/pages/download"));
 const DownloadsMac = React.lazy(() =>
-  import("../old_src/pages/download/DownloadsMac")
+  import("../ignore/pages/download/DownloadsMac")
 );
-const Careers = React.lazy(() => import("../old_src/pages/careers"));
+const Careers = React.lazy(() => import("../ignore/pages/careers"));
 const MarketPlace = React.lazy(() =>
-  import("../old_src/pages/marketplace/marketplace")
+  import("../ignore/pages/marketplace/marketplace")
 );
-const Settings = React.lazy(() => import("../old_src/pages/settings"));
+const Settings = React.lazy(() => import("../ignore/pages/settings"));
 const ConfirmPassword = React.lazy(() =>
-  import("../old_src/pages/settings/components/ConfirmPassword")
+  import("../ignore/pages/settings/components/ConfirmPassword")
 );
 const AccDeactivated = React.lazy(() =>
-  import("../old_src/pages/settings/components/AccDeactivated")
+  import("../ignore/pages/settings/components/AccDeactivated")
 );
 const DeactivateAccount = React.lazy(() =>
-  import("../old_src/pages/settings/components/AcctDeactivation")
+  import("../ignore/pages/settings/components/AcctDeactivation")
 );
 const AllSessionSignOut = React.lazy(() =>
-  import("../old_src/pages/settings/components/AllSessionSignOut")
+  import("../ignore/pages/settings/components/AllSessionSignOut")
 );
 const ConfirmDeactivation = React.lazy(() =>
-  import("../old_src/pages/settings/components/ConfirmDeactivation")
+  import("../ignore/pages/settings/components/ConfirmDeactivation")
 );
 const CreateWorkSpaces = React.lazy(() =>
-  import("../old_src/pages/createworkspace/components/WorkSpaceContext")
+  import("../ignore/pages/createworkspace/components/WorkSpaceContext")
 );
 const PrivacyPolicy = React.lazy(() =>
-  import("../old_src/pages/privacy-policy/index")
+  import("../ignore/pages/privacy-policy/index")
 );
-const NotFoundPage = React.lazy(() => import("../old_src/pages/404"));
-const Billing = React.lazy(() => import("../old_src/pages/admin/Billing"));
-const Customize = React.lazy(() => import("../old_src/pages/admin/Customize"));
+const NotFoundPage = React.lazy(() => import("../ignore/pages/404"));
+const Billing = React.lazy(() => import("../ignore/pages/admin/Billing"));
+const Customize = React.lazy(() => import("../ignore/pages/admin/Customize"));
 const Deprecation = React.lazy(() =>
-  import("../old_src/pages/admin/Deprecation")
+  import("../ignore/pages/admin/Deprecation")
 );
-const UserGroups = React.lazy(() =>
-  import("../old_src/pages/admin/UserGroups")
-);
-const Blog = React.lazy(() => import("../old_src/pages/blogs"));
-const Homepage = React.lazy(() => import("../old_src/pages/home"));
+const UserGroups = React.lazy(() => import("../ignore/pages/admin/UserGroups"));
+const Blog = React.lazy(() => import("../ignore/pages/blogs"));
+const Homepage = React.lazy(() => import("../ignore/pages/home"));
 // import Permissions from "./pages/admin/Permissions"
 const SettingsHome = React.lazy(() =>
-  import("../old_src/pages/admin/Settings/index")
+  import("../ignore/pages/admin/Settings/index")
 );
-const About = React.lazy(() => import("../old_src/pages/about/index"));
+const About = React.lazy(() => import("../ignore/pages/about/index"));
 const AdminSettingsTab = React.lazy(() =>
-  import("../old_src/pages/admin/Settings/components/AdminSettingsTab")
+  import("../ignore/pages/admin/Settings/components/AdminSettingsTab")
 );
 const TermsOfService = React.lazy(() =>
-  import("../old_src/pages/termsOfService")
+  import("../ignore/pages/termsOfService")
 );
 const AnayticsHome = React.lazy(() =>
-  import("../old_src/pages/admin/Analytics/index")
+  import("../ignore/pages/admin/Analytics/index")
 );
-const Plugins = React.lazy(() => import("../old_src/pages/plugins"));
+const Plugins = React.lazy(() => import("../ignore/pages/plugins"));
 const Home = React.lazy(() =>
-  import("../old_src/pages/admin/Settings/components/SettingsHome")
+  import("../ignore/pages/admin/Settings/components/SettingsHome")
 );
 const AboutWorkSpace = React.lazy(() =>
-  import("../old_src/pages/admin/AboutWorkSpace")
+  import("../ignore/pages/admin/AboutWorkSpace")
 );
 const adminNalytics = React.lazy(() =>
-  import("../old_src/pages/admin/Settings/Member")
+  import("../ignore/pages/admin/Settings/Member")
 );
 const AccountProfile = React.lazy(() =>
-  import("../old_src/pages/admin/AccountProfile")
+  import("../ignore/pages/admin/AccountProfile")
 );
-const Legal = React.lazy(() => import("../old_src/pages/legal"));
+const Legal = React.lazy(() => import("../ignore/pages/legal"));
 const ZurichatBlog = React.lazy(() =>
-  import("../old_src/pages/blogs/components/zurichatBlog")
+  import("../ignore/pages/blogs/components/zurichatBlog")
 );
 
 const ManageMembers = React.lazy(() =>
-  import("../old_src/pages/admin/manage_members/components/ManageMembers")
+  import("../ignore/pages/admin/manage_members/components/ManageMembers")
 );
-const Ebooks = React.lazy(() => import("../old_src/pages/ebooks"));
-const Invitation = React.lazy(() =>
-  import("../old_src/pages/admin/Invitation")
-);
+const Ebooks = React.lazy(() => import("../ignore/pages/ebooks"));
+const Invitation = React.lazy(() => import("../ignore/pages/admin/Invitation"));
 const Whyzurichat = React.lazy(() =>
-  import("../old_src/pages/WhyZuriChat/Whyzurichat")
+  import("../ignore/pages/WhyZuriChat/Whyzurichat")
 );
 const Gateways = React.lazy(() =>
-  import("../old_src/pages/admin/gateways/components/gateways")
+  import("../ignore/pages/admin/gateways/components/gateways")
 );
 const OnboardingHelp = React.lazy(() =>
-  import("../old_src/pages/LoginSignUpHelp/index")
+  import("../ignore/pages/LoginSignUpHelp/index")
 );
 const DeleteWorkspace = React.lazy(() =>
-  import("../old_src/pages/settings/components/deleteWorkspace")
+  import("../ignore/pages/settings/components/deleteWorkspace")
 );
-const BookDemo = React.lazy(() => import("../old_src/pages/book-a-demo"));
+const BookDemo = React.lazy(() => import("../ignore/pages/book-a-demo"));
 
 const ChangeWorkspaceName = React.lazy(() =>
-  import("../old_src/pages/admin/Settings/components/ChangeWorkspaceName")
+  import("../ignore/pages/admin/Settings/components/ChangeWorkspaceName")
 );
 const BlogDetails = React.lazy(() =>
-  import("../old_src/pages/blogs/components/BlogDetails")
+  import("../ignore/pages/blogs/components/BlogDetails")
 );
 const CreateBlog = React.lazy(() =>
-  import("../old_src/pages/blogs/components/CreateBlog.jsx")
+  import("../ignore/pages/blogs/components/CreateBlog.jsx")
 );
 
 const App = () => {

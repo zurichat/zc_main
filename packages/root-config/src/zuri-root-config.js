@@ -1,24 +1,24 @@
 import { registerApplication, start } from "single-spa";
 
-export const pluginRoutes = [
-  location => location.pathname.startsWith("/chess"),
-  location => location.pathname.startsWith("/music"),
-  location => location.pathname.startsWith("/sales"),
-  location => location.pathname.startsWith("/deadlines"),
-  location => location.pathname.startsWith("/goals"),
-  location => location.pathname.startsWith("/todo"),
-  location => location.pathname.startsWith("/dm"),
-  location => location.pathname.startsWith("/noticeboard"),
-  location => location.pathname.startsWith("/companyfiles"),
-  location => location.pathname.startsWith("/calendar"),
-  location => location.pathname.startsWith("/expenses"),
-  location => location.pathname.startsWith("/tools"),
-  location => location.pathname.startsWith("/channels"),
-  location => location.pathname.startsWith("/contributions"),
+// export const pluginRoutes = [
+//   location => location.pathname.startsWith("/chess"),
+//   location => location.pathname.startsWith("/music"),
+//   location => location.pathname.startsWith("/sales"),
+//   location => location.pathname.startsWith("/deadlines"),
+//   location => location.pathname.startsWith("/goals"),
+//   location => location.pathname.startsWith("/todo"),
+//   location => location.pathname.startsWith("/dm"),
+//   location => location.pathname.startsWith("/noticeboard"),
+//   location => location.pathname.startsWith("/companyfiles"),
+//   location => location.pathname.startsWith("/calendar"),
+//   location => location.pathname.startsWith("/expenses"),
+//   location => location.pathname.startsWith("/tools"),
+//   location => location.pathname.startsWith("/channels"),
+//   location => location.pathname.startsWith("/contributions"),
 
-  // MarketPlace Plugin
-  location => location.pathname.startsWith("/marketplace")
-];
+//   // MarketPlace Plugin
+//   location => location.pathname.startsWith("/marketplace")
+// ];
 
 registerApplication({
   name: "@zuri/control",
@@ -26,17 +26,17 @@ registerApplication({
   activeWhen: ["/"]
 });
 
-registerApplication({
-  name: "@zuri/topbar",
-  app: () => System.import("@zuri/topbar"),
-  activeWhen: "/workspace"
-});
+// registerApplication({
+//   name: "@zuri/sidebar",
+//   app: () => System.import("@zuri/sidebar"),
+//   activeWhen: "/workspace"
+// });
 
-registerApplication({
-  name: "@zuri/sidebar",
-  app: () => System.import("@zuri/sidebar"),
-  activeWhen: "/workspace"
-});
+// registerApplication({
+//   name: "@zuri/topbar",
+//   app: () => System.import("@zuri/topbar"),
+//   activeWhen: "/workspace"
+// });
 
 // registerApplication({
 //   name: "@zuri/zuriUi",

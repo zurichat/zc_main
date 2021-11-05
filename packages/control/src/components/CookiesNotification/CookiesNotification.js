@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import cookieStorage from "../../utils/cookieStorage";
+import { cookieStorage } from "../../utils";
 
 import styles from "./CookiesNotification.module.css";
 import cookieIcon from "./assets/CookieIcon.svg";

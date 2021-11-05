@@ -26,7 +26,7 @@ import {
   MacBookAirWithZuriChatPreview
 } from "./assets";
 
-import cookieStorage from "../../utils/cookieStorage";
+import { cookieStorage } from "../../utils";
 
 export default function Index() {
   const [showCookies, setShowCookies] = React.useState(true);
