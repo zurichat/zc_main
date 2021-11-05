@@ -1,11 +1,20 @@
-import { lazily } from "react-lazily";
 import React from "react";
-import { useParams } from "react-router-dom";
-const { Sidebar, TopBar } = lazily(() => import("../../../components"));
+import { Switch, Route, useParams } from "react-router-dom";
+import { lazily } from "react-lazily";
+import {
+  TopBarWrapperStyle,
+  SidebarWrapperStyle,
+  WorkspaceWrapperStyle
+} from "./Workspace.style";
+
+const { Sidebar, TopBar } = lazily(() =>
+  import("../../../components/Protected")
+);
 
 export default function Index() {
   const { workspaceId } = useParams();
 
+  // Temporary
   React.useEffect(() => {
     document.title = "Workspace";
     localStorage.setItem("currentWorkspace", workspaceId);
@@ -13,15 +22,34 @@ export default function Index() {
 
   return (
     <>
-      <h1>Workspace</h1>
+      <TopBarWrapperStyle>
+        <TopBar />
+      </TopBarWrapperStyle>
 
-      <TopBar />
+      <SidebarWrapperStyle>
+        <Sidebar />
+      </SidebarWrapperStyle>
 
-      <Sidebar />
+      <WorkspaceWrapperStyle>
+        <Switch>
+          <Route
+            path="/workspace/:workspaceId/marketplace"
+            component={() => <h1>MarketPlace</h1>}
+          />
 
-      <div className="container">
-        <div className="row"></div>
-      </div>
+          {/* All other routes not by control go to Single SPA */}
+          <Route
+            path="/workspace/:workspaceId*"
+            component={() =>
+              React.createElement(
+                "div",
+                { id: "zuriPluginsLoadArea" },
+                "Plugins Load Section"
+              )
+            }
+          />
+        </Switch>
+      </WorkspaceWrapperStyle>
     </>
   );
 }

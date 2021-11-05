@@ -1,0 +1,21 @@
+:root {
+  --bg-color: #fff;
+  --width: 100%;
+  --height: 100%;
+  --text-color: #000;
+}
+
+[data-theme="dark"] {
+  --bg-color: #3f3f3f;
+  --text-color: #fff;
+}
+
+[data-theme="light"] {
+  --bg-color: #fff;
+  --text-color: #3f3f3f;
+}
+
+div[id*="zuri"] {
+  width: 100%;
+  overflow: hidden;
+}

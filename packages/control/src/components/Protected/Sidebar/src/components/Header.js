@@ -3,7 +3,7 @@ import styles from "../styles/Sidebar.module.css";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import newMsgIcon from "../assets/newMsgIcon.svg";
 import NewInviteModal from "./invite-workflow/newInviteModal/newInviteModal";
-import UserOrganization from "../../../../../ignore/pages/createworkspace/components/UserOrganization";
+import UserOrganization from "../../../../../../ignore/pages/createworkspace/components/UserOrganization";
 import ModalComponent from "./ModalComponent";
 import { themeColors } from "@zuri/utilities";
 

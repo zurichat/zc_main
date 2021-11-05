@@ -21,5 +21,5 @@ export { default as EmailVerificationModal } from "./EmailVerificationModal/Emai
 // Protected Components
 export { default as UserOrganisationsListing } from "./UserOrganisationsListing/UserOrganisationsListing";
 
-export { default as TopBar } from "./TopBar/TopBar";
-export { default as Sidebar } from "./Sidebar/Sidebar";
+// export { default as TopBar } from "./TopBar/TopBar";
+// export { default as Sidebar } from "./Sidebar/Sidebar";

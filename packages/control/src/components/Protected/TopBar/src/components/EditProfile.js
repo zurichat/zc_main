@@ -7,7 +7,7 @@ import { ProfileContext } from "../context/ProfileModal";
 import Loader from "react-loader-spinner";
 import toast, { Toaster } from "react-hot-toast";
 import { data } from "../utils/Countrycode";
-import TimezoneSelect from "react-timezone-select";
+// import TimezoneSelect from "react-timezone-select";
 import { StyledProfileWrapper } from "../styles/StyledEditProfile";
 const EditProfile = () => {
   // const imageRef = useRef(null)
@@ -283,11 +283,11 @@ const EditProfile = () => {
                 >
                   Time Zone
                 </label>
-                <TimezoneSelect
+                {/* <TimezoneSelect
                   value={selectedTimezone}
                   onChange={setSelectedTimezone}
                   className="col-12"
-                />
+                /> */}
               </div>
               {/* <div className="input-group">
                 <label htmlFor="twitter" className="inputLabel">

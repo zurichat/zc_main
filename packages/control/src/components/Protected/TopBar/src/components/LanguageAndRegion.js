@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import styles from "../styles/LanguageAndRegion.module.css";
 import standardStyles from "../styles/UserPreference.module.css";
-import TimezoneSelect from "react-timezone-select";
+// import TimezoneSelect from "react-timezone-select";
 import Select from "react-select";
 import { authAxios } from "../utils/Api";
 import { ProfileContext } from "../context/ProfileModal";
@@ -143,14 +143,14 @@ const LanguageAndRegion = () => {
             <span className={styles.checkmark}>
               Set time zone automatically
             </span>
-            <TimezoneSelect
+            {/* <TimezoneSelect
               styles={customStyles}
               className={styles.optSelect}
               placeholder="Select Timezone"
               value={selectedTimezone}
               defaultValue="badbitches"
               onChange={setSelectedTimezone}
-            />
+            /> */}
             <p className={`${styles.note} my-2`}>
               Zurichat uses your time zone to send summary and notification
               emails, for times in your activity feeds and for reminders.

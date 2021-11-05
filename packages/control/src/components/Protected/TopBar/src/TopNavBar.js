@@ -30,12 +30,12 @@ import styles from "./styles/TopNavBar.module.css";
 
 const TopNavBar = () => {
   const theme = localStorage.getItem("theme");
-  if (theme !== null || theme !== "") {
-    const topBar = document.getElementById(
-      "single-spa-application:@zuri/topbar"
-    );
-    topBar.style.backgroundColor = themeColors[theme]?.primary;
-  }
+  // if (theme !== null || theme !== "") {
+  //   const topBar = document.getElementById(
+  //     "single-spa-application:@zuri/topbar"
+  //   );
+  //   topBar.style.backgroundColor = themeColors[theme]?.primary;
+  // }
   const currentWorkspace = localStorage.getItem("currentWorkspace");
 
   const { closeModal, openModal, presence, setPresence } =
