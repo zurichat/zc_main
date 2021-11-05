@@ -7,6 +7,8 @@ import {
   WorkspaceWrapperStyle
 } from "./Workspace.style";
 
+// import { GeneralLoading } from "../../../components";
+
 const { Sidebar, TopBar } = lazily(() =>
   import("../../../components/Protected")
 );
@@ -32,19 +34,24 @@ export default function Index() {
 
       <WorkspaceWrapperStyle>
         <Switch>
+          <Route exact path="/workspace/:workspaceId">
+            <h1>Welcome to your Workspace</h1>
+          </Route>
+
           <Route
+            exact
             path="/workspace/:workspaceId/marketplace"
             component={() => <h1>MarketPlace</h1>}
           />
 
           {/* All other routes not by control go to Single SPA */}
           <Route
-            path="/workspace/:workspaceId*"
+            path="/workspace/:workspaceId/*"
             component={() =>
               React.createElement(
                 "div",
                 { id: "zuriPluginsLoadArea" },
-                "Plugins Load Section"
+                "Plugins Load Area"
               )
             }
           />

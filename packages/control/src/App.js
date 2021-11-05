@@ -27,9 +27,11 @@ const App = () => (
           <Route exact path="/signout" component={SignOut} />
 
           <Route
+            exact
             path="/choose-workspace"
             render={() => withSuspense(ChooseWorkspace)}
           />
+
           <Route
             path="/create-workspace"
             render={() => withSuspense(CreateWorkspace)}
@@ -41,7 +43,6 @@ const App = () => (
           />
 
           <Route
-            path="*"
             component={() => (
               <GeneralLoading text="404 - (Refactoring in Progress)" />
             )}
