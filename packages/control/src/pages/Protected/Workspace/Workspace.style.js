@@ -51,6 +51,7 @@ export const WorkspaceWrapperStyle = styled.div`
   background-color: var(--bg-color);
   overflow: auto;
   margin-left: 5px;
+  z-index: -1;
 
   @media (max-width: 768px) {
     left: 0;

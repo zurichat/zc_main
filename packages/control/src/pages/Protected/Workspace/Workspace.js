@@ -38,23 +38,18 @@ export default function Index() {
             <h1>Welcome to your Workspace</h1>
           </Route>
 
-          <Route
+          {/* <Route
             exact
             path="/workspace/:workspaceId/marketplace"
             component={() => <h1>MarketPlace</h1>}
-          />
+          /> */}
 
           {/* All other routes not by control go to Single SPA */}
-          <Route
-            path="/workspace/:workspaceId/*"
-            component={() =>
-              React.createElement(
-                "div",
-                { id: "zuriPluginsLoadArea" },
-                "Plugins Load Area"
-              )
-            }
-          />
+          <Route path="/workspace/:workspaceId/*">
+            <div id="zuri-plugin-load-section">
+              {window.dispatchEvent(new Event("zuri-plugin-load"))}
+            </div>
+          </Route>
         </Switch>
       </WorkspaceWrapperStyle>
     </>
