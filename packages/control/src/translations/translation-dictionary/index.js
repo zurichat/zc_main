@@ -2,6 +2,7 @@
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import Subscribe from "./pages/Subscribe";
 import whyzurichat from "./pages/whyzurichat";
 
 import Footer from "./components/Footer";
@@ -15,6 +16,7 @@ const Translations = [
   ...Login,
   ...SignUp,
   ...whyzurichat,
+  ...Subscribe,
 
   // Components
   ...NavBar,

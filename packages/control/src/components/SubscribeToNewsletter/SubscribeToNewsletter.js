@@ -55,11 +55,9 @@ export default function SubscribeToNewsletter() {
             className={`col-md-6 col-sm-12 d-flex flex-column ${styles.rightColumn}`}
           >
             <div className={`py-sm-4 ${styles.text}`}>
-              <h2 className={` ${styles.heading2}`}>
-                {t("landing.cardTwo.title")}
-              </h2>
+              <h2 className={` ${styles.heading2}`}>{t("title")}</h2>
               <p className={`py-4 mb-4 px-0 ${styles.subtext}`}>
-                {t("landing.cardTwo.description")}
+                {t("description")}
               </p>
               <div className={`${styles.formContainer}`}>
                 <form onSubmit={handleSubmit}>
@@ -73,7 +71,7 @@ export default function SubscribeToNewsletter() {
                     className={`mb-3 ${styles.inputField}`}
                   />
                   <button type="submit" className={`${styles.subscribeBtn}`}>
-                    {t("landing.cardTwo.button")}
+                    {t("button")}
                   </button>
                 </form>
               </div>
