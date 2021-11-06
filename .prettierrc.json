@@ -4,7 +4,7 @@
   "endOfLine": "auto",
   "arrowParens": "avoid",
   "trailingComma": "none",
-  "semi": false,
+  "semi": true,
   "useTabs": false,
   "singleQuote": false,
   "bracketSpacing": true
