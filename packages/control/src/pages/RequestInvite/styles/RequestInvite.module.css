@@ -21,8 +21,23 @@ main {
 .submain {
   text-align: center;
 }
-p {
+.paragraph {
   font-size: 15px;
+}
+.cardText {
+  font-size: 12px;
+  padding: 20;
+  width: 500;
+}
+.cardText1 {
+  font-size: 12px;
+  padding: 5;
+  width: 500;
+}
+.cardText2 {
+  font-size: 12px;
+  padding: 16;
+  width: 500;
 }
 .btnr {
   background-color: #00b87c;

@@ -10,39 +10,41 @@ function RequestInvite() {
       <Helmet>
         <title>Request Invite - Zuri Chat</title>
       </Helmet>
-      <Card
-        className={styles.root}
-        style={{ alignItems: "center", justifyContent: "center" }}
-      >
+      <Card className={styles.root}>
         <Card.Body>
           <div className={styles.title} gutterBottom align="left">
-            <p className={styles.main}>Request Invitation to Zuri Chat</p>
+            <p className={(styles.main, styles.paragraph)}>
+              Request Invitation to Zuri Chat
+            </p>
             <form>
               <div className={styles.first}>
-                <p> To: </p>
+                <p className={styles.paragraph}> To: </p>
                 <Container>
                   <Form.Control
-                    style={{ fontSize: 12, padding: 20, width: 500 }}
+                    className={styles.cardText}
                     name="foo"
                     placeholder="tosben@hnginternship.com"
                   />
                 </Container>
               </div>
               <div className={styles.second}>
-                <p> Invite as: </p>
+                <p className={styles.paragraph}> Invite as: </p>
                 <Container>
                   <Form.Control
-                    style={{ fontSize: 12, padding: 5, width: 500 }}
+                    className={styles.cardText1}
                     name="foo"
                     placeholder="Member"
                   />
                 </Container>
               </div>
               <div className={styles.third}>
-                <p> Reason for request(optional): </p>
+                <p className={styles.paragraph}>
+                  {" "}
+                  Reason for request(optional):{" "}
+                </p>
                 <Container>
                   <Form.Control
-                    style={{ fontSize: 12, padding: 16, width: 500 }}
+                    className={styles.cardText2}
                     name="foo"
                     color="#FFFFFF"
                     placeholder="Add a note to your admin"
@@ -53,12 +55,12 @@ function RequestInvite() {
           </div>
           <div className={styles.submain} gutterBottom align="center">
             <div className={styles.firstsubmain}>
-              <p>
+              <p className={styles.paragraph}>
                 {" "}
                 Your request will be sent to the admin, and you will be notified
                 when it has been approved or denied
               </p>
-              <p>
+              <p className={styles.paragraph}>
                 New member will automatically join your workspace's default
                 channel <a href="addmore"> Add more</a>{" "}
               </p>

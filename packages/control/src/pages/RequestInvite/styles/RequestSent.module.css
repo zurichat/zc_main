@@ -1,10 +1,3 @@
-/*.classes.root{
-    width: 20rem;
-    height: 200px;
-    margin: 20px auto;
-    margin-top: 205px;
-    background-color: #FFFFFF;
-  } */
 .nav {
   border-bottom: 1px solid;
   width: 100%;
@@ -62,13 +55,6 @@
   margin-top: 10em;
 }
 
-/*button {
-    width: 100%;
-    border: 1px solid;
-    border-color: rgba(0, 139, 94, 1);
-    padding: 1em;
-    }
-    */
 .btninv {
   margin-bottom: 1em;
   color: rgba(0, 139, 94, 1);

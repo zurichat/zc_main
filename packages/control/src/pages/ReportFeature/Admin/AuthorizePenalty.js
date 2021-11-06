@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import styles from './reports.module.css'
-import Modal from 'react-bootstrap/Modal'
-import { AiOutlineClose } from 'react-icons/ai'
-import { TiTick } from 'react-icons/ti'
-import { Container, Card, Button } from 'react-bootstrap'
+import React, { useState } from "react"
+import styles from "./reports.module.css"
+import Modal from "react-bootstrap/Modal"
+import { AiOutlineClose } from "react-icons/ai"
+import { TiTick } from "react-icons/ti"
+import { Container, Card, Button } from "react-bootstrap"
 
 export const AuthorizePenalty = props => {
   const [check, setCheck] = useState(false)
@@ -13,8 +13,8 @@ export const AuthorizePenalty = props => {
 
   const authorize = e => {
     e.preventDefault()
-    localStorage.removeItem('zurimainComplaints')
-    localStorage.setItem('zurimainComplaints', JSON.stringify(props.complaints))
+    localStorage.removeItem("zurimainComplaints")
+    localStorage.setItem("zurimainComplaints", JSON.stringify(props.complaints))
     handleClose()
     props.putComplaints(true)
     props.nextStep(2)
@@ -25,10 +25,6 @@ export const AuthorizePenalty = props => {
     props.nextStep(1)
     props.idSettter(id)
   }
-  // const back = e => {
-  //     e.preventDefault();
-  //     props.prevStep();
-  // };
 
   const { complaints } = props
 
@@ -39,15 +35,7 @@ export const AuthorizePenalty = props => {
 
         <br />
 
-        <span
-          style={{
-            backgroundColor: 'rgb(53, 231, 142)',
-            display: 'flex',
-
-            flexDirection: 'space-around'
-            // borderBlock: "1px solid green",
-          }}
-        >
+        <span className={styles.TextOffender}>
           <b>Offender</b>
         </span>
         <div>
@@ -57,9 +45,7 @@ export const AuthorizePenalty = props => {
           <>
             {complaints.map((complain, idx) => (
               <Card key={idx}>
-                <Card.Body
-                  style={{ display: 'flex', flexDirection: 'space-inbetween' }}
-                >
+                <Card.Body className={styles.cardBodyText}>
                   <div className="col-7">
                     <Card.Title>{complain.email}</Card.Title>
                     <Card.Text className="date ">{complain.date}</Card.Text>
@@ -73,13 +59,9 @@ export const AuthorizePenalty = props => {
                   ) : null}
                 </Card.Body>
                 <Button
-                  className=" "
+                  className={styles.btnDetails}
                   onClick={e => view(idx, e)}
                   variant="outline-success"
-                  style={{
-                    width: '30%',
-                    marginLeft: '45%'
-                  }}
                 >
                   View Details
                 </Button>
@@ -93,18 +75,11 @@ export const AuthorizePenalty = props => {
         )}
 
         <br />
-        {/* <div className="row" style={{ display: "flex", flexDirection: "flex-end" }} > */}
 
         <div className="col-6 text-right">
           <button
-            className="btn btn-success"
+            className={`btn btn-success ${styles.btnAuthorize}`}
             onClick={handleShow}
-            style={{
-              color: 'white',
-              borderRadius: '5%',
-              // padding: "12px",
-              marginLeft: '50%'
-            }}
           >
             Authorize Penalty
           </button>
