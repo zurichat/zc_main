@@ -10,8 +10,8 @@ import LaunchWorkspace from "./LaunchWorkspace";
 
 export default function Index() {
   const [createWorkspaceData, setCreateWorkspaceData] = React.useState({
-    workspaceName: "Eniola's Big Hub",
-    workspaceDefaultChannelName: "Eni4Corn",
+    workspaceName: "",
+    workspaceDefaultChannelName: "",
     coworkersEmail: []
   });
 
