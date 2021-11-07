@@ -1,0 +1,155 @@
+.demoPage {
+  margin: 5em auto 0 auto;
+}
+
+.demoFormMain {
+  background: #ffffff;
+  margin-top: -50px;
+  padding: 1em 2em 2em 2em;
+  box-shadow: 0px 0 24px 0px rgb(0 0 0 / 20%);
+}
+
+.demoIntroduction {
+  background: #00b87c;
+  padding: 2.5em 0 3.5em 0;
+}
+
+.demoIntroduction h1 {
+  color: #ffffff;
+  font-size: 2.8em;
+  line-height: 1.1;
+}
+
+.demoFormSection {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.demoFormLeft {
+  width: 45%;
+}
+
+.demoFormRight {
+  width: 48%;
+}
+
+.demoFormRight h4 {
+  margin: 2em 0 1em 0;
+  padding-left: 0;
+}
+
+.demoFormRight .learnHowToList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.demoFormRight .learnHowToList li,
+.otherInfoSection li {
+  margin: 10px 0;
+}
+.demoFormRight .learnHowToList li,
+.otherInfoSection li,
+.hereToHelp p {
+  color: #3a3a3a;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+}
+
+.demoFormRight .learnHowToList li:before {
+  content: "✓";
+  margin-right: 15px;
+  font-weight: 600;
+  color: #00b87c;
+}
+
+.otherInfoSection {
+  margin: 4rem 0 2rem 0;
+}
+
+.otherInfoSection.otherInfoList {
+  list-style-type: disc !important;
+  list-style: disc !important;
+}
+
+.demoPageHereToHelpSection {
+  position: relative;
+}
+
+.hereToHelp {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 3em;
+  margin: 4rem 0 0 0;
+}
+
+.hereToHelpText {
+  width: 40%;
+}
+
+.hereToHelpImage {
+  width: 55%;
+  z-index: 4;
+}
+
+.hereToHelp h3 {
+  padding: 0;
+  font-size: 2.2em;
+  margin: 0 0 1rem 0;
+}
+
+.helpBackgroundSlash {
+  margin-top: -150px;
+  background: #00b87c;
+  z-index: 1;
+  padding: 8em 0 2em 0;
+  width: 100%;
+  clip-path: polygon(0 39%, 100% 0, 100% 100%, 0% 100%);
+}
+
+@media only screen and (max-width: 768px) {
+  .demoFormMain {
+    margin-top: -20px;
+  }
+
+  .demoFormLeft,
+  .demoFormRight {
+    width: 100%;
+  }
+
+  .otherInfoSection,
+  .hereToHelp {
+    margin: 2rem 0;
+  }
+
+  /* .demoIntroduction {
+    height: 25vh;
+  } */
+
+  .demoIntroduction h1 {
+    font-size: 2em;
+  }
+
+  .demoFormMain {
+    margin-top: -50px;
+    padding: 1em;
+  }
+
+  .hereToHelpText,
+  .hereToHelpImage {
+    width: 100%;
+  }
+
+  .hereToHelp h3 {
+    font-size: 1.8em;
+  }
+
+  .demoFormRight .learnHowToList li,
+  .otherInfoSection li,
+  .hereToHelp p {
+    font-size: 0.9em;
+    letter-spacing: unset;
+  }
+}

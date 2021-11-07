@@ -1,0 +1,442 @@
+.container {
+    font-family: 'Gilroy', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    background: #eaeaea;
+    width: 100%;
+  }
+  
+  .Blog_text {
+    max-width: 50rem;
+    margin: auto;
+    background-color: white;
+    margin-top: 5rem;
+    /* margin-bottom: 10rem; */
+    /* border: 4px solid black; */
+    /* padding-bottom: 3rem; */
+    
+  }
+  
+  .get_started p {
+    background: #eaeaea;
+    color: #464646;
+    border-radius: 3px;
+    font-weight: 400;
+    display: inline-block;
+    height: auto;
+    font-size: 10px;
+    line-height: 10px;
+    padding: 7px 11px 6px;
+    margin-right: 5px;
+    text-transform: uppercase;
+    pointer-events: auto;
+    vertical-align: top;
+    margin-top: 30px;
+    margin-left: 2.5rem;
+  }
+  
+  .blog_title p {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-left: 2.5rem;
+  }
+
+  .Author{
+      display: flex;
+      color: #818181;
+      margin-left: 2.5rem;
+  }
+
+  
+  .Blog_text .Author p {
+    font-size: 0.7rem;
+  }
+  
+  .Blog_text .Author .aut {
+    margin-left: 20px;
+  }
+  
+  .blogimage {
+    padding: 50px 100px 50px 100px;
+    margin: 30px 0 30px 0;
+    background-color: #00b87c66;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .blogimage img {
+    width: 100%;
+    height: 300px;
+  }
+  
+  .reader {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .line {
+    width: 100%;
+    background-color: rgb(167, 167, 167);
+    height: 2px;
+    margin: 30px 0 30px 0;
+  }
+  
+  .reader .blog_links {
+    display: flex;
+    margin-left: 20px;
+  }
+  .clock {
+    margin-right: 7px;
+    font-size: 16px;
+    background-color: #3b5998;
+    width: 7rem;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .linkedin{
+      background-color: #0072b1;
+      margin-right: 7px;
+    font-size: 16px;
+    width: 7rem;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .twitter{
+    margin-right: 7px;
+    font-size: 16px;
+    background-color: #00acee;
+    width: 7rem;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .linkedin:hover{
+      background-color: #818181;;
+  }
+  .twitter:hover{
+    background-color: #818181;;
+}
+.clock:hover{
+    background-color: #818181;;
+}
+  
+  .reader .blog_links p {
+    margin-left: 10px;
+  }
+  
+  .Blog_article_text p {
+    text-align: justify;
+    color: #5e5e5e;
+    font-family: "roboto_regular",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+  }
+  h3{
+    font-size: 22px;
+    line-height: 30px;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+  }
+  h4{
+    font-size: 22px;
+    line-height: 30px;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+
+  }
+
+  
+  .Blog_article_text p span {
+    color: #99e3cb;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .blog_newletter {
+    display: flex;
+    margin-top: 40px;
+    background-color: #99e3cb;
+    margin-bottom: 60px;
+  }
+  
+  .blog_newletter .newsletter_img img {
+    width: 300px;
+    position: relative;
+    height: 250px;
+    top: 30px;
+  }
+  
+  .blog_newletter .newletter_text {
+    margin-left: 30px;
+    padding: 0 15px 2px 30px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  .blog_newletter .newletter_text h2 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: black;
+  }
+  
+  .blog_newletter .newletter_text a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .blog_newletter .newletter_text a:hover {
+    color: dodgerblue;
+  }
+  
+  .comment_form textarea {
+    width: 100%;
+    padding: 10px;
+    font-family: 'Gilroy', sans-serif;
+    border: 2px solid #4e4e4e;
+    border-radius: 10px;
+  }
+  
+  .comment_form button {
+    padding: 8px;
+    font-family: 'Gilroy', sans-serif;
+    background-color: #00b87c;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    position: right;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px;
+  }
+  
+  .comment_form button:hover {
+    background-color: #048a5d;
+  }
+  
+  .comment_box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    
+  }
+  
+  
+  
+  .comment_box .comment_like {
+    display: flex;
+    margin-left: 20px 20px 20px 20px;
+  }
+  
+  .comment_box .comment_like p {
+    margin-left: 30px;
+  }
+  .comment_box .comment_like span {
+    padding-top: 10px;
+    margin-left: 7px;
+  }
+  
+  .comment_box .blog_links {
+    display: flex;
+    margin-left: 20px;
+  }
+  
+  .comment_box .blog_links p {
+    margin-left: 10px;
+  }
+  
+  .comment_content .comment_name {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .avatar img {
+    border-radius: 50%;
+    border: 2px solid #00b87c;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+  }
+  .comment_wrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 42rem;
+  }
+  .dot span {
+    font-size: 30px;
+  }
+  
+  .comment_content {
+    margin-bottom: 50px;
+  }
+  .comment_content:hover {
+    height: 25rem;
+  }
+  form textarea {
+    transition-property: height;
+    transition-duration: 2s;
+  }
+  
+  .blog_buttons {
+    margin: 30px 0 50px 0;
+  }
+  
+  .blog_buttons a {
+    margin-left: 20px;
+    text-decoration: none;
+    padding: 10px;
+    background-color: #f8f8f8;
+    color: #787171;
+  }
+  
+  .main_conainer h1 {
+    padding-bottom: 50px;
+    padding-top: 50px;
+  }
+  
+  .keep_reading_boxes {
+    display: flex;
+    justify-content: space-between;
+    /* margin: 20px; */
+    padding: 20px 100px 100px 100px;
+  }
+  
+  .keep_reading_box .keep_reading_img img {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .keep_reading_box {
+    border-radius: 5px;
+    margin: 10px;
+    border: 1px solid rgb(223, 223, 223);
+  }
+  
+  .keep_reading_text {
+    padding: 15px;
+  }
+  
+  .keep_reading_text .getting {
+    font-size: 0.8rem;
+    color: dodgerblue;
+  }
+  
+  .keep_reading_text .getting_text {
+    font-size: 0.8rem;
+  }
+  
+  .keep_reading_text .getting_text a {
+    text-decoration: none;
+    color: dodgerblue;
+  }
+  .date_min {
+    display: flex;
+  }
+  
+  .date_min .min {
+    margin-left: 10px;
+  }
+  
+  .date_min p {
+    font-size: 0.8rem;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .Blog_text {
+      display: block;
+    }
+  
+    .get_started p {
+      color: #00b87c;
+      font-size: 0.8rem;
+    }
+  
+    .blog_title p {
+      font-size: 1.5rem;
+    }
+  
+    .blogimage {
+      padding: 50px 50px 50px 50px;
+    }
+  
+    .blogimage img {
+      width: 100%;
+      height: 200px;
+    }
+  
+    .blog_newletter {
+      display: block;
+    }
+  
+    .blog_newletter .newsletter_img img {
+      width: 100%;
+      position: unset;
+      height: 250px;
+      margin: 0;
+      top: 0;
+    }
+    .blog_newletter .newletter_text {
+      margin-left: 30px;
+    }
+    .font {
+      font-size: 0.8rem !important;
+    }
+    .keep_reading_boxes {
+      display: block;
+      justify-content: space-between;
+      padding: 0;
+    }
+    .reader .blog_links {
+      display: flex;
+      justify-content: space-around;
+    }
+    .blog_newletter .newletter_text {
+      margin: 30px 30px 30px 30px;
+    }
+  
+    .blog_buttons {
+      display: grid;
+    }
+    .blog_buttons a {
+      margin-top: 10px;
+    }
+    .comment_card {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+  }
+  .comment_card {
+    background-color: #eff2f5;
+    border: 1px solid #eff2f5;
+    border-radius: 5px;
+    width: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+  }
+  
+  .reading {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(auto, 1fr));
+    gap: 15px;
+  }

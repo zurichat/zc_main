@@ -1,0 +1,256 @@
+.navbar-expand-lg {
+  flex-wrap: wrap;
+  justify-content: start;
+  padding-left: 25px;
+}
+
+.navbar {
+  margin-top: 15px;
+  border-bottom: 1px solid rgba(187, 186, 231, 0.15);
+}
+
+.navButton {
+  border: none;
+  box-shadow: none;
+}
+
+.navButton:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.searchLogo1 {
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
+}
+
+.searchLogo {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+}
+
+.navLinkFeatures {
+  margin-right: 40px;
+}
+
+.navLinkPricing {
+  margin-right: 40px;
+}
+
+.navLinkComms {
+  margin-right: 40px;
+}
+
+.navLinkSignUp {
+  margin-right: 10px;
+}
+
+.zuriChat {
+  font-size: 18px;
+  color: black;
+  position: relative;
+  top: 5px;
+  font-weight: bold;
+  margin-left: 5px;
+  text-decoration: none;
+}
+
+.image {
+  position: relative;
+}
+
+.navbarBrand {
+  text-decoration: none;
+  float: left;
+}
+
+.features {
+  color: black;
+  font-weight: 300;
+}
+
+.signU {
+  color: #00b87c;
+  font-weight: 600;
+}
+
+.signI {
+  font-weight: 600;
+}
+
+.signIn {
+  background-color: #00b87c;
+  color: white;
+  border-radius: 0px;
+}
+
+.signIn:hover {
+  background-color: #00b87c;
+  color: white;
+}
+
+.pricing {
+  color: black;
+  font-weight: 300;
+}
+
+.comms {
+  color: black;
+  font-weight: 300;
+}
+
+.download {
+  color: black;
+  font-weight: 300;
+}
+
+@media only screen and (min-width: 1440px) {
+  .collapse {
+    margin-left: 200px;
+  }
+
+  .image {
+    position: relative;
+  }
+
+  .zuriChat {
+    font-size: 18px;
+    color: black;
+    position: relative;
+    top: 5px;
+    font-weight: bold;
+    margin-left: 5px;
+    text-decoration: none;
+  }
+
+  .navbar {
+    margin-top: 15px;
+  }
+
+  .navbarBrand {
+    text-decoration: none;
+    padding-left: 20px;
+  }
+
+  .navButton {
+    border: none;
+  }
+
+  .navLinkFeatures {
+    margin-right: 50px;
+  }
+
+  .navLinkPricing {
+    margin-right: 50px;
+  }
+
+  .navLinkComms {
+    margin-right: 50px;
+  }
+
+  .navLinkSignUp {
+    margin-right: 10px;
+  }
+
+  .signIn {
+    background-color: #00b87c;
+    color: white;
+    border-radius: 0px;
+  }
+
+  .signI {
+    font-weight: 600;
+  }
+
+  .signU {
+    color: #00b87c;
+    font-weight: 600;
+  }
+
+  .download {
+    color: black;
+    font-weight: 300;
+  }
+
+  .comms {
+    color: black;
+    font-weight: 300;
+  }
+
+  .pricing {
+    color: black;
+    font-weight: 300;
+  }
+
+  .features {
+    color: black;
+    font-weight: 300;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .image {
+    position: relative;
+    transform: scale(0.8);
+  }
+
+  .zuriChat {
+    font-size: 16px;
+    color: black;
+    position: relative;
+    top: 5px;
+    font-weight: bold;
+    margin-left: 5px;
+    text-decoration: none;
+  }
+
+  .navbar {
+    margin-top: 15px;
+  }
+
+  .navLink {
+    margin-right: 60px;
+  }
+
+  .navbarBrand {
+    text-decoration: none;
+  }
+
+  .signIn {
+    background-color: #00b87c;
+    color: white;
+    border-radius: 0px;
+    font-weight: 600;
+  }
+
+  .signI {
+    font-weight: 600;
+  }
+
+  .signU {
+    color: #00b87c;
+    font-weight: 600;
+  }
+
+  .download {
+    color: black;
+    font-weight: 300;
+  }
+
+  .comms {
+    color: black;
+    font-weight: 300;
+  }
+
+  .pricing {
+    color: black;
+    font-weight: 300;
+  }
+
+  .features {
+    color: black;
+    font-weight: 300;
+  }
+}
