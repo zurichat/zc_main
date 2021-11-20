@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import styles from "../styles/Section3.module.css";
-import "../../../../translations/i18n";
 import { useTranslation } from "react-i18next";
 
 function Section3() {

@@ -20,7 +20,6 @@ import Carousel from "./component/CarouselImg";
 import CarouselSecond from "./component/SecondCarousel";
 
 // import i18n (needs to be bundled ;))
-import "../../../translations/i18n";
 import { useTranslation } from "react-i18next";
 // end of image import
 const About = () => {
