@@ -9,7 +9,17 @@ import { GeneralErrorBoundary, GeneralLoading } from "./components";
 import { withSuspense } from "./utils";
 
 // All Pages imported here
-import { HomePage, Login, SignUp, SignOut } from "./pages";
+import {
+  HomePage,
+  Login,
+  SignUp,
+  SignOut,
+  AboutPage,
+  ContactUsPage,
+  DownloadsPage,
+  PluginsPage,
+  PricingPage
+} from "./pages";
 
 const { Workspace, CreateWorkspace, ChooseWorkspace } = lazily(() =>
   import("./pages/Protected")
@@ -25,6 +35,11 @@ const App = () => (
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/signout" component={SignOut} />
+          <Route exact path="/about" component={AboutPage} />
+          <Route exact path="/contact-us" component={ContactUsPage} />
+          <Route exact path="/downloads" component={DownloadsPage} />
+          <Route exact path="/plugins" component={PluginsPage} />
+          <Route exact path="/pricing" component={PricingPage} />
 
           <Route
             exact

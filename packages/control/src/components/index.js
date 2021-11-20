@@ -3,6 +3,7 @@
 // Shared Components
 export { default as TopNavigationBar } from "./TopNavigationBar/TopNavigationBar";
 export { default as Footer } from "./Footer/Footer";
+export { default as FAQ } from "./FAQ";
 
 // Util Components
 export { default as GeneralLoading } from "./GeneralLoading/GeneralLoading";
