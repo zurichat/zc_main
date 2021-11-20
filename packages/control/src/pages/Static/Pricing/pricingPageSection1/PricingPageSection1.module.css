@@ -1,0 +1,554 @@
+* {
+  box-sizing: border-box;
+}
+
+.topPricingSectionContainer {
+  padding: 0;
+  margin: 0;
+  margin-top: 0.7rem;
+  color: #333333;
+}
+
+.topPricingPageSection1 {
+  display: flex;
+  font-family: "Lato";
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.ptopheader {
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-top: 85px;
+  margin-bottom: 2.25rem;
+  font-family: Lato;
+}
+
+.topPricingPageBody {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 1000px;
+  height: fit-content;
+  box-shadow: 0 4px 8px 0 gainsboro, 0 6px 20px 0 gainsboro;
+  border: none;
+  border-radius: 3px;
+}
+
+.to .topPricingLine {
+  height: 0.31rem;
+  width: 100%;
+  background: #00b87c;
+  border-radius: 0px 0px 3px 3px;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.topPricingPageColumns {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  box-sizing: content-box;
+  height: 100%;
+  padding: 1.4rem;
+}
+/* .topPricingPageColumns > div {
+  width: 100%;
+} */
+
+.cards {
+  padding-top: 15px;
+  flex: 1;
+}
+.cards:nth-child(1) {
+  /* height: 100%; */
+
+  margin-right: 1rem;
+  border-right: 1px solid gainsboro;
+}
+
+.topPricingTop {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.topPricingTitle {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.3rem;
+}
+
+.topPricingSubtitle {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.7rem;
+  flex-wrap: wrap;
+  height: 30px;
+}
+
+.topPricingAmount {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+.topPricingButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #00b87c;
+  border: none;
+  border-radius: 0.25rem;
+  /* margin-top: 8%; */
+  width: 13rem;
+  height: 3rem;
+  font-weight: normal;
+  font-size: 1rem;
+  color: #ffffff;
+  transition: 1s ease-in-out;
+}
+.topPricingButton a {
+  font-weight: 400;
+}
+.topPricingButton:hover {
+  background: #156349;
+}
+
+.link {
+  color: #ffffff;
+}
+
+.link:hover {
+  color: #ffffff;
+}
+
+.topPricingBottom {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  padding: 1.25rem;
+  height: calc(100% - 10.8rem);
+  padding-left: 0;
+}
+
+.topPricingBottomHead {
+  display: flex;
+}
+
+.topPricingBottomHeadText {
+  width: 13rem;
+  height: 0.75rem;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.topPricingBottomBodyPart {
+  display: flex;
+}
+
+.topPricingTick {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+.topPricingText {
+  display: block;
+  flex-wrap: wrap;
+  box-sizing: inherit;
+  letter-spacing: normal;
+  flex-direction: column;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.75rem;
+  color: #333333;
+}
+
+.topPricingBottomFoot {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.topPricingBottomFoot .span {
+  width: 3.5rem;
+  height: 1.8rem;
+  color: #00b87c;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.7rem;
+}
+
+.topPricingBottomFoot .span:hover {
+  text-decoration: underline;
+  color: #00b87c;
+}
+
+@media only screen and (max-width: 1380px) {
+  .topPricingSectionContainer,
+  .section2 {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .topPricingSectionContainer,
+  .section2 {
+    font-size: 10px;
+  }
+
+  .topPricingPageBody {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+    width: 90%;
+    /* height: 38rem; */
+    box-shadow: 5px 15px 20px 5px rgba(0, 0, 0, 0.1);
+    border: none;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .topPricingSectionContainer,
+  .section2 {
+    font-size: 14px;
+  }
+
+  .topPricingSectionContainer {
+    padding: 0;
+    margin: 0;
+    margin-top: 0.7rem;
+    color: #333333;
+  }
+
+  .ptopheader {
+    font-size: 25px;
+  }
+  .cards:nth-child(1) {
+    border-right: none;
+    border-bottom: 1px solid gainsboro;
+  }
+
+  .cards:nth-child(2) {
+    padding-top: 25px;
+  }
+
+  .topPricingPageSection1 {
+    display: flex;
+    width: 100%;
+    font-family: "Lato";
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    margin-bottom: 1.25rem;
+  }
+
+  .topPricingPageSection1 > .p {
+    display: flex;
+    text-align: start;
+    justify-content: start;
+    /* align-items: center; */
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-top: 0.35rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .topPricingPageBody {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 100%;
+    max-width: 450px;
+  }
+
+  .topPricingLine {
+    height: 0.31rem;
+    width: 100%;
+    background: #00b87c;
+    border-radius: 0px 0px 3px 3px;
+    transform: matrix(1, 0, 0, -1, 0, 0);
+  }
+
+  .topPricingPageColumns {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    box-sizing: content-box;
+    height: 100%;
+    padding: 1.4rem;
+  }
+  .topPricingPageColumns > div {
+    width: 100%;
+  }
+  .topPricingStart {
+    flex: 1;
+    height: 100%;
+    margin-top: 0.625rem;
+    border-right: 0px solid rgba(122, 122, 122, 0.5);
+  }
+
+  .topPricingMiddle1 {
+    flex: 1;
+    height: 100%;
+    border-right: 0px solid rgba(122, 122, 122, 0.5);
+  }
+
+  .topPricingMiddle2 {
+    flex: 1;
+    height: 100%;
+    border-right: 0px solid rgba(122, 122, 122, 0.5);
+  }
+
+  .topPricingEnd {
+    flex: 1;
+    height: 100%;
+  }
+
+  .topPricingTop {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-height: auto;
+    /* justify-content: space-between; */
+  }
+
+  .topPricingTitle {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.3rem;
+    height: 0px;
+    margin-bottom: 35px;
+  }
+
+  .topPricingSubtitle {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.7rem;
+    flex-wrap: wrap;
+  }
+
+  .topPricingAmount {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.2rem;
+  }
+
+  .topPricingButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #00b87c;
+    border: none;
+    border-radius: 0.19rem;
+    width: 12.5rem;
+    height: 2.56rem;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #ffffff;
+  }
+
+  .topPricingBottom {
+    height: calc(100% - 8.8rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.25rem;
+  }
+
+  .topPricingBottomHead {
+    display: flex;
+  }
+
+  .topPricingBottomHeadText {
+    width: 13rem;
+    height: 0.75rem;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .topPricingBottomBodyPart {
+    display: flex;
+  }
+
+  .topPricingTick {
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-right: 0.5rem;
+  }
+
+  .topPricingText {
+    display: block;
+    flex-wrap: wrap;
+    box-sizing: inherit;
+    letter-spacing: normal;
+    flex-direction: column;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.75rem;
+    color: #333333;
+  }
+
+  .topPricingBottomFoot {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.3rem;
+  }
+
+  .topPricingBottomFoot .span {
+    width: 3.5rem;
+    height: 1.8rem;
+    color: #00b87c;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.65rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .topPricingSectionContainer,
+  .section2 {
+    font-size: 8px;
+  }
+}
+
+/* Table Section Styling */
+.section2 {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.tableMain {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 75%;
+  margin: auto auto;
+  table-layout: fixed;
+}
+
+.colgroup {
+  display: table-column-group;
+}
+
+.col,
+.colSpec,
+.pricingtableSpacer {
+  display: table-column;
+}
+
+.colSpec {
+  background-color: #f5f5f5;
+  min-width: 2rem;
+  max-width: 180px;
+}
+
+.pricingtableSpacer {
+  width: 1.5rem;
+}
+
+.tableContainer {
+  margin: 5%;
+  background-color: white;
+}
+
+.thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+  text-align: center;
+}
+
+.tableMain tr {
+  border: none;
+  color: #333333;
+}
+
+thead tr .th1col {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+table th,
+table td {
+  padding: 1.25rem 1.5rem;
+}
+
+tbody tr {
+  border: none;
+  color: #333333;
+}
+
+tfoot {
+  text-align: center;
+}
+
+tfoot th {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.pricingTableRowFooter th {
+  background-color: #ffffff;
+  font-weight: 400;
+  padding-top: 2rem;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.pricingTableRowFooter a {
+  color: #00b87c;
+  background: 0 0;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 1px solid #00b87c;
+  word-break: break-all;
+}
+
+.pricingTableRowFooter a:hover {
+  text-decoration: underline;
+  color: #00b87c;
+}
+
+.colStart {
+  text-align: start;
+}
+
+.col {
+  width: 35%;
+}
+
+.tableMain,
+.tableContainer {
+  width: 100%;
+}
+.section2 {
+  width: 75%;
+  margin: 0px auto;
+}
+.th1col {
+  width: 30%;
+}
+
+@media only screen and (max-width: 992px) {
+  .section2 {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .section2 {
+    width: 100%;
+  }
+
+  .tableMain {
+    display: none;
+  }
+}
