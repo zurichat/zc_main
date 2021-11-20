@@ -21,7 +21,6 @@ import {
 } from "./assets";
 import Cookies from "../../../components/CookiesNotification/CookiesNotification";
 import Subscribe from "./components/Subscribe1";
-import "../../../translations/i18n";
 import { useTranslation } from "react-i18next";
 import { TopNavigationBar, Footer } from "../../../components";
 
