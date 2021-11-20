@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.modalcontent {
+  width: 600px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+.inviteclose {
+  padding: 20px;
+}
+.modalheader {
+  padding: 20px 20px 0 20px;
+}
+
+.modaltitle {
+  margin: 0;
+  font-family: "Lato";
+  color: rgba(36, 36, 36, 0.7);
+}
+
+.modalbody {
+  padding: 0 22px 22px 22px;
+  font-family: "Lato";
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.invitebox {
+  padding: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border: 1px solid #008b5e;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 2px rgba(0, 139, 94, 0.25);
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.bottominvite {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding: 10px;
+}
+.copy {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.copy a {
+  font-family: "Roboto", sans-serif;
+  color: rgba(0, 139, 94, 1);
+  margin-left: 10px;
+  margin-right: 10px;
+  text-decoration: none;
+}
+.copy a .p {
+  color: rgba(0, 0, 0, 0.7);
+}
+.send {
+  padding: 10px;
+}
+.send button {
+  background-color: rgba(0, 139, 94, 1);
+  font-family: "Lato";
+  color: #ffffff;
+  border-radius: 3px;
+  padding: 10px 20px;
+  border: none;
+}
+.send button:hover {
+  transform: scale(1.2);
+}
+.invitedusers {
+  padding: 3px;
+  border-radius: 5px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+.invitebox input {
+  width: 539.3px;
+}
+.inviteclose button {
+  background-color: white;
+  border: none;
+}
+.inviteclose button:hover {
+  transform: scale(1.1);
+}
+.emailbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.invitedusers input {
+  margin-top: 5px;
+  max-width: 100%;
+  flex: 1 0 auto;
+  outline: 0;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  text-align: left;
+  line-height: 1.21428571em;
+  padding: 0.5em 0.5em;
+  background: #fff;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 0.28571429rem;
+  transition: box-shadow 0.1s ease, border-color 0.1s ease;
+  font-size: 13px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: flex-start;
+}

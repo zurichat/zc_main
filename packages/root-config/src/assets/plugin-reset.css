@@ -14,6 +14,7 @@
   --bg-color: #fff;
   --text-color: #3f3f3f;
 }
+<<<<<<< HEAD
 html,
 body {
   /* height: 100%; */
@@ -23,10 +24,13 @@ body {
   padding: 0;
   /* font-size: 100% !important; */
 }
+=======
+>>>>>>> a0c991743a2fb85270f5ee1ee505bf7622921f8f
 
 div[id*="zuri"] {
   width: 100%;
   overflow: hidden;
+<<<<<<< HEAD
 }
 
 div[id*="zuri/topbar"] {
@@ -174,3 +178,6 @@ div[id*="zuri/marketplace"] {
   display: none !important;
   box-shadow: none !important;
 }
+=======
+}
+>>>>>>> a0c991743a2fb85270f5ee1ee505bf7622921f8f

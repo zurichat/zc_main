@@ -1,0 +1,205 @@
+.contact_form_container {
+  box-sizing: border-box;
+  color: #1d1c1d;
+  margin-top: 30px;
+}
+
+.contact_form_container {
+  padding: 25px 30px;
+  background: #ffffff;
+}
+.form-control::placeholder {
+  color: #bdbdbd !important;
+  font-size: 16px !important;
+}
+.form-control:-moz-placeholder {
+  color: #bdbdbd !important;
+  font-size: 16px !important;
+}
+.form_control {
+  padding: 16px 20px;
+  border-color: #bdbdbd;
+  font-size: 16px;
+}
+.form_control:focus {
+  box-shadow: none;
+  border-color: #bdbdbd;
+}
+
+.contact_form_container .form-control::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  font-size: 16px !important;
+}
+.contact_form_container .form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 16px !important;
+}
+.contact_form_container .form-control:-ms-input-placeholder {
+  /* IE 10+ */
+  font-size: 16px !important;
+}
+.contact_form_container .form-control:-moz-placeholder {
+  /* Firefox 18- */
+  font-size: 16px !important;
+}
+.btn_disabled {
+  background: #ebeaeb;
+  padding: 19px 37px;
+}
+.bg_primary {
+  background: #00b87c;
+}
+.text_primary {
+  color: #00b87c;
+}
+
+.btn_topic {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 8px 20px;
+  font-size: 14px;
+}
+.btn_topic:hover {
+  background: #00b87c;
+  color: #ffffff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 8px 20px;
+}
+.btn_topic:focus {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.btn_topic:disabled {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: not-allowed;
+  color: #dadada;
+}
+
+/* primary button */
+.btn_primary {
+  background: #00b87c;
+  color: #ffffff;
+  padding: 0 32px;
+  font-size: 16px;
+  font-weight: 700;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn_primary:hover {
+  background: #00b87c;
+  color: #ffffff;
+}
+.btn_primary:focus {
+  background: #00b87c;
+  color: #ffffff;
+}
+.btn_primary:disabled {
+  background: #ebeaeb;
+  color: #616061;
+}
+
+.btn_topic_select {
+  padding: 7px 20px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.change {
+  cursor: pointer;
+}
+
+.faqs_topic {
+  transition: max-height 550ms cubic-bezier(0.06, 0.6, 0.08, 0.99);
+  max-height: 650px;
+}
+
+.topic_tiles {
+  max-height: 650px;
+  transition: max-height 550ms cubic-bezier(0.06, 0.6, 0.08, 0.99);
+}
+.is_hidden_animate {
+  max-height: 0px;
+  transition: max-height 550ms cubic-bezier(0.06, 0.6, 0.08, 0.99);
+  overflow: hidden;
+}
+
+.accordion {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+}
+.accordion h2 {
+  width: 100%;
+  height: fit-content;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 19.2px;
+}
+
+.cancel {
+  cursor: pointer;
+}
+
+.accordion h2 {
+  width: 100%;
+  height: fit-content;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 19.2px;
+}
+
+.cancel {
+  cursor: pointer;
+}
+
+.accordion_button {
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+}
+.btn_topic {
+  font-size: 15px;
+}
+
+.accordion_body {
+  font-size: 14px;
+  font-weight: 500;
+}
+/* .accordion_button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+} */
+.accordion_button:not(.collapsed) {
+  color: #000;
+}
+
+.accordion_collapse a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.drag_drop {
+  flex: 1;
+  display: flex;
+  padding: 30px 30px;
+  border-radius: 2px;
+  border: 2px dashed #bdbdbd;
+  background-color: #fafafa;
+  color: #bdbdbd;
+  outline: none;
+  transition: border 0.24s ease-in-out;
+}
+.subHead {
+  font-size: 16px;
+}
+.privacy {
+  padding-top: 24px;
+  text-decoration: underline;
+  display: inline-block;
+  line-height: 19px;
+}
+.privacy:hover {
+  color: #00b87c !important;
+}

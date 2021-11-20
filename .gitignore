@@ -71,3 +71,5 @@ dist
 *.sw?
 .DS_Store
 .trash
+
+packages/control/ignore

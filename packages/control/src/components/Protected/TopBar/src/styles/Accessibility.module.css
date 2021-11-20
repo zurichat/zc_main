@@ -1,0 +1,149 @@
+.containerAccessibility {
+  left: 480px;
+  top: 140px;
+  margin: 30px 50px;
+  padding-bottom: 32px;
+  max-width: 100%;
+}
+
+.hrLine {
+  left: 23.19%;
+  right: 7.03%;
+  /* top: 55.6%; */
+  /* bottom: 34.4%; */
+  border: 1px solid #f6f6f6;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.animationH3,
+.directH3,
+.keyboardH3,
+.pressH3 {
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: 0em;
+  padding: 0%;
+  color: #242424;
+  margin-top: 13px;
+}
+
+.accessibilityCheckbox,
+.accessibilityRadio {
+  color: green;
+  background-color: var(--primary-color);
+  align-self: center;
+  visibility: hidden;
+  position: absolute;
+  left: 9999px;
+}
+
+.accessibilityRadio {
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+.accessibilityLabel {
+  color: #3a3a3a;
+  font-size: 13px;
+  display: flex;
+}
+
+.accessibilityRadioLabel {
+  font-weight: bold;
+  display: flex;
+}
+
+.imageStyle {
+  margin-right: 10px;
+}
+
+#accessibilityPId {
+  margin-left: 25px;
+  margin-bottom: -5px;
+}
+
+#accessibilityPId2 {
+  margin-left: 25px;
+  margin-bottom: 55px;
+}
+
+.imagesAndEmojis {
+  text-align: left;
+  font-size: 15px;
+  margin-top: 11px;
+  display: flex;
+}
+
+.accessibilityCheckbox input:checked ~ .accessibilityLabel::after {
+  background-color: green;
+}
+
+.accessibilityP {
+  font-family: Lato;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-top: 9px;
+  margin-bottom: 10px;
+  color: #3a3a3a;
+}
+
+.accessbilityText {
+  font-weight: normal;
+  font-size: 13px;
+  color: #3a3a3a;
+  margin-top: 5px;
+}
+
+.accessibilityEsc {
+  background-color: var(--background);
+  padding: 2px 5px;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  margin: 3px;
+  color: rgba(0, 184, 124, 0.5);
+  width: 33px;
+  height: 20px;
+  left: 0px;
+  top: 1px;
+  border: 1px solid rgba(0, 184, 124, 0.5);
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+.image1 {
+  width: 20px;
+  height: 15px;
+  display: inline;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+#noteP {
+  color: #b8003c;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 130%;
+  margin-top: -44px;
+}
+
+#exclamation {
+  padding: 2px 5px;
+}
+
+#handyKeyboard {
+  color: #1264a3;
+}

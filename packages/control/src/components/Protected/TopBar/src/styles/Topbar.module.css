@@ -1,0 +1,469 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+.container {
+  display: flex;
+  align-items: center;
+  height: 5.0625em;
+  margin-right: 1.875em;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 25px;
+  position: relative;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    justify-content: flex-end;
+  }
+}
+.fontStyles {
+  font-size: 1.3rem;
+}
+
+.membersModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  z-index: -1;
+}
+
+.profile {
+  background-color: #acffe6;
+  border-radius: 50%;
+  display: flex;
+  margin-left: -0.3em;
+  align-items: center;
+  justify-content: center;
+  height: 2.5em;
+  width: 2.5em;
+  cursor: pointer;
+  position: relative;
+}
+
+@media screen and (min-width: 900px) {
+  .profile {
+    margin-left: 0.8rem;
+  }
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.statusContent {
+  text-align: left;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+}
+
+.circles {
+  background: green;
+  height: 7px;
+  width: 7px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+}
+
+.circleAway {
+  background: grey;
+  height: 7px;
+  width: 7px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+}
+
+.topbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  height: 40px;
+}
+
+.search {
+  width: 390px;
+  height: 32px;
+  margin-right: 1em;
+  background: rgba(255, 255, 255, 0.4);
+  border: 0.8px solid rgba(153, 153, 153, 0.2);
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+.search::placeholder {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  color: #999999;
+  padding-left: 0.2em;
+}
+
+.settings {
+  margin-right: 20px;
+}
+
+/* =========================================== */
+
+/* THE SECTION OF THE TOP BAR MODAL */
+
+.topbarModal {
+  background: var(--bg-color);
+  position: absolute;
+  top: 105%;
+  right: 12px;
+  width: 100%;
+  max-width: 326px;
+  z-index: 9999;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 6px 0 9px 0;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+@media (max-width: 768px) {
+  .topbarModal {
+    width: 84%;
+  }
+}
+
+.modalContainers {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100000;
+  background: #ffffff;
+  /* display: none; */
+  justify-content: center;
+  padding-top: 5.6875rem;
+  padding-bottom: 2rem;
+  z-index: 2;
+}
+
+.modalBackDrop {
+  position: absolute;
+  z-index: 3;
+  /* background: var(--bg-color); */
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* The section one */
+
+.sectionOne {
+  display: flex;
+  align-items: center;
+  width: 85%;
+  margin: auto;
+  margin-bottom: 17px;
+}
+
+.oneLeft {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
+.oneLeft img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 10%;
+  background: #00b87b44;
+  margin-top: 8px;
+}
+
+/* THE SECTION OF THE ONE RIGHT */
+
+.oneRight {
+  margin-left: 15px;
+}
+
+.oneRight h4 {
+  font-size: 15px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 600;
+  color: #999999;
+  /* line-height: 18px; */
+  /* margin-top: 12px; */
+  padding-top: 15px;
+}
+
+.online {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  margin-top: -8px;
+}
+
+/* set yourself as away*/
+
+
+/* set yourself as active*/
+
+.active, .away {
+  padding: 5px 0 0 12px; 
+  font-size: 13px;
+  line-height: 13.2px;
+  margin-left: 9px;
+  color: #999999;
+}
+
+.activeCircle {
+  background-color: #00b87c;
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  margin-right: 14px;
+  position: absolute;
+}
+
+.awayCircle {
+  background-color: grey;
+  height: 7px;
+  width: 7px;
+  margin-right: 14px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.oneRight p {
+  font-size: 12px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  color: var(--text-color-normal);
+}
+
+/* The section two */
+
+.sectionTwo {
+  background: #f6f6f6;
+  padding: 0 0.5rem;
+  border-radius: 4px;
+  /* border: 1px solid #a1a1a1; */
+  width: 85%;
+  margin: auto;
+  cursor: pointer;
+  height: 34px;
+  position: relative;
+  align-items: center;
+  display: flex;
+}
+
+.sectionTwo .emoji {
+  float: left;
+  font-size: 18px;
+  padding: 0 0.3rem;
+}
+
+.defalutEmoji {
+  height: 20px;
+  padding: 0px 2px;
+}
+/* The section of the picker */
+
+.smileys {
+  padding-top: 20px;
+}
+
+.picker {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  width: 300px;
+  z-index: 999999;
+  padding: 10px;
+}
+
+/* responsiveness for picker */
+
+@media screen and (max-width: 650px) {
+  .picker {
+    left: 30%;
+  }
+}
+
+.times {
+  color: red;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  display: none;
+}
+
+/* The section three */
+
+.sectionThree {
+  position: relative;
+  line-height: 20px;
+  font-style: normal;
+  font-weight: normal;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.sectionThree p {
+  font-family: Lato;
+  color: #999999;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  padding: 7px 25px;
+}
+
+.sectionThree p:hover {
+  background: #01d892;
+  color: #fff;
+}
+
+.pause {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pause:hover {
+  background: #01d892;
+  color: #fff;
+}
+
+.pause:hover p {
+  background: #01d892;
+  color: #fff;
+}
+
+.chevron {
+  color: #333333;
+  font-size: 8px;
+  font-weight: normal;
+  margin-right: 20px;
+}
+
+/* hr */
+
+.hr {
+  /* border: 1.2px solid #e5e1e1; */
+  width: 100%;
+  margin-top: 5px;
+  height: 0px;
+  margin-bottom: 15px;
+}
+
+/* The section four */
+
+.sectionFour {
+  line-height: 20px;
+  font-style: normal;
+  font-weight: normal;
+  margin: auto;
+  margin-top: -8px;
+}
+
+.sectionFour p {
+  display: flex;
+  flex-direction: row;
+  color: #999999;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 7px 25px;
+}
+
+.sectionFour p:hover {
+  background: #01d892;
+  color: #fff;
+}
+
+/* The section five */
+
+.sectionFive {
+  line-height: 20px;
+  font-style: normal;
+  font-weight: normal;
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
+
+.sectionFive p {
+  font-family: Lato;
+  color: #999999;
+  font-size: 15px;
+  font-weight: 400;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  padding: 2px 25px;
+}
+
+.sectionFive a {
+  color: #333333;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.sectionFive p:hover {
+  background: #01d892;
+  color: #fff;
+}
+
+.sectionFive a:hover {
+  background: #01d892;
+  color: #fff;
+}
+
+/* The section Six */
+
+.sectionSix {
+  line-height: 20px;
+  font-style: normal;
+  font-weight: normal;
+  margin: auto;
+  margin-top: -8px;
+}
+
+.sectionSix p {
+  font-family: Lato;
+  color: #999999;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  padding: 7px 25px;
+}
+
+.sectionSix p:hover {
+  background: #01d892;
+  color: #fff;
+}
+
+

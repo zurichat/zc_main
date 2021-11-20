@@ -1,0 +1,153 @@
+.categories {
+  background: #fff;
+  width: 80%;
+  margin: 40px auto 120px auto;
+  height: max-content;
+  margin-top: 3rem;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+}
+.categoriesModal {
+  background: #f0f4f8;
+  width: 70%;
+  margin: 2rem auto 2rem auto;
+  height: max-content;
+  position: relative;
+}
+/* button {
+  background: none;
+  border: none;
+  margin-left: 1rem;
+  cursor: pointer;
+  font-size: 15px;
+  color: #00b87c;
+} */
+.icons,
+.icons_close {
+  font-size: 30px;
+}
+.icons_close {
+  position: absolute;
+  right: 0;
+}
+/* .btn {
+  align-content: center;
+  justify-content: center;
+  display: flex;
+} */
+.viewAllBtn {
+  margin-top: 6px;
+}
+.linkContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0.3rem 0.6rem 1.2rem 0.3rem;
+}
+.categories div a,
+.categoriesModal div a {
+  padding: 1rem 2rem;
+  color: #fff;
+  background: #00b87c;
+  border-radius: 5px;
+  margin-left: 0.5rem;
+  margin-bottom: 1rem;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem 2.2rem;
+  width: 100%;
+  border-bottom: 1px solid #dae3ec;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.header h3 {
+  margin-top: 12px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  /* margin: 10px 0 0 0; */
+}
+.headerx {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 1rem;
+  width: 100%;
+  border-bottom: 2px solid black;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.background {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  height: max-content;
+  min-height: 100vh;
+}
+@media screen and (max-width: 800px) {
+  .categories {
+    padding: 0 0 1.2rem 0;
+    height: max-content;
+    width: 85%;
+  }
+  .categories div a {
+    padding: 0.55rem 1.2rem;
+    font-size: 12px;
+    margin-left: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+  .header,
+  .headerx {
+    padding: 0rem 1rem 0 1rem;
+  }
+  .header h3 {
+    font-size: 20px;
+  }
+  .header button {
+    font-size: 14px;
+    margin: 0;
+  }
+  .viewAllBtn {
+    margin-top: 3px;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .categories {
+    height: auto;
+  }
+  .categories div a,
+  .categoriesModal div a {
+    padding: 0.6rem 0.6rem;
+    font-size: 13px;
+    margin-left: 0.5rem;
+    margin-bottom: 0.3rem;
+  }
+  .header {
+    padding: 0.5rem;
+  }
+  .header h3 {
+    font-size: 15px;
+    margin-top: 6px;
+  }
+  .header button {
+    font-size: 12px;
+  }
+  .linkContainer {
+    padding: 5px 0 0 0;
+  }
+  .header {
+    margin-bottom: 0.5rem;
+  }
+}

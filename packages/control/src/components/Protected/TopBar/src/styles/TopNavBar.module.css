@@ -1,0 +1,23 @@
+.topNavBar__header-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hamburger__menu-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+@media only screen and (min-width: 1023px) {
+    .hamburger__menu-button{
+        display: none;
+    }
+}
+
+
+.topNavBar__logo{
+    width: 100%;
+}

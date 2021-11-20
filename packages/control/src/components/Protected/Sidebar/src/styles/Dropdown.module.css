@@ -1,0 +1,41 @@
+.container {
+  margin-top: 0.5em;
+}
+
+.isClosed .dropDownButton {
+  transform: rotateZ(-90deg);
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.header span {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #999999;
+  cursor: pointer;
+}
+
+.dropDownButton img {
+  transition: transform 0.2s ease-out;
+}
+
+.addButton {
+  margin-left: auto;
+  margin-right: 2rem;
+  cursor: pointer;
+}
+
+.isClosed .content {
+  height: 0;
+}
+
+.item {
+  cursor: pointer;
+  padding: 0.3rem;
+}
