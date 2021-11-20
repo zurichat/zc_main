@@ -44,7 +44,7 @@
       let getURL = location.pathname;
       let appendZuri = `- Zuri Chat `;
       if (getURL !== '/') {
-        getURL = getURL.substr(1);
+        getURL = getURL.substr(1).replace('-',' ');
         getURL = getURL.charAt(0).toUpperCase() + getURL.slice(1);
         document.title = getURL + ' ' + appendZuri;
       };
