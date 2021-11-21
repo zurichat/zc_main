@@ -12,7 +12,7 @@ import { Helmet } from "react-helmet";
 import { goToDefaultChannel } from "../../api/channels";
 import "../../i18n";
 import { useTranslation } from "react-i18next";
-// import { navigateToUrl } from "single-spa";
+import { navigateToUrl } from "single-spa";
 // import { Link } from 'react-router-dom'
 // import authBg1 from './assets/auth_bg1.svg'
 // import authBg2 from './assets/auth_bg2.svg'
@@ -105,8 +105,8 @@ const Login = () => {
 
             switch (true) {
               case orgs > 1:
-                history.push("/choose-workspace");
-                // navigateToUrl("/channels");
+                // history.push("/choose-workspace");
+                navigateToUrl("/channels");
                 break;
               case orgs < 1:
                 history.push("/createworkspace");
