@@ -1,9 +1,9 @@
-name: Zuri main Deployment
+name: Zuri main staging Deployment
 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [develop]
+    branches: [staging]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -11,58 +11,21 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: yarn build
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        
-      - name: Use cached node_modules
-        uses: c-hive/gha-yarn-cache@v2
-        with:
-         directory: zc_frontend
-         
-      - name: install Dependencies
-        run: |
-          yarn install
-          cd zc_frontend
-          yarn install
-          yarn build
-          
+      - uses: actions/checkout@v2
+
       - name: Git Pull on Server
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.ZURI_MAIN_HOST }}
+          host: ${{ secrets.ZURI_HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            cd /var/www/zurichat/zuri.chat
+            cd /var/www/zuri.chat/zurimain/staging/zc_main
+            git fetch --all 
+            git reset --hard origin/staging
             git stash
-            git fetch --all
-            git reset --hard origin/develop
-            git pull origin develop
+            git pull
             yarn install
-            cd zc_frontend
-            yarn install
-          
-            
-      - name: copy build to server
-        uses: Creepios/sftp-action@v1.0.1
-        with:
-          username: ${{ secrets.USERNAME }}
-          host: ${{ secrets.ZURI_MAIN_HOST }}
-          password: ${{ secrets.PASSWORD }}
-          localPath: './zc_frontend/build/'
-          remotePath: '/var/www/zurichat/zuri.chat/zc_frontend/build'
-        
-      - name: restart pm2
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.ZURI_MAIN_HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          script: |
-            pm2 list
-            pm2 restart 0
-        
-
-             
+            yarn build
+            pm2 restart zc_main_staging
