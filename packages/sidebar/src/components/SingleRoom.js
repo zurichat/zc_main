@@ -1,8 +1,8 @@
-import React from "react"
-import { AiOutlinePlus } from "react-icons/ai"
-import { navigateToUrl } from "single-spa"
-import styles from "../styles/Drop.module.css"
-import Badge from "./badge"
+import React from "react";
+import { AiOutlinePlus } from "react-icons/ai";
+import { navigateToUrl } from "single-spa";
+import styles from "../styles/Drop.module.css";
+import Badge from "./badge";
 
 export default function SingleRoom({ image, name, link }) {
   return (
@@ -26,5 +26,5 @@ export default function SingleRoom({ image, name, link }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
