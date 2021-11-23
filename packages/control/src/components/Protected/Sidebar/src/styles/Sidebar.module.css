@@ -3,7 +3,7 @@
 .sb__container {
   font: "Lato", sans-serif;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
-  background-color:inherit;
+  background-color: inherit;
   padding-block-end: 3em;
   height: 100%;
   width: unset;
@@ -59,7 +59,7 @@
   font-weight: bold;
   font-size: 1.125em;
   line-height: 28px;
-  width: auto;
+  width: max-content;
   padding-right: 8px;
   line-height: 1.2em;
 }
