@@ -3,6 +3,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { useGoogleLogin } from "react-google-login";
 import { GetUserInfo } from "@zuri/utilities";
+import { navigateToUrl } from "single-spa";
 
 const CLIENT_ID =
   "943002582641-ek6jakave3irmueaqfdoc0754v83qf6e.apps.googleusercontent.com";
@@ -44,7 +45,9 @@ const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
           sessionStorage.setItem("user", JSON.stringify(data.user));
           setTimeout(() => {
             GetUserInfo();
-            history.push("/choose-workspace");
+            // history.push("/choose-workspace");
+            // history.push("/channels");
+            navigateToUrl("/channels");
             setLoading(false);
           }, 2000);
         })

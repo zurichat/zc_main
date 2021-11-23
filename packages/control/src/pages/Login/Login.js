@@ -90,8 +90,10 @@ export default function Index() {
             // console.log('reg orgs', orgs)
 
             switch (true) {
-              case orgs > 1:
-//                 history.push("/choose-workspace");
+              case orgs >= 1:
+                // history.push("/choose-workspace");
+                // console.log("here", orgs);
+                // history.push("/channels");
                 navigateToUrl("/channels");
                 break;
               case orgs < 1:
