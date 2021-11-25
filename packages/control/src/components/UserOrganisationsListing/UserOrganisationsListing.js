@@ -16,20 +16,22 @@ const UserOrganization = ({ organizations, user }) => {
         {organizations.map(organization => (
           <OrganizationWrapper key={organization.id}>
             <Image src={ZuriChatLogo} alt="" />
-            <Organization>
-              <Logo_Members>
-                <OrganizationName>{organization.name}</OrganizationName>
-                <Members>
-                  {organization.no_of_members === 1
-                    ? organization.no_of_members + " member"
-                    : organization.no_of_members + " members"}
-                </Members>
-              </Logo_Members>
-            </Organization>
             <Link to={`/workspace/${organization.id}`}>
-              <Arrow>
-                <img src={RightArrow} />
-              </Arrow>
+              <Flex>
+                <Organization>
+                  <Logo_Members>
+                    <OrganizationName>{organization.name}</OrganizationName>
+                    <Members>
+                      {organization.no_of_members === 1
+                        ? organization.no_of_members + " member"
+                        : organization.no_of_members + " members"}
+                    </Members>
+                  </Logo_Members>
+                </Organization>
+                <Arrow>
+                  <img src={RightArrow} />
+                </Arrow>
+              </Flex>
             </Link>
           </OrganizationWrapper>
         ))}
@@ -93,6 +95,11 @@ const Image = styled.img`
   height: 48px;
   object-fit: cover;
 `;
+
+const Flex = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 const OrganizationWrapper = styled.li`
   border-top: 1px solid hsla(0, 0%, 20%, 0.51);
   padding-top: 21px;
@@ -119,6 +126,7 @@ const Organization = styled.div`
 const Logo_Members = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space between;
 `;
 const TryDifferentWrapper = styled.div`
   display: flex;
