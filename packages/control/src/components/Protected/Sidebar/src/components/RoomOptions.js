@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/ModalComponentStyles.module.css";
 import axios from "axios";
 
@@ -7,17 +7,21 @@ const RoomOptions = ({ isClicked, position, room, baseUrl }) => {
   const room_Id = room?.room_url?.split("/")[2];
   const org = localStorage.getItem("currentWorkspace");
   const orgs = JSON.parse(sessionStorage.getItem("organisations"));
-  const member_id = orgs.filter(x => x.id == org)[0].member_id;
-
+  const [memberId, setMemberId] = useState("");
+  // const member_id = orgs ? orgs.filter(x => x.id == org)[0].member_id
   //  axios
   // .("https://api.zuri.chat/auth/login", {
 
   // })
+  useEffect(() => {
+    setMemberId(orgs && orgs.filter(x => x.id == org)[0].member_id);
+  }, []);
+
   const starRoomClicked = () => {
-    console.warn(room_Id, baseUrl, org, member_id);
+    console.warn(room_Id, baseUrl, org, memberId);
     axios
       .put(
-        `${baseUrl}/api/v1/org/${org}/rooms/${room_Id}/members/${member_id}/star`
+        `${baseUrl}/api/v1/org/${org}/rooms/${room_Id}/members/${memberId}/star`
       )
       .then(res => console.warn(res, "started room"))
       .catch(err => console.warn(err));
