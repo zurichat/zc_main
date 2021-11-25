@@ -118,21 +118,23 @@
 .topbarModal {
   background: var(--bg-color);
   position: absolute;
-  top: 105%;
-  right: 12px;
-  width: 100%;
-  max-width: 326px;
+  top: calc(100% - 18px);
+  right: 22px;
+  /* width: 100%;
+  max-width: 326px; */
+  width: 326px;
+  max-width: calc(100% - 24px);
   z-index: 9999;
   border: 1px solid #BEBEBE;
   border-radius: 4px;
   /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .topbarModal {
     width: 84%;
   }
-}
+} */
 
 .modalContainers {
   height: 100vh;
@@ -218,19 +220,18 @@
   color: #3A3A3A;
 }
 
-.activeCircle {
-  background-color: #11855F;
+.activeCircle, .awayCircle {
   height: 6px;
   width: 6px;
   border-radius: 50%;
 }
 
+.activeCircle {
+  background-color: #11855F;
+}
+
 .awayCircle {
   background-color: grey;
-  height: 7px;
-  width: 7px;
-  margin-right: 14px;
-  border-radius: 50%;
 }
 
 .oneRight p {
@@ -318,9 +319,19 @@
   display: flex;
   flex-direction: row;
   padding: 8px 1.5rem;
+  transition: 100ms ease background, 100ms ease color;
 }
 
-.optionSection p:hover {
+.optionSection a {
+  color: #3A3A3A;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 19.5px;
+}
+
+.optionSection p:hover,
+.optionSection a:hover {
   background: #01d892;
   color: #fff;
 }
@@ -333,35 +344,6 @@
   margin: .5rem 0;
   height: 1.2px;
   background: #BEBEBE;
-}
-
-/* The section three */
-
-.sectionThree {
-  position: relative;
-  line-height: 20px;
-  font-style: normal;
-  font-weight: normal;
-  margin: auto;
-  margin-top: 1rem;
-}
-
-.sectionThree p {
-  font-family: Lato;
-  color: #3A3A3A;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 19.5px;
-  cursor: pointer;
-  margin: .5rem 0;
-  display: flex;
-  flex-direction: row;
-  padding: 8px 1.5rem;
-}
-
-.sectionThree p:hover {
-  background: #01d892;
-  color: #fff;
 }
 
 .pause {
@@ -386,90 +368,4 @@
   font-size: 8px;
   font-weight: normal;
   margin-right: 20px;
-}
-
-/* The section four */
-
-.sectionFour {
-  margin: auto;
-}
-
-.sectionFour p {
-  display: flex;
-  flex-direction: row;
-  color: #3A3A3A;
-  font-family: Lato;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 18.5px;
-  cursor: pointer;
-  margin: .5rem 0;
-  padding: 8px 1.5rem;
-}
-
-.sectionFour p:hover {
-  background: #01d892;
-  color: #fff;
-}
-
-/* The section five */
-
-.sectionFive {
-  margin: .5rem 0;
-}
-
-.sectionFive p {
-  font-family: Lato;
-  color: #3A3A3A;
-  font-size: 15px;
-  line-height: 19.5px;
-  font-weight: 400;
-  cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  margin: .5rem 0;
-  padding: 8px 1.5rem;
-}
-
-.sectionFive a {
-  color: #3A3A3A;
-  font-family: Lato;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 19.5px;
-}
-
-.sectionFive p:hover {
-  background: #01d892;
-  color: #fff;
-}
-
-.sectionFive a:hover {
-  background: #01d892;
-  color: #fff;
-}
-
-/* The section Six */
-
-.sectionSix {
-  margin: .5rem 0;
-}
-
-.sectionSix p {
-  font-family: Lato;
-  color: #4e4646;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 19.5px;
-  cursor: pointer;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: row;
-  margin: .5rem 0;
-  padding: 8px 1.5rem;
-}
-
-.sectionSix p:hover {
-  background: #01d892;
-  color: #fff;
 }
