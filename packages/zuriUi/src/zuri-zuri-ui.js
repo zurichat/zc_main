@@ -1,8 +1,8 @@
-import React from "react"
-import ReactDOM from "react-dom"
-import ChannelDetails from "./components/channel_details/ChannelDetails"
-import ChatSection from "./components/chat_box/ChatSection"
-import MessageBoard from "./components/message_board/MessageBoard"
-import CommentBox from "./components/message_input/MessageInputField"
+import React from "react";
+import ReactDOM from "react-dom";
+import ChannelDetails from "./components/channel_details/ChannelDetails";
+import CommentBoard from "./components/comment_board/CommentBoard";
+import MessageBoard from "./components/message_board/MessageBoard";
+import MessageEditorInput from "./components/shared/message_editor_input/MessageEditorInput";
 
-export { ChatSection, ChannelDetails, CommentBox, MessageBoard }
+export { CommentBoard, ChannelDetails, MessageEditorInput, MessageBoard };

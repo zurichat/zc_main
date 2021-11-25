@@ -1,8 +1,8 @@
 /* eslint-env node */
-const { mergeWithRules } = require("webpack-merge")
-const singleSpaDefaults = require("webpack-config-single-spa-react")
-const path = require("path")
-
+const { mergeWithRules } = require("webpack-merge");
+const singleSpaDefaults = require("webpack-config-single-spa-react");
+const path = require("path");
+console.log("DIRNAMEEEEEEEEEE", __dirname);
 const mergeRules = {
   plugins: "replace",
   devServer: {
@@ -18,7 +18,7 @@ const mergeRules = {
       use: "replace"
     }
   }
-}
+};
 
 module.exports = (webpackConfigEnv, argv) => {
   const defaultConfig = singleSpaDefaults({
@@ -26,13 +26,19 @@ module.exports = (webpackConfigEnv, argv) => {
     projectName: "zuri-ui",
     webpackConfigEnv,
     argv
-  })
+  });
 
   return mergeWithRules(mergeRules)(defaultConfig, {
     output: {
       path: path.join(__dirname, "..", "..", "dist") // string (default)
       // filename: "[name].js", // string (default)
       // publicPath: path.join(__dirname, '..', 'dist', 'assets') // string
+    },
+    resolve: {
+      alias: {
+        "@components": path.join(__dirname, "src/components"),
+        "@assets": path.join(__dirname, "src/assets")
+      }
     },
     module: {
       rules: [
@@ -53,5 +59,5 @@ module.exports = (webpackConfigEnv, argv) => {
         }
       ]
     }
-  })
-}
+  });
+};
