@@ -257,12 +257,12 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
 
               <div className={styles.statusContent}>
                 {!(user?.status?.text || user?.status?.tag)
-                  ? "Update your Status"
+                  ? "Update your status"
                   : user?.status?.text}
               </div>
             </div>
 
-            <div className={styles.sectionThree}>
+            <div className={styles.optionSection} style={{ marginTop: "1rem" }}>
               {(user?.status?.text || user?.status?.tag) && (
                 <p onClick={handleClearStatus}>Clear status</p>
               )}
@@ -280,9 +280,9 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
             {pause && <PauseNotification pause={pause} setPause={setPause} />}*/}
             </div>
 
-            <hr className={styles.hr} style={{ height: "0.4px" }} />
+            <hr className={styles.hr} />
 
-            <div className={styles.sectionFour}>
+            <div className={styles.optionSection}>
               <p
                 onClick={() => {
                   setReusableModal("edit profile");
@@ -309,9 +309,9 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
               </p>
             </div>
 
-            <hr className={styles.hr} style={{ height: "0.4px" }} />
+            <hr className={styles.hr} />
 
-            <div className={styles.sectionSix}>
+            <div className={styles.optionSection}>
               <p
                 onClick={() => {
                   setReusableModal("downloads");
@@ -329,9 +329,9 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
               <Downloads setModal={setReusableModal} />
             )}
 
-            <hr className={styles.hr} style={{ height: "0.4px" }} />
+            <hr className={styles.hr} />
 
-            <div className={styles.sectionFive}>
+            <div className={styles.optionSection}>
               <p onClick={logout}>Sign out</p>
             </div>
           </section>
