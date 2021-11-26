@@ -2,16 +2,15 @@ import contactStyle from "../styles/contactMain.module.css";
 import { ContactUs } from "../assets";
 import FAQselected from "./FAQSelected.js";
 import DiscoverMore from "./DiscoverMore";
+import { useTranslation } from "react-i18next";
 
 const contactTitle = () => {
+  const { t } = useTranslation();
   return (
     <div>
       <div className={`${contactStyle.contactHead} mt-5 mt-lg-3`}>
-        <h1>Contact Us</h1>
-        <p>
-          We are dedicated to making your online communication experience with
-          us a pleasure We’d like to hear from you.
-        </p>
+        <h1>{t("contactHead")}</h1>
+        <p>{t("contactHeadP")}</p>
       </div>
 
       <div className={contactStyle.contactBody}>

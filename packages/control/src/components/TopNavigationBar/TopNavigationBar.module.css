@@ -45,9 +45,11 @@
   font-size: 2rem;
   padding-right: 0.5rem;
   background-color: white;
+  border: 0;
 }
 .modal_header button span {
   padding: 0;
+  border: 0;
 }
 .select {
   font-size: 18px;
@@ -74,6 +76,7 @@
 .world {
   padding: 5px;
   background-color: white;
+  border: 0;
 }
 .world img {
   width: 25px;
