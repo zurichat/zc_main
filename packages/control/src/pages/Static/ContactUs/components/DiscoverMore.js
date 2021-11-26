@@ -1,14 +1,15 @@
 import React from "react";
 import styles from "../styles/DiscoverMore.module.css";
+import { useTranslation } from "react-i18next";
+
 const DiscoverMore = () => {
+  const { t } = useTranslation();
   return (
     <section className={styles.dicover_wrapper}>
       <div className={styles.container}>
-        <h3>Discover More</h3>
-        <p className={styles.sub1}>
-          From channels to search, learn how Zuri Chat works from top to bottom.
-        </p>
-        <p className={styles.sub2}>Visit the help Center </p>
+        <h3>{t("discoverMore")}</h3>
+        <p className={styles.sub1}>{t("sub1")}</p>
+        <p className={styles.sub2}>{t("helpCenter")}</p>
       </div>
     </section>
   );

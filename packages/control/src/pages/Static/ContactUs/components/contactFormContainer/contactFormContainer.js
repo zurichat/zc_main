@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import ContactFormStyle from "../../styles/contactFormContainer.module.css";
 import detailsData from "./detailsArray";
+import { useTranslation } from "react-i18next";
 import axios from "axios";
 import { useDropzone } from "react-dropzone";
 import { GetUserInfo } from "@zuri/utilities";
@@ -18,6 +19,7 @@ const rejectStyle = {
 };
 
 function ContactFormContainer() {
+  const { t } = useTranslation();
   const [currentDetails, setCurrentDetails] = useState({});
   const [userAuth, setUserAuth] = useState({});
   const [values, setValues] = useState({
@@ -137,7 +139,7 @@ function ContactFormContainer() {
           }`}
         >
           <label htmlFor="email" className="form-label fw-bold">
-            Your Email Address
+            {t("formEmail")}
           </label>
           <input
             type="email"
@@ -161,8 +163,7 @@ function ContactFormContainer() {
           <div className={`w-100`}>
             <div className={`d-flex align-items-center my-4`}>
               <p className={`fw-bold mb-0 ${ContactFormStyle.subHead}`}>
-                {" "}
-                Topic
+                {t("Topic")}
               </p>
 
               <p
@@ -176,7 +177,7 @@ function ContactFormContainer() {
                   setCurrentDetails({});
                 }}
               >
-                Change
+                {t("Change")}
               </p>
             </div>
             <div className="d-grid">
@@ -188,7 +189,7 @@ function ContactFormContainer() {
               </button>
             </div>
             <p className={`fw-bold mb-3`} style={{ fontSize: "14px" }}>
-              Related questions
+              {t("relatedQuestions")}
             </p>
             <div
               className={`accordion ${ContactFormStyle.accordion}`}
@@ -229,7 +230,7 @@ function ContactFormContainer() {
                 ))}
             </div>
             <p className={`fw-bold my-3`} style={{ fontSize: "14px" }}>
-              Related articles
+              {t("relatedArticles")}
             </p>
             <ul
               style={{
@@ -270,7 +271,7 @@ function ContactFormContainer() {
           } bg-white`}
         >
           <p className="fw-bold mb-3" style={{ fontSize: "16px" }}>
-            Select a Topic
+            {t("selectTopic")}
           </p>
           <div className={`d-flex flex-column flex-md-row flex-md-wrap`}>
             {detailsData.map(detail => (
@@ -293,7 +294,7 @@ function ContactFormContainer() {
           }`}
         >
           <label htmlFor="topic" className="form-label fw-bold mt-2">
-            Or tell us what you need help with:
+            {t("tellUs")}
           </label>
           <input
             type="text"
@@ -302,7 +303,7 @@ function ContactFormContainer() {
             name="subject"
             onChange={handleChange}
             value={values.subject}
-            placeholder="Enter any topic"
+            placeholder={t("enterTopic")}
             aria-describedby="topic"
             required
           />
@@ -316,21 +317,21 @@ function ContactFormContainer() {
                 className="form-label fw-bold"
                 style={{ fontSize: "14px !important" }}
               >
-                Can you give us more details?
+                {t("details")}
               </label>
               <textarea
                 className={`form-control ${ContactFormStyle.form_control}`}
                 name="content"
                 id="exampleFormControlTextarea1"
                 onChange={handleChange}
-                placeholder="Add any additional information we can use to help you."
+                placeholder={t("additionalInfo")}
                 rows="3"
               ></textarea>
             </div>
 
             <div className="my-3">
               <label htmlFor="attachments" className="form-label fw-bold">
-                Attach files (optional)
+                {t("attachFile")}
               </label>
               <div
                 {...getRootProps({
@@ -340,7 +341,7 @@ function ContactFormContainer() {
               >
                 {acceptedFileItems}
                 <input {...getInputProps()} />
-                <p>Drag and drop a file to attach it, or</p>
+                <p>{t("drag")}</p>
                 <a
                   style={{
                     color: "rgb(0, 184, 124)",
@@ -348,7 +349,7 @@ function ContactFormContainer() {
                     cursor: "pointer"
                   }}
                 >
-                  Browse for a file...
+                  {t("browse")}
                 </a>
               </div>
             </div>
@@ -361,7 +362,7 @@ function ContactFormContainer() {
             style={{ height: "55px" }}
             disabled={values.subject === "" || values.loading}
           >
-            {values.subject ? "Send us a message" : "GET HELP"}
+            {values.subject ? t("sendMessage") : t("getHelp")}
           </button>
           {values.subject && (
             <div className="d-flex align-items-center justify-content-center px-4 py-3">
@@ -369,7 +370,7 @@ function ContactFormContainer() {
                 className="text-nowrap mb-0"
                 style={{ fontWeight: "800px", fontSize: "13px" }}
               >
-                Chat Unavailable
+                {t("chat")}
               </p>
               <img className="ps-2" src={Alert} alt="alert circle" />
             </div>
@@ -386,7 +387,7 @@ function ContactFormContainer() {
           </p>
         )}
         <a href="/privacy" className={ContactFormStyle.privacy}>
-          Privacy Policy
+          {t("privacy")}
         </a>
       </form>
     </div>
