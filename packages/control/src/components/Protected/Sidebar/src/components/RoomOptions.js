@@ -14,7 +14,7 @@ const RoomOptions = ({ isClicked, position, room, baseUrl }) => {
 
   // })
   useEffect(() => {
-    setMemberId(orgs && orgs.filter(x => x.id == org)[0].member_id);
+    setMemberId(orgs?.find(x => x.id == org)?.member_id);
   }, []);
 
   const starRoomClicked = () => {
