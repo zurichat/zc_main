@@ -116,11 +116,18 @@ const Sidebar = props => {
       <Header state={props.state} />
       <div className={`${styles.subCon2}`}>
         <Fragment>
-          <SingleRoom name="Threads" image={threadIcon} />
-          <SingleRoom name="All Dms" image={dmIcon} link="/dm" />
+          <SingleRoom
+            name="Threads"
+            image={threadIcon}
+            link={`/workspace/${currentWorkspace}`}
+          />
+          <SingleRoom
+            name="All Dms"
+            image={dmIcon}
+            link={`/workspace/${currentWorkspace}/plugin-messaging`}
+          />
           <SingleRoom name="Drafts" image={draftIcon} />
 
-          <SingleRoom name="Plugins" image={pluginIcon} link="/marketplace" />
           <Starred starredRooms={starredRooms} />
           {singleItems}
           {categorizedItems}

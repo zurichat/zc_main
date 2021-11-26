@@ -6,6 +6,7 @@ import Badge from "./badge";
 import RoomOptions from "./RoomOptions";
 
 const RoomItem = ({ room, baseUrl }) => {
+  let currentWorkspace = localStorage.getItem("currentWorkspace");
   const [click, isClicked] = useClick();
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -45,7 +46,10 @@ const RoomItem = ({ room, baseUrl }) => {
   return (
     <li ref={click} className={`row py-1 px-2 ${styles.item__list}`}>
       <a
-        href={room.room_url}
+        href={`/workspace/${currentWorkspace}/${room.room_url.replace(
+          "/",
+          "plugin-"
+        )}`}
         className={`row ${styles.item_name}`}
         style={{ textDecoration: "none" }}
         onClick={navigateToUrl}

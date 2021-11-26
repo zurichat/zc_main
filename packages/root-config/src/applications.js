@@ -1,28 +1,41 @@
-const PluginPre = "zuri-plugin-";
+const PluginImportPathPre = "zuri-plugin-";
+const PluginAppPathPre = "plugin-";
 
-export const CoreApps = [
+export const coreApps = [
   { name: "control" }
   // { name: "zurUi" },
   // { name: "utilities" }
 ];
 
 export const allPlugins = [
-  { title: "marketplace", name: "marketplace" },
+  // Core Plugins
+  {
+    title: "messaging",
+    name: `${PluginImportPathPre}messaging`,
+    pluginPath: `${PluginAppPathPre}messaging`
+  },
+  // { title: "marketplace", name: "marketplace" },
   // Plugins
-  { title: "sales", name: `${PluginPre}company-sales-prospects` },
-  { title: "chessboard", name: `${PluginPre}chessboard` },
-  { title: "music", name: `${PluginPre}music` },
-  { title: "deadlines", name: `${PluginPre}deadlines` },
-  { title: "goals", name: `${PluginPre}company-goals` },
-  { title: "todo", name: `${PluginPre}todo` },
-  { title: "dm", name: `${PluginPre}dm` },
-  { title: "noticeboard", name: `${PluginPre}noticeboard` },
-  { title: "companyfiles", name: `${PluginPre}companyfiles` },
-  { title: "calendar", name: `${PluginPre}calendar` },
-  { title: "expenses", name: `${PluginPre}expenses` },
-  { title: "tools", name: `${PluginPre}tools` },
-  { title: "channels", name: `${PluginPre}channels` },
-  { title: "contributions", name: `${PluginPre}contributions` }
+  // { title: "sales", name: `${PluginImportPathPre}company-sales-prospects` },
+  {
+    title: "chessboard",
+    name: `${PluginImportPathPre}chessboard`,
+    pluginPath: `${PluginAppPathPre}chess`
+  },
+  {
+    title: "music",
+    name: `${PluginImportPathPre}music`,
+    pluginPath: `${PluginAppPathPre}music`
+  }
+  // { title: "deadlines", name: `${PluginImportPathPre}deadlines` },
+  // { title: "goals", name: `${PluginImportPathPre}company-goals` },
+  // { title: "todo", name: `${PluginImportPathPre}todo` },
+  // { title: "dm", name: `${PluginImportPathPre}dm` },
+  // { title: "noticeboard", name: `${PluginImportPathPre}noticeboard` },
+  // { title: "companyfiles", name: `${PluginImportPathPre}companyfiles` },
+  // { title: "calendar", name: `${PluginImportPathPre}calendar` },
+  // { title: "expenses", name: `${PluginImportPathPre}expenses` },
+  // { title: "tools", name: `${PluginImportPathPre}tools` },
+  // { title: "channels", name: `${PluginImportPathPre}channels` },
+  // { title: "contributions", name: `${PluginImportPathPre}contributions` }
 ];
-
-export default { allPlugins, CoreApps };

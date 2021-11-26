@@ -1,8 +1,14 @@
-import { registerApplication, start, pathToActiveWhen } from "single-spa";
+import {
+  registerApplication,
+  start,
+  pathToActiveWhen,
+  unregisterApplication,
+  getAppNames
+} from "single-spa";
 
-import { CoreApps, allPlugins } from "./applications";
+import { coreApps, allPlugins } from "./applications";
 
-CoreApps.forEach(app => {
+coreApps.forEach(app => {
   registerApplication({
     name: `@zuri/${app.name}`,
     app: () => System.import(`@zuri/${app.name}`),
@@ -16,15 +22,39 @@ start({
 
 window.addEventListener("zuri-plugin-load", () => {
   setTimeout(() => {
-    allPlugins.forEach(plugin => {
-      registerApplication({
-        name: plugin.name,
-        app: () => System.import(`@zuri/${plugin.name}`),
-        activeWhen: pathToActiveWhen(`/workspace/:id/${plugin.name}`, true),
-        customProps: {
-          domElement: document.querySelector("#zuri-plugin-load-section")
-        }
+    const registeredAppsName = getAppNames().filter(
+      appName => appName !== "@zuri/control"
+    );
+    if (!registeredAppsName.length) {
+      allPlugins.forEach(plugin => {
+        registerApplication({
+          name: plugin.name,
+          app: () => System.import(`@zuri/${plugin.name}`),
+          activeWhen: pathToActiveWhen(
+            `/workspace/:id/${plugin.pluginPath}`,
+            true
+          ),
+          customProps: {
+            domElement: document.getElementById("zuri-plugin-load-section")
+          }
+        });
       });
-    });
+    } else {
+      registeredAppsName.forEach(appName => {
+        unregisterApplication(appName).then(() => {
+          registerApplication({
+            name: appName,
+            app: () => System.import(`@zuri/${appName}`),
+            activeWhen: pathToActiveWhen(
+              `/workspace/:id/${appName.replace("zuri-", "")}`,
+              true
+            ),
+            customProps: {
+              domElement: document.getElementById("zuri-plugin-load-section")
+            }
+          });
+        });
+      });
+    }
   }, 4000);
 });
