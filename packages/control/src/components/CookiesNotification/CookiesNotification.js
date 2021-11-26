@@ -27,21 +27,21 @@ const Cookies = () => {
       <img src={cookieIcon} alt="cookies" title="cookies" />
       <div className={styles.cookie_body}>
         <span>
-          {t("landing.cookies.textOne")}{" "}
+          {t("textOne")}{" "}
           <Link to="/cookies-settings" className={styles.cookie}>
-            {t("landing.cookies.textTwo")}
+            {t("textTwo")}
           </Link>{" "}
-          {t("landing.cookies.textThree")}
+          {t("textThree")}
         </span>
         <ul className={styles.buttons}>
           <li>
             <button onClick={handleClickAllow} className={styles.allow}>
-              {t("landing.cookies.accept")}
+              {t("accept")}
             </button>
           </li>
           <li>
             <button onClick={handleClickDecline} className={styles.decline}>
-              {t("landing.cookies.decline")}
+              {t("decline")}
             </button>
           </li>
         </ul>
