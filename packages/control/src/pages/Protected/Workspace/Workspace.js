@@ -16,6 +16,9 @@ const { Sidebar, TopBar } = lazily(() =>
 export default function Index() {
   const { workspaceId } = useParams();
 
+  React.useEffect(() => {
+    window.dispatchEvent(new Event("zuri-plugin-load"));
+  }, []);
   // Temporary
   React.useEffect(() => {
     document.title = "Workspace";
@@ -33,6 +36,7 @@ export default function Index() {
       </SidebarWrapperStyle>
 
       <WorkspaceWrapperStyle>
+        <div id="zuri-plugin-load-section"></div>
         <Switch>
           <Route exact path="/workspace/:workspaceId">
             <h1>Welcome to your Workspace</h1>
@@ -45,11 +49,11 @@ export default function Index() {
           /> */}
 
           {/* All other routes not by control go to Single SPA */}
-          <Route path="/workspace/:workspaceId/*">
+          {/* <Route path="/workspace/:workspaceId/*">
             <div id="zuri-plugin-load-section">
-              {window.dispatchEvent(new Event("zuri-plugin-load"))}
+              <p>SHOULD SHOW PLUGINS</p>
             </div>
-          </Route>
+          </Route> */}
         </Switch>
       </WorkspaceWrapperStyle>
     </>

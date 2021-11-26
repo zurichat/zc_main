@@ -13,6 +13,7 @@
     "@zuri/zuri-plugin-expenses": "https://expenses.zuri.chat/js/zuri-zuri-plugin-expenses.js",
     "@zuri/zuri-plugin-tools": "https://externaltools.zuri.chat/zuri-zuri-plugin-tools.js",
     "@zuri/zuri-plugin-channels": "https://channels.zuri.chat/static/main/dist/zuri-zuri-plugin-channels.js",
-    "@zuri/zuri-plugin-contributions": "https://ct.zuri.chat/js/app.js"
+    "@zuri/zuri-plugin-contributions": "https://ct.zuri.chat/js/app.js",
+    "@zuri/zuri-plugin-messaging": "https://chat.zuri.chat/zuri-messaging.js"
   }
 }
