@@ -30,12 +30,12 @@ window.addEventListener("zuri-plugin-load", () => {
         registerApplication({
           name: plugin.name,
           app: () => System.import(`@zuri/${plugin.name}`),
-          activeWhen: pathToActiveWhen(
-            `/workspace/:id/${plugin.pluginPath}`,
-            true
-          ),
+          activeWhen: pathToActiveWhen(`/workspace/:id/${plugin.pluginPath}`),
           customProps: {
-            domElement: document.getElementById("zuri-plugin-load-section")
+            domElement: document.getElementById("zuri-plugin-load-section"),
+            baseName: `/workspace/${localStorage.getItem("currentWorkspace")}/${
+              plugin.pluginPath
+            }`
           }
         });
       });
@@ -46,11 +46,13 @@ window.addEventListener("zuri-plugin-load", () => {
             name: appName,
             app: () => System.import(`@zuri/${appName}`),
             activeWhen: pathToActiveWhen(
-              `/workspace/:id/${appName.replace("zuri-", "")}`,
-              true
+              `/workspace/:id/${appName.replace("zuri-", "")}`
             ),
             customProps: {
-              domElement: document.getElementById("zuri-plugin-load-section")
+              domElement: document.getElementById("zuri-plugin-load-section"),
+              baseName: `/workspace/${localStorage.getItem(
+                "currentWorkspace"
+              )}/${appName.replace("zuri-", "")}`
             }
           });
         });
