@@ -58,7 +58,6 @@ export default function Index({ createWorkspaceData }) {
       { organisation_id: workspaceId, user_id: creatorMemberId },
       { headers: { Authorization: "Bearer " + user.token } }
     );
-
     // Redirect
     localStorage.setItem("currentWorkspace", workspaceId);
     history.push(`/workspace/${workspaceId}`);
