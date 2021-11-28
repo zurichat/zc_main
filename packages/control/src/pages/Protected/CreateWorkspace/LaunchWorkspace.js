@@ -51,9 +51,8 @@ export default function Index({ createWorkspaceData }) {
     //   { organisation_id: workspaceId, user_id: creatorMemberId },
     //   { headers: { Authorization: "Bearer " + user.token } }
     // );
-
-    // Install Channels Plugin and DM Plugin
-    const installChannelsPluginApiCall = await axios.post(
+    // Install Messaging Plugin
+    const installMessagingPluginApiCall = await axios.post(
       `https://chat.zuri.chat/api/v1/install`,
       { organisation_id: workspaceId, user_id: creatorMemberId },
       { headers: { Authorization: "Bearer " + user.token } }
