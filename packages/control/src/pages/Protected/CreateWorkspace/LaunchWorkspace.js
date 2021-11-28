@@ -41,13 +41,20 @@ export default function Index({ createWorkspaceData }) {
     const creatorMemberId = getCreatorMemberIdApiCall.data.data[0]._id;
 
     // Install Channels Plugin and DM Plugin
+    // const installChannelsPluginApiCall = await axios.post(
+    //   `https://channels.zuri.chat/api/v1/install`,
+    //   { organisation_id: workspaceId, user_id: creatorMemberId },
+    //   { headers: { Authorization: "Bearer " + user.token } }
+    // );
+    // const installDmPluginApiCall = await axios.post(
+    //   `https://dm.zuri.chat/api/v1/install`,
+    //   { organisation_id: workspaceId, user_id: creatorMemberId },
+    //   { headers: { Authorization: "Bearer " + user.token } }
+    // );
+
+    // Install Channels Plugin and DM Plugin
     const installChannelsPluginApiCall = await axios.post(
-      `https://channels.zuri.chat/api/v1/install`,
-      { organisation_id: workspaceId, user_id: creatorMemberId },
-      { headers: { Authorization: "Bearer " + user.token } }
-    );
-    const installDmPluginApiCall = await axios.post(
-      `https://dm.zuri.chat/api/v1/install`,
+      `https://chat.zuri.chat/api/v1/install`,
       { organisation_id: workspaceId, user_id: creatorMemberId },
       { headers: { Authorization: "Bearer " + user.token } }
     );
