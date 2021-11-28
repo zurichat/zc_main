@@ -56,10 +56,11 @@ export default function Index({ createWorkspaceData }) {
     const installMessagingPluginInCore = await axios.post(
       `https://api.zuri.chat/organizations/${workspaceId}/plugins`,
       {
-        organisation_id: workspaceId,
+        plugin_id: "617db02f27c36150b422bc4d",
         user_id: creatorMemberId
         // memberEmails : createWorkspaceData.coworkersEmail
       },
+
       { headers: { Authorization: "Bearer " + user.token } }
     );
 
