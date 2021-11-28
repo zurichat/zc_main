@@ -91,7 +91,7 @@ export default function Index() {
 
             switch (true) {
               case orgs >= 1:
-                 history.push("/choose-workspace");
+                history.push("/choose-workspace");
                 // console.log("here", orgs);
                 // history.push("/channels");
                 //navigateToUrl("/channels");

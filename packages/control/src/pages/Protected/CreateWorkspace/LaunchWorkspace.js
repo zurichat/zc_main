@@ -51,13 +51,24 @@ export default function Index({ createWorkspaceData }) {
     //   { organisation_id: workspaceId, user_id: creatorMemberId },
     //   { headers: { Authorization: "Bearer " + user.token } }
     // );
-    // Install Messaging Plugin
+
+    // Install Messaging Plugin in ZC Core
+    const installMessagingPluginInCore = await axios.post(
+      `https://api.zuri.chat/organizations/${workspaceId}/plugins`,
+      {
+        organisation_id: workspaceId,
+        user_id: creatorMemberId
+        // memberEmails : createWorkspaceData.coworkersEmail
+      },
+      { headers: { Authorization: "Bearer " + user.token } }
+    );
+
+    // Install Messaging Plugin in ZC Main
     const installMessagingPluginApiCall = await axios.post(
       `https://chat.zuri.chat/api/v1/install`,
       { organisation_id: workspaceId, user_id: creatorMemberId },
       { headers: { Authorization: "Bearer " + user.token } }
     );
-
     // Redirect
     localStorage.setItem("currentWorkspace", workspaceId);
     history.push(`/workspace/${workspaceId}`);
