@@ -36,7 +36,17 @@ export const plugindata = async (
                 //Set plugin data to state
                 dispatch({
                   type: ACTIONS.ADD_ITEM,
-                  payload: { [pluginKey]: validPlugin }
+                  payload: [{ ...validPlugin, pluginKey }]
+                });
+              } else if (Array.isArray(validPlugin)) {
+                //Set plugin data to state
+                let counter = 0;
+                dispatch({
+                  type: ACTIONS.ADD_ITEM,
+                  payload: validPlugin.map(plugin => ({
+                    ...plugin,
+                    pluginKey: `${pluginKey}_${counter++}`
+                  }))
                 });
               }
             }

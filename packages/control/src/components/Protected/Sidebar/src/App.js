@@ -21,23 +21,25 @@ export const ACTIONS = {
 };
 
 const insertSideBarData = (state, action) => {
-  var sidebar_data = action.payload;
-  var category = sidebar_data[Object.keys(sidebar_data)[0]].category;
-  var categoryData = state.sidebar
-    ? state.sidebar[category ? category : "others"]
-    : null;
-  if (categoryData) {
-    categoryData = {
-      ...categoryData,
-      ...sidebar_data
-    };
-    state.sidebar[category] = categoryData;
-  } else {
-    if (!state.sidebar) state.sidebar = {};
-    state.sidebar[category ? category : "others"] = {
-      ...sidebar_data
-    };
-  }
+  action.payload.forEach(sidebar_data => {
+    var category = sidebar_data.category;
+
+    var categoryData = state.sidebar
+      ? state.sidebar[category ? category : "others"]
+      : null;
+    if (categoryData) {
+      categoryData = {
+        ...categoryData,
+        [sidebar_data.pluginKey]: sidebar_data
+      };
+      state.sidebar[category || "others"] = categoryData;
+    } else {
+      if (!state.sidebar) state.sidebar = {};
+      state.sidebar[category ? category : "others"] = {
+        [sidebar_data.pluginKey]: sidebar_data
+      };
+    }
+  });
   return state;
 };
 
