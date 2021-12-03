@@ -30,23 +30,25 @@ export const plugindata = async (
         )
         .then(res => {
           try {
-            let validPlugin = res.data;
-            if (validPlugin.name !== undefined) {
-              if (typeof validPlugin === "object") {
+            let { data: validPlugin } = res.data;
+            if (Array.isArray(validPlugin)) {
+              //Set plugin data to state
+              let counter = 0;
+              dispatch({
+                type: ACTIONS.ADD_ITEM,
+                payload: validPlugin
+                  .filter(plugin => plugin.name)
+                  .map(plugin => ({
+                    ...plugin,
+                    pluginKey: `${pluginKey}_${counter++}`
+                  }))
+              });
+            } else if (typeof validPlugin === "object") {
+              if (validPlugin.name !== undefined) {
                 //Set plugin data to state
                 dispatch({
                   type: ACTIONS.ADD_ITEM,
                   payload: [{ ...validPlugin, pluginKey }]
-                });
-              } else if (Array.isArray(validPlugin)) {
-                //Set plugin data to state
-                let counter = 0;
-                dispatch({
-                  type: ACTIONS.ADD_ITEM,
-                  payload: validPlugin.map(plugin => ({
-                    ...plugin,
-                    pluginKey: `${pluginKey}_${counter++}`
-                  }))
                 });
               }
             }
