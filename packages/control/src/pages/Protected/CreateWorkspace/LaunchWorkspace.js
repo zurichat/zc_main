@@ -40,23 +40,18 @@ export default function Index({ createWorkspaceData }) {
     );
     const creatorMemberId = getCreatorMemberIdApiCall.data.data[0]._id;
 
-    // Install Channels Plugin and DM Plugin
-    // const installChannelsPluginApiCall = await axios.post(
-    //   `https://channels.zuri.chat/api/v1/install`,
-    //   { organisation_id: workspaceId, user_id: creatorMemberId },
-    //   { headers: { Authorization: "Bearer " + user.token } }
-    // );
-    // const installDmPluginApiCall = await axios.post(
-    //   `https://dm.zuri.chat/api/v1/install`,
-    //   { organisation_id: workspaceId, user_id: creatorMemberId },
-    //   { headers: { Authorization: "Bearer " + user.token } }
-    // );
-
     // Install Messaging Plugin in ZC Core
+    const fetchPluginsFromMarketplaceApiCall = await axios.get(
+      "https://api.zuri.chat/marketplace/plugins"
+    );
+    const messagingPluginId =
+      fetchPluginsFromMarketplaceApiCall.data.data.plugins.find(plugin =>
+        plugin.template_url.includes("chat.zuri.chat")
+      )?.id;
     const installMessagingPluginInCore = await axios.post(
       `https://api.zuri.chat/organizations/${workspaceId}/plugins`,
       {
-        plugin_id: "617db02f27c36150b422bc4d",
+        plugin_id: messagingPluginId,
         user_id: creatorMemberId
         // memberEmails : createWorkspaceData.coworkersEmail
       },
