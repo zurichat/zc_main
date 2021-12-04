@@ -40,24 +40,23 @@ export default function Signout() {
 
       <div className="content-wrapper">
         <h6 className="org-name">
-          {t("auth.signout.preOrgText")} {orgName} {t("auth.signout.workspace")}
+          {t("signout_preOrgText")} {orgName} {t("signout_workspace")}
         </h6>
 
         <SignoutMessage>
-          {t("auth.signout.signoutMessage.preOrgText")} {orgName}{" "}
-          {t("auth.signout.workspace")}
+          {t("signout_signoutMessage")} {orgName} {t("signout_workspace")}
         </SignoutMessage>
 
         <button className="push" onClick={() => switchWorkspace()}>
-          {t("auth.signout.loginText")}
+          {t("signout_loginText")}
         </button>
 
         <p className="login">
           or
           <a onClick={() => ActualSignOut()} className="link">
-            {t("auth.signout.loginText")}
+            {t("signout_loginText")}
           </a>
-          {t("auth.signout.postLoginText")}
+          {t("signout_postLoginText")}
         </p>
       </div>
     </SignoutStyleWrapper>

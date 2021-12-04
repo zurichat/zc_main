@@ -2,6 +2,8 @@
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import SignOut from "./pages/SignOut";
+
 import Subscribe from "./pages/Subscribe";
 import whyzurichat from "./pages/whyzurichat";
 import Cookies from "./pages/Cookies";
@@ -21,6 +23,7 @@ const Translations = [
   ...Subscribe,
   ...Cookies,
   ...ContactUs,
+  ...SignOut,
 
   // Components
   ...NavBar,
