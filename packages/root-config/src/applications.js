@@ -12,7 +12,7 @@ export const allPlugins = [
   {
     title: "messaging",
     name: `${PluginImportPathPre}messaging`,
-    pluginPath: `${PluginAppPathPre}messaging`
+    pluginPath: `${PluginAppPathPre}chat`
   },
   // { title: "marketplace", name: "marketplace" },
   // Plugins
