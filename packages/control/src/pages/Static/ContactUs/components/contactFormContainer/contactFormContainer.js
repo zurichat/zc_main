@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from "react";
 import ContactFormStyle from "../../styles/contactFormContainer.module.css";
-import detailsData from "./detailsArray";
+import detailsData from "./faq";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
 import { useDropzone } from "react-dropzone";
