@@ -5,6 +5,9 @@ import RightArrow from "./assets/RightArrow.png";
 import ZuriChatLogo from "../../assets/zuri-chat-logo/logo.svg";
 
 const UserOrganization = ({ organizations, user }) => {
+  const currentPlugin = localStorage.getItem("currentPlugin") || "plugin-chat";
+  const currentPluginRoom = localStorage.getItem("currentRoom") || "";
+  const defaultPluginRoom = `${currentPlugin}/${currentPluginRoom}`;
   return (
     <BottomSection>
       <SelectWorkSpace>
@@ -16,7 +19,7 @@ const UserOrganization = ({ organizations, user }) => {
         {organizations.map(organization => (
           <OrganizationWrapper key={organization.id}>
             <Image src={ZuriChatLogo} alt="" />
-            <Link to={`/workspace/${organization.id}`}>
+            <Link to={`/workspace/${organization.id}/${defaultPluginRoom}`}>
               <Flex>
                 <Organization>
                   <Logo_Members>

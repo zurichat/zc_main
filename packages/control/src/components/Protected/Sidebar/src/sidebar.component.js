@@ -88,9 +88,12 @@ const Sidebar = props => {
             return data;
           }
         );
-
         categorizedItems.push(
-          <Category key={categoryData.id} name={key} data={categoryData} />
+          <Category
+            key={categoryData[0]?.name}
+            name={key}
+            data={categoryData}
+          />
         );
 
         starredRooms = Object.keys(props.state.sidebar[key]).map(

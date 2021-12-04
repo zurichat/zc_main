@@ -30,7 +30,7 @@ export const plugindata = async (
         )
         .then(res => {
           try {
-            let { data: validPlugin } = res.data;
+            let validPlugin = res.data?.data;
             if (Array.isArray(validPlugin)) {
               //Set plugin data to state
               let counter = 0;
