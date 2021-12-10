@@ -1,5 +1,11 @@
 import React from "react";
-import { Switch, Route, useParams } from "react-router-dom";
+import {
+  Switch,
+  Route,
+  useParams,
+  useHistory,
+  useRouteMatch
+} from "react-router-dom";
 import { lazily } from "react-lazily";
 import {
   TopBarWrapperStyle,
@@ -15,9 +21,13 @@ const { Sidebar, TopBar } = lazily(() =>
 
 export default function Index() {
   const { workspaceId } = useParams();
+  const history = useHistory();
+  const match = useRouteMatch(`/workspace/${workspaceId}`);
 
   React.useEffect(() => {
     window.dispatchEvent(new Event("zuri-plugin-load"));
+    match.isExact &&
+      history.replace(`/workspace/${workspaceId}/plugin-chat/all-dms`);
   }, []);
   // Temporary
   React.useEffect(() => {

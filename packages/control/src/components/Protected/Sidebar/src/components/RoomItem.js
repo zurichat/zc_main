@@ -4,6 +4,7 @@ import hash from "../assets/hash.svg";
 import { navigateToUrl } from "single-spa";
 import Badge from "./badge";
 import RoomOptions from "./RoomOptions";
+import { useRouteMatch } from "react-router-dom";
 
 const RoomItem = ({ room, baseUrl, pluginId }) => {
   let currentWorkspace = localStorage.getItem("currentWorkspace");
@@ -11,6 +12,9 @@ const RoomItem = ({ room, baseUrl, pluginId }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const pluginIdPath = `plugin-${pluginId.replace(".zuri.chat", "")}`;
   const pluginRoomId = room.room_id || "";
+  const match = useRouteMatch(
+    `/workspace/${currentWorkspace}/${pluginIdPath}/${pluginRoomId}`
+  );
   function useClick() {
     const [value, setValue] = useState(false);
     const ref = useRef(null);
@@ -46,7 +50,9 @@ const RoomItem = ({ room, baseUrl, pluginId }) => {
   return (
     <li
       ref={click}
-      className={`row py-1 px-2 ${styles.item__list}`}
+      className={`row py-1 px-2 ${styles.item__list} ${
+        match?.isExact && styles.item__list__active
+      }`}
       onClick={() => {
         localStorage.setItem("currentPlugin", pluginIdPath);
         localStorage.setItem("currentRoom", pluginRoomId);
