@@ -10,12 +10,12 @@ export const fetchUser = async dispatch => {
     let currentWorkspace = localStorage.getItem("currentWorkspace");
 
     //Check if user id is valid and get user organization
-    if (user[0]._id !== "") {
+    if (user.user._id !== "") {
       //Set user details
       dispatch({ type: ACTIONS.ADD_USER_INFO, payload: user });
 
       //set organization details
-      getOrgDetails(dispatch, currentWorkspace, user[0].email, user[0]._id);
+      getOrgDetails(dispatch, currentWorkspace, user.email, user.user._id);
     }
   } catch (err) {
     console.warn(err);

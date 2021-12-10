@@ -92,7 +92,10 @@ const Toolbar = props => {
     const currentDate = new Date();
     const newMessageData = {
       message_id: Date.now().toString(),
-      username: currentUserData.username,
+      sender: {
+        sender_name: currentUserData.username,
+        sender_image_url: currentUserData.imageUrl
+      },
       time: `${
         currentDate.getHours() < 12
           ? currentDate.getHours()
@@ -100,6 +103,7 @@ const Toolbar = props => {
       }:${currentDate.getMinutes()}${
         currentDate.getHours() < 12 ? "AM" : "PM"
       }`,
+      timestamp: currentDate.getTime(),
       emojis: [],
       richUiData: convertToRaw(editorState.getCurrentContent())
     };

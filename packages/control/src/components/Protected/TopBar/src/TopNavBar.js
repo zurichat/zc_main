@@ -68,7 +68,7 @@ const TopNavBar = () => {
     try {
       const userInfo = await GetUserInfo();
       //Check if user id is valid and get user organization
-      if (userInfo[0]._id !== "") {
+      if (userInfo.user._id !== "") {
         setUser(userInfo);
       }
     } catch (error) {
@@ -150,8 +150,8 @@ const TopNavBar = () => {
 
   const UpdateInfo = () => {
     GetUserInfo().then(res => {
-      setUserProfileImage(res[0]?.image_url);
-      setUser(res[0]);
+      setUserProfileImage(res?.user.image_url);
+      setUser(res.user);
     });
   };
 

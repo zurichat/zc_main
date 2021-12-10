@@ -15,7 +15,8 @@ export default function Invite(props) {
 
   return (
     <div className={`row mt-2 ${styles.sb__item}`}>
-      {props.state.user && props.state.user[0].role === ("owner" || "admin") ? (
+      {(props.state.user && props.state.user.user.role === "owner") ||
+      props.state.user.user.role === "admin" ? (
         <div
           className={`col-12 ps-3 d-flex align-items-center ${styles.sb__col}`}
           onClick={openInviteModal}

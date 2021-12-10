@@ -1,4 +1,4 @@
-// import ChatItem from "/src/components/chat_box/ChatItem";
+import { DateTime } from "luxon";
 import MessageEditorReader from "@components/shared/message_editor_reader/MessageEditorReader";
 import avatar from "@assets/profile.svg";
 
@@ -7,7 +7,7 @@ export default function MessageCard({ messageData }) {
     <div className="msg-container">
       <div>
         <img
-          src={messageData.imageUrl || avatar}
+          src={messageData.sender.sender_image_url || avatar}
           alt="user-avatar"
           className="user-avatar"
         />
@@ -23,9 +23,11 @@ export default function MessageCard({ messageData }) {
         <div className="msgParticulars">
           <div className="name-time">
             <span className="name">
-              <strong> {messageData.username} </strong>
+              <strong> {messageData.sender.sender_name} </strong>
             </span>
-            <span className="time">{messageData.time}</span>
+            <span className="time">
+              {DateTime.fromMillis(messageData.timestamp).toFormat("T a")}
+            </span>
           </div>
           <div className="message">
             <MessageEditorReader richUiMessageConfig={messageData.richUiData} />
