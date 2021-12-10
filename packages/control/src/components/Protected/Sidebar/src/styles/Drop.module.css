@@ -2,6 +2,8 @@
   cursor: pointer;
 }
 
+.dropdown_active,
+.item__list__active,
 .dropDown:hover,
 .dropDown::selection {
   background-color: #f1fffa;

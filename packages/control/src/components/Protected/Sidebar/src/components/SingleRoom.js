@@ -1,12 +1,18 @@
 import React from "react";
 import { AiOutlinePlus } from "react-icons/ai";
+import { useRouteMatch } from "react-router-dom";
 import { navigateToUrl } from "single-spa";
 import styles from "../styles/Drop.module.css";
 import Badge from "./badge";
 
 export default function SingleRoom({ image, name, link }) {
+  const match = useRouteMatch(link);
   return (
-    <div className={`row p-0 ${styles.dropDown} text-decoration-none `}>
+    <div
+      className={`row p-0 ${styles.dropDown} text-decoration-none ${
+        match?.isExact ? styles.dropdown_active : ""
+      }`}
+    >
       <div
         className={`col-12 d-flex align-items-center ${styles.plugin__title}`}
       >
