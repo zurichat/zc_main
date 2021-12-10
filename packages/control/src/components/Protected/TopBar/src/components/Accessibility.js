@@ -26,8 +26,8 @@ function Accessibility() {
       try {
         const userInfo = await GetUserInfo();
         if (userInfo === {}) throw new Error("No user info");
-        const orgId = userInfo[0].org_id;
-        const memId = userInfo[0]._id;
+        const orgId = userInfo.user.org_id;
+        const memId = userInfo.user._id;
         const userAccessibiltySettings = {
           links: true,
           animation: accessbilitySettings.animation,

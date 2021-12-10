@@ -32,7 +32,7 @@ const Sidebar = props => {
     nullValue === 1 &&
       props.state.sidebar &&
       SubscribeToChannel(
-        `${currentWorkspace}_${props.state.user[0]._id}_sidebar`,
+        `${currentWorkspace}_${props.state.user.user._id}_sidebar`,
         ctx => {
           const websocket = ctx.data;
           // console.log("websocket", websocket)

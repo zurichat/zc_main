@@ -1,8 +1,11 @@
 const messagesData = [
   {
-    username: "Mark essien",
+    sender: {
+      sender_name: "Mark Essien",
+      sender_image_url: ""
+    },
     message_id: 4,
-    time: "7:05PM",
+    timestamp: 1639149782770,
     emojis: [],
     richUiData: {
       blocks: [
@@ -20,12 +23,15 @@ const messagesData = [
     }
   },
   {
-    username: "Xylux",
+    sender: {
+      sender_name: "Xylux",
+      sender_image_url: ""
+    },
     message_id: 2,
-    time: "8:05PM",
+    timestamp: 1639149798545,
     emojis: [
-      { name: "smiling", count: 2, emoji: "👹", reactedUsersId:[]},
-      { name: "grining", count: 1, emoji: "😊", reactedUsersId:[]}
+      { name: "smiling", count: 2, emoji: "👹", reactedUsersId: [] },
+      { name: "grining", count: 1, emoji: "😊", reactedUsersId: [] }
     ],
     richUiData: {
       blocks: [
@@ -43,12 +49,15 @@ const messagesData = [
     }
   },
   {
-    username: "Naza",
     message_id: 5,
-    time: "10:05PM",
+    sender: {
+      sender_name: "Naza",
+      sender_image_url: ""
+    },
+    timestamp: 1639149815989,
     emojis: [
-      { name: "smiling", count: 2, emoji: "👹", reactedUsersId:[]},
-      { name: "grining", count: 1, emoji: "😊", reactedUsersId:[] }
+      { name: "smiling", count: 2, emoji: "👹", reactedUsersId: [] },
+      { name: "grining", count: 1, emoji: "😊", reactedUsersId: [] }
     ],
     richUiData: {
       blocks: [
@@ -66,12 +75,15 @@ const messagesData = [
     }
   },
   {
-    username: "Nonso",
     message_id: 6,
-    time: "7:05PM",
+    sender: {
+      sender_name: "Nonso",
+      sender_image_url: ""
+    },
+    timestamp: 1639149830147,
     emojis: [
-      { name: "smiling", count: 2, emoji: "👹", reactedUsersId:[] },
-      { name: "grining", count: 1, emoji: "😊", reactedUsersId:[] }
+      { name: "smiling", count: 2, emoji: "👹", reactedUsersId: [] },
+      { name: "grining", count: 1, emoji: "😊", reactedUsersId: [] }
     ],
     richUiData: {
       blocks: [
@@ -89,12 +101,15 @@ const messagesData = [
     }
   },
   {
-    username: "Pidoxy",
     message_id: 7,
-    time: "7:05PM",
+    sender: {
+      sender_name: "Pidoxy",
+      sender_image_url: ""
+    },
+    timestamp: 1639149841075,
     emojis: [
-      { name: "smiling", count: 4, emoji: "😋", reactedUsersId:[] },
-      { name: "grining", count: 1, emoji: "😊", reactedUsersId:[] }
+      { name: "smiling", count: 4, emoji: "😋", reactedUsersId: [] },
+      { name: "grining", count: 1, emoji: "😊", reactedUsersId: [] }
     ],
     richUiData: {
       blocks: [
@@ -112,12 +127,15 @@ const messagesData = [
     }
   },
   {
-    username: "Pholajormy",
     message_id: 8,
-    time: "4:15PM",
+    sender: {
+      sender_name: "Pholajormy",
+      sender_image_url: ""
+    },
+    timestamp: 1639149853398,
     emojis: [
-      { name: "angry", count: 4, emoji: "😡", reactedUsersId:[] },
-      { name: "crying", count: 1, emoji: "😭", reactedUsersId:[] }
+      { name: "angry", count: 4, emoji: "😡", reactedUsersId: [] },
+      { name: "crying", count: 1, emoji: "😭", reactedUsersId: [] }
     ],
     richUiData: {
       blocks: [
@@ -135,12 +153,15 @@ const messagesData = [
     }
   },
   {
-    username: "Fortune",
     message_id: 9,
-    time: "9:35PM",
+    sender: {
+      sender_name: "Fortune",
+      sender_image_url: ""
+    },
+    timestamp: 1639149865722,
     emojis: [
-      { name: "cool", count: 4, emoji: "😎", reactedUsersId:[] },
-      { name: "celebrate", count: 1, emoji: "🎉", reactedUsersId:[] }
+      { name: "cool", count: 4, emoji: "😎", reactedUsersId: [] },
+      { name: "celebrate", count: 1, emoji: "🎉", reactedUsersId: [] }
     ],
     richUiData: {
       blocks: [
@@ -158,12 +179,15 @@ const messagesData = [
     }
   },
   {
-    username: "Detoun",
     message_id: 11,
-    time: "12:15PM",
+    sender: {
+      sender_name: "Daetoun",
+      sender_image_url: ""
+    },
+    timestamp: 1639149877252,
     emojis: [
-      { name: "cool", count: 9, emoji: "🥳", reactedUsersId:[] },
-      { name: "celebrate", count: 11, emoji: "🥂", reactedUsersId:[] }
+      { name: "cool", count: 9, emoji: "🥳", reactedUsersId: [] },
+      { name: "celebrate", count: 11, emoji: "🥂", reactedUsersId: [] }
     ],
     richUiData: {
       blocks: [
@@ -180,6 +204,6 @@ const messagesData = [
       entityMap: {}
     }
   }
-]
+];
 
-export default messagesData
+export default messagesData;
