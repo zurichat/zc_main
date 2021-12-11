@@ -49,13 +49,12 @@ export const MessageBoardContainer = styled.section`
   .input-text {
     display: flex;
     flex: 1;
-    width: 80%;
-    height: 15%;
-    position: fixed;
-    bottom: 0;
+    width: 100%;
 
-    @media (max-width: 768px) {
+    ${
+      "" /* @media (max-width: 768px) {
       width: 100%;
+    } */
     }
   }
 `;
