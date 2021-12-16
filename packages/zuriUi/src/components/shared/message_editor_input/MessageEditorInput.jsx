@@ -157,6 +157,7 @@ export default MessageInputBox;
 
 const Wrapper = styled.div`
   // padding: 0 10px;
+  position: relative;
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -164,11 +165,11 @@ const Wrapper = styled.div`
 `;
 
 const InputWrapper = styled.section`
-  border: 1px solid hsla(0, 0%, 92%, 1);
+  border: 1px solid #b0afb0;
+  ${"" /* border: 1px solid hsla(0, 0%, 92%, 1); */}
   border-radius: 3px;
   padding: 10px 18px 15px 18px;
-  width: calc(100% - 24px);
-  /* padding-left: 8px;
+  ${"" /* width: calc(100% - 24px); */}/* padding-left: 8px;
 padding-top: 8px;
 padding-bottom: 8px; */
   /* border-bottom: 1px solid hsl(160, 100%, 86%); */

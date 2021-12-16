@@ -157,7 +157,6 @@
   justify-content: center;
 }
 
-
 .ZuriLogo {
   align-self: center;
 }
@@ -325,7 +324,7 @@ button.workspace_btn:hover {
   border-top: none;
 }
 
-.single_workspace input[type='checkbox'] {
+.single_workspace input[type="checkbox"] {
   margin-right: 0.25rem;
   width: 15px;
   height: 15px;

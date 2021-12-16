@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap");
 
 .compliancesection {
   padding: 20px;
-  margin-top: 10px ;
+  margin-top: 10px;
 }
 
 .compliancewrapper {
@@ -42,7 +42,7 @@
 }
 .titletext {
   font-size: 16px;
-  padding: 0 ;
+  padding: 0;
   margin: 20px 0;
   font-weight: bold;
 }
@@ -91,7 +91,7 @@
   }
   .titletext {
     font-size: 16px;
-    padding: 0 ;
+    padding: 0;
     margin: 20px 0;
     font-weight: bold;
   }
@@ -167,7 +167,7 @@
   .titletext {
     font-size: 14px;
     margin: 10px 0;
-    padding: 0 ;
+    padding: 0;
   }
   .descriptiontext {
     max-width: 80%;
@@ -203,7 +203,7 @@
   .titletext {
     font-size: 14px;
     margin: 10px 0;
-    padding: 0 ;
+    padding: 0;
   }
   .descriptiontext {
     max-width: 80%;
@@ -241,7 +241,7 @@
   .titletext {
     font-size: 14px;
     margin: 10px 0;
-    padding: 0 ;
+    padding: 0;
   }
   .descriptiontext {
     max-width: 100%;

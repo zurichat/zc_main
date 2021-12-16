@@ -1,13 +1,13 @@
-import React, { useContext } from 'react'
-import styles from '../styles/PreferenceMenu.module.css'
-import { ProfileContext } from '../context/ProfileModal'
-import { AiOutlineBell, AiOutlineEye, AiOutlineSetting } from 'react-icons/ai'
-import { BsLayoutSidebar, BsCheckCircle } from 'react-icons/bs'
-import { FiMessageCircle, FiGlobe, FiVideo } from 'react-icons/fi'
-import { CgScreen } from 'react-icons/cg'
+import React, { useContext } from "react";
+import styles from "../styles/PreferenceMenu.module.css";
+import { ProfileContext } from "../context/ProfileModal";
+import { AiOutlineBell, AiOutlineEye, AiOutlineSetting } from "react-icons/ai";
+import { BsLayoutSidebar, BsCheckCircle } from "react-icons/bs";
+import { FiMessageCircle, FiGlobe, FiVideo } from "react-icons/fi";
+import { CgScreen } from "react-icons/cg";
 
 const PreferenceMenu = () => {
-  const { sideBar, setSideBar } = useContext(ProfileContext)
+  const { sideBar, setSideBar } = useContext(ProfileContext);
 
   return (
     <div className={styles.notifySidebar}>
@@ -77,7 +77,7 @@ const PreferenceMenu = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PreferenceMenu
+export default PreferenceMenu;

@@ -100,8 +100,6 @@
   height: 40px;
 }
 
-
-
 .settingsright button:hover {
   color: rgba(0, 184, 123, 0.719);
 }
@@ -136,9 +134,9 @@
   color: #616061;
 }
 
-.settingsbutton button{
-  background: #FBFBFB;
-  border: 1px solid #DADADA;
+.settingsbutton button {
+  background: #fbfbfb;
+  border: 1px solid #dadada;
   color: #999999;
   box-sizing: border-box;
   border-radius: 4px;
@@ -155,11 +153,9 @@
   height: 40px;
 }
 
-.settingsbutton button:hover{
+.settingsbutton button:hover {
   color: #999999;
 }
-
-
 
 @media screen and (max-width: 868px) {
   #settingtab {

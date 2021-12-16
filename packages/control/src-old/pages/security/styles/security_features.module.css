@@ -2,7 +2,6 @@
   margin-top: 20px;
 }
 
-
 .features {
   display: grid;
   grid-template-columns: repeat(4, 250px);
@@ -25,7 +24,7 @@
 .feature p {
   text-align: center;
   font-weight: 600;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   margin-top: 20px;
 }
 
@@ -50,7 +49,7 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  content: '';
+  content: "";
   background: #00b87c;
   height: 100%;
   width: 120%;
@@ -81,25 +80,21 @@
 
 @media (max-width: 1350px) {
   .features {
-  grid-template-columns: repeat(3, 250px);
-  
+    grid-template-columns: repeat(3, 250px);
   }
 }
 
 @media (max-width: 915px) {
   .features {
-  grid-template-columns: repeat(2, 250px);
-  
+    grid-template-columns: repeat(2, 250px);
   }
 }
 
 @media (max-width: 800px) {
   .features {
-  grid-template-columns: repeat(2, 250px);
-  
+    grid-template-columns: repeat(2, 250px);
   }
 }
-
 
 @media screen and (max-width: 660px) {
   .features {

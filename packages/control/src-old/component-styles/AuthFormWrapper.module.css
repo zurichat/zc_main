@@ -232,7 +232,7 @@
 
 .btnContainer .btn:active {
   transform: scale(0.98);
-  box-shadow: 3px 2px 22px 1px #00000040;;
+  box-shadow: 3px 2px 22px 1px #00000040;
 }
 
 .btnContainer .btn:disabled {

@@ -1,23 +1,23 @@
-import axios from "axios"
-import { useState, useEffect, useRef } from "react"
-import { useHistory } from "react-router-dom"
-import ReactPaginate from "react-paginate"
-import { Modal, Spinner } from "react-bootstrap"
+import axios from "axios";
+import { useState, useEffect, useRef } from "react";
+import { useHistory } from "react-router-dom";
+import ReactPaginate from "react-paginate";
+import { Modal, Spinner } from "react-bootstrap";
 
 // Styles and Assets
-import styles from "../styles/marketplace.module.css"
-import zuriChatLogo from "../../component-assets/zurichatlogo.svg"
-import SuccessMarkIcon from "../../component-assets/success-mark.svg"
-import ErrorMarkIcon from "../../component-assets/error-mark.svg"
+import styles from "../styles/marketplace.module.css";
+import zuriChatLogo from "../../component-assets/zurichatlogo.svg";
+import SuccessMarkIcon from "../../component-assets/success-mark.svg";
+import ErrorMarkIcon from "../../component-assets/error-mark.svg";
 
 // Components
-import PluginCard from "./PluginCard"
-import { useMarketPlaceContext } from "../../context/MarketPlace.context"
+import PluginCard from "./PluginCard";
+import { useMarketPlaceContext } from "../../context/MarketPlace.context";
 import {
   setPluginId
   // loadPlugins,
   // fetchPlugins
-} from "../../context/marketplace/marketplace.action"
+} from "../../context/marketplace/marketplace.action";
 
 const MarketPlaceContainer = ({
   type,
@@ -26,80 +26,80 @@ const MarketPlaceContainer = ({
   isMarketPlaceLoading,
   user
 }) => {
-  let currentWorkspace = localStorage.getItem("currentWorkspace")
-  let token = sessionStorage.getItem("token")
+  let currentWorkspace = localStorage.getItem("currentWorkspace");
+  let token = sessionStorage.getItem("token");
 
-  const history = useHistory()
+  const history = useHistory();
 
   // MarketPlace states
-  const [plugin, setPlugin] = useState(null)
+  const [plugin, setPlugin] = useState(null);
 
   // MarketPlace context
-  const marketplaceContext = useMarketPlaceContext()
+  const marketplaceContext = useMarketPlaceContext();
 
   // Loaders states
-  const [isModalOpen, setIsModalOpen] = useState(null)
-  const [isModalLoading, setIsModalLoading] = useState(false)
-  const [isInstallButtonLoading, setIsInstallButtonLoading] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(null);
+  const [isModalLoading, setIsModalLoading] = useState(false);
+  const [isInstallButtonLoading, setIsInstallButtonLoading] = useState(false);
 
   // Modal Data States
-  const [isUninstall, setIsUninstall] = useState(false)
+  const [isUninstall, setIsUninstall] = useState(false);
   const [installModalStatus, setInstallModalStatus] = useState({
     isSuccess: null,
     message: ""
-  })
+  });
 
   // Pagination states
-  const [pageNumber, setPageNumber] = useState(0)
-  const pluginsPerPage = 6
-  const pagesVisited = pageNumber * pluginsPerPage
+  const [pageNumber, setPageNumber] = useState(0);
+  const pluginsPerPage = 6;
+  const pagesVisited = pageNumber * pluginsPerPage;
   const pageCount = Math.ceil(
     // marketplaceContext.state.plugins[`${type}`].length / pluginsPerPage
     plugins[`${type}`].length / pluginsPerPage
-  )
+  );
 
   const changePage = ({ selected }) => {
-    setPageNumber(selected)
-  }
+    setPageNumber(selected);
+  };
 
   useEffect(() => {
     if (marketplaceContext.state.pluginId) {
-      getSinglePluginData()
+      getSinglePluginData();
     }
-  }, [marketplaceContext.state.pluginId])
+  }, [marketplaceContext.state.pluginId]);
 
   const getSinglePluginData = async () => {
-    setIsModalLoading(true)
+    setIsModalLoading(true);
     try {
       const response = await axios.get(
         `https://api.zuri.chat/marketplace/plugins/${marketplaceContext.state.pluginId}`
-      )
-      const { data } = response.data
-      setPlugin(data)
-      setIsModalLoading(false)
+      );
+      const { data } = response.data;
+      setPlugin(data);
+      setIsModalLoading(false);
       setInstallModalStatus({
         isSuccess: null,
         message: ""
-      })
+      });
     } catch (error) {
-      setIsModalLoading(false)
+      setIsModalLoading(false);
       setInstallModalStatus({
         isSuccess: false,
         message: "Error Retrieving Plugin Data"
-      })
+      });
     }
-  }
+  };
 
   const installPluginToOrganization = async () => {
     if (!currentWorkspace) {
-      alert("You are not logged into an Organization/workspace")
+      alert("You are not logged into an Organization/workspace");
     }
 
-    setIsInstallButtonLoading(true)
+    setIsInstallButtonLoading(true);
     setInstallModalStatus({
       isSuccess: null,
       message: ""
-    })
+    });
 
     try {
       const response = await axios.post(
@@ -114,48 +114,48 @@ const MarketPlaceContainer = ({
             Authorization: `Bearer ${token}`
           }
         }
-      )
+      );
 
       if (String(response.data.success).toLowerCase() === "true") {
-        setIsInstallButtonLoading(false)
+        setIsInstallButtonLoading(false);
         setInstallModalStatus({
           isSuccess: true,
           message: "Plugin Installed Successfully. Redirecting..."
-        })
+        });
 
         // Update Installed Plugins in realtime in marketplace
         setPlugins({
           ...plugins,
           installed: [...plugins.installed, plugin]
-        })
+        });
 
         setTimeout(() => {
           // Redirect to redirect_url from plugins response
-          history.push(response.data.data.redirect_url)
-        }, 5000)
+          history.push(response.data.data.redirect_url);
+        }, 5000);
       } else {
-        throw new Error(response.data.message)
+        throw new Error(response.data.message);
       }
     } catch (err) {
       setInstallModalStatus({
         isSuccess: false,
         message: err.message ? err.message : "Plugin could not be installed"
-      })
-      setIsModalLoading(false)
-      setIsInstallButtonLoading(false)
+      });
+      setIsModalLoading(false);
+      setIsInstallButtonLoading(false);
     }
-  }
+  };
 
   const unInstallPluginFromOrganization = async () => {
     if (!currentWorkspace) {
-      alert("You are not logged into an Organization/workspace")
+      alert("You are not logged into an Organization/workspace");
     }
 
-    setIsInstallButtonLoading(true)
+    setIsInstallButtonLoading(true);
     setInstallModalStatus({
       isSuccess: null,
       message: ""
-    })
+    });
 
     try {
       const response = await axios.delete(
@@ -168,14 +168,14 @@ const MarketPlaceContainer = ({
             user_id: user[0]?._id
           }
         }
-      )
+      );
 
       if (response.data.status === 200) {
-        setIsInstallButtonLoading(false)
+        setIsInstallButtonLoading(false);
         setInstallModalStatus({
           isSuccess: true,
           message: "Plugin Uninstalled Successfully."
-        })
+        });
 
         // Remove the plugin from installed Plugins in realtime in marketplace
         setPlugins({
@@ -183,24 +183,24 @@ const MarketPlaceContainer = ({
           installed: plugins.installed.filter(
             plugin => plugin._id !== marketplaceContext.state.pluginId
           )
-        })
+        });
 
         setTimeout(() => {
           // Reload the modal
-          marketplaceContext.dispatch(setPluginId(null))
-        }, 2000)
+          marketplaceContext.dispatch(setPluginId(null));
+        }, 2000);
       } else {
-        throw new Error(response.data.message)
+        throw new Error(response.data.message);
       }
     } catch (err) {
       setInstallModalStatus({
         isSuccess: false,
         message: err.message ? err.message : "Plugin could not be uninstalled"
-      })
-      setIsModalLoading(false)
-      setIsInstallButtonLoading(false)
+      });
+      setIsModalLoading(false);
+      setIsInstallButtonLoading(false);
     }
-  }
+  };
 
   return (
     <>
@@ -220,12 +220,16 @@ const MarketPlaceContainer = ({
             .slice(pagesVisited, pagesVisited + pluginsPerPage)
             .map(plugin => {
               // Logic to check if plugin is already installed
-              let isInstalled = false
-              let plugin_id = plugin.id ? plugin.id : plugin._id
+              let isInstalled = false;
+              let plugin_id = plugin.id ? plugin.id : plugin._id;
 
               // Render installed btn if the plugin ID is in the installedPlugins array
-              if (plugins.installed.find(item => item._id === plugin_id || item.id === plugin_id)) {
-                isInstalled = true
+              if (
+                plugins.installed.find(
+                  item => item._id === plugin_id || item.id === plugin_id
+                )
+              ) {
+                isInstalled = true;
               }
 
               return (
@@ -235,7 +239,7 @@ const MarketPlaceContainer = ({
                   installed={isInstalled}
                   setIsUninstall={setIsUninstall}
                 />
-              )
+              );
             })}
         </div>
       )}
@@ -293,7 +297,7 @@ const MarketPlaceContainer = ({
                 onClick={() => {
                   isUninstall
                     ? unInstallPluginFromOrganization()
-                    : installPluginToOrganization()
+                    : installPluginToOrganization();
                 }}
                 className={`${styles.modalInstallBtn} ${
                   isUninstall && styles.modalUninstallBtn
@@ -382,7 +386,7 @@ const MarketPlaceContainer = ({
       </Modal>
       {/* )} */}
     </>
-  )
-}
+  );
+};
 
-export default MarketPlaceContainer
+export default MarketPlaceContainer;

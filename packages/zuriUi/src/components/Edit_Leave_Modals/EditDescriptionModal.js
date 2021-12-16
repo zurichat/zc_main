@@ -8,17 +8,23 @@ import {
   ModalButtons,
   CancelBtn,
   AcceptBtn,
-  ModalTopic,
+  ModalTopic
 } from "./ModalStyles";
 
-const EditDescriptionModal = ({closeEdit}) => {
- 
+const EditDescriptionModal = ({ closeEdit }) => {
   return (
     <ModalContainer>
       <DescModal>
         <ModalTop>
           <ModalTopic>Description</ModalTopic>
-          <CloseBtn onClick= { ()=>{closeEdit()}}> X </CloseBtn>
+          <CloseBtn
+            onClick={() => {
+              closeEdit();
+            }}
+          >
+            {" "}
+            X{" "}
+          </CloseBtn>
         </ModalTop>
         <Modalbody>
           <textarea placeholder="Add Description" />

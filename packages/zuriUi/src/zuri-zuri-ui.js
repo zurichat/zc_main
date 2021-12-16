@@ -4,5 +4,15 @@ import ChannelDetails from "./components/channel_details/ChannelDetails";
 import CommentBoard from "./components/comment_board/CommentBoard";
 import MessageBoard from "./components/message_board/MessageBoard";
 import MessageEditorInput from "./components/shared/message_editor_input/MessageEditorInput";
+import MessageCard from "./components/shared/message_item/MessageItem";
 
-export { CommentBoard, ChannelDetails, MessageEditorInput, MessageBoard };
+import * as v2 from "./components/v2";
+
+export {
+  CommentBoard,
+  ChannelDetails,
+  MessageEditorInput,
+  MessageBoard,
+  MessageCard,
+  v2
+};

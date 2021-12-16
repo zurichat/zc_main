@@ -1,28 +1,28 @@
 // Styles and Assets
-import styles from "../styles/marketplace.module.css"
-import zuriChatLogo from "../../component-assets/zurichatlogo.svg"
-import DownloadIcon from "../../component-assets/DownloadIcon.svg"
+import styles from "../styles/marketplace.module.css";
+import zuriChatLogo from "../../component-assets/zurichatlogo.svg";
+import DownloadIcon from "../../component-assets/DownloadIcon.svg";
 
 // Components
-import { useMarketPlaceContext } from "../../context/MarketPlace.context"
-import { setPluginId } from "../../context/marketplace/marketplace.action"
+import { useMarketPlaceContext } from "../../context/MarketPlace.context";
+import { setPluginId } from "../../context/marketplace/marketplace.action";
 
 const PluginCard = ({ pluginData, installed, setIsUninstall }) => {
   // MarketPlace Context
-  const marketplaceContext = useMarketPlaceContext()
+  const marketplaceContext = useMarketPlaceContext();
 
   const trimString = (str, len) => {
-    if (str.length <= len) return str
-    return str.slice(0, len) + "..."
-  }
+    if (str.length <= len) return str;
+    return str.slice(0, len) + "...";
+  };
 
   const generateRandomBackgroundHexValue = () => {
-    const h = Math.floor(Math.random() * 360)
-    const s = Math.floor(Math.random() * 100)
-    const l = Math.floor(Math.random() * 100)
+    const h = Math.floor(Math.random() * 360);
+    const s = Math.floor(Math.random() * 100);
+    const l = Math.floor(Math.random() * 100);
 
-    return `hsla(${h}deg, ${s}%, ${l}%, 0.3)`
-  }
+    return `hsla(${h}deg, ${s}%, ${l}%, 0.3)`;
+  };
 
   return (
     <div className={styles.pluginCardContainer}>
@@ -56,10 +56,10 @@ const PluginCard = ({ pluginData, installed, setIsUninstall }) => {
         {installed ? (
           <button
             onClick={() => {
-              setIsUninstall(true)
+              setIsUninstall(true);
               marketplaceContext.dispatch(
                 setPluginId(pluginData.id ? pluginData.id : pluginData._id)
-              )
+              );
             }}
             className={`${styles.pluginButton} ${styles.uninstallPluginBtn}`}
           >
@@ -68,10 +68,10 @@ const PluginCard = ({ pluginData, installed, setIsUninstall }) => {
         ) : (
           <button
             onClick={() => {
-              setIsUninstall(false)
+              setIsUninstall(false);
               marketplaceContext.dispatch(
                 setPluginId(pluginData.id ? pluginData.id : pluginData._id)
-              )
+              );
             }}
             className={styles.pluginButton}
           >
@@ -80,7 +80,7 @@ const PluginCard = ({ pluginData, installed, setIsUninstall }) => {
         )}
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default PluginCard
+export default PluginCard;

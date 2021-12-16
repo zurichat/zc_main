@@ -8,8 +8,8 @@
   display: flex !important;
   font-size: 10px;
   justify-content: space-between;
-  position:fixed;
-  width:80%;
+  position: fixed;
+  width: 80%;
   z-index: 1;
 }
 .marketplace__header__title {
@@ -52,9 +52,8 @@
   position: relative;
 }
 
-
 @media (max-width: 768px) {
   .marketplace__header {
-    width:100%;
+    width: 100%;
   }
 }

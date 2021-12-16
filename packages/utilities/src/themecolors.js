@@ -52,6 +52,6 @@ export const themeColors = {
     secondary: "#EAED49",
     textColor: "#AEAEAE"
   }
-}
+};
 
 // export default themeColors;

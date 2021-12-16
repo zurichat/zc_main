@@ -5,28 +5,28 @@
   --text-color: #000;
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --bg-color: #3f3f3f;
   --text-color: #fff;
 }
 
-[data-theme='light'] {
+[data-theme="light"] {
   --bg-color: #fff;
   --text-color: #3f3f3f;
 }
 
 .themeCont {
-    padding-top: 30px;
-    padding-bottom: 50px;
-    margin-bottom: 100px;
-    padding-left: 40px;
-    font-family: sans-serif;
-    text-align: center;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    width: var(--width);
-    /* height: var(--height); */
-    overflow-x: hidden;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  margin-bottom: 100px;
+  padding-left: 40px;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  width: var(--width);
+  /* height: var(--height); */
+  overflow-x: hidden;
 }
 
 .sync {
@@ -475,7 +475,6 @@
   width: 6%;
 }
 
-
 .upper {
   display: flex;
   margin-left: 20px;
@@ -534,7 +533,6 @@
   margin-top: 15px;
 }
 
-
 .upper2 {
   display: flex;
   margin-left: 20px;
@@ -573,7 +571,6 @@
   width: 87px;
 }
 
-
 .lower2 {
   margin-left: 21.5px;
 }
@@ -583,7 +580,7 @@
 }
 
 .activeAsh {
-  background: #C4C4C4;
+  background: #c4c4c4;
   width: 198px;
   margin-right: 20px;
   height: 152px;
@@ -602,7 +599,7 @@
 }
 
 .line2 {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   margin-top: 6px;
   margin-left: -1px;
   width: 101%;
@@ -628,7 +625,7 @@
 .whiteThin {
   width: 44px;
   height: 5px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 4px;
 }
 
@@ -649,7 +646,7 @@
 }
 
 .hash2 {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 0.6rem;
   margin-right: 6px;
   margin-left: 10px;
@@ -704,14 +701,14 @@
 }
 
 .ash {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 12px;
   font-weight: 500;
   margin-top: 3px;
 }
 
 .activeAsh2 {
-  background: #4E2C44;
+  background: #4e2c44;
   width: 198px;
   height: 152px;
   border-radius: 4px;
@@ -723,13 +720,13 @@
   width: 54px;
   height: 12px;
   margin-left: 68px;
-  background: #DC1AA3;
+  background: #dc1aa3;
   margin-top: 9px;
   border-radius: 4px;
 }
 
 .line3 {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   margin-top: 6px;
   margin-left: -1px;
   width: 101%;
@@ -740,14 +737,14 @@
   height: 26px;
   border-radius: 50%;
   margin-left: 150px;
-  background: #DC1AA3;
+  background: #dc1aa3;
   margin-top: -6px;
 }
 
 .thinRec4 {
   width: 44px;
   height: 5px;
-  background: #DC1AA3;
+  background: #dc1aa3;
   margin-left: 10px;
   border-radius: 4px;
   margin-top: -5px;
@@ -756,7 +753,7 @@
 .whiteThin2 {
   width: 44px;
   height: 5px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 4px;
   margin-top: 5px;
 }
@@ -764,7 +761,7 @@
 .thinRec6 {
   width: 44px;
   height: 5px;
-  background: #DC1AA3;
+  background: #dc1aa3;
   margin-top: 8px;
   margin-left: 22px;
   border-radius: 4px;
@@ -774,7 +771,7 @@
   font-size: 0.7rem;
   margin-top: -6px;
   margin-left: -10px;
-  color: #DC1AA3;
+  color: #dc1aa3;
 }
 
 .hash4 {
@@ -782,7 +779,7 @@
   margin-right: 6px;
   margin-left: 10px;
   margin-top: 1px;
-  color: #E5B2D6;
+  color: #e5b2d6;
 }
 
 .thinRec5 {
@@ -790,7 +787,7 @@
   width: 44px;
   height: 5px;
   margin-top: 8px;
-  background: #DC1AA3;
+  background: #dc1aa3;
   margin-left: 22px;
   border-radius: 4px;
 }
@@ -801,14 +798,14 @@
   border-radius: 4px;
   height: 16px;
   margin-left: 0px;
-  background: #DC1AA3;
+  background: #dc1aa3;
 }
 
 .smallRec2 {
   width: 16px;
   height: 8px;
   border-radius: 4px;
-  background: #DC1AA3;
+  background: #dc1aa3;
   margin-left: 160px;
   margin-top: -3px;
 }
@@ -824,14 +821,14 @@
 }
 
 .ash2 {
-  color: #E5B2D6;
+  color: #e5b2d6;
   font-size: 12px;
   font-weight: 500;
   margin-top: 3px;
 }
 
 .activeAsh3 {
-  background: #84BE69;
+  background: #84be69;
   width: 198px;
   height: 152px;
   border-radius: 4px;
@@ -843,13 +840,13 @@
   width: 54px;
   height: 12px;
   margin-left: 68px;
-  background: #2B7608;
+  background: #2b7608;
   margin-top: 9px;
   border-radius: 4px;
 }
 
 .line4 {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   margin-top: 6px;
   margin-left: -1px;
   width: 101%;
@@ -860,14 +857,14 @@
   height: 26px;
   border-radius: 50%;
   margin-left: 150px;
-  background: #2B7608;
+  background: #2b7608;
   margin-top: -6px;
 }
 
 .thinRec7 {
   width: 44px;
   height: 5px;
-  background: #2B7608;
+  background: #2b7608;
   margin-left: 10px;
   border-radius: 4px;
   margin-top: -5px;
@@ -876,7 +873,7 @@
 .whiteThin3 {
   width: 44px;
   height: 5px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 4px;
   margin-top: 5px;
 }
@@ -884,7 +881,7 @@
 .thinRec9 {
   width: 44px;
   height: 5px;
-  background: #2B7608;
+  background: #2b7608;
   margin-top: 8px;
   margin-left: 22px;
   border-radius: 4px;
@@ -894,7 +891,7 @@
   font-size: 0.7rem;
   margin-top: -6px;
   margin-left: -10px;
-  color: #2B7608;
+  color: #2b7608;
 }
 
 .hash6 {
@@ -902,7 +899,7 @@
   margin-right: 6px;
   margin-left: 10px;
   margin-top: 1px;
-  color: #99D07F;;
+  color: #99d07f;
 }
 
 .thinRec8 {
@@ -910,7 +907,7 @@
   width: 44px;
   height: 5px;
   margin-top: 8px;
-  background: #2B7608;
+  background: #2b7608;
   margin-left: 22px;
   border-radius: 4px;
 }
@@ -921,14 +918,14 @@
   border-radius: 4px;
   height: 16px;
   margin-left: 0px;
-  background: #2B7608;
+  background: #2b7608;
 }
 
 .smallRec3 {
   width: 16px;
   height: 8px;
   border-radius: 4px;
-  background: #2B7608;
+  background: #2b7608;
   margin-left: 160px;
   margin-top: -3px;
 }
@@ -944,7 +941,7 @@
 }
 
 .ash3 {
-  color: #fbfdfa;;
+  color: #fbfdfa;
   font-size: 12px;
   font-weight: 500;
   margin-top: 3px;
@@ -969,7 +966,7 @@
 }
 
 .line5 {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   margin-top: 6px;
   margin-left: -1px;
   width: 101%;
@@ -996,7 +993,7 @@
 .whiteThin4 {
   width: 44px;
   height: 5px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 4px;
   margin-top: 5px;
 }
@@ -1022,7 +1019,7 @@
   margin-right: 6px;
   margin-left: 10px;
   margin-top: 1px;
-  color: #645C5C;
+  color: #645c5c;
 }
 
 .thinRec11 {
@@ -1071,7 +1068,7 @@
 }
 
 .activeAsh5 {
-  background: #06083A;
+  background: #06083a;
   width: 198px;
   height: 152px;
   border-radius: 4px;
@@ -1083,13 +1080,13 @@
   width: 54px;
   height: 12px;
   margin-left: 68px;
-  background: #1018DD;
+  background: #1018dd;
   margin-top: 9px;
   border-radius: 4px;
 }
 
 .line6 {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   margin-top: 6px;
   margin-left: -1px;
   width: 101%;
@@ -1100,14 +1097,14 @@
   height: 26px;
   border-radius: 50%;
   margin-left: 150px;
-  background: #1018DD;
+  background: #1018dd;
   margin-top: -6px;
 }
 
 .thinRec13 {
   width: 44px;
   height: 5px;
-  background: #1018DD;
+  background: #1018dd;
   margin-left: 10px;
   border-radius: 4px;
   margin-top: -5px;
@@ -1116,7 +1113,7 @@
 .whiteThin5 {
   width: 44px;
   height: 5px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 4px;
   margin-top: 5px;
 }
@@ -1124,7 +1121,7 @@
 .thinRec15 {
   width: 44px;
   height: 5px;
-  background: #1018DD;
+  background: #1018dd;
   margin-top: 8px;
   margin-left: 22px;
   border-radius: 4px;
@@ -1134,7 +1131,7 @@
   font-size: 0.7rem;
   margin-top: -6px;
   margin-left: -10px;
-  color: #1018DD;
+  color: #1018dd;
 }
 
 .hash10 {
@@ -1142,7 +1139,7 @@
   margin-right: 6px;
   margin-left: 10px;
   margin-top: 1px;
-  color: #8F92CE;
+  color: #8f92ce;
 }
 
 .thinRec14 {
@@ -1150,7 +1147,7 @@
   width: 44px;
   height: 5px;
   margin-top: 8px;
-  background: #1018DD;
+  background: #1018dd;
   margin-left: 22px;
   border-radius: 4px;
 }
@@ -1161,14 +1158,14 @@
   border-radius: 4px;
   height: 16px;
   margin-left: 0px;
-  background: #1018DD;
+  background: #1018dd;
 }
 
 .smallRec5 {
   width: 16px;
   height: 8px;
   border-radius: 4px;
-  background: #1018DD;
+  background: #1018dd;
   margin-left: 160px;
   margin-top: -3px;
 }
@@ -1203,13 +1200,13 @@
   width: 54px;
   height: 12px;
   margin-left: 68px;
-  background: #ED2222;
+  background: #ed2222;
   margin-top: 9px;
   border-radius: 4px;
 }
 
 .line7 {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   margin-top: 6px;
   margin-left: -1px;
   width: 101%;
@@ -1220,14 +1217,14 @@
   height: 26px;
   border-radius: 50%;
   margin-left: 150px;
-  background: #ED2222;
+  background: #ed2222;
   margin-top: -6px;
 }
 
 .thinRec16 {
   width: 44px;
   height: 5px;
-  background: #ED2222;
+  background: #ed2222;
   margin-left: 10px;
   border-radius: 4px;
   margin-top: -5px;
@@ -1236,7 +1233,7 @@
 .whiteThin6 {
   width: 44px;
   height: 5px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 4px;
   margin-top: 5px;
 }
@@ -1244,7 +1241,7 @@
 .thinRec18 {
   width: 44px;
   height: 5px;
-  background: #ED2222;
+  background: #ed2222;
   margin-top: 8px;
   margin-left: 22px;
   border-radius: 4px;
@@ -1254,7 +1251,7 @@
   font-size: 0.7rem;
   margin-top: -6px;
   margin-left: -10px;
-  color: #ED2222;
+  color: #ed2222;
 }
 
 .hash12 {
@@ -1270,7 +1267,7 @@
   width: 44px;
   height: 5px;
   margin-top: 8px;
-  background: #ED2222;
+  background: #ed2222;
   margin-left: 22px;
   border-radius: 4px;
 }
@@ -1281,14 +1278,14 @@
   border-radius: 4px;
   height: 16px;
   margin-left: 0px;
-  background: #ED2222;
+  background: #ed2222;
 }
 
 .smallRec6 {
   width: 16px;
   height: 8px;
   border-radius: 4px;
-  background: #ED2222;
+  background: #ed2222;
   margin-left: 160px;
   margin-top: -3px;
 }
@@ -1323,13 +1320,13 @@
   width: 54px;
   height: 12px;
   margin-left: 68px;
-  background: #EB751F;
+  background: #eb751f;
   margin-top: 9px;
   border-radius: 4px;
 }
 
 .line8 {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   margin-top: 6px;
   margin-left: -1px;
   width: 101%;
@@ -1340,14 +1337,14 @@
   height: 26px;
   border-radius: 50%;
   margin-left: 150px;
-  background: #EB751F;
+  background: #eb751f;
   margin-top: -6px;
 }
 
 .thinRec19 {
   width: 44px;
   height: 5px;
-  background: #EB751F;
+  background: #eb751f;
   margin-left: 10px;
   border-radius: 4px;
   margin-top: -5px;
@@ -1356,7 +1353,7 @@
 .whiteThin7 {
   width: 44px;
   height: 5px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 4px;
   margin-top: 5px;
 }
@@ -1364,7 +1361,7 @@
 .thinRec21 {
   width: 44px;
   height: 5px;
-  background: #EB751F;
+  background: #eb751f;
   margin-top: 8px;
   margin-left: 22px;
   border-radius: 4px;
@@ -1374,7 +1371,7 @@
   font-size: 0.7rem;
   margin-top: -6px;
   margin-left: -10px;
-  color: #EB751F;
+  color: #eb751f;
 }
 
 .hash14 {
@@ -1382,7 +1379,7 @@
   margin-right: 6px;
   margin-left: 10px;
   margin-top: 1px;
-  color: #E3CCBB;
+  color: #e3ccbb;
 }
 
 .thinRec20 {
@@ -1390,7 +1387,7 @@
   width: 44px;
   height: 5px;
   margin-top: 8px;
-  background: #EB751F;
+  background: #eb751f;
   margin-left: 22px;
   border-radius: 4px;
 }
@@ -1401,14 +1398,14 @@
   border-radius: 4px;
   height: 16px;
   margin-left: 0px;
-  background: #EB751F;
+  background: #eb751f;
 }
 
 .smallRec7 {
   width: 16px;
   height: 8px;
   border-radius: 4px;
-  background: #EB751F;
+  background: #eb751f;
   margin-left: 160px;
   margin-top: -3px;
 }
@@ -1443,13 +1440,13 @@
   width: 54px;
   height: 12px;
   margin-left: 68px;
-  background: #EAED49;
+  background: #eaed49;
   margin-top: 9px;
   border-radius: 4px;
 }
 
 .line9 {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   margin-top: 6px;
   margin-left: -1px;
   width: 101%;
@@ -1460,14 +1457,14 @@
   height: 26px;
   border-radius: 50%;
   margin-left: 150px;
-  background: #EAED49;
+  background: #eaed49;
   margin-top: -6px;
 }
 
 .thinRec22 {
   width: 44px;
   height: 5px;
-  background: #EAED49;
+  background: #eaed49;
   margin-left: 10px;
   border-radius: 4px;
   margin-top: -5px;
@@ -1476,7 +1473,7 @@
 .whiteThin8 {
   width: 44px;
   height: 5px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 4px;
   margin-top: 5px;
 }
@@ -1484,7 +1481,7 @@
 .thinRec24 {
   width: 44px;
   height: 5px;
-  background: #EAED49;
+  background: #eaed49;
   margin-top: 8px;
   margin-left: 22px;
   border-radius: 4px;
@@ -1494,7 +1491,7 @@
   font-size: 0.7rem;
   margin-top: -6px;
   margin-left: -10px;
-  color: #EAED49;
+  color: #eaed49;
 }
 
 .hash16 {
@@ -1502,7 +1499,7 @@
   margin-right: 6px;
   margin-left: 10px;
   margin-top: 1px;
-  color: #AEAEAE;
+  color: #aeaeae;
 }
 
 .thinRec23 {
@@ -1510,7 +1507,7 @@
   width: 44px;
   height: 5px;
   margin-top: 8px;
-  background: #EAED49;
+  background: #eaed49;
   margin-left: 22px;
   border-radius: 4px;
 }
@@ -1521,14 +1518,14 @@
   border-radius: 4px;
   height: 16px;
   margin-left: 0px;
-  background: #EAED49;
+  background: #eaed49;
 }
 
 .smallRec8 {
   width: 16px;
   height: 8px;
   border-radius: 4px;
-  background: #EAED49;
+  background: #eaed49;
   margin-left: 160px;
   margin-top: -3px;
 }
@@ -1549,5 +1546,3 @@
   font-weight: 500;
   margin-top: 3px;
 }
-
-

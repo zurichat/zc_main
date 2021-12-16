@@ -1,15 +1,15 @@
-import { createContext, useState, useEffect } from 'react'
+import { createContext, useState, useEffect } from "react";
 
-export const CardContext = createContext(null)
+export const CardContext = createContext(null);
 export const CardProvider = ({ children }) => {
-  const [cardList, setCardList] = useState([])
-  const [token, setToken] = useState(0)
+  const [cardList, setCardList] = useState([]);
+  const [token, setToken] = useState(0);
 
   useEffect(() => {
-    if (localStorage.getItem('cardList')) {
-      setCardList(JSON.parse(localStorage.getItem('cardList')))
+    if (localStorage.getItem("cardList")) {
+      setCardList(JSON.parse(localStorage.getItem("cardList")));
     }
-  }, [])
+  }, []);
 
   return (
     <CardContext.Provider
@@ -22,5 +22,5 @@ export const CardProvider = ({ children }) => {
     >
       {children}
     </CardContext.Provider>
-  )
-}
+  );
+};

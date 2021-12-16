@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
 * {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-style: normal;
 }
 
@@ -116,7 +116,6 @@ a {
     /* font-size: 18px; */
   }
 }
-
 
 @media screen and (max-width: 960px) {
   .buttonContainer {

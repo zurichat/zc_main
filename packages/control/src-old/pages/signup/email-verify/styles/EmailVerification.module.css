@@ -46,7 +46,7 @@
   outline: none;
 }
 .codeInputs input:nth-child(3n) {
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 .request {
   color: #2f80ed;

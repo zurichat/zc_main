@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react"
-import { Tabs, Tab, TabPanels, TabPanel } from "@reach/tabs"
-import "@reach/tabs/styles.css"
-import "@reach/dialog/styles.css"
+import React, { useEffect, useState } from "react";
+import { Tabs, Tab, TabPanels, TabPanel } from "@reach/tabs";
+import "@reach/tabs/styles.css";
+import "@reach/dialog/styles.css";
 
-import { RiDeleteBinLine, RiDeleteBin7Fill } from "react-icons/ri"
+import { RiDeleteBinLine, RiDeleteBin7Fill } from "react-icons/ri";
 import {
   AiOutlineUserAdd,
   AiOutlineBell,
@@ -11,10 +11,8 @@ import {
   AiOutlineStar,
   AiOutlineLock,
   AiOutlineSearch
-} from "react-icons/ai"
-import {
-  BsPersonCircle
-} from 'react-icons/bs'
+} from "react-icons/ai";
+import { BsPersonCircle } from "react-icons/bs";
 import {
   AddPeopleIcons,
   Button,
@@ -53,27 +51,29 @@ import {
   DetailLabel,
   StackLabel
 } from "./ChannelDetails.styled";
-import { sample } from "./sample"
+import { sample } from "./sample";
 
-function ChannelDetails({initialTabIndex=0, channelDetailsConfig, handleCloseChannelDetails }) {
-
-  var samples=sample.map(sample=>sample)
-  const { showChannelDetails = false } = channelDetailsConfig
-  const [tabIndex,setTabIndex]=useState(initialTabIndex)
-  const [showDialog, setShowDialog] = useState(showChannelDetails)
+function ChannelDetails({
+  initialTabIndex = 0,
+  channelDetailsConfig,
+  handleCloseChannelDetails
+}) {
+  var samples = sample.map(sample => sample);
+  const { showChannelDetails = false } = channelDetailsConfig;
+  const [tabIndex, setTabIndex] = useState(initialTabIndex);
+  const [showDialog, setShowDialog] = useState(showChannelDetails);
   const close = () => {
-    handleCloseChannelDetails && handleCloseChannelDetails()
-  }
+    handleCloseChannelDetails && handleCloseChannelDetails();
+  };
   useEffect(() => {
-    setShowDialog(showChannelDetails)
-  }, [showChannelDetails])
+    setShowDialog(showChannelDetails);
+  }, [showChannelDetails]);
 
   return (
     <div>
       <DialogOverlays isOpen={showDialog} onDismiss={close}>
         <DialogContents>
-          <StyledTabs index={tabIndex}
-            onChange={(index)=>setTabIndex(index)}>
+          <StyledTabs index={tabIndex} onChange={index => setTabIndex(index)}>
             <Segment>
               <div>
                 <ModalTopic>
@@ -81,7 +81,7 @@ function ChannelDetails({initialTabIndex=0, channelDetailsConfig, handleCloseCha
                     # Announcements{" "}
                     <AiOutlineStar
                       size="24px"
-                      style={{ marginLeft: "10px", cursor: "pointer"}}
+                      style={{ marginLeft: "10px", cursor: "pointer" }}
                     />
                   </ChannelName>
                   <Button onClick={close}>
@@ -89,7 +89,9 @@ function ChannelDetails({initialTabIndex=0, channelDetailsConfig, handleCloseCha
                   </Button>
                 </ModalTopic>
                 <Select name="languages" id="lang">
-                  <Option value="" disabled selected>Get Notifications for @ mentions</Option>
+                  <Option value="" disabled selected>
+                    Get Notifications for @ mentions
+                  </Option>
                   <Option value="php">PHP</Option>
                   <Option value="java">Java</Option>
                   <Option value="golang">Golang</Option>
@@ -107,7 +109,7 @@ function ChannelDetails({initialTabIndex=0, channelDetailsConfig, handleCloseCha
                 <AboutPanel />
               </TabPanel>
               <TabPanel>
-                <MembersPanel samples={samples}/>
+                <MembersPanel samples={samples} />
               </TabPanel>
               <TabPanel>
                 <Integration />
@@ -120,7 +122,7 @@ function ChannelDetails({initialTabIndex=0, channelDetailsConfig, handleCloseCha
         </DialogContents>
       </DialogOverlays>
     </div>
-  )
+  );
 }
 
 function AboutPanel() {
@@ -150,19 +152,19 @@ function AboutPanel() {
         </EachSegment>
       </OverallWrapper>
       <FileWrapper>
-        <FileContent style={{color:"black"}}>Files</FileContent>
+        <FileContent style={{ color: "black" }}>Files</FileContent>
         <EditContent>
           There aren't any files to be see here right now. But there could be -
           drag and drop any file into the message pane to add it to this
           conversation.
         </EditContent>
       </FileWrapper>
-      <h6 style={{fontSize:'15px'}}>ChannelID:CD1QT4B9PGW</h6>
+      <h6 style={{ fontSize: "15px" }}>ChannelID:CD1QT4B9PGW</h6>
     </div>
-  )
+  );
 }
 
-function MembersPanel({samples}) {
+function MembersPanel({ samples }) {
   return (
     <div>
       <Selection>
@@ -181,27 +183,33 @@ function MembersPanel({samples}) {
         </UserIcon>
         Add People
       </AddPeopleIcons>
-      <div style={{marginTop:'30px'}}>
-        {
-          samples.map(sample=>(
-            <DataWrap key={sample.name}>
-              <BsPersonCircle size="30px" style={{marginTop:'10px'}}/>
-              <Details>
-                <DetailLabel>
-                  <div style={{display:'flex',alignItems:'flex-start',marginRight:'20px'}}>{sample.username}</div>
-                  <div>{sample.name}</div>
-                </DetailLabel>
-                <StackLabel>
-                    <div style={{marginLeft:'15px'}}>{sample.stack}</div>
-                    <EditLabel>Remove</EditLabel>
-                </StackLabel>
-              </Details>
-            </DataWrap>
-          ))
-        }
+      <div style={{ marginTop: "30px" }}>
+        {samples.map(sample => (
+          <DataWrap key={sample.name}>
+            <BsPersonCircle size="30px" style={{ marginTop: "10px" }} />
+            <Details>
+              <DetailLabel>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    marginRight: "20px"
+                  }}
+                >
+                  {sample.username}
+                </div>
+                <div>{sample.name}</div>
+              </DetailLabel>
+              <StackLabel>
+                <div style={{ marginLeft: "15px" }}>{sample.stack}</div>
+                <EditLabel>Remove</EditLabel>
+              </StackLabel>
+            </Details>
+          </DataWrap>
+        ))}
       </div>
     </div>
-  )
+  );
 }
 function Integration() {
   return (
@@ -210,7 +218,7 @@ function Integration() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        flexDirection:'column'
+        flexDirection: "column"
       }}
     >
       <Options>
@@ -244,7 +252,7 @@ function Integration() {
         <Buttons>See Upgrade Options</Buttons>
       </Options>
     </div>
-  )
+  );
 }
 function SettingPanel() {
   return (
@@ -272,7 +280,7 @@ function SettingPanel() {
         </Channels>
       </ChannelWrapper>
     </div>
-  )
+  );
 }
 
 export default ChannelDetails;

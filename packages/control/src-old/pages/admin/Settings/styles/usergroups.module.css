@@ -1,5 +1,4 @@
-
-.con{
+.con {
   background-color: #efefef;
   height: 100vh;
 }
@@ -57,17 +56,17 @@
   margin: 0;
 }
 
-.link:hover{
+.link:hover {
   color: #fff;
 }
 
 .learnmore {
   text-decoration: none;
-  color: #1264a3 ;
+  color: #1264a3;
 }
 .learnmore:hover {
   text-decoration: none;
-  color: #1264a3 ;
+  color: #1264a3;
 }
 
 .containerpara {

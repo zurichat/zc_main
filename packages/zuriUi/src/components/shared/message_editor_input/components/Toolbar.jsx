@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { convertToRaw, EditorState, RichUtils } from "draft-js";
-import UnstyledButton from "@components/shared/unstyled_button/UnstyledButton";
+import RealUnstyledButton from "@components/shared/unstyled_button/UnstyledButton";
 import styled from "styled-components";
 import {
   AtSign,
@@ -192,7 +192,9 @@ const Toolbar = props => {
         <FormatContainer>
           <LightningIcon />
 
-          <BorderIcon />
+          <span style={{ paddingInline: "4px" }}>
+            <BorderIcon />
+          </span>
 
           {inlineStyles.map((style, index) => {
             return renderInlineStyleButton(style, index);
@@ -232,13 +234,13 @@ const Wrapper = styled.div`
 `;
 const FormatContainer = styled.div`
   display: flex;
-  gap: 15px;
+  gap: 8px;
   align-items: center;
 `;
 const SendContainer = styled.div`
   margin-left: auto;
   display: flex;
-  gap: 19px;
+  gap: 8px;
   align-items: center;
 `;
 const AttachFile = styled.div`
@@ -249,6 +251,14 @@ const AttachFile = styled.div`
   position: absolute;
   right: 104px;
   bottom: 46px;
+`;
+
+const UnstyledButton = styled(RealUnstyledButton)`
+  height: 32px;
+  width: 24px;
+  display: grid;
+  place-items: center;
+  padding: 2px 4px;
 `;
 
 export default Toolbar;

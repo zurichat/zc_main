@@ -24,7 +24,7 @@
   color: #333;
   cursor: pointer;
   margin-bottom: -1px;
-  transition: all .2s;
+  transition: all 0.2s;
 }
 
 .tabHeaderItemActive {
@@ -71,7 +71,7 @@
     display: flex;
     margin: 0 1px;
   }
-  
+
   .tabContent {
     margin-top: 3px;
     width: 100%;
