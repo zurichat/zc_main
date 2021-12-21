@@ -1,10 +1,10 @@
-import MessageItem from "../shared/message_item/MessageItem";
+import MessageItem from "../sharedd/message_item/MessageItem";
 import { MessageBoardContainer } from "./MessageBoard.styled";
 import MoreMenu from "./components/MoreMenu/MoreMenu";
 import Overlay from "./components/Overlay/Overlay";
 
 import { useState, useEffect, useRef } from "react";
-import MessageEditorInput from "../shared/message_editor_input/MessageEditorInput";
+import MessageEditorInput from "../sharedd/message_editor_input/MessageEditorInput";
 import messagesData from "./messages.data";
 import Emojis from "../Emojis/Emojis";
 

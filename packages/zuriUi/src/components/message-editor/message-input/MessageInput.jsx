@@ -28,7 +28,7 @@ const { EmojiSuggestions, EmojiSelect } = emojiPlugin;
 const mentionPlugin = createMentionPlugin({ mentionPrefix: "@" });
 const { MentionSuggestions } = mentionPlugin;
 
-const MessageInputBox = ({ onSendMessage, users, onAttachFile }) => {
+const MessageInput = ({ onSendMessage, users, onAttachFile }) => {
   const [data, setData] = useState("");
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty()
@@ -145,7 +145,7 @@ const MessageInputBox = ({ onSendMessage, users, onAttachFile }) => {
   );
 };
 
-export default MessageInputBox;
+export default MessageInput;
 
 const Wrapper = styled.div`
   // padding: 0 10px;

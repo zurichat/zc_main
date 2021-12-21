@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "../EmojiBox/EmojiBox.module.css";
+import styles from "./../EmojiBox/EmojiBox.module.css";
 const EmojiItem = ({ emoji, handleEmojiClicked }) => {
   return (
     <li

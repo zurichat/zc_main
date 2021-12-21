@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
-import MessageEditorInput from "../message-editor-input/MessageEditorInput";
+import { MessageInput } from "../message-editor";
 import MessageCard from "../message-card/MessageCard";
 
 import { MessageBoardContainer } from "./MessageBoard.styled";
-import MoreMenu from "./components/MoreMenu/MoreMenu";
-import Overlay from "./components/Overlay/Overlay";
+import MoreMenu from "./components/more-menu/MoreMenu";
+import Overlay from "./components/overlay/Overlay";
 import Emojis from "../emojis/Emojis";
 
 /**
@@ -99,7 +99,7 @@ function MessageBoard({
           <div ref={messagesEndRef} />
         </div>
         <div className="input-text">
-          <MessageEditorInput
+          <MessageInput
             onSendMessage={handleSendMessage}
             onAttachFile={onSendAttachedFile}
           />

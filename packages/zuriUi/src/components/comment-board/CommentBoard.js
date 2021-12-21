@@ -1,8 +1,7 @@
 import { useState } from "react";
 import UnstyledButton from "../shared/unstyled_button/UnstyledButton";
-import MessageEditorInput from "../shared/message_editor_input/MessageEditorInput";
-import messagesData from "../message_board/messages.data";
-import MessageEditorReader from "@components/shared/message_editor_reader/MessageEditorReader";
+import { MessageInput, MessageEditorReader } from "../message-editor";
+import messagesData from "../v1/message_board/messages.data";
 import {
   CommentBoardWrapper,
   CommentBoardHeader,
@@ -42,7 +41,7 @@ const CommentBoard = ({ commentBoardConfig }) => {
         ))}
       </CommentMessagesWrapper>
       {/* <Chats chatInfo={messages} /> */}
-      <MessageEditorInput
+      <MessageInput
         sendMessageHandler={commentBoardConfig.sendChatMessageHandler}
         addToMessages={addToMessages}
       />

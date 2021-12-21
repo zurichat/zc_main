@@ -1,5 +1,5 @@
 import { DateTime } from "luxon";
-import MessageEditorReader from "@components/shared/message_editor_reader/MessageEditorReader";
+import MessageEditorReader from "@components/sharedd/message_editor_reader/MessageEditorReader";
 import avatar from "@assets/profile.svg";
 
 export default function MessageCard({ messageData }) {

@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 
 import MessageBox from "./components/message-box/MessageBox";
-import HoverItems from "./components/HoverItems/HoverItems";
-import EmojiCard from "./components/EmojiCard/EmojiCard";
+import HoverItems from "./components/hover-items/HoverItems";
+import EmojiCard from "./components/emoji-card/EmojiCard";
 
 import styles from "./MessageItem.module.css";
 
@@ -50,7 +50,7 @@ function MessageCard({
 
 MessageCard.propTypes = {
   currentUserId: PropTypes.string,
-  messages: PropTypes.array.isRequired,
+  message: PropTypes.object.isRequired,
   onSendMessage: PropTypes.func,
   onSendAttachedFile: PropTypes.func,
   onReact: PropTypes.func

@@ -1,18 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import ChannelDetails from "./components/channel_details/ChannelDetails";
-import CommentBoard from "./components/comment_board/CommentBoard";
-import MessageBoard from "./components/message_board/MessageBoard";
-import MessageEditorInput from "./components/shared/message_editor_input/MessageEditorInput";
-import MessageCard from "./components/shared/message_item/MessageItem";
-
-import * as v2 from "./components/v2";
+import ChannelDetails from "./components/channel-details/ChannelDetails";
+import CommentBoard from "./components/comment-board/CommentBoard";
+import MessageBoard from "./components/message-board/MessageBoard";
+import { MessageInput } from "./components/message-editor";
+import MessageCard from "./components/message-card/MessageCard";
 
 export {
   CommentBoard,
   ChannelDetails,
-  MessageEditorInput,
+  MessageInput,
   MessageBoard,
-  MessageCard,
-  v2
+  MessageCard
 };

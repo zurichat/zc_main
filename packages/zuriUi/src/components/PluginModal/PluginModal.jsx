@@ -27,8 +27,8 @@ import {
   Details,
   DetailLabel,
   StackLabel
-} from "../channel_details/ChannelDetails.styled";
-import { sample } from "../channel_details/sample";
+} from "../channel-details/ChannelDetails.styled";
+import { sample } from "../channel-details/sample";
 import axios from "axios";
 import { membersList as DummyMembers } from "../sampleData/memberList";
 
