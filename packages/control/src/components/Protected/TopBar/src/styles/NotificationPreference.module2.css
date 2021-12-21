@@ -28,7 +28,6 @@
   --text-color-gray-1: #242424;
 }
 
-
 .background {
   background: var(--bg-color);
 }
@@ -40,10 +39,10 @@
   position: relative;
   margin-top: 0%;
 }
-.toggle{
+.toggle {
   display: none;
 }
-.hrLine{
+.hrLine {
   display: none;
 }
 /* THE SECTION OF THE CONTENT */
@@ -102,27 +101,26 @@
   margin-right: 9px;
 }
 
-.allPreferences{
+.allPreferences {
   width: 100%;
 }
 
 @media screen and (max-width: 768px) {
-  .buttonToggle{
+  .buttonToggle {
     background: #fff;
     margin: 0px;
     width: 100%;
     position: fixed;
     z-index: 1000;
   }
-  .allPreferences{
+  .allPreferences {
     margin-top: 40px;
     width: 100%;
   }
-  .body{
+  .body {
     flex-wrap: wrap;
-
   }
-  .toggle{
+  .toggle {
     display: flex;
     font-size: 30px;
     display: flex;
@@ -131,31 +129,28 @@
     margin: 5px 15px;
     position: relative;
   }
-  .hrLine{
+  .hrLine {
     display: flex;
     width: 100%;
     position: relative;
     color: #999999;
   }
-  .notifyContent{
+  .notifyContent {
     max-width: 100%;
     display: flex;
     flex-wrap: wrap;
   }
-  .itemTitle1{
+  .itemTitle1 {
     margin-bottom: 46px;
     display: flex;
     flex-wrap: wrap;
   }
-  .spanL{
+  .spanL {
     margin-top: 3px;
   }
 }
 
 /* --------------- */
-
-
-
 
 .radio {
   padding: 15px 6px;
@@ -361,7 +356,7 @@ input[type="checkbox"] {
 .picksound {
   display: flex;
   flex-direction: column;
-  margin-top: 5px ;
+  margin-top: 5px;
   margin-left: 0px;
   color: rgb(85, 84, 84);
 }
@@ -474,14 +469,13 @@ input[type="checkbox"] {
     align-items: left;
     left: 40%;
   }
-  
-  .body{
+
+  .body {
     padding: 0%;
     margin: 0%;
     display: flex;
-
   }
-  .itemTitle1{
+  .itemTitle1 {
     margin-bottom: 12px;
   }
   .notifywrapper {
@@ -529,8 +523,6 @@ input[type="checkbox"] {
   }
 }
 
-
-
 /* Tuasegun's media query */
 @media (max-width: 450px) {
   .itemTitle1 {
@@ -573,22 +565,22 @@ input[type="checkbox"] {
     margin: 0px;
   }
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   .textInput {
     width: 100%;
     padding: 10px 0px;
   }
-  .selectButton{
+  .selectButton {
     width: 100%;
     padding: 10px 0px;
   }
 }
-@media screen and (max-width: 400px){
+@media screen and (max-width: 400px) {
   .textInput {
     width: 100%;
     padding: 10px 0px;
   }
-  .selectButton{
+  .selectButton {
     width: 100%;
     padding: 10px 0px;
   }

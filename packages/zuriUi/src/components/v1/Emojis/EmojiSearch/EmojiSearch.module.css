@@ -1,0 +1,25 @@
+.zcemsemojiinputbox {
+  margin-top: 2rem;
+  height: 2rem;
+  justify-content: center;
+  background: #fff;
+  position: fixed;
+}
+.zcemsemojiinput {
+  /* position: fixed; */
+  width: 16rem;
+  margin-left: 1rem;
+  border: 1px solid #777;
+  outline: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  border: 2px solid #dadada;
+  border-radius: 7px;
+  top: 2.5rem;
+}
+
+.zcemsemojiinput:focus {
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}

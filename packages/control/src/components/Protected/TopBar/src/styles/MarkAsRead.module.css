@@ -15,7 +15,7 @@
   margin-top: 20px;
 }
 
-.subHeadUl{
+.subHeadUl {
   margin: 10px 0px;
 }
 .section {
@@ -158,10 +158,9 @@ left: 5px;
   margin: 3px;
 }
 
-
 @media screen and (max-width: 500px) {
   .container {
-    margin: 20px ;
+    margin: 20px;
     margin-right: 20px;
   }
 }

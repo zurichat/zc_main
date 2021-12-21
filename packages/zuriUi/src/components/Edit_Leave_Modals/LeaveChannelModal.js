@@ -8,16 +8,22 @@ import {
   ModalButtons,
   CancelBtn,
   AcceptBtn,
-  ModalTopic,
+  ModalTopic
 } from "./ModalStyles";
-const LeaveChannelModal = (props) => {
- 
+const LeaveChannelModal = props => {
   return (
     <ModalContainer>
       <LeaveModal>
         <ModalTop>
           <ModalTopic>Leave Channel</ModalTopic>
-          <CloseBtn onClick= { ()=>{props.closeEdit()}}> X </CloseBtn>
+          <CloseBtn
+            onClick={() => {
+              props.closeEdit();
+            }}
+          >
+            {" "}
+            X{" "}
+          </CloseBtn>
         </ModalTop>
         <Modalbody>
           <p>

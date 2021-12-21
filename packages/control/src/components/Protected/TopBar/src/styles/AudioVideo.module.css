@@ -1,11 +1,11 @@
 .container {
   width: 300%;
   margin: 2rem;
-  font-family: 'Lato';
+  font-family: "Lato";
 }
 
 .head {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-weight: bolder;
   display: flex;
   margin-top: 1rem;
@@ -222,7 +222,7 @@
   margin-bottom: 1.5rem;
 }
 .headspeaker {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-weight: bolder;
   display: flex;
   margin-top: 2rem;

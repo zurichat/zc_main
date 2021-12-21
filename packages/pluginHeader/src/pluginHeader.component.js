@@ -1,11 +1,11 @@
-import { useState } from "react"
-import styles from "./styles/header.module.css"
-import { MdKeyboardArrowDown } from "react-icons/md"
-import PluginModal from "../../zuriUi/src/components/PluginModal/PluginModal"
+import { useState } from "react";
+import styles from "./styles/header.module.css";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import PluginModal from "../../zuriUi/src/components/PluginModal/PluginModal";
 
 export default function Header(props) {
-  const [showDialog, setShowDialog] = useState(false)
-  const [tabIndex, setTabIndex] = useState(0)
+  const [showDialog, setShowDialog] = useState(false);
+  const [tabIndex, setTabIndex] = useState(0);
 
   return (
     <div>
@@ -13,8 +13,8 @@ export default function Header(props) {
         <div className={styles.plugin__header}>
           <div
             onClick={() => {
-              setShowDialog(!showDialog)
-              setTabIndex(0)
+              setShowDialog(!showDialog);
+              setTabIndex(0);
             }}
             className={styles.plugin__header__title}
           >
@@ -34,8 +34,8 @@ export default function Header(props) {
             <div
               className={styles.plugin__header__thumbnail}
               onClick={() => {
-                setShowDialog(!showDialog)
-                setTabIndex(1)
+                setShowDialog(!showDialog);
+                setTabIndex(1);
               }}
             >
               <div className={styles.plugin__thumbnail}>
@@ -43,7 +43,7 @@ export default function Header(props) {
                   props.headerConfig.thumbnailUrl
                     .slice(0, 3)
                     .map((image, index) => {
-                      return <img key={index} src={image} alt="" />
+                      return <img key={index} src={image} alt="" />;
                     })}
               </div>
               {showDialog && (
@@ -63,5 +63,5 @@ export default function Header(props) {
         </div>
       )}
     </div>
-  )
+  );
 }

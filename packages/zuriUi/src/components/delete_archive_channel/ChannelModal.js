@@ -1,31 +1,31 @@
-import { useState } from 'react'
-import styles from './ChannelModal.module.css'
+import { useState } from "react";
+import styles from "./ChannelModal.module.css";
 
 const ChannelModal = ({ archiveTitle, children, full, closeEdit }) => {
+  const [modal, setModal] = useState(true);
+  const toggleModalState = () => {
+    closeEdit();
+  };
 
- const [modal, setModal] = useState(true)
- const toggleModalState = () => {
-    closeEdit()
-  }
-
-  const mql = window.matchMedia('(max-width: 640px)')
-  let mobileView = mql.matches
+  const mql = window.matchMedia("(max-width: 640px)");
+  let mobileView = mql.matches;
 
   return (
-    <div
-      className={styles.modalContainer}
-      style={{ display: 'flex' } }
-    >
+    <div className={styles.modalContainer} style={{ display: "flex" }}>
       <div
         className={full ? styles.overlayGreen : styles.overlay}
-        onClick={() => {closeEdit() }}
+        onClick={() => {
+          closeEdit();
+        }}
       ></div>
       <div className={full ? styles.modalFull : styles.modalContent}>
         <div className={`${styles.modalHeader}`}>
           {archiveTitle}
           {mobileView ? (
             <svg
-             onClick={() => {closeEdit() }}
+              onClick={() => {
+                closeEdit();
+              }}
               className={styles.backIcon}
               viewBox="0 0 30 30"
               fill="none"
@@ -41,7 +41,9 @@ const ChannelModal = ({ archiveTitle, children, full, closeEdit }) => {
             </svg>
           ) : (
             <svg
-             onClick={() => {closeEdit() }}
+              onClick={() => {
+                closeEdit();
+              }}
               className={styles.closeIcon}
               viewBox="0 0 329.26933 329"
               xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +55,7 @@ const ChannelModal = ({ archiveTitle, children, full, closeEdit }) => {
         <div className={styles.modalCont}>{children}</div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ChannelModal
+export default ChannelModal;

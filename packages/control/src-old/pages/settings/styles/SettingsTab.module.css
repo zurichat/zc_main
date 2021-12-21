@@ -137,8 +137,8 @@
 
 .passwordsection select.form-select:focus,
 .passwordsection button.form-control:focus,
-.passwordsection input[type='text']:focus,
-.passwordsection input[type='password']:focus {
+.passwordsection input[type="text"]:focus,
+.passwordsection input[type="password"]:focus {
   box-shadow: inset 0 -1px 0 #ddd;
 }
 

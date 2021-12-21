@@ -1,19 +1,19 @@
 /* eslint-env node */
-const { merge } = require("webpack-merge")
-const singleSpaDefaults = require("webpack-config-single-spa")
-const HtmlWebpackPlugin = require("html-webpack-plugin")
-const CopyWebpackPlugin = require("copy-webpack-plugin")
-const path = require("path")
+const { merge } = require("webpack-merge");
+const singleSpaDefaults = require("webpack-config-single-spa");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const path = require("path");
 
 module.exports = (webpackConfigEnv, argv) => {
-  const orgName = "zuri"
+  const orgName = "zuri";
   const defaultConfig = singleSpaDefaults({
     orgName,
     projectName: "root-config",
     webpackConfigEnv,
     argv,
     disableHtmlGeneration: true
-  })
+  });
 
   return merge(defaultConfig, {
     //
@@ -22,7 +22,7 @@ module.exports = (webpackConfigEnv, argv) => {
     },
     // modify the webpack config however you'd like to by adding to this object
     output: {
-      path: path.join(__dirname, "..", "..", "dist"), // string (default)
+      path: path.join(__dirname, "..", "..", "dist") // string (default)
       // filename: "[name].js", // string (default)
       // publicPath: path.join(__dirname, 'src', 'assets') // string
       // publicPath: '/assets/'
@@ -57,5 +57,5 @@ module.exports = (webpackConfigEnv, argv) => {
         }
       })
     ]
-  })
-}
+  });
+};

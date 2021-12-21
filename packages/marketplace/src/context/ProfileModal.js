@@ -1,18 +1,18 @@
-import { createContext, useState } from 'react'
+import { createContext, useState } from "react";
 
-export const ProfileContext = createContext(null)
+export const ProfileContext = createContext(null);
 export const ProfileProvider = ({ children }) => {
-  const [modal, setModal] = useState(false)
-  const [showProfile, setShowProfile] = useState(false)
-  const [sideBar, setSideBar] = useState(1)
+  const [modal, setModal] = useState(false);
+  const [showProfile, setShowProfile] = useState(false);
+  const [sideBar, setSideBar] = useState(1);
 
   const toggleModalState = () => {
-    setModal(!modal)
-  }
+    setModal(!modal);
+  };
 
   const toggleProfileState = () => {
-    setShowProfile(!showProfile)
-  }
+    setShowProfile(!showProfile);
+  };
 
   return (
     <ProfileContext.Provider
@@ -27,5 +27,5 @@ export const ProfileProvider = ({ children }) => {
     >
       {children}
     </ProfileContext.Provider>
-  )
-}
+  );
+};

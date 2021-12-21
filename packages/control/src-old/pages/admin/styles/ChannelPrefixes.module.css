@@ -243,6 +243,6 @@ input[type="text"].inputField:focus {
   opacity: 0;
 }
 
-.PrefixAddedBtn:hover{
+.PrefixAddedBtn:hover {
   opacity: 5;
 }

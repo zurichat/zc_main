@@ -30,7 +30,7 @@
   min-height: 296px;
   background: #fff;
   border-radius: 3px;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   overflow: visible;
 }
 .downloadsModal button {
@@ -117,7 +117,7 @@
 
 .files {
   padding: 22px 24px;
-  margin-bottom:0px;
+  margin-bottom: 0px;
 }
 
 .filesItem {
@@ -132,7 +132,7 @@
 }
 
 .filesItem:hover .filesDetails .content:before {
-  content: 'Open file';
+  content: "Open file";
 }
 
 .filesDetails .content:before {
@@ -225,7 +225,7 @@
 }
 
 .toolTip a {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: bold;
   font-size: 0.8125rem;
   line-height: 147%;

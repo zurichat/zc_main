@@ -75,7 +75,7 @@
   font-weight: 700;
   color: #242424;
   text-align: center;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 .userDetails h3 span {
@@ -292,7 +292,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 2rem 0.6rem;
-  } 
+  }
 
   .buttonGroupsMobile button {
     width: 100%;

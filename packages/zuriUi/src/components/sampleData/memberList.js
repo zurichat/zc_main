@@ -359,6 +359,6 @@ const membersList = [
     _id: "61698477b6aa2c1d7b2a9a67",
     email: "Donna"
   }
-]
+];
 
-export { membersList }
+export { membersList };

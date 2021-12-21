@@ -1,16 +1,16 @@
-import React, { useState } from "react"
-import { Button, Modal } from "react-bootstrap"
-import { RiCloseFill } from "react-icons/ri"
+import React, { useState } from "react";
+import { Button, Modal } from "react-bootstrap";
+import { RiCloseFill } from "react-icons/ri";
 
 const RemoveMemberModal = props => {
   const { show, handleShow, handleClose, member, removeMemberEvent, title } =
-    props
+    props;
 
-  const { _id, email } = member
+  const { _id, email } = member;
   const removeMemberHandler = id => {
-    removeMemberEvent(id)
-    handleClose()
-  }
+    removeMemberEvent(id);
+    handleClose();
+  };
 
   return (
     <div>
@@ -50,7 +50,7 @@ const RemoveMemberModal = props => {
               <Button
                 variant="danger"
                 onClick={() => {
-                  removeMemberHandler(_id)
+                  removeMemberHandler(_id);
                 }}
               >
                 Remove
@@ -60,7 +60,7 @@ const RemoveMemberModal = props => {
         </Modal.Body>
       </Modal>
     </div>
-  )
-}
+  );
+};
 
-export default RemoveMemberModal
+export default RemoveMemberModal;

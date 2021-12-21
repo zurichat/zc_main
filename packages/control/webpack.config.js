@@ -1,7 +1,7 @@
 /* eslint-env node */
-const { mergeWithRules } = require("webpack-merge")
-const singleSpaDefaults = require("webpack-config-single-spa-react")
-const path = require("path")
+const { mergeWithRules } = require("webpack-merge");
+const singleSpaDefaults = require("webpack-config-single-spa-react");
+const path = require("path");
 
 const mergeRules = {
   externals: {
@@ -21,7 +21,7 @@ const mergeRules = {
       use: "replace"
     }
   }
-}
+};
 
 module.exports = (webpackConfigEnv, argv) => {
   const defaultConfig = singleSpaDefaults({
@@ -29,7 +29,7 @@ module.exports = (webpackConfigEnv, argv) => {
     projectName: "control",
     webpackConfigEnv,
     argv
-  })
+  });
 
   return mergeWithRules(mergeRules)(defaultConfig, {
     output: {
@@ -69,5 +69,5 @@ module.exports = (webpackConfigEnv, argv) => {
         }
       ]
     }
-  })
-}
+  });
+};

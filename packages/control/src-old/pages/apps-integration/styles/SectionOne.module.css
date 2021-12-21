@@ -93,7 +93,7 @@
   position: relative;
   z-index: 99;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
-  background-image: url('../assets/searchIcon.svg');
+  background-image: url("../assets/searchIcon.svg");
   background-repeat: no-repeat;
   background-size: 30px;
   background-position: 20px 17px;

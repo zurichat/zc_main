@@ -81,7 +81,7 @@
   align-items: center;
   font-size: 14px;
   position: absolute;
-  top:  1rem;
+  top: 1rem;
   right: 1rem;
 }
 
@@ -156,7 +156,6 @@
 }
 
 @media (max-width: 900px) {
-  
   .mobile {
     flex-direction: column;
     display: flex;
@@ -176,7 +175,6 @@
   }
 }
 
-
 .desktop .pricingWrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -190,7 +188,8 @@
   margin-top: 90px;
 }
 
-.desktop .pricingWrapper .pricing:first-child .benefit, .desktop .pricingWrapper .pricing:first-child .pricing__header{
+.desktop .pricingWrapper .pricing:first-child .benefit,
+.desktop .pricingWrapper .pricing:first-child .pricing__header {
   text-align: left;
   align-items: center;
   justify-content: flex-start;
@@ -209,7 +208,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color:rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
   height: 100%;
   width: 100%;
   border-radius: 3px;
@@ -222,7 +221,8 @@
   /* margin-top: 25px; */
 }
 
-.desktop .benefit, .desktop .pricing__header{
+.desktop .benefit,
+.desktop .pricing__header {
   text-align: center;
   align-items: center;
   justify-content: center;

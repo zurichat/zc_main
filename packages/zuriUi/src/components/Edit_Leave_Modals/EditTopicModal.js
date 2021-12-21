@@ -8,13 +8,12 @@ import {
   ModalButtons,
   CancelBtn,
   AcceptBtn,
-  ModalTopic,
+  ModalTopic
 } from "./ModalStyles";
 
-const EditTopicModal = (props) => {
-
+const EditTopicModal = props => {
   if (!props.show) {
-    return null
+    return null;
   } else {
     return (
       <ModalContainer>
@@ -37,7 +36,6 @@ const EditTopicModal = (props) => {
       </ModalContainer>
     );
   }
-
 };
 
 export default EditTopicModal;

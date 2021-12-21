@@ -74,7 +74,6 @@
   text-decoration: underline;
 }
 
-
 @media (max-width: 600px) {
   .accordion {
     grid-template-columns: 1fr;

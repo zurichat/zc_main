@@ -4,7 +4,6 @@
   border-radius: 4px;
   position: absolute;
   width: 59%;
-
 }
 .suggestion {
   background-color: #fff;
@@ -18,8 +17,7 @@
 
 .suggestion:hover {
   color: rgba(0, 184, 124, 1);
- 
-} 
+}
 .selected {
   background-color: rgba(0, 184, 124, 1);
 }

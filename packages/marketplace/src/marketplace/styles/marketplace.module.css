@@ -14,7 +14,7 @@
 
 .marketplaceSearchBar {
   width: 50%;
-  height: 45px;    
+  height: 45px;
   background: #e5e5e5;
   border: 1px solid #616061;
   box-sizing: border-box;
@@ -338,7 +338,7 @@
   grid-template-columns: 20% 80%;
   align-items: flex-start;
   color: #1d1c1d;
-  margin:0 0 24px;
+  margin: 0 0 24px;
   height: 9rem;
   width: 100%;
 }
@@ -555,7 +555,6 @@
   max-height: fit-content;
 }
 
-
 .pluginList {
   display: flex;
   height: 15px;
@@ -591,7 +590,6 @@
 .pluginHover:hover {
    color: #fff;
 } */
-
 
 @media (max-width: 800px) {
   .pluginCardContainer {
@@ -719,7 +717,8 @@
 }
 @media (max-width: 1000px) {
   .pluginCardTop {
-  grid-template-columns: 2.9rem 78%;}
+    grid-template-columns: 2.9rem 78%;
+  }
 }
 
 .paginationBttns {

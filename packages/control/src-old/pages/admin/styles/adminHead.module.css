@@ -1,16 +1,16 @@
 .adminHeader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 64px;
-    background: #fff;
-    padding: 0 1.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 64px;
+  background: #fff;
+  padding: 0 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
 }
 
 .organizationLogo {

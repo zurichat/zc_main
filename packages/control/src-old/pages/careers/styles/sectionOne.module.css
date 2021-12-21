@@ -1,4 +1,3 @@
-
 button:hover {
   cursor: pointer;
 }
@@ -156,7 +155,7 @@ section.section1Left {
   .section1_content .group_images {
     grid-template-rows: repeat(7, 1.5625rem);
     grid-gap: 0.6rem;
-  }  
+  }
 
   .person1 {
     grid-row: 1 / 3;

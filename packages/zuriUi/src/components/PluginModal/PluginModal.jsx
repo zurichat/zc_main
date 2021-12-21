@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react"
-import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@reach/tabs"
-import "@reach/tabs/styles.css"
-import { DialogOverlay, DialogContent } from "@reach/dialog"
-import "@reach/dialog/styles.css"
-import styled from "styled-components"
-import EditTopicModal from "../Edit_Leave_Modals/EditTopicModal"
-import EditDescriptionModal from "../Edit_Leave_Modals/EditDescriptionModal"
-import LeaveChannelModal from "../Edit_Leave_Modals/LeaveChannelModal"
-import AddMemberModal from "./AddMemberModal"
-import RemoveMemberModal from "./RemoveMemberModal"
-import DeleteChannel from "../delete_archive_channel/DeleteChannel"
-import ArchiveChannel from "../delete_archive_channel/ArchiveChannel"
-import { RiDeleteBinLine, RiDeleteBin7Fill } from "react-icons/ri"
+import React, { useState, useEffect } from "react";
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@reach/tabs";
+import "@reach/tabs/styles.css";
+import { DialogOverlay, DialogContent } from "@reach/dialog";
+import "@reach/dialog/styles.css";
+import styled from "styled-components";
+import EditTopicModal from "../Edit_Leave_Modals/EditTopicModal";
+import EditDescriptionModal from "../Edit_Leave_Modals/EditDescriptionModal";
+import LeaveChannelModal from "../Edit_Leave_Modals/LeaveChannelModal";
+import AddMemberModal from "./AddMemberModal";
+import RemoveMemberModal from "./RemoveMemberModal";
+import DeleteChannel from "../delete_archive_channel/DeleteChannel";
+import ArchiveChannel from "../delete_archive_channel/ArchiveChannel";
+import { RiDeleteBinLine, RiDeleteBin7Fill } from "react-icons/ri";
 import {
   AiOutlineUserAdd,
   AiOutlineSearch,
@@ -19,38 +19,47 @@ import {
   AiOutlineStar,
   AiOutlineLock
 } from "react-icons/ai";
-import { BsPersonCircle } from 'react-icons/bs'
-import { ListGroup } from "react-bootstrap"
-import { StyledTabs, DataWrap, Details, DetailLabel, StackLabel } from "../channel_details/ChannelDetails.styled";
-import { sample } from '../channel_details/sample';
-import axios from "axios"
-import { membersList as DummyMembers } from "../sampleData/memberList"
+import { BsPersonCircle } from "react-icons/bs";
+import { ListGroup } from "react-bootstrap";
+import {
+  StyledTabs,
+  DataWrap,
+  Details,
+  DetailLabel,
+  StackLabel
+} from "../channel-details/ChannelDetails.styled";
+import { sample } from "../channel-details/sample";
+import axios from "axios";
+import { membersList as DummyMembers } from "../sampleData/memberList";
 
 function PluginModal({ close, showDialog, config, tabIndex, channelName }) {
+  var samples = sample.map(sample => sample);
 
-  var samples = sample.map(sample => sample)
+  const [showEditTopicModal, setShowEditTopicModal] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [showEditDescriptionModal, setEditDescriptionModal] = useState(false);
+  const [showLeaveChannelModal, setShowLeaveChannelModal] = useState(false);
+  const [showDeleteChannel, setShowDeleteChannel] = useState(false);
+  const [showArchiveChannel, setShowArchiveChannel] = useState(false);
 
-  const [showEditTopicModal, setShowEditTopicModal] = useState(false)
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [showEditDescriptionModal, setEditDescriptionModal] = useState(false)
-  const [showLeaveChannelModal, setShowLeaveChannelModal] = useState(false)
-  const [showDeleteChannel, setShowDeleteChannel] = useState(false)
-  const [showArchiveChannel, setShowArchiveChannel] = useState(false)
-
-  const toggleEditTopicModal = () => { setShowEditTopicModal(true) }
+  const toggleEditTopicModal = () => {
+    setShowEditTopicModal(true);
+  };
   const toggleEditDescriptionModal = () =>
-    setEditDescriptionModal(!showEditDescriptionModal)
-  const toggleDeleteChannel = () => setShowDeleteChannel(!showDeleteChannel)
+    setEditDescriptionModal(!showEditDescriptionModal);
+  const toggleDeleteChannel = () => setShowDeleteChannel(!showDeleteChannel);
   const toggleLeaveChannelModal = () =>
-    setShowLeaveChannelModal(!showLeaveChannelModal)
-  const toggleArchiveChannel = () => setShowArchiveChannel(!showArchiveChannel)
+    setShowLeaveChannelModal(!showLeaveChannelModal);
+  const toggleArchiveChannel = () => setShowArchiveChannel(!showArchiveChannel);
 
   return (
     <div className="App">
       <DialogOverlays isOpen={showDialog} onDismiss={close}>
         <DialogContents>
-          <StyledTabs defaultIndex={tabIndex}
-            onChange={(activeIndex) => setActiveIndex(activeIndex)}>
+          <StyledTabs
+            defaultIndex={tabIndex}
+            onChange={activeIndex => setActiveIndex(activeIndex)}
+          >
             <div>
               <ModalTopic>
                 <ChannelName>
@@ -76,7 +85,9 @@ function PluginModal({ close, showDialog, config, tabIndex, channelName }) {
               <TabPanel>
                 <AboutPanel
                   showEditModal={showEditTopicModal}
-                  toggleEditTopicModal={() => { setShowEditTopicModal(true) }}
+                  toggleEditTopicModal={() => {
+                    setShowEditTopicModal(true);
+                  }}
                   toggleEditDescriptionModal={toggleEditDescriptionModal}
                   toggleLeaveChannelModal={toggleLeaveChannelModal}
                   closeModal={close}
@@ -113,7 +124,7 @@ function PluginModal({ close, showDialog, config, tabIndex, channelName }) {
         <ArchiveChannel closeEdit={toggleArchiveChannel} />
       )}
     </div>
-  )
+  );
 }
 
 function AboutPanel({
@@ -130,7 +141,7 @@ function AboutPanel({
             <Label>Topic</Label>
             <EditLabel
               onClick={() => {
-                toggleEditTopicModal()
+                toggleEditTopicModal();
                 // closeModal()
               }}
             >
@@ -146,7 +157,7 @@ function AboutPanel({
             <EditLabel
               onClick={() => {
                 // closeModal()
-                toggleEditDescriptionModal()
+                toggleEditDescriptionModal();
               }}
             >
               Edit
@@ -162,7 +173,7 @@ function AboutPanel({
           <Typography
             onClick={() => {
               // closeModal()
-              toggleLeaveChannelModal()
+              toggleLeaveChannelModal();
             }}
           >
             Leave Channel
@@ -177,9 +188,11 @@ function AboutPanel({
           conversation.
         </EditContent>
       </FileWrapper>
-      <h6 style={{ fontSize: '15px', fontWeight: '500' }}>ChannelID:CD1QT4B9PGW</h6>
+      <h6 style={{ fontSize: "15px", fontWeight: "500" }}>
+        ChannelID:CD1QT4B9PGW
+      </h6>
     </div>
-  )
+  );
 }
 // function useTabsContext():{
 //   focusedIndex:number; id:string; selectedIndex:number
@@ -199,73 +212,73 @@ function MembersPanel({ config }) {
     roomInfo: {
       membersList: DummyMembers,
       addmembersevent: values => {
-        console.warn("a plugin added ", values)
+        console.warn("a plugin added ", values);
       },
       removememberevent: id => {
-        console.warn("a plugin deleted ", id)
+        console.warn("a plugin deleted ", id);
       }
     }
-  }
+  };
 
   const roomData =
-    "roomInfo" in config ? config.roomInfo : dummyHeaderConfig.roomInfo
+    "roomInfo" in config ? config.roomInfo : dummyHeaderConfig.roomInfo;
   const {
     membersList: roomMembers,
     addmembersevent,
     removememberevent
-  } = roomData
-  const [addModalShow, setaddModalShow] = useState(false)
-  const [removeModalShow, setremoveModalShow] = useState(false)
-  const [selectedMember, setSelectedMember] = useState(null)
-  const [isLoading, setisLoading] = useState(false)
-  const [userList, setUserList] = useState([])
-  const [membersList, setMembersList] = useState(roomMembers)
+  } = roomData;
+  const [addModalShow, setaddModalShow] = useState(false);
+  const [removeModalShow, setremoveModalShow] = useState(false);
+  const [selectedMember, setSelectedMember] = useState(null);
+  const [isLoading, setisLoading] = useState(false);
+  const [userList, setUserList] = useState([]);
+  const [membersList, setMembersList] = useState(roomMembers);
 
   const handleClose = () => {
-    setaddModalShow(false)
-    setremoveModalShow(false)
-  }
+    setaddModalShow(false);
+    setremoveModalShow(false);
+  };
 
-  const handleaddModalShow = () => setaddModalShow(true)
-  const handleremoveModalShow = () => setremoveModalShow(true)
+  const handleaddModalShow = () => setaddModalShow(true);
+  const handleremoveModalShow = () => setremoveModalShow(true);
 
   const addMembersEvent = values => {
     const newEntries = [
       ...membersList,
       values.map(item => {
-        return { _id: item.value, email: item.label }
+        return { _id: item.value, email: item.label };
       })
-    ]
-    setMembersList([newEntries])
+    ];
+    setMembersList([newEntries]);
     // console.warn(membersList)
-    addmembersevent(values)
-  }
+    addmembersevent(values);
+  };
 
   const removeMemberEvent = id => {
-    removememberevent(id)
-  }
+    removememberevent(id);
+  };
 
   const removeMemberHandler = member => {
-    setSelectedMember(member)
-    handleremoveModalShow()
-  }
+    setSelectedMember(member);
+    handleremoveModalShow();
+  };
 
   useEffect(() => {
-    const currentWorkspace = localStorage.getItem("currentWorkspace")
-    const token = sessionStorage.getItem("token")
+    const currentWorkspace = localStorage.getItem("currentWorkspace");
+    const token = sessionStorage.getItem("token");
     axios
       .get(`https://api.zuri.chat/organizations/${currentWorkspace}/members`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then(r => {
         const users = r.data.data.map(item => {
-          return { value: item._id, label: item.email }
-        })
-        setUserList(users)
+          return { value: item._id, label: item.email };
+        });
+        setUserList(users);
       })
-      .catch(/*e => console.log("Organization not returning members", e)*/)
-    setisLoading(true)
-  }, [])
+      .catch(/*e => console.log("Organization not returning members", e)*/);
+    setisLoading(true);
+  }, []);
 
   return (
     <div>
@@ -326,7 +339,7 @@ function MembersPanel({ config }) {
         )}
       </ListGroup>
     </div>
-  )
+  );
 }
 function Integration() {
   return (
@@ -335,7 +348,7 @@ function Integration() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        flexDirection: 'column'
+        flexDirection: "column"
       }}
     >
       <Options>
@@ -349,26 +362,22 @@ function Integration() {
         <Buttons>See Upgrade Options</Buttons>
       </Options>
       <Options>
-        <Heading>
-          Apps
-        </Heading> 
+        <Heading>Apps</Heading>
         <Subheader>
-          Bring the tools you need into this channel to pull reports, start calls,
-          file tickets and more.
+          Bring the tools you need into this channel to pull reports, start
+          calls, file tickets and more.
         </Subheader>
         <Buttons>See Upgrade Options</Buttons>
       </Options>
       <Options>
-        <Heading>
-        Send emails to this channel  
-        </Heading> <Tag>PAID FEATURE</Tag>  
+        <Heading>Send emails to this channel</Heading> <Tag>PAID FEATURE</Tag>
         <Subheader>
-        Get an email address that posts incoming emails in this channel.
+          Get an email address that posts incoming emails in this channel.
         </Subheader>
         <Buttons>See Upgrade Options</Buttons>
       </Options>
     </div>
-  )
+  );
 }
 function SettingPanel({
   closeModal,
@@ -394,7 +403,7 @@ function SettingPanel({
           <Typography
             onClick={() => {
               // closeModal()
-              toggleArchiveChannel()
+              toggleArchiveChannel();
             }}
           >
             Archive this Channel
@@ -407,7 +416,7 @@ function SettingPanel({
           <Typography
             onClick={() => {
               // closeModal()
-              toggleDeleteChannel()
+              toggleDeleteChannel();
             }}
           >
             Delete this Channel
@@ -415,44 +424,44 @@ function SettingPanel({
         </Channels>
       </ChannelWrapper>
     </div>
-  )
+  );
 }
 const OverallWrapper = styled.div`
   color: #b0afb0;
-`
+`;
 const EachSegment = styled.div`
   display: flex;
   flex-direction: column;
   border: 2px solid #f6f6f6;
   margin-bottom: 1.11rem;
-  padding:10px 0;
-`
+  padding: 10px 0;
+`;
 const Label = styled.label`
   margin-left: 20px;
   padding-top: 10px;
   color: #1d1d1d;
-`
+`;
 const Input = styled.input`
   outline: none;
   border: none;
   padding: 10px 0 20px 20px;
   // background-color:#F9F9F9;
-`
+`;
 const Typography = styled.p`
   color: red;
   padding-left: 10px;
   font-weight: 500;
-  font-size:17px;
-`
+  font-size: 17px;
+`;
 const FileWrapper = styled.div`
   border: 2px solid #f6f6f6;
   margin-top: 20px;
-  padding:15px;
-`
+  padding: 15px;
+`;
 const FileContent = styled.h4`
   font-weight: 500;
   margin-left: 4px;
-`
+`;
 const MembersInput = styled.input`
   outline: none;
   width: 70%;
@@ -462,25 +471,25 @@ const MembersInput = styled.input`
   align-items: center;
   justify-content: center;
   padding-left: 30px;
-`
+`;
 const ModalTopic = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-`
+`;
 const Button = styled.button`
   border: none;
   background-color: white;
   cursor: pointer;
-`
+`;
 const ChannelName = styled.div`
   display: flex;
   align-items: center;
   font-size: 20px;
   color: black;
   font-weight: 700;
-`
+`;
 // const Select = styled.select`
 //   padding: 10px;
 //   border-radius: 5px;
@@ -494,7 +503,7 @@ const TabLists = styled(TabList)`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-`
+`;
 // const BorderBottom=styled.div`
 //   // padding:-1em;
 //   margin:-0.7em;
@@ -505,7 +514,7 @@ const AddPeopleIcons = styled.div`
   cursor: pointer;
   display: flex;
   align-items: center;
-`
+`;
 const UserIcon = styled.button`
   border: none;
   background-color: #e1fdf4;
@@ -513,13 +522,13 @@ const UserIcon = styled.button`
   color: #00b87c;
   border-radius: 10px;
   padding: 2px 4px;
-`
+`;
 const DialogOverlays = styled(DialogOverlay)`
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-`
+`;
 const DialogContents = styled(DialogContent)`
   width: 60%;
   height: 80%;
@@ -530,96 +539,93 @@ const DialogContents = styled(DialogContent)`
     background-color: #f6f6f6;
     height: 5px;
   }
-`
+`;
 const Description = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`
+`;
 
 const Topic = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`
+`;
 const EditLabel = styled.h5`
   color: blue;
   margin-right: 10px;
   cursor: pointer;
-  font-weight:500;
-  font-size:14px;
-`
+  font-weight: 500;
+  font-size: 14px;
+`;
 const EditContent = styled.h4`
   max-width: 70%;
   margin-top: 5px;
   color: #8b8b8b;
-`
+`;
 const Selection = styled.div`
   display: flex;
   align-items: center;
-`
+`;
 const ChannelWrapper = styled.div`
   display: flex;
   align-items: center;
   border: 2px solid #f6f6f6;
   margin-top: 20px;
-  padding:10px 0;
-`
+  padding: 10px 0;
+`;
 const ChannelContent = styled.h5`
   margin-left: 10px;
-`
+`;
 const Channels = styled.div`
   display: flex;
   align-items: center;
   margin-left: 20px;
-`
+`;
 export const Options = styled.div`
-  border: 1px solid #F6F6F6;
+  border: 1px solid #f6f6f6;
   padding: 15px;
   width: 90%;
-  margin-top:10px;
+  margin-top: 10px;
   @media (max-width: 350px) {
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-`
+`;
 const Heading = styled.div`
   display: flex;
   margin-top: 10px;
   font-weight: 700;
-  color: #1D1D1D;
-
-`
+  color: #1d1d1d;
+`;
 const Tag = styled.button`
-  color: #032B70;
-  background-color: #E8F0FF;
+  color: #032b70;
+  background-color: #e8f0ff;
   border: none;
   outline: none;
   margin-left: 0.25rem;
   padding: 0.5rem 1rem;
   border-radius: 5px;
-  font-size:8px;
-`
+  font-size: 8px;
+`;
 const Subheader = styled.h4`
   font-weight: 400;
-  color:#B0AFB0;
-
-`
+  color: #b0afb0;
+`;
 const Buttons = styled.button`
   padding: 5px;
-  border: 2px solid #B0AFB0;
-  color:#B0AFB0;
-  ;
+  border: 2px solid #b0afb0;
+  color: #b0afb0;
   border-radius: 5px;
-`
+`;
 const RemoveLink = styled.p`
   color: blue;
-  font-weight:500;
-  font-size:14px;
+  font-weight: 500;
+  font-size: 14px;
 
   &:hover {
     text-decoration: underline;
   }
 `;
-export default PluginModal
+export default PluginModal;
