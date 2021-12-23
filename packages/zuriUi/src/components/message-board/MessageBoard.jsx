@@ -7,7 +7,7 @@ import MessageCard from "../message-card/MessageCard";
 import { MessageBoardContainer } from "./MessageBoard.styled";
 import MoreMenu from "./components/more-menu/MoreMenu";
 import Overlay from "./components/overlay/Overlay";
-import Emojis from "../emojis/Emojis";
+import Emojis from "../Emojis/Emojis";
 
 /**
  * Message Board Component
