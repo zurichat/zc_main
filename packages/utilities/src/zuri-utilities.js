@@ -11,15 +11,26 @@ export const GetUserInfo = async () => {
   let token = sessionStorage.getItem("token");
 
   if ((user && token) !== null) {
+    const url = `https://api.zuri.chat/organizations/${currentWorkspace}/members/?query=${user.email}`;
+    const cache = await caches.open("zuri-utilities-getuserinfo");
+    const cachedUserInfoResponse = await cache.match(url);
+    if (cachedUserInfoResponse) {
+      const cachedUserInfo = await cachedUserInfoResponse.json();
+      console.log("GetUserInfo-cached");
+      const userInfo = Array.isArray(cachedUserInfo.data);
+      let userData = {
+        currentWorkspace,
+        token,
+        user: userInfo ? { ...cachedUserInfo.data[0] } : {}
+      };
+      return userData;
+    }
     try {
-      const response = await axios.get(
-        `https://api.zuri.chat/organizations/${currentWorkspace}/members/?query=${user.email}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
+      const response = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${token}`
         }
-      );
+      });
       const userInfo = Array.isArray(response.data.data);
       let userData = {
         currentWorkspace,
@@ -28,10 +39,10 @@ export const GetUserInfo = async () => {
       };
 
       localStorage.setItem(`userData`, JSON.stringify(userData));
-
+      cache.add(url);
       return userData;
     } catch (err) {
-      console.error(err);
+      console.error("failed to get user info in current workspace", err);
     }
   } else {
     console.warn("YOU ARE NOT LOGGED IN, PLEASE LOG IN");
@@ -52,44 +63,57 @@ export const GetWorkspaceUser = async identifier => {
   const token = sessionStorage.getItem("token");
 
   try {
-    const response = await axios.get(
-      `https://api.zuri.chat/organizations/${currentWorkspace}/members/?query=${identifier}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
+    const url = `https://api.zuri.chat/organizations/${currentWorkspace}/members/?query=${identifier}`;
+    const cache = await caches.open("zuri-utilities-getworkspaceuser");
+    const cachedWorkspaceUserResponse = await cache.match(url);
+    if (cachedWorkspaceUserResponse) {
+      const cachedWorkspaceUser = await cachedWorkspaceUserResponse.json();
+      console.log("GetWorkspaceUser-cached");
+      return cachedWorkspaceUser.data[0];
+    }
+    const response = await axios.get(url, {
+      headers: {
+        Authorization: `Bearer ${token}`
       }
-    );
+    });
 
     if (response.data.data) {
+      cache.add(url);
       return response.data.data[0];
     } else {
       throw Error("No users matching identifier found in workspace");
     }
   } catch (error) {
-    throw Error(error);
+    console.error("failed to get user info in current workspace", error);
   }
 };
 
 export const GetWorkspaceUsers = async () => {
   try {
-    const res = await axios.get(
-      `https://api.zuri.chat/organizations/${currentWorkspace}/members`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
+    const url = `https://api.zuri.chat/organizations/${currentWorkspace}/members`;
+    const cache = await caches.open("zuri-utilities-getworkspaceusers");
+    const cachedWorkspaceUsersResponse = await cache.match(url);
+    if (cachedWorkspaceUsersResponse) {
+      const cachedWorkspaceUsers = await cachedWorkspaceUsersResponse.json();
+      console.log("GetWorkspaceUsers-cached");
+      const user = cachedWorkspaceUsers.data;
+      return { totalUsers: user.length, users: user };
+    }
+    const res = await axios.get(url, {
+      headers: {
+        Authorization: `Bearer ${token}`
       }
-    );
+    });
     let user = res.data.data;
     // let workSpaceUsersData = { totalUsers: user.length, ...user.slice(0, 100) }
     // console.log(user);
     let workSpaceUsersData = { totalUsers: user.length, users: user };
     // console.log(user.slice(0, 100))
     // console.log(workSpaceUsersData)
+    cache.add(url);
     return workSpaceUsersData;
   } catch (err) {
-    console.error(err);
+    console.error("failed to get users in the current workspace", err);
   }
 
   // localStorage.setItem('WorkspaceUsers', JSON.stringify(res.data.data))
