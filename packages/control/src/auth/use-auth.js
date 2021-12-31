@@ -84,6 +84,7 @@ function useProvideAuth() {
         }
       }
     );
+    setUser(null);
     return true;
   };
   const sendPasswordResetEmail = email => {
