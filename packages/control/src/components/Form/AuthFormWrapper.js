@@ -66,7 +66,7 @@ const FormWrapper = ({
 
           <div className={`${styles.btnContainer}`}>
             <button
-              disabled={!disabled}
+              disabled={disabled}
               className={`${styles.btn}`}
               value="submit"
               type="submit"

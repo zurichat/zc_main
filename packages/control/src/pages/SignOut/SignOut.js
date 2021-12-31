@@ -1,12 +1,14 @@
-import React from "react";
+import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 
 import ZuriChatLogoTitle from "../../assets/zuri-chat-logo/logo-title.svg";
+import { useAuth } from "../../auth/use-auth";
 
 export default function Signout() {
+  const auth = useAuth();
   const { t } = useTranslation();
 
   const history = useHistory();
@@ -17,20 +19,12 @@ export default function Signout() {
 
   // Switch Workspace
   const switchWorkspace = () => {
-    history.push("/choose-workspace");
+    history.replace("/login");
   };
 
-  const ActualSignOut = async () => {
-    localStorage.clear();
-    sessionStorage.clear();
-    history.push("/");
-
-    await axios.post(`https://api.zuri.chat/auth/logout`, {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    });
-  };
+  useEffect(() => {
+    auth.signout(token);
+  }, []);
 
   return (
     <SignoutStyleWrapper>
@@ -53,7 +47,7 @@ export default function Signout() {
 
         <p className="login">
           or
-          <a onClick={() => ActualSignOut()} className="link">
+          <a onClick={() => switchWorkspace()} className="link">
             {t("signout_loginText")}
           </a>
           {t("signout_postLoginText")}
