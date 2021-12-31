@@ -2,9 +2,11 @@ import axios from "axios";
 import Centrifuge from "centrifuge";
 import { themeColors as colors } from "./themecolors";
 
-let currentWorkspace = localStorage.getItem("currentWorkspace");
-let token = sessionStorage.getItem("token");
-
+const utilitiesCaches = [
+  "zuri-utilities-getuserinfo",
+  "zuri-utilities-getworkspaceuser",
+  "zuri-utilities-getworkspaceusers"
+];
 export const GetUserInfo = async () => {
   let user = JSON.parse(sessionStorage.getItem("user"));
   const currentWorkspace = localStorage.getItem("currentWorkspace");
@@ -89,6 +91,8 @@ export const GetWorkspaceUser = async identifier => {
 };
 
 export const GetWorkspaceUsers = async () => {
+  const currentWorkspace = localStorage.getItem("currentWorkspace");
+  const token = sessionStorage.getItem("token");
   try {
     const url = `https://api.zuri.chat/organizations/${currentWorkspace}/members`;
     const cache = await caches.open("zuri-utilities-getworkspaceusers");
@@ -119,12 +123,22 @@ export const GetWorkspaceUsers = async () => {
   // localStorage.setItem('WorkspaceUsers', JSON.stringify(res.data.data))
 };
 
+export const DeleteUtilitiesCache = async cacheName => {
+  return await caches.delete(cacheName);
+};
+export const DeleteAllUtilitiesCache = async () => {
+  utilitiesCaches.forEach(async cacheName => {
+    await DeleteUtilitiesCache(cacheName);
+  });
+  return true;
+};
+
 // Setup Centrifugo Route
 const centrifuge = new Centrifuge(
   "wss://realtime.zuri.chat/connection/websocket"
 );
 
-centrifuge.setConnectData({ bearer: token });
+centrifuge.setConnectData({ bearer: sessionStorage.getItem("token") });
 
 centrifuge.connect();
 centrifuge.on("connect", function (connectCtx) {

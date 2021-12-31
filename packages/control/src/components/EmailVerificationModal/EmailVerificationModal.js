@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { navigateToUrl } from "single-spa";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { DialogOverlay, DialogContent } from "@reach/dialog";
@@ -9,14 +10,16 @@ import styles from "./EmailVerificationModal.module.css";
 import CodeInput from "./CodeInput";
 import EmailVerificationOkayIcon from "./assets/EmailVerificationOkayIcon.svg";
 import EmailVerificationPaperPlane from "./assets/EmailVerificationPaperPlane.svg";
+import { useAuth } from "../../auth/use-auth";
 
 export default function EmailVerificationModal({ email }) {
+  const auth = useAuth();
   const [success, setsuccess] = React.useState(false);
   const [errorMsg, seterrorMsg] = React.useState(false);
 
   const handleSubmit = async code => {
-    await axios
-      .post(`https://api.zuri.chat/account/verify-account`, { code })
+    auth
+      .confirmSignupVerificationCode(code)
       .then(res => {
         if (res.status === 200) {
           setsuccess(true);
@@ -31,13 +34,9 @@ export default function EmailVerificationModal({ email }) {
       });
   };
 
-  const goHome = () => {
-    window.location.href = "/create-workspace";
-  };
-
   return (
     <Overlay>
-      <Content>
+      <Content aria-label="verification code modal">
         {!success ? (
           <div className={styles.main}>
             <img
@@ -86,11 +85,7 @@ export default function EmailVerificationModal({ email }) {
             />
             <h2>Email Verification Succesful!</h2>
             <p>Click on the Button to continue</p>
-            <PrimaryButton
-              onClick={() => {
-                goHome();
-              }}
-            >
+            <PrimaryButton onClick={() => navigateToUrl("/login")}>
               Continue
             </PrimaryButton>
           </Successdiv>

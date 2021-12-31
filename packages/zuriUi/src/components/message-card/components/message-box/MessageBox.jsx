@@ -7,7 +7,10 @@ export default function MessageBox({ message }) {
     <div className="msg-container">
       <div>
         <img
-          src={message.sender.sender_image_url || avatar}
+          src={
+            message.sender.sender_image_url ||
+            `https://i.pravatar.cc/300?u=${message.sender_id}`
+          }
           alt="user-avatar"
           className="user-avatar"
         />

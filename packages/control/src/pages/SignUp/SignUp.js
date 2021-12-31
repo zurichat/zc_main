@@ -10,9 +10,11 @@ import {
   AuthFormWrapper,
   EmailVerificationModal
 } from "../../components";
+import { useAuth } from "../../auth/use-auth";
 
 export default function Index() {
   const { t } = useTranslation();
+  const auth = useAuth();
 
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
@@ -21,7 +23,7 @@ export default function Index() {
   const [error, seterror] = React.useState("");
   const [nameerror, setnameerror] = React.useState("");
   const [passworderror, setpassworderror] = React.useState("");
-  const [emailerror, setemailerror] = React.useState("");
+  const [emailerror, setemailerror] = React.useState();
   const [showDialog, setShowDialog] = React.useState(false);
 
   const handleSubmit = async e => {
@@ -59,41 +61,32 @@ export default function Index() {
       }
       return (other_name += `${name} `);
     });
-
-    await axios
-      .post("https://api.zuri.chat/users", {
+    auth
+      .sendSignupVerificationCode({
         first_name,
         last_name: other_name,
         email,
         password
       })
-      .then(response => {
-        const { data, message } = response.data;
-        // console.log(response.data)
+      .then(res => {
         setShowDialog(true);
 
         //Store token in localstorage
-        sessionStorage.setItem("user_id", data.InsertedId);
-        localStorage.setItem("newUserEmail", JSON.stringify(email));
-        localStorage.setItem("userUserPassword", JSON.stringify(password));
-
-        //Display message
-        // alert(message) //Change this when there is a design
-
-        // setTimeout(() => {
-        //   //Redirect to some other page
-        //   // history.push('/create-workspace');
-        // }, 2000);
+        sessionStorage.setItem("user_id", res.InsertedId);
       })
       .catch(error => {
-        const { data } = error.response;
+        let errorMessage = "";
+        if (error.response) {
+          errorMessage = error.response.data.message;
+        } else {
+          errorMessage = error.message;
+        }
         setShowDialog(false);
 
-        RegExp(/Users with email/).test(data.message) &&
+        if (RegExp(/User with email/i).test(errorMessage)) {
           setemailerror("This email is already in use");
-
-        !RegExp("Users with email").test(data.message) &&
-          seterror(data.message);
+          seterror(errorMessage);
+        }
       });
   };
   return (
@@ -111,7 +104,7 @@ export default function Index() {
           googleHeader={t("googleHeader")}
           topLineText={t("topLineText")}
           submitButtonName={t("signUpsubmitButtonName")}
-          disabled={name && email && password && tos}
+          disabled={!(name && email && password && tos)}
           error={error}
           handleSubmit={handleSubmit}
           bottomLine={t("bottomLine")}
