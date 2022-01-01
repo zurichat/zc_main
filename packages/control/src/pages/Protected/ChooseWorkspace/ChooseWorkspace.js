@@ -10,7 +10,9 @@ import {
 
 export default function Index() {
   const user = JSON.parse(sessionStorage.getItem("user")) || null;
-  const [organizations, setOrganizations] = React.useState([]);
+  const [organizations, setOrganizations] = React.useState(
+    JSON.parse(sessionStorage.getItem("organisations"))
+  );
 
   async function fetchData() {
     const result = await axios.get(
@@ -22,7 +24,7 @@ export default function Index() {
   }
 
   React.useEffect(() => {
-    if (user) {
+    if (user && !Array.isArray(organizations)) {
       fetchData();
     }
   }, []);

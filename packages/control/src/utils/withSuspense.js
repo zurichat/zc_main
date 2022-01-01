@@ -3,7 +3,7 @@ import { GeneralLoading } from "../components";
 
 export default function withSuspense(WrappedComponent) {
   return (
-    <Suspense fallback={<GeneralLoading text="Lazy Loading..." />}>
+    <Suspense fallback={<GeneralLoading text="Loading..." />}>
       <WrappedComponent />
     </Suspense>
   );

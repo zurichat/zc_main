@@ -10,8 +10,10 @@ import {
   AuthFormWrapper,
   GeneralLoading
 } from "../../components";
+import { useAuth } from "../../auth/use-auth";
 
 export default function Index() {
+  const auth = useAuth();
   const { t } = useTranslation();
   const history = useHistory();
 
@@ -22,7 +24,6 @@ export default function Index() {
   const [passworderror, setpassworderror] = React.useState("");
   const [rememberMe, setRememberMe] = React.useState("");
   const [Loading, setLoading] = React.useState(false);
-  const [loggingIn, setLoggingIn] = React.useState(false);
 
   React.useEffect(() => {
     const userInfo = sessionStorage.getItem(`user`);
@@ -36,76 +37,38 @@ export default function Index() {
     e.preventDefault();
     setemailerror("");
     setpassworderror("");
-    setLoggingIn(true);
 
     if (!email) {
       setemailerror(`Enter an email address`);
-      setLoggingIn(false);
       return;
     }
 
     if (!password) {
       setpassworderror(`Enter a Password`);
-      setLoggingIn(false);
       return;
     }
-
-    await axios
-      .post("https://api.zuri.chat/auth/login", {
-        email,
-        password
-      })
-      .then(response => {
-        const { data, message } = response.data;
-
-        setLoading(true);
-        setLoggingIn(false);
+    auth
+      .signin(email, password)
+      .then(userData => {
+        //Store token in localstorage
+        sessionStorage.setItem("token", userData.user.token);
 
         //Store token in localstorage
-        sessionStorage.setItem("token", data.user.token);
-
-        //Store token in localstorage
-        sessionStorage.setItem("session_id", data.session_id);
+        sessionStorage.setItem("session_id", userData.session_id);
 
         //Store user copy in localstorage
-        sessionStorage.setItem("user", JSON.stringify(data.user));
+        sessionStorage.setItem("user", JSON.stringify(userData.user));
 
-        //Return the login data globally
-        // $behaviorSubject.next(response.data)
+        sessionStorage.setItem(
+          "organisations",
+          JSON.stringify(userData.userWorkspaces)
+        );
 
-        // Switch for redirects
-        axios
-          .get(`https://api.zuri.chat/users/${data.user.email}/organizations`, {
-            headers: {
-              Authorization: `Bearer ${data.user.token}`
-            }
-          })
-          .then(res => {
-            const orgs = res.data.data.length;
-            // console.log(res.data.data)
-            sessionStorage.setItem(
-              "organisations",
-              JSON.stringify(res.data.data)
-            );
-            // console.log('reg orgs', orgs)
-
-            switch (true) {
-              case orgs >= 1:
-                history.push("/choose-workspace");
-                // console.log("here", orgs);
-                // history.push("/channels");
-                //navigateToUrl("/channels");
-                break;
-              case orgs < 1:
-                history.push("/create-workspace");
-                break;
-              default:
-              // goToDefaultChannel();
-            }
-          })
-          .catch(err => {
-            throw err;
-          });
+        if (userData.userWorkspaces.length) {
+          history.push("/choose-workspace");
+        } else {
+          history.push("/create-workspace");
+        }
       })
       .catch(error => {
         const { data } = error.response;
@@ -123,7 +86,6 @@ export default function Index() {
 
         //Render error message to the user
         seterror(data.message); //Change this when there is a design
-        setLoggingIn(false);
       });
   };
 
@@ -138,7 +100,7 @@ export default function Index() {
           googleHeader={t("google_header")}
           topLineText={t("topline_text")}
           submitButtonName={t("LoginsubmitButtonName")}
-          disabled={email && password}
+          disabled={!(email && password)}
           error={error}
           handleSubmit={handleSubmit}
           bottomLine={t("bottomLine")}

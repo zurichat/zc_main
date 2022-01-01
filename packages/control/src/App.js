@@ -1,6 +1,6 @@
 import { lazily } from "react-lazily";
 import React, { Suspense } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 
 // All components imported here
 import { GeneralErrorBoundary, GeneralLoading } from "./components";
@@ -20,10 +20,52 @@ import {
   PluginsPage,
   PricingPage
 } from "./pages";
+import { useAuth } from "./auth/use-auth";
 
 const { Workspace, CreateWorkspace, ChooseWorkspace } = lazily(() =>
   import("./pages/Protected")
 );
+
+const ProtectedRoute = ({ children, ...rest }) => {
+  let auth = useAuth();
+  return (
+    <Route
+      {...rest}
+      render={({ location }) =>
+        auth.user ? (
+          children
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/login",
+              state: { from: location }
+            }}
+          />
+        )
+      }
+    />
+  );
+};
+const ProtectFromAuthRoute = ({ children, ...rest }) => {
+  let auth = useAuth();
+  return (
+    <Route
+      {...rest}
+      render={({ location }) =>
+        auth.user ? (
+          <Redirect
+            to={{
+              pathname: "/choose-workspace",
+              state: { from: location }
+            }}
+          />
+        ) : (
+          children
+        )
+      }
+    />
+  );
+};
 
 const App = () => (
   <BrowserRouter>
@@ -32,31 +74,31 @@ const App = () => (
         <Switch>
           {/* <GeneralLoading /> */}
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={SignUp} />
-          <Route exact path="/signout" component={SignOut} />
+          {/* <Route exact path="/signout" component={SignOut} /> */}
           <Route exact path="/about" component={AboutPage} />
           <Route exact path="/contact-us" component={ContactUsPage} />
           <Route exact path="/downloads" component={DownloadsPage} />
           <Route exact path="/plugins" component={PluginsPage} />
           <Route exact path="/pricing" component={PricingPage} />
 
-          <Route
-            exact
-            path="/choose-workspace"
-            render={() => withSuspense(ChooseWorkspace)}
-          />
-
-          <Route
-            path="/create-workspace"
-            render={() => withSuspense(CreateWorkspace)}
-          />
-
-          <Route
-            path="/workspace/:workspaceId"
-            component={() => withSuspense(Workspace)}
-          />
-
+          <ProtectFromAuthRoute exact path="/login">
+            <Login />
+          </ProtectFromAuthRoute>
+          <ProtectFromAuthRoute exact path="/signup">
+            <SignUp />
+          </ProtectFromAuthRoute>
+          <ProtectedRoute exact path="/signout">
+            <SignOut />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/choose-workspace">
+            {withSuspense(ChooseWorkspace)}
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/create-workspace">
+            {withSuspense(CreateWorkspace)}
+          </ProtectedRoute>
+          <ProtectedRoute path="/workspace/:workspaceId">
+            {withSuspense(Workspace)}
+          </ProtectedRoute>
           <Route
             component={() => (
               <GeneralLoading text="404 - (Refactoring in Progress)" />
