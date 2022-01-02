@@ -50,13 +50,17 @@ export const WorkspaceWrapperStyle = styled.div`
   left: 20%;
   background-color: var(--bg-color);
   overflow: auto;
-  margin-left: 5px;
+  ${"" /* margin-left: 5px; */}
   z-index: -1;
+
+  & > #zuri-plugin-load-section {
+    height: 100%;
+  }
 
   @media (max-width: 768px) {
     left: 0;
     width: 100%;
-    position: relative;
+    ${"" /* position: relative; */}
     z-index: unset;
   }
 `;
