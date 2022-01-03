@@ -50,8 +50,8 @@ const RoomItem = ({ room, baseUrl, pluginId }) => {
   return (
     <li
       ref={click}
-      className={`row py-1 px-2 ${styles.item__list} ${
-        match?.isExact && styles.item__list__active
+      className={`row py-1 px-2 ${
+        match?.isExact ? styles.item__list__active : styles.item__list
       }`}
       onClick={() => {
         localStorage.setItem("currentPlugin", pluginIdPath);
