@@ -1,10 +1,11 @@
-import React from "react";
+import { useEffect } from "react";
 import {
   Switch,
   Route,
   useParams,
   useHistory,
-  useRouteMatch
+  useRouteMatch,
+  useLocation
 } from "react-router-dom";
 import { lazily } from "react-lazily";
 import {
@@ -21,19 +22,30 @@ const { Sidebar, TopBar } = lazily(() =>
 
 export default function Index() {
   const { workspaceId } = useParams();
+  const location = useLocation();
   const history = useHistory();
   const match = useRouteMatch(`/workspace/${workspaceId}`);
-
-  React.useEffect(() => {
+  const pluginsName = ["plugin-music"];
+  useEffect(() => {
     window.dispatchEvent(new Event("zuri-plugin-load"));
     match.isExact &&
       history.replace(`/workspace/${workspaceId}/plugin-chat/all-dms`);
   }, []);
   // Temporary
-  React.useEffect(() => {
-    document.title = "Workspace";
+  useEffect(() => {
     localStorage.setItem("currentWorkspace", workspaceId);
   }, [workspaceId]);
+  useEffect(() => {
+    const activePlugin = pluginsName.find(plugin =>
+      location.pathname.includes(plugin)
+    );
+    if (activePlugin) {
+      document.title = `Zuri | ${activePlugin?.replace(
+        "plugin-",
+        ""
+      )} | ${localStorage.getItem("orgName")}`;
+    }
+  }, [location.pathname]);
 
   return (
     <>
