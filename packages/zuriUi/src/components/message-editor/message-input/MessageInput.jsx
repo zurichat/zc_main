@@ -116,7 +116,10 @@ const MessageInput = ({ onSendMessage, users, onAttachFile }) => {
   };
 
   const sendMessage = contentState => {
-    if (contentState.hasText()) {
+    if (
+      contentState.hasText() &&
+      contentState.getPlainText().trim().length > 0
+    ) {
       onSendMessage(convertToRaw(contentState));
       clearEditor();
     }
