@@ -79,7 +79,7 @@ function MessageBoard({
 
   useEffect(() => {
     shouldScrollToBottom && scrollToBottom();
-    setScrollToBottom(false);
+    setScrollToBottom(true);
   }, [messages]);
 
   return (
