@@ -87,7 +87,7 @@ const Toolbar = props => {
   };
 
   const handleClickSendMessage = () => {
-    sendMessageHandler(convertToRaw(editorState.getCurrentContent()));
+    sendMessageHandler(editorState.getCurrentContent());
     setEditorState(EditorState.createEmpty());
   };
 

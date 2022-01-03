@@ -1,6 +1,13 @@
 import { useState, useCallback, useEffect } from "react";
 import styled from "styled-components";
-import { EditorState, RichUtils, convertToRaw } from "draft-js";
+import {
+  EditorState,
+  RichUtils,
+  convertToRaw,
+  getDefaultKeyBinding,
+  ContentState,
+  Modifier
+} from "draft-js";
 import Editor from "@draft-js-plugins/editor";
 import createMentionPlugin, {
   defaultSuggestionsFilter
@@ -27,6 +34,49 @@ const { EmojiSuggestions, EmojiSelect } = emojiPlugin;
 
 const mentionPlugin = createMentionPlugin({ mentionPrefix: "@" });
 const { MentionSuggestions } = mentionPlugin;
+
+function keyBindingFn(e) {
+  if (e.code === "Enter") {
+    if (e.shiftKey || e.nativeEvent.shiftKey) {
+      return "newline";
+    } else {
+      return "send";
+    }
+  }
+  return getDefaultKeyBinding(e);
+}
+
+// https://github.com/jpuri/draftjs-utils/blob/master/js/block.js
+const removeSelectedBlocksStyle = editorState => {
+  const newContentState = RichUtils.tryToRemoveBlockStyle(editorState);
+  if (newContentState) {
+    return EditorState.push(editorState, newContentState, "change-block-type");
+  }
+  return editorState;
+};
+
+// https://github.com/jpuri/draftjs-utils/blob/master/js/block.js
+export const getResetEditorState = editorState => {
+  const blocks = editorState.getCurrentContent().getBlockMap().toList();
+  const updatedSelection = editorState.getSelection().merge({
+    anchorKey: blocks.first().get("key"),
+    anchorOffset: 0,
+    focusKey: blocks.last().get("key"),
+    focusOffset: blocks.last().getLength()
+  });
+  const newContentState = Modifier.removeRange(
+    editorState.getCurrentContent(),
+    updatedSelection,
+    "forward"
+  );
+
+  const newState = EditorState.push(
+    editorState,
+    newContentState,
+    "remove-range"
+  );
+  return removeSelectedBlocksStyle(newState);
+};
 
 const MessageInput = ({ onSendMessage, users, onAttachFile }) => {
   const [data, setData] = useState("");
@@ -59,8 +109,36 @@ const MessageInput = ({ onSendMessage, users, onAttachFile }) => {
     editorStates(editorState);
   };
 
+  const clearEditor = () => {
+    setEditorState(getResetEditorState(editorState));
+  };
+
+  const sendMessage = contentState => {
+    if (
+      contentState.hasText() &&
+      contentState.getPlainText().trim().length > 0
+    ) {
+      onSendMessage(convertToRaw(contentState));
+      clearEditor();
+    }
+  };
+
   const handleKeyCommand = (command, editorState) => {
     const newState = RichUtils.handleKeyCommand(editorState, command);
+
+    if (!newState) {
+      if (command === "newline") {
+        const newEditorState = RichUtils.insertSoftNewline(editorState);
+        if (newEditorState !== editorState) {
+          onChange(newEditorState);
+        }
+        return "handled";
+      }
+      if (command === "send") {
+        sendMessage(editorState.getCurrentContent());
+        return "handled";
+      }
+    }
 
     if (newState) {
       setEditorState(newState);
@@ -115,6 +193,7 @@ const MessageInput = ({ onSendMessage, users, onAttachFile }) => {
             editorState={editorState}
             onChange={onChange}
             handleKeyCommand={handleKeyCommand}
+            keyBindingFn={keyBindingFn}
             plugins={[emojiPlugin, mentionPlugin]}
           />
         </div>
@@ -129,7 +208,7 @@ const MessageInput = ({ onSendMessage, users, onAttachFile }) => {
           editorState={editorState}
           setEditorState={setEditorState}
           emojiSelect={<EmojiSelect />}
-          sendMessageHandler={onSendMessage}
+          sendMessageHandler={sendMessage}
           sendAttachedFileHandler={onAttachFile}
           sentAttachedFile={sentAttachedFile =>
             setSentAttachedFile(sentAttachedFile)
