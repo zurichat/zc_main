@@ -40,7 +40,7 @@
 
   <!-- Dynamic Title Tag for Plugins -->
   <script>
-    let getTitleOfPage = function () {
+    (() => {
       let getURL = location.pathname;
       let appendZuri = `- Zuri Chat `;
       if (getURL !== '/') {
@@ -48,8 +48,7 @@
         getURL = getURL.charAt(0).toUpperCase() + getURL.slice(1);
         document.title = getURL + ' ' + appendZuri;
       };
-    };
-    setInterval(getTitleOfPage, 500);
+    })()
   </script>
   <!-- End -->
 

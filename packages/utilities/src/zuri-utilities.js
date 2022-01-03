@@ -133,6 +133,13 @@ export const DeleteAllUtilitiesCache = async () => {
   return true;
 };
 
+export const SetPageTitle = pageTitle => {
+  document.title = `Zuri | ${pageTitle} | ${
+    localStorage.getItem("orgName") || ""
+  }`;
+  return true;
+};
+
 // Setup Centrifugo Route
 const centrifuge = new Centrifuge(
   "wss://realtime.zuri.chat/connection/websocket"
