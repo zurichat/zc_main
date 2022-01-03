@@ -34,24 +34,18 @@ const SidebarHeader = props => {
   return (
     <div className={` ${styles.subCon1}`}>
       <div className={`row ${styles.orgDiv}`}>
-        <div className={`col-12 px-3 sidebar-header-div ${styles.orgInfo}`}>
-          <div
-            onClick={() => toggle()}
-            className={`row p-0 ${styles.orgHeader}`}
-          >
-            <span className={`col-8 mb-0 ${styles.orgTitle}`}>
+        <div className={`col-12 ${styles.orgInfo}`}>
+          <div onClick={() => toggle()} className={styles.orgHeader}>
+            <p className={styles.orgTitle}>
               {props.state.organization_info &&
                 props.state.organization_info.name}
-            </span>
-            <span
-              className={`col-4 p-0 ${styles.sidebar__header__arrow}`}
+            </p>
+            <p
+              className={styles.orgHeaderArrowDown}
               onClick={() => showModal()}
             >
-              <MdKeyboardArrowDown
-                className={`my-auto`}
-                style={{ color: `#fff` }}
-              />
-            </span>{" "}
+              <MdKeyboardArrowDown style={{ color: `#fff` }} />
+            </p>{" "}
             {/* {openModal && (
               <NewInviteModal
                 openModal={openModal}
@@ -59,9 +53,9 @@ const SidebarHeader = props => {
               />
             )} */}
           </div>
-          <div className={`row ${styles.newMessage}`}>
+          <div className={styles.newMessage}>
             <img
-              className={`col-3 img-fluid w-100 ${styles.newMsgIcon}`}
+              className={`img-fluid w-100 ${styles.newMsgIcon}`}
               src={newMsgIcon}
               alt="message"
             />
