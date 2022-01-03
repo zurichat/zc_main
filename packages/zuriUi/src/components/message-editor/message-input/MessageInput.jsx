@@ -37,7 +37,6 @@ const { MentionSuggestions } = mentionPlugin;
 
 function keyBindingFn(e) {
   if (e.code === "Enter") {
-    /* `Enter` key */
     if (e.shiftKey || e.nativeEvent.shiftKey) {
       return "newline";
     } else {
@@ -111,7 +110,6 @@ const MessageInput = ({ onSendMessage, users, onAttachFile }) => {
   };
 
   const clearEditor = () => {
-    // const newEditorState = EditorState.push(editorState, ContentState.createFromText(''));
     setEditorState(getResetEditorState(editorState));
   };
 
@@ -130,7 +128,6 @@ const MessageInput = ({ onSendMessage, users, onAttachFile }) => {
 
     if (!newState) {
       if (command === "newline") {
-        // New line
         const newEditorState = RichUtils.insertSoftNewline(editorState);
         if (newEditorState !== editorState) {
           onChange(newEditorState);
