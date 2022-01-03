@@ -50,24 +50,33 @@
   background-color: #00b87c;
   color: #fff;
   display: flex;
+  flex-flow: row nowrap;
   align-items: center;
-  justify-content: space-between;
-  padding: auto 0;
-}
-
-.orgTitle {
-  font-weight: bold;
-  font-size: 1.125em;
-  line-height: 28px;
-  width: max-content;
-  padding-right: 8px;
-  line-height: 1.2em;
 }
 
 .orgHeader {
   cursor: pointer;
+  flex-grow: 1;
+  width: 70%;
   display: flex;
-  width: -webkit-fill-available;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.orgTitle {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.125em;
+  line-height: 28px;
+  max-width: 80%;
+  line-height: 1.2em;
+  overflow-x: clip;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.orgHeaderArrowDown {
+  margin: 0;
 }
 
 .arrowDown {
@@ -397,3 +406,10 @@
 .displayCategory {
   display: block;
 }
+
+/* MEDIA QUERIES */
+/* @media (max-width: 768px) {
+  .orgTitle {
+    display: none;
+  }
+} */
