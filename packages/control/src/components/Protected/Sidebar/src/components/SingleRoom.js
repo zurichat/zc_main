@@ -9,8 +9,8 @@ export default function SingleRoom({ image, name, link }) {
   const match = useRouteMatch(link);
   return (
     <div
-      className={`row p-0 ${styles.dropDown} text-decoration-none ${
-        match?.isExact ? styles.dropdown_active : ""
+      className={`row p-0 text-decoration-none ${
+        match?.isExact ? styles.dropdown_active : styles.dropDown
       }`}
     >
       <div

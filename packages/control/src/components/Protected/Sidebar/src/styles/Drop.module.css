@@ -1,12 +1,22 @@
-.dropDown {
+.dropDown,
+.dropdown_active {
   cursor: pointer;
 }
 
-.dropdown_active,
-.item__list__active,
 .dropDown:hover,
+.item__list:hover,
 .dropDown::selection {
   background-color: #f1fffa;
+}
+
+.dropdown_active,
+.item__list__active {
+  background-color: #7ed5af;
+}
+
+.dropdown_active p.dropdown__room,
+.item__list__active div.dropDown__name {
+  color: #000;
 }
 
 .dropDown__name {
@@ -21,7 +31,8 @@
   width: 30px;
   /* margin-inline-end: 0.1rem; */
 }
-.item__list {
+.item__list,
+.item__list__active {
   white-space: nowrap;
   cursor: pointer;
 }
