@@ -55,7 +55,7 @@
     "draft-js-plugin-editor": "^0.0.0",
     "draft-js-plugins-editor": "^3.0.0",
     "emoji-mart": "^3.0.1",
-    "luxon": "^2.1.1",
+    "luxon": "^2.3.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.4",
     "react-click-away-listener": "^2.0.5",

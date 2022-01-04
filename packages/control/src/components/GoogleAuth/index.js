@@ -3,12 +3,13 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { useGoogleLogin } from "react-google-login";
 import { GetUserInfo } from "@zuri/utilities";
-//import { navigateToUrl } from "single-spa";
+import { useAuth } from "../../auth/use-auth";
 
 const CLIENT_ID =
   "943002582641-ek6jakave3irmueaqfdoc0754v83qf6e.apps.googleusercontent.com";
 const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
   const history = useHistory();
+  let auth = useAuth();
   const onSuccess = res => {
     if (googleHeader === "Sign up with Google") {
       axios
@@ -17,6 +18,7 @@ const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
         )
         .then(res => {
           const { data } = res.data;
+          auth.handleSocialSetUser(data.user);
           //Store token in localstorage
           sessionStorage.setItem("token", data.user.token);
           //Store session_id in localstorage
@@ -37,19 +39,18 @@ const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
         )
         .then(res => {
           const { data } = res.data;
+          auth.handleSocialSetUser(data.user);
           //Store token in localstorage
           sessionStorage.setItem("token", data.user.token);
           //Store session_id in localstorage
           sessionStorage.setItem("session_id", data.session_id);
           //Store user copy in localstorage
           sessionStorage.setItem("user", JSON.stringify(data.user));
-          setTimeout(() => {
-            GetUserInfo();
-            history.push("/choose-workspace");
-            // history.push("/channels");
-            //navigateToUrl("/channels");
-            setLoading(false);
-          }, 2000);
+
+          GetUserInfo();
+          history.push("/choose-workspace");
+          setLoading(false);
+          console.log(data.user);
         })
         .catch(err => {
           console.error(err);

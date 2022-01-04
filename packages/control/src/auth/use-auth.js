@@ -26,6 +26,10 @@ function useProvideAuth() {
   }
   const [user, setUser] = useState(userToSet);
 
+  const handleSocialSetUser = socialUser => {
+    setUser(socialUser);
+  };
+
   // ... to save the user to state.
   const signin = async (email, password) => {
     const response = await axios.post("https://api.zuri.chat/auth/login", {
@@ -109,6 +113,7 @@ function useProvideAuth() {
   // Return the user object and auth methods
   return {
     user,
+    handleSocialSetUser,
     signin,
     sendSignupVerificationCode,
     confirmSignupVerificationCode,
