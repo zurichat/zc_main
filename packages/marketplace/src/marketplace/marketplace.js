@@ -10,7 +10,7 @@ import styles from "./styles/marketplace.module.css";
 // Components
 import MarketPlaceContainer from "./components/MarketPlaceContainer";
 import { MarketPlaceProvider } from "../context/MarketPlace.context.js";
-import { GetUserInfo } from "@zuri/utilities";
+import { GetUserInfo, BASE_URL } from "@zuri/utilities";
 
 const MarketPlace = () => {
   let currentWorkspace = localStorage.getItem("currentWorkspace");
@@ -41,13 +41,13 @@ const MarketPlace = () => {
       let pluginData = plugins;
 
       const get_all_plugins = await axios.get(
-        "https://api.zuri.chat/marketplace/plugins?limit=10000"
+        `${BASE_URL}/marketplace/plugins?limit=10000`
       );
       const get_popular_plugins = await axios.get(
-        "https://api.zuri.chat/marketplace/plugins/popular"
+        `${BASE_URL}/marketplace/plugins/popular`
       );
       const get_installed_plugins = await axios.get(
-        `https://api.zuri.chat/organizations/${currentWorkspace}/plugins`,
+        `${BASE_URL}/organizations/${currentWorkspace}/plugins`,
         {
           headers: {
             Authorization: `Bearer ${token}`

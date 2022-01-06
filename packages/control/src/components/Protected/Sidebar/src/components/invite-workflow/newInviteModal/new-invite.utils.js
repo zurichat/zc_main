@@ -1,12 +1,12 @@
 import axios from "axios";
-const APIURL = "https://api.zuri.chat";
+import { BASE_URL } from "@zuri/utilities";
 
 const sendInviteAPI = async invites => {
   const organizationID = localStorage.getItem("currentWorkspace") || null;
   const userToken = sessionStorage.getItem("token") || null;
   if (organizationID && userToken) {
     const response = await axios.post(
-      `${APIURL}/organizations/${organizationID}/send-invite`,
+      `${BASE_URL}/organizations/${organizationID}/send-invite`,
       {
         emails: invites
       },

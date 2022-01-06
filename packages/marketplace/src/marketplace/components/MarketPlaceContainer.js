@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import ReactPaginate from "react-paginate";
 import { Modal, Spinner } from "react-bootstrap";
+import { BASE_URL } from "@zuri/utilities";
 
 // Styles and Assets
 import styles from "../styles/marketplace.module.css";
@@ -72,7 +73,7 @@ const MarketPlaceContainer = ({
     setIsModalLoading(true);
     try {
       const response = await axios.get(
-        `https://api.zuri.chat/marketplace/plugins/${marketplaceContext.state.pluginId}`
+        `${BASE_URL}/marketplace/plugins/${marketplaceContext.state.pluginId}`
       );
       const { data } = response.data;
       setPlugin(data);
@@ -159,7 +160,7 @@ const MarketPlaceContainer = ({
 
     try {
       const response = await axios.delete(
-        `https://api.zuri.chat/organizations/${currentWorkspace}/plugins/${marketplaceContext.state.pluginId}`,
+        `${BASE_URL}/organizations/${currentWorkspace}/plugins/${marketplaceContext.state.pluginId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`

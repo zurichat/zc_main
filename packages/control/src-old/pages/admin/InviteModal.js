@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import { BASE_URL } from "@zuri/utilities";
 import CloseIcon from "@material-ui/icons/Close";
 import SearchIcon from "@material-ui/icons/Search";
 import Loader from "react-loader-spinner";
@@ -26,7 +27,7 @@ function InviteModal({
     const { token, currentWorkspace } = userInfo;
     try {
       const respond = await axios.post(
-        `https://api.zuri.chat/organizations/${userInfo?.currentWorkspace}/send-invite`,
+        `${BASE_URL}/organizations/${userInfo?.currentWorkspace}/send-invite`,
         {
           emails: [email]
         },

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { BASE_URL } from "@zuri/utilities";
 import styles from "../styles/adminContactTab.module.css";
 import { RiUserFill } from "react-icons/ri";
 import { BiPlus } from "react-icons/bi";
@@ -28,7 +29,7 @@ const ContactTab = () => {
     const token = getToken();
     (async () => {
       await axios
-        .get(`https://api.zuri.chat/organizations/${work}`, {
+        .get(`${BASE_URL}/organizations/${work}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -82,7 +83,7 @@ const ContactTab = () => {
     const token = getToken();
     await axios
       .patch(
-        `https://api.zuri.chat/organizations/${workSpace.data._id}/billing/contact`,
+        `${BASE_URL}/organizations/${workSpace.data._id}/billing/contact`,
         {
           data: values
         },

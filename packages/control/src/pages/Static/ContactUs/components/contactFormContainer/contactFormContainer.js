@@ -4,7 +4,7 @@ import detailsData from "./faq";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
 import { useDropzone } from "react-dropzone";
-import { GetUserInfo } from "@zuri/utilities";
+import { GetUserInfo, BASE_URL } from "@zuri/utilities";
 import { Alert, downIcon, arrowRight } from "../../assets";
 const activeStyle = {
   borderColor: "#2196f3"
@@ -107,7 +107,7 @@ function ContactFormContainer() {
     acceptedFiles[1] && contactData.append("file", acceptedFiles[1]);
 
     axios
-      .post("https://api.zuri.chat/contact", contactData)
+      .post(`${BASE_URL}/contact`, contactData)
       .then(({ data }) => {
         setValues(values => ({
           ...values,

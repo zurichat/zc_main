@@ -7,13 +7,17 @@ const utilitiesCaches = [
   "zuri-utilities-getworkspaceuser",
   "zuri-utilities-getworkspaceusers"
 ];
+
+// base URL for request making
+export const BASE_URL = "https://staging.api.zuri.chat";
+
 export const GetUserInfo = async () => {
   let user = JSON.parse(sessionStorage.getItem("user"));
   const currentWorkspace = localStorage.getItem("currentWorkspace");
   let token = sessionStorage.getItem("token");
 
   if ((user && token) !== null) {
-    const url = `https://api.zuri.chat/organizations/${currentWorkspace}/members/?query=${user.email}`;
+    const url = `${BASE_URL}/organizations/${currentWorkspace}/members/?query=${user.email}`;
     const cache = await caches.open("zuri-utilities-getuserinfo");
     const cachedUserInfoResponse = await cache.match(url);
     if (cachedUserInfoResponse) {
@@ -65,7 +69,7 @@ export const GetWorkspaceUser = async identifier => {
   const token = sessionStorage.getItem("token");
 
   try {
-    const url = `https://api.zuri.chat/organizations/${currentWorkspace}/members/?query=${identifier}`;
+    const url = `${BASE_URL}/organizations/${currentWorkspace}/members/?query=${identifier}`;
     const cache = await caches.open("zuri-utilities-getworkspaceuser");
     const cachedWorkspaceUserResponse = await cache.match(url);
     if (cachedWorkspaceUserResponse) {
@@ -94,7 +98,7 @@ export const GetWorkspaceUsers = async () => {
   const currentWorkspace = localStorage.getItem("currentWorkspace");
   const token = sessionStorage.getItem("token");
   try {
-    const url = `https://api.zuri.chat/organizations/${currentWorkspace}/members`;
+    const url = `${BASE_URL}/organizations/${currentWorkspace}/members`;
     const cache = await caches.open("zuri-utilities-getworkspaceusers");
     const cachedWorkspaceUsersResponse = await cache.match(url);
     if (cachedWorkspaceUsersResponse) {
