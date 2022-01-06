@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { BASE_URL } from "@zuri/utilities";
 
 import {
   TopNavigationBar,
@@ -16,7 +17,7 @@ export default function Index() {
 
   async function fetchData() {
     const result = await axios.get(
-      `https://api.zuri.chat/users/${user.email}/organizations`,
+      `${BASE_URL}/users/${user.email}/organizations`,
       { headers: { Authorization: `Bearer ${user.token}` } }
     );
     const { data } = result.data;

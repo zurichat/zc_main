@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { BASE_URL } from "@zuri/utilities";
 import { GeneralLoading } from "../../../components";
 
 export default function Index({ createWorkspaceData }) {
@@ -20,7 +21,7 @@ export default function Index({ createWorkspaceData }) {
   const WorkspaceSetup = async () => {
     // Create a Workspace
     const createWorkspaceApiCall = await axios.post(
-      "https://api.zuri.chat/organizations",
+      `${BASE_URL}/organizations`,
       { creator_email: user.email },
       { headers: { Authorization: "Bearer " + user.token } }
     );
@@ -29,27 +30,27 @@ export default function Index({ createWorkspaceData }) {
 
     // Rename the Workspace
     const renameWorkspaceApiCall = await axios.patch(
-      `https://api.zuri.chat/organizations/${workspaceId}/name`,
+      `${BASE_URL}/organizations/${workspaceId}/name`,
       { organization_name: createWorkspaceData.workspaceName },
       { headers: { Authorization: "Bearer " + user.token } }
     );
 
     // Get Creators MemberId
     const getCreatorMemberIdApiCall = await axios.get(
-      `https://api.zuri.chat/organizations/${workspaceId}/members/?query=${user.email}`
+      `${BASE_URL}/organizations/${workspaceId}/members/?query=${user.email}`
     );
     const creatorMemberId = getCreatorMemberIdApiCall.data.data[0]._id;
 
     // Install Messaging Plugin in ZC Core
     const fetchPluginsFromMarketplaceApiCall = await axios.get(
-      "https://api.zuri.chat/marketplace/plugins"
+      `${BASE_URL}/marketplace/plugins`
     );
     const messagingPluginId =
       fetchPluginsFromMarketplaceApiCall.data.data.plugins.find(plugin =>
         plugin.template_url.includes("chat.zuri.chat")
       )?.id;
     const installMessagingPluginInCore = await axios.post(
-      `https://api.zuri.chat/organizations/${workspaceId}/plugins`,
+      `${BASE_URL}/organizations/${workspaceId}/plugins`,
       {
         plugin_id: messagingPluginId,
         user_id: creatorMemberId

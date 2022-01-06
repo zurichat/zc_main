@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 // import { useLocation } from 'react-router-dom';
+import { BASE_URL } from "@zuri/utilities";
 import { DialogOverlay, DialogContent } from "@reach/dialog";
 import { AiOutlineClose } from "react-icons/ai";
 import styled from "styled-components";
@@ -47,7 +48,7 @@ const PluginRoomAddUser = ({ isOpen, isClosed, room_id }) => {
   const getOrgMembers = async () => {
     try {
       const res = await axios.get(
-        `https://api.zuri.chat/organizations/${currentWorkspace}/members`,
+        `${BASE_URL}/organizations/${currentWorkspace}/members`,
         headers
       );
 

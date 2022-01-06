@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { useGoogleLogin } from "react-google-login";
-import { GetUserInfo } from "@zuri/utilities";
+import { GetUserInfo, BASE_URL } from "@zuri/utilities";
 
 const CLIENT_ID =
   "943002582641-ek6jakave3irmueaqfdoc0754v83qf6e.apps.googleusercontent.com";
@@ -12,9 +12,7 @@ const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
   const onSuccess = res => {
     if (googleHeader === "Sign up with Google") {
       axios
-        .get(
-          `https://api.zuri.chat/auth/social-login/google/${res.accessToken}`
-        )
+        .get(`${BASE_URL}/auth/social-login/google/${res.accessToken}`)
         .then(res => {
           const { data } = res.data;
           //Store token in localstorage
@@ -33,9 +31,7 @@ const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
     } else {
       setLoading(true);
       axios
-        .get(
-          `https://api.zuri.chat/auth/social-login/google/${res.accessToken}`
-        )
+        .get(`${BASE_URL}/auth/social-login/google/${res.accessToken}`)
         .then(res => {
           const { data } = res.data;
           //Store token in localstorage

@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext, createContext } from "react";
-import { DeleteAllUtilitiesCache } from "@zuri/utilities";
+import { DeleteAllUtilitiesCache, BASE_URL } from "@zuri/utilities";
 import axios from "axios";
 const authContext = createContext();
 
@@ -32,13 +32,13 @@ function useProvideAuth() {
 
   // ... to save the user to state.
   const signin = async (email, password) => {
-    const response = await axios.post("https://api.zuri.chat/auth/login", {
+    const response = await axios.post(`${BASE_URL}/auth/login`, {
       email,
       password
     });
     const { data } = response.data;
     const fetchUserWorkspacesResponse = await axios.get(
-      `https://api.zuri.chat/users/${data.user.email}/organizations`,
+      `${BASE_URL}/users/${data.user.email}/organizations`,
       {
         headers: {
           Authorization: `Bearer ${data.user.token}`
@@ -51,16 +51,13 @@ function useProvideAuth() {
   };
   //   const signup = async signupData => {
   //     const response = await axios.post(
-  //       "https://staging.api.zuri.chat/users",
+  //       `${BASE_URL}/users`,
   //       signupData
   //     );
   //     const { data } = response.data;
   //   };
   const sendSignupVerificationCode = async signupData => {
-    const response = await axios.post(
-      "https://staging.api.zuri.chat/users",
-      signupData
-    );
+    const response = await axios.post(`${BASE_URL}/users`, signupData);
     // console.log("sendSignupVerificationCode-response", response.data);
     if (response.data.status === 400) {
       throw new Error(response.data.message);
@@ -69,10 +66,9 @@ function useProvideAuth() {
     }
   };
   const confirmSignupVerificationCode = async code => {
-    const response = await axios.post(
-      `https://api.zuri.chat/account/verify-account`,
-      { code }
-    );
+    const response = await axios.post(`${BASE_URL}/account/verify-account`, {
+      code
+    });
     return response;
   };
   const signout = async token => {
@@ -80,7 +76,7 @@ function useProvideAuth() {
     localStorage.clear();
     sessionStorage.clear();
     axios.post(
-      `https://api.zuri.chat/auth/logout`,
+      `${BASE_URL}/auth/logout`,
       {},
       {
         headers: {

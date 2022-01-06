@@ -2,7 +2,6 @@
 const { mergeWithRules } = require("webpack-merge");
 const singleSpaDefaults = require("webpack-config-single-spa-react");
 const path = require("path");
-console.log("DIRNAMEEEEEEEEEE", __dirname);
 const mergeRules = {
   plugins: "replace",
   devServer: {

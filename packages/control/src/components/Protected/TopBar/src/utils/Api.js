@@ -1,11 +1,10 @@
 import axios from "axios";
-
-const endpoint = "https://api.zuri.chat";
+import { BASE_URL } from "@zuri/utilities";
 
 const user = JSON.parse(sessionStorage.getItem("user"));
 
 export const authAxios = axios.create({
-  baseURL: endpoint,
+  baseURL: BASE_URL,
   headers: {
     Authorization: `Bearer ${user.token}`
   }

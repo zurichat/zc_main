@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { BASE_URL } from "@zuri/utilities";
 import Group from "../assets/Group.svg";
 import "./App.css";
 import EmailSucessModal from "../src/EmailModal";
@@ -13,7 +14,7 @@ history.push();
 
 function subscribe() {
   axios
-    .post("https://api.zuri.chat/external/send-mail?custom_mail=0", {
+    .post(`${BASE_URL}/external/send-mail?custom_mail=0`, {
       email: "mailto:email@gmail.com",
       subject: "Hello World",
       mail_type: 3,

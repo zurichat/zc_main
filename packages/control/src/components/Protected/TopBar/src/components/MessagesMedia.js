@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 import React, { useState, useContext } from "react";
+import { BASE_URL } from "@zuri/utilities";
 import { ProfileContext } from "../context/ProfileModal";
 import { authAxios } from "../utils/Api";
 import styles from "../styles/MessagesMedia.module.css";
@@ -40,7 +41,7 @@ const MessagesMedia = () => {
       });
   };
   React.useEffect(() => {
-    fetch("https://api.zuri.chat/", {
+    fetch(BASE_URL, {
       method: "POST",
       headers: {
         // authorization if any

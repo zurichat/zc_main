@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect } from "react";
+import { BASE_URL } from "@zuri/utilities";
 import { FaChevronRight } from "react-icons/fa";
 import { BiSmile } from "react-icons/bi";
 import Picker, { SKIN_TONE_MEDIUM_DARK } from "emoji-picker-react";
@@ -108,7 +109,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
     if ((user && token) !== null) {
       try {
         axios
-          .get(`https://api.zuri.chat/organizations/${currentWorkspace}`, {
+          .get(`${BASE_URL}/organizations/${currentWorkspace}`, {
             headers: {
               Authorization: `Bearer ${token}`
             }

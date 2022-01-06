@@ -54,8 +54,8 @@ const RoomItem = ({ room, baseUrl, pluginId }) => {
         match?.isExact ? styles.item__list__active : styles.item__list
       }`}
       onClick={() => {
-        localStorage.setItem("currentPlugin", pluginIdPath);
-        localStorage.setItem("currentRoom", pluginRoomId);
+        sessionStorage.setItem("currentPlugin", pluginIdPath);
+        sessionStorage.setItem("currentRoom", pluginRoomId);
       }}
     >
       <a
