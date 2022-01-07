@@ -5,13 +5,12 @@
 }
 
 .hamburger__menu-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  outline: none;
+  border: none;
+  background: transparent;
 }
 
-@media only screen and (min-width: 1023px) {
+@media only screen and (min-width: 768px) {
   .hamburger__menu-button {
     display: none;
   }

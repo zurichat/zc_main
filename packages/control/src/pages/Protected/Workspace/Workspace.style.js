@@ -1,15 +1,17 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+
+export const GlobalWorkSpaceStyle = createGlobalStyle`
+  body {
+    margin: 0 !important;
+  }
+`;
 
 export const TopBarWrapperStyle = styled.div`
   width: 100%;
-  height: 6vh;
-  position: fixed;
-  top: 0;
-  left: 0;
+  height: 48px;
   display: flex;
   align-items: center;
   background-color: var(--bg-color);
-  zindex: 1;
   overflow: unset;
 
   @media (min-width: 1441px) {
@@ -19,22 +21,16 @@ export const TopBarWrapperStyle = styled.div`
 `;
 
 export const SidebarWrapperStyle = styled.div`
-  width: 20%;
-  height: 94vh;
-  position: fixed;
+  flex-basis: 20%;
+  max-width: 300px;
+  min-width: 230px;
+  height: 100%;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  top: 6vh;
-  left: 0;
   background-color: var(--bg-color);
 
   &::-webkit-scrollbar {
     display: none;
-  }
-
-  @media (min-width: 768px) {
-    min-width: 20%;
-    display: block;
   }
 
   @media (max-width: 768px) {
@@ -43,24 +39,12 @@ export const SidebarWrapperStyle = styled.div`
 `;
 
 export const WorkspaceWrapperStyle = styled.div`
-  width: 80%;
-  height: 94vh;
-  position: fixed;
-  top: 6vh;
-  left: 20%;
+  flex: 1;
+  height: 100%;
   background-color: var(--bg-color);
   overflow: auto;
-  ${"" /* margin-left: 5px; */}
-  z-index: -1;
 
   & > #zuri-plugin-load-section {
     height: 100%;
-  }
-
-  @media (max-width: 768px) {
-    left: 0;
-    width: 100%;
-    ${"" /* position: relative; */}
-    z-index: unset;
   }
 `;
