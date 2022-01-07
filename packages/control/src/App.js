@@ -93,7 +93,7 @@ const App = () => (
           <ProtectedRoute exact path="/choose-workspace">
             {withSuspense(ChooseWorkspace)}
           </ProtectedRoute>
-          <ProtectedRoute exact path="/create-workspace">
+          <ProtectedRoute path="/create-workspace">
             {withSuspense(CreateWorkspace)}
           </ProtectedRoute>
           <ProtectedRoute path="/workspace/:workspaceId">

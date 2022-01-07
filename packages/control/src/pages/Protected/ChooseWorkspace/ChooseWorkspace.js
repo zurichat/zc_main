@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { Link, useHistory } from "react-router-dom";
 import { BASE_URL } from "@zuri/utilities";
 
 import {
@@ -30,6 +31,8 @@ export default function Index() {
     }
   }, []);
 
+  const history = useHistory();
+
   return (
     <>
       {/* <TopNavigationBar /> */}
@@ -37,7 +40,21 @@ export default function Index() {
       <div style={{ paddingTop: "5em" }} />
 
       <h2 style={{ textAlign: "center" }}>Choose A Workspace</h2>
-
+      <p
+        style={{
+          textAlign: "center",
+          fontWeight: "300",
+          fontSize: "${18 / 16}rem"
+        }}
+      >
+        Looking to create a workspace instead?{" "}
+        <span
+          style={{ color: "#00b87c", fontWeight: "350", cursor: "pointer" }}
+          onClick={() => history.push("/create-workspace")}
+        >
+          Create a new workspace
+        </span>
+      </p>
       {organizations && organizations.length > 0 ? (
         <UserOrganisationsListing user={user} organizations={organizations} />
       ) : (
