@@ -15,6 +15,7 @@ import Emojis from "../Emojis/Emojis";
  */
 function MessageBoard({
   currentUserId,
+  isLoadingMessages,
   messages = [],
   onSendMessage,
   onSendAttachedFile,
@@ -98,6 +99,18 @@ function MessageBoard({
           ))}
           <div ref={messagesEndRef} />
         </div>
+        {isLoadingMessages && (
+          <div className="text-center">
+            <div
+              className="spinner-border"
+              style={{ width: "3rem", height: "3rem", color: "#7ed5af" }}
+              role="status"
+            >
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        )}
+
         <div className="input-text">
           <MessageInput
             onSendMessage={handleSendMessage}
