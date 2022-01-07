@@ -9,11 +9,11 @@
   justify-content: center;
   align-items: center; */
   outline: none;
-  border: 1.5px solid black;
+  border: none;
   background: transparent;
 }
 
-@media only screen and (min-width: 1023px) {
+@media only screen and (min-width: 768px) {
   .hamburger__menu-button {
     display: none;
   }

@@ -241,16 +241,7 @@ const TopNavBar = () => {
 
   return (
     <TopbarWrapper>
-      <div
-        className="ps-3"
-        style={{
-          flexBasis: "20%",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          gap: 16
-        }}
-      >
+      <BrandWrapper>
         {/* <a href="/home"> */}
         <div className={styles["topNavBar__logo"]}>
           <img
@@ -270,7 +261,7 @@ const TopNavBar = () => {
             style={{ fill: "#00b87c", width: "1.5em", height: "1.5em" }}
           />
         </button>
-      </div>
+      </BrandWrapper>
       <div className="ms-4" style={{ flex: 1 }}>
         {/* <BaseInput
           value={search}
@@ -315,10 +306,7 @@ const TopNavBar = () => {
           />
         ) : null}
       </div>
-      <ProfileImageContainer
-        className="d-flex justify-content-end pe-3"
-        style={{ position: "relative" }}
-      >
+      <ProfileImageContainer className="d-flex justify-content-end">
         {toggleStatus}
         <ProfileImg
           src={userProfileImage ? userProfileImage : defaultAvatar}
@@ -371,6 +359,27 @@ const TopNavBar = () => {
 export default TopNavBar;
 
 // Styled Components
+const BrandWrapper = styled.div.attrs({
+  className: "ps-3"
+})`
+  flex-basis: 20%;
+  max-width: 300px;
+  min-width: 230px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16;
+
+  @media (max-width: 768px) {
+    flex-basis: unset;
+    max-width: unset;
+    min-width: unset;
+    & > div {
+      display: none;
+    }
+  }
+`;
+
 const LogoDiv = styled.div`
   margin: auto 0;
   display: flex;
@@ -392,16 +401,11 @@ const ProfileImg = styled.img`
   width: 36px;
   height: 36px;
   object-fit: cover;
-
-  @media (max-width: 1024px) {
-    height: 30px;
-  }
-  @media (max-width: 425px) {
-    // height: 22.4px;
-  }
 `;
+
 const ProfileImageContainer = styled.div`
   position: relative;
+  margin-right: 1rem;
   /* img {
     object-fit: cover;
     border-radius: 4px;
@@ -423,7 +427,7 @@ const HelpContainer = styled.div`
     display: none;
   }
 `;
-const ToggleStatus = styled.div`
+const ToggleStatus = styled.span`
   position: absolute;
   bottom: -1px;
   right: -1px;
@@ -452,6 +456,7 @@ const TopbarWrapper = styled.div`
   width: 100%;
   align-items: center;
   justify-content: center;
+  position: relative;
 `;
 
 const ToggleButton = styled.button`
