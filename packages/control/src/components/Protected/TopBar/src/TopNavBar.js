@@ -240,19 +240,26 @@ const TopNavBar = () => {
   };
 
   return (
-    <>
-      <div className="ps-3" style={{ width: "10%" }}>
+    <TopbarWrapper>
+      <div
+        className="ps-3"
+        style={{
+          flexBasis: "20%",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          gap: 16
+        }}
+      >
         {/* <a href="/home"> */}
         <div className={styles["topNavBar__logo"]}>
           <img
-            style={{ width: "40%" }}
+            style={{ height: "100%", maxWidth: 100 }}
             src={zurichatlogo}
             alt="zuri chat logo"
           />
         </div>
         {/* </a> */}
-      </div>
-      <div className="ps-3" style={{ width: "10%" }}>
         <button
           onClick={handleToggleSidebar}
           type="button"
@@ -264,7 +271,7 @@ const TopNavBar = () => {
           />
         </button>
       </div>
-      <div className="ms-4" style={{ width: "60%" }}>
+      <div className="ms-4" style={{ flex: 1 }}>
         {/* <BaseInput
           value={search}
           onChange={e => setSearch(e.target.value)}
@@ -310,7 +317,7 @@ const TopNavBar = () => {
       </div>
       <ProfileImageContainer
         className="d-flex justify-content-end pe-3"
-        style={{ width: "20%", position: "relative" }}
+        style={{ position: "relative" }}
       >
         {toggleStatus}
         <ProfileImg
@@ -353,7 +360,7 @@ const TopNavBar = () => {
 
       <Profile />
       <TopbarModal statusModal={statusModal} setStatusModal={setStatusModal} />
-    </>
+    </TopbarWrapper>
   );
 };
 
@@ -382,9 +389,10 @@ const LogoDiv = styled.div`
 // `
 const ProfileImg = styled.img`
   border-radius: 4px;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   object-fit: cover;
+
   @media (max-width: 1024px) {
     height: 30px;
   }
@@ -435,4 +443,19 @@ const ToggleStatus = styled.div`
     border-radius: 50%;
     border: 1px solid white;
   }
+`;
+
+const TopbarWrapper = styled.div`
+  display: flex;
+  gap: 8px;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+`;
+
+const ToggleButton = styled.button`
+  outline: none;
+  border: 0.8px solid rgba(153, 153, 153, 0.2);
+  background: transparent;
 `;

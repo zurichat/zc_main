@@ -4,7 +4,9 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  z-index: 1000;
+  z-index: 100;
+  max-width: 585px;
+  width: 100%;
   /* background: white;
     color: white;
     padding: .5em;
@@ -21,7 +23,13 @@
 
 ._input2 {
   flex: 1;
-  padding: 2px;
+  border: none;
+  outline: none;
+  padding: 4px 8px;
+}
+
+._input2::placeholder {
+  color: #B0AFB0;
 }
 
 .topBarSearchModal:focus-within > ._input > ._input2 {
@@ -49,7 +57,9 @@
 
 ._input {
   display: flex;
-  border: 1px solid rgb(161, 161, 161);
+  /* border: 1px solid rgb(161, 161, 161); */
+  background: rgba(255, 255, 255, 0.4);
+  border: 0.8px solid rgba(153, 153, 153, 0.2);
   font-weight: 400;
   outline: none;
   margin: 0;
@@ -57,7 +67,7 @@
   font-size: 1rem;
   line-height: inherit;
   border-radius: 3px;
-  background-color: transparent;
+  /* background-color: transparent; */
   width: 100%;
   box-sizing: border-box;
   gap: 5px;
