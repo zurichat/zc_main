@@ -33,14 +33,7 @@ const SidebarHeader = props => {
     <div className={` ${styles.subCon1}`}>
       <div className={`row ${styles.orgDiv}`}>
         <div className={`col-12 ${styles.orgInfo}`}>
-          <div
-            onClick={() => {
-              toggle();
-              console.log("wharris going  on");
-            }}
-            className={styles.orgHeader}
-            style={{ cursor: "pointer" }}
-          >
+          <div onClick={() => toggle()} className={styles.orgHeader}>
             <p className={styles.orgTitle}>
               {props.state.organization_info &&
                 props.state.organization_info.name}
@@ -51,6 +44,12 @@ const SidebarHeader = props => {
             >
               <MdKeyboardArrowDown style={{ color: `#fff` }} />
             </p>{" "}
+            {/* {openModal && (
+              <NewInviteModal
+                openModal={openModal}
+                setOpenModal={setOpenModal}
+              />
+            )} */}
           </div>
           <div className={styles.newMessage}>
             <img
