@@ -66,7 +66,6 @@
     "@reach/dialog": "^0.16.0",
     "@reach/tabs": "^0.16.1",
     "@reduxjs/toolkit": "^1.6.2",
-    "add": "^2.0.6",
     "axios": "^0.24.0",
     "centrifuge": "^2.8.2",
     "cleave.js": "^1.6.0",
@@ -126,7 +125,6 @@
     "simple-react-cropper": "^1.0.10",
     "single-spa-react": "^4.3.1",
     "styled-components": "^5.3.1",
-    "yarn": "^1.22.17",
     "yup": "^0.32.11"
   }
 }

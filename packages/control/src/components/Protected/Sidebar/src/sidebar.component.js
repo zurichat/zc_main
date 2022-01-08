@@ -116,6 +116,7 @@ const Sidebar = props => {
   return (
     <div className={`container-fluid ${styles.sb__container}`}>
       <Header state={props.state} />
+      <Header state={props.state} />
       <div className={`${styles.subCon2}`}>
         <Fragment>
           <SingleRoom
