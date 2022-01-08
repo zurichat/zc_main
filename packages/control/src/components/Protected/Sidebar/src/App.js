@@ -2,9 +2,6 @@ import Sidebar from "./sidebar.component";
 import { useEffect, useReducer } from "react";
 import SkeletonLoader from "./components/SkeletonLoader";
 import { fetchUser } from "./utils/fetchUserDetails";
-import NewInviteModal from "./components/invite-workflow/newInviteModal/newInviteModal";
-import InviteResponseModal from "./components/invite-workflow/response-modal/responseModal";
-import InviteLoaderModal from "./components/invite-workflow/loader/loader";
 import { themeColors } from "@zuri/utilities";
 
 export const ACTIONS = {
@@ -141,9 +138,6 @@ export default function App() {
   ) : (
     <>
       <Sidebar state={state} dispatch={dispatch} />
-      <NewInviteModal state={state} dispatch={dispatch} />
-      <InviteLoaderModal state={state} dispatch={dispatch} />
-      <InviteResponseModal state={state} dispatch={dispatch} />
     </>
   );
 }

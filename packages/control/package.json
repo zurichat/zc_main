@@ -46,6 +46,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.1.1",
     "@chakra-ui/layout": "^1.4.9",
     "@chakra-ui/react": "^1.6.9",
     "@ckeditor/ckeditor5-build-classic": "^30.0.0",
@@ -76,6 +77,8 @@
     "draft-js-plugins-editor": "^3.0.0",
     "emoji-mart": "^3.0.1",
     "emoji-picker-react": "^3.4.8",
+    "eslint-plugin-css-modules": "^2.11.0",
+    "eslint-plugin-react": "^7.28.0",
     "faker": "^5.5.3",
     "formik": "^2.2.9",
     "framer-motion": "4",

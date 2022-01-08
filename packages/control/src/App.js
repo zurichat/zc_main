@@ -18,7 +18,8 @@ import {
   ContactUsPage,
   DownloadsPage,
   PluginsPage,
-  PricingPage
+  PricingPage,
+  InvitePage
 } from "./pages";
 import { useAuth } from "./auth/use-auth";
 
@@ -80,6 +81,7 @@ const App = () => (
           <Route exact path="/downloads" component={DownloadsPage} />
           <Route exact path="/plugins" component={PluginsPage} />
           <Route exact path="/pricing" component={PricingPage} />
+          <Route path="/invites/:id" component={InvitePage} />
 
           <ProtectFromAuthRoute exact path="/login">
             <Login />
@@ -105,8 +107,6 @@ const App = () => (
             )}
           />
         </Switch>
-
-        {/* <Route exact path="/" component={HomePage} /> */}
       </Suspense>
     </GeneralErrorBoundary>
   </BrowserRouter>

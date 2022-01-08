@@ -30,7 +30,6 @@ export default function Index() {
       fetchData();
     }
   }, []);
-
   const history = useHistory();
 
   return (
@@ -44,12 +43,12 @@ export default function Index() {
         style={{
           textAlign: "center",
           fontWeight: "300",
-          fontSize: "${18 / 16}rem"
+          fontSize: "${18 / 17}rem"
         }}
       >
         Looking to create a workspace instead?{" "}
         <span
-          style={{ color: "#00b87c", fontWeight: "350", cursor: "pointer" }}
+          style={{ color: "#00b87c", fontWeight: "450", cursor: "pointer" }}
           onClick={() => history.push("/create-workspace")}
         >
           Create a new workspace

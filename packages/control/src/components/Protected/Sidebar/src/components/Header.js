@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import styles from "../styles/Sidebar.module.css";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import newMsgIcon from "../assets/newMsgIcon.svg";
-import NewInviteModal from "./invite-workflow/newInviteModal/newInviteModal";
-import UserOrganization from "../../../../../../src-old/pages/createworkspace/components/UserOrganization";
 import ModalComponent from "./ModalComponent";
 import { themeColors } from "@zuri/utilities";
 
@@ -65,9 +63,9 @@ const SidebarHeader = props => {
           {
             <div className={`col-12 px-3 ${styles.odalContainer}`}>
               <ModalComponent
-                workSpace={UserOrganization}
+                workSpace={props.state.organization_info}
                 isOpen={homeModal}
-                toggleHomeModal={toggleHomeModal}
+                toggleOpenInvite={toggle}
               />
             </div>
             /*
@@ -102,16 +100,6 @@ const SidebarHeader = props => {
               </Content>
             </Overlay>
 
-            <EmailInviteModal
-              isOpen={openInvite}
-              onDismiss={closeInviteModal}
-              orgvalEmails={orgEmails}
-              setInviteEmails={setInviteEmails}
-              inviteUserViaMail={inviteUser}
-              sendLoadin={sendLoading}
-              currentWorkspace={currentWorkspace}
-              invSucc={InviteSuccess}
-            />
                   */
           }
         </div>
