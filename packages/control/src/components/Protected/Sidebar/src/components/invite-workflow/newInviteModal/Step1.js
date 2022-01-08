@@ -54,10 +54,12 @@ export const Step1 = ({
       setListEmail([...listEmail, { mail: val, error: true }]);
       let eror = "Email already included.";
       setForerr(eror);
+      setVal("");
     } else if (orgvalEmails.some(em => em === val)) {
       setListEmail([...listEmail, { mail: val, error: true }]);
       let eror = "Email already exists in the workspace.";
       setForerr(eror);
+      setVal("");
     } else {
       setListEmail([...listEmail, { mail: val, error: false }]);
       setForerr("");
