@@ -9,7 +9,6 @@ import pluginIcon from "./assets/plugin-icon.svg";
 import { SubscribeToChannel } from "@zuri/utilities";
 import { ACTIONS } from "./App";
 import Header from "./components/Header";
-import Invite from "./components/Invite";
 import Room from "./components/Room";
 import SingleRoom from "./components/SingleRoom";
 import Category from "./components/Category";
@@ -134,8 +133,6 @@ const Sidebar = props => {
           <Starred starredRooms={starredRooms} />
           {singleItems}
           {categorizedItems}
-
-          <Invite state={props.state} dispatch={props.dispatch} />
         </Fragment>
       </div>
     </div>

@@ -105,8 +105,6 @@ const App = () => (
             )}
           />
         </Switch>
-
-        {/* <Route exact path="/" component={HomePage} /> */}
       </Suspense>
     </GeneralErrorBoundary>
   </BrowserRouter>

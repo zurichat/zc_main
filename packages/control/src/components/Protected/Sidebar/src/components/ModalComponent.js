@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "../styles/ModalComponentStyles.module.css";
 import CompanyImage from "../assets/CompanyIcon.svg";
-
+import EmailInviteModal from "./invite-workflow/newInviteModal/EmailInviteModal";
 // import axios from 'axios'
 import { RiArrowRightSLine as Arrow } from "react-icons/ri";
 // import { faClosedCaptioning } from '@fortawesome/free-solid-svg-icons'
@@ -11,13 +11,8 @@ const orgss = sessionStorage.getItem("organisations");
 const orgs = JSON.parse(orgss);
 
 const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
-  // const isOpen = true;
-
-  const [hoverRef, isHovered] = useHover();
-  const [hoverRef2, isHovered2] = useHover();
-  const [hoverRef3, isHovered3] = useHover();
-
-  function useHover() {
+  // HoverFunctionality
+  const useHover = () => {
     const [value, setValue] = useState(false);
 
     const ref = useRef(null);
@@ -34,7 +29,18 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
       }
     }, [[ref.current]]);
     return [ref, value];
-  }
+  };
+  const [hoverRef, isHovered] = useHover();
+  const [hoverRef2, isHovered2] = useHover();
+  const [hoverRef3, isHovered3] = useHover();
+
+  //InviteModal Functionaility
+  const [openInviteModal, setOpenInvite] = useState(false);
+  const handleInviteClick = () => {
+    toggleOpenInvite();
+    setOpenInvite(!openInviteModal);
+  };
+
   return (
     <section className={`${isOpen ? styles.open : styles.modalCon}`}>
       <div
@@ -44,8 +50,8 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
           <img src={CompanyImage} alt="logo" />
         </div>
         <div className={`col-10 px-0  ${styles.header}`}>
-          <h5> {workSpace.name}</h5>
-          <span>{workSpace.workspace_url}</span>
+          <h5> {workSpace?.name}</h5>
+          <span>{workSpace?.workspace_url}</span>
         </div>
       </div>
       {/* <hr className={styles.modalDivider} />
@@ -66,7 +72,15 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
       <hr className={styles.modalDivider} />
       <div className={` d-flex flex-column ${styles.modalSection}`}>
         <div>
-          <p onClick={toggleOpenInvite}>Invite people to {workSpace.name}</p>
+          <p onClick={handleInviteClick}>Invite people to {workSpace?.name}</p>
+
+          <EmailInviteModal
+            isOpen={openInviteModal}
+            onDismiss={() => {
+              setOpenInvite(false);
+            }}
+            name={workSpace?.name}
+          />
         </div>
         <div>
           <p>
@@ -82,7 +96,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
         <div
           className={`d-flex align-items-center justify-content-between ${styles.popover}`}
         >
-          <p>Customize {workSpace.name}</p>
+          <p>Customize {workSpace?.name}</p>
           <div>
             <Arrow className={`${styles.arrow}`} />
           </div>
