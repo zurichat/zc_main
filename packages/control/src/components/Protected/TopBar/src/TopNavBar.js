@@ -243,12 +243,8 @@ const TopNavBar = () => {
     <TopbarWrapper>
       <BrandWrapper>
         {/* <a href="/home"> */}
-        <div className={styles["topNavBar__logo"]}>
-          <img
-            style={{ height: "100%", maxWidth: 100 }}
-            src={zurichatlogo}
-            alt="zuri chat logo"
-          />
+        <div>
+          <img height="50" src={zurichatlogo} alt="zuri chat logo" />
         </div>
         {/* </a> */}
         <button
@@ -365,6 +361,7 @@ const BrandWrapper = styled.div.attrs({
   flex-basis: 20%;
   max-width: 300px;
   min-width: 230px;
+  height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
