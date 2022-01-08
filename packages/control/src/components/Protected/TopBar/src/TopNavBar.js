@@ -240,19 +240,17 @@ const TopNavBar = () => {
   };
 
   return (
-    <>
-      <div className="ps-3" style={{ width: "10%" }}>
+    <TopbarWrapper>
+      <BrandWrapper>
         {/* <a href="/home"> */}
         <div className={styles["topNavBar__logo"]}>
           <img
-            style={{ width: "40%" }}
+            style={{ height: "100%", maxWidth: 100 }}
             src={zurichatlogo}
             alt="zuri chat logo"
           />
         </div>
         {/* </a> */}
-      </div>
-      <div className="ps-3" style={{ width: "10%" }}>
         <button
           onClick={handleToggleSidebar}
           type="button"
@@ -263,8 +261,8 @@ const TopNavBar = () => {
             style={{ fill: "#00b87c", width: "1.5em", height: "1.5em" }}
           />
         </button>
-      </div>
-      <div className="ms-4" style={{ width: "60%" }}>
+      </BrandWrapper>
+      <div className="ms-4" style={{ flex: 1 }}>
         {/* <BaseInput
           value={search}
           onChange={e => setSearch(e.target.value)}
@@ -308,10 +306,7 @@ const TopNavBar = () => {
           />
         ) : null}
       </div>
-      <ProfileImageContainer
-        className="d-flex justify-content-end pe-3"
-        style={{ width: "20%", position: "relative" }}
-      >
+      <ProfileImageContainer className="d-flex justify-content-end">
         {toggleStatus}
         <ProfileImg
           src={userProfileImage ? userProfileImage : defaultAvatar}
@@ -353,7 +348,7 @@ const TopNavBar = () => {
 
       <Profile />
       <TopbarModal statusModal={statusModal} setStatusModal={setStatusModal} />
-    </>
+    </TopbarWrapper>
   );
 };
 
@@ -364,6 +359,27 @@ const TopNavBar = () => {
 export default TopNavBar;
 
 // Styled Components
+const BrandWrapper = styled.div.attrs({
+  className: "ps-3"
+})`
+  flex-basis: 20%;
+  max-width: 300px;
+  min-width: 230px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16;
+
+  @media (max-width: 768px) {
+    flex-basis: unset;
+    max-width: unset;
+    min-width: unset;
+    & > div {
+      display: none;
+    }
+  }
+`;
+
 const LogoDiv = styled.div`
   margin: auto 0;
   display: flex;
@@ -382,18 +398,14 @@ const LogoDiv = styled.div`
 // `
 const ProfileImg = styled.img`
   border-radius: 4px;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   object-fit: cover;
-  @media (max-width: 1024px) {
-    height: 30px;
-  }
-  @media (max-width: 425px) {
-    // height: 22.4px;
-  }
 `;
+
 const ProfileImageContainer = styled.div`
   position: relative;
+  margin-right: 1rem;
   /* img {
     object-fit: cover;
     border-radius: 4px;
@@ -415,7 +427,7 @@ const HelpContainer = styled.div`
     display: none;
   }
 `;
-const ToggleStatus = styled.div`
+const ToggleStatus = styled.span`
   position: absolute;
   bottom: -1px;
   right: -1px;
@@ -435,4 +447,20 @@ const ToggleStatus = styled.div`
     border-radius: 50%;
     border: 1px solid white;
   }
+`;
+
+const TopbarWrapper = styled.div`
+  display: flex;
+  gap: 8px;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+`;
+
+const ToggleButton = styled.button`
+  outline: none;
+  border: 0.8px solid rgba(153, 153, 153, 0.2);
+  background: transparent;
 `;

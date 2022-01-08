@@ -31,7 +31,7 @@ const TopbarModal = ({ members }) => {
   return (
     <>
       {/* The section that shows the status */}
-      {showStatus ? (
+      {showStatus && (
         <div
           ref={modalRef}
           className={styles.modalContainers}
@@ -50,10 +50,10 @@ const TopbarModal = ({ members }) => {
             </div>
           </div>
         </div>
-      ) : null}
+      )}
 
       {/* The section that shows the members modal */}
-      {showMembersModal ? (
+      {showMembersModal && (
         <div ref={modalRef} className={styles.modalContainers}>
           <div
             id="overlay"
@@ -62,10 +62,10 @@ const TopbarModal = ({ members }) => {
           />
           <MembersModal members={members} roomTitle={"announcements"} />
         </div>
-      ) : null}
+      )}
 
       {/* The section that shows the topbarprofile */}
-      {showModal ? (
+      {showModal && (
         <section className={styles.topbarModal}>
           <div className={styles.sectionOne}>
             <div className={styles.oneLeft}>
@@ -156,7 +156,7 @@ const TopbarModal = ({ members }) => {
             </p>
           </div>
         </section>
-      ) : null}
+      )}
     </>
   );
 };

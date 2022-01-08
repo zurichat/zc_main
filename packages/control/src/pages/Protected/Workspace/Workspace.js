@@ -11,7 +11,8 @@ import { lazily } from "react-lazily";
 import {
   TopBarWrapperStyle,
   SidebarWrapperStyle,
-  WorkspaceWrapperStyle
+  WorkspaceWrapperStyle,
+  GlobalWorkSpaceStyle
 } from "./Workspace.style";
 
 // import { GeneralLoading } from "../../../components";
@@ -49,35 +50,38 @@ export default function Index() {
 
   return (
     <>
+      <GlobalWorkSpaceStyle />
       <TopBarWrapperStyle>
         <TopBar />
       </TopBarWrapperStyle>
 
-      <SidebarWrapperStyle>
-        <Sidebar />
-      </SidebarWrapperStyle>
+      <div style={{ display: "flex", height: "calc(100vh - 48px)" }}>
+        <SidebarWrapperStyle>
+          <Sidebar />
+        </SidebarWrapperStyle>
 
-      <WorkspaceWrapperStyle>
-        <div id="zuri-plugin-load-section"></div>
-        <Switch>
-          <Route exact path="/workspace/:workspaceId">
-            <h1>Welcome to your Workspace</h1>
-          </Route>
+        <WorkspaceWrapperStyle>
+          <div id="zuri-plugin-load-section"></div>
+          <Switch>
+            <Route exact path="/workspace/:workspaceId">
+              <h1>Welcome to your Workspace</h1>
+            </Route>
 
-          {/* <Route
-            exact
-            path="/workspace/:workspaceId/marketplace"
-            component={() => <h1>MarketPlace</h1>}
-          /> */}
+            {/* <Route
+              exact
+              path="/workspace/:workspaceId/marketplace"
+              component={() => <h1>MarketPlace</h1>}
+            /> */}
 
-          {/* All other routes not by control go to Single SPA */}
-          {/* <Route path="/workspace/:workspaceId/*">
-            <div id="zuri-plugin-load-section">
-              <p>SHOULD SHOW PLUGINS</p>
-            </div>
-          </Route> */}
-        </Switch>
-      </WorkspaceWrapperStyle>
+            {/* All other routes not by control go to Single SPA */}
+            {/* <Route path="/workspace/:workspaceId/*">
+              <div id="zuri-plugin-load-section">
+                <p>SHOULD SHOW PLUGINS</p>
+              </div>
+            </Route> */}
+          </Switch>
+        </WorkspaceWrapperStyle>
+      </div>
     </>
   );
 }
