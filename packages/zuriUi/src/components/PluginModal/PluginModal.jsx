@@ -56,7 +56,7 @@ function PluginModal({ close, showDialog, config, tabIndex, channelName }) {
   return (
     <div className="App">
       <DialogOverlays isOpen={showDialog} onDismiss={close}>
-        <DialogContents>
+        <DialogContents style={{ padding: "1rem 2rem" }}>
           <StyledTabs
             defaultIndex={tabIndex}
             onChange={activeIndex => setActiveIndex(activeIndex)}
@@ -529,6 +529,7 @@ const DialogOverlays = styled(DialogOverlay)`
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  z-index: 2;
 `;
 const DialogContents = styled(DialogContent)`
   width: 60%;

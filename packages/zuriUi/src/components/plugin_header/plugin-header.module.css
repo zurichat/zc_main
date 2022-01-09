@@ -9,7 +9,7 @@
   font-size: 10px;
   justify-content: space-between;
   position: fixed;
-  width: 80%;
+  width: 100%;
   z-index: 1;
 }
 .plugin__header__title {
