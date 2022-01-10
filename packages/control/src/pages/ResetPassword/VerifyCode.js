@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { BASE_URL } from "@zuri/utilities";
 import { DialogOverlay, DialogContent } from "@reach/dialog";
 import CodeInput from "./components/codeInput";
 import styled from "styled-components";
@@ -19,7 +20,7 @@ export default function VerifyResetCode({ label, closeDialog }) {
   const handleSubmit = async code => {
     try {
       const res = await axios.post(
-        "https://api.zuri.chat/account/verify-reset-password",
+        `${BASE_URL}/account/verify-reset-password`,
         {
           code
         }
