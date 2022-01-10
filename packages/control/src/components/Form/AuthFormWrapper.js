@@ -80,7 +80,7 @@ const FormWrapper = ({
             style={{ paddingTop: "20px" }}
           >
             <span>
-              {bottomLine}
+              {bottomLine}{" "}
               <Link
                 className={`${styles.bottomLink}`}
                 to={`/${bottomLinkHref}`}

@@ -9,3 +9,5 @@ export { default as DownloadsPage } from "./Static/Downloads";
 export { default as PluginsPage } from "./Static/Plugins";
 export { default as PricingPage } from "./Static/Pricing";
 export { default as InvitePage } from "./InvitePage";
+export { default as ResetPassword } from "./ResetPassword";
+export { default as ChangePassword } from "./ResetPassword/ChangePassword";

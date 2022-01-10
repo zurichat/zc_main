@@ -135,7 +135,7 @@ export const EmailInviteModal = props => {
 
   return (
     <ChakraProvider>
-      <Modal isCentered isOpen={props.isOpen} onClose={onClo} size="xl">
+      <Modal isCentered isOpen={props.isOpen} onClose={onClo} size="md">
         <ModalOverlay />
 
         {inviteStep === 1 ? (

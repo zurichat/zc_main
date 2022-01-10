@@ -5,6 +5,7 @@ import logo from "../../assets/zuri-chat-logo/logo-title.svg";
 import axios from "axios";
 import { Helmet } from "react-helmet";
 import AuthInputBox from "./components/AuthInputBox";
+import Button from "./components/Button";
 import { isMobile } from "react-device-detect";
 
 const InvitePage = () => {
@@ -102,7 +103,7 @@ const InvitePage = () => {
                 error={""}
               />
             )}
-            <button
+            <Button
               onClick={() => {
                 if (registerNewUser) {
                   registerNewUserHandler();
@@ -115,7 +116,7 @@ const InvitePage = () => {
               disabled={registerNewUser && !userPasswordValue}
             >
               Join?
-            </button>
+            </Button>
           </>
         </div>
       </div>

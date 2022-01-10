@@ -278,6 +278,7 @@
   color: #00b87c;
   /* font-size: 1.2em; */
   /* color: #1a61db; */
+  text-decoration: none;
 }
 
 .footer {
@@ -350,11 +351,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
   }
 
   .footer_a {
     /* margin-block: 0.8em; */
     margin-inline: 0.5em;
+    text-decoration: none;
     /* font-size: 0.7em; */
   }
 }

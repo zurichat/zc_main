@@ -68,7 +68,7 @@ const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
         signIn();
       }}
     >
-      <a className="google">
+      <a className="google" style={{ textDecoration: "none" }}>
         <img src={google} alt="google" />
         {googleHeader}
       </a>

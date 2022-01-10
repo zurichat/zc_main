@@ -13,7 +13,7 @@ export default [
     pt: "Login - Chat de Zuri"
   },
   {
-    key: "header",
+    key: "logInheader",
     en: "Login",
     de: "Einloggen",
     enus: "Login",
@@ -26,7 +26,7 @@ export default [
     pt: "Conecte-se"
   },
   {
-    key: "sub_header",
+    key: "logInsub_header",
     en: "Login with the data you entered during your registration",
     de: "Melden Sie sich mit den Daten an, die Sie bei Ihrer Registrierung eingegeben haben",
     enus: "Login with the data you entered during your registration",
@@ -78,7 +78,7 @@ export default [
     pt: "Conecte-se"
   },
   {
-    key: "bottomLine",
+    key: "logInbottomLine",
     en: "New to us?",
     de: "Neu bei uns?",
     enus: "New to us?",
@@ -91,7 +91,7 @@ export default [
     pt: "Novo para nós?"
   },
   {
-    key: "bottomLink",
+    key: "logInbottomLink",
     en: "Create an Account",
     de: "Ein Konto erstellen",
     enus: "Create an Account",

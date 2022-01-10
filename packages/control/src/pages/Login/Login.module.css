@@ -138,6 +138,7 @@
 
 .resetPasswordLink {
   padding-right: 8px;
+  text-decoration: none;
 }
 
 /* .rememberMe a {

@@ -99,7 +99,7 @@ export default function Index() {
 
       <section id={styles.authFormContainer}>
         <AuthFormWrapper
-          header={t("header")}
+          header={t("signUpheader")}
           subHeader=""
           googleHeader={t("googleHeader")}
           topLineText={t("topLineText")}
@@ -107,8 +107,8 @@ export default function Index() {
           disabled={!(name && email && password && tos)}
           error={error}
           handleSubmit={handleSubmit}
-          bottomLine={t("bottomLine")}
-          bottomLink={t("bottomLink")}
+          bottomLine={t("signUpbottomLine")}
+          bottomLink={t("signUpbottomLink")}
           bottomLinkHref="login"
         >
           <AuthInputBox
