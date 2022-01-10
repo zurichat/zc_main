@@ -79,14 +79,14 @@ const NewPassword = () => {
   };
 
   return (
-    <main id={styles.authPageWrapper}>
+    <main className="container p-5 " style={{ width: "50vw" }}>
       {showDialog && (
         <PasswordSuccesful error={error} closeDialog={closeDialog} />
       )}
 
-      <section id={``}>
+      <section className="">
         {/* logo div  */}
-        <div className={``}>
+        <div className={`text-center pb-3 mb-3 mt-0 pt-0`}>
           <img className={styles.logo} src={Logo} alt="" />
         </div>
         {/* header text  */}

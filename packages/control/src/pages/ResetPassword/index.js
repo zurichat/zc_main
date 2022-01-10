@@ -58,7 +58,7 @@ const ResetDefault = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="container mt-5 pt-5">
+    <div className="container p-5 " style={{ width: "55vw" }}>
       <Helmet>
         <title>{t("auth.passwordreset.title")} - Zuri Chat</title>
       </Helmet>
