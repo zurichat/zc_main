@@ -61,7 +61,7 @@ export const Step1 = ({
   };
 
   return (
-    <ModalContent px="0.5rem" borderRadius="2px">
+    <ModalContent m={0} p={0} borderRadius="2px" w="lg">
       <ModalHeader fontSize="20px">Invite People to {name}</ModalHeader>
       <ModalCloseButton onClick={onClo} />
       <ModalBody>
@@ -69,17 +69,17 @@ export const Step1 = ({
         <Container
           border="1px"
           spacing={4}
-          p="3"
+          p="2"
           borderRadius="2px"
           borderColor={foc ? (!forerr ? "green.300" : "red.200") : "gray.200"}
-          maxW="container.xl"
-          minH={120}
+          maxW="container.3xl"
+          minH={100}
         >
           {listEmail?.map((e_mail, index) => (
             <Tag
               boxShadow="md"
-              p="1"
-              m="1"
+              mt={1}
+              mr={1}
               key={index}
               colorScheme={!e_mail.error ? "green" : "red"}
             >
@@ -89,9 +89,8 @@ export const Step1 = ({
             </Tag>
           ))}
 
-          <form onSubmit={handleSubmit} style={{ display: "inline" }}>
+          <form onSubmit={handleSubmit} style={{ display: "inline-block" }}>
             <Input
-              maxW="40%"
               placeholder="name@gmail.com"
               variant="unstyled"
               onChange={handleChange}
@@ -103,6 +102,8 @@ export const Step1 = ({
               onBlur={handleBlur}
               value={val}
               pt={1}
+              mx={1}
+              mt={1}
             />
           </form>
         </Container>
@@ -113,7 +114,7 @@ export const Step1 = ({
           </Text>
         ) : null}
 
-        <div className={`mt-3 pt-3 d-flex my-auto justify-content-between`}>
+        <div className={`mt-1 pt-2 d-flex my-auto justify-content-between`}>
           <p
             onClick={() => {
               window.navigator.clipboard.writeText(
@@ -125,11 +126,11 @@ export const Step1 = ({
               );
             }}
             className={`mb-0 align-items-center`}
-            style={{ color: "#00B87C", fontSize: "15px" }}
+            style={{ color: "#00B87C", fontSize: "0.8rem" }}
           >
             <LinkIcon mr="1" />
             Copy invite link{" "}
-            <span style={{ color: "black", fontSize: "15px" }}>
+            <span style={{ color: "black", fontSize: "0.8em" }}>
               {" "}
               - Edit link settings{" "}
             </span>

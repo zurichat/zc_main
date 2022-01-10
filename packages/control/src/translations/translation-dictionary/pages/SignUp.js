@@ -14,7 +14,7 @@ export default [
     pt: "Inscrever-se"
   },
   {
-    key: "header",
+    key: "signUpheader",
     en: "Create Account",
     de: "Benutzerkonto erstellen",
     nl: "Maak een account aan",
@@ -70,7 +70,7 @@ export default [
     pt: "Inscrever-se"
   },
   {
-    key: "bottomLine",
+    key: "signUpbottomLine",
     en: "Already have an account? ",
     de: "Sie haben bereits ein Konto? ",
     nl: "Heb je al een account? ",
@@ -84,7 +84,7 @@ export default [
     pt: "já tem uma conta? "
   },
   {
-    key: "bottomLink",
+    key: "signUpbottomLink",
     en: "Log in",
     de: "Einloggen",
     nl: "Log in",

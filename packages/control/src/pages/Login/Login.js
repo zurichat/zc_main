@@ -47,46 +47,44 @@ export default function Index() {
       setpassworderror(`Enter a Password`);
       return;
     }
-    auth
-      .signin(email, password)
-      .then(userData => {
-        //Store token in localstorage
-        sessionStorage.setItem("token", userData.user.token);
+    const userData = await auth.signin(email, password);
+    try {
+      //Store token in localstorage
+      sessionStorage.setItem("token", userData.user.token);
 
-        //Store token in localstorage
-        sessionStorage.setItem("session_id", userData.session_id);
+      //Store token in localstorage
+      sessionStorage.setItem("session_id", userData.session_id);
 
-        //Store user copy in localstorage
-        sessionStorage.setItem("user", JSON.stringify(userData.user));
+      //Store user copy in localstorage
+      sessionStorage.setItem("user", JSON.stringify(userData.user));
 
-        sessionStorage.setItem(
-          "organisations",
-          JSON.stringify(userData.userWorkspaces)
+      sessionStorage.setItem(
+        "organisations",
+        JSON.stringify(userData.userWorkspaces)
+      );
+
+      if (userData.userWorkspaces.length) {
+        history.push("/choose-workspace");
+      } else {
+        history.push("/create-workspace");
+      }
+    } catch (error) {
+      console.error(error, userData, "login error here");
+      const { data } = userData;
+
+      RegExp("not found").test(data.message) &&
+        setemailerror(
+          "Sorry, this email is not registered, try again or click Create an Account."
+        );
+      // RegExp(/Invalid login/).test(data.message) &&
+      RegExp("login credentials").test(data.message) &&
+        setpassworderror(
+          "Sorry, you have entered the wrong password. Try again or click Get help signing in."
         );
 
-        if (userData.userWorkspaces.length) {
-          history.push("/choose-workspace");
-        } else {
-          history.push("/create-workspace");
-        }
-      })
-      .catch(error => {
-        const { data } = error.response;
-        console.error(data);
-
-        RegExp("not found").test(data.message) &&
-          setemailerror(
-            "Sorry, this email is not registered, try again or click Create an Account."
-          );
-        // RegExp(/Invalid login/).test(data.message) &&
-        RegExp("login credentials").test(data.message) &&
-          setpassworderror(
-            "Sorry, you have entered the wrong password. Try again or click Get help signing in."
-          );
-
-        //Render error message to the user
-        seterror(data.message); //Change this when there is a design
-      });
+      //Render error message to the user
+      seterror(data.message); //Change this when there is a design
+    }
   };
 
   return (
@@ -95,16 +93,16 @@ export default function Index() {
 
       <section id={styles.authFormContainer}>
         <AuthFormWrapper
-          header={t("header")}
-          subHeader={t("sub_header")}
+          header={t("logInheader")}
+          subHeader={t("logInsub_header")}
           googleHeader={t("google_header")}
           topLineText={t("topline_text")}
           submitButtonName={t("LoginsubmitButtonName")}
           disabled={!(email && password)}
           error={error}
           handleSubmit={handleSubmit}
-          bottomLine={t("bottomLine")}
-          bottomLink={t("bottomLink")}
+          bottomLine={t("logInbottomLine")}
+          bottomLink={t("logInbottomLink")}
           bottomLinkHref="Signup"
           setLoading={setLoading}
         >
@@ -149,7 +147,10 @@ export default function Index() {
               >
                 {t("forgotPassword")}
               </Link>
-              <Link to="/troubleshooting/onboarding-help">
+              <Link
+                to="/troubleshooting/onboarding-help"
+                style={{ textDecoration: "none" }}
+              >
                 {" "}
                 {""}
                 {t("getHelp")}
