@@ -23,48 +23,41 @@ export const Step1 = ({
   listEmail,
   handleDelete,
   setForerr,
-  setListEmail,
-  orgvalEmails,
   validateEmail,
   currentWorkspace,
-  sendButton
+  sendButton,
+  val,
+  setVal,
+  handleSubmit
 }) => {
-  const [val, setVal] = useState("");
   const [foc, setFoc] = useState(false);
+  const [canSend, setCanSend] = useState(false);
 
   const handleChange = e => {
     e.preventDefault();
     setVal(e.target.value);
     if (!e.target.value) {
       setForerr("");
+      setCanSend(true);
     } else {
       setForerr(validateEmail(e.target.value));
+      setCanSend(false);
     }
   };
 
-  const handleSubmit = e => {
+  const handleSend = e => {
     e.preventDefault();
-
-    if (!val) {
-      let error = "enter an email";
-      setForerr("");
-    } else if (validateEmail(val)) {
-      setForerr("Invalid Email address");
-    } else if (listEmail?.some(em => em.mail === val)) {
-      setListEmail([...listEmail, { mail: val, error: true }]);
-      let eror = "Email already included.";
-      setForerr(eror);
-      setVal("");
-    } else if (orgvalEmails.some(em => em === val)) {
-      setListEmail([...listEmail, { mail: val, error: true }]);
-      let eror = "Email already exists in the workspace.";
-      setForerr(eror);
-      setVal("");
+    if (!canSend) {
+      handleSubmit(e);
+      setCanSend(!canSend);
     } else {
-      setListEmail([...listEmail, { mail: val, error: false }]);
-      setForerr("");
-      setVal("");
+      sendButton(e);
     }
+  };
+
+  const handleBlur = e => {
+    setFoc(false);
+    handleSubmit(e);
   };
 
   return (
@@ -107,7 +100,7 @@ export const Step1 = ({
               type="email"
               borderRadius="2px"
               onFocus={() => setFoc(true)}
-              onBlur={() => setFoc(false)}
+              onBlur={handleBlur}
               value={val}
               pt={1}
             />
@@ -142,10 +135,10 @@ export const Step1 = ({
             </span>
           </p>
           <button
-            onClick={sendButton}
+            onClick={handleSend}
             style={{ color: "white", backgroundColor: "#00B87C" }}
             type="button"
-            // disabled={inviteEmail === '' ? true : false}
+            disabled={forerr ? true : false}
             className={`btn my-auto `}
           >
             Send

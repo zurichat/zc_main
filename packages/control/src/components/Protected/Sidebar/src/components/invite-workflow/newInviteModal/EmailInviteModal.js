@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Modal,
   ModalOverlay,
@@ -16,13 +16,13 @@ import { Loader } from "./Loader";
 export const EmailInviteModal = props => {
   const currentWorkspace = localStorage.getItem("currentWorkspace") || null;
   const userToken = sessionStorage.getItem("token") || null;
-  const initialRef = useRef();
   const [listEmail, setListEmail] = useState([]);
   const [inviteStep, setInviteStep] = useState(1);
   const [forerr, setForerr] = useState("");
   const [data, setData] = useState(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [val, setVal] = useState("");
 
   var orgvalEmails = ["vsbsbf@gmail.com"];
 
@@ -71,7 +71,32 @@ export const EmailInviteModal = props => {
     setForerr("");
   };
 
-  const sendButton = () => {
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    if (!val) {
+      setForerr("");
+    } else if (validateEmail(val)) {
+      setForerr("Invalid Email address");
+    } else if (listEmail?.some(em => em.mail === val)) {
+      setListEmail([...listEmail, { mail: val, error: true }]);
+      let eror = "Email already included.";
+      setForerr(eror);
+      setVal("");
+    } else if (orgvalEmails.some(em => em === val)) {
+      setListEmail([...listEmail, { mail: val, error: true }]);
+      let eror = "Email already exists in the workspace.";
+      setForerr(eror);
+      setVal("");
+    } else {
+      setListEmail([...listEmail, { mail: val, error: false }]);
+      setForerr("");
+      setVal("");
+    }
+  };
+
+  const sendButton = e => {
+    e.preventDefault();
     if (listEmail.length === 0) {
       setForerr("No email(s) to send invites to. ");
     } else if (listEmail.some(em => em.error === true)) {
@@ -88,6 +113,7 @@ export const EmailInviteModal = props => {
 
       if (!loading) {
         nextIviteStep();
+        setListEmail([]);
       }
     }
   };
@@ -120,11 +146,12 @@ export const EmailInviteModal = props => {
             listEmail={listEmail}
             handleDelete={handleDelete}
             setForerr={setForerr}
-            setListEmail={setListEmail}
-            orgvalEmails={orgvalEmails}
             validateEmail={validateEmail}
             currentWorkspace={currentWorkspace}
             sendButton={sendButton}
+            val={val}
+            setVal={setVal}
+            handleSubmit={handleSubmit}
           />
         ) : null}
 
