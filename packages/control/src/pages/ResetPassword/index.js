@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BASE_URL } from "@zuri/utilities";
 import Logo from "../../assets/zuri-chat-logo/logo-title.svg";
 import AuthInputBox from "../InvitePage/components/AuthInputBox";
 import Button from "./components/Button";
@@ -20,7 +21,7 @@ const ResetDefault = () => {
     if (email) {
       try {
         const res = await axios.post(
-          "https://api.zuri.chat/account/request-password-reset-code",
+          `${BASE_URL}/account/request-password-reset-code`,
           {
             email
           }

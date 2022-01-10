@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Logo from "../../assets/zuri-chat-logo/logo-title.svg";
 import { withRouter, useLocation } from "react-router-dom";
+import { BASE_URL } from "@zuri/utilities";
 import AuthInputBox from "../InvitePage/components/AuthInputBox";
 import styles from "./styles/ResetPassword.module.css";
 import Button from "./components/Button";
@@ -28,7 +29,7 @@ const NewPassword = () => {
   const updatepass = async () => {
     try {
       const res = await axios.post(
-        `https://api.zuri.chat/account/update-password/${resetCode}`,
+        `${BASE_URL}/account/update-password/${resetCode}`,
         {
           password,
           confirm_password
