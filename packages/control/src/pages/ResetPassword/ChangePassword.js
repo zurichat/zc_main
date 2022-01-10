@@ -26,7 +26,6 @@ const NewPassword = () => {
   const closeDialog = () => setShowDialog(false);
 
   const updatepass = async () => {
-    console.log(password, confirm_password, resetCode);
     try {
       const res = await axios.post(
         `https://api.zuri.chat/account/update-password/${resetCode}`,
@@ -47,13 +46,13 @@ const NewPassword = () => {
   };
 
   const validatePassword = password => {
-    console.log(password);
+    // console.log(password)
     if (password?.toString().length < 9)
       return " Password must be 9 or more characters long";
   };
 
   const validatecPassword = (password, confirm_password) => {
-    console.log(password);
+    // console.log(password)
     if (password !== confirm_password) return "Passwords don't match";
   };
 
