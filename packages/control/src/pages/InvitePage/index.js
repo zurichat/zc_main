@@ -1,5 +1,6 @@
 import { withRouter, useParams, useHistory } from "react-router-dom";
 import { useState } from "react";
+import { BASE_URL } from "@zuri/utilities";
 import logo from "../../assets/zuri-chat-logo/logo-title.svg";
 import axios from "axios";
 import { Helmet } from "react-helmet";
@@ -19,7 +20,7 @@ const InvitePage = () => {
     try {
       // user exist on zuri chat
       const { data } = await axios.get(
-        `https://api.zuri.chat/organizations/invites/${inviteId}`
+        `${BASE_URL}/organizations/invites/${inviteId}`
       );
       console.log(data);
       addUserToOrganization();
@@ -33,7 +34,7 @@ const InvitePage = () => {
   // create a new user
   const registerNewUserHandler = async () => {
     try {
-      const { data } = await axios.post("https://api.zuri.chat/guests/invite", {
+      const { data } = await axios.post(`${BASE_URL}/guests/invite`, {
         uuid: inviteId,
         password: userPasswordValue
       });
@@ -60,7 +61,7 @@ const InvitePage = () => {
   const addUserToOrganization = async () => {
     try {
       const { data } = await axios.post(
-        `https://api.zuri.chat/organizations/guests/${inviteId}`,
+        `${BASE_URL}/organizations/guests/${inviteId}`,
         {}
       );
       console.log(data);

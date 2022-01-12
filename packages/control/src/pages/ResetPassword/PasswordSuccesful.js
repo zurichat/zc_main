@@ -8,10 +8,10 @@ import { AiFillCloseCircle } from "react-icons/ai";
 
 function passwordSuccesful({ error, closeDialog }) {
   const { t } = useTranslation();
-  const { history } = useHistory();
+  const history = useHistory();
   const handleClick = () => {
     if (!error) {
-      history.push(`/login`);
+      history.replace("/login");
     } else {
       closeDialog();
     }

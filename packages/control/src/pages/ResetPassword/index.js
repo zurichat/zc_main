@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "../Login/Login.module.css";
+import { BASE_URL } from "@zuri/utilities";
 import axios from "axios";
 import VerifyResetCode from "./VerifyCode";
 import { Helmet } from "react-helmet";
@@ -17,7 +18,7 @@ const ResetDefault = () => {
     if (email) {
       try {
         const res = await axios.post(
-          "https://api.zuri.chat/account/request-password-reset-code",
+          `${BASE_URL}/account/request-password-reset-code`,
           {
             email
           }
