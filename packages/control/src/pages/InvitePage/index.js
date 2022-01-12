@@ -1,11 +1,10 @@
 import { withRouter, useParams, useHistory } from "react-router-dom";
 import { useState } from "react";
-import styles from "./styles/Signout.module.css";
 import logo from "../../assets/zuri-chat-logo/logo-title.svg";
 import axios from "axios";
 import { Helmet } from "react-helmet";
-import AuthInputBox from "./components/AuthInputBox";
-import Button from "./components/Button";
+import AuthInputBox from "../../components/Form/AuthInputBox";
+import Button from "../ResetPassword/components/Button";
 import { isMobile } from "react-device-detect";
 
 const InvitePage = () => {
@@ -78,47 +77,39 @@ const InvitePage = () => {
   };
 
   return (
-    <main id={styles.signout}>
+    <main className="container text-center my-5 py-5 w-75">
       <Helmet>
         <title>InviteScreen - Zuri Chat</title>
       </Helmet>
-      <div className={styles.logo}>
-        <img src={logo} alt="zuri" />
+      <div>
+        <img src={logo} width="150" alt="zuri" />
       </div>
-      <div className={styles.write}>
-        <div className={styles.wrapper}>
-          <>
-            <h5 className={styles.secondText}>
-              You have been invited to a Workspace
-            </h5>
-            {registerNewUser && (
-              <AuthInputBox
-                className={`${styles.inputElement}`}
-                id="password"
-                name="Password"
-                type="password"
-                placeholder="Enter a password"
-                value={userPasswordValue}
-                setValue={setUserPasswordValue}
-                error={""}
-              />
-            )}
-            <Button
-              onClick={() => {
-                if (registerNewUser) {
-                  registerNewUserHandler();
-                } else {
-                  handleJoinWorkspace();
-                }
-              }}
-              // onClick={() => history.push('/signup')}
-              className={styles.button}
-              disabled={registerNewUser && !userPasswordValue}
-            >
-              Join?
-            </Button>
-          </>
-        </div>
+      <div className="border p-3">
+        <h5>You have been invited to a Workspace</h5>
+        {registerNewUser && (
+          <AuthInputBox
+            className={``}
+            id="password"
+            name="Password"
+            type="password"
+            placeholder="Enter a password"
+            value={userPasswordValue}
+            setValue={setUserPasswordValue}
+            error={""}
+          />
+        )}
+        <Button
+          onClick={() => {
+            if (registerNewUser) {
+              registerNewUserHandler();
+            } else {
+              handleJoinWorkspace();
+            }
+          }}
+          disabled={registerNewUser && !userPasswordValue}
+        >
+          Join?
+        </Button>
       </div>
     </main>
   );

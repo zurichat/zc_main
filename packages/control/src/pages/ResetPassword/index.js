@@ -1,13 +1,10 @@
 import { useState } from "react";
-import Logo from "../../assets/zuri-chat-logo/logo-title.svg";
-import AuthInputBox from "../InvitePage/components/AuthInputBox";
-import Button from "./components/Button";
-import styles from "./styles/ResetPassword.module.css";
+import styles from "../Login/Login.module.css";
 import axios from "axios";
 import VerifyResetCode from "./VerifyCode";
 import { Helmet } from "react-helmet";
-import { RiErrorWarningLine } from "react-icons/ri";
 import { useTranslation } from "react-i18next";
+import { AuthInputBox, AuthFormWrapper } from "../../components";
 
 const ResetDefault = () => {
   const [email, setEmail] = useState("");
@@ -28,7 +25,7 @@ const ResetDefault = () => {
         open();
         console.log(res.data);
       } catch (err) {
-        setError("Error!!! email not sent,please try again shortly ");
+        setError("Error!!!. Mail not sent, please try again shortly ");
         console.error(err);
       }
     }
@@ -38,12 +35,10 @@ const ResetDefault = () => {
     let error = "";
     let re1 =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    let re2 = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{1,}$/i;
     if (!re1.test(value)) {
       error = "Invalid email address";
       setError(error);
     }
-
     return error;
   };
 
@@ -58,7 +53,7 @@ const ResetDefault = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="container p-5 " style={{ width: "55vw" }}>
+    <div id={styles.authPageWrapper}>
       <Helmet>
         <title>{t("auth.passwordreset.title")} - Zuri Chat</title>
       </Helmet>
@@ -68,42 +63,32 @@ const ResetDefault = () => {
           closeDialog={closeDialog}
         />
       )}
-      <section className={`${styles.getHelpSigninForm} `}>
-        {/* logo div  */}
-        <div className={`${styles.logoFormContainer} mb-3 pb-2`}>
-          <img className={styles.logo} src={Logo} alt="" />
-        </div>
-        {/* header text  */}
-        <div className={`mb-3 pb-3`}>
-          <h4 className={styles.headerText}>
-            {t("auth.passwordreset.headline")}
-          </h4>
-          <p className={`${styles.headerTextTitle}`}>
-            {t("auth.passwordreset.post_headline")}
-          </p>
-        </div>
-        {/* form section  */}
-        <form action="">
+      <section id={styles.authFormContainer}>
+        <AuthFormWrapper
+          header={t("auth.passwordreset.headline")}
+          subHeader={t("auth.passwordreset.post_headline")}
+          submitButtonName={t("auth.passwordreset.form.continueButton")}
+          disabled={!email}
+          error={error}
+          handleSubmit={handleSubmit}
+          bottomLine={t("logInbottomLine")}
+          bottomLink={t("logInbottomLink")}
+          bottomLinkHref="Signup"
+          setLoading={false}
+          showGoogleAuth={false}
+        >
           <AuthInputBox
             className={`${styles.inputElement}`}
             id="email"
             name={t("auth.passwordreset.form.emailAddress")}
             type="email"
-            placeholder="Johndoe@example.com"
+            placeholder="markzuri@example.com"
             value={email}
             setValue={setEmail}
             error=""
           />
-          {error && (
-            <div className={`d-flex text-danger `}>
-              <RiErrorWarningLine className="my-2" />
-              <div className="mx-2 mt-1">{error}</div>
-            </div>
-          )}
-          <Button className={`${styles.button} mb-5`} onClick={handleSubmit}>
-            {t("auth.passwordreset.form.continueButton")}
-          </Button>
-        </form>
+          <br />
+        </AuthFormWrapper>
       </section>
     </div>
   );

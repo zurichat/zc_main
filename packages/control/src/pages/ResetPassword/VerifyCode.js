@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { DialogOverlay, DialogContent } from "@reach/dialog";
-import CodeInput from "./components/codeInput";
+import CodeInput from "../../components/EmailVerificationModal/CodeInput";
 import styled from "styled-components";
 import axios from "axios";
 import Button from "./components/Button";
@@ -79,12 +79,14 @@ export default function VerifyResetCode({ label, closeDialog }) {
               </div>
             ) : (
               <div className="text-danger">
-                <Icon as={AiFillCloseCircle} w={50} h={50} color="red.500" />
-                <h2>{t("auth.verifyCodeOnPasswordReset.error.headline")}</h2>
-                <p>{t("auth.verifyCodeOnPasswordReset.error.post_headline")}</p>
+                <Icon as={AiFillCloseCircle} w={120} h={120} color="red.500" />
+                {/* <h2>{t("auth.verifyCodeOnPasswordReset.error.headline")}</h2> */}
+                <h3>
+                  {t("auth.verifyCodeOnPasswordReset.error.post_headline")}
+                </h3>
               </div>
             )}
-            <Button onClick={handleClick}>
+            <Button onClick={handleClick} variant="secondary">
               {t("auth.verifyCodeOnPasswordReset.success.continueButton")}
             </Button>
           </Successdiv>
@@ -110,7 +112,7 @@ const Overlay = styled(DialogOverlay)`
 const Content = styled(DialogContent)`
   position: relative;
   background: white;
-  // width: 100%;
+  width: 100%;
   height: 80%;
   padding: 2rem;
   display: flex;
