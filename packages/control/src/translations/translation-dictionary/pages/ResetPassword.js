@@ -15,7 +15,7 @@ export default [
   },
   {
     key: "auth.passwordreset.post_headline",
-    en: "A magic link would be sent to the Email provided",
+    en: "A code would be sent to the Email provided",
     de: "Benutzerkonto erstellen",
     nl: "Maak een account aan",
     engb: "Create Account",
@@ -141,7 +141,7 @@ export default [
   },
   {
     key: "auth.verifyCodeOnPasswordReset.error.post_headline",
-    en: "Resend Code",
+    en: "Wrong Code",
     de: "Gib deinen Namen ein",
     nl: "Vul uw naam in",
     engb: "Enter your Name",
@@ -239,7 +239,7 @@ export default [
   },
   {
     key: "auth.verifyCodeOnPasswordChange.error.post_headline",
-    en: "Failed : Password not changed  ",
+    en: "Password not changed  ",
     de: "Privatsphäre",
     nl: "Privacy",
     engb: "Privacy",

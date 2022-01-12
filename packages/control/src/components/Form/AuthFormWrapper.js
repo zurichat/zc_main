@@ -22,7 +22,8 @@ const FormWrapper = ({
   bottomLine,
   bottomLink,
   bottomLinkHref,
-  setLoading
+  setLoading,
+  showGoogleAuth = true
 }) => {
   const { t } = useTranslation();
   return (
@@ -37,25 +38,27 @@ const FormWrapper = ({
           <h1 className={`${styles.header}`}>{header}</h1>
           <p className={`${styles.subHeader}`}>{subHeader}</p>
         </div>
-        <div className={`${styles.googleAuthDiv}`}>
-          <GoogleAuth
-            className={`${styles.googleBtn}`}
-            googleHeader={googleHeader}
-            google={GoogleIcon}
-            setLoading={setLoading}
-          />
-          <span className={`${styles.hrWrapper}`}>
-            <hr className={`${styles.hrLeft}`} />
-            <div>{topLineText}</div>
-            <hr className={`${styles.hrRight}`} />
-          </span>
-          {error && (
-            <div className={`${styles.errWrapper}`}>
-              <RiErrorWarningLine />
-              <div>{error}</div>
-            </div>
-          )}
-        </div>
+        {showGoogleAuth && (
+          <div className={`${styles.googleAuthDiv}`}>
+            <GoogleAuth
+              className={`${styles.googleBtn}`}
+              googleHeader={googleHeader}
+              google={GoogleIcon}
+              setLoading={setLoading}
+            />
+            <span className={`${styles.hrWrapper}`}>
+              <hr className={`${styles.hrLeft}`} />
+              <div>{topLineText}</div>
+              <hr className={`${styles.hrRight}`} />
+            </span>
+          </div>
+        )}
+        {error && (
+          <div className={`${styles.errWrapper}`}>
+            <RiErrorWarningLine />
+            <div>{error}</div>
+          </div>
+        )}
         <form
           className={`${styles.form}`}
           onSubmit={handleSubmit}

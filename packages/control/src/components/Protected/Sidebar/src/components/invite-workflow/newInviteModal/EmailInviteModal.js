@@ -73,7 +73,7 @@ export const EmailInviteModal = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
+    // console.log(listEmail, val)
     if (!val) {
       setForerr("");
     } else if (validateEmail(val)) {
@@ -95,8 +95,9 @@ export const EmailInviteModal = props => {
     }
   };
 
-  const sendButton = e => {
-    e.preventDefault();
+  const sendButton = () => {
+    // e.preventDefault();
+    // console.log(listEmail, val)
     if (listEmail.length === 0) {
       setForerr("No email(s) to send invites to. ");
     } else if (listEmail.some(em => em.error === true)) {
@@ -113,7 +114,6 @@ export const EmailInviteModal = props => {
 
       if (!loading) {
         nextIviteStep();
-        setListEmail([]);
       }
     }
   };
@@ -135,7 +135,7 @@ export const EmailInviteModal = props => {
 
   return (
     <ChakraProvider>
-      <Modal isCentered isOpen={props.isOpen} onClose={onClo} size="md">
+      <Modal isCentered={true} isOpen={props.isOpen} onClose={onClo} size="md">
         <ModalOverlay />
 
         {inviteStep === 1 ? (
@@ -168,6 +168,7 @@ export const EmailInviteModal = props => {
                   error={error}
                   onDismiss={props.onDismiss}
                   resetStep={resetStep}
+                  setListEmail={setListEmail}
                 />
               )}
             </ModalBody>

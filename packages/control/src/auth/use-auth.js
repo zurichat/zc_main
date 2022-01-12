@@ -32,28 +32,22 @@ function useProvideAuth() {
 
   // ... to save the user to state.
   const signin = async (email, password) => {
-    const response = await axios.post(`${BASE_URL}/auth/login`, {
+    const response = await axios.post("https://api.zuri.chat/auth/login", {
       email,
       password
     });
     const { data } = response.data;
-    let fetchUserWorkspacesResponse;
-    try {
-      fetchUserWorkspacesResponse = await axios.get(
-        `${BASE_URL}/users/${data.user.email}/organizations`,
-        {
-          headers: {
-            Authorization: `Bearer ${data.user.token}`
-          }
+    const fetchUserWorkspacesResponse = await axios.get(
+      `https://api.zuri.chat/users/${data.user.email}/organizations`,
+      {
+        headers: {
+          Authorization: `Bearer ${data.user.token}`
         }
-      );
-      const userWorkspaces = fetchUserWorkspacesResponse.data.data;
-      setUser(data.user);
-      return { ...data, userWorkspaces };
-    } catch (e) {
-      console.error(e, "auth error here");
-      return response;
-    }
+      }
+    );
+    const userWorkspaces = fetchUserWorkspacesResponse.data.data;
+    setUser(data.user);
+    return { ...data, userWorkspaces };
   };
   //   const signup = async signupData => {
   //     const response = await axios.post(
