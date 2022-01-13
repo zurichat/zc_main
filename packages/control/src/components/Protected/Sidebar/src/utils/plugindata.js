@@ -11,7 +11,6 @@ export const plugindata = async (
   organizationInfo &&
     organizationInfo.map(pluginInfo => {
       let { plugin } = pluginInfo;
-
       //Get sidebar url
       let sidebarUrl = plugin.sidebar_url;
       //trim sidebar url of extra slashes
