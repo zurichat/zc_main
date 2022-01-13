@@ -32,13 +32,15 @@ function passwordSuccesful({ error, closeDialog }) {
             </div>
           ) : (
             <div className="text-danger">
-              <Icon as={AiFillCloseCircle} w={50} h={50} color="red.500" />
-              <h2>{t("auth.verifyCodeOnPasswordReset.error.headline")}</h2>
-              <p>{t("auth.verifyCodeOnPasswordChange.error.post_headline")}</p>
+              <Icon as={AiFillCloseCircle} w={120} h={120} color="red.500" />
+              {/* <h2>{t("auth.verifyCodeOnPasswordReset.error.headline")}</h2> */}
+              <h4>
+                {t("auth.verifyCodeOnPasswordChange.error.post_headline")}
+              </h4>
             </div>
           )}
 
-          <Button onClick={handleClick}>
+          <Button onClick={handleClick} variant="secondary">
             {" "}
             {t("auth.verifyCodeOnPasswordReset.success.continueButton")}
           </Button>
@@ -64,8 +66,8 @@ const Overlay = styled(DialogOverlay)`
 const Content = styled(DialogContent)`
   position: relative;
   background: white;
-  //   width: 100%;
-  height: 80%;
+  width: 80%;
+  height: 60%;
   padding: 2rem;
   display: flex;
   justify-content: center;

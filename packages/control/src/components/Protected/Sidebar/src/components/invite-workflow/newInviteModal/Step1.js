@@ -48,10 +48,10 @@ export const Step1 = ({
   const handleSend = e => {
     e.preventDefault();
     if (!canSend) {
-      handleSubmit(e);
       setCanSend(!canSend);
+      handleSubmit(e);
     } else {
-      sendButton(e);
+      sendButton();
     }
   };
 
@@ -61,7 +61,7 @@ export const Step1 = ({
   };
 
   return (
-    <ModalContent m={0} p={0} borderRadius="2px" w="lg">
+    <ModalContent m={0} p={0} borderRadius="2px" w="md">
       <ModalHeader fontSize="20px">Invite People to {name}</ModalHeader>
       <ModalCloseButton onClick={onClo} />
       <ModalBody>
@@ -91,7 +91,7 @@ export const Step1 = ({
 
           <form onSubmit={handleSubmit} style={{ display: "inline-block" }}>
             <Input
-              placeholder="name@gmail.com"
+              placeholder="zuriverse@gmail.com"
               variant="unstyled"
               onChange={handleChange}
               name="email"

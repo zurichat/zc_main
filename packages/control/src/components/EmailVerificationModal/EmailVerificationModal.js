@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { navigateToUrl } from "single-spa";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
@@ -38,7 +37,7 @@ export default function EmailVerificationModal({ email }) {
     <Overlay>
       <Content aria-label="verification code modal">
         {!success ? (
-          <div className={styles.main}>
+          <div className={`${styles.main} p-2 `}>
             <img
               src={EmailVerificationPaperPlane}
               alt="paper plane"
@@ -112,7 +111,7 @@ const Content = styled(DialogContent)`
   position: relative;
   background: white;
   width: 100%;
-  height: 100%;
+  height: 80%;
   padding: 2rem;
   display: flex;
   justify-content: center;

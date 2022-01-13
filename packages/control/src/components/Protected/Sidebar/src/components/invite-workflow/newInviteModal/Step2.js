@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Text } from "@chakra-ui/react";
 import { CheckCircleIcon, Icon } from "@chakra-ui/icons";
 import { FiUserPlus, FiSend } from "react-icons/fi";
 import { AiFillCloseCircle } from "react-icons/ai";
 
-export const Step2 = ({ name, listEmail, error, onDismiss, resetStep }) => {
+export const Step2 = ({
+  name,
+  listEmail,
+  error,
+  onDismiss,
+  resetStep,
+  setListEmail
+}) => {
+  // console.log(listEmail)
+
+  useEffect(() => {
+    return () => {
+      setListEmail([]);
+    };
+  });
+
   return (
     <>
-      <Container m={5} centerContent>
+      <Container m={2} centerContent>
         {!error ? (
           <CheckCircleIcon w={10} h={10} color="green.500" />
         ) : (
@@ -18,22 +33,19 @@ export const Step2 = ({ name, listEmail, error, onDismiss, resetStep }) => {
           {!error ? "Sent!" : "Not Sent!"}
         </Text>
       </Container>
-      <Container>
-        <Icon as={FiUserPlus} />
-        <div>
-          <Container spacing={4}>
-            {listEmail.map((e_mail, index) => (
+      <Container className="d-flex">
+        <Icon as={FiUserPlus} w={10} />
+        <div className="d-flex">
+          <Text color="black.300" fontSize="md">
+            {listEmail?.map((e_mail, index) => (
               <b key={index} color={!error ? "green" : "red"}>
                 {e_mail.mail},{" "}
               </b>
             ))}
-          </Container>
-          <Text color="black.300" fontSize="md">
             {!error ? (
               <>
                 has been invited as a <b>member</b> of <b>{name}</b>. They will
-                receive but not be <br />
-                able to reply messages till they join
+                receive but not be able to reply messages till they join
               </>
             ) : (
               <>
@@ -43,19 +55,18 @@ export const Step2 = ({ name, listEmail, error, onDismiss, resetStep }) => {
           </Text>
         </div>
       </Container>
-      <div className={`mt-5 mb-3 pt-3 d-flex my-auto justify-content-between`}>
-        <p className={`mt-1 align-items-center`} style={{ fontSize: "15px" }}>
+      <div className={`mt-4 d-flex justify-content-between `}>
+        <p className={`mt-1 flex-grow-1`} style={{ fontSize: "0.5rem" }}>
           <Icon mr="1" as={FiSend} />
           <span style={{ color: "black", fontSize: "15px" }}>
-            {" "}
-            See previous invitations{" "}
+            See previous invitations
           </span>
         </p>
         <button
           onClick={resetStep}
           type="button"
-          // disabled={inviteEmail === '' ? true : false}
-          className={`btn btn-outline-success  `}
+          className={`btn btn-outline-success mx-2 `}
+          style={{ fontSize: "0.7rem" }}
         >
           Send more invites
         </button>
@@ -64,10 +75,9 @@ export const Step2 = ({ name, listEmail, error, onDismiss, resetStep }) => {
             onDismiss();
             resetStep();
           }}
-          style={{ color: "white", backgroundColor: "#00B87C" }}
+          // style={{ color: "white", backgroundColor: "#00B87C" }}
           type="button"
-          // disabled={inviteEmail === '' ? true : false}
-          className={`btn my-auto `}
+          className={`btn btn-success`}
         >
           Done
         </button>
