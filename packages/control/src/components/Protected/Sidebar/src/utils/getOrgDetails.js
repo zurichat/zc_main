@@ -25,7 +25,13 @@ export const getOrgDetails = (
       dispatch({ type: ACTIONS.ADD_ORGANIZATION, payload: org_details });
 
       //Add plugins to global state
-      plugindata(dispatch, res.data.data.plugins, currentWorkspace, user_id);
+      const orgPlugins = [];
+      if (org_details?.plugins) {
+        Object.keys(org_details.plugins).map(plugin => {
+          orgPlugins.push(org_details.plugins[plugin]);
+        });
+      }
+      plugindata(dispatch, orgPlugins, currentWorkspace, user_id);
     } catch (err) {
       console.warn(err);
     }
