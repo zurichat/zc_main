@@ -12,7 +12,10 @@
     "prettify": "prettier -w .",
     "analyze": "webpack --mode=production --env analyze",
     "build": "concurrently yarn:build:*",
-    "build:webpack": "webpack --mode=production"
+    "build:webpack": "webpack --mode=production",
+    "test": "cross-env BABEL_ENV=test jest",
+    "watch-tests": "cross-env BABEL_ENV=test jest --watch",
+    "coverage": "cross-env BABEL_ENV=test jest --coverage"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
@@ -34,6 +37,8 @@
     "eslint": "^7.32.0",
     "file-loader": "^6.2.0",
     "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.4.7",
+    "jest-cli": "^27.4.7",
     "prettier": "^2.3.2",
     "react-is": "^17.0.2",
     "redux-logger": "^3.0.6",
