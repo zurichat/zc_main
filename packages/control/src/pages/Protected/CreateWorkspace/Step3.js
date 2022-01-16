@@ -22,19 +22,14 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
     createWorkspaceData.coworkersEmail
   );
 
-  const [values, setValues] = useState({ 0: "" });
+  const [values, setValues] = useState([]);
 
-  // const input = (
-
-  // );
-  // const [inputs, setInputs] = useState([input]);
   const addEmailInput = () => {
-    // setInputs([...inputs, input]);
-    // console.log(inputs, input);
-    let temp = Object.keys(values);
-    let l = temp.length;
-    let ad = { l };
-    setValues(...values, ...ad);
+    console.log(values);
+    let valos = values;
+    valos.push("");
+    setValues(...valos);
+    console.log(values, valos);
   };
 
   const handleClick = () => {
@@ -72,16 +67,17 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
             regularly.
           </h4>
           <InputSection>
-            {Object.keys(values).map((k, index) => (
+            {values.map((k, index) => (
               // <Input  />
               <div key={index}>
                 <Input
                   type="email"
                   placeholder="Ex:adimchisylvester@yahoo.com"
-                  value={values[k]}
+                  value={values[index]}
                   onChange={e => {
-                    let a = { k: e.target.value };
-                    setValues(...values, ...a);
+                    let valos = values;
+                    valos[index] = e.target.value;
+                    setValues(...valos);
                   }}
                 />
               </div>
