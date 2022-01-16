@@ -6,6 +6,7 @@ import { BASE_URL } from "@zuri/utilities";
 import styles from "./Steps.module.css";
 import AddAnotherIcon from "./assets/AddAnotherIcon.svg";
 import LinkIcon from "./assets/LinkIcon.svg";
+import { AiOutlineClose } from "react-icons/ai";
 
 import { sendInviteAPI } from "../../../components/Protected/Sidebar/src/components/invite-workflow/newInviteModal/new-invite.utils";
 
@@ -18,32 +19,34 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
   if (!createWorkspaceData.workspaceDefaultChannelName)
     history.push("/create-workspace/step-2");
 
-  const [coworkersEmail, setCoworkersEmail] = useState(
-    createWorkspaceData.coworkersEmail
-  );
-
   const [values, setValues] = useState([""]);
 
   const addEmailInput = () => {
+    setValues([...values, ""]);
     console.log(values);
-    let valos = values;
-    valos.push("");
-    setValues(...valos);
-    console.log(values, valos);
   };
 
-  const handleClick = () => {
+  const handleSubmit = e => {
+    e.preventDefault();
     setCreateWorkspaceData({
       ...createWorkspaceData,
-      coworkersEmail
+      values
     });
-    // history.push("/create-workspace/launch");
-    console.log(coworkersEmail, values);
-    sendInviteAPI(values).then(resInvite => {
-      console.log(resInvite);
-    });
+    console.log(values);
+    sendInviteAPI(values)
+      .then(resInvite => {
+        console.log(resInvite);
+      })
+      .catch(err => {
+        console.error(err);
+      });
 
     history.push(`/workspace/${organizationID}`);
+  };
+
+  const handleDelete = index => {
+    const lists = values;
+    setValues(lists.filter((_value, idx) => idx !== index));
   };
 
   return (
@@ -66,19 +69,25 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
             Give Zuri Chat a spin and add a few coworkers you talk with
             regularly.
           </h4>
-          <InputSection>
+          <form onSubmit={handleSubmit}>
+            {/* <InputSection> */}
             {values?.map((k, index) => (
               // <Input  />
-              <div key={index}>
+              <div key={index} className="d-flex">
                 <Input
                   type="email"
-                  placeholder="Ex:adimchisylvester@yahoo.com"
-                  value={values[index]}
+                  placeholder="adimchisylvester@yahoo.com"
+                  value={k}
                   onChange={e => {
-                    let valos = values;
+                    const valos = values;
+                    // console.log(e.target.value)
                     valos[index] = e.target.value;
-                    setValues(...valos);
+                    setValues([...valos]);
                   }}
+                />
+                <AiOutlineClose
+                  className=" ml-2  mt-3 text-center"
+                  onClick={() => handleDelete(index)}
                 />
               </div>
             ))}
@@ -108,21 +117,28 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
                 <span> instead</span>
               </SharableLink>
             </InputLinkSection>
-          </InputSection>
-          <div className={styles.buttonContainer}>
-            <Link to="/create-workspace/step-2">
+            {/* </InputSection> */}
+
+            {/* <div className={styles.buttonContainer}> */}
+            {/* <Link to="/create-workspace/step-2">
               {" "}
               <button style={{ backgroundColor: "#f40101", color: "white" }}>
                 Go Back
               </button>
-            </Link>
+            </Link> */}
             <button
-              style={{ backgroundColor: "#00b87c", color: "white" }}
-              onClick={handleClick}
+              type="submit"
+              style={{
+                backgroundColor: "#00b87c",
+                color: "white",
+                width: "100%",
+                textAlign: "center"
+              }}
             >
               Launch Workspace
             </button>
-          </div>
+            {/* </div> */}
+          </form>
         </div>
       </div>
     </div>
@@ -147,17 +163,17 @@ export const Input = styled.input`
   padding: 20px 16px;
   margin-bottom: 24px;
 
-  &::placeholder {
-    font-weight: 500;
-    font-size: ${24 / 16}rem;
-    color: #c4c4c4;
-    font-family: "Lato", sans-serif;
-  }
+  // &::placeholder {
+  //   font-weight: 500;
+  //   font-size: ${24 / 16}rem;
+  //   color: #c4c4c4;
+  //   font-family: "Lato", sans-serif;
+  // }
   @media (max-width: 35rem) {
     width: 100%;
-    &::placeholder {
-      font-size: 1rem;
-    }
+    // &::placeholder {
+    //   font-size: 1rem;
+    // }
   }
 `;
 export const InputSection = styled.div`
