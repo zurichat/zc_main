@@ -22,7 +22,7 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
     createWorkspaceData.coworkersEmail
   );
 
-  const [values, setValues] = useState([]);
+  const [values, setValues] = useState([""]);
 
   const addEmailInput = () => {
     console.log(values);
@@ -38,8 +38,8 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
       coworkersEmail
     });
     // history.push("/create-workspace/launch");
-    console.log(coworkersEmail);
-    sendInviteAPI([coworkersEmail]).then(resInvite => {
+    console.log(coworkersEmail, values);
+    sendInviteAPI(values).then(resInvite => {
       console.log(resInvite);
     });
 
@@ -67,7 +67,7 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
             regularly.
           </h4>
           <InputSection>
-            {values.map((k, index) => (
+            {values?.map((k, index) => (
               // <Input  />
               <div key={index}>
                 <Input
