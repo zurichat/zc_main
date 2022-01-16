@@ -1,28 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link, useHistory } from "react-router-dom";
+import { BASE_URL } from "@zuri/utilities";
 
 import styles from "./Steps.module.css";
 import AddAnotherIcon from "./assets/AddAnotherIcon.svg";
 import LinkIcon from "./assets/LinkIcon.svg";
 
+import { sendInviteAPI } from "../../../components/Protected/Sidebar/src/components/invite-workflow/newInviteModal/new-invite.utils";
+
 export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
   const history = useHistory();
   const user = JSON.parse(sessionStorage.getItem("user")) || null;
+  const organizationID = localStorage.getItem("currentWorkspace") || null;
 
   if (!createWorkspaceData.workspaceName) history.push("/create-workspace");
   if (!createWorkspaceData.workspaceDefaultChannelName)
     history.push("/create-workspace/step-2");
 
-  const [coworkersEmail, setCoworkersEmail] = React.useState(
+  const [coworkersEmail, setCoworkersEmail] = useState(
     createWorkspaceData.coworkersEmail
   );
 
-  const input = (
-    <Input type="text" placeholder="Ex:adimchisylvester@yahoo.com" />
-  );
-  const [inputs, setInputs] = React.useState([input]);
-  const addEmailInput = () => setInputs([...inputs, input]);
+  const [values, setValues] = useState({ 0: "" });
+
+  // const input = (
+
+  // );
+  // const [inputs, setInputs] = useState([input]);
+  const addEmailInput = () => {
+    // setInputs([...inputs, input]);
+    // console.log(inputs, input);
+    let temp = Object.keys(values);
+    let l = temp.length;
+    let ad = { l };
+    setValues(...values, ...ad);
+  };
+
+  const handleClick = () => {
+    setCreateWorkspaceData({
+      ...createWorkspaceData,
+      coworkersEmail
+    });
+    // history.push("/create-workspace/launch");
+    console.log(coworkersEmail);
+    sendInviteAPI([coworkersEmail]).then(resInvite => {
+      console.log(resInvite);
+    });
+
+    history.push(`/workspace/${organizationID}`);
+  };
 
   return (
     <div>
@@ -45,8 +72,19 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
             regularly.
           </h4>
           <InputSection>
-            {inputs.map((input, index) => (
-              <Input key={index} />
+            {Object.keys(values).map((k, index) => (
+              // <Input  />
+              <div key={index}>
+                <Input
+                  type="email"
+                  placeholder="Ex:adimchisylvester@yahoo.com"
+                  value={values[k]}
+                  onChange={e => {
+                    let a = { k: e.target.value };
+                    setValues(...values, ...a);
+                  }}
+                />
+              </div>
             ))}
             <InputLinkSection>
               <AddLinkWrapper>
@@ -57,17 +95,20 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
 
               <SharableLink>
                 <img src={LinkIcon} alt="" />
-                <Link
+                <span
                   style={{ color: "#00B87C", cursor: "pointer" }}
                   onClick={() => {
-                    navigator.clipboard.writeText(
-                      `https://zuri.chat/invite?organization=${createWorkspaceData.workspaceName}`
+                    window.navigator.clipboard.writeText(
+                      `${BASE_URL}/invite?organization=${organizationID}`
                     );
-                    alert(`Link has been copied to you clipboard`);
+                    alert(
+                      `Link has been copied to you clipboard: ` +
+                        `${BASE_URL}/invite?organization=${organizationID}`
+                    );
                   }}
                 >
                   &nbsp;&nbsp;Get a shareable link
-                </Link>
+                </span>
                 <span> instead</span>
               </SharableLink>
             </InputLinkSection>
@@ -81,13 +122,7 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
             </Link>
             <button
               style={{ backgroundColor: "#00b87c", color: "white" }}
-              onClick={() => {
-                setCreateWorkspaceData({
-                  ...createWorkspaceData,
-                  coworkersEmail
-                });
-                history.push("/create-workspace/launch");
-              }}
+              onClick={handleClick}
             >
               Launch Workspace
             </button>

@@ -59,7 +59,8 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
                   ...createWorkspaceData,
                   workspaceDefaultChannelName
                 });
-                history.push("/create-workspace/step-3");
+                // history.push("/create-workspace/step-3");
+                history.push("/create-workspace/launch");
               }}
             >
               Continue
