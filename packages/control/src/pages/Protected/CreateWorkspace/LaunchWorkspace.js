@@ -25,7 +25,7 @@ export default function Index({ createWorkspaceData }) {
       { creator_email: user.email },
       { headers: { Authorization: "Bearer " + user.token } }
     );
-
+    console.log(createWorkspaceApiCall);
     const workspaceId = createWorkspaceApiCall.data.data.organization_id;
 
     // Rename the Workspace
@@ -68,7 +68,8 @@ export default function Index({ createWorkspaceData }) {
     );
     // Redirect
     localStorage.setItem("currentWorkspace", workspaceId);
-    history.push(`/workspace/${workspaceId}`);
+    // history.push(`/workspace/${workspaceId}`);
+    history.push(`/create-workspace/step-3`);
   };
 
   React.useEffect(() => {

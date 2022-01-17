@@ -14,6 +14,9 @@ const InvitePage = () => {
   const history = useHistory();
   const [registerNewUser, setRegisterNewUser] = useState(false);
   const [userPasswordValue, setUserPasswordValue] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [userPasswordError, setUserPasswordError] = useState("");
+  const [confirmPasswordError, setConfirmPasswordError] = useState("");
 
   // check if user has a zuri account
   const handleJoinWorkspace = async () => {
@@ -77,40 +80,78 @@ const InvitePage = () => {
     }
   };
 
+  const validatePasswords = () => {
+    if (userPasswordValue.length < 9) {
+      setUserPasswordError("Password must be 9 or more characters");
+      return false;
+    }
+    if (confirmPassword !== userPasswordValue) {
+      setConfirmPasswordError("Passwords do not match");
+      return false;
+    }
+
+    return true;
+  };
+
   return (
-    <main className="container text-center my-5 py-5 w-75">
+    <main className="container  my-5 py-5 w-75">
       <Helmet>
         <title>InviteScreen - Zuri Chat</title>
       </Helmet>
-      <div>
+      <div className={`text-center`}>
         <img src={logo} width="150" alt="zuri" />
       </div>
       <div className="border p-3">
-        <h5>You have been invited to a Workspace</h5>
+        <h3 className={`text-center`}>You have been invited to a Workspace</h3>
+
         {registerNewUser && (
-          <AuthInputBox
-            className={``}
-            id="password"
-            name="Password"
-            type="password"
-            placeholder="Enter a password"
-            value={userPasswordValue}
-            setValue={setUserPasswordValue}
-            error={""}
-          />
+          <>
+            <p className={`text-center`}>Welcome to Zuri Chat</p>
+
+            <p className={`text-center`} style={{ color: "#00b87c" }}>
+              Kindly input your password to SignUp
+            </p>
+            <AuthInputBox
+              className={``}
+              id="password"
+              name="Password"
+              type="password"
+              placeholder="Enter a password"
+              value={userPasswordValue}
+              setValue={setUserPasswordValue}
+              error={userPasswordError}
+            />
+            <AuthInputBox
+              className={``}
+              id="confirmpassword"
+              name="Confirm Password"
+              type="password"
+              placeholder="Confirm password"
+              value={confirmPassword}
+              setValue={setConfirmPassword}
+              error={confirmPasswordError}
+            />
+          </>
         )}
-        <Button
-          onClick={() => {
-            if (registerNewUser) {
-              registerNewUserHandler();
-            } else {
-              handleJoinWorkspace();
-            }
-          }}
-          disabled={registerNewUser && !userPasswordValue}
-        >
-          Join?
-        </Button>
+        <div className="text-center d-flex">
+          <Button
+            className=" flex-grow-1"
+            onClick={() => {
+              setConfirmPasswordError("");
+              setUserPasswordError("");
+              if (validatePasswords()) {
+                if (registerNewUser) {
+                  registerNewUserHandler();
+                } else {
+                  handleJoinWorkspace();
+                }
+              }
+            }}
+            disabled={registerNewUser && !userPasswordValue && !confirmPassword}
+          >
+            Join?
+          </Button>
+        </div>
       </div>
     </main>
   );

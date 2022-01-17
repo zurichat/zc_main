@@ -67,7 +67,7 @@ export default function Index() {
         <div>
           <div style={{ textAlign: "center" }}>
             <p>Or</p>
-            <h3>Open a Workspace</h3>
+            <h3 style={{ textAlign: "center" }}>Open a Workspace</h3>
           </div>
           <UserOrganisationsListing user={user} organizations={organizations} />
         </div>

@@ -1,28 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link, useHistory } from "react-router-dom";
+import { BASE_URL } from "@zuri/utilities";
 
 import styles from "./Steps.module.css";
 import AddAnotherIcon from "./assets/AddAnotherIcon.svg";
 import LinkIcon from "./assets/LinkIcon.svg";
+import { AiOutlineClose } from "react-icons/ai";
+
+import { sendInviteAPI } from "../../../components/Protected/Sidebar/src/components/invite-workflow/newInviteModal/new-invite.utils";
 
 export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
   const history = useHistory();
   const user = JSON.parse(sessionStorage.getItem("user")) || null;
+  const organizationID = localStorage.getItem("currentWorkspace") || null;
 
   if (!createWorkspaceData.workspaceName) history.push("/create-workspace");
   if (!createWorkspaceData.workspaceDefaultChannelName)
     history.push("/create-workspace/step-2");
 
-  const [coworkersEmail, setCoworkersEmail] = React.useState(
-    createWorkspaceData.coworkersEmail
-  );
+  const [values, setValues] = useState([""]);
 
-  const input = (
-    <Input type="text" placeholder="Ex:adimchisylvester@yahoo.com" />
-  );
-  const [inputs, setInputs] = React.useState([input]);
-  const addEmailInput = () => setInputs([...inputs, input]);
+  const addEmailInput = () => {
+    setValues([...values, ""]);
+    console.log(values);
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    setCreateWorkspaceData({
+      ...createWorkspaceData,
+      values
+    });
+    console.log(values);
+    sendInviteAPI(values)
+      .then(resInvite => {
+        console.log(resInvite);
+      })
+      .catch(err => {
+        console.error(err);
+      });
+
+    history.push(`/workspace/${organizationID}`);
+  };
+
+  const handleDelete = index => {
+    const lists = values;
+    setValues(lists.filter((_value, idx) => idx !== index));
+  };
 
   return (
     <div>
@@ -44,9 +69,27 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
             Give Zuri Chat a spin and add a few coworkers you talk with
             regularly.
           </h4>
-          <InputSection>
-            {inputs.map((input, index) => (
-              <Input key={index} />
+          <form onSubmit={handleSubmit}>
+            {/* <InputSection> */}
+            {values?.map((k, index) => (
+              // <Input  />
+              <div key={index} className="d-flex">
+                <Input
+                  type="email"
+                  placeholder="adimchisylvester@yahoo.com"
+                  value={k}
+                  onChange={e => {
+                    const valos = values;
+                    // console.log(e.target.value)
+                    valos[index] = e.target.value;
+                    setValues([...valos]);
+                  }}
+                />
+                <AiOutlineClose
+                  className=" ml-2  mt-3 text-center"
+                  onClick={() => handleDelete(index)}
+                />
+              </div>
             ))}
             <InputLinkSection>
               <AddLinkWrapper>
@@ -57,41 +100,45 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
 
               <SharableLink>
                 <img src={LinkIcon} alt="" />
-                <Link
+                <span
                   style={{ color: "#00B87C", cursor: "pointer" }}
                   onClick={() => {
-                    navigator.clipboard.writeText(
-                      `https://zuri.chat/invite?organization=${createWorkspaceData.workspaceName}`
+                    window.navigator.clipboard.writeText(
+                      `${BASE_URL}/invite?organization=${organizationID}`
                     );
-                    alert(`Link has been copied to you clipboard`);
+                    alert(
+                      `Link has been copied to you clipboard: ` +
+                        `${BASE_URL}/invite?organization=${organizationID}`
+                    );
                   }}
                 >
                   &nbsp;&nbsp;Get a shareable link
-                </Link>
+                </span>
                 <span> instead</span>
               </SharableLink>
             </InputLinkSection>
-          </InputSection>
-          <div className={styles.buttonContainer}>
-            <Link to="/create-workspace/step-2">
+            {/* </InputSection> */}
+
+            {/* <div className={styles.buttonContainer}> */}
+            {/* <Link to="/create-workspace/step-2">
               {" "}
               <button style={{ backgroundColor: "#f40101", color: "white" }}>
                 Go Back
               </button>
-            </Link>
+            </Link> */}
             <button
-              style={{ backgroundColor: "#00b87c", color: "white" }}
-              onClick={() => {
-                setCreateWorkspaceData({
-                  ...createWorkspaceData,
-                  coworkersEmail
-                });
-                history.push("/create-workspace/launch");
+              type="submit"
+              style={{
+                backgroundColor: "#00b87c",
+                color: "white",
+                width: "100%",
+                textAlign: "center"
               }}
             >
               Launch Workspace
             </button>
-          </div>
+            {/* </div> */}
+          </form>
         </div>
       </div>
     </div>
@@ -116,17 +163,17 @@ export const Input = styled.input`
   padding: 20px 16px;
   margin-bottom: 24px;
 
-  &::placeholder {
-    font-weight: 500;
-    font-size: ${24 / 16}rem;
-    color: #c4c4c4;
-    font-family: "Lato", sans-serif;
-  }
+  // &::placeholder {
+  //   font-weight: 500;
+  //   font-size: ${24 / 16}rem;
+  //   color: #c4c4c4;
+  //   font-family: "Lato", sans-serif;
+  // }
   @media (max-width: 35rem) {
     width: 100%;
-    &::placeholder {
-      font-size: 1rem;
-    }
+    // &::placeholder {
+    //   font-size: 1rem;
+    // }
   }
 `;
 export const InputSection = styled.div`
