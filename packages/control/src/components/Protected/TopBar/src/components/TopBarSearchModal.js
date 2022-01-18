@@ -108,6 +108,7 @@ const TopBarSearchModal = () => {
           onChange={onInputChange}
           onKeyUp={onSearchSubmit}
           className={styles._input2}
+          data-testid="topbar_search_input_testid"
         />
       </div>
       <div
