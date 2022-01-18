@@ -139,12 +139,14 @@ const InvitePage = () => {
             onClick={() => {
               setConfirmPasswordError("");
               setUserPasswordError("");
-              if (validatePasswords()) {
-                if (registerNewUser) {
+              console.log("herre");
+
+              if (registerNewUser) {
+                if (validatePasswords()) {
                   registerNewUserHandler();
-                } else {
-                  handleJoinWorkspace();
                 }
+              } else {
+                handleJoinWorkspace();
               }
             }}
             disabled={registerNewUser && !userPasswordValue && !confirmPassword}

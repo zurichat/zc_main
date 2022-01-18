@@ -135,7 +135,7 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
                 textAlign: "center"
               }}
             >
-              Launch Workspace
+              Proceed to Workspace
             </button>
             {/* </div> */}
           </form>
