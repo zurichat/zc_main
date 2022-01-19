@@ -15,4 +15,14 @@ describe("Landing Page", () => {
     });
     expect(landingPageHeading).toBeInTheDocument();
   });
+  test("links working", () => {
+    render(
+      <Router>
+        <LandingPage />
+      </Router>
+    );
+    const links = screen.getAllByRole("link");
+    const checkLinks = links.every(el => el.href?.includes("/"));
+    expect(checkLinks).toBeTruthy();
+  });
 });
