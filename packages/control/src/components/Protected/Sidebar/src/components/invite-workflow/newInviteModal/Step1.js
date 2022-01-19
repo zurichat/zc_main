@@ -60,6 +60,16 @@ export const Step1 = ({
     handleSubmit(e);
   };
 
+  const copy = async () => {
+    await window.navigator.clipboard.writeText(
+      `${BASE_URL}/invite?organization=${currentWorkspace}`
+    );
+    alert(
+      "link has been copied: " +
+        `${BASE_URL}/invite?organization=${currentWorkspace}`
+    );
+  };
+
   return (
     <ModalContent m={0} p={0} borderRadius="2px" w="md">
       <ModalHeader fontSize="20px">Invite People to {name}</ModalHeader>
@@ -116,15 +126,7 @@ export const Step1 = ({
 
         <div className={`mt-1 pt-2 d-flex my-auto justify-content-between`}>
           <p
-            onClick={() => {
-              window.navigator.clipboard.writeText(
-                `${BASE_URL}/invite?organization=${currentWorkspace}`
-              );
-              alert(
-                "link has been copied: " +
-                  `${BASE_URL}/invite?organization=${currentWorkspace}`
-              );
-            }}
+            onClick={copy}
             className={`mb-0 align-items-center`}
             style={{ color: "#00B87C", fontSize: "0.8rem" }}
           >

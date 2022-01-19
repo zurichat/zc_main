@@ -49,6 +49,16 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
     setValues(lists.filter((_value, idx) => idx !== index));
   };
 
+  const handleCopy = async () => {
+    await window.navigator.clipboard.writeText(
+      `${BASE_URL}/invite?organization=${organizationID}`
+    );
+    alert(
+      "link has been copied: " +
+        `${BASE_URL}/invite?organization=${organizationID}`
+    );
+  };
+
   return (
     <div>
       <div className={styles.wrapper}>
@@ -102,15 +112,7 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
                 <img src={LinkIcon} alt="" />
                 <span
                   style={{ color: "#00B87C", cursor: "pointer" }}
-                  onClick={() => {
-                    window.navigator.clipboard.writeText(
-                      `${BASE_URL}/invite?organization=${organizationID}`
-                    );
-                    alert(
-                      `Link has been copied to you clipboard: ` +
-                        `${BASE_URL}/invite?organization=${organizationID}`
-                    );
-                  }}
+                  onClick={handleCopy}
                 >
                   &nbsp;&nbsp;Get a shareable link
                 </span>
