@@ -1,15 +1,31 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
-
+import { RiErrorWarningLine } from "react-icons/ri";
 import styles from "./Steps.module.css";
 
-export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
+export default function Index({
+  createWorkspaceData,
+  setCreateWorkspaceData,
+  organizations
+}) {
   const history = useHistory();
   const user = JSON.parse(sessionStorage.getItem("user")) || null;
 
   const [workspaceName, setWorkspaceName] = React.useState(
     createWorkspaceData.workspaceName
   );
+
+  const [error, setError] = React.useState("");
+
+  const workNameCheck = name => {
+    for (var x of organizations) {
+      if (x.name == name) {
+        setError("Workspace name already exists");
+        return true;
+      }
+    }
+    return false;
+  };
 
   return (
     <div>
@@ -25,12 +41,20 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
             This will be the name of your workspace. Choose something that your
             team will recognise
           </h4>
-
+          {error && (
+            <div className={`${styles.errWrapper} d-flex text-danger`}>
+              <RiErrorWarningLine />
+              <div className="mx-2">{error}</div>
+            </div>
+          )}
           <input
             type="text"
             value={workspaceName}
             placeholder="Ex: The Brand Hub"
-            onChange={e => setWorkspaceName(e.target.value)}
+            onChange={e => {
+              setError("");
+              setWorkspaceName(e.target.value);
+            }}
             className={styles.inputBox}
           />
 
@@ -51,11 +75,13 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
                   : { backgroundColor: "revert", cursor: "not-allowed" }
               }
               onClick={() => {
-                setCreateWorkspaceData({
-                  ...createWorkspaceData,
-                  workspaceName
-                });
-                history.push("/create-workspace/step-2");
+                if (!workNameCheck(workspaceName)) {
+                  setCreateWorkspaceData({
+                    ...createWorkspaceData,
+                    workspaceName
+                  });
+                  history.push("/create-workspace/step-2");
+                }
               }}
             >
               Continue

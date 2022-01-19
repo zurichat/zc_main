@@ -73,7 +73,7 @@ const InvitePage = () => {
         history.replace("/login");
         return;
       }
-      ContinueToMobile();
+      // ContinueToMobile();
     } catch ({ message }) {
       console.error("addUserToOrganization-err", message);
       history.replace("/login");

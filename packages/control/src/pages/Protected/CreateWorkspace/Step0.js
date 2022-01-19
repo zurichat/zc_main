@@ -9,9 +9,9 @@ import { UserOrganisationsListing } from "../../../components";
 import ContinueArrow from "./assets/ContinueArrow.svg";
 import CreateWorkspaceSideImage from "./assets/CreateWorkspaceSideImage.png";
 
-export default function Index() {
+export default function Index({ organizations, setOrganizations }) {
   const user = JSON.parse(sessionStorage.getItem("user")) || null;
-  const [organizations, setOrganizations] = React.useState([]);
+  // const [organizations, setOrganizations] = React.useState([]);
 
   async function fetchData() {
     const result = await axios.get(
