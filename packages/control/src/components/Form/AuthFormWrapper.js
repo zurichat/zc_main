@@ -73,6 +73,7 @@ const FormWrapper = ({
               className={`${styles.btn}`}
               value="submit"
               type="submit"
+              data-cy="auth_form_submit_button"
             >
               {submitButtonName}
             </button>

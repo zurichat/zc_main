@@ -12,7 +12,8 @@
     "build:webpack": "webpack --mode=production",
     "test:e2e": "cypress open",
     "rm:coverage": "rm -rf coverage || true",
-    "cypress:coverage": "cross-env NODE_ENV=test nyc report --reporter=text-summary"
+    "cypress:coverage": "cross-env NODE_ENV=test nyc report",
+    "cypress:coverage-summary": "cross-env NODE_ENV=test nyc report --reporter=text-summary"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
