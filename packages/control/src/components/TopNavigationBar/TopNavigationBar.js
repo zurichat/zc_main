@@ -316,7 +316,7 @@ export default function TopNavigationBar() {
                 </span>
               </Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" data-cy="top_navigation_bar_login_button">
               <Link to="/login" className={`btn nav-link`} role="button">
                 <span className={`${TopNavigationBarStyles.signIn}`}>
                   {t("nav_login")}

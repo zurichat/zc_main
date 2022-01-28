@@ -53,6 +53,7 @@ const InputBox = ({
             required={required}
             onChange={e => setValue(e.target.value)}
             onFocus={onFocus}
+            data-cy="auth_form_textfield"
           />
 
           {/password/i.test(name) && (

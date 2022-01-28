@@ -1,0 +1,18 @@
+{
+  "data": {
+    "session_id": "61f46796f681d0cf7d02da14",
+    "user": {
+      "id": "727a09a67add2a5bd31e454e",
+      "first_name": "",
+      "last_name": "",
+      "display_name": "",
+      "email": "tundealabi4780@gmail.com",
+      "phone": "",
+      "status": 0,
+      "time_zone": "",
+      "created_at": "2021-10-15T23:07:18.140964355Z",
+      "updated_at": "0001-01-01T00:00:00Z",
+      "token": "fyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fyJjb29raWUiOiJNVFkwTXJmNjgyMEwZDNhZjQ1ZDVjNyJ9.yqoXde7UWwmWgC2XyHLk"
+    }
+  }
+}
