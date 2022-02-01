@@ -14,6 +14,7 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
   const history = useHistory();
   const user = JSON.parse(sessionStorage.getItem("user")) || null;
   const organizationID = localStorage.getItem("currentWorkspace") || null;
+  const URL = "https://staging.zuri.chat";
 
   if (!createWorkspaceData.workspaceName) history.push("/create-workspace");
   if (!createWorkspaceData.workspaceDefaultChannelName)
@@ -51,12 +52,9 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
 
   const handleCopy = async () => {
     await window.navigator.clipboard.writeText(
-      `${BASE_URL}/invite?organization=${organizationID}`
+      `${URL}/workspace/${organizationID}`
     );
-    alert(
-      "link has been copied: " +
-        `${BASE_URL}/invite?organization=${organizationID}`
-    );
+    alert("link has been copied: " + `${URL}/workspace/${organizationID}`);
   };
 
   return (

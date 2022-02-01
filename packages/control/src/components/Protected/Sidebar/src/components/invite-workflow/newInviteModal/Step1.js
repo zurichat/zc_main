@@ -14,7 +14,6 @@ import {
   Text
 } from "@chakra-ui/react";
 import { InfoOutlineIcon, LinkIcon } from "@chakra-ui/icons";
-import { BASE_URL } from "@zuri/utilities";
 
 export const Step1 = ({
   name,
@@ -32,6 +31,7 @@ export const Step1 = ({
 }) => {
   const [foc, setFoc] = useState(false);
   const [canSend, setCanSend] = useState(false);
+  const URL = "https://staging.zuri.chat";
 
   const handleChange = e => {
     e.preventDefault();
@@ -62,12 +62,9 @@ export const Step1 = ({
 
   const copy = async () => {
     await window.navigator.clipboard.writeText(
-      `${BASE_URL}/invite?organization=${currentWorkspace}`
+      `${URL}/workspace/${currentWorkspace}`
     );
-    alert(
-      "link has been copied: " +
-        `${BASE_URL}/invite?organization=${currentWorkspace}`
-    );
+    alert("link has been copied: " + `${URL}/workspace/${currentWorkspace}`);
   };
 
   return (
