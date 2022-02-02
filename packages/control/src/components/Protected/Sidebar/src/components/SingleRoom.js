@@ -11,7 +11,7 @@ export default function SingleRoom({ image, name, link }) {
     <div
       className={`row p-0 text-decoration-none ${
         match?.isExact ? styles.dropdown_active : styles.dropDown
-      }`}
+      }  ml-2 rounded-lg`}
     >
       <div
         className={`col-12 d-flex align-items-center ${styles.plugin__title}`}

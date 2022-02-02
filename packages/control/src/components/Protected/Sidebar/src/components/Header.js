@@ -54,6 +54,7 @@ const SidebarHeader = props => {
           <div className={styles.newMessage}>
             <img
               className={`img-fluid w-100 ${styles.newMsgIcon}`}
+              style={{ cursor: "pointer" }}
               src={newMsgIcon}
               alt="message"
             />
