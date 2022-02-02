@@ -10,6 +10,8 @@ const utilitiesCaches = [
 
 // base URL for request making
 export const BASE_URL = "https://staging.api.zuri.chat";
+// base URL for live site
+export const BASE_HOST_URL = "https://staging.zuri.chat";
 
 export const GetUserInfo = async () => {
   let user = JSON.parse(sessionStorage.getItem("user"));

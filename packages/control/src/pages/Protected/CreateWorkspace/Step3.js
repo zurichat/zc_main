@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link, useHistory } from "react-router-dom";
-import { BASE_URL } from "@zuri/utilities";
+import { BASE_URL, BASE_HOST_URL } from "@zuri/utilities";
 
 import styles from "./Steps.module.css";
 import AddAnotherIcon from "./assets/AddAnotherIcon.svg";
@@ -14,7 +14,6 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
   const history = useHistory();
   const user = JSON.parse(sessionStorage.getItem("user")) || null;
   const organizationID = localStorage.getItem("currentWorkspace") || null;
-  const URL = "https://staging.zuri.chat";
 
   if (!createWorkspaceData.workspaceName) history.push("/create-workspace");
   if (!createWorkspaceData.workspaceDefaultChannelName)
@@ -52,9 +51,11 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
 
   const handleCopy = async () => {
     await window.navigator.clipboard.writeText(
-      `${URL}/workspace/${organizationID}`
+      `${BASE_HOST_URL}/workspace/${organizationID}`
     );
-    alert("link has been copied: " + `${URL}/workspace/${organizationID}`);
+    alert(
+      "link has been copied: " + `${BASE_HOST_URL}/workspace/${organizationID}`
+    );
   };
 
   return (

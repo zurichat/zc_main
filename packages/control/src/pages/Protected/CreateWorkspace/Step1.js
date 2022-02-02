@@ -1,14 +1,14 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { RiErrorWarningLine } from "react-icons/ri";
 import styles from "./Steps.module.css";
 
-export default function Index({
-  createWorkspaceData,
-  setCreateWorkspaceData,
-  organizations
-}) {
+export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
   const history = useHistory();
+  let location = useLocation();
+  const organizations = location.state;
+  // console.log(location);
+
   const user = JSON.parse(sessionStorage.getItem("user")) || null;
 
   const [workspaceName, setWorkspaceName] = React.useState(

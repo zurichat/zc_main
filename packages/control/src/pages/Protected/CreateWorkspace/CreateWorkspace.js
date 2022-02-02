@@ -15,8 +15,6 @@ export default function Index() {
     coworkersEmail: []
   });
 
-  const [organizations, setOrganizations] = React.useState([]);
-
   return (
     <>
       <TopNavigationBar />
@@ -29,8 +27,6 @@ export default function Index() {
             <Step0
               createWorkspaceData={createWorkspaceData}
               setCreateWorkspaceData={setCreateWorkspaceData}
-              organizations={organizations}
-              setOrganizations={setOrganizations}
             />
           )}
         />
@@ -42,7 +38,6 @@ export default function Index() {
             <Step1
               createWorkspaceData={createWorkspaceData}
               setCreateWorkspaceData={setCreateWorkspaceData}
-              organizations={organizations}
             />
           )}
         />
