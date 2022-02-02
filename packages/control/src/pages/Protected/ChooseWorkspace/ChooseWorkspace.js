@@ -23,6 +23,7 @@ export default function Index() {
     );
     const { data } = result.data;
     setOrganizations(data);
+    sessionStorage.setItem("organisations", JSON.stringify(data));
   }
 
   React.useEffect(() => {

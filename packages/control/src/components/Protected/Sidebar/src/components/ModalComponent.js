@@ -4,13 +4,19 @@ import CompanyImage from "../assets/CompanyIcon.svg";
 import EmailInviteModal from "./invite-workflow/newInviteModal/EmailInviteModal";
 // import axios from 'axios'
 import { RiArrowRightSLine as Arrow } from "react-icons/ri";
-// import { faClosedCaptioning } from '@fortawesome/free-solid-svg-icons'
+import { useHistory } from "react-router-dom";
 // import Workspace from '../../../control/src/pages/workspace/components/Workspace'
 
-const orgss = sessionStorage.getItem("organisations");
-const orgs = JSON.parse(orgss);
-
 const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
+  const history = useHistory();
+  const [orgs, setOrgs] = React.useState([]);
+
+  useEffect(() => {
+    setOrgs(JSON.parse(sessionStorage.getItem("organisations")));
+    // console.log(orgs);
+  }, []);
+  // console.log(orgs);
+
   // HoverFunctionality
   const useHover = () => {
     const [value, setValue] = useState(false);
@@ -91,19 +97,20 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
       <hr className={styles.modalDivider} />
       <div className={`d-flex flex-column ${styles.modalSection}`}>
         <div>
-          <p>Prefrence </p>
+          <p>Preferences*</p>
         </div>
         <div
           className={`d-flex align-items-center justify-content-between ${styles.popover}`}
         >
-          <p>Customize {workSpace?.name}</p>
-          <div>
+          <p>Customize {workSpace?.name}*</p>
+          {/* <div>
             <Arrow className={`${styles.arrow}`} />
-          </div>
+          </div> */}
         </div>
         <div>
-          <p>
-            <a href="/admin/settings">Workspace Settings</a>
+          <p onClick={() => history.push("/admin/settings")}>
+            {" "}
+            Workspace Settings*
           </p>
         </div>
       </div>
@@ -126,29 +133,26 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
               ref={hoverRef}
               className={`d-flex flex-column ${styles.submodalSection}`}
             >
-              <div>
-                <p>Plugins</p>
+              <div onClick={() => history.push("/plugins")}>
+                <p> Plugins</p>
               </div>
               <hr className={styles.modalDivider} />
               <div>
-                <p>Analytics</p>
+                <p>Analytics*</p>
               </div>
             </section>
           </section>
         </div>
       </div>
       <hr className={styles.modalDivider} />
-      <div className={styles.modalSection}>
+      <div className={`d-flex flex-column  ${styles.modalSection}`}>
         <div>
-          <p>
-            {" "}
-            <a href="/signout">Sign Out</a>
-          </p>
+          <p onClick={() => history.push("/signout")}> Sign Out</p>
         </div>
       </div>
       <hr className={styles.modalDivider} />
       <div className={` d-flex flex-column ${styles.modalSection}`}>
-        <div
+        {/* <div
           ref={hoverRef3}
           className={`d-flex align-items-center justify-content-between ${styles.modalSubSection} `}
         >
@@ -174,7 +178,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
               </div>
             </section>
           </section>
-        </div>
+        </div> */}
         <div
           ref={hoverRef2}
           className={`d-flex align-items-center justify-content-between ${styles.modalSubSection}`}
@@ -191,11 +195,11 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
               className={`d-flex flex-column ${styles.submodalSection}`}
             >
               {orgs &&
-                orgs.map((o, idx) => (
+                orgs?.map((o, idx) => (
                   <div
                     key={idx}
                     onClick={() => {
-                      localStorage.setItem("currentWorkspace", o.id);
+                      history.push(`/workspace/${o.id}`);
                       window.location.reload();
                     }}
                   >
@@ -215,7 +219,10 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
           </section>
         </div>
         <div className={`${styles.modalSubSection}`}>
-          <p>Open the Zuri Chat App </p>
+          <p onClick={() => history.push("/downloads")}>
+            {" "}
+            Open the Zuri Chat App
+          </p>
         </div>
       </div>
     </section>
