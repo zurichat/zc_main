@@ -11,7 +11,7 @@
 
 .dropdown_active,
 .item__list__active {
-  width: 85%;
+  /* width: 90%; */
   border-radius: 15px;
   background-color: #7ed5af;
 }

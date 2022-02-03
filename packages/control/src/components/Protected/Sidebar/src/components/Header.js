@@ -30,7 +30,7 @@ const SidebarHeader = props => {
   //   sideBarHeader[0].style.backgroundColor = "#00b87c"
   // }
   return (
-    <div className={` ${styles.subCon1}`}>
+    <div className={` pb-1 ${styles.subCon1}`}>
       <div className={`row ${styles.orgDiv}`}>
         <div className={`col-12 ${styles.orgInfo}`}>
           <div onClick={() => toggle()} className={styles.orgHeader}>
