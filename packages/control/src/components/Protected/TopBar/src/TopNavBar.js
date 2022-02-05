@@ -18,6 +18,7 @@ import { BigModal } from "./components/bigModal";
 import TopSearchBar from "./components/TopSearchBar";
 import TopBarSearchModal from "./components/TopBarSearchModal";
 import SearchAutocomplete from "./components/SearchAutocomplete";
+import Sidebar from "../../Sidebar/Sidebar";
 // import HelpIcon from './assets/images/help-icon.svg'
 // import HelpModal from './components/HelpModal'
 // import UserForm from '../../control/src/pages/ReportFeature/User/Form'
@@ -176,21 +177,17 @@ const TopNavBar = () => {
   const [toggleSidebar, setToggleSidebar] = useState(false);
 
   const handleToggleSidebar = () => {
+    console.log("toggling");
     setToggleSidebar(!toggleSidebar);
   };
 
   // useEffect(() => {
   //   //Handle sidebar on mobile
-  //   const sidebar = document.getElementById(
-  //     "single-spa-application:@zuri/sidebar"
-  //   )
-  //   if (toggleSidebar && window.outerWidth <= 768) {
-  //     sidebar.style.display = "block"
-  //   } else if (window.outerWidth > 768) {
-  //     sidebar.style.display = "block"
-  //   } else {
-  //     sidebar.style.display = "none"
-  //   }
+  //   // const sidebar = document.getElementById(
+  //   //   "single-spa-application:@zuri/sidebar"
+  //   // )
+  //   const sidebar = <Sidebar/>
+
   // }, [toggleSidebar])
 
   // Search autocomplete
@@ -241,6 +238,11 @@ const TopNavBar = () => {
 
   return (
     <TopbarWrapper>
+      {toggleSidebar ? (
+        <div className={styles["mobile__sidebar"]}>
+          <Sidebar />
+        </div>
+      ) : null}
       <BrandWrapper>
         {/* <a href="/home"> */}
         <div className={styles["topNavBar__logo"]}>
@@ -262,6 +264,7 @@ const TopNavBar = () => {
           />
         </button>
       </BrandWrapper>
+
       <div className="ms-4" style={{ flex: 1 }}>
         {/* <BaseInput
           value={search}

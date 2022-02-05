@@ -16,6 +16,23 @@
   }
 }
 
+.mobile__sidebar {
+  top:50px;
+  width:18em;
+  position:fixed;
+  left:5px;
+  background-color:white;
+  display:block;
+  z-index:5;
+  box-shadow:rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile__sidebar {
+    display: none;
+  }
+}
+
 .topNavBar__logo {
   width: 100%;
 }
