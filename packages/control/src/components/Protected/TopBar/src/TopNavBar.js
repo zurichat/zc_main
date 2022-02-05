@@ -238,11 +238,15 @@ const TopNavBar = () => {
 
   return (
     <TopbarWrapper>
-      {toggleSidebar ? (
-        <div className={styles["mobile__sidebar"]}>
+      {
+        <div
+          className={`${toggleSidebar && styles["mobile__sidebar__open"]} ${
+            styles["mobile__sidebar"]
+          }`}
+        >
           <Sidebar />
         </div>
-      ) : null}
+      }
       <BrandWrapper>
         {/* <a href="/home"> */}
         <div className={styles["topNavBar__logo"]}>

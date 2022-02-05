@@ -25,11 +25,18 @@
   display: none;
 }
 
+.subCon1 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
 .subCon2 {
-  overflow-y: scroll;
   height: 100%;
+  padding: 10px;
   width: unset;
-  /* -ms-overflow-style: none;
+  /* overflow-y:inherit;
+  -ms-overflow-style: none;
   scrollbar-width: none; */
 }
 

@@ -48,7 +48,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
   };
 
   return (
-    <section className={`${isOpen ? styles.open : styles.modalCon}`}>
+    <div className={`${isOpen ? styles.open : styles.modalCon}`}>
       <div
         className={`d-flex align-items-center justify-content-between ${styles.TopmodalSection}`}
       >
@@ -225,7 +225,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
           </p>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
