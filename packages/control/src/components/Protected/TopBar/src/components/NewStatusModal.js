@@ -124,14 +124,14 @@ const SetStatusModal = ({
       ...user,
       status: {
         ...user.status,
-        status_history: [
-          ...user.status.status_history,
-          {
-            tag_history: statusEmoji,
-            text_history: statusText,
-            expiry_history: dateTime ? dateData : choosePeriod
-          }
-        ],
+        // status_history: [
+        //   ...user.status.status_history,
+        //   {
+        //     tag_history: statusEmoji,
+        //     text_history: statusText,
+        //     expiry_history: dateTime ? dateData : choosePeriod
+        //   }
+        // ],
         expiry_time: dateTime ? dateData : choosePeriod,
         text: statusText,
         tag: statusEmoji
