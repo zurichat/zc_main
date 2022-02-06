@@ -251,9 +251,10 @@ const TopNavBar = () => {
         {/* <a href="/home"> */}
         <div className={styles["topNavBar__logo"]}>
           <img
-            style={{ height: "100%", maxWidth: 100 }}
+            style={{ height: "100%", maxWidth: 100, cursor: "pointer" }}
             src={zurichatlogo}
             alt="zuri chat logo"
+            onClick={() => navigateToUrl("/")}
           />
         </div>
         {/* </a> */}
