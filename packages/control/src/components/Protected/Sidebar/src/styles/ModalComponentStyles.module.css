@@ -10,21 +10,21 @@
   border: 1px solid #bebebe;
   border-radius: 5px;
   /* padding: 10px 0; */
-  z-index: 90;
+  z-index: 9999;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 .open {
   display: block;
   background: #fff;
   color: #000;
-  position:fixed;
+  position: fixed;
   top: inherit;
   left: 1rem;
   width: 100%;
   max-width: 281px;
   border: 1px solid #bebebe;
   border-radius: 5px;
-  z-index: 90;
+  z-index: 9999;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
