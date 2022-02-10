@@ -9,9 +9,10 @@ import { UserOrganisationsListing } from "../../../components";
 import ContinueArrow from "./assets/ContinueArrow.svg";
 import CreateWorkspaceSideImage from "./assets/CreateWorkspaceSideImage.png";
 
-export default function Index({ organizations, setOrganizations }) {
+export default function Index() {
   const user = JSON.parse(sessionStorage.getItem("user")) || null;
-  // const [organizations, setOrganizations] = React.useState([]);
+  const [organizations, setOrganizations] = React.useState([]);
+  const [isActive, setIsactive] = React.useState(false);
 
   async function fetchData() {
     const result = await axios.get(
@@ -20,6 +21,7 @@ export default function Index({ organizations, setOrganizations }) {
     );
     const { data } = result.data;
     setOrganizations(data);
+    setIsactive(!isActive);
   }
 
   React.useEffect(() => {
@@ -42,8 +44,13 @@ export default function Index({ organizations, setOrganizations }) {
               Zuri Chat gives your team a home — a place where they can talk and
               work together. To create a new workspace, click the button below
             </Text>
-            <Link to={`/create-workspace/step-1`}>
-              <Button style={{ minWidth: "259px" }}>
+            <Link
+              to={{
+                pathname: `${isActive ? `/create-workspace/step-1` : "#"}`,
+                state: organizations
+              }}
+            >
+              <Button style={{ minWidth: "259px" }} disabled={!isActive}>
                 Create a new workspace
                 <img src={ContinueArrow} alt="" />
               </Button>

@@ -41,8 +41,8 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
         ...user.status,
         expiry_time: "",
         text: "",
-        tag: "",
-        status_history: [...user.status.status_history]
+        tag: ""
+        // status_history: [...user.status.status_history]
       }
     });
 

@@ -30,45 +30,42 @@ const SidebarHeader = props => {
   //   sideBarHeader[0].style.backgroundColor = "#00b87c"
   // }
   return (
-    <div className={` ${styles.subCon1}`}>
-      <div className={`row ${styles.orgDiv}`}>
-        <div className={`col-12 ${styles.orgInfo}`}>
-          <div onClick={() => toggle()} className={styles.orgHeader}>
-            <p className={styles.orgTitle}>
-              {props.state.organization_info &&
-                props.state.organization_info.name}
-            </p>
-            <p
-              className={styles.orgHeaderArrowDown}
-              onClick={() => showModal()}
-            >
-              <MdKeyboardArrowDown style={{ color: `#fff` }} />
-            </p>{" "}
-            {/* {openModal && (
+    <div className={`row ${styles.orgDiv} ${styles.subCon1}`}>
+      <div className={`col-12 ${styles.orgInfo}`}>
+        <div onClick={() => toggle()} className={styles.orgHeader}>
+          <p className={styles.orgTitle}>
+            {props.state.organization_info &&
+              props.state.organization_info.name}
+          </p>
+          <p className={styles.orgHeaderArrowDown} onClick={() => showModal()}>
+            <MdKeyboardArrowDown style={{ color: `#fff` }} />
+          </p>{" "}
+          {/* {openModal && (
               <NewInviteModal
                 openModal={openModal}
                 setOpenModal={setOpenModal}
               />
             )} */}
-          </div>
-          <div className={styles.newMessage}>
-            <img
-              className={`img-fluid w-100 ${styles.newMsgIcon}`}
-              src={newMsgIcon}
-              alt="message"
+        </div>
+        <div className={styles.newMessage}>
+          <img
+            className={`img-fluid w-100 ${styles.newMsgIcon}`}
+            style={{ cursor: "pointer" }}
+            src={newMsgIcon}
+            alt="message"
+          />
+        </div>
+      </div>
+      <div className={`col-12 px-3 ${styles.modalContainer}`}>
+        {
+          <div className={`col-12 px-3 ${styles.odalContainer}`}>
+            <ModalComponent
+              workSpace={props.state.organization_info}
+              isOpen={homeModal}
+              toggleOpenInvite={toggle}
             />
           </div>
-        </div>
-        <div className={`col-12 px-3 ${styles.modalContainer}`}>
-          {
-            <div className={`col-12 px-3 ${styles.odalContainer}`}>
-              <ModalComponent
-                workSpace={props.state.organization_info}
-                isOpen={homeModal}
-                toggleOpenInvite={toggle}
-              />
-            </div>
-            /*
+          /*
 
 
             <Modall showDialog={showDialog} closeDialog={close} />
@@ -101,8 +98,7 @@ const SidebarHeader = props => {
             </Overlay>
 
                   */
-          }
-        </div>
+        }
       </div>
     </div>
   );

@@ -117,7 +117,7 @@ const Sidebar = props => {
     <div className={`container-fluid ${styles.sb__container}`}>
       <Header state={props.state} />
       <div className={`${styles.subCon2}`}>
-        <Fragment>
+        <>
           <SingleRoom
             name="Threads"
             image={threadIcon}
@@ -133,7 +133,7 @@ const Sidebar = props => {
           <Starred starredRooms={starredRooms} />
           {singleItems}
           {categorizedItems}
-        </Fragment>
+        </>
       </div>
     </div>
   );
