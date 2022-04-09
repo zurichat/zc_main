@@ -98,7 +98,7 @@
     "js-yaml-loader": "^1.2.2",
     "mdbreact": "^5.1.0",
     "mobx": "^6.3.3",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.4",
     "react-cropper": "^2.1.8",
