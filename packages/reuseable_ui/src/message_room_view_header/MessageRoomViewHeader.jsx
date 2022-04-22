@@ -1,0 +1,83 @@
+import { useState } from "react";
+import PropTypes from "prop-types";
+import styles from "./message-room-view-header.module.css";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import ChatRoomDetailsDialog from "../message_room_details_dialog/MessageRoomDetailsDialog";
+
+export default function MessageRoomViewHeader(props) {
+  const [showDialog, setShowDialog] = useState(true);
+  const [tabIndex, setTabIndex] = useState(0);
+
+  return (
+    <div>
+      {showDialog && (
+        <ChatRoomDetailsDialog
+          showDialog={showDialog}
+          tabIndex={tabIndex}
+          close={() => setShowDialog(false)}
+          config={props}
+          channelName={props.name}
+        />
+      )}
+      <div className={styles.plugin__header}>
+        <div
+          onClick={() => {
+            if (props.roomInfo) {
+              setShowDialog(!showDialog);
+              setTabIndex(0);
+            }
+          }}
+          className={styles.plugin__header__title}
+        >
+          {props.icon && (
+            <img
+              src={props.icon}
+              alt=""
+              className={styles.plugin__header__icon}
+            />
+          )}
+          <span className={styles.plugin__header__text}>{props.name}</span>
+          <span className={styles.plugin__header__arrow}>
+            <MdKeyboardArrowDown />
+          </span>
+        </div>
+        {props.hasThumbnail && (
+          <div
+            className={styles.plugin__header__thumbnail}
+            onClick={() => {
+              setShowDialog(!showDialog);
+              setTabIndex(1);
+            }}
+          >
+            <div className={styles.plugin__thumbnail}>
+              {props.thumbnailUrl &&
+                props.thumbnailUrl.slice(0, 3).map((image, index) => {
+                  return <img key={index} src={image} alt="" />;
+                })}
+            </div>
+            <div className={styles.plugin__header__count}>
+              <p>{props.userCount || 0}</p>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+MessageRoomViewHeader.propTypes = {
+  icon: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  roomInfo: PropTypes.object,
+  hasThumbnail: PropTypes.bool,
+  thumbnailUrl: PropTypes.array,
+  userCount: PropTypes.number
+};
+
+MessageRoomViewHeader.defaultProps = {
+  icon: "",
+  name: "unknown-channel",
+  hasThumbnail: false,
+  thumbnailUrl: [],
+  userCount: 0
+};
