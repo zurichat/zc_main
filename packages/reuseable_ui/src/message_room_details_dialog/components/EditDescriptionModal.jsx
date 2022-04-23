@@ -9,7 +9,7 @@ import {
   CancelBtn,
   AcceptBtn,
   ModalTopic
-} from "../message-room-details-dialog.styled";
+} from "../MessageRoomDetailsDialog.styled";
 
 const EditDescriptionModal = ({ closeEdit }) => {
   return (

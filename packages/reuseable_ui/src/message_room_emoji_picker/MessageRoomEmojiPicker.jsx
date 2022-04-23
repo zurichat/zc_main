@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import EmojiData from "./EmojiPicker.json";
-import EmojiBox from "./EmojiBox/EmojiBox";
+import EmojiData from "./emoji-picker.json";
+import EmojiBox from "./emoji_box/EmojiBox";
 const EmojiPicker = ({ handleEmojiClicked, top, right }) => {
   const [emojiList, setEmojiList] = useState(EmojiData);
   const [category, setCategory] = useState("smileys-emotion");

@@ -24,7 +24,7 @@ import { BsPersonCircle } from "react-icons/bs";
 import { ListGroup } from "react-bootstrap";
 
 import axios from "axios";
-import { StyledTabs } from "./message-room-details-dialog.styled";
+import { StyledTabs } from "./MessageRoomDetailsDialog.styled";
 import { getSampleMemberList } from "../utils";
 
 function MessageRoomDetailsDialog({

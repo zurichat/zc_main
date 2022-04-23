@@ -12,7 +12,7 @@ import {
   FaPeace
 } from "react-icons/fa";
 
-import styles from "./EmojiCategory.module.css";
+import styles from "./emoji-category.module.css";
 const EmojiCategory = ({ category, handleCategory }) => {
   const allCategories = [
     "smileys-emotion",

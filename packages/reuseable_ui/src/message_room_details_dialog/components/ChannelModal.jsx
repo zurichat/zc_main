@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./ChannelModal.module.css";
+import styles from "./channel-modal.module.css";
 
 const ChannelModal = ({ archiveTitle, children, full, closeEdit }) => {
   const [modal, setModal] = useState(true);

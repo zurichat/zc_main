@@ -5,7 +5,7 @@ import MessagePaneInput from "~/message_pane_input/MessagePaneInput";
 import MessagePane from "../message_pane/MessagePane";
 
 import { MessageBoardContainer } from "./MessageBoard.styled";
-import MoreMenu from "./components/more-menu/MoreMenu";
+import MoreMenu from "./components/more_menu/MoreMenu";
 import Overlay from "./components/overlay/Overlay";
 import EmojiPicker from "../message_room_emoji_picker/MessageRoomEmojiPicker";
 

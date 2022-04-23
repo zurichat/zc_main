@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import styles from "./EmojiSearch.module.css";
+import styles from "./emoji-search.module.css";
 const SearchBar = ({ handleCategory, newcategory, handleChangeValue }) => {
   const searchBar = useRef();
   useEffect(() => {

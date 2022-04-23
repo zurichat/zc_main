@@ -1,4 +1,4 @@
-import styles from "./EmojiCard.module.css";
+import styles from "./emoji-card.module.css";
 import { NewEmoji } from "@assets/index";
 
 export default function EmojiCard({ emojiObject, emojiSvg, currentUserId }) {

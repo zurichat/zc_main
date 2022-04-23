@@ -1,4 +1,4 @@
-import styles from "./MoreMenu.module.css";
+import styles from "./more-menu.module.css";
 import { useState } from "react";
 
 export default function MoreMenu({ top, right }) {

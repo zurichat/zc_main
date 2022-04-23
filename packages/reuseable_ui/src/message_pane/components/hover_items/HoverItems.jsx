@@ -1,4 +1,4 @@
-import styles from "./HoverItems.module.css";
+import styles from "./hover-items.module.css";
 
 import { Bookmark, More, NewEmoji, Reply, Share } from "@assets/index";
 

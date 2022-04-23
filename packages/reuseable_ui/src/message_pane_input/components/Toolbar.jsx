@@ -18,7 +18,7 @@ import {
 import {
   GlobalStyleForEmojiSelect,
   StyledEmojiSelectWrapper
-} from "../emojiStyles";
+} from "../EmojiStyles.styled";
 import ClickAwayListener from "react-click-away-listener";
 
 const BoldIcon = () => <img src={Bold} alt="" />;

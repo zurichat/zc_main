@@ -19,12 +19,12 @@ import "!style-loader!css-loader!@draft-js-plugins/emoji/lib/plugin.css";
 import "!style-loader!css-loader!@draft-js-plugins/mention/lib/plugin.css";
 
 // import suggestionStyles from "./suggestions.module.css"
-import "./MessageEditorInput.css";
+import "./message-editor-input.css";
 import Toolbar from "./components/Toolbar";
 import mentions from "./mentions.data";
 
 import createEmojiPlugin from "@draft-js-plugins/emoji";
-import { theme } from "./emojiStyles.js";
+import { theme } from "./EmojiStyles.styled.js";
 
 const emojiPlugin = createEmojiPlugin({
   useNativeArt: true,

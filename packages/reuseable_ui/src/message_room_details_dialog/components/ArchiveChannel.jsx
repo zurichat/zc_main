@@ -1,5 +1,5 @@
 import ChannelModal from "./ChannelModal";
-import styles from "./ArchiveChannel.module.css";
+import styles from "./archive-channel.module.css";
 
 const ArchiveChannel = ({ closeEdit }) => {
   return (
