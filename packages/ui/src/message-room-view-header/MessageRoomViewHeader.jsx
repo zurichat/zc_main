@@ -2,10 +2,10 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./message-room-view-header.module.css";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import ChatRoomDetailsDialog from "../message_room_details_dialog/MessageRoomDetailsDialog";
+import ChatRoomDetailsDialog from "../message-room-details-dialog/MessageRoomDetailsDialog";
 
 export default function MessageRoomViewHeader(props) {
-  const [showDialog, setShowDialog] = useState(true);
+  const [showDialog, setShowDialog] = useState(false);
   const [tabIndex, setTabIndex] = useState(0);
 
   return (

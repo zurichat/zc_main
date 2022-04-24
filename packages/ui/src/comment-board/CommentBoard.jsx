@@ -7,8 +7,8 @@ import {
   CommentMessageItem
 } from "./CommentBoard.styled";
 import { getSampleMessages } from "../utils";
-import MessagePaneInput from "~/message_pane_input/MessagePaneInput";
-import RichTextRenderer from "~/rich_text_renderer/RichtextRenderer";
+import MessagePaneInput from "~/message-pane-input/MessagePaneInput";
+import RichTextRenderer from "~/rich-text-renderer/RichtextRenderer";
 
 const CommentBoard = ({ commentBoardConfig }) => {
   const [displayCommentBoard, setDisplayCommentBoard] = useState(

@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 
-import MessageBox from "./components/message_box/MessageBox";
-import HoverItems from "./components/hover_items/HoverItems";
-import EmojiCard from "./components/emoji_card/EmojiCard";
+import MessageBox from "./components/message-box/MessageBox";
+import HoverItems from "./components/hover-items/HoverItems";
+import EmojiCard from "./components/emoji-card/EmojiCard";
 
 import styles from "./message-pane.module.css";
 

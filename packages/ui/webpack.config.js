@@ -22,7 +22,7 @@ const mergeRules = {
 module.exports = (webpackConfigEnv, argv) => {
   const defaultConfig = singleSpaDefaults({
     orgName: "zuri",
-    projectName: "reuseable-ui",
+    projectName: "ui",
     webpackConfigEnv,
     argv
   });

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import EmojiCategory from "../emoji_category/EmojiCategory";
-import EmojiItem from "../emoji_item/EmojiItem";
-import EmojiSearch from "../emoji_search/EmojiSearch"; //////new
+import EmojiCategory from "../emoji-category/EmojiCategory";
+import EmojiItem from "../emoji-item/EmojiItem";
+import EmojiSearch from "../emoji-search/EmojiSearch"; //////new
 import styles from "./emoji-box.module.css";
 const EmojiBox = ({
   emojiList,

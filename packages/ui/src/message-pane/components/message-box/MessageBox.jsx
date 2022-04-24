@@ -1,6 +1,6 @@
 import { DateTime } from "luxon";
 import avatar from "@assets/profile.svg";
-import RichTextRenderer from "~/rich_text_renderer/RichtextRenderer";
+import RichTextRenderer from "~/rich-text-renderer/RichtextRenderer";
 
 export default function MessageBox({ message }) {
   return (
