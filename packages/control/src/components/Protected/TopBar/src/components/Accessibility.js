@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "../styles/Accessibility.module.css";
 import image1 from "../assets/images/up_icon.jpeg";
-import { GetUserInfo } from "@zuri/utilities";
+import { getUserInfo } from "@zuri/utilities";
 import checkFill from "../assets/images/check-fill.svg";
 import checkNotFill from "../assets/images/check-not-fill.svg";
 import radioFilled from "../assets/images/radio-fill.svg";
@@ -24,7 +24,7 @@ function Accessibility() {
   useEffect(() => {
     (async () => {
       try {
-        const userInfo = await GetUserInfo();
+        const userInfo = await getUserInfo();
         if (userInfo === {}) throw new Error("No user info");
         const orgId = userInfo.user.org_id;
         const memId = userInfo.user._id;

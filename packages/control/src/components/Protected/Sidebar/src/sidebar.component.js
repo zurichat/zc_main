@@ -6,7 +6,7 @@ import dmIcon from "./assets/dm-icon.svg";
 import draftIcon from "./assets/draft-icon.svg";
 import pluginIcon from "./assets/plugin-icon.svg";
 
-import { SubscribeToChannel } from "@zuri/utilities";
+import { subscribeToChannel } from "@zuri/utilities";
 import { ACTIONS } from "./App";
 import Header from "./components/Header";
 import Room from "./components/Room";
@@ -30,7 +30,7 @@ const Sidebar = props => {
     //Listening for sidebar update
     nullValue === 1 &&
       props.state.sidebar &&
-      SubscribeToChannel(
+      subscribeToChannel(
         `${currentWorkspace}_${props.state.user.user._id}_sidebar`,
         ctx => {
           const websocket = ctx.data;

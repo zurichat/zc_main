@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { useGoogleLogin } from "react-google-login";
-import { GetUserInfo, BASE_URL } from "@zuri/utilities";
+import { getUserInfo, BASE_API_URL } from "@zuri/utilities";
 import { useAuth } from "../../auth/use-auth";
 
 const CLIENT_ID =
@@ -13,7 +13,7 @@ const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
   const onSuccess = res => {
     if (googleHeader === "Sign up with Google") {
       axios
-        .get(`${BASE_URL}/auth/social-login/google/${res.accessToken}`)
+        .get(`${BASE_API_URL}/auth/social-login/google/${res.accessToken}`)
         .then(res => {
           const { data } = res.data;
           auth.handleSocialSetUser(data.user);
@@ -23,7 +23,7 @@ const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
           sessionStorage.setItem("session_id", data.session_id);
           //Store user copy in localstorage
           sessionStorage.setItem("user", JSON.stringify(data.user));
-          GetUserInfo();
+          getUserInfo();
           history.push("/create-workspace");
         })
         .catch(err => {
@@ -32,7 +32,7 @@ const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
     } else {
       setLoading(true);
       axios
-        .get(`${BASE_URL}/auth/social-login/google/${res.accessToken}`)
+        .get(`${BASE_API_URL}/auth/social-login/google/${res.accessToken}`)
         .then(res => {
           const { data } = res.data;
           auth.handleSocialSetUser(data.user);
@@ -43,7 +43,7 @@ const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
           //Store user copy in localstorage
           sessionStorage.setItem("user", JSON.stringify(data.user));
 
-          GetUserInfo();
+          getUserInfo();
           history.push("/choose-workspace");
           setLoading(false);
           console.log(data.user);

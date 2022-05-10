@@ -14,7 +14,7 @@ import {
   Text
 } from "@chakra-ui/react";
 import { InfoOutlineIcon, LinkIcon } from "@chakra-ui/icons";
-import { BASE_HOST_URL } from "@zuri/utilities";
+import { BASE_CLIENT_URL } from "@zuri/utilities";
 
 export const Step1 = ({
   name,
@@ -62,11 +62,11 @@ export const Step1 = ({
 
   const copy = async () => {
     await window.navigator.clipboard.writeText(
-      `${BASE_HOST_URL}/workspace/${currentWorkspace}`
+      `${BASE_CLIENT_URL}/workspace/${currentWorkspace}`
     );
     alert(
       "link has been copied: " +
-        `${BASE_HOST_URL}/workspace/${currentWorkspace}`
+        `${BASE_CLIENT_URL}/workspace/${currentWorkspace}`
     );
   };
 

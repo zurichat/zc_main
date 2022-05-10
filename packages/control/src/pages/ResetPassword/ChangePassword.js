@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { withRouter, useLocation } from "react-router-dom";
 import { AuthInputBox, AuthFormWrapper } from "../../components";
 import styles from "../Login/Login.module.css";
-import { BASE_URL } from "@zuri/utilities";
+import { BASE_API_URL } from "@zuri/utilities";
 import axios from "axios";
 import PasswordSuccesful from "./PasswordSuccesful";
 import { useTranslation } from "react-i18next";
@@ -26,7 +26,7 @@ const NewPassword = () => {
   const updatepass = async () => {
     try {
       const res = await axios.post(
-        `${BASE_URL}/account/update-password/${resetCode}`,
+        `${BASE_API_URL}/account/update-password/${resetCode}`,
         {
           password,
           confirm_password

@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext, createContext } from "react";
-import { DeleteAllUtilitiesCache, BASE_URL } from "@zuri/utilities";
+import { deleteAllUtilitiesCache, BASE_API_URL } from "@zuri/utilities";
 import axios from "axios";
 const authContext = createContext();
 
@@ -57,7 +57,7 @@ function useProvideAuth() {
   //     const { data } = response.data;
   //   };
   const sendSignupVerificationCode = async signupData => {
-    const response = await axios.post(`${BASE_URL}/users`, signupData);
+    const response = await axios.post(`${BASE_API_URL}/users`, signupData);
     // console.log("sendSignupVerificationCode-response", response.data);
     if (response.data.status === 400) {
       throw new Error(response.data.message);
@@ -66,17 +66,20 @@ function useProvideAuth() {
     }
   };
   const confirmSignupVerificationCode = async code => {
-    const response = await axios.post(`${BASE_URL}/account/verify-account`, {
-      code
-    });
+    const response = await axios.post(
+      `${BASE_API_URL}/account/verify-account`,
+      {
+        code
+      }
+    );
     return response;
   };
   const signout = async token => {
-    await DeleteAllUtilitiesCache();
+    await deleteAllUtilitiesCache();
     localStorage.clear();
     sessionStorage.clear();
     axios.post(
-      `${BASE_URL}/auth/logout`,
+      `${BASE_API_URL}/auth/logout`,
       {},
       {
         headers: {

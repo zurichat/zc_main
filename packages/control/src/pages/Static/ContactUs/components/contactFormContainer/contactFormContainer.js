@@ -4,7 +4,7 @@ import detailsData from "./faq";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
 import { useDropzone } from "react-dropzone";
-import { GetUserInfo, BASE_URL } from "@zuri/utilities";
+import { getUserInfo, BASE_API_URL } from "@zuri/utilities";
 import { Alert, downIcon, arrowRight } from "../../assets";
 const activeStyle = {
   borderColor: "#2196f3"
@@ -32,7 +32,7 @@ function ContactFormContainer() {
   });
 
   useEffect(() => {
-    let userInfo = GetUserInfo();
+    let userInfo = getUserInfo();
     setUserAuth(userInfo.user.email ? userInfo.user : {});
     setValues(values => ({
       ...values,
@@ -107,7 +107,7 @@ function ContactFormContainer() {
     acceptedFiles[1] && contactData.append("file", acceptedFiles[1]);
 
     axios
-      .post(`${BASE_URL}/contact`, contactData)
+      .post(`${BASE_API_URL}/contact`, contactData)
       .then(({ data }) => {
         setValues(values => ({
           ...values,

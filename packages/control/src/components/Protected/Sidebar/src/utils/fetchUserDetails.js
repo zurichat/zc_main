@@ -1,10 +1,10 @@
-import { GetUserInfo } from "@zuri/utilities";
+import { getUserInfo } from "@zuri/utilities";
 import { getOrgDetails } from "./getOrgDetails";
 import { ACTIONS } from "../App";
 
 export const fetchUser = async dispatch => {
   try {
-    const user = await GetUserInfo();
+    const user = await getUserInfo();
 
     //Get workspace info
     let currentWorkspace = localStorage.getItem("currentWorkspace");

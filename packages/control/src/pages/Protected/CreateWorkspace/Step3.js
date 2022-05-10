@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link, useHistory } from "react-router-dom";
-import { BASE_URL, BASE_HOST_URL } from "@zuri/utilities";
+import { BASE_CLIENT_URL } from "@zuri/utilities";
 
 import styles from "./Steps.module.css";
 import AddAnotherIcon from "./assets/AddAnotherIcon.svg";
@@ -51,10 +51,11 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
 
   const handleCopy = async () => {
     await window.navigator.clipboard.writeText(
-      `${BASE_HOST_URL}/workspace/${organizationID}`
+      `${BASE_CLIENT_URL}/workspace/${organizationID}`
     );
     alert(
-      "link has been copied: " + `${BASE_HOST_URL}/workspace/${organizationID}`
+      "link has been copied: " +
+        `${BASE_CLIENT_URL}/workspace/${organizationID}`
     );
   };
 

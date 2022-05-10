@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { BASE_URL } from "@zuri/utilities";
+import { BASE_API_URL } from "@zuri/utilities";
 import { useTranslation } from "react-i18next";
 
 import styles from "./SubscribeToNewsletter.module.css";
@@ -17,7 +17,7 @@ export default function SubscribeToNewsletter() {
     event.preventDefault();
 
     await axios
-      .post(`${BASE_URL}/external/subscribe`, { email })
+      .post(`${BASE_API_URL}/external/subscribe`, { email })
       .then(response => {
         const { data, message, status } = response.data;
         if (status == "200") {

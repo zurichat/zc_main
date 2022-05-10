@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { Link, useHistory } from "react-router-dom";
-import { BASE_URL } from "@zuri/utilities";
+import { BASE_API_URL } from "@zuri/utilities";
 
 import {
   TopNavigationBar,
@@ -18,7 +18,7 @@ export default function Index() {
 
   async function fetchData() {
     const result = await axios.get(
-      `${BASE_URL}/users/${user.email}/organizations`,
+      `${BASE_API_URL}/users/${user.email}/organizations`,
       { headers: { Authorization: `Bearer ${user.token}` } }
     );
     const { data } = result.data;

@@ -8,7 +8,7 @@ import {
   ChakraProvider
 } from "@chakra-ui/react";
 import axios from "axios";
-import { BASE_URL } from "@zuri/utilities";
+import { BASE_API_URL } from "@zuri/utilities";
 import { Step1 } from "./Step1";
 import { Step2 } from "./Step2";
 import { Loader } from "./Loader";
@@ -30,7 +30,7 @@ export const EmailInviteModal = props => {
     setLoading(true);
     axios
       .post(
-        `${BASE_URL}/organizations/${currentWorkspace}/send-invite`,
+        `${BASE_API_URL}/organizations/${currentWorkspace}/send-invite`,
         {
           emails: invites
         },

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BASE_URL } from "@zuri/utilities";
+import { BASE_API_URL } from "@zuri/utilities";
 import css from "./styles/subscribe.module1.css";
 import sub_img1 from "./assets/emails.jpg";
 import axios from "axios";
@@ -17,7 +17,7 @@ const Subscribe = () => {
     event.preventDefault();
 
     await axios
-      .post(`${BASE_URL}/external/subscribe`, { email })
+      .post(`${BASE_API_URL}/external/subscribe`, { email })
       .then(response => {
         const { data, message, status } = response.data;
         // console.log(response.data)

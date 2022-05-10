@@ -11,7 +11,7 @@ import { ProfileContext } from "./context/ProfileModal";
 import { TopbarContext } from "./context/Topbar";
 import { BaseInput } from "./TopBarIndex";
 import { authAxios } from "./utils/Api";
-import { GetUserInfo, SubscribeToChannel, themeColors } from "@zuri/utilities";
+import { getUserInfo, subscribeToChannel, themeColors } from "@zuri/utilities";
 
 import Profile from "./components/Profile";
 import { BigModal } from "./components/bigModal";
@@ -67,7 +67,7 @@ const TopNavBar = () => {
 
   const getLoggedInUser = async () => {
     try {
-      const userInfo = await GetUserInfo();
+      const userInfo = await getUserInfo();
       //Check if user id is valid and get user organization
       if (userInfo.user._id !== "") {
         setUser(userInfo);
@@ -79,7 +79,7 @@ const TopNavBar = () => {
 
   useEffect(() => {
     getLoggedInUser();
-    SubscribeToChannel(currentWorkspace, event => {
+    subscribeToChannel(currentWorkspace, event => {
       const session_user = JSON.parse(sessionStorage.getItem("user"));
       if (
         event.event === "UpdateOrganizationMemberPic" ||
@@ -150,7 +150,7 @@ const TopNavBar = () => {
   }, [userProfileImage]);
 
   const UpdateInfo = () => {
-    GetUserInfo().then(res => {
+    getUserInfo().then(res => {
       setUserProfileImage(res?.user.image_url);
       setUser(res.user);
     });

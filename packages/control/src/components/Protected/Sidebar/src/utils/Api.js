@@ -1,9 +1,9 @@
 import axios from "axios";
-import { BASE_URL } from "@zuri/utilities";
+import { BASE_API_URL } from "@zuri/utilities";
 
 const user = JSON.parse(sessionStorage.getItem("user"));
 export const authAxios = axios.create({
-  baseURL: BASE_URL,
+  baseURL: BASE_API_URL,
   headers: {
     Authorization: `Bearer ${user.token}`
   }

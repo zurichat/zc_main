@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@reach/tabs";
-import { BASE_URL } from "@zuri/utilities";
+import { BASE_API_URL } from "@zuri/utilities";
 import "@reach/tabs/styles.css";
 import { DialogOverlay, DialogContent } from "@reach/dialog";
 import "@reach/dialog/styles.css";
@@ -266,7 +266,7 @@ function MembersPanel({ config }) {
     const currentWorkspace = localStorage.getItem("currentWorkspace");
     const token = sessionStorage.getItem("token");
     axios
-      .get(`${BASE_URL}/organizations/${currentWorkspace}/members`, {
+      .get(`${BASE_API_URL}/organizations/${currentWorkspace}/members`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then(r => {
