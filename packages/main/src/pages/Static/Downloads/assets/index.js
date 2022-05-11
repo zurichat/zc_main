@@ -1,0 +1,15 @@
+export { default as android } from "./android.svg";
+export { default as apple } from "./apple.svg";
+export { default as windows } from "./windows.svg";
+export { default as icon } from "./icon.svg";
+export { default as laptop } from "./laptop.svg";
+export { default as device } from "./device.svg";
+export { default as apple1 } from "./apple-1.svg";
+export { default as microsoft } from "./icons8-microsoft.svg";
+export { default as googleplay } from "./google-play.svg";
+export { default as infolaptop } from "./info-laptop.svg";
+export { default as AppStorelogo } from "./app-store.png";
+export { default as PhoneDM } from "./phone-dm.png";
+export { default as PhoneChannel } from "./phone-channels.png";
+export { default as Ellipse159 } from "./ellipse-159.svg";
+export { default as screen } from "./screen.svg";

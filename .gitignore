@@ -72,5 +72,5 @@ dist
 .DS_Store
 .trash
 
-packages/control/ignore
+packages/main/ignore
 packages/root-config/cypress.env.json

@@ -23,7 +23,7 @@ start({
 window.addEventListener("zuri-plugin-load", () => {
   setTimeout(() => {
     const registeredAppsName = getAppNames().filter(
-      appName => appName !== "@zuri/control"
+      appName => appName !== "@zuri/main"
     );
     if (!registeredAppsName.length) {
       allPlugins.forEach(plugin => {

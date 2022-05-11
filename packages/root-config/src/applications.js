@@ -2,7 +2,7 @@ const PluginImportPathPre = "zuri-plugin-";
 const PluginAppPathPre = "plugin-";
 
 export const coreApps = [
-  { name: "control" }
+  { name: "main" }
   // { name: "zurUi" },
   // { name: "utilities" }
 ];

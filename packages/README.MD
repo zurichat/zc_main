@@ -1,7 +1,7 @@
 # Current Package list for ZC-MAIN
 
-- `control` - Contains the external pages for zurichat and houses most of the logic for the app
-  [ - docs](./control/README.md)
+- `main` - Contains the external pages for zurichat and houses most of the logic for the app
+  [ - docs](./main/README.md)
 - `marketplace` - MARKETPLACE
   [ - docs](./marketplace/README.md)
 - `pluginHeader` - The topbar that the plugin uses (different from the topbar with the profile icon)
