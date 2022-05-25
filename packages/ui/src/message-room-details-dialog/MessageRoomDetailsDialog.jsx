@@ -25,7 +25,7 @@ import { ListGroup } from "react-bootstrap";
 
 import axios from "axios";
 import { StyledTabs } from "./MessageRoomDetailsDialog.styled";
-import { getSampleMemberList } from "../utils";
+import { getSampleMemberList } from "~/utils/samples";
 
 function MessageRoomDetailsDialog({
   close,

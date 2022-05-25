@@ -6,7 +6,7 @@ import {
   CommentMessagesWrapper,
   CommentMessageItem
 } from "./CommentBoard.styled";
-import { getSampleMessages } from "../utils";
+import { getSampleMessages } from "~/utils/samples";
 import MessagePaneInput from "~/message-pane-input/MessagePaneInput";
 import RichTextRenderer from "~/rich-text-renderer/RichtextRenderer";
 
