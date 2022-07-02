@@ -149,6 +149,7 @@ export default function Index() {
               name="tos"
               type="checkbox"
               value={tos}
+              data-cy="auth_form_agreement_checkbox"
               onClick={() => {
                 setTos(!tos);
               }}

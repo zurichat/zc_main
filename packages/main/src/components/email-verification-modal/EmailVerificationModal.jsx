@@ -34,7 +34,7 @@ export default function EmailVerificationModal({ email }) {
   };
 
   return (
-    <Overlay>
+    <Overlay data-cy="email_verification_otp_modal">
       <Content aria-label="verification code modal">
         {!success ? (
           <div className={`${styles.main} p-2 `}>

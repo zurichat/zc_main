@@ -309,7 +309,7 @@ export default function TopNavigationBar() {
           <ul
             className={`d-lg-none navbar-nav-scroll ${TopNavigationBarStyles.signs}`}
           >
-            <li className="nav-item">
+            <li className="nav-item" data-cy="top_navigation_bar_signup_button">
               <Link to="/signup" className={`btn nav-link`}>
                 <span className={`${TopNavigationBarStyles.signU}`}>
                   {t("nav_signup")}
