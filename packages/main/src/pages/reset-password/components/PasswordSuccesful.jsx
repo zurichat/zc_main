@@ -23,7 +23,10 @@ function passwordSuccesful({ error, closeDialog }) {
       <Content aria-label="confirm-verification-code-modal">
         <Passdiv style={{ textAlign: "center" }}>
           {!error ? (
-            <div className="text-success">
+            <div
+              className="text-success"
+              data-cy="change_password_success_modal"
+            >
               <CheckCircleIcon w={50} h={50} color="green.500" />
               <h2>{t("auth.verifyCodeOnPasswordReset.success.headline")}</h2>
               <p>
@@ -40,7 +43,11 @@ function passwordSuccesful({ error, closeDialog }) {
             </div>
           )}
 
-          <Button onClick={handleClick} variant="secondary">
+          <Button
+            onClick={handleClick}
+            variant="secondary"
+            data-cy="change_password_modal_continue_button"
+          >
             {" "}
             {t("auth.verifyCodeOnPasswordReset.success.continueButton")}
           </Button>

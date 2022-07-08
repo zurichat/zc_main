@@ -45,6 +45,7 @@ const CodeInput = ({ length, label, loading, onComplete }) => {
               onChange={e => processInput(e, idx)}
               onKeyUp={e => onKeyUp(e, idx)}
               ref={ref => inputs.current.push(ref)}
+              data-cy="verification_code_modal_input"
             />
           );
         })}

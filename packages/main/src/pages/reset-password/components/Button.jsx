@@ -23,7 +23,8 @@ const Button = ({
   type = "",
   disabled = false,
   onClick,
-  children
+  children,
+  ...props
 }) => {
   let Component;
 
@@ -49,6 +50,7 @@ const Button = ({
       type={type}
       disabled={disabled}
       onClick={onClick}
+      {...props}
     >
       {children}
     </Component>

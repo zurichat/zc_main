@@ -51,7 +51,7 @@ export default function VerifyResetCode({ label, closeDialog }) {
     <Overlay>
       <Content aria-label="reset-verification-code-modal">
         {!success ? (
-          <div>
+          <div data-cy="verification_code_modal">
             <h2
               style={{
                 textAlign: "center",
@@ -71,7 +71,10 @@ export default function VerifyResetCode({ label, closeDialog }) {
         ) : (
           <Successdiv style={{ textAlign: "center" }}>
             {!error ? (
-              <div className="text-success">
+              <div
+                className="text-success"
+                data-cy="verification_code_success_modal"
+              >
                 <CheckCircleIcon w={50} h={50} color="green.500" />
                 <h2>{t("auth.verifyCodeOnPasswordReset.success.headline")}</h2>
                 <p>
@@ -87,7 +90,11 @@ export default function VerifyResetCode({ label, closeDialog }) {
                 </h3>
               </div>
             )}
-            <Button onClick={handleClick} variant="secondary">
+            <Button
+              onClick={handleClick}
+              variant="secondary"
+              data-cy="verification_code_modal_continue_button"
+            >
               {t("auth.verifyCodeOnPasswordReset.success.continueButton")}
             </Button>
           </Successdiv>
