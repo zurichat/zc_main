@@ -49,6 +49,7 @@ export default function Index() {
                 pathname: `${isActive ? `/create-workspace/step-1` : "#"}`,
                 state: organizations
               }}
+              data-cy="create_new_workspace_action_element"
             >
               <Button style={{ minWidth: "259px" }} disabled={!isActive}>
                 Create a new workspace
@@ -57,7 +58,11 @@ export default function Index() {
             </Link>
 
             <CheckboxSide>
-              <input type="checkbox" defaultChecked={true} />
+              <input
+                type="checkbox"
+                defaultChecked={true}
+                data-cy="create_workspace_subscribe_to_newsletter_checkbox"
+              />
               <p>It's okay to receive emails from Zuri Chat</p>
             </CheckboxSide>
             <FadedText>

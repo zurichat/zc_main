@@ -56,6 +56,7 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
               setWorkspaceName(e.target.value);
             }}
             className={styles.inputBox}
+            data-cy="create_workspace_textfield"
           />
 
           <span className={styles.charLimit}>Maximum 50 characters</span>
@@ -83,6 +84,7 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
                   history.push("/create-workspace/step-2");
                 }
               }}
+              data-cy="create_workspace_continue_action_element"
             >
               Continue
             </button>

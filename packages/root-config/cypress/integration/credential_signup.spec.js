@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+import { loginFixture, organizationsFixture } from "../fixtures";
+
 context("Signup from the home page", () => {
   beforeEach(() => {
     cy.visit("/");
@@ -24,17 +26,13 @@ context("Signup from the home page", () => {
       .should("be.disabled");
   });
   it("accepts user sign up credentials => fullname, email and password, sign the user up and show the email verification modal", () => {
-    cy.intercept("POST", "https://staging.api.zuri.chat/users", {
-      fixture: "login.json"
-    });
+    cy.intercept("POST", "https://staging.api.zuri.chat/users", loginFixture);
     cy.intercept(
       "GET",
       `https://staging.api.zuri.chat/users/${Cypress.env(
         "user_email"
       )}/organizations`,
-      {
-        fixture: "organizations.json"
-      }
+      organizationsFixture
     );
     cy.get("[data-cy=auth_form_textfield][name='Full Name']")
       .type(Cypress.env("user_fullname"))
@@ -54,8 +52,4 @@ context("Signup from the home page", () => {
     cy.get("@signupButton").click();
     cy.get("[data-cy=email_verification_otp_modal]").should("be.visible");
   });
-  // cy.location().should(location => {
-  //   expect(location.hash).to.be.empty;
-  //   expect(location.pathname).to.eq("/choose-workspace");
-  // });
 });

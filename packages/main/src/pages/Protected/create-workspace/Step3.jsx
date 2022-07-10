@@ -135,6 +135,7 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
                 width: "100%",
                 textAlign: "center"
               }}
+              data-cy="create_workspace_continue_action_element"
             >
               Proceed to Workspace
             </button>

@@ -32,6 +32,7 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
             className={styles.inputBox}
             onChange={e => setWorkspaceDefaultChannelName(e.target.value)}
             value={workspaceDefaultChannelName}
+            data-cy="create_workspace_textfield"
           />
           <span className={styles.charLimit}>Maximum 50 characters</span>
 
@@ -62,6 +63,7 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
                 // history.push("/create-workspace/step-3");
                 history.push("/create-workspace/launch");
               }}
+              data-cy="create_workspace_continue_action_element"
             >
               Continue
             </button>

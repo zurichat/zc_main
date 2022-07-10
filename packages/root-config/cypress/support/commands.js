@@ -23,3 +23,15 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+import { loginFixture, userFixture } from "../fixtures";
+
+// -- Set Auth Information to SessionStorage
+
+Cypress.Commands.add("setAuthSessionStorage", () => {
+  cy.window().then(window => {
+    window.sessionStorage.setItem("session_id", loginFixture.data.session_id);
+    window.sessionStorage.setItem("user", JSON.stringify(userFixture));
+    window.sessionStorage.setItem("token", userFixture.token);
+  });
+});
