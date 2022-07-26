@@ -26,10 +26,10 @@ context("Signup from the home page", () => {
       .should("be.disabled");
   });
   it("accepts user sign up credentials => fullname, email and password, sign the user up and show the email verification modal", () => {
-    cy.intercept("POST", "https://staging.api.zuri.chat/users", loginFixture);
+    cy.intercept("POST", `${Cypress.env("api_staging")}/users`, loginFixture);
     cy.intercept(
       "GET",
-      `https://staging.api.zuri.chat/users/${Cypress.env(
+      `${Cypress.env("api_staging")}/users/${Cypress.env(
         "user_email"
       )}/organizations`,
       organizationsFixture

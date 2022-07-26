@@ -26,10 +26,16 @@ context("Login from the home page", () => {
       .should("be.disabled");
   });
   it("accepts user login credentials => email and password, log the user in and navigate to the choose-workspace page", () => {
-    cy.intercept("POST", "https://api.zuri.chat/auth/login", loginFixture);
+    cy.intercept(
+      "POST",
+      `${Cypress.env("api_production")}/auth/login`,
+      loginFixture
+    );
     cy.intercept(
       "GET",
-      `https://api.zuri.chat/users/${Cypress.env("user_email")}/organizations`,
+      `${Cypress.env("api_production")}/users/${Cypress.env(
+        "user_email"
+      )}/organizations`,
       organizationsFixture
     );
     cy.get("[data-cy=auth_form_textfield]")
