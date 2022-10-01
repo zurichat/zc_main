@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { TopNavigationBar, Footer } from "../../../components";
-import styles from "./about.module.css";
+import styles from "./About.module.css";
 import {
   team,
   user,

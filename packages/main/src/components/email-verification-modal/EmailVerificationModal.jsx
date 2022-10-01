@@ -8,7 +8,7 @@ import styles from "./EmailVerificationModal.module.css";
 
 import CodeInput from "./CodeInput";
 import EmailVerificationOkayIcon from "./assets/email-verification-okay-icon.svg";
-import EmailVerificationPaperPlane from "./assets/email-verification-paper-Plane.svg";
+import EmailVerificationPaperPlane from "./assets/email-verification-paper-plane.svg";
 import { useAuth } from "../../auth/use-auth";
 
 export default function EmailVerificationModal({ email }) {

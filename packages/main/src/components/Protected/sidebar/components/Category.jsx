@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import DropDown from "./Drop";
 import Room from "./Room";
-import SubCategory from "./subCategory";
+import SubCategory from "./SubCategory";
 import SkeletonLoader from "./SkeletonLoader";
 
 export default function Category(props) {

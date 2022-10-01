@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import styles from "../styles/bigModal.module.css";
+import styles from "../styles/BigModal.module.css";
 import cancel from "../assets/images/cancel.svg";
 import SearchValue from "./SearchValueComponent";
 import Styled from "styled-components";

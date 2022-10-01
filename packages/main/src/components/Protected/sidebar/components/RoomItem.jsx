@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/Drop.module.css";
 import hash from "../assets/icons/hash.svg";
 import { navigateToUrl } from "single-spa";
-import Badge from "./badge";
+import Badge from "./Badge";
 import RoomOptions from "./RoomOptions";
 import { useRouteMatch } from "react-router-dom";
 

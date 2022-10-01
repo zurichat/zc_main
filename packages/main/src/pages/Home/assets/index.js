@@ -1,4 +1,4 @@
-export { default as MacBookAirWithZuriChatPreview } from "./macbook-air-with-zurichat-Preview.svg";
+export { default as MacBookAirWithZuriChatPreview } from "./macbook-air-with-zurichat-preview.svg";
 
 export { default as HngLogo } from "./hng-logo.svg";
 export { default as I4gLogo } from "./i4g-logo.svg";

@@ -1,11 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
-import { navigateToUrl } from "single-spa";
 import styles from "../styles/Drop.module.css";
-import Badge from "./badge";
-import { AiOutlinePlusCircle } from "react-icons/ai";
-import PluginRoomAddUser from "./PluginRoomAddUser";
 import RoomItem from "./RoomItem";
-import RoomOptions from "./RoomOptions";
 
 export default function Room({ items, isOpen }) {
   return (

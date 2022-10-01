@@ -1,6 +1,7 @@
 /* eslint-env node */
 const { mergeWithRules } = require("webpack-merge");
 const singleSpaDefaults = require("webpack-config-single-spa-react");
+const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 const path = require("path");
 
 const mergeRules = {
@@ -37,6 +38,7 @@ module.exports = (webpackConfigEnv, argv) => {
       // filename: "[name].js", // string (default)
       // publicPath: path.join(__dirname, '..', 'dist', 'assets') // string
     },
+    plugins: [new CaseSensitivePathsPlugin()],
     resolve: {
       fallback: {
         fs: false,

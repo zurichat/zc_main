@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./download.module.css";
+import styles from "./Download.module.css";
 import {
   laptop,
   device,

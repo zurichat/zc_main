@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/badge.module.css";
+import styles from "../styles/Badge.module.css";
 
 const badge = ({ number }) => {
   return (

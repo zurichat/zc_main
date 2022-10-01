@@ -1,6 +1,5 @@
 import React from "react";
-import styles from "../styles/skeletonLoader.module.css";
-import { v4 as uuidv4 } from "uuid";
+import styles from "../styles/SkeletonLoader.module.css";
 
 export default function SkeletonLoader({ COUNTER }) {
   const SideBarSkeleton = () => (

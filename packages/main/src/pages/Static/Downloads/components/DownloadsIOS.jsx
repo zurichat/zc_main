@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import downloadStyles from "./DownloadsIOS.module.css";
+import downloadStyles from "./DownloadsIos.module.css";
 import { TopNavigationBar, Footer } from "../../../../components";
 import { AppStorelogo, PhoneDM, PhoneChannel } from "../assets";
 import fetchInstall from "../utils/index";

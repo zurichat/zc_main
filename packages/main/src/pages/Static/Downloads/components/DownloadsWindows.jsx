@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { TopNavigationBar, Footer } from "../../../../components";
-import styles from "./download.module.css";
+import styles from "./Download.module.css";
 import { Ellipse159, laptop, screen, icon } from "../assets";
 import fetchInstall from "../utils/index";
 import { Link } from "react-router-dom";

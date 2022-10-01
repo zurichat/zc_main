@@ -8,7 +8,7 @@ import {
   MDBMask,
   MDBContainer
 } from "mdbreact";
-import styles from "../about.module.css";
+import styles from "../About.module.css";
 import { channel, holiday, deadline, quick, todos } from "../assets";
 
 const CarouselPage = () => {

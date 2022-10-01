@@ -8,7 +8,7 @@ import {
   MDBMask,
   MDBContainer
 } from "mdbreact";
-import styles from "../about.module.css";
+import styles from "../About.module.css";
 
 import { user, group, vector, user2 } from "../assets";
 
