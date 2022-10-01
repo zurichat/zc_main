@@ -8,7 +8,7 @@ const mergeRules = {
   externals: {
     jquery: "jQuery"
   },
-  plugins: "replace",
+  plugins: "merge",
   devServer: {
     static: {
       directory: "replace"
