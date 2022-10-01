@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": ["src/message-room-emoji-picker/*"],
+      "@assets/*": ["./src/assets/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}

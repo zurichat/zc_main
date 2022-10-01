@@ -10,7 +10,7 @@ import styles from "./styles/marketplace.module.css";
 // Components
 import MarketPlaceContainer from "./components/MarketPlaceContainer";
 import { MarketPlaceProvider } from "../context/MarketPlace.context.js";
-import { GetUserInfo, BASE_URL } from "@zuri/utilities";
+import { getUserInfo, BASE_API_URL } from "@zuri/utilities";
 
 const MarketPlace = () => {
   let currentWorkspace = localStorage.getItem("currentWorkspace");
@@ -41,13 +41,13 @@ const MarketPlace = () => {
       let pluginData = plugins;
 
       const get_all_plugins = await axios.get(
-        `${BASE_URL}/marketplace/plugins?limit=10000`
+        `${BASE_API_URL}/marketplace/plugins?limit=10000`
       );
       const get_popular_plugins = await axios.get(
-        `${BASE_URL}/marketplace/plugins/popular`
+        `${BASE_API_URL}/marketplace/plugins/popular`
       );
       const get_installed_plugins = await axios.get(
-        `${BASE_URL}/organizations/${currentWorkspace}/plugins`,
+        `${BASE_API_URL}/organizations/${currentWorkspace}/plugins`,
         {
           headers: {
             Authorization: `Bearer ${token}`
@@ -85,7 +85,7 @@ const MarketPlace = () => {
 
   const getLoggedInUser = async () => {
     try {
-      const userInfo = await GetUserInfo();
+      const userInfo = await getUserInfo();
       //Check if user id is valid and get user organization
       if (userInfo.user._id !== "") {
         setUser(userInfo);

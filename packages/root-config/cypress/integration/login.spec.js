@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+import { loginFixture, organizationsFixture } from "../fixtures";
+
 context("Login from the home page", () => {
   beforeEach(() => {
     cy.visit("/");
@@ -24,15 +26,17 @@ context("Login from the home page", () => {
       .should("be.disabled");
   });
   it("accepts user login credentials => email and password, log the user in and navigate to the choose-workspace page", () => {
-    cy.intercept("POST", "https://api.zuri.chat/auth/login", {
-      fixture: "login.json"
-    });
+    cy.intercept(
+      "POST",
+      `${Cypress.env("api_production")}/auth/login`,
+      loginFixture
+    );
     cy.intercept(
       "GET",
-      `https://api.zuri.chat/users/${Cypress.env("user_email")}/organizations`,
-      {
-        fixture: "organizations.json"
-      }
+      `${Cypress.env("api_production")}/users/${Cypress.env(
+        "user_email"
+      )}/organizations`,
+      organizationsFixture
     );
     cy.get("[data-cy=auth_form_textfield]")
       .first()
@@ -52,9 +56,4 @@ context("Login from the home page", () => {
       expect(location.pathname).to.eq("/choose-workspace");
     });
   });
-  //   it("should have page title", () => {
-  //     // https://on.cypress.io/title
-  //     cy.title().should("include", "login");
-
-  //   });
 });

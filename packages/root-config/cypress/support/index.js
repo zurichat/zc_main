@@ -20,3 +20,15 @@ import "./commands";
 // require('./commands')
 
 import "@cypress/code-coverage/support";
+
+Cypress.on("uncaught:exception", (err, runnable) => {
+  if (
+    err.message.includes(
+      "application 'zuri-plugin-messaging' died in status LOADING_SOURCE_CODE"
+    )
+  ) {
+    return false;
+  }
+  // we still want to ensure there are no other unexpected
+  // errors, so we let them fail the test
+});
