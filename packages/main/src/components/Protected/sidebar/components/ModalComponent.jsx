@@ -47,7 +47,10 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
   };
 
   return (
-    <div className={`${isOpen ? styles.open : styles.modalCon}`}>
+    <div
+      className={`${isOpen ? styles.open : styles.modalCon}`}
+      data-cy="sidebar_menu_modal"
+    >
       <div
         className={`d-flex align-items-center justify-content-between ${styles.TopmodalSection}`}
       >
@@ -77,7 +80,12 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
       <hr className={styles.modalDivider} />
       <div className={` d-flex flex-column ${styles.modalSection}`}>
         <div>
-          <p onClick={handleInviteClick}>Invite people to {workSpace?.name}</p>
+          <p
+            onClick={handleInviteClick}
+            data-cy="invite_to_workspace_action_element"
+          >
+            Invite people to {workSpace?.name}
+          </p>
 
           <EmailInviteModal
             isOpen={openInviteModal}

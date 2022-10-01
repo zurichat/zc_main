@@ -42,3 +42,12 @@ export const organizationsFixture = {
     }
   ]
 };
+
+export const organizationFixture = () => {
+  return {
+    data: {
+      _id: organizationsFixture.data[0].id,
+      name: organizationsFixture.data[0].name
+    }
+  };
+};

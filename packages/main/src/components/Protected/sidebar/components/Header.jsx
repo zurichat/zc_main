@@ -31,7 +31,11 @@ const SidebarHeader = props => {
   return (
     <div className={`row ${styles.orgDiv} ${styles.subCon1}`}>
       <div className={`col-12 ${styles.orgInfo}`}>
-        <div onClick={() => toggle()} className={styles.orgHeader}>
+        <div
+          onClick={() => toggle()}
+          className={styles.orgHeader}
+          data-cy="sidebar_header"
+        >
           <p className={styles.orgTitle}>
             {props.state.organization_info &&
               props.state.organization_info.name}

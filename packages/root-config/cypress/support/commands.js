@@ -26,12 +26,28 @@
 
 import { loginFixture, userFixture } from "../fixtures";
 
+// -- Reset Application State
+
+Cypress.Commands.add("resetState", () => {
+  cy.window().then(window => {
+    const utilitiesCaches = [
+      "zuri-utilities-getuserinfo",
+      "zuri-utilities-getworkspaceuser",
+      "zuri-utilities-getworkspaceusers"
+    ];
+    window.sessionStorage.clear();
+    window.localStorage.clear();
+    utilitiesCaches.forEach(async cacheName => {
+      return window.caches.delete(cacheName);
+    });
+  });
+});
 // -- Set Auth Information to SessionStorage
 
 Cypress.Commands.add("setAuthSessionStorage", () => {
   cy.window().then(window => {
     window.sessionStorage.setItem("session_id", loginFixture.data.session_id);
-    window.sessionStorage.setItem("user", JSON.stringify(userFixture));
-    window.sessionStorage.setItem("token", userFixture.token);
+    window.sessionStorage.setItem("user", JSON.stringify(userFixture()));
+    window.sessionStorage.setItem("token", userFixture().token);
   });
 });

@@ -150,6 +150,7 @@ const InvitePage = () => {
               }
             }}
             disabled={registerNewUser && !userPasswordValue && !confirmPassword}
+            data-cy="join_workspace_button"
           >
             Join?
           </Button>

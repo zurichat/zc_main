@@ -22,9 +22,14 @@ export const Step2 = ({
 
   return (
     <>
-      <Container m={2} centerContent>
+      <Container m={2} centerContent data-cy="invite_to_workspace_modal_step2">
         {!error ? (
-          <CheckCircleIcon w={10} h={10} color="green.500" />
+          <CheckCircleIcon
+            w={10}
+            h={10}
+            color="green.500"
+            data-cy="invite_to_workspace_modal_success_icon"
+          />
         ) : (
           <Icon as={AiFillCloseCircle} w={10} h={10} color="red.500" />
         )}
@@ -78,6 +83,7 @@ export const Step2 = ({
           // style={{ color: "white", backgroundColor: "#00B87C" }}
           type="button"
           className={`btn btn-success`}
+          data-cy="invite_to_workspace_modal_done_button"
         >
           Done
         </button>

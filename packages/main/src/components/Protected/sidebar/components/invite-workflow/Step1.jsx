@@ -71,7 +71,13 @@ export const Step1 = ({
   };
 
   return (
-    <ModalContent m={0} p={0} borderRadius="2px" w="md">
+    <ModalContent
+      m={0}
+      p={0}
+      borderRadius="2px"
+      w="md"
+      data-cy="invite_to_workspace_modal_step1"
+    >
       <ModalHeader fontSize="20px">Invite People to {name}</ModalHeader>
       <ModalCloseButton onClick={onClo} />
       <ModalBody>
@@ -94,7 +100,9 @@ export const Step1 = ({
               colorScheme={!e_mail.error ? "green" : "red"}
             >
               {e_mail.error ? <InfoOutlineIcon mr="1" /> : null}
-              <TagLabel>{e_mail.mail}</TagLabel>
+              <TagLabel data-cy="invite_to_workspace_modal_email_tag">
+                {e_mail.mail}
+              </TagLabel>
               <TagCloseButton onClick={() => handleDelete(index)} />
             </Tag>
           ))}
@@ -114,6 +122,7 @@ export const Step1 = ({
               pt={1}
               mx={1}
               mt={1}
+              data-cy="invite_to_workspace_modal_textfield"
             />
           </form>
         </Container>
@@ -143,6 +152,7 @@ export const Step1 = ({
             type="button"
             disabled={forerr ? true : false}
             className={`btn my-auto `}
+            data-cy="invite_to_workspace_modal_send_button"
           >
             Send
           </button>
