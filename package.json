@@ -16,7 +16,7 @@
     "packages/*"
   ],
   "scripts": {
-    "start": "serve -s dist/ -p ${ENV.PORT}",
+    "start": "serve -s dist/",
     "dev": "lerna run dev --parallel",
     "postinstall": "lerna bootstrap",
     "format": "lerna run prettify --parallel",
