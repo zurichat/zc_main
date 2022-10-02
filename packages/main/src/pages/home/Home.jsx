@@ -103,7 +103,7 @@ export default function Index() {
         <div className={`${styles.company_banner_wrap}`}>
           <div className={`${styles.company_banner}`}>
             <p className={`${styles.cbp}`}>
-              Trusted by top companies worldwide
+              Trusted By Top Companies Worldwide
             </p>
             <div className={`${styles.logos}`}>
               <img src={HngLogo} alt="" className={`${styles.logo}`} />
