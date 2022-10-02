@@ -32,7 +32,6 @@
     "assets-webpack-plugin": "^7.1.1",
     "axios-mock-adapter": "^1.20.0",
     "babel-jest": "^27.0.6",
-    "case-sensitive-paths-webpack-plugin": "^2.4.0",
     "concurrently": "^6.2.1",
     "cross-env": "^7.0.3",
     "css-loader": "^6.2.0",
