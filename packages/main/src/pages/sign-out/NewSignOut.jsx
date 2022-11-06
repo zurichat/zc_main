@@ -1,9 +1,7 @@
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
-
 import ZuriChatLogoTitle from "../../assets/zuri-chat-logo/logo-title.svg";
 import { useAuth } from "../../auth/use-auth";
 
@@ -27,11 +25,10 @@ export default function NewSignout() {
   }, []);
 
   return (
-    <>
+    <SignoutStyleWrapper>
       <div className="logo">
         <img src={ZuriChatLogoTitle} alt="zuri logo" />
       </div>
-      <p>New Signout page</p>
       <div className="content-wrapper">
         <h6 className="org-name">
           {t("signout_preOrgText")} {orgName} {t("signout_workspace")}
@@ -53,6 +50,35 @@ export default function NewSignout() {
           {t("signout_postLoginText")}
         </p>
       </div>
-    </>
+    </SignoutStyleWrapper>
   );
 }
+
+const SignoutStyleWrapper = styled.section`
+  background: #fff;
+  width: 94%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 10px;
+
+  .logo {
+    margin: 3rem auto 0;
+    width: max-content;
+    img {
+      height: 160px;
+    }
+  }
+
+  .content-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 120px;
+
+    background: rgba(35, 35, 35, 0.04);
+    border: 1px solid rgba(35, 35, 35, 0.2);
+    border-radius: 8px;
+  }
+`;
