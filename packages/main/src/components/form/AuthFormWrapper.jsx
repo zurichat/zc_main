@@ -36,7 +36,6 @@ const FormWrapper = ({
       <div className={styles.FormWrapper}>
         <div className={`${styles.headers}`}>
           <h1 className={`${styles.header}`}>{header}</h1>
-          <p className={`${styles.subHeader}`}>{subHeader}</p>
         </div>
         {showGoogleAuth && (
           <div className={`${styles.googleAuthDiv}`}>
