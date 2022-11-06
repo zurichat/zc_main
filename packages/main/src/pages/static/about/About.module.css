@@ -130,6 +130,11 @@
   line-height: 50px;
   padding: 0;
   font-weight: 700;
+  text-align: center;
+}
+
+.counter > p {
+  text-align: center;
 }
 
 .channel {
