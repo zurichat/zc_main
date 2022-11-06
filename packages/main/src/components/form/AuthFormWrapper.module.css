@@ -268,6 +268,7 @@
   font-size: 1em;
   display: flex;
   justify-content: center;
+  gap: 10px;
   align-items: center;
   /* font-size: 14px; */
   /* margin: 10px auto 0;
