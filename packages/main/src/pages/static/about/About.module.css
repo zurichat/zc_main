@@ -155,6 +155,14 @@
   }
 }
 
+@media only screen and (max-width: 767.98px){
+  .banner > h1 {
+    font-size: 24px;
+    line-height: revert;
+    font-weight: 700;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .banner {
     padding-top: 9em;
