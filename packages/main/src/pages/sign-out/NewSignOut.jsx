@@ -39,7 +39,7 @@ export default function NewSignout() {
         </h6>
 
         <>
-          {t("signout_signoutMessage")} {orgName} {t("signout_workspace")}
+          {t("signout_newSignoutMessage")} {orgName} {t("signout_workspace")}
         </>
         <div className="tree-img">
           <img src={TreeLogImg} alt="zuri logo" />

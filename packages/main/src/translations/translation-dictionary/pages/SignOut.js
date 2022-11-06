@@ -78,5 +78,18 @@ export default [
     it: "torna alla home page",
     he: "חזור לדף הבית",
     pt: "Retornar a página inicial"
+  },
+  {
+    key: "signout_newSignoutMessage",
+    en: "You have been successfully logged out of Team",
+    de: "Sie wurden erfolgreich von Team abgemeldet",
+    enus: "You have been successfully logged out of Team",
+    fr: "Vous avez été déconnecté avec succès de l'équipe",
+    zh: "您已成功退出团队",
+    ar: "لقد تم تسجيل خروجك من الفريق بنجاح",
+    es: "Se ha cerrado correctamente la sesión del equipo",
+    it: "Sei stato disconnesso con successo dal Team",
+    he: "ניתקת בהצלחה מהצוות",
+    pt: "Você foi desconectado com sucesso da equipe"
   }
 ];
