@@ -236,8 +236,8 @@ const AdvancedSettings = () => {
           </div>
         </div> */}
       <div className={styles.container}>
-        <h5 className={standardStyles.labelTextHeader}>Input Options</h5>
-        <div className={standardStyles.labelContainer}>
+        {/* <h5 className={standardStyles.labelTextHeader}>Input Options</h5> */}
+        {/* <div className={standardStyles.labelContainer}>
           <input
             type="checkbox"
             name=""
@@ -262,8 +262,8 @@ const AdvancedSettings = () => {
             Ask if I want to toggle my away status when I log in after having
             set myself away
           </div>
-        </div>
-        <div className={standardStyles.labelContainer}>
+        </div> */}
+        {/* <div className={standardStyles.labelContainer}>
           <input
             type="checkbox"
             name=""
@@ -287,14 +287,14 @@ const AdvancedSettings = () => {
           <div className={standardStyles.labelSubtext}>
             Send me occassional survey via Zurichat bot
           </div>
-        </div>
+        </div> */}
         {/* <div className={standardStyles.labelContainer}>
           <div className={styles.alonetext}>
             We’re working to make Zurichat better. We’d love to hear your
             thoughts
           </div>
         </div> */}
-        <div className={standardStyles.labelContainer}>
+        {/* <div className={standardStyles.labelContainer}>
           <input
             type="checkbox"
             name=""
@@ -318,7 +318,7 @@ const AdvancedSettings = () => {
           <div className={standardStyles.labelSubtext}>
             Warn me about potential malicious links
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
