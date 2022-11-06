@@ -86,6 +86,96 @@ export default [
         link_sales: "Talk to sales",
         link_try: "Try it for free"
       }
+    },
+    fr: {
+      banner: {
+        headline_one: "Rendre le travail simple, agréable et",
+        headline_two: "plus productif.",
+        description:
+          "est un centre de collaboration qui rassemble les bonnes personnes et les bons outils pour accomplir le travail. Des entreprises Fortune 100 aux marchés de proximité, des millions de personnes dans le monde utilisent Zuri Chat pour connecter leurs équipes, unifier leurs systèmes et faire avancer leur entreprise."
+      },
+      counter: {
+        customers: "Payé",
+        customers_: "Les clients",
+        fortune_companies: "du Fortune 100",
+        fortune_companies_: "utilisation",
+        countries: "les pays ont quotidiennement",
+        countries_: "utilisateurs actifs dans"
+      },
+      whoWeAre: {
+        title: "Qui sommes-nous et comment nous rejoindre",
+        description:
+          "Notre mission est d'améliorer la vie professionnelle des gens en fournissant une plate-forme pouvant accueillir une équipe solide et diversifiée, de professionnels créatifs qui souhaitent faire le meilleur travail de leur vie.",
+        description_:
+          "promet toutes sortes d'opportunités et une vie professionnelle simple, agréable et plus productive."
+      },
+
+      highlights: {
+        title: "Le télétravail plus intrigant que jamais",
+        description:
+          "Zuri Chat est l'endroit où le travail rencontre le plaisir.",
+        description_:
+          "Connectez-vous et interagissez avec votre équipe efficacement depuis n'importe où dans le monde",
+        channels: {
+          title: "Canaux",
+          description: "Organisez les conversations en",
+          description_: "espaces appelés canaux"
+        },
+        holidayCalender: {
+          title: "Calendrier des vacances",
+          description: "Ajouter des jours fériés, définir des rappels",
+          description_: "et voir tous les événements en un coup d'œil"
+        },
+        companyDeadline: {
+          title: "Date limite de l'entreprise",
+          description: "Gardez une trace des délais avec",
+          description_: "la date limite de l'entreprise",
+          description__: "caractéristique"
+        },
+        quickReply: {
+          title: "Application de réponse rapide",
+          description: "Obtenez des réponses rapides à Direct",
+          description_: "messages"
+        },
+        todoList: {
+          title: "Liste de choses à faire",
+          description: "Organiser les tâches avec la liste de tâches",
+          description_: "caractéristique"
+        }
+      },
+
+      features: {
+        title: "Caractéristiques spéciales",
+        description:
+          "Augmentez votre productivité en assemblant tous vos outils de travail en un seul endroit",
+        avatar: {
+          title: "Salon Avatar animé",
+          description:
+            "Créez et animez votre propre avatar dans le salon avatar"
+        },
+        files: {
+          title: "Fichiers d'entreprise",
+          description:
+            "Accédez à vos fichiers sur Google Drive pendant que vous êtes sur Zuri Chat."
+        },
+        accessibility: {
+          title: "Accessibilité",
+          description: "Gardez le contrôle, utilisez Zuri Chat et profitez",
+          description_: "les meilleures fonctionnalités d'accessibilité"
+        },
+        goals: {
+          title: "Objectifs de l'entreprise",
+          description: "Suivre les objectifs de l'entreprise",
+          description_: "directement dans Zuri Chat"
+        }
+      },
+
+      cta: {
+        title:
+          "Quel que soit le travail que vous faites, vous pouvez le faire dans Zuri Chat",
+        link_sales: "Parlez aux ventes",
+        link_try: "Essayez-le gratuitement"
+      }
     }
   }
 ];
