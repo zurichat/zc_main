@@ -38,7 +38,7 @@ export const StyledEmojiSelectWrapper = styled.div`
   }
   .${theme.emojiSelectButton}, .${theme.emojiSelectButtonPressed} {
     margin: 0;
-    padding: 0;
+    padding-bottom: 5px;
     width: 1.5em;
     height: 1.5em;
     box-sizing: border-box;
