@@ -26,19 +26,6 @@ export default [
     pt: "Conecte-se"
   },
   {
-    key: "logInsub_header",
-    en: "Login with the data you entered during your registration",
-    de: "Melden Sie sich mit den Daten an, die Sie bei Ihrer Registrierung eingegeben haben",
-    enus: "Login with the data you entered during your registration",
-    fr: "Connectez-vous avec les données que vous avez entrées pendant votre inscription",
-    zh: "使用您在注册期间输入的数据登录",
-    ar: "تسجيل الدخول باستخدام البيانات التي أدخلتها أثناء تسجيلك",
-    es: "Inicie sesión con los datos que ingresó durante su registro.",
-    it: "Accedi con i dati inseriti durante la registrazione",
-    he: "התחבר עם הנתונים שהזנת במהלך ההרשמה שלך",
-    pt: "Faça o login com os dados inseridos durante o registro"
-  },
-  {
     key: "google_header",
     en: "Login with Google",
     de: "Mit Google anmelden",
@@ -180,19 +167,6 @@ export default [
     it: "Ha dimenticato la password?",
     he: "שכחת ססמא?",
     pt: "Esqueceu sua senha?"
-  },
-  {
-    key: "getHelp",
-    en: "Get help signing in",
-    de: "Hilfe bei der Anmeldung in",
-    enus: "Get help signing in",
-    fr: "Obtenir de l'aide de vous connecter",
-    zh: "获取帮助登录",
-    ar: "الحصول على مساعدة تسجيل الدخول",
-    es: "Obtener ayuda para firmar",
-    it: "Ottenere aiuto che si iscrivi",
-    he: "קבל עזרה החתימה",
-    pt: "Obtenha ajuda para assinar"
   },
   {
     key: "contactUs",
