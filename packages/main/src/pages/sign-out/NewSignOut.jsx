@@ -21,6 +21,9 @@ export default function NewSignout() {
     history.replace("/login");
   };
 
+  //   Return to home page
+  const returnHome = () => history.replace("/");
+
   useEffect(() => {
     auth.signout(token);
   }, []);
@@ -46,11 +49,9 @@ export default function NewSignout() {
         </button>
 
         <p className="login">
-          or
-          <a onClick={() => switchWorkspace()} className="link">
-            {t("signout_loginText")}
+          <a onClick={() => returnHome()} className="link">
+            or {t("signout_homeText")}
           </a>
-          {t("signout_postLoginText")}
         </p>
       </div>
     </SignoutStyleWrapper>
@@ -68,7 +69,7 @@ const SignoutStyleWrapper = styled.section`
     margin: 3rem auto;
     width: max-content;
     img {
-      height: 100px;
+      height: 80px;
     }
   }
 
@@ -79,9 +80,51 @@ const SignoutStyleWrapper = styled.section`
     justify-content: center;
     align-items: center;
     padding: 40px 120px;
+    text-align: center;
 
     background: rgba(35, 35, 35, 0.04);
     border: 1px solid rgba(35, 35, 35, 0.2);
     border-radius: 8px;
+
+    .tree-img {
+      margin: 1rem 0;
+      width: 90%;
+      max-width: 334px;
+      padding: 10px;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .login a {
+      color: #232323;
+      cursor: pointer;
+      text-decoration: underline;
+
+      &:hover {
+        color: ;
+      }
+    }
+
+    button.push {
+      margin: 1rem 0;
+      background: #00b87c;
+      border-radius: 4px;
+      padding: 12px 18px;
+      text-align: center;
+      outline: none;
+      border: none;
+      color: #fff;
+      &:hover {
+        background: #156349;
+      }
+    }
+  }
+
+  @media (max-width: 700px) {
+    .content-wrapper {
+      padding: 20px 10px;
+    }
   }
 `;
