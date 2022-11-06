@@ -33,7 +33,7 @@ const About = () => {
           <p>ZuriChat {t("about.banner.description")}</p>
         </div>
         <div
-          className={`row flex align-items-center justify-content-center pt-3`}
+          className={`row flex align-items-center justify-content-center pt-3 text-center`}
         >
           <div className={`col-lg-4 col-md-4 col-sm-4 ${styles.counter}`}>
             <h3>100k+</h3>
@@ -67,7 +67,7 @@ const About = () => {
             <img src={team} alt={"image of teams"} srcSet="" />
           </div>
           <div className={`col-lg-6 text-start ${styles.join_us}`}>
-            <h3 className={`text-start ${styles.h3m}`}>
+            <h3 className={` ${styles.h3m}`}>
               {t("about.whoWeAre.title")} <br />
             </h3>
             <p className="text-start">
@@ -160,7 +160,7 @@ const About = () => {
             <h6 className={``}>{t("about.features.files.title")}</h6>
             <p>
               {t("about.features.files.description")}
-              <br />.
+              <br />
             </p>
           </div>
           <div className={`col ${styles.vector}`}>
@@ -184,7 +184,7 @@ const About = () => {
       {/* whatever work you do, you can do it in zurichat  */}
       <div className={`container-fluid ${styles.zurichat}`}>
         <div className={`${styles.zurichat_section}`}>
-          <div className="signup-cta">
+          <div className={`${styles.signup_cta}`}>
             <h3 className="text">
               Zuri Chat is a modern world platform that makes communicating with
               your team or organization faster, easier and more fun. Want to
