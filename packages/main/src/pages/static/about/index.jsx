@@ -33,23 +33,23 @@ const About = () => {
           <p>ZuriChat {t("about.banner.description")}</p>
         </div>
         <div
-          className={`row flex align-items-center justify-content-center pt-3`}
+          className={`row flex align-items-center justify-content-center pt-3 ${styles.counterWrapper}`}
         >
-          <div className={`col-lg-4 col-md-4 col-sm-4 ${styles.counter}`}>
+          <div className={`${styles.counter}`}>
             <h3>100k+</h3>
             <p>
               {t("about.counter.customers")} <br />
               {t("about.counter.customers_")}
             </p>
           </div>
-          <div className={`col-lg-4 col-md-4 col-sm-4 ${styles.counter}`}>
+          <div className={`${styles.counter}`}>
             <h3>50</h3>
             <p>
               {t("about.counter.fortune_companies")} <br />
               {t("about.counter.fortune_companies_")} ZuriChat
             </p>
           </div>
-          <div className={`col-lg-4 col-md-4 col-sm-4 ${styles.counter}`}>
+          <div className={`${styles.counter}`}>
             <h3>50+</h3>
             <p>
               {t("about.counter.countries")} <br />

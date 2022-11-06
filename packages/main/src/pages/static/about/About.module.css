@@ -125,11 +125,32 @@
   justify-content: center;
 }
 
+.counterWrapper{
+  width: 100%;
+  gap: 20px;
+}
+
+.counter{
+  width: 30%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 10px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 1rem rgb(187 186 231 / 30%);
+  padding: 30px 20px 20px 20px;
+}
+
 .counter > h3 {
   font-size: 55px;
   line-height: 50px;
   padding: 0;
   font-weight: 700;
+}
+
+.counter > p{
+  height: 50px;
 }
 
 .channel {
@@ -169,7 +190,7 @@
     font-size: 14px;
   }
   .counter {
-    text-align: center;
+    /* text-align: center; */
     margin-top: 4%;
   }
   .counter > h3 {
