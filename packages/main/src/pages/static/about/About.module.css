@@ -81,18 +81,17 @@
 }
 
 .btn_sale {
+  border: 2px solid #00b87c;
   text-transform: uppercase;
-  color: #00ffaa;
+  color: #00b87c;
   margin-top: 2rem;
   font-weight: 600;
-  padding: 10px 16px;
+  padding: .625em 1em;
   background-color: #ffffff;
   border-radius: 0.3rem;
-  width: 7rem;
-  height: 3rem;
 }
 .btn_sale:hover {
-  color: #00b87c;
+  color: #00ffaa;
   background-color: rgba(255, 255, 255, 0.7);
   border: 2px solid #fff;
 }
