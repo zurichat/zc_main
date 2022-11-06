@@ -63,5 +63,20 @@ export default [
     it: "a un altro spazio di lavoro",
     he: "אל סביבת עבודה אחרת",
     pt: "para outro espaço de trabalho."
+  },
+  // for the new signout page
+
+  {
+    key: "signout_homeText",
+    en: "return to home page",
+    de: "zur Startseite zurückkehren",
+    enus: "return to home page",
+    fr: "Retour à la page d'accueil",
+    zh: "返回首页",
+    ar: "العوده للصفحة الرئيسية",
+    es: "regresar a la página principal",
+    it: "torna alla home page",
+    he: "חזור לדף הבית",
+    pt: "Retornar a página inicial"
   }
 ];

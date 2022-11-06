@@ -61,7 +61,7 @@ export default function NewSignout() {
 const SignoutStyleWrapper = styled.section`
   background: #fff;
   width: 94%;
-  max-width: 900px;
+  max-width: 700px;
   margin: 0 auto;
   padding: 0 10px;
 
@@ -79,7 +79,7 @@ const SignoutStyleWrapper = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px 120px;
+    padding: 40px 120px 30px;
     text-align: center;
 
     background: rgba(35, 35, 35, 0.04);
@@ -90,6 +90,7 @@ const SignoutStyleWrapper = styled.section`
       margin: 1rem 0;
       width: 90%;
       max-width: 334px;
+      min-height: 190px;
       padding: 10px;
 
       img {
