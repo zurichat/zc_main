@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 .banner {
-  padding-top: 11%;
+  padding-top: 9em;
   text-align: center;
 }
 .banner > p {
@@ -150,13 +150,13 @@
 
 @media only screen and (max-width: 1040px) {
   .banner {
-    padding-top: 10%;
+    padding-top: 9em;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .banner {
-    padding-top: 20%;
+    padding-top: 9em;
   }
   .banner > h1 {
     font-size: 17px;
