@@ -2,7 +2,8 @@ import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
-import ZuriChatLogoTitle from "../../assets/zuri-chat-logo/logo-title.svg";
+import ZuriChatLogoTitle from "../../assets/zuri-chat-logo/logo.svg";
+import TreeLogImg from "../../assets/images/tree_log.svg";
 import { useAuth } from "../../auth/use-auth";
 
 export default function NewSignout() {
@@ -37,7 +38,9 @@ export default function NewSignout() {
         <>
           {t("signout_signoutMessage")} {orgName} {t("signout_workspace")}
         </>
-
+        <div className="tree-img">
+          <img src={TreeLogImg} alt="zuri logo" />
+        </div>
         <button className="push" onClick={() => switchWorkspace()}>
           {t("signout_loginText")}
         </button>
@@ -62,10 +65,10 @@ const SignoutStyleWrapper = styled.section`
   padding: 0 10px;
 
   .logo {
-    margin: 3rem auto 0;
+    margin: 3rem auto;
     width: max-content;
     img {
-      height: 160px;
+      height: 100px;
     }
   }
 
