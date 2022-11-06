@@ -153,12 +153,13 @@ const TryDifferentWrapper = styled.div`
 `;
 const TextBottom = styled.p`
   font-weight: 400;
-  font-size: ${18 / 16}rem;
+  // font-size: ${18 / 16}rem;
   font-family: "Lato" sans-serif;
 `;
 const SecondText = styled(TextBottom)`
   color: #00b87c;
-  font-weight: 600;
+  font-weight: 300;
+  margin-top: 20px;
 `;
 
 export const Footer = styled.footer`
