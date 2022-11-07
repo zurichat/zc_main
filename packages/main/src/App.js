@@ -13,7 +13,7 @@ import {
   HomePage,
   Login,
   SignUp,
-  SignOut,
+  NewSignOut,
   AboutPage,
   ContactUsPage,
   DownloadsPage,
@@ -36,6 +36,8 @@ const ProtectedRoute = ({ children, ...rest }) => {
       {...rest}
       render={({ location }) =>
         auth.user ? (
+          children
+        ) : location.pathname === "/signout" ? (
           children
         ) : (
           <Redirect
@@ -94,7 +96,7 @@ const App = () => (
             <SignUp />
           </ProtectFromAuthRoute>
           <ProtectedRoute exact path="/signout">
-            <SignOut />
+            <NewSignOut />
           </ProtectedRoute>
           <ProtectedRoute exact path="/choose-workspace">
             {withSuspense(ChooseWorkspace)}
