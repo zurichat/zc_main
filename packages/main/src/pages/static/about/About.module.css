@@ -239,9 +239,9 @@
     padding: 0% 11%;
     font-size: 14px;
   }
-  .counterWrapper{
+  /* .counterWrapper{
     flex-direction: column;
-  }
+  } */
 
   .counter{
     width: 60%;
