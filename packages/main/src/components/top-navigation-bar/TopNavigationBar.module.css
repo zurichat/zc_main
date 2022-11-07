@@ -11,7 +11,7 @@
 .navbar {
   padding: 0.5rem 1rem;
   background-color: white;
-  max-width: 95%;
+  max-width: 100%;
   margin: 0 auto;
   position: relative;
 }
@@ -34,11 +34,6 @@
   padding-right: 1rem !important;
   padding-left: 1rem !important;
 }
-
-/*  
- .navLinkPricing { _margin-right: 30px; } 
- 
- .navLinkComms { _margin-right: 30px; } */
 
 .modal_header button {
   font-size: 2rem;
