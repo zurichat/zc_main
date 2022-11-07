@@ -11,8 +11,7 @@
     "lint:js": "eslint '**/*.+(js|jsx)'",
     "prettify": "prettier -w .",
     "analyze": "webpack --mode=production --env analyze",
-    "build": "concurrently yarn:build:*",
-    "build:webpack": "NODE_ENV=production webpack --mode=production"
+    "build": "concurrently yarn:build:*"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
