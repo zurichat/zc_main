@@ -9,6 +9,7 @@ import Subscribe from "./pages/Subscribe";
 import whyzurichat from "./pages/whyzurichat";
 import Cookies from "./pages/Cookies";
 import ContactUs from "./pages/ContactUs";
+import Plugins from "./pages/Plugins";
 
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
@@ -27,6 +28,7 @@ const Translations = [
   ...ContactUs,
   ...SignOut,
   ...ResetPassword,
+  ...Plugins,
   ...About,
 
   // Components

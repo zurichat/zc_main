@@ -103,7 +103,7 @@ input.inputField::placeholder {
   .inputField {
     /* width: 400px; */
     width: 98%;
-    padding: 1rem 1rem 1rem 0;
+    padding: 1rem;
     border: 1px solid #63636c;
     border-radius: 4px;
     line-height: 19px;
@@ -117,7 +117,7 @@ input.inputField::placeholder {
   }
 
   .subscribeBtn {
-    padding: 1rem 4rem;
+    /* padding: 1rem 4rem; */
     margin-left: 0px;
     width: 191px;
     font-style: normal;
