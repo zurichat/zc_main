@@ -13,6 +13,7 @@ import Plugins from "./pages/Plugins";
 
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
+import About from "./pages/About";
 
 const resources = {};
 
@@ -28,6 +29,7 @@ const Translations = [
   ...SignOut,
   ...ResetPassword,
   ...Plugins,
+  ...About,
 
   // Components
   ...NavBar,
