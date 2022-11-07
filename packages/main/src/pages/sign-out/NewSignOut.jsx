@@ -127,5 +127,10 @@ const SignoutStyleWrapper = styled.section`
     .content-wrapper {
       padding: 20px 10px;
     }
+    .logo {
+      img {
+        height: 40px;
+      }
+    }
   }
 `;
