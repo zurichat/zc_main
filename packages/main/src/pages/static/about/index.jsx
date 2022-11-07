@@ -33,7 +33,7 @@ const About = () => {
           <p>ZuriChat {t("about.banner.description")}</p>
         </div>
         <div
-          className={`row flex align-items-center justify-content-center pt-3`}
+          className={`row flex align-items-center justify-content-center pt-3 ${styles.counter_div}`}
         >
           <div className={`col-lg-4 col-md-4 col-sm-4 ${styles.counter}`}>
             <h3>100k+</h3>
@@ -90,9 +90,9 @@ const About = () => {
           </p>
         </div>
         {/* Carousel for mobile view  */}
-        <Carousel />
-        <div className={`row pt-3 ${styles.desktop_carousel}`}>
-          <div className={`col ${styles.working_remote_section}`}>
+        {/* <Carousel /> */}
+        <div className={`${styles.desktop_carousel}`}>
+          <div className={`${styles.working_remote_section}`}>
             <img src={channel} alt={"centralized space"} />
             <h6>{t("about.highlights.channels.title")}</h6>
             <p>
@@ -145,11 +145,11 @@ const About = () => {
         <h3>{t("about.features.title")}</h3>
         <p>{t("about.features.description")}</p>
       </div>
-      <CarouselSecond className={styles.carouselCaption} />
+      {/* <CarouselSecond className={styles.carouselCaption} /> */}
       <div
-        className={`container-fluid ${styles.second_carousel_block} mb-5 container`}
+      // className={`container-fluid ${styles.second_carousel_block} mb-5 container`}
       >
-        <div className={`row pt-3`}>
+        <div className={`${styles.special_features}`}>
           <div className={`col ${styles.vector}`}>
             <img src={user} alt={"image of a user"} />
             <h6 className={``}>{t("about.features.avatar.title")}</h6>
@@ -184,7 +184,7 @@ const About = () => {
       {/* whatever work you do, you can do it in zurichat  */}
       <div className={`container-fluid ${styles.zurichat}`}>
         <div className={`${styles.zurichat_section}`}>
-          <div className="signup-cta">
+          <div className={`${styles.signup_cta}`}>
             <h3 className={`${styles.zurichat_text}`}>
               Zuri Chat is a modern world platform that makes communicating with
               your team or organization faster, easier and more fun. Want to

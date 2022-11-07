@@ -10,6 +10,7 @@
 }
 .working_remote {
   text-align: center !important;
+  display: none !important;
   margin-top: 2%;
 }
 .working_remote > p {
@@ -124,7 +125,7 @@
   font-weight: 600;
 }
 .working_remote_section {
-  display: flex;
+  display: none !important;
   flex: 1 0 0%;
   margin-top: 2%;
   flex-direction: column;
@@ -164,7 +165,16 @@
   text-decoration: underline;
 }
 .carousel {
+  display: none !important;
+}
+
+.special_features,
+.counter_div {
   display: none;
+}
+
+.signup_cta {
+  width: 70%;
 }
 
 @media only screen and (max-width: 1040px) {
@@ -173,9 +183,11 @@
     padding-top: 9em;
   }
 
-  .desktop_carousel {
+  .desktop_carousel,
+  .second_carousel_block {
     flex-wrap: wrap;
     justify-content: center;
+    display: none !important;
   }
 
   .working_remote_section {
@@ -269,7 +281,7 @@
     display: none;
   }
   .carousel {
-    display: block;
+    display: none;
   }
   .carouselCaption {
     position: relative !important;
