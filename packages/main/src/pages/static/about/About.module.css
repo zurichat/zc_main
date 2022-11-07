@@ -138,10 +138,16 @@
   margin-top: 3%;
 }
 .team > img {
-  width: 30vw;
-  position: relative;
-  top: -16%;
+  width: 100%;
 }
+
+.winnie {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
 .span {
   text-decoration: underline;
 }
@@ -189,6 +195,7 @@
   }
   .join_us > h3 {
     font-size: 24px;
+    padding: 0 4%;
   }
   .join_us > p {
     padding: 0 4%;
@@ -251,6 +258,11 @@
     justify-content: center;
     margin: 0 auto;
   }
+  
+  .winnie {
+    flex-direction: column;
+  }
+
   .counter > h3 {
     font-size: 35px;
     line-height: 50px;
