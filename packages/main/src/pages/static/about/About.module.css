@@ -82,17 +82,16 @@
 
 .btn_sale {
   text-transform: uppercase;
-  color: #00ffaa;
-  margin-top: 2rem;
+  color: #00b87c;
+  margin-top: 3em;
   font-weight: 600;
-  padding: 10px 16px;
+  padding: 0.625em 1em;
   background-color: #ffffff;
+  border: 2px solid #00b87c;
   border-radius: 0.3rem;
-  width: 7rem;
-  height: 3rem;
 }
 .btn_sale:hover {
-  color: #00b87c;
+  color: #00ffaa;
   background-color: rgba(255, 255, 255, 0.7);
   border: 2px solid #fff;
 }
@@ -111,7 +110,6 @@
   color: #fff;
   border-radius: 5%;
   border: 1px solid #fff;
-  margin-left: 1%;
   text-transform: uppercase;
   margin-top: 2rem;
   box-shadow: 2px 4px 8px solid #fff;
@@ -148,6 +146,11 @@
   line-height: 50px;
   padding: 0;
   font-weight: 700;
+  text-align: center;
+}
+
+.counter > p {
+  text-align: center;
 }
 
 .counter > p{
@@ -161,10 +164,16 @@
   margin-top: 3%;
 }
 .team > img {
-  width: 30vw;
-  position: relative;
-  top: -16%;
+  width: 100%;
 }
+
+.team__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
 .span {
   text-decoration: underline;
 }
@@ -196,12 +205,20 @@
   }
 }
 
+@media only screen and (max-width: 767.98px){
+  .banner > h1 {
+    font-size: 24px;
+    line-height: revert;
+    font-weight: 700;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .banner {
     padding-top: 20%;
   }
   .banner > h1 {
-    font-size: 17px;
+    font-size: 25px;
     line-height: revert;
     font-weight: 700;
   }
@@ -225,6 +242,7 @@
   }
   .join_us > h3 {
     font-size: 24px;
+    padding: 0 4%;
   }
   .join_us > p {
     padding: 0 4%;
@@ -288,6 +306,11 @@
     margin: 0 auto;
     width: 80%;
   }
+  
+  .team__container {
+    flex-direction: column;
+  }
+
   .counter > h3 {
     font-size: 45px;
     line-height: 50px;
