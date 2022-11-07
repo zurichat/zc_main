@@ -385,6 +385,39 @@
   padding-bottom: 20px;
 }
 
+.modal_head {
+  height: auto;
+  width: 100%;
+  float: right;
+  text-align: right;
+}
+
+.modal_body {
+  width: 100%;
+  height: 700px;
+  overflow-y: auto;
+  padding: 10px 20px;
+}
+
+.modal_title {
+  font-size: 36px;
+  font-weight: 600;
+  color: #000;
+}
+
+.button_link {
+  background-color: transparent;
+  color: #00b87c;
+  margin: 10px 0;
+}
+
+.modal_text {
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.0068em;
+  color: #2b2626;
+}
+
 @media screen and (min-width: 769px) {
   .contentBox {
     display: flex;
