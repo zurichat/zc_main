@@ -13,7 +13,7 @@ import {
   HomePage,
   Login,
   SignUp,
-  SignOut,
+  NewSignOut,
   AboutPage,
   ContactUsPage,
   DownloadsPage,
@@ -24,6 +24,8 @@ import {
   ChangePassword,
   PrivacyPage
 } from "./pages";
+
+import TermsOfService from "../src-old/pages/termsOfService/index";
 import { useAuth } from "./auth/use-auth";
 
 const { Workspace, CreateWorkspace, ChooseWorkspace } = lazily(() =>
@@ -37,6 +39,8 @@ const ProtectedRoute = ({ children, ...rest }) => {
       {...rest}
       render={({ location }) =>
         auth.user ? (
+          children
+        ) : location.pathname === "/signout" ? (
           children
         ) : (
           <Redirect
@@ -88,6 +92,7 @@ const App = () => (
           <Route exact path="/reset-password" component={ResetPassword} />
           <Route path="/change-password" component={ChangePassword} />
           <Route path="/privacy" component={PrivacyPage} />
+          <Route path="/terms" component={TermsOfService} />
 
           <ProtectFromAuthRoute exact path="/login">
             <Login />
@@ -96,7 +101,7 @@ const App = () => (
             <SignUp />
           </ProtectFromAuthRoute>
           <ProtectedRoute exact path="/signout">
-            <SignOut />
+            <NewSignOut />
           </ProtectedRoute>
           <ProtectedRoute exact path="/choose-workspace">
             {withSuspense(ChooseWorkspace)}
