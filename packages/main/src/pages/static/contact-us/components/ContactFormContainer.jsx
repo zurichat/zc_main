@@ -21,7 +21,7 @@ const rejectStyle = {
 function ContactFormContainer() {
   const { t } = useTranslation();
   const [currentDetails, setCurrentDetails] = useState({});
-  const [userAuth, setUserAuth] = useState({});
+  // const [userAuth, setUserAuth] = useState({});
   const [values, setValues] = useState({
     email: "",
     subject: "",
@@ -31,14 +31,14 @@ function ContactFormContainer() {
     success: ""
   });
 
-  useEffect(() => {
-    let userInfo = getUserInfo();
-    setUserAuth(userInfo.user.email ? userInfo.user : {});
-    setValues(values => ({
-      ...values,
-      email: userAuth.email ? userAuth.email : values.email
-    }));
-  }, []);
+  // useEffect(() => {
+  //   let userInfo = getUserInfo();
+  //   setUserAuth(userInfo.user.email ? userInfo.user : {});
+  //   setValues(values => ({
+  //     ...values,
+  //     email: userAuth.email ? userAuth.email : values.email
+  //   }));
+  // }, []);
 
   const {
     acceptedFiles,
@@ -133,11 +133,7 @@ function ContactFormContainer() {
   return (
     <div className={`${ContactFormStyle.contact_form_container}`}>
       <form className="" onSubmit={handleSubmit}>
-        <div
-          className={`mb-3 ${
-            userAuth.email ? ContactFormStyle.is_hidden_animate : ""
-          }`}
-        >
+        <div className="mb-3">
           <label htmlFor="email" className="form-label fw-bold">
             {t("formEmail")}
           </label>
