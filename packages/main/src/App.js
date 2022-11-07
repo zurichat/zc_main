@@ -21,7 +21,8 @@ import {
   PricingPage,
   InvitePage,
   ResetPassword,
-  ChangePassword
+  ChangePassword,
+  PrivacyPage
 } from "./pages";
 import { useAuth } from "./auth/use-auth";
 
@@ -86,6 +87,7 @@ const App = () => (
           <Route path="/invites/:id" component={InvitePage} />
           <Route exact path="/reset-password" component={ResetPassword} />
           <Route path="/change-password" component={ChangePassword} />
+          <Route path="/privacy" component={PrivacyPage} />
 
           <ProtectFromAuthRoute exact path="/login">
             <Login />
