@@ -62,7 +62,7 @@ const About = () => {
       {/* <Companies /> */}
       {/* Who we are and how to join us */}
       <div className={`container mb-5 ${styles.to_join}`}>
-        <div className={`${styles.winnie}`}>
+        <div className={`${styles.team__container}`}>
           <div className={`col-lg-6  ${styles.team}`}>
             <img src={team} alt={"image of teams"} srcSet="" />
           </div>
