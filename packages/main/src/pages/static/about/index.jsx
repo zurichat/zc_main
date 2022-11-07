@@ -184,7 +184,7 @@ const About = () => {
       {/* whatever work you do, you can do it in zurichat  */}
       <div className={`container-fluid ${styles.zurichat}`}>
         <div className={`${styles.zurichat_section}`}>
-          <div className="signup-cta">
+          <div className={`${styles.signup_cta}`}>
             <h3 className="text">
               Zuri Chat is a modern world platform that makes communicating with
               your team or organization faster, easier and more fun. Want to
