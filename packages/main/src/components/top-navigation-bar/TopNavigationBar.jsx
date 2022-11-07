@@ -295,7 +295,7 @@ export default function TopNavigationBar() {
             <li className="nav-item">
               <NavLink
                 to="/contact-us"
-                className="nav-link"
+                className={`nav-link ${TopNavigationBarStyles.navLinkComms}`}
                 role="button"
                 aria-expanded="false"
               >
@@ -495,14 +495,20 @@ export default function TopNavigationBar() {
           {!isUserLoggedIn ? (
             <>
               <li>
-                <Link to="/signup" className={`nav-link`}>
+                <Link
+                  to="/signup"
+                  className={`${TopNavigationBarStyles.TopNavLink}`}
+                >
                   <span className={`${TopNavigationBarStyles.signU}`}>
                     {t("nav_signup")}
                   </span>
                 </Link>
               </li>
               <li>
-                <Link to="/login" className={`nav-link`}>
+                <Link
+                  to="/login"
+                  className={`${TopNavigationBarStyles.TopNavLink}`}
+                >
                   <span className={`${TopNavigationBarStyles.signIn}`}>
                     {t("nav_login")}
                   </span>
