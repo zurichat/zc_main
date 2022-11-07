@@ -23,6 +23,8 @@ import {
   ResetPassword,
   ChangePassword
 } from "./pages";
+
+import TermsOfService from "../src-old/pages/termsOfService/index";
 import { useAuth } from "./auth/use-auth";
 
 const { Workspace, CreateWorkspace, ChooseWorkspace } = lazily(() =>
@@ -88,6 +90,7 @@ const App = () => (
           <Route path="/invites/:id" component={InvitePage} />
           <Route exact path="/reset-password" component={ResetPassword} />
           <Route path="/change-password" component={ChangePassword} />
+          <Route path="/terms" component={TermsOfService} />
 
           <ProtectFromAuthRoute exact path="/login">
             <Login />
