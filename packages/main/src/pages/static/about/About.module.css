@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 .banner {
-  padding-top: 9em;
+  padding-top: 11%;
   text-align: center;
 }
 .banner > p {
@@ -128,15 +128,16 @@
 .counterWrapper{
   width: 100%;
   gap: 20px;
+  margin: 0;
 }
 
 .counter{
   width: 30%;
-  height: 200px;
+  height: 170px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  row-gap: 10px;
+  /* justify-content: center; */
+  row-gap: 5px;
   border-radius: 15px;
   box-shadow: 0px 0px 1rem rgb(187 186 231 / 30%);
   padding: 30px 20px 20px 20px;
@@ -150,7 +151,8 @@
 }
 
 .counter > p{
-  height: 50px;
+  height: auto;
+  margin-bottom: 0;
 }
 
 .channel {
@@ -172,26 +174,16 @@
 
 @media only screen and (max-width: 1040px) {
   .banner {
-    padding-top: 9em;
+    padding-top: 10%;
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .banner {
-    padding-top: 9em;
-  }
-  .banner > h1 {
-    font-size: 17px;
-    line-height: revert;
-    font-weight: 700;
-  }
-  .banner > p {
-    padding: 0% 11%;
-    font-size: 14px;
-  }
+@media only screen and (max-width: 755px) {
   .counter {
     /* text-align: center; */
     margin-top: 4%;
+    padding: 15px;
+    row-gap: 0px;
   }
   .counter > h3 {
     font-size: 45px;
@@ -202,6 +194,29 @@
   .counter > p {
     font-size: 14px;
   }
+}
+
+@media only screen and (max-width: 600px) {
+  .banner {
+    padding-top: 20%;
+  }
+  .banner > h1 {
+    font-size: 17px;
+    line-height: revert;
+    font-weight: 700;
+  }
+  .banner > p {
+    padding: 0% 11%;
+    font-size: 14px;
+  }
+  .counterWrapper{
+    flex-direction: column;
+  }
+
+  .counter{
+    width: 60%;
+  }
+  
   .team > img {
     width: 100%;
   }
@@ -268,12 +283,13 @@
 @media (max-width: 767px) {
   .counter {
     align-items: center;
-    gap: 30px;
+    /* gap: 30px; */
     justify-content: center;
     margin: 0 auto;
+    width: 80%;
   }
   .counter > h3 {
-    font-size: 35px;
+    font-size: 45px;
     line-height: 50px;
     padding: 0;
     font-weight: 700;

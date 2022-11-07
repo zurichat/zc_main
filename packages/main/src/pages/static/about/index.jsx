@@ -24,7 +24,7 @@ const About = () => {
   return (
     <div>
       <TopNavigationBar />
-      <div className={`container mb-5`}>
+      <div className={`container mb-5 ${styles.heroContainer}`}>
         <div className={`${styles.banner}`}>
           <h1>
             {t("about.banner.headline_one")} <br />
