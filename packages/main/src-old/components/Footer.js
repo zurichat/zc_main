@@ -8,10 +8,10 @@ import twitter from "../component-assets/twitter.svg";
 import linkedin from "../component-assets/linkedin.svg";
 import instagram from "../component-assets/instagram.svg";
 import { useTranslation } from "react-i18next";
-import { googleTranslateElementInit } from "../translator";
+// import { googleTranslateElementInit } from "../translator";
 
 const Footer = () => {
-  googleTranslateElementInit();
+  // googleTranslateElementInit();
   const { t } = useTranslation();
 
   const getYear = () => {
