@@ -121,11 +121,11 @@ const Sidebar = props => {
             image={threadIcon}
             link={`/workspace/${currentWorkspace}/plugin-chat/threads`}
           />
-          <SingleRoom
+          {/* <SingleRoom
             name="All Dms"
             image={dmIcon}
             link={`/workspace/${currentWorkspace}/plugin-chat/all-dms`}
-          />
+          /> */}
           <SingleRoom name="Drafts" image={draftIcon} />
 
           <Starred starredRooms={starredRooms} />
