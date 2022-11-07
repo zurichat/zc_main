@@ -72,6 +72,9 @@ export default function Footer() {
               <li>
                 <Link to="/dao-features">{t("footer_web3")}</Link>
               </li>
+              <li>
+                <Link to="/plugins">{t("nav_plugin")}</Link>
+              </li>
             </ul>
           </div>
 

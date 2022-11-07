@@ -50,7 +50,7 @@ const UserOrganization = ({ organizations, user }) => {
 };
 
 const BottomSection = styled.section`
-  padding-top: 50px;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,6 +79,8 @@ const SelectWorkSpace = styled.ul`
   width: 538px;
   border: 1px solid hsla(0, 0%, 20%, 0.51);
   padding-top: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
 
   & > p {
     font-size: ${18 / 16}rem;
@@ -102,6 +104,7 @@ const Image = styled.img`
 const Flex = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
 `;
 const OrganizationWrapper = styled.li`
   border-top: 1px solid hsla(0, 0%, 20%, 0.51);
@@ -111,6 +114,11 @@ const OrganizationWrapper = styled.li`
   padding-right: 36px;
   display: flex;
   gap: 19px;
+  align-items: center;
+
+  & > a {
+    flex-grow: 1;
+  }
 `;
 const OrganizationName = styled.span`
   font-weight: 600;
@@ -121,6 +129,9 @@ const OrganizationName = styled.span`
 const Members = styled(OrganizationName)`
   font-size: 1rem;
   font-weight: 400;
+  color: #667085;
+  opacity: 0.8;
+  margin-top: 6px;
 `;
 const Organization = styled.div`
   display: flex;
@@ -142,12 +153,13 @@ const TryDifferentWrapper = styled.div`
 `;
 const TextBottom = styled.p`
   font-weight: 400;
-  font-size: ${18 / 16}rem;
+  // font-size: ${18 / 16}rem;
   font-family: "Lato" sans-serif;
 `;
 const SecondText = styled(TextBottom)`
   color: #00b87c;
-  font-weight: 600;
+  font-weight: 300;
+  margin-top: 20px;
 `;
 
 export const Footer = styled.footer`

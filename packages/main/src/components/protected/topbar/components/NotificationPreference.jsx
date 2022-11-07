@@ -329,7 +329,7 @@ const NotificationPreference = () => {
             <label htmlFor="for-thread">Notify me of replies to thread</label>
           </div> */}
         </form>
-        <hr className={standardStyles.hrLine} />
+        {/* <hr className={standardStyles.hrLine} /> */}
         {/* <div className={styles.itemTitle2}>
           <h4 className={styles.titleSmall}>Keywords</h4>{" "}
           <span className={styles.spanBlock}>
@@ -345,15 +345,15 @@ const NotificationPreference = () => {
         </div> */}
         {/* <hr className={styles.hrNot} /> */}
 
-        <div className={styles.itemTitle2}>
+        {/* <div className={styles.itemTitle2}>
           <h4 className={styles.titleSmall}>Schedule Notification </h4>{" "}
           <span className={styles.spanBlock}>
             You'll only receive notifications in the hours that you choose.
             Outside of those times, notifications will be paused. <br />{" "}
             <span className={styles.spanSmall}>Learn more</span>
           </span>
-        </div>
-        <div className={styles.schedule}>
+        </div> */}
+        {/* <div className={styles.schedule}>
           <ul className={styles.list} style={{ paddingLeft: "0" }}>
             <li className={standardStyles.spacingRight}>
               <div className={styles.select}>
@@ -389,7 +389,7 @@ const NotificationPreference = () => {
               <TextInput label="to" />
             </li>
           </ul>
-        </div>
+        </div> */}
 
         {/* <hr className={styles.hrNot} /> */}
 
@@ -461,7 +461,7 @@ const NotificationPreference = () => {
             </div>
           </div>
         </div> */}
-        <hr className={standardStyles.hrLine} />
+        {/* <hr className={standardStyles.hrLine} /> */}
 
         {/* <div className={styles.section2}>
           <div className={styles.itemTitle2}>
