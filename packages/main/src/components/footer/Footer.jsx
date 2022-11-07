@@ -152,6 +152,7 @@ export default function Footer() {
         <p>
           &copy; {getYear()} Zuri Chat. {t("footer_rights")}
         </p>
+        <p>Version - {process.env.REACT_APP_VERSION}</p>
       </div>
     </div>
   );
