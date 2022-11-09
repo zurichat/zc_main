@@ -1,31 +1,31 @@
 name: Zuri main staging Deployment
-
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [staging]
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
+  
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
+      # - name: node setup
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: '14'
+      #     cache: 'yarn'
+      #
+      # - name: install deps
+      #   run: yarn install
+      #
+      # - name: build
+      #   run: yarn build
       - name: Git Pull on Server
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.ZURI_HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          script: |
-            cd /var/www/zuri.chat/zurimain/staging/zc_main
-            git fetch --all 
-            git reset --hard origin/staging
-            git stash
-            git pull
-            yarn install
-            yarn build
-            pm2 restart zc_main_staging
+          script: "cd /var/www/zuri.chat/zurimain/staging/zc_main\ngit fetch --all \ngit reset --hard origin/staging\ngit stash\ngit pull\nyarn install\nyarn build\npm2 restart zc_main_staging\n"
