@@ -23,25 +23,23 @@ export const policyData = [
   },
   {
     id: 4,
-    title: "Data Request Policy",
+    title: "Data Request",
     text: "In the following documents and FAQ, you can find our policies and guidelines for requests for data from government and law enforcement entities, as well as civil third-party data requests. You can also find our annual reports on the number of requests we receive and our responses."
   },
   {
     id: 5,
     title: "Data Request Policy",
-    textHead:
-      '"As part of our commitment to trust and transparency, our Data Request Policy outlines Zuri’s policies and procedures for responding to requests for Customer Data. This policy guides our practices with respect to requests for third-party data, requests by legal authorities, Customer notice, and international requests for data."'
+    text: '"As part of our commitment to trust and transparency, our Data Request Policy outlines Zuri’s policies and procedures for responding to requests for Customer Data. This policy guides our practices with respect to requests for third-party data, requests by legal authorities, Customer notice, and international requests for data."'
   },
   {
     id: 6,
     title: "Transparency Report",
-    textHead:
-      "Our annual transparency reports detail requests for data we’ve received, including those from law enforcement and government entities. This report outlines our guiding principles for maintaining Customer confidentiality, the number of requests we receive annually, data about our responses, and how we define the different types of requests."
+    text: "Our annual transparency reports detail requests for data we’ve received, including those from law enforcement and government entities. This report outlines our guiding principles for maintaining Customer confidentiality, the number of requests we receive annually, data about our responses, and how we define the different types of requests."
   },
   {
     id: 7,
     title: "Cookie policy",
-    text: "At Zuri, we value openness when it comes to the data we gather and the way we use it. This policy explains how we use cookies for these purposes and when. The definitions of capitalized phrases used in this policy that are not otherwise defined can be found in our Privacy Policy [make this a valid link], which also provides further information on how Zuri collects and uses information."
+    text: "At Zuri, we value openness when it comes to the data we gather and the way we use it. This policy explains how we use cookies for these purposes and when. The definitions of capitalized phrases used in this policy that are not otherwise defined can be found in our Privacy Policy, which also provides further information on how Zuri collects and uses information."
   },
 
   {
