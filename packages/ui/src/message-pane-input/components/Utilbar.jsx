@@ -2,33 +2,20 @@ import React, { useState } from "react";
 import { convertToRaw, EditorState, RichUtils } from "draft-js";
 import RealUnstyledButton from "~/shared/button/Button";
 import styled from "styled-components";
+import { AtSign, Clip, Computer, Google, Send } from "@assets/index";
 import {
-  Bold,
-  Border,
-  Computer,
-  Google,
-  Italic,
-  Lightning,
-  Link,
-  List
-} from "@assets/index";
+  GlobalStyleForEmojiSelect,
+  StyledEmojiSelectWrapper
+} from "../EmojiStyles.styled";
 import ClickAwayListener from "react-click-away-listener";
 
-const BoldIcon = () => <img src={Bold} alt="" />;
-const ItalicIcon = () => <img src={Italic} alt="" />;
-const ListIcon = () => <img src={List} alt="" />;
-const BorderIcon = () => <img src={Border} alt="" />;
-const LightningIcon = () => <img src={Lightning} alt="" />;
-const LinkIcon = () => <img src={Link} alt="" />;
+const ClipIcon = () => <img src={Clip} alt="" />;
+const SendIcon = () => <img src={Send} alt="" />;
+const AtIcon = () => <img src={AtSign} alt="" />;
 
-const inlineStyles = [
-  { type: "BOLD", label: <BoldIcon /> },
-  { type: "ITALIC", label: <ItalicIcon /> }
-];
-
-const blockStyles = [{ type: "ordered-list-item", label: <ListIcon /> }];
-const Toolbar = props => {
-  const { editorState, setEditorState, sendMessageHandler } = props;
+const UtilBar = props => {
+  const { editorState, setEditorState, emojiSelect, sendMessageHandler } =
+    props;
   const [focus, setFocus] = useState(false);
   const toggleFocus = () => setFocus(!false);
   const [attachedFile, setAttachedFile] = useState(null);
@@ -74,55 +61,6 @@ const Toolbar = props => {
     setEditorState(EditorState.createEmpty());
   };
 
-  const handleInlineStyle = (event, style) => {
-    event.preventDefault();
-    setEditorState(RichUtils.toggleInlineStyle(editorState, style));
-  };
-
-  const handleBlockStyle = (event, block) => {
-    event.preventDefault();
-    setEditorState(RichUtils.toggleBlockType(editorState, block));
-  };
-
-  const renderInlineStyleButton = (style, index) => {
-    const currentInlineStyle = editorState.getCurrentInlineStyle();
-    let className = "toolbar-button";
-    if (currentInlineStyle.has(style.type)) {
-      className = "toolbar-button-selected";
-    }
-
-    return (
-      <UnstyledButton
-        key={index}
-        onMouseDown={event => handleInlineStyle(event, style.type)}
-        onClick={event => event.preventDefault()}
-        className={className}
-      >
-        {style.label}
-      </UnstyledButton>
-    );
-  };
-
-  const renderBlockStyleButton = (block, index) => {
-    const currentBlockType = RichUtils.getCurrentBlockType(editorState);
-    let className = "toolbar-button";
-    if (currentBlockType === block.type) {
-      className = "toolbar-button-selected";
-    }
-
-    return (
-      <UnstyledButton
-        key={index}
-        title={block.toolTip}
-        onMouseDown={event => handleBlockStyle(event, block.type)}
-        onClick={event => event.preventDefault()}
-        className={className}
-      >
-        {block.label}
-      </UnstyledButton>
-    );
-  };
-
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
       <Wrapper>
@@ -150,23 +88,23 @@ const Toolbar = props => {
             </div>
           </AttachFile>
         ) : null}
-        <FormatContainer>
-          <LightningIcon />
-
-          <span style={{ paddingInline: "4px" }}>
-            <BorderIcon />
-          </span>
-
-          {inlineStyles.map((style, index) => {
-            return renderInlineStyleButton(style, index);
-          })}
+        <SendContainer>
           <UnstyledButton>
-            <LinkIcon />
+            <AtIcon />
           </UnstyledButton>
-          {blockStyles.map((block, index) => {
-            return renderBlockStyleButton(block, index);
-          })}
-        </FormatContainer>
+          {
+            <StyledEmojiSelectWrapper>
+              <GlobalStyleForEmojiSelect />
+              {emojiSelect}
+            </StyledEmojiSelectWrapper>
+          }
+          <UnstyledButton onClick={() => setshowAttachInputBox(true)}>
+            <ClipIcon />
+          </UnstyledButton>
+          <UnstyledButton onClick={handleClickSendMessage || handleAttachMedia}>
+            <SendIcon />
+          </UnstyledButton>
+        </SendContainer>
       </Wrapper>
     </ClickAwayListener>
   );
@@ -176,9 +114,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
 `;
-const FormatContainer = styled.div`
-  background-color: #dbfff3;
-  width: 100%;
+const SendContainer = styled.div`
   display: flex;
   gap: 8px;
   align-items: center;
@@ -202,4 +138,4 @@ const UnstyledButton = styled(RealUnstyledButton)`
   padding: 2px 4px;
 `;
 
-export default Toolbar;
+export default UtilBar;

@@ -21,6 +21,7 @@ import "!style-loader!css-loader!@draft-js-plugins/mention/lib/plugin.css";
 // import suggestionStyles from "./suggestions.module.css"
 import "./message-editor-input.css";
 import Toolbar from "./components/Toolbar";
+import UtilBar from "./components/Utilbar";
 import mentions from "./mentions.data";
 
 import createEmojiPlugin from "@draft-js-plugins/emoji";
@@ -188,22 +189,6 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
             </button>
           </Preview>
         ) : null}
-        <div className="RichEditor-root">
-          <Editor
-            editorState={editorState}
-            onChange={onChange}
-            handleKeyCommand={handleKeyCommand}
-            keyBindingFn={keyBindingFn}
-            plugins={[emojiPlugin, mentionPlugin]}
-          />
-        </div>
-        <MentionSuggestions
-          open={suggestionsOpen}
-          onOpenChange={onOpenChange}
-          onSearchChange={onSearchChange}
-          suggestions={suggestions}
-          // onAddMention={m => console.log(m)}
-        />
         <Toolbar
           editorState={editorState}
           setEditorState={setEditorState}
@@ -214,6 +199,37 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
             setSentAttachedFile(sentAttachedFile)
           }
         />
+
+        <div
+          className="RichEditor-root"
+          style={{ padding: "10px 18px 15px 18px" }}
+        >
+          <Editor
+            editorState={editorState}
+            onChange={onChange}
+            handleKeyCommand={handleKeyCommand}
+            keyBindingFn={keyBindingFn}
+            plugins={[emojiPlugin, mentionPlugin]}
+          />
+        </div>
+        <UtilBar
+          editorState={editorState}
+          setEditorState={setEditorState}
+          emojiSelect={<EmojiSelect />}
+          sendMessageHandler={sendMessage}
+          sendAttachedFileHandler={onAttachFile}
+          sentAttachedFile={sentAttachedFile =>
+            setSentAttachedFile(sentAttachedFile)
+          }
+        />
+        <MentionSuggestions
+          open={suggestionsOpen}
+          onOpenChange={onOpenChange}
+          onSearchChange={onSearchChange}
+          suggestions={suggestions}
+          // onAddMention={m => console.log(m)}
+        />
+
         {/* <div>
           {showEmoji && (
             <Picker perLine={7} showPreview={false} onChange={true} />
@@ -239,7 +255,6 @@ const InputWrapper = styled.section`
   border: 1px solid #b0afb0;
   ${"" /* border: 1px solid hsla(0, 0%, 92%, 1); */}
   border-radius: 3px;
-  padding: 10px 18px 15px 18px;
   ${"" /* width: calc(100% - 24px); */}/* padding-left: 8px;
 padding-top: 8px;
 padding-bottom: 8px; */
