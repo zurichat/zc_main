@@ -90,7 +90,7 @@ export default function Index() {
               <img
                 src={MacBookAirWithZuriChatPreview}
                 className={`${styles.hero_img}`}
-                alt=""
+                alt="mac"
               />
             </div>
           </div>
