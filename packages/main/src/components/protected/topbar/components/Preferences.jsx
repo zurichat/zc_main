@@ -76,7 +76,7 @@ const Preferences = () => {
           id="preferences-main-box"
         >
           {sideBar === 1 && <NotificationPreference />}
-          {sideBar === 3 && <Themes /*{...{ check, setCheck, setMode }}*/ />}
+          {/* {sideBar === 3 && <Themes {...{ check, setCheck, setMode }} />} */}
           {sideBar === 4 && <MessagesMedia />}
           {sideBar === 5 && <LanguageAndRegion />}
           {/* {sideBar === 6 && <Accessibility />} */}
