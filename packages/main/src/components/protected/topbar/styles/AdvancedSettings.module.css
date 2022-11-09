@@ -77,6 +77,19 @@
   margin: 0;
 }
 
+.note {
+  font-family: Lato;
+  width: 100%;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--text-color-gray);
+  margin-bottom: 10px;
+}
+
 .inputParagraph60,
 .inputParagraph40 {
   color: var(--text-color-normal);
@@ -127,6 +140,35 @@
   margin-left: 3rem;
   width: 130%;
   margin-bottom: 0.75rem;
+}
+
+.dropdownContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dropdownContainer:hover,
+.dropdownContainer::selection {
+  background-color: #f1fffa;
+}
+
+.pluginOptionWrapper {
+  width: 100%;
+}
+
+.dropdownContent {
+  padding: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+.pluginOptionsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 1rem;
 }
 
 @media (max-width: 768px) {

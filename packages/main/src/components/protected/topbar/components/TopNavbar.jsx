@@ -19,6 +19,7 @@ import zurichatlogo from "../assets/images/zurilogo.svg";
 import defaultAvatar from "../assets/images/avatar_vct.svg";
 import TopbarModal from "./TopbarModal";
 import styles from "../styles/TopNavBar.module.css";
+import LanguageIcon from "../../../top-navigation-bar/LanguageIcon";
 
 const TopNavbar = () => {
   const theme = localStorage.getItem("theme");
@@ -304,6 +305,9 @@ const TopNavbar = () => {
           />
         ) : null}
       </div>
+
+      <LanguageIcon style={{ marginRight: "2.2em" }} />
+
       <ProfileImageContainer className="d-flex justify-content-end">
         {toggleStatus}
         <ProfileImg
