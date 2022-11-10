@@ -197,9 +197,7 @@ const Toolbar = props => {
               {emojiSelect}
             </StyledEmojiSelectWrapper>
           }
-          <UnstyledButton onClick={() => setshowAttachInputBox(true)}>
-            <ClipIcon />
-          </UnstyledButton>
+
           <UnstyledButton onClick={handleClickSendMessage || handleAttachMedia}>
             <SendIcon />
           </UnstyledButton>
