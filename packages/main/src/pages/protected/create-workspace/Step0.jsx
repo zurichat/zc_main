@@ -117,6 +117,7 @@ const Heading = styled.h1`
   margin-bottom: 14px;
   color: #333333;
   line-height: 56px;
+  text-align: center;
 
   @media (max-width: 35rem) {
     font-size: 28px;
@@ -134,6 +135,7 @@ const Text = styled.p`
   line-height: 26.91px;
   color: #333333;
   margin-bottom: 29px;
+  text-align: center;
   @media (max-width: 35rem) {
     font-size: 1rem;
     line-height: 23.92px;
@@ -188,6 +190,7 @@ const FadedText = styled.p`
   max-width: 325px;
   line-height: 18.78px;
   margin-top: 9px;
+  text-align: center;
 `;
 
 const ImageSection = styled.div`
@@ -198,4 +201,8 @@ const ImageSection = styled.div`
     }
   }
 `;
-const TextSection = styled.div``;
+const TextSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
