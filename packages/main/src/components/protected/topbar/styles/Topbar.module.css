@@ -310,10 +310,10 @@
   font-weight: 400;
   line-height: 19.5px;
   cursor: pointer;
-  margin: 0.5rem 0;
+  /* margin: 0.5rem 0; */
   display: flex;
   flex-direction: row;
-  padding: 8px 1.5rem;
+  padding: 5px 1.5rem;
   transition: 100ms ease background, 100ms ease color;
 }
 
