@@ -155,7 +155,7 @@ const LanguageAndRegion = () => {
               emails, for times in your activity feeds and for reminders.
             </p>
           </div>
-          <div className={styles.section}>
+          {/* <div className={styles.section}>
             <div className={styles.subhead} htmlFor="spell-check">
               Spell check
             </div>
@@ -196,7 +196,7 @@ const LanguageAndRegion = () => {
               Choose the languages you’d like Zurichat to spellcheck as you
               type.
             </p>
-          </div>
+          </div> */}
         </form>
       </div>
     </div>
