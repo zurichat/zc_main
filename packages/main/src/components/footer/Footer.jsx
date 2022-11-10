@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 
 import ZuriChatLogo from "../../assets/zuri-chat-logo/logo.svg";
-import facebook from "../../assets/social-icons/facebook.svg";
-import twitter from "../../assets/social-icons/twitter.svg";
-import linkedin from "../../assets/social-icons/linkedin.svg";
-import instagram from "../../assets/social-icons/instagram.svg";
+import facebook from "../../assets/social-icons/facebook.png";
+import twitter from "../../assets/social-icons/twitter.png";
+import linkedin from "../../assets/social-icons/linkedin.png";
+import instagram from "../../assets/social-icons/instagram.png";
 
 import { useTranslation } from "react-i18next";
 
@@ -105,6 +105,7 @@ export default function Footer() {
                     <img
                       src={facebook}
                       alt="Facebook"
+                      width={24}
                       title="Connect with us on Facebook"
                     />
                   </a>
@@ -119,6 +120,7 @@ export default function Footer() {
                     <img
                       src={instagram}
                       alt="Instagram"
+                      width={24}
                       title="Connect with us on Instagram"
                     />
                   </a>
@@ -134,6 +136,7 @@ export default function Footer() {
                     <img
                       src={twitter}
                       alt="Twitter"
+                      width={24}
                       title="Connect with us on Twitter"
                     />
                   </a>
@@ -144,6 +147,7 @@ export default function Footer() {
                     <img
                       src={linkedin}
                       alt="Linkedin"
+                      width={24}
                       title="Connect with us on Linkedin"
                     />
                   </a>
