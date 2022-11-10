@@ -70,6 +70,10 @@
   cursor: pointer;
 }
 
+.modalSection p:hover {
+  color: #fff;
+}
+
 .submodalSection p {
   color: #333333;
   font-size: 15px;
