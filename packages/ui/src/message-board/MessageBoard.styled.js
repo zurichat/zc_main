@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const MessageBoardContainer = styled.section`
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   gap: 8px;
   flex-direction: column;
 
@@ -50,6 +50,7 @@ export const MessageBoardContainer = styled.section`
   .input-text {
     width: 100%;
     padding-inline: 2px;
+    padding: 0.3rem;
 
     ${
       "" /* @media (max-width: 768px) {
