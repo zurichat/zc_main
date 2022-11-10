@@ -1,5 +1,9 @@
+#authPageWrapper * {
+  font-family: "Lato", sans-serif !important;
+}
+
 #authPageWrapper {
-  font-family: "Lato", sans-serif;
+  /* font-family: "Lato", sans-serif; */
   margin-block: 0;
   background-color: #fff;
   width: 100vw;
@@ -153,6 +157,7 @@
   margin: 0;
   margin-right: auto;
 }
+
 /* 
     .rememberMe .right {
       display: block;
