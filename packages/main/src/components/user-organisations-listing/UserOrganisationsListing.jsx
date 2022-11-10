@@ -131,7 +131,7 @@ const Members = styled(OrganizationName)`
   font-weight: 400;
   color: #667085;
   opacity: 0.8;
-  margin-top: 6px;
+  margin-top: 12px;
 `;
 const Organization = styled.div`
   display: flex;
