@@ -185,6 +185,9 @@ const Toolbar = props => {
           })}
         </FormatContainer>
         <SendContainer>
+          <UnstyledButton onClick={() => setshowAttachInputBox(true)}>
+            <ClipIcon />
+          </UnstyledButton>
           <UnstyledButton>
             <AtIcon />
           </UnstyledButton>
