@@ -275,18 +275,6 @@ export default function TopNavigationBar() {
             </li>
             <li className="nav-item">
               <NavLink
-                to="/plugins"
-                className={`nav-link ${TopNavigationBarStyles.navLinkPricing}`}
-                role="button"
-                aria-expanded="false"
-              >
-                <span className={`${TopNavigationBarStyles.item}`}>
-                  {t("nav_plugin")}
-                </span>
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
                 to="/downloads"
                 className={`nav-link ${TopNavigationBarStyles.navLinkComms}`}
               >
