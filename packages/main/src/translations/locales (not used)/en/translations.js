@@ -301,9 +301,9 @@ export const TRANSLATIONS_EN = {
 
   workspace_chat: {
     threads: "Threads",
-    alldms: "alle DMs",
+    alldms: "all DMs",
     drafts: "Drafts",
-    directmessages: "Direct Message",
+    direct_messages: "Direct Message",
     channels: "Channels",
     general: "general"
   },

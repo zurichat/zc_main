@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "../styles/Sidebar.module.css";
+import { useTranslation } from "react-i18next";
 
 import threadIcon from "../assets/icons/thread-icon.svg";
 import dmIcon from "../assets/icons/dm-icon.svg";
@@ -12,13 +13,12 @@ import Room from "./Room";
 import SingleRoom from "./SingleRoom";
 import Category from "./Category";
 import Starred from "./Starred";
-import { useTranslation } from "react-i18next";
 
 const categories = [];
 
 const Sidebar = props => {
-  const { t } = useTranslation();
   let currentWorkspace = localStorage.getItem("currentWorkspace");
+  const { t } = useTranslation();
 
   const [nullValue, setnullValue] = useState(0);
 
@@ -59,6 +59,18 @@ const Sidebar = props => {
     "others"
   ];
 
+  const categoriesTransDict = {
+    games: "games",
+    utility: "utility",
+    tools: "tools",
+    entertainment: "entertainment",
+    sales: "sales",
+    productivity: "productivity",
+    channels: "channels",
+    "direct messages": "direct_messages",
+    others: "others"
+  };
+
   var singleItems = [];
   var categorizedItems = [];
   var starredRooms = [];
@@ -90,7 +102,7 @@ const Sidebar = props => {
         categorizedItems.push(
           <Category
             key={categoryData[0]?.name}
-            name={key}
+            name={categoriesTransDict[key]}
             data={categoryData}
           />
         );

@@ -317,7 +317,7 @@ export const TRANSLATIONS_DE = {
     threads: "Fäden",
     alldms: "alle DMs",
     drafts: "Entwürfe",
-    directmessages: "Direktnachricht",
+    direct_messages: "Direktnachricht",
     channels: "Kanäle",
     general: "Allgemeines"
   },

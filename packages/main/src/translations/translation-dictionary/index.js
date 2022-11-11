@@ -15,6 +15,7 @@ import Plugins from "./pages/Plugins";
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import WorkspaceChat from "./pages/WorkspaceChat";
+import SideBar from "./components/SideBar";
 
 const resources = {};
 
@@ -36,7 +37,8 @@ const Translations = [
   // Components
   ...NavBar,
   ...Footer,
-  ...WorkspaceChat
+  ...WorkspaceChat,
+  ...SideBar
 ];
 
 Translations.forEach(o => {

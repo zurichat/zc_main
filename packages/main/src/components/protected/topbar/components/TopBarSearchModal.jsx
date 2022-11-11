@@ -17,8 +17,8 @@ const TopBarSearchModal = () => {
   const [result, setResult] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const { user } = useContext(ProfileContext);
-
   const { t } = useTranslation();
+
   let pluginName = window.location.href;
   let newName = pluginName.split("/");
 
@@ -133,7 +133,7 @@ const TopBarSearchModal = () => {
               <input
                 type="text"
                 className={styles._MainInput}
-                placeholder="Search Here"
+                placeholder={t("search_placeholder")}
                 value={value}
                 onChange={onInputChange}
                 onKeyUp={onSearchSubmit}
