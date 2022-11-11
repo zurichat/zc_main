@@ -1,0 +1,53 @@
+{
+  "name": "zc-main",
+  "version": "v1.18.0",
+  "author": "Zurichat",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zurichat/zc_main"
+  },
+  "engines": {
+    "npm": ">=8.0.0 <9.0.0",
+    "node": ">=16.0.0 <17.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/zurichat/zc_main/issues"
+  },
+  "homepage": "https://zuri.chat/",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "serve -s dist/",
+    "dev": "lerna run dev --parallel",
+    "postinstall": "lerna bootstrap",
+    "format": "lerna run prettify --parallel",
+    "lint": "concurrently yarn:lint:*",
+    "lint:js": "eslint '**/*.+(js|jsx)'",
+    "build": "concurrently --kill-others-on-fail -m 1 \"yarn run clean\" \"lerna run build\"",
+    "prepare": "husky install",
+    "clean": "yarn clean:build",
+    "clean:build": "rimraf './dist'",
+    "clean-fresh": "rimraf './node_modules' && lerna clean"
+  },
+  "devDependencies": {
+    "concurrently": "^6.3.0",
+    "dotenv-webpack": "^7.1.0",
+    "eslint": "^8.1.0",
+    "eslint-config-important-stuff": "^1.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-css-modules": "^2.11.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-react": "^7.28.0",
+    "husky": "^7.0.2",
+    "lerna": "^4.0.0",
+    "lint-staged": ">=10",
+    "opener": "^1.5.2",
+    "prettier": "^2.3.2",
+    "pretty-quick": "^3.1.1",
+    "rimraf": "^3.0.2",
+    "serve": "^12.0.0"
+  }
+}
