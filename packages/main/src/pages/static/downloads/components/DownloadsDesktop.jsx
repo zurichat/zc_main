@@ -50,14 +50,17 @@ const DownloadsDesktop = () => {
                 <h2>{t("download_desktop.section_one.desktop_line")}</h2>
                 <a href="/download-app" className={styles.downloadButton}>
                   <img className={`px-1`} src={apple1} alt="download icon" />
-                  <span> {t("download_desktop.section_one.desktop_app")}</span>
+
+                  <span> {t("download.desktopBtn.mac")}</span>
                 </a>
+
                 <a
                   href={`https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing`}
                   className={styles.downloadButton}
                 >
                   <img className={`px-1`} src={microsoft} alt="download icon" />
-                  <span>{t("download_desktop.section_one.desktop_soft")}</span>
+
+                  <span>{t("download.desktopBtn.windows")}</span>
                 </a>
               </div>
             </div>
@@ -68,11 +71,11 @@ const DownloadsDesktop = () => {
               </div>
               <div>
                 <h2>{t("download_desktop.section_one.mobile_line")}</h2>
+
                 <a href="/download-app" className={styles.downloadButton}>
                   <img className={`px-1`} src={apple1} alt="download icon" />
-                  <span>{t("download_desktop.section_one.mobile_app")}</span>
+                  <span>{t("download.mobileBtn.apple")}</span>
                 </a>
-
                 <a
                   href="https://play.google.com/store/apps/details?id=com.zurichat.app"
                   download={exe.name}
@@ -83,7 +86,8 @@ const DownloadsDesktop = () => {
                     src={googleplay}
                     alt="download icon"
                   />
-                  <span>{t("download_desktop.section_one.mobile_play")}</span>
+
+                  <span>{t("download.mobileBtn.android")}</span>
                 </a>
               </div>
             </div>
@@ -108,15 +112,15 @@ const DownloadsDesktop = () => {
             href={`https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing`}
             className={styles.downloadButton1}
           >
-            {t("download_desktop.section_two.windows")}
+            {t("download.desktopBtn.windows")}
             <img className={`px-2`} src={windows} alt="download icon" />
           </a>
           <a href="/download-app" className={styles.downloadButton1}>
-            {t("download_desktop.section_two.mac")}
+            {t("download.desktopBtn.mac")}
             <img className={`px-2`} src={apple} alt="download icon" />
           </a>
           <a href="/download-app" className={styles.downloadButton1}>
-            {t("download_desktop.section_two.ios")}
+            {t("download.mobileBtn.apple")}
             <img className={`px-2`} src={apple} alt="download icon" />
           </a>
           <a
@@ -124,7 +128,7 @@ const DownloadsDesktop = () => {
             download={exe.name}
             className={styles.downloadButton1}
           >
-            {t("download_desktop.section_two.android")}
+            {t("download.mobileBtn.android")}
             <img className={`px-2`} src={android} alt="download icon" />
           </a>
         </div>

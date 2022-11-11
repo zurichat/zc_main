@@ -15,6 +15,7 @@ import Plugins from "./pages/Plugins";
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import SideBar from "./components/SideBar";
+import Download from "./pages/Download";
 
 const resources = {};
 
@@ -32,6 +33,7 @@ const Translations = [
   ...ResetPassword,
   ...Plugins,
   ...About,
+  ...Download,
 
   // Components
   ...NavBar,
