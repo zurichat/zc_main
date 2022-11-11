@@ -10,14 +10,14 @@ import Subscribe from "./pages/Subscribe";
 import whyzurichat from "./pages/whyzurichat";
 import Cookies from "./pages/Cookies";
 import ContactUs from "./pages/ContactUs";
-import DownloadDesktopSectionTwo from "./pages/DownloadDesktopSectionTwo";
-import DownloadMobileSectionTwo from "./pages/DownloadMobileSectionTwo";
 import Plugins from "./pages/Plugins";
 import Pricing from "./pages/Pricing";
 
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import SideBar from "./components/SideBar";
+import DownloadDesktopSectionTwo from "./pages/DownloadDesktopSectionTwo";
+import DownloadMobileSectionTwo from "./pages/DownloadMobileSectionTwo";
 
 const resources = {};
 
@@ -33,11 +33,11 @@ const Translations = [
   ...ContactUs,
   ...SignOut,
   ...ResetPassword,
-  ...DownloadDesktopSectionTwo,
-  ...DownloadMobileSectionTwo,
   ...Plugins,
   ...About,
   ...Pricing,
+  ...DownloadDesktopSectionTwo,
+  ...DownloadMobileSectionTwo,
 
   // Components
   ...NavBar,
