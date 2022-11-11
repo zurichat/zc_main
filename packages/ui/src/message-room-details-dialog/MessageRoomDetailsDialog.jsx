@@ -51,6 +51,7 @@ function MessageRoomDetailsDialog({
     setShowLeaveChannelModal(!showLeaveChannelModal);
   const toggleArchiveChannel = () => setShowArchiveChannel(!showArchiveChannel);
 
+  console.log(config, "from MessageRoomDetailsDialog");
   return (
     <div className="App">
       <DialogOverlays isOpen={showDialog} onDismiss={close}>
@@ -221,6 +222,8 @@ function MembersPanel({ config }) {
 
   const roomData =
     "roomInfo" in config ? config.roomInfo : dummyHeaderConfig.roomInfo;
+  console.log(dummyHeaderConfig.roomInfo, "dummyHeaderConfig.roomInfo");
+  console.log(config.roomInfo, "config.roomInfo");
   const {
     membersList: roomMembers,
     addmembersevent,
@@ -265,6 +268,7 @@ function MembersPanel({ config }) {
   useEffect(() => {
     const currentWorkspace = localStorage.getItem("currentWorkspace");
     const token = sessionStorage.getItem("token");
+    setisLoading(true);
     axios
       .get(`${BASE_API_URL}/organizations/${currentWorkspace}/members`, {
         headers: { Authorization: `Bearer ${token}` }
@@ -274,9 +278,12 @@ function MembersPanel({ config }) {
           return { value: item._id, label: item.email };
         });
         setUserList(users);
+        setisLoading(false);
       })
-      .catch(/*e => console.log("Organization not returning members", e)*/);
-    setisLoading(true);
+      .catch(() => {
+        setisLoading(false);
+        /*e => console.log("Organization not returning members", e)*/
+      });
   }, []);
 
   return (

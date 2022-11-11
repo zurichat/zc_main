@@ -4,5 +4,11 @@
     "**/src/**/*.js": "javascriptreact",
     "**/src/**/*.jsx": "javascriptreact",
     "**/.husky/": "bash"
-  }
+  },
+  "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+  "editor.formatOnPaste": false, // required
+  "editor.formatOnType": false, // required
+  "editor.formatOnSave": true, // optional
+  "editor.formatOnSaveMode": "file", // required to format on save
+  "files.autoSave": "onFocusChange" // optional but recommen
 }

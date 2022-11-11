@@ -16,7 +16,8 @@ const AddMemberModal = props => {
 
   const [selectedMembers, setselectedMembers] = useState([]);
   const addMemberHandler = () => {
-    addMembersEvent(selectedMembers);
+    // addMembersEvent(selectedMembers);
+    console.log(selectedMembers)
     handleClose();
   };
   const animatedComponents = makeAnimated();
