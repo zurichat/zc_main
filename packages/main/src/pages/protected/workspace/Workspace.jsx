@@ -7,7 +7,6 @@ import {
   useRouteMatch,
   useLocation
 } from "react-router-dom";
-import { lazily } from "react-lazily";
 import {
   TopBarWrapperStyle,
   SidebarWrapperStyle,
@@ -17,9 +16,7 @@ import {
 
 // import { GeneralLoading } from "../../../components";
 
-const { Sidebar, TopBar } = lazily(() =>
-  import("../../../components/protected")
-);
+import { Sidebar, TopBar } from "../../../components/protected";
 
 export default function Index() {
   const { workspaceId } = useParams();
