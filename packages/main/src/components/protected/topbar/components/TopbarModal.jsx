@@ -312,23 +312,9 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
 
             <hr className={styles.hr} />
 
-            <div className={styles.optionSection}>
-              <p
-                onClick={() => {
-                  setReusableModal("downloads");
-                }}
-              >
-                Downloads
-              </p>
-            </div>
-
             {reusableModal === "edit profile" && <EditProfile />}
 
             {reusableModal === "preference" && <Preferences />}
-
-            {reusableModal === "downloads" && (
-              <Downloads setModal={setReusableModal} />
-            )}
 
             <hr className={styles.hr} />
 
