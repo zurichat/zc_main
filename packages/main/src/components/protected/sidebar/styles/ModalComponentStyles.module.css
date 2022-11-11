@@ -42,8 +42,8 @@
   display: flex;
   padding: 5px auto;
   width: 100%;
-  gap: 8px;
   margin: 5px auto;
+  gap: 9px;
   /* padding: 0 1rem; */
   font-size: 15px;
   position: relative;
