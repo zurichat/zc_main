@@ -8,6 +8,13 @@ import Loader from "react-loader-spinner";
 import toast, { Toaster } from "react-hot-toast";
 import { data } from "../utils/country-code";
 import { StyledProfileWrapper } from "../styles/StyledEditProfile.styled";
+import styles from "../styles/EditProfile.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PhoneInput from "react-phone-input-2";
+// import 'react-phone-input-2/lib/style.css'
+//for timezones
+import TimezoneSelect, { allTimezones } from "react-timezone-select";
+
 const EditProfile = () => {
   // const imageRef = useRef(null)
   const avatarRef = useRef(null);
@@ -18,8 +25,13 @@ const EditProfile = () => {
     setUserProfileImage,
     toggleModalState
   } = useContext(ProfileContext);
+  //setting timezone constant
+  const [timezone, setTimezone] = useState(
+    Intl.DateTimeFormat().resolvedOptions().timeZone
+  );
   const [deletePic, setDeletePic] = useState(false);
   const [selectedTimezone, setSelectedTimezone] = useState({});
+  const [value, setValue] = useState([]);
   const [links, setLinks] = useState([""]);
   const [state, setState] = useState({
     name: user.name,
@@ -150,201 +162,96 @@ const EditProfile = () => {
       });
   };
   return (
-    <ProfileModal full title="Edit profile">
-      <>
-        <StyledProfileWrapper style={{ backgroundColor: "var(--bg-color)" }}>
-          <div className="grid-container">
-            <div className="input-cage">
-              <div className="mobileCon">
-                <div className="mobileAvataeCon">
-                  <img
-                    ref={avatarRef}
-                    src={userProfileImage ? userProfileImage : defaultAvatar}
-                    alt="profile-pic"
-                    className="avatar"
-                  />
-                  <label htmlFor="img" className="icon-container">
-                    <AiFillCamera className="icon" />
-                  </label>
-                </div>
-                <div className="input-group mal-4">
-                  <label
-                    htmlFor="name"
-                    className="inputLabel"
-                    style={{ color: "var(--text-color-bold)" }}
-                  >
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    className="input"
-                    id="name"
-                    defaultValue={state.name}
-                    onChange={e => setState({ name: e.target.value })}
-                    name="name"
-                  />
-                </div>
-              </div>
-              <div className="double-input">
-                <div className="input-group mb-0">
-                  <label
-                    htmlFor="dname"
-                    className="inputLabel"
-                    style={{ color: "var(--text-color-bold)" }}
-                  >
-                    Choose a Display Name
-                  </label>
-                  <input
-                    type="text"
-                    className="input"
-                    id="dname"
-                    defaultValue={state.display_name}
-                    onClick={e => setState({ display_name: e.target.value })}
-                    name="dname"
-                  />
-                  <p
-                    className="para"
-                    style={{ color: "var(--text-color-gray)" }}
-                  >
-                    Please use a unique and permanent display name. If someone
-                    uses your exact name, you should change it!
-                  </p>
-                </div>
-              </div>
-              <div className="input-group mb-0">
-                <label
-                  htmlFor="what"
-                  className="inputLabel"
-                  style={{ color: "var(--text-color-bold)" }}
-                >
-                  What you do
-                </label>
-                <input
-                  type="text"
-                  onClick={e => setState({ what: e.target.value })}
-                  defaultValue={state.what}
-                  className="input"
-                  id="what"
-                  name="what"
-                />
-                <p className="para" style={{ color: "var(--text-color-gray)" }}>
-                  Let people know what you do at <b>ZURI</b>
-                </p>
-              </div>
-              {/* <div className="input-group">
-                <label htmlFor="bio" className="inputLabel">
-                  Bio
-                </label>
-                <textarea
-                  onClick={e => setState({ bio: e.target.value })}
-                  defaultValue={state.bio}
-                  className="textarea"
-                  name="bio"
-                  id="bio"
-                ></textarea>
-              </div> */}
-              <div className="input-group phone">
-                <label
-                  className="inputLabel"
-                  style={{ color: "var(--text-color-bold)" }}
-                >
-                  Phone Number
-                </label>
-                <div className="phone-container">
-                  <select
-                    onChange={e =>
-                      setState({ ...state, prefix: e.target.value })
-                    }
-                    className="pref"
-                  >
-                    {
-                      // country code
-                      data.map((item, index) => (
-                        <option key={index} value={item.dial_code}>
-                          {item.dial_code}
-                        </option>
-                      ))
-                    }
-                  </select>
-                  <input
-                    onChange={e =>
-                      setState({ ...state, phone: e.target.value })
-                    }
-                    className="phoneInput"
-                    type="number"
-                  />
-                </div>
-              </div>
-              <div className="input-group">
-                <label
-                  className="inputLabel col-12"
-                  style={{ color: "var(--text-color-bold)" }}
-                >
-                  Time Zone
-                </label>
-                {/* <TimezoneSelect
-                  value={selectedTimezone}
-                  onChange={setSelectedTimezone}
-                  className="col-12"
-                /> */}
-              </div>
-              {/* <div className="input-group">
-                <label htmlFor="twitter" className="inputLabel">
-                  Twitter
-                </label>
-                <input
-                  type="text"
-                  className="input"
-                  defaultValue={state.twitter}
-                  onClick={e => setState({ twitter: e.target.value })}
-                  id="twitter"
-                  name="twitter"
-                />
-              </div> */}
-              {/* <div className="input-group">
-                <label htmlFor="facebook" className="inputLabel">
-                  Facebook
-                </label>
-                <input
-                  defaultValue={state.facebook}
-                  onClick={e => setState({ facebook: e.target.value })}
-                  type="text"
-                  className="input"
-                  id="facebook"
-                  name="facebook"
-                />
-              </div> */}
-              <div className="input-group">
-                {/* <label className="inputLabel">
-                  Additional Links <span>(5 max)</span>
-                </label>
-                {links?.map((list, index) => (
-                  <input type="text" className="input mb-3" key={index} />
-                ))}
-               
-18:51
-{links.length !== 5 && (
-                  <p className="warning" onClick={addList}>
-                    Add new link
-                  </p>
-                )} */}
-              </div>
-              {/* <button onClick={handleFormSubmit} className="btns saveBtn">
-                {state.loading ? (
-                  <Loader
-                    type="ThreeDots"
-                    color="#fff"
-                    height={40}
-                    width={40}
-                  />
-                ) : (
-                  "Save Changes"
-                )}
-              </button> */}
+    <ProfileModal>
+      _
+      <div className={styles.container}>
+        <div className={styles.header_flex}>
+          <h2 className={styles.edit}>Edit your profile</h2>
+          <div
+            onClick={toggleModalState}
+            style={{ width: "15px", color: "grey" }}
+          >
+            <svg
+              className={styles.svg}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 320 512"
+            >
+              <path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z" />
+            </svg>
+          </div>
+        </div>
+        <div className={styles.flex}>
+          <div className={styles.fdiv}>
+            <div className="name">
+              <label htmlFor="name" className={styles.f_label}>
+                Full Name
+              </label>
+              <input
+                className={styles.input}
+                type="text"
+                id="name"
+                defaultValue={state.name}
+                onChange={e => setState({ name: e.target.value })}
+                name="name"
+              />
             </div>
+            <div className="dname">
+              <label htmlFor="dname" className={styles.label}>
+                Choose a Display Name
+              </label>
+              <input
+                type="text"
+                className={styles.input}
+                id="dname"
+                defaultValue={state.display_name}
+                onChange={e => setState({ display_name: e.target.value })}
+                name="dname"
+              />
+              <p className={styles.form_p}>
+                Please use a unique and permanent display name. If someone uses
+                your exact name, you should change it!
+              </p>
+            </div>
+            <div className="what_to_do">
+              <label htmlFor="what" className={styles.label}>
+                What you do
+              </label>
+              <input
+                type="text"
+                onChange={e => setState({ what: e.target.value })}
+                defaultValue={state.what}
+                className={styles.input}
+                id="what"
+                name="what"
+              />
+              <p className={styles.form_p}>
+                Let people know what you do at <b>ZURI</b>
+              </p>
+            </div>
+            <div className="timezone">
+              <label className={styles.label}>Time Zone</label>
+              {/*Setting up Timezone*/}
+              <div className="h-20">
+                <TimezoneSelect
+                  className={styles.input2}
+                  value={timezone}
+                  onChange={setTimezone}
+                />
+              </div>
+              <label></label>
+              <PhoneInput
+                className={styles.input3}
+                country={"us"}
+                value={state.phone}
+                onChange={phone => setState({ phone })}
+              />
+            </div>
+          </div>
+          {/*2nd contassiner */}
+          <div className={styles.div2}>
             <div className="img-container">
               <div className="avatar">
-                <div className="avatar-container">
+                <div className="avatar_container">
                   {state.imageLoading ? (
                     <Loader
                       type="Oval"
@@ -354,15 +261,17 @@ const EditProfile = () => {
                     />
                   ) : (
                     <div className="profile__img-wrapper">
-                      <span className="pictureHeading">Profile photo</span>
-                      <img
-                        ref={avatarRef}
-                        className="img"
-                        src={
-                          userProfileImage ? userProfileImage : defaultAvatar
-                        }
-                        alt="profile-pic"
-                      />
+                      <span className={styles.p_label}>Profile photo</span>
+                      <div className={styles.img_container}>
+                        <img
+                          ref={avatarRef}
+                          className={styles.img}
+                          src={
+                            userProfileImage ? userProfileImage : defaultAvatar
+                          }
+                          alt="profile-pic"
+                        />
+                      </div>
                     </div>
                   )}
                 </div>
@@ -375,7 +284,7 @@ const EditProfile = () => {
                   hidden
                   id="img"
                 />
-                <label htmlFor="img" className="btns chgBtn">
+                <label htmlFor="img" className={styles.img_pick}>
                   {/* {state.loading ? (
                     <Loader
                       type="ThreeDots"
@@ -389,7 +298,7 @@ const EditProfile = () => {
                 </label>
                 <div
                   role="button"
-                  className="rmvBtn"
+                  className={styles.img_remove}
                   onClick={handleImageDelete}
                 >
                   Remove photo
@@ -397,7 +306,9 @@ const EditProfile = () => {
               </div>
             </div>
           </div>
-          <div onClick={handleFormSubmit} className="mobileButton">
+        </div>
+        <div className={styles.end_flex}>
+          <div className={styles.mobile} onClick={handleFormSubmit}>
             {state.loading ? (
               <Loader type="ThreeDots" color="#00B87C" height={24} width={24} />
             ) : (
@@ -405,10 +316,10 @@ const EditProfile = () => {
             )}
           </div>
           <div className="button-wrapper">
-            <button className="btns cncBtn" onClick={toggleModalState}>
+            <button className={styles.cancel} onClick={toggleModalState}>
               Cancel
             </button>
-            <button onClick={handleFormSubmit} className="btns saveBtn">
+            <button onClick={handleFormSubmit} className={styles.big_screen}>
               {state.loading ? (
                 <Loader type="ThreeDots" color="#fff" height={40} width={40} />
               ) : (
@@ -417,8 +328,8 @@ const EditProfile = () => {
             </button>
           </div>
           <Toaster />
-        </StyledProfileWrapper>
-      </>
+        </div>
+      </div>
     </ProfileModal>
   );
 };

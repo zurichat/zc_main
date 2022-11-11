@@ -13,6 +13,7 @@
   padding-bottom: 2rem;
 }
 
+
 .overlay,
 .overlayGreen {
   position: fixed;
@@ -195,6 +196,25 @@
     background: #00b87c;
   }
 } */
+/* .modal{
+  position: absolute;
+  top: 0;
+  left: -50em;
+  width: 100vw;
+  background-color: white;
+} */ 
+ .modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  background: rgba(0, 0, 0, 0.3)
+
+}
+
 
 .modalContainer {
   height: 100vh;
@@ -230,6 +250,7 @@
   background: #fff;
   border-radius: 4px;
   overflow: hidden;
+
   padding-bottom: 20px;
   height: 90vh;
 }
