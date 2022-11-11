@@ -186,6 +186,9 @@ const Toolbar = props => {
           })}
         </FormatContainer>
         <SendContainer>
+          <UnstyledButton onClick={() => setshowAttachInputBox(true)}>
+            <ClipIcon />
+          </UnstyledButton>
           <UnstyledButton>
             <AtIcon />
           </UnstyledButton>
@@ -195,13 +198,8 @@ const Toolbar = props => {
               {emojiSelect}
             </StyledEmojiSelectWrapper>
           }
-          <UnstyledButton onClick={() => setshowAttachInputBox(true)}>
-            <ClipIcon />
-          </UnstyledButton>
-          <UnstyledButton
-            onClick={handleClickSendMessage || handleAttachMedia}
-            disabled={!inputLength && !attachedFile}
-          >
+
+          <UnstyledButton onClick={handleClickSendMessage || handleAttachMedia}>
             <SendIcon />
           </UnstyledButton>
         </SendContainer>
