@@ -1,10 +1,10 @@
 import contactStyle from "./ContactMain.module.css";
 import { ContactUs } from "../assets";
-import FAQselected from "./FaqSelected";
+import FaqSelected from "./FaqSelected";
 import DiscoverMore from "./DiscoverMore";
 import { useTranslation } from "react-i18next";
 
-const contactTitle = () => {
+const ContactMain = () => {
   const { t } = useTranslation();
   return (
     <div>
@@ -16,7 +16,7 @@ const contactTitle = () => {
       <div className={contactStyle.contactBody}>
         <div className={contactStyle.contactBodyContent}>
           <div className={contactStyle.getHelpCard}>
-            <FAQselected />
+            <FaqSelected />
           </div>
           <div className={`d-none d-xl-block ${contactStyle.groupImage}`}>
             <img
@@ -32,4 +32,4 @@ const contactTitle = () => {
   );
 };
 
-export default contactTitle;
+export default ContactMain;

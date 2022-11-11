@@ -295,7 +295,8 @@ export default function TopNavigationBar() {
             <li className="nav-item">
               <NavLink
                 to="/contact-us"
-                className="nav-link"
+                // className="nav-link"
+                className={`nav-link ${TopNavigationBarStyles.navLinkPricing}`}
                 role="button"
                 aria-expanded="false"
               >
