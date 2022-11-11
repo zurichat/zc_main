@@ -32,8 +32,8 @@ function ContactFormContainer() {
   });
 
   useEffect(() => {
-    let userInfo = getUserInfo();
-    setUserAuth(userInfo.user.email ? userInfo.user : {});
+
+    // setUserAuth(userInfo.user.email ? userInfo.user : {});
     setValues(values => ({
       ...values,
       email: userAuth.email ? userAuth.email : values.email
@@ -142,7 +142,6 @@ function ContactFormContainer() {
             {t("formEmail")}
           </label>
           <input
-            type="email"
             className={`form-control ${ContactFormStyle.form_control}`}
             id="email"
             name="email"
@@ -150,9 +149,9 @@ function ContactFormContainer() {
             value={values.email}
             placeholder="You@example.com"
             aria-describedby="email"
+            type="email"
             required
           />
-          {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
         </div>
 
         <div
@@ -326,6 +325,7 @@ function ContactFormContainer() {
                 onChange={handleChange}
                 placeholder={t("additionalInfo")}
                 rows="3"
+                required
               ></textarea>
             </div>
 
@@ -340,7 +340,7 @@ function ContactFormContainer() {
                 })}
               >
                 {acceptedFileItems}
-                <input {...getInputProps()} />
+                <input {...getInputProps()}/>
                 <p>{t("drag")}</p>
                 <a
                   style={{
