@@ -91,7 +91,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
   const [showEmoji, setShowEmoji] = useState(false);
   const [suggestions, setSuggestions] = useState(users || mentions);
   const [suggestionsOpen, setSuggestionsOpen] = useState(false);
-  // console.log("field", editorState);
+
   // Mention helpers
   const onOpenChange = useCallback(_open => {
     setSuggestionsOpen(_open);

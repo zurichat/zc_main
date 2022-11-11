@@ -54,10 +54,6 @@ const Toolbar = props => {
   //const [preview, setPreview] = useState('')
 
   const inputLength = editorState.getCurrentContent().getPlainText("").length;
-  // const inputLength = editorState.getData();
-
-  // console.log({ inputLength });
-  // console.log(editorState);
 
   //Attachment ref
   const inputRef = React.createRef();
