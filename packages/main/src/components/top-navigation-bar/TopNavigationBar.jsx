@@ -269,16 +269,6 @@ export default function TopNavigationBar() {
                 </span>
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink
-                to="/downloads"
-                className={`nav-link ${TopNavigationBarStyles.navLinkComms}`}
-              >
-                <span className={`${TopNavigationBarStyles.item}`}>
-                  {t("nav_downloads")}
-                </span>
-              </NavLink>
-            </li>
 
             <li className="nav-item">
               <NavLink
