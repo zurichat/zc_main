@@ -49,27 +49,30 @@ const EditProfile = () => {
   const handleImageChange = event => {
     setState({ ...state, imageLoading: true });
     const [file] = event.target.files;
-
+    console.log(file);
     if (file) {
       let fileReader = new FileReader();
-      fileReader.onload = function (event) {
-        avatarRef.current.src = event.target.result;
+      fileReader.onload = () => {
+        if (avatarRef.current) {
+          avatarRef.current.src = fileReader.result;
+        }
       };
 
       fileReader.readAsDataURL(file);
       const imageReader = file;
-
-      const formData = new FormData();
+      console.log(imageReader);
+      let formData = new FormData();
       formData.append("image", imageReader);
       formData.append("height", 512);
       formData.append("width", 512);
-
+      console.log(formData);
       authAxios
         .patch(
           `/organizations/${orgId}/members/${user._id}/photo/upload`,
           formData
         )
         .then(res => {
+          console.log(res);
           const newUploadedImage = res.data.data;
           setUserProfileImage(newUploadedImage);
           setState({ ...state, imageLoading: false });
