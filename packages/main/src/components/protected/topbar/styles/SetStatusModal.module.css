@@ -112,7 +112,7 @@
 .defalutEmoji {
   height: 20px;
   width: 25px;
-  padding: 0px 2px;
+  padding: 0px;
 }
 .emoji {
   display: flex;
