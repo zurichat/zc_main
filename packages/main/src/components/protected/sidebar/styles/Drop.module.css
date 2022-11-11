@@ -66,22 +66,12 @@
 .dropDown__name,
 .dropdown__room {
   color: grey;
-  
+  padding-inline-start: 0.5rem;
   font-size: 17px;
   line-height: 28px;
   font-weight: 400;
   /* font-size: 0.935em; */
   /* font-weight: bold; */
-}
-
-.plugin_name,
-.dropDown__title,
-.dropdown__room {
-  padding-inline-start: 0.5rem;
-}
-
-.dropDown__name {
-  padding-inline-start: 0.1rem;
 }
 
 .dropDown__title {
