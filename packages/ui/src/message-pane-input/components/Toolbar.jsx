@@ -191,6 +191,9 @@ const Toolbar = props => {
           })}
         </FormatContainer>
         <SendContainer>
+          <UnstyledButton onClick={() => setshowAttachInputBox(true)}>
+            <ClipIcon />
+          </UnstyledButton>
           <UnstyledButton>
             <AtIcon />
           </UnstyledButton>
@@ -209,6 +212,7 @@ const Toolbar = props => {
           <span style={{ paddingInline: "4px" }}>
             <BorderIcon />
           </span>
+
           <UnstyledButton onClick={handleClickSendMessage || handleAttachMedia}>
             <SendIcon />
           </UnstyledButton>
