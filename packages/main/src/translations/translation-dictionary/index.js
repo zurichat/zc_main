@@ -11,6 +11,7 @@ import whyzurichat from "./pages/whyzurichat";
 import Cookies from "./pages/Cookies";
 import ContactUs from "./pages/ContactUs";
 import Plugins from "./pages/Plugins";
+import Pricing from "./pages/Pricing";
 
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
@@ -34,6 +35,7 @@ const Translations = [
   ...Plugins,
   ...About,
   ...Download,
+  ...Pricing,
 
   // Components
   ...NavBar,
