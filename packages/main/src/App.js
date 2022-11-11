@@ -16,7 +16,6 @@ import {
   NewSignOut,
   AboutPage,
   ContactUsPage,
-  DownloadsPage,
   PluginsPage,
   PricingPage,
   InvitePage,
