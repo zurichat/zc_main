@@ -631,7 +631,7 @@ const SetStatusModal = ({
           statusEmoji === "" &&
           user?.status?.text === statusText &&
           statusText === "" && (
-            <span className={styles.inactivesave}>Save</span>
+            <button className={styles.inactivesave}>Save</button>
           )}
       </div>
       <div
