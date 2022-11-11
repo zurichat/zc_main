@@ -99,25 +99,6 @@ export default function Index() {
         {/* { COOKIES BANNER} */}
         <div>{showCookies ? "" : <CookiesNotification />}</div>
 
-        {/* COMPANIES */}
-        <div className={`${styles.company_banner_wrap}`}>
-          <div className={`${styles.company_banner}`}>
-            <p className={`${styles.cbp}`}>
-              Trusted By Top Companies Worldwide
-            </p>
-            <div className={`${styles.logos}`}>
-              <img src={HngLogo} alt="" className={`${styles.logo}`} />
-              <img src={I4gLogo} alt="" className={`${styles.logo}`} />
-              <img src={CampHouseLogo} alt="" className={`${styles.logo}`} />
-              <img
-                src={ZuriInternshipLogo}
-                alt=""
-                className={`${styles.logo}`}
-              />
-            </div>
-          </div>
-        </div>
-
         {/* FEATURES */}
         <div className={`${styles.features_wrap}`}>
           <div className={`${styles.features}`}>
@@ -187,6 +168,18 @@ export default function Index() {
                 className={`${styles.sign_up_right_img}`}
               />
             </div>
+          </div>
+        </div>
+      </div>
+      {/* COMPANIES */}
+      <div className={`${styles.company_banner_wrap}`}>
+        <div className={`${styles.company_banner}`}>
+          <p className={`${styles.cbp}`}>Trusted By Top Companies Worldwide</p>
+          <div className={`${styles.logos}`}>
+            <img src={HngLogo} alt="" className={`${styles.logo}`} />
+            <img src={I4gLogo} alt="" className={`${styles.logo}`} />
+            <img src={CampHouseLogo} alt="" className={`${styles.logo}`} />
+            <img src={ZuriInternshipLogo} alt="" className={`${styles.logo}`} />
           </div>
         </div>
       </div>

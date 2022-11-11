@@ -249,12 +249,18 @@
   outline: none;
   cursor: pointer;
   border-radius: var(--radius);
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
 }
-.sign_up_btn:hover {
+.sign_up_btn:hover,
+.sign_up_btn:focus {
   text-decoration: none;
   background-color: var(--primary-color);
   color: var(--bg-2);
   border: 2px solid var(--bg-2);
+  transform: scale(1.05);
 }
 .sign_up_right {
   display: flex;
