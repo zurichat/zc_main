@@ -1,5 +1,5 @@
-import React, { Fragment, useState, useRef } from "react";
-import Link from "../../../../../src-old/components/Link";
+import React, { useState, useRef } from "react";
+import Link from "../../../../components/link/Link";
 import Style from "../styles/content.module.css";
 
 import imageTut from "../assets/image1.png";
