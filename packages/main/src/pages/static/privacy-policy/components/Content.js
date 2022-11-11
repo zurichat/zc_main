@@ -107,7 +107,6 @@ const Content = () => {
               </div>
             </div>
           </div>
-
           <div className={Style.contain2}>
             <div className={Style.sectionServDev}>
               <h5 className={Style.headingFive}>Service Development</h5>
