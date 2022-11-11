@@ -276,14 +276,27 @@ function MembersPanel({ config }) {
         const users = r.data.data.map(item => {
           return { value: item._id, label: item.email };
         });
-        setUserList(users);
+        const channelUserIds = membersList.map(member => member._id);
+        console.log(channelUserIds, "channelUserIds");
+        // check to see if the user is already in a channel
+        const checkedUsers = users.map(user => {
+          if (channelUserIds.includes(user.value)) {
+            return {
+              ...user,
+              label: `${user.label} (Already in this channel)`,
+              isDisabled: true
+            };
+          }
+          return user;
+        });
+        setUserList(checkedUsers);
         setisLoading(false);
       })
       .catch(() => {
         setisLoading(false);
         /*e => console.log("Organization not returning members", e)*/
       });
-  }, []);
+  }, [membersList]);
 
   return (
     <div>

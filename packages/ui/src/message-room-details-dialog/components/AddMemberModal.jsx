@@ -43,7 +43,7 @@ const AddMemberModal = props => {
             </div>
           </div>
           <Select
-            className="mx-3"
+            className="mx-3 text-xs"
             closeMenuOnSelect={false}
             components={animatedComponents}
             isMulti
