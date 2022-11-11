@@ -110,5 +110,11 @@ export default [
     it: "Disconnessione",
     iw: "התנתק",
     pt: "Sair"
+  },
+  {
+    key: "search.placeholder",
+    en: "Search Here",
+    fr: "Cherche ici",
+    de: "Suche hier"
   }
 ];

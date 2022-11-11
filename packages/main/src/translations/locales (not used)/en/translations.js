@@ -299,6 +299,15 @@ export const TRANSLATIONS_EN = {
     }
   },
 
+  workspace_chat: {
+    threads: "Threads",
+    alldms: "alle DMs",
+    drafts: "Drafts",
+    directmessages: "Direct Message",
+    channels: "Channels",
+    general: "general"
+  },
+
   // About Page
   about: {
     title: {
@@ -795,5 +804,10 @@ export const TRANSLATIONS_EN = {
       "Hit a snag? Got a question? Our 24/7 Help Team will take extra steps and walk extra miles to ensure you have an easy and pleasant experience with Zuri Chat.",
     bottom_card: "Your Team would definitely love",
     bottom_link: "Sign Up Now!"
+  },
+
+  //search
+  search: {
+    placeholder: "Search Here"
   }
 };

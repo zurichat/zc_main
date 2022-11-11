@@ -313,6 +313,15 @@ export const TRANSLATIONS_DE = {
     }
   },
 
+  workspace_chat: {
+    threads: "Fäden",
+    alldms: "alle DMs",
+    drafts: "Entwürfe",
+    directmessages: "Direktnachricht",
+    channels: "Kanäle",
+    general: "Allgemeines"
+  },
+
   // About Page
   about: {
     title: {
@@ -815,5 +824,9 @@ export const TRANSLATIONS_DE = {
       "Een addertje onder het gras? Heb je een vraag? Ons 24/7 Help Team zal extra stappen nemen en extra kilometers lopen om ervoor te zorgen dat je een gemakkelijke en prettige ervaring hebt met Zuri Chat.",
     bottom_card: "Je team zou er zeker dol op zijn",
     bottom_link: "Meld u nu aan!"
+  },
+  //search
+  search: {
+    placeholder: "Search Here"
   }
 };

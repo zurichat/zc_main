@@ -12,10 +12,12 @@ import Room from "./Room";
 import SingleRoom from "./SingleRoom";
 import Category from "./Category";
 import Starred from "./Starred";
+import { useTranslation } from "react-i18next";
 
 const categories = [];
 
 const Sidebar = props => {
+  const { t } = useTranslation();
   let currentWorkspace = localStorage.getItem("currentWorkspace");
 
   const [nullValue, setnullValue] = useState(0);
@@ -117,16 +119,19 @@ const Sidebar = props => {
       <div className={`${styles.subCon2}`}>
         <>
           <SingleRoom
-            name="Threads"
+            name={`${t("workspace_chat.threads")}`}
             image={threadIcon}
             link={`/workspace/${currentWorkspace}/plugin-chat/threads`}
           />
           <SingleRoom
-            name="All Dms"
+            name={`${t("workspace_chat.alldms")}`}
             image={dmIcon}
             link={`/workspace/${currentWorkspace}/plugin-chat/all-dms`}
           />
-          <SingleRoom name="Drafts" image={draftIcon} />
+          <SingleRoom
+            name={`${t("workspace_chat.drafts")}`}
+            image={draftIcon}
+          />
 
           <Starred starredRooms={starredRooms} />
           {singleItems}
