@@ -95,7 +95,7 @@
 .icon,
 .item__icon {
   /* font-size: 1.2em; */
-  width: 24px;
+  width: unset;
 }
 
 .icon {
