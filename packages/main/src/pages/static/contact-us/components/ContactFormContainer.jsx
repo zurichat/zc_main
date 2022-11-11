@@ -32,12 +32,13 @@ function ContactFormContainer() {
   });
 
   useEffect(() => {
-    let userInfo = getUserInfo();
-    setUserAuth(userInfo.user.email ? userInfo.user : {});
-    setValues(values => ({
-      ...values,
-      email: userAuth.email ? userAuth.email : values.email
-    }));
+    getUserInfo().then(userInfo => {
+      setUserAuth(userInfo?.user.email ? userInfo.user : {});
+      setValues(values => ({
+        ...values,
+        email: userAuth.email ? userAuth.email : values.email
+      }));
+    });
   }, []);
 
   const {
