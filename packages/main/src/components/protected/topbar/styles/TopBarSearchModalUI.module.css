@@ -1,0 +1,61 @@
+/* New Css added by Luqman07*/
+
+.wrapper {
+    padding: 1em;
+  }
+  .wrapper > p {
+    color: grey;
+  }
+  .btn_wrapper{
+    display: flex;
+    overflow-x: auto;
+    margin-top: 0.7em;
+    margin-bottom: 0.5em;
+  }
+  .btn_wrapper > button {
+    display: flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    background-color: #e1fdf4;
+    color: #000 ;
+    padding: 4px 10px;
+    border-radius: 0.2em;
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 1em;
+  }
+  svg{
+    width: 18px;
+    margin-right: 0.5em;
+  }
+  
+  .btn_wrapper > button:hover {
+    background-color: #00b87c;
+    color: #fff;
+  }
+  .btn_wrapper > button:hover svg{
+    color: #fff;
+  }
+  .modal_footer {
+    background-color: #F9F9F9;
+    padding: 0 1em;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: end
+  }
+  .modal_footer > p {
+    font-size: 14px;
+    color: grey;
+    line-height: 16px;;
+  }
+  .modal_footer_link {
+    color: #2470AA;
+  }
+  .modal_footer_link:hover {
+    color: #2470AA;
+    text-decoration: underline;
+  }
+  
+  
