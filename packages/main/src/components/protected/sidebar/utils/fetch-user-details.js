@@ -4,6 +4,10 @@ import { getOrgDetails } from "./get-org-details";
 
 export const fetchUser = async dispatch => {
   try {
+    dispatch({
+      type: ACTIONS.IS_LOADING,
+      payload: true
+    });
     const user = await getUserInfo();
 
     //Get workspace info
@@ -17,6 +21,10 @@ export const fetchUser = async dispatch => {
       //set organization details
       getOrgDetails(dispatch, currentWorkspace, user.email, user.user._id);
     }
+    dispatch({
+      type: ACTIONS.IS_LOADING,
+      payload: false
+    });
   } catch (err) {
     console.warn(err);
   }
