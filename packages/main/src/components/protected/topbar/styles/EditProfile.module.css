@@ -65,6 +65,9 @@
     padding: 0.3em 0.5em;
     font-size: 1rem;   
 }
+.button{
+    cursor: pointer;
+}
 .input:focus{
     border: 1px solid #00b87b44;
     outline: none;

@@ -168,6 +168,7 @@ const EditProfile = () => {
         <div className={styles.header_flex}>
           <h2 className={styles.edit}>Edit your profile</h2>
           <div
+            className={styles.button}
             onClick={toggleModalState}
             style={{ width: "15px", color: "grey" }}
           >
