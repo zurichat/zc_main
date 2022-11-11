@@ -68,9 +68,6 @@ export default function Footer() {
                   {t("footer_documentation")}
                 </a>
               </li>
-              {/* <li>
-                <Link to="/ZurichatBlog">{t("footer_blog")}</Link>
-              </li> */}
               <li>
                 <Link to="/plugins">{t("nav_plugin")}</Link>
               </li>
