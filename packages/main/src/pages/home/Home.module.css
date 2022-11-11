@@ -101,9 +101,9 @@
 }
 
 /* * COMPANY BANNER ----------------------------- */
-/* .company_banner_wrap {
-  background-color: #f5f5fb;
-} */
+.company_banner_wrap {
+  background-color: #f0f2f8;
+}
 .company_banner {
   display: flex;
   flex-direction: column;

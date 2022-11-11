@@ -171,6 +171,8 @@ export default function Index() {
           </div>
         </div>
       </div>
+
+      <SubscribeToNewsletter />
       {/* COMPANIES */}
       <div className={`${styles.company_banner_wrap}`}>
         <div className={`${styles.company_banner}`}>
@@ -183,9 +185,6 @@ export default function Index() {
           </div>
         </div>
       </div>
-
-      <SubscribeToNewsletter />
-
       <Footer />
     </div>
   );
