@@ -54,7 +54,10 @@ const Toolbar = props => {
   //const [preview, setPreview] = useState('')
 
   const inputLength = editorState.getCurrentContent().getPlainText("").length;
+  // const inputLength = editorState.getData();
+
   // console.log({ inputLength });
+  // console.log(editorState);
 
   //Attachment ref
   const inputRef = React.createRef();
@@ -201,7 +204,7 @@ const Toolbar = props => {
           </UnstyledButton>
           <UnstyledButton
             onClick={handleClickSendMessage || handleAttachMedia}
-            disabled={!inputLength}
+            disabled={!inputLength && !attachedFile}
           >
             <SendIcon />
           </UnstyledButton>
