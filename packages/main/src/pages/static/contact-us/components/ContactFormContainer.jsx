@@ -31,8 +31,8 @@ function ContactFormContainer() {
     success: ""
   });
 
-  useEffect(async () => {
-    let userInfo = await getUserInfo();
+  useEffect(() => {
+    let userInfo = getUserInfo();
     setUserAuth(userInfo.user.email ? userInfo.user : {});
     setValues(values => ({
       ...values,
