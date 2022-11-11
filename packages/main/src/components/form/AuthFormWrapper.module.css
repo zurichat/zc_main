@@ -6,7 +6,7 @@
   /* margin-inline: 5%; */
   /* width: 100%;
     max-width: 720px; */
-  height: 100vh;
+  min-height: 100vh;
   /* font-size: 15px; */
   /* transform: scale(0.95); */
   /* margin: 0 auto; */
@@ -279,6 +279,7 @@
   /* font-size: 1.2em; */
   /* color: #1a61db; */
   text-decoration: none;
+  padding-left: 0.4em;
 }
 
 .footer {

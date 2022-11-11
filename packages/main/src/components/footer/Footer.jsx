@@ -42,14 +42,17 @@ export default function Footer() {
               <li>
                 <Link to="/careers">{t("footer_careers")}</Link>
               </li>
-              <li>
-                <Link to="/about">{t("footer_about")}</Link>
-              </li>
+
               <li>
                 <Link to="/whyzurichat">{t("footer_why_zuri_chat")}</Link>
               </li>
+
               <li>
-                <Link to="/ZurichatBlog">{t("footer_blog")}</Link>
+                <Link to="/open-marketplace">{t("footer_market")}</Link>
+              </li>
+
+              <li>
+                <Link to="/dao-features">{t("footer_web3")}</Link>
               </li>
             </ul>
           </div>
@@ -61,16 +64,15 @@ export default function Footer() {
                 <Link to="/privacy">{t("footer_privacy")}</Link>{" "}
               </li>
               <li>
-                <Link to="/legal">{t("footer_legal")}</Link>{" "}
+                <a href="https://docs.zuri.chat/">
+                  {t("footer_documentation")}
+                </a>
               </li>
               <li>
-                <Link to="/open-marketplace">{t("footer_market")}</Link>
+                <Link to="/ZurichatBlog">{t("footer_blog")}</Link>
               </li>
               <li>
-                <Link to="/security">{t("footer_security")}</Link>
-              </li>
-              <li>
-                <Link to="/dao-features">{t("footer_web3")}</Link>
+                <Link to="/plugins">{t("nav_plugin")}</Link>
               </li>
             </ul>
           </div>
@@ -79,15 +81,13 @@ export default function Footer() {
             <h5>{t("footer_know_us")}</h5>
             <ul>
               <li>
-                <Link to="/downloads">{t("footer_downloads")}</Link>
+                <Link to="/about">{t("footer_about")}</Link>
               </li>
               <li>
                 <Link to="/contact-us">{t("footer_contact")}</Link>
               </li>
               <li>
-                <a href="https://docs.zuri.chat/">
-                  {t("footer_documentation")}
-                </a>
+                <Link to="/downloads">{t("footer_downloads")}</Link>
               </li>
             </ul>
           </div>
@@ -95,54 +95,60 @@ export default function Footer() {
           <div className={styles.social}>
             <h5>{t("footer_social_media")}</h5>
             <ul>
-              <li>
-                <a
-                  href="https://www.facebook.com/Zuri-Chat-101278805666628"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    title="Connect with us on Facebook"
-                  />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://instagram.com/zurichathq"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img
-                    src={instagram}
-                    alt="Instagram"
-                    title="Connect with us on Instagram"
-                  />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://twitter.com/zurichat"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img
-                    src={twitter}
-                    alt="Twitter"
-                    title="Connect with us on Twitter"
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/company/zuri-chat/">
-                  <img
-                    src={linkedin}
-                    alt="Linkedin"
-                    title="Connect with us on Linkedin"
-                  />
-                </a>
-              </li>
+              <div>
+                <li>
+                  <a
+                    href="https://www.facebook.com/Zuri-Chat-101278805666628"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img
+                      src={facebook}
+                      alt="Facebook"
+                      title="Connect with us on Facebook"
+                    />
+                  </a>
+                </li>
+                <br />
+                <li>
+                  <a
+                    href="https://instagram.com/zurichathq"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img
+                      src={instagram}
+                      alt="Instagram"
+                      title="Connect with us on Instagram"
+                    />
+                  </a>
+                </li>
+              </div>
+              <div>
+                <li>
+                  <a
+                    href="https://twitter.com/zurichat"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img
+                      src={twitter}
+                      alt="Twitter"
+                      title="Connect with us on Twitter"
+                    />
+                  </a>
+                </li>
+                <br />
+                <li>
+                  <a href="https://www.linkedin.com/company/zuri-chat/">
+                    <img
+                      src={linkedin}
+                      alt="Linkedin"
+                      title="Connect with us on Linkedin"
+                    />
+                  </a>
+                </li>
+              </div>
             </ul>
           </div>
         </div>
