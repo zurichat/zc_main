@@ -13,9 +13,11 @@ import ContactUs from "./pages/ContactUs";
 import DownloadDesktopSectionTwo from "./pages/DownloadDesktopSectionTwo";
 import DownloadMobileSectionTwo from "./pages/DownloadMobileSectionTwo";
 import Plugins from "./pages/Plugins";
+import Pricing from "./pages/Pricing";
 
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
+import SideBar from "./components/SideBar";
 
 const resources = {};
 
@@ -35,10 +37,12 @@ const Translations = [
   ...DownloadMobileSectionTwo,
   ...Plugins,
   ...About,
+  ...Pricing,
 
   // Components
   ...NavBar,
-  ...Footer
+  ...Footer,
+  ...SideBar
 ];
 
 Translations.forEach(o => {
