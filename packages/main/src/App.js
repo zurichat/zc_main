@@ -38,14 +38,14 @@ const ProtectedRoute = ({ children, ...rest }) => {
     <Route
       {...rest}
       render={({ location }) =>
-        auth.user !== true ? (
+        auth.user ? (
           children
         ) : location.pathname === "/signout" ? (
           children
         ) : (
           <Redirect
             to={{
-              pathname: "/signout",
+              pathname: "/login",
               state: { from: location }
             }}
           />
