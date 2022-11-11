@@ -78,10 +78,18 @@
   outline: none;
   cursor: pointer;
   border-radius: var(--radius);
+  /* My styling */
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.1s ease-out;
 }
-.hero_left_btn:hover {
+.hero_left_btn:hover,
+.hero_left_btn:focus {
   background-color: #156349;
+  transform: scale(1.05);
 }
+
 .hero_right {
   display: flex;
   justify-content: center;
