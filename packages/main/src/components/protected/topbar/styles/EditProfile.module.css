@@ -38,6 +38,8 @@
     color: #fff;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
+    position: sticky;
+    top: 0;
     
 
 }
@@ -151,6 +153,10 @@
         gap: 3em;
         padding: 0 1.5em;
         z-index: 5;
+    }
+    .header-flex{
+        position: sticky;
+        top: 0;
     }
     .div2{
         margin: 0 auto;
