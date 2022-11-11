@@ -55,8 +55,7 @@
   color: white;
   margin-bottom: 20px;
   height: 49px;
-  /* padding-right: 25px; */
-  padding: 1.7rem 25px 1.7rem 0;
+  padding: 1.7rem 1.4rem 1.7rem 0;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -69,7 +68,7 @@
   letter-spacing: 0em;
   text-align: left;
   color: white;
-  margin-left: 15px;
+  padding-left: 1.4rem;
 }
 .modalcontent {
   margin: 0 auto;
@@ -329,9 +328,10 @@
   cursor: pointer;
 }
 .inactivesave {
-  margin-top: 10px;
+  margin-top: 20px;
+  height: 48px;
   border-radius: 3px;
-  padding: 0.3rem 1.6rem;
+  padding: 12px 18px;
   margin-right: 30px;
   border: 1px solid #dedede;
   background: #dedede;
@@ -346,7 +346,6 @@
   text-align: center;
   display: flex;
   align-items: center;
-  cursor: pointer;
 }
 .recentstatustitle {
   color: #999999;
