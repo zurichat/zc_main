@@ -86,7 +86,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
   const [showEmoji, setShowEmoji] = useState(false);
   const [suggestions, setSuggestions] = useState(users || mentions);
   const [suggestionsOpen, setSuggestionsOpen] = useState(false);
-  // console.log("field", editorState)
+  console.log("field", editorState);
   // Mention helpers
   const onOpenChange = useCallback(_open => {
     setSuggestionsOpen(_open);
@@ -125,7 +125,6 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
 
   const handleKeyCommand = (command, editorState) => {
     const newState = RichUtils.handleKeyCommand(editorState, command);
-
     if (!newState) {
       if (command === "newline") {
         const newEditorState = RichUtils.insertSoftNewline(editorState);
