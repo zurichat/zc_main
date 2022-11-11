@@ -37,27 +37,6 @@ export default function Footer() {
 
         <div className={styles.menu}>
           <div>
-            <h5>{t("footer_company")}</h5>
-            <ul>
-              <li>
-                <Link to="/careers">{t("footer_careers")}</Link>
-              </li>
-
-              <li>
-                <Link to="/whyzurichat">{t("footer_why_zuri_chat")}</Link>
-              </li>
-
-              <li>
-                <Link to="/open-marketplace">{t("footer_market")}</Link>
-              </li>
-
-              <li>
-                <Link to="/dao-features">{t("footer_web3")}</Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
             <h5>{t("footer_info")}</h5>
             <ul>
               <li>
@@ -68,9 +47,7 @@ export default function Footer() {
                   {t("footer_documentation")}
                 </a>
               </li>
-              <li>
-                <Link to="/ZurichatBlog">{t("footer_blog")}</Link>
-              </li>
+
               <li>
                 <Link to="/plugins">{t("nav_plugin")}</Link>
               </li>
