@@ -229,6 +229,7 @@ function MembersPanel({ config }) {
     addmembersevent,
     removememberevent
   } = roomData;
+
   const [addModalShow, setaddModalShow] = useState(false);
   const [removeModalShow, setremoveModalShow] = useState(false);
   const [selectedMember, setSelectedMember] = useState(null);
@@ -245,13 +246,11 @@ function MembersPanel({ config }) {
   const handleremoveModalShow = () => setremoveModalShow(true);
 
   const addMembersEvent = values => {
-    const newEntries = [
-      ...membersList,
-      values.map(item => {
-        return { _id: item.value, email: item.label };
-      })
-    ];
-    setMembersList([newEntries]);
+    const channelNewMembers = values.map(item => {
+      return { _id: item.value, email: item.label };
+    });
+    const newEntries = [...membersList, ...channelNewMembers];
+    setMembersList(newEntries);
     // console.warn(membersList)
     addmembersevent(values);
   };
@@ -328,8 +327,8 @@ function MembersPanel({ config }) {
           </AddPeopleIcons>
         </ListGroup.Item>
         {membersList && membersList.length > 0 ? (
-          membersList.map(member => (
-            <ListGroup.Item key={member._id} className="d-flex w-100">
+          membersList.map((member, index) => (
+            <ListGroup.Item key={member._id + index} className="d-flex w-100">
               <div>{member.email}</div>
               <div className="ms-auto" onClick={handleaddModalShow}>
                 <RemoveLink onClick={() => removeMemberHandler(member)}>
