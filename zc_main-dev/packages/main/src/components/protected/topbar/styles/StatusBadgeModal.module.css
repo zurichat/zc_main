@@ -1,0 +1,39 @@
+.statusBadge {
+  /* margin-right: -1em;
+  margin-top: 2px; */
+  cursor: pointer;
+  outline: none;
+  font-size: 1.2rem;
+  border: 0;
+  margin: 0;
+  padding: 0 5px;
+
+  /* padding-left: 5px;
+  padding-bottom: 10px; */
+
+  /* position: absolute; */
+
+  /* left: 15px; */
+  text-align: center;
+
+  /* top: 108px; */
+  background: none;
+  transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .statusBadge {
+    /* margin-right: -1em;
+    margin-top: -8.5px; */
+    cursor: pointer;
+    outline: none;
+    font-size: 1.2rem;
+    border: 0;
+    /* padding: 5px;
+    position: absolute;
+    right: 10px;
+    top: 113px; */
+    background: none;
+    transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+}

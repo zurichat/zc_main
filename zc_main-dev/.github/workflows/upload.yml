@@ -1,0 +1,81 @@
+# name: Zuri Main Testing Pipeline
+# on:
+#   # Triggers the workflow on push or pull request events but only for the dev branch
+#   push:
+#     branches: [dev]
+
+#   # Allows you to run this workflow manually from the Actions tab
+#   workflow_dispatch:
+
+# jobs:
+#   prettier:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#     - name: Checkout
+#       uses: actions/checkout@v2
+#       with:
+#         # Make sure the actual branch is checked out when running on pull requests
+#         ref: ${{ github.head_ref }}
+
+#     - name: Prettify code
+#       uses: creyD/prettier_action@v3.1
+#       with:
+#         # This part is also where you can pass other options, for example:
+#         prettier_options: --write **/*.{js,md}
+#         commit_message: same_commit
+#       env:
+#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+#   fe_eslint:
+#     needs: prettier
+
+#     runs-on: ubuntu-latest
+
+#     steps:
+#     - name: Checkout
+#       uses: actions/checkout@v2
+#       with:
+#         # Make sure the actual branch is checked out when running on pull requests
+#         ref: ${{ github.head_ref }}
+    
+#     - name: Use cached node_modules
+#       uses: c-hive/gha-yarn-cache@v2
+#       with:
+#         directory: zc_frontend
+
+#     - name: Install yarn dependencies and Run ESLint
+#       run: |
+#         cd zc_frontend
+#         yarn install
+#         yarn run lint --fix
+#     - name: Commit changes
+#       if: always()
+#       uses: stefanzweifel/git-auto-commit-action@v4.1.2
+#       with:
+#         commit_message: Frontend EsLint Fixes
+
+#   be_eslint:
+#     needs: fe_eslint
+
+#     runs-on: ubuntu-latest
+
+#     steps:
+#     - name: Checkout
+#       uses: actions/checkout@v2
+#       with:
+#         # Make sure the actual branch is checked out when running on pull requests
+#         ref: ${{ github.head_ref }}
+    
+#     - name: Use cached node_modules
+#       uses: c-hive/gha-yarn-cache@v2
+
+#     - name: Install yarn dependencies and Run ESLint
+#       run: |
+#         yarn install
+#         yarn run lint --fix
+#     - name: Commit changes
+#       if: always()
+#       uses: stefanzweifel/git-auto-commit-action@v4.1.2
+#       with:
+#         commit_message: Backend EsLint Fixes

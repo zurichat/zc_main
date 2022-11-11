@@ -1,0 +1,689 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+body {
+  font-family: "lato";
+  width: 100%;
+}
+
+.eventsMainWrapper {
+  padding: 1.5% 0 0 0;
+}
+
+.heroSection {
+  padding: 5% 2% 0 2%;
+  font-family: inherit;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.heroSectionTextsWrapper {
+  width: 40%;
+  padding-top: 60px;
+}
+.heroSectionTextsWrapper > h1 {
+  font-size: 56px;
+  color: #242424;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+.heroSectionTextsWrapper > p {
+  max-width: 90%;
+  line-height: 1.2em;
+  font-size: 20px;
+  color: #3a3a3a;
+}
+.heroSectionDisplayBlock {
+  width: auto;
+}
+.eventsMeetSection {
+  padding: 10% 2.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.eventsMeetDisplayBlock {
+  width: 60%;
+}
+.eventsMeetDisplayBlock > img {
+  height: 400px;
+}
+.eventsMeetTextWrapper {
+  width: auto;
+}
+.eventsMeetLogoBlock {
+  display: flex;
+  align-items: center;
+  /* justify-content: flex-start; */
+}
+.boldText {
+  font-weight: bold;
+  font-size: 30px;
+  color: #333333;
+  margin-left: 5px;
+}
+.logoText {
+  font-size: 30px;
+  font-weight: normal;
+  color: #333333;
+  margin-left: 5px;
+}
+
+.eventsMeetTextWrapper > h2 {
+  margin-bottom: 5px;
+  font-size: 32px;
+  font-weight: 900;
+  color: #242424;
+}
+.eventsMeetTextWrapper > p {
+  font-size: 20px;
+  color: #3a3a3a;
+  font-weight: normal;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.checkoutLinkBlock {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.checkoutLinkBlock > a {
+  color: #00b87c;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  margin-right: 5px;
+}
+
+.eventsUpcomingMeetsSection {
+  width: 100%;
+  padding: 0 10% 5% 10%;
+}
+.eventsUpcomingMeetsHeaderBox {
+  width: 100%;
+  padding-bottom: 20px;
+}
+.eventsUpcomingMeetsHeaderBox > h2 {
+  font-size: 32px;
+  font-weight: 900;
+  color: #242424;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.eventsUpcomingMeetsHeaderBox > p {
+  color: #3a3a3a;
+  font-size: 18px;
+  text-align: center;
+  max-width: 40%;
+  margin: 0 auto;
+}
+
+.eventsBlock {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid #dfdfdf;
+  padding: 40px 0;
+  max-width: 80%;
+  margin: 0 auto;
+}
+.eventsBlock > h3,
+.eventsBlock > p {
+  font-size: 18px;
+  color: #242424;
+}
+.eventsBlock > h3 {
+  font-weight: 900;
+}
+.eventsBlockLinkBlock {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.eventsBlockLinkBlock > a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #00b87c;
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 480px) {
+  .heroSection {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .heroSectionTextsWrapper {
+    width: 100%;
+    padding: 40px 0 60px 0;
+  }
+  .heroSectionTextsWrapper > h1 {
+    font-size: 36px;
+  }
+
+  .heroSectionTextsWrapper > p {
+    max-width: auto;
+    font-size: 18px;
+  }
+  .heroSectionDisplayBlock img {
+    height: 200px;
+  }
+  .eventsMeetSection {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .eventsMeetDisplayBlock {
+    width: auto;
+    order: 2;
+  }
+  .eventsMeetDisplayBlock > img {
+    height: 175px;
+  }
+  .eventsMeetTextWrapper {
+    width: 100%;
+  }
+  .eventsMeetLogoBlock {
+    margin-bottom: 5px;
+  }
+  .eventsMeetTextWrapper > h2 {
+    margin-bottom: 10px;
+  }
+  .eventsMeetTextWrapper > p {
+    margin-bottom: 10px;
+    max-width: 100%;
+  }
+
+  .checkoutLinkBlock {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+  }
+
+  .checkoutLinkBlock > a {
+    color: #00b87c;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 5px;
+  }
+  .eventsUpcomingMeetsSection {
+    padding: 0 5% 5% 5%;
+  }
+  .eventsUpcomingMeetsHeaderBox {
+    padding-bottom: 40px;
+    border-bottom: 1px solid #dfdfdf;
+  }
+  .eventsUpcomingMeetsHeaderBox > h2 {
+    margin-bottom: 10px;
+  }
+  .eventsUpcomingMeetsHeaderBox > p {
+    max-width: 100%;
+  }
+
+  .eventsBlock {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px 0;
+    max-width: 100%;
+  }
+  .eventsBlock > h3,
+  .eventsBlock > p {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 481px) {
+  .heroSection {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .heroSectionTextsWrapper {
+    width: 100%;
+    padding: 40px 0 60px 0;
+  }
+  .heroSectionTextsWrapper > h1 {
+    font-size: 36px;
+  }
+
+  .heroSectionTextsWrapper > p {
+    max-width: auto;
+    font-size: 18px;
+  }
+  .heroSectionDisplayBlock img {
+    height: 250px;
+  }
+  .eventsMeetSection {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .eventsMeetDisplayBlock {
+    width: auto;
+    order: 2;
+  }
+  .eventsMeetDisplayBlock > img {
+    height: 200px;
+  }
+  .eventsMeetTextWrapper {
+    width: 100%;
+  }
+  .eventsMeetLogoBlock {
+    margin-bottom: 5px;
+  }
+  .eventsMeetTextWrapper > h2 {
+    margin-bottom: 10px;
+  }
+  .eventsMeetTextWrapper > p {
+    margin-bottom: 10px;
+    max-width: 80%;
+  }
+
+  .checkoutLinkBlock {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+  }
+
+  .checkoutLinkBlock > a {
+    color: #00b87c;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 5px;
+  }
+  .eventsUpcomingMeetsSection {
+    padding: 0 5% 5% 5%;
+  }
+  .eventsUpcomingMeetsHeaderBox {
+    padding-bottom: 40px;
+    border-bottom: 1px solid #dfdfdf;
+  }
+  .eventsUpcomingMeetsHeaderBox > h2 {
+    margin-bottom: 10px;
+  }
+  .eventsUpcomingMeetsHeaderBox > p {
+    max-width: 100%;
+  }
+
+  .eventsBlock {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 40px 0;
+    max-width: 100%;
+  }
+  .eventsBlock > h3,
+  .eventsBlock > p {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .heroSection {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .heroSectionTextsWrapper {
+    width: 100%;
+    padding: 40px 0 60px 0;
+  }
+  .heroSectionTextsWrapper > h1 {
+    font-size: 36px;
+  }
+
+  .heroSectionTextsWrapper > p {
+    max-width: auto;
+    font-size: 18px;
+  }
+  .heroSectionDisplayBlock img {
+    height: auto;
+  }
+  .eventsMeetSection {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .eventsMeetDisplayBlock {
+    width: auto;
+    order: 2;
+  }
+  .eventsMeetDisplayBlock > img {
+    height: auto;
+  }
+  .eventsMeetTextWrapper {
+    width: 100%;
+  }
+  .eventsMeetLogoBlock {
+    margin-bottom: 5px;
+  }
+  .eventsMeetTextWrapper > h2 {
+    margin-bottom: 10px;
+  }
+  .eventsMeetTextWrapper > p {
+    margin-bottom: 10px;
+    max-width: 60%;
+  }
+
+  .checkoutLinkBlock {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+  }
+
+  .checkoutLinkBlock > a {
+    color: #00b87c;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 5px;
+  }
+  .eventsUpcomingMeetsHeaderBox {
+    padding-bottom: 40px;
+    border-bottom: 1px solid #dfdfdf;
+  }
+  .eventsUpcomingMeetsHeaderBox > h2 {
+    margin-bottom: 5px;
+  }
+  .eventsUpcomingMeetsHeaderBox > p {
+    max-width: 80%;
+  }
+
+  .eventsBlock {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 40px 0;
+    max-width: 100%;
+  }
+  .eventsBlock > h3,
+  .eventsBlock > p {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .heroSection {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .heroSectionTextsWrapper {
+    width: 40%;
+    padding: 40px 0 60px 0;
+  }
+  .heroSectionTextsWrapper > h1 {
+    font-size: 56px;
+  }
+
+  .heroSectionTextsWrapper > p {
+    max-width: 90%;
+    font-size: 20px;
+  }
+  .heroSectionDisplayBlock img {
+    height: auto;
+  }
+  .eventsMeetSection {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .eventsMeetDisplayBlock {
+    width: 60%;
+    order: 0;
+  }
+  .eventsMeetDisplayBlock > img {
+    height: 300px;
+  }
+  .eventsMeetTextWrapper {
+    width: 40%;
+  }
+  .eventsMeetLogoBlock {
+    margin-bottom: 0px;
+  }
+  .eventsMeetTextWrapper > h2 {
+    margin-bottom: 10px;
+  }
+  .eventsMeetTextWrapper > p {
+    margin-bottom: 10px;
+    max-width: auto;
+  }
+
+  .checkoutLinkBlock {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
+
+  .checkoutLinkBlock > a {
+    color: #00b87c;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 5px;
+  }
+  .eventsUpcomingMeetsHeaderBox {
+    width: 100%;
+    padding-bottom: 30px;
+  }
+  .eventsUpcomingMeetsHeaderBox > h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  .eventsUpcomingMeetsHeaderBox > p {
+    max-width: 40%;
+  }
+
+  .eventsBlock {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .eventsBlock > h3,
+  .eventsBlock > p {
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .heroSection {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .heroSectionTextsWrapper {
+    width: 40%;
+    padding: 40px 0 60px 0;
+  }
+  .heroSectionTextsWrapper > h1 {
+    font-size: 56px;
+  }
+
+  .heroSectionTextsWrapper > p {
+    max-width: 90%;
+    font-size: 20px;
+  }
+  .heroSectionDisplayBlock img {
+    height: auto;
+  }
+  .eventsMeetSection {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .eventsMeetDisplayBlock {
+    width: 60%;
+    order: 0;
+  }
+  .eventsMeetDisplayBlock > img {
+    height: 350px;
+  }
+  .eventsMeetTextWrapper {
+    width: 40%;
+  }
+  .eventsMeetLogoBlock {
+    margin-bottom: 0px;
+  }
+  .eventsMeetTextWrapper > h2 {
+    margin-bottom: 5px;
+  }
+  .eventsMeetTextWrapper > p {
+    margin-bottom: 10px;
+    max-width: 100%;
+  }
+
+  .checkoutLinkBlock {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
+
+  .checkoutLinkBlock > a {
+    color: #00b87c;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 5px;
+  }
+  .eventsUpcomingMeetsSection {
+    padding: 0 10% 5%;
+  }
+  .eventsUpcomingMeetsHeaderBox {
+    width: 100%;
+    padding-bottom: 30px;
+  }
+  .eventsUpcomingMeetsHeaderBox > h2 {
+    font-size: 32px;
+    margin-bottom: 5px;
+  }
+  .eventsUpcomingMeetsHeaderBox > p {
+    max-width: 40%;
+  }
+
+  .eventsBlock {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 40px 0;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .eventsBlock > h3,
+  .eventsBlock > p {
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .heroSection {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .heroSectionTextsWrapper {
+    width: 40%;
+    padding: 40px 0 60px 0;
+  }
+  .heroSectionTextsWrapper > h1 {
+    font-size: 56px;
+  }
+
+  .heroSectionTextsWrapper > p {
+    max-width: 90%;
+    font-size: 20px;
+  }
+  .heroSectionDisplayBlock img {
+    height: auto;
+  }
+  .eventsMeetSection {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .eventsMeetDisplayBlock {
+    width: 60%;
+    order: 0;
+  }
+  .eventsMeetDisplayBlock > img {
+    height: 425px;
+  }
+  .eventsMeetTextWrapper {
+    width: 40%;
+  }
+  .eventsMeetLogoBlock {
+    margin-bottom: 0px;
+  }
+  .eventsMeetTextWrapper > h2 {
+    margin-bottom: 5px;
+  }
+  .eventsMeetTextWrapper > p {
+    margin-bottom: 5px;
+    max-width: 100%;
+  }
+
+  .checkoutLinkBlock {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
+
+  .checkoutLinkBlock > a {
+    color: #00b87c;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 5px;
+  }
+  .eventsUpcomingMeetsHeaderBox {
+    width: 100%;
+    padding-bottom: 60px;
+  }
+  .eventsUpcomingMeetsHeaderBox > h2 {
+    font-size: 32px;
+    margin-bottom: 5px;
+  }
+  .eventsUpcomingMeetsHeaderBox > p {
+    max-width: 40%;
+  }
+
+  .eventsBlock {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .eventsBlock > h3,
+  .eventsBlock > p {
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+}

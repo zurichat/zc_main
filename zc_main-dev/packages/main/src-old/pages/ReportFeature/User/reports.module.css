@@ -1,0 +1,11 @@
+.formcontainer {
+  background: #fff;
+  border-radius: 20px;
+  padding: 10px 10px;
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 15px 16px 0.17px rgba(0, 0, 0, 0.05);
+}
+.head1 {
+  text-align: center;
+}

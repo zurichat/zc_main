@@ -1,0 +1,138 @@
+.container {
+  width: 100%;
+  /* margin-left: 20px; */
+  margin-top: 20px;
+}
+
+.subhead {
+  font-family: Lato;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 10px;
+  color: var(--text-color-gray-1);
+}
+
+.section {
+  text-align: left;
+}
+
+.selectbox {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 60%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #dde5e9;
+  border-radius: 5px;
+  font-family: Lato;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #4c4c4c;
+}
+
+.selectbox:focus,
+.selectbox:active {
+  color: #00b87c;
+  border: 1px solid #00b87c;
+  outline-color: #00b87c;
+}
+
+.note {
+  font-family: Lato;
+  width: 100%;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--text-color-gray);
+  margin-bottom: 10px;
+}
+
+.auto {
+  display: block;
+  padding: 10px 0;
+  font-family: Lato;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--text-color-gray);
+}
+.cbox {
+  width: 0.875rem;
+  height: 0.875rem;
+  background: var(--bg-color);
+  border: 1px solid #999;
+  border-radius: 2px;
+  margin-right: 0.7rem !important;
+  outline: none;
+}
+
+.choosed {
+  width: 80%;
+  color: var(--text-color-normal);
+  font-size: 13px;
+  border: 1px solid #dde5e9;
+  height: 40px;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.block {
+  display: block;
+  background: var(--text-color-normal);
+  /* width:20%; */
+  padding: 3px;
+  margin-top: -4px;
+  color: #fff;
+  padding: 3px 10px;
+  display: inline-block;
+}
+
+.closebtn {
+  color: #fff !important;
+  font-size: 15px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.checkmark {
+  font-size: 0.8125rem;
+  margin-top: 0.3rem;
+  margin-bottom: 5px;
+  justify-content: center;
+  color: var(--text-color-gray);
+}
+.optSelect {
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .selectbox {
+    width: 100%;
+    max-width: 100%;
+  }
+  .optSelect {
+    width: 100%;
+  }
+  .note {
+    width: 95%;
+  }
+  .optSelect {
+    margin-bottom: 10px;
+  }
+  .auto {
+    padding-bottom: 0%;
+  }
+}

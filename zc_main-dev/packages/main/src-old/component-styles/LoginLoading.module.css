@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.loadingContainer {
+  position: fixed;
+  background: #fff;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 999999999;
+}
+.loaderContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100px;
+}
+.loadingStatus h1 {
+  font-weight: 900;
+  font-family: "Lato", sans-serif;
+  font-size: 36px;
+  padding-top: 15px;
+  text-align: center;
+}
+/* .topLeft {
+  animation: zuriLoaderTopLeft 1s infinite;
+}
+.topRight {
+  animation: zuriLoaderTopRight 1s infinite;
+}
+.bottomLeft {
+  animation: zuriLoaderBottomLeft 1s infinite;
+}
+.bottomRight {
+  animation: zuriLoaderBottomRight 1s infinite;
+}
+@keyframes zuriLoaderTopLeft {
+  50% {
+    transform: translate(32px, 74px);
+  }
+  70% {
+    transform: translate(-21.127px, 53.7773px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes zuriLoaderTopRight {
+  50% {
+    transform: translate(-74.9043px, 32px);
+  }
+  70% {
+    transform: translate(-53px, -21.1289px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes zuriLoaderBottomLeft {
+  50% {
+    transform: translate(74.9043px, -32px);
+  }
+  70% {
+    transform: translate(53.7773px, 21px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes zuriLoaderBottomRight {
+  50% {
+    transform: translate(-32px, -74.9062px);
+  }
+  70% {
+    transform: translate(21px, -53px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+} */
+.rotate {
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .loadingStatus h1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .loadingStatus h1 {
+    font-size: 24px;
+  }
+}

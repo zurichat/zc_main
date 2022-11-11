@@ -1,0 +1,24 @@
+.skeletonLoaderWrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 22px;
+  animation: skeleton 1s ease infinite alternate;
+}
+@keyframes skeleton {
+  to {
+    opacity: 0.5;
+  }
+}
+.skeletonLoaderLeftDiv {
+  margin-right: 10px;
+  height: 15px;
+  width: 6%;
+  border-radius: 4px;
+  background-color: #e0e0e0;
+}
+.skeletonLoaderRightDiv {
+  height: 15px;
+  width: 80%;
+  border-radius: 4px;
+  background-color: #e0e0e0;
+}

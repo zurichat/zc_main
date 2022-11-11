@@ -1,0 +1,21 @@
+div[id*="zuri/commentSidebar"] {
+  width: 299px;
+  position: absolute;
+  background-color: #e5e5e5;
+  right: 0;
+  top: 20vh;
+  z-index: 2;
+}
+/* CHESS STYLE */
+
+.app__container {
+  padding: 0 !important;
+  padding-block: 5rem;
+}
+
+@media (max-width: 375px) {
+  .mini-board {
+    height: calc(34.8rem * 0.9);
+    width: calc(26.4rem * 0.9);
+  }
+}

@@ -1,0 +1,94 @@
+.message {
+  padding-top: 67px;
+  background-repeat: no-repeat;
+  font-family: "Lato", sans-serif;
+  height: 308px;
+  background-image: url("../component-assets/rectangle.svg");
+}
+.message > p {
+  font-weight: 900;
+  font-size: 2.37rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 64px;
+}
+.message > span {
+  display: block;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 32px;
+  margin-top: -32px;
+}
+.buttonSection {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.buttonFilled {
+  border: none;
+  padding: 12px 30px;
+  background-color: white;
+  color: #00b87c;
+  cursor: pointer;
+}
+.buttonFilled > a {
+  font-weight: 500;
+  font-size: 1rem;
+}
+.buttonFilled:hover {
+  transition: background 350ms;
+  background: #00b87c;
+  color: white;
+  outline: 1px solid white;
+}
+.buttonOutline {
+  padding: 12px 18px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 3px;
+  color: #ffffff;
+}
+.buttonOutline:hover {
+  transition: background 350ms;
+  background: white;
+  color: #00b87c;
+}
+.buttonSection > button > a {
+  font-size: 1rem;
+  font-weight: 400;
+}
+@media (max-width: 69rem) {
+  .message > p {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 32px;
+  }
+  .message > span {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 0.98rem;
+    opacity: 0.98;
+  }
+}
+@media (max-width: 35rem) {
+  .message {
+    padding: 32px;
+
+    background-image: url("../component-assets/mobileBackground.svg");
+    height: 220px;
+  }
+  .buttonFilled,
+  .buttonOutline {
+    padding: 12px 16px;
+  }
+  .message > p {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
+  .buttonSection {
+    gap: 32px;
+  }
+}

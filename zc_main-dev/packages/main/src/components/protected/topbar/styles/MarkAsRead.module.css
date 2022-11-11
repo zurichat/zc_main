@@ -1,0 +1,166 @@
+.container {
+  max-width: 100%;
+  margin: 10px 20px;
+  height: 80vh;
+}
+
+.subhead {
+  font-family: "Lato";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0em;
+  color: var(--text-color-gray-1);
+  margin-top: 20px;
+}
+
+.subHeadUl {
+  margin: 10px 0px;
+}
+.section {
+  text-align: left;
+  display: flex;
+  margin: 10px 0px;
+}
+
+.option,
+.markAll,
+.shortcut,
+.shortcutP {
+  font-family: Lato;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--text-color-normal);
+}
+
+.option {
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.option img {
+  padding-right: 8px;
+  height: 14px;
+}
+
+/* .markAll {
+  margin-bottom: 20px;
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.markAll .prompt {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 17px;
+  width: 17px;
+  background-color: #eee;
+}
+
+
+.markAll .prompt:checked ~ .checkmark {
+  background-color: #00b87c;
+}
+
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+
+.markAll .prompt:checked ~ .checkmark:after {
+  display: block;
+}
+
+
+.markAll .checkmark:after {
+left: 5px;
+  top: 3px;
+  width: 6px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+} */
+
+/* .prompt {
+  display: none;
+}
+.prompt + .checkmark {
+  display: inline-block;
+  position: relative;
+  top: -1px;
+  width: 12px;
+  height: 12px;
+  margin: -1px 0px 0 0;
+  vertical-align: middle;
+  background: white left top no-repeat;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+.prompt:checked + .checkmark {
+  background: #D9534F -19px top no-repeat;
+}
+.prompt + .checkmark {
+  margin-right: 4px;
+} */
+
+.shortcut {
+  margin-left: 23px;
+  margin-bottom: 15px;
+  list-style-type: disc;
+}
+
+.shortcutP {
+  margin-top: 20px;
+}
+
+.esc {
+  background-color: #f9f9f9;
+  color: #00b87c;
+  border: 1px solid #00b87c;
+  border-radius: 3px;
+  /* box-shadow: 1px 1px 1px 1px; */
+  padding: 4px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 3px;
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    margin: 20px;
+    margin-right: 20px;
+  }
+}

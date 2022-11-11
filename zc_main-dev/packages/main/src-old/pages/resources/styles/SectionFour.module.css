@@ -1,0 +1,274 @@
+/* Font */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
+
+/* using the mobile first approach */
+
+/* mobile first */
+.container {
+  padding: 2em 1.5em;
+  font-family: "Lato", sans-serif;
+}
+
+.divider {
+  display: block;
+}
+.divider > img {
+  margin: 1em auto 2em auto;
+  width: 5em;
+  display: flex;
+}
+
+.intro {
+  font-size: 16px;
+  line-height: 24.8px;
+  font-weight: bold;
+  color: #000;
+  text-decoration: underline;
+  font-family: "Lato", sans-serif;
+}
+
+.section_one {
+  margin: 1em 0em;
+}
+
+.description_one,
+.description_two {
+  margin-bottom: 1.5em;
+  border: 1px solid #0000004d;
+}
+
+.description_one > h3,
+.description_two > h3 {
+  font-size: 14px;
+  color: hsla(0, 0%, 0%, 0.376);
+  font-weight: 400;
+  line-height: 183.5%;
+  letter-spacing: -2%;
+}
+.description_one > img,
+.description_two > img {
+  width: 100%;
+  margin: 1em 0;
+}
+
+.icon_container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.like,
+.comment {
+  align-items: center;
+  display: flex;
+}
+.like > i,
+.comment > i {
+  opacity: 0.5;
+  margin-right: 0.5em;
+  position: relative;
+  font-size: 0.8em;
+  color: #000;
+}
+.like > h3,
+.comment > h3 {
+  font-size: 12.09px;
+  margin: 0;
+  font-weight: bold;
+  line-height: 20.7px;
+}
+
+.section_two {
+  margin: 2em 0 1em 0;
+}
+
+.header > img {
+  width: 5em;
+  margin-bottom: 1em;
+}
+
+.header_description > h3 {
+  margin-top: 1em;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 83.5%;
+  letter-spacing: -2%;
+  text-align: center;
+}
+
+.header_description > h5 {
+  margin-top: 1.5em;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 83.5%;
+  letter-spacing: -2%;
+  width: 100%;
+  text-align: center;
+}
+
+.section_three {
+  margin: 2em 0;
+}
+
+.product_name {
+  font-size: 14px;
+  line-height: auto;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+
+.product {
+  margin-bottom: 1em;
+}
+
+.products_container {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.product > ul > li {
+  padding: 1em 0;
+  color: #00b87c;
+  font-size: 14px;
+  text-align: center;
+  display: none;
+}
+
+.product > ul > li:nth-child(-n + 2) {
+  display: block;
+}
+
+.footer_body {
+  display: none;
+}
+.section_four > p {
+  display: none;
+}
+/* small tablet */
+@media screen and (min-width: 680px) {
+}
+
+/* laptop and large screen */
+@media screen and (min-width: 960px) {
+  .container {
+    padding: 2em 3em;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .intro {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 1.5em;
+  }
+
+  .section_one {
+    display: flex;
+    column-gap: 5em;
+  }
+
+  .description_one {
+    margin-bottom: 2em;
+  }
+  .description_one > h3,
+  .description_two > h3 {
+    font-size: 18px;
+    width: 90%;
+    margin-bottom: 3em;
+  }
+
+  .icon_container {
+    margin-top: 1em;
+  }
+  .like > i,
+  .comment > i {
+    font-size: 1em;
+  }
+  .like > h3,
+  .comment > h3 {
+    font-size: 18px;
+  }
+
+  .section_two {
+    margin: 3em 0 2em 0;
+  }
+
+  .header {
+    display: flex;
+    column-gap: 15em;
+    align-items: baseline;
+  }
+  .header > img {
+    width: 6em;
+    margin-bottom: 2em;
+    margin-left: 3em;
+  }
+  .header_description > h3 {
+    font-size: 32px;
+  }
+  .header_description > h5 {
+    font-size: 16px;
+  }
+
+  .products_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;
+  }
+
+  .product {
+    width: 9em;
+  }
+
+  .product_name {
+    font-size: 18px;
+  }
+
+  .product > ul > li {
+    font-size: 18px;
+    display: block;
+  }
+
+  .footer_body {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 1em;
+  }
+
+  .footer_others {
+    width: 65%;
+  }
+
+  .other_list {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .other_list > li {
+    font-size: 16px;
+    letter-spacing: 0.25em;
+    opacity: 0.6;
+    padding-right: 1em;
+  }
+  .footer_download {
+    display: flex;
+    justify-content: space-evenly;
+    width: 30%;
+  }
+  .icons_box > img {
+    padding-left: 1em;
+  }
+
+  .section_four > p {
+    display: block;
+    opacity: 0.6;
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 1200px) {
+}

@@ -1,0 +1,195 @@
+.signout_wrapper,
+.account_reset_container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0.94rem;
+  --type-scale: 0.8;
+  color: #242424;
+}
+
+.session_container {
+  padding: 1rem 0;
+}
+
+.session_content,
+.account_reset_content {
+  padding: 2rem 0.75rem;
+  border: 1px solid #bebebe;
+  border-radius: 0.19rem;
+}
+
+.signout_header,
+.account_reset_header {
+  padding: 0.2rem 0;
+}
+
+.signout_header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.signout_header img {
+  margin-right: 0.5rem;
+}
+
+.signout_wrapper header h3,
+.signout_wrapper section h4,
+.account_reset_container h3,
+.account_reset_container h4 {
+  font-size: calc(1.56rem * var(--type-scale, 1));
+  line-height: calc(2.03rem * var(--type-scale, 1));
+  font-weight: 700;
+}
+
+.signout_content {
+  padding-bottom: 2.5rem;
+}
+
+.signout_wrapper section p,
+.account_reset_container article p {
+  font-size: calc(1.31rem * var(--type-scale, 1));
+  line-height: calc(1.706rem * var(--type-scale, 1));
+  font-weight: 400;
+}
+
+.line {
+  height: 0.05rem;
+  width: 90%;
+  background-color: #3a3a3a;
+}
+
+.dot {
+  width: 0.25rem;
+  height: 0.25rem;
+  background-color: #000;
+  border-radius: 50%;
+  margin-right: 0.8rem;
+}
+
+li.action_item {
+  display: flex;
+  align-items: baseline;
+  padding: 0.4rem 0;
+}
+
+.signout_form {
+  padding: 1rem 0;
+  margin-top: 1rem;
+}
+
+.signout_form .form_group {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.signout_form input {
+  padding: 0.625rem;
+  border-radius: 0.19rem;
+  border: 1px solid #bebebe;
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size: calc(1.31rem * var(--type-scale, 1));
+  line-height: calc(1.706rem * var(--type-scale, 1));
+  font-weight: 400;
+}
+
+.submit_btn,
+.account_reset_btn {
+  width: 100%;
+  padding: 0.65rem 3rem;
+  border: 1px solid #ed2222;
+  border-radius: 0.19rem;
+  background-color: rgb(237, 34, 34);
+  color: #fff;
+  outline: none;
+  font-size: calc(1.31rem * var(--type-scale, 1));
+  line-height: calc(1.706rem * var(--type-scale, 1));
+  font-weight: 700;
+  transition: all 0.4s ease-out;
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+}
+
+.submit_btn:hover {
+  background-color: rgba(237, 34, 34, 0.8);
+}
+
+.account_reset_btn {
+  border-color: rgb(0, 184, 124);
+  background-color: rgb(0, 184, 124);
+  margin-top: 0.5rem;
+}
+
+.account_reset_btn:hover {
+  background-color: rgba(0, 184, 124, 0.8);
+}
+
+.submit_btn:hover,
+.account_reset_btn:hover {
+  box-shadow: 0 0.2rem 0.625rem rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.3);
+}
+
+@media only screen and (min-width: 600px) {
+  .signout_form .form_group {
+    flex-direction: row;
+  }
+
+  .signout_form input {
+    width: 25%;
+    margin: 0;
+    margin-right: 2rem;
+  }
+
+  .submit_btn,
+  .account_reset_btn {
+    width: auto;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .session_content {
+    padding: 2rem;
+  }
+
+  .account_reset_content {
+    padding-right: 7rem;
+    padding-left: 2rem;
+  }
+
+  .dot {
+    width: 0.35rem;
+    height: 0.35rem;
+  }
+
+  .signout_form input,
+  .submit_btn {
+    flex: none;
+  }
+}
+
+@media only screen and (min-width: 985px) {
+  .account_reset_content {
+    padding-right: 21rem;
+  }
+
+  li.action_item {
+    align-items: center;
+  }
+
+  .dot {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .signout_wrapper,
+  .account_reset_container {
+    max-width: 73%;
+    --type-scale: 1;
+  }
+}
