@@ -9,9 +9,10 @@ import Subscribe from "./pages/Subscribe";
 import whyzurichat from "./pages/whyzurichat";
 import Cookies from "./pages/Cookies";
 import ContactUs from "./pages/ContactUs";
-
+import DownloadDesktopSectionTwo from "./pages/DownloadDesktopSectionTwo";
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
+import DownloadMobileSectionTwo from "./pages/DownloadMobileSectionTwo";
 
 const resources = {};
 
@@ -26,6 +27,8 @@ const Translations = [
   ...ContactUs,
   ...SignOut,
   ...ResetPassword,
+  ...DownloadDesktopSectionTwo,
+  ...DownloadMobileSectionTwo,
 
   // Components
   ...NavBar,
