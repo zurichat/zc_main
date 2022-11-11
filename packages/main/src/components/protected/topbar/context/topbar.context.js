@@ -2,7 +2,7 @@ import { createContext, useState, useRef, useContext } from "react";
 import { authAxios } from "../utils/api";
 import { ProfileContext } from "./profile-modal.context";
 
-export const TopbarContext = createContext(null);
+export const TopbarContext = createContext();
 export const TopbarProvider = ({ children }) => {
   const modalRef = useRef();
 
@@ -76,7 +76,7 @@ export const TopbarProvider = ({ children }) => {
         // console.log('response2', res.data.data.presence)
       })
       .catch(err => {
-        console.error(err?.response?.data);
+        console.error(err.response.data);
       });
   };
   // Passes all functions and states to the state object

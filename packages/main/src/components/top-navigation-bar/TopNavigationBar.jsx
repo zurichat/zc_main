@@ -18,6 +18,10 @@ import ar from "./assets/language/ar.png";
 import he from "./assets/language/he.png";
 import pt from "./assets/language/pt.png";
 import world from "./assets/language/world.png";
+import pp from "./assets/language/pp.png";
+import ProfilePicView from "../protected/topbar/components/ProfilePicView";
+import { TopbarProvider } from "../protected/topbar/context/topbar.context";
+import { ProfileProvider } from "../protected/topbar/context/profile-modal.context";
 
 export default function TopNavigationBar() {
   const { t } = useTranslation();
@@ -518,7 +522,19 @@ export default function TopNavigationBar() {
               </Link>
             </li>
           )}
+          {!isUserLoggedIn ? (
+            ""
+          ) : (
+            <div className={TopNavigationBarStyles.profilePicture}>
+              <img src={pp} alt="profile" />
+            </div>
+          )}
         </ul>
+        {/* <ProfileProvider>
+          <TopbarProvider>
+            <ProfilePicView />
+          </TopbarProvider>
+        </ProfileProvider> */}
       </nav>
     </header>
   );

@@ -166,6 +166,13 @@
   border-bottom: 0.2rem solid #00b87c;
 }
 
+.profilePicture {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 /* .toggle {
     _margin-right: 12px;
   } */
