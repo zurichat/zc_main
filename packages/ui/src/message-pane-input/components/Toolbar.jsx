@@ -190,9 +190,15 @@ const Toolbar = props => {
           {inlineStyles.map((style, index) => {
             return renderInlineStyleButton(style, index);
           })}
+          <span style={{ paddingInline: "4px" }}>
+            <BorderIcon />
+          </span>
           <UnstyledButton>
             <LinkIcon />
           </UnstyledButton>
+          <span style={{ paddingInline: "4px" }}>
+            <BorderIcon />
+          </span>
           {blockStyles.map((block, index) => {
             return renderBlockStyleButton(block, index);
           })}
@@ -227,6 +233,9 @@ const Toolbar = props => {
           </div>
         </FormatContainer>
         <SendContainer>
+          <UnstyledButton onClick={() => setshowAttachInputBox(true)}>
+            <ClipIcon />
+          </UnstyledButton>
           <UnstyledButton>
             <AtIcon />
           </UnstyledButton>
@@ -236,9 +245,16 @@ const Toolbar = props => {
               {emojiSelect}
             </StyledEmojiSelectWrapper>
           }
+          <span style={{ paddingInline: "4px" }}>
+            <BorderIcon />
+          </span>
           <UnstyledButton onClick={() => setshowAttachInputBox(true)}>
             <ClipIcon />
           </UnstyledButton>
+          <span style={{ paddingInline: "4px" }}>
+            <BorderIcon />
+          </span>
+
           <UnstyledButton onClick={handleClickSendMessage || handleAttachMedia}>
             <SendIcon />
           </UnstyledButton>
