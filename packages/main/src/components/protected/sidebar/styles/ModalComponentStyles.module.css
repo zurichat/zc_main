@@ -49,7 +49,7 @@
   cursor: pointer;
 }
 .modalSection div:hover > p,
-.submodalSection div:hover > {
+.submodalSection div:hover > p {
   color: #fff;
 }
 .submodalSection {
