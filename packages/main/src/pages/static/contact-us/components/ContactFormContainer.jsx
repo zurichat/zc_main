@@ -38,7 +38,6 @@ function ContactFormContainer() {
       ...values,
       email: userAuth.email ? userAuth.email : values.email
     }));
-  }, []);
 
   const {
     acceptedFiles,

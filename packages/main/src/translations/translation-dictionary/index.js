@@ -1,5 +1,6 @@
 // Export all translations
 import Home from "./pages/Home";
+import About from "./pages/About";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import SignOut from "./pages/SignOut";
@@ -10,16 +11,18 @@ import whyzurichat from "./pages/whyzurichat";
 import Cookies from "./pages/Cookies";
 import ContactUs from "./pages/ContactUs";
 import Plugins from "./pages/Plugins";
+import Pricing from "./pages/Pricing";
 
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
-import About from "./pages/About";
+import SideBar from "./components/SideBar";
 
 const resources = {};
 
 const Translations = [
   // Pages
   ...Home,
+  ...About,
   ...Login,
   ...SignUp,
   ...whyzurichat,
@@ -30,10 +33,12 @@ const Translations = [
   ...ResetPassword,
   ...Plugins,
   ...About,
+  ...Pricing,
 
   // Components
   ...NavBar,
-  ...Footer
+  ...Footer,
+  ...SideBar
 ];
 
 Translations.forEach(o => {
