@@ -18,10 +18,8 @@ import ar from "./assets/language/ar.png";
 import he from "./assets/language/he.png";
 import pt from "./assets/language/pt.png";
 import world from "./assets/language/world.png";
-import pp from "./assets/language/pp.png";
-import ProfilePicView from "../protected/topbar/components/ProfilePicView";
-import { TopbarProvider } from "../protected/topbar/context/topbar.context";
-import { ProfileProvider } from "../protected/topbar/context/profile-modal.context";
+import profileAvatar from "./assets/language/profileAvatar.png";
+import ModalProfileImage from "./assets/language/ModalProfileImage.png";
 
 export default function TopNavigationBar() {
   const { t } = useTranslation();
@@ -33,6 +31,10 @@ export default function TopNavigationBar() {
 
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [isUserLoggedIn, setUserLoggedIn] = React.useState(false);
+
+  const [modal, setModal] = React.useState(0);
+  const [profile, setProfile] = React.useState(ModalProfileImage);
+  const [profileIcon, setProfileIcon] = React.useState(profileAvatar);
 
   const checkIfUserIsLogged = () => {
     let user = JSON.parse(sessionStorage.getItem("user"));
@@ -513,17 +515,72 @@ export default function TopNavigationBar() {
           {!isUserLoggedIn ? (
             ""
           ) : (
-            <div className={TopNavigationBarStyles.profilePicture}>
-              <img src={pp} alt="profile" />
+            <div
+              onClick={() => {
+                setModal(!modal);
+              }}
+              className={TopNavigationBarStyles.profilePicture}
+            >
+              <img src={profileIcon} alt="profile" />
             </div>
           )}
         </ul>
-        {/* <ProfileProvider>
-          <TopbarProvider>
-            <ProfilePicView />
-          </TopbarProvider>
-        </ProfileProvider> */}
       </nav>
+      <div
+        className={
+          modal
+            ? `${TopNavigationBarStyles.profileModal}`
+            : `${TopNavigationBarStyles.profileModalClose}`
+        }
+      >
+        <p className={TopNavigationBarStyles.profileHead}>Profile photo</p>
+        <div className={TopNavigationBarStyles.profileImage}>
+          <img src={profile} alt="profile-image" />
+        </div>
+        <div className="profileUpload">
+          <label
+            htmlFor="file-upload"
+            className={TopNavigationBarStyles.fileupload}
+          >
+            Upload Photo
+          </label>
+          <input
+            onChange={e => {
+              setProfile(URL.createObjectURL(e.target.files[0]));
+            }}
+            id="file-upload"
+            type="file"
+            className={TopNavigationBarStyles.uploadInput}
+          />
+        </div>
+        <p
+          onClick={() => {
+            setProfile(ModalProfileImage);
+          }}
+          className={TopNavigationBarStyles.profileRemove}
+        >
+          Remove Photo
+        </p>
+        <div className={TopNavigationBarStyles.profileOption}>
+          <button
+            onClick={() => {
+              setModal(!modal);
+            }}
+            className={TopNavigationBarStyles.profileCancel}
+          >
+            Cancel
+          </button>
+          <button
+            onClick={() => {
+              setProfileIcon(profile);
+              setModal(!modal);
+            }}
+            className={TopNavigationBarStyles.profileSave}
+          >
+            Save Changes
+          </button>
+        </div>
+      </div>
     </header>
   );
 }

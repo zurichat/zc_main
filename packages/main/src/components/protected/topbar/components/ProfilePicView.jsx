@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
-// import { TopbarContext } from "../context/Topbar";
 import { TopbarContext } from "../context/topbar.context";
-// import { ProfileContext } from "../context/ProfileModal";
 import { ProfileContext } from "../context/profile-modal.context";
 
 import styles from "../styles/ProfilePicView.module.css";
@@ -9,7 +7,6 @@ import styles from "../styles/ProfilePicView.module.css";
 const ProfilePicView = () => {
   const { profilePicView, setProfilePicView } = useContext(TopbarContext);
   const { userProfileImage, user } = useContext(ProfileContext);
-  console.log(profilePicView);
 
   return (
     <div className={`${styles.ppv_wrapper}`}>
