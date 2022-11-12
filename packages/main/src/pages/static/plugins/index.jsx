@@ -103,6 +103,7 @@ export default function Homepage() {
               pContent2={t("plugin.dm.description")}
               href="/signup"
               aContent={t("plugin.dm.link")}
+              rowOrder={style.ft_row_reverse}
             />
             {/* music plugin */}
             <FeatureRow
