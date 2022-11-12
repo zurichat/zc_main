@@ -19,6 +19,7 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
     history.push("/create-workspace/step-2");
 
   const [values, setValues] = useState([""]);
+  const [alert, setAlert] = useState(false);
 
   const addEmailInput = () => {
     setValues([...values, ""]);
@@ -52,10 +53,10 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
     await window.navigator.clipboard.writeText(
       `${BASE_CLIENT_URL}/workspace/${organizationID}`
     );
-    alert(
-      "link has been copied: " +
-        `${BASE_CLIENT_URL}/workspace/${organizationID}`
-    );
+    setAlert(true);
+    setTimeout(() => {
+      setAlert(false);
+    }, 2300);
   };
 
   return (
@@ -65,6 +66,12 @@ export default function Index({ createWorkspaceData, setCreateWorkspaceData }) {
           {user ? <span>Signed in as {user.email}</span> : null}
         </div>
 
+        {alert && (
+          <Alert>
+            <h6>link has been copied:</h6>
+            {`${BASE_CLIENT_URL}/workspace/${organizationID}`}
+          </Alert>
+        )}
         <div className={styles.centerWrapper}>
           <h4> Step 3 of 3</h4>
           <h1>
@@ -273,4 +280,17 @@ export const Button = styled.button`
   @media (max-width: 35rem) {
     font-size: 1rem;
   }
+`;
+
+export const Alert = styled.div`
+  font-size: 0.7rem;
+  position: fixed;
+  top: 13%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 19px 19px 37px #c5c5c5, -19px -19px 37px #fbfbfb;
+  z-index: 99999;
 `;

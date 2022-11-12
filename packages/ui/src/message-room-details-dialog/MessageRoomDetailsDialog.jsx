@@ -69,7 +69,7 @@ function MessageRoomDetailsDialog({
                   />
                 </ChannelName>
                 <Button onClick={close}>
-                  <AiOutlineClose size="20px" color="gray" />
+                  <AiOutlineClose size="20px" />
                 </Button>
               </ModalTopic>
             </div>
@@ -459,7 +459,7 @@ const FileWrapper = styled.div`
 `;
 const FileContent = styled.h4`
   font-weight: 500;
-  margin-left: 4px;
+  padding-left: 20px;
 `;
 const MembersInput = styled.input`
   outline: none;
@@ -481,6 +481,12 @@ const Button = styled.button`
   border: none;
   background-color: white;
   cursor: pointer;
+  outline: transparent;
+  border-radius: 4px;
+
+  &:hover {
+    border: 2px solid #1d1d1d;
+  }
 `;
 const ChannelName = styled.div`
   display: flex;
@@ -496,12 +502,15 @@ const ChannelName = styled.div`
 //   cursor: pointer;
 // `
 const TabLists = styled(TabList)`
-  margin: 20px 0;
-  background-color: white;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  && {
+    margin: 20px 0;
+    // background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    overflow-x: auto;
+  }
 `;
 // const BorderBottom=styled.div`
 //   // padding:-1em;
@@ -530,14 +539,17 @@ const DialogOverlays = styled(DialogOverlay)`
   z-index: 2;
 `;
 const DialogContents = styled(DialogContent)`
-  width: 60%;
-  height: 80%;
-  overflow-y: auto;
-  // background-color:#F9F9F9;
-  &::-webkit-scrollbar {
-    width: 5px;
-    background-color: #f6f6f6;
-    height: 5px;
+  // && - increased the specificity over "@reach/dialog/styles.css"
+  && {
+    width: clamp(350px, 90vw, 950px);
+    height: 80%;
+    overflow-y: auto;
+    // background-color:#F9F9F9;
+    &::-webkit-scrollbar {
+      width: 5px;
+      background-color: #f6f6f6;
+      height: 5px;
+    }
   }
 `;
 const Description = styled.div`
@@ -562,6 +574,7 @@ const EditContent = styled.h4`
   max-width: 70%;
   margin-top: 5px;
   color: #8b8b8b;
+  padding-left: 20px;
 `;
 const Selection = styled.div`
   display: flex;
