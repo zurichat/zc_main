@@ -24,6 +24,8 @@ import Pricing from "./pages/Pricing";
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import SideBar from "./components/SideBar";
+import DownloadDesktopSectionTwo from "./pages/DownloadDesktopSectionTwo";
+import DownloadMobileSectionTwo from "./pages/DownloadMobileSectionTwo";
 
 const resources = {};
 
@@ -49,6 +51,8 @@ const Translations = [
   ...DownloadWindows,
 
   ...Pricing,
+  ...DownloadDesktopSectionTwo,
+  ...DownloadMobileSectionTwo,
 
 
   // Components
