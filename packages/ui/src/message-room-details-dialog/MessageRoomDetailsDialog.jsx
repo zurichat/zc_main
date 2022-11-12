@@ -51,7 +51,6 @@ function MessageRoomDetailsDialog({
     setShowLeaveChannelModal(!showLeaveChannelModal);
   const toggleArchiveChannel = () => setShowArchiveChannel(!showArchiveChannel);
 
-  console.log(config, "from MessageRoomDetailsDialog");
   return (
     <div className="App">
       <DialogOverlays isOpen={showDialog} onDismiss={close}>
@@ -222,8 +221,7 @@ function MembersPanel({ config }) {
 
   const roomData =
     "roomInfo" in config ? config.roomInfo : dummyHeaderConfig.roomInfo;
-  console.log(dummyHeaderConfig.roomInfo, "dummyHeaderConfig.roomInfo");
-  console.log(config.roomInfo, "config.roomInfo");
+
   const {
     membersList: roomMembers,
     addmembersevent,
