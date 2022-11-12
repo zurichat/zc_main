@@ -100,6 +100,7 @@ const Image = styled.img`
   height: 48px;
   object-fit: cover;
 `;
+
   // changes was made from here to fix the design 
 
 const Flex = styled.div`
@@ -141,6 +142,8 @@ const Logo_Members = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
+
+// and ends here 
 const TryDifferentWrapper = styled.div`
   display: flex;
   align-items: baseline;
