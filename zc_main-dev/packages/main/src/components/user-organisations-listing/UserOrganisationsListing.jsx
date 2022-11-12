@@ -18,7 +18,7 @@ const UserOrganization = ({ organizations, user }) => {
 
         {organizations.map(organization => (
           <OrganizationWrapper key={organization.id}>
-            <Image src={ZuriChatLogo} alt="" />
+            <Image src={ZuriChatLogo} alt="zuri" />
             <Link to={`/workspace/${organization.id}/${defaultPluginRoom}`}>
               <Flex>
                 <Organization>
@@ -153,7 +153,6 @@ const TryDifferentWrapper = styled.div`
 `;
 const TextBottom = styled.p`
   font-weight: 400;
-  // font-size: ${18 / 16}rem;
   font-family: "Lato" sans-serif;
 `;
 const SecondText = styled(TextBottom)`
