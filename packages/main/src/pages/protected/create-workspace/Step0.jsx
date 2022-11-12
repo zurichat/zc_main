@@ -69,7 +69,6 @@ export default function Index() {
               Privacy Policy, and Cookie Policy.
             </FadedText>
           </TextSection>
-    
         </TopSection>
       </Wrapper>
       {user ? (
