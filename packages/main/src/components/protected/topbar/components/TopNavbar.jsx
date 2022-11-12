@@ -152,7 +152,13 @@ const TopNavbar = () => {
 
   const StatusToolTip = ({ title }) => {
     return (
-      <ReactTooltip id="toggleStatus" place="left" effect="solid" type="dark">
+      <ReactTooltip
+        id="toggleStatus"
+        effect="solid"
+        type="dark"
+        offset="{'bottom': -10, 'left': 20}"
+        arrowColor="transparent"
+      >
         {title}
       </ReactTooltip>
     );
