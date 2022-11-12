@@ -120,6 +120,9 @@ all:none;
   line-height: 18px;
 }
 
+.header {
+  padding: 10px;
+}
 .header span {
   color: #8c8c8c;
   font-size: 11px;
