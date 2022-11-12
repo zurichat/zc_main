@@ -316,6 +316,9 @@
   margin-bottom: 5px;
   transition: 100ms ease background, 100ms ease color;
 }
+.optionSection:last-child p {
+  margin-bottom: 1.3rem;
+}
 
 .optionSection a {
   color: #3a3a3a;
