@@ -11,14 +11,19 @@ import whyzurichat from "./pages/whyzurichat";
 import Cookies from "./pages/Cookies";
 import ContactUs from "./pages/ContactUs";
 import Plugins from "./pages/Plugins";
+
 import DownloadDesktop from "./pages/DownloadDesktop";
 import DownloadMobile from "./pages/DownloadMobile";
 import DownloadMac from "./pages/DownloadMac";
 import DownloadIos from "./pages/DownloadIos";
 import DownloadWindows from "./pages/DownloadWindows";
 
+import Pricing from "./pages/Pricing";
+
+
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
+import SideBar from "./components/SideBar";
 
 const resources = {};
 
@@ -36,14 +41,20 @@ const Translations = [
   ...ResetPassword,
   ...Plugins,
   ...About,
+
   ...DownloadDesktop,
   ...DownloadMobile,
   ...DownloadMac,
   ...DownloadIos,
   ...DownloadWindows,
+
+  ...Pricing,
+
+
   // Components
   ...NavBar,
-  ...Footer
+  ...Footer,
+  ...SideBar
 ];
 
 Translations.forEach(o => {
