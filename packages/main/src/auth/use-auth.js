@@ -36,12 +36,14 @@ function useProvideAuth() {
       email,
       password
     });
-    const { data } = response.data;
+    const { data } = await response.data;
+    console.log(data.user.token);
     const fetchUserWorkspacesResponse = await axios.get(
       `https://api.zuri.chat/users/${data.user.email}/organizations`,
       {
         headers: {
-          Authorization: `Bearer ${data.user.token}`
+          "Authorization": `Bearer ${data.user.token}`,
+          "Content-Type": "application/json"
         }
       }
     );
