@@ -189,6 +189,16 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
           </Preview>
         ) : null}
         <div className="RichEditor-root">
+          <Toolbar
+            editorState={editorState}
+            setEditorState={setEditorState}
+            emojiSelect={<EmojiSelect />}
+            sendMessageHandler={sendMessage}
+            sendAttachedFileHandler={onAttachFile}
+            sentAttachedFile={sentAttachedFile =>
+              setSentAttachedFile(sentAttachedFile)
+            }
+          />
           <Editor
             editorState={editorState}
             onChange={onChange}
@@ -204,16 +214,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
           suggestions={suggestions}
           // onAddMention={m => console.log(m)}
         />
-        <Toolbar
-          editorState={editorState}
-          setEditorState={setEditorState}
-          emojiSelect={<EmojiSelect />}
-          sendMessageHandler={sendMessage}
-          sendAttachedFileHandler={onAttachFile}
-          sentAttachedFile={sentAttachedFile =>
-            setSentAttachedFile(sentAttachedFile)
-          }
-        />
+
         {/* <div>
           {showEmoji && (
             <Picker perLine={7} showPreview={false} onChange={true} />
