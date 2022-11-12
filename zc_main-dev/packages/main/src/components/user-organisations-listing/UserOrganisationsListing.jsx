@@ -100,6 +100,7 @@ const Image = styled.img`
   height: 48px;
   object-fit: cover;
 `;
+  // changes was made from here to fix the design 
 
 const Flex = styled.div`
   display: flex;
