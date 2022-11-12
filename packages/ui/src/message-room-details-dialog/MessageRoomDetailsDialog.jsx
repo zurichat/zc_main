@@ -277,7 +277,7 @@ function MembersPanel({ config }) {
           return { value: item._id, label: item.email };
         });
         const channelUserIds = membersList.map(member => member._id);
-        console.log(channelUserIds, "channelUserIds");
+
         // check to see if the user is already in a channel
         const checkedUsers = users.map(user => {
           if (channelUserIds.includes(user.value)) {
@@ -642,6 +642,7 @@ const RemoveLink = styled.p`
   color: blue;
   font-weight: 500;
   font-size: 14px;
+  cursor: pointer;
 
   &:hover {
     text-decoration: underline;
