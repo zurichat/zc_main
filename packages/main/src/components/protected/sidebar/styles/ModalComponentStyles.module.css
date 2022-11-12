@@ -40,6 +40,7 @@
 }
 .modalSection {
   display: flex;
+  justify-content: center;
   padding: 5px auto;
   width: 100%;
   margin: 5px auto;
@@ -103,8 +104,6 @@ all:none;
   height: 15px;
   background: #e7e7e7;
   width: 100%;
-  margin-top: 5px;
-  margin-bottom: 10px;
 }
 
 .logo {
