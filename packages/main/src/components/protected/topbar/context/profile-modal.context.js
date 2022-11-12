@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-export const ProfileContext = createContext();
+export const ProfileContext = createContext(null);
 export const ProfileProvider = ({ children }) => {
   const [modal, setModal] = useState(false);
   const [showProfile, setShowProfile] = useState(false);

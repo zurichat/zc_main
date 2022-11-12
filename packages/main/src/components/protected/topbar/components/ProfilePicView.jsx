@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
-import { TopbarContext } from "../context/topbar.context";
-import { ProfileContext } from "../context/profile-modal.context";
-
+import { TopbarContext } from "../context/Topbar";
+import { ProfileContext } from "../context/ProfileModal";
 import styles from "../styles/ProfilePicView.module.css";
 
 const ProfilePicView = () => {

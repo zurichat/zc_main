@@ -2,7 +2,7 @@ import { createContext, useState, useRef, useContext } from "react";
 import { authAxios } from "../utils/api";
 import { ProfileContext } from "./profile-modal.context";
 
-export const TopbarContext = createContext();
+export const TopbarContext = createContext(null);
 export const TopbarProvider = ({ children }) => {
   const modalRef = useRef();
 
