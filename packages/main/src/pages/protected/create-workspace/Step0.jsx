@@ -90,9 +90,10 @@ const Wrapper = styled.div`
 
 const TopSection = styled.section`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  width: 100%;
+  place-items: center;
   padding-top: 132px;
-  padding-left: 55px;
 
   @media (max-width: 1000px) {
     display: flex;
