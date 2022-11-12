@@ -11,10 +11,11 @@ export const MessageBoardContainer = styled.section`
     flex: 1;
     width: 100%;
     display: flex;
-    overflow-y: auto;
-    overflow-x: hidden;
     flex-direction: column;
+    overflow: hidden scroll;
     box-sizing: border-box;
+    padding-top: 1.5rem;
+
     .msg-container {
       margin: 8px 10px;
       display: flex;
@@ -50,7 +51,7 @@ export const MessageBoardContainer = styled.section`
   .input-text {
     width: 100%;
     padding-inline: 2px;
-    padding: 0.3rem;
+    padding: 0.5rem 0.5rem 0.7rem 0.5rem;
 
     ${
       "" /* @media (max-width: 768px) {
