@@ -18,7 +18,7 @@ const UserOrganization = ({ organizations, user }) => {
 
         {organizations.map(organization => (
           <OrganizationWrapper key={organization.id}>
-            <Image src={ZuriChatLogo} alt="zuri" />
+            <Image src={ZuriChatLogo} alt="" />
             <Link to={`/workspace/${organization.id}/${defaultPluginRoom}`}>
               <Flex>
                 <Organization>
@@ -99,10 +99,7 @@ const Image = styled.img`
   width: 48px;
   height: 48px;
   object-fit: cover;
-`;
-
-  // changes was made from here to fix the design 
-
+`;  
 const Flex = styled.div`
   display: flex;
   flex-direction: row;
@@ -142,8 +139,6 @@ const Logo_Members = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
-
-// and ends here 
 const TryDifferentWrapper = styled.div`
   display: flex;
   align-items: baseline;
@@ -155,6 +150,7 @@ const TryDifferentWrapper = styled.div`
 `;
 const TextBottom = styled.p`
   font-weight: 400;
+  // font-size: ${18 / 16}rem;
   font-family: "Lato" sans-serif;
 `;
 const SecondText = styled(TextBottom)`
