@@ -137,7 +137,7 @@ export default function Homepage() {
               <p className={`${style.sign_up_right_p}`}>
                 {t("plugin.signup.description")}
               </p>
-              <a href="/signup">
+              <a href="/plugins-settings">
                 <button className={`${style.sign_up_btn}`}>
                   {t("plugin.signup.link")}
                 </button>

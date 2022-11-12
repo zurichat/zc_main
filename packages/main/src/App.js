@@ -18,6 +18,7 @@ import {
   ContactUsPage,
   DownloadsPage,
   PluginsPage,
+  PluginSettingsPage,
   PricingPage,
   InvitePage,
   ResetPassword,
@@ -87,6 +88,11 @@ const App = () => (
           <Route exact path="/contact-us" component={ContactUsPage} />
           <Route exact path="/downloads" component={DownloadsPage} />
           <Route exact path="/plugins" component={PluginsPage} />
+          <Route
+            exact
+            path="/plugins-settings"
+            component={PluginSettingsPage}
+          />
           <Route exact path="/pricing" component={PricingPage} />
           <Route path="/invites/:id" component={InvitePage} />
           <Route exact path="/reset-password" component={ResetPassword} />
