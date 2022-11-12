@@ -61,21 +61,21 @@ const DownloadsMobile = () => {
               href="https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing"
               className={downloadStyles.downloadButton}
             >
-              {t("download_mobile.section_two.windows")}
+              {t("download.desktopBtn.windows")}
               <img className={`px-2`} src={windows} alt="download icon" />
             </a>
             <a href="/download-app" className={downloadStyles.downloadButton}>
-              {t("download_mobile.section_two.mac")}
+              {t("download.desktopBtn.mac")}
               <img className={`px-2`} src={apple} alt="download icon" />
             </a>
           </div>
           <div className={`${downloadStyles.downloadButtonContainer} mb-4`}>
             <a href={exe.link} className={downloadStyles.downloadButton}>
-              {t("download_mobile.section_two.android")}
+              {t("download.mobileBtn.android")}
               <img className={`px-2`} src={android} alt="download icon" />
             </a>
             <a href="/download-app" className={downloadStyles.downloadButton}>
-              {t("download_mobile.section_two.ios")}
+              {t("download.mobileBtn.apple")}
               <img className={`px-2`} src={apple} alt="download icon" />
             </a>
           </div>
