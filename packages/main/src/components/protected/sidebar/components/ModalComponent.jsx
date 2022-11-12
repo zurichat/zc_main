@@ -140,10 +140,6 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
               ref={hoverRef}
               className={`d-flex flex-column ${styles.submodalSection}`}
             >
-              <div onClick={() => history.push("/plugins")}>
-                <p> Plugins</p>
-              </div>
-              <hr className={styles.modalDivider} />
               <div>
                 <p>Analytics*</p>
               </div>
