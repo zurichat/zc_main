@@ -265,6 +265,7 @@ function MembersPanel({ config }) {
   useEffect(() => {
     const currentWorkspace = localStorage.getItem("currentWorkspace");
     const token = sessionStorage.getItem("token");
+    setisLoading(true);
     axios
       .get(`${BASE_API_URL}/organizations/${currentWorkspace}/members`, {
         headers: { Authorization: `Bearer ${token}` }
@@ -273,11 +274,25 @@ function MembersPanel({ config }) {
         const users = r.data.data.map(item => {
           return { value: item._id, label: item.email };
         });
-        setUserList(users);
+        const channelUserIds = membersList.map(member => member._id);
+        const checkedUsers = users.map(user => {
+          if (channelUserIds.includes(user.value)) {
+            return {
+              ...user,
+              label: `${user.label} (Already in this channel)`,
+              isDisabled: true
+            };
+          }
+          return user;
+        });
+        setUserList(checkedUsers);
+        setisLoading(false);
       })
-      .catch(/*e => console.log("Organization not returning members", e)*/);
-    setisLoading(true);
-  }, []);
+      .catch(() => {
+        setisLoading(false);
+        /*e => console.log("Organization not returning members", e)*/
+      });
+  }, [membersList]);
 
   return (
     <div>
@@ -321,8 +336,8 @@ function MembersPanel({ config }) {
           </AddPeopleIcons>
         </ListGroup.Item>
         {membersList && membersList.length > 0 ? (
-          membersList.map(member => (
-            <ListGroup.Item key={member._id} className="d-flex w-100">
+          membersList.map((member, index) => (
+            <ListGroup.Item key={member._id + index} className="d-flex w-100">
               <div>{member.email}</div>
               <div className="ms-auto" onClick={handleaddModalShow}>
                 <RemoveLink onClick={() => removeMemberHandler(member)}>
