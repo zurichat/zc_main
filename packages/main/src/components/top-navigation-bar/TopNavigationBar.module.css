@@ -11,7 +11,7 @@
 .navbar {
   padding: 0.5rem 1rem;
   background-color: white;
-  max-width: 95%;
+  max-width: 100%;
   margin: 0 auto;
   position: relative;
 }
@@ -28,8 +28,8 @@
   background: rgb(85, 83, 83);
   border-radius: 4px;
 }
-
-/* .navLinkFeatures {
+/*
+ .navLinkFeatures {
     _margin-right: 30px;
   }
   
@@ -170,11 +170,11 @@
     _margin-right: 12px;
   } */
 
-@media only screen and (max-width: 1200px) {
+/*@media only screen and (max-width: 1200px) {*/
   .navbarNav {
     flex-basis: 80%;
   }
-}
+/*}*/
 
 @media only screen and (max-width: 992px) {
   .search_wrapper {
