@@ -69,7 +69,7 @@ function MessageRoomDetailsDialog({
                   />
                 </ChannelName>
                 <Button onClick={close}>
-                  <AiOutlineClose size="20px" color="gray" />
+                  <AiOutlineClose size="20px" />
                 </Button>
               </ModalTopic>
             </div>
@@ -481,6 +481,12 @@ const Button = styled.button`
   border: none;
   background-color: white;
   cursor: pointer;
+  outline: transparent;
+  border-radius: 4px;
+
+  &:hover {
+    border: 2px solid #1d1d1d;
+  }
 `;
 const ChannelName = styled.div`
   display: flex;
