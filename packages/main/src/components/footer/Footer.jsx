@@ -37,6 +37,15 @@ export default function Footer() {
 
         <div className={styles.menu}>
           <div>
+            <h5>{t("footer_company")}</h5>
+            <ul>
+              <li>
+                <Link to="/whyzurichat">{t("footer_why_zuri_chat")}</Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
             <h5>{t("footer_info")}</h5>
             <ul>
               <li>
@@ -47,7 +56,6 @@ export default function Footer() {
                   {t("footer_documentation")}
                 </a>
               </li>
-
               <li>
                 <Link to="/plugins">{t("nav_plugin")}</Link>
               </li>

@@ -29,10 +29,10 @@ export default [
   },
   {
     key: "nav_plugin",
-    en: "Plugin",
-    de: "Plugin",
+    en: "Plugins",
+    de: "Plugins",
     nl: "Inpluggen",
-    engb: "Plugin",
+    engb: "Plugins",
     fr: "Brancher",
     zh: "插入",
     ar: "توصيل في",
