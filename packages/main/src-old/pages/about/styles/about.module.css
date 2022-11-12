@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+.banner {
+  padding-top: 11%;
+  text-align: center;
+}
+.banner > p {
+  margin-bottom: 4%;
+}
+.working_remote {
+  text-align: center !important;
+  margin-top: 2%;
+}
+.working_remote > p {
+  font-size: 17px;
+}
+.working_remote_section > h6 {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 3%;
+}
+.working_remote_section > p {
+  font-size: 14px;
+  text-align: center;
+}
+.working_remote_section > img {
+  width: 50%;
+}
+
+.to_join {
+  margin-top: 3%;
+}
+.join_us {
+  text-align: left;
+}
+.join_us > p {
+  font-size: 17px;
+  text-align: left;
+  line-height: 25px;
+  font-weight: 500;
+}
+.zurichat {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  background-color: #00b87c;
+}
+.zurichat_h3 {
+  padding: 3%;
+  color: #fff;
+  position: relative;
+  top: 3rem;
+}
+.vector {
+  padding: 1rem;
+  margin-left: 1.2rem;
+}
+.vector > h6 {
+  font-size: 23px;
+}
+.vector > p {
+  font-size: 14px;
+}
+.vector > img {
+  width: 15%;
+}
+.button {
+  display: flex;
+  flex-wrap: nowrap;
+
+  flex-direction: row;
+}
+.btn {
+  margin: 0.3rem;
+}
+
+.h3m {
+  padding: 0;
+}
+
+.btn_sale {
+  text-transform: uppercase;
+  color: #00ffaa;
+  margin-top: 2rem;
+  font-weight: 600;
+  padding: 10px 16px;
+  background-color: #ffffff;
+  border-radius: 0.3rem;
+  width: 7rem;
+  height: 3rem;
+}
+.btn_sale:hover {
+  color: #00b87c;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid #fff;
+}
+.signup-cta {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.signup-cta .text {
+  color: white;
+}
+.btn_free {
+  background-color: transparent;
+  color: #fff;
+  border-radius: 5%;
+  border: 1px solid #fff;
+  margin-left: 1%;
+  text-transform: uppercase;
+  margin-top: 2rem;
+  box-shadow: 2px 4px 8px solid #fff;
+  font-weight: 600;
+}
+.working_remote_section {
+  display: flex;
+  margin-top: 2%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter > h3 {
+  font-size: 55px;
+  line-height: 50px;
+  padding: 0;
+  font-weight: 700;
+}
+
+.channel {
+  position: absolute;
+  margin-left: -8%;
+  margin-top: 3%;
+}
+.team > img {
+  width: 30vw;
+  position: relative;
+  top: -16%;
+}
+.span {
+  text-decoration: underline;
+}
+.carousel {
+  display: none;
+}
+
+@media only screen and (max-width: 1040px) {
+  .banner {
+    padding-top: 10%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .banner {
+    padding-top: 20%;
+  }
+  .banner > h1 {
+    font-size: 17px;
+    line-height: revert;
+    font-weight: 700;
+  }
+  .banner > p {
+    padding: 0% 11%;
+    font-size: 14px;
+  }
+  .counter {
+    text-align: center;
+    margin-top: 4%;
+  }
+  .counter > h3 {
+    font-size: 45px;
+    line-height: 50px;
+    padding: 0;
+    font-weight: 700;
+  }
+  .counter > p {
+    font-size: 14px;
+  }
+  .team > img {
+    width: 100%;
+  }
+  .join_us {
+    text-align: center;
+  }
+  .join_us > h3 {
+    font-size: 24px;
+  }
+  .join_us > p {
+    padding: 0 4%;
+    font-size: 14px;
+  }
+  .span {
+    text-decoration: none;
+  }
+  .working_remote > h3 {
+    font-size: 23px;
+    line-height: 30px;
+  }
+  .working_remote > p {
+    font-size: 15px;
+    padding: 0 17%;
+    margin-top: 5%;
+    font-size: 14px;
+  }
+
+  .zurichat_h3 {
+    font-size: 20px;
+  }
+  .desktop_carousel,
+  .second_carousel_block {
+    display: none;
+  }
+  .carousel {
+    display: block;
+  }
+  .carouselCaption {
+    position: relative !important;
+    right: 0% !important;
+    bottom: 1.25rem;
+    left: 0% !important;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #000;
+    text-align: center;
+  }
+  .carouselCaption > h3 {
+    font-size: 18px !important;
+  }
+  .carouselCaption > p {
+    font-size: 14px;
+  }
+  .carouselImage {
+    position: relative;
+    left: 35%;
+  }
+  .carouselCompany {
+    position: relative;
+    left: 45%;
+  }
+}
+
+@media (max-width: 767px) {
+  .counter {
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .counter > h3 {
+    font-size: 35px;
+    line-height: 50px;
+    padding: 0;
+    font-weight: 700;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .carouselImage {
+    position: relative;
+    left: 33%;
+  }
+}
+@media only screen and (max-width: 440px) {
+  .carouselImage {
+    position: relative;
+    left: 30%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .carouselImage {
+    position: relative;
+    left: 28%;
+  }
+  .carouselCompany {
+    position: relative;
+    left: 41%;
+  }
+}
+
+@media only screen and (max-width: 355px) {
+  .carouselImage {
+    position: relative;
+    left: 25%;
+  }
+}

@@ -1,0 +1,7 @@
+.EmojiReaction {
+  width: 280px;
+  position: fixed;
+  top: 30px;
+  right: 10px;
+  z-index: 11;
+}

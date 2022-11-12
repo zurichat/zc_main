@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- {/* Primary Meta Tags */} -->
+  <title>Zuri Chat - Communicate and Collaborate from wherever you are</title>
+  <meta name="author" content="HNGi8">
+  <meta name="title" content="Zuri Chat - Communicate and Collaborate from wherever you are" />
+  <meta name="description"
+    content="Zuri-Chat - For Organizations & Institutions. A fully integrated way to connect and interact. Create your future with us, network, collaborate, educate and learn remotely. Invite your team to your workspace. Stay connected, stay in sync, and explore ideas together from anywhere" />
+  <meta name="keywords" content="Zuri, Zuri Chat, hngi8, slack, workspace, collaborate" />
+
+  <!-- {/* Open Graph / Facebook */} -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.zuri.chat/" />
+  <meta property="og:title" content="Zuri Chat - Communicate and Collaborate from wherever you are" />
+  <meta property="og:description"
+    content="Zuri-Chat - For Organizations & Institutions. A fully integrated way to connect and interact. Create your future with us, network, collaborate, educate and learn remotely. Invite your team to your workspace. Stay connected, stay in sync, and explore ideas together from anywhere" />
+  <meta property="og:image" content="https://www.zuri.chat/assets/zuri-chat/logo.png" />
+
+  <!-- {/* Twitter */} -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.zuri.chat/" />
+  <meta property="twitter:title" content="Zuri Chat - Communicate and Collaborate from wherever you are" />
+  <meta property="twitter:description"
+    content="Zuri-Chat - For Organizations & Institutions. A fully integrated way to connect and interact. Create your future with us, network, collaborate, educate and learn remotely. Invite your team to your workspace. Stay connected, stay in sync, and explore ideas together from anywhere" />
+  <meta property="twitter:image" content="https://www.zuri.chat/assets/zuri-chat/logo.png" />
+
+  <link rel="icon" href="/assets/favicon.ico" type="image/ico">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+
+  <!-- Dynamic Title Tag for Plugins -->
+  <script>
+    (() => {
+      let getURL = location.pathname;
+      let appendZuri = `- Zuri Chat `;
+      if (getURL !== '/') {
+        getURL = getURL.substr(1).replace('-',' ');
+        getURL = getURL.charAt(0).toUpperCase() + getURL.slice(1);
+        document.title = getURL + ' ' + appendZuri;
+      };
+    })()
+  </script>
+  <!-- End -->
+
+  <!-- Google / Search Engine Tags -->
+  <meta itemprop="name"
+    content="Zuri-Chat -Communicate and collaborate from wherever you are. A fully Integrated way to connect and interact" />
+  <meta itemprop="description"
+    content="Zuri-Chat -  For Organizations & Institutions. A fully Integrated way to connect and interact. Create your future with us, network, collaborate, educate and learn remotely.Invite your team to your workspace. Stay connected,stay in sync, and explore ideas together from anywhere." />
+  <meta itemprop="image" content="https://i.ibb.co/SnK9MGt/ogzuri.png" />
+
+  <link rel="stylesheet" href="/assets/plugin-reset.css">
+
+  <!--
+    Remove this if you only support browsers that support async/await.
+    This is needed by babel to share largeish helper code for compiling async/await in older
+    browsers. More information at https://github.com/single-spa/create-single-spa/issues/112
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.7/runtime.min.js"></script>
+  <meta name="importmap-type" content="systemjs-importmap" />
+  <meta name="import-map-overrides-domains" content="denylist:prod.example.com" />
+
+  <script type="systemjs-importmap">
+    { "imports": { "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js","vue": "https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js","vue-router": "https://cdn.jsdelivr.net/npm/vue-router@3.1.6/dist/vue-router.min.js"}}
+  </script>
+
+  <% if (isLocal) { %>
+    <script type="systemjs-importmap">
+    { "imports": { "react": "https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.development.js", "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.development.js" }}
+    </script>
+  <% } else { %>
+    <script type="systemjs-importmap">
+    { "imports": { "react": "https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.production.min.js", "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.production.min.js" } }
+    </script>
+  <% } %>
+
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js" as="script">
+
+  <!-- Add your organization's prod import map URL to this script's src  -->
+  <script type="systemjs-importmap" src="/assets/plugin.importmap.json"></script>
+
+  <% if (isLocal) { %>
+    <script type="systemjs-importmap">
+    {
+      "imports": {
+        "@zuri/root-config": "//localhost:9000/zuri-root-config.js",
+        "@zuri/main": "//localhost:8082/zuri-main.js",
+        "@zuri/ui": "//localhost:8084/zuri-ui.js",
+        "@zuri/utilities": "//localhost:8085/zuri-utilities.js",
+        "@zuri/marketplace": "//localhost:8086/zuri-marketplace.js",
+        "@zuri/manage-user-modal": "//localhost:8087/zuri-manageUser.js"
+      }
+    }
+    </script>
+  <% } else { %>
+    <script type="systemjs-importmap">
+    {
+      "imports": {
+        "@zuri/root-config": "/zuri-root-config.js",
+        "@zuri/main": "/zuri-main.js",
+        "@zuri/ui": "/zuri-ui.js",
+        "@zuri/utilities": "/zuri-utilities.js",
+        "@zuri/marketplace": "/zuri-marketplace.js",
+        "@zuri/manage-user-modal": "/zuri-manageUser.js"
+      }
+    }
+    </script>
+  <% } %>
+
+  <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
+  <% if (isLocal) { %>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
+  <% } else { %>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
+  <% } %>
+</head>
+
+<body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+
+  <script>
+    System.import('@zuri/root-config');
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.1/umd/popper.min.js"
+    integrity="sha512-8jeQKzUKh/0pqnK24AfqZYxlQ8JdQjl9gGONwGwKbJiEaAPkD3eoIjz3IuX4IrP+dnxkchGUeWdXLazLHin+UQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.1/js/bootstrap.min.js"
+    integrity="sha512-ewfXo9Gq53e1q1+WDTjaHAGZ8UvCWq0eXONhwDuIoaH8xz2r96uoAYaQCm1oQhnBfRXrvJztNXFsTloJfgbL5Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
+</body>
+</html>

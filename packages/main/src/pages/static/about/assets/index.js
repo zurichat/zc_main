@@ -1,0 +1,10 @@
+export { default as team } from "./collab-pana.svg";
+export { default as user } from "./user-2.svg";
+export { default as group } from "./group.svg";
+export { default as vector } from "./vector.svg";
+export { default as user2 } from "./user-2-1.svg";
+export { default as channel } from "./group-35468-1.svg";
+export { default as holiday } from "./group-35468.svg";
+export { default as deadline } from "./group-35470.svg";
+export { default as quick } from "./group-35471.svg";
+export { default as todos } from "./group-35472.svg";

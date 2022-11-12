@@ -1,0 +1,31 @@
+name: Zuri main prod Deployment
+
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [main]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Git Pull on Server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.ZURI_HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: |
+            cd /var/www/zuri.chat/zurimain/prod/zc_main
+            git fetch --all 
+            git reset --hard origin/main
+            git stash
+            git pull origin main
+            yarn install
+            yarn build
+            pm2 restart zuri-main

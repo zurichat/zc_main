@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap");
+
+.compliancesection {
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.compliancewrapper {
+  display: flex;
+  align-items: center;
+  /* justify-content: start; */
+  flex-wrap: wrap;
+  padding: 50px;
+}
+.complianceheading {
+  font-size: 35px;
+  font-weight: bold;
+  margin: 0 auto 30px auto;
+  max-width: 50%;
+  text-align: center;
+  /* color: #333; */
+}
+.compliancetext {
+  font-size: 16px;
+  /* color: #333; */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.compliancecard {
+  padding: 20px 0 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 25%;
+  height: 220px;
+  box-shadow: 1px 1px 1px 0 #ccc;
+}
+
+.compliancelogo {
+  width: 60px;
+}
+.titletext {
+  font-size: 16px;
+  padding: 0;
+  margin: 20px 0;
+  font-weight: bold;
+}
+.descriptiontext {
+  font-size: 14px;
+  max-width: 70%;
+  font-weight: normal;
+}
+@media only screen and (max-width: 998px) {
+  .compliancesection {
+    padding: 20px;
+  }
+  .compliancewrapper {
+    display: flex;
+    align-items: center;
+    /* justify-content: start; */
+    flex-wrap: wrap;
+  }
+  .complianceheading {
+    font-size: 35px;
+    font-weight: bold;
+    margin: 0 auto 30px auto;
+    max-width: 50%;
+    text-align: center;
+    /* color: #333; */
+  }
+  .compliancetext {
+    font-size: 16px;
+    /* color: #333; */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .compliancecard {
+    padding: 20px 0 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25%;
+    height: 250px;
+    box-shadow: 1px 1px 1px 0 #ccc;
+  }
+
+  .compliancelogo {
+    width: 75px;
+  }
+  .titletext {
+    font-size: 16px;
+    padding: 0;
+    margin: 20px 0;
+    font-weight: bold;
+  }
+  .descriptiontext {
+    font-size: 14px;
+    max-width: 70%;
+    font-weight: normal;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .compliancewrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  .complianceheading {
+    font-size: 35px;
+    max-width: 100%;
+    text-align: center;
+  }
+  .compliancetext {
+    font-size: 16px;
+  }
+  .compliancecard {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 220px;
+    box-shadow: none;
+  }
+  .compliancelogo {
+    width: 70px;
+  }
+  .titletext {
+    font-size: 14px;
+    margin: 10px 0;
+    padding: 0;
+  }
+  .descriptiontext {
+    max-width: 80%;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .compliancewrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  .complianceheading {
+    font-size: 25px;
+    max-width: 100%;
+    text-align: center;
+  }
+  .compliancetext {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .compliancecard {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 220px;
+    box-shadow: none;
+  }
+  .compliancelogo {
+    width: 60px;
+  }
+  .titletext {
+    font-size: 14px;
+    margin: 10px 0;
+    padding: 0;
+  }
+  .descriptiontext {
+    max-width: 80%;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .compliancewrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  .complianceheading {
+    font-size: 25px;
+    max-width: 100%;
+    text-align: center;
+  }
+  .compliancetext {
+    font-size: 14px;
+  }
+  .compliancecard {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 220px;
+    box-shadow: none;
+  }
+  .compliancelogo {
+    width: 60px;
+  }
+  .titletext {
+    font-size: 14px;
+    margin: 10px 0;
+    padding: 0;
+  }
+  .descriptiontext {
+    max-width: 80%;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .compliancewrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  .complianceheading {
+    font-size: 20px;
+    max-width: 100%;
+    text-align: center;
+  }
+  .compliancetext {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .compliancecard {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 220px;
+    box-shadow: none;
+  }
+  .compliancelogo {
+    width: 50px;
+  }
+  .titletext {
+    font-size: 14px;
+    margin: 10px 0;
+    padding: 0;
+  }
+  .descriptiontext {
+    max-width: 100%;
+    text-align: center;
+  }
+}

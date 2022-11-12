@@ -1,0 +1,71 @@
+.notifySidebar {
+  display: none;
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .notifySidebar {
+    display: flex;
+    width: 200px;
+    background: #f9f9f9;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    float: left;
+    margin-top: -15px;
+    z-index: 1000;
+  }
+  .itemsContainer {
+    margin-top: 15px;
+    position: fixed;
+  }
+  .one,
+  .active {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
+    padding: 10px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  .icon {
+    margin-right: 15px;
+    font-size: 25px;
+  }
+  .active p {
+    color: #00b87c;
+    font-size: 20px;
+  }
+  /* 
+    .one,
+    .active {
+      display: flex;
+      flex-direction: row;
+      font-size: 15px;
+      align-items: left;
+      margin-left: 20px;
+      padding: 2px;
+      margin-bottom: 22px;
+      cursor: pointer;
+    } */
+  .one:first-child {
+    padding-top: 10px;
+  }
+  .icon {
+  }
+  .active p,
+  .icon {
+    color: #00b87c;
+  }
+
+  .one p {
+    color: #999999;
+    font-size: 20px;
+  }
+
+  .one .icon {
+    color: #999999;
+  }
+}

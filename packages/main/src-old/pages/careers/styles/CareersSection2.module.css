@@ -1,0 +1,153 @@
+.Section2 {
+  font-family: "Lato", sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+.section2_header {
+  max-width: 1440px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.section2_header h2 {
+  font-size: 2.5rem;
+  line-height: 3.25rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.Section2 p {
+  margin-bottom: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 1.95rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+div.subSection2 {
+  padding: 2rem 0.6rem;
+  color: #ffff;
+  background-color: #00b87c;
+}
+
+.subsection2_content {
+  max-width: 1440px;
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+
+.subSection2 div {
+  padding: 15px;
+}
+
+.subsection2_content div:first-child {
+  max-width: 398px;
+  width: 100%;
+}
+
+.subsection2_content div:nth-child(2) {
+  max-width: 437px;
+  width: 100%;
+}
+
+.subsection2_content div:last-child {
+  max-width: 335px;
+  width: 100%;
+}
+
+.subSection2 h3 {
+  margin-bottom: 2rem;
+  text-align: left;
+  padding: 0;
+  font-size: 2rem;
+  line-height: 2.6rem;
+  font-weight: 700;
+}
+
+.subSection2 p {
+  text-align: left;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 989px) {
+  .section2_header h2 {
+    font-size: 2.125rem;
+    line-height: 2.7625rem;
+  }
+
+  .section2_header p {
+    font-size: 1.275rem;
+    line-height: 1.6575rem;
+  }
+
+  .subSection2 h3 {
+    font-size: 1.7rem;
+    line-height: 2.21rem;
+  }
+
+  .subSection2 p {
+    font-size: 1.125rem;
+    line-height: 1.4625rem;
+  }
+}
+
+@media only screen and (max-width: 830px) {
+  .subsection2_content div:first-child,
+  .subsection2_content div:nth-child(2),
+  .subsection2_content div:last-child {
+    max-width: 95%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .section2_header {
+    padding: 0 0.5rem 0.5rem;
+  }
+
+  .Section2 h2 {
+    font-size: 1.75rem;
+    line-height: 2.275rem;
+  }
+
+  .section2_header p {
+    font-size: 1.125rem;
+    line-height: 1.4625rem;
+    margin-bottom: 0.5rem;
+  }
+
+  div.subSection2 {
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+    padding: 20px 0.6rem;
+    margin: 0.5rem 0;
+  }
+
+  .subSection2 h3 {
+    font-size: 1.125rem;
+    line-height: 1.4625rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .subSection2 p {
+    font-size: 0.875rem;
+    line-height: 1.1375rem;
+    padding: 0;
+  }
+
+  .subsection2_content div {
+    padding: 15px 0;
+  }
+
+  .subsection2_content div:first-child,
+  .subsection2_content div:nth-child(2),
+  .subsection2_content div:last-child {
+    max-width: 100%;
+  }
+}

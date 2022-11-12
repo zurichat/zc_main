@@ -1,0 +1,193 @@
+#authPageWrapper {
+  font-family: "Lato", sans-serif;
+  margin-block: 0;
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  font-size: 14px;
+  font-style: normal;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  z-index: 5;
+}
+
+/* #authAsideContainer,
+#authImageWrapper,
+#authImageWrapper img,  */
+/* #authFormContainer{
+  height: inherit;
+} */
+
+/* #authAsideContainer {
+  width: 33vw;
+  color: #fff;
+} */
+
+/* #authImageWrapper {
+  width: 100%;
+} */
+
+/* 
+#authImageWrapper img {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+} */
+
+#authFormContainer::-webkit-scrollbar {
+  background: none;
+}
+
+#authFormContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  overflow-y: scroll;
+  /* padding-right: 4em; */
+}
+
+.tos {
+  height: 5vh;
+  margin-block-start: 1em;
+  margin-block-end: 2em;
+  /* font-size: 1.2em; */
+  line-height: 1.5em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* position: relative;
+  font-size: 12px;
+  line-height: 1.5rem;
+  display: inline-block;
+  margin: 5px 0 15px; */
+  /* margin-bottom: 2rem; */
+}
+
+.tos .checkBox {
+  cursor: pointer;
+  margin-right: 0.5em;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #bebebe;
+  box-sizing: border-box;
+  border-radius: 4px;
+  /* height: 15px;
+  width: 15px;
+  border-radius: 10px;
+  border-color: rgb(0, 0, 0, 0.25); */
+  /* margin-right: 8px; */
+  /* position: relative; */
+  /* top: 3px; */
+}
+
+/* .tosText {
+  /* font-size: 0.8rem; *
+  font-size: 1.2em;
+} */
+
+.tosText a,
+.rememberMe a {
+  align-self: center;
+  color: #00b87c;
+  /* font-size: 0.95em; */
+  /* color: #1a61db; */
+}
+
+.tosText a:hover,
+.rememberMe a:hover {
+  color: #b8003c;
+}
+
+.rememberMe {
+  margin-block: 1em 2em;
+  /* font-size: 0.95em; */
+  line-height: 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  align-items: space-between;
+  /* height: 5vh; */
+  /* display: inline-block; */
+  /* margin: 10px 0; */
+}
+
+.rememberMe .checkBox {
+  cursor: pointer;
+  margin-right: 8px;
+  height: 16px;
+  width: 16px;
+  border-radius: 10px;
+  border-color: #00000040;
+  /* position: relative; */
+  /* top: 3px; */
+}
+
+.resetPasswordLink {
+  padding-right: 8px;
+}
+
+/* .rememberMe a {
+  /* color: #00b87c; *
+  color: #1a61db;
+} */
+
+.rememberMe .left {
+  /* display: block;
+  float: left;
+  width: auto; */
+  margin: 0;
+  margin-right: auto;
+}
+/* 
+.rememberMe .right {
+  display: block;
+  float: right;
+  width: auto;
+} */
+
+/* Media Query for Screen Width 1080px and Smaller */
+@media only screen and (max-width: 1080px) {
+  .display_none {
+    display: none;
+  }
+
+  #authFormContainer {
+    padding-inline: 7%;
+  }
+
+  #authFormContainer {
+    width: 100%;
+    overflow-y: scroll;
+  }
+
+  /* .rememberMe {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  } */
+}
+
+/* @media only screen and (max-width: 468px) {
+  .rememberMe .right {
+    display: block;
+    float: left;
+    width: auto;
+  }
+  .tos .checkBox {
+    top: 2px;
+  }
+} */

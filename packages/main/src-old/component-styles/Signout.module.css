@@ -1,0 +1,148 @@
+/* Mobile*/
+
+.signout {
+  position: relative;
+  /* width: 1440px; */
+  /* height: 1024px; */
+  background: #f6f6f6;
+}
+.error {
+  font-size: 1.5rem;
+}
+.logo {
+  position: absolute;
+  /* width: 104.96px; */
+  height: 2rem;
+  /* width: 30px; */
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%, -50%);
+}
+
+.logo img {
+  width: 7rem;
+}
+
+.write {
+  position: absolute;
+  width: 40%;
+  /* height: 256px; */
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  border-radius: 3px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+}
+
+.wrapper {
+  margin: 5%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.firstText {
+  /* font-size: 1.4em; */
+  font-weight: bolder;
+  margin-left: 2%;
+  margin-right: 2%;
+  /* width: 100%; */
+}
+
+.secondText {
+  /* font-size: larger; */
+  /* width: fit-content; */
+  font-weight: normal;
+  /* font-size: 0.9em; */
+  padding: 1%;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-bottom: 3%;
+}
+
+.button {
+  background-color: #2f80ed;
+  padding: 2%;
+  text-align: center;
+  margin-right: 5%;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  width: 100%;
+  margin-left: auto;
+  margin-top: 5%;
+}
+
+.button:hover {
+  background-color: #e5e5e5;
+  color: #2f80ed;
+}
+/*large screen */
+
+.displaySmall {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .write {
+    width: 70%;
+    top: 46%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .signout {
+    background: #ffffff !important;
+  }
+  .signout {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .logo {
+    left: 50%;
+    top: 32%;
+    transform: translate(-50%, -50%);
+  }
+  .write {
+    width: 90%;
+    top: 25%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding-bottom: 0rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+  .displaySmall {
+    display: block;
+    /* font-size: 0.7em; */
+  }
+  .displaySmall a {
+    color: #2f80ed;
+  }
+  .firstText {
+    /* font-size: 0.8rem; */
+  }
+  .secondText {
+    /* font-size: 0.65rem; */
+    width: 99%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    margin-bottom: 8%;
+  }
+  .button {
+    width: 55%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 4%;
+    padding: 1%;
+  }
+}

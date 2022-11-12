@@ -1,0 +1,131 @@
+.dropDown,
+.dropdown_active {
+  cursor: pointer;
+}
+
+.dropDown:hover,
+.item__list:hover,
+.dropDown::selection {
+  background-color: #f1fffa;
+}
+
+.dropdown_active,
+.item__list__active {
+  /* width: 90%; */
+  border-radius: 15px;
+  background-color: #7ed5af;
+}
+
+.dropdown_active p.dropdown__room,
+.item__list__active div.dropDown__name {
+  color: #000;
+}
+
+.dropDown__name {
+  color: #454545;
+  /* padding-inline-start: 0.2rem; */
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+.item__image {
+  width: 30px;
+  /* margin-inline-end: 0.1rem; */
+}
+
+.item__img {
+  /* width: 10px; */
+  margin-left: 0.1rem;
+}
+
+.item__list,
+.item__list__active {
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.plugin_name,
+.dropDown__name,
+.icon,
+.item__icon {
+  color: #454545;
+}
+
+/* .plugin_name {
+  font-weight: bold;
+} */
+
+.plugin_name,
+.dropDown__name {
+  font-size: 0.935em;
+}
+
+.plugin_name,
+.dropDown__title,
+.dropDown__name,
+.dropdown__room {
+  color: grey;
+  padding-inline-start: 0.5rem;
+  font-size: 17px;
+  line-height: 28px;
+  font-weight: 400;
+  /* font-size: 0.935em; */
+  /* font-weight: bold; */
+}
+
+.dropDown__title {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+/* .dropDown__name {
+  font-weight: normal;
+} */
+
+.icon,
+.item__icon {
+  /* font-size: 1.2em; */
+  width: unset;
+}
+
+.icon {
+  transform: rotate(-90deg);
+  transition: all 0s ease-in-out;
+}
+
+.icon.open {
+  transform: rotate(0deg);
+}
+
+.plugin__title,
+.item__row {
+  margin: 0.3em 0;
+  border-radius: 5px;
+}
+
+.openWrapper {
+  background-color: #e6fff6;
+}
+
+.item__row {
+  display: none;
+}
+
+.item__row.open {
+  display: block;
+
+  /* margin-inline-start: 0.5em; */
+}
+
+.item__name {
+  padding-inline-start: 2rem;
+}
+
+.item__image {
+  width: 20px;
+}
+
+.optionsContainer {
+  position: relative;
+  z-index: 9999999;
+}

@@ -1,0 +1,422 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap'); */
+
+.sb__container {
+  font: "Lato", sans-serif;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: inherit;
+  padding-block-end: 3em;
+  height: 100%;
+  width: unset;
+  font-size: 16px;
+  /* display: flex;
+  flex-direction: column; */
+  /* overflow: auto; */
+  /* width: 100%; */
+  /* padding-top: 4.3rem; */
+
+  /*  Scroll for Over FLow Below  */
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.sb__container::-webkit-scrollbar {
+  display: none;
+}
+
+.subCon1 {
+  top: 0;
+  position: sticky;
+  z-index: 5;
+}
+
+.subCon2 {
+  height: 100%;
+  padding: 10px;
+  width: unset;
+  /* overflow-y:inherit;
+  -ms-overflow-style: none;
+  scrollbar-width: none; */
+}
+
+.subCon2::-webkit-scrollbar {
+  display: none;
+}
+
+.orgDiv {
+  width: inherit;
+  height: 44px;
+  background-color: #00b87c;
+  color: #fff;
+}
+
+.orgInfo {
+  width: 100%;
+  height: inherit;
+  background-color: #00b87c;
+  color: #fff;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.orgHeader {
+  cursor: pointer;
+  flex-grow: 1;
+  width: 70%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.orgTitle {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.125em;
+  line-height: 28px;
+  max-width: 80%;
+  line-height: 1.2em;
+  overflow-x: clip;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.orgHeaderArrowDown {
+  margin: 0;
+}
+
+.arrowDown {
+  width: fit-content;
+  position: relative;
+  top: 0.2em;
+  width: 1em;
+  color: var(--text-color-bold);
+}
+
+.sb__item {
+  cursor: pointer;
+  margin-top: 30px;
+  /* margin: 0.5em 0; */
+}
+
+.sb__item:hover,
+.sb__item::selection,
+.item_p:hover,
+.item_p:hover {
+  background-color: #f1fffa;
+}
+
+.sb__col {
+  height: inherit;
+}
+
+.item__img {
+  width: 18px;
+  /* margin-inline-end: 0.5rem; */
+}
+
+.item_p {
+  color: var(--text-color-normal);
+  padding-inline-start: 0.5rem;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+.invite__icon {
+  background-color: #f1fffa;
+  border-radius: 6px;
+  padding: 5px 10px;
+}
+.icon {
+  width: 24px;
+}
+/* .addButton {
+  width: 1.3em;
+  margin-inline-start: auto;
+} */
+
+/* .orgHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* .newMessage { */
+
+/* border-radius: 50%; */
+
+/* width: auto; */
+
+/* background-color: #ffffff; */
+
+/* align-self: center; */
+
+/* margin-left: 6.6875em;
+  margin-right: 1.25em; */
+
+/* display: flex;
+  align-items: center;
+  justify-content: center; */
+
+/* } */
+
+/* .newMsgIcon { */
+
+/* height: 100%;
+  width: 4em; */
+
+/* z-index: 100; */
+
+/* } */
+
+/* .container ul {
+  list-style: none;
+  color: #000;
+}
+.container a {
+  text-decoration: none;
+  color: #000;
+} */
+
+/* .container::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #fff;
+} */
+
+/* .container::-webkit-scrollbar {
+  width: 12px;
+  background: #fff;
+} */
+
+/* .container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f6f6f6;
+} */
+
+/* .zuriLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1.875em;
+  margin-top: 1.5625em;
+  margin-bottom: 0.639375em;
+} */
+
+/* .zuriLogo p {
+  color: #393939;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1.4425em;
+  padding: 0;
+  margin: 0;
+  margin-left: 0.38em;
+} */
+
+/* .orgInfo {
+  background-color: #00b87c;
+  /* height: 3.125em; *
+  height: 7vh;
+  /* display: flex; */
+
+/* flex-direction: row; *
+} */
+
+/* .orgName {
+  height: inherit;
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  /* margin-left: 1.875em;
+  align-items: center;
+  height: 3.125em; *
+} */
+
+/* .orgInfo .orgName p {
+  color: #ffffff;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  /* font-size: 1.125em; *
+} */
+
+/* .orgInfo .orgName img {
+  margin: 1em 0 1em 0.65625em;
+} */
+
+.channelsContainer {
+  margin-top: 0.5em;
+}
+
+.channelHeader {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1.875em;
+  align-items: center;
+  height: 2em;
+}
+
+.channelHeader p {
+  font: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #999;
+}
+
+.channelDropdownIcon {
+  margin: 1em 1em 1em 0;
+}
+
+.channelAddBtn {
+  margin-left: 6em;
+  margin-right: 1.25em;
+}
+
+.channelNames {
+  margin-left: 3.5em;
+  font: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 18px;
+  color: #999;
+}
+
+.channelNames p > span {
+  margin-right: 0.5em;
+}
+
+/*
+.messagesContainer {
+  margin-top: 0.5em;
+}
+
+.messageHeader {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1.875em;
+  align-items: center;
+  height: 2em;
+}
+
+.messageHeader p {
+   font: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #999999;
+} */
+
+/*
+.messageDropdownIcon {
+  margin: 1em 1em 1em 0;
+}
+
+.messageAddBtn {
+  margin-left: 6em;
+  margin-right: 1.25em;
+}
+
+.messageNames {
+  margin-left: 3.5em;
+  font: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 18px;
+  color: #999999;
+} */
+
+/*
+.messageNames p > span {
+  margin-right: 0.5em;
+} */
+
+.messagesContainer {
+  margin-top: 0.5em;
+}
+
+.messageHeader {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1.875em;
+  align-items: center;
+  height: 2em;
+}
+
+.messageHeader p {
+  font: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: var(--sidebar-text-color-);
+}
+
+.messageDropdownIcon {
+  margin: 1em 1em 1em 0;
+}
+
+.messageAddBtn {
+  margin-left: 6em;
+  margin-right: 1.25em;
+}
+
+.messageNames {
+  margin-left: 2.5em;
+  font: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #999;
+}
+
+.messageNames p {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.messageNames p > span {
+  margin-right: 0.5em;
+}
+
+.channelItem {
+  cursor: pointer;
+  padding: 0.4rem 0;
+}
+
+.buttonstyle button {
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.displayCategory {
+  display: none;
+}
+
+.displayCategory {
+  display: block;
+}
+
+/* MEDIA QUERIES */
+/* @media (max-width: 768px) {
+  .orgTitle {
+    display: none;
+  }
+} */

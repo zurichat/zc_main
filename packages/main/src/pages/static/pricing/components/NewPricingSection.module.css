@@ -1,0 +1,229 @@
+:root {
+  --circle-left: 0%;
+  --background: #00b87c;
+  --border-color: #00b87c;
+  --main-padding: 1.5rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 90%;
+  margin: auto;
+  margin-top: 5rem;
+}
+.mobile {
+  display: none;
+}
+
+.pricing {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 gainsboro, 0 6px 20px 0 gainsboro;
+  margin-top: 2rem;
+  width: 100%;
+  padding: 1rem 0;
+  position: relative;
+}
+
+.pricing__header {
+  display: flex;
+  padding: 1.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.subPrice {
+  font-size: 1.2rem;
+  color: #777;
+}
+
+.pricing__header h5 {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+.pricing__header .subheading {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.benefit {
+  padding: 1rem var(--main-padding);
+  display: flex;
+  min-height: 50px;
+  align-items: center;
+}
+
+.benefit p {
+  font-size: 1rem;
+  margin-bottom: 0;
+  padding: 0;
+  margin-left: 5px;
+}
+
+.benefit:nth-child(2n) {
+  background: #f4f4f4;
+}
+
+.pricing__control {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.toggle {
+  margin-top: 1rem;
+  width: 50px;
+  height: 20px;
+  margin: 0 5px;
+  background-color: var(--background);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  border-left: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.toggle__circle {
+  position: absolute;
+  transition: left 0.5s;
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  border-radius: 50%;
+  left: var(--circle-left);
+  box-shadow: rgba(255, 255, 255, 0.17) 0px -23px 25px 0px inset,
+    rgba(255, 255, 255, 0.15) 0px -36px 30px 0px inset,
+    rgba(255, 255, 255, 0.1) 0px -79px 40px 0px inset,
+    rgba(255, 255, 255, 0.06) 0px 2px 1px, rgba(255, 255, 255, 0.09) 0px 4px 2px,
+    rgba(255, 255, 255, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.toggle__circle.active {
+  left: 50%;
+  right: 0;
+}
+
+.cta {
+  margin: 2rem 1.5rem;
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #00b87c;
+  border: none;
+  border-radius: 0.25rem;
+  width: 13rem;
+  height: 3rem;
+  font-weight: normal;
+  font-size: 1rem;
+  color: #ffffff;
+  transition: 1s ease-in-out;
+  margin: auto;
+}
+
+.button a {
+  font-weight: 400;
+}
+.button:hover {
+  background: #156349;
+}
+
+.link {
+  color: #ffffff;
+}
+
+.link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .mobile {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    display: flex;
+  }
+
+  .desktop {
+    display: none;
+  }
+  .pricing__header {
+    flex-direction: column;
+  }
+
+  .pricing__control {
+    margin-top: 1rem;
+  }
+}
+
+.desktop .pricingWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1000px;
+  margin: auto;
+  align-items: center;
+}
+
+.desktop .pricingWrapper .pricing:first-child {
+  height: 80%;
+  margin-top: 90px;
+}
+
+.desktop .pricingWrapper .pricing:first-child .benefit,
+.desktop .pricingWrapper .pricing:first-child .pricing__header {
+  text-align: left;
+  align-items: center;
+  justify-content: flex-start;
+}
+.desktop .pricingWrapper .pricing:nth-child(2) {
+  height: 90%;
+  /* margin-bottom: 20px; */
+  padding-top: 1rem;
+  clip-path: inset(4% 0 0 0);
+  position: relative;
+  /* background-color:red; */
+}
+
+.desktop .pricingWrapper .pricing:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+  width: 100%;
+  border-radius: 3px;
+  z-index: -1;
+  box-shadow: inset 0 2rem 10px 0 rgb(242, 242, 242), 0 2rem 20px 0 gainsboro;
+}
+.desktop .pricingWrapper .pricing:nth-child(3) {
+  max-height: 670px;
+  height: 100%;
+  /* margin-top: 25px; */
+}
+
+.desktop .benefit,
+.desktop .pricing__header {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}

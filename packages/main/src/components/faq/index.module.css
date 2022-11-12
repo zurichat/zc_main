@@ -1,0 +1,86 @@
+.faqs {
+  justify-content: center;
+  align-items: center;
+  display: block;
+  margin-top: 5rem;
+  padding: 1rem;
+  background: #f9f9f9;
+}
+.h2 {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
+.wrapper {
+  padding: 3rem 0;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.accordion {
+  padding: 1rem 0;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+}
+
+.items {
+  padding: 10px 0;
+  border-bottom: 1px solid grey;
+  text-align: left;
+  max-height: max-content;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+}
+.title .h6 {
+  padding-right: 2rem;
+  font-weight: 600;
+  font-size: 1.3rem;
+  cursor: pointer;
+  line-height: 1.5;
+}
+.title .span {
+  color: #333333;
+  font-size: 1.5rem;
+}
+.answer {
+  text-align: left;
+  overflow: hidden;
+  cursor: pointer;
+  font-size: 1rem;
+  background: white;
+  color: #555454;
+  height: 0;
+  line-height: 2;
+  transition: all 5s ease-out;
+}
+.answer.show {
+  height: auto;
+  background: white;
+}
+.billing {
+  font-weight: bold;
+  margin-top: 1.3rem;
+  padding: auto 5rem;
+  font-size: 18px;
+  padding-bottom: 3.5rem;
+}
+.billing .info {
+  color: rgb(107, 180, 107);
+}
+.billing .info:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .accordion {
+    grid-template-columns: 1fr;
+  }
+
+  .title .h6 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}

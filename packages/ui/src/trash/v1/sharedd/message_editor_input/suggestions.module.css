@@ -1,0 +1,13 @@
+.suggestion__list {
+  color: red;
+}
+
+.mention_text {
+  color: red;
+}
+
+.mention_text:focus,
+.mention_text:hover,
+.mention_focused {
+  background-color: cornsilk;
+}

@@ -1,0 +1,6 @@
+.page {
+  padding: 150px 40px 20px 40px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}

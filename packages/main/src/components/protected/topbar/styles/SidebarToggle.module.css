@@ -1,0 +1,17 @@
+.sidebar_toggle_icon {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  background-color: #00b87c;
+  aspect-ratio: 1/1;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .sidebar_toggle_icon {
+    display: block;
+  }
+}
