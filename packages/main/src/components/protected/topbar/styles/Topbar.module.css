@@ -118,7 +118,7 @@
 .topbarModal {
   background: var(--bg-color);
   position: absolute;
-  top: calc(100% - 18px);
+  top: 100%;
   right: 22px;
   /* width: 100%;
   max-width: 326px; */

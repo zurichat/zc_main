@@ -214,6 +214,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
           suggestions={suggestions}
           // onAddMention={m => console.log(m)}
         />
+
         {/* <div>
           {showEmoji && (
             <Picker perLine={7} showPreview={false} onChange={true} />
