@@ -1,629 +1,672 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
-  border: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 .content {
-  margin-top: 36px;
-  padding-bottom: 54px;
-  width: 100%;
-  padding: 0 40px;
-  margin-top: 16px;
+    margin-top: 36px;
+    padding-bottom: 54px;
+    width: 100%;
+    padding: 0 40px;
+    margin-top: 16px;
 }
 
 .headingOne {
-  font-size: 35px;
-  font-weight: bold;
-  line-height: 130%;
-  text-align: center;
-  margin: 85px 0 37px 0;
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 130%;
+    text-align: center;
+    margin: 85px 0 37px 0;
 }
 
 .section {
-  margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .headingIntro {
-  margin-bottom: 20px;
-  font-size: 24px;
-  font-weight: bold;
-  letter-spacing: -2%;
-  text-decoration: underline;
-}
-
-.bulbImage {
-  display: none;
-}
-
-.veryBigLock {
-  display: none;
-}
-
-.parplat {
-  font-size: 16.5px;
-  font-weight: 700;
-  line-height: 157.5%;
-  letter-spacing: 3%;
-}
-
-.parregistered {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15.2px;
-  line-height: 154%;
-  color: #000;
-}
-
-.sectionServices {
-  margin-bottom: 37px;
-}
-
-.headingServices {
-  font-size: 24px;
-  font-weight: bold;
-  letter-spacing: -2%;
-  text-decoration: underline;
-}
-
-.shakeImage {
-  display: none;
-}
-
-.paraPolicy {
-  font-size: 17px;
-  font-family: "Lato", sans-serif;
-  font-weight: 650;
-  line-height: 140%;
-  letter-spacing: 2%;
-}
-
-.parservices {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 158.5%;
-  letter-spacing: 0.01em;
-  color: #000;
-}
-
-/* big lock image */
-.bigLockImage {
-  max-width: 100%;
-  height: auto;
-}
-
-.sectionServDev {
-  margin-bottom: 30px;
-}
-
-.headingFive {
-  font-size: 24px;
-  font-weight: bold;
-  letter-spacing: -2%;
-  text-decoration: underline;
-}
-
-.contentBox_1 {
-  margin-bottom: 30px;
-}
-
-.headingstarted {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 134%;
-  margin-top: 25px;
-  letter-spacing: 0.01em;
-  color: #000;
-}
-
-.privacy {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 134%;
-  margin-top: 25px;
-  letter-spacing: 0.01em;
-  color: #000;
-  margin-top: 57px;
-  margin-bottom: 0;
-}
-
-.datareq {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 134%;
-  margin-top: 25px;
-  letter-spacing: 0.01em;
-  color: #000;
-  margin-top: 15px;
-  margin-bottom: 0;
-}
-
-.compliance {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 134%;
-  margin-top: 25px;
-  letter-spacing: 0.01em;
-  color: #000;
-  margin-bottom: 0;
-}
-
-.effectiveAll {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 134%;
-  letter-spacing: 0.03em;
-  color: #000;
-}
-
-.effectDate {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 134%;
-  letter-spacing: 0.03em;
-  color: #000;
-}
-
-.parinfo {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 134%;
-  letter-spacing: 0.03em;
-  color: #000;
-}
-
-.referZuri {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 192%;
-  color: #000;
-  margin-bottom: 24px;
-}
-
-.tableContents {
-  text-decoration: underline;
-  font-size: 19px;
-}
-
-.tablelinks {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: 900;
-  letter-spacing: 3%;
-  font-size: 14px;
-  line-height: 35.12px;
-  color: #000;
-  margin-bottom: 24px;
-}
-
-.privacymat {
-  text-decoration: underline;
-  font-size: 19px;
-  font-weight: bold;
-  letter-spacing: -2%;
-  margin-bottom: 29px;
-}
-
-.zurimission {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: 450;
-  font-size: 15px;
-  line-height: 155%;
-  letter-spacing: 0.02em;
-  color: #000;
-  margin-top: 20px;
-}
-
-.privPol {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 155%;
-  letter-spacing: 0.03em;
-  color: #000;
-}
-
-.imageBox {
-  max-width: 100%;
-  height: auto;
-}
-
-.headingAppl {
-  font-size: 19px;
-  font-weight: 700;
-  letter-spacing: -2%;
-  text-decoration: underline;
-}
-
-.bigLock {
-  display: none;
-}
-
-.appPrivPol1 {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: 650;
-  font-size: 14.3px;
-  line-height: 23px;
-  color: #000;
-}
-
-.appPrivPol2 {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15.5px;
-  line-height: 173%;
-  letter-spacing: 0.01em;
-  color: #000;
-}
-
-.infoCollect {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 19px;
-  line-height: 29px;
-  letter-spacing: -0.02em;
-  text-decoration-line: underline;
-  color: #000;
-}
-
-.bulb {
-  display: none;
-}
-
-.infopar1 {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: 650;
-  font-size: 15px;
-  line-height: 22px;
-  color: #000;
-}
-
-.privbreakdown1 {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 28px;
-  letter-spacing: 0.01em;
-  color: #000;
-  border: none;
-  width: auto;
-}
-
-.paraPriv1 {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 28px;
-  letter-spacing: 0.01em;
-  color: #000;
-}
-
-.headingDataOthers {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 19px;
-  line-height: 29px;
-  letter-spacing: -0.02em;
-  text-decoration-line: underline;
-  color: #000;
-}
-
-.smallLock {
-  display: none;
-}
-
-.parOthers {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 21.6px;
-  letter-spacing: -2%;
-  color: #000;
-}
-
-.parOthers2 {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-size: 16px;
-  line-height: 165%;
-  letter-spacing: -2%;
-  color: #000;
-}
-
-.handShake {
-  display: none;
-}
-
-.partners {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 29px;
-  letter-spacing: -0.02em;
-  color: #000;
-}
-
-.parPartners {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
-  line-height: 169.5%;
-  color: #000;
-  padding-bottom: 20px;
-}
-
-.modal_head {
-  height: 50px;
-  width: 100%;
-  float: right;
-  text-align: right;
-}
-
-.tb_button {
-  font-family: inherit;
-  font-size: 18px;
-  background: none;
-  color: blue;
-  padding: -4px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid blue;
-}
-
-@media screen and (max-width: 700px) {
-  .modal_head img {
-    top: 80px;
-    right: 35px;
-    height: 40px;
-  }
-}
-
-@media screen and (max-width: 850px) {
-  .modal_head img {
-    top: 100px;
-    right: 90px;
-    height: 40px;
-  }
-}
-
-.modal_body {
-  width: 100%;
-  height: 400px;
-  overflow-y: auto;
-  padding: 10px 20px;
-}
-
-.modal_title {
-  font-size: 36px;
-  font-weight: 600;
-  color: #000;
-}
-
-.button_link {
-  background-color: transparent;
-  color: #00b87c;
-  margin: 10px 0;
-}
-
-.modal_text {
-  font-weight: 400;
-  font-size: 16px;
-  letter-spacing: 0.0068em;
-  color: #2b2626;
-}
-
-@media screen and (min-width: 769px) {
-  .contentBox {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  .contentBox_1 {
-    width: 45%;
-  }
-
-  .effectiveAll {
-    width: 55%;
-    margin-top: 25px;
-    margin-left: 10%;
-  }
-
-  .parOthers .parOthers2 {
-    font-size: 16px;
-  }
-}
-
-@media screen and (min-width: 960px) {
-  .content {
-    margin-top: 36px;
-    padding: 0 80px;
-    padding-bottom: 54px;
-  }
-
-  .headingOne {
-    font-size: 48px;
-  }
-
-  .headingIntro {
     margin-bottom: 20px;
     font-size: 24px;
     font-weight: bold;
     letter-spacing: -2%;
     text-decoration: underline;
-  }
+    text-align: center;
+}
 
-  .mainContainer {
-    display: flex;
-    justify-content: space-between;
-  }
+.bulbImage {
+    display: none;
+}
 
-  .partContainer {
-    margin-right: 20px;
-  }
+.veryBigLock {
+    display: none;
+}
 
-  .contentImage {
-    display: flex;
-  }
+.parplat {
+    font-size: 16.5px;
+    font-weight: 700;
+    line-height: 157.5%;
+    letter-spacing: 3%;
+}
 
-  .bulbImage {
-    display: inline-block;
-    position: relative;
-    top: -40px;
-    padding-top: 30px;
-    margin-left: 10px;
-    margin-right: 8px;
-    max-width: 100%;
-    height: 100%;
-  }
+.parregistered {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15.2px;
+    line-height: 154%;
+    color: #000;
+}
 
-  .parplat .parregistered {
-    font-size: 18px;
-  }
+.sectionServices {
+    margin-bottom: 37px;
+}
 
-  .headingServices {
+.headingServices {
     font-size: 24px;
-  }
+    font-weight: bold;
+    letter-spacing: -2%;
+    text-decoration: underline;
+}
 
-  .shakeImage {
-    display: inline-block;
-    position: relative;
-    top: -30px;
-    padding-top: 30px;
-    margin-left: 10px;
-    margin-right: 8px;
+.shakeImage {
+    display: none;
+}
+
+.paraPolicy {
+    font-size: 17px;
+    font-family: "Lato", sans-serif;
+    font-weight: 650;
+    line-height: 140%;
+    letter-spacing: 2%;
+}
+
+.parservices {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 158.5%;
+    letter-spacing: 0.01em;
+    color: #000;
+}
+
+/* big lock image */
+.bigLockImage {
     max-width: 100%;
     height: auto;
-  }
+}
 
-  .paraPolicy .parservices {
+.sectionServDev {
+    margin-bottom: 30px;
+}
+
+.headingFive {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: -2%;
+    text-decoration: underline;
+}
+
+.contentBox_1 {
+    margin-bottom: 30px;
+}
+
+.headingstarted {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: 700;
     font-size: 16px;
-  }
+    line-height: 134%;
+    margin-top: 25px;
+    letter-spacing: 0.01em;
+    color: #000;
+}
 
-  .veryBigLock {
-    display: inline-block;
-  }
-
-  .contain2 {
-    width: 90%;
-  }
-
-  .headingFive .privacymat .headingAppl .infoCollect .headingDataOthers {
-    font-size: 20px;
-  }
-
-  .partners {
+.privacy {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: 700;
     font-size: 16px;
-  }
+    line-height: 134%;
+    margin-top: 25px;
+    letter-spacing: 0.01em;
+    color: #000;
+    margin-top: 57px;
+    margin-bottom: 0;
+}
 
-  .applicabilityImage {
-    display: flex;
-    margin-top: 20px;
-  }
+.datareq {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 134%;
+    margin-top: 25px;
+    letter-spacing: 0.01em;
+    color: #000;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
 
-  .appPrivPol1 {
+.compliance {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 134%;
+    margin-top: 25px;
+    letter-spacing: 0.01em;
+    color: #000;
+    margin-bottom: 0;
+}
+
+.effectiveAll {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 134%;
+    letter-spacing: 0.03em;
+    color: #000;
+}
+
+.effectDate {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 134%;
+    letter-spacing: 0.03em;
+    color: #000;
+}
+
+.parinfo {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 134%;
+    letter-spacing: 0.03em;
+    color: #000;
+}
+
+.referZuri {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 192%;
+    color: #000;
+    margin-bottom: 24px;
+}
+
+.tableContents {
+    text-decoration: underline;
+    font-size: 19px;
+}
+
+.tablelinks {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    letter-spacing: 3%;
+    font-size: 14px;
+    line-height: 35.12px;
+    color: #000;
+    margin-bottom: 24px;
+}
+
+.privacymat {
+    text-decoration: underline;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: -2%;
+    margin-bottom: 29px;
+    text-align: center;
+}
+
+.zurimission {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: 450;
     font-size: 15px;
-  }
+    line-height: 155%;
+    letter-spacing: 0.02em;
+    color: #000;
+    margin-top: 20px;
+}
 
-  .bigLock {
-    display: inline-block;
+.privPol {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 155%;
+    letter-spacing: 0.03em;
+    color: #000;
+    margin-bottom: 50px;
+}
+
+.imageBox {
     max-width: 100%;
     height: auto;
-    position: relative;
-    top: -40px;
-    padding-top: 30px;
-    margin-left: 10px;
-    margin-right: 26px;
-  }
+    margin: 0 auto;
+    display: block;
+}
 
-  .infoImage {
-    display: flex;
-    margin-top: 20px;
-  }
+.headingAppl {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -2%;
+    text-decoration: underline;
+    text-align: center;
+}
 
-  .securityData {
-    display: flex;
-    margin-top: 30px;
-  }
+.bigLock {
+    display: none;
+}
 
-  .bulb {
-    display: inline-block;
-    position: relative;
-    top: -40px;
-    padding-top: 30px;
-    margin-left: -5px;
-    margin-right: 29px;
-  }
+.appPrivPol1 {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: 650;
+    font-size: 14.3px;
+    line-height: 23px;
+    color: #000;
+}
 
-  .paraPriv1 {
+.appPrivPol2 {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15.5px;
+    line-height: 173%;
+    letter-spacing: 0.01em;
+    color: #000;
+}
+
+.infoCollect {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 29px;
+    letter-spacing: -0.02em;
+    text-decoration-line: underline;
+    color: #000;
+    text-align: center;
+}
+
+.bulb {
+    display: none;
+}
+
+.infopar1 {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: 650;
+    font-size: 15px;
+    line-height: 22px;
+    color: #000;
+}
+
+.privbreakdown1 {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0.01em;
+    color: #000;
+    border: none;
+    width: auto;
+}
+
+.paraPriv1 {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 28px;
+    letter-spacing: 0.01em;
+    color: #000;
+}
+
+.paraPriv1 u {
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+}
+
+.paraPriv1 h6 {
+    font-family: "Lato", sans-serif;
     font-size: 18px;
-  }
+    color: rgb(0, 0, 0);
+}
 
-  .smallLock {
-    display: inline-block;
-    position: relative;
-    top: -40px;
-    padding-top: 30px;
-    margin-left: -15px;
-  }
+.headingDataOthers {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 29px;
+    letter-spacing: -0.02em;
+    text-decoration-line: underline;
+    color: #000;
+}
 
-  .parOthers .parOthers2 {
+.smallLock {
+    display: none;
+}
+
+.parOthers {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21.6px;
+    letter-spacing: -2%;
+    color: #000;
+}
+
+.parOthers2 {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
     font-size: 16px;
-  }
+    line-height: 165%;
+    letter-spacing: -2%;
+    color: #000;
+}
 
-  .imagePart {
-    display: flex;
-    margin-top: 30px;
-  }
+.handShake {
+    display: none;
+}
 
-  .handShake {
-    display: inline-block;
-    position: relative;
-    top: -30px;
-    padding-top: 30px;
-    margin-left: -5px;
-    margin-right: 8px;
-  }
+.partners {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 29px;
+    letter-spacing: -0.02em;
+    color: #000;
+}
 
-  .partners {
-    text-decoration: none;
-    margin-bottom: 18px;
-  }
+.parPartners {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 169.5%;
+    color: #000;
+    padding-bottom: 20px;
+}
 
-  .parPartners {
+.modal_head {
+    height: 50px;
+    width: 100%;
+    float: right;
+    text-align: right;
+}
+
+.tb_button {
+    font-family: inherit;
     font-size: 16px;
-  }
+    background: none;
+    color: blue;
+    margin-bottom: 10px;
+    border-bottom: 1px solid blue;
+}
+
+@media screen and (max-width: 700px) {
+    .modal_head img {
+        top: 80px;
+        right: 35px;
+        height: 40px;
+    }
+
+    .privPol {
+        margin-bottom: 20px;
+    }
+
+    .headingIntro {
+        text-align: left;
+    }
+
+    .headingAppl {
+        text-align: left;
+    }
+
+    .privacymat {
+        text-align: left;
+    }
+
+    .infoCollect {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .modal_head img {
+        top: 100px;
+        right: 90px;
+        height: 40px;
+    }
+}
+
+.modal_body {
+    width: 100%;
+    height: 400px;
+    overflow-y: auto;
+    padding: 10px 20px;
+}
+
+.modal_title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #000;
+}
+
+.button_link {
+    background-color: transparent;
+    color: #00b87c;
+    margin: 10px 0;
+}
+
+.modal_text {
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.0068em;
+    color: #2b2626;
+}
+
+@media screen and (min-width: 769px) {
+    .contentBox {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .contentBox_1 {
+        width: 45%;
+    }
+
+    .effectiveAll {
+        width: 55%;
+        margin-top: 25px;
+        margin-left: 10%;
+    }
+
+    .parOthers .parOthers2 {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .content {
+        margin-top: 36px;
+        padding: 0 80px;
+        padding-bottom: 54px;
+    }
+
+    .headingOne {
+        font-size: 48px;
+    }
+
+    .headingIntro {
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: -2%;
+        text-decoration: underline;
+        text-align: left;
+    }
+
+    .mainContainer {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .partContainer {
+        margin-right: 20px;
+    }
+
+    .contentImage {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .bulbImage {
+        display: inline-block;
+        margin-top: -10px;
+        position: relative;
+        margin-left: 10px;
+        margin-right: 8px;
+        width: 80px;
+        height: 100%;
+        vertical-align: top;
+    }
+
+    .parplat .parregistered {
+        font-size: 18px;
+    }
+
+    .headingServices {
+        font-size: 24px;
+    }
+
+    .shakeImage {
+        display: inline-block;
+        position: relative;
+        margin-left: 10px;
+        margin-right: 8px;
+        width: 71px;
+        height: auto;
+    }
+
+    .paraPolicy .parservices {
+        font-size: 16px;
+    }
+
+    .veryBigLock {
+        display: inline-block;
+    }
+
+    .contain2 {
+        width: 90%;
+    }
+
+    .headingFive .privacymat .headingAppl .infoCollect .headingDataOthers {
+        font-size: 20px;
+    }
+
+    .partners {
+        font-size: 16px;
+    }
+
+    .applicabilityImage {
+        display: flex;
+        margin-top: 20px;
+    }
+
+    .appPrivPol1 {
+        font-size: 15px;
+    }
+
+    .bigLock {
+        display: inline-block;
+        max-width: 100%;
+        height: auto;
+        position: relative;
+        top: -40px;
+        padding-top: 30px;
+        margin-left: 10px;
+        margin-right: 26px;
+    }
+
+    .infoImage {
+        display: flex;
+        margin-top: 20px;
+    }
+
+    .securityData {
+        display: flex;
+        margin-top: 30px;
+    }
+
+    .bulb {
+        display: inline-block;
+        position: relative;
+        top: -40px;
+        padding-top: 30px;
+        margin-left: -5px;
+        margin-right: 29px;
+    }
+
+    .paraPriv1 {
+        font-size: 18px;
+    }
+
+    .smallLock {
+        display: inline-block;
+        position: relative;
+        top: -40px;
+        padding-top: 30px;
+        margin-left: -15px;
+    }
+
+    .parOthers .parOthers2 {
+        font-size: 16px;
+    }
+
+    .imagePart {
+        display: flex;
+        margin-top: 30px;
+    }
+
+    .handShake {
+        display: inline-block;
+        position: relative;
+        top: -30px;
+        padding-top: 30px;
+        margin-left: -5px;
+        margin-right: 8px;
+    }
+
+    .partners {
+        text-decoration: none;
+        margin-bottom: 18px;
+    }
+
+    .parPartners {
+        font-size: 16px;
+    }
 }
 
 /* .body {

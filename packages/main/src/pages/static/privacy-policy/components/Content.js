@@ -288,11 +288,11 @@ const Content = () => {
               <br />
               <div className={Style.privbreakdown1}>
                 <p className={Style.paraPriv1}>
-                  (1) Workspace and account information. To create or update a
-                  Workspace account, you or your Customer (e.g. your employer)
-                  supply Zurichat with an email address, phone number, password,
-                  domain and/or similar account details. For details on
-                  Workspace creation,{" "}
+                  <h6>(1) Workspace and account information</h6>
+                  To create or update a Workspace account, you or your Customer
+                  (e.g. your employer) supply Zurichat with an email address,
+                  phone number, password, domain and/or similar account details.
+                  For details on Workspace creation,{" "}
                   <Link to="/create-workspace" title="click here" /> . In
                   addition, Customers that purchase a paid version of the
                   Services provide Zurichat (or its payment processors) with
@@ -301,7 +301,7 @@ const Content = () => {
                 </p>{" "}
                 <br />
                 <p className={Style.paraPriv1}>
-                  (2) Usage information. <br />
+                  <h6>(2) Usage information</h6>
                   <u>*Services metadata</u>. When an Authorized User interacts
                   with the Services, metadata is generated that provides
                   additional context about the way Authorized Users work. For
