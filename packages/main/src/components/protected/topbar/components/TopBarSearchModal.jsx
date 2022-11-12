@@ -93,6 +93,12 @@ const TopBarSearchModal = () => {
             </button>
           </li>
         ));
+
+  const handleSearchInputFocus = () => {
+    const input = document.getElementById("searchCursor");
+    input.focus();
+    input.setSelectionRange(input.value.length, input.value.length);
+  };
   return (
     <div className={styles.topBarSearchModal}>
       <div className={styles._input}>
@@ -112,6 +118,7 @@ const TopBarSearchModal = () => {
           onKeyUp={onSearchSubmit}
           className={styles._input2}
           data-testid="topbar_search_input_testid"
+          onFocus={handleSearchInputFocus}
         />
       </div>
       <div
@@ -134,10 +141,13 @@ const TopBarSearchModal = () => {
               <input
                 type="text"
                 className={styles._MainInput}
-                placeholder="Search Here"
+                placeholder={t("search_placeholder")}
                 value={value}
                 onChange={onInputChange}
                 onKeyUp={onSearchSubmit}
+                autoFocus={"autofocus"}
+                id="searchCursor"
+                ref={ref => ref && ref.focus()}
               />
             </div>
 
