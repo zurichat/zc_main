@@ -56,10 +56,10 @@ export default function Category(props) {
          return Object.values(props.state.sidebar[c]).map((plugin, idx)=>{
  
             
-             return c && c === props.name ? (
+            return c && c === props.name ? (
               <Room
                 isOpen={isOpen}
-                itemName={props.name}
+                itemName={props.name} 
                 id={props.state.sidebar.name}
                 key={index}
                 items={plugin}

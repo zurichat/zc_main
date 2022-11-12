@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import styles from "../styles/Sidebar.module.css";
-import { useTranslation } from "react-i18next";
 
 import threadIcon from "../assets/icons/thread-icon.svg";
 import dmIcon from "../assets/icons/dm-icon.svg";
@@ -18,7 +17,6 @@ const categories = [];
 
 const Sidebar = props => {
   let currentWorkspace = localStorage.getItem("currentWorkspace");
-  const { t } = useTranslation();
 
   const [nullValue, setnullValue] = useState(0);
 
@@ -59,18 +57,6 @@ const Sidebar = props => {
     "others"
   ];
 
-  const categoriesTransDict = {
-    games: "side_workspace_games",
-    utility: "side_workspace_utility",
-    tools: "side_workspace_tools",
-    entertainment: "side_workspace_entertainment",
-    sales: "side_workspace_sales",
-    productivity: "side_workspace_productivity",
-    channels: "side_workspace_channel",
-    "direct messages": "side_workspace_direct_messages",
-    others: "side_workspace_others"
-  };
-
   var singleItems = [];
   var categorizedItems = [];
   var starredRooms = [];
@@ -102,7 +88,7 @@ const Sidebar = props => {
         categorizedItems.push(
           <Category
             key={categoryData[0]?.name}
-            name={categoriesTransDict[key]}
+            name={key}
             data={categoryData}
           />
         );
@@ -131,16 +117,16 @@ const Sidebar = props => {
       <div className={`${styles.subCon2}`}>
         <>
           <SingleRoom
-            name={t("side_workspace_thread")}
+            name="Threads"
             image={threadIcon}
             link={`/workspace/${currentWorkspace}/plugin-chat/threads`}
           />
           <SingleRoom
-            name={t("side_workspace_dms")}
+            name="All Dms"
             image={dmIcon}
             link={`/workspace/${currentWorkspace}/plugin-chat/all-dms`}
           />
-          <SingleRoom name={t("side_workspace_drafts")} image={draftIcon} />
+          <SingleRoom name="Drafts" image={draftIcon} />
 
           <Starred starredRooms={starredRooms} />
           {singleItems}

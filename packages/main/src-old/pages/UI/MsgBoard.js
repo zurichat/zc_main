@@ -82,7 +82,7 @@ function Uitest() {
                 <span className="name">
                   <strong> {item.name} </strong>
                 </span>
-                {/* <span className="time">{item.time}</span> */}
+                <span className="time">{item.time}</span>
               </div>
               <div className="message">{item.message}</div>
             </div>

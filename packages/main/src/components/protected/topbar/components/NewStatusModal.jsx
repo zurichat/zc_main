@@ -313,287 +313,300 @@ const SetStatusModal = ({
                 <span>Clear all</span>
               </ReactTooltip>
             </div>
-            <div>
-              <p className={styles.recentstatustitle}>Recent</p>
-              {statusHistory[0] && (
-                <div className={styles.recentstatustile}>
-                  <div
-                    onClick={() => {
-                      onSelectRecent(statusHistory[0]);
-                    }}
-                    className={styles.recentstatustileleft}
-                  >
-                    <span>{statusHistory[0].tag_history}</span>&nbsp;&nbsp;
-                    <span className={styles.recentstatustext}>
-                      {statusHistory[0].text_history}
-                    </span>
-                    &nbsp;&nbsp;
-                    <span>-</span>&nbsp;&nbsp;
-                    <span>
-                      {expiryTimeLabel[statusHistory[0].expiry_history]}
-                    </span>
-                  </div>
-                  <div
-                    data-tip
-                    data-for="deleteRecent"
-                    className={styles.recentstatustileiconwrapper}
-                    onClick={() => {
-                      onRemoveRecent(statusHistory[0].text_history);
-                    }}
-                  >
-                    <FaRegTimesCircle className={styles.recentstatustileicon} />
-                  </div>
-                  <ReactTooltip id="deleteRecent" type="dark" effect="solid">
-                    <span>Delete</span>
-                  </ReactTooltip>
-                </div>
-              )}
-              {statusHistory[1] && (
-                <div className={styles.recentstatustile}>
-                  <div
-                    onClick={() => {
-                      onSelectRecent(statusHistory[1]);
-                    }}
-                    className={styles.recentstatustileleft}
-                  >
-                    <span>{statusHistory[1].tag_history}</span>&nbsp;&nbsp;
-                    <span className={styles.recentstatustext}>
-                      {statusHistory[1].text_history}
-                    </span>
-                    &nbsp;&nbsp;
-                    <span>-</span>&nbsp;&nbsp;
-                    <span>
-                      {expiryTimeLabel[statusHistory[1].expiry_history]}
-                    </span>
-                  </div>
-                  <div
-                    data-tip
-                    data-for="deleteRecent"
-                    className={styles.recentstatustileiconwrapper}
-                    onClick={() => {
-                      onRemoveRecent(statusHistory[1].text_history);
-                    }}
-                  >
-                    <FaRegTimesCircle className={styles.recentstatustileicon} />
-                  </div>
-                  <ReactTooltip id="deleteRecent" type="dark" effect="solid">
-                    <span>Delete</span>
-                  </ReactTooltip>
-                </div>
-              )}
-              {statusHistory[2] && (
-                <div className={styles.recentstatustile}>
-                  <div
-                    onClick={() => {
-                      onSelectRecent(statusHistory[2]);
-                    }}
-                    className={styles.recentstatustileleft}
-                  >
-                    <span>{statusHistory[2].tag_history}</span>&nbsp;&nbsp;
-                    <span className={styles.recentstatustext}>
-                      {statusHistory[2].text_history}
-                    </span>
-                    &nbsp;&nbsp;
-                    <span>-</span>&nbsp;&nbsp;
-                    <span>
-                      {expiryTimeLabel[statusHistory[2].expiry_history]}
-                    </span>
-                  </div>
-                  <div
-                    data-tip
-                    data-for="deleteRecent"
-                    className={styles.recentstatustileiconwrapper}
-                    onClick={() => {
-                      onRemoveRecent(statusHistory[2].text_history);
-                    }}
-                  >
-                    <FaRegTimesCircle className={styles.recentstatustileicon} />
-                  </div>
-                  <ReactTooltip id="deleteRecent" type="dark" effect="solid">
-                    <span>Delete</span>
-                  </ReactTooltip>
-                </div>
-              )}
-              {statusHistory[3] && (
-                <div className={styles.recentstatustile}>
-                  <div
-                    onClick={() => {
-                      onSelectRecent(statusHistory[3]);
-                    }}
-                    className={styles.recentstatustileleft}
-                  >
-                    <span>{statusHistory[3].tag_history}</span>&nbsp;&nbsp;
-                    <span className={styles.recentstatustext}>
-                      {statusHistory[3].text_history}
-                    </span>
-                    &nbsp;&nbsp;
-                    <span>-</span>&nbsp;&nbsp;
-                    <span>
-                      {expiryTimeLabel[statusHistory[3].expiry_history]}
-                    </span>
-                  </div>
-                  <div
-                    data-tip
-                    data-for="deleteRecent"
-                    className={styles.recentstatustileiconwrapper}
-                    onClick={() => {
-                      onRemoveRecent(statusHistory[3].text_history);
-                    }}
-                  >
-                    <FaRegTimesCircle className={styles.recentstatustileicon} />
-                  </div>
-                  <ReactTooltip id="deleteRecent" type="dark" effect="solid">
-                    <span>Delete</span>
-                  </ReactTooltip>
-                </div>
-              )}
-              {statusHistory[4] && (
-                <div className={styles.recentstatustile}>
-                  <div
-                    onClick={() => {
-                      onSelectRecent(statusHistory[4]);
-                    }}
-                    className={styles.recentstatustileleft}
-                  >
-                    <span>{statusHistory[4].tag_history}</span>&nbsp;&nbsp;
-                    <span className={styles.recentstatustext}>
-                      {statusHistory[4].text_history}
-                    </span>
-                    &nbsp;&nbsp;
-                    <span>-</span>&nbsp;&nbsp;
-                    <span>
-                      {expiryTimeLabel[statusHistory[4].expiry_history]}
-                    </span>
-                  </div>
-                  <div
-                    data-tip
-                    data-for="deleteRecent"
-                    className={styles.recentstatustileiconwrapper}
-                    onClick={() => {
-                      onRemoveRecent(statusHistory[4].text_history);
-                    }}
-                  >
-                    <FaRegTimesCircle className={styles.recentstatustileicon} />
-                  </div>
-                  <ReactTooltip id="deleteRecent" type="dark" effect="solid">
-                    <span>Delete</span>
-                  </ReactTooltip>
-                </div>
-              )}
-              <DefaultStatus
-                chosenStatus={chosenStatus}
-                setChosenStatus={setChosenStatus}
-                setStatusText={setStatusText}
-                setStatusEmoji={setStatusEmoji}
-                setChoosePeriod={setChoosePeriod}
-              />
-            </div>
-            <div className={styles.clearafter}>
-              <div
-                className={styles.clearaftertop}
-                onClick={() => setDropdown(!dropdown)}
-              >
-                <label htmlFor="" className={styles.dropdowntop}>
-                  Clear after: &nbsp;
-                  <span className={styles.dropdowntopspan}>
-                    {expiryTimeLabel[choosePeriod] === "Custom" ||
-                    choosePeriod.length > 10
-                      ? "Choose Date and Time"
-                      : expiryTimeLabel[choosePeriod]}
-                  </span>
-                </label>
-                <img src={down} alt="" />
-              </div>
-              {dateTime ? (
-                <div className={styles.datetime}>
-                  <input
-                    type="date"
-                    className={styles.date}
-                    defaultValue={dateState}
-                    min={
-                      new Date(new Date().toString().split("GMT")[0] + " UTC")
-                        .toISOString()
-                        .split("T")[0]
-                    }
-                    onChange={setDateHandler}
-                  />
-                  <input
-                    type="time"
-                    className={timeError ? styles.timeError : styles.time}
-                    defaultValue={timeState}
-                    onChange={setTimeHandler}
-                  />
-                  {timeError && (
-                    <div className={styles.errorMess}>
-                      Can't set time in the past
+            {statusEmoji === "" && statusText === "" ? (
+              <div>
+                <p className={styles.recentstatustitle}>Recent</p>
+                {statusHistory[0] && (
+                  <div className={styles.recentstatustile}>
+                    <div
+                      onClick={() => {
+                        onSelectRecent(statusHistory[0]);
+                      }}
+                      className={styles.recentstatustileleft}
+                    >
+                      <span>{statusHistory[0].tag_history}</span>&nbsp;&nbsp;
+                      <span className={styles.recentstatustext}>
+                        {statusHistory[0].text_history}
+                      </span>
+                      &nbsp;&nbsp;
+                      <span>-</span>&nbsp;&nbsp;
+                      <span>
+                        {expiryTimeLabel[statusHistory[0].expiry_history]}
+                      </span>
                     </div>
+                    <div
+                      data-tip
+                      data-for="deleteRecent"
+                      className={styles.recentstatustileiconwrapper}
+                      onClick={() => {
+                        onRemoveRecent(statusHistory[0].text_history);
+                      }}
+                    >
+                      <FaRegTimesCircle
+                        className={styles.recentstatustileicon}
+                      />
+                    </div>
+                    <ReactTooltip id="deleteRecent" type="dark" effect="solid">
+                      <span>Delete</span>
+                    </ReactTooltip>
+                  </div>
+                )}
+                {statusHistory[1] && (
+                  <div className={styles.recentstatustile}>
+                    <div
+                      onClick={() => {
+                        onSelectRecent(statusHistory[1]);
+                      }}
+                      className={styles.recentstatustileleft}
+                    >
+                      <span>{statusHistory[1].tag_history}</span>&nbsp;&nbsp;
+                      <span className={styles.recentstatustext}>
+                        {statusHistory[1].text_history}
+                      </span>
+                      &nbsp;&nbsp;
+                      <span>-</span>&nbsp;&nbsp;
+                      <span>
+                        {expiryTimeLabel[statusHistory[1].expiry_history]}
+                      </span>
+                    </div>
+                    <div
+                      data-tip
+                      data-for="deleteRecent"
+                      className={styles.recentstatustileiconwrapper}
+                      onClick={() => {
+                        onRemoveRecent(statusHistory[1].text_history);
+                      }}
+                    >
+                      <FaRegTimesCircle
+                        className={styles.recentstatustileicon}
+                      />
+                    </div>
+                    <ReactTooltip id="deleteRecent" type="dark" effect="solid">
+                      <span>Delete</span>
+                    </ReactTooltip>
+                  </div>
+                )}
+                {statusHistory[2] && (
+                  <div className={styles.recentstatustile}>
+                    <div
+                      onClick={() => {
+                        onSelectRecent(statusHistory[2]);
+                      }}
+                      className={styles.recentstatustileleft}
+                    >
+                      <span>{statusHistory[2].tag_history}</span>&nbsp;&nbsp;
+                      <span className={styles.recentstatustext}>
+                        {statusHistory[2].text_history}
+                      </span>
+                      &nbsp;&nbsp;
+                      <span>-</span>&nbsp;&nbsp;
+                      <span>
+                        {expiryTimeLabel[statusHistory[2].expiry_history]}
+                      </span>
+                    </div>
+                    <div
+                      data-tip
+                      data-for="deleteRecent"
+                      className={styles.recentstatustileiconwrapper}
+                      onClick={() => {
+                        onRemoveRecent(statusHistory[2].text_history);
+                      }}
+                    >
+                      <FaRegTimesCircle
+                        className={styles.recentstatustileicon}
+                      />
+                    </div>
+                    <ReactTooltip id="deleteRecent" type="dark" effect="solid">
+                      <span>Delete</span>
+                    </ReactTooltip>
+                  </div>
+                )}
+                {statusHistory[3] && (
+                  <div className={styles.recentstatustile}>
+                    <div
+                      onClick={() => {
+                        onSelectRecent(statusHistory[3]);
+                      }}
+                      className={styles.recentstatustileleft}
+                    >
+                      <span>{statusHistory[3].tag_history}</span>&nbsp;&nbsp;
+                      <span className={styles.recentstatustext}>
+                        {statusHistory[3].text_history}
+                      </span>
+                      &nbsp;&nbsp;
+                      <span>-</span>&nbsp;&nbsp;
+                      <span>
+                        {expiryTimeLabel[statusHistory[3].expiry_history]}
+                      </span>
+                    </div>
+                    <div
+                      data-tip
+                      data-for="deleteRecent"
+                      className={styles.recentstatustileiconwrapper}
+                      onClick={() => {
+                        onRemoveRecent(statusHistory[3].text_history);
+                      }}
+                    >
+                      <FaRegTimesCircle
+                        className={styles.recentstatustileicon}
+                      />
+                    </div>
+                    <ReactTooltip id="deleteRecent" type="dark" effect="solid">
+                      <span>Delete</span>
+                    </ReactTooltip>
+                  </div>
+                )}
+                {statusHistory[4] && (
+                  <div className={styles.recentstatustile}>
+                    <div
+                      onClick={() => {
+                        onSelectRecent(statusHistory[4]);
+                      }}
+                      className={styles.recentstatustileleft}
+                    >
+                      <span>{statusHistory[4].tag_history}</span>&nbsp;&nbsp;
+                      <span className={styles.recentstatustext}>
+                        {statusHistory[4].text_history}
+                      </span>
+                      &nbsp;&nbsp;
+                      <span>-</span>&nbsp;&nbsp;
+                      <span>
+                        {expiryTimeLabel[statusHistory[4].expiry_history]}
+                      </span>
+                    </div>
+                    <div
+                      data-tip
+                      data-for="deleteRecent"
+                      className={styles.recentstatustileiconwrapper}
+                      onClick={() => {
+                        onRemoveRecent(statusHistory[4].text_history);
+                      }}
+                    >
+                      <FaRegTimesCircle
+                        className={styles.recentstatustileicon}
+                      />
+                    </div>
+                    <ReactTooltip id="deleteRecent" type="dark" effect="solid">
+                      <span>Delete</span>
+                    </ReactTooltip>
+                  </div>
+                )}
+                <DefaultStatus
+                  chosenStatus={chosenStatus}
+                  setChosenStatus={setChosenStatus}
+                  setStatusText={setStatusText}
+                  setStatusEmoji={setStatusEmoji}
+                  setChoosePeriod={setChoosePeriod}
+                />
+              </div>
+            ) : (
+              <div className={styles.clearafter}>
+                <div
+                  className={styles.clearaftertop}
+                  onClick={() => setDropdown(!dropdown)}
+                >
+                  <label htmlFor="" className={styles.dropdowntop}>
+                    Clear after: &nbsp;
+                    <span className={styles.dropdowntopspan}>
+                      {expiryTimeLabel[choosePeriod] === "Custom" ||
+                      choosePeriod.length > 10
+                        ? "Choose Date and Time"
+                        : expiryTimeLabel[choosePeriod]}
+                    </span>
+                  </label>
+                  <img src={down} alt="" />
+                </div>
+                {dateTime ? (
+                  <div className={styles.datetime}>
+                    <input
+                      type="date"
+                      className={styles.date}
+                      defaultValue={dateState}
+                      min={
+                        new Date(new Date().toString().split("GMT")[0] + " UTC")
+                          .toISOString()
+                          .split("T")[0]
+                      }
+                      onChange={setDateHandler}
+                    />
+                    <input
+                      type="time"
+                      className={timeError ? styles.timeError : styles.time}
+                      defaultValue={timeState}
+                      onChange={setTimeHandler}
+                    />
+                    {timeError && (
+                      <div className={styles.errorMess}>
+                        Can't set time in the past
+                      </div>
+                    )}
+                  </div>
+                ) : null}
+                <div>
+                  {dropdown && (
+                    <ul
+                      className={styles.dropdown}
+                      onClick={() => setDropdown(!dropdown)}
+                    >
+                      <li
+                        className={styles.dropdownoption}
+                        onClick={() => {
+                          setChoosePeriod("dont_clear");
+                          setDateTime(false);
+                        }}
+                      >
+                        Don't clear
+                      </li>
+                      <li
+                        className={styles.dropdownoption}
+                        onClick={() => {
+                          setChoosePeriod("one_hour");
+                          setDateTime(false);
+                        }}
+                      >
+                        1 hour
+                      </li>
+                      <li
+                        className={styles.dropdownoption}
+                        onClick={() => {
+                          setChoosePeriod("four_hours");
+                          setDateTime(false);
+                        }}
+                      >
+                        4 hours
+                      </li>
+                      <li
+                        className={styles.dropdownoption}
+                        onClick={() => {
+                          setChoosePeriod("today");
+                          setDateTime(false);
+                        }}
+                      >
+                        Today
+                      </li>
+                      <li
+                        className={styles.dropdownoption}
+                        onClick={() => {
+                          setChoosePeriod("this_week");
+                          setDateTime(false);
+                        }}
+                      >
+                        This week
+                      </li>
+                      <li
+                        className={styles.dropdownoption2}
+                        onClick={() => {
+                          setDateTime(true);
+                          setChoosePeriod("date_time");
+                        }}
+                      >
+                        Set date and time
+                      </li>
+                    </ul>
                   )}
                 </div>
-              ) : null}
-              <div>
-                {dropdown && (
-                  <ul
-                    className={styles.dropdown}
-                    onClick={() => setDropdown(!dropdown)}
-                  >
-                    <li
-                      className={styles.dropdownoption}
-                      onClick={() => {
-                        setChoosePeriod("dont_clear");
-                        setDateTime(false);
-                      }}
-                    >
-                      Don't clear
-                    </li>
-                    <li
-                      className={styles.dropdownoption}
-                      onClick={() => {
-                        setChoosePeriod("one_hour");
-                        setDateTime(false);
-                      }}
-                    >
-                      1 hour
-                    </li>
-                    <li
-                      className={styles.dropdownoption}
-                      onClick={() => {
-                        setChoosePeriod("four_hours");
-                        setDateTime(false);
-                      }}
-                    >
-                      4 hours
-                    </li>
-                    <li
-                      className={styles.dropdownoption}
-                      onClick={() => {
-                        setChoosePeriod("today");
-                        setDateTime(false);
-                      }}
-                    >
-                      Today
-                    </li>
-                    <li
-                      className={styles.dropdownoption}
-                      onClick={() => {
-                        setChoosePeriod("this_week");
-                        setDateTime(false);
-                      }}
-                    >
-                      This week
-                    </li>
-                    <li
-                      className={styles.dropdownoption2}
-                      onClick={() => {
-                        setDateTime(true);
-                        setChoosePeriod("date_time");
-                      }}
-                    >
-                      Set date and time
-                    </li>
-                  </ul>
-                )}
               </div>
-            </div>
+            )}
           </form>
         </div>
 

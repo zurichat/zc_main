@@ -170,11 +170,11 @@
     _margin-right: 12px;
   } */
 
-/*@media only screen and (max-width: 1200px) {*/
+@media only screen and (max-width: 1200px) {
   .navbarNav {
     flex-basis: 80%;
   }
-/*}*/
+}
 
 @media only screen and (max-width: 992px) {
   .search_wrapper {

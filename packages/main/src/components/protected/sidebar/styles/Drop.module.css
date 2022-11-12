@@ -85,7 +85,7 @@
 .icon,
 .item__icon {
   /* font-size: 1.2em; */
-  width: unset;
+  width: 24px;
 }
 
 .icon {

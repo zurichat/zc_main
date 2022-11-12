@@ -5,7 +5,6 @@ import { BigModal } from "./BigModal";
 import { FilterItem } from "./FilterItem";
 import { plugins } from "../utils/topbar-api";
 import { ProfileContext } from "../context/profile-modal.context";
-import { useTranslation } from "react-i18next";
 
 const base_URL = "https://jsonplaceholder.typicode.com/todos";
 
@@ -17,7 +16,6 @@ const TopBarSearchModal = () => {
   const [result, setResult] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const { user } = useContext(ProfileContext);
-  const { t } = useTranslation();
 
   let pluginName = window.location.href;
   let newName = pluginName.split("/");
@@ -92,12 +90,6 @@ const TopBarSearchModal = () => {
             </button>
           </li>
         ));
-
-  const handleSearchInputFocus = () => {
-    const input = document.getElementById("searchCursor");
-    input.focus();
-    input.setSelectionRange(input.value.length, input.value.length);
-  };
   return (
     <div className={styles.topBarSearchModal}>
       <div className={styles._input}>
@@ -111,13 +103,12 @@ const TopBarSearchModal = () => {
         )}
         <input
           type="text"
-          placeholder={t("search_placeholder")}
+          placeholder="Search Here"
           value={value}
           onChange={onInputChange}
           onKeyUp={onSearchSubmit}
           className={styles._input2}
           data-testid="topbar_search_input_testid"
-          onFocus={handleSearchInputFocus}
         />
       </div>
       <div
@@ -140,13 +131,10 @@ const TopBarSearchModal = () => {
               <input
                 type="text"
                 className={styles._MainInput}
-                placeholder={t("search_placeholder")}
+                placeholder="Search Here"
                 value={value}
                 onChange={onInputChange}
                 onKeyUp={onSearchSubmit}
-                autoFocus={"autofocus"}
-                id="searchCursor"
-                ref={ref => ref && ref.focus()}
               />
             </div>
             <div className={styles.close_icon}>
