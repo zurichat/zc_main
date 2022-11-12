@@ -5,6 +5,7 @@ import { BigModal } from "./BigModal";
 import { FilterItem } from "./FilterItem";
 import { plugins } from "../utils/topbar-api";
 import { ProfileContext } from "../context/profile-modal.context";
+import { useTranslation } from "react-i18next";
 import TopBarSearchModalUI from "./TopBarSearchModalUI";
 
 const base_URL = "https://jsonplaceholder.typicode.com/todos";
@@ -17,6 +18,7 @@ const TopBarSearchModal = () => {
   const [result, setResult] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const { user } = useContext(ProfileContext);
+  const { t } = useTranslation();
 
   let pluginName = window.location.href;
   let newName = pluginName.split("/");
@@ -104,7 +106,7 @@ const TopBarSearchModal = () => {
         )}
         <input
           type="text"
-          placeholder="Search Here"
+          placeholder={t("search_placeholder")}
           value={value}
           onChange={onInputChange}
           onKeyUp={onSearchSubmit}
@@ -132,8 +134,7 @@ const TopBarSearchModal = () => {
               <input
                 type="text"
                 className={styles._MainInput}
-                placeholder="Search Here
-                "
+                placeholder="Search Here"
                 value={value}
                 onChange={onInputChange}
                 onKeyUp={onSearchSubmit}
