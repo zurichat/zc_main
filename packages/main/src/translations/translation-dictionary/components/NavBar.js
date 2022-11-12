@@ -29,10 +29,10 @@ export default [
   },
   {
     key: "nav_plugin",
-    en: "Plugin",
-    de: "Plugin",
+    en: "Plugins",
+    de: "Plugins",
     nl: "Inpluggen",
-    engb: "Plugin",
+    engb: "Plugins",
     fr: "Brancher",
     zh: "插入",
     ar: "توصيل في",
@@ -110,5 +110,10 @@ export default [
     it: "Disconnessione",
     iw: "התנתק",
     pt: "Sair"
+  },
+  {
+    key: "search_placeholder",
+    en: "Search Here",
+    fr: "Cherche ici"
   }
 ];
