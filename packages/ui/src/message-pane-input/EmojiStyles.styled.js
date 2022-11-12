@@ -43,7 +43,7 @@ export const StyledEmojiSelectWrapper = styled.div`
     height: 1.5em;
     box-sizing: border-box;
     line-height: 1.2em;
-    font-size: 1.5em;
+    font-size: 15px;
     color: #888;
     background: #fff;
     border: 1px solid #ddd;
