@@ -99,7 +99,8 @@ const Image = styled.img`
   width: 48px;
   height: 48px;
   object-fit: cover;
-`;  
+`;
+  
 const Flex = styled.div`
   display: flex;
   flex-direction: row;
