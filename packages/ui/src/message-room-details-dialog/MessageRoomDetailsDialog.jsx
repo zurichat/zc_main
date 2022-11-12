@@ -249,7 +249,6 @@ function MembersPanel({ config }) {
     });
     const newEntries = [...membersList, ...channelNewMembers];
     setMembersList(newEntries);
-    // console.warn(membersList)
     addmembersevent(values);
   };
 
@@ -292,7 +291,6 @@ function MembersPanel({ config }) {
       })
       .catch(() => {
         setisLoading(false);
-        /*e => console.log("Organization not returning members", e)*/
       });
   }, [membersList]);
 
