@@ -61,7 +61,8 @@ module.exports = (webpackConfigEnv, argv) => {
           use: "js-yaml-loader"
         },
         {
-          test: /\.css$/i,
+          test: /\.css$/,
+          include: [path.resolve(__dirname, "not_exist_path")],
           use: [
             "style-loader",
             {

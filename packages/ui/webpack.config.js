@@ -42,7 +42,8 @@ module.exports = (webpackConfigEnv, argv) => {
     module: {
       rules: [
         {
-          test: /\.css$/i,
+          test: /\.css$/,
+          include: [path.resolve(__dirname, "not_exist_path")],
           use: [
             "style-loader",
             {
