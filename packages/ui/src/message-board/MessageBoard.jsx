@@ -21,6 +21,7 @@ function MessageBoard({
   onSendAttachedFile,
   onReact
 }) {
+  console.log({ messages });
   const [showMoreOptions, setShowMoreOptions] = useState(false);
   const [showEmoji, setShowEmoji] = useState(false);
   const [shouldScrollToBottom, setScrollToBottom] = useState(true);
@@ -68,9 +69,8 @@ function MessageBoard({
   };
 
   function handleEmojiClicked(event, emojiObject, messageId) {
-    const shouldScroll =
-      onReact && onReact(event, emojiObject, messageId || currentMessageId);
-    setScrollToBottom(shouldScroll);
+    const message_id = messageId || currentMessageId;
+    onReact && onReact(event, emojiObject, message_id);
   }
 
   const messagesEndRef = useRef(null);
