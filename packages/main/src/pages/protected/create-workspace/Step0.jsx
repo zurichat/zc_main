@@ -7,7 +7,6 @@ import { BASE_API_URL } from "@zuri/utilities";
 import { UserOrganisationsListing } from "../../../components";
 
 import ContinueArrow from "./assets/ContinueArrow.svg";
-import CreateWorkspaceSideImage from "./assets/CreateWorkspaceSideImage.png";
 
 export default function Index() {
   const user = JSON.parse(sessionStorage.getItem("user")) || null;
@@ -70,9 +69,6 @@ export default function Index() {
               Privacy Policy, and Cookie Policy.
             </FadedText>
           </TextSection>
-          <ImageSection>
-            <img src={CreateWorkspaceSideImage} alt="" />
-          </ImageSection>
         </TopSection>
       </Wrapper>
       {user ? (
