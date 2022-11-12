@@ -31,14 +31,17 @@ function ContactFormContainer() {
     success: ""
   });
 
+  const  [touched, setTouched] = useState(false)
+
+  const emailPattern =  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
   useEffect(() => {
-    getUserInfo().then(userInfo => {
-      setUserAuth(userInfo?.user.email ? userInfo.user : {});
-      setValues(values => ({
-        ...values,
-        email: userAuth.email ? userAuth.email : values.email
-      }));
-    });
+
+    // setUserAuth(userInfo.user.email ? userInfo.user : {});
+    setValues(values => ({
+      ...values,
+      email: userAuth.email ? userAuth.email : values.email
+    }));
   }, []);
 
   const {
@@ -152,7 +155,13 @@ function ContactFormContainer() {
             aria-describedby="email"
             type="email"
             required
+            onBlur={() => setTouched(true)}
           />
+          {!emailPattern.test(values.email) && touched && (
+          <div className={ContactFormStyle.error_span}>
+          <span>Input valid Email</span>
+          </div>
+          )}
         </div>
 
         <div
@@ -341,7 +350,7 @@ function ContactFormContainer() {
                 })}
               >
                 {acceptedFileItems}
-                <input {...getInputProps()}/>
+                <input {...getInputProps()} />
                 <p>{t("drag")}</p>
                 <a
                   style={{
