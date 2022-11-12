@@ -12,7 +12,11 @@ export default function App() {
     const sideBar = document.getElementById(
       "single-spa-application:@zuri/sidebar"
     );
-    sideBar.style.backgroundColor = themeColors[theme]?.primary;
+
+    // Ensure the sidebar is mounted before changing the theme
+    if (sideBar) {
+      sideBar.style.backgroundColor = themeColors[theme]?.primary;
+    }
   }
 
   useEffect(() => {
