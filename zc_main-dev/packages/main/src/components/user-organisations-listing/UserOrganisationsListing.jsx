@@ -151,6 +151,7 @@ const TryDifferentWrapper = styled.div`
 `;
 const TextBottom = styled.p`
   font-weight: 400;
+  // font-size: ${18 / 16}rem;
   font-family: "Lato" sans-serif;
 `;
 const SecondText = styled(TextBottom)`
