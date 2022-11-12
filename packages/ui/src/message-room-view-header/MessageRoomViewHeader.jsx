@@ -22,10 +22,12 @@ export default function MessageRoomViewHeader(props) {
       <div className={styles.plugin__header}>
         <div
           onClick={() => {
-            if (props.roomInfo) {
-              setShowDialog(!showDialog);
-              setTabIndex(0);
-            }
+            setShowDialog(!showDialog);
+            setTabIndex(0);
+            // if (props.roomInfo) {
+            //   setShowDialog(!showDialog);
+            //   setTabIndex(0);
+            // }
           }}
           className={styles.plugin__header__title}
         >
