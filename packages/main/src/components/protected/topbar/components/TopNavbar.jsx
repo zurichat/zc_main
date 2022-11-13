@@ -150,18 +150,36 @@ const TopNavbar = () => {
 
   let toggleStatus = null;
 
+  const StatusToolTip = ({ title }) => {
+    return (
+      <div className={styles["status__tool__tip"]}>
+        <ReactTooltip
+          id="toggleStatus"
+          effect="solid"
+          place="bottom"
+          type="dark"
+          offset="{'top': 3, 'left': 0.8}"
+        >
+          {title}
+        </ReactTooltip>
+      </div>
+    );
+  };
+
   switch (presence) {
     case "true":
       toggleStatus = (
         <ToggleStatus>
-          <div className="user-active" />
+          <div className="user-active" data-tip data-for="toggleStatus" />
+          <StatusToolTip title="Active" />
         </ToggleStatus>
       );
       break;
     default:
       toggleStatus = (
         <ToggleStatus>
-          <div className="user-away" />
+          <div className="user-away" data-tip data-for="toggleStatus" />
+          <StatusToolTip title="Away" />
         </ToggleStatus>
       );
   }

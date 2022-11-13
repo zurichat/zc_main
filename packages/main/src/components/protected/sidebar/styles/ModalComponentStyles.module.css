@@ -48,6 +48,10 @@
   position: relative;
   cursor: pointer;
 }
+.modalSection div:hover > p,
+.submodalSection div:hover > p {
+  color: #fff;
+}
 .submodalSection {
   display: flex;
   padding: 5px auto;

@@ -31,14 +31,13 @@ function ContactFormContainer() {
     success: ""
   });
 
-  useEffect(() => {
-    getUserInfo().then(userInfo => {
-      setUserAuth(userInfo?.user.email ? userInfo.user : {});
-      setValues(values => ({
-        ...values,
-        email: userAuth.email ? userAuth.email : values.email
-      }));
-    });
+  useEffect( async () => {
+    let userInfo = await getUserInfo();
+    setUserAuth(userInfo.user.email ? userInfo.user : {});
+    setValues(values => ({
+      ...values,
+      email: userAuth.email ? userAuth.email : values.email
+    }));
   }, []);
 
   const {
