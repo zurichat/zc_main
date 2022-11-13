@@ -36,32 +36,32 @@ const Topics = [
       { title: "Related article 4" }
     ]
   },
-  {
-    topic: "Billing and plans",
-    faqs: [
-      {
-        title: "What kind of plans are available?",
-        details:
-          'We offer a free version of ZuriChat and three paid plans to choose from: Pro, Business+, and Enterprise Grid. To explore plans and find the right one for you, <a href="https://zuri.chat/">ZuriChat.com/pricing</a>visit.'
-      },
-      {
-        title: "Can I try ZuriChat for free?",
-        details:
-          "Sure! You can use the free version of ZuriChat for as long as you’d like, but Workspace Owners and Admins can request to try the Pro or Business+ plan for free. Create a workspace if you don’t have one, then use the form below to send us a note. Make sure to include your workspace name and URL, and the plan you’d like to trial."
-      },
-      {
-        title: "How does billing work?",
-        details:
-          'We offer a Fair Billing Policy — this means you only pay for the members of your workspace that are using ZuriChat. Read more about our <a href="https://zuri.chat/">Fair Billing policy</a>, and check out <a href="https://zuri.chat/">our guide to billing</a> for more information.'
-      }
-    ],
-    articles: [
-      { title: "Related article 1" },
-      { title: "Related article 2" },
-      { title: "Related article 3" },
-      { title: "Related article 4" }
-    ]
-  },
+  // {
+  //   topic: "Billing and plans",
+  //   faqs: [
+  //     {
+  //       title: "What kind of plans are available?",
+  //       details:
+  //         'We offer a free version of ZuriChat and three paid plans to choose from: Pro, Business+, and Enterprise Grid. To explore plans and find the right one for you, <a href="https://zuri.chat/">ZuriChat.com/pricing</a>visit.'
+  //     },
+  //     {
+  //       title: "Can I try ZuriChat for free?",
+  //       details:
+  //         "Sure! You can use the free version of ZuriChat for as long as you’d like, but Workspace Owners and Admins can request to try the Pro or Business+ plan for free. Create a workspace if you don’t have one, then use the form below to send us a note. Make sure to include your workspace name and URL, and the plan you’d like to trial."
+  //     },
+  //     {
+  //       title: "How does billing work?",
+  //       details:
+  //         'We offer a Fair Billing Policy — this means you only pay for the members of your workspace that are using ZuriChat. Read more about our <a href="https://zuri.chat/">Fair Billing policy</a>, and check out <a href="https://zuri.chat/">our guide to billing</a> for more information.'
+  //     }
+  //   ],
+  //   articles: [
+  //     { title: "Related article 1" },
+  //     { title: "Related article 2" },
+  //     { title: "Related article 3" },
+  //     { title: "Related article 4" }
+  //   ]
+  // },
   {
     topic: "Connection trouble",
     faqs: [

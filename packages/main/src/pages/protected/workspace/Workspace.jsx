@@ -59,7 +59,6 @@ export default function Index() {
         <SidebarWrapperStyle>
           <Sidebar />
         </SidebarWrapperStyle>
-
         <WorkspaceWrapperStyle>
           <div id="zuri-plugin-load-section"></div>
           <Switch>
