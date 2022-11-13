@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import styles from "../styles/Drop.module.css";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { AiOutlinePlus } from "react-icons/ai";
@@ -9,6 +10,7 @@ const DropDown = ({ categoryName, isOpen, toggleDropdown, button_url }) => {
   const m_5px = { margin: "-5px" };
   const [addToRoom, setAddToRoom] = useState(false);
   const [roomId, setRoomId] = useState(false);
+  const { t } = useTranslation();
   // const [isOpen, setOpen] = useState(false)
   // const [items,   setItems] = useState(data);
   // const [selectedItem, setSelectedItem] = useState(null)
