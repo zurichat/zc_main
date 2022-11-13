@@ -21,6 +21,7 @@ import {
   InvitePage,
   ResetPassword,
   ChangePassword,
+  WhyZuriChat,
   PrivacyPage
 } from "./pages";
 
@@ -89,6 +90,7 @@ const App = () => (
           <Route path="/invites/:id" component={InvitePage} />
           <Route exact path="/reset-password" component={ResetPassword} />
           <Route path="/change-password" component={ChangePassword} />
+          <Route path="/whyzurichat" component={WhyZuriChat} />
           <Route path="/privacy" component={PrivacyPage} />
           <Route path="/terms" component={TermsOfService} />
 

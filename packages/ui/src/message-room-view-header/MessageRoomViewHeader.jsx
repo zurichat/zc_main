@@ -3,8 +3,10 @@ import PropTypes from "prop-types";
 import styles from "./message-room-view-header.module.css";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import ChatRoomDetailsDialog from "../message-room-details-dialog/MessageRoomDetailsDialog";
+import { useTranslation } from "react-i18next";
 
 export default function MessageRoomViewHeader(props) {
+  const { t } = useTranslation();
   const [showDialog, setShowDialog] = useState(false);
   const [tabIndex, setTabIndex] = useState(0);
 
@@ -22,12 +24,10 @@ export default function MessageRoomViewHeader(props) {
       <div className={styles.plugin__header}>
         <div
           onClick={() => {
-            setShowDialog(!showDialog);
-            setTabIndex(0);
-            // if (props.roomInfo) {
-            //   setShowDialog(!showDialog);
-            //   setTabIndex(0);
-            // }
+            if (props.name !== "#unknown-channel") {
+              setShowDialog(!showDialog);
+              setTabIndex(0);
+            }
           }}
           className={styles.plugin__header__title}
         >

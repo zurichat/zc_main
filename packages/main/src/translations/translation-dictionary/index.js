@@ -22,6 +22,7 @@ import Pricing from "./pages/Pricing";
 
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
+import WorkspaceChat from "./pages/WorkspaceChat";
 import SideBar from "./components/SideBar";
 import Download from "./pages/Download";
 import DownloadDesktopSectionTwo from "./pages/DownloadDesktopSectionTwo";
@@ -58,6 +59,7 @@ const Translations = [
   // Components
   ...NavBar,
   ...Footer,
+  ...WorkspaceChat,
   ...SideBar
 ];
 
