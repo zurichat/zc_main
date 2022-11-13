@@ -315,8 +315,6 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
 
             {reusableModal === "preference" && <Preferences />}
 
-            <hr className={styles.hr} />
-
             <div className={styles.optionSection}>
               <p onClick={logout}>Sign out</p>
             </div>
