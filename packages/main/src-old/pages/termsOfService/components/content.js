@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "../styles/contentterms.module.css";
+import { GeneralLoading } from "../../../../src/components";
 
 const content = () => {
   return (
     <>
-      <main className={styles.main}>
-        <div className={styles.mainterm}>
+      {/* <main className={styles.main}>
+         <div className={styles.mainterm}>
           <h1 className={styles.terms}>Zuri Chat Terms of Service</h1>
           <p className={styles.termsM}>Last modified: October 10, 2021</p>
           <p className={styles.termsP}>
@@ -352,8 +353,9 @@ const content = () => {
             quisquam, voluptate nesciunt quod enim illum, dolore corrupti ab
             velit, fugit magni nam. Magnam maiores esse at sed vero.
           </p>
-        </div>
-      </main>
+        </div> 
+      </main>*/}
+      <GeneralLoading text="404 - (Refactoring in Progress)" />
     </>
   );
 };
