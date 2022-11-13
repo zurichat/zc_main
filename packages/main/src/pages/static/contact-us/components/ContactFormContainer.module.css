@@ -136,6 +136,15 @@
   max-height: 0;
   transition: max-height 550ms cubic-bezier(0.06, 0.6, 0.08, 0.99);
   overflow: hidden;
+  position: absolute;
+}
+
+.error_span{
+  position: relative;
+  text-align: right;
+  bottom: 0;
+  width: 100%;
+  color: red;
 }
 
 .accordion {

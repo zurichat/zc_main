@@ -31,6 +31,11 @@ function ContactFormContainer() {
     success: ""
   });
 
+  const [touched, setTouched] = useState(false);
+
+  const emailPattern =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
   useEffect(() => {
     let userInfo = getUserInfo();
     setUserAuth(userInfo.user?.email ? userInfo.user : {});
@@ -142,7 +147,6 @@ function ContactFormContainer() {
             {t("formEmail")}
           </label>
           <input
-            type="email"
             className={`form-control ${ContactFormStyle.form_control}`}
             id="email"
             name="email"
@@ -150,9 +154,15 @@ function ContactFormContainer() {
             value={values.email}
             placeholder="You@example.com"
             aria-describedby="email"
+            type="email"
             required
+            onBlur={() => setTouched(true)}
           />
-          {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
+          {!emailPattern.test(values.email) && touched && (
+            <div className={ContactFormStyle.error_span}>
+              <span>Input valid Email</span>
+            </div>
+          )}
         </div>
 
         <div
@@ -326,6 +336,7 @@ function ContactFormContainer() {
                 onChange={handleChange}
                 placeholder={t("additionalInfo")}
                 rows="3"
+                required
               ></textarea>
             </div>
 
