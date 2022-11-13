@@ -6,6 +6,7 @@ import { FilterItem } from "./FilterItem";
 import { plugins } from "../utils/topbar-api";
 import { ProfileContext } from "../context/profile-modal.context";
 import { useTranslation } from "react-i18next";
+import TopBarSearchModalUI from "./TopBarSearchModalUI";
 
 const base_URL = "https://jsonplaceholder.typicode.com/todos";
 
@@ -149,6 +150,18 @@ const TopBarSearchModal = () => {
                 ref={ref => ref && ref.focus()}
               />
             </div>
+
+            <div>
+              <svg data-g7q="true" aria-hidden="true" viewBox="0 0 20 20">
+                <path
+                  fill="#000000"
+                  fillRule="evenodd"
+                  d="M13.5 3.25a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm-2.386.25a2.501 2.501 0 0 1 4.772 0h1.864a.75.75 0 0 1 0 1.5h-1.864a2.501 2.501 0 0 1-4.771 0H2.25a.75.75 0 0 1 0-1.5h8.864Zm-7 5.75a2.501 2.501 0 0 1 4.772 0h8.864a.75.75 0 0 1 0 1.5H8.886a2.501 2.501 0 0 1-4.772 0H2.25a.75.75 0 0 1 0-1.5h1.864ZM6.5 9a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm6 5.75a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm-2.386.25a2.501 2.501 0 0 1 4.772 0h2.864a.75.75 0 0 1 0 1.5h-2.864a2.501 2.501 0 0 1-4.771 0H2.25a.75.75 0 0 1 0-1.5h7.864Z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+            </div>
+
             <div className={styles.close_icon}>
               <svg
                 focusable="false"
@@ -161,6 +174,7 @@ const TopBarSearchModal = () => {
           </div>
         </div>
         <ul className={styles.ListWrapper}>
+          <TopBarSearchModalUI />
           {filters === {} ? (
             <li>
               <SearchModalResult title="" />
