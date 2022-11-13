@@ -1,5 +1,5 @@
 name: 🐛 Bug
-description: Report an issue to help improve the project.
+description: Report an issue to help improve Zuri Chat.
 title: "[BUGS] <description>"
 labels:
   [
@@ -9,10 +9,24 @@ labels:
   ]
 body:
   - type: textarea
-    id: description
+    id: description-expected
     attributes:
-      label: Description
-      description: A brief description of the question or issue, also include what you tried and what didn't work
+      label: Expected Behaviour
+      description: A brief description of the expected behaviour of the feature
+    validations:
+      required: true
+  - type: textarea
+    id: description-current
+    attributes:
+      label: Current Behaviour
+      description: A brief description of the expected behaviour of the feature
+    validations:
+      required: true
+  - type: textarea
+    id: description-current
+    attributes:
+      label: Steps to reproduce
+      description: Provide a link to a live example, or an unambiguous set of steps to reproduce this bug. Include code to reproduce, if relevant
     validations:
       required: true
   - type: textarea
@@ -20,6 +34,13 @@ body:
     attributes:
       label: Screenshots
       description: Please add screenshots if applicable
+    validations:
+      required: false
+  - type: textarea
+    id: suggestions
+    attributes:
+      label: Possible Solutions
+      description: Not obligatory, but suggest an idea for implementing addition or change
     validations:
       required: false
   - type: textarea
