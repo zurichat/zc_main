@@ -96,7 +96,6 @@ export default function Index() {
       <section id={styles.authFormContainer}>
         <AuthFormWrapper
           header={t("logInheader")}
-          subHeader={t("logInsub_header")}
           googleHeader={t("google_header")}
           topLineText={t("topline_text")}
           submitButtonName={t("LoginsubmitButtonName")}
@@ -148,14 +147,6 @@ export default function Index() {
                 className={`${styles.resetPasswordLink}`}
               >
                 {t("forgotPassword")}
-              </Link>
-              <Link
-                to="/troubleshooting/onboarding-help"
-                style={{ textDecoration: "none" }}
-              >
-                {" "}
-                {""}
-                {t("getHelp")}
               </Link>
             </div>
           </div>
