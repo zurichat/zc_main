@@ -21,7 +21,6 @@ function MessageBoard({
   onSendAttachedFile,
   onReact
 }) {
-  console.log({ messages });
   // messages = Array.from(new Set(messages.map(a => a._id))).map(id => {
   //   return messages.find(a => a._id === id);
   // })
