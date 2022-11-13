@@ -4,220 +4,117 @@ export default [
     en: "Company",
     de: "Gesellschaft",
     enus: "Company",
-    fr: "Société",
-    zh: "公司",
-    ar: "شركة",
-    es: "Empresa",
-    it: "Società",
-    he: "חֶברָה",
-    pt: "Empresa"
+    fr: "Société"
   },
   {
     key: "footer_careers",
     en: "Careers",
     de: "Karriere",
     enus: "Careers",
-    fr: "Carrières",
-    zh: "职业生涯",
-    ar: "وظائف",
-    es: "Carreras",
-    it: "Carriere",
-    he: "קריירה",
-    pt: "Carreiras"
+    fr: "Carrières"
   },
   {
     key: "footer_about",
     en: "About",
     de: "Über",
     enus: "About",
-    fr: "Sur",
-    zh: "关于",
-    ar: "عن",
-    es: "Sobre",
-    it: "Di",
-    he: "על אודות",
-    pt: "Cerca de"
+    fr: "Sur"
   },
   {
     key: "footer_why_zuri_chat",
     en: "Why Zuri Chat?",
     de: "Warum Zuri Chat?",
     enus: "Why Zuri Chat?",
-    fr: "Pourquoi Zuri discuter?",
-    zh: "为什么苏里聊天？",
-    ar: "لماذا zuri الدردشة؟",
-    es: "¿Por qué Chat de Zuri?",
-    it: "Perché Zuri chat?",
-    he: "למה צורי צ'אט?",
-    pt: "Por que Zuri chat?"
+    fr: "Pourquoi Zuri discuter?"
   },
   {
     key: "footer_blog",
     en: "Blog",
     de: "Blog",
     enus: "Blog",
-    fr: "Blog",
-    zh: "博客",
-    ar: "مدونة او مذكرة",
-    es: "Blog",
-    it: "Blog",
-    he: "בלוג",
-    pt: "Blog"
+    fr: "Blog"
   },
   {
     key: "footer_info",
     en: "Info",
     de: "Die Info",
     enus: "Info",
-    fr: "Info",
-    zh: "信息",
-    ar: "معلومات",
-    es: "Información",
-    it: "Informazioni",
-    he: "מידע",
-    pt: "Info"
+    fr: "Info"
   },
   {
     key: "footer_privacy",
     en: "Privacy & Terms",
     de: "Datenschutz",
     enus: "Privacy & Terms",
-    fr: "Confidentialité et modalités",
-    zh: "隐私权和条款",
-    ar: "الخصوصية والشروط",
-    es: "Términos y privacidad",
-    it: "Termini e Condizioni",
-    he: "פרטיות ותנאים",
-    pt: "Privacidade e Termos"
+    fr: "Confidentialité et modalités"
   },
   {
     key: "footer_legal",
     en: "Legal",
     de: "Gesetzlich",
     enus: "Legal",
-    fr: "Légal",
-    zh: "合法的",
-    ar: "قانوني",
-    es: "Legal",
-    it: "Legale",
-    he: "משפטי",
-    pt: "Jurídico"
+    fr: "Légal"
   },
   {
     key: "footer_market",
     en: "Market Place",
     de: "Marktplatz",
     enus: "Market Place",
-    fr: "Place du marché",
-    zh: "市场",
-    ar: "المتجر",
-    es: "Mercado",
-    it: "Posto di mercato",
-    he: "זירת מסחר",
-    pt: "Mercado"
+    fr: "Place du marché"
   },
   {
     key: "footer_security",
     en: "Security",
     de: "Sicherheit",
     enus: "Security",
-    fr: "Sécurité",
-    zh: "安全",
-    ar: "حماية",
-    es: "Seguridad",
-    it: "Sicurezza",
-    he: "בִּטָחוֹן",
-    pt: "Segurança"
+    fr: "Sécurité"
   },
   {
     key: "footer_web3",
     en: "Web3/DAO",
     de: "Web3/DAO",
     enus: "Web3/DAO",
-    fr: "Web3 / dao",
-    zh: "WEB3 / DAO.",
-    ar: "Web3/DAO",
-    es: "Web3/DAO",
-    it: "Web3/DAO",
-    he: "Web3/DAO",
-    pt: "Web3/DAO"
+    fr: "Web3 / dao"
   },
   {
     key: "footer_know_us",
     en: "Know us",
     de: "Kenne uns",
     enus: "Know us",
-    fr: "Se connaître",
-    zh: "认识我们",
-    ar: "إعرفنا",
-    es: "Conocenos",
-    it: "Conoscici",
-    he: "מכיר אותנו",
-    pt: "Conheça-nos"
+    fr: "Se connaître"
   },
   {
     key: "footer_downloads",
     en: "Downloads",
     de: "Downloads",
     enus: "Downloads",
-    fr: "Téléchargements",
-    zh: "下载",
-    ar: "التحميلات",
-    es: "Descargas",
-    it: "Downloads.",
-    he: "הורדות",
-    pt: "Transferências"
+    fr: "Téléchargements"
   },
   {
     key: "footer_contact",
     en: "Contact",
     de: "Kontakt",
-    enus: "Contact",
-    fr: "Contact",
-    zh: "接触",
-    ar: "اتصل",
-    es: "Contacto",
-    it: "Contatto",
-    he: "איש קשר",
-    pt: "Contato"
+    enus: "Contact"
   },
   {
     key: "footer_documentation",
     en: "Documentation",
     de: "Dokumentation",
     enus: "Documentation",
-    fr: "Documentation",
-    zh: "文件",
-    ar: "توثيق",
-    es: "Documentación",
-    it: "Documentazione",
-    he: "תיעוד",
-    pt: "Documentação"
+    fr: "Documentation"
   },
   {
     key: "footer_social_media",
     en: "Social Media",
     de: "Sozialen Medien",
     enus: "Social Media",
-    fr: "Des médias sociaux",
-    zh: "社交媒体",
-    ar: "وسائل التواصل الاجتماعي",
-    es: "Medios de comunicación social",
-    it: "Social media",
-    he: "מדיה חברתית",
-    pt: "Mídia social"
+    fr: "Des médias sociaux"
   },
   {
     key: "footer_rights",
     en: "All Rights Reserved",
     de: "Alle Rechte vorbehalten",
     enus: "All Rights Reserved",
-    fr: "Tous les droits sont réservés",
-    zh: "版权所有",
-    ar: "كل الحقوق محفوظة",
-    es: "Reservados todos los derechos",
-    it: "Tutti i diritti riservati",
-    he: "כל הזכויות שמורות",
-    pt: "Todos os direitos reservados"
+    fr: "Tous les droits sont réservés"
   }
 ];
