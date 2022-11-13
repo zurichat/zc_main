@@ -1,16 +1,31 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "../styles/ModalComponentStyles.module.css";
-import CompanyImage from "../assets/icons/company-icon.svg";
 import EmailInviteModal from "./invite-workflow/EmailInviteModal";
-// import axios from 'axios'
+import axios from "axios";
 import { RiArrowRightSLine as Arrow } from "react-icons/ri";
 import { useHistory } from "react-router-dom";
+import defaultLogo from "../assets/icons/zuri-chat-logo.svg";
 
 const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
+  const [orgLogoUrl, setOrgLogoUrl] = useState("");
   const history = useHistory();
   const [orgs, setOrgs] = React.useState([]);
 
   useEffect(() => {
+    const organisation_id = localStorage.getItem("currentWorkspace");
+
+    if (organisation_id) {
+      //Fetch organization logo
+      axios
+        .get(`/organizations/${organisation_id}`)
+        .then(res => {
+          setOrgLogoUrl(res.data.data.logo_url ? res.data.data.logo_url : "");
+        })
+        .catch(err => {
+          console.error(err);
+        });
+    }
+
     setOrgs(JSON.parse(sessionStorage.getItem("organisations")));
     // console.log(orgs);
   }, []);
@@ -55,7 +70,10 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
         className={`d-flex align-items-center justify-content-between ${styles.TopmodalSection}`}
       >
         <div className={`col-2 d-flex px-0 align-items-center ${styles.logo}`}>
-          <img src={CompanyImage} alt="logo" />
+          <img
+            src={orgLogoUrl ? orgLogoUrl : defaultLogo}
+            alt="Organization Logo"
+          />
         </div>
         <div className={`col-10 px-0  ${styles.header}`}>
           <h5> {workSpace?.name}</h5>
@@ -140,10 +158,6 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
               ref={hoverRef}
               className={`d-flex flex-column ${styles.submodalSection}`}
             >
-              <div onClick={() => history.push("/plugins")}>
-                <p> Plugins</p>
-              </div>
-              <hr className={styles.modalDivider} />
               <div>
                 <p>Analytics*</p>
               </div>

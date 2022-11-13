@@ -17,6 +17,8 @@ const AddMemberModal = props => {
   const [selectedMembers, setselectedMembers] = useState([]);
   const addMemberHandler = () => {
     addMembersEvent(selectedMembers);
+    console.log(selectedMembers);
+    setselectedMembers([]);
     handleClose();
   };
   const animatedComponents = makeAnimated();
@@ -41,7 +43,7 @@ const AddMemberModal = props => {
             </div>
           </div>
           <Select
-            className="mx-3"
+            className="mx-3 text-xs"
             closeMenuOnSelect={false}
             components={animatedComponents}
             isMulti
