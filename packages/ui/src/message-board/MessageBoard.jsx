@@ -21,10 +21,6 @@ function MessageBoard({
   onSendAttachedFile,
   onReact
 }) {
-  // messages = Array.from(new Set(messages.map(a => a._id))).map(id => {
-  //   return messages.find(a => a._id === id);
-  // })
-
   const [showMoreOptions, setShowMoreOptions] = useState(false);
   const [showEmoji, setShowEmoji] = useState(false);
   const [shouldScrollToBottom, setScrollToBottom] = useState(true);
@@ -68,7 +64,6 @@ function MessageBoard({
       setRight(20);
       setTop(100);
     }
-    // console.log(window.innerWidth - event.clientX)
   };
 
   function handleEmojiClicked(event, emojiObject, messageId) {
