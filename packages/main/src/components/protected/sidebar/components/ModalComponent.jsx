@@ -1,11 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "../styles/ModalComponentStyles.module.css";
 import EmailInviteModal from "./invite-workflow/EmailInviteModal";
-// import axios from 'axios'
+import axios from "axios";
 import { RiArrowRightSLine as Arrow } from "react-icons/ri";
 import { useHistory } from "react-router-dom";
 import defaultLogo from "../assets/icons/zuri-chat-logo.svg";
-import axios from "axios";
 
 const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
   const [orgLogoUrl, setOrgLogoUrl] = useState("");
@@ -20,10 +19,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
       axios
         .get(`/organizations/${organisation_id}`)
         .then(res => {
-          //Use the default logo if it doesn't exist
-          setOrgLogoUrl(
-            res.data.data.logo_url ? res.data.data.logo_url : defaultLogo
-          );
+          setOrgLogoUrl(res.data.data.logo_url ? res.data.data.logo_url : "");
         })
         .catch(err => {
           console.error(err);
@@ -74,7 +70,10 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
         className={`d-flex align-items-center justify-content-between ${styles.TopmodalSection}`}
       >
         <div className={`col-2 d-flex px-0 align-items-center ${styles.logo}`}>
-          <img src={defaultLogo} alt="Organization Logo" />
+          <img
+            src={orgLogoUrl ? orgLogoUrl : defaultLogo}
+            alt="Organization Logo"
+          />
         </div>
         <div className={`col-10 px-0  ${styles.header}`}>
           <h5> {workSpace?.name}</h5>
