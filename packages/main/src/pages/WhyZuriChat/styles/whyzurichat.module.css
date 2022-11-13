@@ -1,0 +1,227 @@
+.blog_container {
+  margin-top: 4rem;
+}
+.hero_blog {
+  background: #00b87c;
+  font-size: 16px;
+  color: #fff;
+}
+.hero_section {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  padding: 0 3.5rem;
+  padding-bottom: 1rem;
+}
+.hero_writeup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 20px;
+}
+.hero_title {
+  padding-top: 1rem;
+  font-size: 2em;
+  line-height: 1.5;
+}
+.hero_paragraph {
+  padding-top: 3rem;
+  line-height: 1.5;
+}
+.hero_img img {
+  width: 100%;
+  padding-top: 1.5rem;
+}
+.blog__content__header {
+  padding-top: 1.5rem;
+  text-align: center;
+}
+.blog__content__header h2 {
+  font-size: 30px;
+}
+
+.blog_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.blog_img img {
+  width: 60%;
+  padding-top: 2rem;
+}
+.card__left,
+.card__right {
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5em;
+  padding: 1rem 3.5rem;
+}
+.card__left__writeup,
+.card__right__writeup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.text__wrap h2 {
+  margin: 1em 0;
+  font-size: 22px;
+}
+.text__wrap p {
+  margin-top: 4rem;
+  font-size: 1.2em;
+}
+.card__left__writeup p,
+.card__right__writeup p {
+  color: #555;
+  margin: 30px 0;
+}
+
+.card__right__image {
+  /* background-image: url("images/desktop/image-stand-out.jpg"); */
+  background-position: center;
+  background-size: cover;
+}
+
+.bottom_container {
+  background: #00b87c;
+  clip-path: polygon(0 25%, 100% 8%, 100% 100%, 0% 100%);
+  color: #fff;
+  margin-bottom: 30px;
+  height: 150px;
+}
+.bottom_card {
+  display: flex;
+  align-items: center;
+  padding-top: 50px;
+  justify-content: space-around;
+}
+.bottom_card p {
+  padding-top: 1.2rem;
+  font-weight: 600;
+}
+.bottom_link {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
+  background-color: white;
+  color: #00b87c;
+  border: 2px solid white;
+  outline: none;
+  cursor: pointer;
+  border-radius: 4px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.bottom_link p {
+  justify-content: center;
+  align-items: center;
+}
+.bottom_link:hover {
+  color: white;
+  background-color: #00b87c;
+}
+
+/* media queries */
+@media (max-width: 810px) {
+  .blog_container {
+    margin-top: 2rem;
+  }
+  .hero_section {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0 2rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .hero_img {
+    justify-content: center;
+    align-items: center;
+  }
+  .hero_img img {
+    width: 80%;
+  }
+  .hero_paragraph {
+    padding-top: 1rem;
+  }
+  .card__left {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem 2rem;
+  }
+  .card__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem 2rem;
+  }
+  .blog_img img {
+    width: 50%;
+    padding-top: 0.5rem;
+  }
+  .text__wrap h2 {
+    margin: 0.5rem 0;
+  }
+  .text__wrap p {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero_section {
+    padding: 0 1rem;
+  }
+  .card__left {
+    padding: 1rem 1rem;
+  }
+  .card__right {
+    padding: 1rem 1rem;
+  }
+  .hero_title {
+    font-size: 1.5em;
+  }
+  .text__wrap h2 {
+    font-size: 1.5em;
+  }
+  .text__wrap p {
+    font-size: 1em;
+  }
+  .blog__content__header {
+    padding-top: 0.5rem;
+  }
+  .blog__content__header h2 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 450px) {
+  .hero_title {
+    font-size: 1.3em;
+  }
+  .text__wrap h2 {
+    font-size: 1.3em;
+  }
+  .text__wrap p {
+    font-size: 0.8em;
+  }
+  .blog__content__header {
+    padding-top: 0.5rem;
+  }
+  .blog__content__header h2 {
+    font-size: 20px;
+  }
+  .bottom_card {
+    flex-direction: column;
+    padding-top: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
