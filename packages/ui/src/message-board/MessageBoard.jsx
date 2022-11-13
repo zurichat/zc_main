@@ -22,6 +22,10 @@ function MessageBoard({
   onReact
 }) {
   console.log({ messages });
+  // messages = Array.from(new Set(messages.map(a => a._id))).map(id => {
+  //   return messages.find(a => a._id === id);
+  // })
+
   const [showMoreOptions, setShowMoreOptions] = useState(false);
   const [showEmoji, setShowEmoji] = useState(false);
   const [shouldScrollToBottom, setScrollToBottom] = useState(true);
@@ -71,6 +75,7 @@ function MessageBoard({
   function handleEmojiClicked(event, emojiObject, messageId) {
     const message_id = messageId || currentMessageId;
     onReact && onReact(event, emojiObject, message_id);
+    setScrollToBottom(false);
   }
 
   const messagesEndRef = useRef(null);
@@ -87,16 +92,20 @@ function MessageBoard({
     <>
       <MessageBoardContainer>
         <div className="MsgBoard">
-          {messages.map((message, i) => (
-            <MessagePane
-              key={`message-item-${i}`}
-              onShowMoreOptions={handleShowMoreOptions}
-              onShowEmoji={handleShowEmoji}
-              onEmojiClicked={handleEmojiClicked}
-              message={message}
-              currentUserId={currentUserId}
-            />
-          ))}
+          {Array.from(new Set(messages.map(a => a._id)))
+            .map(id => {
+              return messages.find(a => a._id === id);
+            })
+            .map((message, i) => (
+              <MessagePane
+                key={`message-item-${i}`}
+                onShowMoreOptions={handleShowMoreOptions}
+                onShowEmoji={handleShowEmoji}
+                onEmojiClicked={handleEmojiClicked}
+                message={message}
+                currentUserId={currentUserId}
+              />
+            ))}
           <div ref={messagesEndRef} />
         </div>
         {isLoadingMessages && (
