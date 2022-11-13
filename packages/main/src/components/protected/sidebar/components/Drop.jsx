@@ -31,7 +31,9 @@ const DropDown = ({ categoryName, isOpen, toggleDropdown, button_url }) => {
         <div
           className={`w-100 d-flex align-items-center justify-content-between`}
         >
-          <p className={`mb-0 ${styles.dropDown__title}`}> {t(categoryName)}</p>
+          <p className={`mb-0 ${styles.dropDown__title}`}>
+            {t(`workspace_chat.${categoryName}`)}
+          </p>
           {/* <img src={infoIcon} alt="icon" role="button" /> */}
           {button_url ? (
             <a href={button_url} onClick={navigateToUrl}>

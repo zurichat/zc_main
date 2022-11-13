@@ -40,19 +40,7 @@ export default function Footer() {
             <h5>{t("footer_company")}</h5>
             <ul>
               <li>
-                <Link to="/careers">{t("footer_careers")}</Link>
-              </li>
-
-              <li>
                 <Link to="/whyzurichat">{t("footer_why_zuri_chat")}</Link>
-              </li>
-
-              <li>
-                <Link to="/open-marketplace">{t("footer_market")}</Link>
-              </li>
-
-              <li>
-                <Link to="/dao-features">{t("footer_web3")}</Link>
               </li>
             </ul>
           </div>

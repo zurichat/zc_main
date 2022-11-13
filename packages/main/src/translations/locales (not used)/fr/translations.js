@@ -807,5 +807,14 @@ export const TRANSLATIONS_FR = {
       "Rencontrer un obstacle? tu as une question? Notre équipe d'assistance 24h/24 et 7j/7 fera des pas supplémentaires et parcourra des kilomètres supplémentaires pour vous garantir une expérience simple et agréable avec Zuri Chat.",
     bottom_card: "Votre équipe aimerait certainement",
     bottom_link: "S'inscrire maintenant!"
+  },
+
+  workspace_chat: {
+    threads: "Fils",
+    alldms: "Tous les DMS",
+    drafts: "Brouillons",
+    direct_messages: "Messages directs",
+    channels: "Canaux",
+    general: "Général"
   }
 };
