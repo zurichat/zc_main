@@ -1,0 +1,47 @@
+/** @format */
+
+.modalWrap {
+  position: relative;
+  display: inline-block;
+}
+
+.modalTriggerBtn {
+  /* border-radius: 50%; */
+
+  /* padding: 8px; */
+  align-self: center;
+  z-index: 2;
+  border: none;
+  background-color: transparent;
+  position: relative;
+}
+
+.modalContent {
+  position: absolute;
+  background-color: #f8f8f8;
+  min-width: 200px;
+  z-index: 6;
+  left: 50%;
+  top: 50%;
+  box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.1);
+}
+
+.modalHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modalHeader h1 {
+  font-size: 2rem;
+  color: #000000;
+}
+
+.modalHeader div {
+  padding: 4px;
+}
+
+.modalHeader div:hover {
+  background-color: #efefef;
+}

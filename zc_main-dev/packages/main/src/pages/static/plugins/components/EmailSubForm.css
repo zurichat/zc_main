@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap");
+
+.EmailSub-Container-Wrapper {
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+}
+
+.EmailSub-Container-logo {
+  height: 18rem;
+  width: 30rem;
+  float: left;
+  max-height: 15rem;
+  max-width: 20rem;
+}
+
+.Description-emailsub-container {
+  margin-left: 10rem;
+  max-height: 15rem;
+  max-width: 15rem;
+}
+
+.subButton {
+  color: white;
+  background-color: #00b87c;
+  width: 10rem;
+  height: 2rem;
+  margin-left: 3rem;
+  font-size: 1rem;
+  border: none;
+  font-weight: 10rem;
+  letter-spacing: 0.1rem;
+  border-radius: 0.2rem;
+}
+
+.subForm {
+  height: 1.5rem;
+  width: 18rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  /*if it is 1000px change the font to 12 pt and so on for each resolution you need.*/
+  .EmailSub-Container-Wrapper {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 800px) {
+  /*if it is 800px change the font to 11 pt and so on for each resolution you need.*/
+  .EmailSub-Container-Wrapper {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .EmailSub-Container-Wrapper {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .EmailSub-Container-Wrapper {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 200px) {
+  .EmailSub-Container-Wrapper {
+    display: flex;
+  }
+}

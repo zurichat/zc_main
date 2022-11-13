@@ -1,0 +1,73 @@
+.deleteContainer {
+  padding: 10px 0;
+  background: #fff;
+}
+
+.deleteContainerTab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.floatleft {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  color: #1d1c1d;
+  width: 60%;
+}
+
+.floatleft span {
+  display: block;
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #616061;
+}
+
+.floatright button {
+  background: #ffffff;
+  border: 1px solid rgba(0, 184, 124, 0.5);
+  color: rgba(0, 184, 124, 0.5);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 9px 18px;
+  font-size: 13px;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  font-weight: 600;
+  line-height: 15px;
+  width: 270px;
+  height: 40px;
+}
+
+.floatright button:hover {
+  color: red;
+  border: 1px solid red;
+}
+
+@media screen and (max-width: 868px) {
+  #deleteContainerTab {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .floatright {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #deleteContainerTab {
+    width: 100%;
+  }
+  .deleteContainerTab {
+    align-items: flex-start;
+  }
+  #floatleft {
+    width: 95%;
+  }
+}

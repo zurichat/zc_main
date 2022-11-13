@@ -1,0 +1,21 @@
+.MessageContainer {
+  padding: 17px 16px;
+  position: relative;
+}
+
+.MessageContainer:hover {
+  background-color: #f1fffa;
+}
+
+.MessageContainer:hover .hoverItemsContainer {
+  display: flex;
+}
+
+.MessageContainer .hoverItemsContainer {
+  display: none;
+}
+
+.MessageContainer .emojiCardContainer {
+  margin-left: 53px;
+  display: flex;
+}

@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
+* {
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+}
+
+a {
+  color: #00b87c;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 17px;
+}
+.wrapper {
+  margin-bottom: 4em;
+}
+.email {
+  height: 14px;
+  width: 250px;
+  top: 82px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  margin-left: auto;
+  margin-top: 1.5em;
+}
+
+.centerWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 25em;
+  text-align: left;
+  margin-top: 2em;
+  padding: 2em;
+}
+.centerWrapper h4 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  color: #808080;
+  line-height: 19px;
+  font-weight: 600;
+  font-family: Lato;
+  font-size: 15px;
+}
+
+.centerWrapper h1 {
+  color: #333333;
+  /* font-weight: bold;
+  font-size: 28px;
+  line-height: 34px; */
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 33.36px;
+}
+
+.centerWrapper button {
+  padding: 14px;
+  width: 191px;
+  height: 47px;
+  background: #e5e5e5;
+  border-radius: 3px;
+  border: none;
+  color: #999999;
+  margin-top: 2.5em;
+}
+
+.centerWrapper input {
+  color: #c4c4c4;
+  border: 2px solid #c4c4c4;
+  height: 35px;
+  /* margin-top: 1.5em; */
+  font-size: 16px;
+  /* padding: 0 0 0 1em; */
+  padding: 20px 16px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+.centerWrapper input:focus {
+  color: #333333;
+}
+
+.centerWrapper input:focus ~ button {
+  background: #00b87c;
+  color: #fff;
+  cursor: pointer;
+}
+
+.charLimit {
+  text-align: right;
+  font-size: 14px;
+  color: #333333;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 765px) {
+  .centerWrapper {
+    width: 50vw;
+    margin: auto;
+  }
+  .centerWrapper h1 {
+    font-size: 48px;
+    line-height: 54px;
+  }
+  .email {
+    font-size: 16px;
+    width: 350px;
+  }
+  .centerWrapper h4 {
+    /* font-size: 18px; */
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .buttonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

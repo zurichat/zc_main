@@ -1,0 +1,63 @@
+.container {
+  height: 346px;
+  background: url("../assets/discover.svg");
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+.container h3 {
+  font-weight: 900;
+  font-size: 24px;
+  color: #f6f6f6;
+}
+
+.sub1 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: #f6f6f6 !important;
+  text-align: center;
+}
+
+.sub2 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: #1d1c1d;
+}
+
+@media screen and (max-width: 700px) {
+  .container h3 {
+    font-weight: 900;
+    font-size: 18px;
+    color: #f6f6f6;
+  }
+
+  .sub1 {
+    font-size: 15px;
+    line-height: 19px;
+  }
+
+  .sub2 {
+    font-size: 15px;
+    line-height: 19px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    background: url("../assets/discover-mobile.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

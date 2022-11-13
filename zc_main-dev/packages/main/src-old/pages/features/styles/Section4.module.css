@@ -1,0 +1,136 @@
+.section4 {
+  margin-top: 200px;
+  font-family: "Lato", sans-serif;
+}
+
+.section4Wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftSideContentWrapper {
+  flex: 4;
+}
+
+.chessboardImage {
+  width: 100%;
+}
+
+.rightSideContentWrapper {
+  flex: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightSideTextWrapper {
+  width: 77%;
+}
+
+.rightSideTextWrapper h2 {
+  width: 85%;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2.5rem;
+  line-height: 130%;
+  color: #242424;
+}
+
+.rightSideTextWrapper p {
+  margin-top: 18px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.875rem;
+  color: #3a3a3a;
+}
+
+@media (max-width: 1200px) {
+  .rightSideTextWrapper h2 {
+    width: 85%;
+    font-size: 2rem;
+  }
+
+  .rightSideTextWrapper p {
+    margin-top: 30px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .rightSideTextWrapper {
+    width: 72%;
+  }
+
+  .rightSideTextWrapper h2 {
+    width: 85%;
+    font-size: 1.8rem;
+  }
+
+  .rightSideTextWrapper p {
+    margin-top: 30px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .rightSideTextWrapper h2 {
+    width: 85%;
+    font-size: 1.3rem;
+  }
+
+  .rightSideTextWrapper p {
+    margin-top: 20px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .rightSideTextWrapper h2 {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+
+  .rightSideTextWrapper p {
+    margin-top: 15px;
+    font-size: 0.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .section4 {
+    margin-top: 80px;
+  }
+
+  .section4Wrapper {
+    padding: 0 24px;
+    flex-direction: column;
+  }
+
+  .leftSideContentWrapper {
+    order: 2;
+    margin-top: 60px;
+  }
+
+  .rightSideContentWrapper {
+    order: 1;
+  }
+
+  .rightSideTextWrapper {
+    width: 100%;
+  }
+
+  .rightSideTextWrapper h2 {
+    width: 100%;
+    font-size: 1.65rem;
+  }
+
+  .rightSideTextWrapper p {
+    margin-top: 25px;
+    font-size: 1.125rem;
+  }
+}

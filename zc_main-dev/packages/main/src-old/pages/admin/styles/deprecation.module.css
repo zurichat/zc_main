@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.deprecation {
+  margin: auto;
+  background: #faf9f6;
+  margin-top: none;
+}
+.caps {
+  font-family: lato;
+  margin-left: 180px;
+  font-size: 30px;
+}
+
+.deprecate {
+  margin-left: 25px;
+  margin-top: 15px;
+  width: 320px;
+  height: 30px;
+  border: 1px solid;
+}
+
+.app_type {
+  margin-left: 20px;
+  margin-top: 15px;
+  width: 200px;
+  height: 30px;
+  border: 1px solid;
+}
+
+.export {
+  display: inline;
+  margin-left: 260px;
+  color: white;
+  border: 1px solid;
+}
+
+.upper_second {
+  border: 1px solid;
+  height: 60px;
+  width: 900px;
+  margin-left: 185px;
+  /* opacity:0.3; */
+}
+
+.firstline {
+  margin-left: 180px;
+}
+
+.secondline {
+  margin-left: 180px;
+}
+.link_announcement {
+  margin-left: 185px;
+}
+
+.secondbox {
+  width: 100%;
+  display: flex;
+  margin-top: 30px;
+}
+.updates {
+  display: flex;
+  gap: 20px;
+  flex-basis: 50%;
+  margin-top: 70px;
+  margin-left: 110px;
+}
+.updates p {
+  margin-bottom: 0px;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.legacy {
+  flex-basis: 50%;
+}
+
+.list {
+  display: flex;
+  gap: 70px;
+  margin-left: 400px;
+  margin-top: 10px;
+}
+.list p {
+  font-size: 20px;
+}
+.bold {
+  font-weight: 600;
+}
+.apps_found {
+  margin-left: 600px;
+  margin-top: 15px;
+}
+
+.apps_found p {
+  font-size: 20px;
+}

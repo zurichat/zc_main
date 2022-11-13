@@ -1,0 +1,245 @@
+.app {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 8em 0.5em 0;
+  position: relative;
+  min-height: 50vh;
+}
+
+.offer {
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.offer h1 {
+  width: 660px;
+  margin: auto;
+}
+
+.leftKite {
+  position: absolute;
+  left: 15vw;
+  top: -7vh;
+}
+
+.rightKite {
+  position: absolute;
+  right: 13vw;
+  top: 2vh;
+}
+
+.offer p {
+  margin: 30px 0;
+  color: #999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.offer p span {
+  margin: 0 5px;
+}
+
+.offer p span {
+  margin: 0 5px;
+}
+
+.offer button {
+  font-weight: bold;
+  border: none;
+  background-color: #00b87c;
+  color: #fff;
+  padding: 20px;
+  border-radius: 7px;
+  margin: 70px 0;
+}
+
+.circleLine {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+}
+.circleDot {
+  position: absolute;
+  left: 100px;
+  bottom: 270px;
+  z-index: 99;
+}
+
+.mail {
+  position: absolute;
+  left: 20vw;
+  bottom: 80px;
+}
+.searchKite {
+  position: absolute;
+  right: 8vw;
+  bottom: 50px;
+}
+::placeholder {
+  color: #bebebe;
+  font-size: 18px;
+}
+
+.app input {
+  font-size: 16px;
+  margin: 1em auto 0 auto;
+  width: 550px;
+  border-radius: 10px;
+  border: none;
+  padding: 20px 18px 20px 70px;
+  position: relative;
+  z-index: 99;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  background-image: url("../assets/searchIcon.svg");
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: 20px 17px;
+}
+
+.app input:focus {
+  outline: none;
+}
+.searchIcon {
+  position: absolute;
+  left: 34vw;
+  bottom: 13px;
+  z-index: 120;
+}
+
+@media screen and (max-width: 1200px) {
+  /* .app input {
+    width: 50%;
+  } */
+  .offer h1 {
+    width: 400px;
+  }
+  .leftKite {
+    position: absolute;
+    left: 0;
+    top: -7vh;
+  }
+
+  .rightKite {
+    position: absolute;
+    right: 0;
+    top: 2vh;
+  }
+
+  .circleDot {
+    left: 6vw;
+    bottom: 260px;
+  }
+
+  .mail {
+    position: absolute;
+    left: 20vw;
+    bottom: 60;
+  }
+  .searchKite {
+    bottom: 10px;
+    width: 320px;
+  }
+  .searchIcon {
+    left: 25vw;
+  }
+
+  .leftKite,
+  .rightKite,
+  .searchKite {
+    width: 250px;
+  }
+
+  .circleDot,
+  .circleLine {
+    width: 150px;
+  }
+
+  .circleDot,
+  .mail {
+    width: 50px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .app {
+    padding: 3em 0.5em 0;
+  }
+  .offer h1 {
+    width: auto;
+    font-size: 30px;
+    font-weight: bolder;
+    line-height: 48px;
+  }
+
+  .offer p {
+    font-size: 16px;
+    margin: 20px 8px;
+  }
+
+  .offer button {
+    padding: 7px;
+    min-width: 150px;
+    margin: 8px 0;
+    font-size: 16px;
+    border-radius: 2px;
+  }
+
+  /* .app input {
+    width: 85%;
+  } */
+  .circleLine {
+    left: 0;
+    bottom: -150px;
+    width: 70px;
+  }
+  .circleDot {
+    left: 5vw;
+    bottom: 80px;
+    width: 35px;
+  }
+
+  .mail {
+    position: absolute;
+    left: 75vw;
+    bottom: 30px;
+    width: 60px;
+  }
+
+  .searchIcon {
+    position: absolute;
+    left: 20vw;
+    bottom: 0;
+  }
+
+  .offer button {
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .app input {
+    font-size: 16px;
+    margin: 10em auto 4em auto;
+    width: 300px;
+    padding: 17px 18px 17px 40px;
+    background-size: 20px;
+    background-position: 15px 20px;
+  }
+
+  ::placeholder {
+    font-size: 14px;
+    padding-left: 6px;
+  }
+
+  .searchIcon {
+    width: 20px;
+  }
+
+  .leftKite,
+  .rightKite,
+  .searchKite {
+    display: none;
+  }
+}

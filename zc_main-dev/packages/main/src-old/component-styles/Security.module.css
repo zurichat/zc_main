@@ -1,0 +1,42 @@
+.button {
+  background-color: #00b87c;
+  color: #ffffff;
+  outline: none;
+}
+
+.h1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.h3 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.p {
+  font-size: 14px;
+}
+
+.image {
+  width: 8%;
+}
+
+@media only screen and (max-width: 425px) {
+  .padlock_img {
+    width: 100%;
+  }
+  .container {
+    text-align: center;
+  }
+
+  .h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 40px;
+  }
+}
+
+.container {
+  padding-top: 70px;
+}

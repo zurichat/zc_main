@@ -1,0 +1,122 @@
+import React, { useEffect, useState } from "react";
+import { TopNavigationBar, Footer } from "../../../../components";
+import styles from "./Download.module.css";
+import { laptop, screen, icon, Ellipse159 } from "../assets";
+import fetchInstall from "../utils/index";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
+// const Apk = '../../apk/appRelease.apk'
+// import Apk from '../../apk/appRelease.apk'
+
+const DownloadsMac = () => {
+  const { t } = useTranslation();
+
+  const [exe, setexe] = useState({ link: "", name: "" });
+  // const [msi, setmsi] = useState({ link: '', name: '' })
+  // const [dmg, setdmg] = useState({ link: '', name: '' })
+
+  useEffect(() => {
+    fetchInstall("exe").then(res => {
+      setexe(res);
+    });
+    // fetchInstall('msi').then(res => {setmsi(res)})
+    // fetchInstall('dmg').then(res => {setdmg(res)})
+  }, []);
+
+  return (
+    <>
+      <TopNavigationBar />
+      <section className={``}>
+        <div className={`${styles.container} `}>
+          <div className={`text-center p-lg-4`}>
+            <h1 className={`${styles.h1}`}>
+              {t("download_mac.section_one.headline")}
+            </h1>
+            <p className={styles.p}>
+              {t("download_mac.section_one.post_headline")}
+            </p>
+          </div>
+          <div className={`${styles.images} text-center p-lg-4 pb-lg-0`}>
+            <img className={styles.circle} src={Ellipse159} alt="circle"></img>
+            <img
+              className={`${styles.screenshot}`}
+              src={laptop}
+              alt="app screenshot"
+            ></img>
+            <div
+              className={`${styles.buttondiv} p-lg-5 m-lg-5 mb-lg-0 p-md-3 m-md-3`}
+            >
+              <a href={exe.link} download={exe.name} className={styles.button1}>
+                <img className={`px-2`} src={icon} alt="download icon"></img>
+                {t("download_mac.section_one.download")}
+              </a>
+              <Link
+                className={`${styles.plink} mt-lg-4 d-inline`}
+                to="./download-app"
+              >
+                {t("download_mac.section_one.download_soft")}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={`${styles.bg}`}>
+        <div className={`row p-5 m-5 mt-0`}>
+          <div className={` ${styles.zuri} col`}>
+            <h6 className={`${styles.h6zuri}`}>
+              {t("download_mac.section_two.headline")}
+            </h6>
+            <p className={`${styles.p1}`}>
+              {t("download_mac.section_two.post_headline")},{" "}
+              <a href="#" className={`${styles.mobile}`}>
+                {t("download_mac.section_two.android")}
+              </a>{" "}
+              {t("download_mac.section_two.and_break")}{" "}
+              <a href="#" className={`${styles.mobile}`}>
+                {t("download_mac.section_two.ios")}
+              </a>{" "}
+              {t("download_mac.section_two.apps_break")}
+            </p>
+          </div>
+          <div className={`col`}>
+            <img
+              className={`${styles.screen}`}
+              src={screen}
+              alt="app screenshot"
+            ></img>
+          </div>
+        </div>
+      </section>
+
+      <section className={`row m-5 p-5`}>
+        <div className={` ${styles.zuri} col container`}>
+          <h1 className={`${styles.h1} py-3`}>
+            {t("download_mac.section_three.headline")}
+          </h1>
+          <a href={exe.link} download={exe.name} className={styles.buttonW}>
+            <img className={`px-2`} src={icon} alt="download icon"></img>D
+            {t("download_mac.section_three.download")}
+          </a>
+          <Link
+            className={`${styles.plink} mt-lg-4 d-inline`}
+            to="./download-app"
+          >
+            {t("download_mac.section_three.download_soft")}
+          </Link>
+        </div>
+        <div className={`col px-0`}>
+          <img
+            className={`${styles.laptop}`}
+            src={laptop}
+            alt="app screenshot"
+          ></img>
+        </div>
+      </section>
+
+      <Footer />
+    </>
+  );
+};
+export default DownloadsMac;

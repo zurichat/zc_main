@@ -1,0 +1,53 @@
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+.main > p {
+  text-align: center;
+}
+.img {
+  margin-bottom: 50px;
+}
+.email {
+  color: #1a61db;
+}
+.codeInput {
+  display: flex;
+  flex-direction: column;
+  flex: start;
+}
+.codeLabel {
+  margin-bottom: 16px;
+}
+.codeInputs {
+  display: flex;
+  justify-content: center;
+  flex: start;
+}
+.codeInputs input {
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  text-align: center;
+  height: 50px;
+  width: 50px;
+  margin: 0;
+  border: 1px solid #999999;
+  font-size: 38px;
+}
+.codeInputs input:focus {
+  outline: none;
+}
+.codeInputs input:nth-child(3n) {
+  margin-right: 0.5rem;
+}
+.request {
+  color: #2f80ed;
+}

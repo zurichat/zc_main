@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
+
+* {
+  font-family: "Lato", sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+button:hover {
+  cursor: pointer;
+}
+.Section3 h2 {
+  font-size: 36px;
+  margin: 0;
+  text-align: center;
+}
+.Section3 p {
+  padding: 0px 30px 20px 30px;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+}
+.section3Cards {
+  padding: 60px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: auto auto auto;
+}
+.section3Cards div {
+  background-color: white;
+  padding: 20px;
+  border: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+.section3Cards div h3 {
+  font-size: 20px;
+}
+.registerNow p {
+  margin-bottom: 10px;
+  font-size: 24px;
+  text-align: center;
+}
+.section3Cards div p {
+  padding: 0;
+  font-size: 16px;
+  padding-right: 10px;
+  text-align: left;
+}
+.section3Cards .languages {
+  padding: 0;
+  margin: 35px 0px 12px 0px;
+  box-shadow: none;
+}
+.languages hr {
+  position: static;
+  margin-right: 50px;
+  border: 1px solid #999999;
+}
+.section3Cards .languages li {
+  list-style: none;
+  font-size: 16px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  margin-right: 15px;
+}
+.registerNow {
+  padding: 60px;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.registerNow .regbtn {
+  display: inline-block;
+  padding: 20px 70px 20px 70px;
+  font-size: 22px;
+  border: none;
+  border-radius: 3px;
+  background-color: #00b87c;
+  color: white;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 1085px) {
+  .section3Cards {
+    padding: 30px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .section3Cards {
+    padding: 30px;
+    grid-template-columns: auto auto;
+  }
+  .registerNow {
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .Section3 h2 {
+    font-size: 24px;
+  }
+  .Section3 p {
+    font-size: 16px;
+  }
+  .section3Cards {
+    padding: 30px;
+    grid-template-columns: auto;
+  }
+
+  .registerNow p {
+    font-size: 22px;
+    text-align: center;
+  }
+  .section3Cards div p {
+    padding: 0;
+    font-size: 14px;
+    padding-right: 10px;
+    text-align: left;
+  }
+
+  .registerNow .regbtn {
+    padding: 18px 80px 18px 80px;
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .registerNow .regbtn {
+    padding: 18px 60px 18px 60px;
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,423 @@
+.container {
+  width: 300%;
+  margin: 2rem;
+  font-family: "Lato";
+}
+
+.head {
+  font-family: "Lato";
+  font-weight: bolder;
+  display: flex;
+  margin-top: 1rem;
+  color: #242424;
+  font-size: 20px;
+}
+
+.rectangle {
+  background: #000;
+  width: 25%;
+  height: 20rem;
+  border-radius: 7px;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.selectfirst {
+  width: 15%;
+  margin-bottom: 1.5rem;
+  height: 3rem;
+  border-radius: 4px;
+  padding-left: 0.5rem;
+  border: #dde5e9 solid 1px;
+  color: #3a3a3a;
+  display: flex;
+  font-size: 15px;
+}
+
+.selectsecond {
+  width: 15%;
+  height: 3rem;
+  border-radius: 4px;
+  padding-left: 0.5rem;
+  border: #dde5e9 solid 1px;
+  color: #3a3a3a;
+  display: flex;
+  font-size: 15px;
+}
+
+.selectthird {
+  height: 3rem;
+  border-radius: 4px;
+  padding-left: 0.5rem;
+  padding-right: 2rem;
+  border: #dde5e9 solid 1px;
+  color: #3a3a3a;
+  font-size: 15px;
+}
+
+.line {
+  background: #aeaeae;
+  width: 30%;
+  height: 1px;
+  color: #bebebe;
+}
+
+.inputlevel {
+  color: #242424;
+  display: flex;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.barfirst {
+  background: #00b87c;
+  width: 1.2%;
+  height: 0.8rem;
+  margin: 0.8rem 0.5rem 0 1rem;
+  border-radius: 5px;
+}
+
+.barsecond {
+  background: #00b87c;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.barthird {
+  background: #00b87c;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.barfourth {
+  background: #00b87c;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.barfifth {
+  background: #00b87c;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.barsixth {
+  background: #00b87c;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.barseventh {
+  background: #00b87c;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.bareight {
+  background: #aeaeae;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.barninth {
+  background: #aeaeae;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.bartenth {
+  background: #aeaeae;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.bareleventh {
+  background: #aeaeae;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.bartwelfth {
+  background: #aeaeae;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.barthirtenth {
+  background: #aeaeae;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.barfourtenth {
+  background: #aeaeae;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+}
+
+.barfiftenth {
+  background: #aeaeae;
+  width: 1.2%;
+  height: 0.8rem;
+  margin-top: 0.8rem;
+  border-radius: 5px;
+}
+
+.checkenable {
+  display: flex;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  font-weight: bolder;
+}
+
+.checkenable input {
+  margin-top: 0.4rem;
+}
+
+.enable {
+  font-weight: bold;
+}
+
+.speaker {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+.headspeaker {
+  font-family: "Lato";
+  font-weight: bolder;
+  display: flex;
+  margin-top: 2rem;
+  color: #242424;
+  font-size: 20px;
+}
+
+.button {
+  margin-left: 3rem;
+  background: #fff;
+  border: #00b87c 1px solid;
+  padding: 0 1rem;
+  border-radius: 4px;
+  color: #00b87c;
+  font-size: 15px;
+}
+
+.join {
+  margin-bottom: 1rem;
+}
+
+.huddle {
+  margin-bottom: 1rem;
+}
+
+.check {
+  color: #3a3a3a;
+  font-size: 15px;
+}
+
+.checkset {
+  display: flex;
+}
+
+.checkset input {
+  margin-top: 0.4rem;
+}
+
+.checkmute {
+  display: flex;
+}
+
+.checkmute input {
+  margin-top: 0.4rem;
+}
+
+.checkstatus {
+  display: flex;
+}
+
+.checkstatus input {
+  margin-top: 0.4rem;
+}
+
+.checkmutemic {
+  display: flex;
+}
+
+.checkmutemic input {
+  margin-top: 0.4rem;
+}
+
+.checkautomatic {
+  display: flex;
+}
+
+.checkautomatic input {
+  margin-top: 0.4rem;
+}
+
+.checkwarning {
+  display: flex;
+}
+
+.checkwarning input {
+  margin-top: 0.4rem;
+}
+
+.checkmusic {
+  display: flex;
+}
+
+.checkmusic input {
+  margin-top: 0.4rem;
+}
+
+.checkallow {
+  display: flex;
+}
+
+.checkallow input {
+  margin-top: 0.4rem;
+}
+
+.checkcall {
+  display: flex;
+}
+
+.checkcall input {
+  margin-top: 0.4rem;
+}
+
+.checkleavehuddle {
+  display: flex;
+}
+
+.checkleavehuddle input {
+  margin-top: 0.4rem;
+}
+
+.statuscall {
+  font-weight: bold;
+  display: flex;
+  font-size: 15px;
+  margin-bottom: 0.5rem;
+}
+
+.statushuddle {
+  font-weight: bold;
+  display: flex;
+  font-size: 15px;
+  margin-bottom: 0.5rem;
+}
+
+.mute {
+  font-weight: bold;
+  display: flex;
+  margin-top: 0.5rem;
+  margin-left: 2.2rem;
+}
+
+.mutemic {
+  display: flex;
+  margin-left: 2.2rem;
+  margin-top: 0.5rem;
+}
+
+.automatic {
+  display: flex;
+  margin-left: 2.2rem;
+  margin-top: 0.5rem;
+}
+
+.warning {
+  display: flex;
+  margin-left: 2.2rem;
+  margin-top: 0.5rem;
+}
+
+.music {
+  display: flex;
+  margin-left: 2.2rem;
+  margin-top: 0.5rem;
+}
+
+.keyboard {
+  display: flex;
+  font-size: 15px;
+  margin-top: 1rem;
+  font-weight: bold;
+  margin-left: 2.2rem;
+}
+
+.muteunmute {
+  display: flex;
+  font-size: 15px;
+  margin-left: 2.2rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  background: #fff;
+  border: #00b87c 1px solid;
+  padding: 0 0.5rem;
+  border-radius: 4px;
+  color: #00b87c;
+  font-size: 15px;
+}
+
+.screensaver {
+  font-size: 15px;
+  color: #3a3a3a;
+  font-weight: bold;
+}
+
+.call {
+  display: flex;
+  font-size: 15px;
+  margin-left: 2.2rem;
+  margin-top: 1rem;
+}
+
+.leavehuddle {
+  display: flex;
+  font-size: 15px;
+  margin-left: 2.2rem;
+  margin-top: 1rem;
+}

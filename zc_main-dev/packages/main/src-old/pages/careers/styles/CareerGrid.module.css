@@ -1,0 +1,82 @@
+.headerContent {
+  max-width: 770px;
+  margin: auto;
+  margin-top: 3rem;
+  padding: 1rem;
+}
+.headerContent h2 {
+  font-size: 40px;
+  line-height: 130%;
+  text-align: center;
+  padding-bottom: 1.5rem;
+}
+.headerContent p {
+  font-size: 24px;
+  line-height: 130%;
+  text-align: center;
+  font-family: "Lato" sans-serif;
+}
+li {
+  list-style: none;
+}
+.py-5 {
+  padding: 5rem 0 2rem 0;
+}
+.btngreen {
+  background: #00b87c;
+  border: none;
+  display: block;
+  margin: auto auto 7rem auto;
+  width: 315px;
+  padding: 20px 10px;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 20px;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.flex li {
+  padding-top: 0.6rem;
+  margin: 0.3rem 1rem;
+}
+.center {
+  text-align: center;
+}
+.categories {
+  padding: 0.3rem;
+  margin: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
+.category {
+  padding: 0.5rem;
+  background: #fff;
+  box-shadow: 10px 10px 30px rgba(112, 113, 115, 0.15);
+  border-radius: 3px;
+}
+.subcategory {
+  padding: 1rem;
+  border-bottom: 1px solid #4d4d4d;
+}
+.subcategory h3 {
+  font-size: 24px;
+  padding: 1rem 0;
+}
+.subcategory p {
+  font-size: 18px;
+  color: #4d4d4d;
+}
+.cohort {
+  font-size: 24px;
+  text-align: center;
+  padding: 5rem 0 2rem 0;
+}
+
+@media screen and (max-width: 420px) {
+  .categories {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,256 @@
+:root {
+  --primary-color: #00b87c;
+  --primary-color-hover: rgba(0, 184, 124, 0.502);
+  --primary-color-2: #e1fdf4;
+  --secondary-color: #1264a3;
+  --body-color: #1d1c1d; /* Header color */
+  --body-shade: #1d1c1d; /* Header shade && Icon Color */
+
+  /* text colors */
+  --inactive-text: #b0afb0;
+  --inactive-text-shade: #e7e7e7;
+  --lines: #f6f6f6;
+
+  /* Bg colors */
+  --bg-1: #f6f6f6;
+  --bg-2: #ffffff;
+
+  /* Progress colors */
+  --accent-color: #b8003c;
+  --error-color: #f40101;
+  --success-color: #008b5e;
+  --success-color-2: #ffb425;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  /* font-family: inherit; */
+  margin-bottom: 4rem;
+  /* background-color: black; */
+}
+
+/* Typography  */
+
+h1 {
+  line-height: 62.4px;
+  font-family: inherit;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 62px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+h2 {
+  font-weight: 700;
+  line-height: 52px;
+  font-family: inherit;
+  font-size: 40px;
+  font-style: normal;
+  line-height: 52px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+h3 {
+  font-family: inherit;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 47px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+h4 {
+  font-family: inherit;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 42px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+h5 {
+  font-family: inherit;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 39px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+h6 {
+  font-weight: 700;
+  font-family: inherit;
+  font-size: 28px;
+  font-style: normal;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.h_small {
+  font-weight: 500;
+  font-family: inherit;
+  font-size: 24px;
+  font-style: normal;
+  line-height: 41px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.t_btn_big {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: inherit;
+  font-size: 20px;
+  font-style: normal;
+  line-height: 34px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.t_btn_small {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: inherit;
+  font-size: 20px;
+  font-style: normal;
+  line-height: 34px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.t_regular {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: inherit;
+  font-style: normal;
+  line-height: 31px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.t_small {
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+/* Toggle */
+/* .toggle {
+    
+    background-color: var(--primary-color-2);
+    border-radius: 10px;
+    position: relative;
+    width: 40px;
+    cursor: pointer;
+    user-select: none;
+    height: 20px;
+  }
+  .toggle_disabled {
+    background-color: var(--bg-1);
+  }
+  .toggle_ball {
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    position: absolute;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    left: 20px;
+    transition: all 0.3s ease;
+  }
+  .toggle_ball_disabled {
+    background-color: var(--bg-2);
+    left: 0px;
+  } */
+
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  border-radius: 3px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  /* background-color: #eee; */
+  border-radius: 3px;
+  border: 1px black solid;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  border: 1px var(--primary-color) solid;
+}
+
+/* When the checkbox is checked, add primary background */
+.container input:checked ~ .checkmark {
+  background-color: var(--primary-color);
+  border-radius: 3px;
+  border: 1px var(--primary-color) solid;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 12px;
+  border: solid var(--bg-2);
+  border-width: 0 2px 2px 0;
+
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

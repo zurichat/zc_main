@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+.all_stats {
+  text-align: center;
+}
+.banner {
+  padding-top: 9em;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
+.banner > p {
+  margin: 0 auto;
+  margin-bottom: 4%;
+  max-width: 950px;
+}
+.working_remote {
+  text-align: center !important;
+  display: none !important;
+  margin-top: 2%;
+}
+
+.working_remote > h3 {
+  padding: 0.3em 0em;
+}
+.working_remote > p {
+  font-size: 17px;
+}
+.working_remote_section > h6 {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 3%;
+}
+.working_remote_section > p {
+  font-size: 14px;
+  text-align: center;
+}
+.working_remote_section > img {
+  width: 50%;
+}
+
+.to_join {
+  margin-top: 3%;
+  text-align: center;
+}
+.join_us {
+  text-align: left;
+}
+.join_us > p {
+  font-size: 17px;
+  text-align: left;
+  line-height: 25px;
+  font-weight: 500;
+}
+.zurichat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  background-color: #00b87c;
+  padding: 3rem;
+}
+.zurichat_h3 {
+  padding: 3%;
+  color: #fff;
+  position: relative;
+  top: 3rem;
+}
+.vector {
+  padding: 1rem;
+  margin-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.vector > h6 {
+  font-size: 23px;
+  text-align: center;
+}
+.vector > p {
+  font-size: 14px;
+  text-align: center;
+}
+.vector > img {
+  width: 15%;
+}
+.button {
+  display: flex;
+  flex-wrap: nowrap;
+
+  flex-direction: row;
+}
+.btn {
+  margin: 0.3rem;
+}
+
+.h3m {
+  padding: 0;
+}
+
+.btn_sale {
+  text-transform: uppercase;
+  color: #00b87c;
+  margin-top: 2em;
+  font-weight: 600;
+  padding: 0.625em 1em;
+  background-color: #ffffff;
+  border: 1px solid #00b87c;
+  border-radius: 0.3rem;
+}
+.btn_sale:hover {
+  color: #ffffff;
+  background-color: #00b87c;
+  border: 2px solid #fff;
+}
+.signup_cta {
+  text-align: center;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.signup_cta .text {
+  color: white;
+}
+.btn_free {
+  background-color: transparent;
+  color: #fff;
+  border-radius: 5%;
+  border: 1px solid #fff;
+  text-transform: uppercase;
+  margin-top: 2rem;
+  box-shadow: 2px 4px 8px solid #fff;
+  font-weight: 600;
+}
+.working_remote_section {
+  display: none !important;
+  flex: 1 0 0%;
+  margin-top: 2%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: st;
+}
+
+.counter > h3 {
+  font-size: 55px;
+  line-height: 50px;
+  padding: 0;
+  font-weight: 700;
+  text-align: center;
+}
+
+.counter > p {
+  text-align: center;
+}
+
+.channel {
+  position: absolute;
+  margin-left: -8%;
+  margin-top: 3%;
+}
+.team > img {
+  width: 100%;
+}
+
+.team__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.span {
+  text-decoration: underline;
+}
+.carousel {
+  display: none !important;
+}
+
+.special_features,
+.counter_div {
+  display: none;
+}
+
+.signup_cta {
+  width: 70%;
+}
+
+@media only screen and (max-width: 1040px) {
+
+  .banner {
+    padding-top: 9em;
+  }
+
+  .desktop_carousel,
+  .second_carousel_block {
+    flex-wrap: wrap;
+    justify-content: center;
+    display: none !important;
+  }
+
+  .working_remote_section {
+    flex-basis: 30%;
+    flex-grow: 0;
+  }
+
+
+}
+
+@media only screen and (max-width: 767.98px){
+  .banner > h1 {
+    font-size: 32px;
+    line-height: 36px;
+    font-weight: 700;
+  }
+  .signup_cta {
+    text-align: center;
+    width: 90%;
+    font-size: 1rem;
+  }
+
+  .desktop_carousel {
+    flex-wrap: wrap;
+  }
+
+  .working_remote_section {
+    flex-basis: 45%;
+  }
+
+  .zurichat_text {
+    font-size: clamp(25px, 4vw, 32px);
+    line-height: 1.3;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .banner {
+    padding-top: 9em;
+  }
+  .banner > h1 {
+    font-size: 25px;
+    line-height: revert;
+    font-weight: 700;
+    padding: 1em 1em 0.2em;
+  }
+  .banner > p {
+    padding: 0% 11%;
+    font-size: 14px;
+  }
+  .counter {
+    text-align: center;
+    margin-top: 4%;
+  }
+  .counter > h3 {
+    font-size: 45px;
+    line-height: 50px;
+    padding: 0;
+    font-weight: 700;
+  }
+  .counter > p {
+    font-size: 14px;
+  }
+  .team > img {
+    width: 100%;
+  }
+  
+  .join_us > p {
+    padding: 0 4%;
+    font-size: 14px;
+    text-align: center;
+  }
+  .span {
+    text-decoration: none;
+  }
+  .working_remote > h3 {
+    font-size: 23px;
+    line-height: 30px;
+  }
+  .working_remote > p {
+    font-size: 15px;
+    padding: 0 17%;
+    margin-top: 5%;
+    font-size: 14px;
+  }
+
+  .zurichat_h3 {
+    font-size: 20px;
+  }
+  .desktop_carousel,
+  .second_carousel_block {
+    display: none;
+  }
+  .carousel {
+    display: none;
+  }
+  .carouselCaption {
+    position: relative !important;
+    right: 0% !important;
+    bottom: 1.25rem;
+    left: 0% !important;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #000;
+    text-align: center;
+  }
+  .carouselCaption > h3 {
+    font-size: 18px !important;
+  }
+  .carouselCaption > p {
+    font-size: 14px;
+  }
+  .carouselImage {
+    position: relative;
+    left: 35%;
+  }
+  .carouselCompany {
+    position: relative;
+    left: 45%;
+  }
+}
+
+@media (max-width: 767px) {
+  .counter {
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .join_us > h3 {
+    font-size: 24px;
+    line-height: 28px;
+    padding: 0 4%;
+    text-align: center ;
+  }
+
+  .join_us > p {
+    text-align: center;
+  }
+
+  
+  .team__container {
+    flex-direction: column;
+  }
+
+  .counter > h3 {
+    font-size: 35px;
+    line-height: 50px;
+    padding: 0;
+    font-weight: 700;
+  }
+  .signup_cta h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .carouselImage {
+    position: relative;
+    left: 33%;
+  }
+}
+@media only screen and (max-width: 440px) {
+  .carouselImage {
+    position: relative;
+    left: 30%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .carouselImage {
+    position: relative;
+    left: 28%;
+  }
+  .carouselCompany {
+    position: relative;
+    left: 41%;
+  }
+}
+
+@media only screen and (max-width: 355px) {
+  .carouselImage {
+    position: relative;
+    left: 25%;
+  }
+}
