@@ -16,6 +16,11 @@ import { useTranslation } from "react-i18next";
 function Whyzurichat() {
   const { t } = useTranslation();
 
+  // Make the page scroll to the top on navigation
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
+
   return (
     <Fragment>
       <TopNavigationBar />
