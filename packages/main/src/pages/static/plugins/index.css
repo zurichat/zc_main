@@ -167,16 +167,19 @@
 .ft_link_wrap {
   margin-top: 1.5rem;
 }
+.ft_link {
+  text-decoration: none;
+}
+.ft_link:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
 .ft_link_p {
   text-decoration: none;
   color: var(--primary-color);
   font-size: 1.125rem;
   font-weight: 700;
   line-height: 24px;
-}
-.ft_link:hover {
-  color: var(--primary-color);
-  text-decoration: underline;
 }
 .ft_link_div {
   display: flex;
