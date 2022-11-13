@@ -112,7 +112,7 @@ const TopBarSearchModal = () => {
         )}
         <input
           type="text"
-          placeholder={t("search_placeholder")}
+          placeholder={t("search.placeholder")}
           value={value}
           onChange={onInputChange}
           onKeyUp={onSearchSubmit}
