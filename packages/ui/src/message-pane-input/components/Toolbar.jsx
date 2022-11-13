@@ -21,6 +21,11 @@ import {
 } from "../EmojiStyles.styled";
 import ClickAwayListener from "react-click-away-listener";
 
+// Gif Integration
+import { AiOutlineGif } from "react-icons/ai";
+import classes from "./Gif.module.css";
+import ReactGiphySearchbox from "react-giphy-searchbox";
+
 const BoldIcon = () => <img src={Bold} alt="" />;
 const ItalicIcon = () => <img src={Italic} alt="" />;
 const ListIcon = () => <img src={List} alt="" />;
@@ -52,6 +57,9 @@ const Toolbar = props => {
   const [inputKey, setInputKey] = useState("any-key-press");
   const [showAttachInputBox, setshowAttachInputBox] = useState(false);
   //const [preview, setPreview] = useState('')
+
+  // Gif state management
+  const [showGif, setShowGif] = useState(false);
 
   //Attachment ref
   const inputRef = React.createRef();
@@ -120,6 +128,11 @@ const Toolbar = props => {
     );
   };
 
+  // This is the function that will be called whenever a gif is clicked or selected. The function will receives the gif object from which the url key has the path to the gif.
+  const gifSelectionHandler = gifObj => {
+    const gif = <img src={gifObj.url} alt={gifObj.id} />;
+  };
+
   const renderBlockStyleButton = (block, index) => {
     const currentBlockType = RichUtils.getCurrentBlockType(editorState);
     let className = "toolbar-button";
@@ -177,12 +190,47 @@ const Toolbar = props => {
           {inlineStyles.map((style, index) => {
             return renderInlineStyleButton(style, index);
           })}
+          <span style={{ paddingInline: "4px" }}>
+            <BorderIcon />
+          </span>
           <UnstyledButton>
             <LinkIcon />
           </UnstyledButton>
+          <span style={{ paddingInline: "4px" }}>
+            <BorderIcon />
+          </span>
           {blockStyles.map((block, index) => {
             return renderBlockStyleButton(block, index);
           })}
+
+          {/* GIF integration */}
+          <div
+            className={`${classes.box} ${showGif && `${classes.box__active}`}`}
+          >
+            <AiOutlineGif
+              className={classes.svg}
+              onClick={() => setShowGif(prev => !prev)}
+            />
+          </div>
+          <div
+            className={`${classes.gif__box} ${
+              showGif
+                ? `${classes.gif__box__active}`
+                : `${classes.gif__box__inactive}`
+            }`}
+          >
+            <ReactGiphySearchbox
+              apiKey="aK3byM6d4TMBFh7fkw3m7FuJOuRLHnM0"
+              searchPlaceholder="Search Gif"
+              gifListHeight="250px"
+              onSelect={gifSelectionHandler}
+              masonryConfig={[
+                { columns: 2, imageWidth: 110, gutter: 5 },
+                { mq: "768px", columns: 3, imageWidth: 120, gutter: 5 },
+                { mq: "1200px", columns: 3, imageWidth: 130, gutter: 5 }
+              ]}
+            />
+          </div>
         </FormatContainer>
         <SendContainer>
           <UnstyledButton onClick={() => setshowAttachInputBox(true)}>
@@ -197,6 +245,15 @@ const Toolbar = props => {
               {emojiSelect}
             </StyledEmojiSelectWrapper>
           }
+          <span style={{ paddingInline: "4px" }}>
+            <BorderIcon />
+          </span>
+          <UnstyledButton onClick={() => setshowAttachInputBox(true)}>
+            <ClipIcon />
+          </UnstyledButton>
+          <span style={{ paddingInline: "4px" }}>
+            <BorderIcon />
+          </span>
 
           <UnstyledButton onClick={handleClickSendMessage || handleAttachMedia}>
             <SendIcon />

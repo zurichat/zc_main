@@ -9,7 +9,6 @@ export default function Starred(props) {
   const [isOpen, setOpen] = useState(false);
 
   const toggleDropdown = () => setOpen(!isOpen);
-
   // <div
   //     className={`${styles.item__row} ${
   //       props.check && props.check.includes(true) && styles.open
