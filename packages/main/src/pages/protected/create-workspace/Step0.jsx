@@ -34,7 +34,7 @@ export default function Index() {
       <Wrapper>
         <TopSection
           style={
-            user === true ? { paddingBottom: "0" } : { paddingBottom: "50px" }
+            user === true ? { paddingBottom: "0" } : { paddingBottom: "25px" }
           }
         >
           <TextSection>
@@ -86,19 +86,21 @@ export default function Index() {
 
 const Wrapper = styled.div`
   display: flex;
+  padding: 5rem 0 0 0;
 `;
 
 const TopSection = styled.section`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding-top: 132px;
-  padding-left: 55px;
+  grid-template-columns: 1fr;
+  width: 100%;
+  place-items: center;
+  padding-top: 40px;
 
   @media (max-width: 1000px) {
     display: flex;
     flex-direction: column-reverse;
     grid-template-columns: 1fr;
-    padding-top: 105px;
+    padding-top: 55px;
     padding-left: 24px;
     padding-right: 24px;
     align-items: center;
@@ -108,28 +110,29 @@ const Heading = styled.h1`
   margin: 0;
   font-family: "Lato", sans-serif;
   font-weight: 700;
-  font-size: 48px;
-  width: 320px;
+  font-size: 56px;
   margin-bottom: 14px;
   color: #333333;
   line-height: 56px;
+  text-align: center;
 
   @media (max-width: 35rem) {
-    font-size: 28px;
+    font-size: 35px;
     line-height: 33.6px;
-    width: 191px;
+    width: 250px;
   }
 `;
 
 const Text = styled.p`
   margin: 0;
-  max-width: 510px;
+  max-width: 650px;
   font-weight: 400;
   font-family: "Lato", sans-serif;
   font-size: ${18 / 16}rem;
   line-height: 26.91px;
   color: #333333;
   margin-bottom: 29px;
+  text-align: center;
   @media (max-width: 35rem) {
     font-size: 1rem;
     line-height: 23.92px;
@@ -184,6 +187,7 @@ const FadedText = styled.p`
   max-width: 325px;
   line-height: 18.78px;
   margin-top: 9px;
+  text-align: center;
 `;
 
 const ImageSection = styled.div`
@@ -194,4 +198,8 @@ const ImageSection = styled.div`
     }
   }
 `;
-const TextSection = styled.div``;
+const TextSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;

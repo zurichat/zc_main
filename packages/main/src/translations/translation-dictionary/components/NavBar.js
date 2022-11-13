@@ -112,8 +112,9 @@ export default [
     pt: "Sair"
   },
   {
-    key: "search_placeholder",
+    key: "search.placeholder",
     en: "Search Here",
-    fr: "Cherche ici"
+    fr: "Cherche ici",
+    de: "Suche hier"
   }
 ];
