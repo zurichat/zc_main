@@ -104,7 +104,7 @@ const Image = styled.img`
 const Flex = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  height: 100%;
 `;
 const OrganizationWrapper = styled.li`
   border-top: 1px solid hsla(0, 0%, 20%, 0.51);
@@ -114,7 +114,6 @@ const OrganizationWrapper = styled.li`
   padding-right: 36px;
   display: flex;
   gap: 19px;
-  align-items: center;
 
   & > a {
     flex-grow: 1;
@@ -140,7 +139,7 @@ const Organization = styled.div`
 const Logo_Members = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space between;
+  justify-content: space-between;
 `;
 const TryDifferentWrapper = styled.div`
   display: flex;
