@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Picker, { SKIN_TONE_MEDIUM_DARK } from "emoji-picker-react";
 import DatePicker from "react-datepicker";
 import TimePicker from "react-time-picker";
@@ -52,12 +52,24 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
   const { emoji } = useContext(TopbarContext);
   const [chosenEmoji, setChosenEmoji] = emoji;
   const [emojiItem, setEmoji] = useState("");
-  const [text, setText] = useState("");
+  const [text, setText] = useState({ textObj: "" });
   const [status, setStatus] = useState([]);
   // const [timeOut, setTimeOut] = useState('')
   const onEmojiClick = (event, emojiObject) => {
     setChosenEmoji(emojiObject);
   };
+
+  // to return after every render and prevent memory leaks
+  useEffect(() => {
+    let isMounted = true;
+    if (isMounted) {
+      setText("");
+      return;
+    }
+    return () => {
+      isMounted = false;
+    };
+  }, [text]);
 
   const handleSubmit = e => {
     e.preventDefault();
