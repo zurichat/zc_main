@@ -39,11 +39,7 @@ const RemoveMemberModal = props => {
           </div>
           <div className="d-flex w-100">
             <div className="ms-auto me-3 my-3">
-              <Button
-                variant="outline-light"
-                onClick={handleClose}
-                className="me-3"
-              >
+              <Button variant="primary" onClick={handleClose} className="me-3">
                 Cancel
               </Button>
 

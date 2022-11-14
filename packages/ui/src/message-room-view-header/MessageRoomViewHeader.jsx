@@ -24,7 +24,11 @@ export default function MessageRoomViewHeader(props) {
       <div className={styles.plugin__header}>
         <div
           onClick={() => {
+<<<<<<< HEAD
+            if (props.room !== "#unknown-channel") {
+=======
             if (props.name !== "#unknown-channel") {
+>>>>>>> 4a9b728f3ed7726b54641355bd55b6fbc9c8f4de
               setShowDialog(!showDialog);
               setTabIndex(0);
             }
