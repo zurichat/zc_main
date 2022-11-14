@@ -145,12 +145,7 @@ const Organization = styled.div`
 const Logo_Members = styled.div`
   display: flex;
   flex-direction: column;
-<<<<<<< HEAD
   justify-content: space-between;
-=======
-  justify-content: space between;
-  width: 100%;
->>>>>>> 18cdd3f0e4f4bac88c71d5e5bcbfa1d43de17fa2
 `;
 const TryDifferentWrapper = styled.div`
   display: flex;
