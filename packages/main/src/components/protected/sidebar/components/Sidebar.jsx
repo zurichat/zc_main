@@ -60,15 +60,15 @@ const Sidebar = props => {
   ];
 
   const categoriesTransDict = {
-    games: "side_workspace_games",
-    utility: "side_workspace_utility",
-    tools: "side_workspace_tools",
-    entertainment: "side_workspace_entertainment",
-    sales: "side_workspace_sales",
-    productivity: "side_workspace_productivity",
-    channels: "side_workspace_channel",
-    "direct messages": "side_workspace_direct_messages",
-    others: "side_workspace_others"
+    games: "games",
+    utility: "utility",
+    tools: "tools",
+    entertainment: "entertainment",
+    sales: "sales",
+    productivity: "productivity",
+    channels: "channels",
+    "direct messages": "direct_messages",
+    others: "others"
   };
 
   var singleItems = [];
@@ -131,16 +131,19 @@ const Sidebar = props => {
       <div className={`${styles.subCon2}`}>
         <>
           <SingleRoom
-            name={t("side_workspace_thread")}
+            name={`${t("workspace_chat.threads")}`}
             image={threadIcon}
             link={`/workspace/${currentWorkspace}/plugin-chat/threads`}
           />
           <SingleRoom
-            name={t("side_workspace_dms")}
+            name={`${t("workspace_chat.alldms")}`}
             image={dmIcon}
             link={`/workspace/${currentWorkspace}/plugin-chat/all-dms`}
           />
-          <SingleRoom name={t("side_workspace_drafts")} image={draftIcon} />
+          <SingleRoom
+            name={`${t("workspace_chat.drafts")}`}
+            image={draftIcon}
+          />
 
           <Starred starredRooms={starredRooms} />
           {singleItems}

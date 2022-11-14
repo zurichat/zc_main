@@ -22,21 +22,21 @@ const UserOrganization = ({ organizations, user }) => {
           <OrganizationWrapper key={organization.id}>
             <Image src={ZuriChatLogo} alt="" />
             <Link to={`/workspace/${organization.id}/${defaultPluginRoom}`}>
-              <Flex>
-                <Organization>
-                  <Logo_Members>
+              <Organization>
+                <Logo_Members>
+                  <OrganizationNameWrapper>
                     <OrganizationName>{organization.name}</OrganizationName>
-                    <Members>
-                      {organization.no_of_members === 1
-                        ? organization.no_of_members + " member"
-                        : organization.no_of_members + " members"}
-                    </Members>
-                  </Logo_Members>
-                </Organization>
-                <Arrow>
-                  <img src={RightArrow} />
-                </Arrow>
-              </Flex>
+                    <Arrow>
+                      <img src={RightArrow} />
+                    </Arrow>
+                  </OrganizationNameWrapper>
+                  <Members>
+                    {organization.no_of_members === 1
+                      ? organization.no_of_members + " member"
+                      : organization.no_of_members + " members"}
+                  </Members>
+                </Logo_Members>
+              </Organization>
             </Link>
           </OrganizationWrapper>
         ))}
@@ -103,11 +103,6 @@ const Image = styled.img`
   object-fit: cover;
 `;
 
-const Flex = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
 const OrganizationWrapper = styled.li`
   border-top: 1px solid hsla(0, 0%, 20%, 0.51);
   padding-top: 21px;
@@ -122,27 +117,34 @@ const OrganizationWrapper = styled.li`
     flex-grow: 1;
   }
 `;
+const OrganizationNameWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
 const OrganizationName = styled.span`
   font-weight: 600;
   font-size: ${20 / 16}rem;
   font-family: "Lato", sans-serif;
   color: #333333;
 `;
+
 const Members = styled(OrganizationName)`
   font-size: 1rem;
   font-weight: 400;
   color: #667085;
   opacity: 0.8;
-  margin-top: 6px;
+  margin-top: 12px;
 `;
 const Organization = styled.div`
   display: flex;
   flex-direction: row;
+  width: 100%;
 `;
 const Logo_Members = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space between;
+  width: 100%;
 `;
 const TryDifferentWrapper = styled.div`
   display: flex;

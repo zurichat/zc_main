@@ -156,6 +156,7 @@ export const StyledEmojiSelectWrapper = styled.div`
     border: none;
     outline: none;
     transition: background-color 0.4s cubic-bezier(0.27, 1.27, 0.48, 0.56);
+    font-size: 1.3rem;
   }
   .${theme.emojiSelectPopoverEntryFocused} {
     background-color: #efefef;
