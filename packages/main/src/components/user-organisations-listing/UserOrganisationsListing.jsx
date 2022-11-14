@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import RightArrow from "./assets/right-arrow.png";
 import ZuriChatLogo from "../../assets/zuri-chat-logo/logo.svg";
@@ -8,11 +9,12 @@ const UserOrganization = ({ organizations, user }) => {
   const currentPlugin = localStorage.getItem("currentPlugin") || "plugin-chat";
   const currentPluginRoom = localStorage.getItem("currentRoom") || "";
   const defaultPluginRoom = `${currentPlugin}/${currentPluginRoom}`;
+  const { t } = useTranslation();
   return (
     <BottomSection>
       <SelectWorkSpace>
         <p style={{ paddingLeft: "10px" }}>
-          Workspaces for{" "}
+          {t("workspace_name")}{" "}
           <strong style={{ fontWeight: "700" }}>{user.email}</strong>
         </p>
 
@@ -40,9 +42,9 @@ const UserOrganization = ({ organizations, user }) => {
         ))}
       </SelectWorkSpace>
       <TryDifferentWrapper>
-        <TextBottom>Not seeing your workspace?</TextBottom>
+        <TextBottom>{t("workspace_option_first")}</TextBottom>
         <Link to="/signout">
-          <SecondText>Try a different email</SecondText>
+          <SecondText>{t("workspace_option_second")}</SecondText>
         </Link>
       </TryDifferentWrapper>
     </BottomSection>

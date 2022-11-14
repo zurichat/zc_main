@@ -176,7 +176,9 @@ export default function Index() {
       {/* COMPANIES */}
       <div className={`${styles.company_banner_wrap}`}>
         <div className={`${styles.company_banner}`}>
-          <p className={`${styles.cbp}`}>Trusted By Top Companies Worldwide</p>
+          <p className={`${styles.cbp}`}>
+            {t("landing_hero_trusted_companies")}
+          </p>
           <div className={`${styles.logos}`}>
             <img src={HngLogo} alt="" className={`${styles.logo}`} />
             <img src={I4gLogo} alt="" className={`${styles.logo}`} />

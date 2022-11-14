@@ -5,6 +5,7 @@ import EmailInviteModal from "./invite-workflow/EmailInviteModal";
 // import axios from 'axios'
 import { RiArrowRightSLine as Arrow } from "react-icons/ri";
 import { useHistory } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
   const history = useHistory();
@@ -46,6 +47,8 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
     setOpenInvite(!openInviteModal);
   };
 
+  const { t } = useTranslation();
+
   return (
     <div
       className={`${isOpen ? styles.open : styles.modalCon}`}
@@ -84,7 +87,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
             onClick={handleInviteClick}
             data-cy="invite_to_workspace_action_element"
           >
-            Invite people to {workSpace?.name}
+            {t("workspace_invite")} {workSpace?.name}
           </p>
 
           <EmailInviteModal
@@ -97,19 +100,21 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
         </div>
         <div>
           <p>
-            <a href="/create-workspace">Create a new Workspace</a>
+            <a href="/create-workspace">{t("new_workspace")}</a>
           </p>
         </div>
       </div>
       <hr className={styles.modalDivider} />
       <div className={`d-flex flex-column ${styles.modalSection}`}>
         <div>
-          <p>Preferences*</p>
+          <p>{t("modal_preferences")}*</p>
         </div>
         <div
           className={`d-flex align-items-center justify-content-between ${styles.popover}`}
         >
-          <p>Customize {workSpace?.name}*</p>
+          <p>
+            {t("modal_customize")} {workSpace?.name}*
+          </p>
           {/* <div>
             <Arrow className={`${styles.arrow}`} />
           </div> */}
@@ -117,7 +122,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
         <div>
           <p onClick={() => history.push("/admin/settings")}>
             {" "}
-            Workspace Settings*
+            {t("modal_workspace_settings")}*
           </p>
         </div>
       </div>
@@ -126,7 +131,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
         <div
           className={`d-flex align-items-center justify-content-between ${styles.modalSection}`}
         >
-          <p>Tools</p>
+          <p>{t("modal_tools")}</p>
           <div>
             <Arrow className={`${styles.arrow}`} />
           </div>
@@ -141,7 +146,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
               className={`d-flex flex-column ${styles.submodalSection}`}
             >
               <div>
-                <p>Analytics*</p>
+                <p>{t("modal_analytics")}*</p>
               </div>
             </section>
           </section>
@@ -150,7 +155,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
       <hr className={styles.modalDivider} />
       <div className={`d-flex flex-column  ${styles.modalSection}`}>
         <div>
-          <p onClick={() => history.push("/signout")}> Sign Out</p>
+          <p onClick={() => history.push("/signout")}> {t("modal_signout")}</p>
         </div>
       </div>
       <hr className={styles.modalDivider} />
@@ -186,7 +191,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
           ref={hoverRef2}
           className={`d-flex align-items-center justify-content-between ${styles.modalSubSection}`}
         >
-          <p>Switch workspace</p>
+          <p>{t("modal_switch_workspace")}</p>
           <Arrow className={`${styles.arrow}`} />
           <section
             className={`${
@@ -224,7 +229,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
         <div className={`${styles.modalSubSection}`}>
           <p onClick={() => history.push("/downloads")}>
             {" "}
-            Open the Zuri Chat App
+            {t("modal_open_chat")}
           </p>
         </div>
       </div>
