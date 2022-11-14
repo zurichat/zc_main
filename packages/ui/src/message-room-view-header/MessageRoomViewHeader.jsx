@@ -41,6 +41,9 @@ export default function MessageRoomViewHeader(props) {
           <span className={styles.plugin__header__text}>
             {props.name.split("#").join("# ")}
           </span>
+          <span className={styles.plugin__header__text}>
+            {props.name.split("#").join("# ")}
+          </span>
           <span className={styles.plugin__header__arrow}>
             <MdKeyboardArrowDown />
           </span>
