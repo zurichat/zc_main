@@ -160,7 +160,7 @@ export default function TopNavigationBar() {
           id="navbarText"
         >
           <ul
-            className={`navbar-nav d-flex justify-content-between align-items-center mx-auto ${TopNavigationBarStyles.navbarNav}`}
+            className={`navbar-nav d-flex justify-content-center align-items-center mx-auto ${TopNavigationBarStyles.navbarNav}`}
           >
             <li className="nav-item">
               <NavLink
