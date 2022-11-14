@@ -240,10 +240,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
           </section>
         </div>
         <div className={`${styles.modalSubSection}`}>
-          <p onClick={() => history.push("/downloads")}>
-            {" "}
-            Open the Zuri Chat App
-          </p>
+          <p onClick={() => history.push("/")}> Open the Zuri Chat App</p>
         </div>
       </div>
     </div>

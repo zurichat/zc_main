@@ -15,7 +15,6 @@ import { ProfileContext } from "../context/profile-modal.context";
 import Preferences from "./Preferences";
 import EditProfile from "./EditProfile";
 import MembersModal from "./MembersModal";
-import Downloads from "./Downloads";
 import SetStatusModal from "./SetStatusModal";
 import NewStatusModal from "./NewStatusModal";
 import { authAxios } from "../utils/api";
@@ -312,25 +311,9 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
 
             <hr className={styles.hr} />
 
-            <div className={styles.optionSection}>
-              <p
-                onClick={() => {
-                  setReusableModal("downloads");
-                }}
-              >
-                Downloads
-              </p>
-            </div>
-
             {reusableModal === "edit profile" && <EditProfile />}
 
             {reusableModal === "preference" && <Preferences />}
-
-            {reusableModal === "downloads" && (
-              <Downloads setModal={setReusableModal} />
-            )}
-
-            <hr className={styles.hr} />
 
             <div className={styles.optionSection}>
               <p onClick={logout}>Sign out</p>
