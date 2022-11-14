@@ -252,8 +252,40 @@ function MembersPanel({ config }) {
     addmembersevent(values);
   };
 
+  //to remove member from the channel
+  //the id was passed from the RemoveMemberModal component to be able to identify the id we want to remove
+  // when we destructure the member we want to remove
+  //this  removememberevent(id); is just to console that the plugin/member has being delete
   const removeMemberEvent = id => {
+    //to get the organization id from the local storage
+
+    const theUserData = JSON.parse(localStorage.getItem("userData"));
+
+    console.log(theUserData.user.org_id);
+
+    const theOrganizarionId = theUserData.user.org_id;
+
+    //to get the current room , which we have in the session storage
+
+    let ourCurrentRoom = sessionStorage.getItem("currentRoom");
+
+    const token = sessionStorage.getItem("token");
+
+    axios
+      .delete(
+        `http://chat.zuri.chat/api/v1/org/${theOrganizarionId}/rooms/${ourCurrentRoom}/members/${id}`,
+        { headers: { Authorization: `Bearer ${token}` } }
+      )
+      .then(() => console.log("successfully deleted"))
+      .catch(e => console.log(e));
+
     removememberevent(id);
+
+    setMembersList(
+      membersList.filter(leftMembersInChannel => {
+        return leftMembersInChannel._id !== id;
+      })
+    );
   };
 
   const removeMemberHandler = member => {
@@ -339,7 +371,7 @@ function MembersPanel({ config }) {
           membersList.map((member, index) => (
             <ListGroup.Item key={member._id + index} className="d-flex w-100">
               <div>{member.email}</div>
-              <div className="ms-auto" onClick={handleaddModalShow}>
+              <div className="ms-auto" onClick={handleremoveModalShow}>
                 <RemoveLink onClick={() => removeMemberHandler(member)}>
                   Remove
                 </RemoveLink>
