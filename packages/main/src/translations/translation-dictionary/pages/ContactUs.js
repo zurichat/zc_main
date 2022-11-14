@@ -14,16 +14,16 @@ export default [
   },
   {
     key: "contactHeadP",
-    en: "Free open source application.",
-    de: "Kostenlose Open-Source-Anwendung.",
-    enus: "Free open source application.",
-    fr: "Application open source gratuite.",
-    zh: "免费的开源应用程序。",
-    ar: "تطبيق مجاني مفتوح المصدر.",
-    es: "Aplicación gratuita de código abierto.",
-    it: "Applicazione open source gratuita.",
-    he: "יישום קוד פתוח בחינם.",
-    pt: "Aplicativo de código aberto gratuito."
+    en: "We are dedicated to making your online communication experience with us a pleasure. We’d like to hear from you.",
+    de: "Wir sind dafür gewidmet, dass Ihre Online-Kommunikationserfahrung mit uns ein Vergnügen ist. Wir möchten von Ihnen hören.",
+    enus: "We are dedicated to making your online communication experience with us a pleasure. We’d like to hear from you.",
+    fr: "Nous nous engageons à faire de votre expérience de communication en ligne avec nous un plaisir. Nous aimerions avoir de vos nouvelles.",
+    zh: "我们致力于与我们一起进行在线沟通经验。我们想收到你的来信。",
+    ar: "نحن مخصصون لجعل تجربة الاتصال الخاصة بك عبر الإنترنت من دواعي سروري. نود أن نسمع منك.",
+    es: "Estamos dedicados a hacer que su experiencia de comunicación en línea sea un placer. Nos gustaría saber de usted.",
+    it: "Siamo dedicati a rendere la tua esperienza di comunicazione online con noi un piacere. Ci piacerebbe sentirti.",
+    he: "אנו מחויבים להפוך את חוויית התקשורת המקוונת שלך איתנו תענוג. ברצוננו לשמוע ממך.",
+    pt: "Estamos dedicados a tornar sua experiência de comunicação on-line com a gente. Nós gostaríamos de ouvir de você."
   },
   {
     key: "formEmail",
