@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect, useRef } from "react";
 import Picker, { SKIN_TONE_MEDIUM_DARK } from "emoji-picker-react";
 import DatePicker from "react-datepicker";
 import TimePicker from "react-time-picker";
@@ -58,18 +58,10 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
   const onEmojiClick = (event, emojiObject) => {
     setChosenEmoji(emojiObject);
   };
-
-  // to return after every render and prevent memory leaks
-  useEffect(() => {
-    let isMounted = true;
-    if (isMounted) {
-      setText("");
-      return;
-    }
-    return () => {
-      isMounted = false;
-    };
-  }, [text]);
+  // to store a reference to the input's DOM mode
+  const inputRef = useRef();
+  // to focus an input control upom first render
+  useEffect(() => {}, [inputRef]);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -139,6 +131,7 @@ const SetStatusModal = ({ statusModal, setStatusModal }) => {
                   </div>
                 </div>
                 <input
+                  ref={inputRef}
                   type="text"
                   className={styles.input}
                   placeholder="What is your status?"
