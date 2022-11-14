@@ -19,6 +19,7 @@
   color: #000;
   position: fixed;
   top: inherit;
+  margin-top: -0.2rem;
   left: 1rem;
   width: 100%;
   max-width: 281px;
