@@ -16,7 +16,6 @@ import { ProfileContext } from "../context/profile-modal.context";
 import Preferences from "./Preferences";
 import EditProfile from "./EditProfile";
 import MembersModal from "./MembersModal";
-import Downloads from "./Downloads";
 import SetStatusModal from "./SetStatusModal";
 import NewStatusModal from "./NewStatusModal";
 import { authAxios } from "../utils/api";
