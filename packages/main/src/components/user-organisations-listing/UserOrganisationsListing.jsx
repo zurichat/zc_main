@@ -101,6 +101,11 @@ const Image = styled.img`
   object-fit: cover;
 `;
 
+const Flex = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+`;
 const OrganizationWrapper = styled.li`
   border-top: 1px solid hsla(0, 0%, 20%, 0.51);
   padding-top: 21px;
@@ -109,7 +114,6 @@ const OrganizationWrapper = styled.li`
   padding-right: 36px;
   display: flex;
   gap: 19px;
-  align-items: center;
 
   & > a {
     flex-grow: 1;
@@ -141,8 +145,7 @@ const Organization = styled.div`
 const Logo_Members = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space between;
-  width: 100%;
+  justify-content: space-between;
 `;
 const TryDifferentWrapper = styled.div`
   display: flex;
