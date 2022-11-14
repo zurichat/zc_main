@@ -42,7 +42,7 @@ const inlineStyles = [
 ];
 
 const blockStyles = [{ type: "ordered-list-item", label: <ListIcon /> }];
-const Toolbar = props => {
+const Toolbar2 = props => {
   const {
     editorState,
     setEditorState,
@@ -180,28 +180,58 @@ const Toolbar = props => {
             </div>
           </AttachFile>
         ) : null}
-        <FormatContainer>
-          <UnstyledButton onClick={() => setshowAttachInputBox(true)}>
-            <ClipIcon />
-          </UnstyledButton>
-          <UnstyledButton>
-            <AtIcon />
-          </UnstyledButton>
-          {
-            <StyledEmojiSelectWrapper>
-              <GlobalStyleForEmojiSelect />
-              {emojiSelect}
-            </StyledEmojiSelectWrapper>
-          }
+        <FormatContainer2>
+          <LightningIcon />
+
           <span style={{ paddingInline: "4px" }}>
             <BorderIcon />
           </span>
-        </FormatContainer>
-        <SendContainer>
-          <UnstyledButton onClick={handleClickSendMessage || handleAttachMedia}>
-            <SendIcon />
+
+          {inlineStyles.map((style, index) => {
+            return renderInlineStyleButton(style, index);
+          })}
+          <span style={{ paddingInline: "4px" }}>
+            <BorderIcon />
+          </span>
+          <UnstyledButton>
+            <LinkIcon />
           </UnstyledButton>
-        </SendContainer>
+          <span style={{ paddingInline: "4px" }}>
+            <BorderIcon />
+          </span>
+          {blockStyles.map((block, index) => {
+            return renderBlockStyleButton(block, index);
+          })}
+
+          {/* GIF integration */}
+          <div
+            className={`${classes.box} ${showGif && `${classes.box__active}`}`}
+          >
+            <AiOutlineGif
+              className={classes.svg}
+              onClick={() => setShowGif(prev => !prev)}
+            />
+          </div>
+          <div
+            className={`${classes.gif__box} ${
+              showGif
+                ? `${classes.gif__box__active}`
+                : `${classes.gif__box__inactive}`
+            }`}
+          >
+            <ReactGiphySearchbox
+              apiKey="aK3byM6d4TMBFh7fkw3m7FuJOuRLHnM0"
+              searchPlaceholder="Search Gif"
+              gifListHeight="250px"
+              onSelect={gifSelectionHandler}
+              masonryConfig={[
+                { columns: 2, imageWidth: 110, gutter: 5 },
+                { mq: "768px", columns: 3, imageWidth: 120, gutter: 5 },
+                { mq: "1200px", columns: 3, imageWidth: 130, gutter: 5 }
+              ]}
+            />
+          </div>
+        </FormatContainer2>
       </Wrapper>
     </ClickAwayListener>
   );
@@ -211,7 +241,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
 `;
-const FormatContainer = styled.div`
+const FormatContainer2 = styled.div`
   display: flex;
   gap: 8px;
   align-items: center;
@@ -243,4 +273,4 @@ const UnstyledButton = styled(RealUnstyledButton)`
   }
 `;
 
-export default Toolbar;
+export default Toolbar2;

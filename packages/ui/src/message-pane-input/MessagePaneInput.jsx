@@ -21,6 +21,7 @@ import "!style-loader!css-loader!@draft-js-plugins/mention/lib/plugin.css";
 // import suggestionStyles from "./suggestions.module.css"
 import "./message-editor-input.css";
 import Toolbar from "./components/Toolbar";
+import Toolbar2 from "./components/Toolbar2";
 import mentions from "./mentions.data";
 
 import createEmojiPlugin from "@draft-js-plugins/emoji";
@@ -193,7 +194,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
           </Preview>
         ) : null}
         <div className="RichEditor-root">
-          <Toolbar
+          <Toolbar2
             editorState={editorState}
             setEditorState={setEditorState}
             emojiSelect={<EmojiSelect />}
@@ -211,6 +212,16 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
             plugins={[emojiPlugin, mentionPlugin]}
           />
         </div>
+        <Toolbar
+          editorState={editorState}
+          setEditorState={setEditorState}
+          emojiSelect={<EmojiSelect />}
+          sendMessageHandler={sendMessage}
+          sendAttachedFileHandler={onAttachFile}
+          sentAttachedFile={sentAttachedFile =>
+            setSentAttachedFile(sentAttachedFile)
+          }
+        />
         <MentionSuggestions
           open={suggestionsOpen}
           onOpenChange={onOpenChange}
