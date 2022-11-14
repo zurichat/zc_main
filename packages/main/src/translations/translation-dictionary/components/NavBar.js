@@ -53,5 +53,11 @@ export default [
     de: "Austragen",
     engb: "Sign Out",
     fr: "Se déconnecter"
+  },
+  {
+    key: "search.placeholder",
+    en: "Search Here",
+    fr: "Cherche ici",
+    de: "Suche hier"
   }
 ];

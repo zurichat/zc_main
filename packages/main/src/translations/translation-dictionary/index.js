@@ -5,12 +5,16 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import SignOut from "./pages/SignOut";
 import ResetPassword from "./pages/ResetPassword";
+import Workspace from "./pages/Workspace";
+import UserOrganizationsListing from "./components/UserOrganizationsListing";
+import TopBarModal from "./components/TopBarModal";
 
 import Subscribe from "./pages/Subscribe";
 import whyzurichat from "./pages/whyzurichat";
 import Cookies from "./pages/Cookies";
 import ContactUs from "./pages/ContactUs";
 import Plugins from "./pages/Plugins";
+import ModalComponent from "./components/ModalComponent";
 
 import DownloadDesktop from "./pages/DownloadDesktop";
 import DownloadMobile from "./pages/DownloadMobile";
@@ -22,6 +26,7 @@ import Pricing from "./pages/Pricing";
 
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
+import WorkspaceChat from "./pages/WorkspaceChat";
 import SideBar from "./components/SideBar";
 import Download from "./pages/Download";
 import DownloadDesktopSectionTwo from "./pages/DownloadDesktopSectionTwo";
@@ -44,12 +49,16 @@ const Translations = [
   ...Plugins,
   ...About,
   ...Download,
+  ...Workspace,
+  ...UserOrganizationsListing,
+  ...TopBarModal,
 
   ...DownloadDesktop,
   ...DownloadMobile,
   ...DownloadMac,
   ...DownloadIos,
   ...DownloadWindows,
+  ...ModalComponent,
 
   ...Pricing,
   ...DownloadDesktopSectionTwo,
@@ -58,6 +67,7 @@ const Translations = [
   // Components
   ...NavBar,
   ...Footer,
+  ...WorkspaceChat,
   ...SideBar
 ];
 
