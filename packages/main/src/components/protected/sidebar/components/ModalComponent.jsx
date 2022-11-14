@@ -245,10 +245,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
           </section>
         </div>
         <div className={`${styles.modalSubSection}`}>
-          <p onClick={() => history.push("/downloads")}>
-            {" "}
-            {t("modal_open_chat")}
-          </p>
+          <p onClick={() => history.push("/")}> {t("modal_open_chat")}</p>
         </div>
       </div>
     </div>
