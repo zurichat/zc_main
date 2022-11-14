@@ -71,9 +71,6 @@ export default function Footer() {
               <li>
                 <Link to="/contact-us">{t("footer_contact")}</Link>
               </li>
-              <li>
-                <Link to="/downloads">{t("footer_downloads")}</Link>
-              </li>
             </ul>
           </div>
 
