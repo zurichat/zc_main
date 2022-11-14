@@ -27,7 +27,6 @@ import axios from "axios";
 import { StyledTabs } from "./MessageRoomDetailsDialog.styled";
 import { getSampleMemberList } from "~/utils/samples";
 import FileList from "./components/FileList";
-import FileShowMoreModal from "./components/FileShowMoreModal";
 
 function MessageRoomDetailsDialog({
   close,
@@ -188,12 +187,11 @@ function AboutPanel({
           <FileList showMore={showMore} setShowMore={setShowMore} />
           <button
             onClick={() => {
-              setShowMore(!showMore);
+              setShowMore(true);
             }}
           >
             Show More
           </button>
-          {showMore && <FileShowMoreModal setShowMore={setShowMore} />}
         </EditContent>
       </FileWrapper>
       <h6 style={{ fontSize: "15px", fontWeight: "500" }}>
@@ -477,7 +475,6 @@ const Typography = styled.p`
   font-size: 17px;
 `;
 const FileWrapper = styled.div`
-  position: relative;
   border: 2px solid #f6f6f6;
   margin-top: 20px;
   padding: 15px;

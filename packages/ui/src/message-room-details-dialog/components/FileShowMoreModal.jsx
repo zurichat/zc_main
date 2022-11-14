@@ -6,82 +6,85 @@ import fileData from "../fileData";
 
 const FileShowMoreModal = ({ showMore, setShowMore }) => {
   return (
-    <StyledFileShowMoreModal>
-      <div className="filterHeader">
-        <input
-          type="search"
-          placeholder="Search by file name or keyboard"
-          id="search"
-          name="search"
-        />
+    !showMore && (
+      <>
+        <StyledFileShowMoreModal>
+          <div className="modalContent">
+            <div className="filterHeader">
+              <input
+                type="search"
+                placeholder="Search by file name or keyboard"
+                id="search"
+                name="search"
+              />
 
-        <AiOutlineSearch className="searchIcon" />
+              <AiOutlineSearch className="searchIcon" />
 
-        {/* <AiOutlineClose /> */}
-        <button
-          onClick={() => {
-            setShowMore(false);
-          }}
-        >
-          Close
-        </button>
-      </div>
+              <AiOutlineClose
+                onClick={() => {
+                  setShowMore(false);
+                }}
+              />
+            </div>
 
-      <div className="filterContainer">
-        <div className="leftFilter">
-          <select name="author" id="author">
-            <option value="all">From</option>
-            <option value="all">Olix</option>
-          </select>
-          <select name="date" id="date">
-            <option value="all">Date</option>
-            <option value="all">Today</option>
-          </select>
-          <select name="type" id="type">
-            <option value="all">Type</option>
-            <option value="all">Image</option>
-          </select>
-          <button>More filters</button>
-        </div>
-        <div className="rightFilter">
-          {/* Hamburger Menu */}
-          <div className="hamburger">
-            <div className="hambuger__Line"></div>
-            <div className="hambuger__Line"></div>
-            <div className="hambuger__Line"></div>
+            <div className="filterContainer">
+              <div className="leftFilter">
+                <select name="author" id="author">
+                  <option value="all">From</option>
+                  <option value="all">Olix</option>
+                </select>
+                <select name="date" id="date">
+                  <option value="all">Date</option>
+                  <option value="all">Today</option>
+                </select>
+                <select name="type" id="type">
+                  <option value="all">Type</option>
+                  <option value="all">Image</option>
+                </select>
+                <button>More filters</button>
+              </div>
+              <div className="rightFilter">
+                {/* Hamburger Menu */}
+                <div className="hamburger">
+                  <div className="hambuger__Line"></div>
+                  <div className="hambuger__Line"></div>
+                  <div className="hambuger__Line"></div>
+                </div>
+                {/* Menus */}
+                <div className="dotMenu">
+                  <div className="dot"></div>
+                  <div className="dot"></div>
+                  <div className="dot"></div>
+                  <div className="dot"></div>
+                  <div className="dot"></div>
+                  <div className="dot"></div>
+                  <div className="dot"></div>
+                  <div className="dot"></div>
+                  <div className="dot"></div>
+                </div>
+              </div>
+            </div>
+
+            <div className="filter">
+              <h5>{fileData.length} results</h5>
+              {/* sort file */}
+              <div className="sortNewFile">
+                <select name="sort" id="sort">
+                  <option value="all">Sort Newest File</option>
+                  <option value="all">Newest</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="fileContainer">
+              {fileData.map(file => {
+                return <File key={file.id} {...file} />;
+              })}
+            </div>
           </div>
-          {/* Menus */}
-          <div className="dotMenu">
-            <div className="dot"></div>
-            <div className="dot"></div>
-            <div className="dot"></div>
-            <div className="dot"></div>
-            <div className="dot"></div>
-            <div className="dot"></div>
-            <div className="dot"></div>
-            <div className="dot"></div>
-            <div className="dot"></div>
-          </div>
-        </div>
-      </div>
-
-      <div className="filter">
-        <h5>{fileData.length} results</h5>
-        {/* sort file */}
-        <div className="sortNewFile">
-          <select name="sort" id="sort">
-            <option value="all">Sort Newest File</option>
-            <option value="all">Newest</option>
-          </select>
-        </div>
-      </div>
-
-      <div className="fileContainer">
-        {fileData.map(file => {
-          return <File key={file.id} {...file} />;
-        })}
-      </div>
-    </StyledFileShowMoreModal>
+        </StyledFileShowMoreModal>
+      </>
+    )
   );
 };
 
@@ -89,14 +92,34 @@ export default FileShowMoreModal;
 
 // Styled Components
 const StyledFileShowMoreModal = styled.div`
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  overflow-y: scroll;
-  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  overflow: hidden;
+
+  .modalContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(350px, 90vw, 950px);
+    height: 80vh;
+    background: #fff;
+    padding: 1rem;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: scroll;
+
+    && {
+      width: clamp(350px, 90vw, 950px);
+    }
+  }
 
   .filterHeader {
     display: flex;
@@ -105,9 +128,10 @@ const StyledFileShowMoreModal = styled.div`
     border-bottom: 1px solid #eee;
     position: relative;
     padding-right: 0.8rem;
-    margin-bottom: 1rem;
     position: sticky;
     top: 0;
+    background: #fff;
+    z-index: 100;
 
     input {
       width: 90%;
@@ -147,15 +171,19 @@ const StyledFileShowMoreModal = styled.div`
       margin-top: 4px;
     }
 
-    button {
+    svg {
       border: none;
       outline: none;
       background: none;
       font-size: 14px;
       font-weight: 500;
-      color: RGB(0, 0, 255);
+      fill: #333;
       cursor: pointer;
       font-weight: 500;
+    }
+
+    svg:hover {
+      fill: #999;
     }
   }
 
@@ -163,8 +191,14 @@ const StyledFileShowMoreModal = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 1rem;
     padding: 0.5rem;
+
+    @media screen and (max-width: 768px) {
+      padding-right: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+    }
 
     .leftFilter {
       display: flex;
@@ -245,7 +279,6 @@ const StyledFileShowMoreModal = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 1rem;
     padding: 0.5rem;
   }
 

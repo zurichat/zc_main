@@ -2,6 +2,7 @@ import React from "react";
 import fileData from "../fileData";
 import styled from "styled-components";
 import File from "./File";
+import FileShowMoreModal from "./FileShowMoreModal";
 
 const StyledFileList = styled.div`
   display: flex;
@@ -10,15 +11,19 @@ const StyledFileList = styled.div`
   width: 100%;
 `;
 
-const FileList = () => {
+const FileList = ({ showMore, setShowMore }) => {
   return (
-    <StyledFileList>
-      {fileData.map((file, index) => {
-        if (index < 5) {
-          return <File key={file.id} {...file} />;
-        }
-      })}
-    </StyledFileList>
+    <>
+      <StyledFileList>
+        {fileData.map((file, index) => {
+          if (index < 5) {
+            return <File key={file.id} {...file} />;
+          }
+        })}
+      </StyledFileList>
+
+      {showMore && <FileShowMoreModal setShowMore={setShowMore} />}
+    </>
   );
 };
 
