@@ -21,11 +21,11 @@ All Team members contribution are valued and encouraged, therefore, do not hesit
 
 > If you want to ask a question, we assume that you have read the available instructions, if you still face any confusion, Kindly reach out to your team lead, and they will be willing to help.
 
-Before you ask a question, it is best to search for existing [Issues](https://github.com/zurichat/zc_main/issues) that might help you. In case you have found a suitable issue and still need clarification, you can write your question in this issue. It is also advisable to search the internet for answers first.
+Before you ask a question, it is best to search for existing [Issues](https://linear.app/zurichat2/team/ZUR/active) that might help you. In case you have found a suitable issue and still need clarification, you can write your question in this issue. It is also advisable to search the internet for answers first.
 
 If you then still feel the need to ask a question and need clarification, we recommend the following:
 
-- Open an [Issue](https://github.com/zurichat/zc_main/issues/new).
+- Open an [Issue](https://linear.app/zurichat2/team/ZUR/all).
 - Provide as much context as you can about what you're running into.
 - Provide project and platform versions (nodejs, npm, etc), depending on what seems relevant.
 
@@ -35,13 +35,13 @@ Once again, reach out to your Team Lead about any confusion you might face.
 
 In order to contribute to this project, the entire process follows the following structure
 
-- You identify an [issue](https://github.com/zurichat/zc_main/issues) you want to work on, or is assigned to you.
+- You identify an [issue](https://linear.app/zurichat2/team/ZUR/all) you want to work on, or is assigned to you.
 - You make changes that solves this issue, you then write tests (Where required) and ensure that it passes.
 - You open a pull request, which will be reviewed by your Team lead or PR Lead, and merged if it checks the right boxes.
 
-Congratulations, you have just contributed,🎉🎉🎉 now pick another [issue](https://github.com/zurichat/zc_main/issues) and repeat the same process.
+Congratulations, you have just contributed,🎉🎉🎉 now pick another [issue](https://linear.app/zurichat2/team/ZUR/all) and repeat the same process.
 
-### Contributing As a Team
+<!-- ### Contributing As a Team
 
 This project is actively worked on by three Teams:
 
@@ -53,7 +53,7 @@ Therefore, to check issues specific to your team, follow these instructions:
 
 - For Team Aristotle: [Here](https://github.com/zurichat/zc_main/issues?q=is%3Aopen+is%3Aissue+label%3Ateam-aristotle)
 - For Team Einstein: [Here](https://github.com/zurichat/zc_main/issues?q=is%3Aopen+is%3Aissue+label%3Ateam-einstein)
-- For Team Voltaire: [Here](https://github.com/zurichat/zc_main/issues?q=is%3Aopen+is%3Aissue+label%3A%22Team+Voltaire%22)
+- For Team Voltaire: [Here](https://github.com/zurichat/zc_main/issues?q=is%3Aopen+is%3Aissue+label%3A%22Team+Voltaire%22) -->
 
 <!-- omit in toc -->
 
@@ -120,9 +120,10 @@ So here is a run down of how you would go about contributing:
 
   - Head over to your github account. And click on your own copy of the zc_main repository.
   - You will see the option to open a pull request.
+  - Create your pull request with the title `ZUR-123 My PR adds a feature` where ZUR is the issue ID
   - Explain what your changes does, adding images and proof (test) if needed.
   - Click the open pull request button and wait.
-  - Copy the link and head over to #issue-review channel on slack and paste it there.
+  <!--   - Copy the link and head over to #issue-review channel on slack and paste it there. -->
   - Add comments where neccesary and wait for the PR Leads to check.
     Here is a [Video](https://youtu.be/3_LgvC0-Om4) showing how to go about it.
 
@@ -157,7 +158,7 @@ Let's build the next generation workspace, shall we ?🎉
   - Take note of all instructions above
   - The main branch for development would be the **DEVELOP** branch
   - Do not make a pull request with changes to the main branch
-  - Create a branch in the format...Feat/(Task) e.g Feat/ Button Component and implement your work only in such branch
+  <!--   - Create a branch in the format...Feat/(Task) e.g Feat/ Button Component and implement your work only in such branch -->
   - Whatever task it is that you do must be responsive on all screens
   - Add a live link to your Pull Request
   - Make sure your commit messages and PR title are precise and meaningful, no..."it is now working" or "finally" commit messages, else your PR may not be merged

@@ -12,7 +12,11 @@ export default function App() {
     const sideBar = document.getElementById(
       "single-spa-application:@zuri/sidebar"
     );
-    sideBar.style.backgroundColor = themeColors[theme]?.primary;
+
+    // Ensure the sidebar is mounted before changing the theme
+    if (sideBar) {
+      sideBar.style.backgroundColor = themeColors[theme]?.primary;
+    }
   }
 
   useEffect(() => {
@@ -20,8 +24,8 @@ export default function App() {
     fetchUser(dispatch);
   }, []);
 
-  return !state.user ? (
-    <SkeletonLoader COUNTER={12} />
+  return !state.user && state.IS_LOADING ? (
+    <SkeletonLoader COUNTER={10} />
   ) : (
     <>
       <Sidebar state={state} dispatch={dispatch} />

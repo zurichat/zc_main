@@ -6,9 +6,12 @@ import { navigateToUrl } from "single-spa";
 import Badge from "./Badge";
 import RoomOptions from "./RoomOptions";
 import { useRouteMatch } from "react-router-dom";
-import { HiOutlineHashtag } from "react-icons/hi";
+
+import { useTranslation } from "react-i18next";
+
 
 const RoomItem = ({ room, baseUrl, pluginId }) => {
+  const { t } = useTranslation();
   let currentWorkspace = localStorage.getItem("currentWorkspace");
   const [click, isClicked] = useClick();
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -102,7 +105,10 @@ const RoomItem = ({ room, baseUrl, pluginId }) => {
           <div
             className={`mb-0 d-inline-flex align-items-center ${styles.dropDown__name}`}
           >
-            {room.room_name}
+            {room.room_name === "general"
+              ? t(`workspace_chat.${room.room_name}`)
+              : room.room_name}
+            {/* {room.room_name} */}
             {/* Add to Room Button */}
             {/* <AiOutlinePlusCircle
                   className={`${styles.icon}`}
