@@ -319,10 +319,6 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
 
             {reusableModal === "preference" && <Preferences />}
 
-            {reusableModal === "downloads" && (
-              <Downloads setModal={setReusableModal} />
-            )}
-
             <hr className={styles.hr} />
 
             <div className={styles.optionSection}>
