@@ -28,4 +28,4 @@ jobs:
             git pull origin main
             yarn install
             yarn build
-            pm2 restart zc_main_prod
+            pm2 restart zuri-main
