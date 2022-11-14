@@ -16,7 +16,6 @@ import {
   NewSignOut,
   AboutPage,
   ContactUsPage,
-  DownloadsPage,
   PluginsPage,
   PricingPage,
   InvitePage,
@@ -86,7 +85,6 @@ const App = () => (
           {/* <Route exact path="/signout" component={SignOut} /> */}
           <Route exact path="/about" component={AboutPage} />
           <Route exact path="/contact-us" component={ContactUsPage} />
-          <Route exact path="/downloads" component={DownloadsPage} />
           <Route exact path="/plugins" component={PluginsPage} />
           <Route exact path="/pricing" component={PricingPage} />
           <Route path="/invites/:id" component={InvitePage} />

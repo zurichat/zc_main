@@ -3,70 +3,35 @@ export default [
     key: "textOne",
     en: "We use third-party",
     de: "Wir verwenden Dritte",
-    nl: "We gebruiken externe partijen",
     engb: "We use third-party",
-    fr: "Nous utilisons une tierce partie",
-    zh: "我们使用第三方",
-    ar: "نستخدم طرف ثالث",
-    es: "Utilizamos terceros",
-    it: "Usiamo terze parti",
-    iw: "אנו משתמשים צד שלישי",
-    pt: "Nós usamos terceiros"
+    fr: "Nous utilisons une tierce partie"
   },
   {
     key: "textTwo",
     en: "cookies",
     de: "Kekse",
-    nl: "koekjes",
     engb: "cookies",
-    fr: "biscuits",
-    zh: "饼干",
-    ar: "بسكويت",
-    es: "galletas",
-    it: "biscotti",
-    iw: "עוגיות",
-    pt: "biscoitos"
+    fr: "biscuits"
   },
   {
     key: "textThree",
     en: "in order to personalize your site experience.",
     de: "um Ihre Websiteerfahrung zu personalisieren.",
-    nl: "Om uw site-ervaring te personaliseren.",
     engb: "in order to personalize your site experience.",
-    fr: "afin de personnaliser votre expérience de site.",
-    zh: "为了个性化您的网站体验。",
-    ar: "من أجل تخصيص تجربة موقعك.",
-    es: "Para personalizar la experiencia de su sitio.",
-    it: "per personalizzare l'esperienza del tuo sito.",
-    iw: "כדי להתאים אישית את חוויית האתר שלך.",
-    pt: "a fim de personalizar a experiência do seu site."
+    fr: "afin de personnaliser votre expérience de site."
   },
   {
     key: "accept",
     en: "Allow",
     de: "Erlauben",
-    nl: "Toestaan",
     engb: "Allow",
-    fr: "Permettre",
-    zh: "允许",
-    ar: "السماح",
-    es: "Permitir",
-    it: "Permettere",
-    iw: "להתיר",
-    pt: "Permitir"
+    fr: "Permettre"
   },
   {
     key: "decline",
     en: "Decline",
     de: "Ablehnen",
-    nl: "Afwijzen",
     engb: "Decline",
-    fr: "Déclin",
-    zh: "衰退",
-    ar: "يتناقص",
-    es: "Disminución",
-    it: "Declino",
-    iw: "יְרִידָה",
-    pt: "Declínio"
+    fr: "Déclin"
   }
 ];

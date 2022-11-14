@@ -26,6 +26,7 @@ import { ListGroup } from "react-bootstrap";
 import axios from "axios";
 import { StyledTabs } from "./MessageRoomDetailsDialog.styled";
 import { getSampleMemberList } from "~/utils/samples";
+import FileList from "./components/FileList";
 
 function MessageRoomDetailsDialog({
   close,
@@ -132,6 +133,7 @@ function AboutPanel({
   toggleEditDescriptionModal,
   toggleLeaveChannelModal
 }) {
+  const [showMore, setShowMore] = useState(false);
   return (
     <div style={{ margin: "0 5px" }}>
       <OverallWrapper>
@@ -182,9 +184,14 @@ function AboutPanel({
       <FileWrapper>
         <FileContent>Files</FileContent>
         <EditContent>
-          There aren't any files to be see here right now. But there could be -
-          drag and drop any file into the message pane to add it to this
-          conversation.
+          <FileList showMore={showMore} setShowMore={setShowMore} />
+          <button
+            onClick={() => {
+              setShowMore(true);
+            }}
+          >
+            Show More
+          </button>
         </EditContent>
       </FileWrapper>
       <h6 style={{ fontSize: "15px", fontWeight: "500" }}>
@@ -590,6 +597,12 @@ const EditContent = styled.h4`
   margin-top: 5px;
   color: #8b8b8b;
   padding-left: 20px;
+
+  button {
+    border: none;
+    color: #00b87c;
+    margin-top: 10px;
+  }
 `;
 const Selection = styled.div`
   display: flex;
