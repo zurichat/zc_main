@@ -33,7 +33,7 @@ const BorderIcon = () => <img src={Border} alt="" />;
 const LightningIcon = () => <img src={Lightning} alt="" />;
 const LinkIcon = () => <img src={Link} alt="" />;
 const ClipIcon = () => <img src={Clip} alt="" />;
-const SendIcon = () => <img src={Send} alt="" />;
+const SendIcon = () => <img src={Send} alt="send icon" />;
 const AtIcon = () => <img src={AtSign} alt="" />;
 
 const inlineStyles = [
@@ -58,6 +58,7 @@ const Toolbar = props => {
   const [showAttachInputBox, setshowAttachInputBox] = useState(false);
   //const [preview, setPreview] = useState('')
 
+  const inputLength = editorState.getCurrentContent().getPlainText("").length;
   // Gif state management
   const [showGif, setShowGif] = useState(false);
 
@@ -98,7 +99,6 @@ const Toolbar = props => {
     sendMessageHandler(editorState.getCurrentContent());
     setEditorState(EditorState.createEmpty());
   };
-
   const handleInlineStyle = (event, style) => {
     event.preventDefault();
     setEditorState(RichUtils.toggleInlineStyle(editorState, style));
@@ -295,6 +295,9 @@ const UnstyledButton = styled(RealUnstyledButton)`
   display: grid;
   place-items: center;
   padding: 2px 4px;
+  &:disabled {
+    cursor: not-allowed;
+  }
 `;
 
 export default Toolbar;
