@@ -13,7 +13,6 @@ function MessagePane({
   onEmojiClicked,
   currentUserId
 }) {
-  // console.log({ message });
   return (
     <div className={styles.MessageContainer}>
       <div className={styles.hoverItemsContainer}>
