@@ -208,6 +208,19 @@ export default [
     pt: "Explorar plugins"
   },
   {
+    key: "landing_hero_trusted_companies",
+    en: "Trusted By Top Companies Worldwide",
+    de: "Vertrauen von Top-Unternehmen weltweit",
+    enus: "Trusted By Top Companies Worldwide",
+    fr: "Reconnu par les meilleures entreprises du monde entier",
+    zh: "受到全球顶级公司的信赖",
+    ar: "موثوق به من قبل أفضل الشركات في جميع أنحاء العالم",
+    es: "Con la confianza de las principales empresas de todo el mundo",
+    it: "Scelto dalle migliori aziende in tutto il mondo",
+    he: "מהימן על ידי חברות מובילות ברחבי העולם",
+    pt: "Confiável pelas principais empresas do mundo"
+  },
+  {
     key: "landing_feature_row_four_title",
     en: "Advanced Search",
     de: "Erweiterte Suche",
