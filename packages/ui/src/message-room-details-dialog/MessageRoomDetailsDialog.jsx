@@ -275,7 +275,6 @@ function MembersPanel({ config }) {
         });
         const channelUserIds = membersList.map(member => member._id);
 
-        // check to see if the user is already in a channel
         const checkedUsers = users.map(user => {
           if (channelUserIds.includes(user.value)) {
             return {
@@ -291,6 +290,7 @@ function MembersPanel({ config }) {
       })
       .catch(() => {
         setisLoading(false);
+
       });
   }, [membersList]);
 
