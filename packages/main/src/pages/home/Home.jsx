@@ -90,7 +90,7 @@ export default function Index() {
               <img
                 src={MacBookAirWithZuriChatPreview}
                 className={`${styles.hero_img}`}
-                alt=""
+                alt="mac"
               />
             </div>
           </div>
@@ -98,25 +98,6 @@ export default function Index() {
 
         {/* { COOKIES BANNER} */}
         <div>{showCookies ? "" : <CookiesNotification />}</div>
-
-        {/* COMPANIES */}
-        <div className={`${styles.company_banner_wrap}`}>
-          <div className={`${styles.company_banner}`}>
-            <p className={`${styles.cbp}`}>
-              Trusted By Top Companies Worldwide
-            </p>
-            <div className={`${styles.logos}`}>
-              <img src={HngLogo} alt="" className={`${styles.logo}`} />
-              <img src={I4gLogo} alt="" className={`${styles.logo}`} />
-              <img src={CampHouseLogo} alt="" className={`${styles.logo}`} />
-              <img
-                src={ZuriInternshipLogo}
-                alt=""
-                className={`${styles.logo}`}
-              />
-            </div>
-          </div>
-        </div>
 
         {/* FEATURES */}
         <div className={`${styles.features_wrap}`}>
@@ -192,7 +173,20 @@ export default function Index() {
       </div>
 
       <SubscribeToNewsletter />
-
+      {/* COMPANIES */}
+      <div className={`${styles.company_banner_wrap}`}>
+        <div className={`${styles.company_banner}`}>
+          <p className={`${styles.cbp}`}>
+            {t("landing_hero_trusted_companies")}
+          </p>
+          <div className={`${styles.logos}`}>
+            <img src={HngLogo} alt="" className={`${styles.logo}`} />
+            <img src={I4gLogo} alt="" className={`${styles.logo}`} />
+            <img src={CampHouseLogo} alt="" className={`${styles.logo}`} />
+            <img src={ZuriInternshipLogo} alt="" className={`${styles.logo}`} />
+          </div>
+        </div>
+      </div>
       <Footer />
     </div>
   );
