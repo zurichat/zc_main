@@ -78,6 +78,16 @@
   font-weight: 400;
 }
 
+.plugin_name,
+.dropDown__title,
+.dropdown__room {
+  padding-inline-start: 0.5rem;
+}
+
+.dropDown__name {
+  padding-inline-start: 0.1rem;
+}
+
 .dropDown__title {
   text-transform: capitalize;
   font-weight: bold;
