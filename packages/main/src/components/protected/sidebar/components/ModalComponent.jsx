@@ -1,16 +1,32 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "../styles/ModalComponentStyles.module.css";
-import CompanyImage from "../assets/icons/company-icon.svg";
 import EmailInviteModal from "./invite-workflow/EmailInviteModal";
-// import axios from 'axios'
+import axios from "axios";
 import { RiArrowRightSLine as Arrow } from "react-icons/ri";
 import { useHistory } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import defaultLogo from "../assets/icons/zuri-chat-logo.svg";
 
 const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
+  const [orgLogoUrl, setOrgLogoUrl] = useState("");
   const history = useHistory();
   const [orgs, setOrgs] = React.useState([]);
 
   useEffect(() => {
+    const organisation_id = localStorage.getItem("currentWorkspace");
+
+    if (organisation_id) {
+      //Fetch organization logo
+      axios
+        .get(`/organizations/${organisation_id}`)
+        .then(res => {
+          setOrgLogoUrl(res.data.data.logo_url ? res.data.data.logo_url : "");
+        })
+        .catch(err => {
+          console.error(err);
+        });
+    }
+
     setOrgs(JSON.parse(sessionStorage.getItem("organisations")));
     // console.log(orgs);
   }, []);
@@ -46,6 +62,8 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
     setOpenInvite(!openInviteModal);
   };
 
+  const { t } = useTranslation();
+
   return (
     <div
       className={`${isOpen ? styles.open : styles.modalCon}`}
@@ -55,7 +73,10 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
         className={`d-flex align-items-center justify-content-between ${styles.TopmodalSection}`}
       >
         <div className={`col-2 d-flex px-0 align-items-center ${styles.logo}`}>
-          <img src={CompanyImage} alt="logo" />
+          <img
+            src={orgLogoUrl ? orgLogoUrl : defaultLogo}
+            alt="Organization Logo"
+          />
         </div>
         <div className={`col-10 px-3 py-4 ${styles.header}`}>
           <h5> {workSpace?.name}</h5>
@@ -84,7 +105,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
             onClick={handleInviteClick}
             data-cy="invite_to_workspace_action_element"
           >
-            Invite people to {workSpace?.name}
+            {t("workspace_invite")} {workSpace?.name}
           </p>
 
           <EmailInviteModal
@@ -97,19 +118,21 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
         </div>
         <div>
           <p>
-            <a href="/create-workspace">Create a new Workspace</a>
+            <a href="/create-workspace">{t("new_workspace")}</a>
           </p>
         </div>
       </div>
       <hr className={styles.modalDivider} />
       <div className={`d-flex flex-column ${styles.modalSection}`}>
         <div>
-          <p>Preferences*</p>
+          <p>{t("modal_preferences")}*</p>
         </div>
         <div
           className={`d-flex align-items-center justify-content-between ${styles.popover}`}
         >
-          <p>Customize {workSpace?.name}*</p>
+          <p>
+            {t("modal_customize")} {workSpace?.name}*
+          </p>
           {/* <div>
             <Arrow className={`${styles.arrow}`} />
           </div> */}
@@ -117,7 +140,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
         <div>
           <p onClick={() => history.push("/admin/settings")}>
             {" "}
-            Workspace Settings*
+            {t("modal_workspace_settings")}*
           </p>
         </div>
       </div>
@@ -126,7 +149,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
         <div
           className={`d-flex align-items-center justify-content-between ${styles.modalSection}`}
         >
-          <p>Tools</p>
+          <p>{t("modal_tools")}</p>
           <div>
             <Arrow className={`${styles.arrow}`} />
           </div>
@@ -141,7 +164,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
               className={`d-flex flex-column ${styles.submodalSection}`}
             >
               <div>
-                <p>Analytics*</p>
+                <p>{t("modal_analytics")}*</p>
               </div>
             </section>
           </section>
@@ -150,7 +173,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
       <hr className={styles.modalDivider} />
       <div className={`d-flex flex-column  ${styles.modalSection}`}>
         <div>
-          <p onClick={() => history.push("/signout")}> Sign Out</p>
+          <p onClick={() => history.push("/signout")}> {t("modal_signout")}</p>
         </div>
       </div>
       <hr className={styles.modalDivider} />
@@ -186,7 +209,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
           ref={hoverRef2}
           className={`d-flex align-items-center justify-content-between ${styles.modalSubSection}`}
         >
-          <p>Switch workspace</p>
+          <p>{t("modal_switch_workspace")}</p>
           <Arrow className={`${styles.arrow}`} />
           <section
             className={`${
@@ -222,10 +245,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
           </section>
         </div>
         <div className={`${styles.modalSubSection}`}>
-          <p onClick={() => history.push("/downloads")}>
-            {" "}
-            Open the Zuri Chat App
-          </p>
+          <p onClick={() => history.push("/")}> {t("modal_open_chat")}</p>
         </div>
       </div>
     </div>

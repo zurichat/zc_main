@@ -75,29 +75,6 @@ export default [
         download: "FÜR WINDOWS HERUNTERLADEN",
         download_ios: "Für Mac herunterladen?"
       }
-    },
-    zh: {
-      section_one: {
-        headline: "在 Windows 上体验 Zuri Chat",
-        post_headline: "使用 Zuri Chat 与您的团队联系从未如此简单。",
-        download: "下载",
-        download_mac: "为 Mac 下载？"
-      },
-
-      section_two: {
-        headline: "为什么是 Zuri 聊天应用程序？",
-        post_headline: "即使在旅途中使用 Zuri 聊天电脑，也不会错过无缝协作体验",
-        android: "安卓",
-        and_break: "和",
-        ios: "iOS",
-        apps_break: "应用。"
-      },
-
-      section_three: {
-        headline: "同样的感觉，同样的团队在 Zuri App 上！",
-        download: "下载适用于 WINDOWS",
-        download_ios: "为 Mac 下载？"
-      }
     }
   }
 ];

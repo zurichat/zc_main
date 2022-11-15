@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import RightArrow from "./assets/right-arrow.png";
 import ZuriChatLogo from "../../assets/zuri-chat-logo/logo.svg";
@@ -8,11 +9,12 @@ const UserOrganization = ({ organizations, user }) => {
   const currentPlugin = localStorage.getItem("currentPlugin") || "plugin-chat";
   const currentPluginRoom = localStorage.getItem("currentRoom") || "";
   const defaultPluginRoom = `${currentPlugin}/${currentPluginRoom}`;
+  const { t } = useTranslation();
   return (
     <BottomSection>
       <SelectWorkSpace>
         <p style={{ paddingLeft: "10px" }}>
-          Workspaces for{" "}
+          {t("workspace_name")}{" "}
           <strong style={{ fontWeight: "700" }}>{user.email}</strong>
         </p>
 
@@ -20,29 +22,29 @@ const UserOrganization = ({ organizations, user }) => {
           <OrganizationWrapper key={organization.id}>
             <Image src={ZuriChatLogo} alt="" />
             <Link to={`/workspace/${organization.id}/${defaultPluginRoom}`}>
-              <Flex>
-                <Organization>
-                  <Logo_Members>
+              <Organization>
+                <Logo_Members>
+                  <OrganizationNameWrapper>
                     <OrganizationName>{organization.name}</OrganizationName>
-                    <Members>
-                      {organization.no_of_members === 1
-                        ? organization.no_of_members + " member"
-                        : organization.no_of_members + " members"}
-                    </Members>
-                  </Logo_Members>
-                </Organization>
-                <Arrow>
-                  <img src={RightArrow} />
-                </Arrow>
-              </Flex>
+                    <Arrow>
+                      <img src={RightArrow} />
+                    </Arrow>
+                  </OrganizationNameWrapper>
+                  <Members>
+                    {organization.no_of_members === 1
+                      ? organization.no_of_members + " member"
+                      : organization.no_of_members + " members"}
+                  </Members>
+                </Logo_Members>
+              </Organization>
             </Link>
           </OrganizationWrapper>
         ))}
       </SelectWorkSpace>
       <TryDifferentWrapper>
-        <TextBottom>Not seeing your workspace?</TextBottom>
+        <TextBottom>{t("workspace_option_first")}</TextBottom>
         <Link to="/signout">
-          <SecondText>Try a different email</SecondText>
+          <SecondText>{t("workspace_option_second")}</SecondText>
         </Link>
       </TryDifferentWrapper>
     </BottomSection>
@@ -104,7 +106,7 @@ const Image = styled.img`
 const Flex = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  height: 100%;
 `;
 const OrganizationWrapper = styled.li`
   border-top: 1px solid hsla(0, 0%, 20%, 0.51);
@@ -114,11 +116,14 @@ const OrganizationWrapper = styled.li`
   padding-right: 36px;
   display: flex;
   gap: 19px;
-  align-items: center;
 
   & > a {
     flex-grow: 1;
   }
+`;
+const OrganizationNameWrapper = styled.div`
+  display: flex;
+  align-items: center;
 `;
 const OrganizationName = styled.span`
   font-weight: 600;
@@ -126,22 +131,32 @@ const OrganizationName = styled.span`
   font-family: "Lato", sans-serif;
   color: #333333;
 `;
+
 const Members = styled(OrganizationName)`
   font-size: 1rem;
   font-weight: 400;
   color: #667085;
   opacity: 0.8;
+<<<<<<< HEAD
   margin-top: 8px;
+=======
+  margin-top: 12px;
+>>>>>>> a949d6d2466cd69be0fde76a79b6d43bfe0bf7a6
 `;
 const Organization = styled.div`
   display: flex;
   flex-direction: row;
+  width: 100%;
 `;
 const Logo_Members = styled.div`
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   justify-content: space between;
   m
+=======
+  justify-content: space-between;
+>>>>>>> a949d6d2466cd69be0fde76a79b6d43bfe0bf7a6
 `;
 const TryDifferentWrapper = styled.div`
   display: flex;
