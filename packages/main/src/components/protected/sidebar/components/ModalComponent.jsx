@@ -2,11 +2,14 @@ import React, { useState, useRef, useEffect } from "react";
 import styles from "../styles/ModalComponentStyles.module.css";
 import CompanyImage from "../assets/icons/company-icon.svg";
 import EmailInviteModal from "./invite-workflow/EmailInviteModal";
-// import axios from 'axios'
+// import axios from "axios";
 import { RiArrowRightSLine as Arrow } from "react-icons/ri";
 import { useHistory } from "react-router-dom";
+import EditWorkspaceModal from "./EditWorkspaceModal";
 
 const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
+  const [editDetails, setEditDetails] = useState(false);
+
   const history = useHistory();
   const [orgs, setOrgs] = React.useState([]);
 
@@ -102,7 +105,11 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
         </div>
       </div>
       <hr className={styles.modalDivider} />
-      <div className={`d-flex flex-column ${styles.modalSection}`}>
+      <div
+        className={`d-flex flex-column ${
+          editDetails ? styles.editModalSection : styles.modalSection
+        }`}
+      >
         <div>
           <p>Preferences*</p>
         </div>
@@ -120,6 +127,11 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
             Workspace Settings*
           </p>
         </div>
+        <EditWorkspaceModal
+          workSpace={workSpace}
+          editDetails={editDetails}
+          setEditDetails={setEditDetails}
+        />
       </div>
       <hr className={styles.modalDivider} />
       <div ref={hoverRef} className={` ${styles.modalSection}`}>
