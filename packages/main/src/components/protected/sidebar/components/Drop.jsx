@@ -6,6 +6,8 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { navigateToUrl } from "single-spa";
 
 const DropDown = ({ categoryName, isOpen, toggleDropdown, button_url }) => {
+  const m_2px = { margin: "-1px" };
+  const m_5px = { margin: "-5px" };
   const [addToRoom, setAddToRoom] = useState(false);
   const [roomId, setRoomId] = useState(false);
   const { t } = useTranslation();
@@ -26,13 +28,15 @@ const DropDown = ({ categoryName, isOpen, toggleDropdown, button_url }) => {
         <div className={`d-flex align-items-center`}>
           <TiArrowSortedDown
             className={`${styles.icon} ${isOpen && styles.open}`}
+            style={m_5px}
           />
         </div>
         <div
           className={`w-100 d-flex align-items-center justify-content-between`}
         >
-          <p className={`mb-0 ${styles.dropDown__title}`}>
-            {t(`workspace_chat.${categoryName}`)}
+          <p className={`mb-0 ${styles.dropDown__title}`} style={m_2px}>
+            {" "}
+            {categoryName}
           </p>
           {/* <img src={infoIcon} alt="icon" role="button" /> */}
           {button_url ? (

@@ -81,7 +81,7 @@ const ModalComponent = ({ workSpace, isOpen, toggleOpenInvite }) => {
             alt="Organization Logo"
           />
         </div>
-        <div className={`col-10 px-0  ${styles.header}`}>
+        <div className={`col-10 px-3 py-4 ${styles.header}`}>
           <h5> {workSpace?.name}</h5>
           <span>{workSpace?.workspace_url}</span>
         </div>
