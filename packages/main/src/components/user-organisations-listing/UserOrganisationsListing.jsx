@@ -131,7 +131,7 @@ const Members = styled(OrganizationName)`
   font-weight: 400;
   color: #667085;
   opacity: 0.8;
-  margin-top: 20px;
+  margin-top: 8px;
 `;
 const Organization = styled.div`
   display: flex;
@@ -186,6 +186,7 @@ const Arrow = styled.b`
   margin-left: auto;
   & > img {
     display: block;
+    position: absolute;
   }
 `;
 
