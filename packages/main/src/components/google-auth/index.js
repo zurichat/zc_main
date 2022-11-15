@@ -24,7 +24,7 @@ const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
           //Store user copy in localstorage
           sessionStorage.setItem("user", JSON.stringify(data.user));
           getUserInfo();
-          history.push("/create-workspace");
+          history.push("/choose-workspace");
         })
         .catch(err => {
           console.error(err);
@@ -44,7 +44,7 @@ const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
           sessionStorage.setItem("user", JSON.stringify(data.user));
 
           getUserInfo();
-          history.push("/choose-workspace");
+          history.push("/create-workspace");
           setLoading(false);
           console.log(data.user);
         })
