@@ -51,7 +51,7 @@ export const MessageBoardContainer = styled.section`
   .input-text {
     width: 100%;
     padding-inline: 2px;
-    padding: 0.5rem;
+    padding: 0.1rem 1.2rem 0.5rem 1.2rem;
     ${
       "" /* @media (max-width: 768px) {
       width: 100%;

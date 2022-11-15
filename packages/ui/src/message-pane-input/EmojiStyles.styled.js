@@ -39,11 +39,11 @@ export const StyledEmojiSelectWrapper = styled.div`
   .${theme.emojiSelectButton}, .${theme.emojiSelectButtonPressed} {
     margin: 0;
     padding: 0;
-    width: 1.5em;
-    height: 1.5em;
+    width: 20px;
+    height: 19px;
     box-sizing: border-box;
     line-height: 1.2em;
-    font-size: 15px;
+    font-size: 14px;
     color: #888;
     background: #fff;
     border: 1px solid #ddd;

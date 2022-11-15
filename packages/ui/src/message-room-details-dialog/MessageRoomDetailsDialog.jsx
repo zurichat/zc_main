@@ -558,7 +558,7 @@ const DialogOverlays = styled(DialogOverlay)`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  z-index: 2;
+  z-index: 5;
 `;
 const DialogContents = styled(DialogContent)`
   // && - increased the specificity over "@reach/dialog/styles.css"
