@@ -19,7 +19,8 @@
   color: #000;
   position: fixed;
   top: inherit;
-  left: 1rem;
+  margin-top: -0.2rem;
+  left: 1.2rem;
   width: 100%;
   max-width: 281px;
   border: 1px solid #bebebe;
@@ -40,13 +41,19 @@
 }
 .modalSection {
   display: flex;
+  justify-content: center;
   padding: 5px auto;
   width: 100%;
   margin: 5px auto;
+  gap: 9px;
   /* padding: 0 1rem; */
   font-size: 15px;
   position: relative;
   cursor: pointer;
+}
+.modalSection div:hover > p,
+.submodalSection div:hover > p {
+  color: #fff;
 }
 .submodalSection {
   display: flex;
@@ -102,8 +109,6 @@ all:none;
   height: 15px;
   background: #e7e7e7;
   width: 100%;
-  margin-top: 5px;
-  margin-bottom: 10px;
 }
 
 .logo {
@@ -119,6 +124,9 @@ all:none;
   line-height: 18px;
 }
 
+.header {
+  padding: 10px;
+}
 .header span {
   color: #8c8c8c;
   font-size: 11px;

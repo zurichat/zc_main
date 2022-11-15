@@ -3,17 +3,10 @@ import { useTranslation } from "react-i18next";
 import Modal from "react-bootstrap/Modal";
 
 import TopNavigationBarStyles from "./TopNavigationBar.module.css";
-
 import uk from "./assets/language/uk.png";
 import de from "./assets/language/de.png";
 import fr from "./assets/language/fr.png";
-import zh from "./assets/language/zh.png";
-import es from "./assets/language/es.png";
-import it from "./assets/language/it.png";
 import us from "./assets/language/us.png";
-import ar from "./assets/language/ar.png";
-import he from "./assets/language/he.png";
-import pt from "./assets/language/pt.png";
 import world from "./assets/language/world.png";
 
 const LanguageIcon = ({ style }) => {
@@ -91,32 +84,6 @@ const LanguageIcon = ({ style }) => {
           </button>
           <button
             className={`btn ${TopNavigationBarStyles.select}`}
-            value="zh"
-            onClick={() => saveLang("zh-CN")}
-          >
-            <img
-              className={TopNavigationBarStyles.country_logo}
-              src={zh}
-              alt="Chinese"
-              title="Chinese"
-            />{" "}
-            <span>简体中文</span>
-          </button>
-          <button
-            className={`btn ${TopNavigationBarStyles.select}`}
-            value="ar"
-            onClick={() => saveLang("ar")}
-          >
-            <img
-              className={TopNavigationBarStyles.country_logo}
-              src={ar}
-              alt="Arabic"
-              title="Arabic"
-            />{" "}
-            <span>العربية</span>
-          </button>
-          <button
-            className={`btn ${TopNavigationBarStyles.select}`}
             value="de"
             onClick={() => saveLang("de")}
           >
@@ -127,58 +94,6 @@ const LanguageIcon = ({ style }) => {
               title="Deutch"
             />{" "}
             <span>Deutch</span>
-          </button>
-          <button
-            className={`btn ${TopNavigationBarStyles.select}`}
-            value="es"
-            onClick={() => saveLang("es")}
-          >
-            <img
-              className={TopNavigationBarStyles.country_logo}
-              src={es}
-              alt="Español"
-              title="Español"
-            />{" "}
-            <span>Español</span>
-          </button>
-          <button
-            className={`btn ${TopNavigationBarStyles.select}`}
-            value="it"
-            onClick={() => saveLang("it")}
-          >
-            <img
-              className={TopNavigationBarStyles.country_logo}
-              src={it}
-              alt="Italiano"
-              title="Italiano"
-            />{" "}
-            <span>Italiano</span>
-          </button>
-          <button
-            className={`btn ${TopNavigationBarStyles.select}`}
-            value="he"
-            onClick={() => saveLang("he")}
-          >
-            <img
-              className={TopNavigationBarStyles.country_logo}
-              src={he}
-              alt="Hebrew"
-              title="Hebrew"
-            />{" "}
-            <span>עברית</span>
-          </button>
-          <button
-            className={`btn ${TopNavigationBarStyles.select}`}
-            value="pt"
-            onClick={() => saveLang("pt")}
-          >
-            <img
-              className={TopNavigationBarStyles.country_logo}
-              src={pt}
-              alt="Português (PT)"
-              title="Português (PT)"
-            />{" "}
-            <span>Português</span>
           </button>
         </Modal.Body>
       </Modal>
