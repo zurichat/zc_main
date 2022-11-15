@@ -1,0 +1,92 @@
+name: 🐛 Bug
+description: Report an issue to help improve Zuri Chat.
+title: "[BUGS] <description>"
+labels:
+  [
+    "🛠 goal: fix",
+    "🛠 status : pending acceptance",
+    "🟧 priority: high",
+  ]
+body:
+  - type: textarea
+    id: description-expected
+    attributes:
+      label: Expected Behaviour
+      description: A brief description of the expected behaviour of the feature
+    validations:
+      required: true
+  - type: textarea
+    id: description-current
+    attributes:
+      label: Current Behaviour
+      description: A brief description of the expected behaviour of the feature
+    validations:
+      required: true
+  - type: textarea
+    id: description-current
+    attributes:
+      label: Steps to reproduce
+      description: Provide a link to a live example, or an unambiguous set of steps to reproduce this bug. Include code to reproduce, if relevant
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Please add screenshots if applicable
+    validations:
+      required: false
+  - type: textarea
+    id: suggestions
+    attributes:
+      label: Possible Solutions
+      description: Not obligatory, but suggest an idea for implementing addition or change
+    validations:
+      required: false
+  - type: textarea
+    id: extrainfo
+    attributes:
+      label: Additional information
+      description: Is there anything else we should know about this bug?
+    validations:
+      required: false
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: "🥦 Browser"
+      description: "What browser are you using ?"
+      options:
+        - Google Chrome
+        - Brave
+        - Microsoft Edge
+        - Mozilla Firefox
+        - Safari
+        - Opera
+        - Other
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: no-duplicate-issues
+    attributes:
+      label: "👀 Have you checked for similar open issues?"
+      options:
+        - label: "I checked and didn't find similar issue"
+          required: true
+
+  - type: checkboxes
+    id: read-code-of-conduct
+    attributes:
+      label: "🏢 Have you read the Contributing Guidelines?"
+      options:
+        - label: "I have read the [Contributing Guidelines](https://github.com/zurichat/zc_main/blob/dev/docs/CONTRIBUTING.md)"
+          required: true
+
+  - type: dropdown
+    attributes:
+      label: Are you willing to work on this issue ?
+      description: This is absolutely not required, but we are happy to guide you in the contribution process.
+      options:
+        - "Yes I am willing to submit a PR!"
+        - "No, someone else can work on it"
