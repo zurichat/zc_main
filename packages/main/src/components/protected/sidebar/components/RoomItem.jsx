@@ -67,13 +67,6 @@ const RoomItem = ({ room, baseUrl, pluginId }) => {
         onClick={navigateToUrl}
       >
         <div className={`col-10 d-flex align-items-center`}>
-          {/* <img
-            // ref={click}
-            className={`${styles.item__image}`}
-            src={room.room_image || hash.toString()}
-            onError={e => (e.target.src = hash.toString())}
-            alt="img"
-          /> */}
           {(room.room_image && (
             <img
               // ref={click}
