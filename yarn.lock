@@ -14650,11 +14650,7 @@ react-focus-lock@^2.5.2:
 
 react-giphy-searchbox@^1.5.4:
   version "1.5.4"
-<<<<<<< HEAD
-  resolved "https://registry.npmjs.org/react-giphy-searchbox/-/react-giphy-searchbox-1.5.4.tgz"
-=======
   resolved "https://registry.yarnpkg.com/react-giphy-searchbox/-/react-giphy-searchbox-1.5.4.tgz#49c6f98bf1afefbbd3a9ab3c5f79709cb32f399b"
->>>>>>> a949d6d2466cd69be0fde76a79b6d43bfe0bf7a6
   integrity sha512-5SCiT3Y/0aeJcFfd3yXwJ1LShmDTTSL/aKJUXu9t0eBvwUU5DSev/JvMx3ijedsWpHuMtkwHLy5jV3pBDdzPQw==
   dependencies:
     bricks.js "^1.8.0"

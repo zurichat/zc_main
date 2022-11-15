@@ -27,7 +27,7 @@ const UserOrganization = ({ organizations, user }) => {
                   <OrganizationNameWrapper>
                     <OrganizationName>{organization.name}</OrganizationName>
                     <Arrow>
-                      <img src={RightArrow} />
+                      <img className="d-flex justify-content-end" src={RightArrow} />
                     </Arrow>
                   </OrganizationNameWrapper>
                   <Members>
@@ -56,7 +56,6 @@ const BottomSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   @media (max-width: 35rem) {
     padding-top: 101px;
     padding-left: 24px;
@@ -83,7 +82,6 @@ const SelectWorkSpace = styled.ul`
   padding-top: 16px;
   padding-left: 20px;
   padding-right: 20px;
-
   & > p {
     font-size: ${18 / 16}rem;
     font-weight: 400;
@@ -116,7 +114,6 @@ const OrganizationWrapper = styled.li`
   padding-right: 36px;
   display: flex;
   gap: 19px;
-
   & > a {
     flex-grow: 1;
   }
@@ -137,11 +134,7 @@ const Members = styled(OrganizationName)`
   font-weight: 400;
   color: #667085;
   opacity: 0.8;
-<<<<<<< HEAD
-  margin-top: 8px;
-=======
   margin-top: 12px;
->>>>>>> a949d6d2466cd69be0fde76a79b6d43bfe0bf7a6
 `;
 const Organization = styled.div`
   display: flex;
@@ -151,12 +144,7 @@ const Organization = styled.div`
 const Logo_Members = styled.div`
   display: flex;
   flex-direction: column;
-<<<<<<< HEAD
-  justify-content: space between;
-  m
-=======
   justify-content: space-between;
->>>>>>> a949d6d2466cd69be0fde76a79b6d43bfe0bf7a6
 `;
 const TryDifferentWrapper = styled.div`
   display: flex;
@@ -198,10 +186,10 @@ export const FooterLink = styled.a`
   }
 `;
 const Arrow = styled.b`
-  margin-left: auto;
+  margin-left: 400px;
+  position: absolute;
   & > img {
     display: block;
-    position: absolute;
   }
 `;
 
