@@ -30,16 +30,6 @@ export default [
           "Bleiben Sie mit unseren Apps für Mac, Windows und Linux im Gespräch. Wir können Ihnen einen schnellen Download-Link per E-Mail senden, um Ihnen den Einstieg zu erleichtern!",
         button: "DOWNLOAD-LINK ERHALTEN"
       }
-    },
-    zh: {
-      section_one: {
-        headline: "下载适用于 iOS 的 Zuri Chat 测试版。",
-        post_headline: "获取 Zuri 聊天 DM 和频道",
-        mac_line: "我们也在 Mac 上",
-        mac_description:
-          "与我们的 Mac、Windows 和 Linux 应用程序保持对话。我们可以通过电子邮件向您发送快速下载链接以帮助您入门！",
-        button: "获取下载链接"
-      }
     }
   }
 ];
