@@ -42,7 +42,7 @@ const inlineStyles = [
 ];
 
 const blockStyles = [{ type: "ordered-list-item", label: <ListIcon /> }];
-const Toolbar = props => {
+const ToolbarBottom = props => {
   const {
     editorState,
     setEditorState,
@@ -243,4 +243,4 @@ const UnstyledButton = styled(RealUnstyledButton)`
   }
 `;
 
-export default Toolbar;
+export default ToolbarBottom;
