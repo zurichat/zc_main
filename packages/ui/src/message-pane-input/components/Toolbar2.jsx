@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { convertToRaw, EditorState, RichUtils } from "draft-js";
 import RealUnstyledButton from "~/shared/button/Button";
 import styled from "styled-components";
@@ -65,6 +65,18 @@ const Toolbar2 = props => {
 
   //Attachment ref
   const inputRef = React.createRef();
+
+  // File ref
+  const fileRef = useRef();
+
+  useEffect(() => {
+    window.addEventListener("keydown", function (e) {
+      if (e.ctrlKey && e.key === "u") {
+        e.preventDefault();
+        fileRef.current.click();
+      }
+    });
+  }, []);
 
   //Handles sending of attachedfile
   const handleAttachMedia = e => {
@@ -183,7 +195,7 @@ const Toolbar2 = props => {
                     onChange={handleSelectMedia}
                     key={inputKey || ""}
                     type="file"
-                    ref={inputRef}
+                    ref={fileRef}
                     //onClick={handleAttachMedia}
                   />
                 </label>
