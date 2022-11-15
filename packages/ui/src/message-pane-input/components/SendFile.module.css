@@ -1,0 +1,17 @@
+.container:hover {
+    background-color: #C6F6D5;
+  }
+  .flex {
+    display: flex;
+    margin: 7px 17px;
+    padding: 3px 1px;
+  }
+  .span {
+    margin-left: 10px;
+  }
+  .ctrl {
+    margin-left: 52px;
+  }
+  .label {
+    margin-top: 7px;
+  }
