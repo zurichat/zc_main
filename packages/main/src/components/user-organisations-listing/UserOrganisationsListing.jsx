@@ -131,7 +131,7 @@ const Members = styled(OrganizationName)`
   font-weight: 400;
   color: #667085;
   opacity: 0.8;
-  margin-top: 6px;
+  margin-top: 20px;
 `;
 const Organization = styled.div`
   display: flex;
@@ -141,6 +141,7 @@ const Logo_Members = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space between;
+  m
 `;
 const TryDifferentWrapper = styled.div`
   display: flex;
