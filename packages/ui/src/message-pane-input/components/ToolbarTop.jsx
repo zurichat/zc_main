@@ -21,6 +21,8 @@ import {
 } from "../EmojiStyles.styled";
 import ClickAwayListener from "react-click-away-listener";
 
+import Modal from "./modal/Modal";
+
 // Gif Integration
 import { AiOutlineGif } from "react-icons/ai";
 import classes from "./Gif.module.css";
@@ -30,7 +32,7 @@ const BoldIcon = () => <img src={Bold} alt="" />;
 const ItalicIcon = () => <img src={Italic} alt="" />;
 const ListIcon = () => <img src={List} alt="" />;
 const BorderIcon = () => <img src={Border} alt="" />;
-const LightningIcon = () => <img src={Lightning} alt="" />;
+
 const LinkIcon = () => <img src={Link} alt="" />;
 const ClipIcon = () => <img src={Clip} alt="" />;
 const SendIcon = () => <img src={Send} alt="send icon" />;
@@ -59,6 +61,14 @@ const ToolbarTop = props => {
   //const [preview, setPreview] = useState('')
 
   const inputLength = editorState.getCurrentContent().getPlainText("").length;
+
+  // Modal state management
+  const [modal, setModal] = useState(false);
+
+  const clearModal = () => {
+    setModal(null);
+  };
+
   // Gif state management
   const [showGif, setShowGif] = useState(false);
 
@@ -77,6 +87,8 @@ const ToolbarTop = props => {
       clearAttached();
     }
   };
+
+  // const LightningIcon = () =>
 
   const handleClickAway = () => {
     setshowAttachInputBox(false);
@@ -181,7 +193,15 @@ const ToolbarTop = props => {
           </AttachFile>
         ) : null}
         <FormatContainer2>
-          <LightningIcon />
+          {modal && <Modal onClear={clearModal} />}
+          <img
+            className={classes.iconHover}
+            onClick={() => {
+              setModal(prevState => !prevState);
+            }}
+            src={Lightning}
+            alt=""
+          />
 
           <span style={{ paddingInline: "4px" }}>
             <BorderIcon />
