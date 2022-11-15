@@ -48,6 +48,11 @@ const GoogleAuth = ({ className, googleHeader, google, setLoading }) => {
           setLoading(false);
           console.log(data.user);
         })
+        // setTimeout(() => {
+        //   getUserInfo();
+        //   history.push("/choose-workspace");
+        //   setLoading(false);
+        // }, 2000);
         .catch(err => {
           console.error(err);
         });
