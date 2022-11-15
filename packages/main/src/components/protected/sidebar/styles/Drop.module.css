@@ -71,7 +71,7 @@
 .dropDown__title,
 .dropDown__name,
 .dropdown__room {
-  color: grey;
+  color: rgb(39, 37, 37);
   padding-inline-start: 0.5rem;
   font-size: 17px;
   line-height: 28px;
@@ -85,7 +85,7 @@
 
 .icon,
 .item__icon {
-  width: 24px;
+  width: unset;
 }
 
 .icon {

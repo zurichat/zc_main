@@ -33,7 +33,7 @@ const About = () => {
           <p>ZuriChat {t("about.banner.description")}</p>
         </div>
         <div
-          className={`row flex align-items-center justify-content-center pt-3`}
+          className={`row flex align-items-center justify-content-center pt-3 ${styles.counter_div}`}
         >
           <div className={`col-lg-4 col-md-4 col-sm-4 ${styles.counter}`}>
             <h3>100k+</h3>
@@ -62,19 +62,19 @@ const About = () => {
       {/* <Companies /> */}
       {/* Who we are and how to join us */}
       <div className={`container mb-5 ${styles.to_join}`}>
-        <div className={`row pt-3`}>
+        <div className={`${styles.team__container}`}>
           <div className={`col-lg-6  ${styles.team}`}>
             <img src={team} alt={"image of teams"} srcSet="" />
           </div>
-          <div className={`col-lg-6 text-start ${styles.join_us}`}>
-            <h3 className={`text-start ${styles.h3m}`}>
+          <div className={`col-lg-6 ${styles.join_us}`}>
+            <h3 className={` ${styles.h3m}`}>
               {t("about.whoWeAre.title")} <br />
             </h3>
-            <p className="text-start">
+            <p>
               {t("about.whoWeAre.description")} <br />
             </p>
             <p>
-              <span className={`text-start ${styles.span}`}>ZuriChat</span>{" "}
+              <span className={` ${styles.span}`}>ZuriChat</span>{" "}
               {t("about.whoWeAre.description_")}
             </p>
           </div>
@@ -90,9 +90,9 @@ const About = () => {
           </p>
         </div>
         {/* Carousel for mobile view  */}
-        <Carousel />
-        <div className={`row pt-3 ${styles.desktop_carousel}`}>
-          <div className={`col ${styles.working_remote_section}`}>
+        {/* <Carousel /> */}
+        <div className={`${styles.desktop_carousel}`}>
+          <div className={`${styles.working_remote_section}`}>
             <img src={channel} alt={"centralized space"} />
             <h6>{t("about.highlights.channels.title")}</h6>
             <p>
@@ -100,7 +100,7 @@ const About = () => {
               {t("about.highlights.channels.description_")}
             </p>
           </div>
-          <div className={`col ${styles.working_remote_section}`}>
+          <div className={`${styles.working_remote_section}`}>
             <img src={holiday} alt={"image of calender"} />
             <h6>{t("about.highlights.holidayCalender.title")}</h6>
             <p>
@@ -108,7 +108,7 @@ const About = () => {
               {t("about.highlights.holidayCalender.description_")}
             </p>
           </div>
-          <div className={`col ${styles.working_remote_section}`}>
+          <div className={`${styles.working_remote_section}`}>
             <img src={deadline} alt={"image of alarm clock"} />
             <h6> {t("about.highlights.companyDeadline.title")}</h6>
             <p>
@@ -119,7 +119,7 @@ const About = () => {
               feature.
             </p>
           </div>
-          <div className={`col ${styles.working_remote_section}`}>
+          <div className={`${styles.working_remote_section}`}>
             <img src={quick} alt={"image of quick reply app"} />
             <h6>{t("about.highlights.quickReply.title")}</h6>
             <p>
@@ -128,7 +128,7 @@ const About = () => {
               {t("about.highlights.quickReply.description_")} <br />
             </p>
           </div>
-          <div className={`col ${styles.working_remote_section}`}>
+          <div className={`${styles.working_remote_section}`}>
             <img src={todos} alt={"image to do list"} />
             <h6>{t("about.highlights.todoList.title")}</h6>
             <p>
@@ -145,11 +145,11 @@ const About = () => {
         <h3>{t("about.features.title")}</h3>
         <p>{t("about.features.description")}</p>
       </div>
-      <CarouselSecond className={styles.carouselCaption} />
+      {/* <CarouselSecond className={styles.carouselCaption} /> */}
       <div
-        className={`container-fluid ${styles.second_carousel_block} mb-5 container`}
+      // className={`container-fluid ${styles.second_carousel_block} mb-5 container`}
       >
-        <div className={`row pt-3`}>
+        <div className={`${styles.special_features}`}>
           <div className={`col ${styles.vector}`}>
             <img src={user} alt={"image of a user"} />
             <h6 className={``}>{t("about.features.avatar.title")}</h6>
@@ -160,7 +160,7 @@ const About = () => {
             <h6 className={``}>{t("about.features.files.title")}</h6>
             <p>
               {t("about.features.files.description")}
-              <br />.
+              <br />
             </p>
           </div>
           <div className={`col ${styles.vector}`}>
@@ -184,8 +184,8 @@ const About = () => {
       {/* whatever work you do, you can do it in zurichat  */}
       <div className={`container-fluid ${styles.zurichat}`}>
         <div className={`${styles.zurichat_section}`}>
-          <div className="signup-cta">
-            <h3 className="text">
+          <div className={`${styles.signup_cta}`}>
+            <h3 className={`${styles.zurichat_text}`}>
               Zuri Chat is a modern world platform that makes communicating with
               your team or organization faster, easier and more fun. Want to
               explore?

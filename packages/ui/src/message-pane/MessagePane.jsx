@@ -17,7 +17,7 @@ function MessagePane({
     <div className={styles.MessageContainer}>
       <div className={styles.hoverItemsContainer}>
         <HoverItems
-          id={message.message_id}
+          id={message._id}
           handleShowMoreOptions={onShowMoreOptions}
           handleShowEmoji={onShowEmoji}
         />
@@ -29,9 +29,7 @@ function MessagePane({
         {message.emojis &&
           message.emojis.map((emoji, i) => (
             <div
-              onClick={event =>
-                onEmojiClicked(event, emoji, message.message_id)
-              }
+              onClick={event => onEmojiClicked(event, emoji, message._id)}
               key={i}
             >
               <EmojiCard currentUserId={currentUserId} emojiObject={emoji} />
@@ -39,7 +37,7 @@ function MessagePane({
           ))}
 
         {message.emojis.length > 0 ? (
-          <div onClick={event => onShowEmoji(message.message_id, event)}>
+          <div onClick={event => onShowEmoji(message._id, event)}>
             <EmojiCard emojiSvg={true} />
           </div>
         ) : null}
