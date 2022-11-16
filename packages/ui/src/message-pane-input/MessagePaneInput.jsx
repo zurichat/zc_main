@@ -4,6 +4,7 @@ import {
   EditorState,
   RichUtils,
   convertToRaw,
+  convertFromRaw,
   getDefaultKeyBinding,
   ContentState,
   Modifier
@@ -82,17 +83,55 @@ export const getResetEditorState = editorState => {
     newContentState,
     "remove-range"
   );
+  removeFromSessionStorage();
   return removeSelectedBlocksStyle(newState);
+};
+
+const loadFromSessionStorage = () => {
+  const editorStateID = "editorState_" + sessionStorage.getItem("currentRoom");
+  const sessionData = sessionStorage.getItem(editorStateID);
+  if (sessionData) {
+    return convertFromRaw(JSON.parse(sessionData));
+  }
+  return null;
+};
+
+const saveToSessionStorage = editorState => {
+  const currentRoom = sessionStorage.getItem("currentRoom");
+  const editorStateID = "editorState_" + currentRoom;
+  if (currentRoom) {
+    sessionStorage.setItem(
+      editorStateID,
+      JSON.stringify(convertToRaw(editorState))
+    );
+  }
+};
+
+const removeFromSessionStorage = () => {
+  const editorStateID = "editorState_" + sessionStorage.getItem("currentRoom");
+  sessionStorage.removeItem(editorStateID);
 };
 
 const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
   const [data, setData] = useState("");
-  const [editorState, setEditorState] = useState(() =>
-    EditorState.createEmpty()
-  );
+  const [editorState, setEditorState] = useState(() => {
+    const content = loadFromSessionStorage();
+    return content
+      ? EditorState.createWithContent(content)
+      : EditorState.createEmpty();
+  });
   const [showEmoji, setShowEmoji] = useState(false);
   const [suggestions, setSuggestions] = useState(users || mentions);
   const [suggestionsOpen, setSuggestionsOpen] = useState(false);
+
+  useEffect(() => {
+    const content = loadFromSessionStorage();
+    if (content) {
+      setEditorState(EditorState.createWithContent(content));
+    } else {
+      setEditorState(EditorState.createEmpty());
+    }
+  }, [sessionStorage.getItem("currentRoom")]);
 
   // Mention helpers
   const onOpenChange = useCallback(_open => {
@@ -105,6 +144,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
 
   const editorStates = editorState => {
     setEditorState(editorState);
+    saveToSessionStorage(editorState.getCurrentContent());
     const blocks = convertToRaw(editorState.getCurrentContent()).blocks;
     const value = blocks
       .map(block => (!block.text.trim() && "\n") || block.text)

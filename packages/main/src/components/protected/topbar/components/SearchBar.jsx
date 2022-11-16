@@ -7,6 +7,7 @@ const SearchBar = () => {
         className={styles.searchInput}
         placeholder="Search here"
       />
+      <button>Search</button>
       <img src="/search-2-line.svg" className={styles.searchSvg} alt="search" />
     </div>
   );
