@@ -79,30 +79,6 @@ export default [
       section_three: {
         headline: "Gleiches Gefühl, gleiches Team in der Zuri App!"
       }
-    },
-    zh: {
-      section_one: {
-        headline: "体验 Zuri Chat 的桌面和移动应用程序",
-        post_headline: "使用 Zuri Chat 与您的团队联系从未如此简单。",
-        desktop_line: "桌面版 Zuri",
-        desktop_app: "在 苹果应用商店 下载",
-        desktop_soft: "从微软获取",
-        mobile_line: "移动版 Zuri",
-        mobile_app: "在 应用商店 下载",
-        mobile_play: "在 谷歌播放 上获取"
-      },
-
-      section_two: {
-        headline: "在任何这些设备上下载并享受 Zuri Chat 体验",
-        windows: "视窗",
-        mac: "苹果系统",
-        ios: "iOS",
-        android: "安卓"
-      },
-
-      section_three: {
-        headline: "同样的感觉，同样的团队在 Zuri App 上！"
-      }
     }
   }
 ];

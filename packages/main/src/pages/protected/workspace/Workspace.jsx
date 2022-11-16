@@ -34,6 +34,7 @@ export default function Index() {
     localStorage.setItem("currentWorkspace", workspaceId);
   }, [workspaceId]);
   useEffect(() => {
+    window.localStorage.setItem("lastLocation", location.pathname);
     const activePlugin = pluginsName.find(plugin =>
       location.pathname.includes(plugin)
     );
