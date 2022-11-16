@@ -7,7 +7,7 @@ import { plugins } from "../utils/topbar-api";
 import { ProfileContext } from "../context/profile-modal.context";
 import { useTranslation } from "react-i18next";
 import TopBarSearchModalUI from "./TopBarSearchModalUI";
-import Search_icon from "../assets/images/Search_icon.png";
+import { FaSearch } from "react-icons/fa";
 
 const base_URL = "https://jsonplaceholder.typicode.com/todos";
 
@@ -122,7 +122,7 @@ const TopBarSearchModal = () => {
           onFocus={handleSearchInputFocus}
         />
         <button>
-          <img src={Search_icon} alt="search icon" width="20px" />
+          <FaSearch />
         </button>
       </div>
       <div
