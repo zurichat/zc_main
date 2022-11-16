@@ -73,7 +73,6 @@
 
 .InputElement::placeholder {
   font-size: 13px;
-  /* font-size: 1.2rem; */
 }
 
 .InputElement:invalid,

@@ -62,9 +62,7 @@
   overflow-y: scroll;
   /* padding-right: 4em; */
 }
-.inputElement::-webkit-input-placeholder {
-  font-size: 10px;
-}
+
 .tos {
   height: 5vh;
   margin-block-start: 1em;
