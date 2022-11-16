@@ -185,43 +185,6 @@ export default function TopNavigationBar() {
                 </span>
               </NavLink>
             </li>
-
-            <li className="nav-item">
-              <NavLink
-                to="/plugins"
-                className={`nav-link ${TopNavigationBarStyles.navLinkPricing}`}
-                role="button"
-                aria-expanded="false"
-              >
-                <span className={`${TopNavigationBarStyles.item}`}>
-                  {t("nav_plugin")}
-                </span>
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                to="/downloads"
-                className={`nav-link ${TopNavigationBarStyles.navLinkComms}`}
-              >
-                <span className={`${TopNavigationBarStyles.item}`}>
-                  {t("nav_downloads")}
-                </span>
-              </NavLink>
-            </li>
-
-            <li className="nav-item">
-              <NavLink
-                to="/contact-us"
-                // className="nav-link"
-                className={`nav-link ${TopNavigationBarStyles.navLinkPricing}`}
-                role="button"
-                aria-expanded="false"
-              >
-                <span className={`${TopNavigationBarStyles.item}`}>
-                  {t("nav_contact")}
-                </span>
-              </NavLink>
-            </li>
           </ul>
 
           <ul
