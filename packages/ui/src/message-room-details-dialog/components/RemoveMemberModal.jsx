@@ -6,7 +6,9 @@ const RemoveMemberModal = props => {
   const { show, handleShow, handleClose, member, removeMemberEvent, title } =
     props;
 
-  const { _id, email } = member;
+  // const { _id, email } = member;
+  const { value, label } = member;
+
   const removeMemberHandler = id => {
     removeMemberEvent(id);
     handleClose();
@@ -34,7 +36,8 @@ const RemoveMemberModal = props => {
 
           <div className="d-flex w-100">
             <div className="mx-3">
-              Are you sure you wish to remove {email} from room?
+              {/* Are you sure you wish to remove {email} from room? */}
+              Are you sure you wish to remove {label} from room?
             </div>
           </div>
           <div className="d-flex w-100">
@@ -50,7 +53,8 @@ const RemoveMemberModal = props => {
               <Button
                 variant="danger"
                 onClick={() => {
-                  removeMemberHandler(_id);
+                  // removeMemberHandler(_id);
+                  removeMemberHandler(value);
                 }}
               >
                 Remove
