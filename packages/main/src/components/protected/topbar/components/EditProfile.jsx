@@ -35,6 +35,8 @@ const EditProfile = () => {
     loading: false,
     imageLoading: false
   });
+
+  const [image, setimage] = useState(defaultAvatar);
   const addList = () => {
     if (links.length < 5) {
       setLinks([...links, ""]);
@@ -52,14 +54,19 @@ const EditProfile = () => {
 
     if (file) {
       let fileReader = new FileReader();
-      fileReader.onload = function (event) {
-        avatarRef.current.src = event.target.result;
+      fileReader.onload = () => {
+        if (avatarRef.current) {
+          avatarRef.current.src = fileReader.result;
+        }
+
+        setUserProfileImage(fileReader.result);
+        setimage(fileReader.result);
       };
 
       fileReader.readAsDataURL(file);
       const imageReader = file;
 
-      const formData = new FormData();
+      let formData = new FormData();
       formData.append("image", imageReader);
       formData.append("height", 512);
       formData.append("width", 512);
@@ -70,6 +77,7 @@ const EditProfile = () => {
           formData
         )
         .then(res => {
+          console.log(res);
           const newUploadedImage = res.data.data;
           setUserProfileImage(newUploadedImage);
           setState({ ...state, imageLoading: false });
@@ -149,6 +157,8 @@ const EditProfile = () => {
         });
       });
   };
+
+  console.log(userProfileImage);
   return (
     <ProfileModal full title="Edit profile">
       <>
@@ -159,7 +169,7 @@ const EditProfile = () => {
                 <div className="mobileAvataeCon">
                   <img
                     ref={avatarRef}
-                    src={userProfileImage ? userProfileImage : defaultAvatar}
+                    src={userProfileImage}
                     alt="profile-pic"
                     className="avatar"
                   />
@@ -355,14 +365,7 @@ const EditProfile = () => {
                   ) : (
                     <div className="profile__img-wrapper">
                       <span className="pictureHeading">Profile photo</span>
-                      <img
-                        ref={avatarRef}
-                        className="img"
-                        src={
-                          userProfileImage ? userProfileImage : defaultAvatar
-                        }
-                        alt="profile-pic"
-                      />
+                      <img className="img" src={image} alt="profile-pic" />
                     </div>
                   )}
                 </div>

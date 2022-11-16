@@ -21,7 +21,7 @@
 }
 
 ._input2::placeholder {
-  color: #B0AFB0;
+  color: #b0afb0;
 }
 
 .topBarSearchModal:focus-within > ._input > ._input2 {
