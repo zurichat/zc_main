@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { convertToRaw, EditorState, RichUtils } from "draft-js";
 import RealUnstyledButton from "~/shared/button/Button";
 import styled from "styled-components";
@@ -25,6 +25,7 @@ import ClickAwayListener from "react-click-away-listener";
 import { AiOutlineGif } from "react-icons/ai";
 import classes from "./Gif.module.css";
 import ReactGiphySearchbox from "react-giphy-searchbox";
+import sendfile from "./SendFile.module.css";
 
 const BoldIcon = () => <img src={Bold} alt="" />;
 const ItalicIcon = () => <img src={Italic} alt="" />;
@@ -64,6 +65,18 @@ const Toolbar2 = props => {
 
   //Attachment ref
   const inputRef = React.createRef();
+
+  // File ref
+  const fileRef = useRef();
+
+  useEffect(() => {
+    window.addEventListener("keydown", function (e) {
+      if (e.ctrlKey && e.key === "u") {
+        e.preventDefault();
+        fileRef.current.click();
+      }
+    });
+  }, []);
 
   //Handles sending of attachedfile
   const handleAttachMedia = e => {
@@ -156,30 +169,42 @@ const Toolbar2 = props => {
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
       <Wrapper>
-        {showAttachInputBox ? (
-          <AttachFile>
-            <div>
+        <div className={`${sendfile.modal}`}>
+          {showAttachInputBox ? (
+            <AttachFile>
               <div>
-                <img src={Google} alt="" />
-                Google Drive
+                <div className={`${sendfile.container}`}>
+                  <div className={`${sendfile.flex}`}>
+                    <img src={Google} alt="" />
+                    <span className={`${sendfile.span}`}>
+                      Upload from Google Drive
+                    </span>
+                  </div>
+                </div>
+
+                <div className={`${sendfile.container}`}>
+                  <label className={`${sendfile.flex} ${sendfile.label}`}>
+                    <img src={Computer} alt="" onClick={handleSelectMedia} />
+                    <span className={`${sendfile.span}`}>
+                      Upload from your computer
+                    </span>
+                    <span className={`${sendfile.ctrl}`}>Ctrl+U</span>
+                    <input
+                      style={{
+                        display: "none"
+                      }}
+                      onChange={handleSelectMedia}
+                      key={inputKey || ""}
+                      type="file"
+                      ref={fileRef}
+                      //onClick={handleAttachMedia}
+                    />
+                  </label>
+                </div>
               </div>
-              <label>
-                <img src={Computer} alt="" onClick={handleSelectMedia} />
-                Upload from your computer
-                <input
-                  style={{
-                    display: "none"
-                  }}
-                  onChange={handleSelectMedia}
-                  key={inputKey || ""}
-                  type="file"
-                  ref={inputRef}
-                  //onClick={handleAttachMedia}
-                />
-              </label>
-            </div>
-          </AttachFile>
-        ) : null}
+            </AttachFile>
+          ) : null}
+        </div>
         <FormatContainer2>
           <LightningIcon />
 
@@ -240,6 +265,7 @@ const Toolbar2 = props => {
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
+  border: 2px solid black;
 `;
 const FormatContainer2 = styled.div`
   display: flex;
@@ -253,13 +279,14 @@ const SendContainer = styled.div`
   align-items: center;
 `;
 const AttachFile = styled.div`
-  width: 324px;
+  width: 45%;
   border-radius: 8px;
   background-color: #f8f8f8;
-  padding: 15px 35px;
+  padding-top: 30px;
+  padding-buttom: 40px;
   position: absolute;
-  right: 104px;
-  bottom: 46px;
+  right: 55%;
+  bottom: 40px;
 `;
 
 const UnstyledButton = styled(RealUnstyledButton)`

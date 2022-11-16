@@ -213,10 +213,12 @@ function AboutPanel({
 //         {...props}/>
 //       )
 //   }
+
 function MembersPanel({ config }) {
   const dummyHeaderConfig = {
     roomInfo: {
       membersList: getSampleMemberList(),
+
       addmembersevent: values => {
         console.warn("a plugin added ", values);
       },
@@ -260,6 +262,45 @@ function MembersPanel({ config }) {
   };
 
   const removeMemberEvent = id => {
+    // const payload = Object.fromEntries(
+    //   Object.entries(userList).filter((users) => users.value !== id)
+    // );
+
+    // console.log(payload)
+
+    console.log(id);
+
+    setUserList(
+      userList.filter(users => {
+        return users.value !== id;
+      })
+    );
+
+    const theUserData = JSON.parse(localStorage.getItem("userData"));
+
+    console.log(theUserData.user.org_id);
+
+    const theOrganizarionId = theUserData.user.org_id;
+
+    const theAdminId = theUserData.user._id;
+
+    //to get the current room , which we have in the session storage
+
+    let ourCurrentRoom = sessionStorage.getItem("currentRoom");
+
+    console.log(ourCurrentRoom);
+
+    const token = sessionStorage.getItem("token");
+
+    axios.patch(
+      `https://chat.zuri.chat/api/v1/org/${theOrganizarionId}/rooms/${ourCurrentRoom}/members/${id}?admin_id=${theAdminId}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json"
+        }
+      }
+    );
     removememberevent(id);
   };
 
@@ -342,12 +383,15 @@ function MembersPanel({ config }) {
             Add People
           </AddPeopleIcons>
         </ListGroup.Item>
-        {membersList && membersList.length > 0 ? (
-          membersList.map((member, index) => (
-            <ListGroup.Item key={member._id + index} className="d-flex w-100">
-              <div>{member.email}</div>
-              <div className="ms-auto" onClick={handleaddModalShow}>
-                <RemoveLink onClick={() => removeMemberHandler(member)}>
+        {userList && userList.length > 0 ? (
+          userList.map((member1, index) => (
+            <ListGroup.Item
+              key={member1.value + index}
+              className="d-flex w-100"
+            >
+              <div>{member1.label}</div>
+              <div className="ms-auto" onClick={handleremoveModalShow}>
+                <RemoveLink onClick={() => removeMemberHandler(member1)}>
                   Remove
                 </RemoveLink>
               </div>
