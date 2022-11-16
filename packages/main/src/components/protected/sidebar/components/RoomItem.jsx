@@ -1,12 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/Drop.module.css";
 import hash from "../assets/icons/hash.svg";
+import hashWhite from "../assets/icons/hash2.svg";
 import { navigateToUrl } from "single-spa";
 import Badge from "./Badge";
 import RoomOptions from "./RoomOptions";
 import { useRouteMatch } from "react-router-dom";
 
+import { useTranslation } from "react-i18next";
+
 const RoomItem = ({ room, baseUrl, pluginId }) => {
+  const { t } = useTranslation();
   let currentWorkspace = localStorage.getItem("currentWorkspace");
   const [click, isClicked] = useClick();
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -65,17 +69,38 @@ const RoomItem = ({ room, baseUrl, pluginId }) => {
         onClick={navigateToUrl}
       >
         <div className={`col-10 d-flex align-items-center`}>
-          <img
-            // ref={click}
-            className={`${styles.item__image}`}
-            src={room.room_image || hash.toString()}
-            onError={e => (e.target.src = hash.toString())}
-            alt="img"
-          />
+          {(room.room_image && (
+            <img
+              // ref={click}
+              className={`${styles.item__image}`}
+              src={room.room_image}
+              onError={e => (e.target.src = hash.toString())}
+              alt="img"
+            />
+          )) || (
+            <>
+              <img
+                src={hash}
+                alt=""
+                srcSet=""
+                className={` ${styles.item__imageBlack}`}
+              />
+              <img
+                src={hashWhite}
+                alt=""
+                srcSet=""
+                className={`${styles.item__imageWhite}`}
+              />
+            </>
+          )}
+
           <div
             className={`mb-0 d-inline-flex align-items-center ${styles.dropDown__name}`}
           >
-            {room.room_name}
+            {room.room_name === "general"
+              ? t(`workspace_chat.${room.room_name}`)
+              : room.room_name}
+            {/* {room.room_name} */}
             {/* Add to Room Button */}
             {/* <AiOutlinePlusCircle
                   className={`${styles.icon}`}

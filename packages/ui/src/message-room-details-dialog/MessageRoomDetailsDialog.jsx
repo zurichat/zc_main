@@ -26,6 +26,7 @@ import { ListGroup } from "react-bootstrap";
 import axios from "axios";
 import { StyledTabs } from "./MessageRoomDetailsDialog.styled";
 import { getSampleMemberList } from "~/utils/samples";
+import FileList from "./components/FileList";
 
 function MessageRoomDetailsDialog({
   close,
@@ -69,7 +70,7 @@ function MessageRoomDetailsDialog({
                   />
                 </ChannelName>
                 <Button onClick={close}>
-                  <AiOutlineClose size="20px" color="gray" />
+                  <AiOutlineClose size="20px" />
                 </Button>
               </ModalTopic>
             </div>
@@ -132,6 +133,7 @@ function AboutPanel({
   toggleEditDescriptionModal,
   toggleLeaveChannelModal
 }) {
+  const [showMore, setShowMore] = useState(false);
   return (
     <div style={{ margin: "0 5px" }}>
       <OverallWrapper>
@@ -182,9 +184,14 @@ function AboutPanel({
       <FileWrapper>
         <FileContent>Files</FileContent>
         <EditContent>
-          There aren't any files to be see here right now. But there could be -
-          drag and drop any file into the message pane to add it to this
-          conversation.
+          <FileList showMore={showMore} setShowMore={setShowMore} />
+          <button
+            onClick={() => {
+              setShowMore(true);
+            }}
+          >
+            Show More
+          </button>
         </EditContent>
       </FileWrapper>
       <h6 style={{ fontSize: "15px", fontWeight: "500" }}>
@@ -206,10 +213,12 @@ function AboutPanel({
 //         {...props}/>
 //       )
 //   }
+
 function MembersPanel({ config }) {
   const dummyHeaderConfig = {
     roomInfo: {
       membersList: getSampleMemberList(),
+
       addmembersevent: values => {
         console.warn("a plugin added ", values);
       },
@@ -221,11 +230,13 @@ function MembersPanel({ config }) {
 
   const roomData =
     "roomInfo" in config ? config.roomInfo : dummyHeaderConfig.roomInfo;
+
   const {
     membersList: roomMembers,
     addmembersevent,
     removememberevent
   } = roomData;
+
   const [addModalShow, setaddModalShow] = useState(false);
   const [removeModalShow, setremoveModalShow] = useState(false);
   const [selectedMember, setSelectedMember] = useState(null);
@@ -242,18 +253,54 @@ function MembersPanel({ config }) {
   const handleremoveModalShow = () => setremoveModalShow(true);
 
   const addMembersEvent = values => {
-    const newEntries = [
-      ...membersList,
-      values.map(item => {
-        return { _id: item.value, email: item.label };
-      })
-    ];
-    setMembersList([newEntries]);
-    // console.warn(membersList)
+    const channelNewMembers = values.map(item => {
+      return { _id: item.value, email: item.label };
+    });
+    const newEntries = [...membersList, ...channelNewMembers];
+    setMembersList(newEntries);
     addmembersevent(values);
   };
 
   const removeMemberEvent = id => {
+    // const payload = Object.fromEntries(
+    //   Object.entries(userList).filter((users) => users.value !== id)
+    // );
+
+    // console.log(payload)
+
+    console.log(id);
+
+    setUserList(
+      userList.filter(users => {
+        return users.value !== id;
+      })
+    );
+
+    const theUserData = JSON.parse(localStorage.getItem("userData"));
+
+    console.log(theUserData.user.org_id);
+
+    const theOrganizarionId = theUserData.user.org_id;
+
+    const theAdminId = theUserData.user._id;
+
+    //to get the current room , which we have in the session storage
+
+    let ourCurrentRoom = sessionStorage.getItem("currentRoom");
+
+    console.log(ourCurrentRoom);
+
+    const token = sessionStorage.getItem("token");
+
+    axios.patch(
+      `https://chat.zuri.chat/api/v1/org/${theOrganizarionId}/rooms/${ourCurrentRoom}/members/${id}?admin_id=${theAdminId}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json"
+        }
+      }
+    );
     removememberevent(id);
   };
 
@@ -265,6 +312,7 @@ function MembersPanel({ config }) {
   useEffect(() => {
     const currentWorkspace = localStorage.getItem("currentWorkspace");
     const token = sessionStorage.getItem("token");
+    setisLoading(true);
     axios
       .get(`${BASE_API_URL}/organizations/${currentWorkspace}/members`, {
         headers: { Authorization: `Bearer ${token}` }
@@ -273,11 +321,26 @@ function MembersPanel({ config }) {
         const users = r.data.data.map(item => {
           return { value: item._id, label: item.email };
         });
-        setUserList(users);
+        const channelUserIds = membersList.map(member => member._id);
+
+        // check to see if the user is already in a channel
+        const checkedUsers = users.map(user => {
+          if (channelUserIds.includes(user.value)) {
+            return {
+              ...user,
+              label: `${user.label} (Already in this channel)`,
+              isDisabled: true
+            };
+          }
+          return user;
+        });
+        setUserList(checkedUsers);
+        setisLoading(false);
       })
-      .catch(/*e => console.log("Organization not returning members", e)*/);
-    setisLoading(true);
-  }, []);
+      .catch(() => {
+        setisLoading(false);
+      });
+  }, [membersList]);
 
   return (
     <div>
@@ -320,12 +383,15 @@ function MembersPanel({ config }) {
             Add People
           </AddPeopleIcons>
         </ListGroup.Item>
-        {membersList && membersList.length > 0 ? (
-          membersList.map(member => (
-            <ListGroup.Item key={member._id} className="d-flex w-100">
-              <div>{member.email}</div>
-              <div className="ms-auto" onClick={handleaddModalShow}>
-                <RemoveLink onClick={() => removeMemberHandler(member)}>
+        {userList && userList.length > 0 ? (
+          userList.map((member1, index) => (
+            <ListGroup.Item
+              key={member1.value + index}
+              className="d-flex w-100"
+            >
+              <div>{member1.label}</div>
+              <div className="ms-auto" onClick={handleremoveModalShow}>
+                <RemoveLink onClick={() => removeMemberHandler(member1)}>
                   Remove
                 </RemoveLink>
               </div>
@@ -459,7 +525,7 @@ const FileWrapper = styled.div`
 `;
 const FileContent = styled.h4`
   font-weight: 500;
-  margin-left: 4px;
+  padding-left: 20px;
 `;
 const MembersInput = styled.input`
   outline: none;
@@ -481,6 +547,12 @@ const Button = styled.button`
   border: none;
   background-color: white;
   cursor: pointer;
+  outline: transparent;
+  border-radius: 4px;
+
+  &:hover {
+    border: 2px solid #1d1d1d;
+  }
 `;
 const ChannelName = styled.div`
   display: flex;
@@ -496,12 +568,15 @@ const ChannelName = styled.div`
 //   cursor: pointer;
 // `
 const TabLists = styled(TabList)`
-  margin: 20px 0;
-  background-color: white;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  && {
+    margin: 20px 0;
+    // background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    overflow-x: auto;
+  }
 `;
 // const BorderBottom=styled.div`
 //   // padding:-1em;
@@ -527,17 +602,20 @@ const DialogOverlays = styled(DialogOverlay)`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  z-index: 2;
+  z-index: 5;
 `;
 const DialogContents = styled(DialogContent)`
-  width: 60%;
-  height: 80%;
-  overflow-y: auto;
-  // background-color:#F9F9F9;
-  &::-webkit-scrollbar {
-    width: 5px;
-    background-color: #f6f6f6;
-    height: 5px;
+  // && - increased the specificity over "@reach/dialog/styles.css"
+  && {
+    width: clamp(350px, 90vw, 950px);
+    height: 80%;
+    overflow-y: auto;
+    // background-color:#F9F9F9;
+    &::-webkit-scrollbar {
+      width: 5px;
+      background-color: #f6f6f6;
+      height: 5px;
+    }
   }
 `;
 const Description = styled.div`
@@ -562,6 +640,13 @@ const EditContent = styled.h4`
   max-width: 70%;
   margin-top: 5px;
   color: #8b8b8b;
+  padding-left: 20px;
+
+  button {
+    border: none;
+    color: #00b87c;
+    margin-top: 10px;
+  }
 `;
 const Selection = styled.div`
   display: flex;
@@ -623,6 +708,7 @@ const RemoveLink = styled.p`
   color: blue;
   font-weight: 500;
   font-size: 14px;
+  cursor: pointer;
 
   &:hover {
     text-decoration: underline;

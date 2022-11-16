@@ -4,16 +4,8 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  /* z-index:inherit; */
   max-width: 585px;
   width: 100%;
-  /* background: white;
-    color: white;
-    padding: .5em;
-    width: 59%;
-    /* min-height: 15em; */
-  /* border-radius: 0.4em;
-    box-shadow: 0 0 0 1px white, 0 4px 12px 0 rgb(0 0 0 / 17%); */
 }
 
 .topBarSearchModal:focus-within > div.MainBox {
@@ -29,7 +21,7 @@
 }
 
 ._input2::placeholder {
-  color: #B0AFB0;
+  color: #b0afb0;
 }
 
 .topBarSearchModal:focus-within > ._input > ._input2 {
@@ -39,14 +31,13 @@
 
 .close_icon {
   width: 1.2em;
-  /* height: 1em; */
 }
 
 .input_box {
   display: flex;
   align-items: center;
   border-bottom: 0.5px solid lightgrey;
-  padding-bottom: 10px;
+  padding: 0.4em 1em;
 }
 
 .grow {
@@ -57,7 +48,6 @@
 
 ._input {
   display: flex;
-  /* border: 1px solid rgb(161, 161, 161); */
   background: rgba(255, 255, 255, 0.4);
   border: 0.8px solid rgba(153, 153, 153, 0.2);
   font-weight: 400;
@@ -67,13 +57,11 @@
   font-size: 1rem;
   line-height: inherit;
   border-radius: 3px;
-  /* background-color: transparent; */
   width: 100%;
   box-sizing: border-box;
   gap: 5px;
   align-items: center;
   justify-content: start;
-  /* z-index: 1000; */
   position: relative;
 }
 
@@ -82,16 +70,12 @@
   position: absolute;
   top: 0;
   width: 100%;
-  /* background: red; */
   background: white;
   color: white;
-  padding: 0.5em;
   width: 59%;
-  /* min-height: 15em; */
   border-radius: 0.3em;
   z-index: 2001;
   box-shadow: 0 0 0 1px white, 0 4px 12px 0 rgb(0 0 0 / 17%);
-  min-height: 15em;
 }
 
 ._MainInput {
