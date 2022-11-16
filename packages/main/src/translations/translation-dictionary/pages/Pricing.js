@@ -56,5 +56,23 @@ export default [
     en: TRANSLATIONS_EN.pricing.cardThree.button,
     de: TRANSLATIONS_DE.pricing.cardThree.button,
     fr: TRANSLATIONS_FR.pricing.cardThree.button
+  },
+  {
+    key: "pricing.sectionFour.headline",
+    en: TRANSLATIONS_EN.pricing.sectionFour.headline,
+    de: TRANSLATIONS_DE.pricing.sectionFour.headline,
+    fr: TRANSLATIONS_FR.pricing.sectionFour.headline
+  },
+  {
+    key: "pricing.sectionFour.button_one",
+    en: TRANSLATIONS_EN.pricing.sectionFour.button_one,
+    de: TRANSLATIONS_DE.pricing.sectionFour.button_one,
+    fr: TRANSLATIONS_FR.pricing.sectionFour.button_one
+  },
+  {
+    key: "pricing.sectionFour.button_two",
+    en: TRANSLATIONS_EN.pricing.sectionFour.button_two,
+    de: TRANSLATIONS_DE.pricing.sectionFour.button_two,
+    fr: TRANSLATIONS_FR.pricing.sectionFour.button_two
   }
 ];
