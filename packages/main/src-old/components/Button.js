@@ -82,13 +82,13 @@ const PrimaryButton = styled(ButtonBase)`
   ${"" /* &:hover {box-shadow: 5px 4px 20px 0px #C0C4C94D;} */}
 `;
 const SecondaryButton = styled(ButtonBase)`
-    background-color: transparent;
-    color: var(--primary-color);
-    }
-    &:hover {
-        background-color: var(--primary-color);
-        color: white;
-    }
+  background-color: transparent;
+  color: var(--primary-color);
+
+  &:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
 `;
 const TertiaryButton = styled(ButtonBase)`
   background-color: transparent;
