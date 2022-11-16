@@ -275,15 +275,16 @@ const SendContainer = styled.div`
   gap: 8px;
   align-items: center;
 `;
+
 const AttachFile = styled.div`
-  width: 380px;
+  width: 45%;
   border-radius: 8px;
   background-color: #f8f8f8;
-  padding-top: 10px;
-  padding-buttom: 10px;
+  padding-top: 30px;
+  padding-buttom: 40px;
   position: absolute;
-  right: 48px;
-  bottom: 70px;
+  right: 55%;
+  bottom: 40px;
 `;
 
 const UnstyledButton = styled(RealUnstyledButton)`
