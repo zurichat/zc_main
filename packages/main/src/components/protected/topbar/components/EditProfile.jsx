@@ -51,13 +51,13 @@ const EditProfile = () => {
   const handleImageChange = event => {
     setState({ ...state, imageLoading: true });
     const [file] = event.target.files;
-    console.log(file);
+
     if (file) {
       let fileReader = new FileReader();
       fileReader.onload = () => {
-        // if (avatarRef.current) {
-        //   avatarRef.current.src = fileReader.result;
-        // }
+        if (avatarRef.current) {
+          avatarRef.current.src = fileReader.result;
+        }
 
         setUserProfileImage(fileReader.result);
         setimage(fileReader.result);
@@ -65,12 +65,12 @@ const EditProfile = () => {
 
       fileReader.readAsDataURL(file);
       const imageReader = file;
-      console.log(imageReader);
+
       let formData = new FormData();
       formData.append("image", imageReader);
       formData.append("height", 512);
       formData.append("width", 512);
-      console.log(formData.get("image"));
+
       authAxios
         .patch(
           `/organizations/${orgId}/members/${user._id}/photo/upload`,
@@ -79,7 +79,7 @@ const EditProfile = () => {
         .then(res => {
           console.log(res);
           const newUploadedImage = res.data.data;
-          // setUserProfileImage(newUploadedImage);
+          setUserProfileImage(newUploadedImage);
           setState({ ...state, imageLoading: false });
           toast.success("User Image Updated Successfully", {
             position: "top-center"
@@ -116,9 +116,9 @@ const EditProfile = () => {
       });
   };
 
-  // useEffect(() => {
-  //   setUserProfileImage(user.image_url);
-  // }, [user]);
+  useEffect(() => {
+    setUserProfileImage(user.image_url);
+  }, [user]);
   // This will handle the profile form submission
   const handleFormSubmit = e => {
     e.preventDefault();
@@ -168,7 +168,7 @@ const EditProfile = () => {
               <div className="mobileCon">
                 <div className="mobileAvataeCon">
                   <img
-                    // ref={avatarRef}
+                    ref={avatarRef}
                     src={userProfileImage}
                     alt="profile-pic"
                     className="avatar"
@@ -365,12 +365,7 @@ const EditProfile = () => {
                   ) : (
                     <div className="profile__img-wrapper">
                       <span className="pictureHeading">Profile photo</span>
-                      <img
-                        // ref={avatarRef}
-                        className="img"
-                        src={image}
-                        alt="profile-pic"
-                      />
+                      <img className="img" src={image} alt="profile-pic" />
                     </div>
                   )}
                 </div>
