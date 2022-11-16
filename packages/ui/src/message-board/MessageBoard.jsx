@@ -11,8 +11,22 @@ import EmojiPicker from "../message-room-emoji-picker/MessageRoomEmojiPicker";
 
 /**
  * Message Board Component
- * A component that displays a list of messages with support for message editing
- */
+ * A component that displays a list of messages with support for message editing*/
+
+const Loader = () => {
+  return (
+    <div className="text-center">
+      <div
+        className="spinner-border"
+        style={{ width: "3rem", height: "3rem", color: "#7ed5af" }}
+        role="status"
+      >
+        <span className="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  );
+};
+
 function MessageBoard({
   currentUserId,
   isLoadingMessages,
@@ -87,29 +101,21 @@ function MessageBoard({
     <>
       <MessageBoardContainer>
         <div className="MsgBoard">
-          {messages.map((message, i) => (
-            <MessagePane
-              key={`message-item-${i}`}
-              onShowMoreOptions={handleShowMoreOptions}
-              onShowEmoji={handleShowEmoji}
-              onEmojiClicked={handleEmojiClicked}
-              message={message}
-              currentUserId={currentUserId}
-            />
-          ))}
+          {isLoadingMessages
+            ? ""
+            : messages.map((message, i) => (
+                <MessagePane
+                  key={`message-item-${i}`}
+                  onShowMoreOptions={handleShowMoreOptions}
+                  onShowEmoji={handleShowEmoji}
+                  onEmojiClicked={handleEmojiClicked}
+                  message={message}
+                  currentUserId={currentUserId}
+                />
+              ))}
           <div ref={messagesEndRef} />
         </div>
-        {isLoadingMessages && (
-          <div className="text-center">
-            <div
-              className="spinner-border"
-              style={{ width: "3rem", height: "3rem", color: "#7ed5af" }}
-              role="status"
-            >
-              <span className="visually-hidden">Loading...</span>
-            </div>
-          </div>
-        )}
+        {isLoadingMessages ? <Loader /> : ""}
 
         <div className="input-text">
           <MessagePaneInput

@@ -30,6 +30,7 @@ const emojiPlugin = createEmojiPlugin({
   useNativeArt: true,
   theme: theme
 });
+
 const { EmojiSuggestions, EmojiSelect } = emojiPlugin;
 
 const mentionPlugin = createMentionPlugin({ mentionPrefix: "@" });

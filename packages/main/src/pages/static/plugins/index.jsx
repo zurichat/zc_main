@@ -19,6 +19,7 @@ import {
   tools,
   arrow_right
 } from "./assets";
+
 import Cookies from "../../../components/cookies-notification/CookiesNotification";
 import Subscribe from "./components/Subscribe";
 import { useTranslation } from "react-i18next";

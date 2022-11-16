@@ -23,6 +23,7 @@ const { Sidebar, TopBar } = lazily(() =>
 
 export default function Index() {
   const { workspaceId } = useParams();
+
   const location = useLocation();
   const history = useHistory();
   const match = useRouteMatch(`/workspace/${workspaceId}`);
@@ -66,7 +67,7 @@ export default function Index() {
             <Route exact path="/workspace/:workspaceId">
               <h1>Welcome to your Workspace</h1>
             </Route>
-
+           
             {/* <Route
               exact
               path="/workspace/:workspaceId/marketplace"
