@@ -27,7 +27,7 @@ const UserOrganization = ({ organizations, user }) => {
                   <OrganizationNameWrapper>
                     <OrganizationName>{organization.name}</OrganizationName>
                     <Arrow>
-                      <img src={RightArrow} />
+                      <img className="d-flex justify-content-end" src={RightArrow} />
                     </Arrow>
                   </OrganizationNameWrapper>
                   <Members>
@@ -56,7 +56,6 @@ const BottomSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   @media (max-width: 35rem) {
     padding-top: 101px;
     padding-left: 24px;
@@ -83,7 +82,6 @@ const SelectWorkSpace = styled.ul`
   padding-top: 16px;
   padding-left: 20px;
   padding-right: 20px;
-
   & > p {
     font-size: ${18 / 16}rem;
     font-weight: 400;
@@ -116,7 +114,6 @@ const OrganizationWrapper = styled.li`
   padding-right: 36px;
   display: flex;
   gap: 19px;
-
   & > a {
     flex-grow: 1;
   }
@@ -189,7 +186,8 @@ export const FooterLink = styled.a`
   }
 `;
 const Arrow = styled.b`
-  margin-left: auto;
+  margin-left: 400px;
+  position: absolute;
   & > img {
     display: block;
   }
