@@ -254,7 +254,7 @@ const InputWrapper = styled.section`
   border: 1px solid #b0afb0;
   ${"" /* border: 1px solid hsla(0, 0%, 92%, 1); */}
   border-radius: 3px;
-  padding: 10px 18px 15px 18px;
+  padding: 10px 18px;
   ${"" /* width: calc(100% - 24px); */}/* padding-left: 8px;
 padding-top: 8px;
 padding-bottom: 8px; */
