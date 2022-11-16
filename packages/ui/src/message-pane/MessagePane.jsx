@@ -10,6 +10,7 @@ function MessagePane({
   message,
   onShowMoreOptions,
   onShowEmoji,
+  onShowSidebar,
   onEmojiClicked,
   currentUserId
 }) {
@@ -20,6 +21,7 @@ function MessagePane({
           id={message._id}
           handleShowMoreOptions={onShowMoreOptions}
           handleShowEmoji={onShowEmoji}
+          handleShowSidebar={onShowSidebar}
         />
       </div>
       <div className={styles.messageCardContainer}>

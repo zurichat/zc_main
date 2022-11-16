@@ -11,7 +11,7 @@ export default function HoverItems(props) {
         <div onClick={event => handleShowEmoji(id, event)}>
           <img src={NewEmoji} alt="emoji imag" />
         </div>
-        <div>
+        <div onClick={props.handleShowSidebar}>
           <img src={Reply} alt="reply image" />
         </div>
         <div>

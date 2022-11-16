@@ -8,6 +8,9 @@ import { MessageBoardContainer } from "./MessageBoard.styled";
 import MoreMenu from "./components/more-menu/MoreMenu";
 import Overlay from "./components/overlay/Overlay";
 import EmojiPicker from "../message-room-emoji-picker/MessageRoomEmojiPicker";
+import Split from "react-split";
+import CommentBoard from "../comment-board/CommentBoard";
+import styles from "./messageboard.module.css";
 
 /**
  * Message Board Component
@@ -82,46 +85,79 @@ function MessageBoard({
     setScrollToBottom(true);
   }, [messages]);
 
+  const [showSidebar, setShowSidebar] = useState(false);
+  function handleShowSidebar() {
+    setShowSidebar(prevState => !prevState);
+  }
+
   return (
     <>
-      <MessageBoardContainer>
-        <div className="MsgBoard">
-          {Array.from(new Set(messages.map(a => a._id)))
-            .map(id => {
-              return messages.find(a => a._id === id);
-            })
-            .map((message, i) => (
-              <MessagePane
-                key={`message-item-${i}`}
-                onShowMoreOptions={handleShowMoreOptions}
-                onShowEmoji={handleShowEmoji}
-                onEmojiClicked={handleEmojiClicked}
-                message={message}
-                currentUserId={currentUserId}
-              />
-            ))}
-          <div ref={messagesEndRef} />
-        </div>
+      <Split
+        sizes={[100, 0]}
+        direction="horizontal"
+        className={styles.split}
+        minSize={0}
+        /* maxSize={1400} */
+      >
+        <MessageBoardContainer>
+          <div className="MsgBoard">
+            {Array.from(new Set(messages.map(a => a._id)))
+              .map(id => {
+                return messages.find(a => a._id === id);
+              })
+              .map((message, i) => (
+                <MessagePane
+                  key={`message-item-${i}`}
+                  onShowMoreOptions={handleShowMoreOptions}
+                  onShowEmoji={handleShowEmoji}
+                  onEmojiClicked={handleEmojiClicked}
+                  message={message}
+                  currentUserId={currentUserId}
+                  onShowSidebar={handleShowSidebar}
+                />
+              ))}
+            <div ref={messagesEndRef} />
+          </div>
 
-        {isLoadingMessages && (
-          <div className="text-center">
-            <div
-              className="spinner-border"
-              style={{ width: "3rem", height: "3rem", color: "#7ed5af" }}
-              role="status"
-            >
-              <span className="visually-hidden">Loading...</span>
+          {isLoadingMessages && (
+            <div className="text-center">
+              <div
+                className="spinner-border"
+                style={{ width: "3rem", height: "3rem", color: "#7ed5af" }}
+                role="status"
+              >
+                <span className="visually-hidden">Loading...</span>
+              </div>
             </div>
+          )}
+
+          <div className="input-text">
+            <MessagePaneInput
+              onSendMessage={handleSendMessage}
+              onAttachFile={onSendAttachedFile}
+            />
+          </div>
+        </MessageBoardContainer>
+        {showSidebar && (
+          /* <div style={{ border: "10px solid red" }}>
+          <CommentBoard />
+        </div> */
+
+          /* <MessageBoardContainer
+          style={{ border: "10px solid red" }}
+        ></MessageBoardContainer> */
+
+          <div
+            className="input-text"
+            style={{ border: "10px solid white", marginTop: "90px" }}
+          >
+            <MessagePaneInput
+              onSendMessage={handleSendMessage}
+              onAttachFile={onSendAttachedFile}
+            />
           </div>
         )}
-
-        <div className="input-text">
-          <MessagePaneInput
-            onSendMessage={handleSendMessage}
-            onAttachFile={onSendAttachedFile}
-          />
-        </div>
-      </MessageBoardContainer>
+      </Split>
       {showMoreOptions && (
         <div>
           <Overlay handleOverlayClicked={handleOverlayClicked} />
