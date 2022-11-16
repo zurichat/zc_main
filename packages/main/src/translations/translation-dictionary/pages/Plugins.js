@@ -1,279 +1,152 @@
 import { TRANSLATIONS_DE } from "../../locales (not used)/de/translations";
 import { TRANSLATIONS_EN } from "../../locales (not used)/en/translations";
 import { TRANSLATIONS_FR } from "../../locales (not used)/fr/translations";
-import { TRANSLATIONS_ZH } from "../../locales (not used)/zh/translations";
 export default [
   {
     key: "plugin.dm.title",
     en: TRANSLATIONS_EN.plugin.dm.title,
     de: TRANSLATIONS_DE.plugin.dm.title,
     enus: "For Organizations & Institutions",
-    fr: TRANSLATIONS_FR.plugin.dm.title,
-    zh: TRANSLATIONS_ZH.plugin.dm.title,
-    ar: "للمنظمات والمؤسسات",
-    es: "Para organizaciones e instituciones.",
-    it: "Per organizzazioni e istituzioni",
-    he: "עבור ארגונים ומוסדות",
-    pt: "Para organizações e instituições"
+    fr: TRANSLATIONS_FR.plugin.dm.title
   },
   {
     key: "plugin.dm.headline",
     en: TRANSLATIONS_EN.plugin.dm.headline,
     de: TRANSLATIONS_DE.plugin.dm.headline,
     enus: "For Organizations & Institutions",
-    fr: TRANSLATIONS_FR.plugin.dm.headline,
-    zh: TRANSLATIONS_ZH.plugin.dm.headline,
-    ar: "للمنظمات والمؤسسات",
-    es: "Para organizaciones e instituciones.",
-    it: "Per organizzazioni e istituzioni",
-    he: "עבור ארגונים ומוסדות",
-    pt: "Para organizações e instituições"
+    fr: TRANSLATIONS_FR.plugin.dm.headline
   },
   {
     key: "plugin.dm.description",
     en: "A plugin that facilitates the sending of messages between collaborators",
     de: "Ein Plugin, das das Senden von Nachrichten zwischen Mitarbeitern erleichtert",
     enus: "For Organizations & Institutions",
-    fr: "Pour les organisations et les institutions",
-    zh: "适用于组织和机构",
-    ar: "للمنظمات والمؤسسات",
-    es: "Para organizaciones e instituciones.",
-    it: "Per organizzazioni e istituzioni",
-    he: "עבור ארגונים ומוסדות",
-    pt: "Para organizações e instituições"
+    fr: "Pour les organisations et les institutions"
   },
   {
     key: "plugin.dm.link",
     en: TRANSLATIONS_EN.plugin.dm.link,
     de: TRANSLATIONS_DE.plugin.dm.link,
     enus: "For Organizations & Institutions",
-    fr: TRANSLATIONS_FR.plugin.dm.link,
-    zh: TRANSLATIONS_ZH.plugin.dm.link,
-    ar: "للمنظمات والمؤسسات",
-    es: "Para organizaciones e instituciones.",
-    it: "Per organizzazioni e istituzioni",
-    he: "עבור ארגונים ומוסדות",
-    pt: "Para organizações e instituições"
+    fr: TRANSLATIONS_FR.plugin.dm.link
   },
   {
     key: "plugin.music.title",
     en: TRANSLATIONS_EN.plugin.music.title,
     de: TRANSLATIONS_DE.plugin.music.title,
     enus: "For Organizations & Institutions",
-    fr: TRANSLATIONS_FR.plugin.music.title,
-    zh: TRANSLATIONS_ZH.plugin.music.title,
-    ar: "للمنظمات والمؤسسات",
-    es: "Para organizaciones e instituciones.",
-    it: "Per organizzazioni e istituzioni",
-    he: "עבור ארגונים ומוסדות",
-    pt: "Para organizações e instituições"
+    fr: TRANSLATIONS_FR.plugin.music.title
   },
   {
     key: "plugin.music.headline",
     en: TRANSLATIONS_EN.plugin.music.headline,
     de: TRANSLATIONS_DE.plugin.music.headline,
     enus: "For Organizations & Institutions",
-    fr: TRANSLATIONS_FR.plugin.music.headline,
-    zh: TRANSLATIONS_ZH.plugin.music.headline,
-    ar: "للمنظمات والمؤسسات",
-    es: "Para organizaciones e instituciones.",
-    it: "Per organizzazioni e istituzioni",
-    he: "עבור ארגונים ומוסדות",
-    pt: "Para organizações e instituições"
+    fr: TRANSLATIONS_FR.plugin.music.headline
   },
   {
     key: "plugin.music.description",
     en: TRANSLATIONS_EN.plugin.music.description,
     de: TRANSLATIONS_DE.plugin.music.description,
     enus: "For Organizations & Institutions",
-    fr: TRANSLATIONS_FR.plugin.music.description,
-    zh: TRANSLATIONS_ZH.plugin.music.description,
-    ar: "للمنظمات والمؤسسات",
-    es: "Para organizaciones e instituciones.",
-    it: "Per organizzazioni e istituzioni",
-    he: "עבור ארגונים ומוסדות",
-    pt: "Para organizações e instituições"
+    fr: TRANSLATIONS_FR.plugin.music.description
   },
   {
     key: "plugin.music.link",
     en: TRANSLATIONS_EN.plugin.music.link,
     de: TRANSLATIONS_DE.plugin.music.link,
     enus: "For Organizations & Institutions",
-    fr: TRANSLATIONS_FR.plugin.music.link,
-    zh: TRANSLATIONS_ZH.plugin.music.link,
-    ar: "للمنظمات والمؤسسات",
-    es: "Para organizaciones e instituciones.",
-    it: "Per organizzazioni e istituzioni",
-    he: "עבור ארגונים ומוסדות",
-    pt: "Para organizações e instituições"
+    fr: TRANSLATIONS_FR.plugin.music.link
   },
   {
     key: "plugin.games.title",
     en: TRANSLATIONS_EN.plugin.games.title,
     de: TRANSLATIONS_DE.plugin.games.title,
     enus: "For Organizations & Institutions",
-    fr: TRANSLATIONS_FR.plugin.games.title,
-    zh: TRANSLATIONS_ZH.plugin.games.title,
-    ar: "للمنظمات والمؤسسات",
-    es: "Para organizaciones e instituciones.",
-    it: "Per organizzazioni e istituzioni",
-    he: "עבור ארגונים ומוסדות",
-    pt: "Para organizações e instituições"
+    fr: TRANSLATIONS_FR.plugin.games.title
   },
   {
     key: "plugin.games.headline",
     en: TRANSLATIONS_EN.plugin.games.headline,
     de: TRANSLATIONS_DE.plugin.games.headline,
     enus: "For Organizations & Institutions",
-    fr: TRANSLATIONS_FR.plugin.games.headline,
-    zh: TRANSLATIONS_ZH.plugin.games.headline,
-    ar: "للمنظمات والمؤسسات",
-    es: "Para organizaciones e instituciones.",
-    it: "Per organizzazioni e istituzioni",
-    he: "עבור ארגונים ומוסדות",
-    pt: "Para organizações e instituições"
+    fr: TRANSLATIONS_FR.plugin.games.headline
   },
   {
     key: "plugin.games.description",
     en: TRANSLATIONS_EN.plugin.games.description,
     de: TRANSLATIONS_DE.plugin.games.description,
     enus: "For Organizations & Institutions",
-    fr: TRANSLATIONS_FR.plugin.games.description,
-    zh: TRANSLATIONS_ZH.plugin.games.description,
-    ar: "للمنظمات والمؤسسات",
-    es: "Para organizaciones e instituciones.",
-    it: "Per organizzazioni e istituzioni",
-    he: "עבור ארגונים ומוסדות",
-    pt: "Para organizações e instituições"
+    fr: TRANSLATIONS_FR.plugin.games.description
   },
   {
     key: "plugin.games.link",
     en: TRANSLATIONS_EN.plugin.games.link,
     de: TRANSLATIONS_DE.plugin.games.link,
     enus: "For Organizations & Institutions",
-    fr: TRANSLATIONS_FR.plugin.games.link,
-    zh: TRANSLATIONS_ZH.plugin.games.link,
-    ar: "للمنظمات والمؤسسات",
-    es: "Para organizaciones e instituciones.",
-    it: "Per organizzazioni e istituzioni",
-    he: "עבור ארגונים ומוסדות",
-    pt: "Para organizações e instituições"
+    fr: TRANSLATIONS_FR.plugin.games.link
   },
   {
     key: "plugin.signup.headline",
     en: TRANSLATIONS_EN.plugin.signup.headline,
     de: TRANSLATIONS_DE.plugin.signup.headline,
     enus: "For Organizations & Institutions",
-    fr: TRANSLATIONS_FR.plugin.signup.headline,
-    zh: TRANSLATIONS_ZH.plugin.signup.headline,
-    ar: "للمنظمات والمؤسسات",
-    es: "Para organizaciones e instituciones.",
-    it: "Per organizzazioni e istituzioni",
-    he: "עבור ארגונים ומוסדות",
-    pt: "Para organizações e instituições"
+    fr: TRANSLATIONS_FR.plugin.signup.headline
   },
   {
     key: "plugin.signup.description",
     en: TRANSLATIONS_EN.plugin.signup.description,
     de: TRANSLATIONS_DE.plugin.signup.description,
     enus: "For Organizations & Institutions",
-    fr: TRANSLATIONS_FR.plugin.signup.description,
-    zh: TRANSLATIONS_ZH.plugin.signup.description,
-    ar: "للمنظمات والمؤسسات",
-    es: "Para organizaciones e instituciones.",
-    it: "Per organizzazioni e istituzioni",
-    he: "עבור ארגונים ומוסדות",
-    pt: "Para organizações e instituições"
+    fr: TRANSLATIONS_FR.plugin.signup.description
   },
   {
     key: "plugin.signup.link",
     en: TRANSLATIONS_EN.plugin.signup.link,
     de: TRANSLATIONS_DE.plugin.signup.link,
     enus: "For Organizations & Institutions",
-    fr: TRANSLATIONS_FR.plugin.signup.link,
-    zh: TRANSLATIONS_ZH.plugin.signup.link,
-    ar: "للمنظمات والمؤسسات",
-    es: "Para organizaciones e instituciones.",
-    it: "Per organizzazioni e istituzioni",
-    he: "עבור ארגונים ומוסדות",
-    pt: "Para organizações e instituições"
+    fr: TRANSLATIONS_FR.plugin.signup.link
   },
   {
     key: "plugin.subscribe.headline",
     en: TRANSLATIONS_EN.plugin.subscribe.headline,
     de: TRANSLATIONS_DE.plugin.subscribe.headline,
     enus: "For Organizations & Institutions",
-    fr: TRANSLATIONS_FR.plugin.subscribe.headline,
-    zh: TRANSLATIONS_ZH.plugin.subscribe.headline,
-    ar: "للمنظمات والمؤسسات",
-    es: "Para organizaciones e instituciones.",
-    it: "Per organizzazioni e istituzioni",
-    he: "עבור ארגונים ומוסדות",
-    pt: "Para organizações e instituições"
+    fr: TRANSLATIONS_FR.plugin.subscribe.headline
   },
   {
     key: "plugin.subscribe.headline_br",
     en: TRANSLATIONS_EN.plugin.subscribe.headline_br,
     de: TRANSLATIONS_DE.plugin.subscribe.headline_br,
     enus: "For Organizations & Institutions",
-    fr: TRANSLATIONS_FR.plugin.subscribe.headline_br,
-    zh: TRANSLATIONS_ZH.plugin.subscribe.headline_br,
-    ar: "للمنظمات والمؤسسات",
-    es: "Para organizaciones e instituciones.",
-    it: "Per organizzazioni e istituzioni",
-    he: "עבור ארגונים ומוסדות",
-    pt: "Para organizações e instituições"
+    fr: TRANSLATIONS_FR.plugin.subscribe.headline_br
   },
   {
     key: "plugin.subscribe.description",
     en: TRANSLATIONS_EN.plugin.subscribe.description,
     de: TRANSLATIONS_DE.plugin.subscribe.description,
     enus: "For Organizations & Institutions",
-    fr: TRANSLATIONS_FR.plugin.subscribe.description,
-    zh: TRANSLATIONS_ZH.plugin.subscribe.description,
-    ar: "للمنظمات والمؤسسات",
-    es: "Para organizaciones e instituciones.",
-    it: "Per organizzazioni e istituzioni",
-    he: "עבור ארגונים ומוסדות",
-    pt: "Para organizações e instituições"
+    fr: TRANSLATIONS_FR.plugin.subscribe.description
   },
   {
     key: "plugin.subscribe.description_br",
     en: TRANSLATIONS_EN.plugin.subscribe.description_br,
     de: TRANSLATIONS_DE.plugin.subscribe.description_br,
     enus: "For Organizations & Institutions",
-    fr: TRANSLATIONS_FR.plugin.subscribe.description_br,
-    zh: TRANSLATIONS_ZH.plugin.subscribe.description_br,
-    ar: "للمنظمات والمؤسسات",
-    es: "Para organizaciones e instituciones.",
-    it: "Per organizzazioni e istituzioni",
-    he: "עבור ארגונים ומוסדות",
-    pt: "Para organizações e instituições"
+    fr: TRANSLATIONS_FR.plugin.subscribe.description_br
   },
   {
     key: "plugin.subscribe.description_brr",
     en: TRANSLATIONS_EN.plugin.subscribe.description_brr,
     de: TRANSLATIONS_DE.plugin.subscribe.description_brr,
     enus: "For Organizations & Institutions",
-    fr: TRANSLATIONS_FR.plugin.subscribe.description_brr,
-    zh: TRANSLATIONS_ZH.plugin.subscribe.description_brr,
-    ar: "للمنظمات والمؤسسات",
-    es: "Para organizaciones e instituciones.",
-    it: "Per organizzazioni e istituzioni",
-    he: "עבור ארגונים ומוסדות",
-    pt: "Para organizações e instituições"
+    fr: TRANSLATIONS_FR.plugin.subscribe.description_brr
   },
   {
     key: "plugin.subscribe.button",
     en: TRANSLATIONS_EN.plugin.subscribe.button,
     de: TRANSLATIONS_DE.plugin.subscribe.button,
     enus: "For Organizations & Institutions",
-    fr: TRANSLATIONS_FR.plugin.subscribe.button,
-    zh: TRANSLATIONS_ZH.plugin.subscribe.button,
-    ar: "للمنظمات والمؤسسات",
-    es: "Para organizaciones e instituciones.",
-    it: "Per organizzazioni e istituzioni",
-    he: "עבור ארגונים ומוסדות",
-    pt: "Para organizações e instituições"
+    fr: TRANSLATIONS_FR.plugin.subscribe.button
   }
 ];

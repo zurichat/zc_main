@@ -18,4 +18,5 @@
 .MessageContainer .emojiCardContainer {
   margin-left: 53px;
   display: flex;
+  flex-wrap: wrap;
 }

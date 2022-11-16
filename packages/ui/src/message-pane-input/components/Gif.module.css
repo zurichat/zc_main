@@ -28,3 +28,15 @@
 .gif__box__inactive {
   display: none;
 }
+
+
+.iconHover {
+  cursor: pointer;
+  padding: 10px 8px;
+  max-width: 100%;
+}
+
+.iconHover:hover {
+  background-color: #e6e6e6;
+  border-radius: 4px;
+}

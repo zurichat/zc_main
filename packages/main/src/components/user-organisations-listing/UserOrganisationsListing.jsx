@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import RightArrow from "./assets/right-arrow.png";
 import ZuriChatLogo from "../../assets/zuri-chat-logo/logo.svg";
@@ -8,11 +9,12 @@ const UserOrganization = ({ organizations, user }) => {
   const currentPlugin = localStorage.getItem("currentPlugin") || "plugin-chat";
   const currentPluginRoom = localStorage.getItem("currentRoom") || "";
   const defaultPluginRoom = `${currentPlugin}/${currentPluginRoom}`;
+  const { t } = useTranslation();
   return (
     <BottomSection>
       <SelectWorkSpace>
         <p style={{ paddingLeft: "10px" }}>
-          Workspaces for{" "}
+          {t("workspace_name")}{" "}
           <strong style={{ fontWeight: "700" }}>{user.email}</strong>
         </p>
 
@@ -25,7 +27,7 @@ const UserOrganization = ({ organizations, user }) => {
                   <OrganizationNameWrapper>
                     <OrganizationName>{organization.name}</OrganizationName>
                     <Arrow>
-                      <img src={RightArrow} />
+                      <img className="d-flex justify-content-end" src={RightArrow} />
                     </Arrow>
                   </OrganizationNameWrapper>
                   <Members>
@@ -40,9 +42,9 @@ const UserOrganization = ({ organizations, user }) => {
         ))}
       </SelectWorkSpace>
       <TryDifferentWrapper>
-        <TextBottom>Not seeing your workspace?</TextBottom>
+        <TextBottom>{t("workspace_option_first")}</TextBottom>
         <Link to="/signout">
-          <SecondText>Try a different email</SecondText>
+          <SecondText>{t("workspace_option_second")}</SecondText>
         </Link>
       </TryDifferentWrapper>
     </BottomSection>
@@ -54,7 +56,6 @@ const BottomSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   @media (max-width: 35rem) {
     padding-top: 101px;
     padding-left: 24px;
@@ -81,7 +82,6 @@ const SelectWorkSpace = styled.ul`
   padding-top: 16px;
   padding-left: 20px;
   padding-right: 20px;
-
   & > p {
     font-size: ${18 / 16}rem;
     font-weight: 400;
@@ -101,6 +101,11 @@ const Image = styled.img`
   object-fit: cover;
 `;
 
+const Flex = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+`;
 const OrganizationWrapper = styled.li`
   border-top: 1px solid hsla(0, 0%, 20%, 0.51);
   padding-top: 21px;
@@ -109,8 +114,6 @@ const OrganizationWrapper = styled.li`
   padding-right: 36px;
   display: flex;
   gap: 19px;
-  align-items: center;
-
   & > a {
     flex-grow: 1;
   }
@@ -141,8 +144,7 @@ const Organization = styled.div`
 const Logo_Members = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space between;
-  width: 100%;
+  justify-content: space-between;
 `;
 const TryDifferentWrapper = styled.div`
   display: flex;
@@ -184,7 +186,8 @@ export const FooterLink = styled.a`
   }
 `;
 const Arrow = styled.b`
-  margin-left: auto;
+  margin-left: 400px;
+  position: absolute;
   & > img {
     display: block;
   }

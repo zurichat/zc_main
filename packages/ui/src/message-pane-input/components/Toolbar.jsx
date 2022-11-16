@@ -33,7 +33,7 @@ const BorderIcon = () => <img src={Border} alt="" />;
 const LightningIcon = () => <img src={Lightning} alt="" />;
 const LinkIcon = () => <img src={Link} alt="" />;
 const ClipIcon = () => <img src={Clip} alt="" />;
-const SendIcon = () => <img src={Send} alt="" />;
+const SendIcon = () => <img src={Send} alt="send icon" />;
 const AtIcon = () => <img src={AtSign} alt="" />;
 
 const inlineStyles = [
@@ -58,6 +58,7 @@ const Toolbar = props => {
   const [showAttachInputBox, setshowAttachInputBox] = useState(false);
   //const [preview, setPreview] = useState('')
 
+  const inputLength = editorState.getCurrentContent().getPlainText("").length;
   // Gif state management
   const [showGif, setShowGif] = useState(false);
 
@@ -98,7 +99,6 @@ const Toolbar = props => {
     sendMessageHandler(editorState.getCurrentContent());
     setEditorState(EditorState.createEmpty());
   };
-
   const handleInlineStyle = (event, style) => {
     event.preventDefault();
     setEditorState(RichUtils.toggleInlineStyle(editorState, style));
@@ -181,58 +181,6 @@ const Toolbar = props => {
           </AttachFile>
         ) : null}
         <FormatContainer>
-          <LightningIcon />
-
-          <span style={{ paddingInline: "4px" }}>
-            <BorderIcon />
-          </span>
-
-          {inlineStyles.map((style, index) => {
-            return renderInlineStyleButton(style, index);
-          })}
-          <span style={{ paddingInline: "4px" }}>
-            <BorderIcon />
-          </span>
-          <UnstyledButton>
-            <LinkIcon />
-          </UnstyledButton>
-          <span style={{ paddingInline: "4px" }}>
-            <BorderIcon />
-          </span>
-          {blockStyles.map((block, index) => {
-            return renderBlockStyleButton(block, index);
-          })}
-
-          {/* GIF integration */}
-          <div
-            className={`${classes.box} ${showGif && `${classes.box__active}`}`}
-          >
-            <AiOutlineGif
-              className={classes.svg}
-              onClick={() => setShowGif(prev => !prev)}
-            />
-          </div>
-          <div
-            className={`${classes.gif__box} ${
-              showGif
-                ? `${classes.gif__box__active}`
-                : `${classes.gif__box__inactive}`
-            }`}
-          >
-            <ReactGiphySearchbox
-              apiKey="aK3byM6d4TMBFh7fkw3m7FuJOuRLHnM0"
-              searchPlaceholder="Search Gif"
-              gifListHeight="250px"
-              onSelect={gifSelectionHandler}
-              masonryConfig={[
-                { columns: 2, imageWidth: 110, gutter: 5 },
-                { mq: "768px", columns: 3, imageWidth: 120, gutter: 5 },
-                { mq: "1200px", columns: 3, imageWidth: 130, gutter: 5 }
-              ]}
-            />
-          </div>
-        </FormatContainer>
-        <SendContainer>
           <UnstyledButton onClick={() => setshowAttachInputBox(true)}>
             <ClipIcon />
           </UnstyledButton>
@@ -248,13 +196,8 @@ const Toolbar = props => {
           <span style={{ paddingInline: "4px" }}>
             <BorderIcon />
           </span>
-          <UnstyledButton onClick={() => setshowAttachInputBox(true)}>
-            <ClipIcon />
-          </UnstyledButton>
-          <span style={{ paddingInline: "4px" }}>
-            <BorderIcon />
-          </span>
-
+        </FormatContainer>
+        <SendContainer>
           <UnstyledButton onClick={handleClickSendMessage || handleAttachMedia}>
             <SendIcon />
           </UnstyledButton>
@@ -295,6 +238,9 @@ const UnstyledButton = styled(RealUnstyledButton)`
   display: grid;
   place-items: center;
   padding: 2px 4px;
+  &:disabled {
+    cursor: not-allowed;
+  }
 `;
 
 export default Toolbar;
