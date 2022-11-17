@@ -135,6 +135,12 @@ const Sidebar = props => {
             image={threadIcon}
             link={`/workspace/${currentWorkspace}/plugin-chat/threads`}
           />
+          {/* <SingleRoom
+            name="All Dms"
+            image={dmIcon}
+            link={`/workspace/${currentWorkspace}/plugin-chat/all-dms`}
+          /> */}
+          <SingleRoom name="Drafts" image={draftIcon} />
           <SingleRoom
             name={`${t("workspace_chat.alldms")}`}
             image={dmIcon}
