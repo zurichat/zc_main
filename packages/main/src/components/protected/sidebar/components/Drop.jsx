@@ -31,12 +31,6 @@ const DropDown = ({ categoryName, isOpen, toggleDropdown, button_url }) => {
       <div
         className={`col-12 w-100 d-flex align-items-center justify-content-between ${styles.plugin__title}`}
       >
-        <div className={`d-flex align-items-center`}>
-          <TiArrowSortedDown
-            className={`${styles.icon} ${isOpen && styles.open}`}
-            style={m_5px}
-          />
-        </div>
         <div
           className={` d-flex align-items-center justify-content-between`}
           onClick={toggleDropdown}
@@ -52,24 +46,25 @@ const DropDown = ({ categoryName, isOpen, toggleDropdown, button_url }) => {
         <div onClick={popup}>
           <AiOutlinePlus className={`${styles.icon}`} />
           {options ? (
-            <div className={`${styles.dropdown__menu}`}>
-              <a href={button_url} onClick={navigateToUrl}>
-                <p>Browse Channels</p>
-              </a>
-              <p onClick={room}>Create a Channel</p>
-            </div>
-          <p className={`mb-0 ${styles.dropDown__title}`} style={m_2px}>
-            {" "}
-            {categoryName}
-          </p>
+            <>
+              <div className={`${styles.dropdown__menu}`}>
+                <a href={button_url} onClick={navigateToUrl}>
+                  <p>Browse Channels</p>
+                </a>
+                <p onClick={room}>Create a Channel</p>
+              </div>
+            </>
+          ) : (
+            ""
+          )}
           {/* <img src={infoIcon} alt="icon" role="button" /> */}
-          {button_url ? (
+          {/* {button_url ? (
             <a href={button_url} onClick={navigateToUrl}>
               <AiOutlinePlus className={`${styles.icon}`} />
             </a>
           ) : (
             ""
-          )}
+          )} */}
         </div>
       </div>
 
