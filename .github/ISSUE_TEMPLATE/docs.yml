@@ -1,0 +1,56 @@
+name: 📄 Documentation issue
+description: Found an issue in the documentation? You can use this one!
+title: "[DOCS] <description>"
+labels:
+  [
+    "✨ goal: improvement",
+    "🛠 status : pending acceptance",
+    "🟨 priority: medium",
+    "📄 aspect: documentation",
+  ]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A brief description of the question or issue, also include what you tried and what didn't work
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Please add screenshots if applicable
+    validations:
+      required: false
+  - type: textarea
+    id: extrainfo
+    attributes:
+      label: Additional information
+      description: Is there anything else we should know about this issue?
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: no-duplicate-issues
+    attributes:
+      label: "👀 Have you checked for similar open issues?"
+      options:
+        - label: "I checked and didn't find similar issue"
+          required: true
+
+  - type: checkboxes
+    id: read-code-of-conduct
+    attributes:
+      label: "🏢 Have you read the Contributing Guidelines?"
+      options:
+        - label: "I have read the [Contributing Guidelines](https://github.com/zurichat/zc_main/blob/dev/docs/CONTRIBUTING.md)"
+          required: true
+
+  - type: dropdown
+    attributes:
+      label: Are you willing to work on this issue ?
+      description: This is absolutely not required, but we are happy to guide you in the contribution process.
+      options:
+        - "Yes I am willing to submit a PR!"
+        - "No, someone else can work on it"

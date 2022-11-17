@@ -62,7 +62,7 @@ const Index = () => {
                   )}
                 </div>
               ))
-            : data_lang == "zh"
+            : data_lang == "zh-CN"
             ? zh_data.map((i, index) => (
                 <div className={styles.items} key={index}>
                   <div className={styles.title} onClick={() => toggle(i)}>

@@ -7,7 +7,6 @@ import {
   useRouteMatch,
   useLocation
 } from "react-router-dom";
-import { lazily } from "react-lazily";
 import {
   TopBarWrapperStyle,
   SidebarWrapperStyle,
@@ -17,9 +16,7 @@ import {
 
 // import { GeneralLoading } from "../../../components";
 
-const { Sidebar, TopBar } = lazily(() =>
-  import("../../../components/protected")
-);
+import { Sidebar, TopBar } from "../../../components/protected";
 
 export default function Index() {
   const { workspaceId } = useParams();
@@ -37,6 +34,7 @@ export default function Index() {
     localStorage.setItem("currentWorkspace", workspaceId);
   }, [workspaceId]);
   useEffect(() => {
+    window.localStorage.setItem("lastLocation", location.pathname);
     const activePlugin = pluginsName.find(plugin =>
       location.pathname.includes(plugin)
     );
@@ -59,7 +57,6 @@ export default function Index() {
         <SidebarWrapperStyle>
           <Sidebar />
         </SidebarWrapperStyle>
-
         <WorkspaceWrapperStyle>
           <div id="zuri-plugin-load-section"></div>
           <Switch>

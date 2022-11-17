@@ -3,117 +3,61 @@ export default [
     key: "nav_pricing",
     en: "Pricing",
     de: "Preisgestaltung",
-    nl: "Prijzen",
     engb: "Pricing",
-    fr: "Tarification",
-    zh: "价钱",
-    ar: "التسعير",
-    es: "Precios",
-    it: "Prezzi",
-    iw: "תוֹסֶפֶת",
-    pt: "Preços"
+    fr: "Tarification"
   },
   {
     key: "nav_about",
     en: "About",
     de: "Über",
-    nl: "Wat betreft",
     engb: "About",
-    fr: "Sur",
-    zh: "关于",
-    ar: "عن",
-    es: "Sobre",
-    it: "Di",
-    iw: "על אודות",
-    pt: "Cerca de"
+    fr: "Sur"
   },
   {
     key: "nav_plugin",
     en: "Plugin",
     de: "Plugin",
-    nl: "Inpluggen",
     engb: "Plugin",
-    fr: "Brancher",
-    zh: "插入",
-    ar: "توصيل في",
-    es: "Enchufar",
-    it: "Collegare",
-    iw: "חיבור",
-    pt: "Plugar"
+    fr: "Brancher"
   },
   {
     key: "nav_downloads",
     en: "Downloads ",
     de: "Downloads",
-    nl: "Downloads",
-    engb: "Downloads ",
-    fr: "Téléchargements",
-    zh: "下载",
-    ar: "التحميلات",
-    es: "Descargas",
-    it: "Downloads.",
-    iw: "הורדות",
-    pt: "Transferências"
+    engb: "Downloads "
   },
   {
     key: "nav_contact",
     en: "Contact",
     de: "Kontakt",
-    nl: "Contact",
     engb: "Contact",
-    fr: "Contact",
-    zh: "接触",
-    ar: "اتصل",
-    es: "Contacto",
-    it: "Contatto",
-    iw: "איש קשר",
-    pt: "Contato"
+    fr: "Contact"
   },
   {
     key: "nav_signup",
     en: "Sign Up",
     de: "Anmeldung",
-    nl: "Inschrijven",
     engb: "Sign Up",
-    fr: "S'inscrire",
-    zh: "报名",
-    ar: "اشتراك",
-    es: "Inscribirse",
-    it: "Iscriviti",
-    iw: "הירשם",
-    pt: "Inscrever-se"
+    fr: "S'inscrire"
   },
   {
     key: "nav_login",
     en: "Login",
     de: "Anmeldung",
-    nl: "Log in",
     engb: "Login",
-    fr: "Connexion",
-    zh: "登录",
-    ar: "تسجيل الدخول",
-    es: "Acceso",
-    it: "Accedere",
-    iw: "התחברות",
-    pt: "Conecte-se"
+    fr: "Connexion"
   },
   {
     key: "nav_signout",
     en: "Sign Out",
     de: "Austragen",
-    nl: "Afmelden",
     engb: "Sign Out",
-    fr: "Se déconnecter",
-    zh: "登出",
-    ar: "خروج",
-    es: "Desconectar",
-    it: "Disconnessione",
-    iw: "התנתק",
-    pt: "Sair"
+    fr: "Se déconnecter"
   },
   {
-    key: "search_placeholder",
+    key: "search.placeholder",
     en: "Search Here",
-    fr: "Cherche ici"
+    fr: "Cherche ici",
+    de: "Suche hier"
   }
 ];

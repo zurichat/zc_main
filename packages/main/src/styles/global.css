@@ -6,8 +6,10 @@
   --primary-color-hover: rgba(0, 184, 124, 0.502);
   --primary-color-2: #e1fdf4;
   --secondary-color: #1264a3;
-  --body-color: #1d1c1d; /* Header color */
-  --body-shade: #1d1c1d; /* Header shade && Icon Color */
+  --body-color: #1d1c1d;
+  /* Header color */
+  --body-shade: #1d1c1d;
+  /* Header shade && Icon Color */
 
   /* text colors */
   --inactive-text: #b0afb0;
@@ -28,7 +30,7 @@
 body {
   box-sizing: border-box;
   margin: 0;
-  font-family: lato;
+  font-family: "Lato", sans-serif;
   margin-bottom: 4rem;
   /* background-color: black; */
 }
@@ -224,12 +226,12 @@ h6 {
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+.container:hover input~.checkmark {
   border: 1px var(--primary-color) solid;
 }
 
 /* When the checkbox is checked, add primary background */
-.container input:checked ~ .checkmark {
+.container input:checked~.checkmark {
   background-color: var(--primary-color);
   border-radius: 3px;
   border: 1px var(--primary-color) solid;
@@ -243,7 +245,7 @@ h6 {
 }
 
 /* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+.container input:checked~.checkmark:after {
   display: block;
 }
 
@@ -261,5 +263,4 @@ h6 {
   transform: rotate(45deg);
 }
 
-@media only screen and (max-width: 600px) {
-}
+@media only screen and (max-width: 600px) {}
