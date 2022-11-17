@@ -52,16 +52,21 @@ const DropDown = ({ categoryName, isOpen, toggleDropdown, button_url }) => {
         <div onClick={popup}>
           <AiOutlinePlus className={`${styles.icon}`} />
           {options ? (
-            <div className={`${styles.dropdown__menu}`}>
-              <a href={button_url} onClick={navigateToUrl}>
-                <p>Browse Channels</p>
-              </a>
-              <p onClick={room}>Create a Channel</p>
-            </div>
-          <p className={`mb-0 ${styles.dropDown__title}`} style={m_2px}>
-            {" "}
-            {categoryName}
-          </p>
+            <>
+              <div className={`${styles.dropdown__menu}`}>
+                <a href={button_url} onClick={navigateToUrl}>
+                  <p>Browse Channels</p>
+                </a>
+                <p onClick={room}>Create a Channel</p>
+              </div>
+              <p className={`mb-0 ${styles.dropDown__title}`} style={m_2px}>
+                {" "}
+                {categoryName}
+              </p>
+            </>
+          ) : (
+            ""
+          )}
           {/* <img src={infoIcon} alt="icon" role="button" /> */}
           {button_url ? (
             <a href={button_url} onClick={navigateToUrl}>
