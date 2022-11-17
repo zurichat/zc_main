@@ -16,13 +16,6 @@ const DropDown = ({ categoryName, isOpen, toggleDropdown, button_url }) => {
   const popup = () => setOptions(!options);
   const room = () => setNewRoom(!newRoom);
   const { t } = useTranslation();
-  // const [isOpen, setOpen] = useState(false)
-  // const [items,   setItems] = useState(data);
-  // const [selectedItem, setSelectedItem] = useState(null)
-
-  // const handleItemClick = id => {
-  //   selectedItem == id ? setSelectedItem(null) : setSelectedItem(id)
-  // }
 
   return (
     <div className={`row p-0 ${styles.dropDown} text-decoration-none `}>
@@ -48,7 +41,6 @@ const DropDown = ({ categoryName, isOpen, toggleDropdown, button_url }) => {
           />
           <p className={`mb-0 ${styles.dropDown__title}`}> {categoryName}</p>
         </div>
-        {/* <img src={infoIcon} alt="icon" role="button" /> */}
         <div onClick={popup}>
           <AiOutlinePlus className={`${styles.icon}`} />
           {options ? (
@@ -58,11 +50,12 @@ const DropDown = ({ categoryName, isOpen, toggleDropdown, button_url }) => {
               </a>
               <p onClick={room}>Create a Channel</p>
             </div>
-          <p className={`mb-0 ${styles.dropDown__title}`} style={m_2px}>
-            {" "}
-            {categoryName}
-          </p>
-          {/* <img src={infoIcon} alt="icon" role="button" /> */}
+          ) : (
+            <p className={`mb-0 ${styles.dropDown__title}`} style={m_2px}>
+              {" "}
+              {categoryName}
+            </p>
+          )}
           {button_url ? (
             <a href={button_url} onClick={navigateToUrl}>
               <AiOutlinePlus className={`${styles.icon}`} />
