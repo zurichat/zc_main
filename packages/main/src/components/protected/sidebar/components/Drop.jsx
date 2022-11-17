@@ -36,17 +36,10 @@ const DropDown = ({ categoryName, isOpen, toggleDropdown, button_url }) => {
             className={`${styles.icon} ${isOpen && styles.open}`}
             style={m_5px}
           />
-        </div>
-        <div
-          className={` d-flex align-items-center justify-content-between`}
-          onClick={toggleDropdown}
-        >
-          <TiArrowSortedDown
-            className={`d-flex align-items-center ${styles.icon} ${
-              isOpen && styles.open
-            }`}
-          />
-          <p className={`mb-0 ${styles.dropDown__title}`}> {categoryName}</p>
+          <p className={`mb-0 ${styles.dropDown__title}`} style={m_2px}>
+            {" "}
+            {categoryName}
+          </p>
         </div>
         {/* <img src={infoIcon} alt="icon" role="button" /> */}
         <div onClick={popup}>
@@ -59,22 +52,18 @@ const DropDown = ({ categoryName, isOpen, toggleDropdown, button_url }) => {
                 </a>
                 <p onClick={room}>Create a Channel</p>
               </div>
-              <p className={`mb-0 ${styles.dropDown__title}`} style={m_2px}>
-                {" "}
-                {categoryName}
-              </p>
             </>
           ) : (
             ""
           )}
           {/* <img src={infoIcon} alt="icon" role="button" /> */}
-          {button_url ? (
+          {/* {button_url ? (
             <a href={button_url} onClick={navigateToUrl}>
               <AiOutlinePlus className={`${styles.icon}`} />
             </a>
           ) : (
             ""
-          )}
+          )} */}
         </div>
       </div>
 
