@@ -31,15 +31,16 @@ const DropDown = ({ categoryName, isOpen, toggleDropdown, button_url }) => {
       <div
         className={`col-12 w-100 d-flex align-items-center justify-content-between ${styles.plugin__title}`}
       >
-        <div className={`d-flex align-items-center`}>
+        <div
+          className={` d-flex align-items-center justify-content-between`}
+          onClick={toggleDropdown}
+        >
           <TiArrowSortedDown
-            className={`${styles.icon} ${isOpen && styles.open}`}
-            style={m_5px}
+            className={`d-flex align-items-center ${styles.icon} ${
+              isOpen && styles.open
+            }`}
           />
-          <p className={`mb-0 ${styles.dropDown__title}`} style={m_2px}>
-            {" "}
-            {categoryName}
-          </p>
+          <p className={`mb-0 ${styles.dropDown__title}`}> {categoryName}</p>
         </div>
         {/* <img src={infoIcon} alt="icon" role="button" /> */}
         <div onClick={popup}>
