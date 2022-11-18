@@ -30,12 +30,12 @@ const SidebarPreference = () => {
             All Unreads
           </label>
         </div>
-        {/* <div className={styles.markbox}>
+        <div className={styles.markbox}>
           <label htmlFor="for-unread">
             <input type="checkbox" value="for-unread" />
             All DMs
           </label>
-        </div> */}
+        </div>
         <div className={styles.markbox}>
           <label htmlFor="for-unread">
             <input type="checkbox" value="for-unread" />
