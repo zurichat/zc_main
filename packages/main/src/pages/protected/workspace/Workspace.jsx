@@ -24,11 +24,11 @@ export default function Index() {
   const history = useHistory();
   const match = useRouteMatch(`/workspace/${workspaceId}`);
   const pluginsName = ["plugin-music"];
-  // useEffect(() => {
-  //   window.dispatchEvent(new Event("zuri-plugin-load"));
-  //   match.isExact &&
-  //     history.replace(`/workspace/${workspaceId}/plugin-chat/all-dms`);
-  // }, []);
+  useEffect(() => {
+    window.dispatchEvent(new Event("zuri-plugin-load"));
+    match.isExact &&
+      history.replace(`/workspace/${workspaceId}/plugin-chat/all-dms`);
+  }, []);
   // Temporary
   useEffect(() => {
     localStorage.setItem("currentWorkspace", workspaceId);
