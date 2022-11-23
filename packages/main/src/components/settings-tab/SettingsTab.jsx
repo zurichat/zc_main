@@ -7,7 +7,7 @@ import { AnimateSharedLayout } from "framer-motion";
 import SavePassword from "../save-password/SavePassword";
 import TwoFactor from "../two-factor/TwoFactor";
 import ChangeEmail from "../change-email/ChangeEmail";
-import Language from "./Language";
+import Language from "../language/Language";
 import UserName from "./UserName";
 import { getUser } from "../Utils/Common";
 
