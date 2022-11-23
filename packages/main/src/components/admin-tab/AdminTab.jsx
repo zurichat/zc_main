@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import styles from "../styles/adminTab.module.css";
+import styles from "../admin-tab/AdminTab.module.css";
 
 // components
 import OverviewTab from "../components/OverviewTab";
