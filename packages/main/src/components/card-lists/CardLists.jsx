@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from "react";
 
-import styles from "../styles/cardList.module.css";
+import styles from "../card-lists/CardList.module.css";
 
-import { ValidateCard } from "../Utils/Common";
+import { ValidateCard } from "../card-lists/utils/Common";
 import toast from "react-hot-toast";
-import { CardContext } from "../../../context/CardContext";
+import { CardContext } from "../../../../marketplace/src/context/CardContext";
 
 const CardList = () => {
   const { cardList, setCardList } = useContext(CardContext);
