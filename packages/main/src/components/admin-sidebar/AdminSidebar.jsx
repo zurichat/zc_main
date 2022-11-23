@@ -3,14 +3,14 @@ import styles from "../admin-sidebar/adminSidebar.module.css";
 import { Link, NavLink } from "react-router-dom";
 
 // image
-import avatar from "../assets/avatar.svg";
+import avatar from "../admin-sidebar/assets/avatar.svg";
 
 // icons
 
-import zuriLogo from "../assets/zuriLogo.svg";
-import grid from "../assets/grid.svg";
-import bouy from "../assets/bouy.svg";
-import la_rocket from "../assets/la_rocket.svg";
+import zuriLogo from "../admin-sidebar/assets/zuriLogo.svg";
+import grid from "../admin-sidebar/assets/grid.svg";
+import bouy from "../admin-sidebar/assets/bouy.svg";
+import la_rocket from "../admin-sidebar/assets/la_rocket.svg";
 
 import {
   FiAlertCircle,
@@ -32,7 +32,7 @@ import {
 } from "react-icons/fi";
 import { BsFillHeartFill } from "react-icons/bs";
 import { GrFormClose } from "react-icons/gr";
-import { getUser } from "../Utils/Common";
+import { getUser } from "../admin-sidebar/utils/Common";
 
 const AdminSidebar = ({ setModal, openModal }) => {
   const user = getUser();
