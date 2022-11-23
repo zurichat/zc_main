@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 //import YearMonthPicker from 'react-year-month-picker'
-import styles from "../styles/adminHistoryTab.module.css";
+import styles from "../history-tab/AdminHistoryTab.module.css";
 
 const HistoryTab = () => {
   const [scheduled, setScheduled] = useState(null);
