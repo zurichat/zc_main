@@ -204,3 +204,7 @@
   padding-right: 1rem;
 }
 
+.text_links, .btn{
+  text-decoration: none;
+}
+

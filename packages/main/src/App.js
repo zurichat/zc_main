@@ -28,8 +28,11 @@ import {
 import TermsOfService from "../src-old/pages/termsOfService/index";
 import SettingsHome from "../src-old/pages/admin/Settings/components/SettingsHome.js";
 import Analytics from "../src-old/pages/admin/Analytics/index.js";
-import Blogs from "../src-old/pages/Blogs/components/blogContent.jsx";
+import Blogs from "../src-old/pages/Blog/index.jsx";
 import DownloadApps from "../src-old/pages/download/index.js";
+import Help from "../src-old/pages/help/index.js";
+import Tour from "./pages/home/Home.jsx";
+import UserGroups from "../src-old/pages/admin/UserGroups.js";
 import AccountDeactivation from "../src-old/pages/settings/components/AcctDeactivation.js";
 import { useAuth } from "./auth/use-auth";
 
@@ -117,11 +120,20 @@ const App = () => (
           <ProtectedRoute exact path="/admin/stats">
             <Analytics />
           </ProtectedRoute>
+          <ProtectedRoute exact path="/">
+            <Tour />
+          </ProtectedRoute>
           <ProtectedRoute exact path="/download-apps">
             <DownloadApps />
           </ProtectedRoute>
           <ProtectedRoute exact path="/confirm-deactivation">
             <AccountDeactivation />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/help">
+            <Help />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings/usergroups">
+            <UserGroups />
           </ProtectedRoute>
 
           <ProtectedRoute exact path="/choose-workspace">

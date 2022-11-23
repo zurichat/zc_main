@@ -47,7 +47,6 @@ const AppsAndIntegrations = React.lazy(() =>
   import("../ignore/pages/apps-integration")
 );
 const Download = React.lazy(() => import("../ignore/pages/download"));
-const DownloadApps = React.lazy(() => import("../ignore/pages/download/utils"));
 const DownloadsMac = React.lazy(() =>
   import("../ignore/pages/download/DownloadsMac")
 );
@@ -312,7 +311,6 @@ const App = () => {
           <PrivateRoute path="/settings" exact component={Settings} />
           <PrivateRoute path="/admin/settings" exact component={SettingsHome} />
           <PrivateRoute path="/admin/settings/home" exact component={Home} />
-          <PrivateRoute path="/download-apps" exact component={DownloadApps} />
 
           <PrivateRoute
             path="/admin/name"

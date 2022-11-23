@@ -41,7 +41,7 @@ const Home = () => {
           <div>
             <Link
               to="/admin/settings/accountsProfile"
-              className=""
+              className={classes.text_links}
               style={{ display: "flex" }}
             >
               <div>
@@ -79,7 +79,11 @@ const Home = () => {
         <div className={classes.card}>
           {/* Settings and permissions*/}
           <div className="mt-2">
-            <Link to="/admin/settings" className="" style={{ display: "flex" }}>
+            <Link
+              to="/admin/settings"
+              className={classes.text_links}
+              style={{ display: "flex" }}
+            >
               <div>
                 <span
                   className={classes.settings_icon_holder}
@@ -113,7 +117,11 @@ const Home = () => {
           </div>
           {/* Manage workspace */}
           <div className="mt-2">
-            <Link to="/admin/stats" className="" style={{ display: "flex" }}>
+            <Link
+              to="/admin/stats"
+              className={classes.text_links}
+              style={{ display: "flex" }}
+            >
               <div>
                 <span
                   className={classes.settings_icon_holder}
@@ -149,7 +157,7 @@ const Home = () => {
           <div className="mt-2" style={{}}>
             <Link
               to="/admin/settings/billings"
-              className=""
+              className={classes.text_links}
               style={{ display: "flex" }}
             >
               <div>
@@ -226,7 +234,7 @@ const Home = () => {
           <div>
             <Link
               to="/admin/settings/customize"
-              className=""
+              className={classes.text_links}
               style={{ display: "flex" }}
             >
               <div>
@@ -262,7 +270,11 @@ const Home = () => {
 
           {/* Analytics  */}
           <div className="mt-2">
-            <Link to="/admin/stats" className="" style={{ display: "flex" }}>
+            <Link
+              to="/admin/stats"
+              className={classes.text_links}
+              style={{ display: "flex" }}
+            >
               <div>
                 <span
                   className={classes.settings_icon_holder}
@@ -300,7 +312,11 @@ const Home = () => {
         <div className={classes.card}>
           {/* Settings and permissions*/}
           <div className="mt-2">
-            <Link to="/admin/settings" className="" style={{ display: "flex" }}>
+            <Link
+              to="/admin/settings"
+              className={classes.text_links}
+              style={{ display: "flex" }}
+            >
               <div>
                 <span
                   className={classes.settings_icon_holder}
@@ -489,7 +505,7 @@ const Home = () => {
                   textAlign: "left"
                 }}
               >
-                <Link to="/tour">Tour</Link>
+                <Link to="/">Tour</Link>
               </li>
               <li
                 style={{
