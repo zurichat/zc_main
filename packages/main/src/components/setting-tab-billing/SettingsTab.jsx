@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { countries } from "../data/countries";
-import styles from "../styles/adminSettingsTab.module.css";
+import { countries } from "../setting-tab-billing/data/Countries";
+import styles from "../setting-tab-billing/AdminSettingsTab.module.css";
 import axios from "axios";
 
 const SettingsTab = () => {
