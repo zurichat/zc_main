@@ -27,7 +27,6 @@ import axios from "axios";
 import { StyledTabs } from "./MessageRoomDetailsDialog.styled";
 import { getSampleMemberList } from "~/utils/samples";
 import FileList from "./components/FileList";
-import mockData from "./mockData";
 
 function MessageRoomDetailsDialog({
   close,
