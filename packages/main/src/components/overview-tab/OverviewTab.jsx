@@ -3,14 +3,14 @@ import toast, { Toaster } from "react-hot-toast";
 import Loader from "react-loader-spinner";
 
 import styles from "../overview-tab/AdminOverview.module.css";
-import { authAxios } from "../Utils/Api";
+import { authAxios } from "../overview-tab/utils/Api";
 
-import { getUser, getCurrentWorkspace } from "../Utils/Common";
+import { getUser, getCurrentWorkspace } from "../overview-tab/utils/Common";
 
 // icons
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { FiCheck } from "react-icons/fi";
-import { CardContext } from "../../../context/CardContext";
+import { CardContext } from "../../../../marketplace/src/context/CardContext";
 
 const OverviewTab = ({ setActive, setOpenTab, openTab }) => {
   const currentWorkspace = getCurrentWorkspace();
