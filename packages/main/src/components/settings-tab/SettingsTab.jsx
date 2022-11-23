@@ -9,7 +9,7 @@ import TwoFactor from "../two-factor/TwoFactor";
 import ChangeEmail from "../change-email/ChangeEmail";
 import Language from "../language/Language";
 import UserName from "../user-name/UserName";
-import { getUser } from "../Utils/Common";
+import { getUser } from "../../utils/Common";
 
 const SettingsTab = () => {
   // const showTime = show ? <TimeZone /> : null
