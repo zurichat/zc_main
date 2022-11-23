@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AdminHeader from "../../../components/admin-header/AdminHeader";
 import AdminSidebar from "../../../components/admin-sidebar/AdminSidebar";
-import styles from "./styles/adminSettings.module.css";
+import styles from "../admin-settings/adminSettings.module.css";
 
 const AdminSettings = ({ children }) => {
   const [openModal, setModal] = useState(false);
