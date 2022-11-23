@@ -11,6 +11,7 @@
   display: flex;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 .MessageContainer .hoverItemsContainer {
   display: none;
 }

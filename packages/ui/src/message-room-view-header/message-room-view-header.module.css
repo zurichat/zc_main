@@ -1,5 +1,6 @@
 .plugin__header {
   /* width: inherit; */
+
   height: 44px;
   background-color: #00b87c;
   color: #fff;
@@ -12,29 +13,34 @@
   width: 100%;
   z-index: 1;
 }
+
 .plugin__header__title {
   display: flex;
   align-items: center;
   cursor: pointer;
   border-radius: 0.5em;
-  /* padding: 1em; */
 }
+
 .plugin__header__title:hover {
   background: #01d892;
 }
+
 .plugin__header__text {
   font-weight: 600;
   font-size: 1.8em;
 }
+
 .plugin__header__icon {
   width: 2.5em;
   margin-right: 1.5em;
   border-radius: 0.5em;
 }
+
 .plugin__header__arrow {
   margin-left: 0.3em;
   font-size: 2.5em;
 }
+
 .plugin__header__thumbnail {
   display: flex;
   align-items: center;
@@ -43,24 +49,29 @@
   padding: 1em;
   cursor: pointer;
 }
+
 .plugin__thumbnail {
   display: flex;
 }
+
 .plugin__thumbnail img {
   width: 2.5em;
   border-radius: 0.4em;
   border: 1px solid #01d892;
 }
+
 .plugin__thumbnail img:nth-child(1) {
   margin-right: -5px;
   z-index: 2;
   position: relative;
 }
+
 .plugin__header img:nth-child(2) {
   margin-right: -5px;
   z-index: 1;
   position: relative;
 }
+
 .plugin__header__count p {
   margin: 0;
   margin-left: 0.3em;

@@ -19,6 +19,7 @@ function MessageBoard({
   messages = [],
   onSendMessage,
   onSendAttachedFile,
+  navigateThread,
   onReact
 }) {
   const [showMoreOptions, setShowMoreOptions] = useState(false);
@@ -95,6 +96,7 @@ function MessageBoard({
               onEmojiClicked={handleEmojiClicked}
               message={message}
               currentUserId={currentUserId}
+              navigateThread={navigateThread}
             />
           ))}
           <div ref={messagesEndRef} />

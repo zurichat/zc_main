@@ -11,15 +11,17 @@ function MessagePane({
   onShowMoreOptions,
   onShowEmoji,
   onEmojiClicked,
-  currentUserId
+  currentUserId,
+  navigateThread
 }) {
   return (
     <div className={styles.MessageContainer}>
       <div className={styles.hoverItemsContainer}>
         <HoverItems
-          id={message.message_id}
+          id={message._id}
           handleShowMoreOptions={onShowMoreOptions}
           handleShowEmoji={onShowEmoji}
+          navThrend={navigateThread}
         />
       </div>
       <div className={styles.messageCardContainer}>

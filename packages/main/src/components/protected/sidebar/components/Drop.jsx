@@ -26,6 +26,7 @@ const DropDown = ({ categoryName, isOpen, toggleDropdown, button_url }) => {
             className={`${styles.icon} ${isOpen && styles.open}`}
           />
         </div>
+
         <div
           className={`w-100 d-flex align-items-center justify-content-between`}
         >

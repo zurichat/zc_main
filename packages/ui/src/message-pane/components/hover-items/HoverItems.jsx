@@ -1,9 +1,8 @@
 import styles from "./hover-items.module.css";
-
 import { Bookmark, More, NewEmoji, Reply, Share } from "@assets/index";
 
 export default function HoverItems(props) {
-  const { id, handleShowMoreOptions, handleShowEmoji } = props;
+  const { id, handleShowMoreOptions, handleShowEmoji, navThrend } = props;
 
   return (
     <>
@@ -11,7 +10,7 @@ export default function HoverItems(props) {
         <div onClick={event => handleShowEmoji(id, event)}>
           <img src={NewEmoji} alt="emoji imag" />
         </div>
-        <div>
+        <div onClick={event => navThrend(id)}>
           <img src={Reply} alt="reply image" />
         </div>
         <div>
