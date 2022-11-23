@@ -499,6 +499,7 @@ const Home = () => {
               >
                 <Link to="/download-apps">Download Apps</Link>
               </li>
+
               <li
                 style={{
                   display: "inline-block",
@@ -508,6 +509,7 @@ const Home = () => {
                 <Link to="/legal">Brand Guidelines</Link>
               </li>
             </div>
+
             <div className={classes.footer_links}>
               <li
                 style={{
@@ -517,6 +519,7 @@ const Home = () => {
               >
                 <Link to="/help">Help</Link>
               </li>
+
               <li
                 style={{
                   display: "inline-block",
@@ -536,6 +539,7 @@ const Home = () => {
                 <Link to="/pricing">Pricing</Link>
               </li>
             </div>
+
             <div className={classes.footer_links}>
               <li
                 style={{
@@ -545,6 +549,7 @@ const Home = () => {
               >
                 <Link to="/contact-us">Contact</Link>
               </li>
+
               <li
                 style={{
                   display: "inline-block",
@@ -553,6 +558,7 @@ const Home = () => {
               >
                 <Link to="/privacy">Policies</Link>
               </li>
+
               <li
                 style={{
                   display: "inline-block",
@@ -563,6 +569,8 @@ const Home = () => {
                   Our Blog
                 </Link>
               </li>
+            </div>
+            <div className={classes.footer_links}>
               <li
                 style={{
                   display: "inline-block",

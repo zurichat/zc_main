@@ -171,6 +171,7 @@
   flex-wrap: wrap;
  align-items: center;
  padding: 50px 0px;
+ width:100%;
 }
 
 .settings_home_footer{
@@ -178,16 +179,28 @@
   padding:0px 50px;
   display: flex !important;
   justify-content: space-between;
-  gap:30px;
+  gap:20px;
+  
   flex-wrap: wrap;
 }
 .settings_home_footer li a{
  padding: 0px !important;
- margin: 20px;
+ 
  text-decoration: none;
  color:rgb(52, 52, 52);
+}
+.settings_home_footer li a:hover{
+  color:rgb(38, 190, 147);
 }
 .footer_links{
   display: flex;
   flex-direction: column;
 }
+.footer_links:hover{
+  background-color: white!important;
+}
+.span_text{
+  margin: 0;
+  padding-right: 1rem;
+}
+
