@@ -5,7 +5,7 @@ import TimeZone from "../time-zone/TimeZone";
 import PreferenceWrapper from "../preference-wrapper/PreferenceWrapper";
 import { AnimateSharedLayout } from "framer-motion";
 import SavePassword from "../save-password/SavePassword";
-import TwoFactor from "./TwoFactor";
+import TwoFactor from "../two-factor/TwoFactor";
 import ChangeEmail from "./ChangeEmail";
 import Language from "./Language";
 import UserName from "./UserName";
