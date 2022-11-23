@@ -100,18 +100,21 @@
 }
 
 .btn_sale {
+  border: 2px solid #00b87c;
   text-transform: uppercase;
-  color: #00b87c;
-  margin-top: 2em;
+  color: #00ffaa;
+  margin-top: 2rem;
   font-weight: 600;
-  padding: 0.625em 1em;
+  padding: 10px 16px;
   background-color: #ffffff;
   border: 1px solid #00b87c;
   border-radius: 0.3rem;
+  width: 7rem;
+  height: 3rem;
 }
 .btn_sale:hover {
-  color: #ffffff;
-  background-color: #00b87c;
+  color: #00b87c;
+  background-color: rgba(255, 255, 255, 0.7);
   border: 2px solid #fff;
 }
 .signup_cta {
