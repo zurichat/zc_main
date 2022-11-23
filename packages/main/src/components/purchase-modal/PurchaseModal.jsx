@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import styles from "../styles/purchaseModal.module.css";
-import { authAxios } from "../Utils/Api";
-import { getCurrentWorkspace } from "../Utils/Common";
+import styles from "../purchase-modal/PurchaseModal.module.css";
+import { authAxios } from "../purchase-modal/utils/Api";
+import { getCurrentWorkspace } from "../purchase-modal/utils/Common";
 import toast from "react-hot-toast";
 
 function PurchaseModal({ setHelpModal }) {
