@@ -1,5 +1,5 @@
 .MessageContainer {
-  padding: 17px 16px;
+  padding: 14px 16px;
   position: relative;
 }
 
@@ -19,4 +19,5 @@
 .MessageContainer .emojiCardContainer {
   margin-left: 53px;
   display: flex;
+  flex-wrap: wrap;
 }
