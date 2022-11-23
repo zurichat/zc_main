@@ -475,62 +475,68 @@ const Home = () => {
             style={{
               listStyle: "none",
               fontSize: "1rem",
-              textAlign: "center",
+              textAlign: "left",
               margin: "4rem auto",
-              lineHeight: "2rem"
+              lineHeight: "2rem",
+              display: "inline-block"
             }}
           >
-            <li
-              style={{
-                display: "inline-block",
-                margin: "0.75rem"
-              }}
-            >
-              <Link to="/tour">Tour</Link>
-            </li>
-            <li
-              style={{
-                display: "inline-block",
-                margin: "0.75rem"
-              }}
-            >
-              <Link to="/download-apps">Download Apps</Link>
-            </li>
-            <li
-              style={{
-                display: "inline-block",
-                margin: "0.75rem"
-              }}
-            >
-              <Link to="/legal">Brand Guidelines</Link>
-            </li>
-            <li
-              style={{
-                display: "inline-block",
-                margin: "0.75rem"
-              }}
-            >
-              <Link to="/help">Help</Link>
-            </li>
-            <li
-              style={{
-                display: "inline-block",
-                margin: "0.75rem"
-              }}
-            >
-              <Link to="/confirm-deactivation" target="_blank">
-                API
-              </Link>
-            </li>
-            <li
-              style={{
-                display: "inline-block",
-                margin: "0.75rem"
-              }}
-            >
-              <Link to="/pricing">Pricing</Link>
-            </li>
-            <div>
+            <div className={classes.footer_links}>
+              <li
+                style={{
+                  display: "inline-block",
+                  margin: "0.75rem",
+                  textAlign: "left"
+                }}
+              >
+                <Link to="/tour">Tour</Link>
+              </li>
+              <li
+                style={{
+                  display: "inline-block",
+                  margin: "0.75rem"
+                }}
+              >
+                <Link to="/download-apps">Download Apps</Link>
+              </li>
+              <li
+                style={{
+                  display: "inline-block",
+                  margin: "0.75rem"
+                }}
+              >
+                <Link to="/legal">Brand Guidelines</Link>
+              </li>
+            </div>
+            <div className={classes.footer_links}>
+              <li
+                style={{
+                  display: "inline-block",
+                  margin: "0.75rem"
+                }}
+              >
+                <Link to="/help">Help</Link>
+              </li>
+              <li
+                style={{
+                  display: "inline-block",
+                  margin: "0.75rem"
+                }}
+              >
+                <Link to="/confirm-deactivation" target="_blank">
+                  API
+                </Link>
+              </li>
+              <li
+                style={{
+                  display: "inline-block",
+                  margin: "0.75rem"
+                }}
+              >
+                <Link to="/pricing">Pricing</Link>
+              </li>
+            </div>
+            <div className={classes.footer_links}>
               <li
                 style={{
                   display: "inline-block",
@@ -563,7 +569,7 @@ const Home = () => {
                   margin: "0.75rem"
                 }}
               >
-                <Link to="/session-signout">Sign Out</Link>
+                <Link to="/signout">Sign Out</Link>
               </li>
             </div>
           </ul>
