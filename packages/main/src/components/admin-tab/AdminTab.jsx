@@ -13,7 +13,7 @@ import ContactTab from "../contact-tab/ContactTab";
 
 // icons
 import { FiMenu } from "react-icons/fi";
-import { CardProvider } from "../../../context/CardContext";
+import { CardProvider } from "../../../../marketplace/src/context/CardContext";
 
 const AdminTab = () => {
   const [openTab, setOpenTab] = useState(false);
