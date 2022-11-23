@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
-import styles from "../styles/adminToken.module.css";
+import styles from "../tokens-tab/AdminToken.module.css";
 import DataTable from "react-data-table-component";
 import { AiOutlineInfoCircle } from "react-icons/ai";
-import { authAxios } from "../Utils/Api";
-import PurchaseModal from "./PurchaseModal";
-import { getToken, getUser, getCurrentWorkspace } from "../Utils/Common";
+import { authAxios } from "../tokens-tab/utils/Api";
+import PurchaseModal from "../purchase-modal/PurchaseModal";
+import {
+  getToken,
+  getUser,
+  getCurrentWorkspace
+} from "../tokens-tab/utils/Common";
 
 const columns = [
   {
