@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import styles from "../admin-tab/AdminTab.module.css";
 
 // components
-import OverviewTab from "../components/OverviewTab";
+import OverviewTab from "../overview-tab/OverviewTab";
 import SettingsTab from "../components/SettingsTab";
 import PaymentTab from "../components/PaymentTab";
 import MembersTab from "../components/MembersTab";
