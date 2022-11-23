@@ -1,5 +1,5 @@
 import { authAxios } from "./Api";
-import styles from "../styles/paymentMethod.module.css";
+import styles from "../styles/PaymentMethod.module.css";
 
 // images
 import mastercard from "../assets/Mastercard.svg";
