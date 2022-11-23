@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import styles from "./SettingsTab.module.css";
 import TimeZone from "../time-zone/TimeZone";
-import PreferenceWrapper from "./PreferenceWrapper";
+import PreferenceWrapper from "../preference-wrapper/PreferenceWrapper";
 import { AnimateSharedLayout } from "framer-motion";
 import SavePassword from "./SavePassword";
 import TwoFactor from "./TwoFactor";
