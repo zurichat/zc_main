@@ -2,14 +2,14 @@ import React, { useEffect, useState, useContext } from "react";
 
 import Cleave from "cleave.js/react";
 
-import cardBack from "../assets/cardBack.svg";
+import cardBack from "../payment-tab/assets/cardBack.svg";
 
-import styles from "../styles/paymentMethod.module.css";
-import CardList from "./CardLists";
+import styles from "../payment-tab/PaymentMethod.module.css";
+import CardList from "../card-lists/CardLists";
 import toast, { Toaster } from "react-hot-toast";
-import { ValidateCard } from "../Utils/Common";
+import { ValidateCard } from "../payment-tab/utils/Common";
 
-import { CardContext } from "../../../context/CardContext";
+import { CardContext } from "../../../../marketplace/src/context/CardContext";
 
 const PaymentTab = () => {
   const { cardLists, setCardList } = useContext(CardContext);
