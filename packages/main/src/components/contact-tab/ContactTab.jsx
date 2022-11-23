@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { BASE_URL } from "@zuri/utilities";
-import styles from "../styles/adminContactTab.module.css";
+import styles from "../contact-tab/AdminContactTab.module.css";
 import { RiUserFill } from "react-icons/ri";
 import { BiPlus } from "react-icons/bi";
 import axios from "axios";
 import { AiOutlineClose } from "react-icons/ai";
-import { getCurrentWorkspace, getToken } from "../Utils/Common";
+import { getCurrentWorkspace, getToken } from "../contact-tab/utils/Common";
 
 const ContactTab = () => {
   const [isAddingBilling, setIsAddingBilling] = useState(false);
