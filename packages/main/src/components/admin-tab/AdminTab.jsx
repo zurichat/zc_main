@@ -4,12 +4,12 @@ import styles from "../admin-tab/AdminTab.module.css";
 
 // components
 import OverviewTab from "../overview-tab/OverviewTab";
-import SettingsTab from "../components/SettingsTab";
-import PaymentTab from "../components/PaymentTab";
-import MembersTab from "../components/MembersTab";
-import HistoryTab from "../components/HistoryTab";
-import TokensTab from "../components/TokensTab";
-import ContactTab from "./ContactTab";
+import SettingsTab from "../setting-tab-billing/SettingsTab";
+import PaymentTab from "../payment-tab/PaymentTab";
+import MembersTab from "../members-tab/MembersTab";
+import HistoryTab from "../history-tab/HistoryTab";
+import TokensTab from "../tokens-tab/TokensTab";
+import ContactTab from "../contact-tab/ContactTab";
 
 // icons
 import { FiMenu } from "react-icons/fi";
