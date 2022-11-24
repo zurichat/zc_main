@@ -12,6 +12,7 @@ import Room from "./Room";
 import SingleRoom from "./SingleRoom";
 import Category from "./Category";
 import Starred from "./Starred";
+import { storeSideBarInfo } from "../../../../utils/cache-sidebar";
 
 const categories = [];
 
@@ -23,6 +24,25 @@ const Sidebar = props => {
   useEffect(() => {
     setnullValue(1);
   }, []);
+
+  // Update the local storage sidebar information anytime there's a change
+  useEffect(() => {
+    if (
+      props.state.user?.user?.email &&
+      props.state.sidebar &&
+      props.state.organization_info
+    ) {
+      storeSideBarInfo(props.state.user?.user?.email, {
+        sidebar: props.state.sidebar,
+        organization_info: props.state.organization_info
+      });
+    }
+  }, [
+    props.state.user?.user?.email,
+    props.state.sidebar,
+    props.state.organization_info,
+    storeSideBarInfo
+  ]);
 
   {
     //Listening for sidebar update
