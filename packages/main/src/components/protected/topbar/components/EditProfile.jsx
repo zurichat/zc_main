@@ -22,11 +22,12 @@ const EditProfile = () => {
   const [selectedTimezone, setSelectedTimezone] = useState({});
   const [links, setLinks] = useState([""]);
   const [state, setState] = useState({
-    name: user.name,
+    first_name: user.first_name,
+    last_name: user.last_name,
     display_name: user.display_name,
     role: user.role,
     image_url: user.image_url,
-    bio: "",
+    bio: user.bio,
     phone: user.phone,
     prefix: "",
     timezone: "",
@@ -35,6 +36,8 @@ const EditProfile = () => {
     loading: false,
     imageLoading: false
   });
+
+  const [image, setimage] = useState(defaultAvatar);
   const addList = () => {
     if (links.length < 5) {
       setLinks([...links, ""]);
@@ -52,14 +55,19 @@ const EditProfile = () => {
 
     if (file) {
       let fileReader = new FileReader();
-      fileReader.onload = function (event) {
-        avatarRef.current.src = event.target.result;
+      fileReader.onload = () => {
+        if (avatarRef.current) {
+          avatarRef.current.src = fileReader.result;
+        }
+
+        setUserProfileImage(fileReader.result);
+        setimage(fileReader.result);
       };
 
       fileReader.readAsDataURL(file);
       const imageReader = file;
 
-      const formData = new FormData();
+      let formData = new FormData();
       formData.append("image", imageReader);
       formData.append("height", 512);
       formData.append("width", 512);
@@ -116,7 +124,8 @@ const EditProfile = () => {
     e.preventDefault();
     setState({ ...state, loading: true });
     const data = {
-      name: state.name,
+      first_name: state.first_name,
+      last_name: state.last_name,
       display_name: state.display_name,
       phone: state.phone,
       bio: state.bio,
@@ -135,7 +144,6 @@ const EditProfile = () => {
     authAxios
       .patch(`/organizations/${orgId}/members/${user._id}/profile`, data)
       .then(res => {
-        // console.log(res)
         setState({ loading: false });
         toast.success("User Profile Updated Successfully", {
           position: "top-center"
@@ -159,7 +167,7 @@ const EditProfile = () => {
                 <div className="mobileAvataeCon">
                   <img
                     ref={avatarRef}
-                    src={userProfileImage ? userProfileImage : defaultAvatar}
+                    src={userProfileImage}
                     alt="profile-pic"
                     className="avatar"
                   />
@@ -169,19 +177,40 @@ const EditProfile = () => {
                 </div>
                 <div className="input-group mal-4">
                   <label
-                    htmlFor="name"
+                    htmlFor="first_name"
                     className="inputLabel"
                     style={{ color: "var(--text-color-bold)" }}
                   >
-                    Full Name
+                    First Name
                   </label>
                   <input
                     type="text"
                     className="input"
-                    id="name"
-                    defaultValue={state.name}
-                    onChange={e => setState({ name: e.target.value })}
-                    name="name"
+                    id="first_name"
+                    defaultValue={state.first_name}
+                    onChange={e =>
+                      setState({ ...state, first_name: e.target.value })
+                    }
+                    name="first_name"
+                  />
+                </div>
+                <div className="input-group mal-4">
+                  <label
+                    htmlFor="last_name"
+                    className="inputLabel"
+                    style={{ color: "var(--text-color-bold)" }}
+                  >
+                    Last Name
+                  </label>
+                  <input
+                    type="text"
+                    className="input"
+                    id="last_name"
+                    defaultValue={state.last_name}
+                    onChange={e =>
+                      setState({ ...state, last_name: e.target.value })
+                    }
+                    name="last_name"
                   />
                 </div>
               </div>
@@ -199,7 +228,9 @@ const EditProfile = () => {
                     className="input"
                     id="dname"
                     defaultValue={state.display_name}
-                    onClick={e => setState({ display_name: e.target.value })}
+                    onChange={e =>
+                      setState({ ...state, display_name: e.target.value })
+                    }
                     name="dname"
                   />
                   <p
@@ -213,7 +244,7 @@ const EditProfile = () => {
               </div>
               <div className="input-group mb-0">
                 <label
-                  htmlFor="what"
+                  htmlFor="bio"
                   className="inputLabel"
                   style={{ color: "var(--text-color-bold)" }}
                 >
@@ -221,11 +252,11 @@ const EditProfile = () => {
                 </label>
                 <input
                   type="text"
-                  onClick={e => setState({ what: e.target.value })}
-                  defaultValue={state.what}
+                  onChange={e => setState({ ...state, bio: e.target.value })}
+                  defaultValue={state.bio}
                   className="input"
-                  id="what"
-                  name="what"
+                  id="bio"
+                  name="bio"
                 />
                 <p className="para" style={{ color: "var(--text-color-gray)" }}>
                   Let people know what you do at <b>ZURI</b>
@@ -272,6 +303,7 @@ const EditProfile = () => {
                     }
                     className="phoneInput"
                     type="number"
+                    defaultValue={state.phone}
                   />
                 </div>
               </div>
@@ -321,7 +353,7 @@ const EditProfile = () => {
                 {links?.map((list, index) => (
                   <input type="text" className="input mb-3" key={index} />
                 ))}
-               
+
 18:51
 {links.length !== 5 && (
                   <p className="warning" onClick={addList}>
@@ -355,14 +387,7 @@ const EditProfile = () => {
                   ) : (
                     <div className="profile__img-wrapper">
                       <span className="pictureHeading">Profile photo</span>
-                      <img
-                        ref={avatarRef}
-                        className="img"
-                        src={
-                          userProfileImage ? userProfileImage : defaultAvatar
-                        }
-                        alt="profile-pic"
-                      />
+                      <img className="img" src={image} alt="profile-pic" />
                     </div>
                   )}
                 </div>
