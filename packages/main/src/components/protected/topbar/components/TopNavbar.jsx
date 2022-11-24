@@ -279,7 +279,7 @@ const TopNavbar = () => {
         </button>
       </BrandWrapper>
 
-      <div className="ms-4" style={{ flex: 1 }}>
+      <div style={{ flex: 1, marginLeft: 100 + "px" }}>
         {/* <BaseInput
           value={search}
           onChange={e => setSearch(e.target.value)}

@@ -19,7 +19,8 @@
   color: #000;
   position: fixed;
   top: inherit;
-  left: 1rem;
+  margin-top: -0.2rem;
+  left: 1.2rem;
   width: 100%;
   max-width: 281px;
   border: 1px solid #bebebe;
@@ -40,9 +41,11 @@
 }
 .modalSection {
   display: flex;
+  justify-content: center;
   padding: 5px auto;
   width: 100%;
   margin: 5px auto;
+  gap: 9px;
   /* padding: 0 1rem; */
   font-size: 15px;
   position: relative;
@@ -106,8 +109,6 @@ all:none;
   height: 15px;
   background: #e7e7e7;
   width: 100%;
-  margin-top: 5px;
-  margin-bottom: 10px;
 }
 
 .logo {
@@ -123,6 +124,9 @@ all:none;
   line-height: 18px;
 }
 
+.header {
+  padding: 10px;
+}
 .header span {
   color: #8c8c8c;
   font-size: 11px;
@@ -261,4 +265,14 @@ all:none;
   z-index: 1010;
   transition: all 5s ease-in 3s;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.editModalSection {
+  display: flex;
+  padding: 5px 15px;
+  width: 100%;
+  margin: 5px auto;
+  font-size: 15px;
+  position: relative;
+  cursor: pointer;
 }

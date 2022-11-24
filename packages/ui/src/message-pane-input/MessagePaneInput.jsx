@@ -4,6 +4,7 @@ import {
   EditorState,
   RichUtils,
   convertToRaw,
+  convertFromRaw,
   getDefaultKeyBinding,
   ContentState,
   Modifier
@@ -20,7 +21,8 @@ import "!style-loader!css-loader!@draft-js-plugins/mention/lib/plugin.css";
 
 // import suggestionStyles from "./suggestions.module.css"
 import "./message-editor-input.css";
-import Toolbar from "./components/Toolbar";
+import ToolbarBottom from "./components/ToolbarBottom";
+import ToolbarTop from "./components/ToolbarTop";
 import mentions from "./mentions.data";
 
 import createEmojiPlugin from "@draft-js-plugins/emoji";
@@ -35,12 +37,17 @@ const { EmojiSuggestions, EmojiSelect } = emojiPlugin;
 const mentionPlugin = createMentionPlugin({ mentionPrefix: "@" });
 const { MentionSuggestions } = mentionPlugin;
 
-function keyBindingFn(e) {
+function keyBindingFn(e, editorState) {
   if (e.code === "Enter") {
     if (e.shiftKey || e.nativeEvent.shiftKey) {
       return "newline";
     } else {
-      return "send";
+      if (
+        editorState.getEditorState().getCurrentContent().getPlainText("")
+          .length > 0
+      ) {
+        return "send";
+      }
     }
   }
   return getDefaultKeyBinding(e);
@@ -75,18 +82,56 @@ export const getResetEditorState = editorState => {
     newContentState,
     "remove-range"
   );
+  removeFromSessionStorage();
   return removeSelectedBlocksStyle(newState);
+};
+
+const loadFromSessionStorage = () => {
+  const editorStateID = "editorState_" + sessionStorage.getItem("currentRoom");
+  const sessionData = sessionStorage.getItem(editorStateID);
+  if (sessionData) {
+    return convertFromRaw(JSON.parse(sessionData));
+  }
+  return null;
+};
+
+const saveToSessionStorage = editorState => {
+  const currentRoom = sessionStorage.getItem("currentRoom");
+  const editorStateID = "editorState_" + currentRoom;
+  if (currentRoom) {
+    sessionStorage.setItem(
+      editorStateID,
+      JSON.stringify(convertToRaw(editorState))
+    );
+  }
+};
+
+const removeFromSessionStorage = () => {
+  const editorStateID = "editorState_" + sessionStorage.getItem("currentRoom");
+  sessionStorage.removeItem(editorStateID);
 };
 
 const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
   const [data, setData] = useState("");
-  const [editorState, setEditorState] = useState(() =>
-    EditorState.createEmpty()
-  );
+  const [editorState, setEditorState] = useState(() => {
+    const content = loadFromSessionStorage();
+    return content
+      ? EditorState.createWithContent(content)
+      : EditorState.createEmpty();
+  });
   const [showEmoji, setShowEmoji] = useState(false);
   const [suggestions, setSuggestions] = useState(users || mentions);
   const [suggestionsOpen, setSuggestionsOpen] = useState(false);
-  // console.log("field", editorState)
+
+  useEffect(() => {
+    const content = loadFromSessionStorage();
+    if (content) {
+      setEditorState(EditorState.createWithContent(content));
+    } else {
+      setEditorState(EditorState.createEmpty());
+    }
+  }, [sessionStorage.getItem("currentRoom")]);
+
   // Mention helpers
   const onOpenChange = useCallback(_open => {
     setSuggestionsOpen(_open);
@@ -98,6 +143,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
 
   const editorStates = editorState => {
     setEditorState(editorState);
+    saveToSessionStorage(editorState.getCurrentContent());
     const blocks = convertToRaw(editorState.getCurrentContent()).blocks;
     const value = blocks
       .map(block => (!block.text.trim() && "\n") || block.text)
@@ -125,7 +171,6 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
 
   const handleKeyCommand = (command, editorState) => {
     const newState = RichUtils.handleKeyCommand(editorState, command);
-
     if (!newState) {
       if (command === "newline") {
         const newEditorState = RichUtils.insertSoftNewline(editorState);
@@ -189,7 +234,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
           </Preview>
         ) : null}
         <div className="RichEditor-root">
-          <Toolbar
+          <ToolbarTop
             editorState={editorState}
             setEditorState={setEditorState}
             emojiSelect={<EmojiSelect />}
@@ -207,6 +252,16 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
             plugins={[emojiPlugin, mentionPlugin]}
           />
         </div>
+        <ToolbarBottom
+          editorState={editorState}
+          setEditorState={setEditorState}
+          emojiSelect={<EmojiSelect />}
+          sendMessageHandler={sendMessage}
+          sendAttachedFileHandler={onAttachFile}
+          sentAttachedFile={sentAttachedFile =>
+            setSentAttachedFile(sentAttachedFile)
+          }
+        />
         <MentionSuggestions
           open={suggestionsOpen}
           onOpenChange={onOpenChange}
@@ -239,7 +294,7 @@ const InputWrapper = styled.section`
   border: 1px solid #b0afb0;
   ${"" /* border: 1px solid hsla(0, 0%, 92%, 1); */}
   border-radius: 3px;
-  padding: 10px 18px 15px 18px;
+  padding: 10px 18px;
   ${"" /* width: calc(100% - 24px); */}/* padding-left: 8px;
 padding-top: 8px;
 padding-bottom: 8px; */

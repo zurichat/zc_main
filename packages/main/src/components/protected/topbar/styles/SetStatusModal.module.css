@@ -55,8 +55,7 @@
   color: white;
   margin-bottom: 20px;
   height: 49px;
-  padding-right: 25px;
-  padding-top: 10px;
+  padding: 1.7rem 1.4rem 1.7rem 0;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -69,7 +68,7 @@
   letter-spacing: 0em;
   text-align: left;
   color: white;
-  margin-left: 15px;
+  padding-left: 1.4rem;
 }
 .modalcontent {
   margin: 0 auto;
@@ -281,7 +280,7 @@
 }
 .statuscta {
   margin-top: 20px;
-  height: 48px;
+  height: 35px;
   border-radius: 3px;
   padding: 12px 18px;
   margin-right: 30px;
@@ -309,9 +308,9 @@
 }
 .clearstatus {
   margin-top: 20px;
-  height: 48px;
+  height: 35px;
   border-radius: 3px;
-  padding: 12px 18px;
+  padding: 8px 12px;
   margin-right: 30px;
   border: 1px solid #bebebe;
   background: #fff;
@@ -330,7 +329,7 @@
 }
 .inactivesave {
   margin-top: 20px;
-  height: 48px;
+  height: 35px;
   border-radius: 3px;
   padding: 12px 18px;
   margin-right: 30px;
