@@ -21,7 +21,8 @@ function MessageBoard({
   onSendMessage,
   onSendAttachedFile,
   onReact,
-  height
+  height,
+  thread
 }) {
   const [showMoreOptions, setShowMoreOptions] = useState(false);
   const [showEmoji, setShowEmoji] = useState(false);
@@ -87,6 +88,23 @@ function MessageBoard({
   return (
     <>
       <MessageBoardContainer height={height}>
+        {/* {thread ?
+         <div className="MsgBoard">
+          {Array.from(new Set(thread.map(a => a._id)))
+            .map(id => {
+              return thread.find(a => a._id === id);
+            })
+            .map((message, i) => (
+              <MessagePane
+                key={`message-item-${i}`}
+                onShowMoreOptions={handleShowMoreOptions}
+                onShowEmoji={handleShowEmoji}
+                onEmojiClicked={handleEmojiClicked}
+                message={message}
+                currentUserId={currentUserId}
+              />
+            ))}
+          <div ref={messagesEndRef} /> : <></>} */}
         <div className="MsgBoard">
           {Array.from(new Set(messages.map(a => a._id)))
             .map(id => {
@@ -104,7 +122,6 @@ function MessageBoard({
             ))}
           <div ref={messagesEndRef} />
         </div>
-
         {isLoadingMessages && (
           <div className="text-center">
             <div
@@ -116,7 +133,6 @@ function MessageBoard({
             </div>
           </div>
         )}
-
         <div className="input-text">
           <MessagePaneInput
             onSendMessage={handleSendMessage}
