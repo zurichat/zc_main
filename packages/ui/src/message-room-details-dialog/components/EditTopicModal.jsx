@@ -32,8 +32,6 @@ const EditTopicModal = ({ closeEdit, addTopic, setAddTopic }) => {
             placeholder="Add Topic"
           />
 
-          <input type="text" placeholder="test input" />
-
           <p>Let people know what this channel is for.</p>
 
           <ModalButtons>

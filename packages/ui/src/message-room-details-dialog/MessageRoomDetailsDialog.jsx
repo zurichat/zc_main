@@ -110,15 +110,15 @@ function MessageRoomDetailsDialog({
               </TabPanel>
             </TabPanels>
           </StyledTabs>
+          {showEditTopicModal && (
+            <EditTopicModal
+              addTopic={addTopic}
+              setAddTopic={setAddTopic}
+              closeEdit={toggleEditTopicModal}
+            />
+          )}
         </DialogContents>
       </DialogOverlays>
-      {showEditTopicModal && (
-        <EditTopicModal
-          addTopic={addTopic}
-          setAddTopic={setAddTopic}
-          closeEdit={toggleEditTopicModal}
-        />
-      )}
       {showEditDescriptionModal && (
         <EditDescriptionModal closeEdit={toggleEditDescriptionModal} />
       )}
@@ -156,7 +156,9 @@ function AboutPanel({
               Edit
             </EditLabel>
           </Topic>
-          <span>{addTopic !== "" ? addTopic : "Add a Topic"}</span>
+          <EditContent>
+            {addTopic !== "" ? addTopic : "Add a Topic"}
+          </EditContent>
         </EachSegment>
         <EachSegment>
           <Description>
