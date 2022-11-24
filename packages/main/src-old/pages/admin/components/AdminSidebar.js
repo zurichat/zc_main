@@ -177,23 +177,23 @@ const AdminSidebar = ({ setModal, openModal }) => {
             <FiBook className={styles.icon} />
             Manage members
           </Link>
-          <Link
+          {/* <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
             to="/admin/settings/usergroups"
           >
             <FiUsers className={styles.icon} />
             User groups
-          </Link>
-          <Link
+          </Link> */}
+          {/* <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
             to="/admin/invites"
           >
             <FiUserPlus className={styles.icon} />
             Invitations
-          </Link>
-          <NavLink
+          </Link> */}
+          {/* <NavLink
             exact
             onClick={() => setModal(!openModal)}
             activeClassName={styles.sidebarLinkActive}
@@ -202,39 +202,39 @@ const AdminSidebar = ({ setModal, openModal }) => {
           >
             <FiCreditCard className={styles.icon} />
             Billings
-          </NavLink>
-          <Link
+          </NavLink> */}
+          {/* <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
             to="/"
           >
             <FiScissors className={styles.icon} />
             Authentication
-          </Link>
-          <Link
+          </Link> */}
+          {/* <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
             to="/admin/settings/deprecation"
           >
             <FiScissors className={styles.icon} />
             Deprecation
-          </Link>
+          </Link> */}
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
+            to="/admin/settings/aboutworkspace"
           >
             <FiCheckSquare className={styles.icon} />
             About this workspace
           </Link>
-          <Link
+          {/* <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
             to="/"
           >
             <FiAlertCircle className={styles.icon} />
             Support for Transport layer security
-          </Link>
+          </Link> */}
         </div>
       </div>
       <div className={styles.sidebarMenu}>
