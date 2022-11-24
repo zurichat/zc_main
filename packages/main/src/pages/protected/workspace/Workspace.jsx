@@ -29,6 +29,7 @@ import {
   BsFillCaretDownFill,
   BsWindowSidebar
 } from "react-icons/bs";
+import { useMediaQuery } from "@chakra-ui/react";
 
 const cache = setupCache({
   // check if response header has a specification for caching
@@ -44,12 +45,15 @@ const instance = axios.create({
 });
 
 export default function Index() {
+  const [tablet] = useMediaQuery("(max-width: 769px");
   const { workspaceId } = useParams();
   const location = useLocation();
   const history = useHistory();
   const match = useRouteMatch(`/workspace/${workspaceId}`);
   const pluginsName = ["plugin-music"];
   const [workspaces, setWorkspaces] = useState([]);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
   const switchWorkspace = id => {
     console.log(id);
     window.location.href = `/workspace/${id}/plugin-chat/all-dms`;
@@ -73,7 +77,6 @@ export default function Index() {
         }
       );
 
-      console.log(response);
       let userSpace = response.data.data;
       setWorkspaces(userSpace);
     }
@@ -104,17 +107,27 @@ export default function Index() {
     fetchUserWorkspacesResponse();
   }, []);
 
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
   return (
     <>
       <GlobalWorkSpaceStyle />
       <TopBarWrapperStyle>
-        <TopBar />
+        <TopBar toggleSidebar={toggleSidebar} />
       </TopBarWrapperStyle>
 
       <div style={{ display: "flex", height: "calc(100vh - 48px)" }}>
         {/* only show extra side bar if (workspaces.length > 1) */}
         {workspaces && workspaces.length > 1 && (
-          <div id={`${styles.workspaceSidebar}`}>
+          <div
+            id={`${styles.workspaceSidebar}`}
+            {...(tablet &&
+              !sidebarOpen && {
+                className: styles.workspaceSidebarClosed
+              })}
+          >
             <div id={`${styles.workspaceBox}`}>
               {/* {workspaces} */}
               {workspaces?.map((workSpace, index) => (

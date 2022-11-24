@@ -24,6 +24,7 @@
 
 .sb__content {
   flex: 1;
+  padding-left: 8px;
 }
 
 .sb__resizer {

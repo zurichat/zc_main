@@ -25,7 +25,6 @@ const Sidebar = props => {
   const sidebarRef = useRef(null);
   const [isResizing, setIsResizing] = useState(false);
   const [sidebarWidth, setSidebarWidth] = useState(150);
-  const [showSidebar, setShowSidebar] = useState(true);
 
   const startResizing = useCallback(() => {
     setIsResizing(true);
@@ -52,9 +51,6 @@ const Sidebar = props => {
 
         // collapse the sidebar on further minimization
         if (newWidth <= 150) setSidebarWidth(0);
-        if (newWidth > 0) setShowSidebar(150);
-
-        console.log("sidebarWidth", newWidth);
       }
     },
     [isResizing]
@@ -180,7 +176,7 @@ const Sidebar = props => {
       onMouseDown={e => e.preventDefault()}
       className={`container-fluid ${styles.sb__container}`}
     >
-      {typeof sidebarWidth === "number" && sidebarWidth > 50 && (
+      {sidebarWidth > 0 && (
         <div className={styles.sb__content}>
           <Header state={props.state} />
           <div className={`${styles.subCon2}`}>
