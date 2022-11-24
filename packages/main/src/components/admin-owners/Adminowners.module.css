@@ -127,7 +127,7 @@ select {
   border: 1px solid rgba(29, 28, 29, 0.3);
   transition: border 80ms ease-out, box-shadow 80ms ease-out;
   box-sizing: border-box;
-  margin: 0 0 20px;
+  margin: 0 0 33px;
   padding: 4px 12px;
   height: 36px;
   padding: 0;
@@ -173,7 +173,9 @@ select {
   top: 1px;
 }
 .inputSearch {
-  flex-grow: 1;
+  width: 100%;
+  /* flex-basis: 22%; */
+  /* flex-grow: 1; */
   margin: 0;
   padding: 0 8px;
   border: 0 none !important;

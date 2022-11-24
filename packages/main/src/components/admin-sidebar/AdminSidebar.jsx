@@ -177,7 +177,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
             <FiBook className={styles.icon} />
             Manage members
           </Link>
-          <Link
+          {/* <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
             to="/admin/settings/usergroups"
@@ -218,23 +218,23 @@ const AdminSidebar = ({ setModal, openModal }) => {
           >
             <FiScissors className={styles.icon} />
             Deprecation
-          </Link>
+          </Link> */}
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
+            to="/admin/settings/aboutworkspace"
           >
             <FiCheckSquare className={styles.icon} />
             About this workspace
           </Link>
-          <Link
+          {/* <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
             to="/"
           >
             <FiAlertCircle className={styles.icon} />
             Support for Transport layer security
-          </Link>
+          </Link> */}
         </div>
       </div>
       <div className={styles.sidebarMenu}>
