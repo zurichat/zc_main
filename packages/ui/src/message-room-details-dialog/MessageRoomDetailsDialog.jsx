@@ -36,6 +36,7 @@ function MessageRoomDetailsDialog({
   channelName
 }) {
   const [showEditTopicModal, setShowEditTopicModal] = useState(false);
+  const [addTopic, setAddTopic] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
   const [showEditDescriptionModal, setEditDescriptionModal] = useState(false);
   const [showLeaveChannelModal, setShowLeaveChannelModal] = useState(false);
@@ -84,6 +85,7 @@ function MessageRoomDetailsDialog({
             <TabPanels>
               <TabPanel>
                 <AboutPanel
+                  addTopic={addTopic}
                   showEditModal={showEditTopicModal}
                   toggleEditTopicModal={() => {
                     setShowEditTopicModal(true);
@@ -111,7 +113,11 @@ function MessageRoomDetailsDialog({
         </DialogContents>
       </DialogOverlays>
       {showEditTopicModal && (
-        <EditTopicModal closeEdit={toggleEditTopicModal} />
+        <EditTopicModal
+          addTopic={addTopic}
+          setAddTopic={setAddTopic}
+          closeEdit={toggleEditTopicModal}
+        />
       )}
       {showEditDescriptionModal && (
         <EditDescriptionModal closeEdit={toggleEditDescriptionModal} />
@@ -131,7 +137,8 @@ function AboutPanel({
   closeModal,
   toggleEditTopicModal,
   toggleEditDescriptionModal,
-  toggleLeaveChannelModal
+  toggleLeaveChannelModal,
+  addTopic
 }) {
   const [showMore, setShowMore] = useState(false);
   return (
@@ -149,7 +156,7 @@ function AboutPanel({
               Edit
             </EditLabel>
           </Topic>
-          <Input type="text" placeholder="Add a topic" />
+          <span>{addTopic !== "" ? addTopic : "Add a Topic"}</span>
         </EachSegment>
         <EachSegment>
           <Description>

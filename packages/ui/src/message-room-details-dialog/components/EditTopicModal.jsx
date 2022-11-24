@@ -11,33 +11,33 @@ import {
   ModalTopic
 } from "../MessageRoomDetailsDialog.styled";
 
-const EditTopicModal = props => {
+const EditTopicModal = ({ closeEdit, addTopic, setAddTopic }) => {
+  const handleChange = e => {
+    setAddTopic(e.target.value);
+  };
+
   return (
     <ModalContainer>
       <TopicModal>
         <ModalTop>
           <ModalTopic>Topic</ModalTopic>
-          <CloseBtn
-            onClick={() => {
-              props.closeEdit();
-            }}
-          >
-            X
-          </CloseBtn>
+          <CloseBtn onClick={() => closeEdit()}>X</CloseBtn>
         </ModalTop>
         <Modalbody>
-          <input type="text" placeholder="Add Topic" />
+          <input
+            type="text"
+            name="topic"
+            value={addTopic}
+            onChange={handleChange}
+            placeholder="Add Topic"
+          />
+
+          <input type="text" placeholder="test input" />
 
           <p>Let people know what this channel is for.</p>
 
           <ModalButtons>
-            <CancelBtn
-              onClick={() => {
-                props.closeEdit();
-              }}
-            >
-              Cancel
-            </CancelBtn>
+            <CancelBtn onClick={() => closeEdit()}>Cancel</CancelBtn>
             <AcceptBtn>Save</AcceptBtn>
           </ModalButtons>
         </Modalbody>
