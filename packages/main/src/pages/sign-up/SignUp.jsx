@@ -156,7 +156,7 @@ export default function Index() {
               // onFocus={displayImage}
             />
             <span className={`${styles.tosText}`}>
-              {t("privacy_agreement")}
+              git add .{t("privacy_agreement")}
               {""}
               <Link to="/terms">
                 {t("terms_of_service")}
@@ -166,7 +166,7 @@ export default function Index() {
               <Link to="/privacy">
                 {" "}
                 {""}
-                {t("privacy")}
+                {t("privacy_policy")}
               </Link>
             </span>
           </div>

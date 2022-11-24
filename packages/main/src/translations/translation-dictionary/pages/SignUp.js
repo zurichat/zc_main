@@ -210,16 +210,16 @@ export default [
     pt: "Termos de serviços"
   },
   {
-    key: "privacy",
-    en: "Privacy",
-    de: "Datenschutz",
-    nl: "Privacy",
-    engb: "Privacy",
-    fr: "Vie privée",
+    key: "privacy_policy",
+    en: "Privacy Policy",
+    de: "Datenschutzbestimmungen",
+    nl: "Privacybeleid",
+    engb: "Privacy Policy",
+    fr: "Politique de confidentialité",
     zh: "隐私",
     ar: "الخصوصيه",
-    es: "Privacidad",
-    it: "La privacy",
-    pt: "Privacidade"
+    es: "Política de privacidad",
+    it: "Informativa sulla privacy",
+    pt: "Política de Privacidade"
   }
 ];
