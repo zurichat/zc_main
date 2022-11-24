@@ -1,0 +1,189 @@
+/* .adminowners {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 1rem;
+}
+
+.heading {
+  font-size: 15px;
+  font-size: 0.8rem;
+  padding: 0;
+  margin: 0;
+}
+.rolesearch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.select {
+  border: 1px solid black;
+  border-radius: 0.2rem;
+  padding: 0.4rem;
+}
+.search {
+  width: 400px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+}
+.searchIcon {
+  font-size: 15px;
+}
+
+.input {
+  width: 60%;
+  outline: none;
+  border: none;
+  margin-left: 1rem;
+  width: 40%;
+  border: 1px solid rgb(112, 113, 112);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+}
+
+.input {
+  width: 100%;
+  outline: none;
+  margin: 0 0 0 0.5rem;
+}
+.icon {
+  color: rgb(112, 113, 112);
+}
+
+.owner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(186, 186, 186);
+  margin: 1.5rem 0;
+  padding: 0.5rem;
+}
+
+.nameEmail {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: center;
+  gap: 1rem;
+}
+
+.name,
+.email,
+.roleText {
+  padding: 0;
+  margin: 0;
+}
+
+.name {
+  color: black;
+  font-weight: bold;
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+} */
+
+/* Admin and Owners Styling */
+.container {
+  padding: 24px;
+  min-height: 50vh;
+  box-sizing: border-box;
+  display: block;
+}
+
+.tabContainer {
+  display: block;
+}
+.topContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+label {
+  display: block;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.sortBy {
+  display: block;
+  padding-bottom: 8px;
+}
+
+select {
+  border-radius: 4px;
+  border: 1px solid rgba(29, 28, 29, 0.3);
+  transition: border 80ms ease-out, box-shadow 80ms ease-out;
+  box-sizing: border-box;
+  margin: 0 0 20px;
+  padding: 4px 12px;
+  height: 36px;
+  padding: 0;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1.86666667;
+  align-items: center;
+  background: #fff;
+  display: flex;
+  font-weight: 400;
+  justify-content: space-between;
+  outline: none;
+}
+.search {
+  width: 300px;
+  display: block;
+}
+.searchContainer {
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid rgba(29, 28, 29, 0.3);
+  border-radius: 4px;
+  color: #616061;
+  display: flex;
+  padding: 0 8px;
+  transition: border 80ms ease-out, box-shadow 80ms ease-out;
+  font-size: 15px;
+  line-height: 1.46668;
+  font-weight: 400;
+  height: 36px;
+}
+
+.icon {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  color: #616061;
+  font-size: 15px;
+  line-height: 1.46668;
+  font-weight: 400;
+  top: 1px;
+}
+.inputSearch {
+  flex-grow: 1;
+  margin: 0;
+  padding: 0 8px;
+  border: 0 none !important;
+  font-size: inherit;
+  outline: none;
+}
+
+.input-search::placeholder {
+  text-overflow: ellipsis;
+  color: #1d1c1d;
+  background-color: inherit;
+}
+/* End of Admin and Owners Styling */
