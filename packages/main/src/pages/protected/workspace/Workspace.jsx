@@ -40,6 +40,7 @@ export default function Index() {
     console.log(id);
     window.location.href = `/workspace/${id}/plugin-chat/all-dms`;
   };
+
   const getAcronymn = sentence => {
     let matches = sentence.match(/\b(\w)/g); // ['J','S','O','N']
     let acronym = matches.join("");
@@ -47,10 +48,10 @@ export default function Index() {
   };
 
   const fetchUserWorkspacesResponse = async () => {
-    let userData = JSON.parse(localStorage.getItem("userData"));
+    let userData = JSON.parse(sessionStorage.getItem("user"));
     if (userData) {
       let response = await axios.get(
-        `https://api.zuri.chat/users/${userData.user.email}/organizations`,
+        `https://api.zuri.chat/users/${userData.email}/organizations`,
         {
           headers: {
             Authorization: `Bearer ${userData.token}`
@@ -59,7 +60,6 @@ export default function Index() {
       );
       let userSpace = response.data.data;
       setWorkspaces(userSpace);
-      console.log(userSpace);
     }
   };
 
