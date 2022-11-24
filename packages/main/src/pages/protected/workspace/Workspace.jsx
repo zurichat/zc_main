@@ -17,6 +17,7 @@ import {
 } from "./Workspace.style";
 import styles from "./Workspace.module.css";
 import axios from "axios";
+import { setupCache } from "axios-cache-adapter";
 
 // import { GeneralLoading } from "../../../components";
 
@@ -28,6 +29,19 @@ import {
   BsFillCaretDownFill,
   BsWindowSidebar
 } from "react-icons/bs";
+
+const cache = setupCache({
+  // check if response header has a specification for caching
+  readHeaders: true,
+  // if not, cache API response for 3 minutes
+  maxAge: 3 * 60 * 1000,
+  // {debug: true} logs caching info to console.
+  debug: false
+});
+
+const instance = axios.create({
+  adapter: cache.adapter
+});
 
 export default function Index() {
   const { workspaceId } = useParams();
@@ -50,7 +64,7 @@ export default function Index() {
   const fetchUserWorkspacesResponse = async () => {
     let userData = JSON.parse(sessionStorage.getItem("user"));
     if (userData) {
-      let response = await axios.get(
+      let response = await instance.get(
         `https://api.zuri.chat/users/${userData.email}/organizations`,
         {
           headers: {
@@ -58,6 +72,8 @@ export default function Index() {
           }
         }
       );
+
+      console.log(response);
       let userSpace = response.data.data;
       setWorkspaces(userSpace);
     }
