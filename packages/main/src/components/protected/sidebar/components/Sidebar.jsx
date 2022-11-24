@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "../styles/Sidebar.module.css";
+import { useTranslation } from "react-i18next";
 
 import threadIcon from "../assets/icons/thread-icon.svg";
 import dmIcon from "../assets/icons/dm-icon.svg";
@@ -18,6 +19,7 @@ const categories = [];
 
 const Sidebar = props => {
   let currentWorkspace = localStorage.getItem("currentWorkspace");
+  const { t } = useTranslation();
 
   const [nullValue, setnullValue] = useState(0);
 
@@ -77,6 +79,18 @@ const Sidebar = props => {
     "others"
   ];
 
+  const categoriesTransDict = {
+    games: "games",
+    utility: "utility",
+    tools: "tools",
+    entertainment: "entertainment",
+    sales: "sales",
+    productivity: "productivity",
+    channels: "channels",
+    "direct messages": "direct_messages",
+    others: "others"
+  };
+
   var singleItems = [];
   var categorizedItems = [];
   var starredRooms = [];
@@ -108,7 +122,7 @@ const Sidebar = props => {
         categorizedItems.push(
           <Category
             key={categoryData[0]?.name}
-            name={key}
+            name={categoriesTransDict[key]}
             data={categoryData}
           />
         );
@@ -137,16 +151,19 @@ const Sidebar = props => {
       <div className={`${styles.subCon2}`}>
         <>
           <SingleRoom
-            name="Threads"
+            name={`${t("workspace_chat.threads")}`}
             image={threadIcon}
             link={`/workspace/${currentWorkspace}/plugin-chat/threads`}
           />
           <SingleRoom
-            name="All Dms"
+            name={`${t("workspace_chat.alldms")}`}
             image={dmIcon}
             link={`/workspace/${currentWorkspace}/plugin-chat/all-dms`}
           />
-          <SingleRoom name="Drafts" image={draftIcon} />
+          <SingleRoom
+            name={`${t("workspace_chat.drafts")}`}
+            image={draftIcon}
+          />
 
           <Starred starredRooms={starredRooms} />
           {singleItems}
