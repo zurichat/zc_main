@@ -5,15 +5,12 @@
   color: #fff;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: space-between; */
   border: 1px solid #007b53;
 }
 
 #workspaceBox {
   height: 75%;
   padding: 0 10px 0 20px;
-  /* overflow-y: scroll; */
 }
 
 .workspaceInfo {

@@ -83,7 +83,6 @@ export default function Index() {
   }, [location.pathname]);
   useEffect(() => {
     fetchUserWorkspacesResponse();
-    // let userSpaces = JSON.parse(localStorage.getItem("userWorkspaces"));
   }, []);
 
   return (
