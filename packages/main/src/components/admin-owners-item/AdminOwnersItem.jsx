@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "../styles/adminOwnersItem.module.css";
-import avatar from "../assets/avatar.svg";
+import styles from "../admin-owners-item/AdminOwnersItem.module.css";
+import avatar from "../admin-owners-item/assets/avatar.svg";
 
 const AdminOwnersItem = ({ user }) => {
   return (
