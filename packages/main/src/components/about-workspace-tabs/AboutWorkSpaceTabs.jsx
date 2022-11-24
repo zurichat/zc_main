@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
-import styles from "../styles/aboutWorkspaceTab.module.css";
+import styles from "../about-workspace-tabs/aboutWorkspaceTab.module.css";
 
 // components
-import RetentionAndExports from "../components/RetentionAndExports";
-import AdminOwners from "./AdminOwners";
-import OverviewWorkspace from "../components/OverviewWorkspace";
+import RetentionAndExports from "../retention-and-exports/RetentionAndExports";
+import AdminOwners from "../admin-owners/AdminOwners";
+import OverviewWorkspace from "../overview-workspace/OverviewWorkspace";
 
 // icons
 import { FiMenu } from "react-icons/fi";
-import { CardProvider } from "../../../context/CardContext";
+import { CardProvider } from "../../../../marketplace/src/context/CardContext";
 
 const AboutWorkSpaceTabs = ({
   organizationDetails,
