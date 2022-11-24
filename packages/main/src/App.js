@@ -33,6 +33,7 @@ import DownloadApps from "../src-old/pages/download/index.js";
 import Help from "../src-old/pages/help/index.js";
 import Tour from "./pages/home/Home.jsx";
 import UserGroups from "../src-old/pages/admin/UserGroups.js";
+import ManageMembers from "../src-old/pages/admin/manage_members/components/ManageMembers.js";
 import AccountDeactivation from "../src-old/pages/settings/components/AcctDeactivation.js";
 import { useAuth } from "./auth/use-auth";
 
@@ -134,6 +135,9 @@ const App = () => (
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/usergroups">
             <UserGroups />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings/managemembers">
+            <ManageMembers />
           </ProtectedRoute>
 
           <ProtectedRoute exact path="/choose-workspace">

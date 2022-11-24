@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
+* {
+  font-family: "Lato", sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 70vh;
+  margin-bottom: 5em;
+}
+a,
+.email,
+.bigLetter h1,
+.brandhub {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0em;
+}
+.email {
+  height: 14px;
+  width: 250px;
+  top: 82px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  margin-left: auto;
+  margin-top: 1.5em;
+}
+
+a {
+  color: #00b87c;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 17px;
+}
+
+.centerWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 15em;
+  margin: 4em 0 10em 0;
+}
+
+.centerWrapper p {
+  padding: 0 2em 0 2em;
+}
+.bigLetter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  left: 167px;
+  top: 264px;
+  background: #c4c4c4;
+  border-radius: 3px;
+}
+.bigLetter h1 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+  text-align: left;
+  color: #333333;
+}
+.openZuri {
+  font-size: 18px;
+}
+.brandhub,
+.openZuriDesktop,
+.logoContainer {
+  display: none;
+}
+
+/* Desktop view  */
+@media screen and (min-width: 756px) {
+  .openZuri {
+    display: none;
+  }
+
+  .brandhub,
+  .openZuriDesktop,
+  .logoContainer {
+    display: block;
+  }
+  .brandhub {
+    font-size: 48px;
+    font-weight: 700;
+    font-family: Lato;
+    font-style: normal;
+    line-height: 54px;
+    color: #333333;
+  }
+
+  .openZuriDesktop {
+    color: #333333;
+    font-size: 18px;
+  }
+
+  .logoContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100px;
+    width: 200px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 33.4983px;
+    color: #333333;
+    justify-self: flex-start;
+  }
+
+  .zuriLogo {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-image: url(../assets/zuriicon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .centerWrapper {
+    min-height: 25em;
+    margin: 0em 0 10em 0;
+  }
+
+  .bigLetter {
+    width: 102px;
+    height: 102px;
+  }
+}

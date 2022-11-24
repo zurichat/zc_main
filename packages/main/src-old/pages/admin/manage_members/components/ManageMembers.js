@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { GetWorkspaceUsers } from "@zuri/utilities";
 import Table from "./Table";
 import AdminSettings from "../..";
-import UserOrganization from "../../../create-workspace/components/UserOrganization";
+import UserOrganization from "../../../createworkspace/components/UserOrganization";
 import { authAxios } from "../../Utils/Api";
 import { getUser, getCurrentWorkspace } from "../../Utils/Common";
 
