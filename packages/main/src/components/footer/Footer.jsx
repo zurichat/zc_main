@@ -57,7 +57,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Link to="/plugins">{t("nav_plugin")}</Link>
+                <Link to="/plugins">{t("footer_plugin")}</Link>
               </li>
             </ul>
           </div>
