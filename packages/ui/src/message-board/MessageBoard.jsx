@@ -87,20 +87,17 @@ function MessageBoard({
     <>
       <MessageBoardContainer>
         <div className="MsgBoard">
-          {Array.from(new Set(messages.map(a => a._id)))
-            .map(id => {
-              return messages.find(a => a._id === id);
-            })
-            .map((message, i) => (
-              <MessagePane
-                key={`message-item-${i}`}
-                onShowMoreOptions={handleShowMoreOptions}
-                onShowEmoji={handleShowEmoji}
-                onEmojiClicked={handleEmojiClicked}
-                message={message}
-                currentUserId={currentUserId}
-              />
-            ))}
+          {messages.map((message, i) => (
+            <MessagePane
+              key={`message-item-${i}`}
+              onShowMoreOptions={handleShowMoreOptions}
+              onShowEmoji={handleShowEmoji}
+              onEmojiClicked={handleEmojiClicked}
+              message={message}
+              currentUserId={currentUserId}
+              navigateThread={navigateThread}
+            />
+          ))}
           <div ref={messagesEndRef} />
         </div>
 
