@@ -6,6 +6,7 @@ import axios from "axios";
 import { useDropzone } from "react-dropzone";
 import { getUserInfo, BASE_API_URL } from "@zuri/utilities";
 import { Alert, downIcon, arrowRight } from "../assets";
+
 const activeStyle = {
   borderColor: "#2196f3"
 };
