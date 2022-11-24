@@ -25,6 +25,7 @@ import DownloadWindows from "./pages/DownloadWindows";
 import Pricing from "./pages/Pricing";
 
 import Footer from "./components/Footer";
+import FAQ from "./components/FAQ";
 import NavBar from "./components/NavBar";
 import WorkspaceChat from "./pages/WorkspaceChat";
 import SideBar from "./components/SideBar";
@@ -68,7 +69,8 @@ const Translations = [
   ...NavBar,
   ...Footer,
   ...WorkspaceChat,
-  ...SideBar
+  ...SideBar,
+  ...FAQ
 ];
 
 Translations.forEach(o => {
