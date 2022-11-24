@@ -24,7 +24,8 @@ const Sidebar = props => {
 
   const sidebarRef = useRef(null);
   const [isResizing, setIsResizing] = useState(false);
-  const [sidebarWidth, setSidebarWidth] = useState("100%");
+  const [sidebarWidth, setSidebarWidth] = useState(150);
+  const [showSidebar, setShowSidebar] = useState(true);
 
   const startResizing = useCallback(() => {
     setIsResizing(true);
@@ -40,13 +41,20 @@ const Sidebar = props => {
   const resize = useCallback(
     mouseMoveEvent => {
       if (isResizing) {
-        setSidebarWidth(
+        const newWidth =
           mouseMoveEvent.clientX -
-            sidebarRef.current.getBoundingClientRect().left
-        );
+          sidebarRef.current.getBoundingClientRect().left;
+
+        setSidebarWidth(() => newWidth);
 
         // use the col-resize cursor on the UI while resizing
         document.querySelector("body").style.cursor = "col-resize";
+
+        // collapse the sidebar on further minimization
+        if (newWidth <= 150) setSidebarWidth(0);
+        if (newWidth > 0) setShowSidebar(150);
+
+        console.log("sidebarWidth", newWidth);
       }
     },
     [isResizing]
@@ -172,31 +180,33 @@ const Sidebar = props => {
       onMouseDown={e => e.preventDefault()}
       className={`container-fluid ${styles.sb__container}`}
     >
-      <div className={styles.sb__content}>
-        <Header state={props.state} />
-        <div className={`${styles.subCon2}`}>
-          <>
-            <SingleRoom
-              name={`${t("workspace_chat.threads")}`}
-              image={threadIcon}
-              link={`/workspace/${currentWorkspace}/plugin-chat/threads`}
-            />
-            <SingleRoom
-              name={`${t("workspace_chat.alldms")}`}
-              image={dmIcon}
-              link={`/workspace/${currentWorkspace}/plugin-chat/all-dms`}
-            />
-            <SingleRoom
-              name={`${t("workspace_chat.drafts")}`}
-              image={draftIcon}
-            />
+      {typeof sidebarWidth === "number" && sidebarWidth > 50 && (
+        <div className={styles.sb__content}>
+          <Header state={props.state} />
+          <div className={`${styles.subCon2}`}>
+            <>
+              <SingleRoom
+                name={`${t("workspace_chat.threads")}`}
+                image={threadIcon}
+                link={`/workspace/${currentWorkspace}/plugin-chat/threads`}
+              />
+              <SingleRoom
+                name={`${t("workspace_chat.alldms")}`}
+                image={dmIcon}
+                link={`/workspace/${currentWorkspace}/plugin-chat/all-dms`}
+              />
+              <SingleRoom
+                name={`${t("workspace_chat.drafts")}`}
+                image={draftIcon}
+              />
 
-            <Starred starredRooms={starredRooms} />
-            {singleItems}
-            {categorizedItems}
-          </>
+              <Starred starredRooms={starredRooms} />
+              {singleItems}
+              {categorizedItems}
+            </>
+          </div>
         </div>
-      </div>
+      )}
       <div className={styles.sb__resizer} onMouseDown={startResizing} />
     </div>
   );
