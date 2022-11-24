@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./NewsLetterSubscribtionThankYouModal.module.css";
+import { useTranslation } from "react-i18next";
 
 import NewsletterSubscribedIcon from "./assets/newsletter-mail-icon.svg";
 
@@ -14,6 +15,7 @@ export default function NewsLetterSubscribtionThankYouModal({
       setDisplayModal(false);
     }
   };
+  const { t } = useTranslation();
 
   return (
     <>
@@ -38,11 +40,11 @@ export default function NewsLetterSubscribtionThankYouModal({
                     />
                   </div>
                   <h3 className={`text-center my-4 ${styles.modalHeading}`}>
-                    Thank you for subscribing!
+                    {t("thank_you")}
                   </h3>
                   <p className={`text-center ${styles.modalText}`}>
-                    Now, you'll be the first to receive updates <br /> and
-                    unique offers from the <br /> Zuri Chat team.
+                    {t("modal_text1")} <br /> {t("modal_text2")} <br />{" "}
+                    {t("modal_text3")}
                   </p>
                 </div>
               </div>
