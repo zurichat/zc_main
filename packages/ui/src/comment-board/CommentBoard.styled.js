@@ -7,11 +7,13 @@ const CommentBoardWrapper = styled.aside`
 
   width: 399px;
   z-index: 999;
-
+  margin-top: 50px;
   margin-left: 8px;
   background-color: #e5e5e5;
-  height: 92vh;
+  /* height: 92vh; */
   padding: 0 0 20px 0;
+  overflow-y: scroll;
+  overflow-x: none;
 `;
 const CommentBoardHeader = styled.header`
   background: hsla(160, 100%, 36%, 1);
