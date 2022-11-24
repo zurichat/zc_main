@@ -8,6 +8,7 @@ import { MessageBoardContainer } from "./MessageBoard.styled";
 import MoreMenu from "./components/more-menu/MoreMenu";
 import Overlay from "./components/overlay/Overlay";
 import EmojiPicker from "../message-room-emoji-picker/MessageRoomEmojiPicker";
+import { Link } from "react-router-dom";
 
 /**
  * Message Board Component
@@ -19,7 +20,8 @@ function MessageBoard({
   messages = [],
   onSendMessage,
   onSendAttachedFile,
-  onReact
+  onReact,
+  height
 }) {
   const [showMoreOptions, setShowMoreOptions] = useState(false);
   const [showEmoji, setShowEmoji] = useState(false);
@@ -84,7 +86,7 @@ function MessageBoard({
 
   return (
     <>
-      <MessageBoardContainer>
+      <MessageBoardContainer height={height}>
         <div className="MsgBoard">
           {Array.from(new Set(messages.map(a => a._id)))
             .map(id => {
