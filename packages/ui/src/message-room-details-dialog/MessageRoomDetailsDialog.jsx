@@ -245,7 +245,9 @@ export function MembersPanel({ config }) {
   const [selectedMember, setSelectedMember] = useState(null);
   const [isLoading, setisLoading] = useState(false);
   const [userList, setUserList] = useState([]);
+  const [memberData, setMemberData] = useState([]);
   const [membersList, setMembersList] = useState(roomMembers);
+  const [isSearching, setIsSearching] = useState(false);
 
   const handleClose = () => {
     setaddModalShow(false);
@@ -325,7 +327,7 @@ export function MembersPanel({ config }) {
           return { value: item._id, label: item.email };
         });
         const channelUserIds = membersList.map(member => member._id);
-
+        setMemberData(r.data.data);
         // check to see if the user is already in a channel
         const checkedUsers = users.map(user => {
           if (channelUserIds.includes(user.value)) {
@@ -344,7 +346,47 @@ export function MembersPanel({ config }) {
         setisLoading(false);
       });
   }, [membersList]);
+  //
+  // Search member filter
+  function customFilter(objList, text) {
+    if (undefined === text || text === "") return objList;
+    return objList.filter(product => {
+      let flag;
+      for (let prop in product) {
+        flag = false;
+        flag = product[prop]?.toString()?.indexOf(text) > -1;
+        if (flag) break;
+      }
+      return flag;
+    });
+  }
+  //
+  // Search Member Event Returning the value
+  const onSearchMember = event => {
+    setIsSearching(true);
+    let query = event.target.value;
+    let searchResult = customFilter(memberData, query);
+    const users = searchResult.map(item => {
+      return { value: item._id, label: item.email };
+    });
+    const channelUserIds = membersList.map(member => member._id);
+    // check to see if the user is already in a channel
+    const checkedUsers = users.map(user => {
+      if (channelUserIds.includes(user.value)) {
+        return {
+          ...user,
+          label: `${user.label} (Already in this channel)`,
+          isDisabled: true
+        };
+      }
+      return user;
+    });
+    setUserList(checkedUsers);
+    setIsSearching(false);
+  };
 
+  //
+  //
   return (
     <div>
       <AddMemberModal
@@ -375,7 +417,11 @@ export function MembersPanel({ config }) {
                 marginLeft: "10px"
               }}
             />
-            <MembersInput type="text" placeholder="Find members" />
+            <MembersInput
+              type="text"
+              onChange={() => onSearchMember(event)}
+              placeholder="Find members"
+            />
           </Selection>
         </ListGroup.Item>
         <ListGroup.Item>
@@ -386,24 +432,30 @@ export function MembersPanel({ config }) {
             Add People
           </AddPeopleIcons>
         </ListGroup.Item>
-        {userList && userList.length > 0 ? (
-          userList.map((member1, index) => (
-            <ListGroup.Item
-              key={member1.value + index}
-              className="d-flex w-100"
-            >
-              <div>{member1.label}</div>
-              <div className="ms-auto" onClick={handleremoveModalShow}>
-                <RemoveLink onClick={() => removeMemberHandler(member1)}>
-                  Remove
-                </RemoveLink>
-              </div>
-            </ListGroup.Item>
-          ))
+        {isSearching ? (
+          <h1>Loading...</h1>
         ) : (
-          <ListGroup.Item className="d-flex w-100">
-            <div>No Members</div>
-          </ListGroup.Item>
+          <>
+            {userList && userList.length > 0 ? (
+              userList.map((member1, index) => (
+                <ListGroup.Item
+                  key={member1.value + index}
+                  className="d-flex w-100"
+                >
+                  <div>{member1.label}</div>
+                  <div className="ms-auto" onClick={handleremoveModalShow}>
+                    <RemoveLink onClick={() => removeMemberHandler(member1)}>
+                      Remove
+                    </RemoveLink>
+                  </div>
+                </ListGroup.Item>
+              ))
+            ) : (
+              <ListGroup.Item className="d-flex w-100">
+                <div>No Members</div>
+              </ListGroup.Item>
+            )}
+          </>
         )}
       </ListGroup>
     </div>
