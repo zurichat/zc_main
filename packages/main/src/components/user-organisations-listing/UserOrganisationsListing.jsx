@@ -27,7 +27,10 @@ const UserOrganization = ({ organizations, user }) => {
                   <OrganizationNameWrapper>
                     <OrganizationName>{organization.name}</OrganizationName>
                     <Arrow>
-                      <img className="d-flex justify-content-end" src={RightArrow} />
+                      <img
+                        className="d-flex justify-content-end"
+                        src={RightArrow}
+                      />
                     </Arrow>
                   </OrganizationNameWrapper>
                   <Members>
