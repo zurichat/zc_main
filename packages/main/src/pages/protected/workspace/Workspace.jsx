@@ -48,16 +48,19 @@ export default function Index() {
 
   const fetchUserWorkspacesResponse = async () => {
     let userData = JSON.parse(localStorage.getItem("userData"));
-    let response = await axios.get(
-      `https://api.zuri.chat/users/${userData.user.email}/organizations`,
-      {
-        headers: {
-          Authorization: `Bearer ${userData.token}`
+    if (userData) {
+      let response = await axios.get(
+        `https://api.zuri.chat/users/${userData.user.email}/organizations`,
+        {
+          headers: {
+            Authorization: `Bearer ${userData.token}`
+          }
         }
-      }
-    );
-    let userSpace = response.data.data;
-    setWorkspaces(userSpace);
+      );
+      let userSpace = response.data.data;
+      setWorkspaces(userSpace);
+      console.log(userSpace);
+    }
   };
 
   useEffect(() => {

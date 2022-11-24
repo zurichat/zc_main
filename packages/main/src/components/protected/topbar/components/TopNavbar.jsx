@@ -158,7 +158,7 @@ const TopNavbar = () => {
           effect="solid"
           place="bottom"
           type="dark"
-          offset="{'top': 3, 'left': 0.8}"
+          offset={{ top: 3, left: 0.8 }}
         >
           {title}
         </ReactTooltip>
