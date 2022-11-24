@@ -109,6 +109,9 @@ const App = () => (
           <ProtectedRoute exact path="/admin/settings">
             <SettingsHome />
           </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings">
+            <SettingsHome />
+          </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/accountsProfile">
             <AccountProfile />
           </ProtectedRoute>
