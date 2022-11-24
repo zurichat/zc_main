@@ -78,6 +78,7 @@ const EditProfile = () => {
           formData
         )
         .then(res => {
+          console.log(res);
           const newUploadedImage = res.data.data;
           setUserProfileImage(newUploadedImage);
           setState({ ...state, imageLoading: false });
@@ -157,6 +158,8 @@ const EditProfile = () => {
         });
       });
   };
+
+  console.log(userProfileImage);
   return (
     <ProfileModal full title="Edit profile">
       <>
