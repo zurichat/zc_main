@@ -134,9 +134,22 @@ function ContactFormContainer() {
         }));
       });
   };
+  const textAlign = () => {
+    if (
+      window.localStorage.myLanguage === "ar" ||
+      window.localStorage.myLanguage === "iw"
+    ) {
+      return {
+        textAlign: "right"
+      };
+    }
+  };
 
   return (
-    <div className={`${ContactFormStyle.contact_form_container}`}>
+    <div
+      className={`${ContactFormStyle.contact_form_container}`}
+      style={textAlign()}
+    >
       <form className="" onSubmit={handleSubmit}>
         <div
           className={`mb-3 ${
