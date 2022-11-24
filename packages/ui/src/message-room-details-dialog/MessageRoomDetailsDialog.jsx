@@ -43,7 +43,7 @@ function MessageRoomDetailsDialog({
   const [showArchiveChannel, setShowArchiveChannel] = useState(false);
 
   const toggleEditTopicModal = () => {
-    setShowEditTopicModal(true);
+    setShowEditTopicModal(!showEditTopicModal);
   };
   const toggleEditDescriptionModal = () =>
     setEditDescriptionModal(!showEditDescriptionModal);

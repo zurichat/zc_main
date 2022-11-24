@@ -31,7 +31,13 @@ const EditTopicModal = props => {
           <p>Let people know what this channel is for.</p>
 
           <ModalButtons>
-            <CancelBtn>Cancel</CancelBtn>
+            <CancelBtn
+              onClick={() => {
+                props.closeEdit();
+              }}
+            >
+              Cancel
+            </CancelBtn>
             <AcceptBtn>Save</AcceptBtn>
           </ModalButtons>
         </Modalbody>
