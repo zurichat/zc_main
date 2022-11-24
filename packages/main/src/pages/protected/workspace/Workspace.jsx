@@ -96,11 +96,12 @@ export default function Index() {
       </TopBarWrapperStyle>
 
       <div style={{ display: "flex", height: "calc(100vh - 48px)" }}>
-        <div id={`${styles.workspaceSidebar}`}>
-          <div id={`${styles.workspaceBox}`}>
-            {/* {workspaces} */}
-            {workspaces &&
-              workspaces?.map((workSpace, index) => (
+        {/* only show extra side bar if (workspaces.length > 1) */}
+        {workspaces && workspaces.length > 1 && (
+          <div id={`${styles.workspaceSidebar}`}>
+            <div id={`${styles.workspaceBox}`}>
+              {/* {workspaces} */}
+              {workspaces?.map((workSpace, index) => (
                 <div
                   className={`${styles.workspaceWrap}`}
                   role="button"
@@ -132,41 +133,42 @@ export default function Index() {
                   </div>
                 </div>
               ))}
-          </div>
-          <div className={`${styles.lowerDrawer}`}>
-            <Link
-              to="/choose-workspace"
-              className={`${styles.workspaceAdd}`}
-              role="button"
-              title="Add a workspace"
-            >
-              <div className={`${styles.workspacehelp}`}>
-                <BsPlusCircle />
-              </div>
-              <p className={`${styles.optionName}`}>Add a workspace</p>
-            </Link>
-            <div
-              className={`${styles.workspaceAdd}`}
-              role="button"
-              title="Preferences"
-            >
-              <div className={`${styles.workspacehelp}`}>
-                <BsGearFill />
-              </div>
-              <p className={`${styles.optionName}`}>Preferences</p>
             </div>
-            <div
-              className={`${styles.workspaceAdd}`}
-              role="button"
-              title="Help"
-            >
-              <div className={`${styles.workspacehelp}`}>
-                <BsFillQuestionCircleFill />
+            <div className={`${styles.lowerDrawer}`}>
+              <Link
+                to="/choose-workspace"
+                className={`${styles.workspaceAdd}`}
+                role="button"
+                title="Add a workspace"
+              >
+                <div className={`${styles.workspacehelp}`}>
+                  <BsPlusCircle />
+                </div>
+                <p className={`${styles.optionName}`}>Add a workspace</p>
+              </Link>
+              <div
+                className={`${styles.workspaceAdd}`}
+                role="button"
+                title="Preferences"
+              >
+                <div className={`${styles.workspacehelp}`}>
+                  <BsGearFill />
+                </div>
+                <p className={`${styles.optionName}`}>Preferences</p>
               </div>
-              <p className={`${styles.optionName}`}>Help</p>
+              <div
+                className={`${styles.workspaceAdd}`}
+                role="button"
+                title="Help"
+              >
+                <div className={`${styles.workspacehelp}`}>
+                  <BsFillQuestionCircleFill />
+                </div>
+                <p className={`${styles.optionName}`}>Help</p>
+              </div>
             </div>
           </div>
-        </div>
+        )}
         <SidebarWrapperStyle>
           <Sidebar />
         </SidebarWrapperStyle>
