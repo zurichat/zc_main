@@ -7,13 +7,16 @@ const CommentBoardWrapper = styled.aside`
 
   width: 400px;
   z-index: 999;
-  margin-top: 40px;
+  /* margin-top: 40px; */
   position: relative;
+  top: 10px;
 
-  /* height: 92vh; */
+  height: 93vh;
   padding: 0 0 20px 0;
   overflow-y: scroll;
   overflow-x: none;
+  border-left: 3px solid grey;
+  /* padding: 2px; */
 `;
 const CommentBoardHeader = styled.header`
   background: hsla(160, 100%, 36%, 1);
@@ -25,7 +28,7 @@ const CommentBoardHeader = styled.header`
   font-weight: 700;
   width: 100%;
   position: sticky;
-  top: 0px;
+  top: -10px;
   font-size: ${18 / 16}rem; ;
 `;
 const CommentMessagesWrapper = styled.div`
