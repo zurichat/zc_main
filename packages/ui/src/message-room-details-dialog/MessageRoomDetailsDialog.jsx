@@ -129,7 +129,10 @@ function MessageRoomDetailsDialog({
         <EditDescriptionModal closeEdit={toggleEditDescriptionModal} />
       )}
       {showLeaveChannelModal && (
-        <LeaveChannelModal closeEdit={toggleLeaveChannelModal} />
+        <LeaveChannelModal
+          closeEdit={toggleLeaveChannelModal}
+          closeAll={close}
+        />
       )}
       {showDeleteChannel && <DeleteChannel closeEdit={toggleDeleteChannel} />}
       {showArchiveChannel && (
@@ -229,7 +232,7 @@ function AboutPanel({
 //       )
 //   }
 
-function MembersPanel({ config }) {
+export function MembersPanel({ config }) {
   const dummyHeaderConfig = {
     roomInfo: {
       membersList: getSampleMemberList(),
