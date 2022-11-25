@@ -150,7 +150,6 @@ const Sidebar = props => {
             image={dmIcon}
             link={`/workspace/${currentWorkspace}/video-chat`}
           />
-
           <Starred starredRooms={starredRooms} />
           {singleItems}
           {categorizedItems}

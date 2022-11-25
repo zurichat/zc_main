@@ -28,6 +28,7 @@ import {
   BsFillCaretDownFill,
   BsWindowSidebar
 } from "react-icons/bs";
+
 import VideoChat from "../../../components/media-chat/VideoChat";
 
 export default function Index() {
