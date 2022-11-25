@@ -28,6 +28,12 @@ import { StyledTabs } from "./MessageRoomDetailsDialog.styled";
 import { getSampleMemberList } from "~/utils/samples";
 import FileList from "./components/FileList";
 
+// getting edited topic from local storage
+const getEditedTopicFromLS = () => {
+  let editedTopics = localStorage.getItem("editedTopic");
+  return editedTopics ? JSON.parse(editedTopics) : "";
+};
+
 function MessageRoomDetailsDialog({
   close,
   showDialog,
@@ -36,7 +42,7 @@ function MessageRoomDetailsDialog({
   channelName
 }) {
   const [showEditTopicModal, setShowEditTopicModal] = useState(false);
-  const [addTopic, setAddTopic] = useState("");
+  const [addTopic, setAddTopic] = useState(getEditedTopicFromLS());
   const [activeIndex, setActiveIndex] = useState(0);
   const [showEditDescriptionModal, setEditDescriptionModal] = useState(false);
   const [showLeaveChannelModal, setShowLeaveChannelModal] = useState(false);

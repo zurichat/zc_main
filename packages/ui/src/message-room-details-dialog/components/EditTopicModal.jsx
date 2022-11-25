@@ -43,7 +43,14 @@ const EditTopicModal = ({ closeEdit, addTopic, setAddTopic }) => {
 
           <ModalButtons>
             <CancelBtn onClick={() => closeEdit()}>Cancel</CancelBtn>
-            <AcceptBtn onClick={() => setAddTopic(addTopic)}>Save</AcceptBtn>
+            <AcceptBtn
+              onClick={() => {
+                setAddTopic(addTopic);
+                closeEdit();
+              }}
+            >
+              Save
+            </AcceptBtn>
           </ModalButtons>
         </Modalbody>
       </TopicModal>
