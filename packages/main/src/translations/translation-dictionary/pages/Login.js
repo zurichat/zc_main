@@ -14,7 +14,7 @@ export default [
     pt: "Entrar - Zuri Chat"
   },
   {
-    key: "header",
+    key: "LogInheader",
     en: "Login",
     de: "Anmeldung ",
     nl: "Inloggen",
@@ -70,7 +70,7 @@ export default [
     pt: "OU"
   },
   {
-    key: "submitButtonName",
+    key: "LoginsubmitButtonName",
     en: "Log in",
     de: "Anmelden",
     nl: "Inloggen",
