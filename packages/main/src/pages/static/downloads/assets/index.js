@@ -6,6 +6,7 @@ export { default as laptop } from "./laptop.svg";
 export { default as device } from "./device.svg";
 export { default as apple1 } from "./apple-1.svg";
 export { default as microsoft } from "./icons8-microsoft.svg";
+export { default as screen } from "./screen.svg";
 export { default as googleplay } from "./google-play.svg";
 export { default as infolaptop } from "./info-laptop.svg";
 export { default as AppStorelogo } from "./app-store.png";
