@@ -22,10 +22,11 @@ import {
   InvitePage,
   ResetPassword,
   ChangePassword,
+  WhyZuriChat,
   PrivacyPage,
   
 } from "./pages";
-import WhyZuriChat from "./pages/whyzurichat";
+import WhyZuri from "./pages/whyzurichat";
 import TermsOfService from "../src-old/pages/termsOfService/index";
 import { useAuth } from "./auth/use-auth";
 
@@ -94,7 +95,7 @@ const App = () => (
           <Route path="/change-password" component={ChangePassword} />
           <Route path="/privacy" component={PrivacyPage} />
           <Route path="/terms" component={TermsOfService} />
-          <Route path="/whyzurichat" component={WhyZuriChat} />
+          <Route path="/whyzurichat" component={WhyZuri} />
 
           <ProtectFromAuthRoute exact path="/login">
             <Login />
