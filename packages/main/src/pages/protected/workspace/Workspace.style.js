@@ -40,11 +40,4 @@ export const SidebarWrapperStyle = styled.div`
 
 export const WorkspaceWrapperStyle = styled.div`
   flex: 1;
-  height: 100%;
-  background-color: var(--bg-color);
-  overflow: auto;
-
-  & > #zuri-plugin-load-section {
-    height: 100%;
-  }
 `;

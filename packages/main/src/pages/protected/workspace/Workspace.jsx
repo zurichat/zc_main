@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import LiveBroadcast from "../../../components/media-chat/LiveBroadcast";
 import {
   Switch,
   Route,
@@ -172,6 +173,9 @@ export default function Index() {
           <Switch>
             <Route exact path="/workspace/:workspaceId">
               <h1>Welcome to your Workspace</h1>
+            </Route>
+            <Route path="/workspace/:workspaceId/LiveBroadcast">
+              <LiveBroadcast />
             </Route>
 
             {/* <Route
