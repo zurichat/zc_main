@@ -6,8 +6,10 @@
   --primary-color-hover: rgba(0, 184, 124, 0.502);
   --primary-color-2: #e1fdf4;
   --secondary-color: #1264a3;
-  --body-color: #1d1c1d; /* Header color */
-  --body-shade: #1d1c1d; /* Header shade && Icon Color */
+  --body-color: #1d1c1d;
+  /* Header color */
+  --body-shade: #1d1c1d;
+  /* Header shade && Icon Color */
 
   /* text colors */
   --inactive-text: #b0afb0;
@@ -28,7 +30,7 @@
 body {
   box-sizing: border-box;
   margin: 0;
-  font-family: lato;
+  font-family: "Lato", sans-serif;
   margin-bottom: 4rem;
   /* background-color: black; */
 }
