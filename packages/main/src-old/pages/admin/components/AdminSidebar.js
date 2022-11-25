@@ -130,6 +130,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
             <FiCloudLightning className={styles.icon} />
             Configure Apps
           </Link>
+          {/*
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
@@ -137,7 +138,8 @@ const AdminSidebar = ({ setModal, openModal }) => {
           >
             <FiPieChart className={styles.icon} />
             Analytics
-          </Link>
+    </Link>*/}
+          {/*
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
@@ -145,7 +147,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           >
             <FiScissors className={styles.icon} />
             Customize
-          </Link>
+          </Link>*/}
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
@@ -257,7 +259,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
+            to="/legal"
           >
             Brand guidelines
           </Link>
@@ -268,6 +270,7 @@ const AdminSidebar = ({ setModal, openModal }) => {
           >
             Help
           </Link>
+          {/*
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
@@ -275,14 +278,14 @@ const AdminSidebar = ({ setModal, openModal }) => {
           >
             API
             <FiExternalLink className={styles.iconRight} />
-          </Link>
+        </Link>
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
             to="/components/gateways"
           >
             Gateways
-          </Link>
+          </Link>*/}
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
@@ -290,9 +293,10 @@ const AdminSidebar = ({ setModal, openModal }) => {
           >
             Pricing
           </Link>
+          {/*
           <Link className={styles.sidebarLink} to="/blog">
             Our blog
-          </Link>
+        </Link>*/}
           <Link className={styles.sidebarLink} to="/signout">
             Sign out
             <FiLogOut className={styles.iconRight} />

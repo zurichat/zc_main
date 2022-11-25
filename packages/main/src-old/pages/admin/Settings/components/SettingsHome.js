@@ -151,7 +151,7 @@ const Home = () => {
           <div>
             <Link
               to="/admin/settings/accountsProfile"
-              className=""
+              className={classes.text_links}
               style={{ display: "flex" }}
             >
               <div>
@@ -186,7 +186,11 @@ const Home = () => {
 
           {/* Manage workspace */}
           <div className="mt-2">
-            <Link to="/admin/stats" className="" style={{ display: "flex" }}>
+            <Link
+              to="/admin/manage-workspace"
+              className={classes.text_links}
+              style={{ display: "flex" }}
+            >
               <div>
                 <span
                   className={classes.settings_icon_holder}
@@ -597,7 +601,7 @@ const Home = () => {
                 <Link to="/help">Help</Link>
               </li>
 
-              <li
+              {/*  <li
                 style={{
                   display: "inline-block",
                   margin: "0.75rem"
@@ -606,7 +610,7 @@ const Home = () => {
                 <Link to="/confirm-deactivation" target="_blank">
                   API
                 </Link>
-              </li>
+              </li>*/}
               <li
                 style={{
                   display: "inline-block",
@@ -615,9 +619,6 @@ const Home = () => {
               >
                 <Link to="/pricing">Pricing</Link>
               </li>
-            </div>
-
-            <div className={classes.footer_links}>
               <li
                 style={{
                   display: "inline-block",
@@ -626,7 +627,9 @@ const Home = () => {
               >
                 <Link to="/contact-us">Contact</Link>
               </li>
+            </div>
 
+            <div className={classes.footer_links}>
               <li
                 style={{
                   display: "inline-block",
@@ -635,19 +638,6 @@ const Home = () => {
               >
                 <Link to="/privacy">Policies</Link>
               </li>
-
-              <li
-                style={{
-                  display: "inline-block",
-                  margin: "0.75rem"
-                }}
-              >
-                <Link to="/ZurichatBlog" target="_blank">
-                  Our Blog
-                </Link>
-              </li>
-            </div>
-            <div className={classes.footer_links}>
               <li
                 style={{
                   display: "inline-block",
@@ -656,7 +646,19 @@ const Home = () => {
               >
                 <Link to="/signout">Sign Out</Link>
               </li>
+
+              {/*  <li
+                style={{
+                  display: "inline-block",
+                  margin: "0.75rem"
+                }}
+              >
+                <Link to="/ZurichatBlog" target="_blank">
+                  Our Blog
+                </Link>
+              </li>*/}
             </div>
+            <div className={classes.footer_links}></div>
           </ul>
         </div>
       </Container>

@@ -28,7 +28,7 @@ import {
 import TermsOfService from "../src-old/pages/termsOfService/index";
 import SettingsHome from "../src-old/pages/admin/Settings/components/SettingsHome.js";
 import Analytics from "../src-old/pages/admin/Analytics/index.js";
-import Blogs from "../src-old/pages/Blog/index.jsx";
+import Blog from "../src-old/pages/Blog/index.jsx";
 import DownloadApps from "../src-old/pages/download/index.js";
 import Help from "../src-old/pages/help/index.js";
 import Tour from "./pages/home/Home.jsx";
@@ -39,6 +39,9 @@ import { useAuth } from "./auth/use-auth";
 import AccountProfile from "./pages/protected/account-profile/AccountProfile";
 import Billing from "./pages/protected/billings/Billing";
 import AboutWorkSpace from "./pages/protected/about-workspace/AboutWorkSpace";
+import BrandGuidelines from "../src-old/pages/legal";
+import WorkspaceStats from "../src-old/pages/admin/Invitation.js";
+import WorkspaceAnalytics from "../src-old/pages/admin/Settings/Permissions/components/invitation";
 
 const { Workspace, CreateWorkspace, ChooseWorkspace } = lazily(() =>
   import("./pages/protected")
@@ -118,6 +121,34 @@ const App = () => (
           <ProtectedRoute exact path="/admin/settings">
             <SettingsHome />
           </ProtectedRoute>
+          <ProtectedRoute exact path="/download-apps">
+            <DownloadApps />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings/accountsProfile">
+            <AccountProfile />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings/managemembers">
+            <ManageMembers />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings/workspace-analytics">
+            <WorkspaceAnalytics />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/manage-workspace">
+            <WorkspaceStats />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/help">
+            <Help />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings/aboutworkspace">
+            <AboutWorkSpace />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/legal">
+            <BrandGuidelines />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/ZurichatBlog">
+            <Blog />
+          </ProtectedRoute>
+
           <ProtectedRoute exact path="/choose-workspace">
             {withSuspense(ChooseWorkspace)}
           </ProtectedRoute>
