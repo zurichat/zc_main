@@ -447,6 +447,10 @@
     gap: 1em;
     margin-top: 2em;
   }
+  .team > img {
+    width: 70%;
+    margin: 2em 0;
+  }
 }
 @media only screen and (max-width: 440px) {
   .carouselImage {
