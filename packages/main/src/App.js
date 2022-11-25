@@ -22,11 +22,10 @@ import {
   InvitePage,
   ResetPassword,
   ChangePassword,
-  WhyZuriChat,
   PrivacyPage
   
 } from "./pages";
-import WhyZuri from "./pages/whyzurichat";
+import WhyZuri from "./pages/static/whyzurichat";
 import TermsOfService from "../src-old/pages/termsOfService/index";
 import { useAuth } from "./auth/use-auth";
 
