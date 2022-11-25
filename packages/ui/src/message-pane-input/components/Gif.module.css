@@ -1,0 +1,42 @@
+.box {
+  padding: 0.3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.box__active {
+  background-color: rgba(242, 241, 241, 0.946);
+}
+
+.svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: rgba(103, 102, 102);
+}
+
+.gif__box {
+  position: absolute;
+  bottom: 100px;
+  left: 130px;
+}
+.gif__box__active {
+  display: block;
+}
+.gif__box__inactive {
+  display: none;
+}
+
+
+.iconHover {
+  cursor: pointer;
+  padding: 10px 8px;
+  max-width: 100%;
+}
+
+.iconHover:hover {
+  background-color: #e6e6e6;
+  border-radius: 4px;
+}

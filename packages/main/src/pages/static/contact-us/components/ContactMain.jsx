@@ -1,3 +1,4 @@
+import React from "react";
 import contactStyle from "./ContactMain.module.css";
 import { ContactUs } from "../assets";
 import FAQselected from "./FaqSelected";
