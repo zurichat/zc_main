@@ -6,6 +6,12 @@
   display: flex;
   flex-direction: column;
   border: 1px solid #007b53;
+  transition: all 0.2s;
+}
+
+.workspaceSidebarClosed {
+  width: 0 !important;
+  margin-left: -5px !important;
 }
 
 #workspaceBox {

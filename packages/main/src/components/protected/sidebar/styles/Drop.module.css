@@ -83,6 +83,9 @@
 .plugin_name,
 .dropDown__title,
 .dropdown__room {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   padding-inline-start: 0.5rem;
 }
 
