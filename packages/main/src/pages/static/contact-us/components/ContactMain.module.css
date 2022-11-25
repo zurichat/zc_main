@@ -3,20 +3,32 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
+  font-size: 12px;
 
   --type-scale: 1;
   --height-scale: 1;
 }
 
+p{
+  margin-bottom: 0;
+}
+
 .contactHead {
   width: 100%;
-
-  /* height: 265px; */
-  color: #fff;
-  padding: 100px 200px 25px 150px;
+  margin-top: 100px;
   text-align: left;
-  background-color: #00b87c;
+  /* height: 265px; */
+  /* background-color: #00b87c;  */
+  /* color: #fff; */
+  /* padding: 100px 200px 25px 150px; */
 }
+
+.boardContainer{
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
 
 .contactHead h1 {
   font-size: calc(48px * var(--type-scale, 1));
@@ -146,12 +158,12 @@
     --type-scale: 0.9;
   }
 
-  .contactHead {
+  /* .contactHead {
     padding-left: 0;
     max-width: 696px;
     margin-left: auto;
     margin-right: auto;
-  }
+  } */
 
   .getHelpCard {
     margin-left: auto;
@@ -160,10 +172,10 @@
 }
 
 @media screen and (max-width: 767px) {
-  .contactHead {
+  /* .contactHead {
     height: 265px;
     padding: 47px 0 60px 24px;
-  }
+  } */
 
   .contactHead p {
     min-width: 260px;
@@ -245,5 +257,12 @@
 
   .contactHead p {
     max-width: 300px;
+  }
+
+  .boardContainer{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
   }
 }

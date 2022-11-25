@@ -1,0 +1,91 @@
+.contactMainBoardContainer {
+  flex: 1 1 0%;
+}
+
+.contactMainBoardInnerContainer {
+  width: 70%;
+  margin: auto;
+  padding: 2.5rem 0;
+}
+.contactMainBoardTitleContainer {
+  text-align: center;
+}
+.contactMainBoardTitleContainer h1 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.contactMainBoardTitleContainer p {
+  font-size: 13px !important;
+  margin-top: -10px;
+}
+.contactFormContainer {
+  margin-top: 2rem;
+}
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+.inputGroup label {
+  font-size: 13px !important;
+  font-weight: 600;
+}
+.inputGroup input,
+.inputGroup textarea {
+  padding: 12px;
+  background-color: white;
+  border: 1px solid #999899;
+  color: #151517;
+  font-weight: 500;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-top: 12px;
+  outline: none;
+}
+
+.inputGroup textarea {
+  height: 190px;
+}
+
+.inputGroup input::placeholder {
+  color: #999899;
+}
+
+.inputGroupCheckBox {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+.inputGroupCheckBox label {
+  font-size: 13px !important;
+  margin-left: 8px;
+}
+
+.contactBtn {
+  padding: 0.75rem 2rem;
+  border: 1px solid #009967;
+  background-color: #009967;
+  color: white;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+@media only screen and (max-width: 900px) {
+  .contactMainBoardInnerContainer {
+    width: 80%;
+    margin: auto;
+    padding: 2.5rem 0;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .contactMainBoardInnerContainer {
+    width: 90%;
+    margin: auto;
+    padding: 2.5rem 0;
+  }
+  .contactMainBoardTitleContainer p {
+    max-width: fit-content;
+    width: 80%;
+    margin: auto;
+  }
+}
