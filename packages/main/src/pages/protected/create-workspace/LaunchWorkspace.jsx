@@ -4,6 +4,8 @@ import { useHistory } from "react-router-dom";
 import { BASE_API_URL } from "@zuri/utilities";
 import { GeneralLoading } from "../../../components";
 
+import useParamHook from "../workspace/useParamHook"; //my import
+
 export default function Index({ createWorkspaceData }) {
   const history = useHistory();
 
@@ -27,6 +29,7 @@ export default function Index({ createWorkspaceData }) {
     );
     console.log(createWorkspaceApiCall);
     const workspaceId = createWorkspaceApiCall.data.data.organization_id;
+    // const workspaceId = "tr456vdh";
 
     // Rename the Workspace
     const renameWorkspaceApiCall = await axios.patch(
@@ -67,7 +70,18 @@ export default function Index({ createWorkspaceData }) {
       { headers: { Authorization: "Bearer " + user.token } }
     );
     // Redirect
-    localStorage.setItem("currentWorkspace", workspaceId);
+
+    // Adding new code
+    const {
+      workspaceId: { short_id }
+    } = useParamHook({ workspaceId: "workspaceId" });
+
+    localStorage.setItem(
+      "currentWorkspace",
+      JSON.stringify({ workspaceId, short_id })
+    );
+
+    // localStorage.setItem("currentWorkspace", workspaceId);
     // history.push(`/workspace/${workspaceId}`);
     history.push(`/create-workspace/step-3`);
   };

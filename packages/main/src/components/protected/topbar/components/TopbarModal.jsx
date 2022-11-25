@@ -100,7 +100,14 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
     setPresence
   } = state;
 
-  const currentWorkspace = localStorage.getItem("currentWorkspace");
+  //I added this code
+  let workSpaceIds = JSON.parse(localStorage.getItem("currentWorkspace"));
+  // End of code
+
+  // const workspace = sessionStorage.getItem("currentWorkspace");
+  const currentWorkspace = workSpaceIds.workspaceId;
+
+  // const currentWorkspace = localStorage.getItem("currentWorkspace");
   let token = sessionStorage.getItem("token");
 
   useEffect(() => {

@@ -14,6 +14,7 @@ import {
   WorkspaceWrapperStyle,
   GlobalWorkSpaceStyle
 } from "./Workspace.style";
+import useParamHook from "./useParamHook";
 
 // import { GeneralLoading } from "../../../components";
 
@@ -22,19 +23,30 @@ const { Sidebar, TopBar } = lazily(() =>
 );
 
 export default function Index() {
-  const { workspaceId } = useParams();
+  // const { workspaceId } = useParams();
+  const {
+    workspaceId: { workspaceId, short_id }
+  } = useParamHook({ workspaceId: "workspaceId" });
+
+  console.log(workspaceId, short_id, "jsxssxssxss 18888888");
+
   const location = useLocation();
+  // console.log(location)
   const history = useHistory();
-  const match = useRouteMatch(`/workspace/${workspaceId}`);
+  const match = useRouteMatch(`/workspace/${short_id}`);
   const pluginsName = ["plugin-music"];
   useEffect(() => {
     window.dispatchEvent(new Event("zuri-plugin-load"));
     match.isExact &&
-      history.replace(`/workspace/${workspaceId}/plugin-chat/all-dms`);
+      // history.replace(`/workspace/yt4djh34d/plugin-chat/all-dms`);
+      history.replace(`/workspace/${short_id}/plugin-chat/all-dms`);
   }, []);
   // Temporary
   useEffect(() => {
-    localStorage.setItem("currentWorkspace", workspaceId);
+    localStorage.setItem(
+      "currentWorkspace",
+      JSON.stringify({ workspaceId, short_id })
+    );
   }, [workspaceId]);
   useEffect(() => {
     const activePlugin = pluginsName.find(plugin =>

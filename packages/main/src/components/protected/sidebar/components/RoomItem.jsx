@@ -7,7 +7,14 @@ import RoomOptions from "./RoomOptions";
 import { useRouteMatch } from "react-router-dom";
 
 const RoomItem = ({ room, baseUrl, pluginId }) => {
-  let currentWorkspace = localStorage.getItem("currentWorkspace");
+  // let currentWorkspace = localStorage.getItem("currentWorkspace");
+
+  //I added this code
+  let workSpaceIds = JSON.parse(localStorage.getItem("currentWorkspace"));
+  // End of code
+  // const currentWorkspace = localStorage.getItem("currentWorkspace") || null;
+  let currentWorkspace = workSpaceIds.short_id;
+
   const [click, isClicked] = useClick();
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const pluginIdPath = `plugin-${pluginId.replace(".zuri.chat", "")}`;

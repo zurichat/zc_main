@@ -20,6 +20,12 @@ start({
   urlRerouteOnly: true
 });
 
+//I added this code
+let workSpaceIds = JSON.parse(localStorage.getItem("currentWorkspace"));
+// End of code
+// const currentWorkspace = localStorage.getItem("currentWorkspace") || null;
+const currentWorkspace = workSpaceIds.short_id;
+
 window.addEventListener("zuri-plugin-load", () => {
   setTimeout(() => {
     const registeredAppsName = getAppNames().filter(
@@ -33,9 +39,10 @@ window.addEventListener("zuri-plugin-load", () => {
           activeWhen: pathToActiveWhen(`/workspace/:id/${plugin.pluginPath}`),
           customProps: {
             domElement: document.getElementById("zuri-plugin-load-section"),
-            baseName: `/workspace/${localStorage.getItem("currentWorkspace")}/${
-              plugin.pluginPath
-            }`
+
+            baseName: `/workspace/${currentWorkspace}/${plugin.pluginPath}`
+            // baseName: `/workspace/${localStorage.getItem("currentWorkspace")}/${
+            //   plugin.pluginPath
           }
         });
       });
@@ -50,10 +57,14 @@ window.addEventListener("zuri-plugin-load", () => {
             ),
             customProps: {
               domElement: document.getElementById("zuri-plugin-load-section"),
-              baseName: `/workspace/${localStorage.getItem(
-                "currentWorkspace"
-              )}/${appName.replace("zuri-", "")}`
+              baseName: `/workspace/${currentWorkspace}/${appName.replace(
+                "zuri-",
+                ""
+              )}`
             }
+            // baseName: `/workspace/${localStorage.getItem(
+            //   "currentWorkspace"
+            // )}/${appName.replace("zuri-", "")}`
           });
         });
       });

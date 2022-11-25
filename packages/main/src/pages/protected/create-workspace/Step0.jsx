@@ -20,7 +20,28 @@ export default function Index() {
       { headers: { Authorization: `Bearer ${user.token}` } }
     );
     const { data } = result.data;
+    // console.log(data, 'from step 0 .jsxxxxxxxxxxxxxxxxxxxxx')
     setOrganizations(data);
+
+    //*****************************/
+
+    // THIS CODE HAS BEEN MOVED TO UserOrganizationsListing.jsx
+
+    // const urlsTracker = {'workspaceIds': []}
+    // data.forEach(element => {
+
+    //   const name = element.name;
+    //   const newName = name.replace(/ /gi, "-");
+
+    //   urlsTracker.workspaceIds.push({
+    //     'real_id': element.id,
+    //     'short_id': `${element.id.slice(4,6)}${element.id.slice(6,8)}${element.id.slice(-3,-1)}`
+    //   })
+    // });
+
+    // localStorage.setItem('urlsTracker', JSON.stringify(urlsTracker));
+
+    // ***************************
     setIsactive(!isActive);
   }
 

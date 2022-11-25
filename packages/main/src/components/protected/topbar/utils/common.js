@@ -12,7 +12,13 @@ export const getUser = () => {
 
 // get Current Workspace
 export const getCurrentWorkspace = () => {
-  const currentWorkspace = localStorage.getItem("currentWorkspace") || null;
+  //I added this code
+  let workSpaceIds = JSON.parse(localStorage.getItem("currentWorkspace"));
+  // End of code
+  // const currentWorkspace = localStorage.getItem("currentWorkspace") || null;
+  const currentWorkspace = workSpaceIds.workspaceId || null;
+
+  // const currentWorkspace = localStorage.getItem("currentWorkspace") || null;
   return currentWorkspace;
 };
 

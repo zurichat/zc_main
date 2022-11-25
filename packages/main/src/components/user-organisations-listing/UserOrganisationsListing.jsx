@@ -3,11 +3,56 @@ import { Link } from "react-router-dom";
 
 import RightArrow from "./assets/right-arrow.png";
 import ZuriChatLogo from "../../assets/zuri-chat-logo/logo.svg";
+import { useEffect, useState } from "react";
 
 const UserOrganization = ({ organizations, user }) => {
+  const [newOrganizations, setNewOrganizations] = useState([]);
   const currentPlugin = localStorage.getItem("currentPlugin") || "plugin-chat";
   const currentPluginRoom = localStorage.getItem("currentRoom") || "";
   const defaultPluginRoom = `${currentPlugin}/${currentPluginRoom}`;
+
+  useEffect(() => {
+    const urlsTracker = { workspaceIds: [] };
+
+    const hhh = organizations.map(org => {
+      //**********************************/
+      // THIS CODE IS FROM Step0.jsx
+
+      // const name = org.name;
+      // const newName = name.replace(/ /gi, "-");
+
+      urlsTracker.workspaceIds.push({
+        real_id: org.id,
+        short_id: `${org.id.slice(4, 6)}${org.id.slice(6, 8)}${org.id.slice(
+          -3,
+          -1
+        )}`
+        // 'short_id': `${newName}-${org.id.slice(4,6)}${org.id.slice(6,8)}${org.id.slice(-3,-1)}`
+      });
+
+      localStorage.setItem("urlsTracker", JSON.stringify(urlsTracker));
+      console.log(urlsTracker, "I am consoling urlsTracker");
+
+      //***********************************/
+
+      org["short_id"] = urlsTracker.workspaceIds.filter(
+        urlId => urlId.real_id === org.id
+      )[0]?.short_id;
+      return org;
+    });
+    setNewOrganizations([...hhh]);
+    // console.log(newOrganizations)
+  }, [organizations]);
+
+  // const urlIds
+  // console.log(JSON.parse(urlIds).workspaceIds)
+  // const newOrganizations = [...organizations]
+
+  // newOrganizations.map(org => {
+  //   org['short_id'] = urlIds.filter(urlId => urlId === org.id)[0].short_id
+  // })
+
+  console.log(newOrganizations);
   return (
     <BottomSection>
       <SelectWorkSpace>
@@ -16,10 +61,12 @@ const UserOrganization = ({ organizations, user }) => {
           <strong style={{ fontWeight: "700" }}>{user.email}</strong>
         </p>
 
-        {organizations.map(organization => (
+        {newOrganizations?.map(organization => (
           <OrganizationWrapper key={organization.id}>
             <Image src={ZuriChatLogo} alt="" />
-            <Link to={`/workspace/${organization.id}/${defaultPluginRoom}`}>
+            <Link
+              to={`/workspace/${organization.short_id}/${defaultPluginRoom}`}
+            >
               <Flex>
                 <Organization>
                   <Logo_Members>

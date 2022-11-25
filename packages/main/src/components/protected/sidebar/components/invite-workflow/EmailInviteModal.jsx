@@ -14,7 +14,12 @@ import { Step2 } from "./Step2";
 import { Loader } from "./Loader";
 
 export const EmailInviteModal = props => {
-  const currentWorkspace = localStorage.getItem("currentWorkspace") || null;
+  //I added this code
+  let workSpaceIds = JSON.parse(localStorage.getItem("currentWorkspace"));
+  // End of code
+  // const currentWorkspace = localStorage.getItem("currentWorkspace") || null;
+  const currentWorkspace = workSpaceIds.workspaceId;
+
   const userToken = sessionStorage.getItem("token") || null;
   const [listEmail, setListEmail] = useState([]);
   const [inviteStep, setInviteStep] = useState(1);

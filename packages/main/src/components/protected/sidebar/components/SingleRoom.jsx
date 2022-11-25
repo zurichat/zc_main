@@ -11,7 +11,10 @@ export default function SingleRoom({ image, name, link }) {
       } `}
     >
       <div
-        onClick={() => navigateToUrl(link)}
+        onClick={() => {
+          navigateToUrl(link);
+          console.log(link, "I am displaying Link");
+        }}
         className={`col-12 d-flex align-items-center ${styles.plugin__title}`}
       >
         <div className={`d-flex align-items-center`}>

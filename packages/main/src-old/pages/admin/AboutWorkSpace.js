@@ -8,7 +8,13 @@ import { authAxios } from "./Utils/api";
 const AboutWorkSpace = () => {
   const [orgDetails, setOrgdetails] = useState({});
   const [items, setItems] = useState(null);
-  const currentWorkspace = localStorage.getItem("currentWorkspace");
+  // const currentWorkspace = localStorage.getItem("currentWorkspace");
+
+  //I added this code
+  let workSpaceIds = JSON.parse(localStorage.getItem("currentWorkspace"));
+  // End of code
+  // const currentWorkspace = localStorage.getItem("currentWorkspace") || null;
+  const currentWorkspace = workSpaceIds.workspaceId;
 
   if (!currentWorkspace) {
     return null;

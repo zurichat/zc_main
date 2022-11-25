@@ -43,6 +43,8 @@ const WorkspaceHome = () => {
 
           //Store user copy in localstorage
           sessionStorage.setItem("user", JSON.stringify(data.user));
+
+          console.log(data.user, "I am consoling data from WorkspaceHome.jsx");
         })
         .catch(err => {
           console.error(err.message);
@@ -114,7 +116,7 @@ const WorkspaceHome = () => {
           <img src={Pic} alt="" />
         </ImageSection>
       </TopSection>
-      {/*  {user ? (
+      {/* {user ? (
         <UserOrganization user={user} organizations={organizations} />
       ) : null} */}
     </Wrapper>

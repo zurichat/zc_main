@@ -16,7 +16,8 @@ import Starred from "./Starred";
 const categories = [];
 
 const Sidebar = props => {
-  let currentWorkspace = localStorage.getItem("currentWorkspace");
+  let workSpaceIds = JSON.parse(localStorage.getItem("currentWorkspace"));
+  let currentWorkspace = workSpaceIds.short_id;
 
   const [nullValue, setnullValue] = useState(0);
 
@@ -97,6 +98,8 @@ const Sidebar = props => {
           (k, id) => props.state.sidebar[key][k].starred_rooms
         );
 
+        console.log(starredRooms, "I am displaying starred rooms");
+
         //    Object.keys(props.state.sidebar).map((p, idx)=>{
         //     return (categories.includes(p) ?
         //     <Category key={idx} name={p} data={categoryData} />
@@ -124,6 +127,7 @@ const Sidebar = props => {
           <SingleRoom
             name="All Dms"
             image={dmIcon}
+            // link={`/workspace/yt4djh34d/plugin-chat/all-dms`}
             link={`/workspace/${currentWorkspace}/plugin-chat/all-dms`}
           />
           <SingleRoom name="Drafts" image={draftIcon} />
