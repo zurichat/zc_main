@@ -8,7 +8,6 @@ import { MessageBoardContainer } from "./MessageBoard.styled";
 import MoreMenu from "./components/more-menu/MoreMenu";
 import Overlay from "./components/overlay/Overlay";
 import EmojiPicker from "../message-room-emoji-picker/MessageRoomEmojiPicker";
-import { Link } from "react-router-dom";
 
 /**
  * Message Board Component
@@ -21,8 +20,7 @@ function MessageBoard({
   onSendMessage,
   onSendAttachedFile,
   onReact,
-  height,
-  thread
+  height
 }) {
   const [showMoreOptions, setShowMoreOptions] = useState(false);
   const [showEmoji, setShowEmoji] = useState(false);
@@ -88,6 +86,7 @@ function MessageBoard({
   return (
     <>
       <MessageBoardContainer height={height}>
+        {/* Allowing thread message to render separately from messages */}
         {/* {thread ?
          <div className="MsgBoard">
           {Array.from(new Set(thread.map(a => a._id)))

@@ -6,11 +6,11 @@ import {
   CommentMessagesWrapper,
   CommentMessageItem
 } from "./CommentBoard.styled";
-import { messageContext } from "@zuri/messaging";
+// import { messageContext } from "@zuri/messaging";
 import { getSampleMessages } from "~/utils/samples";
 import MessagePaneInput from "~/message-pane-input/MessagePaneInput";
 import RichTextRenderer from "~/rich-text-renderer/RichTextRenderer";
-const data = useContext(messageContext);
+// const data = useContext(messageContext);
 const CommentBoard = ({ commentBoardConfig, Messages = [] }) => {
   const [displayCommentBoard, setDisplayCommentBoard] = useState(
     commentBoardConfig.displayCommentBoard
@@ -42,7 +42,7 @@ const CommentBoard = ({ commentBoardConfig, Messages = [] }) => {
             </CommentBoardHeader>
           </div>
           <CommentMessagesWrapper>
-            {Messages.map((message, idx) => (
+            {messages.map((message, idx) => (
               <CommentMessageItem key={idx * (3 / 0.63)}>
                 <RichTextRenderer richUiMessageConfig={message.richUiData} />
               </CommentMessageItem>
