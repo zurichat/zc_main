@@ -86,24 +86,6 @@ function MessageBoard({
   return (
     <>
       <MessageBoardContainer height={height}>
-        {/* Allowing thread message to render separately from messages */}
-        {/* {thread ?
-         <div className="MsgBoard">
-          {Array.from(new Set(thread.map(a => a._id)))
-            .map(id => {
-              return thread.find(a => a._id === id);
-            })
-            .map((message, i) => (
-              <MessagePane
-                key={`message-item-${i}`}
-                onShowMoreOptions={handleShowMoreOptions}
-                onShowEmoji={handleShowEmoji}
-                onEmojiClicked={handleEmojiClicked}
-                message={message}
-                currentUserId={currentUserId}
-              />
-            ))}
-          <div ref={messagesEndRef} /> : <></>} */}
         <div className="MsgBoard">
           {Array.from(new Set(messages.map(a => a._id)))
             .map(id => {

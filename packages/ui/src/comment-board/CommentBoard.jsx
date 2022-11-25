@@ -29,12 +29,12 @@ const CommentBoard = ({ commentBoardConfig, Messages = [] }) => {
     <>
       {thread === "thread" ? (
         <CommentBoardWrapper showCommentBoard={displayCommentBoard}>
-          <div style={{ position: "relative" }}>
+          <div style={{ position: "sticky", top: "0px" }}>
             <CommentBoardHeader>
               {commentBoardConfig.commentBoardHeader || "Comments"}
 
               <UnstyledButton
-                style={{ position: "absolute", top: "10px", right: "10px" }}
+                style={{ position: "absolute", top: "0px", right: "10px" }}
                 onClick={() => handleClose()}
               >
                 X
