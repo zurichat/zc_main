@@ -187,7 +187,7 @@ const Home = () => {
           {/* Manage workspace */}
           <div className="mt-2">
             <Link to="/admin/stats" className="" style={{ display: "flex" }}>
-              <div style={{ marginTop: "5em" }}>
+              <div>
                 <span
                   className={classes.settings_icon_holder}
                   style={{ backgroundColor: "#DE4E2A" }}
@@ -219,7 +219,7 @@ const Home = () => {
           </div>
 
           {/* Billing */}
-          {/* <div className="mt-2" style={{}}>
+          <div className="mt-2" style={{}}>
             <Link
               to="/admin/settings/billings"
               className=""
@@ -286,7 +286,7 @@ const Home = () => {
                 </div>
               </div>
             </Link>
-          </div> */}
+          </div>
           {/* <hr
             style={{
               width: "calc(100% - 5%)",
