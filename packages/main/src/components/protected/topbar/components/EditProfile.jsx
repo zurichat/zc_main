@@ -78,7 +78,6 @@ const EditProfile = () => {
           formData
         )
         .then(res => {
-          console.log(res);
           const newUploadedImage = res.data.data;
           setUserProfileImage(newUploadedImage);
           setState({ ...state, imageLoading: false });
@@ -158,8 +157,6 @@ const EditProfile = () => {
         });
       });
   };
-
-  console.log(userProfileImage);
   return (
     <ProfileModal full title="Edit profile">
       <>
@@ -310,19 +307,19 @@ const EditProfile = () => {
                   />
                 </div>
               </div>
-              <div className="input-group">
+              {/* <div className="input-group">
                 <label
                   className="inputLabel col-12"
                   style={{ color: "var(--text-color-bold)" }}
                 >
                   Time Zone
                 </label>
-                {/* <TimezoneSelect
+                <TimezoneSelect
                   value={selectedTimezone}
                   onChange={setSelectedTimezone}
                   className="col-12"
-                /> */}
-              </div>
+                />
+              </div> */}
               {/* <div className="input-group">
                 <label htmlFor="twitter" className="inputLabel">
                   Twitter
