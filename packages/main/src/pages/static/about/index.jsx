@@ -4,6 +4,7 @@ import { TopNavigationBar, Footer } from "../../../components";
 import styles from "./About.module.css";
 import {
   team,
+  hands,
   user,
   group,
   vector,
@@ -26,6 +27,45 @@ import CarouselSecond from "./component/SecondCarousel";
 import { useTranslation } from "react-i18next";
 // end of image import
 const About = () => {
+  const people = [
+    {
+      id: 1,
+      image: Card1,
+      name: "Seyi Onifade",
+      role: "Founder & CEO"
+    },
+    {
+      id: 2,
+      image: Card2,
+      name: "Chikere Aku-Ibe",
+      role: "Program Co-ordinator"
+    },
+    {
+      id: 3,
+      image: Card3,
+      name: "Ande Olorunimodimu",
+      role: "Program Manager"
+    },
+    {
+      id: 4,
+      image: Card4,
+      name: "Clariet Johnson",
+      role: "Program Manager"
+    },
+    {
+      id: 5,
+      image: Card5,
+      name: "Malik Cradford",
+      role: "Head of Engineering"
+    },
+    {
+      id: 6,
+      image: Card6,
+      name: "Jane Praise",
+      role: "Chief Operating Officer"
+    }
+  ];
+
   const { t } = useTranslation();
   return (
     <div>
@@ -66,24 +106,64 @@ const About = () => {
       </div>
       {/* COMPANIES */}
       {/* <Companies /> */}
-      {/* Who we are and how to join us */}
+      {/* What we do */}
       <div className={`container mb-5 ${styles.to_join}`}>
-        <div className={`${styles.team__container}`}>
+        <div className={`${styles.what_we_do}`}>
           <div className={`col-lg-6  ${styles.team}`}>
             <img src={team} alt={"image of teams"} srcSet="" />
           </div>
           <div className={`col-lg-6 ${styles.join_us}`}>
             <h3 className={` ${styles.h3m}`}>
-              {t("about.whoWeAre.title")} <br />
+              {t("about.whatWeDo.title")} <br />
             </h3>
             <p>
-              {t("about.whoWeAre.description")} <br />
+              <span className={` ${styles.span}`}>ZuriChat</span>{" "}
+              {t("about.whatWeDo.description")} <br />
+            </p>
+            {/* <p>
+              <span className={` ${styles.span}`}>ZuriChat</span>{" "}
+              {t("about.whoWeAre.description_")}
+            </p> */}
+          </div>
+        </div>
+      </div>
+      {/* our mission */}
+      <div className={`container mb-5 ${styles.to_join}`}>
+        <div className={`${styles.team__container}`}>
+          <div className={`col-lg-6  ${styles.team}`}>
+            <img src={hands} alt={"image of teams"} srcSet="" />
+          </div>
+          <div className={`col-lg-6 ${styles.join_us}`}>
+            <h3 className={` ${styles.h3m}`}>
+              {t("about.ourMission.title")} <br />
+            </h3>
+            <p>
+              {t("about.ourMission.description")} <br />
             </p>
             <p>
               <span className={` ${styles.span}`}>ZuriChat</span>{" "}
-              {t("about.whoWeAre.description_")}
+              {t("about.ourMission.description_")}
             </p>
           </div>
+        </div>
+      </div>
+
+      {/* our team */}
+      <div>
+        <h1 className="text-center my-8">Meet the team</h1>
+        <div className={`container mb-5 ${styles.team_grid}`}>
+          {people.map(person => (
+            <div
+              key={person.id}
+              className={`container ${styles.team_grid_item}`}
+            >
+              <img src={person.image} className="" alt="" />
+              <div className={`${styles.team_grid_item_info}`}>
+                <h3 className="">{person.name}</h3>
+                <p className="">{person.role}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
       {/* work remotely more intriging than ever  */}

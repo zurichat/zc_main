@@ -18,7 +18,42 @@
   display: none !important;
   margin-top: 2%;
 }
-
+/* our team grid */
+.team_grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  place-content: center;
+  place-items: center;
+  gap: 1em;
+  margin-top: 2em;
+}
+.team_grid_item {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+.team_grid_item > img {
+  width: 100%;
+  object-fit: cover;
+}
+.team_grid_item_info {
+  width: 100%;
+  padding: 1.2rem 1rem;
+  background-color: #00b87c;
+}
+.team_grid_item_info > h3 {
+  color: #fff;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  font-weight: 700;
+  margin: 0;
+}
+.team_grid_item_info > p {
+  color: #fff;
+  font-size: 1em;
+  font-weight: 400;
+  margin: 0;
+}
 .working_remote > h3 {
   padding: 0.3em 0em;
 }
@@ -161,16 +196,30 @@
   margin-top: 3%;
 }
 .team > img {
-  width: 100%;
+  width: 60%;
+  margin: 0 auto;
 }
 
+.what_we_do {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  
+  width: 100%;
+  margin: 6rem auto;
+}
+.what_we_do > img {
+  margin-right: 0;
+}
 .team__container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 2rem;
+  justify-content: space-between;
+  
+  width: 100%;
+  margin: auto;
 }
-
 .span {
   text-decoration: underline;
 }
@@ -231,6 +280,14 @@
   .zurichat_text {
     font-size: clamp(25px, 4vw, 32px);
     line-height: 1.3;
+  }
+  .team_grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    place-content: center;
+    place-items: center;
+    gap: 1em;
+    margin-top: 2em;
   }
 }
 
@@ -343,7 +400,9 @@
   .team__container {
     flex-direction: column;
   }
-
+  .what_we_do {
+    flex-direction: column;
+  }
   .counter > h3 {
     font-size: 35px;
     line-height: 50px;
@@ -359,6 +418,14 @@
   .carouselImage {
     position: relative;
     left: 33%;
+  }
+  .team_grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    place-content: center;
+    place-items: center;
+    gap: 1em;
+    margin-top: 2em;
   }
 }
 @media only screen and (max-width: 440px) {

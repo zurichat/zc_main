@@ -16,12 +16,24 @@ export default [
         countries: "countries have daily",
         countries_: "active users in"
       },
-      whoWeAre: {
-        title: "Who we are and how to join us",
+      whatWeDo: {
+        title: "What we do",
+        description:
+          "is a collaboration hub that brings the right people and tools together to get work done. From Fortune 100 companies to corner markets, millions of people around the world use Zuri Chat to connect their teams, unify their systems, and drive their business forward."
+      },
+      ourMission: {
+        title: "Our Mission",
         description:
           "Our mission is to improve people's working life by providing a platform that can host a strong diverse team , of creative professionals who want to do the best work of their lives",
         description_:
           "promises all kinds of opportunities and a simple, pleasant and more productive working life."
+      },
+      meetTheTeam: {
+        title: "Meet the team",
+        people: {
+          name: "Seyi Onifade",
+          role: "Founder & CEO"
+        }
       },
 
       highlights: {
