@@ -19,7 +19,6 @@ const SidebarHeader = props => {
   const showModal = () => {
     setOpenModal(!openModal);
   };
-
   // const theme = localStorage.getItem("theme")
   // if (theme !== null || theme !== "") {
   //   const sideBarHeader = document.getElementsByClassName("sidebar-header-div")

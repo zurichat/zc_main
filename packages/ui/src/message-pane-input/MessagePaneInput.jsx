@@ -4,6 +4,7 @@ import {
   EditorState,
   RichUtils,
   convertToRaw,
+  convertFromRaw,
   getDefaultKeyBinding,
   ContentState,
   Modifier
@@ -20,11 +21,14 @@ import "!style-loader!css-loader!@draft-js-plugins/mention/lib/plugin.css";
 
 // import suggestionStyles from "./suggestions.module.css"
 import "./message-editor-input.css";
-import Toolbar from "./components/Toolbar";
+import ToolbarBottom from "./components/ToolbarBottom";
+import ToolbarTop from "./components/ToolbarTop";
 import mentions from "./mentions.data";
 
 import createEmojiPlugin from "@draft-js-plugins/emoji";
 import { theme } from "./EmojiStyles.styled.js";
+
+import { BsFillFileEarmarkFill } from "react-icons/bs";
 
 const emojiPlugin = createEmojiPlugin({
   useNativeArt: true,
@@ -35,12 +39,17 @@ const { EmojiSuggestions, EmojiSelect } = emojiPlugin;
 const mentionPlugin = createMentionPlugin({ mentionPrefix: "@" });
 const { MentionSuggestions } = mentionPlugin;
 
-function keyBindingFn(e) {
+function keyBindingFn(e, editorState) {
   if (e.code === "Enter") {
     if (e.shiftKey || e.nativeEvent.shiftKey) {
       return "newline";
     } else {
-      return "send";
+      if (
+        editorState.getEditorState().getCurrentContent().getPlainText("")
+          .length > 0
+      ) {
+        return "send";
+      }
     }
   }
   return getDefaultKeyBinding(e);
@@ -75,18 +84,56 @@ export const getResetEditorState = editorState => {
     newContentState,
     "remove-range"
   );
+  removeFromSessionStorage();
   return removeSelectedBlocksStyle(newState);
+};
+
+const loadFromSessionStorage = () => {
+  const editorStateID = "editorState_" + sessionStorage.getItem("currentRoom");
+  const sessionData = sessionStorage.getItem(editorStateID);
+  if (sessionData) {
+    return convertFromRaw(JSON.parse(sessionData));
+  }
+  return null;
+};
+
+const saveToSessionStorage = editorState => {
+  const currentRoom = sessionStorage.getItem("currentRoom");
+  const editorStateID = "editorState_" + currentRoom;
+  if (currentRoom) {
+    sessionStorage.setItem(
+      editorStateID,
+      JSON.stringify(convertToRaw(editorState))
+    );
+  }
+};
+
+const removeFromSessionStorage = () => {
+  const editorStateID = "editorState_" + sessionStorage.getItem("currentRoom");
+  sessionStorage.removeItem(editorStateID);
 };
 
 const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
   const [data, setData] = useState("");
-  const [editorState, setEditorState] = useState(() =>
-    EditorState.createEmpty()
-  );
+  const [editorState, setEditorState] = useState(() => {
+    const content = loadFromSessionStorage();
+    return content
+      ? EditorState.createWithContent(content)
+      : EditorState.createEmpty();
+  });
   const [showEmoji, setShowEmoji] = useState(false);
   const [suggestions, setSuggestions] = useState(users || mentions);
   const [suggestionsOpen, setSuggestionsOpen] = useState(false);
-  // console.log("field", editorState)
+
+  useEffect(() => {
+    const content = loadFromSessionStorage();
+    if (content) {
+      setEditorState(EditorState.createWithContent(content));
+    } else {
+      setEditorState(EditorState.createEmpty());
+    }
+  }, [sessionStorage.getItem("currentRoom")]);
+
   // Mention helpers
   const onOpenChange = useCallback(_open => {
     setSuggestionsOpen(_open);
@@ -98,6 +145,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
 
   const editorStates = editorState => {
     setEditorState(editorState);
+    saveToSessionStorage(editorState.getCurrentContent());
     const blocks = convertToRaw(editorState.getCurrentContent()).blocks;
     const value = blocks
       .map(block => (!block.text.trim() && "\n") || block.text)
@@ -125,7 +173,6 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
 
   const handleKeyCommand = (command, editorState) => {
     const newState = RichUtils.handleKeyCommand(editorState, command);
-
     if (!newState) {
       if (command === "newline") {
         const newEditorState = RichUtils.insertSoftNewline(editorState);
@@ -164,7 +211,42 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
 
   // on click clear attached file
   const clearAttached = () => {
+    setPreview("");
     setSentAttachedFile("");
+  };
+
+  const AudioFilePreview = ({ source }) => {
+    return <audio controls src={source} />;
+  };
+
+  const DocumentFilePreview = ({ fileName, extension }) => {
+    return (
+      <StyledDocumentPreview>
+        <div>
+          <BsFillFileEarmarkFill style={{ width: "42px", height: "42px" }} />
+        </div>
+        <div style={{ width: "85%" }}>
+          <h6>{fileName}</h6>
+          <p>{extension}</p>
+        </div>
+      </StyledDocumentPreview>
+    );
+  };
+
+  const PreviewFile = () => {
+    console.log(sentAttachedFile);
+    let fileName = sentAttachedFile.name;
+    let extension = fileName.substring(fileName.lastIndexOf(".") + 1);
+
+    if (preview.includes("data:image")) {
+      return <img src={preview} alt="Image Preview" />;
+    } else if (preview.includes("data:audio")) {
+      return <AudioFilePreview source={preview} />;
+    } else if (preview.includes("data:video")) {
+      return <video autoPlay muted src={preview} />;
+    } else {
+      return <DocumentFilePreview fileName={fileName} extension={extension} />;
+    }
   };
 
   return (
@@ -172,15 +254,20 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
       <InputWrapper>
         {preview ? (
           <Preview>
-            <img src={preview} alt="Image Preview" />
+            <PreviewFile />
+
             <button
               style={{
                 position: "absolute",
-                top: "9px",
-                left: "65px",
-                height: "30px",
-                width: "30px",
-                borderRadius: "50%"
+                top: "-8px",
+                right: "-10px",
+                height: "24px",
+                width: "24px",
+                borderRadius: "50%",
+                background: "#242424",
+                fontWeight: "800",
+                fontSize: "12px",
+                color: "#fff"
               }}
               onClick={clearAttached}
             >
@@ -189,6 +276,16 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
           </Preview>
         ) : null}
         <div className="RichEditor-root">
+          <ToolbarTop
+            editorState={editorState}
+            setEditorState={setEditorState}
+            emojiSelect={<EmojiSelect />}
+            sendMessageHandler={sendMessage}
+            sendAttachedFileHandler={onAttachFile}
+            sentAttachedFile={sentAttachedFile =>
+              setSentAttachedFile(sentAttachedFile)
+            }
+          />
           <Editor
             editorState={editorState}
             onChange={onChange}
@@ -197,14 +294,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
             plugins={[emojiPlugin, mentionPlugin]}
           />
         </div>
-        <MentionSuggestions
-          open={suggestionsOpen}
-          onOpenChange={onOpenChange}
-          onSearchChange={onSearchChange}
-          suggestions={suggestions}
-          // onAddMention={m => console.log(m)}
-        />
-        <Toolbar
+        <ToolbarBottom
           editorState={editorState}
           setEditorState={setEditorState}
           emojiSelect={<EmojiSelect />}
@@ -213,6 +303,13 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
           sentAttachedFile={sentAttachedFile =>
             setSentAttachedFile(sentAttachedFile)
           }
+        />
+        <MentionSuggestions
+          open={suggestionsOpen}
+          onOpenChange={onOpenChange}
+          onSearchChange={onSearchChange}
+          suggestions={suggestions}
+          // onAddMention={m => console.log(m)}
         />
         {/* <div>
           {showEmoji && (
@@ -239,7 +336,7 @@ const InputWrapper = styled.section`
   border: 1px solid #b0afb0;
   ${"" /* border: 1px solid hsla(0, 0%, 92%, 1); */}
   border-radius: 3px;
-  padding: 10px 18px 15px 18px;
+  padding: 10px 18px;
   ${"" /* width: calc(100% - 24px); */}/* padding-left: 8px;
 padding-top: 8px;
 padding-bottom: 8px; */
@@ -277,12 +374,40 @@ const SendButton = styled.button`
   font-weight: 700;
   font-size: 1rem;
 `;
-const Preview = styled.div`
-  width: 5%;
-  height: 0.05%;
-  border-radius: 2px;
+const StyledDocumentPreview = styled.div`
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  padding: 16px 14px;
+  background: #ddd;
+  border-radius: 10px;
 
-  img {
+  h6 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 20px;
+    font-weight: bold;
+  }
+
+  p {
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+`;
+
+const Preview = styled.div`
+  width: fit-content;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  position: relative;
+
+  img,
+  video {
+    width: 95px;
+    height: 90px;
     object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 6px #0000001a;
   }
 `;

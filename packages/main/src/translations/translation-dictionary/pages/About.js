@@ -1,357 +1,688 @@
 export default [
   {
-    key: "about",
-    en: {
-      banner: {
-        headline_one: "Make work simple, pleasant and ",
-        headline_two: "more productive.",
-        description:
-          "is a collaboration hub that brings the right people and tools together to get work done. From Fortune 100 companies to corner markets, millions of people around the world use Zuri Chat to connect their teams, unify their systems, and drive their business forward."
-      },
-      counter: {
-        customers: "Paid",
-        customers_: "Customers",
-        fortune_companies: "of the Fortune 100",
-        fortune_companies_: "use",
-        countries: "countries have daily",
-        countries_: "active users in"
-      },
-      whoWeAre: {
-        title: "Who we are and how to join us",
-        description:
-          "Our mission is to improve people's working life by providing a platform that can host a strong diverse team , of creative professionals who want to do the best work of their lives",
-        description_:
-          "promises all kinds of opportunities and a simple, pleasant and more productive working life."
-      },
-
-      highlights: {
-        title: "Working remotely more intriguing than ever",
-        description: "Zuri Chat is where work meets fun.",
-        description_:
-          "Connect and interact with your team efficiently from anywhere around the globe",
-        channels: {
-          title: "Channels",
-          description: "Organize conversations into dedicated ",
-          description_: "spaces called channels"
-        },
-        holidayCalender: {
-          title: "Holiday Calender",
-          description: "Add holidays, set reminders ",
-          description_: "and see all events at a glance"
-        },
-        companyDeadline: {
-          title: "Company Deadline",
-          description: "Keep track of deadlines with ",
-          description_: "the company deadline ",
-          description__: "feature"
-        },
-        quickReply: {
-          title: "Quick Reply App",
-          description: "Get swift replies to Direct ",
-          description_: "Messages"
-        },
-        todoList: {
-          title: "To do List",
-          description: "Organize tasks with the to-do-list",
-          description_: "feature"
-        }
-      },
-
-      features: {
-        title: "Special Features",
-        description:
-          "Increase your productivity by assembling all your work tools into one place",
-        avatar: {
-          title: "Animated Avatar Loungue",
-          description: "Create and animate your own avatar in the avatar lounge"
-        },
-        files: {
-          title: "Company Files",
-          description: "Access your files on google drive while on Zuri Chat."
-        },
-        accessibility: {
-          title: "Accessibility",
-          description: "Be in control, Use Zuri Chat and enjoy",
-          description_: "the best accessibility features"
-        },
-        goals: {
-          title: "Company Goals",
-          description: "Keep up with company goals",
-          description_: "right inside Zuri Chat"
-        }
-      },
-
-      cta: {
-        title: "Whatever work you do, you can do it in Zuri Chat",
-        link_sales: "Talk to sales",
-        link_try: "Try it for free"
-      }
-    },
-    fr: {
-      banner: {
-        headline_one: "Rendre le travail simple, agréable et",
-        headline_two: "plus productif.",
-        description:
-          "est un centre de collaboration qui rassemble les bonnes personnes et les bons outils pour accomplir le travail. Des entreprises Fortune 100 aux marchés de proximité, des millions de personnes dans le monde utilisent Zuri Chat pour connecter leurs équipes, unifier leurs systèmes et faire avancer leur entreprise."
-      },
-      counter: {
-        customers: "Payé",
-        customers_: "Les clients",
-        fortune_companies: "du Fortune 100",
-        fortune_companies_: "utilisation",
-        countries: "les pays ont quotidiennement",
-        countries_: "utilisateurs actifs dans"
-      },
-      whoWeAre: {
-        title: "Qui sommes-nous et comment nous rejoindre",
-        description:
-          "Notre mission est d'améliorer la vie professionnelle des gens en fournissant une plate-forme pouvant accueillir une équipe solide et diversifiée, de professionnels créatifs qui souhaitent faire le meilleur travail de leur vie.",
-        description_:
-          "promet toutes sortes d'opportunités et une vie professionnelle simple, agréable et plus productive."
-      },
-
-      highlights: {
-        title: "Le télétravail plus intrigant que jamais",
-        description:
-          "Zuri Chat est l'endroit où le travail rencontre le plaisir.",
-        description_:
-          "Connectez-vous et interagissez avec votre équipe efficacement depuis n'importe où dans le monde",
-        channels: {
-          title: "Canaux",
-          description: "Organisez les conversations en",
-          description_: "espaces appelés canaux"
-        },
-        holidayCalender: {
-          title: "Calendrier des vacances",
-          description: "Ajouter des jours fériés, définir des rappels",
-          description_: "et voir tous les événements en un coup d'œil"
-        },
-        companyDeadline: {
-          title: "Date limite de l'entreprise",
-          description: "Gardez une trace des délais avec",
-          description_: "la date limite de l'entreprise",
-          description__: "caractéristique"
-        },
-        quickReply: {
-          title: "Application de réponse rapide",
-          description: "Obtenez des réponses rapides à Direct",
-          description_: "messages"
-        },
-        todoList: {
-          title: "Liste de choses à faire",
-          description: "Organiser les tâches avec la liste de tâches",
-          description_: "caractéristique"
-        }
-      },
-
-      features: {
-        title: "Caractéristiques spéciales",
-        description:
-          "Augmentez votre productivité en assemblant tous vos outils de travail en un seul endroit",
-        avatar: {
-          title: "Salon Avatar animé",
-          description:
-            "Créez et animez votre propre avatar dans le salon avatar"
-        },
-        files: {
-          title: "Fichiers d'entreprise",
-          description:
-            "Accédez à vos fichiers sur Google Drive pendant que vous êtes sur Zuri Chat."
-        },
-        accessibility: {
-          title: "Accessibilité",
-          description: "Gardez le contrôle, utilisez Zuri Chat et profitez",
-          description_: "les meilleures fonctionnalités d'accessibilité"
-        },
-        goals: {
-          title: "Objectifs de l'entreprise",
-          description: "Suivre les objectifs de l'entreprise",
-          description_: "directement dans Zuri Chat"
-        }
-      },
-
-      cta: {
-        title:
-          "Quel que soit le travail que vous faites, vous pouvez le faire dans Zuri Chat",
-        link_sales: "Parlez aux ventes",
-        link_try: "Essayez-le gratuitement"
-      }
-    },
-    de: {
-      banner: {
-        headline_one: "Machen Sie die Arbeit einfach, angenehm und",
-        headline_two: "produktiver.",
-        description:
-          "ist ein Hub für Zusammenarbeit, der die richtigen Leute und Tools zusammenbringt, um die Arbeit zu erledigen. Von Fortune-100-Unternehmen bis hin zu Eckmärkten nutzen Millionen von Menschen auf der ganzen Welt Zuri Chat, um ihre Teams zu vernetzen, ihre Systeme zu vereinheitlichen und ihr Geschäft voranzutreiben."
-      },
-
-      counter: {
-        customers: "Bezahlt",
-        customers_: "Kunden",
-        fortune_companies: "der Fortune 100",
-        fortune_companies_: "verwenden",
-        countries: "Länder haben täglich",
-        countries_: "aktive Benutzer in"
-      },
-
-      whoWeAre: {
-        title: "Wer wir sind und wie Sie sich uns anschließen können",
-        description:
-          "Unsere Mission ist es, das Arbeitsleben der Menschen zu verbessern, indem wir eine Plattform bieten, die ein starkes, vielfältiges Team von kreativen Fachleuten aufnehmen kann, die die beste Arbeit ihres Lebens leisten wollen",
-        description_:
-          "verspricht vielfältige Möglichkeiten und ein einfaches, angenehmes und produktiveres Arbeitsleben."
-      },
-
-      highlights: {
-        title: "Arbeiten aus der Ferne faszinierender denn je",
-        description: "Bei Zuri Chat trifft Arbeit auf Spaß.",
-        description_:
-          "Verbinden und interagieren Sie effizient mit Ihrem Team von überall auf der Welt",
-        channels: {
-          title: "Kanäle",
-          description: "Organisieren Sie Gespräche in dedizierten",
-          description_: "Räume, die Kanäle genannt werden"
-        },
-        holidayCalender: {
-          title: "Feiertagskalender",
-          description: "Feiertage hinzufügen, Erinnerungen festlegen",
-          description_: "und sehen Sie alle Events auf einen Blick"
-        },
-        companyDeadline: {
-          title: "Unternehmensschluss",
-          description: "Keep track of deadlines with ",
-          description_: "Behalten Sie die Fristen im Auge mit",
-          description__: "besonderheit"
-        },
-        quickReply: {
-          title: "Schnellantwort-App",
-          description: "Erhalten Sie schnelle Antworten auf Direct",
-          description_: "mitteilungen"
-        },
-        todoList: {
-          title: "Aufgabenliste",
-          description: "Organisieren Sie Aufgaben mit der To-Do-Liste",
-          description_: "besonderheit"
-        }
-      },
-
-      features: {
-        title: "Besondere Merkmale",
-        description:
-          "Steigern Sie Ihre Produktivität, indem Sie alle Ihre Arbeitswerkzeuge an einem Ort zusammenstellen",
-        avatar: {
-          title: "Animierte Avatar Lounge",
-          description:
-            "Erstellen und animieren Sie Ihren eigenen Avatar in der Avatar-Lounge"
-        },
-        files: {
-          title: "Unternehmensdateis",
-          description:
-            "Greifen Sie bei Zuri Chat auf Ihre Dateien auf Google Drive zu."
-        },
-        accessibility: {
-          title: "Barrierefreiheit",
-          description:
-            "Behalten Sie die Kontrolle, verwenden Sie Zuri Chat und genießen Sie",
-          description_: "die besten Zugänglichkeitsfunktionen"
-        },
-        goals: {
-          title: "Unternehmensziele",
-          description:
-            "Bleiben Sie mit den Unternehmenszielen auf dem Laufenden",
-          description_: "direkt in Zuri Chat"
-        }
-      },
-
-      cta: {
-        title: "Was auch immer Sie tun, Sie können es im Zuri Chat tun",
-        link_sales: "Sprechen Sie mit dem Vertrieb",
-        link_try: "Kostenlos ausprobieren"
-      }
-    },
-    zh: {
-      banner: {
-        headline_one: "让工作变得简单、愉快和",
-        headline_two: "更有生产力。",
-        description:
-          "是一个协作中心，可将合适的人员和工具聚集在一起以完成工作。 从财富 100 强公司到角落市场，世界各地有数百万人使用 Zuri Chat 连接他们的团队、统一他们的系统并推动他们的业务向前发展。"
-      },
-
-      counter: {
-        customers: "有薪酬的",
-        customers_: "顾客",
-        fortune_companies: "财富 100 强",
-        fortune_companies_: "用",
-        countries: "国家每天都有",
-        countries_: "活跃用户"
-      },
-
-      whoWeAre: {
-        title: "我们是谁以及如何加入我们",
-        description: "我们的使命是通过提供一个平台来改善人们的工作生活",
-        description_: "承诺提供各种机会和简单、愉快和更有成效的工作生活。"
-      },
-
-      highlights: {
-        title: "远程工作比以往任何时候都更有趣",
-        description: "Zuri Chat 是工作与乐趣相结合的地方。",
-        description_: "从全球任何地方高效地与您的团队联系和互动",
-        channels: {
-          title: "频道",
-          description: "将对话组织成专门的",
-          description_: "称为通道的空间"
-        },
-        holidayCalender: {
-          title: "假期日历",
-          description: "添加假期，设置提醒",
-          description_: "并一目了然地查看所有事件"
-        },
-        companyDeadline: {
-          title: "公司截止日期",
-          description: "跟踪截止日期",
-          description_: "公司截止日期",
-          description__: "特征"
-        },
-        quickReply: {
-          title: "快速回复应用",
-          description: "获得对 Direct 的快速回复",
-          description_: "留言"
-        },
-        todoList: {
-          title: "待办事项清单",
-          description: "使用待办事项列表组织任务",
-          description_: "特征"
-        }
-      },
-
-      features: {
-        title: "特殊功能",
-        description: "通过将所有工作工具组装到一个地方来提高您的生产力",
-        avatar: {
-          title: "动画头像休息室",
-          description: "在头像休息室创建和动画你自己的头像"
-        },
-        files: {
-          title: "公司档案",
-          description: "在 Zuri Chat 上访问您在 Google Drive 上的文件。"
-        },
-        accessibility: {
-          title: "无障碍",
-          description: "掌控一切，使用 Zuri Chat 并享受",
-          description_: "最佳辅助功能"
-        },
-        goals: {
-          title: "Objectifs de l'entreprise",
-          description: "紧跟公司目标",
-          description_: "就在 Zuri Chat 里面"
-        }
-      },
-
-      cta: {
-        title: "无论您做什么工作，您都可以在 Zuri Chat 中完成",
-        link_sales: "与销售人员交谈",
-        link_try: "免费试用"
-      }
-    }
+    key: "about.banner.headline_one",
+    en: "Make work simple, pleasant and",
+    de: "Machen Sie die Arbeit einfach, angenehm und",
+    nl: "Maak het werk eenvoudig, aangenaam en",
+    engb: "Make work simple, pleasant and",
+    fr: "Rendre le travail simple, agréable et",
+    zh: "使事简而乐和",
+    ar: "اجعل العمل بسيطا وممتعا و",
+    es: "Haga que el trabajo sea simple, agradable y",
+    it: "Rendi il lavoro semplice, piacevole e",
+    iw: "הפוך את העבודה לפשוטה, נעימה ו",
+    pt: "Tornar o trabalho simples, agradável e"
+  },
+  {
+    key: "about.banner.headline_two",
+    en: "more productive.",
+    de: "produktiver.",
+    nl: "Productiever.",
+    engb: "more productive.",
+    fr: "plus productif.",
+    zh: "益高效。",
+    ar: "أكثر إنتاجية.",
+    es: "más productivo.",
+    it: "più produttivo.",
+    iw: "יותר יעיל.",
+    pt: "mais produtivo."
+  },
+  {
+    key: "about.counter.customers",
+    en: "Paid",
+    de: "Bezahlt",
+    nl: "Betaald",
+    engb: "Paid",
+    fr: "Payé",
+    zh: "支给之",
+    ar: "مدفوع",
+    es: "Pagado",
+    it: "Pagato",
+    iw: "שולם",
+    pt: "Pago"
+  },
+  {
+    key: "about.counter.customers_",
+    en: "Customers",
+    de: "Kundschaft",
+    nl: "Klanten",
+    engb: "Customers",
+    fr: "Clientèle",
+    zh: "客户",
+    ar: "الزبائن",
+    es: "Clientela",
+    it: "Clientela",
+    iw: "לקוחות",
+    pt: "Clientes"
+  },
+  {
+    key: "about.counter.fortune_companies",
+    en: "of the Fortune 100",
+    de: "der Fortune 100",
+    nl: "van de Fortune 100",
+    engb: "of the Fortune 100",
+    fr: "du Fortune 100",
+    zh: "财 100 强",
+    ar: "من قائمة فورتشن 100",
+    es: "de las empresas Fortune 100",
+    it: "delle aziende Fortune 100",
+    iw: "של Fortune 100",
+    pt: "da Fortune 100"
+  },
+  {
+    key: "about.counter.fortune_companies_",
+    en: "use",
+    de: "gebrauchen",
+    nl: "gebruiken",
+    engb: "use",
+    fr: "utiliser",
+    zh: "用",
+    ar: "استخدام",
+    es: "uso",
+    it: "usar",
+    iw: "להשתמש",
+    pt: "usar"
+  },
+  {
+    key: "about.counter.countries",
+    en: "countries have daily",
+    de: "Länder haben täglich",
+    nl: "landen hebben dagelijks",
+    engb: "countries have daily",
+    fr: "pays ont",
+    zh: "诸国日有",
+    ar: "البلدان لديها يوميا",
+    es: "países tienen diariamente",
+    it: "I paesi hanno giornalmente",
+    iw: "למדינות יש מדי יום",
+    pt: "países têm diariamente"
+  },
+  {
+    key: "about.banner.description",
+    en: "is a collaboration hub that brings the right people and tools together to get work done. From Fortune 100 companies to corner markets, millions of people around the world use Zuri Chat to connect their teams, unify their systems, and drive their business forward.",
+    de: "ist ein Collaboration-Hub, der die richtigen Personen und Tools zusammenbringt, um die Arbeit zu erledigen. Von Fortune-100-Unternehmen bis hin zu Eckmärkten nutzen Millionen von Menschen auf der ganzen Welt Zuri Chat, um ihre Teams zu verbinden, ihre Systeme zu vereinheitlichen und ihr Geschäft voranzutreiben.",
+    nl: "is een samenwerkingshub die de juiste mensen en tools samenbrengt om werk gedaan te krijgen. Van Fortune 100-bedrijven tot hoekmarkten, miljoenen mensen over de hele wereld gebruiken Zuri Chat om hun teams te verbinden, hun systemen te verenigen en hun bedrijf vooruit te helpen.",
+    engb: "is a collaboration hub that brings the right people and tools together to get work done. From Fortune 100 companies to corner markets, millions of people around the world use Zuri Chat to connect their teams, unify their systems, and drive their business forward.",
+    fr: "est un centre de collaboration qui rassemble les bonnes personnes et les bons outils pour accomplir le travail. Des entreprises du Fortune 100 aux marchés du coin, des millions de personnes à travers le monde utilisent Zuri Chat pour connecter leurs équipes, unifier leurs systèmes et faire progresser leur entreprise.",
+    zh: "一协中心,聚人器以成事。 自财 100 强公司至角市,全球数百万人 Zuri Chat 以接其团队,一其统而推其业",
+    ar: "هو مركز تعاون يجمع الأشخاص والأدوات المناسبة معا لإنجاز العمل. من شركات فورتشن 100 إلى الأسواق الركنية ، يستخدم ملايين الأشخاص حول العالم Zuri Chat لربط فرقهم وتوحيد أنظمتهم ودفع أعمالهم إلى الأمام",
+    es: "es un centro de colaboración que reúne a las personas y herramientas adecuadas para realizar el trabajo. Desde compañías Fortune 100 hasta mercados de esquina, millones de personas en todo el mundo usan Zuri Chat para conectar a sus equipos, unificar sus sistemas e impulsar su negocio.",
+    it: "è un hub di collaborazione che riunisce le persone e gli strumenti giusti per portare a termine il lavoro. Dalle aziende Fortune 100 ai mercati corner, milioni di persone in tutto il mondo usano Zuri Chat per connettere i propri team, unificare i propri sistemi e far progredire il proprio business.",
+    iw: "הוא מרכז שיתוף פעולה שמפגיש את האנשים והכלים הנכונים כדי לבצע את העבודה. ",
+    pt: "é um centro de colaboração que reúne as pessoas e ferramentas certas para fazer o trabalho. Desde as 100 empresas da Fortune até aos mercados de canto, milhões de pessoas em todo o mundo usam o Zuri Chat para ligar as suas equipas, unificar os seus sistemas e impulsionar os seus negócios para a frente."
+  },
+  {
+    key: "about.counter.customers_",
+    en: "Customers",
+    de: "Kundschaft",
+    nl: "Klanten",
+    engb: "Customers",
+    fr: "Clientèle",
+    zh: "客户",
+    ar: "الزبائن",
+    es: "Clientela",
+    it: "Clientela",
+    iw: "לקוחות",
+    pt: "Clientes"
+  },
+  {
+    key: "about.counter.fortune_companies",
+    en: "of the Fortune 100",
+    de: "der Fortune 100",
+    nl: "van de Fortune 100",
+    engb: "of the Fortune 100",
+    fr: "du Fortune 100",
+    zh: "财 100 强",
+    ar: "من قائمة فورتشن 100",
+    es: "de las empresas Fortune 100",
+    it: "delle aziende Fortune 100",
+    iw: "של Fortune 100",
+    pt: "da Fortune 100"
+  },
+  {
+    key: "about.counter.countries_",
+    en: "active users in",
+    de: "Aktive Benutzer in",
+    nl: "actieve gebruikers in",
+    engb: "active users in",
+    fr: "utilisateurs actifs dans",
+    zh: "活跃用户",
+    ar: "المستخدمون النشطون في",
+    es: "usuarios activos en",
+    it: "Utenti attivi in",
+    iw: "משתמשים פעילים ב",
+    pt: "utilizadores ativos em"
+  },
+  {
+    key: "about.whoWeAre.title",
+    en: "Who we are and how to join us",
+    de: "Wer wir sind und wie Sie sich uns anschließen können",
+    nl: "Wie we zijn en hoe je met ons mee kunt doen",
+    engb: "Who we are and how to join us",
+    fr: "Qui sommes-nous et comment nous rejoindre",
+    zh: "我们是谁及怎么样?",
+    ar: "من نحن وكيفية الانضمام إلينا",
+    es: "Quiénes somos y cómo unirse a nosotros",
+    it: "Chi siamo e come unirti a noi",
+    iw: "מי אנחנו ואיך להצטרף אלינו",
+    pt: "Quem somos e como nos juntar a nós"
+  },
+  {
+    key: "about.whoWeAre.description",
+    en: "Our mission is to improve people's working life by providing a platform that can host a strong diverse team , of creative professionals who want to do the best work of their lives.",
+    de: "Unsere Mission ist es, das Arbeitsleben der Menschen zu verbessern, indem wir eine Plattform bieten, die ein starkes, vielfältiges Team von kreativen Fachleuten beherbergen kann, die die beste Arbeit ihres Lebens leisten wollen.",
+    nl: "Onze missie is om het werkende leven van mensen te verbeteren door een platform te bieden dat een sterk divers team kan hosten, van creatieve professionals die het beste werk van hun leven willen doen.",
+    engb: "Our mission is to improve people's working life by providing a platform that can host a strong diverse team , of creative professionals who want to do the best work of their lives.",
+    fr: "Notre mission est d’améliorer la vie professionnelle des gens en fournissant une plate-forme qui peut accueillir une équipe diversifiée forte, de professionnels créatifs qui veulent faire le meilleur travail de leur vie.",
+    zh: "命因一台以善人事,台容一强多元化团队,以成至专业人士",
+    ar: "مهمتنا هي تحسين الحياة العملية للناس من خلال توفير منصة يمكنها استضافة فريق قوي متنوع ، من المهنيين المبدعين الذين يرغبون في القيام بأفضل عمل في حياتهم",
+    es: "Nuestra misión es mejorar la vida laboral de las personas proporcionando una plataforma que pueda albergar un equipo fuerte y diverso, de profesionales creativos que quieran hacer el mejor trabajo de sus vidas.",
+    it: "La nostra missione è migliorare la vita lavorativa delle persone fornendo una piattaforma in grado di ospitare un team forte e diversificato, di professionisti creativi che vogliono fare il miglior lavoro della loro vita.",
+    iw: "המשימה שלנו היא לשפר את חיי העבודה של אנשים על ידי מתן פלטפורמה שיכולה לארח צוות חזק ומגוון, של אנשי מקצוע יצירתיים שרוצים לעשות את העבודה הטובה ביותר בחייהם",
+    pt: "A nossa missão é melhorar a vida profissional das pessoas, fornecendo uma plataforma capaz de acolher uma equipa forte e diversificada, de profissionais criativos que querem fazer o melhor trabalho das suas vidas."
+  },
+  {
+    key: "about.whoWeAre.description_",
+    en: "promises all kinds of opportunities and a simple, pleasant and more productive working life.",
+    de: "verspricht allerlei Möglichkeiten und ein einfaches, angenehmes und produktiveres Arbeitsleben.",
+    nl: "belooft allerlei kansen en een eenvoudig, prettiger en productiever arbeidsleven.",
+    engb: "promises all kinds of opportunities and a simple, pleasant and more productive working life.",
+    fr: "promet toutes sortes d’opportunités et une vie professionnelle simple, agréable et plus productive.",
+    zh: "承诺诸机简,怡然更有功",
+    ar: "يعد بجميع أنواع الفرص وحياة عمل بسيطة وممتعة وأكثر إنتاجية",
+    es: "promete todo tipo de oportunidades y una vida laboral sencilla, agradable y productiva",
+    it: "promette tutti i tipi di opportunità e una vita lavorativa semplice, piacevole e più produttiva",
+    iw: "מבטיחה כל מיני הזדמנויות וחיי עבודה פשוטים, נעימים ופרודוקטיביים יותר",
+    pt: "promete todo o tipo de oportunidades e uma vida de trabalho simples, agradável e mais produtiva"
+  },
+  {
+    key: "about.highlights.title",
+    en: "Working remotely more intriguing than ever",
+    de: "Remote-Arbeiten faszinierender denn je",
+    nl: "Werken op afstand intrigerender dan ooit",
+    engb: "Working remotely more intriguing than ever",
+    fr: "Le travail à distance est plus intrigant que jamais",
+    zh: "远程事有趣于曩时",
+    ar: "العمل عن بعد أكثر إثارة للاهتمام من أي وقت مضى",
+    es: "Trabajar de forma remota es más intrigante que nunca",
+    it: "Lavorare da remoto è più intrigante che mai",
+    iw: "עבודה מרחוק מסקרן מתמיד",
+    pt: "Trabalhar remotamente mais intrigante do que nunca"
+  },
+  {
+    key: "about.highlights.description",
+    en: "Zuri Chat is where work meets fun",
+    de: "Zuri Chat ist der Ort, an dem Arbeit auf Spaß trifft",
+    nl: "Zuri Chat is waar werk en plezier elkaar ontmoeten",
+    engb: "Zuri Chat is where work meets fun",
+    fr: "Zuri Chat est l’endroit où le travail rencontre le plaisir",
+    zh: "Zuri聊天者,事之所遇也",
+    ar: "دردشة زوري هي المكان الذي يلتقي فيه العمل بالمرح",
+    es: "Zuri Chat es donde el trabajo se encuentra con la diversión",
+    it: "Zuri Chat è dove il lavoro incontra il divertimento",
+    iw: "צורי צ'אט הוא המקום שבו עבודה פוגשת כיף",
+    pt: "Zuri Chat é onde o trabalho encontra diversão"
+  },
+  {
+    key: "about.highlights.description_",
+    en: "Connect and interact with your team efficiently from anywhere around the globe",
+    de: "Maak efficiënt contact met en communiceer efficiënt met uw team vanaf elke locatie ter wereld",
+    nl: "Maak efficiënt contact met en communiceer efficiënt met uw team vanaf elke locatie ter wereld",
+    engb: "Connect and interact with your team efficiently from anywhere around the globe",
+    fr: "Connectez-vous et interagissez efficacement avec votre équipe depuis n’importe où dans le monde",
+    zh: "以全球所系团队高效互动",
+    ar: "تواصل وتفاعل مع فريقك بكفاءة من أي مكان حول العالم",
+    es: "Conéctese e interactúe con su equipo de manera eficiente desde cualquier lugar del mundo",
+    it: "Connettiti e interagisci con il tuo team in modo efficiente da qualsiasi parte del mondo",
+    iw: "התחבר ותקשר עם הצוות שלך ביעילות מכל מקום ברחבי העולם",
+    pt: "Conecte-se e interaja com a sua equipa de forma eficiente de qualquer parte do globo"
+  },
+  {
+    key: "about.highlights.channels.title",
+    en: "Channels",
+    de: "Kanäle",
+    nl: "Kanalen",
+    engb: "Channels",
+    fr: "Canaux",
+    zh: "渠也",
+    ar: "القنوات",
+    es: "Canales",
+    it: "Canali",
+    iw: "ערוצים",
+    pt: "Canais"
+  },
+  {
+    key: "about.highlights.channels.description",
+    en: "Organize conversations into dedicated",
+    de: "Organisieren Sie Konversationen in dedizierten",
+    nl: "Organisez les conversations en",
+    engb: "Organize conversations into dedicated",
+    fr: "Organisez les conversations en",
+    zh: "将对话专用对话",
+    ar: "تنظيم المحادثات في أقسام مخصصة",
+    es: "Organiza las conversaciones en conversaciones dedicadas",
+    it: "Organizza le conversazioni in aree dedicate",
+    iw: "ארגן שיחות למסורות",
+    pt: "Organizar conversas em dedicado"
+  },
+  {
+    key: "about.highlights.channels.description_",
+    en: "spaces called channels",
+    de: "Leerzeichen, die als Kanäle bezeichnet werden",
+    nl: "ruimtes die kanalen worden genoemd",
+    engb: "spaces called channels",
+    fr: "espaces appelés canaux",
+    zh: "谓之通道之空间",
+    ar: "مساحات تسمى القنوات",
+    es: "espacios llamados canales",
+    it: "spazi chiamati canali",
+    iw: "מרחבים הנקראים ערוצים",
+    pt: "espaços chamados canais"
+  },
+  {
+    key: "about.highlights.holidayCalender.title",
+    en: "Holiday Calender",
+    de: "Ferienkalender",
+    nl: "Vakantiekalender",
+    engb: "Holiday Calender",
+    fr: "Calendrier des Fêtes",
+    zh: "假日历",
+    ar: "تقويم العطلات",
+    es: "Calendario de vacaciones",
+    it: "Calendario delle vacanze",
+    iw: "לוח חגים",
+    pt: "Calender de férias"
+  },
+  {
+    key: "about.highlights.holidayCalender.description",
+    en: "Add holidays, set reminders",
+    de: "Feiertage hinzufügen, Erinnerungen festlegen",
+    nl: "Feestdagen toevoegen, herinneringen instellen",
+    engb: "Add holidays, set reminders",
+    fr: "Ajouter des jours fériés, définir des rappels",
+    zh: "添节假日,设提醒",
+    ar: "إضافة أيام العطلات، وتعيين التذكيرات",
+    es: "Agregar días festivos, establecer recordatorios",
+    it: "Aggiungi festività, imposta promemoria",
+    iw: "הוסף חגים, הגדר תזכורות",
+    pt: "Adicione férias, definir lembretes"
+  },
+  {
+    key: "about.highlights.holidayCalender.description_",
+    en: "and see all events at a glance",
+    de: "en bekijk alle evenementen in één oogopslag",
+    nl: "en bekijk alle evenementen in één oogopslag",
+    engb: "and see all events at a glance",
+    fr: "et voir tous les événements en un coup d’œil",
+    zh: "一目了然",
+    ar: "وشاهد جميع الأحداث في لمحة سريعة",
+    es: "y vea todos los eventos de un vistazo",
+    it: "e vedi tutti gli eventi a colpo d'occhio",
+    iw: "ולראות את כל האירועים במבט אחד",
+    pt: "e ver todos os eventos num relance"
+  },
+  {
+    key: "about.highlights.companyDeadline.title",
+    en: "Company Deadline",
+    de: "Deadline des Unternehmens",
+    nl: "Deadline voor bedrijf",
+    engb: "Company Deadline",
+    fr: "Date limite de l’entreprise",
+    zh: "公司止期",
+    ar: "الموعد النهائي للشركة",
+    es: "Fecha límite de la empresa",
+    it: "Scadenza aziendale",
+    iw: "מועד אחרון של החברה",
+    pt: "Prazo da empresa"
+  },
+  {
+    key: "about.highlights.companyDeadline.description",
+    en: "Keep track of deadlines with",
+    de: "Houd deadlines bij met",
+    nl: "Houd deadlines bij met",
+    engb: "Keep track of deadlines with",
+    fr: "Gardez une trace des délais avec",
+    zh: "踪迹断日期",
+    ar: "تتبع المواعيد النهائية باستخدام",
+    es: "Realice un seguimiento de los plazos con",
+    it: "Tieni traccia delle scadenze con",
+    iw: "עקוב אחר מועדים עם",
+    pt: "Acompanhe os prazos com"
+  },
+  {
+    key: "about.highlights.companyDeadline.description_",
+    en: "the company deadline",
+    de: "Die Unternehmensfrist",
+    nl: "de bedrijfsdeadline",
+    engb: "the company deadline",
+    fr: "La date limite de l’entreprise",
+    zh: "公司止期",
+    ar: "الموعد النهائي للشركة",
+    es: "La fecha límite de la empresa",
+    it: "La scadenza aziendale",
+    iw: "המועד האחרון של החברה",
+    pt: "o prazo da empresa"
+  },
+  {
+    key: "about.highlights.quickReply.title",
+    en: "Quick Reply App",
+    de: "Schnellantwort-App",
+    nl: "App voor snel beantwoorden",
+    engb: "Quick Reply App",
+    fr: "Application de réponse rapide",
+    zh: "速报宜用",
+    ar: "تطبيق الرد السريع",
+    es: "Aplicación de respuesta rápida",
+    it: "App di risposta rapida",
+    iw: "אפליקציית תשובה מהירה",
+    pt: "App de resposta rápida"
+  },
+  {
+    key: "about.highlights.quickReply.description",
+    en: "Get swift replies to Direct",
+    de: "Erhalten Sie schnelle Antworten auf Direct",
+    nl: "Krijg snelle antwoorden op Direct",
+    engb: "Get swift replies to Direct",
+    fr: "Obtenez des réponses rapides à Direct",
+    zh: "速报直",
+    ar: "احصل على ردود سريعة على دايركت",
+    es: "Obtenga respuestas rápidas a Direct",
+    it: "Ottieni risposte rapide a Direct",
+    iw: "קבל תשובות מהירות ל-Direct",
+    pt: "Obtenha respostas rápidas para Direct"
+  },
+  {
+    key: "about.highlights.quickReply.description_",
+    en: "Messages",
+    de: "Meldungen",
+    nl: "Berichten",
+    engb: "Messages",
+    fr: "Messages",
+    zh: "消息",
+    ar: "رسائل",
+    es: "Mensajes",
+    it: "Messaggi",
+    iw: "הודעות",
+    pt: "Mensagens"
+  },
+  {
+    key: "about.highlights.todoList.title",
+    en: "To do List",
+    de: "Takenlijst",
+    nl: "Takenlijst",
+    engb: "To do List",
+    fr: "Liste des tâches",
+    zh: "待办事具状",
+    ar: "قائمة المهام",
+    es: "Lista de tareas pendientes",
+    it: "Elenco delle cose da fare",
+    iw: "רשימת מטלות",
+    pt: "Para fazer Lista"
+  },
+  {
+    key: "about.highlights.todoList.description",
+    en: "Organize tasks with the to-do-list",
+    de: "Aufgaben mit der To-Do-Liste organisieren",
+    nl: "Organiseer taken met de takenlijst",
+    engb: "Organize tasks with the to-do-list",
+    fr: "Organisez les conversations en",
+    zh: "将对话专用对话",
+    ar: "تنظيم المحادثات في أقسام مخصصة",
+    es: "Organiza las conversaciones en conversaciones dedicadas",
+    it: "Organizza le conversazioni in aree dedicate",
+    iw: "ארגן משימות עם רשימת המטלות",
+    pt: "Organizar conversas em dedicado"
+  },
+  {
+    key: "about.highlights.todoList.description_",
+    en: "feature",
+    de: "Merkmal",
+    nl: "gelaatstrek",
+    engb: "feature",
+    fr: "caractéristique",
+    zh: "特征",
+    ar: "ميزة",
+    es: "característica",
+    it: "caratteristica",
+    iw: "תכונה",
+    pt: "recurso"
+  },
+  {
+    key: "about.features.title",
+    en: "Special Features",
+    de: "Besonderheiten",
+    nl: "Bijzonderheden",
+    engb: "Special Features",
+    fr: "Caractéristiques spéciales",
+    zh: "殊功能",
+    ar: "ميزات خاصة",
+    es: "Características especiales",
+    it: "Caratteristiche speciali",
+    iw: "מאפיינים מיוחדים",
+    pt: "Características Especiais"
+  },
+  {
+    key: "about.features.description:",
+    en: "Increase your productivity by assembling all your work tools into one place",
+    de: "Steigern Sie Ihre Produktivität, indem Sie alle Ihre Arbeitsgeräte an einem Ort zusammenstellen",
+    nl: "Verhoog uw productiviteit door al uw uitrustingsstukken op één plek samen te stellen",
+    engb: "Increase your productivity by assembling all your work tools into one place",
+    fr: "Augmentez votre productivité en rassemblant tous vos outils de travail en un seul endroit",
+    zh: "凡工装机具组装一所,以崇工作效率",
+    ar: "زيادة إنتاجيتك عن طريق تجميع جميع أدوات العمل الخاصة بك في مكان واحد",
+    es: "Aumente su productividad ensamblando todas sus herramientas de trabajo en un solo lugar",
+    it: "Aumenta la tua produttività assemblando tutti i tuoi strumenti di lavoro in un unico posto",
+    iw: "הגדל את הפרודוקטיביות שלך על ידי הרכבת כל כלי העבודה שלך למקום אחד",
+    pt: "Aumente a sua produtividade montando todas as suas ferramentas de trabalho num só local"
+  },
+  {
+    key: "about.features.avatar.title",
+    en: "Animated Avatar Loungue",
+    de: "Animierter Avatar Loungue",
+    nl: "Geanimeerde Avatar Loungue",
+    engb: "Animated Avatar Loungue",
+    fr: "Avatar animé Loungue",
+    zh: "动画阿凡达龙格",
+    ar: "الرسوم المتحركة الصورة الرمزية Loungue",
+    es: "Avatar animado Loungue",
+    it: "Loungue avatar animato",
+    iw: "טרקלין אווטאר מונפש",
+    pt: "Avatar Loungue animado"
+  },
+  {
+    key: "about.features.avatar.description",
+    en: "Create and animate your own avatar in the avatar lounge",
+    de: "Erstellen und animieren Sie Ihren eigenen Avatar in der Avatar-Lounge",
+    nl: "Maak en animeer je eigen avatar in de avatar lounge",
+    engb: "Create and animate your own avatar in the avatar lounge",
+    fr: "Créez et animez votre propre avatar dans le salon de l’avatar",
+    zh: "于休息室中创己头像而制动画",
+    ar: "إنشاء وتحريك الصورة الرمزية الخاصة بك في صالة الصورة الرمزية",
+    es: "Crea y anima tu propio avatar en la sala de avatares",
+    it: "Crea e anima il tuo avatar nella lounge avatar",
+    iw: "צור והנפש את האווטאר שלך בטרקלין האווטר",
+    pt: "Crie e anima o seu próprio avatar no salão do avatar"
+  },
+  {
+    key: "about.features.filestitle",
+    en: "Company Files",
+    de: "Firmenakten",
+    nl: "Bedrijfsbestanden",
+    engb: "Company Files",
+    fr: "Fichiers de l’entreprise",
+    zh: "公司籍",
+    ar: "ملفات الشركة",
+    es: "Archivos de la empresa",
+    it: "Fascicoli aziendali",
+    iw: "קבצי חברה",
+    pt: "Ficheiros da Empresa"
+  },
+  {
+    key: "about.features.filesdescription",
+    en: "Access your files on google drive while on Zuri Chat",
+    de: "Greifen Sie auf Ihre Dateien auf Google Drive zu, während Sie sich im Zuri Chat befinden",
+    nl: "Toegang tot uw bestanden op Google Drive terwijl u op Zuri Chat bent",
+    engb: "Access your files on google drive while on Zuri Chat",
+    fr: "Accédez à vos fichiers sur Google Drive lorsque vous êtes sur Zuri Chat",
+    zh: "祖里闲访谷歌驱动器文",
+    ar: "الوصول إلى ملفاتك على محرك جوجل أثناء وجودك في Zuri Chat",
+    es: "Accede a tus archivos en Google Drive mientras estás en Zuri Chat",
+    it: "Accedi ai tuoi file su Google Drive mentre sei su Zuri Chat",
+    iw: "גש לקבצים שלך ב-Google Drive תוך כדי צ'אט Zuri",
+    pt: "Aceda aos seus ficheiros no Google Drive enquanto está no Zuri Chat"
+  },
+  {
+    key: "about.features.accessibility.title",
+    en: "Accessibility",
+    de: "Zugänglichkeit",
+    nl: "Toegankelijkheid",
+    engb: "Accessibility",
+    fr: "Accessibilité",
+    zh: "可及性",
+    ar: "امكانيه الوصول",
+    es: "Accesibilidad",
+    it: "Accessibilità",
+    iw: "נְגִישׁוּת",
+    pt: "Acessibilidade"
+  },
+  {
+    key: "about.features.accessibility.description",
+    en: "Be in control, Use Zuri Chat and enjoy",
+    de: "Behalten Sie die Kontrolle, nutzen Sie Zuri Chat und genießen Sie",
+    nl: "Houd de controle, gebruik Zuri Chat en geniet",
+    engb: "Be in control, Use Zuri Chat and enjoy",
+    fr: "Soyez en contrôle, utilisez Zuri Chat et profitez",
+    zh: "掌控一切,用祖里聊天享",
+    ar: "كن مسيطرا ، استخدم Zuri Chat واستمتع",
+    es: "Ten el control, usa Zuri Chat y disfruta",
+    it: "Tieni il controllo, usa Zuri Chat e divertiti",
+    iw: "היו בשליטה, השתמשו בצ'אט צורי ותהנו",
+    pt: "Esteja no controlo, use Zuri Chat e desfrute"
+  },
+  {
+    key: "about.features.accessibility.description_",
+    en: "the best accessibility features",
+    de: "Die besten Barrierefreiheitsfunktionen",
+    nl: "de beste toegankelijkheidsfuncties",
+    engb: "the best accessibility features",
+    fr: "Les meilleures fonctionnalités d’accessibilité",
+    zh: "莫善于辅",
+    ar: "أفضل ميزات إمكانية الوصول",
+    es: "Las mejores características de accesibilidad",
+    it: "Le migliori funzionalità di accessibilità",
+    iw: "תכונות הנגישות הטובות ביותר",
+    pt: "as melhores funcionalidades de acessibilidade"
+  },
+  {
+    key: "about.features.goals.title",
+    en: "Company Goals",
+    de: "Unternehmensziele",
+    nl: "Bedrijfsdoelen",
+    engb: "Company Goals",
+    fr: "Objectifs de l’entreprise",
+    zh: "公司",
+    ar: "أهداف الشركة",
+    es: "Objetivos de la empresa",
+    it: "Obiettivi dell'azienda",
+    iw: "מטרות החברה",
+    pt: "Objetivos da Empresa"
+  },
+  {
+    key: "about.features.goals.description",
+    en: "Keep up with company goals",
+    de: "Bleiben Sie mit den Unternehmenszielen Schritt",
+    nl: "Blijf op de hoogte van de bedrijfsdoelstellingen",
+    engb: "Keep up with company goals",
+    fr: "Suivez les objectifs de l’entreprise",
+    zh: "与上公司期",
+    ar: "مواكبة أهداف الشركة",
+    es: "Manténgase al día con los objetivos de la empresa",
+    it: "Stare al passo con gli obiettivi aziendali",
+    iw: "התעדכן ביעדי החברה",
+    pt: "Acompanhe os objetivos da empresa"
+  },
+  {
+    key: "about.features.goals.description_",
+    en: "right inside Zuri Chat",
+    de: "direkt im Zuri Chat",
+    nl: "direct binnen Zuri Chat",
+    engb: "right inside Zuri Chat",
+    fr: "directement dans Zuri Chat",
+    zh: "即在祖里聊天室里",
+    ar: "مباشرة داخل دردشة زوري",
+    es: "justo dentro de Zuri Chat",
+    it: "direttamente all'interno di Zuri Chat",
+    iw: "ממש בתוך צורי צ'אט",
+    pt: "direito dentro do Zuri Chat"
+  },
+  {
+    key: "title",
+    en: "Whatever work you do, you can do it in Zuri Chat",
+    de: "Was auch immer Sie tun, Sie können es im Zuri Chat tun",
+    nl: "Welk werk je ook doet, je kunt het doen in Zuri Chat",
+    engb: "Whatever work you do, you can do it in Zuri Chat",
+    fr: "Quel que soit le travail que vous faites, vous pouvez le faire dans Zuri Chat",
+    zh: "汝作何事,可于Zuri中成之",
+    ar: "مهما كان العمل الذي تقوم به، يمكنك القيام بذلك في Zuri Chat",
+    es: "Sea cual sea el trabajo que hagas, puedes hacerlo en Zuri Chat",
+    it: "Qualunque lavoro tu faccia, puoi farlo in Zuri Chat",
+    iw: "כל עבודה שתעשה, תוכל לעשות זאת בצ'אט צורי",
+    pt: "Seja qual for o seu trabalho, pode fazê-lo no Zuri Chat."
+  },
+  {
+    key: "link_sales",
+    en: "Talk to sales",
+    de: "Sprechen Sie mit dem Vertrieb",
+    nl: "Praat met sales",
+    engb: "Talk to sales",
+    fr: "Parlez aux commerciaux",
+    zh: "与销者语",
+    ar: "التحدث إلى المبيعات",
+    es: "Hable con ventas",
+    it: "Parla con le vendite",
+    iw: "דבר עם מכירות",
+    pt: "Falar com vendas"
+  },
+  {
+    key: "link_try",
+    en: "Try it for free",
+    de: "Kostenlos testen",
+    nl: "Probeer het gratis",
+    engb: "Try it for free",
+    fr: "Essayez-le gratuitement",
+    zh: "免费试之",
+    ar: "جربه مجانا",
+    es: "Pruébalo gratis",
+    it: "Provalo gratuitamente",
+    iw: "נסה את זה בחינם",
+    pt: "Experimente de graça."
+  },
+  {
+    key: "about.explore.title",
+    en: "Zuri Chat is a modern world platform that makes communicating with your team or organization faster, easier and more fun. Want to explore?",
+    de: "Zuri Chat ist eine moderne Weltplattform, die die Kommunikation mit Ihrem Team oder Ihrer Organisation schneller, einfacher und unterhaltsamer macht. Möchten Sie erkunden?",
+    nl: "Zuri Chat is een modern wereldplatform dat de communicatie met uw team of organisatie sneller, gemakkelijker en leuker maakt. Wil je ontdekken?",
+    engb: "Zuri Chat is a modern world platform that makes communicating with your team or organisation faster, easier and more fun. Want to explore?",
+    fr: "Zuri Chat est une plate-forme mondiale moderne qui rend la communication avec votre équipe ou votre organisation plus rapide, plus facile et plus amusante. Envie d’explorer ?",
+    zh: "Zuri Chat是世界平台,更快更轻,更与团队交。 欲求之乎?",
+    ar: "Zuri Chat هي منصة عالمية حديثة تجعل التواصل مع فريقك أو مؤسستك أسرع وأسهل وأكثر متعة. هل تريد الاستكشاف؟",
+    es: "Zuri Chat es una plataforma del mundo moderno que hace que la comunicación con su equipo u organización sea más rápida, fácil y divertida. ¿Quieres explorar?",
+    it: "Zuri Chat è una piattaforma mondiale moderna che rende la comunicazione con il tuo team o organizzazione più veloce, più facile e più divertente. Vuoi esplorare?",
+    iw: "Zuri Chat היא פלטפורמה עולמית מודרנית שהופכת את התקשורת עם הצוות או הארגון שלך למהירה, קלה ומהנה יותר. רוצים לחקור?",
+    pt: "Zuri Chat é uma plataforma mundial moderna que torna a comunicação com a sua equipa ou organização mais rápida, fácil e divertida. Quer explorar?"
+  },
+  {
+    key: "about.explore.button",
+    en: "GET STARTED",
+    de: "LOSLEGEN",
+    nl: "SLAG",
+    engb: "GET STARTED",
+    fr: "DÉMARRER",
+    zh: "始也",
+    ar: "بدء الاستخدام",
+    es: "COMENZAR",
+    it: "INIZIA SUBITO",
+    iw: "תחילת העבודה",
+    pt: "COMEÇAR"
   }
 ];
