@@ -31,6 +31,8 @@ import {
 
 export default function Index() {
   const { workspaceId } = useParams();
+  const t = useParams();
+  console.log(t);
   const location = useLocation();
   const history = useHistory();
   const match = useRouteMatch(`/workspace/${workspaceId}`);

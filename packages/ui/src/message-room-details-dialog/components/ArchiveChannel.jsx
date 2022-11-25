@@ -1,7 +1,31 @@
 import ChannelModal from "./ChannelModal";
 import styles from "./archive-channel.module.css";
-
+import axios from "axios";
+import { useLocation } from "react-router-dom";
 const ArchiveChannel = ({ closeEdit }) => {
+  const user = JSON.parse(sessionStorage.getItem("user")) || null;
+  const room = window.location.href.split("/").at(6);
+  const organizationID = localStorage.getItem("currentWorkspace") || null;
+
+  const handleArchive = () => {
+    const text = `https://chat.zuri.chat/api/v1/org/${organizationID}/members/${user.id}/rooms/${room}`;
+    console.log(text);
+    axios
+      .put(
+        `https://chat.zuri.chat/api/v1/org/${organizationID}/members/${user.id}/rooms/${room}`,
+        {
+          room_name: "New test",
+          description: "string",
+          topic: "Humans",
+          is_private: false,
+          is_archived: true
+        }
+      )
+      .then(r => console.log(r.data))
+      .catch(er => console.log(er));
+    alert("hey");
+    closeEdit();
+  };
   return (
     <ChannelModal
       closeEdit={closeEdit}
@@ -28,7 +52,9 @@ const ArchiveChannel = ({ closeEdit }) => {
         </p>
         <div className={styles.button}>
           <button className={styles.button4}>Cancel</button>
-          <button className={styles.button2}>Archive Channel</button>
+          <button className={styles.button2} onClick={handleArchive}>
+            Archive Channel
+          </button>
         </div>
       </div>
     </ChannelModal>

@@ -1,7 +1,20 @@
 import ChannelModal from "./ChannelModal";
 import styles from "./archive-channel.module.css";
+import axios from "axios";
 
 const DeleteChannel = ({ closeEdit }) => {
+  const room = window.location.href.split("/").at(6);
+  const organizationID = localStorage.getItem("currentWorkspace") || null;
+  const handleDelete = () => {
+    axios
+      .delete(
+        `https://chat.zuri.chat/api/v1/org/${organizationID}/rooms/${room}/`
+      )
+      .then(res => console.log(res))
+      .catch(e => {
+        console.log(e);
+      });
+  };
   return (
     <ChannelModal
       closeEdit={closeEdit}
@@ -42,7 +55,9 @@ const DeleteChannel = ({ closeEdit }) => {
         </div>
         <div className={styles.button}>
           <button className={styles.button1}>Cancel</button>
-          <button className={styles.button3}>Delete Channel</button>
+          <button className={styles.button3} onClick={handleDelete}>
+            Delete Channel
+          </button>
         </div>
       </div>
     </ChannelModal>

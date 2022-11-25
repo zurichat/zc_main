@@ -94,6 +94,7 @@ const Sidebar = props => {
         const categoryData = Object.keys(props.state.sidebar[key]).map(
           (k, id) => {
             const data = props.state.sidebar[key][k];
+            console.log(data);
             data.baseUrl = `https://${k}`;
             data.id = id;
             return data;
