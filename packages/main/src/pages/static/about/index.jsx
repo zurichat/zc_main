@@ -12,7 +12,13 @@ import {
   holiday,
   deadline,
   quick,
-  todos
+  todos,
+  Card1,
+  Card2,
+  Card3,
+  Card4,
+  Card5,
+  Card6
 } from "./assets";
 import Carousel from "./component/CarouselImg";
 import CarouselSecond from "./component/SecondCarousel";
