@@ -118,6 +118,43 @@ const App = () => (
           <ProtectedRoute exact path="/admin/settings">
             <SettingsHome />
           </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings">
+            <SettingsHome />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings/accountsProfile">
+            <AccountProfile />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings/billings">
+            <Billing />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings/aboutworkspace">
+            <AboutWorkSpace />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/ZurichatBlog">
+            <Blogs />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/stats">
+            <Analytics />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/">
+            <Tour />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/download-apps">
+            <DownloadApps />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/confirm-deactivation">
+            <AccountDeactivation />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/help">
+            <Help />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings/usergroups">
+            <UserGroups />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings/managemembers">
+            <ManageMembers />
+          </ProtectedRoute>
+
           <ProtectedRoute exact path="/choose-workspace">
             {withSuspense(ChooseWorkspace)}
           </ProtectedRoute>

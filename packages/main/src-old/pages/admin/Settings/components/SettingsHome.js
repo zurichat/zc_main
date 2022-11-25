@@ -219,7 +219,7 @@ const Home = () => {
           </div>
 
           {/* Billing */}
-          {/* <div className="mt-2" style={{}}>
+          <div className="mt-2" style={{}}>
             <Link
               to="/admin/settings/billings"
               className={classes.text_links}
@@ -286,7 +286,7 @@ const Home = () => {
                 </div>
               </div>
             </Link>
-          </div> */}
+          </div>
           {/* <hr
             style={{
               width: "calc(100% - 5%)",
