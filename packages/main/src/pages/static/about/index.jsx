@@ -80,7 +80,6 @@ const About = () => {
             {t("about.banner.headline_one")} <br />
             {t("about.banner.headline_two")}
           </h1>
-          <p>ZuriChat {t("about.banner.description")}</p>
         </div>
         <div
           className={`row flex align-items-center justify-content-center pt-3 ${styles.counter_div}`}
@@ -124,10 +123,6 @@ const About = () => {
               <span className={` ${styles.span}`}>ZuriChat</span>{" "}
               {t("about.whatWeDo.description")} <br />
             </p>
-            {/* <p>
-              <span className={` ${styles.span}`}>ZuriChat</span>{" "}
-              {t("about.whoWeAre.description_")}
-            </p> */}
           </div>
         </div>
       </div>
