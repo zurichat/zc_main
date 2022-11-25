@@ -220,6 +220,7 @@ export default [
     ar: "الخصوصيه",
     es: "Política de privacidad",
     it: "Informativa sulla privacy",
+    iw: "מדיניות פרטיות",
     pt: "Política de Privacidade"
   }
 ];
