@@ -1,3 +1,5 @@
+import { retrieveSideBarInfo } from "../../../../utils/cache-sidebar";
+
 export const ACTIONS = {
   ADD_USER_INFO: "add-user-info",
   ADD_ITEM: "add",
@@ -32,6 +34,27 @@ const insertSideBarData = (state, action) => {
     }
   });
   return state;
+};
+
+// Check if there is a stored version of the sidebar for the user
+// ensuring it is the current workspace, and display that instead
+// only if there isnt a sidebar already displayed.
+const insertCachedSideBar = state => {
+  const storedSiderBar = retrieveSideBarInfo(state.user?.user?.email);
+  const currentWorkspace = localStorage.getItem("currentWorkspace");
+  if (
+    !state.sidebar &&
+    storedSiderBar &&
+    storedSiderBar?.organization_info?._id === currentWorkspace
+  ) {
+    return {
+      ...state,
+      ...storedSiderBar
+    };
+  }
+  return {
+    ...state
+  };
 };
 
 export function reducer(state = { sidebar: {} }, action) {
@@ -97,6 +120,7 @@ export function reducer(state = { sidebar: {} }, action) {
         isOpen: action.payload
       };
     case ACTIONS.IS_LOADING:
+      state = insertCachedSideBar(state);
       return {
         ...state,
         isLoading: action.payload
