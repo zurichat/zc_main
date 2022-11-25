@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import {
   ModalContainer,
   TopicModal,
@@ -12,9 +12,16 @@ import {
 } from "../MessageRoomDetailsDialog.styled";
 
 const EditTopicModal = ({ closeEdit, addTopic, setAddTopic }) => {
+  // handle form input change
   const handleChange = e => {
     setAddTopic(e.target.value);
   };
+
+  // saving edited topic to LS as the endpoint for a PUT request isn't working
+  useEffect(() => {
+    console.log(addTopic);
+    return localStorage.setItem("editedTopic", JSON.stringify(addTopic));
+  }, [addTopic]);
 
   return (
     <ModalContainer>
@@ -36,7 +43,7 @@ const EditTopicModal = ({ closeEdit, addTopic, setAddTopic }) => {
 
           <ModalButtons>
             <CancelBtn onClick={() => closeEdit()}>Cancel</CancelBtn>
-            <AcceptBtn>Save</AcceptBtn>
+            <AcceptBtn onClick={() => setAddTopic(addTopic)}>Save</AcceptBtn>
           </ModalButtons>
         </Modalbody>
       </TopicModal>
