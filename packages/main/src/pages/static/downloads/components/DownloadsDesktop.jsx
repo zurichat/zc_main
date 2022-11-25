@@ -46,12 +46,12 @@ const DownloadsDesktop = () => {
       <TopNavigationBar />
       <section className={`${styles.hero} `}>
         <div className={`${styles.heroText} `}>
-          <p className={`${styles.heroheading}`}>
+          {/* <p className={`${styles.heroheading}`}>
             {t("download_desktop.section_one.headline")}
           </p>
           <p className={`${styles.p} mb-4`}>
             {t("download_desktop.section_one.post_headline")}
-          </p>
+          </p> */}
 
           <div className={styles.heroImages}>
             <div className={styles.alignForDesktop}>
