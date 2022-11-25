@@ -60,7 +60,8 @@ export const StyledProfileWrapper = styled.section`
       .input-group {
         width: 100%;
         margin-bottom: 1rem;
-        &.phone {
+        &.phone,
+        &.timezone {
           flex-direction: column;
           align-items: flex-start;
           .phone-container {
@@ -76,27 +77,27 @@ export const StyledProfileWrapper = styled.section`
             .pref,
             .phoneInput {
               ${"" /* height: 2.4rem; */}
-              padding: 2px 1rem;
+              ${"" /* padding: 0px 15px; */}
               outline: none;
               border: none;
+              flex-grow: 1;
+              ${"" /* margin-left: 1rem; */}
+              width: 100%;
             }
             .pref {
               width: 72px;
-              font-size: 1rem;
+              font-size: 15px;
             }
-            .phoneInput {
-              flex-grow: 1;
-              margin-left: 1rem;
-              width: 100%;
-            }
+          }
+          .time-select {
+            ${"" /* padding: 0px 15px; */}
+            outline: none;
+            border: none;
+            width: 100%;
           }
         }
         &.mal-4 {
           margin-left: 0;
-          @media (max-width: 768px) {
-            /* margin-left: 1rem; */
-            ${"" /* margin-top: 1rem; */}
-          }
         }
         .inputLabel {
           font-size: 1rem;
@@ -108,12 +109,13 @@ export const StyledProfileWrapper = styled.section`
         .input,
         /*select*/
         .phone-container,
+        .time-container,
         .textarea,
-        .phoneInput,
         .css-1s2u09g-control,
         .css-2b097c-container {
           width: 100%;
           border: 1px solid #a1a1a1;
+          margin: 6px 0;
           padding: 7px 1rem;
           font-size: 15px;
           outline: none;
@@ -139,7 +141,6 @@ export const StyledProfileWrapper = styled.section`
             color: #000;
             font-size: 1rem;
             border: none;
-            outline: none;
           }
         }
         .css-2b097c-container {

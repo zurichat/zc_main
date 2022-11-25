@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect, useContext } from "react";
 import ProfileModal from "./ProfileModal";
+import TimeZones from "../constants/time-zone";
 import { authAxios } from "../utils/api";
 import { AiFillCamera } from "react-icons/ai";
 import defaultAvatar from "../assets/images/avatar_vct.svg";
@@ -30,13 +31,12 @@ const EditProfile = () => {
     bio: user.bio,
     phone: user.phone,
     prefix: "",
-    timezone: "",
+    timezone: user.time_zone,
     twitter: "",
     facebook: "",
     loading: false,
     imageLoading: false
   });
-
   const [image, setimage] = useState(defaultAvatar);
   const addList = () => {
     if (links.length < 5) {
@@ -129,7 +129,7 @@ const EditProfile = () => {
       display_name: state.display_name,
       phone: state.phone,
       bio: state.bio,
-      timeZone: state.timezone
+      time_zone: state.timezone
       // socials: [
       //   {
       //     "title": "twitter",
@@ -262,18 +262,7 @@ const EditProfile = () => {
                   Let people know what you do at <b>ZURI</b>
                 </p>
               </div>
-              {/* <div className="input-group">
-                <label htmlFor="bio" className="inputLabel">
-                  Bio
-                </label>
-                <textarea
-                  onClick={e => setState({ bio: e.target.value })}
-                  defaultValue={state.bio}
-                  className="textarea"
-                  name="bio"
-                  id="bio"
-                ></textarea>
-              </div> */}
+
               <div className="input-group phone">
                 <label
                   className="inputLabel"
@@ -307,19 +296,31 @@ const EditProfile = () => {
                   />
                 </div>
               </div>
-              {/* <div className="input-group">
+              <div className="input-group timezone">
                 <label
-                  className="inputLabel col-12"
+                  className="inputLabel"
                   style={{ color: "var(--text-color-bold)" }}
                 >
                   Time Zone
                 </label>
-                <TimezoneSelect
-                  value={selectedTimezone}
-                  onChange={setSelectedTimezone}
-                  className="col-12"
-                />
-              </div> */}
+                <div className="time-container">
+                  <select
+                    className="time-select"
+                    defaultValue={state.timezone}
+                    onChange={e =>
+                      setState({ ...state, timezone: e.target.value })
+                    }
+                  >
+                    {TimeZones.map((item, index) => {
+                      return (
+                        <option key={index} value={item}>
+                          {item}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
+              </div>
               {/* <div className="input-group">
                 <label htmlFor="twitter" className="inputLabel">
                   Twitter
