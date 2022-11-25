@@ -6,7 +6,7 @@ export default function ThirdSection() {
     <section>
       <div className={styles.why_head}>
         <article>
-          <h3>Zuri Keeps everyone connected and productive</h3>
+          <h3 style={{lineHeight: '1.1em'}}>Zuri Keeps everyone connected and productive</h3>
           <p>Teams using different groups of people at the same time. 
             A real-time messaging app brings everyone together on one platform.
              Gain visibility into what everyone is doing and make better decisions faster.</p>
