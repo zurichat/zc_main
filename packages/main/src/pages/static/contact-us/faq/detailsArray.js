@@ -127,18 +127,6 @@ const Topics = [
       {
         title: "question_signin_notifications_work1",
         details: "answer_signin_notifications_work1"
-      },
-      {
-        title: "question_signin_notifications_work2",
-        details: "answer_signin_notifications_work2"
-      },
-      {
-        title: "question_signin_notifications_work3",
-        details: "answer_signin_notifications_work3"
-      },
-      {
-        title: "question_signin_notifications_work4",
-        details: "answer_signin_notifications_work4"
       }
     ],
     articles: [
