@@ -77,21 +77,6 @@ function MessageBoard({
     messagesEndRef.current?.scrollIntoView("auto");
   };
 
-  const [num, setNum] = useState(7);
-
-  const handleScroll = event => {
-    console.log("scrollTop: ", event.currentTarget.scrollTop);
-    if (event.currentTarget.scrollTop === 0 && num !== messages.length - 1) {
-      setNum(num + 3);
-      if (num > messages.length - 1) {
-        setNum(messages.length - 1);
-      }
-      event.currentTarget.scrollTop = 500;
-    }
-    if (num === messages.length - 1) {
-      return;
-    }
-  };
   useEffect(() => {
     shouldScrollToBottom && scrollToBottom();
     setScrollToBottom(true);
@@ -100,12 +85,11 @@ function MessageBoard({
   return (
     <>
       <MessageBoardContainer>
-        <div className="MsgBoard" onScroll={handleScroll}>
+        <div className="MsgBoard">
           {Array.from(new Set(messages.map(a => a._id)))
             .map(id => {
               return messages.find(a => a._id === id);
             })
-            .slice(messages.length - num)
             .map((message, i) => (
               <MessagePane
                 key={`message-item-${i}`}
