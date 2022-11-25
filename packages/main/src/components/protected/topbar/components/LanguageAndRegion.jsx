@@ -9,11 +9,12 @@ import { useTranslation } from "react-i18next";
 const ssKey = "language-and-region";
 
 const options = [
+  { value: "en", label: "Choose a default language" },
   { value: "en", label: "English (US)" },
   { value: "fr", label: "French (FR)" },
-  { value: "de", label: "Deutch (DU)" },
+  { value: "de", label: "Deutch (DU)" }
   // { value: "zh", label: "Chinese (ZH)" },
-  { value: "ar", label: "Arabic (AR)" }
+  //{ value: "ar", label: "Arabic (AR)" }
 ];
 
 const LanguageAndRegion = () => {
@@ -114,9 +115,9 @@ const LanguageAndRegion = () => {
                 setLangreg({ ...langreg, language: e.target.value });
                 handleData({ ...langreg, language: e.target.value });
                 //console.log(e.target.value);
-                //saveLang(e.target.value);
-                localStorage.setItem("myLanguage", e.target.value);
-                location.reload();
+                saveLang(e.target.value);
+                //localStorage.setItem("myLanguage", e.target.value);
+                //location.reload();
               }}
               name="language"
               id="language"
