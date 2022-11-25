@@ -18,6 +18,9 @@
 .contactMainBoardTitleContainer p {
   font-size: 13px !important;
   margin-top: -10px;
+  max-width: 100% !important;
+  text-align: center;
+
 }
 .contactFormContainer {
   margin-top: 2rem;
@@ -84,7 +87,7 @@
     padding: 2.5rem 0;
   }
   .contactMainBoardTitleContainer p {
-    max-width: fit-content;
+    max-width: 100% !important;
     width: 80%;
     margin: auto;
   }
