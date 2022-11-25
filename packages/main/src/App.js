@@ -23,8 +23,9 @@ import {
   ChangePassword,
   WhyZuriChat,
   PrivacyPage
+  
 } from "./pages";
-
+import WhyZuri from "./pages/static/whyzurichat";
 import TermsOfService from "../src-old/pages/termsOfService/index";
 import { useAuth } from "./auth/use-auth";
 
@@ -93,6 +94,7 @@ const App = () => (
           <Route path="/whyzurichat" component={WhyZuriChat} />
           <Route path="/privacy" component={PrivacyPage} />
           <Route path="/terms" component={TermsOfService} />
+          <Route path="/whyzurichat" component={WhyZuri} />
 
           <ProtectFromAuthRoute exact path="/login">
             <Login />
@@ -118,8 +120,10 @@ const App = () => (
             )}
           />
         </Switch>
+        
       </Suspense>
     </GeneralErrorBoundary>
+    
   </BrowserRouter>
 );
 
