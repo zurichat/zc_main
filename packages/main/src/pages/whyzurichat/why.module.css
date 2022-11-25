@@ -145,12 +145,15 @@
     color: #009967;
 }
 .percentages div {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     margin-left: 1rem;
+    
 }
+
 .percentages h4 {
     font-size: 26px;
     max-width: 321px;
+    margin-bottom: 2rem;
 }
 .footer {
     background-color: #009967;
@@ -198,6 +201,9 @@
     }
     .second_flex {
         display: flex;
+    }
+    .percentages{
+        
         margin-bottom: 15rem;
     }
 }
