@@ -12,46 +12,32 @@ import {
   infolaptop,
   windows
 } from "../assets";
-import { isMacOs, isIOS } from "react-device-detect";
+import { isMacOs } from "react-device-detect";
 import { useTranslation } from "react-i18next";
 import { TopNavigationBar, Footer } from "../../../../components";
 
 const DownloadsDesktop = () => {
   const { t } = useTranslation();
 
-  const [exe, setexe] = useState({
-    link: "",
-    name: "",
-    link2: "",
-    name2: "",
-    link3: "",
-    name3: ""
-  });
+  const [exe, setexe] = useState({ link: "", name: "" });
   React.useEffect(() => {
     if (isMacOs) return setexe({ name: "DOWNLOAD FOR MAC" });
-    if (isIOS) return setexe({ name: "DOWNLOAD FOR IOS" });
     return setexe({
       name: "DOWNLOAD FOR WINDOWS",
-      link: "https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing",
-      name2: "DOWNLOAD ZURI CHAT",
-      link2: "https://play.google.com/store/apps/details?id=com.zurichat.app",
-      name3: "DOWNLOAD DM AND CHANNELS",
-      link3:
-        "https://drive.google.com/file/d/1LRrWXjBFdns0RUD7zQapBuof8ole5XHI/view?usp=drivesdk"
+      link: "https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing"
     });
   }, []);
-
   return (
     <>
       <TopNavigationBar />
       <section className={`${styles.hero} `}>
         <div className={`${styles.heroText} `}>
-          {/* <p className={`${styles.heroheading}`}>
+          <p className={`${styles.heroheading}`}>
             {t("download_desktop.section_one.headline")}
           </p>
           <p className={`${styles.p} mb-4`}>
             {t("download_desktop.section_one.post_headline")}
-          </p> */}
+          </p>
 
           <div className={styles.heroImages}>
             <div className={styles.alignForDesktop}>

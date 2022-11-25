@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap");
+
+body {
+  font-family: "Lato", sans-serif !important;
+}
+
 .section {
     padding-top: 80px;
 }
@@ -10,14 +16,12 @@
 }
 
 .introText h2 {
-    font-family: 'Lato';
     font-weight: 700;
     font-size: 34px;
     color: #007B53;
 }
 
 .introText p {
-  font-family: 'Lato';
   font-weight: 700;
   font-size: 35px;
   line-height: 45px;
@@ -25,7 +29,6 @@
 }
 
 .introText span {
-  font-family: 'Lato';
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
@@ -39,7 +42,6 @@
   padding: 10px 24px;
   background: #007B53;
   border-radius: 4px;
-  font-family: 'Lato';
   font-weight: 700;
   font-size: 14px;
   color: #FFFFFF;
@@ -63,7 +65,7 @@
 }
 
 .downloadList h2 {
-    font-family: 'Lato';
+
     font-weight: 700;
     font-size: 24px;
     line-height: 24px;
@@ -88,7 +90,7 @@
 }
 
 .advertText h2 {
-    font-family: 'Lato';
+
     font-weight: 700;
     font-size: 35px;
     color: #fff;
@@ -97,7 +99,7 @@
 }
 
 .advertText span {
-    font-family: 'Lato';
+
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
@@ -111,7 +113,7 @@
     padding: 12px 24px;
     background: #fff;
     border-radius: 4px;
-    font-family: 'Lato';
+
     font-weight: 700;
     font-size: 14px;
     color: #007B53;
@@ -173,7 +175,7 @@
 
    .introText span,
    .advertText span {
-    font-family: 'Lato';
+
     font-size: 16px;
     line-height: 20px;
   }
