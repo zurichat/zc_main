@@ -28,7 +28,6 @@ import mentions from "./mentions.data";
 import createEmojiPlugin from "@draft-js-plugins/emoji";
 import { theme } from "./EmojiStyles.styled.js";
 
-import axios from "axios";
 import { BsFillFileEarmarkFill } from "react-icons/bs";
 
 const emojiPlugin = createEmojiPlugin({
