@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import {
   ModalContainer,
   TopicModal,
@@ -11,31 +11,51 @@ import {
   ModalTopic
 } from "../MessageRoomDetailsDialog.styled";
 
-const EditTopicModal = props => {
-  if (!props.show) {
-    return null;
-  } else {
-    return (
-      <ModalContainer>
-        <TopicModal>
-          <ModalTop>
-            <ModalTopic>Topic</ModalTopic>
-            {/* <CloseBtn onClick=  { () => {props.closeEdit()}}> X </CloseBtn> */}
-          </ModalTop>
-          <Modalbody>
-            <input type="text" placeholder="Add Topic" />
+const EditTopicModal = ({ closeEdit, addTopic, setAddTopic }) => {
+  // handle form input change
+  const handleChange = e => {
+    setAddTopic(e.target.value);
+  };
 
-            <p>Let people know what this channel is for.</p>
+  // saving edited topic to LS as the endpoint for a PUT request isn't working
+  useEffect(() => {
+    console.log(addTopic);
+    return localStorage.setItem("editedTopic", JSON.stringify(addTopic));
+  }, [addTopic]);
 
-            <ModalButtons>
-              <CancelBtn>Cancel</CancelBtn>
-              <AcceptBtn>Save</AcceptBtn>
-            </ModalButtons>
-          </Modalbody>
-        </TopicModal>
-      </ModalContainer>
-    );
-  }
+  return (
+    <ModalContainer>
+      <TopicModal>
+        <ModalTop>
+          <ModalTopic>Topic</ModalTopic>
+          <CloseBtn onClick={() => closeEdit()}>X</CloseBtn>
+        </ModalTop>
+        <Modalbody>
+          <input
+            type="text"
+            name="topic"
+            value={addTopic}
+            onChange={handleChange}
+            placeholder="Add Topic"
+          />
+
+          <p>Let people know what this channel is for.</p>
+
+          <ModalButtons>
+            <CancelBtn onClick={() => closeEdit()}>Cancel</CancelBtn>
+            <AcceptBtn
+              onClick={() => {
+                setAddTopic(addTopic);
+                closeEdit();
+              }}
+            >
+              Save
+            </AcceptBtn>
+          </ModalButtons>
+        </Modalbody>
+      </TopicModal>
+    </ModalContainer>
+  );
 };
 
 export default EditTopicModal;

@@ -6,6 +6,7 @@ import { ProfileContext } from "../context/profile-modal.context";
 import styles from "../styles/AdvancedSettings.module.css";
 import standardStyles from "../styles/UserPreference.module.css";
 import { authAxios } from "../utils/api";
+import { useTranslation } from "react-i18next";
 
 const colorOptions = [
   { value: "Anouncement", label: "Anouncement" },
@@ -31,6 +32,8 @@ const customStyles = {
 };
 
 const AdvancedSettings = () => {
+  const { t } = useTranslation();
+
   const { user } = useContext(ProfileContext);
   const { categorizedItems, singleItems } = useSidebarItems();
 
@@ -45,10 +48,10 @@ const AdvancedSettings = () => {
   return (
     <div className={standardStyles.modalContent}>
       <div className={styles.container}>
-        <h5 className={standardStyles.labelTextHeader}>Plugin Options</h5>
-        <p className={styles.note}>
-          Change options specific to plugins in this workspace.
-        </p>
+        <h5 className={standardStyles.labelTextHeader}>
+          {t("plugin_options")}
+        </h5>
+        <p className={styles.note}>{t("plugins")}</p>
 
         {allItems?.length > 0 ? (
           <div className={styles.pluginOptionsContainer}>
@@ -71,6 +74,8 @@ const PluginOptionsDropdown = ({ options, label }) => {
 
   const toggleDropdown = () => setOpen(!open);
 
+  const { t } = useTranslation();
+
   return (
     <div className={styles.pluginOptionWrapper}>
       <button className={styles.dropdownContainer} onClick={toggleDropdown}>
@@ -85,7 +90,7 @@ const PluginOptionsDropdown = ({ options, label }) => {
       {open && (
         <div className={styles.dropdownContent}>
           {/* Not implemented yet */}
-          <p className={styles.note}>No options available</p>
+          <p className={styles.note}>{t("no_options")}</p>
         </div>
       )}
     </div>
