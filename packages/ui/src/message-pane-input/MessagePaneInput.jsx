@@ -28,6 +28,9 @@ import mentions from "./mentions.data";
 import createEmojiPlugin from "@draft-js-plugins/emoji";
 import { theme } from "./EmojiStyles.styled.js";
 
+import axios from "axios";
+import { BsFillFileEarmarkFill } from "react-icons/bs";
+
 const emojiPlugin = createEmojiPlugin({
   useNativeArt: true,
   theme: theme
@@ -209,7 +212,42 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
 
   // on click clear attached file
   const clearAttached = () => {
+    setPreview("");
     setSentAttachedFile("");
+  };
+
+  const AudioFilePreview = ({ source }) => {
+    return <audio controls src={source} />;
+  };
+
+  const DocumentFilePreview = ({ fileName, extension }) => {
+    return (
+      <StyledDocumentPreview>
+        <div>
+          <BsFillFileEarmarkFill style={{ width: "42px", height: "42px" }} />
+        </div>
+        <div style={{ width: "85%" }}>
+          <h6>{fileName}</h6>
+          <p>{extension}</p>
+        </div>
+      </StyledDocumentPreview>
+    );
+  };
+
+  const PreviewFile = () => {
+    console.log(sentAttachedFile);
+    let fileName = sentAttachedFile.name;
+    let extension = fileName.substring(fileName.lastIndexOf(".") + 1);
+
+    if (preview.includes("data:image")) {
+      return <img src={preview} alt="Image Preview" />;
+    } else if (preview.includes("data:audio")) {
+      return <AudioFilePreview source={preview} />;
+    } else if (preview.includes("data:video")) {
+      return <video autoPlay muted src={preview} />;
+    } else {
+      return <DocumentFilePreview fileName={fileName} extension={extension} />;
+    }
   };
 
   return (
@@ -217,15 +255,20 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
       <InputWrapper>
         {preview ? (
           <Preview>
-            <img src={preview} alt="Image Preview" />
+            <PreviewFile />
+
             <button
               style={{
                 position: "absolute",
-                top: "9px",
-                left: "65px",
-                height: "30px",
-                width: "30px",
-                borderRadius: "50%"
+                top: "-8px",
+                right: "-10px",
+                height: "24px",
+                width: "24px",
+                borderRadius: "50%",
+                background: "#242424",
+                fontWeight: "800",
+                fontSize: "12px",
+                color: "#fff"
               }}
               onClick={clearAttached}
             >
@@ -332,12 +375,40 @@ const SendButton = styled.button`
   font-weight: 700;
   font-size: 1rem;
 `;
-const Preview = styled.div`
-  width: 5%;
-  height: 0.05%;
-  border-radius: 2px;
+const StyledDocumentPreview = styled.div`
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  padding: 16px 14px;
+  background: #ddd;
+  border-radius: 10px;
 
-  img {
+  h6 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 20px;
+    font-weight: bold;
+  }
+
+  p {
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+`;
+
+const Preview = styled.div`
+  width: fit-content;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  position: relative;
+
+  img,
+  video {
+    width: 95px;
+    height: 90px;
     object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 6px #0000001a;
   }
 `;
