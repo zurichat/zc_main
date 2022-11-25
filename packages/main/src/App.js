@@ -23,7 +23,7 @@ import {
   ResetPassword,
   ChangePassword,
   WhyZuriChat,
-  PrivacyPage,
+  PrivacyPage
   
 } from "./pages";
 import WhyZuri from "./pages/whyzurichat";
