@@ -12,21 +12,35 @@ import {
   infolaptop,
   windows
 } from "../assets";
-import { isMacOs } from "react-device-detect";
+import { isMacOs, isIOS } from "react-device-detect";
 import { useTranslation } from "react-i18next";
 import { TopNavigationBar, Footer } from "../../../../components";
 
 const DownloadsDesktop = () => {
   const { t } = useTranslation();
 
-  const [exe, setexe] = useState({ link: "", name: "" });
+  const [exe, setexe] = useState({
+    link: "",
+    name: "",
+    link2: "",
+    name2: "",
+    link3: "",
+    name3: ""
+  });
   React.useEffect(() => {
     if (isMacOs) return setexe({ name: "DOWNLOAD FOR MAC" });
+    if (isIOS) return setexe({ name: "DOWNLOAD FOR IOS" });
     return setexe({
       name: "DOWNLOAD FOR WINDOWS",
-      link: "https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing"
+      link: "https://drive.google.com/file/d/1bqotCEGC99fs8Ip3jF-5z2KUQqgeB111/view?usp=sharing",
+      name2: "DOWNLOAD ZURI CHAT",
+      link2: "https://play.google.com/store/apps/details?id=com.zurichat.app",
+      name3: "DOWNLOAD DM AND CHANNELS",
+      link3:
+        "https://drive.google.com/file/d/1LRrWXjBFdns0RUD7zQapBuof8ole5XHI/view?usp=drivesdk"
     });
   }, []);
+
   return (
     <>
       <TopNavigationBar />
