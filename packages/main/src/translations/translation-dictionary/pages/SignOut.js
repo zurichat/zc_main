@@ -2,99 +2,52 @@ export default [
   {
     key: "signout_preOrgText",
     en: "Signed out of Team",
-    de: "zu einem anderen Arbeitsbereich",
-    nl: "Getekend uit team",
-    engb: "#REF!",
-    fr: "Signé hors de l'équipe",
-    zh: "签出的团队",
-    ar: "تم تسجيل الخروج من الفريق",
-    es: "Firmado fuera del equipo",
-    it: "Firmato fuori squadra",
-    iw: "יצא מהצוות",
-    pt: "Assinado fora da equipa"
+    de: "Aus dem Team unterzeichnet",
+    enus: "Signed out of Team",
+    fr: "Signé hors de l'équipe"
   },
   {
     key: "signout_workspace",
     en: "Workspace",
-    de: "Arbeitsbereich",
-    nl: "Werkruimte",
-    engb: "#REF!",
-    fr: "Espace de travail",
-    zh: "工作区",
-    ar: "مساحة العمل",
-    es: "Espacio de trabajo",
-    it: "Spazio di lavoro",
-    iw: "סביבת עבודה",
-    pt: "Espaço de trabalho"
+    de: "Arbeitsplatz",
+    enus: "Workspace",
+    fr: "Espace de travail"
   },
   {
     key: "signout_signoutMessage",
     en: "You have been signed out of Team",
-    de: "Sie wurden aus dem Team abgemeldet",
-    nl: "Je bent afgemeld bij Team",
-    engb: "Spazio di lavoro",
-    fr: "Vous avez été déconnecté de l'équipe",
-    zh: "你已经被签出了团队",
-    ar: "لقد تم تسجيل خروجك من الفريق",
-    es: "Has sido dado de baja del equipo",
-    it: "Siete stati esclusi dal Team",
-    iw: "יצאת מהצוות",
-    pt: "Foi contratado fora da equipa"
+    de: "Sie wurden aus dem Team unterzeichnet",
+    enus: "You have been signed out of Team",
+    fr: "Vous avez été signé hors de l'équipe"
   },
   {
     key: "signout_loginText",
     en: "Login",
     de: "Anmeldung",
-    nl: "Inloggen",
-    engb: "#REF!",
-    fr: "Connexion",
-    zh: "登录",
-    ar: "تسجيل الدخول",
-    es: "Inicio de sesión",
-    it: "Accesso",
-    iw: "התחברות",
-    pt: "Login"
+    enus: "Login",
+    fr: "Connexion"
   },
   {
     key: "signout_postLoginText",
     en: "to another workspace",
     de: "zu einem anderen Arbeitsbereich",
-    nl: "naar een andere werkruimte",
-    engb: "to another workspace",
-    fr: "vers un autre espace de travail",
-    zh: "到另一个工作区",
-    ar: "إلى مساحة عمل أخرى",
-    es: "a otro espacio de trabajo",
-    it: "ad un'altra area di lavoro",
-    iw: "למרחב עבודה אחר",
-    pt: "para outro espaço de trabalho"
+    enus: "to another workspace",
+    fr: "à un autre espace de travail"
   },
-  {
-    key: "signout_newSignoutMessage",
-    en: "you have been successfully logged out of team",
-    de: "Sie wurden erfolgreich von Team abgemeldet",
-    nl: "je bent met succes uitgelogd bij het team",
-    engb: "You have been successfully logged out of Team",
-    fr: "Vous avez été déconnecté avec succès de l'équipe",
-    zh: "您已成功退出团队",
-    ar: "لقد تم تسجيل خروجك بنجاح من الفريق",
-    es: "Ha cerrado sesión correctamente en el equipo",
-    it: "Sei stato disconnesso con successo dal team",
-    iw: "התנתקת בהצלחה מהצוות",
-    pt: "você foi desconectado com êxito da equipe"
-  },
+  // for the new signout page
+
   {
     key: "signout_homeText",
     en: "return to home page",
     de: "zur Startseite zurückkehren",
-    nl: "terug naar de startpagina",
-    engb: "return to home page",
-    fr: "Retour à la page d'accueil",
-    zh: "返回首页",
-    ar: "العودة إلى الصفحة الرئيسية",
-    es: "Volver a la página de inicio",
-    it: "torna alla home page",
-    iw: "חזרה לדף הבית",
-    pt: "voltar à página inicial"
+    enus: "return to home page",
+    fr: "Retour à la page d'accueil"
+  },
+  {
+    key: "signout_newSignoutMessage",
+    en: "You have been successfully logged out of Team",
+    de: "Sie wurden erfolgreich von Team abgemeldet",
+    enus: "You have been successfully logged out of Team",
+    fr: "Vous avez été déconnecté avec succès de l'équipe"
   }
 ];

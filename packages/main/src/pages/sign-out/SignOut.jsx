@@ -26,19 +26,8 @@ export default function Signout() {
     auth.signout(token);
   }, []);
 
-  const textAlign = () => {
-    if (
-      window.localStorage.myLanguage === "ar" ||
-      window.localStorage.myLanguage === "iw"
-    ) {
-      return {
-        textAlign: "right"
-      };
-    }
-  };
-
   return (
-    <SignoutStyleWrapper style={textAlign()}>
+    <SignoutStyleWrapper>
       <div className="logo">
         <img src={ZuriChatLogoTitle} alt="zuri logo" />
       </div>
