@@ -296,7 +296,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
             }
           />
           <Editor
-            editorState={editorState
+            editorState={editorState}
             onChange={onChange}
             handleKeyCommand={handleKeyCommand}
             keyBindingFn={keyBindingFn}
