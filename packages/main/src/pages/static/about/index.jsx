@@ -19,7 +19,11 @@ import {
   Card3,
   Card4,
   Card5,
-  Card6
+  Card6,
+  hng,
+  zuriTraining,
+  zuriInternship,
+  I4G
 } from "./assets";
 import Carousel from "./component/CarouselImg";
 import CarouselSecond from "./component/SecondCarousel";
@@ -147,10 +151,24 @@ const About = () => {
           </div>
         </div>
       </div>
-
+      {/* whatever work you do, you can do it in zurichat  */}
+      <div className={`container-fluid ${styles.zurichat}`}>
+        <div className={`${styles.zurichat_section}`}>
+          <div className={`${styles.signup_cta}`}>
+            <h3 className={`${styles.zurichat_text}`}>
+              Zuri Chat is a modern world platform that makes communicating with
+              your team or organization faster, easier and more fun. Want to
+              explore?
+            </h3>
+            <Link to="/signup">
+              <button className={` ${styles.btn_sale}`}>GET STARTED</button>
+            </Link>
+          </div>
+        </div>
+      </div>
       {/* our team */}
       <div>
-        <h1 className="text-center my-8">Meet the team</h1>
+        <h1 className="text-center">Meet the team</h1>
         <div className={`container mb-5 ${styles.team_grid}`}>
           {people.map(person => (
             <div
@@ -267,19 +285,14 @@ const About = () => {
           </div>
         </div>
       </div>
-      {/* whatever work you do, you can do it in zurichat  */}
-      <div className={`container-fluid ${styles.zurichat}`}>
-        <div className={`${styles.zurichat_section}`}>
-          <div className={`${styles.signup_cta}`}>
-            <h3 className={`${styles.zurichat_text}`}>
-              Zuri Chat is a modern world platform that makes communicating with
-              your team or organization faster, easier and more fun. Want to
-              explore?
-            </h3>
-            <Link to="/signup">
-              <button className={` ${styles.btn_sale}`}>GET STARTED</button>
-            </Link>
-          </div>
+      {/* trusted by these companies */}
+      <div>
+        <h1 className="text-center">Trusted By</h1>
+        <div className={`container ${styles.trusted_companies}`}>
+          <img src={zuriInternship} alt="" />
+          <img src={zuriTraining} alt="" />
+          <img src={I4G} alt="" />
+          <img src={hng} alt="" />
         </div>
       </div>
       <Footer />

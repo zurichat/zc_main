@@ -18,6 +18,20 @@
   display: none !important;
   margin-top: 2%;
 }
+.trusted_companies {
+  display: grid;
+  place-items: center;
+  place-content: center;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+  text-align: center;
+  margin: 4% auto;
+}
+.trusted_companies > img {
+  width: 100%;
+}
 /* our team grid */
 .team_grid {
   display: grid;
@@ -94,6 +108,7 @@
   color: #ffffff;
   background-color: #00b87c;
   padding: 3rem;
+  margin-bottom: 2rem;
 }
 .zurichat_h3 {
   padding: 3%;
@@ -321,7 +336,12 @@
   .team > img {
     width: 100%;
   }
-  
+  .trusted_companies {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .trusted_companies > img {
+    width: 60%;
+  }
   .join_us > p {
     padding: 0 4%;
     font-size: 14px;

@@ -1,4 +1,4 @@
-export { default as team } from "./collab-pana.svg";
+export { default as team } from "./people-talking.svg";
 export { default as user } from "./user-2.svg";
 export { default as group } from "./group.svg";
 export { default as vector } from "./vector.svg";
@@ -14,4 +14,8 @@ export { default as Card3 } from "./Card3.svg";
 export { default as Card4 } from "./Card4.svg";
 export { default as Card5 } from "./Card5.svg";
 export { default as Card6 } from "./Card6.svg";
-export { default as hands } from "./hands.svg";
+export { default as hands } from "./holding-hands.svg";
+export { default as hng } from "./hng-logo.svg";
+export { default as zuriTraining } from "./zuri-training-logo.svg";
+export { default as zuriInternship } from "./zuri-internship-logo.svg";
+export { default as I4G } from "./i4g-logo.svg";
