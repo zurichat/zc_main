@@ -63,6 +63,7 @@ typings/
 dist
 
 # Editor directories and files
+.gitpod.yml
 .idea
 *.suo
 *.ntvs*

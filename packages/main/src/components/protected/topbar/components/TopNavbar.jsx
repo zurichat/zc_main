@@ -21,7 +21,7 @@ import TopbarModal from "./TopbarModal";
 import styles from "../styles/TopNavBar.module.css";
 import LanguageIcon from "../../../top-navigation-bar/LanguageIcon";
 
-const TopNavbar = () => {
+const TopNavbar = ({ toggleSidebar }) => {
   const theme = localStorage.getItem("theme");
   // if (theme !== null || theme !== "") {
   //   const topBar = document.getElementById(
@@ -150,28 +150,39 @@ const TopNavbar = () => {
 
   let toggleStatus = null;
 
+  const StatusToolTip = ({ title }) => {
+    return (
+      <div className={styles["status__tool__tip"]}>
+        <ReactTooltip
+          id="toggleStatus"
+          effect="solid"
+          place="bottom"
+          type="dark"
+          offset={{ top: 3, left: 0.8 }}
+        >
+          {title}
+        </ReactTooltip>
+      </div>
+    );
+  };
+
   switch (presence) {
     case "true":
       toggleStatus = (
         <ToggleStatus>
-          <div className="user-active" />
+          <div className="user-active" data-tip data-for="toggleStatus" />
+          <StatusToolTip title="Active" />
         </ToggleStatus>
       );
       break;
     default:
       toggleStatus = (
         <ToggleStatus>
-          <div className="user-away" />
+          <div className="user-away" data-tip data-for="toggleStatus" />
+          <StatusToolTip title="Away" />
         </ToggleStatus>
       );
   }
-
-  const [toggleSidebar, setToggleSidebar] = useState(false);
-
-  const handleToggleSidebar = () => {
-    console.log("toggling");
-    setToggleSidebar(!toggleSidebar);
-  };
 
   // useEffect(() => {
   //   //Handle sidebar on mobile
@@ -250,7 +261,7 @@ const TopNavbar = () => {
         </div>
         {/* </a> */}
         <button
-          onClick={handleToggleSidebar}
+          onClick={toggleSidebar}
           type="button"
           aria-label="hamburger-menu"
           className={styles["hamburger__menu-button"]}
@@ -261,7 +272,7 @@ const TopNavbar = () => {
         </button>
       </BrandWrapper>
 
-      <div className="ms-4" style={{ flex: 1 }}>
+      <div style={{ flex: 1 }}>
         {/* <BaseInput
           value={search}
           onChange={e => setSearch(e.target.value)}
