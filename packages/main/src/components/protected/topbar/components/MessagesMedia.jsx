@@ -12,7 +12,11 @@ import theme16 from "../assets/images/theme12.png";
 import theme17 from "../assets/images/theme13.png";
 import theme18 from "../assets/images/theme14.png";
 
+import { useTranslation } from "react-i18next";
+
 const MessagesMedia = () => {
+  const { t } = useTranslation();
+
   const [isChecked, setIsChecked] = useState(false);
   const [active1, setActive1] = useState(0);
   const [active2, setActive2] = useState(1);
@@ -54,7 +58,7 @@ const MessagesMedia = () => {
   });
   return (
     <div className={standardStyles.modalContent}>
-      <div className={styles.title}>Messages</div>
+      <div className={styles.title}>{t("messages")}</div>
       {/* <div className={styles.clean}> */}
       {/* <div className={styles.radio}>
           <input
@@ -120,7 +124,7 @@ const MessagesMedia = () => {
         )}
       </div> */}
       {/* <div className={styles.bottom}></div> */}
-      <div className={standardStyles.labelTextHeader}>Name</div>
+      <div className={standardStyles.labelTextHeader}>{t("names")}</div>
       <div className={standardStyles.labelContainer}>
         <div>
           <input
@@ -140,7 +144,7 @@ const MessagesMedia = () => {
             }}
           />
         </div>
-        <div className={standardStyles.labelSubtext}>Full & display names</div>
+        <div className={standardStyles.labelSubtext}>{t("full_names")}</div>
       </div>
       <div className={standardStyles.labelContainer}>
         <div>
@@ -161,7 +165,7 @@ const MessagesMedia = () => {
             }}
           />
         </div>
-        <div className={standardStyles.labelSubtext}>Just display names</div>
+        <div className={standardStyles.labelSubtext}>{t("display_names")}</div>
       </div>
       {/* <div className={styles.img12}>
         {active1 == 0 && (
@@ -187,10 +191,10 @@ const MessagesMedia = () => {
         )}
       </div> */}
       <div className={styles.change}>
-        To change your full or display name, go to
+        {t("change_display_name")}
         <span style={{ color: "#00B87C", cursor: "pointer" }}>
           {" "}
-          your profile.
+          {t("your_profile")}
         </span>
       </div>
       <div className={standardStyles.hrLine}></div>
@@ -281,13 +285,12 @@ const MessagesMedia = () => {
         </div>
       </div> */}
       {/* <div className={styles.bottom3}></div> */}
-      <div className={standardStyles.labelTextHeader}>Emoji</div>
-      <div className={styles.tone}>Default Skin Tone</div>
-      <p className={styles.choose}>
-        Choose the default skin tone that will be used whenever you use certain
-        emojis in
+      <div className={standardStyles.labelTextHeader}>{t("emoji")}</div>
+      <div className={styles.tone}>{t("skin_tone")}</div>
+      <p className={styles.choose}>{t("choose_skin")}</p>
+      <p className={standardStyles.labelTextHeader}>
+        {t("reactions_messages")}
       </p>
-      <p className={standardStyles.labelTextHeader}>Reactions and messages.</p>
       <div className={styles.hands}>
         <div tabIndex="-1" className={styles.emojiBox}>
           <img src={theme13} alt="theme13" className={styles.theme13} />
