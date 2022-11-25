@@ -50,7 +50,6 @@
   }
 }
 
-
 .workspaceWrap h3,
 .workspaceWrap p {
   margin-bottom: 0;
@@ -111,22 +110,21 @@
   width: 100%;
 }
 
-
 @media (max-width: 426px) {
-    .workspaceWrap p {
-      font-size: 12px;
-    }
-  
-    #workspaceSidebar {
-      width: 70%;
-    }
-
-    .workspaceName {
-        font-size: 18px;
-    }
-  
-    .workspaceAdd svg {
-      height: 1.5em;
-      width: 1.5em;
-    }
+  .workspaceWrap p {
+    font-size: 12px;
   }
+
+  #workspaceSidebar {
+    width: 70%;
+  }
+
+  .workspaceName {
+    font-size: 18px;
+  }
+
+  .workspaceAdd svg {
+    height: 1.5em;
+    width: 1.5em;
+  }
+}
