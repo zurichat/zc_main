@@ -7,7 +7,7 @@ export default [
     engb: "For Organizations & Institutions",
     fr: "Pour les organisations et les institutions",
     zh: "针对组织和机构",
-    ar: "للمنظمات والمؤسسات\r\n\r\n",
+    ar: "للمنظمات والمؤسسات",
     es: "Para organizaciones e instituciones",
     it: "Per organizzazioni e istituzioni",
     iw: "עבור ארגונים",
@@ -141,17 +141,17 @@ export default [
   },
   {
     key: "landing_feature_row_two_description",
-    en: 'Take your classroom everywhere, make learning fun, stay engaged and inspired with the virtual lounge and games.",',
-    de: 'Nehmen Sie Ihr Klassenzimmer überallhin mit, machen Sie das Lernen zum Vergnügen, bleiben Sie engagiert und inspiriert mit der virtuellen Lounge und den Spielen.",',
-    nl: 'Neem uw klaslokaal overal mee naartoe, maak leren leuk, blijf betrokken en geïnspireerd met de virtuele lounge en games",',
-    engb: 'Take your classroom everywhere, make learning fun, stay engaged and inspired with the virtual lounge and games.",',
-    fr: "Emportez votre salle de classe partout, rendez l'apprentissage amusant, restez engagé et inspiré avec le salon virtuel et les jeux.\",",
-    zh: '把你的课堂带到任何地方，让学习变得有趣，通过虚拟休息室和游戏保持参与感和灵感"。',
-    ar: 'اصطحب فصلك الدراسي في كل مكان ، واجعل التعلم ممتعًا ، وابقَ مندمجًا ومستوحى من الصالة الافتراضية والألعاب. "،',
-    es: 'Lleva tu aula a todas partes, haz que el aprendizaje sea divertido, mantén el compromiso y la inspiración con la sala virtual y los juegos",',
-    it: "Portate la vostra classe ovunque, rendete l'apprendimento divertente, rimanete coinvolti e ispirati con la lounge virtuale e i giochi\",",
-    iw: 'קח את הכיתה שלך לכל מקום, הפוך את הלמידה למהנה, הישאר מעורב וקבל השראה עם הטרקלין הווירטואלי והמשחקים."',
-    pt: 'Leve sua sala de aula para qualquer lugar, torne o aprendizado divertido, mantenha-se engajado e inspirado com o lounge virtual e os jogos",'
+    en: "Take your classroom everywhere, make learning fun, stay engaged and inspired with the virtual lounge and games.",
+    de: "Nehmen Sie Ihr Klassenzimmer überallhin mit, machen Sie das Lernen zum Vergnügen, bleiben Sie engagiert und inspiriert mit der virtuellen Lounge und den Spielen.",
+    nl: "Neem uw klaslokaal overal mee naartoe, maak leren leuk, blijf betrokken en geïnspireerd met de virtuele lounge en games",
+    engb: "Take your classroom everywhere, make learning fun, stay engaged and inspired with the virtual lounge and games.",
+    fr: "Emportez votre salle de classe partout, rendez l'apprentissage amusant, restez engagé et inspiré avec le salon virtuel et les jeux.",
+    zh: "把你的课堂带到任何地方，让学习变得有趣，通过虚拟休息室和游戏保持参与感和灵感",
+    ar: "اصطحب فصلك الدراسي في كل مكان ، واجعل التعلم ممتعًا ، وابقَ مندمجًا ومستوحى من الصالة الافتراضية والألعاب. ",
+    es: "Lleva tu aula a todas partes, haz que el aprendizaje sea divertido, mantén el compromiso y la inspiración con la sala virtual y los juegos",
+    it: "Portate la vostra classe ovunque, rendete l'apprendimento divertente, rimanete coinvolti e ispirati con la lounge virtuale e i giochi",
+    iw: "קח את הכיתה שלך לכל מקום, הפוך את הלמידה למהנה, הישאר מעורב ומלא השראה עם הטרקלין הווירטואלי והמשחקים",
+    pt: "Leve sua sala de aula para qualquer lugar, torne o aprendizado divertido, mantenha-se engajado e inspirado com o lounge virtual e os jogos"
   },
   {
     key: "landing_feature_row_two_link",
@@ -322,7 +322,7 @@ export default [
     pt: "Seja o primeiro a receber atualizações e ofertas exclusivas do Zuri Chat"
   },
   {
-    key: "landing_card_two_description ",
+    key: "landing_card_two_description",
     en: "Enrich your Zuri Chat experience by signing up here to get the latest news and special deals on Zuri Chat",
     de: "Bereichern Sie Ihr Zuri Chat-Erlebnis, indem Sie sich hier anmelden, um die neuesten Nachrichten und Sonderangebote von Zuri Chat zu erhalten",
     nl: "Verrijk uw Zuri Chat-ervaring door u hier aan te melden voor het laatste nieuws en speciale aanbiedingen van Zuri Chat",
@@ -336,7 +336,7 @@ export default [
     pt: "Enriqueça sua experiência no Zuri Chat inscrevendo-se aqui para receber as últimas notícias e ofertas especiais no Zuri Chat"
   },
   {
-    key: "landing_card_two_button ",
+    key: "landing_card_two_button",
     en: "Subscribe",
     de: "Anmelden",
     nl: "Aanmelden",
