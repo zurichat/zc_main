@@ -58,11 +58,22 @@ export default function Index() {
     });
   }
 
+  const textAlign = () => {
+    if (
+      window.localStorage.myLanguage === "ar" ||
+      window.localStorage.myLanguage === "iw"
+    ) {
+      return {
+        textAlign: "right"
+      };
+    }
+  };
+
   return (
     <div>
       <TopNavigationBar />
 
-      <div className={`${styles.homepage}`}>
+      <div className={`${styles.homepage}`} style={textAlign()}>
         {/* HERO */}
         <div className={`${styles.hero_wrap}`}>
           <div className={`hero ${styles.hero}`}>

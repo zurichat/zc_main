@@ -21,7 +21,7 @@ export const StyledProfileWrapper = styled.section`
           align-items: flex-start;
           flex-direction: column;
           margin-top: 50px;
-          margin-bottom: 30px;
+          ${"" /* margin-bottom: 30px; */}
         }
         .mobileAvataeCon {
           display: none;
@@ -59,8 +59,9 @@ export const StyledProfileWrapper = styled.section`
       }
       .input-group {
         width: 100%;
-        margin-bottom: 1.5rem;
-        &.phone {
+        margin-bottom: 1rem;
+        &.phone,
+        &.timezone {
           flex-direction: column;
           align-items: flex-start;
           .phone-container {
@@ -75,47 +76,48 @@ export const StyledProfileWrapper = styled.section`
             }
             .pref,
             .phoneInput {
-              height: 2.4rem;
-              padding: 0 0.5rem;
+              ${"" /* height: 2.4rem; */}
+              ${"" /* padding: 0px 15px; */}
               outline: none;
               border: none;
+              flex-grow: 1;
+              ${"" /* margin-left: 1rem; */}
+              width: 100%;
             }
             .pref {
               width: 72px;
-              font-size: 1rem;
+              font-size: 15px;
             }
-            .phoneInput {
-              flex-grow: 1;
-              margin-left: 1rem;
-              width: 100%;
-            }
+          }
+          .time-select {
+            ${"" /* padding: 0px 15px; */}
+            outline: none;
+            border: none;
+            width: 100%;
           }
         }
         &.mal-4 {
           margin-left: 0;
-          @media (max-width: 768px) {
-            /* margin-left: 1rem; */
-            margin-top: 2rem;
-          }
         }
         .inputLabel {
           font-size: 1rem;
           font-weight: 600;
           color: #1d1c1d;
-          margin-bottom: 0.75rem;
+          margin-bottom: 4px;
           display: block;
         }
         .input,
         /*select*/
         .phone-container,
+        .time-container,
         .textarea,
-        .phoneInput,
         .css-1s2u09g-control,
         .css-2b097c-container {
           width: 100%;
           border: 1px solid #a1a1a1;
-          padding: 0 1rem;
-          font-size: 1.4rem;
+          margin: 6px 0;
+          padding: 7px 1rem;
+          font-size: 15px;
           outline: none;
           background: none;
           border-radius: 5px;
@@ -139,7 +141,6 @@ export const StyledProfileWrapper = styled.section`
             color: #000;
             font-size: 1rem;
             border: none;
-            outline: none;
           }
         }
         .css-2b097c-container {
