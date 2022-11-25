@@ -114,7 +114,7 @@ const Home = () => {
         {/* Customize Zuri  */}
         <div className={classes.card}>
           {/* Settings and permissions*/}
-          <div className="mt-2">
+          {/* <div className="mt-2">
             <Link to="/admin/settings" className="" style={{ display: "flex" }}>
               <div>
                 <span
@@ -146,7 +146,7 @@ const Home = () => {
                 </div>
               </div>
             </Link>
-          </div>
+          </div> */}
 
           <div>
             <Link
@@ -334,7 +334,7 @@ const Home = () => {
           </div> */}
 
           {/* Analytics  */}
-          <div className="mt-2">
+          {/* <div className="mt-2">
             <Link to="/admin/stats" className="" style={{ display: "flex" }}>
               <div>
                 <span
@@ -366,13 +366,13 @@ const Home = () => {
                 </div>
               </div>
             </Link>
-          </div>
+          </div> */}
         </div>
 
         {/* Applications*/}
         <div className={classes.card}>
           {/* Settings and permissions*/}
-          <div className="mt-2">
+          {/* <div className="mt-2">
             <Link to="/admin/settings" className="" style={{ display: "flex" }}>
               <div>
                 <span
@@ -542,7 +542,7 @@ const Home = () => {
               </div>
               <div className={classes.overlay}></div>
             </Link>
-          </div>
+          </div> */}
           <ul
             className={classes.settings_home_footer}
             style={{
