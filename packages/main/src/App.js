@@ -36,6 +36,9 @@ import UserGroups from "../src-old/pages/admin/UserGroups.js";
 import ManageMembers from "../src-old/pages/admin/manage_members/components/ManageMembers.js";
 import AccountDeactivation from "../src-old/pages/settings/components/AcctDeactivation.js";
 import { useAuth } from "./auth/use-auth";
+import AccountProfile from "./pages/protected/account-profile/AccountProfile";
+import Billing from "./pages/protected/billings/Billing";
+import AboutWorkSpace from "./pages/protected/about-workspace/AboutWorkSpace";
 
 const { Workspace, CreateWorkspace, ChooseWorkspace } = lazily(() =>
   import("./pages/protected")
@@ -115,31 +118,6 @@ const App = () => (
           <ProtectedRoute exact path="/admin/settings">
             <SettingsHome />
           </ProtectedRoute>
-          <ProtectedRoute exact path="/ZurichatBlog">
-            <Blogs />
-          </ProtectedRoute>
-          <ProtectedRoute exact path="/admin/stats">
-            <Analytics />
-          </ProtectedRoute>
-          <ProtectedRoute exact path="/">
-            <Tour />
-          </ProtectedRoute>
-          <ProtectedRoute exact path="/download-apps">
-            <DownloadApps />
-          </ProtectedRoute>
-          <ProtectedRoute exact path="/confirm-deactivation">
-            <AccountDeactivation />
-          </ProtectedRoute>
-          <ProtectedRoute exact path="/help">
-            <Help />
-          </ProtectedRoute>
-          <ProtectedRoute exact path="/admin/settings/usergroups">
-            <UserGroups />
-          </ProtectedRoute>
-          <ProtectedRoute exact path="/admin/settings/managemembers">
-            <ManageMembers />
-          </ProtectedRoute>
-
           <ProtectedRoute exact path="/choose-workspace">
             {withSuspense(ChooseWorkspace)}
           </ProtectedRoute>

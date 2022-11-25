@@ -1,16 +1,16 @@
 import React, { useEffect } from "react";
-import styles from "../styles/adminSidebar.module.css";
+import styles from "../admin-sidebar/adminSidebar.module.css";
 import { Link, NavLink } from "react-router-dom";
 
 // image
-import avatar from "../assets/avatar.svg";
+import avatar from "../admin-sidebar/assets/avatar.svg";
 
 // icons
 
-import zuriLogo from "../assets/zuriLogo.svg";
-import grid from "../assets/grid.svg";
-import bouy from "../assets/bouy.svg";
-import la_rocket from "../assets/la_rocket.svg";
+import zuriLogo from "../admin-sidebar/assets/zuriLogo.svg";
+import grid from "../admin-sidebar/assets/grid.svg";
+import bouy from "../admin-sidebar/assets/bouy.svg";
+import la_rocket from "../admin-sidebar/assets/la_rocket.svg";
 
 import {
   FiAlertCircle,
@@ -32,7 +32,7 @@ import {
 } from "react-icons/fi";
 import { BsFillHeartFill } from "react-icons/bs";
 import { GrFormClose } from "react-icons/gr";
-import { getUser } from "../Utils/Common";
+import { getUser } from "../admin-sidebar/utils/Common";
 
 const AdminSidebar = ({ setModal, openModal }) => {
   const user = getUser();
@@ -184,16 +184,16 @@ const AdminSidebar = ({ setModal, openModal }) => {
           >
             <FiUsers className={styles.icon} />
             User groups
-          </Link> */}
-          {/* <Link
+          </Link>
+          <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
             to="/admin/invites"
           >
             <FiUserPlus className={styles.icon} />
             Invitations
-          </Link> */}
-          {/* <NavLink
+          </Link>
+          <NavLink
             exact
             onClick={() => setModal(!openModal)}
             activeClassName={styles.sidebarLinkActive}
@@ -202,16 +202,16 @@ const AdminSidebar = ({ setModal, openModal }) => {
           >
             <FiCreditCard className={styles.icon} />
             Billings
-          </NavLink> */}
-          {/* <Link
+          </NavLink>
+          <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
             to="/"
           >
             <FiScissors className={styles.icon} />
             Authentication
-          </Link> */}
-          {/* <Link
+          </Link>
+          <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
             to="/admin/settings/deprecation"

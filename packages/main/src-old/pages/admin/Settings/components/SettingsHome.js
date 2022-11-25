@@ -37,7 +37,7 @@ const Home = () => {
           </h1>
         </div>
 
-        <div className={classes.card}>
+        {/* <div className={classes.card}>
           <div>
             <Link
               to="/admin/settings/accountsProfile"
@@ -73,17 +73,49 @@ const Home = () => {
               </div>
             </Link>
           </div>
+        </div> */}
+
+        <div className={classes.card}>
+          <div className="mt-2">
+            <div style={{ display: "flex" }}>
+              <div>
+                <span
+                  className={classes.settings_icon_holder}
+                  style={{ backgroundColor: "#1C9BD1" }}
+                >
+                  <IoSettingsOutline className={classes.settings_icon} />
+                </span>
+              </div>
+              <div
+                className=""
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginLeft: " 1em",
+                  justifyContent: "space-between",
+                  width: "100%"
+                }}
+              >
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <h3> Settings & Permissions </h3>
+                  <span className={classes.span_text}>
+                    Configure your workspace settings, permissions, and
+                    authentication preferences.
+                  </span>
+                </div>
+                {/* <div>
+                  <img src={right_caret} alt="go" />
+                </div> */}
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Customize Zuri  */}
         <div className={classes.card}>
           {/* Settings and permissions*/}
           <div className="mt-2">
-            <Link
-              to="/admin/settings"
-              className={classes.text_links}
-              style={{ display: "flex" }}
-            >
+            <Link to="/admin/settings" className="" style={{ display: "flex" }}>
               <div>
                 <span
                   className={classes.settings_icon_holder}
@@ -115,13 +147,46 @@ const Home = () => {
               </div>
             </Link>
           </div>
-          {/* Manage workspace */}
-          <div className="mt-2">
+
+          <div>
             <Link
-              to="/admin/stats"
-              className={classes.text_links}
+              to="/admin/settings/accountsProfile"
+              className=""
               style={{ display: "flex" }}
             >
+              <div>
+                <span
+                  className={classes.settings_icon_holder}
+                  style={{ backgroundColor: "#1C9BD1" }}
+                >
+                  <IoSettingsOutline className={classes.settings_icon} />
+                </span>
+              </div>
+              <div
+                className=""
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginLeft: " 1em"
+                }}
+              >
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <h3>Account Settings </h3>
+                  <span className={classes.span_text}>
+                    Edit your profile, update your username and password, and
+                    manage other account settings.
+                  </span>
+                </div>
+                <div>
+                  <img src={right_caret} alt="go" />
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          {/* Manage workspace */}
+          <div className="mt-2">
+            <Link to="/admin/stats" className="" style={{ display: "flex" }}>
               <div>
                 <span
                   className={classes.settings_icon_holder}
@@ -154,7 +219,7 @@ const Home = () => {
           </div>
 
           {/* Billing */}
-          <div className="mt-2" style={{}}>
+          {/* <div className="mt-2" style={{}}>
             <Link
               to="/admin/settings/billings"
               className={classes.text_links}
@@ -221,17 +286,17 @@ const Home = () => {
                 </div>
               </div>
             </Link>
-          </div>
-          <hr
+          </div> */}
+          {/* <hr
             style={{
               width: "calc(100% - 5%)",
               height: "0.5px",
               margin: "2em auto"
             }}
-          />
+          /> */}
 
           {/* Customize Zuri  */}
-          <div>
+          {/* <div>
             <Link
               to="/admin/settings/customize"
               className={classes.text_links}
@@ -266,15 +331,11 @@ const Home = () => {
                 </div>
               </div>
             </Link>
-          </div>
+          </div> */}
 
           {/* Analytics  */}
           <div className="mt-2">
-            <Link
-              to="/admin/stats"
-              className={classes.text_links}
-              style={{ display: "flex" }}
-            >
+            <Link to="/admin/stats" className="" style={{ display: "flex" }}>
               <div>
                 <span
                   className={classes.settings_icon_holder}
@@ -312,11 +373,7 @@ const Home = () => {
         <div className={classes.card}>
           {/* Settings and permissions*/}
           <div className="mt-2">
-            <Link
-              to="/admin/settings"
-              className={classes.text_links}
-              style={{ display: "flex" }}
-            >
+            <Link to="/admin/settings" className="" style={{ display: "flex" }}>
               <div>
                 <span
                   className={classes.settings_icon_holder}
