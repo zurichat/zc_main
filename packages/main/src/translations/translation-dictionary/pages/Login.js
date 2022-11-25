@@ -84,7 +84,7 @@ export default [
     pt: "Entrar"
   },
   {
-    key: "bottomLine",
+    key: "logInbottomLine",
     en: "New to us?",
     de: "Neu bei uns?",
     nl: "Nieuw bij ons?",
@@ -98,7 +98,7 @@ export default [
     pt: "Novo para nós?"
   },
   {
-    key: "bottomLink",
+    key: "logInbottomLink",
     en: "Create an Account",
     de: "Ein Konto erstellen",
     nl: "Een account aanmaken",
