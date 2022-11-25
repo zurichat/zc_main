@@ -75,9 +75,19 @@ const NewPassword = () => {
       updatepass();
     }
   };
+  const textAlign = () => {
+    if (
+      window.localStorage.myLanguage === "ar" ||
+      window.localStorage.myLanguage === "iw"
+    ) {
+      return {
+        textAlign: "right"
+      };
+    }
+  };
 
   return (
-    <div id={styles.authPageWrapper}>
+    <div id={styles.authPageWrapper} style={textAlign()}>
       {showDialog && (
         <PasswordSuccesful error={error} closeDialog={closeDialog} />
       )}
