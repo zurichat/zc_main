@@ -18,8 +18,19 @@ export default function Footer() {
     return new Date().getFullYear();
   };
 
+  const textAlign = () => {
+    if (
+      window.localStorage.myLanguage === "ar" ||
+      window.localStorage.myLanguage === "iw"
+    ) {
+      return {
+        textAlign: "right"
+      };
+    }
+  };
+
   return (
-    <div className={styles.footer}>
+    <div className={styles.footer} style={textAlign()}>
       <div className={styles.top_footer}>
         <div className={styles.logo}>
           <Link to="/" className={`me-0 me-md-2 ${styles.link}`}>
