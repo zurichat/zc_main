@@ -5,10 +5,9 @@ const VideoChat = () => {
   const [videoCall, setVideoCall] = useState(true);
 
   const rtcProps = {
-    appId: "f910a1fb4cfe4c5996c979c54e570ba7",
+    appId: process.env.REACT_APP_AGORA_APP_ID,
     channel: "plug",
-    token:
-      "007eJxTYLj/e9Xpk97phw25vb9Vbqs5ud+xNqfqh6LbwdVKB2fcPaOrwJBmaWiQaJiWZJKclmqSbGppaZZsaW6ZbGqSampukJRonizWkNwQyMhw/vt9BkYoBPFZGApyStMZGAAzOCKm"
+    token: process.env.REACT_APP_AGORA_TOKEN
   };
 
   const callbacks = {

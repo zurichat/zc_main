@@ -30,6 +30,7 @@ import {
   BsWindowSidebar
 } from "react-icons/bs";
 import { useMediaQuery } from "@chakra-ui/react";
+import VideoChat from "../../../components/media-chat/VideoChat";
 
 const cache = setupCache({
   // check if response header has a specification for caching
@@ -43,8 +44,6 @@ const cache = setupCache({
 const instance = axios.create({
   adapter: cache.adapter
 });
-
-import VideoChat from "../../../components/media-chat/VideoChat";
 
 export default function Index() {
   const [tablet] = useMediaQuery("(max-width: 769px");
