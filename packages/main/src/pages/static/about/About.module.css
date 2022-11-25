@@ -188,7 +188,6 @@
 }
 
 @media only screen and (max-width: 1040px) {
-
   .banner {
     padding-top: 9em;
   }
@@ -204,11 +203,9 @@
     flex-basis: 30%;
     flex-grow: 0;
   }
-
-
 }
 
-@media only screen and (max-width: 767.98px){
+@media only screen and (max-width: 767.98px) {
   .banner > h1 {
     font-size: 32px;
     line-height: 36px;
@@ -264,7 +261,7 @@
   .team > img {
     width: 100%;
   }
-  
+
   .join_us > p {
     padding: 0 4%;
     font-size: 14px;
@@ -332,14 +329,13 @@
     font-size: 24px;
     line-height: 28px;
     padding: 0 4%;
-    text-align: center ;
+    text-align: center;
   }
 
   .join_us > p {
     text-align: center;
   }
 
-  
   .team__container {
     flex-direction: column;
   }

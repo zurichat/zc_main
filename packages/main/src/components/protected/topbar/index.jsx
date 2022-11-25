@@ -3,11 +3,11 @@ import TopNavbar from "./components/TopNavbar";
 import { ProfileProvider } from "./context/profile-modal.context";
 import { TopbarProvider } from "./context/topbar.context";
 
-const TopNavBar = () => {
+const TopNavBar = ({ toggleSidebar }) => {
   return (
     <ProfileProvider>
       <TopbarProvider>
-        <TopNavbar />
+        <TopNavbar toggleSidebar={toggleSidebar} />
       </TopbarProvider>
     </ProfileProvider>
   );
