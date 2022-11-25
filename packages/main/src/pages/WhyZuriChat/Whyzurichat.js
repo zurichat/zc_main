@@ -16,6 +16,18 @@ import { useTranslation } from "react-i18next";
 function Whyzurichat() {
   const { t } = useTranslation();
 
+  //text align right for arabic and hebrew
+  const textAlign = () => {
+    if (
+      window.localStorage.myLanguage === "ar" ||
+      window.localStorage.myLanguage === "iw"
+    ) {
+      return {
+        textAlign: "right"
+      };
+    }
+  };
+
   // Make the page scroll to the top on navigation
   React.useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -24,7 +36,7 @@ function Whyzurichat() {
   return (
     <Fragment>
       <TopNavigationBar />
-      <div className={style.blog_container}>
+      <div className={style.blog_container} style={textAlign()}>
         <section className={`${style.hero_blog}`}>
           <div className={style.hero_section}>
             <div className={style.hero_writeup}>
