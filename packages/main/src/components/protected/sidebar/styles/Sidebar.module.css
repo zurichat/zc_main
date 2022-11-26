@@ -4,17 +4,14 @@
   font: "Lato", sans-serif;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   background-color: inherit;
-  padding-block-end: 3em;
   height: 100%;
-  width: unset;
   font-size: 16px;
-  /* display: flex;
-  flex-direction: column; */
-  /* overflow: auto; */
-  /* width: 100%; */
-  /* padding-top: 4.3rem; */
+  padding: 0;
 
-  /*  Scroll for Over FLow Below  */
+  display: flex;
+  min-width: 6px;
+  max-width: 300px;
+
   overflow-y: scroll;
   scroll-behavior: smooth;
   -ms-overflow-style: none;
@@ -23,6 +20,27 @@
 
 .sb__container::-webkit-scrollbar {
   display: none;
+}
+
+.sb__content {
+  flex: 1;
+  padding-left: 8px;
+}
+
+.sb__resizer {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 6px;
+  justify-self: flex-end;
+  cursor: col-resize;
+  resize: horizontal;
+}
+
+.sb__resizer:hover,
+.sb__resizer:active {
+  width: 3px;
+  cursor: col-resize;
+  background: #7ed5af;
 }
 
 .subCon1 {

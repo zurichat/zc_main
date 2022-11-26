@@ -21,9 +21,15 @@ export const TopBarWrapperStyle = styled.div`
 `;
 
 export const SidebarWrapperStyle = styled.div`
+<<<<<<< HEAD
   flex-basis: 20%;
   max-width: 350px;
   min-width: 280px;
+=======
+  // flex-basis: 20%;
+  // max-width: 300px;
+  // min-width: 230px;
+>>>>>>> 564b27d1797c64e77f236414f4be6579f3d0d4b3
   height: 100%;
   -ms-overflow-style: none;
   scrollbar-width: none;
