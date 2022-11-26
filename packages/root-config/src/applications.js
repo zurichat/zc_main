@@ -1,8 +1,19 @@
 const PluginImportPathPre = "zuri-plugin-";
 const PluginAppPathPre = "plugin-";
 
+const textAlign = () => {
+  if (
+    window.localStorage.myLanguage === "ar" ||
+    window.localStorage.myLanguage === "iw"
+  ) {
+    return "translate";
+  } else {
+    return "";
+  }
+};
+
 export const coreApps = [
-  { name: "main" }
+  { name: "main", class: `${textAlign()}` }
   // { name: "zurUi" },
   // { name: "utilities" }
 ];

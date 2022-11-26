@@ -10,7 +10,7 @@ import { coreApps, allPlugins } from "./applications";
 
 coreApps.forEach(app => {
   registerApplication({
-    name: `@zuri/${app.name}`,
+    name: `@zuri${app.class}/${app.name}`,
     app: () => System.import(`@zuri/${app.name}`),
     activeWhen: ["/"]
   });
