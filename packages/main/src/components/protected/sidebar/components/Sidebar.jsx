@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import threadIcon from "../assets/icons/thread-icon.svg";
 import dmIcon from "../assets/icons/dm-icon.svg";
-import liveicon from "../assets/icons/live.png";
+import liveicon from "../assets/icons/newlive.svg";
 
 import draftIcon from "../assets/icons/draft-icon.svg";
 
@@ -217,6 +217,7 @@ const Sidebar = props => {
                 name={`${t("workspace_chat.drafts")}`}
                 image={draftIcon}
               />
+
               <SingleRoom
                 name="LiveBroadcast"
                 image={liveicon}

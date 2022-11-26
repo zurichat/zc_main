@@ -1,46 +1,114 @@
-import AgoraUIKit from "agora-react-uikit";
+import React, { useState } from "react";
+import AgoraUIKit, { layout } from "agora-react-uikit";
+import "agora-react-uikit/dist/index.css";
 
-import { useState } from "react";
-
-// agora live broadcast
 const LiveBroadcast = () => {
-  const [videoCall, setVideoCall] = useState(true);
+  const [videocall, setVideocall] = useState(true);
+  const [isHost, setHost] = useState(true);
 
   const rtcProps = {
-    // from env
-    appId: process.env.REACT_APP_AGORA_APP_ID,
+    appId: "9e95b753731148ff9f6ab866502fe3df",
     channel: "live",
-    token: process.env.REACT_APP_AGORA_TOKEN
+    token:
+      "007eJxTYChtKGew0hY63SLCajbvL4Nj23lpM3Mb09Qzwv0eczyPNikwWKZamiaZmxqbGxsamlikpVmmmSUmWZiZmRoYpaUap6RZZzYlNwQyMtyaK8vEyACBID4LQ05mWSoDAwD7whta", //add your token if using app in secured mode
+    role: isHost ? "host" : "audience"
+  };
+
+  const styleProps = {
+    iconSize: 30,
+    theme: "#000",
+    minViewStyles: { width: 200, height: 150 },
+    maxViewStyles: { height: 500, width: 500 },
+    localControlStyles: {
+      bottom: 0,
+      height: 100,
+      backgroundColor: "#000000"
+    },
+    BtnTemplateStyles: {
+      paddingleft: 2,
+      backgroundColor: ""
+    },
+
+    UIKitContainer: {
+      backgroundColor: "#000",
+      borderRadius: 15,
+      overflowX: "hidden",
+      overflowY: "hidden"
+    },
+    localBtnContainer: {
+      marginLeft: "150px",
+      backgroundColor: "#bebebe",
+      borderRadius: 15,
+      width: "400px"
+    },
+
+    localBtnStylesInterface: {
+      muteLocalVideo: {
+        padding: 5
+      },
+      muteLocalAudio: {
+        padding: 5
+      }
+    }
   };
 
   const callbacks = {
-    EndCall: () => setVideoCall(false)
+    EndCall: () => setVideocall(false)
   };
 
-  return videoCall ? (
-    <div
-      style={{
-        display: "flex",
-        paddingLeft: "100px",
-        width: "600px",
-        height: "100%"
-      }}
-    >
-      <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} />
+  return (
+    <div style={styles.container}>
+      <div style={styles.videoContainer}>
+        <h1 style={styles.heading}>Live Broadcast</h1>
+        {videocall ? (
+          <>
+            <div style={styles.nav}>
+              <p style={{ fontSize: 20, width: 200 }}>
+                You're {isHost ? "a host" : "an audience"}
+              </p>
+              <p style={styles.btn} onClick={() => setHost(!isHost)}>
+                Change Role
+              </p>
+            </div>
+            <AgoraUIKit
+              styleProps={styleProps}
+              rtcProps={rtcProps}
+              callbacks={callbacks}
+            />
+          </>
+        ) : (
+          <div style={styles.nav}>
+            <div style={styles.btn} onClick={() => setVideocall(true)}>
+              Start Call
+            </div>
+          </div>
+        )}
+      </div>
     </div>
-  ) : (
-    <button
-      style={{
-        margin: "100px",
-        width: "100px",
-        height: "50px",
-        backgroundColor: "#00b87c"
-      }}
-      onClick={() => setVideoCall(true)}
-    >
-      Start Live Broadcast
-    </button>
   );
+};
+
+const styles = {
+  container: {
+    width: "70%",
+    height: "90%",
+    display: "flex",
+    flex: 1,
+    backgroundColor: "#ffffff",
+    marginBottom: "30px",
+    marginRight: "50px"
+  },
+  heading: { textAlign: "center", marginBottom: 0 },
+  videoContainer: { display: "flex", flexDirection: "column", flex: 1 },
+  nav: { display: "flex", justifyContent: "space-around", marginBottom: 20 },
+  btn: {
+    backgroundColor: "#00b87c",
+    cursor: "pointer",
+    borderRadius: 5,
+    padding: 5,
+    color: "#ffffff",
+    fontSize: 20
+  }
 };
 
 export default LiveBroadcast;
