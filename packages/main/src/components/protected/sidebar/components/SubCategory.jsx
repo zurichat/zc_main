@@ -6,7 +6,6 @@ import styles from "../styles/Drop.module.css";
 export default function SubCategory({ state, name, isOpened }) {
   const [isOpen, setOpen] = useState(false);
   const toggleDropdown = () => setOpen(!isOpen);
-  console.log(state);
 
   return (
     <div
