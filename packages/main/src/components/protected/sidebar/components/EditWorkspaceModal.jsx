@@ -16,7 +16,6 @@ const EditWorkspaceModal = ({ workSpace, editDetails, setEditDetails }) => {
     const settingworkspace = () => {
       for (let i = 0; i < orgsLength; i++) {
         if (currentWorkspace === orgs[i].id) {
-          console.log(orgs[i].workspace_url);
           workspaceURL = orgs[i].workspace_url;
           setWorkspaceURLChange(orgs[i].workspace_url);
         }
