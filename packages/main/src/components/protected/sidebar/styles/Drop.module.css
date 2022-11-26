@@ -53,6 +53,7 @@
 .item__list__active {
   white-space: nowrap;
   cursor: pointer;
+  width: calc(100% + 10px);
 }
 
 .plugin_name,

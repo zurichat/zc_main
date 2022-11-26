@@ -7,11 +7,9 @@
   height: 100%;
   font-size: 16px;
   padding: 0;
-
   display: flex;
   min-width: 6px;
   max-width: 300px;
-
   overflow-y: scroll;
   scroll-behavior: smooth;
   -ms-overflow-style: none;
