@@ -6,7 +6,7 @@ const CommentBoardWrapper = styled.aside`
   grid-template-rows: auto 1fr auto;
 
   width: 400px;
-  z-index: 99;
+
   /* margin-top: 40px; */
   position: relative;
   /* position: fixed; */
@@ -15,6 +15,7 @@ const CommentBoardWrapper = styled.aside`
   top: -8.5px;
   height: 93vh;
   padding: 0 0 20px 0;
+  padding-right: 1.5rem;
   overflow-y: auto;
   overflow-x: none;
 `;
@@ -39,6 +40,38 @@ const CommentMessagesWrapper = styled.div`
   padding-left: 17px;
   margin-bottom: 9px;
   padding-top: 1.1rem;
+  height: 69vh;
+  overflow-x: none;
+  border: 2px solid red;
+  overflow-y: scroll;
+  /* Style message */
+  /* .message_container {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    .img_container {
+      width: 45px;
+      height: 45px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+      }
+    }
+
+    .text-content {
+      .user_name {
+        display: flex;
+        align-items: flex-end;
+        gap: 20px;
+      }
+
+      .time_ago {
+        font-size: 0.7rem;
+      }
+    }
+  } */
 `;
 const CommentMessageItem = styled.div`
   margin-bottom: 16px;
