@@ -50,21 +50,11 @@ const ResetDefault = () => {
       sendEmail();
     }
   };
-  const textAlign = () => {
-    if (
-      window.localStorage.myLanguage === "ar" ||
-      window.localStorage.myLanguage === "iw"
-    ) {
-      return {
-        textAlign: "right"
-      };
-    }
-  };
 
   const { t } = useTranslation();
 
   return (
-    <div id={styles.authPageWrapper} style={textAlign()}>
+    <div id={styles.authPageWrapper}>
       <Helmet>
         <title>{t("auth.passwordreset.title")} - Zuri Chat</title>
       </Helmet>
