@@ -545,7 +545,7 @@ function SettingPanel({
               togglePrivateChannel();
             }}
           >
-            Change to Channel
+            Change to Private Channel
           </ChannelContent>
         </Channels>
       </ChannelWrapper>
