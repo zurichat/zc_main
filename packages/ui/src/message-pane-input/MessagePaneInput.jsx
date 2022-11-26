@@ -27,7 +27,6 @@ import mentions from "./mentions.data";
 
 import createEmojiPlugin from "@draft-js-plugins/emoji";
 import { theme } from "./EmojiStyles.styled.js";
-
 import axios from "axios";
 import { BsFillFileEarmarkFill } from "react-icons/bs";
 
@@ -277,13 +276,73 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
         })}
       </div>
     );
+  const clearAttached = () => {
+    setPreview("");
+    setSentAttachedFile("");
+  };
+
+  const AudioFilePreview = ({ source }) => {
+    return <audio controls src={source} />;
+  };
+
+  const DocumentFilePreview = ({ fileName, extension }) => {
+    return (
+      <StyledDocumentPreview>
+        <div>
+          <BsFillFileEarmarkFill style={{ width: "42px", height: "42px" }} />
+        </div>
+        <div style={{ width: "85%" }}>
+          <h6>{fileName}</h6>
+          <p>{extension}</p>
+        </div>
+      </StyledDocumentPreview>
+    );
+  };
+
+  const PreviewFile = () => {
+    console.log(sentAttachedFile);
+    let fileName = sentAttachedFile.name;
+    let extension = fileName.substring(fileName.lastIndexOf(".") + 1);
+
+    if (preview.includes("data:image")) {
+      return <img src={preview} alt="Image Preview" />;
+    } else if (preview.includes("data:audio")) {
+      return <AudioFilePreview source={preview} />;
+    } else if (preview.includes("data:video")) {
+      return <video autoPlay muted src={preview} />;
+    } else {
+      return <DocumentFilePreview fileName={fileName} extension={extension} />;
+    }
   };
 
   return (
     <Wrapper>
       <InputWrapper>
         {preview.length ? <PreviewItem /> : null}
+        {preview ? (
+          <Preview>
+            <PreviewFile />
 
+            <button
+              style={{
+                position: "absolute",
+                top: "-8px",
+                right: "-10px",
+                height: "24px",
+                width: "24px",
+                borderRadius: "50%",
+                background: "#242424",
+                fontWeight: "800",
+                fontSize: "12px",
+                color: "#fff"
+              }}
+              onClick={clearAttached}
+            >
+              X
+            </button>
+          </Preview>
+        ) : null}
+        
         <div className="RichEditor-root">
           <ToolbarTop
             editorState={editorState}
@@ -418,6 +477,10 @@ const Preview = styled.div`
   margin: 10px 22px 12px 0;
   position: relative;
   flex-shrink: 0;
+  width: fit-content;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  position: relative;
 
   img,
   video {
