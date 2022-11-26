@@ -1,0 +1,46 @@
+.container {
+  align-self: flex-start;
+  width: 100%;
+}
+
+.middle {
+  text-align: left;
+}
+
+.links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3rem;
+}
+
+.container .p {
+  margin-top: 2rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 24px;
+  color: #323132;
+}
+
+.links a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  padding: 3rem 4rem;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.link-1 {
+  background-color: #d16553;
+  color: #fff;
+}
+
+.link-2 {
+  color: #554e00;
+  background-color: #fff480;
+}
+
+.link-3 {
+  background-color: #009967;
+  color: #fff;
+}

@@ -16,6 +16,7 @@ import {
   NewSignOut,
   AboutPage,
   ContactUsPage,
+  DownloadsPage,
   PluginsPage,
   PricingPage,
   InvitePage,
@@ -25,7 +26,7 @@ import {
   PrivacyPage,
   KnowledgeLibrary
 } from "./pages";
-
+import WhyZuri from "./pages/static/whyzurichat";
 import TermsOfService from "../src-old/pages/termsOfService/index";
 import { useAuth } from "./auth/use-auth";
 
@@ -85,6 +86,7 @@ const App = () => (
           <Route exact path="/" component={HomePage} />
           {/* <Route exact path="/signout" component={SignOut} /> */}
           <Route exact path="/about" component={AboutPage} />
+          <Route exact path="/downloads" component={DownloadsPage} />
           <Route exact path="/contact-us" component={ContactUsPage} />
           <Route exact path="/plugins" component={PluginsPage} />
           <Route exact path="/pricing" component={PricingPage} />
@@ -94,6 +96,7 @@ const App = () => (
           <Route path="/whyzurichat" component={WhyZuriChat} />
           <Route path="/privacy" component={PrivacyPage} />
           <Route path="/terms" component={TermsOfService} />
+          <Route path="/whyzurichat" component={WhyZuri} />
           <Route path="/knowledge-library" component={KnowledgeLibrary} />
 
           <ProtectFromAuthRoute exact path="/login">
