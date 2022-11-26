@@ -69,8 +69,8 @@ const Translations = [
   ...NavBar,
   ...Footer,
   ...WorkspaceChat,
-  ...SideBar,
-  ...FAQ
+  ...FAQ,
+  ...SideBar
 ];
 
 Translations.forEach(o => {
