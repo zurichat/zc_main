@@ -1,8 +1,8 @@
 export const getSampleMessages = () => [
   {
     sender: {
-      sender_name: "Mark Essien",
-      sender_image_url: ""
+      sender_name: "Mark Essien 6️⃣",
+      sender_image_url: "https://i.pravatar.cc/300?u=637d3508601ce3fc5dc7364f"
     },
     message_id: 4,
     timestamp: 1639149782770,
@@ -25,7 +25,7 @@ export const getSampleMessages = () => [
   {
     sender: {
       sender_name: "Xylux",
-      sender_image_url: ""
+      sender_image_url: "https://i.pravatar.cc/300?u=637d3508601ce3fc5dc7364f"
     },
     message_id: 2,
     timestamp: 1639149798545,
@@ -41,7 +41,7 @@ export const getSampleMessages = () => [
           entityRanges: [],
           inlineStyleRanges: [],
           key: "543og",
-          text: "Donec rutrum congue leo eget malesuada. Nulla porttitor accumstincidunt.",
+          text: "Donec rutrum congue leo eget malesuada. Nulla porttitor accumstincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit ametaliquam vel, ullamcorper sit amet ligula. Curabitur aliquet quam iddui posuere blandit. Vestibulum ac diam sit amet quam vehicula",
           type: "unstyled"
         }
       ],
@@ -52,7 +52,7 @@ export const getSampleMessages = () => [
     message_id: 5,
     sender: {
       sender_name: "Naza",
-      sender_image_url: ""
+      sender_image_url: "https://i.pravatar.cc/300?u=637d3508601ce3fc5dc7364f"
     },
     timestamp: 1639149815989,
     emojis: [
@@ -78,7 +78,7 @@ export const getSampleMessages = () => [
     message_id: 6,
     sender: {
       sender_name: "Nonso",
-      sender_image_url: ""
+      sender_image_url: "https://i.pravatar.cc/300?u=637d3508601ce3fc5dc7364f"
     },
     timestamp: 1639149830147,
     emojis: [
@@ -104,7 +104,7 @@ export const getSampleMessages = () => [
     message_id: 7,
     sender: {
       sender_name: "Pidoxy",
-      sender_image_url: ""
+      sender_image_url: "https://i.pravatar.cc/300?u=637d3508601ce3fc5dc7364f"
     },
     timestamp: 1639149841075,
     emojis: [
@@ -130,7 +130,7 @@ export const getSampleMessages = () => [
     message_id: 8,
     sender: {
       sender_name: "Pholajormy",
-      sender_image_url: ""
+      sender_image_url: "https://i.pravatar.cc/300?u=637d3508601ce3fc5dc7364f"
     },
     timestamp: 1639149853398,
     emojis: [
@@ -156,7 +156,7 @@ export const getSampleMessages = () => [
     message_id: 9,
     sender: {
       sender_name: "Fortune",
-      sender_image_url: ""
+      sender_image_url: "https://i.pravatar.cc/300?u=637d3508601ce3fc5dc7364f"
     },
     timestamp: 1639149865722,
     emojis: [
@@ -182,7 +182,7 @@ export const getSampleMessages = () => [
     message_id: 11,
     sender: {
       sender_name: "Daetoun",
-      sender_image_url: ""
+      sender_image_url: "https://i.pravatar.cc/300?u=637d3508601ce3fc5dc7364f"
     },
     timestamp: 1639149877252,
     emojis: [

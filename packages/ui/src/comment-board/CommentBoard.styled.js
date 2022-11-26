@@ -4,7 +4,7 @@ const CommentBoardWrapper = styled.aside`
   /* width: 60%; */
   display: ${props => (props.showCommentBoard ? "grid" : "none")};
   grid-template-rows: auto 1fr auto;
-
+  z-index: 99;
   width: 400px;
 
   /* margin-top: 40px; */
@@ -28,7 +28,7 @@ const CommentBoardHeader = styled.header`
   font-weight: 700;
   width: 100%;
   position: sticky;
-  top: 0px;
+  top: -3px;
   font-size: ${18 / 16}rem; ;
 `;
 const CommentMessagesWrapper = styled.div`
@@ -39,6 +39,29 @@ const CommentMessagesWrapper = styled.div`
   padding-left: 8px;
   margin-bottom: 9px;
   padding-top: 1.1rem;
+  /* height: 69vh; */
+  /* overflow-x: none;
+  overflow-y: scroll; */
+  /* Style message */
+  .msg-container {
+    display: flex;
+    gap: 8px;
+  }
+
+  .user-avatar {
+    width: 69px;
+    border-radius: 6px;
+  }
+
+  .msgParticulars {
+    width: 368px;
+    padding-left: 1.5rem;
+  }
+  #hoverItems {
+    position: relative;
+    top: 200px;
+    /* display: none; */
+  }
 `;
 const CommentMessageItem = styled.div`
   margin-bottom: 16px;
@@ -50,6 +73,7 @@ export const ParentMessage = styled.div`
   }
   .user-avatar {
     width: 300px;
+    border-radius: 6px;
   }
   #hoverItems {
     position: relative;
@@ -63,6 +87,10 @@ export const ParentMessage = styled.div`
     display: flex;
     gap: 8px;
     align-items: center;
+  }
+
+  .msgParticulars {
+    padding-left: 1.5rem;
   }
 `;
 
