@@ -116,8 +116,8 @@ const ToolbarBottom = props => {
   };
 
   const handleSelectMedia = e => {
-    setAttachedFile(e.target.files[0]);
-    props.sentAttachedFile(e.target.files[0]);
+    setAttachedFile(e.target.files)
+    props.sentAttachedFile(e.target.files);
     setshowAttachInputBox(false);
   };
 
@@ -213,6 +213,7 @@ const ToolbarBottom = props => {
                       display: "none"
                     }}
                     onChange={handleSelectMedia}
+                    multiple
                     key={inputKey || ""}
                     type="file"
                     ref={fileRef}
