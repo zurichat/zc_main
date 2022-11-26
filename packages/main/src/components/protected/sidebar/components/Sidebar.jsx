@@ -192,36 +192,6 @@ const Sidebar = props => {
     });
 
   return (
-    <div className={`container-fluid ${styles.sb__container}`}>
-      <Header state={props.state} />
-      <div className={`${styles.subCon2}`}>
-        <>
-          <SingleRoom
-            name={`${t("workspace_chat.threads")}`}
-            image={threadIcon}
-            link={`/workspace/${currentWorkspace}/plugin-chat/threads`}
-          />
-          <SingleRoom
-            name={`${t("workspace_chat.alldms")}`}
-            image={dmIcon}
-            link={`/workspace/${currentWorkspace}/plugin-chat/all-dms`}
-          />
-          <SingleRoom
-            name={`${t("workspace_chat.drafts")}`}
-            image={draftIcon}
-          />
-
-          <SingleRoom
-            name="LiveBroadcast"
-            image={liveicon}
-            link={`/workspace/${currentWorkspace}/LiveBroadcast`}
-          />
-
-          <Starred starredRooms={starredRooms} />
-          {singleItems}
-          {categorizedItems}
-        </>
-      </div>
     <div
       ref={sidebarRef}
       style={{ width: sidebarWidth }}
@@ -247,6 +217,11 @@ const Sidebar = props => {
                 name={`${t("workspace_chat.drafts")}`}
                 image={draftIcon}
               />
+              <SingleRoom
+                name="LiveBroadcast"
+                image={liveicon}
+                link={`/workspace/${currentWorkspace}/LiveBroadcast`}
+              />
 
               <Starred starredRooms={starredRooms} />
               {singleItems}
@@ -261,6 +236,8 @@ const Sidebar = props => {
 };
 
 export default Sidebar;
+
+/*
 
 /*
   create a category file
