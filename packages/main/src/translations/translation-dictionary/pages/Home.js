@@ -91,10 +91,10 @@ export default [
     engb: "Invite your team to your workspace. Stay connected,stay in sync, and explore ideas together from anywhere.",
     fr: "Invitez votre équipe dans votre espace de travail. Restez connecté, restez synchronisé et explorez des idées ensemble, où que vous soyez.",
     zh: "邀请您的团队到您的工作区。保持联系，保持同步，并从任何地方一起探索想法。",
-    ar: "قم بدعوة فريقك إلى مساحة العمل الخاصة بك. ابق على اتصال وابق متزامنا واستكشف الأفكار معا من أي مكان..",
+    ar: "قم بدعوة فريقك إلى مكان عملك. ",
     es: "Invita a tu equipo a tu espacio de trabajo. Mantente conectado, sincronizado y explora ideas juntos desde cualquier lugar",
     it: "Invitate il vostro team nel vostro spazio di lavoro. Rimanete connessi, sincronizzati ed esplorate le idee insieme da qualsiasi luogo.",
-    iw: "הזמן את הצוות שלך לסביבת העבודה שלך. הישאר מחובר, הישאר מסונכרן וגלה רעיונות יחד מכל מקום.",
+    iw: "הזמן את הצוות שלך לסביבת העבודה שלך. ",
     pt: "Convide sua equipe para o seu espaço de trabalho. Mantenha-se conectado, mantenha-se em sincronia e explore idéias juntos de qualquer lugar."
   },
   {
@@ -203,10 +203,10 @@ export default [
     engb: "One tool, several plugins. Track company expenses, send information fast and smoothly, manage files and integrate tools all with Zuri Chat.",
     fr: "Un seul outil, plusieurs plugins. Suivez les dépenses de l'entreprise, envoyez des informations rapidement et en douceur, gérez des fichiers et intégrez des outils, le tout avec Zuri Chat.",
     zh: "一个工具，几个插件。追踪公司开支，快速顺利地发送信息，管理文件，并通过Zuri Chat整合所有工具。",
-    ar: "أداة واحدة ، العديد من المكونات الإضافية. تتبع نفقات الشركة ، وإرسال المعلومات بسرعة وسلاسة ، وإدارة الملفات ودمج الأدوات كلها مع Zuri Chat.",
+    ar: "تخصيص مساحة العمل الخاصة بك",
     es: "Una herramienta, varios complementos. Haz un seguimiento de los gastos de la empresa, envía información de forma rápida y fluida, gestiona archivos e integra herramientas, todo ello con Zuri Chat.",
     it: "Uno strumento, diversi plugin. Tracciate le spese aziendali, inviate informazioni in modo rapido e fluido, gestite i file e integrate gli strumenti con Zuri Chat.",
-    iw: "כלי אחד, כמה תוספים. עקוב אחר הוצאות החברה, שלח מידע במהירות ובצורה חלקה, נהל קבצים ושלב כלים והכל עם Zuri Chat.",
+    iw: "כלי אחד, מספר תוספים. ",
     pt: "Uma ferramenta, vários plugins. Acompanhar as despesas da empresa, enviar informações de forma rápida e tranqüila, gerenciar arquivos e integrar ferramentas, tudo com o Zuri Chat."
   },
   {
