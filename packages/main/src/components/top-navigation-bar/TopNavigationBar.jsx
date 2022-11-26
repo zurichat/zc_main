@@ -3,6 +3,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link, NavLink } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
+import "../../styles/global.css";
 
 import TopNavigationBarStyles from "./TopNavigationBar.module.css";
 import ZuriChatLogo from "../../assets/zuri-chat-logo/logo.svg";
@@ -20,6 +21,12 @@ import nl from "./assets/language/nl.png";
 import pt from "./assets/language/pt.png";
 import world from "./assets/language/world.png";
 
+import {
+  NovuProvider,
+  PopoverNotificationCenter,
+  NotificationBell,
+  IMessage
+} from "@novu/notification-center";
 export default function TopNavigationBar() {
   const { t } = useTranslation();
 
@@ -27,6 +34,10 @@ export default function TopNavigationBar() {
     localStorage.setItem("myLanguage", lang);
     location.reload();
   };
+
+  function onNotificationClick() {
+    // navigate(notification.cta.data.url);
+  }
 
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [isUserLoggedIn, setUserLoggedIn] = React.useState(false);
@@ -268,7 +279,24 @@ export default function TopNavigationBar() {
               </NavLink>
             </li>
           </ul>
-
+          {isUserLoggedIn && (
+            <div className={TopNavigationBarStyles.notification}>
+              <NovuProvider
+                backendUrl={"http://139.144.17.179:3000"}
+                socketUrl={"http://139.144.17.179:3002"}
+                subscriberId={"user"}
+                applicationIdentifier={"tDH5Bg2NQ5QL"}
+              >
+                <PopoverNotificationCenter
+                  onNotificationClick={onNotificationClick}
+                >
+                  {({ unseenCount }) => (
+                    <NotificationBell unseenCount={unseenCount} />
+                  )}
+                </PopoverNotificationCenter>
+              </NovuProvider>
+            </div>
+          )}
           <ul
             className={`d-lg-none navbar-nav-scroll ${TopNavigationBarStyles.signs}`}
           >

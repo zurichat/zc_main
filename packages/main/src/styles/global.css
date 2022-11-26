@@ -188,7 +188,27 @@ h6 {
     background-color: var(--bg-2);
     left: 0px;
   } */
-
+/* styles for notification modal */
+body > div:nth-child(7) > div > div > div > div > div > div >div >div{
+  width:400px
+  }
+  body > div:nth-child(7) > div > div > div > div > div > div >div >div >div{
+    background-color:white;
+    }
+    body > div:nth-child(7) > div > div > div > div > div > div >div >div >div >div >button{ 
+      background-color:#495057;
+      } 
+      body > div:nth-child(7) > div > div > div > div > div > div >div >div >div >div >div{ 
+        color:#495057;
+        } 
+  body > div:nth-child(7) > div > div > div > div > div > div >div >div >div > div:nth-child(3){
+  display:none;
+  }
+  body > div:nth-child(7) > div > div > div > div > div > div >div >div >div > div >div >div{
+  color:#333737;
+  }
+  /* ends here */
+  
 /* Customize the label (the container) */
 .container {
   display: block;
@@ -264,4 +284,10 @@ h6 {
 }
 
 @media only screen and (max-width: 600px) {
+  body > div:nth-child(7) > div > div > div > div > div > div >div >div{
+    width:320px
+    }
+    body > div:nth-child(7) > div > div{
+      transform: translate3d(-30px, -678px, 0px) !important; 
+    }
 }

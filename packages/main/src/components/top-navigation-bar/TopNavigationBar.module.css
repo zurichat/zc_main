@@ -158,6 +158,12 @@
   border-radius: 4px;
 }
 
+.notification{
+  display:flex;
+  justify-content:center;
+  }
+
+
 .signOut:hover {
   background-color: #b83a00;
   color: white;
