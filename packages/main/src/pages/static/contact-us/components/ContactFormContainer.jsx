@@ -209,7 +209,7 @@ function ContactFormContainer() {
                 type="button"
                 className={`btn ${ContactFormStyle.btn_primary} ${ContactFormStyle.btn_topic_select} shadow-none text-nowrap fw-bold mb-3`}
               >
-                {currentDetails.topic}
+                {t(currentDetails.topic)}
               </button>
             </div>
             <p className={`fw-bold mb-3`} style={{ fontSize: "14px" }}>
@@ -235,7 +235,7 @@ function ContactFormContainer() {
                         aria-expanded="true"
                         aria-controls="collapseOne"
                       >
-                        <span>{title}</span>{" "}
+                        <span>{t(title)}</span>{" "}
                         <img src={downIcon} className={`ms-1`} alt="down" />
                       </button>
                     </h2>
@@ -247,7 +247,7 @@ function ContactFormContainer() {
                     >
                       <div
                         className={`accordion-body ${ContactFormStyle.accordion_body}`}
-                        dangerouslySetInnerHTML={{ __html: details }}
+                        dangerouslySetInnerHTML={{ __html: t(details) }}
                       />
                     </div>
                   </div>
@@ -276,7 +276,7 @@ function ContactFormContainer() {
                         cursor: "pointer"
                       }}
                     >
-                      <a style={{ fontSize: "15px" }}>{article.title}</a>
+                      <a style={{ fontSize: "15px" }}>{t(article.title)}</a>
                       <img
                         src={arrowRight}
                         alt=""
@@ -306,7 +306,7 @@ function ContactFormContainer() {
                 className={`btn ${ContactFormStyle.btn_topic} text-nowrap fw-bold rounded-pill mb-3 me-md-3`}
                 onClick={handleTopicChange(detail)}
               >
-                {detail.topic}
+                {t(detail.topic)}
               </button>
             ))}
           </div>
