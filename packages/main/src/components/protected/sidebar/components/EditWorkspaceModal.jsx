@@ -8,13 +8,13 @@ const EditWorkspaceModal = ({ workSpace, editDetails, setEditDetails }) => {
   // getting current workspace id
   const currentWorkspace = localStorage.getItem("currentWorkspace");
   const orgs = JSON.parse(sessionStorage.getItem("organisations"));
-  const orgsLenght = orgs.length;
+  const orgsLength = orgs !== null ? orgs.length : 0;
   let workspaceURL = "";
   const editName = `   Edit workspace details ${workSpace?.name}`;
 
   useEffect(() => {
     const settingworkspace = () => {
-      for (let i = 0; i < orgsLenght; i++) {
+      for (let i = 0; i < orgsLength; i++) {
         if (currentWorkspace === orgs[i].id) {
           console.log(orgs[i].workspace_url);
           workspaceURL = orgs[i].workspace_url;
