@@ -89,19 +89,8 @@ export default function Index() {
       });
   };
 
-  const textAlign = () => {
-    if (
-      window.localStorage.myLanguage === "ar" ||
-      window.localStorage.myLanguage === "iw"
-    ) {
-      return {
-        textAlign: "right"
-      };
-    }
-  };
-
   return (
-    <main id={styles.authPageWrapper} style={textAlign()}>
+    <main id={styles.authPageWrapper}>
       {showDialog && <EmailVerificationModal email={email} />}
 
       <Helmet>
