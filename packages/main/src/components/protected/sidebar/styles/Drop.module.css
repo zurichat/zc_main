@@ -83,6 +83,9 @@
 .plugin_name,
 .dropDown__title,
 .dropdown__room {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   padding-inline-start: 0.5rem;
 }
 
@@ -159,7 +162,6 @@
 }
 .dropdown__menu p:hover {
   color: hsl(160, 100%, 36%);
-  
 }
 .droproom__overlay {
   background: hsl(0deg 0% 27% / 46%);
@@ -167,17 +169,16 @@
   z-index: 99999;
   top: 0px;
   left: 0px;
-
 }
 .droproom h1 {
-  font-size : 20px !important;
+  font-size: 20px !important;
 }
 
 .droproom {
-  background :  white;
+  background: white;
   width: 500px;
   padding: 15px 20px;
-  
+
   border-radius: 15px;
 }
 .label {
@@ -191,7 +192,7 @@
   font-size: 14px !important;
 }
 form label span {
-  font-size:12px;
+  font-size: 12px;
 }
 /* form label {
   font-size:
@@ -206,8 +207,8 @@ form label span {
 form span {
   margin-bottom: 10px;
 }
-input[type=text]:focus {
-  border: 2px  solid hsl(160, 100%, 36%);
+input[type="text"]:focus {
+  border: 2px solid hsl(160, 100%, 36%);
   border-radius: 8px;
 }
 .droproom button {
@@ -217,17 +218,16 @@ input[type=text]:focus {
   border: none;
   color: white;
   background: grey;
-  
 }
-.droproom button:hover{
+.droproom button:hover {
   background: hsl(160, 100%, 36%);
 }
-.droproom__private span p{
+.droproom__private span p {
   width: 60% !important;
 }
 
 .droproom__footer {
-  margin-top: 10px ;
+  margin-top: 10px;
 }
 
 /* for toggle switch */
@@ -237,32 +237,32 @@ input[type=text]:focus {
   align-items: center;
   justify-content: flex-end;
   gap: 15px;
-  }
-  .toggle__switch {
+}
+.toggle__switch {
   /* position: relative; */
   width: 60px;
   display: inline-block;
   text-align: left;
   top: 8px;
-  }
-  .checkbox {
+}
+.checkbox {
   display: none;
-  }
-  .label {
+}
+.label {
   display: block;
   overflow: hidden;
   cursor: pointer;
   border: 0 solid #bbb;
   border-radius: 15px;
-  }
-  .inner {
+}
+.inner {
   display: block;
   width: 200%;
   margin-left: -100%;
   transition: margin 0.3s ease-in 0s;
-  }
-  .inner:before,
-  .inner:after {
+}
+.inner:before,
+.inner:after {
   float: left;
   width: 50%;
   height: 36px;
@@ -271,21 +271,21 @@ input[type=text]:focus {
   color: #fff;
   font-weight: bold;
   box-sizing: border-box;
-  }
-  .inner:before {
+}
+.inner:before {
   content: "YES";
   padding-left: 10px;
   background-color: hsl(160, 100%, 36%);
   color: #fff;
-  }
-  .inner:after {
+}
+.inner:after {
   content: "NO";
   padding-right: 10px;
   background-color: #bbb;
   color: #fff;
   text-align: right;
-  }
-  .switch {
+}
+.switch {
   display: block;
   width: 24px;
   margin: 5px;
@@ -297,12 +297,10 @@ input[type=text]:focus {
   border: 0 solid #bbb;
   border-radius: 20px;
   transition: all 0.3s ease-in 0s;
-  }
-  .checkbox:checked + .label .inner {
+}
+.checkbox:checked + .label .inner {
   margin-left: 0;
-  }
-  .checkbox:checked + .label .switch {
+}
+.checkbox:checked + .label .switch {
   right: 0px;
-  }
-  
-  
+}

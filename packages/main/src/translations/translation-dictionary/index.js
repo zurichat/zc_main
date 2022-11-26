@@ -8,6 +8,7 @@ import ResetPassword from "./pages/ResetPassword";
 import Workspace from "./pages/Workspace";
 import UserOrganizationsListing from "./components/UserOrganizationsListing";
 import TopBarModal from "./components/TopBarModal";
+import Preferences from "./components/Preferences";
 
 import Subscribe from "./pages/Subscribe";
 import whyzurichat from "./pages/whyzurichat";
@@ -69,8 +70,11 @@ const Translations = [
   ...NavBar,
   ...Footer,
   ...WorkspaceChat,
+
   ...FAQ,
-  ...SideBar
+
+  ...SideBar,
+  ...Preferences
 ];
 
 Translations.forEach(o => {

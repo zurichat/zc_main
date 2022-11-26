@@ -32,17 +32,6 @@ function ContactFormContainer() {
     success: ""
   });
 
-  const textAlign = () => {
-    if (
-      window.localStorage.myLanguage === "ar" ||
-      window.localStorage.myLanguage === "iw"
-    ) {
-      return {
-        textAlign: "right"
-      };
-    }
-  };
-
   const [touched, setTouched] = useState(false);
 
   const emailPattern =
@@ -145,6 +134,16 @@ function ContactFormContainer() {
           loading: false
         }));
       });
+  };
+  const textAlign = () => {
+    if (
+      window.localStorage.myLanguage === "ar" ||
+      window.localStorage.myLanguage === "iw"
+    ) {
+      return {
+        textAlign: "right"
+      };
+    }
   };
 
   return (
