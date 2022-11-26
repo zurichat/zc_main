@@ -8,7 +8,7 @@ const EditWorkspaceModal = ({ workSpace, editDetails, setEditDetails }) => {
   // getting current workspace id
   const currentWorkspace = localStorage.getItem("currentWorkspace");
   const orgs = JSON.parse(sessionStorage.getItem("organisations"));
-  const orgsLenght = orgs.length;
+  const orgsLenght = orgs !== null ? orgs.length : "";
   let workspaceURL = "";
   const editName = `   Edit workspace details ${workSpace?.name}`;
 
