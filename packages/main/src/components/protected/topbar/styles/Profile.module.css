@@ -4,7 +4,7 @@
   background: #fff;
   position: fixed;
   right: 0;
-  top: 2.9em;
+  top: 3em;
   border-left: #f6f6f6 1px solid;
   z-index: 10000;
   overflow-y: scroll;
@@ -63,6 +63,7 @@
 }
 
 .userDetails {
+  margin-top: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -113,11 +114,16 @@
 
 .buttonGroups {
   position: relative;
-  margin-top: 1.5rem;
+  margin-top: 2.6rem;
   margin-bottom: 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 25px;
+}
+
+.buttonGroups svg {
+  margin-right: unset;
 }
 
 .buttonGroups button {
@@ -240,6 +246,7 @@
   display: none;
 }
 .h3users {
+  font-weight: 700;
   margin-right: -1em;
   margin-top: 7px;
   cursor: pointer;
@@ -257,9 +264,9 @@
   transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .myp {
-  margin: 7px 1px 10px !important;
+  margin: 10px 1px 10px !important;
   position: relative;
-  top: 25px;
+  top: 28px;
 }
 
 @media (max-width: 768px) {
