@@ -112,7 +112,7 @@ const Home = () => {
           <div className="mt-2">
             {/* /admin/stats */}
             <Link
-              to="/admin/settings/Invitation"
+              to="/admin/settings/ManageWorkspace"
               className=""
               style={{ display: "flex" }}
             >

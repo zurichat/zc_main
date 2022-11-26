@@ -26,7 +26,6 @@ import {
 } from "./pages";
 
 import TermsOfService from "../src-old/pages/termsOfService/index";
-// import SettingsHome from "../src-old/pages/admin/Settings/components/SettingsHome.js";
 import SettingsHome from "../src/components/settings-home/SettingsHome";
 import Analytics from "../src-old/pages/admin/Analytics/index.js";
 import Blogs from "../src-old/pages/Blog/index.jsx";
@@ -40,7 +39,7 @@ import { useAuth } from "./auth/use-auth";
 import AccountProfile from "./pages/protected/account-profile/AccountProfile";
 import Billing from "./pages/protected/billings/Billing";
 import AboutWorkSpace from "./pages/protected/about-workspace/AboutWorkSpace";
-import Invitation from "./pages/protected/invitation/Invitation";
+import ManageWorkspace from "./pages/protected/manage-workspace/ManageWorkspace";
 
 const { Workspace, CreateWorkspace, ChooseWorkspace } = lazily(() =>
   import("./pages/protected")
@@ -120,8 +119,8 @@ const App = () => (
           <ProtectedRoute exact path="/admin/settings">
             <SettingsHome />
           </ProtectedRoute>
-          <ProtectedRoute exact path="/admin/settings/Invitation">
-            <Invitation />
+          <ProtectedRoute exact path="/admin/settings/ManageWorkspace">
+            <ManageWorkspace />
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings/accountsProfile">
             <AccountProfile />
