@@ -99,7 +99,7 @@ export default function Index() {
 
       <section id={styles.authFormContainer}>
         <AuthFormWrapper
-          header={t("logInheader")}
+          header={t("LogInheader")}
           googleHeader={t("google_header")}
           topLineText={t("topline_text")}
           submitButtonName={t("LoginsubmitButtonName")}

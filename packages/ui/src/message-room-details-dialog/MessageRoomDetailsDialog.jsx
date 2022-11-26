@@ -28,6 +28,12 @@ import { StyledTabs } from "./MessageRoomDetailsDialog.styled";
 import { getSampleMemberList } from "~/utils/samples";
 import FileList from "./components/FileList";
 
+// getting edited topic from local storage
+const getEditedTopicFromLS = () => {
+  let editedTopics = localStorage.getItem("editedTopic");
+  return editedTopics ? JSON.parse(editedTopics) : "";
+};
+
 function MessageRoomDetailsDialog({
   close,
   showDialog,
@@ -36,6 +42,7 @@ function MessageRoomDetailsDialog({
   channelName
 }) {
   const [showEditTopicModal, setShowEditTopicModal] = useState(false);
+  const [addTopic, setAddTopic] = useState(getEditedTopicFromLS());
   const [activeIndex, setActiveIndex] = useState(0);
   const [showEditDescriptionModal, setEditDescriptionModal] = useState(false);
   const [showLeaveChannelModal, setShowLeaveChannelModal] = useState(false);
@@ -43,7 +50,7 @@ function MessageRoomDetailsDialog({
   const [showArchiveChannel, setShowArchiveChannel] = useState(false);
 
   const toggleEditTopicModal = () => {
-    setShowEditTopicModal(true);
+    setShowEditTopicModal(!showEditTopicModal);
   };
   const toggleEditDescriptionModal = () =>
     setEditDescriptionModal(!showEditDescriptionModal);
@@ -84,6 +91,7 @@ function MessageRoomDetailsDialog({
             <TabPanels>
               <TabPanel>
                 <AboutPanel
+                  addTopic={addTopic}
                   showEditModal={showEditTopicModal}
                   toggleEditTopicModal={() => {
                     setShowEditTopicModal(true);
@@ -108,11 +116,15 @@ function MessageRoomDetailsDialog({
               </TabPanel>
             </TabPanels>
           </StyledTabs>
+          {showEditTopicModal && (
+            <EditTopicModal
+              addTopic={addTopic}
+              setAddTopic={setAddTopic}
+              closeEdit={toggleEditTopicModal}
+            />
+          )}
         </DialogContents>
       </DialogOverlays>
-      {showEditTopicModal && (
-        <EditTopicModal closeEdit={toggleEditTopicModal} />
-      )}
       {showEditDescriptionModal && (
         <EditDescriptionModal closeEdit={toggleEditDescriptionModal} />
       )}
@@ -134,7 +146,8 @@ function AboutPanel({
   closeModal,
   toggleEditTopicModal,
   toggleEditDescriptionModal,
-  toggleLeaveChannelModal
+  toggleLeaveChannelModal,
+  addTopic
 }) {
   const [showMore, setShowMore] = useState(false);
   return (
@@ -152,7 +165,9 @@ function AboutPanel({
               Edit
             </EditLabel>
           </Topic>
-          <Input type="text" placeholder="Add a topic" />
+          <EditContent>
+            {addTopic !== "" ? addTopic : "Add a Topic"}
+          </EditContent>
         </EachSegment>
         <EachSegment>
           <Description>
