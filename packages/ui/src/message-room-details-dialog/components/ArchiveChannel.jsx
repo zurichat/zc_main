@@ -1,30 +1,34 @@
 import ChannelModal from "./ChannelModal";
 import styles from "./archive-channel.module.css";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import { useLocation } from "react-router-dom";
 const ArchiveChannel = ({ closeEdit }) => {
-  const user = JSON.parse(sessionStorage.getItem("user")) || null;
   const room = window.location.href.split("/").at(6);
   const organizationID = localStorage.getItem("currentWorkspace") || null;
-
-  const handleArchive = () => {
-    const text = `https://chat.zuri.chat/api/v1/org/${organizationID}/members/${user.id}/rooms/${room}`;
-    console.log(text);
+  const BASE_URL = "https://chat.zuri.chat";
+  const user = JSON.parse(sessionStorage.getItem("user")) || null;
+  const [data, setData] = useState(null);
+  useEffect(() => {
     axios
-      .put(
-        `https://chat.zuri.chat/api/v1/org/${organizationID}/members/${user.id}/rooms/${room}`,
-        {
-          room_name: "New test",
-          description: "string",
-          topic: "Humans",
-          is_private: false,
-          is_archived: true
-        }
-      )
-      .then(r => console.log(r.data))
-      .catch(er => console.log(er));
-    alert("hey");
-    closeEdit();
+      .get(`${BASE_URL}/api/v1/org/${organizationID}/rooms/${room}`)
+      .then(res => {
+        setData(res.data.data);
+      });
+  });
+  const handleArchiveChannel = () => {
+    if (data !== null) {
+      const newData = { ...data, is_archived: true };
+      axios
+        .post(
+          `${BASE_URL}/api/v1/org/${organizationID}/members/${user.id}/rooms/${room}`,
+          newData
+        )
+        .then(res => {
+          console.log(res);
+          window.location.reload();
+        })
+        .catch(er => console.log(er));
+    }
   };
   return (
     <ChannelModal
@@ -52,7 +56,7 @@ const ArchiveChannel = ({ closeEdit }) => {
         </p>
         <div className={styles.button}>
           <button className={styles.button4}>Cancel</button>
-          <button className={styles.button2} onClick={handleArchive}>
+          <button className={styles.button2} onClick={handleArchiveChannel}>
             Archive Channel
           </button>
         </div>

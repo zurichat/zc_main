@@ -5,15 +5,16 @@ import axios from "axios";
 const DeleteChannel = ({ closeEdit }) => {
   const room = window.location.href.split("/").at(6);
   const organizationID = localStorage.getItem("currentWorkspace") || null;
+  const BASE_URL = "https://chat.zuri.chat";
+
+  //function for deleting a channel
   const handleDelete = () => {
     axios
-      .delete(
-        `https://chat.zuri.chat/api/v1/org/${organizationID}/rooms/${room}/`
-      )
-      .then(res => console.log(res))
-      .catch(e => {
-        console.log(e);
-      });
+      .delete(`${BASE_URL}/api/v1/org/${organizationID}/rooms/${room}`)
+      .then(res => {
+        window.location.reload();
+      })
+      .catch(e => console.log(e));
   };
   return (
     <ChannelModal
