@@ -4,13 +4,16 @@ import {
   CommentBoardWrapper,
   CommentBoardHeader,
   CommentMessagesWrapper,
-  CommentMessageItem
+  CommentMessageItem,
+  ParentMessage
 } from "./CommentBoard.styled";
 // import { messageContext } from "@zuri/messaging";
 import { getSampleMessages } from "~/utils/samples";
 import MessagePaneInput from "~/message-pane-input/MessagePaneInput";
 import RichTextRenderer from "~/rich-text-renderer/RichTextRenderer";
 import axios from "axios";
+import MessagePane from "../message-pane/MessagePane";
+import MessageBox from "../message-pane/components/message-box/MessageBox";
 // const data = useContext(messageContext);
 const CommentBoard = ({ commentBoardConfig, Messages = [] }) => {
   const [displayCommentBoard, setDisplayCommentBoard] = useState(
@@ -67,7 +70,13 @@ const CommentBoard = ({ commentBoardConfig, Messages = [] }) => {
                 X
               </UnstyledButton>
             </CommentBoardHeader>
-            {/* </div> */}
+            <ParentMessage>
+              <MessagePane message={messages[0]} />
+              <span style={{ display: "flex" }}>
+                9 replies <hr />
+              </span>
+            </ParentMessage>
+
             <CommentMessagesWrapper>
               {messages.map((message, idx) => (
                 <CommentMessageItem key={idx * (3 / 0.63)}>
