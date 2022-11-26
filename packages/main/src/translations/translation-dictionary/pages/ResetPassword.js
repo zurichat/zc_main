@@ -14,6 +14,20 @@ export default [
     pt: "Assinado fora da equipa"
   },
   {
+    key: "auth.passwordreset.form.continueButton",
+    en: "Continue",
+    de: "Weiter",
+    nl: "Ga verder",
+    engb: "Continue",
+    fr: "Continuer",
+    zh: "继续",
+    ar: "استمر",
+    es: "Continuar",
+    it: "Continua",
+    iw: "לְהַמשִׁיך",
+    pt: "Continuar"
+  },
+  {
     key: "auth.passwordreset.post_headline",
     en: "A code would be sent to the Email provided",
     de: "Arbeitsbereich",
