@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../styles/Drop.module.css";
 
-const ToggleSwitch = ({ label }) => {
+const ToggleSwitch = ({ label, value, onChange }) => {
   return (
     <div className={`${styles.container}`}>
       {label}{" "}
@@ -11,6 +11,8 @@ const ToggleSwitch = ({ label }) => {
           className={`${styles.checkbox}`}
           name={label}
           id={label}
+          checked={value}
+          onChange={onChange}
         />
         <label className={`${styles.label}`} htmlFor={label}>
           <span className={`${styles.inner}`} />
