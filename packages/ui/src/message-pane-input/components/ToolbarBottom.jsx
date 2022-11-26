@@ -58,7 +58,7 @@ const ToolbarBottom = props => {
   const [inputKey, setInputKey] = useState("any-key-press");
   const [showAttachInputBox, setshowAttachInputBox] = useState(false);
   // Add files to variable on selection
-  const [file, setFile] = useState()
+  const [files, setFile] = useState()
 
   //const [preview, setPreview] = useState('')
 
@@ -85,8 +85,8 @@ const ToolbarBottom = props => {
   const handleAttachMedia = e => {
     {
       e.preventDefault();
-      // Assign files to file state
-      setFile(e.target.files[0])
+      
+        
       //Post request is sent here
       sendMessageHandler(attachedFile);
       // Function to upload files
@@ -97,17 +97,20 @@ const ToolbarBottom = props => {
     }
   };
   function handleSubmit() {
-    const url = 'http://localhost:9000/uploadFile';
+    alert("Uploading File(s)")
+    const url = process.env.url;
     const formData = new FormData();
-    formData.append('file', file);
-    formData.append('fileName', file.name);
+    for (let i = 0; i < files.length; i++) {
+      formData.append(files[i].name, files[i])
+    }
+    
     const config = {
       headers: {
         'content-type': 'multipart/form-data',
       },
     };
     axios.post(url, formData, config).then((response) => {
-      console.log(response.data);
+      alert("File(s) has been uploaded")
     });
 
   }
@@ -117,6 +120,9 @@ const ToolbarBottom = props => {
 
   const handleSelectMedia = e => {
     setAttachedFile(e.target.files)
+    // Assign files to file state
+      
+    setFile(e.target.files)
     props.sentAttachedFile(e.target.files);
     setshowAttachInputBox(false);
   };
