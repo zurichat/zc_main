@@ -7,19 +7,21 @@ const ArchiveChannel = ({ closeEdit }) => {
   const organizationID = localStorage.getItem("currentWorkspace") || null;
   const BASE_URL = "https://chat.zuri.chat";
   const user = JSON.parse(sessionStorage.getItem("user")) || null;
+
   const [data, setData] = useState(null);
   useEffect(() => {
     axios
       .get(`${BASE_URL}/api/v1/org/${organizationID}/rooms/${room}`)
       .then(res => {
         setData(res.data.data);
-      });
+      })
+      .catch(e => console.log(e));
   });
   const handleArchiveChannel = () => {
     if (data !== null) {
       const newData = { ...data, is_archived: true };
       axios
-        .post(
+        .put(
           `${BASE_URL}/api/v1/org/${organizationID}/members/${user.id}/rooms/${room}`,
           newData
         )
