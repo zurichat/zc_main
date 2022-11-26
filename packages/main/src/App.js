@@ -26,7 +26,8 @@ import {
 } from "./pages";
 
 import TermsOfService from "../src-old/pages/termsOfService/index";
-import SettingsHome from "../src-old/pages/admin/Settings/components/SettingsHome.js";
+// import SettingsHome from "../src-old/pages/admin/Settings/components/SettingsHome.js";
+import SettingsHome from "../src/components/settings-home/SettingsHome";
 import Analytics from "../src-old/pages/admin/Analytics/index.js";
 import Blogs from "../src-old/pages/Blog/index.jsx";
 import DownloadApps from "../src-old/pages/download/index.js";
@@ -122,9 +123,6 @@ const App = () => (
           <ProtectedRoute exact path="/admin/settings/Invitation">
             <Invitation />
           </ProtectedRoute>
-          {/* <ProtectedRoute exact path="/admin/settings">
-            <SettingsHome />
-          </ProtectedRoute> */}
           <ProtectedRoute exact path="/admin/settings/accountsProfile">
             <AccountProfile />
           </ProtectedRoute>
