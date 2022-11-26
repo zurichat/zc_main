@@ -23,7 +23,6 @@ import {
   ChangePassword,
   WhyZuriChat,
   PrivacyPage
-  
 } from "./pages";
 import WhyZuri from "./pages/static/whyzurichat";
 import TermsOfService from "../src-old/pages/termsOfService/index";
@@ -120,10 +119,8 @@ const App = () => (
             )}
           />
         </Switch>
-        
       </Suspense>
     </GeneralErrorBoundary>
-    
   </BrowserRouter>
 );
 
