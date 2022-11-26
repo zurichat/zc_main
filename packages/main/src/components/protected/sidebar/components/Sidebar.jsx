@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import styles from "../styles/Sidebar.module.css";
 import { useTranslation } from "react-i18next";
 
+
 import threadIcon from "../assets/icons/thread-icon.svg";
 import dmIcon from "../assets/icons/dm-icon.svg";
 import draftIcon from "../assets/icons/draft-icon.svg";
@@ -144,6 +145,8 @@ const Sidebar = props => {
             name={`${t("workspace_chat.drafts")}`}
             image={draftIcon}
           />
+
+          <hr color="#d4d4d4" />
 
           <Starred starredRooms={starredRooms} />
           {singleItems}
