@@ -41,8 +41,19 @@ export default function TopNavigationBar() {
     checkIfUserIsLogged();
   }, []);
 
+  const textAlign = () => {
+    if (
+      window.localStorage.myLanguage === "ar" ||
+      window.localStorage.myLanguage === "iw"
+    ) {
+      return {
+        textAlign: "right"
+      };
+    }
+  };
+
   return (
-    <header className={TopNavigationBarStyles.pageHeader}>
+    <header className={TopNavigationBarStyles.pageHeader} style={textAlign()}>
       <nav
         className={`navbar navbar-expand-lg navbar-light ${TopNavigationBarStyles.navbar}`}
       >
