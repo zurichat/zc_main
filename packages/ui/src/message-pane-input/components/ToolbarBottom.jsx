@@ -57,6 +57,9 @@ const ToolbarBottom = props => {
   const [attachedFile, setAttachedFile] = useState(null);
   const [inputKey, setInputKey] = useState("any-key-press");
   const [showAttachInputBox, setshowAttachInputBox] = useState(false);
+  // Add files to variable on selection
+  const [file, setFile] = useState()
+
   //const [preview, setPreview] = useState('')
 
   const inputLength = editorState.getCurrentContent().getPlainText("").length;
@@ -82,15 +85,32 @@ const ToolbarBottom = props => {
   const handleAttachMedia = e => {
     {
       e.preventDefault();
+      // Assign files to file state
+      setFile(e.target.files[0])
       //Post request is sent here
       sendMessageHandler(attachedFile);
-
+      // Function to upload files
+      handleSubmit()
       //Then this is to clear the file from the state
       props.sentAttachedFile(null);
       clearAttached();
     }
   };
+  function handleSubmit() {
+    const url = 'http://localhost:9000/uploadFile';
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('fileName', file.name);
+    const config = {
+      headers: {
+        'content-type': 'multipart/form-data',
+      },
+    };
+    axios.post(url, formData, config).then((response) => {
+      console.log(response.data);
+    });
 
+  }
   const handleClickAway = () => {
     setshowAttachInputBox(false);
   };
