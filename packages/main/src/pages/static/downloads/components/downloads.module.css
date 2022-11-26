@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap");
+
+body {
+  font-family: "Lato", sans-serif !important;
+}
+
+.section {
+    padding-top: 80px;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+    padding: 0 20px 0 20px;
+}
+
+.introText h2 {
+    font-weight: 700;
+    font-size: 34px;
+    color: #007B53;
+}
+
+.introText p {
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 45px;
+  color: #090809;
+}
+
+.introText span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  margin-top: 10px;
+  display: block;
+}
+
+.introText button {
+  text-align: center;
+  padding: 10px 24px;
+  background: #007B53;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #FFFFFF;
+  margin-top: 32px;
+}
+
+.introImg img {
+    width: 100%;
+    height: 100%;
+}
+
+.downloads {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 0 40px;
+    margin-top: 72px;
+    margin-bottom: 110px;
+}
+
+.downloadList h2 {
+
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    color: #000000;
+    margin-bottom: 25px;
+}
+
+.downloadList a {
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    color: #323132;
+    margin-bottom: 16px;
+    text-decoration-color: #323132;
+}
+
+.advert {
+    background: #009967;
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+    padding: 20px 40px;
+}
+
+.advertText h2 {
+
+    font-weight: 700;
+    font-size: 35px;
+    color: #fff;
+    line-height: 56px;
+    flex: 1;
+}
+
+.advertText span {
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #fff;
+    margin-top: 10px;
+    display: block;
+  }
+
+  .advertText button {
+    text-align: center;
+    padding: 12px 24px;
+    background: #fff;
+    border-radius: 4px;
+
+    font-weight: 700;
+    font-size: 14px;
+    color: #007B53;
+    margin-top: 32px;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 40px;
+    margin: 72px 0;
+  }
+
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #090809;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding: 25px;
+    padding-bottom: 50px;
+    flex: 1;
+  }
+
+  .card h3 {
+    font-weight: 700;
+    font-size: 24px;
+    color: #323132;
+  }
+
+  .card p {
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: #000000;
+  }
+
+@media only screen and (min-width:1024px){
+  .section {
+    padding-top: 120px;
+   }
+
+   .intro {
+    padding: 0 80px 0 80px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+   }
+
+   .introText p {
+     font-size: 48px;
+    line-height: 56px;
+   }
+
+   .introText span,
+   .advertText span {
+
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .downloads {
+    padding: 0 80px 0 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: initial;
+  }
+
+  .downloadList h2 {
+    margin-bottom: 32px;
+}
+
+.downloadList button {
+    font-size: 20px;
+}
+
+.advertText h2 {
+    font-size: 48px;
+}
+
+.advert {
+    padding: 38px 80px;
+    gap: 100px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cards {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 80px;
+    gap: 73px;
+  }
+
+  .card {
+    padding: 50px;
+  }
+}
