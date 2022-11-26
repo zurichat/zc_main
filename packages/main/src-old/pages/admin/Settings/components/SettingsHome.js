@@ -186,7 +186,12 @@ const Home = () => {
 
           {/* Manage workspace */}
           <div className="mt-2">
-            <Link to="/admin/stats" className="" style={{ display: "flex" }}>
+            {/* /admin/stats */}
+            <Link
+              to="/admin/settings/Invitation"
+              className=""
+              style={{ display: "flex" }}
+            >
               <div>
                 <span
                   className={classes.settings_icon_holder}
