@@ -6,29 +6,29 @@ const CommentBoardWrapper = styled.aside`
   grid-template-rows: auto 1fr auto;
 
   width: 400px;
-  z-index: 999;
+  z-index: 99;
   /* margin-top: 40px; */
   position: relative;
-  top: 10px;
+  /* position: fixed; */
 
+  /* right: 10px; */
+  top: -8.5px;
   height: 93vh;
   padding: 0 0 20px 0;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: none;
-  border-left: 3px solid grey;
-  /* padding: 2px; */
 `;
 const CommentBoardHeader = styled.header`
   background: hsla(160, 100%, 36%, 1);
   padding: 6px 16px;
 
-  /* height: 40px; */
+  height: 40px;
   margin-right: -16px;
   color: white;
   font-weight: 700;
   width: 100%;
   position: sticky;
-  top: -10px;
+  top: 0px;
   font-size: ${18 / 16}rem; ;
 `;
 const CommentMessagesWrapper = styled.div`
@@ -38,6 +38,7 @@ const CommentMessagesWrapper = styled.div`
   justify-content: flex-end;
   padding-left: 17px;
   margin-bottom: 9px;
+  padding-top: 1.1rem;
 `;
 const CommentMessageItem = styled.div`
   margin-bottom: 16px;
