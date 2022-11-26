@@ -1,0 +1,66 @@
+.section {
+    padding: 80px 40px 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+}
+
+.introText h1 {
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 20px;
+    color: #007B53;
+}
+
+.introText p {
+  font-family: 'Lato';
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  color: #090809;
+}
+
+.introText span {
+  font-family: 'Lato';
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+  display: block;
+}
+
+.introText button {
+  text-align: center;
+  padding: 10px 24px;
+  background: #007B53;
+  border-radius: 4px;
+  font-family: 'Lato';
+  font-weight: 700;
+  font-size: 14px;
+  color: #FFFFFF;
+  margin-top: 32px;
+}
+
+@media only screen and (min-width:1024px){
+  .section {
+    padding: 120px 80px 0 80px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+   }
+
+   .introText h1 {
+      font-size: 34px;
+   }
+
+   .introText p {
+     font-size: 48px;
+    line-height: 56px;
+   }
+
+   .introText span {
+    font-family: 'Lato';
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

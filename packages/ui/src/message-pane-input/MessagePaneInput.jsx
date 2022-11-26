@@ -27,6 +27,8 @@ import mentions from "./mentions.data";
 
 import createEmojiPlugin from "@draft-js-plugins/emoji";
 import { theme } from "./EmojiStyles.styled.js";
+import axios from "axios";
+import { BsFillFileEarmarkFill } from "react-icons/bs";
 
 const emojiPlugin = createEmojiPlugin({
   useNativeArt: true,
@@ -193,39 +195,146 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
   };
   //Preview render
   const [sentAttachedFile, setSentAttachedFile] = useState(null);
-  const [preview, setPreview] = useState("");
+  const [preview, setPreview] = useState([]);
 
   useEffect(() => {
     if (sentAttachedFile) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setPreview(reader.result);
-      };
-      reader.readAsDataURL(sentAttachedFile);
+      setPreview([]); // reset preview
+
+      [...sentAttachedFile].map((file, index) => {
+        const reader = new FileReader();
+        const extension = file.name.substring(file.name.lastIndexOf(".") + 1);
+
+        reader.onloadend = () => {
+          const fileObject = {
+            id: index,
+            name: file.name,
+            src: reader.result,
+            extension: extension
+          };
+          setPreview(prevState => [...prevState, fileObject]);
+        };
+        reader.readAsDataURL(file);
+      });
     } else {
-      setPreview("");
+      setPreview([]);
     }
   }, [sentAttachedFile]);
 
   // on click clear attached file
+  const clearAttached = name => {
+    if (name) {
+      setSentAttachedFile(prev => [...prev].filter(file => file.name !== name));
+    } else {
+      setSentAttachedFile([]);
+      setPreview([]);
+    }
+  };
+
+  const AudioFilePreview = ({ source }) => {
+    return <audio controls src={source} />;
+  };
+
+  const DocumentFilePreview = ({ fileName, extension }) => {
+    return (
+      <StyledDocumentPreview>
+        <div>
+          <BsFillFileEarmarkFill style={{ width: "42px", height: "42px" }} />
+        </div>
+        <div style={{ width: "85%" }}>
+          <h6>{fileName}</h6>
+          <p>{extension}</p>
+        </div>
+      </StyledDocumentPreview>
+    );
+  };
+
+  const PreviewFile = ({ file }) => {
+    if (file.src.includes("data:image")) {
+      return <img src={file.src} alt="Image Preview" />;
+    } else if (file.src.includes("data:audio")) {
+      return <AudioFilePreview source={file.src} />;
+    } else if (file.src.includes("data:video")) {
+      return <video autoPlay muted src={file.src} />;
+    } else {
+      return (
+        <DocumentFilePreview fileName={file.name} extension={file.extension} />
+      );
+    }
+  };
+
+  const PreviewItem = () => {
+    return (
+      <div className="previewContainer">
+        {preview.map(file => {
+          return (
+            <Preview key={file.id}>
+              <PreviewFile file={file} />
+              <button onClick={() => clearAttached(file.name)}>X</button>
+            </Preview>
+          );
+        })}
+      </div>
+    );
   const clearAttached = () => {
+    setPreview("");
     setSentAttachedFile("");
+  };
+
+  const AudioFilePreview = ({ source }) => {
+    return <audio controls src={source} />;
+  };
+
+  const DocumentFilePreview = ({ fileName, extension }) => {
+    return (
+      <StyledDocumentPreview>
+        <div>
+          <BsFillFileEarmarkFill style={{ width: "42px", height: "42px" }} />
+        </div>
+        <div style={{ width: "85%" }}>
+          <h6>{fileName}</h6>
+          <p>{extension}</p>
+        </div>
+      </StyledDocumentPreview>
+    );
+  };
+
+  const PreviewFile = () => {
+    console.log(sentAttachedFile);
+    let fileName = sentAttachedFile.name;
+    let extension = fileName.substring(fileName.lastIndexOf(".") + 1);
+
+    if (preview.includes("data:image")) {
+      return <img src={preview} alt="Image Preview" />;
+    } else if (preview.includes("data:audio")) {
+      return <AudioFilePreview source={preview} />;
+    } else if (preview.includes("data:video")) {
+      return <video autoPlay muted src={preview} />;
+    } else {
+      return <DocumentFilePreview fileName={fileName} extension={extension} />;
+    }
   };
 
   return (
     <Wrapper>
       <InputWrapper>
+        {preview.length ? <PreviewItem /> : null}
         {preview ? (
           <Preview>
-            <img src={preview} alt="Image Preview" />
+            <PreviewFile />
+
             <button
               style={{
                 position: "absolute",
-                top: "9px",
-                left: "65px",
-                height: "30px",
-                width: "30px",
-                borderRadius: "50%"
+                top: "-8px",
+                right: "-10px",
+                height: "24px",
+                width: "24px",
+                borderRadius: "50%",
+                background: "#242424",
+                fontWeight: "800",
+                fontSize: "12px",
+                color: "#fff"
               }}
               onClick={clearAttached}
             >
@@ -233,6 +342,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
             </button>
           </Preview>
         ) : null}
+        
         <div className="RichEditor-root">
           <ToolbarTop
             editorState={editorState}
@@ -288,6 +398,12 @@ const Wrapper = styled.div`
   flex-direction: column;
   background-color: white;
   width: 100%;
+
+  .previewContainer {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+  }
 `;
 
 const InputWrapper = styled.section`
@@ -332,12 +448,59 @@ const SendButton = styled.button`
   font-weight: 700;
   font-size: 1rem;
 `;
-const Preview = styled.div`
-  width: 5%;
-  height: 0.05%;
-  border-radius: 2px;
+const StyledDocumentPreview = styled.div`
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  padding: 16px 14px;
+  background: #ddd;
+  border-radius: 10px;
 
-  img {
+  h6 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 20px;
+    font-weight: bold;
+  }
+
+  p {
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+`;
+
+const Preview = styled.div`
+  /* width: 5%; */
+  /* height: 0.05%; */
+  width: fit-content;
+  margin: 10px 22px 12px 0;
+  position: relative;
+  flex-shrink: 0;
+  width: fit-content;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  position: relative;
+
+  img,
+  video {
+    width: 95px;
+    height: 90px;
     object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 6px #0000001a;
+  }
+
+  button {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background: #242424;
+    font-weight: 800;
+    font-size: 12px;
+    color: #fff;
   }
 `;
