@@ -316,7 +316,7 @@ export function MembersPanel({ config }) {
 
     let ourCurrentRoom = sessionStorage.getItem("currentRoom");
 
-    console.log(ourCurrentRoom);
+    //console.log(ourCurrentRoom);
 
     const token = sessionStorage.getItem("token");
 
@@ -539,14 +539,14 @@ function SettingPanel({
         <Channels>
           <AiOutlineLock />
           {/*<ChannelContent>Change to Private Channel</ChannelContent>*/}
-          <Typography
+          <ChannelContent
             onClick={() => {
               // closeModal()
               togglePrivateChannel();
             }}
           >
-            Privates this Channel
-          </Typography>
+            Change to Channel
+          </ChannelContent>
         </Channels>
       </ChannelWrapper>
       <ChannelWrapper>
