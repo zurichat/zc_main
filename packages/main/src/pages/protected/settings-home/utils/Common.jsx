@@ -1,5 +1,5 @@
-import { authAxios } from "./Api";
-import styles from "../styles/paymentMethod.module.css";
+import { authAxios } from "../utils/Api";
+import styles from "../utils/styles/paymentMethod.module.css";
 
 // images
 import mastercard from "../assets/Mastercard.svg";

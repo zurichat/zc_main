@@ -26,7 +26,6 @@ import {
 } from "./pages";
 
 import TermsOfService from "../src-old/pages/termsOfService/index";
-import SettingsHome from "../src-old/pages/admin/Settings/components/SettingsHome.js";
 import { useAuth } from "./auth/use-auth";
 import SettingsHome from "../src/pages/protected/settings-home/SettingsHome";
 
@@ -104,9 +103,6 @@ const App = () => (
           </ProtectFromAuthRoute>
           <ProtectedRoute exact path="/signout">
             <NewSignOut />
-          </ProtectedRoute>
-          <ProtectedRoute exact path="/admin/settings">
-            <SettingsHome />
           </ProtectedRoute>
           <ProtectedRoute exact path="/admin/settings">
             <SettingsHome />
