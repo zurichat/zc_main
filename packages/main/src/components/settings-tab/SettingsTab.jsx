@@ -12,7 +12,6 @@ import UserName from "../user-name/UserName";
 import { getUser } from "../settings-tab/utils/Common";
 
 const SettingsTab = () => {
-  // const showTime = show ? <TimeZone /> : null
   const userData = getUser();
   return (
     <>
