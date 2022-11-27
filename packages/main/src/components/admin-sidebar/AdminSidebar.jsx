@@ -216,27 +216,9 @@ const AdminSidebar = ({ setModal, openModal }) => {
           <Link
             onClick={() => setModal(!openModal)}
             className={styles.sidebarLink}
-            to="/"
-          >
-            API
-            <FiExternalLink className={styles.iconRight} />
-          </Link>
-          <Link
-            onClick={() => setModal(!openModal)}
-            className={styles.sidebarLink}
-            to="/components/gateways"
-          >
-            Gateways
-          </Link>
-          <Link
-            onClick={() => setModal(!openModal)}
-            className={styles.sidebarLink}
             to="/pricing"
           >
             Pricing
-          </Link>
-          <Link className={styles.sidebarLink} to="/blog">
-            Our blog
           </Link>
           <Link className={styles.sidebarLink} to="/signout">
             Sign out
