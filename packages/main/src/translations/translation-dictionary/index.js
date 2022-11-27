@@ -15,6 +15,7 @@ import whyzurichat from "./pages/whyzurichat";
 import Cookies from "./pages/Cookies";
 import ContactUs from "./pages/ContactUs";
 import Plugins from "./pages/Plugins";
+import Profile from "./pages/Profile";
 import ModalComponent from "./components/ModalComponent";
 
 import DownloadDesktop from "./pages/DownloadDesktop";
@@ -53,6 +54,7 @@ const Translations = [
   ...Download,
   ...Workspace,
   ...UserOrganizationsListing,
+   ...Profile,
   ...TopBarModal,
 
   ...DownloadDesktop,
