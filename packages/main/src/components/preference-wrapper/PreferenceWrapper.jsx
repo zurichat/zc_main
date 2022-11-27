@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../styles/SettingsTab.module.css";
+import styles from "../preference-wrapper/SettingsTab.module.css";
 import { motion } from "framer-motion";
 
 const PreferenceWrapper = ({ title, text, btnText, timeZone, children }) => {
@@ -11,7 +11,6 @@ const PreferenceWrapper = ({ title, text, btnText, timeZone, children }) => {
         <div layout className={styles.settingleft}>
           {title} <br />
           <span>{text}</span>
-          {/* {timeZone} */}
         </div>
         <div className={styles.settingsright}>
           <button onClick={() => setShowContent(prev => !prev)}>
