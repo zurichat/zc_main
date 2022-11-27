@@ -12,6 +12,6 @@ export { default as PricingPage } from "./static/pricing";
 export { default as InvitePage } from "./invite-page";
 export { default as ResetPassword } from "./reset-password";
 export { default as ChangePassword } from "./reset-password/ChangePassword";
-export { default as WhyZuriChat } from "./WhyZuriChat/Whyzurichat";
+export { default as WhyZuriChat } from "./static/whyzurichat";
 export { default as PrivacyPage } from "./static/privacy-policy";
 export { default as BlogPage } from "./blog/Blog";
