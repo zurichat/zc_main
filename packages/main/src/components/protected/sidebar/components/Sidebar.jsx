@@ -27,7 +27,7 @@ const Sidebar = props => {
 
   const sidebarRef = useRef(null);
   const [isResizing, setIsResizing] = useState(false);
-  const [sidebarWidth, setSidebarWidth] = useState(150);
+  const [sidebarWidth, setSidebarWidth] = useState(320);
 
   const startResizing = useCallback(() => {
     setIsResizing(true);
@@ -53,7 +53,7 @@ const Sidebar = props => {
         document.querySelector("body").style.cursor = "col-resize";
 
         // collapse the sidebar on further minimization
-        if (newWidth <= 150) setSidebarWidth(0);
+        if (newWidth <= 195) setSidebarWidth(0);
       }
     },
     [isResizing]
@@ -218,11 +218,15 @@ const Sidebar = props => {
                 image={draftIcon}
               />
 
+
               <SingleRoom
                 name="LiveBroadcast"
                 image={liveicon}
                 link={`/workspace/${currentWorkspace}/LiveBroadcast`}
               />
+
+          <hr color="#d4d4d4" />
+
 
               <Starred starredRooms={starredRooms} />
               {singleItems}
