@@ -4,8 +4,8 @@
   background: #fff;
   position: fixed;
   right: 0;
-  top: 2.8em;
-  border-left: #eee 1px solid;
+  top: 2.7em;
+  border-left: rgba(0, 0, 0, 0.1) 1px solid;
   z-index: 99;
   overflow-y: scroll;
 }
@@ -32,7 +32,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
-  height: 72px;
+  height: 40px;
 }
 
 .title {
