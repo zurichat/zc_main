@@ -52,6 +52,42 @@ function MessageRoomDetailsDialog({
     setShowLeaveChannelModal(!showLeaveChannelModal);
   const toggleArchiveChannel = () => setShowArchiveChannel(!showArchiveChannel);
 
+  const [description, setDescription] = useState("");
+  const [roomData, setRoomData] = useState(null);
+
+  useEffect(() => {
+    let isFetched = true;
+
+    const path = window.location.pathname;
+    const newPath = path.split("/");
+    const room_id = newPath[4];
+
+    const organization = JSON.parse(localStorage.getItem("userData"));
+    const org_id = organization.user.org_id;
+
+    const fetchData = async () => {
+      const res = await fetch(
+        `https://chat.zuri.chat/api/v1/org/${org_id}/rooms/${room_id}`
+      );
+
+      if (!res.ok) {
+        throw Error("Could not fetch data");
+      }
+
+      const data = await res.json();
+      setRoomData(data);
+      setDescription(data.data.description);
+    };
+
+    if (isFetched) {
+      fetchData();
+    }
+
+    return () => {
+      isFetched = false;
+    };
+  });
+
   return (
     <div className="App">
       <DialogOverlays isOpen={showDialog} onDismiss={close}>
@@ -91,6 +127,7 @@ function MessageRoomDetailsDialog({
                   toggleEditDescriptionModal={toggleEditDescriptionModal}
                   toggleLeaveChannelModal={toggleLeaveChannelModal}
                   closeModal={close}
+                  channelDescription={description}
                 />
               </TabPanel>
               <TabPanel>
@@ -108,13 +145,16 @@ function MessageRoomDetailsDialog({
               </TabPanel>
             </TabPanels>
           </StyledTabs>
+          {showEditDescriptionModal && (
+            <EditDescriptionModal
+              closeEdit={toggleEditDescriptionModal}
+              roomData={roomData}
+            />
+          )}
         </DialogContents>
       </DialogOverlays>
       {showEditTopicModal && (
         <EditTopicModal closeEdit={toggleEditTopicModal} />
-      )}
-      {showEditDescriptionModal && (
-        <EditDescriptionModal closeEdit={toggleEditDescriptionModal} />
       )}
       {showLeaveChannelModal && (
         <LeaveChannelModal closeEdit={toggleLeaveChannelModal} />
@@ -131,9 +171,11 @@ function AboutPanel({
   closeModal,
   toggleEditTopicModal,
   toggleEditDescriptionModal,
-  toggleLeaveChannelModal
+  toggleLeaveChannelModal,
+  channelDescription
 }) {
   const [showMore, setShowMore] = useState(false);
+
   return (
     <div style={{ margin: "0 5px" }}>
       <OverallWrapper>
@@ -164,7 +206,9 @@ function AboutPanel({
               Edit
             </EditLabel>
           </Description>
-          <EditContent>Add description.</EditContent>
+          <EditContent>
+            {channelDescription ? channelDescription : "Add description."}
+          </EditContent>
         </EachSegment>
         <EachSegment>
           <Label>Created By</Label>
