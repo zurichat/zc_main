@@ -6,6 +6,12 @@
   display: flex;
   flex-direction: column;
   border: 1px solid #007b53;
+  transition: all 0.2s;
+}
+
+.workspaceSidebarClosed {
+  width: 0 !important;
+  margin-left: -5px !important;
 }
 
 #workspaceBox {
@@ -20,7 +26,7 @@
   align-items: center;
 }
 .workspaceWrap:first-child {
-  margin-top: 20px;
+  margin-top: 12px;
 }
 
 .workspaceWrap {
@@ -50,7 +56,6 @@
   }
 }
 
-
 .workspaceWrap h3,
 .workspaceWrap p {
   margin-bottom: 0;
@@ -71,8 +76,8 @@
 }
 
 .currentWorkspace {
-  border-radius: 10px;
-  border: 3px solid #ddd;
+  border-radius: 5px;
+  border: 2px solid rgb(216, 248, 239);
   text-align: center;
   margin-bottom: 5px;
   padding: 0.5px;
@@ -111,22 +116,21 @@
   width: 100%;
 }
 
-
 @media (max-width: 426px) {
-    .workspaceWrap p {
-      font-size: 12px;
-    }
-  
-    #workspaceSidebar {
-      width: 70%;
-    }
-
-    .workspaceName {
-        font-size: 18px;
-    }
-  
-    .workspaceAdd svg {
-      height: 1.5em;
-      width: 1.5em;
-    }
+  .workspaceWrap p {
+    font-size: 12px;
   }
+
+  #workspaceSidebar {
+    width: 70%;
+  }
+
+  .workspaceName {
+    font-size: 18px;
+  }
+
+  .workspaceAdd svg {
+    height: 1.5em;
+    width: 1.5em;
+  }
+}

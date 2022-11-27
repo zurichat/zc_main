@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import styles from "../styles/Sidebar.module.css";
 import { useTranslation } from "react-i18next";
 
@@ -13,6 +13,7 @@ import Room from "./Room";
 import SingleRoom from "./SingleRoom";
 import Category from "./Category";
 import Starred from "./Starred";
+import { storeSideBarInfo } from "../../../../utils/cache-sidebar";
 
 const categories = [];
 
@@ -22,9 +23,72 @@ const Sidebar = props => {
 
   const [nullValue, setnullValue] = useState(0);
 
+  const sidebarRef = useRef(null);
+  const [isResizing, setIsResizing] = useState(false);
+  const [sidebarWidth, setSidebarWidth] = useState(320);
+
+  const startResizing = useCallback(() => {
+    setIsResizing(true);
+  }, []);
+
+  const stopResizing = useCallback(() => {
+    setIsResizing(false);
+
+    // use the default cursor on the UI when not resizing
+    document.querySelector("body").style.cursor = "default";
+  }, []);
+
+  const resize = useCallback(
+    mouseMoveEvent => {
+      if (isResizing) {
+        const newWidth =
+          mouseMoveEvent.clientX -
+          sidebarRef.current.getBoundingClientRect().left;
+
+        setSidebarWidth(() => newWidth);
+
+        // use the col-resize cursor on the UI while resizing
+        document.querySelector("body").style.cursor = "col-resize";
+
+        // collapse the sidebar on further minimization
+        if (newWidth <= 195) setSidebarWidth(0);
+      }
+    },
+    [isResizing]
+  );
+
+  useEffect(() => {
+    window.addEventListener("mousemove", resize);
+    window.addEventListener("mouseup", stopResizing);
+
+    return () => {
+      window.removeEventListener("mousemove", resize);
+      window.removeEventListener("mouseup", stopResizing);
+    };
+  }, [resize, stopResizing]);
+
   useEffect(() => {
     setnullValue(1);
   }, []);
+
+  // Update the local storage sidebar information anytime there's a change
+  useEffect(() => {
+    if (
+      props.state.user?.user?.email &&
+      props.state.sidebar &&
+      props.state.organization_info
+    ) {
+      storeSideBarInfo(props.state.user?.user?.email, {
+        sidebar: props.state.sidebar,
+        organization_info: props.state.organization_info
+      });
+    }
+  }, [
+    props.state.user?.user?.email,
+    props.state.sidebar,
+    props.state.organization_info,
+    storeSideBarInfo
+  ]);
 
   {
     //Listening for sidebar update
@@ -126,30 +190,42 @@ const Sidebar = props => {
     });
 
   return (
-    <div className={`container-fluid ${styles.sb__container}`}>
-      <Header state={props.state} />
-      <div className={`${styles.subCon2}`}>
-        <>
-          <SingleRoom
-            name={`${t("workspace_chat.threads")}`}
-            image={threadIcon}
-            link={`/workspace/${currentWorkspace}/plugin-chat/threads`}
-          />
-          <SingleRoom
-            name={`${t("workspace_chat.alldms")}`}
-            image={dmIcon}
-            link={`/workspace/${currentWorkspace}/plugin-chat/all-dms`}
-          />
-          <SingleRoom
-            name={`${t("workspace_chat.drafts")}`}
-            image={draftIcon}
-          />
+    <div
+      ref={sidebarRef}
+      style={{ width: sidebarWidth }}
+      onMouseDown={e => e.preventDefault()}
+      className={`container-fluid ${styles.sb__container}`}
+    >
+      {sidebarWidth > 0 && (
+        <div className={styles.sb__content}>
+          <Header state={props.state} />
+          <div className={`${styles.subCon2}`}>
+            <>
+              <SingleRoom
+                name={`${t("workspace_chat.threads")}`}
+                image={threadIcon}
+                link={`/workspace/${currentWorkspace}/plugin-chat/threads`}
+              />
+              <SingleRoom
+                name={`${t("workspace_chat.alldms")}`}
+                image={dmIcon}
+                link={`/workspace/${currentWorkspace}/plugin-chat/all-dms`}
+              />
+              <SingleRoom
+                name={`${t("workspace_chat.drafts")}`}
+                image={draftIcon}
+              />
 
-          <Starred starredRooms={starredRooms} />
-          {singleItems}
-          {categorizedItems}
-        </>
-      </div>
+              <hr color="#d4d4d4" />
+
+              <Starred starredRooms={starredRooms} />
+              {singleItems}
+              {categorizedItems}
+            </>
+          </div>
+        </div>
+      )}
+      <div className={styles.sb__resizer} onMouseDown={startResizing} />
     </div>
   );
 };

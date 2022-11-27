@@ -25,7 +25,9 @@ const DropDown = ({ categoryName, isOpen, toggleDropdown, button_url }) => {
   // }
 
   return (
-    <div className={`row p-0 ${styles.dropDown} text-decoration-none `}>
+    <div
+      className={`row ${styles.dropDown} align-items-center text-decoration-none `}
+    >
       {newRoom ? <DropRoom trigger={newRoom} setTrigger={setNewRoom} /> : ""}
 
       <div
@@ -44,7 +46,7 @@ const DropDown = ({ categoryName, isOpen, toggleDropdown, button_url }) => {
         </div>
         {/* <img src={infoIcon} alt="icon" role="button" /> */}
         <div onClick={popup}>
-          <AiOutlinePlus className={`${styles.icon}`} />
+          <AiOutlinePlus className={`${styles.icon2}`} />
           {options ? (
             <>
               <div className={`${styles.dropdown__menu}`}>

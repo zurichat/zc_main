@@ -7,6 +7,9 @@ export const ModalContainer = styled.section`
   width: 100vw;
   top: 0;
   left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   z-index: 400000;
 `;
@@ -32,12 +35,16 @@ export const DescModal = styled.div`
 
 export const TopicModal = styled.div`
   width: 40%;
+  max-width: 700px;
   margin: auto;
   background-color: white;
   height: max-content;
   padding: 0.5rem 1rem;
-  margin-top: 10%;
   border-radius: 0.3rem;
+
+  @media (max-width: 800px) {
+    width: 80%;
+  }
 `;
 export const ModalTop = styled.div`
   display: flex;

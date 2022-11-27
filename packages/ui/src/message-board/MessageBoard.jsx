@@ -19,7 +19,8 @@ function MessageBoard({
   messages = [],
   onSendMessage,
   onSendAttachedFile,
-  onReact
+  onReact,
+  height
 }) {
   const [showMoreOptions, setShowMoreOptions] = useState(false);
   const [showEmoji, setShowEmoji] = useState(false);
@@ -74,7 +75,7 @@ function MessageBoard({
 
   const messagesEndRef = useRef(null);
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView();
+    messagesEndRef.current?.scrollIntoView("auto");
   };
 
   useEffect(() => {
@@ -84,7 +85,7 @@ function MessageBoard({
 
   return (
     <>
-      <MessageBoardContainer>
+      <MessageBoardContainer height={height}>
         <div className="MsgBoard">
           {Array.from(new Set(messages.map(a => a._id)))
             .map(id => {
@@ -102,7 +103,6 @@ function MessageBoard({
             ))}
           <div ref={messagesEndRef} />
         </div>
-
         {isLoadingMessages && (
           <div className="text-center">
             <div
@@ -114,7 +114,6 @@ function MessageBoard({
             </div>
           </div>
         )}
-
         <div className="input-text">
           <MessagePaneInput
             onSendMessage={handleSendMessage}
