@@ -25,7 +25,7 @@ const Sidebar = props => {
 
   const sidebarRef = useRef(null);
   const [isResizing, setIsResizing] = useState(false);
-  const [sidebarWidth, setSidebarWidth] = useState(320);
+  const [sidebarWidth, setSidebarWidth] = useState(260);
 
   const startResizing = useCallback(() => {
     setIsResizing(true);
@@ -216,7 +216,7 @@ const Sidebar = props => {
                 image={draftIcon}
               />
 
-          <hr color="#d4d4d4" />
+              <hr color="#d4d4d4" />
 
               <Starred starredRooms={starredRooms} />
               {singleItems}

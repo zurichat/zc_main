@@ -1,7 +1,7 @@
 .dropDown,
 .dropdown_active {
   cursor: pointer;
-  padding: 15px 20px;
+  padding: 4px 20px;
 }
 
 .dropDown:hover,

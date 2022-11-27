@@ -120,9 +120,9 @@ const EditProfile = () => {
     setUserProfileImage(user.image_url);
   }, [user]);
   // This will handle the profile form submission
-  const handleFormSubmit = e => {
+  const handleFormSubmit = async e => {
     e.preventDefault();
-    setState({ ...state, loading: true });
+    setState(prev => ({ ...prev, loading: true }));
     const data = {
       first_name: state.first_name,
       last_name: state.last_name,
@@ -130,32 +130,25 @@ const EditProfile = () => {
       phone: state.phone,
       bio: state.bio,
       time_zone: state.timezone
-      // socials: [
-      //   {
-      //     "title": "twitter",
-      //     "url": state.twitter
-      //   },
-      //   {
-      //     "title": "facebook",
-      //     "url": state.facebook
-      //   },
-      // ],
     };
-    authAxios
-      .patch(`/organizations/${orgId}/members/${user._id}/profile`, data)
-      .then(res => {
-        setState({ loading: false });
-        toast.success("User Profile Updated Successfully", {
-          position: "top-center"
-        });
-      })
-      .catch(err => {
-        console.error(err);
-        setState({ loading: false });
-        toast.error(err?.message, {
-          position: "top-center"
-        });
+    try {
+      const res = await authAxios.patch(
+        `/organizations/${orgId}/members/${user._id}/profile`,
+        data
+      );
+
+      // setState({ loading: false });
+      setState(prev => ({ ...prev, loading: false }));
+      toast.success("User Profile Updated Successfully", {
+        position: "top-center"
       });
+    } catch (err) {
+      // setState({ loading: false });
+      setState(prev => ({ ...prev, loading: false }));
+      toast.error(err?.message, {
+        position: "top-center"
+      });
+    }
   };
   return (
     <ProfileModal full title="Edit profile">
