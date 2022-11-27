@@ -45,7 +45,7 @@ const CommentMessagesWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding-left: 8px;
+  padding-left: 1rem;
   margin-bottom: 9px;
   padding-top: 1.1rem;
   padding-bottom: 100px;
@@ -72,6 +72,10 @@ const CommentMessagesWrapper = styled.div`
   #hoverItems {
     position: relative;
     top: 0px;
+  }
+
+  .message {
+    width: 90%;
   }
 `;
 const CommentMessageItem = styled.div`
@@ -102,12 +106,17 @@ export const ParentMessage = styled.div`
   .msgParticulars {
     padding-left: 1.5rem;
   }
+
+  .message {
+    width: 90%;
+  }
 `;
 
 export const MessagePaneWrapper = styled.div`
   position: fixed;
   bottom: 22px;
-  width: 28%;
+  right: 0;
+  width: calc(29% + 20px);
 `;
 export {
   CommentBoardWrapper,
