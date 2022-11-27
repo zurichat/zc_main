@@ -129,14 +129,7 @@ const CommentBoard = ({
 
             <CommentMessagesWrapper>
               {messages.map((message, idx) => (
-                <MessagePane
-                  key={idx}
-                  onShowMoreOptions={handleShowMoreOptions}
-                  onShowEmoji={handleShowEmoji}
-                  onEmojiClicked={handleEmojiClicked}
-                  message={message}
-                  currentUserId={currentUserId}
-                />
+                <MessagePane key={idx} message={message} />
               ))}
             </CommentMessagesWrapper>
             <MessagePaneInput

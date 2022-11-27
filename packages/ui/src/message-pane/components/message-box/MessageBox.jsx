@@ -5,7 +5,7 @@ import RichTextRenderer from "~/rich-text-renderer/RichTextRenderer";
 export default function MessageBox({ message }) {
   return (
     <div className="msg-container">
-      <div>
+      <div className="img__wrapper">
         <img
           src={
             message.sender.sender_image_url ||
