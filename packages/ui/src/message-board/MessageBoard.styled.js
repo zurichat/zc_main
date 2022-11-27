@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const MessageBoardContainer = styled.section`
   display: flex;
   width: 100%;
-  height: ${props => props.height};
+  height: 100%;
   gap: 8px;
   flex-direction: column;
 
