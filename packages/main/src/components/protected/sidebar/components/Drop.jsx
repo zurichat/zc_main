@@ -18,7 +18,9 @@ const DropDown = ({ categoryName, isOpen, toggleDropdown, button_url }) => {
   const { t } = useTranslation();
 
   return (
-    <div className={`row ${styles.dropDown} align-items-center text-decoration-none `}>
+    <div
+      className={`row ${styles.dropDown} align-items-center text-decoration-none `}
+    >
       {newRoom ? <DropRoom trigger={newRoom} setTrigger={setNewRoom} /> : ""}
 
       <div
