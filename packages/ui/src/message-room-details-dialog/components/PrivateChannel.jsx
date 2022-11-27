@@ -7,7 +7,8 @@ const PrivateChannel = ({ closeEdit }) => {
   const org_id = localStorage.getItem("currentWorkspace");
   const user = JSON.parse(sessionStorage.getItem("organisations"));
   const room = window.location.href.split("/").at(6);
-  const BASE_URL = "https:chat.zuri.chat";
+  const BASE_URL = "https://chat.zuri.chat";
+  //const BASE_URL = "https://chat.zuri.chat";
 
   const [data, setData] = useState(null);
 
@@ -23,6 +24,9 @@ const PrivateChannel = ({ closeEdit }) => {
 
   const privateChannel = () => {
     const tina = user?.find(x => x.id == org_id)?.member_id;
+    console.log(user);
+    console.log(`hi ${tina}`);
+    console.log(`hello ${room}`);
     if (data !== null) {
       const newData = { ...data, is_private: true };
       console.log(newData);
@@ -33,7 +37,7 @@ const PrivateChannel = ({ closeEdit }) => {
         )
         .then(res => {
           console.log(res);
-          window.location.reload();
+          //window.location.reload();
         })
         .catch(e => console.log(e));
     }
