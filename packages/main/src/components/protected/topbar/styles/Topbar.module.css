@@ -124,7 +124,7 @@
   max-width: 326px; */
   width: 326px;
   max-width: calc(100% - 24px);
-  z-index: 99999999;
+  z-index: 9999;
   border: 1px solid #bebebe;
   border-radius: 4px;
   /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
@@ -132,18 +132,18 @@
 
 .modalContainers {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100000;
-  background: #ffffff;
+  z-index: 999999999;
+  background: rgba(0, 0, 0, 0.7);
   /* display: none; */
   justify-content: center;
-  padding-top: 5.6875rem;
-  padding-bottom: 2rem;
   z-index: 2;
+  display: grid;
+  place-items: center;
 }
 
 .modalBackDrop {
@@ -267,10 +267,6 @@
   height: 18px;
 }
 /* The section of the picker */
-
-.smileys {
-  padding-top: 20px;
-}
 
 .picker {
   position: fixed;

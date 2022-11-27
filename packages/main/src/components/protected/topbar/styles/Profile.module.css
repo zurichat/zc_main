@@ -6,7 +6,7 @@
   right: 0;
   top: 2.8em;
   border-left: #eee 1px solid;
-  z-index: 10000;
+  z-index: 99;
   overflow-y: scroll;
 }
 .ProfileContainer::-webkit-scrollbar {
