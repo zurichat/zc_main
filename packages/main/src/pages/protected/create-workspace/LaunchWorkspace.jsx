@@ -4,8 +4,6 @@ import { useHistory } from "react-router-dom";
 import { BASE_API_URL } from "@zuri/utilities";
 import { GeneralLoading } from "../../../components";
 
-import useParamHook from "../workspace/useParamHook"; //my import
-
 export default function Index({ createWorkspaceData }) {
   const history = useHistory();
 
@@ -72,14 +70,16 @@ export default function Index({ createWorkspaceData }) {
     // Redirect
 
     // Adding new code
-    const {
-      workspaceId: { short_id }
-    } = useParamHook({ workspaceId: "workspaceId" });
 
-    localStorage.setItem(
-      "currentWorkspace",
-      JSON.stringify({ workspaceId, short_id })
-    );
+    const short_id = `${workspaceId.slice(4, 6)}${workspaceId.slice(
+      6,
+      8
+    )}${workspaceId.slice(-3, -1)}`;
+
+    localStorage.setItem("currentWorkspace", workspaceId);
+    localStorage.setItem("currentWorkspaceShort", short_id);
+
+    console.log(workspaceId, short_id, "Checking for IDS");
 
     // localStorage.setItem("currentWorkspace", workspaceId);
     // history.push(`/workspace/${workspaceId}`);

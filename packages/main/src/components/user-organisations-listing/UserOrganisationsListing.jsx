@@ -28,11 +28,9 @@ const UserOrganization = ({ organizations, user }) => {
           -3,
           -1
         )}`
-        // 'short_id': `${newName}-${org.id.slice(4,6)}${org.id.slice(6,8)}${org.id.slice(-3,-1)}`
       });
 
       localStorage.setItem("urlsTracker", JSON.stringify(urlsTracker));
-      console.log(urlsTracker, "I am consoling urlsTracker");
 
       //***********************************/
 
@@ -41,8 +39,8 @@ const UserOrganization = ({ organizations, user }) => {
       )[0]?.short_id;
       return org;
     });
+
     setNewOrganizations([...hhh]);
-    // console.log(newOrganizations)
   }, [organizations]);
 
   // const urlIds
@@ -52,8 +50,6 @@ const UserOrganization = ({ organizations, user }) => {
   // newOrganizations.map(org => {
   //   org['short_id'] = urlIds.filter(urlId => urlId === org.id)[0].short_id
   // })
-
-  console.log(newOrganizations);
   const { t } = useTranslation();
 
   return (

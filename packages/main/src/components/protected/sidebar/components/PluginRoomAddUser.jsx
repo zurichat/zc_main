@@ -16,12 +16,8 @@ const PluginRoomAddUser = ({ isOpen, isClosed, room_id }) => {
   const channelName = url.split("http://localhost:9000/").pop();
   const baseUrl = "zuri.chat";
 
-  //I added this code
-  let workSpaceIds = JSON.parse(localStorage.getItem("currentWorkspace"));
-  // End of code
-
   // const workspace = sessionStorage.getItem("currentWorkspace");
-  const workspace = workSpaceIds.workspaceId;
+  const workspace = localStorage.getItem("currentWorkspace") || null;
   // console.log("channelName" ,channelName.split("http://localhost:9000/").pop());
   // console.log("channelName" ,channelName.split("https://zuri.chat/").pop());
 
@@ -35,10 +31,10 @@ const PluginRoomAddUser = ({ isOpen, isClosed, room_id }) => {
 
   let token = sessionStorage.getItem("token");
 
-  let currentWorkspace = workSpaceIds.workspaceId;
+  let currentWorkspace = localStorage.getItem("currentWorkspace") || null;
   // let currentWorkspace = localStorage.getItem("currentWorkspace");
   //   console.log('currentWorkspace', currentWorkspace);
-  console.log(currentWorkspace);
+
   const headers = {
     Authorization: `Bearer ${token}`
   };

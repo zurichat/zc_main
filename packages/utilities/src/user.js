@@ -8,13 +8,7 @@ import { BASE_API_URL } from "./constants";
 
 export const getUserInfo = async () => {
   let user = JSON.parse(sessionStorage.getItem("user"));
-  //I added this code
-  let workSpaceIds = JSON.parse(localStorage.getItem("currentWorkspace"));
-  // End of code
-
-  // const workspace = sessionStorage.getItem("currentWorkspace");
-  const currentWorkspace = workSpaceIds.workspaceId;
-  // const currentWorkspace = localStorage.getItem("currentWorkspace");
+  const currentWorkspace = localStorage.getItem("currentWorkspace");
   let token = sessionStorage.getItem("token");
 
   if ((user && token) !== null) {

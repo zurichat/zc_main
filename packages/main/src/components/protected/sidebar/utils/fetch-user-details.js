@@ -11,14 +11,7 @@ export const fetchUser = async dispatch => {
     const user = await getUserInfo();
 
     //Get workspace info
-    // let currentWorkspace = localStorage.getItem("currentWorkspace");
-
-    //I added this code
-    let workSpaceIds = JSON.parse(localStorage.getItem("currentWorkspace"));
-    // End of code
-
-    // const workspace = sessionStorage.getItem("currentWorkspace");
-    const currentWorkspace = workSpaceIds.workspaceId;
+    let currentWorkspace = localStorage.getItem("currentWorkspace");
 
     //Check if user id is valid and get user organization
     if (user.user._id !== "") {

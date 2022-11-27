@@ -20,11 +20,7 @@ start({
   urlRerouteOnly: true
 });
 
-//I added this code
-let workSpaceIds = JSON.parse(localStorage.getItem("currentWorkspace"));
-// End of code
-// const currentWorkspace = localStorage.getItem("currentWorkspace") || null;
-const currentWorkspace = workSpaceIds.short_id;
+const currentWorkspace = localStorage.getItem("currentWorkspaceShort") || null;
 
 window.addEventListener("zuri-plugin-load", () => {
   setTimeout(() => {

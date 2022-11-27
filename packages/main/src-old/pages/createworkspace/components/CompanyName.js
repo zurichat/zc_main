@@ -64,7 +64,7 @@ function CompanyName({ input }) {
             });
         }, 500);
 
-        localStorage.setItem("currentWorkspace", newOrgId);
+        // localStorage.setItem("currentWorkspace", newOrgId);
         // createDefaultChannel(newOrgId)
       })
       .catch(err => {

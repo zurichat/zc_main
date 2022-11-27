@@ -10,11 +10,7 @@ const AboutWorkSpace = () => {
   const [items, setItems] = useState(null);
   // const currentWorkspace = localStorage.getItem("currentWorkspace");
 
-  //I added this code
-  let workSpaceIds = JSON.parse(localStorage.getItem("currentWorkspace"));
-  // End of code
-  // const currentWorkspace = localStorage.getItem("currentWorkspace") || null;
-  const currentWorkspace = workSpaceIds.workspaceId;
+  const currentWorkspace = localStorage.getItem("currentWorkspace") || null;
 
   if (!currentWorkspace) {
     return null;

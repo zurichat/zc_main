@@ -18,9 +18,10 @@ import { storeSideBarInfo } from "../../../../utils/cache-sidebar";
 const categories = [];
 
 const Sidebar = props => {
-  let workSpaceIds = JSON.parse(localStorage.getItem("currentWorkspace"));
-  let currentWorkspace = workSpaceIds.short_id;
-  // let currentWorkspace = localStorage.getItem("currentWorkspace");
+  let currentWorkspace = localStorage.getItem("currentWorkspace") || null;
+  let currentWorkspaceShort =
+    localStorage.getItem("currentWorkspaceShort") || null;
+
   const { t } = useTranslation();
 
   const [nullValue, setnullValue] = useState(0);
@@ -177,8 +178,6 @@ const Sidebar = props => {
           (k, id) => props.state.sidebar[key][k].starred_rooms
         );
 
-        console.log(starredRooms, "I am displaying starred rooms");
-
         //    Object.keys(props.state.sidebar).map((p, idx)=>{
         //     return (categories.includes(p) ?
         //     <Category key={idx} name={p} data={categoryData} />
@@ -208,12 +207,12 @@ const Sidebar = props => {
               <SingleRoom
                 name={`${t("workspace_chat.threads")}`}
                 image={threadIcon}
-                link={`/workspace/${currentWorkspace}/plugin-chat/threads`}
+                link={`/workspace/${currentWorkspaceShort}/plugin-chat/threads`}
               />
               <SingleRoom
                 name={`${t("workspace_chat.alldms")}`}
                 image={dmIcon}
-                link={`/workspace/${currentWorkspace}/plugin-chat/all-dms`}
+                link={`/workspace/${currentWorkspaceShort}/plugin-chat/all-dms`}
               />
               <SingleRoom
                 name={`${t("workspace_chat.drafts")}`}
