@@ -297,7 +297,7 @@ const TopbarModal = ({ members, statusModal, setStatusModal }) => {
               <p
                 onClick={() => {
                   toggleProfileState();
-                  openModal();
+                  closeModal();
                 }}
               >
                 {t("user_view_profile")}
