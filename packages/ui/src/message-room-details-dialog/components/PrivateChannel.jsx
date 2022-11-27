@@ -2,19 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ChannelModal from "./ChannelModal";
 import styles from "./archive-channel.module.css";
-import useChannel from "../auth/useChannel";
 
 const PrivateChannel = ({ closeEdit }) => {
   const org_id = localStorage.getItem("currentWorkspace");
   const user = JSON.parse(sessionStorage.getItem("organisations"));
   const room = window.location.href.split("/").at(6);
-  const [memberId, setMemberId] = useState("");
   const BASE_URL = "https:chat.zuri.chat";
-  const member_id = user[0];
-
-  //const [errorDetail, setErrorDetail] = useState(null);
-  //const [laeveData, setLeaveData] = useState(null);
-  //const [state, setState]=useState(false)
 
   const [data, setData] = useState(null);
 
@@ -32,7 +25,7 @@ const PrivateChannel = ({ closeEdit }) => {
     const tina = user?.find(x => x.id == org_id)?.member_id;
     if (data !== null) {
       const newData = { ...data, is_private: true };
-      console.log;
+      console.log(newData);
       axios
         .put(
           `${BASE_URL}/api/v1/org/${org_id}/members/${tina}/rooms/${room}`,
