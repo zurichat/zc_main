@@ -33,8 +33,14 @@ const TopNavbar = ({ toggleSidebar }) => {
 
   const { closeModal, openModal, presence, setPresence } =
     useContext(TopbarContext);
-  const { setUser, user, userProfileImage, setOrgId, setUserProfileImage } =
-    useContext(ProfileContext);
+  const {
+    setUser,
+    user,
+    userProfileImage,
+    setOrgId,
+    orgId,
+    setUserProfileImage
+  } = useContext(ProfileContext);
 
   const state = useContext(TopbarContext);
   const [showModal] = state.show;
@@ -80,7 +86,8 @@ const TopNavbar = ({ toggleSidebar }) => {
         event.event === "UpdateOrganizationMemberPresence"
       ) {
         if (event.id === session_user["id"]) {
-          UpdateInfo();
+          // UpdateInfo();
+          getProfileImage();
         } else return;
       } else return;
     });
@@ -137,16 +144,19 @@ const TopNavbar = ({ toggleSidebar }) => {
     getOrganizations();
   }, [setOrgId, user.image_url, setUser]);
 
-  useEffect(() => {
-    UpdateInfo();
-  }, [userProfileImage]);
-
-  const UpdateInfo = () => {
-    getUserInfo().then(res => {
-      setUserProfileImage(res?.user.image_url);
-      setUser(res.user);
-    });
+  const getProfileImage = async e => {
+    try {
+      const res = await authAxios.get(
+        `/organizations/${orgId}/members/${user._id}`
+      );
+      console.log("data", res);
+      console.log(res.data.data.image_url);
+      setUserProfileImage(res.data.data.image_url);
+    } catch (err) {
+      console.error("Error", err);
+    }
   };
+  getProfileImage();
 
   let toggleStatus = null;
 
