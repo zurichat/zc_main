@@ -3,11 +3,14 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { BASE_API_URL } from "@zuri/utilities";
 import { GeneralLoading } from "../../../components";
+import { useTranslation } from "react-i18next";
 
 export default function Index({ createWorkspaceData }) {
   const history = useHistory();
 
   const user = JSON.parse(sessionStorage.getItem("user"));
+
+  const { t } = useTranslation();
 
   if (!user) history.push("/login");
 
@@ -83,7 +86,9 @@ export default function Index({ createWorkspaceData }) {
 
   return (
     <GeneralLoading
-      text={`Launching ${createWorkspaceData.workspaceName} Workspace`}
+      text={`${t("create_workspace_twenty_seven")} ${
+        createWorkspaceData.workspaceName
+      } ${t("create_workspace_twenty_eight")}`}
     />
   );
 }

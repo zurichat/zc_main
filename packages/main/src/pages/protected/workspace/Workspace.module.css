@@ -1,0 +1,136 @@
+#workspaceSidebar {
+  height: 95vh;
+  width: 70%;
+  background: #007b53;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #007b53;
+  transition: all 0.2s;
+}
+
+.workspaceSidebarClosed {
+  width: 0 !important;
+  margin-left: -5px !important;
+}
+
+#workspaceBox {
+  height: 75%;
+  padding: 0 10px 0 20px;
+}
+
+.workspaceInfo {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.workspaceWrap:first-child {
+  margin-top: 12px;
+}
+
+.workspaceWrap {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+@media (min-width: 769px) {
+  #workspaceSidebar {
+    width: 70px;
+  }
+  .workspaceInfo,
+  .optionName {
+    display: none;
+  }
+
+  #workspaceBox {
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .workspaceAdd {
+    margin-bottom: 20px;
+    gap: 0;
+    justify-content: center;
+  }
+}
+
+.workspaceWrap h3,
+.workspaceWrap p {
+  margin-bottom: 0;
+  padding: 0;
+  line-height: 20px;
+}
+
+.workspaceAvatar {
+  border-radius: 10px;
+  border: 3px solid transparent;
+  text-align: center;
+  margin-bottom: 5px;
+  padding: 0.5px;
+}
+
+.workspaceAvatar:hover {
+  border: 3px solid #dddddd;
+}
+
+.currentWorkspace {
+  border-radius: 5px;
+  border: 2px solid rgb(216, 248, 239);
+  text-align: center;
+  margin-bottom: 5px;
+  padding: 0.5px;
+}
+
+.workspaceAvatarM {
+  height: 40px;
+  width: 40px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(69, 64, 64);
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.workspaceAdd {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  padding: 10px 20px 0 20px;
+}
+
+.workspaceAdd svg {
+  height: 1em;
+  width: 1em;
+  text-align: center;
+  margin-right: 0;
+}
+
+.lowerDrawer {
+  padding: 30px 0;
+  border-top: 1px solid #ddd;
+  width: 100%;
+}
+
+@media (max-width: 426px) {
+  .workspaceWrap p {
+    font-size: 12px;
+  }
+
+  #workspaceSidebar {
+    width: 70%;
+  }
+
+  .workspaceName {
+    font-size: 18px;
+  }
+
+  .workspaceAdd svg {
+    height: 1.5em;
+    width: 1.5em;
+  }
+}

@@ -4,6 +4,7 @@ import {
   EditorState,
   RichUtils,
   convertToRaw,
+  convertFromRaw,
   getDefaultKeyBinding,
   ContentState,
   Modifier
@@ -26,6 +27,8 @@ import mentions from "./mentions.data";
 
 import createEmojiPlugin from "@draft-js-plugins/emoji";
 import { theme } from "./EmojiStyles.styled.js";
+import axios from "axios";
+import { BsFillFileEarmarkFill } from "react-icons/bs";
 
 const emojiPlugin = createEmojiPlugin({
   useNativeArt: true,
@@ -81,17 +84,55 @@ export const getResetEditorState = editorState => {
     newContentState,
     "remove-range"
   );
+  removeFromSessionStorage();
   return removeSelectedBlocksStyle(newState);
+};
+
+const loadFromSessionStorage = () => {
+  const editorStateID = "editorState_" + sessionStorage.getItem("currentRoom");
+  const sessionData = sessionStorage.getItem(editorStateID);
+  if (sessionData) {
+    return convertFromRaw(JSON.parse(sessionData));
+  }
+  return null;
+};
+
+const saveToSessionStorage = editorState => {
+  const currentRoom = sessionStorage.getItem("currentRoom");
+  const editorStateID = "editorState_" + currentRoom;
+  if (currentRoom) {
+    sessionStorage.setItem(
+      editorStateID,
+      JSON.stringify(convertToRaw(editorState))
+    );
+  }
+};
+
+const removeFromSessionStorage = () => {
+  const editorStateID = "editorState_" + sessionStorage.getItem("currentRoom");
+  sessionStorage.removeItem(editorStateID);
 };
 
 const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
   const [data, setData] = useState("");
-  const [editorState, setEditorState] = useState(() =>
-    EditorState.createEmpty()
-  );
+  const [editorState, setEditorState] = useState(() => {
+    const content = loadFromSessionStorage();
+    return content
+      ? EditorState.createWithContent(content)
+      : EditorState.createEmpty();
+  });
   const [showEmoji, setShowEmoji] = useState(false);
   const [suggestions, setSuggestions] = useState(users || mentions);
   const [suggestionsOpen, setSuggestionsOpen] = useState(false);
+
+  useEffect(() => {
+    const content = loadFromSessionStorage();
+    if (content) {
+      setEditorState(EditorState.createWithContent(content));
+    } else {
+      setEditorState(EditorState.createEmpty());
+    }
+  }, [sessionStorage.getItem("currentRoom")]);
 
   // Mention helpers
   const onOpenChange = useCallback(_open => {
@@ -104,6 +145,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
 
   const editorStates = editorState => {
     setEditorState(editorState);
+    saveToSessionStorage(editorState.getCurrentContent());
     const blocks = convertToRaw(editorState.getCurrentContent()).blocks;
     const value = blocks
       .map(block => (!block.text.trim() && "\n") || block.text)
@@ -153,46 +195,99 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
   };
   //Preview render
   const [sentAttachedFile, setSentAttachedFile] = useState(null);
-  const [preview, setPreview] = useState("");
+  const [preview, setPreview] = useState([]);
 
   useEffect(() => {
     if (sentAttachedFile) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setPreview(reader.result);
-      };
-      reader.readAsDataURL(sentAttachedFile);
+      setPreview([]); // reset preview
+
+      [...sentAttachedFile].map((file, index) => {
+        const reader = new FileReader();
+        const extension = file.name.substring(file.name.lastIndexOf(".") + 1);
+
+        reader.onloadend = () => {
+          const fileObject = {
+            id: index,
+            name: file.name,
+            src: reader.result,
+            extension: extension
+          };
+          setPreview(prevState => [...prevState, fileObject]);
+        };
+        reader.readAsDataURL(file);
+      });
     } else {
-      setPreview("");
+      setPreview([]);
     }
   }, [sentAttachedFile]);
 
   // on click clear attached file
-  const clearAttached = () => {
-    setSentAttachedFile("");
+  const clearAttached = name => {
+    if (name) {
+      setSentAttachedFile(prev => [...prev].filter(file => file.name !== name));
+    } else {
+      setSentAttachedFile([]);
+      setPreview([]);
+    }
+  };
+
+  // preview component for audios
+  const AudioFilePreview = ({ source }) => {
+    return <audio controls src={source} />;
+  };
+
+  // preview component for documents
+  const DocumentFilePreview = ({ fileName, extension }) => {
+    return (
+      <StyledDocumentPreview>
+        <div>
+          <BsFillFileEarmarkFill style={{ width: "42px", height: "42px" }} />
+        </div>
+        <div style={{ width: "85%" }}>
+          <h6>{fileName}</h6>
+          <p>{extension}</p>
+        </div>
+      </StyledDocumentPreview>
+    );
+  };
+
+  // generic preview component for files of any type
+  const PreviewFile = ({ file }) => {
+    if (file?.src.includes("data:image")) {
+      return <img src={file?.src} alt="Image Preview" />;
+    } else if (file?.src.includes("data:audio")) {
+      return <AudioFilePreview source={file?.src} />;
+    } else if (file?.src.includes("data:video")) {
+      return <video autoPlay muted src={file?.src} />;
+    } else {
+      return (
+        <DocumentFilePreview
+          fileName={file?.name}
+          extension={file?.extension}
+        />
+      );
+    }
+  };
+
+  // used to render the preview on the message input
+  const PreviewItem = () => {
+    return (
+      <div className="previewContainer">
+        {preview?.map(file => {
+          return (
+            <Preview key={file.id}>
+              <PreviewFile file={file} />
+              <button onClick={() => clearAttached(file.name)}>X</button>
+            </Preview>
+          );
+        })}
+      </div>
+    );
   };
 
   return (
     <Wrapper>
       <InputWrapper>
-        {preview ? (
-          <Preview>
-            <img src={preview} alt="Image Preview" />
-            <button
-              style={{
-                position: "absolute",
-                top: "9px",
-                left: "65px",
-                height: "30px",
-                width: "30px",
-                borderRadius: "50%"
-              }}
-              onClick={clearAttached}
-            >
-              X
-            </button>
-          </Preview>
-        ) : null}
         <div className="RichEditor-root">
           <ToolbarTop
             editorState={editorState}
@@ -212,6 +307,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
             plugins={[emojiPlugin, mentionPlugin]}
           />
         </div>
+        {preview?.length > 0 ? <PreviewItem /> : null}
         <ToolbarBottom
           editorState={editorState}
           setEditorState={setEditorState}
@@ -248,6 +344,12 @@ const Wrapper = styled.div`
   flex-direction: column;
   background-color: white;
   width: 100%;
+
+  .previewContainer {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+  }
 `;
 
 const InputWrapper = styled.section`
@@ -292,12 +394,59 @@ const SendButton = styled.button`
   font-weight: 700;
   font-size: 1rem;
 `;
-const Preview = styled.div`
-  width: 5%;
-  height: 0.05%;
-  border-radius: 2px;
+const StyledDocumentPreview = styled.div`
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  padding: 16px 14px;
+  background: #ddd;
+  border-radius: 10px;
 
-  img {
+  h6 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 20px;
+    font-weight: bold;
+  }
+
+  p {
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+`;
+
+const Preview = styled.div`
+  /* width: 5%; */
+  /* height: 0.05%; */
+  width: fit-content;
+  margin: 10px 22px 12px 0;
+  position: relative;
+  flex-shrink: 0;
+  width: fit-content;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  position: relative;
+
+  img,
+  video {
+    width: 95px;
+    height: 90px;
     object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 6px #0000001a;
+  }
+
+  button {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background: #242424;
+    font-weight: 800;
+    font-size: 12px;
+    color: #fff;
   }
 `;
