@@ -3,15 +3,15 @@ export default [
     key: "textOne",
     en: "We use third-party",
     de: "Wir verwenden Dritte",
-    nl: "We gebruiken externe partijen",
+    nl: "Wij gebruiken derden",
     engb: "We use third-party",
     fr: "Nous utilisons une tierce partie",
     zh: "我们使用第三方",
-    ar: "نستخدم طرف ثالث",
-    es: "Utilizamos terceros",
-    it: "Usiamo terze parti",
-    iw: "אנו משתמשים צד שלישי",
-    pt: "Nós usamos terceiros"
+    ar: "نحن نستخدم طرف ثالث",
+    es: "utilizamos a terceros",
+    it: "utilizziamo terze parti",
+    iw: "אנו משתמשים בצדדים שלישיים",
+    pt: "utilizamos terceiros"
   },
   {
     key: "textTwo",
@@ -24,49 +24,49 @@ export default [
     ar: "بسكويت",
     es: "galletas",
     it: "biscotti",
-    iw: "עוגיות",
-    pt: "biscoitos"
+    iw: "אנו משתמשים בצדדים שלישיים",
+    pt: "cookies"
   },
   {
     key: "textThree",
     en: "in order to personalize your site experience.",
     de: "um Ihre Websiteerfahrung zu personalisieren.",
-    nl: "Om uw site-ervaring te personaliseren.",
+    nl: "om uw site-ervaring te personaliseren.",
     engb: "in order to personalize your site experience.",
     fr: "afin de personnaliser votre expérience de site.",
-    zh: "为了个性化您的网站体验。",
-    ar: "من أجل تخصيص تجربة موقعك.",
-    es: "Para personalizar la experiencia de su sitio.",
-    it: "per personalizzare l'esperienza del tuo sito.",
-    iw: "כדי להתאים אישית את חוויית האתר שלך.",
-    pt: "a fim de personalizar a experiência do seu site."
+    zh: "以使你的网站体验个性化",
+    ar: "من أجل تخصيص تجربة موقعك",
+    es: "para personalizar su experiencia en el sitio.",
+    it: "per personalizzare l'esperienza del sito",
+    iw: "על מנת להתאים אישית את חוויית האתר שלך",
+    pt: "a fim de personalizar a sua experiência no site"
   },
   {
     key: "accept",
     en: "Allow",
     de: "Erlauben",
-    nl: "Toestaan",
+    nl: "accepteer",
     engb: "Allow",
     fr: "Permettre",
-    zh: "允许",
+    zh: "接受",
     ar: "السماح",
-    es: "Permitir",
-    it: "Permettere",
-    iw: "להתיר",
-    pt: "Permitir"
+    es: "aceptar",
+    it: "accettare",
+    iw: "לְקַבֵּל",
+    pt: "aceitar"
   },
   {
     key: "decline",
     en: "Decline",
     de: "Ablehnen",
-    nl: "Afwijzen",
+    nl: "daling",
     engb: "Decline",
     fr: "Déclin",
     zh: "衰退",
-    ar: "يتناقص",
-    es: "Disminución",
-    it: "Declino",
+    ar: "انخفاض",
+    es: "descenso",
+    it: "declino",
     iw: "יְרִידָה",
-    pt: "Declínio"
+    pt: "declinar"
   }
 ];

@@ -4,7 +4,10 @@ import { ProfileContext } from "../context/profile-modal.context";
 import { AiOutlineBell, AiOutlineEye, AiOutlineSetting } from "react-icons/ai";
 import { FiMessageCircle, FiGlobe } from "react-icons/fi";
 
+import { useTranslation } from "react-i18next";
+
 const PreferenceMenu = () => {
+  const { t } = useTranslation();
   const { sideBar, setSideBar } = useContext(ProfileContext);
 
   return (
@@ -15,29 +18,29 @@ const PreferenceMenu = () => {
           className={sideBar === 1 ? styles.active : styles.one}
         >
           <AiOutlineBell className={styles.icon} />
-          <p style={{ marginBottom: 0 }}>Notifications</p>
+          <p style={{ marginBottom: 0 }}>{t("notifications")}</p>
         </div>
 
-        <div
+        {/* <div
           onClick={() => setSideBar(3)}
           className={sideBar === 3 ? styles.active : styles.one}
         >
           <AiOutlineEye className={styles.icon} />
           <p style={{ marginBottom: 0 }}>Themes</p>
-        </div>
+        </div> */}
         <div
           onClick={() => setSideBar(4)}
           className={sideBar === 4 ? styles.active : styles.one}
         >
           <FiMessageCircle className={styles.icon} />
-          <p style={{ marginBottom: 0 }}>Messages & Media</p>
+          <p style={{ marginBottom: 0 }}>{t("message_media")}</p>
         </div>
         <div
           onClick={() => setSideBar(5)}
           className={sideBar === 5 ? styles.active : styles.one}
         >
           <FiGlobe className={styles.icon} />
-          <p style={{ marginBottom: 0 }}>Languages & Region</p>
+          <p style={{ marginBottom: 0 }}>{t("language_region")}</p>
         </div>
         {/* <div
           onClick={() => setSideBar(6)}
@@ -61,7 +64,7 @@ const PreferenceMenu = () => {
           className={sideBar === 9 ? styles.active : styles.one}
         >
           <AiOutlineSetting className={styles.icon} />
-          <p style={{ marginBottom: 0 }}>Advanced</p>
+          <p style={{ marginBottom: 0 }}>{t("advanced")}</p>
         </div>
       </div>
     </div>

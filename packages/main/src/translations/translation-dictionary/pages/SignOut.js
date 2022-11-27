@@ -10,7 +10,8 @@ export default [
     es: "Firmado fuera del equipo",
     it: "Firmato dalla squadra",
     he: "חתום מחוץ לצוות",
-    pt: "Assinado fora da equipe"
+    pt: "Assinado fora da equipe",
+    nl: "Uitgelogd bij team"
   },
   {
     key: "signout_workspace",
@@ -23,10 +24,11 @@ export default [
     es: "Espacio de trabajo",
     it: "Area di lavoro",
     he: "סביבת עבודה",
-    pt: "Área de trabalho"
+    pt: "Área de trabalho",
+    nl: "Werkruimte"
   },
   {
-    key: "signout_signoutMessage",
+    key: "signout_newSignoutMessage",
     en: "You have been signed out of Team",
     de: "Sie wurden aus dem Team unterzeichnet",
     enus: "You have been signed out of Team",
@@ -36,7 +38,8 @@ export default [
     es: "Has sido firmado fuera del equipo.",
     it: "Sei stato firmato fuori dalla squadra",
     he: "אתה נחתם מחוץ לצוות",
-    pt: "Você foi assinado fora da equipe"
+    pt: "Você foi assinado fora da equipe",
+    nl: "Je bent afgemeld bij Team"
   },
   {
     key: "signout_loginText",
@@ -49,10 +52,11 @@ export default [
     es: "Acceso",
     it: "Login",
     he: "התחברות",
-    pt: "Conecte-se"
+    pt: "Conecte-se",
+    nl: "inloggen"
   },
   {
-    key: "signout_postLoginText",
+    key: "signout_homeText",
     en: "to another workspace",
     de: "zu einem anderen Arbeitsbereich",
     enus: "to another workspace",
@@ -62,34 +66,7 @@ export default [
     es: "a otro espacio de trabajo",
     it: "a un altro spazio di lavoro",
     he: "אל סביבת עבודה אחרת",
-    pt: "para outro espaço de trabalho."
-  },
-  // for the new signout page
-
-  {
-    key: "signout_homeText",
-    en: "return to home page",
-    de: "zur Startseite zurückkehren",
-    enus: "return to home page",
-    fr: "Retour à la page d'accueil",
-    zh: "返回首页",
-    ar: "العوده للصفحة الرئيسية",
-    es: "regresar a la página principal",
-    it: "torna alla home page",
-    he: "חזור לדף הבית",
-    pt: "Retornar a página inicial"
-  },
-  {
-    key: "signout_newSignoutMessage",
-    en: "You have been successfully logged out of Team",
-    de: "Sie wurden erfolgreich von Team abgemeldet",
-    enus: "You have been successfully logged out of Team",
-    fr: "Vous avez été déconnecté avec succès de l'équipe",
-    zh: "您已成功退出团队",
-    ar: "لقد تم تسجيل خروجك من الفريق بنجاح",
-    es: "Se ha cerrado correctamente la sesión del equipo",
-    it: "Sei stato disconnesso con successo dal Team",
-    he: "ניתקת בהצלחה מהצוות",
-    pt: "Você foi desconectado com sucesso da equipe"
+    pt: "para outro espaço de trabalho.",
+    nl: "naar een andere werkruimte"
   }
 ];

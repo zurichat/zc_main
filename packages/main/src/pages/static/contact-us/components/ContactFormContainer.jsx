@@ -6,6 +6,7 @@ import axios from "axios";
 import { useDropzone } from "react-dropzone";
 import { getUserInfo, BASE_API_URL } from "@zuri/utilities";
 import { Alert, downIcon, arrowRight } from "../assets";
+
 const activeStyle = {
   borderColor: "#2196f3"
 };
@@ -31,9 +32,14 @@ function ContactFormContainer() {
     success: ""
   });
 
+  const [touched, setTouched] = useState(false);
+
+  const emailPattern =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
   useEffect(() => {
     let userInfo = getUserInfo();
-    setUserAuth(userInfo.user.email ? userInfo.user : {});
+    setUserAuth(userInfo.user?.email ? userInfo.user : {});
     setValues(values => ({
       ...values,
       email: userAuth.email ? userAuth.email : values.email
@@ -129,9 +135,22 @@ function ContactFormContainer() {
         }));
       });
   };
+  const textAlign = () => {
+    if (
+      window.localStorage.myLanguage === "ar" ||
+      window.localStorage.myLanguage === "iw"
+    ) {
+      return {
+        textAlign: "right"
+      };
+    }
+  };
 
   return (
-    <div className={`${ContactFormStyle.contact_form_container}`}>
+    <div
+      className={`${ContactFormStyle.contact_form_container}`}
+      style={textAlign()}
+    >
       <form className="" onSubmit={handleSubmit}>
         <div
           className={`mb-3 ${
@@ -142,7 +161,6 @@ function ContactFormContainer() {
             {t("formEmail")}
           </label>
           <input
-            type="email"
             className={`form-control ${ContactFormStyle.form_control}`}
             id="email"
             name="email"
@@ -150,9 +168,15 @@ function ContactFormContainer() {
             value={values.email}
             placeholder="You@example.com"
             aria-describedby="email"
+            type="email"
             required
+            onBlur={() => setTouched(true)}
           />
-          {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
+          {!emailPattern.test(values.email) && touched && (
+            <div className={ContactFormStyle.error_span}>
+              <span>Input valid Email</span>
+            </div>
+          )}
         </div>
 
         <div
@@ -185,7 +209,7 @@ function ContactFormContainer() {
                 type="button"
                 className={`btn ${ContactFormStyle.btn_primary} ${ContactFormStyle.btn_topic_select} shadow-none text-nowrap fw-bold mb-3`}
               >
-                {currentDetails.topic}
+                {t(currentDetails.topic)}
               </button>
             </div>
             <p className={`fw-bold mb-3`} style={{ fontSize: "14px" }}>
@@ -211,7 +235,7 @@ function ContactFormContainer() {
                         aria-expanded="true"
                         aria-controls="collapseOne"
                       >
-                        <span>{title}</span>{" "}
+                        <span>{t(title)}</span>{" "}
                         <img src={downIcon} className={`ms-1`} alt="down" />
                       </button>
                     </h2>
@@ -223,7 +247,7 @@ function ContactFormContainer() {
                     >
                       <div
                         className={`accordion-body ${ContactFormStyle.accordion_body}`}
-                        dangerouslySetInnerHTML={{ __html: details }}
+                        dangerouslySetInnerHTML={{ __html: t(details) }}
                       />
                     </div>
                   </div>
@@ -252,7 +276,7 @@ function ContactFormContainer() {
                         cursor: "pointer"
                       }}
                     >
-                      <a style={{ fontSize: "15px" }}>{article.title}</a>
+                      <a style={{ fontSize: "15px" }}>{t(article.title)}</a>
                       <img
                         src={arrowRight}
                         alt=""
@@ -282,7 +306,7 @@ function ContactFormContainer() {
                 className={`btn ${ContactFormStyle.btn_topic} text-nowrap fw-bold rounded-pill mb-3 me-md-3`}
                 onClick={handleTopicChange(detail)}
               >
-                {detail.topic}
+                {t(detail.topic)}
               </button>
             ))}
           </div>
@@ -326,6 +350,7 @@ function ContactFormContainer() {
                 onChange={handleChange}
                 placeholder={t("additionalInfo")}
                 rows="3"
+                required
               ></textarea>
             </div>
 

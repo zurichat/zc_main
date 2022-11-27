@@ -5,7 +5,11 @@ import { AiOutlineQuestionCircle } from "react-icons/ai";
 import { authAxios } from "../utils/api";
 import { ProfileContext } from "../context/profile-modal.context";
 
+import { useTranslation } from "react-i18next";
+
 const NotificationPreference = () => {
+  const { t } = useTranslation();
+
   const { user, orgId } = useContext(ProfileContext);
   const [active, setActive] = useState("");
   const [active1, setActive1] = useState("");
@@ -252,10 +256,10 @@ const NotificationPreference = () => {
       {/*  THE SECTION OF THE CONTENT */}
       <div className={standardStyles.modalContent}>
         <div className={styles.itemTitle1}>
-          <h4 className={styles.titleLarge}>Notify me about </h4>{" "}
+          <h4 className={styles.titleLarge}>{t("notify_me_about")}</h4>{" "}
           <span className={styles.spanL}>
             <AiOutlineQuestionCircle className={styles.quest} />
-            Learn about notifications
+            {t("learn_more_notifications")}
           </span>
         </div>
         <form>
@@ -270,7 +274,7 @@ const NotificationPreference = () => {
                 }
                 onChange={handleAllMessages}
               />{" "}
-              <label htmlFor="all-messages">All messages</label>
+              <label htmlFor="all-messages">{t("notify_all")}</label>
             </div>
 
             <div className={styles.radio}>
@@ -282,7 +286,7 @@ const NotificationPreference = () => {
                 }
                 onChange={handleDirectMessages}
               />
-              <label htmlFor="direct-messages">Direct messages</label>
+              <label htmlFor="direct-messages">{t("notify_dm")}</label>
             </div>
             <div className={styles.radio}>
               <input
@@ -291,7 +295,7 @@ const NotificationPreference = () => {
                 checked={notificationSettings?.notify_me_about === "none"}
                 onChange={handleNothingChange}
               />
-              <label htmlFor="none">Nothing</label>
+              <label htmlFor="none">{t("notify_nothing")}</label>
             </div>
           </div>
           {/* <div className={styles.markbox}>
@@ -329,7 +333,7 @@ const NotificationPreference = () => {
             <label htmlFor="for-thread">Notify me of replies to thread</label>
           </div> */}
         </form>
-        <hr className={standardStyles.hrLine} />
+        {/* <hr className={standardStyles.hrLine} /> */}
         {/* <div className={styles.itemTitle2}>
           <h4 className={styles.titleSmall}>Keywords</h4>{" "}
           <span className={styles.spanBlock}>
@@ -345,15 +349,15 @@ const NotificationPreference = () => {
         </div> */}
         {/* <hr className={styles.hrNot} /> */}
 
-        <div className={styles.itemTitle2}>
+        {/* <div className={styles.itemTitle2}>
           <h4 className={styles.titleSmall}>Schedule Notification </h4>{" "}
           <span className={styles.spanBlock}>
             You'll only receive notifications in the hours that you choose.
             Outside of those times, notifications will be paused. <br />{" "}
             <span className={styles.spanSmall}>Learn more</span>
           </span>
-        </div>
-        <div className={styles.schedule}>
+        </div> */}
+        {/* <div className={styles.schedule}>
           <ul className={styles.list} style={{ paddingLeft: "0" }}>
             <li className={standardStyles.spacingRight}>
               <div className={styles.select}>
@@ -389,7 +393,7 @@ const NotificationPreference = () => {
               <TextInput label="to" />
             </li>
           </ul>
-        </div>
+        </div> */}
 
         {/* <hr className={styles.hrNot} /> */}
 
@@ -461,7 +465,7 @@ const NotificationPreference = () => {
             </div>
           </div>
         </div> */}
-        <hr className={standardStyles.hrLine} />
+        {/* <hr className={standardStyles.hrLine} /> */}
 
         {/* <div className={styles.section2}>
           <div className={styles.itemTitle2}>
