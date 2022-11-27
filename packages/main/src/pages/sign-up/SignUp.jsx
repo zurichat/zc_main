@@ -88,6 +88,7 @@ export default function Index() {
         }
       });
   };
+
   return (
     <main id={styles.authPageWrapper}>
       {showDialog && <EmailVerificationModal email={email} />}
@@ -98,24 +99,24 @@ export default function Index() {
 
       <section id={styles.authFormContainer}>
         <AuthFormWrapper
-          header={t("signUpheader")}
+          header={t("header")}
           subHeader=""
-          googleHeader={t("googleHeader")}
-          topLineText={t("topLineText")}
-          submitButtonName={t("signUpsubmitButtonName")}
+          googleHeader={t("google_header")}
+          topLineText={t("top_line_text")}
+          submitButtonName={t("submit_button_name")}
           disabled={!(name && email && password && tos)}
           error={error}
           handleSubmit={handleSubmit}
-          bottomLine={t("signUpbottomLine")}
-          bottomLink={t("signUpbottomLink")}
+          bottomLine={t("bottom_line")}
+          bottomLink={t("bottom_link")}
           bottomLinkHref="login"
         >
           <AuthInputBox
             className={`${styles.inputElement}`}
             id="name"
-            name={t("fullName")}
+            name={t("full_name")}
             type="text"
-            placeholder={t("fullNamePlaceholder")}
+            placeholder={t("full_name_placeholder")}
             value={name}
             setValue={setName}
             // onFocus={displayImage}
@@ -124,9 +125,9 @@ export default function Index() {
           <AuthInputBox
             className={`${styles.inputElement}`}
             id="email"
-            name={t("emailAddress")}
+            name={t("email_address")}
             type="email"
-            placeholder={t("emailAddressPlaceholder")}
+            placeholder={t("email_address_placeholder")}
             value={email}
             setValue={setEmail}
             error={emailerror}
@@ -137,7 +138,7 @@ export default function Index() {
             id="password"
             name={t("password")}
             type="password"
-            placeholder={t("inputPassword")}
+            placeholder={t("input_password")}
             value={password}
             setValue={setPassword}
             // onFocus={displayImage}
@@ -156,17 +157,17 @@ export default function Index() {
               // onFocus={displayImage}
             />
             <span className={`${styles.tosText}`}>
-              {t("privacyAgreement")}
+              {t("privacy_agreement")}
               {""}
               <Link to="/terms">
-                {t("termsOfService")}
+                {t("terms_of_service")}
                 {""}{" "}
               </Link>
               &
               <Link to="/privacy">
                 {" "}
                 {""}
-                {t("privacy")}
+                {t("privacy_policy")}
               </Link>
             </span>
           </div>

@@ -21,9 +21,6 @@ export const TopBarWrapperStyle = styled.div`
 `;
 
 export const SidebarWrapperStyle = styled.div`
-  // flex-basis: 20%;
-  // max-width: 300px;
-  // min-width: 230px;
   height: 100%;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -46,5 +43,6 @@ export const WorkspaceWrapperStyle = styled.div`
 
   & > #zuri-plugin-load-section {
     height: 100%;
+    width: 100%;
   }
 `;
