@@ -7,13 +7,11 @@ const ToggleSwitch = ({ label, onChange }) => {
   const user = JSON.parse(sessionStorage.getItem("organisations"));
   const room = window.location.href.split("/").at(6);
   const BASE_URL = "https://chat.zuri.chat";
-  //const BASE_URL = "https://chat.zuri.chat";
 
   const [data, setData] = useState(null);
-  const [state, setState] = useState(false);
+  const [state, setState] = useState(true);
   const handleChange = () => {
     setState(!state);
-    console.log(state);
   };
 
   useEffect(() => {
@@ -30,7 +28,6 @@ const ToggleSwitch = ({ label, onChange }) => {
     console.log("loading");
     if (data !== null) {
       const newData = { ...data, is_private: true };
-      console.log(newData);
       axios
         .put(
           `${BASE_URL}/api/v1/org/${org_id}/members/${tina}/rooms/${room}`,

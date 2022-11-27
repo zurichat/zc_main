@@ -22,7 +22,6 @@ const PrivateChannel = ({ closeEdit }) => {
 
   const privateChannel = () => {
     const tina = user?.find(x => x.id === org_id)?.member_id;
-    console.log("loading");
     if (data !== null) {
       const newData = { ...data, is_private: true };
       axios
