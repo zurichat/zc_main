@@ -131,13 +131,13 @@ const CommentBoard = ({
                   <MessagePane key={idx} message={message} />
                 ))}
               </CommentMessagesWrapper>
+              <MessagePaneWrapper>
+                <MessagePaneInput
+                  sendMessageHandler={commentBoardConfig.sendChatMessageHandler}
+                  addToMessages={addToMessages}
+                />
+              </MessagePaneWrapper>
             </div>
-            <MessagePaneWrapper>
-              <MessagePaneInput
-                sendMessageHandler={commentBoardConfig.sendChatMessageHandler}
-                addToMessages={addToMessages}
-              />
-            </MessagePaneWrapper>
           </CommentBoardWrapper>
         </div>
       ) : (

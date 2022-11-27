@@ -6,14 +6,14 @@ const CommentBoardWrapper = styled.aside`
   z-index: 999;
   width: 350px;
   position: relative;
-  height: 85vh;
+  height: 100%;
   background-color: #fff;
   padding: 0 0 20px 0;
   overflow-y: auto;
   overflow-x: none;
 
   .msg__wrapper {
-    height: 82vh;
+    height: 100%;
     overflow-y: auto;
     overflow-x: none;
   }
@@ -76,7 +76,7 @@ const CommentMessagesWrapper = styled.div`
   }
 
   .message {
-    width: 90%;
+    width: 100%;
   }
 `;
 const CommentMessageItem = styled.div`
@@ -109,16 +109,11 @@ export const ParentMessage = styled.div`
   }
 
   .message {
-    width: 90%;
+    width: 100%;
   }
 `;
 
-export const MessagePaneWrapper = styled.div`
-  position: fixed;
-  bottom: 22px;
-  right: 0;
-  border: 2px solid red;
-`;
+export const MessagePaneWrapper = styled.div``;
 
 export {
   CommentBoardWrapper,
