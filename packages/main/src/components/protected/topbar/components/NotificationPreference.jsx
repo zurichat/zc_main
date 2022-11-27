@@ -16,7 +16,7 @@ const NotificationPreference = () => {
   const [notificationSettings, setNotificationSettings] = useState(
     user.settings?.notifications
   );
-  console.log(user.settings?.notifications);
+
   const [keywordInput, setKeywordInput] = useState("");
   const [durationInput, setDurationInput] = useState("");
   const [durations] = useState([
@@ -39,23 +39,6 @@ const NotificationPreference = () => {
   ]);
   const [notificationSend, setNotificationSend] = useState("");
 
-  const getData = () => {
-    authAxios
-      .get(`/organizations/${user.org_id}/members/${user._id}`)
-      .then(res => {
-        console.log("get data res =>", res.data);
-        // setState({ loading: false })
-      })
-      .catch(err => {
-        // console.error(err?.response?.data)
-        // setState({ loading: false })
-      });
-    console.log(user, "from profile context");
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
   // const [dataState, setDataState] = useState({
   //   notify_me_about: "",
   //   use_different_settings_mobile: false,
@@ -86,23 +69,12 @@ const NotificationPreference = () => {
   // })
 
   const setData = notification => {
-    authAxios
-      .patch(
-        `/organizations/${user.org_id}/members/${user._id}/settings/notification`,
-        notification
-      )
-      .then(res => {
-        // console.log("save data res =>", res.data)
-        // setState({ loading: false })
-      })
-      .catch(err => {
-        // console.error(err?.response?.data)
-        // setState({ loading: false })
-      });
+    authAxios.patch(
+      `/organizations/${user.org_id}/members/${user._id}/settings/notification`,
+      notification
+    );
   };
 
-  // console.log("show user =>", user)
-  // console.log("notify =>", notificationSettings)
   const handleKeywordChange = e => {
     setKeywordInput(e.target.value);
     let newKeyword = keywordInput;
