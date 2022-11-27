@@ -86,10 +86,6 @@ function MessageRoomDetailsDialog({
         })
         .catch(e => {
           setErrorModal("Could not fetch description");
-
-          setTimeout(() => {
-            setErrorModal("");
-          }, [4000]);
         });
     };
 
@@ -97,8 +93,13 @@ function MessageRoomDetailsDialog({
       fetchData();
     }
 
+    const timer = setTimeout(() => {
+      setErrorModal("");
+    }, [4000]);
+
     return () => {
       isFetched = false;
+      clearTimeout(timer);
     };
   }, []);
 

@@ -57,9 +57,11 @@ const EditDescriptionModal = ({
           </CloseBtn>
         </ModalTop>
         <Modalbody>
-          <textarea ref={descriptionRef} placeholder="Add description">
-            {description}
-          </textarea>
+          <textarea
+            ref={descriptionRef}
+            defaultValue={description}
+            placeholder="Add description"
+          ></textarea>
 
           <p>Let people know what this channel is for.</p>
 
