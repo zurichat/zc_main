@@ -2,34 +2,44 @@ import ChannelModal from "./ChannelModal";
 import styles from "./archive-channel.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
+
 const ArchiveChannel = ({ closeEdit }) => {
   const room = window.location.href.split("/").at(6);
   const organizationID = localStorage.getItem("currentWorkspace") || null;
   const BASE_URL = "https://chat.zuri.chat";
   const user = JSON.parse(sessionStorage.getItem("user")) || null;
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [prevData, setPrevData] = useState([]);
 
-  const [data, setData] = useState(null);
   useEffect(() => {
     axios
       .get(`${BASE_URL}/api/v1/org/${organizationID}/rooms/${room}`)
       .then(res => {
-        setData(res.data.data);
+        const data = res.data.data;
+        setPrevData(data);
+        if (data.room_members[`${user.id}`].role === "admin") {
+          setIsAdmin(true);
+        }
       })
-      .catch(e => console.log(e));
+      .catch(e => console.error(e));
   });
   const handleArchiveChannel = () => {
-    if (data !== null) {
-      const newData = { ...data, is_archived: true };
+    if (prevData !== null) {
+      const newData = { ...prevData, is_archived: true };
       axios
         .put(
           `${BASE_URL}/api/v1/org/${organizationID}/members/${user.id}/rooms/${room}`,
           newData
         )
         .then(res => {
+          toast.success("Successfully archived");
           console.log(res);
-          window.location.reload();
+          setTimeout(() => {
+            window.location.reload();
+          }, 2000);
         })
-        .catch(er => console.log(er));
+        .catch(er => console.error(er));
     }
   };
   return (
@@ -38,6 +48,7 @@ const ArchiveChannel = ({ closeEdit }) => {
       full
       archiveTitle="Archive this Channel for everyone?"
     >
+      <div className={styles.modal}></div>
       <div className={styles.content}>
         <p className={styles.p}>
           When you archive a channel, it's archived for everyone. That means...
@@ -57,12 +68,20 @@ const ArchiveChannel = ({ closeEdit }) => {
           And you can always unarchive the channel in the future, if you'd like.
         </p>
         <div className={styles.button}>
-          <button className={styles.button4}>Cancel</button>
-          <button className={styles.button2} onClick={handleArchiveChannel}>
-            Archive Channel
+          <button className={styles.button4} onClick={closeEdit}>
+            Cancel
           </button>
+
+          {isAdmin ? (
+            <button className={styles.button3} onClick={handleArchiveChannel}>
+              Archive Channel
+            </button>
+          ) : (
+            <h3>You are not admin</h3>
+          )}
         </div>
       </div>
+      <Toaster />
     </ChannelModal>
   );
 };
