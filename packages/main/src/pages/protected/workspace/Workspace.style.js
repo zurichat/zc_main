@@ -44,5 +44,7 @@ export const WorkspaceWrapperStyle = styled.div`
   & > #zuri-plugin-load-section {
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 `;
