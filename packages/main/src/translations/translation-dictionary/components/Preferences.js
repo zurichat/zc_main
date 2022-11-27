@@ -128,9 +128,7 @@ export default [
   {
     key: "language",
     en: "Language",
-    de: "Sprache",
-    nl: "Taal",
-    engb: "Language",
+
     fr: "Langue",
     zh: "语言",
     ar: "لغة",
