@@ -17,6 +17,7 @@ import {
 } from "./Workspace.style";
 import styles from "./Workspace.module.css";
 import axios from "axios";
+import { setupCache } from "axios-cache-adapter";
 
 // import { GeneralLoading } from "../../../components";
 
@@ -28,18 +29,36 @@ import {
   BsFillCaretDownFill,
   BsWindowSidebar
 } from "react-icons/bs";
+import { useMediaQuery } from "@chakra-ui/react";
+
+const cache = setupCache({
+  // check if response header has a specification for caching
+  readHeaders: true,
+  // if not, cache API response for 3 minutes
+  maxAge: 3 * 60 * 1000,
+  // {debug: true} logs caching info to console.
+  debug: false
+});
+
+const instance = axios.create({
+  adapter: cache.adapter
+});
 
 export default function Index() {
+  const [tablet] = useMediaQuery("(max-width: 769px");
   const { workspaceId } = useParams();
   const location = useLocation();
   const history = useHistory();
   const match = useRouteMatch(`/workspace/${workspaceId}`);
   const pluginsName = ["plugin-music"];
   const [workspaces, setWorkspaces] = useState([]);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
   const switchWorkspace = id => {
     console.log(id);
     window.location.href = `/workspace/${id}/plugin-chat/all-dms`;
   };
+
   const getAcronymn = sentence => {
     let matches = sentence.match(/\b(\w)/g); // ['J','S','O','N']
     let acronym = matches.join("");
@@ -47,17 +66,20 @@ export default function Index() {
   };
 
   const fetchUserWorkspacesResponse = async () => {
-    let userData = JSON.parse(localStorage.getItem("userData"));
-    let response = await axios.get(
-      `https://api.zuri.chat/users/${userData.user.email}/organizations`,
-      {
-        headers: {
-          Authorization: `Bearer ${userData.token}`
+    let userData = JSON.parse(sessionStorage.getItem("user"));
+    if (userData) {
+      let response = await instance.get(
+        `https://api.zuri.chat/users/${userData.email}/organizations`,
+        {
+          headers: {
+            Authorization: `Bearer ${userData.token}`
+          }
         }
-      }
-    );
-    let userSpace = response.data.data;
-    setWorkspaces(userSpace);
+      );
+
+      let userSpace = response.data.data;
+      setWorkspaces(userSpace);
+    }
   };
 
   useEffect(() => {
@@ -85,22 +107,33 @@ export default function Index() {
     fetchUserWorkspacesResponse();
   }, []);
 
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
   return (
     <>
       <GlobalWorkSpaceStyle />
       <TopBarWrapperStyle>
-        <TopBar />
+        <TopBar toggleSidebar={toggleSidebar} />
       </TopBarWrapperStyle>
 
       <div
         style={{ display: "flex", height: "calc(100vh - 48px)" }}
         id="workspace-all"
       >
-        <div id={`${styles.workspaceSidebar}`}>
-          <div id={`${styles.workspaceBox}`}>
-            {/* {workspaces} */}
-            {workspaces &&
-              workspaces?.map((workSpace, index) => (
+        {/* only show extra side bar if (workspaces.length > 1) */}
+        {workspaces && workspaces.length > 1 && (
+          <div
+            id={`${styles.workspaceSidebar}`}
+            {...(tablet &&
+              !sidebarOpen && {
+                className: styles.workspaceSidebarClosed
+              })}
+          >
+            <div id={`${styles.workspaceBox}`}>
+              {/* {workspaces} */}
+              {workspaces?.map((workSpace, index) => (
                 <div
                   className={`${styles.workspaceWrap}`}
                   role="button"
@@ -132,41 +165,42 @@ export default function Index() {
                   </div>
                 </div>
               ))}
-          </div>
-          <div className={`${styles.lowerDrawer}`}>
-            <Link
-              to="/choose-workspace"
-              className={`${styles.workspaceAdd}`}
-              role="button"
-              title="Add a workspace"
-            >
-              <div className={`${styles.workspacehelp}`}>
-                <BsPlusCircle />
-              </div>
-              <p className={`${styles.optionName}`}>Add a workspace</p>
-            </Link>
-            <div
-              className={`${styles.workspaceAdd}`}
-              role="button"
-              title="Preferences"
-            >
-              <div className={`${styles.workspacehelp}`}>
-                <BsGearFill />
-              </div>
-              <p className={`${styles.optionName}`}>Preferences</p>
             </div>
-            <div
-              className={`${styles.workspaceAdd}`}
-              role="button"
-              title="Help"
-            >
-              <div className={`${styles.workspacehelp}`}>
-                <BsFillQuestionCircleFill />
+            <div className={`${styles.lowerDrawer}`}>
+              <Link
+                to="/choose-workspace"
+                className={`${styles.workspaceAdd}`}
+                role="button"
+                title="Add a workspace"
+              >
+                <div className={`${styles.workspacehelp}`}>
+                  <BsPlusCircle />
+                </div>
+                <p className={`${styles.optionName}`}>Add a workspace</p>
+              </Link>
+              <div
+                className={`${styles.workspaceAdd}`}
+                role="button"
+                title="Preferences"
+              >
+                <div className={`${styles.workspacehelp}`}>
+                  <BsGearFill />
+                </div>
+                <p className={`${styles.optionName}`}>Preferences</p>
               </div>
-              <p className={`${styles.optionName}`}>Help</p>
+              <div
+                className={`${styles.workspaceAdd}`}
+                role="button"
+                title="Help"
+              >
+                <div className={`${styles.workspacehelp}`}>
+                  <BsFillQuestionCircleFill />
+                </div>
+                <p className={`${styles.optionName}`}>Help</p>
+              </div>
             </div>
           </div>
-        </div>
+        )}
         <SidebarWrapperStyle>
           <Sidebar />
         </SidebarWrapperStyle>
