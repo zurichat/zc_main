@@ -25,9 +25,10 @@ import {
   WhyZuriChat,
   PrivacyPage
 } from "./pages";
-import WhyZuri from "./pages/static/whyzurichat";
 import TermsOfService from "../src-old/pages/termsOfService/index";
 import { useAuth } from "./auth/use-auth";
+import SettingsHome from "../src/pages/protected/settings-home/SettingsHome";
+import AccountProfile from "./pages/protected/account-profile/AccountProfile";
 
 const { Workspace, CreateWorkspace, ChooseWorkspace } = lazily(() =>
   import("./pages/protected")
@@ -95,7 +96,6 @@ const App = () => (
           <Route path="/whyzurichat" component={WhyZuriChat} />
           <Route path="/privacy" component={PrivacyPage} />
           <Route path="/terms" component={TermsOfService} />
-          <Route path="/whyzurichat" component={WhyZuri} />
 
           <ProtectFromAuthRoute exact path="/login">
             <Login />
@@ -105,6 +105,12 @@ const App = () => (
           </ProtectFromAuthRoute>
           <ProtectedRoute exact path="/signout">
             <NewSignOut />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings">
+            <SettingsHome />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings/accountsProfile">
+            <AccountProfile />
           </ProtectedRoute>
           <ProtectedRoute exact path="/choose-workspace">
             {withSuspense(ChooseWorkspace)}
