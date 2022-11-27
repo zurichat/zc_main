@@ -26,7 +26,7 @@
   align-items: center;
 }
 .workspaceWrap:first-child {
-  margin-top: 20px;
+  margin-top: 12px;
 }
 
 .workspaceWrap {
@@ -76,8 +76,8 @@
 }
 
 .currentWorkspace {
-  border-radius: 10px;
-  border: 3px solid #ddd;
+  border-radius: 5px;
+  border: 2px solid rgb(216, 248, 239);
   text-align: center;
   margin-bottom: 5px;
   padding: 0.5px;
