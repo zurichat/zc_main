@@ -67,10 +67,7 @@ export default function TopNavigationBar() {
             className={`d-inline-block align-top ${TopNavigationBarStyles.image}`}
             width={40}
           />
-          <span
-            translate="no"
-            className={`mb-2 ${TopNavigationBarStyles.zuriChat}`}
-          >
+          <span translate="no" className={`${TopNavigationBarStyles.zuriChat}`}>
             Zuri Chat
           </span>
         </Link>
