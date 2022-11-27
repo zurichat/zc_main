@@ -4,34 +4,46 @@ import ChannelModal from "./ChannelModal";
 import styles from "./archive-channel.module.css";
 import useChannel from "../auth/useChannel";
 
-const PrivateChannel = ({ closeEdit }, props) => {
+const PrivateChannel = ({ closeEdit }) => {
   const org_id = localStorage.getItem("currentWorkspace");
-  const orgs = JSON.parse(sessionStorage.getItem("organisations"));
+  const user = JSON.parse(sessionStorage.getItem("organisations"));
+  const room = window.location.href.split("/").at(6);
   const [memberId, setMemberId] = useState("");
-  const [errorDetail, setErrorDetail] = useState(null);
-  const [laeveData, setLeaveData] = useState(null);
+  const BASE_URL = "https:chat.zuri.chat";
+  const member_id = user[0];
+
+  //const [errorDetail, setErrorDetail] = useState(null);
+  //const [laeveData, setLeaveData] = useState(null);
   //const [state, setState]=useState(false)
 
+  const [data, setData] = useState(null);
+
   useEffect(() => {
-    setMemberId(orgs?.find(x => x.id == org_id)?.member_id);
-  }, []);
+    axios
+      .get(`${BASE_URL}/api/v1/org/${org_id}/rooms/${room}`)
+      .then(res => {
+        setData(res.data.data);
+        //console.log(`response is ${JSON.stringify(res.data.data)}`)
+      })
+      .catch(e => console.log(e));
+  }, [5]);
 
-  const privateChannel = e => {
-    let ourCurrentRoom = sessionStorage.getItem("currentRoom");
-
-    console.log(ourCurrentRoom, memberId, org_id);
-
-    const token = sessionStorage.getItem("token");
-
-    axios.put(
-      `https://chat.zuri.chat/api/v1/org/${org_id}/members/${memberId}/rooms/${ourCurrentRoom}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json"
-        }
-      }
-    );
+  const privateChannel = () => {
+    const tina = user?.find(x => x.id == org_id)?.member_id;
+    if (data !== null) {
+      const newData = { ...data, is_private: true };
+      console.log;
+      axios
+        .put(
+          `${BASE_URL}/api/v1/org/${org_id}/members/${tina}/rooms/${room}`,
+          newData
+        )
+        .then(res => {
+          console.log(res);
+          window.location.reload();
+        })
+        .catch(e => console.log(e));
+    }
   };
 
   return (
@@ -50,12 +62,7 @@ const PrivateChannel = ({ closeEdit }, props) => {
         </ul>
         <div className={styles.button}>
           <button className={styles.button4}>Cancel</button>
-          <button
-            className={styles.button2}
-            onClick={() => {
-              privateChannel();
-            }}
-          >
+          <button className={styles.button2} onClick={privateChannel}>
             Private Channel
           </button>
         </div>

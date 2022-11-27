@@ -249,19 +249,19 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
     );
   };
 
-  const PreviewFile = ({ file }) => {
-    if (file.src.includes("data:image")) {
-      return <img src={file.src} alt="Image Preview" />;
-    } else if (file.src.includes("data:audio")) {
-      return <AudioFilePreview source={file.src} />;
-    } else if (file.src.includes("data:video")) {
-      return <video autoPlay muted src={file.src} />;
-    } else {
-      return (
-        <DocumentFilePreview fileName={file.name} extension={file.extension} />
-      );
-    }
-  };
+  // const PreviewFile = ({ file }) => {
+  //   if (file.src.includes("data:image")) {
+  //     return <img src={file.src} alt="Image Preview" />;
+  //   } else if (file.src.includes("data:audio")) {
+  //     return <AudioFilePreview source={file.src} />;
+  //   } else if (file.src.includes("data:video")) {
+  //     return <video autoPlay muted src={file.src} />;
+  //   } else {
+  //     return (
+  //       <DocumentFilePreview fileName={file.name} extension={file.extension} />
+  //     );
+  //   }
+  // };
 
   const PreviewItem = () => {
     return (
@@ -276,31 +276,36 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
         })}
       </div>
     );
-  const clearAttached = () => {
-    setPreview("");
-    setSentAttachedFile("");
   };
-
-  const AudioFilePreview = ({ source }) => {
-    return <audio controls src={source} />;
-  };
-
-  const DocumentFilePreview = ({ fileName, extension }) => {
-    return (
-      <StyledDocumentPreview>
-        <div>
-          <BsFillFileEarmarkFill style={{ width: "42px", height: "42px" }} />
-        </div>
-        <div style={{ width: "85%" }}>
-          <h6>{fileName}</h6>
-          <p>{extension}</p>
-        </div>
-      </StyledDocumentPreview>
-    );
-  };
-
+  // const clearAttached = () => {
+  //   setPreview("");
+  //   setSentAttachedFile("");
+  // };
+  //
+  // const AudioFilePreview = ({ source }) => {
+  //   return <audio controls src={source} />;
+  // };
+  //
+  // const DocumentFilePreview = ({ fileName, extension }) => {
+  //   return (
+  //     <StyledDocumentPreview>
+  //       <div>
+  //         <BsFillFileEarmarkFill style={{ width: "42px", height: "42px" }} />
+  //       </div>
+  //       <div style={{ width: "85%" }}>
+  //         <h6>{fileName}</h6>
+  //         <p>{extension}</p>
+  //       </div>
+  //     </StyledDocumentPreview>
+  //   );
+  // };
+  //
   const PreviewFile = () => {
     console.log(sentAttachedFile);
+    if (!sentAttachedFile || !sentAttachedFile.name) {
+      return <div>No data</div>;
+    }
+
     let fileName = sentAttachedFile.name;
     let extension = fileName.substring(fileName.lastIndexOf(".") + 1);
 
@@ -342,7 +347,7 @@ const MessagePaneInput = ({ onSendMessage, users, onAttachFile }) => {
             </button>
           </Preview>
         ) : null}
-        
+
         <div className="RichEditor-root">
           <ToolbarTop
             editorState={editorState}
