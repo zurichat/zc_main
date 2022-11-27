@@ -241,7 +241,7 @@ const Content = () => {
           using the Services. Other Information. Zurichat also collects,
           generates and/or receives Other Information:
         </p>
-        <ul className="privacy-info-">
+        <ul className="privacy-info-list">
           <li>
             <strong>Workspace and account information </strong> - To create or
             update a Workspace account, you or your Customer (e.g. your
