@@ -202,7 +202,7 @@ const Profile = () => {
           <div className={styles.infoContent}>{currentTime}</div>
         </div>
 
-        <div className={styles.social}>
+        {/**<div className={styles.social}>
           <div className={styles.icons}>
             <img src={linkedin} alt="linkedin" />
           </div>
@@ -218,7 +218,7 @@ const Profile = () => {
           <div className={styles.icons}>
             <img src={instagram} alt="linkedin" />
           </div>
-        </div>
+            </div> */}
       </div>
     </div>
   );

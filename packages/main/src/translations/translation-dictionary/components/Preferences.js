@@ -62,7 +62,7 @@ export default [
 
   {
     key: "language",
-    en: "Laguage",
+    en: "Language",
     fr: "Langue",
     de: "Taal"
   },
