@@ -5,12 +5,11 @@
   color: #fff;
   border-left: 1px solid #fff;
   box-sizing: border-box;
-  padding: 18px 16px;
+  padding: 3px 16px;
   display: flex !important;
   font-size: 10px;
   justify-content: space-between;
-  position: fixed;
-  top: 44px;
+
   width: 100%;
   z-index: 1;
 }
