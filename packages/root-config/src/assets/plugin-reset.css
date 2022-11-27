@@ -19,8 +19,3 @@ div[id*="zuri"] {
   width: 100%;
   overflow: hidden;
 }
-div[id*="zuritranslate"]{
-  text-align: right;
-  width: 100%;
-  overflow: hidden;
-}
