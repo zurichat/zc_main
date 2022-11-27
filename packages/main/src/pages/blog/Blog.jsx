@@ -1,5 +1,7 @@
 import React from "react";
 import style from "./Blog.module.css";
+import PreviousArrow from "./assets/Vector.png";
+import NextArrow from "./assets/Vector1.png";
 
 export default function index() {
   return (
@@ -21,8 +23,10 @@ export default function index() {
             <div className={`${style.grid}`}>
               <div>
                 <div className={`${style.rectangle}`}></div>
-                <p>Zuri releases a new feature to aid studying</p>
-                <p>
+                <p className={`${style.news__headlines}`}>
+                  Zuri releases a new feature to aid studying
+                </p>
+                <p className={`${style.news__description}`}>
                   To make learn and team collaboration efficient and effective,
                   zuri is set to launch a new tools on 23/12/2022.
                 </p>
@@ -30,8 +34,10 @@ export default function index() {
 
               <div>
                 <div className={`${style.rectangle}`}></div>
-                <p>Everything you need to know about Zuri Chat.</p>
-                <p>
+                <p className={`${style.news__headlines}`}>
+                  Everything you need to know about Zuri Chat.
+                </p>
+                <p className={`${style.news__description}`}>
                   To make learn and team collaboration efficient and effective,
                   zuri is set to launch a new tools on 23/12/2022.
                 </p>
@@ -39,8 +45,10 @@ export default function index() {
 
               <div>
                 <div className={`${style.rectangle}`}></div>
-                <p>Everything you need to know about Zuri Chat.</p>
-                <p>
+                <p className={`${style.news__headlines}`}>
+                  Everything you need to know about Zuri Chat.
+                </p>
+                <p className={`${style.news__description}`}>
                   To make learn and team collaboration efficient and effective,
                   zuri is set to launch a new tools on 23/12/2022.
                 </p>
@@ -48,8 +56,10 @@ export default function index() {
 
               <div>
                 <div className={`${style.rectangle}`}></div>
-                <p>Everything you need to know about Zuri Chat.</p>
-                <p>
+                <p className={`${style.news__headlines}`}>
+                  Everything you need to know about Zuri Chat.
+                </p>
+                <p className={`${style.news__description}`}>
                   To make learn and team collaboration efficient and effective,
                   zuri is set to launch a new tools on 23/12/2022.
                 </p>
@@ -64,8 +74,10 @@ export default function index() {
             <div className={`${style.grid}`}>
               <div>
                 <div className={`${style.rectangle}`}></div>
-                <p>Zuri releases a new feature to aid studying</p>
-                <p>
+                <p className={`${style.news__headlines}`}>
+                  Zuri releases a new feature to aid studying
+                </p>
+                <p className={`${style.news__description}`}>
                   To make learn and team collaboration efficient and effective,
                   zuri is set to launch a new tools on 23/12/2022.
                 </p>
@@ -73,8 +85,10 @@ export default function index() {
 
               <div>
                 <div className={`${style.rectangle}`}></div>
-                <p>Zuri releases a new feature to aid studying</p>
-                <p>
+                <p className={`${style.news__headlines}`}>
+                  Zuri releases a new feature to aid studying
+                </p>
+                <p className={`${style.news__description}`}>
                   To make learn and team collaboration efficient and effective,
                   zuri is set to launch a new tools on 23/12/2022.
                 </p>
@@ -82,8 +96,10 @@ export default function index() {
 
               <div>
                 <div className={`${style.rectangle}`}></div>
-                <p>Everything you need to know about Zuri Chat.</p>
-                <p>
+                <p className={`${style.news__headlines}`}>
+                  Everything you need to know about Zuri Chat.
+                </p>
+                <p className={`${style.news__description}`}>
                   To make learn and team collaboration efficient and effective,
                   zuri is set to launch a new tools on 23/12/2022.
                 </p>
@@ -91,8 +107,10 @@ export default function index() {
 
               <div>
                 <div className={`${style.rectangle}`}></div>
-                <p>Everything you need to know about Zuri Chat.</p>
-                <p>
+                <p className={`${style.news__headlines}`}>
+                  Everything you need to know about Zuri Chat.
+                </p>
+                <p className={`${style.news__description}`}>
                   To make learn and team collaboration efficient and effective,
                   zuri is set to launch a new tools on 23/12/2022.
                 </p>
@@ -106,8 +124,10 @@ export default function index() {
             <div className={`${style.grid}`}>
               <div>
                 <div className={`${style.rectangle}`}></div>
-                <p>Zuri releases a new feature to aid studying</p>
-                <p>
+                <p className={`${style.news__headlines}`}>
+                  Zuri releases a new feature to aid studying
+                </p>
+                <p className={`${style.news__description}`}>
                   To make learn and team collaboration efficient and effective,
                   zuri is set to launch a new tools on 23/12/2022.
                 </p>
@@ -115,8 +135,10 @@ export default function index() {
 
               <div>
                 <div className={`${style.rectangle}`}></div>
-                <p>Zuri releases a new feature to aid studying</p>
-                <p>
+                <p className={`${style.news__headlines}`}>
+                  Zuri releases a new feature to aid studying
+                </p>
+                <p className={`${style.news__description}`}>
                   To make learn and team collaboration efficient and effective,
                   zuri is set to launch a new tools on 23/12/2022.
                 </p>
@@ -124,8 +146,10 @@ export default function index() {
 
               <div>
                 <div className={`${style.rectangle}`}></div>
-                <p>Zuri releases a new feature to aid studying</p>
-                <p>
+                <p className={`${style.news__headlines}`}>
+                  Zuri releases a new feature to aid studying
+                </p>
+                <p className={`${style.news__description}`}>
                   To make learn and team collaboration efficient and effective,
                   zuri is set to launch a new tools on 23/12/2022.
                 </p>
@@ -133,8 +157,10 @@ export default function index() {
 
               <div>
                 <div className={`${style.rectangle}`}></div>
-                <p>Zuri releases a new feature to aid studying</p>
-                <p>
+                <p className={`${style.news__headlines}`}>
+                  Zuri releases a new feature to aid studying
+                </p>
+                <p className={`${style.news__description}`}>
                   To make learn and team collaboration efficient and effective,
                   zuri is set to launch a new tools on 23/12/2022.
                 </p>
@@ -146,10 +172,16 @@ export default function index() {
         <section>
           <div className={`${style.next__button__box}`}>
             <button className={`${style.next__button}`}>
-              <a href="#previous"></a>
+              <a href="#previous">
+                <img
+                  src={PreviousArrow}
+                  alt="arrow"
+                  className={`${style.arrow}`}
+                />
+              </a>
             </button>
-            <button className={`${style.next__button}`}>
-              <a href="#previous">1</a>
+            <button className={`${style.first__arrow}`}>
+              <a href="#1">1</a>
             </button>
             <button className={`${style.next__button}`}>
               <a href="#previous">2</a>
@@ -158,39 +190,44 @@ export default function index() {
               <a href="#previous">3</a>
             </button>
             <button className={`${style.next__button}`}>
-              <a href="#previous">3</a>
+              <a href="#previous">...</a>
             </button>
             <button className={`${style.next__button}`}>
-              <a href="#previous">3</a>
+              <a href="#previous">20</a>
             </button>
             <button className={`${style.next__button}`}>
-              <a href="#previous">3</a>
+              <a href="#previous">
+                <img src={NextArrow} alt="arrow" className={`${style.arrow}`} />
+              </a>
             </button>
-            <div className={`${style.next__button}`}></div>
           </div>
         </section>
 
         <section className={`${style.news__letter__section}`}>
-          <h2> Stay updated with Slack by signing up for our newsletter</h2>
-          <p>
+          <h2 className={`${style.news__letter__heading}`}>
+            {" "}
+            Stay updated with Slack by signing up for our newsletter
+          </h2>
+          <p className={`${style.news__letter__description}`}>
             Receive first hand information about our products by subscribing to
             our newsletter and mailing.
           </p>
 
-          <form>
-            <div>
+          <form className={`${style.flex}`}>
+            <div className={`${style.news__letter__input__box}`}>
               <input
                 type="email"
-                className={`${style.news__letter__input}`}
+                placeholder="@gmail.com"
                 required
+                className={`${style.news__letter__input}`}
               />
-              <button>Subscribe</button>
-              <p>
-                By submitting this request, it means that you consent to receive
-                our marketing communication via email and agree to zuri’s
-                Privacy Policy. You can opt out at anytime.
-              </p>
+              <button className={`${style.btn__subscribe}`}>Subscribe</button>
             </div>
+            <p className={`${style.news__letter__agreement}`}>
+              By submitting this request, it means that you consent to receive
+              our marketing communication via email and agree to zuri’s Privacy
+              Policy. You can opt out at anytime.
+            </p>
           </form>
         </section>
       </main>
