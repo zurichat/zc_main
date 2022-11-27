@@ -92,7 +92,10 @@ export default function Index() {
         <TopBar />
       </TopBarWrapperStyle>
 
-      <div style={{ display: "flex", height: "calc(100vh - 48px)" }}>
+      <div
+        style={{ display: "flex", height: "calc(100vh - 48px)" }}
+        id="workspace-all"
+      >
         <div id={`${styles.workspaceSidebar}`}>
           <div id={`${styles.workspaceBox}`}>
             {/* {workspaces} */}
