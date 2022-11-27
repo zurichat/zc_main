@@ -4,28 +4,41 @@ const CommentBoardWrapper = styled.aside`
   display: ${props => (props.showCommentBoard ? "grid" : "none")};
   grid-template-rows: auto 1fr auto;
   z-index: 999;
-  width: 450px;
-
+  width: 350px;
   position: relative;
-
-  top: -9px;
   height: 93vh;
   padding: 0 0 20px 0;
   overflow-y: auto;
   overflow-x: none;
+
+  .msg__wrapper {
+    height: 82vh;
+    overflow-y: auto;
+    overflow-x: none;
+  }
 `;
+
 const CommentBoardHeader = styled.header`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background: hsla(160, 100%, 36%, 1);
   padding: 6px 16px;
   z-index: 99;
-  height: 40px;
+  height: 41px;
   /* margin-right: -16px; */
   color: white;
   font-weight: 700;
   width: 100%;
   position: sticky;
   top: 0px;
-  font-size: ${18 / 16}rem; ;
+  font-size: ${18 / 16}rem;
+
+  .header_title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 `;
 const CommentMessagesWrapper = styled.div`
   background-color: white;

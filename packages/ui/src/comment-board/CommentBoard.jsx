@@ -109,27 +109,29 @@ const CommentBoard = ({
         <div>
           <CommentBoardWrapper showCommentBoard={displayCommentBoard}>
             <CommentBoardHeader>
-              {commentBoardConfig.commentBoardHeader || "Comments"}
+              <div className="header_title">
+                <h4>Thread</h4>
 
-              <UnstyledButton
-                style={{ position: "absolute", top: "0px", right: "10px" }}
-                onClick={() => handleClose()}
-              >
-                X
-              </UnstyledButton>
+                <h6>#{commentBoardConfig.commentBoardHeader || "Comments"}</h6>
+              </div>
+
+              <UnstyledButton onClick={() => handleClose()}>X</UnstyledButton>
             </CommentBoardHeader>
-            <ParentMessage>
-              <MessagePane message={messages[0]} />
-              <span style={{ display: "flex" }}>
-                9 replies <hr />
-              </span>
-            </ParentMessage>
 
-            <CommentMessagesWrapper>
-              {messages.map((message, idx) => (
-                <MessagePane key={idx} message={message} />
-              ))}
-            </CommentMessagesWrapper>
+            <div className="msg__wrapper">
+              <ParentMessage>
+                <MessagePane message={messages[0]} />
+                <span style={{ display: "flex" }}>
+                  9 replies <hr />
+                </span>
+              </ParentMessage>
+
+              <CommentMessagesWrapper>
+                {messages.map((message, idx) => (
+                  <MessagePane key={idx} message={message} />
+                ))}
+              </CommentMessagesWrapper>
+            </div>
             <MessagePaneWrapper>
               <MessagePaneInput
                 sendMessageHandler={commentBoardConfig.sendChatMessageHandler}
