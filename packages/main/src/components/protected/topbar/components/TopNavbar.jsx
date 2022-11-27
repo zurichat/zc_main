@@ -149,8 +149,6 @@ const TopNavbar = ({ toggleSidebar }) => {
       const res = await authAxios.get(
         `/organizations/${orgId}/members/${user._id}`
       );
-      console.log("data", res);
-      console.log(res.data.data.image_url);
       setUserProfileImage(res.data.data.image_url);
     } catch (err) {
       console.error("Error", err);
