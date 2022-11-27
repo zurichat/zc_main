@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --font: "Lato", sans-serif;
+  --primary-color: #009967;
+}
+
+a {
+  text-decoration: none;
+  color: #090809;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1440px;
+  flex-direction: column;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 1280px;
+}
+
+.hr__line {
+  border-bottom: 1px solid #d6d6d6;
+  width: 1280px;
+}
+
+.hero__heading,
+.search__text,
+.news__heading {
+  font-family: var(--font);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.hero__heading {
+  width: 1181px;
+  height: 112px;
+  font-size: 48px;
+  color: #090809;
+  text-align: center;
+}
+
+.search__button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
+  background-color: var(--primary-color);
+  font-size: 20px;
+  color: #fff;
+  padding: 10px 24px 10px 20px;
+  margin-bottom: 10px;
+}
+
+.news {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 1280px;
+}
+
+.news__heading {
+  font-family: var(--font);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 40px;
+  color: #090809;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.rectangle {
+  width: 296px;
+  height: 253px;
+  background: #d9d9d9;
+  border-radius: 8px;
+}
+
+.next__button__box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+.next__button{
+  width: 58px;
+  height: 58px;
+  border: 1px solid var(--primary-color);
+border-radius: 15px;
+background-color: #fff;
+}
+
+.news__letter__section{
+  background-color: var(--primary-color);
+  color: #fff;
+  margin-top: 50px;
+  width: 1440px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.news__letter__input{
+  width: 893px;
+height: 70px;
+  background: #FFFFFF;
+border-radius: 4px;
+}
