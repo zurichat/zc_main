@@ -1,7 +1,25 @@
 .aside {
-  width: 20rem;
+  width: 35rem;
   border-right: 1px solid #eee;
   margin-top: 6.3rem;
+}
+
+@media all and (max-width: 2000px) {
+  .aside {
+    width: 25rem;
+  }
+}
+
+@media all and (max-width: 1500px) {
+  .aside {
+    width: 20rem;
+  }
+}
+
+@media all and (max-width: 1000px) {
+  .aside {
+    display: none;
+  }
 }
 
 .navigation-container {

@@ -13,6 +13,12 @@
   grid-gap: 3rem;
 }
 
+@media all and (max-width: 560px) {
+  .links {
+    grid-gap: 1rem;
+  }
+}
+
 .container .p {
   margin-top: 2rem;
   font-weight: 700;
@@ -28,6 +34,24 @@
   padding: 3rem 4rem;
   border-radius: 10px;
   font-size: 1rem;
+}
+
+@media all and (max-width: 1200px) {
+  .links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 3rem;
+  }
+}
+
+@media all and (max-width: 560px) {
+  .links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
 }
 
 .link-1 {

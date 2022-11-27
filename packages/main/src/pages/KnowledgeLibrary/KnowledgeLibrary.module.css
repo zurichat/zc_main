@@ -12,6 +12,12 @@
   align-items: center;
 }
 
+@media all and (max-width: 560px) {
+  .main {
+    padding: 1rem;
+  }
+}
+
 .main h2 {
   text-align: center;
 }
