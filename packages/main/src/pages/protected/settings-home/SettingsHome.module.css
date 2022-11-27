@@ -1,0 +1,168 @@
+.mtN3 {
+  margin-top: -1rem;
+}
+
+.mtN3 h1 {
+  font-size: 1.7rem;
+  color: #1d1c1d;
+  line-height: 2.5rem;
+  letter-spacing: -1px;
+}
+.mtN3 p {
+  color: black;
+}
+.mtN3 h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  color: #1d1c1d;
+}
+
+.mtN3 img {
+  width: 20px;
+}
+
+/* .mtN3 span {
+    color: #616061;
+    font-size:18px;
+    display: block;
+    word-wrap: break-word;
+    word-break: break-word;
+    margin-right: 5rem;
+    padding-right: 3rem;
+} */
+
+.span_text {
+  color: #616061;
+  font-size: 18px;
+  display: block;
+  word-wrap: break-word;
+  word-break: break-word;
+  margin-right: 5rem;
+  padding-right: 3rem;
+}
+
+.settings_icon_holder {
+  /* display: block; */
+  display: block;
+  border-radius: 4px;
+  width: 48px;
+  height: 49px;
+  /* background-color: grey;  */
+  position: relative;
+  padding: auto;
+  margin: 0;
+}
+
+.settings_icon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  margin: auto auto;
+  color: white;
+  transform: scale(2);
+}
+
+.mtN3 div a {
+  display: block;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  margin: 0 0 0.25rem;
+  position: relative;
+  padding-left: 4.5rem;
+  padding-right: 100px;
+  border: 1px solid transparent;
+}
+
+.mtN3 nav {
+  list-style: none;
+  font-size: 1rem;
+  text-align: center;
+  margin: 4rem auto;
+  line-height: 2rem;
+}
+
+.mtN3 nav li {
+  display: inline-block;
+  margin: 0 0.75rem;
+}
+
+.mtN3 nav li a {
+  color: #616061;
+  padding: 0.1rem;
+}
+
+.mtN3 nav li a:hover,
+.mtN3 nav li a:active {
+  text-decoration: underline;
+}
+
+.mtN3 nav li a:visited {
+  text-decoration: none;
+}
+
+.mtN3 .card {
+  background-color: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 0 rgb(0 0 0 / 25%);
+  padding: 0.5rem 0.3rem 1rem;
+  margin: 0 auto 2rem;
+  position: relative;
+  border: 1px solid transparent;
+  z-index: 0;
+  *zoom: 1;
+}
+
+.mtN3 .card a {
+  padding: 0 1.4rem;
+}
+
+.mtN3 .card div:hover {
+  background: #f8f8f8;
+  border-color: #ddd;
+  text-decoration: none;
+}
+
+.mtN3 .card .grid {
+  display: grid;
+  grid-template-columns: 3rem 90%;
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  grid-column-gap: 1rem;
+  grid-row-gap: 0.1rem;
+}
+
+.mtN3 .card .grid img {
+  padding: 0.7rem;
+}
+
+.mtN3 .card .grid img:first-of-type {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+.mtN3 .card .grid img:last-of-type {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  align-items: end;
+  justify-self: end;
+}
+
+.mtN3 .card .grid h3 {
+  grid-row: 1/2;
+  grid-column: 2/3;
+}
+
+.mtN3 .card .grid span {
+  grid-row: 2/-1;
+  grid-column: 2/-1;
+  align-items: start;
+}
+
+.Settings {
+  border-radius: 15px;
+  filter: invert(1%) sepia(1%) saturate(1%) hue-rotate(1deg) brightness(1000%)
+    contrast(80%);
+}
