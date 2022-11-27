@@ -5361,7 +5361,10 @@ agora-rtc-react@^1.1.0:
   dependencies:
     agora-rtc-sdk-ng "^4.3.0"
 
+
 agora-rtc-sdk-ng@^4.15.0, agora-rtc-sdk-ng@^4.3.0:
+agora-rtc-sdk-ng@^4.3.0:
+
   version "4.15.0"
   resolved "https://registry.yarnpkg.com/agora-rtc-sdk-ng/-/agora-rtc-sdk-ng-4.15.0.tgz#b9b078580ae588e4f1a29188cbd2576a950807cf"
   integrity sha512-55WyOe4cVquF3gIlEunWjasRPDlVt3GfU5wFvRlGuPDXxQK0Z8xNP07Hq/Q4D45k9qc3lzZ5LPxLznywDWPUWQ==

@@ -25,7 +25,7 @@ const Sidebar = props => {
 
   const sidebarRef = useRef(null);
   const [isResizing, setIsResizing] = useState(false);
-  const [sidebarWidth, setSidebarWidth] = useState(290);
+  const [sidebarWidth, setSidebarWidth] = useState(260);
 
   const startResizing = useCallback(() => {
     setIsResizing(true);
@@ -210,6 +210,11 @@ const Sidebar = props => {
                 name={`${t("workspace_chat.alldms")}`}
                 image={dmIcon}
                 link={`/workspace/${currentWorkspace}/plugin-chat/all-dms`}
+              />
+              <SingleRoom
+                name="Video Chat"
+                image={dmIcon}
+                link={`/workspace/${currentWorkspace}/video-chat`}
               />
               <SingleRoom
                 name={`${t("workspace_chat.drafts")}`}
