@@ -24,6 +24,7 @@ import {
   ChangePassword
 } from "./pages";
 import { useAuth } from "./auth/use-auth";
+import SettingsHome from "../src/pages/protected/settings-home/SettingsHome";
 
 const { Workspace, CreateWorkspace, ChooseWorkspace } = lazily(() =>
   import("./pages/protected")
@@ -95,6 +96,9 @@ const App = () => (
           </ProtectFromAuthRoute>
           <ProtectedRoute exact path="/signout">
             <SignOut />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/admin/settings">
+            <SettingsHome />
           </ProtectedRoute>
           <ProtectedRoute exact path="/choose-workspace">
             {withSuspense(ChooseWorkspace)}
