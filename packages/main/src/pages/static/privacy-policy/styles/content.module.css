@@ -255,7 +255,7 @@
   font-family: "Lato", sans-serif;
 }
 
-li {
+.privacy-info-list li {
   margin: 0 0 15px;
   color: #0d0c22;
   font-size: 15px;

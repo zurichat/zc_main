@@ -3,6 +3,7 @@ import styles from "./why.module.css";
 import transparency from "./images/transparency.svg";
 import flexibility from "./images/flexibility.svg";
 import collaboration from "./images/collaboration.svg";
+
 export default function FirstSection() {
   return (
     <section>
