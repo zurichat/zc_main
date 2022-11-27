@@ -1,0 +1,165 @@
+.sidebarWrapper,
+.sidebarWrapperActive {
+  position: fixed;
+  margin-top: 15px;
+  top: 64px;
+  left: 0;
+  width: 300px;
+  padding: 1.5rem;
+  height: 100%;
+  max-height: calc(100vh-64px);
+  overflow-y: scroll;
+  border-right: 2px solid #f5f5f5;
+}
+
+.userDetails {
+  display: flex;
+  align-items: center;
+}
+
+.userDetails .avatar {
+  width: 2.5rem;
+  height: auto;
+}
+
+.userDetails .user {
+  margin-left: 1rem;
+}
+
+.userDetails .user .info {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #616061;
+  margin: 0;
+  padding: 0;
+  line-height: 1.3;
+}
+
+.userDetails .user .name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #616061;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebarMenu {
+  margin-top: 1.5rem;
+}
+
+.sidebarHeading {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #616061;
+  line-height: 1.3;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.sidebarMenuItems {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sidebarLink,
+.sidebarLinkActive {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px 0;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #333;
+}
+
+.sidebarLinkActive,
+.sidebarLink:hover {
+  color: #00b87c;
+}
+
+.sidebarLink .icon,
+.sidebarLink .iconRight {
+  font-size: 1.125rem;
+  color: #333;
+  margin-right: 1rem;
+}
+
+.sidebarLink .iconRight {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+.sidebarLink:hover .icon,
+.sidebarLink:hover .iconRight,
+.sidebarLinkActive .icon,
+.sidebarLinkActive .iconRight {
+  color: #00b87c;
+}
+
+.sidebarFooter {
+  margin-top: 3.5rem;
+  margin-bottom: 5rem;
+  color: #b8003c;
+}
+
+.sidebarFooter .heartIcon {
+  color: #616061;
+}
+
+.closeIcon {
+  display: none;
+}
+
+.mobileTopMenu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sidebarWrapper,
+  .sidebarWrapperActive {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background: #fff;
+    width: 100%;
+  }
+
+  .sidebarWrapperActive {
+    display: block;
+  }
+
+  .closeIcon {
+    position: fixed;
+    display: block;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+    color: #333;
+  }
+
+  .mobileTopMenu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    margin: 2.5rem 0;
+  }
+
+  .menuLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .menuImg {
+    width: 2rem;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+}
