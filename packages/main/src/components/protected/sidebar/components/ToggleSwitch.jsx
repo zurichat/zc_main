@@ -23,7 +23,7 @@ const ToggleSwitch = ({ label, onChange }) => {
         setData(res.data.data);
       })
       .catch(e => console.log(e));
-  }, [5]);
+  }, [7]);
 
   const privateChannel = () => {
     const tina = user?.find(x => x.id == org_id)?.member_id;
